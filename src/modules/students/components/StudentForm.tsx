@@ -72,8 +72,8 @@ export function StudentForm({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
-      <div className="w-full max-w-2xl overflow-hidden rounded-lg border border-border bg-card shadow-xl">
-        <div className="flex items-center justify-between border-b border-border px-5 py-4">
+      <div className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xl">
+        <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
           <div>
             <h3 className="text-base font-semibold text-foreground">
               {student ? 'Editar estudiante' : 'Nuevo estudiante'}
@@ -92,7 +92,7 @@ export function StudentForm({
           </button>
         </div>
 
-        <form className="space-y-5 p-5" onSubmit={handleSubmit}>
+        <form className="flex-1 overflow-y-auto space-y-5 p-5" onSubmit={handleSubmit}>
           {validationError || error ? (
             <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
               <AlertCircle className="mt-0.5 size-4 shrink-0" />

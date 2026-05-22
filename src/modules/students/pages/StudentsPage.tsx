@@ -315,7 +315,7 @@ export function StudentsPage() {
       </div>
 
       <div className="space-y-4">
-        <div className="overflow-x-auto rounded-lg border border-border bg-card shadow-sm">
+        <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
           <StudentFiltersBar
             search={search}
             filters={filters}
