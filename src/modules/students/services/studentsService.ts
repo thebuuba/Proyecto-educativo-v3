@@ -13,7 +13,10 @@ import type {
   StudentListItem,
   UpdateStudentInput,
 } from '@/modules/students/types'
+import type { Database } from '@/types/database.types'
 import type { EnrollmentStatus, RecordStatus } from '@/types/domain'
+
+type StudentUpdate = Database['public']['Tables']['students']['Update']
 
 type StudentRow = {
   id: string
@@ -92,44 +95,6 @@ function mapStudent(row: StudentRow): Student {
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   }
-}
-
-function mapStudentInput(input: CreateStudentInput | UpdateStudentInput) {
-  const payload: Record<string, string | null> = {}
-
-  if (input.studentCode !== undefined) {
-    payload.student_code = input.studentCode.trim()
-  }
-
-  if (input.firstName !== undefined) {
-    payload.first_name = input.firstName.trim()
-  }
-
-  if (input.lastName !== undefined) {
-    payload.last_name = input.lastName.trim()
-  }
-
-  if (input.documentId !== undefined) {
-    payload.document_id = normalizeOptionalText(input.documentId)
-  }
-
-  if (input.birthDate !== undefined) {
-    payload.birth_date = input.birthDate
-  }
-
-  if (input.gender !== undefined) {
-    payload.gender = normalizeOptionalText(input.gender)
-  }
-
-  if (input.address !== undefined) {
-    payload.address = normalizeOptionalText(input.address)
-  }
-
-  if (input.status !== undefined) {
-    payload.status = input.status
-  }
-
-  return payload
 }
 
 function getStudentSupabaseErrorMessage(error: { message: string; code?: string }) {
@@ -224,10 +189,17 @@ export async function getStudentById(
 export async function createStudent(
   input: CreateStudentInput,
 ): Promise<Student> {
-  const payload = mapStudentInput(input)
   const { data, error } = await supabase
     .from('students')
-    .insert(payload)
+    .insert({
+      student_code: input.studentCode.trim(),
+      first_name: input.firstName.trim(),
+      last_name: input.lastName.trim(),
+      birth_date: input.birthDate,
+      document_id: normalizeOptionalText(input.documentId),
+      gender: normalizeOptionalText(input.gender),
+      address: normalizeOptionalText(input.address),
+    })
     .select(studentSelect)
     .single()
 
@@ -239,7 +211,16 @@ export async function updateStudent(
   id: string,
   input: UpdateStudentInput,
 ): Promise<Student> {
-  const payload = mapStudentInput(input)
+  const payload: StudentUpdate = {}
+  if (input.studentCode !== undefined) payload.student_code = input.studentCode.trim()
+  if (input.firstName !== undefined) payload.first_name = input.firstName.trim()
+  if (input.lastName !== undefined) payload.last_name = input.lastName.trim()
+  if (input.birthDate !== undefined) payload.birth_date = input.birthDate
+  if (input.documentId !== undefined) payload.document_id = normalizeOptionalText(input.documentId)
+  if (input.gender !== undefined) payload.gender = normalizeOptionalText(input.gender)
+  if (input.address !== undefined) payload.address = normalizeOptionalText(input.address)
+  if (input.status !== undefined) payload.status = input.status
+
   const { data, error } = await supabase
     .from('students')
     .update(payload)

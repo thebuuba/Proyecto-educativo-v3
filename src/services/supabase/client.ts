@@ -1,22 +1,29 @@
-import { createClient, type SupabaseClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/supabase-js'
 
 import {
   getMissingSupabaseConfigMessage,
   getSupabaseConfig,
 } from '@/services/supabase/config'
+import type { Database } from '@/types/database.types'
 
-function createUnavailableSupabaseClient(): SupabaseClient {
-  return new Proxy({} as SupabaseClient, {
+const config = getSupabaseConfig()
+
+type TypedSupabaseClient = ReturnType<typeof createTypedClient>
+
+function createTypedClient() {
+  return createClient<Database>(config.url, config.anonKey)
+}
+
+function createUnavailableSupabaseClient(): TypedSupabaseClient {
+  return new Proxy({} as TypedSupabaseClient, {
     get() {
       throw new Error(getMissingSupabaseConfigMessage())
     },
   })
 }
 
-const config = getSupabaseConfig()
-
 export const isSupabaseConfigured = config.isConfigured
 
-export const supabase: SupabaseClient = config.isConfigured
-  ? createClient(config.url, config.anonKey)
+export const supabase: TypedSupabaseClient = config.isConfigured
+  ? createTypedClient()
   : createUnavailableSupabaseClient()
