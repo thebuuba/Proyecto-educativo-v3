@@ -1,30 +1,26 @@
 import type { ReactNode } from 'react'
 
+import { EmptyState } from '@/components/ui/EmptyState'
+import { PageHeader } from '@/components/ui/PageHeader'
+
 type PageShellProps = {
   title: string
   description: string
   children?: ReactNode
+  actions?: ReactNode
 }
 
-export function PageShell({ title, description, children }: PageShellProps) {
+export function PageShell({ title, description, children, actions }: PageShellProps) {
   return (
     <section className="mx-auto w-full max-w-7xl">
-      <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h2 className="text-2xl font-semibold text-slate-950">{title}</h2>
-          <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-500">
-            {description}
-          </p>
-        </div>
-      </div>
+      <PageHeader title={title} description={description} actions={actions} />
 
       {children ?? (
-        <div className="min-h-[420px] rounded-lg border border-dashed border-slate-300 bg-white p-6">
-          <div className="flex h-full min-h-[360px] items-center justify-center rounded-lg bg-slate-50">
-            <p className="text-sm font-medium text-slate-400">
-              Página lista para construir el módulo.
-            </p>
-          </div>
+        <div className="rounded-lg border border-dashed border-border bg-card p-6">
+          <EmptyState
+            title="Página lista"
+            description="El módulo está preparado para construir la experiencia."
+          />
         </div>
       )}
     </section>

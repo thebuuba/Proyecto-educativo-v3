@@ -8,7 +8,7 @@ export function AppLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="flex min-h-screen">
         <Sidebar
           isOpen={isSidebarOpen}

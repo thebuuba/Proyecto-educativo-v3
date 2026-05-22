@@ -1,11 +1,12 @@
+import { Card } from '@/components/ui/Card'
 import type { DashboardStat, DashboardTone } from '@/modules/dashboard/types/dashboard'
 import { cn } from '@/utils/cn'
 
 const toneClasses: Record<DashboardTone, string> = {
-  amber: 'bg-amber-50 text-amber-700 ring-amber-100',
-  cyan: 'bg-cyan-50 text-cyan-700 ring-cyan-100',
-  emerald: 'bg-emerald-50 text-emerald-700 ring-emerald-100',
-  indigo: 'bg-indigo-50 text-indigo-700 ring-indigo-100',
+  amber: 'bg-warning/14 text-warning ring-warning/25',
+  cyan: 'bg-accent/16 text-accent-foreground ring-accent/30',
+  emerald: 'bg-success/12 text-success ring-success/20',
+  indigo: 'bg-primary/10 text-primary ring-primary/15',
 }
 
 export function StatCard({
@@ -17,11 +18,11 @@ export function StatCard({
   icon: Icon,
 }: DashboardStat) {
   return (
-    <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+    <Card className="p-5">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-sm font-medium text-slate-500">{label}</p>
-          <p className="mt-3 text-3xl font-semibold text-slate-950">{value}</p>
+          <p className="text-sm font-medium text-muted-foreground">{label}</p>
+          <p className="mt-3 text-3xl font-semibold text-foreground">{value}</p>
         </div>
         <div
           className={cn(
@@ -33,9 +34,9 @@ export function StatCard({
         </div>
       </div>
       <div className="mt-5 flex items-center gap-2 text-sm">
-        <span className="font-semibold text-emerald-700">{change}</span>
-        <span className="truncate text-slate-500">{trend}</span>
+        <span className="font-semibold text-success">{change}</span>
+        <span className="truncate text-muted-foreground">{trend}</span>
       </div>
-    </article>
+    </Card>
   )
 }
