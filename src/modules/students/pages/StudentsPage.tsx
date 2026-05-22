@@ -4,6 +4,7 @@ import {
   RefreshCw,
   TrendingUp,
   TriangleAlert,
+  Upload,
 } from 'lucide-react'
 import { useCallback, useMemo, useState } from 'react'
 
@@ -11,11 +12,14 @@ import { Button } from '@/components/ui/Button'
 import { Card, CardContent } from '@/components/ui/Card'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import { ImportStudentsModal } from '@/modules/students/components/ImportStudentsModal'
 import { StudentDetailPanel } from '@/modules/students/components/StudentDetailPanel'
 import { StudentFiltersBar } from '@/modules/students/components/StudentFiltersBar'
 import { StudentForm } from '@/modules/students/components/StudentForm'
 import { StudentsTable } from '@/modules/students/components/StudentsTable'
 import { useStudents } from '@/modules/students/hooks/useStudents'
+import { importStudents } from '@/modules/students/services/studentsService'
+import type { ParsedStudentRow } from '@/modules/students/services/importService'
 import { cn } from '@/utils/cn'
 import type {
   CreateStudentInput,
@@ -49,6 +53,7 @@ export function StudentsPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [deactivateTarget, setDeactivateTarget] = useState<StudentListItem | null>(null)
   const [selectedCourse, setSelectedCourse] = useState('Todos')
+  const [importModalOpen, setImportModalOpen] = useState(false)
 
   const canManageStudents = hasRole(['admin', 'coordinator'])
   const canViewGuardians =
@@ -210,10 +215,16 @@ export function StudentsPage() {
               Actualizar
             </Button>
             {canManageStudents ? (
-              <Button variant="primary" className="h-12 px-5" onClick={openCreateForm}>
-                <Plus className="size-4" />
-                Nuevo estudiante
-              </Button>
+              <>
+                <Button variant="outline" className="h-12 px-5" onClick={() => setImportModalOpen(true)}>
+                  <Upload className="size-4" />
+                  Importar
+                </Button>
+                <Button variant="primary" className="h-12 px-5" onClick={openCreateForm}>
+                  <Plus className="size-4" />
+                  Nuevo estudiante
+                </Button>
+              </>
             ) : null}
           </div>
         </div>
@@ -350,6 +361,17 @@ export function StudentsPage() {
           )}
         </div>
       </div>
+
+      {importModalOpen ? (
+        <ImportStudentsModal
+          onImport={async (rows: ParsedStudentRow[]) => {
+            await importStudents(rows)
+            setImportModalOpen(false)
+            void refetch()
+          }}
+          onClose={() => setImportModalOpen(false)}
+        />
+      ) : null}
 
       {isFormOpen ? (
         <StudentForm

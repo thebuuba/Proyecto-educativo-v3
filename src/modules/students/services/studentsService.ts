@@ -13,6 +13,7 @@ import type {
   StudentListItem,
   UpdateStudentInput,
 } from '@/modules/students/types'
+import type { ParsedStudentRow } from '@/modules/students/services/importService'
 import type { Database } from '@/types/database.types'
 import type { EnrollmentStatus, RecordStatus } from '@/types/domain'
 
@@ -437,6 +438,78 @@ export async function updateStudent(
 
 export async function deactivateStudent(id: string): Promise<Student> {
   return updateStudent(id, { status: 'inactive' })
+}
+
+export async function importStudents(rows: ParsedStudentRow[]): Promise<{
+  imported: number
+  errors: { row: number; reason: string }[]
+}> {
+  const codes = rows
+    .map((row) => row.studentCode.trim())
+    .filter(Boolean)
+
+  const existingCodes = new Set<string>()
+
+  if (codes.length > 0) {
+    const { data: existing } = await supabase
+      .from('students')
+      .select('student_code')
+      .in('student_code', codes)
+
+    for (const student of existing ?? []) {
+      existingCodes.add(student.student_code)
+    }
+  }
+
+  const errors: { row: number; reason: string }[] = []
+  const toInsert: Database['public']['Tables']['students']['Insert'][] = []
+
+  for (const row of rows) {
+    const code = row.studentCode.trim()
+
+    if (code && existingCodes.has(code)) {
+      errors.push({ row: row.rowNumber, reason: `El código "${code}" ya existe` })
+      continue
+    }
+
+    const student_code = code || `IMP-${Date.now().toString(36)}-${row.rowNumber}`
+    const birth_date = row.birthDate.trim()
+
+    if (!birth_date) {
+      errors.push({ row: row.rowNumber, reason: 'Fecha de nacimiento requerida' })
+      continue
+    }
+
+    toInsert.push({
+      student_code,
+      first_name: row.firstName.trim(),
+      last_name: row.lastName.trim(),
+      birth_date,
+      document_id: row.documentId.trim() || null,
+      gender: row.gender.trim() || null,
+      address: row.address.trim() || null,
+    })
+  }
+
+  if (toInsert.length === 0) {
+    return { imported: 0, errors }
+  }
+
+  const BATCH_SIZE = 50
+  let imported = 0
+
+  for (let i = 0; i < toInsert.length; i += BATCH_SIZE) {
+    const batch = toInsert.slice(i, i + BATCH_SIZE)
+    const { error } = await supabase.from('students').insert(batch)
+
+    if (error) {
+      errors.push({ row: 0, reason: `Error en lote ${i / BATCH_SIZE + 1}: ${error.message}` })
+    } else {
+      imported += batch.length
+    }
+  }
+
+  return { imported, errors }
 }
 
 async function getCurrentEnrollment(
