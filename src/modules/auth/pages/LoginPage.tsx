@@ -1,7 +1,7 @@
-import { AlertCircle, LogIn } from 'lucide-react'
+import { AlertCircle, CheckCircle, LogIn, UserPlus } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
-import { Navigate, useLocation } from 'react-router-dom'
+import { Link, Navigate, useLocation } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -11,6 +11,7 @@ type LocationState = {
   from?: {
     pathname?: string
   }
+  registered?: boolean
 }
 
 export function LoginPage() {
@@ -25,6 +26,7 @@ export function LoginPage() {
     fromState?.from?.pathname && fromState.from.pathname !== '/login'
       ? fromState.from.pathname
       : '/'
+  const registered = fromState?.registered === true
 
   if (!loading && isAuthenticated) {
     return <Navigate to={from ?? '/'} replace />
@@ -107,6 +109,13 @@ export function LoginPage() {
               </div>
             ) : null}
 
+            {registered && !errorMessage && !authError ? (
+              <div className="mt-6 flex gap-3 rounded-lg border border-success/20 bg-success/12 p-3 text-sm text-success">
+                <CheckCircle className="mt-0.5 size-4 shrink-0" />
+                <p>Cuenta creada exitosamente. Ya puedes iniciar sesión.</p>
+              </div>
+            ) : null}
+
             <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label
@@ -154,6 +163,18 @@ export function LoginPage() {
                 {isSubmitting ? 'Ingresando...' : 'Ingresar'}
               </Button>
             </form>
+
+            <div className="mt-6 border-t border-border pt-6">
+              <p className="text-center text-sm text-muted-foreground">
+                ¿No tienes una cuenta?
+              </p>
+              <Link to="/registro">
+                <Button variant="outline" className="mt-3 w-full">
+                  <UserPlus className="size-4" />
+                  Registrarse
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
