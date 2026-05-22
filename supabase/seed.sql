@@ -1,0 +1,2 @@
+-- Seed data is included in the migration file.
+-- This file is kept as a placeholder for future seed data.
