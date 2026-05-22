@@ -91,9 +91,21 @@ export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalPr
 
           {parseResult.parseErrors.length > 0 ? (
             <div className="rounded-lg border border-destructive/20 bg-destructive/12 p-4">
-              <p className="text-sm font-semibold text-destructive">
-                {parseResult.parseErrors.length} fila{parseResult.parseErrors.length === 1 ? '' : 's'} omitida{parseResult.parseErrors.length === 1 ? '' : 's'} por errores de validación
+              <p className="mb-2 text-sm font-semibold text-destructive">
+                {parseResult.parseErrors.length} fila{parseResult.parseErrors.length === 1 ? '' : 's'} omitida{parseResult.parseErrors.length === 1 ? '' : 's'}
               </p>
+              <ul className="space-y-1">
+                {parseResult.parseErrors.slice(0, 5).map((err) => (
+                  <li key={err.row} className="text-xs text-destructive">
+                    Fila {err.row}: {err.reason}
+                  </li>
+                ))}
+                {parseResult.parseErrors.length > 5 ? (
+                  <li className="text-xs text-muted-foreground">
+                    ... y {parseResult.parseErrors.length - 5} error{parseResult.parseErrors.length - 5 === 1 ? '' : 'es'} más
+                  </li>
+                ) : null}
+              </ul>
             </div>
           ) : null}
 
