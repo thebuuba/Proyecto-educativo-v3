@@ -38,6 +38,7 @@ export type AuthState = {
   roles: Role[]
   permissions: Permission[]
   loading: boolean
+  authError: string | null
 }
 
 export type LoginCredentials = {

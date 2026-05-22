@@ -9,6 +9,8 @@ export type AuthContextValue = AuthState & {
   logout: () => Promise<void>
   refreshAuth: () => Promise<void>
   hasRole: (roleKeys: UserRole[]) => boolean
+  // Los permisos se cargan desde base de datos y no existe aún un catálogo
+  // TypeScript cerrado generado desde Supabase. Por eso se acepta string.
   hasPermission: (permissionKey: string) => boolean
 }
 

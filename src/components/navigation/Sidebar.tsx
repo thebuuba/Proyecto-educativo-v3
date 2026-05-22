@@ -11,10 +11,8 @@ type SidebarProps = {
 }
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
-  const { roles } = useAuth()
-  const visibleRoutes = navigationRoutes.filter((item) =>
-    roles.some((role) => item.allowedRoles.includes(role.key)),
-  )
+  const { hasRole } = useAuth()
+  const visibleRoutes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
 
   return (
     <>

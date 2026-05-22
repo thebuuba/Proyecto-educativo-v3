@@ -1,7 +1,7 @@
 import { AlertCircle, LogIn } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
-import { Navigate, useLocation, useNavigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
@@ -12,9 +12,8 @@ type LocationState = {
 }
 
 export function LoginPage() {
-  const { isAuthenticated, loading, login } = useAuth()
+  const { authError, isAuthenticated, loading, login } = useAuth()
   const location = useLocation()
-  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
@@ -36,7 +35,6 @@ export function LoginPage() {
 
     try {
       await login({ email, password })
-      navigate(from ?? '/', { replace: true })
     } catch (error) {
       setErrorMessage(
         error instanceof Error
@@ -100,10 +98,10 @@ export function LoginPage() {
               </p>
             </div>
 
-            {errorMessage ? (
+            {errorMessage || authError ? (
               <div className="mt-6 flex gap-3 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
                 <AlertCircle className="mt-0.5 size-4 shrink-0" />
-                <p>{errorMessage}</p>
+                <p>{errorMessage || authError}</p>
               </div>
             ) : null}
 

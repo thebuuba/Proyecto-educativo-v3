@@ -30,6 +30,7 @@ const initialState: AuthState = {
   roles: [],
   permissions: [],
   loading: isSupabaseConfigured,
+  authError: null,
 }
 
 type LoadAuthStateOptions = {
@@ -37,11 +38,44 @@ type LoadAuthStateOptions = {
   throwOnError?: boolean
 }
 
+type AuthStateErrorKind =
+  | 'missing_profile'
+  | 'missing_roles'
+  | 'load_failed'
+  | 'inactive_user'
+
+class AuthStateError extends Error {
+  kind: AuthStateErrorKind
+
+  constructor(kind: AuthStateErrorKind, message: string) {
+    super(message)
+    this.name = 'AuthStateError'
+    this.kind = kind
+  }
+}
+
+type PendingAuthEvent = {
+  resolve: () => void
+  reject: (error: unknown) => void
+}
+
+function normalizeAuthStateError(error: unknown) {
+  if (error instanceof AuthStateError) {
+    return error
+  }
+
+  return new AuthStateError(
+    'load_failed',
+    'No se pudo cargar tu perfil, roles o permisos. Revisa tu conexión e inténtalo de nuevo.',
+  )
+}
+
 export function AuthProvider({ children }: AuthProviderProps) {
   const [state, setState] = useState<AuthState>(initialState)
   const skipNextAuthEventRef = useRef(false)
+  const pendingAuthEventRef = useRef<PendingAuthEvent | null>(null)
 
-  const clearAuthState = useCallback(() => {
+  const clearAuthState = useCallback((authError: string | null = null) => {
     setState({
       user: null,
       session: null,
@@ -49,6 +83,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       roles: [],
       permissions: [],
       loading: false,
+      authError,
     })
   }, [])
 
@@ -76,15 +111,24 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const appUser = await getCurrentAppUser(user.id)
 
       if (!appUser) {
-        throw new Error(
-          'Tu cuenta existe en Supabase Auth, pero no tiene un perfil activo en Aula Base.',
+        throw new AuthStateError(
+          'missing_profile',
+          'Tu cuenta existe en Supabase Auth, pero no tiene un perfil en Aula Base.',
         )
       }
 
-      const roles = appUser ? await getUserRoles(appUser.id) : []
+      if (appUser.status !== 'active') {
+        throw new AuthStateError(
+          'inactive_user',
+          'Tu perfil de Aula Base está inactivo. Contacta al administrador.',
+        )
+      }
+
+      const roles = await getUserRoles(appUser.id)
 
       if (roles.length === 0) {
-        throw new Error(
+        throw new AuthStateError(
+          'missing_roles',
           'Tu perfil no tiene roles activos asignados. Contacta al administrador.',
         )
       }
@@ -98,14 +142,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
         roles,
         permissions,
         loading: false,
+        authError: null,
       })
     } catch (error) {
       console.error(error)
-      clearAuthState()
+      const authStateError = normalizeAuthStateError(error)
 
       if (options?.throwOnError) {
-        throw error
+        clearAuthState(authStateError.message)
+        throw authStateError
       }
+
+      clearAuthState(authStateError.message)
     }
   }, [clearAuthState])
 
@@ -117,6 +165,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const { data } = supabase.auth.onAuthStateChange(() => {
       if (skipNextAuthEventRef.current) {
         skipNextAuthEventRef.current = false
+        const pendingAuthEvent = pendingAuthEventRef.current
+        pendingAuthEventRef.current = null
+
+        window.setTimeout(() => {
+          loadAuthState({
+            showLoading: false,
+            throwOnError: Boolean(pendingAuthEvent),
+          })
+            .then(() => pendingAuthEvent?.resolve())
+            .catch((error: unknown) => pendingAuthEvent?.reject(error))
+        }, 0)
+
         return
       }
 
@@ -130,20 +190,76 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }, [clearAuthState, loadAuthState])
 
+  const waitForAuthEvent = useCallback(() => {
+    let authEventSettled = false
+
+    const authEventPromise = new Promise<boolean>((resolve, reject) => {
+      pendingAuthEventRef.current = {
+        resolve: () => {
+          authEventSettled = true
+          resolve(true)
+        },
+        reject: (error: unknown) => {
+          authEventSettled = true
+          reject(error)
+        },
+      }
+    })
+
+    const timeoutPromise = new Promise<boolean>((resolve) => {
+      window.setTimeout(() => resolve(false), 750)
+    })
+
+    return Promise.race([authEventPromise, timeoutPromise]).finally(() => {
+      if (!authEventSettled) {
+        pendingAuthEventRef.current = null
+        skipNextAuthEventRef.current = false
+      }
+    })
+  }, [])
+
   const login = useCallback(
     async (credentials: LoginCredentials) => {
       skipNextAuthEventRef.current = true
-      await loginWithPassword(credentials)
-      await loadAuthState({ showLoading: true, throwOnError: true })
+      const authEventHandled = waitForAuthEvent()
+
+      try {
+        await loginWithPassword(credentials)
+        const handledByAuthEvent = await authEventHandled
+
+        if (!handledByAuthEvent) {
+          await loadAuthState({ showLoading: true, throwOnError: true })
+        }
+      } catch (error) {
+        void authEventHandled.catch(() => undefined)
+        throw error
+      } finally {
+        skipNextAuthEventRef.current = false
+        pendingAuthEventRef.current = null
+      }
     },
-    [loadAuthState],
+    [loadAuthState, waitForAuthEvent],
   )
 
   const logout = useCallback(async () => {
     skipNextAuthEventRef.current = true
-    await signOut()
-    clearAuthState()
-  }, [clearAuthState])
+    const authEventHandled = waitForAuthEvent()
+
+    try {
+      await signOut()
+      const handledByAuthEvent = await authEventHandled
+
+      if (!handledByAuthEvent) {
+        clearAuthState()
+      }
+    } catch (error) {
+      void authEventHandled.catch(() => undefined)
+      throw error
+    } finally {
+      skipNextAuthEventRef.current = false
+      pendingAuthEventRef.current = null
+    }
+  }, [clearAuthState, waitForAuthEvent])
 
   const value = useMemo<AuthContextValue>(() => {
     const roles = state.roles
@@ -154,7 +270,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       isAuthenticated: Boolean(state.user && state.session),
       login,
       logout,
-      refreshAuth: () => loadAuthState(),
+      refreshAuth: () => loadAuthState({ throwOnError: true }),
       hasRole: (roleKeys: UserRole[]) =>
         roles.some((role: Role) => roleKeys.includes(role.key)),
       hasPermission: (permissionKey: string) =>

@@ -58,7 +58,6 @@ export async function getCurrentAppUser(
     .from('app_users')
     .select('*')
     .eq('auth_user_id', authUserId)
-    .eq('status', 'active')
     .maybeSingle()
 
   if (error) {
