@@ -1,4 +1,4 @@
-import { PageShell } from '@/components/ui/PageShell'
+import { ErrorState, LoadingState, PageShell } from '@/components/ui'
 import { AcademicAlerts } from '@/modules/dashboard/components/AcademicAlerts'
 import { BarChart } from '@/modules/dashboard/components/BarChart'
 import { ChartPanel } from '@/modules/dashboard/components/ChartPanel'
@@ -6,16 +6,49 @@ import { LineChart } from '@/modules/dashboard/components/LineChart'
 import { QuickActions } from '@/modules/dashboard/components/QuickActions'
 import { RecentStudentsTable } from '@/modules/dashboard/components/RecentStudentsTable'
 import { StatCard } from '@/modules/dashboard/components/StatCard'
-import {
-  academicAlerts,
-  attendanceData,
-  dashboardStats,
-  performanceData,
-  quickActions,
-  recentStudents,
-} from '@/modules/dashboard/data/dashboardData'
+import { useDashboard } from '@/modules/dashboard/hooks/useDashboard'
 
 export function DashboardPage() {
+  const { data, error, loading } = useDashboard()
+
+  if (loading) {
+    return (
+      <PageShell
+        title="Dashboard"
+        description="Vista general del sistema académico y accesos principales."
+      >
+        <LoadingState message="Cargando dashboard..." />
+      </PageShell>
+    )
+  }
+
+  if (error) {
+    return (
+      <PageShell
+        title="Dashboard"
+        description="Vista general del sistema académico y accesos principales."
+      >
+        <ErrorState message={error} />
+      </PageShell>
+    )
+  }
+
+  if (!data) {
+    return (
+      <PageShell
+        title="Dashboard"
+        description="Vista general del sistema académico y accesos principales."
+      >
+        <ErrorState message="No se pudieron cargar los datos del dashboard." />
+      </PageShell>
+    )
+  }
+
+  const attendanceValue =
+    data.stats.find((stat) => stat.label === 'Asistencia promedio')?.value ?? '—'
+  const performanceValue =
+    data.stats.find((stat) => stat.label === 'Promedio académico')?.value ?? '—'
+
   return (
     <PageShell
       title="Dashboard"
@@ -23,7 +56,7 @@ export function DashboardPage() {
     >
       <div className="space-y-6">
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {dashboardStats.map((stat) => (
+          {data.stats.map((stat) => (
             <StatCard key={stat.label} {...stat} />
           ))}
         </div>
@@ -34,26 +67,26 @@ export function DashboardPage() {
               <ChartPanel
                 title="Asistencia semanal"
                 description="Porcentaje de asistencia registrada por día"
-                value="92.6%"
+                value={attendanceValue}
               >
-                <BarChart data={attendanceData} />
+                <BarChart data={data.attendanceData} />
               </ChartPanel>
 
               <ChartPanel
                 title="Rendimiento académico"
                 description="Promedio general por mes académico"
-                value="87.4"
+                value={performanceValue}
               >
-                <LineChart data={performanceData} />
+                <LineChart data={data.performanceData} />
               </ChartPanel>
             </div>
 
-            <RecentStudentsTable students={recentStudents} />
+            <RecentStudentsTable students={data.recentStudents} />
           </div>
 
           <aside className="space-y-6">
-            <AcademicAlerts alerts={academicAlerts} />
-            <QuickActions actions={quickActions} />
+            <AcademicAlerts alerts={data.alerts} />
+            <QuickActions actions={data.quickActions} />
           </aside>
         </div>
       </div>

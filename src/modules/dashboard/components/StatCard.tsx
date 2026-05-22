@@ -37,7 +37,11 @@ export function StatCard({
         <span
           className={cn(
             'font-semibold',
-            change.startsWith('-') ? 'text-destructive' : 'text-success',
+            change === '—'
+              ? 'text-muted-foreground'
+              : change.startsWith('-')
+                ? 'text-destructive'
+                : 'text-success',
           )}
         >
           {change}

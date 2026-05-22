@@ -1,5 +1,9 @@
 import { supabase } from '@/services/supabase'
-import { firstOrNull } from '@/utils/helpers'
+import {
+  assertNoSupabaseError,
+  firstOrNull,
+  getSupabaseErrorMessage,
+} from '@/utils/helpers'
 import type {
   CreateStudentInput,
   Student,
@@ -128,24 +132,20 @@ function mapStudentInput(input: CreateStudentInput | UpdateStudentInput) {
   return payload
 }
 
-function getSupabaseErrorMessage(error: { message: string; code?: string }) {
+function getStudentSupabaseErrorMessage(error: { message: string; code?: string }) {
   if (error.code === '23505') {
     return 'Ya existe un estudiante con ese código o documento.'
   }
 
-  if (error.code === '42501') {
-    return 'No tienes permiso para realizar esta acción.'
-  }
-
-  return error.message || 'No se pudo completar la operación en Supabase.'
+  return getSupabaseErrorMessage(error)
 }
 
-function assertNoSupabaseError(
+function assertNoStudentSupabaseError(
   error: { message: string; code?: string } | null,
   fallbackMessage: string,
 ) {
   if (error) {
-    throw new Error(getSupabaseErrorMessage(error) || fallbackMessage)
+    throw new Error(getStudentSupabaseErrorMessage(error) || fallbackMessage)
   }
 }
 
@@ -187,7 +187,7 @@ export async function getStudents({
   }
 
   const { data, error } = await query
-  assertNoSupabaseError(error, 'No se pudieron cargar los estudiantes.')
+  assertNoStudentSupabaseError(error, 'No se pudieron cargar los estudiantes.')
 
   return ((data ?? []) as StudentRow[]).map(mapStudent)
 }
@@ -202,7 +202,7 @@ export async function getStudentById(
     .eq('id', id)
     .maybeSingle()
 
-  assertNoSupabaseError(error, 'No se pudo cargar el estudiante.')
+  assertNoStudentSupabaseError(error, 'No se pudo cargar el estudiante.')
 
   if (!data) {
     return null
@@ -231,7 +231,7 @@ export async function createStudent(
     .select(studentSelect)
     .single()
 
-  assertNoSupabaseError(error, 'No se pudo crear el estudiante.')
+  assertNoStudentSupabaseError(error, 'No se pudo crear el estudiante.')
   return mapStudent(data as StudentRow)
 }
 
@@ -247,7 +247,7 @@ export async function updateStudent(
     .select(studentSelect)
     .single()
 
-  assertNoSupabaseError(error, 'No se pudo actualizar el estudiante.')
+  assertNoStudentSupabaseError(error, 'No se pudo actualizar el estudiante.')
   return mapStudent(data as StudentRow)
 }
 

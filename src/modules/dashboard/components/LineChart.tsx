@@ -5,6 +5,14 @@ type LineChartProps = {
 }
 
 export function LineChart({ data }: LineChartProps) {
+  if (data.length === 0) {
+    return (
+      <div className="flex h-64 items-center justify-center text-sm font-medium text-muted-foreground">
+        No hay calificaciones publicadas para este período.
+      </div>
+    )
+  }
+
   const width = 520
   const height = 220
   const padding = 28
@@ -13,7 +21,10 @@ export function LineChart({ data }: LineChartProps) {
   const max = Math.max(...values) + 4
 
   const points = data.map((item, index) => {
-    const x = padding + (index * (width - padding * 2)) / (data.length - 1)
+    const x =
+      data.length === 1
+        ? width / 2
+        : padding + (index * (width - padding * 2)) / (data.length - 1)
     const y =
       height -
       padding -

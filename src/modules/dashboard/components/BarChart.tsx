@@ -5,6 +5,14 @@ type BarChartProps = {
 }
 
 export function BarChart({ data }: BarChartProps) {
+  if (data.length === 0) {
+    return (
+      <div className="flex h-64 items-center justify-center text-sm font-medium text-muted-foreground">
+        No hay asistencia registrada para este período.
+      </div>
+    )
+  }
+
   return (
     <div className="flex h-64 items-end gap-3 pt-6">
       {data.map((item) => (
