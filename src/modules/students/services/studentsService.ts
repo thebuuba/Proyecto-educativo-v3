@@ -403,6 +403,7 @@ export async function createStudent(
       document_id: normalizeOptionalText(input.documentId),
       gender: normalizeOptionalText(input.gender),
       address: normalizeOptionalText(input.address),
+      ...(input.status ? { status: input.status } : {}),
     })
     .select(studentSelect)
     .single()
@@ -462,7 +463,7 @@ export async function importStudents(rows: ParsedStudentRow[]): Promise<{
   }
 
   const errors: { row: number; reason: string }[] = []
-  const toInsert: Database['public']['Tables']['students']['Insert'][] = []
+  const toInsert: (Database['public']['Tables']['students']['Insert'] & { _row: number })[] = []
 
   for (const row of rows) {
     const code = row.studentCode.trim()
@@ -481,6 +482,7 @@ export async function importStudents(rows: ParsedStudentRow[]): Promise<{
     }
 
     toInsert.push({
+      _row: row.rowNumber,
       student_code,
       first_name: row.firstName.trim(),
       last_name: row.lastName.trim(),
@@ -500,10 +502,13 @@ export async function importStudents(rows: ParsedStudentRow[]): Promise<{
 
   for (let i = 0; i < toInsert.length; i += BATCH_SIZE) {
     const batch = toInsert.slice(i, i + BATCH_SIZE)
-    const { error } = await supabase.from('students').insert(batch)
+    const insertPayload = batch.map(({ _row, ...rest }) => rest)
+    const { error } = await supabase.from('students').insert(insertPayload)
 
     if (error) {
-      errors.push({ row: 0, reason: `Error en lote ${i / BATCH_SIZE + 1}: ${error.message}` })
+      const first = batch[0]._row
+      const last = batch[batch.length - 1]._row
+      errors.push({ row: first, reason: `Error en ${first === last ? `fila ${first}` : `filas ${first}-${last}`}: ${error.message}` })
     } else {
       imported += batch.length
     }

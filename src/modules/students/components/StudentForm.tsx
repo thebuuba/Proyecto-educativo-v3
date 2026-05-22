@@ -1,11 +1,12 @@
 import { AlertCircle, X } from 'lucide-react'
 import type { FormEvent } from 'react'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
+import { useFocusTrap } from '@/hooks/useFocusTrap'
 import type {
   CreateStudentInput,
   StudentListItem,
@@ -70,9 +71,12 @@ export function StudentForm({
     })
   }
 
+  const dialogRef = useRef<HTMLDivElement>(null)
+  useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
-      <div className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xl">
+      <div ref={dialogRef} className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xl">
         <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
           <div>
             <h3 className="text-base font-semibold text-foreground">

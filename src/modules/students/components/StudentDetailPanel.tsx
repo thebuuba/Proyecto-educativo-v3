@@ -1,7 +1,8 @@
 import { AlertCircle, X } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Badge } from '@/components/ui/Badge'
+import { useFocusTrap } from '@/hooks/useFocusTrap'
 import { StudentStatusBadge } from '@/modules/students/components/StudentStatusBadge'
 import { getStudentById } from '@/modules/students/services/studentsService'
 import type { StudentDetail, StudentListItem } from '@/modules/students/types'
@@ -28,6 +29,8 @@ export function StudentDetailPanel({
   const [detail, setDetail] = useState<StudentDetail | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const panelRef = useRef<HTMLDivElement>(null)
+  useFocusTrap({ ref: panelRef, active: true, onEscape: onClose })
 
   useEffect(() => {
     let isMounted = true
@@ -69,7 +72,7 @@ export function StudentDetailPanel({
   const currentStudent = detail ?? student
 
   return (
-    <aside className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-border bg-card shadow-xl">
+    <aside ref={panelRef} className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-border bg-card shadow-xl">
       <div className="flex items-start justify-between border-b border-border px-5 py-4">
         <div>
           <p className="text-xs font-medium uppercase text-muted-foreground">

@@ -1,7 +1,8 @@
 import { X } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { useRef, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
+import { useFocusTrap } from '@/hooks/useFocusTrap'
 
 type ModalProps = {
   title: string
@@ -11,9 +12,12 @@ type ModalProps = {
 }
 
 export function Modal({ title, description, children, onClose }: ModalProps) {
+  const dialogRef = useRef<HTMLDivElement>(null)
+  useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
-      <div className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-popover text-popover-foreground shadow-xl">
+      <div ref={dialogRef} className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-popover text-popover-foreground shadow-xl">
         <div className="flex shrink-0 items-start justify-between border-b border-border px-5 py-4">
           <div>
             <h3 className="text-base font-semibold text-foreground">{title}</h3>
