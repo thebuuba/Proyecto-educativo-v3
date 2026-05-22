@@ -15,8 +15,8 @@ export function RequireAuth({ allowedRoles, children }: RequireAuthProps) {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-100 px-4">
-        <div className="rounded-lg border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-600 shadow-sm">
+      <div className="flex min-h-screen items-center justify-center bg-background px-4">
+        <div className="rounded-lg border border-border bg-card px-5 py-4 text-sm font-medium text-foreground shadow-sm">
           Cargando sesión...
         </div>
       </div>

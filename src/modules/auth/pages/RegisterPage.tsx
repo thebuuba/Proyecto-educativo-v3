@@ -5,6 +5,7 @@ import { Link, Navigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { supabase } from '@/services/supabase'
 
 function createSlug(value: string) {
@@ -56,10 +57,76 @@ function getRegisterErrorMessage(error: unknown) {
     return 'Este correo ya está registrado'
   }
 
+  if (error.message.toLowerCase().includes('invalid login credentials')) {
+    return 'Este correo ya está registrado. Usa la contraseña correcta para completar el perfil.'
+  }
+
+  if (error.message.toLowerCase().includes('email not confirmed')) {
+    return 'Confirma tu correo electrónico antes de completar el registro.'
+  }
+
   return error.message
 }
 
+function isUserAlreadyRegistered(error: Error) {
+  return error.message.toLowerCase().includes('user already registered')
+}
+
+async function ensureAuthenticatedForRegistration(
+  email: string,
+  password: string,
+) {
+  const { data: sessionData } = await supabase.auth.getSession()
+  const sessionEmail = sessionData.session?.user.email?.toLowerCase()
+
+  if (sessionEmail === email.toLowerCase()) {
+    return
+  }
+
+  if (sessionData.session) {
+    await supabase.auth.signOut()
+  }
+
+  const { error: signUpError } = await supabase.auth.signUp({
+    email,
+    password,
+  })
+
+  if (signUpError) {
+    if (!isUserAlreadyRegistered(signUpError)) {
+      throw signUpError
+    }
+
+    const { error: signInError } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+
+    if (signInError) {
+      throw signInError
+    }
+
+    return
+  }
+
+  const { data: newSessionData } = await supabase.auth.getSession()
+
+  if (newSessionData.session?.user.email?.toLowerCase() === email.toLowerCase()) {
+    return
+  }
+
+  const { error: signInError } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  })
+
+  if (signInError) {
+    throw signInError
+  }
+}
+
 export function RegisterPage() {
+  const { refreshAuth } = useAuth()
   const [schoolName, setSchoolName] = useState('')
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -70,7 +137,7 @@ export function RegisterPage() {
   const [registered, setRegistered] = useState(false)
 
   if (registered) {
-    return <Navigate to="/login" state={{ registered: true }} replace />
+    return <Navigate to="/" replace />
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -100,15 +167,7 @@ export function RegisterPage() {
     setIsSubmitting(true)
 
     try {
-      const { error: signUpError } = await supabase.auth.signUp({
-        email: trimmedEmail,
-        password,
-      })
-
-      if (signUpError) {
-        throw signUpError
-      }
-
+      await ensureAuthenticatedForRegistration(trimmedEmail, password)
       const slug = await getAvailableSlug(trimmedSchoolName)
       const { error: registerError } = await supabase.rpc('register_school', {
         school_name: trimmedSchoolName,
@@ -121,6 +180,7 @@ export function RegisterPage() {
         throw registerError
       }
 
+      await refreshAuth()
       setRegistered(true)
     } catch (error) {
       setErrorMessage(getRegisterErrorMessage(error))
