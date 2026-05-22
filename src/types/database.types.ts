@@ -1,3 +1,4 @@
+Initialising login role...
 export type Json =
   | string
   | number
@@ -11,6 +12,31 @@ export type Database = {
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "14.5"
+  }
+  graphql_public: {
+    Tables: {
+      [_ in never]: never
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      graphql: {
+        Args: {
+          extensions?: Json
+          operationName?: string
+          query?: string
+          variables?: Json
+        }
+        Returns: Json
+      }
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
   }
   public: {
     Tables: {
@@ -790,6 +816,94 @@ export type Database = {
         }
         Relationships: []
       }
+      schedule_entries: {
+        Row: {
+          academic_period_id: string | null
+          created_at: string
+          day_of_week: number
+          id: string
+          room: string | null
+          school_id: string
+          school_year_id: string
+          section_id: string
+          section_subject_id: string
+          status: Database["public"]["Enums"]["record_status"]
+          time_slot_id: string
+          updated_at: string
+        }
+        Insert: {
+          academic_period_id?: string | null
+          created_at?: string
+          day_of_week: number
+          id?: string
+          room?: string | null
+          school_id: string
+          school_year_id: string
+          section_id: string
+          section_subject_id: string
+          status?: Database["public"]["Enums"]["record_status"]
+          time_slot_id: string
+          updated_at?: string
+        }
+        Update: {
+          academic_period_id?: string | null
+          created_at?: string
+          day_of_week?: number
+          id?: string
+          room?: string | null
+          school_id?: string
+          school_year_id?: string
+          section_id?: string
+          section_subject_id?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          time_slot_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "schedule_entries_academic_period_id_fkey"
+            columns: ["academic_period_id"]
+            isOneToOne: false
+            referencedRelation: "academic_periods"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_entries_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_entries_school_year_id_fkey"
+            columns: ["school_year_id"]
+            isOneToOne: false
+            referencedRelation: "school_years"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_entries_section_fk"
+            columns: ["section_id"]
+            isOneToOne: false
+            referencedRelation: "sections"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_entries_section_subject_id_fkey"
+            columns: ["section_subject_id"]
+            isOneToOne: false
+            referencedRelation: "section_subjects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "schedule_entries_time_slot_id_fkey"
+            columns: ["time_slot_id"]
+            isOneToOne: false
+            referencedRelation: "time_slots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       school_years: {
         Row: {
           created_at: string
@@ -1231,6 +1345,50 @@ export type Database = {
           },
         ]
       }
+      time_slots: {
+        Row: {
+          created_at: string
+          end_time: string
+          id: string
+          name: string
+          school_id: string
+          sequence: number
+          start_time: string
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          end_time: string
+          id?: string
+          name: string
+          school_id: string
+          sequence: number
+          start_time: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          end_time?: string
+          id?: string
+          name?: string
+          school_id?: string
+          sequence?: number
+          start_time?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "time_slots_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -1531,6 +1689,9 @@ export type CompositeTypes<
     : never
 
 export const Constants = {
+  graphql_public: {
+    Enums: {},
+  },
   public: {
     Enums: {
       attendance_status: ["present", "absent", "late", "excused"],
@@ -1541,3 +1702,5 @@ export const Constants = {
     },
   },
 } as const
+A new version of Supabase CLI is available: v2.101.0 (currently installed v2.95.4)
+We recommend updating regularly for new features and bug fixes: https://supabase.com/docs/guides/cli/getting-started#updating-the-supabase-cli
