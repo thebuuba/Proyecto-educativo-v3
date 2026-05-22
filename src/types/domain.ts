@@ -12,7 +12,8 @@ export type GradeRecordStatus = 'draft' | 'published' | 'voided'
 
 export type UserRole =
   | 'admin'
-  | 'academic_coordinator'
+  | 'director'
+  | 'coordinator'
   | 'teacher'
   | 'student'
   | 'guardian'

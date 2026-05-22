@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { X } from 'lucide-react'
 
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { navigationRoutes } from '@/routes/appRoutes'
 import { cn } from '@/utils/cn'
 
@@ -10,6 +11,11 @@ type SidebarProps = {
 }
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
+  const { roles } = useAuth()
+  const visibleRoutes = navigationRoutes.filter((item) =>
+    roles.some((role) => item.allowedRoles.includes(role.key)),
+  )
+
   return (
     <>
       <div
@@ -53,7 +59,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         </div>
 
         <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
-          {navigationRoutes.map((item) => {
+          {visibleRoutes.map((item) => {
             const Icon = item.icon
 
             return (

@@ -1,6 +1,7 @@
-import { Bell, Menu, Search } from 'lucide-react'
+import { Bell, LogOut, Menu, Search } from 'lucide-react'
 
 import { useActiveModule } from '@/hooks/useActiveModule'
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 
 type HeaderProps = {
   onOpenSidebar: () => void
@@ -8,6 +9,14 @@ type HeaderProps = {
 
 export function Header({ onOpenSidebar }: HeaderProps) {
   const activeModule = useActiveModule()
+  const { appUser, logout } = useAuth()
+  const initials =
+    appUser?.full_name
+      .split(' ')
+      .map((part) => part[0])
+      .join('')
+      .slice(0, 2)
+      .toUpperCase() || 'AB'
 
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -43,8 +52,17 @@ export function Header({ onOpenSidebar }: HeaderProps) {
           <Bell className="size-5" />
         </button>
 
+        <button
+          type="button"
+          className="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-950"
+          aria-label="Cerrar sesión"
+          onClick={() => void logout()}
+        >
+          <LogOut className="size-5" />
+        </button>
+
         <div className="flex size-10 items-center justify-center rounded-lg bg-slate-900 text-sm font-semibold text-white">
-          AD
+          {initials}
         </div>
       </div>
     </header>

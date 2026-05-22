@@ -972,6 +972,18 @@ for all to authenticated
 using (app_private.has_role('admin'))
 with check (app_private.has_role('admin'));
 
+create policy role_permissions_read_own_roles on public.role_permissions
+for select to authenticated
+using (
+  exists (
+    select 1
+    from public.user_roles ur
+    where ur.role_id = role_permissions.role_id
+      and ur.user_id = app_private.current_app_user_id()
+      and ur.status = 'active'
+  )
+);
+
 create policy app_users_admin_all on public.app_users
 for all to authenticated
 using (app_private.has_role('admin'))
