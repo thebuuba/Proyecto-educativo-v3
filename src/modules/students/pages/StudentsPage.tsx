@@ -1,15 +1,22 @@
-import { AlertCircle, Plus, RefreshCw } from 'lucide-react'
-import { useCallback, useState } from 'react'
+import {
+  AlertCircle,
+  Plus,
+  RefreshCw,
+  TrendingUp,
+  TriangleAlert,
+} from 'lucide-react'
+import { useCallback, useMemo, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
+import { Card, CardContent } from '@/components/ui/Card'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
-import { PageShell } from '@/components/ui/PageShell'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { StudentDetailPanel } from '@/modules/students/components/StudentDetailPanel'
 import { StudentFiltersBar } from '@/modules/students/components/StudentFiltersBar'
 import { StudentForm } from '@/modules/students/components/StudentForm'
 import { StudentsTable } from '@/modules/students/components/StudentsTable'
 import { useStudents } from '@/modules/students/hooks/useStudents'
+import { cn } from '@/utils/cn'
 import type {
   CreateStudentInput,
   StudentListItem,
@@ -41,10 +48,78 @@ export function StudentsPage() {
   const [actionError, setActionError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [deactivateTarget, setDeactivateTarget] = useState<StudentListItem | null>(null)
+  const [selectedCourse, setSelectedCourse] = useState('Todos')
 
   const canManageStudents = hasRole(['admin', 'coordinator'])
   const canViewGuardians =
     hasPermission('academics.read_all') || hasRole(['admin', 'director', 'coordinator'])
+  const totalStudents = students.length
+  const attendanceValues = students
+    .map((student) => student.metrics.attendancePercentage)
+    .filter((value): value is number => value !== null)
+  const averageValues = students
+    .map((student) => student.metrics.averageScore)
+    .filter((value): value is number => value !== null)
+  const averageAttendance =
+    attendanceValues.length > 0
+      ? Math.round(
+          attendanceValues.reduce((total, value) => total + value, 0) /
+            attendanceValues.length,
+        )
+      : null
+  const generalAverage =
+    averageValues.length > 0
+      ? Math.round(
+          (averageValues.reduce((total, value) => total + value, 0) /
+            averageValues.length) *
+            10,
+        ) / 10
+      : null
+  const atRiskStudents = students.filter((student) => {
+    return (
+      student.status !== 'active' ||
+      (student.metrics.attendancePercentage !== null &&
+        student.metrics.attendancePercentage < 70) ||
+      (student.metrics.averageScore !== null && student.metrics.averageScore < 6.5)
+    )
+  }).length
+  const courseOptions = useMemo(() => {
+    const counts = new Map<string, number>()
+
+    for (const student of students) {
+      const gradeName = student.currentEnrollment?.gradeName
+      const sectionName = student.currentEnrollment?.sectionName
+      const label =
+        gradeName && sectionName
+          ? `${gradeName} ${sectionName}`
+          : gradeName ?? sectionName ?? 'Sin curso'
+
+      counts.set(label, (counts.get(label) ?? 0) + 1)
+    }
+
+    return [
+      { label: 'Todos', count: students.length },
+      ...Array.from(counts.entries())
+        .sort(([firstLabel], [secondLabel]) => firstLabel.localeCompare(secondLabel))
+        .map(([label, count]) => ({ label, count })),
+    ]
+  }, [students])
+  const visibleStudents = useMemo(() => {
+    if (selectedCourse === 'Todos') {
+      return students
+    }
+
+    return students.filter((student) => {
+      const gradeName = student.currentEnrollment?.gradeName
+      const sectionName = student.currentEnrollment?.sectionName
+      const label =
+        gradeName && sectionName
+          ? `${gradeName} ${sectionName}`
+          : gradeName ?? sectionName ?? 'Sin curso'
+
+      return label === selectedCourse
+    })
+  }, [selectedCourse, students])
 
   function openCreateForm() {
     setEditingStudent(null)
@@ -114,25 +189,28 @@ export function StudentsPage() {
   )
 
   return (
-    <PageShell
-      title="Estudiantes"
-      description="Gestión de expedientes, matrícula y datos generales de estudiantes."
-    >
-      <div className="space-y-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="text-sm text-muted-foreground">
-            {students.length} registro{students.length === 1 ? '' : 's'} visible
-            {loading ? ' · actualizando' : ''}
+    <section className="mx-auto w-full max-w-7xl">
+      <div className="mb-8 space-y-8">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">
+              Tu salón en un vistazo
+            </p>
+            <h1 className="mt-3 text-4xl font-bold leading-none text-primary sm:text-5xl">
+              Estudiantes
+            </h1>
+            <p className="mt-3 text-base leading-6 text-muted-foreground">
+              Gestiona la matrícula, asistencia y progreso de tus secciones.
+            </p>
           </div>
 
-          <div className="flex gap-2">
-            <Button variant="outline" onClick={() => void refetch()}>
+          <div className="flex flex-col gap-3 sm:flex-row lg:pb-1">
+            <Button variant="outline" className="h-12 px-5" onClick={() => void refetch()}>
               <RefreshCw className="size-4" />
               Actualizar
             </Button>
-
             {canManageStudents ? (
-              <Button variant="primary" onClick={openCreateForm}>
+              <Button variant="primary" className="h-12 px-5" onClick={openCreateForm}>
                 <Plus className="size-4" />
                 Nuevo estudiante
               </Button>
@@ -140,12 +218,101 @@ export function StudentsPage() {
           </div>
         </div>
 
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <Card>
+            <CardContent className="p-5 sm:p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
+                Total estudiantes
+              </p>
+              <div className={cn('mt-6', loading && 'animate-pulse')}>
+                {loading ? (
+                  <div className="h-9 w-20 rounded-lg bg-muted" />
+                ) : (
+                  <p className="text-4xl font-bold leading-none text-primary">
+                    {totalStudents}
+                  </p>
+                )}
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">matriculados</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-5 sm:p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
+                Asistencia
+              </p>
+              <div className={cn('mt-6', loading && 'animate-pulse')}>
+                {loading ? (
+                  <div className="h-9 w-24 rounded-lg bg-muted" />
+                ) : (
+                  <div className="flex items-center gap-3">
+                    <p className="text-4xl font-bold leading-none text-primary">
+                      {averageAttendance === null ? '—' : `${averageAttendance}%`}
+                    </p>
+                    {averageAttendance !== null ? (
+                      <TrendingUp className="size-5 text-success" />
+                    ) : null}
+                  </div>
+                )}
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                registros disponibles
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-5 sm:p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
+                Promedio general
+              </p>
+              <div className={cn('mt-6', loading && 'animate-pulse')}>
+                {loading ? (
+                  <div className="h-9 w-16 rounded-lg bg-muted" />
+                ) : (
+                  <p className="text-4xl font-bold leading-none text-primary">
+                    {generalAverage === null ? '—' : generalAverage.toFixed(1)}
+                  </p>
+                )}
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">sobre 10</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-5 sm:p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
+                En riesgo
+              </p>
+              <div className={cn('mt-6', loading && 'animate-pulse')}>
+                {loading ? (
+                  <div className="h-9 w-16 rounded-lg bg-muted" />
+                ) : (
+                  <div className="flex items-center gap-3">
+                    <p className="text-4xl font-bold leading-none text-destructive">
+                      {atRiskStudents}
+                    </p>
+                    <TriangleAlert className="size-5 text-destructive" />
+                  </div>
+                )}
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">requieren acción</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <div className="space-y-4">
         <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
           <StudentFiltersBar
             search={search}
             filters={filters}
+            courseOptions={courseOptions}
+            selectedCourse={selectedCourse}
             onSearchChange={setSearch}
             onFiltersChange={setFilters}
+            onCourseChange={setSelectedCourse}
           />
 
           {error ? (
@@ -166,9 +333,9 @@ export function StudentsPage() {
             <div className="flex min-h-[280px] items-center justify-center text-sm font-medium text-muted-foreground">
               Cargando estudiantes...
             </div>
-          ) : students.length > 0 ? (
+          ) : visibleStudents.length > 0 ? (
             <StudentsTable
-              students={students}
+              students={visibleStudents}
               canManage={canManageStudents}
               onView={setSelectedStudent}
               onEdit={openEditForm}
@@ -213,6 +380,6 @@ export function StudentsPage() {
           onClose={() => setSelectedStudent(null)}
         />
       ) : null}
-    </PageShell>
+    </section>
   )
 }

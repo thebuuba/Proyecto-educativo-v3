@@ -17,7 +17,22 @@ export type Student = {
   updatedAt: string
 }
 
-export type StudentListItem = Student
+export type StudentListEnrollmentSummary = {
+  id: string
+  gradeName: string | null
+  sectionName: string | null
+}
+
+export type StudentListMetrics = {
+  attendancePercentage: number | null
+  averageScore: number | null
+  pendingCount: number
+}
+
+export type StudentListItem = Student & {
+  currentEnrollment: StudentListEnrollmentSummary | null
+  metrics: StudentListMetrics
+}
 
 export type StudentEnrollmentSummary = {
   id: string
