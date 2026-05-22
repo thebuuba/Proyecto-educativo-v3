@@ -10,8 +10,13 @@ import type {
 } from '@/modules/students/services/importService'
 import { parseCSVFile } from '@/modules/students/services/importService'
 
+type ImportResult = {
+  imported: number
+  errors: { row: number; reason: string }[]
+}
+
 type ImportStudentsModalProps = {
-  onImport: (rows: ParsedStudentRow[]) => Promise<void>
+  onImport: (rows: ParsedStudentRow[]) => Promise<ImportResult>
   onClose: () => void
 }
 
@@ -59,11 +64,11 @@ export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalPr
     setIsSubmitting(true)
 
     try {
-      await onImport(rows)
+      const result = await onImport(rows)
       setParseResult({
-        imported: rows.length,
-        skipped: errors.length,
-        parseErrors: errors,
+        imported: result.imported,
+        skipped: result.errors.length,
+        parseErrors: result.errors,
       })
     } catch (importError) {
       setErrorMessage(

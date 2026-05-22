@@ -365,9 +365,9 @@ export function StudentsPage() {
       {importModalOpen ? (
         <ImportStudentsModal
           onImport={async (rows: ParsedStudentRow[]) => {
-            await importStudents(rows)
-            setImportModalOpen(false)
-            void refetch()
+            const result = await importStudents(rows)
+            await refetch()
+            return result
           }}
           onClose={() => setImportModalOpen(false)}
         />
