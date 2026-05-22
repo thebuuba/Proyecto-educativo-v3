@@ -1,18 +1,19 @@
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
-import { X } from 'lucide-react'
 
-import { AppBrand } from '@/components/common/AppBrand'
 import { Button } from '@/components/ui/Button'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { navigationRoutes } from '@/routes/appRoutes'
 import { cn } from '@/utils/cn'
 
 type SidebarProps = {
+  collapsed: boolean
   isOpen: boolean
   onClose: () => void
+  onToggleCollapse: () => void
 }
 
-export function Sidebar({ isOpen, onClose }: SidebarProps) {
+export function Sidebar({ collapsed, isOpen, onClose, onToggleCollapse }: SidebarProps) {
   const { hasRole } = useAuth()
   const visibleRoutes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
 
@@ -29,12 +30,34 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-40 flex w-72 flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-transform duration-200 lg:translate-x-0',
+          'fixed inset-y-0 left-0 z-40 flex flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-all duration-200 lg:translate-x-0',
+          collapsed ? 'w-16' : 'w-72',
           isOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className="flex h-16 items-center justify-between border-b border-sidebar-border px-5">
-          <AppBrand onClick={onClose} />
+        <div className={cn(
+          'flex h-16 shrink-0 items-center border-b border-sidebar-border',
+          collapsed ? 'justify-center' : 'justify-between px-5',
+        )}>
+          <NavLink
+            to="/"
+            className={cn('flex items-center', collapsed ? '' : 'gap-3')}
+            onClick={onClose}
+          >
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-sidebar-primary text-sm font-bold text-sidebar-primary-foreground">
+              AB
+            </span>
+            {!collapsed && (
+              <span>
+                <span className="block text-sm font-semibold text-sidebar-foreground">
+                  Aula Base
+                </span>
+                <span className="block text-xs text-sidebar-foreground/65">
+                  Gestión estudiantil
+                </span>
+              </span>
+            )}
+          </NavLink>
 
           <Button
             variant="ghost"
@@ -47,7 +70,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           </Button>
         </div>
 
-        <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
+        <nav className="flex-1 space-y-1 overflow-y-auto px-2 py-4">
           {visibleRoutes.map((item) => {
             const Icon = item.icon
 
@@ -59,27 +82,46 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 onClick={onClose}
                 className={({ isActive }) =>
                   cn(
-                    'flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium transition-colors',
+                    'flex min-h-11 items-center rounded-lg text-sm font-medium transition-colors',
+                    collapsed
+                      ? 'justify-center px-0'
+                      : 'gap-3 px-3',
                     isActive
                       ? 'bg-sidebar-primary text-sidebar-primary-foreground'
                       : 'text-sidebar-foreground/75 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
                   )
                 }
+                title={collapsed ? item.label : undefined}
               >
                 <Icon className="size-5 shrink-0" />
-                <span className="truncate">{item.label}</span>
+                {!collapsed && <span className="truncate">{item.label}</span>}
               </NavLink>
             )
           })}
         </nav>
 
-        <div className="border-t border-sidebar-border p-4">
-          <div className="rounded-lg bg-sidebar-accent p-3">
-            <p className="text-xs font-medium text-sidebar-foreground/65">Entorno</p>
-            <p className="mt-1 text-sm font-semibold text-sidebar-foreground">
-              Desarrollo
-            </p>
-          </div>
+        <div className="border-t border-sidebar-border p-3">
+          <button
+            type="button"
+            onClick={onToggleCollapse}
+            className={cn(
+              'flex w-full items-center rounded-lg text-sm font-medium transition-colors',
+              collapsed
+                ? 'justify-center p-2'
+                : 'gap-2 p-2',
+              'text-sidebar-foreground/65 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
+            )}
+            title={collapsed ? 'Expandir menú' : 'Colapsar menú'}
+          >
+            {collapsed ? (
+              <ChevronRight className="size-5 shrink-0" />
+            ) : (
+              <>
+                <ChevronLeft className="size-5 shrink-0" />
+                <span>Colapsar menú</span>
+              </>
+            )}
+          </button>
         </div>
       </aside>
     </>
