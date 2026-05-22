@@ -1,7 +1,5 @@
 import {
   CalendarDays,
-  ChevronLeft,
-  ChevronRight,
   Clock,
   Download,
   MapPin,
@@ -262,10 +260,10 @@ export function SchedulePage() {
           >
             <Settings2 className="size-5" />
           </Button>
-          <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" onClick={() => window.print()}>
             <Printer className="size-5" />
           </Button>
-          <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" onClick={() => window.print()}>
             <Download className="size-5" />
           </Button>
           <Button variant="secondary" onClick={() => setShowEntryForm(true)}>
@@ -277,20 +275,11 @@ export function SchedulePage() {
     >
       <div className="mb-7 rounded-lg border border-border bg-card p-4 shadow-sm">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex items-center gap-5">
-            <Button variant="ghost" size="icon" aria-label="Semana anterior">
-              <ChevronLeft className="size-5" />
-            </Button>
+          <div className="items-center gap-5 hidden sm:flex">
             <div>
               <p className="text-lg font-bold text-primary">{getWeekLabel()}</p>
               <p className="mt-1 text-sm text-muted-foreground">Semana actual</p>
             </div>
-            <Button variant="ghost" size="icon" aria-label="Semana siguiente">
-              <ChevronRight className="size-5" />
-            </Button>
-            <Button variant="outline" className="ml-3 bg-muted shadow-none">
-              Hoy
-            </Button>
           </div>
 
           <div className="inline-flex rounded-lg bg-muted p-1">

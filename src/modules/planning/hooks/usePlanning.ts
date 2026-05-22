@@ -91,14 +91,14 @@ export function usePlanning() {
     if (periods.length > 0 && !activePeriodId) {
       setActivePeriodId(periods[0].id)
     }
-  }, [periods, activePeriodId])
+    if (schoolYearId && periods.length === 0) {
+      setLoading(false)
+    }
+  }, [periods, activePeriodId, schoolYearId])
 
   useEffect(() => {
     if (activePeriodId && schoolYearId) {
       void fetchEntries({ academicPeriodId: activePeriodId })
-    } else {
-      setEntries([])
-      setLoading(false)
     }
   }, [activePeriodId, schoolYearId, fetchEntries])
 

@@ -268,10 +268,10 @@ export async function deletePlanningEntry(id: string): Promise<void> {
   assertEntryError(error, 'No se pudo eliminar la planificación.')
 }
 
-export async function getTeacherSectionSubjects(): Promise<
+export async function getTeacherSectionSubjects(teacherId?: string): Promise<
   { id: string; subjectName: string; sectionName: string; gradeName: string }[]
 > {
-  const { data, error } = await supabase
+  let query = supabase
     .from('section_subjects')
     .select(
       `
@@ -284,6 +284,12 @@ export async function getTeacherSectionSubjects(): Promise<
       `,
     )
     .eq('status', 'active')
+
+  if (teacherId) {
+    query = query.eq('teacher_id', teacherId)
+  }
+
+  const { data, error } = await query
 
   assertNoSupabaseError(error, 'No se pudieron cargar las secciones.')
 

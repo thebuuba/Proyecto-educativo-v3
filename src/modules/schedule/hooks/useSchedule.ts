@@ -41,6 +41,7 @@ export function useSchedule() {
 
   const filtersRef = useRef(filters)
   filtersRef.current = filters
+  const initialLoadDone = useRef(false)
 
   const refetchTimeSlots = useCallback(async () => {
     setError(null)
@@ -167,6 +168,14 @@ export function useSchedule() {
     },
     [refetchEntries],
   )
+
+  useEffect(() => {
+    if (!initialLoadDone.current) {
+      initialLoadDone.current = true
+      return
+    }
+    void refetchEntries()
+  }, [filters, refetchEntries])
 
   const updateFilters = useCallback(
     (newFilters: ScheduleFilters) => {

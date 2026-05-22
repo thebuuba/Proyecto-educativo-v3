@@ -107,14 +107,14 @@ export function StudentDetailPanel({
     }
   }, [canViewGuardians, student.id])
 
-  async function refreshEnrollments() {
+  const refreshEnrollments = useCallback(async () => {
     try {
       const list = await getStudentEnrollments(student.id)
       setEnrollments(list)
     } catch {
       // silently ignore
     }
-  }
+  }, [student.id])
 
   const handleEnrollmentSubmit = useCallback(
     async (input: {

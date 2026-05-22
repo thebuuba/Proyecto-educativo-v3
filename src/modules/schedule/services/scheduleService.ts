@@ -466,27 +466,36 @@ export async function getSectionSubjects(
 }
 
 export async function getScheduleSummary(): Promise<ScheduleSummary> {
-  const { data, error } = await buildScheduleQuery()
+  const currentYear = await getCurrentSchoolYear()
+  const yearId = currentYear?.id
+
+  let query = buildScheduleQuery()
     .eq('status', 'active')
     // Solo se consideran LUN-VIE (day_of_week 1-5).
     // Entradas en sábado (6) o domingo (7) se excluyen del resumen.
     .gte('day_of_week', 1)
     .lte('day_of_week', 5)
-    .order('day_of_week', { ascending: true })
+
+  if (yearId) {
+    query = query.eq('school_year_id', yearId)
+  }
+
+  const { data, error } = await query.order('day_of_week', { ascending: true })
 
   assertNoSupabaseError(error, 'No se pudo cargar el horario.')
 
   const rows = (data ?? []) as ScheduleEntryRow[]
   const sectionIds = Array.from(new Set(rows.map((row) => row.section_id)))
-  const schoolYearIds = Array.from(new Set(rows.map((row) => row.school_year_id)))
-  const { data: enrollmentData, error: enrollmentError } = sectionIds.length
-    ? await supabase
-        .from('enrollments')
-        .select('section_id')
-        .in('section_id', sectionIds)
-        .in('school_year_id', schoolYearIds)
-        .eq('status', 'active')
-    : { data: [], error: null }
+
+  const { data: enrollmentData, error: enrollmentError } =
+    sectionIds.length && yearId
+      ? await supabase
+          .from('enrollments')
+          .select('section_id')
+          .in('section_id', sectionIds)
+          .eq('school_year_id', yearId)
+          .eq('status', 'active')
+      : { data: [], error: null }
 
   assertNoSupabaseError(enrollmentError, 'No se pudo cargar la carga de estudiantes.')
 
