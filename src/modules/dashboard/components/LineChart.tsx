@@ -36,8 +36,8 @@ export function LineChart({ data }: LineChartProps) {
       >
         <defs>
           <linearGradient id="performanceFill" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="#1A1F3A" stopOpacity="0.18" />
-            <stop offset="100%" stopColor="#1A1F3A" stopOpacity="0" />
+            <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.18" />
+            <stop offset="100%" stopColor="var(--primary)" stopOpacity="0" />
           </linearGradient>
         </defs>
         {[0, 1, 2, 3].map((line) => {
@@ -49,7 +49,7 @@ export function LineChart({ data }: LineChartProps) {
               x2={width - padding}
               y1={y}
               y2={y}
-              stroke="#e7ddd1"
+              stroke="var(--border)"
               strokeDasharray="4 6"
             />
           )
@@ -58,10 +58,10 @@ export function LineChart({ data }: LineChartProps) {
           d={`${path} L ${width - padding} ${height - padding} L ${padding} ${height - padding} Z`}
           fill="url(#performanceFill)"
         />
-        <path d={path} fill="none" stroke="#1A1F3A" strokeLinecap="round" strokeWidth="4" />
+        <path d={path} fill="none" stroke="var(--primary)" strokeLinecap="round" strokeWidth="4" />
         {points.map((point) => (
           <g key={point.label}>
-            <circle cx={point.x} cy={point.y} r="5" fill="#fffdf9" stroke="#FF8B6B" strokeWidth="3" />
+            <circle cx={point.x} cy={point.y} r="5" fill="var(--card)" stroke="var(--accent)" strokeWidth="3" />
             <text x={point.x} y={height - 6} textAnchor="middle" className="fill-muted-foreground text-xs">
               {point.label}
             </text>

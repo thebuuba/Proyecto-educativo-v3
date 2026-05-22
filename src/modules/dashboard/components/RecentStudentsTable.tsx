@@ -40,7 +40,7 @@ export function RecentStudentsTable({ students }: RecentStudentsTableProps) {
           </TableHead>
           <TableBody>
             {students.map((student) => (
-              <tr key={student.name} className="hover:bg-muted">
+              <tr key={student.id} className="hover:bg-muted">
                 <TableCell className="font-medium text-foreground">
                   {student.name}
                 </TableCell>

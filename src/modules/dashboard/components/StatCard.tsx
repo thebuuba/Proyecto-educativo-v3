@@ -34,7 +34,14 @@ export function StatCard({
         </div>
       </div>
       <div className="mt-5 flex items-center gap-2 text-sm">
-        <span className="font-semibold text-success">{change}</span>
+        <span
+          className={cn(
+            'font-semibold',
+            change.startsWith('-') ? 'text-destructive' : 'text-success',
+          )}
+        >
+          {change}
+        </span>
         <span className="truncate text-muted-foreground">{trend}</span>
       </div>
     </Card>

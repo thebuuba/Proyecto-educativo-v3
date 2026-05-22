@@ -17,6 +17,7 @@ export type ChartDatum = {
 }
 
 export type RecentStudent = {
+  id: string
   name: string
   grade: string
   status: 'Activo' | 'Nuevo' | 'Seguimiento'

@@ -73,6 +73,7 @@ export const performanceData: ChartDatum[] = [
 
 export const recentStudents: RecentStudent[] = [
   {
+    id: '1',
     name: 'Laura Méndez',
     grade: '4to A',
     status: 'Activo',
@@ -80,6 +81,7 @@ export const recentStudents: RecentStudent[] = [
     attendance: '96%',
   },
   {
+    id: '2',
     name: 'Carlos Jiménez',
     grade: '3ro B',
     status: 'Seguimiento',
@@ -87,6 +89,7 @@ export const recentStudents: RecentStudent[] = [
     attendance: '88%',
   },
   {
+    id: '3',
     name: 'Ana Castillo',
     grade: '5to C',
     status: 'Activo',
@@ -94,6 +97,7 @@ export const recentStudents: RecentStudent[] = [
     attendance: '94%',
   },
   {
+    id: '4',
     name: 'Miguel Santos',
     grade: '2do A',
     status: 'Nuevo',

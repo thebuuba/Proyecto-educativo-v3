@@ -1,6 +1,7 @@
 import type { Session } from '@supabase/supabase-js'
 
 import { supabase } from '@/services/supabase'
+import { firstOrNull } from '@/utils/helpers'
 import type {
   AppUser,
   LoginCredentials,
@@ -14,10 +15,6 @@ type RolePermissionRow = {
 
 type UserRoleRow = {
   roles: Role | Role[] | null
-}
-
-function firstOrNull<T>(value: T | T[] | null): T | null {
-  return Array.isArray(value) ? (value[0] ?? null) : value
 }
 
 export async function login({ email, password }: LoginCredentials) {

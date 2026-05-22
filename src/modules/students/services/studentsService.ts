@@ -1,4 +1,5 @@
 import { supabase } from '@/services/supabase'
+import { firstOrNull } from '@/utils/helpers'
 import type {
   CreateStudentInput,
   Student,
@@ -66,10 +67,6 @@ const studentSelect = `
   created_at,
   updated_at
 `
-
-function firstOrNull<T>(value: T | T[] | null): T | null {
-  return Array.isArray(value) ? (value[0] ?? null) : value
-}
 
 function normalizeOptionalText(value: string | undefined) {
   const trimmed = value?.trim()

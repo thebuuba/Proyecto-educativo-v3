@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
+import { useDebouncedSearch } from '@/hooks/useDebouncedSearch'
 import {
   createStudent as createStudentRecord,
   deactivateStudent as deactivateStudentRecord,
@@ -15,24 +16,6 @@ import type {
 
 const defaultFilters: StudentFilters = {
   status: 'active',
-}
-
-function useDebouncedSearch(delay = 300) {
-  const [raw, setRaw] = useState('')
-  const [debounced, setDebounced] = useState('')
-  const timerRef = useRef<ReturnType<typeof window.setTimeout> | undefined>(undefined)
-
-  useEffect(() => {
-    timerRef.current = window.setTimeout(() => {
-      setDebounced(raw)
-    }, delay)
-
-    return () => {
-      window.clearTimeout(timerRef.current)
-    }
-  }, [raw, delay])
-
-  return { search: raw, debouncedSearch: debounced, setSearch: setRaw }
 }
 
 export function useStudents() {
