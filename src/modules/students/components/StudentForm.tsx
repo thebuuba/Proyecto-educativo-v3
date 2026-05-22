@@ -3,6 +3,9 @@ import type { FormEvent } from 'react'
 import { useState } from 'react'
 import type { ReactNode } from 'react'
 
+import { Button } from '@/components/ui/Button'
+import { Input } from '@/components/ui/Input'
+import { Select } from '@/components/ui/Select'
 import type {
   CreateStudentInput,
   StudentListItem,
@@ -21,6 +24,12 @@ const statusOptions: { value: StudentStatus; label: string }[] = [
   { value: 'active', label: 'Activo' },
   { value: 'inactive', label: 'Inactivo' },
   { value: 'archived', label: 'Archivado' },
+]
+
+const genderOptions = [
+  { value: '', label: 'No especificado' },
+  { value: 'male', label: 'Masculino' },
+  { value: 'female', label: 'Femenino' },
 ]
 
 export function StudentForm({
@@ -62,20 +71,20 @@ export function StudentForm({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/40 px-4 py-6">
-      <div className="w-full max-w-2xl overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl">
-        <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
+      <div className="w-full max-w-2xl overflow-hidden rounded-lg border border-border bg-card shadow-xl">
+        <div className="flex items-center justify-between border-b border-border px-5 py-4">
           <div>
-            <h3 className="text-base font-semibold text-slate-950">
+            <h3 className="text-base font-semibold text-foreground">
               {student ? 'Editar estudiante' : 'Nuevo estudiante'}
             </h3>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-muted-foreground">
               Registra los datos base del expediente académico.
             </p>
           </div>
           <button
             type="button"
-            className="inline-flex size-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+            className="inline-flex size-9 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground"
             aria-label="Cerrar formulario"
             onClick={onClose}
           >
@@ -85,7 +94,7 @@ export function StudentForm({
 
         <form className="space-y-5 p-5" onSubmit={handleSubmit}>
           {validationError || error ? (
-            <div className="flex gap-3 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+            <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
               <p>{validationError || error}</p>
             </div>
@@ -93,105 +102,91 @@ export function StudentForm({
 
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Código">
-              <input
+              <Input
                 type="text"
                 required
                 value={studentCode}
                 onChange={(event) => setStudentCode(event.target.value)}
-                className="h-10 w-full rounded-lg border border-slate-200 px-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
               />
             </Field>
 
             <Field label="Fecha de nacimiento">
-              <input
+              <Input
                 type="date"
                 required
                 value={birthDate}
                 onChange={(event) => setBirthDate(event.target.value)}
-                className="h-10 w-full rounded-lg border border-slate-200 px-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
               />
             </Field>
 
             <Field label="Nombre">
-              <input
+              <Input
                 type="text"
                 required
                 value={firstName}
                 onChange={(event) => setFirstName(event.target.value)}
-                className="h-10 w-full rounded-lg border border-slate-200 px-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
               />
             </Field>
 
             <Field label="Apellido">
-              <input
+              <Input
                 type="text"
                 required
                 value={lastName}
                 onChange={(event) => setLastName(event.target.value)}
-                className="h-10 w-full rounded-lg border border-slate-200 px-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
               />
             </Field>
 
             <Field label="Documento">
-              <input
+              <Input
                 type="text"
                 value={documentId}
                 onChange={(event) => setDocumentId(event.target.value)}
-                className="h-10 w-full rounded-lg border border-slate-200 px-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
               />
             </Field>
 
             <Field label="Género">
-              <select
+              <Select
                 value={gender}
                 onChange={(event) => setGender(event.target.value)}
-                className="h-10 w-full rounded-lg border border-slate-200 px-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
               >
-                <option value="">No especificado</option>
-                <option value="male">Masculino</option>
-                <option value="female">Femenino</option>
-              </select>
+                {genderOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </Select>
             </Field>
 
             <Field label="Estado">
-              <select
+              <Select
                 value={status}
                 onChange={(event) => setStatus(event.target.value as StudentStatus)}
-                className="h-10 w-full rounded-lg border border-slate-200 px-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
               >
                 {statusOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
                 ))}
-              </select>
+              </Select>
             </Field>
 
             <Field label="Dirección">
-              <input
+              <Input
                 type="text"
                 value={address}
                 onChange={(event) => setAddress(event.target.value)}
-                className="h-10 w-full rounded-lg border border-slate-200 px-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
               />
             </Field>
           </div>
 
-          <div className="flex justify-end gap-3 border-t border-slate-100 pt-5">
-            <button
-              type="button"
-              className="inline-flex h-10 items-center justify-center rounded-lg border border-slate-200 px-4 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-              onClick={onClose}
-            >
+          <div className="flex justify-end gap-3 border-t border-border pt-5">
+            <Button variant="outline" onClick={onClose}>
               Cancelar
-            </button>
-            <button
-              type="submit"
-              disabled={submitting}
-              className="inline-flex h-10 items-center justify-center rounded-lg bg-cyan-700 px-4 text-sm font-semibold text-white hover:bg-cyan-800 disabled:cursor-not-allowed disabled:opacity-70"
-            >
+            </Button>
+            <Button type="submit" disabled={submitting} loading={submitting}>
               {submitting ? 'Guardando...' : 'Guardar'}
-            </button>
+            </Button>
           </div>
         </form>
       </div>
@@ -207,7 +202,7 @@ function Field({
   children: ReactNode
 }) {
   return (
-    <label className="block text-sm font-medium text-slate-700">
+    <label className="block text-sm font-medium text-muted-foreground">
       {label}
       <span className="mt-2 block">{children}</span>
     </label>

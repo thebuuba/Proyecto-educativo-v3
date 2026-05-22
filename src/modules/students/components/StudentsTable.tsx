@@ -1,5 +1,13 @@
 import { Eye, Pencil, UserMinus } from 'lucide-react'
 
+import { Button } from '@/components/ui/Button'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeaderCell,
+} from '@/components/ui/Table'
 import { StudentStatusBadge } from '@/modules/students/components/StudentStatusBadge'
 import type { StudentListItem } from '@/modules/students/types'
 
@@ -28,80 +36,80 @@ export function StudentsTable({
 }: StudentsTableProps) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full min-w-[780px] text-left text-sm">
-        <thead className="bg-slate-50 text-xs font-semibold uppercase text-slate-500">
+      <Table className="min-w-[780px]">
+        <TableHead>
           <tr>
-            <th className="px-4 py-3">Estudiante</th>
-            <th className="px-4 py-3">Código</th>
-            <th className="px-4 py-3">Nacimiento</th>
-            <th className="px-4 py-3">Estado</th>
-            <th className="px-4 py-3 text-right">Acciones</th>
+            <TableHeaderCell>Estudiante</TableHeaderCell>
+            <TableHeaderCell>Código</TableHeaderCell>
+            <TableHeaderCell>Nacimiento</TableHeaderCell>
+            <TableHeaderCell>Estado</TableHeaderCell>
+            <TableHeaderCell className="text-right">Acciones</TableHeaderCell>
           </tr>
-        </thead>
-        <tbody className="divide-y divide-slate-100 bg-white">
+        </TableHead>
+        <TableBody>
           {students.map((student) => (
-            <tr key={student.id} className="hover:bg-slate-50">
-              <td className="px-4 py-3">
+            <tr key={student.id} className="hover:bg-muted">
+              <TableCell>
                 <button
                   type="button"
                   className="text-left"
                   onClick={() => onView(student)}
                 >
-                  <span className="block font-medium text-slate-950">
+                  <span className="block font-medium text-foreground">
                     {student.firstName} {student.lastName}
                   </span>
-                  <span className="block text-xs text-slate-500">
+                  <span className="block text-xs text-muted-foreground">
                     {student.documentId || 'Sin documento'}
                   </span>
                 </button>
-              </td>
-              <td className="px-4 py-3 font-medium text-slate-700">
+              </TableCell>
+              <TableCell className="font-medium text-muted-foreground">
                 {student.studentCode}
-              </td>
-              <td className="px-4 py-3 text-slate-600">
+              </TableCell>
+              <TableCell className="text-muted-foreground">
                 {formatDate(student.birthDate)}
-              </td>
-              <td className="px-4 py-3">
+              </TableCell>
+              <TableCell>
                 <StudentStatusBadge status={student.status} />
-              </td>
-              <td className="px-4 py-3">
+              </TableCell>
+              <TableCell>
                 <div className="flex justify-end gap-2">
-                  <button
-                    type="button"
-                    className="inline-flex size-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-950"
+                  <Button
+                    variant="outline"
+                    size="icon"
                     aria-label="Ver detalle"
                     onClick={() => onView(student)}
                   >
                     <Eye className="size-4" />
-                  </button>
+                  </Button>
 
                   {canManage ? (
                     <>
-                      <button
-                        type="button"
-                        className="inline-flex size-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-950"
+                      <Button
+                        variant="outline"
+                        size="icon"
                         aria-label="Editar estudiante"
                         onClick={() => onEdit(student)}
                       >
                         <Pencil className="size-4" />
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex size-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-red-50 hover:text-red-700"
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="icon"
                         aria-label="Desactivar estudiante"
                         disabled={student.status !== 'active'}
                         onClick={() => onDeactivate(student)}
                       >
                         <UserMinus className="size-4" />
-                      </button>
+                      </Button>
                     </>
                   ) : null}
                 </div>
-              </td>
+              </TableCell>
             </tr>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   )
 }

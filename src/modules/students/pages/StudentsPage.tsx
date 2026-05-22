@@ -1,6 +1,8 @@
 import { AlertCircle, Plus, RefreshCw } from 'lucide-react'
 import { useCallback, useState } from 'react'
 
+import { Button } from '@/components/ui/Button'
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { PageShell } from '@/components/ui/PageShell'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { StudentDetailPanel } from '@/modules/students/components/StudentDetailPanel'
@@ -38,6 +40,7 @@ export function StudentsPage() {
   const [formError, setFormError] = useState<string | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [deactivateTarget, setDeactivateTarget] = useState<StudentListItem | null>(null)
 
   const canManageStudents = hasRole(['admin', 'coordinator'])
   const canViewGuardians =
@@ -91,27 +94,23 @@ export function StudentsPage() {
   )
 
   const handleDeactivate = useCallback(
-    async (student: StudentListItem) => {
-      const confirmed = window.confirm(
-        `¿Desactivar a ${student.firstName} ${student.lastName}?`,
-      )
-
-      if (!confirmed) {
-        return
-      }
+    async () => {
+      if (!deactivateTarget) return
 
       try {
-        await deactivateStudent(student.id)
+        await deactivateStudent(deactivateTarget.id)
         setActionError(null)
+        setDeactivateTarget(null)
       } catch (deactivateError) {
         setActionError(
           deactivateError instanceof Error
             ? deactivateError.message
             : 'No se pudo desactivar el estudiante.',
         )
+        setDeactivateTarget(null)
       }
     },
-    [deactivateStudent],
+    [deactivateStudent, deactivateTarget],
   )
 
   return (
@@ -121,35 +120,27 @@ export function StudentsPage() {
     >
       <div className="space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="text-sm text-slate-500">
+          <div className="text-sm text-muted-foreground">
             {students.length} registro{students.length === 1 ? '' : 's'} visible
             {loading ? ' · actualizando' : ''}
           </div>
 
           <div className="flex gap-2">
-            <button
-              type="button"
-              className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-              onClick={() => void refetch()}
-            >
+            <Button variant="outline" onClick={() => void refetch()}>
               <RefreshCw className="size-4" />
               Actualizar
-            </button>
+            </Button>
 
             {canManageStudents ? (
-              <button
-                type="button"
-                className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-cyan-700 px-4 text-sm font-semibold text-white hover:bg-cyan-800"
-                onClick={openCreateForm}
-              >
+              <Button variant="primary" onClick={openCreateForm}>
                 <Plus className="size-4" />
                 Nuevo estudiante
-              </button>
+              </Button>
             ) : null}
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+        <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
           <StudentFiltersBar
             search={search}
             filters={filters}
@@ -158,21 +149,21 @@ export function StudentsPage() {
           />
 
           {error ? (
-            <div className="m-4 flex gap-3 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+            <div className="m-4 flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
               <p>{error}</p>
             </div>
           ) : null}
 
           {actionError ? (
-            <div className="m-4 flex gap-3 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+            <div className="m-4 flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
               <p>{actionError}</p>
             </div>
           ) : null}
 
           {loading ? (
-            <div className="flex min-h-[280px] items-center justify-center text-sm font-medium text-slate-500">
+            <div className="flex min-h-[280px] items-center justify-center text-sm font-medium text-muted-foreground">
               Cargando estudiantes...
             </div>
           ) : students.length > 0 ? (
@@ -181,11 +172,11 @@ export function StudentsPage() {
               canManage={canManageStudents}
               onView={setSelectedStudent}
               onEdit={openEditForm}
-              onDeactivate={(student) => void handleDeactivate(student)}
+              onDeactivate={setDeactivateTarget}
             />
           ) : (
             <div className="flex min-h-[280px] items-center justify-center px-4 text-center">
-              <p className="max-w-md text-sm font-medium text-slate-500">
+              <p className="max-w-md text-sm font-medium text-muted-foreground">
                 No hay estudiantes visibles con los filtros actuales.
               </p>
             </div>
@@ -201,6 +192,17 @@ export function StudentsPage() {
           error={formError}
           onSubmit={handleSubmit}
           onClose={closeForm}
+        />
+      ) : null}
+
+      {deactivateTarget ? (
+        <ConfirmDialog
+          title="Desactivar estudiante"
+          description={`¿Desactivar a ${deactivateTarget.firstName} ${deactivateTarget.lastName}? Esta acción desactivará su expediente.`}
+          confirmLabel="Desactivar"
+          destructive
+          onConfirm={handleDeactivate}
+          onClose={() => setDeactivateTarget(null)}
         />
       ) : null}
 

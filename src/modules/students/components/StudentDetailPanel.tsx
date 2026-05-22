@@ -1,6 +1,7 @@
 import { AlertCircle, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
+import { Badge } from '@/components/ui/Badge'
 import { StudentStatusBadge } from '@/modules/students/components/StudentStatusBadge'
 import { getStudentById } from '@/modules/students/services/studentsService'
 import type { StudentDetail, StudentListItem } from '@/modules/students/types'
@@ -68,19 +69,19 @@ export function StudentDetailPanel({
   const currentStudent = detail ?? student
 
   return (
-    <aside className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-slate-200 bg-white shadow-xl">
-      <div className="flex items-start justify-between border-b border-slate-100 px-5 py-4">
+    <aside className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-border bg-card shadow-xl">
+      <div className="flex items-start justify-between border-b border-border px-5 py-4">
         <div>
-          <p className="text-xs font-medium uppercase text-slate-500">
+          <p className="text-xs font-medium uppercase text-muted-foreground">
             Expediente
           </p>
-          <h3 className="mt-1 text-lg font-semibold text-slate-950">
+          <h3 className="mt-1 text-lg font-semibold text-foreground">
             {currentStudent.firstName} {currentStudent.lastName}
           </h3>
         </div>
         <button
           type="button"
-          className="inline-flex size-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+          className="inline-flex size-9 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground"
           aria-label="Cerrar detalle"
           onClick={onClose}
         >
@@ -90,22 +91,22 @@ export function StudentDetailPanel({
 
       <div className="flex-1 overflow-y-auto p-5">
         {loading ? (
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm font-medium text-slate-500">
+          <div className="rounded-lg border border-border bg-muted p-4 text-sm font-medium text-muted-foreground">
             Cargando detalle...
           </div>
         ) : null}
 
         {error ? (
-          <div className="flex gap-3 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
             <AlertCircle className="mt-0.5 size-4 shrink-0" />
             <p>{error}</p>
           </div>
         ) : null}
 
         <div className="space-y-5">
-          <section className="rounded-lg border border-slate-200 p-4">
+          <section className="rounded-lg border border-border p-4">
             <div className="mb-4 flex items-center justify-between">
-              <h4 className="text-sm font-semibold text-slate-950">
+              <h4 className="text-sm font-semibold text-foreground">
                 Datos personales
               </h4>
               <StudentStatusBadge status={currentStudent.status} />
@@ -128,8 +129,8 @@ export function StudentDetailPanel({
             </dl>
           </section>
 
-          <section className="rounded-lg border border-slate-200 p-4">
-            <h4 className="text-sm font-semibold text-slate-950">
+          <section className="rounded-lg border border-border p-4">
+            <h4 className="text-sm font-semibold text-foreground">
               Matrícula actual
             </h4>
             {detail?.currentEnrollment ? (
@@ -152,36 +153,34 @@ export function StudentDetailPanel({
                 />
               </dl>
             ) : (
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-muted-foreground">
                 No hay matrícula activa visible para este estudiante.
               </p>
             )}
           </section>
 
           {canViewGuardians ? (
-            <section className="rounded-lg border border-slate-200 p-4">
-              <h4 className="text-sm font-semibold text-slate-950">Tutores</h4>
+            <section className="rounded-lg border border-border p-4">
+              <h4 className="text-sm font-semibold text-foreground">Tutores</h4>
               {detail?.guardians.length ? (
                 <div className="mt-4 space-y-3">
                   {detail.guardians.map((guardian) => (
                     <div
                       key={guardian.id}
-                      className="rounded-lg border border-slate-100 bg-slate-50 p-3"
+                      className="rounded-lg border border-border bg-muted p-3"
                     >
                       <div className="flex items-center justify-between gap-3">
-                        <p className="font-medium text-slate-950">
+                        <p className="font-medium text-foreground">
                           {guardian.fullName}
                         </p>
                         {guardian.isPrimary ? (
-                          <span className="rounded-full bg-cyan-50 px-2 py-1 text-xs font-medium text-cyan-700">
-                            Principal
-                          </span>
+                          <Badge tone="accent">Principal</Badge>
                         ) : null}
                       </div>
-                      <p className="mt-1 text-sm text-slate-500">
+                      <p className="mt-1 text-sm text-muted-foreground">
                         {guardian.relationship}
                       </p>
-                      <p className="mt-2 text-sm text-slate-600">
+                      <p className="mt-2 text-sm text-muted-foreground">
                         {guardian.phone || 'Sin teléfono'} ·{' '}
                         {guardian.email || 'Sin correo'}
                       </p>
@@ -189,15 +188,15 @@ export function StudentDetailPanel({
                   ))}
                 </div>
               ) : (
-                <p className="mt-3 text-sm text-slate-500">
+                <p className="mt-3 text-sm text-muted-foreground">
                   No hay tutores visibles para este estudiante.
                 </p>
               )}
             </section>
           ) : null}
 
-          <section className="rounded-lg border border-slate-200 p-4">
-            <h4 className="text-sm font-semibold text-slate-950">Auditoría</h4>
+          <section className="rounded-lg border border-border p-4">
+            <h4 className="text-sm font-semibold text-foreground">Auditoría</h4>
             <dl className="mt-4 grid gap-4 sm:grid-cols-2">
               <DetailItem
                 label="Creado"
@@ -218,8 +217,8 @@ export function StudentDetailPanel({
 function DetailItem({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="text-xs font-medium uppercase text-slate-500">{label}</dt>
-      <dd className="mt-1 text-sm font-medium text-slate-900">{value}</dd>
+      <dt className="text-xs font-medium uppercase text-muted-foreground">{label}</dt>
+      <dd className="mt-1 text-sm font-medium text-foreground">{value}</dd>
     </div>
   )
 }
