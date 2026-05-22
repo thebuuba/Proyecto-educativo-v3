@@ -24,6 +24,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-accent-hover: var(--accent-hover);
+  --color-primary-hover: var(--primary-hover);
+  --color-destructive-hover: var(--destructive-hover);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -59,6 +62,9 @@
   --border: #e7ddd1;
   --input: #e0d6cb;
   --ring: #ff8b6b;
+  --accent-hover: #ff7a56;
+  --primary-hover: #252b4c;
+  --destructive-hover: #b94f4f;
   --sidebar: #1a1f3a;
   --sidebar-foreground: #f8efe7;
   --sidebar-primary: #ff8b6b;
@@ -106,6 +112,9 @@
   --border: #30354f;
   --input: #3b405c;
   --ring: #ff9b7f;
+  --accent-hover: #d97a5f;
+  --primary-hover: #e7ddd1;
+  --destructive-hover: #c95f5f;
   --sidebar: #0f1326;
   --sidebar-foreground: #f8efe7;
   --sidebar-primary: #ff9b7f;
