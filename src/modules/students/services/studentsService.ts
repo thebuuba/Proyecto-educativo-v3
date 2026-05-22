@@ -14,6 +14,11 @@ import type {
   UpdateStudentInput,
 } from '@/modules/students/types'
 import type { ParsedStudentRow } from '@/modules/students/services/importService'
+import type {
+  CreateEnrollmentInput,
+  EnrollmentListItem,
+  GradeWithSections,
+} from '@/modules/students/types'
 import type { Database } from '@/types/database.types'
 import type { EnrollmentStatus, RecordStatus } from '@/types/domain'
 
@@ -564,6 +569,127 @@ async function getCurrentEnrollment(
     gradeName: grade?.name ?? null,
     sectionName: sectionRow?.name ?? null,
   }
+}
+
+export async function createEnrollment(input: CreateEnrollmentInput): Promise<void> {
+  const { error } = await supabase.from('enrollments').insert({
+    student_id: input.studentId,
+    grade_id: input.gradeId,
+    section_id: input.sectionId,
+    school_year_id: input.schoolYearId,
+    enrollment_date: input.enrollmentDate ?? new Date().toISOString().split('T')[0],
+    status: input.status ?? 'active',
+  })
+
+  assertNoSupabaseError(error, 'No se pudo crear la matrícula.')
+}
+
+export async function deleteEnrollment(id: string): Promise<void> {
+  const { error } = await supabase.from('enrollments').delete().eq('id', id)
+  assertNoSupabaseError(error, 'No se pudo eliminar la matrícula.')
+}
+
+export async function getStudentEnrollments(
+  studentId: string,
+): Promise<EnrollmentListItem[]> {
+  const { data, error } = await supabase
+    .from('enrollments')
+    .select(
+      `
+        id,
+        enrollment_date,
+        status,
+        section_id,
+        school_years(name),
+        grades(name)
+      `,
+    )
+    .eq('student_id', studentId)
+    .order('enrollment_date', { ascending: false })
+
+  assertNoSupabaseError(error, 'No se pudieron cargar las matrículas.')
+
+  type Row = {
+    id: string
+    enrollment_date: string
+    status: EnrollmentStatus
+    section_id: string
+    school_years: { name: string } | { name: string }[] | null
+    grades: { name: string } | { name: string }[] | null
+  }
+
+  const enrollments = (data ?? []) as Row[]
+  const sectionIds = enrollments.map((e) => e.section_id)
+
+  const sectionMap = new Map<string, string>()
+
+  if (sectionIds.length > 0) {
+    const { data: sectionData } = await supabase
+      .from('sections')
+      .select('id, name')
+      .in('id', sectionIds)
+
+    for (const section of (sectionData ?? []) as { id: string; name: string }[]) {
+      sectionMap.set(section.id, section.name)
+    }
+  }
+
+  return enrollments.map((enrollment) => ({
+    id: enrollment.id,
+    schoolYearName: firstOrNull(enrollment.school_years)?.name ?? null,
+    gradeName: firstOrNull(enrollment.grades)?.name ?? null,
+    sectionName: sectionMap.get(enrollment.section_id) ?? null,
+    enrollmentDate: enrollment.enrollment_date,
+    status: enrollment.status,
+  }))
+}
+
+export async function getGradesWithSections(): Promise<GradeWithSections[]> {
+  const { data: grades, error: gradesError } = await supabase
+    .from('grades')
+    .select('id, name')
+    .eq('status', 'active')
+    .order('sequence', { ascending: true, nullsFirst: false })
+
+  assertNoSupabaseError(gradesError, 'No se pudieron cargar los grados.')
+
+  const gradeIds = (grades ?? []).map((g) => g.id)
+
+  const { data: sections, error: sectionsError } = await supabase
+    .from('sections')
+    .select('id, name, grade_id')
+    .eq('status', 'active')
+    .in('grade_id', gradeIds)
+    .order('name', { ascending: true })
+
+  assertNoSupabaseError(sectionsError, 'No se pudieron cargar las secciones.')
+
+  const sectionsByGradeId = new Map<string, { id: string; name: string }[]>()
+  for (const section of (sections ?? []) as { id: string; name: string; grade_id: string }[]) {
+    const list = sectionsByGradeId.get(section.grade_id) ?? []
+    list.push({ id: section.id, name: section.name })
+    sectionsByGradeId.set(section.grade_id, list)
+  }
+
+  return (grades ?? []).map((grade) => ({
+    id: grade.id,
+    name: grade.name,
+    sections: sectionsByGradeId.get(grade.id) ?? [],
+  }))
+}
+
+export async function getCurrentSchoolYear(): Promise<{
+  id: string
+  name: string
+} | null> {
+  const { data, error } = await supabase
+    .from('school_years')
+    .select('id, name')
+    .eq('is_current', true)
+    .maybeSingle()
+
+  assertNoSupabaseError(error, 'No se pudo cargar el año escolar actual.')
+  return data
 }
 
 async function getStudentGuardians(

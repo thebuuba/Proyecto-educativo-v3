@@ -71,6 +71,30 @@ export type CreateStudentInput = {
 
 export type UpdateStudentInput = Partial<CreateStudentInput>
 
+export type CreateEnrollmentInput = {
+  studentId: string
+  gradeId: string
+  sectionId: string
+  schoolYearId: string
+  enrollmentDate?: string
+  status?: EnrollmentStatus
+}
+
+export type EnrollmentListItem = {
+  id: string
+  schoolYearName: string | null
+  gradeName: string | null
+  sectionName: string | null
+  enrollmentDate: string
+  status: EnrollmentStatus
+}
+
+export type GradeWithSections = {
+  id: string
+  name: string
+  sections: { id: string; name: string }[]
+}
+
 export type StudentFilters = {
   status: StudentStatus | 'all'
 }

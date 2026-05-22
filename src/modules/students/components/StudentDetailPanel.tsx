@@ -1,11 +1,24 @@
-import { AlertCircle, X } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { AlertCircle, Plus, Trash2, X } from 'lucide-react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { Badge } from '@/components/ui/Badge'
+import { Button } from '@/components/ui/Button'
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { EnrollmentForm } from '@/modules/students/components/EnrollmentForm'
 import { StudentStatusBadge } from '@/modules/students/components/StudentStatusBadge'
-import { getStudentById } from '@/modules/students/services/studentsService'
-import type { StudentDetail, StudentListItem } from '@/modules/students/types'
+import {
+  createEnrollment as createEnrollmentRecord,
+  deleteEnrollment as deleteEnrollmentRecord,
+  getStudentById,
+  getStudentEnrollments,
+} from '@/modules/students/services/studentsService'
+import type {
+  EnrollmentListItem,
+  StudentDetail,
+  StudentListItem,
+} from '@/modules/students/types'
+import type { EnrollmentStatus } from '@/types/domain'
 
 type StudentDetailPanelProps = {
   student: StudentListItem
@@ -21,6 +34,20 @@ function formatDate(value: string) {
   }).format(new Date(value.includes('T') ? value : `${value}T00:00:00`))
 }
 
+const statusBadgeTone: Record<EnrollmentStatus, 'success' | 'warning' | 'destructive' | 'muted'> = {
+  active: 'success',
+  transferred: 'warning',
+  withdrawn: 'destructive',
+  completed: 'muted',
+}
+
+const statusLabel: Record<EnrollmentStatus, string> = {
+  active: 'Activo',
+  transferred: 'Transferido',
+  withdrawn: 'Retirado',
+  completed: 'Completado',
+}
+
 export function StudentDetailPanel({
   student,
   canViewGuardians,
@@ -29,6 +56,12 @@ export function StudentDetailPanel({
   const [detail, setDetail] = useState<StudentDetail | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [enrollments, setEnrollments] = useState<EnrollmentListItem[]>([])
+  const [enrollmentsLoading, setEnrollmentsLoading] = useState(true)
+  const [enrollmentFormOpen, setEnrollmentFormOpen] = useState(false)
+  const [enrollmentError, setEnrollmentError] = useState<string | null>(null)
+  const [isSubmittingEnrollment, setIsSubmittingEnrollment] = useState(false)
+  const [deleteTarget, setDeleteTarget] = useState<EnrollmentListItem | null>(null)
   const panelRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: panelRef, active: true, onEscape: onClose })
 
@@ -40,12 +73,16 @@ export function StudentDetailPanel({
       setError('')
 
       try {
-        const data = await getStudentById(student.id, {
-          includeGuardians: canViewGuardians,
-        })
+        const [data, enrollmentList] = await Promise.all([
+          getStudentById(student.id, {
+            includeGuardians: canViewGuardians,
+          }),
+          getStudentEnrollments(student.id),
+        ])
 
         if (isMounted) {
           setDetail(data)
+          setEnrollments(enrollmentList)
         }
       } catch (detailError) {
         if (isMounted) {
@@ -58,6 +95,7 @@ export function StudentDetailPanel({
       } finally {
         if (isMounted) {
           setLoading(false)
+          setEnrollmentsLoading(false)
         }
       }
     }
@@ -68,6 +106,57 @@ export function StudentDetailPanel({
       isMounted = false
     }
   }, [canViewGuardians, student.id])
+
+  async function refreshEnrollments() {
+    try {
+      const list = await getStudentEnrollments(student.id)
+      setEnrollments(list)
+    } catch {
+      // silently ignore
+    }
+  }
+
+  const handleEnrollmentSubmit = useCallback(
+    async (input: {
+      studentId: string
+      gradeId: string
+      sectionId: string
+      schoolYearId: string
+      enrollmentDate: string
+      status: EnrollmentStatus
+    }) => {
+      setIsSubmittingEnrollment(true)
+      setEnrollmentError(null)
+
+      try {
+        await createEnrollmentRecord(input)
+        setEnrollmentFormOpen(false)
+        setEnrollmentError(null)
+        await refreshEnrollments()
+      } catch (submitError) {
+        setEnrollmentError(
+          submitError instanceof Error
+            ? submitError.message
+            : 'No se pudo crear la matrícula.',
+        )
+      } finally {
+        setIsSubmittingEnrollment(false)
+      }
+    },
+    [],
+  )
+
+  const handleDeleteEnrollment = useCallback(async () => {
+    if (!deleteTarget) return
+
+    try {
+      await deleteEnrollmentRecord(deleteTarget.id)
+      setDeleteTarget(null)
+      await refreshEnrollments()
+    } catch {
+      setDeleteTarget(null)
+    }
+  }, [deleteTarget])
 
   const currentStudent = detail ?? student
 
@@ -162,6 +251,65 @@ export function StudentDetailPanel({
             )}
           </section>
 
+          <section className="rounded-lg border border-border p-4">
+            <div className="flex items-center justify-between">
+              <h4 className="text-sm font-semibold text-foreground">Matrículas</h4>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setEnrollmentError(null)
+                  setEnrollmentFormOpen(true)
+                }}
+              >
+                <Plus className="size-4" />
+                Agregar curso
+              </Button>
+            </div>
+            {enrollmentsLoading ? (
+              <p className="mt-3 text-sm text-muted-foreground">Cargando...</p>
+            ) : enrollments.length > 0 ? (
+              <div className="mt-4 space-y-2">
+                {enrollments.map((enrollment) => (
+                  <div
+                    key={enrollment.id}
+                    className="flex items-center justify-between gap-3 rounded-lg border border-border bg-muted p-3"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-foreground">
+                        {enrollment.gradeName}{' '}
+                        <span className="text-muted-foreground">
+                          ({enrollment.sectionName})
+                        </span>
+                      </p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">
+                        {enrollment.schoolYearName ?? '—'} ·{' '}
+                        {formatDate(enrollment.enrollmentDate)}
+                      </p>
+                    </div>
+                    <div className="flex shrink-0 items-center gap-2">
+                      <Badge tone={statusBadgeTone[enrollment.status]}>
+                        {statusLabel[enrollment.status]}
+                      </Badge>
+                      <button
+                        type="button"
+                        className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground hover:bg-background hover:text-destructive"
+                        aria-label={`Eliminar matrícula de ${enrollment.gradeName}`}
+                        onClick={() => setDeleteTarget(enrollment)}
+                      >
+                        <Trash2 className="size-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="mt-3 text-sm text-muted-foreground">
+                Este estudiante no tiene matrículas registradas.
+              </p>
+            )}
+          </section>
+
           {canViewGuardians ? (
             <section className="rounded-lg border border-border p-4">
               <h4 className="text-sm font-semibold text-foreground">Tutores</h4>
@@ -213,6 +361,27 @@ export function StudentDetailPanel({
           </section>
         </div>
       </div>
+
+      {enrollmentFormOpen ? (
+        <EnrollmentForm
+          studentId={student.id}
+          submitting={isSubmittingEnrollment}
+          error={enrollmentError}
+          onSubmit={handleEnrollmentSubmit}
+          onClose={() => setEnrollmentFormOpen(false)}
+        />
+      ) : null}
+
+      {deleteTarget ? (
+        <ConfirmDialog
+          title="Eliminar matrícula"
+          description={`¿Eliminar la matrícula de ${deleteTarget.gradeName} (${deleteTarget.sectionName})? Esta acción no se puede deshacer.`}
+          confirmLabel="Eliminar"
+          destructive
+          onConfirm={handleDeleteEnrollment}
+          onClose={() => setDeleteTarget(null)}
+        />
+      ) : null}
     </aside>
   )
 }

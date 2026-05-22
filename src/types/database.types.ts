@@ -837,7 +837,7 @@ export type Database = {
           day_of_week: number
           id?: string
           room?: string | null
-          school_id: string
+          school_id?: string
           school_year_id: string
           section_id: string
           section_subject_id: string
@@ -1362,7 +1362,7 @@ export type Database = {
           end_time: string
           id?: string
           name: string
-          school_id: string
+          school_id?: string
           sequence: number
           start_time: string
           status?: Database["public"]["Enums"]["record_status"]
