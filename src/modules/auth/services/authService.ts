@@ -1,4 +1,4 @@
-import type { Session, User } from '@supabase/supabase-js'
+import type { Session } from '@supabase/supabase-js'
 
 import { supabase } from '@/services/supabase'
 import type {
@@ -7,7 +7,6 @@ import type {
   Permission,
   Role,
 } from '@/modules/auth/types/auth'
-import type { UserRole } from '@/types/domain'
 
 type RolePermissionRow = {
   permissions: Permission | Permission[] | null
@@ -52,35 +51,13 @@ export async function getCurrentSession(): Promise<Session | null> {
   return data.session
 }
 
-export async function getCurrentUser(): Promise<User | null> {
-  const session = await getCurrentSession()
-
-  if (!session) {
-    return null
-  }
-
-  const { data, error } = await supabase.auth.getUser()
-
-  if (error) {
-    throw error
-  }
-
-  return data.user
-}
-
 export async function getCurrentAppUser(
-  authUserId?: string,
+  authUserId: string,
 ): Promise<AppUser | null> {
-  const userId = authUserId ?? (await getCurrentUser())?.id
-
-  if (!userId) {
-    return null
-  }
-
   const { data, error } = await supabase
     .from('app_users')
     .select('*')
-    .eq('auth_user_id', userId)
+    .eq('auth_user_id', authUserId)
     .eq('status', 'active')
     .maybeSingle()
 
@@ -135,12 +112,4 @@ export async function getUserPermissions(roles: Role[]): Promise<Permission[]> {
   return Array.from(
     new Map(permissions.map((permission) => [permission.key, permission])).values(),
   )
-}
-
-export function hasRole(roles: Role[], allowedRoles: UserRole[]) {
-  return roles.some((role) => allowedRoles.includes(role.key))
-}
-
-export function hasPermission(permissions: Permission[], permissionKey: string) {
-  return permissions.some((permission) => permission.key === permissionKey)
 }

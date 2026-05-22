@@ -10,7 +10,7 @@ type RequireAuthProps = {
 }
 
 export function RequireAuth({ allowedRoles, children }: RequireAuthProps) {
-  const { isAuthenticated, loading, roles } = useAuth()
+  const { hasRole, isAuthenticated, loading } = useAuth()
   const location = useLocation()
 
   if (loading) {
@@ -27,9 +27,7 @@ export function RequireAuth({ allowedRoles, children }: RequireAuthProps) {
     return <Navigate to="/login" replace state={{ from: location }} />
   }
 
-  const canAccessRoute = roles.some((role) => allowedRoles.includes(role.key))
-
-  if (!canAccessRoute) {
+  if (!hasRole(allowedRoles)) {
     return <Navigate to="/sin-acceso" replace />
   }
 

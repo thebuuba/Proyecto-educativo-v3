@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { AuthContext, type AuthContextValue } from '@/modules/auth/context/AuthContext'
 import {
@@ -17,6 +17,7 @@ import type {
   Role,
 } from '@/modules/auth/types/auth'
 import { isSupabaseConfigured, supabase } from '@/services/supabase'
+import type { UserRole } from '@/types/domain'
 
 type AuthProviderProps = {
   children: ReactNode
@@ -28,24 +29,38 @@ const initialState: AuthState = {
   appUser: null,
   roles: [],
   permissions: [],
-  loading: true,
+  loading: isSupabaseConfigured,
+}
+
+type LoadAuthStateOptions = {
+  showLoading?: boolean
+  throwOnError?: boolean
 }
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [state, setState] = useState<AuthState>(initialState)
+  const skipNextAuthEventRef = useRef(false)
 
-  const loadAuthState = useCallback(async () => {
-    setState((current) => ({ ...current, loading: true }))
+  const clearAuthState = useCallback(() => {
+    setState({
+      user: null,
+      session: null,
+      appUser: null,
+      roles: [],
+      permissions: [],
+      loading: false,
+    })
+  }, [])
+
+  const loadAuthState = useCallback(async (options?: LoadAuthStateOptions) => {
+    const showLoading = options?.showLoading ?? true
+
+    if (showLoading) {
+      setState((current) => ({ ...current, loading: true }))
+    }
 
     if (!isSupabaseConfigured) {
-      setState({
-        user: null,
-        session: null,
-        appUser: null,
-        roles: [],
-        permissions: [],
-        loading: false,
-      })
+      clearAuthState()
       return
     }
 
@@ -54,19 +69,26 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const user = session?.user ?? null
 
       if (!user) {
-        setState({
-          user: null,
-          session: null,
-          appUser: null,
-          roles: [],
-          permissions: [],
-          loading: false,
-        })
+        clearAuthState()
         return
       }
 
       const appUser = await getCurrentAppUser(user.id)
+
+      if (!appUser) {
+        throw new Error(
+          'Tu cuenta existe en Supabase Auth, pero no tiene un perfil activo en Aula Base.',
+        )
+      }
+
       const roles = appUser ? await getUserRoles(appUser.id) : []
+
+      if (roles.length === 0) {
+        throw new Error(
+          'Tu perfil no tiene roles activos asignados. Contacta al administrador.',
+        )
+      }
+
       const permissions = await getUserPermissions(roles)
 
       setState({
@@ -79,59 +101,49 @@ export function AuthProvider({ children }: AuthProviderProps) {
       })
     } catch (error) {
       console.error(error)
-      setState({
-        user: null,
-        session: null,
-        appUser: null,
-        roles: [],
-        permissions: [],
-        loading: false,
-      })
+      clearAuthState()
+
+      if (options?.throwOnError) {
+        throw error
+      }
     }
-  }, [])
+  }, [clearAuthState])
 
   useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      void loadAuthState()
-    }, 0)
-
     if (!isSupabaseConfigured) {
-      return () => {
-        window.clearTimeout(timeoutId)
-      }
+      return undefined
     }
 
     const { data } = supabase.auth.onAuthStateChange(() => {
+      if (skipNextAuthEventRef.current) {
+        skipNextAuthEventRef.current = false
+        return
+      }
+
       window.setTimeout(() => {
-        void loadAuthState()
+        void loadAuthState({ showLoading: false })
       }, 0)
     })
 
     return () => {
-      window.clearTimeout(timeoutId)
       data.subscription.unsubscribe()
     }
-  }, [loadAuthState])
+  }, [clearAuthState, loadAuthState])
 
   const login = useCallback(
     async (credentials: LoginCredentials) => {
+      skipNextAuthEventRef.current = true
       await loginWithPassword(credentials)
-      await loadAuthState()
+      await loadAuthState({ showLoading: true, throwOnError: true })
     },
     [loadAuthState],
   )
 
   const logout = useCallback(async () => {
+    skipNextAuthEventRef.current = true
     await signOut()
-    setState({
-      user: null,
-      session: null,
-      appUser: null,
-      roles: [],
-      permissions: [],
-      loading: false,
-    })
-  }, [])
+    clearAuthState()
+  }, [clearAuthState])
 
   const value = useMemo<AuthContextValue>(() => {
     const roles = state.roles
@@ -142,8 +154,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
       isAuthenticated: Boolean(state.user && state.session),
       login,
       logout,
-      refreshAuth: loadAuthState,
-      hasRole: (roleKeys: string[]) =>
+      refreshAuth: () => loadAuthState(),
+      hasRole: (roleKeys: UserRole[]) =>
         roles.some((role: Role) => roleKeys.includes(role.key)),
       hasPermission: (permissionKey: string) =>
         permissions.some(
