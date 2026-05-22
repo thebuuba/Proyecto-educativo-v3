@@ -50,18 +50,12 @@ export function StudentsTable({
           {students.map((student) => (
             <tr key={student.id} className="hover:bg-muted">
               <TableCell>
-                <button
-                  type="button"
-                  className="text-left"
-                  onClick={() => onView(student)}
-                >
-                  <span className="block font-medium text-foreground">
-                    {student.firstName} {student.lastName}
-                  </span>
-                  <span className="block text-xs text-muted-foreground">
-                    {student.documentId || 'Sin documento'}
-                  </span>
-                </button>
+                <span className="block font-medium text-foreground">
+                  {student.firstName} {student.lastName}
+                </span>
+                <span className="block text-xs text-muted-foreground">
+                  {student.documentId || 'Sin documento'}
+                </span>
               </TableCell>
               <TableCell className="font-medium text-muted-foreground">
                 {student.studentCode}

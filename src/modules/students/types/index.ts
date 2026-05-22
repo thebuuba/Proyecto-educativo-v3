@@ -51,7 +51,7 @@ export type CreateStudentInput = {
   birthDate: string
   gender?: string
   address?: string
-  status: StudentStatus
+  status?: StudentStatus
 }
 
 export type UpdateStudentInput = Partial<CreateStudentInput>

@@ -41,9 +41,6 @@ export type Student = BaseEntity & {
   documentId?: string
   birthDate: string
   gender?: string
-  guardianName?: string
-  guardianPhone?: string
-  guardianEmail?: string
   address?: string
 }
 
