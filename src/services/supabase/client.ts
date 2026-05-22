@@ -4,10 +4,9 @@ import {
   getMissingSupabaseConfigMessage,
   getSupabaseConfig,
 } from '@/services/supabase/config'
-import type { Database } from '@/services/supabase/database.types'
 
-function createUnavailableSupabaseClient(): SupabaseClient<Database> {
-  return new Proxy({} as SupabaseClient<Database>, {
+function createUnavailableSupabaseClient(): SupabaseClient {
+  return new Proxy({} as SupabaseClient, {
     get() {
       throw new Error(getMissingSupabaseConfigMessage())
     },
@@ -18,6 +17,6 @@ const config = getSupabaseConfig()
 
 export const isSupabaseConfigured = config.isConfigured
 
-export const supabase: SupabaseClient<Database> = config.isConfigured
-  ? createClient<Database>(config.url, config.anonKey)
+export const supabase: SupabaseClient = config.isConfigured
+  ? createClient(config.url, config.anonKey)
   : createUnavailableSupabaseClient()

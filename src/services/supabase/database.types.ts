@@ -1,28 +1,9 @@
 /**
- * Placeholder temporal.
+ * Archivo reservado para tipos generados desde Supabase.
  *
- * Reemplazar este archivo después de aplicar las migraciones en Supabase:
+ * No mantener tipos manuales aquí. Después de aplicar las migraciones en un
+ * proyecto real, reemplazar este archivo con:
  *
- * npx supabase gen types typescript --project-id <project-id> \
- *   --schema public > src/services/supabase/database.types.ts
- *
- * No escribir tipos manuales de tablas aquí cuando la base de datos real esté
- * disponible; la fuente de verdad debe ser Supabase/PostgreSQL.
+ * npx supabase gen types typescript --project-id PROJECT_ID --schema public > src/services/supabase/database.types.ts
  */
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | { [key: string]: Json | undefined }
-  | Json[]
-
-export type Database = {
-  public: {
-    Tables: Record<string, never>
-    Views: Record<string, never>
-    Functions: Record<string, never>
-    Enums: Record<string, never>
-    CompositeTypes: Record<string, never>
-  }
-}
+export {}
