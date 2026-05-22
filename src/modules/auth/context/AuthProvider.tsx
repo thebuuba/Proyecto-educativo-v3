@@ -268,6 +268,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     return {
       ...state,
       isAuthenticated: Boolean(state.user && state.session),
+      schoolId: state.appUser?.school_id ?? null,
       login,
       logout,
       refreshAuth: () => loadAuthState({ throwOnError: true }),

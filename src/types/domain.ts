@@ -21,9 +21,16 @@ export type UserRole =
 
 export type BaseEntity = {
   id: string
+  schoolId: string
   status: RecordStatus
   createdAt: string
   updatedAt: string
+}
+
+export type School = BaseEntity & {
+  name: string
+  slug: string
+  logoUrl: string | null
 }
 
 export type Student = BaseEntity & {

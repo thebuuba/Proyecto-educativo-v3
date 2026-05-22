@@ -5,6 +5,7 @@ import type { RecordStatus, UserRole } from '@/types/domain'
 export type AppUser = {
   id: string
   auth_user_id: string
+  school_id: string
   full_name: string
   email: string
   phone: string | null

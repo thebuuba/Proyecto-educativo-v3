@@ -5,6 +5,7 @@ import type { UserRole } from '@/types/domain'
 
 export type AuthContextValue = AuthState & {
   isAuthenticated: boolean
+  schoolId: string | null
   login: (credentials: LoginCredentials) => Promise<void>
   logout: () => Promise<void>
   refreshAuth: () => Promise<void>
