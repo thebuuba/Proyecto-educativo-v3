@@ -1,13 +1,14 @@
 import {
   BookOpen,
   CalendarCheck,
+  CalendarClock,
   ChartNoAxesCombined,
   GraduationCap,
+  Grid3x3,
   LayoutDashboard,
   LibraryBig,
+  NotebookPen,
   Settings,
-  ShieldCheck,
-  SquareUserRound,
   UsersRound,
 } from 'lucide-react'
 import type { ComponentType } from 'react'
@@ -17,11 +18,12 @@ import { AttendancePage } from '@/modules/attendance/pages/AttendancePage'
 import { DashboardPage } from '@/modules/dashboard/pages/DashboardPage'
 import { GradesSectionsPage } from '@/modules/grades-sections/pages/GradesSectionsPage'
 import { ReportsPage } from '@/modules/reports/pages/ReportsPage'
+import { MatrixPage } from '@/modules/matrix/pages/MatrixPage'
+import { PlanningPage } from '@/modules/planning/pages/PlanningPage'
+import { SchedulePage } from '@/modules/schedule/pages/SchedulePage'
 import { SettingsPage } from '@/modules/settings/pages/SettingsPage'
 import { StudentsPage } from '@/modules/students/pages/StudentsPage'
 import { SubjectsPage } from '@/modules/subjects/pages/SubjectsPage'
-import { TeachersPage } from '@/modules/teachers/pages/TeachersPage'
-import { RolesUsersPage } from '@/modules/users-roles/pages/RolesUsersPage'
 import type { UserRole } from '@/types/domain'
 
 export type AppRoute = {
@@ -60,13 +62,6 @@ export const appRoutes: AppRoute[] = [
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
   {
-    path: '/docentes',
-    label: 'Docentes',
-    icon: SquareUserRound,
-    component: TeachersPage,
-    allowedRoles: ['admin', 'director', 'coordinator'],
-  },
-  {
     path: '/asignaturas',
     label: 'Asignaturas',
     icon: BookOpen,
@@ -79,6 +74,13 @@ export const appRoutes: AppRoute[] = [
     icon: LibraryBig,
     component: GradesSectionsPage,
     allowedRoles: ['admin', 'director', 'coordinator'],
+  },
+  {
+    path: '/horario',
+    label: 'Horario',
+    icon: CalendarClock,
+    component: SchedulePage,
+    allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
   {
     path: '/asistencia',
@@ -95,18 +97,25 @@ export const appRoutes: AppRoute[] = [
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher', 'student', 'guardian'],
   },
   {
+    path: '/planificaciones',
+    label: 'Planificaciones',
+    icon: NotebookPen,
+    component: PlanningPage,
+    allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+  },
+  {
+    path: '/matriz',
+    label: 'Matriz',
+    icon: Grid3x3,
+    component: MatrixPage,
+    allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+  },
+  {
     path: '/reportes',
     label: 'Reportes',
     icon: ChartNoAxesCombined,
     component: ReportsPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
-  },
-  {
-    path: '/usuarios-roles',
-    label: 'Usuarios y roles',
-    icon: ShieldCheck,
-    component: RolesUsersPage,
-    allowedRoles: ['admin'],
   },
   {
     path: '/configuracion',
