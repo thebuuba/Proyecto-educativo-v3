@@ -29,9 +29,10 @@ type EnrollmentRow = {
   id: string
   enrollment_date: string
   status: EnrollmentStatus
+  section_id: string
+  grade_id: string
   school_years: { name: string } | { name: string }[] | null
   grades: { name: string } | { name: string }[] | null
-  sections: { name: string } | { name: string }[] | null
 }
 
 type StudentGuardianRow = {
@@ -267,9 +268,10 @@ async function getCurrentEnrollment(
         id,
         enrollment_date,
         status,
+        section_id,
+        grade_id,
         school_years(name),
-        grades(name),
-        sections(name)
+        grades(name)
       `,
     )
     .eq('student_id', studentId)
@@ -287,7 +289,13 @@ async function getCurrentEnrollment(
   const row = data as EnrollmentRow
   const schoolYear = firstOrNull(row.school_years)
   const grade = firstOrNull(row.grades)
-  const section = firstOrNull(row.sections)
+
+  const { data: sectionRow } = await supabase
+    .from('sections')
+    .select('name')
+    .eq('id', row.section_id)
+    .eq('grade_id', row.grade_id)
+    .maybeSingle()
 
   return {
     id: row.id,
@@ -295,7 +303,7 @@ async function getCurrentEnrollment(
     status: row.status,
     schoolYearName: schoolYear?.name ?? null,
     gradeName: grade?.name ?? null,
-    sectionName: section?.name ?? null,
+    sectionName: sectionRow?.name ?? null,
   }
 }
 

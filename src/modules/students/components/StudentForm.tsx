@@ -142,12 +142,15 @@ export function StudentForm({
             </Field>
 
             <Field label="Género">
-              <input
-                type="text"
+              <select
                 value={gender}
                 onChange={(event) => setGender(event.target.value)}
                 className="h-10 w-full rounded-lg border border-slate-200 px-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
-              />
+              >
+                <option value="">No especificado</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+              </select>
             </Field>
 
             <Field label="Estado">

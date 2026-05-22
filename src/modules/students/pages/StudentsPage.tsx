@@ -1,5 +1,5 @@
 import { AlertCircle, Plus, RefreshCw } from 'lucide-react'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import { PageShell } from '@/components/ui/PageShell'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
@@ -63,50 +63,56 @@ export function StudentsPage() {
     setFormError(null)
   }
 
-  async function handleSubmit(input: CreateStudentInput) {
-    setIsSubmitting(true)
-    setFormError(null)
+  const handleSubmit = useCallback(
+    async (input: CreateStudentInput) => {
+      setIsSubmitting(true)
+      setFormError(null)
 
-    try {
-      if (editingStudent) {
-        await updateStudent(editingStudent.id, input)
-      } else {
-        await createStudent(input)
+      try {
+        if (editingStudent) {
+          await updateStudent(editingStudent.id, input)
+        } else {
+          await createStudent(input)
+        }
+
+        setActionError(null)
+        closeForm()
+      } catch (submitError) {
+        setFormError(
+          submitError instanceof Error
+            ? submitError.message
+            : 'No se pudo guardar el estudiante.',
+        )
+      } finally {
+        setIsSubmitting(false)
+      }
+    },
+    [createStudent, editingStudent, updateStudent],
+  )
+
+  const handleDeactivate = useCallback(
+    async (student: StudentListItem) => {
+      const confirmed = window.confirm(
+        `¿Desactivar a ${student.firstName} ${student.lastName}?`,
+      )
+
+      if (!confirmed) {
+        return
       }
 
-      setActionError(null)
-      closeForm()
-    } catch (submitError) {
-      setFormError(
-        submitError instanceof Error
-          ? submitError.message
-          : 'No se pudo guardar el estudiante.',
-      )
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
-  async function handleDeactivate(student: StudentListItem) {
-    const confirmed = window.confirm(
-      `¿Desactivar a ${student.firstName} ${student.lastName}?`,
-    )
-
-    if (!confirmed) {
-      return
-    }
-
-    try {
-      await deactivateStudent(student.id)
-      setActionError(null)
-    } catch (deactivateError) {
-      setActionError(
-        deactivateError instanceof Error
-          ? deactivateError.message
-          : 'No se pudo desactivar el estudiante.',
-      )
-    }
-  }
+      try {
+        await deactivateStudent(student.id)
+        setActionError(null)
+      } catch (deactivateError) {
+        setActionError(
+          deactivateError instanceof Error
+            ? deactivateError.message
+            : 'No se pudo desactivar el estudiante.',
+        )
+      }
+    },
+    [deactivateStudent],
+  )
 
   return (
     <PageShell
