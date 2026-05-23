@@ -14,6 +14,7 @@ import {
 import { lazy } from 'react'
 import type { ComponentType } from 'react'
 
+import { DashboardPage } from '@/modules/dashboard/pages/DashboardPage'
 import type { UserRole } from '@/types/domain'
 
 function lazyPage(importFn: () => Promise<Record<string, unknown>>, exportName: string) {
@@ -22,7 +23,6 @@ function lazyPage(importFn: () => Promise<Record<string, unknown>>, exportName: 
 
 const AcademicGradesPage = lazyPage(() => import('@/modules/academic-grades/pages/AcademicGradesPage'), 'AcademicGradesPage')
 const AttendancePage = lazyPage(() => import('@/modules/attendance/pages/AttendancePage'), 'AttendancePage')
-const DashboardPage = lazyPage(() => import('@/modules/dashboard/pages/DashboardPage'), 'DashboardPage')
 const GradesSectionsPage = lazyPage(() => import('@/modules/grades-sections/pages/GradesSectionsPage'), 'GradesSectionsPage')
 const ReportsPage = lazyPage(() => import('@/modules/reports/pages/ReportsPage'), 'ReportsPage')
 const MatrixPage = lazyPage(() => import('@/modules/matrix/pages/MatrixPage'), 'MatrixPage')
