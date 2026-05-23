@@ -305,7 +305,7 @@ export function SchedulePage() {
             </div>
           </div>
 
-          <div className="inline-flex rounded-lg bg-muted p-1">
+          <div className="no-print inline-flex rounded-lg bg-muted p-1">
             {['Semana', 'Día', 'Lista'].map((view) => (
               <button
                 key={view}
@@ -327,7 +327,7 @@ export function SchedulePage() {
       </div>
 
       {summaryError ? (
-        <div className="mb-4 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
+        <div className="no-print mb-4 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
           {summaryError}
         </div>
       ) : null}
@@ -459,7 +459,7 @@ export function SchedulePage() {
           </div>
         </div>
 
-        <aside className="space-y-6">
+        <aside className="no-print space-y-6">
           <div className="rounded-lg bg-primary p-6 text-primary-foreground shadow-sm">
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-accent">
               Próxima clase
@@ -557,7 +557,7 @@ export function SchedulePage() {
       </div>
 
       {summaryLoading ? (
-        <div className="fixed bottom-4 right-4 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium text-muted-foreground shadow-sm">
+        <div className="no-print fixed bottom-4 right-4 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium text-muted-foreground shadow-sm">
           Cargando horario...
         </div>
       ) : null}
