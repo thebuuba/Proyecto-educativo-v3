@@ -1,463 +1,638 @@
-import {
-  AlertTriangle,
-  BookOpenCheck,
-  CalendarCheck,
-  ClipboardList,
-  FileText,
-  GraduationCap,
-  TrendingUp,
-  UserPlus,
-  UsersRound,
-} from 'lucide-react'
+import { CalendarCheck, ClipboardCheck, FileText, NotebookPen } from 'lucide-react'
 
-import { ALERT, DEFAULTS, THRESHOLD } from '@/constants'
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import { supabase } from '@/services/supabase'
 import { assertNoSupabaseError, firstOrNull } from '@/utils/helpers'
 import type {
-  AcademicAlert,
-  ChartDatum,
-  DashboardStat,
-  DashboardTone,
-  QuickAction,
-  RecentStudent,
+  CreateDashboardTaskInput,
+  DashboardClass,
+  DashboardData,
+  DashboardTask,
+  DashboardTaskPriority,
+  DashboardTaskStatus,
+  RecentActivityItem,
+  WeeklyAttendance,
 } from '@/modules/dashboard/types/dashboard'
-import type {
-  AttendanceStatus,
-  EnrollmentStatus,
-  GradeRecordStatus,
-  RecordStatus,
-} from '@/types/domain'
-
-type AttendanceRow = {
-  enrollment_id: string
-  attendance_date: string
-  status: AttendanceStatus
-}
-
-type GradeRecordRow = {
-  enrollment_id: string
-  academic_period_id: string | null
-  school_year_id: string | null
-  score: number
-  max_score: number
-  status: GradeRecordStatus
-}
+import type { AppUser } from '@/modules/auth/types/auth'
+import type { AttendanceStatus } from '@/types/domain'
 
 type AcademicPeriodRow = {
   id: string
   name: string
+  start_date: string
+  end_date: string
   sequence: number
 }
 
-type RecentStudentRow = {
+type ScheduleEntryRow = {
   id: string
-  first_name: string
-  last_name: string
-  status: RecordStatus
-  created_at: string
-  updated_at: string
+  academic_period_id: string | null
+  section_subject_id: string
+  section_id: string
+  day_of_week: number
+  room: string | null
+  time_slots: unknown
+  section_subjects: unknown
 }
 
-type EnrollmentRow = {
+type EnrollmentCountRow = {
+  section_id: string
+}
+
+type AttendanceRow = {
+  id?: string
+  enrollment_id?: string
+  section_id?: string
+  attendance_date: string
+  status: AttendanceStatus
+  created_at?: string
+  updated_at?: string
+}
+
+type DashboardTaskRow = {
   id: string
-  student_id: string
-  grade_id: string
-  status: EnrollmentStatus
-  grades: { name: string } | { name: string }[] | null
+  title: string
+  due_date: string | null
+  status: string
+  priority: string
 }
 
-const dashboardTones: DashboardTone[] = ['cyan', 'emerald', 'indigo', 'amber']
-
-export function getQuickActions(): QuickAction[] {
-  return [
-    { label: 'Registrar estudiante', icon: UserPlus, path: '/estudiantes' },
-    { label: 'Tomar asistencia', icon: ClipboardList, path: '/asistencia' },
-    { label: 'Cargar calificaciones', icon: BookOpenCheck, path: '/calificaciones' },
-    { label: 'Generar reporte', icon: FileText, path: '/reportes' },
-    { label: 'Ver rendimiento', icon: TrendingUp, path: '/calificaciones' },
-  ]
+type ActivityRow = Record<string, unknown> & {
+  id: string
+  created_at?: string
+  updated_at?: string
 }
 
-export async function getDashboardData(): Promise<{
-  stats: DashboardStat[]
-  attendanceData: ChartDatum[]
-  performanceData: ChartDatum[]
-  recentStudents: RecentStudent[]
-  alerts: AcademicAlert[]
-  quickActions: QuickAction[]
-}> {
-  const [activeStudents, attendanceRows, gradeRows, periods, currentSchoolYear, pendingRecoveries, recentStudents] =
+type DashboardServiceError = {
+  message?: string
+  code?: string
+}
+
+const SCHEDULE_SELECT = `
+  id,
+  academic_period_id,
+  section_subject_id,
+  section_id,
+  day_of_week,
+  room,
+  time_slots!inner(start_time, end_time),
+  section_subjects!inner(
+    subjects!inner(name),
+    grades(name),
+    sections!inner(name)
+  )
+`
+
+const weekdayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']
+
+export async function getDashboardData(appUser: AppUser | null): Promise<DashboardData> {
+  const today = new Date()
+  const todayDate = formatDateKey(today)
+  const currentSchoolYear = await getCurrentSchoolYear()
+  const currentPeriod = currentSchoolYear
+    ? await getCurrentAcademicPeriod(currentSchoolYear.id, todayDate)
+    : null
+
+  const [todayAgenda, weeklyAttendance, tasks, recentActivity, smartSuggestion] =
     await Promise.all([
-      getActiveStudentsCount(),
-      getAttendanceRows(DEFAULTS.RECENT_DAYS),
-      getPublishedGradeRows(),
-      getAcademicPeriods(),
-      getCurrentSchoolYear(),
-      getPendingRecoveriesCount(),
-      getRecentStudents(),
+      safeDashboardBlock(
+        getTodayAgenda(currentSchoolYear?.id ?? null, today, currentPeriod?.id ?? null),
+        [],
+      ),
+      safeDashboardBlock(getWeeklyAttendance(today), getEmptyWeeklyAttendance(today)),
+      safeDashboardBlock(getDashboardTasks(), []),
+      safeDashboardBlock(getRecentActivity(), []),
+      safeDashboardBlock(getSmartSuggestion(today), null),
     ])
 
-  const avgAttendance = getAttendancePercent(attendanceRows)
-  const avgScore = getAverageScore(gradeRows)
-  const alertCount = getLowPerformanceEnrollmentCount(gradeRows)
-
-  const stats: DashboardStat[] = [
-    {
-      label: 'Estudiantes activos',
-      value: formatCount(activeStudents),
-      change: '—',
-      trend: 'registrados',
-      icon: UsersRound,
-      tone: dashboardTones[0],
-    },
-    {
-      label: 'Asistencia promedio',
-      value: formatPercent(avgAttendance),
-      change: '—',
-      trend: 'últimos 30 días',
-      icon: CalendarCheck,
-      tone: dashboardTones[1],
-    },
-    {
-      label: 'Promedio académico',
-      value: formatDecimal(avgScore),
-      change: '—',
-      trend: 'año escolar actual',
-      icon: GraduationCap,
-      tone: dashboardTones[2],
-    },
-    {
-      label: 'Alertas abiertas',
-      value: formatCount(alertCount),
-      change: '—',
-      trend: 'requieren atención',
-      icon: AlertTriangle,
-      tone: dashboardTones[3],
-    },
-  ]
-
-  const attendanceBuckets = createWeekdayBuckets()
-  const chartCutoff = getDateDaysAgo(DEFAULTS.RECENT_DAYS_ATTENDANCE_CHART)
-
-  for (const row of attendanceRows) {
-    if (row.attendance_date < chartCutoff) continue
-
-    const day = getWeekdayIndex(row.attendance_date)
-    attendanceBuckets[day].total += 1
-
-    if (row.status === 'present') {
-      attendanceBuckets[day].present += 1
-    }
-  }
-
-  const attendanceData: ChartDatum[] = attendanceBuckets.map((bucket) => ({
-    label: bucket.label,
-    value: bucket.total > 0 ? roundOne((bucket.present / bucket.total) * 100) : 0,
-  }))
-
-  const periodMap = new Map(periods.map((period) => [period.id, period]))
-  const scoresByPeriod = new Map<string, number[]>()
-
-  for (const row of gradeRows) {
-    if (currentSchoolYear && row.school_year_id !== currentSchoolYear.id) {
-      continue
-    }
-
-    if (!row.academic_period_id || row.max_score <= 0) {
-      continue
-    }
-
-    const periodScores = scoresByPeriod.get(row.academic_period_id) ?? []
-    periodScores.push((row.score / row.max_score) * 100)
-    scoresByPeriod.set(row.academic_period_id, periodScores)
-  }
-
-  const performanceData: ChartDatum[] = periods
-    .filter((period) => scoresByPeriod.has(period.id))
-    .sort((left, right) => left.sequence - right.sequence)
-    .map((period) => ({
-      label: periodMap.get(period.id)?.name ?? period.name,
-      value: roundOne(average(scoresByPeriod.get(period.id) ?? [])),
-    }))
-
-  const lowPerformance = getLowPerformanceEnrollmentCount(gradeRows)
-  const lowAttendance = getLowAttendanceEnrollmentCount(attendanceRows)
-
-  const alerts: AcademicAlert[] = [
-    {
-      title: 'Rendimiento bajo',
-      description: `${lowPerformance} estudiantes requieren revisión de calificaciones.`,
-      severity: getSeverity(lowPerformance, ALERT.PERFORMANCE_HIGH),
-    },
-    {
-      title: 'Asistencia irregular',
-      description: `${lowAttendance} registros por debajo del umbral mensual.`,
-      severity: getSeverity(lowAttendance, ALERT.ATTENDANCE_HIGH),
-    },
-    {
-      title: 'Recuperación pendiente',
-      description: `${pendingRecoveries} notas de recuperación por publicar.`,
-      severity: getSeverity(pendingRecoveries, ALERT.RECOVERY_HIGH),
-    },
-  ]
-
   return {
-    stats,
-    attendanceData,
-    performanceData,
-    recentStudents,
-    alerts,
-    quickActions: getQuickActions(),
+    context: {
+      firstName: getFirstName(appUser?.full_name),
+      formattedDate: formatLongDate(today),
+      schoolYearName: currentSchoolYear?.name ?? 'Sin año activo',
+      periodName: currentPeriod?.name ?? 'Sin período activo',
+    },
+    nextClass: getNextClass(todayAgenda),
+    todayAgenda,
+    weeklyAttendance,
+    tasks,
+    recentActivity,
+    smartSuggestion,
   }
 }
 
-async function getRecentStudents(): Promise<RecentStudent[]> {
-  const { data: studentsData, error: studentsError } = await supabase
-    .from('students')
-    .select('id, first_name, last_name, status, created_at, updated_at')
+export async function createDashboardTask(
+  input: CreateDashboardTaskInput,
+  appUserId: string | null,
+): Promise<DashboardTask> {
+  const title = input.title.trim()
+
+  if (!title) {
+    throw new Error('Escribe un título para la tarea.')
+  }
+
+  const { data, error } = await supabase
+    .from('dashboard_tasks')
+    .insert({
+      title,
+      due_date: input.dueDate || null,
+      assigned_to: appUserId,
+    })
+    .select('id, title, due_date, status, priority')
+    .single()
+
+  if (isMissingDashboardTasksTable(error)) {
+    throw new Error('La tabla de pendientes aún no está aplicada en Supabase.')
+  }
+
+  assertNoSupabaseError(error, 'No se pudo crear la tarea.')
+  return mapTask(data as DashboardTaskRow)
+}
+
+export async function completeDashboardTask(id: string): Promise<void> {
+  const { error } = await supabase
+    .from('dashboard_tasks')
+    .update({ status: 'completed' })
+    .eq('id', id)
+
+  if (isMissingDashboardTasksTable(error)) {
+    throw new Error('La tabla de pendientes aún no está aplicada en Supabase.')
+  }
+
+  assertNoSupabaseError(error, 'No se pudo completar la tarea.')
+}
+
+async function getCurrentAcademicPeriod(
+  schoolYearId: string,
+  todayDate: string,
+): Promise<AcademicPeriodRow | null> {
+  const { data, error } = await supabase
+    .from('academic_periods')
+    .select('id, name, start_date, end_date, sequence')
+    .eq('school_year_id', schoolYearId)
     .eq('status', 'active')
-    .order('updated_at', { ascending: false })
-    .limit(10)
+    .lte('start_date', todayDate)
+    .gte('end_date', todayDate)
+    .order('sequence', { ascending: true })
+    .limit(1)
+    .maybeSingle()
 
-  assertNoSupabaseError(studentsError, 'No se pudieron cargar estudiantes recientes.')
+  assertNoSupabaseError(error, 'No se pudo cargar el período académico actual.')
+  return data as AcademicPeriodRow | null
+}
 
-  const students = (studentsData ?? []) as RecentStudentRow[]
-  const studentIds = students.map((student) => student.id)
+async function getTodayAgenda(
+  schoolYearId: string | null,
+  today: Date,
+  academicPeriodId: string | null,
+): Promise<DashboardClass[]> {
+  const dayOfWeek = getSchoolDay(today)
 
-  if (studentIds.length === 0) {
+  if (dayOfWeek > 5) {
     return []
   }
 
-  const { data: enrollmentsData, error: enrollmentsError } = await supabase
+  let query = supabase
+    .from('schedule_entries')
+    .select(SCHEDULE_SELECT)
+    .eq('status', 'active')
+    .eq('day_of_week', dayOfWeek)
+
+  if (schoolYearId) {
+    query = query.eq('school_year_id', schoolYearId)
+  }
+
+  if (academicPeriodId) {
+    query = query.or(`academic_period_id.is.null,academic_period_id.eq.${academicPeriodId}`)
+  }
+
+  const { data, error } = await query
+  assertNoSupabaseError(error, 'No se pudo cargar la agenda de hoy.')
+
+  const rows = (data ?? []) as ScheduleEntryRow[]
+  const studentCountBySectionId = await getStudentCounts(
+    rows.map((row) => row.section_id),
+    schoolYearId,
+  )
+
+  return rows
+    .map((row) => mapDashboardClass(row, today, studentCountBySectionId))
+    .sort((left, right) => left.startTime.localeCompare(right.startTime))
+}
+
+async function getStudentCounts(
+  sectionIds: string[],
+  schoolYearId: string | null,
+): Promise<Map<string, number>> {
+  const uniqueIds = Array.from(new Set(sectionIds))
+
+  if (uniqueIds.length === 0 || !schoolYearId) {
+    return new Map()
+  }
+
+  const { data, error } = await supabase
     .from('enrollments')
-    .select('id, student_id, grade_id, status, grades(name)')
-    .in('student_id', studentIds)
+    .select('section_id')
+    .in('section_id', uniqueIds)
+    .eq('school_year_id', schoolYearId)
     .eq('status', 'active')
 
-  assertNoSupabaseError(enrollmentsError, 'No se pudieron cargar matrículas recientes.')
+  assertNoSupabaseError(error, 'No se pudo cargar la cantidad de estudiantes.')
 
-  const enrollments = (enrollmentsData ?? []) as EnrollmentRow[]
-  const enrollmentIds = enrollments.map((enrollment) => enrollment.id)
-  const [gradeRows, attendanceRows] =
-    enrollmentIds.length > 0
-      ? await Promise.all([
-          getPublishedGradeRowsByEnrollments(enrollmentIds),
-          getAttendanceRowsByEnrollments(enrollmentIds, DEFAULTS.RECENT_DAYS),
-        ])
-      : [[], []]
+  const counts = new Map<string, number>()
+  for (const enrollment of (data ?? []) as EnrollmentCountRow[]) {
+    counts.set(enrollment.section_id, (counts.get(enrollment.section_id) ?? 0) + 1)
+  }
 
-  return students.map((student) => {
-    const enrollment = enrollments.find((item) => item.student_id === student.id)
-    const grades = enrollment
-      ? gradeRows.filter((row) => row.enrollment_id === enrollment.id)
-      : []
-    const attendance = enrollment
-      ? attendanceRows.filter((row) => row.enrollment_id === enrollment.id)
-      : []
-    const averageScore = getAverageScore(grades)
-    const attendancePercent = getAttendancePercent(attendance)
-    const isNew = isWithinDays(student.created_at, DEFAULTS.RECENT_DAYS)
-    const needsFollowUp =
-      (averageScore !== null && averageScore < THRESHOLD.PERFORMANCE_LOW) ||
-      (attendancePercent !== null && attendancePercent < THRESHOLD.ATTENDANCE_ALERT)
-    const grade = firstOrNull(enrollment?.grades ?? null)
+  return counts
+}
 
-    return {
-      id: student.id,
-      name: `${student.first_name} ${student.last_name}`,
-      grade: grade?.name ?? 'Sin matrícula',
-      status: needsFollowUp ? 'Seguimiento' : isNew ? 'Nuevo' : 'Activo',
-      average: formatPercent(averageScore),
-      attendance: formatPercent(attendancePercent),
-    }
+async function getWeeklyAttendance(today: Date): Promise<WeeklyAttendance> {
+  const weekStart = getWeekStart(today)
+  const weekEnd = addDays(weekStart, 4)
+  const previousWeekStart = addDays(weekStart, -7)
+  const previousWeekEnd = addDays(weekEnd, -7)
+
+  const { data, error } = await supabase
+    .from('attendance_daily')
+    .select('attendance_date, status')
+    .gte('attendance_date', formatDateKey(previousWeekStart))
+    .lte('attendance_date', formatDateKey(weekEnd))
+
+  assertNoSupabaseError(error, 'No se pudo cargar la asistencia semanal.')
+  const rows = (data ?? []) as AttendanceRow[]
+  const currentRows = rows.filter((row) => isBetweenDate(row.attendance_date, weekStart, weekEnd))
+  const previousRows = rows.filter((row) =>
+    isBetweenDate(row.attendance_date, previousWeekStart, previousWeekEnd),
+  )
+
+  const average = getAttendancePercent(currentRows)
+  const previousAverage = getAttendancePercent(previousRows)
+
+  return {
+    average,
+    trendPercent:
+      average !== null && previousAverage !== null
+        ? roundOne(average - previousAverage)
+        : null,
+    activityCount: currentRows.length,
+    days: weekdayLabels.map((label, index) => {
+      const date = addDays(weekStart, index)
+      const dayRows = currentRows.filter((row) => row.attendance_date === formatDateKey(date))
+
+      return {
+        label,
+        value: getAttendancePercent(dayRows),
+        isToday: formatDateKey(date) === formatDateKey(today),
+      }
+    }),
+  }
+}
+
+async function getDashboardTasks(): Promise<DashboardTask[]> {
+  const { data, error } = await supabase
+    .from('dashboard_tasks')
+    .select('id, title, due_date, status, priority')
+    .eq('status', 'pending')
+    .order('due_date', { ascending: true, nullsFirst: false })
+    .order('created_at', { ascending: false })
+    .limit(8)
+
+  if (isMissingDashboardTasksTable(error)) {
+    return []
+  }
+
+  assertNoSupabaseError(error, 'No se pudieron cargar los pendientes.')
+  return ((data ?? []) as DashboardTaskRow[]).map(mapTask)
+}
+
+async function getRecentActivity(): Promise<RecentActivityItem[]> {
+  const [grades, attendance, planning, reports] = await Promise.all([
+    getGradeActivity(),
+    getAttendanceActivity(),
+    getPlanningActivity(),
+    getReportActivity(),
+  ])
+
+  return [...grades, ...attendance, ...planning, ...reports]
+    .sort((left, right) => new Date(right.occurredAt).getTime() - new Date(left.occurredAt).getTime())
+    .slice(0, 6)
+}
+
+async function getGradeActivity(): Promise<RecentActivityItem[]> {
+  const { data, error } = await supabase
+    .from('grades_records')
+    .select('id, assessment_name, created_at, section_subjects(subjects(name), grades(name), sections(name))')
+    .order('created_at', { ascending: false })
+    .limit(5)
+
+  assertNoSupabaseError(error, 'No se pudo cargar la actividad de calificaciones.')
+
+  return ((data ?? []) as ActivityRow[]).map((row) => {
+    const subject = getJoinedName(row.section_subjects, 'subjects')
+    const grade = getJoinedName(row.section_subjects, 'grades')
+
+    return createActivity({
+      id: `grade-${row.id}`,
+      kind: 'grade',
+      title: `Calificaste ${String(row.assessment_name ?? 'evaluación')}`,
+      description: [grade, subject].filter(Boolean).join(' · ') || 'Calificación actualizada',
+      occurredAt: row.created_at ?? new Date().toISOString(),
+    })
   })
 }
 
-async function getActiveStudentsCount() {
-  const { count, error } = await supabase
-    .from('students')
-    .select('id', { count: 'exact', head: true })
-    .eq('status', 'active')
-
-  assertNoSupabaseError(error, 'No se pudo contar estudiantes activos.')
-  return count ?? 0
-}
-
-async function getAttendanceRows(days: number): Promise<AttendanceRow[]> {
+async function getAttendanceActivity(): Promise<RecentActivityItem[]> {
   const { data, error } = await supabase
     .from('attendance_daily')
-    .select('enrollment_id, attendance_date, status')
-    .gte('attendance_date', getDateDaysAgo(days))
+    .select('id, attendance_date, updated_at')
+    .order('updated_at', { ascending: false })
+    .limit(5)
 
-  assertNoSupabaseError(error, 'No se pudo cargar la asistencia.')
-  return (data ?? []) as AttendanceRow[]
+  assertNoSupabaseError(error, 'No se pudo cargar la actividad de asistencia.')
+
+  return ((data ?? []) as ActivityRow[]).map((row) =>
+    createActivity({
+      id: `attendance-${row.id}`,
+      kind: 'attendance',
+      title: 'Marcaste asistencia',
+      description: `Registro del ${formatShortDate(String(row.attendance_date))}`,
+      occurredAt: row.updated_at ?? new Date().toISOString(),
+    }),
+  )
 }
 
-async function getAttendanceRowsByEnrollments(
-  enrollmentIds: string[],
-  days: number,
-): Promise<AttendanceRow[]> {
+async function getPlanningActivity(): Promise<RecentActivityItem[]> {
+  const { data, error } = await supabase
+    .from('planning_entries')
+    .select('id, title, updated_at')
+    .order('updated_at', { ascending: false })
+    .limit(5)
+
+  assertNoSupabaseError(error, 'No se pudo cargar la actividad de planificación.')
+
+  return ((data ?? []) as ActivityRow[]).map((row) =>
+    createActivity({
+      id: `planning-${row.id}`,
+      kind: 'planning',
+      title: 'Planificación actualizada',
+      description: String(row.title ?? 'Planificación'),
+      occurredAt: row.updated_at ?? new Date().toISOString(),
+    }),
+  )
+}
+
+async function getReportActivity(): Promise<RecentActivityItem[]> {
+  const { data, error } = await supabase
+    .from('reports')
+    .select('id, title, created_at')
+    .order('created_at', { ascending: false })
+    .limit(5)
+
+  assertNoSupabaseError(error, 'No se pudo cargar la actividad de reportes.')
+
+  return ((data ?? []) as ActivityRow[]).map((row) =>
+    createActivity({
+      id: `report-${row.id}`,
+      kind: 'report',
+      title: 'Reporte generado',
+      description: String(row.title ?? 'Reporte académico'),
+      occurredAt: row.created_at ?? new Date().toISOString(),
+    }),
+  )
+}
+
+async function getSmartSuggestion(today: Date) {
+  const start = addDays(today, -6)
   const { data, error } = await supabase
     .from('attendance_daily')
-    .select('enrollment_id, attendance_date, status')
-    .in('enrollment_id', enrollmentIds)
-    .gte('attendance_date', getDateDaysAgo(days))
+    .select('enrollment_id, status, attendance_date')
+    .gte('attendance_date', formatDateKey(start))
+    .lte('attendance_date', formatDateKey(today))
+    .eq('status', 'absent')
 
-  assertNoSupabaseError(error, 'No se pudo cargar asistencia de estudiantes.')
-  return (data ?? []) as AttendanceRow[]
-}
+  assertNoSupabaseError(error, 'No se pudo cargar la sugerencia inteligente.')
 
-async function getPublishedGradeRows(): Promise<GradeRecordRow[]> {
-  const { data, error } = await supabase
-    .from('grades_records')
-    .select('enrollment_id, academic_period_id, school_year_id, score, max_score, status')
-    .eq('status', 'published')
+  const absencesByEnrollment = new Map<string, number>()
+  for (const row of (data ?? []) as AttendanceRow[]) {
+    if (!row.enrollment_id) continue
+    absencesByEnrollment.set(row.enrollment_id, (absencesByEnrollment.get(row.enrollment_id) ?? 0) + 1)
+  }
 
-  assertNoSupabaseError(error, 'No se pudieron cargar calificaciones.')
-  return (data ?? []) as GradeRecordRow[]
-}
+  const flaggedCount = Array.from(absencesByEnrollment.values()).filter((count) => count >= 3).length
 
-async function getPublishedGradeRowsByEnrollments(
-  enrollmentIds: string[],
-): Promise<GradeRecordRow[]> {
-  const { data, error } = await supabase
-    .from('grades_records')
-    .select('enrollment_id, academic_period_id, school_year_id, score, max_score, status')
-    .in('enrollment_id', enrollmentIds)
-    .eq('status', 'published')
-
-  assertNoSupabaseError(error, 'No se pudieron cargar promedios recientes.')
-  return (data ?? []) as GradeRecordRow[]
-}
-
-async function getAcademicPeriods(): Promise<AcademicPeriodRow[]> {
-  const { data, error } = await supabase
-    .from('academic_periods')
-    .select('id, name, sequence')
-    .order('sequence', { ascending: true })
-
-  assertNoSupabaseError(error, 'No se pudieron cargar los trimestres académicos.')
-  return (data ?? []) as AcademicPeriodRow[]
-}
-
-async function getPendingRecoveriesCount() {
-  const { count, error } = await supabase
-    .from('pedagogical_recoveries')
-    .select('id', { count: 'exact', head: true })
-    .neq('status', 'published')
-
-  assertNoSupabaseError(error, 'No se pudieron contar recuperaciones pendientes.')
-  return count ?? 0
-}
-
-function getAttendancePercent(rows: AttendanceRow[]) {
-  if (rows.length === 0) {
+  if (flaggedCount === 0) {
     return null
   }
 
+  return {
+    title: `${flaggedCount} estudiante${flaggedCount === 1 ? '' : 's'} acumula${flaggedCount === 1 ? '' : 'n'} 3+ ausencias esta semana.`,
+    description: 'Puedes revisar asistencia y preparar seguimiento familiar.',
+    actionLabel: 'Revisar',
+    path: '/asistencia',
+  }
+}
+
+function mapDashboardClass(
+  row: ScheduleEntryRow,
+  today: Date,
+  studentCountBySectionId: Map<string, number>,
+): DashboardClass {
+  const timeSlot = firstOrNull(row.time_slots) as { start_time: string; end_time: string }
+  const sectionSubject = firstOrNull(row.section_subjects) as Record<string, unknown>
+  const subject = firstOrNull(sectionSubject.subjects) as { name: string } | null
+  const grade = firstOrNull(sectionSubject.grades) as { name: string } | null
+  const section = firstOrNull(sectionSubject.sections) as { name: string } | null
+  const start = getDateTime(today, timeSlot.start_time)
+  const end = getDateTime(today, timeSlot.end_time)
+  const now = today.getTime()
+  const startsInMinutes = Math.ceil((start.getTime() - now) / 60000)
+
+  return {
+    id: row.id,
+    subjectName: subject?.name ?? 'Clase',
+    gradeName: grade?.name ?? '—',
+    sectionName: section?.name ?? '—',
+    startTime: timeSlot.start_time,
+    endTime: timeSlot.end_time,
+    durationMinutes: Math.max(Math.round((end.getTime() - start.getTime()) / 60000), 0),
+    room: row.room,
+    studentCount: studentCountBySectionId.get(row.section_id) ?? 0,
+    dayOfWeek: row.day_of_week,
+    sectionId: row.section_id,
+    sectionSubjectId: row.section_subject_id,
+    academicPeriodId: row.academic_period_id,
+    startsInMinutes: startsInMinutes > 0 ? startsInMinutes : now < end.getTime() ? 0 : null,
+    status: now >= start.getTime() && now < end.getTime()
+      ? 'current'
+      : now < start.getTime()
+        ? 'upcoming'
+        : 'completed',
+  }
+}
+
+function mapTask(row: DashboardTaskRow): DashboardTask {
+  return {
+    id: row.id,
+    title: row.title,
+    dueDate: row.due_date,
+    status: normalizeTaskStatus(row.status),
+    priority: normalizeTaskPriority(row.priority),
+  }
+}
+
+function createActivity(input: Omit<RecentActivityItem, 'relativeTime'>): RecentActivityItem {
+  return {
+    ...input,
+    relativeTime: formatRelativeTime(input.occurredAt),
+  }
+}
+
+function getNextClass(classes: DashboardClass[]) {
+  return (
+    classes.find((item) => item.status === 'current') ??
+    classes.find((item) => item.status === 'upcoming') ??
+    classes.find((item) => item.status === 'completed') ??
+    null
+  )
+}
+
+function getJoinedName(raw: unknown, key: string) {
+  const parent = firstOrNull(raw) as Record<string, unknown> | null
+  const child = firstOrNull(parent?.[key] ?? null) as { name?: string } | null
+  return child?.name ?? ''
+}
+
+function getAttendancePercent(rows: AttendanceRow[]) {
+  if (rows.length === 0) return null
   const present = rows.filter((row) => row.status === 'present').length
   return roundOne((present / rows.length) * 100)
 }
 
-function getAverageScore(rows: GradeRecordRow[]) {
-  const scores = rows
-    .filter((row) => row.max_score > 0)
-    .map((row) => (row.score / row.max_score) * 100)
+async function safeDashboardBlock<T>(promise: Promise<T>, fallback: T): Promise<T> {
+  try {
+    return await promise
+  } catch (error) {
+    console.warn('Dashboard block failed', error)
+    return fallback
+  }
+}
 
-  if (scores.length === 0) {
-    return null
+function getEmptyWeeklyAttendance(today: Date): WeeklyAttendance {
+  return {
+    average: null,
+    trendPercent: null,
+    activityCount: 0,
+    days: weekdayLabels.map((label, index) => ({
+      label,
+      value: null,
+      isToday: formatDateKey(addDays(getWeekStart(today), index)) === formatDateKey(today),
+    })),
+  }
+}
+
+function isMissingDashboardTasksTable(error: DashboardServiceError | null) {
+  if (!error) {
+    return false
   }
 
-  return roundOne(average(scores))
+  const message = error.message?.toLowerCase() ?? ''
+
+  return (
+    error.code === '42P01' ||
+    error.code === 'PGRST205' ||
+    (message.includes('dashboard_tasks') &&
+      (message.includes('schema cache') || message.includes('could not find the table')))
+  )
 }
 
-function getLowPerformanceEnrollmentCount(rows: GradeRecordRow[]) {
-  const scoresByEnrollment = new Map<string, number[]>()
-
-  for (const row of rows) {
-    if (row.max_score <= 0) {
-      continue
-    }
-
-    const scores = scoresByEnrollment.get(row.enrollment_id) ?? []
-    scores.push((row.score / row.max_score) * 100)
-    scoresByEnrollment.set(row.enrollment_id, scores)
-  }
-
-  return Array.from(scoresByEnrollment.values()).filter(
-    (scores) => average(scores) < THRESHOLD.PERFORMANCE_LOW,
-  ).length
+function getFirstName(name?: string | null) {
+  const first = name?.trim().split(/\s+/)[0]
+  return first || 'docente'
 }
 
-function getLowAttendanceEnrollmentCount(rows: AttendanceRow[]) {
-  const attendanceByEnrollment = new Map<string, AttendanceRow[]>()
-
-  for (const row of rows) {
-    const enrollmentAttendance = attendanceByEnrollment.get(row.enrollment_id) ?? []
-    enrollmentAttendance.push(row)
-    attendanceByEnrollment.set(row.enrollment_id, enrollmentAttendance)
-  }
-
-  return Array.from(attendanceByEnrollment.values()).filter((attendance) => {
-    const percent = getAttendancePercent(attendance)
-    return percent !== null && percent < THRESHOLD.ATTENDANCE_ALERT
-  }).length
+function getSchoolDay(date: Date) {
+  const day = date.getDay()
+  return day === 0 ? 7 : day
 }
 
-function createWeekdayBuckets() {
-  return ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'].map((label) => ({
-    label,
-    present: 0,
-    total: 0,
-  }))
+function getWeekStart(date: Date) {
+  const start = new Date(date)
+  const day = getSchoolDay(start)
+  start.setDate(start.getDate() - (day - 1))
+  start.setHours(0, 0, 0, 0)
+  return start
 }
 
-function getWeekdayIndex(date: string) {
-  const day = new Date(`${date}T00:00:00`).getDay()
-  return day === 0 ? 6 : day - 1
+function addDays(date: Date, days: number) {
+  const next = new Date(date)
+  next.setDate(next.getDate() + days)
+  return next
 }
 
-function getDateDaysAgo(days: number) {
-  const date = new Date()
-  date.setDate(date.getDate() - days)
-  return date.toISOString().slice(0, 10)
+function getDateTime(baseDate: Date, time: string) {
+  const [hours = 0, minutes = 0] = time.split(':').map(Number)
+  const result = new Date(baseDate)
+  result.setHours(hours, minutes, 0, 0)
+  return result
 }
 
-function isWithinDays(value: string, days: number) {
-  const timestamp = new Date(value).getTime()
-  const threshold = Date.now() - days * 24 * 60 * 60 * 1000
-  return Number.isFinite(timestamp) && timestamp >= threshold
+function isBetweenDate(value: string, start: Date, end: Date) {
+  return value >= formatDateKey(start) && value <= formatDateKey(end)
 }
 
-function average(values: number[]) {
-  if (values.length === 0) {
-    return 0
-  }
+function formatDateKey(date: Date) {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
 
-  return values.reduce((total, value) => total + value, 0) / values.length
+function formatLongDate(date: Date) {
+  return new Intl.DateTimeFormat('es-DO', {
+    weekday: 'long',
+    day: '2-digit',
+    month: 'long',
+  }).format(date)
+}
+
+function formatShortDate(value: string) {
+  const date = new Date(`${value}T00:00:00`)
+  return new Intl.DateTimeFormat('es-DO', {
+    day: '2-digit',
+    month: 'short',
+  }).format(date)
+}
+
+function formatRelativeTime(value: string) {
+  const diffMs = Date.now() - new Date(value).getTime()
+  const diffMinutes = Math.max(Math.round(diffMs / 60000), 0)
+
+  if (diffMinutes < 1) return 'ahora'
+  if (diffMinutes < 60) return `hace ${diffMinutes} min`
+
+  const diffHours = Math.round(diffMinutes / 60)
+  if (diffHours < 24) return `hace ${diffHours} h`
+
+  const diffDays = Math.round(diffHours / 24)
+  return diffDays === 1 ? 'ayer' : `hace ${diffDays} días`
+}
+
+function normalizeTaskStatus(value: string): DashboardTaskStatus {
+  return value === 'completed' || value === 'archived' ? value : 'pending'
+}
+
+function normalizeTaskPriority(value: string): DashboardTaskPriority {
+  return value === 'low' || value === 'high' ? value : 'normal'
 }
 
 function roundOne(value: number) {
   return Math.round(value * 10) / 10
 }
 
-function formatCount(value: number) {
-  return new Intl.NumberFormat('es-DO').format(value)
-}
-
-function formatDecimal(value: number | null) {
-  return value === null ? '—' : value.toFixed(1)
-}
-
-function formatPercent(value: number | null) {
-  return value === null ? '—' : `${value.toFixed(1)}%`
-}
-
-function getSeverity(value: number, highThreshold: number): AcademicAlert['severity'] {
-  if (value === 0) {
-    return 'Baja'
-  }
-
-  return value > highThreshold ? 'Alta' : 'Media'
-}
+export const activityIcons = {
+  attendance: CalendarCheck,
+  grade: ClipboardCheck,
+  planning: NotebookPen,
+  report: FileText,
+} satisfies Record<RecentActivityItem['kind'], typeof CalendarCheck>

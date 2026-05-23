@@ -1,34 +1,57 @@
+import { useNavigate } from 'react-router-dom'
+
 import { ErrorState, LoadingState, PageShell } from '@/components/ui'
-import { AcademicAlerts } from '@/modules/dashboard/components/AcademicAlerts'
-import { BarChart } from '@/modules/dashboard/components/BarChart'
-import { ChartPanel } from '@/modules/dashboard/components/ChartPanel'
-import { LineChart } from '@/modules/dashboard/components/LineChart'
-import { QuickActions } from '@/modules/dashboard/components/QuickActions'
-import { RecentStudentsTable } from '@/modules/dashboard/components/RecentStudentsTable'
-import { StatCard } from '@/modules/dashboard/components/StatCard'
+import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
+import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
+import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
+import { SmartSuggestion } from '@/modules/dashboard/components/SmartSuggestion'
+import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
+import { WeeklyAttendanceCard } from '@/modules/dashboard/components/WeeklyAttendanceCard'
 import { useDashboard } from '@/modules/dashboard/hooks/useDashboard'
+import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
 
 export function DashboardPage() {
-  const { data, error, loading } = useDashboard()
+  const navigate = useNavigate()
+  const {
+    data,
+    error,
+    loading,
+    actionLoading,
+    addTask,
+    completeTask,
+  } = useDashboard()
+
+  const handleStartClass = (item: DashboardClass) => {
+    const params = new URLSearchParams({
+      sectionId: item.sectionId,
+    })
+
+    if (item.academicPeriodId) {
+      params.set('periodId', item.academicPeriodId)
+    }
+
+    navigate(`/asistencia?${params.toString()}`)
+  }
+
+  const handleViewPlanning = (item: DashboardClass) => {
+    const params = new URLSearchParams({
+      sectionSubjectId: item.sectionSubjectId,
+    })
+
+    if (item.academicPeriodId) {
+      params.set('periodId', item.academicPeriodId)
+    }
+
+    navigate(`/planificaciones?${params.toString()}`)
+  }
 
   if (loading) {
     return (
       <PageShell
-        title="Dashboard"
-        description="Vista general del sistema académico y accesos principales."
+        title="Inicio"
+        description="Resumen operativo de clases, pendientes y actividad académica."
       >
-        <LoadingState message="Cargando dashboard..." />
-      </PageShell>
-    )
-  }
-
-  if (error) {
-    return (
-      <PageShell
-        title="Dashboard"
-        description="Vista general del sistema académico y accesos principales."
-      >
-        <ErrorState message={error} />
+        <LoadingState message="Cargando inicio..." />
       </PageShell>
     )
   }
@@ -36,60 +59,64 @@ export function DashboardPage() {
   if (!data) {
     return (
       <PageShell
-        title="Dashboard"
-        description="Vista general del sistema académico y accesos principales."
+        title="Inicio"
+        description="Resumen operativo de clases, pendientes y actividad académica."
       >
-        <ErrorState message="No se pudieron cargar los datos del dashboard." />
+        <ErrorState message={error ?? 'No se pudieron cargar los datos de inicio.'} />
       </PageShell>
     )
   }
 
-  const attendanceValue =
-    data.stats.find((stat) => stat.label === 'Asistencia promedio')?.value ?? '—'
-  const performanceValue =
-    data.stats.find((stat) => stat.label === 'Promedio académico')?.value ?? '—'
-
   return (
-    <PageShell
-      title="Dashboard"
-      description="Vista general del sistema académico y accesos principales."
-    >
-      <div className="space-y-6">
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {data.stats.map((stat) => (
-            <StatCard key={stat.label} {...stat} />
-          ))}
+    <section className="mx-auto w-full max-w-[1500px] space-y-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
+          <h1 className="text-3xl font-bold tracking-normal text-foreground sm:text-4xl">
+            Buen día, <span className="text-accent">{data.context.firstName}</span>
+          </h1>
+          <p className="mt-2 text-base text-muted-foreground">
+            {data.context.formattedDate}
+          </p>
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
-          <div className="space-y-6">
-            <div className="grid gap-6 2xl:grid-cols-2">
-              <ChartPanel
-                title="Asistencia semanal"
-                description="Porcentaje de asistencia registrada por día"
-                value={attendanceValue}
-              >
-                <BarChart data={data.attendanceData} />
-              </ChartPanel>
-
-              <ChartPanel
-                title="Rendimiento académico"
-                description="Promedio general por mes académico"
-                value={performanceValue}
-              >
-                <LineChart data={data.performanceData} />
-              </ChartPanel>
-            </div>
-
-            <RecentStudentsTable students={data.recentStudents} />
-          </div>
-
-          <aside className="space-y-6">
-            <AcademicAlerts alerts={data.alerts} />
-            <QuickActions actions={data.quickActions} />
-          </aside>
+        <div className="flex flex-wrap gap-2">
+          <span className="inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-sm font-bold text-foreground shadow-sm">
+            {data.context.schoolYearName}
+          </span>
+          <span className="inline-flex h-9 items-center rounded-full bg-accent/18 px-4 text-sm font-bold text-accent">
+            {data.context.periodName}
+          </span>
         </div>
       </div>
-    </PageShell>
+
+      {error && (
+        <div className="rounded-xl border border-destructive/25 bg-destructive/10 p-4 text-sm font-medium text-destructive">
+          {error}
+        </div>
+      )}
+
+      <DashboardHero
+        nextClass={data.nextClass}
+        onStartClass={handleStartClass}
+        onViewPlanning={handleViewPlanning}
+      />
+
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.7fr)_minmax(320px,1fr)]">
+        <TodayAgenda items={data.todayAgenda} />
+
+        <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-1">
+          <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
+          <DashboardTasks
+            tasks={data.tasks}
+            loading={actionLoading}
+            onAddTask={addTask}
+            onCompleteTask={completeTask}
+          />
+        </div>
+      </div>
+
+      <RecentActivity items={data.recentActivity} />
+      <SmartSuggestion suggestion={data.smartSuggestion} />
+    </section>
   )
 }
