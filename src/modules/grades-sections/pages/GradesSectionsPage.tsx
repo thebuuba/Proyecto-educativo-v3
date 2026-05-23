@@ -1,5 +1,14 @@
-import { AlertCircle, Plus, RefreshCw } from 'lucide-react'
+import {
+  AlertCircle,
+  ArrowRight,
+  BookOpen,
+  CalendarClock,
+  Grid3x3,
+  Plus,
+  RefreshCw,
+} from 'lucide-react'
 import { useCallback, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent } from '@/components/ui/Card'
@@ -18,6 +27,27 @@ import type {
   Section,
 } from '@/modules/grades-sections/types'
 import { cn } from '@/utils/cn'
+
+const academicLinks = [
+  {
+    to: '/asignaturas',
+    title: 'Asignaturas',
+    description: 'Catálogo de materias y áreas curriculares.',
+    icon: BookOpen,
+  },
+  {
+    to: '/horario',
+    title: 'Horario',
+    description: 'Bloques, carga semanal y distribución por sección.',
+    icon: CalendarClock,
+  },
+  {
+    to: '/matriz',
+    title: 'Matriz curricular',
+    description: 'Competencias, contenidos y organización curricular.',
+    icon: Grid3x3,
+  },
+] as const
 
 export function GradesSectionsPage() {
   const { hasRole } = useAuth()
@@ -184,10 +214,10 @@ export function GradesSectionsPage() {
               Organización académica
             </p>
             <h1 className="mt-3 text-4xl font-bold leading-none text-primary sm:text-5xl">
-              Grados y secciones
+              Estructura Académica
             </h1>
             <p className="mt-3 text-base leading-6 text-muted-foreground">
-              Administra los niveles, cursos y secciones de la institución.
+              Administra niveles, ciclos, grados, secciones y organización curricular.
             </p>
           </div>
 
@@ -281,6 +311,32 @@ export function GradesSectionsPage() {
               </p>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="grid gap-3 md:grid-cols-3">
+          {academicLinks.map((item) => {
+            const Icon = item.icon
+            return (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="group flex min-h-28 items-start gap-3 rounded-lg border border-border bg-card p-4 text-left shadow-sm transition hover:border-ring/50 hover:bg-muted/40"
+              >
+                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent/12 text-accent">
+                  <Icon className="size-5" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-foreground">
+                    {item.title}
+                  </span>
+                  <span className="mt-1 block text-sm leading-5 text-muted-foreground">
+                    {item.description}
+                  </span>
+                </span>
+                <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
+              </Link>
+            )
+          })}
         </div>
       </div>
 

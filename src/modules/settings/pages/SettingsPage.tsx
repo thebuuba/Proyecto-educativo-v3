@@ -1,9 +1,68 @@
-import { AlertCircle, RefreshCw } from 'lucide-react'
+import {
+  AlertCircle,
+  Building2,
+  CalendarDays,
+  FileSpreadsheet,
+  ListChecks,
+  RefreshCw,
+  ShieldCheck,
+  UsersRound,
+} from 'lucide-react'
+import type { ComponentType } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { AcademicYearManager } from '@/modules/settings/components/AcademicYearManager'
 import { SchoolProfileForm } from '@/modules/settings/components/SchoolProfileForm'
 import { useSettings } from '@/modules/settings/hooks/useSettings'
+
+type SettingsArea = {
+  title: string
+  description: string
+  status: 'Disponible' | 'Próximo'
+  href?: string
+  icon: ComponentType<{ className?: string }>
+}
+
+const settingsAreas: SettingsArea[] = [
+  {
+    title: 'Centro educativo',
+    description: 'Identidad, regional, distrito, código de centro, sector y jornada.',
+    status: 'Disponible',
+    href: '#centro-educativo',
+    icon: Building2,
+  },
+  {
+    title: 'Años escolares y calendario',
+    description: 'Períodos, fechas, días lectivos y año escolar activo.',
+    status: 'Disponible',
+    href: '#anos-escolares',
+    icon: CalendarDays,
+  },
+  {
+    title: 'Usuarios y roles',
+    description: 'Accesos internos, perfiles y permisos por función.',
+    status: 'Próximo',
+    icon: UsersRound,
+  },
+  {
+    title: 'Reglas de evaluación',
+    description: 'Promoción, recuperación y nota mínima por nivel o modalidad.',
+    status: 'Próximo',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Catálogos RD',
+    description: 'Niveles, ciclos, modalidades, subsistemas y competencias.',
+    status: 'Próximo',
+    icon: ListChecks,
+  },
+  {
+    title: 'Exportables oficiales',
+    description: 'Encabezados, formatos y plantillas operativas.',
+    status: 'Próximo',
+    icon: FileSpreadsheet,
+  },
+]
 
 export function SettingsPage() {
   const {
@@ -18,7 +77,7 @@ export function SettingsPage() {
   } = useSettings()
 
   return (
-    <section className="mx-auto w-full max-w-4xl">
+    <section className="mx-auto w-full max-w-6xl">
       <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">
@@ -51,14 +110,64 @@ export function SettingsPage() {
         </div>
       ) : (
         <div className="space-y-8">
-          <SchoolProfileForm profile={profile} onSave={saveProfile} />
-          <AcademicYearManager
-            schoolYears={schoolYears}
-            onAdd={addSchoolYear}
-            onActivate={activateSchoolYear}
-          />
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {settingsAreas.map((area) => (
+              <SettingsAreaCard key={area.title} area={area} />
+            ))}
+          </div>
+
+          <section id="centro-educativo" className="scroll-mt-6">
+            <SchoolProfileForm profile={profile} onSave={saveProfile} />
+          </section>
+
+          <section id="anos-escolares" className="scroll-mt-6">
+            <AcademicYearManager
+              schoolYears={schoolYears}
+              onAdd={addSchoolYear}
+              onActivate={activateSchoolYear}
+            />
+          </section>
         </div>
       )}
     </section>
+  )
+}
+
+function SettingsAreaCard({ area }: { area: SettingsArea }) {
+  const Icon = area.icon
+  const content = (
+    <>
+      <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent/12 text-accent">
+        <Icon className="size-5" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="flex items-center gap-2">
+          <span className="text-sm font-semibold text-foreground">{area.title}</span>
+          <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">
+            {area.status}
+          </span>
+        </span>
+        <span className="mt-1 block text-sm leading-5 text-muted-foreground">
+          {area.description}
+        </span>
+      </span>
+    </>
+  )
+
+  const className =
+    'flex min-h-28 items-start gap-3 rounded-lg border border-border bg-card p-4 text-left shadow-sm transition'
+
+  if (area.href) {
+    return (
+      <a href={area.href} className={`${className} hover:border-ring/50 hover:bg-muted/40`}>
+        {content}
+      </a>
+    )
+  }
+
+  return (
+    <div className={`${className} opacity-80`}>
+      {content}
+    </div>
   )
 }

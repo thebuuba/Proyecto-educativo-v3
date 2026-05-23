@@ -127,7 +127,7 @@ export function SchoolProfileForm({ profile, onSave }: SchoolProfileFormProps) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Institución</CardTitle>
+          <CardTitle>Centro educativo</CardTitle>
           <CardDescription>Cargando información...</CardDescription>
         </CardHeader>
       </Card>
@@ -137,7 +137,7 @@ export function SchoolProfileForm({ profile, onSave }: SchoolProfileFormProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Institución</CardTitle>
+        <CardTitle>Centro educativo</CardTitle>
         <CardDescription>
           Información general de la institución educativa.
         </CardDescription>

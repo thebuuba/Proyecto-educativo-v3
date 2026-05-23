@@ -91,7 +91,7 @@ export function AcademicYearManager({
       <Card>
         <CardHeader className="flex flex-row items-start justify-between gap-4">
           <div>
-            <CardTitle>Años escolares</CardTitle>
+            <CardTitle>Años escolares y calendario</CardTitle>
             <CardDescription>
               Administra los períodos lectivos de la institución.
             </CardDescription>
