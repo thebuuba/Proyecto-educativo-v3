@@ -196,8 +196,8 @@ export function StudentDetailPanel({
           </div>
         ) : null}
 
-        <div className="space-y-5">
-          <section className="rounded-lg border border-border p-4">
+        <div className="space-y-6">
+          <section className="rounded-xl border border-border bg-card p-5 shadow-sm">
             <div className="mb-4 flex items-center justify-between">
               <h4 className="text-sm font-semibold text-foreground">
                 Datos personales
@@ -222,7 +222,7 @@ export function StudentDetailPanel({
             </dl>
           </section>
 
-          <section className="rounded-lg border border-border p-4">
+          <section className="rounded-xl border border-border bg-card p-5 shadow-sm">
             <h4 className="text-sm font-semibold text-foreground">
               Matrícula actual
             </h4>
@@ -252,7 +252,7 @@ export function StudentDetailPanel({
             )}
           </section>
 
-          <section className="rounded-lg border border-border p-4">
+          <section className="rounded-xl border border-border bg-card p-5 shadow-sm">
             <div className="flex items-center justify-between">
               <h4 className="text-sm font-semibold text-foreground">Matrículas</h4>
               <Button
@@ -274,7 +274,7 @@ export function StudentDetailPanel({
                 {enrollments.map((enrollment) => (
                   <div
                     key={enrollment.id}
-                    className="flex items-center justify-between gap-3 rounded-lg border border-border bg-muted p-3"
+                    className="flex items-center justify-between gap-3 rounded-xl border border-border bg-muted p-4"
                   >
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium text-foreground">
@@ -312,14 +312,14 @@ export function StudentDetailPanel({
           </section>
 
           {canViewGuardians ? (
-            <section className="rounded-lg border border-border p-4">
+          <section className="rounded-xl border border-border bg-card p-5 shadow-sm">
               <h4 className="text-sm font-semibold text-foreground">Tutores</h4>
               {detail?.guardians.length ? (
                 <div className="mt-4 space-y-3">
                   {detail.guardians.map((guardian) => (
                     <div
                       key={guardian.id}
-                      className="rounded-lg border border-border bg-muted p-3"
+                      className="rounded-xl border border-border bg-muted p-4"
                     >
                       <div className="flex items-center justify-between gap-3">
                         <p className="font-medium text-foreground">
@@ -347,7 +347,7 @@ export function StudentDetailPanel({
             </section>
           ) : null}
 
-          <section className="rounded-lg border border-border p-4">
+          <section className="rounded-xl border border-border bg-card p-5 shadow-sm">
             <h4 className="text-sm font-semibold text-foreground">Auditoría</h4>
             <dl className="mt-4 grid gap-4 sm:grid-cols-2">
               <DetailItem

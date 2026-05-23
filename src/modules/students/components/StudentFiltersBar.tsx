@@ -43,7 +43,7 @@ export function StudentFiltersBar({
               type="button"
               onClick={() => onCourseChange(option.label)}
               className={cn(
-                'inline-flex h-11 shrink-0 items-center gap-3 rounded-lg px-4 text-sm font-bold transition-colors',
+                'inline-flex h-11 shrink-0 items-center gap-3 rounded-xl px-5 text-sm font-bold transition-colors',
                 isSelected
                   ? 'bg-primary text-primary-foreground shadow-sm'
                   : 'bg-muted text-foreground hover:bg-secondary',
@@ -52,7 +52,7 @@ export function StudentFiltersBar({
               {option.label}
               <span
                 className={cn(
-                  'inline-flex min-w-8 items-center justify-center rounded-md px-2 py-1 text-xs',
+                  'inline-flex min-w-8 items-center justify-center rounded-lg px-2 py-1 text-xs',
                   isSelected
                     ? 'bg-accent/18 text-accent'
                     : 'bg-card text-muted-foreground',
@@ -74,7 +74,7 @@ export function StudentFiltersBar({
             value={search}
             onChange={(event) => onSearchChange(event.target.value)}
             placeholder="Buscar por nombre o código..."
-            className="h-12 rounded-lg pl-12 text-base"
+            className="h-12 rounded-xl pl-12 text-base"
           />
         </label>
 
