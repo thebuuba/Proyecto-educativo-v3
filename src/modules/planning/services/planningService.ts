@@ -1,13 +1,19 @@
 import { supabase } from '@/services/supabase'
+import { DB_ERROR } from '@/constants'
 import { assertNoSupabaseError, firstOrNull, getSupabaseErrorMessage } from '@/utils/helpers'
 import type { Database } from '@/types/database.types'
 import type { RecordStatus } from '@/types/domain'
 import type {
   AcademicPeriodSummary,
   CreatePlanningEntryInput,
+  PlanningActivities,
   PlanningEntryWithDetails,
   PlanningFilters,
 } from '@/modules/planning/types'
+
+type AcademicPeriodUpdate = Database['public']['Tables']['academic_periods']['Update']
+type PlanningEntryInsert = Database['public']['Tables']['planning_entries']['Insert']
+type PlanningEntryUpdate = Database['public']['Tables']['planning_entries']['Update']
 
 type EntryRow = {
   id: string
@@ -21,11 +27,7 @@ type EntryRow = {
   content_procedural: string
   content_attitudinal: string
   strategies: string
-  activities: {
-    inicio: string
-    desarrollo: string
-    cierre: string
-  }
+  activities: PlanningActivities
   resources: string
   evaluation_method: string
   duration_minutes: number | null
@@ -108,7 +110,7 @@ function mapEntry(row: EntryRow): PlanningEntryWithDetails {
 }
 
 function getEntryError(error: { message: string; code?: string }) {
-  if (error.code === '23505') {
+  if (error.code === DB_ERROR.UNIQUE_VIOLATION) {
     return 'Ya existe una planificación con ese título para este período.'
   }
   return getSupabaseErrorMessage(error)
@@ -175,7 +177,7 @@ export async function updateAcademicPeriod(
     status?: RecordStatus
   },
 ): Promise<void> {
-  const payload: Record<string, string | number | RecordStatus> = {}
+  const payload: AcademicPeriodUpdate = {}
   if (input.name !== undefined) payload.name = input.name
   if (input.sequence !== undefined) payload.sequence = input.sequence
   if (input.startDate !== undefined) payload.start_date = input.startDate
@@ -219,7 +221,7 @@ export async function createPlanningEntry(
     throw new Error('El título de la planificación es requerido.')
   }
 
-  const { error } = await supabase.from('planning_entries').insert({
+  const payload: PlanningEntryInsert = {
     section_subject_id: input.sectionSubjectId,
     academic_period_id: input.academicPeriodId,
     title: input.title.trim(),
@@ -235,7 +237,9 @@ export async function createPlanningEntry(
     evaluation_method: input.evaluationMethod ?? '',
     duration_minutes: input.durationMinutes ?? null,
     planned_date: input.plannedDate ?? null,
-  })
+  }
+
+  const { error } = await supabase.from('planning_entries').insert(payload)
 
   assertEntryError(error, 'No se pudo crear la planificación.')
 }
@@ -244,7 +248,7 @@ export async function updatePlanningEntry(
   id: string,
   input: CreatePlanningEntryInput,
 ): Promise<void> {
-  const payload: Record<string, unknown> = {}
+  const payload: PlanningEntryUpdate = {}
   if (input.title !== undefined) payload.title = input.title.trim()
   if (input.sequence !== undefined) payload.sequence = input.sequence
   if (input.specificCompetence !== undefined) payload.specific_competence = input.specificCompetence

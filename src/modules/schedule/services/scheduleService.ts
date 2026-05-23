@@ -1,3 +1,4 @@
+import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import { supabase } from '@/services/supabase'
 import { assertNoSupabaseError, firstOrNull } from '@/utils/helpers'
 import type {
@@ -36,11 +37,6 @@ type ScheduleEntryRow = {
   status: string
   time_slots: unknown
   section_subjects: unknown
-}
-
-type SchoolYearRow = {
-  id: string
-  name: string
 }
 
 type SectionRow = {
@@ -282,17 +278,6 @@ export async function deleteTimeSlot(id: string): Promise<void> {
     .eq('id', id)
 
   assertNoSupabaseError(error, 'No se pudo eliminar el bloque horario.')
-}
-
-export async function getCurrentSchoolYear(): Promise<SchoolYearRow | null> {
-  const { data, error } = await supabase
-    .from('school_years')
-    .select('id, name')
-    .eq('is_current', true)
-    .maybeSingle()
-
-  assertNoSupabaseError(error, 'No se pudo cargar el año escolar actual.')
-  return data as SchoolYearRow | null
 }
 
 export async function getScheduleEntries(

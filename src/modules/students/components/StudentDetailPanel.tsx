@@ -111,8 +111,8 @@ export function StudentDetailPanel({
     try {
       const list = await getStudentEnrollments(student.id)
       setEnrollments(list)
-    } catch {
-      // silently ignore
+    } catch (error) {
+      console.error('Error al refrescar matrículas:', error)
     }
   }, [student.id])
 
@@ -153,7 +153,8 @@ export function StudentDetailPanel({
       await deleteEnrollmentRecord(deleteTarget.id)
       setDeleteTarget(null)
       await refreshEnrollments()
-    } catch {
+    } catch (error) {
+      console.error('Error al eliminar matrícula:', error)
       setDeleteTarget(null)
     }
   }, [deleteTarget])

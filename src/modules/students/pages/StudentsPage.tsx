@@ -160,10 +160,10 @@ export function StudentsPage() {
 
         setActionError(null)
         closeForm()
-      } catch (submitError) {
+      } catch (error) {
         setFormError(
-          submitError instanceof Error
-            ? submitError.message
+          error instanceof Error
+            ? error.message
             : 'No se pudo guardar el estudiante.',
         )
       } finally {
@@ -181,10 +181,10 @@ export function StudentsPage() {
         await deactivateStudent(deactivateTarget.id)
         setActionError(null)
         setDeactivateTarget(null)
-      } catch (deactivateError) {
+      } catch (error) {
         setActionError(
-          deactivateError instanceof Error
-            ? deactivateError.message
+          error instanceof Error
+            ? error.message
             : 'No se pudo desactivar el estudiante.',
         )
         setDeactivateTarget(null)

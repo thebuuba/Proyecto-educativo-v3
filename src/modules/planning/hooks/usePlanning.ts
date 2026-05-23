@@ -14,7 +14,7 @@ import type {
   PlanningEntryWithDetails,
   PlanningFilters,
 } from '@/modules/planning/types'
-import { getCurrentSchoolYear } from '@/modules/students/services/studentsService'
+import { getCurrentSchoolYear } from '@/services/schoolYearService'
 
 export function usePlanning() {
   const [periods, setPeriods] = useState<AcademicPeriodSummary[]>([])
@@ -31,10 +31,10 @@ export function usePlanning() {
     try {
       const data = await getAcademicPeriods(yearId)
       setPeriods(data)
-    } catch (fetchError) {
+    } catch (error) {
       setError(
-        fetchError instanceof Error
-          ? fetchError.message
+        error instanceof Error
+          ? error.message
           : 'No se pudieron cargar los períodos.',
       )
     }
@@ -48,10 +48,10 @@ export function usePlanning() {
       try {
         const data = await getPlanningEntries(filters)
         setEntries(data)
-      } catch (fetchError) {
+      } catch (error) {
         setError(
-          fetchError instanceof Error
-            ? fetchError.message
+          error instanceof Error
+            ? error.message
             : 'No se pudieron cargar las planificaciones.',
         )
         setEntries([])
@@ -66,8 +66,8 @@ export function usePlanning() {
     try {
       const data = await getTeacherSectionSubjects()
       setSectionSubjects(data)
-    } catch {
-      // silently ignore
+    } catch (error) {
+      console.error('Error al cargar secciones del docente:', error)
     }
   }, [])
 

@@ -52,11 +52,11 @@ export function useDashboard() {
         alerts,
         quickActions: getQuickActions(),
       })
-    } catch (dashboardError) {
+    } catch (error) {
       setData(null)
       setError(
-        dashboardError instanceof Error
-          ? dashboardError.message
+        error instanceof Error
+          ? error.message
           : 'Error al cargar dashboard.',
       )
     } finally {

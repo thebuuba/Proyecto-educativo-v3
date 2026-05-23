@@ -10,6 +10,8 @@ import {
   UsersRound,
 } from 'lucide-react'
 
+import { ALERT, DEFAULTS, THRESHOLD } from '@/constants'
+import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import { supabase } from '@/services/supabase'
 import { assertNoSupabaseError, firstOrNull } from '@/utils/helpers'
 import type {
@@ -48,10 +50,6 @@ type AcademicPeriodRow = {
   sequence: number
 }
 
-type SchoolYearRow = {
-  id: string
-}
-
 type RecentStudentRow = {
   id: string
   first_name: string
@@ -84,7 +82,7 @@ export function getQuickActions(): QuickAction[] {
 export async function getDashboardStats(): Promise<DashboardStat[]> {
   const [activeStudents, attendanceRows, gradeRows] = await Promise.all([
     getActiveStudentsCount(),
-    getAttendanceRows(30),
+    getAttendanceRows(DEFAULTS.RECENT_DAYS),
     getPublishedGradeRows(),
   ])
 
@@ -129,7 +127,7 @@ export async function getDashboardStats(): Promise<DashboardStat[]> {
 }
 
 export async function getAttendanceData(): Promise<ChartDatum[]> {
-  const attendanceRows = await getAttendanceRows(28)
+  const attendanceRows = await getAttendanceRows(DEFAULTS.RECENT_DAYS_ATTENDANCE_CHART)
   const buckets = createWeekdayBuckets()
 
   for (const row of attendanceRows) {
@@ -210,7 +208,7 @@ export async function getRecentStudents(): Promise<RecentStudent[]> {
     enrollmentIds.length > 0
       ? await Promise.all([
           getPublishedGradeRowsByEnrollments(enrollmentIds),
-          getAttendanceRowsByEnrollments(enrollmentIds, 30),
+          getAttendanceRowsByEnrollments(enrollmentIds, DEFAULTS.RECENT_DAYS),
         ])
       : [[], []]
 
@@ -224,10 +222,10 @@ export async function getRecentStudents(): Promise<RecentStudent[]> {
       : []
     const averageScore = getAverageScore(grades)
     const attendancePercent = getAttendancePercent(attendance)
-    const isNew = isWithinDays(student.created_at, 30)
+    const isNew = isWithinDays(student.created_at, DEFAULTS.RECENT_DAYS)
     const needsFollowUp =
-      (averageScore !== null && averageScore < 70) ||
-      (attendancePercent !== null && attendancePercent < 75)
+      (averageScore !== null && averageScore < THRESHOLD.PERFORMANCE_LOW) ||
+      (attendancePercent !== null && attendancePercent < THRESHOLD.ATTENDANCE_ALERT)
     const grade = firstOrNull(enrollment?.grades ?? null)
 
     return {
@@ -244,7 +242,7 @@ export async function getRecentStudents(): Promise<RecentStudent[]> {
 export async function getAcademicAlerts(): Promise<AcademicAlert[]> {
   const [gradeRows, attendanceRows, pendingRecoveries] = await Promise.all([
     getPublishedGradeRows(),
-    getAttendanceRows(30),
+    getAttendanceRows(DEFAULTS.RECENT_DAYS),
     getPendingRecoveriesCount(),
   ])
   const lowPerformance = getLowPerformanceEnrollmentCount(gradeRows)
@@ -254,17 +252,17 @@ export async function getAcademicAlerts(): Promise<AcademicAlert[]> {
     {
       title: 'Rendimiento bajo',
       description: `${lowPerformance} estudiantes requieren revisión de calificaciones.`,
-      severity: getSeverity(lowPerformance, 10),
+      severity: getSeverity(lowPerformance, ALERT.PERFORMANCE_HIGH),
     },
     {
       title: 'Asistencia irregular',
       description: `${lowAttendance} registros por debajo del umbral mensual.`,
-      severity: getSeverity(lowAttendance, 15),
+      severity: getSeverity(lowAttendance, ALERT.ATTENDANCE_HIGH),
     },
     {
       title: 'Recuperación pendiente',
       description: `${pendingRecoveries} notas de recuperación por publicar.`,
-      severity: getSeverity(pendingRecoveries, 5),
+      severity: getSeverity(pendingRecoveries, ALERT.RECOVERY_HIGH),
     },
   ]
 }
@@ -336,17 +334,6 @@ async function getAcademicPeriods(): Promise<AcademicPeriodRow[]> {
   return (data ?? []) as AcademicPeriodRow[]
 }
 
-async function getCurrentSchoolYear(): Promise<SchoolYearRow | null> {
-  const { data, error } = await supabase
-    .from('school_years')
-    .select('id')
-    .eq('is_current', true)
-    .maybeSingle()
-
-  assertNoSupabaseError(error, 'No se pudo cargar el año escolar actual.')
-  return data as SchoolYearRow | null
-}
-
 async function getPendingRecoveriesCount() {
   const { count, error } = await supabase
     .from('pedagogical_recoveries')
@@ -392,7 +379,7 @@ function getLowPerformanceEnrollmentCount(rows: GradeRecordRow[]) {
   }
 
   return Array.from(scoresByEnrollment.values()).filter(
-    (scores) => average(scores) < 70,
+    (scores) => average(scores) < THRESHOLD.PERFORMANCE_LOW,
   ).length
 }
 
@@ -407,7 +394,7 @@ function getLowAttendanceEnrollmentCount(rows: AttendanceRow[]) {
 
   return Array.from(attendanceByEnrollment.values()).filter((attendance) => {
     const percent = getAttendancePercent(attendance)
-    return percent !== null && percent < 75
+    return percent !== null && percent < THRESHOLD.ATTENDANCE_ALERT
   }).length
 }
 

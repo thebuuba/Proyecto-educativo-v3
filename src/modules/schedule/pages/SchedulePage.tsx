@@ -19,6 +19,7 @@ import { TimeSlotList } from '@/modules/schedule/components/TimeSlotList'
 import { getScheduleSummary } from '@/modules/schedule/services/scheduleService'
 import { useSchedule } from '@/modules/schedule/hooks/useSchedule'
 import type { ScheduleCalendarEntry, ScheduleSummary, TimeSlot } from '@/modules/schedule/types'
+import { DEFAULTS } from '@/constants'
 import { cn } from '@/utils/cn'
 
 const weekDays = [
@@ -29,8 +30,8 @@ const weekDays = [
   { label: 'VIE', dayOfWeek: 5 },
 ]
 
-const visibleHours = Array.from({ length: 9 }, (_, index) => index + 8)
-const hourHeight = 7.25
+const visibleHours = Array.from({ length: DEFAULTS.VISIBLE_HOUR_COUNT }, (_, index) => index + DEFAULTS.VISIBLE_START_HOUR)
+const hourHeight = DEFAULTS.HOUR_HEIGHT_REM
 
 const subjectPalette = [
   'border-l-accent bg-accent/18 text-accent-foreground shadow-accent/10',
@@ -77,8 +78,8 @@ function getEntryCourse(entry: ScheduleCalendarEntry) {
 function getEntryPosition(entry: ScheduleCalendarEntry) {
   const start = getTimeAsHour(entry.startTime)
   const end = getTimeAsHour(entry.endTime)
-  const top = Math.max(start - 8, 0) * hourHeight
-  const height = Math.max((end - start) * hourHeight, 5.25)
+  const top = Math.max(start - DEFAULTS.VISIBLE_START_HOUR, 0) * hourHeight
+  const height = Math.max((end - start) * hourHeight, DEFAULTS.MIN_ENTRY_HEIGHT_REM)
   return { top: `${top}rem`, height: `${height}rem` }
 }
 
@@ -107,6 +108,31 @@ function getDayDate(dayOfWeek: number) {
   return date.getDate()
 }
 
+function downloadScheduleAsCsv(entries: ScheduleCalendarEntry[]) {
+  const header = 'Materia,Curso,Día,Hora Inicio,Hora Fin,Aula,Estudiantes'
+  const dayNames: Record<number, string> = { 1: 'LUN', 2: 'MAR', 3: 'MIÉ', 4: 'JUE', 5: 'VIE' }
+  const rows = entries.map((entry) =>
+    [
+      entry.subjectName,
+      entry.gradeName && entry.sectionName ? `${entry.gradeName} ${entry.sectionName}` : (entry.gradeName ?? entry.sectionName ?? ''),
+      dayNames[entry.dayOfWeek] ?? String(entry.dayOfWeek),
+      entry.startTime,
+      entry.endTime,
+      entry.room ?? '',
+      entry.studentCount,
+    ].join(','),
+  )
+  const blob = new Blob([`${header}\n${rows.join('\n')}`], { type: 'text/csv;charset=utf-8;' })
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = `horario-${new Date().toISOString().slice(0, 10)}.csv`
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+  URL.revokeObjectURL(url)
+}
+
 function getNextClass(entries: ScheduleCalendarEntry[]) {
   const today = getTodayDayOfWeek()
   const now = new Date()
@@ -130,12 +156,9 @@ export function SchedulePage() {
     timeSlots,
     schoolYearId,
     createEntry,
-    updateEntry,
-    removeEntry,
     createTimeSlot,
     updateTimeSlot,
     removeTimeSlot,
-    refetchAll,
   } = useSchedule()
 
   const [summary, setSummary] = useState<ScheduleSummary>({
@@ -170,9 +193,9 @@ export function SchedulePage() {
     try {
       const data = await getScheduleSummary()
       setSummary(data)
-    } catch (fetchError) {
+    } catch (error) {
       setSummaryError(
-        fetchError instanceof Error ? fetchError.message : 'No se pudo cargar el horario.',
+        error instanceof Error ? error.message : 'No se pudo cargar el horario.',
       )
     } finally {
       setSummaryLoading(false)
@@ -190,8 +213,8 @@ export function SchedulePage() {
       await createEntry(input)
       setShowEntryForm(false)
       await loadSummary()
-    } catch (fetchError) {
-      setFormError(fetchError instanceof Error ? fetchError.message : 'Error al crear la clase.')
+    } catch (error) {
+      setFormError(error instanceof Error ? error.message : 'Error al crear la clase.')
     } finally {
       setFormSubmitting(false)
     }
@@ -205,8 +228,8 @@ export function SchedulePage() {
       setShowTimeSlotForm(false)
       setEditingSlot(null)
       await loadSummary()
-    } catch (fetchError) {
-      setFormError(fetchError instanceof Error ? fetchError.message : 'Error al crear el bloque.')
+    } catch (error) {
+      setFormError(error instanceof Error ? error.message : 'Error al crear el bloque.')
     } finally {
       setFormSubmitting(false)
     }
@@ -219,8 +242,8 @@ export function SchedulePage() {
       await updateTimeSlot(id, input)
       setShowTimeSlotForm(false)
       setEditingSlot(null)
-    } catch (fetchError) {
-      setFormError(fetchError instanceof Error ? fetchError.message : 'Error al actualizar el bloque.')
+    } catch (error) {
+      setFormError(error instanceof Error ? error.message : 'Error al actualizar el bloque.')
     } finally {
       setFormSubmitting(false)
     }
@@ -231,8 +254,8 @@ export function SchedulePage() {
     try {
       await removeTimeSlot(deleteSlotId)
       setDeleteSlotId(null)
-    } catch {
-      // error handled by hook
+    } catch (error) {
+      console.error('Error al eliminar bloque horario:', error)
     }
   }
 
@@ -260,10 +283,10 @@ export function SchedulePage() {
           >
             <Settings2 className="size-5" />
           </Button>
-          <Button variant="outline" size="icon" onClick={() => window.print()}>
+          <Button variant="outline" size="icon" onClick={() => window.print()} aria-label="Imprimir horario">
             <Printer className="size-5" />
           </Button>
-          <Button variant="outline" size="icon" onClick={() => window.print()}>
+          <Button variant="outline" size="icon" onClick={() => downloadScheduleAsCsv(summary.entries)} aria-label="Descargar horario">
             <Download className="size-5" />
           </Button>
           <Button variant="secondary" onClick={() => setShowEntryForm(true)}>
@@ -287,6 +310,8 @@ export function SchedulePage() {
               <button
                 key={view}
                 type="button"
+                aria-label={`Vista ${view}`}
+                aria-pressed={view === 'Semana'}
                 className={cn(
                   'h-10 rounded-lg px-5 text-sm font-bold transition-colors',
                   view === 'Semana'
@@ -521,7 +546,7 @@ export function SchedulePage() {
               Periodos libres
             </p>
             <p className="mt-6 text-3xl font-bold text-primary">
-              {formatHours(Math.max(40 - summary.totalHours, 0))}
+              {formatHours(Math.max(DEFAULTS.MAX_WEEKLY_HOURS - summary.totalHours, 0))}
             </p>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
               Tiempo disponible para planificación, reuniones o tutorías individuales

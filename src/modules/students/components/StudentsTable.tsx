@@ -1,5 +1,6 @@
 import { CheckCircle2, Eye, Pencil, UserMinus } from 'lucide-react'
 
+import { THRESHOLD } from '@/constants'
 import { Button } from '@/components/ui/Button'
 import type { StudentListItem } from '@/modules/students/types'
 import { cn } from '@/utils/cn'
@@ -29,15 +30,15 @@ function getCourseLabel(student: StudentListItem) {
 
 function getProgressTone(value: number | null) {
   if (value === null) return 'bg-muted'
-  if (value < 70) return 'bg-destructive'
-  if (value < 80) return 'bg-accent'
+  if (value < THRESHOLD.ATTENDANCE_LOW) return 'bg-destructive'
+  if (value < THRESHOLD.ATTENDANCE_WARNING) return 'bg-accent'
   return 'bg-success'
 }
 
 function getAverageTone(value: number | null) {
   if (value === null) return 'text-muted-foreground'
-  if (value < 6.5) return 'text-destructive'
-  if (value < 7.5) return 'text-accent'
+  if (value < THRESHOLD.GRADE_LOW) return 'text-destructive'
+  if (value < THRESHOLD.GRADE_WARNING) return 'text-accent'
   return 'text-success'
 }
 
@@ -61,8 +62,8 @@ function getDisplayStatus(student: StudentListItem) {
   const { attendancePercentage, averageScore, pendingCount } = student.metrics
 
   if (
-    (attendancePercentage !== null && attendancePercentage < 70) ||
-    (averageScore !== null && averageScore < 6.5)
+    (attendancePercentage !== null && attendancePercentage < THRESHOLD.ATTENDANCE_LOW) ||
+    (averageScore !== null && averageScore < THRESHOLD.GRADE_LOW)
   ) {
     return {
       label: 'En riesgo',
@@ -73,8 +74,8 @@ function getDisplayStatus(student: StudentListItem) {
 
   if (
     pendingCount > 0 ||
-    (attendancePercentage !== null && attendancePercentage < 80) ||
-    (averageScore !== null && averageScore < 7.5)
+    (attendancePercentage !== null && attendancePercentage < THRESHOLD.ATTENDANCE_WARNING) ||
+    (averageScore !== null && averageScore < THRESHOLD.GRADE_WARNING)
   ) {
     return {
       label: 'Atención',

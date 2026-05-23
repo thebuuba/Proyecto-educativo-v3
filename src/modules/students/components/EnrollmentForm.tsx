@@ -6,10 +6,8 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
-import {
-  getCurrentSchoolYear,
-  getGradesWithSections,
-} from '@/modules/students/services/studentsService'
+import { getCurrentSchoolYear } from '@/services/schoolYearService'
+import { getGradesWithSections } from '@/modules/students/services/studentsService'
 import type { GradeWithSections } from '@/modules/students/types'
 import type { EnrollmentStatus } from '@/types/domain'
 

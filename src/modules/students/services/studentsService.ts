@@ -1,4 +1,5 @@
 import { supabase } from '@/services/supabase'
+import { DB_ERROR } from '@/constants'
 import {
   assertNoSupabaseError,
   firstOrNull,
@@ -160,7 +161,7 @@ function mapStudentListItem(
 }
 
 function getStudentSupabaseErrorMessage(error: { message: string; code?: string }) {
-  if (error.code === '23505') {
+  if (error.code === DB_ERROR.UNIQUE_VIOLATION) {
     return 'Ya existe un estudiante con ese código o documento.'
   }
 
@@ -676,20 +677,6 @@ export async function getGradesWithSections(): Promise<GradeWithSections[]> {
     name: grade.name,
     sections: sectionsByGradeId.get(grade.id) ?? [],
   }))
-}
-
-export async function getCurrentSchoolYear(): Promise<{
-  id: string
-  name: string
-} | null> {
-  const { data, error } = await supabase
-    .from('school_years')
-    .select('id, name')
-    .eq('is_current', true)
-    .maybeSingle()
-
-  assertNoSupabaseError(error, 'No se pudo cargar el año escolar actual.')
-  return data
 }
 
 async function getStudentGuardians(

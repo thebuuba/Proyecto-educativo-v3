@@ -32,10 +32,10 @@ export function useStudents() {
     try {
       const data = await getStudents({ search: debouncedSearch, filters })
       setStudents(data)
-    } catch (fetchError) {
+    } catch (error) {
       setError(
-        fetchError instanceof Error
-          ? fetchError.message
+        error instanceof Error
+          ? error.message
           : 'No se pudieron cargar los estudiantes.',
       )
       setStudents([])

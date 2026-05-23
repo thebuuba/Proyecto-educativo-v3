@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
+import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import {
   createScheduleEntry as createScheduleEntryRecord,
   createTimeSlot as createTimeSlotRecord,
   deleteScheduleEntry as deleteScheduleEntryRecord,
   deleteTimeSlot as deleteTimeSlotRecord,
-  getCurrentSchoolYear,
   getScheduleEntries,
   getSections,
   getSubjects,
@@ -48,10 +48,10 @@ export function useSchedule() {
     try {
       const data = await getTimeSlots()
       setTimeSlots(data)
-    } catch (fetchError) {
+    } catch (error) {
       setError(
-        fetchError instanceof Error
-          ? fetchError.message
+        error instanceof Error
+          ? error.message
           : 'No se pudieron cargar los bloques horarios.',
       )
     }
@@ -66,10 +66,10 @@ export function useSchedule() {
         schoolYearId: currentFilters.schoolYearId ?? schoolYearId ?? undefined,
       })
       setEntries(data)
-    } catch (fetchError) {
+    } catch (error) {
       setError(
-        fetchError instanceof Error
-          ? fetchError.message
+        error instanceof Error
+          ? error.message
           : 'No se pudieron cargar las entradas de horario.',
       )
     }
@@ -98,10 +98,10 @@ export function useSchedule() {
 
       const entryData = await getScheduleEntries({ schoolYearId: yearId ?? undefined })
       setEntries(entryData)
-    } catch (fetchError) {
+    } catch (error) {
       setError(
-        fetchError instanceof Error
-          ? fetchError.message
+        error instanceof Error
+          ? error.message
           : 'No se pudieron cargar los datos del horario.',
       )
     } finally {

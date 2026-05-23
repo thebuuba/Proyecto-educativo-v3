@@ -2,12 +2,14 @@ export function firstOrNull<T>(value: T | T[] | null): T | null {
   return Array.isArray(value) ? (value[0] ?? null) : value
 }
 
+import { DB_ERROR } from '@/constants'
+
 export function getSupabaseErrorMessage(error: { message: string; code?: string }) {
-  if (error.code === '23505') {
+  if (error.code === DB_ERROR.UNIQUE_VIOLATION) {
     return 'Ya existe un registro con esos datos.'
   }
 
-  if (error.code === '42501') {
+  if (error.code === DB_ERROR.PERMISSION_DENIED) {
     return 'No tienes permiso para realizar esta acción.'
   }
 
