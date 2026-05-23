@@ -39,6 +39,7 @@ export type AppRoute = {
   component: ComponentType
   allowedRoles: UserRole[]
   index?: boolean
+  showInSidebar?: boolean
 }
 
 const allRoles: UserRole[] = [
@@ -54,7 +55,7 @@ const allRoles: UserRole[] = [
 export const appRoutes: AppRoute[] = [
   {
     path: '/',
-    label: 'Dashboard',
+    label: 'Inicio',
     icon: LayoutDashboard,
     component: DashboardPage,
     allowedRoles: allRoles,
@@ -62,7 +63,7 @@ export const appRoutes: AppRoute[] = [
   },
   {
     path: '/estudiantes',
-    label: 'Estudiantes',
+    label: 'Matrícula',
     icon: UsersRound,
     component: StudentsPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
@@ -73,10 +74,11 @@ export const appRoutes: AppRoute[] = [
     icon: BookOpen,
     component: SubjectsPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+    showInSidebar: false,
   },
   {
     path: '/grados-secciones',
-    label: 'Grados y secciones',
+    label: 'Estructura Académica',
     icon: LibraryBig,
     component: GradesSectionsPage,
     allowedRoles: ['admin', 'director', 'coordinator'],
@@ -87,6 +89,7 @@ export const appRoutes: AppRoute[] = [
     icon: CalendarClock,
     component: SchedulePage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+    showInSidebar: false,
   },
   {
     path: '/asistencia',
@@ -104,7 +107,7 @@ export const appRoutes: AppRoute[] = [
   },
   {
     path: '/planificaciones',
-    label: 'Planificaciones',
+    label: 'Planificación',
     icon: NotebookPen,
     component: PlanningPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
@@ -115,6 +118,7 @@ export const appRoutes: AppRoute[] = [
     icon: Grid3x3,
     component: MatrixPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+    showInSidebar: false,
   },
   {
     path: '/reportes',
@@ -132,11 +136,11 @@ export const appRoutes: AppRoute[] = [
   },
 ]
 
-export const navigationRoutes = appRoutes.map(
-  ({ path, label, icon, allowedRoles }) => ({
+export const navigationRoutes = appRoutes
+  .filter((route) => route.showInSidebar !== false)
+  .map(({ path, label, icon, allowedRoles }) => ({
     path,
     label,
     icon,
     allowedRoles,
-  }),
-)
+  }))
