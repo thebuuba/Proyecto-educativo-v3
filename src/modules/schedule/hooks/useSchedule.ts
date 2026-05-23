@@ -40,8 +40,11 @@ export function useSchedule() {
   const [subjects, setSubjects] = useState<SubjectOption[]>([])
 
   const filtersRef = useRef(filters)
-  filtersRef.current = filters
   const initialLoadDone = useRef(false)
+
+  useEffect(() => {
+    filtersRef.current = filters
+  }, [filters])
 
   const refetchTimeSlots = useCallback(async () => {
     setError(null)

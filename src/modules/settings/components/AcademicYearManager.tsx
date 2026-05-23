@@ -11,11 +11,22 @@ import { cn } from '@/utils/cn'
 
 type AcademicYearManagerProps = {
   schoolYears: SchoolYearItem[]
-  onAdd: (input: { name: string; startDate: string; endDate: string }) => Promise<void>
+  onAdd: (input: {
+    name: string
+    startDate: string
+    endDate: string
+    periodScheme: SchoolYearItem['periodScheme']
+    periodCount: number
+    calendarSource: string
+    instructionalDays: number | null
+    studentWeeks: number | null
+    teacherWeeks: number | null
+  }) => Promise<void>
   onActivate: (id: string) => Promise<void>
 }
 
 const currentYear = new Date().getFullYear()
+const defaultCalendar = getDefaultAcademicCalendar(currentYear)
 
 export function AcademicYearManager({
   schoolYears,
@@ -24,8 +35,13 @@ export function AcademicYearManager({
 }: AcademicYearManagerProps) {
   const [formOpen, setFormOpen] = useState(false)
   const [name, setName] = useState(`Año Escolar ${currentYear}-${currentYear + 1}`)
-  const [startDate, setStartDate] = useState(`${currentYear}-08-24`)
-  const [endDate, setEndDate] = useState(`${currentYear + 1}-06-20`)
+  const [startDate, setStartDate] = useState(defaultCalendar.startDate)
+  const [endDate, setEndDate] = useState(defaultCalendar.endDate)
+  const [calendarSource, setCalendarSource] = useState(defaultCalendar.source)
+  const [periodCount, setPeriodCount] = useState(3)
+  const [instructionalDays, setInstructionalDays] = useState(191)
+  const [studentWeeks, setStudentWeeks] = useState(40)
+  const [teacherWeeks, setTeacherWeeks] = useState(45)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [activating, setActivating] = useState<string | null>(null)
@@ -38,7 +54,17 @@ export function AcademicYearManager({
     setError(null)
 
     try {
-      await onAdd({ name: name.trim(), startDate, endDate })
+      await onAdd({
+        name: name.trim(),
+        startDate,
+        endDate,
+        periodScheme: 'trimester',
+        periodCount,
+        calendarSource,
+        instructionalDays,
+        studentWeeks,
+        teacherWeeks,
+      })
       setFormOpen(false)
     } catch (error) {
       setError(
@@ -103,7 +129,7 @@ export function AcademicYearManager({
                       ) : null}
                     </div>
                     <p className="mt-0.5 text-xs text-muted-foreground">
-                      {year.startDate} — {year.endDate}
+	                      {year.startDate} — {year.endDate} · {year.periodCount} períodos · {year.calendarSource}
                     </p>
                   </div>
 
@@ -175,6 +201,65 @@ export function AcademicYearManager({
               </div>
             </div>
 
+	            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">
+                  Trimestres
+                </label>
+                <Input
+                  type="number"
+                  min={1}
+                  value={periodCount}
+                  onChange={(e) => setPeriodCount(Number(e.target.value))}
+                />
+	            </div>
+
+	            <div className="space-y-2">
+	              <label className="text-sm font-medium text-foreground">
+	                Fuente del calendario
+	              </label>
+	              <Input
+	                value={calendarSource}
+	                onChange={(e) => setCalendarSource(e.target.value)}
+	                placeholder="Ej: minerd_2025_2026, centro"
+	              />
+	            </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">
+                  Días lectivos
+                </label>
+                <Input
+                  type="number"
+                  min={1}
+                  value={instructionalDays}
+                  onChange={(e) => setInstructionalDays(Number(e.target.value))}
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">
+                  Semanas docentes
+                </label>
+                <Input
+                  type="number"
+                  min={1}
+                  value={teacherWeeks}
+                  onChange={(e) => setTeacherWeeks(Number(e.target.value))}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-foreground">
+                Semanas estudiantes
+              </label>
+              <Input
+                type="number"
+                min={1}
+                value={studentWeeks}
+                onChange={(e) => setStudentWeeks(Number(e.target.value))}
+              />
+            </div>
+
             <div className="flex justify-end gap-3 pt-2">
               <Button variant="outline" type="button" onClick={() => setFormOpen(false)}>
                 Cancelar
@@ -188,4 +273,20 @@ export function AcademicYearManager({
       ) : null}
     </>
   )
+}
+
+function getDefaultAcademicCalendar(year: number) {
+  if (year === 2025) {
+    return {
+      startDate: '2025-08-25',
+      endDate: '2026-06-20',
+      source: 'minerd_2025_2026',
+    }
+  }
+
+  return {
+    startDate: `${year}-08-25`,
+    endDate: `${year + 1}-06-20`,
+    source: 'centro',
+  }
 }

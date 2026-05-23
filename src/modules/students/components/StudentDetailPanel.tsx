@@ -143,7 +143,7 @@ export function StudentDetailPanel({
         setIsSubmittingEnrollment(false)
       }
     },
-    [],
+    [refreshEnrollments],
   )
 
   const handleDeleteEnrollment = useCallback(async () => {
@@ -157,7 +157,7 @@ export function StudentDetailPanel({
       console.error('Error al eliminar matrícula:', error)
       setDeleteTarget(null)
     }
-  }, [deleteTarget])
+  }, [deleteTarget, refreshEnrollments])
 
   const currentStudent = detail ?? student
 

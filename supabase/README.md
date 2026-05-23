@@ -3,7 +3,7 @@
 La fuente principal del esquema ahora es la migración formal:
 
 ```txt
-supabase/migrations/20260522_initial_student_system_schema.sql
+supabase/migrations/001_initial_student_system_schema.sql
 ```
 
 `schema.sql` queda como puntero para evitar aplicar un esquema suelto fuera del

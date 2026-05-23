@@ -20,6 +20,7 @@ export function PlanningPage() {
     setActivePeriodId,
     entries,
     sectionSubjects,
+    competencies,
     loading,
     error,
     addEntry,
@@ -66,11 +67,11 @@ export function PlanningPage() {
 
       closeForm()
     } catch (error) {
-        setError(
-          error instanceof Error
-            ? error.message
-            : 'No se pudo guardar.',
-        )
+      setFormError(
+        error instanceof Error
+          ? error.message
+          : 'No se pudo guardar.',
+      )
     } finally {
       setIsSubmitting(false)
     }
@@ -207,6 +208,7 @@ export function PlanningPage() {
                     id: editingEntry.id,
                     sectionSubjectId: editingEntry.sectionSubjectId,
                     academicPeriodId: editingEntry.academicPeriodId,
+                    fundamentalCompetenceId: editingEntry.fundamentalCompetenceId,
                     title: editingEntry.title,
                     specificCompetence: editingEntry.specificCompetence,
                     achievementIndicator: editingEntry.achievementIndicator,
@@ -217,6 +219,8 @@ export function PlanningPage() {
                     activities: editingEntry.activities,
                     resources: editingEntry.resources,
                     evaluationMethod: editingEntry.evaluationMethod,
+                    evidence: editingEntry.evidence,
+                    evaluationInstruments: editingEntry.evaluationInstruments,
                     durationMinutes: editingEntry.durationMinutes,
                     plannedDate: editingEntry.plannedDate,
                   },
@@ -229,8 +233,9 @@ export function PlanningPage() {
                   },
                   academicPeriodId: activePeriodId ?? undefined,
                 }
-          }
-          submitting={isSubmitting}
+	          }
+	          competencies={competencies}
+	          submitting={isSubmitting}
           error={formError}
           onSubmit={handleSubmit}
           onClose={closeForm}

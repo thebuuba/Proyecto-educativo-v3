@@ -46,6 +46,11 @@ export function PlanningEntryCard({ entry, onEdit, onDelete }: PlanningEntryCard
               : entry.achievementIndicator}
           </span>
         ) : null}
+        {entry.fundamentalCompetenceName ? (
+          <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+            {entry.fundamentalCompetenceName}
+          </span>
+        ) : null}
         {entry.durationMinutes ? (
           <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
             {entry.durationMinutes} min

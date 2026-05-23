@@ -12,6 +12,7 @@ import type {
   StudentListItem,
   StudentStatus,
 } from '@/modules/students/types'
+import { formatCedula, isValidCedula } from '@/utils/cedula'
 
 type StudentFormProps = {
   student?: StudentListItem | null
@@ -56,6 +57,11 @@ export function StudentForm({
 
     if (!studentCode.trim() || !firstName.trim() || !lastName.trim() || !birthDate) {
       setValidationError('Completa código, nombre, apellido y fecha de nacimiento.')
+      return
+    }
+
+    if (documentId.trim() && !isValidCedula(documentId)) {
+      setValidationError('La cédula debe tener 11 dígitos válidos.')
       return
     }
 
@@ -146,6 +152,8 @@ export function StudentForm({
                 type="text"
                 value={documentId}
                 onChange={(event) => setDocumentId(event.target.value)}
+                onBlur={() => setDocumentId((current) => formatCedula(current))}
+                placeholder="000-0000000-0"
               />
             </Field>
 

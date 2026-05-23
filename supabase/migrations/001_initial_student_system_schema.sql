@@ -568,7 +568,9 @@ select
   gr.status as grade_status,
   pr.status as recovery_status,
   gr.created_at,
-  gr.updated_at
+  gr.updated_at,
+  gr.enrollment_id,
+  gr.school_id
 from public.grades_records gr
 join public.enrollments e on e.id = gr.enrollment_id
 join public.section_subjects ss on ss.id = gr.section_subject_id

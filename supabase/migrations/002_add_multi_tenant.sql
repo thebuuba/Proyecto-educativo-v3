@@ -125,9 +125,12 @@ for all to authenticated
 using (id = app_private.current_school_id() and app_private.has_role('admin'))
 with check (id = app_private.current_school_id() and app_private.has_role('admin'));
 
-create policy schools_read_authenticated on public.schools
+create policy schools_read_current_school on public.schools
 for select to authenticated
-using (status = 'active');
+using (
+  id = app_private.current_school_id()
+  and status = 'active'
+);
 
 do $$
 begin

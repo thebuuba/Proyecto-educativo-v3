@@ -2,7 +2,7 @@
 -- doesn't need to send school_id explicitly — RLS resolves it via
 -- app_private.current_school_id().
 --
--- The original migration (20260522003001_add_schedule_tables) created both
+-- The original migration (004_add_schedule_tables) created both
 -- columns as NOT NULL without a DEFAULT, which broke client inserts.
 
 alter table public.time_slots

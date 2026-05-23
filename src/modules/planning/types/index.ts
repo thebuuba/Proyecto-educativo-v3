@@ -10,6 +10,8 @@ export type PlanningEntry = {
   id: string
   sectionSubjectId: string
   academicPeriodId: string
+  fundamentalCompetenceId: string | null
+  fundamentalCompetenceName: string | null
   title: string
   sequence: number
   specificCompetence: string
@@ -21,6 +23,8 @@ export type PlanningEntry = {
   activities: PlanningActivities
   resources: string
   evaluationMethod: string
+  evidence: string
+  evaluationInstruments: string
   durationMinutes: number | null
   plannedDate: string | null
   status: RecordStatus
@@ -31,6 +35,7 @@ export type PlanningEntry = {
 export type CreatePlanningEntryInput = {
   sectionSubjectId: string
   academicPeriodId: string
+  fundamentalCompetenceId?: string | null
   title: string
   sequence?: number
   specificCompetence?: string
@@ -42,6 +47,8 @@ export type CreatePlanningEntryInput = {
   activities?: PlanningActivities
   resources?: string
   evaluationMethod?: string
+  evidence?: string
+  evaluationInstruments?: string
   durationMinutes?: number | null
   plannedDate?: string | null
 }
@@ -67,4 +74,10 @@ export type AcademicPeriodSummary = {
   startDate: string
   endDate: string
   status: RecordStatus
+}
+
+export type CompetencyOption = {
+  id: string
+  code: string
+  name: string
 }

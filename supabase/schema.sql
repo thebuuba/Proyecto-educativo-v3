@@ -1,5 +1,5 @@
 -- Canonical schema lives in formal Supabase migrations.
 -- Current initial migration:
---   supabase/migrations/20260522_initial_student_system_schema.sql
+--   supabase/migrations/001_initial_student_system_schema.sql
 --
 -- Keep this file as a pointer only. Do not apply it directly.

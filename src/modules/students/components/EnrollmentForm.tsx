@@ -22,6 +22,11 @@ type EnrollmentFormProps = {
     schoolYearId: string
     enrollmentDate: string
     status: EnrollmentStatus
+    academicStatus: 'active' | 'promoted' | 'repeating' | 'withdrawn' | 'transferred' | 'graduated'
+    isRepeating: boolean
+    promotionStatus: string | null
+    finalCondition: string | null
+    transferNotes: string | null
   }) => Promise<void>
   onClose: () => void
 }
@@ -32,6 +37,15 @@ const statusOptions: { value: EnrollmentStatus; label: string }[] = [
   { value: 'withdrawn', label: 'Retirado' },
   { value: 'completed', label: 'Completado' },
 ]
+
+const academicStatusOptions = [
+  { value: 'active', label: 'Activo' },
+  { value: 'promoted', label: 'Promovido' },
+  { value: 'repeating', label: 'Repitente' },
+  { value: 'withdrawn', label: 'Retirado' },
+  { value: 'transferred', label: 'Transferido' },
+  { value: 'graduated', label: 'Egresado' },
+] as const
 
 export function EnrollmentForm({
   studentId,
@@ -46,6 +60,13 @@ export function EnrollmentForm({
   const [gradeId, setGradeId] = useState('')
   const [sectionId, setSectionId] = useState('')
   const [status, setStatus] = useState<EnrollmentStatus>('active')
+  const [academicStatus, setAcademicStatus] = useState<
+    'active' | 'promoted' | 'repeating' | 'withdrawn' | 'transferred' | 'graduated'
+  >('active')
+  const [isRepeating, setIsRepeating] = useState(false)
+  const [promotionStatus, setPromotionStatus] = useState('')
+  const [finalCondition, setFinalCondition] = useState('')
+  const [transferNotes, setTransferNotes] = useState('')
   const [enrollmentDate, setEnrollmentDate] = useState(
     new Date().toISOString().split('T')[0],
   )
@@ -106,6 +127,11 @@ export function EnrollmentForm({
       schoolYearId: schoolYear?.id ?? '',
       enrollmentDate,
       status,
+      academicStatus,
+      isRepeating,
+      promotionStatus: promotionStatus.trim() || null,
+      finalCondition: finalCondition.trim() || null,
+      transferNotes: transferNotes.trim() || null,
     })
   }
 
@@ -201,11 +227,58 @@ export function EnrollmentForm({
                 </Select>
               </Field>
 
+              <Field label="Condición académica">
+                <Select
+                  value={academicStatus}
+                  onChange={(e) =>
+                    setAcademicStatus(e.target.value as typeof academicStatus)
+                  }
+                >
+                  {academicStatusOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+
+              <label className="flex items-center gap-2 text-sm text-muted-foreground">
+                <input
+                  type="checkbox"
+                  checked={isRepeating}
+                  onChange={(e) => setIsRepeating(e.target.checked)}
+                />
+                Estudiante repitente
+              </label>
+
               <Field label="Fecha de matrícula">
                 <Input
                   type="date"
                   value={enrollmentDate}
                   onChange={(e) => setEnrollmentDate(e.target.value)}
+                />
+              </Field>
+
+              <Field label="Promoción / condición final">
+                <Input
+                  value={promotionStatus}
+                  onChange={(e) => setPromotionStatus(e.target.value)}
+                  placeholder="Ej: Promovido, aplazado, recuperación pendiente"
+                />
+              </Field>
+
+              <Field label="Condición de cierre">
+                <Input
+                  value={finalCondition}
+                  onChange={(e) => setFinalCondition(e.target.value)}
+                  placeholder="Ej: Completó, transferido, retirado"
+                />
+              </Field>
+
+              <Field label="Notas de traslado/retiro">
+                <Input
+                  value={transferNotes}
+                  onChange={(e) => setTransferNotes(e.target.value)}
                 />
               </Field>
             </div>

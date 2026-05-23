@@ -606,6 +606,22 @@ async function getCurrentEnrollment(
 }
 
 export async function createEnrollment(input: CreateEnrollmentInput): Promise<void> {
+  const { data: gradeData, error: gradeError } = await supabase
+    .from('grades')
+    .select('academic_level_id, academic_cycle_id, default_modality_id')
+    .eq('id', input.gradeId)
+    .maybeSingle()
+
+  assertNoSupabaseError(gradeError, 'No se pudo cargar la estructura académica del grado.')
+
+  const { data: subsystemData, error: subsystemError } = await supabase
+    .from('dr_subsystems')
+    .select('id')
+    .eq('code', 'regular')
+    .maybeSingle()
+
+  assertNoSupabaseError(subsystemError, 'No se pudo cargar el subsistema académico.')
+
   const { error } = await supabase.from('enrollments').insert({
     student_id: input.studentId,
     grade_id: input.gradeId,
@@ -613,6 +629,15 @@ export async function createEnrollment(input: CreateEnrollmentInput): Promise<vo
     school_year_id: input.schoolYearId,
     enrollment_date: input.enrollmentDate ?? new Date().toISOString().split('T')[0],
     status: input.status ?? 'active',
+    academic_level_id: gradeData?.academic_level_id ?? null,
+    academic_cycle_id: gradeData?.academic_cycle_id ?? null,
+    modality_id: gradeData?.default_modality_id ?? null,
+    subsystem_id: subsystemData?.id ?? null,
+    academic_status: input.academicStatus ?? 'active',
+    is_repeating: input.isRepeating ?? false,
+    promotion_status: input.promotionStatus ?? null,
+    final_condition: input.finalCondition ?? null,
+    transfer_notes: input.transferNotes ?? null,
   })
 
   assertNoSupabaseError(error, 'No se pudo crear la matrícula.')

@@ -20,6 +20,7 @@ export default defineConfig([
     },
     rules: {
       '@typescript-eslint/no-unused-vars': ['error', { destructuredArrayIgnorePattern: '^_', varsIgnorePattern: '^_', ignoreRestSiblings: true }],
+      'react-hooks/set-state-in-effect': 'warn',
     },
   },
 ])

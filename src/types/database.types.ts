@@ -301,41 +301,275 @@ export type Database = {
           },
         ]
       }
-      enrollments: {
+      dr_academic_levels: {
+        Row: {
+          code: string
+          created_at: string
+          id: string
+          name: string
+          sequence: number
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          id?: string
+          name: string
+          sequence: number
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          id?: string
+          name?: string
+          sequence?: number
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      dr_academic_cycles: {
+        Row: {
+          code: string
+          created_at: string
+          grade_sequence_from: number | null
+          grade_sequence_to: number | null
+          id: string
+          level_id: string
+          name: string
+          sequence: number
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          grade_sequence_from?: number | null
+          grade_sequence_to?: number | null
+          id?: string
+          level_id: string
+          name: string
+          sequence: number
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          grade_sequence_from?: number | null
+          grade_sequence_to?: number | null
+          id?: string
+          level_id?: string
+          name?: string
+          sequence?: number
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      dr_competencies: {
+        Row: {
+          code: string
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      dr_evaluation_rules: {
         Row: {
           created_at: string
+          id: string
+          level_id: string | null
+          max_score: number
+          min_passing_percent: number
+          modality_id: string | null
+          name: string
+          period_scheme: string
+          promotion_requires_all_subjects: boolean
+          recovery_enabled: boolean
+          school_id: string | null
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          level_id?: string | null
+          max_score?: number
+          min_passing_percent?: number
+          modality_id?: string | null
+          name: string
+          period_scheme?: string
+          promotion_requires_all_subjects?: boolean
+          recovery_enabled?: boolean
+          school_id?: string | null
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          level_id?: string | null
+          max_score?: number
+          min_passing_percent?: number
+          modality_id?: string | null
+          name?: string
+          period_scheme?: string
+          promotion_requires_all_subjects?: boolean
+          recovery_enabled?: boolean
+          school_id?: string | null
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      dr_modalities: {
+        Row: {
+          applies_from_grade_sequence: number | null
+          applies_to_grade_sequence: number | null
+          code: string
+          created_at: string
+          id: string
+          name: string
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          applies_from_grade_sequence?: number | null
+          applies_to_grade_sequence?: number | null
+          code: string
+          created_at?: string
+          id?: string
+          name: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          applies_from_grade_sequence?: number | null
+          applies_to_grade_sequence?: number | null
+          code?: string
+          created_at?: string
+          id?: string
+          name?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      dr_subsystems: {
+        Row: {
+          code: string
+          created_at: string
+          id: string
+          name: string
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          id?: string
+          name: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          id?: string
+          name?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      enrollments: {
+        Row: {
+          academic_cycle_id: string | null
+          academic_level_id: string | null
+          academic_status: string
+          created_at: string
           enrollment_date: string
+          final_condition: string | null
           grade_id: string
           id: string
+          is_repeating: boolean
+          modality_id: string | null
+          promotion_status: string | null
           school_id: string
           school_year_id: string
           section_id: string
           status: Database["public"]["Enums"]["enrollment_status"]
           student_id: string
+          subsystem_id: string | null
+          transfer_notes: string | null
           updated_at: string
         }
         Insert: {
+          academic_cycle_id?: string | null
+          academic_level_id?: string | null
+          academic_status?: string
           created_at?: string
           enrollment_date?: string
+          final_condition?: string | null
           grade_id: string
           id?: string
+          is_repeating?: boolean
+          modality_id?: string | null
+          promotion_status?: string | null
           school_id?: string
           school_year_id: string
           section_id: string
           status?: Database["public"]["Enums"]["enrollment_status"]
           student_id: string
+          subsystem_id?: string | null
+          transfer_notes?: string | null
           updated_at?: string
         }
         Update: {
+          academic_cycle_id?: string | null
+          academic_level_id?: string | null
+          academic_status?: string
           created_at?: string
           enrollment_date?: string
+          final_condition?: string | null
           grade_id?: string
           id?: string
+          is_repeating?: boolean
+          modality_id?: string | null
+          promotion_status?: string | null
           school_id?: string
           school_year_id?: string
           section_id?: string
           status?: Database["public"]["Enums"]["enrollment_status"]
           student_id?: string
+          subsystem_id?: string | null
+          transfer_notes?: string | null
           updated_at?: string
         }
         Relationships: [
@@ -378,7 +612,10 @@ export type Database = {
       }
       grades: {
         Row: {
+          academic_cycle_id: string | null
+          academic_level_id: string | null
           created_at: string
+          default_modality_id: string | null
           id: string
           level: string | null
           name: string
@@ -388,7 +625,10 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          academic_cycle_id?: string | null
+          academic_level_id?: string | null
           created_at?: string
+          default_modality_id?: string | null
           id?: string
           level?: string | null
           name: string
@@ -398,7 +638,10 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          academic_cycle_id?: string | null
+          academic_level_id?: string | null
           created_at?: string
+          default_modality_id?: string | null
           id?: string
           level?: string | null
           name?: string
@@ -664,16 +907,19 @@ export type Database = {
       }
       planning_entries: {
         Row: {
-          academic_period_id: string
-          achievement_indicator: string
-          activities: Json
-          content_attitudinal: string
-          content_conceptual: string
-          content_procedural: string
-          created_at: string
-          duration_minutes: number | null
-          evaluation_method: string
-          id: string
+	          academic_period_id: string
+	          achievement_indicator: string
+	          activities: Json
+	          content_attitudinal: string
+	          content_conceptual: string
+	          content_procedural: string
+	          created_at: string
+	          duration_minutes: number | null
+	          evaluation_instruments: string
+	          evaluation_method: string
+	          evidence: string
+	          fundamental_competence_id: string | null
+	          id: string
           planned_date: string | null
           resources: string
           school_id: string
@@ -686,16 +932,19 @@ export type Database = {
           updated_at: string
         }
         Insert: {
-          academic_period_id: string
-          achievement_indicator?: string
-          activities?: Json
-          content_attitudinal?: string
-          content_conceptual?: string
-          content_procedural?: string
-          created_at?: string
-          duration_minutes?: number | null
-          evaluation_method?: string
-          id?: string
+	          academic_period_id: string
+	          achievement_indicator?: string
+	          activities?: Json
+	          content_attitudinal?: string
+	          content_conceptual?: string
+	          content_procedural?: string
+	          created_at?: string
+	          duration_minutes?: number | null
+	          evaluation_instruments?: string
+	          evaluation_method?: string
+	          evidence?: string
+	          fundamental_competence_id?: string | null
+	          id?: string
           planned_date?: string | null
           resources?: string
           school_id?: string
@@ -708,16 +957,19 @@ export type Database = {
           updated_at?: string
         }
         Update: {
-          academic_period_id?: string
-          achievement_indicator?: string
-          activities?: Json
-          content_attitudinal?: string
-          content_conceptual?: string
-          content_procedural?: string
-          created_at?: string
-          duration_minutes?: number | null
-          evaluation_method?: string
-          id?: string
+	          academic_period_id?: string
+	          achievement_indicator?: string
+	          activities?: Json
+	          content_attitudinal?: string
+	          content_conceptual?: string
+	          content_procedural?: string
+	          created_at?: string
+	          duration_minutes?: number | null
+	          evaluation_instruments?: string
+	          evaluation_method?: string
+	          evidence?: string
+	          fundamental_competence_id?: string | null
+	          id?: string
           planned_date?: string | null
           resources?: string
           school_id?: string
@@ -737,8 +989,15 @@ export type Database = {
             referencedRelation: "academic_periods"
             referencedColumns: ["id"]
           },
-          {
-            foreignKeyName: "planning_entries_school_id_fkey"
+	          {
+	            foreignKeyName: "planning_entries_fundamental_competence_id_fkey"
+	            columns: ["fundamental_competence_id"]
+	            isOneToOne: false
+	            referencedRelation: "dr_competencies"
+	            referencedColumns: ["id"]
+	          },
+	          {
+	            foreignKeyName: "planning_entries_school_id_fkey"
             columns: ["school_id"]
             isOneToOne: false
             referencedRelation: "schools"
@@ -996,36 +1255,54 @@ export type Database = {
       }
       school_years: {
         Row: {
+          calendar_source: string
           created_at: string
           end_date: string
           id: string
+          instructional_days: number | null
           is_current: boolean
           name: string
+          period_count: number
+          period_scheme: string
           school_id: string
+          student_weeks: number | null
           start_date: string
           status: Database["public"]["Enums"]["record_status"]
+          teacher_weeks: number | null
           updated_at: string
         }
         Insert: {
+          calendar_source?: string
           created_at?: string
           end_date: string
           id?: string
+          instructional_days?: number | null
           is_current?: boolean
           name: string
+          period_count?: number
+          period_scheme?: string
           school_id?: string
+          student_weeks?: number | null
           start_date: string
           status?: Database["public"]["Enums"]["record_status"]
+          teacher_weeks?: number | null
           updated_at?: string
         }
         Update: {
+          calendar_source?: string
           created_at?: string
           end_date?: string
           id?: string
+          instructional_days?: number | null
           is_current?: boolean
           name?: string
+          period_count?: number
+          period_scheme?: string
           school_id?: string
+          student_weeks?: number | null
           start_date?: string
           status?: Database["public"]["Enums"]["record_status"]
+          teacher_weeks?: number | null
           updated_at?: string
         }
         Relationships: [
@@ -1040,28 +1317,58 @@ export type Database = {
       }
       schools: {
         Row: {
+          center_code: string | null
           created_at: string
+          district_code: string | null
+          district_name: string | null
+          enabled_subsystems: string[]
           id: string
           logo_url: string | null
           name: string
+          official_exports_enabled: boolean
+          primary_modality: string
+          regional_code: string | null
+          regional_name: string | null
+          school_shift: string
+          sector: string
           slug: string
           status: Database["public"]["Enums"]["record_status"]
           updated_at: string
         }
         Insert: {
+          center_code?: string | null
           created_at?: string
+          district_code?: string | null
+          district_name?: string | null
+          enabled_subsystems?: string[]
           id?: string
           logo_url?: string | null
           name: string
+          official_exports_enabled?: boolean
+          primary_modality?: string
+          regional_code?: string | null
+          regional_name?: string | null
+          school_shift?: string
+          sector?: string
           slug: string
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
         }
         Update: {
+          center_code?: string | null
           created_at?: string
+          district_code?: string | null
+          district_name?: string | null
+          enabled_subsystems?: string[]
           id?: string
           logo_url?: string | null
           name?: string
+          official_exports_enabled?: boolean
+          primary_modality?: string
+          regional_code?: string | null
+          regional_name?: string | null
+          school_shift?: string
+          sector?: string
           slug?: string
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
@@ -1571,15 +1878,52 @@ export type Database = {
           },
         ]
       }
+      student_yearly_averages: {
+        Row: {
+	          all_periods_passing: boolean | null
+	          grade_id: string | null
+	          min_passing_percent: number | null
+	          period_count: number | null
+          school_year_id: string | null
+          section_id: string | null
+          student_id: string | null
+          subject_id: string | null
+          yearly_average_percent: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "enrollments_grade_id_fkey"
+            columns: ["grade_id"]
+            isOneToOne: false
+            referencedRelation: "grades"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "enrollments_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "section_subjects_subject_id_fkey"
+            columns: ["subject_id"]
+            isOneToOne: false
+            referencedRelation: "subjects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       student_grade_details: {
         Row: {
-          academic_period_id: string | null
-          assessment_name: string | null
-          created_at: string | null
-          effective_percent: number | null
-          effective_score: number | null
-          grade_id: string | null
-          grade_record_id: string | null
+	          academic_period_id: string | null
+	          assessment_name: string | null
+	          created_at: string | null
+	          effective_percent: number | null
+	          effective_score: number | null
+	          enrollment_id: string | null
+	          grade_id: string | null
+	          grade_record_id: string | null
           grade_status:
             | Database["public"]["Enums"]["grade_record_status"]
             | null
@@ -1587,10 +1931,11 @@ export type Database = {
           original_percent: number | null
           original_score: number | null
           recovery_score: number | null
-          recovery_status:
-            | Database["public"]["Enums"]["grade_record_status"]
-            | null
-          school_year_id: string | null
+	          recovery_status:
+	            | Database["public"]["Enums"]["grade_record_status"]
+	            | null
+	          school_id: string | null
+	          school_year_id: string | null
           section_id: string | null
           section_subject_id: string | null
           student_id: string | null

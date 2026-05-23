@@ -66,7 +66,7 @@ No uses `service_role` en el frontend ni en variables `VITE_*`.
 La fuente principal del esquema es la migración:
 
 ```txt
-supabase/migrations/20260522_initial_student_system_schema.sql
+supabase/migrations/001_initial_student_system_schema.sql
 ```
 
 Documentación:

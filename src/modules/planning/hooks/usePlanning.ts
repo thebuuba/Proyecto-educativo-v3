@@ -4,12 +4,14 @@ import {
   createPlanningEntry,
   deletePlanningEntry,
   getAcademicPeriods,
+  getCompetencies,
   getPlanningEntries,
   getTeacherSectionSubjects,
   updatePlanningEntry,
 } from '@/modules/planning/services/planningService'
 import type {
   AcademicPeriodSummary,
+  CompetencyOption,
   CreatePlanningEntryInput,
   PlanningEntryWithDetails,
   PlanningFilters,
@@ -23,6 +25,7 @@ export function usePlanning() {
   const [sectionSubjects, setSectionSubjects] = useState<
     { id: string; subjectName: string; sectionName: string; gradeName: string }[]
   >([])
+  const [competencies, setCompetencies] = useState<CompetencyOption[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [schoolYearId, setSchoolYearId] = useState<string | null>(null)
@@ -71,6 +74,15 @@ export function usePlanning() {
     }
   }, [])
 
+  const fetchCompetencies = useCallback(async () => {
+    try {
+      const data = await getCompetencies()
+      setCompetencies(data)
+    } catch (error) {
+      console.error('Error al cargar competencias fundamentales:', error)
+    }
+  }, [])
+
   useEffect(() => {
     async function init() {
       const currentYear = await getCurrentSchoolYear()
@@ -81,11 +93,15 @@ export function usePlanning() {
       }
 
       setSchoolYearId(currentYear.id)
-      await Promise.all([fetchPeriods(currentYear.id), fetchSectionSubjects()])
+      await Promise.all([
+        fetchPeriods(currentYear.id),
+        fetchSectionSubjects(),
+        fetchCompetencies(),
+      ])
     }
 
     void init()
-  }, [fetchPeriods, fetchSectionSubjects])
+  }, [fetchPeriods, fetchSectionSubjects, fetchCompetencies])
 
   useEffect(() => {
     if (periods.length > 0 && !activePeriodId) {
@@ -139,6 +155,7 @@ export function usePlanning() {
     setActivePeriodId,
     entries,
     sectionSubjects,
+    competencies,
     loading,
     error,
     addEntry,

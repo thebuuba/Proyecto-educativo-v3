@@ -86,7 +86,7 @@ npx supabase db push
 Migración principal:
 
 ```txt
-supabase/migrations/20260522_initial_student_system_schema.sql
+supabase/migrations/001_initial_student_system_schema.sql
 ```
 
 ## 7. Generar tipos TypeScript reales

@@ -19,6 +19,10 @@ export function useGrades() {
   const [periods, setPeriods] = useState<AcademicPeriodOpt[]>([])
   const [selectedSsId, setSelectedSsId] = useState('')
   const [selectedPeriodId, setSelectedPeriodId] = useState('')
+  const [gradingContext, setGradingContext] = useState<{
+    sectionId: string
+    schoolYearId: string
+  } | null>(null)
   const [students, setStudents] = useState<StudentGradeRow[]>([])
   const [stats, setStats] = useState<GradeSummaryStats>({
     average: null,
@@ -72,9 +76,13 @@ export function useGrades() {
     setError(null)
 
     try {
-      const rows = await getStudentsForGrading(selectedSsId, selectedPeriodId)
-      setStudents(rows)
-      setStats(computeGradeStats(rows))
+      const result = await getStudentsForGrading(selectedSsId, selectedPeriodId)
+      setGradingContext({
+        sectionId: result.sectionId,
+        schoolYearId: result.schoolYearId,
+      })
+      setStudents(result.students)
+      setStats(computeGradeStats(result.students))
     } catch (error) {
       setError(
         error instanceof Error
@@ -102,10 +110,16 @@ export function useGrades() {
 
       try {
         const student = students.find((s) => s.enrollmentId === enrollmentId)
+        if (!gradingContext) {
+          throw new Error('No se pudo determinar el año escolar y la sección.')
+        }
+
         await saveGrade({
           enrollmentId,
           sectionSubjectId: selectedSsId,
           academicPeriodId: selectedPeriodId,
+          sectionId: gradingContext.sectionId,
+          schoolYearId: gradingContext.schoolYearId,
           ...data,
           gradeId: student?.gradeId ?? null,
         })
@@ -134,7 +148,7 @@ export function useGrades() {
         setSaving(false)
       }
     },
-    [selectedPeriodId, selectedSsId, students],
+    [gradingContext, selectedPeriodId, selectedSsId, students],
   )
 
   return {

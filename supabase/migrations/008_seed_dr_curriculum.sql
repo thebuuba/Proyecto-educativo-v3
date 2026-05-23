@@ -5,6 +5,7 @@
 -- =============================================================================
 -- 1. Grados del sistema educativo dominicano
 -- =============================================================================
+-- Nivel Inicial: Maternal, Kinder y Preprimario
 -- Nivel Primario: 1ro - 6to
 -- Nivel Secundario: 1ero - 6to
 
@@ -17,8 +18,11 @@ declare
 begin
   select id into v_school_id from public.schools limit 1;
 
-  insert into public.grades (name, level, sequence, school_id) values
-    ('1ro de Primaria',   'Primario',    1,  v_school_id),
+	  insert into public.grades (name, level, sequence, school_id) values
+	    ('Maternal',           'Inicial',    -2,  v_school_id),
+	    ('Kinder',             'Inicial',    -1,  v_school_id),
+	    ('Preprimario',        'Inicial',     0,  v_school_id),
+	    ('1ro de Primaria',   'Primario',    1,  v_school_id),
     ('2do de Primaria',   'Primario',    2,  v_school_id),
     ('3ro de Primaria',   'Primario',    3,  v_school_id),
     ('4to de Primaria',   'Primario',    4,  v_school_id),
@@ -36,7 +40,16 @@ begin
   -- 2. Asignaturas del currículo MINERD por nivel
   -- ===========================================================================
 
-  -- Primaria (compartidas para 1ro-6to)
+	  -- Inicial
+	  insert into public.subjects (code, name, description, school_id) values
+	    ('COM-INI',  'Competencia Comunicativa', 'Lenguaje oral, expresión y comprensión en contextos cotidianos', v_school_id),
+	    ('PEN-INI',  'Pensamiento Lógico, Creativo y Crítico', 'Exploración, clasificación, seriación y resolución de situaciones', v_school_id),
+	    ('SOC-INI',  'Desarrollo Social y Personal', 'Identidad, autonomía, convivencia y ciudadanía inicial', v_school_id),
+	    ('MOT-INI',  'Psicomotricidad', 'Desarrollo corporal, coordinación y expresión motriz', v_school_id),
+	    ('ART-INI',  'Expresión Artística', 'Música, plástica, dramatización y apreciación estética', v_school_id)
+	  on conflict (school_id, code) do nothing;
+
+	  -- Primaria (compartidas para 1ro-6to)
   insert into public.subjects (code, name, description, school_id) values
     ('LEN-PRI',  'Lengua Española',         'Comprensión y producción oral y escrita', v_school_id),
     ('MAT-PRI',  'Matemática',              'Razonamiento lógico y resolución de problemas', v_school_id),

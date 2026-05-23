@@ -78,6 +78,11 @@ export type CreateEnrollmentInput = {
   schoolYearId: string
   enrollmentDate?: string
   status?: EnrollmentStatus
+  academicStatus?: 'active' | 'promoted' | 'repeating' | 'withdrawn' | 'transferred' | 'graduated'
+  isRepeating?: boolean
+  promotionStatus?: string | null
+  finalCondition?: string | null
+  transferNotes?: string | null
 }
 
 export type EnrollmentListItem = {

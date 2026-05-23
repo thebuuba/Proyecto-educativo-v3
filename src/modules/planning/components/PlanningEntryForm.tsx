@@ -7,12 +7,13 @@ import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
-import type { AcademicPeriodSummary } from '@/modules/planning/types'
+import type { AcademicPeriodSummary, CompetencyOption } from '@/modules/planning/types'
 import type { CreatePlanningEntryInput } from '@/modules/planning/types'
 
 type PlanningEntryFormProps = {
-  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string }[]
-  periods: AcademicPeriodSummary[]
+	  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string }[]
+	  periods: AcademicPeriodSummary[]
+	  competencies: CompetencyOption[]
   initial?: {
     entry: CreatePlanningEntryInput & { id?: string }
     sectionSubjectId?: string
@@ -25,8 +26,9 @@ type PlanningEntryFormProps = {
 }
 
 export function PlanningEntryForm({
-  sectionSubjects,
-  periods,
+	  sectionSubjects,
+	  periods,
+	  competencies,
   initial,
   submitting,
   error,
@@ -38,6 +40,9 @@ export function PlanningEntryForm({
   )
   const [academicPeriodId, setAcademicPeriodId] = useState(
     initial?.academicPeriodId ?? initial?.entry.academicPeriodId ?? '',
+  )
+  const [fundamentalCompetenceId, setFundamentalCompetenceId] = useState(
+    initial?.entry.fundamentalCompetenceId ?? '',
   )
   const [title, setTitle] = useState(initial?.entry.title ?? '')
   const [specificCompetence, setSpecificCompetence] = useState(
@@ -64,6 +69,10 @@ export function PlanningEntryForm({
   const [resources, setResources] = useState(initial?.entry.resources ?? '')
   const [evaluationMethod, setEvaluationMethod] = useState(
     initial?.entry.evaluationMethod ?? '',
+  )
+  const [evidence, setEvidence] = useState(initial?.entry.evidence ?? '')
+  const [evaluationInstruments, setEvaluationInstruments] = useState(
+    initial?.entry.evaluationInstruments ?? '',
   )
   const [duration, setDuration] = useState(
     initial?.entry.durationMinutes?.toString() ?? '',
@@ -93,9 +102,10 @@ export function PlanningEntryForm({
     }
 
     await onSubmit({
-      sectionSubjectId,
-      academicPeriodId,
-      title: title.trim(),
+	      sectionSubjectId,
+	      academicPeriodId,
+	      fundamentalCompetenceId: fundamentalCompetenceId || null,
+	      title: title.trim(),
       specificCompetence,
       achievementIndicator,
       contentConceptual,
@@ -103,9 +113,11 @@ export function PlanningEntryForm({
       contentAttitudinal,
       strategies,
       activities: { inicio, desarrollo, cierre },
-      resources,
-      evaluationMethod,
-      durationMinutes: duration ? Number(duration) : null,
+	      resources,
+	      evaluationMethod,
+	      evidence,
+	      evaluationInstruments,
+	      durationMinutes: duration ? Number(duration) : null,
       plannedDate: plannedDate || null,
     })
   }
@@ -179,14 +191,28 @@ export function PlanningEntryForm({
             </Field>
           </div>
 
-          <Field label="Título de la planificación">
-            <Input
+	          <Field label="Título de la planificación">
+	            <Input
               type="text"
               placeholder="Ej: Unidad I: Los números naturales"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
-          </Field>
+	          </Field>
+
+	          <Field label="Competencia fundamental">
+	            <Select
+	              value={fundamentalCompetenceId}
+	              onChange={(e) => setFundamentalCompetenceId(e.target.value)}
+	            >
+	              <option value="">Selecciona...</option>
+	              {competencies.map((competency) => (
+	                <option key={competency.id} value={competency.id}>
+	                  {competency.name}
+	                </option>
+	              ))}
+	            </Select>
+	          </Field>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Competencia específica">
@@ -290,15 +316,35 @@ export function PlanningEntryForm({
               />
             </Field>
 
-            <Field label="Evaluación">
-              <Textarea
-                placeholder="Instrumentos y criterios de evaluación"
-                value={evaluationMethod}
-                onChange={(e) => setEvaluationMethod(e.target.value)}
-                rows={2}
-              />
-            </Field>
-          </div>
+	            <Field label="Evaluación">
+	              <Textarea
+	                placeholder="Instrumentos y criterios de evaluación"
+	                value={evaluationMethod}
+	                onChange={(e) => setEvaluationMethod(e.target.value)}
+	                rows={2}
+	              />
+	            </Field>
+	          </div>
+
+	          <div className="grid gap-4 sm:grid-cols-2">
+	            <Field label="Evidencias de aprendizaje">
+	              <Textarea
+	                placeholder="Productos, desempeños o registros observables"
+	                value={evidence}
+	                onChange={(e) => setEvidence(e.target.value)}
+	                rows={2}
+	              />
+	            </Field>
+
+	            <Field label="Instrumentos">
+	              <Textarea
+	                placeholder="Rúbrica, lista de cotejo, prueba, portafolio..."
+	                value={evaluationInstruments}
+	                onChange={(e) => setEvaluationInstruments(e.target.value)}
+	                rows={2}
+	              />
+	            </Field>
+	          </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Duración (minutos)">

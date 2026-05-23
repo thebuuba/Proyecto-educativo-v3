@@ -9,26 +9,25 @@ create or replace view public.student_yearly_averages
 with (security_invoker = true)
 as
 select
-  student_id,
-  school_year_id,
-  grade_id,
-  section_id,
-  subject_id,
+  d.student_id,
+  d.school_year_id,
+  d.grade_id,
+  d.section_id,
+  d.subject_id,
   round(
-    sum(effective_percent * weight) / nullif(sum(weight), 0),
+    sum(d.effective_percent * d.weight) / nullif(sum(d.weight), 0),
     2
   ) as yearly_average_percent,
-  count(distinct academic_period_id) as period_count,
-  bool_and(
-    (coalesce(recovery_score, score) / max_score) >= 0.65
-  ) as all_periods_passing
-from public.student_grade_details
+  count(distinct d.academic_period_id) as period_count,
+  bool_and(d.effective_percent >= 65) as all_periods_passing,
+  65::numeric(5,2) as min_passing_percent
+from public.student_grade_details d
 group by
-  student_id,
-  school_year_id,
-  grade_id,
-  section_id,
-  subject_id;
+  d.student_id,
+  d.school_year_id,
+  d.grade_id,
+  d.section_id,
+  d.subject_id;
 
 comment on view public.student_yearly_averages is
   'Yearly weighted average per student per subject across all periods. '

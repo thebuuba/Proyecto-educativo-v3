@@ -5,6 +5,7 @@ import type { Database } from '@/types/database.types'
 import type { RecordStatus } from '@/types/domain'
 import type {
   AcademicPeriodSummary,
+  CompetencyOption,
   CreatePlanningEntryInput,
   PlanningActivities,
   PlanningEntryWithDetails,
@@ -19,6 +20,9 @@ type EntryRow = {
   id: string
   section_subject_id: string
   academic_period_id: string
+  fundamental_competence_id: string | null
+  evidence: string
+  evaluation_instruments: string
   title: string
   sequence: number
   specific_competence: string
@@ -43,12 +47,16 @@ type EntryRow = {
     } | { name: string; grades: { name: string } | { name: string }[] | null }[] | null
   } | { subjects: { name: string } | { name: string }[] | null; sections: { name: string; grades: { name: string } | { name: string }[] | null } | { name: string; grades: { name: string } | { name: string }[] | null }[] | null }[] | null
   academic_periods: { name: string } | { name: string }[] | null
+  dr_competencies: { name: string } | { name: string }[] | null
 }
 
 const entrySelect = `
   id,
   section_subject_id,
   academic_period_id,
+  fundamental_competence_id,
+  evidence,
+  evaluation_instruments,
   title,
   sequence,
   specific_competence,
@@ -72,7 +80,8 @@ const entrySelect = `
       grades(name)
     )
   ),
-  academic_periods(name)
+  academic_periods(name),
+  dr_competencies(name)
 `
 
 function mapEntry(row: EntryRow): PlanningEntryWithDetails {
@@ -86,6 +95,8 @@ function mapEntry(row: EntryRow): PlanningEntryWithDetails {
     id: row.id,
     sectionSubjectId: row.section_subject_id,
     academicPeriodId: row.academic_period_id,
+    fundamentalCompetenceId: row.fundamental_competence_id,
+    fundamentalCompetenceName: firstOrNull(row.dr_competencies)?.name ?? null,
     title: row.title,
     sequence: row.sequence,
     specificCompetence: row.specific_competence,
@@ -97,6 +108,8 @@ function mapEntry(row: EntryRow): PlanningEntryWithDetails {
     activities: row.activities,
     resources: row.resources,
     evaluationMethod: row.evaluation_method,
+    evidence: row.evidence,
+    evaluationInstruments: row.evaluation_instruments,
     durationMinutes: row.duration_minutes,
     plannedDate: row.planned_date,
     status: row.status,
@@ -224,6 +237,7 @@ export async function createPlanningEntry(
   const payload: PlanningEntryInsert = {
     section_subject_id: input.sectionSubjectId,
     academic_period_id: input.academicPeriodId,
+    fundamental_competence_id: input.fundamentalCompetenceId || null,
     title: input.title.trim(),
     sequence: input.sequence ?? 1,
     specific_competence: input.specificCompetence ?? '',
@@ -235,6 +249,8 @@ export async function createPlanningEntry(
     activities: input.activities ?? { inicio: '', desarrollo: '', cierre: '' },
     resources: input.resources ?? '',
     evaluation_method: input.evaluationMethod ?? '',
+    evidence: input.evidence ?? '',
+    evaluation_instruments: input.evaluationInstruments ?? '',
     duration_minutes: input.durationMinutes ?? null,
     planned_date: input.plannedDate ?? null,
   }
@@ -250,6 +266,7 @@ export async function updatePlanningEntry(
 ): Promise<void> {
   const payload: PlanningEntryUpdate = {}
   if (input.title !== undefined) payload.title = input.title.trim()
+  if (input.fundamentalCompetenceId !== undefined) payload.fundamental_competence_id = input.fundamentalCompetenceId || null
   if (input.sequence !== undefined) payload.sequence = input.sequence
   if (input.specificCompetence !== undefined) payload.specific_competence = input.specificCompetence
   if (input.achievementIndicator !== undefined) payload.achievement_indicator = input.achievementIndicator
@@ -260,11 +277,29 @@ export async function updatePlanningEntry(
   if (input.activities !== undefined) payload.activities = input.activities
   if (input.resources !== undefined) payload.resources = input.resources
   if (input.evaluationMethod !== undefined) payload.evaluation_method = input.evaluationMethod
+  if (input.evidence !== undefined) payload.evidence = input.evidence
+  if (input.evaluationInstruments !== undefined) payload.evaluation_instruments = input.evaluationInstruments
   if (input.durationMinutes !== undefined) payload.duration_minutes = input.durationMinutes
   if (input.plannedDate !== undefined) payload.planned_date = input.plannedDate
 
   const { error } = await supabase.from('planning_entries').update(payload).eq('id', id)
   assertEntryError(error, 'No se pudo actualizar la planificación.')
+}
+
+export async function getCompetencies(): Promise<CompetencyOption[]> {
+  const { data, error } = await supabase
+    .from('dr_competencies')
+    .select('id, code, name')
+    .eq('status', 'active')
+    .order('code', { ascending: true })
+
+  assertNoSupabaseError(error, 'No se pudieron cargar las competencias fundamentales.')
+
+  return ((data ?? []) as CompetencyOption[]).map((row) => ({
+    id: row.id,
+    code: row.code,
+    name: row.name,
+  }))
 }
 
 export async function deletePlanningEntry(id: string): Promise<void> {
