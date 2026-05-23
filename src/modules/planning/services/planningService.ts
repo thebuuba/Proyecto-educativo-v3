@@ -111,7 +111,7 @@ function mapEntry(row: EntryRow): PlanningEntryWithDetails {
 
 function getEntryError(error: { message: string; code?: string }) {
   if (error.code === DB_ERROR.UNIQUE_VIOLATION) {
-    return 'Ya existe una planificación con ese título para este período.'
+    return 'Ya existe una planificación con ese título para este trimestre.'
   }
   return getSupabaseErrorMessage(error)
 }
@@ -135,7 +135,7 @@ export async function getAcademicPeriods(
     .eq('status', 'active')
     .order('sequence', { ascending: true })
 
-  assertNoSupabaseError(error, 'No se pudieron cargar los períodos académicos.')
+  assertNoSupabaseError(error, 'No se pudieron cargar los trimestres académicos.')
 
   return ((data ?? []) as Database['public']['Tables']['academic_periods']['Row'][]).map(
     (row) => ({
@@ -164,7 +164,7 @@ export async function createAcademicPeriod(input: {
     end_date: input.endDate,
   })
 
-  assertNoSupabaseError(error, 'No se pudo crear el período académico.')
+  assertNoSupabaseError(error, 'No se pudo crear el trimestre académico.')
 }
 
 export async function updateAcademicPeriod(
@@ -185,12 +185,12 @@ export async function updateAcademicPeriod(
   if (input.status !== undefined) payload.status = input.status
 
   const { error } = await supabase.from('academic_periods').update(payload).eq('id', id)
-  assertNoSupabaseError(error, 'No se pudo actualizar el período académico.')
+  assertNoSupabaseError(error, 'No se pudo actualizar el trimestre académico.')
 }
 
 export async function deleteAcademicPeriod(id: string): Promise<void> {
   const { error } = await supabase.from('academic_periods').delete().eq('id', id)
-  assertNoSupabaseError(error, 'No se pudo eliminar el período académico.')
+  assertNoSupabaseError(error, 'No se pudo eliminar el trimestre académico.')
 }
 
 export async function getPlanningEntries(

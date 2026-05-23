@@ -83,7 +83,7 @@ export function PlanningEntryForm({
     }
 
     if (!academicPeriodId) {
-      setValidationError('Selecciona un período académico.')
+      setValidationError('Selecciona un trimestre académico.')
       return
     }
 
@@ -164,7 +164,7 @@ export function PlanningEntryForm({
               </Select>
             </Field>
 
-            <Field label="Período académico">
+            <Field label="Trimestre académico">
               <Select
                 value={academicPeriodId}
                 onChange={(e) => setAcademicPeriodId(e.target.value)}

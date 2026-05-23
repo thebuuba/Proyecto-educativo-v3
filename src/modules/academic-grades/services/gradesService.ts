@@ -81,7 +81,7 @@ export async function getAcademicPeriods(): Promise<AcademicPeriodOpt[]> {
     .eq('status', 'active')
     .order('sequence', { ascending: true })
 
-  assertNoSupabaseError(error, 'No se pudieron cargar los períodos.')
+  assertNoSupabaseError(error, 'No se pudieron cargar los trimestres.')
   return (data ?? []) as AcademicPeriodOpt[]
 }
 

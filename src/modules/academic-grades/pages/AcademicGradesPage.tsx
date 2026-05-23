@@ -71,7 +71,7 @@ export function AcademicGradesPage() {
 
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              Período
+              Trimestre
             </label>
             <Select
               value={selectedPeriodId}
@@ -79,7 +79,7 @@ export function AcademicGradesPage() {
               className="w-full sm:w-56"
             >
               {periods.length === 0 ? (
-                <option value="">Sin períodos</option>
+                <option value="">Sin trimestres</option>
               ) : (
                 periods.map((p) => (
                   <option key={p.id} value={p.id}>
@@ -115,7 +115,7 @@ export function AcademicGradesPage() {
         {!selectedSsId || !selectedPeriodId ? (
           <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-center">
             <p className="text-sm text-muted-foreground">
-              Selecciona una sección, asignatura y período para gestionar calificaciones.
+              Selecciona una sección, asignatura y trimestre para gestionar calificaciones.
             </p>
           </div>
         ) : loading ? (

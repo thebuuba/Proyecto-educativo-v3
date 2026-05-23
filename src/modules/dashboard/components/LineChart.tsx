@@ -8,7 +8,7 @@ export function LineChart({ data }: LineChartProps) {
   if (data.length === 0) {
     return (
       <div className="flex h-64 items-center justify-center text-sm font-medium text-muted-foreground">
-        No hay calificaciones publicadas para este período.
+        No hay calificaciones publicadas para este trimestre.
       </div>
     )
   }

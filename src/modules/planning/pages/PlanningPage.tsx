@@ -115,7 +115,7 @@ export function PlanningPage() {
               onClick={() => setPeriodManagerOpen(true)}
             >
               <Settings2 className="size-4" />
-              Períodos
+              Trimestres
             </Button>
             <Button
               variant="primary"
@@ -175,8 +175,8 @@ export function PlanningPage() {
         <div className="flex min-h-[200px] flex-col items-center justify-center text-center">
           <p className="text-sm font-medium text-muted-foreground">
             {activePeriodId
-              ? 'No hay planificaciones para este período.'
-              : 'Selecciona un período académico para ver sus planificaciones.'}
+              ? 'No hay planificaciones para este trimestre.'
+              : 'Selecciona un trimestre académico para ver sus planificaciones.'}
           </p>
           {activePeriodId ? (
             <Button variant="outline" className="mt-4" onClick={openCreateForm}>

@@ -158,6 +158,6 @@ export async function getCurrentAcademicPeriodId(): Promise<string | null> {
     .limit(1)
     .maybeSingle()
 
-  assertNoSupabaseError(error, 'No se pudo cargar el período actual.')
+  assertNoSupabaseError(error, 'No se pudo cargar el trimestre actual.')
   return data?.id ?? null
 }

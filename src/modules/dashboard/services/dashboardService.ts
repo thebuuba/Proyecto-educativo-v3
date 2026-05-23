@@ -337,7 +337,7 @@ async function getAcademicPeriods(): Promise<AcademicPeriodRow[]> {
     .select('id, name, sequence')
     .order('sequence', { ascending: true })
 
-  assertNoSupabaseError(error, 'No se pudieron cargar períodos académicos.')
+  assertNoSupabaseError(error, 'No se pudieron cargar los trimestres académicos.')
   return (data ?? []) as AcademicPeriodRow[]
 }
 

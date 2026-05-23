@@ -35,7 +35,7 @@ export function usePlanning() {
       setError(
         error instanceof Error
           ? error.message
-          : 'No se pudieron cargar los períodos.',
+          : 'No se pudieron cargar los trimestres.',
       )
     }
   }, [])

@@ -24,8 +24,8 @@ export function AcademicYearManager({
 }: AcademicYearManagerProps) {
   const [formOpen, setFormOpen] = useState(false)
   const [name, setName] = useState(`Año Escolar ${currentYear}-${currentYear + 1}`)
-  const [startDate, setStartDate] = useState(`${currentYear}-09-01`)
-  const [endDate, setEndDate] = useState(`${currentYear + 1}-08-31`)
+  const [startDate, setStartDate] = useState(`${currentYear}-08-24`)
+  const [endDate, setEndDate] = useState(`${currentYear + 1}-06-20`)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [activating, setActivating] = useState<string | null>(null)
