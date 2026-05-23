@@ -8,6 +8,8 @@ type PlanningEntryCardProps = {
   onDelete: (entry: PlanningEntryWithDetails) => void
 }
 
+const MAX_INDICATOR_CHARS = 60
+
 export function PlanningEntryCard({ entry, onEdit, onDelete }: PlanningEntryCardProps) {
   return (
     <button
@@ -39,8 +41,8 @@ export function PlanningEntryCard({ entry, onEdit, onDelete }: PlanningEntryCard
       <div className="mt-3 flex flex-wrap gap-2">
         {entry.achievementIndicator ? (
           <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-            {entry.achievementIndicator.length > 60
-              ? `${entry.achievementIndicator.slice(0, 60)}…`
+            {entry.achievementIndicator.length > MAX_INDICATOR_CHARS
+              ? `${entry.achievementIndicator.slice(0, MAX_INDICATOR_CHARS)}…`
               : entry.achievementIndicator}
           </span>
         ) : null}

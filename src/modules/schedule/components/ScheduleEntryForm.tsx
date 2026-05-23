@@ -59,8 +59,9 @@ export function ScheduleEntryForm({
         ])
         setSections(sectionsData)
         setTimeSlots(slotsData)
-      } catch {
+      } catch (error) {
         setValidationError('No se pudieron cargar los datos del formulario.')
+        console.error('Error al cargar formulario de horario:', error)
       } finally {
         setLoadingDeps(false)
       }

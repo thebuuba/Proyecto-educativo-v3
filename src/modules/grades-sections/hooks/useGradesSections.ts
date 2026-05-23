@@ -29,10 +29,10 @@ export function useGradesSections() {
     try {
       const data = await getGrades()
       setGrades(data)
-    } catch (fetchError) {
+    } catch (error) {
       setError(
-        fetchError instanceof Error
-          ? fetchError.message
+        error instanceof Error
+          ? error.message
           : 'No se pudieron cargar los grados y secciones.',
       )
       setGrades([])

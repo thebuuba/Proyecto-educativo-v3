@@ -133,10 +133,10 @@ export function StudentDetailPanel({
         setEnrollmentFormOpen(false)
         setEnrollmentError(null)
         await refreshEnrollments()
-      } catch (submitError) {
+      } catch (error) {
         setEnrollmentError(
-          submitError instanceof Error
-            ? submitError.message
+          error instanceof Error
+            ? error.message
             : 'No se pudo crear la matrícula.',
         )
       } finally {

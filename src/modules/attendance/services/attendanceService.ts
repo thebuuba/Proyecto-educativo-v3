@@ -1,3 +1,4 @@
+import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import { supabase } from '@/services/supabase'
 import { assertNoSupabaseError, firstOrNull } from '@/utils/helpers'
 import type { AttendanceStatus } from '@/types/domain'
@@ -141,14 +142,8 @@ export function computeAttendanceStats(
 }
 
 export async function getCurrentSchoolYearId(): Promise<string | null> {
-  const { data, error } = await supabase
-    .from('school_years')
-    .select('id')
-    .eq('is_current', true)
-    .maybeSingle()
-
-  assertNoSupabaseError(error, 'No se pudo cargar el año escolar actual.')
-  return data?.id ?? null
+  const year = await getCurrentSchoolYear()
+  return year?.id ?? null
 }
 
 export async function getCurrentAcademicPeriodId(): Promise<string | null> {

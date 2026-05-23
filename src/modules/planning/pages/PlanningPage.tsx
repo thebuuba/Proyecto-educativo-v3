@@ -65,12 +65,12 @@ export function PlanningPage() {
       }
 
       closeForm()
-    } catch (submitError) {
-      setFormError(
-        submitError instanceof Error
-          ? submitError.message
-          : 'No se pudo guardar la planificación.',
-      )
+    } catch (error) {
+        setError(
+          error instanceof Error
+            ? error.message
+            : 'No se pudo guardar.',
+        )
     } finally {
       setIsSubmitting(false)
     }
@@ -85,8 +85,8 @@ export function PlanningPage() {
 
     try {
       await removeEntry(deleteTarget.id, activePeriodId)
-    } catch {
-      // handled in hook
+    } catch (error) {
+      console.error('Error al eliminar planificación:', error)
     } finally {
       setDeleteTarget(null)
     }

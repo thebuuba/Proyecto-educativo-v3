@@ -28,10 +28,10 @@ export function SchoolProfileForm({ profile, onSave }: SchoolProfileFormProps) {
     try {
       await onSave({ name: name.trim(), slug: slug.trim() })
       setSuccess(true)
-    } catch (saveError) {
+    } catch (error) {
       setError(
-        saveError instanceof Error
-          ? saveError.message
+        error instanceof Error
+          ? error.message
           : 'No se pudo guardar.',
       )
     } finally {

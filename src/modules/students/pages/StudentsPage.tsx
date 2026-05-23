@@ -17,6 +17,7 @@ import { StudentDetailPanel } from '@/modules/students/components/StudentDetailP
 import { StudentFiltersBar } from '@/modules/students/components/StudentFiltersBar'
 import { StudentForm } from '@/modules/students/components/StudentForm'
 import { StudentsTable } from '@/modules/students/components/StudentsTable'
+import { THRESHOLD } from '@/constants'
 import { useStudents } from '@/modules/students/hooks/useStudents'
 import { importStudents } from '@/modules/students/services/studentsService'
 import type { ParsedStudentRow } from '@/modules/students/services/importService'
@@ -84,8 +85,8 @@ export function StudentsPage() {
     return (
       student.status !== 'active' ||
       (student.metrics.attendancePercentage !== null &&
-        student.metrics.attendancePercentage < 70) ||
-      (student.metrics.averageScore !== null && student.metrics.averageScore < 6.5)
+        student.metrics.attendancePercentage < THRESHOLD.ATTENDANCE_LOW) ||
+      (student.metrics.averageScore !== null && student.metrics.averageScore < THRESHOLD.GRADE_LOW)
     )
   }).length
   const courseOptions = useMemo(() => {

@@ -63,8 +63,11 @@ export function EnrollmentForm({
         if (!isMounted) return
         setGrades(gradesData)
         setSchoolYear(currentYear)
-      } catch {
-        if (isMounted) setValidationError('No se pudieron cargar los datos del formulario.')
+      } catch (error) {
+        if (isMounted) {
+          setValidationError('No se pudieron cargar los datos del formulario.')
+          console.error('Error al cargar formulario de matrícula:', error)
+        }
       } finally {
         if (isMounted) setLoadingOptions(false)
       }

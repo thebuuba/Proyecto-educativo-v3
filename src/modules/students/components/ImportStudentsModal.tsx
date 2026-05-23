@@ -1,6 +1,7 @@
 import { AlertCircle, FileUp, Table, Upload } from 'lucide-react'
 import { useState } from 'react'
 
+import { DEFAULTS } from '@/constants'
 import { Button } from '@/components/ui/Button'
 import { Modal } from '@/components/ui/Modal'
 import { cn } from '@/utils/cn'
@@ -20,7 +21,7 @@ type ImportStudentsModalProps = {
   onClose: () => void
 }
 
-const MAX_PREVIEW = 10
+const MAX_PREVIEW = DEFAULTS.PREVIEW_MAX_ROWS
 
 export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalProps) {
   const [rows, setRows] = useState<ParsedStudentRow[]>([])
@@ -49,9 +50,9 @@ export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalPr
       const result = await parseCSVFile(file)
       setRows(result.rows)
       setErrors(result.errors)
-    } catch (parseError) {
+    } catch (error) {
       setErrorMessage(
-        parseError instanceof Error ? parseError.message : 'Error al leer el archivo.',
+        error instanceof Error ? error.message : 'Error al leer el archivo.',
       )
       setRows([])
       setErrors([])
@@ -70,9 +71,9 @@ export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalPr
         skipped: result.errors.length,
         parseErrors: result.errors,
       })
-    } catch (importError) {
+    } catch (error) {
       setErrorMessage(
-        importError instanceof Error ? importError.message : 'Error al importar.',
+        error instanceof Error ? error.message : 'Error al importar.',
       )
     } finally {
       setIsSubmitting(false)

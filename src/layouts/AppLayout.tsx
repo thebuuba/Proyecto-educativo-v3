@@ -25,7 +25,7 @@ export function AppLayout() {
       const next = !prev
       try {
         localStorage.setItem(STORAGE_KEY, String(next))
-      } catch {}
+      } catch { /* localStorage may throw in private mode */ }
       return next
     })
   }, [])

@@ -65,9 +65,9 @@ export function PeriodManager({
       setStartDate('')
       setEndDate('')
       onRefresh()
-    } catch (submitError) {
+    } catch (error) {
       setError(
-        submitError instanceof Error ? submitError.message : 'No se pudo crear el período.',
+        error instanceof Error ? error.message : 'No se pudo crear el período.',
       )
     } finally {
       setSubmitting(false)
@@ -81,7 +81,8 @@ export function PeriodManager({
       await deleteAcademicPeriod(deleteTarget.id)
       setDeleteTarget(null)
       onRefresh()
-    } catch {
+    } catch (error) {
+      console.error('Error al eliminar período académico:', error)
       setDeleteTarget(null)
     }
   }

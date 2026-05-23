@@ -40,10 +40,10 @@ export function AcademicYearManager({
     try {
       await onAdd({ name: name.trim(), startDate, endDate })
       setFormOpen(false)
-    } catch (saveError) {
+    } catch (error) {
       setError(
-        saveError instanceof Error
-          ? saveError.message
+        error instanceof Error
+          ? error.message
           : 'No se pudo crear el año escolar.',
       )
     } finally {

@@ -1,4 +1,5 @@
 import { supabase } from '@/services/supabase'
+import { THRESHOLD } from '@/constants'
 import { assertNoSupabaseError, firstOrNull } from '@/utils/helpers'
 import type { GradeRecordStatus } from '@/types/domain'
 import type {
@@ -205,8 +206,8 @@ export function computeGradeStats(rows: StudentGradeRow[]): GradeSummaryStats {
       : null,
     highest: scores.length > 0 ? Math.round(Math.max(...scores) * 10) / 10 : null,
     lowest: scores.length > 0 ? Math.round(Math.min(...scores) * 10) / 10 : null,
-    passed: scores.filter((s) => s >= 6.5).length,
-    failed: scores.filter((s) => s < 6.5).length,
+    passed: scores.filter((s) => s >= THRESHOLD.GRADE_LOW).length,
+    failed: scores.filter((s) => s < THRESHOLD.GRADE_LOW).length,
     total: rows.length,
   }
 }
