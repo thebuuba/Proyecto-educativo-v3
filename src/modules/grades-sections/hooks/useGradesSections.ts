@@ -1,24 +1,40 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import {
+  assignSubjectToSection,
   createGrade,
   createSection,
-  deleteGrade,
-  deleteSection,
-  getGrades,
+  createSubject,
+  deactivateGrade,
+  deactivateSection,
+  deactivateSectionSubject,
+  getCourseData,
   updateGrade,
   updateSection,
 } from '@/modules/grades-sections/services/gradesSectionsService'
 import type {
+  AssignSubjectInput,
+  CourseCatalogs,
   CreateGradeInput,
   CreateSectionInput,
+  CreateSubjectInput,
   GradeWithSections,
   UpdateGradeInput,
   UpdateSectionInput,
 } from '@/modules/grades-sections/types'
 
+const emptyCatalogs: CourseCatalogs = {
+  levels: [],
+  cycles: [],
+  modalities: [],
+  subjects: [],
+  teachers: [],
+}
+
 export function useGradesSections() {
   const [grades, setGrades] = useState<GradeWithSections[]>([])
+  const [catalogs, setCatalogs] = useState<CourseCatalogs>(emptyCatalogs)
+  const [currentSchoolYear, setCurrentSchoolYear] = useState<{ id: string; name: string } | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -27,8 +43,10 @@ export function useGradesSections() {
     setError(null)
 
     try {
-      const data = await getGrades()
-      setGrades(data)
+      const data = await getCourseData()
+      setGrades(data.grades)
+      setCatalogs(data.catalogs)
+      setCurrentSchoolYear(data.currentSchoolYear)
     } catch (error) {
       setError(
         error instanceof Error
@@ -36,6 +54,8 @@ export function useGradesSections() {
           : 'No se pudieron cargar los grados y secciones.',
       )
       setGrades([])
+      setCatalogs(emptyCatalogs)
+      setCurrentSchoolYear(null)
     } finally {
       setLoading(false)
     }
@@ -63,7 +83,7 @@ export function useGradesSections() {
 
   const removeGrade = useCallback(
     async (id: string) => {
-      await deleteGrade(id)
+      await deactivateGrade(id)
       await refetch()
     },
     [refetch],
@@ -87,7 +107,32 @@ export function useGradesSections() {
 
   const removeSection = useCallback(
     async (id: string) => {
-      await deleteSection(id)
+      await deactivateSection(id)
+      await refetch()
+    },
+    [refetch],
+  )
+
+  const addSubject = useCallback(
+    async (input: CreateSubjectInput) => {
+      const subject = await createSubject(input)
+      await refetch()
+      return subject
+    },
+    [refetch],
+  )
+
+  const assignSubject = useCallback(
+    async (input: AssignSubjectInput) => {
+      await assignSubjectToSection(input)
+      await refetch()
+    },
+    [refetch],
+  )
+
+  const removeSubjectAssignment = useCallback(
+    async (id: string) => {
+      await deactivateSectionSubject(id)
       await refetch()
     },
     [refetch],
@@ -95,6 +140,8 @@ export function useGradesSections() {
 
   return {
     grades,
+    catalogs,
+    currentSchoolYear,
     loading,
     error,
     refetch,
@@ -104,5 +151,8 @@ export function useGradesSections() {
     addSection,
     editSection,
     removeSection,
+    addSubject,
+    assignSubject,
+    removeSubjectAssignment,
   }
 }

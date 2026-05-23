@@ -78,11 +78,19 @@ export const appRoutes: AppRoute[] = [
     showInSidebar: false,
   },
   {
-    path: '/grados-secciones',
-    label: 'Estructura Académica',
+    path: '/cursos',
+    label: 'Cursos',
     icon: LibraryBig,
     component: GradesSectionsPage,
     allowedRoles: ['admin', 'director', 'coordinator'],
+  },
+  {
+    path: '/grados-secciones',
+    label: 'Cursos',
+    icon: LibraryBig,
+    component: GradesSectionsPage,
+    allowedRoles: ['admin', 'director', 'coordinator'],
+    showInSidebar: false,
   },
   {
     path: '/horario',
