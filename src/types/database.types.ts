@@ -1,4 +1,3 @@
-Initialising login role...
 export type Json =
   | string
   | number
@@ -662,6 +661,97 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      planning_entries: {
+        Row: {
+          academic_period_id: string
+          achievement_indicator: string
+          activities: Json
+          content_attitudinal: string
+          content_conceptual: string
+          content_procedural: string
+          created_at: string
+          duration_minutes: number | null
+          evaluation_method: string
+          id: string
+          planned_date: string | null
+          resources: string
+          school_id: string
+          section_subject_id: string
+          sequence: number
+          specific_competence: string
+          status: Database["public"]["Enums"]["record_status"]
+          strategies: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          academic_period_id: string
+          achievement_indicator?: string
+          activities?: Json
+          content_attitudinal?: string
+          content_conceptual?: string
+          content_procedural?: string
+          created_at?: string
+          duration_minutes?: number | null
+          evaluation_method?: string
+          id?: string
+          planned_date?: string | null
+          resources?: string
+          school_id?: string
+          section_subject_id: string
+          sequence?: number
+          specific_competence?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          strategies?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          academic_period_id?: string
+          achievement_indicator?: string
+          activities?: Json
+          content_attitudinal?: string
+          content_conceptual?: string
+          content_procedural?: string
+          created_at?: string
+          duration_minutes?: number | null
+          evaluation_method?: string
+          id?: string
+          planned_date?: string | null
+          resources?: string
+          school_id?: string
+          section_subject_id?: string
+          sequence?: number
+          specific_competence?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          strategies?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "planning_entries_academic_period_id_fkey"
+            columns: ["academic_period_id"]
+            isOneToOne: false
+            referencedRelation: "academic_periods"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "planning_entries_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "planning_entries_section_subject_id_fkey"
+            columns: ["section_subject_id"]
+            isOneToOne: false
+            referencedRelation: "section_subjects"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       reports: {
         Row: {
@@ -1702,5 +1792,3 @@ export const Constants = {
     },
   },
 } as const
-A new version of Supabase CLI is available: v2.101.0 (currently installed v2.95.4)
-We recommend updating regularly for new features and bug fixes: https://supabase.com/docs/guides/cli/getting-started#updating-the-supabase-cli
