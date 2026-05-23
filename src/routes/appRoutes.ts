@@ -27,6 +27,7 @@ const GradesSectionsPage = lazyPage(() => import('@/modules/grades-sections/page
 const ReportsPage = lazyPage(() => import('@/modules/reports/pages/ReportsPage'), 'ReportsPage')
 const MatrixPage = lazyPage(() => import('@/modules/matrix/pages/MatrixPage'), 'MatrixPage')
 const PlanningPage = lazyPage(() => import('@/modules/planning/pages/PlanningPage'), 'PlanningPage')
+const ProfilePage = lazyPage(() => import('@/modules/profile/pages/ProfilePage'), 'ProfilePage')
 const SchedulePage = lazyPage(() => import('@/modules/schedule/pages/SchedulePage'), 'SchedulePage')
 const SettingsPage = lazyPage(() => import('@/modules/settings/pages/SettingsPage'), 'SettingsPage')
 const StudentsPage = lazyPage(() => import('@/modules/students/pages/StudentsPage'), 'StudentsPage')
@@ -133,6 +134,14 @@ export const appRoutes: AppRoute[] = [
     icon: Settings,
     component: SettingsPage,
     allowedRoles: ['admin'],
+  },
+  {
+    path: '/perfil',
+    label: 'Perfil',
+    icon: UsersRound,
+    component: ProfilePage,
+    allowedRoles: allRoles,
+    showInSidebar: false,
   },
 ]
 
