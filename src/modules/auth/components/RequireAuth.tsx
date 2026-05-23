@@ -10,7 +10,7 @@ type RequireAuthProps = {
 }
 
 export function RequireAuth({ allowedRoles, children }: RequireAuthProps) {
-  const { hasRole, isAuthenticated, loading } = useAuth()
+  const { hasRole, isAuthenticated, loading, needsProfile } = useAuth()
   const location = useLocation()
 
   if (loading) {
@@ -25,6 +25,10 @@ export function RequireAuth({ allowedRoles, children }: RequireAuthProps) {
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace state={{ from: location }} />
+  }
+
+  if (needsProfile) {
+    return <Navigate to="/completar-registro" replace />
   }
 
   if (!hasRole(allowedRoles)) {

@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoadingState } from '@/components/ui/LoadingState'
 import { AppLayout } from '@/layouts/AppLayout'
 import { RequireAuth } from '@/modules/auth/components/RequireAuth'
+import { CompleteRegistrationPage } from '@/modules/auth/pages/CompleteRegistrationPage'
 import { LoginPage } from '@/modules/auth/pages/LoginPage'
 import { RegisterPage } from '@/modules/auth/pages/RegisterPage'
 import { UnauthorizedPage } from '@/modules/auth/pages/UnauthorizedPage'
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/registro" element={<RegisterPage />} />
+        <Route path="/completar-registro" element={<CompleteRegistrationPage />} />
         <Route path="/sin-acceso" element={<UnauthorizedPage />} />
         <Route element={<AppLayout />}>
           {appRoutes.map((route) => {

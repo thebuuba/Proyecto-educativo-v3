@@ -30,6 +30,31 @@ export async function login({ email, password }: LoginCredentials) {
   return data
 }
 
+export async function loginWithOAuth(provider: 'google' | 'facebook') {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider,
+    options: {
+      redirectTo: `${window.location.origin}/login`,
+    },
+  })
+
+  if (error) {
+    throw error
+  }
+
+  return data
+}
+
+export async function forgotPassword(email: string) {
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${window.location.origin}/login`,
+  })
+
+  if (error) {
+    throw error
+  }
+}
+
 export async function logout() {
   const { error } = await supabase.auth.signOut()
 

@@ -5,6 +5,8 @@ import { Link, Navigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
+import { PasswordInput } from '@/components/ui/PasswordInput'
+import { SocialLoginButtons } from '@/modules/auth/components/SocialLoginButtons'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { supabase } from '@/services/supabase'
 
@@ -126,7 +128,7 @@ async function ensureAuthenticatedForRegistration(
 }
 
 export function RegisterPage() {
-  const { refreshAuth } = useAuth()
+  const { refreshAuth, loginWithOAuth } = useAuth()
   const [schoolName, setSchoolName] = useState('')
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -191,7 +193,7 @@ export function RegisterPage() {
 
   return (
     <main className="flex min-h-screen bg-background">
-      <section className="hidden min-h-screen w-[42%] flex-col justify-between bg-primary p-10 text-primary-foreground lg:flex">
+      <section className="hidden min-h-screen w-[42%] flex-col justify-between bg-gradient-to-br from-primary to-primary/80 p-10 text-primary-foreground lg:flex">
         <div className="flex items-center gap-3">
           <span className="flex size-11 items-center justify-center rounded-lg bg-accent text-sm font-bold text-accent-foreground">
             AB
@@ -231,7 +233,7 @@ export function RegisterPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-md animate-in fade-in slide-in-from-bottom-4 sm:p-8">
             <div>
               <h1 className="text-2xl font-semibold text-foreground">
                 Registrar escuela
@@ -247,6 +249,14 @@ export function RegisterPage() {
                 <p>{errorMessage}</p>
               </div>
             ) : null}
+
+            <div className="mt-6">
+              <SocialLoginButtons
+                onGoogleSignIn={() => loginWithOAuth('google')}
+                onFacebookSignIn={() => loginWithOAuth('facebook')}
+                disabled={isSubmitting}
+              />
+            </div>
 
             <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
               <div>
@@ -303,42 +313,24 @@ export function RegisterPage() {
                 />
               </div>
 
-              <div>
-                <label
-                  htmlFor="registerPassword"
-                  className="text-sm font-medium text-foreground"
-                >
-                  Contraseña
-                </label>
-                <Input
-                  id="registerPassword"
-                  type="password"
-                  autoComplete="new-password"
-                  required
-                  minLength={6}
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                  className="mt-2"
-                />
-              </div>
+              <PasswordInput
+                id="registerPassword"
+                label="Contraseña"
+                autoComplete="new-password"
+                required
+                minLength={6}
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
 
-              <div>
-                <label
-                  htmlFor="confirmPassword"
-                  className="text-sm font-medium text-foreground"
-                >
-                  Confirmar contraseña
-                </label>
-                <Input
-                  id="confirmPassword"
-                  type="password"
-                  autoComplete="new-password"
-                  required
-                  value={confirmPassword}
-                  onChange={(event) => setConfirmPassword(event.target.value)}
-                  className="mt-2"
-                />
-              </div>
+              <PasswordInput
+                id="confirmPassword"
+                label="Confirmar contraseña"
+                autoComplete="new-password"
+                required
+                value={confirmPassword}
+                onChange={(event) => setConfirmPassword(event.target.value)}
+              />
 
               <Button
                 type="submit"

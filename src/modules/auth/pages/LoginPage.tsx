@@ -5,7 +5,12 @@ import { Link, Navigate, useLocation } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
+import { PasswordInput } from '@/components/ui/PasswordInput'
+import { SocialLoginButtons } from '@/modules/auth/components/SocialLoginButtons'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import {
+  forgotPassword as forgotPasswordService,
+} from '@/modules/auth/services/authService'
 
 type LocationState = {
   from?: {
@@ -15,18 +20,23 @@ type LocationState = {
 }
 
 export function LoginPage() {
-  const { authError, isAuthenticated, loading, login } = useAuth()
+  const { authError, isAuthenticated, loading, login, loginWithOAuth, needsProfile } = useAuth()
   const location = useLocation()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [forgotPasswordSent, setForgotPasswordSent] = useState(false)
   const fromState = location.state as LocationState | null
   const from =
     fromState?.from?.pathname && fromState.from.pathname !== '/login'
       ? fromState.from.pathname
       : '/'
   const registered = fromState?.registered === true
+
+  if (!loading && needsProfile) {
+    return <Navigate to="/completar-registro" replace />
+  }
 
   if (!loading && isAuthenticated) {
     return <Navigate to={from ?? '/'} replace />
@@ -35,6 +45,7 @@ export function LoginPage() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setErrorMessage('')
+    setForgotPasswordSent(false)
     setIsSubmitting(true)
 
     try {
@@ -50,9 +61,30 @@ export function LoginPage() {
     }
   }
 
+  async function handleForgotPassword() {
+    if (!email.trim()) {
+      setErrorMessage('Ingresa tu correo electrónico primero.')
+      return
+    }
+
+    setErrorMessage('')
+    setForgotPasswordSent(false)
+
+    try {
+      await forgotPasswordService(email.trim())
+      setForgotPasswordSent(true)
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'No se pudo enviar el correo de recuperación.',
+      )
+    }
+  }
+
   return (
     <main className="flex min-h-screen bg-background">
-      <section className="hidden min-h-screen w-[42%] flex-col justify-between bg-primary p-10 text-primary-foreground lg:flex">
+      <section className="hidden min-h-screen w-[42%] flex-col justify-between bg-gradient-to-br from-primary to-primary/80 p-10 text-primary-foreground lg:flex">
         <div className="flex items-center gap-3">
           <span className="flex size-11 items-center justify-center rounded-lg bg-accent text-sm font-bold text-accent-foreground">
             AB
@@ -92,7 +124,7 @@ export function LoginPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-md animate-in fade-in slide-in-from-bottom-4 sm:p-8">
             <div>
               <h1 className="text-2xl font-semibold text-foreground">
                 Iniciar sesión
@@ -116,6 +148,23 @@ export function LoginPage() {
               </div>
             ) : null}
 
+            {forgotPasswordSent && !errorMessage ? (
+              <div className="mt-6 flex gap-3 rounded-lg border border-success/20 bg-success/12 p-3 text-sm text-success">
+                <CheckCircle className="mt-0.5 size-4 shrink-0" />
+                <p>
+                  Te hemos enviado un correo para restablecer tu contraseña.
+                </p>
+              </div>
+            ) : null}
+
+            <div className="mt-6">
+              <SocialLoginButtons
+                onGoogleSignIn={() => loginWithOAuth('google')}
+                onFacebookSignIn={() => loginWithOAuth('facebook')}
+                disabled={isSubmitting}
+              />
+            </div>
+
             <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label
@@ -135,22 +184,23 @@ export function LoginPage() {
                 />
               </div>
 
-              <div>
-                <label
-                  htmlFor="password"
-                  className="text-sm font-medium text-foreground"
+              <PasswordInput
+                id="password"
+                label="Contraseña"
+                autoComplete="current-password"
+                required
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+
+              <div className="flex items-center justify-end">
+                <button
+                  type="button"
+                  onClick={handleForgotPassword}
+                  className="text-xs text-muted-foreground transition hover:text-accent"
                 >
-                  Contraseña
-                </label>
-                <Input
-                  id="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                  className="mt-2"
-                />
+                  Olvidé mi contraseña
+                </button>
               </div>
 
               <Button

@@ -1,12 +1,13 @@
 import { createContext } from 'react'
 
-import type { AuthState, LoginCredentials } from '@/modules/auth/types/auth'
+import type { AuthState, LoginCredentials, OAuthProvider } from '@/modules/auth/types/auth'
 import type { UserRole } from '@/types/domain'
 
 export type AuthContextValue = AuthState & {
   isAuthenticated: boolean
   schoolId: string | null
   login: (credentials: LoginCredentials) => Promise<void>
+  loginWithOAuth: (provider: OAuthProvider) => Promise<void>
   logout: () => Promise<void>
   refreshAuth: () => Promise<void>
   hasRole: (roleKeys: UserRole[]) => boolean

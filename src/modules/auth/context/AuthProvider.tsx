@@ -8,11 +8,13 @@ import {
   getUserPermissions,
   getUserRoles,
   login as loginWithPassword,
+  loginWithOAuth as loginWithOAuthService,
   logout as signOut,
 } from '@/modules/auth/services/authService'
 import type {
   AuthState,
   LoginCredentials,
+  OAuthProvider,
   Permission,
   Role,
 } from '@/modules/auth/types/auth'
@@ -31,6 +33,7 @@ const initialState: AuthState = {
   permissions: [],
   loading: isSupabaseConfigured,
   authError: null,
+  needsProfile: false,
 }
 
 type LoadAuthStateOptions = {
@@ -84,6 +87,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       permissions: [],
       loading: false,
       authError,
+      needsProfile: false,
     })
   }, [])
 
@@ -111,10 +115,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const appUser = await getCurrentAppUser(user.id)
 
       if (!appUser) {
-        throw new AuthStateError(
-          'missing_profile',
-          'Tu cuenta existe en Supabase Auth, pero no tiene un perfil en Aula Base.',
-        )
+        setState((current) => ({
+          ...current,
+          user,
+          session,
+          appUser: null,
+          roles: [],
+          permissions: [],
+          loading: false,
+          authError: null,
+          needsProfile: true,
+        }))
+        return
       }
 
       if (appUser.status !== 'active') {
@@ -154,6 +166,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         permissions,
         loading: false,
         authError: null,
+        needsProfile: false,
       })
     } catch (error) {
       console.error(error)
@@ -252,6 +265,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     [loadAuthState, waitForAuthEvent],
   )
 
+  const loginWithOAuth = useCallback(async (provider: OAuthProvider) => {
+    await loginWithOAuthService(provider)
+  }, [])
+
   const logout = useCallback(async () => {
     skipNextAuthEventRef.current = true
     const authEventHandled = waitForAuthEvent()
@@ -281,6 +298,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       isAuthenticated: Boolean(state.user && state.session),
       schoolId: state.appUser?.school_id ?? null,
       login,
+      loginWithOAuth,
       logout,
       refreshAuth: () => loadAuthState({ throwOnError: true }),
       hasRole: (roleKeys: UserRole[]) =>
@@ -290,7 +308,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
           (permission: Permission) => permission.key === permissionKey,
         ),
     }
-  }, [loadAuthState, login, logout, state])
+  }, [loadAuthState, login, loginWithOAuth, logout, state])
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
+
+

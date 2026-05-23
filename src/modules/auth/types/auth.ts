@@ -40,9 +40,12 @@ export type AuthState = {
   permissions: Permission[]
   loading: boolean
   authError: string | null
+  needsProfile: boolean
 }
 
 export type LoginCredentials = {
   email: string
   password: string
 }
+
+export type OAuthProvider = 'google' | 'facebook'
