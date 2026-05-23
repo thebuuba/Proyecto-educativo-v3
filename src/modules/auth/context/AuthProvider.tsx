@@ -124,7 +124,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
         )
       }
 
-      const roles = await getUserRoles(appUser.id)
+      let roles: Role[]
+
+      const cachedRoles = sessionStorage.getItem('auth_roles')
+      const cachedRolesTs = sessionStorage.getItem('auth_roles_ts')
+
+      if (cachedRoles && cachedRolesTs && Date.now() - Number(cachedRolesTs) < 5 * 60 * 1000) {
+        roles = JSON.parse(cachedRoles)
+      } else {
+        roles = await getUserRoles(appUser.id)
+        sessionStorage.setItem('auth_roles', JSON.stringify(roles))
+        sessionStorage.setItem('auth_roles_ts', String(Date.now()))
+      }
 
       if (roles.length === 0) {
         throw new AuthStateError(

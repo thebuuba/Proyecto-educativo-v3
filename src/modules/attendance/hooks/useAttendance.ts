@@ -63,13 +63,7 @@ export function useAttendance() {
   }, [selectedSectionId])
 
   useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      void loadInitialData()
-    }, 0)
-
-    return () => {
-      window.clearTimeout(timeoutId)
-    }
+    void loadInitialData()
   }, [loadInitialData])
 
   const loadStudents = useCallback(

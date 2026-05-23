@@ -49,6 +49,7 @@ type EnrollmentRow = {
   grade_id: string
   school_years: { name: string } | { name: string }[] | null
   grades: { name: string } | { name: string }[] | null
+  sections: { name: string } | { name: string }[] | null
 }
 
 type SectionRow = {
@@ -191,18 +192,48 @@ function buildSearchFilter(search: string) {
   ].join(',')
 }
 
+async function getStudentsCount(
+  search: string,
+  filters: StudentFilters,
+): Promise<number> {
+  let query = supabase
+    .from('students')
+    .select('*', { count: 'exact', head: true })
+
+  if (filters.status !== 'all') {
+    query = query.eq('status', filters.status)
+  }
+
+  const searchFilter = buildSearchFilter(search)
+
+  if (searchFilter) {
+    query = query.or(searchFilter)
+  }
+
+  const { count, error } = await query
+  assertNoStudentSupabaseError(error, 'No se pudieron contar los estudiantes.')
+  return count ?? 0
+}
+
 export async function getStudents({
   search = '',
   filters = { status: 'active' },
+  page = 1,
+  pageSize = 50,
 }: {
   search?: string
   filters?: StudentFilters
-} = {}): Promise<StudentListItem[]> {
+  page?: number
+  pageSize?: number
+} = {}): Promise<{ data: StudentListItem[]; count: number }> {
+  const totalCount = await getStudentsCount(search, filters)
+
   let query = supabase
     .from('students')
     .select(studentSelect)
     .order('last_name', { ascending: true })
     .order('first_name', { ascending: true })
+    .range((page - 1) * pageSize, page * pageSize - 1)
 
   if (filters.status !== 'all') {
     query = query.eq('status', filters.status)
@@ -217,11 +248,15 @@ export async function getStudents({
   const { data, error } = await query
   assertNoStudentSupabaseError(error, 'No se pudieron cargar los estudiantes.')
 
+  if (totalCount === 0) {
+    return { data: [], count: 0 }
+  }
+
   const studentRows = (data ?? []) as StudentRow[]
   const studentIds = studentRows.map((student) => student.id)
 
   if (studentIds.length === 0) {
-    return []
+    return { data: [], count: totalCount }
   }
 
   const { data: enrollmentData, error: enrollmentError } = await supabase
@@ -357,14 +392,17 @@ export async function getStudents({
     })
   }
 
-  return studentRows.map((student) =>
-    mapStudentListItem(
-      student,
-      enrollmentByStudentId,
-      sectionByKey,
-      metricsByEnrollmentId,
+  return {
+    data: studentRows.map((student) =>
+      mapStudentListItem(
+        student,
+        enrollmentByStudentId,
+        sectionByKey,
+        metricsByEnrollmentId,
+      ),
     ),
-  )
+    count: totalCount,
+  }
 }
 
 export async function getStudentById(
@@ -536,7 +574,8 @@ async function getCurrentEnrollment(
         section_id,
         grade_id,
         school_years(name),
-        grades(name)
+        grades(name),
+        sections!inner(name)
       `,
     )
     .eq('student_id', studentId)
@@ -554,13 +593,7 @@ async function getCurrentEnrollment(
   const row = data as EnrollmentRow
   const schoolYear = firstOrNull(row.school_years)
   const grade = firstOrNull(row.grades)
-
-  const { data: sectionRow } = await supabase
-    .from('sections')
-    .select('name')
-    .eq('id', row.section_id)
-    .eq('grade_id', row.grade_id)
-    .maybeSingle()
+  const section = firstOrNull(row.sections)
 
   return {
     id: row.id,
@@ -568,7 +601,7 @@ async function getCurrentEnrollment(
     status: row.status,
     schoolYearName: schoolYear?.name ?? null,
     gradeName: grade?.name ?? null,
-    sectionName: sectionRow?.name ?? null,
+    sectionName: section?.name ?? null,
   }
 }
 

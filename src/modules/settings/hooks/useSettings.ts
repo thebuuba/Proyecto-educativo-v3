@@ -48,13 +48,7 @@ export function useSettings() {
   }, [schoolId])
 
   useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      void refetch()
-    }, 0)
-
-    return () => {
-      window.clearTimeout(timeoutId)
-    }
+    void refetch()
   }, [refetch])
 
   const saveProfile = useCallback(

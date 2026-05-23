@@ -79,18 +79,30 @@ export function getQuickActions(): QuickAction[] {
   ]
 }
 
-export async function getDashboardStats(): Promise<DashboardStat[]> {
-  const [activeStudents, attendanceRows, gradeRows] = await Promise.all([
-    getActiveStudentsCount(),
-    getAttendanceRows(DEFAULTS.RECENT_DAYS),
-    getPublishedGradeRows(),
-  ])
+export async function getDashboardData(): Promise<{
+  stats: DashboardStat[]
+  attendanceData: ChartDatum[]
+  performanceData: ChartDatum[]
+  recentStudents: RecentStudent[]
+  alerts: AcademicAlert[]
+  quickActions: QuickAction[]
+}> {
+  const [activeStudents, attendanceRows, gradeRows, periods, currentSchoolYear, pendingRecoveries, recentStudents] =
+    await Promise.all([
+      getActiveStudentsCount(),
+      getAttendanceRows(DEFAULTS.RECENT_DAYS),
+      getPublishedGradeRows(),
+      getAcademicPeriods(),
+      getCurrentSchoolYear(),
+      getPendingRecoveriesCount(),
+      getRecentStudents(),
+    ])
 
   const avgAttendance = getAttendancePercent(attendanceRows)
   const avgScore = getAverageScore(gradeRows)
   const alertCount = getLowPerformanceEnrollmentCount(gradeRows)
 
-  return [
+  const stats: DashboardStat[] = [
     {
       label: 'Estudiantes activos',
       value: formatCount(activeStudents),
@@ -124,33 +136,26 @@ export async function getDashboardStats(): Promise<DashboardStat[]> {
       tone: dashboardTones[3],
     },
   ]
-}
 
-export async function getAttendanceData(): Promise<ChartDatum[]> {
-  const attendanceRows = await getAttendanceRows(DEFAULTS.RECENT_DAYS_ATTENDANCE_CHART)
-  const buckets = createWeekdayBuckets()
+  const attendanceBuckets = createWeekdayBuckets()
+  const chartCutoff = getDateDaysAgo(DEFAULTS.RECENT_DAYS_ATTENDANCE_CHART)
 
   for (const row of attendanceRows) {
+    if (row.attendance_date < chartCutoff) continue
+
     const day = getWeekdayIndex(row.attendance_date)
-    buckets[day].total += 1
+    attendanceBuckets[day].total += 1
 
     if (row.status === 'present') {
-      buckets[day].present += 1
+      attendanceBuckets[day].present += 1
     }
   }
 
-  return buckets.map((bucket) => ({
+  const attendanceData: ChartDatum[] = attendanceBuckets.map((bucket) => ({
     label: bucket.label,
     value: bucket.total > 0 ? roundOne((bucket.present / bucket.total) * 100) : 0,
   }))
-}
 
-export async function getPerformanceData(): Promise<ChartDatum[]> {
-  const [currentSchoolYear, periods, gradeRows] = await Promise.all([
-    getCurrentSchoolYear(),
-    getAcademicPeriods(),
-    getPublishedGradeRows(),
-  ])
   const periodMap = new Map(periods.map((period) => [period.id, period]))
   const scoresByPeriod = new Map<string, number[]>()
 
@@ -168,16 +173,46 @@ export async function getPerformanceData(): Promise<ChartDatum[]> {
     scoresByPeriod.set(row.academic_period_id, periodScores)
   }
 
-  return periods
+  const performanceData: ChartDatum[] = periods
     .filter((period) => scoresByPeriod.has(period.id))
     .sort((left, right) => left.sequence - right.sequence)
     .map((period) => ({
       label: periodMap.get(period.id)?.name ?? period.name,
       value: roundOne(average(scoresByPeriod.get(period.id) ?? [])),
     }))
+
+  const lowPerformance = getLowPerformanceEnrollmentCount(gradeRows)
+  const lowAttendance = getLowAttendanceEnrollmentCount(attendanceRows)
+
+  const alerts: AcademicAlert[] = [
+    {
+      title: 'Rendimiento bajo',
+      description: `${lowPerformance} estudiantes requieren revisión de calificaciones.`,
+      severity: getSeverity(lowPerformance, ALERT.PERFORMANCE_HIGH),
+    },
+    {
+      title: 'Asistencia irregular',
+      description: `${lowAttendance} registros por debajo del umbral mensual.`,
+      severity: getSeverity(lowAttendance, ALERT.ATTENDANCE_HIGH),
+    },
+    {
+      title: 'Recuperación pendiente',
+      description: `${pendingRecoveries} notas de recuperación por publicar.`,
+      severity: getSeverity(pendingRecoveries, ALERT.RECOVERY_HIGH),
+    },
+  ]
+
+  return {
+    stats,
+    attendanceData,
+    performanceData,
+    recentStudents,
+    alerts,
+    quickActions: getQuickActions(),
+  }
 }
 
-export async function getRecentStudents(): Promise<RecentStudent[]> {
+async function getRecentStudents(): Promise<RecentStudent[]> {
   const { data: studentsData, error: studentsError } = await supabase
     .from('students')
     .select('id, first_name, last_name, status, created_at, updated_at')
@@ -237,34 +272,6 @@ export async function getRecentStudents(): Promise<RecentStudent[]> {
       attendance: formatPercent(attendancePercent),
     }
   })
-}
-
-export async function getAcademicAlerts(): Promise<AcademicAlert[]> {
-  const [gradeRows, attendanceRows, pendingRecoveries] = await Promise.all([
-    getPublishedGradeRows(),
-    getAttendanceRows(DEFAULTS.RECENT_DAYS),
-    getPendingRecoveriesCount(),
-  ])
-  const lowPerformance = getLowPerformanceEnrollmentCount(gradeRows)
-  const lowAttendance = getLowAttendanceEnrollmentCount(attendanceRows)
-
-  return [
-    {
-      title: 'Rendimiento bajo',
-      description: `${lowPerformance} estudiantes requieren revisión de calificaciones.`,
-      severity: getSeverity(lowPerformance, ALERT.PERFORMANCE_HIGH),
-    },
-    {
-      title: 'Asistencia irregular',
-      description: `${lowAttendance} registros por debajo del umbral mensual.`,
-      severity: getSeverity(lowAttendance, ALERT.ATTENDANCE_HIGH),
-    },
-    {
-      title: 'Recuperación pendiente',
-      description: `${pendingRecoveries} notas de recuperación por publicar.`,
-      severity: getSeverity(pendingRecoveries, ALERT.RECOVERY_HIGH),
-    },
-  ]
 }
 
 async function getActiveStudentsCount() {

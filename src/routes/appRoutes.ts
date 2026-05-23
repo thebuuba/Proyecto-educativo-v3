@@ -11,20 +11,26 @@ import {
   Settings,
   UsersRound,
 } from 'lucide-react'
+import { lazy } from 'react'
 import type { ComponentType } from 'react'
 
-import { AcademicGradesPage } from '@/modules/academic-grades/pages/AcademicGradesPage'
-import { AttendancePage } from '@/modules/attendance/pages/AttendancePage'
-import { DashboardPage } from '@/modules/dashboard/pages/DashboardPage'
-import { GradesSectionsPage } from '@/modules/grades-sections/pages/GradesSectionsPage'
-import { ReportsPage } from '@/modules/reports/pages/ReportsPage'
-import { MatrixPage } from '@/modules/matrix/pages/MatrixPage'
-import { PlanningPage } from '@/modules/planning/pages/PlanningPage'
-import { SchedulePage } from '@/modules/schedule/pages/SchedulePage'
-import { SettingsPage } from '@/modules/settings/pages/SettingsPage'
-import { StudentsPage } from '@/modules/students/pages/StudentsPage'
-import { SubjectsPage } from '@/modules/subjects/pages/SubjectsPage'
 import type { UserRole } from '@/types/domain'
+
+function lazyPage(importFn: () => Promise<Record<string, unknown>>, exportName: string) {
+  return lazy(() => importFn().then((m) => ({ default: m[exportName] as ComponentType })))
+}
+
+const AcademicGradesPage = lazyPage(() => import('@/modules/academic-grades/pages/AcademicGradesPage'), 'AcademicGradesPage')
+const AttendancePage = lazyPage(() => import('@/modules/attendance/pages/AttendancePage'), 'AttendancePage')
+const DashboardPage = lazyPage(() => import('@/modules/dashboard/pages/DashboardPage'), 'DashboardPage')
+const GradesSectionsPage = lazyPage(() => import('@/modules/grades-sections/pages/GradesSectionsPage'), 'GradesSectionsPage')
+const ReportsPage = lazyPage(() => import('@/modules/reports/pages/ReportsPage'), 'ReportsPage')
+const MatrixPage = lazyPage(() => import('@/modules/matrix/pages/MatrixPage'), 'MatrixPage')
+const PlanningPage = lazyPage(() => import('@/modules/planning/pages/PlanningPage'), 'PlanningPage')
+const SchedulePage = lazyPage(() => import('@/modules/schedule/pages/SchedulePage'), 'SchedulePage')
+const SettingsPage = lazyPage(() => import('@/modules/settings/pages/SettingsPage'), 'SettingsPage')
+const StudentsPage = lazyPage(() => import('@/modules/students/pages/StudentsPage'), 'StudentsPage')
+const SubjectsPage = lazyPage(() => import('@/modules/subjects/pages/SubjectsPage'), 'SubjectsPage')
 
 export type AppRoute = {
   path: string

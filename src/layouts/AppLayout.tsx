@@ -41,7 +41,7 @@ export function AppLayout() {
         />
 
         <div className={cn(
-          'min-w-0 flex-1 transition-all duration-200',
+          'min-w-0 flex-1 transition-[width,padding,opacity,transform] duration-200',
           collapsed ? 'lg:pl-16' : 'lg:pl-72',
         )}>
           <Header onOpenSidebar={() => setIsSidebarOpen(true)} />

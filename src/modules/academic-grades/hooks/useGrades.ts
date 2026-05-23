@@ -62,13 +62,7 @@ export function useGrades() {
   }, [selectedSsId, selectedPeriodId])
 
   useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      void loadInitialData()
-    }, 0)
-
-    return () => {
-      window.clearTimeout(timeoutId)
-    }
+    void loadInitialData()
   }, [loadInitialData])
 
   const loadStudents = useCallback(async () => {
@@ -96,13 +90,7 @@ export function useGrades() {
   useEffect(() => {
     if (!selectedSsId || !selectedPeriodId) return
 
-    const timeoutId = window.setTimeout(() => {
-      void loadStudents()
-    }, 0)
-
-    return () => {
-      window.clearTimeout(timeoutId)
-    }
+    void loadStudents()
   }, [selectedSsId, selectedPeriodId, loadStudents])
 
   const updateScore = useCallback(

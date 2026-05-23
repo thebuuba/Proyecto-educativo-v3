@@ -1,13 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-import {
-  getAcademicAlerts,
-  getAttendanceData,
-  getDashboardStats,
-  getPerformanceData,
-  getQuickActions,
-  getRecentStudents,
-} from '@/modules/dashboard/services/dashboardService'
+import { getDashboardData } from '@/modules/dashboard/services/dashboardService'
 import type {
   AcademicAlert,
   ChartDatum,
@@ -35,23 +28,8 @@ export function useDashboard() {
     setError(null)
 
     try {
-      const [stats, attendanceData, performanceData, recentStudents, alerts] =
-        await Promise.all([
-          getDashboardStats(),
-          getAttendanceData(),
-          getPerformanceData(),
-          getRecentStudents(),
-          getAcademicAlerts(),
-        ])
-
-      setData({
-        stats,
-        attendanceData,
-        performanceData,
-        recentStudents,
-        alerts,
-        quickActions: getQuickActions(),
-      })
+      const result = await getDashboardData()
+      setData(result)
     } catch (error) {
       setData(null)
       setError(
@@ -65,13 +43,7 @@ export function useDashboard() {
   }, [])
 
   useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      void refetch()
-    }, 0)
-
-    return () => {
-      window.clearTimeout(timeoutId)
-    }
+    void refetch()
   }, [refetch])
 
   return {

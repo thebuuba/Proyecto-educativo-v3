@@ -1,5 +1,3 @@
-import Papa from 'papaparse'
-
 export type ParsedStudentRow = {
   rowNumber: number
   firstName: string
@@ -108,11 +106,13 @@ function parseDate(value: string): string {
   return trimmed
 }
 
-export function parseCSVFile(file: File): Promise<{
+export async function parseCSVFile(file: File): Promise<{
   rows: ParsedStudentRow[]
   errors: ImportValidationError[]
   totalRows: number
 }> {
+  const Papa = await import('papaparse')
+
   return new Promise((resolve, reject) => {
     Papa.parse<string[]>(file, {
       encoding: 'UTF-8',

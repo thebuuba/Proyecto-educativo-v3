@@ -42,13 +42,7 @@ export function useGradesSections() {
   }, [])
 
   useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      void refetch()
-    }, 0)
-
-    return () => {
-      window.clearTimeout(timeoutId)
-    }
+    void refetch()
   }, [refetch])
 
   const addGrade = useCallback(

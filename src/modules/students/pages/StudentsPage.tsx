@@ -31,12 +31,16 @@ export function StudentsPage() {
   const { hasPermission, hasRole } = useAuth()
   const {
     students,
+    totalCount,
+    page,
+    pageSize,
     loading,
     error,
     search,
     filters,
     setSearch,
     setFilters,
+    goToPage,
     refetch,
     createStudent,
     updateStudent,
@@ -59,36 +63,40 @@ export function StudentsPage() {
   const canManageStudents = hasRole(['admin', 'coordinator'])
   const canViewGuardians =
     hasPermission('academics.read_all') || hasRole(['admin', 'director', 'coordinator'])
-  const totalStudents = students.length
-  const attendanceValues = students
-    .map((student) => student.metrics.attendancePercentage)
-    .filter((value): value is number => value !== null)
-  const averageValues = students
-    .map((student) => student.metrics.averageScore)
-    .filter((value): value is number => value !== null)
-  const averageAttendance =
-    attendanceValues.length > 0
-      ? Math.round(
-          attendanceValues.reduce((total, value) => total + value, 0) /
-            attendanceValues.length,
+  const totalStudents = totalCount
+  const averageAttendance = useMemo(() => {
+    const values = students
+      .map((student) => student.metrics.attendancePercentage)
+      .filter((value): value is number => value !== null)
+
+    return values.length > 0
+      ? Math.round(values.reduce((total, value) => total + value, 0) / values.length)
+      : null
+  }, [students])
+
+  const generalAverage = useMemo(() => {
+    const values = students
+      .map((student) => student.metrics.averageScore)
+      .filter((value): value is number => value !== null)
+
+    return values.length > 0
+      ? Math.round((values.reduce((total, value) => total + value, 0) / values.length) * 10) / 10
+      : null
+  }, [students])
+
+  const atRiskStudents = useMemo(
+    () =>
+      students.filter((student) => {
+        return (
+          student.status !== 'active' ||
+          (student.metrics.attendancePercentage !== null &&
+            student.metrics.attendancePercentage < THRESHOLD.ATTENDANCE_LOW) ||
+          (student.metrics.averageScore !== null &&
+            student.metrics.averageScore < THRESHOLD.GRADE_LOW)
         )
-      : null
-  const generalAverage =
-    averageValues.length > 0
-      ? Math.round(
-          (averageValues.reduce((total, value) => total + value, 0) /
-            averageValues.length) *
-            10,
-        ) / 10
-      : null
-  const atRiskStudents = students.filter((student) => {
-    return (
-      student.status !== 'active' ||
-      (student.metrics.attendancePercentage !== null &&
-        student.metrics.attendancePercentage < THRESHOLD.ATTENDANCE_LOW) ||
-      (student.metrics.averageScore !== null && student.metrics.averageScore < THRESHOLD.GRADE_LOW)
-    )
-  }).length
+      }).length,
+    [students],
+  )
   const courseOptions = useMemo(() => {
     const counts = new Map<string, number>()
 
@@ -104,12 +112,12 @@ export function StudentsPage() {
     }
 
     return [
-      { label: 'Todos', count: students.length },
+      { label: 'Todos', count: totalCount },
       ...Array.from(counts.entries())
         .sort(([firstLabel], [secondLabel]) => firstLabel.localeCompare(secondLabel))
         .map(([label, count]) => ({ label, count })),
     ]
-  }, [students])
+  }, [students, totalCount])
   const visibleStudents = useMemo(() => {
     if (selectedCourse === 'Todos') {
       return students
@@ -360,6 +368,55 @@ export function StudentsPage() {
               </p>
             </div>
           )}
+
+          {totalCount > pageSize ? (
+            <div className="flex items-center justify-between border-t border-border px-5 py-4">
+              <p className="text-sm text-muted-foreground">
+                Página {page} de {Math.ceil(totalCount / pageSize)}
+              </p>
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  disabled={page <= 1}
+                  onClick={() => goToPage(page - 1)}
+                  className="inline-flex h-10 items-center gap-2 rounded-2xl bg-muted px-5 text-sm font-bold text-foreground transition-colors hover:bg-secondary disabled:opacity-40"
+                >
+                  Anterior
+                </button>
+                {Array.from(
+                  { length: Math.min(Math.ceil(totalCount / pageSize), 5) },
+                  (_, i) => {
+                    const totalPages = Math.ceil(totalCount / pageSize)
+                    const start = Math.max(1, Math.min(page - 2, totalPages - 4))
+                    const p = start + i
+                    if (p > totalPages) return null
+                    return (
+                      <button
+                        key={p}
+                        type="button"
+                        onClick={() => goToPage(p)}
+                        className={`inline-flex size-10 items-center justify-center rounded-2xl text-sm font-bold transition-colors ${
+                          p === page
+                            ? 'bg-primary text-primary-foreground shadow-sm'
+                            : 'bg-muted text-foreground hover:bg-secondary'
+                        }`}
+                      >
+                        {p}
+                      </button>
+                    )
+                  },
+                )}
+                <button
+                  type="button"
+                  disabled={page >= Math.ceil(totalCount / pageSize)}
+                  onClick={() => goToPage(page + 1)}
+                  className="inline-flex h-10 items-center gap-2 rounded-2xl bg-muted px-5 text-sm font-bold text-foreground transition-colors hover:bg-secondary disabled:opacity-40"
+                >
+                  Siguiente
+                </button>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
 

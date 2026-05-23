@@ -1,4 +1,7 @@
 import { CheckCircle2, Eye, Pencil, UserMinus } from 'lucide-react'
+import { useRef } from 'react'
+
+import { useVirtualizer } from '@tanstack/react-virtual'
 
 import { THRESHOLD } from '@/constants'
 import { Button } from '@/components/ui/Button'
@@ -12,6 +15,8 @@ type StudentsTableProps = {
   onEdit: (student: StudentListItem) => void
   onDeactivate: (student: StudentListItem) => void
 }
+
+const ROW_HEIGHT = 73
 
 function getStudentInitials(student: StudentListItem) {
   return `${student.firstName.charAt(0)}${student.lastName.charAt(0)}`.toUpperCase()

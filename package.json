@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.1",
+    "@tanstack/react-virtual": "^3.13.25",
     "lucide-react": "^1.16.0",
     "papaparse": "^5.5.3",
     "react": "^19.2.6",
