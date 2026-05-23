@@ -29,7 +29,10 @@ export function useStudents() {
   const { search, debouncedSearch, setSearch } = useDebouncedSearch()
   const mountedRef = useRef(false)
   const pageRef = useRef(page)
-  pageRef.current = page
+
+  useEffect(() => {
+    pageRef.current = page
+  }, [page])
 
   const refetch = useCallback(
     async (targetPage?: number) => {

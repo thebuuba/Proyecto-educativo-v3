@@ -103,26 +103,75 @@ export function StudentsTable({
   onEdit,
   onDeactivate,
 }: StudentsTableProps) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  const rowVirtualizer = useVirtualizer({
+    count: students.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => ROW_HEIGHT,
+    overscan: 5,
+  })
+
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-[1080px] w-full text-left text-sm">
-        <thead className="bg-muted/60 text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">
-          <tr>
-            <th className="px-5 py-5">Estudiante</th>
-            <th className="px-5 py-5">Curso</th>
-            <th className="px-5 py-5">Asistencia</th>
-            <th className="px-5 py-5">Promedio</th>
-            <th className="px-5 py-5">Pendientes</th>
-            <th className="px-5 py-5">Estado</th>
-            <th className="w-32 px-5 py-5 text-right">
-              <span className="sr-only">Acciones</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-border">
-          {students.map((student) => (
-            <tr key={student.id} className="bg-card hover:bg-muted/50">
-              <td className="px-5 py-5">
+    <div
+      ref={scrollRef}
+      className="max-h-[calc(100vh-300px)] overflow-auto"
+      role="table"
+      aria-label="Lista de estudiantes"
+    >
+      <div
+        role="row"
+        className="sticky top-0 z-10 flex w-full min-w-[1080px] bg-muted/60 text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground shadow-sm"
+      >
+        <div role="columnheader" className="w-[320px] shrink-0 px-5 py-5">
+          Estudiante
+        </div>
+        <div role="columnheader" className="w-[130px] shrink-0 px-5 py-5">
+          Curso
+        </div>
+        <div role="columnheader" className="w-[180px] shrink-0 px-5 py-5">
+          Asistencia
+        </div>
+        <div role="columnheader" className="w-[90px] shrink-0 px-5 py-5">
+          Promedio
+        </div>
+        <div role="columnheader" className="w-[80px] shrink-0 px-5 py-5">
+          Pendientes
+        </div>
+        <div role="columnheader" className="w-[150px] shrink-0 px-5 py-5">
+          Estado
+        </div>
+        <div role="columnheader" className="w-32 shrink-0 px-5 py-5 text-right">
+          <span className="sr-only">Acciones</span>
+        </div>
+      </div>
+
+      <div
+        style={{
+          height: `${rowVirtualizer.getTotalSize()}px`,
+          position: 'relative',
+          minWidth: '1080px',
+        }}
+        role="rowgroup"
+      >
+        {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+          const student = students[virtualRow.index]
+
+          return (
+            <div
+              key={student.id}
+              role="row"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: `${virtualRow.size}px`,
+                transform: `translateY(${virtualRow.start}px)`,
+              }}
+              className="flex bg-card hover:bg-muted/50"
+            >
+              <div role="cell" className="flex w-[320px] shrink-0 items-center px-5 py-5">
                 <div className="flex items-center gap-4">
                   <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-bold text-primary ring-2 ring-border">
                     {getStudentInitials(student)}
@@ -136,36 +185,34 @@ export function StudentsTable({
                     </p>
                   </div>
                 </div>
-              </td>
-              <td className="px-5 py-5">
+              </div>
+              <div role="cell" className="flex w-[130px] shrink-0 items-center px-5 py-5">
                 <span className="inline-flex h-8 items-center rounded-lg bg-muted px-3 text-sm font-bold text-foreground">
                   {getCourseLabel(student)}
                 </span>
-              </td>
-              <td className="px-5 py-5">
-                <div className="flex items-center gap-3">
-                  <div className="h-2 w-24 overflow-hidden rounded-full bg-muted">
-                    <div
-                      className={cn(
-                        'h-full rounded-full',
-                        getProgressTone(student.metrics.attendancePercentage),
-                      )}
-                      style={{
-                        width:
-                          student.metrics.attendancePercentage === null
-                            ? '0%'
-                            : `${student.metrics.attendancePercentage}%`,
-                      }}
-                    />
-                  </div>
-                  <span className="min-w-16 text-sm font-bold text-primary">
-                    {student.metrics.attendancePercentage === null
-                      ? 'Sin datos'
-                      : `${student.metrics.attendancePercentage}%`}
-                  </span>
+              </div>
+              <div role="cell" className="flex w-[180px] shrink-0 items-center gap-3 px-5 py-5">
+                <div className="h-2 w-24 overflow-hidden rounded-full bg-muted">
+                  <div
+                    className={cn(
+                      'h-full rounded-full',
+                      getProgressTone(student.metrics.attendancePercentage),
+                    )}
+                    style={{
+                      width:
+                        student.metrics.attendancePercentage === null
+                          ? '0%'
+                          : `${student.metrics.attendancePercentage}%`,
+                    }}
+                  />
                 </div>
-              </td>
-              <td className="px-5 py-5">
+                <span className="min-w-16 text-sm font-bold text-primary">
+                  {student.metrics.attendancePercentage === null
+                    ? 'Sin datos'
+                    : `${student.metrics.attendancePercentage}%`}
+                </span>
+              </div>
+              <div role="cell" className="flex w-[90px] shrink-0 items-center px-5 py-5">
                 <span
                   className={cn(
                     'text-lg font-bold',
@@ -176,8 +223,8 @@ export function StudentsTable({
                     ? 'Sin datos'
                     : student.metrics.averageScore.toFixed(1)}
                 </span>
-              </td>
-              <td className="px-5 py-5">
+              </div>
+              <div role="cell" className="flex w-[80px] shrink-0 items-center px-5 py-5">
                 {student.metrics.pendingCount > 0 ? (
                   <span className="inline-flex size-8 items-center justify-center rounded-full bg-accent/18 text-sm font-bold text-accent">
                     {student.metrics.pendingCount}
@@ -185,8 +232,8 @@ export function StudentsTable({
                 ) : (
                   <CheckCircle2 className="size-5 text-success" />
                 )}
-              </td>
-              <td className="px-5 py-5">
+              </div>
+              <div role="cell" className="flex w-[150px] shrink-0 items-center px-5 py-5">
                 {(() => {
                   const status = getDisplayStatus(student)
 
@@ -202,9 +249,37 @@ export function StudentsTable({
                     </span>
                   )
                 })()}
-              </td>
-              <td className="px-5 py-5">
-                <div className="flex justify-end gap-1">
+              </div>
+              <div role="cell" className="flex w-32 shrink-0 items-center justify-end px-5 py-5">
+                {canManage ? (
+                  <>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      aria-label="Ver detalle"
+                      onClick={() => onView(student)}
+                    >
+                      <Eye className="size-4" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      aria-label="Editar estudiante"
+                      onClick={() => onEdit(student)}
+                    >
+                      <Pencil className="size-4" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      aria-label="Desactivar estudiante"
+                      disabled={student.status !== 'active'}
+                      onClick={() => onDeactivate(student)}
+                    >
+                      <UserMinus className="size-4" />
+                    </Button>
+                  </>
+                ) : (
                   <Button
                     variant="ghost"
                     size="icon"
@@ -213,34 +288,12 @@ export function StudentsTable({
                   >
                     <Eye className="size-4" />
                   </Button>
-
-                  {canManage ? (
-                    <>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        aria-label="Editar estudiante"
-                        onClick={() => onEdit(student)}
-                      >
-                        <Pencil className="size-4" />
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        aria-label="Desactivar estudiante"
-                        disabled={student.status !== 'active'}
-                        onClick={() => onDeactivate(student)}
-                      >
-                        <UserMinus className="size-4" />
-                      </Button>
-                    </>
-                  ) : null}
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                )}
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
