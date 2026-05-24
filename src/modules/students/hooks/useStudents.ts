@@ -7,6 +7,7 @@ import {
   getStudents,
   updateStudent as updateStudentRecord,
 } from '@/modules/students/services/studentsService'
+import { supabase } from '@/services/supabase'
 import type {
   CreateStudentInput,
   StudentFilters,
@@ -29,16 +30,19 @@ export function useStudents() {
   const { search, debouncedSearch, setSearch } = useDebouncedSearch()
   const mountedRef = useRef(false)
   const pageRef = useRef(page)
+  const ownMutationRef = useRef(false)
 
   useEffect(() => {
     pageRef.current = page
   }, [page])
 
-  const refetch = useCallback(
-    async (targetPage?: number) => {
+  const fetchData = useCallback(
+    async (targetPage?: number, showLoading = true) => {
       const p = targetPage ?? pageRef.current
 
-      setLoading(true)
+      if (showLoading) {
+        setLoading(true)
+      }
       setError(null)
 
       try {
@@ -59,10 +63,17 @@ export function useStudents() {
         setStudents([])
         setTotalCount(0)
       } finally {
-        setLoading(false)
+        if (showLoading) {
+          setLoading(false)
+        }
       }
     },
     [debouncedSearch, filters],
+  )
+
+  const refetch = useCallback(
+    (targetPage?: number) => fetchData(targetPage, true),
+    [fetchData],
   )
 
   useEffect(() => {
@@ -77,6 +88,26 @@ export function useStudents() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearch, filters])
 
+  useEffect(() => {
+    const channel = supabase
+      .channel('students-realtime')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'students' },
+        () => {
+          if (!ownMutationRef.current) {
+            void fetchData(undefined, false)
+          }
+          ownMutationRef.current = false
+        },
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [fetchData])
+
   const goToPage = useCallback(
     (newPage: number) => {
       setPage(newPage)
@@ -88,6 +119,7 @@ export function useStudents() {
   const createStudent = useCallback(
     async (input: CreateStudentInput) => {
       const createdStudent = await createStudentRecord(input)
+      ownMutationRef.current = true
       await refetch()
       return createdStudent
     },
@@ -97,6 +129,7 @@ export function useStudents() {
   const updateStudent = useCallback(
     async (id: string, input: UpdateStudentInput) => {
       const updatedStudent = await updateStudentRecord(id, input)
+      ownMutationRef.current = true
       await refetch()
       return updatedStudent
     },
@@ -106,6 +139,7 @@ export function useStudents() {
   const deactivateStudent = useCallback(
     async (id: string) => {
       const updatedStudent = await deactivateStudentRecord(id)
+      ownMutationRef.current = true
       await refetch()
       return updatedStudent
     },
