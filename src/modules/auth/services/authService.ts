@@ -34,7 +34,7 @@ export async function loginWithOAuth(provider: 'google' | 'facebook') {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider,
     options: {
-      redirectTo: `${window.location.origin}/login`,
+redirectTo: import.meta.env.VITE_AUTH_REDIRECT_URL || `${window.location.origin}/login`,
     },
   })
 

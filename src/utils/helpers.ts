@@ -1,19 +1,19 @@
+import { DB_ERROR } from '@/constants'
+
 export function firstOrNull<T>(value: T | T[] | null): T | null {
   return Array.isArray(value) ? (value[0] ?? null) : value
 }
 
-import { DB_ERROR } from '@/constants'
+const ERROR_MESSAGES: Record<string, string> = {
+  [DB_ERROR.UNIQUE_VIOLATION]: 'Ya existe un registro con esos datos.',
+  [DB_ERROR.PERMISSION_DENIED]: 'No tienes permiso para realizar esta acción.',
+  [DB_ERROR.FOREIGN_KEY_VIOLATION]: 'No se puede eliminar porque tiene registros asociados.',
+  [DB_ERROR.CHECK_VIOLATION]: 'El valor no cumple con las reglas de validación.',
+  [DB_ERROR.UNDEFINED_COLUMN]: 'Error interno: columna no encontrada.',
+}
 
 export function getSupabaseErrorMessage(error: { message: string; code?: string }) {
-  if (error.code === DB_ERROR.UNIQUE_VIOLATION) {
-    return 'Ya existe un registro con esos datos.'
-  }
-
-  if (error.code === DB_ERROR.PERMISSION_DENIED) {
-    return 'No tienes permiso para realizar esta acción.'
-  }
-
-  return error.message || 'No se pudo completar la operación en Supabase.'
+  return ERROR_MESSAGES[error.code ?? ''] ?? (error.message || 'No se pudo completar la operación.')
 }
 
 export function assertNoSupabaseError(

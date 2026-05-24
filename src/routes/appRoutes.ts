@@ -85,14 +85,6 @@ export const appRoutes: AppRoute[] = [
     allowedRoles: ['admin', 'director', 'coordinator'],
   },
   {
-    path: '/grados-secciones',
-    label: 'Cursos',
-    icon: LibraryBig,
-    component: GradesSectionsPage,
-    allowedRoles: ['admin', 'director', 'coordinator'],
-    showInSidebar: false,
-  },
-  {
     path: '/horario',
     label: 'Horario',
     icon: CalendarClock,
