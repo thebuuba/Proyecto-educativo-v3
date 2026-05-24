@@ -32,6 +32,9 @@ export type StudentListMetrics = {
 export type StudentListItem = Student & {
   currentEnrollment: StudentListEnrollmentSummary | null
   metrics: StudentListMetrics
+  displayEmail: string
+  displayAvatarSeed: string
+  riskReason: string | null
 }
 
 export type StudentEnrollmentSummary = {

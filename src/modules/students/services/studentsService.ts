@@ -38,6 +38,7 @@ type StudentRow = {
   status: RecordStatus
   created_at: string
   updated_at: string
+  app_users?: { email: string | null; avatar_url: string | null } | { email: string | null; avatar_url: string | null }[] | null
 }
 
 type EnrollmentRow = {
@@ -88,9 +89,25 @@ type StudentGuardianRow = {
   }[] | null
 }
 
+type GuardianNotificationInsert = {
+  student_id: string
+  guardian_id: string | null
+  channel: 'manual'
+  subject: string
+  message: string
+  status: 'draft'
+}
+
+type GuardianNotificationTable = {
+  insert: (
+    values: GuardianNotificationInsert[],
+  ) => PromiseLike<{ error: { message: string; code?: string } | null }>
+}
+
 const studentSelect = `
   id,
   user_id,
+  app_users(email, avatar_url),
   student_code,
   first_name,
   last_name,
@@ -102,6 +119,12 @@ const studentSelect = `
   created_at,
   updated_at
 `
+
+function getGuardianNotificationsTable() {
+  return (supabase as unknown as {
+    from(table: 'guardian_notifications'): GuardianNotificationTable
+  }).from('guardian_notifications')
+}
 
 function normalizeOptionalText(value: string | undefined) {
   const trimmed = value?.trim()
@@ -137,6 +160,18 @@ function mapStudentListItem(
   const section = enrollment
     ? sectionByKey.get(`${enrollment.grade_id}:${enrollment.section_id}`)
     : undefined
+  const appUser = firstOrNull(row.app_users ?? null)
+  const metrics = enrollment
+    ? metricsByEnrollmentId.get(enrollment.id) ?? {
+        attendancePercentage: null,
+        averageScore: null,
+        pendingCount: 0,
+      }
+    : {
+        attendancePercentage: null,
+        averageScore: null,
+        pendingCount: 0,
+      }
 
   return {
     ...student,
@@ -147,18 +182,33 @@ function mapStudentListItem(
           sectionName: section?.name ?? null,
         }
       : null,
-    metrics: enrollment
-      ? metricsByEnrollmentId.get(enrollment.id) ?? {
-          attendancePercentage: null,
-          averageScore: null,
-          pendingCount: 0,
-        }
-      : {
-          attendancePercentage: null,
-          averageScore: null,
-          pendingCount: 0,
-        },
+    metrics,
+    displayEmail:
+      appUser?.email ??
+      `${student.studentCode.toLowerCase().replace(/[^a-z0-9._-]+/g, '.')}@aulabase.edu`,
+    displayAvatarSeed: appUser?.avatar_url ?? `${student.firstName} ${student.lastName} ${student.studentCode}`,
+    riskReason: getRiskReason(student.status, metrics),
   }
+}
+
+function getRiskReason(
+  status: RecordStatus,
+  metrics: StudentListItem['metrics'],
+) {
+  if (status !== 'active') return 'Expediente inactivo'
+  if (
+    metrics.attendancePercentage !== null &&
+    metrics.attendancePercentage < 70
+  ) {
+    return `${metrics.attendancePercentage}% asistencia`
+  }
+  if (metrics.averageScore !== null && metrics.averageScore < 6.5) {
+    return `${metrics.averageScore.toFixed(1)} promedio`
+  }
+  if (metrics.pendingCount > 0) {
+    return `${metrics.pendingCount} pendiente${metrics.pendingCount === 1 ? '' : 's'}`
+  }
+  return null
 }
 
 function getStudentSupabaseErrorMessage(error: { message: string; code?: string }) {
@@ -178,23 +228,54 @@ function assertNoStudentSupabaseError(
   }
 }
 
-function buildSearchFilter(search: string) {
+async function getMatchingAppUserIds(search: string) {
+  const term = search.trim().replace(/[(),%]/g, ' ')
+
+  if (!term) return []
+
+  try {
+    const { data, error } = await supabase
+      .from('app_users')
+      .select('id')
+      .ilike('email', `%${term}%`)
+      .limit(100)
+
+    if (error) {
+      console.warn('No se pudo buscar estudiantes por correo:', error.message)
+      return []
+    }
+
+    return (data ?? []).map((user) => user.id)
+  } catch (error) {
+    console.warn('No se pudo buscar estudiantes por correo:', error)
+    return []
+  }
+}
+
+function buildSearchFilter(search: string, appUserIds: string[] = []) {
   const term = search.trim().replace(/[(),%]/g, ' ')
 
   if (!term) {
     return ''
   }
 
-  return [
+  const filters = [
     `first_name.ilike.%${term}%`,
     `last_name.ilike.%${term}%`,
     `student_code.ilike.%${term}%`,
-  ].join(',')
+  ]
+
+  if (appUserIds.length > 0) {
+    filters.push(`user_id.in.(${appUserIds.join(',')})`)
+  }
+
+  return filters.join(',')
 }
 
 async function getStudentsCount(
   search: string,
   filters: StudentFilters,
+  appUserIds: string[],
 ): Promise<number> {
   let query = supabase
     .from('students')
@@ -204,7 +285,7 @@ async function getStudentsCount(
     query = query.eq('status', filters.status)
   }
 
-  const searchFilter = buildSearchFilter(search)
+  const searchFilter = buildSearchFilter(search, appUserIds)
 
   if (searchFilter) {
     query = query.or(searchFilter)
@@ -226,7 +307,8 @@ export async function getStudents({
   page?: number
   pageSize?: number
 } = {}): Promise<{ data: StudentListItem[]; count: number }> {
-  const totalCount = await getStudentsCount(search, filters)
+  const matchingAppUserIds = await getMatchingAppUserIds(search)
+  const totalCount = await getStudentsCount(search, filters, matchingAppUserIds)
 
   let query = supabase
     .from('students')
@@ -239,7 +321,7 @@ export async function getStudents({
     query = query.eq('status', filters.status)
   }
 
-  const searchFilter = buildSearchFilter(search)
+  const searchFilter = buildSearchFilter(search, matchingAppUserIds)
 
   if (searchFilter) {
     query = query.or(searchFilter)
@@ -402,6 +484,59 @@ export async function getStudents({
       ),
     ),
     count: totalCount,
+  }
+}
+
+export async function notifyGuardiansForAtRiskStudents(studentIds: string[]): Promise<{
+  created: number
+  skipped: number
+}> {
+  const uniqueStudentIds = Array.from(new Set(studentIds))
+
+  if (uniqueStudentIds.length === 0) {
+    throw new Error('Selecciona al menos un estudiante en riesgo.')
+  }
+
+  const { data, error } = await supabase
+    .from('student_guardians')
+    .select('student_id, guardian_id, guardians(full_name)')
+    .in('student_id', uniqueStudentIds)
+    .eq('status', 'active')
+
+  assertNoSupabaseError(error, 'No se pudieron cargar los tutores.')
+
+  type Row = {
+    student_id: string
+    guardian_id: string
+    guardians: { full_name: string } | { full_name: string }[] | null
+  }
+
+  const notifications: GuardianNotificationInsert[] = []
+  const studentsWithGuardian = new Set<string>()
+
+  for (const row of (data ?? []) as Row[]) {
+    studentsWithGuardian.add(row.student_id)
+    notifications.push({
+      student_id: row.student_id,
+      guardian_id: row.guardian_id,
+      channel: 'manual',
+      subject: 'Seguimiento académico requerido',
+      message:
+        'Se requiere dar seguimiento al rendimiento o asistencia del estudiante. Favor contactar al centro educativo.',
+      status: 'draft',
+    })
+  }
+
+  if (notifications.length === 0) {
+    throw new Error('No hay tutores activos vinculados a los estudiantes seleccionados.')
+  }
+
+  const { error: insertError } = await getGuardianNotificationsTable().insert(notifications)
+  assertNoSupabaseError(insertError, 'No se pudieron registrar las notificaciones.')
+
+  return {
+    created: notifications.length,
+    skipped: uniqueStudentIds.length - studentsWithGuardian.size,
   }
 }
 

@@ -151,6 +151,10 @@ a {
   min-height: 100vh;
 }
 
+.content-density-compact {
+  font-size: 0.9375rem;
+}
+
 @media print {
   .no-print {
     display: none !important;

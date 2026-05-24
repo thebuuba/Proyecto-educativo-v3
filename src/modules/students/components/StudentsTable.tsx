@@ -1,115 +1,64 @@
 import { CheckCircle2, Eye, Pencil, UserMinus } from 'lucide-react'
 
-import { THRESHOLD } from '@/constants'
 import { Button } from '@/components/ui/Button'
 import type { StudentListItem } from '@/modules/students/types'
+import {
+  getAverageTone,
+  getCourseLabel,
+  getDisplayStatus,
+  getProgressTone,
+  getStudentInitials,
+} from '@/modules/students/utils/studentDisplay'
 import { cn } from '@/utils/cn'
 
 type StudentsTableProps = {
   students: StudentListItem[]
   canManage: boolean
+  selectedIds: Set<string>
+  onToggleStudent: (studentId: string) => void
+  onToggleAll: () => void
   onView: (student: StudentListItem) => void
   onEdit: (student: StudentListItem) => void
   onDeactivate: (student: StudentListItem) => void
 }
 
-function getStudentInitials(student: StudentListItem) {
-  return `${student.firstName.charAt(0)}${student.lastName.charAt(0)}`.toUpperCase()
-}
-
-function getCourseLabel(student: StudentListItem) {
-  const gradeName = student.currentEnrollment?.gradeName
-  const sectionName = student.currentEnrollment?.sectionName
-
-  if (gradeName && sectionName) {
-    return `${gradeName} ${sectionName}`
-  }
-
-  return gradeName ?? sectionName ?? 'Sin curso'
-}
-
-function getProgressTone(value: number | null) {
-  if (value === null) return 'bg-muted'
-  if (value < THRESHOLD.ATTENDANCE_LOW) return 'bg-destructive'
-  if (value < THRESHOLD.ATTENDANCE_WARNING) return 'bg-accent'
-  return 'bg-success'
-}
-
-function getAverageTone(value: number | null) {
-  if (value === null) return 'text-muted-foreground'
-  if (value < THRESHOLD.GRADE_LOW) return 'text-destructive'
-  if (value < THRESHOLD.GRADE_WARNING) return 'text-accent'
-  return 'text-success'
-}
-
-function getDisplayStatus(student: StudentListItem) {
-  if (student.status === 'inactive') {
-    return {
-      label: 'Inactivo',
-      className: 'bg-warning/14 text-warning',
-      dotClassName: 'bg-warning',
-    }
-  }
-
-  if (student.status === 'archived') {
-    return {
-      label: 'Archivado',
-      className: 'bg-muted text-muted-foreground',
-      dotClassName: 'bg-muted-foreground',
-    }
-  }
-
-  const { attendancePercentage, averageScore, pendingCount } = student.metrics
-
-  if (
-    (attendancePercentage !== null && attendancePercentage < THRESHOLD.ATTENDANCE_LOW) ||
-    (averageScore !== null && averageScore < THRESHOLD.GRADE_LOW)
-  ) {
-    return {
-      label: 'En riesgo',
-      className: 'bg-destructive/12 text-destructive',
-      dotClassName: 'bg-destructive',
-    }
-  }
-
-  if (
-    pendingCount > 0 ||
-    (attendancePercentage !== null && attendancePercentage < THRESHOLD.ATTENDANCE_WARNING) ||
-    (averageScore !== null && averageScore < THRESHOLD.GRADE_WARNING)
-  ) {
-    return {
-      label: 'Atención',
-      className: 'bg-accent/18 text-accent-foreground',
-      dotClassName: 'bg-accent',
-    }
-  }
-
-  return {
-    label: 'Al día',
-    className: 'bg-success/12 text-success',
-    dotClassName: 'bg-success',
-  }
-}
-
 export function StudentsTable({
   students,
   canManage,
+  selectedIds,
+  onToggleStudent,
+  onToggleAll,
   onView,
   onEdit,
   onDeactivate,
 }: StudentsTableProps) {
+  const hasRows = students.length > 0
+  const allSelected = hasRows && students.every((student) => selectedIds.has(student.id))
+
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-[1080px] w-full text-left text-sm">
+      <table className="min-w-[980px] w-full text-left text-sm">
         <thead className="bg-muted/60 text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">
           <tr>
-            <th className="px-5 py-5">Estudiante</th>
-            <th className="px-5 py-5">Curso</th>
-            <th className="px-5 py-5">Asistencia</th>
-            <th className="px-5 py-5">Promedio</th>
-            <th className="px-5 py-5">Pendientes</th>
-            <th className="px-5 py-5">Estado</th>
-            <th className="w-32 px-5 py-5 text-right">
+            <th className="w-12 px-4 py-3">
+              <label className="flex items-center">
+                <span className="sr-only">Seleccionar todos</span>
+                <input
+                  type="checkbox"
+                  checked={allSelected}
+                  disabled={!hasRows}
+                  onChange={onToggleAll}
+                  className="size-4 rounded border-border accent-primary"
+                />
+              </label>
+            </th>
+            <th className="px-4 py-3">Estudiante ↑↓</th>
+            <th className="px-4 py-3">Curso</th>
+            <th className="px-4 py-3">Asistencia</th>
+            <th className="px-4 py-3">Promedio</th>
+            <th className="px-4 py-3">Pendientes</th>
+            <th className="px-4 py-3">Estado</th>
+            <th className="w-28 px-4 py-3 text-right">
               <span className="sr-only">Acciones</span>
             </th>
           </tr>
@@ -117,29 +66,44 @@ export function StudentsTable({
         <tbody className="divide-y divide-border">
           {students.map((student) => (
             <tr key={student.id} className="bg-card hover:bg-muted/50">
-              <td className="px-5 py-5">
-                <div className="flex items-center gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-bold text-primary ring-2 ring-border">
+              <td className="px-4 py-3">
+                <label className="flex items-center">
+                  <span className="sr-only">
+                    Seleccionar {student.firstName} {student.lastName}
+                  </span>
+                  <input
+                    type="checkbox"
+                    checked={selectedIds.has(student.id)}
+                    onChange={() => onToggleStudent(student.id)}
+                    className="size-4 rounded border-border accent-primary"
+                  />
+                </label>
+              </td>
+              <td className="px-4 py-3">
+                <div className="flex items-center gap-3" title={`Código ${student.studentCode}`}>
+                  <div
+                    className="flex size-9 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-bold text-primary ring-2 ring-accent/70"
+                    style={{
+                      background: `linear-gradient(135deg, hsl(${hashSeed(student.displayAvatarSeed)} 70% 86%), hsl(${hashSeed(student.id)} 70% 72%))`,
+                    }}
+                  >
                     {getStudentInitials(student)}
                   </div>
-                  <div>
-                    <span className="block text-lg font-bold leading-6 text-primary">
+                  <div className="min-w-0">
+                    <span className="block max-w-[260px] truncate text-sm font-bold leading-5 text-primary">
                       {student.firstName} {student.lastName}
                     </span>
-                    <p className="mt-0.5 text-sm text-muted-foreground">
-                      Código {student.studentCode}
-                    </p>
                   </div>
                 </div>
               </td>
-              <td className="px-5 py-5">
-                <span className="inline-flex h-8 items-center rounded-lg bg-muted px-3 text-sm font-bold text-foreground">
+              <td className="px-4 py-3">
+                <span className="inline-flex min-h-7 max-w-28 items-center rounded-lg bg-muted px-2.5 py-1 text-xs font-bold leading-4 text-foreground">
                   {getCourseLabel(student)}
                 </span>
               </td>
-              <td className="px-5 py-5">
-                <div className="flex items-center gap-3">
-                  <div className="h-2 w-24 overflow-hidden rounded-full bg-muted">
+              <td className="px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <div className="h-1.5 w-20 overflow-hidden rounded-full bg-muted">
                     <div
                       className={cn(
                         'h-full rounded-full',
@@ -153,17 +117,17 @@ export function StudentsTable({
                       }}
                     />
                   </div>
-                  <span className="min-w-16 text-sm font-bold text-primary">
+                  <span className="min-w-14 whitespace-nowrap text-xs font-bold text-primary">
                     {student.metrics.attendancePercentage === null
                       ? 'Sin datos'
                       : `${student.metrics.attendancePercentage}%`}
                   </span>
                 </div>
               </td>
-              <td className="px-5 py-5">
+              <td className="px-4 py-3">
                 <span
                   className={cn(
-                    'text-lg font-bold',
+                    'whitespace-nowrap text-sm font-bold',
                     getAverageTone(student.metrics.averageScore),
                   )}
                 >
@@ -172,23 +136,23 @@ export function StudentsTable({
                     : student.metrics.averageScore.toFixed(1)}
                 </span>
               </td>
-              <td className="px-5 py-5">
+              <td className="px-4 py-3">
                 {student.metrics.pendingCount > 0 ? (
-                  <span className="inline-flex size-8 items-center justify-center rounded-full bg-accent/18 text-sm font-bold text-accent">
+                  <span className="inline-flex size-7 items-center justify-center rounded-full bg-accent/18 text-xs font-bold text-accent">
                     {student.metrics.pendingCount}
                   </span>
                 ) : (
-                  <CheckCircle2 className="size-5 text-success" />
+                  <CheckCircle2 className="size-4 text-success" />
                 )}
               </td>
-              <td className="px-5 py-5">
+              <td className="px-4 py-3">
                 {(() => {
                   const status = getDisplayStatus(student)
 
                   return (
                     <span
                       className={cn(
-                        'inline-flex h-9 items-center gap-2 rounded-lg px-3 text-sm font-bold',
+                        'inline-flex h-7 items-center gap-1.5 rounded-lg px-2.5 text-xs font-bold',
                         status.className,
                       )}
                     >
@@ -198,11 +162,12 @@ export function StudentsTable({
                   )
                 })()}
               </td>
-              <td className="px-5 py-5">
+              <td className="px-4 py-3">
                 <div className="flex justify-end gap-1">
                   <Button
                     variant="ghost"
                     size="icon"
+                    className="size-8"
                     aria-label="Ver detalle"
                     onClick={() => onView(student)}
                   >
@@ -214,6 +179,7 @@ export function StudentsTable({
                       <Button
                         variant="ghost"
                         size="icon"
+                        className="size-8"
                         aria-label="Editar estudiante"
                         onClick={() => onEdit(student)}
                       >
@@ -222,6 +188,7 @@ export function StudentsTable({
                       <Button
                         variant="ghost"
                         size="icon"
+                        className="size-8"
                         aria-label="Desactivar estudiante"
                         disabled={student.status !== 'active'}
                         onClick={() => onDeactivate(student)}
@@ -238,4 +205,14 @@ export function StudentsTable({
       </table>
     </div>
   )
+}
+
+function hashSeed(seed: string) {
+  let hash = 0
+
+  for (let index = 0; index < seed.length; index += 1) {
+    hash = (hash * 31 + seed.charCodeAt(index)) % 360
+  }
+
+  return hash
 }

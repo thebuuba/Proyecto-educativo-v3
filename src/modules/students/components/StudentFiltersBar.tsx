@@ -1,7 +1,6 @@
-import { Search } from 'lucide-react'
+import { Funnel, Search } from 'lucide-react'
 
 import { Input } from '@/components/ui/Input'
-import { Select } from '@/components/ui/Select'
 import { cn } from '@/utils/cn'
 import type { StudentFilters } from '@/modules/students/types'
 
@@ -17,9 +16,9 @@ type StudentFiltersBarProps = {
 
 const statusOptions = [
   { value: 'active', label: 'Activos' },
+  { value: 'all', label: 'Todos' },
   { value: 'inactive', label: 'Inactivos' },
   { value: 'archived', label: 'Archivados' },
-  { value: 'all', label: 'Todos' },
 ] as const
 
 export function StudentFiltersBar({
@@ -32,7 +31,7 @@ export function StudentFiltersBar({
   onCourseChange,
 }: StudentFiltersBarProps) {
   return (
-    <div className="flex flex-col gap-4 border-b border-border bg-card p-4 xl:flex-row xl:items-center">
+    <div className="flex flex-col gap-3 border-b border-border bg-card p-3 xl:flex-row xl:items-center">
       <div className="flex gap-2 overflow-x-auto pb-1 xl:pb-0">
         {courseOptions.map((option) => {
           const isSelected = selectedCourse === option.label
@@ -43,7 +42,7 @@ export function StudentFiltersBar({
               type="button"
               onClick={() => onCourseChange(option.label)}
               className={cn(
-                'inline-flex h-11 shrink-0 items-center gap-3 rounded-2xl px-5 text-sm font-bold transition-colors',
+                'inline-flex h-9 shrink-0 items-center gap-2 rounded-xl px-4 text-xs font-bold transition-colors',
                 isSelected
                   ? 'bg-primary text-primary-foreground shadow-sm'
                   : 'bg-muted text-foreground hover:bg-secondary',
@@ -52,7 +51,7 @@ export function StudentFiltersBar({
               {option.label}
               <span
                 className={cn(
-                  'inline-flex min-w-8 items-center justify-center rounded-lg px-2 py-1 text-xs',
+                  'inline-flex min-w-7 items-center justify-center rounded-md px-1.5 py-0.5 text-[11px]',
                   isSelected
                     ? 'bg-accent/18 text-accent'
                     : 'bg-card text-muted-foreground',
@@ -68,35 +67,32 @@ export function StudentFiltersBar({
       <div className="flex min-w-0 flex-1 gap-3">
         <label className="relative block min-w-0 flex-1">
           <span className="sr-only">Buscar estudiante</span>
-          <Search className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-muted-foreground" />
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             type="search"
             value={search}
             onChange={(event) => onSearchChange(event.target.value)}
-            placeholder="Buscar por nombre o código..."
-            className="h-12 rounded-2xl pl-12 text-base"
+            placeholder="Buscar por nombre o correo..."
+            className="h-10 rounded-xl pl-10 text-sm"
           />
         </label>
 
-        <label className="flex shrink-0 items-center gap-2 text-sm text-muted-foreground">
-          Estado
-          <Select
-            value={filters.status}
-            onChange={(event) =>
-              onFiltersChange({
-                ...filters,
-                status: event.target.value as StudentFilters['status'],
-              })
-            }
-            className="h-12 rounded-2xl"
-          >
-            {statusOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </Select>
-        </label>
+        <button
+          type="button"
+          title={`Estado: ${statusOptions.find((option) => option.value === filters.status)?.label ?? 'Activos'}`}
+          aria-label="Cambiar filtro de estado"
+          onClick={() => {
+            const currentIndex = statusOptions.findIndex((option) => option.value === filters.status)
+            const nextOption = statusOptions[(currentIndex + 1) % statusOptions.length]
+            onFiltersChange({ ...filters, status: nextOption.value })
+          }}
+          className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-border bg-card px-3 text-xs font-bold text-primary shadow-sm transition-colors hover:bg-muted"
+        >
+          <Funnel className="size-4" />
+          <span className="hidden sm:inline">
+            {statusOptions.find((option) => option.value === filters.status)?.label ?? 'Activos'}
+          </span>
+        </button>
       </div>
     </div>
   )

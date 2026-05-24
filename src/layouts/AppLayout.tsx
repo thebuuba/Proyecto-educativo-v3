@@ -46,7 +46,7 @@ export function AppLayout() {
         )}>
           <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
 
-          <main className="px-4 py-5 sm:px-6 lg:px-8">
+          <main className="content-density-compact px-4 py-4 sm:px-5 lg:px-6">
             <Outlet />
           </main>
         </div>
