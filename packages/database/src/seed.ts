@@ -1,4 +1,5 @@
 import { prisma } from './index.js'
+import * as bcrypt from 'bcrypt'
 
 async function main() {
   const school = await prisma.school.upsert({
@@ -10,7 +11,31 @@ async function main() {
     },
   })
 
-  console.log('Seeded:', school.name)
+  const adminRole = await prisma.role.upsert({
+    where: { key: 'admin' },
+    update: {},
+    create: { key: 'admin', name: 'Administrador' },
+  })
+
+  const adminUser = await prisma.appUser.upsert({
+    where: { email: 'admin@test.com' },
+    update: {},
+    create: {
+      authUserId: crypto.randomUUID(),
+      email: 'admin@test.com',
+      fullName: 'Admin Aula Base',
+      passwordHash: await bcrypt.hash('123456', 10),
+      schoolId: school.id,
+    },
+  })
+
+  await prisma.userRole.upsert({
+    where: { userId_roleId: { userId: adminUser.id, roleId: adminRole.id } },
+    update: {},
+    create: { userId: adminUser.id, roleId: adminRole.id, schoolId: school.id },
+  })
+
+  console.log('Seeded:', school.name, '| Admin:', adminUser.email)
 }
 
 main()
