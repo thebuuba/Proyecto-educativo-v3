@@ -1,0 +1,608 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum RecordStatus {
+  ACTIVE   @map("active")
+  INACTIVE @map("inactive")
+  ARCHIVED @map("archived")
+}
+
+enum EnrollmentStatus {
+  ACTIVE       @map("active")
+  TRANSFERRED  @map("transferred")
+  WITHDRAWN    @map("withdrawn")
+  COMPLETED    @map("completed")
+}
+
+enum AttendanceStatus {
+  PRESENT @map("present")
+  ABSENT  @map("absent")
+  LATE    @map("late")
+  EXCUSED @map("excused")
+}
+
+enum GradeRecordStatus {
+  DRAFT     @map("draft")
+  PUBLISHED @map("published")
+  VOIDED    @map("voided")
+}
+
+enum ReportStatus {
+  PENDING   @map("pending")
+  GENERATED @map("generated")
+  FAILED    @map("failed")
+  ARCHIVED  @map("archived")
+}
+
+model School {
+  id                  String       @id @default(uuid()) @db.Uuid
+  name                String
+  slug                String       @unique
+  logoUrl             String?      @map("logo_url")
+  sector              String       @default("private")
+  regionalCode        String?      @map("regional_code")
+  regionalName        String?      @map("regional_name")
+  districtCode        String?      @map("district_code")
+  districtName        String?      @map("district_name")
+  centerCode          String?      @map("center_code")
+  schoolShift         String       @default("extended") @map("school_shift")
+  primaryModality     String       @default("general") @map("primary_modality")
+  enabledSubsystems   String[]     @default(["regular"]) @map("enabled_subsystems")
+  officialExportsEnabled Boolean   @default(true) @map("official_exports_enabled")
+  status              RecordStatus @default(ACTIVE)
+  createdAt           DateTime     @default(now()) @map("created_at")
+  updatedAt           DateTime     @updatedAt @map("updated_at")
+
+  @@map("schools")
+}
+
+model Role {
+  id          String         @id @default(uuid()) @db.Uuid
+  key         String         @unique
+  name        String         @unique
+  description String?
+  status      RecordStatus   @default(ACTIVE)
+  createdAt   DateTime       @default(now()) @map("created_at")
+  updatedAt   DateTime       @updatedAt @map("updated_at")
+
+
+
+  @@map("roles")
+}
+
+model Permission {
+  id          String         @id @default(uuid()) @db.Uuid
+  key         String         @unique
+  name        String
+  description String?
+  status      RecordStatus   @default(ACTIVE)
+  createdAt   DateTime       @default(now()) @map("created_at")
+  updatedAt   DateTime       @updatedAt @map("updated_at")
+
+
+
+  @@map("permissions")
+}
+
+model RolePermission {
+  roleId       String       @map("role_id") @db.Uuid
+  permissionId String       @map("permission_id") @db.Uuid
+  status       RecordStatus @default(ACTIVE)
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+
+  @@id([roleId, permissionId])
+  @@map("role_permissions")
+}
+
+model AppUser {
+  id           String       @id @default(uuid()) @db.Uuid
+  authUserId   String       @unique @map("auth_user_id") @db.Uuid
+  fullName     String       @map("full_name")
+  email        String       @unique
+  phone        String?
+  passwordHash String?      @map("password_hash")
+  avatarUrl    String?      @map("avatar_url")
+  provider     String       @default("email")
+  lastLoginAt  DateTime?    @map("last_login_at")
+  status       RecordStatus @default(ACTIVE)
+  schoolId     String       @map("school_id") @db.Uuid
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+
+  @@map("app_users")
+}
+
+model UserRole {
+  userId    String       @map("user_id") @db.Uuid
+  roleId    String       @map("role_id") @db.Uuid
+  status    RecordStatus @default(ACTIVE)
+  schoolId  String       @map("school_id") @db.Uuid
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+
+
+  @@id([userId, roleId])
+  @@map("user_roles")
+}
+
+model SchoolYear {
+  id               String       @id @default(uuid()) @db.Uuid
+  schoolId         String       @map("school_id") @db.Uuid
+  name             String
+  startDate        DateTime     @map("start_date") @db.Date
+  endDate          DateTime     @map("end_date") @db.Date
+  isCurrent        Boolean      @default(false) @map("is_current")
+  periodScheme     String       @default("trimester") @map("period_scheme")
+  periodCount      Int          @default(3) @map("period_count")
+  calendarSource   String       @default("school") @map("calendar_source")
+  instructionalDays Int?        @map("instructional_days")
+  studentWeeks     Int?         @map("student_weeks")
+  teacherWeeks     Int?         @map("teacher_weeks")
+  status           RecordStatus @default(ACTIVE)
+  createdAt        DateTime     @default(now()) @map("created_at")
+  updatedAt        DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([schoolId, name])
+  @@map("school_years")
+}
+
+model AcademicPeriod {
+  id           String       @id @default(uuid()) @db.Uuid
+  schoolYearId String       @map("school_year_id") @db.Uuid
+  schoolId     String       @map("school_id") @db.Uuid
+  name         String
+  sequence     Int
+  startDate    DateTime     @map("start_date") @db.Date
+  endDate      DateTime     @map("end_date") @db.Date
+  status       RecordStatus @default(ACTIVE)
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([schoolYearId, sequence])
+  @@unique([schoolYearId, name])
+  @@unique([id, schoolYearId])
+  @@map("academic_periods")
+}
+
+model Grade {
+  id                String       @id @default(uuid()) @db.Uuid
+  schoolId          String       @map("school_id") @db.Uuid
+  name              String
+  level             String?
+  sequence          Int?
+  academicLevelId   String?      @map("academic_level_id") @db.Uuid
+  academicCycleId   String?      @map("academic_cycle_id") @db.Uuid
+  defaultModalityId String?      @map("default_modality_id") @db.Uuid
+  status            RecordStatus @default(ACTIVE)
+  createdAt         DateTime     @default(now()) @map("created_at")
+  updatedAt         DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([schoolId, name])
+  @@map("grades")
+}
+
+model Section {
+  id        String       @id @default(uuid()) @db.Uuid
+  gradeId   String       @map("grade_id") @db.Uuid
+  schoolId  String       @map("school_id") @db.Uuid
+  name      String
+  capacity  Int?
+  status    RecordStatus @default(ACTIVE)
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([gradeId, name])
+  @@unique([id, gradeId])
+  @@map("sections")
+}
+
+model Subject {
+  id          String       @id @default(uuid()) @db.Uuid
+  code        String
+  schoolId    String       @map("school_id") @db.Uuid
+  name        String
+  description String?
+  credits     Decimal?     @db.Decimal(5, 2)
+  status      RecordStatus @default(ACTIVE)
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([schoolId, code])
+  @@map("subjects")
+}
+
+model Teacher {
+  id           String       @id @default(uuid()) @db.Uuid
+  userId       String?      @unique @map("user_id") @db.Uuid
+  schoolId     String       @map("school_id") @db.Uuid
+  employeeCode String       @map("employee_code")
+  firstName    String       @map("first_name")
+  lastName     String       @map("last_name")
+  documentId   String?      @unique @map("document_id")
+  birthDate    DateTime?    @map("birth_date") @db.Date
+  gender       String?
+  phone        String?
+  email        String?      @unique
+  hireDate     DateTime?    @map("hire_date") @db.Date
+  address      String?
+  status       RecordStatus @default(ACTIVE)
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([schoolId, employeeCode])
+  @@unique([schoolId, documentId])
+  @@unique([schoolId, email])
+  @@map("teachers")
+}
+
+model Student {
+  id          String       @id @default(uuid()) @db.Uuid
+  userId      String?      @unique @map("user_id") @db.Uuid
+  schoolId    String       @map("school_id") @db.Uuid
+  studentCode String       @map("student_code")
+  firstName   String       @map("first_name")
+  lastName    String       @map("last_name")
+  documentId  String?      @unique @map("document_id")
+  birthDate   DateTime     @map("birth_date") @db.Date
+  gender      String?
+  address     String?
+  status      RecordStatus @default(ACTIVE)
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([schoolId, studentCode])
+  @@unique([schoolId, documentId])
+  @@map("students")
+}
+
+model Guardian {
+  id         String       @id @default(uuid()) @db.Uuid
+  userId     String?      @unique @map("user_id") @db.Uuid
+  schoolId   String       @map("school_id") @db.Uuid
+  fullName   String       @map("full_name")
+  documentId String?      @unique @map("document_id")
+  phone      String?
+  email      String?
+  address    String?
+  status     RecordStatus @default(ACTIVE)
+  createdAt  DateTime     @default(now()) @map("created_at")
+  updatedAt  DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([schoolId, documentId])
+  @@map("guardians")
+}
+
+model StudentGuardian {
+  studentId    String       @map("student_id") @db.Uuid
+  guardianId   String       @map("guardian_id") @db.Uuid
+  schoolId     String       @map("school_id") @db.Uuid
+  relationship String
+  isPrimary    Boolean      @default(false) @map("is_primary")
+  canPickUp    Boolean      @default(false) @map("can_pick_up")
+  status       RecordStatus @default(ACTIVE)
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+
+  @@id([studentId, guardianId])
+  @@map("student_guardians")
+}
+
+model SectionSubject {
+  id           String       @id @default(uuid()) @db.Uuid
+  schoolYearId String       @map("school_year_id") @db.Uuid
+  schoolId     String       @map("school_id") @db.Uuid
+  gradeId      String       @map("grade_id") @db.Uuid
+  sectionId    String       @map("section_id") @db.Uuid
+  subjectId    String       @map("subject_id") @db.Uuid
+  teacherId    String?      @map("teacher_id") @db.Uuid
+  status       RecordStatus @default(ACTIVE)
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([schoolYearId, sectionId, subjectId])
+  @@unique([id, schoolYearId, sectionId])
+  @@map("section_subjects")
+}
+
+model Enrollment {
+  id                String            @id @default(uuid()) @db.Uuid
+  studentId         String            @map("student_id") @db.Uuid
+  schoolYearId      String            @map("school_year_id") @db.Uuid
+  schoolId          String            @map("school_id") @db.Uuid
+  gradeId           String            @map("grade_id") @db.Uuid
+  sectionId         String            @map("section_id") @db.Uuid
+  enrollmentDate    DateTime          @default(now()) @map("enrollment_date") @db.Date
+  academicLevelId   String?           @map("academic_level_id") @db.Uuid
+  academicCycleId   String?           @map("academic_cycle_id") @db.Uuid
+  modalityId        String?           @map("modality_id") @db.Uuid
+  subsystemId       String?           @map("subsystem_id") @db.Uuid
+  academicStatus    String            @default("active") @map("academic_status")
+  isRepeating       Boolean           @default(false) @map("is_repeating")
+  promotionStatus   String?           @map("promotion_status")
+  finalCondition    String?           @map("final_condition")
+  transferNotes     String?           @map("transfer_notes")
+  status            EnrollmentStatus  @default(ACTIVE)
+  createdAt         DateTime          @default(now()) @map("created_at")
+  updatedAt         DateTime          @updatedAt @map("updated_at")
+
+
+  @@unique([studentId, schoolYearId])
+  @@unique([id, schoolYearId, sectionId])
+  @@map("enrollments")
+}
+
+model AttendanceDaily {
+  id               String           @id @default(uuid()) @db.Uuid
+  enrollmentId     String           @map("enrollment_id") @db.Uuid
+  schoolYearId     String           @map("school_year_id") @db.Uuid
+  sectionId        String           @map("section_id") @db.Uuid
+  schoolId         String           @map("school_id") @db.Uuid
+  academicPeriodId String           @map("academic_period_id") @db.Uuid
+  attendanceDate   DateTime         @map("attendance_date") @db.Date
+  status           AttendanceStatus
+  notes            String?
+  recordedBy       String?          @map("recorded_by") @db.Uuid
+  createdAt        DateTime         @default(now()) @map("created_at")
+  updatedAt        DateTime         @updatedAt @map("updated_at")
+
+
+  @@unique([enrollmentId, attendanceDate])
+  @@map("attendance_daily")
+}
+
+model AttendanceClass {
+  id               String           @id @default(uuid()) @db.Uuid
+  enrollmentId     String           @map("enrollment_id") @db.Uuid
+  schoolYearId     String           @map("school_year_id") @db.Uuid
+  sectionId        String           @map("section_id") @db.Uuid
+  schoolId         String           @map("school_id") @db.Uuid
+  sectionSubjectId String           @map("section_subject_id") @db.Uuid
+  academicPeriodId String           @map("academic_period_id") @db.Uuid
+  attendanceDate   DateTime         @map("attendance_date") @db.Date
+  status           AttendanceStatus
+  notes            String?
+  recordedBy       String?          @map("recorded_by") @db.Uuid
+  createdAt        DateTime         @default(now()) @map("created_at")
+  updatedAt        DateTime         @updatedAt @map("updated_at")
+
+
+  @@unique([enrollmentId, sectionSubjectId, attendanceDate])
+  @@map("attendance_class")
+}
+
+model GradesRecord {
+  id               String            @id @default(uuid()) @db.Uuid
+  enrollmentId     String            @map("enrollment_id") @db.Uuid
+  schoolYearId     String            @map("school_year_id") @db.Uuid
+  sectionId        String            @map("section_id") @db.Uuid
+  schoolId         String            @map("school_id") @db.Uuid
+  sectionSubjectId String            @map("section_subject_id") @db.Uuid
+  academicPeriodId String            @map("academic_period_id") @db.Uuid
+  assessmentName   String            @map("assessment_name")
+  score            Decimal           @db.Decimal(8, 2)
+  maxScore         Decimal           @default(100) @map("max_score") @db.Decimal(8, 2)
+  weight           Decimal           @default(1) @db.Decimal(8, 4)
+  status           GradeRecordStatus @default(DRAFT)
+  recordedBy       String?           @map("recorded_by") @db.Uuid
+  createdAt        DateTime          @default(now()) @map("created_at")
+  updatedAt        DateTime          @updatedAt @map("updated_at")
+
+
+  @@map("grades_records")
+}
+
+model PedagogicalRecovery {
+  id             String            @id @default(uuid()) @db.Uuid
+  gradeRecordId  String            @unique @map("grade_record_id") @db.Uuid
+  schoolId       String            @map("school_id") @db.Uuid
+  recoveryScore  Decimal           @map("recovery_score") @db.Decimal(8, 2)
+  recoveryDate   DateTime          @default(now()) @map("recovery_date") @db.Date
+  reason         String?
+  status         GradeRecordStatus @default(PUBLISHED)
+  recordedBy     String?           @map("recorded_by") @db.Uuid
+  createdAt      DateTime          @default(now()) @map("created_at")
+  updatedAt      DateTime          @updatedAt @map("updated_at")
+
+
+  @@map("pedagogical_recoveries")
+}
+
+model Report {
+  id               String       @id @default(uuid()) @db.Uuid
+  schoolYearId     String?      @map("school_year_id") @db.Uuid
+  academicPeriodId String?      @map("academic_period_id") @db.Uuid
+  schoolId         String       @map("school_id") @db.Uuid
+  studentId        String?      @map("student_id") @db.Uuid
+  generatedBy      String?      @map("generated_by") @db.Uuid
+  reportType       String       @map("report_type")
+  title            String
+  parameters       Json         @default("{}")
+  fileUrl          String?      @map("file_url")
+  status           ReportStatus @default(PENDING)
+  createdAt        DateTime     @default(now()) @map("created_at")
+  updatedAt        DateTime     @updatedAt @map("updated_at")
+
+
+  @@map("reports")
+}
+
+model TimeSlot {
+  id        String       @id @default(uuid()) @db.Uuid
+  schoolId  String       @map("school_id") @db.Uuid
+  name      String
+  startTime DateTime     @map("start_time") @db.Time
+  endTime   DateTime     @map("end_time") @db.Time
+  sequence  Int
+  status    RecordStatus @default(ACTIVE)
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+
+
+  @@unique([schoolId, sequence])
+  @@map("time_slots")
+}
+
+model ScheduleEntry {
+  id               String       @id @default(uuid()) @db.Uuid
+  schoolId         String       @map("school_id") @db.Uuid
+  schoolYearId     String       @map("school_year_id") @db.Uuid
+  academicPeriodId String?      @map("academic_period_id") @db.Uuid
+  sectionSubjectId String       @map("section_subject_id") @db.Uuid
+  sectionId        String       @map("section_id") @db.Uuid
+  timeSlotId       String       @map("time_slot_id") @db.Uuid
+  dayOfWeek        Int          @map("day_of_week")
+  room             String?
+  status           RecordStatus @default(ACTIVE)
+  createdAt        DateTime     @default(now()) @map("created_at")
+  updatedAt        DateTime     @updatedAt @map("updated_at")
+
+
+  @@map("schedule_entries")
+}
+
+model PlanningEntry {
+  id                      String       @id @default(uuid()) @db.Uuid
+  schoolId                String       @map("school_id") @db.Uuid
+  sectionSubjectId        String       @map("section_subject_id") @db.Uuid
+  academicPeriodId        String       @map("academic_period_id") @db.Uuid
+  title                   String
+  sequence                Int          @default(1)
+  specificCompetence      String       @default("") @map("specific_competence")
+  achievementIndicator    String       @default("") @map("achievement_indicator")
+  contentConceptual       String       @default("") @map("content_conceptual")
+  contentProcedural       String       @default("") @map("content_procedural")
+  contentAttitudinal      String       @default("") @map("content_attitudinal")
+  strategies              String       @default("")
+  activities              Json         @default("{\"inicio\": \"\", \"desarrollo\": \"\", \"cierre\": \"\"}")
+  resources               String       @default("")
+  evaluationMethod        String       @default("") @map("evaluation_method")
+  durationMinutes         Int?         @map("duration_minutes")
+  plannedDate             DateTime?    @map("planned_date") @db.Date
+  fundamentalCompetenceId String?      @map("fundamental_competence_id") @db.Uuid
+  evidence                String       @default("")
+  evaluationInstruments   String       @default("") @map("evaluation_instruments")
+  status                  RecordStatus @default(ACTIVE)
+  createdAt               DateTime     @default(now()) @map("created_at")
+  updatedAt               DateTime     @updatedAt @map("updated_at")
+
+
+  @@map("planning_entries")
+}
+
+model DashboardTask {
+  id         String       @id @default(uuid()) @db.Uuid
+  schoolId   String       @map("school_id") @db.Uuid
+  assignedTo String?      @map("assigned_to") @db.Uuid
+  title      String
+  dueDate    DateTime?    @map("due_date") @db.Date
+  status     String       @default("pending")
+  priority   String       @default("normal")
+  createdBy  String       @map("created_by") @db.Uuid
+  createdAt  DateTime     @default(now()) @map("created_at")
+  updatedAt  DateTime     @updatedAt @map("updated_at")
+
+
+  @@map("dashboard_tasks")
+}
+
+model DrAcademicLevel {
+  id        String       @id @default(uuid()) @db.Uuid
+  code      String       @unique
+  name      String
+  sequence  Int
+  status    RecordStatus @default(ACTIVE)
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+
+  @@map("dr_academic_levels")
+}
+
+model DrAcademicCycle {
+  id                String       @id @default(uuid()) @db.Uuid
+  levelId           String       @map("level_id") @db.Uuid
+  code              String       @unique
+  name              String
+  sequence          Int
+  gradeSequenceFrom Int?         @map("grade_sequence_from")
+  gradeSequenceTo   Int?         @map("grade_sequence_to")
+  status            RecordStatus @default(ACTIVE)
+  createdAt         DateTime     @default(now()) @map("created_at")
+  updatedAt         DateTime     @updatedAt @map("updated_at")
+
+
+  @@map("dr_academic_cycles")
+}
+
+model DrModality {
+  id                       String       @id @default(uuid()) @db.Uuid
+  code                     String       @unique
+  name                     String
+  appliesFromGradeSequence Int?         @map("applies_from_grade_sequence")
+  appliesToGradeSequence   Int?         @map("applies_to_grade_sequence")
+  status                   RecordStatus @default(ACTIVE)
+  createdAt                DateTime     @default(now()) @map("created_at")
+  updatedAt                DateTime     @updatedAt @map("updated_at")
+
+  @@map("dr_modalities")
+}
+
+model DrSubsystem {
+  id        String       @id @default(uuid()) @db.Uuid
+  code      String       @unique
+  name      String
+  status    RecordStatus @default(ACTIVE)
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+
+  @@map("dr_subsystems")
+}
+
+model DrCompetency {
+  id          String       @id @default(uuid()) @db.Uuid
+  code        String       @unique
+  name        String
+  description String?
+  status      RecordStatus @default(ACTIVE)
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  @@map("dr_competencies")
+}
+
+model DrEvaluationRule {
+  id                         String       @id @default(uuid()) @db.Uuid
+  schoolId                   String?      @map("school_id") @db.Uuid
+  levelId                    String?      @map("level_id") @db.Uuid
+  modalityId                 String?      @map("modality_id") @db.Uuid
+  name                       String
+  minPassingPercent          Decimal      @default(65) @map("min_passing_percent") @db.Decimal(5, 2)
+  maxScore                   Decimal      @default(100) @map("max_score") @db.Decimal(5, 2)
+  periodScheme               String       @default("trimester") @map("period_scheme")
+  recoveryEnabled            Boolean      @default(true) @map("recovery_enabled")
+  promotionRequiresAllSubjects Boolean    @default(true) @map("promotion_requires_all_subjects")
+  status                     RecordStatus @default(ACTIVE)
+  createdAt                  DateTime     @default(now()) @map("created_at")
+  updatedAt                  DateTime     @updatedAt @map("updated_at")
+
+
+  @@map("dr_evaluation_rules")
+}

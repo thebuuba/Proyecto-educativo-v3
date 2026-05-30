@@ -1,0 +1,44 @@
+import { Module } from '@nestjs/common'
+import { APP_INTERCEPTOR, APP_FILTER } from '@nestjs/core'
+import { ConfigModule } from '@nestjs/config'
+import { ThrottlerModule } from '@nestjs/throttler'
+import { ResponseInterceptor } from './common/interceptors/response.interceptor'
+import { AllExceptionsFilter } from './common/filters/all-exceptions.filter'
+import { AuthModule } from './modules/auth/auth.module'
+import { UsersModule } from './modules/users/users.module'
+import { StudentsModule } from './modules/students/students.module'
+import { AttendanceModule } from './modules/attendance/attendance.module'
+import { AcademicGradesModule } from './modules/academic-grades/academic-grades.module'
+import { ScheduleModule } from './modules/schedule/schedule.module'
+import { PlanningModule } from './modules/planning/planning.module'
+import { GradesSectionsModule } from './modules/grades-sections/grades-sections.module'
+import { DashboardModule } from './modules/dashboard/dashboard.module'
+import { SettingsModule } from './modules/settings/settings.module'
+import { ReportsModule } from './modules/reports/reports.module'
+import { ProfileModule } from './modules/profile/profile.module'
+import { SubjectsModule } from './modules/subjects/subjects.module'
+
+@Module({
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    ThrottlerModule.forRoot([{ ttl: 60000, limit: 100 }]),
+    AuthModule,
+    UsersModule,
+    StudentsModule,
+    AttendanceModule,
+    AcademicGradesModule,
+    ScheduleModule,
+    PlanningModule,
+    GradesSectionsModule,
+    DashboardModule,
+    SettingsModule,
+    ReportsModule,
+    ProfileModule,
+    SubjectsModule,
+  ],
+  providers: [
+    { provide: APP_INTERCEPTOR, useClass: ResponseInterceptor },
+    { provide: APP_FILTER, useClass: AllExceptionsFilter },
+  ],
+})
+export class AppModule {}

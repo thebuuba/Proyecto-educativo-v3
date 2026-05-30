@@ -10,7 +10,14 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.next
 *.local
+.env
+.env.local
+.env.production
+
+# Uploads
+apps/backend/uploads/
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +29,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Turbo
+.turbo

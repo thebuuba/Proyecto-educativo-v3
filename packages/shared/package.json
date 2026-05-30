@@ -1,0 +1,14 @@
+{
+  "name": "@aula/shared",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint ."
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "devDependencies": {
+    "typescript": "~6.0.2"
+  }
+}
