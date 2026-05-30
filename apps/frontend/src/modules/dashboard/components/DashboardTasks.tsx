@@ -1,9 +1,8 @@
-import { Plus, X } from 'lucide-react'
+import { CircleAlert, Plus } from 'lucide-react'
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
 import type {
   CreateDashboardTaskInput,
   DashboardTask,
@@ -37,56 +36,57 @@ export function DashboardTasks({
   }
 
   return (
-    <Card className="min-h-[300px] p-6">
-      <div className="flex items-center justify-between gap-4">
-        <h3 className="text-xl font-bold text-foreground">Pendientes</h3>
+    <div className="rounded-2xl border border-border bg-card p-6 shadow-sm" style={{ boxShadow: '0 1px 2px rgba(26,31,58,0.04)' }}>
+      <div className="flex items-center justify-between gap-4 mb-4">
+        <h3 className="text-lg font-bold tracking-tight text-foreground">Pendientes</h3>
         <span className="flex size-8 items-center justify-center rounded-full bg-accent/18 text-sm font-bold text-accent">
           {tasks.length}
         </span>
       </div>
 
-      <div className="mt-5 space-y-4">
+      <div className="space-y-2">
         {tasks.length === 0 ? (
           <p className="rounded-xl border border-dashed border-border p-4 text-sm text-muted-foreground">
             No tienes pendientes abiertos.
           </p>
         ) : (
           tasks.map((task) => (
-            <label key={task.id} className="flex cursor-pointer items-start gap-3">
+            <label
+              key={task.id}
+              className="flex cursor-pointer items-center gap-3 rounded-xl p-2 -mx-2 transition-colors hover:bg-muted/70"
+            >
               <input
                 type="checkbox"
-                className="mt-1 size-5 rounded border-border accent-[var(--accent)]"
+                className="size-4 rounded border-border accent-accent"
                 disabled={loading}
                 onChange={() => void onCompleteTask(task.id)}
               />
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-bold text-foreground">{task.title}</span>
-                <span
-                  className={cn(
-                    'mt-1 block text-xs',
-                    task.priority === 'high' ? 'text-accent' : 'text-muted-foreground',
-                  )}
-                >
-                  {task.dueDate ? formatDueDate(task.dueDate) : 'Sin fecha'}
-                </span>
-              </span>
+              <div className="min-w-0 flex-1">
+                <span className="block text-xs font-semibold text-foreground">{task.title}</span>
+                <div className="mt-0.5 flex items-center gap-1">
+                  {task.priority === 'high' && <CircleAlert className="size-3 text-accent" />}
+                  <span className={cn('text-[10px]', task.priority === 'high' ? 'text-accent' : 'text-muted-foreground')}>
+                    {task.dueDate ? formatDueDate(task.dueDate) : 'Sin fecha'}
+                  </span>
+                </div>
+              </div>
             </label>
           ))
         )}
       </div>
 
       {isAdding ? (
-        <form className="mt-6 flex gap-1 rounded-xl bg-muted p-1" onSubmit={handleSubmit}>
+        <form className="mt-3 flex gap-1 rounded-xl bg-muted p-1" onSubmit={handleSubmit}>
           <input
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             placeholder="Nueva tarea"
-            className="min-w-0 flex-1 bg-transparent px-2 text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
+            className="min-w-0 flex-1 bg-transparent px-2 text-xs font-medium text-foreground outline-none placeholder:text-muted-foreground"
             disabled={loading}
             autoFocus
           />
           <Button size="icon" variant="ghost" aria-label="Cancelar" onClick={() => setIsAdding(false)}>
-            <X className="size-4" />
+            <Plus className="size-4 rotate-45" />
           </Button>
           <Button size="icon" variant="ghost" aria-label="Agregar tarea" loading={loading}>
             <Plus className="size-4" />
@@ -95,14 +95,14 @@ export function DashboardTasks({
       ) : (
         <button
           type="button"
-          className="mt-6 flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-muted text-sm font-bold text-foreground transition-colors hover:bg-secondary"
+          className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-muted py-2 text-xs font-semibold text-muted-foreground transition-colors hover:bg-secondary"
           onClick={() => setIsAdding(true)}
         >
-          <Plus className="size-4" />
+          <Plus className="size-3.5" />
           Agregar tarea
         </button>
       )}
-    </Card>
+    </div>
   )
 }
 

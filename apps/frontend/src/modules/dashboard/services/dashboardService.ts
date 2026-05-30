@@ -1,24 +1,27 @@
-import { CalendarCheck, ClipboardCheck, FileText, NotebookPen } from 'lucide-react'
-
 import { api } from '@/services/apiClient'
 import type {
   CreateDashboardTaskInput,
   DashboardData,
   DashboardTask,
   WeeklyAttendance,
-  RecentActivityItem,
 } from '@/modules/dashboard/types/dashboard'
 import type { AppUser } from '@/modules/auth/types/auth'
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
 
 const weekdayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']
 
+type DashboardStats = {
+  studentCount: number
+  teacherCount: number
+  activeEnrollments: number
+}
+
 export async function getDashboardData(appUser: AppUser | null): Promise<DashboardData> {
   const today = new Date()
   const currentSchoolYear = await getCurrentSchoolYear()
 
-  const [] = await Promise.all([
-    safeBlock(api.get<{ studentCount: number; teacherCount: number; activeEnrollments: number }>('/dashboard/stats')),
+  const [stats, tasks] = await Promise.all([
+    safeBlock(api.get<DashboardStats>('/dashboard/stats')),
     safeBlock(api.get<DashboardTask[]>('/dashboard/tasks'), []),
   ])
 
@@ -32,7 +35,7 @@ export async function getDashboardData(appUser: AppUser | null): Promise<Dashboa
     nextClass: null,
     todayAgenda: [],
     weeklyAttendance: getEmptyWeeklyAttendance(today),
-    tasks: [],
+    tasks: tasks ?? [],
     recentActivity: [],
     smartSuggestion: null,
   }
@@ -81,10 +84,3 @@ function addDays(date: Date, days: number) {
 function formatDateKey(date: Date) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
 }
-
-export const activityIcons = {
-  attendance: CalendarCheck,
-  grade: ClipboardCheck,
-  planning: NotebookPen,
-  report: FileText,
-} satisfies Record<RecentActivityItem['kind'], typeof CalendarCheck>

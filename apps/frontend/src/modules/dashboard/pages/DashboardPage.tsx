@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-import { ErrorState, LoadingState, PageShell } from '@/components/ui'
+import { ErrorState, LoadingState } from '@/components/ui'
 import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
 import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
 import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
@@ -9,6 +9,22 @@ import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
 import { WeeklyAttendanceCard } from '@/modules/dashboard/components/WeeklyAttendanceCard'
 import { useDashboard } from '@/modules/dashboard/hooks/useDashboard'
 import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
+import { cn } from '@/utils/cn'
+
+function getGreeting() {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'Buenos días'
+  if (hour < 18) return 'Buenas tardes'
+  return 'Buenas noches'
+}
+
+function formatTodayDate() {
+  return new Intl.DateTimeFormat('es-DO', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+  }).format(new Date())
+}
 
 export function DashboardPage() {
   const navigate = useNavigate()
@@ -47,47 +63,44 @@ export function DashboardPage() {
 
   if (loading) {
     return (
-      <PageShell
-        title="Inicio"
-        description="Resumen operativo de clases, pendientes y actividad académica."
-      >
+      <div className="px-6 lg:px-10 py-8 max-w-[1400px] mx-auto">
         <LoadingState message="Cargando inicio..." />
-      </PageShell>
+      </div>
     )
   }
 
   if (!data) {
     return (
-      <PageShell
-        title="Inicio"
-        description="Resumen operativo de clases, pendientes y actividad académica."
-      >
+      <div className="px-6 lg:px-10 py-8 max-w-[1400px] mx-auto">
         <ErrorState message={error ?? 'No se pudieron cargar los datos de inicio.'} />
-      </PageShell>
+      </div>
     )
   }
 
   return (
-    <section className="mx-auto w-full max-w-[1380px] space-y-6">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-        <div className="min-w-0">
-          <h1 className="text-3xl font-bold tracking-normal text-foreground">
-            Buen día, <span className="text-accent">{data.context.firstName}</span>
-            <span className="ml-2 text-base font-normal text-muted-foreground">
-              · {data.context.formattedDate}
-            </span>
+    <div className="px-6 lg:px-10 py-8 max-w-[1400px] mx-auto space-y-6">
+      <header className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-baseline gap-3 flex-wrap">
+          <h1 className="text-2xl lg:text-[28px] font-bold tracking-tight text-foreground">
+            {getGreeting()},
+            {' '}
+            <span className="text-accent">{data.context.firstName}</span>
           </h1>
+          <span className="text-sm text-muted-foreground">
+            · {formatTodayDate()}
+          </span>
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          <span className="inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-sm font-bold text-foreground shadow-sm">
+        <div className="flex items-center gap-2 text-xs">
+          <span className="inline-flex h-7 items-center rounded-full border border-border bg-card px-3 font-semibold text-muted-foreground">
             {data.context.schoolYearName}
           </span>
-          <span className="inline-flex h-9 items-center rounded-full bg-accent/18 px-4 text-sm font-bold text-accent">
-            {data.context.periodName}
+          <span className="inline-flex h-7 items-center gap-1.5 rounded-full bg-accent/12 px-3 font-semibold text-accent">
+            <span className="size-1.5 rounded-full bg-accent animate-pulse" />
+            {data.context.periodName} · activo
           </span>
         </div>
-      </div>
+      </header>
 
       {error && (
         <div className="rounded-xl border border-destructive/25 bg-destructive/10 p-4 text-sm font-medium text-destructive">
@@ -101,11 +114,13 @@ export function DashboardPage() {
         onViewPlanning={handleViewPlanning}
       />
 
-      <div className="grid gap-5 xl:grid-cols-[minmax(390px,0.82fr)_minmax(0,1.18fr)]">
-        <TodayAgenda items={data.todayAgenda} />
+      <div className="grid lg:grid-cols-12 gap-6">
+        <div className="lg:col-span-5">
+          <TodayAgenda items={data.todayAgenda} />
+        </div>
 
-        <div className="grid min-w-0 gap-5">
-          <div className="grid gap-5 md:grid-cols-[minmax(0,1.35fr)_minmax(240px,0.9fr)]">
+        <div className="lg:col-span-7 space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
             <DashboardTasks
               tasks={data.tasks}
@@ -119,6 +134,6 @@ export function DashboardPage() {
       </div>
 
       <SmartSuggestion suggestion={data.smartSuggestion} />
-    </section>
+    </div>
   )
 }

@@ -1,7 +1,6 @@
 import { ArrowRight, CalendarCheck, ClipboardCheck, FileText, NotebookPen } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-import { Card } from '@/components/ui/Card'
 import type { RecentActivityItem } from '@/modules/dashboard/types/dashboard'
 
 type RecentActivityProps = {
@@ -17,42 +16,41 @@ const icons = {
 
 export function RecentActivity({ items }: RecentActivityProps) {
   return (
-    <Card className="min-h-[300px] p-6">
-      <div className="flex items-center justify-between gap-4">
-        <h3 className="text-xl font-bold text-foreground">Actividad reciente</h3>
+    <div className="rounded-2xl border border-border bg-card p-6 shadow-sm" style={{ boxShadow: '0 1px 2px rgba(26,31,58,0.04)' }}>
+      <div className="flex items-center justify-between gap-4 mb-4">
+        <h3 className="text-lg font-bold tracking-tight text-foreground">Actividad reciente</h3>
         <Link
           to="/reportes"
-          className="inline-flex shrink-0 items-center gap-1 text-sm font-bold text-accent hover:text-accent-hover"
+          className="shrink-0 text-xs font-semibold text-accent hover:opacity-70 transition-opacity"
         >
-          Ver todo
-          <ArrowRight className="size-4" />
+          Ver todo <ArrowRight className="inline size-3" />
         </Link>
       </div>
 
       {items.length === 0 ? (
-        <p className="mt-6 rounded-xl border border-dashed border-border p-4 text-sm text-muted-foreground">
+        <p className="rounded-xl border border-dashed border-border p-4 text-sm text-muted-foreground">
           No hay actividad reciente para mostrar.
         </p>
       ) : (
-        <div className="mt-5 space-y-2">
+        <ul className="space-y-3">
           {items.map((item) => {
-            const Icon = icons[item.kind]
+            const Icon = icons[item.kind] ?? FileText
 
             return (
-              <article key={item.id} className="grid grid-cols-[42px_minmax(0,1fr)_auto] items-center gap-3 rounded-xl p-2 hover:bg-muted/70">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-muted text-foreground">
-                  <Icon className="size-5" />
+              <li key={item.id} className="flex items-start gap-3 rounded-xl p-2 -mx-2 transition-colors hover:bg-muted/70">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-muted text-muted-foreground">
+                  <Icon className="size-[18px]" strokeWidth={2} />
                 </span>
-                <div className="min-w-0">
-                  <h4 className="truncate text-sm font-bold text-foreground">{item.title}</h4>
-                  <p className="truncate text-sm text-muted-foreground">{item.description}</p>
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                  <p className="truncate text-xs text-muted-foreground">{item.description}</p>
                 </div>
-                <p className="whitespace-nowrap text-xs text-muted-foreground">{item.relativeTime}</p>
-              </article>
+                <span className="mt-1 shrink-0 text-[11px] text-muted-foreground">{item.relativeTime}</span>
+              </li>
             )
           })}
-        </div>
+        </ul>
       )}
-    </Card>
+    </div>
   )
 }
