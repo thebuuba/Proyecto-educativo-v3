@@ -60,8 +60,8 @@ export class GradesSectionsService {
         level: body.level ?? null,
         sequence: body.sequence ?? null,
         academicLevelId: body.academicLevelId ?? null,
-        cycleId: body.cycleId ?? null,
-        modalityId: body.modalityId ?? null,
+        academicCycleId: body.academicCycleId ?? null,
+        defaultModalityId: body.defaultModalityId ?? null,
       },
     })
   }
@@ -77,8 +77,8 @@ export class GradesSectionsService {
         ...(body.level !== undefined && { level: body.level }),
         ...(body.sequence !== undefined && { sequence: body.sequence }),
         ...(body.academicLevelId !== undefined && { academicLevelId: body.academicLevelId }),
-        ...(body.cycleId !== undefined && { cycleId: body.cycleId }),
-        ...(body.modalityId !== undefined && { modalityId: body.modalityId }),
+        ...(body.academicCycleId !== undefined && { academicCycleId: body.academicCycleId }),
+        ...(body.defaultModalityId !== undefined && { defaultModalityId: body.defaultModalityId }),
         ...(body.status && { status: body.status }),
       },
     })
