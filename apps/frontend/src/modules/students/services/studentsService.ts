@@ -58,7 +58,7 @@ export async function importStudents(rows: { firstName: string; lastName: string
   imported: number
   errors: { row: number; reason: string }[]
 }> {
-  return api.post('/students/import', { rows })
+  return api.post('/students/import', { students: rows })
 }
 
 export async function getStudentEnrollments(studentId: string): Promise<EnrollmentListItem[]> {
@@ -74,12 +74,23 @@ export async function deleteEnrollment(id: string): Promise<void> {
 }
 
 export async function getGradesWithSections(): Promise<GradeWithSections[]> {
-  return api.get<GradeWithSections[]>('/grades-sections/grades')
+  return api.get<GradeWithSections[]>('/students/grades-with-sections')
 }
 
 export async function notifyGuardiansForAtRiskStudents(studentIds: string[]): Promise<{
-  created: number
-  skipped: number
-}> {
-  return api.post('/students/notify-guardians', { studentIds })
+  notified: number
+  message: string
+  subject: string
+}[]> {
+  const results = await Promise.allSettled(
+    studentIds.map((id) =>
+      api.post(`/students/${id}/notify-guardians`, {
+        message: 'Notificación de bajo rendimiento académico',
+        subject: 'Alerta académica',
+      }),
+    ),
+  )
+  return results
+    .filter((r) => r.status === 'fulfilled')
+    .map((r) => (r as PromiseFulfilledResult<any>).value)
 }

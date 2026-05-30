@@ -12,8 +12,10 @@ export class PlanningService {
     })
   }
 
-  getAcademicPeriods() {
-    return prisma.academicPeriod.findMany({ orderBy: { sequence: 'asc' } })
+  getAcademicPeriods(schoolYearId?: string) {
+    const where: any = {}
+    if (schoolYearId) where.schoolYearId = schoolYearId
+    return prisma.academicPeriod.findMany({ where, orderBy: { sequence: 'asc' } })
   }
 
   async createAcademicPeriod(body: any) {
@@ -64,13 +66,16 @@ export class PlanningService {
     return prisma.drCompetency.findMany({ where })
   }
 
-  getSectionSubjects() {
-    return prisma.sectionSubject.findMany({ where: { status: 'ACTIVE' } })
+  getSectionSubjects(teacherId?: string) {
+    const where: any = { status: 'ACTIVE' }
+    if (teacherId) where.teacherId = teacherId
+    return prisma.sectionSubject.findMany({ where })
   }
 
-  findEntries(sectionSubjectId?: string) {
+  findEntries(sectionSubjectId?: string, academicPeriodId?: string) {
     const where: any = {}
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
+    if (academicPeriodId) where.academicPeriodId = academicPeriodId
     return prisma.planningEntry.findMany({
       where,
       orderBy: { sequence: 'asc' },

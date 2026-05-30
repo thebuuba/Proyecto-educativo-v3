@@ -117,6 +117,12 @@ export class AuthService {
     }
   }
 
+  async forgotPassword(email: string) {
+    const user = await prisma.appUser.findUnique({ where: { email } })
+    if (!user) return { message: 'If the email exists, a reset link has been sent' }
+    return { message: 'If the email exists, a reset link has been sent' }
+  }
+
   async getProfile(userId: string) {
     const user = await prisma.appUser.findUnique({
       where: { id: userId },

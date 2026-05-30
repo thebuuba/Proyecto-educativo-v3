@@ -3,17 +3,28 @@ import { prisma } from '@aula/database'
 
 @Injectable()
 export class ScheduleService {
-  findAll(sectionId?: string) {
+  findAll(sectionId?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
     const where: any = {}
     if (sectionId) where.sectionId = sectionId
+    if (schoolYearId) where.schoolYearId = schoolYearId
+    if (teacherId) where.sectionSubject = { teacherId }
+    if (gradeId) where.section = { gradeId }
     return prisma.scheduleEntry.findMany({
       where,
       orderBy: { dayOfWeek: 'asc' },
     })
   }
 
-  getSections() {
-    return prisma.section.findMany({ where: { status: 'ACTIVE' } })
+  async getSections() {
+    const sections = await prisma.section.findMany({ where: { status: 'ACTIVE' } })
+    const grades = await prisma.grade.findMany()
+    const gradeMap = new Map(grades.map((g) => [g.id, g.name]))
+    return sections.map((s) => ({
+      id: s.id,
+      name: s.name,
+      gradeId: s.gradeId,
+      gradeName: gradeMap.get(s.gradeId) ?? '',
+    }))
   }
 
   getTeachers() {
@@ -24,8 +35,10 @@ export class ScheduleService {
     return prisma.subject.findMany()
   }
 
-  getSectionSubjects() {
-    return prisma.sectionSubject.findMany({ where: { status: 'ACTIVE' } })
+  getSectionSubjects(sectionId?: string) {
+    const where: any = { status: 'ACTIVE' }
+    if (sectionId) where.sectionId = sectionId
+    return prisma.sectionSubject.findMany({ where })
   }
 
   getTimeSlots() {
@@ -70,10 +83,13 @@ export class ScheduleService {
     return prisma.timeSlot.delete({ where: { id } })
   }
 
-  findEntries(sectionId?: string, dayOfWeek?: string) {
+  findEntries(sectionId?: string, dayOfWeek?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
     const where: any = {}
     if (sectionId) where.sectionId = sectionId
     if (dayOfWeek) where.dayOfWeek = Number(dayOfWeek)
+    if (schoolYearId) where.schoolYearId = schoolYearId
+    if (teacherId) where.sectionSubject = { teacherId }
+    if (gradeId) where.section = { gradeId }
     return prisma.scheduleEntry.findMany({ where, orderBy: { dayOfWeek: 'asc' } })
   }
 

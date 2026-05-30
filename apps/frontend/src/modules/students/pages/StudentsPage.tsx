@@ -292,9 +292,10 @@ export function StudentsPage() {
 
     try {
       const result = await notifyGuardiansForAtRiskStudents(targetIds)
+      const totalNotified = result.reduce((sum, r) => sum + r.notified, 0)
       const ignored = hasSelection ? selectedIds.size - selectedRiskIds.length : 0
       setActionSuccess(
-        `Se registraron ${result.created} notificaciones${result.skipped > 0 ? `; ${result.skipped} estudiantes no tenían tutor activo` : ''}${ignored > 0 ? `; ${ignored} seleccionados no requerían atención` : ''}.`,
+        `Se registraron ${totalNotified} notificaciones${ignored > 0 ? `; ${ignored} seleccionados no requerían atención` : ''}.`,
       )
       setSelectedIds(new Set())
     } catch (error) {

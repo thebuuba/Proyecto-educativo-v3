@@ -8,8 +8,13 @@ export class ScheduleController {
   constructor(private scheduleService: ScheduleService) {}
 
   @Get()
-  findAll(@Query('sectionId') sectionId?: string) {
-    return this.scheduleService.findAll(sectionId)
+  findAll(
+    @Query('sectionId') sectionId?: string,
+    @Query('schoolYearId') schoolYearId?: string,
+    @Query('teacherId') teacherId?: string,
+    @Query('gradeId') gradeId?: string,
+  ) {
+    return this.scheduleService.findAll(sectionId, schoolYearId, teacherId, gradeId)
   }
 
   @Get('sections')
@@ -28,8 +33,8 @@ export class ScheduleController {
   }
 
   @Get('section-subjects')
-  getSectionSubjects() {
-    return this.scheduleService.getSectionSubjects()
+  getSectionSubjects(@Query('sectionId') sectionId?: string) {
+    return this.scheduleService.getSectionSubjects(sectionId)
   }
 
   @Get('time-slots')
@@ -53,8 +58,14 @@ export class ScheduleController {
   }
 
   @Get('entries')
-  findEntries(@Query('sectionId') sectionId?: string, @Query('dayOfWeek') dayOfWeek?: string) {
-    return this.scheduleService.findEntries(sectionId, dayOfWeek)
+  findEntries(
+    @Query('sectionId') sectionId?: string,
+    @Query('dayOfWeek') dayOfWeek?: string,
+    @Query('schoolYearId') schoolYearId?: string,
+    @Query('teacherId') teacherId?: string,
+    @Query('gradeId') gradeId?: string,
+  ) {
+    return this.scheduleService.findEntries(sectionId, dayOfWeek, schoolYearId, teacherId, gradeId)
   }
 
   @Post('entries')

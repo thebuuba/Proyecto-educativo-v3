@@ -18,17 +18,26 @@ export class AttendanceController {
   @Get('daily')
   findDaily(
     @Query('enrollmentId') enrollmentId?: string,
+    @Query('sectionId') sectionId?: string,
     @Query('date') date?: string,
   ) {
+    if (sectionId && date) {
+      return this.attendanceService.findDailyBySection(sectionId, date)
+    }
     return this.attendanceService.findDaily(enrollmentId, date)
   }
 
   @Get('students')
   getStudents(
-    @Query('sectionSubjectId') sectionSubjectId: string,
-    @Query('date') date: string,
+    @Query('sectionSubjectId') sectionSubjectId?: string,
+    @Query('date') date?: string,
+    @Query('sectionId') sectionId?: string,
+    @Query('schoolYearId') schoolYearId?: string,
   ) {
-    return this.attendanceService.getStudents(sectionSubjectId, date)
+    if (sectionId && schoolYearId) {
+      return this.attendanceService.getStudentsBySection(sectionId, schoolYearId)
+    }
+    return this.attendanceService.getStudents(sectionSubjectId!, date!)
   }
 
   @Get('current-period')

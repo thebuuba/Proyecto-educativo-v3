@@ -9,7 +9,7 @@ import type {
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
 
 export async function getSections(): Promise<SectionOption[]> {
-  return api.get<SectionOption[]>('/grades-sections/grades')
+  return api.get<SectionOption[]>('/schedule/sections')
 }
 
 export async function getStudentsBySection(

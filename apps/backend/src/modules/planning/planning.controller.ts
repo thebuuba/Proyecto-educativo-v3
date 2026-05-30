@@ -13,8 +13,8 @@ export class PlanningController {
   }
 
   @Get('academic-periods')
-  getAcademicPeriods() {
-    return this.planningService.getAcademicPeriods()
+  getAcademicPeriods(@Query('schoolYearId') schoolYearId?: string) {
+    return this.planningService.getAcademicPeriods(schoolYearId)
   }
 
   @Post('academic-periods')
@@ -38,13 +38,16 @@ export class PlanningController {
   }
 
   @Get('section-subjects')
-  getSectionSubjects() {
-    return this.planningService.getSectionSubjects()
+  getSectionSubjects(@Query('teacherId') teacherId?: string) {
+    return this.planningService.getSectionSubjects(teacherId)
   }
 
   @Get('entries')
-  findEntries(@Query('sectionSubjectId') sectionSubjectId?: string) {
-    return this.planningService.findEntries(sectionSubjectId)
+  findEntries(
+    @Query('sectionSubjectId') sectionSubjectId?: string,
+    @Query('academicPeriodId') academicPeriodId?: string,
+  ) {
+    return this.planningService.findEntries(sectionSubjectId, academicPeriodId)
   }
 
   @Post('entries')

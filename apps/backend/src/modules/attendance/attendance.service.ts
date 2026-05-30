@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
 @Injectable()
@@ -15,6 +15,36 @@ export class AttendanceService {
     if (enrollmentId) where.enrollmentId = enrollmentId
     if (date) where.attendanceDate = new Date(date)
     return prisma.attendanceDaily.findMany({ where })
+  }
+
+  async findDailyBySection(sectionId: string, date: string) {
+    const enrollments = await prisma.enrollment.findMany({
+      where: { sectionId, status: 'ACTIVE' },
+      select: { id: true },
+    })
+    const enrollmentIds = enrollments.map((e) => e.id)
+    return prisma.attendanceDaily.findMany({
+      where: { enrollmentId: { in: enrollmentIds }, attendanceDate: new Date(date) },
+    })
+  }
+
+  async getStudentsBySection(sectionId: string, schoolYearId: string) {
+    const enrollments = await prisma.enrollment.findMany({
+      where: { sectionId, schoolYearId, status: 'ACTIVE' },
+    })
+    const students = await prisma.student.findMany({
+      where: { id: { in: enrollments.map((e) => e.studentId) } },
+    })
+    return enrollments.map((enr) => {
+      const student = students.find((s) => s.id === enr.studentId)
+      return {
+        enrollmentId: enr.id,
+        studentId: enr.studentId,
+        studentCode: student?.studentCode ?? '',
+        firstName: student?.firstName ?? '',
+        lastName: student?.lastName ?? '',
+      }
+    })
   }
 
   async getStudents(sectionSubjectId: string, date: string) {
