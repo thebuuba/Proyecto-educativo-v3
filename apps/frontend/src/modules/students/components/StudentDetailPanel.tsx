@@ -27,11 +27,17 @@ type StudentDetailPanelProps = {
 }
 
 function formatDate(value: string) {
+  const date = new Date(value.includes('T') ? value : `${value}T00:00:00`)
+
+  if (!Number.isFinite(date.getTime())) {
+    return 'No definido'
+  }
+
   return new Intl.DateTimeFormat('es-DO', {
     year: 'numeric',
     month: 'short',
     day: '2-digit',
-  }).format(new Date(value.includes('T') ? value : `${value}T00:00:00`))
+  }).format(date)
 }
 
 const statusBadgeTone: Record<EnrollmentStatus, 'success' | 'warning' | 'destructive' | 'muted'> = {
@@ -312,9 +318,9 @@ export function StudentDetailPanel({
           {canViewGuardians ? (
           <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
               <h4 className="text-sm font-semibold text-foreground">Tutores</h4>
-              {detail?.guardians.length ? (
+              {(detail?.guardians ?? []).length > 0 ? (
                 <div className="mt-4 space-y-3">
-                  {detail.guardians.map((guardian) => (
+                  {(detail?.guardians ?? []).map((guardian) => (
                     <div
                       key={guardian.id}
                       className="rounded-2xl border border-border bg-muted p-4"

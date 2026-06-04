@@ -82,11 +82,17 @@ function parseDate(value: string): string {
     return ''
   }
 
+  if (/^\d{5}$/.test(trimmed)) {
+    const serial = Number(trimmed)
+    const date = new Date(Date.UTC(1899, 11, 30 + serial))
+    return date.toISOString().slice(0, 10)
+  }
+
   if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
     return trimmed
   }
 
-  const parts = trimmed.split(/[/-]/)
+  const parts = trimmed.split(/[./-]/)
 
   if (parts.length === 3) {
     if (parts[0].length === 4) {
@@ -144,7 +150,12 @@ export async function parseCSVFile(file: File): Promise<{
 
         for (const field of required) {
           if (!mapping.has(field)) {
-            const error = field === 'firstName' ? 'nombre' : 'apellido'
+            const error =
+              field === 'firstName'
+                ? 'nombre'
+                : field === 'lastName'
+                  ? 'apellido'
+                  : 'fecha de nacimiento'
             reject(
               new Error(
                 `No se encontró una columna de "${error}". Columnas detectadas: ${headers.join(', ')}`,
@@ -180,6 +191,7 @@ export async function parseCSVFile(file: File): Promise<{
 
           const firstName = getValue(row, firstNameHeader)
           const lastName = getValue(row, lastNameHeader)
+          const birthDate = birthDateHeader ? parseDate(getValue(row, birthDateHeader)) : ''
 
           if (!firstName || !lastName) {
             errors.push({
@@ -195,7 +207,7 @@ export async function parseCSVFile(file: File): Promise<{
             lastName,
             studentCode: studentCodeHeader ? getValue(row, studentCodeHeader) : '',
             documentId: documentIdHeader ? getValue(row, documentIdHeader) : '',
-            birthDate: birthDateHeader ? parseDate(getValue(row, birthDateHeader)) : '',
+            birthDate,
             gender: genderHeader ? getValue(row, genderHeader) : '',
             address: addressHeader ? getValue(row, addressHeader) : '',
           })

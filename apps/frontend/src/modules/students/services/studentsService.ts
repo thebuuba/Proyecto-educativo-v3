@@ -13,8 +13,12 @@ import type {
 
 type PaginatedResponse<T> = {
   data: T[]
-  count: number
+  count?: number
+  total?: number
 }
+
+type RawStudentListItem = Student & Partial<StudentListItem>
+type RawStudentDetail = Student & Partial<StudentDetail>
 
 type GuardianNotificationResult = {
   notified: number
@@ -39,13 +43,19 @@ export async function getStudents({
   params.set('page', String(page))
   params.set('pageSize', String(pageSize))
 
-  return api.get<PaginatedResponse<StudentListItem>>(`/students?${params}`)
+  const response = await api.get<PaginatedResponse<RawStudentListItem>>(`/students?${params}`)
+
+  return {
+    data: response.data.map(normalizeStudentListItem),
+    count: response.count ?? response.total ?? response.data.length,
+  }
 }
 
 export async function getStudentById(
   id: string,
 ): Promise<StudentDetail | null> {
-  return api.get<StudentDetail | null>(`/students/${id}`)
+  const student = await api.get<RawStudentDetail | null>(`/students/${id}`)
+  return student ? normalizeStudentDetail(student) : null
 }
 
 export async function createStudent(input: CreateStudentInput): Promise<Student> {
@@ -68,7 +78,8 @@ export async function importStudents(rows: { firstName: string; lastName: string
 }
 
 export async function getStudentEnrollments(studentId: string): Promise<EnrollmentListItem[]> {
-  return api.get<EnrollmentListItem[]>(`/students/${studentId}/enrollments`)
+  const enrollments = await api.get<EnrollmentListItem[]>(`/students/${studentId}/enrollments`)
+  return Array.isArray(enrollments) ? enrollments.map(normalizeEnrollmentListItem) : []
 }
 
 export async function createEnrollment(input: CreateEnrollmentInput): Promise<void> {
@@ -99,4 +110,40 @@ export async function notifyGuardiansForAtRiskStudents(studentIds: string[]): Pr
   return results
     .filter((r) => r.status === 'fulfilled')
     .map((r) => (r as PromiseFulfilledResult<GuardianNotificationResult>).value)
+}
+
+function normalizeStatus(status: Student['status'] | string): Student['status'] {
+  return String(status).toLowerCase() as Student['status']
+}
+
+function normalizeStudentListItem(student: RawStudentListItem): StudentListItem {
+  return {
+    ...student,
+    status: normalizeStatus(student.status),
+    currentEnrollment: student.currentEnrollment ?? null,
+    metrics: {
+      attendancePercentage: student.metrics?.attendancePercentage ?? null,
+      averageScore: student.metrics?.averageScore ?? null,
+      pendingCount: student.metrics?.pendingCount ?? 0,
+    },
+    displayEmail: student.displayEmail ?? '',
+    displayAvatarSeed: student.displayAvatarSeed ?? student.id,
+    riskReason: student.riskReason ?? null,
+  }
+}
+
+function normalizeStudentDetail(student: RawStudentDetail): StudentDetail {
+  return {
+    ...student,
+    status: normalizeStatus(student.status),
+    currentEnrollment: student.currentEnrollment ?? null,
+    guardians: Array.isArray(student.guardians) ? student.guardians : [],
+  }
+}
+
+function normalizeEnrollmentListItem(enrollment: EnrollmentListItem): EnrollmentListItem {
+  return {
+    ...enrollment,
+    status: normalizeStatus(enrollment.status) as EnrollmentListItem['status'],
+  }
 }

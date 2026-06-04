@@ -1,8 +1,62 @@
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma, Prisma } from '@aula/database'
 import { CreateStudentDto } from './dto/create-student.dto'
 import { UpdateStudentDto } from './dto/update-student.dto'
 import { CreateEnrollmentDto } from './dto/create-enrollment.dto'
+
+type ImportStudentRow = {
+  rowNumber?: number
+  studentCode?: string
+  firstName?: string
+  lastName?: string
+  documentId?: string
+  birthDate?: string
+  gender?: string
+  address?: string
+}
+
+type ImportStudentError = {
+  row: number
+  reason: string
+}
+
+const IMPORT_FALLBACK_BIRTH_DATE = new Date('2000-01-01T00:00:00')
+
+function cleanText(value: unknown) {
+  return typeof value === 'string' ? value.trim() : ''
+}
+
+function isValidDateParts(year: number, month: number, day: number) {
+  const date = new Date(year, month - 1, day)
+  return (
+    date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day
+  )
+}
+
+function parseBirthDate(value: unknown) {
+  const raw = cleanText(value)
+  if (!raw) return IMPORT_FALLBACK_BIRTH_DATE
+
+  const parts = raw.split(/[/-]/)
+  if (parts.length === 3) {
+    const [first, second, third] = parts.map((part) => Number(part))
+
+    if (parts[0].length === 4 && isValidDateParts(first, second, third)) {
+      return new Date(first, second - 1, third)
+    }
+
+    if (isValidDateParts(third, second, first)) {
+      return new Date(third, second - 1, first)
+    }
+  }
+
+  const date = new Date(`${raw}T00:00:00`)
+  if (!Number.isFinite(date.getTime())) return IMPORT_FALLBACK_BIRTH_DATE
+
+  return date
+}
 
 @Injectable()
 export class StudentsService {
@@ -160,25 +214,77 @@ export class StudentsService {
     return links
   }
 
-  async importStudents(schoolId: string, students: any[]) {
-    const results = []
-    for (const s of students) {
-      const data: any = {
-        schoolId,
-        studentCode: s.studentCode,
-        firstName: s.firstName,
-        lastName: s.lastName,
-        documentId: s.documentId ?? null,
-        gender: s.gender ?? null,
-        address: s.address ?? null,
-      }
-      if (s.birthDate) data.birthDate = new Date(s.birthDate)
-
-      const created = await prisma.student.create({ data })
-      results.push(created)
+  async importStudents(schoolId: string, students: ImportStudentRow[]) {
+    if (!Array.isArray(students)) {
+      throw new BadRequestException('El cuerpo debe incluir un arreglo de estudiantes.')
     }
 
-    return { imported: results.length, students: results }
+    const results = []
+    const errors: ImportStudentError[] = []
+    const seenCodes = new Set<string>()
+    const seenDocuments = new Set<string>()
+
+    for (const [index, s] of students.entries()) {
+      const row = s.rowNumber ?? index + 1
+      const firstName = cleanText(s.firstName)
+      const lastName = cleanText(s.lastName)
+      const documentId = cleanText(s.documentId)
+      const birthDate = parseBirthDate(s.birthDate)
+      const generatedCode = `IMP-${Date.now()}-${index + 1}`
+      const studentCode = cleanText(s.studentCode) || generatedCode
+
+      if (!firstName || !lastName) {
+        errors.push({ row, reason: 'Falta nombre o apellido' })
+        continue
+      }
+
+      if (seenCodes.has(studentCode)) {
+        errors.push({ row, reason: `Codigo duplicado en el archivo: ${studentCode}` })
+        continue
+      }
+
+      if (documentId && seenDocuments.has(documentId)) {
+        errors.push({ row, reason: `Documento duplicado en el archivo: ${documentId}` })
+        continue
+      }
+
+      seenCodes.add(studentCode)
+      if (documentId) seenDocuments.add(documentId)
+
+      const data: Prisma.StudentUncheckedCreateInput = {
+        schoolId,
+        studentCode,
+        firstName,
+        lastName,
+        birthDate,
+        documentId: documentId || null,
+        gender: cleanText(s.gender) || null,
+        address: cleanText(s.address) || null,
+      }
+
+      try {
+        const created = await prisma.student.create({ data })
+        results.push(created)
+      } catch (error) {
+        if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
+          const target = Array.isArray(error.meta?.target)
+            ? error.meta.target.join(', ')
+            : String(error.meta?.target ?? 'campo unico')
+
+          errors.push({
+            row,
+            reason: target.includes('document')
+              ? 'Ya existe un estudiante con ese documento'
+              : 'Ya existe un estudiante con ese codigo',
+          })
+          continue
+        }
+
+        throw error
+      }
+    }
+
+    return { imported: results.length, students: results, errors }
   }
 
   async notifyGuardians(schoolId: string, studentId: string, body: any) {

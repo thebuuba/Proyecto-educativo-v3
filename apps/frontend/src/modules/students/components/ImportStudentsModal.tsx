@@ -147,7 +147,7 @@ export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalPr
                 Haz clic para seleccionar un archivo CSV
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Columnas esperadas: nombre, apellido, código, fecha de nacimiento, documento, género, dirección
+                Obligatorias: nombre y apellido. Opcionales: codigo, fecha de nacimiento, documento, genero, direccion
               </p>
             </div>
             <span className="inline-flex items-center gap-2 rounded-lg bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
