@@ -8,7 +8,6 @@ import { Input } from '@/components/ui/Input'
 import { PasswordInput } from '@/components/ui/PasswordInput'
 import { SocialLoginButtons } from '@/modules/auth/components/SocialLoginButtons'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
-import { api } from '@/services/apiClient'
 
 function createSlug(value: string) {
   return value
@@ -20,27 +19,6 @@ function createSlug(value: string) {
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
-}
-
-async function getAvailableSlug(schoolName: string) {
-  const baseSlug = createSlug(schoolName) || 'escuela'
-  const schools = await api.get<Array<{ slug: string }>>('/settings/school')
-  const slugs = schools.map((s) => s.slug)
-  const usedSlugs = new Set(slugs)
-
-  if (!usedSlugs.has(baseSlug)) {
-    return baseSlug
-  }
-
-  let suffix = 1
-  let nextSlug = `${baseSlug}-${suffix}`
-
-  while (usedSlugs.has(nextSlug)) {
-    suffix += 1
-    nextSlug = `${baseSlug}-${suffix}`
-  }
-
-  return nextSlug
 }
 
 function getRegisterErrorMessage(error: unknown) {
@@ -56,7 +34,7 @@ function getRegisterErrorMessage(error: unknown) {
 }
 
 export function RegisterPage() {
-  const { refreshAuth, loginWithOAuth } = useAuth()
+  const { register, loginWithOAuth } = useAuth()
   const [schoolName, setSchoolName] = useState('')
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -97,15 +75,13 @@ export function RegisterPage() {
     setIsSubmitting(true)
 
     try {
-      const slug = await getAvailableSlug(trimmedSchoolName)
-      await api.post('/auth/register', {
+      await register({
         email: trimmedEmail,
         password,
         fullName: trimmedFullName,
         schoolName: trimmedSchoolName,
-        slug,
+        slug: createSlug(trimmedSchoolName),
       })
-      await refreshAuth()
       setRegistered(true)
     } catch (error) {
       setErrorMessage(getRegisterErrorMessage(error))

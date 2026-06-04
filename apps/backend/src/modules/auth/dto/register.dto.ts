@@ -1,6 +1,12 @@
 import { IsEmail, IsString, MinLength } from 'class-validator'
 
 export class RegisterDto {
+  @IsString()
+  schoolName!: string
+
+  @IsString()
+  slug!: string
+
   @IsEmail()
   email!: string
 

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AuthContext, type AuthContextValue } from '@/modules/auth/context/AuthContext'
 import {
   login as loginService,
+  register as registerService,
   logout as logoutService,
   getProfile,
   getUserRoles,
@@ -16,7 +17,9 @@ import type {
   AuthUser,
   LoginCredentials,
   Permission,
+  RegisterCredentials,
   Role,
+  LoginResponse,
 } from '@/modules/auth/types/auth'
 import type { UserRole } from '@/types/domain'
 
@@ -95,22 +98,32 @@ export function AuthProvider({ children }: AuthProviderProps) {
     void loadAuthState()
   }, [loadAuthState])
 
+  const applySession = useCallback((response: LoginResponse) => {
+    setAuthToken(response.token)
+    setState({
+      user: response.user,
+      token: response.token,
+      appUser: response.appUser,
+      roles: response.roles,
+      permissions: response.permissions,
+      loading: false,
+      authError: null,
+      needsProfile: false,
+    })
+  }, [])
+
   const login = useCallback(
     async (credentials: LoginCredentials) => {
-      const response = await loginService(credentials)
-      setAuthToken(response.token)
-      setState({
-        user: response.user,
-        token: response.token,
-        appUser: response.appUser,
-        roles: response.roles,
-        permissions: response.permissions,
-        loading: false,
-        authError: null,
-        needsProfile: false,
-      })
+      applySession(await loginService(credentials))
     },
-    [],
+    [applySession],
+  )
+
+  const register = useCallback(
+    async (credentials: RegisterCredentials) => {
+      applySession(await registerService(credentials))
+    },
+    [applySession],
   )
 
   const loginWithOAuth = useCallback(async (_provider: string) => {
@@ -131,6 +144,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       isAuthenticated: Boolean(state.token && state.user),
       schoolId: state.appUser?.schoolId ?? null,
       login,
+      register,
       loginWithOAuth,
       logout,
       refreshAuth: () => loadAuthState(),
@@ -141,7 +155,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
           (permission: Permission) => permission.key === permissionKey,
         ),
     }
-  }, [loadAuthState, login, loginWithOAuth, logout, state])
+  }, [loadAuthState, login, loginWithOAuth, logout, register, state])
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

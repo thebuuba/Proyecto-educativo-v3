@@ -4,11 +4,16 @@ import type {
   LoginCredentials,
   LoginResponse,
   Permission,
+  RegisterCredentials,
   Role,
 } from '@/modules/auth/types/auth'
 
 export async function login({ email, password }: LoginCredentials): Promise<LoginResponse> {
   return api.post<LoginResponse>('/auth/login', { email, password })
+}
+
+export async function register(credentials: RegisterCredentials): Promise<LoginResponse> {
+  return api.post<LoginResponse>('/auth/register', credentials)
 }
 
 export async function logout(): Promise<void> {

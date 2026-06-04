@@ -51,6 +51,12 @@ export type LoginCredentials = {
   password: string
 }
 
+export type RegisterCredentials = LoginCredentials & {
+  schoolName: string
+  fullName: string
+  slug: string
+}
+
 export type OAuthProvider = 'google' | 'facebook'
 
 export type LoginResponse = {

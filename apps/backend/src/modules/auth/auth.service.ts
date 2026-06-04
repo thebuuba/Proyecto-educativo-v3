@@ -9,6 +9,31 @@ import { prisma } from '@aula/database'
 import { RegisterDto } from './dto/register.dto'
 import { LoginDto } from './dto/login.dto'
 
+function createSlug(value: string) {
+  return value
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+}
+
+async function getAvailableSchoolSlug(input: string) {
+  const baseSlug = createSlug(input) || 'escuela'
+  let slug = baseSlug
+  let suffix = 1
+
+  while (await prisma.school.findUnique({ where: { slug } })) {
+    slug = `${baseSlug}-${suffix}`
+    suffix += 1
+  }
+
+  return slug
+}
+
 @Injectable()
 export class AuthService {
   constructor(private jwtService: JwtService) {}
@@ -19,19 +44,42 @@ export class AuthService {
     })
     if (existing) throw new ConflictException('Email already registered')
 
-    const school = await prisma.school.findFirst()
-    if (!school) throw new Error('No school configured')
-
     const hashed = await bcrypt.hash(dto.password, 10)
+    const slug = await getAvailableSchoolSlug(dto.slug || dto.schoolName)
 
-    const user = await prisma.appUser.create({
-      data: {
-        authUserId: crypto.randomUUID(),
-        email: dto.email,
-        fullName: dto.fullName,
-        passwordHash: hashed,
-        schoolId: school.id,
-      },
+    const { user, roles } = await prisma.$transaction(async (tx) => {
+      const school = await tx.school.create({
+        data: {
+          name: dto.schoolName,
+          slug,
+        },
+      })
+
+      const adminRole = await tx.role.upsert({
+        where: { key: 'admin' },
+        update: {},
+        create: { key: 'admin', name: 'Administrador' },
+      })
+
+      const user = await tx.appUser.create({
+        data: {
+          authUserId: crypto.randomUUID(),
+          email: dto.email,
+          fullName: dto.fullName,
+          passwordHash: hashed,
+          schoolId: school.id,
+        },
+      })
+
+      await tx.userRole.create({
+        data: {
+          userId: user.id,
+          roleId: adminRole.id,
+          schoolId: school.id,
+        },
+      })
+
+      return { user, roles: [adminRole] }
     })
 
     const token = this.jwtService.sign({ sub: user.id, email: user.email })
@@ -52,7 +100,7 @@ export class AuthService {
         createdAt: user.createdAt,
         updatedAt: user.updatedAt,
       },
-      roles: [],
+      roles,
       permissions: [],
     }
   }
