@@ -20,7 +20,7 @@ export async function getDashboardData(appUser: AppUser | null): Promise<Dashboa
   const today = new Date()
   const currentSchoolYear = await getCurrentSchoolYear()
 
-  const [stats, tasks] = await Promise.all([
+  const [, tasks] = await Promise.all([
     safeBlock(api.get<DashboardStats>('/dashboard/stats')),
     safeBlock(api.get<DashboardTask[]>('/dashboard/tasks'), []),
   ])

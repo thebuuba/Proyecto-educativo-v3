@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1'
+const API_URL = import.meta.env.VITE_API_URL || '/api/v1'
 
 export class ApiError extends Error {
   status: number
@@ -21,7 +21,7 @@ function getAuthHeaders(): Record<string, string> {
 async function handleResponse<T>(res: Response): Promise<T> {
   if (!res.ok) {
     const body = await res.json().catch(() => ({}))
-    throw new ApiError(res.status, body.message || `Error ${res.status}`)
+    throw new ApiError(res.status, body.error || body.message || `Error ${res.status}`)
   }
   const body = await res.json()
   return body.data as T

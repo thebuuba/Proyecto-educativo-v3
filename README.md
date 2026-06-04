@@ -42,24 +42,26 @@ src/
 
 ## Configuración
 
-Copia `.env.example` a `.env.local` y completa las variables públicas de
-Supabase.
+Copia `.env.example` a `.env.local` si necesitas sobrescribir la URL del API.
+Por defecto el frontend usa `/api/v1` y Vite proxy reenvía `/api` al backend
+local.
 
 ```bash
 cp .env.example .env.local
 ```
 
 ```txt
-VITE_SUPABASE_URL=
-VITE_SUPABASE_ANON_KEY=
+VITE_API_URL=
+VITE_API_PROXY_TARGET=http://localhost:3000
 ```
 
-Estas variables salen de `Project Settings -> API` en Supabase:
+Variables:
 
-- `VITE_SUPABASE_URL`: Project URL.
-- `VITE_SUPABASE_ANON_KEY`: anon/public/publishable key.
+- `VITE_API_URL`: URL pública del backend. Déjala vacía para usar `/api/v1`.
+- `VITE_API_PROXY_TARGET`: destino del proxy de Vite en desarrollo.
 
-No uses `service_role` en el frontend ni en variables `VITE_*`.
+No pongas claves de Supabase en variables `VITE_*`; el frontend no usa
+Supabase directamente.
 
 ## Base De Datos
 
@@ -82,8 +84,8 @@ Crear proyecto en Supabase:
 
 1. Entra a `https://supabase.com/dashboard`.
 2. Crea un proyecto.
-3. Copia `Project URL` y `anon/public key`.
-4. Completa `.env.local`.
+3. Copia la cadena de conexión Postgres.
+4. Configura `DATABASE_URL` en `apps/backend/.env` o en el entorno del backend.
 
 Autenticar y vincular CLI:
 

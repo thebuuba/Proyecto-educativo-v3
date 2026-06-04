@@ -9,7 +9,6 @@ import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
 import { WeeklyAttendanceCard } from '@/modules/dashboard/components/WeeklyAttendanceCard'
 import { useDashboard } from '@/modules/dashboard/hooks/useDashboard'
 import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
-import { cn } from '@/utils/cn'
 
 function getGreeting() {
   const hour = new Date().getHours()
