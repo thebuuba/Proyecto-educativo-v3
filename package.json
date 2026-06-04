@@ -8,6 +8,7 @@
     "dev": "turbo dev",
     "build": "turbo build",
     "lint": "turbo lint",
+    "test": "pnpm --filter backend test",
     "db:generate": "pnpm --filter @aula/database generate",
     "db:migrate": "pnpm --filter @aula/database migrate",
     "db:seed": "pnpm --filter @aula/database seed",

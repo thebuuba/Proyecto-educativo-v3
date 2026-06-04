@@ -2044,15 +2044,7 @@ export type Database = {
       }
     }
     Functions: {
-      register_school: {
-        Args: {
-          email: string
-          full_name: string
-          school_name: string
-          slug: string
-        }
-        Returns: Json
-      }
+      [_ in never]: never
     }
     Enums: {
       attendance_status: "present" | "absent" | "late" | "excused"

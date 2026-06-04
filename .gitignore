@@ -35,3 +35,6 @@ apps/backend/uploads/
 .turbo
 .opencode/
 .worktrees/
+
+# Supabase local CLI state
+supabase/.temp/

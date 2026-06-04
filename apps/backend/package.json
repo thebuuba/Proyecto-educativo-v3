@@ -7,7 +7,8 @@
     "dev": "nest start --watch --path tsconfig.build.fix.json",
     "start": "node dist/main.js",
     "start:prod": "node dist/main",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest run --config vitest.config.ts"
   },
   "dependencies": {
     "@aula/database": "workspace:*",
@@ -41,6 +42,7 @@
     "eslint": "^10.3.0",
     "globals": "^17.6.0",
     "typescript": "~6.0.2",
-    "typescript-eslint": "^8.59.2"
+    "typescript-eslint": "^8.59.2",
+    "vitest": "^4.1.8"
   }
 }
