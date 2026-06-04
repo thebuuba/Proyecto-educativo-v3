@@ -6,10 +6,8 @@ import { CreateEnrollmentDto } from './dto/create-enrollment.dto'
 
 @Injectable()
 export class StudentsService {
-  async findAll(search?: string, status?: string, page = 1, pageSize = 50) {
-    const where: Prisma.StudentWhereInput = {}
-    const school = await prisma.school.findFirst()
-    if (school) where.schoolId = school.id
+  async findAll(schoolId: string, search?: string, status?: string, page = 1, pageSize = 50) {
+    const where: Prisma.StudentWhereInput = { schoolId }
 
     if (status && status !== 'all') {
       where.status = status.toUpperCase() as any
@@ -39,19 +37,16 @@ export class StudentsService {
     return { data, total, page, pageSize }
   }
 
-  async findOne(id: string) {
-    const student = await prisma.student.findUnique({ where: { id } })
+  async findOne(schoolId: string, id: string) {
+    const student = await prisma.student.findFirst({ where: { id, schoolId } })
     if (!student) throw new NotFoundException('Student not found')
     return student
   }
 
-  async create(dto: CreateStudentDto) {
-    const school = await prisma.school.findFirst()
-    if (!school) throw new Error('No school configured')
-
+  create(schoolId: string, dto: CreateStudentDto) {
     return prisma.student.create({
       data: {
-        schoolId: school.id,
+        schoolId,
         studentCode: dto.studentCode,
         firstName: dto.firstName,
         lastName: dto.lastName,
@@ -63,8 +58,8 @@ export class StudentsService {
     })
   }
 
-  async update(id: string, dto: UpdateStudentDto) {
-    const student = await prisma.student.findUnique({ where: { id } })
+  async update(schoolId: string, id: string, dto: UpdateStudentDto) {
+    const student = await prisma.student.findFirst({ where: { id, schoolId } })
     if (!student) throw new NotFoundException('Student not found')
 
     return prisma.student.update({
@@ -81,8 +76,8 @@ export class StudentsService {
     })
   }
 
-  async deactivate(id: string) {
-    const student = await prisma.student.findUnique({ where: { id } })
+  async deactivate(schoolId: string, id: string) {
+    const student = await prisma.student.findFirst({ where: { id, schoolId } })
     if (!student) throw new NotFoundException('Student not found')
 
     return prisma.student.update({
@@ -91,15 +86,24 @@ export class StudentsService {
     })
   }
 
-  async getEnrollments(studentId: string) {
+  async getEnrollments(schoolId: string, studentId: string) {
+    await this.findOne(schoolId, studentId)
     return prisma.enrollment.findMany({
-      where: { studentId },
+      where: { schoolId, studentId },
     })
   }
 
-  async createEnrollment(dto: CreateEnrollmentDto) {
-    const school = await prisma.school.findFirst()
-    if (!school) throw new Error('No school configured')
+  async createEnrollment(schoolId: string, dto: CreateEnrollmentDto) {
+    const [student, grade, section, schoolYear] = await Promise.all([
+      prisma.student.findFirst({ where: { id: dto.studentId, schoolId } }),
+      prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } }),
+      prisma.section.findFirst({ where: { id: dto.sectionId, schoolId, gradeId: dto.gradeId } }),
+      prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } }),
+    ])
+    if (!student) throw new NotFoundException('Student not found')
+    if (!grade) throw new NotFoundException('Grade not found')
+    if (!section) throw new NotFoundException('Section not found')
+    if (!schoolYear) throw new NotFoundException('School year not found')
 
     return prisma.enrollment.create({
       data: {
@@ -107,7 +111,7 @@ export class StudentsService {
         gradeId: dto.gradeId,
         sectionId: dto.sectionId,
         schoolYearId: dto.schoolYearId,
-        schoolId: school.id,
+        schoolId,
         enrollmentDate: dto.enrollmentDate
           ? new Date(dto.enrollmentDate)
           : new Date(),
@@ -117,8 +121,8 @@ export class StudentsService {
     })
   }
 
-  async deleteEnrollment(id: string) {
-    const enrollment = await prisma.enrollment.findUnique({ where: { id } })
+  async deleteEnrollment(schoolId: string, id: string) {
+    const enrollment = await prisma.enrollment.findFirst({ where: { id, schoolId } })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
 
     await prisma.attendanceClass.deleteMany({ where: { enrollmentId: id } })
@@ -128,17 +132,14 @@ export class StudentsService {
     return prisma.enrollment.delete({ where: { id } })
   }
 
-  async getGradesWithSections() {
-    const school = await prisma.school.findFirst()
-    if (!school) return []
-
+  async getGradesWithSections(schoolId: string) {
     const grades = await prisma.grade.findMany({
-      where: { schoolId: school.id, status: 'ACTIVE' },
+      where: { schoolId, status: 'ACTIVE' },
       orderBy: { sequence: 'asc' },
     })
 
     const sections = await prisma.section.findMany({
-      where: { schoolId: school.id, status: 'ACTIVE' },
+      where: { schoolId, status: 'ACTIVE' },
       orderBy: { name: 'asc' },
     })
 
@@ -151,21 +152,19 @@ export class StudentsService {
     }))
   }
 
-  async getGuardians(studentId: string) {
+  async getGuardians(schoolId: string, studentId: string) {
+    await this.findOne(schoolId, studentId)
     const links = await prisma.studentGuardian.findMany({
-      where: { studentId },
+      where: { schoolId, studentId },
     })
     return links
   }
 
-  async importStudents(students: any[]) {
-    const school = await prisma.school.findFirst()
-    if (!school) throw new Error('No school configured')
-
+  async importStudents(schoolId: string, students: any[]) {
     const results = []
     for (const s of students) {
       const data: any = {
-        schoolId: school.id,
+        schoolId,
         studentCode: s.studentCode,
         firstName: s.firstName,
         lastName: s.lastName,
@@ -182,9 +181,10 @@ export class StudentsService {
     return { imported: results.length, students: results }
   }
 
-  async notifyGuardians(studentId: string, body: any) {
+  async notifyGuardians(schoolId: string, studentId: string, body: any) {
+    await this.findOne(schoolId, studentId)
     const links = await prisma.studentGuardian.findMany({
-      where: { studentId },
+      where: { schoolId, studentId },
     })
 
     return {

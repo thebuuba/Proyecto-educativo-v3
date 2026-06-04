@@ -3,38 +3,40 @@ import { prisma } from '@aula/database'
 
 @Injectable()
 export class GradesService {
-  findAll(sectionSubjectId?: string, academicPeriodId?: string) {
-    const where: any = {}
+  findAll(schoolId: string, sectionSubjectId?: string, academicPeriodId?: string) {
+    const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
     if (academicPeriodId) where.academicPeriodId = academicPeriodId
     return prisma.gradesRecord.findMany({ where })
   }
 
-  getSectionSubjects() {
-    return prisma.sectionSubject.findMany({ where: { status: 'ACTIVE' } })
+  getSectionSubjects(schoolId: string) {
+    return prisma.sectionSubject.findMany({ where: { schoolId, status: 'ACTIVE' } })
   }
 
-  getAcademicPeriods() {
+  getAcademicPeriods(schoolId: string) {
     return prisma.academicPeriod.findMany({
-      where: { status: 'ACTIVE' },
+      where: { schoolId, status: 'ACTIVE' },
       orderBy: { sequence: 'asc' },
     })
   }
 
-  async getStudentsForGrading(sectionSubjectId: string, academicPeriodId: string) {
-    const ss = await prisma.sectionSubject.findUnique({ where: { id: sectionSubjectId } })
+  async getStudentsForGrading(schoolId: string, sectionSubjectId: string, academicPeriodId: string) {
+    const ss = await prisma.sectionSubject.findFirst({ where: { id: sectionSubjectId, schoolId } })
     if (!ss) throw new Error('Section subject not found')
+    const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: academicPeriodId, schoolId } })
+    if (!academicPeriod) throw new Error('Academic period not found')
 
     const enrollments = await prisma.enrollment.findMany({
-      where: { sectionId: ss.sectionId, schoolYearId: ss.schoolYearId, status: 'ACTIVE' },
+      where: { schoolId, sectionId: ss.sectionId, schoolYearId: ss.schoolYearId, status: 'ACTIVE' },
     })
 
     const grades = await prisma.gradesRecord.findMany({
-      where: { sectionSubjectId, academicPeriodId },
+      where: { schoolId, sectionSubjectId, academicPeriodId },
     })
 
     const students = await prisma.student.findMany({
-      where: { id: { in: enrollments.map((e) => e.studentId) } },
+      where: { schoolId, id: { in: enrollments.map((e) => e.studentId) } },
     })
 
     const gradeMap = new Map(grades.map((g) => [g.enrollmentId, g]))
@@ -62,8 +64,10 @@ export class GradesService {
     }
   }
 
-  async saveGrade(input: any) {
+  async saveGrade(schoolId: string, input: any) {
     if (input.gradeId) {
+      const grade = await prisma.gradesRecord.findFirst({ where: { id: input.gradeId, schoolId } })
+      if (!grade) throw new Error('Grade record not found')
       return prisma.gradesRecord.update({
         where: { id: input.gradeId },
         data: {
@@ -74,14 +78,23 @@ export class GradesService {
         },
       })
     }
+    const [enrollment, sectionSubject, academicPeriod] = await Promise.all([
+      prisma.enrollment.findFirst({ where: { id: input.enrollmentId, schoolId } }),
+      prisma.sectionSubject.findFirst({ where: { id: input.sectionSubjectId, schoolId } }),
+      prisma.academicPeriod.findFirst({ where: { id: input.academicPeriodId, schoolId } }),
+    ])
+    if (!enrollment) throw new Error('Enrollment not found')
+    if (!sectionSubject) throw new Error('Section subject not found')
+    if (!academicPeriod) throw new Error('Academic period not found')
+
     return prisma.gradesRecord.create({
       data: {
         enrollmentId: input.enrollmentId,
         sectionSubjectId: input.sectionSubjectId,
         academicPeriodId: input.academicPeriodId,
-        sectionId: input.sectionId,
-        schoolYearId: input.schoolYearId,
-        schoolId: input.schoolId,
+        sectionId: enrollment.sectionId,
+        schoolYearId: enrollment.schoolYearId,
+        schoolId,
         score: input.score,
         maxScore: input.maxScore,
         weight: input.weight ?? 1,
@@ -90,14 +103,14 @@ export class GradesService {
     })
   }
 
-  async findByStudent(studentId: string) {
+  async findByStudent(schoolId: string, studentId: string) {
     const enrollments = await prisma.enrollment.findMany({
-      where: { studentId },
+      where: { schoolId, studentId },
       select: { id: true },
     })
     const enrollmentIds = enrollments.map((e) => e.id)
     return prisma.gradesRecord.findMany({
-      where: { enrollmentId: { in: enrollmentIds } },
+      where: { schoolId, enrollmentId: { in: enrollmentIds } },
     })
   }
 }

@@ -6,7 +6,6 @@ import { Link, Navigate } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { PasswordInput } from '@/components/ui/PasswordInput'
-import { SocialLoginButtons } from '@/modules/auth/components/SocialLoginButtons'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
 function createSlug(value: string) {
@@ -34,7 +33,7 @@ function getRegisterErrorMessage(error: unknown) {
 }
 
 export function RegisterPage() {
-  const { register, loginWithOAuth } = useAuth()
+  const { register } = useAuth()
   const [schoolName, setSchoolName] = useState('')
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -148,14 +147,6 @@ export function RegisterPage() {
                 <p>{errorMessage}</p>
               </div>
             ) : null}
-
-            <div className="mt-6">
-              <SocialLoginButtons
-                onGoogleSignIn={() => loginWithOAuth('google')}
-                onFacebookSignIn={() => loginWithOAuth('facebook')}
-                disabled={isSubmitting}
-              />
-            </div>
 
             <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
               <div>

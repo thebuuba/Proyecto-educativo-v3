@@ -1,15 +1,19 @@
 import { Controller, Get, Post, Patch, Delete, Param, Body, UseGuards } from '@nestjs/common'
 import { GradesSectionsService } from './grades-sections.service'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
+import { CurrentUser } from '../../common/decorators/current-user.decorator'
+import { AuthenticatedUser } from '../auth/types/authenticated-user'
+import { Roles } from '../../common/decorators/roles.decorator'
+import { RolesGuard } from '../../common/guards/roles.guard'
 
 @Controller('grades-sections')
-@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard, RolesGuard)
 export class GradesSectionsController {
   constructor(private gradesSectionsService: GradesSectionsService) {}
 
   @Get('course-data')
-  getCourseData() {
-    return this.gradesSectionsService.getCourseData()
+  getCourseData(@CurrentUser() user: AuthenticatedUser) {
+    return this.gradesSectionsService.getCourseData(user.schoolId)
   }
 
   @Get('academic-levels')
@@ -28,72 +32,89 @@ export class GradesSectionsController {
   }
 
   @Get('teachers')
-  getTeachers() {
-    return this.gradesSectionsService.getTeachers()
+  getTeachers(@CurrentUser() user: AuthenticatedUser) {
+    return this.gradesSectionsService.getTeachers(user.schoolId)
   }
 
   @Get('grades')
-  findAllGrades() {
-    return this.gradesSectionsService.findAllGrades()
+  findAllGrades(@CurrentUser() user: AuthenticatedUser) {
+    return this.gradesSectionsService.findAllGrades(user.schoolId)
   }
 
   @Post('grades')
-  createGrade(@Body() body: any) {
-    return this.gradesSectionsService.createGrade(body)
+  @Roles('admin', 'director', 'coordinator')
+  createGrade(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
+    return this.gradesSectionsService.createGrade(user.schoolId, body)
   }
 
   @Patch('grades/:id')
-  updateGrade(@Param('id') id: string, @Body() body: any) {
-    return this.gradesSectionsService.updateGrade(id, body)
+  @Roles('admin', 'director', 'coordinator')
+  updateGrade(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Body() body: any,
+  ) {
+    return this.gradesSectionsService.updateGrade(user.schoolId, id, body)
   }
 
   @Delete('grades/:id')
-  deleteGrade(@Param('id') id: string) {
-    return this.gradesSectionsService.deleteGrade(id)
+  @Roles('admin', 'director', 'coordinator')
+  deleteGrade(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.gradesSectionsService.deleteGrade(user.schoolId, id)
   }
 
   @Get('grades/:gradeId/sections')
-  findSectionsByGrade(@Param('gradeId') gradeId: string) {
-    return this.gradesSectionsService.findSectionsByGrade(gradeId)
+  findSectionsByGrade(@CurrentUser() user: AuthenticatedUser, @Param('gradeId') gradeId: string) {
+    return this.gradesSectionsService.findSectionsByGrade(user.schoolId, gradeId)
   }
 
   @Post('sections')
-  createSection(@Body() body: any) {
-    return this.gradesSectionsService.createSection(body)
+  @Roles('admin', 'director', 'coordinator')
+  createSection(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
+    return this.gradesSectionsService.createSection(user.schoolId, body)
   }
 
   @Patch('sections/:id')
-  updateSection(@Param('id') id: string, @Body() body: any) {
-    return this.gradesSectionsService.updateSection(id, body)
+  @Roles('admin', 'director', 'coordinator')
+  updateSection(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Body() body: any,
+  ) {
+    return this.gradesSectionsService.updateSection(user.schoolId, id, body)
   }
 
   @Delete('sections/:id')
-  deleteSection(@Param('id') id: string) {
-    return this.gradesSectionsService.deleteSection(id)
+  @Roles('admin', 'director', 'coordinator')
+  deleteSection(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.gradesSectionsService.deleteSection(user.schoolId, id)
   }
 
   @Get('subjects')
-  findAllSubjects() {
-    return this.gradesSectionsService.findAllSubjects()
+  findAllSubjects(@CurrentUser() user: AuthenticatedUser) {
+    return this.gradesSectionsService.findAllSubjects(user.schoolId)
   }
 
   @Post('subjects')
-  createSubject(@Body() body: any) {
-    return this.gradesSectionsService.createSubject(body)
+  @Roles('admin', 'director', 'coordinator')
+  createSubject(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
+    return this.gradesSectionsService.createSubject(user.schoolId, body)
   }
 
   @Post('assign-subject')
-  assignSubject(@Body() body: any) {
-    return this.gradesSectionsService.assignSubject(body)
+  @Roles('admin', 'director', 'coordinator')
+  assignSubject(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
+    return this.gradesSectionsService.assignSubject(user.schoolId, body)
   }
 
   @Get('section-subjects')
-  getSectionSubjects() {
-    return this.gradesSectionsService.getSectionSubjects()
+  getSectionSubjects(@CurrentUser() user: AuthenticatedUser) {
+    return this.gradesSectionsService.getSectionSubjects(user.schoolId)
   }
 
   @Delete('section-subjects/:id')
-  removeSectionSubject(@Param('id') id: string) {
-    return this.gradesSectionsService.removeSectionSubject(id)
+  @Roles('admin', 'director', 'coordinator')
+  removeSectionSubject(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.gradesSectionsService.removeSectionSubject(user.schoolId, id)
   }
 }

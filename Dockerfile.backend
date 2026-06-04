@@ -7,7 +7,9 @@ COPY packages/database/package.json packages/database/
 COPY packages/shared/package.json packages/shared/
 RUN pnpm install --frozen-lockfile
 COPY . .
+RUN pnpm --filter @aula/shared build
 RUN pnpm --filter @aula/database generate
+RUN pnpm --filter @aula/database build
 RUN pnpm --filter backend build
 EXPOSE 3000
 CMD ["node", "apps/backend/dist/main.js"]

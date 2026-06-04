@@ -3,16 +3,16 @@ import { prisma } from '@aula/database'
 
 @Injectable()
 export class SettingsService {
-  getSchool() {
-    return prisma.school.findFirst()
+  getSchool(schoolId: string) {
+    return prisma.school.findUnique({ where: { id: schoolId } })
   }
 
-  async updateSchool(body: any) {
-    const school = await prisma.school.findFirst()
+  async updateSchool(schoolId: string, body: any) {
+    const school = await prisma.school.findUnique({ where: { id: schoolId } })
     if (!school) throw new NotFoundException('School not found')
 
     return prisma.school.update({
-      where: { id: school.id },
+      where: { id: schoolId },
       data: {
         ...(body.name && { name: body.name }),
         ...(body.address !== undefined && { address: body.address }),
@@ -25,17 +25,17 @@ export class SettingsService {
     })
   }
 
-  getSchoolYears() {
-    return prisma.schoolYear.findMany({ orderBy: { startDate: 'desc' } })
+  getSchoolYears(schoolId: string) {
+    return prisma.schoolYear.findMany({
+      where: { schoolId },
+      orderBy: { startDate: 'desc' },
+    })
   }
 
-  async createSchoolYear(body: any) {
-    const school = await prisma.school.findFirst()
-    if (!school) throw new Error('No school configured')
-
+  createSchoolYear(schoolId: string, body: any) {
     return prisma.schoolYear.create({
       data: {
-        schoolId: school.id,
+        schoolId,
         name: body.name,
         startDate: new Date(body.startDate),
         endDate: new Date(body.endDate),
@@ -44,8 +44,8 @@ export class SettingsService {
     })
   }
 
-  async updateSchoolYear(id: string, body: any) {
-    const sy = await prisma.schoolYear.findUnique({ where: { id } })
+  async updateSchoolYear(schoolId: string, id: string, body: any) {
+    const sy = await prisma.schoolYear.findFirst({ where: { id, schoolId } })
     if (!sy) throw new NotFoundException('School year not found')
 
     return prisma.schoolYear.update({
@@ -59,12 +59,12 @@ export class SettingsService {
     })
   }
 
-  async setCurrentSchoolYear(id: string) {
-    const sy = await prisma.schoolYear.findUnique({ where: { id } })
+  async setCurrentSchoolYear(schoolId: string, id: string) {
+    const sy = await prisma.schoolYear.findFirst({ where: { id, schoolId } })
     if (!sy) throw new NotFoundException('School year not found')
 
     await prisma.schoolYear.updateMany({
-      where: { isCurrent: true },
+      where: { schoolId, isCurrent: true },
       data: { isCurrent: false },
     })
 
@@ -74,7 +74,10 @@ export class SettingsService {
     })
   }
 
-  getAcademicPeriods() {
-    return prisma.academicPeriod.findMany({ orderBy: { sequence: 'asc' } })
+  getAcademicPeriods(schoolId: string) {
+    return prisma.academicPeriod.findMany({
+      where: { schoolId },
+      orderBy: { sequence: 'asc' },
+    })
   }
 }

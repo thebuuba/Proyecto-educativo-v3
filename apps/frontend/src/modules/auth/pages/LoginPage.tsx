@@ -6,7 +6,6 @@ import { Link, Navigate, useLocation } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { PasswordInput } from '@/components/ui/PasswordInput'
-import { SocialLoginButtons } from '@/modules/auth/components/SocialLoginButtons'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
 type LocationState = {
@@ -17,7 +16,7 @@ type LocationState = {
 }
 
 export function LoginPage() {
-  const { authError, isAuthenticated, loading, login, loginWithOAuth, needsProfile } = useAuth()
+  const { authError, isAuthenticated, loading, login } = useAuth()
   const location = useLocation()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -30,10 +29,6 @@ export function LoginPage() {
       ? fromState.from.pathname
       : '/'
   const registered = fromState?.registered === true
-
-  if (!loading && needsProfile) {
-    return <Navigate to="/completar-registro" replace />
-  }
 
   if (!loading && isAuthenticated) {
     return <Navigate to={from ?? '/'} replace />
@@ -144,14 +139,6 @@ export function LoginPage() {
                 </p>
               </div>
             ) : null}
-
-            <div className="mt-6">
-              <SocialLoginButtons
-                onGoogleSignIn={() => loginWithOAuth('google')}
-                onFacebookSignIn={() => loginWithOAuth('facebook')}
-                disabled={isSubmitting}
-              />
-            </div>
 
             <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
               <div>

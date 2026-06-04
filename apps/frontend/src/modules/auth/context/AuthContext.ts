@@ -8,7 +8,6 @@ export type AuthContextValue = AuthState & {
   schoolId: string | null
   login: (credentials: LoginCredentials) => Promise<void>
   register: (credentials: RegisterCredentials) => Promise<void>
-  loginWithOAuth: (provider: string) => Promise<void>
   logout: () => Promise<void>
   refreshAuth: () => Promise<void>
   hasRole: (roleKeys: UserRole[]) => boolean

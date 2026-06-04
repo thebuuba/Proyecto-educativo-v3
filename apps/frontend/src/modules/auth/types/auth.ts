@@ -43,7 +43,6 @@ export type AuthState = {
   permissions: Permission[]
   loading: boolean
   authError: string | null
-  needsProfile: boolean
 }
 
 export type LoginCredentials = {
@@ -56,8 +55,6 @@ export type RegisterCredentials = LoginCredentials & {
   fullName: string
   slug: string
 }
-
-export type OAuthProvider = 'google' | 'facebook'
 
 export type LoginResponse = {
   user: AuthUser

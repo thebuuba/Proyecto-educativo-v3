@@ -3,8 +3,8 @@ import { prisma } from '@aula/database'
 
 @Injectable()
 export class ScheduleService {
-  findAll(sectionId?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
-    const where: any = {}
+  findAll(schoolId: string, sectionId?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
+    const where: any = { schoolId }
     if (sectionId) where.sectionId = sectionId
     if (schoolYearId) where.schoolYearId = schoolYearId
     if (teacherId) where.sectionSubject = { teacherId }
@@ -15,9 +15,9 @@ export class ScheduleService {
     })
   }
 
-  async getSections() {
-    const sections = await prisma.section.findMany({ where: { status: 'ACTIVE' } })
-    const grades = await prisma.grade.findMany()
+  async getSections(schoolId: string) {
+    const sections = await prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' } })
+    const grades = await prisma.grade.findMany({ where: { schoolId } })
     const gradeMap = new Map(grades.map((g) => [g.id, g.name]))
     return sections.map((s) => ({
       id: s.id,
@@ -27,31 +27,28 @@ export class ScheduleService {
     }))
   }
 
-  getTeachers() {
-    return prisma.teacher.findMany({ where: { status: 'ACTIVE' } })
+  getTeachers(schoolId: string) {
+    return prisma.teacher.findMany({ where: { schoolId, status: 'ACTIVE' } })
   }
 
-  getSubjects() {
-    return prisma.subject.findMany()
+  getSubjects(schoolId: string) {
+    return prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' } })
   }
 
-  getSectionSubjects(sectionId?: string) {
-    const where: any = { status: 'ACTIVE' }
+  getSectionSubjects(schoolId: string, sectionId?: string) {
+    const where: any = { schoolId, status: 'ACTIVE' }
     if (sectionId) where.sectionId = sectionId
     return prisma.sectionSubject.findMany({ where })
   }
 
-  getTimeSlots() {
-    return prisma.timeSlot.findMany({ orderBy: { sequence: 'asc' } })
+  getTimeSlots(schoolId: string) {
+    return prisma.timeSlot.findMany({ where: { schoolId }, orderBy: { sequence: 'asc' } })
   }
 
-  async createTimeSlot(body: any) {
-    const school = await prisma.school.findFirst()
-    if (!school) throw new Error('No school configured')
-
+  createTimeSlot(schoolId: string, body: any) {
     return prisma.timeSlot.create({
       data: {
-        schoolId: school.id,
+        schoolId,
         name: body.name,
         startTime: new Date(body.startTime),
         endTime: new Date(body.endTime),
@@ -60,8 +57,8 @@ export class ScheduleService {
     })
   }
 
-  async updateTimeSlot(id: string, body: any) {
-    const ts = await prisma.timeSlot.findUnique({ where: { id } })
+  async updateTimeSlot(schoolId: string, id: string, body: any) {
+    const ts = await prisma.timeSlot.findFirst({ where: { id, schoolId } })
     if (!ts) throw new NotFoundException('Time slot not found')
 
     return prisma.timeSlot.update({
@@ -75,16 +72,16 @@ export class ScheduleService {
     })
   }
 
-  async deleteTimeSlot(id: string) {
-    const ts = await prisma.timeSlot.findUnique({ where: { id } })
+  async deleteTimeSlot(schoolId: string, id: string) {
+    const ts = await prisma.timeSlot.findFirst({ where: { id, schoolId } })
     if (!ts) throw new NotFoundException('Time slot not found')
 
-    await prisma.scheduleEntry.deleteMany({ where: { timeSlotId: id } })
+    await prisma.scheduleEntry.deleteMany({ where: { schoolId, timeSlotId: id } })
     return prisma.timeSlot.delete({ where: { id } })
   }
 
-  findEntries(sectionId?: string, dayOfWeek?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
-    const where: any = {}
+  findEntries(schoolId: string, sectionId?: string, dayOfWeek?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
+    const where: any = { schoolId }
     if (sectionId) where.sectionId = sectionId
     if (dayOfWeek) where.dayOfWeek = Number(dayOfWeek)
     if (schoolYearId) where.schoolYearId = schoolYearId
@@ -93,13 +90,25 @@ export class ScheduleService {
     return prisma.scheduleEntry.findMany({ where, orderBy: { dayOfWeek: 'asc' } })
   }
 
-  async createEntry(body: any) {
-    const school = await prisma.school.findFirst()
-    if (!school) throw new Error('No school configured')
+  async createEntry(schoolId: string, body: any) {
+    const [schoolYear, section, sectionSubject, timeSlot, academicPeriod] = await Promise.all([
+      prisma.schoolYear.findFirst({ where: { id: body.schoolYearId, schoolId } }),
+      prisma.section.findFirst({ where: { id: body.sectionId, schoolId } }),
+      prisma.sectionSubject.findFirst({ where: { id: body.sectionSubjectId, schoolId, sectionId: body.sectionId } }),
+      prisma.timeSlot.findFirst({ where: { id: body.timeSlotId, schoolId } }),
+      body.academicPeriodId
+        ? prisma.academicPeriod.findFirst({ where: { id: body.academicPeriodId, schoolId } })
+        : Promise.resolve(null),
+    ])
+    if (!schoolYear) throw new NotFoundException('School year not found')
+    if (!section) throw new NotFoundException('Section not found')
+    if (!sectionSubject) throw new NotFoundException('Section subject not found')
+    if (!timeSlot) throw new NotFoundException('Time slot not found')
+    if (body.academicPeriodId && !academicPeriod) throw new NotFoundException('Academic period not found')
 
     return prisma.scheduleEntry.create({
       data: {
-        schoolId: school.id,
+        schoolId,
         schoolYearId: body.schoolYearId,
         sectionId: body.sectionId,
         sectionSubjectId: body.sectionSubjectId,
@@ -111,9 +120,19 @@ export class ScheduleService {
     })
   }
 
-  async updateEntry(id: string, body: any) {
-    const entry = await prisma.scheduleEntry.findUnique({ where: { id } })
+  async updateEntry(schoolId: string, id: string, body: any) {
+    const entry = await prisma.scheduleEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Schedule entry not found')
+    if (body.sectionSubjectId) {
+      const sectionSubject = await prisma.sectionSubject.findFirst({
+        where: { id: body.sectionSubjectId, schoolId, sectionId: entry.sectionId },
+      })
+      if (!sectionSubject) throw new NotFoundException('Section subject not found')
+    }
+    if (body.timeSlotId) {
+      const timeSlot = await prisma.timeSlot.findFirst({ where: { id: body.timeSlotId, schoolId } })
+      if (!timeSlot) throw new NotFoundException('Time slot not found')
+    }
 
     return prisma.scheduleEntry.update({
       where: { id },
@@ -126,8 +145,8 @@ export class ScheduleService {
     })
   }
 
-  async deleteEntry(id: string) {
-    const entry = await prisma.scheduleEntry.findUnique({ where: { id } })
+  async deleteEntry(schoolId: string, id: string) {
+    const entry = await prisma.scheduleEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Schedule entry not found')
 
     return prisma.scheduleEntry.delete({ where: { id } })

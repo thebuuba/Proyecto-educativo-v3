@@ -1,9 +1,13 @@
 import { Controller, Get, Patch, Param, Body, Query, UseGuards } from '@nestjs/common'
 import { UsersService } from './users.service'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
+import { CurrentUser } from '../../common/decorators/current-user.decorator'
+import { AuthenticatedUser } from '../auth/types/authenticated-user'
+import { Roles } from '../../common/decorators/roles.decorator'
+import { RolesGuard } from '../../common/guards/roles.guard'
 
 @Controller('users')
-@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard, RolesGuard)
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
@@ -14,22 +18,26 @@ export class UsersController {
   }
 
   @Get()
-  findAll() {
-    return this.usersService.findAll()
+  @Roles('admin', 'director')
+  findAll(@CurrentUser() user: AuthenticatedUser) {
+    return this.usersService.findAll(user.schoolId)
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.findOne(id)
+  @Roles('admin', 'director')
+  findOne(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.usersService.findOne(user.schoolId, id)
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() body: any) {
-    return this.usersService.update(id, body)
+  @Roles('admin', 'director')
+  update(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string, @Body() body: any) {
+    return this.usersService.update(user.schoolId, id, body)
   }
 
   @Get(':id/roles')
-  getRoles(@Param('id') id: string) {
-    return this.usersService.getRoles(id)
+  @Roles('admin', 'director')
+  getRoles(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.usersService.getRoles(user.schoolId, id)
   }
 }

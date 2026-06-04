@@ -16,6 +16,12 @@ type PaginatedResponse<T> = {
   count: number
 }
 
+type GuardianNotificationResult = {
+  notified: number
+  message: string
+  subject: string
+}
+
 export async function getStudents({
   search = '',
   filters = { status: 'active' },
@@ -92,5 +98,5 @@ export async function notifyGuardiansForAtRiskStudents(studentIds: string[]): Pr
   )
   return results
     .filter((r) => r.status === 'fulfilled')
-    .map((r) => (r as PromiseFulfilledResult<any>).value)
+    .map((r) => (r as PromiseFulfilledResult<GuardianNotificationResult>).value)
 }

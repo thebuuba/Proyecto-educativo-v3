@@ -35,7 +35,6 @@ const initialState: AuthState = {
   permissions: [],
   loading: true,
   authError: null,
-  needsProfile: false,
 }
 
 export function AuthProvider({ children }: AuthProviderProps) {
@@ -51,7 +50,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       permissions: [],
       loading: false,
       authError,
-      needsProfile: false,
     })
   }, [])
 
@@ -84,7 +82,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
         permissions,
         loading: false,
         authError: null,
-        needsProfile: false,
       })
     } catch (error) {
       console.error(error)
@@ -108,7 +105,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       permissions: response.permissions,
       loading: false,
       authError: null,
-      needsProfile: false,
     })
   }, [])
 
@@ -126,10 +122,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
     [applySession],
   )
 
-  const loginWithOAuth = useCallback(async (_provider: string) => {
-    throw new Error('OAuth login not yet supported with JWT auth')
-  }, [])
-
   const logout = useCallback(async () => {
     await logoutService()
     clearAuthState()
@@ -145,7 +137,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       schoolId: state.appUser?.schoolId ?? null,
       login,
       register,
-      loginWithOAuth,
       logout,
       refreshAuth: () => loadAuthState(),
       hasRole: (roleKeys: UserRole[]) =>
@@ -155,7 +146,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
           (permission: Permission) => permission.key === permissionKey,
         ),
     }
-  }, [loadAuthState, login, loginWithOAuth, logout, register, state])
+  }, [loadAuthState, login, logout, register, state])
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

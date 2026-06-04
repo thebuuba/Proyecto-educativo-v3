@@ -72,6 +72,9 @@ importers:
         specifier: ^7.8.1
         version: 7.8.2
     devDependencies:
+      '@eslint/js':
+        specifier: ^10.0.1
+        version: 10.0.1(eslint@10.4.1(jiti@2.7.0))
       '@nestjs/cli':
         specifier: ^11.0.0
         version: 11.0.21(@types/node@24.12.4)(prettier@3.8.3)
@@ -96,6 +99,9 @@ importers:
       eslint:
         specifier: ^10.3.0
         version: 10.4.1(jiti@2.7.0)
+      globals:
+        specifier: ^17.6.0
+        version: 17.6.0
       typescript:
         specifier: ~6.0.2
         version: 6.0.3
@@ -197,9 +203,18 @@ importers:
 
   packages/shared:
     devDependencies:
+      '@eslint/js':
+        specifier: ^10.0.1
+        version: 10.0.1(eslint@10.4.1(jiti@2.7.0))
+      eslint:
+        specifier: ^10.3.0
+        version: 10.4.1(jiti@2.7.0)
       typescript:
         specifier: ~6.0.2
         version: 6.0.3
+      typescript-eslint:
+        specifier: ^8.59.2
+        version: 8.60.0(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)
 
 packages:
 

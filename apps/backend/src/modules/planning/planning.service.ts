@@ -3,8 +3,8 @@ import { prisma } from '@aula/database'
 
 @Injectable()
 export class PlanningService {
-  findAll(sectionSubjectId?: string) {
-    const where: any = {}
+  findAll(schoolId: string, sectionSubjectId?: string) {
+    const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
     return prisma.planningEntry.findMany({
       where,
@@ -12,19 +12,19 @@ export class PlanningService {
     })
   }
 
-  getAcademicPeriods(schoolYearId?: string) {
-    const where: any = {}
+  getAcademicPeriods(schoolId: string, schoolYearId?: string) {
+    const where: any = { schoolId }
     if (schoolYearId) where.schoolYearId = schoolYearId
     return prisma.academicPeriod.findMany({ where, orderBy: { sequence: 'asc' } })
   }
 
-  async createAcademicPeriod(body: any) {
-    const school = await prisma.school.findFirst()
-    if (!school) throw new Error('No school configured')
+  async createAcademicPeriod(schoolId: string, body: any) {
+    const schoolYear = await prisma.schoolYear.findFirst({ where: { id: body.schoolYearId, schoolId } })
+    if (!schoolYear) throw new NotFoundException('School year not found')
 
     return prisma.academicPeriod.create({
       data: {
-        schoolId: school.id,
+        schoolId,
         schoolYearId: body.schoolYearId,
         name: body.name,
         sequence: body.sequence ?? 0,
@@ -34,8 +34,8 @@ export class PlanningService {
     })
   }
 
-  async updateAcademicPeriod(id: string, body: any) {
-    const ap = await prisma.academicPeriod.findUnique({ where: { id } })
+  async updateAcademicPeriod(schoolId: string, id: string, body: any) {
+    const ap = await prisma.academicPeriod.findFirst({ where: { id, schoolId } })
     if (!ap) throw new NotFoundException('Academic period not found')
 
     const data: any = {}
@@ -51,12 +51,12 @@ export class PlanningService {
     })
   }
 
-  async deleteAcademicPeriod(id: string) {
-    const ap = await prisma.academicPeriod.findUnique({ where: { id } })
+  async deleteAcademicPeriod(schoolId: string, id: string) {
+    const ap = await prisma.academicPeriod.findFirst({ where: { id, schoolId } })
     if (!ap) throw new NotFoundException('Academic period not found')
 
-    await prisma.planningEntry.deleteMany({ where: { academicPeriodId: id } })
-    await prisma.gradesRecord.deleteMany({ where: { academicPeriodId: id } })
+    await prisma.planningEntry.deleteMany({ where: { schoolId, academicPeriodId: id } })
+    await prisma.gradesRecord.deleteMany({ where: { schoolId, academicPeriodId: id } })
     return prisma.academicPeriod.delete({ where: { id } })
   }
 
@@ -66,14 +66,14 @@ export class PlanningService {
     return prisma.drCompetency.findMany({ where })
   }
 
-  getSectionSubjects(teacherId?: string) {
-    const where: any = { status: 'ACTIVE' }
+  getSectionSubjects(schoolId: string, teacherId?: string) {
+    const where: any = { schoolId, status: 'ACTIVE' }
     if (teacherId) where.teacherId = teacherId
     return prisma.sectionSubject.findMany({ where })
   }
 
-  findEntries(sectionSubjectId?: string, academicPeriodId?: string) {
-    const where: any = {}
+  findEntries(schoolId: string, sectionSubjectId?: string, academicPeriodId?: string) {
+    const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
     if (academicPeriodId) where.academicPeriodId = academicPeriodId
     return prisma.planningEntry.findMany({
@@ -82,13 +82,17 @@ export class PlanningService {
     })
   }
 
-  async createEntry(body: any) {
-    const school = await prisma.school.findFirst()
-    if (!school) throw new Error('No school configured')
+  async createEntry(schoolId: string, body: any) {
+    const [sectionSubject, academicPeriod] = await Promise.all([
+      prisma.sectionSubject.findFirst({ where: { id: body.sectionSubjectId, schoolId } }),
+      prisma.academicPeriod.findFirst({ where: { id: body.academicPeriodId, schoolId } }),
+    ])
+    if (!sectionSubject) throw new NotFoundException('Section subject not found')
+    if (!academicPeriod) throw new NotFoundException('Academic period not found')
 
     return prisma.planningEntry.create({
       data: {
-        schoolId: school.id,
+        schoolId,
         sectionSubjectId: body.sectionSubjectId,
         academicPeriodId: body.academicPeriodId,
         title: body.title,
@@ -111,8 +115,8 @@ export class PlanningService {
     })
   }
 
-  async updateEntry(id: string, body: any) {
-    const entry = await prisma.planningEntry.findUnique({ where: { id } })
+  async updateEntry(schoolId: string, id: string, body: any) {
+    const entry = await prisma.planningEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Planning entry not found')
 
     const data: any = {}
@@ -139,8 +143,8 @@ export class PlanningService {
     })
   }
 
-  async deleteEntry(id: string) {
-    const entry = await prisma.planningEntry.findUnique({ where: { id } })
+  async deleteEntry(schoolId: string, id: string) {
+    const entry = await prisma.planningEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Planning entry not found')
 
     return prisma.planningEntry.delete({ where: { id } })

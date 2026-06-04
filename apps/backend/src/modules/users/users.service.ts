@@ -3,21 +3,22 @@ import { prisma } from '@aula/database'
 
 @Injectable()
 export class UsersService {
-  findAll() {
+  findAll(schoolId: string) {
     return prisma.appUser.findMany({
+      where: { schoolId },
       select: { id: true, email: true, fullName: true, status: true },
     })
   }
 
-  findOne(id: string) {
-    return prisma.appUser.findUnique({
-      where: { id },
+  findOne(schoolId: string, id: string) {
+    return prisma.appUser.findFirst({
+      where: { id, schoolId },
       select: { id: true, email: true, fullName: true, avatarUrl: true, status: true },
     })
   }
 
-  async update(id: string, body: any) {
-    const user = await prisma.appUser.findUnique({ where: { id } })
+  async update(schoolId: string, id: string, body: any) {
+    const user = await prisma.appUser.findFirst({ where: { id, schoolId } })
     if (!user) throw new NotFoundException('User not found')
 
     return prisma.appUser.update({
@@ -31,9 +32,9 @@ export class UsersService {
     })
   }
 
-  async getRoles(userId: string) {
+  async getRoles(schoolId: string, userId: string) {
     const userRoles = await prisma.userRole.findMany({
-      where: { userId, status: 'ACTIVE' },
+      where: { schoolId, userId, status: 'ACTIVE' },
     })
     const roleIds = userRoles.map((ur) => ur.roleId)
     if (!roleIds.length) return []

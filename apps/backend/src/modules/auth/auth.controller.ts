@@ -10,6 +10,7 @@ import { LoginDto } from './dto/login.dto'
 import { RegisterDto } from './dto/register.dto'
 import { JwtAuthGuard } from './strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
+import { AuthenticatedUser } from './types/authenticated-user'
 
 @Controller('auth')
 export class AuthController {
@@ -32,7 +33,7 @@ export class AuthController {
 
   @Get('profile')
   @UseGuards(JwtAuthGuard)
-  getProfile(@CurrentUser() user: { id: string }) {
+  getProfile(@CurrentUser() user: AuthenticatedUser) {
     return this.authService.getProfile(user.id)
   }
 }

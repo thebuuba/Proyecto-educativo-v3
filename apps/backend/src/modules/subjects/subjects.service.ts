@@ -3,7 +3,7 @@ import { prisma } from '@aula/database'
 
 @Injectable()
 export class SubjectsService {
-  findAll() {
-    return prisma.subject.findMany({ orderBy: { name: 'asc' } })
+  findAll(schoolId: string) {
+    return prisma.subject.findMany({ where: { schoolId }, orderBy: { name: 'asc' } })
   }
 }

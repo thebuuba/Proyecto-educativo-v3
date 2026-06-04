@@ -3,32 +3,32 @@ import { prisma } from '@aula/database'
 
 @Injectable()
 export class ReportsService {
-  async getStudentReport(studentId: string) {
+  async getStudentReport(schoolId: string, studentId: string) {
     const enrollments = await prisma.enrollment.findMany({
-      where: { studentId },
+      where: { schoolId, studentId },
       select: { id: true },
     })
     const enrollmentIds = enrollments.map((e) => e.id)
     return prisma.gradesRecord.findMany({
-      where: { enrollmentId: { in: enrollmentIds } },
+      where: { schoolId, enrollmentId: { in: enrollmentIds } },
     })
   }
 
-  async exportReport(body: any) {
+  async exportReport(schoolId: string, body: any) {
     const { type, studentId, sectionSubjectId, academicPeriodId } = body
 
     if (type === 'student') {
       const enrollments = await prisma.enrollment.findMany({
-        where: { studentId },
+        where: { schoolId, studentId },
         select: { id: true },
       })
       const enrollmentIds = enrollments.map((e) => e.id)
 
       const records = await prisma.gradesRecord.findMany({
-        where: { enrollmentId: { in: enrollmentIds } },
+        where: { schoolId, enrollmentId: { in: enrollmentIds } },
       })
 
-      const student = await prisma.student.findUnique({ where: { id: studentId } })
+      const student = await prisma.student.findFirst({ where: { id: studentId, schoolId } })
 
       return {
         type: 'student',
@@ -38,7 +38,7 @@ export class ReportsService {
       }
     }
 
-    const where: any = {}
+    const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
     if (academicPeriodId) where.academicPeriodId = academicPeriodId
 
