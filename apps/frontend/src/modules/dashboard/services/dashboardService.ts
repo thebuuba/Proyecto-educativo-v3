@@ -10,18 +10,10 @@ import { getCurrentSchoolYear } from '@/services/schoolYearService'
 
 const weekdayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']
 
-type DashboardStats = {
-  studentCount: number
-  teacherCount: number
-  activeEnrollments: number
-}
-
 export async function getDashboardData(appUser: AppUser | null): Promise<DashboardData> {
   const today = new Date()
-  const currentSchoolYear = await getCurrentSchoolYear()
-
-  const [, tasks] = await Promise.all([
-    safeBlock(api.get<DashboardStats>('/dashboard/stats')),
+  const [currentSchoolYear, tasks] = await Promise.all([
+    safeBlock(getCurrentSchoolYear(), null),
     safeBlock(api.get<DashboardTask[]>('/dashboard/tasks'), []),
   ])
 
