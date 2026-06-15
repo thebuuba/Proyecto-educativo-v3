@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm --filter @aula/shared build && pnpm --filter frontend build",
+  "outputDirectory": "apps/frontend/dist",
+  "installCommand": "corepack enable && corepack prepare pnpm@11.1.2 --activate && pnpm install",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

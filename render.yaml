@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: aula-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile.backend
+    envVars:
+      - key: PORT
+        value: "3000"
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
