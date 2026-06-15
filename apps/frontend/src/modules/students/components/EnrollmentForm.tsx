@@ -1,3 +1,8 @@
+/**
+ * Componente EnrollmentForm — Modal de formulario para crear una
+ * nueva matrícula con selección de grado, sección y datos académicos.
+ */
+
 import { AlertCircle, X } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useEffect, useRef, useState } from 'react'
@@ -12,9 +17,13 @@ import type { GradeWithSections } from '@/modules/students/types'
 import type { EnrollmentStatus } from '@/types/domain'
 
 type EnrollmentFormProps = {
+  /** ID del estudiante a matricular. */
   studentId: string
+  /** Indica si se está enviando el formulario. */
   submitting: boolean
+  /** Error del servidor. */
   error: string | null
+  /** Callback al enviar el formulario. */
   onSubmit: (input: {
     studentId: string
     gradeId: string
@@ -28,6 +37,7 @@ type EnrollmentFormProps = {
     finalCondition: string | null
     transferNotes: string | null
   }) => Promise<void>
+  /** Callback para cerrar el formulario. */
   onClose: () => void
 }
 
@@ -47,6 +57,7 @@ const academicStatusOptions = [
   { value: 'graduated', label: 'Egresado' },
 ] as const
 
+/** Modal de formulario para crear una matrícula. */
 export function EnrollmentForm({
   studentId,
   submitting,
@@ -302,6 +313,7 @@ export function EnrollmentForm({
   )
 }
 
+/** Componente interno de campo de formulario con etiqueta. */
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block text-sm font-medium text-muted-foreground">

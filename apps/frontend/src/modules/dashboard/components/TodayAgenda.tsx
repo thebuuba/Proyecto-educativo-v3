@@ -1,3 +1,8 @@
+/**
+ * Componente TodayAgenda — Muestra la agenda del día con las clases
+ * programadas, su hora, estado y detalles.
+ */
+
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -6,9 +11,11 @@ import type { TodayAgendaItem } from '@/modules/dashboard/types/dashboard'
 import { cn } from '@/utils/cn'
 
 type TodayAgendaProps = {
+  /** Lista de clases programadas para hoy. */
   items: TodayAgendaItem[]
 }
 
+/** Agenda del día con la lista de clases programadas. */
 export function TodayAgenda({ items }: TodayAgendaProps) {
   return (
     <div className="rounded-2xl border border-border bg-card p-6 shadow-sm" style={{ boxShadow: '0 1px 2px rgba(26,31,58,0.04)' }}>

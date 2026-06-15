@@ -1,3 +1,10 @@
+/**
+ * @file Servicio de Calificaciones
+ *
+ * Proporciona funciones para obtener secciones-asignaturas,
+ * estudiantes, guardar notas y calcular estadísticas.
+ */
+
 import { api } from '@/services/apiClient'
 import { THRESHOLD } from '@/constants'
 import type {
@@ -8,14 +15,17 @@ import type {
   StudentGradeRow,
 } from '@/modules/academic-grades/types'
 
+/** Obtiene las secciones-asignaturas asignadas al docente */
 export async function getTeacherSectionSubjects(): Promise<SectionSubjectOption[]> {
   return api.get<SectionSubjectOption[]>('/academic-grades/section-subjects')
 }
 
+/** Obtiene la lista de períodos académicos disponibles */
 export async function getAcademicPeriods(): Promise<AcademicPeriodOpt[]> {
   return api.get<AcademicPeriodOpt[]>('/academic-grades/academic-periods')
 }
 
+/** Obtiene los estudiantes con sus calificaciones para una sección-asignatura y período */
 export async function getStudentsForGrading(
   sectionSubjectId: string,
   academicPeriodId: string,
@@ -25,10 +35,12 @@ export async function getStudentsForGrading(
   )
 }
 
+/** Guarda o actualiza una calificación en la base de datos */
 export async function saveGrade(input: SaveGradeInput): Promise<void> {
   await api.post('/academic-grades/save', input)
 }
 
+/** Calcula estadísticas de rendimiento a partir de las filas de calificaciones */
 export function computeGradeStats(rows: StudentGradeRow[]): GradeSummaryStats {
   const scores = rows
     .map((r) => (r.score !== null ? (r.score / r.maxScore) * 10 : null))

@@ -1,3 +1,8 @@
+/**
+ * Componente StudentsTable — Tabla de estudiantes con selección,
+ * métricas de asistencia/promedio, estado y acciones de gestión.
+ */
+
 import { CheckCircle2, Eye, Pencil, UserMinus } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
@@ -12,16 +17,25 @@ import {
 import { cn } from '@/utils/cn'
 
 type StudentsTableProps = {
+  /** Lista de estudiantes a mostrar. */
   students: StudentListItem[]
+  /** Indica si el usuario puede gestionar estudiantes. */
   canManage: boolean
+  /** IDs de estudiantes seleccionados. */
   selectedIds: Set<string>
+  /** Callback para seleccionar/deseleccionar un estudiante. */
   onToggleStudent: (studentId: string) => void
+  /** Callback para seleccionar/deseleccionar todos. */
   onToggleAll: () => void
+  /** Callback para ver detalle de un estudiante. */
   onView: (student: StudentListItem) => void
+  /** Callback para editar un estudiante. */
   onEdit: (student: StudentListItem) => void
+  /** Callback para desactivar un estudiante. */
   onDeactivate: (student: StudentListItem) => void
 }
 
+/** Tabla de estudiantes con métricas y acciones. */
 export function StudentsTable({
   students,
   canManage,
@@ -207,6 +221,7 @@ export function StudentsTable({
   )
 }
 
+/** Genera un número hash a partir de un string para usar como semilla de color. */
 function hashSeed(seed: string) {
   let hash = 0
 

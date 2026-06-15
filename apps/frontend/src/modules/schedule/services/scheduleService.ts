@@ -1,3 +1,10 @@
+/**
+ * @file Servicio de Horario
+ *
+ * Proporciona funciones CRUD para bloques horarios, entradas
+ * de horario, y datos auxiliares (secciones, docentes, materias).
+ */
+
 import { api } from '@/services/apiClient'
 import type {
   CreateScheduleEntryInput,
@@ -17,22 +24,27 @@ import type {
 const dayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']
 const toneByIndex: ScheduleCalendarEntry['tone'][] = ['accent', 'primary', 'success', 'muted']
 
+/** Obtiene todos los bloques horarios definidos */
 export async function getTimeSlots(): Promise<TimeSlot[]> {
   return api.get<TimeSlot[]>('/schedule/time-slots')
 }
 
+/** Crea un nuevo bloque horario */
 export async function createTimeSlot(input: CreateTimeSlotInput): Promise<TimeSlot> {
   return api.post<TimeSlot>('/schedule/time-slots', input)
 }
 
+/** Actualiza un bloque horario existente */
 export async function updateTimeSlot(id: string, input: UpdateTimeSlotInput): Promise<TimeSlot> {
   return api.patch<TimeSlot>(`/schedule/time-slots/${id}`, input)
 }
 
+/** Elimina un bloque horario */
 export async function deleteTimeSlot(id: string): Promise<void> {
   await api.delete(`/schedule/time-slots/${id}`)
 }
 
+/** Obtiene las entradas del horario aplicando los filtros especificados */
 export async function getScheduleEntries(filters: ScheduleFilters = {}): Promise<ScheduleEntry[]> {
   const params = new URLSearchParams()
   if (filters.schoolYearId) params.set('schoolYearId', filters.schoolYearId)
@@ -43,34 +55,42 @@ export async function getScheduleEntries(filters: ScheduleFilters = {}): Promise
   return api.get<ScheduleEntry[]>(`/schedule/entries?${params}`)
 }
 
+/** Crea una nueva entrada en el horario */
 export async function createScheduleEntry(input: CreateScheduleEntryInput): Promise<ScheduleEntry> {
   return api.post<ScheduleEntry>('/schedule/entries', input)
 }
 
+/** Actualiza una entrada de horario existente */
 export async function updateScheduleEntry(id: string, input: UpdateScheduleEntryInput): Promise<ScheduleEntry> {
   return api.patch<ScheduleEntry>(`/schedule/entries/${id}`, input)
 }
 
+/** Elimina una entrada de horario */
 export async function deleteScheduleEntry(id: string): Promise<void> {
   await api.delete(`/schedule/entries/${id}`)
 }
 
+/** Obtiene las secciones disponibles para asignar en el horario */
 export async function getSections(): Promise<SectionOption[]> {
   return api.get<SectionOption[]>('/schedule/sections')
 }
 
+/** Obtiene la lista de docentes disponibles */
 export async function getTeachers(): Promise<TeacherOption[]> {
   return api.get<TeacherOption[]>('/schedule/teachers')
 }
 
+/** Obtiene la lista de asignaturas disponibles */
 export async function getSubjects(): Promise<SubjectOption[]> {
   return api.get<SubjectOption[]>('/schedule/subjects')
 }
 
+/** Obtiene las asignaturas asignadas a una sección con su docente */
 export async function getSectionSubjects(sectionId: string): Promise<Array<{ id: string; subjectName: string; teacherName: string }>> {
   return api.get(`/schedule/section-subjects?sectionId=${sectionId}`)
 }
 
+/** Obtiene un resumen del horario con clases, horas y carga semanal */
 export async function getScheduleSummary(): Promise<ScheduleSummary> {
   const entries = await api.get<ScheduleEntry[]>('/schedule/entries')
   const sectionIds = Array.from(new Set(entries.map((e) => e.sectionId)))

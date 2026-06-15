@@ -1,3 +1,8 @@
+/**
+ * Hook useStudents — Gestiona el estado de la lista de estudiantes:
+ * paginación, filtros, búsqueda, creación, actualización y desactivación.
+ */
+
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { useDebouncedSearch } from '@/hooks/useDebouncedSearch'
@@ -19,6 +24,7 @@ const defaultFilters: StudentFilters = {
 }
 const PAGE_SIZE = 50
 
+/** Hook principal para la gestión de la lista de estudiantes. */
 export function useStudents() {
   const [students, setStudents] = useState<StudentListItem[]>([])
   const [totalCount, setTotalCount] = useState(0)

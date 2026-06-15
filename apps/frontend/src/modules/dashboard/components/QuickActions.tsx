@@ -1,12 +1,19 @@
+/**
+ * Componente QuickActions — Muestra una cuadrícula de accesos rápidos
+ * con enlaces de navegación a las secciones principales del sistema.
+ */
+
 import { Link } from 'react-router-dom'
 
 import { Card, CardTitle } from '@/components/ui/Card'
 import type { QuickAction } from '@/modules/dashboard/types/dashboard'
 
 type QuickActionsProps = {
+  /** Lista de acciones rápidas con icono, etiqueta y ruta. */
   actions: QuickAction[]
 }
 
+/** Panel de accesos rápidos del dashboard. */
 export function QuickActions({ actions }: QuickActionsProps) {
   return (
     <Card className="p-5">

@@ -1,3 +1,10 @@
+/**
+ * @file Página de Horario
+ *
+ * Vista principal del horario docente con calendario semanal,
+ * carga horaria, próxima clase y gestión de bloques.
+ */
+
 import {
   CalendarDays,
   Clock,
@@ -22,6 +29,7 @@ import type { ScheduleCalendarEntry, ScheduleSummary, TimeSlot } from '@/modules
 import { DEFAULTS } from '@/constants'
 import { cn } from '@/utils/cn'
 
+/** Días de la semana laborales */
 const weekDays = [
   { label: 'LUN', dayOfWeek: 1 },
   { label: 'MAR', dayOfWeek: 2 },
@@ -42,6 +50,7 @@ const subjectPalette = [
   'border-l-destructive bg-destructive/10 text-destructive-foreground shadow-destructive/10',
 ]
 
+/** Genera un hash numérico a partir de un string */
 function hashString(value: string) {
   let hash = 0
   for (let index = 0; index < value.length; index++) {
@@ -52,10 +61,12 @@ function hashString(value: string) {
   return Math.abs(hash)
 }
 
+/** Formatea una hora ISO (HH:mm) quitando los segundos */
 function formatTime(value: string) {
   return value.slice(0, 5)
 }
 
+/** Formatea un número de horas a formato legible (ej: 1h 30min) */
 function formatHours(value: number) {
   if (Number.isInteger(value)) return `${value}h`
   const hours = Math.floor(value)
@@ -63,11 +74,13 @@ function formatHours(value: number) {
   return `${hours}h ${minutes}min`
 }
 
+/** Convierte una hora ISO a su valor numérico en horas */
 function getTimeAsHour(value: string) {
   const [hours, minutes] = value.split(':').map(Number)
   return hours + minutes / 60
 }
 
+/** Obtiene el nombre del curso a partir de una entrada del calendario */
 function getEntryCourse(entry: ScheduleCalendarEntry) {
   if (entry.gradeName && entry.sectionName) {
     return `${entry.gradeName} ${entry.sectionName}`
@@ -75,6 +88,7 @@ function getEntryCourse(entry: ScheduleCalendarEntry) {
   return entry.gradeName ?? entry.sectionName ?? 'Sin sección'
 }
 
+/** Calcula la posición y altura de una entrada en el calendario visual */
 function getEntryPosition(entry: ScheduleCalendarEntry) {
   const start = getTimeAsHour(entry.startTime)
   const end = getTimeAsHour(entry.endTime)
@@ -83,6 +97,7 @@ function getEntryPosition(entry: ScheduleCalendarEntry) {
   return { top: `${top}rem`, height: `${height}rem` }
 }
 
+/** Obtiene el rótulo de la semana actual (ej: "10 — 14 de marzo") */
 function getWeekLabel() {
   const today = new Date()
   const day = today.getDay() === 0 ? 7 : today.getDay()
@@ -94,11 +109,13 @@ function getWeekLabel() {
   return `${monday.getDate()} — ${friday.getDate()} de ${month}`
 }
 
+/** Obtiene el día de la semana actual (1=lunes, 7=domingo) */
 function getTodayDayOfWeek() {
   const day = new Date().getDay()
   return day === 0 ? 7 : day
 }
 
+/** Obtiene el número de día del mes para un día de la semana */
 function getDayDate(dayOfWeek: number) {
   const today = new Date()
   const currentDay = today.getDay() === 0 ? 7 : today.getDay()
@@ -108,6 +125,7 @@ function getDayDate(dayOfWeek: number) {
   return date.getDate()
 }
 
+/** Descarga el horario como archivo CSV */
 function downloadScheduleAsCsv(entries: ScheduleCalendarEntry[]) {
   const header = 'Materia,Curso,Día,Hora Inicio,Hora Fin,Aula,Estudiantes'
   const dayNames: Record<number, string> = { 1: 'LUN', 2: 'MAR', 3: 'MIÉ', 4: 'JUE', 5: 'VIE' }
@@ -133,6 +151,7 @@ function downloadScheduleAsCsv(entries: ScheduleCalendarEntry[]) {
   URL.revokeObjectURL(url)
 }
 
+/** Obtiene la próxima clase del horario a partir del momento actual */
 function getNextClass(entries: ScheduleCalendarEntry[]) {
   const today = getTodayDayOfWeek()
   const now = new Date()
@@ -151,6 +170,7 @@ function getNextClass(entries: ScheduleCalendarEntry[]) {
   )
 }
 
+/** Página principal del horario docente con calendario semanal */
 export function SchedulePage() {
   const {
     timeSlots,
@@ -187,6 +207,7 @@ export function SchedulePage() {
   const nextClass = useMemo(() => getNextClass(summary.entries), [summary.entries])
   const maxDailyHours = Math.max(...summary.weeklyLoad.map((day) => day.hours), 1)
 
+  /** Carga el resumen del horario desde el servidor */
   const loadSummary = useCallback(async () => {
     setSummaryLoading(true)
     setSummaryError(null)

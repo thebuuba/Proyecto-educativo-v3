@@ -1,3 +1,8 @@
+/**
+ * Módulo de autenticación.
+ * Configura Passport con estrategia JWT y expone controladores
+ * y servicios para registro, inicio de sesión y perfil de usuario.
+ */
 import { Module } from '@nestjs/common'
 import { JwtModule } from '@nestjs/jwt'
 import { PassportModule } from '@nestjs/passport'

@@ -1,8 +1,16 @@
+/**
+ * Servicio de reportes
+ * @module ReportsService
+ * @description Contiene la lógica de negocio para la generación y exportación de
+ * reportes académicos. Permite obtener reportes individuales de estudiantes y
+ * exportar calificaciones en formatos como CSV.
+ */
 import { Injectable } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
 @Injectable()
 export class ReportsService {
+  /** Obtiene el reporte de calificaciones de un estudiante */
   async getStudentReport(schoolId: string, studentId: string) {
     const enrollments = await prisma.enrollment.findMany({
       where: { schoolId, studentId },
@@ -14,6 +22,7 @@ export class ReportsService {
     })
   }
 
+  /** Exporta un reporte en el formato especificado (estudiante, calificaciones o CSV) */
   async exportReport(schoolId: string, body: any) {
     const type = body.type ?? body.kind ?? 'grades'
     const { studentId, sectionSubjectId, academicPeriodId } = body

@@ -1,3 +1,8 @@
+/**
+ * Página de inicio de sesión — Formulario de login con estados de carga,
+ * error, registro exitoso y recuperación de contraseña.
+ */
+
 import { AlertCircle, CheckCircle, LogIn, UserPlus } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
@@ -15,6 +20,11 @@ type LocationState = {
   registered?: boolean
 }
 
+/**
+ * Página de inicio de sesión.
+ * Redirige al dashboard si ya está autenticado. Maneja estados de error,
+ * registro exitoso y recuperación de contraseña.
+ */
 export function LoginPage() {
   const { authError, isAuthenticated, loading, login } = useAuth()
   const location = useLocation()
@@ -34,6 +44,7 @@ export function LoginPage() {
     return <Navigate to={from ?? '/'} replace />
   }
 
+  /** Maneja el envío del formulario de inicio de sesión. */
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setErrorMessage('')
@@ -53,6 +64,7 @@ export function LoginPage() {
     }
   }
 
+  /** Maneja la solicitud de restablecimiento de contraseña. */
   async function handleForgotPassword() {
     if (!email.trim()) {
       setErrorMessage('Ingresa tu correo electrónico primero.')

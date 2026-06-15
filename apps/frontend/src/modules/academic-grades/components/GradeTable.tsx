@@ -1,3 +1,10 @@
+/**
+ * @file Componente GradeTable
+ *
+ * Tabla interactiva para visualizar y editar las calificaciones
+ * de los estudiantes con indicadores de color y estado.
+ */
+
 import { useState } from 'react'
 
 import { Badge } from '@/components/ui/Badge'
@@ -6,6 +13,7 @@ import { Input } from '@/components/ui/Input'
 import type { StudentGradeRow } from '@/modules/academic-grades/types'
 import { cn } from '@/utils/cn'
 
+/** Propiedades del componente GradeTable */
 type GradeTableProps = {
   students: StudentGradeRow[]
   saving: boolean
@@ -15,6 +23,7 @@ type GradeTableProps = {
   ) => void
 }
 
+/** Tabla interactiva de calificaciones con edición en línea */
 export function GradeTable({ students, saving, onSave }: GradeTableProps) {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editScore, setEditScore] = useState('')

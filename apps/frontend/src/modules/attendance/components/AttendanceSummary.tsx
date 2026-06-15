@@ -1,12 +1,21 @@
+/**
+ * @file Componente AttendanceSummary
+ *
+ * Muestra un resumen visual con tarjetas de total, presentes,
+ * ausentes, tardes y justificados.
+ */
+
 import { Card, CardContent } from '@/components/ui/Card'
 import type { AttendanceStats } from '@/modules/attendance/types'
 import { cn } from '@/utils/cn'
 
+/** Propiedades del componente AttendanceSummary */
 type AttendanceSummaryProps = {
   stats: AttendanceStats
   loading: boolean
 }
 
+/** Resumen visual de estadísticas de asistencia */
 export function AttendanceSummary({ stats, loading }: AttendanceSummaryProps) {
   const percentage = stats.total > 0
     ? Math.round(((stats.present + stats.late) / stats.total) * 100)

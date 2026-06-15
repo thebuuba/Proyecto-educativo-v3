@@ -1,3 +1,8 @@
+/**
+ * Componente raíz de la aplicación.
+ * Define las rutas públicas y privadas con layouts, lazy loading
+ * y protección por roles de usuario.
+ */
 import { Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
@@ -9,8 +14,14 @@ import { RegisterPage } from '@/modules/auth/pages/RegisterPage'
 import { UnauthorizedPage } from '@/modules/auth/pages/UnauthorizedPage'
 import { appRoutes } from '@/routes/appRoutes'
 
+/** Componente de carga mostrado durante la carga diferida de módulos. */
 const routeFallback = <LoadingState />
 
+/**
+ * Componente principal de la aplicación.
+ * Configura las rutas públicas (login, registro, sin acceso) y las
+ * rutas privadas envueltas en AppLayout con protección RequireAuth.
+ */
 function App() {
   return (
     <Suspense fallback={routeFallback}>

@@ -1,3 +1,10 @@
+/**
+ * @file Hook de Planificación
+ *
+ * Gestiona el estado y las operaciones del módulo de planificación
+ * curricular: períodos, entradas, secciones-asignaturas y competencias.
+ */
+
 import { useCallback, useEffect, useState } from 'react'
 
 import {
@@ -18,6 +25,7 @@ import type {
 } from '@/modules/planning/types'
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
 
+/** Hook principal para la gestión de planificaciones */
 export function usePlanning() {
   const [periods, setPeriods] = useState<AcademicPeriodSummary[]>([])
   const [activePeriodId, setActivePeriodId] = useState<string | null>(null)
@@ -30,6 +38,7 @@ export function usePlanning() {
   const [error, setError] = useState<string | null>(null)
   const [schoolYearId, setSchoolYearId] = useState<string | null>(null)
 
+  /** Carga los períodos académicos de un año escolar */
   const fetchPeriods = useCallback(async (yearId: string) => {
     try {
       const data = await getAcademicPeriods(yearId)
@@ -43,6 +52,7 @@ export function usePlanning() {
     }
   }, [])
 
+  /** Carga las planificaciones según los filtros */
   const fetchEntries = useCallback(
     async (filters: PlanningFilters) => {
       setLoading(true)
@@ -65,6 +75,7 @@ export function usePlanning() {
     [],
   )
 
+  /** Carga las secciones-asignaturas del docente */
   const fetchSectionSubjects = useCallback(async () => {
     try {
       const data = await getTeacherSectionSubjects()
@@ -74,6 +85,7 @@ export function usePlanning() {
     }
   }, [])
 
+  /** Carga las competencias fundamentales */
   const fetchCompetencies = useCallback(async () => {
     try {
       const data = await getCompetencies()
@@ -118,6 +130,7 @@ export function usePlanning() {
     }
   }, [activePeriodId, schoolYearId, fetchEntries])
 
+  /** Crea una nueva planificación y refresca la lista */
   const addEntry = useCallback(
     async (input: CreatePlanningEntryInput) => {
       await createPlanningEntry(input)
@@ -126,6 +139,7 @@ export function usePlanning() {
     [fetchEntries],
   )
 
+  /** Actualiza una planificación existente y refresca la lista */
   const editEntry = useCallback(
     async (id: string, input: CreatePlanningEntryInput) => {
       await updatePlanningEntry(id, input)
@@ -134,6 +148,7 @@ export function usePlanning() {
     [fetchEntries],
   )
 
+  /** Elimina una planificación y refresca la lista */
   const removeEntry = useCallback(
     async (id: string, periodId: string) => {
       await deletePlanningEntry(id)

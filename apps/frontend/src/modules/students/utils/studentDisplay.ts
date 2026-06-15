@@ -1,10 +1,17 @@
+/**
+ * Utilidades de visualización de estudiantes — Funciones para obtener
+ * iniciales, etiquetas de curso, tonos de progreso y estado mostrable.
+ */
+
 import { THRESHOLD } from '@/constants'
 import type { StudentListItem } from '@/modules/students/types'
 
+/** Retorna las iniciales del estudiante (primera letra de nombre y apellido). */
 export function getStudentInitials(student: StudentListItem) {
   return `${student.firstName.charAt(0)}${student.lastName.charAt(0)}`.toUpperCase()
 }
 
+/** Retorna la etiqueta del curso del estudiante (grado + sección). */
 export function getCourseLabel(student: StudentListItem) {
   const gradeName = student.currentEnrollment?.gradeName
   const sectionName = student.currentEnrollment?.sectionName
@@ -16,6 +23,7 @@ export function getCourseLabel(student: StudentListItem) {
   return gradeName ?? sectionName ?? 'Sin curso'
 }
 
+/** Retorna la clase de color para la barra de progreso según el valor. */
 export function getProgressTone(value: number | null) {
   if (value === null) return 'bg-muted'
   if (value < THRESHOLD.ATTENDANCE_LOW) return 'bg-destructive'
@@ -23,6 +31,7 @@ export function getProgressTone(value: number | null) {
   return 'bg-success'
 }
 
+/** Retorna la clase de color para el promedio según el valor. */
 export function getAverageTone(value: number | null) {
   if (value === null) return 'text-muted-foreground'
   if (value < THRESHOLD.GRADE_LOW) return 'text-destructive'
@@ -30,6 +39,7 @@ export function getAverageTone(value: number | null) {
   return 'text-success'
 }
 
+/** Retorna el estado mostrable del estudiante con etiqueta y clases CSS. */
 export function getDisplayStatus(student: StudentListItem) {
   if (student.status === 'inactive') {
     return {

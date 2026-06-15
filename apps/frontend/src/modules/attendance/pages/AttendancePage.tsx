@@ -1,3 +1,11 @@
+/**
+ * @file Página de Asistencia
+ *
+ * Vista principal del módulo de asistencia. Permite seleccionar
+ * sección y fecha, visualizar la cuadrícula de estudiantes y
+ * registrar el estado de asistencia de cada uno.
+ */
+
 import { AlertCircle, RefreshCw } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
@@ -7,6 +15,7 @@ import { AttendanceGrid } from '@/modules/attendance/components/AttendanceGrid'
 import { AttendanceSummary } from '@/modules/attendance/components/AttendanceSummary'
 import { useAttendance } from '@/modules/attendance/hooks/useAttendance'
 
+/** Página principal de registro y consulta de asistencia */
 export function AttendancePage() {
   const {
     sections,

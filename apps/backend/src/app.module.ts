@@ -1,3 +1,7 @@
+/**
+ * @description Módulo raíz de la aplicación NestJS. Importa todos los módulos funcionales y configura middleware global (interceptors, filters, throttler).
+ */
+
 import { Module } from '@nestjs/common'
 import { APP_INTERCEPTOR, APP_FILTER } from '@nestjs/core'
 import { ConfigModule } from '@nestjs/config'
@@ -18,6 +22,13 @@ import { ReportsModule } from './modules/reports/reports.module'
 import { ProfileModule } from './modules/profile/profile.module'
 import { SubjectsModule } from './modules/subjects/subjects.module'
 
+/**
+ * Configuración del módulo raíz.
+ *
+ * @imports ConfigModule (global), ThrottlerModule con límite de 100 peticiones por minuto,
+ * y todos los módulos funcionales de la aplicación (auth, users, students, attendance, etc.).
+ * @providers ResponseInterceptor (global) y AllExceptionsFilter (global).
+ */
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),

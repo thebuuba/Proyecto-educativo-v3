@@ -1,3 +1,8 @@
+/**
+ * Componente AcademicAlerts — Muestra una lista de alertas académicas
+ * con su severidad (Alta, Media, Baja) y descripción.
+ */
+
 import { AlertCircle } from 'lucide-react'
 
 import { Badge } from '@/components/ui/Badge'
@@ -5,9 +10,11 @@ import { Card, CardDescription, CardTitle } from '@/components/ui/Card'
 import type { AcademicAlert } from '@/modules/dashboard/types/dashboard'
 
 type AcademicAlertsProps = {
+  /** Lista de alertas académicas. */
   alerts: AcademicAlert[]
 }
 
+/** Panel de alertas académicas del dashboard. */
 export function AcademicAlerts({ alerts }: AcademicAlertsProps) {
   return (
     <Card className="p-5">

@@ -1,3 +1,8 @@
+/**
+ * Servicio de Estudiantes — Funciones CRUD para estudiantes, matrículas,
+ * importación, notificaciones y consulta de grados con secciones.
+ */
+
 import { api } from '@/services/apiClient'
 import type {
   Student,
@@ -26,6 +31,7 @@ type GuardianNotificationResult = {
   subject: string
 }
 
+/** Obtiene una lista paginada de estudiantes con filtros y búsqueda. */
 export async function getStudents({
   search = '',
   filters = { status: 'active' },
@@ -51,6 +57,7 @@ export async function getStudents({
   }
 }
 
+/** Obtiene el detalle completo de un estudiante por su ID. */
 export async function getStudentById(
   id: string,
 ): Promise<StudentDetail | null> {
@@ -58,18 +65,22 @@ export async function getStudentById(
   return student ? normalizeStudentDetail(student) : null
 }
 
+/** Crea un nuevo estudiante. */
 export async function createStudent(input: CreateStudentInput): Promise<Student> {
   return api.post<Student>('/students', input)
 }
 
+/** Actualiza los datos de un estudiante existente. */
 export async function updateStudent(id: string, input: UpdateStudentInput): Promise<Student> {
   return api.patch<Student>(`/students/${id}`, input)
 }
 
+/** Desactiva un estudiante (cambia su estado a 'inactive'). */
 export async function deactivateStudent(id: string): Promise<Student> {
   return api.patch<Student>(`/students/${id}`, { status: 'inactive' })
 }
 
+/** Importa una lista de estudiantes desde un archivo. */
 export async function importStudents(rows: { firstName: string; lastName: string; studentCode: string; documentId: string; birthDate: string; gender: string; address: string }[]): Promise<{
   imported: number
   errors: { row: number; reason: string }[]
@@ -77,23 +88,28 @@ export async function importStudents(rows: { firstName: string; lastName: string
   return api.post('/students/import', { students: rows })
 }
 
+/** Obtiene la lista de matrículas de un estudiante. */
 export async function getStudentEnrollments(studentId: string): Promise<EnrollmentListItem[]> {
   const enrollments = await api.get<EnrollmentListItem[]>(`/students/${studentId}/enrollments`)
   return Array.isArray(enrollments) ? enrollments.map(normalizeEnrollmentListItem) : []
 }
 
+/** Crea una nueva matrícula para un estudiante. */
 export async function createEnrollment(input: CreateEnrollmentInput): Promise<void> {
   await api.post('/students/enrollments', input)
 }
 
+/** Elimina una matrícula por su ID. */
 export async function deleteEnrollment(id: string): Promise<void> {
   await api.delete(`/students/enrollments/${id}`)
 }
 
+/** Obtiene la lista de grados con sus secciones disponibles. */
 export async function getGradesWithSections(): Promise<GradeWithSections[]> {
   return api.get<GradeWithSections[]>('/students/grades-with-sections')
 }
 
+/** Notifica a los tutores de estudiantes en riesgo de bajo rendimiento. */
 export async function notifyGuardiansForAtRiskStudents(studentIds: string[]): Promise<{
   notified: number
   message: string
@@ -112,10 +128,12 @@ export async function notifyGuardiansForAtRiskStudents(studentIds: string[]): Pr
     .map((r) => (r as PromiseFulfilledResult<GuardianNotificationResult>).value)
 }
 
+/** Normaliza el valor del estado a minúsculas. */
 function normalizeStatus(status: Student['status'] | string): Student['status'] {
   return String(status).toLowerCase() as Student['status']
 }
 
+/** Normaliza los datos de un estudiante para listados con valores por defecto. */
 function normalizeStudentListItem(student: RawStudentListItem): StudentListItem {
   return {
     ...student,
@@ -132,6 +150,7 @@ function normalizeStudentListItem(student: RawStudentListItem): StudentListItem 
   }
 }
 
+/** Normaliza los datos de detalle de un estudiante. */
 function normalizeStudentDetail(student: RawStudentDetail): StudentDetail {
   return {
     ...student,
@@ -141,6 +160,7 @@ function normalizeStudentDetail(student: RawStudentDetail): StudentDetail {
   }
 }
 
+/** Normaliza los datos de un elemento de lista de matrículas. */
 function normalizeEnrollmentListItem(enrollment: EnrollmentListItem): EnrollmentListItem {
   return {
     ...enrollment,

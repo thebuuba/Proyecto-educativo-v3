@@ -1,5 +1,13 @@
+/**
+ * @file Módulo de Configuración — Tipos y constantes
+ *
+ * Define las estructuras para el perfil del centro educativo
+ * y la gestión de años escolares.
+ */
+
 import type { RecordStatus } from '@/types/domain'
 
+/** Perfil del centro educativo */
 export type SchoolProfile = {
   id: string
   name: string
@@ -20,6 +28,7 @@ export type SchoolProfile = {
   updatedAt: string
 }
 
+/** Año escolar registrado en el sistema */
 export type SchoolYearItem = {
   id: string
   name: string

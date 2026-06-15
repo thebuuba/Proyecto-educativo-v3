@@ -1,12 +1,21 @@
+/**
+ * Servicio de grados y secciones
+ * @module GradesSectionsService
+ * @description Contiene la lógica de negocio para la gestión de grados, secciones,
+ * materias y asignación de materias a secciones. Proporciona operaciones CRUD
+ * y consultas de datos completos del curso.
+ */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
+/** Convierte el valor de estado a minúsculas */
 function status(value: string) {
   return value.toLowerCase()
 }
 
 @Injectable()
 export class GradesSectionsService {
+  /** Obtiene los datos completos del curso: grados, secciones, asignaciones, catálogos y año escolar actual */
   async getCourseData(schoolId: string) {
     const [grades, sections, assignments, subjects, academicLevels, cycles, modalities, teachers, currentSchoolYear] =
       await Promise.all([
@@ -86,26 +95,32 @@ export class GradesSectionsService {
     }
   }
 
+  /** Obtiene los niveles académicos del sistema */
   getAcademicLevels() {
     return prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } })
   }
 
+  /** Obtiene los ciclos académicos del sistema */
   getCycles() {
     return prisma.drAcademicCycle.findMany({ orderBy: { name: 'asc' } })
   }
 
+  /** Obtiene las modalidades del sistema */
   getModalities() {
     return prisma.drModality.findMany({ orderBy: { name: 'asc' } })
   }
 
+  /** Obtiene los profesores activos del colegio */
   getTeachers(schoolId: string) {
     return prisma.teacher.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { firstName: 'asc' } })
   }
 
+  /** Obtiene todos los grados del colegio */
   findAllGrades(schoolId: string) {
     return prisma.grade.findMany({ where: { schoolId }, orderBy: { sequence: 'asc' } })
   }
 
+  /** Crea un nuevo grado */
   createGrade(schoolId: string, body: any) {
     return prisma.grade.create({
       data: {
@@ -120,6 +135,7 @@ export class GradesSectionsService {
     })
   }
 
+  /** Actualiza un grado existente */
   async updateGrade(schoolId: string, id: string, body: any) {
     const grade = await prisma.grade.findFirst({ where: { id, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
@@ -138,6 +154,7 @@ export class GradesSectionsService {
     })
   }
 
+  /** Desactiva un grado (borrado lógico) */
   async deleteGrade(schoolId: string, id: string) {
     const grade = await prisma.grade.findFirst({ where: { id, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
@@ -148,6 +165,7 @@ export class GradesSectionsService {
     })
   }
 
+  /** Obtiene las secciones activas de un grado */
   findSectionsByGrade(schoolId: string, gradeId: string) {
     return prisma.section.findMany({
       where: { schoolId, gradeId, status: 'ACTIVE' },
@@ -155,6 +173,7 @@ export class GradesSectionsService {
     })
   }
 
+  /** Crea una nueva sección validando el grado */
   async createSection(schoolId: string, body: any) {
     const grade = await prisma.grade.findFirst({ where: { id: body.gradeId, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
@@ -169,6 +188,7 @@ export class GradesSectionsService {
     })
   }
 
+  /** Actualiza una sección existente */
   async updateSection(schoolId: string, id: string, body: any) {
     const section = await prisma.section.findFirst({ where: { id, schoolId } })
     if (!section) throw new NotFoundException('Section not found')
@@ -188,6 +208,7 @@ export class GradesSectionsService {
     })
   }
 
+  /** Desactiva una sección (borrado lógico) */
   async deleteSection(schoolId: string, id: string) {
     const section = await prisma.section.findFirst({ where: { id, schoolId } })
     if (!section) throw new NotFoundException('Section not found')
@@ -198,10 +219,12 @@ export class GradesSectionsService {
     })
   }
 
+  /** Obtiene todas las materias del colegio */
   findAllSubjects(schoolId: string) {
     return prisma.subject.findMany({ where: { schoolId }, orderBy: { name: 'asc' } })
   }
 
+  /** Crea una nueva materia */
   createSubject(schoolId: string, body: any) {
     return prisma.subject.create({
       data: {
@@ -214,6 +237,7 @@ export class GradesSectionsService {
     })
   }
 
+  /** Asigna una materia a una sección con un profesor, validando todas las referencias */
   async assignSubject(schoolId: string, body: any) {
     const [grade, section, subject, schoolYear, teacher] = await Promise.all([
       prisma.grade.findFirst({ where: { id: body.gradeId, schoolId } }),
@@ -242,12 +266,14 @@ export class GradesSectionsService {
     })
   }
 
+  /** Obtiene las asignaciones materia-sección activas */
   getSectionSubjects(schoolId: string) {
     return prisma.sectionSubject.findMany({
       where: { schoolId, status: 'ACTIVE' },
     })
   }
 
+  /** Desactiva una asignación materia-sección (borrado lógico) */
   async removeSectionSubject(schoolId: string, id: string) {
     const ss = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
     if (!ss) throw new NotFoundException('Section subject not found')

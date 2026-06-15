@@ -1,16 +1,33 @@
+/**
+ * Modal o diálogo superpuesto con foco atrapado y cierre por Escape.
+ */
 import { X } from 'lucide-react'
 import { useRef, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
 
+/** Propiedades del componente Modal. */
 type ModalProps = {
+  /** Título del modal. */
   title: string
+  /** Descripción opcional mostrada bajo el título. */
   description?: string
+  /** Contenido interno del modal. */
   children: ReactNode
+  /** Función llamada al cerrar el modal. */
   onClose: () => void
 }
 
+/**
+ * Modal centrado con overlay oscuro, encabezado fijo y contenido
+ * desplazable. Atrapa el foco y cierra con Escape.
+ *
+ * @param props.title - Título del modal.
+ * @param props.description - Descripción opcional.
+ * @param props.children - Contenido del cuerpo.
+ * @param props.onClose - Callback de cierre.
+ */
 export function Modal({ title, description, children, onClose }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })

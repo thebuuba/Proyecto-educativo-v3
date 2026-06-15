@@ -1,3 +1,10 @@
+/**
+ * @file Componente SchoolProfileForm
+ *
+ * Formulario para editar los datos del perfil del centro
+ * educativo: nombre, sector, regional, distrito, jornada, etc.
+ */
+
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
@@ -6,6 +13,7 @@ import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import type { SchoolProfile } from '@/modules/settings/types'
 
+/** Propiedades del componente SchoolProfileForm */
 type SchoolProfileFormProps = {
   profile: SchoolProfile | null
   onSave: (input: {

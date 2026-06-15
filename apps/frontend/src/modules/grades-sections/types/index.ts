@@ -1,5 +1,13 @@
+/**
+ * @file Módulo de Cursos — Tipos y constantes
+ *
+ * Define las estructuras para la gestión de grados, secciones,
+ * asignaturas y asignación docente.
+ */
+
 import type { RecordStatus } from '@/types/domain'
 
+/** Grado o curso académico */
 export type Grade = {
   id: string
   name: string
@@ -16,6 +24,7 @@ export type Grade = {
   updatedAt: string
 }
 
+/** Sección o grupo dentro de un grado */
 export type Section = {
   id: string
   gradeId: string
@@ -27,10 +36,12 @@ export type Section = {
   assignments: SectionSubjectAssignment[]
 }
 
+/** Grado con sus secciones incluidas */
 export type GradeWithSections = Grade & {
   sections: Section[]
 }
 
+/** Nivel académico (MINERD) */
 export type AcademicLevel = {
   id: string
   code: string
@@ -38,6 +49,7 @@ export type AcademicLevel = {
   sequence: number
 }
 
+/** Ciclo académico dentro de un nivel */
 export type AcademicCycle = {
   id: string
   code: string
@@ -48,6 +60,7 @@ export type AcademicCycle = {
   gradeSequenceTo: number | null
 }
 
+/** Modalidad educativa (general, técnica, artes) */
 export type Modality = {
   id: string
   code: string
@@ -56,6 +69,7 @@ export type Modality = {
   appliesToGradeSequence: number | null
 }
 
+/** Asignatura o materia del catálogo */
 export type Subject = {
   id: string
   code: string
@@ -64,12 +78,14 @@ export type Subject = {
   credits: number | null
 }
 
+/** Opción de docente para seleccionar en formularios */
 export type TeacherOption = {
   id: string
   name: string
   email: string | null
 }
 
+/** Asignación de una asignatura a una sección con su docente */
 export type SectionSubjectAssignment = {
   id: string
   sectionId: string
@@ -82,6 +98,7 @@ export type SectionSubjectAssignment = {
   status: RecordStatus
 }
 
+/** Catálogos completos del sistema: niveles, ciclos, modalidades, asignaturas, docentes */
 export type CourseCatalogs = {
   levels: AcademicLevel[]
   cycles: AcademicCycle[]
@@ -90,6 +107,7 @@ export type CourseCatalogs = {
   teachers: TeacherOption[]
 }
 
+/** Datos completos de cursos: grados, catálogos y año escolar activo */
 export type CourseData = {
   grades: GradeWithSections[]
   catalogs: CourseCatalogs

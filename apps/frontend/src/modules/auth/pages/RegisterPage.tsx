@@ -1,3 +1,8 @@
+/**
+ * Página de registro — Formulario para crear una nueva cuenta de institución
+ * con validación de campos, estado de carga y manejo de errores.
+ */
+
 import { AlertCircle, UserPlus } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
@@ -8,6 +13,7 @@ import { Input } from '@/components/ui/Input'
 import { PasswordInput } from '@/components/ui/PasswordInput'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
+/** Genera un slug URL-friendly a partir de un texto. */
 function createSlug(value: string) {
   return value
     .trim()
@@ -20,6 +26,7 @@ function createSlug(value: string) {
     .replace(/^-|-$/g, '')
 }
 
+/** Retorna un mensaje de error legible para el registro. */
 function getRegisterErrorMessage(error: unknown) {
   if (!(error instanceof Error)) {
     return 'No se pudo crear la cuenta. Intenta nuevamente.'
@@ -32,6 +39,10 @@ function getRegisterErrorMessage(error: unknown) {
   return error.message
 }
 
+/**
+ * Página de registro de institución.
+ * Redirige al login tras un registro exitoso.
+ */
 export function RegisterPage() {
   const { register } = useAuth()
   const [schoolName, setSchoolName] = useState('')
@@ -47,6 +58,7 @@ export function RegisterPage() {
     return <Navigate to="/" replace />
   }
 
+  /** Maneja el envío del formulario de registro. */
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setErrorMessage('')

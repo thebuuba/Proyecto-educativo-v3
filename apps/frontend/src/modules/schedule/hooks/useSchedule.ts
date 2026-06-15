@@ -1,3 +1,10 @@
+/**
+ * @file Hook de Horario
+ *
+ * Gestiona el estado del horario docente: bloques horarios,
+ * entradas, filtros y datos auxiliares (secciones, docentes).
+ */
+
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
@@ -27,6 +34,7 @@ import type {
   UpdateTimeSlotInput,
 } from '@/modules/schedule/types'
 
+/** Hook principal para la gestión del horario */
 export function useSchedule() {
   const [timeSlots, setTimeSlots] = useState<TimeSlot[]>([])
   const [entries, setEntries] = useState<ScheduleEntry[]>([])
@@ -46,6 +54,7 @@ export function useSchedule() {
     filtersRef.current = filters
   }, [filters])
 
+  /** Recarga los bloques horarios desde el servidor */
   const refetchTimeSlots = useCallback(async () => {
     setError(null)
     try {
@@ -60,6 +69,7 @@ export function useSchedule() {
     }
   }, [])
 
+  /** Recarga las entradas del horario desde el servidor */
   const refetchEntries = useCallback(async () => {
     setError(null)
     try {
@@ -78,6 +88,7 @@ export function useSchedule() {
     }
   }, [schoolYearId])
 
+  /** Carga los datos iniciales: año escolar, bloques, secciones, docentes, asignaturas */
   const loadInitialData = useCallback(async () => {
     setLoading(true)
     setError(null)
@@ -116,10 +127,12 @@ export function useSchedule() {
     void loadInitialData()
   }, [loadInitialData])
 
+  /** Recarga todos los datos (bloques y entradas) */
   const refetchAll = useCallback(async () => {
     await Promise.all([refetchTimeSlots(), refetchEntries()])
   }, [refetchTimeSlots, refetchEntries])
 
+  /** Crea un nuevo bloque horario y refresca la lista */
   const createTimeSlot = useCallback(
     async (input: CreateTimeSlotInput) => {
       const record = await createTimeSlotRecord(input)
@@ -129,6 +142,7 @@ export function useSchedule() {
     [refetchTimeSlots],
   )
 
+  /** Actualiza un bloque horario y refresca la lista */
   const updateTimeSlot = useCallback(
     async (id: string, input: UpdateTimeSlotInput) => {
       const record = await updateTimeSlotRecord(id, input)
@@ -138,6 +152,7 @@ export function useSchedule() {
     [refetchTimeSlots],
   )
 
+  /** Elimina un bloque horario y refresca la lista */
   const removeTimeSlot = useCallback(
     async (id: string) => {
       await deleteTimeSlotRecord(id)
@@ -146,6 +161,7 @@ export function useSchedule() {
     [refetchTimeSlots],
   )
 
+  /** Crea una nueva entrada en el horario y refresca */
   const createEntry = useCallback(
     async (input: CreateScheduleEntryInput) => {
       const record = await createScheduleEntryRecord(input)
@@ -155,6 +171,7 @@ export function useSchedule() {
     [refetchEntries],
   )
 
+  /** Actualiza una entrada de horario y refresca */
   const updateEntry = useCallback(
     async (id: string, input: UpdateScheduleEntryInput) => {
       const record = await updateScheduleEntryRecord(id, input)
@@ -164,6 +181,7 @@ export function useSchedule() {
     [refetchEntries],
   )
 
+  /** Elimina una entrada de horario y refresca */
   const removeEntry = useCallback(
     async (id: string) => {
       await deleteScheduleEntryRecord(id)
@@ -180,6 +198,7 @@ export function useSchedule() {
     void refetchEntries()
   }, [filters, refetchEntries])
 
+  /** Actualiza los filtros del horario */
   const updateFilters = useCallback(
     (newFilters: ScheduleFilters) => {
       setFilters(newFilters)

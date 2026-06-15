@@ -1,3 +1,10 @@
+/**
+ * @file Hook de Configuración
+ *
+ * Gestiona el estado del perfil del centro educativo y los
+ * años escolares.
+ */
+
 import { useCallback, useEffect, useState } from 'react'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
@@ -17,6 +24,7 @@ import type {
   UpdateSchoolYearInput,
 } from '@/modules/settings/types'
 
+/** Hook principal para la gestión de configuración del centro */
 export function useSettings() {
   const { schoolId } = useAuth()
   const [profile, setProfile] = useState<SchoolProfile | null>(null)

@@ -1,12 +1,19 @@
+/**
+ * Componente RecentActivity — Lista de actividades recientes del docente
+ * con iconos según el tipo (asistencia, calificación, planificación, reporte).
+ */
+
 import { ArrowRight, CalendarCheck, ClipboardCheck, FileText, NotebookPen } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import type { RecentActivityItem } from '@/modules/dashboard/types/dashboard'
 
 type RecentActivityProps = {
+  /** Lista de elementos de actividad reciente. */
   items: RecentActivityItem[]
 }
 
+/** Mapa de iconos por tipo de actividad. */
 const icons = {
   attendance: CalendarCheck,
   grade: ClipboardCheck,
@@ -14,6 +21,7 @@ const icons = {
   report: FileText,
 }
 
+/** Panel de actividad reciente del dashboard. */
 export function RecentActivity({ items }: RecentActivityProps) {
   return (
     <div className="rounded-2xl border border-border bg-card p-6 shadow-sm" style={{ boxShadow: '0 1px 2px rgba(26,31,58,0.04)' }}>

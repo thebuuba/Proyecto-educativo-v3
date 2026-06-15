@@ -1,3 +1,11 @@
+/**
+ * @file Hook de Calificaciones
+ *
+ * Gestiona el estado y las operaciones del módulo de calificaciones:
+ * selección de sección-asignatura, carga de estudiantes, guardado
+ * de notas y cálculo de estadísticas.
+ */
+
 import { useCallback, useEffect, useState } from 'react'
 
 import {
@@ -14,6 +22,7 @@ import type {
   StudentGradeRow,
 } from '@/modules/academic-grades/types'
 
+/** Hook principal para la gestión de calificaciones */
 export function useGrades() {
   const [sectionSubjects, setSectionSubjects] = useState<SectionSubjectOption[]>([])
   const [periods, setPeriods] = useState<AcademicPeriodOpt[]>([])
@@ -36,6 +45,7 @@ export function useGrades() {
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
+  /** Carga las secciones-asignaturas y los períodos académicos */
   const loadInitialData = useCallback(async () => {
     setLoading(true)
     setError(null)
@@ -69,6 +79,7 @@ export function useGrades() {
     void loadInitialData()
   }, [loadInitialData])
 
+  /** Carga los estudiantes y sus calificaciones para la selección actual */
   const loadStudents = useCallback(async () => {
     if (!selectedSsId || !selectedPeriodId) return
 
@@ -101,6 +112,7 @@ export function useGrades() {
     void loadStudents()
   }, [selectedSsId, selectedPeriodId, loadStudents])
 
+  /** Actualiza la calificación de un estudiante y la persiste */
   const updateScore = useCallback(
     async (
       enrollmentId: string,

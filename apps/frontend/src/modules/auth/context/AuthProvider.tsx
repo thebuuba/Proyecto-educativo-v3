@@ -1,3 +1,9 @@
+/**
+ * Proveedor de autenticación — Componente que envuelve la aplicación y
+ * provee el estado de autenticación, los métodos para iniciar/cerrar sesión,
+ * registrar, recargar el perfil y verificar roles/permisos.
+ */
+
 import type { ReactNode } from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
@@ -37,9 +43,15 @@ const initialState: AuthState = {
   authError: null,
 }
 
+/**
+ * Componente proveedor de autenticación.
+ * Gestiona el estado de sesión, carga el perfil al montar y expone
+ * funciones para login, register, logout y verificación de roles/permisos.
+ */
 export function AuthProvider({ children }: AuthProviderProps) {
   const [state, setState] = useState<AuthState>(initialState)
 
+  /** Limpia el estado de autenticación y elimina el token. */
   const clearAuthState = useCallback((authError: string | null = null) => {
     setAuthToken(null)
     setState({
@@ -53,6 +65,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     })
   }, [])
 
+  /** Carga el estado de autenticación desde el servidor (perfil, roles, permisos). */
   const loadAuthState = useCallback(async () => {
     const token = getAuthToken()
     if (!token) {
@@ -95,6 +108,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     void loadAuthState()
   }, [loadAuthState])
 
+  /** Aplica los datos de una sesión (login o registro) al estado global. */
   const applySession = useCallback((response: LoginResponse) => {
     setAuthToken(response.token)
     setState({

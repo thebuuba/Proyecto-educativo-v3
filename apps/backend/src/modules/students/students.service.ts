@@ -1,9 +1,19 @@
+/**
+ * Servicio de estudiantes.
+ *
+ * Implementa la lógica de negocio para la gestión de estudiantes,
+ * incluyendo operaciones CRUD, matrículas, apoderados,
+ * notificaciones e importación masiva de datos desde archivos externos.
+ */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma, Prisma } from '@aula/database'
 import { CreateStudentDto } from './dto/create-student.dto'
 import { UpdateStudentDto } from './dto/update-student.dto'
 import { CreateEnrollmentDto } from './dto/create-enrollment.dto'
 
+/**
+ * Representa una fila de datos de un estudiante durante la importación masiva.
+ */
 type ImportStudentRow = {
   rowNumber?: number
   studentCode?: string
@@ -15,17 +25,36 @@ type ImportStudentRow = {
   address?: string
 }
 
+/**
+ * Representa un error encontrado durante la importación de estudiantes.
+ */
 type ImportStudentError = {
   row: number
   reason: string
 }
 
+/** Fecha de nacimiento por defecto usada cuando no se puede parsear la fecha en una importación. */
 const IMPORT_FALLBACK_BIRTH_DATE = new Date('2000-01-01T00:00:00')
 
+/**
+ * Limpia un valor desconocido retornando su representación como texto
+ * sin espacios al inicio o final, o una cadena vacía si no es texto.
+ *
+ * @param value - Valor a limpiar.
+ * @returns Cadena de texto limpia o cadena vacía.
+ */
 function cleanText(value: unknown) {
   return typeof value === 'string' ? value.trim() : ''
 }
 
+/**
+ * Verifica si los componentes año, mes y día forman una fecha válida.
+ *
+ * @param year - Año de la fecha.
+ * @param month - Mes de la fecha (1-12).
+ * @param day - Día de la fecha.
+ * @returns true si la fecha es válida, false en caso contrario.
+ */
 function isValidDateParts(year: number, month: number, day: number) {
   const date = new Date(year, month - 1, day)
   return (
@@ -35,6 +64,16 @@ function isValidDateParts(year: number, month: number, day: number) {
   )
 }
 
+/**
+ * Parsea una fecha de nacimiento desde un valor desconocido.
+ *
+ * Soporta formatos con separadores '/' o '-', tanto en orden
+ * año-mes-día como día-mes-año. Si no se puede interpretar,
+ * retorna una fecha por defecto.
+ *
+ * @param value - Valor a parsear como fecha de nacimiento.
+ * @returns Objeto Date con la fecha parseada o la fecha por defecto.
+ */
 function parseBirthDate(value: unknown) {
   const raw = cleanText(value)
   if (!raw) return IMPORT_FALLBACK_BIRTH_DATE
@@ -58,8 +97,25 @@ function parseBirthDate(value: unknown) {
   return date
 }
 
+/**
+ * Servicio de estudiantes.
+ *
+ * Implementa la lógica de negocio para la gestión de estudiantes,
+ * incluyendo operaciones CRUD, matrículas, apoderados,
+ * notificaciones e importación masiva de datos.
+ */
 @Injectable()
 export class StudentsService {
+  /**
+   * Obtiene una lista paginada de estudiantes con filtros opcionales.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param search - Término de búsqueda para filtrar por nombre, apellido o código.
+   * @param status - Estado del estudiante para filtrar (ej. ACTIVE, INACTIVE, all).
+   * @param page - Número de página (por defecto 1).
+   * @param pageSize - Tamaño de página (por defecto 50).
+   * @returns Objeto con la lista de estudiantes, total, página y tamaño de página.
+   */
   async findAll(schoolId: string, search?: string, status?: string, page = 1, pageSize = 50) {
     const where: Prisma.StudentWhereInput = { schoolId }
 
@@ -91,12 +147,27 @@ export class StudentsService {
     return { data, total, page, pageSize }
   }
 
+  /**
+   * Busca un estudiante por su identificador dentro de un colegio.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param id - Identificador del estudiante.
+   * @returns El estudiante encontrado.
+   * @throws NotFoundException si el estudiante no existe.
+   */
   async findOne(schoolId: string, id: string) {
     const student = await prisma.student.findFirst({ where: { id, schoolId } })
     if (!student) throw new NotFoundException('Student not found')
     return student
   }
 
+  /**
+   * Crea un nuevo estudiante en el sistema.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param dto - Datos del estudiante a crear.
+   * @returns El estudiante creado.
+   */
   create(schoolId: string, dto: CreateStudentDto) {
     return prisma.student.create({
       data: {
@@ -112,6 +183,17 @@ export class StudentsService {
     })
   }
 
+  /**
+   * Actualiza los datos de un estudiante existente.
+   *
+   * Solo actualiza los campos proporcionados en el DTO.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param id - Identificador del estudiante a actualizar.
+   * @param dto - Datos parciales a modificar del estudiante.
+   * @returns El estudiante actualizado.
+   * @throws NotFoundException si el estudiante no existe.
+   */
   async update(schoolId: string, id: string, dto: UpdateStudentDto) {
     const student = await prisma.student.findFirst({ where: { id, schoolId } })
     if (!student) throw new NotFoundException('Student not found')
@@ -130,6 +212,14 @@ export class StudentsService {
     })
   }
 
+  /**
+   * Desactiva un estudiante cambiando su estado a INACTIVE.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param id - Identificador del estudiante a desactivar.
+   * @returns El estudiante con el estado actualizado.
+   * @throws NotFoundException si el estudiante no existe.
+   */
   async deactivate(schoolId: string, id: string) {
     const student = await prisma.student.findFirst({ where: { id, schoolId } })
     if (!student) throw new NotFoundException('Student not found')
@@ -140,6 +230,13 @@ export class StudentsService {
     })
   }
 
+  /**
+   * Obtiene todas las matrículas de un estudiante.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param studentId - Identificador del estudiante.
+   * @returns Lista de matrículas del estudiante.
+   */
   async getEnrollments(schoolId: string, studentId: string) {
     await this.findOne(schoolId, studentId)
     return prisma.enrollment.findMany({
@@ -147,6 +244,17 @@ export class StudentsService {
     })
   }
 
+  /**
+   * Crea una nueva matrícula para un estudiante en un grado, sección y año escolar.
+   *
+   * Valida que el estudiante, grado, sección y año escolar existan
+   * y pertenezcan al colegio especificado.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param dto - Datos de la matrícula a crear.
+   * @returns La matrícula creada.
+   * @throws NotFoundException si alguna entidad relacionada no existe.
+   */
   async createEnrollment(schoolId: string, dto: CreateEnrollmentDto) {
     const [student, grade, section, schoolYear] = await Promise.all([
       prisma.student.findFirst({ where: { id: dto.studentId, schoolId } }),
@@ -175,6 +283,14 @@ export class StudentsService {
     })
   }
 
+  /**
+   * Elimina una matrícula junto con sus registros de asistencia y calificaciones.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param id - Identificador de la matrícula a eliminar.
+   * @returns La matrícula eliminada.
+   * @throws NotFoundException si la matrícula no existe.
+   */
   async deleteEnrollment(schoolId: string, id: string) {
     const enrollment = await prisma.enrollment.findFirst({ where: { id, schoolId } })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
@@ -186,6 +302,12 @@ export class StudentsService {
     return prisma.enrollment.delete({ where: { id } })
   }
 
+  /**
+   * Obtiene los grados activos con sus secciones correspondientes.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @returns Lista de grados ordenados por secuencia, cada uno con sus secciones.
+   */
   async getGradesWithSections(schoolId: string) {
     const grades = await prisma.grade.findMany({
       where: { schoolId, status: 'ACTIVE' },
@@ -206,6 +328,13 @@ export class StudentsService {
     }))
   }
 
+  /**
+   * Obtiene los apoderados asociados a un estudiante.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param studentId - Identificador del estudiante.
+   * @returns Lista de vínculos entre el estudiante y sus apoderados.
+   */
   async getGuardians(schoolId: string, studentId: string) {
     await this.findOne(schoolId, studentId)
     const links = await prisma.studentGuardian.findMany({
@@ -214,6 +343,18 @@ export class StudentsService {
     return links
   }
 
+  /**
+   * Importa estudiantes de forma masiva desde un arreglo de datos.
+   *
+   * Valida cada fila, detecta duplicados por código y documento,
+   * y crea los estudiantes en la base de datos. Retorna los
+   * resultados exitosos y los errores encontrados.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param students - Arreglo de datos de estudiantes a importar.
+   * @returns Objeto con los estudiantes importados y la lista de errores.
+   * @throws BadRequestException si el cuerpo no es un arreglo.
+   */
   async importStudents(schoolId: string, students: ImportStudentRow[]) {
     if (!Array.isArray(students)) {
       throw new BadRequestException('El cuerpo debe incluir un arreglo de estudiantes.')
@@ -287,6 +428,14 @@ export class StudentsService {
     return { imported: results.length, students: results, errors }
   }
 
+  /**
+   * Envía una notificación simulada a los apoderados de un estudiante.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param studentId - Identificador del estudiante.
+   * @param body - Objeto con el mensaje y asunto de la notificación.
+   * @returns Resultado de la operación con el número de apoderados notificados.
+   */
   async notifyGuardians(schoolId: string, studentId: string, body: any) {
     await this.findOne(schoolId, studentId)
     const links = await prisma.studentGuardian.findMany({

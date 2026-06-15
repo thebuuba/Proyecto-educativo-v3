@@ -1,3 +1,6 @@
+/**
+ * Definición de rutas de la aplicación y navegación por módulos.
+ */
 import {
   BookOpen,
   CalendarCheck,
@@ -17,6 +20,13 @@ import type { ComponentType } from 'react'
 import { DashboardPage } from '@/modules/dashboard/pages/DashboardPage'
 import type { UserRole } from '@/types/domain'
 
+/**
+ * Carga diferida de un componente exportado por un módulo.
+ *
+ * @param importFn - Función de importación dinámica.
+ * @param exportName - Nombre del export a cargar.
+ * @returns Componente lazy.
+ */
 function lazyPage(importFn: () => Promise<Record<string, unknown>>, exportName: string) {
   return lazy(() => importFn().then((m) => ({ default: m[exportName] as ComponentType })))
 }
@@ -33,16 +43,25 @@ const SettingsPage = lazyPage(() => import('@/modules/settings/pages/SettingsPag
 const StudentsPage = lazyPage(() => import('@/modules/students/pages/StudentsPage'), 'StudentsPage')
 const SubjectsPage = lazyPage(() => import('@/modules/subjects/pages/SubjectsPage'), 'SubjectsPage')
 
+/** Definición de una ruta de la aplicación. */
 export type AppRoute = {
+  /** Ruta URL. */
   path: string
+  /** Etiqueta mostrada en la navegación. */
   label: string
+  /** Icono de la ruta. */
   icon: ComponentType<{ className?: string }>
+  /** Componente de la página. */
   component: ComponentType
+  /** Roles con acceso permitido. */
   allowedRoles: UserRole[]
+  /** Si es la ruta index del layout. */
   index?: boolean
+  /** Si se muestra en la barra lateral. */
   showInSidebar?: boolean
 }
 
+/** Todos los roles del sistema. */
 const allRoles: UserRole[] = [
   'admin',
   'director',
@@ -145,6 +164,7 @@ export const appRoutes: AppRoute[] = [
   },
 ]
 
+/** Rutas filtradas para mostrar en la barra de navegación lateral. */
 export const navigationRoutes = appRoutes
   .filter((route) => route.showInSidebar !== false)
   .map(({ path, label, icon, allowedRoles }) => ({

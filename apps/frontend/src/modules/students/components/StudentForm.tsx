@@ -1,3 +1,8 @@
+/**
+ * Componente StudentForm — Modal de formulario para crear o editar
+ * un estudiante con validación de cédula y campos obligatorios.
+ */
+
 import { AlertCircle, X } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useRef, useState } from 'react'
@@ -15,10 +20,15 @@ import type {
 import { formatCedula, isValidCedula } from '@/utils/cedula'
 
 type StudentFormProps = {
+  /** Estudiante a editar (nulo si es creación). */
   student?: StudentListItem | null
+  /** Indica si se está enviando el formulario. */
   submitting: boolean
+  /** Error del servidor. */
   error: string | null
+  /** Callback al enviar el formulario. */
   onSubmit: (input: CreateStudentInput) => Promise<void>
+  /** Callback para cerrar el formulario. */
   onClose: () => void
 }
 
@@ -34,6 +44,7 @@ const genderOptions = [
   { value: 'female', label: 'Femenino' },
 ]
 
+/** Modal de formulario para crear o editar estudiantes. */
 export function StudentForm({
   student,
   submitting,
@@ -206,6 +217,7 @@ export function StudentForm({
   )
 }
 
+/** Componente interno de campo de formulario con etiqueta. */
 function Field({
   label,
   children,

@@ -1,3 +1,10 @@
+/**
+ * @file Componente SubjectAssignmentForm
+ *
+ * Formulario modal para asignar una asignatura existente o
+ * crear una nueva y asignarla a una sección.
+ */
+
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 
@@ -10,6 +17,7 @@ import type {
   Subject,
 } from '@/modules/grades-sections/types'
 
+/** Propiedades del componente SubjectAssignmentForm */
 type SubjectAssignmentFormProps = {
   sectionLabel: string
   catalogs: Pick<CourseCatalogs, 'subjects' | 'teachers'>

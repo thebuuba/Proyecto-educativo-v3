@@ -1,7 +1,16 @@
+/**
+ * Componente de entrada de texto estilizado con borde,
+ * foco resaltado y estados deshabilitado.
+ */
 import type { InputHTMLAttributes } from 'react'
 
 import { cn } from '@/utils/cn'
 
+/**
+ * Campo de entrada de texto con estilos consistentes.
+ *
+ * @param props - Propiedades nativas del input HTML.
+ */
 export function Input({ className, ...props }: InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input

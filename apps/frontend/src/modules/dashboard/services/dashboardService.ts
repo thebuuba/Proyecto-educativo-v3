@@ -1,3 +1,8 @@
+/**
+ * Servicio del Dashboard — Funciones para obtener datos del panel principal,
+ * gestionar tareas pendientes y calcular la asistencia semanal.
+ */
+
 import { api } from '@/services/apiClient'
 import type {
   CreateDashboardTaskInput,
@@ -10,6 +15,7 @@ import { getCurrentSchoolYear } from '@/services/schoolYearService'
 
 const weekdayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']
 
+/** Obtiene los datos completos del dashboard para el usuario actual. */
 export async function getDashboardData(appUser: AppUser | null): Promise<DashboardData> {
   const today = new Date()
   const [currentSchoolYear, tasks] = await Promise.all([
@@ -33,15 +39,18 @@ export async function getDashboardData(appUser: AppUser | null): Promise<Dashboa
   }
 }
 
+/** Crea una nueva tarea en el dashboard. */
 export async function createDashboardTask(input: CreateDashboardTaskInput, appUserId: string | null): Promise<DashboardTask> {
   if (!input.title.trim()) throw new Error('Escribe un título para la tarea.')
   return api.post<DashboardTask>('/dashboard/tasks', { ...input, assignedTo: appUserId })
 }
 
+/** Marca una tarea como completada. */
 export async function completeDashboardTask(id: string): Promise<void> {
   await api.patch(`/dashboard/tasks/${id}`, { status: 'completed' })
 }
 
+/** Ejecuta una promesa y retorna un valor por defecto si falla, sin lanzar error. */
 function safeBlock<T>(promise: Promise<T>, fallback?: T): Promise<T | undefined> {
   return promise.catch((err) => {
     console.warn('Dashboard block failed', err)
@@ -49,6 +58,7 @@ function safeBlock<T>(promise: Promise<T>, fallback?: T): Promise<T | undefined>
   })
 }
 
+/** Retorna un objeto WeeklyAttendance vacío para la semana actual. */
 function getEmptyWeeklyAttendance(today: Date): WeeklyAttendance {
   const weekStart = getWeekStart(today)
   return {
@@ -59,6 +69,7 @@ function getEmptyWeeklyAttendance(today: Date): WeeklyAttendance {
   }
 }
 
+/** Retorna la fecha del inicio de la semana (lunes) para una fecha dada. */
 function getWeekStart(date: Date) {
   const start = new Date(date)
   const day = date.getDay() || 7
@@ -67,12 +78,14 @@ function getWeekStart(date: Date) {
   return start
 }
 
+/** Suma una cantidad de días a una fecha y retorna una nueva fecha. */
 function addDays(date: Date, days: number) {
   const next = new Date(date)
   next.setDate(next.getDate() + days)
   return next
 }
 
+/** Formatea una fecha como clave YYYY-MM-DD. */
 function formatDateKey(date: Date) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
 }

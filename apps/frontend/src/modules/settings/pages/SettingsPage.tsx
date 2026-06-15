@@ -1,3 +1,10 @@
+/**
+ * @file Página de Configuración
+ *
+ * Vista principal de parámetros institucionales con secciones
+ * para perfil del centro, años escolares y próximas funciones.
+ */
+
 import {
   AlertCircle,
   Building2,
@@ -15,6 +22,7 @@ import { AcademicYearManager } from '@/modules/settings/components/AcademicYearM
 import { SchoolProfileForm } from '@/modules/settings/components/SchoolProfileForm'
 import { useSettings } from '@/modules/settings/hooks/useSettings'
 
+/** Área de configuración disponible en la página */
 type SettingsArea = {
   title: string
   description: string
@@ -133,6 +141,7 @@ export function SettingsPage() {
   )
 }
 
+/** Tarjeta de acceso a un área de configuración */
 function SettingsAreaCard({ area }: { area: SettingsArea }) {
   const Icon = area.icon
   const content = (

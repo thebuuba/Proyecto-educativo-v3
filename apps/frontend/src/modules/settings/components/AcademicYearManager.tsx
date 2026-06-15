@@ -1,3 +1,10 @@
+/**
+ * @file Componente AcademicYearManager
+ *
+ * Gestión de años escolares: listado, creación y activación
+ * del período lectivo actual.
+ */
+
 import { Check, Plus } from 'lucide-react'
 import { useState } from 'react'
 
@@ -9,6 +16,7 @@ import { Modal } from '@/components/ui/Modal'
 import type { SchoolYearItem } from '@/modules/settings/types'
 import { cn } from '@/utils/cn'
 
+/** Propiedades del componente AcademicYearManager */
 type AcademicYearManagerProps = {
   schoolYears: SchoolYearItem[]
   onAdd: (input: {
@@ -275,6 +283,7 @@ export function AcademicYearManager({
   )
 }
 
+/** Obtiene las fechas por defecto del calendario académico según el año */
 function getDefaultAcademicCalendar(year: number) {
   if (year === 2025) {
     return {

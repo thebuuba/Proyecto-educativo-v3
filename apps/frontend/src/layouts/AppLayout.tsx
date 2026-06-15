@@ -1,9 +1,17 @@
+/**
+ * Layout principal de la aplicación con barra lateral y encabezado.
+ */
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
 import { Header } from '@/components/navigation/Header'
 import { Sidebar } from '@/components/navigation/Sidebar'
 
+/**
+ * Estructura de layout que combina Sidebar, Header y el contenido
+ * renderizado por las rutas anidadas (Outlet).
+ * Controla el estado de apertura/cierre de la barra lateral.
+ */
 export function AppLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 

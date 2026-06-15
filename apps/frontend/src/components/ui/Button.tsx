@@ -1,14 +1,24 @@
+/**
+ * Componente de botón reutilizable con variantes visuales,
+ * tamaños y estado de carga.
+ */
 import { LoaderCircle } from 'lucide-react'
 import type { ButtonHTMLAttributes } from 'react'
 
 import { cn } from '@/utils/cn'
 
+/** Variantes visuales del botón. */
 type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'outline' | 'destructive'
+/** Tamaños disponibles del botón. */
 type ButtonSize = 'sm' | 'md' | 'icon'
 
+/** Propiedades del componente Button. */
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  /** Variante visual del botón. */
   variant?: ButtonVariant
+  /** Tamaño del botón. */
   size?: ButtonSize
+  /** Si es true, muestra un spinner y deshabilita el botón. */
   loading?: boolean
 }
 
@@ -31,6 +41,10 @@ const sizeClasses: Record<ButtonSize, string> = {
   icon: 'size-10 rounded-lg p-0',
 }
 
+/**
+ * Botón con soporte para variantes, tamaños y estado de carga.
+ * Deshabilita el botón automáticamente cuando está en carga.
+ */
 export function Button({
   className,
   variant = 'primary',

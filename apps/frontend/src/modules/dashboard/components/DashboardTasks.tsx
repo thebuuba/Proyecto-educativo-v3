@@ -1,3 +1,8 @@
+/**
+ * Componente DashboardTasks — Lista de tareas pendientes con opción
+ * de agregar nuevas tareas y marcarlas como completadas.
+ */
+
 import { CircleAlert, Plus } from 'lucide-react'
 import { useState } from 'react'
 import type { FormEvent } from 'react'
@@ -10,12 +15,17 @@ import type {
 import { cn } from '@/utils/cn'
 
 type DashboardTasksProps = {
+  /** Lista de tareas pendientes. */
   tasks: DashboardTask[]
+  /** Indica si hay una operación en curso. */
   loading: boolean
+  /** Callback para agregar una nueva tarea. */
   onAddTask: (input: CreateDashboardTaskInput) => Promise<void>
+  /** Callback para marcar una tarea como completada. */
   onCompleteTask: (id: string) => Promise<void>
 }
 
+/** Panel de tareas pendientes del dashboard. */
 export function DashboardTasks({
   tasks,
   loading,
@@ -106,6 +116,7 @@ export function DashboardTasks({
   )
 }
 
+/** Formatea una fecha como día y mes abreviado (ej: 15 ene). */
 function formatDueDate(value: string) {
   return new Intl.DateTimeFormat('es-DO', {
     day: '2-digit',

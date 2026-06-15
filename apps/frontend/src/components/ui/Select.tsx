@@ -1,7 +1,15 @@
+/**
+ * Componente de selección desplegable estilizado.
+ */
 import type { SelectHTMLAttributes } from 'react'
 
 import { cn } from '@/utils/cn'
 
+/**
+ * Selector desplegable con estilos consistentes del sistema de diseño.
+ *
+ * @param props - Propiedades nativas del select HTML.
+ */
 export function Select({
   className,
   ...props

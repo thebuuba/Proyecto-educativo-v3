@@ -1,3 +1,10 @@
+/**
+ * @file Página de Reportes
+ *
+ * Vista principal de reportes exportables con formato
+ * CSV, XLS y PDF.
+ */
+
 import { Download, FileSpreadsheet, Printer } from 'lucide-react'
 import { useState } from 'react'
 
@@ -8,9 +15,12 @@ import {
   createReportExport,
 } from '@/modules/reports/services/reportExportService'
 
+/** Tipo de reporte disponible */
 type ReportKind = 'boletin' | 'registro-grado' | 'asistencia' | 'rendimiento' | 'promocion'
+/** Formato de exportación */
 type ExportFormat = 'csv' | 'xls' | 'pdf'
 
+/** Catálogo de reportes disponibles */
 const reports: { kind: ReportKind; title: string; description: string }[] = [
   {
     kind: 'boletin',

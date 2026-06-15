@@ -1,3 +1,6 @@
+/**
+ * Barra lateral de navegación con enlaces a módulos y cierre de sesión.
+ */
 import { GraduationCap, LogOut, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
@@ -6,11 +9,21 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { navigationRoutes } from '@/routes/appRoutes'
 import { cn } from '@/utils/cn'
 
+/** Propiedades del componente Sidebar. */
 type SidebarProps = {
+  /** Controla si la barra lateral está visible (mobile). */
   isOpen: boolean
+  /** Función para cerrar la barra lateral. */
   onClose: () => void
 }
 
+/**
+ * Barra lateral de navegación. En desktop se muestra fija; en mobile
+ * se superpone con overlay. Filtra rutas según los roles del usuario.
+ *
+ * @param props.isOpen - Visibilidad en mobile.
+ * @param props.onClose - Callback de cierre.
+ */
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const { hasRole, logout } = useAuth()
   const visibleRoutes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))

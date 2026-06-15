@@ -1,3 +1,10 @@
+/**
+ * @file Componente PeriodManager
+ *
+ * Modal para gestionar los trimestres académicos: crear,
+ * listar y eliminar períodos.
+ */
+
 import { AlertCircle, Plus, Trash2 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -11,6 +18,7 @@ import {
 } from '@/modules/planning/services/planningService'
 import type { AcademicPeriodSummary } from '@/modules/planning/types'
 
+/** Propiedades del componente PeriodManager */
 type PeriodManagerProps = {
   schoolYearId: string
   periods: AcademicPeriodSummary[]
@@ -18,6 +26,7 @@ type PeriodManagerProps = {
   onClose: () => void
 }
 
+/** Modal para gestionar trimestres académicos */
 export function PeriodManager({
   schoolYearId,
   periods,

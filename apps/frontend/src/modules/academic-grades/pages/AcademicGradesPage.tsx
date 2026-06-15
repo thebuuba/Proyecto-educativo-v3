@@ -1,3 +1,11 @@
+/**
+ * @file Página de Calificaciones
+ *
+ * Vista principal del módulo de calificaciones. Permite seleccionar
+ * sección-asignatura y período, visualizar la tabla de notas y
+ * gestionar las evaluaciones de los estudiantes.
+ */
+
 import { AlertCircle, RefreshCw } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
@@ -6,6 +14,7 @@ import { GradeSummary } from '@/modules/academic-grades/components/GradeSummary'
 import { GradeTable } from '@/modules/academic-grades/components/GradeTable'
 import { useGrades } from '@/modules/academic-grades/hooks/useGrades'
 
+/** Página principal de gestión de calificaciones */
 export function AcademicGradesPage() {
   const {
     sectionSubjects,

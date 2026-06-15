@@ -1,11 +1,20 @@
+/**
+ * @file Módulo de Planificación — Tipos y constantes
+ *
+ * Define las estructuras para la planificación curricular
+ * por competencias.
+ */
+
 import type { RecordStatus } from '@/types/domain'
 
+/** Momentos de la clase: inicio, desarrollo y cierre */
 export type PlanningActivities = {
   inicio: string
   desarrollo: string
   cierre: string
 }
 
+/** Entrada completa de planificación curricular */
 export type PlanningEntry = {
   id: string
   sectionSubjectId: string
@@ -32,6 +41,7 @@ export type PlanningEntry = {
   updatedAt: string
 }
 
+/** Datos para crear una nueva planificación */
 export type CreatePlanningEntryInput = {
   sectionSubjectId: string
   academicPeriodId: string
@@ -53,8 +63,10 @@ export type CreatePlanningEntryInput = {
   plannedDate?: string | null
 }
 
+/** Datos para actualizar una planificación (todos los campos opcionales) */
 export type UpdatePlanningEntryInput = Partial<CreatePlanningEntryInput>
 
+/** Planificación con datos adicionales del curso, sección y período */
 export type PlanningEntryWithDetails = PlanningEntry & {
   subjectName: string
   sectionName: string
@@ -62,11 +74,13 @@ export type PlanningEntryWithDetails = PlanningEntry & {
   periodName: string
 }
 
+/** Filtros para consultar planificaciones */
 export type PlanningFilters = {
   academicPeriodId?: string
   sectionSubjectId?: string
 }
 
+/** Resumen de un período académico para planificación */
 export type AcademicPeriodSummary = {
   id: string
   name: string
@@ -76,6 +90,7 @@ export type AcademicPeriodSummary = {
   status: RecordStatus
 }
 
+/** Opción de competencia fundamental para seleccionar en formularios */
 export type CompetencyOption = {
   id: string
   code: string

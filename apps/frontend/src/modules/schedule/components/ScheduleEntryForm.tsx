@@ -1,3 +1,10 @@
+/**
+ * @file Componente ScheduleEntryForm
+ *
+ * Formulario modal para crear una nueva entrada de horario
+ * (asignar materia a un bloque y día).
+ */
+
 import { AlertCircle, X } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useEffect, useRef, useState } from 'react'
@@ -9,6 +16,7 @@ import { useFocusTrap } from '@/hooks/useFocusTrap'
 import { getSectionSubjects, getSections, getTimeSlots } from '@/modules/schedule/services/scheduleService'
 import type { CreateScheduleEntryInput, SectionOption, TimeSlot } from '@/modules/schedule/types'
 
+/** Opciones de días de la semana para el formulario */
 const dayOptions = [
   { value: '1', label: 'Lunes' },
   { value: '2', label: 'Martes' },
@@ -23,6 +31,7 @@ type SectionSubjectOption = {
   teacherName: string
 }
 
+/** Propiedades del componente ScheduleEntryForm */
 type ScheduleEntryFormProps = {
   schoolYearId: string
   submitting: boolean
@@ -31,6 +40,7 @@ type ScheduleEntryFormProps = {
   onClose: () => void
 }
 
+/** Formulario modal para crear una nueva entrada en el horario */
 export function ScheduleEntryForm({
   schoolYearId,
   submitting,
@@ -232,6 +242,7 @@ export function ScheduleEntryForm({
   )
 }
 
+/** Componente auxiliar para etiqueta de campo de formulario */
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block space-y-1.5">

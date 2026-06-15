@@ -1,3 +1,10 @@
+/**
+ * @file Componente GradeCard
+ *
+ * Tarjeta de grado/curso con lista de secciones, asignaturas
+ * asignadas y acciones de administración.
+ */
+
 import { BookOpen, Edit3, Plus, Power, UsersRound } from 'lucide-react'
 
 import { Badge } from '@/components/ui/Badge'
@@ -6,6 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import type { GradeWithSections } from '@/modules/grades-sections/types'
 import { cn } from '@/utils/cn'
 
+/** Propiedades del componente GradeCard */
 type GradeCardProps = {
   grade: GradeWithSections
   canManage: boolean

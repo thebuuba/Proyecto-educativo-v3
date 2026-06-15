@@ -1,3 +1,7 @@
+/**
+ * Barrel file que reexporta todos los componentes de UI
+ * para facilitar su importación.
+ */
 export { Badge } from './Badge'
 export { Button } from './Button'
 export { Card, CardContent, CardDescription, CardHeader, CardTitle } from './Card'

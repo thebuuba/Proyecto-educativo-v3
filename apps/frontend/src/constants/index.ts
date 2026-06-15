@@ -1,3 +1,9 @@
+/**
+ * Constantes de la aplicación: códigos de error, umbrales,
+ * alertas y valores por defecto.
+ */
+
+/** Códigos de error de base de datos (PostgreSQL). */
 export const DB_ERROR = {
   UNIQUE_VIOLATION: '23505',
   FOREIGN_KEY_VIOLATION: '23503',
@@ -6,6 +12,7 @@ export const DB_ERROR = {
   PERMISSION_DENIED: '42501',
 } as const
 
+/** Umbrales numéricos para alertas y advertencias. */
 export const THRESHOLD = {
   ATTENDANCE_LOW: 70,
   ATTENDANCE_WARNING: 80,
@@ -15,12 +22,14 @@ export const THRESHOLD = {
   PERFORMANCE_LOW: 70,
 } as const
 
+/** Límites para notificaciones y alertas. */
 export const ALERT = {
   PERFORMANCE_HIGH: 10,
   ATTENDANCE_HIGH: 15,
   RECOVERY_HIGH: 5,
 } as const
 
+/** Valores por defecto para configuraciones del sistema. */
 export const DEFAULTS = {
   IMPORT_BATCH_SIZE: 50,
   MAX_WEEKLY_HOURS: 40,

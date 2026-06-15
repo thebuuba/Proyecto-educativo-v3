@@ -1,9 +1,20 @@
+/**
+ * Marca de la aplicación con nombre y enlace al inicio.
+ */
 import { NavLink } from 'react-router-dom'
 
+/** Propiedades del componente AppBrand. */
 type AppBrandProps = {
+  /** Callback opcional al hacer clic en la marca. */
   onClick?: () => void
 }
 
+/**
+ * Logotipo textual de la aplicación con las iniciales "AB"
+ * y el nombre "Aula Base". Enlaza a la raíz del sitio.
+ *
+ * @param props.onClick - Callback opcional al hacer clic.
+ */
 export function AppBrand({ onClick }: AppBrandProps) {
   return (
     <NavLink to="/" className="flex items-center gap-3" onClick={onClick}>

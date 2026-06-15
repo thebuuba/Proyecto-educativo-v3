@@ -1,3 +1,8 @@
+/**
+ * Componente RecentStudentsTable — Tabla de estudiantes recientes
+ * con columnas de nombre, grado, estado, promedio y asistencia.
+ */
+
 import { Badge } from '@/components/ui/Badge'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
 import {
@@ -10,15 +15,18 @@ import {
 import type { RecentStudent } from '@/modules/dashboard/types/dashboard'
 
 type RecentStudentsTableProps = {
+  /** Lista de estudiantes recientes. */
   students: RecentStudent[]
 }
 
+/** Mapa de tonos para los estados de los estudiantes. */
 const statusTones: Record<string, 'accent' | 'success' | 'warning'> = {
   Activo: 'success',
   Nuevo: 'accent',
   Seguimiento: 'warning',
 }
 
+/** Tabla de estudiantes recientes del dashboard. */
 export function RecentStudentsTable({ students }: RecentStudentsTableProps) {
   return (
     <Card>

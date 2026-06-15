@@ -1,3 +1,8 @@
+/**
+ * Servicio de autenticación.
+ * Provee la lógica de negocio para registro, inicio de sesión,
+ * recuperación de contraseña y consulta de perfil del usuario autenticado.
+ */
 import {
   Injectable,
   ConflictException,
@@ -9,6 +14,13 @@ import { prisma } from '@aula/database'
 import { RegisterDto } from './dto/register.dto'
 import { LoginDto } from './dto/login.dto'
 
+/**
+ * Convierte un texto en un slug URL-friendly.
+ * Elimina acentos, caracteres especiales y espacios.
+ *
+ * @param value - Texto a convertir.
+ * @returns Slug generado.
+ */
 function createSlug(value: string) {
   return value
     .trim()
@@ -21,6 +33,13 @@ function createSlug(value: string) {
     .replace(/^-|-$/g, '')
 }
 
+/**
+ * Obtiene un slug único para una escuela, agregando un sufijo numérico
+ * si el slug base ya está ocupado.
+ *
+ * @param input - Texto base para el slug.
+ * @returns Slug único disponible.
+ */
 async function getAvailableSchoolSlug(input: string) {
   const baseSlug = createSlug(input) || 'escuela'
   let slug = baseSlug
@@ -38,6 +57,15 @@ async function getAvailableSchoolSlug(input: string) {
 export class AuthService {
   constructor(private jwtService: JwtService) {}
 
+  /**
+   * Registra un nuevo usuario y su escuela en una transacción.
+   * Crea la escuela, el rol de administrador, el usuario y la asignación de rol.
+   * Retorna un token JWT junto con los datos del usuario creado.
+   *
+   * @param dto - Datos de registro.
+   * @returns Objeto con usuario, token, roles y permisos.
+   * @throws ConflictException si el email ya está registrado.
+   */
   async register(dto: RegisterDto) {
     const existing = await prisma.appUser.findUnique({
       where: { email: dto.email },
@@ -105,6 +133,15 @@ export class AuthService {
     }
   }
 
+  /**
+   * Inicia sesión con email y contraseña.
+   * Verifica las credenciales, consulta roles y permisos activos,
+   * y retorna un token JWT junto con los datos del usuario.
+   *
+   * @param dto - Credenciales de inicio de sesión.
+   * @returns Objeto con usuario, token, roles y permisos únicos.
+   * @throws UnauthorizedException si las credenciales son inválidas.
+   */
   async login(dto: LoginDto) {
     const user = await prisma.appUser.findUnique({
       where: { email: dto.email },
@@ -165,12 +202,26 @@ export class AuthService {
     }
   }
 
+  /**
+   * Solicita recuperación de contraseña.
+   * Por seguridad siempre retorna el mismo mensaje
+   * independientemente de si el email existe o no.
+   *
+   * @param email - Correo electrónico del usuario.
+   * @returns Mensaje informativo.
+   */
   async forgotPassword(email: string) {
     const user = await prisma.appUser.findUnique({ where: { email } })
     if (!user) return { message: 'If the email exists, a reset link has been sent' }
     return { message: 'If the email exists, a reset link has been sent' }
   }
 
+  /**
+   * Obtiene el perfil completo del usuario autenticado.
+   *
+   * @param userId - ID del usuario.
+   * @returns Datos del perfil o null si no existe.
+   */
   async getProfile(userId: string) {
     const user = await prisma.appUser.findUnique({
       where: { id: userId },

@@ -1,9 +1,16 @@
+/**
+ * Componente LineChart — Gráfico de líneas SVG para visualizar
+ * el rendimiento académico mensual con puntos y área rellena.
+ */
+
 import type { ChartDatum } from '@/modules/dashboard/types/dashboard'
 
 type LineChartProps = {
+  /** Datos para los puntos del gráfico. */
   data: ChartDatum[]
 }
 
+/** Gráfico de líneas con área rellena para rendimiento académico. */
 export function LineChart({ data }: LineChartProps) {
   if (data.length === 0) {
     return (

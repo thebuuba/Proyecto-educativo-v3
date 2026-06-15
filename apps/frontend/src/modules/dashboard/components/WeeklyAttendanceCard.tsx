@@ -1,3 +1,8 @@
+/**
+ * Componente WeeklyAttendanceCard — Muestra un resumen de la asistencia
+ * semanal con gráfico de barras, promedio y tendencia.
+ */
+
 import { ArrowRight, TrendingUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -6,13 +11,16 @@ import type { WeeklyAttendance } from '@/modules/dashboard/types/dashboard'
 import { cn } from '@/utils/cn'
 
 type WeeklyAttendanceCardProps = {
+  /** Datos de asistencia semanal. */
   attendance: WeeklyAttendance
 }
 
+/** Retorna el valor máximo de asistencia entre los días de la semana. */
 function getMaxValue(days: WeeklyAttendance['days']) {
   return Math.max(...days.map((d) => d.value ?? 0), 1)
 }
 
+/** Tarjeta de asistencia semanal del dashboard. */
 export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) {
   const maxValue = getMaxValue(attendance.days)
 

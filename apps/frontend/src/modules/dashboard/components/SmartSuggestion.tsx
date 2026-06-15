@@ -1,11 +1,19 @@
+/**
+ * Componente SmartSuggestion — Muestra una sugerencia inteligente
+ * con un mensaje, descripción y enlace de acción. No renderiza nada
+ * si no hay sugerencia.
+ */
+
 import { ArrowRight, CalendarDays } from 'lucide-react'
 
 import type { SmartSuggestion as SmartSuggestionType } from '@/modules/dashboard/types/dashboard'
 
 type SmartSuggestionProps = {
+  /** Sugerencia inteligente a mostrar (puede ser nulo). */
   suggestion: SmartSuggestionType
 }
 
+/** Banner de sugerencia inteligente en el dashboard. */
 export function SmartSuggestion({ suggestion }: SmartSuggestionProps) {
   if (!suggestion) {
     return null

@@ -1,18 +1,33 @@
+/**
+ * Límite de errores (Error Boundary) que captura errores no controlados
+ * y muestra una pantalla de recuperación.
+ */
 import { AlertTriangle, RefreshCw } from 'lucide-react'
 import type { ErrorInfo, ReactNode } from 'react'
 import { Component } from 'react'
 
 import { Button } from '@/components/ui/Button'
 
+/** Propiedades del ErrorBoundary. */
 type Props = {
+  /** Componentes hijos envueltos por el límite de errores. */
   children: ReactNode
 }
 
+/** Estado del ErrorBoundary. */
 type State = {
+  /** Indica si se capturó un error. */
   didCatch: boolean
+  /** El error capturado, si existe. */
   error: Error | null
 }
 
+/**
+ * Límite de errores que captura excepciones en el árbol de componentes
+ * y muestra una interfaz de recuperación con opción de reintentar.
+ *
+ * @param props.children - Componentes a proteger.
+ */
 export class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props)

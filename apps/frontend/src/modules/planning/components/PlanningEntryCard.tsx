@@ -1,15 +1,25 @@
+/**
+ * @file Componente PlanningEntryCard
+ *
+ * Tarjeta resumen de una planificación con título, curso,
+ * indicador de logro y metadatos.
+ */
+
 import { Trash2 } from 'lucide-react'
 
 import type { PlanningEntryWithDetails } from '@/modules/planning/types'
 
+/** Propiedades del componente PlanningEntryCard */
 type PlanningEntryCardProps = {
   entry: PlanningEntryWithDetails
   onEdit: (entry: PlanningEntryWithDetails) => void
   onDelete: (entry: PlanningEntryWithDetails) => void
 }
 
+/** Longitud máxima visible del indicador de logro antes de truncar */
 const MAX_INDICATOR_CHARS = 60
 
+/** Tarjeta resumen de una planificación curricular */
 export function PlanningEntryCard({ entry, onEdit, onDelete }: PlanningEntryCardProps) {
   return (
     <button

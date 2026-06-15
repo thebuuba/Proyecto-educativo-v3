@@ -1,3 +1,10 @@
+/**
+ * @file Componente PlanningEntryForm
+ *
+ * Formulario modal para crear o editar una planificación
+ * curricular siguiendo el modelo MINERD por competencias.
+ */
+
 import { AlertCircle, X } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useRef, useState } from 'react'
@@ -10,6 +17,7 @@ import { useFocusTrap } from '@/hooks/useFocusTrap'
 import type { AcademicPeriodSummary, CompetencyOption } from '@/modules/planning/types'
 import type { CreatePlanningEntryInput } from '@/modules/planning/types'
 
+/** Propiedades del componente PlanningEntryForm */
 type PlanningEntryFormProps = {
 	  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string }[]
 	  periods: AcademicPeriodSummary[]
@@ -25,6 +33,7 @@ type PlanningEntryFormProps = {
   onClose: () => void
 }
 
+/** Formulario modal para crear o editar una planificación curricular */
 export function PlanningEntryForm({
 	  sectionSubjects,
 	  periods,
@@ -380,6 +389,7 @@ export function PlanningEntryForm({
   )
 }
 
+/** Componente auxiliar para etiqueta de campo de formulario */
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block text-sm font-medium text-muted-foreground">

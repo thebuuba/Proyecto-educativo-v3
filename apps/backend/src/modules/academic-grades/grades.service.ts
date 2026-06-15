@@ -1,8 +1,29 @@
+/**
+ * Servicio de calificaciones académicas.
+ *
+ * Implementa la lógica de negocio para la gestión de calificaciones
+ * de los estudiantes en las distintas materias y períodos académicos.
+ */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
+/**
+ * Servicio de calificaciones académicas.
+ *
+ * Implementa la lógica de negocio para el registro y consulta de
+ * calificaciones de los estudiantes en las distintas materias.
+ */
 @Injectable()
 export class GradesService {
+  /**
+   * Obtiene los registros de calificaciones, opcionalmente filtrados
+   * por materia de sección y período académico.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param sectionSubjectId - Identificador de la materia de la sección (opcional).
+   * @param academicPeriodId - Identificador del período académico (opcional).
+   * @returns Lista de registros de calificaciones.
+   */
   findAll(schoolId: string, sectionSubjectId?: string, academicPeriodId?: string) {
     const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
@@ -10,6 +31,13 @@ export class GradesService {
     return prisma.gradesRecord.findMany({ where })
   }
 
+  /**
+   * Obtiene las materias asignadas a cada sección con los nombres
+   * de materia, sección y grado resueltos.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @returns Lista de materias de sección con datos descriptivos.
+   */
   async getSectionSubjects(schoolId: string) {
     const [items, subjects, sections, grades] = await Promise.all([
       prisma.sectionSubject.findMany({ where: { schoolId, status: 'ACTIVE' } }),
@@ -34,6 +62,12 @@ export class GradesService {
     })
   }
 
+  /**
+   * Obtiene los períodos académicos activos ordenados por secuencia.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @returns Lista de períodos académicos activos.
+   */
   getAcademicPeriods(schoolId: string) {
     return prisma.academicPeriod.findMany({
       where: { schoolId, status: 'ACTIVE' },
@@ -41,6 +75,18 @@ export class GradesService {
     })
   }
 
+  /**
+   * Obtiene los estudiantes de una materia y período académico para calificar.
+   *
+   * Incluye las calificaciones existentes de cada estudiante para
+   * facilitar la edición en la interfaz de usuario.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param sectionSubjectId - Identificador de la materia de la sección.
+   * @param academicPeriodId - Identificador del período académico.
+   * @returns Lista de estudiantes con sus calificaciones existentes.
+   * @throws NotFoundException si la materia o el período académico no existen.
+   */
   async getStudentsForGrading(schoolId: string, sectionSubjectId: string, academicPeriodId: string) {
     const ss = await prisma.sectionSubject.findFirst({ where: { id: sectionSubjectId, schoolId } })
     if (!ss) throw new NotFoundException('Section subject not found')
@@ -84,6 +130,18 @@ export class GradesService {
     }
   }
 
+  /**
+   * Guarda o actualiza una calificación.
+   *
+   * Si se proporciona un gradeId, actualiza la calificación existente.
+   * En caso contrario, crea una nueva validando que la matrícula,
+   * la materia y el período académico existan.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param input - Datos de la calificación a guardar o actualizar.
+   * @returns La calificación creada o actualizada.
+   * @throws NotFoundException si el registro o alguna entidad relacionada no existe.
+   */
   async saveGrade(schoolId: string, input: any) {
     if (input.gradeId) {
       const grade = await prisma.gradesRecord.findFirst({ where: { id: input.gradeId, schoolId } })
@@ -123,6 +181,13 @@ export class GradesService {
     })
   }
 
+  /**
+   * Obtiene todas las calificaciones de un estudiante.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param studentId - Identificador del estudiante.
+   * @returns Lista de registros de calificaciones del estudiante.
+   */
   async findByStudent(schoolId: string, studentId: string) {
     const enrollments = await prisma.enrollment.findMany({
       where: { schoolId, studentId },

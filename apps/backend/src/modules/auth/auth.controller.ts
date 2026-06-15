@@ -1,3 +1,9 @@
+/**
+ * Controlador de autenticación.
+ * Expone los endpoints públicos y protegidos para el manejo
+ * de registro, inicio de sesión, recuperación de contraseña
+ * y consulta del perfil del usuario autenticado.
+ */
 import {
   Controller,
   Post,

@@ -1,3 +1,9 @@
+/**
+ * @file Componente SectionForm
+ *
+ * Formulario modal para crear o editar una sección dentro de un grado.
+ */
+
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
@@ -5,6 +11,7 @@ import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
 import type { Section } from '@/modules/grades-sections/types'
 
+/** Propiedades del componente SectionForm */
 type SectionFormProps = {
   gradeName: string
   section?: Section

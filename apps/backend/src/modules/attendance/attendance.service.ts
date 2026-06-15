@@ -1,8 +1,29 @@
+/**
+ * Servicio de asistencia.
+ *
+ * Implementa la lógica de negocio para el registro y consulta de
+ * asistencia de estudiantes, tanto diaria como por clase.
+ */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
+/**
+ * Servicio de asistencia.
+ *
+ * Implementa la lógica de negocio para el registro y consulta de
+ * asistencia de estudiantes, tanto a nivel diario como por clase.
+ */
 @Injectable()
 export class AttendanceService {
+  /**
+   * Obtiene los registros de asistencia por clase, opcionalmente filtrados
+   * por materia de sección y fecha.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param sectionSubjectId - Identificador de la materia de la sección (opcional).
+   * @param date - Fecha de la asistencia (opcional).
+   * @returns Lista de registros de asistencia por clase.
+   */
   findAll(schoolId: string, sectionSubjectId?: string, date?: string) {
     const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
@@ -10,6 +31,15 @@ export class AttendanceService {
     return prisma.attendanceClass.findMany({ where })
   }
 
+  /**
+   * Obtiene los registros de asistencia diaria, opcionalmente filtrados
+   * por matrícula y fecha.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param enrollmentId - Identificador de la matrícula (opcional).
+   * @param date - Fecha de la asistencia (opcional).
+   * @returns Lista de registros de asistencia diaria.
+   */
   findDaily(schoolId: string, enrollmentId?: string, date?: string) {
     const where: any = { schoolId }
     if (enrollmentId) where.enrollmentId = enrollmentId
@@ -17,6 +47,15 @@ export class AttendanceService {
     return prisma.attendanceDaily.findMany({ where })
   }
 
+  /**
+   * Obtiene los registros de asistencia diaria de todos los estudiantes
+   * de una sección en una fecha determinada.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param sectionId - Identificador de la sección.
+   * @param date - Fecha de la asistencia.
+   * @returns Lista de registros de asistencia diaria de la sección.
+   */
   async findDailyBySection(schoolId: string, sectionId: string, date: string) {
     const enrollments = await prisma.enrollment.findMany({
       where: { schoolId, sectionId, status: 'ACTIVE' },
@@ -28,6 +67,14 @@ export class AttendanceService {
     })
   }
 
+  /**
+   * Obtiene los estudiantes matriculados en una sección y año escolar.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param sectionId - Identificador de la sección.
+   * @param schoolYearId - Identificador del año escolar.
+   * @returns Lista de estudiantes con sus datos básicos y matrícula.
+   */
   async getStudentsBySection(schoolId: string, sectionId: string, schoolYearId: string) {
     const enrollments = await prisma.enrollment.findMany({
       where: { schoolId, sectionId, schoolYearId, status: 'ACTIVE' },
@@ -47,6 +94,15 @@ export class AttendanceService {
     })
   }
 
+  /**
+   * Obtiene los estudiantes de una materia en una fecha específica
+   * junto con su estado de asistencia existente.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param sectionSubjectId - Identificador de la materia de la sección.
+   * @param date - Fecha de la asistencia.
+   * @returns Lista de estudiantes con su registro de asistencia (si existe).
+   */
   async getStudents(schoolId: string, sectionSubjectId: string, date: string) {
     const ss = await prisma.sectionSubject.findFirst({ where: { id: sectionSubjectId, schoolId } })
     if (!ss) throw new Error('Section subject not found')
@@ -82,6 +138,12 @@ export class AttendanceService {
     })
   }
 
+  /**
+   * Obtiene el período académico activo con la secuencia más baja.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @returns El período académico activo encontrado o null.
+   */
   getCurrentPeriod(schoolId: string) {
     return prisma.academicPeriod.findFirst({
       where: { schoolId, status: 'ACTIVE' },
@@ -89,6 +151,13 @@ export class AttendanceService {
     })
   }
 
+  /**
+   * Crea o actualiza un registro de asistencia según el tipo especificado.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param body - Datos del registro con el tipo de asistencia ('class' o 'daily').
+   * @returns El registro de asistencia creado o actualizado.
+   */
   async upsert(schoolId: string, body: any) {
     if (body.type === 'class') {
       return this.upsertClass(schoolId, body)
@@ -96,6 +165,17 @@ export class AttendanceService {
     return this.upsertDaily(schoolId, body)
   }
 
+  /**
+   * Crea o actualiza un registro de asistencia por clase.
+   *
+   * Si ya existe un registro para la misma matrícula, materia y fecha,
+   * lo actualiza; en caso contrario, crea uno nuevo.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param body - Datos del registro de asistencia por clase.
+   * @returns El registro de asistencia por clase creado o actualizado.
+   * @throws NotFoundException si la matrícula, materia o período académico no existen.
+   */
   private async upsertClass(schoolId: string, body: any) {
     const [enrollment, sectionSubject, academicPeriod] = await Promise.all([
       prisma.enrollment.findFirst({ where: { id: body.enrollmentId, schoolId } }),
@@ -140,6 +220,17 @@ export class AttendanceService {
     })
   }
 
+  /**
+   * Crea o actualiza un registro de asistencia diaria.
+   *
+   * Si ya existe un registro para la misma matrícula y fecha,
+   * lo actualiza; en caso contrario, crea uno nuevo.
+   *
+   * @param schoolId - Identificador del colegio.
+   * @param body - Datos del registro de asistencia diaria.
+   * @returns El registro de asistencia diaria creado o actualizado.
+   * @throws NotFoundException si la matrícula o el período académico no existen.
+   */
   private async upsertDaily(schoolId: string, body: any) {
     const [enrollment, academicPeriod] = await Promise.all([
       prisma.enrollment.findFirst({ where: { id: body.enrollmentId, schoolId } }),

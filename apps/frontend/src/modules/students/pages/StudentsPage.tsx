@@ -1,3 +1,8 @@
+/**
+ * Página de Estudiantes — Vista principal con tabla, filtros, métricas,
+ * panel de riesgo, distribución por estado y acciones de gestión.
+ */
+
 import {
   AlertCircle,
   CheckCircle2,
@@ -46,6 +51,7 @@ type DistributionItem = {
   tone: 'success' | 'accent' | 'destructive'
 }
 
+/** Página principal de gestión de estudiantes. */
 export function StudentsPage() {
   const { hasPermission, hasRole } = useAuth()
   const {
@@ -167,6 +173,7 @@ export function StudentsPage() {
     return new Set(Array.from(selectedIds).filter((id) => visibleIds.has(id)))
   }, [selectedIds, visibleStudents])
 
+  /** Abre el formulario para crear un nuevo estudiante. */
   function openCreateForm() {
     setEditingStudent(null)
     setFormError(null)
@@ -175,6 +182,7 @@ export function StudentsPage() {
     setIsFormOpen(true)
   }
 
+  /** Abre el formulario para editar un estudiante existente. */
   function openEditForm(student: StudentListItem) {
     setEditingStudent(student)
     setFormError(null)
@@ -183,6 +191,7 @@ export function StudentsPage() {
     setIsFormOpen(true)
   }
 
+  /** Cierra el formulario de creación/edición de estudiantes. */
   function closeForm() {
     setIsFormOpen(false)
     setEditingStudent(null)
@@ -494,6 +503,7 @@ export function StudentsPage() {
   )
 }
 
+/** Tarjeta de métrica estudiantil con valor, etiqueta e icono opcional. */
 function StudentMetricCard({
   label,
   value,
@@ -533,6 +543,7 @@ function StudentMetricCard({
   )
 }
 
+/** Panel lateral con la lista de estudiantes que requieren atención. */
 function StudentsRiskPanel({
   students,
   canNotify,
@@ -594,6 +605,7 @@ function StudentsRiskPanel({
   )
 }
 
+/** Panel de distribución de estudiantes por estado (Al día, Atención, En riesgo). */
 function StudentStatusDistribution({
   distribution,
   total,
@@ -635,6 +647,7 @@ function StudentStatusDistribution({
   )
 }
 
+/** Tarjeta de consejo académico. */
 function StudentAdviceCard() {
   return (
     <section className="rounded-2xl border border-dashed border-accent p-5">
@@ -648,6 +661,7 @@ function StudentAdviceCard() {
   )
 }
 
+/** Mensaje de retroalimentación (error o éxito) con icono. */
 function FeedbackMessage({
   tone,
   message,
@@ -676,6 +690,7 @@ function FeedbackMessage({
   )
 }
 
+/** Construye un string CSV con los datos de los estudiantes visibles. */
 function buildStudentsCsv(students: StudentListItem[]) {
   const headers = ['nombre', 'correo', 'curso', 'asistencia', 'promedio', 'pendientes', 'estado']
   const rows = students.map((student) => {

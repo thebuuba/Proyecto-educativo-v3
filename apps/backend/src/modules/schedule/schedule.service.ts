@@ -1,11 +1,20 @@
+/**
+ * Servicio de horarios
+ * @module ScheduleService
+ * @description Contiene la lógica de negocio para la gestión de horarios escolares.
+ * Proporciona operaciones CRUD para entradas de horario y franjas horarias,
+ * así como consultas de datos relacionados (secciones, profesores, materias).
+ */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
+/** Convierte una cadena de tiempo "HH:mm" o "HH:mm:ss" a un objeto Date UTC */
 function toTime(value: string) {
   const [hours, minutes, seconds = '0'] = value.split(':')
   return new Date(Date.UTC(1970, 0, 1, Number(hours), Number(minutes), Number(seconds)))
 }
 
+/** Formatea un objeto Date o cadena a una representación "HH:mm" */
 function formatTime(value: Date | string) {
   if (value instanceof Date) return value.toISOString().slice(11, 16)
   return String(value).slice(0, 5)
@@ -13,6 +22,7 @@ function formatTime(value: Date | string) {
 
 @Injectable()
 export class ScheduleService {
+  /** Obtiene todas las entradas de horario aplicando filtros opcionales */
   async findAll(schoolId: string, sectionId?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
     const where = await this.entryWhere(schoolId, { sectionId, schoolYearId, teacherId, gradeId })
     const entries = await prisma.scheduleEntry.findMany({
@@ -22,6 +32,7 @@ export class ScheduleService {
     return this.withEntryLabels(schoolId, entries)
   }
 
+  /** Obtiene las secciones activas del colegio con el nombre del grado asociado */
   async getSections(schoolId: string) {
     const sections = await prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' } })
     const grades = await prisma.grade.findMany({ where: { schoolId } })
@@ -34,14 +45,17 @@ export class ScheduleService {
     }))
   }
 
+  /** Obtiene los profesores activos del colegio */
   getTeachers(schoolId: string) {
     return prisma.teacher.findMany({ where: { schoolId, status: 'ACTIVE' } })
   }
 
+  /** Obtiene las materias activas del colegio */
   getSubjects(schoolId: string) {
     return prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' } })
   }
 
+  /** Obtiene las materias asignadas a una sección, con nombre de materia y profesor */
   async getSectionSubjects(schoolId: string, sectionId?: string) {
     const where: any = { schoolId, status: 'ACTIVE' }
     if (sectionId) where.sectionId = sectionId
@@ -63,6 +77,7 @@ export class ScheduleService {
     })
   }
 
+  /** Obtiene las franjas horarias del colegio ordenadas por secuencia */
   async getTimeSlots(schoolId: string) {
     const slots = await prisma.timeSlot.findMany({ where: { schoolId }, orderBy: { sequence: 'asc' } })
     return slots.map((slot) => ({
@@ -73,6 +88,7 @@ export class ScheduleService {
     }))
   }
 
+  /** Crea una nueva franja horaria */
   createTimeSlot(schoolId: string, body: any) {
     return prisma.timeSlot.create({
       data: {
@@ -85,6 +101,7 @@ export class ScheduleService {
     })
   }
 
+  /** Actualiza una franja horaria existente, valida que pertenezca al colegio */
   async updateTimeSlot(schoolId: string, id: string, body: any) {
     const ts = await prisma.timeSlot.findFirst({ where: { id, schoolId } })
     if (!ts) throw new NotFoundException('Time slot not found')
@@ -100,6 +117,7 @@ export class ScheduleService {
     })
   }
 
+  /** Elimina una franja horaria y sus entradas de horario asociadas */
   async deleteTimeSlot(schoolId: string, id: string) {
     const ts = await prisma.timeSlot.findFirst({ where: { id, schoolId } })
     if (!ts) throw new NotFoundException('Time slot not found')
@@ -108,6 +126,7 @@ export class ScheduleService {
     return prisma.timeSlot.delete({ where: { id } })
   }
 
+  /** Obtiene las entradas de horario con filtros opcionales, incluyendo día de semana */
   async findEntries(schoolId: string, sectionId?: string, dayOfWeek?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
     const where = await this.entryWhere(schoolId, { sectionId, schoolYearId, teacherId, gradeId })
     if (dayOfWeek) where.dayOfWeek = Number(dayOfWeek)
@@ -115,6 +134,7 @@ export class ScheduleService {
     return this.withEntryLabels(schoolId, entries)
   }
 
+  /** Crea una nueva entrada de horario validando las referencias */
   async createEntry(schoolId: string, body: any) {
     const [schoolYear, section, sectionSubject, timeSlot, academicPeriod] = await Promise.all([
       prisma.schoolYear.findFirst({ where: { id: body.schoolYearId, schoolId } }),
@@ -146,6 +166,7 @@ export class ScheduleService {
     return (await this.withEntryLabels(schoolId, [entry]))[0]
   }
 
+  /** Actualiza una entrada de horario existente validando las referencias opcionales */
   async updateEntry(schoolId: string, id: string, body: any) {
     const entry = await prisma.scheduleEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Schedule entry not found')
@@ -172,6 +193,7 @@ export class ScheduleService {
     return (await this.withEntryLabels(schoolId, [updated]))[0]
   }
 
+  /** Elimina una entrada de horario por su ID */
   async deleteEntry(schoolId: string, id: string) {
     const entry = await prisma.scheduleEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Schedule entry not found')
@@ -179,6 +201,7 @@ export class ScheduleService {
     return prisma.scheduleEntry.delete({ where: { id } })
   }
 
+  /** Construye la cláusula WHERE para consultas de entradas con filtros opcionales */
   private async entryWhere(
     schoolId: string,
     filters: { sectionId?: string; schoolYearId?: string; teacherId?: string; gradeId?: string },
@@ -203,6 +226,7 @@ export class ScheduleService {
     return where
   }
 
+  /** Enriquece las entradas de horario con nombres descriptivos (materia, profesor, grado, sección, franja) */
   private async withEntryLabels(schoolId: string, entries: Awaited<ReturnType<typeof prisma.scheduleEntry.findMany>>) {
     const [sectionSubjects, subjects, teachers, sections, grades, slots] = await Promise.all([
       prisma.sectionSubject.findMany({ where: { schoolId, id: { in: entries.map((entry) => entry.sectionSubjectId) } } }),

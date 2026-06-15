@@ -1,4 +1,11 @@
-// Generic API response envelope
+/**
+ * @fileoverview Tipos y utilidades compartidas entre frontend y backend.
+ */
+
+/**
+ * @description Envoltorio genérico de respuesta API.
+ * @template T - Tipo de los datos contenidos en la respuesta.
+ */
 export interface ApiResponse<T> {
   success: boolean
   data?: T
@@ -6,13 +13,17 @@ export interface ApiResponse<T> {
   message?: string
 }
 
+/**
+ * @description Respuesta API paginada. Extiende ApiResponse con metadatos de paginación.
+ * @template T - Tipo de los elementos en la lista paginada.
+ */
 export interface PaginatedResponse<T> extends ApiResponse<T[]> {
   total: number
   page: number
   limit: number
 }
 
-// Enums
+/** @description Valores posibles para el estado de un registro (activo, inactivo, archivado). */
 export const RecordStatusEnum = {
   ACTIVE: 'active',
   INACTIVE: 'inactive',
@@ -21,6 +32,7 @@ export const RecordStatusEnum = {
 
 export type RecordStatus = (typeof RecordStatusEnum)[keyof typeof RecordStatusEnum]
 
+/** @description Roles de usuario del sistema (admin, director, coordinador, profesor, padre). */
 export const UserRoleEnum = {
   ADMIN: 'admin',
   DIRECTOR: 'director',
@@ -31,6 +43,7 @@ export const UserRoleEnum = {
 
 export type UserRole = (typeof UserRoleEnum)[keyof typeof UserRoleEnum]
 
+/** @description Estados de matrícula de un estudiante (activo, transferido, retirado, completado). */
 export const EnrollmentStatusEnum = {
   ACTIVE: 'active',
   TRANSFERRED: 'transferred',
@@ -40,6 +53,7 @@ export const EnrollmentStatusEnum = {
 
 export type EnrollmentStatus = (typeof EnrollmentStatusEnum)[keyof typeof EnrollmentStatusEnum]
 
+/** @description Estados de asistencia (presente, ausente, tarde, justificado). */
 export const AttendanceStatusEnum = {
   PRESENT: 'present',
   ABSENT: 'absent',
@@ -49,6 +63,7 @@ export const AttendanceStatusEnum = {
 
 export type AttendanceStatus = (typeof AttendanceStatusEnum)[keyof typeof AttendanceStatusEnum]
 
+/** @description Estados de un registro de calificaciones (borrador, publicado, anulado). */
 export const GradeRecordStatusEnum = {
   DRAFT: 'draft',
   PUBLISHED: 'published',
@@ -57,4 +72,5 @@ export const GradeRecordStatusEnum = {
 
 export type GradeRecordStatus = (typeof GradeRecordStatusEnum)[keyof typeof GradeRecordStatusEnum]
 
+/** @description Estado booleano simplificado de una entidad: activo o inactivo. */
 export type EntityStatus = 'active' | 'inactive'

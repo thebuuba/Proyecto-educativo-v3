@@ -1,9 +1,15 @@
+/**
+ * Página de acceso no autorizado — Se muestra cuando un usuario autenticado
+ * no tiene los permisos necesarios para acceder a una ruta.
+ */
+
 import { ShieldAlert } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
+/** Página de error 403 — Acceso no autorizado. */
 export function UnauthorizedPage() {
   const { logout } = useAuth()
 

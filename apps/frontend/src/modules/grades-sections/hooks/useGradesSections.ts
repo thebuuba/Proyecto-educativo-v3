@@ -1,3 +1,10 @@
+/**
+ * @file Hook de Cursos
+ *
+ * Gestiona el estado de grados, secciones, asignaturas
+ * y la asignación docente.
+ */
+
 import { useCallback, useEffect, useState } from 'react'
 
 import {
@@ -23,6 +30,7 @@ import type {
   UpdateSectionInput,
 } from '@/modules/grades-sections/types'
 
+/** Catálogos vacíos por defecto */
 const emptyCatalogs: CourseCatalogs = {
   levels: [],
   cycles: [],
@@ -31,6 +39,7 @@ const emptyCatalogs: CourseCatalogs = {
   teachers: [],
 }
 
+/** Hook principal para la gestión de cursos y secciones */
 export function useGradesSections() {
   const [grades, setGrades] = useState<GradeWithSections[]>([])
   const [catalogs, setCatalogs] = useState<CourseCatalogs>(emptyCatalogs)
@@ -38,6 +47,7 @@ export function useGradesSections() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
+  /** Recarga todos los datos de cursos y catálogos */
   const refetch = useCallback(async () => {
     setLoading(true)
     setError(null)

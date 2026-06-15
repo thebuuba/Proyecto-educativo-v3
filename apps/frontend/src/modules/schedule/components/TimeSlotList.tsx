@@ -1,8 +1,16 @@
+/**
+ * @file Componente TimeSlotList
+ *
+ * Lista de bloques horarios con opciones para agregar,
+ * editar y eliminar.
+ */
+
 import { Clock, Pencil, Plus, Trash2 } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import type { TimeSlot } from '@/modules/schedule/types'
 
+/** Propiedades del componente TimeSlotList */
 type TimeSlotListProps = {
   timeSlots: TimeSlot[]
   onAdd: () => void
@@ -10,6 +18,7 @@ type TimeSlotListProps = {
   onDelete: (id: string) => void
 }
 
+/** Lista de bloques horarios con acciones CRUD */
 export function TimeSlotList({
   timeSlots,
   onAdd,

@@ -1,3 +1,8 @@
+/**
+ * Servicio de importación de estudiantes — Parsea archivos CSV
+ * y detecta columnas por alias en español/inglés.
+ */
+
 export type ParsedStudentRow = {
   rowNumber: number
   firstName: string
@@ -14,6 +19,7 @@ export type ImportValidationError = {
   reason: string
 }
 
+/** Mapa de alias de columnas en español/inglés a campos del modelo. */
 const columnAliases: Record<string, keyof ParsedStudentRow> = {
   nombre: 'firstName',
   nombres: 'firstName',
@@ -56,10 +62,12 @@ const columnAliases: Record<string, keyof ParsedStudentRow> = {
   domicilio: 'address',
 }
 
+/** Normaliza un encabezado de columna (trim + lowercase). */
 function normalizeHeader(header: string): string {
   return header.trim().toLowerCase()
 }
 
+/** Detecta la correspondencia entre encabezados del CSV y los campos del modelo. */
 function detectColumnMapping(headers: string[]): Map<keyof ParsedStudentRow, string> {
   const mapping = new Map<keyof ParsedStudentRow, string>()
 
@@ -75,6 +83,7 @@ function detectColumnMapping(headers: string[]): Map<keyof ParsedStudentRow, str
   return mapping
 }
 
+/** Parsea una fecha desde distintos formatos (DD/MM/YYYY, YYYY-MM-DD, serial Excel). */
 function parseDate(value: string): string {
   const trimmed = value?.trim()
 
@@ -112,6 +121,7 @@ function parseDate(value: string): string {
   return trimmed
 }
 
+/** Parsea un archivo CSV y retorna las filas validadas y errores de validación. */
 export async function parseCSVFile(file: File): Promise<{
   rows: ParsedStudentRow[]
   errors: ImportValidationError[]

@@ -1,3 +1,8 @@
+/**
+ * Página principal del Dashboard — Muestra el resumen del día con la agenda,
+ * asistencia semanal, tareas pendientes, actividad reciente y sugerencias.
+ */
+
 import { useNavigate } from 'react-router-dom'
 
 import { ErrorState, LoadingState } from '@/components/ui'
@@ -10,6 +15,7 @@ import { WeeklyAttendanceCard } from '@/modules/dashboard/components/WeeklyAtten
 import { useDashboard } from '@/modules/dashboard/hooks/useDashboard'
 import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
 
+/** Retorna un saludo según la hora del día. */
 function getGreeting() {
   const hour = new Date().getHours()
   if (hour < 12) return 'Buenos días'
@@ -17,6 +23,7 @@ function getGreeting() {
   return 'Buenas noches'
 }
 
+/** Formatea la fecha actual en formato legible en español. */
 function formatTodayDate() {
   return new Intl.DateTimeFormat('es-DO', {
     weekday: 'long',
@@ -25,6 +32,7 @@ function formatTodayDate() {
   }).format(new Date())
 }
 
+/** Página principal del dashboard del docente. */
 export function DashboardPage() {
   const navigate = useNavigate()
   const {

@@ -1,14 +1,24 @@
+/**
+ * Componente DashboardHero — Muestra la siguiente clase o un estado
+ * "sin clase programada" con información de materia, horario, aula
+ * y acciones para iniciar clase o ver planificación.
+ */
+
 import { ArrowRight, Clock3, MapPin, Play, UsersRound } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
 
 type DashboardHeroProps = {
+  /** Siguiente clase del día (puede ser nulo). */
   nextClass: DashboardClass | null
+  /** Callback al hacer clic en "Iniciar clase". */
   onStartClass: (item: DashboardClass) => void
+  /** Callback al hacer clic en "Ver planificación". */
   onViewPlanning: (item: DashboardClass) => void
 }
 
+/** Hero del dashboard que muestra la próxima clase o un estado vacío. */
 export function DashboardHero({
   nextClass,
   onStartClass,

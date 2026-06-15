@@ -1,8 +1,15 @@
+/**
+ * Servicio del dashboard
+ * @module DashboardService
+ * @description Contiene la lógica de negocio para el panel de control del colegio.
+ * Proporciona estadísticas generales y operaciones CRUD para tareas del dashboard.
+ */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
 @Injectable()
 export class DashboardService {
+  /** Obtiene las estadísticas del colegio: conteo de estudiantes, profesores y matrículas activas */
   async getStats(schoolId: string) {
     const [studentCount, teacherCount, activeEnrollments] = await Promise.all([
       prisma.student.count({ where: { schoolId, status: 'ACTIVE' } }),
@@ -13,6 +20,7 @@ export class DashboardService {
     return { studentCount, teacherCount, activeEnrollments }
   }
 
+  /** Obtiene las últimas 10 tareas del dashboard */
   getTasks(schoolId: string) {
     return prisma.dashboardTask.findMany({
       where: { schoolId },
@@ -21,6 +29,7 @@ export class DashboardService {
     })
   }
 
+  /** Crea una nueva tarea en el dashboard */
   async createTask(schoolId: string, createdBy: string, body: any) {
     return prisma.dashboardTask.create({
       data: {
@@ -35,6 +44,7 @@ export class DashboardService {
     })
   }
 
+  /** Actualiza una tarea existente del dashboard */
   async updateTask(schoolId: string, id: string, body: any) {
     const task = await prisma.dashboardTask.findFirst({ where: { id, schoolId } })
     if (!task) throw new NotFoundException('Task not found')

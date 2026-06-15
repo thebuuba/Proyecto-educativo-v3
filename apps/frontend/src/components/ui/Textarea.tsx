@@ -1,7 +1,15 @@
+/**
+ * Componente de área de texto multilínea estilizado.
+ */
 import type { TextareaHTMLAttributes } from 'react'
 
 import { cn } from '@/utils/cn'
 
+/**
+ * Área de texto con estilos consistentes del sistema de diseño.
+ *
+ * @param props - Propiedades nativas del textarea HTML.
+ */
 export function Textarea({
   className,
   ...props

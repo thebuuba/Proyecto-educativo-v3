@@ -1,3 +1,9 @@
+/**
+ * @file Componente GradeForm
+ *
+ * Formulario modal para crear o editar un grado/curso académico.
+ */
+
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 
@@ -10,6 +16,7 @@ import type {
   Grade,
 } from '@/modules/grades-sections/types'
 
+/** Propiedades del componente GradeForm */
 type GradeFormProps = {
   grade?: Grade
   catalogs: Pick<CourseCatalogs, 'levels' | 'cycles' | 'modalities'>

@@ -1,3 +1,10 @@
+/**
+ * @file Página de Cursos
+ *
+ * Vista principal de organización académica: administración
+ * de grados, secciones, asignaturas y carga docente.
+ */
+
 import {
   AlertCircle,
   ArrowRight,
@@ -31,6 +38,7 @@ import type {
 } from '@/modules/grades-sections/types'
 import { cn } from '@/utils/cn'
 
+/** Enlaces rápidos a módulos relacionados */
 const academicLinks = [
   {
     to: '/asignaturas',
@@ -52,6 +60,7 @@ const academicLinks = [
   },
 ] as const
 
+/** Página principal de administración de cursos y secciones */
 export function GradesSectionsPage() {
   const { hasRole } = useAuth()
   const {
@@ -585,6 +594,7 @@ export function GradesSectionsPage() {
   )
 }
 
+/** Agrupa los grados por nivel y ciclo académico */
 function groupGrades(grades: GradeWithSections[]) {
   const groups = new Map<string, {
     key: string

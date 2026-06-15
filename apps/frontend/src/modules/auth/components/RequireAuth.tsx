@@ -1,3 +1,8 @@
+/**
+ * Componente RequireAuth — Protege rutas verificando autenticación y roles.
+ * Redirige a /login si no hay sesión, a /sin-acceso si no tiene el rol requerido.
+ */
+
 import { Navigate, useLocation } from 'react-router-dom'
 import type { ReactElement } from 'react'
 
@@ -5,10 +10,17 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import type { UserRole } from '@/types/domain'
 
 type RequireAuthProps = {
+  /** Lista de roles permitidos para acceder a la ruta. */
   allowedRoles: UserRole[]
+  /** Componente hijo que se renderiza si está autorizado. */
   children: ReactElement
 }
 
+/**
+ * Componente de guardia de ruta.
+ * Muestra un estado de carga mientras se verifica la sesión, redirige al login
+ * si no hay autenticación, o a /sin-acceso si el rol no está permitido.
+ */
 export function RequireAuth({ allowedRoles, children }: RequireAuthProps) {
   const { hasRole, isAuthenticated, loading } = useAuth()
   const location = useLocation()

@@ -1,8 +1,16 @@
+/**
+ * Servicio de planificación
+ * @module PlanningService
+ * @description Contiene la lógica de negocio para la gestión de planificaciones académicas.
+ * Proporciona operaciones CRUD para períodos académicos, entradas de planificación
+ * y consultas de competencias y materias asignadas.
+ */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
 @Injectable()
 export class PlanningService {
+  /** Obtiene todas las entradas de planificación filtradas por materia-sección */
   findAll(schoolId: string, sectionSubjectId?: string) {
     const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
@@ -12,12 +20,14 @@ export class PlanningService {
     })
   }
 
+  /** Obtiene los períodos académicos filtrados por año escolar */
   getAcademicPeriods(schoolId: string, schoolYearId?: string) {
     const where: any = { schoolId }
     if (schoolYearId) where.schoolYearId = schoolYearId
     return prisma.academicPeriod.findMany({ where, orderBy: { sequence: 'asc' } })
   }
 
+  /** Crea un nuevo período académico validando el año escolar */
   async createAcademicPeriod(schoolId: string, body: any) {
     const schoolYear = await prisma.schoolYear.findFirst({ where: { id: body.schoolYearId, schoolId } })
     if (!schoolYear) throw new NotFoundException('School year not found')
@@ -34,6 +44,7 @@ export class PlanningService {
     })
   }
 
+  /** Actualiza un período académico existente */
   async updateAcademicPeriod(schoolId: string, id: string, body: any) {
     const ap = await prisma.academicPeriod.findFirst({ where: { id, schoolId } })
     if (!ap) throw new NotFoundException('Academic period not found')
@@ -51,6 +62,7 @@ export class PlanningService {
     })
   }
 
+  /** Elimina un período académico junto con sus entradas de planificación y registros de calificaciones */
   async deleteAcademicPeriod(schoolId: string, id: string) {
     const ap = await prisma.academicPeriod.findFirst({ where: { id, schoolId } })
     if (!ap) throw new NotFoundException('Academic period not found')
@@ -60,18 +72,21 @@ export class PlanningService {
     return prisma.academicPeriod.delete({ where: { id } })
   }
 
+  /** Obtiene las competencias del currículo, filtradas por materia */
   getCompetencies(subjectId?: string) {
     const where: any = {}
     if (subjectId) where.subjectId = subjectId
     return prisma.drCompetency.findMany({ where })
   }
 
+  /** Obtiene las materias asignadas a secciones activas, filtradas por profesor */
   getSectionSubjects(schoolId: string, teacherId?: string) {
     const where: any = { schoolId, status: 'ACTIVE' }
     if (teacherId) where.teacherId = teacherId
     return prisma.sectionSubject.findMany({ where })
   }
 
+  /** Obtiene las entradas de planificación filtradas por materia-sección y período */
   findEntries(schoolId: string, sectionSubjectId?: string, academicPeriodId?: string) {
     const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
@@ -82,6 +97,7 @@ export class PlanningService {
     })
   }
 
+  /** Crea una nueva entrada de planificación validando las referencias */
   async createEntry(schoolId: string, body: any) {
     const [sectionSubject, academicPeriod] = await Promise.all([
       prisma.sectionSubject.findFirst({ where: { id: body.sectionSubjectId, schoolId } }),
@@ -115,6 +131,7 @@ export class PlanningService {
     })
   }
 
+  /** Actualiza una entrada de planificación existente */
   async updateEntry(schoolId: string, id: string, body: any) {
     const entry = await prisma.planningEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Planning entry not found')
@@ -143,6 +160,7 @@ export class PlanningService {
     })
   }
 
+  /** Elimina una entrada de planificación por su ID */
   async deleteEntry(schoolId: string, id: string) {
     const entry = await prisma.planningEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Planning entry not found')

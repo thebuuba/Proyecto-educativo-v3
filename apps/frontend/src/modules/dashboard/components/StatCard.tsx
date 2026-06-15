@@ -1,7 +1,13 @@
+/**
+ * Componente StatCard — Tarjeta de estadística con icono, valor,
+ * cambio porcentual y color según el tono configurado.
+ */
+
 import { Card } from '@/components/ui/Card'
 import type { DashboardStat, DashboardTone } from '@/modules/dashboard/types/dashboard'
 import { cn } from '@/utils/cn'
 
+/** Clases de color para cada tono disponible. */
 const toneClasses: Record<DashboardTone, string> = {
   amber: 'bg-warning/14 text-warning ring-warning/25',
   cyan: 'bg-accent/16 text-accent-foreground ring-accent/30',
@@ -9,6 +15,7 @@ const toneClasses: Record<DashboardTone, string> = {
   indigo: 'bg-primary/10 text-primary ring-primary/15',
 }
 
+/** Tarjeta de estadística individual del dashboard. */
 export function StatCard({
   label,
   value,

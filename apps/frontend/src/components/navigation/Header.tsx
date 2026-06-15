@@ -1,3 +1,7 @@
+/**
+ * Encabezado principal con barra de búsqueda, notificaciones,
+ * ayuda, menú móvil y perfil de usuario.
+ */
 import { Bell, CircleHelp, Menu, Search, UserRound } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -8,10 +12,13 @@ import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import { api } from '@/services/apiClient'
 import type { UserRole } from '@/types/domain'
 
+/** Propiedades del componente Header. */
 type HeaderProps = {
+  /** Función para abrir la barra lateral en mobile. */
   onOpenSidebar: () => void
 }
 
+/** Etiquetas mostradas para cada rol de usuario. */
 const roleLabels: Record<UserRole, string> = {
   admin: 'ADMIN',
   director: 'DIRECTOR',
@@ -22,6 +29,12 @@ const roleLabels: Record<UserRole, string> = {
   viewer: 'LECTOR',
 }
 
+/**
+ * Encabezado principal con navegación, perfil y período académico activo.
+ * Incluye menú responsive, búsqueda global, notificaciones y perfil.
+ *
+ * @param props.onOpenSidebar - Callback para abrir la barra lateral.
+ */
 export function Header({ onOpenSidebar }: HeaderProps) {
   const { appUser, roles } = useAuth()
   const [periodName, setPeriodName] = useState<string | null>(null)
@@ -210,6 +223,12 @@ export function Header({ onOpenSidebar }: HeaderProps) {
   )
 }
 
+/**
+ * Obtiene las iniciales de un nombre (máximo 2 caracteres).
+ *
+ * @param name - Nombre completo.
+ * @returns Iniciales en mayúsculas.
+ */
 function getInitials(name: string) {
   const initials = name
     .split(/\s+/)
@@ -222,6 +241,12 @@ function getInitials(name: string) {
   return initials || 'AB'
 }
 
+/**
+ * Convierte una fecha al formato YYYY-MM-DD para comparaciones.
+ *
+ * @param date - Fecha a formatear.
+ * @returns Cadena en formato ISO de fecha.
+ */
 function getDateKey(date: Date) {
   const year = date.getFullYear()
   const month = String(date.getMonth() + 1).padStart(2, '0')

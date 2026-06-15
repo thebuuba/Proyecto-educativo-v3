@@ -1,3 +1,8 @@
+/**
+ * Tipos generados por Supabase para la base de datos.
+ * Define las tablas, vistas, funciones y relaciones del esquema público.
+ */
+
 export type Json =
   | string
   | number

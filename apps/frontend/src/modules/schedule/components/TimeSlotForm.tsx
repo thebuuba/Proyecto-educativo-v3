@@ -1,3 +1,9 @@
+/**
+ * @file Componente TimeSlotForm
+ *
+ * Formulario modal para crear o editar un bloque horario.
+ */
+
 import { AlertCircle, X } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useRef, useState } from 'react'
@@ -7,6 +13,7 @@ import { Input } from '@/components/ui/Input'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
 import type { CreateTimeSlotInput, TimeSlot, UpdateTimeSlotInput } from '@/modules/schedule/types'
 
+/** Propiedades del componente TimeSlotForm */
 type TimeSlotFormProps = {
   slot?: TimeSlot | null
   submitting: boolean
@@ -15,6 +22,7 @@ type TimeSlotFormProps = {
   onClose: () => void
 }
 
+/** Formulario modal para crear o editar un bloque horario */
 export function TimeSlotForm({
   slot,
   submitting,
@@ -147,6 +155,7 @@ export function TimeSlotForm({
   )
 }
 
+/** Componente auxiliar para etiqueta de campo de formulario */
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block space-y-1.5">

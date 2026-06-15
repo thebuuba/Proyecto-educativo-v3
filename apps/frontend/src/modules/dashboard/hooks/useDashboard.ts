@@ -1,3 +1,8 @@
+/**
+ * Hook useDashboard — Gestiona el estado del dashboard: carga de datos,
+ * creación y completado de tareas, y manejo de estados de carga y error.
+ */
+
 import { useCallback, useEffect, useState } from 'react'
 
 import {
@@ -11,6 +16,7 @@ import type {
 } from '@/modules/dashboard/types/dashboard'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
+/** Hook principal del dashboard. Retorna datos, estado de carga/error y acciones. */
 export function useDashboard() {
   const { appUser } = useAuth()
   const appUserId = appUser?.id ?? null

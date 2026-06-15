@@ -1,7 +1,17 @@
+/**
+ * Componentes de tabla con estilos consistentes.
+ *
+ * @module Table
+ */
 import type { HTMLAttributes, ReactNode, TdHTMLAttributes, ThHTMLAttributes } from 'react'
 
 import { cn } from '@/utils/cn'
 
+/**
+ * Tabla de datos con ancho completo y alineación izquierda.
+ *
+ * @param props.children - Filas y columnas de la tabla.
+ */
 export function Table({
   className,
   children,
@@ -14,6 +24,11 @@ export function Table({
   )
 }
 
+/**
+ * Encabezado de tabla con fondo y texto en mayúsculas.
+ *
+ * @param props.children - Filas de encabezado.
+ */
 export function TableHead({
   className,
   children,
@@ -32,6 +47,11 @@ export function TableHead({
   )
 }
 
+/**
+ * Cuerpo de tabla con divisores entre filas.
+ *
+ * @param props.children - Filas de datos.
+ */
 export function TableBody({
   className,
   children,
@@ -44,6 +64,11 @@ export function TableBody({
   )
 }
 
+/**
+ * Celda de encabezado de columna con texto seminegrita.
+ *
+ * @param props.children - Texto del encabezado.
+ */
 export function TableHeaderCell({
   className,
   children,
@@ -56,6 +81,11 @@ export function TableHeaderCell({
   )
 }
 
+/**
+ * Celda de datos de tabla con padding uniforme.
+ *
+ * @param props.children - Contenido de la celda.
+ */
 export function TableCell({
   className,
   children,

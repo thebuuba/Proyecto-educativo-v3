@@ -1,3 +1,8 @@
+/**
+ * Componente StudentFiltersBar — Barra de filtros con búsqueda,
+ * selección de curso y filtro de estado para la tabla de estudiantes.
+ */
+
 import { Funnel, Search } from 'lucide-react'
 
 import { Input } from '@/components/ui/Input'
@@ -5,15 +10,23 @@ import { cn } from '@/utils/cn'
 import type { StudentFilters } from '@/modules/students/types'
 
 type StudentFiltersBarProps = {
+  /** Término de búsqueda actual. */
   search: string
+  /** Filtros activos. */
   filters: StudentFilters
+  /** Opciones de cursos disponibles. */
   courseOptions: { label: string; count: number }[]
+  /** Curso seleccionado actualmente. */
   selectedCourse: string
+  /** Callback al cambiar la búsqueda. */
   onSearchChange: (value: string) => void
+  /** Callback al cambiar los filtros. */
   onFiltersChange: (filters: StudentFilters) => void
+  /** Callback al cambiar el curso seleccionado. */
   onCourseChange: (value: string) => void
 }
 
+/** Opciones de filtro por estado del estudiante. */
 const statusOptions = [
   { value: 'active', label: 'Activos' },
   { value: 'all', label: 'Todos' },
@@ -21,6 +34,7 @@ const statusOptions = [
   { value: 'archived', label: 'Archivados' },
 ] as const
 
+/** Barra de filtros y búsqueda de estudiantes. */
 export function StudentFiltersBar({
   search,
   filters,

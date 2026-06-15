@@ -1,3 +1,10 @@
+/**
+ * @file Componente AttendanceGrid
+ *
+ * Cuadrícula de estudiantes con botones para marcar su estado
+ * de asistencia (presente, ausente, tarde, justificado).
+ */
+
 import { Check, Clock, Minus, X } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
@@ -5,12 +12,14 @@ import type { AttendanceStatus } from '@/types/domain'
 import type { StudentAttendanceRow } from '@/modules/attendance/types'
 import { cn } from '@/utils/cn'
 
+/** Propiedades del componente AttendanceGrid */
 type AttendanceGridProps = {
   students: StudentAttendanceRow[]
   saving: boolean
   onToggle: (enrollmentId: string, status: AttendanceStatus) => void
 }
 
+/** Configuración visual de cada estado de asistencia */
 type StatusConfig = {
   status: AttendanceStatus
   icon: typeof Check
@@ -18,6 +27,7 @@ type StatusConfig = {
   activeClass: string
 }
 
+/** Lista de estados de asistencia con su configuración visual */
 const statuses: StatusConfig[] = [
   {
     status: 'present',
@@ -45,6 +55,7 @@ const statuses: StatusConfig[] = [
   },
 ]
 
+/** Cuadrícula interactiva de asistencia con botones por estado */
 export function AttendanceGrid({ students, saving, onToggle }: AttendanceGridProps) {
   if (students.length === 0) {
     return (

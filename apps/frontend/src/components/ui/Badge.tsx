@@ -1,7 +1,11 @@
+/**
+ * Componente de insignia para etiquetar estados o categorías.
+ */
 import type { HTMLAttributes, ReactNode } from 'react'
 
 import { cn } from '@/utils/cn'
 
+/** Tonos de color disponibles para la insignia. */
 type BadgeTone = 'default' | 'accent' | 'success' | 'warning' | 'destructive' | 'muted'
 
 const toneClasses: Record<BadgeTone, string> = {
@@ -13,13 +17,21 @@ const toneClasses: Record<BadgeTone, string> = {
   muted: 'bg-muted text-muted-foreground ring-border',
 }
 
+/**
+ * Insignia redondeada para mostrar etiquetas o estados.
+ *
+ * @param props.tone - Color de la insignia.
+ * @param props.children - Contenido textual de la insignia.
+ */
 export function Badge({
   tone = 'default',
   className,
   children,
   ...props
 }: HTMLAttributes<HTMLSpanElement> & {
+  /** Color de la insignia. */
   tone?: BadgeTone
+  /** Contenido de la insignia. */
   children: ReactNode
 }) {
   return (

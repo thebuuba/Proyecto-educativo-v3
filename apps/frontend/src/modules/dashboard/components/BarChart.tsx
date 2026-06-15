@@ -1,9 +1,16 @@
+/**
+ * Componente BarChart — Gráfico de barras para visualizar datos
+ * de asistencia u otras métricas del dashboard.
+ */
+
 import type { ChartDatum } from '@/modules/dashboard/types/dashboard'
 
 type BarChartProps = {
+  /** Datos para las barras del gráfico. */
   data: ChartDatum[]
 }
 
+/** Gráfico de barras verticales. */
 export function BarChart({ data }: BarChartProps) {
   if (data.length === 0) {
     return (

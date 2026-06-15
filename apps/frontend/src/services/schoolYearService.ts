@@ -1,11 +1,24 @@
+/**
+ * Servicio para obtener información del año escolar.
+ */
 import { api } from '@/services/apiClient'
 
+/** Resumen de un año escolar. */
 export type SchoolYearSummary = {
+  /** Identificador del año escolar. */
   id: string
+  /** Nombre del año escolar. */
   name: string
+  /** Indica si es el año escolar actual. */
   isCurrent: boolean
 }
 
+/**
+ * Obtiene el año escolar actual. Si ninguno está marcado como actual,
+ * retorna el primero de la lista. Retorna null si no hay años escolares.
+ *
+ * @returns El año escolar actual o null.
+ */
 export async function getCurrentSchoolYear(): Promise<SchoolYearSummary | null> {
   const years = await api.get<SchoolYearSummary[]>('/settings/school-years')
   return years.find((y) => y.isCurrent) ?? years[0] ?? null

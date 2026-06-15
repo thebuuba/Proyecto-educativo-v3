@@ -1,3 +1,8 @@
+/**
+ * Componente ImportStudentsModal — Modal para importar estudiantes
+ * desde un archivo CSV con vista previa y validación.
+ */
+
 import { AlertCircle, FileUp, Table, Upload } from 'lucide-react'
 import { useState } from 'react'
 
@@ -17,12 +22,15 @@ type ImportResult = {
 }
 
 type ImportStudentsModalProps = {
+  /** Callback para importar las filas parseadas. */
   onImport: (rows: ParsedStudentRow[]) => Promise<ImportResult>
+  /** Callback para cerrar el modal. */
   onClose: () => void
 }
 
 const MAX_PREVIEW = DEFAULTS.PREVIEW_MAX_ROWS
 
+/** Modal de importación de estudiantes desde CSV. */
 export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalProps) {
   const [rows, setRows] = useState<ParsedStudentRow[]>([])
   const [errors, setErrors] = useState<ImportValidationError[]>([])

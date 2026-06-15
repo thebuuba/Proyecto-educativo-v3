@@ -1,7 +1,17 @@
+/**
+ * Componentes de tarjeta para agrupar contenido en secciones visuales.
+ *
+ * @module Card
+ */
 import type { HTMLAttributes, ReactNode } from 'react'
 
 import { cn } from '@/utils/cn'
 
+/**
+ * Contenedor de tarjeta con bordes redondeados y sombra.
+ *
+ * @param props.children - Contenido de la tarjeta.
+ */
 export function Card({
   className,
   children,
@@ -20,6 +30,11 @@ export function Card({
   )
 }
 
+/**
+ * Encabezado de tarjeta con borde inferior.
+ *
+ * @param props.children - Contenido del encabezado.
+ */
 export function CardHeader({
   className,
   children,
@@ -32,6 +47,11 @@ export function CardHeader({
   )
 }
 
+/**
+ * Título de la tarjeta.
+ *
+ * @param props.children - Texto del título.
+ */
 export function CardTitle({
   className,
   children,
@@ -44,6 +64,11 @@ export function CardTitle({
   )
 }
 
+/**
+ * Descripción secundaria de la tarjeta.
+ *
+ * @param props.children - Texto descriptivo.
+ */
 export function CardDescription({
   className,
   children,
@@ -56,6 +81,11 @@ export function CardDescription({
   )
 }
 
+/**
+ * Contenido principal de la tarjeta.
+ *
+ * @param props.children - Contenido interno.
+ */
 export function CardContent({
   className,
   children,

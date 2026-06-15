@@ -1,3 +1,10 @@
+/**
+ * @file Página de Perfil
+ *
+ * Vista del perfil del usuario autenticado con datos
+ * personales, roles, seguridad y opciones de actualización.
+ */
+
 import { KeyRound, Save } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
@@ -13,6 +20,7 @@ import {
 import { api } from '@/services/apiClient'
 import type { UserRole } from '@/types/domain'
 
+/** Etiquetas en español para cada rol del sistema */
 const roleLabels: Record<UserRole, string> = {
   admin: 'Admin',
   director: 'Director',
@@ -226,6 +234,7 @@ export function ProfilePage() {
   )
 }
 
+/** Obtiene las iniciales de un nombre completo */
 function getInitials(name: string) {
   const initials = name
     .split(/\s+/)
@@ -238,6 +247,7 @@ function getInitials(name: string) {
   return initials || 'AB'
 }
 
+/** Formatea una fecha ISO a formato legible en español */
 function formatDateTime(value: string) {
   return new Intl.DateTimeFormat('es-DO', {
     dateStyle: 'medium',

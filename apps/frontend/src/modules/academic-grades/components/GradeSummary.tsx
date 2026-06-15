@@ -1,12 +1,21 @@
+/**
+ * @file Componente GradeSummary
+ *
+ * Muestra un resumen visual con tarjetas de promedio, nota más
+ * alta, nota más baja, aprobados y reprobados.
+ */
+
 import { Card, CardContent } from '@/components/ui/Card'
 import type { GradeSummaryStats } from '@/modules/academic-grades/types'
 import { cn } from '@/utils/cn'
 
+/** Propiedades del componente GradeSummary */
 type GradeSummaryProps = {
   stats: GradeSummaryStats
   loading: boolean
 }
 
+/** Resumen visual de estadísticas de calificaciones */
 export function GradeSummary({ stats, loading }: GradeSummaryProps) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">

@@ -1,12 +1,21 @@
+/**
+ * Servicio de configuración
+ * @module SettingsService
+ * @description Contiene la lógica de negocio para la gestión de la configuración del colegio.
+ * Proporciona operaciones CRUD para datos de la institución, años escolares
+ * y consulta de períodos académicos.
+ */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
 @Injectable()
 export class SettingsService {
+  /** Obtiene los datos del colegio por su ID */
   getSchool(schoolId: string) {
     return prisma.school.findUnique({ where: { id: schoolId } })
   }
 
+  /** Actualiza los datos del colegio */
   async updateSchool(schoolId: string, body: any) {
     const school = await prisma.school.findUnique({ where: { id: schoolId } })
     if (!school) throw new NotFoundException('School not found')
@@ -31,6 +40,7 @@ export class SettingsService {
     })
   }
 
+  /** Obtiene los años escolares del colegio ordenados por fecha de inicio */
   getSchoolYears(schoolId: string) {
     return prisma.schoolYear.findMany({
       where: { schoolId },
@@ -38,6 +48,7 @@ export class SettingsService {
     })
   }
 
+  /** Crea un nuevo año escolar */
   createSchoolYear(schoolId: string, body: any) {
     return prisma.schoolYear.create({
       data: {
@@ -50,6 +61,7 @@ export class SettingsService {
     })
   }
 
+  /** Actualiza un año escolar existente */
   async updateSchoolYear(schoolId: string, id: string, body: any) {
     const sy = await prisma.schoolYear.findFirst({ where: { id, schoolId } })
     if (!sy) throw new NotFoundException('School year not found')
@@ -65,6 +77,7 @@ export class SettingsService {
     })
   }
 
+  /** Establece un año escolar como el actual, desmarcando los demás en una transacción */
   async setCurrentSchoolYear(schoolId: string, id: string) {
     const sy = await prisma.schoolYear.findFirst({ where: { id, schoolId } })
     if (!sy) throw new NotFoundException('School year not found')
@@ -83,6 +96,7 @@ export class SettingsService {
     return current
   }
 
+  /** Obtiene los períodos académicos del colegio */
   getAcademicPeriods(schoolId: string) {
     return prisma.academicPeriod.findMany({
       where: { schoolId },

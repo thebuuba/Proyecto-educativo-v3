@@ -1,14 +1,24 @@
+/**
+ * Componente ChartPanel — Contenedor para gráficos con título,
+ * descripción, valor principal y contenido hijo.
+ */
+
 import type { ReactNode } from 'react'
 
 import { Card, CardDescription, CardTitle } from '@/components/ui/Card'
 
 type ChartPanelProps = {
+  /** Título del panel. */
   title: string
+  /** Descripción del panel. */
   description: string
+  /** Valor principal mostrado en el panel. */
   value: string
+  /** Contenido del gráfico. */
   children: ReactNode
 }
 
+/** Panel contenedor para gráficos del dashboard. */
 export function ChartPanel({ title, description, value, children }: ChartPanelProps) {
   return (
     <Card className="p-5">

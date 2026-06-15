@@ -1,3 +1,11 @@
+/**
+ * @file Hook de Asistencia
+ *
+ * Gestiona el estado y las operaciones del módulo de asistencia:
+ * selección de sección, carga de estudiantes, cambio de estados y
+ * cálculo de estadísticas.
+ */
+
 import { useCallback, useEffect, useState } from 'react'
 
 import {
@@ -16,6 +24,7 @@ import type {
 } from '@/modules/attendance/types'
 import type { AttendanceStatus } from '@/types/domain'
 
+/** Hook principal para la gestión de asistencia */
 export function useAttendance() {
   const [sections, setSections] = useState<SectionOption[]>([])
   const [selectedSectionId, setSelectedSectionId] = useState<string>('')
@@ -34,6 +43,7 @@ export function useAttendance() {
   const [schoolYearId, setSchoolYearId] = useState<string | null>(null)
   const [academicPeriodId, setAcademicPeriodId] = useState<string | null>(null)
 
+  /** Carga las secciones, el año escolar activo y el período académico actual */
   const loadInitialData = useCallback(async () => {
     setLoading(true)
     setError(null)
@@ -66,6 +76,7 @@ export function useAttendance() {
     void loadInitialData()
   }, [loadInitialData])
 
+  /** Carga los estudiantes de una sección y su asistencia para una fecha */
   const loadStudents = useCallback(
     async (sectionId: string, selectedDate: string) => {
       if (!schoolYearId) return
@@ -114,6 +125,7 @@ export function useAttendance() {
     }
   }, [selectedSectionId, date, schoolYearId, loadStudents])
 
+  /** Alterna el estado de asistencia de un estudiante y lo persiste */
   const toggleStatus = useCallback(
     async (enrollmentId: string, newStatus: AttendanceStatus) => {
       if (!academicPeriodId || !schoolYearId) return

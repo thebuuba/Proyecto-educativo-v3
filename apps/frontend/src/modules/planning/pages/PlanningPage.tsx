@@ -1,3 +1,11 @@
+/**
+ * @file Página de Planificaciones
+ *
+ * Vista principal de planificación curricular con selector
+ * de trimestres, lista de planificaciones y formularios
+ * de creación/edición.
+ */
+
 import { AlertCircle, Plus, Settings2 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -12,6 +20,7 @@ import type {
   PlanningEntryWithDetails,
 } from '@/modules/planning/types'
 
+/** Página principal de planificaciones curriculares */
 export function PlanningPage() {
   const {
     schoolYearId,

@@ -1,6 +1,15 @@
+/**
+ * @fileoverview Script de seed para poblar la base de datos con datos
+ * iniciales (roles, permisos, catálogos RD).
+ */
+
 import { prisma } from './index.js'
 import * as bcrypt from 'bcrypt'
 
+/**
+ * @description Función principal del seed. Crea un centro educativo por
+ * defecto, el rol de administrador, y un usuario admin de prueba.
+ */
 async function main() {
   const school = await prisma.school.upsert({
     where: { slug: 'aula-base' },

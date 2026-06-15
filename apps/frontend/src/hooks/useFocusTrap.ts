@@ -1,11 +1,28 @@
+/**
+ * Hook que atrapa el foco del teclado dentro de un contenedor
+ * y permite cerrar con la tecla Escape.
+ */
 import { useEffect, type RefObject } from 'react'
 
+/** Opciones del hook useFocusTrap. */
 type UseFocusTrapOptions = {
+  /** Referencia al contenedor que atrapa el foco. */
   ref: RefObject<HTMLDivElement | null>
+  /** Si es true, activa el atrapado de foco. */
   active: boolean
+  /** Callback ejecutado al presionar Escape. */
   onEscape?: () => void
 }
 
+/**
+ * Atrapa el foco en elementos enfocables dentro de un contenedor,
+ * ciclando entre el primer y último elemento con Tab/Shift+Tab.
+ * Ejecuta onEscape al presionar Escape.
+ *
+ * @param options.ref - Referencia al contenedor.
+ * @param options.active - Activa o desactiva el hook.
+ * @param options.onEscape - Callback de tecla Escape.
+ */
 export function useFocusTrap({ ref, active, onEscape }: UseFocusTrapOptions) {
   useEffect(() => {
     if (!active) return

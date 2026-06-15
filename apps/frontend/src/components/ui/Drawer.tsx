@@ -1,15 +1,32 @@
+/**
+ * Panel lateral deslizable desde la derecha.
+ */
 import { X } from 'lucide-react'
 import type { ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
 
+/** Propiedades del componente Drawer. */
 type DrawerProps = {
+  /** Título del panel. */
   title: string
+  /** Texto secundario sobre el título. */
   eyebrow?: string
+  /** Contenido del panel. */
   children: ReactNode
+  /** Función llamada al cerrar el panel. */
   onClose: () => void
 }
 
+/**
+ * Drawer lateral que se superpone desde el borde derecho,
+ * con encabezado fijo y área de contenido desplazable.
+ *
+ * @param props.title - Título del drawer.
+ * @param props.eyebrow - Texto secundario opcional.
+ * @param props.children - Contenido del drawer.
+ * @param props.onClose - Callback de cierre.
+ */
 export function Drawer({ title, eyebrow, children, onClose }: DrawerProps) {
   return (
     <aside className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-border bg-popover text-popover-foreground shadow-xl">

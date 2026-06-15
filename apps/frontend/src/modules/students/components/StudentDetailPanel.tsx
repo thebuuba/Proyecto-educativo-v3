@@ -1,3 +1,8 @@
+/**
+ * Componente StudentDetailPanel — Panel lateral con el detalle completo
+ * del estudiante: datos personales, matrícula actual, historial, tutores y auditoría.
+ */
+
 import { AlertCircle, Plus, Trash2, X } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
@@ -21,11 +26,15 @@ import type {
 import type { EnrollmentStatus } from '@/types/domain'
 
 type StudentDetailPanelProps = {
+  /** Estudiante resumido para mostrar detalle. */
   student: StudentListItem
+  /** Indica si el usuario puede ver tutores. */
   canViewGuardians: boolean
+  /** Callback para cerrar el panel. */
   onClose: () => void
 }
 
+/** Formatea una fecha ISO a formato legible en español. */
 function formatDate(value: string) {
   const date = new Date(value.includes('T') ? value : `${value}T00:00:00`)
 
@@ -54,6 +63,7 @@ const statusLabel: Record<EnrollmentStatus, string> = {
   completed: 'Completado',
 }
 
+/** Panel lateral de detalle del estudiante. */
 export function StudentDetailPanel({
   student,
   canViewGuardians,
@@ -391,6 +401,7 @@ export function StudentDetailPanel({
   )
 }
 
+/** Elemento de detalle con etiqueta y valor. */
 function DetailItem({ label, value }: { label: string; value: string }) {
   return (
     <div>

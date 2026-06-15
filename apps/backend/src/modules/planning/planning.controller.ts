@@ -1,3 +1,9 @@
+/**
+ * Controlador de planificación
+ * @module PlanningController
+ * @description Expone los endpoints REST para la gestión de planificaciones académicas,
+ * incluyendo CRUD de períodos académicos, consulta de competencias y CRUD de entradas de planificación.
+ */
 import { Controller, Get, Post, Patch, Delete, Param, Body, Query, UseGuards } from '@nestjs/common'
 import { PlanningService } from './planning.service'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
@@ -11,22 +17,26 @@ import { RolesGuard } from '../../common/guards/roles.guard'
 export class PlanningController {
   constructor(private planningService: PlanningService) {}
 
+  /** Obtiene las entradas de planificación filtradas por materia-sección */
   @Get()
   findAll(@CurrentUser() user: AuthenticatedUser, @Query('sectionSubjectId') sectionSubjectId?: string) {
     return this.planningService.findAll(user.schoolId, sectionSubjectId)
   }
 
+  /** Obtiene los períodos académicos filtrados por año escolar */
   @Get('academic-periods')
   getAcademicPeriods(@CurrentUser() user: AuthenticatedUser, @Query('schoolYearId') schoolYearId?: string) {
     return this.planningService.getAcademicPeriods(user.schoolId, schoolYearId)
   }
 
+  /** Crea un nuevo período académico (solo admin, director, coordinador) */
   @Post('academic-periods')
   @Roles('admin', 'director', 'coordinator')
   createAcademicPeriod(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
     return this.planningService.createAcademicPeriod(user.schoolId, body)
   }
 
+  /** Actualiza un período académico existente (solo admin, director, coordinador) */
   @Patch('academic-periods/:id')
   @Roles('admin', 'director', 'coordinator')
   updateAcademicPeriod(
@@ -37,22 +47,26 @@ export class PlanningController {
     return this.planningService.updateAcademicPeriod(user.schoolId, id, body)
   }
 
+  /** Elimina un período académico (solo admin, director, coordinador) */
   @Delete('academic-periods/:id')
   @Roles('admin', 'director', 'coordinator')
   deleteAcademicPeriod(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
     return this.planningService.deleteAcademicPeriod(user.schoolId, id)
   }
 
+  /** Obtiene las competencias del currículo, filtradas por materia */
   @Get('competencies')
   getCompetencies(@Query('subjectId') subjectId?: string) {
     return this.planningService.getCompetencies(subjectId)
   }
 
+  /** Obtiene las materias asignadas a secciones, filtradas por profesor */
   @Get('section-subjects')
   getSectionSubjects(@CurrentUser() user: AuthenticatedUser, @Query('teacherId') teacherId?: string) {
     return this.planningService.getSectionSubjects(user.schoolId, teacherId)
   }
 
+  /** Obtiene las entradas de planificación filtradas por materia-sección y período */
   @Get('entries')
   findEntries(
     @CurrentUser() user: AuthenticatedUser,
@@ -62,12 +76,14 @@ export class PlanningController {
     return this.planningService.findEntries(user.schoolId, sectionSubjectId, academicPeriodId)
   }
 
+  /** Crea una nueva entrada de planificación (solo admin, director, coordinador, teacher) */
   @Post('entries')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   createEntry(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
     return this.planningService.createEntry(user.schoolId, body)
   }
 
+  /** Actualiza una entrada de planificación existente (solo admin, director, coordinador, teacher) */
   @Patch('entries/:id')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   updateEntry(
@@ -78,6 +94,7 @@ export class PlanningController {
     return this.planningService.updateEntry(user.schoolId, id, body)
   }
 
+  /** Elimina una entrada de planificación (solo admin, director, coordinador, teacher) */
   @Delete('entries/:id')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   deleteEntry(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
