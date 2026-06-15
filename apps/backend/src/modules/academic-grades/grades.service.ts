@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
 @Injectable()
@@ -10,8 +10,28 @@ export class GradesService {
     return prisma.gradesRecord.findMany({ where })
   }
 
-  getSectionSubjects(schoolId: string) {
-    return prisma.sectionSubject.findMany({ where: { schoolId, status: 'ACTIVE' } })
+  async getSectionSubjects(schoolId: string) {
+    const [items, subjects, sections, grades] = await Promise.all([
+      prisma.sectionSubject.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.subject.findMany({ where: { schoolId } }),
+      prisma.section.findMany({ where: { schoolId } }),
+      prisma.grade.findMany({ where: { schoolId } }),
+    ])
+    const subjectById = new Map(subjects.map((item) => [item.id, item]))
+    const sectionById = new Map(sections.map((item) => [item.id, item]))
+    const gradeById = new Map(grades.map((item) => [item.id, item]))
+
+    return items.map((item) => {
+      const subject = subjectById.get(item.subjectId)
+      const section = sectionById.get(item.sectionId)
+      const grade = section ? gradeById.get(section.gradeId) : null
+      return {
+        id: item.id,
+        subjectName: subject?.name ?? '',
+        sectionName: section?.name ?? '',
+        gradeName: grade?.name ?? '',
+      }
+    })
   }
 
   getAcademicPeriods(schoolId: string) {
@@ -23,9 +43,9 @@ export class GradesService {
 
   async getStudentsForGrading(schoolId: string, sectionSubjectId: string, academicPeriodId: string) {
     const ss = await prisma.sectionSubject.findFirst({ where: { id: sectionSubjectId, schoolId } })
-    if (!ss) throw new Error('Section subject not found')
+    if (!ss) throw new NotFoundException('Section subject not found')
     const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: academicPeriodId, schoolId } })
-    if (!academicPeriod) throw new Error('Academic period not found')
+    if (!academicPeriod) throw new NotFoundException('Academic period not found')
 
     const enrollments = await prisma.enrollment.findMany({
       where: { schoolId, sectionId: ss.sectionId, schoolYearId: ss.schoolYearId, status: 'ACTIVE' },
@@ -67,7 +87,7 @@ export class GradesService {
   async saveGrade(schoolId: string, input: any) {
     if (input.gradeId) {
       const grade = await prisma.gradesRecord.findFirst({ where: { id: input.gradeId, schoolId } })
-      if (!grade) throw new Error('Grade record not found')
+      if (!grade) throw new NotFoundException('Grade record not found')
       return prisma.gradesRecord.update({
         where: { id: input.gradeId },
         data: {
@@ -83,9 +103,9 @@ export class GradesService {
       prisma.sectionSubject.findFirst({ where: { id: input.sectionSubjectId, schoolId } }),
       prisma.academicPeriod.findFirst({ where: { id: input.academicPeriodId, schoolId } }),
     ])
-    if (!enrollment) throw new Error('Enrollment not found')
-    if (!sectionSubject) throw new Error('Section subject not found')
-    if (!academicPeriod) throw new Error('Academic period not found')
+    if (!enrollment) throw new NotFoundException('Enrollment not found')
+    if (!sectionSubject) throw new NotFoundException('Section subject not found')
+    if (!academicPeriod) throw new NotFoundException('Academic period not found')
 
     return prisma.gradesRecord.create({
       data: {

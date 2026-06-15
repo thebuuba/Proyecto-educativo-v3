@@ -43,7 +43,12 @@ export class UsersService {
     })
   }
 
-  async getPermissions(roleIds: string[]) {
+  async getPermissions(schoolId: string, userId: string, roleIds: string[]) {
+    if (!roleIds.length) return []
+    const allowedRoles = await prisma.userRole.findMany({
+      where: { schoolId, userId, roleId: { in: roleIds }, status: 'ACTIVE' },
+    })
+    roleIds = allowedRoles.map((role) => role.roleId)
     if (!roleIds.length) return []
     const rolePermissions = await prisma.rolePermission.findMany({
       where: { roleId: { in: roleIds }, status: 'ACTIVE' },

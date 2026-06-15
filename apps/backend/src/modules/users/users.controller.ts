@@ -12,9 +12,9 @@ export class UsersController {
   constructor(private usersService: UsersService) {}
 
   @Get('permissions')
-  getPermissions(@Query('roleIds') roleIds: string) {
+  getPermissions(@CurrentUser() user: AuthenticatedUser, @Query('roleIds') roleIds: string) {
     const ids = roleIds.split(',').filter(Boolean)
-    return this.usersService.getPermissions(ids)
+    return this.usersService.getPermissions(user.schoolId, user.id, ids)
   }
 
   @Get()

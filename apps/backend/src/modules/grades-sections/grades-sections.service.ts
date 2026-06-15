@@ -1,10 +1,14 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
+function status(value: string) {
+  return value.toLowerCase()
+}
+
 @Injectable()
 export class GradesSectionsService {
   async getCourseData(schoolId: string) {
-    const [grades, sections, subjects, academicLevels, cycles, modalities, teachers] =
+    const [grades, sections, assignments, subjects, academicLevels, cycles, modalities, teachers, currentSchoolYear] =
       await Promise.all([
         prisma.grade.findMany({
           where: { schoolId, status: 'ACTIVE' },
@@ -14,6 +18,9 @@ export class GradesSectionsService {
           where: { schoolId, status: 'ACTIVE' },
           orderBy: { name: 'asc' },
         }),
+        prisma.sectionSubject.findMany({
+          where: { schoolId, status: 'ACTIVE' },
+        }),
         prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } }),
         prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } }),
         prisma.drAcademicCycle.findMany({ orderBy: { name: 'asc' } }),
@@ -21,9 +28,62 @@ export class GradesSectionsService {
         prisma.teacher.findMany({
           where: { schoolId, status: 'ACTIVE' },
         }),
+        prisma.schoolYear.findFirst({
+          where: { schoolId, isCurrent: true },
+          select: { id: true, name: true },
+        }),
       ])
 
-    return { grades, sections, subjects, academicLevels, cycles, modalities, teachers }
+    const levelById = new Map(academicLevels.map((item) => [item.id, item]))
+    const cycleById = new Map(cycles.map((item) => [item.id, item]))
+    const modalityById = new Map(modalities.map((item) => [item.id, item]))
+    const subjectById = new Map(subjects.map((item) => [item.id, item]))
+    const teacherById = new Map(teachers.map((item) => [item.id, item]))
+
+    return {
+      grades: grades.map((grade) => ({
+        ...grade,
+        status: status(grade.status),
+        academicLevelName: grade.academicLevelId ? levelById.get(grade.academicLevelId)?.name ?? null : null,
+        academicCycleName: grade.academicCycleId ? cycleById.get(grade.academicCycleId)?.name ?? null : null,
+        defaultModalityName: grade.defaultModalityId ? modalityById.get(grade.defaultModalityId)?.name ?? null : null,
+        sections: sections
+          .filter((section) => section.gradeId === grade.id)
+          .map((section) => ({
+            ...section,
+            status: status(section.status),
+            assignments: assignments
+              .filter((assignment) => assignment.sectionId === section.id)
+              .map((assignment) => {
+                const subject = subjectById.get(assignment.subjectId)
+                const teacher = assignment.teacherId ? teacherById.get(assignment.teacherId) : null
+                return {
+                  id: assignment.id,
+                  sectionId: assignment.sectionId,
+                  gradeId: assignment.gradeId,
+                  subjectId: assignment.subjectId,
+                  subjectCode: subject?.code ?? '',
+                  subjectName: subject?.name ?? '',
+                  teacherId: assignment.teacherId,
+                  teacherName: teacher ? `${teacher.firstName} ${teacher.lastName}` : null,
+                  status: status(assignment.status),
+                }
+              }),
+          })),
+      })),
+      catalogs: {
+        levels: academicLevels,
+        cycles,
+        modalities,
+        subjects,
+        teachers: teachers.map((teacher) => ({
+          id: teacher.id,
+          name: `${teacher.firstName} ${teacher.lastName}`,
+          email: teacher.email,
+        })),
+      },
+      currentSchoolYear,
+    }
   }
 
   getAcademicLevels() {

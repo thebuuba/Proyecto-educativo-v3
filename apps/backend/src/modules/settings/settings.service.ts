@@ -15,12 +15,18 @@ export class SettingsService {
       where: { id: schoolId },
       data: {
         ...(body.name && { name: body.name }),
-        ...(body.address !== undefined && { address: body.address }),
-        ...(body.phone !== undefined && { phone: body.phone }),
-        ...(body.email !== undefined && { email: body.email }),
-        ...(body.directorName !== undefined && { directorName: body.directorName }),
+        ...(body.slug && { slug: body.slug }),
         ...(body.logoUrl !== undefined && { logoUrl: body.logoUrl }),
-        ...(body.academicLevel !== undefined && { academicLevel: body.academicLevel }),
+        ...(body.sector !== undefined && { sector: body.sector }),
+        ...(body.regionalCode !== undefined && { regionalCode: body.regionalCode }),
+        ...(body.regionalName !== undefined && { regionalName: body.regionalName }),
+        ...(body.districtCode !== undefined && { districtCode: body.districtCode }),
+        ...(body.districtName !== undefined && { districtName: body.districtName }),
+        ...(body.centerCode !== undefined && { centerCode: body.centerCode }),
+        ...(body.schoolShift !== undefined && { schoolShift: body.schoolShift }),
+        ...(body.primaryModality !== undefined && { primaryModality: body.primaryModality }),
+        ...(body.enabledSubsystems !== undefined && { enabledSubsystems: body.enabledSubsystems }),
+        ...(body.officialExportsEnabled !== undefined && { officialExportsEnabled: body.officialExportsEnabled }),
       },
     })
   }
@@ -63,15 +69,18 @@ export class SettingsService {
     const sy = await prisma.schoolYear.findFirst({ where: { id, schoolId } })
     if (!sy) throw new NotFoundException('School year not found')
 
-    await prisma.schoolYear.updateMany({
-      where: { schoolId, isCurrent: true },
-      data: { isCurrent: false },
-    })
+    const [, current] = await prisma.$transaction([
+      prisma.schoolYear.updateMany({
+        where: { schoolId, isCurrent: true },
+        data: { isCurrent: false },
+      }),
+      prisma.schoolYear.update({
+        where: { id },
+        data: { isCurrent: true },
+      }),
+    ])
 
-    return prisma.schoolYear.update({
-      where: { id },
-      data: { isCurrent: true },
-    })
+    return current
   }
 
   getAcademicPeriods(schoolId: string) {
