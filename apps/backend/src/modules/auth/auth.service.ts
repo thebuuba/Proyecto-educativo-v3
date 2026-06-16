@@ -7,12 +7,17 @@ import {
   Injectable,
   ConflictException,
   UnauthorizedException,
+  InternalServerErrorException,
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
-import * as bcrypt from 'bcrypt'
 import { prisma } from '@aula/database'
 import { RegisterDto } from './dto/register.dto'
 import { LoginDto } from './dto/login.dto'
+
+type SupabaseAuthUser = {
+  id: string
+  email?: string
+}
 
 /**
  * Convierte un texto en un slug URL-friendly.
@@ -64,6 +69,88 @@ async function findSupabaseAuthUserId(email: string) {
   return rows[0]?.id
 }
 
+function getSupabaseConfig() {
+  const url = process.env.SUPABASE_URL?.replace(/\/$/, '')
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  const authKey = process.env.SUPABASE_ANON_KEY ?? serviceKey
+
+  if (!url || !serviceKey || !authKey) {
+    throw new InternalServerErrorException(
+      'Supabase Auth is not configured on the server',
+    )
+  }
+
+  return { url, serviceKey, authKey }
+}
+
+async function readSupabaseError(response: Response) {
+  const body = await response.json().catch(() => ({}))
+  return body?.msg || body?.message || body?.error_description || response.statusText
+}
+
+async function createSupabaseAuthUser(dto: RegisterDto): Promise<SupabaseAuthUser> {
+  const { url, serviceKey } = getSupabaseConfig()
+  const response = await fetch(`${url}/auth/v1/admin/users`, {
+    method: 'POST',
+    headers: {
+      apikey: serviceKey,
+      Authorization: `Bearer ${serviceKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: dto.email,
+      password: dto.password,
+      email_confirm: true,
+      user_metadata: {
+        full_name: dto.fullName,
+        school_name: dto.schoolName,
+      },
+    }),
+  })
+
+  if (!response.ok) {
+    throw new ConflictException(await readSupabaseError(response))
+  }
+
+  const body = await response.json() as SupabaseAuthUser
+  return body
+}
+
+async function deleteSupabaseAuthUser(id: string) {
+  const { url, serviceKey } = getSupabaseConfig()
+  await fetch(`${url}/auth/v1/admin/users/${id}`, {
+    method: 'DELETE',
+    headers: {
+      apikey: serviceKey,
+      Authorization: `Bearer ${serviceKey}`,
+    },
+  })
+}
+
+async function signInSupabaseUser(dto: LoginDto): Promise<SupabaseAuthUser> {
+  const { url, authKey } = getSupabaseConfig()
+  const response = await fetch(`${url}/auth/v1/token?grant_type=password`, {
+    method: 'POST',
+    headers: {
+      apikey: authKey,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: dto.email,
+      password: dto.password,
+    }),
+  })
+
+  if (!response.ok) {
+    throw new UnauthorizedException('Invalid credentials')
+  }
+
+  const body = await response.json() as { user?: SupabaseAuthUser }
+  if (!body.user?.id) throw new UnauthorizedException('Invalid credentials')
+
+  return body.user
+}
+
 @Injectable()
 export class AuthService {
   constructor(private jwtService: JwtService) {}
@@ -83,65 +170,71 @@ export class AuthService {
     })
     if (existing) throw new ConflictException('Email already registered')
 
-    const hashed = await bcrypt.hash(dto.password, 10)
     const slug = await getAvailableSchoolSlug(dto.slug || dto.schoolName)
-    const authUserId = await findSupabaseAuthUserId(dto.email)
+    const existingAuthUserId = await findSupabaseAuthUserId(dto.email)
+    const authUser = existingAuthUserId
+      ? { id: existingAuthUserId }
+      : await createSupabaseAuthUser(dto)
 
-    const { user, roles } = await prisma.$transaction(async (tx) => {
-      const school = await tx.school.create({
-        data: {
-          name: dto.schoolName,
-          slug,
+    try {
+      const { user, roles } = await prisma.$transaction(async (tx) => {
+        const school = await tx.school.create({
+          data: {
+            name: dto.schoolName,
+            slug,
+          },
+        })
+
+        const adminRole = await tx.role.upsert({
+          where: { key: 'admin' },
+          update: {},
+          create: { key: 'admin', name: 'Administrador' },
+        })
+
+        const user = await tx.appUser.create({
+          data: {
+            authUserId: authUser.id,
+            email: dto.email,
+            fullName: dto.fullName,
+            schoolId: school.id,
+          },
+        })
+
+        await tx.userRole.create({
+          data: {
+            userId: user.id,
+            roleId: adminRole.id,
+            schoolId: school.id,
+          },
+        })
+
+        return { user, roles: [adminRole] }
+      })
+
+      const token = this.jwtService.sign({ sub: user.id, email: user.email })
+
+      return {
+        user: { id: user.id, email: user.email },
+        token,
+        appUser: {
+          id: user.id,
+          authUserId: user.authUserId,
+          schoolId: user.schoolId,
+          fullName: user.fullName,
+          email: user.email,
+          phone: user.phone,
+          avatarUrl: user.avatarUrl,
+          lastLoginAt: user.lastLoginAt,
+          status: user.status,
+          createdAt: user.createdAt,
+          updatedAt: user.updatedAt,
         },
-      })
-
-      const adminRole = await tx.role.upsert({
-        where: { key: 'admin' },
-        update: {},
-        create: { key: 'admin', name: 'Administrador' },
-      })
-
-      const user = await tx.appUser.create({
-        data: {
-          authUserId: authUserId ?? crypto.randomUUID(),
-          email: dto.email,
-          fullName: dto.fullName,
-          passwordHash: hashed,
-          schoolId: school.id,
-        },
-      })
-
-      await tx.userRole.create({
-        data: {
-          userId: user.id,
-          roleId: adminRole.id,
-          schoolId: school.id,
-        },
-      })
-
-      return { user, roles: [adminRole] }
-    })
-
-    const token = this.jwtService.sign({ sub: user.id, email: user.email })
-
-    return {
-      user: { id: user.id, email: user.email },
-      token,
-      appUser: {
-        id: user.id,
-        authUserId: user.authUserId,
-        schoolId: user.schoolId,
-        fullName: user.fullName,
-        email: user.email,
-        phone: user.phone,
-        avatarUrl: user.avatarUrl,
-        lastLoginAt: user.lastLoginAt,
-        status: user.status,
-        createdAt: user.createdAt,
-        updatedAt: user.updatedAt,
-      },
-      roles,
-      permissions: [],
+        roles,
+        permissions: [],
+      }
+    } catch (error) {
+      if (!existingAuthUserId) await deleteSupabaseAuthUser(authUser.id)
+      throw error
     }
   }
 
@@ -155,13 +248,15 @@ export class AuthService {
    * @throws UnauthorizedException si las credenciales son inválidas.
    */
   async login(dto: LoginDto) {
+    const authUser = await signInSupabaseUser(dto)
     const user = await prisma.appUser.findUnique({
-      where: { email: dto.email },
+      where: { authUserId: authUser.id },
     })
-    if (!user) throw new UnauthorizedException('Invalid credentials')
-
-    const valid = await bcrypt.compare(dto.password, user.passwordHash ?? '')
-    if (!valid) throw new UnauthorizedException('Invalid credentials')
+    if (!user) {
+      throw new UnauthorizedException(
+        'Tu cuenta existe en Supabase Auth, pero no tiene un perfil en Aula Base.',
+      )
+    }
 
     const token = this.jwtService.sign({ sub: user.id, email: user.email })
 

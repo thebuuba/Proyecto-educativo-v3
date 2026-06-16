@@ -8,23 +8,28 @@ const mocks = vi.hoisted(() => ({
     appUser: {
       findUnique: vi.fn(),
     },
+    userRole: {
+      findMany: vi.fn(),
+    },
+    role: {
+      findMany: vi.fn(),
+    },
+    rolePermission: {
+      findMany: vi.fn(),
+    },
+    permission: {
+      findMany: vi.fn(),
+    },
     school: {
       findUnique: vi.fn(),
     },
     $queryRaw: vi.fn(),
     $transaction: vi.fn(),
   },
-  bcrypt: {
-    hash: vi.fn(),
-  },
 }))
 
 vi.mock('@aula/database', () => ({
   prisma: mocks.prisma,
-}))
-
-vi.mock('bcrypt', () => ({
-  hash: mocks.bcrypt.hash,
 }))
 
 describe('AuthService.register', () => {
@@ -45,10 +50,26 @@ describe('AuthService.register', () => {
 
   beforeEach(() => {
     vi.clearAllMocks()
+    process.env.SUPABASE_URL = 'https://example.supabase.co'
+    process.env.SUPABASE_SERVICE_ROLE_KEY = 'service-role-key'
+    process.env.SUPABASE_ANON_KEY = 'anon-key'
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: vi.fn().mockResolvedValue({
+          id: 'auth-created-user',
+          email: registerDto.email,
+        }),
+      }),
+    )
     mocks.prisma.appUser.findUnique.mockResolvedValue(null)
+    mocks.prisma.userRole.findMany.mockResolvedValue([])
+    mocks.prisma.role.findMany.mockResolvedValue([])
+    mocks.prisma.rolePermission.findMany.mockResolvedValue([])
+    mocks.prisma.permission.findMany.mockResolvedValue([])
     mocks.prisma.school.findUnique.mockResolvedValue(null)
     mocks.prisma.$queryRaw.mockResolvedValue([])
-    mocks.bcrypt.hash.mockResolvedValue('hashed-password')
     jwtService.sign.mockReturnValue('signed-token')
   })
 
@@ -106,7 +127,7 @@ describe('AuthService.register', () => {
     return { adminRole, school, tx, user }
   }
 
-  it('creates the school, admin role, app user, user role, signs a token, and returns the auth payload', async () => {
+  it('creates a Supabase Auth user, school, admin role, app user, user role, signs a token, and returns the auth payload', async () => {
     const { adminRole, tx, user } = mockRegisterTransaction()
 
     const result = await createService().register(registerDto)
@@ -114,7 +135,13 @@ describe('AuthService.register', () => {
     expect(mocks.prisma.appUser.findUnique).toHaveBeenCalledWith({
       where: { email: registerDto.email },
     })
-    expect(mocks.bcrypt.hash).toHaveBeenCalledWith(registerDto.password, 10)
+    expect(fetch).toHaveBeenCalledWith(
+      'https://example.supabase.co/auth/v1/admin/users',
+      expect.objectContaining({
+        method: 'POST',
+        body: expect.stringContaining(registerDto.email),
+      }),
+    )
     expect(tx.school.create).toHaveBeenCalledWith({
       data: {
         name: registerDto.schoolName,
@@ -130,13 +157,10 @@ describe('AuthService.register', () => {
       data: expect.objectContaining({
         email: registerDto.email,
         fullName: registerDto.fullName,
-        passwordHash: 'hashed-password',
+        authUserId: 'auth-created-user',
         schoolId: 'school-1',
       }),
     })
-    expect(tx.appUser.create.mock.calls[0][0].data.authUserId).toEqual(
-      expect.any(String),
-    )
     expect(tx.userRole.create).toHaveBeenCalledWith({
       data: {
         userId: user.id,
@@ -175,7 +199,7 @@ describe('AuthService.register', () => {
     await expect(createService().register(registerDto)).rejects.toBeInstanceOf(
       ConflictException,
     )
-    expect(mocks.bcrypt.hash).not.toHaveBeenCalled()
+    expect(fetch).not.toHaveBeenCalled()
     expect(mocks.prisma.$transaction).not.toHaveBeenCalled()
     expect(jwtService.sign).not.toHaveBeenCalled()
   })
@@ -208,10 +232,80 @@ describe('AuthService.register', () => {
 
     await createService().register(registerDto)
 
+    expect(fetch).not.toHaveBeenCalled()
     expect(tx.appUser.create).toHaveBeenCalledWith({
       data: expect.objectContaining({
         authUserId: 'auth-existing-user',
       }),
     })
+  })
+
+  it('validates login against Supabase Auth and loads the linked app profile', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        user: {
+          id: 'auth-created-user',
+          email: registerDto.email,
+        },
+      }),
+    } as never)
+
+    const appUser = {
+      id: 'user-1',
+      authUserId: 'auth-created-user',
+      schoolId: 'school-1',
+      fullName: registerDto.fullName,
+      email: registerDto.email,
+      phone: null,
+      avatarUrl: null,
+      lastLoginAt: null,
+      status: 'ACTIVE',
+      createdAt,
+      updatedAt,
+    }
+
+    mocks.prisma.appUser.findUnique.mockResolvedValue(appUser)
+
+    const result = await createService().login({
+      email: registerDto.email,
+      password: registerDto.password,
+    })
+
+    expect(fetch).toHaveBeenCalledWith(
+      'https://example.supabase.co/auth/v1/token?grant_type=password',
+      expect.objectContaining({
+        method: 'POST',
+        body: expect.stringContaining(registerDto.password),
+      }),
+    )
+    expect(mocks.prisma.appUser.findUnique).toHaveBeenCalledWith({
+      where: { authUserId: 'auth-created-user' },
+    })
+    expect(result.user).toEqual({ id: appUser.id, email: appUser.email })
+    expect(result.token).toBe('signed-token')
+  })
+
+  it('rejects Supabase Auth users without an Aula Base profile', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        user: {
+          id: 'auth-created-user',
+          email: registerDto.email,
+        },
+      }),
+    } as never)
+
+    mocks.prisma.appUser.findUnique.mockResolvedValue(null)
+
+    await expect(
+      createService().login({
+        email: registerDto.email,
+        password: registerDto.password,
+      }),
+    ).rejects.toThrow(
+      'Tu cuenta existe en Supabase Auth, pero no tiene un perfil en Aula Base.',
+    )
   })
 })
