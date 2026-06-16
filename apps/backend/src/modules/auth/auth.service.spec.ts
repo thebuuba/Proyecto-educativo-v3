@@ -11,6 +11,7 @@ const mocks = vi.hoisted(() => ({
     school: {
       findUnique: vi.fn(),
     },
+    $queryRaw: vi.fn(),
     $transaction: vi.fn(),
   },
   bcrypt: {
@@ -46,6 +47,7 @@ describe('AuthService.register', () => {
     vi.clearAllMocks()
     mocks.prisma.appUser.findUnique.mockResolvedValue(null)
     mocks.prisma.school.findUnique.mockResolvedValue(null)
+    mocks.prisma.$queryRaw.mockResolvedValue([])
     mocks.bcrypt.hash.mockResolvedValue('hashed-password')
     jwtService.sign.mockReturnValue('signed-token')
   })
@@ -197,6 +199,19 @@ describe('AuthService.register', () => {
         name: registerDto.schoolName,
         slug: 'colegio-alfa-1',
       },
+    })
+  })
+
+  it('links the app profile to an existing Supabase Auth user with the same email', async () => {
+    const { tx } = mockRegisterTransaction()
+    mocks.prisma.$queryRaw.mockResolvedValue([{ id: 'auth-existing-user' }])
+
+    await createService().register(registerDto)
+
+    expect(tx.appUser.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        authUserId: 'auth-existing-user',
+      }),
     })
   })
 })

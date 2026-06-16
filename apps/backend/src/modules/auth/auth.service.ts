@@ -53,6 +53,17 @@ async function getAvailableSchoolSlug(input: string) {
   return slug
 }
 
+async function findSupabaseAuthUserId(email: string) {
+  const rows = await prisma.$queryRaw<{ id: string }[]>`
+    select id::text as id
+    from auth.users
+    where lower(email) = lower(${email})
+    limit 1
+  `
+
+  return rows[0]?.id
+}
+
 @Injectable()
 export class AuthService {
   constructor(private jwtService: JwtService) {}
@@ -74,6 +85,7 @@ export class AuthService {
 
     const hashed = await bcrypt.hash(dto.password, 10)
     const slug = await getAvailableSchoolSlug(dto.slug || dto.schoolName)
+    const authUserId = await findSupabaseAuthUserId(dto.email)
 
     const { user, roles } = await prisma.$transaction(async (tx) => {
       const school = await tx.school.create({
@@ -91,7 +103,7 @@ export class AuthService {
 
       const user = await tx.appUser.create({
         data: {
-          authUserId: crypto.randomUUID(),
+          authUserId: authUserId ?? crypto.randomUUID(),
           email: dto.email,
           fullName: dto.fullName,
           passwordHash: hashed,
