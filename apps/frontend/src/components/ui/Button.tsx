@@ -24,9 +24,9 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-accent text-accent-foreground shadow-sm hover:bg-accent-hover focus-visible:ring-ring',
+    'bg-primary text-primary-foreground shadow-[0_4px_18px_rgba(31,78,95,.30)] hover:opacity-90 focus-visible:ring-ring',
   secondary:
-    'bg-primary text-primary-foreground shadow-sm hover:bg-primary-hover focus-visible:ring-primary',
+    'bg-card text-foreground shadow-sm hover:bg-muted focus-visible:ring-ring',
   ghost:
     'text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:ring-ring',
   outline:
@@ -36,9 +36,9 @@ const variantClasses: Record<ButtonVariant, string> = {
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'h-9 gap-2 rounded-lg px-3 text-sm',
-  md: 'h-10 gap-2 rounded-lg px-4 text-sm',
-  icon: 'size-10 rounded-lg p-0',
+  sm: 'h-9 gap-2 rounded-xl px-3 text-sm',
+  md: 'h-12 gap-2 rounded-xl px-7 text-sm',
+  icon: 'size-10 rounded-xl p-0',
 }
 
 /**
@@ -58,7 +58,7 @@ export function Button({
     <button
       type={type}
       className={cn(
-        'inline-flex shrink-0 items-center justify-center font-semibold transition-all duration-75 focus-visible:outline-none focus-visible:ring-4 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60',
+        'inline-flex shrink-0 items-center justify-center font-bold transition-all duration-75 focus-visible:outline-none focus-visible:ring-4 active:scale-[0.985] disabled:cursor-not-allowed disabled:opacity-60',
         variantClasses[variant],
         sizeClasses[size],
         className,

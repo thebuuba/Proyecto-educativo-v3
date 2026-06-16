@@ -18,15 +18,15 @@ type AppBrandProps = {
 export function AppBrand({ onClick }: AppBrandProps) {
   return (
     <NavLink to="/" className="flex items-center gap-3" onClick={onClick}>
-      <span className="flex size-10 items-center justify-center rounded-lg bg-sidebar-primary text-sm font-bold text-sidebar-primary-foreground">
+      <span className="flex size-10 items-center justify-center rounded-2xl bg-sidebar-primary text-xs font-extrabold text-sidebar-primary-foreground shadow-[0_4px_12px_rgba(31,78,95,.30)]">
         AB
       </span>
       <span>
-        <span className="block text-sm font-semibold text-sidebar-foreground">
+        <span className="block text-sm font-extrabold text-sidebar-foreground">
           Aula Base
         </span>
-        <span className="block text-xs text-sidebar-foreground/65">
-          Gestión estudiantil
+        <span className="block text-[11px] text-sidebar-accent-foreground">
+          Sistema docente
         </span>
       </span>
     </NavLink>

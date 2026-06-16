@@ -12,6 +12,7 @@ import { RequireAuth } from '@/modules/auth/components/RequireAuth'
 import { LoginPage } from '@/modules/auth/pages/LoginPage'
 import { RegisterPage } from '@/modules/auth/pages/RegisterPage'
 import { UnauthorizedPage } from '@/modules/auth/pages/UnauthorizedPage'
+import { PromoPage } from '@/modules/promo/pages/PromoPage'
 import { appRoutes } from '@/routes/appRoutes'
 
 /** Componente de carga mostrado durante la carga diferida de módulos. */
@@ -27,6 +28,7 @@ function App() {
     <Suspense fallback={routeFallback}>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/promo" element={<PromoPage />} />
         <Route path="/registro" element={<RegisterPage />} />
         <Route path="/sin-acceso" element={<UnauthorizedPage />} />
         <Route element={<AppLayout />}>
