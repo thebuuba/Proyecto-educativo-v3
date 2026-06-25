@@ -1,8 +1,8 @@
 # Base de Datos
 
-## Esquema Prisma
+## Esquema
 
-La fuente de verdad del modelo de datos es `packages/database/prisma/schema.prisma`. Define **25+ modelos** y **6 enums** para PostgreSQL.
+El esquema versionado vive en `supabase/migrations/`. `packages/database/prisma/schema.prisma` debe mantenerse alineado para que Prisma Client use las mismas tablas y columnas.
 
 ## Enums globales
 
@@ -84,7 +84,7 @@ La fuente de verdad del modelo de datos es `packages/database/prisma/schema.pris
 
 ## Migraciones
 
-Las migraciones SQL están en `supabase/migrations/` (18 archivos numerados). Se gestionan a través de Supabase CLI. El flujo típico:
+Las migraciones SQL están en `supabase/migrations/`. Se gestionan a través de Supabase CLI. El flujo típico:
 
 1. Se modifica `schema.prisma`
 2. Se genera la migración SQL

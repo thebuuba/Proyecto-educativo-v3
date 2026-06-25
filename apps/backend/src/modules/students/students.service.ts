@@ -436,16 +436,32 @@ export class StudentsService {
    * @param body - Objeto con el mensaje y asunto de la notificación.
    * @returns Resultado de la operación con el número de apoderados notificados.
    */
-  async notifyGuardians(schoolId: string, studentId: string, body: any) {
+  async notifyGuardians(schoolId: string, studentId: string, createdBy: string, body: any) {
     await this.findOne(schoolId, studentId)
     const links = await prisma.studentGuardian.findMany({
       where: { schoolId, studentId },
     })
+    const subject = body.subject ?? 'Notificación del colegio'
+    const message = body.message ?? ''
+
+    if (links.length) {
+      await prisma.guardianNotification.createMany({
+        data: links.map((link) => ({
+          schoolId,
+          studentId,
+          guardianId: link.guardianId,
+          createdBy,
+          subject,
+          message,
+          status: 'queued',
+        })),
+      })
+    }
 
     return {
       notified: links.length,
-      message: body.message ?? '',
-      subject: body.subject ?? 'Notificación del colegio',
+      message,
+      subject,
       guardians: links,
     }
   }

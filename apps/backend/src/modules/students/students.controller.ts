@@ -215,6 +215,6 @@ export class StudentsController {
     @Param('id') id: string,
     @Body() body: any,
   ) {
-    return this.studentsService.notifyGuardians(user.schoolId, id, body)
+    return this.studentsService.notifyGuardians(user.schoolId, id, user.id, body)
   }
 }

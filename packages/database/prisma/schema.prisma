@@ -305,6 +305,26 @@ model StudentGuardian {
   @@map("student_guardians")
 }
 
+model GuardianNotification {
+  id         String   @id @default(uuid()) @db.Uuid
+  schoolId   String   @map("school_id") @db.Uuid
+  studentId  String   @map("student_id") @db.Uuid
+  guardianId String?  @map("guardian_id") @db.Uuid
+  createdBy  String   @map("created_by") @db.Uuid
+  channel    String   @default("manual")
+  subject    String
+  message    String
+  status     String   @default("draft")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@index([schoolId])
+  @@index([studentId])
+  @@index([createdAt])
+  @@index([status])
+  @@map("guardian_notifications")
+}
+
 model SectionSubject {
   id           String       @id @default(uuid()) @db.Uuid
   schoolYearId String       @map("school_year_id") @db.Uuid

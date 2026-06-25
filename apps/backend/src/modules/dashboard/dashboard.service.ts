@@ -4,8 +4,23 @@
  * @description Contiene la lógica de negocio para el panel de control del colegio.
  * Proporciona estadísticas generales y operaciones CRUD para tareas del dashboard.
  */
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+
+const TASK_STATUSES = new Set(['pending', 'completed', 'archived'])
+const TASK_PRIORITIES = new Set(['low', 'normal', 'high'])
+
+function validateTaskInput(body: any) {
+  if (body.title !== undefined && !String(body.title).trim()) {
+    throw new BadRequestException('Task title is required')
+  }
+  if (body.status !== undefined && !TASK_STATUSES.has(body.status)) {
+    throw new BadRequestException('Invalid task status')
+  }
+  if (body.priority !== undefined && !TASK_PRIORITIES.has(body.priority)) {
+    throw new BadRequestException('Invalid task priority')
+  }
+}
 
 @Injectable()
 export class DashboardService {
@@ -31,6 +46,7 @@ export class DashboardService {
 
   /** Crea una nueva tarea en el dashboard */
   async createTask(schoolId: string, createdBy: string, body: any) {
+    validateTaskInput(body)
     return prisma.dashboardTask.create({
       data: {
         schoolId,
@@ -48,6 +64,7 @@ export class DashboardService {
   async updateTask(schoolId: string, id: string, body: any) {
     const task = await prisma.dashboardTask.findFirst({ where: { id, schoolId } })
     if (!task) throw new NotFoundException('Task not found')
+    validateTaskInput(body)
 
     return prisma.dashboardTask.update({
       where: { id },

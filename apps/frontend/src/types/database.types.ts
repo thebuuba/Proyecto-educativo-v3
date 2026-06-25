@@ -107,7 +107,9 @@ export type Database = {
           full_name: string
           id: string
           last_login_at: string | null
+          password_hash: string | null
           phone: string | null
+          provider: string
           school_id: string
           status: Database["public"]["Enums"]["record_status"]
           updated_at: string
@@ -120,7 +122,9 @@ export type Database = {
           full_name: string
           id?: string
           last_login_at?: string | null
+          password_hash?: string | null
           phone?: string | null
+          provider?: string
           school_id?: string
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
@@ -133,7 +137,9 @@ export type Database = {
           full_name?: string
           id?: string
           last_login_at?: string | null
+          password_hash?: string | null
           phone?: string | null
+          provider?: string
           school_id?: string
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
@@ -434,7 +440,15 @@ export type Database = {
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "dr_academic_cycles_level_id_fkey"
+            columns: ["level_id"]
+            isOneToOne: false
+            referencedRelation: "dr_academic_levels"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       dr_competencies: {
         Row: {
@@ -512,7 +526,29 @@ export type Database = {
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "dr_evaluation_rules_level_id_fkey"
+            columns: ["level_id"]
+            isOneToOne: false
+            referencedRelation: "dr_academic_levels"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "dr_evaluation_rules_modality_id_fkey"
+            columns: ["modality_id"]
+            isOneToOne: false
+            referencedRelation: "dr_modalities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "dr_evaluation_rules_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       dr_modalities: {
         Row: {
@@ -869,6 +905,77 @@ export type Database = {
             columns: ["user_id"]
             isOneToOne: true
             referencedRelation: "app_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      guardian_notifications: {
+        Row: {
+          channel: string
+          created_at: string
+          created_by: string
+          guardian_id: string | null
+          id: string
+          message: string
+          school_id: string
+          status: string
+          student_id: string
+          subject: string
+          updated_at: string
+        }
+        Insert: {
+          channel?: string
+          created_at?: string
+          created_by?: string
+          guardian_id?: string | null
+          id?: string
+          message: string
+          school_id?: string
+          status?: string
+          student_id: string
+          subject: string
+          updated_at?: string
+        }
+        Update: {
+          channel?: string
+          created_at?: string
+          created_by?: string
+          guardian_id?: string | null
+          id?: string
+          message?: string
+          school_id?: string
+          status?: string
+          student_id?: string
+          subject?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "guardian_notifications_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "app_users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "guardian_notifications_guardian_id_fkey"
+            columns: ["guardian_id"]
+            isOneToOne: false
+            referencedRelation: "guardians"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "guardian_notifications_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "guardian_notifications_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
             referencedColumns: ["id"]
           },
         ]
