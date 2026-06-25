@@ -119,3 +119,25 @@ supabase migration new nombre_del_cambio
 ```
 
 No edites migraciones antiguas que ya puedan estar aplicadas.
+
+## Supabase Keepalive
+
+El repo incluye `.github/workflows/supabase-keepalive.yml`, que ejecuta una
+lectura mínima cada 3 días para evitar inactividad en proyectos Free.
+
+Configura estos secrets en GitHub Actions:
+
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+
+El script consulta la tabla `roles` por defecto. Si necesitas otra tabla,
+agrega el secret o variable `SUPABASE_KEEPALIVE_TABLE`.
+
+Prueba local sin tocar Supabase:
+
+```bash
+SUPABASE_URL=https://PROJECT_REF.supabase.co \
+SUPABASE_SERVICE_ROLE_KEY=replace-me \
+SUPABASE_KEEPALIVE_DRY_RUN=1 \
+pnpm supabase:keepalive
+```
