@@ -9,7 +9,6 @@ import {
   AlertCircle,
   ArrowRight,
   BookOpenCheck,
-  CalendarClock,
   Grid3x3,
   Plus,
   RefreshCw,
@@ -45,12 +44,6 @@ const academicLinks = [
     title: 'Asignaturas',
     description: 'Catálogo general de materias disponibles.',
     icon: BookOpenCheck,
-  },
-  {
-    to: '/horario',
-    title: 'Horario',
-    description: 'Bloques, carga semanal y distribución por sección.',
-    icon: CalendarClock,
   },
   {
     to: '/matriz',

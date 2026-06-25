@@ -109,7 +109,6 @@ export const appRoutes: AppRoute[] = [
     icon: CalendarClock,
     component: SchedulePage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
-    showInSidebar: false,
   },
   {
     path: '/asistencia',
