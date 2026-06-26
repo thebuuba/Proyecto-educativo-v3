@@ -33,6 +33,7 @@ export function PlanningPage() {
     loading,
     error,
     addEntry,
+    generateEntry,
     editEntry,
     removeEntry,
     refreshPeriods,
@@ -247,6 +248,18 @@ export function PlanningPage() {
 	          submitting={isSubmitting}
           error={formError}
           onSubmit={handleSubmit}
+          onGenerateAndCreate={async (input) => {
+            setIsSubmitting(true)
+            setFormError(null)
+            try {
+              await generateEntry(input)
+              closeForm()
+            } catch (error) {
+              setFormError(error instanceof Error ? error.message : 'No se pudo generar.')
+            } finally {
+              setIsSubmitting(false)
+            }
+          }}
           onClose={closeForm}
         />
       ) : null}

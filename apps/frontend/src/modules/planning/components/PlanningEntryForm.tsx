@@ -5,7 +5,7 @@
  * curricular siguiendo el modelo MINERD por competencias.
  */
 
-import { AlertCircle, X } from 'lucide-react'
+import { AlertCircle, Sparkles, X } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useRef, useState } from 'react'
 
@@ -14,8 +14,13 @@ import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
-import type { AcademicPeriodSummary, CompetencyOption } from '@/modules/planning/types'
-import type { CreatePlanningEntryInput } from '@/modules/planning/types'
+import { generatePlanningEntry } from '@/modules/planning/services/planningService'
+import type {
+  AcademicPeriodSummary,
+  CompetencyOption,
+  CreatePlanningEntryInput,
+  GeneratedPlanningEntry,
+} from '@/modules/planning/types'
 
 /** Propiedades del componente PlanningEntryForm */
 type PlanningEntryFormProps = {
@@ -30,6 +35,12 @@ type PlanningEntryFormProps = {
   submitting: boolean
   error: string | null
   onSubmit: (input: CreatePlanningEntryInput) => Promise<void>
+  onGenerateAndCreate: (input: CreatePlanningEntryInput & {
+    subjectName?: string
+    sectionName?: string
+    gradeName?: string
+    fundamentalCompetenceName?: string
+  }) => Promise<void>
   onClose: () => void
 }
 
@@ -42,6 +53,7 @@ export function PlanningEntryForm({
   submitting,
   error,
   onSubmit,
+  onGenerateAndCreate,
   onClose,
 }: PlanningEntryFormProps) {
   const [sectionSubjectId, setSectionSubjectId] = useState(
@@ -90,6 +102,7 @@ export function PlanningEntryForm({
     initial?.entry.plannedDate ?? '',
   )
   const [validationError, setValidationError] = useState('')
+  const [generating, setGenerating] = useState(false)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -129,6 +142,98 @@ export function PlanningEntryForm({
 	      durationMinutes: duration ? Number(duration) : null,
       plannedDate: plannedDate || null,
     })
+  }
+
+  function applyDraft(draft: GeneratedPlanningEntry) {
+    setTitle(draft.title)
+    setSpecificCompetence(draft.specificCompetence)
+    setAchievementIndicator(draft.achievementIndicator)
+    setContentConceptual(draft.contentConceptual)
+    setContentProcedural(draft.contentProcedural)
+    setContentAttitudinal(draft.contentAttitudinal)
+    setStrategies(draft.strategies)
+    setInicio(draft.activities.inicio)
+    setDesarrollo(draft.activities.desarrollo)
+    setCierre(draft.activities.cierre)
+    setResources(draft.resources)
+    setEvaluationMethod(draft.evaluationMethod)
+    setEvidence(draft.evidence)
+    setEvaluationInstruments(draft.evaluationInstruments)
+    setDuration(draft.durationMinutes ? String(draft.durationMinutes) : duration)
+  }
+
+  async function requestDraft() {
+    setValidationError('')
+
+    if (!sectionSubjectId) {
+      setValidationError('Selecciona un curso y materia para generar la planificación.')
+      return null
+    }
+
+    const sectionSubject = sectionSubjects.find((item) => item.id === sectionSubjectId)
+    const competence = competencies.find((item) => item.id === fundamentalCompetenceId)
+
+    return generatePlanningEntry({
+      sectionSubjectId,
+      academicPeriodId,
+      title,
+      specificCompetence,
+      achievementIndicator,
+      durationMinutes: duration ? Number(duration) : null,
+      subjectName: sectionSubject?.subjectName,
+      sectionName: sectionSubject?.sectionName,
+      gradeName: sectionSubject?.gradeName,
+      fundamentalCompetenceName: competence?.name,
+    })
+  }
+
+  async function handleGenerate() {
+    setGenerating(true)
+    try {
+      const draft = await requestDraft()
+      if (draft) applyDraft(draft)
+    } catch (error) {
+      setValidationError(error instanceof Error ? error.message : 'No se pudo generar la planificación.')
+    } finally {
+      setGenerating(false)
+    }
+  }
+
+  async function handleGenerateAndSave() {
+    if (!academicPeriodId) {
+      setValidationError('Selecciona un trimestre académico para guardar la planificación.')
+      return
+    }
+
+    if (!sectionSubjectId) {
+      setValidationError('Selecciona un curso y materia para generar la planificación.')
+      return
+    }
+
+    const sectionSubject = sectionSubjects.find((item) => item.id === sectionSubjectId)
+    const competence = competencies.find((item) => item.id === fundamentalCompetenceId)
+
+    setGenerating(true)
+    try {
+      await onGenerateAndCreate({
+        sectionSubjectId,
+        academicPeriodId,
+        fundamentalCompetenceId: fundamentalCompetenceId || null,
+        title,
+        specificCompetence,
+        achievementIndicator,
+        durationMinutes: duration ? Number(duration) : null,
+        plannedDate: plannedDate || null,
+        subjectName: sectionSubject?.subjectName,
+        sectionName: sectionSubject?.sectionName,
+        gradeName: sectionSubject?.gradeName,
+        fundamentalCompetenceName: competence?.name,
+      })
+    } catch (error) {
+      setValidationError(error instanceof Error ? error.message : 'No se pudo generar la planificación.')
+    } finally {
+      setGenerating(false)
+    }
   }
 
   const dialogRef = useRef<HTMLDivElement>(null)
@@ -200,14 +305,32 @@ export function PlanningEntryForm({
             </Field>
           </div>
 
-	          <Field label="Título de la planificación">
-	            <Input
-              type="text"
-              placeholder="Ej: Unidad I: Los números naturales"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-	          </Field>
+          <div className="grid gap-4 sm:grid-cols-[1fr_auto] sm:items-end">
+            <div>
+              <Field label="Título o tema de la planificación">
+                <Input
+                  type="text"
+                  placeholder="Opcional: la IA puede proponerlo"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </Field>
+              <p className="mt-2 text-xs leading-5 text-muted-foreground">
+                Selecciona curso/materia y deja que la IA complete la planificación.
+              </p>
+            </div>
+            <Button
+              type="button"
+              variant="secondary"
+              className="h-11 bg-primary-light text-primary hover:bg-sidebar-accent"
+              onClick={handleGenerate}
+              disabled={generating || submitting}
+              loading={generating}
+            >
+              <Sparkles className="size-4" />
+              {generating ? 'Generando...' : 'Hacer planificación'}
+            </Button>
+          </div>
 
 	          <Field label="Competencia fundamental">
 	            <Select
@@ -378,6 +501,17 @@ export function PlanningEntryForm({
           <div className="flex justify-end gap-3 border-t border-border pt-5">
             <Button variant="outline" onClick={onClose}>
               Cancelar
+            </Button>
+            <Button
+              type="button"
+              variant="secondary"
+              className="bg-primary-light text-primary hover:bg-sidebar-accent"
+              disabled={generating || submitting}
+              loading={generating}
+              onClick={handleGenerateAndSave}
+            >
+              <Sparkles className="size-4" />
+              {generating ? 'Generando...' : 'Hacer y guardar'}
             </Button>
             <Button type="submit" disabled={submitting} loading={submitting}>
               {submitting ? 'Guardando...' : 'Guardar'}

@@ -83,6 +83,20 @@ export class PlanningController {
     return this.planningService.createEntry(user.schoolId, body)
   }
 
+  /** Genera un borrador completo de planificación con IA */
+  @Post('entries/generate')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  generateEntryDraft(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
+    return this.planningService.generateEntryDraft(user.schoolId, body)
+  }
+
+  /** Genera y guarda una planificación completa con IA */
+  @Post('entries/generate-and-create')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  generateAndCreateEntry(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
+    return this.planningService.generateAndCreateEntry(user.schoolId, body)
+  }
+
   /** Actualiza una entrada de planificación existente (solo admin, director, coordinador, teacher) */
   @Patch('entries/:id')
   @Roles('admin', 'director', 'coordinator', 'teacher')

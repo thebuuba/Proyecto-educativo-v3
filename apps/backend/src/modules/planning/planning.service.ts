@@ -5,11 +5,34 @@
  * Proporciona operaciones CRUD para períodos académicos, entradas de planificación
  * y consultas de competencias y materias asignadas.
  */
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
 import { prisma } from '@aula/database'
+
+type GeneratedPlanningEntry = {
+  title: string
+  specificCompetence: string
+  achievementIndicator: string
+  contentConceptual: string
+  contentProcedural: string
+  contentAttitudinal: string
+  strategies: string
+  activities: {
+    inicio: string
+    desarrollo: string
+    cierre: string
+  }
+  resources: string
+  evaluationMethod: string
+  evidence: string
+  evaluationInstruments: string
+  durationMinutes: number | null
+}
 
 @Injectable()
 export class PlanningService {
+  constructor(private readonly config: ConfigService) {}
+
   /** Obtiene todas las entradas de planificación filtradas por materia-sección */
   findAll(schoolId: string, sectionSubjectId?: string) {
     const where: any = { schoolId }
@@ -129,6 +152,155 @@ export class PlanningService {
         evaluationInstruments: body.evaluationInstruments ?? '',
       },
     })
+  }
+
+  /** Genera una planificación completa con IA siguiendo el currículo dominicano por competencias. */
+  async generateEntryDraft(schoolId: string, body: any): Promise<GeneratedPlanningEntry> {
+    const apiKey = this.config.get<string>('OPENAI_API_KEY')
+    if (!apiKey) throw new ServiceUnavailableException('OPENAI_API_KEY no está configurado.')
+
+    const sectionSubject = body.sectionSubjectId
+      ? await prisma.sectionSubject.findFirst({ where: { id: body.sectionSubjectId, schoolId } })
+      : null
+
+    if (body.sectionSubjectId && !sectionSubject) {
+      throw new NotFoundException('Section subject not found')
+    }
+
+    const [grade, section, subject] = sectionSubject
+      ? await Promise.all([
+          prisma.grade.findFirst({ where: { id: sectionSubject.gradeId, schoolId } }),
+          prisma.section.findFirst({ where: { id: sectionSubject.sectionId, schoolId } }),
+          prisma.subject.findFirst({ where: { id: sectionSubject.subjectId, schoolId } }),
+        ])
+      : [null, null, null]
+
+    const prompt = {
+      grado: grade?.name ?? body.gradeName ?? '',
+      seccion: section?.name ?? body.sectionName ?? '',
+      asignatura: subject?.name ?? body.subjectName ?? '',
+      tema: body.title ?? '',
+      duracionMinutos: body.durationMinutes ?? null,
+      competenciaFundamental: body.fundamentalCompetenceName ?? '',
+      competenciaEspecifica: body.specificCompetence ?? '',
+      indicadorLogro: body.achievementIndicator ?? '',
+    }
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: this.config.get<string>('OPENAI_MODEL') ?? 'gpt-5.5',
+        messages: [
+          {
+            role: 'system',
+            content:
+              'Eres especialista en planificacion docente del sistema educativo dominicano. Genera planificaciones completas, practicas y coherentes con el curriculo por competencias del MINERD. No inventes codigos oficiales. Escribe en espanol dominicano claro.',
+          },
+          {
+            role: 'user',
+            content: `Crea una planificacion escolar completa usando estos datos: ${JSON.stringify(prompt)}. Debe incluir situacion de aprendizaje integrada dentro de estrategias o actividades, contenidos conceptuales/procedimentales/actitudinales, secuencia inicio/desarrollo/cierre, evaluacion formativa, evidencias e instrumentos.`,
+          },
+        ],
+        response_format: {
+          type: 'json_schema',
+          json_schema: {
+            name: 'generated_planning_entry',
+            strict: true,
+            schema: {
+              type: 'object',
+              additionalProperties: false,
+              required: [
+                'title',
+                'specificCompetence',
+                'achievementIndicator',
+                'contentConceptual',
+                'contentProcedural',
+                'contentAttitudinal',
+                'strategies',
+                'activities',
+                'resources',
+                'evaluationMethod',
+                'evidence',
+                'evaluationInstruments',
+                'durationMinutes',
+              ],
+              properties: {
+                title: { type: 'string' },
+                specificCompetence: { type: 'string' },
+                achievementIndicator: { type: 'string' },
+                contentConceptual: { type: 'string' },
+                contentProcedural: { type: 'string' },
+                contentAttitudinal: { type: 'string' },
+                strategies: { type: 'string' },
+                activities: {
+                  type: 'object',
+                  additionalProperties: false,
+                  required: ['inicio', 'desarrollo', 'cierre'],
+                  properties: {
+                    inicio: { type: 'string' },
+                    desarrollo: { type: 'string' },
+                    cierre: { type: 'string' },
+                  },
+                },
+                resources: { type: 'string' },
+                evaluationMethod: { type: 'string' },
+                evidence: { type: 'string' },
+                evaluationInstruments: { type: 'string' },
+                durationMinutes: { type: ['number', 'null'] },
+              },
+            },
+          },
+        },
+      }),
+    })
+
+    const data = await response.json().catch(() => null)
+    if (!response.ok) {
+      throw new ServiceUnavailableException(data?.error?.message ?? 'No se pudo generar la planificación.')
+    }
+
+    const content = data?.choices?.[0]?.message?.content
+    if (typeof content !== 'string') {
+      throw new BadRequestException('La IA no devolvió una planificación válida.')
+    }
+
+    let draft: GeneratedPlanningEntry
+    try {
+      draft = JSON.parse(content) as GeneratedPlanningEntry
+    } catch {
+      throw new BadRequestException('La IA devolvió una planificación con formato inválido.')
+    }
+
+    this.validateGeneratedDraft(draft)
+    return draft
+  }
+
+  /** Genera y guarda una planificación en una sola operación. */
+  async generateAndCreateEntry(schoolId: string, body: any) {
+    if (!body.academicPeriodId) {
+      throw new BadRequestException('Academic period is required')
+    }
+
+    const draft = await this.generateEntryDraft(schoolId, body)
+
+    return this.createEntry(schoolId, {
+      ...body,
+      ...draft,
+      title: draft.title.trim(),
+      fundamentalCompetenceId: body.fundamentalCompetenceId ?? null,
+      plannedDate: body.plannedDate ?? null,
+    })
+  }
+
+  private validateGeneratedDraft(draft: GeneratedPlanningEntry) {
+    if (!draft.title.trim()) throw new BadRequestException('La IA no generó un título válido.')
+    if (!draft.activities.inicio.trim() || !draft.activities.desarrollo.trim() || !draft.activities.cierre.trim()) {
+      throw new BadRequestException('La IA no generó la secuencia completa de actividades.')
+    }
   }
 
   /** Actualiza una entrada de planificación existente */

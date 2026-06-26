@@ -63,6 +63,27 @@ export type CreatePlanningEntryInput = {
   plannedDate?: string | null
 }
 
+/** Borrador generado por IA para rellenar el formulario de planificación */
+export type GeneratedPlanningEntry = Required<
+  Pick<
+    CreatePlanningEntryInput,
+    | 'title'
+    | 'specificCompetence'
+    | 'achievementIndicator'
+    | 'contentConceptual'
+    | 'contentProcedural'
+    | 'contentAttitudinal'
+    | 'strategies'
+    | 'activities'
+    | 'resources'
+    | 'evaluationMethod'
+    | 'evidence'
+    | 'evaluationInstruments'
+  >
+> & {
+  durationMinutes: number | null
+}
+
 /** Datos para actualizar una planificación (todos los campos opcionales) */
 export type UpdatePlanningEntryInput = Partial<CreatePlanningEntryInput>
 

@@ -11,6 +11,7 @@ import type {
   AcademicPeriodSummary,
   CompetencyOption,
   CreatePlanningEntryInput,
+  GeneratedPlanningEntry,
   PlanningEntryWithDetails,
   PlanningFilters,
 } from '@/modules/planning/types'
@@ -63,6 +64,26 @@ export async function createPlanningEntry(input: CreatePlanningEntryInput): Prom
 /** Actualiza una entrada de planificación existente */
 export async function updatePlanningEntry(id: string, input: CreatePlanningEntryInput): Promise<void> {
   await api.patch(`/planning/entries/${id}`, input)
+}
+
+/** Genera una planificación completa con IA */
+export async function generatePlanningEntry(input: Partial<CreatePlanningEntryInput> & {
+  subjectName?: string
+  sectionName?: string
+  gradeName?: string
+  fundamentalCompetenceName?: string
+}): Promise<GeneratedPlanningEntry> {
+  return api.post<GeneratedPlanningEntry>('/planning/entries/generate', input)
+}
+
+/** Genera y guarda una planificación completa con IA */
+export async function generateAndCreatePlanningEntry(input: Partial<CreatePlanningEntryInput> & {
+  subjectName?: string
+  sectionName?: string
+  gradeName?: string
+  fundamentalCompetenceName?: string
+}): Promise<void> {
+  await api.post('/planning/entries/generate-and-create', input)
 }
 
 /** Elimina una entrada de planificación */

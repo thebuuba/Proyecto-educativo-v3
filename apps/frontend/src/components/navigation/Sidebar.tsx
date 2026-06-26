@@ -17,6 +17,18 @@ type SidebarProps = {
   onClose: () => void
 }
 
+const routeIconColors: Record<string, string> = {
+  '/': 'bg-blue-100 text-blue-700',
+  '/estudiantes': 'bg-violet-100 text-violet-700',
+  '/cursos': 'bg-amber-100 text-amber-700',
+  '/horario': 'bg-cyan-100 text-cyan-700',
+  '/asistencia': 'bg-emerald-100 text-emerald-700',
+  '/calificaciones': 'bg-pink-100 text-pink-700',
+  '/planificaciones': 'bg-orange-100 text-orange-700',
+  '/reportes': 'bg-indigo-100 text-indigo-700',
+  '/configuracion': 'bg-slate-100 text-slate-700',
+}
+
 /**
  * Barra lateral de navegación. En desktop se muestra fija; en mobile
  * se superpone con overlay. Filtra rutas según los roles del usuario.
@@ -78,6 +90,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-5">
           {visibleRoutes.map((item) => {
             const Icon = item.icon
+            const iconColor = routeIconColors[item.path] ?? routeIconColors['/']
 
             return (
               <NavLink
@@ -94,8 +107,19 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                   )
                 }
               >
-                <Icon className="size-5 shrink-0" />
-                <span className="truncate">{item.label}</span>
+                {({ isActive }) => (
+                  <>
+                    <span
+                      className={cn(
+                        'flex size-8 shrink-0 items-center justify-center rounded-lg',
+                        isActive ? 'bg-white/18 text-white' : iconColor,
+                      )}
+                    >
+                      <Icon className="size-4.5 shrink-0" />
+                    </span>
+                    <span className="truncate">{item.label}</span>
+                  </>
+                )}
               </NavLink>
             )
           })}

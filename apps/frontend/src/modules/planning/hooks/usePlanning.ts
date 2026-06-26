@@ -10,6 +10,7 @@ import { useCallback, useEffect, useState } from 'react'
 import {
   createPlanningEntry,
   deletePlanningEntry,
+  generateAndCreatePlanningEntry,
   getAcademicPeriods,
   getCompetencies,
   getPlanningEntries,
@@ -139,6 +140,20 @@ export function usePlanning() {
     [fetchEntries],
   )
 
+  /** Genera una planificación con IA, la guarda y refresca la lista */
+  const generateEntry = useCallback(
+    async (input: CreatePlanningEntryInput & {
+      subjectName?: string
+      sectionName?: string
+      gradeName?: string
+      fundamentalCompetenceName?: string
+    }) => {
+      await generateAndCreatePlanningEntry(input)
+      await fetchEntries({ academicPeriodId: input.academicPeriodId })
+    },
+    [fetchEntries],
+  )
+
   /** Actualiza una planificación existente y refresca la lista */
   const editEntry = useCallback(
     async (id: string, input: CreatePlanningEntryInput) => {
@@ -174,6 +189,7 @@ export function usePlanning() {
     loading,
     error,
     addEntry,
+    generateEntry,
     editEntry,
     removeEntry,
     refreshPeriods,
