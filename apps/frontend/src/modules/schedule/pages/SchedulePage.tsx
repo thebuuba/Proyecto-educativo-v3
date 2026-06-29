@@ -372,8 +372,8 @@ export function SchedulePage() {
           </div>
         ) : null}
 
-        <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-          <div className="grid grid-cols-[5.5rem_repeat(5,minmax(10rem,1fr))] border-b border-border">
+        <div className="overflow-x-auto rounded-lg border border-border bg-card shadow-sm">
+          <div className="grid min-w-[56rem] grid-cols-[5.5rem_repeat(5,minmax(10rem,1fr))] border-b border-border">
             <div className="border-r border-border" />
             {weekDays.map((day) => (
               <div
@@ -401,7 +401,7 @@ export function SchedulePage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-[5.5rem_repeat(5,minmax(10rem,1fr))]">
+          <div className="grid min-w-[56rem] grid-cols-[5.5rem_repeat(5,minmax(10rem,1fr))]">
             <div className="relative">
               {visibleHours.map((hour) => (
                 <div

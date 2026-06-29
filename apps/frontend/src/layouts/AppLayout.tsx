@@ -16,8 +16,8 @@ export function AppLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="flex min-h-screen">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <div className="flex min-h-screen min-w-0">
         <Sidebar
           isOpen={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
@@ -26,7 +26,7 @@ export function AppLayout() {
         <div className="min-w-0 flex-1 lg:pl-[260px]">
           <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
 
-          <main className="content-density-compact px-4 py-5 sm:px-6 lg:px-10 lg:py-8">
+          <main className="content-density-compact min-w-0 px-4 py-5 sm:px-6 lg:px-10 lg:py-8">
             <Outlet />
           </main>
         </div>

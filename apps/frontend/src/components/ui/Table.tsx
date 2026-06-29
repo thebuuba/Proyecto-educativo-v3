@@ -7,6 +7,18 @@ import type { HTMLAttributes, ReactNode, TdHTMLAttributes, ThHTMLAttributes } fr
 
 import { cn } from '@/utils/cn'
 
+export function TableContainer({
+  className,
+  children,
+  ...props
+}: HTMLAttributes<HTMLDivElement> & { children: ReactNode }) {
+  return (
+    <div className={cn('w-full overflow-x-auto', className)} {...props}>
+      {children}
+    </div>
+  )
+}
+
 /**
  * Tabla de datos con ancho completo y alineación izquierda.
  *

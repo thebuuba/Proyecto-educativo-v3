@@ -9,6 +9,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableContainer,
   TableHead,
   TableHeaderCell,
 } from '@/components/ui/Table'
@@ -35,7 +36,7 @@ export function RecentStudentsTable({ students }: RecentStudentsTableProps) {
         <CardDescription>Movimientos académicos actualizados</CardDescription>
       </CardHeader>
 
-      <div className="overflow-x-auto">
+      <TableContainer>
         <Table className="min-w-[620px]">
           <TableHead>
             <tr>
@@ -64,7 +65,7 @@ export function RecentStudentsTable({ students }: RecentStudentsTableProps) {
             ))}
           </TableBody>
         </Table>
-      </div>
+      </TableContainer>
     </Card>
   )
 }
