@@ -3,7 +3,7 @@
  * Contiene los datos necesarios para crear una cuenta
  * junto con la escuela asociada.
  */
-import { IsEmail, IsString, MinLength } from 'class-validator'
+import { IsEmail, IsOptional, IsString, MinLength } from 'class-validator'
 
 export class RegisterDto {
   /** Nombre de la escuela. */
@@ -11,8 +11,9 @@ export class RegisterDto {
   schoolName!: string
 
   /** Slug personalizado para la escuela (opcional). */
+  @IsOptional()
   @IsString()
-  slug!: string
+  slug?: string
 
   /** Correo electrónico del usuario. */
   @IsEmail()

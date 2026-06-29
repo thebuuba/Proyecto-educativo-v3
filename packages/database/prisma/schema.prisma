@@ -11,6 +11,8 @@ enum RecordStatus {
   ACTIVE   @map("active")
   INACTIVE @map("inactive")
   ARCHIVED @map("archived")
+
+  @@map("record_status")
 }
 
 enum EnrollmentStatus {
@@ -18,6 +20,8 @@ enum EnrollmentStatus {
   TRANSFERRED  @map("transferred")
   WITHDRAWN    @map("withdrawn")
   COMPLETED    @map("completed")
+
+  @@map("enrollment_status")
 }
 
 enum AttendanceStatus {
@@ -25,12 +29,16 @@ enum AttendanceStatus {
   ABSENT  @map("absent")
   LATE    @map("late")
   EXCUSED @map("excused")
+
+  @@map("attendance_status")
 }
 
 enum GradeRecordStatus {
   DRAFT     @map("draft")
   PUBLISHED @map("published")
   VOIDED    @map("voided")
+
+  @@map("grade_record_status")
 }
 
 enum ReportStatus {
@@ -38,6 +46,8 @@ enum ReportStatus {
   GENERATED @map("generated")
   FAILED    @map("failed")
   ARCHIVED  @map("archived")
+
+  @@map("report_status")
 }
 
 model School {
