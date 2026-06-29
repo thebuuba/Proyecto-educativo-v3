@@ -9,7 +9,9 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoadingState } from '@/components/ui/LoadingState'
 import { AppLayout } from '@/layouts/AppLayout'
 import { RequireAuth } from '@/modules/auth/components/RequireAuth'
+import { AuthCallbackPage } from '@/modules/auth/pages/AuthCallbackPage'
 import { LoginPage } from '@/modules/auth/pages/LoginPage'
+import { OnboardingPage } from '@/modules/auth/pages/OnboardingPage'
 import { RegisterPage } from '@/modules/auth/pages/RegisterPage'
 import { UnauthorizedPage } from '@/modules/auth/pages/UnauthorizedPage'
 import { PromoPage } from '@/modules/promo/pages/PromoPage'
@@ -28,6 +30,8 @@ function App() {
     <Suspense fallback={routeFallback}>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/auth/callback" element={<AuthCallbackPage />} />
+        <Route path="/onboarding" element={<OnboardingPage />} />
         <Route path="/promo" element={<PromoPage />} />
         <Route path="/registro" element={<RegisterPage />} />
         <Route path="/sin-acceso" element={<UnauthorizedPage />} />

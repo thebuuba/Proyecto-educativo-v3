@@ -6,7 +6,12 @@
 
 import { createContext } from 'react'
 
-import type { AuthState, LoginCredentials, RegisterCredentials } from '@/modules/auth/types/auth'
+import type {
+  AuthState,
+  CompleteOnboardingInput,
+  LoginCredentials,
+  RegisterCredentials,
+} from '@/modules/auth/types/auth'
 import type { UserRole } from '@/types/domain'
 
 /** Valor expuesto por el AuthContext con el estado y las funciones de autenticación. */
@@ -19,6 +24,12 @@ export type AuthContextValue = AuthState & {
   login: (credentials: LoginCredentials) => Promise<void>
   /** Registra una nueva institución. */
   register: (credentials: RegisterCredentials) => Promise<void>
+  /** Inicia sesión social con Supabase. */
+  loginWithProvider: (provider: 'google' | 'facebook') => Promise<void>
+  /** Procesa el callback OAuth. */
+  finishOAuthCallback: () => Promise<void>
+  /** Completa la configuración inicial. */
+  completeOnboarding: (input: CompleteOnboardingInput) => Promise<void>
   /** Cierra la sesión del usuario actual. */
   logout: () => Promise<void>
   /** Recarga el estado de autenticación desde el servidor. */

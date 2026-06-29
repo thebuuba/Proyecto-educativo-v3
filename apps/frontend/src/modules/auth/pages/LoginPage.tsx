@@ -100,7 +100,7 @@ function FacebookIcon() {
  * registro exitoso y recuperación de contraseña.
  */
 export function LoginPage() {
-  const { authError, isAuthenticated, loading, login } = useAuth()
+  const { authError, isAuthenticated, loading, login, loginWithProvider, profileRequired } = useAuth()
   const location = useLocation()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -117,6 +117,10 @@ export function LoginPage() {
 
   if (!loading && isAuthenticated) {
     return <Navigate to={from ?? '/'} replace />
+  }
+
+  if (!loading && profileRequired) {
+    return <Navigate to="/onboarding" replace />
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -358,6 +362,9 @@ export function LoginPage() {
           <div className="fu fu6 mb-5 grid grid-cols-2 gap-3">
             <button
               type="button"
+              onClick={() => loginWithProvider('google').catch((error: unknown) => {
+                setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Google.')
+              })}
               className="flex items-center justify-center gap-2.5 rounded-xl border border-[#E5E7EB] bg-white py-3.5 text-[14px] font-semibold text-[#374151] transition-all hover:bg-gray-50 active:scale-[0.98]"
             >
               <GoogleIcon />
@@ -365,6 +372,9 @@ export function LoginPage() {
             </button>
             <button
               type="button"
+              onClick={() => loginWithProvider('facebook').catch((error: unknown) => {
+                setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Facebook.')
+              })}
               className="flex items-center justify-center gap-2.5 rounded-xl bg-[#1877F2] py-3.5 text-[14px] font-semibold text-white shadow-[0_2px_8px_rgba(24,119,242,.25)] transition-all active:scale-[0.98]"
             >
               <FacebookIcon />

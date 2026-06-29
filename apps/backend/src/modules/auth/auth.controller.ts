@@ -14,6 +14,8 @@ import {
 import { AuthService } from './auth.service'
 import { LoginDto } from './dto/login.dto'
 import { RegisterDto } from './dto/register.dto'
+import { AuthSessionDto } from './dto/auth-session.dto'
+import { CompleteOnboardingDto } from './dto/complete-onboarding.dto'
 import { JwtAuthGuard } from './strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from './types/authenticated-user'
@@ -25,6 +27,22 @@ export class AuthController {
   @Post('register')
   register(@Body() dto: RegisterDto) {
     return this.authService.register(dto)
+  }
+
+  @Post('session')
+  createSession(@Body() dto: AuthSessionDto) {
+    return this.authService.createSessionFromSupabaseToken(dto.supabaseAccessToken)
+  }
+
+  @Post('onboarding/complete')
+  completeOnboarding(@Body() dto: CompleteOnboardingDto) {
+    return this.authService.completeOnboarding(dto.supabaseAccessToken, dto)
+  }
+
+  @Get('onboarding/status')
+  @UseGuards(JwtAuthGuard)
+  getOnboardingStatus(@CurrentUser() user: AuthenticatedUser) {
+    return this.authService.getOnboardingStatus(user.schoolId)
   }
 
   @Post('login')
