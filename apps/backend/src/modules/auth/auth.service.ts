@@ -8,6 +8,7 @@ import {
   ConflictException,
   UnauthorizedException,
   InternalServerErrorException,
+  ServiceUnavailableException,
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { prisma } from '@aula/database'
@@ -58,17 +59,6 @@ async function getAvailableSchoolSlug(input: string) {
   return slug
 }
 
-async function findSupabaseAuthUserId(email: string) {
-  const rows = await prisma.$queryRaw<{ id: string }[]>`
-    select id::text as id
-    from auth.users
-    where lower(email) = lower(${email})
-    limit 1
-  `
-
-  return rows[0]?.id
-}
-
 function getSupabaseConfig() {
   const url = process.env.SUPABASE_URL?.replace(/\/$/, '')
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -81,6 +71,23 @@ function getSupabaseConfig() {
   }
 
   return { url, serviceKey, authKey }
+}
+
+function isPlaceholderValue(value: string | undefined) {
+  return !value || /xxxxx|replace|change-me|password@db\.xxxxx/i.test(value)
+}
+
+function assertAuthEnvironment() {
+  if (
+    isPlaceholderValue(process.env.DATABASE_URL) ||
+    isPlaceholderValue(process.env.SUPABASE_URL) ||
+    isPlaceholderValue(process.env.SUPABASE_SERVICE_ROLE_KEY) ||
+    isPlaceholderValue(process.env.SUPABASE_ANON_KEY)
+  ) {
+    throw new ServiceUnavailableException(
+      'El registro no esta configurado. Revisa apps/backend/.env con DATABASE_URL y claves de Supabase reales.',
+    )
+  }
 }
 
 async function readSupabaseError(response: Response) {
@@ -165,16 +172,15 @@ export class AuthService {
    * @throws ConflictException si el email ya está registrado.
    */
   async register(dto: RegisterDto) {
+    assertAuthEnvironment()
+
     const existing = await prisma.appUser.findUnique({
       where: { email: dto.email },
     })
     if (existing) throw new ConflictException('Email already registered')
 
     const slug = await getAvailableSchoolSlug(dto.slug || dto.schoolName)
-    const existingAuthUserId = await findSupabaseAuthUserId(dto.email)
-    const authUser = existingAuthUserId
-      ? { id: existingAuthUserId }
-      : await createSupabaseAuthUser(dto)
+    const authUser = await createSupabaseAuthUser(dto)
 
     try {
       const { user, roles } = await prisma.$transaction(async (tx) => {
@@ -233,7 +239,7 @@ export class AuthService {
         permissions: [],
       }
     } catch (error) {
-      if (!existingAuthUserId) await deleteSupabaseAuthUser(authUser.id)
+      await deleteSupabaseAuthUser(authUser.id)
       throw error
     }
   }
@@ -248,6 +254,8 @@ export class AuthService {
    * @throws UnauthorizedException si las credenciales son inválidas.
    */
   async login(dto: LoginDto) {
+    assertAuthEnvironment()
+
     const authUser = await signInSupabaseUser(dto)
     const user = await prisma.appUser.findUnique({
       where: { authUserId: authUser.id },

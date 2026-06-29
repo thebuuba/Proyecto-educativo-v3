@@ -1,4 +1,4 @@
-import { ConflictException } from '@nestjs/common'
+import { ConflictException, ServiceUnavailableException } from '@nestjs/common'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { AuthService } from './auth.service'
 import { RegisterDto } from './dto/register.dto'
@@ -23,7 +23,6 @@ const mocks = vi.hoisted(() => ({
     school: {
       findUnique: vi.fn(),
     },
-    $queryRaw: vi.fn(),
     $transaction: vi.fn(),
   },
 }))
@@ -53,6 +52,7 @@ describe('AuthService.register', () => {
     process.env.SUPABASE_URL = 'https://example.supabase.co'
     process.env.SUPABASE_SERVICE_ROLE_KEY = 'service-role-key'
     process.env.SUPABASE_ANON_KEY = 'anon-key'
+    process.env.DATABASE_URL = 'postgresql://postgres:secret@db.valid.supabase.co:5432/postgres'
     vi.stubGlobal(
       'fetch',
       vi.fn().mockResolvedValue({
@@ -69,7 +69,6 @@ describe('AuthService.register', () => {
     mocks.prisma.rolePermission.findMany.mockResolvedValue([])
     mocks.prisma.permission.findMany.mockResolvedValue([])
     mocks.prisma.school.findUnique.mockResolvedValue(null)
-    mocks.prisma.$queryRaw.mockResolvedValue([])
     jwtService.sign.mockReturnValue('signed-token')
   })
 
@@ -204,6 +203,15 @@ describe('AuthService.register', () => {
     expect(jwtService.sign).not.toHaveBeenCalled()
   })
 
+  it('rejects registration when server auth configuration still uses placeholders', async () => {
+    process.env.DATABASE_URL = 'postgresql://postgres:password@db.xxxxx.supabase.co:5432/postgres'
+
+    await expect(createService().register(registerDto)).rejects.toBeInstanceOf(
+      ServiceUnavailableException,
+    )
+    expect(mocks.prisma.appUser.findUnique).not.toHaveBeenCalled()
+  })
+
   it('uses the first suffixed slug when the base slug already exists', async () => {
     const { tx } = mockRegisterTransaction()
     mocks.prisma.school.findUnique
@@ -226,18 +234,17 @@ describe('AuthService.register', () => {
     })
   })
 
-  it('links the app profile to an existing Supabase Auth user with the same email', async () => {
-    const { tx } = mockRegisterTransaction()
-    mocks.prisma.$queryRaw.mockResolvedValue([{ id: 'auth-existing-user' }])
+  it('returns a conflict when Supabase Auth rejects the email', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: false,
+      statusText: 'Unprocessable Entity',
+      json: vi.fn().mockResolvedValue({ message: 'User already registered' }),
+    } as never)
 
-    await createService().register(registerDto)
-
-    expect(fetch).not.toHaveBeenCalled()
-    expect(tx.appUser.create).toHaveBeenCalledWith({
-      data: expect.objectContaining({
-        authUserId: 'auth-existing-user',
-      }),
-    })
+    await expect(createService().register(registerDto)).rejects.toBeInstanceOf(
+      ConflictException,
+    )
+    expect(mocks.prisma.$transaction).not.toHaveBeenCalled()
   })
 
   it('validates login against Supabase Auth and loads the linked app profile', async () => {

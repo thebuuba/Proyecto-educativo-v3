@@ -21,6 +21,7 @@ import { SettingsModule } from './modules/settings/settings.module'
 import { ReportsModule } from './modules/reports/reports.module'
 import { ProfileModule } from './modules/profile/profile.module'
 import { SubjectsModule } from './modules/subjects/subjects.module'
+import { backendEnvFilePaths } from './config/env-file-paths'
 
 /**
  * Configuración del módulo raíz.
@@ -31,7 +32,7 @@ import { SubjectsModule } from './modules/subjects/subjects.module'
  */
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({ isGlobal: true, envFilePath: backendEnvFilePaths }),
     ThrottlerModule.forRoot([{ ttl: 60000, limit: 100 }]),
     AuthModule,
     UsersModule,
