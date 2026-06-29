@@ -98,37 +98,40 @@ export function AuthProvider({ children }: AuthProviderProps) {
     })
   }, [])
 
+  const restoreFromSupabaseSession = useCallback(async () => {
+    const { data } = await supabase.auth.getSession()
+    const supabaseToken = data.session?.access_token ?? null
+    if (!supabaseToken) return false
+
+    try {
+      await applySession(await createAulaSession(supabaseToken))
+      return true
+    } catch (error) {
+      if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
+        setAuthToken(null)
+        setState({
+          user: null,
+          token: null,
+          supabaseAccessToken: supabaseToken,
+          appUser: null,
+          roles: [],
+          permissions: [],
+          loading: false,
+          authError: null,
+          profileRequired: true,
+          onboardingComplete: false,
+        })
+        return true
+      }
+      return false
+    }
+  }, [applySession])
+
   /** Carga el estado de autenticación desde el servidor (perfil, roles, permisos). */
   const loadAuthState = useCallback(async () => {
     const token = getAuthToken()
     if (!token) {
-      const { data } = await supabase.auth.getSession()
-      const supabaseToken = data.session?.access_token ?? null
-      if (!supabaseToken) {
-        clearAuthState()
-        return
-      }
-
-      try {
-        await applySession(await createAulaSession(supabaseToken))
-      } catch (error) {
-        if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
-          setState({
-            user: null,
-            token: null,
-            supabaseAccessToken: supabaseToken,
-            appUser: null,
-            roles: [],
-            permissions: [],
-            loading: false,
-            authError: null,
-            profileRequired: true,
-            onboardingComplete: false,
-          })
-          return
-        }
-        clearAuthState('No se pudo cargar tu sesión. Intenta nuevamente.')
-      }
+      if (!await restoreFromSupabaseSession()) clearAuthState()
       return
     }
 
@@ -163,11 +166,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
       })
     } catch (error) {
       console.error(error)
-      clearAuthState(
-        'No se pudo cargar tu perfil. Revisa tu conexión e inténtalo de nuevo.',
-      )
+      if (!await restoreFromSupabaseSession()) {
+        clearAuthState(
+          'No se pudo cargar tu perfil. Revisa tu conexión e inténtalo de nuevo.',
+        )
+      }
     }
-  }, [applySession, clearAuthState])
+  }, [clearAuthState, restoreFromSupabaseSession])
 
   useEffect(() => {
     void loadAuthState()
