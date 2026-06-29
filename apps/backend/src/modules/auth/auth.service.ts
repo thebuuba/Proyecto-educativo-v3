@@ -183,39 +183,42 @@ export class AuthService {
     const authUser = await createSupabaseAuthUser(dto)
 
     try {
-      const { user, roles } = await prisma.$transaction(async (tx) => {
-        const school = await tx.school.create({
-          data: {
-            name: dto.schoolName,
-            slug,
-          },
-        })
+      const { user, roles } = await prisma.$transaction(
+        async (tx) => {
+          const school = await tx.school.create({
+            data: {
+              name: dto.schoolName,
+              slug,
+            },
+          })
 
-        const adminRole = await tx.role.upsert({
-          where: { key: 'admin' },
-          update: {},
-          create: { key: 'admin', name: 'Administrador' },
-        })
+          const adminRole = await tx.role.upsert({
+            where: { key: 'admin' },
+            update: {},
+            create: { key: 'admin', name: 'Administrador' },
+          })
 
-        const user = await tx.appUser.create({
-          data: {
-            authUserId: authUser.id,
-            email: dto.email,
-            fullName: dto.fullName,
-            schoolId: school.id,
-          },
-        })
+          const user = await tx.appUser.create({
+            data: {
+              authUserId: authUser.id,
+              email: dto.email,
+              fullName: dto.fullName,
+              schoolId: school.id,
+            },
+          })
 
-        await tx.userRole.create({
-          data: {
-            userId: user.id,
-            roleId: adminRole.id,
-            schoolId: school.id,
-          },
-        })
+          await tx.userRole.create({
+            data: {
+              userId: user.id,
+              roleId: adminRole.id,
+              schoolId: school.id,
+            },
+          })
 
-        return { user, roles: [adminRole] }
-      })
+          return { user, roles: [adminRole] }
+        },
+        { timeout: 20_000 },
+      )
 
       const token = this.jwtService.sign({ sub: user.id, email: user.email })
 

@@ -167,6 +167,10 @@ describe('AuthService.register', () => {
         schoolId: 'school-1',
       },
     })
+    expect(mocks.prisma.$transaction).toHaveBeenCalledWith(
+      expect.any(Function),
+      { timeout: 20_000 },
+    )
     expect(jwtService.sign).toHaveBeenCalledWith({
       sub: user.id,
       email: user.email,
