@@ -9,16 +9,20 @@ import {
   UnauthorizedException,
   InternalServerErrorException,
   ServiceUnavailableException,
+  BadRequestException,
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { prisma } from '@aula/database'
 import { RegisterDto } from './dto/register.dto'
 import { LoginDto } from './dto/login.dto'
+import { CompleteOnboardingDto } from './dto/complete-onboarding.dto'
 
 type SupabaseAuthUser = {
   id: string
   email?: string
 }
+
+type AppUserWithSession = NonNullable<Awaited<ReturnType<typeof prisma.appUser.findUnique>>>
 
 /**
  * Convierte un texto en un slug URL-friendly.
@@ -158,9 +162,66 @@ async function signInSupabaseUser(dto: LoginDto): Promise<SupabaseAuthUser> {
   return body.user
 }
 
+async function getSupabaseUserFromToken(token: string): Promise<SupabaseAuthUser> {
+  const { url, authKey } = getSupabaseConfig()
+  const response = await fetch(`${url}/auth/v1/user`, {
+    headers: {
+      apikey: authKey,
+      Authorization: `Bearer ${token}`,
+    },
+  })
+
+  if (!response.ok) {
+    throw new UnauthorizedException('Invalid Supabase session')
+  }
+
+  const body = await response.json() as SupabaseAuthUser
+  if (!body.id) throw new UnauthorizedException('Invalid Supabase session')
+  return body
+}
+
+function toDate(value: string, fieldName: string) {
+  const date = new Date(`${value}T00:00:00.000Z`)
+  if (Number.isNaN(date.getTime())) {
+    throw new BadRequestException(`${fieldName} no es una fecha valida.`)
+  }
+  return date
+}
+
+function splitName(fullName: string) {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean)
+  const firstName = parts.shift() || fullName.trim()
+  const lastName = parts.join(' ') || 'Docente'
+  return { firstName, lastName }
+}
+
 @Injectable()
 export class AuthService {
   constructor(private jwtService: JwtService) {}
+
+  private buildSession(user: AppUserWithSession, roles: any[] = [], permissions: any[] = []) {
+    const token = this.jwtService.sign({ sub: user.id, email: user.email })
+
+    return {
+      user: { id: user.id, email: user.email },
+      token,
+      appUser: {
+        id: user.id,
+        authUserId: user.authUserId,
+        schoolId: user.schoolId,
+        fullName: user.fullName,
+        email: user.email,
+        phone: user.phone,
+        avatarUrl: user.avatarUrl,
+        lastLoginAt: user.lastLoginAt,
+        status: user.status,
+        createdAt: user.createdAt,
+        updatedAt: user.updatedAt,
+      },
+      roles,
+      permissions,
+    }
+  }
 
   /**
    * Registra un nuevo usuario y su escuela en una transacción.
@@ -220,27 +281,7 @@ export class AuthService {
         { timeout: 20_000 },
       )
 
-      const token = this.jwtService.sign({ sub: user.id, email: user.email })
-
-      return {
-        user: { id: user.id, email: user.email },
-        token,
-        appUser: {
-          id: user.id,
-          authUserId: user.authUserId,
-          schoolId: user.schoolId,
-          fullName: user.fullName,
-          email: user.email,
-          phone: user.phone,
-          avatarUrl: user.avatarUrl,
-          lastLoginAt: user.lastLoginAt,
-          status: user.status,
-          createdAt: user.createdAt,
-          updatedAt: user.updatedAt,
-        },
-        roles,
-        permissions: [],
-      }
+      return this.buildSession(user, roles, [])
     } catch (error) {
       await deleteSupabaseAuthUser(authUser.id)
       throw error
@@ -268,8 +309,6 @@ export class AuthService {
         'Tu cuenta existe en Supabase Auth, pero no tiene un perfil en Aula Base.',
       )
     }
-
-    const token = this.jwtService.sign({ sub: user.id, email: user.email })
 
     const userRoles = await prisma.userRole.findMany({
       where: { userId: user.id, status: 'ACTIVE' },
@@ -299,24 +338,199 @@ export class AuthService {
       new Map(permissions.map((p) => [p.key, p])).values(),
     )
 
-    return {
-      user: { id: user.id, email: user.email },
-      token,
-      appUser: {
-        id: user.id,
-        authUserId: user.authUserId,
-        schoolId: user.schoolId,
-        fullName: user.fullName,
-        email: user.email,
-        phone: user.phone,
-        avatarUrl: user.avatarUrl,
-        lastLoginAt: user.lastLoginAt,
-        status: user.status,
-        createdAt: user.createdAt,
-        updatedAt: user.updatedAt,
+    return this.buildSession(user, roles, uniquePermissions)
+  }
+
+  async createSessionFromSupabaseToken(supabaseAccessToken: string) {
+    assertAuthEnvironment()
+
+    const authUser = await getSupabaseUserFromToken(supabaseAccessToken)
+    const user = await prisma.appUser.findUnique({
+      where: { authUserId: authUser.id },
+    })
+
+    if (!user) {
+      throw new UnauthorizedException('PROFILE_REQUIRED')
+    }
+
+    const userRoles = await prisma.userRole.findMany({
+      where: { userId: user.id, status: 'ACTIVE' },
+    })
+    const roleIds = userRoles.map((ur) => ur.roleId)
+    const roles = roleIds.length
+      ? await prisma.role.findMany({
+          where: { id: { in: roleIds }, status: 'ACTIVE' },
+        })
+      : []
+
+    return this.buildSession(user, roles, [])
+  }
+
+  async completeOnboarding(supabaseAccessToken: string, dto: CompleteOnboardingDto) {
+    assertAuthEnvironment()
+
+    const authUser = await getSupabaseUserFromToken(supabaseAccessToken)
+    const email = (dto.email || authUser.email || '').trim().toLowerCase()
+    if (!email) throw new BadRequestException('El correo es obligatorio.')
+
+    const existing = await prisma.appUser.findUnique({
+      where: { authUserId: authUser.id },
+    })
+    if (existing) return this.createSessionFromSupabaseToken(supabaseAccessToken)
+
+    const startDate = toDate(dto.schoolYear.startDate, 'Fecha de inicio')
+    const endDate = toDate(dto.schoolYear.endDate, 'Fecha de fin')
+    if (endDate < startDate) {
+      throw new BadRequestException('El año escolar debe terminar despues de iniciar.')
+    }
+
+    const normalizedPeriods = dto.periods.map((period, index) => {
+      const periodStart = toDate(period.startDate, `Inicio de ${period.name}`)
+      const periodEnd = toDate(period.endDate, `Fin de ${period.name}`)
+      if (periodEnd < periodStart || periodStart < startDate || periodEnd > endDate) {
+        throw new BadRequestException('Los periodos deben estar dentro del año escolar.')
+      }
+      return { ...period, startDate: periodStart, endDate: periodEnd, sequence: index + 1 }
+    })
+
+    const slug = await getAvailableSchoolSlug(dto.school.name)
+    const { firstName, lastName } = splitName(dto.fullName)
+    const { user, roles } = await prisma.$transaction(
+      async (tx) => {
+        const school = await tx.school.create({
+          data: {
+            name: dto.school.name,
+            slug,
+            regionalName: dto.school.regionalName ?? null,
+            districtName: dto.school.districtName ?? null,
+            primaryModality: dto.school.primaryModality ?? 'general',
+            schoolShift: dto.school.schoolShift ?? 'extended',
+            enabledSubsystems: dto.school.enabledSubsystems?.length
+              ? dto.school.enabledSubsystems
+              : ['regular'],
+          },
+        })
+
+        const adminRole = await tx.role.upsert({
+          where: { key: 'admin' },
+          update: {},
+          create: { key: 'admin', name: 'Administrador' },
+        })
+
+        const user = await tx.appUser.create({
+          data: {
+            authUserId: authUser.id,
+            email,
+            fullName: dto.fullName,
+            schoolId: school.id,
+          },
+        })
+
+        await tx.userRole.create({
+          data: {
+            userId: user.id,
+            roleId: adminRole.id,
+            schoolId: school.id,
+          },
+        })
+
+        const teacher = await tx.teacher.create({
+          data: {
+            userId: user.id,
+            schoolId: school.id,
+            employeeCode: `DOC-${Date.now()}`,
+            firstName,
+            lastName,
+            email,
+            hireDate: startDate,
+          },
+        })
+
+        const schoolYear = await tx.schoolYear.create({
+          data: {
+            schoolId: school.id,
+            name: dto.schoolYear.name,
+            startDate,
+            endDate,
+            isCurrent: true,
+          },
+        })
+
+        for (const period of normalizedPeriods) {
+          await tx.academicPeriod.create({
+            data: {
+              schoolId: school.id,
+              schoolYearId: schoolYear.id,
+              name: period.name,
+              sequence: period.sequence,
+              startDate: period.startDate,
+              endDate: period.endDate,
+            },
+          })
+        }
+
+        for (const [index, course] of dto.courses.entries()) {
+          const grade = await tx.grade.create({
+            data: {
+              schoolId: school.id,
+              name: course.gradeName,
+              sequence: index + 1,
+            },
+          })
+          const section = await tx.section.create({
+            data: {
+              schoolId: school.id,
+              gradeId: grade.id,
+              name: course.sectionName,
+            },
+          })
+          const subject = await tx.subject.create({
+            data: {
+              schoolId: school.id,
+              name: course.subjectName,
+              code: course.subjectCode,
+            },
+          })
+          await tx.sectionSubject.create({
+            data: {
+              schoolId: school.id,
+              schoolYearId: schoolYear.id,
+              gradeId: grade.id,
+              sectionId: section.id,
+              subjectId: subject.id,
+              teacherId: teacher.id,
+            },
+          })
+        }
+
+        return { user, roles: [adminRole] }
       },
-      roles,
-      permissions: uniquePermissions,
+      { timeout: 20_000 },
+    )
+
+    return this.buildSession(user, roles, [])
+  }
+
+  async getOnboardingStatus(schoolId: string) {
+    const [schoolYear, period, grade, section, subject, assignment] = await Promise.all([
+      prisma.schoolYear.findFirst({ where: { schoolId, isCurrent: true, status: 'ACTIVE' } }),
+      prisma.academicPeriod.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.grade.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.section.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.subject.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.sectionSubject.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
+    ])
+
+    return {
+      complete: Boolean(schoolYear && period && grade && section && subject && assignment),
+      missing: {
+        schoolYear: !schoolYear,
+        periods: !period,
+        grades: !grade,
+        sections: !section,
+        subjects: !subject,
+        assignments: !assignment,
+      },
     }
   }
 

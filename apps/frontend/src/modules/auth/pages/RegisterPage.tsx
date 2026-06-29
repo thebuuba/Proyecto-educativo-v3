@@ -18,19 +18,6 @@ import { Link, Navigate } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
-/** Genera un slug URL-friendly a partir de un texto. */
-function createSlug(value: string) {
-  return value
-    .trim()
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-}
-
 /** Retorna un mensaje de error legible para el registro. */
 function getRegisterErrorMessage(error: unknown) {
   if (!(error instanceof Error)) {
@@ -75,8 +62,7 @@ function FacebookIcon() {
  * Redirige al inicio tras un registro exitoso.
  */
 export function RegisterPage() {
-  const { register } = useAuth()
-  const [schoolName, setSchoolName] = useState('')
+  const { loginWithProvider, register } = useAuth()
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -90,19 +76,17 @@ export function RegisterPage() {
   const passwordsMatch = Boolean(password && confirmPassword && password === confirmPassword)
 
   if (registered) {
-    return <Navigate to="/" replace />
+    return <Navigate to="/onboarding" replace />
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setErrorMessage('')
 
-    const trimmedSchoolName = schoolName.trim()
     const trimmedFullName = fullName.trim()
     const trimmedEmail = email.trim()
 
     if (
-      !trimmedSchoolName ||
       !trimmedFullName ||
       !trimmedEmail ||
       !password ||
@@ -129,8 +113,6 @@ export function RegisterPage() {
         email: trimmedEmail,
         password,
         fullName: trimmedFullName,
-        schoolName: trimmedSchoolName,
-        slug: createSlug(trimmedSchoolName),
       })
       setRegistered(true)
     } catch (error) {
@@ -212,7 +194,7 @@ export function RegisterPage() {
             Crear cuenta
           </h1>
           <p className="fu mb-5 text-sm text-[#6B7280]">
-            Completa los datos para registrarte en Aula Base.
+            Crea tu acceso. Luego configuraremos tu centro y año escolar.
           </p>
 
           {errorMessage ? (
@@ -253,22 +235,6 @@ export function RegisterPage() {
                   className="w-full rounded-xl border border-[#E5E7EB] bg-white px-5 py-3.5 text-[15px] text-[#111827] transition-all focus:border-[#2D6977] focus:outline-none focus:ring-4 focus:ring-[rgba(31,78,95,.14)]"
                 />
               </div>
-            </div>
-
-            <div className="fu fu2">
-              <label htmlFor="schoolName" className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-[#9CA3AF]">
-                Institución educativa
-              </label>
-              <input
-                id="schoolName"
-                type="text"
-                autoComplete="organization"
-                required
-                value={schoolName}
-                onChange={(event) => setSchoolName(event.target.value)}
-                placeholder="Colegio San Martín"
-                className="w-full rounded-xl border border-[#E5E7EB] bg-white px-5 py-3.5 text-[15px] text-[#111827] transition-all focus:border-[#2D6977] focus:outline-none focus:ring-4 focus:ring-[rgba(31,78,95,.14)]"
-              />
             </div>
 
             <div className="fu fu3 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -384,6 +350,9 @@ export function RegisterPage() {
             <div className="fu fu6 grid grid-cols-2 gap-4">
               <button
                 type="button"
+                onClick={() => loginWithProvider('google').catch((error: unknown) => {
+                  setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Google.')
+                })}
                 className="flex items-center justify-center gap-2.5 rounded-xl border border-[#E5E7EB] bg-white py-3.5 text-sm font-semibold text-[#374151] transition-all hover:bg-gray-50"
               >
                 <GoogleIcon />
@@ -391,6 +360,9 @@ export function RegisterPage() {
               </button>
               <button
                 type="button"
+                onClick={() => loginWithProvider('facebook').catch((error: unknown) => {
+                  setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Facebook.')
+                })}
                 className="flex items-center justify-center gap-2.5 rounded-xl bg-[#1877F2] py-3.5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(24,119,242,.22)] transition-all"
               >
                 <FacebookIcon />

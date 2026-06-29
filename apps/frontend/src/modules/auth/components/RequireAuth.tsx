@@ -22,7 +22,7 @@ type RequireAuthProps = {
  * si no hay autenticación, o a /sin-acceso si el rol no está permitido.
  */
 export function RequireAuth({ allowedRoles, children }: RequireAuthProps) {
-  const { hasRole, isAuthenticated, loading } = useAuth()
+  const { hasRole, isAuthenticated, loading, onboardingComplete, profileRequired } = useAuth()
   const location = useLocation()
 
   if (loading) {
@@ -33,6 +33,10 @@ export function RequireAuth({ allowedRoles, children }: RequireAuthProps) {
         </div>
       </div>
     )
+  }
+
+  if (profileRequired || (isAuthenticated && onboardingComplete === false)) {
+    return <Navigate to="/onboarding" replace />
   }
 
   if (!isAuthenticated) {

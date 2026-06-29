@@ -59,11 +59,14 @@ export type Role = {
 export type AuthState = {
   user: AuthUser | null
   token: string | null
+  supabaseAccessToken: string | null
   appUser: AppUser | null
   roles: Role[]
   permissions: Permission[]
   loading: boolean
   authError: string | null
+  profileRequired: boolean
+  onboardingComplete: boolean | null
 }
 
 /** Credenciales para iniciar sesión. */
@@ -74,9 +77,7 @@ export type LoginCredentials = {
 
 /** Credenciales para registrar una nueva institución. */
 export type RegisterCredentials = LoginCredentials & {
-  schoolName: string
   fullName: string
-  slug: string
 }
 
 /** Respuesta del servidor tras un inicio de sesión exitoso. */
@@ -86,4 +87,49 @@ export type LoginResponse = {
   appUser: AppUser
   roles: Role[]
   permissions: Permission[]
+}
+
+export type OnboardingCourseInput = {
+  gradeName: string
+  sectionName: string
+  subjectName: string
+  subjectCode: string
+}
+
+export type OnboardingPeriodInput = {
+  name: string
+  startDate: string
+  endDate: string
+}
+
+export type CompleteOnboardingInput = {
+  fullName: string
+  email?: string
+  school: {
+    name: string
+    regionalName?: string
+    districtName?: string
+    primaryModality?: string
+    schoolShift?: string
+    enabledSubsystems?: string[]
+  }
+  schoolYear: {
+    name: string
+    startDate: string
+    endDate: string
+  }
+  periods: OnboardingPeriodInput[]
+  courses: OnboardingCourseInput[]
+}
+
+export type OnboardingStatus = {
+  complete: boolean
+  missing: {
+    schoolYear: boolean
+    periods: boolean
+    grades: boolean
+    sections: boolean
+    subjects: boolean
+    assignments: boolean
+  }
 }

@@ -7,6 +7,7 @@ const mocks = vi.hoisted(() => ({
   prisma: {
     appUser: {
       findUnique: vi.fn(),
+      findFirst: vi.fn(),
     },
     userRole: {
       findMany: vi.fn(),
@@ -22,6 +23,12 @@ const mocks = vi.hoisted(() => ({
     },
     school: {
       findUnique: vi.fn(),
+    },
+    schoolYear: {
+      findFirst: vi.fn(),
+    },
+    academicPeriod: {
+      findFirst: vi.fn(),
     },
     $transaction: vi.fn(),
   },
@@ -64,11 +71,14 @@ describe('AuthService.register', () => {
       }),
     )
     mocks.prisma.appUser.findUnique.mockResolvedValue(null)
+    mocks.prisma.appUser.findFirst.mockResolvedValue(null)
     mocks.prisma.userRole.findMany.mockResolvedValue([])
     mocks.prisma.role.findMany.mockResolvedValue([])
     mocks.prisma.rolePermission.findMany.mockResolvedValue([])
     mocks.prisma.permission.findMany.mockResolvedValue([])
     mocks.prisma.school.findUnique.mockResolvedValue(null)
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue(null)
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue(null)
     jwtService.sign.mockReturnValue('signed-token')
   })
 
@@ -318,5 +328,120 @@ describe('AuthService.register', () => {
     ).rejects.toThrow(
       'Tu cuenta existe en Supabase Auth, pero no tiene un perfil en Aula Base.',
     )
+  })
+
+  it('returns profile required when a Supabase token belongs to a user without Aula Base profile', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        id: 'auth-created-user',
+        email: registerDto.email,
+      }),
+    } as never)
+
+    mocks.prisma.appUser.findUnique.mockResolvedValue(null)
+
+    await expect(createService().createSessionFromSupabaseToken('supabase-token')).rejects.toThrow(
+      'PROFILE_REQUIRED',
+    )
+    expect(fetch).toHaveBeenCalledWith(
+      'https://example.supabase.co/auth/v1/user',
+      expect.objectContaining({
+        headers: expect.objectContaining({
+          Authorization: 'Bearer supabase-token',
+        }),
+      }),
+    )
+  })
+
+  it('completes onboarding by creating school, app user, teacher, year, periods, course, subject assignment, and session', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        id: 'auth-created-user',
+        email: registerDto.email,
+      }),
+    } as never)
+
+    const user = {
+      id: 'user-1',
+      authUserId: 'auth-created-user',
+      schoolId: 'school-1',
+      fullName: registerDto.fullName,
+      email: registerDto.email,
+      phone: null,
+      avatarUrl: null,
+      lastLoginAt: null,
+      status: 'ACTIVE',
+      createdAt,
+      updatedAt,
+    }
+    const adminRole = { id: 'role-admin', key: 'admin', name: 'Administrador' }
+    const tx = {
+      school: { create: vi.fn().mockResolvedValue({ id: 'school-1' }) },
+      role: { upsert: vi.fn().mockResolvedValue(adminRole) },
+      appUser: { create: vi.fn().mockResolvedValue(user) },
+      userRole: { create: vi.fn() },
+      teacher: { create: vi.fn().mockResolvedValue({ id: 'teacher-1' }) },
+      schoolYear: { create: vi.fn().mockResolvedValue({ id: 'year-1' }) },
+      academicPeriod: { create: vi.fn() },
+      grade: { create: vi.fn().mockResolvedValue({ id: 'grade-1' }) },
+      section: { create: vi.fn().mockResolvedValue({ id: 'section-1' }) },
+      subject: { create: vi.fn().mockResolvedValue({ id: 'subject-1' }) },
+      sectionSubject: { create: vi.fn() },
+    }
+    mocks.prisma.$transaction.mockImplementation(async (callback) => callback(tx))
+
+    const result = await createService().completeOnboarding('supabase-token', {
+      fullName: registerDto.fullName,
+      school: {
+        name: registerDto.schoolName,
+        regionalName: 'Regional 10',
+        districtName: 'Distrito 01',
+        primaryModality: 'general',
+        schoolShift: 'extended',
+        enabledSubsystems: ['regular'],
+      },
+      schoolYear: {
+        name: '2026-2027',
+        startDate: '2026-08-01',
+        endDate: '2027-06-30',
+      },
+      periods: [
+        { name: 'P1', startDate: '2026-08-01', endDate: '2026-12-15' },
+      ],
+      courses: [
+        {
+          gradeName: '3ro Secundaria',
+          sectionName: 'A',
+          subjectName: 'Lengua Española',
+          subjectCode: 'LEN-3A',
+        },
+      ],
+    })
+
+    expect(tx.teacher.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        userId: user.id,
+        schoolId: 'school-1',
+        email: registerDto.email,
+      }),
+    })
+    expect(tx.academicPeriod.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        schoolId: 'school-1',
+        schoolYearId: 'year-1',
+        name: 'P1',
+        sequence: 1,
+      }),
+    })
+    expect(tx.sectionSubject.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        schoolYearId: 'year-1',
+        teacherId: 'teacher-1',
+      }),
+    })
+    expect(result.user).toEqual({ id: user.id, email: user.email })
+    expect(result.token).toBe('signed-token')
   })
 })

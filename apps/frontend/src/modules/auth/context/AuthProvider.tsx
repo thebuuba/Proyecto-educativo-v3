@@ -9,18 +9,25 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { AuthContext, type AuthContextValue } from '@/modules/auth/context/AuthContext'
 import {
+  completeOnboarding as completeOnboardingService,
+  createAulaSession,
+  exchangeOAuthCode,
+  getOnboardingStatus,
   login as loginService,
+  loginWithProvider as loginWithProviderService,
   register as registerService,
   logout as logoutService,
   getProfile,
   getUserRoles,
   getUserPermissions,
 } from '@/modules/auth/services/authService'
-import { getAuthToken, setAuthToken } from '@/services/apiClient'
+import { ApiError, getAuthToken, setAuthToken } from '@/services/apiClient'
+import { supabase } from '@/modules/auth/services/supabaseClient'
 import type {
   AppUser,
   AuthState,
   AuthUser,
+  CompleteOnboardingInput,
   LoginCredentials,
   Permission,
   RegisterCredentials,
@@ -36,11 +43,14 @@ type AuthProviderProps = {
 const initialState: AuthState = {
   user: null,
   token: null,
+  supabaseAccessToken: null,
   appUser: null,
   roles: [],
   permissions: [],
   loading: true,
   authError: null,
+  profileRequired: false,
+  onboardingComplete: null,
 }
 
 /**
@@ -57,11 +67,34 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setState({
       user: null,
       token: null,
+      supabaseAccessToken: null,
       appUser: null,
       roles: [],
       permissions: [],
       loading: false,
       authError,
+      profileRequired: false,
+      onboardingComplete: null,
+    })
+  }, [])
+
+  /** Aplica los datos de una sesión (login o registro) al estado global. */
+  const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
+    setAuthToken(response.token)
+    const onboardingComplete = checkOnboarding
+      ? await getOnboardingStatus().then((status) => status.complete).catch(() => null)
+      : null
+    setState({
+      user: response.user,
+      token: response.token,
+      supabaseAccessToken: null,
+      appUser: response.appUser,
+      roles: response.roles,
+      permissions: response.permissions,
+      loading: false,
+      authError: null,
+      profileRequired: false,
+      onboardingComplete,
     })
   }, [])
 
@@ -69,7 +102,33 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const loadAuthState = useCallback(async () => {
     const token = getAuthToken()
     if (!token) {
-      clearAuthState()
+      const { data } = await supabase.auth.getSession()
+      const supabaseToken = data.session?.access_token ?? null
+      if (!supabaseToken) {
+        clearAuthState()
+        return
+      }
+
+      try {
+        await applySession(await createAulaSession(supabaseToken))
+      } catch (error) {
+        if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
+          setState({
+            user: null,
+            token: null,
+            supabaseAccessToken: supabaseToken,
+            appUser: null,
+            roles: [],
+            permissions: [],
+            loading: false,
+            authError: null,
+            profileRequired: true,
+            onboardingComplete: false,
+          })
+          return
+        }
+        clearAuthState('No se pudo cargar tu sesión. Intenta nuevamente.')
+      }
       return
     }
 
@@ -85,16 +144,22 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       const user: AuthUser = { id: appUser.id, email: appUser.email }
       const roles: Role[] = await getUserRoles(appUser.id)
-      const permissions: Permission[] = await getUserPermissions(roles)
+      const [permissions, onboardingStatus] = await Promise.all([
+        getUserPermissions(roles),
+        getOnboardingStatus().catch(() => null),
+      ])
 
       setState({
         user,
         token,
+        supabaseAccessToken: null,
         appUser,
         roles,
         permissions,
         loading: false,
         authError: null,
+        profileRequired: false,
+        onboardingComplete: onboardingStatus?.complete ?? null,
       })
     } catch (error) {
       console.error(error)
@@ -102,38 +167,94 @@ export function AuthProvider({ children }: AuthProviderProps) {
         'No se pudo cargar tu perfil. Revisa tu conexión e inténtalo de nuevo.',
       )
     }
-  }, [clearAuthState])
+  }, [applySession, clearAuthState])
 
   useEffect(() => {
     void loadAuthState()
   }, [loadAuthState])
 
-  /** Aplica los datos de una sesión (login o registro) al estado global. */
-  const applySession = useCallback((response: LoginResponse) => {
-    setAuthToken(response.token)
-    setState({
-      user: response.user,
-      token: response.token,
-      appUser: response.appUser,
-      roles: response.roles,
-      permissions: response.permissions,
-      loading: false,
-      authError: null,
-    })
-  }, [])
-
   const login = useCallback(
     async (credentials: LoginCredentials) => {
-      applySession(await loginService(credentials))
+      try {
+        await applySession(await loginService(credentials))
+      } catch (error) {
+        if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
+          const { data } = await supabase.auth.getSession()
+          setState((current) => ({
+            ...current,
+            supabaseAccessToken: data.session?.access_token ?? null,
+            loading: false,
+            profileRequired: true,
+            onboardingComplete: false,
+            authError: null,
+          }))
+          return
+        }
+        throw error
+      }
     },
     [applySession],
   )
 
   const register = useCallback(
     async (credentials: RegisterCredentials) => {
-      applySession(await registerService(credentials))
+      try {
+        await applySession(await registerService(credentials))
+      } catch (error) {
+        if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
+          const { data } = await supabase.auth.getSession()
+          setState((current) => ({
+            ...current,
+            supabaseAccessToken: data.session?.access_token ?? null,
+            loading: false,
+            profileRequired: true,
+            onboardingComplete: false,
+            authError: null,
+          }))
+          return
+        }
+        throw error
+      }
     },
     [applySession],
+  )
+
+  const loginWithProvider = useCallback((provider: 'google' | 'facebook') => {
+    return loginWithProviderService(provider)
+  }, [])
+
+  const finishOAuthCallback = useCallback(async () => {
+    const supabaseToken = await exchangeOAuthCode()
+    try {
+      await applySession(await createAulaSession(supabaseToken))
+    } catch (error) {
+      if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
+        setState({
+          user: null,
+          token: null,
+          supabaseAccessToken: supabaseToken,
+          appUser: null,
+          roles: [],
+          permissions: [],
+          loading: false,
+          authError: null,
+          profileRequired: true,
+          onboardingComplete: false,
+        })
+        return
+      }
+      throw error
+    }
+  }, [applySession])
+
+  const completeOnboarding = useCallback(
+    async (input: CompleteOnboardingInput) => {
+      const { data } = await supabase.auth.getSession()
+      const supabaseToken = state.supabaseAccessToken ?? data.session?.access_token ?? null
+      if (!supabaseToken) throw new Error('No hay sesión de Supabase para completar el registro.')
+      await applySession(await completeOnboardingService(supabaseToken, input))
+    },
+    [applySession, state.supabaseAccessToken],
   )
 
   const logout = useCallback(async () => {
@@ -151,6 +272,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
       schoolId: state.appUser?.schoolId ?? null,
       login,
       register,
+      loginWithProvider,
+      finishOAuthCallback,
+      completeOnboarding,
       logout,
       refreshAuth: () => loadAuthState(),
       hasRole: (roleKeys: UserRole[]) =>
@@ -160,7 +284,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
           (permission: Permission) => permission.key === permissionKey,
         ),
     }
-  }, [loadAuthState, login, logout, register, state])
+  }, [completeOnboarding, finishOAuthCallback, loadAuthState, login, loginWithProvider, logout, register, state])
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

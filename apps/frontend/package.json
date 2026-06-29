@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@aula/shared": "workspace:*",
+    "@supabase/supabase-js": "^2.108.2",
     "lucide-react": "^1.16.0",
     "papaparse": "^5.5.3",
     "react": "^19.2.6",
