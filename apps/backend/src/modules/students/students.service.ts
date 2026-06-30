@@ -5,11 +5,35 @@
  * incluyendo operaciones CRUD, matrículas, apoderados,
  * notificaciones e importación masiva de datos desde archivos externos.
  */
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common'
 import { prisma, Prisma } from '@aula/database'
 import { CreateStudentDto } from './dto/create-student.dto'
 import { UpdateStudentDto } from './dto/update-student.dto'
 import { CreateEnrollmentDto } from './dto/create-enrollment.dto'
+import {
+  CreateCourseStudentDto,
+  ImportCourseStudentRowDto,
+} from './dto/course-enrollment.dto'
+
+type CourseForEnrollment = {
+  id: string
+  schoolYearId: string
+  gradeId: string
+  sectionId: string
+  subjectId: string
+}
+
+type ImportPreviewRow = {
+  rowNumber: number
+  studentCode: string
+  fullName: string
+  duplicate: boolean
+  errors: string[]
+}
 
 /**
  * Representa una fila de datos de un estudiante durante la importación masiva.
@@ -35,6 +59,7 @@ type ImportStudentError = {
 
 /** Fecha de nacimiento por defecto usada cuando no se puede parsear la fecha en una importación. */
 const IMPORT_FALLBACK_BIRTH_DATE = new Date('2000-01-01T00:00:00')
+const FAST_ENROLLMENT_BIRTH_DATE = new Date('2000-01-01T00:00:00')
 
 /**
  * Limpia un valor desconocido retornando su representación como texto
@@ -97,6 +122,19 @@ function parseBirthDate(value: unknown) {
   return date
 }
 
+function splitFullName(fullName: string) {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean)
+  const firstName = parts.shift() || fullName.trim()
+  const lastName = parts.join(' ') || 'Sin apellido'
+  return { firstName, lastName }
+}
+
+function toRecordStatus(status?: string) {
+  if (status === 'retired' || status === 'withdrawn') return 'INACTIVE'
+  if (status === 'transferred') return 'INACTIVE'
+  return 'ACTIVE'
+}
+
 /**
  * Servicio de estudiantes.
  *
@@ -106,6 +144,295 @@ function parseBirthDate(value: unknown) {
  */
 @Injectable()
 export class StudentsService {
+  private async getCourseOrThrow(schoolId: string, courseId: string) {
+    const course = await prisma.sectionSubject.findFirst({
+      where: { id: courseId, schoolId, status: 'ACTIVE' },
+    })
+
+    if (!course) throw new NotFoundException('Course not found')
+    return course
+  }
+
+  async getEnrollmentCourses(schoolId: string) {
+    const courses = await prisma.sectionSubject.findMany({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: { createdAt: 'desc' },
+    })
+
+    if (courses.length === 0) return []
+
+    const [grades, sections, subjects, schoolYears] = await Promise.all([
+      prisma.grade.findMany({
+        where: {
+          schoolId,
+          id: { in: courses.map((course) => course.gradeId) },
+        },
+      }),
+      prisma.section.findMany({
+        where: {
+          schoolId,
+          id: { in: courses.map((course) => course.sectionId) },
+        },
+      }),
+      prisma.subject.findMany({
+        where: {
+          schoolId,
+          id: { in: courses.map((course) => course.subjectId) },
+        },
+      }),
+      prisma.schoolYear.findMany({
+        where: {
+          schoolId,
+          id: { in: courses.map((course) => course.schoolYearId) },
+        },
+      }),
+    ])
+
+    const gradeById = new Map(grades.map((item) => [item.id, item]))
+    const sectionById = new Map(sections.map((item) => [item.id, item]))
+    const subjectById = new Map(subjects.map((item) => [item.id, item]))
+    const schoolYearById = new Map(schoolYears.map((item) => [item.id, item]))
+
+    return Promise.all(
+      courses.map(async (course) => {
+        const courseMeta = course as any
+        const gradeName =
+          gradeById.get(course.gradeId)?.name ?? courseMeta.grade?.name ?? ''
+        const sectionName =
+          sectionById.get(course.sectionId)?.name ??
+          courseMeta.section?.name ??
+          ''
+        const subjectName =
+          subjectById.get(course.subjectId)?.name ??
+          courseMeta.subject?.name ??
+          ''
+        const schoolYearName =
+          schoolYearById.get(course.schoolYearId)?.name ??
+          courseMeta.schoolYear?.name ??
+          ''
+        const studentCount = await prisma.enrollment.count({
+          where: {
+            schoolId,
+            schoolYearId: course.schoolYearId,
+            gradeId: course.gradeId,
+            sectionId: course.sectionId,
+            status: 'ACTIVE',
+          },
+        })
+
+        return {
+          id: course.id,
+          gradeId: course.gradeId,
+          sectionId: course.sectionId,
+          subjectId: course.subjectId,
+          schoolYearId: course.schoolYearId,
+          gradeName,
+          sectionName,
+          area:
+            typeof courseMeta.area === 'string' ? courseMeta.area : subjectName,
+          subjectName,
+          shift: typeof courseMeta.shift === 'string' ? courseMeta.shift : '',
+          schoolYearName,
+          studentCount,
+          label:
+            `${gradeName} ${sectionName} - ${subjectName} - ${schoolYearName}`.trim(),
+        }
+      }),
+    )
+  }
+
+  async getStudentsByCourse(schoolId: string, courseId: string) {
+    const course = await this.getCourseOrThrow(schoolId, courseId)
+    const enrollments = await prisma.enrollment.findMany({
+      where: {
+        schoolId,
+        schoolYearId: course.schoolYearId,
+        gradeId: course.gradeId,
+        sectionId: course.sectionId,
+        status: 'ACTIVE',
+      },
+    })
+    const studentIds = enrollments.map((item) => item.studentId)
+    if (studentIds.length === 0) return []
+
+    const students = await prisma.student.findMany({
+      where: { schoolId, id: { in: studentIds } },
+      orderBy: { lastName: 'asc' },
+    })
+    const enrollmentByStudentId = new Map(
+      enrollments.map((item) => [item.studentId, item]),
+    )
+
+    return students.map((student) => ({
+      ...student,
+      status: String(student.status).toLowerCase(),
+      fullName: `${student.firstName} ${student.lastName}`.trim(),
+      enrollmentId: enrollmentByStudentId.get(student.id)?.id ?? null,
+    }))
+  }
+
+  private async assertStudentCodeAvailableInCourse(
+    schoolId: string,
+    course: CourseForEnrollment,
+    studentCode: string,
+  ) {
+    const existingStudent = await prisma.student.findFirst({
+      where: { schoolId, studentCode },
+    })
+    if (!existingStudent) return
+
+    const existingEnrollment = await prisma.enrollment.findFirst({
+      where: {
+        schoolId,
+        studentId: existingStudent.id,
+        schoolYearId: course.schoolYearId,
+        gradeId: course.gradeId,
+        sectionId: course.sectionId,
+        status: 'ACTIVE',
+      },
+    })
+
+    if (existingEnrollment) {
+      throw new BadRequestException(
+        'Ya existe un estudiante con esta matrícula en este curso.',
+      )
+    }
+  }
+
+  async createStudentInCourse(
+    schoolId: string,
+    courseId: string,
+    dto: CreateCourseStudentDto,
+  ) {
+    const course = await this.getCourseOrThrow(schoolId, courseId)
+    await this.assertStudentCodeAvailableInCourse(
+      schoolId,
+      course,
+      dto.studentCode,
+    )
+    const { firstName, lastName } = splitFullName(dto.fullName)
+
+    const student = await prisma.$transaction(async (tx) => {
+      const created = await tx.student.create({
+        data: {
+          schoolId,
+          studentCode: dto.studentCode,
+          firstName,
+          lastName,
+          documentId: dto.documentId || null,
+          birthDate: dto.birthDate
+            ? new Date(dto.birthDate)
+            : FAST_ENROLLMENT_BIRTH_DATE,
+          gender: dto.gender || null,
+          address: dto.address || null,
+          status: toRecordStatus(dto.status) as any,
+        },
+      })
+      await tx.enrollment.create({
+        data: {
+          schoolId,
+          studentId: created.id,
+          schoolYearId: course.schoolYearId,
+          gradeId: course.gradeId,
+          sectionId: course.sectionId,
+          status: 'ACTIVE',
+        },
+      })
+      return created
+    })
+
+    return {
+      ...student,
+      fullName: `${student.firstName} ${student.lastName}`.trim(),
+    }
+  }
+
+  async previewCourseImport(
+    schoolId: string,
+    courseId: string,
+    rows: ImportCourseStudentRowDto[],
+  ) {
+    const course = await this.getCourseOrThrow(schoolId, courseId)
+    const seenCodes = new Set<string>()
+    const preview: ImportPreviewRow[] = []
+
+    for (const [index, row] of rows.entries()) {
+      const studentCode = cleanText(row.studentCode)
+      const fullName = cleanText(row.fullName)
+      const errors: string[] = []
+      const duplicate = studentCode ? seenCodes.has(studentCode) : false
+      if (!fullName) errors.push('Nombre requerido.')
+      if (studentCode) seenCodes.add(studentCode)
+      if (studentCode) {
+        const existingStudent = await prisma.student.findFirst({
+          where: { schoolId, studentCode },
+        })
+        if (existingStudent) {
+          const existingEnrollment = await prisma.enrollment.findFirst({
+            where: {
+              schoolId,
+              studentId: existingStudent.id,
+              schoolYearId: course.schoolYearId,
+              gradeId: course.gradeId,
+              sectionId: course.sectionId,
+              status: 'ACTIVE',
+            },
+          })
+          if (existingEnrollment) errors.push('Ya existe en este curso.')
+        }
+      }
+      preview.push({
+        rowNumber: index + 1,
+        studentCode,
+        fullName,
+        duplicate,
+        errors,
+      })
+    }
+
+    return {
+      rows: preview,
+      detectedStudents: preview.filter((row) => row.fullName).length,
+      detectedCodes: preview.filter((row) => row.studentCode).length,
+      duplicates: preview.filter(
+        (row) =>
+          row.duplicate || row.errors.some((error) => error.includes('existe')),
+      ).length,
+      errors: preview.reduce((count, row) => count + row.errors.length, 0),
+    }
+  }
+
+  async importStudentsInCourse(
+    schoolId: string,
+    courseId: string,
+    rows: ImportCourseStudentRowDto[],
+  ) {
+    const preview = await this.previewCourseImport(schoolId, courseId, rows)
+    const validRows = preview.rows.filter(
+      (row) => row.fullName && row.errors.length === 0,
+    )
+    let imported = 0
+    const errors: ImportStudentError[] = []
+
+    for (const row of validRows) {
+      try {
+        await this.createStudentInCourse(schoolId, courseId, {
+          studentCode: row.studentCode || `TEMP-${Date.now()}-${row.rowNumber}`,
+          fullName: row.fullName,
+        })
+        imported += 1
+      } catch (error) {
+        errors.push({
+          row: row.rowNumber,
+          reason:
+            error instanceof Error ? error.message : 'No se pudo importar.',
+        })
+      }
+    }
+
+    return { imported, errors }
+  }
+
   /**
    * Obtiene una lista paginada de estudiantes con filtros opcionales.
    *
@@ -116,7 +443,13 @@ export class StudentsService {
    * @param pageSize - Tamaño de página (por defecto 50).
    * @returns Objeto con la lista de estudiantes, total, página y tamaño de página.
    */
-  async findAll(schoolId: string, search?: string, status?: string, page = 1, pageSize = 50) {
+  async findAll(
+    schoolId: string,
+    search?: string,
+    status?: string,
+    page = 1,
+    pageSize = 50,
+  ) {
     const where: Prisma.StudentWhereInput = { schoolId }
 
     if (status && status !== 'all') {
@@ -176,7 +509,9 @@ export class StudentsService {
         firstName: dto.firstName,
         lastName: dto.lastName,
         documentId: dto.documentId ?? null,
-        birthDate: new Date(dto.birthDate),
+        birthDate: dto.birthDate
+          ? new Date(dto.birthDate)
+          : FAST_ENROLLMENT_BIRTH_DATE,
         gender: dto.gender ?? null,
         address: dto.address ?? null,
       },
@@ -259,8 +594,12 @@ export class StudentsService {
     const [student, grade, section, schoolYear] = await Promise.all([
       prisma.student.findFirst({ where: { id: dto.studentId, schoolId } }),
       prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } }),
-      prisma.section.findFirst({ where: { id: dto.sectionId, schoolId, gradeId: dto.gradeId } }),
-      prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } }),
+      prisma.section.findFirst({
+        where: { id: dto.sectionId, schoolId, gradeId: dto.gradeId },
+      }),
+      prisma.schoolYear.findFirst({
+        where: { id: dto.schoolYearId, schoolId },
+      }),
     ])
     if (!student) throw new NotFoundException('Student not found')
     if (!grade) throw new NotFoundException('Grade not found')
@@ -292,7 +631,9 @@ export class StudentsService {
    * @throws NotFoundException si la matrícula no existe.
    */
   async deleteEnrollment(schoolId: string, id: string) {
-    const enrollment = await prisma.enrollment.findFirst({ where: { id, schoolId } })
+    const enrollment = await prisma.enrollment.findFirst({
+      where: { id, schoolId },
+    })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
 
     await prisma.attendanceClass.deleteMany({ where: { enrollmentId: id } })
@@ -357,7 +698,9 @@ export class StudentsService {
    */
   async importStudents(schoolId: string, students: ImportStudentRow[]) {
     if (!Array.isArray(students)) {
-      throw new BadRequestException('El cuerpo debe incluir un arreglo de estudiantes.')
+      throw new BadRequestException(
+        'El cuerpo debe incluir un arreglo de estudiantes.',
+      )
     }
 
     const results = []
@@ -380,12 +723,18 @@ export class StudentsService {
       }
 
       if (seenCodes.has(studentCode)) {
-        errors.push({ row, reason: `Codigo duplicado en el archivo: ${studentCode}` })
+        errors.push({
+          row,
+          reason: `Codigo duplicado en el archivo: ${studentCode}`,
+        })
         continue
       }
 
       if (documentId && seenDocuments.has(documentId)) {
-        errors.push({ row, reason: `Documento duplicado en el archivo: ${documentId}` })
+        errors.push({
+          row,
+          reason: `Documento duplicado en el archivo: ${documentId}`,
+        })
         continue
       }
 
@@ -407,7 +756,10 @@ export class StudentsService {
         const created = await prisma.student.create({ data })
         results.push(created)
       } catch (error) {
-        if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
+        if (
+          error instanceof Prisma.PrismaClientKnownRequestError &&
+          error.code === 'P2002'
+        ) {
           const target = Array.isArray(error.meta?.target)
             ? error.meta.target.join(', ')
             : String(error.meta?.target ?? 'campo unico')
@@ -436,7 +788,12 @@ export class StudentsService {
    * @param body - Objeto con el mensaje y asunto de la notificación.
    * @returns Resultado de la operación con el número de apoderados notificados.
    */
-  async notifyGuardians(schoolId: string, studentId: string, createdBy: string, body: any) {
+  async notifyGuardians(
+    schoolId: string,
+    studentId: string,
+    createdBy: string,
+    body: any,
+  ) {
     await this.findOne(schoolId, studentId)
     const links = await prisma.studentGuardian.findMany({
       where: { schoolId, studentId },

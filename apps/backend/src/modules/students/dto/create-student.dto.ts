@@ -30,8 +30,9 @@ export class CreateStudentDto {
   @IsString()
   documentId?: string
 
+  @IsOptional()
   @IsDateString()
-  birthDate!: string
+  birthDate?: string
 
   @IsOptional()
   @IsString()

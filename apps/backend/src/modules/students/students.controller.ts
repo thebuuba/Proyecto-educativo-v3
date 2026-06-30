@@ -19,6 +19,11 @@ import { StudentsService } from './students.service'
 import { CreateStudentDto } from './dto/create-student.dto'
 import { UpdateStudentDto } from './dto/update-student.dto'
 import { CreateEnrollmentDto } from './dto/create-enrollment.dto'
+import {
+  CreateCourseStudentDto,
+  ImportCourseStudentsDto,
+  ImportCourseStudentsPreviewDto,
+} from './dto/course-enrollment.dto'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
@@ -90,7 +95,65 @@ export class StudentsController {
   @Post('import')
   @Roles('admin', 'director', 'coordinator')
   importStudents(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.studentsService.importStudents(user.schoolId, body.students ?? body)
+    return this.studentsService.importStudents(
+      user.schoolId,
+      body.students ?? body,
+    )
+  }
+
+  @Get('enrollment-courses')
+  getEnrollmentCourses(@CurrentUser() user: AuthenticatedUser) {
+    return this.studentsService.getEnrollmentCourses(user.schoolId)
+  }
+
+  @Get('courses/:courseId/students')
+  getStudentsByCourse(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('courseId') courseId: string,
+  ) {
+    return this.studentsService.getStudentsByCourse(user.schoolId, courseId)
+  }
+
+  @Post('courses/:courseId/students')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  createStudentInCourse(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('courseId') courseId: string,
+    @Body() dto: CreateCourseStudentDto,
+  ) {
+    return this.studentsService.createStudentInCourse(
+      user.schoolId,
+      courseId,
+      dto,
+    )
+  }
+
+  @Post('courses/:courseId/import-preview')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  previewCourseImport(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('courseId') courseId: string,
+    @Body() dto: ImportCourseStudentsPreviewDto,
+  ) {
+    return this.studentsService.previewCourseImport(
+      user.schoolId,
+      courseId,
+      dto.students,
+    )
+  }
+
+  @Post('courses/:courseId/import')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  importStudentsInCourse(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('courseId') courseId: string,
+    @Body() dto: ImportCourseStudentsDto,
+  ) {
+    return this.studentsService.importStudentsInCourse(
+      user.schoolId,
+      courseId,
+      dto.students,
+    )
   }
 
   /**
@@ -115,7 +178,10 @@ export class StudentsController {
    */
   @Post()
   @Roles('admin', 'director', 'coordinator')
-  create(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateStudentDto) {
+  create(
+    @CurrentUser() user: AuthenticatedUser,
+    @Body() dto: CreateStudentDto,
+  ) {
     return this.studentsService.create(user.schoolId, dto)
   }
 
@@ -158,7 +224,10 @@ export class StudentsController {
    * @returns Lista de matrículas del estudiante.
    */
   @Get(':id/enrollments')
-  getEnrollments(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+  getEnrollments(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+  ) {
     return this.studentsService.getEnrollments(user.schoolId, id)
   }
 
@@ -171,7 +240,10 @@ export class StudentsController {
    */
   @Post('enrollments')
   @Roles('admin', 'director', 'coordinator')
-  createEnrollment(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateEnrollmentDto) {
+  createEnrollment(
+    @CurrentUser() user: AuthenticatedUser,
+    @Body() dto: CreateEnrollmentDto,
+  ) {
     return this.studentsService.createEnrollment(user.schoolId, dto)
   }
 
@@ -184,7 +256,10 @@ export class StudentsController {
    */
   @Delete('enrollments/:id')
   @Roles('admin', 'director', 'coordinator')
-  deleteEnrollment(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+  deleteEnrollment(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+  ) {
     return this.studentsService.deleteEnrollment(user.schoolId, id)
   }
 
@@ -196,7 +271,10 @@ export class StudentsController {
    * @returns Lista de vínculos entre el estudiante y sus apoderados.
    */
   @Get(':id/guardians')
-  getGuardians(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+  getGuardians(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+  ) {
     return this.studentsService.getGuardians(user.schoolId, id)
   }
 
@@ -215,6 +293,11 @@ export class StudentsController {
     @Param('id') id: string,
     @Body() body: any,
   ) {
-    return this.studentsService.notifyGuardians(user.schoolId, id, user.id, body)
+    return this.studentsService.notifyGuardians(
+      user.schoolId,
+      id,
+      user.id,
+      body,
+    )
   }
 }
