@@ -14,6 +14,7 @@ const mocks = vi.hoisted(() => ({
       create: vi.fn(),
       findFirst: vi.fn(),
       findMany: vi.fn(),
+      update: vi.fn(),
     },
     student: { create: vi.fn(), findFirst: vi.fn(), findMany: vi.fn() },
     studentGuardian: { findMany: vi.fn() },
@@ -306,6 +307,83 @@ describe('StudentsService course enrollment', () => {
 
     expect(result).toEqual({ imported: 1, errors: [] })
     expect(mocks.prisma.student.create).toHaveBeenCalledTimes(1)
+  })
+
+  it('withdraws a student from the selected course enrollment', async () => {
+    mockCourse()
+    mocks.prisma.enrollment.findFirst.mockResolvedValue({
+      id: 'enrollment-1',
+      studentId: 'student-1',
+    })
+    mocks.prisma.enrollment.update.mockResolvedValue({
+      id: 'enrollment-1',
+      status: 'WITHDRAWN',
+      academicStatus: 'withdrawn',
+    })
+
+    const result = await createService().withdrawStudentFromCourse(
+      'school-1',
+      'course-1',
+      'student-1',
+    )
+
+    expect(mocks.prisma.enrollment.update).toHaveBeenCalledWith({
+      where: { id: 'enrollment-1' },
+      data: {
+        status: 'WITHDRAWN',
+        academicStatus: 'withdrawn',
+      },
+    })
+    expect(result).toEqual(expect.objectContaining({ status: 'WITHDRAWN' }))
+  })
+
+  it('moves a student enrollment to the target course when transferred', async () => {
+    mocks.prisma.sectionSubject.findFirst
+      .mockResolvedValueOnce({
+        id: 'course-1',
+        schoolId: 'school-1',
+        schoolYearId: 'year-1',
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        subjectId: 'subject-1',
+        status: 'ACTIVE',
+      })
+      .mockResolvedValueOnce({
+        id: 'course-2',
+        schoolId: 'school-1',
+        schoolYearId: 'year-1',
+        gradeId: 'grade-2',
+        sectionId: 'section-2',
+        subjectId: 'subject-2',
+        status: 'ACTIVE',
+      })
+    mocks.prisma.enrollment.findFirst
+      .mockResolvedValueOnce({ id: 'enrollment-1', studentId: 'student-1' })
+      .mockResolvedValueOnce(null)
+    mocks.prisma.enrollment.update.mockResolvedValue({
+      id: 'enrollment-1',
+      gradeId: 'grade-2',
+      sectionId: 'section-2',
+      academicStatus: 'transferred',
+    })
+
+    await createService().transferStudentToCourse(
+      'school-1',
+      'course-1',
+      'student-1',
+      'course-2',
+    )
+
+    expect(mocks.prisma.enrollment.update).toHaveBeenCalledWith({
+      where: { id: 'enrollment-1' },
+      data: expect.objectContaining({
+        schoolYearId: 'year-1',
+        gradeId: 'grade-2',
+        sectionId: 'section-2',
+        status: 'ACTIVE',
+        academicStatus: 'transferred',
+      }),
+    })
   })
 })
 

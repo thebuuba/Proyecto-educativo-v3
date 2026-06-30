@@ -66,7 +66,11 @@ export function StudentForm({
   const [guardianEmail, setGuardianEmail] = useState('')
   const [observations, setObservations] = useState('')
   const [status, setStatus] = useState<NonNullable<CreateCourseStudentInput['status']>>(
-    mode === 'transfer' ? 'transferred' : 'active',
+    mode === 'transfer'
+      ? 'transferred'
+      : student?.status === 'inactive'
+        ? 'retired'
+        : 'active',
   )
   const [showMore, setShowMore] = useState(false)
   const [validationError, setValidationError] = useState('')
@@ -115,10 +119,16 @@ export function StudentForm({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
-      <div ref={dialogRef} className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xl">
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="student-form-title"
+        className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xl"
+      >
         <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
           <div>
-            <h3 className="text-base font-semibold text-foreground">{title}</h3>
+            <h3 id="student-form-title" className="text-base font-semibold text-foreground">{title}</h3>
             <p className="mt-1 text-sm text-muted-foreground">
               Código o matrícula y nombre completo son obligatorios.
             </p>
@@ -182,6 +192,7 @@ export function StudentForm({
           <button
             type="button"
             className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-accent"
+            aria-expanded={showMore}
             onClick={() => setShowMore((value) => !value)}
           >
             {showMore ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}

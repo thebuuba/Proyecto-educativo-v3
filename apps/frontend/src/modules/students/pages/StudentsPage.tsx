@@ -23,12 +23,13 @@ import { StudentForm } from '@/modules/students/components/StudentForm'
 import { StudentsTable } from '@/modules/students/components/StudentsTable'
 import {
   createStudentInCourse,
-  deactivateStudent,
   getEnrollmentCourses,
   getStudentsByCourse,
   importStudentsInCourse,
   previewCourseStudentImport,
+  transferStudentToCourse,
   updateStudent,
+  withdrawStudentFromCourse,
 } from '@/modules/students/services/studentsService'
 import type {
   CourseStudent,
@@ -65,7 +66,8 @@ export function StudentsPage() {
     [courses, selectedCourseId],
   )
 
-  const canManageStudents = hasRole(['admin', 'director', 'coordinator', 'teacher'])
+  const canCreateEnrollment = hasRole(['admin', 'director', 'coordinator', 'teacher'])
+  const canEditStudent = hasRole(['admin', 'director', 'coordinator'])
   const canViewGuardians =
     hasPermission('academics.read_all') || hasRole(['admin', 'director', 'coordinator'])
 
@@ -180,7 +182,30 @@ export function StudentsPage() {
     }
 
     if (formMode === 'transfer') {
-      setFormError('El traslado entre cursos requiere completar el flujo backend de transferencia.')
+      if (!editingStudent || !transferCourseId) {
+        setFormError('Selecciona el curso destino.')
+        return
+      }
+
+      setIsSubmitting(true)
+      setFormError(null)
+
+      try {
+        await transferStudentToCourse(selectedCourseId, editingStudent.id, transferCourseId)
+        await Promise.all([
+          refreshCourseStudents(selectedCourseId),
+          getEnrollmentCourses().then(setCourses),
+        ])
+        setActionError(null)
+        setActionSuccess('Estudiante trasladado correctamente.')
+        closeForm()
+      } catch (error) {
+        setFormError(
+          error instanceof Error ? error.message : 'No se pudo trasladar el estudiante.',
+        )
+      } finally {
+        setIsSubmitting(false)
+      }
       return
     }
 
@@ -225,7 +250,7 @@ export function StudentsPage() {
     if (!deactivateTarget) return
 
     try {
-      await deactivateStudent(deactivateTarget.id)
+      await withdrawStudentFromCourse(selectedCourseId, deactivateTarget.id)
       await refreshCourseStudents()
       setActionError(null)
       setActionSuccess('Estudiante retirado de la matrícula activa.')
@@ -349,7 +374,7 @@ export function StudentsPage() {
               </div>
 
               <div className="flex flex-col gap-2 sm:flex-row xl:self-end">
-                {canManageStudents ? (
+                {canCreateEnrollment ? (
                   <>
                     <Button variant="secondary" className="h-10 px-4 text-sm" onClick={openCreateForm}>
                       <Plus className="size-4 text-accent" />
@@ -377,7 +402,8 @@ export function StudentsPage() {
             ) : students.length > 0 ? (
               <StudentsTable
                 students={students}
-                canManage={canManageStudents}
+                canCreateEnrollment={canCreateEnrollment}
+                canEditStudent={canEditStudent}
                 onView={setSelectedStudent}
                 onEdit={openEditForm}
                 onDeactivate={setDeactivateTarget}

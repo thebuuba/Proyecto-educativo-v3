@@ -38,6 +38,9 @@ export function ImportStudentsModal({
   const [isPreviewing, setIsPreviewing] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [result, setResult] = useState<ImportResult | null>(null)
+  const hasBlockingPreviewIssues = Boolean(
+    preview && (preview.errors > 0 || preview.duplicates > 0),
+  )
 
   async function handlePreview() {
     const parsedRows = parsePastedStudents(text)
@@ -201,7 +204,7 @@ export function ImportStudentsModal({
               <Button
                 onClick={handleImport}
                 loading={isSubmitting}
-                disabled={preview.detectedStudents === 0 || isPreviewing}
+                disabled={preview.detectedStudents === 0 || hasBlockingPreviewIssues || isPreviewing}
               >
                 <ClipboardList className="size-4" />
                 Confirmar importación

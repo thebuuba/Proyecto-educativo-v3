@@ -143,6 +143,23 @@ export async function importStudentsInCourse(
   return api.post(`/students/courses/${courseId}/import`, { students })
 }
 
+export async function withdrawStudentFromCourse(
+  courseId: string,
+  studentId: string,
+): Promise<void> {
+  await api.patch(`/students/courses/${courseId}/students/${studentId}/withdraw`, {})
+}
+
+export async function transferStudentToCourse(
+  courseId: string,
+  studentId: string,
+  targetCourseId: string,
+): Promise<void> {
+  await api.patch(`/students/courses/${courseId}/students/${studentId}/transfer`, {
+    targetCourseId,
+  })
+}
+
 /** Notifica a los tutores de estudiantes en riesgo de bajo rendimiento. */
 export async function notifyGuardiansForAtRiskStudents(studentIds: string[]): Promise<{
   notified: number

@@ -463,6 +463,92 @@ export class StudentsService {
     return { imported, errors }
   }
 
+  async withdrawStudentFromCourse(
+    schoolId: string,
+    courseId: string,
+    studentId: string,
+  ) {
+    const course = await this.getCourseOrThrow(schoolId, courseId)
+    const enrollment = await prisma.enrollment.findFirst({
+      where: {
+        schoolId,
+        studentId,
+        schoolYearId: course.schoolYearId,
+        gradeId: course.gradeId,
+        sectionId: course.sectionId,
+        status: 'ACTIVE',
+      },
+    })
+
+    if (!enrollment) throw new NotFoundException('Enrollment not found')
+
+    return prisma.enrollment.update({
+      where: { id: enrollment.id },
+      data: {
+        status: 'WITHDRAWN',
+        academicStatus: 'withdrawn',
+      },
+    })
+  }
+
+  async transferStudentToCourse(
+    schoolId: string,
+    courseId: string,
+    studentId: string,
+    targetCourseId: string,
+  ) {
+    if (courseId === targetCourseId) {
+      throw new BadRequestException('Selecciona un curso destino diferente.')
+    }
+
+    const [sourceCourse, targetCourse] = await Promise.all([
+      this.getCourseOrThrow(schoolId, courseId),
+      this.getCourseOrThrow(schoolId, targetCourseId),
+    ])
+
+    const enrollment = await prisma.enrollment.findFirst({
+      where: {
+        schoolId,
+        studentId,
+        schoolYearId: sourceCourse.schoolYearId,
+        gradeId: sourceCourse.gradeId,
+        sectionId: sourceCourse.sectionId,
+        status: 'ACTIVE',
+      },
+    })
+
+    if (!enrollment) throw new NotFoundException('Enrollment not found')
+
+    const existingTargetEnrollment = await prisma.enrollment.findFirst({
+      where: {
+        schoolId,
+        studentId,
+        schoolYearId: targetCourse.schoolYearId,
+        gradeId: targetCourse.gradeId,
+        sectionId: targetCourse.sectionId,
+        status: 'ACTIVE',
+      },
+    })
+
+    if (existingTargetEnrollment) {
+      throw new BadRequestException(
+        'El estudiante ya está matriculado en el curso destino.',
+      )
+    }
+
+    return prisma.enrollment.update({
+      where: { id: enrollment.id },
+      data: {
+        schoolYearId: targetCourse.schoolYearId,
+        gradeId: targetCourse.gradeId,
+        sectionId: targetCourse.sectionId,
+        status: 'ACTIVE',
+        academicStatus: 'transferred',
+        transferNotes: `Trasladado desde curso ${sourceCourse.id}`,
+      },
+    })
+  }
+
   /**
    * Obtiene una lista paginada de estudiantes con filtros opcionales.
    *

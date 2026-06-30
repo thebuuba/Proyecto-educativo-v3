@@ -23,6 +23,7 @@ import {
   CreateCourseStudentDto,
   ImportCourseStudentsDto,
   ImportCourseStudentsPreviewDto,
+  TransferCourseStudentDto,
 } from './dto/course-enrollment.dto'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
@@ -153,6 +154,36 @@ export class StudentsController {
       user.schoolId,
       courseId,
       dto.students,
+    )
+  }
+
+  @Patch('courses/:courseId/students/:studentId/withdraw')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  withdrawStudentFromCourse(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('courseId') courseId: string,
+    @Param('studentId') studentId: string,
+  ) {
+    return this.studentsService.withdrawStudentFromCourse(
+      user.schoolId,
+      courseId,
+      studentId,
+    )
+  }
+
+  @Patch('courses/:courseId/students/:studentId/transfer')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  transferStudentToCourse(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('courseId') courseId: string,
+    @Param('studentId') studentId: string,
+    @Body() dto: TransferCourseStudentDto,
+  ) {
+    return this.studentsService.transferStudentToCourse(
+      user.schoolId,
+      courseId,
+      studentId,
+      dto.targetCourseId,
     )
   }
 

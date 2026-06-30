@@ -10,7 +10,8 @@ import { cn } from '@/utils/cn'
 
 type StudentsTableProps = {
   students: CourseStudent[]
-  canManage: boolean
+  canCreateEnrollment: boolean
+  canEditStudent: boolean
   onView: (student: CourseStudent) => void
   onEdit: (student: CourseStudent) => void
   onDeactivate: (student: CourseStudent) => void
@@ -34,7 +35,8 @@ const statusConfig: Record<CourseStudent['status'], { label: string; className: 
 
 export function StudentsTable({
   students,
-  canManage,
+  canCreateEnrollment,
+  canEditStudent,
   onView,
   onEdit,
   onDeactivate,
@@ -73,12 +75,14 @@ export function StudentsTable({
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex flex-wrap justify-end gap-2">
-                    {canManage ? (
+                    {canEditStudent ? (
+                      <Button variant="ghost" size="sm" onClick={() => onEdit(student)}>
+                        <Pencil className="size-4" />
+                        Editar
+                      </Button>
+                    ) : null}
+                    {canCreateEnrollment ? (
                       <>
-                        <Button variant="ghost" size="sm" onClick={() => onEdit(student)}>
-                          <Pencil className="size-4" />
-                          Editar
-                        </Button>
                         <Button
                           variant="ghost"
                           size="sm"

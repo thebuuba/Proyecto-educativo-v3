@@ -67,3 +67,9 @@ export class ImportCourseStudentsPreviewDto {
 }
 
 export class ImportCourseStudentsDto extends ImportCourseStudentsPreviewDto {}
+
+export class TransferCourseStudentDto {
+  @IsString()
+  @MinLength(1)
+  targetCourseId!: string
+}
