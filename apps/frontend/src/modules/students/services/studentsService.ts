@@ -14,6 +14,11 @@ import type {
   GradeWithSections,
   EnrollmentListItem,
   CreateEnrollmentInput,
+  EnrollmentCourse,
+  CourseStudent,
+  CreateCourseStudentInput,
+  ImportCourseStudentRow,
+  CourseImportPreview,
 } from '@/modules/students/types'
 
 type PaginatedResponse<T> = {
@@ -77,7 +82,7 @@ export async function updateStudent(id: string, input: UpdateStudentInput): Prom
 
 /** Desactiva un estudiante (cambia su estado a 'inactive'). */
 export async function deactivateStudent(id: string): Promise<Student> {
-  return api.patch<Student>(`/students/${id}`, { status: 'inactive' })
+  return api.patch<Student>(`/students/${id}/deactivate`, {})
 }
 
 /** Importa una lista de estudiantes desde un archivo. */
@@ -107,6 +112,35 @@ export async function deleteEnrollment(id: string): Promise<void> {
 /** Obtiene la lista de grados con sus secciones disponibles. */
 export async function getGradesWithSections(): Promise<GradeWithSections[]> {
   return api.get<GradeWithSections[]>('/students/grades-with-sections')
+}
+
+export async function getEnrollmentCourses(): Promise<EnrollmentCourse[]> {
+  return api.get<EnrollmentCourse[]>('/students/enrollment-courses')
+}
+
+export async function getStudentsByCourse(courseId: string): Promise<CourseStudent[]> {
+  return api.get<CourseStudent[]>(`/students/courses/${courseId}/students`)
+}
+
+export async function createStudentInCourse(
+  courseId: string,
+  input: CreateCourseStudentInput,
+): Promise<CourseStudent> {
+  return api.post<CourseStudent>(`/students/courses/${courseId}/students`, input)
+}
+
+export async function previewCourseStudentImport(
+  courseId: string,
+  students: ImportCourseStudentRow[],
+): Promise<CourseImportPreview> {
+  return api.post<CourseImportPreview>(`/students/courses/${courseId}/import-preview`, { students })
+}
+
+export async function importStudentsInCourse(
+  courseId: string,
+  students: ImportCourseStudentRow[],
+): Promise<{ imported: number; errors: { row: number; reason: string }[] }> {
+  return api.post(`/students/courses/${courseId}/import`, { students })
 }
 
 /** Notifica a los tutores de estudiantes en riesgo de bajo rendimiento. */

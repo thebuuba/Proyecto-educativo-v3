@@ -1,491 +1,427 @@
 /**
- * Página de Estudiantes — Vista principal con tabla, filtros, métricas,
- * panel de riesgo, distribución por estado y acciones de gestión.
+ * Página de Matrícula - Gestión de estudiantes organizada por curso.
  */
 
 import {
   AlertCircle,
   CheckCircle2,
-  ChevronRight,
   Download,
   Plus,
-  TrendingUp,
-  TriangleAlert,
   Upload,
 } from 'lucide-react'
-import type { ReactNode } from 'react'
-import { useCallback, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
-import { Card, CardContent } from '@/components/ui/Card'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
-import { THRESHOLD } from '@/constants'
+import { EmptyState } from '@/components/ui/EmptyState'
+import { Select } from '@/components/ui/Select'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { ImportStudentsModal } from '@/modules/students/components/ImportStudentsModal'
 import { StudentDetailPanel } from '@/modules/students/components/StudentDetailPanel'
-import { StudentFiltersBar } from '@/modules/students/components/StudentFiltersBar'
 import { StudentForm } from '@/modules/students/components/StudentForm'
+import { StudentsTable } from '@/modules/students/components/StudentsTable'
 import {
-  StudentsTable,
-} from '@/modules/students/components/StudentsTable'
-import { useStudents } from '@/modules/students/hooks/useStudents'
-import type { ParsedStudentRow } from '@/modules/students/services/importService'
-import {
-  importStudents,
-  notifyGuardiansForAtRiskStudents,
+  createStudentInCourse,
+  deactivateStudent,
+  getEnrollmentCourses,
+  getStudentsByCourse,
+  importStudentsInCourse,
+  previewCourseStudentImport,
+  updateStudent,
 } from '@/modules/students/services/studentsService'
 import type {
-  CreateStudentInput,
-  StudentListItem,
+  CourseStudent,
+  CreateCourseStudentInput,
+  EnrollmentCourse,
+  ImportCourseStudentRow,
+  StudentStatus,
 } from '@/modules/students/types'
-import {
-  getCourseLabel,
-  getDisplayStatus,
-  getStudentInitials,
-} from '@/modules/students/utils/studentDisplay'
 import { cn } from '@/utils/cn'
 
-type DistributionItem = {
-  label: string
-  count: number
-  tone: 'success' | 'accent' | 'destructive'
-}
+type FormMode = 'create' | 'edit' | 'transfer'
 
-/** Página principal de gestión de estudiantes. */
 export function StudentsPage() {
   const { hasPermission, hasRole } = useAuth()
-  const {
-    students,
-    totalCount,
-    page,
-    pageSize,
-    loading,
-    error,
-    search,
-    filters,
-    setSearch,
-    setFilters,
-    goToPage,
-    refetch,
-    createStudent,
-    updateStudent,
-    deactivateStudent,
-  } = useStudents()
-  const [selectedStudent, setSelectedStudent] = useState<StudentListItem | null>(null)
-  const [editingStudent, setEditingStudent] = useState<StudentListItem | null>(null)
+  const [courses, setCourses] = useState<EnrollmentCourse[]>([])
+  const [selectedCourseId, setSelectedCourseId] = useState('')
+  const [students, setStudents] = useState<CourseStudent[]>([])
+  const [loadingCourses, setLoadingCourses] = useState(true)
+  const [loadingStudents, setLoadingStudents] = useState(false)
+  const [selectedStudent, setSelectedStudent] = useState<CourseStudent | null>(null)
+  const [editingStudent, setEditingStudent] = useState<CourseStudent | null>(null)
+  const [formMode, setFormMode] = useState<FormMode>('create')
+  const [transferCourseId, setTransferCourseId] = useState('')
   const [isFormOpen, setIsFormOpen] = useState(false)
+  const [importModalOpen, setImportModalOpen] = useState(false)
   const [formError, setFormError] = useState<string | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
   const [actionSuccess, setActionSuccess] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [deactivateTarget, setDeactivateTarget] = useState<StudentListItem | null>(null)
-  const [selectedCourse, setSelectedCourse] = useState('Todos')
-  const [importModalOpen, setImportModalOpen] = useState(false)
-  const [selectedIds, setSelectedIds] = useState<Set<string>>(() => new Set())
-  const [notifying, setNotifying] = useState(false)
+  const [deactivateTarget, setDeactivateTarget] = useState<CourseStudent | null>(null)
 
-  const canManageStudents = hasRole(['admin', 'coordinator'])
-  const canNotifyGuardians = hasRole(['admin', 'coordinator', 'teacher'])
+  const selectedCourse = useMemo(
+    () => courses.find((course) => course.id === selectedCourseId) ?? null,
+    [courses, selectedCourseId],
+  )
+
+  const canManageStudents = hasRole(['admin', 'director', 'coordinator', 'teacher'])
   const canViewGuardians =
     hasPermission('academics.read_all') || hasRole(['admin', 'director', 'coordinator'])
 
-  const averageAttendance = useMemo(() => {
-    const values = students
-      .map((student) => student.metrics.attendancePercentage)
-      .filter((value): value is number => value !== null)
+  useEffect(() => {
+    let active = true
 
-    return values.length > 0
-      ? Math.round(values.reduce((total, value) => total + value, 0) / values.length)
-      : null
-  }, [students])
-
-  const generalAverage = useMemo(() => {
-    const values = students
-      .map((student) => student.metrics.averageScore)
-      .filter((value): value is number => value !== null)
-
-    return values.length > 0
-      ? Math.round((values.reduce((total, value) => total + value, 0) / values.length) * 10) / 10
-      : null
-  }, [students])
-
-  const criticalStudents = useMemo(
-    () =>
-      students.filter((student) => {
-        return (
-          student.status !== 'active' ||
-          (student.metrics.attendancePercentage !== null &&
-            student.metrics.attendancePercentage < THRESHOLD.ATTENDANCE_LOW) ||
-          (student.metrics.averageScore !== null &&
-            student.metrics.averageScore < THRESHOLD.GRADE_LOW)
+    getEnrollmentCourses()
+      .then((data) => {
+        if (!active) return
+        setCourses(data)
+      })
+      .catch((error) => {
+        if (!active) return
+        setActionError(
+          error instanceof Error ? error.message : 'No se pudieron cargar los cursos.',
         )
-      }),
-    [students],
-  )
+      })
+      .finally(() => {
+        if (active) setLoadingCourses(false)
+      })
 
-  const courseOptions = useMemo(() => {
-    const counts = new Map<string, number>()
-
-    for (const student of students) {
-      const label = getCourseLabel(student)
-      counts.set(label, (counts.get(label) ?? 0) + 1)
+    return () => {
+      active = false
     }
-
-    return [
-      { label: 'Todos', count: totalCount },
-      ...Array.from(counts.entries())
-        .sort(([firstLabel], [secondLabel]) => firstLabel.localeCompare(secondLabel))
-        .map(([label, count]) => ({ label, count })),
-    ]
-  }, [students, totalCount])
-
-  const visibleStudents = useMemo(() => {
-    if (selectedCourse === 'Todos') return students
-    return students.filter((student) => getCourseLabel(student) === selectedCourse)
-  }, [selectedCourse, students])
-
-  const attentionStudents = useMemo(
-    () => visibleStudents.filter((student) => student.riskReason !== null),
-    [visibleStudents],
-  )
-
-  const distribution = useMemo<DistributionItem[]>(() => {
-    const counts = new Map<string, number>([
-      ['Al día', 0],
-      ['Atención', 0],
-      ['En riesgo', 0],
-    ])
-
-    for (const student of visibleStudents) {
-      const status = getDisplayStatus(student).label
-      if (counts.has(status)) counts.set(status, (counts.get(status) ?? 0) + 1)
-    }
-
-    return [
-      { label: 'Al día', count: counts.get('Al día') ?? 0, tone: 'success' },
-      { label: 'Atención', count: counts.get('Atención') ?? 0, tone: 'accent' },
-      { label: 'En riesgo', count: counts.get('En riesgo') ?? 0, tone: 'destructive' },
-    ]
-  }, [visibleStudents])
-
-  const visibleSelectedIds = useMemo(() => {
-    const visibleIds = new Set(visibleStudents.map((student) => student.id))
-    return new Set(Array.from(selectedIds).filter((id) => visibleIds.has(id)))
-  }, [selectedIds, visibleStudents])
-
-  /** Abre el formulario para crear un nuevo estudiante. */
-  function openCreateForm() {
-    setEditingStudent(null)
-    setFormError(null)
-    setActionError(null)
-    setActionSuccess(null)
-    setIsFormOpen(true)
-  }
-
-  /** Abre el formulario para editar un estudiante existente. */
-  function openEditForm(student: StudentListItem) {
-    setEditingStudent(student)
-    setFormError(null)
-    setActionError(null)
-    setActionSuccess(null)
-    setIsFormOpen(true)
-  }
-
-  /** Cierra el formulario de creación/edición de estudiantes. */
-  function closeForm() {
-    setIsFormOpen(false)
-    setEditingStudent(null)
-    setFormError(null)
-  }
-
-  const handleSubmit = useCallback(
-    async (input: CreateStudentInput) => {
-      setIsSubmitting(true)
-      setFormError(null)
-
-      try {
-        if (editingStudent) {
-          await updateStudent(editingStudent.id, input)
-        } else {
-          await createStudent(input)
-        }
-
-        setActionError(null)
-        closeForm()
-      } catch (error) {
-        setFormError(
-          error instanceof Error
-            ? error.message
-            : 'No se pudo guardar el estudiante.',
-        )
-      } finally {
-        setIsSubmitting(false)
-      }
-    },
-    [createStudent, editingStudent, updateStudent],
-  )
-
-  const handleDeactivate = useCallback(async () => {
-    if (!deactivateTarget) return
-
-    try {
-      await deactivateStudent(deactivateTarget.id)
-      setActionError(null)
-      setDeactivateTarget(null)
-    } catch (error) {
-      setActionError(
-        error instanceof Error
-          ? error.message
-          : 'No se pudo desactivar el estudiante.',
-      )
-      setDeactivateTarget(null)
-    }
-  }, [deactivateStudent, deactivateTarget])
-
-  const handleToggleStudent = useCallback((studentId: string) => {
-    setSelectedIds((current) => {
-      const next = new Set(current)
-      if (next.has(studentId)) {
-        next.delete(studentId)
-      } else {
-        next.add(studentId)
-      }
-      return next
-    })
   }, [])
 
-  const handleToggleAll = useCallback(() => {
-    setSelectedIds((current) => {
-      const allVisibleSelected =
-        visibleStudents.length > 0 &&
-        visibleStudents.every((student) => current.has(student.id))
+  useEffect(() => {
+    let active = true
 
-      return allVisibleSelected
-        ? new Set()
-        : new Set(visibleStudents.map((student) => student.id))
-    })
-  }, [visibleStudents])
+    if (!selectedCourseId) {
+      return () => {
+        active = false
+      }
+    }
 
-  const handleExport = useCallback(() => {
-    const csv = buildStudentsCsv(visibleStudents)
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = `estudiantes-${new Date().toISOString().slice(0, 10)}.csv`
-    document.body.appendChild(link)
-    link.click()
-    link.remove()
-    URL.revokeObjectURL(url)
-  }, [visibleStudents])
+    getStudentsByCourse(selectedCourseId)
+      .then((data) => {
+        if (active) setStudents(data)
+      })
+      .catch((error) => {
+        if (!active) return
+        setStudents([])
+        setActionError(
+          error instanceof Error ? error.message : 'No se pudo cargar la matrícula.',
+        )
+      })
+      .finally(() => {
+        if (active) setLoadingStudents(false)
+      })
 
-  const handleNotifyGuardians = useCallback(async () => {
-    const hasSelection = selectedIds.size > 0
-    const selectedRiskIds = Array.from(selectedIds).filter((id) =>
-      attentionStudents.some((student) => student.id === id),
-    )
+    return () => {
+      active = false
+    }
+  }, [selectedCourseId])
 
-    if (hasSelection && selectedRiskIds.length === 0) {
-      setActionError('Los estudiantes seleccionados no requieren atención.')
+  async function refreshCourseStudents(courseId = selectedCourseId) {
+    if (!courseId) {
+      setStudents([])
+      return
+    }
+
+    setStudents(await getStudentsByCourse(courseId))
+  }
+
+  function openCreateForm() {
+    if (!selectedCourseId) {
+      setActionError('Selecciona un curso antes de matricular estudiantes.')
       setActionSuccess(null)
       return
     }
 
-    const targetIds = hasSelection
-      ? selectedRiskIds
-      : attentionStudents.map((student) => student.id)
-
-    setNotifying(true)
+    setFormMode('create')
+    setEditingStudent(null)
+    setTransferCourseId('')
+    setFormError(null)
     setActionError(null)
     setActionSuccess(null)
+    setIsFormOpen(true)
+  }
+
+  function openEditForm(student: CourseStudent) {
+    setFormMode('edit')
+    setEditingStudent(student)
+    setTransferCourseId('')
+    setFormError(null)
+    setActionError(null)
+    setActionSuccess(null)
+    setIsFormOpen(true)
+  }
+
+  function openTransferForm(student: CourseStudent) {
+    setFormMode('transfer')
+    setEditingStudent(student)
+    setTransferCourseId('')
+    setFormError(null)
+    setActionError(null)
+    setActionSuccess(null)
+    setIsFormOpen(true)
+  }
+
+  function closeForm() {
+    setIsFormOpen(false)
+    setEditingStudent(null)
+    setTransferCourseId('')
+    setFormError(null)
+  }
+
+  async function handleSubmit(input: CreateCourseStudentInput) {
+    if (!selectedCourseId) {
+      setFormError('Selecciona un curso.')
+      return
+    }
+
+    if (formMode === 'transfer') {
+      setFormError('El traslado entre cursos requiere completar el flujo backend de transferencia.')
+      return
+    }
+
+    setIsSubmitting(true)
+    setFormError(null)
 
     try {
-      const result = await notifyGuardiansForAtRiskStudents(targetIds)
-      const totalNotified = result.reduce((sum, r) => sum + r.notified, 0)
-      const ignored = hasSelection ? selectedIds.size - selectedRiskIds.length : 0
+      if (formMode === 'edit' && editingStudent) {
+        const { firstName, lastName } = splitFullName(input.fullName)
+        await updateStudent(editingStudent.id, {
+          studentCode: input.studentCode,
+          firstName,
+          lastName,
+          documentId: input.documentId,
+          birthDate: input.birthDate,
+          gender: input.gender,
+          address: input.address,
+          status: toStudentStatus(input.status),
+        })
+      } else {
+        await createStudentInCourse(selectedCourseId, input)
+      }
+
+      await refreshCourseStudents()
+      setActionError(null)
       setActionSuccess(
-        `Se registraron ${totalNotified} notificaciones${ignored > 0 ? `; ${ignored} seleccionados no requerían atención` : ''}.`,
+        formMode === 'edit'
+          ? 'Estudiante actualizado.'
+          : 'Estudiante matriculado correctamente.',
       )
-      setSelectedIds(new Set())
+      closeForm()
     } catch (error) {
-      setActionError(
-        error instanceof Error
-          ? error.message
-          : 'No se pudieron registrar las notificaciones.',
+      setFormError(
+        error instanceof Error ? error.message : 'No se pudo guardar el estudiante.',
       )
     } finally {
-      setNotifying(false)
+      setIsSubmitting(false)
     }
-  }, [attentionStudents, selectedIds])
+  }
+
+  async function handleDeactivate() {
+    if (!deactivateTarget) return
+
+    try {
+      await deactivateStudent(deactivateTarget.id)
+      await refreshCourseStudents()
+      setActionError(null)
+      setActionSuccess('Estudiante retirado de la matrícula activa.')
+    } catch (error) {
+      setActionError(
+        error instanceof Error ? error.message : 'No se pudo retirar el estudiante.',
+      )
+      setActionSuccess(null)
+    } finally {
+      setDeactivateTarget(null)
+    }
+  }
+
+  async function handlePreviewImport(rows: ImportCourseStudentRow[]) {
+    if (!selectedCourseId) throw new Error('Selecciona un curso.')
+    return previewCourseStudentImport(selectedCourseId, rows)
+  }
+
+  async function handleImport(rows: ImportCourseStudentRow[]) {
+    if (!selectedCourseId) throw new Error('Selecciona un curso.')
+    const result = await importStudentsInCourse(selectedCourseId, rows)
+    await refreshCourseStudents()
+    setActionSuccess(`${result.imported} estudiante${result.imported === 1 ? '' : 's'} importado${result.imported === 1 ? '' : 's'}.`)
+    return result
+  }
+
+  function handleExport() {
+    if (!selectedCourse) return
+
+    const csv = buildStudentsCsv(students, selectedCourse)
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `matricula-${selectedCourse.gradeName}-${selectedCourse.sectionName}-${new Date().toISOString().slice(0, 10)}.csv`
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+    URL.revokeObjectURL(url)
+  }
 
   return (
-    <section className="mx-auto w-full max-w-[1720px]">
-      <div className="mb-6 space-y-5">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">
-              Tu salón en un vistazo
-            </p>
-            <h1 className="mt-2 text-3xl font-bold leading-none text-primary sm:text-4xl">
-              Estudiantes
-            </h1>
-            <p className="mt-2 text-sm leading-5 text-muted-foreground">
-              Gestiona la matrícula, asistencia y progreso de tus secciones.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row lg:pb-1">
-            {canManageStudents ? (
-              <Button variant="outline" className="h-10 rounded-xl px-4 text-sm" onClick={() => setImportModalOpen(true)}>
-                <Upload className="size-4" />
-                Importar
-              </Button>
-            ) : null}
-            <Button variant="outline" className="h-10 rounded-xl px-4 text-sm" onClick={handleExport}>
-              <Download className="size-4" />
-              Exportar
-            </Button>
-            {canManageStudents ? (
-              <Button variant="secondary" className="h-10 rounded-xl px-4 text-sm shadow-xl shadow-primary/15" onClick={openCreateForm}>
-                <Plus className="size-4 text-accent" />
-                Nuevo estudiante
-              </Button>
-            ) : null}
-          </div>
+    <section className="mx-auto w-full max-w-[1480px] space-y-5">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <h1 className="text-3xl font-bold leading-none text-primary sm:text-4xl">
+            Matrícula
+          </h1>
+          <p className="mt-2 text-sm leading-5 text-muted-foreground">
+            Selecciona un curso para matricular, importar y revisar estudiantes.
+          </p>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-          <StudentMetricCard label="Total estudiantes" value={totalCount} caption="matriculados" loading={loading} />
-          <StudentMetricCard
-            label="Asistencia"
-            value={averageAttendance === null ? '—' : `${averageAttendance}%`}
-            caption="+2.3% vs semana"
-            loading={loading}
-            icon={averageAttendance === null ? null : <TrendingUp className="size-5 text-success" />}
-          />
-          <StudentMetricCard
-            label="Promedio general"
-            value={generalAverage === null ? '—' : generalAverage.toFixed(1)}
-            caption="sobre 10"
-            loading={loading}
-          />
-          <StudentMetricCard
-            label="En riesgo"
-            value={criticalStudents.length}
-            caption="requieren acción"
-            loading={loading}
-            valueClassName="text-destructive"
-            icon={<TriangleAlert className="size-5 text-destructive" />}
-          />
-        </div>
+        <label className="w-full max-w-xl text-sm font-medium text-muted-foreground">
+          Selecciona un curso
+          <Select
+            value={selectedCourseId}
+            onChange={(event) => {
+              setSelectedCourseId(event.target.value)
+              setStudents([])
+              setLoadingStudents(Boolean(event.target.value))
+              setActionError(null)
+              setActionSuccess(null)
+            }}
+            disabled={loadingCourses || courses.length === 0}
+            className="mt-2 w-full"
+            required
+          >
+            <option value="">Selecciona un curso</option>
+            {courses.map((course) => (
+              <option key={course.id} value={course.id}>
+                {course.label}
+              </option>
+            ))}
+          </Select>
+        </label>
       </div>
 
-      <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(300px,360px)]">
-        <div className="min-w-0 overflow-hidden rounded-2xl border border-border bg-card shadow-md">
-          <StudentFiltersBar
-            search={search}
-            filters={filters}
-            courseOptions={courseOptions}
-            selectedCourse={selectedCourse}
-            onSearchChange={setSearch}
-            onFiltersChange={setFilters}
-            onCourseChange={setSelectedCourse}
-          />
+      <FeedbackMessage tone="error" message={actionError} />
+      <FeedbackMessage tone="success" message={actionSuccess} />
 
-          <FeedbackMessage tone="error" message={error} />
-          <FeedbackMessage tone="error" message={actionError} />
-          <FeedbackMessage tone="success" message={actionSuccess} />
-
-          {loading ? (
-            <div className="flex min-h-[420px] items-center justify-center text-sm font-medium text-muted-foreground">
-              Cargando estudiantes...
-            </div>
-          ) : visibleStudents.length > 0 ? (
-            <StudentsTable
-              students={visibleStudents}
-              canManage={canManageStudents}
-              selectedIds={visibleSelectedIds}
-              onToggleStudent={handleToggleStudent}
-              onToggleAll={handleToggleAll}
-              onView={setSelectedStudent}
-              onEdit={openEditForm}
-              onDeactivate={setDeactivateTarget}
-            />
-          ) : (
-            <div className="flex min-h-[420px] items-center justify-center px-4 text-center">
-              <p className="max-w-md text-sm font-medium text-muted-foreground">
-                No hay estudiantes visibles con los filtros actuales.
-              </p>
-            </div>
-          )}
-
-          <div className="flex flex-col gap-3 border-t border-border px-4 py-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              Mostrando {visibleStudents.length} de {totalCount} estudiantes
-            </p>
-            {totalCount > pageSize ? (
-              <div className="flex justify-end gap-6">
-                <button
-                  type="button"
-                  disabled={page <= 1}
-                  onClick={() => goToPage(page - 1)}
-                  className="font-medium transition-colors hover:text-primary disabled:opacity-40"
-                >
-                  ← Anterior
-                </button>
-                <button
-                  type="button"
-                  disabled={page >= Math.ceil(totalCount / pageSize)}
-                  onClick={() => goToPage(page + 1)}
-                  className="font-medium transition-colors hover:text-primary disabled:opacity-40"
-                >
-                  Siguiente →
-                </button>
+      {loadingCourses ? (
+        <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-border bg-card text-sm font-medium text-muted-foreground">
+          Cargando cursos...
+        </div>
+      ) : courses.length === 0 ? (
+        <EmptyState
+          title="Primero debes crear un curso"
+          description="Primero debes crear un curso para poder matricular estudiantes."
+          action={
+            <Link
+              to="/cursos"
+              className="inline-flex h-10 items-center justify-center rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm hover:opacity-90"
+            >
+              Ir a Cursos
+            </Link>
+          }
+        />
+      ) : !selectedCourse ? (
+        <EmptyState
+          title="Selecciona un curso"
+          description="Selecciona un curso para ver su matrícula y habilitar las acciones."
+        />
+      ) : (
+        <>
+          <section className="rounded-lg border border-border bg-card p-4 shadow-sm">
+            <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+              <div>
+                <h2 className="text-lg font-semibold text-primary">
+                  {selectedCourse.gradeName} {selectedCourse.sectionName}
+                </h2>
+                <dl className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-4">
+                  <HeaderItem label="Grado" value={selectedCourse.gradeName} />
+                  <HeaderItem label="Sección" value={selectedCourse.sectionName} />
+                  <HeaderItem label="Área" value={selectedCourse.area || 'No definida'} />
+                  <HeaderItem label="Asignatura" value={selectedCourse.subjectName} />
+                  <HeaderItem label="Tanda" value={selectedCourse.shift || 'No definida'} />
+                  <HeaderItem label="Año escolar" value={selectedCourse.schoolYearName} />
+                  <HeaderItem label="Total estudiantes" value={String(students.length)} />
+                </dl>
               </div>
-            ) : null}
-          </div>
-        </div>
 
-        <aside className="space-y-5">
-          <StudentsRiskPanel
-            students={attentionStudents}
-            canNotify={canNotifyGuardians}
-            notifying={notifying}
-            onNotify={handleNotifyGuardians}
-            onView={setSelectedStudent}
-          />
-          <StudentStatusDistribution distribution={distribution} total={visibleStudents.length} />
-          <StudentAdviceCard />
-        </aside>
-      </div>
+              <div className="flex flex-col gap-2 sm:flex-row xl:self-end">
+                {canManageStudents ? (
+                  <>
+                    <Button variant="secondary" className="h-10 px-4 text-sm" onClick={openCreateForm}>
+                      <Plus className="size-4 text-accent" />
+                      Agregar estudiante
+                    </Button>
+                    <Button variant="outline" className="h-10 px-4 text-sm" onClick={() => setImportModalOpen(true)}>
+                      <Upload className="size-4" />
+                      Importar estudiantes
+                    </Button>
+                  </>
+                ) : null}
+                <Button variant="outline" className="h-10 px-4 text-sm" onClick={handleExport}>
+                  <Download className="size-4" />
+                  Exportar matrícula
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          <section className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+            {loadingStudents ? (
+              <div className="flex min-h-[360px] items-center justify-center text-sm font-medium text-muted-foreground">
+                Cargando matrícula...
+              </div>
+            ) : students.length > 0 ? (
+              <StudentsTable
+                students={students}
+                canManage={canManageStudents}
+                onView={setSelectedStudent}
+                onEdit={openEditForm}
+                onDeactivate={setDeactivateTarget}
+                onTransfer={openTransferForm}
+              />
+            ) : (
+              <div className="flex min-h-[360px] items-center justify-center px-4 text-center">
+                <p className="max-w-md text-sm font-medium text-muted-foreground">
+                  Este curso todavía no tiene estudiantes matriculados.
+                </p>
+              </div>
+            )}
+          </section>
+        </>
+      )}
 
       {importModalOpen ? (
         <ImportStudentsModal
-          onImport={async (rows: ParsedStudentRow[]) => {
-            const result = await importStudents(rows)
-            await refetch()
-            return result
-          }}
+          onPreview={handlePreviewImport}
+          onImport={handleImport}
           onClose={() => setImportModalOpen(false)}
         />
       ) : null}
 
       {isFormOpen ? (
         <StudentForm
-          key={editingStudent?.id ?? 'new-student'}
+          key={`${formMode}-${editingStudent?.id ?? 'new-student'}`}
           student={editingStudent}
+          mode={formMode}
+          courses={courses.filter((course) => course.id !== selectedCourseId)}
+          transferCourseId={transferCourseId}
           submitting={isSubmitting}
           error={formError}
           onSubmit={handleSubmit}
+          onTransferCourseChange={setTransferCourseId}
           onClose={closeForm}
         />
       ) : null}
 
       {deactivateTarget ? (
         <ConfirmDialog
-          title="Desactivar estudiante"
-          description={`¿Desactivar a ${deactivateTarget.firstName} ${deactivateTarget.lastName}? Esta acción desactivará su expediente.`}
-          confirmLabel="Desactivar"
+          title="Retirar estudiante"
+          description={`¿Retirar a ${deactivateTarget.fullName} de la matrícula activa?`}
+          confirmLabel="Retirar"
           destructive
           onConfirm={handleDeactivate}
           onClose={() => setDeactivateTarget(null)}
@@ -503,165 +439,15 @@ export function StudentsPage() {
   )
 }
 
-/** Tarjeta de métrica estudiantil con valor, etiqueta e icono opcional. */
-function StudentMetricCard({
-  label,
-  value,
-  caption,
-  loading,
-  icon,
-  valueClassName,
-}: {
-  label: string
-  value: string | number
-  caption: string
-  loading: boolean
-  icon?: ReactNode
-  valueClassName?: string
-}) {
+function HeaderItem({ label, value }: { label: string; value: string }) {
   return (
-    <Card className="rounded-2xl shadow-md">
-      <CardContent className="p-5">
-        <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-muted-foreground">
-          {label}
-        </p>
-        <div className={cn('mt-4 flex items-center gap-2.5', loading && 'animate-pulse')}>
-          {loading ? (
-            <div className="h-8 w-16 rounded-lg bg-muted" />
-          ) : (
-            <>
-              <p className={cn('text-3xl font-bold leading-none text-primary', valueClassName)}>
-                {value}
-              </p>
-              {icon}
-            </>
-          )}
-        </div>
-        <p className="mt-3 text-xs text-muted-foreground">{caption}</p>
-      </CardContent>
-    </Card>
+    <div>
+      <dt className="text-xs font-bold uppercase text-muted-foreground">{label}</dt>
+      <dd className="mt-0.5 font-semibold text-foreground">{value}</dd>
+    </div>
   )
 }
 
-/** Panel lateral con la lista de estudiantes que requieren atención. */
-function StudentsRiskPanel({
-  students,
-  canNotify,
-  notifying,
-  onNotify,
-  onView,
-}: {
-  students: StudentListItem[]
-  canNotify: boolean
-  notifying: boolean
-  onNotify: () => void
-  onView: (student: StudentListItem) => void
-}) {
-  return (
-    <section className="rounded-2xl bg-primary p-5 text-primary-foreground shadow-xl shadow-primary/15">
-      <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.28em] text-accent">
-        <TriangleAlert className="size-4" />
-        Requieren atención
-      </p>
-      <h2 className="mt-2 text-xl font-bold">
-        {students.length} estudiante{students.length === 1 ? '' : 's'}
-      </h2>
-      <p className="mt-2 text-xs leading-5 text-primary-foreground/65">
-        Bajo rendimiento o ausencias acumuladas. Considera notificar a sus padres.
-      </p>
-
-      <div className="mt-5 space-y-4">
-        {students.slice(0, 4).map((student) => (
-          <button
-            key={student.id}
-            type="button"
-            onClick={() => onView(student)}
-            className="flex w-full items-center gap-3 rounded-xl text-left transition-colors hover:bg-white/5"
-          >
-            <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground ring-2 ring-accent">
-              {getStudentInitials(student)}
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-bold">{student.firstName} {student.lastName}</p>
-              <p className="truncate text-xs text-primary-foreground/55">
-                {getCourseLabel(student)} · {student.riskReason}
-              </p>
-            </div>
-            <ChevronRight className="size-4 text-primary-foreground/35" />
-          </button>
-        ))}
-      </div>
-
-      <Button
-        variant="primary"
-        className="mt-6 h-10 w-full rounded-xl text-sm"
-        loading={notifying}
-        disabled={!canNotify || students.length === 0}
-        onClick={onNotify}
-      >
-        Notificar a padres
-      </Button>
-    </section>
-  )
-}
-
-/** Panel de distribución de estudiantes por estado (Al día, Atención, En riesgo). */
-function StudentStatusDistribution({
-  distribution,
-  total,
-}: {
-  distribution: DistributionItem[]
-  total: number
-}) {
-  return (
-    <section className="rounded-2xl border border-border bg-card p-5 shadow-md">
-      <h2 className="text-base font-bold text-primary">Distribución por estado</h2>
-      <div className="mt-5 space-y-4">
-        {distribution.map((item) => {
-          const percent = total > 0 ? Math.round((item.count / total) * 100) : 0
-          const barClassName = {
-            success: 'bg-success',
-            accent: 'bg-accent',
-            destructive: 'bg-destructive',
-          }[item.tone]
-
-          return (
-            <div key={item.label}>
-              <div className="flex items-center justify-between gap-3 text-xs">
-                <p className="flex items-center gap-2 font-bold text-primary">
-                  <span className={cn('size-2.5 rounded-full', barClassName)} />
-                  {item.label}
-                </p>
-                <p className="font-bold text-primary">
-                  {item.count} <span className="text-muted-foreground">· {percent}%</span>
-                </p>
-              </div>
-              <div className="mt-2 h-2 overflow-hidden rounded-full bg-muted">
-                <div className={cn('h-full rounded-full', barClassName)} style={{ width: `${percent}%` }} />
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </section>
-  )
-}
-
-/** Tarjeta de consejo académico. */
-function StudentAdviceCard() {
-  return (
-    <section className="rounded-2xl border border-dashed border-accent p-5">
-      <p className="text-xs font-bold uppercase tracking-[0.28em] text-accent">
-        Consejo
-      </p>
-      <p className="mt-4 text-sm leading-6 text-primary">
-        Mantén la asistencia al día para detectar señales de alerta a tiempo. Los reportes se generan automáticamente cada lunes.
-      </p>
-    </section>
-  )
-}
-
-/** Mensaje de retroalimentación (error o éxito) con icono. */
 function FeedbackMessage({
   tone,
   message,
@@ -674,7 +460,7 @@ function FeedbackMessage({
   return (
     <div
       className={cn(
-        'm-4 flex gap-3 rounded-lg border p-3 text-sm',
+        'flex gap-3 rounded-lg border p-3 text-sm',
         tone === 'error'
           ? 'border-destructive/20 bg-destructive/12 text-destructive'
           : 'border-success/20 bg-success/12 text-success',
@@ -690,23 +476,32 @@ function FeedbackMessage({
   )
 }
 
-/** Construye un string CSV con los datos de los estudiantes visibles. */
-function buildStudentsCsv(students: StudentListItem[]) {
-  const headers = ['nombre', 'correo', 'curso', 'asistencia', 'promedio', 'pendientes', 'estado']
-  const rows = students.map((student) => {
-    const status = getDisplayStatus(student).label
-    return [
-      `${student.firstName} ${student.lastName}`,
-      student.displayEmail,
-      getCourseLabel(student),
-      student.metrics.attendancePercentage === null ? '' : `${student.metrics.attendancePercentage}%`,
-      student.metrics.averageScore === null ? '' : student.metrics.averageScore.toFixed(1),
-      String(student.metrics.pendingCount),
-      status,
-    ]
-  })
+function splitFullName(fullName: string) {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean)
+  const firstName = parts.shift() || fullName.trim()
+  const lastName = parts.join(' ') || 'Sin apellido'
+  return { firstName, lastName }
+}
+
+function toStudentStatus(status: CreateCourseStudentInput['status']): StudentStatus {
+  return status === 'active' ? 'active' : 'inactive'
+}
+
+function buildStudentsCsv(students: CourseStudent[], course: EnrollmentCourse) {
+  const headers = ['codigo', 'nombre', 'estado', 'grado', 'seccion', 'area', 'asignatura', 'tanda', 'anio_escolar']
+  const rows = students.map((student) => [
+    student.studentCode,
+    student.fullName,
+    student.status,
+    course.gradeName,
+    course.sectionName,
+    course.area,
+    course.subjectName,
+    course.shift,
+    course.schoolYearName,
+  ])
 
   return [headers, ...rows]
-    .map((row) => row.map((value) => `"${value.replace(/"/g, '""')}"`).join(','))
+    .map((row) => row.map((value) => `"${String(value).replace(/"/g, '""')}"`).join(','))
     .join('\n')
 }

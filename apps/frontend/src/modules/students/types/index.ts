@@ -139,3 +139,56 @@ export type GradeWithSections = {
 export type StudentFilters = {
   status: StudentStatus | 'all'
 }
+
+export type EnrollmentCourse = {
+  id: string
+  gradeId: string
+  sectionId: string
+  subjectId: string
+  schoolYearId: string
+  gradeName: string
+  sectionName: string
+  area: string
+  subjectName: string
+  shift: string
+  schoolYearName: string
+  studentCount: number
+  label: string
+}
+
+export type CourseStudent = Student & {
+  fullName: string
+  enrollmentId: string | null
+}
+
+export type CreateCourseStudentInput = {
+  studentCode: string
+  fullName: string
+  documentId?: string
+  birthDate?: string
+  gender?: string
+  address?: string
+  guardianPhone?: string
+  guardianEmail?: string
+  observations?: string
+  status?: 'active' | 'retired' | 'transferred'
+}
+
+export type ImportCourseStudentRow = {
+  studentCode?: string
+  fullName: string
+}
+
+export type CourseImportPreviewRow = ImportCourseStudentRow & {
+  rowNumber: number
+  duplicate: boolean
+  errors: string[]
+}
+
+export type CourseImportPreview = {
+  rows: CourseImportPreviewRow[]
+  detectedStudents: number
+  detectedCodes: number
+  duplicates: number
+  errors: number
+}

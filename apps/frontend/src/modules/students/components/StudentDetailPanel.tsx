@@ -19,15 +19,16 @@ import {
   getStudentEnrollments,
 } from '@/modules/students/services/studentsService'
 import type {
+  CourseStudent,
   EnrollmentListItem,
+  Student,
   StudentDetail,
-  StudentListItem,
 } from '@/modules/students/types'
 import type { EnrollmentStatus } from '@/types/domain'
 
 type StudentDetailPanelProps = {
   /** Estudiante resumido para mostrar detalle. */
-  student: StudentListItem
+  student: Student | CourseStudent
   /** Indica si el usuario puede ver tutores. */
   canViewGuardians: boolean
   /** Callback para cerrar el panel. */

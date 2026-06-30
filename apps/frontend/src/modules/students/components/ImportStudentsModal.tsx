@@ -1,20 +1,18 @@
 /**
- * Componente ImportStudentsModal — Modal para importar estudiantes
- * desde un archivo CSV con vista previa y validación.
+ * Componente ImportStudentsModal - Importacion de estudiantes por pegado.
  */
 
-import { AlertCircle, FileUp, Table, Upload } from 'lucide-react'
+import { AlertCircle, CheckCircle2, ClipboardList } from 'lucide-react'
 import { useState } from 'react'
 
-import { DEFAULTS } from '@/constants'
 import { Button } from '@/components/ui/Button'
 import { Modal } from '@/components/ui/Modal'
-import { cn } from '@/utils/cn'
 import type {
-  ImportValidationError,
-  ParsedStudentRow,
-} from '@/modules/students/services/importService'
-import { parseCSVFile } from '@/modules/students/services/importService'
+  CourseImportPreview,
+  ImportCourseStudentRow,
+} from '@/modules/students/types'
+import { parsePastedStudents } from '@/modules/students/utils/pasteImport'
+import { cn } from '@/utils/cn'
 
 type ImportResult = {
   imported: number
@@ -22,106 +20,90 @@ type ImportResult = {
 }
 
 type ImportStudentsModalProps = {
-  /** Callback para importar las filas parseadas. */
-  onImport: (rows: ParsedStudentRow[]) => Promise<ImportResult>
-  /** Callback para cerrar el modal. */
+  onPreview: (rows: ImportCourseStudentRow[]) => Promise<CourseImportPreview>
+  onImport: (rows: ImportCourseStudentRow[]) => Promise<ImportResult>
   onClose: () => void
 }
 
-const MAX_PREVIEW = DEFAULTS.PREVIEW_MAX_ROWS
+const MAX_PREVIEW = 8
 
-/** Modal de importación de estudiantes desde CSV. */
-export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalProps) {
-  const [rows, setRows] = useState<ParsedStudentRow[]>([])
-  const [errors, setErrors] = useState<ImportValidationError[]>([])
+export function ImportStudentsModal({
+  onPreview,
+  onImport,
+  onClose,
+}: ImportStudentsModalProps) {
+  const [text, setText] = useState('')
+  const [preview, setPreview] = useState<CourseImportPreview | null>(null)
   const [errorMessage, setErrorMessage] = useState('')
+  const [isPreviewing, setIsPreviewing] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [parseResult, setParseResult] = useState<{
-    imported: number
-    skipped: number
-    parseErrors: ImportValidationError[]
-  } | null>(null)
+  const [result, setResult] = useState<ImportResult | null>(null)
 
-  async function handleFileSelected(event: React.ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0]
+  async function handlePreview() {
+    const parsedRows = parsePastedStudents(text)
 
-    if (!file) return
-
-    setErrorMessage('')
-
-    if (!file.name.endsWith('.csv')) {
-      setErrorMessage('Solo se aceptan archivos CSV.')
+    if (parsedRows.length === 0) {
+      setErrorMessage('Pega al menos un estudiante.')
+      setPreview(null)
       return
     }
 
+    setIsPreviewing(true)
+    setErrorMessage('')
+
     try {
-      const result = await parseCSVFile(file)
-      setRows(result.rows)
-      setErrors(result.errors)
+      setPreview(await onPreview(parsedRows))
     } catch (error) {
+      setPreview(null)
       setErrorMessage(
-        error instanceof Error ? error.message : 'Error al leer el archivo.',
+        error instanceof Error ? error.message : 'No se pudo generar la vista previa.',
       )
-      setRows([])
-      setErrors([])
+    } finally {
+      setIsPreviewing(false)
     }
   }
 
   async function handleImport() {
-    if (rows.length === 0) return
+    if (!preview) return
 
     setIsSubmitting(true)
+    setErrorMessage('')
 
     try {
-      const result = await onImport(rows)
-      setParseResult({
-        imported: result.imported,
-        skipped: result.errors.length,
-        parseErrors: result.errors,
-      })
+      setResult(
+        await onImport(
+          preview.rows.map(({ studentCode, fullName }) => ({ studentCode, fullName })),
+        ),
+      )
     } catch (error) {
       setErrorMessage(
-        error instanceof Error ? error.message : 'Error al importar.',
+        error instanceof Error ? error.message : 'No se pudo importar.',
       )
     } finally {
       setIsSubmitting(false)
     }
   }
 
-  if (parseResult) {
+  if (result) {
     return (
       <Modal title="Importación completada" onClose={onClose}>
         <div className="space-y-4 p-5">
           <div className="rounded-lg border border-success/20 bg-success/12 p-4">
-            <p className="text-sm font-semibold text-success">
-              {parseResult.imported} estudiante{parseResult.imported === 1 ? '' : 's'} importado{parseResult.imported === 1 ? '' : 's'} correctamente
+            <p className="flex items-center gap-2 text-sm font-semibold text-success">
+              <CheckCircle2 className="size-4" />
+              {result.imported} estudiante{result.imported === 1 ? '' : 's'} importado{result.imported === 1 ? '' : 's'}
             </p>
           </div>
 
-          {parseResult.parseErrors.length > 0 ? (
-            <div className="rounded-lg border border-destructive/20 bg-destructive/12 p-4">
-              <p className="mb-2 text-sm font-semibold text-destructive">
-                {parseResult.parseErrors.length} fila{parseResult.parseErrors.length === 1 ? '' : 's'} omitida{parseResult.parseErrors.length === 1 ? '' : 's'}
-              </p>
-              <ul className="space-y-1">
-                {parseResult.parseErrors.slice(0, 5).map((err) => (
-                  <li key={err.row} className="text-xs text-destructive">
-                    Fila {err.row}: {err.reason}
-                  </li>
-                ))}
-                {parseResult.parseErrors.length > 5 ? (
-                  <li className="text-xs text-muted-foreground">
-                    ... y {parseResult.parseErrors.length - 5} error{parseResult.parseErrors.length - 5 === 1 ? '' : 'es'} más
-                  </li>
-                ) : null}
-              </ul>
-            </div>
+          {result.errors.length > 0 ? (
+            <ErrorList
+              title={`${result.errors.length} fila${result.errors.length === 1 ? '' : 's'} omitida${result.errors.length === 1 ? '' : 's'}`}
+              errors={result.errors.map((item) => `Fila ${item.row}: ${item.reason}`)}
+            />
           ) : null}
 
           <div className="flex justify-end">
-            <Button variant="primary" onClick={onClose}>
-              Cerrar
-            </Button>
+            <Button onClick={onClose}>Cerrar</Button>
           </div>
         </div>
       </Modal>
@@ -131,7 +113,7 @@ export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalPr
   return (
     <Modal
       title="Importar estudiantes"
-      description="Sube un archivo CSV con los datos de los estudiantes."
+      description="Pega una lista en formato código - nombre, código, nombre, o solo nombre."
       onClose={onClose}
     >
       <div className="space-y-5 p-5">
@@ -142,91 +124,72 @@ export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalPr
           </div>
         ) : null}
 
-        {rows.length === 0 ? (
-          <label
-            className={cn(
-              'flex cursor-pointer flex-col items-center gap-4 rounded-lg border-2 border-dashed border-border p-8 text-center transition-colors',
-              'hover:border-accent hover:bg-accent/5',
-            )}
-          >
-            <FileUp className="size-12 text-muted-foreground" />
-            <div>
-              <p className="font-semibold text-foreground">
-                Haz clic para seleccionar un archivo CSV
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Obligatorias: nombre y apellido. Opcionales: codigo, fecha de nacimiento, documento, genero, direccion
-              </p>
-            </div>
-            <span className="inline-flex items-center gap-2 rounded-lg bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
-              <Upload className="size-4" />
-              Seleccionar archivo
-            </span>
-            <input
-              type="file"
-              accept=".csv"
-              className="sr-only"
-              onChange={handleFileSelected}
-            />
-          </label>
-        ) : null}
+        <label className="block text-sm font-medium text-muted-foreground">
+          Lista de estudiantes
+          <textarea
+            value={text}
+            onChange={(event) => {
+              setText(event.target.value)
+              setPreview(null)
+            }}
+            aria-label="Lista de estudiantes"
+            className="mt-2 min-h-44 w-full resize-y rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/20"
+            placeholder={'A001 - Ana Cruz\nA002, Luis Pérez\nMaría Solano'}
+          />
+        </label>
 
-        {rows.length > 0 ? (
-          <>
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-medium text-foreground">
-                <Table className="mr-2 inline size-4 align-sub text-muted-foreground" />
-                {rows.length} registro{rows.length === 1 ? '' : 's'} detectado{rows.length === 1 ? '' : 's'}
-                {errors.length > 0 ? (
-                  <span className="ml-2 text-destructive">
-                    ({errors.length} con errores)
-                  </span>
-                ) : null}
-              </p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+          <Button variant="outline" onClick={onClose} disabled={isPreviewing || isSubmitting}>
+            Cancelar
+          </Button>
+          <Button onClick={handlePreview} loading={isPreviewing} disabled={isSubmitting}>
+            Generar vista previa
+          </Button>
+        </div>
+
+        {preview ? (
+          <div className="space-y-4 border-t border-border pt-5">
+            <div className="grid gap-3 sm:grid-cols-4">
+              <PreviewStat label="Detectados" value={preview.detectedStudents} />
+              <PreviewStat label="Códigos" value={preview.detectedCodes} />
+              <PreviewStat label="Duplicados" value={preview.duplicates} />
+              <PreviewStat label="Errores" value={preview.errors} tone={preview.errors > 0 ? 'error' : 'default'} />
             </div>
 
             <div className="overflow-x-auto rounded-lg border border-border">
-              <table className="w-full text-left text-sm">
-                <thead className="bg-muted/60 text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">
+              <table className="w-full min-w-[620px] text-left text-sm">
+                <thead className="bg-muted/60 text-xs font-bold uppercase text-muted-foreground">
                   <tr>
                     <th className="px-4 py-3">#</th>
-                    <th className="px-4 py-3">Nombre</th>
-                    <th className="px-4 py-3">Apellido</th>
                     <th className="px-4 py-3">Código</th>
-                    <th className="px-4 py-3">Nacimiento</th>
-                    <th className="px-4 py-3">Documento</th>
+                    <th className="px-4 py-3">Nombre</th>
+                    <th className="px-4 py-3">Estado</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  {rows.slice(0, MAX_PREVIEW).map((row) => (
+                  {preview.rows.slice(0, MAX_PREVIEW).map((row) => (
                     <tr key={row.rowNumber} className="bg-card">
-                      <td className="px-4 py-3 text-xs text-muted-foreground">
-                        {row.rowNumber}
-                      </td>
-                      <td className="px-4 py-3 font-medium text-foreground">
-                        {row.firstName}
-                      </td>
-                      <td className="px-4 py-3 text-muted-foreground">
-                        {row.lastName}
-                      </td>
-                      <td className="px-4 py-3 text-muted-foreground">
-                        {row.studentCode || '—'}
-                      </td>
-                      <td className="px-4 py-3 text-muted-foreground">
-                        {row.birthDate || '—'}
-                      </td>
-                      <td className="px-4 py-3 text-muted-foreground">
-                        {row.documentId || '—'}
+                      <td className="px-4 py-3 text-xs text-muted-foreground">{row.rowNumber}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.studentCode || '-'}</td>
+                      <td className="px-4 py-3 font-medium text-foreground">{row.fullName || '-'}</td>
+                      <td className="px-4 py-3">
+                        {row.errors.length > 0 || row.duplicate ? (
+                          <span className="text-xs font-semibold text-destructive">
+                            {[row.duplicate ? 'Duplicado' : '', ...row.errors].filter(Boolean).join(', ')}
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-success">
+                            <CheckCircle2 className="size-3.5" />
+                            Listo
+                          </span>
+                        )}
                       </td>
                     </tr>
                   ))}
-                  {rows.length > MAX_PREVIEW ? (
+                  {preview.rows.length > MAX_PREVIEW ? (
                     <tr>
-                      <td
-                        colSpan={6}
-                        className="px-4 py-3 text-center text-sm text-muted-foreground"
-                      >
-                        ... y {rows.length - MAX_PREVIEW} registro{rows.length - MAX_PREVIEW === 1 ? '' : 's'} más
+                      <td colSpan={4} className="px-4 py-3 text-center text-sm text-muted-foreground">
+                        ... y {preview.rows.length - MAX_PREVIEW} registro{preview.rows.length - MAX_PREVIEW === 1 ? '' : 's'} más
                       </td>
                     </tr>
                   ) : null}
@@ -234,44 +197,58 @@ export function ImportStudentsModal({ onImport, onClose }: ImportStudentsModalPr
               </table>
             </div>
 
-            {errors.length > 0 ? (
-              <div className="rounded-lg border border-destructive/20 bg-destructive/12 p-3">
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-destructive">
-                  Errores de validación
-                </p>
-                <ul className="space-y-1">
-                  {errors.slice(0, 5).map((err) => (
-                    <li key={err.row} className="text-xs text-destructive">
-                      Fila {err.row}: {err.reason}
-                    </li>
-                  ))}
-                  {errors.length > 5 ? (
-                    <li className="text-xs text-muted-foreground">
-                      ... y {errors.length - 5} error{errors.length - 5 === 1 ? '' : 'es'} más
-                    </li>
-                  ) : null}
-                </ul>
-              </div>
-            ) : null}
-
-            <div className="flex justify-end gap-3 border-t border-border pt-5">
-              <Button variant="outline" onClick={onClose} disabled={isSubmitting}>
-                Cancelar
-              </Button>
+            <div className="flex justify-end">
               <Button
-                variant="primary"
-                disabled={rows.length === 0 || isSubmitting}
-                loading={isSubmitting}
                 onClick={handleImport}
+                loading={isSubmitting}
+                disabled={preview.detectedStudents === 0 || isPreviewing}
               >
-                {isSubmitting
-                  ? 'Importando...'
-                  : `Importar ${rows.length} registro${rows.length === 1 ? '' : 's'}`}
+                <ClipboardList className="size-4" />
+                Confirmar importación
               </Button>
             </div>
-          </>
+          </div>
         ) : null}
       </div>
     </Modal>
+  )
+}
+
+function PreviewStat({
+  label,
+  value,
+  tone = 'default',
+}: {
+  label: string
+  value: number
+  tone?: 'default' | 'error'
+}) {
+  return (
+    <div className="rounded-lg border border-border bg-muted/40 p-3">
+      <p className="text-xs font-bold uppercase text-muted-foreground">{label}</p>
+      <p className={cn('mt-1 text-xl font-bold text-primary', tone === 'error' && 'text-destructive')}>
+        {value}
+      </p>
+    </div>
+  )
+}
+
+function ErrorList({ title, errors }: { title: string; errors: string[] }) {
+  return (
+    <div className="rounded-lg border border-destructive/20 bg-destructive/12 p-4">
+      <p className="mb-2 text-sm font-semibold text-destructive">{title}</p>
+      <ul className="space-y-1">
+        {errors.slice(0, 5).map((error) => (
+          <li key={error} className="text-xs text-destructive">
+            {error}
+          </li>
+        ))}
+        {errors.length > 5 ? (
+          <li className="text-xs text-muted-foreground">
+            ... y {errors.length - 5} error{errors.length - 5 === 1 ? '' : 'es'} más
+          </li>
+        ) : null}
+      </ul>
+    </div>
   )
 }
