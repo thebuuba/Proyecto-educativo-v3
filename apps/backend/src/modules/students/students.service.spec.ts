@@ -189,6 +189,44 @@ describe('StudentsService course enrollment', () => {
     )
   })
 
+  it('reuses an existing student code when the student is not enrolled in the course year', async () => {
+    mockCourse()
+    mocks.prisma.student.findFirst.mockResolvedValue({
+      id: 'student-1',
+      studentCode: '2026001',
+      firstName: 'Ana',
+      lastName: 'GÃ³mez',
+      status: 'ACTIVE',
+    })
+    mocks.prisma.enrollment.findFirst
+      .mockResolvedValueOnce(null)
+      .mockResolvedValueOnce(null)
+    mocks.prisma.enrollment.create.mockResolvedValue({ id: 'enrollment-1' })
+
+    const result = await createService().createStudentInCourse(
+      'school-1',
+      'course-1',
+      {
+        studentCode: '2026001',
+        fullName: 'Ana GÃ³mez',
+      },
+    )
+
+    expect(mocks.prisma.student.create).not.toHaveBeenCalled()
+    expect(mocks.prisma.enrollment.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        schoolId: 'school-1',
+        studentId: 'student-1',
+        schoolYearId: 'year-1',
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+      }),
+    })
+    expect(result).toEqual(
+      expect.objectContaining({ id: 'student-1', fullName: 'Ana GÃ³mez' }),
+    )
+  })
+
   it('previews course import with duplicates and row errors', async () => {
     mockCourse()
     mocks.prisma.student.findFirst
@@ -238,6 +276,31 @@ describe('StudentsService course enrollment', () => {
       [
         { studentCode: '2026001', fullName: 'Ana Gómez' },
         { studentCode: '2026002', fullName: '' },
+      ],
+    )
+
+    expect(result).toEqual({ imported: 1, errors: [] })
+    expect(mocks.prisma.student.create).toHaveBeenCalledTimes(1)
+  })
+
+  it('does not import duplicate rows from the same paste payload', async () => {
+    mockCourse()
+    mocks.prisma.student.findFirst.mockResolvedValue(null)
+    mocks.prisma.enrollment.findFirst.mockResolvedValue(null)
+    mocks.prisma.student.create.mockResolvedValue({
+      id: 'student-1',
+      studentCode: '2026001',
+      firstName: 'Ana',
+      lastName: 'GÃ³mez',
+    })
+    mocks.prisma.enrollment.create.mockResolvedValue({ id: 'enrollment-1' })
+
+    const result = await createService().importStudentsInCourse(
+      'school-1',
+      'course-1',
+      [
+        { studentCode: '2026001', fullName: 'Ana GÃ³mez' },
+        { studentCode: '2026001', fullName: 'Ana GÃ³mez' },
       ],
     )
 

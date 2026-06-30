@@ -271,7 +271,7 @@ export class StudentsService {
     }))
   }
 
-  private async assertStudentCodeAvailableInCourse(
+  private async findReusableStudentByCode(
     schoolId: string,
     course: CourseForEnrollment,
     studentCode: string,
@@ -279,7 +279,7 @@ export class StudentsService {
     const existingStudent = await prisma.student.findFirst({
       where: { schoolId, studentCode },
     })
-    if (!existingStudent) return
+    if (!existingStudent) return null
 
     const existingEnrollment = await prisma.enrollment.findFirst({
       where: {
@@ -297,6 +297,22 @@ export class StudentsService {
         'Ya existe un estudiante con esta matrícula en este curso.',
       )
     }
+    const existingYearEnrollment = await prisma.enrollment.findFirst({
+      where: {
+        schoolId,
+        studentId: existingStudent.id,
+        schoolYearId: course.schoolYearId,
+        status: 'ACTIVE',
+      },
+    })
+
+    if (existingYearEnrollment) {
+      throw new BadRequestException(
+        'Este estudiante ya tiene matrícula activa en este año escolar.',
+      )
+    }
+
+    return existingStudent
   }
 
   async createStudentInCourse(
@@ -305,7 +321,7 @@ export class StudentsService {
     dto: CreateCourseStudentDto,
   ) {
     const course = await this.getCourseOrThrow(schoolId, courseId)
-    await this.assertStudentCodeAvailableInCourse(
+    const reusableStudent = await this.findReusableStudentByCode(
       schoolId,
       course,
       dto.studentCode,
@@ -313,21 +329,23 @@ export class StudentsService {
     const { firstName, lastName } = splitFullName(dto.fullName)
 
     const student = await prisma.$transaction(async (tx) => {
-      const created = await tx.student.create({
-        data: {
-          schoolId,
-          studentCode: dto.studentCode,
-          firstName,
-          lastName,
-          documentId: dto.documentId || null,
-          birthDate: dto.birthDate
-            ? new Date(dto.birthDate)
-            : FAST_ENROLLMENT_BIRTH_DATE,
-          gender: dto.gender || null,
-          address: dto.address || null,
-          status: toRecordStatus(dto.status) as any,
-        },
-      })
+      const created =
+        reusableStudent ??
+        (await tx.student.create({
+          data: {
+            schoolId,
+            studentCode: dto.studentCode,
+            firstName,
+            lastName,
+            documentId: dto.documentId || null,
+            birthDate: dto.birthDate
+              ? new Date(dto.birthDate)
+              : FAST_ENROLLMENT_BIRTH_DATE,
+            gender: dto.gender || null,
+            address: dto.address || null,
+            status: toRecordStatus(dto.status) as any,
+          },
+        }))
       await tx.enrollment.create({
         data: {
           schoolId,
@@ -368,7 +386,7 @@ export class StudentsService {
           where: { schoolId, studentCode },
         })
         if (existingStudent) {
-          const existingEnrollment = await prisma.enrollment.findFirst({
+          const existingCourseEnrollment = await prisma.enrollment.findFirst({
             where: {
               schoolId,
               studentId: existingStudent.id,
@@ -378,7 +396,19 @@ export class StudentsService {
               status: 'ACTIVE',
             },
           })
-          if (existingEnrollment) errors.push('Ya existe en este curso.')
+          if (existingCourseEnrollment) errors.push('Ya existe en este curso.')
+
+          const existingYearEnrollment = await prisma.enrollment.findFirst({
+            where: {
+              schoolId,
+              studentId: existingStudent.id,
+              schoolYearId: course.schoolYearId,
+              status: 'ACTIVE',
+            },
+          })
+          if (existingYearEnrollment && !existingCourseEnrollment) {
+            errors.push('Ya tiene matrícula activa en este año escolar.')
+          }
         }
       }
       preview.push({
@@ -409,7 +439,7 @@ export class StudentsService {
   ) {
     const preview = await this.previewCourseImport(schoolId, courseId, rows)
     const validRows = preview.rows.filter(
-      (row) => row.fullName && row.errors.length === 0,
+      (row) => row.fullName && !row.duplicate && row.errors.length === 0,
     )
     let imported = 0
     const errors: ImportStudentError[] = []
