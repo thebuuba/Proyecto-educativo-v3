@@ -43,6 +43,19 @@ type AuthProviderProps = {
 let oauthCallbackHrefInFlight: string | null = null
 let oauthCallbackPromise: Promise<void> | null = null
 
+function getTokenRefreshDelay(token: string): number | null {
+  try {
+    const encodedPayload = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')
+    const payload = JSON.parse(atob(encodedPayload.padEnd(Math.ceil(encodedPayload.length / 4) * 4, '='))) as {
+      exp?: number
+    }
+    if (!payload.exp) return null
+    return Math.max(payload.exp * 1000 - Date.now() - 60_000, 0)
+  } catch {
+    return null
+  }
+}
+
 const initialState: AuthState = {
   user: null,
   token: null,
@@ -102,7 +115,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, [])
 
   const restoreFromSupabaseSession = useCallback(async () => {
-    const { data } = await supabase.auth.getSession()
+    const { data, error } = await supabase.auth.refreshSession()
+    if (error) return false
+
     const supabaseToken = data.session?.access_token ?? null
     if (!supabaseToken) return false
 
@@ -180,6 +195,17 @@ export function AuthProvider({ children }: AuthProviderProps) {
   useEffect(() => {
     void loadAuthState()
   }, [loadAuthState])
+
+  useEffect(() => {
+    if (!state.token) return
+    const delay = getTokenRefreshDelay(state.token)
+    if (delay === null) return
+
+    const timeout = window.setTimeout(() => {
+      void restoreFromSupabaseSession()
+    }, delay)
+    return () => window.clearTimeout(timeout)
+  }, [restoreFromSupabaseSession, state.token])
 
   const login = useCallback(
     async (credentials: LoginCredentials) => {
