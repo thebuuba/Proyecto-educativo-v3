@@ -217,7 +217,7 @@ export class AuthService {
   constructor(private jwtService: JwtService) {}
 
   private buildSession(user: AppUserWithSession, roles: any[] = [], permissions: any[] = []) {
-    const token = this.jwtService.sign({ sub: user.id, email: user.email })
+    const token = this.jwtService.sign({ sub: user.id, email: user.email, tokenVersion: user.tokenVersion })
 
     return {
       user: { id: user.id, email: user.email },

@@ -7,6 +7,9 @@
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { UpdateSchoolDto } from './dto/update-school.dto'
+import { CreateSchoolYearDto } from './dto/create-school-year.dto'
+import { UpdateSchoolYearDto } from './dto/update-school-year.dto'
 
 @Injectable()
 export class SettingsService {
@@ -16,26 +19,26 @@ export class SettingsService {
   }
 
   /** Actualiza los datos del colegio */
-  async updateSchool(schoolId: string, body: any) {
+  async updateSchool(schoolId: string, dto: UpdateSchoolDto) {
     const school = await prisma.school.findUnique({ where: { id: schoolId } })
     if (!school) throw new NotFoundException('School not found')
 
     return prisma.school.update({
       where: { id: schoolId },
       data: {
-        ...(body.name && { name: body.name }),
-        ...(body.slug && { slug: body.slug }),
-        ...(body.logoUrl !== undefined && { logoUrl: body.logoUrl }),
-        ...(body.sector !== undefined && { sector: body.sector }),
-        ...(body.regionalCode !== undefined && { regionalCode: body.regionalCode }),
-        ...(body.regionalName !== undefined && { regionalName: body.regionalName }),
-        ...(body.districtCode !== undefined && { districtCode: body.districtCode }),
-        ...(body.districtName !== undefined && { districtName: body.districtName }),
-        ...(body.centerCode !== undefined && { centerCode: body.centerCode }),
-        ...(body.schoolShift !== undefined && { schoolShift: body.schoolShift }),
-        ...(body.primaryModality !== undefined && { primaryModality: body.primaryModality }),
-        ...(body.enabledSubsystems !== undefined && { enabledSubsystems: body.enabledSubsystems }),
-        ...(body.officialExportsEnabled !== undefined && { officialExportsEnabled: body.officialExportsEnabled }),
+        ...(dto.name && { name: dto.name }),
+        ...(dto.slug && { slug: dto.slug }),
+        ...(dto.logoUrl !== undefined && { logoUrl: dto.logoUrl }),
+        ...(dto.sector !== undefined && { sector: dto.sector }),
+        ...(dto.regionalCode !== undefined && { regionalCode: dto.regionalCode }),
+        ...(dto.regionalName !== undefined && { regionalName: dto.regionalName }),
+        ...(dto.districtCode !== undefined && { districtCode: dto.districtCode }),
+        ...(dto.districtName !== undefined && { districtName: dto.districtName }),
+        ...(dto.centerCode !== undefined && { centerCode: dto.centerCode }),
+        ...(dto.schoolShift !== undefined && { schoolShift: dto.schoolShift }),
+        ...(dto.primaryModality !== undefined && { primaryModality: dto.primaryModality }),
+        ...(dto.enabledSubsystems !== undefined && { enabledSubsystems: dto.enabledSubsystems as any }),
+        ...(dto.officialExportsEnabled !== undefined && { officialExportsEnabled: dto.officialExportsEnabled }),
       },
     })
   }
@@ -49,30 +52,30 @@ export class SettingsService {
   }
 
   /** Crea un nuevo año escolar */
-  createSchoolYear(schoolId: string, body: any) {
+  createSchoolYear(schoolId: string, dto: CreateSchoolYearDto) {
     return prisma.schoolYear.create({
       data: {
         schoolId,
-        name: body.name,
-        startDate: new Date(body.startDate),
-        endDate: new Date(body.endDate),
-        isCurrent: body.isCurrent ?? false,
+        name: dto.name,
+        startDate: new Date(dto.startDate),
+        endDate: new Date(dto.endDate),
+        isCurrent: dto.isCurrent ?? false,
       },
     })
   }
 
   /** Actualiza un año escolar existente */
-  async updateSchoolYear(schoolId: string, id: string, body: any) {
+  async updateSchoolYear(schoolId: string, id: string, dto: UpdateSchoolYearDto) {
     const sy = await prisma.schoolYear.findFirst({ where: { id, schoolId } })
     if (!sy) throw new NotFoundException('School year not found')
 
     return prisma.schoolYear.update({
       where: { id },
       data: {
-        ...(body.name && { name: body.name }),
-        ...(body.startDate && { startDate: new Date(body.startDate) }),
-        ...(body.endDate && { endDate: new Date(body.endDate) }),
-        ...(body.isCurrent !== undefined && { isCurrent: body.isCurrent }),
+        ...(dto.name && { name: dto.name }),
+        ...(dto.startDate && { startDate: new Date(dto.startDate) }),
+        ...(dto.endDate && { endDate: new Date(dto.endDate) }),
+        ...(dto.isCurrent !== undefined && { isCurrent: dto.isCurrent }),
       },
     })
   }

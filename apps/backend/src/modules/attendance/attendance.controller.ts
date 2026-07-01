@@ -11,6 +11,7 @@ import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { RolesGuard } from '../../common/guards/roles.guard'
+import { UpsertAttendanceDto } from './dto/upsert-attendance.dto'
 
 @Controller('attendance')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -114,8 +115,8 @@ export class AttendanceController {
    */
   @Post('upsert')
   @Roles('admin', 'director', 'coordinator', 'teacher')
-  upsert(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.attendanceService.upsert(user.schoolId, body)
+  upsert(@CurrentUser() user: AuthenticatedUser, @Body() dto: UpsertAttendanceDto) {
+    return this.attendanceService.upsert(user.schoolId, dto)
   }
 
   @Delete(':id')

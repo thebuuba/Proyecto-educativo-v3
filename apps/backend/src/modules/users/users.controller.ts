@@ -10,6 +10,7 @@ import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { RolesGuard } from '../../common/guards/roles.guard'
+import { UpdateUserDto } from './dto/update-user.dto'
 
 @Controller('users')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -67,8 +68,8 @@ export class UsersController {
    */
   @Patch(':id')
   @Roles('admin', 'director')
-  update(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string, @Body() body: any) {
-    return this.usersService.update(user.schoolId, id, body)
+  update(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string, @Body() dto: UpdateUserDto) {
+    return this.usersService.update(user.schoolId, id, dto)
   }
 
   /**

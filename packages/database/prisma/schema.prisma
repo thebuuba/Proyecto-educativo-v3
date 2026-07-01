@@ -118,9 +118,9 @@ model AppUser {
   fullName     String       @map("full_name")
   email        String       @unique
   phone        String?
-  passwordHash String?      @map("password_hash")
   avatarUrl    String?      @map("avatar_url")
   provider     String       @default("email")
+  tokenVersion Int          @default(1) @map("token_version")
   lastLoginAt  DateTime?    @map("last_login_at")
   status       RecordStatus @default(ACTIVE)
   schoolId     String       @map("school_id") @db.Uuid
@@ -212,6 +212,7 @@ model Section {
   status    RecordStatus @default(ACTIVE)
   createdAt DateTime     @default(now()) @map("created_at")
   updatedAt DateTime     @updatedAt @map("updated_at")
+  sectionSubjects SectionSubject[]
 
 
   @@unique([gradeId, name])
@@ -229,6 +230,7 @@ model Subject {
   status      RecordStatus @default(ACTIVE)
   createdAt   DateTime     @default(now()) @map("created_at")
   updatedAt   DateTime     @updatedAt @map("updated_at")
+  sectionSubjects SectionSubject[]
 
 
   @@unique([schoolId, code])
@@ -242,16 +244,17 @@ model Teacher {
   employeeCode String       @map("employee_code")
   firstName    String       @map("first_name")
   lastName     String       @map("last_name")
-  documentId   String?      @unique @map("document_id")
+  documentId   String?      @map("document_id")
   birthDate    DateTime?    @map("birth_date") @db.Date
   gender       String?
   phone        String?
-  email        String?      @unique
+  email        String?
   hireDate     DateTime?    @map("hire_date") @db.Date
   address      String?
   status       RecordStatus @default(ACTIVE)
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
+  sectionSubjects SectionSubject[]
 
 
   @@unique([schoolId, employeeCode])
@@ -267,7 +270,7 @@ model Student {
   studentCode String       @map("student_code")
   firstName   String       @map("first_name")
   lastName    String       @map("last_name")
-  documentId  String?      @unique @map("document_id")
+  documentId  String?      @map("document_id")
   birthDate   DateTime     @map("birth_date") @db.Date
   gender      String?
   address     String?
@@ -286,7 +289,7 @@ model Guardian {
   userId     String?      @unique @map("user_id") @db.Uuid
   schoolId   String       @map("school_id") @db.Uuid
   fullName   String       @map("full_name")
-  documentId String?      @unique @map("document_id")
+  documentId String?      @map("document_id")
   phone      String?
   email      String?
   address    String?
@@ -343,9 +346,14 @@ model SectionSubject {
   sectionId    String       @map("section_id") @db.Uuid
   subjectId    String       @map("subject_id") @db.Uuid
   teacherId    String?      @map("teacher_id") @db.Uuid
+  section      Section      @relation(fields: [sectionId], references: [id])
+  subject      Subject      @relation(fields: [subjectId], references: [id])
+  teacher      Teacher?     @relation(fields: [teacherId], references: [id])
   status       RecordStatus @default(ACTIVE)
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
+  attendanceClasses AttendanceClass[]
+  gradesRecords     GradesRecord[]
 
 
   @@unique([schoolYearId, sectionId, subjectId])
@@ -406,6 +414,7 @@ model AttendanceClass {
   sectionId        String           @map("section_id") @db.Uuid
   schoolId         String           @map("school_id") @db.Uuid
   sectionSubjectId String           @map("section_subject_id") @db.Uuid
+  sectionSubject   SectionSubject   @relation(fields: [sectionSubjectId], references: [id])
   academicPeriodId String           @map("academic_period_id") @db.Uuid
   attendanceDate   DateTime         @map("attendance_date") @db.Date
   status           AttendanceStatus
@@ -426,6 +435,7 @@ model GradesRecord {
   sectionId        String            @map("section_id") @db.Uuid
   schoolId         String            @map("school_id") @db.Uuid
   sectionSubjectId String            @map("section_subject_id") @db.Uuid
+  sectionSubject   SectionSubject    @relation(fields: [sectionSubjectId], references: [id])
   academicPeriodId String            @map("academic_period_id") @db.Uuid
   assessmentName   String            @map("assessment_name")
   score            Decimal           @db.Decimal(8, 2)

@@ -25,6 +25,8 @@ import {
   ImportCourseStudentsPreviewDto,
   TransferCourseStudentDto,
 } from './dto/course-enrollment.dto'
+import { ImportStudentsDto } from './dto/import-students.dto'
+import { NotifyGuardiansDto } from './dto/notify-guardians.dto'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
@@ -95,10 +97,10 @@ export class StudentsController {
    */
   @Post('import')
   @Roles('admin', 'director', 'coordinator')
-  importStudents(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
+  importStudents(@CurrentUser() user: AuthenticatedUser, @Body() dto: ImportStudentsDto) {
     return this.studentsService.importStudents(
       user.schoolId,
-      body.students ?? body,
+      dto.students,
     )
   }
 
@@ -322,13 +324,13 @@ export class StudentsController {
   notifyGuardians(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
-    @Body() body: any,
+    @Body() dto: NotifyGuardiansDto,
   ) {
     return this.studentsService.notifyGuardians(
       user.schoolId,
       id,
       user.id,
-      body,
+      dto,
     )
   }
 }

@@ -42,9 +42,6 @@ class OnboardingSchoolYearDto {
 
 export class CompleteOnboardingDto {
   @IsString()
-  supabaseAccessToken!: string
-
-  @IsString()
   fullName!: string
 
   @IsOptional()

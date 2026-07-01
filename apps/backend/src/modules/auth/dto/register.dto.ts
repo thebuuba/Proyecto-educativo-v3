@@ -3,7 +3,7 @@
  * Contiene los datos necesarios para crear una cuenta
  * junto con la escuela asociada.
  */
-import { IsEmail, IsOptional, IsString, MinLength } from 'class-validator'
+import { IsEmail, IsOptional, IsString, Matches, MinLength } from 'class-validator'
 
 export class RegisterDto {
   /** Nombre de la escuela. */
@@ -19,9 +19,10 @@ export class RegisterDto {
   @IsEmail()
   email!: string
 
-  /** Contraseña del usuario (mínimo 6 caracteres). */
+  /** Contraseña del usuario (mínimo 8 caracteres, mayúscula, minúscula, dígito). */
   @IsString()
-  @MinLength(6)
+  @MinLength(8)
+  @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/, { message: 'Password must contain uppercase, lowercase, and a digit' })
   password!: string
 
   /** Nombre completo del usuario. */

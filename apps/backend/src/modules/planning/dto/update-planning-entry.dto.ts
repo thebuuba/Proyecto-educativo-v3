@@ -1,0 +1,80 @@
+import { IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+
+export class UpdatePlanningEntryDto {
+  @IsOptional()
+  @IsString()
+  @MaxLength(200)
+  title?: string
+
+  @IsOptional()
+  @IsNumber()
+  @Min(0)
+  sequence?: number
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  specificCompetence?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  achievementIndicator?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  contentConceptual?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  contentProcedural?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  contentAttitudinal?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  strategies?: string
+
+  @IsOptional()
+  @IsString()
+  activities?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  resources?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  evaluationMethod?: string
+
+  @IsOptional()
+  @IsNumber()
+  @Min(0)
+  durationMinutes?: number
+
+  @IsOptional()
+  @IsDateString()
+  plannedDate?: string
+
+  @IsOptional()
+  @IsString()
+  fundamentalCompetenceId?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  evidence?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(1000)
+  evaluationInstruments?: string
+}

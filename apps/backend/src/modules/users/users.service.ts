@@ -5,6 +5,7 @@
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { UpdateUserDto } from './dto/update-user.dto'
 
 @Injectable()
 export class UsersService {
@@ -45,16 +46,16 @@ export class UsersService {
    * @returns Usuario actualizado.
    * @throws NotFoundException si el usuario no existe.
    */
-  async update(schoolId: string, id: string, body: any) {
+  async update(schoolId: string, id: string, dto: UpdateUserDto) {
     const user = await prisma.appUser.findFirst({ where: { id, schoolId } })
     if (!user) throw new NotFoundException('User not found')
 
     return prisma.appUser.update({
       where: { id },
       data: {
-        ...(body.fullName && { fullName: body.fullName }),
-        ...(body.email && { email: body.email }),
-        ...(body.avatarUrl !== undefined && { avatarUrl: body.avatarUrl }),
+        ...(dto.fullName && { fullName: dto.fullName }),
+        ...(dto.email && { email: dto.email }),
+        ...(dto.avatarUrl !== undefined && { avatarUrl: dto.avatarUrl }),
       },
       select: { id: true, email: true, fullName: true, avatarUrl: true, status: true },
     })

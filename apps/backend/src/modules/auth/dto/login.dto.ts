@@ -2,7 +2,7 @@
  * DTO para el inicio de sesión.
  * Contiene las credenciales necesarias para autenticar a un usuario.
  */
-import { IsEmail, IsString, MinLength } from 'class-validator'
+import { IsEmail, IsString, Matches, MinLength } from 'class-validator'
 
 export class LoginDto {
   /** Correo electrónico del usuario. */
@@ -11,6 +11,7 @@ export class LoginDto {
 
   /** Contraseña del usuario. */
   @IsString()
-  @MinLength(6)
+  @MinLength(8)
+  @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/, { message: 'Password must contain uppercase, lowercase, and a digit' })
   password!: string
 }

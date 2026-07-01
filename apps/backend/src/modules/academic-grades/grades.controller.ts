@@ -11,6 +11,7 @@ import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { RolesGuard } from '../../common/guards/roles.guard'
+import { SaveGradeDto } from './dto/save-grade.dto'
 
 @Controller('academic-grades')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -94,8 +95,8 @@ export class GradesController {
    */
   @Post('save')
   @Roles('admin', 'director', 'coordinator', 'teacher')
-  saveGrade(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.gradesService.saveGrade(user.schoolId, body)
+  saveGrade(@CurrentUser() user: AuthenticatedUser, @Body() dto: SaveGradeDto) {
+    return this.gradesService.saveGrade(user.schoolId, dto)
   }
 
   @Delete(':id')

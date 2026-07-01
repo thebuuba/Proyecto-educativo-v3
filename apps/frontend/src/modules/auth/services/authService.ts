@@ -68,7 +68,9 @@ export async function exchangeOAuthCode(code: string): Promise<string> {
 
 /** Crea sesión Aula Base desde token Supabase. */
 export async function createAulaSession(supabaseAccessToken: string): Promise<LoginResponse> {
-  return api.post<LoginResponse>('/auth/session', { supabaseAccessToken })
+  return api.post<LoginResponse>('/auth/session', undefined, {
+    headers: { Authorization: `Bearer ${supabaseAccessToken}` },
+  })
 }
 
 /** Completa el onboarding académico inicial. */
@@ -76,9 +78,8 @@ export async function completeOnboarding(
   supabaseAccessToken: string,
   input: CompleteOnboardingInput,
 ): Promise<LoginResponse> {
-  return api.post<LoginResponse>('/auth/onboarding/complete', {
-    ...input,
-    supabaseAccessToken,
+  return api.post<LoginResponse>('/auth/onboarding/complete', input, {
+    headers: { Authorization: `Bearer ${supabaseAccessToken}` },
   })
 }
 

@@ -7,6 +7,7 @@
  */
 import { Injectable } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { ExportReportDto } from './dto/export-report.dto'
 
 @Injectable()
 export class ReportsService {
@@ -23,9 +24,9 @@ export class ReportsService {
   }
 
   /** Exporta un reporte en el formato especificado (estudiante, calificaciones o CSV) */
-  async exportReport(schoolId: string, body: any) {
-    const type = body.type ?? body.kind ?? 'grades'
-    const { studentId, sectionSubjectId, academicPeriodId } = body
+  async exportReport(schoolId: string, dto: ExportReportDto) {
+    const type = dto.type ?? dto.kind ?? 'grades'
+    const { studentId, sectionSubjectId, academicPeriodId } = dto
 
     if (type === 'student') {
       const enrollments = await prisma.enrollment.findMany({
@@ -53,8 +54,8 @@ export class ReportsService {
     if (academicPeriodId) where.academicPeriodId = academicPeriodId
 
     const records = await prisma.gradesRecord.findMany({ where })
-    if (body.kind || body.format) {
-      const format = body.format ?? 'csv'
+    if (dto.kind || dto.format) {
+      const format = dto.format ?? 'csv'
       const content = [
         'assessmentName,score,maxScore,weight,status',
         ...records.map((record) => {

@@ -7,6 +7,7 @@ function escapeHtml(value?: string | number | null) {
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;')
+    .replaceAll('`', '&#96;')
 }
 
 function formatDate(value?: string | null) {
@@ -133,7 +134,7 @@ export function exportPlanningToWord(entry: PlanningEntryWithDetails) {
 }
 
 export function exportPlanningToPdf(entry: PlanningEntryWithDetails) {
-  const printWindow = window.open('', '_blank')
+  const printWindow = window.open('', 'planning-print', 'noopener,noreferrer')
   if (!printWindow) return
   printWindow.document.open()
   printWindow.document.write(buildPlanningDocumentHtml(entry))

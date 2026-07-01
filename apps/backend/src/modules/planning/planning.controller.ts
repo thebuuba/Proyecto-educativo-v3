@@ -11,6 +11,12 @@ import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { RolesGuard } from '../../common/guards/roles.guard'
+import { CreateAcademicPeriodDto } from './dto/create-academic-period.dto'
+import { UpdateAcademicPeriodDto } from './dto/update-academic-period.dto'
+import { CreatePlanningEntryDto } from './dto/create-planning-entry.dto'
+import { UpdatePlanningEntryDto } from './dto/update-planning-entry.dto'
+import { GenerateEntryDraftDto } from './dto/generate-entry-draft.dto'
+import { GenerateAndCreateEntryDto } from './dto/generate-and-create-entry.dto'
 
 @Controller('planning')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -32,8 +38,8 @@ export class PlanningController {
   /** Crea un nuevo período académico (solo admin, director, coordinador) */
   @Post('academic-periods')
   @Roles('admin', 'director', 'coordinator')
-  createAcademicPeriod(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.planningService.createAcademicPeriod(user.schoolId, body)
+  createAcademicPeriod(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateAcademicPeriodDto) {
+    return this.planningService.createAcademicPeriod(user.schoolId, dto)
   }
 
   /** Actualiza un período académico existente (solo admin, director, coordinador) */
@@ -42,9 +48,9 @@ export class PlanningController {
   updateAcademicPeriod(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
-    @Body() body: any,
+    @Body() dto: UpdateAcademicPeriodDto,
   ) {
-    return this.planningService.updateAcademicPeriod(user.schoolId, id, body)
+    return this.planningService.updateAcademicPeriod(user.schoolId, id, dto)
   }
 
   /** Elimina un período académico (solo admin, director, coordinador) */
@@ -91,22 +97,22 @@ export class PlanningController {
   /** Crea una nueva entrada de planificación (solo admin, director, coordinador, teacher) */
   @Post('entries')
   @Roles('admin', 'director', 'coordinator', 'teacher')
-  createEntry(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.planningService.createEntry(user.schoolId, body)
+  createEntry(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreatePlanningEntryDto) {
+    return this.planningService.createEntry(user.schoolId, dto)
   }
 
   /** Genera un borrador completo de planificación con IA */
   @Post('entries/generate')
   @Roles('admin', 'director', 'coordinator', 'teacher')
-  generateEntryDraft(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.planningService.generateEntryDraft(user.schoolId, body)
+  generateEntryDraft(@CurrentUser() user: AuthenticatedUser, @Body() dto: GenerateEntryDraftDto) {
+    return this.planningService.generateEntryDraft(user.schoolId, dto)
   }
 
   /** Genera y guarda una planificación completa con IA */
   @Post('entries/generate-and-create')
   @Roles('admin', 'director', 'coordinator', 'teacher')
-  generateAndCreateEntry(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.planningService.generateAndCreateEntry(user.schoolId, body)
+  generateAndCreateEntry(@CurrentUser() user: AuthenticatedUser, @Body() dto: GenerateAndCreateEntryDto) {
+    return this.planningService.generateAndCreateEntry(user.schoolId, dto)
   }
 
   /** Actualiza una entrada de planificación existente (solo admin, director, coordinador, teacher) */
@@ -115,9 +121,9 @@ export class PlanningController {
   updateEntry(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
-    @Body() body: any,
+    @Body() dto: UpdatePlanningEntryDto,
   ) {
-    return this.planningService.updateEntry(user.schoolId, id, body)
+    return this.planningService.updateEntry(user.schoolId, id, dto)
   }
 
   /** Elimina una entrada de planificación (solo admin, director, coordinador, teacher) */

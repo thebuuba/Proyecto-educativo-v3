@@ -7,6 +7,10 @@
  */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { CreateTimeSlotDto } from './dto/create-time-slot.dto'
+import { UpdateTimeSlotDto } from './dto/update-time-slot.dto'
+import { CreateScheduleEntryDto } from './dto/create-schedule-entry.dto'
+import { UpdateScheduleEntryDto } from './dto/update-schedule-entry.dto'
 
 /** Convierte una cadena de tiempo "HH:mm" o "HH:mm:ss" a un objeto Date UTC */
 function toTime(value: string) {
@@ -89,30 +93,30 @@ export class ScheduleService {
   }
 
   /** Crea una nueva franja horaria */
-  createTimeSlot(schoolId: string, body: any) {
+  createTimeSlot(schoolId: string, dto: CreateTimeSlotDto) {
     return prisma.timeSlot.create({
       data: {
         schoolId,
-        name: body.name,
-        startTime: toTime(body.startTime),
-        endTime: toTime(body.endTime),
-        sequence: body.sequence ?? 0,
+        name: dto.name,
+        startTime: toTime(dto.startTime),
+        endTime: toTime(dto.endTime),
+        sequence: dto.sequence ?? 0,
       },
     })
   }
 
   /** Actualiza una franja horaria existente, valida que pertenezca al colegio */
-  async updateTimeSlot(schoolId: string, id: string, body: any) {
+  async updateTimeSlot(schoolId: string, id: string, dto: UpdateTimeSlotDto) {
     const ts = await prisma.timeSlot.findFirst({ where: { id, schoolId } })
     if (!ts) throw new NotFoundException('Time slot not found')
 
     return prisma.timeSlot.update({
       where: { id },
       data: {
-        ...(body.name && { name: body.name }),
-        ...(body.startTime && { startTime: toTime(body.startTime) }),
-        ...(body.endTime && { endTime: toTime(body.endTime) }),
-        ...(body.sequence !== undefined && { sequence: body.sequence }),
+        ...(dto.name && { name: dto.name }),
+        ...(dto.startTime && { startTime: toTime(dto.startTime) }),
+        ...(dto.endTime && { endTime: toTime(dto.endTime) }),
+        ...(dto.sequence !== undefined && { sequence: dto.sequence }),
       },
     })
   }
@@ -135,66 +139,66 @@ export class ScheduleService {
   }
 
   /** Crea una nueva entrada de horario validando las referencias */
-  async createEntry(schoolId: string, body: any) {
+  async createEntry(schoolId: string, dto: CreateScheduleEntryDto) {
     const [schoolYear, section, sectionSubject, timeSlot, academicPeriod] = await Promise.all([
-      prisma.schoolYear.findFirst({ where: { id: body.schoolYearId, schoolId } }),
-      prisma.section.findFirst({ where: { id: body.sectionId, schoolId } }),
-      prisma.sectionSubject.findFirst({ where: { id: body.sectionSubjectId, schoolId, sectionId: body.sectionId } }),
-      prisma.timeSlot.findFirst({ where: { id: body.timeSlotId, schoolId } }),
-      body.academicPeriodId
-        ? prisma.academicPeriod.findFirst({ where: { id: body.academicPeriodId, schoolId } })
+      prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } }),
+      prisma.section.findFirst({ where: { id: dto.sectionId, schoolId } }),
+      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId, sectionId: dto.sectionId } }),
+      prisma.timeSlot.findFirst({ where: { id: dto.timeSlotId, schoolId } }),
+      dto.academicPeriodId
+        ? prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
         : Promise.resolve(null),
     ])
     if (!schoolYear) throw new NotFoundException('School year not found')
     if (!section) throw new NotFoundException('Section not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!timeSlot) throw new NotFoundException('Time slot not found')
-    if (body.academicPeriodId && !academicPeriod) throw new NotFoundException('Academic period not found')
+    if (dto.academicPeriodId && !academicPeriod) throw new NotFoundException('Academic period not found')
     await this.assertEntrySlotAvailable(schoolId, {
-      schoolYearId: body.schoolYearId,
-      sectionId: body.sectionId,
-      sectionSubjectId: body.sectionSubjectId,
-      timeSlotId: body.timeSlotId,
-      dayOfWeek: body.dayOfWeek,
+      schoolYearId: dto.schoolYearId,
+      sectionId: dto.sectionId,
+      sectionSubjectId: dto.sectionSubjectId,
+      timeSlotId: dto.timeSlotId,
+      dayOfWeek: dto.dayOfWeek,
     })
 
     const entry = await prisma.scheduleEntry.create({
       data: {
         schoolId,
-        schoolYearId: body.schoolYearId,
-        sectionId: body.sectionId,
-        sectionSubjectId: body.sectionSubjectId,
-        timeSlotId: body.timeSlotId,
-        dayOfWeek: body.dayOfWeek,
-        academicPeriodId: body.academicPeriodId ?? null,
-        room: body.room ?? null,
+        schoolYearId: dto.schoolYearId,
+        sectionId: dto.sectionId,
+        sectionSubjectId: dto.sectionSubjectId,
+        timeSlotId: dto.timeSlotId,
+        dayOfWeek: dto.dayOfWeek,
+        academicPeriodId: dto.academicPeriodId ?? null,
+        room: dto.room ?? null,
       },
     })
     return (await this.withEntryLabels(schoolId, [entry]))[0]
   }
 
   /** Actualiza una entrada de horario existente validando las referencias opcionales */
-  async updateEntry(schoolId: string, id: string, body: any) {
+  async updateEntry(schoolId: string, id: string, dto: UpdateScheduleEntryDto) {
     const entry = await prisma.scheduleEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Schedule entry not found')
-    if (body.sectionSubjectId) {
+    if (dto.sectionSubjectId) {
       const sectionSubject = await prisma.sectionSubject.findFirst({
-        where: { id: body.sectionSubjectId, schoolId, sectionId: entry.sectionId },
+        where: { id: dto.sectionSubjectId, schoolId, sectionId: entry.sectionId },
       })
       if (!sectionSubject) throw new NotFoundException('Section subject not found')
     }
-    if (body.timeSlotId) {
-      const timeSlot = await prisma.timeSlot.findFirst({ where: { id: body.timeSlotId, schoolId } })
+    if (dto.timeSlotId) {
+      const timeSlot = await prisma.timeSlot.findFirst({ where: { id: dto.timeSlotId, schoolId } })
       if (!timeSlot) throw new NotFoundException('Time slot not found')
     }
     await this.assertEntrySlotAvailable(
       schoolId,
       {
-        schoolYearId: body.schoolYearId ?? entry.schoolYearId,
+        schoolYearId: entry.schoolYearId,
         sectionId: entry.sectionId,
-        sectionSubjectId: body.sectionSubjectId ?? entry.sectionSubjectId,
-        timeSlotId: body.timeSlotId ?? entry.timeSlotId,
-        dayOfWeek: body.dayOfWeek ?? entry.dayOfWeek,
+        sectionSubjectId: dto.sectionSubjectId ?? entry.sectionSubjectId,
+        timeSlotId: dto.timeSlotId ?? entry.timeSlotId,
+        dayOfWeek: dto.dayOfWeek ?? entry.dayOfWeek,
       },
       id,
     )
@@ -202,10 +206,10 @@ export class ScheduleService {
     const updated = await prisma.scheduleEntry.update({
       where: { id },
       data: {
-        ...(body.sectionSubjectId && { sectionSubjectId: body.sectionSubjectId }),
-        ...(body.timeSlotId && { timeSlotId: body.timeSlotId }),
-        ...(body.dayOfWeek !== undefined && { dayOfWeek: body.dayOfWeek }),
-        ...(body.room !== undefined && { room: body.room }),
+        ...(dto.sectionSubjectId && { sectionSubjectId: dto.sectionSubjectId }),
+        ...(dto.timeSlotId && { timeSlotId: dto.timeSlotId }),
+        ...(dto.dayOfWeek !== undefined && { dayOfWeek: dto.dayOfWeek }),
+        ...(dto.room !== undefined && { room: dto.room }),
       },
     })
     return (await this.withEntryLabels(schoolId, [updated]))[0]

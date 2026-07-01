@@ -6,6 +6,7 @@ import { NestFactory } from '@nestjs/core'
 import { ValidationPipe } from '@nestjs/common'
 import helmet from 'helmet'
 import { AppModule } from './app.module'
+import { AuditLogInterceptor } from './common/interceptors/audit-log.interceptor'
 
 /**
  * Crea la aplicación NestJS, configura prefijo global, helmet, CORS y ValidationPipe,
@@ -15,7 +16,22 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule)
 
   app.setGlobalPrefix('api/v1')
-  app.use(helmet())
+  app.use(helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        connectSrc: ["'self'", process.env.SUPABASE_URL ?? ''],
+        imgSrc: ["'self'", 'data:', 'https:'],
+        fontSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        frameAncestors: ["'none'"],
+      },
+    },
+    hsts: { maxAge: 31536000, includeSubDomains: true, preload: true },
+    xFrameOptions: { action: 'deny' },
+  }))
   app.enableCors({
     origin: process.env.FRONTEND_URL ?? 'http://localhost:5173',
     credentials: true,
@@ -27,6 +43,7 @@ async function bootstrap() {
       transform: true,
     }),
   )
+  app.useGlobalInterceptors(new AuditLogInterceptor())
 
   await app.listen(process.env.PORT ?? 3000)
 }

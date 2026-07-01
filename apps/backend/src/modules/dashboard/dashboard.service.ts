@@ -6,11 +6,13 @@
  */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { CreateTaskDto } from './dto/create-task.dto'
+import { UpdateTaskDto } from './dto/update-task.dto'
 
 const TASK_STATUSES = new Set(['pending', 'completed', 'archived'])
 const TASK_PRIORITIES = new Set(['low', 'normal', 'high'])
 
-function validateTaskInput(body: any) {
+function validateTaskInput(body: CreateTaskDto | UpdateTaskDto) {
   if (body.title !== undefined && !String(body.title).trim()) {
     throw new BadRequestException('Task title is required')
   }
@@ -45,34 +47,34 @@ export class DashboardService {
   }
 
   /** Crea una nueva tarea en el dashboard */
-  async createTask(schoolId: string, createdBy: string, body: any) {
-    validateTaskInput(body)
+  async createTask(schoolId: string, createdBy: string, dto: CreateTaskDto) {
+    validateTaskInput(dto)
     return prisma.dashboardTask.create({
       data: {
         schoolId,
-        title: body.title,
-        status: body.status ?? 'pending',
-        priority: body.priority ?? 'normal',
-        dueDate: body.dueDate ? new Date(body.dueDate) : null,
-        assignedTo: body.assignedTo ?? null,
+        title: dto.title,
+        status: dto.status ?? 'pending',
+        priority: dto.priority ?? 'normal',
+        dueDate: dto.dueDate ? new Date(dto.dueDate) : null,
+        assignedTo: dto.assignedTo ?? null,
         createdBy,
       },
     })
   }
 
   /** Actualiza una tarea existente del dashboard */
-  async updateTask(schoolId: string, id: string, body: any) {
+  async updateTask(schoolId: string, id: string, dto: UpdateTaskDto) {
     const task = await prisma.dashboardTask.findFirst({ where: { id, schoolId } })
     if (!task) throw new NotFoundException('Task not found')
-    validateTaskInput(body)
+    validateTaskInput(dto)
 
     return prisma.dashboardTask.update({
       where: { id },
       data: {
-        ...(body.title && { title: body.title }),
-        ...(body.status && { status: body.status }),
-        ...(body.priority && { priority: body.priority }),
-        ...(body.dueDate !== undefined && { dueDate: body.dueDate ? new Date(body.dueDate) : null }),
+        ...(dto.title && { title: dto.title }),
+        ...(dto.status && { status: dto.status }),
+        ...(dto.priority && { priority: dto.priority }),
+        ...(dto.dueDate !== undefined && { dueDate: dto.dueDate ? new Date(dto.dueDate) : null }),
       },
     })
   }

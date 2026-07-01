@@ -16,6 +16,8 @@ interface JwtPayload {
   sub: string
   /** Correo electrónico del usuario. */
   email: string
+  /** Versión del token para revocación. */
+  tokenVersion: number
 }
 
 @Injectable()
@@ -44,10 +46,15 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
         email: true,
         schoolId: true,
         status: true,
+        tokenVersion: true,
       },
     })
     if (!user || user.status !== 'ACTIVE') {
       throw new UnauthorizedException()
+    }
+
+    if (user.tokenVersion !== payload.tokenVersion) {
+      throw new UnauthorizedException('Token revoked')
     }
 
     const userRoles = await prisma.userRole.findMany({

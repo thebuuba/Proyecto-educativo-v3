@@ -6,6 +6,7 @@
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { SaveGradeDto } from './dto/save-grade.dto'
 
 const baseGradingPeriods = [
   { name: 'P1 — Agosto, septiembre y octubre', sequence: 1, startMonth: 8, startDay: 1, endMonth: 10, endDay: 31 },
@@ -200,24 +201,24 @@ export class GradesService {
    * @returns La calificación creada o actualizada.
    * @throws NotFoundException si el registro o alguna entidad relacionada no existe.
    */
-  async saveGrade(schoolId: string, input: any) {
-    if (input.gradeId) {
-      const grade = await prisma.gradesRecord.findFirst({ where: { id: input.gradeId, schoolId } })
+  async saveGrade(schoolId: string, dto: SaveGradeDto) {
+    if (dto.gradeId) {
+      const grade = await prisma.gradesRecord.findFirst({ where: { id: dto.gradeId, schoolId } })
       if (!grade) throw new NotFoundException('Grade record not found')
       return prisma.gradesRecord.update({
-        where: { id: input.gradeId },
+        where: { id: dto.gradeId },
         data: {
-          score: input.score,
-          maxScore: input.maxScore,
-          weight: input.weight,
-          assessmentName: input.assessmentName,
+          score: dto.score,
+          maxScore: dto.maxScore,
+          weight: dto.weight,
+          assessmentName: dto.assessmentName,
         },
       })
     }
     const [enrollment, sectionSubject, academicPeriod] = await Promise.all([
-      prisma.enrollment.findFirst({ where: { id: input.enrollmentId, schoolId } }),
-      prisma.sectionSubject.findFirst({ where: { id: input.sectionSubjectId, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: input.academicPeriodId, schoolId } }),
+      prisma.enrollment.findFirst({ where: { id: dto.enrollmentId!, schoolId } }),
+      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } }),
+      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId!, schoolId } }),
     ])
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
@@ -225,16 +226,16 @@ export class GradesService {
 
     return prisma.gradesRecord.create({
       data: {
-        enrollmentId: input.enrollmentId,
-        sectionSubjectId: input.sectionSubjectId,
-        academicPeriodId: input.academicPeriodId,
+        enrollmentId: dto.enrollmentId!,
+        sectionSubjectId: dto.sectionSubjectId!,
+        academicPeriodId: dto.academicPeriodId!,
         sectionId: enrollment.sectionId,
         schoolYearId: enrollment.schoolYearId,
         schoolId,
-        score: input.score,
-        maxScore: input.maxScore,
-        weight: input.weight ?? 1,
-        assessmentName: input.assessmentName ?? '',
+        score: dto.score,
+        maxScore: dto.maxScore,
+        weight: dto.weight ?? 1,
+        assessmentName: dto.assessmentName ?? '',
       },
     })
   }

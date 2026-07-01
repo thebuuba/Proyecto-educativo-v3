@@ -6,6 +6,7 @@
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { UpsertAttendanceDto } from './dto/upsert-attendance.dto'
 
 const baseAttendancePeriods = [
   { name: 'P1 — Agosto, septiembre y octubre', sequence: 1, startMonth: 8, startDay: 1, endMonth: 10, endDay: 31 },
@@ -202,11 +203,11 @@ export class AttendanceService {
    * @param body - Datos del registro con el tipo de asistencia ('class' o 'daily').
    * @returns El registro de asistencia creado o actualizado.
    */
-  async upsert(schoolId: string, body: any) {
-    if (body.type === 'class') {
-      return this.upsertClass(schoolId, body)
+  async upsert(schoolId: string, dto: UpsertAttendanceDto) {
+    if (dto.type === 'class') {
+      return this.upsertClass(schoolId, dto)
     }
-    return this.upsertDaily(schoolId, body)
+    return this.upsertDaily(schoolId, dto)
   }
 
   /**
@@ -220,11 +221,11 @@ export class AttendanceService {
    * @returns El registro de asistencia por clase creado o actualizado.
    * @throws NotFoundException si la matrícula, materia o período académico no existen.
    */
-  private async upsertClass(schoolId: string, body: any) {
+  private async upsertClass(schoolId: string, dto: UpsertAttendanceDto) {
     const [enrollment, sectionSubject, academicPeriod] = await Promise.all([
-      prisma.enrollment.findFirst({ where: { id: body.enrollmentId, schoolId } }),
-      prisma.sectionSubject.findFirst({ where: { id: body.sectionSubjectId, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: body.academicPeriodId, schoolId } }),
+      prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } }),
+      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } }),
+      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
     ])
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
@@ -233,9 +234,9 @@ export class AttendanceService {
     const existing = await prisma.attendanceClass.findFirst({
       where: {
         schoolId,
-        enrollmentId: body.enrollmentId,
-        sectionSubjectId: body.sectionSubjectId,
-        attendanceDate: new Date(body.attendanceDate),
+        enrollmentId: dto.enrollmentId,
+        sectionSubjectId: dto.sectionSubjectId!,
+        attendanceDate: new Date(dto.attendanceDate),
       },
     })
 
@@ -243,23 +244,23 @@ export class AttendanceService {
       return prisma.attendanceClass.update({
         where: { id: existing.id },
         data: {
-          status: body.status,
-          notes: body.notes ?? null,
+          status: dto.status as any,
+          notes: dto.notes ?? null,
         },
       })
     }
 
     return prisma.attendanceClass.create({
       data: {
-        enrollmentId: body.enrollmentId,
-        sectionSubjectId: body.sectionSubjectId,
+        enrollmentId: dto.enrollmentId,
+        sectionSubjectId: dto.sectionSubjectId!,
         schoolId,
         schoolYearId: enrollment.schoolYearId,
         sectionId: enrollment.sectionId,
         academicPeriodId: academicPeriod.id,
-        attendanceDate: new Date(body.attendanceDate),
-        status: body.status,
-        notes: body.notes ?? null,
+        attendanceDate: new Date(dto.attendanceDate),
+        status: dto.status as any,
+        notes: dto.notes ?? null,
       },
     })
   }
@@ -275,10 +276,10 @@ export class AttendanceService {
    * @returns El registro de asistencia diaria creado o actualizado.
    * @throws NotFoundException si la matrícula o el período académico no existen.
    */
-  private async upsertDaily(schoolId: string, body: any) {
+  private async upsertDaily(schoolId: string, dto: UpsertAttendanceDto) {
     const [enrollment, academicPeriod] = await Promise.all([
-      prisma.enrollment.findFirst({ where: { id: body.enrollmentId, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: body.academicPeriodId, schoolId } }),
+      prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } }),
+      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
     ])
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
@@ -286,8 +287,8 @@ export class AttendanceService {
     const existing = await prisma.attendanceDaily.findFirst({
       where: {
         schoolId,
-        enrollmentId: body.enrollmentId,
-        attendanceDate: new Date(body.attendanceDate),
+        enrollmentId: dto.enrollmentId,
+        attendanceDate: new Date(dto.attendanceDate),
       },
     })
 
@@ -295,22 +296,22 @@ export class AttendanceService {
       return prisma.attendanceDaily.update({
         where: { id: existing.id },
         data: {
-          status: body.status,
-          notes: body.notes ?? null,
+          status: dto.status as any,
+          notes: dto.notes ?? null,
         },
       })
     }
 
     return prisma.attendanceDaily.create({
       data: {
-        enrollmentId: body.enrollmentId,
+        enrollmentId: dto.enrollmentId,
         schoolId,
         schoolYearId: enrollment.schoolYearId,
         sectionId: enrollment.sectionId,
         academicPeriodId: academicPeriod.id,
-        attendanceDate: new Date(body.attendanceDate),
-        status: body.status,
-        notes: body.notes ?? null,
+        attendanceDate: new Date(dto.attendanceDate),
+        status: dto.status as any,
+        notes: dto.notes ?? null,
       },
     })
   }

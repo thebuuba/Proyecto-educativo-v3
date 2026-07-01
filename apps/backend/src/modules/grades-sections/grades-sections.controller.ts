@@ -11,6 +11,12 @@ import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { RolesGuard } from '../../common/guards/roles.guard'
+import { CreateGradeDto } from './dto/create-grade.dto'
+import { UpdateGradeDto } from './dto/update-grade.dto'
+import { CreateSectionDto } from './dto/create-section.dto'
+import { UpdateSectionDto } from './dto/update-section.dto'
+import { CreateSubjectDto } from './dto/create-subject.dto'
+import { AssignSubjectDto } from './dto/assign-subject.dto'
 
 @Controller('grades-sections')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -56,8 +62,8 @@ export class GradesSectionsController {
   /** Crea un nuevo grado (solo admin, director, coordinador) */
   @Post('grades')
   @Roles('admin', 'director', 'coordinator')
-  createGrade(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.gradesSectionsService.createGrade(user.schoolId, body)
+  createGrade(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateGradeDto) {
+    return this.gradesSectionsService.createGrade(user.schoolId, dto)
   }
 
   /** Actualiza un grado existente (solo admin, director, coordinador) */
@@ -66,9 +72,9 @@ export class GradesSectionsController {
   updateGrade(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
-    @Body() body: any,
+    @Body() dto: UpdateGradeDto,
   ) {
-    return this.gradesSectionsService.updateGrade(user.schoolId, id, body)
+    return this.gradesSectionsService.updateGrade(user.schoolId, id, dto)
   }
 
   /** Desactiva un grado (solo admin, director, coordinador) */
@@ -87,8 +93,8 @@ export class GradesSectionsController {
   /** Crea una nueva sección (solo admin, director, coordinador) */
   @Post('sections')
   @Roles('admin', 'director', 'coordinator')
-  createSection(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.gradesSectionsService.createSection(user.schoolId, body)
+  createSection(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateSectionDto) {
+    return this.gradesSectionsService.createSection(user.schoolId, dto)
   }
 
   /** Actualiza una sección existente (solo admin, director, coordinador) */
@@ -97,9 +103,9 @@ export class GradesSectionsController {
   updateSection(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
-    @Body() body: any,
+    @Body() dto: UpdateSectionDto,
   ) {
-    return this.gradesSectionsService.updateSection(user.schoolId, id, body)
+    return this.gradesSectionsService.updateSection(user.schoolId, id, dto)
   }
 
   /** Desactiva una sección (solo admin, director, coordinador) */
@@ -118,15 +124,15 @@ export class GradesSectionsController {
   /** Crea una nueva materia (solo admin, director, coordinador) */
   @Post('subjects')
   @Roles('admin', 'director', 'coordinator')
-  createSubject(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.gradesSectionsService.createSubject(user.schoolId, body)
+  createSubject(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateSubjectDto) {
+    return this.gradesSectionsService.createSubject(user.schoolId, dto)
   }
 
   /** Asigna una materia a una sección con un profesor (solo admin, director, coordinador) */
   @Post('assign-subject')
   @Roles('admin', 'director', 'coordinator')
-  assignSubject(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.gradesSectionsService.assignSubject(user.schoolId, body)
+  assignSubject(@CurrentUser() user: AuthenticatedUser, @Body() dto: AssignSubjectDto) {
+    return this.gradesSectionsService.assignSubject(user.schoolId, dto)
   }
 
   /** Obtiene todas las asignaciones materia-sección activas */

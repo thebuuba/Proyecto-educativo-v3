@@ -11,6 +11,9 @@ import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { RolesGuard } from '../../common/guards/roles.guard'
+import { UpdateSchoolDto } from './dto/update-school.dto'
+import { CreateSchoolYearDto } from './dto/create-school-year.dto'
+import { UpdateSchoolYearDto } from './dto/update-school-year.dto'
 
 @Controller('settings')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -26,8 +29,8 @@ export class SettingsController {
   /** Actualiza los datos del colegio (solo admin, director) */
   @Patch('school')
   @Roles('admin', 'director')
-  updateSchool(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.settingsService.updateSchool(user.schoolId, body)
+  updateSchool(@CurrentUser() user: AuthenticatedUser, @Body() dto: UpdateSchoolDto) {
+    return this.settingsService.updateSchool(user.schoolId, dto)
   }
 
   /** Obtiene los años escolares del colegio */
@@ -39,8 +42,8 @@ export class SettingsController {
   /** Crea un nuevo año escolar (solo admin, director, coordinador) */
   @Post('school-years')
   @Roles('admin', 'director', 'coordinator')
-  createSchoolYear(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.settingsService.createSchoolYear(user.schoolId, body)
+  createSchoolYear(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateSchoolYearDto) {
+    return this.settingsService.createSchoolYear(user.schoolId, dto)
   }
 
   /** Actualiza un año escolar existente (solo admin, director, coordinador) */
@@ -49,9 +52,9 @@ export class SettingsController {
   updateSchoolYear(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
-    @Body() body: any,
+    @Body() dto: UpdateSchoolYearDto,
   ) {
-    return this.settingsService.updateSchoolYear(user.schoolId, id, body)
+    return this.settingsService.updateSchoolYear(user.schoolId, id, dto)
   }
 
   /** Establece un año escolar como el actual (solo admin, director, coordinador) */

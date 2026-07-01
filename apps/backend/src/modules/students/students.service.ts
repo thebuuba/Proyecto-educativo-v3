@@ -18,6 +18,8 @@ import {
   CreateCourseStudentDto,
   ImportCourseStudentRowDto,
 } from './dto/course-enrollment.dto'
+import { ImportStudentRowDto } from './dto/import-students.dto'
+import { NotifyGuardiansDto } from './dto/notify-guardians.dto'
 
 type CourseForEnrollment = {
   id: string
@@ -33,20 +35,6 @@ type ImportPreviewRow = {
   fullName: string
   duplicate: boolean
   errors: string[]
-}
-
-/**
- * Representa una fila de datos de un estudiante durante la importación masiva.
- */
-type ImportStudentRow = {
-  rowNumber?: number
-  studentCode?: string
-  firstName?: string
-  lastName?: string
-  documentId?: string
-  birthDate?: string
-  gender?: string
-  address?: string
 }
 
 /**
@@ -812,7 +800,7 @@ export class StudentsService {
    * @returns Objeto con los estudiantes importados y la lista de errores.
    * @throws BadRequestException si el cuerpo no es un arreglo.
    */
-  async importStudents(schoolId: string, students: ImportStudentRow[]) {
+  async importStudents(schoolId: string, students: ImportStudentRowDto[]) {
     if (!Array.isArray(students)) {
       throw new BadRequestException(
         'El cuerpo debe incluir un arreglo de estudiantes.',
@@ -825,7 +813,7 @@ export class StudentsService {
     const seenDocuments = new Set<string>()
 
     for (const [index, s] of students.entries()) {
-      const row = s.rowNumber ?? index + 1
+      const row = index + 1
       const firstName = cleanText(s.firstName)
       const lastName = cleanText(s.lastName)
       const documentId = cleanText(s.documentId)
@@ -908,14 +896,14 @@ export class StudentsService {
     schoolId: string,
     studentId: string,
     createdBy: string,
-    body: any,
+    dto: NotifyGuardiansDto,
   ) {
     await this.findOne(schoolId, studentId)
     const links = await prisma.studentGuardian.findMany({
       where: { schoolId, studentId },
     })
-    const subject = body.subject ?? 'Notificación del colegio'
-    const message = body.message ?? ''
+    const subject = dto.subject ?? 'Notificación del colegio'
+    const message = dto.message ?? ''
 
     if (links.length) {
       await prisma.guardianNotification.createMany({

@@ -8,6 +8,12 @@
 import { BadRequestException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { prisma } from '@aula/database'
+import { CreateAcademicPeriodDto } from './dto/create-academic-period.dto'
+import { UpdateAcademicPeriodDto } from './dto/update-academic-period.dto'
+import { CreatePlanningEntryDto } from './dto/create-planning-entry.dto'
+import { UpdatePlanningEntryDto } from './dto/update-planning-entry.dto'
+import { GenerateEntryDraftDto } from './dto/generate-entry-draft.dto'
+import { GenerateAndCreateEntryDto } from './dto/generate-and-create-entry.dto'
 
 type GeneratedPlanningEntry = {
   title: string
@@ -51,33 +57,33 @@ export class PlanningService {
   }
 
   /** Crea un nuevo período académico validando el año escolar */
-  async createAcademicPeriod(schoolId: string, body: any) {
-    const schoolYear = await prisma.schoolYear.findFirst({ where: { id: body.schoolYearId, schoolId } })
+  async createAcademicPeriod(schoolId: string, dto: CreateAcademicPeriodDto) {
+    const schoolYear = await prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } })
     if (!schoolYear) throw new NotFoundException('School year not found')
 
     return prisma.academicPeriod.create({
       data: {
         schoolId,
-        schoolYearId: body.schoolYearId,
-        name: body.name,
-        sequence: body.sequence ?? 0,
-        startDate: new Date(body.startDate),
-        endDate: new Date(body.endDate),
+        schoolYearId: dto.schoolYearId,
+        name: dto.name,
+        sequence: dto.sequence ?? 0,
+        startDate: new Date(dto.startDate),
+        endDate: new Date(dto.endDate),
       },
     })
   }
 
   /** Actualiza un período académico existente */
-  async updateAcademicPeriod(schoolId: string, id: string, body: any) {
+  async updateAcademicPeriod(schoolId: string, id: string, dto: UpdateAcademicPeriodDto) {
     const ap = await prisma.academicPeriod.findFirst({ where: { id, schoolId } })
     if (!ap) throw new NotFoundException('Academic period not found')
 
     const data: any = {}
-    if (body.name) data.name = body.name
-    if (body.sequence !== undefined) data.sequence = body.sequence
-    if (body.startDate !== undefined) data.startDate = new Date(body.startDate)
-    if (body.endDate !== undefined) data.endDate = new Date(body.endDate)
-    if (body.status) data.status = body.status
+    if (dto.name) data.name = dto.name
+    if (dto.sequence !== undefined) data.sequence = dto.sequence
+    if (dto.startDate !== undefined) data.startDate = new Date(dto.startDate)
+    if (dto.endDate !== undefined) data.endDate = new Date(dto.endDate)
+    if (dto.status) data.status = dto.status
 
     return prisma.academicPeriod.update({
       where: { id },
@@ -242,10 +248,10 @@ export class PlanningService {
   }
 
   /** Crea una nueva entrada de planificación validando las referencias */
-  async createEntry(schoolId: string, body: any) {
+  async createEntry(schoolId: string, dto: CreatePlanningEntryDto) {
     const [sectionSubject, academicPeriod] = await Promise.all([
-      prisma.sectionSubject.findFirst({ where: { id: body.sectionSubjectId, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: body.academicPeriodId, schoolId } }),
+      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } }),
+      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
     ])
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
@@ -253,38 +259,38 @@ export class PlanningService {
     return prisma.planningEntry.create({
       data: {
         schoolId,
-        sectionSubjectId: body.sectionSubjectId,
-        academicPeriodId: body.academicPeriodId,
-        title: body.title,
-        sequence: body.sequence ?? 0,
-        specificCompetence: body.specificCompetence ?? '',
-        achievementIndicator: body.achievementIndicator ?? '',
-        contentConceptual: body.contentConceptual ?? '',
-        contentProcedural: body.contentProcedural ?? '',
-        contentAttitudinal: body.contentAttitudinal ?? '',
-        strategies: body.strategies ?? '',
-        activities: body.activities ?? { inicio: '', desarrollo: '', cierre: '' },
-        resources: body.resources ?? '',
-        evaluationMethod: body.evaluationMethod ?? '',
-        durationMinutes: body.durationMinutes ?? null,
-        plannedDate: body.plannedDate ? new Date(body.plannedDate) : null,
-        fundamentalCompetenceId: body.fundamentalCompetenceId ?? null,
-        evidence: body.evidence ?? '',
-        evaluationInstruments: body.evaluationInstruments ?? '',
+        sectionSubjectId: dto.sectionSubjectId,
+        academicPeriodId: dto.academicPeriodId,
+        title: dto.title,
+        sequence: dto.sequence ?? 0,
+        specificCompetence: dto.specificCompetence ?? '',
+        achievementIndicator: dto.achievementIndicator ?? '',
+        contentConceptual: dto.contentConceptual ?? '',
+        contentProcedural: dto.contentProcedural ?? '',
+        contentAttitudinal: dto.contentAttitudinal ?? '',
+        strategies: dto.strategies ?? '',
+        activities: dto.activities ?? { inicio: '', desarrollo: '', cierre: '' },
+        resources: dto.resources ?? '',
+        evaluationMethod: dto.evaluationMethod ?? '',
+        durationMinutes: dto.durationMinutes ?? null,
+        plannedDate: dto.plannedDate ? new Date(dto.plannedDate) : null,
+        fundamentalCompetenceId: dto.fundamentalCompetenceId ?? null,
+        evidence: dto.evidence ?? '',
+        evaluationInstruments: dto.evaluationInstruments ?? '',
       },
     })
   }
 
   /** Genera una planificación completa con IA siguiendo el currículo dominicano por competencias. */
-  async generateEntryDraft(schoolId: string, body: any): Promise<GeneratedPlanningEntry> {
+  async generateEntryDraft(schoolId: string, dto: GenerateEntryDraftDto): Promise<GeneratedPlanningEntry> {
     const apiKey = this.config.get<string>('OPENAI_API_KEY')
     if (!apiKey) throw new ServiceUnavailableException('OPENAI_API_KEY no está configurado.')
 
-    const sectionSubject = body.sectionSubjectId
-      ? await prisma.sectionSubject.findFirst({ where: { id: body.sectionSubjectId, schoolId } })
+    const sectionSubject = dto.sectionSubjectId
+      ? await prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } })
       : null
 
-    if (body.sectionSubjectId && !sectionSubject) {
+    if (dto.sectionSubjectId && !sectionSubject) {
       throw new NotFoundException('Section subject not found')
     }
 
@@ -297,14 +303,14 @@ export class PlanningService {
       : [null, null, null]
 
     const prompt = {
-      grado: grade?.name ?? body.gradeName ?? '',
-      seccion: section?.name ?? body.sectionName ?? '',
-      asignatura: subject?.name ?? body.subjectName ?? '',
-      tema: body.title ?? '',
-      duracionMinutos: body.durationMinutes ?? null,
-      competenciaFundamental: body.fundamentalCompetenceName ?? '',
-      competenciaEspecifica: body.specificCompetence ?? '',
-      indicadorLogro: body.achievementIndicator ?? '',
+      grado: grade?.name ?? dto.gradeName ?? '',
+      seccion: section?.name ?? dto.sectionName ?? '',
+      asignatura: subject?.name ?? dto.subjectName ?? '',
+      tema: dto.title ?? '',
+      duracionMinutos: dto.durationMinutes ?? null,
+      competenciaFundamental: dto.fundamentalCompetenceName ?? '',
+      competenciaEspecifica: dto.specificCompetence ?? '',
+      indicadorLogro: dto.achievementIndicator ?? '',
     }
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -381,7 +387,8 @@ export class PlanningService {
 
     const data = await response.json().catch(() => null)
     if (!response.ok) {
-      throw new ServiceUnavailableException(data?.error?.message ?? 'No se pudo generar la planificación.')
+      console.error('[OpenAI Error]', data?.error?.message ?? response.statusText)
+      throw new ServiceUnavailableException('Error al generar borrador con la IA')
     }
 
     const content = data?.choices?.[0]?.message?.content
@@ -401,20 +408,16 @@ export class PlanningService {
   }
 
   /** Genera y guarda una planificación en una sola operación. */
-  async generateAndCreateEntry(schoolId: string, body: any) {
-    if (!body.academicPeriodId) {
-      throw new BadRequestException('Academic period is required')
-    }
-
-    const draft = await this.generateEntryDraft(schoolId, body)
+  async generateAndCreateEntry(schoolId: string, dto: GenerateAndCreateEntryDto) {
+    const draft = await this.generateEntryDraft(schoolId, dto)
 
     return this.createEntry(schoolId, {
-      ...body,
+      ...dto,
       ...draft,
       title: draft.title.trim(),
-      fundamentalCompetenceId: body.fundamentalCompetenceId ?? null,
-      plannedDate: body.plannedDate ?? null,
-    })
+      fundamentalCompetenceId: dto.fundamentalCompetenceId ?? null,
+      plannedDate: dto.plannedDate ?? null,
+    } as unknown as CreatePlanningEntryDto)
   }
 
   private validateGeneratedDraft(draft: GeneratedPlanningEntry) {
@@ -425,27 +428,27 @@ export class PlanningService {
   }
 
   /** Actualiza una entrada de planificación existente */
-  async updateEntry(schoolId: string, id: string, body: any) {
+  async updateEntry(schoolId: string, id: string, dto: UpdatePlanningEntryDto) {
     const entry = await prisma.planningEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Planning entry not found')
 
     const data: any = {}
-    if (body.title) data.title = body.title
-    if (body.sequence !== undefined) data.sequence = body.sequence
-    if (body.specificCompetence !== undefined) data.specificCompetence = body.specificCompetence
-    if (body.achievementIndicator !== undefined) data.achievementIndicator = body.achievementIndicator
-    if (body.contentConceptual !== undefined) data.contentConceptual = body.contentConceptual
-    if (body.contentProcedural !== undefined) data.contentProcedural = body.contentProcedural
-    if (body.contentAttitudinal !== undefined) data.contentAttitudinal = body.contentAttitudinal
-    if (body.strategies !== undefined) data.strategies = body.strategies
-    if (body.activities !== undefined) data.activities = body.activities
-    if (body.resources !== undefined) data.resources = body.resources
-    if (body.evaluationMethod !== undefined) data.evaluationMethod = body.evaluationMethod
-    if (body.durationMinutes !== undefined) data.durationMinutes = body.durationMinutes
-    if (body.plannedDate !== undefined) data.plannedDate = body.plannedDate ? new Date(body.plannedDate) : null
-    if (body.fundamentalCompetenceId !== undefined) data.fundamentalCompetenceId = body.fundamentalCompetenceId
-    if (body.evidence !== undefined) data.evidence = body.evidence
-    if (body.evaluationInstruments !== undefined) data.evaluationInstruments = body.evaluationInstruments
+    if (dto.title) data.title = dto.title
+    if (dto.sequence !== undefined) data.sequence = dto.sequence
+    if (dto.specificCompetence !== undefined) data.specificCompetence = dto.specificCompetence
+    if (dto.achievementIndicator !== undefined) data.achievementIndicator = dto.achievementIndicator
+    if (dto.contentConceptual !== undefined) data.contentConceptual = dto.contentConceptual
+    if (dto.contentProcedural !== undefined) data.contentProcedural = dto.contentProcedural
+    if (dto.contentAttitudinal !== undefined) data.contentAttitudinal = dto.contentAttitudinal
+    if (dto.strategies !== undefined) data.strategies = dto.strategies
+    if (dto.activities !== undefined) data.activities = dto.activities
+    if (dto.resources !== undefined) data.resources = dto.resources
+    if (dto.evaluationMethod !== undefined) data.evaluationMethod = dto.evaluationMethod
+    if (dto.durationMinutes !== undefined) data.durationMinutes = dto.durationMinutes
+    if (dto.plannedDate !== undefined) data.plannedDate = dto.plannedDate ? new Date(dto.plannedDate) : null
+    if (dto.fundamentalCompetenceId !== undefined) data.fundamentalCompetenceId = dto.fundamentalCompetenceId
+    if (dto.evidence !== undefined) data.evidence = dto.evidence
+    if (dto.evaluationInstruments !== undefined) data.evaluationInstruments = dto.evaluationInstruments
 
     return prisma.planningEntry.update({
       where: { id },

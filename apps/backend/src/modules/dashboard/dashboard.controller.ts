@@ -11,6 +11,8 @@ import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { RolesGuard } from '../../common/guards/roles.guard'
+import { CreateTaskDto } from './dto/create-task.dto'
+import { UpdateTaskDto } from './dto/update-task.dto'
 
 @Controller('dashboard')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -32,8 +34,8 @@ export class DashboardController {
   /** Crea una nueva tarea en el dashboard (solo admin, director, coordinador, teacher) */
   @Post('tasks')
   @Roles('admin', 'director', 'coordinator', 'teacher')
-  createTask(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.dashboardService.createTask(user.schoolId, user.id, body)
+  createTask(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateTaskDto) {
+    return this.dashboardService.createTask(user.schoolId, user.id, dto)
   }
 
   /** Actualiza una tarea existente del dashboard (solo admin, director, coordinador, teacher) */
@@ -42,8 +44,8 @@ export class DashboardController {
   updateTask(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
-    @Body() body: any,
+    @Body() dto: UpdateTaskDto,
   ) {
-    return this.dashboardService.updateTask(user.schoolId, id, body)
+    return this.dashboardService.updateTask(user.schoolId, id, dto)
   }
 }

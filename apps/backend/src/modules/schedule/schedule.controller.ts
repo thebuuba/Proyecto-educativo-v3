@@ -12,6 +12,10 @@ import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { RolesGuard } from '../../common/guards/roles.guard'
+import { CreateTimeSlotDto } from './dto/create-time-slot.dto'
+import { UpdateTimeSlotDto } from './dto/update-time-slot.dto'
+import { CreateScheduleEntryDto } from './dto/create-schedule-entry.dto'
+import { UpdateScheduleEntryDto } from './dto/update-schedule-entry.dto'
 
 @Controller('schedule')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -63,8 +67,8 @@ export class ScheduleController {
   /** Crea una nueva franja horaria (solo admin, director, coordinador) */
   @Post('time-slots')
   @Roles('admin', 'director', 'coordinator')
-  createTimeSlot(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.scheduleService.createTimeSlot(user.schoolId, body)
+  createTimeSlot(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateTimeSlotDto) {
+    return this.scheduleService.createTimeSlot(user.schoolId, dto)
   }
 
   /** Actualiza una franja horaria existente (solo admin, director, coordinador) */
@@ -73,9 +77,9 @@ export class ScheduleController {
   updateTimeSlot(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
-    @Body() body: any,
+    @Body() dto: UpdateTimeSlotDto,
   ) {
-    return this.scheduleService.updateTimeSlot(user.schoolId, id, body)
+    return this.scheduleService.updateTimeSlot(user.schoolId, id, dto)
   }
 
   /** Elimina una franja horaria (solo admin, director, coordinador) */
@@ -101,8 +105,8 @@ export class ScheduleController {
   /** Crea una nueva entrada de horario (solo admin, director, coordinador) */
   @Post('entries')
   @Roles('admin', 'director', 'coordinator')
-  createEntry(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.scheduleService.createEntry(user.schoolId, body)
+  createEntry(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateScheduleEntryDto) {
+    return this.scheduleService.createEntry(user.schoolId, dto)
   }
 
   /** Actualiza una entrada de horario existente (solo admin, director, coordinador) */
@@ -111,9 +115,9 @@ export class ScheduleController {
   updateEntry(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
-    @Body() body: any,
+    @Body() dto: UpdateScheduleEntryDto,
   ) {
-    return this.scheduleService.updateEntry(user.schoolId, id, body)
+    return this.scheduleService.updateEntry(user.schoolId, id, dto)
   }
 
   /** Elimina una entrada de horario (solo admin, director, coordinador) */

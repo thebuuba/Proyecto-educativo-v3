@@ -7,6 +7,12 @@
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { CreateGradeDto } from './dto/create-grade.dto'
+import { UpdateGradeDto } from './dto/update-grade.dto'
+import { CreateSectionDto } from './dto/create-section.dto'
+import { UpdateSectionDto } from './dto/update-section.dto'
+import { CreateSubjectDto } from './dto/create-subject.dto'
+import { AssignSubjectDto } from './dto/assign-subject.dto'
 
 /** Convierte el valor de estado a minúsculas */
 function status(value: string) {
@@ -121,35 +127,35 @@ export class GradesSectionsService {
   }
 
   /** Crea un nuevo grado */
-  createGrade(schoolId: string, body: any) {
+  createGrade(schoolId: string, dto: CreateGradeDto) {
     return prisma.grade.create({
       data: {
         schoolId,
-        name: body.name,
-        level: body.level ?? null,
-        sequence: body.sequence ?? null,
-        academicLevelId: body.academicLevelId ?? null,
-        academicCycleId: body.academicCycleId ?? null,
-        defaultModalityId: body.defaultModalityId ?? null,
+        name: dto.name,
+        level: dto.level ?? null,
+        sequence: dto.sequence ?? null,
+        academicLevelId: dto.academicLevelId ?? null,
+        academicCycleId: dto.academicCycleId ?? null,
+        defaultModalityId: dto.defaultModalityId ?? null,
       },
     })
   }
 
   /** Actualiza un grado existente */
-  async updateGrade(schoolId: string, id: string, body: any) {
+  async updateGrade(schoolId: string, id: string, dto: UpdateGradeDto) {
     const grade = await prisma.grade.findFirst({ where: { id, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
 
     return prisma.grade.update({
       where: { id },
       data: {
-        ...(body.name && { name: body.name }),
-        ...(body.level !== undefined && { level: body.level }),
-        ...(body.sequence !== undefined && { sequence: body.sequence }),
-        ...(body.academicLevelId !== undefined && { academicLevelId: body.academicLevelId }),
-        ...(body.academicCycleId !== undefined && { academicCycleId: body.academicCycleId }),
-        ...(body.defaultModalityId !== undefined && { defaultModalityId: body.defaultModalityId }),
-        ...(body.status && { status: body.status }),
+        ...(dto.name && { name: dto.name }),
+        ...(dto.level !== undefined && { level: dto.level }),
+        ...(dto.sequence !== undefined && { sequence: dto.sequence }),
+        ...(dto.academicLevelId !== undefined && { academicLevelId: dto.academicLevelId }),
+        ...(dto.academicCycleId !== undefined && { academicCycleId: dto.academicCycleId }),
+        ...(dto.defaultModalityId !== undefined && { defaultModalityId: dto.defaultModalityId }),
+        ...(dto.status && { status: dto.status as any }),
       },
     })
   }
@@ -174,36 +180,36 @@ export class GradesSectionsService {
   }
 
   /** Crea una nueva sección validando el grado */
-  async createSection(schoolId: string, body: any) {
-    const grade = await prisma.grade.findFirst({ where: { id: body.gradeId, schoolId } })
+  async createSection(schoolId: string, dto: CreateSectionDto) {
+    const grade = await prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
 
     return prisma.section.create({
       data: {
         schoolId,
-        gradeId: body.gradeId,
-        name: body.name,
-        capacity: body.capacity ?? null,
+        gradeId: dto.gradeId,
+        name: dto.name,
+        capacity: dto.capacity ?? null,
       },
     })
   }
 
   /** Actualiza una sección existente */
-  async updateSection(schoolId: string, id: string, body: any) {
+  async updateSection(schoolId: string, id: string, dto: UpdateSectionDto) {
     const section = await prisma.section.findFirst({ where: { id, schoolId } })
     if (!section) throw new NotFoundException('Section not found')
-    if (body.gradeId) {
-      const grade = await prisma.grade.findFirst({ where: { id: body.gradeId, schoolId } })
+    if (dto.gradeId) {
+      const grade = await prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } })
       if (!grade) throw new NotFoundException('Grade not found')
     }
 
     return prisma.section.update({
       where: { id },
       data: {
-        ...(body.name && { name: body.name }),
-        ...(body.capacity !== undefined && { capacity: body.capacity }),
-        ...(body.gradeId && { gradeId: body.gradeId }),
-        ...(body.status && { status: body.status }),
+        ...(dto.name && { name: dto.name }),
+        ...(dto.capacity !== undefined && { capacity: dto.capacity }),
+        ...(dto.gradeId && { gradeId: dto.gradeId }),
+        ...(dto.status && { status: dto.status as any }),
       },
     })
   }
@@ -225,42 +231,42 @@ export class GradesSectionsService {
   }
 
   /** Crea una nueva materia */
-  createSubject(schoolId: string, body: any) {
+  createSubject(schoolId: string, dto: CreateSubjectDto) {
     return prisma.subject.create({
       data: {
         schoolId,
-        name: body.name,
-        code: body.code,
-        description: body.description ?? null,
-        credits: body.credits ?? null,
+        name: dto.name,
+        code: dto.code,
+        description: dto.description ?? null,
+        credits: dto.credits ?? null,
       },
     })
   }
 
   /** Asigna una materia a una sección con un profesor, validando todas las referencias */
-  async assignSubject(schoolId: string, body: any) {
+  async assignSubject(schoolId: string, dto: AssignSubjectDto) {
     const [grade, section, subject, schoolYear, teacher] = await Promise.all([
-      prisma.grade.findFirst({ where: { id: body.gradeId, schoolId } }),
-      prisma.section.findFirst({ where: { id: body.sectionId, schoolId, gradeId: body.gradeId } }),
-      prisma.subject.findFirst({ where: { id: body.subjectId, schoolId } }),
-      prisma.schoolYear.findFirst({ where: { id: body.schoolYearId, schoolId } }),
-      body.teacherId
-        ? prisma.teacher.findFirst({ where: { id: body.teacherId, schoolId } })
+      prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } }),
+      prisma.section.findFirst({ where: { id: dto.sectionId, schoolId, gradeId: dto.gradeId } }),
+      prisma.subject.findFirst({ where: { id: dto.subjectId, schoolId } }),
+      prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } }),
+      dto.teacherId
+        ? prisma.teacher.findFirst({ where: { id: dto.teacherId, schoolId } })
         : Promise.resolve(null),
     ])
     if (!grade) throw new NotFoundException('Grade not found')
     if (!section) throw new NotFoundException('Section not found')
     if (!subject) throw new NotFoundException('Subject not found')
     if (!schoolYear) throw new NotFoundException('School year not found')
-    if (body.teacherId && !teacher) throw new NotFoundException('Teacher not found')
+    if (dto.teacherId && !teacher) throw new NotFoundException('Teacher not found')
 
     return prisma.sectionSubject.create({
       data: {
-        sectionId: body.sectionId,
-        subjectId: body.subjectId,
-        teacherId: body.teacherId ?? null,
-        gradeId: body.gradeId,
-        schoolYearId: body.schoolYearId,
+        sectionId: dto.sectionId,
+        subjectId: dto.subjectId,
+        teacherId: dto.teacherId ?? null,
+        gradeId: dto.gradeId,
+        schoolYearId: dto.schoolYearId,
         schoolId,
       },
     })

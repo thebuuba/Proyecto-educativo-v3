@@ -9,6 +9,7 @@ import { ReportsService } from './reports.service'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
+import { ExportReportDto } from './dto/export-report.dto'
 
 @Controller('reports')
 @UseGuards(JwtAuthGuard)
@@ -23,7 +24,7 @@ export class ReportsController {
 
   /** Exporta un reporte en el formato especificado (estudiante, calificaciones, CSV) */
   @Post('export')
-  exportReport(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
-    return this.reportsService.exportReport(user.schoolId, body)
+  exportReport(@CurrentUser() user: AuthenticatedUser, @Body() dto: ExportReportDto) {
+    return this.reportsService.exportReport(user.schoolId, dto)
   }
 }
