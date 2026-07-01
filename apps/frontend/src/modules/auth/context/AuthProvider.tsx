@@ -40,6 +40,9 @@ type AuthProviderProps = {
   children: ReactNode
 }
 
+let oauthCallbackHrefInFlight: string | null = null
+let oauthCallbackPromise: Promise<void> | null = null
+
 const initialState: AuthState = {
   user: null,
   token: null,
@@ -229,28 +232,49 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, [])
 
   const finishOAuthCallback = useCallback(async () => {
-    const supabaseToken = await exchangeOAuthCode()
-    try {
-      await applySession(await createAulaSession(supabaseToken))
-    } catch (error) {
-      if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
-        setState({
-          user: null,
-          token: null,
-          supabaseAccessToken: supabaseToken,
-          appUser: null,
-          roles: [],
-          permissions: [],
-          loading: false,
-          authError: null,
-          profileRequired: true,
-          onboardingComplete: false,
-        })
-        return
-      }
-      throw error
+    const href = window.location.href
+    const code = new URL(href).searchParams.get('code')
+
+    if (!code) {
+      if (await restoreFromSupabaseSession()) return
+      throw new Error('No se pudo completar el inicio social.')
     }
-  }, [applySession])
+
+    if (oauthCallbackHrefInFlight === href && oauthCallbackPromise) return oauthCallbackPromise
+
+    oauthCallbackHrefInFlight = href
+    oauthCallbackPromise = (async () => {
+      const supabaseToken = await exchangeOAuthCode(code)
+      window.history.replaceState({}, '', '/auth/callback')
+      try {
+        await applySession(await createAulaSession(supabaseToken))
+      } catch (error) {
+        if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
+          setState({
+            user: null,
+            token: null,
+            supabaseAccessToken: supabaseToken,
+            appUser: null,
+            roles: [],
+            permissions: [],
+            loading: false,
+            authError: null,
+            profileRequired: true,
+            onboardingComplete: false,
+          })
+          return
+        }
+        throw error
+      }
+    })()
+
+    try {
+      await oauthCallbackPromise
+    } finally {
+      oauthCallbackHrefInFlight = null
+      oauthCallbackPromise = null
+    }
+  }, [applySession, restoreFromSupabaseSession])
 
   const completeOnboarding = useCallback(
     async (input: CompleteOnboardingInput) => {

@@ -58,8 +58,8 @@ export async function loginWithProvider(provider: 'google' | 'facebook'): Promis
 }
 
 /** Completa el callback OAuth y retorna la sesión Supabase. */
-export async function exchangeOAuthCode(): Promise<string> {
-  const { data, error } = await supabase.auth.exchangeCodeForSession(window.location.href)
+export async function exchangeOAuthCode(code: string): Promise<string> {
+  const { data, error } = await supabase.auth.exchangeCodeForSession(code)
   if (error) throw new Error(error.message)
   const token = data.session?.access_token
   if (!token) throw new Error('No se pudo completar el inicio social.')
