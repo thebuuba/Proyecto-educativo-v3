@@ -7,10 +7,8 @@ import {
   ArrowRight,
   BookOpen,
   CheckCircle,
-  Clock,
   Eye,
   EyeOff,
-  SquareCheckBig,
   Users,
 } from 'lucide-react'
 import type { FormEvent } from 'react'
@@ -25,30 +23,6 @@ type LocationState = {
   }
   registered?: boolean
 }
-
-const stats = [
-  {
-    icon: Users,
-    value: '1,248',
-    label: 'Estudiantes',
-    valueColor: '#1F4E5F',
-    iconColor: '#2D6977',
-  },
-  {
-    icon: Clock,
-    value: '5',
-    label: 'Clases hoy',
-    valueColor: '#1F4E5F',
-    iconColor: '#2D6977',
-  },
-  {
-    icon: SquareCheckBig,
-    value: '92%',
-    label: 'Asistencia',
-    valueColor: '#059669',
-    iconColor: '#10B981',
-  },
-]
 
 function GoogleIcon() {
   return (
@@ -155,23 +129,6 @@ export function LoginPage() {
             notas, grupos y agenda.
           </p>
 
-        </div>
-
-        <div className="relative z-10 fu fu5">
-          <div className="grid grid-cols-3 divide-x divide-[#E5E7EB] overflow-hidden rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB]">
-            {stats.map((stat) => {
-              const Icon = stat.icon
-              return (
-                <div key={stat.label} className="flex flex-col items-center gap-1 py-3">
-                  <Icon size={12} color={stat.iconColor} />
-                  <p className="text-sm font-extrabold" style={{ color: stat.valueColor }}>
-                    {stat.value}
-                  </p>
-                  <p className="text-[10px] text-[#6B7280]">{stat.label}</p>
-                </div>
-              )
-            })}
-          </div>
         </div>
       </section>
 
