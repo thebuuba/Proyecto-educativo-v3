@@ -4,7 +4,7 @@
  * Maneja las solicitudes HTTP relacionadas con el registro y
  * consulta de asistencia de estudiantes en el sistema educativo.
  */
-import { Controller, Get, Post, Body, Query, UseGuards } from '@nestjs/common'
+import { Controller, Delete, Get, Param, Post, Body, Query, UseGuards } from '@nestjs/common'
 import { AttendanceService } from './attendance.service'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
@@ -116,5 +116,15 @@ export class AttendanceController {
   @Roles('admin', 'director', 'coordinator', 'teacher')
   upsert(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
     return this.attendanceService.upsert(user.schoolId, body)
+  }
+
+  @Delete(':id')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  deleteRecord(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Query('type') type: 'daily' | 'class' = 'daily',
+  ) {
+    return this.attendanceService.deleteRecord(user.schoolId, id, type)
   }
 }

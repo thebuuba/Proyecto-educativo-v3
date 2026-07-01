@@ -93,12 +93,19 @@ export type PlanningEntryWithDetails = PlanningEntry & {
   sectionName: string
   gradeName: string
   periodName: string
+  schoolName?: string
+  schoolCode?: string
+  teacherName?: string
+  schoolYearId?: string
+  schoolYearName?: string
 }
 
 /** Filtros para consultar planificaciones */
 export type PlanningFilters = {
   academicPeriodId?: string
   sectionSubjectId?: string
+  query?: string
+  date?: string
 }
 
 /** Resumen de un período académico para planificación */

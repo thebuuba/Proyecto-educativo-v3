@@ -1,22 +1,19 @@
 /**
  * @file Componente ScheduleEntryForm
  *
- * Formulario modal para crear una nueva entrada de horario
- * (asignar materia a un bloque y día).
+ * Formulario modal para crear una clase a partir de un curso existente.
  */
 
 import { AlertCircle, X } from 'lucide-react'
 import type { FormEvent } from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
 import { getSectionSubjects, getSections, getTimeSlots } from '@/modules/schedule/services/scheduleService'
 import type { CreateScheduleEntryInput, SectionOption, TimeSlot } from '@/modules/schedule/types'
 
-/** Opciones de días de la semana para el formulario */
 const dayOptions = [
   { value: '1', label: 'Lunes' },
   { value: '2', label: 'Martes' },
@@ -31,18 +28,26 @@ type SectionSubjectOption = {
   teacherName: string
 }
 
-/** Propiedades del componente ScheduleEntryForm */
+type CourseOption = {
+  sectionId: string
+  sectionSubjectId: string
+  label: string
+}
+
 type ScheduleEntryFormProps = {
   schoolYearId: string
+  defaultDayOfWeek?: number
+  defaultTimeSlotId?: string
   submitting: boolean
   error: string | null
   onSubmit: (input: CreateScheduleEntryInput) => Promise<void>
   onClose: () => void
 }
 
-/** Formulario modal para crear una nueva entrada en el horario */
 export function ScheduleEntryForm({
   schoolYearId,
+  defaultDayOfWeek,
+  defaultTimeSlotId,
   submitting,
   error,
   onSubmit,
@@ -50,13 +55,10 @@ export function ScheduleEntryForm({
 }: ScheduleEntryFormProps) {
   const [sections, setSections] = useState<SectionOption[]>([])
   const [timeSlots, setTimeSlots] = useState<TimeSlot[]>([])
-  const [sectionSubjects, setSectionSubjects] = useState<SectionSubjectOption[]>([])
-
-  const [sectionId, setSectionId] = useState('')
-  const [sectionSubjectId, setSectionSubjectId] = useState('')
-  const [timeSlotId, setTimeSlotId] = useState('')
-  const [dayOfWeek, setDayOfWeek] = useState('')
-  const [room, setRoom] = useState('')
+  const [courseOptions, setCourseOptions] = useState<CourseOption[]>([])
+  const [courseKey, setCourseKey] = useState('')
+  const [timeSlotId, setTimeSlotId] = useState(defaultTimeSlotId ?? '')
+  const [dayOfWeek, setDayOfWeek] = useState(defaultDayOfWeek ? String(defaultDayOfWeek) : '')
   const [validationError, setValidationError] = useState('')
   const [loadingDeps, setLoadingDeps] = useState(true)
 
@@ -67,8 +69,19 @@ export function ScheduleEntryForm({
           getSections(),
           getTimeSlots(),
         ])
+        const courseData = await Promise.all(
+          sectionsData.map(async (section) => {
+            const subjects = await getSectionSubjects(section.id)
+            return subjects.map((subject: SectionSubjectOption) => ({
+              sectionId: section.id,
+              sectionSubjectId: subject.id,
+              label: `${section.gradeName} ${section.name} - ${subject.subjectName}`,
+            }))
+          }),
+        )
         setSections(sectionsData)
         setTimeSlots(slotsData)
+        setCourseOptions(courseData.flat())
       } catch (error) {
         setValidationError('No se pudieron cargar los datos del formulario.')
         console.error('Error al cargar formulario de horario:', error)
@@ -79,40 +92,27 @@ export function ScheduleEntryForm({
     void loadDeps()
   }, [])
 
-  useEffect(() => {
-    if (!sectionId) {
-      setSectionSubjects([])
-      setSectionSubjectId('')
-      return
-    }
-    let ignore = false
-    async function load() {
-      const data = await getSectionSubjects(sectionId)
-      if (!ignore) {
-        setSectionSubjects(data)
-        setSectionSubjectId('')
-      }
-    }
-    void load()
-    return () => { ignore = true }
-  }, [sectionId])
+  const selectedCourse = useMemo(
+    () => courseOptions.find((course) => `${course.sectionId}:${course.sectionSubjectId}` === courseKey),
+    [courseKey, courseOptions],
+  )
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setValidationError('')
 
-    if (!sectionId || !sectionSubjectId || !timeSlotId || !dayOfWeek) {
-      setValidationError('Completa sección, materia, día y bloque horario.')
+    if (!selectedCourse || !timeSlotId || !dayOfWeek) {
+      setValidationError('Completa curso, día y bloque horario.')
       return
     }
 
     await onSubmit({
       schoolYearId,
-      sectionSubjectId,
-      sectionId,
+      sectionSubjectId: selectedCourse.sectionSubjectId,
+      sectionId: selectedCourse.sectionId,
       timeSlotId,
       dayOfWeek: Number(dayOfWeek),
-      room: room.trim() || null,
+      room: null,
     })
   }
 
@@ -131,7 +131,7 @@ export function ScheduleEntryForm({
               Nueva clase
             </h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              Asigna una materia a un bloque horario.
+              Selecciona un curso existente para ocupar este bloque.
             </p>
           </div>
           <button
@@ -156,36 +156,30 @@ export function ScheduleEntryForm({
             <p className="text-sm text-muted-foreground">Cargando...</p>
           ) : (
             <>
-              <Field label="Sección">
+              <Field label="Curso">
                 <Select
-                  value={sectionId}
-                  onChange={(event) => setSectionId(event.target.value)}
+                  value={courseKey}
+                  onChange={(event) => setCourseKey(event.target.value)}
                 >
-                  <option value="">Seleccionar sección</option>
-                  {sections.map((section) => (
-                    <option key={section.id} value={section.id}>
-                      {section.gradeName} {section.name}
+                  <option value="">
+                    {courseOptions.length > 0 ? 'Seleccionar curso' : 'No hay cursos disponibles'}
+                  </option>
+                  {courseOptions.map((course) => (
+                    <option
+                      key={`${course.sectionId}:${course.sectionSubjectId}`}
+                      value={`${course.sectionId}:${course.sectionSubjectId}`}
+                    >
+                      {course.label}
                     </option>
                   ))}
                 </Select>
               </Field>
 
-              <Field label="Materia">
-                <Select
-                  value={sectionSubjectId}
-                  onChange={(event) => setSectionSubjectId(event.target.value)}
-                  disabled={!sectionId}
-                >
-                  <option value="">
-                    {sectionId ? 'Seleccionar materia' : 'Primero elige una sección'}
-                  </option>
-                  {sectionSubjects.map((ss) => (
-                    <option key={ss.id} value={ss.id}>
-                      {ss.subjectName} — {ss.teacherName}
-                    </option>
-                  ))}
-                </Select>
-              </Field>
+              {sections.length === 0 ? (
+                <p className="rounded-lg border border-dashed border-border p-3 text-sm text-muted-foreground">
+                  Crea primero cursos en Gestión Académica para poder asignarlos al horario.
+                </p>
+              ) : null}
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Día">
@@ -216,15 +210,6 @@ export function ScheduleEntryForm({
                   </Select>
                 </Field>
               </div>
-
-              <Field label="Aula (opcional)">
-                <Input
-                  type="text"
-                  value={room}
-                  onChange={(event) => setRoom(event.target.value)}
-                  placeholder="Ej: Aula 101"
-                />
-              </Field>
             </>
           )}
 
@@ -233,7 +218,7 @@ export function ScheduleEntryForm({
               Cancelar
             </Button>
             <Button type="submit" loading={submitting} disabled={loadingDeps}>
-              Guardar
+              Guardar clase
             </Button>
           </div>
         </form>
@@ -242,7 +227,6 @@ export function ScheduleEntryForm({
   )
 }
 
-/** Componente auxiliar para etiqueta de campo de formulario */
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block space-y-1.5">

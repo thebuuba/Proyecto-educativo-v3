@@ -7,6 +7,19 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
+const baseGradingPeriods = [
+  { name: 'P1 — Agosto, septiembre y octubre', sequence: 1, startMonth: 8, startDay: 1, endMonth: 10, endDay: 31 },
+  { name: 'P2 — Noviembre, diciembre y enero', sequence: 2, startMonth: 11, startDay: 1, endMonth: 1, endDay: 31 },
+  { name: 'P3 — Febrero, marzo y abril', sequence: 3, startMonth: 2, startDay: 1, endMonth: 4, endDay: 30 },
+  { name: 'P4 — Mayo', sequence: 4, startMonth: 5, startDay: 1, endMonth: 5, endDay: 31 },
+]
+
+function periodDate(schoolYearStart: Date, month: number, day: number) {
+  const startYear = schoolYearStart.getUTCFullYear()
+  const year = month >= 8 ? startYear : startYear + 1
+  return new Date(Date.UTC(year, month - 1, day))
+}
+
 /**
  * Servicio de calificaciones académicas.
  *
@@ -24,11 +37,20 @@ export class GradesService {
    * @param academicPeriodId - Identificador del período académico (opcional).
    * @returns Lista de registros de calificaciones.
    */
-  findAll(schoolId: string, sectionSubjectId?: string, academicPeriodId?: string) {
+  async findAll(schoolId: string, sectionSubjectId?: string, academicPeriodId?: string) {
     const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
     if (academicPeriodId) where.academicPeriodId = academicPeriodId
-    return prisma.gradesRecord.findMany({ where })
+    const records = await prisma.gradesRecord.findMany({ where })
+    return records.map((grade) => ({
+      id: grade.id,
+      enrollmentId: grade.enrollmentId,
+      score: Number(grade.score),
+      maxScore: Number(grade.maxScore),
+      weight: Number(grade.weight),
+      assessmentName: grade.assessmentName,
+      status: grade.status.toLowerCase(),
+    }))
   }
 
   /**
@@ -39,15 +61,17 @@ export class GradesService {
    * @returns Lista de materias de sección con datos descriptivos.
    */
   async getSectionSubjects(schoolId: string) {
-    const [items, subjects, sections, grades] = await Promise.all([
+    const [items, subjects, sections, grades, schoolYears] = await Promise.all([
       prisma.sectionSubject.findMany({ where: { schoolId, status: 'ACTIVE' } }),
       prisma.subject.findMany({ where: { schoolId } }),
       prisma.section.findMany({ where: { schoolId } }),
       prisma.grade.findMany({ where: { schoolId } }),
+      prisma.schoolYear.findMany({ where: { schoolId } }),
     ])
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
     const gradeById = new Map(grades.map((item) => [item.id, item]))
+    const schoolYearById = new Map(schoolYears.map((item) => [item.id, item]))
 
     return items.map((item) => {
       const subject = subjectById.get(item.subjectId)
@@ -58,6 +82,9 @@ export class GradesService {
         subjectName: subject?.name ?? '',
         sectionName: section?.name ?? '',
         gradeName: grade?.name ?? '',
+        sectionId: item.sectionId,
+        schoolYearId: item.schoolYearId,
+        schoolYearName: schoolYearById.get(item.schoolYearId)?.name ?? '',
       }
     })
   }
@@ -68,7 +95,31 @@ export class GradesService {
    * @param schoolId - Identificador del colegio.
    * @returns Lista de períodos académicos activos.
    */
-  getAcademicPeriods(schoolId: string) {
+  async getAcademicPeriods(schoolId: string) {
+    const existing = await prisma.academicPeriod.findMany({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: { sequence: 'asc' },
+    })
+    if (existing.length > 0) return existing
+
+    const schoolYear = await prisma.schoolYear.findFirst({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: [{ isCurrent: 'desc' }, { startDate: 'desc' }],
+    })
+    if (!schoolYear) return []
+
+    await prisma.academicPeriod.createMany({
+      data: baseGradingPeriods.map((period) => ({
+        schoolId,
+        schoolYearId: schoolYear.id,
+        name: period.name,
+        sequence: period.sequence,
+        startDate: periodDate(schoolYear.startDate, period.startMonth, period.startDay),
+        endDate: periodDate(schoolYear.startDate, period.endMonth, period.endDay),
+      })),
+      skipDuplicates: true,
+    })
+
     return prisma.academicPeriod.findMany({
       where: { schoolId, status: 'ACTIVE' },
       orderBy: { sequence: 'asc' },
@@ -105,28 +156,35 @@ export class GradesService {
       where: { schoolId, id: { in: enrollments.map((e) => e.studentId) } },
     })
 
-    const gradeMap = new Map(grades.map((g) => [g.enrollmentId, g]))
-
     return {
       sectionId: ss.sectionId,
       schoolYearId: ss.schoolYearId,
-      students: enrollments.map((enr) => {
-        const student = students.find((s) => s.id === enr.studentId)
-        const existing = gradeMap.get(enr.id)
-        return {
-          enrollmentId: enr.id,
-          studentId: enr.studentId,
-          studentCode: student?.studentCode ?? '',
-          firstName: student?.firstName ?? '',
-          lastName: student?.lastName ?? '',
-          gradeId: existing?.id ?? null,
-          score: existing?.score ?? null,
-          maxScore: existing?.maxScore ?? 10,
-          weight: existing?.weight ?? 1,
-          assessmentName: existing?.assessmentName ?? '',
-          status: existing?.status ?? null,
-        }
-      }),
+      gradeRecords: grades.map((grade) => ({
+        id: grade.id,
+        enrollmentId: grade.enrollmentId,
+        score: Number(grade.score),
+        maxScore: Number(grade.maxScore),
+        weight: Number(grade.weight),
+        assessmentName: grade.assessmentName,
+        status: grade.status.toLowerCase(),
+      })),
+      students: enrollments
+        .map((enr) => {
+          const student = students.find((s) => s.id === enr.studentId)
+          return {
+            enrollmentId: enr.id,
+            studentId: enr.studentId,
+            studentCode: student?.studentCode ?? '',
+            firstName: student?.firstName ?? '',
+            lastName: student?.lastName ?? '',
+          }
+        })
+        .sort((first, second) => {
+          const lastName = first.lastName.localeCompare(second.lastName, 'es')
+          if (lastName !== 0) return lastName
+          return first.firstName.localeCompare(second.firstName, 'es')
+        })
+        .map((student, index) => ({ ...student, listNumber: index + 1 })),
     }
   }
 
@@ -197,5 +255,11 @@ export class GradesService {
     return prisma.gradesRecord.findMany({
       where: { schoolId, enrollmentId: { in: enrollmentIds } },
     })
+  }
+
+  async deleteGrade(schoolId: string, id: string) {
+    const grade = await prisma.gradesRecord.findFirst({ where: { id, schoolId } })
+    if (!grade) throw new NotFoundException('Grade record not found')
+    return prisma.gradesRecord.delete({ where: { id } })
   }
 }

@@ -4,7 +4,7 @@
  */
 import { Bell, CircleHelp, Menu, Search, UserRound } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
@@ -37,6 +37,7 @@ const roleLabels: Record<UserRole, string> = {
  */
 export function Header({ onOpenSidebar }: HeaderProps) {
   const { appUser, roles } = useAuth()
+  const location = useLocation()
   const [periodName, setPeriodName] = useState<string | null>(null)
   const [profileOpen, setProfileOpen] = useState(false)
   const profileRef = useRef<HTMLDivElement>(null)
@@ -45,6 +46,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
   const initials = getInitials(displayName)
   const roleLabel = roles[0]?.key ? roleLabels[roles[0].key] : 'USUARIO'
   const profileMeta = periodName ? `${roleLabel} · ${periodName.toUpperCase()}` : roleLabel
+  const isPlanningPage = location.pathname.startsWith('/planificaciones')
 
   useEffect(() => {
     let ignore = false
@@ -139,14 +141,16 @@ export function Header({ onOpenSidebar }: HeaderProps) {
         </label>
 
         <div className="ml-auto flex items-center gap-4">
-          <button
-            type="button"
-            className="relative flex size-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-muted"
-            aria-label="Notificaciones"
-          >
-            <Bell className="size-5" />
-            <span className="absolute right-1.5 top-1.5 size-2.5 rounded-full bg-accent ring-2 ring-card" />
-          </button>
+          {!isPlanningPage ? (
+            <button
+              type="button"
+              className="relative flex size-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-muted"
+              aria-label="Notificaciones"
+            >
+              <Bell className="size-5" />
+              <span className="absolute right-1.5 top-1.5 size-2.5 rounded-full bg-accent ring-2 ring-card" />
+            </button>
+          ) : null}
 
           <button
             type="button"

@@ -76,6 +76,18 @@ export class PlanningController {
     return this.planningService.findEntries(user.schoolId, sectionSubjectId, academicPeriodId)
   }
 
+  @Post('entries/:id/duplicate')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  duplicateEntry(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.planningService.duplicateEntry(user.schoolId, id)
+  }
+
+  @Patch('entries/:id/archive')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  archiveEntry(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.planningService.archiveEntry(user.schoolId, id)
+  }
+
   /** Crea una nueva entrada de planificación (solo admin, director, coordinador, teacher) */
   @Post('entries')
   @Roles('admin', 'director', 'coordinator', 'teacher')

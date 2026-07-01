@@ -1,6 +1,6 @@
 /**
- * Proveedor de autenticación — Componente que envuelve la aplicación y
- * provee el estado de autenticación, los métodos para iniciar/cerrar sesión,
+ * Proveedor de autenticaciÃ³n â€” Componente que envuelve la aplicaciÃ³n y
+ * provee el estado de autenticaciÃ³n, los mÃ©todos para iniciar/cerrar sesiÃ³n,
  * registrar, recargar el perfil y verificar roles/permisos.
  */
 
@@ -54,14 +54,14 @@ const initialState: AuthState = {
 }
 
 /**
- * Componente proveedor de autenticación.
- * Gestiona el estado de sesión, carga el perfil al montar y expone
- * funciones para login, register, logout y verificación de roles/permisos.
+ * Componente proveedor de autenticaciÃ³n.
+ * Gestiona el estado de sesiÃ³n, carga el perfil al montar y expone
+ * funciones para login, register, logout y verificaciÃ³n de roles/permisos.
  */
 export function AuthProvider({ children }: AuthProviderProps) {
   const [state, setState] = useState<AuthState>(initialState)
 
-  /** Limpia el estado de autenticación y elimina el token. */
+  /** Limpia el estado de autenticaciÃ³n y elimina el token. */
   const clearAuthState = useCallback((authError: string | null = null) => {
     setAuthToken(null)
     setState({
@@ -78,7 +78,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     })
   }, [])
 
-  /** Aplica los datos de una sesión (login o registro) al estado global. */
+  /** Aplica los datos de una sesiÃ³n (login o registro) al estado global. */
   const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
     setAuthToken(response.token)
     const onboardingComplete = checkOnboarding
@@ -127,7 +127,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }, [applySession])
 
-  /** Carga el estado de autenticación desde el servidor (perfil, roles, permisos). */
+  /** Carga el estado de autenticaciÃ³n desde el servidor (perfil, roles, permisos). */
   const loadAuthState = useCallback(async () => {
     const token = getAuthToken()
     if (!token) {
@@ -168,7 +168,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       console.error(error)
       if (!await restoreFromSupabaseSession()) {
         clearAuthState(
-          'No se pudo cargar tu perfil. Revisa tu conexión e inténtalo de nuevo.',
+          'No se pudo cargar tu perfil. Revisa tu conexiÃ³n e intÃ©ntalo de nuevo.',
         )
       }
     }
@@ -254,10 +254,25 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const completeOnboarding = useCallback(
     async (input: CompleteOnboardingInput) => {
+      const { data: userData, error: userError } = await supabase.auth.getUser()
+      if (userError || !userData.user?.id) {
+        throw new Error('Tu sesión expiró. Inicia sesión nuevamente.')
+      }
+
       const { data } = await supabase.auth.getSession()
-      const supabaseToken = state.supabaseAccessToken ?? data.session?.access_token ?? null
-      if (!supabaseToken) throw new Error('No hay sesión de Supabase para completar el registro.')
-      await applySession(await completeOnboardingService(supabaseToken, input))
+      const supabaseToken = data.session?.access_token ?? state.supabaseAccessToken ?? null
+      if (!supabaseToken) {
+        throw new Error('Tu sesión expiró. Inicia sesión nuevamente.')
+      }
+
+      try {
+        await applySession(await completeOnboardingService(supabaseToken, input))
+      } catch (error) {
+        if (error instanceof ApiError && error.message === 'Invalid Supabase session') {
+          throw new Error('Tu sesión expiró. Inicia sesión nuevamente.', { cause: error })
+        }
+        throw error
+      }
     },
     [applySession, state.supabaseAccessToken],
   )

@@ -1,32 +1,45 @@
-/**
- * @file Componente PlanningEntryCard
- *
- * Tarjeta resumen de una planificación con título, curso,
- * indicador de logro y metadatos.
- */
+import {
+  Archive,
+  Copy,
+  Download,
+  Edit3,
+  Eye,
+  Printer,
+  Trash2,
+} from 'lucide-react'
 
-import { Trash2 } from 'lucide-react'
-
+import { Button } from '@/components/ui/Button'
 import type { PlanningEntryWithDetails } from '@/modules/planning/types'
+import {
+  exportPlanningToPdf,
+  exportPlanningToWord,
+} from '@/modules/planning/utils/planningDocumentExport'
 
-/** Propiedades del componente PlanningEntryCard */
 type PlanningEntryCardProps = {
   entry: PlanningEntryWithDetails
+  onPreview: (entry: PlanningEntryWithDetails) => void
   onEdit: (entry: PlanningEntryWithDetails) => void
+  onDuplicate: (entry: PlanningEntryWithDetails) => void
+  onArchive: (entry: PlanningEntryWithDetails) => void
   onDelete: (entry: PlanningEntryWithDetails) => void
 }
 
-/** Longitud máxima visible del indicador de logro antes de truncar */
 const MAX_INDICATOR_CHARS = 60
 
-/** Tarjeta resumen de una planificación curricular */
-export function PlanningEntryCard({ entry, onEdit, onDelete }: PlanningEntryCardProps) {
+export function PlanningEntryCard({
+  entry,
+  onPreview,
+  onEdit,
+  onDuplicate,
+  onArchive,
+  onDelete,
+}: PlanningEntryCardProps) {
+  const status = String(entry.status).toLowerCase()
+  const statusLabel =
+    status === 'archived' ? 'Archivada' : status === 'inactive' ? 'Borrador' : 'Completa'
+
   return (
-    <button
-      type="button"
-      className="w-full rounded-lg border border-border bg-card p-4 text-left shadow-sm transition hover:border-ring/40 hover:shadow-md"
-      onClick={() => onEdit(entry)}
-    >
+    <article className="w-full rounded-lg border border-border bg-card p-4 text-left shadow-sm transition hover:border-ring/40 hover:shadow-md">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <p className="text-xs font-medium uppercase tracking-wide text-accent">
@@ -35,24 +48,16 @@ export function PlanningEntryCard({ entry, onEdit, onDelete }: PlanningEntryCard
           <p className="mt-1 text-sm font-semibold text-foreground">{entry.title}</p>
           <p className="mt-1 text-xs text-muted-foreground">{entry.periodName}</p>
         </div>
-        <button
-          type="button"
-          className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-md text-muted-foreground hover:bg-muted hover:text-destructive"
-          aria-label={`Eliminar ${entry.title}`}
-          onClick={(e) => {
-            e.stopPropagation()
-            onDelete(entry)
-          }}
-        >
-          <Trash2 className="size-3.5" />
-        </button>
+        <span className="rounded-full bg-muted px-2 py-1 text-xs font-medium text-muted-foreground">
+          {statusLabel}
+        </span>
       </div>
 
       <div className="mt-3 flex flex-wrap gap-2">
         {entry.achievementIndicator ? (
           <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
             {entry.achievementIndicator.length > MAX_INDICATOR_CHARS
-              ? `${entry.achievementIndicator.slice(0, MAX_INDICATOR_CHARS)}…`
+              ? `${entry.achievementIndicator.slice(0, MAX_INDICATOR_CHARS)}...`
               : entry.achievementIndicator}
           </span>
         ) : null}
@@ -72,6 +77,44 @@ export function PlanningEntryCard({ entry, onEdit, onDelete }: PlanningEntryCard
           </span>
         ) : null}
       </div>
-    </button>
+
+      <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-3">
+        <Button variant="outline" size="sm" onClick={() => onPreview(entry)}>
+          <Eye className="size-4" />
+          Ver
+        </Button>
+        <Button variant="ghost" size="sm" onClick={() => onEdit(entry)}>
+          <Edit3 className="size-4" />
+          Editar
+        </Button>
+        <Button variant="ghost" size="sm" onClick={() => onDuplicate(entry)}>
+          <Copy className="size-4" />
+          Duplicar
+        </Button>
+        <Button variant="ghost" size="sm" onClick={() => exportPlanningToPdf(entry)}>
+          <Printer className="size-4" />
+          PDF
+        </Button>
+        <Button variant="ghost" size="sm" onClick={() => exportPlanningToWord(entry)}>
+          <Download className="size-4" />
+          Word
+        </Button>
+        {status !== 'archived' ? (
+          <Button variant="ghost" size="sm" onClick={() => onArchive(entry)}>
+            <Archive className="size-4" />
+            Archivar
+          </Button>
+        ) : null}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-destructive hover:text-destructive"
+          onClick={() => onDelete(entry)}
+        >
+          <Trash2 className="size-4" />
+          Eliminar
+        </Button>
+      </div>
+    </article>
   )
 }

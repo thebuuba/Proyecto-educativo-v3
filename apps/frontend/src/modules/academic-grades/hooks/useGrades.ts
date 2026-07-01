@@ -1,181 +1,322 @@
-/**
- * @file Hook de Calificaciones
- *
- * Gestiona el estado y las operaciones del módulo de calificaciones:
- * selección de sección-asignatura, carga de estudiantes, guardado
- * de notas y cálculo de estadísticas.
- */
-
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import {
-  computeGradeStats,
+  deleteGrade,
   getAcademicPeriods,
+  getGradeRecords,
   getStudentsForGrading,
   getTeacherSectionSubjects,
   saveGrade,
 } from '@/modules/academic-grades/services/gradesService'
 import type {
+  GradeRecordRow,
+  GradingActivity,
   AcademicPeriodOpt,
-  GradeSummaryStats,
   SectionSubjectOption,
   StudentGradeRow,
 } from '@/modules/academic-grades/types'
+import {
+  activityRecordName,
+  competencyPeriods,
+  getActivityIdFromRecordName,
+  getRecoveryScores,
+  recoveryRecordName,
+  sortStudentsForGrades,
+  validateScore,
+  type CompetencyPeriodId,
+} from '@/modules/academic-grades/utils/competencyGrades'
 
-/** Hook principal para la gestión de calificaciones */
+const activitiesStoragePrefix = 'aula-base:grades:activities'
+
+function activitiesStorageKey(sectionSubjectId: string, periodId: string) {
+  return `${activitiesStoragePrefix}:${sectionSubjectId}:${periodId}`
+}
+
+function readStoredActivities(sectionSubjectId: string, periodId: string) {
+  if (!sectionSubjectId || typeof window === 'undefined') return []
+  const raw = window.localStorage.getItem(activitiesStorageKey(sectionSubjectId, periodId))
+  if (!raw) return []
+  try {
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed) ? parsed as GradingActivity[] : []
+  } catch {
+    return []
+  }
+}
+
+function writeStoredActivities(sectionSubjectId: string, periodId: string, activities: GradingActivity[]) {
+  window.localStorage.setItem(
+    activitiesStorageKey(sectionSubjectId, periodId),
+    JSON.stringify(activities),
+  )
+}
+
 export function useGrades() {
   const [sectionSubjects, setSectionSubjects] = useState<SectionSubjectOption[]>([])
-  const [periods, setPeriods] = useState<AcademicPeriodOpt[]>([])
+  const [academicPeriods, setAcademicPeriods] = useState<AcademicPeriodOpt[]>([])
   const [selectedSsId, setSelectedSsId] = useState('')
-  const [selectedPeriodId, setSelectedPeriodId] = useState('')
+  const [selectedPeriodId, setSelectedPeriodId] = useState<CompetencyPeriodId>('p1')
   const [gradingContext, setGradingContext] = useState<{
     sectionId: string
     schoolYearId: string
   } | null>(null)
   const [students, setStudents] = useState<StudentGradeRow[]>([])
-  const [stats, setStats] = useState<GradeSummaryStats>({
-    average: null,
-    highest: null,
-    lowest: null,
-    passed: 0,
-    failed: 0,
-    total: 0,
-  })
+  const [gradeRecords, setGradeRecords] = useState<GradeRecordRow[]>([])
+  const [activities, setActivities] = useState<GradingActivity[]>([])
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  /** Carga las secciones-asignaturas y los períodos académicos */
+  const selectedSs = useMemo(
+    () => sectionSubjects.find((item) => item.id === selectedSsId) ?? null,
+    [sectionSubjects, selectedSsId],
+  )
+  const selectedPeriod = competencyPeriods.find((period) => period.id === selectedPeriodId) ?? competencyPeriods[0]
+  const recoveryScores = useMemo(() => getRecoveryScores(gradeRecords), [gradeRecords])
+
+  const academicPeriodId = useMemo(() => {
+    const index = competencyPeriods.findIndex((period) => period.id === selectedPeriodId)
+    return selectedPeriodId === 'final'
+      ? academicPeriods[0]?.id ?? null
+      : academicPeriods[index]?.id ?? null
+  }, [academicPeriods, selectedPeriodId])
+
   const loadInitialData = useCallback(async () => {
     setLoading(true)
     setError(null)
-
     try {
       const [ssList, periodList] = await Promise.all([
         getTeacherSectionSubjects(),
         getAcademicPeriods(),
       ])
       setSectionSubjects(ssList)
-      setPeriods(periodList)
-
-      if (ssList.length > 0 && !selectedSsId) {
-        setSelectedSsId(ssList[0].id)
+      setAcademicPeriods(periodList)
+      if (periodList.length === 0) {
+        setError('No hay períodos académicos activos para guardar calificaciones.')
       }
-      if (periodList.length > 0 && !selectedPeriodId) {
-        setSelectedPeriodId(periodList[0].id)
+      if (ssList.length > 0) {
+        setSelectedSsId((current) => current || ssList[0].id)
       }
     } catch (error) {
-      setError(
-        error instanceof Error
-          ? error.message
-          : 'No se pudieron cargar los datos.',
-      )
+      setError(error instanceof Error ? error.message : 'No se pudieron cargar los cursos.')
     } finally {
       setLoading(false)
     }
-  }, [selectedSsId, selectedPeriodId])
+  }, [])
 
   useEffect(() => {
     void loadInitialData()
   }, [loadInitialData])
 
-  /** Carga los estudiantes y sus calificaciones para la selección actual */
-  const loadStudents = useCallback(async () => {
-    if (!selectedSsId || !selectedPeriodId) return
+  const loadGrades = useCallback(async () => {
+    if (!selectedSsId || !academicPeriodId) {
+      setStudents([])
+      setGradeRecords([])
+      setActivities([])
+      return
+    }
 
     setLoading(true)
     setError(null)
-
     try {
-      const result = await getStudentsForGrading(selectedSsId, selectedPeriodId)
+      const result = await getStudentsForGrading(selectedSsId, academicPeriodId)
       setGradingContext({
         sectionId: result.sectionId,
         schoolYearId: result.schoolYearId,
       })
-      setStudents(result.students)
-      setStats(computeGradeStats(result.students))
+      setStudents(sortStudentsForGrades(result.students))
+      setGradeRecords(result.gradeRecords)
+      setActivities(readStoredActivities(selectedSsId, selectedPeriodId))
     } catch (error) {
-      setError(
-        error instanceof Error
-          ? error.message
-          : 'No se pudieron cargar los estudiantes.',
-      )
+      setError(error instanceof Error ? error.message : 'No se pudieron cargar las calificaciones.')
       setStudents([])
+      setGradeRecords([])
+      setActivities([])
     } finally {
       setLoading(false)
     }
-  }, [selectedSsId, selectedPeriodId])
+  }, [academicPeriodId, selectedPeriodId, selectedSsId])
 
   useEffect(() => {
-    if (!selectedSsId || !selectedPeriodId) return
+    void loadGrades()
+  }, [loadGrades])
 
-    void loadStudents()
-  }, [selectedSsId, selectedPeriodId, loadStudents])
+  const loadFinalRecords = useCallback(async () => {
+    if (!selectedSsId || !selectedSs) return new Map<CompetencyPeriodId, GradeRecordRow[]>()
+    const recordsByPeriod = new Map<CompetencyPeriodId, GradeRecordRow[]>()
+    await Promise.all(
+      competencyPeriods
+        .filter((period) => period.id !== 'final')
+        .map(async (period, index) => {
+          const periodId = academicPeriods[index]?.id
+          const records = periodId ? await getGradeRecords(selectedSsId, periodId) : []
+          recordsByPeriod.set(period.id as CompetencyPeriodId, records)
+        }),
+    )
+    return recordsByPeriod
+  }, [academicPeriods, selectedSs, selectedSsId])
 
-  /** Actualiza la calificación de un estudiante y la persiste */
-  const updateScore = useCallback(
-    async (
-      enrollmentId: string,
-      data: { score: number; maxScore: number; weight: number; assessmentName: string },
-    ) => {
-      setSaving(true)
+  const getActivitiesForPeriod = useCallback(
+    (periodId: CompetencyPeriodId) => readStoredActivities(selectedSsId, periodId),
+    [selectedSsId],
+  )
 
-      try {
-        const student = students.find((s) => s.enrollmentId === enrollmentId)
-        if (!gradingContext) {
-          throw new Error('No se pudo determinar el año escolar y la sección.')
+  function addActivity(activity: Omit<GradingActivity, 'id'>) {
+    const next: GradingActivity = {
+      ...activity,
+      id: crypto.randomUUID(),
+    }
+    const updated = [...activities, next]
+    setActivities(updated)
+    if (selectedSsId) {
+      writeStoredActivities(selectedSsId, selectedPeriodId, updated)
+    }
+  }
+
+  function updateActivity(activity: GradingActivity) {
+    const updated = activities.map((item) => item.id === activity.id ? activity : item)
+    setActivities(updated)
+    if (selectedSsId) {
+      writeStoredActivities(selectedSsId, selectedPeriodId, updated)
+    }
+  }
+
+  function deleteActivity(activityId: string) {
+    const updated = activities.filter((item) => item.id !== activityId)
+    setActivities(updated)
+    if (selectedSsId) {
+      writeStoredActivities(selectedSsId, selectedPeriodId, updated)
+    }
+  }
+
+  const updateActivityScore = useCallback(
+    async (enrollmentId: string, activity: GradingActivity, value: string) => {
+      if (!gradingContext || !academicPeriodId) return
+      const score = value.trim() === '' ? null : Number(value)
+      const existing = gradeRecords.find((record) =>
+        record.enrollmentId === enrollmentId &&
+        getActivityIdFromRecordName(record.assessmentName) === activity.id
+      )
+      if (score === null) {
+        if (existing) {
+          setSaving(true)
+          try {
+            await deleteGrade(existing.id)
+            await loadGrades()
+          } catch (error) {
+            setError(error instanceof Error ? error.message : 'No se pudo borrar la calificación.')
+          } finally {
+            setSaving(false)
+          }
         }
+        return
+      }
+      const validationError = validateScore(score, activity.maxScore)
+      if (validationError) {
+        setError(validationError)
+        return
+      }
 
+      setSaving(true)
+      try {
         await saveGrade({
           enrollmentId,
           sectionSubjectId: selectedSsId,
-          academicPeriodId: selectedPeriodId,
+          academicPeriodId,
           sectionId: gradingContext.sectionId,
           schoolYearId: gradingContext.schoolYearId,
-          ...data,
-          gradeId: student?.gradeId ?? null,
+          score,
+          maxScore: activity.maxScore,
+          weight: 1,
+          assessmentName: activityRecordName(activity),
+          gradeId: existing?.id ?? null,
         })
-
-        const updated = students.map((s) =>
-          s.enrollmentId === enrollmentId
-            ? {
-                ...s,
-                score: data.score,
-                maxScore: data.maxScore,
-                weight: data.weight,
-                assessmentName: data.assessmentName,
-                status: (s.status ?? 'draft') as typeof s.status,
-              }
-            : s,
-        )
-        setStudents(updated)
-        setStats(computeGradeStats(updated))
+        await loadGrades()
       } catch (error) {
-        setError(
-          error instanceof Error
-            ? error.message
-            : 'No se pudo guardar la calificación.',
-        )
+        setError(error instanceof Error ? error.message : 'No se pudo guardar la calificación.')
       } finally {
         setSaving(false)
       }
     },
-    [gradingContext, selectedPeriodId, selectedSsId, students],
+    [academicPeriodId, gradeRecords, gradingContext, loadGrades, selectedSsId],
+  )
+
+  const updateRecoveryScore = useCallback(
+    async (enrollmentId: string, blockId: string, value: string) => {
+      if (!gradingContext || !academicPeriodId) return
+      const score = value.trim() === '' ? null : Number(value)
+      const assessmentName = recoveryRecordName(blockId, selectedPeriodId)
+      const existing = gradeRecords.find((record) =>
+        record.enrollmentId === enrollmentId &&
+        record.assessmentName === assessmentName
+      )
+      if (score === null) {
+        if (existing) {
+          setSaving(true)
+          try {
+            await deleteGrade(existing.id)
+            await loadGrades()
+          } catch (error) {
+            setError(error instanceof Error ? error.message : 'No se pudo borrar la recuperación.')
+          } finally {
+            setSaving(false)
+          }
+        }
+        return
+      }
+      const validationError = validateScore(score, 100)
+      if (validationError) {
+        setError(validationError)
+        return
+      }
+
+      setSaving(true)
+      try {
+        await saveGrade({
+          enrollmentId,
+          sectionSubjectId: selectedSsId,
+          academicPeriodId,
+          sectionId: gradingContext.sectionId,
+          schoolYearId: gradingContext.schoolYearId,
+          score,
+          maxScore: 100,
+          weight: 1,
+          assessmentName,
+          gradeId: existing?.id ?? null,
+        })
+        await loadGrades()
+      } catch (error) {
+        setError(error instanceof Error ? error.message : 'No se pudo guardar la recuperación.')
+      } finally {
+        setSaving(false)
+      }
+    },
+    [academicPeriodId, gradeRecords, gradingContext, loadGrades, selectedPeriodId, selectedSsId],
   )
 
   return {
     sectionSubjects,
-    periods,
+    selectedSs,
     selectedSsId,
     setSelectedSsId,
+    periods: competencyPeriods,
+    selectedPeriod,
     selectedPeriodId,
     setSelectedPeriodId,
     students,
-    stats,
+    gradeRecords,
+    activities,
+    recoveryScores,
     loading,
     saving,
     error,
-    updateScore,
-    refresh: loadStudents,
+    addActivity,
+    updateActivity,
+    deleteActivity,
+    updateActivityScore,
+    updateRecoveryScore,
+    refresh: loadGrades,
+    loadFinalRecords,
+    getActivitiesForPeriod,
   }
 }

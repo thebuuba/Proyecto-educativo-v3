@@ -4,7 +4,7 @@
  * Maneja las solicitudes HTTP relacionadas con la gestión de
  * calificaciones de estudiantes en el sistema educativo.
  */
-import { Controller, Get, Post, Param, Body, Query, UseGuards } from '@nestjs/common'
+import { Controller, Delete, Get, Post, Param, Body, Query, UseGuards } from '@nestjs/common'
 import { GradesService } from './grades.service'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
@@ -96,6 +96,12 @@ export class GradesController {
   @Roles('admin', 'director', 'coordinator', 'teacher')
   saveGrade(@CurrentUser() user: AuthenticatedUser, @Body() body: any) {
     return this.gradesService.saveGrade(user.schoolId, body)
+  }
+
+  @Delete(':id')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  deleteGrade(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.gradesService.deleteGrade(user.schoolId, id)
   }
 
   /**

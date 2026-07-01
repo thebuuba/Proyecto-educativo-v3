@@ -91,6 +91,14 @@ export async function deletePlanningEntry(id: string): Promise<void> {
   await api.delete(`/planning/entries/${id}`)
 }
 
+export async function duplicatePlanningEntry(id: string): Promise<void> {
+  await api.post(`/planning/entries/${id}/duplicate`)
+}
+
+export async function archivePlanningEntry(id: string): Promise<void> {
+  await api.patch(`/planning/entries/${id}/archive`)
+}
+
 /** Obtiene las competencias fundamentales disponibles */
 export async function getCompetencies(): Promise<CompetencyOption[]> {
   return api.get<CompetencyOption[]>('/planning/competencies')

@@ -82,6 +82,13 @@ export const appRoutes: AppRoute[] = [
     index: true,
   },
   {
+    path: '/cursos',
+    label: 'Gestión Académica',
+    icon: LibraryBig,
+    component: GradesSectionsPage,
+    allowedRoles: ['admin', 'director', 'coordinator'],
+  },
+  {
     path: '/estudiantes',
     label: 'Matrícula',
     icon: UsersRound,
@@ -95,13 +102,6 @@ export const appRoutes: AppRoute[] = [
     component: SubjectsPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
     showInSidebar: false,
-  },
-  {
-    path: '/cursos',
-    label: 'Cursos',
-    icon: LibraryBig,
-    component: GradesSectionsPage,
-    allowedRoles: ['admin', 'director', 'coordinator'],
   },
   {
     path: '/horario',

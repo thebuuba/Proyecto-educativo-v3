@@ -4,6 +4,7 @@
 
 import {
   AlertCircle,
+  ArrowRight,
   CheckCircle2,
   Download,
   Plus,
@@ -70,6 +71,14 @@ export function StudentsPage() {
   const canEditStudent = hasRole(['admin', 'director', 'coordinator'])
   const canViewGuardians =
     hasPermission('academics.read_all') || hasRole(['admin', 'director', 'coordinator'])
+
+  function selectCourse(courseId: string) {
+    setSelectedCourseId(courseId)
+    setStudents([])
+    setLoadingStudents(Boolean(courseId))
+    setActionError(null)
+    setActionSuccess(null)
+  }
 
   useEffect(() => {
     let active = true
@@ -308,13 +317,7 @@ export function StudentsPage() {
           Selecciona un curso
           <Select
             value={selectedCourseId}
-            onChange={(event) => {
-              setSelectedCourseId(event.target.value)
-              setStudents([])
-              setLoadingStudents(Boolean(event.target.value))
-              setActionError(null)
-              setActionSuccess(null)
-            }}
+            onChange={(event) => selectCourse(event.target.value)}
             disabled={loadingCourses || courses.length === 0}
             className="mt-2 w-full"
             required
@@ -339,30 +342,47 @@ export function StudentsPage() {
       ) : courses.length === 0 ? (
         <EmptyState
           title="Primero debes crear un curso"
-          description="Primero debes crear un curso para poder matricular estudiantes."
+          description="Crea tus cursos en Gestión Académica para poder matricular estudiantes."
           action={
             <Link
               to="/cursos"
               className="inline-flex h-10 items-center justify-center rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm hover:opacity-90"
             >
-              Ir a Cursos
+              Ir a Gestión Académica
             </Link>
           }
         />
       ) : !selectedCourse ? (
-        <EmptyState
-          title="Selecciona un curso"
-          description="Selecciona un curso para ver su matrícula y habilitar las acciones."
-        />
+        <section className="space-y-4">
+          <div>
+            <h2 className="text-xl font-bold text-primary">Cursos disponibles</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Selecciona un curso para revisar, importar o matricular estudiantes.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {courses.map((course) => (
+              <CourseCard
+                key={course.id}
+                course={course}
+                onSelect={() => selectCourse(course.id)}
+              />
+            ))}
+          </div>
+        </section>
       ) : (
         <>
           <section className="rounded-lg border border-border bg-card p-4 shadow-sm">
-            <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
-              <div>
-                <h2 className="text-lg font-semibold text-primary">
-                  {selectedCourse.gradeName} {selectedCourse.sectionName}
+            <div className="flex flex-col gap-4 xl:flex-row xl:flex-wrap xl:items-start xl:justify-between">
+              <div className="min-w-0 flex-1">
+                <h2 className="break-words text-xl font-bold text-primary">
+                  {selectedCourse.gradeName} {selectedCourse.sectionName} · {selectedCourse.subjectName}
                 </h2>
-                <dl className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-4">
+                <p className="mt-1 text-sm font-medium text-muted-foreground">
+                  Año escolar {selectedCourse.schoolYearName}
+                </p>
+                <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6">
                   <HeaderItem label="Grado" value={selectedCourse.gradeName} />
                   <HeaderItem label="Sección" value={selectedCourse.sectionName} />
                   <HeaderItem label="Área" value={selectedCourse.area || 'No definida'} />
@@ -373,20 +393,23 @@ export function StudentsPage() {
                 </dl>
               </div>
 
-              <div className="flex flex-col gap-2 sm:flex-row xl:self-end">
+              <div className="flex w-full flex-wrap gap-2 xl:w-auto xl:justify-end">
+                <Button variant="outline" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={() => selectCourse('')}>
+                  Cambiar curso
+                </Button>
                 {canCreateEnrollment ? (
                   <>
-                    <Button variant="secondary" className="h-10 px-4 text-sm" onClick={openCreateForm}>
+                    <Button variant="secondary" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={openCreateForm}>
                       <Plus className="size-4 text-accent" />
                       Agregar estudiante
                     </Button>
-                    <Button variant="outline" className="h-10 px-4 text-sm" onClick={() => setImportModalOpen(true)}>
+                    <Button variant="outline" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={() => setImportModalOpen(true)}>
                       <Upload className="size-4" />
                       Importar estudiantes
                     </Button>
                   </>
                 ) : null}
-                <Button variant="outline" className="h-10 px-4 text-sm" onClick={handleExport}>
+                <Button variant="outline" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={handleExport}>
                   <Download className="size-4" />
                   Exportar matrícula
                 </Button>
@@ -465,11 +488,51 @@ export function StudentsPage() {
   )
 }
 
+function CourseCard({
+  course,
+  onSelect,
+}: {
+  course: EnrollmentCourse
+  onSelect: () => void
+}) {
+  return (
+    <button
+      type="button"
+      className="group flex min-h-44 flex-col rounded-lg border border-border bg-card p-5 text-left shadow-sm transition hover:border-ring/50 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25"
+      onClick={onSelect}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h3 className="text-lg font-bold text-primary">
+            {course.gradeName} {course.sectionName}
+          </h3>
+          <p className="mt-2 break-words text-sm font-semibold leading-5 text-foreground">
+            {course.subjectName}
+          </p>
+        </div>
+        <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-primary" />
+      </div>
+
+      <div className="mt-auto pt-5">
+        <p className="text-sm text-muted-foreground">
+          Año escolar {course.schoolYearName}
+        </p>
+        <div className="mt-3 flex items-center justify-between gap-3">
+          <span className="text-sm font-semibold text-foreground">
+            {course.studentCount} estudiante{course.studentCount === 1 ? '' : 's'}
+          </span>
+          <span className="text-sm font-bold text-primary">Gestionar matrícula</span>
+        </div>
+      </div>
+    </button>
+  )
+}
+
 function HeaderItem({ label, value }: { label: string; value: string }) {
   return (
-    <div>
-      <dt className="text-xs font-bold uppercase text-muted-foreground">{label}</dt>
-      <dd className="mt-0.5 font-semibold text-foreground">{value}</dd>
+    <div className="min-w-0 rounded-lg border border-border bg-muted/35 px-3 py-2">
+      <dt className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">{label}</dt>
+      <dd className="mt-1 break-words font-semibold leading-5 text-foreground">{value}</dd>
     </div>
   )
 }

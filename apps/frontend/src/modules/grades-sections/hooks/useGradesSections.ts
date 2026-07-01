@@ -26,6 +26,7 @@ import type {
   CreateSectionInput,
   CreateSubjectInput,
   GradeWithSections,
+  TeacherAssignmentInput,
   UpdateGradeInput,
   UpdateSectionInput,
 } from '@/modules/grades-sections/types'
@@ -132,6 +133,76 @@ export function useGradesSections() {
     [refetch],
   )
 
+  const createTeacherAssignment = useCallback(
+    async (input: TeacherAssignmentInput) => {
+      if (!currentSchoolYear) {
+        throw new Error('Activa un año escolar antes de crear una asignación.')
+      }
+
+      let grade = grades.find((item) => {
+        const sameName = item.name.trim().toLowerCase() === input.gradeName.trim().toLowerCase()
+        const sameLevel = (item.academicLevelId ?? null) === input.academicLevelId
+        const sameCycle = (item.academicCycleId ?? null) === input.academicCycleId
+        return sameName && sameLevel && sameCycle
+      })
+
+      if (!grade) {
+        const createdGrade = await createGrade({
+          name: input.gradeName,
+          level: input.academicLevelName,
+          academicLevelId: input.academicLevelId,
+          academicCycleId: input.academicCycleId,
+          sequence: input.gradeSequence,
+        })
+        grade = { ...createdGrade, sections: [] } as GradeWithSections
+      }
+
+      let section = grade.sections.find((item) => item.name.toLowerCase() === input.sectionName.toLowerCase())
+      if (!section) {
+        section = await createSection({
+          gradeId: grade.id,
+          name: input.sectionName,
+        })
+      }
+
+      let subjectId = input.subjectId
+      if (!subjectId) {
+        const existingSubject = catalogs.subjects.find((subject) => {
+          const sameCode = subject.code.toLowerCase() === input.subjectCode.toLowerCase()
+          const sameName = subject.name.toLowerCase() === input.subjectName.toLowerCase()
+          return sameCode || sameName
+        })
+        subjectId = existingSubject?.id
+      }
+
+      if (!subjectId) {
+        const subject = await createSubject({
+          code: input.subjectCode,
+          name: input.subjectName,
+        })
+        subjectId = subject.id
+      }
+
+      const duplicateAssignment = section.assignments?.some((assignment) => {
+        const sameSubject = assignment.subjectId === subjectId
+        return sameSubject && assignment.status === 'active'
+      })
+      if (duplicateAssignment) {
+        throw new Error('Esta asignatura ya está asignada a la sección seleccionada.')
+      }
+
+      await assignSubjectToSection({
+        schoolYearId: currentSchoolYear.id,
+        gradeId: grade.id,
+        sectionId: section.id,
+        subjectId,
+        teacherId: null,
+      })
+      await refetch()
+    },
+    [catalogs.subjects, currentSchoolYear, grades, refetch],
+  )
+
   const assignSubject = useCallback(
     async (input: AssignSubjectInput) => {
       await assignSubjectToSection(input)
@@ -162,6 +233,7 @@ export function useGradesSections() {
     editSection,
     removeSection,
     addSubject,
+    createTeacherAssignment,
     assignSubject,
     removeSubjectAssignment,
   }

@@ -1,7 +1,8 @@
 /**
  * Barra lateral de navegación con enlaces a módulos y cierre de sesión.
  */
-import { GraduationCap, LogOut, X } from 'lucide-react'
+import { ChevronsLeft, ChevronsRight, GraduationCap, LogOut, X } from 'lucide-react'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -9,12 +10,11 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { navigationRoutes } from '@/routes/appRoutes'
 import { cn } from '@/utils/cn'
 
-/** Propiedades del componente Sidebar. */
 type SidebarProps = {
-  /** Controla si la barra lateral está visible (mobile). */
   isOpen: boolean
-  /** Función para cerrar la barra lateral. */
+  isPinned: boolean
   onClose: () => void
+  onTogglePinned: () => void
 }
 
 const routeIconColors: Record<string, string> = {
@@ -29,16 +29,17 @@ const routeIconColors: Record<string, string> = {
   '/configuracion': 'bg-slate-100 text-slate-700',
 }
 
-/**
- * Barra lateral de navegación. En desktop se muestra fija; en mobile
- * se superpone con overlay. Filtra rutas según los roles del usuario.
- *
- * @param props.isOpen - Visibilidad en mobile.
- * @param props.onClose - Callback de cierre.
- */
-export function Sidebar({ isOpen, onClose }: SidebarProps) {
+export function Sidebar({ isOpen, isPinned, onClose, onTogglePinned }: SidebarProps) {
   const { hasRole, logout } = useAuth()
+  const [isHovered, setIsHovered] = useState(false)
   const visibleRoutes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
+  const isExpanded = isPinned || isHovered
+  const expandedTextClass = isExpanded ? 'block' : 'block lg:hidden'
+
+  function handleTogglePinned() {
+    setIsHovered(false)
+    onTogglePinned()
+  }
 
   return (
     <>
@@ -52,21 +53,32 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
       />
 
       <aside
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         className={cn(
-          'fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-transform duration-200 lg:translate-x-0',
+          'group fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-[transform,width] duration-200 lg:translate-x-0',
+          isExpanded ? 'lg:w-[260px]' : 'lg:w-[88px]',
           isOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className="flex h-[74px] shrink-0 items-center justify-between border-b border-sidebar-border px-6">
+        <div
+          className={cn(
+            'flex h-[74px] shrink-0 items-center border-b border-sidebar-border transition-all',
+            isExpanded
+              ? 'justify-between px-6'
+              : 'justify-between px-6 lg:justify-center lg:px-4',
+          )}
+        >
           <NavLink
             to="/"
-            className="flex items-center gap-3"
+            className="flex min-w-0 items-center gap-3"
             onClick={onClose}
+            title="Aula Base"
           >
             <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sidebar-primary text-sidebar-primary-foreground shadow-lg shadow-sidebar-primary/30">
               <GraduationCap className="size-5" strokeWidth={2.4} />
             </span>
-            <span>
+            <span className={cn('min-w-0', expandedTextClass)}>
               <span className="block text-base font-bold text-sidebar-foreground">
                 Aula Base
               </span>
@@ -85,6 +97,20 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           >
             <X className="size-5" />
           </Button>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className={cn(
+              'hidden text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground lg:flex',
+              !isExpanded && 'lg:hidden',
+            )}
+            aria-label={isPinned ? 'Colapsar navegación' : 'Fijar navegación'}
+            title={isPinned ? 'Colapsar navegación' : 'Fijar navegación'}
+            onClick={handleTogglePinned}
+          >
+            {isPinned ? <ChevronsLeft className="size-5" /> : <ChevronsRight className="size-5" />}
+          </Button>
         </div>
 
         <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-5">
@@ -98,9 +124,13 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 to={item.path}
                 end={item.path === '/'}
                 onClick={onClose}
+                title={item.label}
                 className={({ isActive }) =>
                   cn(
-                    'flex min-h-11 items-center gap-3 rounded-xl px-4 text-sm font-semibold transition-colors',
+                    'flex min-h-11 items-center gap-3 rounded-xl text-sm font-semibold transition-colors',
+                    isExpanded
+                      ? 'px-4'
+                      : 'px-4 lg:justify-center lg:px-3',
                     isActive
                       ? 'bg-sidebar-primary text-sidebar-primary-foreground shadow-lg shadow-sidebar-primary/20'
                       : 'text-sidebar-foreground/75 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
@@ -117,7 +147,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                     >
                       <Icon className="size-4.5 shrink-0" />
                     </span>
-                    <span className="truncate">{item.label}</span>
+                    <span className={cn('truncate', expandedTextClass)}>{item.label}</span>
                   </>
                 )}
               </NavLink>
@@ -125,14 +155,18 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           })}
         </nav>
 
-        <div className="border-t border-sidebar-border px-4 py-5">
+        <div className={cn('border-t border-sidebar-border py-5', isExpanded ? 'px-4' : 'px-4 lg:px-3')}>
           <button
             type="button"
             onClick={() => void logout()}
-            className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-bold text-sidebar-primary transition-colors hover:bg-sidebar-accent"
+            className={cn(
+              'flex w-full items-center gap-3 rounded-lg py-2 text-sm font-bold text-sidebar-primary transition-colors hover:bg-sidebar-accent',
+              isExpanded ? 'justify-start px-3' : 'justify-start px-3 lg:justify-center',
+            )}
+            title="Cerrar sesión"
           >
             <LogOut className="size-5 shrink-0" />
-            <span>Cerrar sesión</span>
+            <span className={expandedTextClass}>Cerrar sesión</span>
           </button>
         </div>
       </aside>

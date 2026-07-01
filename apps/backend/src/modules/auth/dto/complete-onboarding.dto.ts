@@ -1,11 +1,4 @@
-import {
-  ArrayMinSize,
-  IsArray,
-  IsEmail,
-  IsOptional,
-  IsString,
-  ValidateNested,
-} from 'class-validator'
+import { IsArray, IsEmail, IsOptional, IsString, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
 
 class OnboardingSchoolDto {
@@ -38,36 +31,13 @@ class OnboardingSchoolYearDto {
   @IsString()
   name!: string
 
+  @IsOptional()
   @IsString()
-  startDate!: string
+  startDate?: string
 
+  @IsOptional()
   @IsString()
-  endDate!: string
-}
-
-class OnboardingPeriodDto {
-  @IsString()
-  name!: string
-
-  @IsString()
-  startDate!: string
-
-  @IsString()
-  endDate!: string
-}
-
-class OnboardingCourseDto {
-  @IsString()
-  gradeName!: string
-
-  @IsString()
-  sectionName!: string
-
-  @IsString()
-  subjectName!: string
-
-  @IsString()
-  subjectCode!: string
+  endDate?: string
 }
 
 export class CompleteOnboardingDto {
@@ -89,15 +59,11 @@ export class CompleteOnboardingDto {
   @Type(() => OnboardingSchoolYearDto)
   schoolYear!: OnboardingSchoolYearDto
 
+  @IsOptional()
   @IsArray()
-  @ArrayMinSize(1)
-  @ValidateNested({ each: true })
-  @Type(() => OnboardingPeriodDto)
-  periods!: OnboardingPeriodDto[]
+  periods?: unknown[]
 
+  @IsOptional()
   @IsArray()
-  @ArrayMinSize(1)
-  @ValidateNested({ each: true })
-  @Type(() => OnboardingCourseDto)
-  courses!: OnboardingCourseDto[]
+  courses?: unknown[]
 }

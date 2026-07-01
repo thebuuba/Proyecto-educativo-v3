@@ -1,7 +1,7 @@
 /**
- * Servicio de autenticación.
- * Provee la lógica de negocio para registro, inicio de sesión,
- * recuperación de contraseña y consulta de perfil del usuario autenticado.
+ * Servicio de autenticaciÃ³n.
+ * Provee la lÃ³gica de negocio para registro, inicio de sesiÃ³n,
+ * recuperaciÃ³n de contraseÃ±a y consulta de perfil del usuario autenticado.
  */
 import {
   Injectable,
@@ -44,11 +44,11 @@ function createSlug(value: string) {
 }
 
 /**
- * Obtiene un slug único para una escuela, agregando un sufijo numérico
- * si el slug base ya está ocupado.
+ * Obtiene un slug Ãºnico para una escuela, agregando un sufijo numÃ©rico
+ * si el slug base ya estÃ¡ ocupado.
  *
  * @param input - Texto base para el slug.
- * @returns Slug único disponible.
+ * @returns Slug Ãºnico disponible.
  */
 async function getAvailableSchoolSlug(input: string) {
   const baseSlug = createSlug(input) || 'escuela'
@@ -188,6 +188,23 @@ function toDate(value: string, fieldName: string) {
   return date
 }
 
+function inferSchoolYearDates(name: string, startDate?: string, endDate?: string) {
+  const match = name.match(/(\d{4})\D+(\d{4})/)
+  const fallbackStartYear = new Date().getUTCFullYear()
+  const startYear = match ? Number(match[1]) : fallbackStartYear
+  const endYear = match ? Number(match[2]) : startYear + 1
+
+  return {
+    startDate: toDate(startDate || `${startYear}-08-01`, 'Fecha de inicio'),
+    endDate: toDate(endDate || `${endYear}-06-30`, 'Fecha de fin'),
+  }
+}
+
+function normalizeSchoolShift(value?: string) {
+  const shift = value?.split(',')[0]?.trim()
+  return shift || 'extended'
+}
+
 function splitName(fullName: string) {
   const parts = fullName.trim().split(/\s+/).filter(Boolean)
   const firstName = parts.shift() || fullName.trim()
@@ -224,13 +241,13 @@ export class AuthService {
   }
 
   /**
-   * Registra un nuevo usuario y su escuela en una transacción.
-   * Crea la escuela, el rol de administrador, el usuario y la asignación de rol.
+   * Registra un nuevo usuario y su escuela en una transacciÃ³n.
+   * Crea la escuela, el rol de administrador, el usuario y la asignaciÃ³n de rol.
    * Retorna un token JWT junto con los datos del usuario creado.
    *
    * @param dto - Datos de registro.
    * @returns Objeto con usuario, token, roles y permisos.
-   * @throws ConflictException si el email ya está registrado.
+   * @throws ConflictException si el email ya estÃ¡ registrado.
    */
   async register(dto: RegisterDto) {
     assertAuthEnvironment()
@@ -289,13 +306,13 @@ export class AuthService {
   }
 
   /**
-   * Inicia sesión con email y contraseña.
+   * Inicia sesiÃ³n con email y contraseÃ±a.
    * Verifica las credenciales, consulta roles y permisos activos,
    * y retorna un token JWT junto con los datos del usuario.
    *
-   * @param dto - Credenciales de inicio de sesión.
-   * @returns Objeto con usuario, token, roles y permisos únicos.
-   * @throws UnauthorizedException si las credenciales son inválidas.
+   * @param dto - Credenciales de inicio de sesiÃ³n.
+   * @returns Objeto con usuario, token, roles y permisos Ãºnicos.
+   * @throws UnauthorizedException si las credenciales son invÃ¡lidas.
    */
   async login(dto: LoginDto) {
     assertAuthEnvironment()
@@ -378,20 +395,15 @@ export class AuthService {
     })
     if (existing) return this.createSessionFromSupabaseToken(supabaseAccessToken)
 
-    const startDate = toDate(dto.schoolYear.startDate, 'Fecha de inicio')
-    const endDate = toDate(dto.schoolYear.endDate, 'Fecha de fin')
+    const { startDate, endDate } = inferSchoolYearDates(
+      dto.schoolYear.name,
+      dto.schoolYear.startDate,
+      dto.schoolYear.endDate,
+    )
     if (endDate < startDate) {
-      throw new BadRequestException('El año escolar debe terminar despues de iniciar.')
+      throw new BadRequestException('El aÃ±o escolar debe terminar despues de iniciar.')
     }
 
-    const normalizedPeriods = dto.periods.map((period, index) => {
-      const periodStart = toDate(period.startDate, `Inicio de ${period.name}`)
-      const periodEnd = toDate(period.endDate, `Fin de ${period.name}`)
-      if (periodEnd < periodStart || periodStart < startDate || periodEnd > endDate) {
-        throw new BadRequestException('Los periodos deben estar dentro del año escolar.')
-      }
-      return { ...period, startDate: periodStart, endDate: periodEnd, sequence: index + 1 }
-    })
 
     const slug = await getAvailableSchoolSlug(dto.school.name)
     const { firstName, lastName } = splitName(dto.fullName)
@@ -404,7 +416,7 @@ export class AuthService {
             regionalName: dto.school.regionalName ?? null,
             districtName: dto.school.districtName ?? null,
             primaryModality: dto.school.primaryModality ?? 'general',
-            schoolShift: dto.school.schoolShift ?? 'extended',
+            schoolShift: normalizeSchoolShift(dto.school.schoolShift),
             enabledSubsystems: dto.school.enabledSubsystems?.length
               ? dto.school.enabledSubsystems
               : ['regular'],
@@ -446,7 +458,7 @@ export class AuthService {
           },
         })
 
-        const schoolYear = await tx.schoolYear.create({
+        await tx.schoolYear.create({
           data: {
             schoolId: school.id,
             name: dto.schoolYear.name,
@@ -455,53 +467,6 @@ export class AuthService {
             isCurrent: true,
           },
         })
-
-        for (const period of normalizedPeriods) {
-          await tx.academicPeriod.create({
-            data: {
-              schoolId: school.id,
-              schoolYearId: schoolYear.id,
-              name: period.name,
-              sequence: period.sequence,
-              startDate: period.startDate,
-              endDate: period.endDate,
-            },
-          })
-        }
-
-        for (const [index, course] of dto.courses.entries()) {
-          const grade = await tx.grade.create({
-            data: {
-              schoolId: school.id,
-              name: course.gradeName,
-              sequence: index + 1,
-            },
-          })
-          const section = await tx.section.create({
-            data: {
-              schoolId: school.id,
-              gradeId: grade.id,
-              name: course.sectionName,
-            },
-          })
-          const subject = await tx.subject.create({
-            data: {
-              schoolId: school.id,
-              name: course.subjectName,
-              code: course.subjectCode,
-            },
-          })
-          await tx.sectionSubject.create({
-            data: {
-              schoolId: school.id,
-              schoolYearId: schoolYear.id,
-              gradeId: grade.id,
-              sectionId: section.id,
-              subjectId: subject.id,
-              teacherId: teacher.id,
-            },
-          })
-        }
 
         return { user, roles: [adminRole] }
       },
@@ -512,34 +477,29 @@ export class AuthService {
   }
 
   async getOnboardingStatus(schoolId: string) {
-    const [schoolYear, period, grade, section, subject, assignment] = await Promise.all([
+    const [schoolYear] = await Promise.all([
       prisma.schoolYear.findFirst({ where: { schoolId, isCurrent: true, status: 'ACTIVE' } }),
-      prisma.academicPeriod.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
-      prisma.grade.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
-      prisma.section.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
-      prisma.subject.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
-      prisma.sectionSubject.findFirst({ where: { schoolId, status: 'ACTIVE' } }),
     ])
 
     return {
-      complete: Boolean(schoolYear && period && grade && section && subject && assignment),
+      complete: Boolean(schoolYear),
       missing: {
         schoolYear: !schoolYear,
-        periods: !period,
-        grades: !grade,
-        sections: !section,
-        subjects: !subject,
-        assignments: !assignment,
+        periods: false,
+        grades: false,
+        sections: false,
+        subjects: false,
+        assignments: false,
       },
     }
   }
 
   /**
-   * Solicita recuperación de contraseña.
+   * Solicita recuperaciÃ³n de contraseÃ±a.
    * Por seguridad siempre retorna el mismo mensaje
    * independientemente de si el email existe o no.
    *
-   * @param email - Correo electrónico del usuario.
+   * @param email - Correo electrÃ³nico del usuario.
    * @returns Mensaje informativo.
    */
   async forgotPassword(email: string) {

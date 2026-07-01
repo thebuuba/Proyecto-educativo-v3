@@ -8,8 +8,10 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import {
+  archivePlanningEntry,
   createPlanningEntry,
   deletePlanningEntry,
+  duplicatePlanningEntry,
   generateAndCreatePlanningEntry,
   getAcademicPeriods,
   getCompetencies,
@@ -127,7 +129,7 @@ export function usePlanning() {
 
   useEffect(() => {
     if (activePeriodId && schoolYearId) {
-      void fetchEntries({ academicPeriodId: activePeriodId })
+      void fetchEntries({})
     }
   }, [activePeriodId, schoolYearId, fetchEntries])
 
@@ -135,7 +137,7 @@ export function usePlanning() {
   const addEntry = useCallback(
     async (input: CreatePlanningEntryInput) => {
       await createPlanningEntry(input)
-      await fetchEntries({ academicPeriodId: input.academicPeriodId })
+      await fetchEntries({})
     },
     [fetchEntries],
   )
@@ -149,7 +151,7 @@ export function usePlanning() {
       fundamentalCompetenceName?: string
     }) => {
       await generateAndCreatePlanningEntry(input)
-      await fetchEntries({ academicPeriodId: input.academicPeriodId })
+      await fetchEntries({})
     },
     [fetchEntries],
   )
@@ -158,16 +160,32 @@ export function usePlanning() {
   const editEntry = useCallback(
     async (id: string, input: CreatePlanningEntryInput) => {
       await updatePlanningEntry(id, input)
-      await fetchEntries({ academicPeriodId: input.academicPeriodId })
+      await fetchEntries({})
     },
     [fetchEntries],
   )
 
   /** Elimina una planificación y refresca la lista */
   const removeEntry = useCallback(
-    async (id: string, periodId: string) => {
+    async (id: string) => {
       await deletePlanningEntry(id)
-      await fetchEntries({ academicPeriodId: periodId })
+      await fetchEntries({})
+    },
+    [fetchEntries],
+  )
+
+  const duplicateEntry = useCallback(
+    async (id: string) => {
+      await duplicatePlanningEntry(id)
+      await fetchEntries({})
+    },
+    [fetchEntries],
+  )
+
+  const archiveEntry = useCallback(
+    async (id: string) => {
+      await archivePlanningEntry(id)
+      await fetchEntries({})
     },
     [fetchEntries],
   )
@@ -192,6 +210,8 @@ export function usePlanning() {
     generateEntry,
     editEntry,
     removeEntry,
+    duplicateEntry,
+    archiveEntry,
     refreshPeriods,
   }
 }

@@ -115,11 +115,11 @@ export type CompleteOnboardingInput = {
   }
   schoolYear: {
     name: string
-    startDate: string
-    endDate: string
+    startDate?: string
+    endDate?: string
   }
-  periods: OnboardingPeriodInput[]
-  courses: OnboardingCourseInput[]
+  periods?: OnboardingPeriodInput[]
+  courses?: OnboardingCourseInput[]
 }
 
 export type OnboardingStatus = {

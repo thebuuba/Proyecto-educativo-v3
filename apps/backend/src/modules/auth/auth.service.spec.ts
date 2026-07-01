@@ -354,7 +354,7 @@ describe('AuthService.register', () => {
     )
   })
 
-  it('completes onboarding by creating school, app user, teacher, year, periods, course, subject assignment, and session', async () => {
+  it('completes initial onboarding without creating periods or courses', async () => {
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: true,
       json: vi.fn().mockResolvedValue({
@@ -399,26 +399,13 @@ describe('AuthService.register', () => {
         regionalName: 'Regional 10',
         districtName: 'Distrito 01',
         primaryModality: 'general',
-        schoolShift: 'extended',
+        schoolShift: 'morning,afternoon',
         enabledSubsystems: ['regular'],
       },
       schoolYear: {
         name: '2026-2027',
-        startDate: '2026-08-01',
-        endDate: '2027-06-30',
       },
-      periods: [
-        { name: 'P1', startDate: '2026-08-01', endDate: '2026-12-15' },
-      ],
-      courses: [
-        {
-          gradeName: '3ro Secundaria',
-          sectionName: 'A',
-          subjectName: 'Lengua Española',
-          subjectCode: 'LEN-3A',
-        },
-      ],
-    })
+    } as never)
 
     expect(tx.teacher.create).toHaveBeenCalledWith({
       data: expect.objectContaining({
@@ -427,20 +414,16 @@ describe('AuthService.register', () => {
         email: registerDto.email,
       }),
     })
-    expect(tx.academicPeriod.create).toHaveBeenCalledWith({
+    expect(tx.school.create).toHaveBeenCalledWith({
       data: expect.objectContaining({
-        schoolId: 'school-1',
-        schoolYearId: 'year-1',
-        name: 'P1',
-        sequence: 1,
+        schoolShift: 'morning',
       }),
     })
-    expect(tx.sectionSubject.create).toHaveBeenCalledWith({
-      data: expect.objectContaining({
-        schoolYearId: 'year-1',
-        teacherId: 'teacher-1',
-      }),
-    })
+    expect(tx.academicPeriod.create).not.toHaveBeenCalled()
+    expect(tx.grade.create).not.toHaveBeenCalled()
+    expect(tx.section.create).not.toHaveBeenCalled()
+    expect(tx.subject.create).not.toHaveBeenCalled()
+    expect(tx.sectionSubject.create).not.toHaveBeenCalled()
     expect(result.user).toEqual({ id: user.id, email: user.email })
     expect(result.token).toBe('signed-token')
   })

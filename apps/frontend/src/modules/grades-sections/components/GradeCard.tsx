@@ -17,7 +17,6 @@ import { cn } from '@/utils/cn'
 type GradeCardProps = {
   grade: GradeWithSections
   canManage: boolean
-  onEdit: (grade: GradeWithSections) => void
   onDelete: (grade: GradeWithSections) => void
   onAddSection: (grade: GradeWithSections) => void
   onEditSection: (sectionId: string) => void
@@ -29,7 +28,6 @@ type GradeCardProps = {
 export function GradeCard({
   grade,
   canManage,
-  onEdit,
   onDelete,
   onAddSection,
   onEditSection,
@@ -37,11 +35,6 @@ export function GradeCard({
   onAssignSubject,
   onDeleteSubjectAssignment,
 }: GradeCardProps) {
-  const totalCapacity = grade.sections.reduce(
-    (sum, s) => sum + (s.capacity ?? 0),
-    0,
-  )
-
   return (
     <Card>
       <CardHeader className="flex flex-row items-start justify-between gap-4">
@@ -55,12 +48,6 @@ export function GradeCard({
           </div>
           <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
             <span>{grade.sections.length} sección{grade.sections.length !== 1 ? 'es' : ''}</span>
-            {totalCapacity > 0 ? (
-              <>
-                <span className="text-border">|</span>
-                <span>{totalCapacity} cupos</span>
-              </>
-            ) : null}
             {grade.academicCycleName ? (
               <>
                 <span className="text-border">|</span>
@@ -78,14 +65,6 @@ export function GradeCard({
 
         {canManage ? (
           <div className="flex shrink-0 gap-1">
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Editar grado"
-              onClick={() => onEdit(grade)}
-            >
-              <Edit3 className="size-4" />
-            </Button>
             <Button
               variant="ghost"
               size="icon"
@@ -112,11 +91,6 @@ export function GradeCard({
                 <div className="flex min-w-0 items-center gap-3">
                   <UsersRound className="size-4 shrink-0 text-muted-foreground" />
                   <span className="truncate font-medium">Sección {section.name}</span>
-                  {section.capacity ? (
-                    <span className="shrink-0 text-xs text-muted-foreground">
-                      cap. {section.capacity}
-                    </span>
-                  ) : null}
                   {section.status === 'inactive' ? (
                     <Badge tone="muted">Inactiva</Badge>
                   ) : null}

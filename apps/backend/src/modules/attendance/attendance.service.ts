@@ -7,6 +7,19 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
+const baseAttendancePeriods = [
+  { name: 'P1 — Agosto, septiembre y octubre', sequence: 1, startMonth: 8, startDay: 1, endMonth: 10, endDay: 31 },
+  { name: 'P2 — Noviembre, diciembre y enero', sequence: 2, startMonth: 11, startDay: 1, endMonth: 1, endDay: 31 },
+  { name: 'P3 — Febrero, marzo y abril', sequence: 3, startMonth: 2, startDay: 1, endMonth: 4, endDay: 30 },
+  { name: 'P4 — Mayo', sequence: 4, startMonth: 5, startDay: 1, endMonth: 5, endDay: 31 },
+]
+
+function periodDate(schoolYearStart: Date, month: number, day: number) {
+  const startYear = schoolYearStart.getUTCFullYear()
+  const year = month >= 8 ? startYear : startYear + 1
+  return new Date(Date.UTC(year, month - 1, day))
+}
+
 /**
  * Servicio de asistencia.
  *
@@ -82,7 +95,8 @@ export class AttendanceService {
     const students = await prisma.student.findMany({
       where: { schoolId, id: { in: enrollments.map((e) => e.studentId) } },
     })
-    return enrollments.map((enr) => {
+    return enrollments
+      .map((enr) => {
       const student = students.find((s) => s.id === enr.studentId)
       return {
         enrollmentId: enr.id,
@@ -92,6 +106,12 @@ export class AttendanceService {
         lastName: student?.lastName ?? '',
       }
     })
+      .sort((first, second) => {
+        const lastName = first.lastName.localeCompare(second.lastName, 'es')
+        if (lastName !== 0) return lastName
+        return first.firstName.localeCompare(second.firstName, 'es')
+      })
+      .map((student, index) => ({ ...student, listNumber: index + 1 }))
   }
 
   /**
@@ -144,7 +164,31 @@ export class AttendanceService {
    * @param schoolId - Identificador del colegio.
    * @returns El período académico activo encontrado o null.
    */
-  getCurrentPeriod(schoolId: string) {
+  async getCurrentPeriod(schoolId: string) {
+    const current = await prisma.academicPeriod.findFirst({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: { sequence: 'asc' },
+    })
+    if (current) return current
+
+    const schoolYear = await prisma.schoolYear.findFirst({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: [{ isCurrent: 'desc' }, { startDate: 'desc' }],
+    })
+    if (!schoolYear) return null
+
+    await prisma.academicPeriod.createMany({
+      data: baseAttendancePeriods.map((period) => ({
+        schoolId,
+        schoolYearId: schoolYear.id,
+        name: period.name,
+        sequence: period.sequence,
+        startDate: periodDate(schoolYear.startDate, period.startMonth, period.startDay),
+        endDate: periodDate(schoolYear.startDate, period.endMonth, period.endDay),
+      })),
+      skipDuplicates: true,
+    })
+
     return prisma.academicPeriod.findFirst({
       where: { schoolId, status: 'ACTIVE' },
       orderBy: { sequence: 'asc' },
@@ -269,5 +313,17 @@ export class AttendanceService {
         notes: body.notes ?? null,
       },
     })
+  }
+
+  async deleteRecord(schoolId: string, id: string, type: 'daily' | 'class') {
+    if (type === 'class') {
+      const record = await prisma.attendanceClass.findFirst({ where: { id, schoolId } })
+      if (!record) throw new NotFoundException('Attendance record not found')
+      return prisma.attendanceClass.delete({ where: { id } })
+    }
+
+    const record = await prisma.attendanceDaily.findFirst({ where: { id, schoolId } })
+    if (!record) throw new NotFoundException('Attendance record not found')
+    return prisma.attendanceDaily.delete({ where: { id } })
   }
 }

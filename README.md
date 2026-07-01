@@ -111,6 +111,7 @@ pnpm --filter @aula/database exec prisma studio
 - `feature/<nombre-corto>`: cambios nuevos.
 - `fix/<nombre-corto>`: correcciones.
 - Cada cambio entra por PR pequeno.
+- Antes de pasar a otro panel de trabajo o cambiar a otro sitio/modulo, crea un commit del estado actual para mantener el historial corto, legible y facil de revertir.
 
 Para cambios de base de datos:
 

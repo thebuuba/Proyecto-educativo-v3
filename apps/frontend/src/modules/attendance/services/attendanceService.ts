@@ -9,15 +9,22 @@ import { api } from '@/services/apiClient'
 import type { AttendanceStatus } from '@/types/domain'
 import type {
   AttendanceStats,
+  MonthlyAttendanceCell,
   SectionOption,
   StudentAttendanceRow,
   UpsertAttendanceInput,
 } from '@/modules/attendance/types'
+import { statusToMark } from '@/modules/attendance/utils/monthlyAttendance'
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
+import type { EnrollmentCourse } from '@/modules/students/types'
 
 /** Obtiene la lista de secciones disponibles para el docente */
 export async function getSections(): Promise<SectionOption[]> {
   return api.get<SectionOption[]>('/schedule/sections')
+}
+
+export async function getAttendanceCourses(): Promise<EnrollmentCourse[]> {
+  return api.get<EnrollmentCourse[]>('/students/enrollment-courses')
 }
 
 /** Obtiene los estudiantes inscritos en una sección para un año escolar */
@@ -43,9 +50,42 @@ export async function getAttendance(
   return result
 }
 
+export async function getClassAttendanceForMonth(
+  sectionSubjectId: string,
+  dates: string[],
+): Promise<Map<string, Map<string, MonthlyAttendanceCell>>> {
+  const result = new Map<string, Map<string, MonthlyAttendanceCell>>()
+
+  await Promise.all(
+    dates.map(async (date) => {
+      const records = await api.get<Array<{
+        id: string
+        enrollmentId: string
+        status: AttendanceStatus
+        notes?: string | null
+      }>>(`/attendance?sectionSubjectId=${sectionSubjectId}&date=${date}`)
+      const dailyMap = new Map<string, MonthlyAttendanceCell>()
+      records.forEach((record) => {
+        dailyMap.set(record.enrollmentId, {
+          attendanceId: record.id,
+          status: record.status,
+          mark: statusToMark(record.status, record.notes),
+        })
+      })
+      result.set(date, dailyMap)
+    }),
+  )
+
+  return result
+}
+
 /** Crea o actualiza un registro de asistencia (upsert) */
 export async function upsertAttendance(input: UpsertAttendanceInput): Promise<void> {
   await api.post('/attendance/upsert', input)
+}
+
+export async function deleteAttendance(attendanceId: string, type: 'daily' | 'class'): Promise<void> {
+  await api.delete(`/attendance/${attendanceId}?type=${type}`)
 }
 
 /** Calcula las estadísticas de asistencia a partir de las filas de estudiantes */
@@ -68,5 +108,6 @@ export async function getCurrentSchoolYearId(): Promise<string | null> {
 
 /** Obtiene el identificador del período académico activo */
 export async function getCurrentAcademicPeriodId(): Promise<string | null> {
-  return api.get<string | null>('/attendance/current-period')
+  const period = await api.get<{ id: string } | null>('/attendance/current-period')
+  return period?.id ?? null
 }

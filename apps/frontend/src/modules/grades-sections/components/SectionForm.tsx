@@ -7,22 +7,26 @@
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
+import {
+  defaultSectionOptions,
+  normalizeAcademicText,
+} from '@/modules/grades-sections/data/academicAssignmentCatalog'
 import type { Section } from '@/modules/grades-sections/types'
 
-/** Propiedades del componente SectionForm */
 type SectionFormProps = {
   gradeName: string
+  sections: Section[]
   section?: Section
   submitting: boolean
   error: string | null
-  onSubmit: (input: { name: string; capacity?: number | null }) => Promise<void>
+  onSubmit: (input: { name: string }) => Promise<void>
   onClose: () => void
 }
 
 export function SectionForm({
   gradeName,
+  sections,
   section,
   submitting,
   error,
@@ -30,11 +34,15 @@ export function SectionForm({
   onClose,
 }: SectionFormProps) {
   const [name, setName] = useState(section?.name ?? '')
-  const [capacity, setCapacity] = useState(
-    section?.capacity?.toString() ?? '',
-  )
-
   const isEditing = Boolean(section)
+  const usedSectionNames = new Set(
+    sections
+      .filter((item) => item.id !== section?.id && item.status === 'active')
+      .map((item) => normalizeAcademicText(item.name)),
+  )
+  const availableSections = defaultSectionOptions.filter(
+    (option) => !usedSectionNames.has(normalizeAcademicText(option)),
+  )
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -43,7 +51,6 @@ export function SectionForm({
 
     await onSubmit({
       name: name.trim(),
-      capacity: capacity ? Number(capacity) : null,
     })
   }
 
@@ -66,28 +73,22 @@ export function SectionForm({
 
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">
-            Nombre <span className="text-destructive">*</span>
+            Sección <span className="text-destructive">*</span>
           </label>
-          <Input
+          <select
+            className="h-10 w-full rounded-lg border border-input bg-card px-3 text-sm text-foreground outline-none focus-visible:ring-4 focus-visible:ring-ring/35"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Ej: A, B, Única"
             required
             autoFocus
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-foreground">
-            Capacidad máxima
-          </label>
-          <Input
-            type="number"
-            min="0"
-            value={capacity}
-            onChange={(e) => setCapacity(e.target.value)}
-            placeholder="Ej: 30"
-          />
+          >
+            <option value="">Selecciona una sección</option>
+            {availableSections.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="flex justify-end gap-3 pt-2">

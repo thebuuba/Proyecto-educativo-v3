@@ -151,3 +151,16 @@ export type AssignSubjectInput = {
   subjectId: string
   teacherId?: string | null
 }
+
+export type TeacherAssignmentInput = {
+  academicLevelId: string | null
+  academicLevelName: string
+  academicCycleId: string | null
+  academicCycleName: string
+  gradeName: string
+  gradeSequence: number
+  sectionName: string
+  subjectId?: string
+  subjectCode: string
+  subjectName: string
+}

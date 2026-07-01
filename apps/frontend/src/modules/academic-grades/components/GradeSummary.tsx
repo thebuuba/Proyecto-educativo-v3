@@ -1,114 +1,72 @@
-/**
- * @file Componente GradeSummary
- *
- * Muestra un resumen visual con tarjetas de promedio, nota más
- * alta, nota más baja, aprobados y reprobados.
- */
-
-import { Card, CardContent } from '@/components/ui/Card'
-import type { GradeSummaryStats } from '@/modules/academic-grades/types'
-import { cn } from '@/utils/cn'
-
-/** Propiedades del componente GradeSummary */
+import type {
+  GradeRecordRow,
+  GradingActivity,
+  StudentGradeRow,
+} from '@/modules/academic-grades/types'
+import {
+  blockTotal,
+  competencyBlocks,
+  formatGrade,
+} from '@/modules/academic-grades/utils/competencyGrades'
 type GradeSummaryProps = {
-  stats: GradeSummaryStats
+  students: StudentGradeRow[]
+  activities: GradingActivity[]
+  records: GradeRecordRow[]
   loading: boolean
 }
 
-/** Resumen visual de estadísticas de calificaciones */
-export function GradeSummary({ stats, loading }: GradeSummaryProps) {
+export function GradeSummary({
+  students,
+  activities,
+  records,
+  loading,
+}: GradeSummaryProps) {
+  const totals = students.flatMap((student) =>
+    competencyBlocks.map((block) =>
+      blockTotal({
+        records,
+        activities,
+        enrollmentId: student.enrollmentId,
+        blockId: block.id,
+      }),
+    ),
+  )
+  const gradedTotals = totals.filter((value) => value > 0)
+  const average = gradedTotals.length > 0
+    ? gradedTotals.reduce((sum, value) => sum + value, 0) / gradedTotals.length
+    : null
+  const recoveryCount = totals.filter((value) => value > 0 && value < 70).length
+
+  const items = [
+    { label: 'Estudiantes', value: students.length, helper: 'matriculados' },
+    { label: 'Actividades', value: activities.length, helper: 'creadas' },
+    { label: 'Promedio', value: formatGrade(average), helper: 'por bloque' },
+    { label: 'Aprobados', value: totals.filter((value) => value >= 70).length, helper: 'bloques' },
+    { label: 'Recuperación', value: recoveryCount, helper: 'bloques' },
+  ]
+
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Promedio
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-primary">
-                {stats.average !== null ? stats.average.toFixed(1) : '—'}
-              </p>
-            )}
+    <aside className="rounded-lg border border-border bg-card p-4 shadow-sm">
+      <p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">
+        Resumen del curso
+      </p>
+      <div className="mt-4 space-y-3">
+      {items.map((item) => (
+        <div key={item.label} className="flex items-center justify-between gap-3 border-b border-border pb-3 last:border-b-0 last:pb-0">
+          <div>
+            <p className="text-xs font-bold uppercase text-muted-foreground">
+              {item.label}
+            </p>
+            <p className="text-xs text-muted-foreground">{item.helper}</p>
           </div>
-          <p className="mt-2 text-xs text-muted-foreground">sobre 10</p>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Nota más alta
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-success">
-                {stats.highest !== null ? stats.highest.toFixed(1) : '—'}
-              </p>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Nota más baja
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-destructive">
-                {stats.lowest !== null ? stats.lowest.toFixed(1) : '—'}
-              </p>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Aprobados
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-success">
-                {stats.passed}
-              </p>
-            )}
-          </div>
-          <p className="mt-2 text-xs text-muted-foreground">
-            {stats.total > 0
-              ? `${Math.round((stats.passed / stats.total) * 100)}%`
-              : '—'}
-          </p>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Reprobados
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-destructive">
-                {stats.failed}
-              </p>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+          {loading ? (
+            <div className="h-6 w-10 animate-pulse rounded bg-muted" />
+          ) : (
+            <p className="text-xl font-bold text-primary">{item.value}</p>
+          )}
+        </div>
+      ))}
+      </div>
+    </aside>
   )
 }

@@ -5,7 +5,7 @@
  * Proporciona operaciones CRUD para entradas de horario y franjas horarias,
  * así como consultas de datos relacionados (secciones, profesores, materias).
  */
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 
 /** Convierte una cadena de tiempo "HH:mm" o "HH:mm:ss" a un objeto Date UTC */
@@ -150,6 +150,13 @@ export class ScheduleService {
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!timeSlot) throw new NotFoundException('Time slot not found')
     if (body.academicPeriodId && !academicPeriod) throw new NotFoundException('Academic period not found')
+    await this.assertEntrySlotAvailable(schoolId, {
+      schoolYearId: body.schoolYearId,
+      sectionId: body.sectionId,
+      sectionSubjectId: body.sectionSubjectId,
+      timeSlotId: body.timeSlotId,
+      dayOfWeek: body.dayOfWeek,
+    })
 
     const entry = await prisma.scheduleEntry.create({
       data: {
@@ -180,6 +187,17 @@ export class ScheduleService {
       const timeSlot = await prisma.timeSlot.findFirst({ where: { id: body.timeSlotId, schoolId } })
       if (!timeSlot) throw new NotFoundException('Time slot not found')
     }
+    await this.assertEntrySlotAvailable(
+      schoolId,
+      {
+        schoolYearId: body.schoolYearId ?? entry.schoolYearId,
+        sectionId: entry.sectionId,
+        sectionSubjectId: body.sectionSubjectId ?? entry.sectionSubjectId,
+        timeSlotId: body.timeSlotId ?? entry.timeSlotId,
+        dayOfWeek: body.dayOfWeek ?? entry.dayOfWeek,
+      },
+      id,
+    )
 
     const updated = await prisma.scheduleEntry.update({
       where: { id },
@@ -226,7 +244,59 @@ export class ScheduleService {
     return where
   }
 
-  /** Enriquece las entradas de horario con nombres descriptivos (materia, profesor, grado, sección, franja) */
+  /** Evita duplicar clases en una celda y conflictos del mismo docente. */
+  private async assertEntrySlotAvailable(
+    schoolId: string,
+    input: {
+      schoolYearId: string
+      sectionId: string
+      sectionSubjectId: string
+      timeSlotId: string
+      dayOfWeek: number
+    },
+    ignoreEntryId?: string,
+  ) {
+    const idFilter = ignoreEntryId ? { not: ignoreEntryId } : undefined
+    const sameSectionCell = await prisma.scheduleEntry.findFirst({
+      where: {
+        schoolId,
+        schoolYearId: input.schoolYearId,
+        sectionId: input.sectionId,
+        timeSlotId: input.timeSlotId,
+        dayOfWeek: input.dayOfWeek,
+        ...(idFilter && { id: idFilter }),
+      },
+    })
+    if (sameSectionCell) {
+      throw new BadRequestException('Ya existe una clase asignada para esa sección en ese bloque.')
+    }
+
+    const sectionSubject = await prisma.sectionSubject.findFirst({
+      where: { id: input.sectionSubjectId, schoolId },
+      select: { teacherId: true },
+    })
+    if (!sectionSubject?.teacherId) return
+
+    const teacherSectionSubjects = await prisma.sectionSubject.findMany({
+      where: { schoolId, teacherId: sectionSubject.teacherId },
+      select: { id: true },
+    })
+    const teacherConflict = await prisma.scheduleEntry.findFirst({
+      where: {
+        schoolId,
+        schoolYearId: input.schoolYearId,
+        timeSlotId: input.timeSlotId,
+        dayOfWeek: input.dayOfWeek,
+        sectionSubjectId: { in: teacherSectionSubjects.map((item) => item.id) },
+        ...(idFilter && { id: idFilter }),
+      },
+    })
+    if (teacherConflict) {
+      throw new BadRequestException('El docente ya tiene una clase asignada en ese bloque.')
+    }
+  }
+
+  /** Enriquece las entradas de horario con nombres descriptivos. */
   private async withEntryLabels(schoolId: string, entries: Awaited<ReturnType<typeof prisma.scheduleEntry.findMany>>) {
     const [sectionSubjects, subjects, teachers, sections, grades, slots] = await Promise.all([
       prisma.sectionSubject.findMany({ where: { schoolId, id: { in: entries.map((entry) => entry.sectionSubjectId) } } }),

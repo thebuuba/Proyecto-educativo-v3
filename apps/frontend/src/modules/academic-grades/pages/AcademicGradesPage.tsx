@@ -1,116 +1,118 @@
-/**
- * @file Página de Calificaciones
- *
- * Vista principal del módulo de calificaciones. Permite seleccionar
- * sección-asignatura y período, visualizar la tabla de notas y
- * gestionar las evaluaciones de los estudiantes.
- */
-
-import { AlertCircle, RefreshCw } from 'lucide-react'
+import { AlertCircle, FileText, RefreshCw } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import { Select } from '@/components/ui/Select'
+import { FinalGradesSummary } from '@/modules/academic-grades/components/FinalGradesSummary'
 import { GradeSummary } from '@/modules/academic-grades/components/GradeSummary'
 import { GradeTable } from '@/modules/academic-grades/components/GradeTable'
 import { useGrades } from '@/modules/academic-grades/hooks/useGrades'
+import { competencyPeriods } from '@/modules/academic-grades/utils/competencyGrades'
 
-/** Página principal de gestión de calificaciones */
 export function AcademicGradesPage() {
   const {
     sectionSubjects,
-    periods,
+    selectedSs,
     selectedSsId,
     setSelectedSsId,
+    selectedPeriod,
     selectedPeriodId,
     setSelectedPeriodId,
     students,
-    stats,
+    gradeRecords,
+    activities,
+    recoveryScores,
     loading,
     saving,
     error,
-    updateScore,
+    addActivity,
+    updateActivity,
+    deleteActivity,
+    updateActivityScore,
+    updateRecoveryScore,
     refresh,
+    loadFinalRecords,
+    getActivitiesForPeriod,
   } = useGrades()
 
-  const selectedSs = sectionSubjects.find((s) => s.id === selectedSsId)
+  const isFinalView = selectedPeriodId === 'final'
 
   return (
-    <section className="mx-auto w-full max-w-7xl">
-      <div className="mb-8 space-y-8">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+    <section className="w-full">
+      <div className="mb-4 space-y-4">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">
-              Evaluaciones
+              Registro por competencias
             </p>
-            <h1 className="mt-3 text-4xl font-bold leading-none text-primary sm:text-5xl">
+            <h1 className="mt-1 text-3xl font-bold leading-none text-primary">
               Calificaciones
             </h1>
-            <p className="mt-3 text-base leading-6 text-muted-foreground">
-              Control de evaluaciones, notas parciales y resultados académicos.
+            <p className="mt-1 text-sm leading-6 text-muted-foreground">
+              Actividades evaluativas, recuperación y resumen final por bloques de competencias.
             </p>
           </div>
 
-          <Button variant="outline" className="h-12 px-5" onClick={() => void refresh()}>
-            <RefreshCw className="size-4" />
-            Actualizar
-          </Button>
+          <div className="flex flex-wrap gap-2">
+            <Button variant="outline" className="h-12 px-5" onClick={() => setSelectedPeriodId('final')}>
+              <FileText className="size-4" />
+              Ver resumen final
+            </Button>
+            <Button variant="outline" className="h-12 px-5" onClick={() => void refresh()}>
+              <RefreshCw className="size-4" />
+              Actualizar
+            </Button>
+          </div>
         </div>
 
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_18rem]">
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              Sección / Asignatura
+              Curso / asignatura
             </label>
             <Select
               value={selectedSsId}
-              onChange={(e) => setSelectedSsId(e.target.value)}
-              className="w-full sm:w-80"
+              onChange={(event) => setSelectedSsId(event.target.value)}
+              className="w-full"
             >
-              {sectionSubjects.length === 0 ? (
-                <option value="">No hay asignaciones</option>
-              ) : (
-                sectionSubjects.map((ss) => (
-                  <option key={ss.id} value={ss.id}>
-                    {ss.gradeName} — {ss.sectionName} — {ss.subjectName}
-                  </option>
-                ))
-              )}
+              <option value="">
+                {sectionSubjects.length > 0 ? 'Selecciona un curso' : 'No hay asignaciones'}
+              </option>
+              {sectionSubjects.map((ss) => (
+                <option key={ss.id} value={ss.id}>
+                  {ss.gradeName} {ss.sectionName} — {ss.subjectName}
+                </option>
+              ))}
             </Select>
           </div>
 
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              Trimestre
+              Período
             </label>
             <Select
               value={selectedPeriodId}
-              onChange={(e) => setSelectedPeriodId(e.target.value)}
-              className="w-full sm:w-56"
+              onChange={(event) => setSelectedPeriodId(event.target.value as typeof selectedPeriodId)}
+              className="w-full"
             >
-              {periods.length === 0 ? (
-                <option value="">Sin trimestres</option>
-              ) : (
-                periods.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))
-              )}
+              {competencyPeriods.map((period) => (
+                <option key={period.id} value={period.id}>
+                  {period.name}
+                </option>
+              ))}
             </Select>
           </div>
         </div>
 
         {selectedSs ? (
-          <div className="rounded-lg border border-border bg-card p-4">
-            <p className="text-sm text-muted-foreground">
-              <span className="font-medium text-foreground">{selectedSs.subjectName}</span>
-              {' — '}
-              {selectedSs.gradeName} {selectedSs.sectionName}
+          <div className="rounded-lg border border-border bg-card px-4 py-3 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
+              {selectedPeriod.name}
             </p>
+            <h2 className="mt-1 text-xl font-bold text-primary">
+              {selectedSs.gradeName} {selectedSs.sectionName} · {selectedSs.subjectName}
+            </h2>
           </div>
         ) : null}
-
-        <GradeSummary stats={stats} loading={loading} />
 
         {error ? (
           <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
@@ -120,21 +122,45 @@ export function AcademicGradesPage() {
         ) : null}
       </div>
 
-      <div className="space-y-4">
-        {!selectedSsId || !selectedPeriodId ? (
-          <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-center">
-            <p className="text-sm text-muted-foreground">
-              Selecciona una sección, asignatura y trimestre para gestionar calificaciones.
-            </p>
-          </div>
-        ) : loading ? (
-          <div className="flex min-h-[280px] items-center justify-center text-sm font-medium text-muted-foreground">
-            Cargando estudiantes...
-          </div>
-        ) : (
-          <GradeTable students={students} saving={saving} onSave={updateScore} />
-        )}
-      </div>
+      {!selectedSsId ? (
+        <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-center">
+          <p className="text-sm text-muted-foreground">
+            Selecciona un curso para gestionar sus calificaciones.
+          </p>
+        </div>
+      ) : loading ? (
+        <div className="flex min-h-[280px] items-center justify-center text-sm font-medium text-muted-foreground">
+          Cargando calificaciones...
+        </div>
+      ) : isFinalView ? (
+        <FinalGradesSummary
+          students={students}
+          loadFinalRecords={loadFinalRecords}
+          getActivitiesForPeriod={getActivitiesForPeriod}
+        />
+      ) : (
+        <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_16rem]">
+          <GradeTable
+            students={students}
+            activities={activities}
+            records={gradeRecords}
+            recoveryScores={recoveryScores}
+            recoveryLabel={selectedPeriod.recoveryLabel}
+            saving={saving}
+            onAddActivity={addActivity}
+            onUpdateActivity={updateActivity}
+            onDeleteActivity={deleteActivity}
+            onSaveScore={updateActivityScore}
+            onSaveRecovery={updateRecoveryScore}
+          />
+          <GradeSummary
+            students={students}
+            activities={activities}
+            records={gradeRecords}
+            loading={loading}
+          />
+        </div>
+      )}
     </section>
   )
 }

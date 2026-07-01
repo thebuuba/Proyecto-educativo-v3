@@ -1,116 +1,48 @@
-/**
- * @file Componente AttendanceSummary
- *
- * Muestra un resumen visual con tarjetas de total, presentes,
- * ausentes, tardes y justificados.
- */
-
 import { Card, CardContent } from '@/components/ui/Card'
-import type { AttendanceStats } from '@/modules/attendance/types'
+import type { MonthlyAttendanceStats } from '@/modules/attendance/types'
+import { formatPercentage } from '@/modules/attendance/utils/monthlyAttendance'
 import { cn } from '@/utils/cn'
 
-/** Propiedades del componente AttendanceSummary */
 type AttendanceSummaryProps = {
-  stats: AttendanceStats
+  stats: MonthlyAttendanceStats
   loading: boolean
 }
 
-/** Resumen visual de estadísticas de asistencia */
-export function AttendanceSummary({ stats, loading }: AttendanceSummaryProps) {
-  const percentage = stats.total > 0
-    ? Math.round(((stats.present + stats.late) / stats.total) * 100)
-    : null
+const items = [
+  { key: 'totalStudents', label: 'Total estudiantes', helper: 'matriculados' },
+  { key: 'workedDays', label: 'Días trabajados', helper: 'del mes' },
+  { key: 'averageAttendance', label: 'Promedio', helper: 'asistencia' },
+  { key: 'absences', label: 'Ausencias', helper: 'registradas' },
+  { key: 'excuses', label: 'Excusas', helper: 'registradas' },
+] as const
 
+export function AttendanceSummary({ stats, loading }: AttendanceSummaryProps) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Total
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-primary">
-                {stats.total}
+      {items.map((item) => {
+        const value = stats[item.key]
+        return (
+          <Card key={item.key}>
+            <CardContent className="p-4 sm:p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">
+                {item.label}
               </p>
-            )}
-          </div>
-          <p className="mt-2 text-xs text-muted-foreground">estudiantes</p>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Presentes
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-success">
-                {stats.present}
-              </p>
-            )}
-          </div>
-          <p className="mt-2 text-xs text-muted-foreground">
-            {percentage !== null ? `${percentage}%` : '—'}
-          </p>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Ausentes
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-destructive">
-                {stats.absent}
-              </p>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Tardes
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-warning">
-                {stats.late}
-              </p>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent className="p-4 sm:p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-            Justificados
-          </p>
-          <div className={cn('mt-3', loading && 'animate-pulse')}>
-            {loading ? (
-              <div className="h-8 w-16 rounded-lg bg-muted" />
-            ) : (
-              <p className="text-3xl font-bold leading-none text-accent">
-                {stats.excused}
-              </p>
-            )}
-          </div>
-        </CardContent>
-      </Card>
+              <div className={cn('mt-3', loading && 'animate-pulse')}>
+                {loading ? (
+                  <div className="h-8 w-16 rounded-lg bg-muted" />
+                ) : (
+                  <p className="text-3xl font-bold leading-none text-primary">
+                    {item.key === 'averageAttendance'
+                      ? formatPercentage(value)
+                      : value ?? 0}
+                  </p>
+                )}
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">{item.helper}</p>
+            </CardContent>
+          </Card>
+        )
+      })}
     </div>
   )
 }

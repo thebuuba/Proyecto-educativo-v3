@@ -1,31 +1,61 @@
+# Onboarding Wizard Redesign Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Replace the long first-time onboarding page with a compact modal wizard over a blurred locked dashboard preview.
+
+**Architecture:** Keep the existing `/onboarding` route and backend endpoint. Rebuild `OnboardingPage.tsx` as a self-contained wizard with local state, per-step validation, localStorage draft persistence, and final submission through the existing `completeOnboarding(input)` auth context method.
+
+**Tech Stack:** React 19, TypeScript, Vite, Tailwind CSS, existing auth context and `CompleteOnboardingInput`.
+
+## Global Constraints
+
+- Do not create a new backend draft-onboarding persistence model.
+- Do not duplicate onboarding fields in a second form.
+- Do not allow access to the dashboard before completion.
+- Do not redesign the whole dashboard or auth system.
+- Use `localStorage` for draft persistence under `aulabase:onboarding-draft`.
+- Call the backend only on final submission through existing `completeOnboarding(input)`.
+- The UI must show only one wizard step at a time.
+
+---
+
+## File Structure
+
+- Modify `apps/frontend/src/modules/auth/pages/OnboardingPage.tsx`: replace the long form with the full wizard shell, state helpers, step validation, draft persistence, background preview, and final submit.
+- Do not modify backend files for this first implementation.
+- Do not create new shared components unless `OnboardingPage.tsx` becomes harder to review than the existing single-file approach.
+
+---
+
+### Task 1: Add Wizard State, Draft Persistence, And Payload Mapping
+
+**Files:**
+- Modify: `apps/frontend/src/modules/auth/pages/OnboardingPage.tsx`
+
+**Interfaces:**
+- Consumes: `CompleteOnboardingInput` from `@/modules/auth/types/auth`
+- Produces:
+  - `type OnboardingDraft`
+  - `const DRAFT_KEY = 'aulabase:onboarding-draft'`
+  - `function createInitialDraft(fullName?: string): OnboardingDraft`
+  - `function loadDraft(fallbackFullName?: string): OnboardingDraft`
+  - `function toOnboardingInput(draft: OnboardingDraft): CompleteOnboardingInput`
+
+- [ ] **Step 1: Replace imports and add constants/types**
+
+In `apps/frontend/src/modules/auth/pages/OnboardingPage.tsx`, replace the imports and add these declarations near the top:
+
+```tsx
 import type { FormEvent } from 'react'
-import { useEffect, useState } from 'react'
-import { Navigate, useSearchParams } from 'react-router-dom'
+import { useEffect, useMemo, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
 
 const DRAFT_KEY = 'aulabase:onboarding-draft'
 const totalSteps = 5
-
-const levelOptions = [
-  { value: 'primary', label: 'Primaria' },
-  { value: 'secondary', label: 'Secundaria' },
-]
-
-const shiftOptions = [
-  { value: 'morning', label: 'Matutina' },
-  { value: 'afternoon', label: 'Vespertina' },
-  { value: 'night', label: 'Nocturna' },
-  { value: 'extended', label: 'Extendida' },
-  { value: 'multiple', label: 'Multiple' },
-]
-
-const modalityOptions = [
-  { value: 'regular', label: 'Primaria/Secundaria' },
-  { value: 'adultos', label: 'Adultos' },
-  { value: 'other', label: 'Otra' },
-]
 
 type PeriodDraft = {
   name: string
@@ -55,9 +85,13 @@ type OnboardingDraft = {
   periods: PeriodDraft[]
   course: CourseDraft
 }
+```
 
-type StepErrors = Record<string, string>
+- [ ] **Step 2: Add date and draft helpers**
 
+Add these helpers below the type definitions:
+
+```tsx
 function isoToday() {
   return new Date().toISOString().slice(0, 10)
 }
@@ -90,34 +124,21 @@ function createInitialDraft(fullName = ''): OnboardingDraft {
 }
 
 function loadDraft(fallbackFullName = ''): OnboardingDraft {
-  const initialDraft = createInitialDraft(fallbackFullName)
-
   try {
     const rawDraft = localStorage.getItem(DRAFT_KEY)
-    if (!rawDraft) return initialDraft
-    const parsed = JSON.parse(rawDraft) as Partial<OnboardingDraft> & {
-      level?: string
-      schoolYearName?: string
-    }
-
-    return {
-      ...initialDraft,
-      ...parsed,
-      levels: parsed.level ? [parsed.level] : parsed.levels?.length ? parsed.levels : initialDraft.levels,
-      shifts: parsed.shifts?.length ? parsed.shifts : initialDraft.shifts,
-      modalities: parsed.modalities?.length ? parsed.modalities : initialDraft.modalities,
-      periods: parsed.periods?.length ? parsed.periods : initialDraft.periods,
-      course: { ...initialDraft.course, ...parsed.course },
-    }
+    if (!rawDraft) return createInitialDraft(fallbackFullName)
+    return { ...createInitialDraft(fallbackFullName), ...JSON.parse(rawDraft) } as OnboardingDraft
   } catch {
-    return initialDraft
+    return createInitialDraft(fallbackFullName)
   }
 }
+```
 
-function labelsFor(options: { value: string; label: string }[], values: string[]) {
-  return values.map((value) => options.find((option) => option.value === value)?.label ?? value).join(', ')
-}
+- [ ] **Step 3: Add payload mapping**
 
+Add this function below `loadDraft`:
+
+```tsx
 function toOnboardingInput(draft: OnboardingDraft): CompleteOnboardingInput {
   const primaryModality = draft.modalities.includes('adultos')
     ? 'adultos'
@@ -133,7 +154,7 @@ function toOnboardingInput(draft: OnboardingDraft): CompleteOnboardingInput {
       districtName: draft.districtName.trim() || undefined,
       primaryModality,
       schoolShift: draft.shifts.join(','),
-      enabledSubsystems: draft.levels.length ? draft.levels : ['secondary'],
+      enabledSubsystems: draft.levels.length ? draft.levels : ['regular'],
     },
     schoolYear: {
       name: draft.schoolYearName.trim(),
@@ -155,6 +176,48 @@ function toOnboardingInput(draft: OnboardingDraft): CompleteOnboardingInput {
     ],
   }
 }
+```
+
+- [ ] **Step 4: Run TypeScript build to expose syntax/type errors**
+
+Run:
+
+```powershell
+$env:Path = 'C:\Program Files\nodejs;' + $env:Path
+& 'C:\Program Files\nodejs\corepack.cmd' pnpm --filter frontend build
+```
+
+Expected: the build may fail because the old component body still references removed setters. Continue to Task 2 after confirming there are no syntax errors in the new helper code.
+
+- [ ] **Step 5: Commit**
+
+Commit after Task 1 only if the file is in a coherent intermediate state:
+
+```powershell
+git add apps/frontend/src/modules/auth/pages/OnboardingPage.tsx
+git commit -m "refactor: prepare onboarding wizard state"
+```
+
+---
+
+### Task 2: Implement Step Validation And Draft Mutators
+
+**Files:**
+- Modify: `apps/frontend/src/modules/auth/pages/OnboardingPage.tsx`
+
+**Interfaces:**
+- Consumes: `OnboardingDraft`
+- Produces:
+  - `type StepErrors = Record<string, string>`
+  - `function validateStep(step: number, draft: OnboardingDraft): StepErrors`
+  - draft update helpers inside `OnboardingPage`
+
+- [ ] **Step 1: Add validation helpers**
+
+Add below `toOnboardingInput`:
+
+```tsx
+type StepErrors = Record<string, string>
 
 function validateDateRange(startDate: string, endDate: string) {
   if (!startDate || !endDate) return false
@@ -166,7 +229,7 @@ function validateStep(step: number, draft: OnboardingDraft): StepErrors {
 
   if (step === 0) {
     if (!draft.fullName.trim()) errors.fullName = 'Escribe el nombre del docente.'
-    if (!draft.schoolName.trim()) errors.schoolName = 'Escribe el centro educativo.'
+    if (!draft.schoolName.trim()) errors.schoolName = 'Escribe el nombre del centro educativo.'
   }
 
   if (step === 1) {
@@ -201,7 +264,140 @@ function validateStep(step: number, draft: OnboardingDraft): StepErrors {
 
   return errors
 }
+```
 
+- [ ] **Step 2: Replace component state setup**
+
+Inside `OnboardingPage`, replace individual field states with:
+
+```tsx
+  const [step, setStep] = useState(0)
+  const [draft, setDraft] = useState(() => loadDraft(appUser?.fullName ?? ''))
+  const [errors, setErrors] = useState<StepErrors>({})
+  const [submitError, setSubmitError] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+```
+
+- [ ] **Step 3: Add localStorage persistence effect**
+
+Add inside `OnboardingPage`, after state declarations:
+
+```tsx
+  useEffect(() => {
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
+  }, [draft])
+```
+
+- [ ] **Step 4: Add draft update helpers**
+
+Add inside `OnboardingPage`, before submit handlers:
+
+```tsx
+  function updateDraft(patch: Partial<OnboardingDraft>) {
+    setDraft((current) => ({ ...current, ...patch }))
+  }
+
+  function toggleListValue(key: 'levels' | 'shifts' | 'modalities', value: string) {
+    setDraft((current) => {
+      const values = current[key]
+      const nextValues = values.includes(value)
+        ? values.filter((item) => item !== value)
+        : [...values, value]
+      return { ...current, [key]: nextValues }
+    })
+  }
+
+  function updatePeriod(index: number, patch: Partial<PeriodDraft>) {
+    setDraft((current) => ({
+      ...current,
+      periods: current.periods.map((period, periodIndex) =>
+        periodIndex === index ? { ...period, ...patch } : period,
+      ),
+    }))
+  }
+
+  function addPeriod() {
+    setDraft((current) => ({
+      ...current,
+      periods: [
+        ...current.periods,
+        { name: `Periodo ${current.periods.length + 1}`, startDate: current.schoolStartDate, endDate: current.schoolEndDate },
+      ],
+    }))
+  }
+
+  function removePeriod(index: number) {
+    setDraft((current) => ({
+      ...current,
+      periods: current.periods.filter((_, periodIndex) => periodIndex !== index),
+    }))
+  }
+
+  function updateCourse(patch: Partial<CourseDraft>) {
+    setDraft((current) => ({ ...current, course: { ...current.course, ...patch } }))
+  }
+```
+
+- [ ] **Step 5: Add navigation handlers**
+
+Add inside `OnboardingPage`, before `handleSubmit`:
+
+```tsx
+  function goNext() {
+    const nextErrors = validateStep(step, draft)
+    setErrors(nextErrors)
+    setSubmitError('')
+    if (Object.keys(nextErrors).length) return
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
+    setStep((current) => Math.min(current + 1, totalSteps - 1))
+  }
+
+  function goBack() {
+    setErrors({})
+    setSubmitError('')
+    setStep((current) => Math.max(current - 1, 0))
+  }
+```
+
+- [ ] **Step 6: Run frontend build**
+
+Run:
+
+```powershell
+$env:Path = 'C:\Program Files\nodejs;' + $env:Path
+& 'C:\Program Files\nodejs\corepack.cmd' pnpm --filter frontend build
+```
+
+Expected: build still may fail until render markup is replaced in Task 3, but validation helpers should type-check.
+
+- [ ] **Step 7: Commit**
+
+```powershell
+git add apps/frontend/src/modules/auth/pages/OnboardingPage.tsx
+git commit -m "feat: add onboarding wizard state validation"
+```
+
+---
+
+### Task 3: Replace Long Page With Modal Wizard UI
+
+**Files:**
+- Modify: `apps/frontend/src/modules/auth/pages/OnboardingPage.tsx`
+
+**Interfaces:**
+- Consumes: `draft`, `errors`, `step`, `goNext`, `goBack`, `updateDraft`, `toggleListValue`, `updatePeriod`, `addPeriod`, `removePeriod`, `updateCourse`
+- Produces:
+  - `DashboardPreview`
+  - `StepProgress`
+  - `FieldError`
+  - `ChoiceButton`
+  - `renderStep()`
+
+- [ ] **Step 1: Add small display helper components**
+
+Add below validation helpers:
+
+```tsx
 function FieldError({ message }: { message?: string }) {
   return message ? <p className="mt-1 text-xs font-medium text-red-600">{message}</p> : null
 }
@@ -212,9 +408,7 @@ function StepProgress({ step }: { step: number }) {
     <div>
       <div className="flex items-center justify-between text-xs font-bold uppercase text-[#2D6977]">
         <span>Configuracion inicial</span>
-        <span>
-          Paso {step + 1} de {totalSteps}
-        </span>
+        <span>Paso {step + 1} de {totalSteps}</span>
       </div>
       <div className="mt-3 h-2 rounded-full bg-[#E5E7EB]">
         <div className="h-2 rounded-full bg-[#1F4E5F]" style={{ width: `${progress}%` }} />
@@ -256,7 +450,13 @@ function DashboardPreview() {
     </div>
   )
 }
+```
 
+- [ ] **Step 2: Add choice button helper**
+
+Add below `DashboardPreview`:
+
+```tsx
 function ChoiceButton({
   active,
   children,
@@ -281,133 +481,13 @@ function ChoiceButton({
     </button>
   )
 }
+```
 
-export function OnboardingPage() {
-  const [searchParams] = useSearchParams()
-  const resetMode = searchParams.get('reset') === '1'
-  const {
-    appUser,
-    completeOnboarding,
-    isAuthenticated,
-    loading,
-    profileRequired,
-    onboardingComplete,
-  } = useAuth()
-  const [step, setStep] = useState(0)
-  const [draft, setDraft] = useState(() => loadDraft(appUser?.fullName ?? ''))
-  const [errors, setErrors] = useState<StepErrors>({})
-  const [submitError, setSubmitError] = useState('')
-  const [submitting, setSubmitting] = useState(false)
+- [ ] **Step 3: Add step render function**
 
-  useEffect(() => {
-    if (!resetMode) return
-    const initialDraft = createInitialDraft(appUser?.fullName ?? '')
-    localStorage.setItem(DRAFT_KEY, JSON.stringify(initialDraft))
-    setDraft(initialDraft)
-    setStep(0)
-    setErrors({})
-    setSubmitError('')
-  }, [appUser?.fullName, resetMode])
+Inside `OnboardingPage`, before `handleSubmit`, add:
 
-  useEffect(() => {
-    localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
-  }, [draft])
-
-  if (!resetMode && !loading && isAuthenticated && onboardingComplete) {
-    return <Navigate to="/" replace />
-  }
-
-  if (!loading && !isAuthenticated && !profileRequired) {
-    return <Navigate to="/registro" replace />
-  }
-
-  function updateDraft(patch: Partial<OnboardingDraft>) {
-    setDraft((current) => ({ ...current, ...patch }))
-  }
-
-  function toggleListValue(key: 'levels' | 'shifts' | 'modalities', value: string) {
-    setDraft((current) => {
-      const values = current[key]
-      const nextValues = values.includes(value)
-        ? values.filter((item) => item !== value)
-        : [...values, value]
-      return { ...current, [key]: nextValues }
-    })
-  }
-
-  function updatePeriod(index: number, patch: Partial<PeriodDraft>) {
-    setDraft((current) => ({
-      ...current,
-      periods: current.periods.map((period, periodIndex) =>
-        periodIndex === index ? { ...period, ...patch } : period,
-      ),
-    }))
-  }
-
-  function addPeriod() {
-    setDraft((current) => ({
-      ...current,
-      periods: [
-        ...current.periods,
-        {
-          name: `Periodo ${current.periods.length + 1}`,
-          startDate: current.schoolStartDate,
-          endDate: current.schoolEndDate,
-        },
-      ],
-    }))
-  }
-
-  function removePeriod(index: number) {
-    setDraft((current) => ({
-      ...current,
-      periods: current.periods.filter((_, periodIndex) => periodIndex !== index),
-    }))
-  }
-
-  function updateCourse(patch: Partial<CourseDraft>) {
-    setDraft((current) => ({ ...current, course: { ...current.course, ...patch } }))
-  }
-
-  function goNext() {
-    const nextErrors = validateStep(step, draft)
-    setErrors(nextErrors)
-    setSubmitError('')
-    if (Object.keys(nextErrors).length) return
-    localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
-    setStep((current) => Math.min(current + 1, totalSteps - 1))
-  }
-
-  function goBack() {
-    setErrors({})
-    setSubmitError('')
-    setStep((current) => Math.max(current - 1, 0))
-  }
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    setSubmitError('')
-
-    for (let stepIndex = 0; stepIndex < totalSteps - 1; stepIndex += 1) {
-      const nextErrors = validateStep(stepIndex, draft)
-      if (Object.keys(nextErrors).length) {
-        setErrors(nextErrors)
-        setStep(stepIndex)
-        return
-      }
-    }
-
-    setSubmitting(true)
-    try {
-      await completeOnboarding(toOnboardingInput(draft))
-      localStorage.removeItem(DRAFT_KEY)
-    } catch (err) {
-      setSubmitError(err instanceof Error ? err.message : 'No se pudo completar la configuracion.')
-    } finally {
-      setSubmitting(false)
-    }
-  }
-
+```tsx
   function renderStep() {
     if (step === 0) {
       return (
@@ -442,21 +522,21 @@ export function OnboardingPage() {
           <div>
             <h3 className="text-sm font-bold text-[#374151]">Nivel en que trabaja</h3>
             <div className="mt-2 flex flex-wrap gap-2">
-              {levelOptions.map((option) => (
-                <ChoiceButton key={option.value} active={draft.levels.includes(option.value)} onClick={() => toggleListValue('levels', option.value)}>
-                  {option.label}
-                </ChoiceButton>
-              ))}
+              <ChoiceButton active={draft.levels.includes('primary')} onClick={() => toggleListValue('levels', 'primary')}>Primaria</ChoiceButton>
+              <ChoiceButton active={draft.levels.includes('secondary')} onClick={() => toggleListValue('levels', 'secondary')}>Secundaria</ChoiceButton>
             </div>
             <FieldError message={errors.levels} />
           </div>
           <div>
             <h3 className="text-sm font-bold text-[#374151]">Tanda</h3>
             <div className="mt-2 flex flex-wrap gap-2">
-              {shiftOptions.map((option) => (
-                <ChoiceButton key={option.value} active={draft.shifts.includes(option.value)} onClick={() => toggleListValue('shifts', option.value)}>
-                  {option.label}
-                </ChoiceButton>
+              {[
+                ['morning', 'Matutina'],
+                ['afternoon', 'Vespertina'],
+                ['night', 'Nocturna'],
+                ['extended', 'Extendida'],
+              ].map(([value, label]) => (
+                <ChoiceButton key={value} active={draft.shifts.includes(value)} onClick={() => toggleListValue('shifts', value)}>{label}</ChoiceButton>
               ))}
             </div>
             <FieldError message={errors.shifts} />
@@ -464,11 +544,9 @@ export function OnboardingPage() {
           <div>
             <h3 className="text-sm font-bold text-[#374151]">Modalidad</h3>
             <div className="mt-2 flex flex-wrap gap-2">
-              {modalityOptions.map((option) => (
-                <ChoiceButton key={option.value} active={draft.modalities.includes(option.value)} onClick={() => toggleListValue('modalities', option.value)}>
-                  {option.label}
-                </ChoiceButton>
-              ))}
+              <ChoiceButton active={draft.modalities.includes('regular')} onClick={() => toggleListValue('modalities', 'regular')}>Primaria/Secundaria</ChoiceButton>
+              <ChoiceButton active={draft.modalities.includes('adultos')} onClick={() => toggleListValue('modalities', 'adultos')}>Adultos</ChoiceButton>
+              <ChoiceButton active={draft.modalities.includes('other')} onClick={() => toggleListValue('modalities', 'other')}>Otra</ChoiceButton>
             </div>
             <FieldError message={errors.modalities} />
           </div>
@@ -558,16 +636,20 @@ export function OnboardingPage() {
       <div className="space-y-4 text-sm text-[#374151]">
         <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Docente:</strong> {draft.fullName}</div>
         <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Centro:</strong> {draft.schoolName}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Nivel:</strong> {labelsFor(levelOptions, draft.levels)}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Tanda:</strong> {labelsFor(shiftOptions, draft.shifts)}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Modalidad:</strong> {labelsFor(modalityOptions, draft.modalities)}</div>
+        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Nivel/tanda:</strong> {draft.levels.join(', ')} / {draft.shifts.join(', ')}</div>
         <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Ano escolar:</strong> {draft.schoolYearName}</div>
         <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Periodos:</strong> {draft.periods.map((period) => period.name).join(', ')}</div>
         <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Primer curso:</strong> {draft.course.gradeName} {draft.course.sectionName} - {draft.course.subjectName}</div>
       </div>
     )
   }
+```
 
+- [ ] **Step 4: Replace the returned long page JSX**
+
+Replace the final `return (...)` in `OnboardingPage` with:
+
+```tsx
   const stepTitles = [
     'Datos del docente y centro',
     'Nivel, tanda y modalidad',
@@ -615,4 +697,122 @@ export function OnboardingPage() {
       </div>
     </main>
   )
-}
+```
+
+- [ ] **Step 5: Run frontend build**
+
+Run:
+
+```powershell
+$env:Path = 'C:\Program Files\nodejs;' + $env:Path
+& 'C:\Program Files\nodejs\corepack.cmd' pnpm --filter frontend build
+```
+
+Expected: PASS.
+
+- [ ] **Step 6: Commit**
+
+```powershell
+git add apps/frontend/src/modules/auth/pages/OnboardingPage.tsx
+git commit -m "feat: redesign onboarding as wizard"
+```
+
+---
+
+### Task 4: Wire Final Submit, Cleanup Draft, And Verify Runtime
+
+**Files:**
+- Modify: `apps/frontend/src/modules/auth/pages/OnboardingPage.tsx`
+
+**Interfaces:**
+- Consumes: `toOnboardingInput(draft)`, `validateStep(step, draft)`, `completeOnboarding(input)`
+- Produces: final `handleSubmit(event: FormEvent<HTMLFormElement>)`
+
+- [ ] **Step 1: Replace `handleSubmit`**
+
+Use this final submit handler inside `OnboardingPage`:
+
+```tsx
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setSubmitError('')
+
+    const nextErrors = validateStep(3, draft)
+    setErrors(nextErrors)
+    if (Object.keys(nextErrors).length) {
+      setStep(3)
+      return
+    }
+
+    setSubmitting(true)
+    try {
+      await completeOnboarding(toOnboardingInput(draft))
+      localStorage.removeItem(DRAFT_KEY)
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'No se pudo completar la configuracion.')
+    } finally {
+      setSubmitting(false)
+    }
+  }
+```
+
+- [ ] **Step 2: Add final-step guard to `goNext`**
+
+Confirm `goNext` uses current `step` and cannot advance past `totalSteps - 1`:
+
+```tsx
+    setStep((current) => Math.min(current + 1, totalSteps - 1))
+```
+
+- [ ] **Step 3: Verify frontend build**
+
+Run:
+
+```powershell
+$env:Path = 'C:\Program Files\nodejs;' + $env:Path
+& 'C:\Program Files\nodejs\corepack.cmd' pnpm --filter frontend build
+```
+
+Expected: PASS.
+
+- [ ] **Step 4: Restart frontend dev server**
+
+Run:
+
+```powershell
+$frontend = Get-NetTCPConnection -LocalPort 5173 -State Listen -ErrorAction SilentlyContinue
+if ($frontend) { Stop-Process -Id $frontend.OwningProcess -Force }
+Start-Sleep -Seconds 1
+$env:Path = 'C:\Program Files\nodejs;' + $env:Path
+Start-Process -FilePath 'C:\Program Files\nodejs\corepack.cmd' -ArgumentList 'pnpm','--filter','frontend','dev','--','--host','127.0.0.1' -WorkingDirectory 'C:\Users\alexa\OneDrive\Documents\Proyecto Educativo\Proyecto-educativo-v3' -RedirectStandardOutput 'C:\Users\alexa\OneDrive\Documents\Proyecto Educativo\Proyecto-educativo-v3\frontend.restart.log' -RedirectStandardError 'C:\Users\alexa\OneDrive\Documents\Proyecto Educativo\Proyecto-educativo-v3\frontend.restart.err.log' -WindowStyle Hidden
+Start-Sleep -Seconds 5
+Get-NetTCPConnection -LocalPort 5173 -State Listen -ErrorAction SilentlyContinue
+```
+
+Expected: a listener exists on port 5173.
+
+- [ ] **Step 5: Verify Vite page loads**
+
+Run:
+
+```powershell
+Invoke-WebRequest -Uri http://localhost:5173/ -UseBasicParsing | Select-Object StatusCode
+Get-Content frontend.restart.err.log -Tail 40
+```
+
+Expected: `StatusCode` is `200`, and no Vite runtime error appears in the stderr tail.
+
+- [ ] **Step 6: Commit**
+
+```powershell
+git add apps/frontend/src/modules/auth/pages/OnboardingPage.tsx
+git commit -m "fix: persist onboarding wizard draft"
+```
+
+---
+
+## Self-Review
+
+- Spec coverage: The plan implements the centered modal wizard, blurred dashboard preview, one-step-at-a-time flow, progress indicator, next/back/final buttons, localStorage draft persistence, final backend submit, validation, and post-completion draft cleanup.
+- Red-flag scan: No incomplete implementation markers are included.
+- Type consistency: The plan defines `OnboardingDraft`, `PeriodDraft`, `CourseDraft`, and `StepErrors` before using them in later tasks.

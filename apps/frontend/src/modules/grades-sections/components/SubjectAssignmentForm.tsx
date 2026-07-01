@@ -1,8 +1,7 @@
 /**
  * @file Componente SubjectAssignmentForm
  *
- * Formulario modal para asignar una asignatura existente o
- * crear una nueva y asignarla a una sección.
+ * Formulario modal para agregar una asignatura a una seccion existente.
  */
 
 import { useState } from 'react'
@@ -11,25 +10,33 @@ import type { FormEvent } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
+import {
+  attachExistingSubjectIds,
+  defaultAcademicStructure,
+  normalizeAcademicText,
+} from '@/modules/grades-sections/data/academicAssignmentCatalog'
 import type {
   CourseCatalogs,
   CreateSubjectInput,
+  GradeWithSections,
+  Section,
   Subject,
 } from '@/modules/grades-sections/types'
 
-/** Propiedades del componente SubjectAssignmentForm */
 type SubjectAssignmentFormProps = {
-  sectionLabel: string
-  catalogs: Pick<CourseCatalogs, 'subjects' | 'teachers'>
+  grade: GradeWithSections
+  section: Section
+  catalogs: Pick<CourseCatalogs, 'subjects'>
   submitting: boolean
   error: string | null
   onCreateSubject: (input: CreateSubjectInput) => Promise<Subject>
-  onAssign: (input: { subjectId: string; teacherId: string | null }) => Promise<void>
+  onAssign: (input: { subjectId: string }) => Promise<void>
   onClose: () => void
 }
 
 export function SubjectAssignmentForm({
-  sectionLabel,
+  grade,
+  section,
   catalogs,
   submitting,
   error,
@@ -38,40 +45,68 @@ export function SubjectAssignmentForm({
   onClose,
 }: SubjectAssignmentFormProps) {
   const [mode, setMode] = useState<'existing' | 'new'>('existing')
-  const [subjectId, setSubjectId] = useState('')
-  const [teacherId, setTeacherId] = useState('')
-  const [code, setCode] = useState('')
+  const [subjectKey, setSubjectKey] = useState('')
   const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
-  const [credits, setCredits] = useState('')
+  const activeAssignments = section.assignments.filter((assignment) => assignment.status === 'active')
+  const assignedSubjectIds = new Set(activeAssignments.map((assignment) => assignment.subjectId))
+  const assignedSubjectNames = new Set(
+    activeAssignments.map((assignment) => normalizeAcademicText(assignment.subjectName)),
+  )
+  const officialSubjects = attachExistingSubjectIds(findGradeSubjects(grade), catalogs.subjects)
+  const availableSubjects = officialSubjects.filter(
+    (subject) =>
+      !(subject.id && assignedSubjectIds.has(subject.id)) &&
+      !assignedSubjectNames.has(normalizeAcademicText(subject.name)),
+  )
+  const selectedSubject = availableSubjects.find((subject) => subject.key === subjectKey)
+  const normalizedNewName = normalizeAcademicText(name)
+  const duplicatesAssignedSubject = assignedSubjectNames.has(normalizedNewName)
+  const matchesOfficialSubject = officialSubjects.some(
+    (subject) => normalizeAcademicText(subject.name) === normalizedNewName,
+  )
+  const canSubmit =
+    mode === 'existing'
+      ? Boolean(selectedSubject)
+      : Boolean(name.trim()) && !duplicatesAssignedSubject && !matchesOfficialSubject
+
+  function switchMode(nextMode: 'existing' | 'new') {
+    setMode(nextMode)
+    setSubjectKey('')
+    setName('')
+  }
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
+    if (!canSubmit) return
 
-    let selectedSubjectId = subjectId
-    if (mode === 'new') {
-      if (!code.trim() || !name.trim()) return
+    let selectedSubjectId = selectedSubject?.id
+    if (mode === 'existing' && selectedSubject && !selectedSubjectId) {
       const subject = await onCreateSubject({
-        code,
-        name,
-        description,
-        credits: credits ? Number(credits) : null,
+        code: selectedSubject.code,
+        name: selectedSubject.name,
+      })
+      selectedSubjectId = subject.id
+    }
+
+    if (mode === 'new') {
+      const subject = await onCreateSubject({
+        code: createCustomSubjectCode(name),
+        name: name.trim(),
+        description: 'custom',
       })
       selectedSubjectId = subject.id
     }
 
     if (!selectedSubjectId) return
-
-    await onAssign({
-      subjectId: selectedSubjectId,
-      teacherId: teacherId || null,
-    })
+    await onAssign({ subjectId: selectedSubjectId })
   }
+
+  const sectionLabel = `${grade.name} ${section.name}`
 
   return (
     <Modal
       title="Asignar asignatura"
-      description={`Agrega una materia a ${sectionLabel} para el año escolar activo.`}
+      description={`Agrega otra asignatura a ${sectionLabel} para el año escolar activo.`}
       onClose={onClose}
     >
       <form onSubmit={handleSubmit} className="space-y-5 p-5">
@@ -87,7 +122,7 @@ export function SubjectAssignmentForm({
             className={`rounded-md px-3 py-2 text-sm font-semibold ${
               mode === 'existing' ? 'bg-card text-foreground shadow-sm' : 'text-muted-foreground'
             }`}
-            onClick={() => setMode('existing')}
+            onClick={() => switchMode('existing')}
           >
             Existente
           </button>
@@ -96,100 +131,104 @@ export function SubjectAssignmentForm({
             className={`rounded-md px-3 py-2 text-sm font-semibold ${
               mode === 'new' ? 'bg-card text-foreground shadow-sm' : 'text-muted-foreground'
             }`}
-            onClick={() => setMode('new')}
+            onClick={() => switchMode('new')}
           >
             Nueva
           </button>
         </div>
 
         {mode === 'existing' ? (
-          <label className="block space-y-2">
-            <span className="text-sm font-medium text-foreground">Asignatura</span>
-            <select
-              className="h-10 w-full rounded-lg border border-input bg-card px-3 text-sm text-foreground outline-none focus-visible:ring-4 focus-visible:ring-ring/35"
-              value={subjectId}
-              onChange={(event) => setSubjectId(event.target.value)}
-              required
-            >
-              <option value="">Selecciona una asignatura</option>
-              {catalogs.subjects.map((subject) => (
-                <option key={subject.id} value={subject.id}>
-                  {subject.name} ({subject.code})
-                </option>
-              ))}
-            </select>
-          </label>
-        ) : (
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="space-y-2">
-              <span className="text-sm font-medium text-foreground">Código</span>
-              <Input
-                value={code}
-                onChange={(event) => setCode(event.target.value)}
-                placeholder="MAT"
-                required={mode === 'new'}
-              />
+          availableSubjects.length ? (
+            <label className="block space-y-2">
+              <span className="text-sm font-medium text-foreground">Asignatura</span>
+              <select
+                className="h-10 w-full rounded-lg border border-input bg-card px-3 text-sm text-foreground outline-none focus-visible:ring-4 focus-visible:ring-ring/35"
+                value={subjectKey}
+                onChange={(event) => setSubjectKey(event.target.value)}
+                required
+              >
+                <option value="">Selecciona una asignatura</option>
+                {availableSubjects.map((subject) => (
+                  <option key={subject.key} value={subject.key}>
+                    {subject.name}
+                  </option>
+                ))}
+              </select>
             </label>
+          ) : (
+            <div className="rounded-lg border border-border bg-muted/40 p-4 text-sm text-muted-foreground">
+              Todas las asignaturas oficiales de este grado ya están asignadas a esta sección.
+            </div>
+          )
+        ) : (
+          <div className="space-y-3">
             <label className="space-y-2">
               <span className="text-sm font-medium text-foreground">Nombre</span>
               <Input
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                placeholder="Matemática"
-                required={mode === 'new'}
+                placeholder="Ej. Taller de lectura, Robótica, Sexualidad Humana"
+                required
               />
             </label>
-            <label className="space-y-2 sm:col-span-2">
-              <span className="text-sm font-medium text-foreground">Descripción</span>
-              <Input
-                value={description}
-                onChange={(event) => setDescription(event.target.value)}
-                placeholder="Opcional"
-              />
-            </label>
-            <label className="space-y-2">
-              <span className="text-sm font-medium text-foreground">Créditos / carga</span>
-              <Input
-                type="number"
-                min="0"
-                step="0.5"
-                value={credits}
-                onChange={(event) => setCredits(event.target.value)}
-                placeholder="Opcional"
-              />
-            </label>
+            {duplicatesAssignedSubject ? (
+              <p className="text-sm font-medium text-destructive">
+                Esa asignatura ya está asignada a esta sección.
+              </p>
+            ) : null}
+            {matchesOfficialSubject ? (
+              <p className="text-sm font-medium text-warning">
+                Esta asignatura existe en el catálogo oficial. Usa la pestaña Existente.
+              </p>
+            ) : null}
           </div>
         )}
-
-        <label className="block space-y-2">
-          <span className="text-sm font-medium text-foreground">Docente</span>
-          <select
-            className="h-10 w-full rounded-lg border border-input bg-card px-3 text-sm text-foreground outline-none focus-visible:ring-4 focus-visible:ring-ring/35"
-            value={teacherId}
-            onChange={(event) => setTeacherId(event.target.value)}
-          >
-            <option value="">Sin docente asignado</option>
-            {catalogs.teachers.map((teacher) => (
-              <option key={teacher.id} value={teacher.id}>
-                {teacher.name}
-              </option>
-            ))}
-          </select>
-        </label>
 
         <div className="flex justify-end gap-3 pt-2">
           <Button variant="outline" type="button" onClick={onClose}>
             Cancelar
           </Button>
-          <Button
-            type="submit"
-            loading={submitting}
-            disabled={mode === 'existing' ? !subjectId : !code.trim() || !name.trim()}
-          >
+          <Button type="submit" loading={submitting} disabled={!canSubmit}>
             Asignar
           </Button>
         </div>
       </form>
     </Modal>
   )
+}
+
+function findGradeSubjects(grade: GradeWithSections) {
+  const gradeSequence = resolveGradeSequence(grade)
+  const levelText = normalizeAcademicText(
+    `${grade.academicLevelName ?? ''} ${grade.level ?? ''} ${grade.name}`,
+  )
+  const cycleText = normalizeAcademicText(grade.academicCycleName ?? '')
+  const level = defaultAcademicStructure.find((item) =>
+    item.matchNames.some((name) => levelText.includes(normalizeAcademicText(name))),
+  ) ?? (
+    levelText.includes('secund')
+      ? defaultAcademicStructure.find((item) => item.code === 'secondary')
+      : undefined
+  )
+  const cycle = level?.cycles.find((item) =>
+    item.matchNames.some((name) => cycleText.includes(normalizeAcademicText(name))),
+  ) ?? level?.cycles.find((item) =>
+    item.grades.some((option) => option.sequence === gradeSequence),
+  )
+  return cycle?.grades.find((item) => item.sequence === gradeSequence)?.subjects ?? []
+}
+
+function resolveGradeSequence(grade: GradeWithSections) {
+  if (grade.sequence) return grade.sequence
+
+  const match = normalizeAcademicText(grade.name).match(/(?:^|\D)([1-6])(?:\D|$)/)
+  return match ? Number(match[1]) : null
+}
+
+function createCustomSubjectCode(name: string) {
+  const slug = normalizeAcademicText(name)
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 24)
+  return `CUSTOM-${slug || 'asignatura'}`
 }

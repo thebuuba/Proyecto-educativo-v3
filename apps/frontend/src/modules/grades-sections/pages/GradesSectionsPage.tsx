@@ -1,20 +1,12 @@
 /**
- * @file Página de Cursos
+ * @file Pagina de Gestion Academica
  *
- * Vista principal de organización académica: administración
- * de grados, secciones, asignaturas y carga docente.
+ * Vista principal de organizacion academica: grados, secciones,
+ * asignaturas y asignaciones docentes.
  */
 
-import {
-  AlertCircle,
-  ArrowRight,
-  BookOpenCheck,
-  Grid3x3,
-  Plus,
-  RefreshCw,
-} from 'lucide-react'
+import { AlertCircle, Plus } from 'lucide-react'
 import { useCallback, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent } from '@/components/ui/Card'
@@ -24,36 +16,19 @@ import { ErrorState } from '@/components/ui/ErrorState'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { GradeCard } from '@/modules/grades-sections/components/GradeCard'
-import { GradeForm } from '@/modules/grades-sections/components/GradeForm'
 import { SectionForm } from '@/modules/grades-sections/components/SectionForm'
 import { SubjectAssignmentForm } from '@/modules/grades-sections/components/SubjectAssignmentForm'
+import { TeacherAssignmentForm } from '@/modules/grades-sections/components/TeacherAssignmentForm'
 import { useGradesSections } from '@/modules/grades-sections/hooks/useGradesSections'
 import type {
-  CreateGradeInput,
   CreateSubjectInput,
   GradeWithSections,
   Section,
   Subject,
+  TeacherAssignmentInput,
 } from '@/modules/grades-sections/types'
 import { cn } from '@/utils/cn'
 
-/** Enlaces rápidos a módulos relacionados */
-const academicLinks = [
-  {
-    to: '/asignaturas',
-    title: 'Asignaturas',
-    description: 'Catálogo general de materias disponibles.',
-    icon: BookOpenCheck,
-  },
-  {
-    to: '/matriz',
-    title: 'Matriz curricular',
-    description: 'Competencias, contenidos y organización curricular.',
-    icon: Grid3x3,
-  },
-] as const
-
-/** Página principal de administración de cursos y secciones */
 export function GradesSectionsPage() {
   const { hasRole } = useAuth()
   const {
@@ -62,24 +37,21 @@ export function GradesSectionsPage() {
     currentSchoolYear,
     loading,
     error,
-    refetch,
-    addGrade,
-    editGrade,
     removeGrade,
     addSection,
     editSection,
     removeSection,
     addSubject,
+    createTeacherAssignment,
     assignSubject,
     removeSubjectAssignment,
   } = useGradesSections()
 
   const canManage = hasRole(['admin', 'coordinator'])
 
-  const [gradeFormOpen, setGradeFormOpen] = useState(false)
-  const [editingGrade, setEditingGrade] = useState<GradeWithSections | null>(null)
-  const [gradeFormError, setGradeFormError] = useState<string | null>(null)
-  const [gradeSubmitting, setGradeSubmitting] = useState(false)
+  const [assignmentFlowOpen, setAssignmentFlowOpen] = useState(false)
+  const [assignmentFlowError, setAssignmentFlowError] = useState<string | null>(null)
+  const [assignmentFlowSubmitting, setAssignmentFlowSubmitting] = useState(false)
 
   const [sectionFormOpen, setSectionFormOpen] = useState(false)
   const [sectionGrade, setSectionGrade] = useState<GradeWithSections | null>(null)
@@ -101,48 +73,15 @@ export function GradesSectionsPage() {
   } | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
 
-  function openCreateGrade() {
-    setEditingGrade(null)
-    setGradeFormError(null)
-    setGradeFormOpen(true)
+  function openCreateAssignmentFlow() {
+    setAssignmentFlowError(null)
+    setAssignmentFlowOpen(true)
   }
 
-  function openEditGrade(grade: GradeWithSections) {
-    setEditingGrade(grade)
-    setGradeFormError(null)
-    setGradeFormOpen(true)
+  function closeAssignmentFlow() {
+    setAssignmentFlowOpen(false)
+    setAssignmentFlowError(null)
   }
-
-  function closeGradeForm() {
-    setGradeFormOpen(false)
-    setEditingGrade(null)
-    setGradeFormError(null)
-  }
-
-  const handleGradeSubmit = useCallback(
-    async (input: CreateGradeInput) => {
-      setGradeSubmitting(true)
-      setGradeFormError(null)
-
-      try {
-        if (editingGrade) {
-          await editGrade(editingGrade.id, input)
-        } else {
-          await addGrade(input)
-        }
-        closeGradeForm()
-      } catch (error) {
-        setGradeFormError(
-          error instanceof Error
-            ? error.message
-            : 'No se pudo guardar el grado.',
-        )
-      } finally {
-        setGradeSubmitting(false)
-      }
-    },
-    [addGrade, editGrade, editingGrade],
-  )
 
   function openCreateSection(grade: GradeWithSections) {
     setSectionGrade(grade)
@@ -179,8 +118,29 @@ export function GradesSectionsPage() {
     setAssignmentError(null)
   }
 
+  const handleCreateTeacherAssignment = useCallback(
+    async (input: TeacherAssignmentInput) => {
+      setAssignmentFlowSubmitting(true)
+      setAssignmentFlowError(null)
+
+      try {
+        await createTeacherAssignment(input)
+        closeAssignmentFlow()
+      } catch (error) {
+        setAssignmentFlowError(
+          error instanceof Error
+            ? error.message
+            : 'No se pudo crear la asignacion docente.',
+        )
+      } finally {
+        setAssignmentFlowSubmitting(false)
+      }
+    },
+    [createTeacherAssignment],
+  )
+
   const handleSectionSubmit = useCallback(
-    async (input: { name: string; capacity?: number | null }) => {
+    async (input: { name: string }) => {
       if (!sectionGrade) return
 
       setSectionSubmitting(true)
@@ -197,7 +157,7 @@ export function GradesSectionsPage() {
         setSectionFormError(
           error instanceof Error
             ? error.message
-            : 'No se pudo guardar la sección.',
+            : 'No se pudo guardar la seccion.',
         )
       } finally {
         setSectionSubmitting(false)
@@ -237,7 +197,7 @@ export function GradesSectionsPage() {
   )
 
   const handleAssignSubject = useCallback(
-    async (input: { subjectId: string; teacherId: string | null }) => {
+    async (input: { subjectId: string }) => {
       if (!assignmentTarget || !currentSchoolYear) return
 
       setAssignmentSubmitting(true)
@@ -249,7 +209,7 @@ export function GradesSectionsPage() {
           gradeId: assignmentTarget.grade.id,
           sectionId: assignmentTarget.section.id,
           subjectId: input.subjectId,
-          teacherId: input.teacherId,
+          teacherId: null,
         })
         closeAssignmentForm()
       } catch (error) {
@@ -266,11 +226,6 @@ export function GradesSectionsPage() {
   )
 
   const totalSections = grades.reduce((sum, g) => sum + g.sections.length, 0)
-  const totalCapacity = grades.reduce(
-    (sum, g) =>
-      sum + g.sections.reduce((s, sec) => s + (sec.capacity ?? 0), 0),
-    0,
-  )
   const totalAssignments = grades.reduce(
     (sum, grade) =>
       sum + grade.sections.reduce(
@@ -288,36 +243,32 @@ export function GradesSectionsPage() {
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">
-              Organización académica
+              Organizacion academica
             </p>
             <h1 className="mt-3 text-4xl font-bold leading-none text-primary sm:text-5xl">
               Cursos
             </h1>
             <p className="mt-3 text-base leading-6 text-muted-foreground">
-              Administra grados, secciones, asignaturas y carga docente del año escolar.
+              Administra grados, secciones, asignaturas y carga docente del ano escolar.
             </p>
             <p className="mt-2 text-sm font-medium text-muted-foreground">
               {currentSchoolYear
-                ? `Año escolar activo: ${currentSchoolYear.name}`
-                : 'No hay un año escolar activo configurado.'}
+                ? `Ano escolar activo: ${currentSchoolYear.name}`
+                : 'No hay un ano escolar activo configurado.'}
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row lg:pb-1">
-            <Button variant="outline" className="h-12 px-5" onClick={() => void refetch()}>
-              <RefreshCw className="size-4" />
-              Actualizar
-            </Button>
-            {canManage ? (
-              <Button variant="primary" className="h-12 px-5" onClick={openCreateGrade}>
+          {canManage ? (
+            <div className="flex flex-col gap-3 sm:flex-row lg:pb-1">
+              <Button variant="primary" className="h-12 px-5" onClick={openCreateAssignmentFlow}>
                 <Plus className="size-4" />
                 Nuevo curso
               </Button>
-            ) : null}
-          </div>
+            </div>
+          ) : null}
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           <Card>
             <CardContent className="p-5 sm:p-6">
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
@@ -332,7 +283,7 @@ export function GradesSectionsPage() {
                   </p>
                 )}
               </div>
-              <p className="mt-4 text-sm text-muted-foreground">grados activos e inactivos</p>
+              <p className="mt-4 text-sm text-muted-foreground">grados activos</p>
             </CardContent>
           </Card>
 
@@ -357,24 +308,6 @@ export function GradesSectionsPage() {
           <Card>
             <CardContent className="p-5 sm:p-6">
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
-                Cupos totales
-              </p>
-              <div className={cn('mt-6', loading && 'animate-pulse')}>
-                {loading ? (
-                  <div className="h-9 w-16 rounded-lg bg-muted" />
-                ) : (
-                  <p className="text-4xl font-bold leading-none text-primary">
-                    {totalCapacity || '—'}
-                  </p>
-                )}
-              </div>
-              <p className="mt-4 text-sm text-muted-foreground">capacidad máxima</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-5 sm:p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-muted-foreground">
                 Asignaturas
               </p>
               <div className={cn('mt-6', loading && 'animate-pulse')}>
@@ -382,12 +315,12 @@ export function GradesSectionsPage() {
                   <div className="h-9 w-16 rounded-lg bg-muted" />
                 ) : (
                   <p className="text-4xl font-bold leading-none text-primary">
-                    {totalAssignments || '—'}
+                    {totalAssignments || '-'}
                   </p>
                 )}
               </div>
               <p className="mt-4 text-sm text-muted-foreground">
-                asignadas al año activo
+                asignadas al ano activo
               </p>
             </CardContent>
           </Card>
@@ -397,37 +330,11 @@ export function GradesSectionsPage() {
           <div className="flex gap-3 rounded-lg border border-warning/25 bg-warning/12 p-4 text-sm text-warning">
             <AlertCircle className="mt-0.5 size-4 shrink-0" />
             <p>
-              Configura y activa un año escolar para poder asignar asignaturas
+              Configura y activa un ano escolar para poder asignar asignaturas
               y docentes a las secciones.
             </p>
           </div>
         ) : null}
-
-        <div className="grid gap-3 md:grid-cols-3">
-          {academicLinks.map((item) => {
-            const Icon = item.icon
-            return (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="group flex min-h-28 items-start gap-3 rounded-lg border border-border bg-card p-4 text-left shadow-sm transition hover:border-ring/50 hover:bg-muted/40"
-              >
-                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent/12 text-accent">
-                  <Icon className="size-5" />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-semibold text-foreground">
-                    {item.title}
-                  </span>
-                  <span className="mt-1 block text-sm leading-5 text-muted-foreground">
-                    {item.description}
-                  </span>
-                </span>
-                <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
-              </Link>
-            )
-          })}
-        </div>
       </div>
 
       <div className="space-y-4">
@@ -467,7 +374,6 @@ export function GradesSectionsPage() {
                       key={grade.id}
                       grade={grade}
                       canManage={canManage}
-                      onEdit={openEditGrade}
                       onDelete={(g) =>
                         setDeleteTarget({
                           kind: 'grade',
@@ -487,7 +393,7 @@ export function GradesSectionsPage() {
                       }}
                       onAssignSubject={(sectionId) => {
                         if (!currentSchoolYear) {
-                          setActionError('Activa un año escolar antes de asignar asignaturas.')
+                          setActionError('Activa un ano escolar antes de asignar asignaturas.')
                           return
                         }
                         openAssignSubject(grade, sectionId)
@@ -509,11 +415,11 @@ export function GradesSectionsPage() {
           <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
             <div className="p-16">
               <EmptyState
-                title="Sin cursos aún"
-                description="Crea tu primer curso para organizar secciones, asignaturas y cupos."
+                title="Sin cursos aun"
+                description="Crea tu primer curso para organizar secciones y asignaturas."
                 action={
                   canManage ? (
-                    <Button variant="primary" onClick={openCreateGrade}>
+                    <Button variant="primary" onClick={openCreateAssignmentFlow}>
                       <Plus className="size-4" />
                       Crear curso
                     </Button>
@@ -525,21 +431,20 @@ export function GradesSectionsPage() {
         )}
       </div>
 
-      {gradeFormOpen ? (
-        <GradeForm
-          key={editingGrade?.id ?? 'new-grade'}
-          grade={editingGrade ?? undefined}
+      {assignmentFlowOpen ? (
+        <TeacherAssignmentForm
           catalogs={catalogs}
-          submitting={gradeSubmitting}
-          error={gradeFormError}
-          onSubmit={handleGradeSubmit}
-          onClose={closeGradeForm}
+          submitting={assignmentFlowSubmitting}
+          error={assignmentFlowError}
+          onSubmit={handleCreateTeacherAssignment}
+          onClose={closeAssignmentFlow}
         />
       ) : null}
 
       {assignmentTarget ? (
         <SubjectAssignmentForm
-          sectionLabel={`${assignmentTarget.grade.name} ${assignmentTarget.section.name}`}
+          grade={assignmentTarget.grade}
+          section={assignmentTarget.section}
           catalogs={catalogs}
           submitting={assignmentSubmitting}
           error={assignmentError}
@@ -553,6 +458,7 @@ export function GradesSectionsPage() {
         <SectionForm
           key={editingSection?.id ?? 'new-section'}
           gradeName={sectionGrade.name}
+          sections={sectionGrade.sections}
           section={editingSection ?? undefined}
           submitting={sectionSubmitting}
           error={sectionFormError}
@@ -567,15 +473,15 @@ export function GradesSectionsPage() {
             deleteTarget.kind === 'grade'
               ? 'Inactivar curso'
               : deleteTarget.kind === 'section'
-                ? 'Inactivar sección'
+                ? 'Inactivar seccion'
                 : 'Quitar asignatura'
           }
           description={
             deleteTarget.kind === 'grade'
-              ? `¿Inactivar el curso "${deleteTarget.label}"? Se conservará el historial relacionado.`
+              ? `Inactivar el curso "${deleteTarget.label}"? Se conservara el historial relacionado.`
               : deleteTarget.kind === 'section'
-                ? `¿Inactivar la sección "${deleteTarget.label}"? Se conservará el historial relacionado.`
-                : '¿Quitar esta asignatura del curso para el año escolar activo?'
+                ? `Inactivar la seccion "${deleteTarget.label}"? Se conservara el historial relacionado.`
+                : 'Quitar esta asignatura del curso para el ano escolar activo?'
           }
           confirmLabel={deleteTarget.kind === 'assignment' ? 'Quitar' : 'Inactivar'}
           destructive
@@ -587,7 +493,6 @@ export function GradesSectionsPage() {
   )
 }
 
-/** Agrupa los grados por nivel y ciclo académico */
 function groupGrades(grades: GradeWithSections[]) {
   const groups = new Map<string, {
     key: string
