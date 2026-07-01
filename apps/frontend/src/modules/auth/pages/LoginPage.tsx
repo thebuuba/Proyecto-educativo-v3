@@ -6,13 +6,9 @@
 import {
   ArrowRight,
   BookOpen,
-  CalendarDays,
   CheckCircle,
-  Clock,
   Eye,
   EyeOff,
-  SquareCheckBig,
-  Star,
   Users,
 } from 'lucide-react'
 import type { FormEvent } from 'react'
@@ -27,53 +23,6 @@ type LocationState = {
   }
   registered?: boolean
 }
-
-const features = [
-  {
-    icon: BookOpen,
-    label: 'Clases y horarios',
-    desc: 'Gestiona tus grupos y bloques',
-  },
-  {
-    icon: SquareCheckBig,
-    label: 'Asistencia rápida',
-    desc: 'Registra en segundos por clase',
-  },
-  {
-    icon: Star,
-    label: 'Calificaciones',
-    desc: 'Carga notas y genera reportes',
-  },
-  {
-    icon: CalendarDays,
-    label: 'Agenda docente',
-    desc: 'Eventos, reuniones y entregas',
-  },
-]
-
-const stats = [
-  {
-    icon: Users,
-    value: '1,248',
-    label: 'Estudiantes',
-    valueColor: '#1F4E5F',
-    iconColor: '#2D6977',
-  },
-  {
-    icon: Clock,
-    value: '5',
-    label: 'Clases hoy',
-    valueColor: '#1F4E5F',
-    iconColor: '#2D6977',
-  },
-  {
-    icon: SquareCheckBig,
-    value: '92%',
-    label: 'Asistencia',
-    valueColor: '#059669',
-    iconColor: '#10B981',
-  },
-]
 
 function GoogleIcon() {
   return (
@@ -180,46 +129,6 @@ export function LoginPage() {
             notas, grupos y agenda.
           </p>
 
-          <div className="fu fu4 grid grid-cols-2 gap-2">
-            {features.map((feature) => {
-              const Icon = feature.icon
-              return (
-                <div
-                  key={feature.label}
-                  className="flex items-start gap-2.5 rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] px-3.5 py-3"
-                >
-                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-xl border border-[#A8CDD4] bg-[#EBF5F7] text-[#1F4E5F] shadow-[0_1px_4px_rgba(31,78,95,.08)]">
-                    <Icon size={13} />
-                  </div>
-                  <div>
-                    <p className="text-[12px] font-semibold leading-none text-[#1F2937]">
-                      {feature.label}
-                    </p>
-                    <p className="mt-0.5 text-[10px] leading-tight text-[#6B7280]">
-                      {feature.desc}
-                    </p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-
-        <div className="relative z-10 fu fu5">
-          <div className="grid grid-cols-3 divide-x divide-[#E5E7EB] overflow-hidden rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB]">
-            {stats.map((stat) => {
-              const Icon = stat.icon
-              return (
-                <div key={stat.label} className="flex flex-col items-center gap-1 py-3">
-                  <Icon size={12} color={stat.iconColor} />
-                  <p className="text-sm font-extrabold" style={{ color: stat.valueColor }}>
-                    {stat.value}
-                  </p>
-                  <p className="text-[10px] text-[#6B7280]">{stat.label}</p>
-                </div>
-              )
-            })}
-          </div>
         </div>
       </section>
 
