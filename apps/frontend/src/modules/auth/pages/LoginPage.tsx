@@ -1,15 +1,16 @@
-/**
- * Página de inicio de sesión — Formulario de login con estados de carga,
- * error, registro exitoso y recuperación de contraseña.
- */
-
 import {
-  ArrowRight,
+  Backpack,
   BookOpen,
+  Calculator,
   CheckCircle,
   Eye,
   EyeOff,
-  Users,
+  GraduationCap,
+  Library,
+  Microscope,
+  Palette,
+  Pencil,
+  Ruler,
 } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
@@ -24,30 +25,38 @@ type LocationState = {
   registered?: boolean
 }
 
+const FLOATING_ICONS = [
+  { Icon: BookOpen, top: '8%', left: '6%', size: 44, rotate: -12 },
+  { Icon: Pencil, top: '18%', left: '88%', size: 36, rotate: 22 },
+  { Icon: Backpack, top: '72%', left: '8%', size: 48, rotate: 8 },
+  { Icon: Calculator, top: '82%', left: '84%', size: 40, rotate: -18 },
+  { Icon: Ruler, top: '42%', left: '4%', size: 42, rotate: 45 },
+  { Icon: Palette, top: '38%', left: '92%', size: 38, rotate: -25 },
+  { Icon: Microscope, top: '58%', left: '90%', size: 40, rotate: 15 },
+  { Icon: Library, top: '62%', left: '3%', size: 44, rotate: -8 },
+  { Icon: GraduationCap, top: '5%', left: '45%', size: 32, rotate: -6 },
+  { Icon: BookOpen, top: '90%', left: '48%', size: 30, rotate: 12 },
+]
+
 function GoogleIcon() {
   return (
-    <svg width="17" height="17" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <path d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFC107" />
-      <path d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z" fill="#FF3D00" />
-      <path d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z" fill="#4CAF50" />
-      <path d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z" fill="#1976D2" />
+    <svg className="size-4" viewBox="0 0 24 24">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
     </svg>
   )
 }
 
 function FacebookIcon() {
   return (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+    <svg className="size-4" fill="white" viewBox="0 0 24 24">
       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
     </svg>
   )
 }
 
-/**
- * Página de inicio de sesión.
- * Redirige al dashboard si ya está autenticado. Maneja estados de error,
- * registro exitoso y recuperación de contraseña.
- */
 export function LoginPage() {
   const { authError, isAuthenticated, loading, login, loginWithProvider, profileRequired } = useAuth()
   const location = useLocation()
@@ -102,209 +111,207 @@ export function LoginPage() {
   }
 
   return (
-    <main className="flex h-screen w-screen overflow-hidden bg-[#E9EBED] text-[#111827]">
-      <section className="relative hidden h-full w-[45%] shrink-0 flex-col justify-between overflow-hidden bg-white px-[5%] py-[5%] lg:flex">
-        <div className="dot-grid absolute inset-0 opacity-50" />
+    <main className="page-enter relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10" style={{ backgroundColor: '#FAFBFC' }}>
+      <div className="pointer-events-none absolute inset-0">
+        {FLOATING_ICONS.map((item, i) => (
+          <item.Icon
+            key={i}
+            style={{
+              position: 'absolute',
+              top: item.top,
+              left: item.left,
+              width: item.size,
+              height: item.size,
+              color: '#1E3D8F',
+              opacity: 0.06,
+              transform: `translate(-50%, -50%) rotate(${item.rotate}deg)`,
+            }}
+            strokeWidth={1.5}
+          />
+        ))}
+        <div
+          className="absolute rounded-full blur-3xl"
+          style={{
+            top: '-10%',
+            right: '-10%',
+            width: 500,
+            height: 500,
+            background: 'radial-gradient(circle, rgba(30,61,143,0.08) 0%, transparent 70%)',
+          }}
+        />
+        <div
+          className="absolute rounded-full blur-3xl"
+          style={{
+            bottom: '-15%',
+            left: '-10%',
+            width: 500,
+            height: 500,
+            background: 'radial-gradient(circle, rgba(30,61,143,0.06) 0%, transparent 70%)',
+          }}
+        />
+      </div>
 
-        <div className="relative z-10">
-          <div className="fu mb-7 flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-2xl bg-[#1F4E5F] shadow-[0_4px_12px_rgba(31,78,95,.30)]">
-              <span className="text-xs font-extrabold text-white">AB</span>
-            </div>
-            <div>
-              <p className="text-[15px] font-extrabold leading-none text-[#111827]">
-                Aula Base
-              </p>
-              <p className="mt-0.5 text-[11px] text-[#2D6977]">Sistema docente</p>
-            </div>
+      <div className="relative z-10 w-full max-w-sm">
+        <div className="mb-10 flex flex-col items-center">
+          <div
+            className="mb-4 flex size-14 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-md"
+            style={{ backgroundColor: '#1E3D8F', boxShadow: '0 4px 14px rgba(30,61,143,0.25)' }}
+          >
+            AB
           </div>
-
-          <h1 className="fu fu2 mb-2.5 text-[clamp(28px,2.8vw,46px)] font-extrabold leading-[1.08] tracking-tight text-[#111827]">
-            Tu aula,
-            <br />
-            siempre lista.
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+            Aula Base
           </h1>
-          <p className="fu fu3 mb-6 max-w-[280px] text-sm leading-relaxed text-[#4B5563]">
-            Todo lo que necesitas como docente en un solo lugar: asistencia,
-            notas, grupos y agenda.
+          <p className="mt-1 text-sm text-gray-500">
+            Sistema docente
           </p>
-
         </div>
-      </section>
 
-      <section className="flex h-full flex-1 flex-col items-center justify-center overflow-y-auto bg-[#F0F1F3] px-4 py-8 sm:px-8 lg:px-[6%] lg:py-[4%]">
-        <div className="w-full max-w-[560px]">
-          <div className="fu fu1 mb-7 flex items-center gap-4 rounded-2xl border border-[#E5E7EB] bg-white px-5 py-4">
-            <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#EBF5F7] text-[#1F4E5F]">
-              <BookOpen size={18} />
+        {errorMessage || authError ? (
+          <div className="mb-5 flex items-center gap-2.5 rounded-xl border border-red-100 bg-red-50 px-4 py-3">
+            <div className="flex size-4 shrink-0 items-center justify-center rounded-full border border-red-200 bg-red-100">
+              <span className="text-[10px] font-bold text-red-500">!</span>
             </div>
-            <div>
-              <p className="mb-0.5 text-[13px] font-bold leading-none text-[#111827]">
-                Bienvenido de nuevo
-              </p>
-              <p className="text-[12px] text-[#6B7280]">
-                Accede a tu espacio docente en Aula Base
-              </p>
-            </div>
-            <div className="ml-auto flex items-center gap-1.5 rounded-full bg-[#D1FAE5] px-2.5 py-1">
-              <span className="size-1.5 rounded-full bg-[#059669]" />
-              <span className="text-[10px] font-bold text-[#059669]">En línea</span>
-            </div>
+            <span className="text-sm text-red-500">{errorMessage || authError}</span>
+          </div>
+        ) : null}
+
+        {registered && !errorMessage && !authError ? (
+          <div className="mb-5 flex items-center gap-2.5 rounded-xl border border-[#D1FAE5] bg-[#D1FAE5] px-4 py-3">
+            <CheckCircle className="size-4 text-[#059669]" />
+            <span className="text-sm font-medium text-[#059669]">
+              Cuenta creada exitosamente. Ya puedes iniciar sesión.
+            </span>
+          </div>
+        ) : null}
+
+        {forgotPasswordSent && !errorMessage ? (
+          <div className="mb-5 flex items-center gap-2.5 rounded-xl border border-[#D1FAE5] bg-[#D1FAE5] px-4 py-3">
+            <CheckCircle className="size-4 text-[#059669]" />
+            <span className="text-sm font-medium text-[#059669]">
+              Te hemos enviado un correo para restablecer tu contraseña.
+            </span>
+          </div>
+        ) : null}
+
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <div>
+            <label className="mb-1.5 block text-sm font-medium text-gray-700">
+              Correo electrónico
+            </label>
+            <input
+              type="email"
+              placeholder="docente@escuela.edu"
+              required
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value)
+                setErrorMessage('')
+              }}
+              className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10"
+            />
           </div>
 
-          <h2 className="fu fu1 mb-1.5 text-[clamp(26px,2.4vw,40px)] font-extrabold leading-none tracking-tight text-[#111827]">
-            Inicia sesión
-          </h2>
-          <p className="fu fu1 mb-7 text-[15px] text-[#6B7280]">
-            Ingresa con tus credenciales de docente.
-          </p>
-
-          {errorMessage || authError ? (
-            <div className="mb-5 flex items-center gap-2.5 rounded-xl border border-red-100 bg-red-50 px-4 py-3">
-              <div className="flex size-4 shrink-0 items-center justify-center rounded-full border border-red-200 bg-red-100">
-                <span className="text-[10px] font-bold text-red-500">!</span>
-              </div>
-              <span className="text-sm text-red-500">{errorMessage || authError}</span>
-            </div>
-          ) : null}
-
-          {registered && !errorMessage && !authError ? (
-            <div className="mb-5 flex items-center gap-2.5 rounded-xl border border-[#D1FAE5] bg-[#D1FAE5] px-4 py-3">
-              <CheckCircle className="size-4 text-[#059669]" />
-              <span className="text-sm font-medium text-[#059669]">
-                Cuenta creada exitosamente. Ya puedes iniciar sesión.
-              </span>
-            </div>
-          ) : null}
-
-          {forgotPasswordSent && !errorMessage ? (
-            <div className="mb-5 flex items-center gap-2.5 rounded-xl border border-[#D1FAE5] bg-[#D1FAE5] px-4 py-3">
-              <CheckCircle className="size-4 text-[#059669]" />
-              <span className="text-sm font-medium text-[#059669]">
-                Te hemos enviado un correo para restablecer tu contraseña.
-              </span>
-            </div>
-          ) : null}
-
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            <div className="fu fu2">
-              <label
-                htmlFor="email"
-                className="mb-2 block text-[11px] font-bold uppercase tracking-widest text-[#9CA3AF]"
-              >
-                Correo electrónico
-              </label>
+          <div>
+            <label className="mb-1.5 block text-sm font-medium text-gray-700">
+              Contraseña
+            </label>
+            <div className="relative">
               <input
-                id="email"
-                type="email"
-                autoComplete="email"
+                type={showPassword ? 'text' : 'password'}
+                placeholder="••••••••"
                 required
-                value={email}
-                onChange={(event) => {
-                  setEmail(event.target.value)
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value)
                   setErrorMessage('')
                 }}
-                placeholder="docente@escuela.edu"
-                className="w-full rounded-xl border border-[#E5E7EB] bg-white px-5 py-3.5 text-[15px] text-[#111827] transition-all duration-200 focus:border-[#2D6977] focus:outline-none focus:ring-4 focus:ring-[rgba(31,78,95,.15)]"
+                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 pr-11 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-gray-600"
+                aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+              >
+                {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
+              </button>
             </div>
-
-            <div className="fu fu3">
-              <div className="mb-2 flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="text-[11px] font-bold uppercase tracking-widest text-[#9CA3AF]"
-                >
-                  Contraseña
-                </label>
-                <button
-                  type="button"
-                  onClick={handleForgotPassword}
-                  className="text-[11px] font-medium text-[#1F4E5F] transition hover:opacity-70"
-                >
-                  ¿Olvidaste la tuya?
-                </button>
-              </div>
-              <div className="relative">
-                <input
-                  id="password"
-                  type={showPassword ? 'text' : 'password'}
-                  autoComplete="current-password"
-                  required
-                  value={password}
-                  onChange={(event) => {
-                    setPassword(event.target.value)
-                    setErrorMessage('')
-                  }}
-                  placeholder="••••••••"
-                  className="w-full rounded-xl border border-[#E5E7EB] bg-white px-5 py-3.5 pr-12 text-[15px] text-[#111827] transition-all duration-200 focus:border-[#2D6977] focus:outline-none focus:ring-4 focus:ring-[rgba(31,78,95,.15)]"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword((current) => !current)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#D1D5DB] transition hover:opacity-70"
-                  aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
-                >
-                  {showPassword ? <EyeOff size={15} /> : <Eye size={15} />}
-                </button>
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="fu fu4 flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#1F4E5F] py-4 text-[15px] font-bold text-white shadow-[0_4px_18px_rgba(31,78,95,.30)] transition-all active:scale-[0.985] disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSubmitting ? 'Ingresando...' : 'Ingresar al sistema'}
-              <ArrowRight size={16} />
-            </button>
-          </form>
-
-          <div className="fu fu5 my-5 flex items-center gap-3">
-            <div className="h-px flex-1 bg-[#E5E7EB]" />
-            <span className="text-[11px] font-medium text-[#9CA3AF]">
-              o continúa con
-            </span>
-            <div className="h-px flex-1 bg-[#E5E7EB]" />
           </div>
 
-          <div className="fu fu6 mb-5 grid grid-cols-2 gap-3">
+          <div className="flex items-center justify-between pt-1">
+            <label className="flex cursor-pointer items-center gap-2">
+              <input
+                type="checkbox"
+                className="size-4 cursor-pointer accent-[#1E3D8F]"
+              />
+              <span className="text-sm text-gray-600">Recordarme</span>
+            </label>
             <button
               type="button"
-              onClick={() => loginWithProvider('google').catch((error: unknown) => {
-                setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Google.')
-              })}
-              className="flex items-center justify-center gap-2.5 rounded-xl border border-[#E5E7EB] bg-white py-3.5 text-[14px] font-semibold text-[#374151] transition-all hover:bg-gray-50 active:scale-[0.98]"
+              onClick={handleForgotPassword}
+              className="text-sm font-medium hover:underline"
+              style={{ color: '#1E3D8F' }}
             >
-              <GoogleIcon />
-              Google
-            </button>
-            <button
-              type="button"
-              onClick={() => loginWithProvider('facebook').catch((error: unknown) => {
-                setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Facebook.')
-              })}
-              className="flex items-center justify-center gap-2.5 rounded-xl bg-[#1877F2] py-3.5 text-[14px] font-semibold text-white shadow-[0_2px_8px_rgba(24,119,242,.25)] transition-all active:scale-[0.98]"
-            >
-              <FacebookIcon />
-              Facebook
+              ¿Olvidaste tu contraseña?
             </button>
           </div>
 
-          <div className="fu fu6 border-t border-[#E5E7EB] pt-1">
-            <p className="mb-3 mt-3.5 text-center text-[13px] text-[#9CA3AF]">
-              ¿Eres nuevo en la plataforma?
-            </p>
-            <Link
-              to="/registro"
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#E5E7EB] bg-white py-4 text-[14px] font-semibold text-[#374151] transition-all"
-            >
-              <Users size={15} color="#1F4E5F" />
-              Regístrate
-            </Link>
-          </div>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-100 hover:opacity-90 active:scale-[0.94] active:shadow-none disabled:cursor-not-allowed disabled:opacity-60"
+            style={{ backgroundColor: '#1E3D8F' }}
+          >
+            {isSubmitting ? 'Ingresando...' : 'Iniciar sesión'}
+          </button>
+        </form>
+
+        <div className="flex items-center gap-3 my-5">
+          <div className="h-px flex-1 bg-gray-200" />
+          <span className="text-xs text-gray-400">o continúa con</span>
+          <div className="h-px flex-1 bg-gray-200" />
         </div>
-      </section>
+
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            onClick={() => loginWithProvider('google').catch((error: unknown) => {
+              setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Google.')
+            })}
+            className="flex items-center justify-center gap-2.5 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-semibold text-gray-700 shadow-sm transition-all duration-100 hover:border-gray-300 hover:bg-gray-50 active:scale-[0.94] active:shadow-none"
+          >
+            <GoogleIcon />
+            Google
+          </button>
+          <button
+            type="button"
+            onClick={() => loginWithProvider('facebook').catch((error: unknown) => {
+              setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Facebook.')
+            })}
+            className="flex items-center justify-center gap-2.5 rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-100 hover:opacity-90 active:scale-[0.94] active:shadow-none"
+            style={{ backgroundColor: '#1877F2' }}
+          >
+            <FacebookIcon />
+            Facebook
+          </button>
+        </div>
+
+        <p className="mt-8 text-center text-sm text-gray-500">
+          ¿Aún no tienes cuenta?{' '}
+          <Link
+            to="/registro"
+            className="font-semibold hover:underline"
+            style={{ color: '#1E3D8F' }}
+          >
+            Regístrate
+          </Link>
+        </p>
+
+        <p className="mt-12 text-center text-xs text-gray-400">
+          © 2025 Aula Base
+        </p>
+      </div>
     </main>
   )
 }

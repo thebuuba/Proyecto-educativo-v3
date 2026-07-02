@@ -187,6 +187,15 @@ body {
 .fu5 { animation-delay: 0.33s; }
 .fu6 { animation-delay: 0.39s; }
 
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: pageIn 0.35s ease both;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
