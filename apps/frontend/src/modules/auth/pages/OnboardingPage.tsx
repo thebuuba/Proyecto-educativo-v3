@@ -21,6 +21,8 @@ const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
 const totalSteps = 5
 const inputClass = 'mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10'
 const labelClass = 'text-sm font-semibold text-gray-700'
+const optionRowClass = 'grid gap-3 py-4 md:grid-cols-[150px_1fr] md:items-start'
+const optionListClass = 'flex flex-wrap gap-2'
 
 const FLOATING_ICONS = [
   { Icon: BookOpen, top: '8%', left: '6%', size: 44, rotate: -12 },
@@ -403,39 +405,45 @@ export function OnboardingPage() {
 
     if (step === 1) {
       return (
-        <div className="space-y-5">
-          <div>
-            <h3 className={labelClass}>Nivel en que trabaja</h3>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {levelOptions.map((option) => (
-                <ChoiceButton key={option.value} active={draft.levels.includes(option.value)} onClick={() => toggleListValue('levels', option.value)}>
-                  {option.label}
-                </ChoiceButton>
-              ))}
+        <div className="divide-y divide-gray-100">
+          <div className={optionRowClass}>
+            <h3 className={labelClass}>Nivel</h3>
+            <div>
+              <div className={optionListClass}>
+                {levelOptions.map((option) => (
+                  <ChoiceButton key={option.value} active={draft.levels.includes(option.value)} onClick={() => toggleListValue('levels', option.value)}>
+                    {option.label}
+                  </ChoiceButton>
+                ))}
+              </div>
+              <FieldError message={errors.levels} />
             </div>
-            <FieldError message={errors.levels} />
           </div>
-          <div>
+          <div className={optionRowClass}>
             <h3 className={labelClass}>Tanda</h3>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {shiftOptions.map((option) => (
-                <ChoiceButton key={option.value} active={draft.shifts.includes(option.value)} onClick={() => toggleListValue('shifts', option.value)}>
-                  {option.label}
-                </ChoiceButton>
-              ))}
+            <div>
+              <div className={optionListClass}>
+                {shiftOptions.map((option) => (
+                  <ChoiceButton key={option.value} active={draft.shifts.includes(option.value)} onClick={() => toggleListValue('shifts', option.value)}>
+                    {option.label}
+                  </ChoiceButton>
+                ))}
+              </div>
+              <FieldError message={errors.shifts} />
             </div>
-            <FieldError message={errors.shifts} />
           </div>
-          <div>
+          <div className={optionRowClass}>
             <h3 className={labelClass}>Modalidad</h3>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {modalityOptions.map((option) => (
-                <ChoiceButton key={option.value} active={draft.modalities.includes(option.value)} onClick={() => toggleListValue('modalities', option.value)}>
-                  {option.label}
-                </ChoiceButton>
-              ))}
+            <div>
+              <div className={optionListClass}>
+                {modalityOptions.map((option) => (
+                  <ChoiceButton key={option.value} active={draft.modalities.includes(option.value)} onClick={() => toggleListValue('modalities', option.value)}>
+                    {option.label}
+                  </ChoiceButton>
+                ))}
+              </div>
+              <FieldError message={errors.modalities} />
             </div>
-            <FieldError message={errors.modalities} />
           </div>
         </div>
       )
@@ -597,9 +605,6 @@ export function OnboardingPage() {
         <form onSubmit={handleSubmit} className="w-full rounded-2xl border border-gray-100 bg-white/95 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.10)] md:p-6">
           <div>
             <h2 className="text-xl font-bold text-gray-900">{stepTitles[step]}</h2>
-            <p className="mt-1 text-sm text-gray-500">
-              Completa esta configuracion inicial para preparar AulaBase.
-            </p>
           </div>
           {submitError ? (
             <div className="mt-4 rounded-lg border border-red-100 bg-red-50 px-4 py-3 text-sm font-semibold text-red-600">
