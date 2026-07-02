@@ -6,6 +6,7 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
 
 const DRAFT_KEY = 'aulabase:onboarding-draft'
+const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
 const totalSteps = 5
 
 const levelOptions = [
@@ -103,6 +104,7 @@ function loadDraft(fallbackFullName = ''): OnboardingDraft {
     return {
       ...initialDraft,
       ...parsed,
+      fullName: parsed.fullName?.trim() || fallbackFullName || initialDraft.fullName,
       levels: parsed.level ? [parsed.level] : parsed.levels?.length ? parsed.levels : initialDraft.levels,
       shifts: parsed.shifts?.length ? parsed.shifts : initialDraft.shifts,
       modalities: parsed.modalities?.length ? parsed.modalities : initialDraft.modalities,
@@ -294,20 +296,21 @@ export function OnboardingPage() {
     onboardingComplete,
   } = useAuth()
   const [step, setStep] = useState(0)
-  const [draft, setDraft] = useState(() => loadDraft(appUser?.fullName ?? ''))
+  const knownFullName = appUser?.fullName || localStorage.getItem(REGISTRATION_NAME_KEY)?.trim() || ''
+  const [draft, setDraft] = useState(() => loadDraft(knownFullName))
   const [errors, setErrors] = useState<StepErrors>({})
   const [submitError, setSubmitError] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     if (!resetMode) return
-    const initialDraft = createInitialDraft(appUser?.fullName ?? '')
+    const initialDraft = createInitialDraft(knownFullName)
     localStorage.setItem(DRAFT_KEY, JSON.stringify(initialDraft))
     setDraft(initialDraft)
     setStep(0)
     setErrors({})
     setSubmitError('')
-  }, [appUser?.fullName, resetMode])
+  }, [knownFullName, resetMode])
 
   useEffect(() => {
     localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
@@ -399,8 +402,9 @@ export function OnboardingPage() {
 
     setSubmitting(true)
     try {
-      await completeOnboarding(toOnboardingInput(draft))
+      await completeOnboarding(toOnboardingInput({ ...draft, fullName: knownFullName || draft.fullName }))
       localStorage.removeItem(DRAFT_KEY)
+      localStorage.removeItem(REGISTRATION_NAME_KEY)
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : 'No se pudo completar la configuracion.')
     } finally {
@@ -412,11 +416,13 @@ export function OnboardingPage() {
     if (step === 0) {
       return (
         <div className="space-y-4">
-          <div>
-            <label className="text-sm font-bold text-[#374151]">Nombre del docente</label>
-            <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.fullName} onChange={(event) => updateDraft({ fullName: event.target.value })} />
-            <FieldError message={errors.fullName} />
-          </div>
+          {knownFullName ? null : (
+            <div>
+              <label className="text-sm font-bold text-[#374151]">Nombre del docente</label>
+              <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.fullName} onChange={(event) => updateDraft({ fullName: event.target.value })} />
+              <FieldError message={errors.fullName} />
+            </div>
+          )}
           <div>
             <label className="text-sm font-bold text-[#374151]">Centro educativo</label>
             <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.schoolName} onChange={(event) => updateDraft({ schoolName: event.target.value })} />
@@ -556,7 +562,7 @@ export function OnboardingPage() {
 
     return (
       <div className="space-y-4 text-sm text-[#374151]">
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Docente:</strong> {draft.fullName}</div>
+        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Docente:</strong> {knownFullName || draft.fullName}</div>
         <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Centro:</strong> {draft.schoolName}</div>
         <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Nivel:</strong> {labelsFor(levelOptions, draft.levels)}</div>
         <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Tanda:</strong> {labelsFor(shiftOptions, draft.shifts)}</div>

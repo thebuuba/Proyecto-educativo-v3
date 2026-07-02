@@ -14,8 +14,9 @@ import {
 } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
-import { Link, Navigate, useLocation } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 
+import { AuthTransitionLink } from '@/modules/auth/components/AuthTransitionLink'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
 type LocationState = {
@@ -111,7 +112,7 @@ export function LoginPage() {
   }
 
   return (
-    <main className="page-enter relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10" style={{ backgroundColor: '#FAFBFC' }}>
+    <main className="auth-screen page-enter relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10" style={{ backgroundColor: '#FAFBFC' }}>
       <div className="pointer-events-none absolute inset-0">
         {FLOATING_ICONS.map((item, i) => (
           <item.Icon
@@ -151,7 +152,7 @@ export function LoginPage() {
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-sm">
+      <div className="auth-panel relative z-10 w-full max-w-sm">
         <div className="mb-10 flex flex-col items-center">
           <div
             className="mb-4 flex size-14 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-md"
@@ -299,13 +300,14 @@ export function LoginPage() {
 
         <p className="mt-8 text-center text-sm text-gray-500">
           ¿Aún no tienes cuenta?{' '}
-          <Link
+          <AuthTransitionLink
             to="/registro"
+            direction="forward"
             className="font-semibold hover:underline"
             style={{ color: '#1E3D8F' }}
           >
             Regístrate
-          </Link>
+          </AuthTransitionLink>
         </p>
 
         <p className="mt-12 text-center text-xs text-gray-400">

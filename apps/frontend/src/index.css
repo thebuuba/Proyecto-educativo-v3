@@ -196,6 +196,73 @@ body {
   animation: pageIn 0.35s ease both;
 }
 
+.auth-screen {
+  view-transition-name: auth-screen;
+}
+
+.auth-panel {
+  view-transition-name: auth-panel;
+}
+
+@keyframes authPanelOutForward {
+  from { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+  to { opacity: 0; transform: translateX(-26px) scale(0.97); filter: blur(7px); }
+}
+
+@keyframes authPanelInForward {
+  from { opacity: 0; transform: translateX(34px) scale(0.98); filter: blur(9px); }
+  to { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+}
+
+@keyframes authPanelOutBack {
+  from { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+  to { opacity: 0; transform: translateX(26px) scale(0.97); filter: blur(7px); }
+}
+
+@keyframes authPanelInBack {
+  from { opacity: 0; transform: translateX(-34px) scale(0.98); filter: blur(9px); }
+  to { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+}
+
+@keyframes authScreenFade {
+  from { opacity: 0.72; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-auth-transition] .page-enter {
+    animation: none;
+  }
+
+  ::view-transition-old(auth-screen),
+  ::view-transition-new(auth-screen) {
+    animation: authScreenFade 0.34s ease both;
+  }
+
+  html[data-auth-transition='forward']::view-transition-old(auth-panel) {
+    animation: authPanelOutForward 0.24s cubic-bezier(0.4, 0, 1, 1) both;
+  }
+
+  html[data-auth-transition='forward']::view-transition-new(auth-panel) {
+    animation: authPanelInForward 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  html[data-auth-transition='back']::view-transition-old(auth-panel) {
+    animation: authPanelOutBack 0.24s cubic-bezier(0.4, 0, 1, 1) both;
+  }
+
+  html[data-auth-transition='back']::view-transition-new(auth-panel) {
+    animation: authPanelInBack 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-screen,
+  .auth-panel {
+    view-transition-name: none;
+  }
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;

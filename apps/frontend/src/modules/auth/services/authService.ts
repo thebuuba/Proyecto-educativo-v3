@@ -37,6 +37,7 @@ export async function register(credentials: RegisterCredentials): Promise<LoginR
     },
   })
   if (error) throw new Error(error.message)
+  localStorage.setItem('aulabase:registration-name', credentials.fullName)
 
   const token = data.session?.access_token
   if (!token) {
