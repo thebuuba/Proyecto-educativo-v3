@@ -8,17 +8,18 @@ import {
   Palette,
   Pencil,
   Ruler,
+  Sparkles,
 } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useEffect, useState } from 'react'
-import { Navigate, useSearchParams } from 'react-router-dom'
+import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
 
 const DRAFT_KEY = 'aulabase:onboarding-draft'
 const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
-const totalSteps = 5
+const totalSteps = 3
 const inputClass = 'mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10'
 const labelClass = 'text-sm font-semibold text-gray-700'
 const optionRowClass = 'grid gap-3 py-4 md:grid-cols-[150px_1fr] md:items-start'
@@ -85,25 +86,36 @@ type OnboardingDraft = {
 
 type StepErrors = Record<string, string>
 
-function isoToday() {
-  return new Date().toISOString().slice(0, 10)
+function toIsoDate(year: number, month: number, day: number) {
+  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+}
+
+function detectSchoolYear(date = new Date()) {
+  const startYear = date.getMonth() >= 6 ? date.getFullYear() : date.getFullYear() - 1
+  const endYear = startYear + 1
+
+  return {
+    schoolYearName: `${startYear}-${endYear}`,
+    schoolStartDate: toIsoDate(startYear, 7, 1),
+    schoolEndDate: toIsoDate(endYear, 6, 30),
+    periods: [
+      { name: 'Periodo 1', startDate: toIsoDate(startYear, 7, 1), endDate: toIsoDate(startYear, 12, 15) },
+      { name: 'Periodo 2', startDate: toIsoDate(endYear, 1, 8), endDate: toIsoDate(endYear, 3, 31) },
+      { name: 'Periodo 3', startDate: toIsoDate(endYear, 4, 1), endDate: toIsoDate(endYear, 6, 30) },
+    ],
+  }
 }
 
 function createInitialDraft(fullName = ''): OnboardingDraft {
+  const schoolYear = detectSchoolYear()
+
   return {
     fullName,
     schoolName: '',
     levels: ['secondary'],
     shifts: ['extended'],
     modalities: ['regular'],
-    schoolYearName: '2026-2027',
-    schoolStartDate: isoToday(),
-    schoolEndDate: '2027-06-30',
-    periods: [
-      { name: 'Periodo 1', startDate: isoToday(), endDate: '2026-12-15' },
-      { name: 'Periodo 2', startDate: '2027-01-08', endDate: '2027-03-31' },
-      { name: 'Periodo 3', startDate: '2027-04-01', endDate: '2027-06-30' },
-    ],
+    ...schoolYear,
     course: {
       gradeName: '3ro Secundaria',
       sectionName: 'A',
@@ -132,16 +144,15 @@ function loadDraft(fallbackFullName = ''): OnboardingDraft {
       levels: parsed.level ? [parsed.level] : parsed.levels?.length ? parsed.levels : initialDraft.levels,
       shifts: parsed.shifts?.length ? parsed.shifts : initialDraft.shifts,
       modalities: parsed.modalities?.length ? parsed.modalities : initialDraft.modalities,
-      periods: parsed.periods?.length ? parsed.periods : initialDraft.periods,
+      schoolYearName: initialDraft.schoolYearName,
+      schoolStartDate: initialDraft.schoolStartDate,
+      schoolEndDate: initialDraft.schoolEndDate,
+      periods: initialDraft.periods,
       course: { ...initialDraft.course, ...parsed.course },
     }
   } catch {
     return initialDraft
   }
-}
-
-function labelsFor(options: { value: string; label: string }[], values: string[]) {
-  return values.map((value) => options.find((option) => option.value === value)?.label ?? value).join(', ')
 }
 
 function toOnboardingInput(draft: OnboardingDraft): CompleteOnboardingInput {
@@ -180,11 +191,6 @@ function toOnboardingInput(draft: OnboardingDraft): CompleteOnboardingInput {
   }
 }
 
-function validateDateRange(startDate: string, endDate: string) {
-  if (!startDate || !endDate) return false
-  return new Date(startDate) <= new Date(endDate)
-}
-
 function validateStep(step: number, draft: OnboardingDraft): StepErrors {
   const errors: StepErrors = {}
 
@@ -200,24 +206,6 @@ function validateStep(step: number, draft: OnboardingDraft): StepErrors {
   }
 
   if (step === 2) {
-    if (!draft.schoolYearName.trim()) errors.schoolYearName = 'Escribe el ano escolar.'
-    if (!draft.schoolStartDate) errors.schoolStartDate = 'Selecciona la fecha de inicio.'
-    if (!draft.schoolEndDate) errors.schoolEndDate = 'Selecciona la fecha de cierre.'
-    if (draft.schoolStartDate && draft.schoolEndDate && !validateDateRange(draft.schoolStartDate, draft.schoolEndDate)) {
-      errors.schoolEndDate = 'La fecha de cierre debe ser posterior al inicio.'
-    }
-    if (!draft.periods.length) errors.periods = 'Agrega al menos un periodo academico.'
-    draft.periods.forEach((period, index) => {
-      if (!period.name.trim()) errors[`period-${index}-name`] = 'Nombre requerido.'
-      if (!period.startDate) errors[`period-${index}-startDate`] = 'Inicio requerido.'
-      if (!period.endDate) errors[`period-${index}-endDate`] = 'Final requerido.'
-      if (period.startDate && period.endDate && !validateDateRange(period.startDate, period.endDate)) {
-        errors[`period-${index}-endDate`] = 'Final posterior al inicio.'
-      }
-    })
-  }
-
-  if (step === 3) {
     if (!draft.course.gradeName.trim()) errors.gradeName = 'Escribe el grado.'
     if (!draft.course.sectionName.trim()) errors.sectionName = 'Escribe la seccion.'
     if (!draft.course.subjectName.trim()) errors.subjectName = 'Escribe la asignatura o subarea.'
@@ -256,6 +244,7 @@ function ChoiceButton({
 }
 
 export function OnboardingPage() {
+  const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const resetMode = searchParams.get('reset') === '1'
   const {
@@ -272,6 +261,7 @@ export function OnboardingPage() {
   const [errors, setErrors] = useState<StepErrors>({})
   const [submitError, setSubmitError] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [showWelcome, setShowWelcome] = useState(false)
 
   useEffect(() => {
     if (!resetMode) return
@@ -287,12 +277,36 @@ export function OnboardingPage() {
     localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
   }, [draft])
 
-  if (!resetMode && !loading && isAuthenticated && onboardingComplete) {
+  useEffect(() => {
+    if (!showWelcome) return
+    const timeout = window.setTimeout(() => {
+      navigate('/', { replace: true })
+    }, 1800)
+    return () => window.clearTimeout(timeout)
+  }, [navigate, showWelcome])
+
+  if (!showWelcome && !resetMode && !loading && isAuthenticated && onboardingComplete) {
     return <Navigate to="/" replace />
   }
 
   if (!loading && !isAuthenticated && !profileRequired) {
     return <Navigate to="/registro" replace />
+  }
+
+  if (loading) {
+    return (
+      <main className="page-enter grid min-h-screen place-items-center px-4 text-center text-gray-900" style={{ backgroundColor: '#FAFBFC' }}>
+        <div>
+          <div
+            className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-md"
+            style={{ backgroundColor: '#1E3D8F', boxShadow: '0 4px 14px rgba(30,61,143,0.25)' }}
+          >
+            AB
+          </div>
+          <p className="text-sm font-semibold text-gray-500">Preparando tu entrada...</p>
+        </div>
+      </main>
+    )
   }
 
   function updateDraft(patch: Partial<OnboardingDraft>) {
@@ -307,36 +321,6 @@ export function OnboardingPage() {
         : [...values, value]
       return { ...current, [key]: nextValues }
     })
-  }
-
-  function updatePeriod(index: number, patch: Partial<PeriodDraft>) {
-    setDraft((current) => ({
-      ...current,
-      periods: current.periods.map((period, periodIndex) =>
-        periodIndex === index ? { ...period, ...patch } : period,
-      ),
-    }))
-  }
-
-  function addPeriod() {
-    setDraft((current) => ({
-      ...current,
-      periods: [
-        ...current.periods,
-        {
-          name: `Periodo ${current.periods.length + 1}`,
-          startDate: current.schoolStartDate,
-          endDate: current.schoolEndDate,
-        },
-      ],
-    }))
-  }
-
-  function removePeriod(index: number) {
-    setDraft((current) => ({
-      ...current,
-      periods: current.periods.filter((_, periodIndex) => periodIndex !== index),
-    }))
   }
 
   function updateCourse(patch: Partial<CourseDraft>) {
@@ -376,6 +360,7 @@ export function OnboardingPage() {
       await completeOnboarding(toOnboardingInput({ ...draft, fullName: knownFullName || draft.fullName }))
       localStorage.removeItem(DRAFT_KEY)
       localStorage.removeItem(REGISTRATION_NAME_KEY)
+      setShowWelcome(true)
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : 'No se pudo completar la configuracion.')
     } finally {
@@ -451,54 +436,6 @@ export function OnboardingPage() {
 
     if (step === 2) {
       return (
-        <div className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-3">
-            <div>
-              <label className={labelClass}>Ano escolar</label>
-              <input className={inputClass} value={draft.schoolYearName} onChange={(event) => updateDraft({ schoolYearName: event.target.value })} />
-              <FieldError message={errors.schoolYearName} />
-            </div>
-            <div>
-              <label className={labelClass}>Inicio</label>
-              <input type="date" className={inputClass} value={draft.schoolStartDate} onChange={(event) => updateDraft({ schoolStartDate: event.target.value })} />
-              <FieldError message={errors.schoolStartDate} />
-            </div>
-            <div>
-              <label className={labelClass}>Cierre</label>
-              <input type="date" className={inputClass} value={draft.schoolEndDate} onChange={(event) => updateDraft({ schoolEndDate: event.target.value })} />
-              <FieldError message={errors.schoolEndDate} />
-            </div>
-          </div>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <h3 className={labelClass}>Periodos academicos</h3>
-              <button type="button" onClick={addPeriod} className="rounded-lg border border-[#1E3D8F] px-3 py-2 text-sm font-bold text-[#1E3D8F]">Agregar</button>
-            </div>
-            <FieldError message={errors.periods} />
-            {draft.periods.map((period, index) => (
-              <div key={index} className="grid gap-2 rounded-lg border border-gray-100 p-3 md:grid-cols-[1fr_1fr_1fr_auto]">
-                <div>
-                  <input className={inputClass.replace('mt-2 ', '')} value={period.name} onChange={(event) => updatePeriod(index, { name: event.target.value })} />
-                  <FieldError message={errors[`period-${index}-name`]} />
-                </div>
-                <div>
-                  <input type="date" className={inputClass.replace('mt-2 ', '')} value={period.startDate} onChange={(event) => updatePeriod(index, { startDate: event.target.value })} />
-                  <FieldError message={errors[`period-${index}-startDate`]} />
-                </div>
-                <div>
-                  <input type="date" className={inputClass.replace('mt-2 ', '')} value={period.endDate} onChange={(event) => updatePeriod(index, { endDate: event.target.value })} />
-                  <FieldError message={errors[`period-${index}-endDate`]} />
-                </div>
-                <button type="button" onClick={() => removePeriod(index)} className="rounded-lg px-3 py-2 text-sm font-bold text-red-600 disabled:opacity-40" disabled={draft.periods.length === 1}>Quitar</button>
-              </div>
-            ))}
-          </div>
-        </div>
-      )
-    }
-
-    if (step === 3) {
-      return (
         <div className="grid gap-4 md:grid-cols-2">
           <div>
             <label className={labelClass}>Grado</label>
@@ -527,27 +464,50 @@ export function OnboardingPage() {
       )
     }
 
-    return (
-      <div className="space-y-4 text-sm text-gray-700">
-        <div className="rounded-xl bg-gray-50 p-4"><strong>Docente:</strong> {knownFullName || draft.fullName}</div>
-        <div className="rounded-xl bg-gray-50 p-4"><strong>Centro:</strong> {draft.schoolName}</div>
-        <div className="rounded-xl bg-gray-50 p-4"><strong>Nivel:</strong> {labelsFor(levelOptions, draft.levels)}</div>
-        <div className="rounded-xl bg-gray-50 p-4"><strong>Tanda:</strong> {labelsFor(shiftOptions, draft.shifts)}</div>
-        <div className="rounded-xl bg-gray-50 p-4"><strong>Modalidad:</strong> {labelsFor(modalityOptions, draft.modalities)}</div>
-        <div className="rounded-xl bg-gray-50 p-4"><strong>Ano escolar:</strong> {draft.schoolYearName}</div>
-        <div className="rounded-xl bg-gray-50 p-4"><strong>Periodos:</strong> {draft.periods.map((period) => period.name).join(', ')}</div>
-        <div className="rounded-xl bg-gray-50 p-4"><strong>Primer curso:</strong> {draft.course.gradeName} {draft.course.sectionName} - {draft.course.subjectName}</div>
-      </div>
-    )
+    return null
   }
 
   const stepTitles = [
     'Datos del docente y centro',
     'Nivel, tanda y modalidad',
-    'Ano escolar y periodos',
     'Primer curso/asignatura',
-    'Confirmacion',
   ]
+
+  if (showWelcome) {
+    return (
+      <main className="page-enter relative grid min-h-screen place-items-center overflow-hidden px-4 text-gray-900" style={{ backgroundColor: '#FAFBFC' }}>
+        <div className="pointer-events-none absolute inset-0">
+          {FLOATING_ICONS.map((item, i) => (
+            <item.Icon
+              key={i}
+              style={{
+                position: 'absolute',
+                top: item.top,
+                left: item.left,
+                width: item.size,
+                height: item.size,
+                color: '#1E3D8F',
+                opacity: 0.08,
+                transform: `translate(-50%, -50%) rotate(${item.rotate}deg)`,
+              }}
+              strokeWidth={1.5}
+            />
+          ))}
+        </div>
+
+        <div className="relative z-10 flex max-w-md flex-col items-center text-center">
+          <div className="relative mb-6">
+            <div className="absolute inset-0 animate-ping rounded-full bg-[#1E3D8F]/20" />
+            <div className="relative flex size-20 items-center justify-center rounded-3xl bg-[#1E3D8F] text-white shadow-[0_18px_45px_rgba(30,61,143,0.25)]">
+              <Sparkles className="size-9 animate-pulse" strokeWidth={2.2} />
+            </div>
+          </div>
+          <h1 className="animate-bounce text-4xl font-black tracking-tight text-gray-900">Bienvenido</h1>
+          <p className="mt-3 text-base font-medium text-gray-500">Tu perfil esta listo. Entrando a Aula Base...</p>
+        </div>
+      </main>
+    )
+  }
 
   return (
     <main className="page-enter relative min-h-screen overflow-hidden px-4 py-10 text-gray-900" style={{ backgroundColor: '#FAFBFC' }}>
