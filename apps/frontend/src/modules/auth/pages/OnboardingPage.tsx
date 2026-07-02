@@ -1,3 +1,14 @@
+import {
+  Backpack,
+  BookOpen,
+  Calculator,
+  GraduationCap,
+  Library,
+  Microscope,
+  Palette,
+  Pencil,
+  Ruler,
+} from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useEffect, useState } from 'react'
 import { Navigate, useSearchParams } from 'react-router-dom'
@@ -8,6 +19,21 @@ import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
 const DRAFT_KEY = 'aulabase:onboarding-draft'
 const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
 const totalSteps = 5
+const inputClass = 'mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10'
+const labelClass = 'text-sm font-semibold text-gray-700'
+
+const FLOATING_ICONS = [
+  { Icon: BookOpen, top: '8%', left: '6%', size: 44, rotate: -12 },
+  { Icon: Pencil, top: '18%', left: '88%', size: 36, rotate: 22 },
+  { Icon: Backpack, top: '72%', left: '8%', size: 48, rotate: 8 },
+  { Icon: Calculator, top: '82%', left: '84%', size: 40, rotate: -18 },
+  { Icon: Ruler, top: '42%', left: '4%', size: 42, rotate: 45 },
+  { Icon: Palette, top: '38%', left: '92%', size: 38, rotate: -25 },
+  { Icon: Microscope, top: '58%', left: '90%', size: 40, rotate: 15 },
+  { Icon: Library, top: '62%', left: '3%', size: 44, rotate: -8 },
+  { Icon: GraduationCap, top: '5%', left: '45%', size: 32, rotate: -6 },
+  { Icon: BookOpen, top: '90%', left: '48%', size: 30, rotate: 12 },
+]
 
 const levelOptions = [
   { value: 'primary', label: 'Primaria' },
@@ -45,8 +71,6 @@ type CourseDraft = {
 type OnboardingDraft = {
   fullName: string
   schoolName: string
-  regionalName: string
-  districtName: string
   levels: string[]
   shifts: string[]
   modalities: string[]
@@ -67,8 +91,6 @@ function createInitialDraft(fullName = ''): OnboardingDraft {
   return {
     fullName,
     schoolName: '',
-    regionalName: '',
-    districtName: '',
     levels: ['secondary'],
     shifts: ['extended'],
     modalities: ['regular'],
@@ -131,8 +153,6 @@ function toOnboardingInput(draft: OnboardingDraft): CompleteOnboardingInput {
     fullName: draft.fullName.trim(),
     school: {
       name: draft.schoolName.trim(),
-      regionalName: draft.regionalName.trim() || undefined,
-      districtName: draft.districtName.trim() || undefined,
       primaryModality,
       schoolShift: draft.shifts.join(','),
       enabledSubsystems: draft.levels.length ? draft.levels : ['secondary'],
@@ -208,57 +228,6 @@ function FieldError({ message }: { message?: string }) {
   return message ? <p className="mt-1 text-xs font-medium text-red-600">{message}</p> : null
 }
 
-function StepProgress({ step }: { step: number }) {
-  const progress = ((step + 1) / totalSteps) * 100
-  return (
-    <div>
-      <div className="flex items-center justify-between text-xs font-bold uppercase text-[#2D6977]">
-        <span>Configuracion inicial</span>
-        <span>
-          Paso {step + 1} de {totalSteps}
-        </span>
-      </div>
-      <div className="mt-3 h-2 rounded-full bg-[#E5E7EB]">
-        <div className="h-2 rounded-full bg-[#1F4E5F]" style={{ width: `${progress}%` }} />
-      </div>
-    </div>
-  )
-}
-
-function DashboardPreview() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden bg-[#EEF2F5] text-[#111827] blur-[2px]">
-      <div className="flex h-full">
-        <aside className="hidden w-64 border-r border-white/70 bg-white/80 p-6 lg:block">
-          <div className="text-xl font-black text-[#1F4E5F]">AulaBase</div>
-          <div className="mt-10 space-y-3">
-            {['Inicio', 'Estudiantes', 'Asistencia', 'Calificaciones', 'Planificacion'].map((item) => (
-              <div key={item} className="rounded-lg bg-[#F3F4F6] px-4 py-3 text-sm font-semibold text-[#6B7280]">
-                {item}
-              </div>
-            ))}
-          </div>
-        </aside>
-        <main className="flex-1 p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="h-4 w-36 rounded bg-[#CBD5E1]" />
-              <div className="mt-3 h-8 w-64 rounded bg-white" />
-            </div>
-            <div className="h-10 w-10 rounded-full bg-white" />
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="h-32 rounded-lg border border-white/80 bg-white/80 shadow-sm" />
-            ))}
-          </div>
-          <div className="mt-6 h-72 rounded-lg border border-white/80 bg-white/80 shadow-sm" />
-        </main>
-      </div>
-    </div>
-  )
-}
-
 function ChoiceButton({
   active,
   children,
@@ -275,8 +244,8 @@ function ChoiceButton({
       className={[
         'rounded-lg border px-3 py-2 text-sm font-semibold transition',
         active
-          ? 'border-[#1F4E5F] bg-[#E8F3F5] text-[#1F4E5F]'
-          : 'border-[#E5E7EB] bg-white text-[#374151] hover:border-[#A7B8C0]',
+          ? 'border-[#1E3D8F] bg-[#1E3D8F]/10 text-[#1E3D8F]'
+          : 'border-gray-200 bg-white text-gray-700 hover:border-[#1E3D8F]/40 hover:bg-[#1E3D8F]/5',
       ].join(' ')}
     >
       {children}
@@ -418,25 +387,15 @@ export function OnboardingPage() {
         <div className="space-y-4">
           {knownFullName ? null : (
             <div>
-              <label className="text-sm font-bold text-[#374151]">Nombre del docente</label>
-              <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.fullName} onChange={(event) => updateDraft({ fullName: event.target.value })} />
+              <label className={labelClass}>Nombre del docente</label>
+              <input className={inputClass} value={draft.fullName} onChange={(event) => updateDraft({ fullName: event.target.value })} />
               <FieldError message={errors.fullName} />
             </div>
           )}
           <div>
-            <label className="text-sm font-bold text-[#374151]">Centro educativo</label>
-            <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.schoolName} onChange={(event) => updateDraft({ schoolName: event.target.value })} />
+            <label className={labelClass}>Centro educativo</label>
+            <input className={inputClass} value={draft.schoolName} onChange={(event) => updateDraft({ schoolName: event.target.value })} />
             <FieldError message={errors.schoolName} />
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            <div>
-              <label className="text-sm font-bold text-[#374151]">Regional</label>
-              <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.regionalName} onChange={(event) => updateDraft({ regionalName: event.target.value })} />
-            </div>
-            <div>
-              <label className="text-sm font-bold text-[#374151]">Distrito educativo</label>
-              <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.districtName} onChange={(event) => updateDraft({ districtName: event.target.value })} />
-            </div>
           </div>
         </div>
       )
@@ -446,7 +405,7 @@ export function OnboardingPage() {
       return (
         <div className="space-y-5">
           <div>
-            <h3 className="text-sm font-bold text-[#374151]">Nivel en que trabaja</h3>
+            <h3 className={labelClass}>Nivel en que trabaja</h3>
             <div className="mt-2 flex flex-wrap gap-2">
               {levelOptions.map((option) => (
                 <ChoiceButton key={option.value} active={draft.levels.includes(option.value)} onClick={() => toggleListValue('levels', option.value)}>
@@ -457,7 +416,7 @@ export function OnboardingPage() {
             <FieldError message={errors.levels} />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-[#374151]">Tanda</h3>
+            <h3 className={labelClass}>Tanda</h3>
             <div className="mt-2 flex flex-wrap gap-2">
               {shiftOptions.map((option) => (
                 <ChoiceButton key={option.value} active={draft.shifts.includes(option.value)} onClick={() => toggleListValue('shifts', option.value)}>
@@ -468,7 +427,7 @@ export function OnboardingPage() {
             <FieldError message={errors.shifts} />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-[#374151]">Modalidad</h3>
+            <h3 className={labelClass}>Modalidad</h3>
             <div className="mt-2 flex flex-wrap gap-2">
               {modalityOptions.map((option) => (
                 <ChoiceButton key={option.value} active={draft.modalities.includes(option.value)} onClick={() => toggleListValue('modalities', option.value)}>
@@ -487,39 +446,39 @@ export function OnboardingPage() {
         <div className="space-y-4">
           <div className="grid gap-4 md:grid-cols-3">
             <div>
-              <label className="text-sm font-bold text-[#374151]">Ano escolar</label>
-              <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.schoolYearName} onChange={(event) => updateDraft({ schoolYearName: event.target.value })} />
+              <label className={labelClass}>Ano escolar</label>
+              <input className={inputClass} value={draft.schoolYearName} onChange={(event) => updateDraft({ schoolYearName: event.target.value })} />
               <FieldError message={errors.schoolYearName} />
             </div>
             <div>
-              <label className="text-sm font-bold text-[#374151]">Inicio</label>
-              <input type="date" className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.schoolStartDate} onChange={(event) => updateDraft({ schoolStartDate: event.target.value })} />
+              <label className={labelClass}>Inicio</label>
+              <input type="date" className={inputClass} value={draft.schoolStartDate} onChange={(event) => updateDraft({ schoolStartDate: event.target.value })} />
               <FieldError message={errors.schoolStartDate} />
             </div>
             <div>
-              <label className="text-sm font-bold text-[#374151]">Cierre</label>
-              <input type="date" className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.schoolEndDate} onChange={(event) => updateDraft({ schoolEndDate: event.target.value })} />
+              <label className={labelClass}>Cierre</label>
+              <input type="date" className={inputClass} value={draft.schoolEndDate} onChange={(event) => updateDraft({ schoolEndDate: event.target.value })} />
               <FieldError message={errors.schoolEndDate} />
             </div>
           </div>
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-bold text-[#374151]">Periodos academicos</h3>
-              <button type="button" onClick={addPeriod} className="rounded-lg border border-[#1F4E5F] px-3 py-2 text-sm font-bold text-[#1F4E5F]">Agregar</button>
+              <h3 className={labelClass}>Periodos academicos</h3>
+              <button type="button" onClick={addPeriod} className="rounded-lg border border-[#1E3D8F] px-3 py-2 text-sm font-bold text-[#1E3D8F]">Agregar</button>
             </div>
             <FieldError message={errors.periods} />
             {draft.periods.map((period, index) => (
-              <div key={index} className="grid gap-2 rounded-lg border border-[#E5E7EB] p-3 md:grid-cols-[1fr_1fr_1fr_auto]">
+              <div key={index} className="grid gap-2 rounded-lg border border-gray-100 p-3 md:grid-cols-[1fr_1fr_1fr_auto]">
                 <div>
-                  <input className="w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={period.name} onChange={(event) => updatePeriod(index, { name: event.target.value })} />
+                  <input className={inputClass.replace('mt-2 ', '')} value={period.name} onChange={(event) => updatePeriod(index, { name: event.target.value })} />
                   <FieldError message={errors[`period-${index}-name`]} />
                 </div>
                 <div>
-                  <input type="date" className="w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={period.startDate} onChange={(event) => updatePeriod(index, { startDate: event.target.value })} />
+                  <input type="date" className={inputClass.replace('mt-2 ', '')} value={period.startDate} onChange={(event) => updatePeriod(index, { startDate: event.target.value })} />
                   <FieldError message={errors[`period-${index}-startDate`]} />
                 </div>
                 <div>
-                  <input type="date" className="w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={period.endDate} onChange={(event) => updatePeriod(index, { endDate: event.target.value })} />
+                  <input type="date" className={inputClass.replace('mt-2 ', '')} value={period.endDate} onChange={(event) => updatePeriod(index, { endDate: event.target.value })} />
                   <FieldError message={errors[`period-${index}-endDate`]} />
                 </div>
                 <button type="button" onClick={() => removePeriod(index)} className="rounded-lg px-3 py-2 text-sm font-bold text-red-600 disabled:opacity-40" disabled={draft.periods.length === 1}>Quitar</button>
@@ -534,42 +493,42 @@ export function OnboardingPage() {
       return (
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="text-sm font-bold text-[#374151]">Grado</label>
-            <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.course.gradeName} onChange={(event) => updateCourse({ gradeName: event.target.value })} />
+            <label className={labelClass}>Grado</label>
+            <input className={inputClass} value={draft.course.gradeName} onChange={(event) => updateCourse({ gradeName: event.target.value })} />
             <FieldError message={errors.gradeName} />
           </div>
           <div>
-            <label className="text-sm font-bold text-[#374151]">Seccion</label>
-            <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.course.sectionName} onChange={(event) => updateCourse({ sectionName: event.target.value })} />
+            <label className={labelClass}>Seccion</label>
+            <input className={inputClass} value={draft.course.sectionName} onChange={(event) => updateCourse({ sectionName: event.target.value })} />
             <FieldError message={errors.sectionName} />
           </div>
           <div>
-            <label className="text-sm font-bold text-[#374151]">Area</label>
-            <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.course.area} onChange={(event) => updateCourse({ area: event.target.value })} />
+            <label className={labelClass}>Area</label>
+            <input className={inputClass} value={draft.course.area} onChange={(event) => updateCourse({ area: event.target.value })} />
           </div>
           <div>
-            <label className="text-sm font-bold text-[#374151]">Asignatura/Subarea</label>
-            <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.course.subjectName} onChange={(event) => updateCourse({ subjectName: event.target.value })} />
+            <label className={labelClass}>Asignatura/Subarea</label>
+            <input className={inputClass} value={draft.course.subjectName} onChange={(event) => updateCourse({ subjectName: event.target.value })} />
             <FieldError message={errors.subjectName} />
           </div>
           <div className="md:col-span-2">
-            <label className="text-sm font-bold text-[#374151]">Codigo opcional</label>
-            <input className="mt-2 w-full rounded-lg border border-[#D1D5DB] px-3 py-2" value={draft.course.subjectCode} onChange={(event) => updateCourse({ subjectCode: event.target.value })} />
+            <label className={labelClass}>Codigo opcional</label>
+            <input className={inputClass} value={draft.course.subjectCode} onChange={(event) => updateCourse({ subjectCode: event.target.value })} />
           </div>
         </div>
       )
     }
 
     return (
-      <div className="space-y-4 text-sm text-[#374151]">
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Docente:</strong> {knownFullName || draft.fullName}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Centro:</strong> {draft.schoolName}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Nivel:</strong> {labelsFor(levelOptions, draft.levels)}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Tanda:</strong> {labelsFor(shiftOptions, draft.shifts)}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Modalidad:</strong> {labelsFor(modalityOptions, draft.modalities)}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Ano escolar:</strong> {draft.schoolYearName}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Periodos:</strong> {draft.periods.map((period) => period.name).join(', ')}</div>
-        <div className="rounded-lg bg-[#F8FAFC] p-4"><strong>Primer curso:</strong> {draft.course.gradeName} {draft.course.sectionName} - {draft.course.subjectName}</div>
+      <div className="space-y-4 text-sm text-gray-700">
+        <div className="rounded-xl bg-gray-50 p-4"><strong>Docente:</strong> {knownFullName || draft.fullName}</div>
+        <div className="rounded-xl bg-gray-50 p-4"><strong>Centro:</strong> {draft.schoolName}</div>
+        <div className="rounded-xl bg-gray-50 p-4"><strong>Nivel:</strong> {labelsFor(levelOptions, draft.levels)}</div>
+        <div className="rounded-xl bg-gray-50 p-4"><strong>Tanda:</strong> {labelsFor(shiftOptions, draft.shifts)}</div>
+        <div className="rounded-xl bg-gray-50 p-4"><strong>Modalidad:</strong> {labelsFor(modalityOptions, draft.modalities)}</div>
+        <div className="rounded-xl bg-gray-50 p-4"><strong>Ano escolar:</strong> {draft.schoolYearName}</div>
+        <div className="rounded-xl bg-gray-50 p-4"><strong>Periodos:</strong> {draft.periods.map((period) => period.name).join(', ')}</div>
+        <div className="rounded-xl bg-gray-50 p-4"><strong>Primer curso:</strong> {draft.course.gradeName} {draft.course.sectionName} - {draft.course.subjectName}</div>
       </div>
     )
   }
@@ -583,15 +542,62 @@ export function OnboardingPage() {
   ]
 
   return (
-    <main className="relative min-h-screen overflow-hidden text-[#111827]">
-      <DashboardPreview />
-      <div className="absolute inset-0 bg-[#111827]/35" />
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-6">
-        <form onSubmit={handleSubmit} className="w-full max-w-3xl rounded-lg border border-white/60 bg-white p-5 shadow-2xl md:p-6">
-          <StepProgress step={step} />
-          <div className="mt-5">
-            <h1 className="text-xl font-black text-[#111827]">{stepTitles[step]}</h1>
-            <p className="mt-1 text-sm text-[#6B7280]">
+    <main className="page-enter relative min-h-screen overflow-hidden px-4 py-10 text-gray-900" style={{ backgroundColor: '#FAFBFC' }}>
+      <div className="pointer-events-none absolute inset-0">
+        {FLOATING_ICONS.map((item, i) => (
+          <item.Icon
+            key={i}
+            style={{
+              position: 'absolute',
+              top: item.top,
+              left: item.left,
+              width: item.size,
+              height: item.size,
+              color: '#1E3D8F',
+              opacity: 0.06,
+              transform: `translate(-50%, -50%) rotate(${item.rotate}deg)`,
+            }}
+            strokeWidth={1.5}
+          />
+        ))}
+        <div
+          className="absolute rounded-full blur-3xl"
+          style={{
+            top: '-10%',
+            right: '-10%',
+            width: 500,
+            height: 500,
+            background: 'radial-gradient(circle, rgba(30,61,143,0.08) 0%, transparent 70%)',
+          }}
+        />
+        <div
+          className="absolute rounded-full blur-3xl"
+          style={{
+            bottom: '-15%',
+            left: '-10%',
+            width: 500,
+            height: 500,
+            background: 'radial-gradient(circle, rgba(30,61,143,0.06) 0%, transparent 70%)',
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-3xl flex-col justify-center">
+        <div className="mb-8 flex flex-col items-center">
+          <div
+            className="mb-4 flex size-14 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-md"
+            style={{ backgroundColor: '#1E3D8F', boxShadow: '0 4px 14px rgba(30,61,143,0.25)' }}
+          >
+            AB
+          </div>
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900">Aula Base</h1>
+          <p className="mt-1 text-sm text-gray-500">Configurando tu entrada al sistema</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="w-full rounded-2xl border border-gray-100 bg-white/95 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.10)] md:p-6">
+          <div>
+            <h2 className="text-xl font-bold text-gray-900">{stepTitles[step]}</h2>
+            <p className="mt-1 text-sm text-gray-500">
               Completa esta configuracion inicial para preparar AulaBase.
             </p>
           </div>
@@ -603,16 +609,16 @@ export function OnboardingPage() {
           <div className="mt-5 max-h-[58vh] overflow-y-auto pr-1">
             {renderStep()}
           </div>
-          <div className="mt-6 flex items-center justify-between gap-3 border-t border-[#E5E7EB] pt-4">
-            <button type="button" onClick={goBack} disabled={step === 0 || submitting} className="rounded-lg px-4 py-2 text-sm font-bold text-[#374151] disabled:opacity-40">
+          <div className="mt-6 flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
+            <button type="button" onClick={goBack} disabled={step === 0 || submitting} className="rounded-xl px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50 disabled:opacity-40">
               Atras
             </button>
             {step < totalSteps - 1 ? (
-              <button type="button" onClick={goNext} className="rounded-lg bg-[#1F4E5F] px-5 py-2 text-sm font-bold text-white">
+              <button type="button" onClick={goNext} className="rounded-xl bg-[#1E3D8F] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-100 hover:opacity-90 active:scale-[0.94] active:shadow-none">
                 Siguiente
               </button>
             ) : (
-              <button type="submit" disabled={submitting} className="rounded-lg bg-[#1F4E5F] px-5 py-2 text-sm font-bold text-white disabled:opacity-60">
+              <button type="submit" disabled={submitting} className="rounded-xl bg-[#1E3D8F] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-100 hover:opacity-90 active:scale-[0.94] active:shadow-none disabled:opacity-60">
                 {submitting ? 'Guardando...' : 'Entrar a AulaBase'}
               </button>
             )}

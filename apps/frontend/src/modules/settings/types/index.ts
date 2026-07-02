@@ -14,10 +14,6 @@ export type SchoolProfile = {
   slug: string
   logoUrl: string | null
   sector: 'public' | 'private' | 'semiofficial'
-  regionalCode: string | null
-  regionalName: string | null
-  districtCode: string | null
-  districtName: string | null
   centerCode: string | null
   schoolShift: 'morning' | 'afternoon' | 'night' | 'extended' | 'full_day'
   primaryModality: 'general' | 'academic' | 'technical_professional' | 'arts'
@@ -51,10 +47,6 @@ export type UpdateSchoolInput = {
   slug?: string
   logoUrl?: string | null
   sector?: SchoolProfile['sector']
-  regionalCode?: string | null
-  regionalName?: string | null
-  districtCode?: string | null
-  districtName?: string | null
   centerCode?: string | null
   schoolShift?: SchoolProfile['schoolShift']
   primaryModality?: SchoolProfile['primaryModality']

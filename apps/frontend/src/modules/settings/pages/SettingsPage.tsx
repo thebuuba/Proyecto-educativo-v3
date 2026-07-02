@@ -34,7 +34,7 @@ type SettingsArea = {
 const settingsAreas: SettingsArea[] = [
   {
     title: 'Centro educativo',
-    description: 'Identidad, regional, distrito, código de centro, sector y jornada.',
+    description: 'Identidad, código de centro, sector y jornada.',
     status: 'Disponible',
     href: '#centro-educativo',
     icon: Building2,

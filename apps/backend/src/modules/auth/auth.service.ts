@@ -413,8 +413,6 @@ export class AuthService {
           data: {
             name: dto.school.name,
             slug,
-            regionalName: dto.school.regionalName ?? null,
-            districtName: dto.school.districtName ?? null,
             primaryModality: dto.school.primaryModality ?? 'general',
             schoolShift: normalizeSchoolShift(dto.school.schoolShift),
             enabledSubsystems: dto.school.enabledSubsystems?.length

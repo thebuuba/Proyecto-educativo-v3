@@ -56,10 +56,6 @@ model School {
   slug                String       @unique
   logoUrl             String?      @map("logo_url")
   sector              String       @default("private")
-  regionalCode        String?      @map("regional_code")
-  regionalName        String?      @map("regional_name")
-  districtCode        String?      @map("district_code")
-  districtName        String?      @map("district_name")
   centerCode          String?      @map("center_code")
   schoolShift         String       @default("extended") @map("school_shift")
   primaryModality     String       @default("general") @map("primary_modality")

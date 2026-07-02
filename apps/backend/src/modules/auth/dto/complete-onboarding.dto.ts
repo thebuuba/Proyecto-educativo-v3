@@ -7,14 +7,6 @@ class OnboardingSchoolDto {
 
   @IsOptional()
   @IsString()
-  regionalName?: string
-
-  @IsOptional()
-  @IsString()
-  districtName?: string
-
-  @IsOptional()
-  @IsString()
   primaryModality?: string
 
   @IsOptional()

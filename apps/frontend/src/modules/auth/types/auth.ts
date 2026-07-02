@@ -107,8 +107,6 @@ export type CompleteOnboardingInput = {
   email?: string
   school: {
     name: string
-    regionalName?: string
-    districtName?: string
     primaryModality?: string
     schoolShift?: string
     enabledSubsystems?: string[]

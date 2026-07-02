@@ -87,7 +87,7 @@ export function ReportsPage() {
           Reportes
         </h1>
         <p className="mt-3 text-base leading-6 text-muted-foreground">
-          Informes operativos con encabezados de centro, regional, distrito y año escolar.
+          Informes operativos con encabezados de centro y año escolar.
         </p>
       </div>
 

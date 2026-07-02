@@ -396,8 +396,6 @@ describe('AuthService.register', () => {
       fullName: registerDto.fullName,
       school: {
         name: registerDto.schoolName,
-        regionalName: 'Regional 10',
-        districtName: 'Distrito 01',
         primaryModality: 'general',
         schoolShift: 'morning,afternoon',
         enabledSubsystems: ['regular'],

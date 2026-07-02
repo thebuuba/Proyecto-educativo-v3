@@ -23,26 +23,6 @@ export class UpdateSchoolDto {
   @IsOptional()
   @IsString()
   @MaxLength(200)
-  regionalCode?: string
-
-  @IsOptional()
-  @IsString()
-  @MaxLength(200)
-  regionalName?: string
-
-  @IsOptional()
-  @IsString()
-  @MaxLength(200)
-  districtCode?: string
-
-  @IsOptional()
-  @IsString()
-  @MaxLength(200)
-  districtName?: string
-
-  @IsOptional()
-  @IsString()
-  @MaxLength(200)
   centerCode?: string
 
   @IsOptional()

@@ -20,7 +20,7 @@ El esquema versionado vive en `supabase/migrations/`. `packages/database/prisma/
 
 | Modelo | Descripción |
 |--------|-------------|
-| `School` | Centro educativo (tenant). Datos MINERD: regional, distrito, código de centro, sector, subsistemas habilitados |
+| `School` | Centro educativo (tenant). Nombre, código de centro, sector, jornada, modalidad y subsistemas habilitados |
 | `AppUser` | Cuenta de usuario (email + password hash). Vinculada a un `schoolId` |
 | `Role` | Roles del sistema (admin, director, coordinator, teacher, student, guardian, viewer) |
 | `Permission` | Permisos granulares |

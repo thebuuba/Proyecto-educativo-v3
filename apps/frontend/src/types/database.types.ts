@@ -1492,16 +1492,12 @@ export type Database = {
         Row: {
           center_code: string | null
           created_at: string
-          district_code: string | null
-          district_name: string | null
           enabled_subsystems: string[]
           id: string
           logo_url: string | null
           name: string
           official_exports_enabled: boolean
           primary_modality: string
-          regional_code: string | null
-          regional_name: string | null
           school_shift: string
           sector: string
           slug: string
@@ -1511,16 +1507,12 @@ export type Database = {
         Insert: {
           center_code?: string | null
           created_at?: string
-          district_code?: string | null
-          district_name?: string | null
           enabled_subsystems?: string[]
           id?: string
           logo_url?: string | null
           name: string
           official_exports_enabled?: boolean
           primary_modality?: string
-          regional_code?: string | null
-          regional_name?: string | null
           school_shift?: string
           sector?: string
           slug: string
@@ -1530,16 +1522,12 @@ export type Database = {
         Update: {
           center_code?: string | null
           created_at?: string
-          district_code?: string | null
-          district_name?: string | null
           enabled_subsystems?: string[]
           id?: string
           logo_url?: string | null
           name?: string
           official_exports_enabled?: boolean
           primary_modality?: string
-          regional_code?: string | null
-          regional_name?: string | null
           school_shift?: string
           sector?: string
           slug?: string

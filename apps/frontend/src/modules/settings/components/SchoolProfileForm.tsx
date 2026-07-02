@@ -2,7 +2,7 @@
  * @file Componente SchoolProfileForm
  *
  * Formulario para editar los datos del perfil del centro
- * educativo: nombre, sector, regional, distrito, jornada, etc.
+ * educativo: nombre, sector, jornada, etc.
  */
 
 import { useState } from 'react'
@@ -20,10 +20,6 @@ type SchoolProfileFormProps = {
     name: string
     slug: string
     sector: SchoolProfile['sector']
-    regionalCode: string | null
-    regionalName: string | null
-    districtCode: string | null
-    districtName: string | null
     centerCode: string | null
     schoolShift: SchoolProfile['schoolShift']
     primaryModality: SchoolProfile['primaryModality']
@@ -64,10 +60,6 @@ export function SchoolProfileForm({ profile, onSave }: SchoolProfileFormProps) {
   const [name, setName] = useState(profile?.name ?? '')
   const [slug, setSlug] = useState(profile?.slug ?? '')
   const [sector, setSector] = useState<SchoolProfile['sector']>(profile?.sector ?? 'private')
-  const [regionalCode, setRegionalCode] = useState(profile?.regionalCode ?? '')
-  const [regionalName, setRegionalName] = useState(profile?.regionalName ?? '')
-  const [districtCode, setDistrictCode] = useState(profile?.districtCode ?? '')
-  const [districtName, setDistrictName] = useState(profile?.districtName ?? '')
   const [centerCode, setCenterCode] = useState(profile?.centerCode ?? '')
   const [schoolShift, setSchoolShift] = useState<SchoolProfile['schoolShift']>(
     profile?.schoolShift ?? 'extended',
@@ -98,10 +90,6 @@ export function SchoolProfileForm({ profile, onSave }: SchoolProfileFormProps) {
         name: name.trim(),
         slug: slug.trim(),
         sector,
-        regionalCode: regionalCode.trim() || null,
-        regionalName: regionalName.trim() || null,
-        districtCode: districtCode.trim() || null,
-        districtName: districtName.trim() || null,
         centerCode: centerCode.trim() || null,
         schoolShift,
         primaryModality,
@@ -218,28 +206,6 @@ export function SchoolProfileForm({ profile, onSave }: SchoolProfileFormProps) {
                   </option>
                 ))}
               </Select>
-            </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Código regional</label>
-              <Input value={regionalCode} onChange={(e) => setRegionalCode(e.target.value)} />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Regional</label>
-              <Input value={regionalName} onChange={(e) => setRegionalName(e.target.value)} />
-            </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Código distrito</label>
-              <Input value={districtCode} onChange={(e) => setDistrictCode(e.target.value)} />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Distrito educativo</label>
-              <Input value={districtName} onChange={(e) => setDistrictName(e.target.value)} />
             </div>
           </div>
 
