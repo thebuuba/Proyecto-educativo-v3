@@ -115,32 +115,42 @@ export function DashboardPage() {
         </div>
       )}
 
-      <DashboardHero
-        nextClass={data.nextClass}
-        onStartClass={handleStartClass}
-        onViewPlanning={handleViewPlanning}
-      />
+      <div className="dashboard-enter" style={{ animationDuration: '520ms' }}>
+        <DashboardHero
+          nextClass={data.nextClass}
+          onStartClass={handleStartClass}
+          onViewPlanning={handleViewPlanning}
+        />
+      </div>
 
       <div className="grid lg:grid-cols-12 gap-6">
-        <div className="lg:col-span-5">
+        <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
           <TodayAgenda items={data.todayAgenda} />
         </div>
 
         <div className="lg:col-span-7 space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
-            <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
-            <DashboardTasks
-              tasks={data.tasks}
-              loading={actionLoading}
-              onAddTask={addTask}
-              onCompleteTask={completeTask}
-            />
+            <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
+              <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
+            </div>
+            <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
+              <DashboardTasks
+                tasks={data.tasks}
+                loading={actionLoading}
+                onAddTask={addTask}
+                onCompleteTask={completeTask}
+              />
+            </div>
           </div>
-          <RecentActivity items={data.recentActivity} />
+          <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
+            <RecentActivity items={data.recentActivity} />
+          </div>
         </div>
       </div>
 
-      <SmartSuggestion suggestion={data.smartSuggestion} />
+      <div className="dashboard-enter" style={{ animationDelay: '240ms', animationDuration: '280ms' }}>
+        <SmartSuggestion suggestion={data.smartSuggestion} />
+      </div>
     </div>
   )
 }
