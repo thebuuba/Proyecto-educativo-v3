@@ -3,6 +3,7 @@ import {
   Library, Microscope, Palette, Pencil, Ruler,
 } from 'lucide-react'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const FLOATING_ICONS = [
   { Icon: BookOpen, top: '8%', left: '6%', size: 44, rotate: -12 },
   { Icon: Pencil, top: '18%', left: '88%', size: 36, rotate: 22 },

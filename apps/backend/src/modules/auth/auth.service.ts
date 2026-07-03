@@ -438,7 +438,7 @@ export class AuthService {
           },
         })
 
-        const teacher = await tx.teacher.create({
+        const _teacher = await tx.teacher.create({
           data: {
             userId: user.id,
             schoolId: school.id,

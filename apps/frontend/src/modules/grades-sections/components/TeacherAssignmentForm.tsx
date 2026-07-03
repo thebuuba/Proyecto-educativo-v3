@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import type { FormEvent } from 'react'
 
 import { Button } from '@/components/ui/Button'
@@ -35,13 +35,12 @@ export function TeacherAssignmentForm({
   const availableCycles = selectedLevel?.cycles ?? []
   const [cycleCode, setCycleCode] = useState(availableCycles[0]?.code ?? '')
   const selectedCycle = availableCycles.find((cycle) => cycle.code === cycleCode) ?? availableCycles[0]
-  const availableGrades = selectedCycle?.grades ?? []
-  const [gradeCode, setGradeCode] = useState(availableGrades[0]?.code ?? '')
-  const selectedGrade = availableGrades.find((grade) => grade.code === gradeCode) ?? availableGrades[0]
+  const [gradeCode, setGradeCode] = useState(selectedCycle?.grades?.[0]?.code ?? '')
+  const selectedGrade = selectedCycle?.grades?.find((grade) => grade.code === gradeCode) ?? selectedCycle?.grades?.[0]
   const [sectionName, setSectionName] = useState(defaultSectionOptions[0] ?? 'A')
-  const subjectOptions = useMemo(
-    () => attachExistingSubjectIds(selectedGrade?.subjects ?? [], catalogs.subjects),
-    [catalogs.subjects, selectedGrade],
+  const subjectOptions = attachExistingSubjectIds(
+    (selectedCycle?.grades.find((g) => g.code === gradeCode) ?? selectedCycle?.grades?.[0])?.subjects ?? [],
+    catalogs.subjects,
   )
   const [subjectKey, setSubjectKey] = useState(subjectOptions[0]?.key ?? '')
   const selectedSubject = subjectOptions.find((subject) => subject.key === subjectKey) ?? subjectOptions[0]
@@ -63,7 +62,7 @@ export function TeacherAssignmentForm({
   }
 
   function handleGradeChange(nextGradeCode: string) {
-    const nextGrade = availableGrades.find((grade) => grade.code === nextGradeCode)
+    const nextGrade = selectedCycle?.grades?.find((grade) => grade.code === nextGradeCode)
     setGradeCode(nextGradeCode)
     setSubjectKey(nextGrade?.subjects?.[0]?.key ?? '')
   }
@@ -140,9 +139,9 @@ export function TeacherAssignmentForm({
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="space-y-2">
             <span className="text-sm font-medium text-foreground">Grado</span>
-            <select className={selectClassName} value={selectedGrade?.code ?? ''} onChange={(event) => handleGradeChange(event.target.value)} disabled={!availableGrades.length}>
-              {availableGrades.length ? (
-                availableGrades.map((grade) => (
+            <select className={selectClassName} value={selectedGrade?.code ?? ''} onChange={(event) => handleGradeChange(event.target.value)} disabled={!(selectedCycle?.grades?.length)}>
+              {selectedCycle?.grades?.length ? (
+                selectedCycle.grades.map((grade) => (
                   <option key={grade.code} value={grade.code}>
                     {grade.label}
                   </option>
