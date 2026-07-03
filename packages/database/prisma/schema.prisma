@@ -65,6 +65,31 @@ model School {
   createdAt           DateTime     @default(now()) @map("created_at")
   updatedAt           DateTime     @updatedAt @map("updated_at")
 
+  appUsers              AppUser[]
+  schoolYears           SchoolYear[]
+  academicPeriods       AcademicPeriod[]
+  grades                Grade[]
+  sections              Section[]
+  subjects              Subject[]
+  teachers              Teacher[]
+  students              Student[]
+  guardians             Guardian[]
+  studentGuardians      StudentGuardian[]
+  guardianNotifications GuardianNotification[]
+  sectionSubjects       SectionSubject[]
+  enrollments           Enrollment[]
+  attendanceDailies     AttendanceDaily[]
+  attendanceClasses     AttendanceClass[]
+  gradesRecords         GradesRecord[]
+  pedagogicalRecoveries PedagogicalRecovery[]
+  reports               Report[]
+  timeSlots             TimeSlot[]
+  scheduleEntries       ScheduleEntry[]
+  planningEntries       PlanningEntry[]
+  dashboardTasks        DashboardTask[]
+  userRoles             UserRole[]
+  drEvaluationRules     DrEvaluationRule[]
+
   @@map("schools")
 }
 
@@ -77,7 +102,8 @@ model Role {
   createdAt   DateTime       @default(now()) @map("created_at")
   updatedAt   DateTime       @updatedAt @map("updated_at")
 
-
+  rolePermissions RolePermission[]
+  userRoles       UserRole[]
 
   @@map("roles")
 }
@@ -91,7 +117,7 @@ model Permission {
   createdAt   DateTime       @default(now()) @map("created_at")
   updatedAt   DateTime       @updatedAt @map("updated_at")
 
-
+  rolePermissions RolePermission[]
 
   @@map("permissions")
 }
@@ -103,6 +129,8 @@ model RolePermission {
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
 
+  role       Role       @relation(fields: [roleId], references: [id])
+  permission Permission @relation(fields: [permissionId], references: [id])
 
   @@id([roleId, permissionId])
   @@map("role_permissions")
@@ -123,6 +151,19 @@ model AppUser {
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
 
+  school    School    @relation(fields: [schoolId], references: [id])
+  userRoles UserRole[]
+  teacher   Teacher?
+  student   Student?
+  guardian  Guardian?
+  createdNotifications       GuardianNotification[]
+  recordedAttendanceDailies   AttendanceDaily[]
+  recordedAttendanceClasses   AttendanceClass[]
+  recordedGradesRecords       GradesRecord[]
+  recordedPedagogicalRecoveries PedagogicalRecovery[]
+  generatedReports            Report[]
+  assignedDashboardTasks      DashboardTask[] @relation("DashboardAssignee")
+  createdDashboardTasks       DashboardTask[] @relation("DashboardCreator")
 
   @@map("app_users")
 }
@@ -135,28 +176,40 @@ model UserRole {
   createdAt DateTime     @default(now()) @map("created_at")
   updatedAt DateTime     @updatedAt @map("updated_at")
 
+  user   AppUser @relation(fields: [userId], references: [id])
+  role   Role    @relation(fields: [roleId], references: [id])
+  school School  @relation(fields: [schoolId], references: [id])
 
   @@id([userId, roleId])
   @@map("user_roles")
 }
 
 model SchoolYear {
-  id               String       @id @default(uuid()) @db.Uuid
-  schoolId         String       @map("school_id") @db.Uuid
-  name             String
-  startDate        DateTime     @map("start_date") @db.Date
-  endDate          DateTime     @map("end_date") @db.Date
-  isCurrent        Boolean      @default(false) @map("is_current")
-  periodScheme     String       @default("trimester") @map("period_scheme")
-  periodCount      Int          @default(3) @map("period_count")
-  calendarSource   String       @default("school") @map("calendar_source")
-  instructionalDays Int?        @map("instructional_days")
-  studentWeeks     Int?         @map("student_weeks")
-  teacherWeeks     Int?         @map("teacher_weeks")
-  status           RecordStatus @default(ACTIVE)
-  createdAt        DateTime     @default(now()) @map("created_at")
-  updatedAt        DateTime     @updatedAt @map("updated_at")
+  id                 String       @id @default(uuid()) @db.Uuid
+  schoolId           String       @map("school_id") @db.Uuid
+  name               String
+  startDate          DateTime     @map("start_date") @db.Date
+  endDate            DateTime     @map("end_date") @db.Date
+  isCurrent          Boolean      @default(false) @map("is_current")
+  periodScheme       String       @default("trimester") @map("period_scheme")
+  periodCount        Int          @default(3) @map("period_count")
+  calendarSource     String       @default("school") @map("calendar_source")
+  instructionalDays  Int?         @map("instructional_days")
+  studentWeeks       Int?         @map("student_weeks")
+  teacherWeeks       Int?         @map("teacher_weeks")
+  status             RecordStatus @default(ACTIVE)
+  createdAt          DateTime     @default(now()) @map("created_at")
+  updatedAt          DateTime     @updatedAt @map("updated_at")
 
+  school         School           @relation(fields: [schoolId], references: [id])
+  academicPeriods AcademicPeriod[]
+  enrollments     Enrollment[]
+  sectionSubjects SectionSubject[]
+  attendanceDailies AttendanceDaily[]
+  attendanceClasses AttendanceClass[]
+  gradesRecords   GradesRecord[]
+  reports         Report[]
+  scheduleEntries ScheduleEntry[]
 
   @@unique([schoolId, name])
   @@map("school_years")
@@ -174,6 +227,14 @@ model AcademicPeriod {
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
 
+  schoolYear    SchoolYear       @relation(fields: [schoolYearId], references: [id])
+  school        School           @relation(fields: [schoolId], references: [id])
+  attendanceDailies  AttendanceDaily[]
+  attendanceClasses  AttendanceClass[]
+  gradesRecords      GradesRecord[]
+  scheduleEntries    ScheduleEntry[]
+  planningEntries    PlanningEntry[]
+  reports            Report[]
 
   @@unique([schoolYearId, sequence])
   @@unique([schoolYearId, name])
@@ -194,6 +255,13 @@ model Grade {
   createdAt         DateTime     @default(now()) @map("created_at")
   updatedAt         DateTime     @updatedAt @map("updated_at")
 
+  school          School      @relation(fields: [schoolId], references: [id])
+  academicLevel   DrAcademicLevel?  @relation(fields: [academicLevelId], references: [id])
+  academicCycle   DrAcademicCycle?  @relation(fields: [academicCycleId], references: [id])
+  defaultModality DrModality?       @relation(fields: [defaultModalityId], references: [id])
+  sections        Section[]
+  sectionSubjects SectionSubject[]
+  enrollments     Enrollment[]
 
   @@unique([schoolId, name])
   @@map("grades")
@@ -208,8 +276,15 @@ model Section {
   status    RecordStatus @default(ACTIVE)
   createdAt DateTime     @default(now()) @map("created_at")
   updatedAt DateTime     @updatedAt @map("updated_at")
-  sectionSubjects SectionSubject[]
 
+  grade            Grade              @relation(fields: [gradeId], references: [id])
+  school           School             @relation(fields: [schoolId], references: [id])
+  sectionSubjects  SectionSubject[]
+  enrollments      Enrollment[]
+  attendanceDailies  AttendanceDaily[]
+  attendanceClasses  AttendanceClass[]
+  scheduleEntries  ScheduleEntry[]
+  gradesRecords    GradesRecord[]
 
   @@unique([gradeId, name])
   @@unique([id, gradeId])
@@ -226,8 +301,9 @@ model Subject {
   status      RecordStatus @default(ACTIVE)
   createdAt   DateTime     @default(now()) @map("created_at")
   updatedAt   DateTime     @updatedAt @map("updated_at")
-  sectionSubjects SectionSubject[]
 
+  school          School             @relation(fields: [schoolId], references: [id])
+  sectionSubjects SectionSubject[]
 
   @@unique([schoolId, code])
   @@map("subjects")
@@ -250,8 +326,10 @@ model Teacher {
   status       RecordStatus @default(ACTIVE)
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
-  sectionSubjects SectionSubject[]
 
+  user            AppUser?          @relation(fields: [userId], references: [id])
+  school          School            @relation(fields: [schoolId], references: [id])
+  sectionSubjects SectionSubject[]
 
   @@unique([schoolId, employeeCode])
   @@unique([schoolId, documentId])
@@ -274,6 +352,12 @@ model Student {
   createdAt   DateTime     @default(now()) @map("created_at")
   updatedAt   DateTime     @updatedAt @map("updated_at")
 
+  user                  AppUser?               @relation(fields: [userId], references: [id])
+  school                School                 @relation(fields: [schoolId], references: [id])
+  enrollments           Enrollment[]
+  guardianNotifications GuardianNotification[]
+  studentGuardians      StudentGuardian[]
+  reports               Report[]
 
   @@unique([schoolId, studentCode])
   @@unique([schoolId, documentId])
@@ -293,6 +377,10 @@ model Guardian {
   createdAt  DateTime     @default(now()) @map("created_at")
   updatedAt  DateTime     @updatedAt @map("updated_at")
 
+  user                 AppUser?               @relation(fields: [userId], references: [id])
+  school               School                 @relation(fields: [schoolId], references: [id])
+  studentGuardians     StudentGuardian[]
+  guardianNotifications GuardianNotification[]
 
   @@unique([schoolId, documentId])
   @@map("guardians")
@@ -309,6 +397,9 @@ model StudentGuardian {
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
 
+  student  Student  @relation(fields: [studentId], references: [id])
+  guardian Guardian @relation(fields: [guardianId], references: [id])
+  school   School   @relation(fields: [schoolId], references: [id])
 
   @@id([studentId, guardianId])
   @@map("student_guardians")
@@ -327,6 +418,11 @@ model GuardianNotification {
   createdAt  DateTime @default(now()) @map("created_at")
   updatedAt  DateTime @updatedAt @map("updated_at")
 
+  school   School   @relation(fields: [schoolId], references: [id])
+  student  Student  @relation(fields: [studentId], references: [id])
+  guardian Guardian? @relation(fields: [guardianId], references: [id])
+  creator  AppUser  @relation(fields: [createdBy], references: [id])
+
   @@index([schoolId])
   @@index([studentId])
   @@index([createdAt])
@@ -342,15 +438,20 @@ model SectionSubject {
   sectionId    String       @map("section_id") @db.Uuid
   subjectId    String       @map("subject_id") @db.Uuid
   teacherId    String?      @map("teacher_id") @db.Uuid
-  section      Section      @relation(fields: [sectionId], references: [id])
-  subject      Subject      @relation(fields: [subjectId], references: [id])
-  teacher      Teacher?     @relation(fields: [teacherId], references: [id])
   status       RecordStatus @default(ACTIVE)
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
+
+  schoolYear        SchoolYear        @relation(fields: [schoolYearId], references: [id])
+  school            School            @relation(fields: [schoolId], references: [id])
+  grade             Grade             @relation(fields: [gradeId], references: [id])
+  section           Section           @relation(fields: [sectionId], references: [id])
+  subject           Subject           @relation(fields: [subjectId], references: [id])
+  teacher           Teacher?          @relation(fields: [teacherId], references: [id])
   attendanceClasses AttendanceClass[]
   gradesRecords     GradesRecord[]
-
+  scheduleEntries   ScheduleEntry[]
+  planningEntries   PlanningEntry[]
 
   @@unique([schoolYearId, sectionId, subjectId])
   @@unique([id, schoolYearId, sectionId])
@@ -378,6 +479,18 @@ model Enrollment {
   createdAt         DateTime          @default(now()) @map("created_at")
   updatedAt         DateTime          @updatedAt @map("updated_at")
 
+  student           Student            @relation(fields: [studentId], references: [id])
+  schoolYear        SchoolYear         @relation(fields: [schoolYearId], references: [id])
+  school            School             @relation(fields: [schoolId], references: [id])
+  grade             Grade              @relation(fields: [gradeId], references: [id])
+  section           Section            @relation(fields: [sectionId], references: [id])
+  academicLevel     DrAcademicLevel?   @relation(fields: [academicLevelId], references: [id])
+  academicCycle     DrAcademicCycle?   @relation(fields: [academicCycleId], references: [id])
+  modality          DrModality?        @relation(fields: [modalityId], references: [id])
+  subsystem         DrSubsystem?       @relation(fields: [subsystemId], references: [id])
+  attendanceDailies AttendanceDaily[]
+  attendanceClasses AttendanceClass[]
+  gradesRecords     GradesRecord[]
 
   @@unique([studentId, schoolYearId])
   @@unique([id, schoolYearId, sectionId])
@@ -398,6 +511,12 @@ model AttendanceDaily {
   createdAt        DateTime         @default(now()) @map("created_at")
   updatedAt        DateTime         @updatedAt @map("updated_at")
 
+  enrollment     Enrollment      @relation(fields: [enrollmentId], references: [id])
+  schoolYear     SchoolYear      @relation(fields: [schoolYearId], references: [id])
+  section        Section         @relation(fields: [sectionId], references: [id])
+  school         School          @relation(fields: [schoolId], references: [id])
+  academicPeriod AcademicPeriod  @relation(fields: [academicPeriodId], references: [id])
+  recorder       AppUser?        @relation(fields: [recordedBy], references: [id])
 
   @@unique([enrollmentId, attendanceDate])
   @@map("attendance_daily")
@@ -410,7 +529,6 @@ model AttendanceClass {
   sectionId        String           @map("section_id") @db.Uuid
   schoolId         String           @map("school_id") @db.Uuid
   sectionSubjectId String           @map("section_subject_id") @db.Uuid
-  sectionSubject   SectionSubject   @relation(fields: [sectionSubjectId], references: [id])
   academicPeriodId String           @map("academic_period_id") @db.Uuid
   attendanceDate   DateTime         @map("attendance_date") @db.Date
   status           AttendanceStatus
@@ -419,6 +537,13 @@ model AttendanceClass {
   createdAt        DateTime         @default(now()) @map("created_at")
   updatedAt        DateTime         @updatedAt @map("updated_at")
 
+  enrollment     Enrollment      @relation(fields: [enrollmentId], references: [id])
+  schoolYear     SchoolYear      @relation(fields: [schoolYearId], references: [id])
+  section        Section         @relation(fields: [sectionId], references: [id])
+  school         School          @relation(fields: [schoolId], references: [id])
+  sectionSubject SectionSubject  @relation(fields: [sectionSubjectId], references: [id])
+  academicPeriod AcademicPeriod  @relation(fields: [academicPeriodId], references: [id])
+  recorder       AppUser?        @relation(fields: [recordedBy], references: [id])
 
   @@unique([enrollmentId, sectionSubjectId, attendanceDate])
   @@map("attendance_class")
@@ -431,7 +556,6 @@ model GradesRecord {
   sectionId        String            @map("section_id") @db.Uuid
   schoolId         String            @map("school_id") @db.Uuid
   sectionSubjectId String            @map("section_subject_id") @db.Uuid
-  sectionSubject   SectionSubject    @relation(fields: [sectionSubjectId], references: [id])
   academicPeriodId String            @map("academic_period_id") @db.Uuid
   assessmentName   String            @map("assessment_name")
   score            Decimal           @db.Decimal(8, 2)
@@ -442,6 +566,14 @@ model GradesRecord {
   createdAt        DateTime          @default(now()) @map("created_at")
   updatedAt        DateTime          @updatedAt @map("updated_at")
 
+  enrollment          Enrollment            @relation(fields: [enrollmentId], references: [id])
+  schoolYear          SchoolYear            @relation(fields: [schoolYearId], references: [id])
+  section             Section               @relation(fields: [sectionId], references: [id])
+  school              School                @relation(fields: [schoolId], references: [id])
+  sectionSubject      SectionSubject        @relation(fields: [sectionSubjectId], references: [id])
+  academicPeriod      AcademicPeriod        @relation(fields: [academicPeriodId], references: [id])
+  recorder            AppUser?              @relation(fields: [recordedBy], references: [id])
+  pedagogicalRecovery PedagogicalRecovery?
 
   @@map("grades_records")
 }
@@ -458,6 +590,9 @@ model PedagogicalRecovery {
   createdAt      DateTime          @default(now()) @map("created_at")
   updatedAt      DateTime          @updatedAt @map("updated_at")
 
+  gradeRecord GradesRecord @relation(fields: [gradeRecordId], references: [id])
+  school      School       @relation(fields: [schoolId], references: [id])
+  recorder    AppUser?     @relation(fields: [recordedBy], references: [id])
 
   @@map("pedagogical_recoveries")
 }
@@ -477,6 +612,11 @@ model Report {
   createdAt        DateTime     @default(now()) @map("created_at")
   updatedAt        DateTime     @updatedAt @map("updated_at")
 
+  schoolYear     SchoolYear?     @relation(fields: [schoolYearId], references: [id])
+  academicPeriod AcademicPeriod? @relation(fields: [academicPeriodId], references: [id])
+  school         School          @relation(fields: [schoolId], references: [id])
+  student        Student?        @relation(fields: [studentId], references: [id])
+  generator      AppUser?        @relation(fields: [generatedBy], references: [id])
 
   @@map("reports")
 }
@@ -492,6 +632,8 @@ model TimeSlot {
   createdAt DateTime     @default(now()) @map("created_at")
   updatedAt DateTime     @updatedAt @map("updated_at")
 
+  school         School          @relation(fields: [schoolId], references: [id])
+  scheduleEntries ScheduleEntry[]
 
   @@unique([schoolId, sequence])
   @@map("time_slots")
@@ -511,6 +653,12 @@ model ScheduleEntry {
   createdAt        DateTime     @default(now()) @map("created_at")
   updatedAt        DateTime     @updatedAt @map("updated_at")
 
+  school        School          @relation(fields: [schoolId], references: [id])
+  schoolYear    SchoolYear      @relation(fields: [schoolYearId], references: [id])
+  academicPeriod AcademicPeriod? @relation(fields: [academicPeriodId], references: [id])
+  sectionSubject SectionSubject  @relation(fields: [sectionSubjectId], references: [id])
+  section       Section         @relation(fields: [sectionId], references: [id])
+  timeSlot      TimeSlot        @relation(fields: [timeSlotId], references: [id])
 
   @@map("schedule_entries")
 }
@@ -540,6 +688,10 @@ model PlanningEntry {
   createdAt               DateTime     @default(now()) @map("created_at")
   updatedAt               DateTime     @updatedAt @map("updated_at")
 
+  school               School              @relation(fields: [schoolId], references: [id])
+  sectionSubject       SectionSubject      @relation(fields: [sectionSubjectId], references: [id])
+  academicPeriod       AcademicPeriod      @relation(fields: [academicPeriodId], references: [id])
+  fundamentalCompetence DrCompetency?      @relation(fields: [fundamentalCompetenceId], references: [id])
 
   @@map("planning_entries")
 }
@@ -556,6 +708,9 @@ model DashboardTask {
   createdAt  DateTime     @default(now()) @map("created_at")
   updatedAt  DateTime     @updatedAt @map("updated_at")
 
+  school   School   @relation(fields: [schoolId], references: [id])
+  assignee AppUser? @relation("DashboardAssignee", fields: [assignedTo], references: [id])
+  creator  AppUser  @relation("DashboardCreator", fields: [createdBy], references: [id])
 
   @@map("dashboard_tasks")
 }
@@ -568,6 +723,11 @@ model DrAcademicLevel {
   status    RecordStatus @default(ACTIVE)
   createdAt DateTime     @default(now()) @map("created_at")
   updatedAt DateTime     @updatedAt @map("updated_at")
+
+  cycles           DrAcademicCycle[]
+  grades           Grade[]
+  enrollments      Enrollment[]
+  evaluationRules  DrEvaluationRule[]
 
   @@map("dr_academic_levels")
 }
@@ -584,6 +744,9 @@ model DrAcademicCycle {
   createdAt         DateTime     @default(now()) @map("created_at")
   updatedAt         DateTime     @updatedAt @map("updated_at")
 
+  level      DrAcademicLevel @relation(fields: [levelId], references: [id])
+  grades     Grade[]
+  enrollments Enrollment[]
 
   @@map("dr_academic_cycles")
 }
@@ -598,6 +761,10 @@ model DrModality {
   createdAt                DateTime     @default(now()) @map("created_at")
   updatedAt                DateTime     @updatedAt @map("updated_at")
 
+  grades           Grade[]
+  enrollments      Enrollment[]
+  evaluationRules  DrEvaluationRule[]
+
   @@map("dr_modalities")
 }
 
@@ -608,6 +775,8 @@ model DrSubsystem {
   status    RecordStatus @default(ACTIVE)
   createdAt DateTime     @default(now()) @map("created_at")
   updatedAt DateTime     @updatedAt @map("updated_at")
+
+  enrollments Enrollment[]
 
   @@map("dr_subsystems")
 }
@@ -620,6 +789,8 @@ model DrCompetency {
   status      RecordStatus @default(ACTIVE)
   createdAt   DateTime     @default(now()) @map("created_at")
   updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  planningEntries PlanningEntry[]
 
   @@map("dr_competencies")
 }
@@ -639,6 +810,9 @@ model DrEvaluationRule {
   createdAt                  DateTime     @default(now()) @map("created_at")
   updatedAt                  DateTime     @updatedAt @map("updated_at")
 
+  school  School?           @relation(fields: [schoolId], references: [id])
+  level   DrAcademicLevel?  @relation(fields: [levelId], references: [id])
+  modality DrModality?      @relation(fields: [modalityId], references: [id])
 
   @@map("dr_evaluation_rules")
 }
