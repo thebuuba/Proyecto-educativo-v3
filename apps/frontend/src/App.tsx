@@ -6,8 +6,8 @@
 import { Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
-import { LoadingState } from '@/components/ui/LoadingState'
 import { ErrorBoundary } from '@/components/ui/ErrorFallback'
+import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { AppLayout } from '@/layouts/AppLayout'
 import { RequireAuth } from '@/modules/auth/components/RequireAuth'
 import { AuthCallbackPage } from '@/modules/auth/pages/AuthCallbackPage'
@@ -19,7 +19,7 @@ import { PromoPage } from '@/modules/promo/pages/PromoPage'
 import { appRoutes } from '@/routes/appRoutes'
 
 /** Componente de carga mostrado durante la carga diferida de módulos. */
-const routeFallback = <LoadingState />
+const routeFallback = <PageSkeleton />
 
 /**
  * Componente principal de la aplicación.

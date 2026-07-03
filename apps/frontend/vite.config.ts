@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -27,7 +28,37 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg'],
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/mzmenzzvbzsqaegsqmlb\.supabase\.co\/.*/i,
+            handler: 'NetworkFirst',
+            options: { cacheName: 'supabase-api' },
+          },
+          {
+            urlPattern: /^https:\/\/proyecto-educativo-api\.onrender\.com\/.*/i,
+            handler: 'NetworkFirst',
+            options: { cacheName: 'backend-api' },
+          },
+        ],
+      },
+      manifest: {
+        name: 'Aula Base',
+        short_name: 'Aula Base',
+        description: 'Sistema de gestión educativa',
+        theme_color: '#1E3D8F',
+        background_color: '#FAFBFC',
+        display: 'standalone',
+      },
+    }),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
