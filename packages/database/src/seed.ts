@@ -4,7 +4,6 @@
  */
 
 import { prisma } from './index.js'
-import * as bcrypt from 'bcrypt'
 
 /**
  * @description Función principal del seed. Crea un centro educativo por
@@ -33,7 +32,6 @@ async function main() {
       authUserId: crypto.randomUUID(),
       email: 'admin@test.com',
       fullName: 'Admin Aula Base',
-      passwordHash: await bcrypt.hash('123456', 10),
       schoolId: school.id,
     },
   })
