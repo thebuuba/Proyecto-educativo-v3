@@ -13,6 +13,7 @@ import {
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { prisma } from '@aula/database'
+import { splitFullName } from '@aula/shared'
 import { RegisterDto } from './dto/register.dto'
 import { LoginDto } from './dto/login.dto'
 import { CompleteOnboardingDto } from './dto/complete-onboarding.dto'
@@ -203,13 +204,6 @@ function inferSchoolYearDates(name: string, startDate?: string, endDate?: string
 function normalizeSchoolShift(value?: string) {
   const shift = value?.split(',')[0]?.trim()
   return shift || 'extended'
-}
-
-function splitName(fullName: string) {
-  const parts = fullName.trim().split(/\s+/).filter(Boolean)
-  const firstName = parts.shift() || fullName.trim()
-  const lastName = parts.join(' ') || 'Docente'
-  return { firstName, lastName }
 }
 
 @Injectable()
@@ -406,7 +400,7 @@ export class AuthService {
 
 
     const slug = await getAvailableSchoolSlug(dto.school.name)
-    const { firstName, lastName } = splitName(dto.fullName)
+    const { firstName, lastName } = splitFullName(dto.fullName, 'Docente')
     const { user, roles } = await prisma.$transaction(
       async (tx) => {
         const school = await tx.school.create({

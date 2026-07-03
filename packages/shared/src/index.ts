@@ -74,3 +74,10 @@ export type GradeRecordStatus = (typeof GradeRecordStatusEnum)[keyof typeof Grad
 
 /** @description Estado booleano simplificado de una entidad: activo o inactivo. */
 export type EntityStatus = 'active' | 'inactive'
+
+export function splitFullName(fullName: string, lastNameFallback = 'Sin apellido') {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean)
+  const firstName = parts.shift() || fullName.trim()
+  const lastName = parts.join(' ') || lastNameFallback
+  return { firstName, lastName }
+}

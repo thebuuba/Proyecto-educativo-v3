@@ -5,7 +5,7 @@
  * Proporciona operaciones CRUD para períodos académicos, entradas de planificación
  * y consultas de competencias y materias asignadas.
  */
-import { BadRequestException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
+import { BadRequestException, ConflictException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { prisma } from '@aula/database'
 import { CreateAcademicPeriodDto } from './dto/create-academic-period.dto'
@@ -60,6 +60,11 @@ export class PlanningService {
   async createAcademicPeriod(schoolId: string, dto: CreateAcademicPeriodDto) {
     const schoolYear = await prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } })
     if (!schoolYear) throw new NotFoundException('School year not found')
+
+    const existing = await prisma.academicPeriod.findFirst({
+      where: { schoolId, schoolYearId: dto.schoolYearId, name: dto.name },
+    })
+    if (existing) throw new ConflictException(`Ya existe un período llamado "${dto.name}" en este año escolar`)
 
     return prisma.academicPeriod.create({
       data: {

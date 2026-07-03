@@ -11,6 +11,7 @@ import {
   NotFoundException,
 } from '@nestjs/common'
 import { prisma, Prisma, RecordStatus } from '@aula/database'
+import { splitFullName } from '@aula/shared'
 import { CreateStudentDto } from './dto/create-student.dto'
 import { UpdateStudentDto } from './dto/update-student.dto'
 import { CreateEnrollmentDto } from './dto/create-enrollment.dto'
@@ -108,13 +109,6 @@ function parseBirthDate(value: unknown) {
   if (!Number.isFinite(date.getTime())) return IMPORT_FALLBACK_BIRTH_DATE
 
   return date
-}
-
-function splitFullName(fullName: string) {
-  const parts = fullName.trim().split(/\s+/).filter(Boolean)
-  const firstName = parts.shift() || fullName.trim()
-  const lastName = parts.join(' ') || 'Sin apellido'
-  return { firstName, lastName }
 }
 
 function toRecordStatus(status?: string) {
@@ -740,11 +734,12 @@ export class StudentsService {
     })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
 
-    await prisma.attendanceClass.deleteMany({ where: { enrollmentId: id } })
-    await prisma.attendanceDaily.deleteMany({ where: { enrollmentId: id } })
-    await prisma.gradesRecord.deleteMany({ where: { enrollmentId: id } })
-
-    return prisma.enrollment.delete({ where: { id } })
+    return prisma.$transaction(async (tx) => {
+      await tx.attendanceClass.deleteMany({ where: { enrollmentId: id } })
+      await tx.attendanceDaily.deleteMany({ where: { enrollmentId: id } })
+      await tx.gradesRecord.deleteMany({ where: { enrollmentId: id } })
+      return tx.enrollment.delete({ where: { id } })
+    })
   }
 
   /**
