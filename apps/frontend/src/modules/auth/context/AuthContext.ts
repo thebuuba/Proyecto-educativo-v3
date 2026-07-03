@@ -27,7 +27,7 @@ export type AuthContextValue = AuthState & {
   /** Inicia sesión social con Supabase. */
   loginWithProvider: (provider: 'google' | 'facebook') => Promise<void>
   /** Procesa el callback OAuth. */
-  finishOAuthCallback: () => Promise<void>
+  finishOAuthCallback: () => Promise<'authenticated' | 'profile-required'>
   /** Completa la configuración inicial. */
   completeOnboarding: (input: CompleteOnboardingInput) => Promise<void>
   /** Cierra la sesión del usuario actual. */

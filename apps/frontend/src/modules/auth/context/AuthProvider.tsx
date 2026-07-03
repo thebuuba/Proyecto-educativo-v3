@@ -41,7 +41,7 @@ type AuthProviderProps = {
 }
 
 let oauthCallbackHrefInFlight: string | null = null
-let oauthCallbackPromise: Promise<void> | null = null
+let oauthCallbackPromise: Promise<'authenticated' | 'profile-required'> | null = null
 
 function getTokenRefreshDelay(token: string): number | null {
   try {
@@ -262,7 +262,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const code = new URL(href).searchParams.get('code')
 
     if (!code) {
-      if (await restoreFromSupabaseSession()) return
+      if (await restoreFromSupabaseSession()) return 'authenticated'
       throw new Error('No se pudo completar el inicio social.')
     }
 
@@ -274,6 +274,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       window.history.replaceState({}, '', '/auth/callback')
       try {
         await applySession(await createAulaSession(supabaseToken))
+        return 'authenticated'
       } catch (error) {
         if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
           setState({
@@ -288,14 +289,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
             profileRequired: true,
             onboardingComplete: false,
           })
-          return
+          return 'profile-required'
         }
         throw error
       }
     })()
 
     try {
-      await oauthCallbackPromise
+      return await oauthCallbackPromise
     } finally {
       oauthCallbackHrefInFlight = null
       oauthCallbackPromise = null
