@@ -163,6 +163,18 @@ export const appRoutes: AppRoute[] = [
   },
 ]
 
+/** Prefetch de cada ruta: llama a la función para cargar el chunk en background. */
+export const routePrefetchers: Record<string, () => void> = {
+  '/cursos': () => void import('@/modules/grades-sections/pages/GradesSectionsPage'),
+  '/estudiantes': () => void import('@/modules/students/pages/StudentsPage'),
+  '/horario': () => void import('@/modules/schedule/pages/SchedulePage'),
+  '/asistencia': () => void import('@/modules/attendance/pages/AttendancePage'),
+  '/calificaciones': () => void import('@/modules/academic-grades/pages/AcademicGradesPage'),
+  '/planificaciones': () => void import('@/modules/planning/pages/PlanningPage'),
+  '/reportes': () => void import('@/modules/reports/pages/ReportsPage'),
+  '/configuracion': () => void import('@/modules/settings/pages/SettingsPage'),
+}
+
 /** Rutas filtradas para mostrar en la barra de navegación lateral. */
 export const navigationRoutes = appRoutes
   .filter((route) => route.showInSidebar !== false)

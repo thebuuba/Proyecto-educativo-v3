@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
-import { navigationRoutes } from '@/routes/appRoutes'
+import { navigationRoutes, routePrefetchers } from '@/routes/appRoutes'
 import { cn } from '@/utils/cn'
 
 type SidebarProps = {
@@ -124,6 +124,7 @@ export function Sidebar({ isOpen, isPinned, onClose, onTogglePinned }: SidebarPr
                 to={item.path}
                 end={item.path === '/'}
                 onClick={onClose}
+                onMouseEnter={() => routePrefetchers[item.path]?.()}
                 title={item.label}
                 className={({ isActive }) =>
                   cn(
