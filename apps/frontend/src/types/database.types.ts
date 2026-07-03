@@ -107,7 +107,6 @@ export type Database = {
           full_name: string
           id: string
           last_login_at: string | null
-          password_hash: string | null
           phone: string | null
           provider: string
           school_id: string
@@ -122,10 +121,10 @@ export type Database = {
           full_name: string
           id?: string
           last_login_at?: string | null
-          password_hash?: string | null
           phone?: string | null
           provider?: string
           school_id?: string
+          token_version?: number
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
         }
@@ -137,10 +136,10 @@ export type Database = {
           full_name?: string
           id?: string
           last_login_at?: string | null
-          password_hash?: string | null
           phone?: string | null
           provider?: string
           school_id?: string
+          token_version?: number
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
         }
@@ -990,7 +989,8 @@ export type Database = {
           recovery_date: string
           recovery_score: number
           school_id: string
-          status: Database["public"]["Enums"]["grade_record_status"]
+          token_version: number
+          status: Database["public"]["Enums"]["record_status"]
           updated_at: string
         }
         Insert: {
@@ -1002,7 +1002,8 @@ export type Database = {
           recovery_date?: string
           recovery_score: number
           school_id?: string
-          status?: Database["public"]["Enums"]["grade_record_status"]
+          token_version?: number
+          status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
         }
         Update: {
