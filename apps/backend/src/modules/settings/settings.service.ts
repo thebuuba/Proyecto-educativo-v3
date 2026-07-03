@@ -33,7 +33,7 @@ export class SettingsService {
         ...(dto.centerCode !== undefined && { centerCode: dto.centerCode }),
         ...(dto.schoolShift !== undefined && { schoolShift: dto.schoolShift }),
         ...(dto.primaryModality !== undefined && { primaryModality: dto.primaryModality }),
-        ...(dto.enabledSubsystems !== undefined && { enabledSubsystems: dto.enabledSubsystems as any }),
+        ...(dto.enabledSubsystems !== undefined && { enabledSubsystems: dto.enabledSubsystems as unknown as string[] }),
         ...(dto.officialExportsEnabled !== undefined && { officialExportsEnabled: dto.officialExportsEnabled }),
       },
     })

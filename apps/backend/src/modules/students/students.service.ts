@@ -10,7 +10,7 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common'
-import { prisma, Prisma } from '@aula/database'
+import { prisma, Prisma, RecordStatus } from '@aula/database'
 import { CreateStudentDto } from './dto/create-student.dto'
 import { UpdateStudentDto } from './dto/update-student.dto'
 import { CreateEnrollmentDto } from './dto/create-enrollment.dto'
@@ -183,7 +183,7 @@ export class StudentsService {
 
     return Promise.all(
       courses.map(async (course) => {
-        const courseMeta = course as any
+        const courseMeta = course as { grade?: { name: string }; section?: { name: string }; subject?: { name: string }; schoolYear?: { name: string }; area?: string; shift?: string }
         const gradeName =
           gradeById.get(course.gradeId)?.name ?? courseMeta.grade?.name ?? ''
         const sectionName =
@@ -331,7 +331,7 @@ export class StudentsService {
               : FAST_ENROLLMENT_BIRTH_DATE,
             gender: dto.gender || null,
             address: dto.address || null,
-            status: toRecordStatus(dto.status) as any,
+            status: toRecordStatus(dto.status) as RecordStatus,
           },
         }))
       await tx.enrollment.create({
@@ -557,7 +557,7 @@ export class StudentsService {
     const where: Prisma.StudentWhereInput = { schoolId }
 
     if (status && status !== 'all') {
-      where.status = status.toUpperCase() as any
+      where.status = status.toUpperCase() as RecordStatus
     }
 
     if (search) {

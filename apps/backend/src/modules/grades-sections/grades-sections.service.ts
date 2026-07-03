@@ -6,7 +6,7 @@
  * y consultas de datos completos del curso.
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
-import { prisma } from '@aula/database'
+import { prisma, RecordStatus } from '@aula/database'
 import { CreateGradeDto } from './dto/create-grade.dto'
 import { UpdateGradeDto } from './dto/update-grade.dto'
 import { CreateSectionDto } from './dto/create-section.dto'
@@ -155,7 +155,7 @@ export class GradesSectionsService {
         ...(dto.academicLevelId !== undefined && { academicLevelId: dto.academicLevelId }),
         ...(dto.academicCycleId !== undefined && { academicCycleId: dto.academicCycleId }),
         ...(dto.defaultModalityId !== undefined && { defaultModalityId: dto.defaultModalityId }),
-        ...(dto.status && { status: dto.status as any }),
+        ...(dto.status && { status: dto.status as RecordStatus }),
       },
     })
   }
@@ -167,14 +167,14 @@ export class GradesSectionsService {
 
     return prisma.grade.update({
       where: { id },
-      data: { status: 'INACTIVE' },
+      data: { status: RecordStatus.INACTIVE },
     })
   }
 
   /** Obtiene las secciones activas de un grado */
   findSectionsByGrade(schoolId: string, gradeId: string) {
     return prisma.section.findMany({
-      where: { schoolId, gradeId, status: 'ACTIVE' },
+      where: { schoolId, gradeId, status: RecordStatus.ACTIVE },
       orderBy: { name: 'asc' },
     })
   }
@@ -209,7 +209,7 @@ export class GradesSectionsService {
         ...(dto.name && { name: dto.name }),
         ...(dto.capacity !== undefined && { capacity: dto.capacity }),
         ...(dto.gradeId && { gradeId: dto.gradeId }),
-        ...(dto.status && { status: dto.status as any }),
+        ...(dto.status && { status: dto.status as RecordStatus }),
       },
     })
   }

@@ -5,7 +5,7 @@
  * asistencia de estudiantes, tanto diaria como por clase.
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
-import { prisma } from '@aula/database'
+import { prisma, AttendanceStatus } from '@aula/database'
 import { UpsertAttendanceDto } from './dto/upsert-attendance.dto'
 
 const baseAttendancePeriods = [
@@ -244,7 +244,7 @@ export class AttendanceService {
       return prisma.attendanceClass.update({
         where: { id: existing.id },
         data: {
-          status: dto.status as any,
+          status: dto.status as AttendanceStatus,
           notes: dto.notes ?? null,
         },
       })
@@ -259,7 +259,7 @@ export class AttendanceService {
         sectionId: enrollment.sectionId,
         academicPeriodId: academicPeriod.id,
         attendanceDate: new Date(dto.attendanceDate),
-        status: dto.status as any,
+        status: dto.status as AttendanceStatus,
         notes: dto.notes ?? null,
       },
     })
@@ -296,7 +296,7 @@ export class AttendanceService {
       return prisma.attendanceDaily.update({
         where: { id: existing.id },
         data: {
-          status: dto.status as any,
+          status: dto.status as AttendanceStatus,
           notes: dto.notes ?? null,
         },
       })
@@ -310,7 +310,7 @@ export class AttendanceService {
         sectionId: enrollment.sectionId,
         academicPeriodId: academicPeriod.id,
         attendanceDate: new Date(dto.attendanceDate),
-        status: dto.status as any,
+        status: dto.status as AttendanceStatus,
         notes: dto.notes ?? null,
       },
     })
