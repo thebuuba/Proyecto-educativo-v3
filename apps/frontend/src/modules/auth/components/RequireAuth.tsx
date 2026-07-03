@@ -6,6 +6,7 @@
 import { Navigate, useLocation } from 'react-router-dom'
 import type { ReactElement } from 'react'
 
+import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import type { UserRole } from '@/types/domain'
 
@@ -27,10 +28,8 @@ export function RequireAuth({ allowedRoles, children }: RequireAuthProps) {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-background px-4">
-        <div className="rounded-lg border border-border bg-card px-5 py-4 text-sm font-medium text-foreground shadow-sm">
-          Cargando sesión...
-        </div>
+      <div className="min-h-screen bg-background">
+        <PageSkeleton />
       </div>
     )
   }

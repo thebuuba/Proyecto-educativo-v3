@@ -43,6 +43,19 @@ type AuthProviderProps = {
 let oauthCallbackHrefInFlight: string | null = null
 let oauthCallbackPromise: Promise<'authenticated' | 'profile-required'> | null = null
 
+const ONBOARDING_CACHE_KEY = 'aulabase:onboarding-complete'
+
+function getCachedOnboardingStatus(): boolean | null {
+  const cached = localStorage.getItem(ONBOARDING_CACHE_KEY)
+  if (cached === null) return null
+  return cached === 'true'
+}
+
+function setCachedOnboardingStatus(complete: boolean) {
+  if (complete) localStorage.setItem(ONBOARDING_CACHE_KEY, 'true')
+  else localStorage.removeItem(ONBOARDING_CACHE_KEY)
+}
+
 function getTokenRefreshDelay(token: string): number | null {
   try {
     const encodedPayload = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')
@@ -98,7 +111,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
     setAuthToken(response.token)
     const onboardingComplete = checkOnboarding
-      ? await getOnboardingStatus().then((status) => status.complete).catch(() => null)
+      ? (getCachedOnboardingStatus() ?? await getOnboardingStatus().then((status) => {
+          setCachedOnboardingStatus(status.complete)
+          return status.complete
+        }).catch(() => null))
       : null
     setState({
       user: response.user,
@@ -153,6 +169,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
       return
     }
 
+    const delay = getTokenRefreshDelay(token)
+    if (delay !== null && delay <= 0) {
+      if (!await restoreFromSupabaseSession()) clearAuthState()
+      return
+    }
+
     setState((current) => ({ ...current, loading: true }))
 
     try {
@@ -167,7 +189,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const roles: Role[] = await getUserRoles(appUser.id)
       const [permissions, onboardingStatus] = await Promise.all([
         getUserPermissions(roles),
-        getOnboardingStatus().catch(() => null),
+        Promise.resolve(getCachedOnboardingStatus() ?? getOnboardingStatus().then((s) => {
+          setCachedOnboardingStatus(s.complete)
+          return s.complete
+        }).catch(() => null)),
       ])
 
       setState({
@@ -180,7 +205,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         loading: false,
         authError: null,
         profileRequired: false,
-        onboardingComplete: onboardingStatus?.complete ?? null,
+        onboardingComplete: onboardingStatus ?? null,
       })
     } catch (error) {
       console.error(error)
