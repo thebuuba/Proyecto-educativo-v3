@@ -1,13 +1,4 @@
 import {
-  Backpack,
-  BookOpen,
-  Calculator,
-  GraduationCap,
-  Library,
-  Microscope,
-  Palette,
-  Pencil,
-  Ruler,
   Sparkles,
 } from 'lucide-react'
 import type { FormEvent } from 'react'
@@ -16,6 +7,7 @@ import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
+import { FLOATING_ICONS } from '@/components/auth/AuthIcons'
 
 const DRAFT_KEY = 'aulabase:onboarding-draft'
 const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
@@ -24,19 +16,6 @@ const inputClass = 'mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 
 const labelClass = 'text-sm font-semibold text-gray-700'
 const optionRowClass = 'grid gap-3 py-4 md:grid-cols-[150px_1fr] md:items-start'
 const optionListClass = 'flex flex-wrap gap-2'
-
-const FLOATING_ICONS = [
-  { Icon: BookOpen, top: '8%', left: '6%', size: 44, rotate: -12 },
-  { Icon: Pencil, top: '18%', left: '88%', size: 36, rotate: 22 },
-  { Icon: Backpack, top: '72%', left: '8%', size: 48, rotate: 8 },
-  { Icon: Calculator, top: '82%', left: '84%', size: 40, rotate: -18 },
-  { Icon: Ruler, top: '42%', left: '4%', size: 42, rotate: 45 },
-  { Icon: Palette, top: '38%', left: '92%', size: 38, rotate: -25 },
-  { Icon: Microscope, top: '58%', left: '90%', size: 40, rotate: 15 },
-  { Icon: Library, top: '62%', left: '3%', size: 44, rotate: -8 },
-  { Icon: GraduationCap, top: '5%', left: '45%', size: 32, rotate: -6 },
-  { Icon: BookOpen, top: '90%', left: '48%', size: 30, rotate: 12 },
-]
 
 const levelOptions = [
   { value: 'primary', label: 'Primaria' },
