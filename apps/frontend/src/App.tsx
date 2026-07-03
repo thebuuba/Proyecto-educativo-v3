@@ -7,6 +7,7 @@ import { Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { LoadingState } from '@/components/ui/LoadingState'
+import { ErrorBoundary } from '@/components/ui/ErrorFallback'
 import { AppLayout } from '@/layouts/AppLayout'
 import { RequireAuth } from '@/modules/auth/components/RequireAuth'
 import { AuthCallbackPage } from '@/modules/auth/pages/AuthCallbackPage'
@@ -47,7 +48,9 @@ function App() {
                 path={path}
                 element={
                   <RequireAuth allowedRoles={route.allowedRoles}>
-                    <Page />
+                    <ErrorBoundary key={route.path}>
+                      <Page />
+                    </ErrorBoundary>
                   </RequireAuth>
                 }
               />
