@@ -5,7 +5,8 @@
 
 import { useNavigate } from 'react-router-dom'
 
-import { ErrorState, LoadingState } from '@/components/ui'
+import { ErrorState } from '@/components/ui'
+import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
 import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
 import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
@@ -71,7 +72,7 @@ export function DashboardPage() {
   if (loading) {
     return (
       <div className="px-6 lg:px-10 py-8 max-w-[1400px] mx-auto">
-        <LoadingState message="Cargando inicio..." />
+        <PageSkeleton />
       </div>
     )
   }

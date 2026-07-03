@@ -16,12 +16,18 @@ import type {
 } from '@/modules/dashboard/types/dashboard'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
+let cachedData: { data: DashboardData; timestamp: number } | null = null
+const CACHE_TTL = 60_000
+
 /** Hook principal del dashboard. Retorna datos, estado de carga/error y acciones. */
 export function useDashboard() {
   const { appUser } = useAuth()
   const appUserId = appUser?.id ?? null
-  const [data, setData] = useState<DashboardData | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState<DashboardData | null>(() => {
+    if (cachedData && Date.now() - cachedData.timestamp < CACHE_TTL) return cachedData.data
+    return null
+  })
+  const [loading, setLoading] = useState(!data)
   const [actionLoading, setActionLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -31,6 +37,7 @@ export function useDashboard() {
 
     try {
       const result = await getDashboardData(appUser)
+      cachedData = { data: result, timestamp: Date.now() }
       setData(result)
     } catch (error) {
       setData(null)
