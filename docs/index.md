@@ -11,7 +11,7 @@
 | [02-base-de-datos](02-base-de-datos.md) | Modelo de datos, esquema Prisma y migraciones |
 | [03-backend/](03-backend/) | Backend NestJS: estructura, módulos, API |
 | [04-frontend/](04-frontend/) | Frontend React: componentes, rutas, módulos |
-| [05-despliegue](05-despliegue.md) | Despliegue con Docker y Railway |
+| [05-despliegue](05-despliegue.md) | Despliegue con Render y Vercel |
 | [06-flujos-clave](06-flujos-clave.md) | Flujos funcionales del sistema |
 
 ## Tecnologías principales
@@ -23,7 +23,7 @@
 | ORM | Prisma ~6.5 con PostgreSQL |
 | Base de datos | Supabase (solo como hosting PostgreSQL) |
 | Monorepo | pnpm workspaces + TurboRepo |
-| Despliegue | Railway.app con Docker |
+| Despliegue | Backend en Render + frontend en Vercel |
 | Testing | Vitest ~4.1 |
 | Íconos | Lucide React ~1.16 |
 

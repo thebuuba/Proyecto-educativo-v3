@@ -2,19 +2,19 @@
 
 ## Infraestructura
 
-El proyecto se despliega en **Railway.app** usando Docker. Consta de dos servicios:
+El proyecto se despliega con dos servicios:
 
-- **Backend:** API NestJS (Node.js)
-- **Frontend:** SPA React servida con nginx
+- **Backend:** API NestJS en Render.
+- **Frontend:** SPA React en Vercel.
 
 ```
-                    Railway.app
+              Render + Vercel
 ┌──────────────────────────────────────┐
 │                                      │
 │  ┌─────────────┐    ┌─────────────┐  │
-│  │  Frontend   │    │   Backend   │  │
-│  │  nginx:80   │──►│  Node:3000  │  │
-│  │             │    │             │  │
+│  │  Vercel     │    │   Render    │  │
+│  │  Frontend   │──►│  Backend    │  │
+│  │             │    │  Node:3000  │  │
 │  └─────────────┘    └──────┬──────┘  │
 │                            │         │
 │                     ┌──────▼──────┐  │
@@ -24,22 +24,19 @@ El proyecto se despliega en **Railway.app** usando Docker. Consta de dos servici
 └──────────────────────────────────────┘
 ```
 
-## Dockerfiles
+## Backend En Render
 
-### Backend (`Dockerfile.backend`)
+- Servicio web Node definido en `render.yaml`.
+- Build: instala dependencias, genera Prisma Client y compila `backend`.
+- Start: `node apps/backend/dist/main.js`.
+- URL actual: `https://proyecto-educativo-api.onrender.com`.
+- Variables requeridas: `DATABASE_URL`, `JWT_SECRET`, `FRONTEND_URL`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_ANON_KEY`.
 
-- Build multi-etapa (compilación TypeScript → ejecución con solo producción)
-- Puerto expuesto: 3000
-- Variables requeridas: `DATABASE_URL`, `JWT_SECRET`, `FRONTEND_URL`
+### Frontend (`vercel.json`)
 
-### Frontend (`Dockerfile.frontend`)
-
-- Build multi-etapa (compilación Vite → nginx)
-- Incluye `nginx.conf` para:
-  - Servir archivos estáticos compilados
-  - Proxy reverso de `/api/*` al backend
-  - SPA fallback (todas las rutas a `index.html`)
-- Puerto: 80
+- Compila `@aula/shared` y luego `frontend`.
+- Publica `apps/frontend/dist`.
+- Usa fallback SPA hacia `index.html`.
 
 ## Variables de entorno
 
@@ -56,11 +53,15 @@ El proyecto se despliega en **Railway.app** usando Docker. Consta de dos servici
 
 | Variable | Obligatoria | Descripción |
 |----------|-------------|-------------|
-| `VITE_API_URL` | No | URL base de la API (defecto: `/api/v1`, usa proxy de Vite en dev) |
+| `VITE_API_URL` | Sí en producción | URL base de la API (`https://proyecto-educativo-api.onrender.com/api/v1`) |
 
-## Railway (`railway.json`)
+## Render (`render.yaml`)
 
-Define dos servicios con sus respectivos Dockerfiles y dominios.
+Define el servicio del backend con `Dockerfile.backend`.
+
+## Vercel (`vercel.json`)
+
+Define el build y salida del frontend.
 
 ## Desarrollo local
 

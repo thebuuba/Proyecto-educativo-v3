@@ -1,17 +1,19 @@
 services:
   - type: web
-    name: aula-backend
-    runtime: docker
-    dockerfilePath: ./Dockerfile.backend
+    name: proyecto-educativo-api
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: pnpm install --frozen-lockfile && pnpm --filter @aula/shared build && pnpm --filter @aula/database generate && pnpm --filter @aula/database build && pnpm --filter backend build
+    startCommand: node apps/backend/dist/main.js
     envVars:
-      - key: PORT
-        value: "3000"
       - key: DATABASE_URL
         sync: false
       - key: JWT_SECRET
         sync: false
       - key: FRONTEND_URL
-        sync: false
+        value: https://proyecto-educativo-v3.vercel.app
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_SERVICE_ROLE_KEY

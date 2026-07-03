@@ -6,7 +6,7 @@
 
 **Architecture:** La prioridad es convertir `schoolId` en contexto de servidor derivado del JWT, no en dato global ni enviado por el cliente. Después se alinean Prisma, Docker, Turbo, lint, tipos y documentación para que el monorepo tenga una sola fuente de verdad.
 
-**Tech Stack:** NestJS, Passport JWT, Prisma, PostgreSQL/Supabase, React, Vite, pnpm workspaces, Turbo, Docker/Railway.
+**Tech Stack:** NestJS, Passport JWT, Prisma, PostgreSQL/Supabase, React, Vite, pnpm workspaces, Turbo, Docker, Render y Vercel.
 
 ---
 
@@ -648,4 +648,3 @@ Expected:
 - registro crea escuela independiente
 - aislamiento entre escuelas pasa
 - ambos Docker images construyen desde cero
-
