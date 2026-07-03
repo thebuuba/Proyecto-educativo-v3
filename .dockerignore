@@ -33,6 +33,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Git
+.git
+
 # OS and editor caches
 .DS_Store
 Thumbs.db

@@ -2,6 +2,6 @@
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
     "superpowers@git+https://github.com/obra/superpowers.git",
-    "/Users/natanael/.config/opencode/ponytail/.opencode/plugins/ponytail.mjs"
+    "/Users/natanael/.config/opencode/ponytail/.opencode/plugins/ponytail.mjs"  // ponytail: absolute path, replace per-dev
   ]
 }

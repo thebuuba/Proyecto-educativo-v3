@@ -311,7 +311,7 @@ export function LoginPage() {
         </p>
 
         <p className="mt-12 text-center text-xs text-gray-400">
-          © 2025 Aula Base
+          © {new Date().getFullYear()} Aula Base
         </p>
       </div>
     </main>
