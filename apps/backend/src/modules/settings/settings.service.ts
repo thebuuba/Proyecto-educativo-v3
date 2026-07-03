@@ -5,7 +5,9 @@
  * Proporciona operaciones CRUD para datos de la institución, años escolares
  * y consulta de períodos académicos.
  */
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { Inject, Injectable, NotFoundException } from '@nestjs/common'
+import { CACHE_MANAGER } from '@nestjs/cache-manager'
+import { Cache } from 'cache-manager'
 import { prisma } from '@aula/database'
 import { UpdateSchoolDto } from './dto/update-school.dto'
 import { CreateSchoolYearDto } from './dto/create-school-year.dto'
@@ -13,6 +15,8 @@ import { UpdateSchoolYearDto } from './dto/update-school-year.dto'
 
 @Injectable()
 export class SettingsService {
+  constructor(@Inject(CACHE_MANAGER) private cache: Cache) {}
+
   /** Obtiene los datos del colegio por su ID */
   getSchool(schoolId: string) {
     return prisma.school.findUnique({ where: { id: schoolId } })

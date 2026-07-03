@@ -5,6 +5,7 @@
 import { Module } from '@nestjs/common'
 import { APP_INTERCEPTOR, APP_FILTER } from '@nestjs/core'
 import { ConfigModule } from '@nestjs/config'
+import { CacheModule } from '@nestjs/cache-manager'
 import { ThrottlerModule } from '@nestjs/throttler'
 import { ResponseInterceptor } from './common/interceptors/response.interceptor'
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter'
@@ -34,6 +35,7 @@ import { backendEnvFilePaths } from './config/env-file-paths'
   imports: [
     ConfigModule.forRoot({ isGlobal: true, envFilePath: backendEnvFilePaths }),
     ThrottlerModule.forRoot([{ ttl: 60000, limit: 100 }]),
+    CacheModule.register({ isGlobal: true, ttl: 60_000, max: 100 }),
     AuthModule,
     UsersModule,
     StudentsModule,

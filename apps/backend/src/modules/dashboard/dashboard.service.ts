@@ -4,7 +4,9 @@
  * @description Contiene la lógica de negocio para el panel de control del colegio.
  * Proporciona estadísticas generales y operaciones CRUD para tareas del dashboard.
  */
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, Inject, Injectable, NotFoundException } from '@nestjs/common'
+import { CACHE_MANAGER } from '@nestjs/cache-manager'
+import { Cache } from 'cache-manager'
 import { prisma } from '@aula/database'
 import { CreateTaskDto } from './dto/create-task.dto'
 import { UpdateTaskDto } from './dto/update-task.dto'
@@ -26,6 +28,8 @@ function validateTaskInput(body: CreateTaskDto | UpdateTaskDto) {
 
 @Injectable()
 export class DashboardService {
+  constructor(@Inject(CACHE_MANAGER) private cache: Cache) {}
+
   /** Obtiene las estadísticas del colegio: conteo de estudiantes, profesores y matrículas activas */
   async getStats(schoolId: string) {
     const [studentCount, teacherCount, activeEnrollments] = await Promise.all([
