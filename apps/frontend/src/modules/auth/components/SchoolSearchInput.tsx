@@ -28,6 +28,8 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
   const [loading, setLoading] = useState(false)
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
   const [dropdownTop, setDropdownTop] = useState(0)
+  const [dropdownLeft, setDropdownLeft] = useState(0)
+  const [dropdownWidth, setDropdownWidth] = useState(0)
   const [dropdownMaxHeight, setDropdownMaxHeight] = useState(320)
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
@@ -60,6 +62,8 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
         const rect = inputRef.current.getBoundingClientRect()
         const spaceBelow = window.innerHeight - rect.bottom - 8
         setDropdownTop(rect.bottom + 4)
+        setDropdownLeft(rect.left)
+        setDropdownWidth(rect.width)
         setDropdownMaxHeight(Math.min(420, Math.max(160, spaceBelow)))
       }
       setResults(data)
@@ -144,14 +148,14 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
         className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10"
       />
 
-      {open && results.length > 0 && inputRef.current && createPortal(
+      {open && results.length > 0 && createPortal(
         <ul
           ref={listRef}
           style={{
             position: 'fixed',
             top: dropdownTop,
-            left: inputRef.current.getBoundingClientRect().left,
-            width: inputRef.current.getBoundingClientRect().width,
+            left: dropdownLeft,
+            width: dropdownWidth,
             maxHeight: dropdownMaxHeight,
             overflowY: 'auto',
           }}

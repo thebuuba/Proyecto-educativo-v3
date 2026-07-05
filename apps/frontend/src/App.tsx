@@ -15,7 +15,10 @@ import { LoginPage } from '@/modules/auth/pages/LoginPage'
 import { OnboardingPage } from '@/modules/auth/pages/OnboardingPage'
 import { RegisterPage } from '@/modules/auth/pages/RegisterPage'
 import { UnauthorizedPage } from '@/modules/auth/pages/UnauthorizedPage'
+import { ContactPage } from '@/modules/promo/pages/ContactPage'
+import { PrivacyPage } from '@/modules/promo/pages/PrivacyPage'
 import { PromoPage } from '@/modules/promo/pages/PromoPage'
+import { TermsPage } from '@/modules/promo/pages/TermsPage'
 import { appRoutes } from '@/routes/appRoutes'
 
 /** Componente de carga mostrado durante la carga diferida de módulos. */
@@ -35,6 +38,9 @@ function App() {
         <Route path="/onboarding" element={<OnboardingPage />} />
         <Route path="/" element={<PromoPage />} />
         <Route path="/promo" element={<Navigate to="/" replace />} />
+        <Route path="/privacidad" element={<PrivacyPage />} />
+        <Route path="/terminos" element={<TermsPage />} />
+        <Route path="/contacto" element={<ContactPage />} />
         <Route path="/registro" element={<RegisterPage />} />
         <Route path="/sin-acceso" element={<UnauthorizedPage />} />
         <Route element={<AppLayout />}>
