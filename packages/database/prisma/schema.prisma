@@ -58,6 +58,8 @@ model School {
   sector              String       @default("private")
   centerCode          String?      @map("center_code")
   district            String?      @map("district")
+  lat                 Float?       @map("lat")
+  lng                 Float?       @map("lng")
   niveles             String[]     @default([])
   tandas              String[]     @default([])
   modalidades         String[]     @default([])

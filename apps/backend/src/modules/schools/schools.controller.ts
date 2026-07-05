@@ -8,6 +8,6 @@ export class SchoolsController {
 
   @Get()
   search(@Query() query: SearchSchoolsQueryDto) {
-    return this.schoolsService.search(query.q, query.limit)
+    return this.schoolsService.search(query.q, query.limit, query.lat, query.lng)
   }
 }

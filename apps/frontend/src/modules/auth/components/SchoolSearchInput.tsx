@@ -32,6 +32,17 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
   const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+  const locationRef = useRef<{ lat: number; lng: number } | null>(null)
+  const locationFetchedRef = useRef(false)
+
+  useEffect(() => {
+    if (locationFetchedRef.current) return
+    locationFetchedRef.current = true
+    fetch('//ip-api.com/json/')
+      .then(r => r.json())
+      .then(d => { if (d.lat && d.lon) locationRef.current = { lat: d.lat, lng: d.lon } })
+      .catch(() => {})
+  }, [])
 
   const search = useCallback(async (term: string) => {
     if (term.length < 2) {
@@ -41,7 +52,10 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
     }
     setLoading(true)
     try {
-      const data = await api.get<SchoolResult[]>(`/schools?q=${encodeURIComponent(term)}&limit=50`)
+      let url = `/schools?q=${encodeURIComponent(term)}&limit=50`
+      const loc = locationRef.current
+      if (loc) url += `&lat=${loc.lat}&lng=${loc.lng}`
+      const data = await api.get<SchoolResult[]>(url)
       if (inputRef.current) {
         const rect = inputRef.current.getBoundingClientRect()
         const spaceBelow = window.innerHeight - rect.bottom - 8

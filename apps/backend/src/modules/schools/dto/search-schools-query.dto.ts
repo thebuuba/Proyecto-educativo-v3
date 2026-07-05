@@ -13,4 +13,12 @@ export class SearchSchoolsQueryDto {
   @Min(1)
   @Max(50)
   limit?: number
+
+  @IsOptional()
+  @Type(() => Number)
+  lat?: number
+
+  @IsOptional()
+  @Type(() => Number)
+  lng?: number
 }

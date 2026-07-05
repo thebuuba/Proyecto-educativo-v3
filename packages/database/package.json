@@ -9,6 +9,7 @@
 "seed:schools": "dotenv -e ../../apps/backend/.env -- tsx src/seed-schools.ts",
 "seed:school-defaults": "dotenv -e ../../apps/backend/.env -- tsx src/seed-school-defaults.ts",
 "seed:schools-missing": "dotenv -e ../../apps/backend/.env -- tsx src/seed-schools-missing.ts",
+"seed:school-coords": "dotenv -e ../../apps/backend/.env -- tsx src/seed-school-coords.ts",
     "studio": "dotenv -e ../../apps/backend/.env -- prisma studio",
     "build": "tsc"
   },
