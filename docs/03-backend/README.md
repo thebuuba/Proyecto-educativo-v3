@@ -24,13 +24,13 @@ apps/backend/src/
     ├── students/                 # CRUD de estudiantes y matrículas
     ├── subjects/                 # Listado de asignaturas
     ├── attendance/               # Asistencia diaria y por clase
-    ├── academic-grades/          # Calificaciones y recuperación pedagógica
+    ├── grading/          # Calificaciones y recuperación pedagógica
     ├── schedule/                 # Horario escolar
     ├── planning/                 # Planificación didáctica
-    ├── grades-sections/          # Gestión de grados, secciones y asignaturas
+    ├── courses/          # Gestión de grados, secciones y asignaturas
     ├── dashboard/                # Panel principal con estadísticas y tareas
     ├── reports/                  # Generación de reportes
-    ├── settings/                 # Configuración de la escuela y años escolares
+    ├── school-administration/                 # Configuración de la escuela y años escolares
     └── profile/                  # Perfil personal del usuario
 ```
 

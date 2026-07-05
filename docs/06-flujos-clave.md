@@ -142,7 +142,7 @@ Docente                    Frontend                     Backend                 
    │  - Materia (sección)     │                           │                          │
    │  - Periodo académico     │                           │                          │
    │                          │                           │                          │
-   │                          │  GET /academic-grades/    │                          │
+   │                          │  GET /grading/    │                          │
    │                          │  students                 │                          │
    │                          ├──────────────────────────►│                          │
    │                          │◄──────────────────────────│                          │
@@ -152,7 +152,7 @@ Docente                    Frontend                     Backend                 
    │                          │                           │                          │
    │  Edita nota de un        │                           │                          │
    │  estudiante              │                           │                          │
-   │                          │  POST /academic-grades/   │                          │
+   │                          │  POST /grading/   │                          │
    │                          │  save                     │                          │
    │                          │  (enrollmentId, score,    │                          │
    │                          │   assessmentName,         │                          │
@@ -183,7 +183,7 @@ Coordinador                Frontend                     Backend
    │                          │                           │
    │  Asigna materia a        │                           │
    │  sección + docente       │                           │
-   │  POST /grades-sections/  │                           │
+   │  POST /courses/  │                           │
    │  assign-subject          │                           │
    ├─────────────────────────►│                           │
    │                          │  Crear SectionSubject     │

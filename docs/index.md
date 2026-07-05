@@ -7,6 +7,7 @@
 
 | Sección | Descripción |
 |---------|-------------|
+| [00-dominio](00-dominio.md) | Lenguaje de dominio y mapa de módulos |
 | [01-arquitectura](01-arquitectura.md) | Arquitectura general del sistema |
 | [02-base-de-datos](02-base-de-datos.md) | Modelo de datos, esquema Prisma y migraciones |
 | [03-backend/](03-backend/) | Backend NestJS: estructura, módulos, API |

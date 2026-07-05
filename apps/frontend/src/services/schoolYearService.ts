@@ -20,6 +20,6 @@ export type SchoolYearSummary = {
  * @returns El año escolar actual o null.
  */
 export async function getCurrentSchoolYear(): Promise<SchoolYearSummary | null> {
-  const years = await api.get<SchoolYearSummary[]>('/settings/school-years')
+  const years = await api.get<SchoolYearSummary[]>('/school-administration/school-years')
   return years.find((y) => y.isCurrent) ?? years[0] ?? null
 }

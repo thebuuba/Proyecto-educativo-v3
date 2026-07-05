@@ -62,7 +62,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
         const today = getDateKey(new Date())
         const periods = await api.get<Array<{ name: string; startDate: string; endDate: string }>>(
-          `/settings/academic-periods`
+          `/school-administration/academic-periods`
         )
         const current = periods.find(
           (p) => p.startDate <= today && p.endDate >= today

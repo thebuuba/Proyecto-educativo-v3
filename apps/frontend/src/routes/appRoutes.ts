@@ -31,15 +31,15 @@ function lazyPage(importFn: () => Promise<Record<string, unknown>>, exportName: 
   return lazy(() => importFn().then((m) => ({ default: m[exportName] as ComponentType })))
 }
 
-const AcademicGradesPage = lazyPage(() => import('@/modules/academic-grades/pages/AcademicGradesPage'), 'AcademicGradesPage')
+const GradingPage = lazyPage(() => import('@/modules/grading/pages/GradingPage'), 'GradingPage')
 const AttendancePage = lazyPage(() => import('@/modules/attendance/pages/AttendancePage'), 'AttendancePage')
-const GradesSectionsPage = lazyPage(() => import('@/modules/grades-sections/pages/GradesSectionsPage'), 'GradesSectionsPage')
+const CoursesPage = lazyPage(() => import('@/modules/courses/pages/CoursesPage'), 'CoursesPage')
 const ReportsPage = lazyPage(() => import('@/modules/reports/pages/ReportsPage'), 'ReportsPage')
-const MatrixPage = lazyPage(() => import('@/modules/matrix/pages/MatrixPage'), 'MatrixPage')
+const CompetencyMatrixPage = lazyPage(() => import('@/modules/competency-matrix/pages/CompetencyMatrixPage'), 'CompetencyMatrixPage')
 const PlanningPage = lazyPage(() => import('@/modules/planning/pages/PlanningPage'), 'PlanningPage')
 const ProfilePage = lazyPage(() => import('@/modules/profile/pages/ProfilePage'), 'ProfilePage')
 const SchedulePage = lazyPage(() => import('@/modules/schedule/pages/SchedulePage'), 'SchedulePage')
-const SettingsPage = lazyPage(() => import('@/modules/settings/pages/SettingsPage'), 'SettingsPage')
+const SchoolAdministrationPage = lazyPage(() => import('@/modules/school-administration/pages/SchoolAdministrationPage'), 'SchoolAdministrationPage')
 const StudentsPage = lazyPage(() => import('@/modules/students/pages/StudentsPage'), 'StudentsPage')
 const SubjectsPage = lazyPage(() => import('@/modules/subjects/pages/SubjectsPage'), 'SubjectsPage')
 
@@ -83,9 +83,9 @@ export const appRoutes: AppRoute[] = [
   },
   {
     path: '/cursos',
-    label: 'Gestión Académica',
+    label: 'Cursos',
     icon: LibraryBig,
-    component: GradesSectionsPage,
+    component: CoursesPage,
     allowedRoles: ['admin', 'director', 'coordinator'],
   },
   {
@@ -119,9 +119,9 @@ export const appRoutes: AppRoute[] = [
   },
   {
     path: '/calificaciones',
-    label: 'Calificaciones',
+    label: 'Evaluación',
     icon: GraduationCap,
-    component: AcademicGradesPage,
+    component: GradingPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher', 'student', 'guardian'],
   },
   {
@@ -135,7 +135,7 @@ export const appRoutes: AppRoute[] = [
     path: '/matriz',
     label: 'Matriz',
     icon: Grid3x3,
-    component: MatrixPage,
+    component: CompetencyMatrixPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
     showInSidebar: false,
   },
@@ -148,9 +148,9 @@ export const appRoutes: AppRoute[] = [
   },
   {
     path: '/configuracion',
-    label: 'Configuración',
+    label: 'Administración escolar',
     icon: Settings,
-    component: SettingsPage,
+    component: SchoolAdministrationPage,
     allowedRoles: ['admin'],
   },
   {
@@ -165,14 +165,14 @@ export const appRoutes: AppRoute[] = [
 
 /** Prefetch de cada ruta: llama a la función para cargar el chunk en background. */
 export const routePrefetchers: Record<string, () => void> = {
-  '/cursos': () => void import('@/modules/grades-sections/pages/GradesSectionsPage'),
+  '/cursos': () => void import('@/modules/courses/pages/CoursesPage'),
   '/estudiantes': () => void import('@/modules/students/pages/StudentsPage'),
   '/horario': () => void import('@/modules/schedule/pages/SchedulePage'),
   '/asistencia': () => void import('@/modules/attendance/pages/AttendancePage'),
-  '/calificaciones': () => void import('@/modules/academic-grades/pages/AcademicGradesPage'),
+  '/calificaciones': () => void import('@/modules/grading/pages/GradingPage'),
   '/planificaciones': () => void import('@/modules/planning/pages/PlanningPage'),
   '/reportes': () => void import('@/modules/reports/pages/ReportsPage'),
-  '/configuracion': () => void import('@/modules/settings/pages/SettingsPage'),
+  '/configuracion': () => void import('@/modules/school-administration/pages/SchoolAdministrationPage'),
 }
 
 /** Rutas filtradas para mostrar en la barra de navegación lateral. */

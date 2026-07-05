@@ -13,12 +13,12 @@ import { AuthModule } from './modules/auth/auth.module'
 import { UsersModule } from './modules/users/users.module'
 import { StudentsModule } from './modules/students/students.module'
 import { AttendanceModule } from './modules/attendance/attendance.module'
-import { AcademicGradesModule } from './modules/academic-grades/academic-grades.module'
+import { GradingModule } from './modules/grading/grading.module'
 import { ScheduleModule } from './modules/schedule/schedule.module'
 import { PlanningModule } from './modules/planning/planning.module'
-import { GradesSectionsModule } from './modules/grades-sections/grades-sections.module'
+import { CoursesModule } from './modules/courses/courses.module'
 import { DashboardModule } from './modules/dashboard/dashboard.module'
-import { SettingsModule } from './modules/settings/settings.module'
+import { SchoolAdministrationModule } from './modules/school-administration/school-administration.module'
 import { ReportsModule } from './modules/reports/reports.module'
 import { ProfileModule } from './modules/profile/profile.module'
 import { SubjectsModule } from './modules/subjects/subjects.module'
@@ -40,12 +40,12 @@ import { backendEnvFilePaths } from './config/env-file-paths'
     UsersModule,
     StudentsModule,
     AttendanceModule,
-    AcademicGradesModule,
+    GradingModule,
     ScheduleModule,
     PlanningModule,
-    GradesSectionsModule,
+    CoursesModule,
     DashboardModule,
-    SettingsModule,
+    SchoolAdministrationModule,
     ReportsModule,
     ProfileModule,
     SubjectsModule,

@@ -25,13 +25,13 @@ apps/frontend/src/
 │   ├── students/                # Gestión de estudiantes
 │   ├── subjects/                # Asignaturas
 │   ├── attendance/              # Asistencia
-│   ├── academic-grades/         # Calificaciones
+│   ├── grading/         # Calificaciones
 │   ├── schedule/                # Horario
 │   ├── planning/                # Planificación
-│   ├── grades-sections/         # Cursos y secciones
-│   ├── matrix/                  # Matriz de competencias
+│   ├── courses/         # Cursos y secciones
+│   ├── competency-matrix/                  # Matriz de competencias
 │   ├── reports/                 # Reportes
-│   ├── settings/                # Configuración
+│   ├── school-administration/                # Configuración
 │   └── profile/                 # Perfil
 │
 ├── hooks/                       # Hooks globales
