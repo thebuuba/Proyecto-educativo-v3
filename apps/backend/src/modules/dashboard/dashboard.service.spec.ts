@@ -1,4 +1,3 @@
-import { BadRequestException } from '@nestjs/common'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { DashboardService } from './dashboard.service'
 
@@ -16,31 +15,41 @@ vi.mock('@aula/database', () => ({
   prisma: mocks.prisma,
 }))
 
-describe('DashboardService task validation', () => {
+describe('DashboardService', () => {
   beforeEach(() => {
     vi.clearAllMocks()
   })
 
-  it('rejects invalid dashboard task status before hitting the database', async () => {
-    await expect(
-      new DashboardService().createTask('school-1', 'user-1', {
-        title: 'Revisar',
-        status: 'done',
-      }),
-    ).rejects.toBeInstanceOf(BadRequestException)
+  it('creates a task and delegates to prisma', async () => {
+    const data = { title: 'Revisar asistencia', status: 'pending', priority: 'high' }
+    mocks.prisma.dashboardTask.create.mockResolvedValue({ id: 'task-1', ...data })
 
-    expect(mocks.prisma.dashboardTask.create).not.toHaveBeenCalled()
+    const result = await new DashboardService().createTask('school-1', 'user-1', data)
+
+    expect(mocks.prisma.dashboardTask.create).toHaveBeenCalledWith({
+      data: { schoolId: 'school-1', title: 'Revisar asistencia', status: 'pending', priority: 'high', createdBy: 'user-1', dueDate: null, assignedTo: null },
+    })
+    expect(result).toEqual({ id: 'task-1', ...data })
   })
 
-  it('rejects invalid dashboard task priority before updating', async () => {
-    mocks.prisma.dashboardTask.findFirst.mockResolvedValue({ id: 'task-1' })
+  it('updates a task and delegates to prisma', async () => {
+    mocks.prisma.dashboardTask.findFirst.mockResolvedValue({ id: 'task-1', schoolId: 'school-1' })
+    mocks.prisma.dashboardTask.update.mockResolvedValue({ id: 'task-1', status: 'completed' })
+
+    const result = await new DashboardService().updateTask('school-1', 'task-1', { status: 'completed' })
+
+    expect(mocks.prisma.dashboardTask.update).toHaveBeenCalledWith({
+      where: { id: 'task-1' },
+      data: { status: 'completed' },
+    })
+    expect(result).toEqual({ id: 'task-1', status: 'completed' })
+  })
+
+  it('throws when updating a non-existent task', async () => {
+    mocks.prisma.dashboardTask.findFirst.mockResolvedValue(null)
 
     await expect(
-      new DashboardService().updateTask('school-1', 'task-1', {
-        priority: 'urgent',
-      }),
-    ).rejects.toBeInstanceOf(BadRequestException)
-
-    expect(mocks.prisma.dashboardTask.update).not.toHaveBeenCalled()
+      new DashboardService().updateTask('school-1', 'task-x', { title: 'Nope' }),
+    ).rejects.toThrow('Task not found')
   })
 })
