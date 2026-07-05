@@ -12,7 +12,7 @@ export class SchoolsService {
         ],
         status: 'ACTIVE',
       },
-      select: { id: true, name: true, slug: true, sector: true, district: true },
+      select: { id: true, name: true, slug: true, sector: true, district: true, niveles: true, tandas: true, modalidades: true },
       take: limit,
       orderBy: { name: 'asc' },
     })

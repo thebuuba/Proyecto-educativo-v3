@@ -368,7 +368,12 @@ export function OnboardingPage() {
             <SchoolSearchInput
               value={draft.schoolName}
               onChange={(value) => updateDraft({ schoolName: value })}
-              onSelect={(school) => updateDraft({ schoolName: school.name })}
+              onSelect={(school) => updateDraft({
+                schoolName: school.name,
+                levels: school.niveles.length ? school.niveles : draft.levels,
+                shifts: school.tandas.length ? school.tandas : draft.shifts,
+                modalities: school.modalidades.length ? school.modalidades : draft.modalities,
+              })}
               placeholder="Busca tu centro educativo"
             />
             <FieldError message={errors.schoolName} />

@@ -8,6 +8,9 @@ export type SchoolResult = {
   slug: string
   sector: string
   district?: string
+  niveles: string[]
+  tandas: string[]
+  modalidades: string[]
 }
 
 type Props = {
