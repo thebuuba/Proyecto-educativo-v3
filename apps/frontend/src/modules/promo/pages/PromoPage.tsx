@@ -12,12 +12,12 @@ import {
   Users,
 } from 'lucide-react'
 import { Link, Navigate } from 'react-router-dom'
+import { type ComponentType, useEffect, useRef, useState } from 'react'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
-const primary = '#1F4E5F'
-const primaryHover = '#2D6977'
-const primaryLight = '#EBF5F7'
-const primaryBorder = '#A8CDD4'
+const primary = '#1e4f8f'
+const primaryLight = '#edf4fb'
+const primaryBorder = '#b7cfe6'
 
 const features = [
   {
@@ -53,11 +53,16 @@ const features = [
 ]
 
 const stats = [
-  { value: '12,400+', label: 'Docentes activos', icon: GraduationCap },
-  { value: '340+', label: 'Instituciones', icon: Shield },
-  { value: '98%', label: 'Satisfacción docente', icon: Star },
-  { value: '4.2M', label: 'Asistencias registradas', icon: SquareCheckBig },
+  { value: 12400, label: 'Docentes activos', suffix: '+', icon: GraduationCap },
+  { value: 340, label: 'Instituciones', suffix: '+', icon: Shield },
+  { value: 98, label: 'Satisfacción docente', suffix: '%', icon: Star },
+  { value: 4200000, label: 'Asistencias registradas', suffix: '+', icon: SquareCheckBig, compact: true },
 ]
+
+function formatStat(value: number, compact?: boolean): string {
+  if (compact) return `${(value / 1000000).toFixed(1)}M`
+  return value.toLocaleString('es-DO')
+}
 
 const plans = [
   {
@@ -99,8 +104,8 @@ function Logo({ small = false }: { small?: boolean }) {
   return (
     <div className="flex items-center gap-3">
       <div
-        className={small ? 'flex size-7 items-center justify-center rounded-lg' : 'flex size-8 items-center justify-center rounded-xl'}
-        style={{ background: primary, boxShadow: '0 3px 10px rgba(31,78,95,.28)' }}
+        className={`${small ? 'flex size-7 items-center justify-center rounded-lg' : 'flex size-8 items-center justify-center rounded-xl'} bg-primary`}
+        style={{ boxShadow: '0 3px 10px rgba(30,79,143,.28)' }}
       >
         <span className={small ? 'text-[10px] font-extrabold text-white' : 'text-[11px] font-extrabold text-white'}>
           AB
@@ -108,8 +113,93 @@ function Logo({ small = false }: { small?: boolean }) {
       </div>
       <div>
         <p className="text-sm font-extrabold leading-none text-[#111827]">Aula Base</p>
-        {!small ? <p className="mt-0.5 text-[10px]" style={{ color: primaryHover }}>Sistema docente</p> : null}
+        {!small ? <p className="mt-0.5 text-[10px] text-primary-hover">Sistema docente</p> : null}
       </div>
+    </div>
+  )
+}
+
+function AnimatedStat({ value, label, suffix, icon: Icon, compact }: {
+  value: number
+  label: string
+  suffix: string
+  icon: ComponentType<{ size?: number; className?: string }>
+  compact?: boolean
+}) {
+  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+  const counted = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !counted.current) {
+        counted.current = true
+        const duration = 1500
+        const steps = 30
+        const stepTime = duration / steps
+        const increment = value / steps
+        let current = 0
+        const timer = setInterval(() => {
+          current += increment
+          if (current >= value) {
+            setCount(value)
+            clearInterval(timer)
+          } else {
+            setCount(Math.floor(current))
+          }
+        }, stepTime)
+        obs.disconnect()
+      }
+    }, { threshold: 0.5 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [value])
+
+  return (
+    <div ref={ref} className="flex items-center gap-4">
+      <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl" style={{ background: primaryLight, color: primary }}>
+        <Icon size={20} />
+      </div>
+      <div>
+        <p className="text-2xl font-extrabold leading-none" style={{ color: primary }}>
+          {compact ? formatStat(count, true) : formatStat(count)}{suffix}
+        </p>
+        <p className="mt-0.5 text-sm text-[#6B7280]">{label}</p>
+      </div>
+    </div>
+  )
+}
+
+function useScrollReveal<T extends HTMLElement>(delay: number = 0) {
+  const ref = useRef<T>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => setVisible(true), delay)
+        obs.disconnect()
+      }
+    }, { threshold: 0.1 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [delay])
+
+  return { ref, visible }
+}
+
+function RevealSection({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
+  const { ref, visible } = useScrollReveal<HTMLDivElement>(delay)
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ${visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'} ${className}`}
+    >
+      {children}
     </div>
   )
 }
@@ -127,9 +217,17 @@ export function PromoPage() {
           <Logo />
 
           <div className="hidden items-center gap-7 md:flex">
-            {['Características', 'Precios', 'Testimonios'].map((item) => (
-              <a key={item} href="#" className="text-sm font-medium text-[#4B5563] transition hover:opacity-70">
-                {item}
+            {[
+              { label: 'Características', href: '#caracteristicas' },
+              { label: 'Precios', href: '#precios' },
+              { label: 'Testimonios', href: '#testimonios' },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-sm font-medium text-[#4B5563] transition hover:text-primary"
+              >
+                {item.label}
               </a>
             ))}
           </div>
@@ -140,8 +238,8 @@ export function PromoPage() {
             </Link>
             <Link
               to="/registro"
-              className="hidden items-center gap-1.5 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition hover:opacity-90 sm:flex"
-              style={{ background: primary, boxShadow: '0 3px 12px rgba(31,78,95,.25)' }}
+              className="hidden items-center gap-1.5 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 sm:flex"
+              style={{ boxShadow: '0 3px 12px rgba(30,79,143,.25)' }}
             >
               Empezar gratis <ArrowRight size={14} />
             </Link>
@@ -149,7 +247,10 @@ export function PromoPage() {
         </div>
       </nav>
 
-      <section className="flex py-10 sm:py-12 lg:min-h-[calc(100vh-64px)] lg:items-start lg:py-16">
+      <section className="relative flex overflow-hidden py-10 sm:py-12 lg:min-h-[calc(100vh-64px)] lg:items-start lg:py-16">
+        <div className="pointer-events-none absolute -right-40 -top-40 size-[500px] rounded-full opacity-[0.04]" style={{ background: primary }} />
+        <div className="pointer-events-none absolute -bottom-32 -left-32 size-[400px] rounded-full opacity-[0.03]" style={{ background: primary }} />
+
         <div className="grid w-full grid-cols-1 items-start gap-10 px-4 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:px-14 2xl:px-20">
           <div className="min-w-0">
             <span
@@ -170,8 +271,8 @@ export function PromoPage() {
             <div className="fu fu4 flex flex-wrap items-center gap-4">
               <Link
                 to="/registro"
-                className="flex w-full items-center justify-center gap-2 rounded-2xl px-7 py-4 text-[15px] font-bold text-white transition hover:opacity-90 active:scale-[0.985] sm:w-auto"
-                style={{ background: primary, boxShadow: '0 6px 20px rgba(31,78,95,.30)' }}
+                className="flex w-full items-center justify-center gap-2 rounded-2xl px-7 py-4 text-[15px] font-bold text-white transition-all hover:scale-[1.02] active:scale-[0.985] sm:w-auto"
+                style={{ background: primary, boxShadow: '0 6px 20px rgba(30,79,143,.30)' }}
               >
                 Empezar gratis <ArrowRight size={16} />
               </Link>
@@ -186,7 +287,10 @@ export function PromoPage() {
           </div>
 
           <div className="fu fu4 relative min-w-0 pb-16 sm:pb-10">
-            <div className="overflow-hidden rounded-3xl border border-[#E5E7EB] shadow-2xl" style={{ boxShadow: '0 24px 64px rgba(31,78,95,.14)' }}>
+            <div
+              className="overflow-hidden rounded-3xl border border-[#E5E7EB] shadow-2xl"
+              style={{ boxShadow: '0 24px 64px rgba(30,79,143,.14)' }}
+            >
               <div className="bg-[#F0F4F5] p-3 sm:p-5">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
@@ -250,139 +354,137 @@ export function PromoPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#E5E7EB] bg-white py-10">
+      <section id="caracteristicas" className="border-y border-[#E5E7EB] bg-white py-10">
         <div className="grid w-full grid-cols-1 gap-6 px-4 sm:grid-cols-2 sm:px-8 md:grid-cols-4 lg:px-14 2xl:px-20">
-          {stats.map((stat) => {
-            const Icon = stat.icon
-            return (
-              <div key={stat.label} className="flex items-center gap-4">
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl" style={{ background: primaryLight, color: primary }}>
-                  <Icon size={20} />
-                </div>
-                <div>
-                  <p className="text-2xl font-extrabold leading-none" style={{ color: primary }}>{stat.value}</p>
-                  <p className="mt-0.5 text-sm text-[#6B7280]">{stat.label}</p>
-                </div>
-              </div>
-            )
-          })}
+          {stats.map((stat) => (
+            <AnimatedStat key={stat.label} {...stat} />
+          ))}
         </div>
       </section>
 
-      <section className="w-full px-4 py-16 sm:px-8 md:py-24 lg:px-14 2xl:px-20">
-        <div className="mb-10 text-center md:mb-14">
-          <span className="mb-4 inline-flex rounded-full px-3 py-1.5 text-[11px] font-bold" style={{ background: primaryLight, color: primary, border: `1px solid ${primaryBorder}` }}>
-            Características
-          </span>
-          <h2 className="mb-4 text-[clamp(2rem,8vw,2.375rem)] font-extrabold leading-tight text-[#0D1117]">
-            Todo lo que un docente
-            <br />
-            necesita en un solo lugar
-          </h2>
-          <p className="mx-auto max-w-[480px] text-base text-[#6B7280]">
-            Diseñado por educadores, para educadores. Cada función está pensada para ahorrar tiempo y mejorar el desempeño.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => {
-            const Icon = feature.icon
-            return (
-              <div key={feature.title} className="rounded-2xl border border-[#E5E7EB] bg-white p-6 transition hover:shadow-md">
-                <div className="mb-4 flex size-11 items-center justify-center rounded-2xl" style={{ background: primaryLight, color: primary }}>
-                  <Icon size={22} />
-                </div>
-                <h3 className="mb-2 text-base font-bold text-[#111827]">{feature.title}</h3>
-                <p className="text-sm leading-relaxed text-[#6B7280]">{feature.desc}</p>
-              </div>
-            )
-          })}
-        </div>
-      </section>
-
-      <section className="bg-[#F0F4F5] py-16 md:py-24">
-        <div className="w-full px-4 sm:px-8 lg:px-14 2xl:px-20">
+      <RevealSection>
+        <section className="w-full px-4 py-16 sm:px-8 md:py-24 lg:px-14 2xl:px-20">
           <div className="mb-10 text-center md:mb-14">
             <span className="mb-4 inline-flex rounded-full px-3 py-1.5 text-[11px] font-bold" style={{ background: primaryLight, color: primary, border: `1px solid ${primaryBorder}` }}>
-              Precios
+              Características
             </span>
             <h2 className="mb-4 text-[clamp(2rem,8vw,2.375rem)] font-extrabold leading-tight text-[#0D1117]">
-              Simple, transparente,
+              Todo lo que un docente
               <br />
-              sin sorpresas.
+              necesita en un solo lugar
             </h2>
+            <p className="mx-auto max-w-[480px] text-base text-[#6B7280]">
+              Diseñado por educadores, para educadores. Cada función está pensada para ahorrar tiempo y mejorar el desempeño.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            {plans.map((plan) => (
-              <div
-                key={plan.name}
-                className="relative rounded-3xl border p-7"
-                style={{
-                  background: plan.highlight ? primary : '#FFFFFF',
-                  borderColor: plan.highlight ? 'transparent' : '#E5E7EB',
-                  boxShadow: plan.highlight ? '0 16px 48px rgba(31,78,95,.28)' : 'none',
-                  color: plan.highlight ? '#FFFFFF' : '#111827',
-                }}
-              >
-                {plan.highlight ? (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#10B981] px-4 py-1 text-[10px] font-extrabold text-white">
-                    Más popular
-                  </div>
-                ) : null}
-                <p className="mb-1 text-lg font-extrabold">{plan.name}</p>
-                <p className="mb-4 text-[11px] opacity-70">{plan.desc}</p>
-                <div className="mb-6">
-                  <span className="text-[38px] font-extrabold leading-none">{plan.price}</span>
-                  <span className="ml-1.5 text-[12px] opacity-60">{plan.period}</span>
-                </div>
-                <div className="mb-7 space-y-2.5">
-                  {plan.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2.5">
-                      <div className="flex size-4 shrink-0 items-center justify-center rounded-full" style={{ background: plan.highlight ? 'rgba(255,255,255,.2)' : primaryLight }}>
-                        <Check size={9} color={plan.highlight ? '#FFFFFF' : primary} strokeWidth={3} />
-                      </div>
-                      <p className="text-[13px] opacity-90">{feature}</p>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature, i) => {
+              const Icon = feature.icon
+              return (
+                <RevealSection key={feature.title} delay={i * 100}>
+                  <div className="group rounded-2xl border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <div className="mb-4 flex size-11 items-center justify-center rounded-2xl transition-all duration-300 group-hover:scale-110" style={{ background: primaryLight, color: primary }}>
+                      <Icon size={22} />
                     </div>
-                  ))}
-                </div>
-                <Link
-                  to="/registro"
-                  className="flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold transition hover:opacity-90"
-                  style={{
-                    background: plan.highlight ? '#FFFFFF' : primary,
-                    color: plan.highlight ? primary : '#FFFFFF',
-                    boxShadow: plan.highlight ? 'none' : '0 3px 12px rgba(31,78,95,.20)',
-                  }}
-                >
-                  {plan.cta} <ArrowRight size={14} />
-                </Link>
-              </div>
-            ))}
+                    <h3 className="mb-2 text-base font-bold text-[#111827]">{feature.title}</h3>
+                    <p className="text-sm leading-relaxed text-[#6B7280]">{feature.desc}</p>
+                  </div>
+                </RevealSection>
+              )
+            })}
           </div>
-        </div>
-      </section>
+        </section>
+      </RevealSection>
 
-      <section className="py-16 md:py-24" style={{ background: primary }}>
-        <div className="mx-auto max-w-3xl px-4 text-center text-white sm:px-8 lg:px-14 2xl:px-20">
-          <h2 className="mb-4 text-[clamp(2.125rem,8vw,2.625rem)] font-extrabold leading-tight">
-            Empieza hoy.
-            <br />
-            Tu aula te espera.
-          </h2>
-          <p className="mb-8 text-[16px] leading-relaxed opacity-75">
-            Únete a más de 12,000 docentes que ya gestionan su trabajo con Aula Base. Gratis para siempre en el plan básico.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-8 py-4 text-[15px] font-bold transition hover:opacity-90 sm:w-auto" style={{ color: primary }}>
-              Crear cuenta gratis <ArrowRight size={16} />
-            </Link>
-            <Link to="/login" className="w-full rounded-2xl border border-white/30 px-8 py-4 text-[15px] font-semibold text-white transition hover:bg-white/10 sm:w-auto">
-              Iniciar sesión
-            </Link>
+      <RevealSection>
+        <section id="precios" className="bg-[#F0F4F5] py-16 md:py-24">
+          <div className="w-full px-4 sm:px-8 lg:px-14 2xl:px-20">
+            <div className="mb-10 text-center md:mb-14">
+              <span className="mb-4 inline-flex rounded-full px-3 py-1.5 text-[11px] font-bold" style={{ background: primaryLight, color: primary, border: `1px solid ${primaryBorder}` }}>
+                Precios
+              </span>
+              <h2 className="mb-4 text-[clamp(2rem,8vw,2.375rem)] font-extrabold leading-tight text-[#0D1117]">
+                Simple, transparente,
+                <br />
+                sin sorpresas.
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+              {plans.map((plan, i) => (
+                <RevealSection key={plan.name} delay={i * 100}>
+                  <div
+                    className="relative rounded-3xl border p-7 transition-all duration-300 hover:-translate-y-1"
+                    style={{
+                      background: plan.highlight ? primary : '#FFFFFF',
+                      borderColor: plan.highlight ? 'transparent' : '#E5E7EB',
+                      boxShadow: plan.highlight ? '0 16px 48px rgba(30,79,143,.28)' : 'none',
+                      color: plan.highlight ? '#FFFFFF' : '#111827',
+                    }}
+                  >
+                    {plan.highlight ? (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#10B981] px-4 py-1 text-[10px] font-extrabold text-white">
+                        Más popular
+                      </div>
+                    ) : null}
+                    <p className="mb-1 text-lg font-extrabold">{plan.name}</p>
+                    <p className="mb-4 text-[11px] opacity-70">{plan.desc}</p>
+                    <div className="mb-6">
+                      <span className="text-[38px] font-extrabold leading-none">{plan.price}</span>
+                      <span className="ml-1.5 text-[12px] opacity-60">{plan.period}</span>
+                    </div>
+                    <div className="mb-7 space-y-2.5">
+                      {plan.features.map((feature) => (
+                        <div key={feature} className="flex items-center gap-2.5">
+                          <div className="flex size-4 shrink-0 items-center justify-center rounded-full" style={{ background: plan.highlight ? 'rgba(255,255,255,.2)' : primaryLight }}>
+                            <Check size={9} color={plan.highlight ? '#FFFFFF' : primary} strokeWidth={3} />
+                          </div>
+                          <p className="text-[13px] opacity-90">{feature}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <Link
+                      to="/registro"
+                      className="flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold transition-all hover:scale-[1.02]"
+                      style={{
+                        background: plan.highlight ? '#FFFFFF' : primary,
+                        color: plan.highlight ? primary : '#FFFFFF',
+                        boxShadow: plan.highlight ? 'none' : '0 3px 12px rgba(30,79,143,.20)',
+                      }}
+                    >
+                      {plan.cta} <ArrowRight size={14} />
+                    </Link>
+                  </div>
+                </RevealSection>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </RevealSection>
+
+      <RevealSection>
+        <section id="testimonios" className="py-16 md:py-24" style={{ background: primary }}>
+          <div className="mx-auto max-w-3xl px-4 text-center text-white sm:px-8 lg:px-14 2xl:px-20">
+            <h2 className="mb-4 text-[clamp(2.125rem,8vw,2.625rem)] font-extrabold leading-tight">
+              Empieza hoy.
+              <br />
+              Tu aula te espera.
+            </h2>
+            <p className="mb-8 text-[16px] leading-relaxed opacity-75">
+              Únete a más de 12,000 docentes que ya gestionan su trabajo con Aula Base. Gratis para siempre en el plan básico.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-8 py-4 text-[15px] font-bold transition-all hover:scale-[1.02] sm:w-auto" style={{ color: primary }}>
+                Crear cuenta gratis <ArrowRight size={16} />
+              </Link>
+              <Link to="/login" className="w-full rounded-2xl border border-white/30 px-8 py-4 text-[15px] font-semibold text-white transition hover:bg-white/10 sm:w-auto">
+                Iniciar sesión
+              </Link>
+            </div>
+          </div>
+        </section>
+      </RevealSection>
 
       <footer className="border-t border-[#E5E7EB] bg-white py-8">
         <div className="flex w-full flex-col gap-5 px-4 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-14 2xl:px-20">
