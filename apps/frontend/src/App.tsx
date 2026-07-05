@@ -33,7 +33,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/auth/callback" element={<AuthCallbackPage />} />
         <Route path="/onboarding" element={<OnboardingPage />} />
-        <Route path="/promo" element={<PromoPage />} />
+        <Route path="/" element={<PromoPage />} />
+        <Route path="/promo" element={<Navigate to="/" replace />} />
         <Route path="/registro" element={<RegisterPage />} />
         <Route path="/sin-acceso" element={<UnauthorizedPage />} />
         <Route element={<AppLayout />}>
@@ -56,7 +57,7 @@ function App() {
               />
             )
           })}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/inicio" replace />} />
         </Route>
       </Routes>
     </Suspense>

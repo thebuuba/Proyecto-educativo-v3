@@ -16,7 +16,7 @@ export function useActiveModule() {
 
   return (
     navigationRoutes.find((item) =>
-      item.path === '/' ? pathname === '/' : pathname.startsWith(item.path),
+      item.path === '/inicio' ? pathname === '/inicio' : pathname.startsWith(item.path),
     ) ?? navigationRoutes[0]
   )
 }

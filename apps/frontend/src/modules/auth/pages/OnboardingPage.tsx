@@ -260,13 +260,13 @@ export function OnboardingPage() {
   useEffect(() => {
     if (!showWelcome) return
     const timeout = window.setTimeout(() => {
-      navigate('/', { replace: true })
+      navigate('/inicio', { replace: true })
     }, 1800)
     return () => window.clearTimeout(timeout)
   }, [navigate, showWelcome])
 
   if (!showWelcome && !resetMode && !loading && isAuthenticated && onboardingComplete) {
-    return <Navigate to="/" replace />
+    return <Navigate to="/inicio" replace />
   }
 
   if (!loading && !isAuthenticated && !profileRequired) {

@@ -7,7 +7,7 @@ export function AuthCallbackPage() {
 
   useEffect(() => {
     finishOAuthCallback()
-      .then((result) => window.location.replace(result === 'profile-required' ? '/onboarding' : '/'))
+      .then((result) => window.location.replace(result === 'profile-required' ? '/onboarding' : '/inicio'))
       .catch(() => window.location.replace('/login'))
   }, [finishOAuthCallback])
 

@@ -27,7 +27,7 @@ export function UnauthorizedPage() {
           administrador si necesitas acceso.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <Link to="/">
+          <Link to="/inicio">
             <Button variant="primary">Volver al inicio</Button>
           </Link>
           <Button variant="outline" onClick={() => void logout()}>

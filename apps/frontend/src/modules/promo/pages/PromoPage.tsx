@@ -11,7 +11,8 @@ import {
   Star,
   Users,
 } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 
 const primary = '#1F4E5F'
 const primaryHover = '#2D6977'
@@ -114,6 +115,11 @@ function Logo({ small = false }: { small?: boolean }) {
 }
 
 export function PromoPage() {
+  const { isAuthenticated, loading } = useAuth()
+
+  if (loading) return null
+  if (isAuthenticated) return <Navigate to="/inicio" replace />
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F8FAFA] text-[#111827]">
       <nav className="sticky top-0 z-50 border-b border-[#E5E7EB] bg-white/90 backdrop-blur-xl">

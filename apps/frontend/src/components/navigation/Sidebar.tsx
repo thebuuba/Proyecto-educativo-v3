@@ -18,7 +18,7 @@ type SidebarProps = {
 }
 
 const routeIconColors: Record<string, string> = {
-  '/': 'bg-blue-100 text-blue-700',
+  '/inicio': 'bg-blue-100 text-blue-700',
   '/estudiantes': 'bg-violet-100 text-violet-700',
   '/cursos': 'bg-amber-100 text-amber-700',
   '/horario': 'bg-cyan-100 text-cyan-700',
@@ -70,7 +70,7 @@ export function Sidebar({ isOpen, isPinned, onClose, onTogglePinned }: SidebarPr
           )}
         >
           <NavLink
-            to="/"
+            to="/inicio"
             className="flex min-w-0 items-center gap-3"
             onClick={onClose}
             title="Aula Base"
@@ -116,13 +116,13 @@ export function Sidebar({ isOpen, isPinned, onClose, onTogglePinned }: SidebarPr
         <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-5">
           {visibleRoutes.map((item) => {
             const Icon = item.icon
-            const iconColor = routeIconColors[item.path] ?? routeIconColors['/']
+            const iconColor = routeIconColors[item.path] ?? routeIconColors['/inicio']
 
             return (
               <NavLink
                 key={item.path}
                 to={item.path}
-                end={item.path === '/'}
+                end={item.path === '/inicio'}
                 onClick={onClose}
                 onMouseEnter={() => routePrefetchers[item.path]?.()}
                 title={item.label}

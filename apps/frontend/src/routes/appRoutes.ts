@@ -74,12 +74,11 @@ const allRoles: UserRole[] = [
 
 export const appRoutes: AppRoute[] = [
   {
-    path: '/',
+    path: '/inicio',
     label: 'Inicio',
     icon: LayoutDashboard,
     component: DashboardPage,
     allowedRoles: allRoles,
-    index: true,
   },
   {
     path: '/cursos',

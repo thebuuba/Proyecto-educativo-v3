@@ -17,7 +17,7 @@ type AppBrandProps = {
  */
 export function AppBrand({ onClick }: AppBrandProps) {
   return (
-    <NavLink to="/" className="flex items-center gap-3" onClick={onClick}>
+    <NavLink to="/inicio" className="flex items-center gap-3" onClick={onClick}>
       <span className="flex size-10 items-center justify-center rounded-2xl bg-sidebar-primary text-xs font-extrabold text-sidebar-primary-foreground shadow-[0_4px_12px_rgba(31,78,95,.30)]">
         AB
       </span>

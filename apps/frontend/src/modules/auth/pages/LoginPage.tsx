@@ -29,13 +29,13 @@ export function LoginPage() {
   const [forgotPasswordSent, setForgotPasswordSent] = useState(false)
   const fromState = location.state as LocationState | null
   const from =
-    fromState?.from?.pathname && fromState.from.pathname !== '/login'
+    fromState?.from?.pathname && fromState.from.pathname !== '/login' && fromState.from.pathname !== '/'
       ? fromState.from.pathname
-      : '/'
+      : '/inicio'
   const registered = fromState?.registered === true
 
   if (!loading && isAuthenticated) {
-    return <Navigate to={from ?? '/'} replace />
+    return <Navigate to={from ?? '/inicio'} replace />
   }
 
   if (!loading && profileRequired) {
