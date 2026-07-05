@@ -14,6 +14,7 @@
 | [04-frontend/](04-frontend/) | Frontend React: componentes, rutas, módulos |
 | [05-despliegue](05-despliegue.md) | Despliegue con Render y Vercel |
 | [06-flujos-clave](06-flujos-clave.md) | Flujos funcionales del sistema |
+| [07-cambio-de-cuentas](07-cambio-de-cuentas.md) | Migración a nuevas cuentas de Supabase, Render y Vercel |
 
 ## Tecnologías principales
 

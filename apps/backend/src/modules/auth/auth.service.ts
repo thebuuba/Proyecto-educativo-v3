@@ -79,7 +79,7 @@ function getSupabaseConfig() {
 }
 
 function isPlaceholderValue(value: string | undefined) {
-  return !value || /xxxxx|replace|change-me|password@db\.xxxxx/i.test(value)
+  return !value || /PROJECT_REF|POOLER_HOST|xxxxx|replace|change-me|password@db\.xxxxx/i.test(value)
 }
 
 function assertAuthEnvironment() {

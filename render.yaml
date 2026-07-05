@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: proyecto-educativo-api
+    name: aula-base-api
     runtime: node
     plan: free
     region: oregon
@@ -13,7 +13,7 @@ services:
       - key: JWT_SECRET
         sync: false
       - key: FRONTEND_URL
-        value: https://proyecto-educativo-v3.vercel.app
+        sync: false
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_SERVICE_ROLE_KEY

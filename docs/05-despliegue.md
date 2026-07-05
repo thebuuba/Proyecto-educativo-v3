@@ -29,7 +29,6 @@ El proyecto se despliega con dos servicios:
 - Servicio web Node definido en `render.yaml`.
 - Build: instala dependencias, genera Prisma Client y compila `backend`.
 - Start: `node apps/backend/dist/main.js`.
-- URL actual: `https://proyecto-educativo-api.onrender.com`.
 - Variables requeridas: `DATABASE_URL`, `JWT_SECRET`, `FRONTEND_URL`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_ANON_KEY`.
 
 ### Frontend (`vercel.json`)
@@ -44,20 +43,25 @@ El proyecto se despliega con dos servicios:
 
 | Variable | Obligatoria | Descripción |
 |----------|-------------|-------------|
-| `DATABASE_URL` | Sí | Conexión PostgreSQL (formato: `postgresql://user:pass@host:port/db`) |
+| `DATABASE_URL` | Sí | Conexión PostgreSQL pooled de Supabase para servidor |
 | `JWT_SECRET` | Sí | Secreto para firmar tokens JWT |
 | `FRONTEND_URL` | Sí | Origen CORS permitido para el frontend |
+| `SUPABASE_URL` | Sí | URL del proyecto Supabase |
+| `SUPABASE_SERVICE_ROLE_KEY` | Sí | Clave server-only para Auth Admin |
+| `SUPABASE_ANON_KEY` | Sí | Clave pública anon para llamadas Auth |
 | `PORT` | No | Puerto (defecto: 3000) |
 
 ### Frontend
 
 | Variable | Obligatoria | Descripción |
 |----------|-------------|-------------|
-| `VITE_API_URL` | Sí en producción | URL base de la API (`https://proyecto-educativo-api.onrender.com/api/v1`) |
+| `VITE_API_URL` | Sí en producción | URL base de la API (`https://TU_BACKEND.onrender.com/api/v1`) |
+| `VITE_SUPABASE_URL` | Sí si OAuth está habilitado | URL del proyecto Supabase |
+| `VITE_SUPABASE_ANON_KEY` | Sí si OAuth está habilitado | Clave pública anon |
 
 ## Render (`render.yaml`)
 
-Define el servicio del backend con `Dockerfile.backend`.
+Define el servicio del backend. Los secretos marcados con `sync: false` se llenan en Render Dashboard.
 
 ## Vercel (`vercel.json`)
 
@@ -72,10 +76,10 @@ pnpm install
 
 # Configurar backend
 cp apps/backend/.env.example apps/backend/.env
-# Editar DATABASE_URL, JWT_SECRET, FRONTEND_URL en apps/backend/.env
+# Editar DATABASE_URL, JWT_SECRET, FRONTEND_URL y claves Supabase en apps/backend/.env
 
 # Inicializar DB
-pnpm --filter @aula/database exec prisma db push
+supabase db push
 pnpm db:seed
 
 # Iniciar desarrollo

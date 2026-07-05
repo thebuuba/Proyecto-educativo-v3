@@ -109,10 +109,13 @@ modules/<nombre>/
 | Variable | Defecto | Propósito |
 |----------|---------|-----------|
 | `PORT` | 3000 | Puerto del servidor |
-| `DATABASE_URL` | — | Conexión PostgreSQL |
-| `JWT_SECRET` | aula-base-dev-secret | Secreto JWT |
+| `DATABASE_URL` | — | Conexión PostgreSQL pooled de Supabase |
+| `JWT_SECRET` | — | Secreto JWT |
 | `FRONTEND_URL` | http://localhost:5173 | Origen CORS |
+| `SUPABASE_URL` | — | URL del proyecto Supabase |
+| `SUPABASE_SERVICE_ROLE_KEY` | — | Clave server-only para Auth Admin |
+| `SUPABASE_ANON_KEY` | — | Clave pública anon |
 
-### Frontend (VITE_API_URL)
+### Frontend
 
-Por defecto `/api/v1`. En desarrollo, Vite proxy reenvía `/api` al backend.
+Por defecto `VITE_API_URL` usa `/api/v1`. En desarrollo, Vite proxy reenvía `/api` al backend. En producción, Vercel debe definir `VITE_API_URL`, `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`.

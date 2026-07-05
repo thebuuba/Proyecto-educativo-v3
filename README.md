@@ -4,9 +4,9 @@ Monorepo para un sistema web de gestion educativa. El frontend usa React,
 TypeScript y Vite; el backend usa NestJS; la capa de datos usa Prisma con
 PostgreSQL, normalmente alojado en Supabase.
 
-Supabase se usa aqui como PostgreSQL/hosting de base de datos. La autenticacion
-del frontend no depende de Supabase y el frontend no debe recibir ni usar claves
-de Supabase en variables `VITE_*`.
+Supabase se usa aqui como PostgreSQL/hosting de base de datos y Auth administrado
+desde el backend. El frontend solo puede recibir claves publicas `VITE_*`; nunca
+`SUPABASE_SERVICE_ROLE_KEY`.
 
 `apps/frontend/src/types/database.types.ts` puede conservar tipos generados de
 la base de datos, pero no define el flujo de autenticacion del frontend.
@@ -57,12 +57,16 @@ Variables principales:
 - `DATABASE_URL`: conexion PostgreSQL/Supabase usada por Prisma.
 - `JWT_SECRET`: secreto para firmar tokens del backend.
 - `FRONTEND_URL`: origen permitido del frontend en desarrollo.
+- `SUPABASE_URL`: URL del proyecto Supabase.
+- `SUPABASE_SERVICE_ROLE_KEY`: clave server-only para Auth Admin.
+- `SUPABASE_ANON_KEY`: clave publica anon.
 
 El frontend usa `/api/v1` por defecto. En desarrollo, Vite reenvia las rutas
 `/api` al backend local mediante proxy, por lo que normalmente no hace falta
 configurar una URL absoluta para la API.
 
 No pongas `SUPABASE_SERVICE_ROLE_KEY` ni secretos en variables `VITE_*`.
+`VITE_SUPABASE_ANON_KEY` es publica y solo se usa en el frontend.
 
 ## Base De Datos
 
@@ -120,6 +124,9 @@ supabase migration new nombre_del_cambio
 ```
 
 No edites migraciones antiguas que ya puedan estar aplicadas.
+
+Para mover el proyecto a nuevas cuentas de Supabase, Render y Vercel, sigue
+`docs/07-cambio-de-cuentas.md`.
 
 ## Supabase Keepalive
 

@@ -36,18 +36,6 @@ export default defineConfig({
       includeAssets: ['favicon.svg'],
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/mzmenzzvbzsqaegsqmlb\.supabase\.co\/.*/i,
-            handler: 'NetworkFirst',
-            options: { cacheName: 'supabase-api' },
-          },
-          {
-            urlPattern: /^https:\/\/proyecto-educativo-api\.onrender\.com\/.*/i,
-            handler: 'NetworkFirst',
-            options: { cacheName: 'backend-api' },
-          },
-        ],
       },
       manifest: {
         name: 'Aula Base',
