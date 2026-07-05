@@ -3,7 +3,7 @@ import { prisma } from '@aula/database'
 
 @Injectable()
 export class SchoolsService {
-  async search(q: string, limit = 10) {
+  async search(q: string, limit = 50) {
     const schools = await prisma.school.findMany({
       where: {
         OR: [

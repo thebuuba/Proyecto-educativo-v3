@@ -38,12 +38,12 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
     }
     setLoading(true)
     try {
-      const data = await api.get<SchoolResult[]>(`/schools?q=${encodeURIComponent(term)}&limit=8`)
+      const data = await api.get<SchoolResult[]>(`/schools?q=${encodeURIComponent(term)}&limit=50`)
       if (inputRef.current) {
         const rect = inputRef.current.getBoundingClientRect()
         const spaceBelow = window.innerHeight - rect.bottom - 8
         setDropdownTop(rect.bottom + 4)
-        setDropdownMaxHeight(Math.min(320, Math.max(120, spaceBelow)))
+        setDropdownMaxHeight(Math.min(420, Math.max(160, spaceBelow)))
       }
       setResults(data)
       setOpen(data.length > 0)
