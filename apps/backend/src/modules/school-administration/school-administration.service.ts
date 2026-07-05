@@ -17,9 +17,17 @@ import { UpdateSchoolYearDto } from './dto/update-school-year.dto'
 export class SchoolAdministrationService {
   constructor(@Inject(CACHE_MANAGER) private cache: Cache) {}
 
+  private schoolCacheKey(schoolId: string) { return `school:${schoolId}` }
+
   /** Obtiene los datos del colegio por su ID */
-  getSchool(schoolId: string) {
-    return prisma.school.findUnique({ where: { id: schoolId } })
+  async getSchool(schoolId: string) {
+    const cached = await this.cache.get<unknown>(this.schoolCacheKey(schoolId))
+    if (cached !== undefined) return cached
+
+    const school = await prisma.school.findUnique({ where: { id: schoolId } })
+    // ponytail: 5min TTL, school data changes rarely
+    if (school) await this.cache.set(this.schoolCacheKey(schoolId), school, 300_000)
+    return school
   }
 
   /** Actualiza los datos del colegio */
@@ -27,7 +35,7 @@ export class SchoolAdministrationService {
     const school = await prisma.school.findUnique({ where: { id: schoolId } })
     if (!school) throw new NotFoundException('School not found')
 
-    return prisma.school.update({
+    const updated = await prisma.school.update({
       where: { id: schoolId },
       data: {
         ...(dto.name && { name: dto.name }),
@@ -41,6 +49,8 @@ export class SchoolAdministrationService {
         ...(dto.officialExportsEnabled !== undefined && { officialExportsEnabled: dto.officialExportsEnabled }),
       },
     })
+    await this.cache.del(this.schoolCacheKey(schoolId))
+    return updated
   }
 
   /** Obtiene los años escolares del colegio ordenados por fecha de inicio */

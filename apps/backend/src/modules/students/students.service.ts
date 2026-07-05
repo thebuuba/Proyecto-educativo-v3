@@ -175,52 +175,52 @@ export class StudentsService {
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const schoolYearById = new Map(schoolYears.map((item) => [item.id, item]))
 
-    return Promise.all(
-      courses.map(async (course) => {
-        const courseMeta = course as { grade?: { name: string }; section?: { name: string }; subject?: { name: string }; schoolYear?: { name: string }; area?: string; shift?: string }
-        const gradeName =
-          gradeById.get(course.gradeId)?.name ?? courseMeta.grade?.name ?? ''
-        const sectionName =
-          sectionById.get(course.sectionId)?.name ??
-          courseMeta.section?.name ??
-          ''
-        const subjectName =
-          subjectById.get(course.subjectId)?.name ??
-          courseMeta.subject?.name ??
-          ''
-        const schoolYearName =
-          schoolYearById.get(course.schoolYearId)?.name ??
-          courseMeta.schoolYear?.name ??
-          ''
-        const studentCount = await prisma.enrollment.count({
-          where: {
-            schoolId,
-            schoolYearId: course.schoolYearId,
-            gradeId: course.gradeId,
-            sectionId: course.sectionId,
-            status: 'ACTIVE',
-          },
-        })
-
-        return {
-          id: course.id,
-          gradeId: course.gradeId,
-          sectionId: course.sectionId,
-          subjectId: course.subjectId,
-          schoolYearId: course.schoolYearId,
-          gradeName,
-          sectionName,
-          area:
-            typeof courseMeta.area === 'string' ? courseMeta.area : subjectName,
-          subjectName,
-          shift: typeof courseMeta.shift === 'string' ? courseMeta.shift : '',
-          schoolYearName,
-          studentCount,
-          label:
-            `${gradeName} ${sectionName} - ${subjectName} - ${schoolYearName}`.trim(),
-        }
-      }),
+    const enrollmentCounts = await prisma.enrollment.groupBy({
+      by: ['schoolYearId', 'gradeId', 'sectionId'],
+      where: { schoolId, status: 'ACTIVE' },
+      _count: { id: true },
+    })
+    const countByKey = new Map(
+      enrollmentCounts.map((e) => [`${e.schoolYearId}:${e.gradeId}:${e.sectionId}`, e._count.id]),
     )
+
+    return courses.map((course) => {
+      const courseMeta = course as { grade?: { name: string }; section?: { name: string }; subject?: { name: string }; schoolYear?: { name: string }; area?: string; shift?: string }
+      const gradeName =
+        gradeById.get(course.gradeId)?.name ?? courseMeta.grade?.name ?? ''
+      const sectionName =
+        sectionById.get(course.sectionId)?.name ??
+        courseMeta.section?.name ??
+        ''
+      const subjectName =
+        subjectById.get(course.subjectId)?.name ??
+        courseMeta.subject?.name ??
+        ''
+      const schoolYearName =
+        schoolYearById.get(course.schoolYearId)?.name ??
+        courseMeta.schoolYear?.name ??
+        ''
+      const studentCount =
+        countByKey.get(`${course.schoolYearId}:${course.gradeId}:${course.sectionId}`) ?? 0
+
+      return {
+        id: course.id,
+        gradeId: course.gradeId,
+        sectionId: course.sectionId,
+        subjectId: course.subjectId,
+        schoolYearId: course.schoolYearId,
+        gradeName,
+        sectionName,
+        area:
+          typeof courseMeta.area === 'string' ? courseMeta.area : subjectName,
+        subjectName,
+        shift: typeof courseMeta.shift === 'string' ? courseMeta.shift : '',
+        schoolYearName,
+        studentCount,
+        label:
+          `${gradeName} ${sectionName} - ${subjectName} - ${schoolYearName}`.trim(),
+      }
+    })
   }
 
   async getStudentsByCourse(schoolId: string, courseId: string) {

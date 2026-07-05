@@ -147,14 +147,11 @@ export class GradingService {
 
     const enrollments = await prisma.enrollment.findMany({
       where: { schoolId, sectionId: ss.sectionId, schoolYearId: ss.schoolYearId, status: 'ACTIVE' },
+      include: { student: true },
     })
 
     const grades = await prisma.gradesRecord.findMany({
       where: { schoolId, sectionSubjectId, academicPeriodId },
-    })
-
-    const students = await prisma.student.findMany({
-      where: { schoolId, id: { in: enrollments.map((e) => e.studentId) } },
     })
 
     return {
@@ -170,16 +167,13 @@ export class GradingService {
         status: grade.status.toLowerCase(),
       })),
       students: enrollments
-        .map((enr) => {
-          const student = students.find((s) => s.id === enr.studentId)
-          return {
-            enrollmentId: enr.id,
-            studentId: enr.studentId,
-            studentCode: student?.studentCode ?? '',
-            firstName: student?.firstName ?? '',
-            lastName: student?.lastName ?? '',
-          }
-        })
+        .map((enr) => ({
+          enrollmentId: enr.id,
+          studentId: enr.studentId,
+          studentCode: enr.student.studentCode ?? '',
+          firstName: enr.student.firstName ?? '',
+          lastName: enr.student.lastName ?? '',
+        }))
         .sort((first, second) => {
           const lastName = first.lastName.localeCompare(second.lastName, 'es')
           if (lastName !== 0) return lastName

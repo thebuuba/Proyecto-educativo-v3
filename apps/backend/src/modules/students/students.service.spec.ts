@@ -10,7 +10,7 @@ const mocks = vi.hoisted(() => ({
     subject: { findMany: vi.fn() },
     schoolYear: { findMany: vi.fn() },
     enrollment: {
-      count: vi.fn(),
+      groupBy: vi.fn(),
       create: vi.fn(),
       findFirst: vi.fn(),
       findMany: vi.fn(),
@@ -85,7 +85,9 @@ describe('StudentsService course enrollment', () => {
         schoolYear: { id: 'year-1', name: '2026-2027' },
       },
     ])
-    mocks.prisma.enrollment.count.mockResolvedValue(2)
+    mocks.prisma.enrollment.groupBy.mockResolvedValue([
+      { schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1', _count: { id: 2 } },
+    ])
 
     const result = await createService().getEnrollmentCourses('school-1')
 

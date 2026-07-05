@@ -3,23 +3,28 @@
  * Define las rutas públicas y privadas con layouts, lazy loading
  * y protección por roles de usuario.
  */
-import { Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { ErrorBoundary } from '@/components/ui/ErrorFallback'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { AppLayout } from '@/layouts/AppLayout'
 import { RequireAuth } from '@/modules/auth/components/RequireAuth'
-import { AuthCallbackPage } from '@/modules/auth/pages/AuthCallbackPage'
-import { LoginPage } from '@/modules/auth/pages/LoginPage'
-import { OnboardingPage } from '@/modules/auth/pages/OnboardingPage'
-import { RegisterPage } from '@/modules/auth/pages/RegisterPage'
-import { UnauthorizedPage } from '@/modules/auth/pages/UnauthorizedPage'
-import { ContactPage } from '@/modules/promo/pages/ContactPage'
-import { PrivacyPage } from '@/modules/promo/pages/PrivacyPage'
-import { PromoPage } from '@/modules/promo/pages/PromoPage'
-import { TermsPage } from '@/modules/promo/pages/TermsPage'
 import { appRoutes } from '@/routes/appRoutes'
+
+// ponytail: named-export resolver for lazy()
+const lazyPage = (importFn: () => Promise<Record<string, unknown>>, exportName: string) =>
+  lazy(() => importFn().then((m) => ({ default: m[exportName] as import('react').ComponentType })))
+
+const LoginPage = lazyPage(() => import('@/modules/auth/pages/LoginPage'), 'LoginPage')
+const AuthCallbackPage = lazyPage(() => import('@/modules/auth/pages/AuthCallbackPage'), 'AuthCallbackPage')
+const OnboardingPage = lazyPage(() => import('@/modules/auth/pages/OnboardingPage'), 'OnboardingPage')
+const RegisterPage = lazyPage(() => import('@/modules/auth/pages/RegisterPage'), 'RegisterPage')
+const UnauthorizedPage = lazyPage(() => import('@/modules/auth/pages/UnauthorizedPage'), 'UnauthorizedPage')
+const PromoPage = lazyPage(() => import('@/modules/promo/pages/PromoPage'), 'PromoPage')
+const PrivacyPage = lazyPage(() => import('@/modules/promo/pages/PrivacyPage'), 'PrivacyPage')
+const TermsPage = lazyPage(() => import('@/modules/promo/pages/TermsPage'), 'TermsPage')
+const ContactPage = lazyPage(() => import('@/modules/promo/pages/ContactPage'), 'ContactPage')
 
 /** Componente de carga mostrado durante la carga diferida de módulos. */
 const routeFallback = <PageSkeleton />

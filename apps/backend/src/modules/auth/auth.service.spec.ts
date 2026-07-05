@@ -1,4 +1,4 @@
-import { ConflictException, ServiceUnavailableException } from '@nestjs/common'
+import { BadRequestException, ConflictException, ServiceUnavailableException, UnauthorizedException } from '@nestjs/common'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { AuthService } from './auth.service'
 import { RegisterDto } from './dto/register.dto'
@@ -424,5 +424,86 @@ describe('AuthService.register', () => {
     expect(tx.sectionSubject.create).not.toHaveBeenCalled()
     expect(result.user).toEqual({ id: user.id, email: user.email })
     expect(result.token).toBe('signed-token')
+  })
+
+  it('rejects login with wrong password', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: false,
+      statusText: 'Unauthorized',
+      json: vi.fn().mockResolvedValue({}),
+    } as never)
+
+    await expect(
+      createService().login({ email: 'test@test.com', password: 'wrong' }),
+    ).rejects.toBeInstanceOf(UnauthorizedException)
+
+    expect(mocks.prisma.appUser.findUnique).not.toHaveBeenCalled()
+  })
+
+  it('rejects register with weak password (delegated to Supabase)', async () => {
+    mocks.prisma.appUser.findUnique.mockResolvedValue(null)
+
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: false,
+      statusText: 'Unprocessable Entity',
+      json: vi.fn().mockResolvedValue({ message: 'Password should be at least 6 characters' }),
+    } as never)
+
+    await expect(
+      createService().register({ ...registerDto, password: '123' }),
+    ).rejects.toThrow('Password should be at least 6 characters')
+  })
+
+  it('rejects createSessionFromSupabaseToken with invalid token', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: false,
+      statusText: 'Unauthorized',
+      json: vi.fn().mockResolvedValue({}),
+    } as never)
+
+    await expect(
+      createService().createSessionFromSupabaseToken('bad-token'),
+    ).rejects.toBeInstanceOf(UnauthorizedException)
+  })
+
+  it('rejects onboarding when endDate precedes startDate', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        id: 'auth-created-user',
+        email: registerDto.email,
+      }),
+    } as never)
+
+    mocks.prisma.appUser.findUnique.mockResolvedValue(null)
+
+    await expect(
+      createService().completeOnboarding('good-token', {
+        fullName: 'Test User',
+        email: registerDto.email,
+        school: {
+          name: 'Escuela',
+          primaryModality: 'general',
+          schoolShift: 'morning',
+          enabledSubsystems: ['regular'],
+        },
+        schoolYear: {
+          name: '2025-2026',
+          startDate: '2026-06-01',
+          endDate: '2025-08-01',
+        },
+      } as never),
+    ).rejects.toThrow(BadRequestException)
+  })
+
+  it('returns same message for forgotPassword regardless of email existence', async () => {
+    mocks.prisma.appUser.findUnique.mockResolvedValue(null)
+
+    const result = await createService().forgotPassword('nadie@test.com')
+
+    expect(result).toEqual({ message: 'If the email exists, a reset link has been sent' })
+    expect(mocks.prisma.appUser.findUnique).toHaveBeenCalledWith({
+      where: { email: 'nadie@test.com' },
+    })
   })
 })
