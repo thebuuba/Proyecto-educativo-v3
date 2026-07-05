@@ -26,7 +26,7 @@ export async function login({ email, password }: LoginCredentials): Promise<Logi
 }
 
 /** Registra una nueva institución con los datos del administrador. */
-export async function register(credentials: RegisterCredentials): Promise<LoginResponse> {
+export async function register(credentials: RegisterCredentials): Promise<void> {
   const { data, error } = await supabase.auth.signUp({
     email: credentials.email,
     password: credentials.password,
@@ -44,7 +44,6 @@ export async function register(credentials: RegisterCredentials): Promise<LoginR
     throw new Error('Revisa tu correo para confirmar la cuenta antes de continuar.')
   }
 
-  return createAulaSession(token)
 }
 
 /** Inicia OAuth con un proveedor social. */

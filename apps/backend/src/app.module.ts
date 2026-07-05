@@ -22,6 +22,7 @@ import { SchoolAdministrationModule } from './modules/school-administration/scho
 import { ReportsModule } from './modules/reports/reports.module'
 import { ProfileModule } from './modules/profile/profile.module'
 import { SubjectsModule } from './modules/subjects/subjects.module'
+import { SchoolsModule } from './modules/schools/schools.module'
 import { backendEnvFilePaths } from './config/env-file-paths'
 
 /**
@@ -49,6 +50,7 @@ import { backendEnvFilePaths } from './config/env-file-paths'
     ReportsModule,
     ProfileModule,
     SubjectsModule,
+    SchoolsModule,
   ],
   providers: [
     { provide: APP_INTERCEPTOR, useClass: ResponseInterceptor },

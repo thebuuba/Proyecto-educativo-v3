@@ -6,6 +6,7 @@
     "generate": "dotenv -e ../../apps/backend/.env -- prisma generate",
     "migrate": "dotenv -e ../../apps/backend/.env -- prisma migrate dev",
     "seed": "dotenv -e ../../apps/backend/.env -- tsx src/seed.ts",
+"seed:schools": "dotenv -e ../../apps/backend/.env -- tsx src/seed-schools.ts",
     "studio": "dotenv -e ../../apps/backend/.env -- prisma studio",
     "build": "tsc"
   },

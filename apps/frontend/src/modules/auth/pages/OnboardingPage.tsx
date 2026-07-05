@@ -5,6 +5,7 @@ import type { FormEvent } from 'react'
 import { useEffect, useState } from 'react'
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 
+import { SchoolSearchInput } from '@/modules/auth/components/SchoolSearchInput'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
 import { FLOATING_ICONS } from '@/components/auth/AuthIcons'
@@ -321,6 +322,10 @@ export function OnboardingPage() {
     setStep((current) => Math.max(current - 1, 0))
   }
 
+  function preventEnter(e: React.KeyboardEvent) {
+    if (e.key === 'Enter') e.preventDefault()
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setSubmitError('')
@@ -354,13 +359,18 @@ export function OnboardingPage() {
           {knownFullName ? null : (
             <div>
               <label className={labelClass}>Nombre del docente</label>
-              <input className={inputClass} value={draft.fullName} onChange={(event) => updateDraft({ fullName: event.target.value })} />
+              <input className={inputClass} value={draft.fullName} onChange={(event) => updateDraft({ fullName: event.target.value })} onKeyDown={preventEnter} />
               <FieldError message={errors.fullName} />
             </div>
           )}
           <div>
             <label className={labelClass}>Centro educativo</label>
-            <input className={inputClass} value={draft.schoolName} onChange={(event) => updateDraft({ schoolName: event.target.value })} />
+            <SchoolSearchInput
+              value={draft.schoolName}
+              onChange={(value) => updateDraft({ schoolName: value })}
+              onSelect={(school) => updateDraft({ schoolName: school.name })}
+              placeholder="Busca tu centro educativo"
+            />
             <FieldError message={errors.schoolName} />
           </div>
         </div>
@@ -418,26 +428,26 @@ export function OnboardingPage() {
         <div className="grid gap-4 md:grid-cols-2">
           <div>
             <label className={labelClass}>Grado</label>
-            <input className={inputClass} value={draft.course.gradeName} onChange={(event) => updateCourse({ gradeName: event.target.value })} />
+            <input className={inputClass} value={draft.course.gradeName} onChange={(event) => updateCourse({ gradeName: event.target.value })} onKeyDown={preventEnter} />
             <FieldError message={errors.gradeName} />
           </div>
           <div>
             <label className={labelClass}>Seccion</label>
-            <input className={inputClass} value={draft.course.sectionName} onChange={(event) => updateCourse({ sectionName: event.target.value })} />
+            <input className={inputClass} value={draft.course.sectionName} onChange={(event) => updateCourse({ sectionName: event.target.value })} onKeyDown={preventEnter} />
             <FieldError message={errors.sectionName} />
           </div>
           <div>
             <label className={labelClass}>Area</label>
-            <input className={inputClass} value={draft.course.area} onChange={(event) => updateCourse({ area: event.target.value })} />
+            <input className={inputClass} value={draft.course.area} onChange={(event) => updateCourse({ area: event.target.value })} onKeyDown={preventEnter} />
           </div>
           <div>
             <label className={labelClass}>Asignatura/Subarea</label>
-            <input className={inputClass} value={draft.course.subjectName} onChange={(event) => updateCourse({ subjectName: event.target.value })} />
+            <input className={inputClass} value={draft.course.subjectName} onChange={(event) => updateCourse({ subjectName: event.target.value })} onKeyDown={preventEnter} />
             <FieldError message={errors.subjectName} />
           </div>
           <div className="md:col-span-2">
             <label className={labelClass}>Codigo opcional</label>
-            <input className={inputClass} value={draft.course.subjectCode} onChange={(event) => updateCourse({ subjectCode: event.target.value })} />
+            <input className={inputClass} value={draft.course.subjectCode} onChange={(event) => updateCourse({ subjectCode: event.target.value })} onKeyDown={preventEnter} />
           </div>
         </div>
       )

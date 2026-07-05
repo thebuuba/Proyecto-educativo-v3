@@ -57,6 +57,7 @@ model School {
   logoUrl             String?      @map("logo_url")
   sector              String       @default("private")
   centerCode          String?      @map("center_code")
+  district            String?      @map("district")
   schoolShift         String       @default("extended") @map("school_shift")
   primaryModality     String       @default("general") @map("primary_modality")
   enabledSubsystems   String[]     @default(["regular"]) @map("enabled_subsystems")
@@ -90,6 +91,8 @@ model School {
   userRoles             UserRole[]
   drEvaluationRules     DrEvaluationRule[]
 
+  @@index([name])
+  @@index([district])
   @@map("schools")
 }
 

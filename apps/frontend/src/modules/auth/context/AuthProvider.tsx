@@ -257,25 +257,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const register = useCallback(
     async (credentials: RegisterCredentials) => {
-      try {
-        await applySession(await registerService(credentials))
-      } catch (error) {
-        if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
-          const { data } = await supabase.auth.getSession()
-          setState((current) => ({
-            ...current,
-            supabaseAccessToken: data.session?.access_token ?? null,
-            loading: false,
-            profileRequired: true,
-            onboardingComplete: false,
-            authError: null,
-          }))
-          return
-        }
-        throw error
-      }
+      await registerService(credentials)
+      const { data } = await supabase.auth.getSession()
+      setState((current) => ({
+        ...current,
+        supabaseAccessToken: data.session?.access_token ?? null,
+        loading: false,
+        profileRequired: true,
+        onboardingComplete: false,
+        authError: null,
+      }))
     },
-    [applySession],
+    [],
   )
 
   const loginWithProvider = useCallback((provider: 'google' | 'facebook') => {
