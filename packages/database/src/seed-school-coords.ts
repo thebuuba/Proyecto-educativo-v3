@@ -4,10 +4,6 @@ import { prisma } from './index.js'
 
 const CSV_PATH = '/tmp/escuelas_dominicanas.csv'
 
-function esc(val: string): string {
-  return val.replace(/'/g, "''")
-}
-
 async function main() {
   const coords = new Map<string, { lat: number; lng: number }>()
 
@@ -42,8 +38,7 @@ async function main() {
 
   for (let i = 0; i < entries.length; i += BATCH) {
     const batch = entries.slice(i, i + BATCH)
-    const values = batch.map(([key, c], idx) => {
-      const [name, district] = key.split('|')
+    const values = batch.map((_, idx) => {
       const off = idx * 4
       return `($${off + 1}::text, $${off + 2}::text, $${off + 3}::double precision, $${off + 4}::double precision)`
     }).join(', ')
