@@ -21,6 +21,10 @@ type Props = {
   placeholder?: string
 }
 
+export function shouldSearchSchoolQuery(term: string, selectedTerm: string | null) {
+  return term.length >= 2 && term !== selectedTerm
+}
+
 export function SchoolSearchInput({ value, onChange, onSelect, error, placeholder }: Props) {
   const [query, setQuery] = useState(value)
   const [results, setResults] = useState<SchoolResult[]>([])
@@ -36,6 +40,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
   const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
   const locationRef = useRef<{ lat: number; lng: number } | null>(null)
   const locationFetchedRef = useRef(false)
+  const selectedQueryRef = useRef<string | null>(value || null)
 
   useEffect(() => {
     if (locationFetchedRef.current) return
@@ -47,7 +52,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
   }, [])
 
   const search = useCallback(async (term: string) => {
-    if (term.length < 2) {
+    if (!shouldSearchSchoolQuery(term, selectedQueryRef.current)) {
       setResults([])
       setOpen(false)
       return
@@ -85,15 +90,18 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
 
   function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
     const val = e.target.value
+    selectedQueryRef.current = null
     setQuery(val)
     onChange(val)
     if (!val) setOpen(false)
   }
 
   function select(school: SchoolResult) {
+    selectedQueryRef.current = school.name
     setQuery(school.name)
     onChange(school.name)
     onSelect(school)
+    setResults([])
     setOpen(false)
   }
 
