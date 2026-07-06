@@ -21,6 +21,7 @@ import { CompleteOnboardingDto } from './dto/complete-onboarding.dto'
 type SupabaseAuthUser = {
   id: string
   email?: string
+  app_metadata?: { provider?: string }
 }
 
 type AppUserWithSession = NonNullable<Awaited<ReturnType<typeof prisma.appUser.findUnique>>>
@@ -427,6 +428,7 @@ export class AuthService {
             email,
             fullName: dto.fullName,
             schoolId: school.id,
+            provider: authUser.app_metadata?.provider,
           },
         })
 

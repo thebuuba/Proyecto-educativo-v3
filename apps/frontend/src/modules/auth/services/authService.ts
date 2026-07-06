@@ -16,6 +16,11 @@ import type {
 } from '@/modules/auth/types/auth'
 import { supabase } from '@/modules/auth/services/supabaseClient'
 
+function getAuthCallbackUrl() {
+  const appUrl = (import.meta.env.VITE_PUBLIC_APP_URL as string | undefined)?.replace(/\/$/, '')
+  return `${appUrl || window.location.origin}/auth/callback`
+}
+
 /** Inicia sesión con correo y contraseña. */
 export async function login({ email, password }: LoginCredentials): Promise<LoginResponse> {
   const { data, error } = await supabase.auth.signInWithPassword({ email, password })
@@ -51,7 +56,7 @@ export async function loginWithProvider(provider: 'google' | 'facebook'): Promis
   const { error } = await supabase.auth.signInWithOAuth({
     provider,
     options: {
-      redirectTo: `${window.location.origin}/auth/callback`,
+      redirectTo: getAuthCallbackUrl(),
     },
   })
   if (error) throw new Error(error.message)

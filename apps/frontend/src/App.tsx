@@ -4,7 +4,7 @@
  * y protección por roles de usuario.
  */
 import { lazy, Suspense } from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 
 import { ErrorBoundary } from '@/components/ui/ErrorFallback'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
@@ -29,12 +29,26 @@ const ContactPage = lazyPage(() => import('@/modules/promo/pages/ContactPage'), 
 /** Componente de carga mostrado durante la carga diferida de módulos. */
 const routeFallback = <PageSkeleton />
 
+export function getOAuthCallbackPath(pathname: string, search: string, hash: string) {
+  if (pathname !== '/auth/callback' && new URLSearchParams(search).has('code')) {
+    return `/auth/callback${search}${hash}`
+  }
+  return null
+}
+
 /**
  * Componente principal de la aplicación.
  * Configura las rutas públicas (login, registro, sin acceso) y las
  * rutas privadas envueltas en AppLayout con protección RequireAuth.
  */
 function App() {
+  const location = useLocation()
+  const oauthCallbackPath = getOAuthCallbackPath(location.pathname, location.search, location.hash)
+
+  if (oauthCallbackPath) {
+    return <Navigate to={oauthCallbackPath} replace />
+  }
+
   return (
     <Suspense fallback={routeFallback}>
       <Routes>
