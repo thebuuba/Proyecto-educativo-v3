@@ -1,7 +1,7 @@
 /**
- * Servicio de autenticaciÃ³n.
- * Provee la lÃ³gica de negocio para registro, inicio de sesiÃ³n,
- * recuperaciÃ³n de contraseÃ±a y consulta de perfil del usuario autenticado.
+ * Servicio de autenticación.
+ * Provee la lógica de negocio para registro, inicio de sesión,
+ * recuperación de contraseña y consulta de perfil del usuario autenticado.
  */
 import {
   Injectable,
@@ -45,11 +45,11 @@ function createSlug(value: string) {
 }
 
 /**
- * Obtiene un slug Ãºnico para una escuela, agregando un sufijo numÃ©rico
- * si el slug base ya estÃ¡ ocupado.
+ * Obtiene un slug único para una escuela, agregando un sufijo numérico
+ * si el slug base ya está ocupado.
  *
  * @param input - Texto base para el slug.
- * @returns Slug Ãºnico disponible.
+ * @returns Slug único disponible.
  */
 async function getAvailableSchoolSlug(input: string) {
   const baseSlug = createSlug(input) || 'escuela'
@@ -235,13 +235,13 @@ export class AuthService {
   }
 
   /**
-   * Registra un nuevo usuario y su escuela en una transacciÃ³n.
-   * Crea la escuela, el rol de administrador, el usuario y la asignaciÃ³n de rol.
+   * Registra un nuevo usuario y su escuela en una transacción.
+   * Crea la escuela, el rol de administrador, el usuario y la asignación de rol.
    * Retorna un token JWT junto con los datos del usuario creado.
    *
    * @param dto - Datos de registro.
    * @returns Objeto con usuario, token, roles y permisos.
-   * @throws ConflictException si el email ya estÃ¡ registrado.
+   * @throws ConflictException si el email ya está registrado.
    */
   async register(dto: RegisterDto) {
     assertAuthEnvironment()
@@ -300,13 +300,13 @@ export class AuthService {
   }
 
   /**
-   * Inicia sesiÃ³n con email y contraseÃ±a.
+   * Inicia sesión con email y contraseña.
    * Verifica las credenciales, consulta roles y permisos activos,
    * y retorna un token JWT junto con los datos del usuario.
    *
-   * @param dto - Credenciales de inicio de sesiÃ³n.
-   * @returns Objeto con usuario, token, roles y permisos Ãºnicos.
-   * @throws UnauthorizedException si las credenciales son invÃ¡lidas.
+   * @param dto - Credenciales de inicio de sesión.
+   * @returns Objeto con usuario, token, roles y permisos únicos.
+   * @throws UnauthorizedException si las credenciales son inválidas.
    */
   async login(dto: LoginDto) {
     assertAuthEnvironment()
@@ -395,7 +395,7 @@ export class AuthService {
       dto.schoolYear.endDate,
     )
     if (endDate < startDate) {
-      throw new BadRequestException('El aÃ±o escolar debe terminar despues de iniciar.')
+      throw new BadRequestException('El año escolar debe terminar después de iniciar.')
     }
 
 
@@ -487,11 +487,11 @@ export class AuthService {
   }
 
   /**
-   * Solicita recuperaciÃ³n de contraseÃ±a.
+   * Solicita recuperación de contraseña.
    * Por seguridad siempre retorna el mismo mensaje
    * independientemente de si el email existe o no.
    *
-   * @param email - Correo electrÃ³nico del usuario.
+   * @param email - Correo electrónico del usuario.
    * @returns Mensaje informativo.
    */
   async forgotPassword(email: string) {

@@ -8,3 +8,5 @@ allowBuilds:
   bcrypt: true
   esbuild: true
   prisma: true
+overrides:
+  '@nestjs/platform-express>multer': 2.2.0

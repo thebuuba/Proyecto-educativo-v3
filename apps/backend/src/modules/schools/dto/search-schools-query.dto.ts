@@ -1,4 +1,4 @@
-import { IsOptional, IsString, MinLength, MaxLength, IsInt, Min, Max } from 'class-validator'
+import { IsOptional, IsString, MinLength, MaxLength, IsInt, Min, Max, IsNumber } from 'class-validator'
 import { Type } from 'class-transformer'
 
 export class SearchSchoolsQueryDto {
@@ -16,9 +16,15 @@ export class SearchSchoolsQueryDto {
 
   @IsOptional()
   @Type(() => Number)
+  @IsNumber({ allowInfinity: false, allowNaN: false })
+  @Min(-90)
+  @Max(90)
   lat?: number
 
   @IsOptional()
   @Type(() => Number)
+  @IsNumber({ allowInfinity: false, allowNaN: false })
+  @Min(-180)
+  @Max(180)
   lng?: number
 }

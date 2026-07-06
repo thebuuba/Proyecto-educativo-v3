@@ -198,7 +198,7 @@ describe('StudentsService course enrollment', () => {
       id: 'student-1',
       studentCode: '2026001',
       firstName: 'Ana',
-      lastName: 'GÃ³mez',
+      lastName: 'Gómez',
       status: 'ACTIVE',
     })
     mocks.prisma.enrollment.findFirst
@@ -211,7 +211,7 @@ describe('StudentsService course enrollment', () => {
       'course-1',
       {
         studentCode: '2026001',
-        fullName: 'Ana GÃ³mez',
+        fullName: 'Ana Gómez',
       },
     )
 
@@ -226,7 +226,7 @@ describe('StudentsService course enrollment', () => {
       }),
     })
     expect(result).toEqual(
-      expect.objectContaining({ id: 'student-1', fullName: 'Ana GÃ³mez' }),
+      expect.objectContaining({ id: 'student-1', fullName: 'Ana Gómez' }),
     )
   })
 
@@ -294,7 +294,7 @@ describe('StudentsService course enrollment', () => {
       id: 'student-1',
       studentCode: '2026001',
       firstName: 'Ana',
-      lastName: 'GÃ³mez',
+      lastName: 'Gómez',
     })
     mocks.prisma.enrollment.create.mockResolvedValue({ id: 'enrollment-1' })
 
@@ -302,8 +302,8 @@ describe('StudentsService course enrollment', () => {
       'school-1',
       'course-1',
       [
-        { studentCode: '2026001', fullName: 'Ana GÃ³mez' },
-        { studentCode: '2026001', fullName: 'Ana GÃ³mez' },
+        { studentCode: '2026001', fullName: 'Ana Gómez' },
+        { studentCode: '2026001', fullName: 'Ana Gómez' },
       ],
     )
 

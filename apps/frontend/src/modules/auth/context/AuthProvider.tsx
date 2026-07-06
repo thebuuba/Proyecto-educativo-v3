@@ -1,6 +1,6 @@
 /**
- * Proveedor de autenticaciÃ³n â€” Componente que envuelve la aplicaciÃ³n y
- * provee el estado de autenticaciÃ³n, los mÃ©todos para iniciar/cerrar sesiÃ³n,
+ * Proveedor de autenticación: componente que envuelve la aplicación y
+ * provee el estado de autenticación, los métodos para iniciar/cerrar sesión,
  * registrar, recargar el perfil y verificar roles/permisos.
  */
 
@@ -83,14 +83,14 @@ const initialState: AuthState = {
 }
 
 /**
- * Componente proveedor de autenticaciÃ³n.
- * Gestiona el estado de sesiÃ³n, carga el perfil al montar y expone
- * funciones para login, register, logout y verificaciÃ³n de roles/permisos.
+ * Componente proveedor de autenticación.
+ * Gestiona el estado de sesión, carga el perfil al montar y expone
+ * funciones para login, register, logout y verificación de roles/permisos.
  */
 export function AuthProvider({ children }: AuthProviderProps) {
   const [state, setState] = useState<AuthState>(initialState)
 
-  /** Limpia el estado de autenticaciÃ³n y elimina el token. */
+  /** Limpia el estado de autenticación y elimina el token. */
   const clearAuthState = useCallback((authError: string | null = null) => {
     setAuthToken(null)
     setState({
@@ -107,7 +107,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     })
   }, [])
 
-  /** Aplica los datos de una sesiÃ³n (login o registro) al estado global. */
+  /** Aplica los datos de una sesión (login o registro) al estado global. */
   const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
     setAuthToken(response.token)
     const onboardingComplete = checkOnboarding
@@ -161,7 +161,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }, [applySession])
 
-  /** Carga el estado de autenticaciÃ³n desde el servidor (perfil, roles, permisos). */
+  /** Carga el estado de autenticación desde el servidor (perfil, roles, permisos). */
   const loadAuthState = useCallback(async () => {
     const token = getAuthToken()
     if (!token) {
@@ -211,7 +211,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       console.error(error)
       if (!await restoreFromSupabaseSession()) {
         clearAuthState(
-          'No se pudo cargar tu perfil. Revisa tu conexiÃ³n e intÃ©ntalo de nuevo.',
+          'No se pudo cargar tu perfil. Revisa tu conexión e inténtalo de nuevo.',
         )
       }
     }
