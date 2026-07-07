@@ -29,6 +29,12 @@ type SectionSubjectOption = {
   teacherName: string
 }
 
+type ApiSectionSubject = {
+  id: string
+  subjectName: string
+  teacherName: string
+}
+
 function timeSlotsToBlocks(slots: TimeSlot[]): ScheduleBlock[] {
   return slots.map((slot) => ({
     id: slot.id,
@@ -129,7 +135,7 @@ export function SchedulePage() {
       const results = await Promise.all(
         sections.map(async (section) => {
           const subjects = await getSectionSubjects(section.id)
-          return subjects.map((s: SectionSubjectOption) => ({
+          return subjects.map((s: ApiSectionSubject) => ({
             id: s.id,
             sectionId: section.id,
             label: `${section.gradeName} ${section.name} - ${s.subjectName}`,
