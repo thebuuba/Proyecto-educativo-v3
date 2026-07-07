@@ -19,11 +19,39 @@ function status(value: string) {
   return value.toLowerCase()
 }
 
+/** Devuelve el año escolar activo o crea uno por defecto */
+async function resolveSchoolYear(schoolId: string) {
+  let sy = await prisma.schoolYear.findFirst({
+    where: { schoolId, isCurrent: true },
+    select: { id: true, name: true },
+  })
+  if (sy) return sy
+  sy = await prisma.schoolYear.findFirst({
+    where: { schoolId, status: 'ACTIVE' },
+    select: { id: true, name: true },
+    orderBy: { createdAt: 'desc' },
+  })
+  if (sy) return sy
+  const year = new Date().getFullYear()
+  return prisma.schoolYear.create({
+    data: {
+      schoolId,
+      name: `${year}-${year + 1}`,
+      startDate: new Date(year, 7, 1),
+      endDate: new Date(year + 1, 6, 31),
+      isCurrent: true,
+    },
+    select: { id: true, name: true },
+  })
+}
+
 @Injectable()
 export class CoursesService {
   /** Obtiene los datos completos del curso: grados, secciones, asignaciones, catálogos y año escolar actual */
   async getCourseData(schoolId: string) {
-    const [grades, sections, assignments, subjects, academicLevels, cycles, modalities, teachers, currentSchoolYear] =
+    const currentSchoolYear = await resolveSchoolYear(schoolId)
+
+    const [grades, sections, assignments, subjects, academicLevels, cycles, modalities, teachers] =
       await Promise.all([
         prisma.grade.findMany({
           where: { schoolId, status: 'ACTIVE' },
@@ -42,10 +70,6 @@ export class CoursesService {
         prisma.drModality.findMany({ orderBy: { name: 'asc' } }),
         prisma.teacher.findMany({
           where: { schoolId, status: 'ACTIVE' },
-        }),
-        prisma.schoolYear.findFirst({
-          where: { schoolId, isCurrent: true },
-          select: { id: true, name: true },
         }),
       ])
 
@@ -245,11 +269,15 @@ export class CoursesService {
 
   /** Asigna una materia a una sección con un profesor, validando todas las referencias */
   async assignSubject(schoolId: string, dto: AssignSubjectDto) {
-    const [grade, section, subject, schoolYear, teacher] = await Promise.all([
+    const schoolYear = dto.schoolYearId
+      ? await prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } })
+      : null
+    const resolvedSchoolYear = schoolYear ?? await resolveSchoolYear(schoolId)
+
+    const [grade, section, subject, teacher] = await Promise.all([
       prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } }),
       prisma.section.findFirst({ where: { id: dto.sectionId, schoolId, gradeId: dto.gradeId } }),
       prisma.subject.findFirst({ where: { id: dto.subjectId, schoolId } }),
-      prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } }),
       dto.teacherId
         ? prisma.teacher.findFirst({ where: { id: dto.teacherId, schoolId } })
         : Promise.resolve(null),
@@ -257,7 +285,6 @@ export class CoursesService {
     if (!grade) throw new NotFoundException('Grade not found')
     if (!section) throw new NotFoundException('Section not found')
     if (!subject) throw new NotFoundException('Subject not found')
-    if (!schoolYear) throw new NotFoundException('School year not found')
     if (dto.teacherId && !teacher) throw new NotFoundException('Teacher not found')
 
     return prisma.sectionSubject.create({
@@ -266,7 +293,7 @@ export class CoursesService {
         subjectId: dto.subjectId,
         teacherId: dto.teacherId ?? null,
         gradeId: dto.gradeId,
-        schoolYearId: dto.schoolYearId,
+        schoolYearId: resolvedSchoolYear.id,
         schoolId,
       },
     })

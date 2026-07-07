@@ -10,8 +10,9 @@ export class AssignSubjectDto {
   @IsString()
   subjectId!: string
 
+  @IsOptional()
   @IsString()
-  schoolYearId!: string
+  schoolYearId?: string
 
   @IsOptional()
   @IsString()
