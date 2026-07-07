@@ -12,11 +12,12 @@ const mocks = vi.hoisted(() => ({
     enrollment: {
       groupBy: vi.fn(),
       create: vi.fn(),
+      createMany: vi.fn(),
       findFirst: vi.fn(),
       findMany: vi.fn(),
       update: vi.fn(),
     },
-    student: { create: vi.fn(), findFirst: vi.fn(), findMany: vi.fn() },
+    student: { create: vi.fn(), createMany: vi.fn(), findFirst: vi.fn(), findMany: vi.fn() },
     studentGuardian: { findMany: vi.fn() },
     guardianNotification: { createMany: vi.fn() },
   },
@@ -25,6 +26,8 @@ const mocks = vi.hoisted(() => ({
 vi.mock('@aula/database', () => ({
   prisma: mocks.prisma,
   Prisma: { PrismaClientKnownRequestError: class {} },
+  RecordStatus: { ACTIVE: 'active', INACTIVE: 'inactive', ARCHIVED: 'archived' },
+  EnrollmentStatus: { ACTIVE: 'ACTIVE', TRANSFERRED: 'TRANSFERRED', WITHDRAWN: 'WITHDRAWN', COMPLETED: 'COMPLETED' },
 }))
 
 function createService() {
@@ -308,13 +311,11 @@ describe('StudentsService course enrollment', () => {
     mockCourse()
     mocks.prisma.student.findFirst.mockResolvedValue(null)
     mocks.prisma.enrollment.findFirst.mockResolvedValue(null)
-    mocks.prisma.student.create.mockResolvedValue({
-      id: 'student-1',
-      studentCode: '2026001',
-      firstName: 'Ana',
-      lastName: 'Gómez',
-    })
-    mocks.prisma.enrollment.create.mockResolvedValue({ id: 'enrollment-1' })
+    mocks.prisma.student.findMany
+      .mockResolvedValueOnce([])
+      .mockResolvedValueOnce([{ id: 'student-1', studentCode: '2026001' }])
+    mocks.prisma.student.createMany.mockResolvedValue({ count: 1 })
+    mocks.prisma.enrollment.createMany.mockResolvedValue({ count: 1 })
 
     const result = await createService().importStudentsInCourse(
       'school-1',
@@ -326,20 +327,18 @@ describe('StudentsService course enrollment', () => {
     )
 
     expect(result).toEqual({ imported: 1, errors: [] })
-    expect(mocks.prisma.student.create).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.student.createMany).toHaveBeenCalledTimes(1)
   })
 
   it('does not import duplicate rows from the same paste payload', async () => {
     mockCourse()
     mocks.prisma.student.findFirst.mockResolvedValue(null)
     mocks.prisma.enrollment.findFirst.mockResolvedValue(null)
-    mocks.prisma.student.create.mockResolvedValue({
-      id: 'student-1',
-      studentCode: '2026001',
-      firstName: 'Ana',
-      lastName: 'Gómez',
-    })
-    mocks.prisma.enrollment.create.mockResolvedValue({ id: 'enrollment-1' })
+    mocks.prisma.student.findMany
+      .mockResolvedValueOnce([])
+      .mockResolvedValueOnce([{ id: 'student-1', studentCode: '2026001' }])
+    mocks.prisma.student.createMany.mockResolvedValue({ count: 1 })
+    mocks.prisma.enrollment.createMany.mockResolvedValue({ count: 1 })
 
     const result = await createService().importStudentsInCourse(
       'school-1',
@@ -351,7 +350,7 @@ describe('StudentsService course enrollment', () => {
     )
 
     expect(result).toEqual({ imported: 1, errors: [] })
-    expect(mocks.prisma.student.create).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.student.createMany).toHaveBeenCalledTimes(1)
   })
 
   it('withdraws a student from the selected course enrollment', async () => {

@@ -7,6 +7,19 @@
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma, RecordStatus } from '@aula/database'
+
+const cache = new Map<string, { data: unknown; expiry: number }>()
+const CACHE_TTL = 60_000
+
+function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
+  const now = Date.now()
+  const entry = cache.get(key)
+  if (entry && entry.expiry > now) return Promise.resolve(entry.data as T)
+  return fn().then((data) => {
+    cache.set(key, { data, expiry: now + CACHE_TTL })
+    return data
+  })
+}
 import { CreateGradeDto } from './dto/create-grade.dto'
 import { UpdateGradeDto } from './dto/update-grade.dto'
 import { CreateSectionDto } from './dto/create-section.dto'
@@ -55,6 +68,10 @@ async function resolveSchoolYear(schoolId: string) {
 export class CoursesService {
   /** Obtiene los datos completos del curso: grados, secciones, asignaciones, catálogos y año escolar actual */
   async getCourseData(schoolId: string) {
+    return withCache(`courseData:${schoolId}`, () => this._getCourseData(schoolId))
+  }
+
+  private async _getCourseData(schoolId: string) {
     const currentSchoolYear = await resolveSchoolYear(schoolId)
 
     const grades = await prisma.grade.findMany({

@@ -220,6 +220,7 @@ model SchoolYear {
   scheduleEntries ScheduleEntry[]
 
   @@unique([schoolId, name])
+  @@index([schoolId, isCurrent])
   @@map("school_years")
 }
 
@@ -272,6 +273,7 @@ model Grade {
   enrollments     Enrollment[]
 
   @@unique([schoolId, name])
+  @@index([schoolId, status])
   @@map("grades")
 }
 
@@ -296,6 +298,7 @@ model Section {
 
   @@unique([gradeId, name])
   @@unique([id, gradeId])
+  @@index([schoolId, status])
   @@map("sections")
 }
 
@@ -314,6 +317,7 @@ model Subject {
   sectionSubjects SectionSubject[]
 
   @@unique([schoolId, code])
+  @@index([schoolId, status])
   @@map("subjects")
 }
 
@@ -342,6 +346,7 @@ model Teacher {
   @@unique([schoolId, employeeCode])
   @@unique([schoolId, documentId])
   @@unique([schoolId, email])
+  @@index([schoolId, status])
   @@map("teachers")
 }
 
@@ -463,6 +468,8 @@ model SectionSubject {
 
   @@unique([schoolYearId, sectionId, subjectId])
   @@unique([id, schoolYearId, sectionId])
+  @@index([schoolId, status])
+  @@index([schoolId, sectionId])
   @@map("section_subjects")
 }
 
@@ -502,6 +509,8 @@ model Enrollment {
 
   @@unique([studentId, schoolYearId])
   @@unique([id, schoolYearId, sectionId])
+  @@index([schoolId, status])
+  @@index([schoolId, sectionId, schoolYearId, status])
   @@map("enrollments")
 }
 

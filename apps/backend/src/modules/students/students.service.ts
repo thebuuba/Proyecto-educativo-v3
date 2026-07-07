@@ -10,7 +10,7 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common'
-import { prisma, Prisma, RecordStatus } from '@aula/database'
+import { prisma, Prisma, EnrollmentStatus, RecordStatus } from '@aula/database'
 import { splitFullName } from '@aula/shared'
 import { CreateStudentDto } from './dto/create-student.dto'
 import { UpdateStudentDto } from './dto/update-student.dto'
@@ -444,23 +444,70 @@ export class StudentsService {
     const validRows = preview.rows.filter(
       (row) => row.fullName && !row.duplicate && row.errors.length === 0,
     )
+    if (validRows.length === 0) return { imported: 0, errors: [] }
+
+    const course = await this.getCourseOrThrow(schoolId, courseId)
+    const codes = validRows.map((r) => r.studentCode).filter(Boolean) as string[]
+    const existingByCode = codes.length > 0
+      ? new Map((await prisma.student.findMany({
+          where: { schoolId, studentCode: { in: codes } },
+          select: { id: true, studentCode: true, firstName: true, lastName: true },
+        })).map((s) => [s.studentCode, s]))
+      : new Map()
+
+    const newStudents: { schoolId: string; studentCode: string; firstName: string; lastName: string; birthDate: Date; status: RecordStatus }[] = []
+    const enrollments: { schoolId: string; studentId: string; schoolYearId: string; gradeId: string; sectionId: string; status: EnrollmentStatus }[] = []
     let imported = 0
     const errors: ImportStudentError[] = []
 
     for (const row of validRows) {
-      try {
-        await this.createStudentInCourse(schoolId, courseId, {
-          studentCode: row.studentCode || `TEMP-${Date.now()}-${row.rowNumber}`,
-          fullName: row.fullName,
+      const studentCode = row.studentCode || `TEMP-${Date.now()}-${row.rowNumber}`
+      const existing = existingByCode.get(studentCode)
+      const { firstName, lastName } = splitFullName(row.fullName)
+
+      if (existing) {
+        enrollments.push({
+          schoolId,
+          studentId: existing.id,
+          schoolYearId: course.schoolYearId,
+          gradeId: course.gradeId,
+          sectionId: course.sectionId,
+          status: 'ACTIVE',
         })
-        imported += 1
-      } catch (error) {
-        errors.push({
-          row: row.rowNumber,
-          reason:
-            error instanceof Error ? error.message : 'No se pudo importar.',
+        imported++
+      } else {
+        newStudents.push({
+          schoolId,
+          studentCode,
+          firstName,
+          lastName,
+          birthDate: FAST_ENROLLMENT_BIRTH_DATE,
+          status: RecordStatus.ACTIVE,
         })
       }
+    }
+
+    if (newStudents.length > 0) {
+      await prisma.student.createMany({ data: newStudents })
+      const created = await prisma.student.findMany({
+        where: { schoolId, studentCode: { in: newStudents.map((s) => s.studentCode) } },
+        select: { id: true, studentCode: true },
+      })
+      for (const s of created) {
+        enrollments.push({
+          schoolId,
+          studentId: s.id,
+          schoolYearId: course.schoolYearId,
+          gradeId: course.gradeId,
+          sectionId: course.sectionId,
+          status: EnrollmentStatus.ACTIVE,
+        })
+      }
+      imported += created.length
+    }
+
+    if (enrollments.length > 0) {
+      await prisma.enrollment.createMany({ data: enrollments, skipDuplicates: true })
     }
 
     return { imported, errors }

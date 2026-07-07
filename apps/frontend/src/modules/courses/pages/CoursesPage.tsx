@@ -14,7 +14,7 @@ import {
   UsersRound,
   X,
 } from 'lucide-react'
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
+import { memo, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -131,6 +131,12 @@ export function CoursesPage() {
   } | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [debouncedSearch, setDebouncedSearch] = useState('')
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedSearch(searchQuery), 300)
+    return () => clearTimeout(timer)
+  }, [searchQuery])
   const [levelFilter, setLevelFilter] = useState('all')
   const [cycleFilter, setCycleFilter] = useState('all')
   const [subjectFilter, setSubjectFilter] = useState('all')
@@ -288,9 +294,24 @@ export function CoursesPage() {
     [assignSubject, assignmentTarget, currentSchoolYear],
   )
 
+  const handleOpen = useCallback((id: string) => setSelectedCourseId(id), [])
+  const handleAddSection = useCallback((grade: GradeWithSections) => openCreateSection(grade), [])
+  const handleEditSection = useCallback((grade: GradeWithSections, sectionId: string) => openEditSection(grade, sectionId), [])
+  const handleDeleteSection = useCallback((section: Section) =>
+    setDeleteTarget({ kind: 'section', id: section.id, label: section.name }), [])
+  const handleOpenAssignSubject = useCallback((grade: GradeWithSections, sectionId: string) => {
+    if (!currentSchoolYear) {
+      setActionError('Activa un ano escolar antes de asignar asignaturas.')
+      return
+    }
+    openAssignSubject(grade, sectionId)
+  }, [currentSchoolYear])
+  const handleDeleteAssignment = useCallback((assignment: SectionSubjectAssignment) =>
+    setDeleteTarget({ kind: 'assignment', id: assignment.id, label: assignment.subjectName }), [])
+
   const courseCards = useMemo(() => buildCourseCards(grades), [grades])
   const filteredCourseCards = useMemo(() => {
-    const query = normalizeText(searchQuery)
+    const query = normalizeText(debouncedSearch)
 
     return courseCards.filter((item) => {
       const matchesSearch = !query || normalizeText([
@@ -305,7 +326,7 @@ export function CoursesPage() {
       const matchesSubject = subjectFilter === 'all' || item.subjectName === subjectFilter
       return matchesSearch && matchesLevel && matchesCycle && matchesSubject
     })
-  }, [courseCards, cycleFilter, levelFilter, searchQuery, subjectFilter])
+  }, [courseCards, cycleFilter, levelFilter, debouncedSearch, subjectFilter])
   const levelFilters = useMemo(() => uniqueValues(courseCards.map((item) => item.levelName)), [courseCards])
   const cycleFilters = useMemo(() => uniqueValues(courseCards.map((item) => item.cycleName)), [courseCards])
   const subjectFilters = useMemo(
@@ -524,40 +545,20 @@ export function CoursesPage() {
                   </div>
 
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                    {group.items.map((item) => {
-                      const assignment = item.assignment
-                      return (
-                        <CourseCard
-                          key={item.id}
-                          item={item}
-                          schoolYearName={currentSchoolYear?.name ?? ''}
-                          canManage={canManage}
-                          onOpen={() => setSelectedCourseId(item.id)}
-                          onAddSection={() => openCreateSection(item.grade)}
-                          onEditSection={() => openEditSection(item.grade, item.section.id)}
-                          onDeleteSection={() =>
-                            setDeleteTarget({
-                              kind: 'section',
-                              id: item.section.id,
-                              label: item.section.name,
-                            })
-                          }
-                          onAssignSubject={() => {
-                            if (!currentSchoolYear) {
-                              setActionError('Activa un ano escolar antes de asignar asignaturas.')
-                              return
-                            }
-                            openAssignSubject(item.grade, item.section.id)
-                          }}
-                          onDeleteSubjectAssignment={assignment ? () =>
-                            setDeleteTarget({
-                              kind: 'assignment',
-                              id: assignment.id,
-                              label: assignment.subjectName,
-                            }) : undefined}
-                        />
-                      )
-                    })}
+                    {group.items.map((item) => (
+                      <CourseCard
+                        key={item.id}
+                        item={item}
+                        schoolYearName={currentSchoolYear?.name ?? ''}
+                        canManage={canManage}
+                        onOpen={handleOpen}
+                        onAddSection={handleAddSection}
+                        onEditSection={handleEditSection}
+                        onDeleteSection={handleDeleteSection}
+                        onAssignSubject={handleOpenAssignSubject}
+                        onDeleteSubjectAssignment={handleDeleteAssignment}
+                      />
+                    ))}
                   </div>
                 </section>
               ))}
@@ -1029,7 +1030,7 @@ function HorarioTab({ sectionId }: { sectionId: string }) {
   )
 }
 
-function CourseCard({
+const CourseCard = memo(function CourseCard({
   item,
   schoolYearName,
   canManage,
@@ -1043,12 +1044,12 @@ function CourseCard({
   item: CourseCardItem
   schoolYearName: string
   canManage: boolean
-  onOpen: () => void
-  onAddSection: () => void
-  onEditSection: () => void
-  onDeleteSection: () => void
-  onAssignSubject: () => void
-  onDeleteSubjectAssignment?: () => void
+  onOpen: (id: string) => void
+  onAddSection: (grade: GradeWithSections) => void
+  onEditSection: (grade: GradeWithSections, sectionId: string) => void
+  onDeleteSection: (section: Section) => void
+  onAssignSubject: (grade: GradeWithSections, sectionId: string) => void
+  onDeleteSubjectAssignment?: (assignment: SectionSubjectAssignment) => void
 }) {
   const palette = getSubjectColor(item.subjectName)
   const levelStyle = getLevelStyle(item.levelName)
@@ -1062,11 +1063,11 @@ function CourseCard({
         className="flex flex-1 flex-col p-5 pb-4 cursor-pointer"
         role="button"
         tabIndex={0}
-        onClick={onOpen}
+        onClick={() => onOpen(item.id)}
         onKeyDown={(event) => {
           if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault()
-            onOpen()
+            onOpen(item.id)
           }
         }}
       >
@@ -1129,21 +1130,21 @@ function CourseCard({
         <div className="flex items-center gap-0.5">
           {canManage ? (
             <>
-              <FooterAction label="Agregar seccion" onClick={onAddSection}>
+              <FooterAction label="Agregar seccion" onClick={() => onAddSection(item.grade)}>
                 <UsersRound className="h-4 w-4" />
               </FooterAction>
-              <FooterAction label="Editar seccion" onClick={onEditSection}>
+              <FooterAction label="Editar seccion" onClick={() => onEditSection(item.grade, item.section.id)}>
                 <CheckSquare className="h-4 w-4" />
               </FooterAction>
-              <FooterAction label="Asignar asignatura" onClick={onAssignSubject}>
+              <FooterAction label="Asignar asignatura" onClick={() => onAssignSubject(item.grade, item.section.id)}>
                 <GraduationCap className="h-4 w-4" />
               </FooterAction>
-              {onDeleteSubjectAssignment ? (
-                <FooterAction label="Quitar asignatura" onClick={onDeleteSubjectAssignment}>
+              {item.assignment && onDeleteSubjectAssignment ? (
+                <FooterAction label="Quitar asignatura" onClick={() => onDeleteSubjectAssignment(item.assignment!)}>
                   <ClipboardList className="h-4 w-4" />
                 </FooterAction>
               ) : null}
-              <FooterAction label="Inactivar seccion" onClick={onDeleteSection}>
+              <FooterAction label="Inactivar seccion" onClick={() => onDeleteSection(item.section)}>
                 <CalendarDays className="h-4 w-4" />
               </FooterAction>
             </>
@@ -1160,7 +1161,7 @@ function CourseCard({
       </div>
     </article>
   )
-}
+})
 
 function FooterAction({
   label,
