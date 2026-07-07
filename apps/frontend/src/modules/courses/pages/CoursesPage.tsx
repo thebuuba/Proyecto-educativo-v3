@@ -1,13 +1,10 @@
 import {
   AlertCircle,
   ArrowLeft,
-  BarChart3,
-  Bell,
   CalendarDays,
   CheckSquare,
   ClipboardList,
   GraduationCap,
-  Info,
   MapPin,
   MoreHorizontal,
   Plus,
@@ -17,7 +14,7 @@ import {
   UsersRound,
   X,
 } from 'lucide-react'
-import { useCallback, useMemo, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -28,6 +25,10 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { SectionForm } from '@/modules/courses/components/SectionForm'
 import { SubjectAssignmentForm } from '@/modules/courses/components/SubjectAssignmentForm'
 import { TeacherAssignmentForm } from '@/modules/courses/components/TeacherAssignmentForm'
+import { getStudentsBySection } from '@/modules/attendance/services/attendanceService'
+import { getStudentsForGrading, getAcademicPeriods } from '@/modules/grading/services/gradingService'
+import { getPlanningEntries } from '@/modules/planning/services/planningService'
+import { getScheduleEntries } from '@/modules/schedule/services/scheduleService'
 import { useCourses } from '@/modules/courses/hooks/useCourses'
 import type {
   CreateSubjectInput,
@@ -328,6 +329,7 @@ export function CoursesPage() {
         <CourseDetailView
           item={selectedCourse}
           schoolYearName={currentSchoolYear?.name ?? ''}
+          schoolYearId={currentSchoolYear?.id ?? null}
           onBack={() => setSelectedCourseId(null)}
         />
       ) : (
@@ -656,14 +658,17 @@ export function CoursesPage() {
 function CourseDetailView({
   item,
   schoolYearName,
+  schoolYearId,
   onBack,
 }: {
   item: CourseCardItem
   schoolYearName: string
+  schoolYearId: string | null
   onBack: () => void
 }) {
   const palette = getSubjectColor(item.subjectName)
   const courseLabel = `${item.grade.name}.º ${item.section.name}`
+  const [activeTab, setActiveTab] = useState('estudiantes')
 
   return (
     <div className="space-y-7">
@@ -713,59 +718,25 @@ function CourseDetailView({
         </div>
 
         <nav className="flex gap-7 overflow-x-auto border-t border-border pt-5">
-          <DetailTab active icon={<Info className="size-4" />} label="Informacion" />
-          <DetailTab icon={<UsersRound className="size-4" />} label="Estudiantes" />
-          <DetailTab icon={<CheckSquare className="size-4" />} label="Asistencia" />
-          <DetailTab icon={<GraduationCap className="size-4" />} label="Calificaciones" />
-          <DetailTab icon={<ClipboardList className="size-4" />} label="Planificaciones" />
-          <DetailTab icon={<CalendarDays className="size-4" />} label="Horario" />
-          <DetailTab icon={<BarChart3 className="size-4" />} label="Reportes" />
+          <DetailTab active={activeTab === 'estudiantes'} icon={<UsersRound className="size-4" />} label="Estudiantes" onClick={() => setActiveTab('estudiantes')} />
+          <DetailTab active={activeTab === 'asistencia'} icon={<CheckSquare className="size-4" />} label="Asistencia" onClick={() => setActiveTab('asistencia')} />
+          <DetailTab active={activeTab === 'calificaciones'} icon={<GraduationCap className="size-4" />} label="Calificaciones" onClick={() => setActiveTab('calificaciones')} />
+          <DetailTab active={activeTab === 'planificaciones'} icon={<ClipboardList className="size-4" />} label="Planificaciones" onClick={() => setActiveTab('planificaciones')} />
+          <DetailTab active={activeTab === 'horario'} icon={<CalendarDays className="size-4" />} label="Horario" onClick={() => setActiveTab('horario')} />
         </nav>
       </header>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_28rem]">
-        <section className="rounded-2xl border border-border bg-card p-7 shadow-sm">
-          <h2 className="text-sm font-extrabold uppercase tracking-[0.15em] text-muted-foreground">
-            Sobre este curso
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-foreground">
-            {item.subjectName} para {courseLabel} del nivel {item.levelName.toLowerCase()}
-            {item.cycleName ? ` (${item.cycleName.toLowerCase()})` : ''}.
-            {' '}
-            {item.section.capacity
-              ? `Grupo con capacidad de ${item.section.capacity} estudiantes`
-              : 'Grupo sin capacidad definida'}
-            {item.assignment?.teacherName ? ` con ${item.assignment.teacherName} asignado` : ''}
-            {schoolYearName ? ` para el ano escolar ${schoolYearName}` : ''}.
-          </p>
-
-          <div className="mt-8">
-            <div className="flex items-center justify-between text-xs font-bold text-muted-foreground">
-              <span>Avance del programa</span>
-              <span>Sin datos</span>
-            </div>
-            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted" />
-          </div>
-
-          <div className="mt-8 grid gap-6 border-t border-border pt-7 sm:grid-cols-3">
-            <DetailMeta label="Proxima clase" value="Sin horario" />
-            <DetailMeta label="Seccion" value={item.section.name} />
-            <DetailMeta label="Docente" value={item.assignment?.teacherName ?? 'Sin docente'} />
-          </div>
-        </section>
-
-        <section className="rounded-2xl border border-border bg-card p-7 shadow-sm">
-          <h2 className="text-sm font-extrabold uppercase tracking-[0.15em] text-muted-foreground">
-            Actividad reciente
-          </h2>
-          <div className="mt-6 space-y-5">
-            <ActivityItem icon={<CheckSquare className="size-5" />} label={item.assignment ? 'Asignatura registrada' : 'Sin asignatura registrada'} />
-            <ActivityItem icon={<GraduationCap className="size-5" />} label={item.assignment?.teacherName ? 'Docente asignado' : 'Sin docente asignado'} />
-            <ActivityItem icon={<ClipboardList className="size-5" />} label={schoolYearName ? `Ano escolar ${schoolYearName}` : 'Sin ano escolar activo'} />
-            <ActivityItem icon={<Bell className="size-5" />} label="Sin alertas registradas" />
-          </div>
-        </section>
-      </div>
+      {activeTab === 'estudiantes' ? (
+        <EstudiantesTab sectionId={item.section.id} schoolYearId={schoolYearId} />
+      ) : activeTab === 'asistencia' ? (
+        <AsistenciaTab sectionSubjectId={item.assignment?.id ?? null} sectionId={item.section.id} schoolYearId={schoolYearId} />
+      ) : activeTab === 'calificaciones' ? (
+        <CalificacionesTab sectionSubjectId={item.assignment?.id ?? null} schoolYearId={schoolYearId} />
+      ) : activeTab === 'planificaciones' ? (
+        <PlanificacionesTab sectionSubjectId={item.assignment?.id ?? null} />
+      ) : (
+        <HorarioTab sectionId={item.section.id} />
+      )}
     </div>
   )
 }
@@ -779,14 +750,15 @@ function MetricBox({ value, label }: { value: string; label: string }) {
   )
 }
 
-function DetailTab({ active, icon, label }: { active?: boolean; icon: ReactNode; label: string }) {
+function DetailTab({ active, icon, label, onClick }: { active?: boolean; icon: ReactNode; label: string; onClick?: () => void }) {
   return (
     <button
       type="button"
       className={cn(
-        'flex h-12 shrink-0 items-center gap-2 border-b-4 border-transparent px-3 text-sm font-bold text-muted-foreground',
+        'flex h-12 shrink-0 items-center gap-2 border-b-4 border-transparent px-3 text-sm font-bold text-muted-foreground transition',
         active && 'border-primary text-primary',
       )}
+      onClick={onClick}
     >
       {icon}
       {label}
@@ -794,22 +766,265 @@ function DetailTab({ active, icon, label }: { active?: boolean; icon: ReactNode;
   )
 }
 
-function DetailMeta({ label, value }: { label: string; value: string }) {
+function EstudiantesTab({ sectionId, schoolYearId }: { sectionId: string; schoolYearId: string | null }) {
+  const [students, setStudents] = useState<Array<{ firstName: string; lastName: string; studentCode: string }>>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!schoolYearId) {
+      setLoading(false)
+      setError('No hay ano escolar activo.')
+      return
+    }
+    getStudentsBySection(sectionId, schoolYearId)
+      .then((data) => setStudents(data))
+      .catch((e) => setError(e instanceof Error ? e.message : 'Error al cargar estudiantes'))
+      .finally(() => setLoading(false))
+  }, [sectionId, schoolYearId])
+
+  if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando estudiantes...</div>
+  if (error) return <ErrorState message={error} />
+  if (!students.length) return <EmptyState title="Sin estudiantes" description="No hay estudiantes inscritos en esta seccion." />
+
   return (
-    <div>
-      <p className="text-xs font-bold uppercase text-muted-foreground">{label}</p>
-      <p className="mt-2 text-lg font-extrabold text-foreground">{value}</p>
+    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+      <table className="w-full text-left text-sm">
+        <thead className="border-b border-border bg-muted text-xs font-bold uppercase tracking-wide text-muted-foreground">
+          <tr>
+            <th className="px-5 py-3">Codigo</th>
+            <th className="px-5 py-3">Nombre</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-border">
+          {students.map((s) => (
+            <tr key={s.studentCode} className="text-foreground">
+              <td className="px-5 py-3 font-mono text-xs text-muted-foreground">{s.studentCode}</td>
+              <td className="px-5 py-3 font-medium">{s.firstName} {s.lastName}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
 
-function ActivityItem({ icon, label }: { icon: ReactNode; label: string }) {
+function AsistenciaTab({ sectionSubjectId, sectionId, schoolYearId }: { sectionSubjectId: string | null; sectionId: string; schoolYearId: string | null }) {
+  const [stats, setStats] = useState<{ present: number; absent: number; total: number } | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!schoolYearId) {
+      setLoading(false)
+      setError('No hay ano escolar activo.')
+      return
+    }
+    getStudentsBySection(sectionId, schoolYearId)
+      .then((data) => {
+        setStats({
+          present: data.filter((s) => s.status === 'present').length,
+          absent: data.filter((s) => s.status === 'absent').length,
+          total: data.length,
+        })
+      })
+      .catch((e) => setError(e instanceof Error ? e.message : 'Error al cargar asistencia'))
+      .finally(() => setLoading(false))
+  }, [sectionId, schoolYearId, sectionSubjectId])
+
+  if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando asistencia...</div>
+  if (error) return <ErrorState message={error} />
+  if (!stats || !stats.total) return <EmptyState title="Sin datos" description="No hay datos de asistencia para esta seccion." />
+
   return (
-    <div className="flex items-center gap-4">
-      <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-muted text-primary">
-        {icon}
-      </span>
-      <span className="text-lg font-medium text-foreground">{label}</span>
+    <div className="grid gap-4 sm:grid-cols-3">
+      <StatCard label="Presentes" value={stats.present} total={stats.total} color="text-success" />
+      <StatCard label="Ausentes" value={stats.absent} total={stats.total} color="text-destructive" />
+      <StatCard label="Asistencia" value={stats.present} total={stats.total} color="text-primary" percentage />
+    </div>
+  )
+}
+
+function StatCard({ label, value, total, color, percentage }: { label: string; value: number; total: number; color: string; percentage?: boolean }) {
+  const pct = total > 0 ? Math.round((value / total) * 100) : 0
+  return (
+    <div className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm">
+      <p className={cn('text-3xl font-extrabold', color)}>
+        {percentage ? `${pct}%` : value}
+      </p>
+      <p className="mt-1 text-xs font-bold uppercase text-muted-foreground">{label}</p>
+    </div>
+  )
+}
+
+function CalificacionesTab({ sectionSubjectId, schoolYearId }: { sectionSubjectId: string | null; schoolYearId: string | null }) {
+  const [periods, setPeriods] = useState<Array<{ id: string; name: string }>>([])
+  const [selectedPeriod, setSelectedPeriod] = useState<string>('')
+  const [records, setRecords] = useState<Array<{ firstName: string; lastName: string; studentCode: string; score: number }>>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!schoolYearId || !sectionSubjectId) {
+      setLoading(false)
+      setError(sectionSubjectId ? 'No hay ano escolar activo.' : 'El curso no tiene asignatura asignada.')
+      return
+    }
+    getAcademicPeriods()
+      .then((data) => {
+        setPeriods(data)
+        if (data.length > 0) setSelectedPeriod(data[0].id)
+      })
+      .catch((e) => setError(e instanceof Error ? e.message : 'Error al cargar periodos'))
+      .finally(() => setLoading(false))
+  }, [schoolYearId, sectionSubjectId])
+
+  useEffect(() => {
+    if (!selectedPeriod || !sectionSubjectId) return
+    setLoading(true)
+    getStudentsForGrading(sectionSubjectId, selectedPeriod)
+      .then((data) => {
+        const scores = data.students.map((s) => {
+          const studentRecords = data.gradeRecords.filter((r) => r.enrollmentId === s.enrollmentId)
+          const avg = studentRecords.length > 0
+            ? Math.round(studentRecords.reduce((sum, r) => sum + r.score, 0) / studentRecords.length)
+            : 0
+          return { firstName: s.firstName, lastName: s.lastName, studentCode: s.studentCode, score: avg }
+        })
+        setRecords(scores)
+      })
+      .catch((e) => setError(e instanceof Error ? e.message : 'Error al cargar calificaciones'))
+      .finally(() => setLoading(false))
+  }, [selectedPeriod, sectionSubjectId])
+
+  if (!sectionSubjectId) return <EmptyState title="Sin asignatura" description="Este curso no tiene una asignatura asignada." />
+  if (error && !periods.length) return <ErrorState message={error} />
+
+  return (
+    <div className="space-y-4">
+      {periods.length > 0 ? (
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-bold uppercase text-muted-foreground">Periodo:</span>
+          <select
+            className="rounded-lg border border-border bg-card px-3 py-1.5 text-sm font-medium text-foreground outline-none"
+            value={selectedPeriod}
+            onChange={(e) => setSelectedPeriod(e.target.value)}
+          >
+            {periods.map((p) => (
+              <option key={p.id} value={p.id}>{p.name}</option>
+            ))}
+          </select>
+        </div>
+      ) : null}
+      {loading ? (
+        <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando calificaciones...</div>
+      ) : records.length === 0 ? (
+        <EmptyState title="Sin calificaciones" description="No hay calificaciones registradas para este periodo." />
+      ) : (
+        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+          <table className="w-full text-left text-sm">
+            <thead className="border-b border-border bg-muted text-xs font-bold uppercase tracking-wide text-muted-foreground">
+              <tr>
+                <th className="px-5 py-3">Codigo</th>
+                <th className="px-5 py-3">Nombre</th>
+                <th className="px-5 py-3 text-right">Promedio</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {records.map((r) => (
+                <tr key={r.studentCode} className="text-foreground">
+                  <td className="px-5 py-3 font-mono text-xs text-muted-foreground">{r.studentCode}</td>
+                  <td className="px-5 py-3 font-medium">{r.firstName} {r.lastName}</td>
+                  <td className={cn('px-5 py-3 text-right font-bold', r.score >= 70 ? 'text-success' : 'text-destructive')}>{r.score}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function PlanificacionesTab({ sectionSubjectId }: { sectionSubjectId: string | null }) {
+  const [entries, setEntries] = useState<Array<{ id: string; title: string; subjectName: string; plannedDate: string | null }>>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!sectionSubjectId) {
+      setLoading(false)
+      setError('El curso no tiene asignatura asignada.')
+      return
+    }
+    getPlanningEntries({ sectionSubjectId })
+      .then((data) => setEntries(data))
+      .catch((e) => setError(e instanceof Error ? e.message : 'Error al cargar planificaciones'))
+      .finally(() => setLoading(false))
+  }, [sectionSubjectId])
+
+  if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando planificaciones...</div>
+  if (!sectionSubjectId) return <EmptyState title="Sin asignatura" description="Este curso no tiene una asignatura asignada." />
+  if (error) return <ErrorState message={error} />
+  if (!entries.length) return <EmptyState title="Sin planificaciones" description="No hay planificaciones registradas para este curso." />
+
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {entries.map((e) => (
+        <div key={e.id} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+          <h3 className="font-extrabold text-foreground">{e.title}</h3>
+          <p className="mt-1 text-xs text-muted-foreground">{e.subjectName}</p>
+          {e.plannedDate ? (
+            <p className="mt-2 text-xs font-bold text-muted-foreground">{new Date(e.plannedDate).toLocaleDateString('es-DO')}</p>
+          ) : null}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function HorarioTab({ sectionId }: { sectionId: string }) {
+  const [schedule, setSchedule] = useState<Array<{ dayOfWeek: number; subjectName: string; startTime: string; endTime: string; room: string | null }>>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  const dayLabels = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
+
+  useEffect(() => {
+    getScheduleEntries({ sectionId })
+      .then((data) => setSchedule(data))
+      .catch((e) => setError(e instanceof Error ? e.message : 'Error al cargar horario'))
+      .finally(() => setLoading(false))
+  }, [sectionId])
+
+  if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando horario...</div>
+  if (error) return <ErrorState message={error} />
+  if (!schedule.length) return <EmptyState title="Sin horario" description="No hay horario registrado para esta seccion." />
+
+  const sorted = [...schedule].sort((a, b) => a.dayOfWeek - b.dayOfWeek || a.startTime.localeCompare(b.startTime))
+
+  return (
+    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+      <table className="w-full text-left text-sm">
+        <thead className="border-b border-border bg-muted text-xs font-bold uppercase tracking-wide text-muted-foreground">
+          <tr>
+            <th className="px-5 py-3">Dia</th>
+            <th className="px-5 py-3">Hora</th>
+            <th className="px-5 py-3">Asignatura</th>
+            <th className="px-5 py-3">Aula</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-border">
+          {sorted.map((e, i) => (
+            <tr key={i} className="text-foreground">
+              <td className="px-5 py-3 font-bold">{dayLabels[e.dayOfWeek - 1] ?? `Dia ${e.dayOfWeek}`}</td>
+              <td className="px-5 py-3 text-muted-foreground">{e.startTime} - {e.endTime}</td>
+              <td className="px-5 py-3">{e.subjectName}</td>
+              <td className="px-5 py-3 text-muted-foreground">{e.room ?? '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
