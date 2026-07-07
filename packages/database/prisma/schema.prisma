@@ -592,6 +592,8 @@ model GradesRecord {
   recorder            AppUser?              @relation(fields: [recordedBy], references: [id])
   pedagogicalRecovery PedagogicalRecovery?
 
+  @@index([schoolId, sectionSubjectId, academicPeriodId])
+  @@index([enrollmentId, academicPeriodId])
   @@map("grades_records")
 }
 
@@ -611,6 +613,7 @@ model PedagogicalRecovery {
   school      School       @relation(fields: [schoolId], references: [id])
   recorder    AppUser?     @relation(fields: [recordedBy], references: [id])
 
+  @@index([schoolId])
   @@map("pedagogical_recoveries")
 }
 
@@ -635,6 +638,7 @@ model Report {
   student        Student?        @relation(fields: [studentId], references: [id])
   generator      AppUser?        @relation(fields: [generatedBy], references: [id])
 
+  @@index([schoolId, studentId])
   @@map("reports")
 }
 
@@ -710,6 +714,7 @@ model PlanningEntry {
   academicPeriod       AcademicPeriod      @relation(fields: [academicPeriodId], references: [id])
   fundamentalCompetence DrCompetency?      @relation(fields: [fundamentalCompetenceId], references: [id])
 
+  @@index([schoolId, sectionSubjectId, academicPeriodId])
   @@map("planning_entries")
 }
 

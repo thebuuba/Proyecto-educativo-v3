@@ -111,6 +111,7 @@ export type Database = {
           provider: string
           school_id: string
           status: Database["public"]["Enums"]["record_status"]
+          token_version: number
           updated_at: string
         }
         Insert: {
@@ -124,8 +125,8 @@ export type Database = {
           phone?: string | null
           provider?: string
           school_id?: string
-          token_version?: number
           status?: Database["public"]["Enums"]["record_status"]
+          token_version?: number
           updated_at?: string
         }
         Update: {
@@ -139,8 +140,8 @@ export type Database = {
           phone?: string | null
           provider?: string
           school_id?: string
-          token_version?: number
           status?: Database["public"]["Enums"]["record_status"]
+          token_version?: number
           updated_at?: string
         }
         Relationships: [
@@ -372,36 +373,6 @@ export type Database = {
           },
         ]
       }
-      dr_academic_levels: {
-        Row: {
-          code: string
-          created_at: string
-          id: string
-          name: string
-          sequence: number
-          status: Database["public"]["Enums"]["record_status"]
-          updated_at: string
-        }
-        Insert: {
-          code: string
-          created_at?: string
-          id?: string
-          name: string
-          sequence: number
-          status?: Database["public"]["Enums"]["record_status"]
-          updated_at?: string
-        }
-        Update: {
-          code?: string
-          created_at?: string
-          id?: string
-          name?: string
-          sequence?: number
-          status?: Database["public"]["Enums"]["record_status"]
-          updated_at?: string
-        }
-        Relationships: []
-      }
       dr_academic_cycles: {
         Row: {
           code: string
@@ -448,6 +419,36 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      dr_academic_levels: {
+        Row: {
+          code: string
+          created_at: string
+          id: string
+          name: string
+          sequence: number
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          id?: string
+          name: string
+          sequence: number
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          id?: string
+          name?: string
+          sequence?: number
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: []
       }
       dr_competencies: {
         Row: {
@@ -675,10 +676,31 @@ export type Database = {
         }
         Relationships: [
           {
+            foreignKeyName: "enrollments_academic_cycle_id_fkey"
+            columns: ["academic_cycle_id"]
+            isOneToOne: false
+            referencedRelation: "dr_academic_cycles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "enrollments_academic_level_id_fkey"
+            columns: ["academic_level_id"]
+            isOneToOne: false
+            referencedRelation: "dr_academic_levels"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "enrollments_grade_id_fkey"
             columns: ["grade_id"]
             isOneToOne: false
             referencedRelation: "grades"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "enrollments_modality_id_fkey"
+            columns: ["modality_id"]
+            isOneToOne: false
+            referencedRelation: "dr_modalities"
             referencedColumns: ["id"]
           },
           {
@@ -700,6 +722,13 @@ export type Database = {
             columns: ["student_id"]
             isOneToOne: false
             referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "enrollments_subsystem_id_fkey"
+            columns: ["subsystem_id"]
+            isOneToOne: false
+            referencedRelation: "dr_subsystems"
             referencedColumns: ["id"]
           },
           {
@@ -757,6 +786,27 @@ export type Database = {
             columns: ["school_id"]
             isOneToOne: false
             referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "grades_academic_cycle_id_fkey"
+            columns: ["academic_cycle_id"]
+            isOneToOne: false
+            referencedRelation: "dr_academic_cycles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "grades_academic_level_id_fkey"
+            columns: ["academic_level_id"]
+            isOneToOne: false
+            referencedRelation: "dr_academic_levels"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "grades_default_modality_id_fkey"
+            columns: ["default_modality_id"]
+            isOneToOne: false
+            referencedRelation: "dr_modalities"
             referencedColumns: ["id"]
           },
         ]
@@ -851,63 +901,6 @@ export type Database = {
           },
         ]
       }
-      guardians: {
-        Row: {
-          address: string | null
-          created_at: string
-          document_id: string | null
-          email: string | null
-          full_name: string
-          id: string
-          phone: string | null
-          school_id: string
-          status: Database["public"]["Enums"]["record_status"]
-          updated_at: string
-          user_id: string | null
-        }
-        Insert: {
-          address?: string | null
-          created_at?: string
-          document_id?: string | null
-          email?: string | null
-          full_name: string
-          id?: string
-          phone?: string | null
-          school_id?: string
-          status?: Database["public"]["Enums"]["record_status"]
-          updated_at?: string
-          user_id?: string | null
-        }
-        Update: {
-          address?: string | null
-          created_at?: string
-          document_id?: string | null
-          email?: string | null
-          full_name?: string
-          id?: string
-          phone?: string | null
-          school_id?: string
-          status?: Database["public"]["Enums"]["record_status"]
-          updated_at?: string
-          user_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "fk_guardians_school"
-            columns: ["school_id"]
-            isOneToOne: false
-            referencedRelation: "schools"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "guardians_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: true
-            referencedRelation: "app_users"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       guardian_notifications: {
         Row: {
           channel: string
@@ -979,6 +972,63 @@ export type Database = {
           },
         ]
       }
+      guardians: {
+        Row: {
+          address: string | null
+          created_at: string
+          document_id: string | null
+          email: string | null
+          full_name: string
+          id: string
+          phone: string | null
+          school_id: string
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          document_id?: string | null
+          email?: string | null
+          full_name: string
+          id?: string
+          phone?: string | null
+          school_id?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          document_id?: string | null
+          email?: string | null
+          full_name?: string
+          id?: string
+          phone?: string | null
+          school_id?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fk_guardians_school"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "guardians_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "app_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       pedagogical_recoveries: {
         Row: {
           created_at: string
@@ -989,8 +1039,7 @@ export type Database = {
           recovery_date: string
           recovery_score: number
           school_id: string
-          token_version: number
-          status: Database["public"]["Enums"]["record_status"]
+          status: Database["public"]["Enums"]["grade_record_status"]
           updated_at: string
         }
         Insert: {
@@ -1002,8 +1051,7 @@ export type Database = {
           recovery_date?: string
           recovery_score: number
           school_id?: string
-          token_version?: number
-          status?: Database["public"]["Enums"]["record_status"]
+          status?: Database["public"]["Enums"]["grade_record_status"]
           updated_at?: string
         }
         Update: {
@@ -1081,19 +1129,19 @@ export type Database = {
       }
       planning_entries: {
         Row: {
-	          academic_period_id: string
-	          achievement_indicator: string
-	          activities: Json
-	          content_attitudinal: string
-	          content_conceptual: string
-	          content_procedural: string
-	          created_at: string
-	          duration_minutes: number | null
-	          evaluation_instruments: string
-	          evaluation_method: string
-	          evidence: string
-	          fundamental_competence_id: string | null
-	          id: string
+          academic_period_id: string
+          achievement_indicator: string
+          activities: Json
+          content_attitudinal: string
+          content_conceptual: string
+          content_procedural: string
+          created_at: string
+          duration_minutes: number | null
+          evaluation_instruments: string
+          evaluation_method: string
+          evidence: string
+          fundamental_competence_id: string | null
+          id: string
           planned_date: string | null
           resources: string
           school_id: string
@@ -1106,19 +1154,19 @@ export type Database = {
           updated_at: string
         }
         Insert: {
-	          academic_period_id: string
-	          achievement_indicator?: string
-	          activities?: Json
-	          content_attitudinal?: string
-	          content_conceptual?: string
-	          content_procedural?: string
-	          created_at?: string
-	          duration_minutes?: number | null
-	          evaluation_instruments?: string
-	          evaluation_method?: string
-	          evidence?: string
-	          fundamental_competence_id?: string | null
-	          id?: string
+          academic_period_id: string
+          achievement_indicator?: string
+          activities?: Json
+          content_attitudinal?: string
+          content_conceptual?: string
+          content_procedural?: string
+          created_at?: string
+          duration_minutes?: number | null
+          evaluation_instruments?: string
+          evaluation_method?: string
+          evidence?: string
+          fundamental_competence_id?: string | null
+          id?: string
           planned_date?: string | null
           resources?: string
           school_id?: string
@@ -1131,19 +1179,19 @@ export type Database = {
           updated_at?: string
         }
         Update: {
-	          academic_period_id?: string
-	          achievement_indicator?: string
-	          activities?: Json
-	          content_attitudinal?: string
-	          content_conceptual?: string
-	          content_procedural?: string
-	          created_at?: string
-	          duration_minutes?: number | null
-	          evaluation_instruments?: string
-	          evaluation_method?: string
-	          evidence?: string
-	          fundamental_competence_id?: string | null
-	          id?: string
+          academic_period_id?: string
+          achievement_indicator?: string
+          activities?: Json
+          content_attitudinal?: string
+          content_conceptual?: string
+          content_procedural?: string
+          created_at?: string
+          duration_minutes?: number | null
+          evaluation_instruments?: string
+          evaluation_method?: string
+          evidence?: string
+          fundamental_competence_id?: string | null
+          id?: string
           planned_date?: string | null
           resources?: string
           school_id?: string
@@ -1163,15 +1211,15 @@ export type Database = {
             referencedRelation: "academic_periods"
             referencedColumns: ["id"]
           },
-	          {
-	            foreignKeyName: "planning_entries_fundamental_competence_id_fkey"
-	            columns: ["fundamental_competence_id"]
-	            isOneToOne: false
-	            referencedRelation: "dr_competencies"
-	            referencedColumns: ["id"]
-	          },
-	          {
-	            foreignKeyName: "planning_entries_school_id_fkey"
+          {
+            foreignKeyName: "planning_entries_fundamental_competence_id_fkey"
+            columns: ["fundamental_competence_id"]
+            isOneToOne: false
+            referencedRelation: "dr_competencies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "planning_entries_school_id_fkey"
             columns: ["school_id"]
             isOneToOne: false
             referencedRelation: "schools"
@@ -1439,9 +1487,9 @@ export type Database = {
           period_count: number
           period_scheme: string
           school_id: string
-          student_weeks: number | null
           start_date: string
           status: Database["public"]["Enums"]["record_status"]
+          student_weeks: number | null
           teacher_weeks: number | null
           updated_at: string
         }
@@ -1456,9 +1504,9 @@ export type Database = {
           period_count?: number
           period_scheme?: string
           school_id?: string
-          student_weeks?: number | null
           start_date: string
           status?: Database["public"]["Enums"]["record_status"]
+          student_weeks?: number | null
           teacher_weeks?: number | null
           updated_at?: string
         }
@@ -1473,9 +1521,9 @@ export type Database = {
           period_count?: number
           period_scheme?: string
           school_id?: string
-          student_weeks?: number | null
           start_date?: string
           status?: Database["public"]["Enums"]["record_status"]
+          student_weeks?: number | null
           teacher_weeks?: number | null
           updated_at?: string
         }
@@ -1493,46 +1541,64 @@ export type Database = {
         Row: {
           center_code: string | null
           created_at: string
+          district: string | null
           enabled_subsystems: string[]
           id: string
+          lat: number | null
+          lng: number | null
           logo_url: string | null
+          modalidades: string[] | null
           name: string
+          niveles: string[] | null
           official_exports_enabled: boolean
           primary_modality: string
           school_shift: string
           sector: string
           slug: string
           status: Database["public"]["Enums"]["record_status"]
+          tandas: string[] | null
           updated_at: string
         }
         Insert: {
           center_code?: string | null
           created_at?: string
+          district?: string | null
           enabled_subsystems?: string[]
           id?: string
+          lat?: number | null
+          lng?: number | null
           logo_url?: string | null
+          modalidades?: string[] | null
           name: string
+          niveles?: string[] | null
           official_exports_enabled?: boolean
           primary_modality?: string
           school_shift?: string
           sector?: string
           slug: string
           status?: Database["public"]["Enums"]["record_status"]
+          tandas?: string[] | null
           updated_at?: string
         }
         Update: {
           center_code?: string | null
           created_at?: string
+          district?: string | null
           enabled_subsystems?: string[]
           id?: string
+          lat?: number | null
+          lng?: number | null
           logo_url?: string | null
+          modalidades?: string[] | null
           name?: string
+          niveles?: string[] | null
           official_exports_enabled?: boolean
           primary_modality?: string
           school_shift?: string
           sector?: string
           slug?: string
           status?: Database["public"]["Enums"]["record_status"]
+          tandas?: string[] | null
           updated_at?: string
         }
         Relationships: []
@@ -2040,12 +2106,93 @@ export type Database = {
           },
         ]
       }
+      student_grade_details: {
+        Row: {
+          academic_period_id: string | null
+          assessment_name: string | null
+          created_at: string | null
+          effective_percent: number | null
+          effective_score: number | null
+          enrollment_id: string | null
+          grade_id: string | null
+          grade_record_id: string | null
+          grade_status:
+            | Database["public"]["Enums"]["grade_record_status"]
+            | null
+          max_score: number | null
+          original_percent: number | null
+          original_score: number | null
+          recovery_score: number | null
+          recovery_status:
+            | Database["public"]["Enums"]["grade_record_status"]
+            | null
+          school_id: string | null
+          school_year_id: string | null
+          section_id: string | null
+          section_subject_id: string | null
+          student_id: string | null
+          subject_id: string | null
+          updated_at: string | null
+          weight: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "enrollments_grade_id_fkey"
+            columns: ["grade_id"]
+            isOneToOne: false
+            referencedRelation: "grades"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "enrollments_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "fk_grades_records_school"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "grades_records_enrollment_fk"
+            columns: ["enrollment_id", "school_year_id", "section_id"]
+            isOneToOne: false
+            referencedRelation: "enrollments"
+            referencedColumns: ["id", "school_year_id", "section_id"]
+          },
+          {
+            foreignKeyName: "grades_records_period_fk"
+            columns: ["academic_period_id", "school_year_id"]
+            isOneToOne: false
+            referencedRelation: "academic_periods"
+            referencedColumns: ["id", "school_year_id"]
+          },
+          {
+            foreignKeyName: "grades_records_section_subject_fk"
+            columns: ["section_subject_id", "school_year_id", "section_id"]
+            isOneToOne: false
+            referencedRelation: "section_subjects"
+            referencedColumns: ["id", "school_year_id", "section_id"]
+          },
+          {
+            foreignKeyName: "section_subjects_subject_id_fkey"
+            columns: ["subject_id"]
+            isOneToOne: false
+            referencedRelation: "subjects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       student_yearly_averages: {
         Row: {
-	          all_periods_passing: boolean | null
-	          grade_id: string | null
-	          min_passing_percent: number | null
-	          period_count: number | null
+          all_periods_passing: boolean | null
+          grade_id: string | null
+          min_passing_percent: number | null
+          period_count: number | null
           school_year_id: string | null
           section_id: string | null
           student_id: string | null
@@ -2076,76 +2223,19 @@ export type Database = {
           },
         ]
       }
-      student_grade_details: {
-        Row: {
-	          academic_period_id: string | null
-	          assessment_name: string | null
-	          created_at: string | null
-	          effective_percent: number | null
-	          effective_score: number | null
-	          enrollment_id: string | null
-	          grade_id: string | null
-	          grade_record_id: string | null
-          grade_status:
-            | Database["public"]["Enums"]["grade_record_status"]
-            | null
-          max_score: number | null
-          original_percent: number | null
-          original_score: number | null
-          recovery_score: number | null
-	          recovery_status:
-	            | Database["public"]["Enums"]["grade_record_status"]
-	            | null
-	          school_id: string | null
-	          school_year_id: string | null
-          section_id: string | null
-          section_subject_id: string | null
-          student_id: string | null
-          subject_id: string | null
-          updated_at: string | null
-          weight: number | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "enrollments_grade_id_fkey"
-            columns: ["grade_id"]
-            isOneToOne: false
-            referencedRelation: "grades"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "enrollments_student_id_fkey"
-            columns: ["student_id"]
-            isOneToOne: false
-            referencedRelation: "students"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "grades_records_period_fk"
-            columns: ["academic_period_id", "school_year_id"]
-            isOneToOne: false
-            referencedRelation: "academic_periods"
-            referencedColumns: ["id", "school_year_id"]
-          },
-          {
-            foreignKeyName: "grades_records_section_subject_fk"
-            columns: ["section_subject_id", "school_year_id", "section_id"]
-            isOneToOne: false
-            referencedRelation: "section_subjects"
-            referencedColumns: ["id", "school_year_id", "section_id"]
-          },
-          {
-            foreignKeyName: "section_subjects_subject_id_fkey"
-            columns: ["subject_id"]
-            isOneToOne: false
-            referencedRelation: "subjects"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
     }
     Functions: {
-      [_ in never]: never
+      register_school: {
+        Args: {
+          email: string
+          full_name: string
+          school_name: string
+          slug: string
+        }
+        Returns: Json
+      }
+      show_limit: { Args: never; Returns: number }
+      show_trgm: { Args: { "": string }; Returns: string[] }
     }
     Enums: {
       attendance_status: "present" | "absent" | "late" | "excused"
