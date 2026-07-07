@@ -19,7 +19,7 @@ function status(value: string) {
   return value.toLowerCase()
 }
 
-/** Devuelve el año escolar activo o crea uno por defecto */
+/** Devuelve el año escolar activo o el más reciente; si no existe ninguno, crea uno por defecto */
 async function resolveSchoolYear(schoolId: string) {
   let sy = await prisma.schoolYear.findFirst({
     where: { schoolId, isCurrent: true },
@@ -28,6 +28,12 @@ async function resolveSchoolYear(schoolId: string) {
   if (sy) return sy
   sy = await prisma.schoolYear.findFirst({
     where: { schoolId, status: 'ACTIVE' },
+    select: { id: true, name: true },
+    orderBy: { createdAt: 'desc' },
+  })
+  if (sy) return sy
+  sy = await prisma.schoolYear.findFirst({
+    where: { schoolId },
     select: { id: true, name: true },
     orderBy: { createdAt: 'desc' },
   })
