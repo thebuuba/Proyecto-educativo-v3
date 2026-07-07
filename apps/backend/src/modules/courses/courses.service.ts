@@ -155,8 +155,14 @@ export class CoursesService {
 
   /** Crea un nuevo grado */
   createGrade(schoolId: string, dto: CreateGradeDto) {
-    return prisma.grade.create({
-      data: {
+    return prisma.grade.upsert({
+      where: {
+        schoolId_name: {
+          schoolId,
+          name: dto.name,
+        },
+      },
+      create: {
         schoolId,
         name: dto.name,
         level: dto.level ?? null,
@@ -164,6 +170,14 @@ export class CoursesService {
         academicLevelId: dto.academicLevelId ?? null,
         academicCycleId: dto.academicCycleId ?? null,
         defaultModalityId: dto.defaultModalityId ?? null,
+      },
+      update: {
+        ...(dto.level !== undefined && { level: dto.level }),
+        ...(dto.sequence !== undefined && { sequence: dto.sequence }),
+        ...(dto.academicLevelId !== undefined && { academicLevelId: dto.academicLevelId }),
+        ...(dto.academicCycleId !== undefined && { academicCycleId: dto.academicCycleId }),
+        ...(dto.defaultModalityId !== undefined && { defaultModalityId: dto.defaultModalityId }),
+        status: RecordStatus.ACTIVE,
       },
     })
   }
@@ -211,12 +225,22 @@ export class CoursesService {
     const grade = await prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
 
-    return prisma.section.create({
-      data: {
+    return prisma.section.upsert({
+      where: {
+        gradeId_name: {
+          gradeId: dto.gradeId,
+          name: dto.name,
+        },
+      },
+      create: {
         schoolId,
         gradeId: dto.gradeId,
         name: dto.name,
         capacity: dto.capacity ?? null,
+      },
+      update: {
+        ...(dto.capacity !== undefined && { capacity: dto.capacity }),
+        status: RecordStatus.ACTIVE,
       },
     })
   }
@@ -259,13 +283,25 @@ export class CoursesService {
 
   /** Crea una nueva materia */
   createSubject(schoolId: string, dto: CreateSubjectDto) {
-    return prisma.subject.create({
-      data: {
+    return prisma.subject.upsert({
+      where: {
+        schoolId_code: {
+          schoolId,
+          code: dto.code,
+        },
+      },
+      create: {
         schoolId,
         name: dto.name,
         code: dto.code,
         description: dto.description ?? null,
         credits: dto.credits ?? null,
+      },
+      update: {
+        name: dto.name,
+        ...(dto.description !== undefined && { description: dto.description }),
+        ...(dto.credits !== undefined && { credits: dto.credits }),
+        status: RecordStatus.ACTIVE,
       },
     })
   }
@@ -290,14 +326,27 @@ export class CoursesService {
     if (!subject) throw new NotFoundException('Subject not found')
     if (dto.teacherId && !teacher) throw new NotFoundException('Teacher not found')
 
-    return prisma.sectionSubject.create({
-      data: {
+    return prisma.sectionSubject.upsert({
+      where: {
+        schoolYearId_sectionId_subjectId: {
+          schoolYearId: resolvedSchoolYear.id,
+          sectionId: dto.sectionId,
+          subjectId: dto.subjectId,
+        },
+      },
+      create: {
         sectionId: dto.sectionId,
         subjectId: dto.subjectId,
         teacherId: dto.teacherId ?? null,
         gradeId: dto.gradeId,
         schoolYearId: resolvedSchoolYear.id,
         schoolId,
+      },
+      update: {
+        teacherId: dto.teacherId ?? null,
+        gradeId: dto.gradeId,
+        schoolId,
+        status: RecordStatus.ACTIVE,
       },
     })
   }

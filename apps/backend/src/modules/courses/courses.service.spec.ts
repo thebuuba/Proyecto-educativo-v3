@@ -3,9 +3,9 @@ import { CoursesService } from './courses.service'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
-    grade: { findMany: vi.fn() },
-    section: { findMany: vi.fn() },
-    sectionSubject: { findMany: vi.fn() },
+    grade: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
+    section: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
+    sectionSubject: { findMany: vi.fn(), upsert: vi.fn() },
     subject: { findMany: vi.fn() },
     drAcademicLevel: { findMany: vi.fn() },
     drAcademicCycle: { findMany: vi.fn() },
@@ -17,6 +17,10 @@ const mocks = vi.hoisted(() => ({
 
 vi.mock('@aula/database', () => ({
   prisma: mocks.prisma,
+  RecordStatus: {
+    ACTIVE: 'ACTIVE',
+    INACTIVE: 'INACTIVE',
+  },
 }))
 
 describe('CoursesService.getCourseData', () => {
@@ -90,5 +94,45 @@ describe('CoursesService.getCourseData', () => {
         },
       ],
     })
+  })
+})
+
+describe('CoursesService write idempotency', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
+
+  it('upserts grades by school and name instead of creating duplicates', async () => {
+    mocks.prisma.grade.upsert.mockResolvedValue({ id: 'grade-1', name: '1.º', status: 'ACTIVE' })
+
+    const result = await new CoursesService().createGrade('school-1', {
+      name: '1.º',
+      level: 'Secundario',
+      academicLevelId: 'level-1',
+      academicCycleId: 'cycle-1',
+      sequence: 1,
+    })
+
+    expect(result).toEqual({ id: 'grade-1', name: '1.º', status: 'ACTIVE' })
+    expect(mocks.prisma.grade.upsert).toHaveBeenCalledWith(expect.objectContaining({
+      where: { schoolId_name: { schoolId: 'school-1', name: '1.º' } },
+      update: expect.objectContaining({ status: 'ACTIVE' }),
+    }))
+  })
+
+  it('upserts sections by grade and name after validating the grade', async () => {
+    mocks.prisma.grade.findFirst.mockResolvedValue({ id: 'grade-1', schoolId: 'school-1' })
+    mocks.prisma.section.upsert.mockResolvedValue({ id: 'section-1', name: 'A', status: 'ACTIVE' })
+
+    const result = await new CoursesService().createSection('school-1', {
+      gradeId: 'grade-1',
+      name: 'A',
+    })
+
+    expect(result).toEqual({ id: 'section-1', name: 'A', status: 'ACTIVE' })
+    expect(mocks.prisma.section.upsert).toHaveBeenCalledWith(expect.objectContaining({
+      where: { gradeId_name: { gradeId: 'grade-1', name: 'A' } },
+      update: expect.objectContaining({ status: 'ACTIVE' }),
+    }))
   })
 })
