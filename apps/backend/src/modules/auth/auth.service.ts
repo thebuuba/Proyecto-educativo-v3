@@ -182,6 +182,14 @@ async function getSupabaseUserFromToken(token: string): Promise<SupabaseAuthUser
   return body
 }
 
+async function findAppUserForAuthUser(authUser: SupabaseAuthUser) {
+  const byAuthId = await prisma.appUser.findUnique({ where: { authUserId: authUser.id } })
+  if (byAuthId) return byAuthId
+
+  const email = authUser.email?.trim().toLowerCase()
+  return email ? prisma.appUser.findUnique({ where: { email } }) : null
+}
+
 function toDate(value: string, fieldName: string) {
   const date = new Date(`${value}T00:00:00.000Z`)
   if (Number.isNaN(date.getTime())) {
@@ -313,9 +321,7 @@ export class AuthService {
     assertAuthEnvironment()
 
     const authUser = await signInSupabaseUser(dto)
-    const user = await prisma.appUser.findUnique({
-      where: { authUserId: authUser.id },
-    })
+    const user = await findAppUserForAuthUser(authUser)
     if (!user) {
       throw new UnauthorizedException(
         'Tu cuenta existe en Supabase Auth, pero no tiene un perfil en Aula Base.',
@@ -357,9 +363,7 @@ export class AuthService {
     assertAuthEnvironment()
 
     const authUser = await getSupabaseUserFromToken(supabaseAccessToken)
-    const user = await prisma.appUser.findUnique({
-      where: { authUserId: authUser.id },
-    })
+    const user = await findAppUserForAuthUser(authUser)
 
     if (!user) {
       throw new UnauthorizedException('PROFILE_REQUIRED')
@@ -385,9 +389,7 @@ export class AuthService {
     const email = (dto.email || authUser.email || '').trim().toLowerCase()
     if (!email) throw new BadRequestException('El correo es obligatorio.')
 
-    const existing = await prisma.appUser.findUnique({
-      where: { authUserId: authUser.id },
-    })
+    const existing = await findAppUserForAuthUser(authUser)
     if (existing) return this.createSessionFromSupabaseToken(supabaseAccessToken)
 
     const { startDate, endDate } = inferSchoolYearDates(
