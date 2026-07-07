@@ -7,6 +7,12 @@
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma, RecordStatus } from '@aula/database'
+import { CreateGradeDto } from './dto/create-grade.dto'
+import { UpdateGradeDto } from './dto/update-grade.dto'
+import { CreateSectionDto } from './dto/create-section.dto'
+import { UpdateSectionDto } from './dto/update-section.dto'
+import { CreateSubjectDto } from './dto/create-subject.dto'
+import { AssignSubjectDto } from './dto/assign-subject.dto'
 
 const cache = new Map<string, { data: unknown; expiry: number }>()
 const CACHE_TTL = 60_000
@@ -20,12 +26,6 @@ function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
     return data
   })
 }
-import { CreateGradeDto } from './dto/create-grade.dto'
-import { UpdateGradeDto } from './dto/update-grade.dto'
-import { CreateSectionDto } from './dto/create-section.dto'
-import { UpdateSectionDto } from './dto/update-section.dto'
-import { CreateSubjectDto } from './dto/create-subject.dto'
-import { AssignSubjectDto } from './dto/assign-subject.dto'
 
 /** Convierte el valor de estado a minúsculas */
 function status(value: string) {
@@ -34,21 +34,10 @@ function status(value: string) {
 
 /** Devuelve el año escolar activo o el más reciente; si no existe ninguno, crea uno por defecto */
 async function resolveSchoolYear(schoolId: string) {
-  let sy = await prisma.schoolYear.findFirst({
-    where: { schoolId, isCurrent: true },
-    select: { id: true, name: true },
-  })
-  if (sy) return sy
-  sy = await prisma.schoolYear.findFirst({
-    where: { schoolId, status: 'ACTIVE' },
-    select: { id: true, name: true },
-    orderBy: { createdAt: 'desc' },
-  })
-  if (sy) return sy
-  sy = await prisma.schoolYear.findFirst({
+  const sy = await prisma.schoolYear.findFirst({
     where: { schoolId },
+    orderBy: [{ isCurrent: 'desc' }, { status: 'asc' }, { createdAt: 'desc' }],
     select: { id: true, name: true },
-    orderBy: { createdAt: 'desc' },
   })
   if (sy) return sy
   const year = new Date().getFullYear()
@@ -147,27 +136,37 @@ export class CoursesService {
 
   /** Obtiene los niveles académicos del sistema */
   getAcademicLevels() {
-    return prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } })
+    return withCache('academicLevels', () =>
+      prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } })
+    )
   }
 
   /** Obtiene los ciclos académicos del sistema */
   getCycles() {
-    return prisma.drAcademicCycle.findMany({ orderBy: { name: 'asc' } })
+    return withCache('cycles', () =>
+      prisma.drAcademicCycle.findMany({ orderBy: { name: 'asc' } })
+    )
   }
 
   /** Obtiene las modalidades del sistema */
   getModalities() {
-    return prisma.drModality.findMany({ orderBy: { name: 'asc' } })
+    return withCache('modalities', () =>
+      prisma.drModality.findMany({ orderBy: { name: 'asc' } })
+    )
   }
 
   /** Obtiene los profesores activos del colegio */
   getTeachers(schoolId: string) {
-    return prisma.teacher.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { firstName: 'asc' } })
+    return withCache(`teachers:${schoolId}`, () =>
+      prisma.teacher.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { firstName: 'asc' } })
+    )
   }
 
   /** Obtiene todos los grados del colegio */
   findAllGrades(schoolId: string) {
-    return prisma.grade.findMany({ where: { schoolId }, orderBy: { sequence: 'asc' } })
+    return withCache(`grades:${schoolId}`, () =>
+      prisma.grade.findMany({ where: { schoolId }, orderBy: { sequence: 'asc' } })
+    )
   }
 
   /** Crea un nuevo grado */
@@ -231,10 +230,12 @@ export class CoursesService {
 
   /** Obtiene las secciones activas de un grado */
   findSectionsByGrade(schoolId: string, gradeId: string) {
-    return prisma.section.findMany({
-      where: { schoolId, gradeId, status: RecordStatus.ACTIVE },
-      orderBy: { name: 'asc' },
-    })
+    return withCache(`sections:${schoolId}:${gradeId}`, () =>
+      prisma.section.findMany({
+        where: { schoolId, gradeId, status: RecordStatus.ACTIVE },
+        orderBy: { name: 'asc' },
+      })
+    )
   }
 
   /** Crea una nueva sección validando el grado */
@@ -295,7 +296,9 @@ export class CoursesService {
 
   /** Obtiene todas las materias del colegio */
   findAllSubjects(schoolId: string) {
-    return prisma.subject.findMany({ where: { schoolId }, orderBy: { name: 'asc' } })
+    return withCache(`subjects:${schoolId}`, () =>
+      prisma.subject.findMany({ where: { schoolId }, orderBy: { name: 'asc' } })
+    )
   }
 
   /** Crea una nueva materia */
@@ -370,9 +373,11 @@ export class CoursesService {
 
   /** Obtiene las asignaciones materia-sección activas */
   getSectionSubjects(schoolId: string) {
-    return prisma.sectionSubject.findMany({
-      where: { schoolId, status: 'ACTIVE' },
-    })
+    return withCache(`sectionSubjects:${schoolId}`, () =>
+      prisma.sectionSubject.findMany({
+        where: { schoolId, status: 'ACTIVE' },
+      })
+    )
   }
 
   /** Desactiva una asignación materia-sección (borrado lógico) */

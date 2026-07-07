@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { StudentsService } from './students.service'
+import { StudentsService, __test__clearCache } from './students.service'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
@@ -48,6 +48,7 @@ function mockCourse() {
 
 describe('StudentsService course enrollment', () => {
   beforeEach(() => {
+    __test__clearCache()
     vi.resetAllMocks()
     mocks.prisma.$transaction.mockImplementation((callback) =>
       callback({

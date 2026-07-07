@@ -124,6 +124,24 @@ function toRecordStatus(status?: string) {
  * incluyendo operaciones CRUD, matrículas, apoderados,
  * notificaciones e importación masiva de datos.
  */
+const cache = new Map<string, { data: unknown; expiry: number }>()
+const CACHE_TTL = 60_000
+
+function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
+  const now = Date.now()
+  const entry = cache.get(key)
+  if (entry && entry.expiry > now) return Promise.resolve(entry.data as T)
+  return fn().then((data) => {
+    cache.set(key, { data, expiry: now + CACHE_TTL })
+    return data
+  })
+}
+
+// ponytail: module-level cache, tests need to clear between runs
+export function __test__clearCache() {
+  cache.clear()
+}
+
 @Injectable()
 export class StudentsService {
   private async getCourseOrThrow(schoolId: string, courseId: string) {
@@ -136,6 +154,10 @@ export class StudentsService {
   }
 
   async getEnrollmentCourses(schoolId: string) {
+    return withCache(`enrollmentCourses:${schoolId}`, () => this._getEnrollmentCourses(schoolId))
+  }
+
+  private async _getEnrollmentCourses(schoolId: string) {
     const courses = await prisma.sectionSubject.findMany({
       where: { schoolId, status: 'ACTIVE' },
       orderBy: { createdAt: 'desc' },
