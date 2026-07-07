@@ -21,6 +21,12 @@ interface JwtPayload {
   tokenVersion: number
 }
 
+const authUserCache = new Map<
+  string,
+  { user?: AuthenticatedUser; promise?: Promise<AuthenticatedUser>; expiry: number }
+>()
+const AUTH_USER_CACHE_TTL = 5_000
+
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(config: ConfigService) {
@@ -40,44 +46,70 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
    * @throws UnauthorizedException si el usuario no existe o no está activo.
    */
   async validate(payload: JwtPayload): Promise<AuthenticatedUser> {
-    const user = await prisma.appUser.findUnique({
-      where: { id: payload.sub },
-      select: {
-        id: true,
-        email: true,
-        schoolId: true,
-        status: true,
-        tokenVersion: true,
-      },
+    const cacheKey = `${payload.sub}:${payload.tokenVersion}`
+    const cached = authUserCache.get(cacheKey)
+    if (cached && cached.expiry > Date.now()) {
+      if (cached.promise) return cached.promise
+      if (cached.user) return cached.user
+    }
+
+    const promise = this.loadAuthenticatedUser(payload, cacheKey)
+    authUserCache.set(cacheKey, {
+      promise,
+      expiry: Date.now() + AUTH_USER_CACHE_TTL,
     })
-    if (!user || user.status !== 'ACTIVE') {
-      throw new UnauthorizedException()
-    }
+    return promise
+  }
 
-    if (user.tokenVersion !== payload.tokenVersion) {
-      throw new UnauthorizedException('Token revoked')
-    }
+  private async loadAuthenticatedUser(payload: JwtPayload, cacheKey: string) {
+    try {
+      const user = await prisma.appUser.findUnique({
+        where: { id: payload.sub },
+        select: {
+          id: true,
+          email: true,
+          schoolId: true,
+          status: true,
+          tokenVersion: true,
+        },
+      })
+      if (!user || user.status !== 'ACTIVE') {
+        throw new UnauthorizedException()
+      }
 
-    const userRoles = await prisma.userRole.findMany({
-      where: {
-        userId: user.id,
+      if (user.tokenVersion !== payload.tokenVersion) {
+        throw new UnauthorizedException('Token revoked')
+      }
+
+      const userRoles = await prisma.userRole.findMany({
+        where: {
+          userId: user.id,
+          schoolId: user.schoolId,
+          status: 'ACTIVE',
+        },
+      })
+      const roleIds = userRoles.map((userRole) => userRole.roleId)
+      const roles = roleIds.length
+        ? await prisma.role.findMany({
+            where: { id: { in: roleIds }, status: 'ACTIVE' },
+            select: { key: true },
+          })
+        : []
+
+      const authenticatedUser = {
+        id: user.id,
+        email: user.email,
         schoolId: user.schoolId,
-        status: 'ACTIVE',
-      },
-    })
-    const roleIds = userRoles.map((userRole) => userRole.roleId)
-    const roles = roleIds.length
-      ? await prisma.role.findMany({
-          where: { id: { in: roleIds }, status: 'ACTIVE' },
-          select: { key: true },
-        })
-      : []
-
-    return {
-      id: user.id,
-      email: user.email,
-      schoolId: user.schoolId,
-      roles: roles.map((role) => role.key),
+        roles: roles.map((role) => role.key),
+      }
+      authUserCache.set(cacheKey, {
+        user: authenticatedUser,
+        expiry: Date.now() + AUTH_USER_CACHE_TTL,
+      })
+      return authenticatedUser
+    } catch (error) {
+      if (authUserCache.get(cacheKey)?.promise) authUserCache.delete(cacheKey)
+      throw error
     }
   }
 }

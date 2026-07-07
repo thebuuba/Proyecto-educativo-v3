@@ -128,14 +128,12 @@ export class AttendanceService {
     const ss = await prisma.sectionSubject.findFirst({ where: { id: sectionSubjectId, schoolId } })
     if (!ss) throw new Error('Section subject not found')
 
-    const [enrollments, existingAttendances] = await Promise.all([
-      prisma.enrollment.findMany({
-        where: { schoolId, sectionId: ss.sectionId, schoolYearId: ss.schoolYearId, status: 'ACTIVE' },
-      }),
-      prisma.attendanceClass.findMany({
-        where: { schoolId, sectionSubjectId, attendanceDate: new Date(date) },
-      }),
-    ])
+    const enrollments = await prisma.enrollment.findMany({
+      where: { schoolId, sectionId: ss.sectionId, schoolYearId: ss.schoolYearId, status: 'ACTIVE' },
+    })
+    const existingAttendances = await prisma.attendanceClass.findMany({
+      where: { schoolId, sectionSubjectId, attendanceDate: new Date(date) },
+    })
 
     const students = await prisma.student.findMany({
       where: { schoolId, id: { in: enrollments.map((e) => e.studentId) } },
@@ -222,11 +220,9 @@ export class AttendanceService {
    * @throws NotFoundException si la matrícula, materia o período académico no existen.
    */
   private async upsertClass(schoolId: string, dto: UpsertAttendanceDto) {
-    const [enrollment, sectionSubject, academicPeriod] = await Promise.all([
-      prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } }),
-      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
-    ])
+    const enrollment = await prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } })
+    const sectionSubject = await prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } })
+    const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
@@ -277,10 +273,8 @@ export class AttendanceService {
    * @throws NotFoundException si la matrícula o el período académico no existen.
    */
   private async upsertDaily(schoolId: string, dto: UpsertAttendanceDto) {
-    const [enrollment, academicPeriod] = await Promise.all([
-      prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
-    ])
+    const enrollment = await prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } })
+    const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
 

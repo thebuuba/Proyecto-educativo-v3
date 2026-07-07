@@ -117,12 +117,10 @@ export class PlanningService {
   async getSectionSubjects(schoolId: string, teacherId?: string) {
     const where: any = { schoolId, status: 'ACTIVE' }
     if (teacherId) where.teacherId = teacherId
-    const [items, subjects, sections, grades] = await Promise.all([
-      prisma.sectionSubject.findMany({ where }),
-      prisma.subject.findMany({ where: { schoolId } }),
-      prisma.section.findMany({ where: { schoolId } }),
-      prisma.grade.findMany({ where: { schoolId } }),
-    ])
+    const items = await prisma.sectionSubject.findMany({ where })
+    const subjects = await prisma.subject.findMany({ where: { schoolId } })
+    const sections = await prisma.section.findMany({ where: { schoolId } })
+    const grades = await prisma.grade.findMany({ where: { schoolId } })
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
     const gradeById = new Map(grades.map((item) => [item.id, item]))
@@ -147,21 +145,19 @@ export class PlanningService {
     const where: any = { schoolId }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
     if (academicPeriodId) where.academicPeriodId = academicPeriodId
-    const [entries, sectionSubjects, subjects, sections, grades, periods, schoolYears, competencies, school, teachers] = await Promise.all([
-      prisma.planningEntry.findMany({
-        where,
-        orderBy: [{ plannedDate: 'desc' }, { updatedAt: 'desc' }],
-      }),
-      prisma.sectionSubject.findMany({ where: { schoolId } }),
-      prisma.subject.findMany({ where: { schoolId } }),
-      prisma.section.findMany({ where: { schoolId } }),
-      prisma.grade.findMany({ where: { schoolId } }),
-      prisma.academicPeriod.findMany({ where: { schoolId } }),
-      prisma.schoolYear.findMany({ where: { schoolId } }),
-      prisma.drCompetency.findMany({}),
-      prisma.school.findUnique({ where: { id: schoolId } }),
-      prisma.teacher.findMany({ where: { schoolId } }),
-    ])
+    const entries = await prisma.planningEntry.findMany({
+      where,
+      orderBy: [{ plannedDate: 'desc' }, { updatedAt: 'desc' }],
+    })
+    const sectionSubjects = await prisma.sectionSubject.findMany({ where: { schoolId } })
+    const subjects = await prisma.subject.findMany({ where: { schoolId } })
+    const sections = await prisma.section.findMany({ where: { schoolId } })
+    const grades = await prisma.grade.findMany({ where: { schoolId } })
+    const periods = await prisma.academicPeriod.findMany({ where: { schoolId } })
+    const schoolYears = await prisma.schoolYear.findMany({ where: { schoolId } })
+    const competencies = await prisma.drCompetency.findMany({})
+    const school = await prisma.school.findUnique({ where: { id: schoolId } })
+    const teachers = await prisma.teacher.findMany({ where: { schoolId } })
     const sectionSubjectById = new Map(sectionSubjects.map((item) => [item.id, item]))
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
@@ -254,10 +250,8 @@ export class PlanningService {
 
   /** Crea una nueva entrada de planificación validando las referencias */
   async createEntry(schoolId: string, dto: CreatePlanningEntryDto) {
-    const [sectionSubject, academicPeriod] = await Promise.all([
-      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
-    ])
+    const sectionSubject = await prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } })
+    const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
 
@@ -299,13 +293,15 @@ export class PlanningService {
       throw new NotFoundException('Section subject not found')
     }
 
-    const [grade, section, subject] = sectionSubject
-      ? await Promise.all([
-          prisma.grade.findFirst({ where: { id: sectionSubject.gradeId, schoolId } }),
-          prisma.section.findFirst({ where: { id: sectionSubject.sectionId, schoolId } }),
-          prisma.subject.findFirst({ where: { id: sectionSubject.subjectId, schoolId } }),
-        ])
-      : [null, null, null]
+    const grade = sectionSubject
+      ? await prisma.grade.findFirst({ where: { id: sectionSubject.gradeId, schoolId } })
+      : null
+    const section = sectionSubject
+      ? await prisma.section.findFirst({ where: { id: sectionSubject.sectionId, schoolId } })
+      : null
+    const subject = sectionSubject
+      ? await prisma.subject.findFirst({ where: { id: sectionSubject.subjectId, schoolId } })
+      : null
 
     const prompt = {
       grado: grade?.name ?? dto.gradeName ?? '',

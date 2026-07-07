@@ -14,17 +14,30 @@ import { UpdateSectionDto } from './dto/update-section.dto'
 import { CreateSubjectDto } from './dto/create-subject.dto'
 import { AssignSubjectDto } from './dto/assign-subject.dto'
 
-const cache = new Map<string, { data: unknown; expiry: number }>()
+const cache = new Map<
+  string,
+  { data?: unknown; promise?: Promise<unknown>; expiry: number }
+>()
 const CACHE_TTL = 60_000
 
 function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
   const now = Date.now()
   const entry = cache.get(key)
-  if (entry && entry.expiry > now) return Promise.resolve(entry.data as T)
-  return fn().then((data) => {
-    cache.set(key, { data, expiry: now + CACHE_TTL })
+  if (entry && entry.expiry > now) {
+    if (entry.promise) return entry.promise as Promise<T>
+    return Promise.resolve(entry.data as T)
+  }
+
+  const promise = fn().then((data) => {
+    cache.set(key, { data, expiry: Date.now() + CACHE_TTL })
     return data
+  }, (error) => {
+    if (cache.get(key)?.promise === promise) cache.delete(key)
+    throw error
   })
+
+  cache.set(key, { promise, expiry: now + CACHE_TTL })
+  return promise
 }
 
 /** Convierte el valor de estado a minúsculas */
@@ -333,14 +346,12 @@ export class CoursesService {
       : null
     const resolvedSchoolYear = schoolYear ?? await resolveSchoolYear(schoolId)
 
-    const [grade, section, subject, teacher] = await Promise.all([
-      prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } }),
-      prisma.section.findFirst({ where: { id: dto.sectionId, schoolId, gradeId: dto.gradeId } }),
-      prisma.subject.findFirst({ where: { id: dto.subjectId, schoolId } }),
-      dto.teacherId
-        ? prisma.teacher.findFirst({ where: { id: dto.teacherId, schoolId } })
-        : Promise.resolve(null),
-    ])
+    const grade = await prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } })
+    const section = await prisma.section.findFirst({ where: { id: dto.sectionId, schoolId, gradeId: dto.gradeId } })
+    const subject = await prisma.subject.findFirst({ where: { id: dto.subjectId, schoolId } })
+    const teacher = dto.teacherId
+      ? await prisma.teacher.findFirst({ where: { id: dto.teacherId, schoolId } })
+      : null
     if (!grade) throw new NotFoundException('Grade not found')
     if (!section) throw new NotFoundException('Section not found')
     if (!subject) throw new NotFoundException('Subject not found')

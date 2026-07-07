@@ -124,17 +124,30 @@ function toRecordStatus(status?: string) {
  * incluyendo operaciones CRUD, matrículas, apoderados,
  * notificaciones e importación masiva de datos.
  */
-const cache = new Map<string, { data: unknown; expiry: number }>()
+const cache = new Map<
+  string,
+  { data?: unknown; promise?: Promise<unknown>; expiry: number }
+>()
 const CACHE_TTL = 60_000
 
 function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
   const now = Date.now()
   const entry = cache.get(key)
-  if (entry && entry.expiry > now) return Promise.resolve(entry.data as T)
-  return fn().then((data) => {
-    cache.set(key, { data, expiry: now + CACHE_TTL })
+  if (entry && entry.expiry > now) {
+    if (entry.promise) return entry.promise as Promise<T>
+    return Promise.resolve(entry.data as T)
+  }
+
+  const promise = fn().then((data) => {
+    cache.set(key, { data, expiry: Date.now() + CACHE_TTL })
     return data
+  }, (error) => {
+    if (cache.get(key)?.promise === promise) cache.delete(key)
+    throw error
   })
+
+  cache.set(key, { promise, expiry: now + CACHE_TTL })
+  return promise
 }
 
 // ponytail: module-level cache, tests need to clear between runs
@@ -165,32 +178,37 @@ export class StudentsService {
 
     if (courses.length === 0) return []
 
-    const [grades, sections, subjects, schoolYears] = await Promise.all([
-      prisma.grade.findMany({
-        where: {
-          schoolId,
-          id: { in: courses.map((course) => course.gradeId) },
-        },
-      }),
-      prisma.section.findMany({
-        where: {
-          schoolId,
-          id: { in: courses.map((course) => course.sectionId) },
-        },
-      }),
-      prisma.subject.findMany({
-        where: {
-          schoolId,
-          id: { in: courses.map((course) => course.subjectId) },
-        },
-      }),
-      prisma.schoolYear.findMany({
-        where: {
-          schoolId,
-          id: { in: courses.map((course) => course.schoolYearId) },
-        },
-      }),
-    ])
+    const gradeIds = [...new Set(courses.map((course) => course.gradeId))]
+    const sectionIds = [...new Set(courses.map((course) => course.sectionId))]
+    const subjectIds = [...new Set(courses.map((course) => course.subjectId))]
+    const schoolYearIds = [
+      ...new Set(courses.map((course) => course.schoolYearId)),
+    ]
+
+    const grades = await prisma.grade.findMany({
+      where: {
+        schoolId,
+        id: { in: gradeIds },
+      },
+    })
+    const sections = await prisma.section.findMany({
+      where: {
+        schoolId,
+        id: { in: sectionIds },
+      },
+    })
+    const subjects = await prisma.subject.findMany({
+      where: {
+        schoolId,
+        id: { in: subjectIds },
+      },
+    })
+    const schoolYears = await prisma.schoolYear.findMany({
+      where: {
+        schoolId,
+        id: { in: schoolYearIds },
+      },
+    })
 
     const gradeById = new Map(grades.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
@@ -573,10 +591,8 @@ export class StudentsService {
       throw new BadRequestException('Selecciona un curso destino diferente.')
     }
 
-    const [sourceCourse, targetCourse] = await Promise.all([
-      this.getCourseOrThrow(schoolId, courseId),
-      this.getCourseOrThrow(schoolId, targetCourseId),
-    ])
+    const sourceCourse = await this.getCourseOrThrow(schoolId, courseId)
+    const targetCourse = await this.getCourseOrThrow(schoolId, targetCourseId)
 
     const enrollment = await prisma.enrollment.findFirst({
       where: {
@@ -655,15 +671,13 @@ export class StudentsService {
 
     const skip = (page - 1) * pageSize
 
-    const [data, total] = await Promise.all([
-      prisma.student.findMany({
-        where,
-        skip,
-        take: pageSize,
-        orderBy: { createdAt: 'desc' },
-      }),
-      prisma.student.count({ where }),
-    ])
+    const data = await prisma.student.findMany({
+      where,
+      skip,
+      take: pageSize,
+      orderBy: { createdAt: 'desc' },
+    })
+    const total = await prisma.student.count({ where })
 
     return { data, total, page, pageSize }
   }
@@ -779,16 +793,14 @@ export class StudentsService {
    * @throws NotFoundException si alguna entidad relacionada no existe.
    */
   async createEnrollment(schoolId: string, dto: CreateEnrollmentDto) {
-    const [student, grade, section, schoolYear] = await Promise.all([
-      prisma.student.findFirst({ where: { id: dto.studentId, schoolId } }),
-      prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } }),
-      prisma.section.findFirst({
-        where: { id: dto.sectionId, schoolId, gradeId: dto.gradeId },
-      }),
-      prisma.schoolYear.findFirst({
-        where: { id: dto.schoolYearId, schoolId },
-      }),
-    ])
+    const student = await prisma.student.findFirst({ where: { id: dto.studentId, schoolId } })
+    const grade = await prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } })
+    const section = await prisma.section.findFirst({
+      where: { id: dto.sectionId, schoolId, gradeId: dto.gradeId },
+    })
+    const schoolYear = await prisma.schoolYear.findFirst({
+      where: { id: dto.schoolYearId, schoolId },
+    })
     if (!student) throw new NotFoundException('Student not found')
     if (!grade) throw new NotFoundException('Grade not found')
     if (!section) throw new NotFoundException('Section not found')
