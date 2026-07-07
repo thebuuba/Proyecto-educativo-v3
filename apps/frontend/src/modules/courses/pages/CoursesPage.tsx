@@ -472,7 +472,7 @@ export function CoursesPage() {
             </div>
           </div>
 
-          {!currentSchoolYear ? (
+          {!loading && !error && !currentSchoolYear ? (
             <div className="flex items-center justify-between gap-3 rounded-2xl border border-warning/25 bg-warning/12 p-4 text-sm text-warning">
               <div className="flex items-center gap-3">
                 <AlertCircle className="mt-0.5 size-4 shrink-0" />

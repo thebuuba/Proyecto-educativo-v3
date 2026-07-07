@@ -57,27 +57,24 @@ export class CoursesService {
   async getCourseData(schoolId: string) {
     const currentSchoolYear = await resolveSchoolYear(schoolId)
 
-    const [grades, sections, assignments, subjects, academicLevels, cycles, modalities, teachers] =
-      await Promise.all([
-        prisma.grade.findMany({
-          where: { schoolId, status: 'ACTIVE' },
-          orderBy: { sequence: 'asc' },
-        }),
-        prisma.section.findMany({
-          where: { schoolId, status: 'ACTIVE' },
-          orderBy: { name: 'asc' },
-        }),
-        prisma.sectionSubject.findMany({
-          where: { schoolId, status: 'ACTIVE' },
-        }),
-        prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } }),
-        prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } }),
-        prisma.drAcademicCycle.findMany({ orderBy: { name: 'asc' } }),
-        prisma.drModality.findMany({ orderBy: { name: 'asc' } }),
-        prisma.teacher.findMany({
-          where: { schoolId, status: 'ACTIVE' },
-        }),
-      ])
+    const grades = await prisma.grade.findMany({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: { sequence: 'asc' },
+    })
+    const sections = await prisma.section.findMany({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: { name: 'asc' },
+    })
+    const assignments = await prisma.sectionSubject.findMany({
+      where: { schoolId, status: 'ACTIVE' },
+    })
+    const subjects = await prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } })
+    const academicLevels = await prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } })
+    const cycles = await prisma.drAcademicCycle.findMany({ orderBy: { name: 'asc' } })
+    const modalities = await prisma.drModality.findMany({ orderBy: { name: 'asc' } })
+    const teachers = await prisma.teacher.findMany({
+      where: { schoolId, status: 'ACTIVE' },
+    })
 
     const levelById = new Map(academicLevels.map((item) => [item.id, item]))
     const cycleById = new Map(cycles.map((item) => [item.id, item]))
