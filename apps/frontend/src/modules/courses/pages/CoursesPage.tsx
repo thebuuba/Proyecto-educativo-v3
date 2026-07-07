@@ -471,12 +471,22 @@ export function CoursesPage() {
           </div>
 
           {!currentSchoolYear ? (
-            <div className="flex gap-3 rounded-2xl border border-warning/25 bg-warning/12 p-4 text-sm text-warning">
-              <AlertCircle className="mt-0.5 size-4 shrink-0" />
-              <p>
-                Configura y activa un ano escolar para poder asignar asignaturas
-                y docentes a las secciones.
-              </p>
+            <div className="flex items-center justify-between gap-3 rounded-2xl border border-warning/25 bg-warning/12 p-4 text-sm text-warning">
+              <div className="flex items-center gap-3">
+                <AlertCircle className="mt-0.5 size-4 shrink-0" />
+                <p>
+                  Configura y activa un ano escolar para poder asignar asignaturas
+                  y docentes a las secciones.
+                </p>
+              </div>
+              {canManage ? (
+                <a
+                  href="/configuracion#anos-escolares"
+                  className="shrink-0 text-xs font-bold underline underline-offset-2 hover:opacity-80"
+                >
+                  Ir a configuración
+                </a>
+              ) : null}
             </div>
           ) : null}
 
