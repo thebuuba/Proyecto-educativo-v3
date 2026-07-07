@@ -1,8 +1,8 @@
 /**
  * Servicio del dashboard
  * @module DashboardService
- * @description Contiene la lógica de negocio para el panel de control del colegio.
- * Proporciona estadísticas generales y operaciones CRUD para tareas del dashboard.
+ * @description Contiene la logica de negocio para el panel de control del colegio.
+ * Proporciona estadisticas generales y operaciones CRUD para tareas del dashboard.
  */
 import { Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { CACHE_MANAGER } from '@nestjs/cache-manager'
@@ -18,24 +18,58 @@ export class DashboardService {
   private taskCacheKey(schoolId: string) { return `dashboard:tasks:${schoolId}` }
   private statsCacheKey(schoolId: string) { return `dashboard:stats:${schoolId}` }
 
-  /** Obtiene las estadísticas del colegio: conteo de estudiantes, profesores y matrículas activas */
+  /** Obtiene estadisticas del colegio y senales de configuracion inicial. */
   async getStats(schoolId: string) {
-    const cached = await this.cache.get<{ studentCount: number; teacherCount: number; activeEnrollments: number }>(this.statsCacheKey(schoolId))
+    const cached = await this.cache.get<{
+      studentCount: number
+      teacherCount: number
+      activeEnrollments: number
+      courseCount: number
+      scheduleEntryCount: number
+      attendanceCount: number
+      planningCount: number
+    }>(this.statsCacheKey(schoolId))
     if (cached !== undefined) return cached
 
-    const [studentCount, teacherCount, activeEnrollments] = await Promise.all([
+    const [
+      studentCount,
+      teacherCount,
+      activeEnrollments,
+      gradeCount,
+      sectionCount,
+      sectionSubjectCount,
+      scheduleEntryCount,
+      attendanceDailyCount,
+      attendanceClassCount,
+      planningCount,
+    ] = await Promise.all([
       prisma.student.count({ where: { schoolId, status: 'ACTIVE' } }),
       prisma.teacher.count({ where: { schoolId, status: 'ACTIVE' } }),
       prisma.enrollment.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.grade.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.section.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.sectionSubject.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.scheduleEntry.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.attendanceDaily.count({ where: { schoolId } }),
+      prisma.attendanceClass.count({ where: { schoolId } }),
+      prisma.planningEntry.count({ where: { schoolId, status: 'ACTIVE' } }),
     ])
 
-    const result = { studentCount, teacherCount, activeEnrollments }
+    const result = {
+      studentCount,
+      teacherCount,
+      activeEnrollments,
+      courseCount: Math.max(gradeCount, sectionCount, sectionSubjectCount),
+      scheduleEntryCount,
+      attendanceCount: attendanceDailyCount + attendanceClassCount,
+      planningCount,
+    }
     // ponytail: in-memory TTL 30s, switch to Redis if multi-instance
     await this.cache.set(this.statsCacheKey(schoolId), result, 30_000)
     return result
   }
 
-  /** Obtiene las últimas 10 tareas del dashboard */
+  /** Obtiene las ultimas 10 tareas del dashboard */
   async getTasks(schoolId: string) {
     const cached = await this.cache.get<unknown[]>(this.taskCacheKey(schoolId))
     if (cached !== undefined) return cached

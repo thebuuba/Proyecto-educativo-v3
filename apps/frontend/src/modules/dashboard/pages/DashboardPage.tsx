@@ -9,6 +9,7 @@ import { ErrorState } from '@/components/ui'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
 import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
+import { InitialSetupChecklist } from '@/modules/dashboard/components/InitialSetupChecklist'
 import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
 import { SmartSuggestion } from '@/modules/dashboard/components/SmartSuggestion'
 import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
@@ -85,6 +86,12 @@ export function DashboardPage() {
     )
   }
 
+  const hasAgenda = data.todayAgenda.length > 0
+  const hasWeeklyAttendance = data.weeklyAttendance.activityCount > 0 || data.weeklyAttendance.average !== null
+  const hasTasks = data.tasks.length > 0
+  const hasRecentActivity = data.recentActivity.length > 0
+  const hasOperationalBlocks = hasAgenda || hasWeeklyAttendance || hasTasks || hasRecentActivity
+
   return (
     <div className="px-6 lg:px-10 py-8 max-w-[1400px] mx-auto space-y-6">
       <header className="flex flex-wrap items-center justify-between gap-3">
@@ -124,30 +131,46 @@ export function DashboardPage() {
         />
       </div>
 
-      <div className="grid lg:grid-cols-12 gap-6">
-        <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
-          <TodayAgenda items={data.todayAgenda} />
-        </div>
-
-        <div className="lg:col-span-7 space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
-              <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
-            </div>
-            <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
-              <DashboardTasks
-                tasks={data.tasks}
-                loading={actionLoading}
-                onAddTask={addTask}
-                onCompleteTask={completeTask}
-              />
-            </div>
-          </div>
-          <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
-            <RecentActivity items={data.recentActivity} />
-          </div>
-        </div>
+      <div className="dashboard-enter" style={{ animationDelay: '60ms', animationDuration: '460ms' }}>
+        <InitialSetupChecklist progress={data.setupProgress} />
       </div>
+
+      {hasOperationalBlocks ? (
+        <div className="grid lg:grid-cols-12 gap-6">
+          {hasAgenda ? (
+            <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
+              <TodayAgenda items={data.todayAgenda} />
+            </div>
+          ) : null}
+
+          <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-6'].join(' ')}>
+            {hasWeeklyAttendance || hasTasks ? (
+              <div className="grid md:grid-cols-2 gap-6">
+                {hasWeeklyAttendance ? (
+                  <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
+                    <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
+                  </div>
+                ) : null}
+                {hasTasks ? (
+                  <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
+                    <DashboardTasks
+                      tasks={data.tasks}
+                      loading={actionLoading}
+                      onAddTask={addTask}
+                      onCompleteTask={completeTask}
+                    />
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+            {hasRecentActivity ? (
+              <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
+                <RecentActivity items={data.recentActivity} />
+              </div>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
 
       <div className="dashboard-enter" style={{ animationDelay: '240ms', animationDuration: '280ms' }}>
         <SmartSuggestion suggestion={data.smartSuggestion} />

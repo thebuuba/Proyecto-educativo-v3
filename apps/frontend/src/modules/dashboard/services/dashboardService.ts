@@ -1,5 +1,5 @@
 /**
- * Servicio del Dashboard — Funciones para obtener datos del panel principal,
+ * Servicio del Dashboard: funciones para obtener datos del panel principal,
  * gestionar tareas pendientes y calcular la asistencia semanal.
  */
 
@@ -7,28 +7,39 @@ import { api } from '@/services/apiClient'
 import type {
   CreateDashboardTaskInput,
   DashboardData,
+  DashboardSetupProgress,
   DashboardTask,
   WeeklyAttendance,
 } from '@/modules/dashboard/types/dashboard'
 import type { AppUser } from '@/modules/auth/types/auth'
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
 
-const weekdayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']
+const weekdayLabels = ['LUN', 'MAR', 'MIE', 'JUE', 'VIE']
+
+const emptySetupProgress: DashboardSetupProgress = {
+  courseCount: 0,
+  studentCount: 0,
+  activeEnrollments: 0,
+  scheduleEntryCount: 0,
+  attendanceCount: 0,
+  planningCount: 0,
+}
 
 /** Obtiene los datos completos del dashboard para el usuario actual. */
 export async function getDashboardData(appUser: AppUser | null): Promise<DashboardData> {
   const today = new Date()
-  const [currentSchoolYear, tasks] = await Promise.all([
+  const [currentSchoolYear, tasks, setupProgress] = await Promise.all([
     safeBlock(getCurrentSchoolYear(), null),
     safeBlock(api.get<DashboardTask[]>('/dashboard/tasks'), []),
+    safeBlock(api.get<DashboardSetupProgress>('/dashboard/stats'), emptySetupProgress),
   ])
 
   return {
     context: {
       firstName: appUser?.fullName?.split(/\s+/)[0] || 'docente',
       formattedDate: new Intl.DateTimeFormat('es-DO', { weekday: 'long', day: '2-digit', month: 'long' }).format(today),
-      schoolYearName: currentSchoolYear?.name ?? 'Sin año activo',
-      periodName: 'Período actual',
+      schoolYearName: currentSchoolYear?.name ?? 'Sin ano activo',
+      periodName: 'Periodo actual',
     },
     nextClass: null,
     todayAgenda: [],
@@ -36,12 +47,13 @@ export async function getDashboardData(appUser: AppUser | null): Promise<Dashboa
     tasks: tasks ?? [],
     recentActivity: [],
     smartSuggestion: null,
+    setupProgress: setupProgress ?? emptySetupProgress,
   }
 }
 
 /** Crea una nueva tarea en el dashboard. */
 export async function createDashboardTask(input: CreateDashboardTaskInput, appUserId: string | null): Promise<DashboardTask> {
-  if (!input.title.trim()) throw new Error('Escribe un título para la tarea.')
+  if (!input.title.trim()) throw new Error('Escribe un titulo para la tarea.')
   return api.post<DashboardTask>('/dashboard/tasks', { ...input, assignedTo: appUserId })
 }
 
@@ -58,7 +70,7 @@ function safeBlock<T>(promise: Promise<T>, fallback?: T): Promise<T | undefined>
   })
 }
 
-/** Retorna un objeto WeeklyAttendance vacío para la semana actual. */
+/** Retorna un objeto WeeklyAttendance vacio para la semana actual. */
 function getEmptyWeeklyAttendance(today: Date): WeeklyAttendance {
   const weekStart = getWeekStart(today)
   return {
@@ -78,7 +90,7 @@ function getWeekStart(date: Date) {
   return start
 }
 
-/** Suma una cantidad de días a una fecha y retorna una nueva fecha. */
+/** Suma una cantidad de dias a una fecha y retorna una nueva fecha. */
 function addDays(date: Date, days: number) {
   const next = new Date(date)
   next.setDate(next.getDate() + days)

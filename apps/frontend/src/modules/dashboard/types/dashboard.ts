@@ -118,6 +118,15 @@ export type SmartSuggestion = {
   path: string
 } | null
 
+export type DashboardSetupProgress = {
+  courseCount: number
+  studentCount: number
+  activeEnrollments: number
+  scheduleEntryCount: number
+  attendanceCount: number
+  planningCount: number
+}
+
 /** Datos completos del dashboard. */
 export type DashboardData = {
   context: DashboardContext
@@ -127,6 +136,7 @@ export type DashboardData = {
   tasks: DashboardTask[]
   recentActivity: RecentActivityItem[]
   smartSuggestion: SmartSuggestion
+  setupProgress: DashboardSetupProgress
 }
 
 /** Entrada para crear una nueva tarea en el dashboard. */

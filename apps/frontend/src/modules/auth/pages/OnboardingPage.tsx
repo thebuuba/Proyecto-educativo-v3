@@ -1,7 +1,6 @@
 import {
   Sparkles,
 } from 'lucide-react'
-import type { FormEvent } from 'react'
 import { useEffect, useState } from 'react'
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 
@@ -12,7 +11,7 @@ import { FLOATING_ICONS } from '@/components/auth/AuthIcons'
 
 const DRAFT_KEY = 'aulabase:onboarding-draft'
 const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
-const totalSteps = 3
+const totalSteps = 2
 const inputClass = 'mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10'
 const labelClass = 'text-sm font-semibold text-gray-700'
 const optionRowClass = 'grid gap-3 py-4 md:grid-cols-[150px_1fr] md:items-start'
@@ -28,8 +27,13 @@ const shiftOptions = [
   { value: 'afternoon', label: 'Vespertina' },
   { value: 'night', label: 'Nocturna' },
   { value: 'extended', label: 'Extendida' },
-  { value: 'multiple', label: 'Multiple' },
 ]
+
+const shiftOptionValues = new Set(shiftOptions.map((option) => option.value))
+
+function getAllowedShifts(shifts?: string[]) {
+  return (shifts ?? []).filter((shift) => shiftOptionValues.has(shift))
+}
 
 const modalityOptions = [
   { value: 'regular', label: 'Primaria/Secundaria' },
@@ -43,14 +47,6 @@ type PeriodDraft = {
   endDate: string
 }
 
-type CourseDraft = {
-  gradeName: string
-  sectionName: string
-  area: string
-  subjectName: string
-  subjectCode: string
-}
-
 type OnboardingDraft = {
   fullName: string
   schoolName: string
@@ -61,7 +57,6 @@ type OnboardingDraft = {
   schoolStartDate: string
   schoolEndDate: string
   periods: PeriodDraft[]
-  course: CourseDraft
 }
 
 type StepErrors = Record<string, string>
@@ -72,6 +67,10 @@ function toIsoDate(year: number, month: number, day: number) {
 
 function detectSchoolYear(date = new Date()) {
   const startYear = date.getMonth() >= 6 ? date.getFullYear() : date.getFullYear() - 1
+  return createSchoolYear(startYear)
+}
+
+function createSchoolYear(startYear: number) {
   const endYear = startYear + 1
 
   return {
@@ -86,6 +85,19 @@ function detectSchoolYear(date = new Date()) {
   }
 }
 
+const defaultSchoolYearStart = Number(detectSchoolYear().schoolYearName.split('-')[0])
+const schoolYearOptions = Array.from({ length: 5 }, (_, index) => {
+  const startYear = defaultSchoolYearStart - 1 + index
+  const endYear = startYear + 1
+  const value = `${startYear}-${endYear}`
+  return { value, label: value, startYear }
+})
+
+function getSchoolYearByName(name?: string) {
+  const option = schoolYearOptions.find((item) => item.value === name)
+  return createSchoolYear(option?.startYear ?? defaultSchoolYearStart)
+}
+
 function createInitialDraft(fullName = ''): OnboardingDraft {
   const schoolYear = detectSchoolYear()
 
@@ -96,13 +108,6 @@ function createInitialDraft(fullName = ''): OnboardingDraft {
     shifts: ['extended'],
     modalities: ['regular'],
     ...schoolYear,
-    course: {
-      gradeName: '3ro Secundaria',
-      sectionName: 'A',
-      area: 'Lengua Espanola',
-      subjectName: 'Lengua Espanola',
-      subjectCode: '',
-    },
   }
 }
 
@@ -122,13 +127,9 @@ function loadDraft(fallbackFullName = ''): OnboardingDraft {
       ...parsed,
       fullName: parsed.fullName?.trim() || fallbackFullName || initialDraft.fullName,
       levels: parsed.level ? [parsed.level] : parsed.levels?.length ? parsed.levels : initialDraft.levels,
-      shifts: parsed.shifts?.length ? parsed.shifts : initialDraft.shifts,
+      shifts: getAllowedShifts(parsed.shifts).length ? getAllowedShifts(parsed.shifts) : initialDraft.shifts,
       modalities: parsed.modalities?.length ? parsed.modalities : initialDraft.modalities,
-      schoolYearName: initialDraft.schoolYearName,
-      schoolStartDate: initialDraft.schoolStartDate,
-      schoolEndDate: initialDraft.schoolEndDate,
-      periods: initialDraft.periods,
-      course: { ...initialDraft.course, ...parsed.course },
+      ...getSchoolYearByName(parsed.schoolYearName),
     }
   } catch {
     return initialDraft
@@ -160,14 +161,6 @@ function toOnboardingInput(draft: OnboardingDraft): CompleteOnboardingInput {
       startDate: period.startDate,
       endDate: period.endDate,
     })),
-    courses: [
-      {
-        gradeName: draft.course.gradeName.trim(),
-        sectionName: draft.course.sectionName.trim(),
-        subjectName: draft.course.subjectName.trim(),
-        subjectCode: draft.course.subjectCode.trim().toUpperCase(),
-      },
-    ],
   }
 }
 
@@ -176,6 +169,7 @@ function validateStep(step: number, draft: OnboardingDraft): StepErrors {
 
   if (step === 0) {
     if (!draft.fullName.trim()) errors.fullName = 'Escribe el nombre del docente.'
+    if (!draft.schoolYearName.trim()) errors.schoolYearName = 'Selecciona el ano escolar.'
     if (!draft.schoolName.trim()) errors.schoolName = 'Escribe el centro educativo.'
   }
 
@@ -183,12 +177,6 @@ function validateStep(step: number, draft: OnboardingDraft): StepErrors {
     if (!draft.levels.length) errors.levels = 'Selecciona al menos un nivel.'
     if (!draft.shifts.length) errors.shifts = 'Selecciona al menos una tanda.'
     if (!draft.modalities.length) errors.modalities = 'Selecciona al menos una modalidad.'
-  }
-
-  if (step === 2) {
-    if (!draft.course.gradeName.trim()) errors.gradeName = 'Escribe el grado.'
-    if (!draft.course.sectionName.trim()) errors.sectionName = 'Escribe la seccion.'
-    if (!draft.course.subjectName.trim()) errors.subjectName = 'Escribe la asignatura o subarea.'
   }
 
   return errors
@@ -293,6 +281,10 @@ export function OnboardingPage() {
     setDraft((current) => ({ ...current, ...patch }))
   }
 
+  function updateSchoolYear(schoolYearName: string) {
+    setDraft((current) => ({ ...current, ...getSchoolYearByName(schoolYearName) }))
+  }
+
   function toggleListValue(key: 'levels' | 'shifts' | 'modalities', value: string) {
     setDraft((current) => {
       const values = current[key]
@@ -301,10 +293,6 @@ export function OnboardingPage() {
         : [...values, value]
       return { ...current, [key]: nextValues }
     })
-  }
-
-  function updateCourse(patch: Partial<CourseDraft>) {
-    setDraft((current) => ({ ...current, course: { ...current.course, ...patch } }))
   }
 
   function goNext() {
@@ -326,11 +314,10 @@ export function OnboardingPage() {
     if (e.key === 'Enter') e.preventDefault()
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+  async function handleSubmit() {
     setSubmitError('')
 
-    for (let stepIndex = 0; stepIndex < totalSteps - 1; stepIndex += 1) {
+    for (let stepIndex = 0; stepIndex < totalSteps; stepIndex += 1) {
       const nextErrors = validateStep(stepIndex, draft)
       if (Object.keys(nextErrors).length) {
         setErrors(nextErrors)
@@ -364,6 +351,21 @@ export function OnboardingPage() {
             </div>
           )}
           <div>
+            <label className={labelClass}>Ano escolar</label>
+            <select
+              className={inputClass}
+              value={draft.schoolYearName}
+              onChange={(event) => updateSchoolYear(event.target.value)}
+            >
+              {schoolYearOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <FieldError message={errors.schoolYearName} />
+          </div>
+          <div>
             <label className={labelClass}>Centro educativo</label>
             <SchoolSearchInput
               value={draft.schoolName}
@@ -371,7 +373,9 @@ export function OnboardingPage() {
               onSelect={(school) => updateDraft({
                 schoolName: school.name,
                 levels: school.niveles.length ? school.niveles : draft.levels,
-                shifts: school.tandas.length ? school.tandas : draft.shifts,
+                shifts: getAllowedShifts(school.tandas).length
+                  ? getAllowedShifts(school.tandas)
+                  : draft.shifts,
                 modalities: school.modalidades.length ? school.modalidades : draft.modalities,
               })}
               placeholder="Busca tu centro educativo"
@@ -428,43 +432,12 @@ export function OnboardingPage() {
       )
     }
 
-    if (step === 2) {
-      return (
-        <div className="grid gap-4 md:grid-cols-2">
-          <div>
-            <label className={labelClass}>Grado</label>
-            <input className={inputClass} value={draft.course.gradeName} onChange={(event) => updateCourse({ gradeName: event.target.value })} onKeyDown={preventEnter} />
-            <FieldError message={errors.gradeName} />
-          </div>
-          <div>
-            <label className={labelClass}>Seccion</label>
-            <input className={inputClass} value={draft.course.sectionName} onChange={(event) => updateCourse({ sectionName: event.target.value })} onKeyDown={preventEnter} />
-            <FieldError message={errors.sectionName} />
-          </div>
-          <div>
-            <label className={labelClass}>Area</label>
-            <input className={inputClass} value={draft.course.area} onChange={(event) => updateCourse({ area: event.target.value })} onKeyDown={preventEnter} />
-          </div>
-          <div>
-            <label className={labelClass}>Asignatura/Subarea</label>
-            <input className={inputClass} value={draft.course.subjectName} onChange={(event) => updateCourse({ subjectName: event.target.value })} onKeyDown={preventEnter} />
-            <FieldError message={errors.subjectName} />
-          </div>
-          <div className="md:col-span-2">
-            <label className={labelClass}>Codigo opcional</label>
-            <input className={inputClass} value={draft.course.subjectCode} onChange={(event) => updateCourse({ subjectCode: event.target.value })} onKeyDown={preventEnter} />
-          </div>
-        </div>
-      )
-    }
-
     return null
   }
 
   const stepTitles = [
     'Datos del docente y centro',
     'Nivel, tanda y modalidad',
-    'Primer curso/asignatura',
   ]
 
   if (showWelcome) {
@@ -556,7 +529,7 @@ export function OnboardingPage() {
           <p className="mt-1 text-sm text-gray-500">Configurando tu entrada al sistema</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="w-full rounded-2xl border border-gray-100 bg-white/95 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.10)] md:p-6">
+        <form onSubmit={(event) => event.preventDefault()} className="w-full rounded-2xl border border-gray-100 bg-white/95 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.10)] md:p-6">
           <div>
             <h2 className="text-xl font-bold text-gray-900">{stepTitles[step]}</h2>
           </div>
@@ -577,7 +550,7 @@ export function OnboardingPage() {
                 Siguiente
               </button>
             ) : (
-              <button type="submit" disabled={submitting} className="rounded-xl bg-[#1E3D8F] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-100 hover:opacity-90 active:scale-[0.94] active:shadow-none disabled:opacity-60">
+              <button type="button" onClick={() => void handleSubmit()} disabled={submitting} className="rounded-xl bg-[#1E3D8F] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-100 hover:opacity-90 active:scale-[0.94] active:shadow-none disabled:opacity-60">
                 {submitting ? 'Guardando...' : 'Entrar a AulaBase'}
               </button>
             )}
