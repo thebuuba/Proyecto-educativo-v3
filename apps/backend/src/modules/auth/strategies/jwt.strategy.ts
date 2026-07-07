@@ -4,6 +4,7 @@
  * verifica que el usuario exista y esté activo, y carga sus roles.
  */
 import { Injectable, UnauthorizedException } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
 import { PassportStrategy } from '@nestjs/passport'
 import { ExtractJwt, Strategy } from 'passport-jwt'
 import { getJwtSecret } from '../../../config/jwt-secret'
@@ -22,11 +23,11 @@ interface JwtPayload {
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor() {
+  constructor(config: ConfigService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: getJwtSecret(),
+      secretOrKey: getJwtSecret(config.get<string>('JWT_SECRET')),
     })
   }
 

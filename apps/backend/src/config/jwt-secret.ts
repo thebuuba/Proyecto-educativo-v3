@@ -1,5 +1,4 @@
-export function getJwtSecret(): string {
-  const secret = process.env.JWT_SECRET
+export function getJwtSecret(secret = process.env.JWT_SECRET): string {
   if (!secret) {
     throw new Error('JWT_SECRET is required')
   }
