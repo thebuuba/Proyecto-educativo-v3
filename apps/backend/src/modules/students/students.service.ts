@@ -184,7 +184,16 @@ export class StudentsService {
       enrollmentCounts.map((e) => [`${e.schoolYearId}:${e.gradeId}:${e.sectionId}`, e._count.id]),
     )
 
-    return courses.map((course) => {
+    const groupedCourses = new Map<string, typeof courses>()
+    for (const course of courses) {
+      const key = `${course.schoolYearId}:${course.gradeId}:${course.sectionId}`
+      const group = groupedCourses.get(key) ?? []
+      group.push(course)
+      groupedCourses.set(key, group)
+    }
+
+    return Array.from(groupedCourses.values()).map((courseGroup) => {
+      const course = courseGroup[0]
       const courseMeta = course as { grade?: { name: string }; section?: { name: string }; subject?: { name: string }; schoolYear?: { name: string }; area?: string; shift?: string }
       const gradeName =
         gradeById.get(course.gradeId)?.name ?? courseMeta.grade?.name ?? ''
@@ -192,16 +201,26 @@ export class StudentsService {
         sectionById.get(course.sectionId)?.name ??
         courseMeta.section?.name ??
         ''
-      const subjectName =
-        subjectById.get(course.subjectId)?.name ??
-        courseMeta.subject?.name ??
-        ''
       const schoolYearName =
         schoolYearById.get(course.schoolYearId)?.name ??
         courseMeta.schoolYear?.name ??
         ''
+      const subjects = courseGroup.map((item) => {
+        const subjectMeta = item as { subject?: { name: string; code?: string | null }; area?: string }
+        const subject = subjectById.get(item.subjectId)
+        const name = subject?.name ?? subjectMeta.subject?.name ?? ''
+        const code = subject?.code ?? subjectMeta.subject?.code ?? ''
+        return {
+          id: item.subjectId,
+          name,
+          code,
+          area: typeof subjectMeta.area === 'string' ? subjectMeta.area : name,
+        }
+      })
       const studentCount =
         countByKey.get(`${course.schoolYearId}:${course.gradeId}:${course.sectionId}`) ?? 0
+      const subjectName =
+        subjects.length === 1 ? subjects[0].name : `${subjects.length} asignaturas`
 
       return {
         id: course.id,
@@ -212,8 +231,10 @@ export class StudentsService {
         gradeName,
         sectionName,
         area:
-          typeof courseMeta.area === 'string' ? courseMeta.area : subjectName,
+          typeof courseMeta.area === 'string' ? courseMeta.area : subjects[0]?.area ?? '',
         subjectName,
+        subjects,
+        subjectCount: subjects.length,
         shift: typeof courseMeta.shift === 'string' ? courseMeta.shift : '',
         schoolYearName,
         studentCount,

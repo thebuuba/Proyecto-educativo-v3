@@ -100,6 +100,49 @@ describe('StudentsService course enrollment', () => {
     ])
   })
 
+  it('groups multiple subjects from the same section into one enrollment course', async () => {
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([
+      {
+        id: 'course-1',
+        schoolYearId: 'year-1',
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        subjectId: 'subject-1',
+        status: 'ACTIVE',
+      },
+      {
+        id: 'course-2',
+        schoolYearId: 'year-1',
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        subjectId: 'subject-2',
+        status: 'ACTIVE',
+      },
+    ])
+    mocks.prisma.subject.findMany.mockResolvedValue([
+      { id: 'subject-1', name: 'Lengua Espanola', code: 'LEN' },
+      { id: 'subject-2', name: 'Educacion Fisica', code: 'EFI' },
+    ])
+    mocks.prisma.enrollment.groupBy.mockResolvedValue([
+      { schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1', _count: { id: 2 } },
+    ])
+
+    const result = await createService().getEnrollmentCourses('school-1')
+
+    expect(result).toHaveLength(1)
+    expect(result[0]).toEqual(expect.objectContaining({
+      id: 'course-1',
+      label: '3ro Secundaria A - 2 asignaturas - 2026-2027',
+      subjectName: '2 asignaturas',
+      subjectCount: 2,
+      studentCount: 2,
+      subjects: [
+        expect.objectContaining({ id: 'subject-1', name: 'Lengua Espanola' }),
+        expect.objectContaining({ id: 'subject-2', name: 'Educacion Fisica' }),
+      ],
+    }))
+  })
+
   it('lists students by course with enrollment ids', async () => {
     mockCourse()
     mocks.prisma.enrollment.findMany.mockResolvedValue([

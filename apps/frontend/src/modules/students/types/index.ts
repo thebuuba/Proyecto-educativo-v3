@@ -150,6 +150,13 @@ export type EnrollmentCourse = {
   sectionName: string
   area: string
   subjectName: string
+  subjects?: {
+    id: string
+    name: string
+    code?: string | null
+    area?: string
+  }[]
+  subjectCount?: number
   shift: string
   schoolYearName: string
   studentCount: number

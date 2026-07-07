@@ -382,6 +382,7 @@ export function StudentsPage() {
                 <p className="mt-1 text-sm font-medium text-muted-foreground">
                   Año escolar {selectedCourse.schoolYearName}
                 </p>
+                <SubjectSummary course={selectedCourse} expanded />
                 <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6">
                   <HeaderItem label="Grado" value={selectedCourse.gradeName} />
                   <HeaderItem label="Sección" value={selectedCourse.sectionName} />
@@ -507,11 +508,13 @@ function CourseCard({
             {course.gradeName} {course.sectionName}
           </h3>
           <p className="mt-2 break-words text-sm font-semibold leading-5 text-foreground">
-            {course.subjectName}
+            {getSubjectSummaryLabel(course)}
           </p>
         </div>
         <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-primary" />
       </div>
+
+      <SubjectSummary course={course} />
 
       <div className="mt-auto pt-5">
         <p className="text-sm text-muted-foreground">
@@ -533,6 +536,42 @@ function HeaderItem({ label, value }: { label: string; value: string }) {
     <div className="min-w-0 rounded-lg border border-border bg-muted/35 px-3 py-2">
       <dt className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">{label}</dt>
       <dd className="mt-1 break-words font-semibold leading-5 text-foreground">{value}</dd>
+    </div>
+  )
+}
+
+function getCourseSubjects(course: EnrollmentCourse) {
+  return course.subjects?.length
+    ? course.subjects
+    : [{ id: course.subjectId, name: course.subjectName, area: course.area }]
+}
+
+function getSubjectSummaryLabel(course: EnrollmentCourse) {
+  const subjects = getCourseSubjects(course)
+  return subjects.length === 1 ? subjects[0].name : `${subjects.length} asignaturas`
+}
+
+function SubjectSummary({ course, expanded = false }: { course: EnrollmentCourse; expanded?: boolean }) {
+  const subjects = getCourseSubjects(course)
+  const visibleSubjects = expanded ? subjects : subjects.slice(0, 3)
+  const hiddenCount = subjects.length - visibleSubjects.length
+
+  return (
+    <div className={cn('flex flex-wrap gap-2', expanded ? 'mt-3' : 'mt-4')}>
+      {visibleSubjects.map((subject) => (
+        <span
+          key={subject.id}
+          className="max-w-full truncate rounded-full border border-border bg-muted/45 px-2.5 py-1 text-xs font-semibold text-muted-foreground"
+          title={subject.name}
+        >
+          {subject.name}
+        </span>
+      ))}
+      {hiddenCount > 0 ? (
+        <span className="rounded-full border border-border bg-card px-2.5 py-1 text-xs font-bold text-primary">
+          +{hiddenCount} mas
+        </span>
+      ) : null}
     </div>
   )
 }
@@ -585,7 +624,7 @@ function buildStudentsCsv(students: CourseStudent[], course: EnrollmentCourse) {
     course.gradeName,
     course.sectionName,
     course.area,
-    course.subjectName,
+    getCourseSubjects(course).map((subject) => subject.name).join(' | '),
     course.shift,
     course.schoolYearName,
   ])
