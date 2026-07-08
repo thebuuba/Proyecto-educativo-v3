@@ -15,6 +15,8 @@ export const defaultGradeCalculationConfig: GradeCalculationConfig = {
   recoveryRule: 'replace',
   finalRounding: 'standard',
   pcDecimals: 2,
+  annualDecimals: 2,
+  finalDecimals: 0,
   showRecovery: true,
 }
 

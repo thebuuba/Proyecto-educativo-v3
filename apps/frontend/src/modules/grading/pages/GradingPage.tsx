@@ -2,9 +2,7 @@ import { AlertCircle, FileText, RefreshCw } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import { Select } from '@/components/ui/Select'
-import { FinalGradesSummary } from '@/modules/grading/components/FinalGradesSummary'
-import { GradeSummary } from '@/modules/grading/components/GradeSummary'
-import { GradeTable } from '@/modules/grading/components/GradeTable'
+import { GradingBook } from '@/modules/grading/components/GradingBook'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
 import { competencyPeriods } from '@/modules/grading/utils/competencyGrades'
 
@@ -133,33 +131,44 @@ export function GradingPage() {
           Cargando calificaciones...
         </div>
       ) : isFinalView ? (
-        <FinalGradesSummary
+        <GradingBook
           students={students}
+          activities={activities}
+          records={gradeRecords}
+          recoveryScores={recoveryScores}
+          periodName={selectedPeriod.name}
+          periodShortName={selectedPeriod.shortName}
+          recoveryLabel={selectedPeriod.recoveryLabel}
+          courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
+          saving={saving}
+          initialView="final"
+          onAddActivity={addActivity}
+          onUpdateActivity={updateActivity}
+          onDeleteActivity={deleteActivity}
+          onSaveScore={updateActivityScore}
+          onSaveRecovery={updateRecoveryScore}
           loadFinalRecords={loadFinalRecords}
           getActivitiesForPeriod={getActivitiesForPeriod}
         />
       ) : (
-        <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_16rem]">
-          <GradeTable
-            students={students}
-            activities={activities}
-            records={gradeRecords}
-            recoveryScores={recoveryScores}
-            recoveryLabel={selectedPeriod.recoveryLabel}
-            saving={saving}
-            onAddActivity={addActivity}
-            onUpdateActivity={updateActivity}
-            onDeleteActivity={deleteActivity}
-            onSaveScore={updateActivityScore}
-            onSaveRecovery={updateRecoveryScore}
-          />
-          <GradeSummary
-            students={students}
-            activities={activities}
-            records={gradeRecords}
-            loading={loading}
-          />
-        </div>
+        <GradingBook
+          students={students}
+          activities={activities}
+          records={gradeRecords}
+          recoveryScores={recoveryScores}
+          periodName={selectedPeriod.name}
+          periodShortName={selectedPeriod.shortName}
+          recoveryLabel={selectedPeriod.recoveryLabel}
+          courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
+          saving={saving}
+          onAddActivity={addActivity}
+          onUpdateActivity={updateActivity}
+          onDeleteActivity={deleteActivity}
+          onSaveScore={updateActivityScore}
+          onSaveRecovery={updateRecoveryScore}
+          loadFinalRecords={loadFinalRecords}
+          getActivitiesForPeriod={getActivitiesForPeriod}
+        />
       )}
     </section>
   )
