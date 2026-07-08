@@ -40,6 +40,21 @@ function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
   return promise
 }
 
+function invalidateSchoolCache(schoolId: string) {
+  for (const key of cache.keys()) {
+    if (
+      key === `courseData:${schoolId}` ||
+      key === `teachers:${schoolId}` ||
+      key === `grades:${schoolId}` ||
+      key === `subjects:${schoolId}` ||
+      key === `sectionSubjects:${schoolId}` ||
+      key.startsWith(`sections:${schoolId}:`)
+    ) {
+      cache.delete(key)
+    }
+  }
+}
+
 /** Convierte el valor de estado a minúsculas */
 function status(value: string) {
   return value.toLowerCase()
@@ -183,8 +198,8 @@ export class CoursesService {
   }
 
   /** Crea un nuevo grado */
-  createGrade(schoolId: string, dto: CreateGradeDto) {
-    return prisma.grade.upsert({
+  async createGrade(schoolId: string, dto: CreateGradeDto) {
+    const grade = await prisma.grade.upsert({
       where: {
         schoolId_name: {
           schoolId,
@@ -209,6 +224,8 @@ export class CoursesService {
         status: RecordStatus.ACTIVE,
       },
     })
+    invalidateSchoolCache(schoolId)
+    return grade
   }
 
   /** Actualiza un grado existente */
@@ -216,7 +233,7 @@ export class CoursesService {
     const grade = await prisma.grade.findFirst({ where: { id, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
 
-    return prisma.grade.update({
+    const updated = await prisma.grade.update({
       where: { id },
       data: {
         ...(dto.name && { name: dto.name }),
@@ -228,6 +245,8 @@ export class CoursesService {
         ...(dto.status && { status: dto.status as RecordStatus }),
       },
     })
+    invalidateSchoolCache(schoolId)
+    return updated
   }
 
   /** Desactiva un grado (borrado lógico) */
@@ -235,10 +254,12 @@ export class CoursesService {
     const grade = await prisma.grade.findFirst({ where: { id, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
 
-    return prisma.grade.update({
+    const updated = await prisma.grade.update({
       where: { id },
       data: { status: RecordStatus.INACTIVE },
     })
+    invalidateSchoolCache(schoolId)
+    return updated
   }
 
   /** Obtiene las secciones activas de un grado */
@@ -256,7 +277,7 @@ export class CoursesService {
     const grade = await prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
 
-    return prisma.section.upsert({
+    const section = await prisma.section.upsert({
       where: {
         gradeId_name: {
           gradeId: dto.gradeId,
@@ -274,6 +295,8 @@ export class CoursesService {
         status: RecordStatus.ACTIVE,
       },
     })
+    invalidateSchoolCache(schoolId)
+    return section
   }
 
   /** Actualiza una sección existente */
@@ -285,7 +308,7 @@ export class CoursesService {
       if (!grade) throw new NotFoundException('Grade not found')
     }
 
-    return prisma.section.update({
+    const updated = await prisma.section.update({
       where: { id },
       data: {
         ...(dto.name && { name: dto.name }),
@@ -294,6 +317,8 @@ export class CoursesService {
         ...(dto.status && { status: dto.status as RecordStatus }),
       },
     })
+    invalidateSchoolCache(schoolId)
+    return updated
   }
 
   /** Desactiva una sección (borrado lógico) */
@@ -301,10 +326,12 @@ export class CoursesService {
     const section = await prisma.section.findFirst({ where: { id, schoolId } })
     if (!section) throw new NotFoundException('Section not found')
 
-    return prisma.section.update({
+    const updated = await prisma.section.update({
       where: { id },
       data: { status: 'INACTIVE' },
     })
+    invalidateSchoolCache(schoolId)
+    return updated
   }
 
   /** Obtiene todas las materias del colegio */
@@ -315,8 +342,8 @@ export class CoursesService {
   }
 
   /** Crea una nueva materia */
-  createSubject(schoolId: string, dto: CreateSubjectDto) {
-    return prisma.subject.upsert({
+  async createSubject(schoolId: string, dto: CreateSubjectDto) {
+    const subject = await prisma.subject.upsert({
       where: {
         schoolId_code: {
           schoolId,
@@ -337,6 +364,8 @@ export class CoursesService {
         status: RecordStatus.ACTIVE,
       },
     })
+    invalidateSchoolCache(schoolId)
+    return subject
   }
 
   /** Asigna una materia a una sección con un profesor, validando todas las referencias */
@@ -357,7 +386,7 @@ export class CoursesService {
     if (!subject) throw new NotFoundException('Subject not found')
     if (dto.teacherId && !teacher) throw new NotFoundException('Teacher not found')
 
-    return prisma.sectionSubject.upsert({
+    const assignment = await prisma.sectionSubject.upsert({
       where: {
         schoolYearId_sectionId_subjectId: {
           schoolYearId: resolvedSchoolYear.id,
@@ -380,6 +409,8 @@ export class CoursesService {
         status: RecordStatus.ACTIVE,
       },
     })
+    invalidateSchoolCache(schoolId)
+    return assignment
   }
 
   /** Obtiene las asignaciones materia-sección activas */
@@ -396,9 +427,11 @@ export class CoursesService {
     const ss = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
     if (!ss) throw new NotFoundException('Section subject not found')
 
-    return prisma.sectionSubject.update({
+    const updated = await prisma.sectionSubject.update({
       where: { id },
       data: { status: 'INACTIVE' },
     })
+    invalidateSchoolCache(schoolId)
+    return updated
   }
 }

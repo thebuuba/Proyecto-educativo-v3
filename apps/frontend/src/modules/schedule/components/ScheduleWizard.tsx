@@ -47,6 +47,9 @@ export type ScheduleConfig = {
   blockDuration: number
   startTime: string
   endTime: string
+  pedagogicalLabel: string
+  structureMode?: 'uniform' | 'custom'
+  customBlocks?: ScheduleBlock[]
   breaks: Array<{ id: string; name: string; start: string; end: string }>
 }
 
@@ -69,7 +72,20 @@ function toTimeString(minutes: number): string {
   return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`
 }
 
-function generateBlocks(config: ScheduleConfig): ScheduleBlock[] {
+function normalizeBlocks(blocks: ScheduleBlock[]) {
+  return blocks
+    .filter((block) => block.start && block.end && toMinutes(block.end) > toMinutes(block.start))
+    .sort((first, second) => toMinutes(first.start) - toMinutes(second.start))
+    .map((block, index) => ({
+      ...block,
+      id: block.id || `custom-${index}`,
+      label: block.label.trim() || (block.type === 'break' ? 'Receso' : ORDINALS[index] ?? `${index + 1}.º período`),
+      start: toTimeString(toMinutes(block.start)),
+      end: toTimeString(toMinutes(block.end)),
+    }))
+}
+
+function generateUniformBlocks(config: ScheduleConfig): ScheduleBlock[] {
   const blocks: ScheduleBlock[] = []
   const start = toMinutes(config.startTime)
   const end = toMinutes(config.endTime)
@@ -119,6 +135,13 @@ function generateBlocks(config: ScheduleConfig): ScheduleBlock[] {
   return blocks
 }
 
+function generateBlocks(config: ScheduleConfig): ScheduleBlock[] {
+  if (config.structureMode === 'custom' && config.customBlocks?.length) {
+    return normalizeBlocks(config.customBlocks)
+  }
+  return generateUniformBlocks(config)
+}
+
 type ScheduleWizardProps = {
   initialConfig?: ScheduleConfig
   submitting: boolean
@@ -136,14 +159,24 @@ export function ScheduleWizard({
 }: ScheduleWizardProps) {
   const [step, setStep] = useState(0)
   const [config, setConfig] = useState<ScheduleConfig>(
-    initialConfig ?? {
-      days: [1, 2, 3, 4, 5],
-      shift: 'morning',
-      blockDuration: 45,
-      startTime: '08:00',
-      endTime: '12:30',
-      breaks: [{ id: crypto.randomUUID(), name: 'Recreo', start: '09:30', end: '10:00' }],
-    },
+    initialConfig
+      ? {
+          ...initialConfig,
+          pedagogicalLabel: initialConfig.pedagogicalLabel || 'Hora pedagógica',
+          structureMode: initialConfig.structureMode ?? 'uniform',
+          customBlocks: initialConfig.customBlocks ?? [],
+        }
+      : {
+          days: [1, 2, 3, 4, 5],
+          shift: 'morning',
+          blockDuration: 45,
+          startTime: '08:00',
+          endTime: '12:30',
+          pedagogicalLabel: 'Hora pedagógica',
+          structureMode: 'uniform',
+          customBlocks: [],
+          breaks: [{ id: crypto.randomUUID(), name: 'Recreo', start: '09:30', end: '10:00' }],
+        },
   )
 
   const blocks = useMemo(() => generateBlocks(config), [config])
@@ -183,6 +216,71 @@ export function ScheduleWizard({
     })
   }
 
+  function enableCustomBlocks(blocksToUse = blocks) {
+    const normalizedBlocks = normalizeBlocks(blocksToUse)
+    updateConfig({
+      structureMode: 'custom',
+      shift: 'custom',
+      startTime: normalizedBlocks[0]?.start ?? config.startTime,
+      endTime: normalizedBlocks.at(-1)?.end ?? config.endTime,
+      customBlocks: normalizedBlocks,
+    })
+  }
+
+  function useExtendedSample() {
+    enableCustomBlocks([
+      { id: crypto.randomUUID(), label: '1.º', type: 'class', start: '07:30', end: '08:10' },
+      { id: crypto.randomUUID(), label: '2.º', type: 'class', start: '08:10', end: '08:50' },
+      { id: crypto.randomUUID(), label: '3.º', type: 'class', start: '08:50', end: '09:30' },
+      { id: crypto.randomUUID(), label: 'Recreo', type: 'break', start: '09:30', end: '10:00' },
+      { id: crypto.randomUUID(), label: '4.º', type: 'class', start: '10:00', end: '10:40' },
+      { id: crypto.randomUUID(), label: '5.º', type: 'class', start: '10:40', end: '11:20' },
+      { id: crypto.randomUUID(), label: '6.º', type: 'class', start: '11:20', end: '12:00' },
+      { id: crypto.randomUUID(), label: 'Almuerzo', type: 'break', start: '12:00', end: '13:00' },
+      { id: crypto.randomUUID(), label: '7.º', type: 'class', start: '13:00', end: '13:35' },
+      { id: crypto.randomUUID(), label: '8.º', type: 'class', start: '13:35', end: '14:05' },
+      { id: crypto.randomUUID(), label: '9.º', type: 'class', start: '14:05', end: '14:35' },
+      { id: crypto.randomUUID(), label: 'Recreo', type: 'break', start: '14:35', end: '15:00' },
+      { id: crypto.randomUUID(), label: '10.º', type: 'class', start: '15:00', end: '15:30' },
+      { id: crypto.randomUUID(), label: '11.º', type: 'class', start: '15:30', end: '16:00' },
+    ])
+  }
+
+  function updateCustomBlock(id: string, patch: Partial<ScheduleBlock>) {
+    const currentBlocks = config.customBlocks?.length ? config.customBlocks : blocks
+    updateConfig({
+      structureMode: 'custom',
+      customBlocks: currentBlocks.map((block) => (block.id === id ? { ...block, ...patch } : block)),
+    })
+  }
+
+  function addCustomBlock(type: ScheduleBlock['type']) {
+    const currentBlocks = normalizeBlocks(config.customBlocks?.length ? config.customBlocks : blocks)
+    const previous = currentBlocks.at(-1)
+    const start = previous?.end ?? config.startTime
+    const end = toTimeString(toMinutes(start) + (type === 'break' ? 20 : config.blockDuration))
+    updateConfig({
+      structureMode: 'custom',
+      customBlocks: [
+        ...currentBlocks,
+        {
+          id: crypto.randomUUID(),
+          label: type === 'break' ? 'Receso' : `${currentBlocks.filter((b) => b.type === 'class').length + 1}.º`,
+          type,
+          start,
+          end,
+        },
+      ],
+    })
+  }
+
+  function removeCustomBlock(id: string) {
+    updateConfig({
+      structureMode: 'custom',
+      customBlocks: (config.customBlocks ?? []).filter((block) => block.id !== id),
+    })
+  }
+
   function toggleDay(dayOfWeek: number) {
     const days = config.days.includes(dayOfWeek)
       ? config.days.filter((d) => d !== dayOfWeek)
@@ -193,6 +291,9 @@ export function ScheduleWizard({
   function canProceed(): boolean {
     if (step === 0) return config.days.length > 0
     if (step === 1) {
+      if (config.structureMode === 'custom') {
+        return blocks.some((block) => block.type === 'class')
+      }
       return (
         config.blockDuration >= 5 &&
         config.startTime < config.endTime
@@ -205,7 +306,18 @@ export function ScheduleWizard({
 
   function handleNext() {
     if (step < STEPS.length - 1) setStep((s) => s + 1)
-    else onComplete(config, blocks)
+    else {
+      const finalBlocks = normalizeBlocks(blocks)
+      onComplete(
+        {
+          ...config,
+          startTime: finalBlocks[0]?.start ?? config.startTime,
+          endTime: finalBlocks.at(-1)?.end ?? config.endTime,
+          customBlocks: config.structureMode === 'custom' ? finalBlocks : config.customBlocks,
+        },
+        finalBlocks,
+      )
+    }
   }
 
   function formatTime(time: string) {
@@ -310,8 +422,29 @@ export function ScheduleWizard({
                 Define tu jornada
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                La tanda, el horario y la duración de cada período de clase.
+                Usa períodos iguales o personaliza cada bloque cuando tus tandas tengan duraciones mixtas.
               </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Button
+                type="button"
+                variant={config.structureMode === 'custom' ? 'outline' : 'primary'}
+                size="sm"
+                onClick={() => updateConfig({ structureMode: 'uniform', customBlocks: [] })}
+              >
+                Períodos iguales
+              </Button>
+              <Button
+                type="button"
+                variant={config.structureMode === 'custom' ? 'primary' : 'outline'}
+                size="sm"
+                onClick={() => enableCustomBlocks()}
+              >
+                Editar períodos
+              </Button>
+              <Button type="button" variant="ghost" size="sm" onClick={useExtendedSample}>
+                Cargar mañana + vespertina
+              </Button>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Tanda">
@@ -362,11 +495,87 @@ export function ScheduleWizard({
                   }}
                 />
               </Field>
+              <Field label="Nombre de hora libre">
+                <Input
+                  value={config.pedagogicalLabel}
+                  onChange={(e) => updateConfig({ pedagogicalLabel: e.target.value })}
+                  placeholder="Hora pedagógica"
+                />
+              </Field>
             </div>
             {config.startTime >= config.endTime ? (
               <p className="text-sm text-destructive">
                 La hora de inicio debe ser anterior a la hora final.
               </p>
+            ) : null}
+            {config.structureMode === 'custom' ? (
+              <section className="space-y-3 rounded-2xl border border-border bg-muted/20 p-4">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <h4 className="text-sm font-bold text-foreground">Estructura personalizada</h4>
+                    <p className="text-xs text-muted-foreground">
+                      Edita clases, recreos, almuerzo y tandas con duraciones diferentes.
+                    </p>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button type="button" variant="outline" size="sm" onClick={() => addCustomBlock('class')}>
+                      <Plus className="size-4" />
+                      Clase
+                    </Button>
+                    <Button type="button" variant="outline" size="sm" onClick={() => addCustomBlock('break')}>
+                      <Coffee className="size-4" />
+                      Receso
+                    </Button>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  {blocks.map((block) => (
+                    <div
+                      key={block.id}
+                      className={cn(
+                        'grid gap-2 rounded-xl border p-3 md:grid-cols-[7rem_minmax(0,1fr)_7rem_7rem_auto]',
+                        block.type === 'break'
+                          ? 'border-amber-200 bg-amber-50'
+                          : 'border-border bg-card',
+                      )}
+                    >
+                      <Select
+                        value={block.type}
+                        onChange={(event) =>
+                          updateCustomBlock(block.id, { type: event.target.value as ScheduleBlock['type'] })
+                        }
+                      >
+                        <option value="class">Clase</option>
+                        <option value="break">Receso</option>
+                      </Select>
+                      <Input
+                        value={block.label}
+                        onChange={(event) => updateCustomBlock(block.id, { label: event.target.value })}
+                        placeholder={block.type === 'break' ? 'Receso' : 'Período'}
+                      />
+                      <Input
+                        type="time"
+                        value={block.start}
+                        onChange={(event) => updateCustomBlock(block.id, { start: event.target.value })}
+                      />
+                      <Input
+                        type="time"
+                        value={block.end}
+                        onChange={(event) => updateCustomBlock(block.id, { end: event.target.value })}
+                      />
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => removeCustomBlock(block.id)}
+                        aria-label="Eliminar bloque"
+                      >
+                        <Trash2 className="size-4" />
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              </section>
             ) : null}
           </div>
         ) : null}
@@ -382,7 +591,11 @@ export function ScheduleWizard({
                 Agrega las pausas de tu jornada. Puedes omitir este paso.
               </p>
             </div>
-            {config.breaks.length === 0 ? (
+            {config.structureMode === 'custom' ? (
+              <div className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-800">
+                Estás usando una estructura personalizada. Los recreos, almuerzo y cambios de tanda se editan como filas dentro del paso Horas.
+              </div>
+            ) : config.breaks.length === 0 ? (
               <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border py-10">
                 <Coffee className="size-8 text-muted-foreground/40" />
                 <p className="text-sm text-muted-foreground">Sin recesos configurados.</p>
@@ -437,10 +650,12 @@ export function ScheduleWizard({
                 ))}
               </div>
             )}
-            <Button variant="outline" size="sm" onClick={addBreak} className="gap-2">
-              <Plus className="size-4" />
-              Agregar receso
-            </Button>
+            {config.structureMode !== 'custom' ? (
+              <Button variant="outline" size="sm" onClick={addBreak} className="gap-2">
+                <Plus className="size-4" />
+                Agregar receso
+              </Button>
+            ) : null}
           </div>
         ) : null}
 
@@ -467,7 +682,7 @@ export function ScheduleWizard({
                 {config.startTime} – {config.endTime}
               </Badge>
               <Badge tone="accent" className="rounded-full px-3 py-1">
-                {classCount} períodos · {config.blockDuration} min
+                {classCount} períodos · {config.structureMode === 'custom' ? 'duración variable' : `${config.blockDuration} min`}
               </Badge>
             </div>
 

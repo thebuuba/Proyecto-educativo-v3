@@ -6,11 +6,11 @@ import {
   ClipboardList,
   GraduationCap,
   MapPin,
-  MoreHorizontal,
   Plus,
   Search,
   SearchX,
   Sparkles,
+  Trash2,
   UsersRound,
   X,
 } from 'lucide-react'
@@ -45,6 +45,7 @@ type CourseCardItem = {
   grade: GradeWithSections
   section: Section
   assignment: SectionSubjectAssignment | null
+  assignments: SectionSubjectAssignment[]
   subjectName: string
   levelName: string
   cycleName: string
@@ -323,14 +324,16 @@ export function CoursesPage() {
       ].join(' ')).includes(query)
       const matchesLevel = levelFilter === 'all' || item.levelName === levelFilter
       const matchesCycle = cycleFilter === 'all' || item.cycleName === cycleFilter
-      const matchesSubject = subjectFilter === 'all' || item.subjectName === subjectFilter
+      const matchesSubject = subjectFilter === 'all' || item.assignments.some((assignment) => assignment.subjectName === subjectFilter)
       return matchesSearch && matchesLevel && matchesCycle && matchesSubject
     })
   }, [courseCards, cycleFilter, levelFilter, debouncedSearch, subjectFilter])
   const levelFilters = useMemo(() => uniqueValues(courseCards.map((item) => item.levelName)), [courseCards])
   const cycleFilters = useMemo(() => uniqueValues(courseCards.map((item) => item.cycleName)), [courseCards])
   const subjectFilters = useMemo(
-    () => uniqueValues(courseCards.map((item) => item.subjectName).filter((item) => item !== 'Sin asignatura')),
+    () => uniqueValues(
+      courseCards.flatMap((item) => item.assignments.map((assignment) => assignment.subjectName)),
+    ),
     [courseCards],
   )
   const groupedCourses = useMemo(() => groupCoursesByLevel(filteredCourseCards), [filteredCourseCards])
@@ -637,16 +640,16 @@ export function CoursesPage() {
               ? 'Inactivar curso'
               : deleteTarget.kind === 'section'
                 ? 'Inactivar seccion'
-                : 'Quitar asignatura'
+                : 'Eliminar curso'
           }
           description={
             deleteTarget.kind === 'grade'
               ? `Inactivar el curso "${deleteTarget.label}"? Se conservara el historial relacionado.`
               : deleteTarget.kind === 'section'
                 ? `Inactivar la seccion "${deleteTarget.label}"? Se conservara el historial relacionado.`
-                : 'Quitar esta asignatura del curso para el ano escolar activo?'
+                : `Eliminar el curso "${deleteTarget.label}" del ano escolar activo? Se conservara el historial relacionado.`
           }
-          confirmLabel={deleteTarget.kind === 'assignment' ? 'Quitar' : 'Inactivar'}
+          confirmLabel={deleteTarget.kind === 'assignment' ? 'Eliminar curso' : 'Inactivar'}
           destructive
           onConfirm={handleDeleteConfirm}
           onClose={() => setDeleteTarget(null)}
@@ -1084,12 +1087,7 @@ const CourseCard = memo(function CourseCard({
               <h3 className="text-lg font-extrabold tracking-tight text-foreground">
                 {item.grade.name} {item.section.name}
               </h3>
-              <p
-                className="text-sm font-bold"
-                style={{ color: palette.color }}
-              >
-                {item.subjectName}
-              </p>
+              <SubjectSummary assignments={item.assignments} palette={palette} />
             </div>
           </div>
 
@@ -1139,11 +1137,6 @@ const CourseCard = memo(function CourseCard({
               <FooterAction label="Asignar asignatura" onClick={() => onAssignSubject(item.grade, item.section.id)}>
                 <GraduationCap className="h-4 w-4" />
               </FooterAction>
-              {item.assignment && onDeleteSubjectAssignment ? (
-                <FooterAction label="Quitar asignatura" onClick={() => onDeleteSubjectAssignment(item.assignment!)}>
-                  <ClipboardList className="h-4 w-4" />
-                </FooterAction>
-              ) : null}
               <FooterAction label="Inactivar seccion" onClick={() => onDeleteSection(item.section)}>
                 <CalendarDays className="h-4 w-4" />
               </FooterAction>
@@ -1152,16 +1145,72 @@ const CourseCard = memo(function CourseCard({
             <span className="px-2 text-xs font-bold text-muted-foreground">Vista de curso</span>
           )}
         </div>
-        <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
-        >
-          <MoreHorizontal className="h-4 w-4" />
-        </button>
+        {canManage && item.assignment && item.assignments.length === 1 && onDeleteSubjectAssignment ? (
+          <button
+            type="button"
+            className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg px-2.5 text-xs font-bold text-destructive transition-colors hover:bg-destructive/10"
+            aria-label="Eliminar curso"
+            title="Eliminar curso"
+            onClick={(event) => {
+              event.stopPropagation()
+              onDeleteSubjectAssignment(item.assignment!)
+            }}
+          >
+            <Trash2 className="h-4 w-4" />
+            <span>Eliminar curso</span>
+          </button>
+        ) : null}
       </div>
     </article>
   )
 })
+
+function SubjectSummary({
+  assignments,
+  palette,
+}: {
+  assignments: SectionSubjectAssignment[]
+  palette: { color: string; soft: string }
+}) {
+  const visibleAssignments = assignments.slice(0, 3)
+  const hiddenCount = assignments.length - visibleAssignments.length
+
+  if (assignments.length === 0) {
+    return (
+      <p className="text-sm font-bold" style={{ color: palette.color }}>
+        Sin asignatura
+      </p>
+    )
+  }
+
+  if (assignments.length === 1) {
+    return (
+      <p className="text-sm font-bold" style={{ color: palette.color }}>
+        {assignments[0].subjectName}
+      </p>
+    )
+  }
+
+  return (
+    <div className="mt-1 flex flex-wrap gap-1.5">
+      {visibleAssignments.map((assignment) => (
+        <span
+          key={assignment.id}
+          className="rounded-full px-2 py-0.5 text-[11px] font-bold"
+          style={{ backgroundColor: palette.soft, color: palette.color }}
+          title={assignment.subjectName}
+        >
+          {assignment.subjectName}
+        </span>
+      ))}
+      {hiddenCount > 0 ? (
+        <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold text-muted-foreground">
+          +{hiddenCount}
+        </span>
+      ) : null}
+    </div>
+  )
+}
 
 function FooterAction({
   label,
@@ -1195,30 +1244,28 @@ function buildCourseCards(grades: GradeWithSections[]): CourseCardItem[] {
       const cycleName = grade.academicCycleName ?? 'Sin ciclo'
       const activeAssignments = section.assignments.filter((assignment) => assignment.status === 'active')
 
-      if (!activeAssignments.length) {
-        const card: CourseCardItem = {
-          id: `${grade.id}:${section.id}`,
-          grade,
-          section,
-          assignment: null,
-          subjectName: 'Sin asignatura',
-          levelName,
-          cycleName,
-        }
-        return [card]
-      }
+      if (!activeAssignments.length) return []
 
-      return activeAssignments.map((assignment): CourseCardItem => ({
-        id: assignment.id,
+      const firstAssignment = activeAssignments[0] ?? null
+
+      return [{
+        id: section.id,
         grade,
         section,
-        assignment,
-        subjectName: assignment.subjectName || 'Sin asignatura',
+        assignment: firstAssignment,
+        assignments: activeAssignments,
+        subjectName: getCourseSubjectLabel(activeAssignments),
         levelName,
         cycleName,
-      }))
+      }]
     }),
   )
+}
+
+function getCourseSubjectLabel(assignments: SectionSubjectAssignment[]) {
+  if (assignments.length === 0) return 'Sin asignatura'
+  if (assignments.length === 1) return assignments[0].subjectName || 'Sin asignatura'
+  return `${assignments.length} asignaturas`
 }
 
 function uniqueValues(values: string[]) {

@@ -40,6 +40,14 @@ const emptyCatalogs: CourseCatalogs = {
   teachers: [],
 }
 
+function normalizeText(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim()
+    .toLowerCase()
+}
+
 /** Hook principal para la gestión de cursos y secciones */
 export function useCourses() {
   const [grades, setGrades] = useState<GradeWithSections[]>([])
@@ -141,8 +149,14 @@ export function useCourses() {
 
       let grade = grades.find((item) => {
         const sameName = item.name.trim().toLowerCase() === input.gradeName.trim().toLowerCase()
-        const sameLevel = (item.academicLevelId ?? null) === input.academicLevelId
-        const sameCycle = (item.academicCycleId ?? null) === input.academicCycleId
+        const sameLevel =
+          (item.academicLevelId && input.academicLevelId)
+            ? item.academicLevelId === input.academicLevelId
+            : normalizeText(item.academicLevelName ?? item.level ?? '') === normalizeText(input.academicLevelName)
+        const sameCycle =
+          (item.academicCycleId && input.academicCycleId)
+            ? item.academicCycleId === input.academicCycleId
+            : normalizeText(item.academicCycleName ?? '') === normalizeText(input.academicCycleName)
         return sameName && sameLevel && sameCycle
       })
 
