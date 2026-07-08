@@ -85,7 +85,7 @@ async function resolveSchoolYear(schoolId: string) {
 export class CoursesService {
   /** Obtiene los datos completos del curso: grados, secciones, asignaciones, catálogos y año escolar actual */
   async getCourseData(schoolId: string) {
-    return withCache(`courseData:${schoolId}`, () => this._getCourseData(schoolId))
+    return this._getCourseData(schoolId)
   }
 
   private async _getCourseData(schoolId: string) {
@@ -102,6 +102,15 @@ export class CoursesService {
     const assignments = await prisma.sectionSubject.findMany({
       where: { schoolId, status: 'ACTIVE' },
     })
+    const enrollmentCounts = await prisma.enrollment.groupBy({
+      by: ['sectionId'],
+      where: {
+        schoolId,
+        schoolYearId: currentSchoolYear.id,
+        status: 'ACTIVE',
+      },
+      _count: { id: true },
+    })
     const subjects = await prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } })
     const academicLevels = await prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } })
     const cycles = await prisma.drAcademicCycle.findMany({ orderBy: { name: 'asc' } })
@@ -115,6 +124,9 @@ export class CoursesService {
     const modalityById = new Map(modalities.map((item) => [item.id, item]))
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const teacherById = new Map(teachers.map((item) => [item.id, item]))
+    const studentCountBySectionId = new Map(
+      enrollmentCounts.map((item) => [item.sectionId, item._count.id]),
+    )
 
     return {
       grades: grades.map((grade) => ({
@@ -128,6 +140,7 @@ export class CoursesService {
           .map((section) => ({
             ...section,
             status: status(section.status),
+            studentCount: studentCountBySectionId.get(section.id) ?? 0,
             assignments: assignments
               .filter((assignment) => assignment.sectionId === section.id)
               .map((assignment) => {
@@ -199,31 +212,37 @@ export class CoursesService {
 
   /** Crea un nuevo grado */
   async createGrade(schoolId: string, dto: CreateGradeDto) {
-    const grade = await prisma.grade.upsert({
+    const existing = await prisma.grade.findFirst({
       where: {
-        schoolId_name: {
-          schoolId,
-          name: dto.name,
-        },
-      },
-      create: {
         schoolId,
         name: dto.name,
-        level: dto.level ?? null,
-        sequence: dto.sequence ?? null,
         academicLevelId: dto.academicLevelId ?? null,
         academicCycleId: dto.academicCycleId ?? null,
-        defaultModalityId: dto.defaultModalityId ?? null,
-      },
-      update: {
-        ...(dto.level !== undefined && { level: dto.level }),
-        ...(dto.sequence !== undefined && { sequence: dto.sequence }),
-        ...(dto.academicLevelId !== undefined && { academicLevelId: dto.academicLevelId }),
-        ...(dto.academicCycleId !== undefined && { academicCycleId: dto.academicCycleId }),
-        ...(dto.defaultModalityId !== undefined && { defaultModalityId: dto.defaultModalityId }),
-        status: RecordStatus.ACTIVE,
       },
     })
+
+    const grade = existing
+      ? await prisma.grade.update({
+        where: { id: existing.id },
+        data: {
+          ...(dto.level !== undefined && { level: dto.level }),
+          ...(dto.sequence !== undefined && { sequence: dto.sequence }),
+          ...(dto.defaultModalityId !== undefined && { defaultModalityId: dto.defaultModalityId }),
+          status: RecordStatus.ACTIVE,
+        },
+      })
+      : await prisma.grade.create({
+        data: {
+          schoolId,
+          name: dto.name,
+          level: dto.level ?? null,
+          sequence: dto.sequence ?? null,
+          academicLevelId: dto.academicLevelId ?? null,
+          academicCycleId: dto.academicCycleId ?? null,
+          defaultModalityId: dto.defaultModalityId ?? null,
+        },
+      })
+
     invalidateSchoolCache(schoolId)
     return grade
   }

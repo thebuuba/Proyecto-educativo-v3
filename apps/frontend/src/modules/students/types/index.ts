@@ -147,6 +147,8 @@ export type EnrollmentCourse = {
   subjectId: string
   schoolYearId: string
   gradeName: string
+  gradeSequence: number | null
+  academicLevelName: string
   sectionName: string
   area: string
   subjectName: string

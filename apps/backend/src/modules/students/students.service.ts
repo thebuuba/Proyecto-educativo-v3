@@ -38,6 +38,14 @@ type ImportPreviewRow = {
   errors: string[]
 }
 
+type EnrollmentCourseSummary = {
+  gradeName: string
+  gradeSequence: number | null
+  academicLevelName: string
+  sectionName: string
+  subjectName: string
+}
+
 /**
  * Representa un error encontrado durante la importación de estudiantes.
  */
@@ -155,6 +163,36 @@ export function __test__clearCache() {
   cache.clear()
 }
 
+function compareEnrollmentCourses(first: EnrollmentCourseSummary, second: EnrollmentCourseSummary) {
+  const levelDiff = getEnrollmentCourseLevelOrder(first) - getEnrollmentCourseLevelOrder(second)
+  if (levelDiff !== 0) return levelDiff
+
+  const gradeDiff = getEnrollmentCourseGradeOrder(first) - getEnrollmentCourseGradeOrder(second)
+  if (gradeDiff !== 0) return gradeDiff
+
+  const sectionDiff = first.sectionName.localeCompare(second.sectionName, 'es', { numeric: true })
+  if (sectionDiff !== 0) return sectionDiff
+
+  return first.subjectName.localeCompare(second.subjectName, 'es', { numeric: true })
+}
+
+function getEnrollmentCourseLevelOrder(course: EnrollmentCourseSummary) {
+  const label = `${course.academicLevelName} ${course.gradeName}`
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+
+  if (label.includes('prim')) return 1
+  if (label.includes('sec')) return 2
+  return 3
+}
+
+function getEnrollmentCourseGradeOrder(course: EnrollmentCourseSummary) {
+  if (typeof course.gradeSequence === 'number') return course.gradeSequence
+  const match = course.gradeName.match(/\d+/)
+  return match ? Number(match[0]) : Number.MAX_SAFE_INTEGER
+}
+
 @Injectable()
 export class StudentsService {
   private async getCourseOrThrow(schoolId: string, courseId: string) {
@@ -237,6 +275,7 @@ export class StudentsService {
       const courseMeta = course as { grade?: { name: string }; section?: { name: string }; subject?: { name: string }; schoolYear?: { name: string }; area?: string; shift?: string }
       const gradeName =
         gradeById.get(course.gradeId)?.name ?? courseMeta.grade?.name ?? ''
+      const grade = gradeById.get(course.gradeId)
       const sectionName =
         sectionById.get(course.sectionId)?.name ??
         courseMeta.section?.name ??
@@ -269,6 +308,8 @@ export class StudentsService {
         subjectId: course.subjectId,
         schoolYearId: course.schoolYearId,
         gradeName,
+        gradeSequence: grade?.sequence ?? null,
+        academicLevelName: grade?.level ?? '',
         sectionName,
         area:
           typeof courseMeta.area === 'string' ? courseMeta.area : subjects[0]?.area ?? '',
@@ -281,7 +322,7 @@ export class StudentsService {
         label:
           `${gradeName} ${sectionName} - ${subjectName} - ${schoolYearName}`.trim(),
       }
-    })
+    }).sort(compareEnrollmentCourses)
   }
 
   async getStudentsByCourse(schoolId: string, courseId: string) {

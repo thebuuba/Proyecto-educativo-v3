@@ -272,7 +272,7 @@ model Grade {
   sectionSubjects SectionSubject[]
   enrollments     Enrollment[]
 
-  @@unique([schoolId, name])
+  @@unique([schoolId, name, academicLevelId, academicCycleId])
   @@index([schoolId, status])
   @@map("grades")
 }

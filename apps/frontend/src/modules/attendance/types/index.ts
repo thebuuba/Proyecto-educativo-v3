@@ -56,12 +56,9 @@ export type SectionOption = {
 export type UpsertAttendanceInput = {
   enrollmentId: string
   academicPeriodId: string
-  sectionId: string
-  schoolYearId: string
   sectionSubjectId?: string
   attendanceDate: string
   status: AttendanceStatus
   notes?: string | null
-  attendanceId?: string | null
   type?: 'daily' | 'class'
 }

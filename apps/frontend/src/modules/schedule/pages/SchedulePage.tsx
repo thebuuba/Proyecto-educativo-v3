@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
+import { Button } from '@/components/ui/Button'
 import { PageShell } from '@/components/ui/PageShell'
+import { ScheduleFinalTable } from '@/modules/schedule/components/ScheduleFinalTable'
 import { ScheduleWeekGrid } from '@/modules/schedule/components/ScheduleWeekGrid'
 import {
   ScheduleWizard,
@@ -103,6 +105,7 @@ export function SchedulePage() {
   const [config, setConfig] = useState<ScheduleConfig | null>(null)
   const [storedBlocks, setStoredBlocks] = useState<ScheduleBlock[]>([])
   const [pedagogicalBlocks, setPedagogicalBlocks] = useState<PedagogicalBlock[]>([])
+  const [assignmentMode, setAssignmentMode] = useState(false)
   const [sectionSubjects, setSectionSubjects] = useState<SectionSubjectOption[]>([])
   const [saving, setSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
@@ -150,7 +153,8 @@ export function SchedulePage() {
   }, [hasTimeSlots, apiTimeSlots, storedBlocks])
 
   const hasStructure = hasTimeSlots || storedBlocks.length > 0
-  const showGrid = hasStructure && !showWizard
+  const showFinalSchedule = hasStructure && !showWizard && !assignmentMode
+  const showAssignmentGrid = hasStructure && !showWizard && assignmentMode
   const days = config ? getActiveDays(config) : activeWeekDays.filter(() => true)
   const visiblePedagogicalBlocks = useMemo(() => {
     const activeDayIds = new Set<number>(days.map((day) => day.dayOfWeek))
@@ -250,6 +254,7 @@ export function SchedulePage() {
       setConfig(normalizedConfig)
       setStoredBlocks(blocks)
       setShowWizard(false)
+      setAssignmentMode(true)
       await refetchAll()
     } catch (err) {
       setSaveError(err instanceof Error ? err.message : 'Error al crear el horario.')
@@ -329,7 +334,9 @@ export function SchedulePage() {
 
   const description = !hasStructure
     ? 'Configura la estructura de tu semana académica en unos pocos pasos.'
-    : `${entries.length} clases · ${showGrid ? 'Tu semana está lista. Asigna materias a cada período.' : ''}`
+    : assignmentMode
+      ? 'Completa o corrige las asignaciones antes de volver a la vista final.'
+      : `${entries.length} clases organizadas en una vista semanal unificada.`
 
   return (
     <PageShell
@@ -375,21 +382,41 @@ export function SchedulePage() {
           </div>
         ) : null}
 
-        {/* Show grid when structure exists */}
-        {!loading && showGrid && config ? (
-          <ScheduleWeekGrid
+        {/* Show final schedule when structure exists */}
+        {!loading && showFinalSchedule && config ? (
+          <ScheduleFinalTable
             config={config}
             blocks={gridBlocks}
             entries={entries}
             pedagogicalBlocks={visiblePedagogicalBlocks}
-            sectionSubjects={sectionSubjects}
             activeDays={days}
-            onEdit={() => setShowWizard(true)}
-            onAssign={handleAssign}
-            onRemove={handleRemove}
-            onMarkPedagogical={markPedagogicalBlock}
-            onRemovePedagogical={removePedagogicalBlock}
+            onEditStructure={() => setShowWizard(true)}
+            onConfigureAssignments={() => setAssignmentMode(true)}
           />
+        ) : null}
+
+        {/* Show assignment grid when editing assignments */}
+        {!loading && showAssignmentGrid && config ? (
+          <div className="space-y-4">
+            <div className="flex justify-end">
+              <Button onClick={() => setAssignmentMode(false)}>
+                Ver horario final
+              </Button>
+            </div>
+            <ScheduleWeekGrid
+              config={config}
+              blocks={gridBlocks}
+              entries={entries}
+              pedagogicalBlocks={visiblePedagogicalBlocks}
+              sectionSubjects={sectionSubjects}
+              activeDays={days}
+              onEdit={() => setShowWizard(true)}
+              onAssign={handleAssign}
+              onRemove={handleRemove}
+              onMarkPedagogical={markPedagogicalBlock}
+              onRemovePedagogical={removePedagogicalBlock}
+            />
+          </div>
         ) : null}
 
         {/* Edit wizard overlay */}

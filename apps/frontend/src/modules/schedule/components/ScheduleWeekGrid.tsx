@@ -181,10 +181,10 @@ export function ScheduleWeekGrid({
       <div className="flex flex-wrap items-center gap-3">
         <div className="mr-auto">
           <h2 className="text-lg font-semibold text-foreground">
-            Mi semana académica
+            Configurar asignaciones
           </h2>
           <p className="text-sm text-muted-foreground">
-            Toca un período vacío para asignarle una materia.
+            Toca un período vacío para asignarle una materia u hora pedagógica.
           </p>
         </div>
         <Badge tone="accent" className="rounded-full px-3 py-1">
