@@ -1,10 +1,13 @@
-export function clearDevServiceWorker() {
+export async function clearDevServiceWorker() {
   if (!import.meta.env.DEV || !('serviceWorker' in navigator)) return
 
-  navigator.serviceWorker
-    .getRegistrations()
-    .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
-    .then(() => caches.keys())
-    .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
-    .catch(() => undefined)
+  try {
+    const registrations = await navigator.serviceWorker.getRegistrations()
+    await Promise.all(registrations.map((registration) => registration.unregister()))
+
+    const keys = await caches.keys()
+    await Promise.all(keys.map((key) => caches.delete(key)))
+  } catch {
+    // Development cache cleanup should never block the app from rendering.
+  }
 }
