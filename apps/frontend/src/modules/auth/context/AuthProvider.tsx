@@ -180,9 +180,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
     } catch (error) {
       console.error(error)
       if (!await restoreFromSupabaseSession()) {
-        clearAuthState(
-          'No se pudo cargar tu perfil. Revisa tu conexión e inténtalo de nuevo.',
-        )
+        if (error instanceof ApiError && error.status === 401) {
+          clearAuthState()
+        } else {
+          clearAuthState(
+            'No se pudo cargar tu perfil. Revisa tu conexión e inténtalo de nuevo.',
+          )
+        }
       }
     }
   }, [clearAuthState, restoreFromSupabaseSession])
