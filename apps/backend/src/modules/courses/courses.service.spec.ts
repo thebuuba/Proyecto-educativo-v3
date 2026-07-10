@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { CoursesService } from './courses.service'
+import { __test__clearCoursesCache, CoursesService } from './courses.service'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
@@ -26,6 +26,7 @@ vi.mock('@aula/database', () => ({
 describe('CoursesService.getCourseData', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    __test__clearCoursesCache()
     mocks.prisma.grade.findMany.mockResolvedValue([
       {
         id: 'grade-1',
@@ -95,11 +96,26 @@ describe('CoursesService.getCourseData', () => {
       ],
     })
   })
+
+  it('invalidates cached course data after a mutation', async () => {
+    const service = new CoursesService()
+    mocks.prisma.grade.upsert.mockResolvedValue({ id: 'grade-2', name: '2do', status: 'ACTIVE' })
+
+    await service.getCourseData('school-1')
+    await service.getCourseData('school-1')
+    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(1)
+
+    await service.createGrade('school-1', { name: '2do' })
+    await service.getCourseData('school-1')
+
+    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(2)
+  })
 })
 
 describe('CoursesService write idempotency', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    __test__clearCoursesCache()
   })
 
   it('upserts grades by school and name instead of creating duplicates', async () => {

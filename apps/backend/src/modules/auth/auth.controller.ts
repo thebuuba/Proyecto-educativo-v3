@@ -95,4 +95,10 @@ export class AuthController {
   getProfile(@CurrentUser() user: AuthenticatedUser) {
     return this.authService.getProfile(user.id)
   }
+
+  @Get('bootstrap')
+  @UseGuards(JwtAuthGuard)
+  getBootstrap(@CurrentUser() user: AuthenticatedUser) {
+    return this.authService.getBootstrap(user.id, user.schoolId)
+  }
 }

@@ -17,7 +17,6 @@ import {
 import { lazy } from 'react'
 import type { ComponentType } from 'react'
 
-import { DashboardPage } from '@/modules/dashboard/pages/DashboardPage'
 import type { UserRole } from '@/types/domain'
 
 /**
@@ -32,6 +31,7 @@ function lazyPage(importFn: () => Promise<Record<string, unknown>>, exportName: 
 }
 
 const GradingPage = lazyPage(() => import('@/modules/grading/pages/GradingPage'), 'GradingPage')
+const DashboardPage = lazyPage(() => import('@/modules/dashboard/pages/DashboardPage'), 'DashboardPage')
 const AttendancePage = lazyPage(() => import('@/modules/attendance/pages/AttendancePage'), 'AttendancePage')
 const CoursesPage = lazyPage(() => import('@/modules/courses/pages/CoursesPage'), 'CoursesPage')
 const ReportsPage = lazyPage(() => import('@/modules/reports/pages/ReportsPage'), 'ReportsPage')
@@ -164,6 +164,7 @@ export const appRoutes: AppRoute[] = [
 
 /** Prefetch de cada ruta: llama a la función para cargar el chunk en background. */
 export const routePrefetchers: Record<string, () => void> = {
+  '/inicio': () => void import('@/modules/dashboard/pages/DashboardPage'),
   '/cursos': () => void import('@/modules/courses/pages/CoursesPage'),
   '/estudiantes': () => void import('@/modules/students/pages/StudentsPage'),
   '/horario': () => void import('@/modules/schedule/pages/SchedulePage'),

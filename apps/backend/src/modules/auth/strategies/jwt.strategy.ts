@@ -49,6 +49,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
         schoolId: true,
         status: true,
         tokenVersion: true,
+        userRoles: {
+          where: { status: 'ACTIVE' },
+          select: { schoolId: true, role: { select: { key: true, status: true } } },
+        },
       },
     })
     if (!user || user.status !== 'ACTIVE') {
@@ -59,26 +63,13 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       throw new UnauthorizedException('Token revoked')
     }
 
-    const userRoles = await prisma.userRole.findMany({
-      where: {
-        userId: user.id,
-        schoolId: user.schoolId,
-        status: 'ACTIVE',
-      },
-    })
-    const roleIds = userRoles.map((userRole) => userRole.roleId)
-    const roles = roleIds.length
-      ? await prisma.role.findMany({
-          where: { id: { in: roleIds }, status: 'ACTIVE' },
-          select: { key: true },
-        })
-      : []
-
     return {
       id: user.id,
       email: user.email,
       schoolId: user.schoolId,
-      roles: roles.map((role) => role.key),
+      roles: user.userRoles
+        .filter(({ schoolId, role }) => schoolId === user.schoolId && role.status === 'ACTIVE')
+        .map(({ role }) => role.key),
     }
   }
 }

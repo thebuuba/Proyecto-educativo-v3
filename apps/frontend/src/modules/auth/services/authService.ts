@@ -6,6 +6,7 @@
 import { api } from '@/services/apiClient'
 import type {
   AuthUser,
+  AuthBootstrap,
   CompleteOnboardingInput,
   LoginCredentials,
   LoginResponse,
@@ -15,6 +16,11 @@ import type {
   Role,
 } from '@/modules/auth/types/auth'
 import { supabase } from '@/modules/auth/services/supabaseClient'
+
+/** Restaura perfil, roles, permisos y onboarding en un solo viaje. */
+export function getAuthBootstrap(): Promise<AuthBootstrap> {
+  return api.get<AuthBootstrap>('/auth/bootstrap')
+}
 
 function getAuthCallbackUrl() {
   const appUrl = (import.meta.env.VITE_PUBLIC_APP_URL as string | undefined)?.replace(/\/$/, '')

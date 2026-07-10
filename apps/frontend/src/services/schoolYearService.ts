@@ -13,6 +13,8 @@ export type SchoolYearSummary = {
   isCurrent: boolean
 }
 
+let currentSchoolYearRequest: Promise<SchoolYearSummary | null> | null = null
+
 /**
  * Obtiene el año escolar actual. Si ninguno está marcado como actual,
  * retorna el primero de la lista. Retorna null si no hay años escolares.
@@ -20,6 +22,16 @@ export type SchoolYearSummary = {
  * @returns El año escolar actual o null.
  */
 export async function getCurrentSchoolYear(): Promise<SchoolYearSummary | null> {
-  const years = await api.get<SchoolYearSummary[]>('/school-administration/school-years')
-  return years.find((y) => y.isCurrent) ?? years[0] ?? null
+  if (!currentSchoolYearRequest) {
+    currentSchoolYearRequest = api
+      .get<SchoolYearSummary[]>('/school-administration/school-years')
+      .then((years) => years.find((y) => y.isCurrent) ?? years[0] ?? null)
+      .finally(() => {
+        // La deduplicación cubre sólo consumidores concurrentes; una futura
+        // navegación puede consultar cambios hechos en administración.
+        currentSchoolYearRequest = null
+      })
+  }
+
+  return currentSchoolYearRequest
 }

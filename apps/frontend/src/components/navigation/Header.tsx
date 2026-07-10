@@ -53,7 +53,12 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
     async function loadPeriod() {
       try {
-        const year = await getCurrentSchoolYear()
+        const [year, periods] = await Promise.all([
+          getCurrentSchoolYear(),
+          api.get<Array<{ name: string; startDate: string; endDate: string }>>(
+            '/school-administration/academic-periods',
+          ),
+        ])
 
         if (!year) {
           if (!ignore) setPeriodName(null)
@@ -61,9 +66,6 @@ export function Header({ onOpenSidebar }: HeaderProps) {
         }
 
         const today = getDateKey(new Date())
-        const periods = await api.get<Array<{ name: string; startDate: string; endDate: string }>>(
-          `/school-administration/academic-periods`
-        )
         const current = periods.find(
           (p) => p.startDate <= today && p.endDate >= today
         )

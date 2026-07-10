@@ -508,6 +508,41 @@ export class AuthService {
     }
   }
 
+  /** Devuelve todo el estado necesario para restaurar la sesión en una sola petición. */
+  async getBootstrap(userId: string, schoolId: string) {
+    const [appUser, userRoles, onboarding] = await Promise.all([
+      this.getProfile(userId),
+      prisma.userRole.findMany({
+        where: { userId, schoolId, status: 'ACTIVE' },
+        include: {
+          role: {
+            include: {
+              rolePermissions: {
+                where: { status: 'ACTIVE' },
+                include: { permission: true },
+              },
+            },
+          },
+        },
+      }),
+      this.getOnboardingStatus(schoolId),
+    ])
+
+    if (!appUser) return null
+    const roles = userRoles
+      .map(({ role }) => role)
+      .filter((role) => role.status === 'ACTIVE')
+      .map(({ rolePermissions: _rolePermissions, ...role }) => role)
+    const permissions = Array.from(new Map(
+      userRoles.flatMap(({ role }) => role.rolePermissions)
+        .map(({ permission }) => permission)
+        .filter((permission) => permission.status === 'ACTIVE')
+        .map((permission) => [permission.key, permission]),
+    ).values())
+
+    return { appUser, roles, permissions, onboardingComplete: onboarding.complete }
+  }
+
   /**
    * Solicita recuperación de contraseña.
    * Por seguridad siempre retorna el mismo mensaje

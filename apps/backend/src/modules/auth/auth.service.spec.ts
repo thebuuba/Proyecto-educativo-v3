@@ -526,4 +526,45 @@ describe('AuthService.register', () => {
     await expect(createService().login(registerDto)).rejects.toThrow('Account is inactive')
     expect(jwtService.sign).not.toHaveBeenCalled()
   })
+
+  it('returns a complete bootstrap and deduplicates permissions', async () => {
+    const appUser = {
+      id: 'user-1', authUserId: 'auth-user-1', schoolId: 'school-1',
+      fullName: 'Admin User', email: 'admin@test.local', phone: null,
+      avatarUrl: null, lastLoginAt: null, status: 'ACTIVE',
+      createdAt, updatedAt,
+    }
+    const permission = {
+      id: 'permission-1', key: 'courses.read', name: 'Leer cursos',
+      description: null, status: 'ACTIVE', createdAt, updatedAt,
+    }
+    mocks.prisma.appUser.findUnique.mockResolvedValue(appUser)
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1' })
+    mocks.prisma.userRole.findMany.mockResolvedValue([
+      {
+        role: {
+          id: 'role-1', key: 'admin', name: 'Administrador', description: null,
+          status: 'ACTIVE', createdAt, updatedAt,
+          rolePermissions: [{ permission }],
+        },
+      },
+      {
+        role: {
+          id: 'role-2', key: 'director', name: 'Director', description: null,
+          status: 'ACTIVE', createdAt, updatedAt,
+          rolePermissions: [{ permission }],
+        },
+      },
+    ])
+
+    const result = await createService().getBootstrap('user-1', 'school-1')
+
+    expect(result).toMatchObject({
+      appUser: { id: 'user-1' },
+      roles: [{ key: 'admin' }, { key: 'director' }],
+      permissions: [{ key: 'courses.read' }],
+      onboardingComplete: true,
+    })
+    expect(result?.permissions).toHaveLength(1)
+  })
 })

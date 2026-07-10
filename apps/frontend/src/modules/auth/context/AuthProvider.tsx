@@ -17,14 +17,11 @@ import {
   loginWithProvider as loginWithProviderService,
   register as registerService,
   logout as logoutService,
-  getProfile,
-  getUserRoles,
-  getUserPermissions,
+  getAuthBootstrap,
 } from '@/modules/auth/services/authService'
 import { ApiError } from '@/services/apiClient'
 import { supabase } from '@/modules/auth/services/supabaseClient'
 import type {
-  AppUser,
   AuthState,
   AuthUser,
   CompleteOnboardingInput,
@@ -149,7 +146,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setState((current) => ({ ...current, loading: true }))
 
     try {
-      const appUser = await getProfile() as unknown as AppUser
+      const bootstrap = await getAuthBootstrap()
+      const appUser = bootstrap?.appUser
 
       if (!appUser) {
         clearAuthState()
@@ -157,14 +155,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
       }
 
       const user: AuthUser = { id: appUser.id, email: appUser.email }
-      const roles: Role[] = await getUserRoles(appUser.id)
-      const [permissions, onboardingStatus] = await Promise.all([
-        getUserPermissions(roles),
-        Promise.resolve(getCachedOnboardingStatus() ?? getOnboardingStatus().then((s) => {
-          setCachedOnboardingStatus(s.complete)
-          return s.complete
-        }).catch(() => null)),
-      ])
+      const roles = bootstrap.roles
+      const permissions = bootstrap.permissions
+      const onboardingStatus = getCachedOnboardingStatus() ?? bootstrap.onboardingComplete
+      setCachedOnboardingStatus(onboardingStatus)
 
       setState({
         user,

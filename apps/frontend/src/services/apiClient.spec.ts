@@ -37,4 +37,21 @@ describe('api client session transport', () => {
       credentials: 'include',
     }))
   })
+
+  it('deduplicates concurrent GET requests to the same resource', async () => {
+    let resolveResponse!: (response: Response) => void
+    vi.stubGlobal('fetch', vi.fn(() => new Promise<Response>((resolve) => {
+      resolveResponse = resolve
+    })))
+
+    const first = api.get('/school-years')
+    const second = api.get('/school-years')
+
+    expect(fetch).toHaveBeenCalledTimes(1)
+    resolveResponse({
+      ok: true,
+      json: vi.fn().mockResolvedValue({ data: [] }),
+    } as unknown as Response)
+    await expect(Promise.all([first, second])).resolves.toEqual([[], []])
+  })
 })

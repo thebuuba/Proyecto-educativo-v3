@@ -27,6 +27,16 @@ function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
   })
 }
 
+function invalidateSchoolCache(schoolId: string) {
+  for (const key of cache.keys()) {
+    if (key.includes(schoolId)) cache.delete(key)
+  }
+}
+
+export function __test__clearCoursesCache() {
+  cache.clear()
+}
+
 /** Convierte el valor de estado a minúsculas */
 function status(value: string) {
   return value.toLowerCase()
@@ -63,24 +73,16 @@ export class CoursesService {
   private async _getCourseData(schoolId: string) {
     const currentSchoolYear = await resolveSchoolYear(schoolId)
 
-    const grades = await prisma.grade.findMany({
-      where: { schoolId, status: 'ACTIVE' },
-      orderBy: { sequence: 'asc' },
-    })
-    const sections = await prisma.section.findMany({
-      where: { schoolId, status: 'ACTIVE' },
-      orderBy: { name: 'asc' },
-    })
-    const assignments = await prisma.sectionSubject.findMany({
-      where: { schoolId, status: 'ACTIVE' },
-    })
-    const subjects = await prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } })
-    const academicLevels = await prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } })
-    const cycles = await prisma.drAcademicCycle.findMany({ orderBy: { name: 'asc' } })
-    const modalities = await prisma.drModality.findMany({ orderBy: { name: 'asc' } })
-    const teachers = await prisma.teacher.findMany({
-      where: { schoolId, status: 'ACTIVE' },
-    })
+    const [grades, sections, assignments, subjects, academicLevels, cycles, modalities, teachers] = await Promise.all([
+      prisma.grade.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { sequence: 'asc' } }),
+      prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } }),
+      prisma.sectionSubject.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } }),
+      prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } }),
+      prisma.drAcademicCycle.findMany({ orderBy: { name: 'asc' } }),
+      prisma.drModality.findMany({ orderBy: { name: 'asc' } }),
+      prisma.teacher.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+    ])
 
     const levelById = new Map(academicLevels.map((item) => [item.id, item]))
     const cycleById = new Map(cycles.map((item) => [item.id, item]))
@@ -170,8 +172,8 @@ export class CoursesService {
   }
 
   /** Crea un nuevo grado */
-  createGrade(schoolId: string, dto: CreateGradeDto) {
-    return prisma.grade.upsert({
+  async createGrade(schoolId: string, dto: CreateGradeDto) {
+    const result = await prisma.grade.upsert({
       where: {
         schoolId_name: {
           schoolId,
@@ -196,6 +198,8 @@ export class CoursesService {
         status: RecordStatus.ACTIVE,
       },
     })
+    invalidateSchoolCache(schoolId)
+    return result
   }
 
   /** Actualiza un grado existente */
@@ -203,7 +207,7 @@ export class CoursesService {
     const grade = await prisma.grade.findFirst({ where: { id, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
 
-    return prisma.grade.update({
+    const result = await prisma.grade.update({
       where: { id },
       data: {
         ...(dto.name && { name: dto.name }),
@@ -215,6 +219,8 @@ export class CoursesService {
         ...(dto.status && { status: dto.status as RecordStatus }),
       },
     })
+    invalidateSchoolCache(schoolId)
+    return result
   }
 
   /** Desactiva un grado (borrado lógico) */
@@ -222,10 +228,12 @@ export class CoursesService {
     const grade = await prisma.grade.findFirst({ where: { id, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
 
-    return prisma.grade.update({
+    const result = await prisma.grade.update({
       where: { id },
       data: { status: RecordStatus.INACTIVE },
     })
+    invalidateSchoolCache(schoolId)
+    return result
   }
 
   /** Obtiene las secciones activas de un grado */
@@ -243,7 +251,7 @@ export class CoursesService {
     const grade = await prisma.grade.findFirst({ where: { id: dto.gradeId, schoolId } })
     if (!grade) throw new NotFoundException('Grade not found')
 
-    return prisma.section.upsert({
+    const result = await prisma.section.upsert({
       where: {
         gradeId_name: {
           gradeId: dto.gradeId,
@@ -261,6 +269,8 @@ export class CoursesService {
         status: RecordStatus.ACTIVE,
       },
     })
+    invalidateSchoolCache(schoolId)
+    return result
   }
 
   /** Actualiza una sección existente */
@@ -272,7 +282,7 @@ export class CoursesService {
       if (!grade) throw new NotFoundException('Grade not found')
     }
 
-    return prisma.section.update({
+    const result = await prisma.section.update({
       where: { id },
       data: {
         ...(dto.name && { name: dto.name }),
@@ -281,6 +291,8 @@ export class CoursesService {
         ...(dto.status && { status: dto.status as RecordStatus }),
       },
     })
+    invalidateSchoolCache(schoolId)
+    return result
   }
 
   /** Desactiva una sección (borrado lógico) */
@@ -288,10 +300,12 @@ export class CoursesService {
     const section = await prisma.section.findFirst({ where: { id, schoolId } })
     if (!section) throw new NotFoundException('Section not found')
 
-    return prisma.section.update({
+    const result = await prisma.section.update({
       where: { id },
       data: { status: 'INACTIVE' },
     })
+    invalidateSchoolCache(schoolId)
+    return result
   }
 
   /** Obtiene todas las materias del colegio */
@@ -302,8 +316,8 @@ export class CoursesService {
   }
 
   /** Crea una nueva materia */
-  createSubject(schoolId: string, dto: CreateSubjectDto) {
-    return prisma.subject.upsert({
+  async createSubject(schoolId: string, dto: CreateSubjectDto) {
+    const result = await prisma.subject.upsert({
       where: {
         schoolId_code: {
           schoolId,
@@ -324,6 +338,8 @@ export class CoursesService {
         status: RecordStatus.ACTIVE,
       },
     })
+    invalidateSchoolCache(schoolId)
+    return result
   }
 
   /** Asigna una materia a una sección con un profesor, validando todas las referencias */
@@ -346,7 +362,7 @@ export class CoursesService {
     if (!subject) throw new NotFoundException('Subject not found')
     if (dto.teacherId && !teacher) throw new NotFoundException('Teacher not found')
 
-    return prisma.sectionSubject.upsert({
+    const result = await prisma.sectionSubject.upsert({
       where: {
         schoolYearId_sectionId_subjectId: {
           schoolYearId: resolvedSchoolYear.id,
@@ -369,6 +385,8 @@ export class CoursesService {
         status: RecordStatus.ACTIVE,
       },
     })
+    invalidateSchoolCache(schoolId)
+    return result
   }
 
   /** Obtiene las asignaciones materia-sección activas */
@@ -385,9 +403,11 @@ export class CoursesService {
     const ss = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
     if (!ss) throw new NotFoundException('Section subject not found')
 
-    return prisma.sectionSubject.update({
+    const result = await prisma.sectionSubject.update({
       where: { id },
       data: { status: 'INACTIVE' },
     })
+    invalidateSchoolCache(schoolId)
+    return result
   }
 }

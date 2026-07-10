@@ -89,6 +89,10 @@ export type LoginResponse = {
   permissions: Permission[]
 }
 
+export type AuthBootstrap = Pick<LoginResponse, 'appUser' | 'roles' | 'permissions'> & {
+  onboardingComplete: boolean
+}
+
 export type OnboardingCourseInput = {
   gradeName: string
   sectionName: string

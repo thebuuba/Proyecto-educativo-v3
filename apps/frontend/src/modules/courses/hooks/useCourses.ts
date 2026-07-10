@@ -49,8 +49,8 @@ export function useCourses() {
   const [error, setError] = useState<string | null>(null)
 
   /** Recarga todos los datos de cursos y catálogos */
-  const refetch = useCallback(async () => {
-    setLoading(true)
+  const refetch = useCallback(async (showLoading = true) => {
+    if (showLoading) setLoading(true)
     setError(null)
 
     try {
@@ -64,11 +64,13 @@ export function useCourses() {
           ? error.message
           : 'No se pudieron cargar los grados y secciones.',
       )
-      setGrades([])
-      setCatalogs(emptyCatalogs)
-      setCurrentSchoolYear(null)
+      if (showLoading) {
+        setGrades([])
+        setCatalogs(emptyCatalogs)
+        setCurrentSchoolYear(null)
+      }
     } finally {
-      setLoading(false)
+      if (showLoading) setLoading(false)
     }
   }, [])
 
@@ -79,7 +81,7 @@ export function useCourses() {
   const addGrade = useCallback(
     async (input: CreateGradeInput) => {
       await createGrade(input)
-      await refetch()
+      void refetch(false)
     },
     [refetch],
   )
@@ -87,7 +89,7 @@ export function useCourses() {
   const editGrade = useCallback(
     async (id: string, input: UpdateGradeInput) => {
       await updateGrade(id, input)
-      await refetch()
+      void refetch(false)
     },
     [refetch],
   )
@@ -95,7 +97,7 @@ export function useCourses() {
   const removeGrade = useCallback(
     async (id: string) => {
       await deactivateGrade(id)
-      await refetch()
+      void refetch(false)
     },
     [refetch],
   )
@@ -103,7 +105,7 @@ export function useCourses() {
   const addSection = useCallback(
     async (input: CreateSectionInput) => {
       await createSection(input)
-      await refetch()
+      void refetch(false)
     },
     [refetch],
   )
@@ -111,7 +113,7 @@ export function useCourses() {
   const editSection = useCallback(
     async (id: string, input: UpdateSectionInput) => {
       await updateSection(id, input)
-      await refetch()
+      void refetch(false)
     },
     [refetch],
   )
@@ -119,7 +121,7 @@ export function useCourses() {
   const removeSection = useCallback(
     async (id: string) => {
       await deactivateSection(id)
-      await refetch()
+      void refetch(false)
     },
     [refetch],
   )
@@ -127,7 +129,7 @@ export function useCourses() {
   const addSubject = useCallback(
     async (input: CreateSubjectInput) => {
       const subject = await createSubject(input)
-      await refetch()
+      void refetch(false)
       return subject
     },
     [refetch],
@@ -198,7 +200,7 @@ export function useCourses() {
         subjectId,
         teacherId: null,
       })
-      await refetch()
+      void refetch(false)
     },
     [catalogs.subjects, currentSchoolYear, grades, refetch],
   )
@@ -206,7 +208,7 @@ export function useCourses() {
   const assignSubject = useCallback(
     async (input: AssignSubjectInput) => {
       await assignSubjectToSection(input)
-      await refetch()
+      void refetch(false)
     },
     [refetch],
   )
@@ -214,7 +216,7 @@ export function useCourses() {
   const removeSubjectAssignment = useCallback(
     async (id: string) => {
       await deactivateSectionSubject(id)
-      await refetch()
+      void refetch(false)
     },
     [refetch],
   )

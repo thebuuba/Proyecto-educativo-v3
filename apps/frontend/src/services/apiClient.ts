@@ -24,6 +24,10 @@ type RequestOptions = Omit<RequestInit, 'headers'> & {
   headers?: Record<string, string>
 }
 
+// Evita que varios componentes disparen simultáneamente el mismo GET.
+// La entrada desaparece al terminar: no se sirven datos obsoletos.
+const pendingGets = new Map<string, Promise<unknown>>()
+
 function legacyAuthHeaders(): Record<string, string> {
   const token = localStorage.getItem('auth_token')
   return token ? { Authorization: `Bearer ${token}` } : {}
@@ -52,11 +56,23 @@ export const api = {
    * @param options - Opciones adicionales de fetch.
    */
   get<T>(path: string, options?: RequestOptions): Promise<T> {
-    return fetch(`${API_URL}${path}`, {
+    const url = `${API_URL}${path}`
+    const canDeduplicate = !options?.signal && !options?.headers
+    const existing = canDeduplicate ? pendingGets.get(url) : undefined
+    if (existing) return existing as Promise<T>
+
+    const request = fetch(url, {
       ...options,
       credentials: 'include',
       headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...options?.headers },
     }).then(handleResponse<T>)
+
+    if (canDeduplicate) {
+      pendingGets.set(url, request)
+      void request.finally(() => pendingGets.delete(url)).catch(() => undefined)
+    }
+
+    return request
   },
 
   /**
