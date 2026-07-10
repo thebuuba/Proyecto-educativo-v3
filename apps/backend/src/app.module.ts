@@ -3,10 +3,10 @@
  */
 
 import { Module } from '@nestjs/common'
-import { APP_INTERCEPTOR, APP_FILTER } from '@nestjs/core'
+import { APP_INTERCEPTOR, APP_FILTER, APP_GUARD } from '@nestjs/core'
 import { ConfigModule } from '@nestjs/config'
 import { CacheModule } from '@nestjs/cache-manager'
-import { ThrottlerModule } from '@nestjs/throttler'
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 import { ResponseInterceptor } from './common/interceptors/response.interceptor'
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter'
 import { AuthModule } from './modules/auth/auth.module'
@@ -53,6 +53,7 @@ import { backendEnvFilePaths } from './config/env-file-paths'
     SchoolsModule,
   ],
   providers: [
+    { provide: APP_GUARD, useClass: ThrottlerGuard },
     { provide: APP_INTERCEPTOR, useClass: ResponseInterceptor },
     { provide: APP_FILTER, useClass: AllExceptionsFilter },
   ],

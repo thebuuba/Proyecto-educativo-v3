@@ -10,6 +10,7 @@ import { Navigate, useLocation } from 'react-router-dom'
 import { AuthTransitionLink } from '@/modules/auth/components/AuthTransitionLink'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { FacebookIcon, FLOATING_ICONS, GoogleIcon } from '@/components/auth/AuthIcons'
+import { requestPasswordReset } from '@/modules/auth/services/authService'
 
 type LocationState = {
   from?: {
@@ -61,14 +62,22 @@ export function LoginPage() {
     }
   }
 
-  function handleForgotPassword() {
+  async function handleForgotPassword() {
     if (!email.trim()) {
       setErrorMessage('Ingresa tu correo electrónico primero.')
       return
     }
 
     setErrorMessage('')
-    setForgotPasswordSent(true)
+    setIsSubmitting(true)
+    try {
+      await requestPasswordReset(email.trim())
+      setForgotPasswordSent(true)
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : 'No se pudo enviar el correo.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (

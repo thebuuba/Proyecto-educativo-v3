@@ -93,6 +93,11 @@ export async function getOnboardingStatus(): Promise<OnboardingStatus> {
   return api.get<OnboardingStatus>('/auth/onboarding/status')
 }
 
+/** Solicita un correo de recuperación sin revelar si la cuenta existe. */
+export async function requestPasswordReset(email: string): Promise<void> {
+  await api.post('/auth/forgot-password', { email })
+}
+
 /** Cierra la sesión eliminando el token del almacenamiento local. */
 export async function logout(): Promise<void> {
   await supabase.auth.signOut().catch(() => undefined)

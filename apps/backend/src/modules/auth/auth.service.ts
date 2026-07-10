@@ -182,6 +182,26 @@ async function getSupabaseUserFromToken(token: string): Promise<SupabaseAuthUser
   return body
 }
 
+async function requestSupabasePasswordReset(email: string) {
+  const { url, authKey } = getSupabaseConfig()
+  const frontendUrl = process.env.FRONTEND_URL?.replace(/\/$/, '')
+  const response = await fetch(`${url}/auth/v1/recover`, {
+    method: 'POST',
+    headers: {
+      apikey: authKey,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: email.trim().toLowerCase(),
+      ...(frontendUrl ? { redirect_to: `${frontendUrl}/restablecer-contrasena` } : {}),
+    }),
+  })
+
+  if (!response.ok && response.status >= 500) {
+    throw new ServiceUnavailableException('Password recovery is temporarily unavailable')
+  }
+}
+
 function toDate(value: string, fieldName: string) {
   const date = new Date(`${value}T00:00:00.000Z`)
   if (Number.isNaN(date.getTime())) {
@@ -316,14 +336,14 @@ export class AuthService {
     const user = await prisma.appUser.findUnique({
       where: { authUserId: authUser.id },
     })
-    if (!user) {
+    if (!user || user.status !== 'ACTIVE') {
       throw new UnauthorizedException(
-        'Tu cuenta existe en Supabase Auth, pero no tiene un perfil en Aula Base.',
+        user ? 'Account is inactive' : 'Tu cuenta existe en Supabase Auth, pero no tiene un perfil en Aula Base.',
       )
     }
 
     const userRoles = await prisma.userRole.findMany({
-      where: { userId: user.id, status: 'ACTIVE' },
+      where: { userId: user.id, schoolId: user.schoolId, status: 'ACTIVE' },
     })
     const roleIds = userRoles.map((ur) => ur.roleId)
 
@@ -361,12 +381,12 @@ export class AuthService {
       where: { authUserId: authUser.id },
     })
 
-    if (!user) {
+    if (!user || user.status !== 'ACTIVE') {
       throw new UnauthorizedException('PROFILE_REQUIRED')
     }
 
     const userRoles = await prisma.userRole.findMany({
-      where: { userId: user.id, status: 'ACTIVE' },
+      where: { userId: user.id, schoolId: user.schoolId, status: 'ACTIVE' },
     })
     const roleIds = userRoles.map((ur) => ur.roleId)
     const roles = roleIds.length
@@ -497,8 +517,8 @@ export class AuthService {
    * @returns Mensaje informativo.
    */
   async forgotPassword(email: string) {
-    const user = await prisma.appUser.findUnique({ where: { email } })
-    if (!user) return { message: 'If the email exists, a reset link has been sent' }
+    assertAuthEnvironment()
+    await requestSupabasePasswordReset(email)
     return { message: 'If the email exists, a reset link has been sent' }
   }
 

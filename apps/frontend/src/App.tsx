@@ -11,6 +11,7 @@ import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { AppLayout } from '@/layouts/AppLayout'
 import { RequireAuth } from '@/modules/auth/components/RequireAuth'
 import { appRoutes } from '@/routes/appRoutes'
+import { getOAuthCallbackPath } from '@/utils/oauthCallback'
 
 // ponytail: named-export resolver for lazy()
 const lazyPage = (importFn: () => Promise<Record<string, unknown>>, exportName: string) =>
@@ -25,16 +26,10 @@ const PromoPage = lazyPage(() => import('@/modules/promo/pages/PromoPage'), 'Pro
 const PrivacyPage = lazyPage(() => import('@/modules/promo/pages/PrivacyPage'), 'PrivacyPage')
 const TermsPage = lazyPage(() => import('@/modules/promo/pages/TermsPage'), 'TermsPage')
 const ContactPage = lazyPage(() => import('@/modules/promo/pages/ContactPage'), 'ContactPage')
+const ResetPasswordPage = lazyPage(() => import('@/modules/auth/pages/ResetPasswordPage'), 'ResetPasswordPage')
 
 /** Componente de carga mostrado durante la carga diferida de módulos. */
 const routeFallback = <PageSkeleton />
-
-export function getOAuthCallbackPath(pathname: string, search: string, hash: string) {
-  if (pathname !== '/auth/callback' && new URLSearchParams(search).has('code')) {
-    return `/auth/callback${search}${hash}`
-  }
-  return null
-}
 
 /**
  * Componente principal de la aplicación.
@@ -54,6 +49,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/auth/callback" element={<AuthCallbackPage />} />
+        <Route path="/restablecer-contrasena" element={<ResetPasswordPage />} />
         <Route path="/onboarding" element={<OnboardingPage />} />
         <Route path="/" element={<PromoPage />} />
         <Route path="/promo" element={<Navigate to="/" replace />} />

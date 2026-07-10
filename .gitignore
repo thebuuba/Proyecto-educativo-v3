@@ -16,6 +16,9 @@ dist-ssr
 .env
 .env.local
 .env.production
+!.env.example
+!apps/backend/.env.example
+!apps/frontend/.env.example
 
 # Uploads
 apps/backend/uploads/

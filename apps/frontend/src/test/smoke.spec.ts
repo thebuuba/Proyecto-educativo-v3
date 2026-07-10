@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
-import { getOAuthCallbackPath } from '@/App'
-import { shouldSearchSchoolQuery } from '@/modules/auth/components/SchoolSearchInput'
+import { getOAuthCallbackPath } from '@/utils/oauthCallback'
+import { shouldSearchSchoolQuery } from '@/modules/auth/utils/schoolSearch'
 
 describe('smoke', () => {
   it('works', () => {

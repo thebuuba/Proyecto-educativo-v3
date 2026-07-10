@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { api } from '@/services/apiClient'
+import { shouldSearchSchoolQuery } from '@/modules/auth/utils/schoolSearch'
 
 export type SchoolResult = {
   id: string
@@ -19,10 +20,6 @@ type Props = {
   onSelect: (school: SchoolResult) => void
   error?: string
   placeholder?: string
-}
-
-export function shouldSearchSchoolQuery(term: string, selectedTerm: string | null) {
-  return term.length >= 2 && term !== selectedTerm
 }
 
 export function SchoolSearchInput({ value, onChange, onSelect, error, placeholder }: Props) {

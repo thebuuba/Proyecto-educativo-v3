@@ -60,6 +60,7 @@ describe('AuthService.register', () => {
     process.env.SUPABASE_SERVICE_ROLE_KEY = 'service-role-key'
     process.env.SUPABASE_ANON_KEY = 'anon-key'
     process.env.DATABASE_URL = 'postgresql://postgres:secret@db.valid.supabase.co:5432/postgres'
+    delete process.env.FRONTEND_URL
     vi.stubGlobal(
       'fetch',
       vi.fn().mockResolvedValue({
@@ -184,6 +185,7 @@ describe('AuthService.register', () => {
     expect(jwtService.sign).toHaveBeenCalledWith({
       sub: user.id,
       email: user.email,
+      tokenVersion: undefined,
     })
     expect(result).toEqual({
       user: { id: user.id, email: user.email },
@@ -497,13 +499,31 @@ describe('AuthService.register', () => {
   })
 
   it('returns same message for forgotPassword regardless of email existence', async () => {
-    mocks.prisma.appUser.findUnique.mockResolvedValue(null)
-
     const result = await createService().forgotPassword('nadie@test.com')
 
     expect(result).toEqual({ message: 'If the email exists, a reset link has been sent' })
-    expect(mocks.prisma.appUser.findUnique).toHaveBeenCalledWith({
-      where: { email: 'nadie@test.com' },
+    expect(fetch).toHaveBeenCalledWith(
+      'https://example.supabase.co/auth/v1/recover',
+      expect.objectContaining({
+        method: 'POST',
+        body: JSON.stringify({ email: 'nadie@test.com' }),
+      }),
+    )
+  })
+
+  it('rejects inactive users before issuing a session', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({ user: { id: 'auth-created-user' } }),
+    } as never)
+    mocks.prisma.appUser.findUnique.mockResolvedValue({
+      id: 'user-1',
+      authUserId: 'auth-created-user',
+      schoolId: 'school-1',
+      status: 'INACTIVE',
     })
+
+    await expect(createService().login(registerDto)).rejects.toThrow('Account is inactive')
+    expect(jwtService.sign).not.toHaveBeenCalled()
   })
 })

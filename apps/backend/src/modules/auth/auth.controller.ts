@@ -16,6 +16,7 @@ import {
 import { Throttle } from '@nestjs/throttler'
 import { AuthService } from './auth.service'
 import { LoginDto } from './dto/login.dto'
+import { ForgotPasswordDto } from './dto/forgot-password.dto'
 import { RegisterDto } from './dto/register.dto'
 import { CompleteOnboardingDto } from './dto/complete-onboarding.dto'
 import { JwtAuthGuard } from './strategies/jwt-auth.guard'
@@ -64,7 +65,7 @@ export class AuthController {
 
   @Throttle({ default: { limit: 3, ttl: 60000 } })
   @Post('forgot-password')
-  forgotPassword(@Body() body: { email: string }) {
+  forgotPassword(@Body() body: ForgotPasswordDto) {
     return this.authService.forgotPassword(body.email)
   }
 
