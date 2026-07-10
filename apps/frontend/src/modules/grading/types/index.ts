@@ -5,6 +5,9 @@ export type SectionSubjectOption = {
   subjectName: string
   sectionName: string
   gradeName: string
+  gradeSequence?: number | null
+  academicLevelName?: string
+  academicLevelSequence?: number | null
   sectionId?: string
   schoolYearId?: string
   schoolYearName?: string
@@ -49,6 +52,7 @@ export type GradingActivity = {
   observations?: string
   futurePlanningLink?: string
   futureInstrumentLink?: string
+  activityType?: 'individual' | 'group'
   planningId?: string
   planningMoment?: 'inicio' | 'desarrollo' | 'cierre' | ''
 }

@@ -1,11 +1,19 @@
 import {
   ArrowLeft,
+  ArrowRight,
   BookOpen,
   CalendarDays,
+  CheckCircle2,
   ClipboardList,
+  Download,
+  Hourglass,
+  Layers,
   Plus,
   Settings,
+  Target,
   Trophy,
+  TrendingUp,
+  Users,
 } from 'lucide-react'
 import { useEffect, useMemo, useState, type KeyboardEvent, type ReactNode } from 'react'
 
@@ -104,6 +112,7 @@ type ActivityDraft = {
   evaluationTechnique: string
   planningMoment: string
   observations: string
+  activityType: 'individual' | 'group'
 }
 
 const emptyActivityDraft: ActivityDraft = {
@@ -118,6 +127,7 @@ const emptyActivityDraft: ActivityDraft = {
   evaluationTechnique: '',
   planningMoment: '',
   observations: '',
+  activityType: 'individual',
 }
 
 export function GradingBook({
@@ -204,6 +214,14 @@ export function GradingBook({
     }),
     [activities, config, records, recoveryScores, students],
   )
+  const periodAverage = averageNumbers(
+    blockSummaries
+      .map((summary) => summary.average)
+      .filter((value): value is number => value !== null),
+  )
+  const pendingBlocks = blockSummaries.filter((summary) =>
+    summary.status === 'Pendiente' || summary.status === 'Sin calificar' || summary.status === 'En recuperación',
+  ).length
 
   useEffect(() => {
     if (mainView !== 'annual' && mainView !== 'final') return
@@ -237,6 +255,7 @@ export function GradingBook({
       evaluationTechnique: activityDraft.evaluationTechnique.trim() || undefined,
       planningMoment: activityDraft.planningMoment as GradingActivity['planningMoment'],
       observations: activityDraft.observations.trim() || undefined,
+      activityType: activityDraft.activityType,
     }
 
     if (editingActivityId) {
@@ -262,8 +281,16 @@ export function GradingBook({
       evaluationTechnique: activity.evaluationTechnique ?? '',
       planningMoment: activity.planningMoment ?? '',
       observations: activity.observations ?? '',
+      activityType: activity.activityType ?? 'individual',
     })
     setShowActivityManager(true)
+  }
+
+  function duplicateActivity(activity: GradingActivity) {
+    onAddActivity({
+      ...activity,
+      name: `${activity.name} copia`,
+    })
   }
 
   if (students.length === 0) {
@@ -275,28 +302,44 @@ export function GradingBook({
   }
 
   return (
-    <div className="space-y-4">
-      <div className="flex flex-col gap-3 rounded-lg border border-border bg-card p-3 shadow-sm xl:flex-row xl:items-center xl:justify-between">
+    <div className="space-y-3">
+      <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-2 shadow-sm xl:flex-row xl:items-center xl:justify-between">
         <div className="flex flex-wrap gap-2">
           <ViewButton active={mainView === 'blocks'} icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => { setMainView('blocks'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'period'} icon={<ClipboardList className="size-4" />} label="Resumen del período" onClick={() => { setMainView('period'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'annual'} icon={<CalendarDays className="size-4" />} label="Vista anual" onClick={() => { setMainView('annual'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'final'} icon={<Trophy className="size-4" />} label="Resultado anual" onClick={() => { setMainView('final'); setDetailView(null) }} />
+          <ViewButton active={mainView === 'period'} icon={<ClipboardList className="size-4" />} label="Período" onClick={() => { setMainView('period'); setDetailView(null) }} />
+          <ViewButton active={mainView === 'annual'} icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => { setMainView('annual'); setDetailView(null) }} />
+          <ViewButton active={mainView === 'final'} icon={<Trophy className="size-4" />} label="Final" onClick={() => { setMainView('final'); setDetailView(null) }} />
         </div>
         <div className="flex flex-wrap gap-2">
-          <Badge tone="muted" className="h-10 rounded-xl px-3">
+          <Badge tone="muted" className="h-9 rounded-xl px-3">
             {periodShortName}
           </Badge>
-          <Button variant="outline" onClick={() => setShowConfig(true)}>
+          <Button variant="outline" className="h-9 px-3" onClick={() => window.print()}>
+            <Download className="size-4" />
+            Descargar
+          </Button>
+          <Button variant="outline" className="h-9 px-3" onClick={() => setShowConfig(true)}>
             <Settings className="size-4" />
             Configurar cálculo
           </Button>
-          <Button onClick={() => setShowActivityManager(true)}>
+          <Button className="h-9 px-3" onClick={() => setShowActivityManager(true)}>
             <Plus className="size-4" />
             Agregar actividad
           </Button>
         </div>
       </div>
+
+      {!detailView && mainView === 'blocks' ? (
+        <div className="rounded-lg border border-border bg-card p-3 shadow-sm">
+          <div className="grid gap-2 md:grid-cols-5">
+            <SummaryMetric icon={<Layers className="size-5" />} label="Bloques de competencias" value="4" helper="activos" tone="success" />
+            <SummaryMetric icon={<ClipboardList className="size-5" />} label="Actividades totales" value={activities.length} helper="en el período" tone="default" />
+            <SummaryMetric icon={<Users className="size-5" />} label="Estudiantes" value={students.length} helper="matriculados" tone="accent" />
+            <SummaryMetric icon={<TrendingUp className="size-5" />} label="Promedio general" value={formatGrade(periodAverage)} helper="actual" tone="warning" />
+            <SummaryMetric icon={<Hourglass className="size-5" />} label="Pendientes" value={pendingBlocks} helper="por evaluar" tone="destructive" />
+          </div>
+        </div>
+      ) : null}
 
       {detailView ? (
         detailView.type === 'block' && selectedBlock ? (
@@ -370,6 +413,7 @@ export function GradingBook({
             }}
             onChangeDraft={setActivityDraft}
             onDeleteActivity={onDeleteActivity}
+            onDuplicateActivity={duplicateActivity}
             onEditActivity={editActivity}
             onSaveActivity={saveActivityDraft}
             saving={saving}
@@ -396,10 +440,79 @@ function ViewButton({
   onClick: () => void
 }) {
   return (
-    <Button variant={active ? 'primary' : 'ghost'} className="h-10" onClick={onClick}>
+    <Button variant={active ? 'primary' : 'ghost'} className="h-9 px-3" onClick={onClick}>
       {icon}
       {label}
     </Button>
+  )
+}
+
+function SummaryMetric({
+  icon,
+  label,
+  value,
+  helper,
+  tone,
+}: {
+  icon: ReactNode
+  label: string
+  value: number | string
+  helper: string
+  tone: 'default' | 'accent' | 'success' | 'warning' | 'destructive'
+}) {
+  const toneClasses = {
+    default: 'bg-blue-50 text-blue-700',
+    accent: 'bg-violet-50 text-violet-700',
+    success: 'bg-emerald-50 text-emerald-700',
+    warning: 'bg-amber-50 text-amber-700',
+    destructive: 'bg-red-50 text-red-700',
+  }
+
+  return (
+    <div className="flex items-center gap-3 border-border py-1 md:border-r md:last:border-r-0">
+      <div className={cn('grid size-11 place-items-center rounded-full', toneClasses[tone])}>
+        {icon}
+      </div>
+      <div>
+        <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground">{label}</p>
+        <p className="mt-0.5 text-xl font-black leading-none text-primary">{value}</p>
+        <p className="mt-0.5 text-[11px] text-muted-foreground">{helper}</p>
+      </div>
+    </div>
+  )
+}
+
+function BlockMetric({
+  icon,
+  label,
+  value,
+  helper,
+  tone,
+}: {
+  icon: ReactNode
+  label: string
+  value: number | string
+  helper: string
+  tone: 'default' | 'accent' | 'success' | 'warning'
+}) {
+  const toneClasses = {
+    default: 'bg-blue-50 text-blue-700',
+    accent: 'bg-violet-50 text-violet-700',
+    success: 'bg-emerald-50 text-emerald-700',
+    warning: 'bg-amber-50 text-amber-700',
+  }
+
+  return (
+    <article className="flex items-center gap-4 rounded-lg border border-border bg-card p-4 shadow-sm">
+      <div className={cn('grid size-14 place-items-center rounded-full', toneClasses[tone])}>
+        {icon}
+      </div>
+      <div>
+        <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{label}</p>
+        <p className="mt-1 text-2xl font-black leading-none text-primary">{value}</p>
+        {helper ? <p className="mt-1 text-xs text-muted-foreground">{helper}</p> : null}
+      </div>
+    </article>
   )
 }
 
@@ -426,6 +539,57 @@ function BlockMatrixView({
   records: GradeRecordRow[]
   students: StudentGradeRow[]
 }) {
+  return (
+    <section className="space-y-3">
+      <div>
+        <h2 className="text-2xl font-bold leading-tight text-primary">Bloques de competencias</h2>
+        <p className="text-sm text-muted-foreground">
+          Cada bloque suma {config.expectedBlockTotal} puntos. Haz clic en un bloque para ver sus actividades y calificaciones.
+        </p>
+      </div>
+      <div className="grid gap-3 xl:grid-cols-4">
+        {blockSummaries.map((summary) => {
+          const accent = blockAccents[summary.index]
+          return (
+            <article key={summary.block.id} className={cn('overflow-hidden rounded-lg border bg-card shadow-sm', accent.card)}>
+              <div className={cn('h-1.5', accent.dot)} />
+              <div className="p-4">
+                <Badge tone="default" className="h-6 rounded-lg px-2 text-[11px] uppercase">
+                  Bloque {summary.index + 1}
+                </Badge>
+                <h3 className="mt-3 min-h-[3.1rem] text-base font-black leading-6 text-primary">
+                  {blockShortNames[summary.block.id]}
+                </h3>
+                <div className="mt-3 flex items-end gap-3">
+                  <div className={cn('grid size-16 place-items-center rounded-full border-4 bg-card text-xl font-black text-primary', accent.panel)}>
+                    {formatGrade(summary.average)}
+                  </div>
+                  <p className="pb-2 text-sm font-bold text-muted-foreground">/ {summary.expected}</p>
+                </div>
+                <p className="mt-2 text-xs text-muted-foreground">
+                  {formatGrade(summary.average)} puntos obtenidos de {summary.expected}
+                </p>
+                <div className="mt-3 border-t border-border pt-3">
+                  <div className="flex items-center justify-between gap-3 text-xs">
+                    <span className="font-medium text-muted-foreground">{summary.activities.length} actividades</span>
+                    <Badge tone={statusTone(summary.status)}>{summary.status}</Badge>
+                  </div>
+                  <Button variant="outline" className="mt-3 h-10 w-full justify-between" onClick={() => onOpenBlock(summary.block.id)}>
+                    Ver bloque
+                    <ArrowRight className="size-4" />
+                  </Button>
+                </div>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+      <div className="rounded-lg border border-primary/15 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
+        Las calificaciones reflejan el progreso actual del período. Los promedios finales se calculan al completar los cuatro períodos del año escolar.
+      </div>
+    </section>
+  )
+
   return (
     <div className="grid gap-4 2xl:grid-cols-2">
       {blockSummaries.map((summary) => {
@@ -546,6 +710,165 @@ function BlockGradeView({
     return effectivePeriodScore(total, recovery, config)
   })
   const average = averageNumbers(studentTotals.filter((value) => value > 0))
+  const pendingActivities = activities.filter((activity) =>
+    students.some((student) => !scoreForActivity(records, student.enrollmentId, activity.id)),
+  ).length
+  const blockState = activities.length === 0
+    ? 'Sin actividades'
+    : pendingActivities > 0
+      ? 'Pendiente'
+      : average !== null && average >= config.passingScore
+        ? 'Completado'
+        : 'En recuperación'
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+        <button className="text-primary hover:underline" onClick={onBack}>Calificaciones</button>
+        <span>&gt;</span>
+        <span>{courseTitle}</span>
+        <span>&gt;</span>
+        <span>Bloque {blockIndex + 1}</span>
+      </div>
+
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <Badge tone="default" className="h-8 rounded-lg uppercase">Bloque {blockIndex + 1}</Badge>
+          <h2 className="mt-3 text-3xl font-black leading-tight text-primary">{blockShortNames[block.id]}</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">{block.name}</p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline" onClick={onBack}>
+            <ArrowLeft className="size-4" />
+            Volver
+          </Button>
+          <Button variant="outline" onClick={() => window.print()}>
+            <Download className="size-4" />
+            Descargar
+          </Button>
+        </div>
+      </div>
+
+      <div className="grid gap-3 xl:grid-cols-5">
+        <BlockMetric icon={<Layers className="size-5" />} label="Total obtenido" value={formatGrade(average)} helper={`/ ${config.expectedBlockTotal} puntos`} tone="default" />
+        <BlockMetric icon={<Target className="size-5" />} label="Promedio del bloque" value={formatGrade(average)} helper="puntos" tone="success" />
+        <BlockMetric icon={<ClipboardList className="size-5" />} label="Actividades" value={activities.length} helper="actividades" tone="accent" />
+        <BlockMetric icon={<Hourglass className="size-5" />} label="Pendientes" value={pendingActivities} helper="actividades" tone="warning" />
+        <BlockMetric icon={<CheckCircle2 className="size-5" />} label="Estado" value={blockState} helper="" tone="success" />
+      </div>
+
+      <div className="flex flex-wrap gap-6 border-b border-border text-sm font-bold text-muted-foreground">
+        <span className="border-b-2 border-primary px-3 py-3 text-primary">Matriz de calificaciones</span>
+        <span className="px-3 py-3">Actividades</span>
+        <span className="px-3 py-3">Estudiantes</span>
+        <span className="px-3 py-3">Estadísticas del bloque</span>
+      </div>
+
+      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+        <div className="overflow-x-auto">
+          <table className="min-w-max border-separate border-spacing-0 text-sm">
+            <thead>
+              <tr className="bg-muted/50">
+                <th className="sticky left-0 top-0 z-40 w-14 border-b border-r border-border bg-muted px-3 py-4 text-center text-xs font-bold uppercase text-muted-foreground">#</th>
+                <th className="sticky left-14 top-0 z-40 min-w-[14rem] border-b border-r border-border bg-muted px-4 py-4 text-left text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">Estudiante</th>
+                {activities.map((activity, index) => (
+                  <th key={activity.id} className="min-w-[13rem] border-b border-r border-border px-4 py-4 text-center">
+                    <button className="font-bold text-primary hover:underline" onClick={() => onOpenActivity(activity.id)}>
+                      {index + 1}. {activity.name}
+                    </button>
+                    <p className="mt-1 text-xs font-bold text-primary">{activity.maxScore} pts</p>
+                  </th>
+                ))}
+                <th className="w-28 border-b border-r border-border px-4 py-4 text-center text-xs font-bold uppercase text-primary">Total /100</th>
+                <th className="w-28 border-b border-r border-border px-4 py-4 text-center text-xs font-bold uppercase text-muted-foreground">Estado</th>
+                {config.showRecovery ? (
+                  <th className="w-28 border-b border-border px-4 py-4 text-center text-xs font-bold uppercase text-muted-foreground">{recoveryLabel || 'RP'}</th>
+                ) : null}
+              </tr>
+            </thead>
+            <tbody>
+              {students.map((student, index) => {
+                const total = blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
+                const recovery = recoveryScores[blockId]?.[student.enrollmentId] ?? null
+                const effectiveTotal = effectivePeriodScore(total, recovery, config)
+                const status = activities.length === 0 ? 'Sin calificación' : effectiveTotal >= config.passingScore ? 'Aprobado' : 'En recuperación'
+                return (
+                  <tr key={student.enrollmentId} className="group hover:bg-muted/20">
+                    <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-3 py-3 text-center text-muted-foreground group-hover:bg-muted/20">
+                      {student.listNumber ?? index + 1}
+                    </td>
+                    <td className="sticky left-14 z-20 border-b border-r border-border bg-card px-4 py-3 font-bold text-foreground group-hover:bg-muted/20">
+                      {student.lastName}, {student.firstName}
+                    </td>
+                    {activities.map((activity) => {
+                      const record = scoreForActivity(records, student.enrollmentId, activity.id)
+                      return (
+                        <td key={activity.id} className="border-b border-r border-border px-4 py-2 text-center">
+                          <div className="inline-flex items-center gap-2">
+                            <Input
+                              type="number"
+                              min={0}
+                              max={activity.maxScore}
+                              step="0.01"
+                              defaultValue={record?.score ?? ''}
+                              disabled={saving}
+                              className="grade-cell h-9 w-24 rounded-md border-border/80 bg-card px-2 text-center font-bold"
+                              onKeyDown={focusNextGradeCell}
+                              onBlur={(event) => onSaveScore(student.enrollmentId, activity, event.target.value)}
+                            />
+                            <span className="text-xs font-medium text-muted-foreground">/ {activity.maxScore}</span>
+                          </div>
+                        </td>
+                      )
+                    })}
+                    <td className="border-b border-r border-border px-4 py-3 text-center text-lg font-black text-primary">{formatGrade(effectiveTotal)}</td>
+                    <td className="border-b border-r border-border px-4 py-3 text-center"><Badge tone={statusTone(status)}>{status}</Badge></td>
+                    {config.showRecovery ? (
+                      <td className="border-b border-border px-4 py-2 text-center">
+                        <Input
+                          type="number"
+                          min={0}
+                          max={100}
+                          step="0.01"
+                          defaultValue={recovery ?? ''}
+                          disabled={saving}
+                          placeholder={recoveryLabel || 'RP'}
+                          className="grade-cell h-9 w-24 rounded-md border-border/80 bg-card px-2 text-center font-bold"
+                          onKeyDown={focusNextGradeCell}
+                          onBlur={(event) => onSaveRecovery(student.enrollmentId, blockId, event.target.value)}
+                        />
+                      </td>
+                    ) : null}
+                  </tr>
+                )
+              })}
+              <tr className="bg-muted/35">
+                <td colSpan={2} className="sticky left-0 z-20 border-r border-border bg-muted px-4 py-4 text-xs font-black uppercase tracking-[0.12em] text-primary">
+                  Promedio por actividad
+                </td>
+                {activities.map((activity) => {
+                  const average = averageActivityScore(records, students, activity)
+                  return (
+                    <td key={activity.id} className="border-r border-border px-4 py-4 text-center">
+                      <p className="text-lg font-black text-primary">{formatGrade(average)} / {activity.maxScore}</p>
+                      <p className="text-xs text-muted-foreground">{formatGrade(average === null ? null : (average / activity.maxScore) * 100)}%</p>
+                    </td>
+                  )
+                })}
+                <td className="border-r border-border px-4 py-4 text-center font-black text-primary">{formatGrade(average)} / 100</td>
+                <td className="border-r border-border px-4 py-4 text-center"><Badge tone={statusTone(blockState)}>{blockState}</Badge></td>
+                {config.showRecovery ? <td className="px-4 py-4" /> : null}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-primary/15 bg-primary/5 px-4 py-3 text-sm font-medium text-primary">
+        La calificación del bloque se obtiene sumando los puntos de cada actividad. Total esperado: {config.expectedBlockTotal} puntos.
+      </div>
+    </div>
+  )
 
   return (
     <div className="space-y-4">
@@ -852,6 +1175,113 @@ function AnnualComparisonView({
   if (loading) {
     return <div className="flex min-h-[220px] items-center justify-center text-sm font-medium text-muted-foreground">Calculando vista anual...</div>
   }
+  const periods = competencyPeriods.filter((period) => period.id !== 'final')
+
+  return (
+    <section className="space-y-4">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">Matriz anual por períodos</p>
+          <h2 className="mt-1 text-2xl font-black text-primary">Registro anual de competencias</h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            P1, P2, P3 y P4 conservan la nota ordinaria. RP sustituye esa nota solo para el cálculo final.
+          </p>
+        </div>
+        <Button variant="outline" onClick={() => window.print()}>
+          <Download className="size-4" />
+          Descargar
+        </Button>
+      </div>
+
+      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+        <div className="max-h-[70vh] overflow-auto">
+          <table className="min-w-[1900px] border-separate border-spacing-0 text-xs">
+            <thead>
+              <tr>
+                <th rowSpan={2} className="sticky left-0 top-0 z-50 w-12 border-b border-r border-border bg-muted px-2 py-3 text-center font-black uppercase text-muted-foreground">#</th>
+                <th rowSpan={2} className="sticky left-12 top-0 z-50 min-w-[14rem] border-b border-r border-border bg-muted px-3 py-3 text-left font-black uppercase text-muted-foreground">Estudiantes</th>
+                {competencyBlocks.map((block, index) => (
+                  <th key={block.id} colSpan={8} className={cn('sticky top-0 z-40 border-b border-r border-border px-3 py-3 text-center font-black', blockAccents[index].panel)}>
+                    {block.shortName}: {blockShortNames[block.id]}
+                  </th>
+                ))}
+                <th colSpan={4} className="sticky top-0 z-40 border-b border-r border-border bg-muted px-3 py-3 text-center font-black uppercase text-primary">Promedios de competencias específicas</th>
+                <th rowSpan={2} className="sticky top-0 z-40 w-24 border-b border-r border-border bg-muted px-3 py-3 text-center font-black uppercase text-primary">Calificación final</th>
+                <th rowSpan={2} className="sticky top-0 z-40 w-28 border-b border-border bg-muted px-3 py-3 text-center font-black uppercase text-muted-foreground">Estado</th>
+              </tr>
+              <tr>
+                {competencyBlocks.flatMap((block) =>
+                  periods.flatMap((period) => [
+                    <th key={`${block.id}-${period.id}`} className="sticky top-[2.6rem] z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-primary">{period.shortName}</th>,
+                    <th key={`${block.id}-${period.id}-rp`} className="sticky top-[2.6rem] z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-muted-foreground">{period.recoveryLabel}</th>,
+                  ]),
+                )}
+                {competencyBlocks.map((block) => (
+                  <th key={`${block.id}-pc`} className="sticky top-[2.6rem] z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-black text-primary">{block.shortName}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {students.map((student, index) => {
+                const blockAverages = competencyBlocks.map((block) => {
+                  const scores = periods.map((period) => getStudentPeriodBlockScore({
+                    blockId: block.id,
+                    config,
+                    getActivitiesForPeriod,
+                    periodId: period.id as CompetencyPeriodId,
+                    recordsByPeriod,
+                    student,
+                  }).effective)
+                  return finalBlockAverage(scores, config)
+                })
+                const final = finalSubjectScore(blockAverages, config)
+                const state = final === null ? 'Pendiente' : final >= config.passingScore ? 'Aprobado' : 'En recuperación'
+                return (
+                  <tr key={student.enrollmentId} className="group hover:bg-muted/20">
+                    <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-2 py-3 text-center text-muted-foreground group-hover:bg-muted/20">{student.listNumber ?? index + 1}</td>
+                    <td className="sticky left-12 z-20 border-b border-r border-border bg-card px-3 py-3 font-bold text-foreground group-hover:bg-muted/20">
+                      {student.lastName}, {student.firstName}
+                    </td>
+                    {competencyBlocks.flatMap((block) =>
+                      periods.flatMap((period) => {
+                        const result = getStudentPeriodBlockScore({
+                          blockId: block.id,
+                          config,
+                          getActivitiesForPeriod,
+                          periodId: period.id as CompetencyPeriodId,
+                          recordsByPeriod,
+                          student,
+                        })
+                        return [
+                          <td key={`${student.enrollmentId}-${block.id}-${period.id}`} className={cn('border-b border-r border-border px-2 py-3 text-center font-bold', gradeColor(result.period, config))}>
+                            {formatGrade(result.period)}
+                          </td>,
+                          <td key={`${student.enrollmentId}-${block.id}-${period.id}-rp`} className={cn('border-b border-r border-border px-2 py-3 text-center font-bold', result.recovery !== null ? 'bg-emerald-50 text-emerald-700' : 'text-muted-foreground')}>
+                            {formatGrade(result.recovery)}
+                          </td>,
+                        ]
+                      }),
+                    )}
+                    {blockAverages.map((value, blockIndex) => (
+                      <td key={`${student.enrollmentId}-${competencyBlocks[blockIndex].id}-pc`} className="border-b border-r border-border px-2 py-3 text-center font-black text-primary">
+                        {formatGrade(value)}
+                      </td>
+                    ))}
+                    <td className={cn('border-b border-r border-border px-3 py-3 text-center text-lg font-black', gradeColor(final, config))}>{formatGrade(final)}</td>
+                    <td className="border-b border-border px-3 py-3 text-center"><Badge tone={statusTone(state)}>{state}</Badge></td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-primary/15 bg-primary/5 px-4 py-3 text-sm font-medium text-primary">
+        La calificación final se obtiene promediando los promedios de las 4 competencias específicas. La recuperación sustituye la calificación del período correspondiente.
+      </div>
+    </section>
+  )
 
   return (
     <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
@@ -962,6 +1392,7 @@ function ActivityManager({
   onCancelEdit,
   onChangeDraft,
   onDeleteActivity,
+  onDuplicateActivity,
   onEditActivity,
   onSaveActivity,
   saving,
@@ -972,6 +1403,7 @@ function ActivityManager({
   onCancelEdit: () => void
   onChangeDraft: (draft: ActivityDraft) => void
   onDeleteActivity: (activityId: string) => void
+  onDuplicateActivity: (activity: GradingActivity) => void
   onEditActivity: (activity: GradingActivity) => void
   onSaveActivity: () => void
   saving: boolean
@@ -999,6 +1431,10 @@ function ActivityManager({
           <option value="otro">Otro</option>
         </Select>
       </div>
+      <Select value={activityDraft.activityType} onChange={(event) => onChangeDraft({ ...activityDraft, activityType: event.target.value as ActivityDraft['activityType'] })}>
+        <option value="individual">Actividad individual</option>
+        <option value="group">Actividad grupal</option>
+      </Select>
       <Input value={activityDraft.description} onChange={(event) => onChangeDraft({ ...activityDraft, description: event.target.value })} placeholder="Descripción" />
       <div className="grid gap-3 sm:grid-cols-2">
         <Input value={activityDraft.studentRole} onChange={(event) => onChangeDraft({ ...activityDraft, studentRole: event.target.value })} placeholder="Rol del estudiante" />
@@ -1026,10 +1462,11 @@ function ActivityManager({
           <div key={activity.id} className="flex flex-col gap-3 border-b border-border px-4 py-3 text-sm last:border-b-0 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-bold text-primary">{activity.name}</p>
-              <p className="text-xs text-muted-foreground">{activity.maxScore} pts · {blockShortNames[activity.competencyBlockId] ?? 'Bloque'} · {activity.instrumentType || 'Sin instrumento'}</p>
+              <p className="text-xs text-muted-foreground">{activity.maxScore} pts · {blockShortNames[activity.competencyBlockId] ?? 'Bloque'} · {activity.activityType === 'group' ? 'Grupal' : 'Individual'} · {activity.instrumentType || 'Sin instrumento'}</p>
             </div>
             <div className="flex gap-2">
               <Button variant="ghost" size="sm" onClick={() => onEditActivity(activity)}>Editar</Button>
+              <Button variant="outline" size="sm" onClick={() => onDuplicateActivity(activity)}>Duplicar</Button>
               <Button variant="destructive" size="sm" onClick={() => onDeleteActivity(activity.id)}>Eliminar</Button>
             </div>
           </div>
@@ -1170,6 +1607,41 @@ function averageBlockForPeriod(input: {
     return effectivePeriodScore(total, recovery, input.config)
   }).filter((value) => value > 0)
   return averageNumbers(scores)
+}
+
+function getStudentPeriodBlockScore(input: {
+  blockId: string
+  config: GradeCalculationConfig
+  periodId: CompetencyPeriodId
+  recordsByPeriod: Map<CompetencyPeriodId, GradeRecordRow[]>
+  getActivitiesForPeriod: (periodId: CompetencyPeriodId) => GradingActivity[]
+  student: StudentGradeRow
+}) {
+  const records = input.recordsByPeriod.get(input.periodId) ?? []
+  const activities = input.getActivitiesForPeriod(input.periodId)
+    .filter((activity) => activity.competencyBlockId === input.blockId)
+  if (activities.length === 0) {
+    return { period: null, recovery: null, effective: null }
+  }
+  const period = blockTotal({
+    records,
+    activities,
+    enrollmentId: input.student.enrollmentId,
+    blockId: input.blockId,
+    config: input.config,
+  })
+  const recovery = getRecoveryScores(records)[input.blockId]?.[input.student.enrollmentId] ?? null
+  return {
+    period,
+    recovery,
+    effective: effectivePeriodScore(period, recovery, input.config),
+  }
+}
+
+function gradeColor(value: number | null | undefined, config: GradeCalculationConfig) {
+  if (value === null || value === undefined) return 'text-muted-foreground'
+  if (value < config.passingScore) return 'text-red-600'
+  return 'text-emerald-700'
 }
 
 function averageNumbers(values: number[]) {

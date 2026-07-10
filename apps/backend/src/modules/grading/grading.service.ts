@@ -66,21 +66,27 @@ export class GradingService {
     const subjects = await prisma.subject.findMany({ where: { schoolId } })
     const sections = await prisma.section.findMany({ where: { schoolId } })
     const grades = await prisma.grade.findMany({ where: { schoolId } })
+    const academicLevels = await prisma.drAcademicLevel.findMany({ where: { status: 'ACTIVE' } })
     const schoolYears = await prisma.schoolYear.findMany({ where: { schoolId } })
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
     const gradeById = new Map(grades.map((item) => [item.id, item]))
+    const academicLevelById = new Map(academicLevels.map((item) => [item.id, item]))
     const schoolYearById = new Map(schoolYears.map((item) => [item.id, item]))
 
     return items.map((item) => {
       const subject = subjectById.get(item.subjectId)
       const section = sectionById.get(item.sectionId)
       const grade = section ? gradeById.get(section.gradeId) : null
+      const academicLevel = grade?.academicLevelId ? academicLevelById.get(grade.academicLevelId) : null
       return {
         id: item.id,
         subjectName: subject?.name ?? '',
         sectionName: section?.name ?? '',
         gradeName: grade?.name ?? '',
+        gradeSequence: grade?.sequence ?? null,
+        academicLevelName: academicLevel?.name ?? grade?.level ?? '',
+        academicLevelSequence: academicLevel?.sequence ?? null,
         sectionId: item.sectionId,
         schoolYearId: item.schoolYearId,
         schoolYearName: schoolYearById.get(item.schoolYearId)?.name ?? '',
