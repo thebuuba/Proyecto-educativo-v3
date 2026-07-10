@@ -46,6 +46,8 @@ El proyecto se despliega con dos servicios:
 | `DATABASE_URL` | Sí | Conexión PostgreSQL pooled de Supabase para servidor |
 | `JWT_SECRET` | Sí | Secreto para firmar tokens JWT |
 | `FRONTEND_URL` | Sí | Origen CORS permitido para el frontend |
+| `VERCEL_PROJECT_SLUG` | Para previews | Slug del proyecto Vercel cuyos previews pueden consumir la API |
+| `VERCEL_TEAM_SLUG` | Para previews | Slug del equipo Vercel propietario del proyecto |
 | `SUPABASE_URL` | Sí | URL del proyecto Supabase |
 | `SUPABASE_SERVICE_ROLE_KEY` | Sí | Clave server-only para Auth Admin |
 | `SUPABASE_ANON_KEY` | Sí | Clave pública anon para llamadas Auth |
@@ -55,7 +57,7 @@ El proyecto se despliega con dos servicios:
 
 | Variable | Obligatoria | Descripción |
 |----------|-------------|-------------|
-| `VITE_API_URL` | Sí en producción | URL base de la API (`https://TU_BACKEND.onrender.com/api/v1`) |
+| `VITE_API_PROXY_TARGET` | Solo desarrollo | Backend local al que Vite reenvía `/api` |
 | `VITE_SUPABASE_URL` | Sí si OAuth está habilitado | URL del proyecto Supabase |
 | `VITE_SUPABASE_ANON_KEY` | Sí si OAuth está habilitado | Clave pública anon |
 

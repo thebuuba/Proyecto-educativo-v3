@@ -5,6 +5,10 @@
   "installCommand": "corepack enable && corepack prepare pnpm@11.1.2 --activate && pnpm install",
   "framework": "vite",
   "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://proyecto-educativo-eyhq.onrender.com/api/:path*"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

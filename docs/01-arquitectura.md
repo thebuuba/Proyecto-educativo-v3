@@ -118,4 +118,4 @@ modules/<nombre>/
 
 ### Frontend
 
-Por defecto `VITE_API_URL` usa `/api/v1`. En desarrollo, Vite proxy reenvía `/api` al backend. En producción, Vercel debe definir `VITE_API_URL`, `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`.
+El frontend usa `/api/v1` en el mismo origen. En desarrollo, Vite reenvía `/api` al backend local; en producción, Vercel lo reenvía a Render. Vercel solo debe definir `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`.

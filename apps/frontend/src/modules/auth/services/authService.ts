@@ -100,6 +100,7 @@ export async function requestPasswordReset(email: string): Promise<void> {
 
 /** Cierra la sesión eliminando el token del almacenamiento local. */
 export async function logout(): Promise<void> {
+  await api.post('/auth/logout')
   await supabase.auth.signOut().catch(() => undefined)
   localStorage.removeItem('auth_token')
 }

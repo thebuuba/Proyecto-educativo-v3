@@ -21,7 +21,7 @@ import {
   getUserRoles,
   getUserPermissions,
 } from '@/modules/auth/services/authService'
-import { ApiError, getAuthToken, setAuthToken } from '@/services/apiClient'
+import { ApiError } from '@/services/apiClient'
 import { supabase } from '@/modules/auth/services/supabaseClient'
 import type {
   AppUser,
@@ -56,22 +56,8 @@ function setCachedOnboardingStatus(complete: boolean) {
   else localStorage.removeItem(ONBOARDING_CACHE_KEY)
 }
 
-function getTokenRefreshDelay(token: string): number | null {
-  try {
-    const encodedPayload = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')
-    const payload = JSON.parse(atob(encodedPayload.padEnd(Math.ceil(encodedPayload.length / 4) * 4, '='))) as {
-      exp?: number
-    }
-    if (!payload.exp) return null
-    return Math.max(payload.exp * 1000 - Date.now() - 60_000, 0)
-  } catch {
-    return null
-  }
-}
-
 const initialState: AuthState = {
   user: null,
-  token: null,
   supabaseAccessToken: null,
   appUser: null,
   roles: [],
@@ -90,12 +76,11 @@ const initialState: AuthState = {
 export function AuthProvider({ children }: AuthProviderProps) {
   const [state, setState] = useState<AuthState>(initialState)
 
-  /** Limpia el estado de autenticación y elimina el token. */
+  /** Limpia el estado de autenticación local. */
   const clearAuthState = useCallback((authError: string | null = null) => {
-    setAuthToken(null)
+    localStorage.removeItem('auth_token')
     setState({
       user: null,
-      token: null,
       supabaseAccessToken: null,
       appUser: null,
       roles: [],
@@ -109,7 +94,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   /** Aplica los datos de una sesión (login o registro) al estado global. */
   const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
-    setAuthToken(response.token)
+    if (response.token) localStorage.setItem('auth_token', response.token)
+    else localStorage.removeItem('auth_token')
     const onboardingComplete = checkOnboarding
       ? (getCachedOnboardingStatus() ?? await getOnboardingStatus().then((status) => {
           setCachedOnboardingStatus(status.complete)
@@ -118,7 +104,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       : null
     setState({
       user: response.user,
-      token: response.token,
       supabaseAccessToken: null,
       appUser: response.appUser,
       roles: response.roles,
@@ -142,10 +127,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
       return true
     } catch (error) {
       if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
-        setAuthToken(null)
         setState({
           user: null,
-          token: null,
           supabaseAccessToken: supabaseToken,
           appUser: null,
           roles: [],
@@ -163,18 +146,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   /** Carga el estado de autenticación desde el servidor (perfil, roles, permisos). */
   const loadAuthState = useCallback(async () => {
-    const token = getAuthToken()
-    if (!token) {
-      if (!await restoreFromSupabaseSession()) clearAuthState()
-      return
-    }
-
-    const delay = getTokenRefreshDelay(token)
-    if (delay !== null && delay <= 0) {
-      if (!await restoreFromSupabaseSession()) clearAuthState()
-      return
-    }
-
     setState((current) => ({ ...current, loading: true }))
 
     try {
@@ -197,7 +168,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       setState({
         user,
-        token,
         supabaseAccessToken: null,
         appUser,
         roles,
@@ -222,15 +192,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, [loadAuthState])
 
   useEffect(() => {
-    if (!state.token) return
-    const delay = getTokenRefreshDelay(state.token)
-    if (delay === null) return
-
-    const timeout = window.setTimeout(() => {
-      void restoreFromSupabaseSession()
-    }, delay)
-    return () => window.clearTimeout(timeout)
-  }, [restoreFromSupabaseSession, state.token])
+    const { data } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'TOKEN_REFRESHED' && session?.access_token) {
+        void createAulaSession(session.access_token)
+          .then((response) => applySession(response, false))
+      }
+    })
+    return () => data.subscription.unsubscribe()
+  }, [applySession])
 
   const login = useCallback(
     async (credentials: LoginCredentials) => {
@@ -297,7 +266,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
         if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
           setState({
             user: null,
-            token: null,
             supabaseAccessToken: supabaseToken,
             appUser: null,
             roles: [],
@@ -357,7 +325,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     return {
       ...state,
-      isAuthenticated: Boolean(state.token && state.user),
+      isAuthenticated: Boolean(state.user),
       schoolId: state.appUser?.schoolId ?? null,
       login,
       register,

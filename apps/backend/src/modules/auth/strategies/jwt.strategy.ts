@@ -1,6 +1,6 @@
 /**
  * Estrategia de autenticación JWT para Passport.
- * Extrae y valida el token JWT del encabezado Authorization,
+ * Extrae y valida el token JWT de la cookie de sesión HttpOnly,
  * verifica que el usuario exista y esté activo, y carga sus roles.
  */
 import { Injectable, UnauthorizedException } from '@nestjs/common'
@@ -10,6 +10,7 @@ import { ExtractJwt, Strategy } from 'passport-jwt'
 import { getJwtSecret } from '../../../config/jwt-secret'
 import { prisma } from '@aula/database'
 import { AuthenticatedUser } from '../types/authenticated-user'
+import { getSessionToken } from '../session-cookie'
 
 /** Payload decodificado del token JWT. */
 interface JwtPayload {
@@ -25,7 +26,7 @@ interface JwtPayload {
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(config: ConfigService) {
     super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      jwtFromRequest: ExtractJwt.fromExtractors([(request) => getSessionToken(request)]),
       ignoreExpiration: false,
       secretOrKey: getJwtSecret(config.get<string>('JWT_SECRET')),
     })

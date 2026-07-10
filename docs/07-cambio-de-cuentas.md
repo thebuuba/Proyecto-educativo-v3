@@ -62,7 +62,7 @@ Output Directory: apps/frontend/dist
 3. Configura estas variables en Vercel:
 
 ```txt
-VITE_API_URL=https://TU_BACKEND.onrender.com/api/v1
+La URL de Render se configura en el rewrite `/api/:path*` de `vercel.json`.
 VITE_SUPABASE_URL=https://PROJECT_REF.supabase.co
 VITE_SUPABASE_ANON_KEY=anon-public-key
 ```

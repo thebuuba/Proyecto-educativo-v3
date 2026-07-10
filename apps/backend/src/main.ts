@@ -7,6 +7,7 @@ import { ValidationPipe } from '@nestjs/common'
 import helmet from 'helmet'
 import { AppModule } from './app.module'
 import { AuditLogInterceptor } from './common/interceptors/audit-log.interceptor'
+import { isAllowedOrigin } from './config/cors-origins'
 
 /**
  * Crea la aplicación NestJS, configura prefijo global, helmet, CORS y ValidationPipe,
@@ -33,7 +34,17 @@ async function bootstrap() {
     xFrameOptions: { action: 'deny' },
   }))
   app.enableCors({
-    origin: process.env.FRONTEND_URL ?? 'http://localhost:5173',
+    origin: (
+      origin: string | undefined,
+      callback: (error: Error | null, allow?: boolean) => void,
+    ) => {
+      const allowed = !origin || isAllowedOrigin(origin, {
+        frontendUrl: process.env.FRONTEND_URL,
+        vercelProjectSlug: process.env.VERCEL_PROJECT_SLUG,
+        vercelTeamSlug: process.env.VERCEL_TEAM_SLUG,
+      })
+      callback(null, allowed)
+    },
     credentials: true,
   })
   app.useGlobalPipes(

@@ -58,7 +58,6 @@ export type Role = {
 /** Estado global del módulo de autenticación. */
 export type AuthState = {
   user: AuthUser | null
-  token: string | null
   supabaseAccessToken: string | null
   appUser: AppUser | null
   roles: Role[]
@@ -83,7 +82,8 @@ export type RegisterCredentials = LoginCredentials & {
 /** Respuesta del servidor tras un inicio de sesión exitoso. */
 export type LoginResponse = {
   user: AuthUser
-  token: string
+  /** Compatibilidad temporal con backends anteriores a la cookie HttpOnly. */
+  token?: string
   appUser: AppUser
   roles: Role[]
   permissions: Permission[]

@@ -1,10 +1,12 @@
 /**
  * Cliente API para comunicación HTTP con el backend.
  * Incluye métodos para GET, POST, PUT, PATCH y DELETE,
- * manejo de errores y gestión del token de autenticación.
+ * manejo de errores y envío de la cookie de sesión HttpOnly.
  */
 
-const API_URL = import.meta.env.VITE_API_URL || '/api/v1'
+// Mantener la API bajo el mismo origen evita CORS y el bloqueo de cookies
+// HttpOnly de terceros. Vite y Vercel reenvían /api al backend real.
+const API_URL = '/api/v1'
 
 /** Error personalizado con código de estado HTTP. */
 export class ApiError extends Error {
@@ -22,8 +24,7 @@ type RequestOptions = Omit<RequestInit, 'headers'> & {
   headers?: Record<string, string>
 }
 
-/** Obtiene los encabezados de autenticación desde localStorage. */
-function getAuthHeaders(): Record<string, string> {
+function legacyAuthHeaders(): Record<string, string> {
   const token = localStorage.getItem('auth_token')
   return token ? { Authorization: `Bearer ${token}` } : {}
 }
@@ -53,7 +54,8 @@ export const api = {
   get<T>(path: string, options?: RequestOptions): Promise<T> {
     return fetch(`${API_URL}${path}`, {
       ...options,
-      headers: { 'Content-Type': 'application/json', ...getAuthHeaders(), ...options?.headers },
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...options?.headers },
     }).then(handleResponse<T>)
   },
 
@@ -67,7 +69,8 @@ export const api = {
     return fetch(`${API_URL}${path}`, {
       ...options,
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', ...getAuthHeaders(), ...options?.headers },
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...options?.headers },
       body: body ? JSON.stringify(body) : undefined,
     }).then(handleResponse<T>)
   },
@@ -82,7 +85,8 @@ export const api = {
     return fetch(`${API_URL}${path}`, {
       ...options,
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json', ...getAuthHeaders(), ...options?.headers },
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...options?.headers },
       body: body ? JSON.stringify(body) : undefined,
     }).then(handleResponse<T>)
   },
@@ -97,7 +101,8 @@ export const api = {
     return fetch(`${API_URL}${path}`, {
       ...options,
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json', ...getAuthHeaders(), ...options?.headers },
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...options?.headers },
       body: body ? JSON.stringify(body) : undefined,
     }).then(handleResponse<T>)
   },
@@ -111,29 +116,8 @@ export const api = {
     return fetch(`${API_URL}${path}`, {
       ...options,
       method: 'DELETE',
-      headers: { 'Content-Type': 'application/json', ...getAuthHeaders(), ...options?.headers },
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...options?.headers },
     }).then(handleResponse<T>)
   },
-}
-
-/**
- * Guarda o elimina el token de autenticación en localStorage.
- *
- * @param token - Token JWT o null para eliminar.
- */
-export function setAuthToken(token: string | null) {
-  if (token) {
-    localStorage.setItem('auth_token', token)
-  } else {
-    localStorage.removeItem('auth_token')
-  }
-}
-
-/**
- * Obtiene el token de autenticación desde localStorage.
- *
- * @returns El token JWT o null si no existe.
- */
-export function getAuthToken(): string | null {
-  return localStorage.getItem('auth_token')
 }

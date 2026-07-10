@@ -39,7 +39,7 @@ apps/backend/src/
 - **Prefijo global:** `/api/v1`
 - **Formato respuesta exitosa:** `{ success: true, data: <resultado> }`
 - **Formato error:** `{ success: false, error: "<mensaje>", statusCode: <código> }`
-- **Autenticación:** JWT via `Authorization: Bearer <token>`
+- **Autenticación:** JWT en cookie `HttpOnly` (`aulabase_session`)
 - **Multi-tenant:** Toda operación recibe `schoolId` del token JWT
 - **Validación:** class-validator con whitelist y transform automáticos
 

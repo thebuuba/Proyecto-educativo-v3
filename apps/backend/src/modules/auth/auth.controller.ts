@@ -12,7 +12,9 @@ import {
   UseGuards,
   Headers,
   UnauthorizedException,
+  Res,
 } from '@nestjs/common'
+import type { Response } from 'express'
 import { Throttle } from '@nestjs/throttler'
 import { AuthService } from './auth.service'
 import { LoginDto } from './dto/login.dto'
@@ -22,6 +24,15 @@ import { CompleteOnboardingDto } from './dto/complete-onboarding.dto'
 import { JwtAuthGuard } from './strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from './types/authenticated-user'
+import { clearSessionCookie, setSessionCookie } from './session-cookie'
+
+type AuthSession = Awaited<ReturnType<AuthService['login']>>
+
+function respondWithSession(response: Response, session: AuthSession) {
+  setSessionCookie(response, session.token)
+  const { token: _token, ...publicSession } = session
+  return publicSession
+}
 
 @Controller('auth')
 export class AuthController {
@@ -29,26 +40,30 @@ export class AuthController {
 
   @Throttle({ default: { limit: 3, ttl: 60000 } })
   @Post('register')
-  register(@Body() dto: RegisterDto) {
-    return this.authService.register(dto)
+  async register(@Body() dto: RegisterDto, @Res({ passthrough: true }) response: Response) {
+    return respondWithSession(response, await this.authService.register(dto))
   }
 
   @Throttle({ default: { limit: 10, ttl: 60000 } })
   @Post('session')
-  createSession(@Headers('authorization') authHeader: string) {
-    const token = authHeader?.replace(/^Bearer\s+/i, '')
-    if (!token) throw new UnauthorizedException('Missing Authorization header')
-    return this.authService.createSessionFromSupabaseToken(token)
-  }
-
-  @Post('onboarding/complete')
-  completeOnboarding(
+  async createSession(
     @Headers('authorization') authHeader: string,
-    @Body() dto: CompleteOnboardingDto,
+    @Res({ passthrough: true }) response: Response,
   ) {
     const token = authHeader?.replace(/^Bearer\s+/i, '')
     if (!token) throw new UnauthorizedException('Missing Authorization header')
-    return this.authService.completeOnboarding(token, dto)
+    return respondWithSession(response, await this.authService.createSessionFromSupabaseToken(token))
+  }
+
+  @Post('onboarding/complete')
+  async completeOnboarding(
+    @Headers('authorization') authHeader: string,
+    @Body() dto: CompleteOnboardingDto,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    const token = authHeader?.replace(/^Bearer\s+/i, '')
+    if (!token) throw new UnauthorizedException('Missing Authorization header')
+    return respondWithSession(response, await this.authService.completeOnboarding(token, dto))
   }
 
   @Get('onboarding/status')
@@ -59,8 +74,14 @@ export class AuthController {
 
   @Throttle({ default: { limit: 10, ttl: 60000 } })
   @Post('login')
-  login(@Body() dto: LoginDto) {
-    return this.authService.login(dto)
+  async login(@Body() dto: LoginDto, @Res({ passthrough: true }) response: Response) {
+    return respondWithSession(response, await this.authService.login(dto))
+  }
+
+  @Post('logout')
+  logout(@Res({ passthrough: true }) response: Response) {
+    clearSessionCookie(response)
+    return { success: true }
   }
 
   @Throttle({ default: { limit: 3, ttl: 60000 } })

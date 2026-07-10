@@ -54,7 +54,7 @@ Usuario                    Frontend                     Backend                 
    │  Redirigir a Dashboard    │                           │                          │
 ```
 
-El frontend almacena el token en `localStorage` (clave `auth_token`) y lo envía en cada petición como `Authorization: Bearer <token>`.
+El backend almacena el JWT propio en la cookie `aulabase_session`, marcada `HttpOnly`, `SameSite=Lax` y `Secure` en producción. El frontend la envía con `credentials: include` y nunca puede leerla desde JavaScript.
 
 ## 3. Matrícula de estudiante
 
