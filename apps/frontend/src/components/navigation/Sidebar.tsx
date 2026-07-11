@@ -2,7 +2,6 @@
  * Barra lateral de navegación con enlaces a módulos y cierre de sesión.
  */
 import { ChevronsLeft, ChevronsRight, GraduationCap, LogOut, X } from 'lucide-react'
-import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -12,9 +11,9 @@ import { cn } from '@/utils/cn'
 
 type SidebarProps = {
   isOpen: boolean
-  isPinned: boolean
+  isExpanded: boolean
   onClose: () => void
-  onTogglePinned: () => void
+  onToggleExpanded: () => void
 }
 
 const routeIconColors: Record<string, string> = {
@@ -29,17 +28,10 @@ const routeIconColors: Record<string, string> = {
   '/configuracion': 'bg-slate-100 text-slate-700',
 }
 
-export function Sidebar({ isOpen, isPinned, onClose, onTogglePinned }: SidebarProps) {
+export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
   const { hasRole, logout } = useAuth()
-  const [isHovered, setIsHovered] = useState(false)
   const visibleRoutes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
-  const isExpanded = isPinned || isHovered
   const expandedTextClass = isExpanded ? 'block' : 'block lg:hidden'
-
-  function handleTogglePinned() {
-    setIsHovered(false)
-    onTogglePinned()
-  }
 
   return (
     <>
@@ -53,8 +45,6 @@ export function Sidebar({ isOpen, isPinned, onClose, onTogglePinned }: SidebarPr
       />
 
       <aside
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
         className={cn(
           'group fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-[transform,width] duration-200 lg:translate-x-0',
           isExpanded ? 'lg:w-[260px]' : 'lg:w-[88px]',
@@ -96,20 +86,6 @@ export function Sidebar({ isOpen, isPinned, onClose, onTogglePinned }: SidebarPr
             onClick={onClose}
           >
             <X className="size-5" />
-          </Button>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            className={cn(
-              'hidden text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground lg:flex',
-              !isExpanded && 'lg:hidden',
-            )}
-            aria-label={isPinned ? 'Colapsar navegación' : 'Fijar navegación'}
-            title={isPinned ? 'Colapsar navegación' : 'Fijar navegación'}
-            onClick={handleTogglePinned}
-          >
-            {isPinned ? <ChevronsLeft className="size-5" /> : <ChevronsRight className="size-5" />}
           </Button>
         </div>
 
@@ -156,7 +132,22 @@ export function Sidebar({ isOpen, isPinned, onClose, onTogglePinned }: SidebarPr
           })}
         </nav>
 
-        <div className={cn('border-t border-sidebar-border py-5', isExpanded ? 'px-4' : 'px-4 lg:px-3')}>
+        <div className={cn('space-y-1 border-t border-sidebar-border py-4', isExpanded ? 'px-4' : 'px-4 lg:px-3')}>
+          <button
+            type="button"
+            className={cn(
+              'hidden min-h-10 w-full items-center gap-3 rounded-lg text-sm font-bold text-sidebar-foreground/65 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:flex',
+              isExpanded ? 'justify-start px-3' : 'justify-center px-2',
+            )}
+            aria-label={isExpanded ? 'Colapsar navegación' : 'Expandir navegación'}
+            title={isExpanded ? 'Colapsar navegación' : 'Expandir navegación'}
+            aria-expanded={isExpanded}
+            onClick={onToggleExpanded}
+          >
+            {isExpanded ? <ChevronsLeft className="size-5 shrink-0" /> : <ChevronsRight className="size-5 shrink-0" />}
+            <span className={expandedTextClass}>{isExpanded ? 'Contraer menú' : 'Expandir menú'}</span>
+          </button>
+
           <button
             type="button"
             onClick={() => void logout()}

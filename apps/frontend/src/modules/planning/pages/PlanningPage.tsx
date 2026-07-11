@@ -156,7 +156,7 @@ export function PlanningPage() {
   }
 
   return (
-    <section className="mx-auto w-full max-w-7xl">
+    <section className="w-full min-w-0">
       <div className="mb-8">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>

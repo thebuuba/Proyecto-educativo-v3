@@ -239,7 +239,7 @@ export function SchedulePage() {
       title=""
       description=""
     >
-      <div className="mx-auto max-w-6xl space-y-8 pb-10">
+      <div className="w-full min-w-0 space-y-8 pb-10">
         {/* Page header */}
         <div className="flex items-end justify-between gap-4">
           <div>

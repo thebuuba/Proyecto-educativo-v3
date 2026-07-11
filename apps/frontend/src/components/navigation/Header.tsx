@@ -130,7 +130,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
         <label
           htmlFor="global-header-search"
-          className="hidden h-11 min-w-0 max-w-[640px] flex-1 items-center gap-3 rounded-2xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
+          className="hidden h-11 min-w-0 flex-1 items-center gap-3 rounded-2xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
         >
           <Search className="size-4 shrink-0" />
           <input

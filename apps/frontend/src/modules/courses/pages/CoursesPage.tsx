@@ -347,7 +347,7 @@ export function CoursesPage() {
   )
 
   return (
-    <div className="mx-auto max-w-7xl space-y-6 px-6 py-10 md:px-10">
+    <div className="w-full min-w-0 space-y-6">
       {selectedCourse ? (
         <CourseDetailView
           item={selectedCourse}
@@ -547,7 +547,11 @@ export function CoursesPage() {
                     <div className="h-px flex-1 bg-border" />
                   </div>
 
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                  <div className={cn(
+                    'grid min-w-0 grid-cols-1 gap-4',
+                    group.items.length > 1 && 'md:grid-cols-2',
+                    group.items.length > 2 && '2xl:grid-cols-3',
+                  )}>
                     {group.items.map((item) => (
                       <CourseCard
                         key={item.id}

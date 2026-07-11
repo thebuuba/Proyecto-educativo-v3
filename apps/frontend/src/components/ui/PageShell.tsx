@@ -29,7 +29,7 @@ type PageShellProps = {
  */
 export function PageShell({ title, description, children, actions }: PageShellProps) {
   return (
-    <section className="mx-auto w-full max-w-7xl">
+    <section className="w-full min-w-0">
       <PageHeader title={title} description={description} actions={actions} />
 
       {children ?? (

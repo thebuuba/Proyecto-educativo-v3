@@ -85,7 +85,7 @@ export function SchoolAdministrationPage() {
   } = useSchoolAdministration()
 
   return (
-    <section className="mx-auto w-full max-w-6xl">
+    <section className="w-full min-w-0">
       <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">

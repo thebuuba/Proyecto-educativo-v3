@@ -78,7 +78,7 @@ export function ReportsPage() {
   }
 
   return (
-    <section className="mx-auto w-full max-w-6xl">
+    <section className="w-full min-w-0">
       <div className="mb-8">
         <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">
           Exportables oficiales

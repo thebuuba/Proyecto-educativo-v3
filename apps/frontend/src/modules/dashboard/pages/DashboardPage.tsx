@@ -72,7 +72,7 @@ export function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="px-6 lg:px-10 py-8 max-w-[1400px] mx-auto">
+      <div className="w-full min-w-0">
         <PageSkeleton />
       </div>
     )
@@ -80,7 +80,7 @@ export function DashboardPage() {
 
   if (!data) {
     return (
-      <div className="px-6 lg:px-10 py-8 max-w-[1400px] mx-auto">
+      <div className="w-full min-w-0">
         <ErrorState message={error ?? 'No se pudieron cargar los datos de inicio.'} />
       </div>
     )
@@ -93,7 +93,7 @@ export function DashboardPage() {
   const hasOperationalBlocks = hasAgenda || hasWeeklyAttendance || hasTasks || hasRecentActivity
 
   return (
-    <div className="px-6 lg:px-10 py-8 max-w-[1400px] mx-auto space-y-6">
+    <div className="w-full min-w-0 space-y-6">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-baseline gap-3 flex-wrap">
           <h1 className="text-2xl lg:text-[28px] font-bold tracking-tight text-foreground">

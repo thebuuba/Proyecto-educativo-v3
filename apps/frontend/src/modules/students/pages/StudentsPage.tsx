@@ -37,6 +37,7 @@ import type {
   EnrollmentCourse,
   ImportCourseStudentRow,
 } from '@/modules/students/types'
+import { cn } from '@/utils/cn'
 
 type FormMode = 'create' | 'edit' | 'transfer'
 
@@ -310,7 +311,7 @@ export function StudentsPage() {
   }
 
   return (
-    <section className="mx-auto w-full max-w-[1480px] space-y-5">
+    <section className="w-full min-w-0 space-y-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h1 className="text-3xl font-bold leading-none text-primary sm:text-4xl">
@@ -369,7 +370,11 @@ export function StudentsPage() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          <div className={cn(
+            'grid min-w-0 grid-cols-1 gap-4',
+            courses.length > 1 && 'sm:grid-cols-2',
+            courses.length > 2 && '2xl:grid-cols-3',
+          )}>
             {courses.map((course) => (
               <CourseCard
                 key={course.id}

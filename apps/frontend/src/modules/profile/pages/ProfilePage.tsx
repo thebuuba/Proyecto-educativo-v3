@@ -100,14 +100,14 @@ export function ProfilePage() {
 
   if (!appUser) {
     return (
-      <section className="mx-auto w-full max-w-4xl">
+      <section className="w-full min-w-0">
         <ErrorState message="No se pudo cargar tu perfil." />
       </section>
     )
   }
 
   return (
-    <section className="mx-auto w-full max-w-5xl space-y-6">
+    <section className="w-full min-w-0 space-y-6">
       <div>
         <p className="text-xs font-bold uppercase tracking-[0.32em] text-accent">
           Cuenta
