@@ -34,7 +34,7 @@ export function AppLayout() {
         />
 
         <div className={cn(
-          'min-w-0 flex-1 transition-[padding] duration-200',
+          'sidebar-workspace min-w-0 flex-1',
           isSidebarExpanded ? 'lg:pl-[260px]' : 'lg:pl-[88px]',
         )}>
           <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
