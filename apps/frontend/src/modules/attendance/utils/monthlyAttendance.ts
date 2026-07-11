@@ -65,9 +65,10 @@ export function getWorkedDaysForMonth(input: {
 }
 
 export function statusToMark(status: AttendanceStatus | null, notes?: string | null): MonthlyAttendanceMark {
-  if (status === 'present') return 'P'
-  if (status === 'absent') return 'A'
-  if (status === 'excused') return notes === 'retired' ? 'R' : 'E'
+  const normalizedStatus = typeof status === 'string' ? status.toLowerCase() : status
+  if (normalizedStatus === 'present') return 'P'
+  if (normalizedStatus === 'absent') return 'A'
+  if (normalizedStatus === 'excused') return notes === 'retired' ? 'R' : 'E'
   return null
 }
 
@@ -151,4 +152,3 @@ export function formatPercentage(value: number | null) {
   if (value === null) return '-'
   return `${Number.isInteger(value) ? value : Number(value.toFixed(1))}%`
 }
-

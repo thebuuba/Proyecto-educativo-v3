@@ -1,11 +1,10 @@
-import { AlertCircle, FileText, RefreshCw } from 'lucide-react'
+﻿import { AlertCircle, FileText, RefreshCw, Search } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import { Select } from '@/components/ui/Select'
-import { FinalGradesSummary } from '@/modules/grading/components/FinalGradesSummary'
-import { GradeSummary } from '@/modules/grading/components/GradeSummary'
-import { GradeTable } from '@/modules/grading/components/GradeTable'
+import { GradingBook } from '@/modules/grading/components/GradingBook'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
+import type { SectionSubjectOption } from '@/modules/grading/types'
 import { competencyPeriods } from '@/modules/grading/utils/competencyGrades'
 
 export function GradingPage() {
@@ -35,64 +34,78 @@ export function GradingPage() {
   } = useGrading()
 
   const isFinalView = selectedPeriodId === 'final'
+  const groupedSectionSubjects = groupSectionSubjects(sectionSubjects)
 
   return (
     <section className="w-full">
-      <div className="mb-4 space-y-4">
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">
+      <div className="mb-3 space-y-3">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-end">
+          <div className="hidden">
+            <p className="text-[11px] font-bold uppercase tracking-[0.32em] text-accent">
               Registro por competencias
             </p>
-            <h1 className="mt-1 text-3xl font-bold leading-none text-primary">
+            <h1 className="mt-0.5 text-3xl font-bold leading-none text-primary">
               Calificaciones
             </h1>
-            <p className="mt-1 text-sm leading-6 text-muted-foreground">
+            <p className="mt-1 text-sm leading-5 text-muted-foreground">
               Actividades evaluativas, recuperación y resumen final por bloques de competencias.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            <Button variant="outline" className="h-12 px-5" onClick={() => setSelectedPeriodId('final')}>
+          <div className="flex min-w-0 flex-1 flex-wrap items-center justify-end gap-2">
+            <label className="flex h-10 min-w-[18rem] max-w-[34rem] flex-1 items-center gap-3 rounded-xl border border-border bg-card px-3 text-muted-foreground shadow-sm">
+              <Search className="size-4 shrink-0" />
+              <input
+                type="search"
+                placeholder="Buscar estudiantes, cursos, actividades..."
+                className="min-w-0 flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
+                aria-label="Buscar estudiantes, cursos, actividades"
+              />
+            </label>
+            <Button variant="outline" className="h-10 px-4" onClick={() => setSelectedPeriodId('final')}>
               <FileText className="size-4" />
               Ver resumen final
             </Button>
-            <Button variant="outline" className="h-12 px-5" onClick={() => void refresh()}>
+            <Button variant="outline" className="h-10 px-4" onClick={() => void refresh()}>
               <RefreshCw className="size-4" />
               Actualizar
             </Button>
           </div>
         </div>
 
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_18rem]">
-          <div className="space-y-2">
+        <div className="grid gap-3 rounded-lg border border-border bg-card p-3 shadow-sm lg:grid-cols-[minmax(0,1fr)_22rem]">
+          <div className="space-y-1">
             <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
               Curso / asignatura
             </label>
             <Select
               value={selectedSsId}
               onChange={(event) => setSelectedSsId(event.target.value)}
-              className="w-full"
+              className="h-10 w-full"
             >
               <option value="">
                 {sectionSubjects.length > 0 ? 'Selecciona un curso' : 'No hay asignaciones'}
               </option>
-              {sectionSubjects.map((ss) => (
-                <option key={ss.id} value={ss.id}>
-                  {ss.gradeName} {ss.sectionName} — {ss.subjectName}
-                </option>
+              {groupedSectionSubjects.map((group) => (
+                <optgroup key={group.label} label={group.label}>
+                  {group.items.map((ss) => (
+                    <option key={ss.id} value={ss.id}>
+                      {ss.gradeName} {ss.sectionName} — {ss.subjectName}
+                    </option>
+                  ))}
+                </optgroup>
               ))}
             </Select>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-1">
             <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
               Período
             </label>
             <Select
               value={selectedPeriodId}
               onChange={(event) => setSelectedPeriodId(event.target.value as typeof selectedPeriodId)}
-              className="w-full"
+              className="h-10 w-full"
             >
               {competencyPeriods.map((period) => (
                 <option key={period.id} value={period.id}>
@@ -102,17 +115,6 @@ export function GradingPage() {
             </Select>
           </div>
         </div>
-
-        {selectedSs ? (
-          <div className="rounded-lg border border-border bg-card px-4 py-3 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
-              {selectedPeriod.name}
-            </p>
-            <h2 className="mt-1 text-xl font-bold text-primary">
-              {selectedSs.gradeName} {selectedSs.sectionName} · {selectedSs.subjectName}
-            </h2>
-          </div>
-        ) : null}
 
         {error ? (
           <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
@@ -133,34 +135,105 @@ export function GradingPage() {
           Cargando calificaciones...
         </div>
       ) : isFinalView ? (
-        <FinalGradesSummary
+        <GradingBook
           students={students}
+          activities={activities}
+          records={gradeRecords}
+          recoveryScores={recoveryScores}
+          periodName={selectedPeriod.name}
+          periodShortName={selectedPeriod.shortName}
+          recoveryLabel={selectedPeriod.recoveryLabel}
+          courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
+          saving={saving}
+          initialView="final"
+          onAddActivity={addActivity}
+          onUpdateActivity={updateActivity}
+          onDeleteActivity={deleteActivity}
+          onSaveScore={updateActivityScore}
+          onSaveRecovery={updateRecoveryScore}
           loadFinalRecords={loadFinalRecords}
           getActivitiesForPeriod={getActivitiesForPeriod}
         />
       ) : (
-        <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_16rem]">
-          <GradeTable
-            students={students}
-            activities={activities}
-            records={gradeRecords}
-            recoveryScores={recoveryScores}
-            recoveryLabel={selectedPeriod.recoveryLabel}
-            saving={saving}
-            onAddActivity={addActivity}
-            onUpdateActivity={updateActivity}
-            onDeleteActivity={deleteActivity}
-            onSaveScore={updateActivityScore}
-            onSaveRecovery={updateRecoveryScore}
-          />
-          <GradeSummary
-            students={students}
-            activities={activities}
-            records={gradeRecords}
-            loading={loading}
-          />
-        </div>
+        <GradingBook
+          students={students}
+          activities={activities}
+          records={gradeRecords}
+          recoveryScores={recoveryScores}
+          periodName={selectedPeriod.name}
+          periodShortName={selectedPeriod.shortName}
+          recoveryLabel={selectedPeriod.recoveryLabel}
+          courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
+          saving={saving}
+          onAddActivity={addActivity}
+          onUpdateActivity={updateActivity}
+          onDeleteActivity={deleteActivity}
+          onSaveScore={updateActivityScore}
+          onSaveRecovery={updateRecoveryScore}
+          loadFinalRecords={loadFinalRecords}
+          getActivitiesForPeriod={getActivitiesForPeriod}
+        />
       )}
     </section>
   )
+}
+
+function groupSectionSubjects(items: SectionSubjectOption[]) {
+  const orderedItems = [...items].sort(compareSectionSubjects)
+  const groups = new Map<string, SectionSubjectOption[]>()
+
+  orderedItems.forEach((item) => {
+    const label = getLevelLabel(item)
+    const groupItems = groups.get(label) ?? []
+    groupItems.push(item)
+    groups.set(label, groupItems)
+  })
+
+  return Array.from(groups.entries())
+    .sort(([firstLabel, firstItems], [secondLabel, secondItems]) => {
+      const levelOrder = getLevelOrder(firstItems[0]) - getLevelOrder(secondItems[0])
+      if (levelOrder !== 0) return levelOrder
+      return firstLabel.localeCompare(secondLabel, 'es')
+    })
+    .map(([label, groupItems]) => ({ label, items: groupItems }))
+}
+
+function compareSectionSubjects(first: SectionSubjectOption, second: SectionSubjectOption) {
+  const levelOrder = getLevelOrder(first) - getLevelOrder(second)
+  if (levelOrder !== 0) return levelOrder
+
+  const gradeOrder = getGradeOrder(first) - getGradeOrder(second)
+  if (gradeOrder !== 0) return gradeOrder
+
+  const sectionOrder = first.sectionName.localeCompare(second.sectionName, 'es', { numeric: true })
+  if (sectionOrder !== 0) return sectionOrder
+
+  return first.subjectName.localeCompare(second.subjectName, 'es')
+}
+
+function getLevelLabel(item: SectionSubjectOption) {
+  const level = normalizeText(item.academicLevelName ?? '')
+  if (level.includes('primario') || level.includes('primaria')) return 'Nivel Primario'
+  if (level.includes('secundario') || level.includes('secundaria')) return 'Nivel Secundario'
+  return item.academicLevelName || 'Otros cursos'
+}
+
+function getLevelOrder(item: SectionSubjectOption) {
+  const label = getLevelLabel(item)
+  if (label === 'Nivel Primario') return 1
+  if (label === 'Nivel Secundario') return 2
+  return item.academicLevelSequence ?? 99
+}
+
+function getGradeOrder(item: SectionSubjectOption) {
+  if (typeof item.gradeSequence === 'number') return item.gradeSequence
+  const number = Number(item.gradeName.match(/\d+/)?.[0])
+  return Number.isFinite(number) ? number : Number.MAX_SAFE_INTEGER
+}
+
+function normalizeText(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
 }

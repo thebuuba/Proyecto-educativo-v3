@@ -1,3 +1,5 @@
+import { CalendarCheck, TrendingUp, UserCheck, UserX } from 'lucide-react'
+
 import { Card, CardContent } from '@/components/ui/Card'
 import type { MonthlyAttendanceStats } from '@/modules/attendance/types'
 import { formatPercentage } from '@/modules/attendance/utils/monthlyAttendance'
@@ -9,36 +11,41 @@ type AttendanceSummaryProps = {
 }
 
 const items = [
-  { key: 'totalStudents', label: 'Total estudiantes', helper: 'matriculados' },
-  { key: 'workedDays', label: 'Días trabajados', helper: 'del mes' },
-  { key: 'averageAttendance', label: 'Promedio', helper: 'asistencia' },
-  { key: 'absences', label: 'Ausencias', helper: 'registradas' },
-  { key: 'excuses', label: 'Excusas', helper: 'registradas' },
+  { key: 'totalStudents', label: 'Estudiantes', helper: 'matriculados', icon: UserCheck, iconClassName: 'bg-success/12 text-success' },
+  { key: 'workedDays', label: 'Días trabajados', helper: 'del mes', icon: CalendarCheck, iconClassName: 'bg-success/12 text-success' },
+  { key: 'averageAttendance', label: 'Promedio', helper: 'asistencia', icon: TrendingUp, iconClassName: 'bg-success/12 text-success' },
+  { key: 'absences', label: 'Ausencias', helper: 'registradas', icon: UserX, iconClassName: 'bg-warning/14 text-warning' },
 ] as const
 
 export function AttendanceSummary({ stats, loading }: AttendanceSummaryProps) {
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((item) => {
         const value = stats[item.key]
+        const Icon = item.icon
         return (
-          <Card key={item.key}>
-            <CardContent className="p-4 sm:p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">
-                {item.label}
-              </p>
-              <div className={cn('mt-3', loading && 'animate-pulse')}>
-                {loading ? (
-                  <div className="h-8 w-16 rounded-lg bg-muted" />
-                ) : (
-                  <p className="text-3xl font-bold leading-none text-primary">
-                    {item.key === 'averageAttendance'
-                      ? formatPercentage(value)
-                      : value ?? 0}
-                  </p>
-                )}
+          <Card key={item.key} className="rounded-xl">
+            <CardContent className="flex items-center gap-4 p-4">
+              <div className={cn('flex size-11 shrink-0 items-center justify-center rounded-xl', item.iconClassName)}>
+                <Icon className="size-5" />
               </div>
-              <p className="mt-2 text-xs text-muted-foreground">{item.helper}</p>
+              <div className="min-w-0">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                  {item.label}
+                </p>
+                <div className={cn('mt-1', loading && 'animate-pulse')}>
+                  {loading ? (
+                    <div className="h-7 w-14 rounded-lg bg-muted" />
+                  ) : (
+                    <p className="text-2xl font-bold leading-none text-primary">
+                      {item.key === 'averageAttendance'
+                        ? formatPercentage(value)
+                        : value ?? 0}
+                    </p>
+                  )}
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">{item.helper}</p>
+              </div>
             </CardContent>
           </Card>
         )

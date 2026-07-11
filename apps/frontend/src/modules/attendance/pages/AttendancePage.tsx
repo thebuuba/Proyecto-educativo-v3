@@ -1,4 +1,5 @@
 import { AlertCircle, RefreshCw } from 'lucide-react'
+import { useMemo } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Select } from '@/components/ui/Select'
@@ -8,6 +9,12 @@ import { useAttendance } from '@/modules/attendance/hooks/useAttendance'
 import {
   schoolYearMonths,
 } from '@/modules/attendance/utils/monthlyAttendance'
+import type { EnrollmentCourse } from '@/modules/students/types'
+
+type CourseGroup = {
+  label: string
+  courses: EnrollmentCourse[]
+}
 
 export function AttendancePage() {
   const {
@@ -26,31 +33,23 @@ export function AttendancePage() {
     toggleCell,
     refresh,
   } = useAttendance()
-  const selectedMonthName = schoolYearMonths.find((month) => month.value === selectedMonth)?.label ?? ''
+  const groupedCourses = useMemo(() => groupCoursesForSelect(courses), [courses])
 
   return (
     <section className="w-full min-w-0">
-      <div className="mb-8 space-y-8">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <div className="mb-6 space-y-5">
+        <div className="flex flex-col gap-3">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">
-              Registro mensual
-            </p>
-            <h1 className="mt-3 text-4xl font-bold leading-none text-primary sm:text-5xl">
+            <h1 className="text-3xl font-bold leading-none text-primary sm:text-4xl">
               Asistencia
             </h1>
-            <p className="mt-3 text-base leading-6 text-muted-foreground">
-              Control mensual por curso, estudiante y días trabajados.
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              Registro mensual por asignatura.
             </p>
           </div>
-
-          <Button variant="outline" className="h-12 px-5" onClick={refresh}>
-            <RefreshCw className="size-4" />
-            Actualizar
-          </Button>
         </div>
 
-        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_14rem]">
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem_auto] lg:items-end">
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
               Curso
@@ -63,10 +62,14 @@ export function AttendancePage() {
               <option value="">
                 {courses.length > 0 ? 'Selecciona un curso' : 'No hay cursos disponibles'}
               </option>
-              {courses.map((course) => (
-                <option key={course.id} value={course.id}>
-                  {course.gradeName} {course.sectionName} · {course.subjectName}
-                </option>
+              {groupedCourses.map((group) => (
+                <optgroup key={group.label} label={group.label}>
+                  {group.courses.map((course) => (
+                    <option key={course.id} value={course.id}>
+                      {course.gradeName} {course.sectionName} · {course.subjectName}
+                    </option>
+                  ))}
+                </optgroup>
               ))}
             </Select>
           </div>
@@ -87,17 +90,22 @@ export function AttendancePage() {
               ))}
             </Select>
           </div>
+
+          <Button variant="outline" className="h-12 px-5" onClick={refresh}>
+            <RefreshCw className="size-4" />
+            Actualizar
+          </Button>
         </div>
 
         {selectedCourse ? (
-          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
-              Registro de asistencia
+          <div className="rounded-2xl bg-primary px-6 py-5 text-primary-foreground shadow-md">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/70">
+              Curso seleccionado
             </p>
-            <h2 className="mt-3 text-2xl font-bold text-primary">
+            <h2 className="mt-2 text-xl font-bold leading-tight">
               {selectedCourse.gradeName} {selectedCourse.sectionName} · {selectedCourse.subjectName}
             </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="mt-1 text-sm text-primary-foreground/75">
               Año escolar {selectedCourse.schoolYearName || 'activo'}
             </p>
           </div>
@@ -126,7 +134,7 @@ export function AttendancePage() {
       ) : (
         <div className="space-y-3">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs text-muted-foreground">
               {saving ? 'Guardando...' : 'Clic: vacío → P → A → E → R → vacío'}
             </p>
             <div className="flex flex-wrap gap-2 text-xs font-bold text-muted-foreground">
@@ -139,9 +147,6 @@ export function AttendancePage() {
           <AttendanceGrid
             rows={monthlyRows}
             workedDays={workedDays}
-            subjectName={selectedCourse?.subjectName}
-            courseName={selectedCourse ? `${selectedCourse.gradeName} ${selectedCourse.sectionName}` : ''}
-            monthName={selectedMonthName}
             saving={saving}
             onToggle={toggleCell}
           />
@@ -149,4 +154,61 @@ export function AttendancePage() {
       )}
     </section>
   )
+}
+
+function groupCoursesForSelect(courses: EnrollmentCourse[]): CourseGroup[] {
+  const groups = new Map<string, EnrollmentCourse[]>()
+
+  ;[...courses].sort(compareCourses).forEach((course) => {
+    const level = getCourseLevelLabel(course)
+    const group = groups.get(level) ?? []
+    group.push(course)
+    groups.set(level, group)
+  })
+
+  return ['Nivel Primario', 'Nivel Secundario', 'Otros cursos']
+    .map((label) => ({ label, courses: groups.get(label) ?? [] }))
+    .filter((group) => group.courses.length > 0)
+}
+
+function compareCourses(first: EnrollmentCourse, second: EnrollmentCourse) {
+  const levelDiff = getLevelOrder(first) - getLevelOrder(second)
+  if (levelDiff !== 0) return levelDiff
+
+  const gradeDiff = getGradeOrder(first) - getGradeOrder(second)
+  if (gradeDiff !== 0) return gradeDiff
+
+  const sectionDiff = first.sectionName.localeCompare(second.sectionName, 'es', { numeric: true })
+  if (sectionDiff !== 0) return sectionDiff
+
+  return first.subjectName.localeCompare(second.subjectName, 'es', { numeric: true })
+}
+
+function getCourseLevelLabel(course: EnrollmentCourse) {
+  const normalizedLevel = normalizeText(course.academicLevelName)
+  const normalizedGrade = normalizeText(course.gradeName)
+
+  if (normalizedLevel.includes('prim') || normalizedGrade.includes('prim')) return 'Nivel Primario'
+  if (normalizedLevel.includes('sec') || normalizedGrade.includes('sec')) return 'Nivel Secundario'
+  return 'Otros cursos'
+}
+
+function getLevelOrder(course: EnrollmentCourse) {
+  const label = getCourseLevelLabel(course)
+  if (label === 'Nivel Primario') return 1
+  if (label === 'Nivel Secundario') return 2
+  return 3
+}
+
+function getGradeOrder(course: EnrollmentCourse) {
+  if (typeof course.gradeSequence === 'number') return course.gradeSequence
+  const match = course.gradeName.match(/\d+/)
+  return match ? Number(match[0]) : Number.MAX_SAFE_INTEGER
+}
+
+function normalizeText(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
 }

@@ -493,9 +493,7 @@ export class AuthService {
   }
 
   async getOnboardingStatus(schoolId: string) {
-    const [schoolYear] = await Promise.all([
-      prisma.schoolYear.findFirst({ where: { schoolId, isCurrent: true, status: 'ACTIVE' } }),
-    ])
+    const schoolYear = await prisma.schoolYear.findFirst({ where: { schoolId, isCurrent: true, status: 'ACTIVE' } })
 
     return {
       complete: Boolean(schoolYear),

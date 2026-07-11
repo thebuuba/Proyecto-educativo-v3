@@ -147,6 +147,36 @@ describe('StudentsService course enrollment', () => {
     }))
   })
 
+  it('reuses an in-flight enrollment course query for concurrent requests', async () => {
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([
+      {
+        id: 'course-1',
+        schoolYearId: 'year-1',
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        subjectId: 'subject-1',
+        status: 'ACTIVE',
+      },
+    ])
+    mocks.prisma.enrollment.groupBy.mockResolvedValue([
+      { schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1', _count: { id: 2 } },
+    ])
+
+    const service = createService()
+    const [firstResult, secondResult] = await Promise.all([
+      service.getEnrollmentCourses('school-1'),
+      service.getEnrollmentCourses('school-1'),
+    ])
+
+    expect(firstResult).toEqual(secondResult)
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.section.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.subject.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.schoolYear.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.enrollment.groupBy).toHaveBeenCalledTimes(1)
+  })
+
   it('lists students by course with enrollment ids', async () => {
     mockCourse()
     mocks.prisma.enrollment.findMany.mockResolvedValue([

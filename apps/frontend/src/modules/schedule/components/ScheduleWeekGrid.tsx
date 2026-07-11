@@ -1,4 +1,4 @@
-import { Coffee, Pencil, Plus, X } from 'lucide-react'
+import { ClipboardList, Coffee, Pencil, Plus, X } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { Badge } from '@/components/ui/Badge'
@@ -39,15 +39,25 @@ type SectionSubjectOption = {
   teacherName: string
 }
 
+type PedagogicalBlock = {
+  dayOfWeek: number
+  start: string
+  end: string
+  label: string
+}
+
 type ScheduleWeekGridProps = {
   config: ScheduleConfig
   blocks: ScheduleBlock[]
   entries: ScheduleEntry[]
+  pedagogicalBlocks?: PedagogicalBlock[]
   sectionSubjects?: SectionSubjectOption[]
   activeDays: Array<{ dayOfWeek: number; label: string; name: string }>
   onEdit: () => void
   onAssign: (dayOfWeek: number, block: ScheduleBlock, sectionSubjectId: string, sectionId: string) => void
   onRemove: (entryId: string) => void
+  onMarkPedagogical: (dayOfWeek: number, block: ScheduleBlock) => void
+  onRemovePedagogical: (dayOfWeek: number, block: Pick<ScheduleBlock, 'start' | 'end'>) => void
   loading?: boolean
 }
 
@@ -64,11 +74,14 @@ export function ScheduleWeekGrid({
   config,
   blocks,
   entries,
+  pedagogicalBlocks = [],
   sectionSubjects = [],
   activeDays,
   onEdit,
   onAssign,
   onRemove,
+  onMarkPedagogical,
+  onRemovePedagogical,
   loading,
 }: ScheduleWeekGridProps) {
   const classCount = blocks.filter((b) => b.type === 'class').length
@@ -78,7 +91,7 @@ export function ScheduleWeekGrid({
   const entriesByCell = useMemo(() => {
     const map = new Map<string, AssignedEntry>()
     entries.forEach((e) => {
-      const key = `${e.dayOfWeek}:${e.timeSlotId}`
+      const key = `${e.dayOfWeek}:${formatTime(e.startTime)}-${formatTime(e.endTime)}`
       map.set(key, {
         scheduleEntryId: e.id,
         subjectName: e.subjectName,
@@ -91,6 +104,14 @@ export function ScheduleWeekGrid({
     })
     return map
   }, [entries])
+
+  const pedagogicalBlocksByCell = useMemo(() => {
+    const map = new Map<string, PedagogicalBlock>()
+    pedagogicalBlocks.forEach((block) => {
+      map.set(`${block.dayOfWeek}:${formatTime(block.start)}-${formatTime(block.end)}`, block)
+    })
+    return map
+  }, [pedagogicalBlocks])
 
   useEffect(() => {
     if (!openDropdown) return
@@ -123,15 +144,15 @@ export function ScheduleWeekGrid({
   })()
 
   const totalSlots = activeDays.length * classCount
-  const filledSlots = entries.length
-  const freeSlots = totalSlots - filledSlots
+  const filledSlots = entries.length + pedagogicalBlocks.length
+  const freeSlots = Math.max(totalSlots - filledSlots, 0)
 
   function getColor(subjectName: string) {
     return SUBJECT_PALETTE[hashString(subjectName) % SUBJECT_PALETTE.length]
   }
 
-  function getEntryKey(dayOfWeek: number, block: ScheduleBlock) {
-    return `${dayOfWeek}:${block.id}`
+  function getCellKey(dayOfWeek: number, block: ScheduleBlock) {
+    return `${dayOfWeek}:${formatTime(block.start)}-${formatTime(block.end)}`
   }
 
   function handleCellClick(dayOfWeek: number, block: ScheduleBlock) {
@@ -143,23 +164,34 @@ export function ScheduleWeekGrid({
     )
   }
 
+  function formatDuration(hours: number) {
+    if (hours <= 0) return '0 min'
+    const totalMinutes = Math.round(hours * 60)
+    const wholeHours = Math.floor(totalMinutes / 60)
+    const minutes = totalMinutes % 60
+
+    if (wholeHours === 0) return `${minutes} min`
+    if (minutes === 0) return `${wholeHours} h`
+    return `${wholeHours} h ${minutes} min`
+  }
+
   return (
     <div className="space-y-5">
       {/* Header */}
       <div className="flex flex-wrap items-center gap-3">
         <div className="mr-auto">
           <h2 className="text-lg font-semibold text-foreground">
-            Mi semana académica
+            Configurar asignaciones
           </h2>
           <p className="text-sm text-muted-foreground">
-            Toca un período vacío para asignarle una materia.
+            Toca un período vacío para asignarle una materia u hora pedagógica.
           </p>
         </div>
         <Badge tone="accent" className="rounded-full px-3 py-1">
           Tanda {SHIFT_LABELS[config.shift] ?? config.shift}
         </Badge>
         <Badge tone="default" className="rounded-full px-3 py-1">
-          {classCount} períodos · {config.blockDuration} min
+          {classCount} períodos · {config.structureMode === 'custom' ? 'duración variable' : `${config.blockDuration} min`}
         </Badge>
         {freeSlots > 0 ? (
           <Badge tone="muted" className="rounded-full px-3 py-1">
@@ -180,7 +212,7 @@ export function ScheduleWeekGrid({
       ) : (
         <>
           {/* Grid */}
-          <div className="flex gap-4 overflow-x-auto pb-2">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5">
             {activeDays.map((day) => {
               const dayEntries = entries.filter((e) => e.dayOfWeek === day.dayOfWeek)
               const dayHours = dayEntries.reduce(
@@ -191,7 +223,7 @@ export function ScheduleWeekGrid({
               return (
                 <div
                   key={day.dayOfWeek}
-                  className="flex min-w-56 flex-1 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm"
+                  className="flex min-h-[34rem] min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm"
                 >
                   {/* Day header */}
                   <div className="bg-primary px-4 py-3 text-center">
@@ -200,28 +232,29 @@ export function ScheduleWeekGrid({
                     </p>
                     {dayHours > 0 ? (
                       <p className="mt-0.5 text-[11px] font-semibold text-primary-foreground/65">
-                        {dayHours}h
+                        {formatDuration(dayHours)}
                       </p>
                     ) : null}
                   </div>
 
                   {/* Blocks */}
-                  <div className="flex flex-col gap-2 p-3">
+                  <div className="flex max-h-[31rem] flex-col gap-2 overflow-y-auto p-3">
                     {blocks.map((block) => {
                       if (block.type === 'break') {
                         return (
                           <div
                             key={block.id}
-                            className="flex items-center justify-center gap-2 rounded-xl bg-amber-100/70 py-2 text-[11px] font-bold uppercase tracking-widest text-amber-700"
+                            className="flex min-h-12 items-center justify-center gap-2 rounded-xl border border-amber-200 bg-amber-100/80 px-3 py-2 text-[11px] font-bold uppercase tracking-widest text-amber-700"
                           >
                             <Coffee className="size-3.5" />
-                            {block.label} · {formatTime(block.start)}
+                            {block.label} - {formatTime(block.start)} a {formatTime(block.end)}
                           </div>
                         )
                       }
 
-                      const entryKey = getEntryKey(day.dayOfWeek, block)
+                      const entryKey = getCellKey(day.dayOfWeek, block)
                       const assigned = entriesByCell.get(entryKey)
+                      const pedagogical = pedagogicalBlocksByCell.get(entryKey)
                       const color = assigned ? getColor(assigned.subjectName) : null
 
                       return (
@@ -229,12 +262,12 @@ export function ScheduleWeekGrid({
                           {assigned && color ? (
                             <div
                               className={cn(
-                                'group flex flex-col gap-0.5 rounded-xl px-3 py-2.5 text-left transition-transform hover:scale-[1.02]',
+                                'group flex h-28 flex-col justify-between rounded-xl px-3 py-2.5 text-left transition-transform hover:scale-[1.02]',
                                 color.chip,
                               )}
                             >
                               <div className="flex items-center justify-between gap-2">
-                                <span className="text-sm font-semibold">
+                                <span className="line-clamp-4 text-[13px] font-semibold leading-[1.15]">
                                   {assigned.subjectName}
                                 </span>
                                 <button
@@ -256,11 +289,36 @@ export function ScheduleWeekGrid({
                                 {formatTime(block.start)} – {formatTime(block.end)}
                               </span>
                             </div>
+                          ) : pedagogical ? (
+                            <div className="group flex h-28 flex-col justify-between rounded-xl bg-slate-100 px-3 py-2.5 text-left text-slate-700 transition-transform hover:scale-[1.02]">
+                              <div className="flex items-center justify-between gap-2">
+                                <span className="line-clamp-3 text-sm font-semibold leading-tight">
+                                  {pedagogical.label}
+                                </span>
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                    onRemovePedagogical(day.dayOfWeek, block)
+                                  }}
+                                  className="shrink-0 rounded-full p-0.5 opacity-0 transition-opacity hover:bg-black/10 group-hover:opacity-100"
+                                  aria-label="Quitar hora pedagógica"
+                                >
+                                  <X className="size-3" />
+                                </button>
+                              </div>
+                              <span className="text-[11px] opacity-70">
+                                Trabajo no lectivo
+                              </span>
+                              <span className="text-[11px] opacity-60">
+                                {formatTime(block.start)} - {formatTime(block.end)}
+                              </span>
+                            </div>
                           ) : (
                             <button
                               type="button"
                               onClick={() => handleCellClick(day.dayOfWeek, block)}
-                              className="group flex w-full items-center justify-between rounded-xl border border-dashed border-border px-3 py-2.5 text-left transition-colors hover:border-primary/50 hover:bg-accent/30"
+                              className="group flex h-28 w-full items-center justify-between rounded-xl border border-dashed border-border px-3 py-2.5 text-left transition-colors hover:border-primary/50 hover:bg-accent/30"
                             >
                               <span className="text-[11px] font-medium text-muted-foreground">
                                 {formatTime(block.start)} – {formatTime(block.end)}
@@ -277,6 +335,26 @@ export function ScheduleWeekGrid({
                                 className="absolute left-0 right-0 top-full z-50 mt-1 overflow-hidden rounded-xl border border-border bg-card shadow-lg"
                               >
                                 <div className="max-h-56 overflow-y-auto">
+                                  <button
+                                    type="button"
+                                    className="flex w-full items-center gap-3 border-b border-border px-4 py-2.5 text-left text-sm transition-colors hover:bg-muted"
+                                    onClick={() => {
+                                      onMarkPedagogical(day.dayOfWeek, block)
+                                      setOpenDropdown(null)
+                                    }}
+                                  >
+                                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-600">
+                                      <ClipboardList className="size-3.5" />
+                                    </span>
+                                    <div className="min-w-0">
+                                      <span className="block font-medium text-foreground">
+                                        {config.pedagogicalLabel || 'Hora pedagógica'}
+                                      </span>
+                                      <span className="block text-xs text-muted-foreground">
+                                        Bloque no lectivo editable
+                                      </span>
+                                    </div>
+                                  </button>
                                   {sectionSubjects.length === 0 ? (
                                     <div className="px-4 py-3 text-xs text-muted-foreground">
                                       No hay cursos disponibles. Crea cursos primero.
@@ -324,10 +402,16 @@ export function ScheduleWeekGrid({
           {/* Summary footer */}
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span className="font-medium text-foreground">
-              {filledSlots} clases
+              {entries.length} clases
             </span>
             <span className="text-border">·</span>
             <span>{hoursFormatted}</span>
+            {pedagogicalBlocks.length > 0 ? (
+              <>
+                <span className="text-border">·</span>
+                <span>{pedagogicalBlocks.length} horas pedagógicas</span>
+              </>
+            ) : null}
             {freeSlots > 0 ? (
               <>
                 <span className="text-border">·</span>

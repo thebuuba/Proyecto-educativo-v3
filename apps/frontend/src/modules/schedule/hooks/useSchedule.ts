@@ -98,12 +98,10 @@ export function useSchedule() {
       const yearId = currentYear?.id ?? null
       setSchoolYearId(yearId)
 
-      const [slots, sects, tchrs, subjs] = await Promise.all([
-        getTimeSlots(),
-        getSections(),
-        getTeachers(),
-        getSubjects(),
-      ])
+      const slots = await getTimeSlots()
+      const sects = await getSections()
+      const tchrs = await getTeachers()
+      const subjs = await getSubjects()
 
       setTimeSlots(slots)
       setSections(sects)
@@ -129,7 +127,8 @@ export function useSchedule() {
 
   /** Recarga todos los datos (bloques y entradas) */
   const refetchAll = useCallback(async () => {
-    await Promise.all([refetchTimeSlots(), refetchEntries()])
+    await refetchTimeSlots()
+    await refetchEntries()
   }, [refetchTimeSlots, refetchEntries])
 
   /** Crea un nuevo bloque horario y refresca la lista */

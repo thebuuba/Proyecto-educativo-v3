@@ -1,13 +1,16 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { Plus } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
+import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
 import {
   attachExistingSubjectIds,
   defaultAcademicStructure,
   defaultSectionOptions,
   findCatalogItem,
+  getExtracurricularSubjectOptions,
   normalizeAcademicText,
 } from '@/modules/courses/data/academicAssignmentCatalog'
 import type { CourseCatalogs, TeacherAssignmentInput } from '@/modules/courses/types'
@@ -38,12 +41,20 @@ export function TeacherAssignmentForm({
   const [gradeCode, setGradeCode] = useState(selectedCycle?.grades?.[0]?.code ?? '')
   const selectedGrade = selectedCycle?.grades?.find((grade) => grade.code === gradeCode) ?? selectedCycle?.grades?.[0]
   const [sectionName, setSectionName] = useState(defaultSectionOptions[0] ?? 'A')
-  const subjectOptions = attachExistingSubjectIds(
+  const curricularSubjectOptions = attachExistingSubjectIds(
     (selectedCycle?.grades.find((g) => g.code === gradeCode) ?? selectedCycle?.grades?.[0])?.subjects ?? [],
     catalogs.subjects,
   )
-  const [subjectKey, setSubjectKey] = useState(subjectOptions[0]?.key ?? '')
-  const selectedSubject = subjectOptions.find((subject) => subject.key === subjectKey) ?? subjectOptions[0]
+  const extracurricularSubjectOptions = getExtracurricularSubjectOptions(catalogs.subjects)
+  const subjectOptions = [...curricularSubjectOptions, ...extracurricularSubjectOptions]
+  const [subjectKey, setSubjectKey] = useState('')
+  const [newSubjectName, setNewSubjectName] = useState('')
+  const selectedSubject = subjectOptions.find((subject) => subject.key === subjectKey)
+  const [isCreatingExtracurricular, setIsCreatingExtracurricular] = useState(false)
+  const normalizedNewSubjectName = normalizeAcademicText(newSubjectName)
+  const subjectNameExists = Boolean(normalizedNewSubjectName) && catalogs.subjects.some(
+    (subject) => normalizeAcademicText(subject.name) === normalizedNewSubjectName,
+  )
 
   function handleLevelChange(nextLevelCode: string) {
     const nextLevel = defaultAcademicStructure.find((level) => level.code === nextLevelCode)
@@ -51,25 +62,33 @@ export function TeacherAssignmentForm({
     setLevelCode(nextLevelCode)
     setCycleCode(nextCycle?.code ?? '')
     setGradeCode(nextCycle?.grades[0]?.code ?? '')
-    setSubjectKey(nextCycle?.grades[0]?.subjects?.[0]?.key ?? '')
+    setSubjectKey('')
+    setNewSubjectName('')
+    setIsCreatingExtracurricular(false)
   }
 
   function handleCycleChange(nextCycleCode: string) {
     const nextCycle = availableCycles.find((cycle) => cycle.code === nextCycleCode)
     setCycleCode(nextCycleCode)
     setGradeCode(nextCycle?.grades[0]?.code ?? '')
-    setSubjectKey(nextCycle?.grades[0]?.subjects?.[0]?.key ?? '')
+    setSubjectKey('')
+    setNewSubjectName('')
+    setIsCreatingExtracurricular(false)
   }
 
   function handleGradeChange(nextGradeCode: string) {
-    const nextGrade = selectedCycle?.grades?.find((grade) => grade.code === nextGradeCode)
     setGradeCode(nextGradeCode)
-    setSubjectKey(nextGrade?.subjects?.[0]?.key ?? '')
+    setSubjectKey('')
+    setNewSubjectName('')
+    setIsCreatingExtracurricular(false)
   }
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
-    if (!selectedLevel || !selectedCycle || !selectedGrade || !sectionName || !selectedSubject) return
+    if (!selectedLevel || !selectedCycle || !selectedGrade || !sectionName) return
+    if (!isCreatingExtracurricular && !selectedSubject) return
+    if (isCreatingExtracurricular && (!newSubjectName.trim() || subjectNameExists)) return
+    const existingSubject = selectedSubject
 
     const academicLevel = findCatalogItem(catalogs.levels, selectedLevel.matchNames)
     const academicCycle =
@@ -81,6 +100,18 @@ export function TeacherAssignmentForm({
         return sameLevel && sameName
       }) ?? findCatalogItem(catalogs.cycles, selectedCycle.matchNames)
 
+    const subjectPayload = isCreatingExtracurricular
+      ? {
+          subjectId: undefined,
+          subjectCode: createCustomSubjectCode(newSubjectName),
+          subjectName: newSubjectName.trim(),
+        }
+      : {
+          subjectId: existingSubject?.id,
+          subjectCode: existingSubject?.code ?? '',
+          subjectName: existingSubject?.name ?? '',
+        }
+
     await onSubmit({
       academicLevelId: academicLevel?.id ?? null,
       academicLevelName: selectedLevel.label,
@@ -89,13 +120,17 @@ export function TeacherAssignmentForm({
       gradeName: selectedGrade.label,
       gradeSequence: selectedGrade.sequence,
       sectionName,
-      subjectId: selectedSubject.id,
-      subjectCode: selectedSubject.code,
-      subjectName: selectedSubject.name,
+      ...subjectPayload,
     })
   }
 
-  const canSubmit = Boolean(selectedLevel && selectedCycle && selectedGrade && sectionName && selectedSubject)
+  const canSubmit = Boolean(
+    selectedLevel &&
+    selectedCycle &&
+    selectedGrade &&
+    sectionName &&
+    (isCreatingExtracurricular ? newSubjectName.trim() && !subjectNameExists : selectedSubject),
+  )
 
   return (
     <Modal
@@ -166,18 +201,80 @@ export function TeacherAssignmentForm({
 
         <label className="block space-y-2">
           <span className="text-sm font-medium text-foreground">Asignatura</span>
-          <select className={selectClassName} value={selectedSubject?.key ?? ''} onChange={(event) => setSubjectKey(event.target.value)} disabled={!subjectOptions.length}>
+          <select
+            className={selectClassName}
+            value={subjectKey}
+            onChange={(event) => {
+              setSubjectKey(event.target.value)
+              setIsCreatingExtracurricular(false)
+              setNewSubjectName('')
+            }}
+            disabled={isCreatingExtracurricular && subjectOptions.length === 0}
+          >
             {subjectOptions.length ? (
-              subjectOptions.map((subject) => (
-                <option key={subject.key} value={subject.key}>
-                  {subject.name}
-                </option>
-              ))
+              <>
+                <option value="">Selecciona una asignatura</option>
+                {curricularSubjectOptions.map((subject) => (
+                  <option key={subject.key} value={subject.key}>
+                    {subject.name}
+                  </option>
+                ))}
+                {extracurricularSubjectOptions.map((subject) => (
+                  <option key={subject.key} value={subject.key}>
+                    {subject.name}
+                  </option>
+                ))}
+              </>
             ) : (
               <option value="">Sin asignaturas disponibles</option>
             )}
           </select>
         </label>
+
+        {!isCreatingExtracurricular ? (
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="w-fit"
+            onClick={() => {
+              setIsCreatingExtracurricular(true)
+              setNewSubjectName('')
+            }}
+          >
+            <Plus className="size-4" />
+            Crear asignatura
+          </Button>
+        ) : null}
+
+        {isCreatingExtracurricular ? (
+          <div className="space-y-2 rounded-lg border border-border bg-muted/30 p-3">
+            <label className="block space-y-2">
+              <span className="text-sm font-medium text-foreground">Nueva asignatura extracurricular</span>
+              <Input
+                value={newSubjectName}
+                onChange={(event) => setNewSubjectName(event.target.value)}
+                placeholder="Ej. Sexualidad humana, Moral y cívica, Pastoral educativa"
+                required
+              />
+            </label>
+            {subjectNameExists ? (
+              <p className="text-sm font-medium text-warning">
+                Esta asignatura ya existe. Selecciónala en la lista para reutilizarla.
+              </p>
+            ) : null}
+            <button
+              type="button"
+              className="text-sm font-semibold text-muted-foreground hover:text-foreground"
+              onClick={() => {
+                setIsCreatingExtracurricular(false)
+                setNewSubjectName('')
+              }}
+            >
+              Cancelar nueva asignatura
+            </button>
+          </div>
+        ) : null}
 
         <div className="flex justify-end gap-3 pt-2">
           <Button variant="outline" type="button" onClick={onClose}>
@@ -190,4 +287,12 @@ export function TeacherAssignmentForm({
       </form>
     </Modal>
   )
+}
+
+function createCustomSubjectCode(name: string) {
+  const slug = normalizeAcademicText(name)
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 24)
+  return `CUSTOM-${slug || 'asignatura'}`
 }

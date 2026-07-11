@@ -30,6 +30,7 @@ export type Section = {
   gradeId: string
   name: string
   capacity: number | null
+  studentCount: number
   status: RecordStatus
   createdAt: string
   updatedAt: string

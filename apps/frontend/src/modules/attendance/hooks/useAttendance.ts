@@ -26,6 +26,36 @@ import {
 import { getScheduleEntries } from '@/modules/schedule/services/scheduleService'
 import type { EnrollmentCourse } from '@/modules/students/types'
 
+function cloneAttendanceByDate(source: Map<string, Map<string, MonthlyAttendanceCell>>) {
+  return new Map(
+    Array.from(source.entries()).map(([date, attendance]) => [date, new Map(attendance)]),
+  )
+}
+
+function updateAttendanceCell(
+  source: Map<string, Map<string, MonthlyAttendanceCell>>,
+  date: string,
+  enrollmentId: string,
+  cell: MonthlyAttendanceCell | null,
+) {
+  const next = cloneAttendanceByDate(source)
+  const dailyAttendance = new Map(next.get(date) ?? [])
+
+  if (cell) {
+    dailyAttendance.set(enrollmentId, cell)
+  } else {
+    dailyAttendance.delete(enrollmentId)
+  }
+
+  if (dailyAttendance.size > 0) {
+    next.set(date, dailyAttendance)
+  } else {
+    next.delete(date)
+  }
+
+  return next
+}
+
 export function useAttendance() {
   const [courses, setCourses] = useState<EnrollmentCourse[]>([])
   const [selectedCourseId, setSelectedCourseId] = useState('')
@@ -143,6 +173,22 @@ export function useAttendance() {
       const cell = row?.cells[date]
       if (!row) return
 
+      const previousAttendance = cloneAttendanceByDate(attendanceByDate)
+      setError(null)
+      setAttendanceByDate((current) =>
+        updateAttendanceCell(
+          current,
+          date,
+          enrollmentId,
+          nextStatus
+            ? {
+                attendanceId: cell?.attendanceId ?? null,
+                status: nextStatus,
+                mark: nextMark,
+              }
+            : null,
+        ),
+      )
       setSaving(true)
       try {
         if (!nextStatus) {
@@ -150,27 +196,31 @@ export function useAttendance() {
             await deleteAttendance(cell.attendanceId, 'class')
           }
         } else {
-          await upsertAttendance({
+          const savedAttendance = await upsertAttendance({
             type: 'class',
             enrollmentId,
             academicPeriodId,
-            sectionId: selectedCourse.sectionId,
-            schoolYearId: selectedCourse.schoolYearId,
             sectionSubjectId: selectedCourse.id,
             attendanceDate: date,
             status: nextStatus,
             notes: nextMark === 'R' ? 'retired' : null,
-            attendanceId: cell?.attendanceId ?? null,
           })
+          setAttendanceByDate((current) =>
+            updateAttendanceCell(current, date, enrollmentId, {
+              attendanceId: savedAttendance.id,
+              status: nextStatus,
+              mark: nextMark,
+            }),
+          )
         }
-        await loadMonthlyAttendance()
       } catch (error) {
+        setAttendanceByDate(previousAttendance)
         setError(error instanceof Error ? error.message : 'No se pudo guardar la asistencia.')
       } finally {
         setSaving(false)
       }
     },
-    [academicPeriodId, loadMonthlyAttendance, monthlyRows, selectedCourse],
+    [academicPeriodId, attendanceByDate, monthlyRows, selectedCourse],
   )
 
   return {

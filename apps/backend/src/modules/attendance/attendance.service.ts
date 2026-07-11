@@ -21,6 +21,52 @@ function periodDate(schoolYearStart: Date, month: number, day: number) {
   return new Date(Date.UTC(year, month - 1, day))
 }
 
+type AttendanceCourseSummary = {
+  gradeName: string
+  gradeSequence: number | null
+  academicLevelName: string
+  sectionName: string
+  subjectName: string
+}
+
+function compareAttendanceCourses(first: AttendanceCourseSummary, second: AttendanceCourseSummary) {
+  const levelDiff = getAttendanceCourseLevelOrder(first) - getAttendanceCourseLevelOrder(second)
+  if (levelDiff !== 0) return levelDiff
+
+  const gradeDiff = getAttendanceCourseGradeOrder(first) - getAttendanceCourseGradeOrder(second)
+  if (gradeDiff !== 0) return gradeDiff
+
+  const sectionDiff = first.sectionName.localeCompare(second.sectionName, 'es', { numeric: true })
+  if (sectionDiff !== 0) return sectionDiff
+
+  return first.subjectName.localeCompare(second.subjectName, 'es', { numeric: true })
+}
+
+function getAttendanceCourseLevelOrder(course: AttendanceCourseSummary) {
+  const label = `${course.academicLevelName} ${course.gradeName}`
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+
+  if (label.includes('prim')) return 1
+  if (label.includes('sec')) return 2
+  return 3
+}
+
+function getAttendanceCourseGradeOrder(course: AttendanceCourseSummary) {
+  if (typeof course.gradeSequence === 'number') return course.gradeSequence
+  const match = course.gradeName.match(/\d+/)
+  return match ? Number(match[0]) : Number.MAX_SAFE_INTEGER
+}
+
+function toAttendanceStatus(value: string): AttendanceStatus {
+  if (value === 'present' || value === 'PRESENT') return AttendanceStatus.PRESENT
+  if (value === 'absent' || value === 'ABSENT') return AttendanceStatus.ABSENT
+  if (value === 'late' || value === 'LATE') return AttendanceStatus.LATE
+  if (value === 'excused' || value === 'EXCUSED') return AttendanceStatus.EXCUSED
+  return AttendanceStatus.PRESENT
+}
+
 /**
  * Servicio de asistencia.
  *
@@ -29,6 +75,71 @@ function periodDate(schoolYearStart: Date, month: number, day: number) {
  */
 @Injectable()
 export class AttendanceService {
+  async getCourses(schoolId: string) {
+    const courses = await prisma.sectionSubject.findMany({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: { createdAt: 'asc' },
+    })
+
+    if (courses.length === 0) return []
+
+    const gradeIds = [...new Set(courses.map((course) => course.gradeId))]
+    const sectionIds = [...new Set(courses.map((course) => course.sectionId))]
+    const subjectIds = [...new Set(courses.map((course) => course.subjectId))]
+    const schoolYearIds = [...new Set(courses.map((course) => course.schoolYearId))]
+
+    const [grades, sections, subjects, schoolYears, enrollmentCounts] = await Promise.all([
+      prisma.grade.findMany({ where: { schoolId, id: { in: gradeIds } } }),
+      prisma.section.findMany({ where: { schoolId, id: { in: sectionIds } } }),
+      prisma.subject.findMany({ where: { schoolId, id: { in: subjectIds } } }),
+      prisma.schoolYear.findMany({ where: { schoolId, id: { in: schoolYearIds } } }),
+      prisma.enrollment.groupBy({
+        by: ['schoolYearId', 'gradeId', 'sectionId'],
+        where: { schoolId, status: 'ACTIVE' },
+        _count: { id: true },
+      }),
+    ])
+
+    const gradeById = new Map(grades.map((item) => [item.id, item]))
+    const sectionById = new Map(sections.map((item) => [item.id, item]))
+    const subjectById = new Map(subjects.map((item) => [item.id, item]))
+    const schoolYearById = new Map(schoolYears.map((item) => [item.id, item]))
+    const countByKey = new Map(
+      enrollmentCounts.map((item) => [`${item.schoolYearId}:${item.gradeId}:${item.sectionId}`, item._count.id]),
+    )
+
+    return courses.map((course) => {
+      const grade = gradeById.get(course.gradeId)
+      const section = sectionById.get(course.sectionId)
+      const subject = subjectById.get(course.subjectId)
+      const schoolYear = schoolYearById.get(course.schoolYearId)
+      const gradeName = grade?.name ?? ''
+      const sectionName = section?.name ?? ''
+      const subjectName = subject?.name ?? ''
+      const schoolYearName = schoolYear?.name ?? ''
+
+      return {
+        id: course.id,
+        gradeId: course.gradeId,
+        sectionId: course.sectionId,
+        subjectId: course.subjectId,
+        schoolYearId: course.schoolYearId,
+        gradeName,
+        gradeSequence: grade?.sequence ?? null,
+        academicLevelName: grade?.level ?? '',
+        sectionName,
+        area: subjectName,
+        subjectName,
+        subjects: [{ id: course.subjectId, name: subjectName, code: subject?.code ?? '', area: subjectName }],
+        subjectCount: 1,
+        shift: '',
+        schoolYearName,
+        studentCount: countByKey.get(`${course.schoolYearId}:${course.gradeId}:${course.sectionId}`) ?? 0,
+        label: `${gradeName} ${sectionName} - ${subjectName} - ${schoolYearName}`.trim(),
+      }
+    }).sort(compareAttendanceCourses)
+  }
+
   /**
    * Obtiene los registros de asistencia por clase, opcionalmente filtrados
    * por materia de sección y fecha.
@@ -128,14 +239,12 @@ export class AttendanceService {
     const ss = await prisma.sectionSubject.findFirst({ where: { id: sectionSubjectId, schoolId } })
     if (!ss) throw new Error('Section subject not found')
 
-    const [enrollments, existingAttendances] = await Promise.all([
-      prisma.enrollment.findMany({
-        where: { schoolId, sectionId: ss.sectionId, schoolYearId: ss.schoolYearId, status: 'ACTIVE' },
-      }),
-      prisma.attendanceClass.findMany({
-        where: { schoolId, sectionSubjectId, attendanceDate: new Date(date) },
-      }),
-    ])
+    const enrollments = await prisma.enrollment.findMany({
+      where: { schoolId, sectionId: ss.sectionId, schoolYearId: ss.schoolYearId, status: 'ACTIVE' },
+    })
+    const existingAttendances = await prisma.attendanceClass.findMany({
+      where: { schoolId, sectionSubjectId, attendanceDate: new Date(date) },
+    })
 
     const students = await prisma.student.findMany({
       where: { schoolId, id: { in: enrollments.map((e) => e.studentId) } },
@@ -222,11 +331,9 @@ export class AttendanceService {
    * @throws NotFoundException si la matrícula, materia o período académico no existen.
    */
   private async upsertClass(schoolId: string, dto: UpsertAttendanceDto) {
-    const [enrollment, sectionSubject, academicPeriod] = await Promise.all([
-      prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } }),
-      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
-    ])
+    const enrollment = await prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } })
+    const sectionSubject = await prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } })
+    const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
@@ -244,7 +351,7 @@ export class AttendanceService {
       return prisma.attendanceClass.update({
         where: { id: existing.id },
         data: {
-          status: dto.status as AttendanceStatus,
+          status: toAttendanceStatus(dto.status),
           notes: dto.notes ?? null,
         },
       })
@@ -259,7 +366,7 @@ export class AttendanceService {
         sectionId: enrollment.sectionId,
         academicPeriodId: academicPeriod.id,
         attendanceDate: new Date(dto.attendanceDate),
-        status: dto.status as AttendanceStatus,
+        status: toAttendanceStatus(dto.status),
         notes: dto.notes ?? null,
       },
     })
@@ -277,10 +384,8 @@ export class AttendanceService {
    * @throws NotFoundException si la matrícula o el período académico no existen.
    */
   private async upsertDaily(schoolId: string, dto: UpsertAttendanceDto) {
-    const [enrollment, academicPeriod] = await Promise.all([
-      prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
-    ])
+    const enrollment = await prisma.enrollment.findFirst({ where: { id: dto.enrollmentId, schoolId } })
+    const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
 
@@ -296,7 +401,7 @@ export class AttendanceService {
       return prisma.attendanceDaily.update({
         where: { id: existing.id },
         data: {
-          status: dto.status as AttendanceStatus,
+          status: toAttendanceStatus(dto.status),
           notes: dto.notes ?? null,
         },
       })
@@ -310,7 +415,7 @@ export class AttendanceService {
         sectionId: enrollment.sectionId,
         academicPeriodId: academicPeriod.id,
         attendanceDate: new Date(dto.attendanceDate),
-        status: dto.status as AttendanceStatus,
+        status: toAttendanceStatus(dto.status),
         notes: dto.notes ?? null,
       },
     })

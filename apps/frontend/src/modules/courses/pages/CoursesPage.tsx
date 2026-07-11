@@ -6,11 +6,11 @@ import {
   ClipboardList,
   GraduationCap,
   MapPin,
-  MoreHorizontal,
   Plus,
   Search,
   SearchX,
   Sparkles,
+  Trash2,
   UsersRound,
   X,
 } from 'lucide-react'
@@ -342,7 +342,11 @@ export function CoursesPage() {
   )
 
   const totalStudents = useMemo(
-    () => courseCards.reduce((sum, item) => sum + (item.section.capacity ?? 0), 0),
+    () => {
+      const sections = new Map<string, number>()
+      courseCards.forEach((item) => sections.set(item.section.id, item.section.studentCount ?? 0))
+      return Array.from(sections.values()).reduce((sum, count) => sum + count, 0)
+    },
     [courseCards],
   )
 
@@ -644,16 +648,16 @@ export function CoursesPage() {
               ? 'Inactivar curso'
               : deleteTarget.kind === 'section'
                 ? 'Inactivar seccion'
-                : 'Quitar asignatura'
+                : 'Eliminar curso'
           }
           description={
             deleteTarget.kind === 'grade'
               ? `Inactivar el curso "${deleteTarget.label}"? Se conservara el historial relacionado.`
               : deleteTarget.kind === 'section'
                 ? `Inactivar la seccion "${deleteTarget.label}"? Se conservara el historial relacionado.`
-                : 'Quitar esta asignatura del curso para el ano escolar activo?'
+                : `Eliminar el curso "${deleteTarget.label}" del ano escolar activo? Se conservara el historial relacionado.`
           }
-          confirmLabel={deleteTarget.kind === 'assignment' ? 'Quitar' : 'Inactivar'}
+          confirmLabel={deleteTarget.kind === 'assignment' ? 'Eliminar curso' : 'Inactivar'}
           destructive
           onConfirm={handleDeleteConfirm}
           onClose={() => setDeleteTarget(null)}
@@ -1176,10 +1180,7 @@ const CourseCard = memo(function CourseCard({
               <h3 className="text-lg font-extrabold tracking-tight text-foreground">
                 {item.grade.name} {item.section.name}
               </h3>
-              <p
-                className="text-sm font-bold"
-                style={{ color: palette.color }}
-              >
+              <p className="text-sm font-bold" style={{ color: palette.color }}>
                 {item.subjectName}
               </p>
             </div>
@@ -1196,7 +1197,7 @@ const CourseCard = memo(function CourseCard({
         <div className="mt-4 flex items-center gap-2 text-sm">
           <UsersRound className="h-4 w-4 text-muted-foreground" />
           <span className="font-bold tabular-nums text-foreground">
-            {item.section.capacity ?? 0}
+            {item.section.studentCount ?? 0}
           </span>
           <span className="text-muted-foreground">estudiantes</span>
         </div>
@@ -1231,11 +1232,6 @@ const CourseCard = memo(function CourseCard({
               <FooterAction label="Asignar asignatura" onClick={() => onAssignSubject(item.grade, item.section.id)}>
                 <GraduationCap className="h-4 w-4" />
               </FooterAction>
-              {item.assignment && onDeleteSubjectAssignment ? (
-                <FooterAction label="Quitar asignatura" onClick={() => onDeleteSubjectAssignment(item.assignment!)}>
-                  <ClipboardList className="h-4 w-4" />
-                </FooterAction>
-              ) : null}
               <FooterAction label="Inactivar seccion" onClick={() => onDeleteSection(item.section)}>
                 <CalendarDays className="h-4 w-4" />
               </FooterAction>
@@ -1244,12 +1240,21 @@ const CourseCard = memo(function CourseCard({
             <span className="px-2 text-xs font-bold text-muted-foreground">Vista de curso</span>
           )}
         </div>
-        <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
-        >
-          <MoreHorizontal className="h-4 w-4" />
-        </button>
+        {canManage && item.assignment && onDeleteSubjectAssignment ? (
+          <button
+            type="button"
+            className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg px-2.5 text-xs font-bold text-destructive transition-colors hover:bg-destructive/10"
+            aria-label="Eliminar curso"
+            title="Eliminar curso"
+            onClick={(event) => {
+              event.stopPropagation()
+              onDeleteSubjectAssignment(item.assignment!)
+            }}
+          >
+            <Trash2 className="h-4 w-4" />
+            <span>Eliminar curso</span>
+          </button>
+        ) : null}
       </div>
     </article>
   )
@@ -1288,7 +1293,7 @@ function buildCourseCards(grades: GradeWithSections[]): CourseCardItem[] {
       const activeAssignments = section.assignments.filter((assignment) => assignment.status === 'active')
 
       if (!activeAssignments.length) {
-        const card: CourseCardItem = {
+        return [{
           id: `${grade.id}:${section.id}`,
           grade,
           section,
@@ -1296,8 +1301,7 @@ function buildCourseCards(grades: GradeWithSections[]): CourseCardItem[] {
           subjectName: 'Sin asignatura',
           levelName,
           cycleName,
-        }
-        return [card]
+        }]
       }
 
       return activeAssignments.map((assignment): CourseCardItem => ({

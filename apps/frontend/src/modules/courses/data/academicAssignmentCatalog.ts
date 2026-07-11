@@ -1,4 +1,4 @@
-import type { Subject } from '@/modules/courses/types'
+﻿import type { Subject } from '@/modules/courses/types'
 
 export type GradeOption = {
   code: string
@@ -58,6 +58,27 @@ const secondCycleBaseSubjects = [
   { code: 'FHR', name: 'Formación Integral Humana y Religiosa' },
 ]
 
+const primaryFirstCycleSubjects = [
+  { code: 'PRI-LEN', name: 'Lengua Espa\u00f1ola' },
+  { code: 'PRI-MAT', name: 'Matem\u00e1tica' },
+  { code: 'PRI-SOC', name: 'Ciencias Sociales' },
+  { code: 'PRI-NAT', name: 'Ciencias de la Naturaleza' },
+  { code: 'PRI-EFI', name: 'Educaci\u00f3n F\u00edsica' },
+  { code: 'PRI-FHR', name: 'Formaci\u00f3n Integral Humana y Religiosa' },
+  { code: 'PRI-ART', name: 'Educaci\u00f3n Art\u00edstica' },
+]
+
+const primarySecondCycleSubjects = [
+  { code: 'PRI-LEN', name: 'Lengua Espa\u00f1ola' },
+  { code: 'PRI-MAT', name: 'Matem\u00e1tica' },
+  { code: 'PRI-SOC', name: 'Ciencias Sociales' },
+  { code: 'PRI-NAT', name: 'Ciencias de la Naturaleza' },
+  { code: 'PRI-ING', name: 'Lenguas Extranjeras - Ingl\u00e9s' },
+  { code: 'PRI-EFI', name: 'Educaci\u00f3n F\u00edsica' },
+  { code: 'PRI-FHR', name: 'Formaci\u00f3n Integral Humana y Religiosa' },
+  { code: 'PRI-ART', name: 'Educaci\u00f3n Art\u00edstica' },
+]
+
 function subjectsForGrade(gradeCode: string, subjects: { code: string; name: string }[]): SubjectOption[] {
   return subjects.map((subject, index) => ({
     key: `${gradeCode}-${index}-${normalizeAcademicText(subject.name)}`,
@@ -83,9 +104,24 @@ export const defaultAcademicStructure: LevelOption[] = [
         label: 'Primer ciclo',
         matchNames: ['primer ciclo'],
         grades: [
-          { code: 'primary-1', label: '1.º', sequence: 1 },
-          { code: 'primary-2', label: '2.º', sequence: 2 },
-          { code: 'primary-3', label: '3.º', sequence: 3 },
+          {
+            code: 'primary-1',
+            label: '1.º',
+            sequence: 1,
+            subjects: subjectsForGrade('primary-1', primaryFirstCycleSubjects),
+          },
+          {
+            code: 'primary-2',
+            label: '2.º',
+            sequence: 2,
+            subjects: subjectsForGrade('primary-2', primaryFirstCycleSubjects),
+          },
+          {
+            code: 'primary-3',
+            label: '3.º',
+            sequence: 3,
+            subjects: subjectsForGrade('primary-3', primaryFirstCycleSubjects),
+          },
         ],
       },
       {
@@ -93,9 +129,24 @@ export const defaultAcademicStructure: LevelOption[] = [
         label: 'Segundo ciclo',
         matchNames: ['segundo ciclo'],
         grades: [
-          { code: 'primary-4', label: '4.º', sequence: 4 },
-          { code: 'primary-5', label: '5.º', sequence: 5 },
-          { code: 'primary-6', label: '6.º', sequence: 6 },
+          {
+            code: 'primary-4',
+            label: '4.º',
+            sequence: 4,
+            subjects: subjectsForGrade('primary-4', primarySecondCycleSubjects),
+          },
+          {
+            code: 'primary-5',
+            label: '5.º',
+            sequence: 5,
+            subjects: subjectsForGrade('primary-5', primarySecondCycleSubjects),
+          },
+          {
+            code: 'primary-6',
+            label: '6.º',
+            sequence: 6,
+            subjects: subjectsForGrade('primary-6', primarySecondCycleSubjects),
+          },
         ],
       },
     ],
@@ -202,4 +253,16 @@ export function attachExistingSubjectIds(options: SubjectOption[], subjects: Sub
     })
     return existing ? { ...option, id: existing.id } : option
   })
+}
+
+export function getExtracurricularSubjectOptions(subjects: Subject[]): SubjectOption[] {
+  return subjects
+    .filter((subject) => subject.description === 'custom' || subject.code.startsWith('CUSTOM-'))
+    .sort((first, second) => first.name.localeCompare(second.name))
+    .map((subject) => ({
+      key: `extra-${subject.id}`,
+      id: subject.id,
+      code: subject.code,
+      name: subject.name,
+    }))
 }

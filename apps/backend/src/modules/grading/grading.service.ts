@@ -62,27 +62,31 @@ export class GradingService {
    * @returns Lista de materias de sección con datos descriptivos.
    */
   async getSectionSubjects(schoolId: string) {
-    const [items, subjects, sections, grades, schoolYears] = await Promise.all([
-      prisma.sectionSubject.findMany({ where: { schoolId, status: 'ACTIVE' } }),
-      prisma.subject.findMany({ where: { schoolId } }),
-      prisma.section.findMany({ where: { schoolId } }),
-      prisma.grade.findMany({ where: { schoolId } }),
-      prisma.schoolYear.findMany({ where: { schoolId } }),
-    ])
+    const items = await prisma.sectionSubject.findMany({ where: { schoolId, status: 'ACTIVE' } })
+    const subjects = await prisma.subject.findMany({ where: { schoolId } })
+    const sections = await prisma.section.findMany({ where: { schoolId } })
+    const grades = await prisma.grade.findMany({ where: { schoolId } })
+    const academicLevels = await prisma.drAcademicLevel.findMany({ where: { status: 'ACTIVE' } })
+    const schoolYears = await prisma.schoolYear.findMany({ where: { schoolId } })
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
     const gradeById = new Map(grades.map((item) => [item.id, item]))
+    const academicLevelById = new Map(academicLevels.map((item) => [item.id, item]))
     const schoolYearById = new Map(schoolYears.map((item) => [item.id, item]))
 
     return items.map((item) => {
       const subject = subjectById.get(item.subjectId)
       const section = sectionById.get(item.sectionId)
       const grade = section ? gradeById.get(section.gradeId) : null
+      const academicLevel = grade?.academicLevelId ? academicLevelById.get(grade.academicLevelId) : null
       return {
         id: item.id,
         subjectName: subject?.name ?? '',
         sectionName: section?.name ?? '',
         gradeName: grade?.name ?? '',
+        gradeSequence: grade?.sequence ?? null,
+        academicLevelName: academicLevel?.name ?? grade?.level ?? '',
+        academicLevelSequence: academicLevel?.sequence ?? null,
         sectionId: item.sectionId,
         schoolYearId: item.schoolYearId,
         schoolYearName: schoolYearById.get(item.schoolYearId)?.name ?? '',
@@ -209,11 +213,9 @@ export class GradingService {
         },
       })
     }
-    const [enrollment, sectionSubject, academicPeriod] = await Promise.all([
-      prisma.enrollment.findFirst({ where: { id: dto.enrollmentId!, schoolId } }),
-      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId!, schoolId } }),
-    ])
+    const enrollment = await prisma.enrollment.findFirst({ where: { id: dto.enrollmentId!, schoolId } })
+    const sectionSubject = await prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } })
+    const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId!, schoolId } })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')

@@ -24,7 +24,7 @@ export async function getSections(): Promise<SectionOption[]> {
 }
 
 export async function getAttendanceCourses(): Promise<EnrollmentCourse[]> {
-  return api.get<EnrollmentCourse[]>('/students/enrollment-courses')
+  return api.get<EnrollmentCourse[]>('/attendance/courses')
 }
 
 /** Obtiene los estudiantes inscritos en una sección para un año escolar */
@@ -80,8 +80,8 @@ export async function getClassAttendanceForMonth(
 }
 
 /** Crea o actualiza un registro de asistencia (upsert) */
-export async function upsertAttendance(input: UpsertAttendanceInput): Promise<void> {
-  await api.post('/attendance/upsert', input)
+export async function upsertAttendance(input: UpsertAttendanceInput): Promise<{ id: string }> {
+  return api.post<{ id: string }>('/attendance/upsert', input)
 }
 
 export async function deleteAttendance(attendanceId: string, type: 'daily' | 'class'): Promise<void> {

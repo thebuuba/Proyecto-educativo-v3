@@ -5,6 +5,9 @@ export type SectionSubjectOption = {
   subjectName: string
   sectionName: string
   gradeName: string
+  gradeSequence?: number | null
+  academicLevelName?: string
+  academicLevelSequence?: number | null
   sectionId?: string
   schoolYearId?: string
   schoolYearName?: string
@@ -45,6 +48,11 @@ export type GradingActivity = {
   studentRole?: string
   teacherRole?: string
   instrumentType?: string
+  evaluationTechnique?: string
+  observations?: string
+  futurePlanningLink?: string
+  futureInstrumentLink?: string
+  activityType?: 'individual' | 'group'
   planningId?: string
   planningMoment?: 'inicio' | 'desarrollo' | 'cierre' | ''
 }
@@ -58,6 +66,8 @@ export type GradeCalculationConfig = {
   recoveryRule: 'replace' | 'replace-if-higher' | 'average' | 'none'
   finalRounding: 'standard' | 'floor' | 'ceil' | 'decimals'
   pcDecimals: number
+  annualDecimals: number
+  finalDecimals: number
   showRecovery: boolean
 }
 

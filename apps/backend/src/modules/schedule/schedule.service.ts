@@ -63,11 +63,9 @@ export class ScheduleService {
   async getSectionSubjects(schoolId: string, sectionId?: string) {
     const where: any = { schoolId, status: 'ACTIVE' }
     if (sectionId) where.sectionId = sectionId
-    const [items, subjects, teachers] = await Promise.all([
-      prisma.sectionSubject.findMany({ where }),
-      prisma.subject.findMany({ where: { schoolId } }),
-      prisma.teacher.findMany({ where: { schoolId } }),
-    ])
+    const items = await prisma.sectionSubject.findMany({ where })
+    const subjects = await prisma.subject.findMany({ where: { schoolId } })
+    const teachers = await prisma.teacher.findMany({ where: { schoolId } })
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const teacherById = new Map(teachers.map((item) => [item.id, item]))
     return items.map((item) => {
@@ -140,15 +138,13 @@ export class ScheduleService {
 
   /** Crea una nueva entrada de horario validando las referencias */
   async createEntry(schoolId: string, dto: CreateScheduleEntryDto) {
-    const [schoolYear, section, sectionSubject, timeSlot, academicPeriod] = await Promise.all([
-      prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } }),
-      prisma.section.findFirst({ where: { id: dto.sectionId, schoolId } }),
-      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId, sectionId: dto.sectionId } }),
-      prisma.timeSlot.findFirst({ where: { id: dto.timeSlotId, schoolId } }),
-      dto.academicPeriodId
-        ? prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
-        : Promise.resolve(null),
-    ])
+    const schoolYear = await prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } })
+    const section = await prisma.section.findFirst({ where: { id: dto.sectionId, schoolId } })
+    const sectionSubject = await prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId, sectionId: dto.sectionId } })
+    const timeSlot = await prisma.timeSlot.findFirst({ where: { id: dto.timeSlotId, schoolId } })
+    const academicPeriod = dto.academicPeriodId
+      ? await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
+      : null
     if (!schoolYear) throw new NotFoundException('School year not found')
     if (!section) throw new NotFoundException('Section not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
@@ -302,14 +298,23 @@ export class ScheduleService {
 
   /** Enriquece las entradas de horario con nombres descriptivos. */
   private async withEntryLabels(schoolId: string, entries: Awaited<ReturnType<typeof prisma.scheduleEntry.findMany>>) {
-    const [sectionSubjects, subjects, teachers, sections, grades, slots] = await Promise.all([
-      prisma.sectionSubject.findMany({ where: { schoolId, id: { in: entries.map((entry) => entry.sectionSubjectId) } } }),
-      prisma.subject.findMany({ where: { schoolId } }),
-      prisma.teacher.findMany({ where: { schoolId } }),
-      prisma.section.findMany({ where: { schoolId } }),
-      prisma.grade.findMany({ where: { schoolId } }),
-      prisma.timeSlot.findMany({ where: { schoolId, id: { in: entries.map((entry) => entry.timeSlotId) } } }),
-    ])
+    if (entries.length === 0) return []
+
+    const sectionSubjectIds = [
+      ...new Set(entries.map((entry) => entry.sectionSubjectId)),
+    ]
+    const timeSlotIds = [...new Set(entries.map((entry) => entry.timeSlotId))]
+
+    const sectionSubjects = await prisma.sectionSubject.findMany({
+      where: { schoolId, id: { in: sectionSubjectIds } },
+    })
+    const subjects = await prisma.subject.findMany({ where: { schoolId } })
+    const teachers = await prisma.teacher.findMany({ where: { schoolId } })
+    const sections = await prisma.section.findMany({ where: { schoolId } })
+    const grades = await prisma.grade.findMany({ where: { schoolId } })
+    const slots = await prisma.timeSlot.findMany({
+      where: { schoolId, id: { in: timeSlotIds } },
+    })
     const sectionSubjectById = new Map(sectionSubjects.map((item) => [item.id, item]))
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const teacherById = new Map(teachers.map((item) => [item.id, item]))

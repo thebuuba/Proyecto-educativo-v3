@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
+import { Button } from '@/components/ui/Button'
 import { PageShell } from '@/components/ui/PageShell'
+import { ScheduleFinalTable } from '@/modules/schedule/components/ScheduleFinalTable'
 import { ScheduleWeekGrid } from '@/modules/schedule/components/ScheduleWeekGrid'
 import {
   ScheduleWizard,
@@ -10,14 +12,22 @@ import {
 import { useSchedule } from '@/modules/schedule/hooks/useSchedule'
 import {
   createTimeSlot as apiCreateTimeSlot,
-  deleteTimeSlot as apiDeleteTimeSlot,
   getSectionSubjects,
   getTimeSlots,
+  updateTimeSlot as apiUpdateTimeSlot,
 } from '@/modules/schedule/services/scheduleService'
 import type { CreateScheduleEntryInput, TimeSlot } from '@/modules/schedule/types'
 
 const CONFIG_KEY = 'aula-base:schedule:config'
 const BLOCKS_KEY = 'aula-base:schedule:blocks'
+const PEDAGOGICAL_BLOCKS_KEY = 'aula-base:schedule:pedagogical-blocks'
+
+export type PedagogicalBlock = {
+  dayOfWeek: number
+  start: string
+  end: string
+  label: string
+}
 
 type SectionSubjectOption = {
   id: string
@@ -45,6 +55,14 @@ function timeSlotsToBlocks(slots: TimeSlot[]): ScheduleBlock[] {
     start: slot.startTime,
     end: slot.endTime,
   }))
+}
+
+function hasSameTimeSlot(slot: Pick<TimeSlot, 'startTime' | 'endTime'>, block: ScheduleBlock) {
+  return slot.startTime.slice(0, 5) === block.start && slot.endTime.slice(0, 5) === block.end
+}
+
+function getPedagogicalBlockKey(dayOfWeek: number, block: Pick<ScheduleBlock, 'start' | 'end'>) {
+  return `${dayOfWeek}:${block.start}-${block.end}`
 }
 
 function loadFromStorage<T>(key: string, fallback: T): T {
@@ -86,6 +104,8 @@ export function SchedulePage() {
   const [showWizard, setShowWizard] = useState(false)
   const [config, setConfig] = useState<ScheduleConfig | null>(null)
   const [storedBlocks, setStoredBlocks] = useState<ScheduleBlock[]>([])
+  const [pedagogicalBlocks, setPedagogicalBlocks] = useState<PedagogicalBlock[]>([])
+  const [assignmentMode, setAssignmentMode] = useState(false)
   const [sectionSubjects, setSectionSubjects] = useState<SectionSubjectOption[]>([])
   const [saving, setSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
@@ -96,9 +116,15 @@ export function SchedulePage() {
   useEffect(() => {
     const savedConfig = loadFromStorage<ScheduleConfig | null>(CONFIG_KEY, null)
     if (savedConfig) {
-      setConfig(savedConfig)
+      setConfig({
+        ...savedConfig,
+        pedagogicalLabel: savedConfig.pedagogicalLabel || 'Hora pedagógica',
+        structureMode: savedConfig.structureMode ?? 'uniform',
+        customBlocks: savedConfig.customBlocks ?? [],
+      })
       const savedBlocks = loadFromStorage<ScheduleBlock[]>(BLOCKS_KEY, [])
       setStoredBlocks(savedBlocks)
+      setPedagogicalBlocks(loadFromStorage<PedagogicalBlock[]>(PEDAGOGICAL_BLOCKS_KEY, []))
     }
   }, [])
 
@@ -110,6 +136,9 @@ export function SchedulePage() {
         blockDuration: 45,
         startTime: '08:00',
         endTime: '12:30',
+        pedagogicalLabel: 'Hora pedagógica',
+        structureMode: 'uniform',
+        customBlocks: [],
         breaks: [],
       }
       setConfig(inferredConfig)
@@ -118,13 +147,29 @@ export function SchedulePage() {
   }, [hasTimeSlots, hasConfig, apiTimeSlots])
 
   const gridBlocks = useMemo(() => {
+    if (storedBlocks.length > 0) return storedBlocks
     if (hasTimeSlots) return timeSlotsToBlocks(apiTimeSlots)
-    return storedBlocks
+    return []
   }, [hasTimeSlots, apiTimeSlots, storedBlocks])
 
   const hasStructure = hasTimeSlots || storedBlocks.length > 0
-  const showGrid = hasStructure && !showWizard
+  const showFinalSchedule = hasStructure && !showWizard && !assignmentMode
+  const showAssignmentGrid = hasStructure && !showWizard && assignmentMode
   const days = config ? getActiveDays(config) : activeWeekDays.filter(() => true)
+  const visiblePedagogicalBlocks = useMemo(() => {
+    const activeDayIds = new Set<number>(days.map((day) => day.dayOfWeek))
+    const visibleBlockKeys = new Set(
+      gridBlocks
+        .filter((block) => block.type === 'class')
+        .map((block) => `${block.start}-${block.end}`),
+    )
+
+    return pedagogicalBlocks.filter(
+      (block) =>
+        activeDayIds.has(block.dayOfWeek) &&
+        visibleBlockKeys.has(`${block.start}-${block.end}`),
+    )
+  }, [days, gridBlocks, pedagogicalBlocks])
 
   const loadSectionSubjects = useCallback(async () => {
     if (sections.length === 0) {
@@ -162,28 +207,54 @@ export function SchedulePage() {
     setSaving(true)
     setSaveError(null)
     try {
+      const normalizedConfig = {
+        ...newConfig,
+        pedagogicalLabel: newConfig.pedagogicalLabel.trim() || 'Hora pedagógica',
+      }
       const existingSlots = await getTimeSlots()
-      await Promise.all(existingSlots.map((slot) => apiDeleteTimeSlot(slot.id)))
+      const classBlocks = blocks.filter((b) => b.type === 'class')
 
       await Promise.all(
-        blocks
-          .filter((b) => b.type === 'class')
-          .map((block, index) =>
-            apiCreateTimeSlot({
-              name: block.label,
-              startTime: block.start,
-              endTime: block.end,
-              sequence: index + 1,
-            }),
-          ),
+        classBlocks.map((block, index) => {
+          const existingSlot = existingSlots.find((slot) => hasSameTimeSlot(slot, block))
+          const payload = {
+            name: block.label,
+            startTime: block.start,
+            endTime: block.end,
+            sequence: index + 1,
+          }
+
+          if (!existingSlot) {
+            return apiCreateTimeSlot(payload)
+          }
+
+          if (
+            existingSlot.name !== payload.name ||
+            existingSlot.sequence !== payload.sequence
+          ) {
+            return apiUpdateTimeSlot(existingSlot.id, payload)
+          }
+
+          return Promise.resolve(existingSlot)
+        }),
       )
 
-      localStorage.setItem(CONFIG_KEY, JSON.stringify(newConfig))
+      localStorage.setItem(CONFIG_KEY, JSON.stringify(normalizedConfig))
       localStorage.setItem(BLOCKS_KEY, JSON.stringify(blocks))
 
-      setConfig(newConfig)
+      if (pedagogicalBlocks.length > 0) {
+        updatePedagogicalBlocks(
+          pedagogicalBlocks.map((block) => ({
+            ...block,
+            label: normalizedConfig.pedagogicalLabel,
+          })),
+        )
+      }
+
+      setConfig(normalizedConfig)
       setStoredBlocks(blocks)
       setShowWizard(false)
+      setAssignmentMode(true)
       await refetchAll()
     } catch (err) {
       setSaveError(err instanceof Error ? err.message : 'Error al crear el horario.')
@@ -201,7 +272,7 @@ export function SchedulePage() {
     if (!schoolYearId || !apiTimeSlots.length) return
 
     const timeSlot = apiTimeSlots.find(
-      (ts) => ts.startTime === block.start && ts.endTime === block.end,
+      (ts) => hasSameTimeSlot(ts, block),
     )
     if (!timeSlot) return
 
@@ -215,10 +286,41 @@ export function SchedulePage() {
 
     try {
       await createEntry(input)
+      removePedagogicalBlock(dayOfWeek, block)
       await refetchAll()
     } catch (err) {
       console.error('Error al asignar materia:', err)
     }
+  }
+
+  function updatePedagogicalBlocks(nextBlocks: PedagogicalBlock[]) {
+    setPedagogicalBlocks(nextBlocks)
+    localStorage.setItem(PEDAGOGICAL_BLOCKS_KEY, JSON.stringify(nextBlocks))
+  }
+
+  function markPedagogicalBlock(dayOfWeek: number, block: ScheduleBlock) {
+    const key = getPedagogicalBlockKey(dayOfWeek, block)
+    const label = config?.pedagogicalLabel?.trim() || 'Hora pedagógica'
+    updatePedagogicalBlocks([
+      ...pedagogicalBlocks.filter(
+        (item) => getPedagogicalBlockKey(item.dayOfWeek, item) !== key,
+      ),
+      {
+        dayOfWeek,
+        start: block.start,
+        end: block.end,
+        label,
+      },
+    ])
+  }
+
+  function removePedagogicalBlock(dayOfWeek: number, block: Pick<ScheduleBlock, 'start' | 'end'>) {
+    const key = getPedagogicalBlockKey(dayOfWeek, block)
+    updatePedagogicalBlocks(
+      pedagogicalBlocks.filter(
+        (item) => getPedagogicalBlockKey(item.dayOfWeek, item) !== key,
+      ),
+    )
   }
 
   async function handleRemove(entryId: string) {
@@ -232,7 +334,9 @@ export function SchedulePage() {
 
   const description = !hasStructure
     ? 'Configura la estructura de tu semana académica en unos pocos pasos.'
-    : `${entries.length} clases · ${showGrid ? 'Tu semana está lista. Asigna materias a cada período.' : ''}`
+    : assignmentMode
+      ? 'Completa o corrige las asignaciones antes de volver a la vista final.'
+      : `${entries.length} clases organizadas en una vista semanal unificada.`
 
   return (
     <PageShell
@@ -278,18 +382,41 @@ export function SchedulePage() {
           </div>
         ) : null}
 
-        {/* Show grid when structure exists */}
-        {!loading && showGrid && config ? (
-          <ScheduleWeekGrid
+        {/* Show final schedule when structure exists */}
+        {!loading && showFinalSchedule && config ? (
+          <ScheduleFinalTable
             config={config}
             blocks={gridBlocks}
             entries={entries}
-            sectionSubjects={sectionSubjects}
+            pedagogicalBlocks={visiblePedagogicalBlocks}
             activeDays={days}
-            onEdit={() => setShowWizard(true)}
-            onAssign={handleAssign}
-            onRemove={handleRemove}
+            onEditStructure={() => setShowWizard(true)}
+            onConfigureAssignments={() => setAssignmentMode(true)}
           />
+        ) : null}
+
+        {/* Show assignment grid when editing assignments */}
+        {!loading && showAssignmentGrid && config ? (
+          <div className="space-y-4">
+            <div className="flex justify-end">
+              <Button onClick={() => setAssignmentMode(false)}>
+                Ver horario final
+              </Button>
+            </div>
+            <ScheduleWeekGrid
+              config={config}
+              blocks={gridBlocks}
+              entries={entries}
+              pedagogicalBlocks={visiblePedagogicalBlocks}
+              sectionSubjects={sectionSubjects}
+              activeDays={days}
+              onEdit={() => setShowWizard(true)}
+              onAssign={handleAssign}
+              onRemove={handleRemove}
+              onMarkPedagogical={markPedagogicalBlock}
+              onRemovePedagogical={removePedagogicalBlock}
+            />
+          </div>
         ) : null}
 
         {/* Edit wizard overlay */}

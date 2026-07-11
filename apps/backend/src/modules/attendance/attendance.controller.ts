@@ -29,6 +29,11 @@ export class AttendanceController {
    */
   constructor(private attendanceService: AttendanceService) {}
 
+  @Get('courses')
+  getCourses(@CurrentUser() user: AuthenticatedUser) {
+    return this.attendanceService.getCourses(user.schoolId)
+  }
+
   /**
    * Obtiene los registros de asistencia por clase, opcionalmente filtrados
    * por materia de sección y fecha.

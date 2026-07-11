@@ -3,9 +3,10 @@ import { __test__clearCoursesCache, CoursesService } from './courses.service'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
-    grade: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
+    grade: { findMany: vi.fn(), findFirst: vi.fn(), create: vi.fn(), update: vi.fn(), upsert: vi.fn() },
     section: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
     sectionSubject: { findMany: vi.fn(), upsert: vi.fn() },
+    enrollment: { groupBy: vi.fn() },
     subject: { findMany: vi.fn() },
     drAcademicLevel: { findMany: vi.fn() },
     drAcademicCycle: { findMany: vi.fn() },
@@ -62,6 +63,9 @@ describe('CoursesService.getCourseData', () => {
         status: 'ACTIVE',
       },
     ])
+    mocks.prisma.enrollment.groupBy.mockResolvedValue([
+      { sectionId: 'section-1', _count: { id: 12 } },
+    ])
     mocks.prisma.subject.findMany.mockResolvedValue([{ id: 'subject-1', code: 'MAT', name: 'Matemática', description: null, credits: null }])
     mocks.prisma.drAcademicLevel.findMany.mockResolvedValue([{ id: 'level-1', code: 'PRI', name: 'Primaria', sequence: 1 }])
     mocks.prisma.drAcademicCycle.findMany.mockResolvedValue([{ id: 'cycle-1', levelId: 'level-1', code: 'C1', name: 'Primer ciclo', sequence: 1, gradeSequenceFrom: 1, gradeSequenceTo: 3 }])
@@ -84,6 +88,7 @@ describe('CoursesService.getCourseData', () => {
       sections: [
         {
           id: 'section-1',
+          studentCount: 12,
           assignments: [
             {
               id: 'ss-1',
@@ -118,8 +123,9 @@ describe('CoursesService write idempotency', () => {
     __test__clearCoursesCache()
   })
 
-  it('upserts grades by school and name instead of creating duplicates', async () => {
-    mocks.prisma.grade.upsert.mockResolvedValue({ id: 'grade-1', name: '1.º', status: 'ACTIVE' })
+  it('creates grades by school, name, level and cycle instead of merging levels', async () => {
+    mocks.prisma.grade.findFirst.mockResolvedValue(null)
+    mocks.prisma.grade.create.mockResolvedValue({ id: 'grade-1', name: '1.º', status: 'ACTIVE' })
 
     const result = await new CoursesService().createGrade('school-1', {
       name: '1.º',
@@ -130,9 +136,21 @@ describe('CoursesService write idempotency', () => {
     })
 
     expect(result).toEqual({ id: 'grade-1', name: '1.º', status: 'ACTIVE' })
-    expect(mocks.prisma.grade.upsert).toHaveBeenCalledWith(expect.objectContaining({
-      where: { schoolId_name: { schoolId: 'school-1', name: '1.º' } },
-      update: expect.objectContaining({ status: 'ACTIVE' }),
+    expect(mocks.prisma.grade.findFirst).toHaveBeenCalledWith({
+      where: {
+        schoolId: 'school-1',
+        name: '1.º',
+        academicLevelId: 'level-1',
+        academicCycleId: 'cycle-1',
+      },
+    })
+    expect(mocks.prisma.grade.create).toHaveBeenCalledWith(expect.objectContaining({
+      data: expect.objectContaining({
+        schoolId: 'school-1',
+        name: '1.º',
+        academicLevelId: 'level-1',
+        academicCycleId: 'cycle-1',
+      }),
     }))
   })
 
