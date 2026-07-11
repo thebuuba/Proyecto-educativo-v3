@@ -703,7 +703,6 @@ function BlockGradeView({
 }) {
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
   const blockIndex = competencyBlocks.findIndex((item) => item.id === blockId)
-  const accent = blockAccents[blockIndex]
   const studentTotals = students.map((student) => {
     const total = blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
     const recovery = recoveryScores[blockId]?.[student.enrollmentId] ?? null
@@ -870,122 +869,6 @@ function BlockGradeView({
     </div>
   )
 
-  return (
-    <div className="space-y-4">
-      <div className={cn('rounded-lg border p-4 shadow-sm', accent.card)}>
-        <button className="mb-3 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline" onClick={onBack}>
-          <ArrowLeft className="size-4" />
-          Volver a bloques
-        </button>
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-          {courseTitle} &gt; Bloque {blockIndex + 1}
-        </p>
-        <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="text-2xl font-bold text-primary">{blockShortNames[block.id]}</h2>
-            <p className="mt-1 text-sm leading-6 text-muted-foreground">{block.name}</p>
-          </div>
-          <div className="text-left sm:text-right">
-            <p className="text-3xl font-black text-primary">{formatGrade(average)} / {config.expectedBlockTotal}</p>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">Promedio del bloque</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-        <div className="overflow-x-auto">
-          <table className="min-w-max border-separate border-spacing-0 text-sm">
-            <thead>
-              <tr className="bg-muted/50">
-                <th className="sticky left-0 z-30 min-w-[16rem] border-b border-r border-border bg-muted px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
-                  Actividad
-                </th>
-                <th className="w-24 border-b border-r border-border px-3 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
-                  Valor
-                </th>
-                {students.map((student) => (
-                  <th key={student.enrollmentId} className="min-w-[7rem] border-b border-r border-border px-3 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
-                    {student.firstName}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {activities.length === 0 ? (
-                <tr>
-                  <td colSpan={students.length + 2} className="px-4 py-8 text-center text-muted-foreground">
-                    Este bloque todavía no tiene actividades.
-                  </td>
-                </tr>
-              ) : activities.map((activity) => (
-                <tr key={activity.id} className="group hover:bg-muted/20">
-                  <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-4 py-3 group-hover:bg-muted/20">
-                    <button className="text-left font-bold text-primary hover:underline" onClick={() => onOpenActivity(activity.id)}>
-                      {activity.name}
-                    </button>
-                    <p className="mt-1 text-xs text-muted-foreground">{activity.evaluationTechnique || activity.instrumentType || 'Sin técnica registrada'}</p>
-                  </td>
-                  <td className="border-b border-r border-border px-3 py-3 text-center font-bold text-primary">
-                    {activity.maxScore}
-                  </td>
-                  {students.map((student) => {
-                    const record = scoreForActivity(records, student.enrollmentId, activity.id)
-                    return (
-                      <td key={student.enrollmentId} className="border-b border-r border-border p-1 text-center">
-                        <Input
-                          type="number"
-                          min={0}
-                          max={activity.maxScore}
-                          step="0.01"
-                          defaultValue={record?.score ?? ''}
-                          disabled={saving}
-                          className="grade-cell h-9 w-20 rounded-md border-border/70 bg-card px-2 text-center text-sm font-bold focus:bg-background"
-                          onKeyDown={focusNextGradeCell}
-                          onBlur={(event) => onSaveScore(student.enrollmentId, activity, event.target.value)}
-                        />
-                      </td>
-                    )
-                  })}
-                </tr>
-              ))}
-              <tr className="bg-muted/35">
-                <td className="sticky left-0 z-20 border-r border-border bg-muted px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-primary">
-                  Total estudiante
-                </td>
-                <td className="border-r border-border px-3 py-3 text-center font-black text-primary">
-                  {sumActivityMaxScore(activities, blockId)}
-                </td>
-                {students.map((student) => {
-                  const total = blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
-                  const recovery = recoveryScores[blockId]?.[student.enrollmentId] ?? null
-                  const effectiveTotal = effectivePeriodScore(total, recovery, config)
-                  return (
-                    <td key={student.enrollmentId} className="border-r border-border px-3 py-3 text-center">
-                      <p className="font-black text-primary">{formatGrade(effectiveTotal)}</p>
-                      {config.showRecovery ? (
-                        <Input
-                          type="number"
-                          min={0}
-                          max={100}
-                          step="0.01"
-                          defaultValue={recovery ?? ''}
-                          disabled={saving}
-                          placeholder={recoveryLabel || 'RP'}
-                          className="grade-cell mt-2 h-8 w-20 rounded-md border-border/70 bg-card px-2 text-center text-xs"
-                          onKeyDown={focusNextGradeCell}
-                          onBlur={(event) => onSaveRecovery(student.enrollmentId, blockId, event.target.value)}
-                        />
-                      ) : null}
-                    </td>
-                  )
-                })}
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  )
 }
 
 function ActivityDetailView({
