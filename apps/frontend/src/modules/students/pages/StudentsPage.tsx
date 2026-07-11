@@ -3,11 +3,15 @@
  */
 
 import {
+  BookOpen,
+  CalendarRange,
   Download,
+  GraduationCap,
   Plus,
   Upload,
+  UsersRound,
 } from 'lucide-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -19,7 +23,7 @@ import { ImportStudentsModal } from '@/modules/students/components/ImportStudent
 import { StudentDetailPanel } from '@/modules/students/components/StudentDetailPanel'
 import { StudentForm } from '@/modules/students/components/StudentForm'
 import { StudentsTable } from '@/modules/students/components/StudentsTable'
-import { CourseCard, FeedbackMessage, HeaderItem, SubjectSummary } from '@/modules/students/components/StudentsPageParts'
+import { CourseCard, FeedbackMessage, SubjectSummary } from '@/modules/students/components/StudentsPageParts'
 import { buildStudentsCsv, splitFullName, toStudentStatus } from '@/modules/students/utils/studentsPage'
 import {
   createStudentInCourse,
@@ -386,54 +390,76 @@ export function StudentsPage() {
         </section>
       ) : (
         <>
-          <section className="rounded-lg border border-border bg-card p-4 shadow-sm">
-            <div className="flex flex-col gap-4 xl:flex-row xl:flex-wrap xl:items-start xl:justify-between">
-              <div className="min-w-0 flex-1">
-                <h2 className="break-words text-xl font-bold text-primary">
-                  {selectedCourse.gradeName} {selectedCourse.sectionName} · {selectedCourse.subjectName}
-                </h2>
-                <p className="mt-1 text-sm font-medium text-muted-foreground">
-                  Año escolar {selectedCourse.schoolYearName}
-                </p>
-                <SubjectSummary course={selectedCourse} expanded />
-                <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6">
-                  <HeaderItem label="Grado" value={selectedCourse.gradeName} />
-                  <HeaderItem label="Sección" value={selectedCourse.sectionName} />
-                  <HeaderItem label="Área" value={selectedCourse.area || 'No definida'} />
-                  <HeaderItem label="Asignatura" value={selectedCourse.subjectName} />
-                  <HeaderItem label="Tanda" value={selectedCourse.shift || 'No definida'} />
-                  <HeaderItem label="Año escolar" value={selectedCourse.schoolYearName} />
-                  <HeaderItem label="Total estudiantes" value={String(students.length)} />
-                </dl>
-              </div>
+          <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+            <div className="bg-primary/[0.045] px-5 py-6 sm:px-7">
+              <div className="flex flex-col gap-5 xl:flex-row xl:items-start xl:justify-between">
+                <div className="flex min-w-0 items-start gap-4">
+                  <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-lg font-extrabold text-primary-foreground shadow-lg shadow-primary/20">
+                    {selectedCourse.gradeName}{selectedCourse.sectionName}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary/70">Curso seleccionado</p>
+                    <h2 className="mt-1 break-words text-2xl font-extrabold tracking-tight text-primary">
+                      {selectedCourse.gradeName} {selectedCourse.sectionName} · {selectedCourse.subjectName}
+                    </h2>
+                    <p className="mt-1 text-sm font-medium text-muted-foreground">
+                      Año escolar {selectedCourse.schoolYearName}
+                    </p>
+                  </div>
+                </div>
 
-              <div className="flex w-full flex-wrap gap-2 xl:w-auto xl:justify-end">
-                <Button variant="outline" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={() => selectCourse('')}>
-                  Cambiar curso
-                </Button>
-                {canCreateEnrollment ? (
-                  <>
-                    <Button variant="secondary" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={openCreateForm}>
-                      <Plus className="size-4 text-accent" />
-                      Agregar estudiante
-                    </Button>
-                    <Button variant="outline" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={() => setImportModalOpen(true)}>
-                      <Upload className="size-4" />
-                      Importar estudiantes
-                    </Button>
-                  </>
-                ) : null}
-                <Button variant="outline" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={handleExport}>
-                  <Download className="size-4" />
-                  Exportar matrícula
-                </Button>
+                <div className="flex w-full flex-wrap gap-2 xl:w-auto xl:justify-end">
+                  {canCreateEnrollment ? (
+                    <>
+                      <Button className="h-10 w-full px-4 text-sm sm:w-auto" onClick={openCreateForm}>
+                        <Plus className="size-4" />
+                        Agregar estudiante
+                      </Button>
+                      <Button variant="outline" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={() => setImportModalOpen(true)}>
+                        <Upload className="size-4" />
+                        Importar
+                      </Button>
+                    </>
+                  ) : null}
+                  <Button variant="ghost" className="h-10 w-full px-4 text-sm sm:w-auto" onClick={handleExport} disabled={students.length === 0}>
+                    <Download className="size-4" />
+                    Exportar
+                  </Button>
+                </div>
               </div>
+            </div>
+
+            <div className="grid gap-px bg-border sm:grid-cols-2 xl:grid-cols-4">
+              <CourseSummaryItem icon={<UsersRound className="size-5" />} label="Estudiantes" value={String(students.length)} detail="Matrícula activa" />
+              <CourseSummaryItem icon={<GraduationCap className="size-5" />} label="Grado y sección" value={`${selectedCourse.gradeName} ${selectedCourse.sectionName}`} detail={selectedCourse.area || 'Área no definida'} />
+              <CourseSummaryItem icon={<BookOpen className="size-5" />} label="Asignaturas" value={String(selectedCourse.subjectCount ?? selectedCourse.subjects?.length ?? 1)} detail={selectedCourse.subjectName} />
+              <CourseSummaryItem icon={<CalendarRange className="size-5" />} label="Período" value={selectedCourse.schoolYearName} detail={selectedCourse.shift || 'Tanda no definida'} />
+            </div>
+
+            <div className="border-t border-border px-5 py-4 sm:px-7">
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground">Asignaturas del curso</p>
+              <SubjectSummary course={selectedCourse} expanded />
             </div>
           </section>
 
-          <section className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+          <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+            <header className="flex flex-col gap-3 border-b border-border px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+              <div>
+                <h2 className="text-lg font-extrabold text-foreground">Estudiantes matriculados</h2>
+                <p className="mt-0.5 text-sm text-muted-foreground">
+                  {students.length === 0 ? 'Comienza agregando la matrícula de este curso.' : `${students.length} estudiante${students.length === 1 ? '' : 's'} en la matrícula activa.`}
+                </p>
+              </div>
+              {students.length > 0 && canCreateEnrollment ? (
+                <Button variant="secondary" className="h-10 px-4 text-sm" onClick={openCreateForm}>
+                  <Plus className="size-4 text-primary" />
+                  Nuevo estudiante
+                </Button>
+              ) : null}
+            </header>
+
             {loadingStudents ? (
-              <div className="flex min-h-[360px] items-center justify-center text-sm font-medium text-muted-foreground">
+              <div className="flex min-h-[300px] items-center justify-center text-sm font-medium text-muted-foreground">
                 Cargando matrícula...
               </div>
             ) : students.length > 0 ? (
@@ -447,10 +473,37 @@ export function StudentsPage() {
                 onTransfer={openTransferForm}
               />
             ) : (
-              <div className="flex min-h-[360px] items-center justify-center px-4 text-center">
-                <p className="max-w-md text-sm font-medium text-muted-foreground">
-                  Este curso todavía no tiene estudiantes matriculados.
-                </p>
+              <div className="grid min-h-[310px] gap-8 px-6 py-9 md:grid-cols-[1.15fr_0.85fr] md:px-9">
+                <div className="flex flex-col justify-center">
+                  <span className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <UsersRound className="size-6" />
+                  </span>
+                  <h3 className="mt-5 text-2xl font-extrabold tracking-tight text-foreground">Aún no hay estudiantes en este curso</h3>
+                  <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">
+                    Agrega estudiantes individualmente o importa una lista. Después podrás gestionar asistencia, calificaciones y reportes desde su matrícula.
+                  </p>
+                  {canCreateEnrollment ? (
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      <Button className="h-10 px-4 text-sm" onClick={openCreateForm}>
+                        <Plus className="size-4" />
+                        Agregar estudiante
+                      </Button>
+                      <Button variant="outline" className="h-10 px-4 text-sm" onClick={() => setImportModalOpen(true)}>
+                        <Upload className="size-4" />
+                        Importar listado
+                      </Button>
+                    </div>
+                  ) : null}
+                </div>
+
+                <aside className="flex flex-col justify-center rounded-2xl bg-muted/65 p-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">Datos recomendados</p>
+                  <ul className="mt-4 space-y-3 text-sm leading-5 text-muted-foreground">
+                    <li className="flex gap-3"><span className="font-bold text-primary">01</span> Matrícula o código del estudiante</li>
+                    <li className="flex gap-3"><span className="font-bold text-primary">02</span> Nombre y apellidos completos</li>
+                    <li className="flex gap-3"><span className="font-bold text-primary">03</span> Contacto del tutor y observaciones</li>
+                  </ul>
+                </aside>
               </div>
             )}
           </section>
@@ -499,5 +552,18 @@ export function StudentsPage() {
         />
       ) : null}
     </section>
+  )
+}
+
+function CourseSummaryItem({ icon, label, value, detail }: { icon: ReactNode; label: string; value: string; detail: string }) {
+  return (
+    <div className="flex min-w-0 items-start gap-3 bg-card px-5 py-5 sm:px-6">
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/9 text-primary">{icon}</span>
+      <div className="min-w-0">
+        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">{label}</p>
+        <p className="mt-1 truncate text-base font-extrabold text-foreground" title={value}>{value}</p>
+        <p className="mt-0.5 truncate text-xs text-muted-foreground" title={detail}>{detail}</p>
+      </div>
+    </div>
   )
 }
