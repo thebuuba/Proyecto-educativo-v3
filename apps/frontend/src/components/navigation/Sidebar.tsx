@@ -89,7 +89,10 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           </Button>
         </div>
 
-        <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-5">
+        <nav className={cn(
+          'flex-1 space-y-1 overflow-y-auto px-3 py-5',
+          !isExpanded && 'lg:overflow-visible',
+        )}>
           {visibleRoutes.map((item) => {
             const Icon = item.icon
             const iconColor = routeIconColors[item.path] ?? routeIconColors['/inicio']
@@ -101,10 +104,10 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                 end={item.path === '/inicio'}
                 onClick={onClose}
                 onMouseEnter={() => routePrefetchers[item.path]?.()}
-                title={item.label}
+                title={isExpanded ? item.label : undefined}
                 className={({ isActive }) =>
                   cn(
-                    'flex min-h-11 items-center gap-3 rounded-xl text-sm font-semibold transition-colors',
+                    'group/nav relative flex min-h-11 items-center gap-3 rounded-xl text-sm font-semibold transition-colors',
                     isExpanded
                       ? 'px-4'
                       : 'px-4 lg:justify-center lg:px-3',
@@ -125,6 +128,14 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                       <Icon className="size-4.5 shrink-0" />
                     </span>
                     <span className={cn('truncate', expandedTextClass)}>{item.label}</span>
+                    {!isExpanded ? (
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute left-[calc(100%+0.75rem)] top-1/2 z-50 hidden -translate-y-1/2 translate-x-1 whitespace-nowrap rounded-lg bg-foreground px-3 py-2 text-xs font-bold text-background opacity-0 shadow-xl transition duration-150 before:absolute before:-left-1 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rotate-45 before:bg-foreground group-hover/nav:translate-x-0 group-hover/nav:opacity-100 group-focus-visible/nav:translate-x-0 group-focus-visible/nav:opacity-100 lg:block"
+                      >
+                        {item.label}
+                      </span>
+                    ) : null}
                   </>
                 )}
               </NavLink>
