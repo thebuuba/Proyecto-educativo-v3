@@ -8,7 +8,7 @@ import {
   Upload,
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -41,6 +41,9 @@ import type {
 type FormMode = 'create' | 'edit' | 'transfer'
 
 export function StudentsPage() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [requestedCourseId] = useState(() => searchParams.get('courseId'))
+  const [requestedAction] = useState(() => searchParams.get('action'))
   const { hasPermission, hasRole } = useAuth()
   const [courses, setCourses] = useState<EnrollmentCourse[]>([])
   const [selectedCourseId, setSelectedCourseId] = useState('')
@@ -84,6 +87,14 @@ export function StudentsPage() {
       .then((data) => {
         if (!active) return
         setCourses(data)
+        if (requestedCourseId && data.some((course) => course.id === requestedCourseId)) {
+          setSelectedCourseId(requestedCourseId)
+          setStudents([])
+          setLoadingStudents(true)
+          if (requestedAction === 'new') setIsFormOpen(true)
+          if (requestedAction === 'import') setImportModalOpen(true)
+          setSearchParams({}, { replace: true })
+        }
       })
       .catch((error) => {
         if (!active) return
@@ -98,7 +109,7 @@ export function StudentsPage() {
     return () => {
       active = false
     }
-  }, [])
+  }, [requestedAction, requestedCourseId, setSearchParams])
 
   useEffect(() => {
     let active = true

@@ -15,6 +15,7 @@ import {
   X,
 } from 'lucide-react'
 import { memo, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -106,6 +107,7 @@ export function CoursesPage() {
   } = useCourses()
 
   const canManage = hasRole(['admin', 'coordinator'])
+  const canEnroll = hasRole(['admin', 'director', 'coordinator', 'teacher'])
 
   const [assignmentFlowOpen, setAssignmentFlowOpen] = useState(false)
   const [assignmentFlowError, setAssignmentFlowError] = useState<string | null>(null)
@@ -351,6 +353,7 @@ export function CoursesPage() {
           item={selectedCourse}
           schoolYearName={currentSchoolYear?.name ?? ''}
           schoolYearId={currentSchoolYear?.id ?? null}
+          canEnroll={canEnroll}
           onBack={() => setSelectedCourseId(null)}
         />
       ) : (
@@ -660,16 +663,44 @@ function CourseDetailView({
   item,
   schoolYearName,
   schoolYearId,
+  canEnroll,
   onBack,
 }: {
   item: CourseCardItem
   schoolYearName: string
   schoolYearId: string | null
+  canEnroll: boolean
   onBack: () => void
 }) {
   const palette = getSubjectColor(item.subjectName)
   const courseLabel = `${item.grade.name}.º ${item.section.name}`
   const [activeTab, setActiveTab] = useState('estudiantes')
+  const [students, setStudents] = useState<Array<{ firstName: string; lastName: string; studentCode: string; status?: string | null }>>([])
+  const [studentsLoading, setStudentsLoading] = useState(true)
+  const [studentsError, setStudentsError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!schoolYearId) {
+      setStudentsLoading(false)
+      setStudentsError('No hay año escolar activo.')
+      return
+    }
+
+    setStudentsLoading(true)
+    setStudentsError(null)
+    getStudentsBySection(item.section.id, schoolYearId)
+      .then(setStudents)
+      .catch((error) => setStudentsError(error instanceof Error ? error.message : 'No se pudieron cargar los estudiantes.'))
+      .finally(() => setStudentsLoading(false))
+  }, [item.section.id, schoolYearId])
+
+  const capacity = item.section.capacity
+  const availableSeats = capacity === null ? null : Math.max(capacity - students.length, 0)
+  const attendanceRows = students.filter((student) => student.status)
+  const presentRows = attendanceRows.filter((student) => student.status === 'present')
+  const attendance = attendanceRows.length
+    ? `${Math.round((presentRows.length / attendanceRows.length) * 100)}%`
+    : 'Sin registrar'
 
   return (
     <div className="space-y-7">
@@ -712,9 +743,13 @@ function CourseDetailView({
           </div>
 
           <div className="grid grid-cols-3 gap-4 lg:min-w-[26rem]">
-            <MetricBox value={item.section.capacity ? String(item.section.capacity) : '—'} label="Capacidad" />
-            <MetricBox value="—" label="Asistencia" />
-            <MetricBox value="—" label="Promedio" />
+            <MetricBox
+              value={studentsLoading ? '…' : capacity === null ? String(students.length) : `${students.length}/${capacity}`}
+              label={capacity === null ? 'Estudiantes' : 'Matrícula'}
+              detail={availableSeats === null ? 'Sin límite definido' : `${availableSeats} cupos disponibles`}
+            />
+            <MetricBox value={studentsLoading ? '…' : attendance} label="Asistencia" detail="Último registro" />
+            <MetricBox value="Sin notas" label="Promedio" detail="Período actual" />
           </div>
         </div>
 
@@ -728,7 +763,13 @@ function CourseDetailView({
       </header>
 
       {activeTab === 'estudiantes' ? (
-        <EstudiantesTab sectionId={item.section.id} schoolYearId={schoolYearId} />
+        <EstudiantesTab
+          students={students}
+          loading={studentsLoading}
+          error={studentsError}
+          courseId={item.assignment?.id ?? null}
+          canEnroll={canEnroll}
+        />
       ) : activeTab === 'asistencia' ? (
         <AsistenciaTab sectionSubjectId={item.assignment?.id ?? null} sectionId={item.section.id} schoolYearId={schoolYearId} />
       ) : activeTab === 'calificaciones' ? (
@@ -742,11 +783,12 @@ function CourseDetailView({
   )
 }
 
-function MetricBox({ value, label }: { value: string; label: string }) {
+function MetricBox({ value, label, detail }: { value: string; label: string; detail?: string }) {
   return (
-    <div className="rounded-2xl bg-card px-4 py-5 text-center shadow-sm">
-      <p className="text-3xl font-extrabold text-foreground">{value}</p>
+    <div className="rounded-2xl border border-border/70 bg-card px-4 py-4 text-center shadow-sm">
+      <p className="text-2xl font-extrabold tabular-nums text-foreground">{value}</p>
       <p className="mt-1 text-xs font-bold uppercase text-muted-foreground">{label}</p>
+      {detail ? <p className="mt-1 text-[11px] font-medium text-muted-foreground/80">{detail}</p> : null}
     </div>
   )
 }
@@ -767,26 +809,63 @@ function DetailTab({ active, icon, label, onClick }: { active?: boolean; icon: R
   )
 }
 
-function EstudiantesTab({ sectionId, schoolYearId }: { sectionId: string; schoolYearId: string | null }) {
-  const [students, setStudents] = useState<Array<{ firstName: string; lastName: string; studentCode: string }>>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    if (!schoolYearId) {
-      setLoading(false)
-      setError('No hay ano escolar activo.')
-      return
-    }
-    getStudentsBySection(sectionId, schoolYearId)
-      .then((data) => setStudents(data))
-      .catch((e) => setError(e instanceof Error ? e.message : 'Error al cargar estudiantes'))
-      .finally(() => setLoading(false))
-  }, [sectionId, schoolYearId])
-
+function EstudiantesTab({ students, loading, error, courseId, canEnroll }: {
+  students: Array<{ firstName: string; lastName: string; studentCode: string }>
+  loading: boolean
+  error: string | null
+  courseId: string | null
+  canEnroll: boolean
+}) {
   if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando estudiantes...</div>
   if (error) return <ErrorState message={error} />
-  if (!students.length) return <EmptyState title="Sin estudiantes" description="No hay estudiantes inscritos en esta seccion." />
+  if (!students.length) {
+    return (
+      <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+        <div className="grid min-h-[330px] gap-8 px-6 py-10 md:grid-cols-[1.15fr_0.85fr] md:px-10">
+          <div className="flex flex-col justify-center">
+            <span className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+              <UsersRound className="size-6" />
+            </span>
+            <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-primary">Matrícula del curso</p>
+            <h2 className="mt-2 max-w-lg text-2xl font-extrabold tracking-tight text-foreground">
+              Este curso todavía no tiene estudiantes
+            </h2>
+            <p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">
+              Matricula al primer estudiante o importa el listado completo. Cuando agregues la matrícula, aquí aparecerán sus datos y se habilitarán asistencia y calificaciones.
+            </p>
+
+            {canEnroll && courseId ? (
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  to={`/estudiantes?courseId=${encodeURIComponent(courseId)}&action=new`}
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.98]"
+                >
+                  <Plus className="size-4" />
+                  Matricular estudiante
+                </Link>
+                <Link
+                  to={`/estudiantes?courseId=${encodeURIComponent(courseId)}&action=import`}
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 text-sm font-bold text-foreground transition hover:bg-muted active:scale-[0.98]"
+                >
+                  <ClipboardList className="size-4" />
+                  Importar listado
+                </Link>
+              </div>
+            ) : null}
+          </div>
+
+          <aside className="flex flex-col justify-center rounded-2xl bg-muted/70 p-6">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">Siguiente paso</p>
+            <ol className="mt-5 space-y-5">
+              <EmptyStep number="1" text="Agrega estudiantes individualmente o importa una lista." />
+              <EmptyStep number="2" text="Registra la asistencia desde este mismo curso." />
+              <EmptyStep number="3" text="Carga calificaciones y consulta el promedio del período." />
+            </ol>
+          </aside>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
@@ -807,6 +886,15 @@ function EstudiantesTab({ sectionId, schoolYearId }: { sectionId: string; school
         </tbody>
       </table>
     </div>
+  )
+}
+
+function EmptyStep({ number, text }: { number: string; text: string }) {
+  return (
+    <li className="flex items-start gap-3 text-sm leading-5 text-muted-foreground">
+      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-card font-bold text-primary shadow-sm">{number}</span>
+      <span className="pt-1">{text}</span>
+    </li>
   )
 }
 
