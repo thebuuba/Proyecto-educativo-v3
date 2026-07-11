@@ -3,6 +3,7 @@
  */
 
 import {
+  ArrowLeft,
   BookOpen,
   CalendarRange,
   Download,
@@ -348,6 +349,8 @@ export function StudentsPage() {
       <FeedbackMessage tone="error" message={actionError} />
       <FeedbackMessage tone="success" message={actionSuccess} />
 
+      {!loadingCourses && courses.length > 0 ? <EnrollmentFlowSteps hasSelectedCourse={Boolean(selectedCourse)} /> : null}
+
       {loadingCourses ? (
         <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-border bg-card text-sm font-medium text-muted-foreground">
           Cargando cursos...
@@ -366,18 +369,23 @@ export function StudentsPage() {
           }
         />
       ) : !selectedCourse ? (
-        <section className="space-y-4">
-          <div>
-            <h2 className="text-xl font-bold text-primary">Cursos disponibles</h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Selecciona un curso para revisar, importar o matricular estudiantes.
-            </p>
+        <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+          <div className="flex flex-col gap-3 border-b border-border bg-primary/[0.035] px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-7">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary/70">Paso 1 · Selección</p>
+              <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-primary">Elige el curso que vas a gestionar</h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Puedes abrirlo desde esta lista o utilizar el selector superior.
+              </p>
+            </div>
+            <span className="inline-flex w-fit items-center rounded-xl bg-card px-3 py-2 text-sm font-bold text-foreground shadow-sm">
+              {courses.length} curso{courses.length === 1 ? '' : 's'} disponible{courses.length === 1 ? '' : 's'}
+            </span>
           </div>
 
           <div className={cn(
-            'grid min-w-0 grid-cols-1 gap-4',
-            courses.length > 1 && 'sm:grid-cols-2',
-            courses.length > 2 && '2xl:grid-cols-3',
+            'grid min-w-0 grid-cols-1 gap-4 p-5 sm:p-7',
+            courses.length > 1 && '2xl:grid-cols-2',
           )}>
             {courses.map((course) => (
               <CourseCard
@@ -390,6 +398,15 @@ export function StudentsPage() {
         </section>
       ) : (
         <>
+          <button
+            type="button"
+            className="inline-flex w-fit items-center gap-2 rounded-lg text-sm font-bold text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            onClick={() => selectCourse('')}
+          >
+            <ArrowLeft className="size-4" />
+            Volver a cursos disponibles
+          </button>
+
           <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
             <div className="bg-primary/[0.045] px-5 py-6 sm:px-7">
               <div className="flex flex-col gap-5 xl:flex-row xl:items-start xl:justify-between">
@@ -565,5 +582,21 @@ function CourseSummaryItem({ icon, label, value, detail }: { icon: ReactNode; la
         <p className="mt-0.5 truncate text-xs text-muted-foreground" title={detail}>{detail}</p>
       </div>
     </div>
+  )
+}
+
+function EnrollmentFlowSteps({ hasSelectedCourse }: { hasSelectedCourse: boolean }) {
+  return (
+    <nav aria-label="Progreso de matrícula" className="flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm sm:w-fit">
+      <span className="flex items-center gap-2 text-sm font-bold text-primary">
+        <span className="flex size-7 items-center justify-center rounded-lg bg-primary text-xs text-primary-foreground">1</span>
+        Elegir curso
+      </span>
+      <span className="h-px w-8 bg-border" aria-hidden="true" />
+      <span className={cn('flex items-center gap-2 text-sm font-bold', hasSelectedCourse ? 'text-primary' : 'text-muted-foreground')}>
+        <span className={cn('flex size-7 items-center justify-center rounded-lg text-xs', hasSelectedCourse ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground')}>2</span>
+        Gestionar matrícula
+      </span>
+    </nav>
   )
 }
