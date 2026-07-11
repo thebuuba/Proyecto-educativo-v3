@@ -356,6 +356,88 @@ describe('AuthService.register', () => {
     )
   })
 
+  it('creates a session for a social auth user when the Aula Base profile already exists by email', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        id: 'google-auth-user',
+        email: registerDto.email,
+      }),
+    } as never)
+
+    const appUser = {
+      id: 'user-1',
+      authUserId: 'password-auth-user',
+      schoolId: 'school-1',
+      fullName: registerDto.fullName,
+      email: registerDto.email,
+      phone: null,
+      avatarUrl: null,
+      lastLoginAt: null,
+      status: 'ACTIVE',
+      createdAt,
+      updatedAt,
+    }
+    mocks.prisma.appUser.findUnique
+      .mockResolvedValueOnce(null)
+      .mockResolvedValueOnce(appUser)
+
+    const result = await createService().createSessionFromSupabaseToken('supabase-token')
+
+    expect(mocks.prisma.appUser.findUnique).toHaveBeenNthCalledWith(1, {
+      where: { authUserId: 'google-auth-user' },
+    })
+    expect(mocks.prisma.appUser.findUnique).toHaveBeenNthCalledWith(2, {
+      where: { email: registerDto.email },
+    })
+    expect(result.user).toEqual({ id: appUser.id, email: appUser.email })
+  })
+
+  it('does not repeat onboarding when the Supabase token email already has an Aula Base profile', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        id: 'google-auth-user',
+        email: registerDto.email,
+      }),
+    } as never)
+
+    const appUser = {
+      id: 'user-1',
+      authUserId: 'password-auth-user',
+      schoolId: 'school-1',
+      fullName: registerDto.fullName,
+      email: registerDto.email,
+      phone: null,
+      avatarUrl: null,
+      lastLoginAt: null,
+      status: 'ACTIVE',
+      createdAt,
+      updatedAt,
+    }
+    mocks.prisma.appUser.findUnique
+      .mockResolvedValueOnce(null)
+      .mockResolvedValueOnce(appUser)
+      .mockResolvedValueOnce(null)
+      .mockResolvedValueOnce(appUser)
+
+    const result = await createService().completeOnboarding('supabase-token', {
+      fullName: registerDto.fullName,
+      school: {
+        name: registerDto.schoolName,
+        primaryModality: 'general',
+        schoolShift: 'morning',
+        enabledSubsystems: ['regular'],
+      },
+      schoolYear: {
+        name: '2026-2027',
+      },
+    } as never)
+
+    expect(mocks.prisma.$transaction).not.toHaveBeenCalled()
+    expect(result.user).toEqual({ id: appUser.id, email: appUser.email })
+  })
+
   it('completes initial onboarding without creating periods or courses', async () => {
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: true,
