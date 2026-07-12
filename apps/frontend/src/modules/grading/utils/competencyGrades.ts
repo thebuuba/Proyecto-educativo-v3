@@ -29,20 +29,20 @@ export const competencyPeriods = [
 ] as const
 
 export const competencyBlocks = [
-  { id: 'b1', shortName: 'PC1', name: 'Competencia Comunicativa' },
+  { id: 'b1', shortName: 'Bloque 1', name: 'Competencia Comunicativa' },
   {
     id: 'b2',
-    shortName: 'PC2',
+    shortName: 'Bloque 2',
     name: 'Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas',
   },
   {
     id: 'b3',
-    shortName: 'PC3',
+    shortName: 'Bloque 3',
     name: 'Ética y Ciudadana y Desarrollo Personal y Espiritual',
   },
   {
     id: 'b4',
-    shortName: 'PC4',
+    shortName: 'Bloque 4',
     name: 'Científica y Tecnológica y Ambiental y de la Salud',
   },
 ] as const

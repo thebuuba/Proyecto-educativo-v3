@@ -1,5 +1,7 @@
 ﻿import { AlertCircle } from 'lucide-react'
 
+import { useState } from 'react'
+
 import { Select } from '@/components/ui/Select'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
@@ -33,10 +35,12 @@ export function GradingPage() {
 
   const isFinalView = selectedPeriodId === 'final'
   const groupedSectionSubjects = groupSectionSubjects(sectionSubjects)
+  const [hideFilters, setHideFilters] = useState(false)
 
   return (
     <section className="w-full">
       <div className="mb-3 space-y-3">
+        {!hideFilters ? (
         <div className="grid gap-3 rounded-lg border border-border bg-card p-3 shadow-sm lg:grid-cols-[minmax(0,1fr)_22rem]">
           <div className="space-y-1">
             <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
@@ -79,6 +83,7 @@ export function GradingPage() {
             </Select>
           </div>
         </div>
+        ) : null}
 
         {error ? (
           <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
@@ -117,6 +122,7 @@ export function GradingPage() {
           onSaveRecovery={updateRecoveryScore}
           loadFinalRecords={loadFinalRecords}
           getActivitiesForPeriod={getActivitiesForPeriod}
+          onActivityWorkspaceChange={setHideFilters}
         />
       ) : (
         <GradingBook
@@ -136,6 +142,7 @@ export function GradingPage() {
           onSaveRecovery={updateRecoveryScore}
           loadFinalRecords={loadFinalRecords}
           getActivitiesForPeriod={getActivitiesForPeriod}
+          onActivityWorkspaceChange={setHideFilters}
         />
       )}
     </section>
