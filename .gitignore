@@ -39,6 +39,10 @@ apps/backend/uploads/
 .opencode/
 .worktrees/
 
+# Graphify generated metadata
+graphify-out/*
+!graphify-out/graph.json
+
 # Supabase local CLI state
 supabase/.temp/
 .vercel
