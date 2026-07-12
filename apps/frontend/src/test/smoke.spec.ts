@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { getOAuthCallbackPath } from '@/utils/oauthCallback'
+import { getOAuthCallbackPath, getOAuthCallbackUrl } from '@/utils/oauthCallback'
 import { shouldSearchSchoolQuery } from '@/modules/auth/utils/schoolSearch'
 
 describe('smoke', () => {
@@ -11,6 +11,12 @@ describe('smoke', () => {
   it('routes OAuth codes to the callback page', () => {
     expect(getOAuthCallbackPath('/', '?code=abc', '')).toBe('/auth/callback?code=abc')
     expect(getOAuthCallbackPath('/auth/callback', '?code=abc', '')).toBeNull()
+  })
+
+  it('builds the OAuth callback from the current browser origin', () => {
+    expect(getOAuthCallbackUrl('https://aula-base.vercel.app')).toBe(
+      'https://aula-base.vercel.app/auth/callback',
+    )
   })
 
   it('does not reopen school search after selecting a school', () => {

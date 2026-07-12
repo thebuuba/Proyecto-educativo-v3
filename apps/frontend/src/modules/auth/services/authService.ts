@@ -16,15 +16,11 @@ import type {
   Role,
 } from '@/modules/auth/types/auth'
 import { supabase } from '@/modules/auth/services/supabaseClient'
+import { getOAuthCallbackUrl } from '@/utils/oauthCallback'
 
 /** Restaura perfil, roles, permisos y onboarding en un solo viaje. */
 export function getAuthBootstrap(): Promise<AuthBootstrap> {
   return api.get<AuthBootstrap>('/auth/bootstrap')
-}
-
-function getAuthCallbackUrl() {
-  const appUrl = (import.meta.env.VITE_PUBLIC_APP_URL as string | undefined)?.replace(/\/$/, '')
-  return `${appUrl || window.location.origin}/auth/callback`
 }
 
 /** Inicia sesión con correo y contraseña. */
@@ -62,7 +58,7 @@ export async function loginWithProvider(provider: 'google' | 'facebook'): Promis
   const { error } = await supabase.auth.signInWithOAuth({
     provider,
     options: {
-      redirectTo: getAuthCallbackUrl(),
+      redirectTo: getOAuthCallbackUrl(window.location.origin),
     },
   })
   if (error) throw new Error(error.message)
