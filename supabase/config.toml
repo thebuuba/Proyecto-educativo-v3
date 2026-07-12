@@ -1,7 +1,9 @@
 [auth]
-site_url = "http://localhost:5173"
+site_url = "https://proyecto-educativo-v3-frontend.vercel.app"
 additional_redirect_urls = [
   "http://localhost:5173/auth/callback",
+  "https://proyecto-educativo-v3-frontend.vercel.app/auth/callback",
+  "https://proyecto-educativo-v3-frontend-*-proyecto-educativo-a.vercel.app/auth/callback",
 ]
 
 [auth.email]
