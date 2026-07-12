@@ -4,7 +4,6 @@ import {
   BookOpen,
   CalendarDays,
   CheckCircle2,
-  ChevronDown,
   ClipboardList,
   Download,
   Hourglass,
@@ -580,10 +579,8 @@ export function GradingBook({
             onDeleteActivity={onDeleteActivity}
             onDuplicateActivity={duplicateActivity}
             onEditActivity={editActivity}
-            onOpenActivity={(activityId) => setDetailView({ type: 'activity', activityId })}
             onSaveActivity={saveActivityDraft}
             saving={saving}
-            students={students}
           />
         ) : selectedActivity ? (
           <ActivityDetailView
@@ -1482,7 +1479,9 @@ function ActivityManager({
   onDuplicateActivity,
   onEditActivity,
   onSaveActivity,
+  compactLayout = false,
   saving,
+  showActions = true,
   showCompetencySelect = true,
 }: {
   activityDraft: ActivityDraft
@@ -1494,15 +1493,13 @@ function ActivityManager({
   onDuplicateActivity: (activity: GradingActivity) => void
   onEditActivity: (activity: GradingActivity) => void
   onSaveActivity: () => void
+  compactLayout?: boolean
   saving: boolean
+  showActions?: boolean
   showCompetencySelect?: boolean
 }) {
-  const [descriptionExpanded, setDescriptionExpanded] = useState(false)
-  const [descriptionEditing, setDescriptionEditing] = useState(false)
-  const hasLongDescription = activityDraft.description.length > 160
-
   return (
-    <div className="grid gap-2.5">
+    <div className="grid gap-2">
       {showCompetencySelect ? (
         <Select value={activityDraft.competencyBlockId} onChange={(event) => onChangeDraft({ ...activityDraft, competencyBlockId: event.target.value })}>
           {competencyBlocks.map((block) => (
@@ -1510,24 +1507,24 @@ function ActivityManager({
           ))}
         </Select>
       ) : null}
-      <div className="grid gap-2.5 sm:grid-cols-[minmax(0,1fr)_7rem]">
-        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+      <div className={cn('grid gap-2', compactLayout ? 'sm:grid-cols-[minmax(0,1fr)_6rem]' : 'sm:grid-cols-[minmax(0,1fr)_7rem]')}>
+        <label className="grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
           Nombre de la actividad
-          <Input className="h-10" value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Ej. Exposición oral sobre ecosistemas" />
+          <Input className="h-9" value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Ej. Exposición oral sobre ecosistemas" />
         </label>
-        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+        <label className="grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
           Valor
-          <Input className="h-10" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" />
+          <Input className="h-9" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" />
         </label>
       </div>
-      <div className="grid gap-2.5 sm:grid-cols-3">
-        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+      <div className={cn('grid gap-2', compactLayout ? 'sm:grid-cols-2' : 'sm:grid-cols-3')}>
+        <label className="grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
           Fecha de realización
-          <Input className="h-10" type="date" value={activityDraft.date} onChange={(event) => onChangeDraft({ ...activityDraft, date: event.target.value })} />
+          <Input className="h-9" type="date" value={activityDraft.date} onChange={(event) => onChangeDraft({ ...activityDraft, date: event.target.value })} />
         </label>
-        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+        <label className="grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
           Técnica de evaluación
-          <Select className="h-10" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })}>
+          <Select className="h-9" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })}>
             <option value="" disabled>Ej. Observación directa</option>
             <option value="observacion-directa">Observación directa</option>
             <option value="observacion-sistematica">Observación sistemática</option>
@@ -1553,82 +1550,49 @@ function ActivityManager({
             <option value="heteroevaluacion">Heteroevaluación</option>
           </Select>
         </label>
-        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+        <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', compactLayout ? 'sm:col-span-2' : '')}>
           Instrumento de evaluación
-          <Select className="h-10" value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}>
+          <Select className="h-9" value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}>
             <option value="" disabled>Ej. Rúbrica</option>
             <option value="rubrica">Rúbrica</option>
             <option value="lista-cotejo">Lista de cotejo</option>
             <option value="escala">Escala estimativa</option>
-            <option value="prueba">Prueba escrita</option>
-            <option value="otro">Otro</option>
+            <option value="lista-ponderada">Lista ponderada</option>
           </Select>
         </label>
       </div>
-      <div className="grid gap-2.5 sm:grid-cols-2">
-        <Select className="h-10" value={activityDraft.activityType} onChange={(event) => onChangeDraft({ ...activityDraft, activityType: event.target.value as ActivityDraft['activityType'] })}>
+      <div className={cn('grid gap-2', compactLayout ? 'sm:grid-cols-2' : 'sm:grid-cols-2')}>
+        <Select className="h-9" value={activityDraft.activityType} onChange={(event) => onChangeDraft({ ...activityDraft, activityType: event.target.value as ActivityDraft['activityType'] })}>
           <option value="individual">Actividad individual</option>
           <option value="group">Actividad grupal</option>
         </Select>
-        <Select className="h-10" value={activityDraft.planningMoment || 'desarrollo'} onChange={(event) => onChangeDraft({ ...activityDraft, planningMoment: event.target.value })}>
+        <Select className="h-9" value={activityDraft.planningMoment || 'desarrollo'} onChange={(event) => onChangeDraft({ ...activityDraft, planningMoment: event.target.value })}>
           <option value="inicio">Inicio</option>
           <option value="desarrollo">Desarrollo</option>
           <option value="cierre">Cierre</option>
         </Select>
       </div>
-      <div className="space-y-1">
-        <label className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground" htmlFor="activity-description">
+      <div className="space-y-0.5">
+        <label className="text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground" htmlFor="activity-description">
           Descripción de la actividad
         </label>
-        <div className="relative">
-          {descriptionExpanded || descriptionEditing || !activityDraft.description ? (
-            <Textarea
-              id="activity-description"
-              className={cn(
-                'resize-none pr-12 text-base leading-6',
-                descriptionExpanded || descriptionEditing ? 'min-h-32' : 'h-[6rem]',
-              )}
-              rows={descriptionExpanded || descriptionEditing ? 5 : 3}
-              value={activityDraft.description}
-              onChange={(event) => onChangeDraft({ ...activityDraft, description: event.target.value })}
-              onFocus={() => setDescriptionEditing(true)}
-              onBlur={() => setDescriptionEditing(false)}
-              placeholder="Describe qué harán los estudiantes, qué recursos usarán y qué evidencia entregarán."
-            />
-          ) : (
-            <div
-              id="activity-description"
-              className={cn(
-                'h-[6rem] overflow-hidden rounded-lg border border-input bg-card px-3 py-3 pr-12 text-base leading-6 text-foreground outline-none transition',
-                activityDraft.description ? '' : 'text-muted-foreground',
-              )}
-              onClick={() => {
-                if (hasLongDescription) setDescriptionExpanded(true)
-              }}
-            >
-              <p className="[display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">
-                {activityDraft.description || 'Describe qué harán los estudiantes, qué recursos usarán y qué evidencia entregarán.'}
-              </p>
-            </div>
-          )}
-          {hasLongDescription ? (
-            <button
-              type="button"
-              className="absolute bottom-2 right-3 grid size-6 place-items-center text-primary transition hover:scale-110"
-              aria-label={descriptionExpanded ? 'Contraer descripción' : 'Expandir descripción'}
-              onClick={() => setDescriptionExpanded((value) => !value)}
-            >
-              <ChevronDown className={cn('size-4 transition-transform', descriptionExpanded ? 'rotate-180' : '')} />
-            </button>
-          ) : null}
+        <Textarea
+          id="activity-description"
+          className={cn('resize-none text-base leading-6', compactLayout ? 'h-[5.75rem]' : 'h-20')}
+          rows={3}
+          value={activityDraft.description}
+          onChange={(event) => onChangeDraft({ ...activityDraft, description: event.target.value })}
+          placeholder="Describe qué harán los estudiantes, qué recursos usarán y qué evidencia entregarán."
+        />
+      </div>
+      {showActions ? (
+        <div className="flex flex-wrap gap-2">
+          <Button className="h-9 px-4" onClick={onSaveActivity} disabled={saving}>
+            Guardar actividad
+          </Button>
+          {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
         </div>
-      </div>
-      <div className="flex flex-wrap gap-2">
-        <Button className="h-10 px-5" onClick={onSaveActivity} disabled={saving}>
-          {editingActivityId ? 'Guardar actividad' : 'Agregar actividad'}
-        </Button>
-        {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
-      </div>
+      ) : null}
       {activities.length > 0 ? (
       <div className="max-h-52 overflow-y-auto rounded-lg border border-border">
         {activities.map((activity) => (
@@ -1830,10 +1794,8 @@ function ActivityCreationView({
   onDeleteActivity,
   onDuplicateActivity,
   onEditActivity,
-  onOpenActivity,
   onSaveActivity,
   saving,
-  students,
 }: {
   activityDraft: ActivityDraft
   hasDraft: boolean
@@ -1846,10 +1808,8 @@ function ActivityCreationView({
   onDeleteActivity: (activityId: string) => void
   onDuplicateActivity: (activity: GradingActivity) => void
   onEditActivity: (activity: GradingActivity) => void
-  onOpenActivity: (activityId: string) => void
   onSaveActivity: () => void
   saving: boolean
-  students: StudentGradeRow[]
 }) {
   return (
     <section className="space-y-4">
@@ -1882,11 +1842,17 @@ function ActivityCreationView({
         </Button>
       </div>
 
-      <div className="grid gap-4 xl:grid-cols-[minmax(0,1.45fr)_minmax(20rem,0.55fr)]">
+      <div className="grid gap-4 xl:grid-cols-[minmax(0,42rem)_minmax(0,1fr)]">
         <div className="space-y-4">
-          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
-            <div className="mb-4 border-b border-border pb-4">
+          <div className="w-full rounded-lg border border-border bg-card p-4 shadow-sm xl:max-w-2xl">
+            <div className="mb-3 flex flex-col gap-2 border-b border-border pb-3 sm:flex-row sm:items-center sm:justify-between">
               <h3 className="font-black text-foreground">Información de la actividad</h3>
+              <div className="flex flex-wrap gap-2">
+                {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
+                <Button className="h-9 px-4" onClick={onSaveActivity} disabled={saving}>
+                  Guardar actividad
+                </Button>
+              </div>
             </div>
             <ActivityManager
               activityDraft={activityDraft}
@@ -1898,116 +1864,215 @@ function ActivityCreationView({
               onDuplicateActivity={onDuplicateActivity}
               onEditActivity={onEditActivity}
               onSaveActivity={onSaveActivity}
+              compactLayout
               saving={saving}
+              showActions={false}
               showCompetencySelect={false}
             />
           </div>
 
-          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
-            <h3 className="font-black text-foreground">Criterios de evaluación</h3>
-            <div className="mt-4 overflow-hidden rounded-lg border border-border">
-              <table className="w-full text-left text-sm">
-                <thead className="bg-muted/35 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                  <tr>
-                    <th className="px-4 py-3">Criterio</th>
-                    <th className="px-4 py-3">Excelente</th>
-                    <th className="px-4 py-3">Bueno</th>
-                    <th className="px-4 py-3">En proceso</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t border-border">
-                    <td className="px-4 py-4 font-medium">Pendiente de definir</td>
-                    <td className="px-4 py-4 text-muted-foreground">Se configurará desde el instrumento.</td>
-                    <td className="px-4 py-4 text-muted-foreground">Editable.</td>
-                    <td className="px-4 py-4 text-muted-foreground">Editable.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
-
-        <aside className="space-y-4">
-          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
-            <div className="mb-4 flex items-center justify-between">
-              <h3 className="font-black text-foreground">Calificaciones de los estudiantes</h3>
-              <Badge>{activityDraft.maxScore || 0} pts</Badge>
-            </div>
-            <div className="overflow-hidden rounded-lg border border-border">
-              <table className="w-full text-sm">
-                <thead className="bg-muted/35 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                  <tr>
-                    <th className="w-12 px-3 py-3 text-center">#</th>
-                    <th className="px-3 py-3 text-left">Estudiante</th>
-                    <th className="px-3 py-3 text-center">Calificación</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {students.slice(0, 6).map((student, index) => (
-                    <tr key={student.enrollmentId} className="border-t border-border">
-                      <td className="px-3 py-3 text-center text-muted-foreground">{index + 1}</td>
-                      <td className="px-3 py-3 font-medium">{student.firstName} {student.lastName}</td>
-                      <td className="px-3 py-3 text-center">
-                        <input
-                          className="h-9 w-20 rounded-lg border border-border bg-muted/35 text-center text-muted-foreground"
-                          disabled
-                          placeholder="-"
-                        />
-                      </td>
-                    </tr>
-                  ))}
-                  {students.length === 0 ? (
-                    <tr>
-                      <td className="px-3 py-8 text-center text-muted-foreground" colSpan={3}>
-                        No hay estudiantes matriculados.
-                      </td>
-                    </tr>
-                  ) : null}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-3 rounded-lg bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-800">
-              La tabla de calificaciones se activará después de crear la actividad.
-            </p>
-          </div>
-
-          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
-            <div className="flex items-center justify-between gap-3">
-              <h3 className="font-black text-foreground">Evidencias / Archivos</h3>
-              <Button variant="outline" size="sm" disabled>Subir evidencia</Button>
-            </div>
-            <p className="mt-4 rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground">
-              Las evidencias se adjuntarán cuando la actividad esté creada.
-            </p>
-          </div>
-
-          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
-            <h3 className="font-black text-foreground">Actividades de este bloque</h3>
-            <div className="mt-4 space-y-2">
-              {activities.length === 0 ? (
-                <p className="rounded-lg border border-border p-4 text-sm text-muted-foreground">
-                  Aún no hay actividades creadas para este bloque.
-                </p>
-              ) : activities.map((activity) => (
-                <button
-                  key={activity.id}
-                  type="button"
-                  className="flex w-full items-center justify-between rounded-lg border border-border p-3 text-left text-sm transition hover:border-primary hover:bg-primary/5"
-                  onClick={() => onOpenActivity(activity.id)}
-                >
-                  <span>
-                    <span className="block font-bold text-primary">{activity.name}</span>
-                    <span className="text-xs text-muted-foreground">{activity.maxScore} pts · {activity.instrumentType || 'Sin instrumento'}</span>
-                  </span>
-                  <ArrowRight className="size-4 text-primary" />
-                </button>
-              ))}
-            </div>
-          </div>
-        </aside>
+        <InstrumentPreview instrumentType={activityDraft.instrumentType} />
       </div>
     </section>
+  )
+}
+
+function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
+  const title = instrumentTitle(instrumentType)
+
+  return (
+    <section className="rounded-lg border border-border bg-card p-4 shadow-sm">
+      <div className="flex flex-col gap-3 border-b border-border pb-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
+          Instrumento de evaluación
+        </p>
+          <h3 className="mt-1 text-xl font-black text-primary">{title}</h3>
+        </div>
+        <Badge>{instrumentType ? 'Vacío' : 'Pendiente'}</Badge>
+      </div>
+
+      <div className="mt-3 max-h-[32rem] overflow-auto pr-1">
+        {instrumentType === 'rubrica' ? <RubricInstrument /> : null}
+        {instrumentType === 'escala' ? <ScaleInstrument /> : null}
+        {instrumentType === 'lista-cotejo' ? <ChecklistInstrument /> : null}
+        {instrumentType === 'lista-ponderada' ? <WeightedListInstrument /> : null}
+        {!instrumentType ? <EmptyInstrumentState /> : null}
+      </div>
+    </section>
+  )
+}
+
+function RubricInstrument() {
+  return (
+    <div className="space-y-3">
+      <InstrumentTable>
+        <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
+          <tr>
+            <th className="w-[26%] border border-border px-2 py-2">Criterios</th>
+            <th className="border border-border px-2 py-2">4 Excelente</th>
+            <th className="border border-border px-2 py-2">3 Bueno</th>
+            <th className="border border-border px-2 py-2">2 Satisfactorio</th>
+            <th className="border border-border px-2 py-2">1 Insuficiente</th>
+            <th className="w-20 border border-border px-2 py-2">Puntaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          {['Criterio 1', 'Criterio 2', 'Criterio 3', 'Criterio 4'].map((criterion) => (
+            <tr key={criterion}>
+              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={criterion} /></td>
+              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
+              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
+              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
+              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
+              <td className="border border-border p-1.5"><InstrumentInput placeholder="__/4" /></td>
+            </tr>
+          ))}
+          <tr className="bg-sky-50 font-bold">
+            <td className="border border-border px-2 py-2" colSpan={5}>Puntaje total</td>
+            <td className="border border-border p-1.5"><InstrumentInput placeholder="__/20" /></td>
+          </tr>
+        </tbody>
+      </InstrumentTable>
+    </div>
+  )
+}
+
+function ScaleInstrument() {
+  return (
+    <div className="space-y-3">
+      <InstrumentTable>
+        <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
+          <tr>
+            <th className="w-[34%] border border-border px-2 py-2">Criterios</th>
+            <th className="border border-border px-2 py-2">4</th>
+            <th className="border border-border px-2 py-2">3</th>
+            <th className="border border-border px-2 py-2">2</th>
+            <th className="border border-border px-2 py-2">1</th>
+            <th className="w-20 border border-border px-2 py-2">Puntaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          {['Criterio 1', 'Criterio 2', 'Criterio 3', 'Criterio 4', 'Criterio 5'].map((criterion) => (
+            <tr key={criterion}>
+              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={criterion} /></td>
+              {[4, 3, 2, 1].map((value) => (
+                <td key={value} className="border border-border text-center"><input className="size-4 accent-primary" type="checkbox" /></td>
+              ))}
+              <td className="border border-border p-1.5"><InstrumentInput placeholder="__/4" /></td>
+            </tr>
+          ))}
+        </tbody>
+      </InstrumentTable>
+    </div>
+  )
+}
+
+function ChecklistInstrument() {
+  return (
+    <div className="space-y-3">
+      <InstrumentTable>
+        <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
+          <tr>
+            <th className="w-[48%] border border-border px-2 py-2">Criterios</th>
+            <th className="border border-border px-2 py-2">Sí</th>
+            <th className="border border-border px-2 py-2">No</th>
+            <th className="w-[30%] border border-border px-2 py-2">Observaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Array.from({ length: 6 }, (_, index) => (
+            <tr key={index}>
+              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={`${index + 1}. Criterio`} /></td>
+              <td className="border border-border text-center"><input className="size-4 accent-primary" type="checkbox" /></td>
+              <td className="border border-border text-center"><input className="size-4 accent-primary" type="checkbox" /></td>
+              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
+            </tr>
+          ))}
+        </tbody>
+      </InstrumentTable>
+    </div>
+  )
+}
+
+function WeightedListInstrument() {
+  return (
+    <div className="space-y-3">
+      <InstrumentTable>
+        <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
+          <tr>
+            <th className="w-[18%] border border-border px-2 py-2">Criterios</th>
+            <th className="w-[28%] border border-border px-2 py-2">Indicadores</th>
+            <th className="border border-border px-2 py-2">Pond.</th>
+            <th className="border border-border px-2 py-2">Sí</th>
+            <th className="border border-border px-2 py-2">Parcial</th>
+            <th className="border border-border px-2 py-2">No</th>
+            <th className="border border-border px-2 py-2">Puntaje</th>
+            <th className="w-[20%] border border-border px-2 py-2">Obs.</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Array.from({ length: 5 }, (_, index) => (
+            <tr key={index}>
+              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={`Criterio ${index + 1}`} /></td>
+              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
+              <td className="border border-border p-1.5"><InstrumentInput placeholder="%" /></td>
+              {['si', 'parcial', 'no'].map((value) => (
+                <td key={value} className="border border-border text-center"><input className="size-4 accent-primary" type="checkbox" /></td>
+              ))}
+              <td className="border border-border p-1.5"><InstrumentInput placeholder="%" /></td>
+              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
+            </tr>
+          ))}
+          <tr className="bg-sky-50 font-bold">
+            <td className="border border-border px-2 py-2" colSpan={2}>Total</td>
+            <td className="border border-border p-1.5"><InstrumentInput placeholder="100%" /></td>
+            <td className="border border-border" colSpan={3} />
+            <td className="border border-border p-1.5"><InstrumentInput placeholder="%" /></td>
+            <td className="border border-border" />
+          </tr>
+        </tbody>
+      </InstrumentTable>
+    </div>
+  )
+}
+
+function EmptyInstrumentState() {
+  return (
+    <div className="grid min-h-72 place-items-center rounded-lg border border-dashed border-border p-6 text-center">
+      <p className="max-w-sm text-sm leading-6 text-muted-foreground">
+        Selecciona un instrumento para generar aquí una plantilla vacía editable.
+      </p>
+    </div>
+  )
+}
+
+function InstrumentTable({ children }: { children: ReactNode }) {
+  return (
+    <div className="overflow-auto rounded-lg border border-border">
+      <table className="min-w-[42rem] w-full border-collapse text-left text-xs">
+        {children}
+      </table>
+    </div>
+  )
+}
+
+function InstrumentInput({ placeholder = '' }: { placeholder?: string }) {
+  return (
+    <input
+      className="h-8 w-full rounded-md border border-input bg-card px-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+      placeholder={placeholder}
+    />
+  )
+}
+
+function InstrumentTextarea({ className = '', placeholder = '' }: { className?: string; placeholder?: string }) {
+  return (
+    <textarea
+      className={cn('h-14 w-full resize-none rounded-md border border-input bg-card px-2 py-1.5 text-xs leading-5 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20', className)}
+      placeholder={placeholder}
+    />
   )
 }
 
@@ -2393,6 +2458,17 @@ function createDraftId() {
     return crypto.randomUUID()
   }
   return `draft-${Date.now()}-${Math.random().toString(36).slice(2)}`
+}
+
+function instrumentTitle(instrumentType: string) {
+  const titles: Record<string, string> = {
+    rubrica: 'Rúbrica de evaluación',
+    'lista-cotejo': 'Lista de cotejo',
+    escala: 'Escala estimativa',
+    'lista-ponderada': 'Lista ponderada',
+  }
+
+  return titles[instrumentType] ?? 'Selecciona un instrumento'
 }
 
 function newActivityDraft(blockId: CompetencyBlockId): ActivityDraft {
