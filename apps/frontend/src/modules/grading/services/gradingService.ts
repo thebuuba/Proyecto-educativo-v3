@@ -10,6 +10,7 @@ import type {
   AcademicPeriodOpt,
   GradeRecordRow,
   GradeSummaryStats,
+  GradingActivity,
   SaveGradeInput,
   SectionSubjectOption,
   StudentGradeRow,
@@ -42,6 +43,30 @@ export async function getGradeRecords(
   return api.get<GradeRecordRow[]>(
     `/grading?sectionSubjectId=${sectionSubjectId}&academicPeriodId=${academicPeriodId}`,
   )
+}
+
+export async function getEvaluationActivities(
+  sectionSubjectId: string,
+  academicPeriodId: string,
+): Promise<GradingActivity[]> {
+  return api.get<GradingActivity[]>(
+    `/grading/activities?sectionSubjectId=${sectionSubjectId}&academicPeriodId=${academicPeriodId}`,
+  )
+}
+
+export async function saveEvaluationActivity(
+  input: Omit<GradingActivity, 'id'> & {
+    id?: string
+    sectionSubjectId: string
+    academicPeriodId: string
+    schoolYearId?: string
+  },
+): Promise<GradingActivity> {
+  return api.post<GradingActivity>('/grading/activities', input)
+}
+
+export async function deleteEvaluationActivity(activityId: string): Promise<void> {
+  await api.delete(`/grading/activities/${activityId}`)
 }
 
 /** Guarda o actualiza una calificación en la base de datos */

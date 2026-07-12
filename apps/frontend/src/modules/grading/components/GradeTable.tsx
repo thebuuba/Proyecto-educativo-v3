@@ -48,10 +48,10 @@ const blockStyles = [
 ]
 
 const blockDisplayNames = [
-  'Comunicativa',
-  'Pensamiento lógico',
-  'Ética y ciudadanía',
-  'Científica y tecnológica',
+  'Competencia Comunicativa',
+  'Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas',
+  'Ética y Ciudadana y Desarrollo Personal y Espiritual',
+  'Científica y Tecnológica y Ambiental y de la Salud',
 ]
 
 export function GradeTable({

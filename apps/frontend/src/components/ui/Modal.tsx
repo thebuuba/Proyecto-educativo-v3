@@ -6,6 +6,7 @@ import { useRef, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { cn } from '@/utils/cn'
 
 /** Propiedades del componente Modal. */
 type ModalProps = {
@@ -17,6 +18,8 @@ type ModalProps = {
   children: ReactNode
   /** Función llamada al cerrar el modal. */
   onClose: () => void
+  /** Clases adicionales para el contenedor del diálogo. */
+  className?: string
 }
 
 /**
@@ -28,13 +31,19 @@ type ModalProps = {
  * @param props.children - Contenido del cuerpo.
  * @param props.onClose - Callback de cierre.
  */
-export function Modal({ title, description, children, onClose }: ModalProps) {
+export function Modal({ title, description, children, onClose, className }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
-      <div ref={dialogRef} className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-popover text-popover-foreground shadow-xl">
+      <div
+        ref={dialogRef}
+        className={cn(
+          'flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-popover text-popover-foreground shadow-xl',
+          className,
+        )}
+      >
         <div className="flex shrink-0 items-start justify-between border-b border-border px-5 py-4">
           <div>
             <h3 className="text-base font-semibold text-foreground">{title}</h3>

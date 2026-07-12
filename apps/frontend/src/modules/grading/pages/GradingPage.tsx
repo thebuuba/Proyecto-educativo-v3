@@ -1,6 +1,7 @@
-﻿import { AlertCircle, FileText, RefreshCw, Search } from 'lucide-react'
+﻿import { AlertCircle } from 'lucide-react'
 
-import { Button } from '@/components/ui/Button'
+import { useState } from 'react'
+
 import { Select } from '@/components/ui/Select'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
@@ -28,51 +29,18 @@ export function GradingPage() {
     deleteActivity,
     updateActivityScore,
     updateRecoveryScore,
-    refresh,
     loadFinalRecords,
     getActivitiesForPeriod,
   } = useGrading()
 
   const isFinalView = selectedPeriodId === 'final'
   const groupedSectionSubjects = groupSectionSubjects(sectionSubjects)
+  const [hideFilters, setHideFilters] = useState(false)
 
   return (
     <section className="w-full">
       <div className="mb-3 space-y-3">
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-end">
-          <div className="hidden">
-            <p className="text-[11px] font-bold uppercase tracking-[0.32em] text-accent">
-              Registro por competencias
-            </p>
-            <h1 className="mt-0.5 text-3xl font-bold leading-none text-primary">
-              Calificaciones
-            </h1>
-            <p className="mt-1 text-sm leading-5 text-muted-foreground">
-              Actividades evaluativas, recuperación y resumen final por bloques de competencias.
-            </p>
-          </div>
-
-          <div className="flex min-w-0 flex-1 flex-wrap items-center justify-end gap-2">
-            <label className="flex h-10 min-w-[18rem] max-w-[34rem] flex-1 items-center gap-3 rounded-xl border border-border bg-card px-3 text-muted-foreground shadow-sm">
-              <Search className="size-4 shrink-0" />
-              <input
-                type="search"
-                placeholder="Buscar estudiantes, cursos, actividades..."
-                className="min-w-0 flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
-                aria-label="Buscar estudiantes, cursos, actividades"
-              />
-            </label>
-            <Button variant="outline" className="h-10 px-4" onClick={() => setSelectedPeriodId('final')}>
-              <FileText className="size-4" />
-              Ver resumen final
-            </Button>
-            <Button variant="outline" className="h-10 px-4" onClick={() => void refresh()}>
-              <RefreshCw className="size-4" />
-              Actualizar
-            </Button>
-          </div>
-        </div>
-
+        {!hideFilters ? (
         <div className="grid gap-3 rounded-lg border border-border bg-card p-3 shadow-sm lg:grid-cols-[minmax(0,1fr)_22rem]">
           <div className="space-y-1">
             <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
@@ -115,6 +83,7 @@ export function GradingPage() {
             </Select>
           </div>
         </div>
+        ) : null}
 
         {error ? (
           <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
@@ -153,6 +122,7 @@ export function GradingPage() {
           onSaveRecovery={updateRecoveryScore}
           loadFinalRecords={loadFinalRecords}
           getActivitiesForPeriod={getActivitiesForPeriod}
+          onActivityWorkspaceChange={setHideFilters}
         />
       ) : (
         <GradingBook
@@ -172,6 +142,7 @@ export function GradingPage() {
           onSaveRecovery={updateRecoveryScore}
           loadFinalRecords={loadFinalRecords}
           getActivitiesForPeriod={getActivitiesForPeriod}
+          onActivityWorkspaceChange={setHideFilters}
         />
       )}
     </section>

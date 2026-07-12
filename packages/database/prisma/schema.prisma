@@ -87,6 +87,11 @@ model School {
   attendanceDailies     AttendanceDaily[]
   attendanceClasses     AttendanceClass[]
   gradesRecords         GradesRecord[]
+  evaluationActivities  EvaluationActivity[]
+  evaluationInstruments EvaluationInstrument[]
+  activityEvidences     EvaluationActivityEvidence[]
+  activityGroups        EvaluationActivityGroup[]
+  activityGroupMembers  EvaluationActivityGroupMember[]
   pedagogicalRecoveries PedagogicalRecovery[]
   reports               Report[]
   timeSlots             TimeSlot[]
@@ -168,6 +173,7 @@ model AppUser {
   recordedAttendanceDailies   AttendanceDaily[]
   recordedAttendanceClasses   AttendanceClass[]
   recordedGradesRecords       GradesRecord[]
+  createdEvaluationActivities EvaluationActivity[]
   recordedPedagogicalRecoveries PedagogicalRecovery[]
   generatedReports            Report[]
   assignedDashboardTasks      DashboardTask[] @relation("DashboardAssignee")
@@ -216,6 +222,7 @@ model SchoolYear {
   attendanceDailies AttendanceDaily[]
   attendanceClasses AttendanceClass[]
   gradesRecords   GradesRecord[]
+  evaluationActivities EvaluationActivity[]
   reports         Report[]
   scheduleEntries ScheduleEntry[]
 
@@ -241,6 +248,7 @@ model AcademicPeriod {
   attendanceDailies  AttendanceDaily[]
   attendanceClasses  AttendanceClass[]
   gradesRecords      GradesRecord[]
+  evaluationActivities EvaluationActivity[]
   scheduleEntries    ScheduleEntry[]
   planningEntries    PlanningEntry[]
   reports            Report[]
@@ -463,6 +471,7 @@ model SectionSubject {
   teacher           Teacher?          @relation(fields: [teacherId], references: [id])
   attendanceClasses AttendanceClass[]
   gradesRecords     GradesRecord[]
+  evaluationActivities EvaluationActivity[]
   scheduleEntries   ScheduleEntry[]
   planningEntries   PlanningEntry[]
 
@@ -506,6 +515,7 @@ model Enrollment {
   attendanceDailies AttendanceDaily[]
   attendanceClasses AttendanceClass[]
   gradesRecords     GradesRecord[]
+  evaluationActivityGroupMembers EvaluationActivityGroupMember[]
 
   @@unique([studentId, schoolYearId])
   @@unique([id, schoolYearId, sectionId])
@@ -574,6 +584,7 @@ model GradesRecord {
   schoolId         String            @map("school_id") @db.Uuid
   sectionSubjectId String            @map("section_subject_id") @db.Uuid
   academicPeriodId String            @map("academic_period_id") @db.Uuid
+  evaluationActivityId String?       @map("evaluation_activity_id") @db.Uuid
   assessmentName   String            @map("assessment_name")
   score            Decimal           @db.Decimal(8, 2)
   maxScore         Decimal           @default(100) @map("max_score") @db.Decimal(8, 2)
@@ -589,12 +600,136 @@ model GradesRecord {
   school              School                @relation(fields: [schoolId], references: [id])
   sectionSubject      SectionSubject        @relation(fields: [sectionSubjectId], references: [id])
   academicPeriod      AcademicPeriod        @relation(fields: [academicPeriodId], references: [id])
+  evaluationActivity  EvaluationActivity?   @relation(fields: [evaluationActivityId], references: [id])
   recorder            AppUser?              @relation(fields: [recordedBy], references: [id])
   pedagogicalRecovery PedagogicalRecovery?
 
   @@index([schoolId, sectionSubjectId, academicPeriodId])
+  @@index([evaluationActivityId])
   @@index([enrollmentId, academicPeriodId])
   @@map("grades_records")
+}
+
+model EvaluationActivity {
+  id                String       @id @default(uuid()) @db.Uuid
+  schoolId          String       @map("school_id") @db.Uuid
+  schoolYearId      String       @map("school_year_id") @db.Uuid
+  sectionSubjectId  String       @map("section_subject_id") @db.Uuid
+  academicPeriodId  String       @map("academic_period_id") @db.Uuid
+  planningEntryId   String?      @map("planning_entry_id") @db.Uuid
+  instrumentId      String?      @map("instrument_id") @db.Uuid
+  competencyBlockId String       @map("competency_block_id")
+  planningMoment    String?      @map("planning_moment")
+  name              String
+  description       String       @default("")
+  activityType      String       @default("individual") @map("activity_type")
+  maxScore          Decimal      @default(100) @map("max_score") @db.Decimal(8, 2)
+  activityDate      DateTime?    @map("activity_date") @db.Date
+  evaluationTechnique String     @default("") @map("evaluation_technique")
+  studentRole       String       @default("") @map("student_role")
+  teacherRole       String       @default("") @map("teacher_role")
+  evidenceInstructions String    @default("") @map("evidence_instructions")
+  observations      String       @default("")
+  source            String       @default("grading")
+  status            RecordStatus @default(ACTIVE)
+  createdBy         String?      @map("created_by") @db.Uuid
+  createdAt         DateTime     @default(now()) @map("created_at")
+  updatedAt         DateTime     @updatedAt @map("updated_at")
+
+  school         School          @relation(fields: [schoolId], references: [id])
+  schoolYear     SchoolYear      @relation(fields: [schoolYearId], references: [id])
+  sectionSubject SectionSubject  @relation(fields: [sectionSubjectId], references: [id])
+  academicPeriod AcademicPeriod  @relation(fields: [academicPeriodId], references: [id])
+  planningEntry  PlanningEntry?  @relation(fields: [planningEntryId], references: [id])
+  instrument     EvaluationInstrument? @relation(fields: [instrumentId], references: [id])
+  creator        AppUser?        @relation(fields: [createdBy], references: [id])
+  gradesRecords  GradesRecord[]
+  evidences      EvaluationActivityEvidence[]
+  groups         EvaluationActivityGroup[]
+
+  @@index([schoolId, sectionSubjectId, academicPeriodId])
+  @@index([planningEntryId])
+  @@index([competencyBlockId])
+  @@map("evaluation_activities")
+}
+
+model EvaluationInstrument {
+  id          String       @id @default(uuid()) @db.Uuid
+  schoolId    String       @map("school_id") @db.Uuid
+  name        String
+  type        String
+  description String       @default("")
+  criteria    Json         @default("[]")
+  maxScore    Decimal      @default(100) @map("max_score") @db.Decimal(8, 2)
+  generatedByAi Boolean    @default(false) @map("generated_by_ai")
+  status      RecordStatus @default(ACTIVE)
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  school      School       @relation(fields: [schoolId], references: [id])
+  activities  EvaluationActivity[]
+
+  @@index([schoolId, type])
+  @@map("evaluation_instruments")
+}
+
+model EvaluationActivityEvidence {
+  id         String       @id @default(uuid()) @db.Uuid
+  activityId String      @map("activity_id") @db.Uuid
+  schoolId   String      @map("school_id") @db.Uuid
+  fileName   String      @map("file_name")
+  fileUrl    String      @map("file_url")
+  fileType   String      @default("") @map("file_type")
+  fileSize   Int?        @map("file_size")
+  notes      String      @default("")
+  status     RecordStatus @default(ACTIVE)
+  createdAt  DateTime    @default(now()) @map("created_at")
+  updatedAt  DateTime    @updatedAt @map("updated_at")
+
+  activity   EvaluationActivity @relation(fields: [activityId], references: [id])
+  school     School             @relation(fields: [schoolId], references: [id])
+
+  @@index([activityId])
+  @@map("evaluation_activity_evidences")
+}
+
+model EvaluationActivityGroup {
+  id         String       @id @default(uuid()) @db.Uuid
+  activityId String      @map("activity_id") @db.Uuid
+  schoolId   String      @map("school_id") @db.Uuid
+  name       String
+  score      Decimal?    @db.Decimal(8, 2)
+  notes      String      @default("")
+  status     RecordStatus @default(ACTIVE)
+  createdAt  DateTime    @default(now()) @map("created_at")
+  updatedAt  DateTime    @updatedAt @map("updated_at")
+
+  activity   EvaluationActivity @relation(fields: [activityId], references: [id])
+  school     School             @relation(fields: [schoolId], references: [id])
+  members    EvaluationActivityGroupMember[]
+
+  @@index([activityId])
+  @@map("evaluation_activity_groups")
+}
+
+model EvaluationActivityGroupMember {
+  id           String       @id @default(uuid()) @db.Uuid
+  groupId      String       @map("group_id") @db.Uuid
+  schoolId     String       @map("school_id") @db.Uuid
+  enrollmentId String       @map("enrollment_id") @db.Uuid
+  individualScore Decimal?  @map("individual_score") @db.Decimal(8, 2)
+  notes        String       @default("")
+  status       RecordStatus @default(ACTIVE)
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+  group      EvaluationActivityGroup @relation(fields: [groupId], references: [id])
+  school     School                  @relation(fields: [schoolId], references: [id])
+  enrollment Enrollment              @relation(fields: [enrollmentId], references: [id])
+
+  @@unique([groupId, enrollmentId])
+  @@index([enrollmentId])
+  @@map("evaluation_activity_group_members")
 }
 
 model PedagogicalRecovery {
@@ -713,6 +848,7 @@ model PlanningEntry {
   sectionSubject       SectionSubject      @relation(fields: [sectionSubjectId], references: [id])
   academicPeriod       AcademicPeriod      @relation(fields: [academicPeriodId], references: [id])
   fundamentalCompetence DrCompetency?      @relation(fields: [fundamentalCompetenceId], references: [id])
+  evaluationActivities EvaluationActivity[]
 
   @@index([schoolId, sectionSubjectId, academicPeriodId])
   @@map("planning_entries")

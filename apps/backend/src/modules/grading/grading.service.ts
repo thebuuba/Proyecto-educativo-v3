@@ -4,9 +4,10 @@
  * Implementa la lógica de negocio para la gestión de calificaciones
  * de los estudiantes en las distintas materias y períodos académicos.
  */
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import { SaveGradeDto } from './dto/save-grade.dto'
+import { SaveEvaluationActivityDto } from './dto/save-evaluation-activity.dto'
 
 const baseGradingPeriods = [
   { name: 'P1 — Agosto, septiembre y octubre', sequence: 1, startMonth: 8, startDay: 1, endMonth: 10, endDay: 31 },
@@ -15,10 +16,67 @@ const baseGradingPeriods = [
   { name: 'P4 — Mayo', sequence: 4, startMonth: 5, startDay: 1, endMonth: 5, endDay: 31 },
 ]
 
+function mapEvaluationActivity(activity: any) {
+  return {
+    id: activity.id,
+    name: activity.name,
+    competencyBlockId: activity.competencyBlockId,
+    maxScore: Number(activity.maxScore),
+    date: activity.activityDate ? activity.activityDate.toISOString().slice(0, 10) : undefined,
+    description: activity.description || undefined,
+    studentRole: activity.studentRole || undefined,
+    teacherRole: activity.teacherRole || undefined,
+    instrumentType: activity.instrument?.type || undefined,
+    instrumentId: activity.instrumentId ?? undefined,
+    evaluationTechnique: activity.evaluationTechnique || undefined,
+    observations: activity.observations || undefined,
+    evidenceInstructions: activity.evidenceInstructions || undefined,
+    activityType: activity.activityType,
+    planningId: activity.planningEntryId ?? undefined,
+    planningMoment: activity.planningMoment ?? '',
+    source: activity.source,
+  }
+}
+
 function periodDate(schoolYearStart: Date, month: number, day: number) {
   const startYear = schoolYearStart.getUTCFullYear()
   const year = month >= 8 ? startYear : startYear + 1
   return new Date(Date.UTC(year, month - 1, day))
+}
+
+async function assertEvaluationActivityScope(
+  schoolId: string,
+  evaluationActivityId: string,
+  sectionSubjectId: string,
+  academicPeriodId: string,
+) {
+  const activity = await prisma.evaluationActivity.findFirst({
+    where: { id: evaluationActivityId, schoolId, status: 'ACTIVE' },
+  })
+  if (!activity) throw new NotFoundException('Evaluation activity not found')
+  if (activity.sectionSubjectId !== sectionSubjectId || activity.academicPeriodId !== academicPeriodId) {
+    throw new BadRequestException('Evaluation activity does not match grading context')
+  }
+}
+
+async function assertPlanningEntryScope(
+  schoolId: string,
+  planningEntryId: string,
+  sectionSubjectId: string,
+  academicPeriodId: string,
+) {
+  const planning = await prisma.planningEntry.findFirst({ where: { id: planningEntryId, schoolId } })
+  if (!planning) throw new NotFoundException('Planning entry not found')
+  if (planning.sectionSubjectId !== sectionSubjectId || planning.academicPeriodId !== academicPeriodId) {
+    throw new BadRequestException('Planning entry does not match activity context')
+  }
+}
+
+async function assertInstrumentScope(schoolId: string, instrumentId: string) {
+  const instrument = await prisma.evaluationInstrument.findFirst({
+    where: { id: instrumentId, schoolId, status: 'ACTIVE' },
+  })
+  if (!instrument) throw new NotFoundException('Evaluation instrument not found')
 }
 
 /**
@@ -51,6 +109,7 @@ export class GradingService {
       weight: Number(grade.weight),
       assessmentName: grade.assessmentName,
       status: grade.status.toLowerCase(),
+      evaluationActivityId: grade.evaluationActivityId,
     }))
   }
 
@@ -169,6 +228,7 @@ export class GradingService {
         weight: Number(grade.weight),
         assessmentName: grade.assessmentName,
         status: grade.status.toLowerCase(),
+        evaluationActivityId: grade.evaluationActivityId,
       })),
       students: enrollments
         .map((enr) => ({
@@ -203,6 +263,14 @@ export class GradingService {
     if (dto.gradeId) {
       const grade = await prisma.gradesRecord.findFirst({ where: { id: dto.gradeId, schoolId } })
       if (!grade) throw new NotFoundException('Grade record not found')
+      if (dto.evaluationActivityId) {
+        await assertEvaluationActivityScope(
+          schoolId,
+          dto.evaluationActivityId,
+          grade.sectionSubjectId,
+          grade.academicPeriodId,
+        )
+      }
       return prisma.gradesRecord.update({
         where: { id: dto.gradeId },
         data: {
@@ -210,6 +278,7 @@ export class GradingService {
           maxScore: dto.maxScore,
           weight: dto.weight,
           assessmentName: dto.assessmentName,
+          evaluationActivityId: dto.evaluationActivityId === undefined ? undefined : dto.evaluationActivityId,
         },
       })
     }
@@ -219,6 +288,20 @@ export class GradingService {
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
+    if (enrollment.sectionId !== sectionSubject.sectionId || enrollment.schoolYearId !== sectionSubject.schoolYearId) {
+      throw new BadRequestException('Enrollment does not match section subject')
+    }
+    if (academicPeriod.schoolYearId !== sectionSubject.schoolYearId) {
+      throw new BadRequestException('Academic period does not match section subject school year')
+    }
+    if (dto.evaluationActivityId) {
+      await assertEvaluationActivityScope(
+        schoolId,
+        dto.evaluationActivityId,
+        dto.sectionSubjectId!,
+        dto.academicPeriodId!,
+      )
+    }
 
     return prisma.gradesRecord.create({
       data: {
@@ -232,7 +315,129 @@ export class GradingService {
         maxScore: dto.maxScore,
         weight: dto.weight ?? 1,
         assessmentName: dto.assessmentName ?? '',
+        evaluationActivityId: dto.evaluationActivityId ?? undefined,
       },
+    })
+  }
+
+  async getActivities(
+    schoolId: string,
+    filters: { sectionSubjectId?: string; academicPeriodId?: string; planningEntryId?: string },
+  ) {
+    const where: any = { schoolId, status: 'ACTIVE' }
+    if (filters.sectionSubjectId) where.sectionSubjectId = filters.sectionSubjectId
+    if (filters.academicPeriodId) where.academicPeriodId = filters.academicPeriodId
+    if (filters.planningEntryId) where.planningEntryId = filters.planningEntryId
+
+    const activities = await prisma.evaluationActivity.findMany({
+      where,
+      include: { instrument: true },
+      orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
+    })
+
+    return activities.map(mapEvaluationActivity)
+  }
+
+  async saveActivity(schoolId: string, userId: string, dto: SaveEvaluationActivityDto) {
+    const sectionSubject = await prisma.sectionSubject.findFirst({
+      where: { id: dto.sectionSubjectId, schoolId },
+    })
+    if (!sectionSubject) throw new NotFoundException('Section subject not found')
+
+    const academicPeriod = await prisma.academicPeriod.findFirst({
+      where: { id: dto.academicPeriodId, schoolId },
+    })
+    if (!academicPeriod) throw new NotFoundException('Academic period not found')
+    const schoolYearId = dto.schoolYearId ?? sectionSubject.schoolYearId
+    if (schoolYearId !== sectionSubject.schoolYearId) {
+      throw new BadRequestException('School year does not match section subject')
+    }
+    if (academicPeriod.schoolYearId !== schoolYearId) {
+      throw new BadRequestException('Academic period does not match section subject school year')
+    }
+    if (dto.planningEntryId) {
+      await assertPlanningEntryScope(schoolId, dto.planningEntryId, dto.sectionSubjectId, dto.academicPeriodId)
+    }
+    if (dto.instrumentId) {
+      await assertInstrumentScope(schoolId, dto.instrumentId)
+    }
+
+    const data = {
+      schoolId,
+      schoolYearId,
+      sectionSubjectId: dto.sectionSubjectId,
+      academicPeriodId: dto.academicPeriodId,
+      planningEntryId: dto.planningEntryId || null,
+      instrumentId: dto.instrumentId || null,
+      competencyBlockId: dto.competencyBlockId,
+      planningMoment: dto.planningMoment || null,
+      name: dto.name.trim(),
+      description: dto.description?.trim() ?? '',
+      activityType: dto.activityType ?? 'individual',
+      maxScore: dto.maxScore,
+      activityDate: dto.date ? new Date(`${dto.date}T00:00:00.000Z`) : null,
+      evaluationTechnique: dto.evaluationTechnique?.trim() ?? '',
+      studentRole: dto.studentRole?.trim() ?? '',
+      teacherRole: dto.teacherRole?.trim() ?? '',
+      evidenceInstructions: dto.evidenceInstructions?.trim() ?? '',
+      observations: dto.observations?.trim() ?? '',
+      source: dto.source ?? (dto.planningEntryId ? 'planning' : 'grading'),
+      createdBy: userId,
+    }
+
+    if (dto.id) {
+      const existing = await prisma.evaluationActivity.findFirst({ where: { id: dto.id, schoolId } })
+      if (!existing) throw new NotFoundException('Evaluation activity not found')
+      const updated = await prisma.evaluationActivity.update({
+        where: { id: dto.id },
+        data,
+        include: { instrument: true },
+      })
+      return mapEvaluationActivity(updated)
+    }
+
+    const created = await prisma.evaluationActivity.create({
+      data,
+      include: { instrument: true },
+    })
+    return mapEvaluationActivity(created)
+  }
+
+  async linkActivityToPlanning(
+    schoolId: string,
+    id: string,
+    dto: { planningEntryId: string | null; planningMoment?: string },
+  ) {
+    const activity = await prisma.evaluationActivity.findFirst({ where: { id, schoolId } })
+    if (!activity) throw new NotFoundException('Evaluation activity not found')
+    if (dto.planningEntryId) {
+      const planning = await prisma.planningEntry.findFirst({ where: { id: dto.planningEntryId, schoolId } })
+      if (!planning) throw new NotFoundException('Planning entry not found')
+      if (
+        planning.sectionSubjectId !== activity.sectionSubjectId ||
+        planning.academicPeriodId !== activity.academicPeriodId
+      ) {
+        throw new BadRequestException('Planning entry does not match activity context')
+      }
+    }
+    const updated = await prisma.evaluationActivity.update({
+      where: { id },
+      data: {
+        planningEntryId: dto.planningEntryId,
+        planningMoment: dto.planningMoment || null,
+        source: dto.planningEntryId ? 'planning' : activity.source,
+      },
+      include: { instrument: true },
+    })
+    return mapEvaluationActivity(updated)
+  }
+
+  async deleteActivity(schoolId: string, id: string) {
+    const activity = await prisma.evaluationActivity.findFirst({ where: { id, schoolId } })
+    if (!activity) throw new NotFoundException('Evaluation activity not found')
+    return prisma.evaluationActivity.update({
+      where: { id },
+      data: { status: 'INACTIVE' },
     })
   }
 

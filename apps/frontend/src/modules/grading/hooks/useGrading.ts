@@ -2,11 +2,14 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import {
   deleteGrade,
+  deleteEvaluationActivity,
   getAcademicPeriods,
+  getEvaluationActivities,
   getGradeRecords,
   getStudentsForGrading,
   getTeacherSectionSubjects,
   saveGrade,
+  saveEvaluationActivity,
 } from '@/modules/grading/services/gradingService'
 import type {
   GradeRecordRow,
@@ -26,31 +29,6 @@ import {
   type CompetencyPeriodId,
 } from '@/modules/grading/utils/competencyGrades'
 
-const activitiesStoragePrefix = 'aula-base:grades:activities'
-
-function activitiesStorageKey(sectionSubjectId: string, periodId: string) {
-  return `${activitiesStoragePrefix}:${sectionSubjectId}:${periodId}`
-}
-
-function readStoredActivities(sectionSubjectId: string, periodId: string) {
-  if (!sectionSubjectId || typeof window === 'undefined') return []
-  const raw = window.localStorage.getItem(activitiesStorageKey(sectionSubjectId, periodId))
-  if (!raw) return []
-  try {
-    const parsed = JSON.parse(raw)
-    return Array.isArray(parsed) ? parsed as GradingActivity[] : []
-  } catch {
-    return []
-  }
-}
-
-function writeStoredActivities(sectionSubjectId: string, periodId: string, activities: GradingActivity[]) {
-  window.localStorage.setItem(
-    activitiesStorageKey(sectionSubjectId, periodId),
-    JSON.stringify(activities),
-  )
-}
-
 export function useGrading() {
   const [sectionSubjects, setSectionSubjects] = useState<SectionSubjectOption[]>([])
   const [academicPeriods, setAcademicPeriods] = useState<AcademicPeriodOpt[]>([])
@@ -63,6 +41,7 @@ export function useGrading() {
   const [students, setStudents] = useState<StudentGradeRow[]>([])
   const [gradeRecords, setGradeRecords] = useState<GradeRecordRow[]>([])
   const [activities, setActivities] = useState<GradingActivity[]>([])
+  const [activitiesByPeriod, setActivitiesByPeriod] = useState<Map<CompetencyPeriodId, GradingActivity[]>>(new Map())
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -119,14 +98,18 @@ export function useGrading() {
     setLoading(true)
     setError(null)
     try {
-      const result = await getStudentsForGrading(selectedSsId, academicPeriodId)
+      const [result, activityList] = await Promise.all([
+        getStudentsForGrading(selectedSsId, academicPeriodId),
+        getEvaluationActivities(selectedSsId, academicPeriodId),
+      ])
       setGradingContext({
         sectionId: result.sectionId,
         schoolYearId: result.schoolYearId,
       })
       setStudents(sortStudentsForGrades(result.students))
       setGradeRecords(result.gradeRecords)
-      setActivities(readStoredActivities(selectedSsId, selectedPeriodId))
+      setActivities(activityList)
+      setActivitiesByPeriod((current) => new Map(current).set(selectedPeriodId, activityList))
     } catch (error) {
       setError(error instanceof Error ? error.message : 'No se pudieron cargar las calificaciones.')
       setStudents([])
@@ -150,53 +133,62 @@ export function useGrading() {
         .map(async (period, index) => {
           const periodId = academicPeriods[index]?.id
           const records = periodId ? await getGradeRecords(selectedSsId, periodId) : []
+          const periodActivities = periodId ? await getEvaluationActivities(selectedSsId, periodId) : []
           recordsByPeriod.set(period.id as CompetencyPeriodId, records)
+          setActivitiesByPeriod((current) => new Map(current).set(period.id as CompetencyPeriodId, periodActivities))
         }),
     )
     return recordsByPeriod
   }, [academicPeriods, selectedSs, selectedSsId])
 
   const getActivitiesForPeriod = useCallback(
-    (periodId: CompetencyPeriodId) => readStoredActivities(selectedSsId, periodId),
-    [selectedSsId],
+    (periodId: CompetencyPeriodId) => periodId === selectedPeriodId
+      ? activities
+      : activitiesByPeriod.get(periodId) ?? [],
+    [activities, activitiesByPeriod, selectedPeriodId],
   )
 
-  function addActivity(activity: Omit<GradingActivity, 'id'>) {
-    const next: GradingActivity = {
+  async function addActivity(activity: Omit<GradingActivity, 'id'>) {
+    if (!selectedSsId || !academicPeriodId || !gradingContext) return
+    const created = await saveEvaluationActivity({
       ...activity,
-      id: crypto.randomUUID(),
-    }
-    const updated = [...activities, next]
+      sectionSubjectId: selectedSsId,
+      academicPeriodId,
+      schoolYearId: gradingContext.schoolYearId,
+    })
+    const updated = [...activities, created]
     setActivities(updated)
-    if (selectedSsId) {
-      writeStoredActivities(selectedSsId, selectedPeriodId, updated)
-    }
+    setActivitiesByPeriod((current) => new Map(current).set(selectedPeriodId, updated))
   }
 
-  function updateActivity(activity: GradingActivity) {
-    const updated = activities.map((item) => item.id === activity.id ? activity : item)
+  async function updateActivity(activity: GradingActivity) {
+    if (!selectedSsId || !academicPeriodId || !gradingContext) return
+    const saved = await saveEvaluationActivity({
+      ...activity,
+      sectionSubjectId: selectedSsId,
+      academicPeriodId,
+      schoolYearId: gradingContext.schoolYearId,
+    })
+    const updated = activities.map((item) => item.id === saved.id ? saved : item)
     setActivities(updated)
-    if (selectedSsId) {
-      writeStoredActivities(selectedSsId, selectedPeriodId, updated)
-    }
+    setActivitiesByPeriod((current) => new Map(current).set(selectedPeriodId, updated))
   }
 
-  function deleteActivity(activityId: string) {
+  async function deleteActivity(activityId: string) {
+    await deleteEvaluationActivity(activityId)
     const updated = activities.filter((item) => item.id !== activityId)
     setActivities(updated)
-    if (selectedSsId) {
-      writeStoredActivities(selectedSsId, selectedPeriodId, updated)
-    }
+    setActivitiesByPeriod((current) => new Map(current).set(selectedPeriodId, updated))
   }
 
   const updateActivityScore = useCallback(
     async (enrollmentId: string, activity: GradingActivity, value: string) => {
       if (!gradingContext || !academicPeriodId) return
       const score = value.trim() === '' ? null : Number(value)
-      const existing = gradeRecords.find((record) =>
-        record.enrollmentId === enrollmentId &&
-        getActivityIdFromRecordName(record.assessmentName) === activity.id
-      )
+        const existing = gradeRecords.find((record) =>
+          record.enrollmentId === enrollmentId &&
+          (record.evaluationActivityId === activity.id || getActivityIdFromRecordName(record.assessmentName) === activity.id)
+        )
       if (score === null) {
         if (existing) {
           setSaving(true)
@@ -229,6 +221,7 @@ export function useGrading() {
           maxScore: activity.maxScore,
           weight: 1,
           assessmentName: activityRecordName(activity),
+          evaluationActivityId: activity.id,
           gradeId: existing?.id ?? null,
         })
         await loadGrades()

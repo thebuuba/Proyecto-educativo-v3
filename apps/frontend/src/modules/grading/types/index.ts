@@ -36,6 +36,7 @@ export type GradeRecordRow = {
   weight: number
   assessmentName: string
   status: GradeRecordStatus | null
+  evaluationActivityId?: string | null
 }
 
 export type GradingActivity = {
@@ -48,13 +49,16 @@ export type GradingActivity = {
   studentRole?: string
   teacherRole?: string
   instrumentType?: string
+  instrumentId?: string
   evaluationTechnique?: string
   observations?: string
+  evidenceInstructions?: string
   futurePlanningLink?: string
   futureInstrumentLink?: string
   activityType?: 'individual' | 'group'
   planningId?: string
   planningMoment?: 'inicio' | 'desarrollo' | 'cierre' | ''
+  source?: 'grading' | 'planning'
 }
 
 export type RecoveryScores = Record<string, Record<string, number | null>>
@@ -95,5 +99,6 @@ export type SaveGradeInput = {
   maxScore: number
   weight: number
   assessmentName: string
+  evaluationActivityId?: string | null
   gradeId?: string | null
 }

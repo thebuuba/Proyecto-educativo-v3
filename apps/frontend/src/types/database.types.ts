@@ -160,6 +160,7 @@ export type Database = {
           attendance_date: string
           created_at: string
           enrollment_id: string
+          evaluation_activity_id: string | null
           id: string
           notes: string | null
           recorded_by: string | null
@@ -175,6 +176,7 @@ export type Database = {
           attendance_date: string
           created_at?: string
           enrollment_id: string
+          evaluation_activity_id?: string | null
           id?: string
           notes?: string | null
           recorded_by?: string | null
@@ -190,6 +192,7 @@ export type Database = {
           attendance_date?: string
           created_at?: string
           enrollment_id?: string
+          evaluation_activity_id?: string | null
           id?: string
           notes?: string | null
           recorded_by?: string | null
@@ -811,6 +814,304 @@ export type Database = {
           },
         ]
       }
+      evaluation_activities: {
+        Row: {
+          academic_period_id: string
+          activity_date: string | null
+          activity_type: string
+          competency_block_id: string
+          created_at: string
+          created_by: string | null
+          description: string
+          evaluation_technique: string
+          evidence_instructions: string
+          id: string
+          instrument_id: string | null
+          max_score: number
+          name: string
+          observations: string
+          planning_entry_id: string | null
+          planning_moment: string | null
+          school_id: string
+          school_year_id: string
+          section_subject_id: string
+          source: string
+          status: Database["public"]["Enums"]["record_status"]
+          student_role: string
+          teacher_role: string
+          updated_at: string
+        }
+        Insert: {
+          academic_period_id: string
+          activity_date?: string | null
+          activity_type?: string
+          competency_block_id: string
+          created_at?: string
+          created_by?: string | null
+          description?: string
+          evaluation_technique?: string
+          evidence_instructions?: string
+          id?: string
+          instrument_id?: string | null
+          max_score?: number
+          name: string
+          observations?: string
+          planning_entry_id?: string | null
+          planning_moment?: string | null
+          school_id: string
+          school_year_id: string
+          section_subject_id: string
+          source?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          student_role?: string
+          teacher_role?: string
+          updated_at?: string
+        }
+        Update: {
+          academic_period_id?: string
+          activity_date?: string | null
+          activity_type?: string
+          competency_block_id?: string
+          created_at?: string
+          created_by?: string | null
+          description?: string
+          evaluation_technique?: string
+          evidence_instructions?: string
+          id?: string
+          instrument_id?: string | null
+          max_score?: number
+          name?: string
+          observations?: string
+          planning_entry_id?: string | null
+          planning_moment?: string | null
+          school_id?: string
+          school_year_id?: string
+          section_subject_id?: string
+          source?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          student_role?: string
+          teacher_role?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "evaluation_activities_academic_period_id_fkey"
+            columns: ["academic_period_id"]
+            isOneToOne: false
+            referencedRelation: "academic_periods"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "evaluation_activities_instrument_id_fkey"
+            columns: ["instrument_id"]
+            isOneToOne: false
+            referencedRelation: "evaluation_instruments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "evaluation_activities_planning_entry_id_fkey"
+            columns: ["planning_entry_id"]
+            isOneToOne: false
+            referencedRelation: "planning_entries"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "evaluation_activities_section_subject_id_fkey"
+            columns: ["section_subject_id"]
+            isOneToOne: false
+            referencedRelation: "section_subjects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      evaluation_activity_evidences: {
+        Row: {
+          activity_id: string
+          created_at: string
+          file_name: string
+          file_size: number | null
+          file_type: string
+          file_url: string
+          id: string
+          notes: string
+          school_id: string
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          activity_id: string
+          created_at?: string
+          file_name: string
+          file_size?: number | null
+          file_type?: string
+          file_url: string
+          id?: string
+          notes?: string
+          school_id: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          activity_id?: string
+          created_at?: string
+          file_name?: string
+          file_size?: number | null
+          file_type?: string
+          file_url?: string
+          id?: string
+          notes?: string
+          school_id?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "evaluation_activity_evidences_activity_id_fkey"
+            columns: ["activity_id"]
+            isOneToOne: false
+            referencedRelation: "evaluation_activities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      evaluation_activity_group_members: {
+        Row: {
+          created_at: string
+          enrollment_id: string
+          group_id: string
+          id: string
+          individual_score: number | null
+          notes: string
+          school_id: string
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          enrollment_id: string
+          group_id: string
+          id?: string
+          individual_score?: number | null
+          notes?: string
+          school_id: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          enrollment_id?: string
+          group_id?: string
+          id?: string
+          individual_score?: number | null
+          notes?: string
+          school_id?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "evaluation_activity_group_members_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "evaluation_activity_groups"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      evaluation_activity_groups: {
+        Row: {
+          activity_id: string
+          created_at: string
+          id: string
+          name: string
+          notes: string
+          school_id: string
+          score: number | null
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          activity_id: string
+          created_at?: string
+          id?: string
+          name: string
+          notes?: string
+          school_id: string
+          score?: number | null
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          activity_id?: string
+          created_at?: string
+          id?: string
+          name?: string
+          notes?: string
+          school_id?: string
+          score?: number | null
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "evaluation_activity_groups_activity_id_fkey"
+            columns: ["activity_id"]
+            isOneToOne: false
+            referencedRelation: "evaluation_activities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      evaluation_instruments: {
+        Row: {
+          created_at: string
+          criteria: Json
+          description: string
+          generated_by_ai: boolean
+          id: string
+          max_score: number
+          name: string
+          school_id: string
+          status: Database["public"]["Enums"]["record_status"]
+          type: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          criteria?: Json
+          description?: string
+          generated_by_ai?: boolean
+          id?: string
+          max_score?: number
+          name: string
+          school_id: string
+          status?: Database["public"]["Enums"]["record_status"]
+          type: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          criteria?: Json
+          description?: string
+          generated_by_ai?: boolean
+          id?: string
+          max_score?: number
+          name?: string
+          school_id?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          type?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "evaluation_instruments_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       grades_records: {
         Row: {
           academic_period_id: string
@@ -864,6 +1165,13 @@ export type Database = {
           weight?: number
         }
         Relationships: [
+          {
+            foreignKeyName: "grades_records_evaluation_activity_id_fkey"
+            columns: ["evaluation_activity_id"]
+            isOneToOne: false
+            referencedRelation: "evaluation_activities"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "fk_grades_records_school"
             columns: ["school_id"]

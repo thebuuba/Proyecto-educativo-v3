@@ -4,6 +4,7 @@ import {
   BookOpen,
   CalendarDays,
   CheckCircle2,
+  ChevronDown,
   ClipboardList,
   Download,
   Hourglass,
@@ -19,10 +20,10 @@ import { useEffect, useMemo, useState, type KeyboardEvent, type ReactNode } from
 
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
-import { Drawer } from '@/components/ui/Drawer'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
 import { Select } from '@/components/ui/Select'
+import { Textarea } from '@/components/ui/Textarea'
 import type {
   GradeCalculationConfig,
   GradeRecordRow,
@@ -65,10 +66,15 @@ type GradingBookProps = {
   onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => void
   loadFinalRecords: () => Promise<Map<CompetencyPeriodId, GradeRecordRow[]>>
   getActivitiesForPeriod: (periodId: CompetencyPeriodId) => GradingActivity[]
+  onActivityWorkspaceChange?: (active: boolean) => void
 }
 
 type MainView = 'blocks' | 'period' | 'annual' | 'final'
-type DetailView = { type: 'block'; blockId: CompetencyBlockId } | { type: 'activity'; activityId: string }
+type DetailView =
+  | { type: 'block'; blockId: CompetencyBlockId }
+  | { type: 'activity'; activityId: string }
+  | { type: 'activity-hub' }
+  | { type: 'activity-create'; blockId: CompetencyBlockId }
 
 const blockAccents = [
   {
@@ -95,12 +101,13 @@ const blockAccents = [
 
 const blockShortNames: Record<string, string> = {
   b1: 'Competencia Comunicativa',
-  b2: 'Pensamiento lógico',
-  b3: 'Ética y ciudadanía',
-  b4: 'Científica y tecnológica',
+  b2: 'Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas',
+  b3: 'Ética y Ciudadana y Desarrollo Personal y Espiritual',
+  b4: 'Científica y Tecnológica y Ambiental y de la Salud',
 }
 
 type ActivityDraft = {
+  draftId?: string
   name: string
   maxScore: string
   competencyBlockId: string
@@ -115,6 +122,8 @@ type ActivityDraft = {
   activityType: 'individual' | 'group'
 }
 
+type ActivityDraftsByBlock = Partial<Record<CompetencyBlockId, ActivityDraft[]>>
+
 const emptyActivityDraft: ActivityDraft = {
   name: '',
   maxScore: '20',
@@ -125,7 +134,7 @@ const emptyActivityDraft: ActivityDraft = {
   teacherRole: '',
   instrumentType: '',
   evaluationTechnique: '',
-  planningMoment: '',
+  planningMoment: 'desarrollo',
   observations: '',
   activityType: 'individual',
 }
@@ -148,13 +157,16 @@ export function GradingBook({
   onSaveRecovery,
   loadFinalRecords,
   getActivitiesForPeriod,
+  onActivityWorkspaceChange,
 }: GradingBookProps) {
   const [mainView, setMainView] = useState<MainView>(initialView)
   const [detailView, setDetailView] = useState<DetailView | null>(null)
+  const [activityCreateReturnView, setActivityCreateReturnView] = useState<DetailView | null>(null)
   const [showConfig, setShowConfig] = useState(false)
-  const [showActivityManager, setShowActivityManager] = useState(false)
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null)
   const [activityDraft, setActivityDraft] = useState(emptyActivityDraft)
+  const [activityDrafts, setActivityDrafts] = useState<ActivityDraftsByBlock>({})
+  const [draftsReadyKey, setDraftsReadyKey] = useState<string | null>(null)
   const [config, setConfig] = useState<GradeCalculationConfig>(defaultGradeCalculationConfig)
   const [recordsByPeriod, setRecordsByPeriod] = useState<Map<CompetencyPeriodId, GradeRecordRow[]>>(new Map())
   const [loadingAnnual, setLoadingAnnual] = useState(false)
@@ -167,9 +179,22 @@ export function GradingBook({
   const selectedBlock = detailView?.type === 'block'
     ? competencyBlocks.find((block) => block.id === detailView.blockId) ?? null
     : null
+  const selectedCreateBlock = detailView?.type === 'activity-create'
+    ? competencyBlocks.find((block) => block.id === detailView.blockId) ?? null
+    : null
   const selectedActivity = detailView?.type === 'activity'
     ? activities.find((activity) => activity.id === detailView.activityId) ?? null
     : null
+  const isActivityWorkspace = detailView?.type === 'activity-hub' || detailView?.type === 'activity-create' || detailView?.type === 'activity'
+  const draftStorageKey = useMemo(
+    () => `grading-activity-drafts:${courseTitle}:${periodShortName}`,
+    [courseTitle, periodShortName],
+  )
+
+  useEffect(() => {
+    onActivityWorkspaceChange?.(isActivityWorkspace)
+    return () => onActivityWorkspaceChange?.(false)
+  }, [isActivityWorkspace, onActivityWorkspaceChange])
 
   const blockSummaries = useMemo(
     () => competencyBlocks.map((block, index) => {
@@ -240,6 +265,118 @@ export function GradingBook({
     }
   }, [loadFinalRecords, mainView])
 
+  useEffect(() => {
+    setDraftsReadyKey(null)
+    try {
+      const stored = window.localStorage.getItem(draftStorageKey)
+      setActivityDrafts(stored ? normalizeStoredActivityDrafts(JSON.parse(stored)) : {})
+    } catch {
+      setActivityDrafts({})
+    }
+    setDraftsReadyKey(draftStorageKey)
+  }, [draftStorageKey])
+
+  useEffect(() => {
+    if (draftsReadyKey !== draftStorageKey) return
+    try {
+      window.localStorage.setItem(draftStorageKey, JSON.stringify(activityDrafts))
+    } catch {
+      // Local draft persistence is optional; failing storage should not block grading.
+    }
+  }, [activityDrafts, draftStorageKey, draftsReadyKey])
+
+  function openActivityHub() {
+    setEditingActivityId(null)
+    setActivityDraft(emptyActivityDraft)
+    setDetailView({ type: 'activity-hub' })
+  }
+
+  function openActivityCreator(blockId: CompetencyBlockId) {
+    setEditingActivityId(null)
+    setActivityDraft(newActivityDraft(blockId))
+    setActivityCreateReturnView(detailView ?? { type: 'activity-hub' })
+    setDetailView({ type: 'activity-create', blockId })
+  }
+
+  function openActivityDraft(blockId: CompetencyBlockId, draftId: string) {
+    const draft = activityDrafts[blockId]?.find((item) => item.draftId === draftId)
+    setEditingActivityId(null)
+    setActivityDraft(draft ?? newActivityDraft(blockId))
+    setActivityCreateReturnView(detailView ?? { type: 'activity-hub' })
+    setDetailView({ type: 'activity-create', blockId })
+  }
+
+  function goBackFromActivityCreator() {
+    setEditingActivityId(null)
+    setActivityDraft(emptyActivityDraft)
+    setDetailView(activityCreateReturnView)
+    setActivityCreateReturnView(null)
+  }
+
+  function discardActivityDraft(blockId: CompetencyBlockId, draftId?: string) {
+    setActivityDrafts((current) => {
+      const next = { ...current }
+      if (draftId) {
+        const remaining = (next[blockId] ?? []).filter((item) => item.draftId !== draftId)
+        if (remaining.length > 0) {
+          next[blockId] = remaining
+        } else {
+          delete next[blockId]
+        }
+      } else {
+        delete next[blockId]
+      }
+      persistActivityDrafts(next)
+      return next
+    })
+    if (detailView?.type === 'activity-create' && detailView.blockId === blockId && !editingActivityId && (!draftId || draftId === activityDraft.draftId)) {
+      setActivityDraft(newActivityDraft(blockId))
+    }
+  }
+
+  function persistActivityDrafts(nextDrafts: ActivityDraftsByBlock) {
+    if (draftsReadyKey !== draftStorageKey) return
+    try {
+      window.localStorage.setItem(draftStorageKey, JSON.stringify(nextDrafts))
+    } catch {
+      // Local draft persistence is optional; failing storage should not block grading.
+    }
+  }
+
+  function updateActivityDraft(nextDraft: ActivityDraft) {
+    setActivityDraft(nextDraft)
+    if (detailView?.type !== 'activity-create' || editingActivityId) return
+    const blockId = detailView.blockId
+    const normalizedDraft = {
+      ...nextDraft,
+      draftId: nextDraft.draftId ?? createDraftId(),
+      competencyBlockId: blockId,
+    }
+    const draftToStore = isMeaningfulActivityDraft(nextDraft) ? normalizedDraft : nextDraft
+    if (draftToStore.draftId !== nextDraft.draftId) {
+      setActivityDraft(draftToStore)
+    }
+    setActivityDrafts((current) => {
+      const next = { ...current }
+      if (isMeaningfulActivityDraft(nextDraft)) {
+        const blockDrafts = next[blockId] ?? []
+        const existingIndex = blockDrafts.findIndex((item) => item.draftId === normalizedDraft.draftId)
+        next[blockId] = existingIndex >= 0
+          ? blockDrafts.map((item, index) => (index === existingIndex ? normalizedDraft : item))
+          : [normalizedDraft, ...blockDrafts]
+      } else {
+        const remaining = (next[blockId] ?? []).filter((item) => item.draftId !== nextDraft.draftId)
+        if (remaining.length > 0) {
+          next[blockId] = remaining
+        } else {
+          delete next[blockId]
+        }
+      }
+      persistActivityDrafts(next)
+      return next
+    })
+  }
+
   function saveActivityDraft() {
     const maxScore = Number(activityDraft.maxScore)
     if (!activityDraft.name.trim() || Number.isNaN(maxScore) || maxScore <= 0) return
@@ -263,8 +400,10 @@ export function GradingBook({
       setEditingActivityId(null)
     } else {
       onAddActivity(activity)
+      discardActivityDraft(activity.competencyBlockId as CompetencyBlockId, activityDraft.draftId)
     }
     setActivityDraft(emptyActivityDraft)
+    setDetailView({ type: 'block', blockId: activity.competencyBlockId as CompetencyBlockId })
   }
 
   function editActivity(activity: GradingActivity) {
@@ -283,13 +422,49 @@ export function GradingBook({
       observations: activity.observations ?? '',
       activityType: activity.activityType ?? 'individual',
     })
-    setShowActivityManager(true)
+    setActivityCreateReturnView(detailView)
+    setDetailView({ type: 'activity-create', blockId: activity.competencyBlockId as CompetencyBlockId })
   }
 
   function duplicateActivity(activity: GradingActivity) {
     onAddActivity({
       ...activity,
       name: `${activity.name} copia`,
+    })
+  }
+
+  function downloadBlockSummary(format: 'csv' | 'doc') {
+    const rows = blockSummaries.map((summary) => ({
+      block: `Bloque ${summary.index + 1}`,
+      competency: blockShortNames[summary.block.id],
+      activities: summary.activities.length,
+      average: formatGrade(summary.average),
+      pending: countPendingScores(summary.activities, records, students),
+      status: summary.status,
+    }))
+    const payload = {
+      courseTitle,
+      periodName,
+      periodAverage: formatGrade(periodAverage),
+      students: students.length,
+      activities: activities.length,
+      pendingBlocks,
+      rows,
+    }
+
+    if (format === 'csv') {
+      downloadTextFile({
+        content: blockSummaryCsv(payload),
+        filename: blockSummaryFilename(courseTitle, periodShortName, 'csv'),
+        type: 'text/csv;charset=utf-8',
+      })
+      return
+    }
+
+    downloadTextFile({
+      content: blockSummaryDoc(payload),
+      filename: blockSummaryFilename(courseTitle, periodShortName, 'doc'),
+      type: 'application/msword;charset=utf-8',
     })
   }
 
@@ -303,31 +478,50 @@ export function GradingBook({
 
   return (
     <div className="space-y-3">
+      {!isActivityWorkspace ? (
       <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-2 shadow-sm xl:flex-row xl:items-center xl:justify-between">
         <div className="flex flex-wrap gap-2">
           <ViewButton active={mainView === 'blocks'} icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => { setMainView('blocks'); setDetailView(null) }} />
           <ViewButton active={mainView === 'period'} icon={<ClipboardList className="size-4" />} label="Período" onClick={() => { setMainView('period'); setDetailView(null) }} />
           <ViewButton active={mainView === 'annual'} icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => { setMainView('annual'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'final'} icon={<Trophy className="size-4" />} label="Final" onClick={() => { setMainView('final'); setDetailView(null) }} />
+          <ViewButton active={mainView === 'final'} icon={<Trophy className="size-4" />} label="Resumen final" onClick={() => { setMainView('final'); setDetailView(null) }} />
         </div>
         <div className="flex flex-wrap gap-2">
-          <Badge tone="muted" className="h-9 rounded-xl px-3">
-            {periodShortName}
-          </Badge>
-          <Button variant="outline" className="h-9 px-3" onClick={() => window.print()}>
-            <Download className="size-4" />
-            Descargar
+          <Button
+            variant="outline"
+            className="h-9 px-3 text-emerald-700"
+            aria-label="Descargar resumen en Excel"
+            onClick={() => downloadBlockSummary('csv')}
+          >
+            <OfficeIcon app="excel" />
+            Excel
+          </Button>
+          <Button
+            variant="outline"
+            className="h-9 px-3 text-blue-700"
+            aria-label="Descargar resumen en Word"
+            onClick={() => downloadBlockSummary('doc')}
+          >
+            <OfficeIcon app="word" />
+            Word
           </Button>
           <Button variant="outline" className="h-9 px-3" onClick={() => setShowConfig(true)}>
             <Settings className="size-4" />
             Configurar cálculo
           </Button>
-          <Button className="h-9 px-3" onClick={() => setShowActivityManager(true)}>
+          <Button className="h-9 px-3" onClick={() => {
+            if (detailView?.type === 'block') {
+              openActivityCreator(detailView.blockId)
+              return
+            }
+            openActivityHub()
+          }}>
             <Plus className="size-4" />
             Agregar actividad
           </Button>
         </div>
       </div>
+      ) : null}
 
       {!detailView && mainView === 'blocks' ? (
         <div className="rounded-lg border border-border bg-card p-3 shadow-sm">
@@ -355,6 +549,39 @@ export function GradingBook({
             records={records}
             recoveryLabel={recoveryLabel}
             recoveryScores={recoveryScores}
+            saving={saving}
+            students={students}
+          />
+        ) : detailView.type === 'activity-hub' ? (
+          <ActivitiesHubView
+            activities={activities}
+            courseTitle={courseTitle}
+            drafts={activityDrafts}
+            onBack={() => setDetailView(null)}
+            onDiscardDraft={discardActivityDraft}
+            onOpenActivity={(activityId) => setDetailView({ type: 'activity', activityId })}
+            onOpenDraft={openActivityDraft}
+            onSelectBlock={openActivityCreator}
+            periodName={periodName}
+          />
+        ) : detailView.type === 'activity-create' && selectedCreateBlock ? (
+          <ActivityCreationView
+            activityDraft={activityDraft}
+            hasDraft={Boolean(activityDraft.draftId && isMeaningfulActivityDraft(activityDraft)) && !editingActivityId}
+            activities={activities.filter((activity) => activity.competencyBlockId === selectedCreateBlock.id)}
+            block={selectedCreateBlock}
+            editingActivityId={editingActivityId}
+            onBack={goBackFromActivityCreator}
+            onCancelEdit={() => {
+              setEditingActivityId(null)
+              setActivityDraft({ ...emptyActivityDraft, competencyBlockId: selectedCreateBlock.id })
+            }}
+            onChangeDraft={updateActivityDraft}
+            onDeleteActivity={onDeleteActivity}
+            onDuplicateActivity={duplicateActivity}
+            onEditActivity={editActivity}
+            onOpenActivity={(activityId) => setDetailView({ type: 'activity', activityId })}
+            onSaveActivity={saveActivityDraft}
             saving={saving}
             students={students}
           />
@@ -400,26 +627,6 @@ export function GradingBook({
           students={students}
         />
       )}
-
-      {showActivityManager ? (
-        <Drawer title="Gestionar actividades" eyebrow="Calificaciones" onClose={() => setShowActivityManager(false)}>
-          <ActivityManager
-            activityDraft={activityDraft}
-            activities={activities}
-            editingActivityId={editingActivityId}
-            onCancelEdit={() => {
-              setEditingActivityId(null)
-              setActivityDraft(emptyActivityDraft)
-            }}
-            onChangeDraft={setActivityDraft}
-            onDeleteActivity={onDeleteActivity}
-            onDuplicateActivity={duplicateActivity}
-            onEditActivity={editActivity}
-            onSaveActivity={saveActivityDraft}
-            saving={saving}
-          />
-        </Drawer>
-      ) : null}
 
       {showConfig ? (
         <CalculationConfigModal config={config} onChange={setConfig} onClose={() => setShowConfig(false)} />
@@ -543,9 +750,6 @@ function BlockMatrixView({
     <section className="space-y-3">
       <div>
         <h2 className="text-2xl font-bold leading-tight text-primary">Bloques de competencias</h2>
-        <p className="text-sm text-muted-foreground">
-          Cada bloque suma {config.expectedBlockTotal} puntos. Haz clic en un bloque para ver sus actividades y calificaciones.
-        </p>
       </div>
       <div className="grid gap-3 xl:grid-cols-4">
         {blockSummaries.map((summary) => {
@@ -557,10 +761,10 @@ function BlockMatrixView({
                 <Badge tone="default" className="h-6 rounded-lg px-2 text-[11px] uppercase">
                   Bloque {summary.index + 1}
                 </Badge>
-                <h3 className="mt-3 min-h-[3.1rem] text-base font-black leading-6 text-primary">
+                <h3 className="mt-2 min-h-12 text-[0.82rem] font-black leading-4 text-primary">
                   {blockShortNames[summary.block.id]}
                 </h3>
-                <div className="mt-3 flex items-end gap-3">
+                <div className="mt-2 flex items-end gap-3">
                   <div className={cn('grid size-16 place-items-center rounded-full border-4 bg-card text-xl font-black text-primary', accent.panel)}>
                     {formatGrade(summary.average)}
                   </div>
@@ -1279,6 +1483,7 @@ function ActivityManager({
   onEditActivity,
   onSaveActivity,
   saving,
+  showCompetencySelect = true,
 }: {
   activityDraft: ActivityDraft
   activities: GradingActivity[]
@@ -1290,58 +1495,143 @@ function ActivityManager({
   onEditActivity: (activity: GradingActivity) => void
   onSaveActivity: () => void
   saving: boolean
+  showCompetencySelect?: boolean
 }) {
+  const [descriptionExpanded, setDescriptionExpanded] = useState(false)
+  const [descriptionEditing, setDescriptionEditing] = useState(false)
+  const hasLongDescription = activityDraft.description.length > 160
+
   return (
-    <div className="grid gap-3">
-      <Select value={activityDraft.competencyBlockId} onChange={(event) => onChangeDraft({ ...activityDraft, competencyBlockId: event.target.value })}>
-        {competencyBlocks.map((block) => (
-          <option key={block.id} value={block.id}>{block.shortName} · {block.name}</option>
-        ))}
-      </Select>
-      <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_8rem]">
-        <Input value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Nombre de la actividad" />
-        <Input type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="Valor" />
-      </div>
-      <div className="grid gap-3 sm:grid-cols-3">
-        <Input type="date" value={activityDraft.date} onChange={(event) => onChangeDraft({ ...activityDraft, date: event.target.value })} />
-        <Input value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })} placeholder="Técnica de evaluación" />
-        <Select value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}>
-          <option value="">Instrumento</option>
-          <option value="rubrica">Rúbrica</option>
-          <option value="lista-cotejo">Lista de cotejo</option>
-          <option value="escala">Escala estimativa</option>
-          <option value="prueba">Prueba escrita</option>
-          <option value="otro">Otro</option>
+    <div className="grid gap-2.5">
+      {showCompetencySelect ? (
+        <Select value={activityDraft.competencyBlockId} onChange={(event) => onChangeDraft({ ...activityDraft, competencyBlockId: event.target.value })}>
+          {competencyBlocks.map((block) => (
+            <option key={block.id} value={block.id}>{block.shortName} · {block.name}</option>
+          ))}
         </Select>
+      ) : null}
+      <div className="grid gap-2.5 sm:grid-cols-[minmax(0,1fr)_7rem]">
+        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+          Nombre de la actividad
+          <Input className="h-10" value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Ej. Exposición oral sobre ecosistemas" />
+        </label>
+        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+          Valor
+          <Input className="h-10" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" />
+        </label>
       </div>
-      <Select value={activityDraft.activityType} onChange={(event) => onChangeDraft({ ...activityDraft, activityType: event.target.value as ActivityDraft['activityType'] })}>
-        <option value="individual">Actividad individual</option>
-        <option value="group">Actividad grupal</option>
-      </Select>
-      <Input value={activityDraft.description} onChange={(event) => onChangeDraft({ ...activityDraft, description: event.target.value })} placeholder="Descripción" />
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Input value={activityDraft.studentRole} onChange={(event) => onChangeDraft({ ...activityDraft, studentRole: event.target.value })} placeholder="Rol del estudiante" />
-        <Input value={activityDraft.teacherRole} onChange={(event) => onChangeDraft({ ...activityDraft, teacherRole: event.target.value })} placeholder="Rol del docente" />
+      <div className="grid gap-2.5 sm:grid-cols-3">
+        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+          Fecha de realización
+          <Input className="h-10" type="date" value={activityDraft.date} onChange={(event) => onChangeDraft({ ...activityDraft, date: event.target.value })} />
+        </label>
+        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+          Técnica de evaluación
+          <Select className="h-10" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })}>
+            <option value="" disabled>Ej. Observación directa</option>
+            <option value="observacion-directa">Observación directa</option>
+            <option value="observacion-sistematica">Observación sistemática</option>
+            <option value="preguntas-orales">Preguntas orales</option>
+            <option value="dialogo-reflexivo">Diálogo reflexivo</option>
+            <option value="debate">Debate</option>
+            <option value="exposicion">Exposición</option>
+            <option value="presentacion">Presentación</option>
+            <option value="entrevista">Entrevista</option>
+            <option value="mesa-redonda">Mesa redonda</option>
+            <option value="dramatizacion">Dramatización</option>
+            <option value="analisis-producciones">Análisis de producciones</option>
+            <option value="portafolio">Portafolio</option>
+            <option value="diario-reflexivo">Diario reflexivo</option>
+            <option value="estudio-caso">Estudio de caso</option>
+            <option value="proyecto">Proyecto</option>
+            <option value="resolucion-problemas">Resolución de problemas</option>
+            <option value="mapa-conceptual">Mapa conceptual</option>
+            <option value="ensayo">Ensayo</option>
+            <option value="prueba-escrita">Prueba escrita</option>
+            <option value="autoevaluacion">Autoevaluación</option>
+            <option value="coevaluacion">Coevaluación</option>
+            <option value="heteroevaluacion">Heteroevaluación</option>
+          </Select>
+        </label>
+        <label className="space-y-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+          Instrumento de evaluación
+          <Select className="h-10" value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}>
+            <option value="" disabled>Ej. Rúbrica</option>
+            <option value="rubrica">Rúbrica</option>
+            <option value="lista-cotejo">Lista de cotejo</option>
+            <option value="escala">Escala estimativa</option>
+            <option value="prueba">Prueba escrita</option>
+            <option value="otro">Otro</option>
+          </Select>
+        </label>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Select value={activityDraft.planningMoment} onChange={(event) => onChangeDraft({ ...activityDraft, planningMoment: event.target.value })}>
-          <option value="">Momento de planificación</option>
+      <div className="grid gap-2.5 sm:grid-cols-2">
+        <Select className="h-10" value={activityDraft.activityType} onChange={(event) => onChangeDraft({ ...activityDraft, activityType: event.target.value as ActivityDraft['activityType'] })}>
+          <option value="individual">Actividad individual</option>
+          <option value="group">Actividad grupal</option>
+        </Select>
+        <Select className="h-10" value={activityDraft.planningMoment || 'desarrollo'} onChange={(event) => onChangeDraft({ ...activityDraft, planningMoment: event.target.value })}>
           <option value="inicio">Inicio</option>
           <option value="desarrollo">Desarrollo</option>
           <option value="cierre">Cierre</option>
         </Select>
-        <Input value={activityDraft.observations} onChange={(event) => onChangeDraft({ ...activityDraft, observations: event.target.value })} placeholder="Observaciones" />
+      </div>
+      <div className="space-y-1">
+        <label className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground" htmlFor="activity-description">
+          Descripción de la actividad
+        </label>
+        <div className="relative">
+          {descriptionExpanded || descriptionEditing || !activityDraft.description ? (
+            <Textarea
+              id="activity-description"
+              className={cn(
+                'resize-none pr-12 text-base leading-6',
+                descriptionExpanded || descriptionEditing ? 'min-h-32' : 'h-[6rem]',
+              )}
+              rows={descriptionExpanded || descriptionEditing ? 5 : 3}
+              value={activityDraft.description}
+              onChange={(event) => onChangeDraft({ ...activityDraft, description: event.target.value })}
+              onFocus={() => setDescriptionEditing(true)}
+              onBlur={() => setDescriptionEditing(false)}
+              placeholder="Describe qué harán los estudiantes, qué recursos usarán y qué evidencia entregarán."
+            />
+          ) : (
+            <div
+              id="activity-description"
+              className={cn(
+                'h-[6rem] overflow-hidden rounded-lg border border-input bg-card px-3 py-3 pr-12 text-base leading-6 text-foreground outline-none transition',
+                activityDraft.description ? '' : 'text-muted-foreground',
+              )}
+              onClick={() => {
+                if (hasLongDescription) setDescriptionExpanded(true)
+              }}
+            >
+              <p className="[display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">
+                {activityDraft.description || 'Describe qué harán los estudiantes, qué recursos usarán y qué evidencia entregarán.'}
+              </p>
+            </div>
+          )}
+          {hasLongDescription ? (
+            <button
+              type="button"
+              className="absolute bottom-2 right-3 grid size-6 place-items-center text-primary transition hover:scale-110"
+              aria-label={descriptionExpanded ? 'Contraer descripción' : 'Expandir descripción'}
+              onClick={() => setDescriptionExpanded((value) => !value)}
+            >
+              <ChevronDown className={cn('size-4 transition-transform', descriptionExpanded ? 'rotate-180' : '')} />
+            </button>
+          ) : null}
+        </div>
       </div>
       <div className="flex flex-wrap gap-2">
-        <Button onClick={onSaveActivity} disabled={saving}>
+        <Button className="h-10 px-5" onClick={onSaveActivity} disabled={saving}>
           {editingActivityId ? 'Guardar actividad' : 'Agregar actividad'}
         </Button>
         {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
       </div>
-      <div className="max-h-72 overflow-y-auto rounded-lg border border-border">
-        {activities.length === 0 ? (
-          <p className="p-4 text-sm text-muted-foreground">Aún no hay actividades creadas.</p>
-        ) : activities.map((activity) => (
+      {activities.length > 0 ? (
+      <div className="max-h-52 overflow-y-auto rounded-lg border border-border">
+        {activities.map((activity) => (
           <div key={activity.id} className="flex flex-col gap-3 border-b border-border px-4 py-3 text-sm last:border-b-0 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-bold text-primary">{activity.name}</p>
@@ -1355,7 +1645,369 @@ function ActivityManager({
           </div>
         ))}
       </div>
+      ) : null}
     </div>
+  )
+}
+
+function ActivitiesHubView({
+  activities,
+  courseTitle,
+  drafts,
+  onBack,
+  onDiscardDraft,
+  onOpenActivity,
+  onOpenDraft,
+  onSelectBlock,
+  periodName,
+}: {
+  activities: GradingActivity[]
+  courseTitle: string
+  drafts: ActivityDraftsByBlock
+  onBack: () => void
+  onDiscardDraft: (blockId: CompetencyBlockId, draftId?: string) => void
+  onOpenActivity: (activityId: string) => void
+  onOpenDraft: (blockId: CompetencyBlockId, draftId: string) => void
+  onSelectBlock: (blockId: CompetencyBlockId) => void
+  periodName: string
+}) {
+  return (
+    <section className="space-y-4">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+            <button type="button" className="font-medium text-primary hover:underline" onClick={onBack}>
+              Calificaciones
+            </button>
+            <span>›</span>
+            <span>Actividades</span>
+          </div>
+          <h2 className="mt-3 text-3xl font-black text-primary">Actividades</h2>
+          <p className="mt-1 text-sm font-medium text-foreground">
+            {courseTitle} · {periodName}
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Elige el bloque de competencias para tu nueva actividad.
+          </p>
+        </div>
+        <Button variant="outline" onClick={onBack}>
+          <ArrowLeft className="size-4" />
+          Volver
+        </Button>
+      </div>
+
+      <div className="grid gap-4 xl:grid-cols-4">
+        {competencyBlocks.map((block, index) => (
+          <ActivityBlockHubCard
+            key={block.id}
+            activities={activities.filter((activity) => activity.competencyBlockId === block.id)}
+            accent={blockAccents[index]}
+            block={block}
+            drafts={drafts[block.id] ?? []}
+            onDiscardDraft={(draftId) => onDiscardDraft(block.id, draftId)}
+            onOpenActivity={onOpenActivity}
+            onOpenDraft={(draftId) => onOpenDraft(block.id, draftId)}
+            onSelectBlock={() => onSelectBlock(block.id)}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function ActivityBlockHubCard({
+  accent,
+  activities,
+  block,
+  drafts,
+  onDiscardDraft,
+  onOpenActivity,
+  onOpenDraft,
+  onSelectBlock,
+}: {
+  accent: (typeof blockAccents)[number]
+  activities: GradingActivity[]
+  block: (typeof competencyBlocks)[number]
+  drafts: ActivityDraft[]
+  onDiscardDraft: (draftId: string) => void
+  onOpenActivity: (activityId: string) => void
+  onOpenDraft: (draftId: string) => void
+  onSelectBlock: () => void
+}) {
+  return (
+    <article className={cn('flex min-h-[23rem] flex-col rounded-lg border p-4 shadow-sm', accent.card)}>
+      <div className="flex items-start gap-3">
+        <span className={cn('mt-1 h-14 w-1.5 shrink-0 rounded-full', accent.dot)} />
+        <div className="min-w-0">
+          <p className="text-xs font-black uppercase tracking-[0.16em] text-primary">{block.shortName}</p>
+          <h3 className="mt-1 text-base font-black leading-tight text-foreground">{blockShortNames[block.id] ?? block.name}</h3>
+        </div>
+      </div>
+
+      <div className="mt-4 grid grid-cols-2 gap-2">
+        <div className="rounded-lg bg-card/75 p-3 ring-1 ring-border">
+          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Creadas</p>
+          <p className="mt-1 text-2xl font-black text-primary">{activities.length}</p>
+        </div>
+        <div className="rounded-lg bg-card/75 p-3 ring-1 ring-border">
+          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Borradores</p>
+          <p className="mt-1 text-2xl font-black text-primary">{drafts.length}</p>
+        </div>
+      </div>
+
+      <Button className="mt-4 w-full" onClick={onSelectBlock}>
+        <Plus className="size-4" />
+        Crear actividad
+      </Button>
+
+      {drafts.length > 0 ? (
+        <div className="mt-3 max-h-[7.25rem] space-y-2 overflow-y-auto pr-1">
+            {drafts.map((draft) => (
+              <div
+                key={draft.draftId}
+                role="button"
+                tabIndex={0}
+                className="w-full rounded-lg border border-primary/20 bg-card/80 px-3 py-2 text-left text-sm transition hover:border-primary hover:bg-card"
+                onClick={() => draft.draftId && onOpenDraft(draft.draftId)}
+                onKeyDown={(event) => {
+                  if (event.key !== 'Enter' && event.key !== ' ') return
+                  event.preventDefault()
+                  if (draft.draftId) onOpenDraft(draft.draftId)
+                }}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="text-xs font-black uppercase tracking-[0.12em] text-amber-600">Borrador</p>
+                    <p className="mt-0.5 truncate font-medium">{draft.name || 'Actividad sin nombre'}</p>
+                  </div>
+                  <button
+                    type="button"
+                    className="rounded-md px-2 py-1 text-xs font-bold text-destructive hover:bg-destructive/10"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      if (draft.draftId) onDiscardDraft(draft.draftId)
+                    }}
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            ))}
+        </div>
+      ) : null}
+
+      {activities.length > 0 ? (
+      <div className="mt-3 max-h-[7.25rem] space-y-2 overflow-y-auto pr-1">
+          {activities.map((activity) => (
+            <button
+              key={activity.id}
+              type="button"
+              className="flex w-full items-start justify-between rounded-lg border border-primary/15 bg-card/80 px-3 py-2 text-left text-sm transition hover:border-primary hover:bg-card"
+              onClick={() => onOpenActivity(activity.id)}
+            >
+              <span className="min-w-0">
+                <span className="block text-xs font-black uppercase tracking-[0.12em] text-primary">Actividad</span>
+                <span className="mt-0.5 block truncate font-medium text-foreground">{activity.name}</span>
+              </span>
+              <ArrowRight className="ml-3 mt-2 size-4 shrink-0 text-primary" />
+            </button>
+          ))}
+      </div>
+      ) : null}
+    </article>
+  )
+}
+
+function ActivityCreationView({
+  activityDraft,
+  hasDraft,
+  activities,
+  block,
+  editingActivityId,
+  onBack,
+  onCancelEdit,
+  onChangeDraft,
+  onDeleteActivity,
+  onDuplicateActivity,
+  onEditActivity,
+  onOpenActivity,
+  onSaveActivity,
+  saving,
+  students,
+}: {
+  activityDraft: ActivityDraft
+  hasDraft: boolean
+  activities: GradingActivity[]
+  block: (typeof competencyBlocks)[number]
+  editingActivityId: string | null
+  onBack: () => void
+  onCancelEdit: () => void
+  onChangeDraft: (draft: ActivityDraft) => void
+  onDeleteActivity: (activityId: string) => void
+  onDuplicateActivity: (activity: GradingActivity) => void
+  onEditActivity: (activity: GradingActivity) => void
+  onOpenActivity: (activityId: string) => void
+  onSaveActivity: () => void
+  saving: boolean
+  students: StudentGradeRow[]
+}) {
+  return (
+    <section className="space-y-4">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+            <button type="button" className="font-medium text-primary hover:underline" onClick={onBack}>
+              Calificaciones
+            </button>
+            <span>›</span>
+            <span>{block.shortName}</span>
+            <span>›</span>
+            <span>{editingActivityId ? 'Editar actividad' : 'Nueva actividad'}</span>
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <Badge>{block.shortName}</Badge>
+            {hasDraft ? <Badge tone="warning">Borrador autoguardado</Badge> : null}
+            <p className="font-bold text-primary">{blockShortNames[block.id] ?? block.name}</p>
+          </div>
+          <h2 className="mt-3 text-3xl font-black text-primary">
+            {editingActivityId ? 'Editar actividad' : 'Crear actividad'}
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Completa los datos de la actividad evaluativa de este bloque.
+          </p>
+        </div>
+        <Button variant="outline" onClick={onBack}>
+          <ArrowLeft className="size-4" />
+          Volver
+        </Button>
+      </div>
+
+      <div className="grid gap-4 xl:grid-cols-[minmax(0,1.45fr)_minmax(20rem,0.55fr)]">
+        <div className="space-y-4">
+          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
+            <div className="mb-4 border-b border-border pb-4">
+              <h3 className="font-black text-foreground">Información de la actividad</h3>
+            </div>
+            <ActivityManager
+              activityDraft={activityDraft}
+              activities={activities}
+              editingActivityId={editingActivityId}
+              onCancelEdit={onCancelEdit}
+              onChangeDraft={(draft) => onChangeDraft({ ...draft, competencyBlockId: block.id })}
+              onDeleteActivity={onDeleteActivity}
+              onDuplicateActivity={onDuplicateActivity}
+              onEditActivity={onEditActivity}
+              onSaveActivity={onSaveActivity}
+              saving={saving}
+              showCompetencySelect={false}
+            />
+          </div>
+
+          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
+            <h3 className="font-black text-foreground">Criterios de evaluación</h3>
+            <div className="mt-4 overflow-hidden rounded-lg border border-border">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-muted/35 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                  <tr>
+                    <th className="px-4 py-3">Criterio</th>
+                    <th className="px-4 py-3">Excelente</th>
+                    <th className="px-4 py-3">Bueno</th>
+                    <th className="px-4 py-3">En proceso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-border">
+                    <td className="px-4 py-4 font-medium">Pendiente de definir</td>
+                    <td className="px-4 py-4 text-muted-foreground">Se configurará desde el instrumento.</td>
+                    <td className="px-4 py-4 text-muted-foreground">Editable.</td>
+                    <td className="px-4 py-4 text-muted-foreground">Editable.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <aside className="space-y-4">
+          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
+            <div className="mb-4 flex items-center justify-between">
+              <h3 className="font-black text-foreground">Calificaciones de los estudiantes</h3>
+              <Badge>{activityDraft.maxScore || 0} pts</Badge>
+            </div>
+            <div className="overflow-hidden rounded-lg border border-border">
+              <table className="w-full text-sm">
+                <thead className="bg-muted/35 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                  <tr>
+                    <th className="w-12 px-3 py-3 text-center">#</th>
+                    <th className="px-3 py-3 text-left">Estudiante</th>
+                    <th className="px-3 py-3 text-center">Calificación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {students.slice(0, 6).map((student, index) => (
+                    <tr key={student.enrollmentId} className="border-t border-border">
+                      <td className="px-3 py-3 text-center text-muted-foreground">{index + 1}</td>
+                      <td className="px-3 py-3 font-medium">{student.firstName} {student.lastName}</td>
+                      <td className="px-3 py-3 text-center">
+                        <input
+                          className="h-9 w-20 rounded-lg border border-border bg-muted/35 text-center text-muted-foreground"
+                          disabled
+                          placeholder="-"
+                        />
+                      </td>
+                    </tr>
+                  ))}
+                  {students.length === 0 ? (
+                    <tr>
+                      <td className="px-3 py-8 text-center text-muted-foreground" colSpan={3}>
+                        No hay estudiantes matriculados.
+                      </td>
+                    </tr>
+                  ) : null}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 rounded-lg bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-800">
+              La tabla de calificaciones se activará después de crear la actividad.
+            </p>
+          </div>
+
+          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="font-black text-foreground">Evidencias / Archivos</h3>
+              <Button variant="outline" size="sm" disabled>Subir evidencia</Button>
+            </div>
+            <p className="mt-4 rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground">
+              Las evidencias se adjuntarán cuando la actividad esté creada.
+            </p>
+          </div>
+
+          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
+            <h3 className="font-black text-foreground">Actividades de este bloque</h3>
+            <div className="mt-4 space-y-2">
+              {activities.length === 0 ? (
+                <p className="rounded-lg border border-border p-4 text-sm text-muted-foreground">
+                  Aún no hay actividades creadas para este bloque.
+                </p>
+              ) : activities.map((activity) => (
+                <button
+                  key={activity.id}
+                  type="button"
+                  className="flex w-full items-center justify-between rounded-lg border border-border p-3 text-left text-sm transition hover:border-primary hover:bg-primary/5"
+                  onClick={() => onOpenActivity(activity.id)}
+                >
+                  <span>
+                    <span className="block font-bold text-primary">{activity.name}</span>
+                    <span className="text-xs text-muted-foreground">{activity.maxScore} pts · {activity.instrumentType || 'Sin instrumento'}</span>
+                  </span>
+                  <ArrowRight className="size-4 text-primary" />
+                </button>
+              ))}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
   )
 }
 
@@ -1369,74 +2021,136 @@ function CalculationConfigModal({
   onClose: () => void
 }) {
   return (
-    <Modal title="Configurar cálculo" description="Ajusta las reglas de cálculo del libro de calificaciones." onClose={onClose}>
-      <div className="grid gap-5 p-5 xl:grid-cols-[minmax(0,1fr)_18rem]">
-        <div className="grid gap-4">
-          <label className="space-y-2 text-sm font-bold">
-            Nota mínima de aprobación
-            <Input type="number" value={config.passingScore} onChange={(event) => onChange({ ...config, passingScore: Number(event.target.value) || 0 })} />
-          </label>
-          <label className="space-y-2 text-sm font-bold">
-            Método del bloque
-            <Select value={config.blockMethod} onChange={(event) => onChange({ ...config, blockMethod: event.target.value as GradeCalculationConfig['blockMethod'] })}>
-              <option value="sum">Suma de actividades</option>
-              <option value="average">Promedio de actividades</option>
-              <option value="weighted">Porcentaje ponderado</option>
-            </Select>
-          </label>
-          <label className="space-y-2 text-sm font-bold">
-            Total esperado por bloque
-            <Input type="number" value={config.expectedBlockTotal} onChange={(event) => onChange({ ...config, expectedBlockTotal: Number(event.target.value) || 100 })} />
-          </label>
-          <label className="space-y-2 text-sm font-bold">
-            Regla de recuperación
-            <Select value={config.recoveryRule} onChange={(event) => onChange({ ...config, recoveryRule: event.target.value as GradeCalculationConfig['recoveryRule'] })}>
-              <option value="replace">Sustituye la nota del período</option>
-              <option value="replace-if-higher">Solo sustituye si mejora</option>
-              <option value="average">Se promedia con el período</option>
-              <option value="none">No usar recuperación</option>
-            </Select>
-          </label>
-          <div className="grid gap-3 sm:grid-cols-3">
-            <label className="space-y-2 text-sm font-bold">
-              Decimales PC
-              <Input type="number" min={0} max={4} value={config.pcDecimals} onChange={(event) => onChange({ ...config, pcDecimals: Number(event.target.value) || 0 })} />
+    <Modal
+      title="Configurar cálculo de calificaciones"
+      description="Ajusta las reglas según tu forma de evaluar."
+      onClose={onClose}
+      className="max-w-6xl rounded-xl"
+    >
+      <div className="grid gap-6 p-6 xl:grid-cols-[minmax(0,1fr)_20rem]">
+        <div className="grid gap-6 lg:grid-cols-2 lg:divide-x lg:divide-border">
+          <div className="grid content-start gap-3 lg:pr-8">
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Nota mínima de aprobación
+              <Input type="number" value={config.passingScore} onChange={(event) => onChange({ ...config, passingScore: Number(event.target.value) || 0 })} />
             </label>
-            <label className="space-y-2 text-sm font-bold">
-              Decimales anual
-              <Input type="number" min={0} max={4} value={config.annualDecimals} onChange={(event) => onChange({ ...config, annualDecimals: Number(event.target.value) || 0 })} />
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Método del bloque
+              <Select value={config.blockMethod} onChange={(event) => onChange({ ...config, blockMethod: event.target.value as GradeCalculationConfig['blockMethod'] })}>
+                <option value="sum">Suma de actividades</option>
+                <option value="average">Promedio de actividades</option>
+                <option value="weighted">Porcentaje ponderado</option>
+              </Select>
             </label>
-            <label className="space-y-2 text-sm font-bold">
-              Decimales final
-              <Input type="number" min={0} max={4} value={config.finalDecimals} onChange={(event) => onChange({ ...config, finalDecimals: Number(event.target.value) || 0 })} />
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Total esperado por bloque
+              <Input type="number" value={config.expectedBlockTotal} onChange={(event) => onChange({ ...config, expectedBlockTotal: Number(event.target.value) || 100 })} />
+            </label>
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Regla de recuperación
+              <Select value={config.recoveryRule} onChange={(event) => onChange({ ...config, recoveryRule: event.target.value as GradeCalculationConfig['recoveryRule'] })}>
+                <option value="replace">Sustituye la nota del bloque</option>
+                <option value="replace-if-higher">Solo sustituye si mejora</option>
+                <option value="average">Se promedia con el bloque</option>
+                <option value="none">No usar recuperación</option>
+              </Select>
+            </label>
+            <label className="flex items-center gap-3 pt-1 text-sm font-bold text-muted-foreground">
+              <input className="size-5 rounded border-border accent-primary" type="checkbox" checked={config.showRecovery} onChange={(event) => onChange({ ...config, showRecovery: event.target.checked })} />
+              Mostrar columna de recuperación (RP)
             </label>
           </div>
-          <label className="space-y-2 text-sm font-bold">
-            Redondeo final
-            <Select value={config.finalRounding} onChange={(event) => onChange({ ...config, finalRounding: event.target.value as GradeCalculationConfig['finalRounding'] })}>
-              <option value="standard">Redondeo estándar</option>
-              <option value="floor">Redondear hacia abajo</option>
-              <option value="ceil">Redondear hacia arriba</option>
-              <option value="decimals">Mantener decimales</option>
-            </Select>
-          </label>
-          <label className="flex items-center gap-3 text-sm font-bold">
-            <input type="checkbox" checked={config.showRecovery} onChange={(event) => onChange({ ...config, showRecovery: event.target.checked })} />
-            Mostrar columna de recuperación
-          </label>
+
+          <div className="grid content-start gap-3 lg:pl-8">
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Redondeo final
+              <Select value={config.finalRounding} onChange={(event) => onChange({ ...config, finalRounding: event.target.value as GradeCalculationConfig['finalRounding'] })}>
+                <option value="standard">Redondeo estándar (≥ .5 = +1)</option>
+                <option value="floor">Redondear hacia abajo</option>
+                <option value="ceil">Redondear hacia arriba</option>
+                <option value="decimals">Mantener decimales</option>
+              </Select>
+            </label>
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Decimales en bloques
+              <Select value={String(config.pcDecimals)} onChange={(event) => onChange({ ...config, pcDecimals: Number(event.target.value) })}>
+                <option value="0">Sin decimales</option>
+                <option value="1">1 decimal</option>
+                <option value="2">2 decimales</option>
+                <option value="3">3 decimales</option>
+                <option value="4">4 decimales</option>
+              </Select>
+            </label>
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Decimales en promedio anual
+              <Select value={String(config.annualDecimals)} onChange={(event) => onChange({ ...config, annualDecimals: Number(event.target.value) })}>
+                <option value="0">Sin decimales</option>
+                <option value="1">1 decimal</option>
+                <option value="2">2 decimales</option>
+                <option value="3">3 decimales</option>
+                <option value="4">4 decimales</option>
+              </Select>
+            </label>
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Decimales en nota final
+              <Select value={String(config.finalDecimals)} onChange={(event) => onChange({ ...config, finalDecimals: Number(event.target.value) })}>
+                <option value="0">Sin decimales</option>
+                <option value="1">1 decimal</option>
+                <option value="2">2 decimales</option>
+                <option value="3">3 decimales</option>
+                <option value="4">4 decimales</option>
+              </Select>
+            </label>
+          </div>
         </div>
 
-        <aside className="rounded-lg border border-border bg-muted/25 p-4">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">Reglas actuales</p>
-          <ul className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground">
-            <li>Cada bloque suma {config.expectedBlockTotal} puntos.</li>
-            <li>La recuperación sustituye la nota del período.</li>
-            <li>La nota final es el promedio de las 4 competencias.</li>
-            <li>El promedio se redondea según la regla seleccionada.</li>
-          </ul>
+        <aside className="flex flex-col justify-between gap-5">
+          <div className="rounded-xl bg-emerald-50 p-5 text-emerald-950">
+            <p className="text-sm font-black text-emerald-800">Reglas actuales</p>
+            <ul className="mt-4 space-y-4 text-sm font-bold leading-6">
+              <RuleItem>Cada bloque suma {config.expectedBlockTotal} puntos.</RuleItem>
+              <RuleItem>La recuperación sustituye la nota del bloque.</RuleItem>
+              <RuleItem>La nota final es el promedio de las 4 competencias.</RuleItem>
+              <RuleItem>El promedio se redondea según la regla seleccionada.</RuleItem>
+            </ul>
+          </div>
+          <Button className="ml-auto h-11 bg-emerald-700 px-6 hover:bg-emerald-800" onClick={onClose}>
+            Guardar configuración
+          </Button>
         </aside>
       </div>
     </Modal>
+  )
+}
+
+function RuleItem({ children }: { children: ReactNode }) {
+  return (
+    <li className="flex gap-3">
+      <span className="mt-0.5 text-lg leading-none text-emerald-700">✓</span>
+      <span>{children}</span>
+    </li>
+  )
+}
+
+function OfficeIcon({ app }: { app: 'excel' | 'word' }) {
+  const isExcel = app === 'excel'
+
+  return (
+    <span
+      className={cn(
+        'relative grid size-5 shrink-0 place-items-center rounded-[4px] text-[11px] font-black leading-none text-white shadow-sm',
+        isExcel ? 'bg-[#107c41]' : 'bg-[#185abd]',
+      )}
+      aria-hidden="true"
+    >
+      <span
+        className={cn(
+          'absolute -right-0.5 top-1 size-2 rounded-[1px] opacity-90',
+          isExcel ? 'bg-[#21a366]' : 'bg-[#2b7cd3]',
+        )}
+      />
+      <span className="relative">{isExcel ? 'X' : 'W'}</span>
+    </span>
   )
 }
 
@@ -1527,9 +2241,206 @@ function gradeColor(value: number | null | undefined, config: GradeCalculationCo
   return 'text-emerald-700'
 }
 
+type BlockSummaryExport = {
+  courseTitle: string
+  periodName: string
+  periodAverage: string
+  students: number
+  activities: number
+  pendingBlocks: number
+  rows: Array<{
+    block: string
+    competency: string
+    activities: number
+    average: string
+    pending: number
+    status: string
+  }>
+}
+
+function countPendingScores(activities: GradingActivity[], records: GradeRecordRow[], students: StudentGradeRow[]) {
+  if (activities.length === 0) return 0
+  return activities.reduce((total, activity) => {
+    const missing = students.filter((student) =>
+      !scoreForActivity(records, student.enrollmentId, activity.id),
+    ).length
+    return total + missing
+  }, 0)
+}
+
+function blockSummaryCsv(payload: BlockSummaryExport) {
+  const rows = [
+    ['Curso / asignatura', payload.courseTitle],
+    ['Periodo', payload.periodName],
+    ['Promedio general', payload.periodAverage],
+    ['Estudiantes', String(payload.students)],
+    ['Actividades totales', String(payload.activities)],
+    ['Bloques pendientes', String(payload.pendingBlocks)],
+    [],
+    ['Bloque', 'Competencia', 'Actividades', 'Promedio /100', 'Pendientes', 'Estado'],
+    ...payload.rows.map((row) => [
+      row.block,
+      row.competency,
+      String(row.activities),
+      row.average,
+      String(row.pending),
+      row.status,
+    ]),
+  ]
+
+  return `\uFEFF${rows.map((row) => row.map(csvCell).join(',')).join('\n')}`
+}
+
+function blockSummaryDoc(payload: BlockSummaryExport) {
+  const rows = payload.rows.map((row) => `
+    <tr>
+      <td>${escapeHtml(row.block)}</td>
+      <td>${escapeHtml(row.competency)}</td>
+      <td>${row.activities}</td>
+      <td>${escapeHtml(row.average)} / 100</td>
+      <td>${row.pending}</td>
+      <td>${escapeHtml(row.status)}</td>
+    </tr>
+  `).join('')
+
+  return `<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Resumen de bloques</title>
+    <style>
+      body { font-family: Arial, sans-serif; color: #111827; }
+      h1 { color: #1f4e95; font-size: 24px; margin-bottom: 4px; }
+      p { margin: 4px 0; }
+      table { border-collapse: collapse; width: 100%; margin-top: 18px; }
+      th, td { border: 1px solid #d9e2ec; padding: 8px; font-size: 12px; }
+      th { background: #eef4ff; color: #1f4e95; text-align: left; }
+    </style>
+  </head>
+  <body>
+    <h1>Resumen de bloques de competencias</h1>
+    <p><strong>Curso / asignatura:</strong> ${escapeHtml(payload.courseTitle)}</p>
+    <p><strong>Periodo:</strong> ${escapeHtml(payload.periodName)}</p>
+    <p><strong>Promedio general:</strong> ${escapeHtml(payload.periodAverage)} / 100</p>
+    <p><strong>Estudiantes:</strong> ${payload.students}</p>
+    <p><strong>Actividades totales:</strong> ${payload.activities}</p>
+    <p><strong>Bloques pendientes:</strong> ${payload.pendingBlocks}</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Bloque</th>
+          <th>Competencia</th>
+          <th>Actividades</th>
+          <th>Promedio /100</th>
+          <th>Pendientes</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </body>
+</html>`
+}
+
+function downloadTextFile(input: { content: string; filename: string; type: string }) {
+  const blob = new Blob([input.content], { type: input.type })
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = input.filename
+  document.body.appendChild(link)
+  link.click()
+  link.remove()
+  URL.revokeObjectURL(url)
+}
+
+function blockSummaryFilename(courseTitle: string, periodShortName: string, extension: 'csv' | 'doc') {
+  const date = new Date().toISOString().slice(0, 10)
+  const course = slugify(courseTitle || 'curso')
+  const period = slugify(periodShortName || 'periodo')
+  return `resumen-bloques-${course}-${period}-${date}.${extension}`
+}
+
+function csvCell(value: string) {
+  return `"${value.replace(/"/g, '""')}"`
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+function slugify(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 64)
+}
+
 function averageNumbers(values: number[]) {
   if (values.length === 0) return null
   return values.reduce((sum, value) => sum + value, 0) / values.length
+}
+
+function createDraftId() {
+  if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
+    return crypto.randomUUID()
+  }
+  return `draft-${Date.now()}-${Math.random().toString(36).slice(2)}`
+}
+
+function newActivityDraft(blockId: CompetencyBlockId): ActivityDraft {
+  return {
+    ...emptyActivityDraft,
+    draftId: createDraftId(),
+    competencyBlockId: blockId,
+  }
+}
+
+function normalizeStoredActivityDrafts(value: unknown): ActivityDraftsByBlock {
+  if (!value || typeof value !== 'object') return {}
+  const source = value as Record<string, unknown>
+  const normalized: ActivityDraftsByBlock = {}
+
+  competencyBlocks.forEach((block) => {
+    const raw = source[block.id]
+    if (!raw) return
+    const drafts = Array.isArray(raw) ? raw : [raw]
+    const validDrafts = drafts
+      .filter((item): item is Partial<ActivityDraft> => Boolean(item && typeof item === 'object'))
+      .map((draft) => ({
+        ...emptyActivityDraft,
+        ...draft,
+        draftId: typeof draft.draftId === 'string' ? draft.draftId : createDraftId(),
+        competencyBlockId: block.id,
+      }))
+      .filter(isMeaningfulActivityDraft)
+
+    if (validDrafts.length > 0) {
+      normalized[block.id] = validDrafts
+    }
+  })
+
+  return normalized
+}
+
+function isMeaningfulActivityDraft(draft: ActivityDraft) {
+  return Boolean(
+    draft.name.trim() ||
+    draft.date ||
+    draft.description.trim() ||
+    draft.instrumentType ||
+    draft.evaluationTechnique ||
+    draft.maxScore !== emptyActivityDraft.maxScore ||
+    draft.activityType !== emptyActivityDraft.activityType ||
+    draft.planningMoment !== emptyActivityDraft.planningMoment,
+  )
 }
 
 function statusTone(status: string): 'success' | 'muted' | 'warning' {

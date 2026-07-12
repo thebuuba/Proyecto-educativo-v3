@@ -12,6 +12,7 @@ import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { RolesGuard } from '../../common/guards/roles.guard'
 import { SaveGradeDto } from './dto/save-grade.dto'
+import { SaveEvaluationActivityDto } from './dto/save-evaluation-activity.dto'
 
 @Controller('grading')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -84,6 +85,38 @@ export class GradingController {
     @Query('academicPeriodId') academicPeriodId: string,
   ) {
     return this.gradingService.getStudentsForGrading(user.schoolId, sectionSubjectId, academicPeriodId)
+  }
+
+  @Get('activities')
+  getActivities(
+    @CurrentUser() user: AuthenticatedUser,
+    @Query('sectionSubjectId') sectionSubjectId?: string,
+    @Query('academicPeriodId') academicPeriodId?: string,
+    @Query('planningEntryId') planningEntryId?: string,
+  ) {
+    return this.gradingService.getActivities(user.schoolId, { sectionSubjectId, academicPeriodId, planningEntryId })
+  }
+
+  @Post('activities')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  saveActivity(@CurrentUser() user: AuthenticatedUser, @Body() dto: SaveEvaluationActivityDto) {
+    return this.gradingService.saveActivity(user.schoolId, user.id, dto)
+  }
+
+  @Post('activities/:id/link-planning')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  linkActivityToPlanning(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Body() dto: { planningEntryId: string | null; planningMoment?: string },
+  ) {
+    return this.gradingService.linkActivityToPlanning(user.schoolId, id, dto)
+  }
+
+  @Delete('activities/:id')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  deleteActivity(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.gradingService.deleteActivity(user.schoolId, id)
   }
 
   /**
