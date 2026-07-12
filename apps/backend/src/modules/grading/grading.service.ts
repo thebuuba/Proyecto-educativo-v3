@@ -7,6 +7,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import { SaveGradeDto } from './dto/save-grade.dto'
+import { SaveEvaluationActivityDto } from './dto/save-evaluation-activity.dto'
 
 const baseGradingPeriods = [
   { name: 'P1 — Agosto, septiembre y octubre', sequence: 1, startMonth: 8, startDay: 1, endMonth: 10, endDay: 31 },
@@ -14,6 +15,28 @@ const baseGradingPeriods = [
   { name: 'P3 — Febrero, marzo y abril', sequence: 3, startMonth: 2, startDay: 1, endMonth: 4, endDay: 30 },
   { name: 'P4 — Mayo', sequence: 4, startMonth: 5, startDay: 1, endMonth: 5, endDay: 31 },
 ]
+
+function mapEvaluationActivity(activity: any) {
+  return {
+    id: activity.id,
+    name: activity.name,
+    competencyBlockId: activity.competencyBlockId,
+    maxScore: Number(activity.maxScore),
+    date: activity.activityDate ? activity.activityDate.toISOString().slice(0, 10) : undefined,
+    description: activity.description || undefined,
+    studentRole: activity.studentRole || undefined,
+    teacherRole: activity.teacherRole || undefined,
+    instrumentType: activity.instrument?.type || undefined,
+    instrumentId: activity.instrumentId ?? undefined,
+    evaluationTechnique: activity.evaluationTechnique || undefined,
+    observations: activity.observations || undefined,
+    evidenceInstructions: activity.evidenceInstructions || undefined,
+    activityType: activity.activityType,
+    planningId: activity.planningEntryId ?? undefined,
+    planningMoment: activity.planningMoment ?? '',
+    source: activity.source,
+  }
+}
 
 function periodDate(schoolYearStart: Date, month: number, day: number) {
   const startYear = schoolYearStart.getUTCFullYear()
@@ -51,6 +74,7 @@ export class GradingService {
       weight: Number(grade.weight),
       assessmentName: grade.assessmentName,
       status: grade.status.toLowerCase(),
+      evaluationActivityId: grade.evaluationActivityId,
     }))
   }
 
@@ -169,6 +193,7 @@ export class GradingService {
         weight: Number(grade.weight),
         assessmentName: grade.assessmentName,
         status: grade.status.toLowerCase(),
+        evaluationActivityId: grade.evaluationActivityId,
       })),
       students: enrollments
         .map((enr) => ({
@@ -210,6 +235,7 @@ export class GradingService {
           maxScore: dto.maxScore,
           weight: dto.weight,
           assessmentName: dto.assessmentName,
+          evaluationActivityId: dto.evaluationActivityId ?? undefined,
         },
       })
     }
@@ -232,7 +258,110 @@ export class GradingService {
         maxScore: dto.maxScore,
         weight: dto.weight ?? 1,
         assessmentName: dto.assessmentName ?? '',
+        evaluationActivityId: dto.evaluationActivityId ?? undefined,
       },
+    })
+  }
+
+  async getActivities(
+    schoolId: string,
+    filters: { sectionSubjectId?: string; academicPeriodId?: string; planningEntryId?: string },
+  ) {
+    const where: any = { schoolId, status: 'ACTIVE' }
+    if (filters.sectionSubjectId) where.sectionSubjectId = filters.sectionSubjectId
+    if (filters.academicPeriodId) where.academicPeriodId = filters.academicPeriodId
+    if (filters.planningEntryId) where.planningEntryId = filters.planningEntryId
+
+    const activities = await prisma.evaluationActivity.findMany({
+      where,
+      include: { instrument: true },
+      orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
+    })
+
+    return activities.map(mapEvaluationActivity)
+  }
+
+  async saveActivity(schoolId: string, userId: string, dto: SaveEvaluationActivityDto) {
+    const sectionSubject = await prisma.sectionSubject.findFirst({
+      where: { id: dto.sectionSubjectId, schoolId },
+    })
+    if (!sectionSubject) throw new NotFoundException('Section subject not found')
+
+    const academicPeriod = await prisma.academicPeriod.findFirst({
+      where: { id: dto.academicPeriodId, schoolId },
+    })
+    if (!academicPeriod) throw new NotFoundException('Academic period not found')
+
+    const data = {
+      schoolId,
+      schoolYearId: dto.schoolYearId ?? sectionSubject.schoolYearId,
+      sectionSubjectId: dto.sectionSubjectId,
+      academicPeriodId: dto.academicPeriodId,
+      planningEntryId: dto.planningEntryId || null,
+      instrumentId: dto.instrumentId || null,
+      competencyBlockId: dto.competencyBlockId,
+      planningMoment: dto.planningMoment || null,
+      name: dto.name.trim(),
+      description: dto.description?.trim() ?? '',
+      activityType: dto.activityType ?? 'individual',
+      maxScore: dto.maxScore,
+      activityDate: dto.date ? new Date(`${dto.date}T00:00:00.000Z`) : null,
+      evaluationTechnique: dto.evaluationTechnique?.trim() ?? '',
+      studentRole: dto.studentRole?.trim() ?? '',
+      teacherRole: dto.teacherRole?.trim() ?? '',
+      evidenceInstructions: dto.evidenceInstructions?.trim() ?? '',
+      observations: dto.observations?.trim() ?? '',
+      source: dto.source ?? (dto.planningEntryId ? 'planning' : 'grading'),
+      createdBy: userId,
+    }
+
+    if (dto.id) {
+      const existing = await prisma.evaluationActivity.findFirst({ where: { id: dto.id, schoolId } })
+      if (!existing) throw new NotFoundException('Evaluation activity not found')
+      const updated = await prisma.evaluationActivity.update({
+        where: { id: dto.id },
+        data,
+        include: { instrument: true },
+      })
+      return mapEvaluationActivity(updated)
+    }
+
+    const created = await prisma.evaluationActivity.create({
+      data,
+      include: { instrument: true },
+    })
+    return mapEvaluationActivity(created)
+  }
+
+  async linkActivityToPlanning(
+    schoolId: string,
+    id: string,
+    dto: { planningEntryId: string | null; planningMoment?: string },
+  ) {
+    const activity = await prisma.evaluationActivity.findFirst({ where: { id, schoolId } })
+    if (!activity) throw new NotFoundException('Evaluation activity not found')
+    if (dto.planningEntryId) {
+      const planning = await prisma.planningEntry.findFirst({ where: { id: dto.planningEntryId, schoolId } })
+      if (!planning) throw new NotFoundException('Planning entry not found')
+    }
+    const updated = await prisma.evaluationActivity.update({
+      where: { id },
+      data: {
+        planningEntryId: dto.planningEntryId,
+        planningMoment: dto.planningMoment || null,
+        source: dto.planningEntryId ? 'planning' : activity.source,
+      },
+      include: { instrument: true },
+    })
+    return mapEvaluationActivity(updated)
+  }
+
+  async deleteActivity(schoolId: string, id: string) {
+    const activity = await prisma.evaluationActivity.findFirst({ where: { id, schoolId } })
+    if (!activity) throw new NotFoundException('Evaluation activity not found')
+    return prisma.evaluationActivity.update({
+      where: { id },
+      data: { status: 'INACTIVE' },
     })
   }
 

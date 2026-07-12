@@ -95,9 +95,9 @@ const blockAccents = [
 
 const blockShortNames: Record<string, string> = {
   b1: 'Competencia Comunicativa',
-  b2: 'Pensamiento lógico',
-  b3: 'Ética y ciudadanía',
-  b4: 'Científica y tecnológica',
+  b2: 'Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas',
+  b3: 'Ética y Ciudadana y Desarrollo Personal y Espiritual',
+  b4: 'Científica y Tecnológica y Ambiental y de la Salud',
 }
 
 type ActivityDraft = {
@@ -293,6 +293,41 @@ export function GradingBook({
     })
   }
 
+  function downloadBlockSummary(format: 'csv' | 'doc') {
+    const rows = blockSummaries.map((summary) => ({
+      block: `Bloque ${summary.index + 1}`,
+      competency: blockShortNames[summary.block.id],
+      activities: summary.activities.length,
+      average: formatGrade(summary.average),
+      pending: countPendingScores(summary.activities, records, students),
+      status: summary.status,
+    }))
+    const payload = {
+      courseTitle,
+      periodName,
+      periodAverage: formatGrade(periodAverage),
+      students: students.length,
+      activities: activities.length,
+      pendingBlocks,
+      rows,
+    }
+
+    if (format === 'csv') {
+      downloadTextFile({
+        content: blockSummaryCsv(payload),
+        filename: blockSummaryFilename(courseTitle, periodShortName, 'csv'),
+        type: 'text/csv;charset=utf-8',
+      })
+      return
+    }
+
+    downloadTextFile({
+      content: blockSummaryDoc(payload),
+      filename: blockSummaryFilename(courseTitle, periodShortName, 'doc'),
+      type: 'application/msword;charset=utf-8',
+    })
+  }
+
   if (students.length === 0) {
     return (
       <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-center text-sm text-muted-foreground">
@@ -308,15 +343,26 @@ export function GradingBook({
           <ViewButton active={mainView === 'blocks'} icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => { setMainView('blocks'); setDetailView(null) }} />
           <ViewButton active={mainView === 'period'} icon={<ClipboardList className="size-4" />} label="Período" onClick={() => { setMainView('period'); setDetailView(null) }} />
           <ViewButton active={mainView === 'annual'} icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => { setMainView('annual'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'final'} icon={<Trophy className="size-4" />} label="Final" onClick={() => { setMainView('final'); setDetailView(null) }} />
+          <ViewButton active={mainView === 'final'} icon={<Trophy className="size-4" />} label="Resumen final" onClick={() => { setMainView('final'); setDetailView(null) }} />
         </div>
         <div className="flex flex-wrap gap-2">
-          <Badge tone="muted" className="h-9 rounded-xl px-3">
-            {periodShortName}
-          </Badge>
-          <Button variant="outline" className="h-9 px-3" onClick={() => window.print()}>
-            <Download className="size-4" />
-            Descargar
+          <Button
+            variant="outline"
+            className="h-9 px-3 text-emerald-700"
+            aria-label="Descargar resumen en Excel"
+            onClick={() => downloadBlockSummary('csv')}
+          >
+            <OfficeIcon app="excel" />
+            Excel
+          </Button>
+          <Button
+            variant="outline"
+            className="h-9 px-3 text-blue-700"
+            aria-label="Descargar resumen en Word"
+            onClick={() => downloadBlockSummary('doc')}
+          >
+            <OfficeIcon app="word" />
+            Word
           </Button>
           <Button variant="outline" className="h-9 px-3" onClick={() => setShowConfig(true)}>
             <Settings className="size-4" />
@@ -543,9 +589,6 @@ function BlockMatrixView({
     <section className="space-y-3">
       <div>
         <h2 className="text-2xl font-bold leading-tight text-primary">Bloques de competencias</h2>
-        <p className="text-sm text-muted-foreground">
-          Cada bloque suma {config.expectedBlockTotal} puntos. Haz clic en un bloque para ver sus actividades y calificaciones.
-        </p>
       </div>
       <div className="grid gap-3 xl:grid-cols-4">
         {blockSummaries.map((summary) => {
@@ -557,10 +600,10 @@ function BlockMatrixView({
                 <Badge tone="default" className="h-6 rounded-lg px-2 text-[11px] uppercase">
                   Bloque {summary.index + 1}
                 </Badge>
-                <h3 className="mt-3 min-h-[3.1rem] text-base font-black leading-6 text-primary">
+                <h3 className="mt-2 min-h-12 text-[0.82rem] font-black leading-4 text-primary">
                   {blockShortNames[summary.block.id]}
                 </h3>
-                <div className="mt-3 flex items-end gap-3">
+                <div className="mt-2 flex items-end gap-3">
                   <div className={cn('grid size-16 place-items-center rounded-full border-4 bg-card text-xl font-black text-primary', accent.panel)}>
                     {formatGrade(summary.average)}
                   </div>
@@ -1369,74 +1412,136 @@ function CalculationConfigModal({
   onClose: () => void
 }) {
   return (
-    <Modal title="Configurar cálculo" description="Ajusta las reglas de cálculo del libro de calificaciones." onClose={onClose}>
-      <div className="grid gap-5 p-5 xl:grid-cols-[minmax(0,1fr)_18rem]">
-        <div className="grid gap-4">
-          <label className="space-y-2 text-sm font-bold">
-            Nota mínima de aprobación
-            <Input type="number" value={config.passingScore} onChange={(event) => onChange({ ...config, passingScore: Number(event.target.value) || 0 })} />
-          </label>
-          <label className="space-y-2 text-sm font-bold">
-            Método del bloque
-            <Select value={config.blockMethod} onChange={(event) => onChange({ ...config, blockMethod: event.target.value as GradeCalculationConfig['blockMethod'] })}>
-              <option value="sum">Suma de actividades</option>
-              <option value="average">Promedio de actividades</option>
-              <option value="weighted">Porcentaje ponderado</option>
-            </Select>
-          </label>
-          <label className="space-y-2 text-sm font-bold">
-            Total esperado por bloque
-            <Input type="number" value={config.expectedBlockTotal} onChange={(event) => onChange({ ...config, expectedBlockTotal: Number(event.target.value) || 100 })} />
-          </label>
-          <label className="space-y-2 text-sm font-bold">
-            Regla de recuperación
-            <Select value={config.recoveryRule} onChange={(event) => onChange({ ...config, recoveryRule: event.target.value as GradeCalculationConfig['recoveryRule'] })}>
-              <option value="replace">Sustituye la nota del período</option>
-              <option value="replace-if-higher">Solo sustituye si mejora</option>
-              <option value="average">Se promedia con el período</option>
-              <option value="none">No usar recuperación</option>
-            </Select>
-          </label>
-          <div className="grid gap-3 sm:grid-cols-3">
-            <label className="space-y-2 text-sm font-bold">
-              Decimales PC
-              <Input type="number" min={0} max={4} value={config.pcDecimals} onChange={(event) => onChange({ ...config, pcDecimals: Number(event.target.value) || 0 })} />
+    <Modal
+      title="Configurar cálculo de calificaciones"
+      description="Ajusta las reglas según tu forma de evaluar."
+      onClose={onClose}
+      className="max-w-6xl rounded-xl"
+    >
+      <div className="grid gap-6 p-6 xl:grid-cols-[minmax(0,1fr)_20rem]">
+        <div className="grid gap-6 lg:grid-cols-2 lg:divide-x lg:divide-border">
+          <div className="grid content-start gap-3 lg:pr-8">
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Nota mínima de aprobación
+              <Input type="number" value={config.passingScore} onChange={(event) => onChange({ ...config, passingScore: Number(event.target.value) || 0 })} />
             </label>
-            <label className="space-y-2 text-sm font-bold">
-              Decimales anual
-              <Input type="number" min={0} max={4} value={config.annualDecimals} onChange={(event) => onChange({ ...config, annualDecimals: Number(event.target.value) || 0 })} />
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Método del bloque
+              <Select value={config.blockMethod} onChange={(event) => onChange({ ...config, blockMethod: event.target.value as GradeCalculationConfig['blockMethod'] })}>
+                <option value="sum">Suma de actividades</option>
+                <option value="average">Promedio de actividades</option>
+                <option value="weighted">Porcentaje ponderado</option>
+              </Select>
             </label>
-            <label className="space-y-2 text-sm font-bold">
-              Decimales final
-              <Input type="number" min={0} max={4} value={config.finalDecimals} onChange={(event) => onChange({ ...config, finalDecimals: Number(event.target.value) || 0 })} />
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Total esperado por bloque
+              <Input type="number" value={config.expectedBlockTotal} onChange={(event) => onChange({ ...config, expectedBlockTotal: Number(event.target.value) || 100 })} />
+            </label>
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Regla de recuperación
+              <Select value={config.recoveryRule} onChange={(event) => onChange({ ...config, recoveryRule: event.target.value as GradeCalculationConfig['recoveryRule'] })}>
+                <option value="replace">Sustituye la nota del bloque</option>
+                <option value="replace-if-higher">Solo sustituye si mejora</option>
+                <option value="average">Se promedia con el bloque</option>
+                <option value="none">No usar recuperación</option>
+              </Select>
+            </label>
+            <label className="flex items-center gap-3 pt-1 text-sm font-bold text-muted-foreground">
+              <input className="size-5 rounded border-border accent-primary" type="checkbox" checked={config.showRecovery} onChange={(event) => onChange({ ...config, showRecovery: event.target.checked })} />
+              Mostrar columna de recuperación (RP)
             </label>
           </div>
-          <label className="space-y-2 text-sm font-bold">
-            Redondeo final
-            <Select value={config.finalRounding} onChange={(event) => onChange({ ...config, finalRounding: event.target.value as GradeCalculationConfig['finalRounding'] })}>
-              <option value="standard">Redondeo estándar</option>
-              <option value="floor">Redondear hacia abajo</option>
-              <option value="ceil">Redondear hacia arriba</option>
-              <option value="decimals">Mantener decimales</option>
-            </Select>
-          </label>
-          <label className="flex items-center gap-3 text-sm font-bold">
-            <input type="checkbox" checked={config.showRecovery} onChange={(event) => onChange({ ...config, showRecovery: event.target.checked })} />
-            Mostrar columna de recuperación
-          </label>
+
+          <div className="grid content-start gap-3 lg:pl-8">
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Redondeo final
+              <Select value={config.finalRounding} onChange={(event) => onChange({ ...config, finalRounding: event.target.value as GradeCalculationConfig['finalRounding'] })}>
+                <option value="standard">Redondeo estándar (≥ .5 = +1)</option>
+                <option value="floor">Redondear hacia abajo</option>
+                <option value="ceil">Redondear hacia arriba</option>
+                <option value="decimals">Mantener decimales</option>
+              </Select>
+            </label>
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Decimales en bloques
+              <Select value={String(config.pcDecimals)} onChange={(event) => onChange({ ...config, pcDecimals: Number(event.target.value) })}>
+                <option value="0">Sin decimales</option>
+                <option value="1">1 decimal</option>
+                <option value="2">2 decimales</option>
+                <option value="3">3 decimales</option>
+                <option value="4">4 decimales</option>
+              </Select>
+            </label>
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Decimales en promedio anual
+              <Select value={String(config.annualDecimals)} onChange={(event) => onChange({ ...config, annualDecimals: Number(event.target.value) })}>
+                <option value="0">Sin decimales</option>
+                <option value="1">1 decimal</option>
+                <option value="2">2 decimales</option>
+                <option value="3">3 decimales</option>
+                <option value="4">4 decimales</option>
+              </Select>
+            </label>
+            <label className="space-y-1.5 text-sm font-bold text-foreground">
+              Decimales en nota final
+              <Select value={String(config.finalDecimals)} onChange={(event) => onChange({ ...config, finalDecimals: Number(event.target.value) })}>
+                <option value="0">Sin decimales</option>
+                <option value="1">1 decimal</option>
+                <option value="2">2 decimales</option>
+                <option value="3">3 decimales</option>
+                <option value="4">4 decimales</option>
+              </Select>
+            </label>
+          </div>
         </div>
 
-        <aside className="rounded-lg border border-border bg-muted/25 p-4">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">Reglas actuales</p>
-          <ul className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground">
-            <li>Cada bloque suma {config.expectedBlockTotal} puntos.</li>
-            <li>La recuperación sustituye la nota del período.</li>
-            <li>La nota final es el promedio de las 4 competencias.</li>
-            <li>El promedio se redondea según la regla seleccionada.</li>
-          </ul>
+        <aside className="flex flex-col justify-between gap-5">
+          <div className="rounded-xl bg-emerald-50 p-5 text-emerald-950">
+            <p className="text-sm font-black text-emerald-800">Reglas actuales</p>
+            <ul className="mt-4 space-y-4 text-sm font-bold leading-6">
+              <RuleItem>Cada bloque suma {config.expectedBlockTotal} puntos.</RuleItem>
+              <RuleItem>La recuperación sustituye la nota del bloque.</RuleItem>
+              <RuleItem>La nota final es el promedio de las 4 competencias.</RuleItem>
+              <RuleItem>El promedio se redondea según la regla seleccionada.</RuleItem>
+            </ul>
+          </div>
+          <Button className="ml-auto h-11 bg-emerald-700 px-6 hover:bg-emerald-800" onClick={onClose}>
+            Guardar configuración
+          </Button>
         </aside>
       </div>
     </Modal>
+  )
+}
+
+function RuleItem({ children }: { children: ReactNode }) {
+  return (
+    <li className="flex gap-3">
+      <span className="mt-0.5 text-lg leading-none text-emerald-700">✓</span>
+      <span>{children}</span>
+    </li>
+  )
+}
+
+function OfficeIcon({ app }: { app: 'excel' | 'word' }) {
+  const isExcel = app === 'excel'
+
+  return (
+    <span
+      className={cn(
+        'relative grid size-5 shrink-0 place-items-center rounded-[4px] text-[11px] font-black leading-none text-white shadow-sm',
+        isExcel ? 'bg-[#107c41]' : 'bg-[#185abd]',
+      )}
+      aria-hidden="true"
+    >
+      <span
+        className={cn(
+          'absolute -right-0.5 top-1 size-2 rounded-[1px] opacity-90',
+          isExcel ? 'bg-[#21a366]' : 'bg-[#2b7cd3]',
+        )}
+      />
+      <span className="relative">{isExcel ? 'X' : 'W'}</span>
+    </span>
   )
 }
 
@@ -1525,6 +1630,148 @@ function gradeColor(value: number | null | undefined, config: GradeCalculationCo
   if (value === null || value === undefined) return 'text-muted-foreground'
   if (value < config.passingScore) return 'text-red-600'
   return 'text-emerald-700'
+}
+
+type BlockSummaryExport = {
+  courseTitle: string
+  periodName: string
+  periodAverage: string
+  students: number
+  activities: number
+  pendingBlocks: number
+  rows: Array<{
+    block: string
+    competency: string
+    activities: number
+    average: string
+    pending: number
+    status: string
+  }>
+}
+
+function countPendingScores(activities: GradingActivity[], records: GradeRecordRow[], students: StudentGradeRow[]) {
+  if (activities.length === 0) return 0
+  return activities.reduce((total, activity) => {
+    const missing = students.filter((student) =>
+      !scoreForActivity(records, student.enrollmentId, activity.id),
+    ).length
+    return total + missing
+  }, 0)
+}
+
+function blockSummaryCsv(payload: BlockSummaryExport) {
+  const rows = [
+    ['Curso / asignatura', payload.courseTitle],
+    ['Periodo', payload.periodName],
+    ['Promedio general', payload.periodAverage],
+    ['Estudiantes', String(payload.students)],
+    ['Actividades totales', String(payload.activities)],
+    ['Bloques pendientes', String(payload.pendingBlocks)],
+    [],
+    ['Bloque', 'Competencia', 'Actividades', 'Promedio /100', 'Pendientes', 'Estado'],
+    ...payload.rows.map((row) => [
+      row.block,
+      row.competency,
+      String(row.activities),
+      row.average,
+      String(row.pending),
+      row.status,
+    ]),
+  ]
+
+  return `\uFEFF${rows.map((row) => row.map(csvCell).join(',')).join('\n')}`
+}
+
+function blockSummaryDoc(payload: BlockSummaryExport) {
+  const rows = payload.rows.map((row) => `
+    <tr>
+      <td>${escapeHtml(row.block)}</td>
+      <td>${escapeHtml(row.competency)}</td>
+      <td>${row.activities}</td>
+      <td>${escapeHtml(row.average)} / 100</td>
+      <td>${row.pending}</td>
+      <td>${escapeHtml(row.status)}</td>
+    </tr>
+  `).join('')
+
+  return `<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Resumen de bloques</title>
+    <style>
+      body { font-family: Arial, sans-serif; color: #111827; }
+      h1 { color: #1f4e95; font-size: 24px; margin-bottom: 4px; }
+      p { margin: 4px 0; }
+      table { border-collapse: collapse; width: 100%; margin-top: 18px; }
+      th, td { border: 1px solid #d9e2ec; padding: 8px; font-size: 12px; }
+      th { background: #eef4ff; color: #1f4e95; text-align: left; }
+    </style>
+  </head>
+  <body>
+    <h1>Resumen de bloques de competencias</h1>
+    <p><strong>Curso / asignatura:</strong> ${escapeHtml(payload.courseTitle)}</p>
+    <p><strong>Periodo:</strong> ${escapeHtml(payload.periodName)}</p>
+    <p><strong>Promedio general:</strong> ${escapeHtml(payload.periodAverage)} / 100</p>
+    <p><strong>Estudiantes:</strong> ${payload.students}</p>
+    <p><strong>Actividades totales:</strong> ${payload.activities}</p>
+    <p><strong>Bloques pendientes:</strong> ${payload.pendingBlocks}</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Bloque</th>
+          <th>Competencia</th>
+          <th>Actividades</th>
+          <th>Promedio /100</th>
+          <th>Pendientes</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </body>
+</html>`
+}
+
+function downloadTextFile(input: { content: string; filename: string; type: string }) {
+  const blob = new Blob([input.content], { type: input.type })
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = input.filename
+  document.body.appendChild(link)
+  link.click()
+  link.remove()
+  URL.revokeObjectURL(url)
+}
+
+function blockSummaryFilename(courseTitle: string, periodShortName: string, extension: 'csv' | 'doc') {
+  const date = new Date().toISOString().slice(0, 10)
+  const course = slugify(courseTitle || 'curso')
+  const period = slugify(periodShortName || 'periodo')
+  return `resumen-bloques-${course}-${period}-${date}.${extension}`
+}
+
+function csvCell(value: string) {
+  return `"${value.replace(/"/g, '""')}"`
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+function slugify(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 64)
 }
 
 function averageNumbers(values: number[]) {

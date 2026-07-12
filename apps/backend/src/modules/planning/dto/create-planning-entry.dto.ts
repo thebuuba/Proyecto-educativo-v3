@@ -1,4 +1,4 @@
-import { IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { IsArray, IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
 
 export class CreatePlanningEntryDto {
   @IsString()
@@ -82,4 +82,9 @@ export class CreatePlanningEntryDto {
   @IsString()
   @MaxLength(1000)
   evaluationInstruments?: string
+
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  linkedActivityIds?: string[]
 }

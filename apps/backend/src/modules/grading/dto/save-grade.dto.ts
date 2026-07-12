@@ -17,6 +17,10 @@ export class SaveGradeDto {
   @IsString()
   academicPeriodId?: string
 
+  @IsOptional()
+  @IsString()
+  evaluationActivityId?: string | null
+
   @IsNumber()
   @Min(0)
   @Max(100)

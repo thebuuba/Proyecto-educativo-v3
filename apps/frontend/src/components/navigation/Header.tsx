@@ -130,11 +130,26 @@ export function Header({ onOpenSidebar }: HeaderProps) {
         </Button>
 
         {isGradingPage ? (
-          <div className="hidden min-w-0 flex-1 md:block">
-            <h1 className="text-3xl font-bold leading-none text-primary">
-              Calificaciones
-            </h1>
-          </div>
+          <>
+            <div className="hidden min-w-0 shrink-0 md:block">
+              <h1 className="text-3xl font-bold leading-none text-primary">
+                Calificaciones
+              </h1>
+            </div>
+            <label
+              htmlFor="global-header-search"
+              className="hidden h-11 min-w-[22rem] max-w-[640px] flex-1 items-center gap-3 rounded-2xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
+            >
+              <Search className="size-4 shrink-0" />
+              <input
+                id="global-header-search"
+                type="search"
+                placeholder="Buscar estudiantes, cursos, actividades..."
+                className="min-w-0 flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
+                aria-label="Buscar estudiantes, cursos, actividades"
+              />
+            </label>
+          </>
         ) : (
           <label
             htmlFor="global-header-search"

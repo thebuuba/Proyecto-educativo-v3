@@ -34,6 +34,7 @@ export type PlanningEntry = {
   evaluationMethod: string
   evidence: string
   evaluationInstruments: string
+  linkedActivityIds?: string[]
   durationMinutes: number | null
   plannedDate: string | null
   status: RecordStatus
@@ -61,6 +62,7 @@ export type CreatePlanningEntryInput = {
   evaluationInstruments?: string
   durationMinutes?: number | null
   plannedDate?: string | null
+  linkedActivityIds?: string[]
 }
 
 /** Borrador generado por IA para rellenar el formulario de planificación */

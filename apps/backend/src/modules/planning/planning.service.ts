@@ -158,6 +158,14 @@ export class PlanningService {
     const competencies = await prisma.drCompetency.findMany({})
     const school = await prisma.school.findUnique({ where: { id: schoolId } })
     const teachers = await prisma.teacher.findMany({ where: { schoolId } })
+    const linkedActivities = await prisma.evaluationActivity.findMany({
+      where: {
+        schoolId,
+        planningEntryId: { in: entries.map((entry) => entry.id) },
+        status: 'ACTIVE',
+      },
+      select: { id: true, planningEntryId: true },
+    })
     const sectionSubjectById = new Map(sectionSubjects.map((item) => [item.id, item]))
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
@@ -166,6 +174,13 @@ export class PlanningService {
     const schoolYearById = new Map(schoolYears.map((item) => [item.id, item]))
     const competencyById = new Map(competencies.map((item) => [item.id, item]))
     const teacherById = new Map(teachers.map((item) => [item.id, item]))
+    const activityIdsByPlanning = new Map<string, string[]>()
+    linkedActivities.forEach((activity) => {
+      if (!activity.planningEntryId) return
+      const ids = activityIdsByPlanning.get(activity.planningEntryId) ?? []
+      ids.push(activity.id)
+      activityIdsByPlanning.set(activity.planningEntryId, ids)
+    })
 
     return entries.map((entry) => {
       const sectionSubject = sectionSubjectById.get(entry.sectionSubjectId)
@@ -189,6 +204,7 @@ export class PlanningService {
         schoolYearName: sectionSubject?.schoolYearId
           ? schoolYearById.get(sectionSubject.schoolYearId)?.name ?? ''
           : '',
+        linkedActivityIds: activityIdsByPlanning.get(entry.id) ?? [],
       }
     })
   }
@@ -200,28 +216,28 @@ export class PlanningService {
   }
 
   async duplicateEntry(schoolId: string, id: string) {
-    const entry = await this.findEntryForMutation(schoolId, id)
+    const sourceEntry = await this.findEntryForMutation(schoolId, id)
     return prisma.planningEntry.create({
       data: {
         schoolId,
-        sectionSubjectId: entry.sectionSubjectId,
-        academicPeriodId: entry.academicPeriodId,
-        title: `${entry.title} (copia)`,
-        sequence: entry.sequence,
-        specificCompetence: entry.specificCompetence,
-        achievementIndicator: entry.achievementIndicator,
-        contentConceptual: entry.contentConceptual,
-        contentProcedural: entry.contentProcedural,
-        contentAttitudinal: entry.contentAttitudinal,
-        strategies: entry.strategies,
-        activities: entry.activities ?? { inicio: '', desarrollo: '', cierre: '' },
-        resources: entry.resources,
-        evaluationMethod: entry.evaluationMethod,
-        durationMinutes: entry.durationMinutes,
-        plannedDate: entry.plannedDate,
-        fundamentalCompetenceId: entry.fundamentalCompetenceId,
-        evidence: entry.evidence,
-        evaluationInstruments: entry.evaluationInstruments,
+        sectionSubjectId: sourceEntry.sectionSubjectId,
+        academicPeriodId: sourceEntry.academicPeriodId,
+        title: `${sourceEntry.title} (copia)`,
+        sequence: sourceEntry.sequence,
+        specificCompetence: sourceEntry.specificCompetence,
+        achievementIndicator: sourceEntry.achievementIndicator,
+        contentConceptual: sourceEntry.contentConceptual,
+        contentProcedural: sourceEntry.contentProcedural,
+        contentAttitudinal: sourceEntry.contentAttitudinal,
+        strategies: sourceEntry.strategies,
+        activities: sourceEntry.activities ?? { inicio: '', desarrollo: '', cierre: '' },
+        resources: sourceEntry.resources,
+        evaluationMethod: sourceEntry.evaluationMethod,
+        durationMinutes: sourceEntry.durationMinutes,
+        plannedDate: sourceEntry.plannedDate,
+        fundamentalCompetenceId: sourceEntry.fundamentalCompetenceId,
+        evidence: sourceEntry.evidence,
+        evaluationInstruments: sourceEntry.evaluationInstruments,
         status: 'INACTIVE',
       },
     })
@@ -255,7 +271,7 @@ export class PlanningService {
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
 
-    return prisma.planningEntry.create({
+    const entry = await prisma.planningEntry.create({
       data: {
         schoolId,
         sectionSubjectId: dto.sectionSubjectId,
@@ -278,6 +294,8 @@ export class PlanningService {
         evaluationInstruments: dto.evaluationInstruments ?? '',
       },
     })
+    await this.linkActivitiesToPlanning(schoolId, entry.id, dto.linkedActivityIds)
+    return entry
   }
 
   /** Genera una planificación completa con IA siguiendo el currículo dominicano por competencias. */
@@ -451,9 +469,36 @@ export class PlanningService {
     if (dto.evidence !== undefined) data.evidence = dto.evidence
     if (dto.evaluationInstruments !== undefined) data.evaluationInstruments = dto.evaluationInstruments
 
-    return prisma.planningEntry.update({
+    const updated = await prisma.planningEntry.update({
       where: { id },
       data,
+    })
+    await this.linkActivitiesToPlanning(schoolId, id, dto.linkedActivityIds)
+    return updated
+  }
+
+  private async linkActivitiesToPlanning(schoolId: string, planningEntryId: string, activityIds?: string[]) {
+    if (!activityIds) return
+    await prisma.evaluationActivity.updateMany({
+      where: {
+        schoolId,
+        planningEntryId,
+        id: { notIn: activityIds },
+      },
+      data: {
+        planningEntryId: null,
+      },
+    })
+    if (activityIds.length === 0) return
+    await prisma.evaluationActivity.updateMany({
+      where: {
+        schoolId,
+        id: { in: activityIds },
+      },
+      data: {
+        planningEntryId,
+        source: 'planning',
+      },
     })
   }
 

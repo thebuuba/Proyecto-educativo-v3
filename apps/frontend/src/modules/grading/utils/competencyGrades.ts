@@ -33,17 +33,17 @@ export const competencyBlocks = [
   {
     id: 'b2',
     shortName: 'PC2',
-    name: 'Pensamiento Lógico, Creativo y Crítico / Resolución de Problemas',
+    name: 'Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas',
   },
   {
     id: 'b3',
     shortName: 'PC3',
-    name: 'Ética, Ciudadanía y Desarrollo Personal y Espiritual',
+    name: 'Ética y Ciudadana y Desarrollo Personal y Espiritual',
   },
   {
     id: 'b4',
     shortName: 'PC4',
-    name: 'Competencia Científica y Tecnológica / Ambiental y de la Salud',
+    name: 'Científica y Tecnológica y Ambiental y de la Salud',
   },
 ] as const
 

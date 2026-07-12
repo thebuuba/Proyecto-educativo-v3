@@ -5,15 +5,17 @@
  * curricular siguiendo el modelo MINERD por competencias.
  */
 
-import { AlertCircle, Sparkles, X } from 'lucide-react'
+import { AlertCircle, Link2, Sparkles, X } from 'lucide-react'
 import type { FormEvent } from 'react'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { getEvaluationActivities } from '@/modules/grading/services/gradingService'
+import type { GradingActivity } from '@/modules/grading/types'
 import { generatePlanningEntry } from '@/modules/planning/services/planningService'
 import type {
   AcademicPeriodSummary,
@@ -103,6 +105,26 @@ export function PlanningEntryForm({
   )
   const [validationError, setValidationError] = useState('')
   const [generating, setGenerating] = useState(false)
+  const [availableActivities, setAvailableActivities] = useState<GradingActivity[]>([])
+  const [linkedActivityIds, setLinkedActivityIds] = useState<string[]>(initial?.entry.linkedActivityIds ?? [])
+
+  useEffect(() => {
+    let ignore = false
+    if (!sectionSubjectId || !academicPeriodId) {
+      setAvailableActivities([])
+      return
+    }
+    getEvaluationActivities(sectionSubjectId, academicPeriodId)
+      .then((items) => {
+        if (!ignore) setAvailableActivities(items)
+      })
+      .catch(() => {
+        if (!ignore) setAvailableActivities([])
+      })
+    return () => {
+      ignore = true
+    }
+  }, [academicPeriodId, sectionSubjectId])
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -141,6 +163,7 @@ export function PlanningEntryForm({
 	      evaluationInstruments,
 	      durationMinutes: duration ? Number(duration) : null,
       plannedDate: plannedDate || null,
+      linkedActivityIds,
     })
   }
 
@@ -224,6 +247,7 @@ export function PlanningEntryForm({
         achievementIndicator,
         durationMinutes: duration ? Number(duration) : null,
         plannedDate: plannedDate || null,
+        linkedActivityIds,
         subjectName: sectionSubject?.subjectName,
         sectionName: sectionSubject?.sectionName,
         gradeName: sectionSubject?.gradeName,
@@ -435,6 +459,59 @@ export function PlanningEntryForm({
                   rows={4}
                 />
               </Field>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-card p-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h4 className="flex items-center gap-2 font-semibold text-foreground">
+                  <Link2 className="size-4 text-primary" />
+                  Usar actividad ya creada
+                </h4>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Vincula a esta planificación una actividad evaluativa creada desde Calificaciones.
+                </p>
+              </div>
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                {linkedActivityIds.length} vinculada{linkedActivityIds.length === 1 ? '' : 's'}
+              </span>
+            </div>
+
+            <div className="mt-3 grid gap-2">
+              {!sectionSubjectId || !academicPeriodId ? (
+                <p className="rounded-lg border border-dashed border-border p-3 text-sm text-muted-foreground">
+                  Selecciona curso y período para ver actividades disponibles.
+                </p>
+              ) : availableActivities.length === 0 ? (
+                <p className="rounded-lg border border-dashed border-border p-3 text-sm text-muted-foreground">
+                  Todavía no hay actividades creadas para este curso y período. Puedes crearla desde Calificaciones o agregarla luego.
+                </p>
+              ) : availableActivities.map((activity) => {
+                const checked = linkedActivityIds.includes(activity.id)
+                return (
+                  <label key={activity.id} className="flex cursor-pointer items-start gap-3 rounded-lg border border-border p-3 hover:bg-muted/40">
+                    <input
+                      type="checkbox"
+                      className="mt-1 size-4 accent-primary"
+                      checked={checked}
+                      onChange={(event) => {
+                        setLinkedActivityIds((current) =>
+                          event.target.checked
+                            ? [...new Set([...current, activity.id])]
+                            : current.filter((id) => id !== activity.id),
+                        )
+                      }}
+                    />
+                    <span className="min-w-0">
+                      <span className="block font-bold text-foreground">{activity.name}</span>
+                      <span className="mt-0.5 block text-xs text-muted-foreground">
+                        {activity.maxScore} pts · {activity.planningMoment || 'Sin momento'} · {activity.instrumentType || 'Sin instrumento'}
+                      </span>
+                    </span>
+                  </label>
+                )
+              })}
             </div>
           </div>
 
