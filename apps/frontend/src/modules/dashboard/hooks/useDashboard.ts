@@ -3,7 +3,7 @@
  * creación y completado de tareas, y manejo de estados de carga y error.
  */
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import {
   completeDashboardTask,
@@ -16,93 +16,174 @@ import type {
 } from '@/modules/dashboard/types/dashboard'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
-let cachedData: { data: DashboardData; timestamp: number } | null = null
+let cachedData: {
+  scope: string
+  data: DashboardData
+  timestamp: number
+} | null = null
 const CACHE_TTL = 60_000
+
+function getFreshCachedData(scope: string | null) {
+  if (
+    scope &&
+    cachedData?.scope === scope &&
+    Date.now() - cachedData.timestamp < CACHE_TTL
+  ) {
+    return cachedData.data
+  }
+  return null
+}
+
+function updateCachedData(
+  scope: string | null,
+  current: DashboardData | null,
+  update: (data: DashboardData) => DashboardData,
+) {
+  if (!current) return current
+  const next = update(current)
+  if (scope) {
+    cachedData = {
+      scope,
+      data: next,
+      // Una mutación de tareas no renueva la antigüedad de los demás bloques.
+      timestamp: cachedData?.scope === scope ? cachedData.timestamp : Date.now(),
+    }
+  }
+  return next
+}
 
 /** Hook principal del dashboard. Retorna datos, estado de carga/error y acciones. */
 export function useDashboard() {
   const { appUser } = useAuth()
   const appUserId = appUser?.id ?? null
-  const [data, setData] = useState<DashboardData | null>(() => {
-    if (cachedData && Date.now() - cachedData.timestamp < CACHE_TTL) return cachedData.data
-    return null
-  })
+  const cacheScope = appUser ? `${appUser.id}:${appUser.schoolId}` : null
+  const [data, setData] = useState<DashboardData | null>(() => getFreshCachedData(cacheScope))
+  const [dataScope, setDataScope] = useState(cacheScope)
   const [loading, setLoading] = useState(!data)
   const [actionLoading, setActionLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const activeScopeRef = useRef(cacheScope)
+  const pendingActionsRef = useRef(new Map<string | null, number>())
+
+  useEffect(() => {
+    activeScopeRef.current = cacheScope
+    setActionLoading((pendingActionsRef.current.get(cacheScope) ?? 0) > 0)
+  }, [cacheScope])
+
+  const beginAction = useCallback((scope: string | null) => {
+    pendingActionsRef.current.set(scope, (pendingActionsRef.current.get(scope) ?? 0) + 1)
+    if (activeScopeRef.current === scope) setActionLoading(true)
+  }, [])
+
+  const finishAction = useCallback((scope: string | null) => {
+    const remaining = Math.max(0, (pendingActionsRef.current.get(scope) ?? 1) - 1)
+    if (remaining > 0) pendingActionsRef.current.set(scope, remaining)
+    else pendingActionsRef.current.delete(scope)
+    if (activeScopeRef.current === scope) setActionLoading(remaining > 0)
+  }, [])
 
   const refetch = useCallback(async () => {
+    const requestedScope = cacheScope
     setLoading(true)
     setError(null)
 
     try {
       const result = await getDashboardData(appUser)
-      cachedData = { data: result, timestamp: Date.now() }
+      if (activeScopeRef.current !== requestedScope) return
+      if (requestedScope) {
+        cachedData = {
+          scope: requestedScope,
+          data: result,
+          timestamp: Date.now(),
+        }
+      }
       setData(result)
+      setDataScope(requestedScope)
     } catch (error) {
+      if (activeScopeRef.current !== requestedScope) return
       setData(null)
+      setDataScope(requestedScope)
       setError(
         error instanceof Error
           ? error.message
           : 'Error al cargar dashboard.',
       )
     } finally {
-      setLoading(false)
+      if (activeScopeRef.current === requestedScope) setLoading(false)
     }
-  }, [appUser])
+  }, [appUser, cacheScope])
 
   const addTask = useCallback(
     async (input: CreateDashboardTaskInput) => {
-      setActionLoading(true)
+      const requestedScope = cacheScope
+      beginAction(requestedScope)
       setError(null)
 
       try {
         const task = await createDashboardTask(input, appUserId)
+        if (activeScopeRef.current !== requestedScope) return
         setData((current) =>
-          current
-            ? {
-                ...current,
-                tasks: [task, ...current.tasks].slice(0, 8),
-              }
-            : current,
+          updateCachedData(requestedScope, current, (dashboard) => ({
+            ...dashboard,
+            tasks: [task, ...dashboard.tasks].slice(0, 8),
+          })),
         )
       } catch (error) {
+        if (activeScopeRef.current !== requestedScope) return
         setError(error instanceof Error ? error.message : 'No se pudo crear la tarea.')
       } finally {
-        setActionLoading(false)
+        finishAction(requestedScope)
       }
     },
-    [appUserId],
+    [appUserId, beginAction, cacheScope, finishAction],
   )
 
-  const completeTask = useCallback(async (id: string) => {
-    setActionLoading(true)
-    setError(null)
+  const completeTask = useCallback(
+    async (id: string) => {
+      const requestedScope = cacheScope
+      beginAction(requestedScope)
+      setError(null)
 
-    try {
-      await completeDashboardTask(id)
-      setData((current) =>
-        current
-          ? {
-              ...current,
-              tasks: current.tasks.filter((task) => task.id !== id),
-            }
-          : current,
-      )
-    } catch (error) {
-      setError(error instanceof Error ? error.message : 'No se pudo completar la tarea.')
-    } finally {
-      setActionLoading(false)
-    }
-  }, [])
+      try {
+        await completeDashboardTask(id)
+        if (activeScopeRef.current !== requestedScope) return
+        setData((current) =>
+          updateCachedData(requestedScope, current, (dashboard) => ({
+            ...dashboard,
+            tasks: dashboard.tasks.filter((task) => task.id !== id),
+          })),
+        )
+      } catch (error) {
+        if (activeScopeRef.current !== requestedScope) return
+        setError(error instanceof Error ? error.message : 'No se pudo completar la tarea.')
+      } finally {
+        finishAction(requestedScope)
+      }
+    },
+    [beginAction, cacheScope, finishAction],
+  )
 
   useEffect(() => {
+    const cached = getFreshCachedData(cacheScope)
+    if (cached) {
+      setData(cached)
+      setDataScope(cacheScope)
+      setError(null)
+      setLoading(false)
+      return
+    }
+
+    setData(null)
+    setDataScope(cacheScope)
     void refetch()
-  }, [refetch])
+  }, [cacheScope, refetch])
+
+  const scopedData = dataScope === cacheScope ? data : null
+  const scopedLoading = dataScope === cacheScope ? loading : true
 
   return {
-    data,
-    loading,
+    data: scopedData,
+    loading: scopedLoading,
     actionLoading,
     error,
     refetch,

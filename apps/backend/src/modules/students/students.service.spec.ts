@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { StudentsService, __test__clearCache } from './students.service'
 
 const mocks = vi.hoisted(() => ({
@@ -32,6 +33,14 @@ vi.mock('@aula/database', () => ({
 
 function createService() {
   return new StudentsService()
+}
+
+function deferred<T>() {
+  let resolve!: (value: T | PromiseLike<T>) => void
+  const promise = new Promise<T>((resolvePromise) => {
+    resolve = resolvePromise
+  })
+  return { promise, resolve }
 }
 
 function mockCourse() {
@@ -145,6 +154,58 @@ describe('StudentsService course enrollment', () => {
         expect.objectContaining({ id: 'subject-2', name: 'Educacion Fisica' }),
       ],
     }))
+  })
+
+  it('starts all enrollment course lookups before waiting for any result', async () => {
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([
+      {
+        id: 'course-1',
+        schoolYearId: 'year-1',
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        subjectId: 'subject-1',
+        status: 'ACTIVE',
+      },
+    ])
+    const grades = deferred<unknown[]>()
+    const sections = deferred<unknown[]>()
+    const subjects = deferred<unknown[]>()
+    const schoolYears = deferred<unknown[]>()
+    const enrollmentCounts = deferred<unknown[]>()
+    mocks.prisma.grade.findMany.mockReturnValue(grades.promise)
+    mocks.prisma.section.findMany.mockReturnValue(sections.promise)
+    mocks.prisma.subject.findMany.mockReturnValue(subjects.promise)
+    mocks.prisma.schoolYear.findMany.mockReturnValue(schoolYears.promise)
+    mocks.prisma.enrollment.groupBy.mockReturnValue(enrollmentCounts.promise)
+
+    const resultPromise = createService().getEnrollmentCourses('school-1')
+    await Promise.resolve()
+
+    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.section.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.subject.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.schoolYear.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.enrollment.groupBy).toHaveBeenCalledTimes(1)
+
+    grades.resolve([
+      { id: 'grade-1', name: '3ro Secundaria', level: 'Nivel Secundario' },
+    ])
+    sections.resolve([{ id: 'section-1', name: 'A' }])
+    subjects.resolve([
+      { id: 'subject-1', name: 'Lengua Española', code: 'LEN' },
+    ])
+    schoolYears.resolve([{ id: 'year-1', name: '2026-2027' }])
+    enrollmentCounts.resolve([
+      { schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1', _count: { id: 2 } },
+    ])
+
+    await expect(resultPromise).resolves.toEqual([
+      expect.objectContaining({
+        id: 'course-1',
+        label: '3ro Secundaria A - Lengua Española - 2026-2027',
+        studentCount: 2,
+      }),
+    ])
   })
 
   it('reuses an in-flight enrollment course query for concurrent requests', async () => {
@@ -410,6 +471,47 @@ describe('StudentsService course enrollment', () => {
       },
     })
     expect(result).toEqual(expect.objectContaining({ status: 'WITHDRAWN' }))
+  })
+
+  it('invalidates enrollment counts and course data after an enrollment mutation', async () => {
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([
+      {
+        id: 'course-1',
+        schoolYearId: 'year-1',
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        subjectId: 'subject-1',
+        status: 'ACTIVE',
+      },
+    ])
+    mocks.prisma.enrollment.groupBy
+      .mockResolvedValueOnce([
+        { schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1', _count: { id: 2 } },
+      ])
+      .mockResolvedValueOnce([
+        { schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1', _count: { id: 1 } },
+      ])
+    mockCourse()
+    mocks.prisma.enrollment.findFirst.mockResolvedValue({ id: 'enrollment-1' })
+    mocks.prisma.enrollment.update.mockResolvedValue({ id: 'enrollment-1', status: 'WITHDRAWN' })
+    const courseDataLoader = vi.fn().mockResolvedValue({ grades: [] })
+    const service = createService()
+
+    await service.getEnrollmentCourses('school-1')
+    await optionCache.withCache(
+      optionCacheKeys.courses.courseData('school-1'),
+      courseDataLoader,
+    )
+    await service.withdrawStudentFromCourse('school-1', 'course-1', 'student-1')
+    const refreshed = await service.getEnrollmentCourses('school-1')
+    await optionCache.withCache(
+      optionCacheKeys.courses.courseData('school-1'),
+      courseDataLoader,
+    )
+
+    expect(refreshed[0].studentCount).toBe(1)
+    expect(mocks.prisma.enrollment.groupBy).toHaveBeenCalledTimes(2)
+    expect(courseDataLoader).toHaveBeenCalledTimes(2)
   })
 
   it('moves a student enrollment to the target course when transferred', async () => {

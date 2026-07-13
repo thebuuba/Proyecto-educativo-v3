@@ -1,5 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { __test__clearCoursesCache, CoursesService } from './courses.service'
+import { GradingService } from '../grading/grading.service'
+import { ScheduleService } from '../schedule/schedule.service'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
@@ -7,12 +10,12 @@ const mocks = vi.hoisted(() => ({
     section: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
     sectionSubject: { findMany: vi.fn(), upsert: vi.fn() },
     enrollment: { groupBy: vi.fn() },
-    subject: { findMany: vi.fn() },
+    subject: { findMany: vi.fn(), upsert: vi.fn() },
     drAcademicLevel: { findMany: vi.fn() },
     drAcademicCycle: { findMany: vi.fn() },
     drModality: { findMany: vi.fn() },
     teacher: { findMany: vi.fn() },
-    schoolYear: { findFirst: vi.fn() },
+    schoolYear: { findFirst: vi.fn(), create: vi.fn() },
   },
 }))
 
@@ -114,6 +117,72 @@ describe('CoursesService.getCourseData', () => {
     await service.getCourseData('school-1')
 
     expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(2)
+  })
+
+  it('invalidates grading and schedule options after a course mutation', async () => {
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([
+      {
+        id: 'ss-1',
+        sectionId: 'section-1',
+        schoolYearId: 'year-1',
+        subject: { name: 'Matemática' },
+        section: { name: 'A' },
+        grade: { name: '1.º', sequence: 1, level: 'Primario', academicLevel: null },
+        schoolYear: { name: '2026-2027' },
+      },
+    ])
+    mocks.prisma.subject.findMany.mockResolvedValue([
+      { id: 'subject-1', name: 'Matemática', status: 'ACTIVE' },
+    ])
+    mocks.prisma.subject.upsert.mockResolvedValue({
+      id: 'subject-2',
+      name: 'Ciencias',
+      code: 'CIE',
+      status: 'ACTIVE',
+    })
+    const grading = new GradingService()
+    const schedule = new ScheduleService()
+
+    await grading.getSectionSubjects('school-1')
+    await schedule.getSubjects('school-1')
+    await grading.getSectionSubjects('school-1')
+    await schedule.getSubjects('school-1')
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.subject.findMany).toHaveBeenCalledTimes(1)
+
+    await new CoursesService().createSubject('school-1', {
+      name: 'Ciencias',
+      code: 'CIE',
+    })
+    await grading.getSectionSubjects('school-1')
+    await schedule.getSubjects('school-1')
+
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledTimes(2)
+    expect(mocks.prisma.subject.findMany).toHaveBeenCalledTimes(2)
+  })
+
+  it('invalidates dependent options when course data creates the default school year', async () => {
+    const enrollmentLoader = vi.fn().mockResolvedValue('enrollments-without-year')
+    const gradingLoader = vi.fn().mockResolvedValue('periods-without-year')
+    const attendanceLoader = vi.fn().mockResolvedValue('current-period-without-year')
+    const dependentOptions = [
+      [optionCacheKeys.students.enrollmentCourses('school-1'), enrollmentLoader],
+      [optionCacheKeys.grading.academicPeriods('school-1'), gradingLoader],
+      [optionCacheKeys.attendance.currentPeriod('school-1'), attendanceLoader],
+    ] as const
+    await Promise.all(dependentOptions.map(([key, loader]) => optionCache.withCache(key, loader)))
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue(null)
+    mocks.prisma.schoolYear.create.mockResolvedValue({ id: 'year-default', name: '2026-2027' })
+    const service = new CoursesService()
+
+    await service.getCourseData('school-1')
+    await service.getCourseData('school-1')
+    await Promise.all(dependentOptions.map(([key, loader]) => optionCache.withCache(key, loader)))
+
+    for (const [, loader] of dependentOptions) {
+      expect(loader).toHaveBeenCalledTimes(2)
+    }
+    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(1)
   })
 })
 

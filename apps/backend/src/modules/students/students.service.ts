@@ -12,6 +12,11 @@ import {
 } from '@nestjs/common'
 import { prisma, Prisma, EnrollmentStatus, RecordStatus } from '@aula/database'
 import { splitFullName } from '@aula/shared'
+import {
+  invalidateEnrollmentOptions,
+  optionCache,
+  optionCacheKeys,
+} from '../../common/cache/option-cache'
 import { CreateStudentDto } from './dto/create-student.dto'
 import { UpdateStudentDto } from './dto/update-student.dto'
 import { CreateEnrollmentDto } from './dto/create-enrollment.dto'
@@ -132,35 +137,8 @@ function toRecordStatus(status?: string) {
  * incluyendo operaciones CRUD, matrículas, apoderados,
  * notificaciones e importación masiva de datos.
  */
-const cache = new Map<
-  string,
-  { data?: unknown; promise?: Promise<unknown>; expiry: number }
->()
-const CACHE_TTL = 60_000
-
-function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
-  const now = Date.now()
-  const entry = cache.get(key)
-  if (entry && entry.expiry > now) {
-    if (entry.promise) return entry.promise as Promise<T>
-    return Promise.resolve(entry.data as T)
-  }
-
-  const promise = fn().then((data) => {
-    cache.set(key, { data, expiry: Date.now() + CACHE_TTL })
-    return data
-  }, (error) => {
-    if (cache.get(key)?.promise === promise) cache.delete(key)
-    throw error
-  })
-
-  cache.set(key, { promise, expiry: now + CACHE_TTL })
-  return promise
-}
-
-// ponytail: module-level cache, tests need to clear between runs
 export function __test__clearCache() {
-  cache.clear()
+  optionCache.clear()
 }
 
 function compareEnrollmentCourses(first: EnrollmentCourseSummary, second: EnrollmentCourseSummary) {
@@ -205,7 +183,10 @@ export class StudentsService {
   }
 
   async getEnrollmentCourses(schoolId: string) {
-    return withCache(`enrollmentCourses:${schoolId}`, () => this._getEnrollmentCourses(schoolId))
+    return optionCache.withCache(
+      optionCacheKeys.students.enrollmentCourses(schoolId),
+      () => this._getEnrollmentCourses(schoolId),
+    )
   }
 
   private async _getEnrollmentCourses(schoolId: string) {
@@ -223,41 +204,43 @@ export class StudentsService {
       ...new Set(courses.map((course) => course.schoolYearId)),
     ]
 
-    const grades = await prisma.grade.findMany({
-      where: {
-        schoolId,
-        id: { in: gradeIds },
-      },
-    })
-    const sections = await prisma.section.findMany({
-      where: {
-        schoolId,
-        id: { in: sectionIds },
-      },
-    })
-    const subjects = await prisma.subject.findMany({
-      where: {
-        schoolId,
-        id: { in: subjectIds },
-      },
-    })
-    const schoolYears = await prisma.schoolYear.findMany({
-      where: {
-        schoolId,
-        id: { in: schoolYearIds },
-      },
-    })
+    const [grades, sections, subjects, schoolYears, enrollmentCounts] = await Promise.all([
+      prisma.grade.findMany({
+        where: {
+          schoolId,
+          id: { in: gradeIds },
+        },
+      }),
+      prisma.section.findMany({
+        where: {
+          schoolId,
+          id: { in: sectionIds },
+        },
+      }),
+      prisma.subject.findMany({
+        where: {
+          schoolId,
+          id: { in: subjectIds },
+        },
+      }),
+      prisma.schoolYear.findMany({
+        where: {
+          schoolId,
+          id: { in: schoolYearIds },
+        },
+      }),
+      prisma.enrollment.groupBy({
+        by: ['schoolYearId', 'gradeId', 'sectionId'],
+        where: { schoolId, status: 'ACTIVE' },
+        _count: { id: true },
+      }),
+    ])
 
     const gradeById = new Map(grades.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const schoolYearById = new Map(schoolYears.map((item) => [item.id, item]))
 
-    const enrollmentCounts = await prisma.enrollment.groupBy({
-      by: ['schoolYearId', 'gradeId', 'sectionId'],
-      where: { schoolId, status: 'ACTIVE' },
-      _count: { id: true },
-    })
     const countByKey = new Map(
       enrollmentCounts.map((e) => [`${e.schoolYearId}:${e.gradeId}:${e.sectionId}`, e._count.id]),
     )
@@ -442,6 +425,7 @@ export class StudentsService {
       })
       return created
     })
+    invalidateEnrollmentOptions(schoolId)
 
     return {
       ...student,
@@ -589,6 +573,7 @@ export class StudentsService {
 
     if (enrollments.length > 0) {
       await prisma.enrollment.createMany({ data: enrollments, skipDuplicates: true })
+      invalidateEnrollmentOptions(schoolId)
     }
 
     return { imported, errors }
@@ -613,13 +598,15 @@ export class StudentsService {
 
     if (!enrollment) throw new NotFoundException('Enrollment not found')
 
-    return prisma.enrollment.update({
+    const updated = await prisma.enrollment.update({
       where: { id: enrollment.id },
       data: {
         status: 'WITHDRAWN',
         academicStatus: 'withdrawn',
       },
     })
+    invalidateEnrollmentOptions(schoolId)
+    return updated
   }
 
   async transferStudentToCourse(
@@ -665,7 +652,7 @@ export class StudentsService {
       )
     }
 
-    return prisma.enrollment.update({
+    const updated = await prisma.enrollment.update({
       where: { id: enrollment.id },
       data: {
         schoolYearId: targetCourse.schoolYearId,
@@ -676,6 +663,8 @@ export class StudentsService {
         transferNotes: `Trasladado desde curso ${sourceCourse.id}`,
       },
     })
+    invalidateEnrollmentOptions(schoolId)
+    return updated
   }
 
   /**
@@ -847,7 +836,7 @@ export class StudentsService {
     if (!section) throw new NotFoundException('Section not found')
     if (!schoolYear) throw new NotFoundException('School year not found')
 
-    return prisma.enrollment.create({
+    const enrollment = await prisma.enrollment.create({
       data: {
         studentId: dto.studentId,
         gradeId: dto.gradeId,
@@ -861,6 +850,8 @@ export class StudentsService {
         isRepeating: dto.isRepeating ?? false,
       },
     })
+    invalidateEnrollmentOptions(schoolId)
+    return enrollment
   }
 
   /**
@@ -877,12 +868,14 @@ export class StudentsService {
     })
     if (!enrollment) throw new NotFoundException('Enrollment not found')
 
-    return prisma.$transaction(async (tx) => {
+    const deleted = await prisma.$transaction(async (tx) => {
       await tx.attendanceClass.deleteMany({ where: { enrollmentId: id } })
       await tx.attendanceDaily.deleteMany({ where: { enrollmentId: id } })
       await tx.gradesRecord.deleteMany({ where: { enrollmentId: id } })
       return tx.enrollment.delete({ where: { id } })
     })
+    invalidateEnrollmentOptions(schoolId)
+    return deleted
   }
 
   /**

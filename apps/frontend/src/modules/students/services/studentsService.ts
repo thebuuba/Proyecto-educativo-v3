@@ -3,7 +3,7 @@
  * importación, notificaciones y consulta de grados con secciones.
  */
 
-import { api } from '@/services/apiClient'
+import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type {
   Student,
   StudentDetail,
@@ -101,21 +101,35 @@ export async function getStudentEnrollments(studentId: string): Promise<Enrollme
 
 /** Crea una nueva matrícula para un estudiante. */
 export async function createEnrollment(input: CreateEnrollmentInput): Promise<void> {
-  await api.post('/students/enrollments', input)
+  await api.post('/students/enrollments', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Elimina una matrícula por su ID. */
 export async function deleteEnrollment(id: string): Promise<void> {
-  await api.delete(`/students/enrollments/${id}`)
+  await api.delete(`/students/enrollments/${id}`, {
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Obtiene la lista de grados con sus secciones disponibles. */
 export async function getGradesWithSections(): Promise<GradeWithSections[]> {
-  return api.get<GradeWithSections[]>('/students/grades-with-sections')
+  return api.get<GradeWithSections[]>('/students/grades-with-sections', {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.courseOptions],
+  })
 }
 
 export async function getEnrollmentCourses(): Promise<EnrollmentCourse[]> {
-  return api.get<EnrollmentCourse[]>('/students/enrollment-courses')
+  return api.get<EnrollmentCourse[]>('/students/enrollment-courses', {
+    cacheTtlMs: API_CACHE_TTL.sessionList,
+    cacheTags: [
+      API_CACHE_TAGS.courseOptions,
+      API_CACHE_TAGS.enrollmentOptions,
+      API_CACHE_TAGS.schoolYears,
+    ],
+  })
 }
 
 export async function getStudentsByCourse(courseId: string): Promise<CourseStudent[]> {
@@ -126,7 +140,9 @@ export async function createStudentInCourse(
   courseId: string,
   input: CreateCourseStudentInput,
 ): Promise<CourseStudent> {
-  return api.post<CourseStudent>(`/students/courses/${courseId}/students`, input)
+  return api.post<CourseStudent>(`/students/courses/${courseId}/students`, input, {
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 export async function previewCourseStudentImport(
@@ -140,14 +156,18 @@ export async function importStudentsInCourse(
   courseId: string,
   students: ImportCourseStudentRow[],
 ): Promise<{ imported: number; errors: { row: number; reason: string }[] }> {
-  return api.post(`/students/courses/${courseId}/import`, { students })
+  return api.post(`/students/courses/${courseId}/import`, { students }, {
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 export async function withdrawStudentFromCourse(
   courseId: string,
   studentId: string,
 ): Promise<void> {
-  await api.patch(`/students/courses/${courseId}/students/${studentId}/withdraw`, {})
+  await api.patch(`/students/courses/${courseId}/students/${studentId}/withdraw`, {}, {
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 export async function transferStudentToCourse(
@@ -157,6 +177,8 @@ export async function transferStudentToCourse(
 ): Promise<void> {
   await api.patch(`/students/courses/${courseId}/students/${studentId}/transfer`, {
     targetCourseId,
+  }, {
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
   })
 }
 

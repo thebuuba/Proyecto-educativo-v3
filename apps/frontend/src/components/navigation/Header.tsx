@@ -9,7 +9,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
-import { api } from '@/services/apiClient'
+import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type { UserRole } from '@/types/domain'
 
 /** Propiedades del componente Header. */
@@ -58,6 +58,10 @@ export function Header({ onOpenSidebar }: HeaderProps) {
           getCurrentSchoolYear(),
           api.get<Array<{ name: string; startDate: string; endDate: string }>>(
             '/school-administration/academic-periods',
+            {
+              cacheTtlMs: API_CACHE_TTL.sessionList,
+              cacheTags: [API_CACHE_TAGS.academicPeriods],
+            },
           ),
         ])
 

@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SchoolAdministrationService } from './school-administration.service'
 
 function mockCache() {
@@ -12,6 +13,7 @@ const mocks = vi.hoisted(() => ({
       update: vi.fn(),
     },
     schoolYear: {
+      create: vi.fn(),
       findFirst: vi.fn(),
       updateMany: vi.fn(),
       update: vi.fn(),
@@ -27,6 +29,7 @@ vi.mock('@aula/database', () => ({
 describe('SchoolAdministrationService', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    optionCache.clear()
   })
 
   it('updates the real school profile fields', async () => {
@@ -78,5 +81,32 @@ describe('SchoolAdministrationService', () => {
         data: { isCurrent: true },
       })
     expect(mocks.prisma.$transaction).toHaveBeenCalledWith(['clear-current', 'set-current'])
+  })
+
+  it('invalidates options that depend on the school year after an update', async () => {
+    const courseDataLoader = vi.fn().mockResolvedValue('course-data')
+    const enrollmentCoursesLoader = vi.fn().mockResolvedValue('enrollment-courses')
+    const gradingPeriodsLoader = vi.fn().mockResolvedValue('grading-periods')
+    const attendancePeriodLoader = vi.fn().mockResolvedValue('attendance-period')
+    const keysAndLoaders = [
+      [optionCacheKeys.courses.courseData('school-1'), courseDataLoader],
+      [optionCacheKeys.students.enrollmentCourses('school-1'), enrollmentCoursesLoader],
+      [optionCacheKeys.grading.academicPeriods('school-1'), gradingPeriodsLoader],
+      [optionCacheKeys.attendance.currentPeriod('school-1'), attendancePeriodLoader],
+    ] as const
+    await Promise.all(keysAndLoaders.map(([key, loader]) => optionCache.withCache(key, loader)))
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1' })
+    mocks.prisma.schoolYear.update.mockResolvedValue({ id: 'year-1', name: '2027-2028' })
+
+    await new SchoolAdministrationService(mockCache()).updateSchoolYear(
+      'school-1',
+      'year-1',
+      { name: '2027-2028' },
+    )
+    await Promise.all(keysAndLoaders.map(([key, loader]) => optionCache.withCache(key, loader)))
+
+    for (const [, loader] of keysAndLoaders) {
+      expect(loader).toHaveBeenCalledTimes(2)
+    }
   })
 })

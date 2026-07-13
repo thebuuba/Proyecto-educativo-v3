@@ -9,6 +9,7 @@ import { Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { CACHE_MANAGER } from '@nestjs/cache-manager'
 import { Cache } from 'cache-manager'
 import { prisma } from '@aula/database'
+import { invalidateSchoolYearOptions } from '../../common/cache/option-cache'
 import { UpdateSchoolDto } from './dto/update-school.dto'
 import { CreateSchoolYearDto } from './dto/create-school-year.dto'
 import { UpdateSchoolYearDto } from './dto/update-school-year.dto'
@@ -62,8 +63,8 @@ export class SchoolAdministrationService {
   }
 
   /** Crea un nuevo año escolar */
-  createSchoolYear(schoolId: string, dto: CreateSchoolYearDto) {
-    return prisma.schoolYear.create({
+  async createSchoolYear(schoolId: string, dto: CreateSchoolYearDto) {
+    const schoolYear = await prisma.schoolYear.create({
       data: {
         schoolId,
         name: dto.name,
@@ -72,6 +73,8 @@ export class SchoolAdministrationService {
         isCurrent: dto.isCurrent ?? false,
       },
     })
+    invalidateSchoolYearOptions(schoolId)
+    return schoolYear
   }
 
   /** Actualiza un año escolar existente */
@@ -79,7 +82,7 @@ export class SchoolAdministrationService {
     const sy = await prisma.schoolYear.findFirst({ where: { id, schoolId } })
     if (!sy) throw new NotFoundException('School year not found')
 
-    return prisma.schoolYear.update({
+    const schoolYear = await prisma.schoolYear.update({
       where: { id },
       data: {
         ...(dto.name && { name: dto.name }),
@@ -88,6 +91,8 @@ export class SchoolAdministrationService {
         ...(dto.isCurrent !== undefined && { isCurrent: dto.isCurrent }),
       },
     })
+    invalidateSchoolYearOptions(schoolId)
+    return schoolYear
   }
 
   /** Establece un año escolar como el actual, desmarcando los demás en una transacción */
@@ -106,6 +111,7 @@ export class SchoolAdministrationService {
       }),
     ])
 
+    invalidateSchoolYearOptions(schoolId)
     return current
   }
 

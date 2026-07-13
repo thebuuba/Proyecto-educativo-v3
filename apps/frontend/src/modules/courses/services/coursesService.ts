@@ -5,7 +5,7 @@
  * asignaturas y asignación docente.
  */
 
-import { api } from '@/services/apiClient'
+import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type {
   AssignSubjectInput,
   CreateGradeInput,
@@ -21,50 +21,71 @@ import type {
 
 /** Obtiene los datos completos de cursos, catálogos y año escolar */
 export async function getCourseData(): Promise<CourseData> {
-  return api.get<CourseData>('/courses/course-data')
+  return api.get<CourseData>('/courses/course-data', {
+    cacheTtlMs: API_CACHE_TTL.sessionList,
+    cacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.schoolYears],
+  })
 }
 
 /** Crea un nuevo grado o curso */
 export async function createGrade(input: CreateGradeInput): Promise<Grade> {
-  return api.post<Grade>('/courses/grades', input)
+  return api.post<Grade>('/courses/grades', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Actualiza un grado existente */
 export async function updateGrade(id: string, input: UpdateGradeInput): Promise<Grade> {
-  return api.patch<Grade>(`/courses/grades/${id}`, input)
+  return api.patch<Grade>(`/courses/grades/${id}`, input, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Desactiva (elimina lógicamente) un grado */
 export async function deactivateGrade(id: string): Promise<void> {
-  await api.delete(`/courses/grades/${id}`)
+  await api.delete(`/courses/grades/${id}`, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Crea una nueva sección dentro de un grado */
 export async function createSection(input: CreateSectionInput): Promise<Section> {
-  return api.post<Section>('/courses/sections', input)
+  return api.post<Section>('/courses/sections', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Actualiza una sección existente */
 export async function updateSection(id: string, input: UpdateSectionInput): Promise<Section> {
-  return api.patch<Section>(`/courses/sections/${id}`, input)
+  return api.patch<Section>(`/courses/sections/${id}`, input, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Desactiva (elimina lógicamente) una sección */
 export async function deactivateSection(id: string): Promise<void> {
-  await api.delete(`/courses/sections/${id}`)
+  await api.delete(`/courses/sections/${id}`, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Crea una nueva asignatura en el catálogo */
 export async function createSubject(input: CreateSubjectInput): Promise<Subject> {
-  return api.post<Subject>('/courses/subjects', input)
+  return api.post<Subject>('/courses/subjects', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Asigna una asignatura a una sección con su docente */
 export async function assignSubjectToSection(input: AssignSubjectInput): Promise<void> {
-  await api.post('/courses/assign-subject', input)
+  await api.post('/courses/assign-subject', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Desactiva (elimina lógicamente) la asignación de una asignatura a una sección */
 export async function deactivateSectionSubject(id: string): Promise<void> {
-  await api.delete(`/courses/section-subjects/${id}`)
+  await api.delete(`/courses/section-subjects/${id}`, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }

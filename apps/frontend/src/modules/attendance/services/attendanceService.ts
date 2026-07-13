@@ -5,7 +5,7 @@
  * registrar asistencia y calcular estadísticas.
  */
 
-import { api } from '@/services/apiClient'
+import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type { AttendanceStatus } from '@/types/domain'
 import type {
   AttendanceStats,
@@ -20,11 +20,21 @@ import type { EnrollmentCourse } from '@/modules/students/types'
 
 /** Obtiene la lista de secciones disponibles para el docente */
 export async function getSections(): Promise<SectionOption[]> {
-  return api.get<SectionOption[]>('/schedule/sections')
+  return api.get<SectionOption[]>('/schedule/sections', {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.courseOptions],
+  })
 }
 
 export async function getAttendanceCourses(): Promise<EnrollmentCourse[]> {
-  return api.get<EnrollmentCourse[]>('/attendance/courses')
+  return api.get<EnrollmentCourse[]>('/attendance/courses', {
+    cacheTtlMs: API_CACHE_TTL.sessionList,
+    cacheTags: [
+      API_CACHE_TAGS.courseOptions,
+      API_CACHE_TAGS.enrollmentOptions,
+      API_CACHE_TAGS.schoolYears,
+    ],
+  })
 }
 
 /** Obtiene los estudiantes inscritos en una sección para un año escolar */
@@ -108,6 +118,9 @@ export async function getCurrentSchoolYearId(): Promise<string | null> {
 
 /** Obtiene el identificador del período académico activo */
 export async function getCurrentAcademicPeriodId(): Promise<string | null> {
-  const period = await api.get<{ id: string } | null>('/attendance/current-period')
+  const period = await api.get<{ id: string } | null>('/attendance/current-period', {
+    cacheTtlMs: API_CACHE_TTL.sessionList,
+    cacheTags: [API_CACHE_TAGS.academicPeriods],
+  })
   return period?.id ?? null
 }

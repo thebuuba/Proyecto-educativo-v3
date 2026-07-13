@@ -98,17 +98,18 @@ export function useSchedule() {
       const yearId = currentYear?.id ?? null
       setSchoolYearId(yearId)
 
-      const slots = await getTimeSlots()
-      const sects = await getSections()
-      const tchrs = await getTeachers()
-      const subjs = await getSubjects()
+      const [slots, sects, tchrs, subjs, entryData] = await Promise.all([
+        getTimeSlots(),
+        getSections(),
+        getTeachers(),
+        getSubjects(),
+        getScheduleEntries({ schoolYearId: yearId ?? undefined }),
+      ])
 
       setTimeSlots(slots)
       setSections(sects)
       setTeachers(tchrs)
       setSubjects(subjs)
-
-      const entryData = await getScheduleEntries({ schoolYearId: yearId ?? undefined })
       setEntries(entryData)
     } catch (error) {
       setError(

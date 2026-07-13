@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { GradingService } from './grading.service'
+import { __test__clearGradingCache, GradingService } from './grading.service'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
@@ -34,6 +34,7 @@ vi.mock('@aula/database', () => ({
 describe('GradingService.getAcademicPeriods', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    __test__clearGradingCache()
   })
 
   it('creates the four base grading periods when none exist', async () => {
@@ -75,6 +76,7 @@ describe('GradingService.getAcademicPeriods', () => {
 describe('GradingService optimized workspaces', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    __test__clearGradingCache()
   })
 
   it('loads section subjects with their relations in a single query', async () => {
@@ -107,6 +109,27 @@ describe('GradingService optimized workspaces', () => {
         academicLevelName: 'Nivel Primario',
       }),
     ])
+  })
+
+  it('deduplicates section-subject option loads per school', async () => {
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([])
+    const service = new GradingService()
+
+    await Promise.all([
+      service.getSectionSubjects('school-1'),
+      service.getSectionSubjects('school-1'),
+    ])
+    await service.getSectionSubjects('school-2')
+
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledTimes(2)
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({ where: { schoolId: 'school-1', status: 'ACTIVE' } }),
+    )
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({ where: { schoolId: 'school-2', status: 'ACTIVE' } }),
+    )
   })
 
   it('returns options, students, records and activities in one workspace', async () => {

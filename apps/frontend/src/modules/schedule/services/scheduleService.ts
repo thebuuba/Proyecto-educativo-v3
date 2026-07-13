@@ -5,7 +5,7 @@
  * de horario, y datos auxiliares (secciones, docentes, materias).
  */
 
-import { api } from '@/services/apiClient'
+import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type {
   CreateScheduleEntryInput,
   CreateTimeSlotInput,
@@ -26,22 +26,31 @@ const toneByIndex: ScheduleCalendarEntry['tone'][] = ['accent', 'primary', 'succ
 
 /** Obtiene todos los bloques horarios definidos */
 export async function getTimeSlots(): Promise<TimeSlot[]> {
-  return api.get<TimeSlot[]>('/schedule/time-slots')
+  return api.get<TimeSlot[]>('/schedule/time-slots', {
+    cacheTtlMs: API_CACHE_TTL.catalog,
+    cacheTags: [API_CACHE_TAGS.timeSlots],
+  })
 }
 
 /** Crea un nuevo bloque horario */
 export async function createTimeSlot(input: CreateTimeSlotInput): Promise<TimeSlot> {
-  return api.post<TimeSlot>('/schedule/time-slots', input)
+  return api.post<TimeSlot>('/schedule/time-slots', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.timeSlots],
+  })
 }
 
 /** Actualiza un bloque horario existente */
 export async function updateTimeSlot(id: string, input: UpdateTimeSlotInput): Promise<TimeSlot> {
-  return api.patch<TimeSlot>(`/schedule/time-slots/${id}`, input)
+  return api.patch<TimeSlot>(`/schedule/time-slots/${id}`, input, {
+    invalidateCacheTags: [API_CACHE_TAGS.timeSlots],
+  })
 }
 
 /** Elimina un bloque horario */
 export async function deleteTimeSlot(id: string): Promise<void> {
-  await api.delete(`/schedule/time-slots/${id}`)
+  await api.delete(`/schedule/time-slots/${id}`, {
+    invalidateCacheTags: [API_CACHE_TAGS.timeSlots],
+  })
 }
 
 /** Obtiene las entradas del horario aplicando los filtros especificados */
@@ -72,22 +81,34 @@ export async function deleteScheduleEntry(id: string): Promise<void> {
 
 /** Obtiene las secciones disponibles para asignar en el horario */
 export async function getSections(): Promise<SectionOption[]> {
-  return api.get<SectionOption[]>('/schedule/sections')
+  return api.get<SectionOption[]>('/schedule/sections', {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.courseOptions],
+  })
 }
 
 /** Obtiene la lista de docentes disponibles */
 export async function getTeachers(): Promise<TeacherOption[]> {
-  return api.get<TeacherOption[]>('/schedule/teachers')
+  return api.get<TeacherOption[]>('/schedule/teachers', {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.courseOptions],
+  })
 }
 
 /** Obtiene la lista de asignaturas disponibles */
 export async function getSubjects(): Promise<SubjectOption[]> {
-  return api.get<SubjectOption[]>('/schedule/subjects')
+  return api.get<SubjectOption[]>('/schedule/subjects', {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.courseOptions],
+  })
 }
 
 /** Obtiene las asignaturas asignadas a una sección con su docente */
 export async function getSectionSubjects(sectionId: string): Promise<Array<{ id: string; subjectName: string; teacherName: string }>> {
-  return api.get(`/schedule/section-subjects?sectionId=${sectionId}`)
+  return api.get(`/schedule/section-subjects?sectionId=${sectionId}`, {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.courseOptions],
+  })
 }
 
 /** Obtiene un resumen del horario con clases, horas y carga semanal */

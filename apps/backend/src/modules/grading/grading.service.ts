@@ -6,8 +6,13 @@
  */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SaveGradeDto } from './dto/save-grade.dto'
 import { SaveEvaluationActivityDto } from './dto/save-evaluation-activity.dto'
+
+export function __test__clearGradingCache() {
+  optionCache.clear()
+}
 
 const baseGradingPeriods = [
   { name: 'P1 — Agosto, septiembre y octubre', sequence: 1, startMonth: 8, startDay: 1, endMonth: 10, endDay: 31 },
@@ -135,6 +140,13 @@ export class GradingService {
    * @returns Lista de materias de sección con datos descriptivos.
    */
   async getSectionSubjects(schoolId: string) {
+    return optionCache.withCache(
+      optionCacheKeys.grading.sectionSubjects(schoolId),
+      () => this.loadSectionSubjects(schoolId),
+    )
+  }
+
+  private async loadSectionSubjects(schoolId: string) {
     const items = await prisma.sectionSubject.findMany({
       where: { schoolId, status: 'ACTIVE' },
       select: {
@@ -369,6 +381,13 @@ export class GradingService {
    * @returns Lista de períodos académicos activos.
    */
   async getAcademicPeriods(schoolId: string) {
+    return optionCache.withCache(
+      optionCacheKeys.grading.academicPeriods(schoolId),
+      () => this.loadAcademicPeriods(schoolId),
+    )
+  }
+
+  private async loadAcademicPeriods(schoolId: string) {
     const existing = await prisma.academicPeriod.findMany({
       where: { schoolId, status: 'ACTIVE' },
       orderBy: { sequence: 'asc' },

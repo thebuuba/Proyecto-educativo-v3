@@ -8,6 +8,7 @@
 import { BadRequestException, ConflictException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { prisma } from '@aula/database'
+import { invalidateAcademicPeriodOptions } from '../../common/cache/option-cache'
 import { CreateAcademicPeriodDto } from './dto/create-academic-period.dto'
 import { UpdateAcademicPeriodDto } from './dto/update-academic-period.dto'
 import { CreatePlanningEntryDto } from './dto/create-planning-entry.dto'
@@ -66,7 +67,7 @@ export class PlanningService {
     })
     if (existing) throw new ConflictException(`Ya existe un período llamado "${dto.name}" en este año escolar`)
 
-    return prisma.academicPeriod.create({
+    const academicPeriod = await prisma.academicPeriod.create({
       data: {
         schoolId,
         schoolYearId: dto.schoolYearId,
@@ -76,6 +77,8 @@ export class PlanningService {
         endDate: new Date(dto.endDate),
       },
     })
+    invalidateAcademicPeriodOptions(schoolId)
+    return academicPeriod
   }
 
   /** Actualiza un período académico existente */
@@ -90,10 +93,12 @@ export class PlanningService {
     if (dto.endDate !== undefined) data.endDate = new Date(dto.endDate)
     if (dto.status) data.status = dto.status
 
-    return prisma.academicPeriod.update({
+    const academicPeriod = await prisma.academicPeriod.update({
       where: { id },
       data,
     })
+    invalidateAcademicPeriodOptions(schoolId)
+    return academicPeriod
   }
 
   /** Elimina un período académico junto con sus entradas de planificación y registros de calificaciones */
@@ -103,7 +108,9 @@ export class PlanningService {
 
     await prisma.planningEntry.deleteMany({ where: { schoolId, academicPeriodId: id } })
     await prisma.gradesRecord.deleteMany({ where: { schoolId, academicPeriodId: id } })
-    return prisma.academicPeriod.delete({ where: { id } })
+    const academicPeriod = await prisma.academicPeriod.delete({ where: { id } })
+    invalidateAcademicPeriodOptions(schoolId)
+    return academicPeriod
   }
 
   /** Obtiene las competencias del currículo, filtradas por materia */

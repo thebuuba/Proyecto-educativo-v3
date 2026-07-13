@@ -6,7 +6,12 @@
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma, AttendanceStatus } from '@aula/database'
+import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { UpsertAttendanceDto } from './dto/upsert-attendance.dto'
+
+export function __test__clearAttendanceCache() {
+  optionCache.clear()
+}
 
 const baseAttendancePeriods = [
   { name: 'P1 — Agosto, septiembre y octubre', sequence: 1, startMonth: 8, startDay: 1, endMonth: 10, endDay: 31 },
@@ -275,6 +280,13 @@ export class AttendanceService {
    * @returns El período académico activo encontrado o null.
    */
   async getCurrentPeriod(schoolId: string) {
+    return optionCache.withCache(
+      optionCacheKeys.attendance.currentPeriod(schoolId),
+      () => this.loadCurrentPeriod(schoolId),
+    )
+  }
+
+  private async loadCurrentPeriod(schoolId: string) {
     const current = await prisma.academicPeriod.findFirst({
       where: { schoolId, status: 'ACTIVE' },
       orderBy: { sequence: 'asc' },

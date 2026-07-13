@@ -7,10 +7,15 @@
  */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { CreateTimeSlotDto } from './dto/create-time-slot.dto'
 import { UpdateTimeSlotDto } from './dto/update-time-slot.dto'
 import { CreateScheduleEntryDto } from './dto/create-schedule-entry.dto'
 import { UpdateScheduleEntryDto } from './dto/update-schedule-entry.dto'
+
+export function __test__clearScheduleCache() {
+  optionCache.clear()
+}
 
 /** Convierte una cadena de tiempo "HH:mm" o "HH:mm:ss" a un objeto Date UTC */
 function toTime(value: string) {
@@ -38,61 +43,86 @@ export class ScheduleService {
 
   /** Obtiene las secciones activas del colegio con el nombre del grado asociado */
   async getSections(schoolId: string) {
-    const sections = await prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' } })
-    const grades = await prisma.grade.findMany({ where: { schoolId } })
-    const gradeMap = new Map(grades.map((g) => [g.id, g.name]))
-    return sections.map((s) => ({
-      id: s.id,
-      name: s.name,
-      gradeId: s.gradeId,
-      gradeName: gradeMap.get(s.gradeId) ?? '',
-    }))
+    return optionCache.withCache(
+      optionCacheKeys.schedule.sections(schoolId),
+      async () => {
+        const [sections, grades] = await Promise.all([
+          prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+          prisma.grade.findMany({ where: { schoolId } }),
+        ])
+        const gradeMap = new Map(grades.map((g) => [g.id, g.name]))
+        return sections.map((s) => ({
+          id: s.id,
+          name: s.name,
+          gradeId: s.gradeId,
+          gradeName: gradeMap.get(s.gradeId) ?? '',
+        }))
+      },
+    )
   }
 
   /** Obtiene los profesores activos del colegio */
   getTeachers(schoolId: string) {
-    return prisma.teacher.findMany({ where: { schoolId, status: 'ACTIVE' } })
+    return optionCache.withCache(
+      optionCacheKeys.schedule.teachers(schoolId),
+      () => prisma.teacher.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+    )
   }
 
   /** Obtiene las materias activas del colegio */
   getSubjects(schoolId: string) {
-    return prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' } })
+    return optionCache.withCache(
+      optionCacheKeys.schedule.subjects(schoolId),
+      () => prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+    )
   }
 
   /** Obtiene las materias asignadas a una sección, con nombre de materia y profesor */
   async getSectionSubjects(schoolId: string, sectionId?: string) {
-    const where: any = { schoolId, status: 'ACTIVE' }
-    if (sectionId) where.sectionId = sectionId
-    const items = await prisma.sectionSubject.findMany({ where })
-    const subjects = await prisma.subject.findMany({ where: { schoolId } })
-    const teachers = await prisma.teacher.findMany({ where: { schoolId } })
-    const subjectById = new Map(subjects.map((item) => [item.id, item]))
-    const teacherById = new Map(teachers.map((item) => [item.id, item]))
-    return items.map((item) => {
-      const subject = subjectById.get(item.subjectId)
-      const teacher = item.teacherId ? teacherById.get(item.teacherId) : null
-      return {
-        id: item.id,
-        subjectName: subject?.name ?? '',
-        teacherName: teacher ? `${teacher.firstName} ${teacher.lastName}` : '',
-      }
-    })
+    return optionCache.withCache(
+      optionCacheKeys.schedule.sectionSubjects(schoolId, sectionId || 'all'),
+      async () => {
+        const where: any = { schoolId, status: 'ACTIVE' }
+        if (sectionId) where.sectionId = sectionId
+        const [items, subjects, teachers] = await Promise.all([
+          prisma.sectionSubject.findMany({ where }),
+          prisma.subject.findMany({ where: { schoolId } }),
+          prisma.teacher.findMany({ where: { schoolId } }),
+        ])
+        const subjectById = new Map(subjects.map((item) => [item.id, item]))
+        const teacherById = new Map(teachers.map((item) => [item.id, item]))
+        return items.map((item) => {
+          const subject = subjectById.get(item.subjectId)
+          const teacher = item.teacherId ? teacherById.get(item.teacherId) : null
+          return {
+            id: item.id,
+            subjectName: subject?.name ?? '',
+            teacherName: teacher ? `${teacher.firstName} ${teacher.lastName}` : '',
+          }
+        })
+      },
+    )
   }
 
   /** Obtiene las franjas horarias del colegio ordenadas por secuencia */
   async getTimeSlots(schoolId: string) {
-    const slots = await prisma.timeSlot.findMany({ where: { schoolId }, orderBy: { sequence: 'asc' } })
-    return slots.map((slot) => ({
-      ...slot,
-      status: slot.status.toLowerCase(),
-      startTime: formatTime(slot.startTime),
-      endTime: formatTime(slot.endTime),
-    }))
+    return optionCache.withCache(
+      optionCacheKeys.schedule.timeSlots(schoolId),
+      async () => {
+        const slots = await prisma.timeSlot.findMany({ where: { schoolId }, orderBy: { sequence: 'asc' } })
+        return slots.map((slot) => ({
+          ...slot,
+          status: slot.status.toLowerCase(),
+          startTime: formatTime(slot.startTime),
+          endTime: formatTime(slot.endTime),
+        }))
+      },
+    )
   }
 
   /** Crea una nueva franja horaria */
-  createTimeSlot(schoolId: string, dto: CreateTimeSlotDto) {
-    return prisma.timeSlot.create({
+  async createTimeSlot(schoolId: string, dto: CreateTimeSlotDto) {
+    const timeSlot = await prisma.timeSlot.create({
       data: {
         schoolId,
         name: dto.name,
@@ -101,6 +131,8 @@ export class ScheduleService {
         sequence: dto.sequence ?? 0,
       },
     })
+    optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId))
+    return timeSlot
   }
 
   /** Actualiza una franja horaria existente, valida que pertenezca al colegio */
@@ -108,7 +140,7 @@ export class ScheduleService {
     const ts = await prisma.timeSlot.findFirst({ where: { id, schoolId } })
     if (!ts) throw new NotFoundException('Time slot not found')
 
-    return prisma.timeSlot.update({
+    const timeSlot = await prisma.timeSlot.update({
       where: { id },
       data: {
         ...(dto.name && { name: dto.name }),
@@ -117,6 +149,8 @@ export class ScheduleService {
         ...(dto.sequence !== undefined && { sequence: dto.sequence }),
       },
     })
+    optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId))
+    return timeSlot
   }
 
   /** Elimina una franja horaria y sus entradas de horario asociadas */
@@ -125,7 +159,9 @@ export class ScheduleService {
     if (!ts) throw new NotFoundException('Time slot not found')
 
     await prisma.scheduleEntry.deleteMany({ where: { schoolId, timeSlotId: id } })
-    return prisma.timeSlot.delete({ where: { id } })
+    const timeSlot = await prisma.timeSlot.delete({ where: { id } })
+    optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId))
+    return timeSlot
   }
 
   /** Obtiene las entradas de horario con filtros opcionales, incluyendo día de semana */
@@ -138,13 +174,15 @@ export class ScheduleService {
 
   /** Crea una nueva entrada de horario validando las referencias */
   async createEntry(schoolId: string, dto: CreateScheduleEntryDto) {
-    const schoolYear = await prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } })
-    const section = await prisma.section.findFirst({ where: { id: dto.sectionId, schoolId } })
-    const sectionSubject = await prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId, sectionId: dto.sectionId } })
-    const timeSlot = await prisma.timeSlot.findFirst({ where: { id: dto.timeSlotId, schoolId } })
-    const academicPeriod = dto.academicPeriodId
-      ? await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
-      : null
+    const [schoolYear, section, sectionSubject, timeSlot, academicPeriod] = await Promise.all([
+      prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } }),
+      prisma.section.findFirst({ where: { id: dto.sectionId, schoolId } }),
+      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId, sectionId: dto.sectionId } }),
+      prisma.timeSlot.findFirst({ where: { id: dto.timeSlotId, schoolId } }),
+      dto.academicPeriodId
+        ? prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
+        : Promise.resolve(null),
+    ])
     if (!schoolYear) throw new NotFoundException('School year not found')
     if (!section) throw new NotFoundException('Section not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
@@ -305,16 +343,18 @@ export class ScheduleService {
     ]
     const timeSlotIds = [...new Set(entries.map((entry) => entry.timeSlotId))]
 
-    const sectionSubjects = await prisma.sectionSubject.findMany({
-      where: { schoolId, id: { in: sectionSubjectIds } },
-    })
-    const subjects = await prisma.subject.findMany({ where: { schoolId } })
-    const teachers = await prisma.teacher.findMany({ where: { schoolId } })
-    const sections = await prisma.section.findMany({ where: { schoolId } })
-    const grades = await prisma.grade.findMany({ where: { schoolId } })
-    const slots = await prisma.timeSlot.findMany({
-      where: { schoolId, id: { in: timeSlotIds } },
-    })
+    const [sectionSubjects, subjects, teachers, sections, grades, slots] = await Promise.all([
+      prisma.sectionSubject.findMany({
+        where: { schoolId, id: { in: sectionSubjectIds } },
+      }),
+      prisma.subject.findMany({ where: { schoolId } }),
+      prisma.teacher.findMany({ where: { schoolId } }),
+      prisma.section.findMany({ where: { schoolId } }),
+      prisma.grade.findMany({ where: { schoolId } }),
+      prisma.timeSlot.findMany({
+        where: { schoolId, id: { in: timeSlotIds } },
+      }),
+    ])
     const sectionSubjectById = new Map(sectionSubjects.map((item) => [item.id, item]))
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const teacherById = new Map(teachers.map((item) => [item.id, item]))

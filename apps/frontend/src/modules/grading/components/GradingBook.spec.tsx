@@ -57,6 +57,26 @@ describe('GradingBook', () => {
     const user = userEvent.setup()
     renderBook()
 
+    const blocksTab = screen.getByRole('tab', { name: 'Bloques' })
+    const periodTab = screen.getByRole('tab', { name: 'Período' })
+    const annualTab = screen.getByRole('tab', { name: 'Matriz anual' })
+    const finalTab = screen.getByRole('tab', { name: 'Resumen final' })
+    expect(blocksTab).toHaveAttribute('aria-selected', 'true')
+
+    await user.click(periodTab)
+    expect(screen.getByRole('heading', { name: 'P1 — Agosto, septiembre y octubre' })).toBeInTheDocument()
+
+    periodTab.focus()
+    await user.keyboard('{ArrowRight}')
+    expect(annualTab).toHaveAttribute('aria-selected', 'true')
+    expect(await screen.findByRole('heading', { name: 'Registro anual de competencias' })).toBeInTheDocument()
+
+    await user.click(finalTab)
+    expect(await screen.findByText('Resultado anual')).toBeInTheDocument()
+
+    await user.click(blocksTab)
+    expect(screen.getByRole('heading', { name: 'Bloques de competencias' })).toBeInTheDocument()
+
     await user.click(screen.getAllByRole('button', { name: 'Ver bloque' })[0])
 
     const matrixTab = screen.getByRole('tab', { name: 'Matriz de calificaciones' })

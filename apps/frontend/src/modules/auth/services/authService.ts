@@ -77,6 +77,7 @@ export async function exchangeOAuthCode(code: string): Promise<string> {
 export async function createAulaSession(supabaseAccessToken: string): Promise<LoginResponse> {
   return api.post<LoginResponse>('/auth/session', undefined, {
     headers: { Authorization: `Bearer ${supabaseAccessToken}` },
+    clearResponseCache: true,
   })
 }
 
@@ -87,6 +88,7 @@ export async function completeOnboarding(
 ): Promise<LoginResponse> {
   return api.post<LoginResponse>('/auth/onboarding/complete', input, {
     headers: { Authorization: `Bearer ${supabaseAccessToken}` },
+    clearResponseCache: true,
   })
 }
 
@@ -102,7 +104,7 @@ export async function requestPasswordReset(email: string): Promise<void> {
 
 /** Cierra la sesión eliminando el token del almacenamiento local. */
 export async function logout(): Promise<void> {
-  await api.post('/auth/logout')
+  await api.post('/auth/logout', undefined, { clearResponseCache: true })
   await supabase.auth.signOut().catch(() => undefined)
   localStorage.removeItem('auth_token')
 }

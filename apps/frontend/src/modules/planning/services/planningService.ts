@@ -5,7 +5,7 @@
  * entradas de planificación y datos auxiliares.
  */
 
-import { api } from '@/services/apiClient'
+import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type { RecordStatus } from '@/types/domain'
 import type {
   AcademicPeriodSummary,
@@ -18,7 +18,10 @@ import type {
 
 /** Obtiene los períodos académicos de un año escolar */
 export async function getAcademicPeriods(schoolYearId: string): Promise<AcademicPeriodSummary[]> {
-  return api.get<AcademicPeriodSummary[]>(`/planning/academic-periods?schoolYearId=${schoolYearId}`)
+  return api.get<AcademicPeriodSummary[]>(`/planning/academic-periods?schoolYearId=${schoolYearId}`, {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.academicPeriods],
+  })
 }
 
 /** Crea un nuevo período académico */
@@ -29,7 +32,9 @@ export async function createAcademicPeriod(input: {
   startDate: string
   endDate: string
 }): Promise<void> {
-  await api.post('/planning/academic-periods', input)
+  await api.post('/planning/academic-periods', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.academicPeriods],
+  })
 }
 
 /** Actualiza un período académico existente */
@@ -40,12 +45,16 @@ export async function updateAcademicPeriod(id: string, input: Partial<{
   endDate: string
   status: RecordStatus
 }>): Promise<void> {
-  await api.patch(`/planning/academic-periods/${id}`, input)
+  await api.patch(`/planning/academic-periods/${id}`, input, {
+    invalidateCacheTags: [API_CACHE_TAGS.academicPeriods],
+  })
 }
 
 /** Elimina un período académico */
 export async function deleteAcademicPeriod(id: string): Promise<void> {
-  await api.delete(`/planning/academic-periods/${id}`)
+  await api.delete(`/planning/academic-periods/${id}`, {
+    invalidateCacheTags: [API_CACHE_TAGS.academicPeriods],
+  })
 }
 
 /** Obtiene las planificaciones según los filtros especificados */
@@ -101,7 +110,10 @@ export async function archivePlanningEntry(id: string): Promise<void> {
 
 /** Obtiene las competencias fundamentales disponibles */
 export async function getCompetencies(): Promise<CompetencyOption[]> {
-  return api.get<CompetencyOption[]>('/planning/competencies')
+  return api.get<CompetencyOption[]>('/planning/competencies', {
+    cacheTtlMs: API_CACHE_TTL.catalog,
+    cacheTags: [API_CACHE_TAGS.planningCompetencies],
+  })
 }
 
 /** Obtiene las secciones-asignaturas asignadas al docente */
@@ -109,5 +121,8 @@ export async function getTeacherSectionSubjects(teacherId?: string): Promise<
   { id: string; subjectName: string; sectionName: string; gradeName: string }[]
 > {
   const params = teacherId ? `?teacherId=${teacherId}` : ''
-  return api.get(`/planning/section-subjects${params}`)
+  return api.get(`/planning/section-subjects${params}`, {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.courseOptions],
+  })
 }

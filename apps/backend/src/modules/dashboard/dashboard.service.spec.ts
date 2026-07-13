@@ -5,8 +5,26 @@ function mockCache() {
   return { get: vi.fn(), set: vi.fn(), del: vi.fn() }
 }
 
+function deferred<T>() {
+  let resolve!: (value: T | PromiseLike<T>) => void
+  const promise = new Promise<T>((resolvePromise) => {
+    resolve = resolvePromise
+  })
+  return { promise, resolve }
+}
+
 const mocks = vi.hoisted(() => ({
   prisma: {
+    student: { count: vi.fn() },
+    teacher: { count: vi.fn() },
+    enrollment: { count: vi.fn() },
+    grade: { count: vi.fn() },
+    section: { count: vi.fn() },
+    sectionSubject: { count: vi.fn() },
+    scheduleEntry: { count: vi.fn() },
+    attendanceDaily: { count: vi.fn() },
+    attendanceClass: { count: vi.fn() },
+    planningEntry: { count: vi.fn() },
     dashboardTask: {
       create: vi.fn(),
       findFirst: vi.fn(),
@@ -22,6 +40,42 @@ vi.mock('@aula/database', () => ({
 describe('DashboardService', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+  })
+
+  it('starts every stats count before waiting for any result', async () => {
+    const cache = mockCache()
+    const countMocks = [
+      mocks.prisma.student.count,
+      mocks.prisma.teacher.count,
+      mocks.prisma.enrollment.count,
+      mocks.prisma.grade.count,
+      mocks.prisma.section.count,
+      mocks.prisma.sectionSubject.count,
+      mocks.prisma.scheduleEntry.count,
+      mocks.prisma.attendanceDaily.count,
+      mocks.prisma.attendanceClass.count,
+      mocks.prisma.planningEntry.count,
+    ]
+    const gates = countMocks.map(() => deferred<number>())
+    countMocks.forEach((count, index) => count.mockReturnValue(gates[index].promise))
+
+    const resultPromise = new DashboardService(cache).getStats('school-1')
+    await Promise.resolve()
+
+    countMocks.forEach((count) => expect(count).toHaveBeenCalledTimes(1))
+    gates.forEach((gate, index) => gate.resolve(index + 1))
+
+    const result = await resultPromise
+    expect(result).toEqual({
+      studentCount: 1,
+      teacherCount: 2,
+      activeEnrollments: 3,
+      courseCount: 6,
+      scheduleEntryCount: 7,
+      attendanceCount: 17,
+      planningCount: 10,
+    })
+    expect(cache.set).toHaveBeenCalledWith('dashboard:stats:school-1', result, 30_000)
   })
 
   it('creates a task and delegates to prisma', async () => {

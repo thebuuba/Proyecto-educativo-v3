@@ -5,7 +5,7 @@
  * estudiantes, guardar notas y calcular estadísticas.
  */
 
-import { api } from '@/services/apiClient'
+import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type {
   AcademicPeriodOpt,
   AnnualGradingPeriod,
@@ -40,12 +40,18 @@ export async function getAnnualGradingWorkspace(
 
 /** Obtiene las secciones-asignaturas asignadas al docente */
 export async function getTeacherSectionSubjects(): Promise<SectionSubjectOption[]> {
-  return api.get<SectionSubjectOption[]>('/grading/section-subjects')
+  return api.get<SectionSubjectOption[]>('/grading/section-subjects', {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.courseOptions],
+  })
 }
 
 /** Obtiene la lista de períodos académicos disponibles */
 export async function getAcademicPeriods(): Promise<AcademicPeriodOpt[]> {
-  return api.get<AcademicPeriodOpt[]>('/grading/academic-periods')
+  return api.get<AcademicPeriodOpt[]>('/grading/academic-periods', {
+    cacheTtlMs: API_CACHE_TTL.options,
+    cacheTags: [API_CACHE_TAGS.academicPeriods],
+  })
 }
 
 /** Obtiene los estudiantes con sus calificaciones para una sección-asignatura y período */

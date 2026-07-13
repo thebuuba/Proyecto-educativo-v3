@@ -7,6 +7,12 @@
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma, RecordStatus } from '@aula/database'
+import {
+  invalidateCourseOptions,
+  invalidateImplicitSchoolYearOptions,
+  optionCache,
+  optionCacheKeys,
+} from '../../common/cache/option-cache'
 import { CreateGradeDto } from './dto/create-grade.dto'
 import { UpdateGradeDto } from './dto/update-grade.dto'
 import { CreateSectionDto } from './dto/create-section.dto'
@@ -43,7 +49,6 @@ function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
 function invalidateSchoolCache(schoolId: string) {
   for (const key of cache.keys()) {
     if (
-      key === `courseData:${schoolId}` ||
       key === `teachers:${schoolId}` ||
       key === `grades:${schoolId}` ||
       key === `subjects:${schoolId}` ||
@@ -53,10 +58,12 @@ function invalidateSchoolCache(schoolId: string) {
       cache.delete(key)
     }
   }
+  invalidateCourseOptions(schoolId)
 }
 
 export function __test__clearCoursesCache() {
   cache.clear()
+  optionCache.clear()
 }
 
 /** Convierte el valor de estado a minúsculas */
@@ -73,7 +80,7 @@ async function resolveSchoolYear(schoolId: string) {
   })
   if (sy) return sy
   const year = new Date().getFullYear()
-  return prisma.schoolYear.create({
+  const schoolYear = await prisma.schoolYear.create({
     data: {
       schoolId,
       name: `${year}-${year + 1}`,
@@ -83,13 +90,19 @@ async function resolveSchoolYear(schoolId: string) {
     },
     select: { id: true, name: true },
   })
+  // Conserva la carga de courseData en curso, pero refresca a sus consumidores.
+  invalidateImplicitSchoolYearOptions(schoolId)
+  return schoolYear
 }
 
 @Injectable()
 export class CoursesService {
   /** Obtiene los datos completos del curso: grados, secciones, asignaciones, catálogos y año escolar actual */
   async getCourseData(schoolId: string) {
-    return withCache(`courseData:${schoolId}`, () => this._getCourseData(schoolId))
+    return optionCache.withCache(
+      optionCacheKeys.courses.courseData(schoolId),
+      () => this._getCourseData(schoolId),
+    )
   }
 
   private async _getCourseData(schoolId: string) {

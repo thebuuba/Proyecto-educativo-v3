@@ -1,6 +1,8 @@
 import { ServiceUnavailableException } from '@nestjs/common'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { PlanningService } from './planning.service'
+import { AttendanceService } from '../attendance/attendance.service'
+import { __test__clearGradingCache, GradingService } from '../grading/grading.service'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
@@ -17,7 +19,9 @@ const mocks = vi.hoisted(() => ({
       findFirst: vi.fn(),
     },
     academicPeriod: {
+      findMany: vi.fn(),
       findFirst: vi.fn(),
+      update: vi.fn(),
     },
     planningEntry: {
       create: vi.fn(),
@@ -36,6 +40,7 @@ const config = (values: Record<string, string | undefined>) => ({
 describe('PlanningService.generateEntryDraft', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    __test__clearGradingCache()
     vi.stubGlobal('fetch', vi.fn())
   })
 
@@ -206,5 +211,39 @@ describe('PlanningService.generateEntryDraft', () => {
         config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
       ).generateEntryDraft('school-1', {}),
     ).rejects.toThrow('La IA no generó la secuencia completa de actividades.')
+  })
+
+  it('invalidates grading and attendance options after changing a period', async () => {
+    const period = {
+      id: 'period-1',
+      schoolId: 'school-1',
+      schoolYearId: 'year-1',
+      name: 'P1',
+      sequence: 1,
+      status: 'ACTIVE',
+    }
+    mocks.prisma.academicPeriod.findMany.mockResolvedValue([period])
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue(period)
+    mocks.prisma.academicPeriod.update.mockResolvedValue({ ...period, name: 'Primer período' })
+    const grading = new GradingService()
+    const attendance = new AttendanceService()
+
+    await grading.getAcademicPeriods('school-1')
+    await attendance.getCurrentPeriod('school-1')
+    await grading.getAcademicPeriods('school-1')
+    await attendance.getCurrentPeriod('school-1')
+    expect(mocks.prisma.academicPeriod.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.academicPeriod.findFirst).toHaveBeenCalledTimes(1)
+
+    await new PlanningService(config({}) as never).updateAcademicPeriod(
+      'school-1',
+      'period-1',
+      { name: 'Primer período' },
+    )
+    await grading.getAcademicPeriods('school-1')
+    await attendance.getCurrentPeriod('school-1')
+
+    expect(mocks.prisma.academicPeriod.findMany).toHaveBeenCalledTimes(2)
+    expect(mocks.prisma.academicPeriod.findFirst).toHaveBeenCalledTimes(3)
   })
 })

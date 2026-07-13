@@ -31,16 +31,29 @@ export class DashboardService {
     }>(this.statsCacheKey(schoolId))
     if (cached !== undefined) return cached
 
-    const studentCount = await prisma.student.count({ where: { schoolId, status: 'ACTIVE' } })
-    const teacherCount = await prisma.teacher.count({ where: { schoolId, status: 'ACTIVE' } })
-    const activeEnrollments = await prisma.enrollment.count({ where: { schoolId, status: 'ACTIVE' } })
-    const gradeCount = await prisma.grade.count({ where: { schoolId, status: 'ACTIVE' } })
-    const sectionCount = await prisma.section.count({ where: { schoolId, status: 'ACTIVE' } })
-    const sectionSubjectCount = await prisma.sectionSubject.count({ where: { schoolId, status: 'ACTIVE' } })
-    const scheduleEntryCount = await prisma.scheduleEntry.count({ where: { schoolId, status: 'ACTIVE' } })
-    const attendanceDailyCount = await prisma.attendanceDaily.count({ where: { schoolId } })
-    const attendanceClassCount = await prisma.attendanceClass.count({ where: { schoolId } })
-    const planningCount = await prisma.planningEntry.count({ where: { schoolId, status: 'ACTIVE' } })
+    const [
+      studentCount,
+      teacherCount,
+      activeEnrollments,
+      gradeCount,
+      sectionCount,
+      sectionSubjectCount,
+      scheduleEntryCount,
+      attendanceDailyCount,
+      attendanceClassCount,
+      planningCount,
+    ] = await Promise.all([
+      prisma.student.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.teacher.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.enrollment.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.grade.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.section.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.sectionSubject.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.scheduleEntry.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.attendanceDaily.count({ where: { schoolId } }),
+      prisma.attendanceClass.count({ where: { schoolId } }),
+      prisma.planningEntry.count({ where: { schoolId, status: 'ACTIVE' } }),
+    ])
 
     const result = {
       studentCount,
