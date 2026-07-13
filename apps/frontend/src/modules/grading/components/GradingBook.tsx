@@ -145,7 +145,6 @@ export function GradingBook({
   recoveryScores,
   periodName,
   periodShortName,
-  recoveryLabel,
   courseTitle,
   saving,
   initialView = 'blocks',
@@ -153,7 +152,6 @@ export function GradingBook({
   onUpdateActivity,
   onDeleteActivity,
   onSaveScore,
-  onSaveRecovery,
   loadFinalRecords,
   getActivitiesForPeriod,
   onActivityWorkspaceChange,
@@ -542,13 +540,10 @@ export function GradingBook({
             config={config}
             courseTitle={courseTitle}
             onBack={() => setDetailView(null)}
+            onCreateActivity={() => openActivityCreator(selectedBlock.id)}
+            onOpenConfig={() => setShowConfig(true)}
             onOpenActivity={(activityId) => setDetailView({ type: 'activity', activityId })}
-            onSaveRecovery={onSaveRecovery}
-            onSaveScore={onSaveScore}
             records={records}
-            recoveryLabel={recoveryLabel}
-            recoveryScores={recoveryScores}
-            saving={saving}
             students={students}
           />
         ) : detailView.type === 'activity-hub' ? (
@@ -752,7 +747,19 @@ function BlockMatrixView({
         {blockSummaries.map((summary) => {
           const accent = blockAccents[summary.index]
           return (
-            <article key={summary.block.id} className={cn('overflow-hidden rounded-lg border bg-card shadow-sm', accent.card)}>
+            <article
+              key={summary.block.id}
+              role="button"
+              tabIndex={0}
+              className={cn('overflow-hidden rounded-lg border bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40', accent.card)}
+              onClick={() => onOpenBlock(summary.block.id)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault()
+                  onOpenBlock(summary.block.id)
+                }
+              }}
+            >
               <div className={cn('h-1.5', accent.dot)} />
               <div className="p-4">
                 <Badge tone="default" className="h-6 rounded-lg px-2 text-[11px] uppercase">
@@ -775,7 +782,14 @@ function BlockMatrixView({
                     <span className="font-medium text-muted-foreground">{summary.activities.length} actividades</span>
                     <Badge tone={statusTone(summary.status)}>{summary.status}</Badge>
                   </div>
-                  <Button variant="outline" className="mt-3 h-10 w-full justify-between" onClick={() => onOpenBlock(summary.block.id)}>
+                  <Button
+                    variant="outline"
+                    className="mt-3 h-10 w-full justify-between"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      onOpenBlock(summary.block.id)
+                    }}
+                  >
                     Ver bloque
                     <ArrowRight className="size-4" />
                   </Button>
@@ -784,9 +798,6 @@ function BlockMatrixView({
             </article>
           )
         })}
-      </div>
-      <div className="rounded-lg border border-primary/15 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
-        Las calificaciones reflejan el progreso actual del período. Los promedios finales se calculan al completar los cuatro períodos del año escolar.
       </div>
     </section>
   )
@@ -879,13 +890,10 @@ function BlockGradeView({
   config,
   courseTitle,
   onBack,
+  onCreateActivity,
+  onOpenConfig,
   onOpenActivity,
-  onSaveRecovery,
-  onSaveScore,
   records,
-  recoveryLabel,
-  recoveryScores,
-  saving,
   students,
 }: {
   blockId: CompetencyBlockId
@@ -893,21 +901,17 @@ function BlockGradeView({
   config: GradeCalculationConfig
   courseTitle: string
   onBack: () => void
+  onCreateActivity: () => void
+  onOpenConfig: () => void
   onOpenActivity: (activityId: string) => void
-  onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
   records: GradeRecordRow[]
-  recoveryLabel: string
-  recoveryScores: RecoveryScores
-  saving: boolean
   students: StudentGradeRow[]
 }) {
+  const [activeTab, setActiveTab] = useState<'matrix' | 'activities' | 'students' | 'stats'>('matrix')
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
   const blockIndex = competencyBlocks.findIndex((item) => item.id === blockId)
   const studentTotals = students.map((student) => {
-    const total = blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
-    const recovery = recoveryScores[blockId]?.[student.enrollmentId] ?? null
-    return effectivePeriodScore(total, recovery, config)
+    return blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
   })
   const average = averageNumbers(studentTotals.filter((value) => value > 0))
   const pendingActivities = activities.filter((activity) =>
@@ -920,6 +924,31 @@ function BlockGradeView({
       : average !== null && average >= config.passingScore
         ? 'Completado'
         : 'En recuperación'
+
+  const completedStudents = studentTotals.filter((value) => value >= config.passingScore).length
+  const riskStudents = activities.length === 0 ? 0 : studentTotals.filter((value) => value < config.passingScore).length
+  const activitySummaries = activities.map((activity) => {
+    const scored = students.filter((student) => scoreForActivity(records, student.enrollmentId, activity.id)).length
+    const averageScore = averageActivityScore(records, students, activity)
+    return {
+      activity,
+      averageScore,
+      pending: Math.max(students.length - scored, 0),
+      scored,
+    }
+  })
+  const bestActivity = activitySummaries
+    .filter((item) => item.averageScore !== null)
+    .sort((a, b) => (b.averageScore ?? 0) - (a.averageScore ?? 0))[0]
+  const lowestActivity = activitySummaries
+    .filter((item) => item.averageScore !== null)
+    .sort((a, b) => (a.averageScore ?? 0) - (b.averageScore ?? 0))[0]
+  const tabs = [
+    { id: 'matrix', label: 'Matriz de calificaciones' },
+    { id: 'activities', label: 'Actividades' },
+    { id: 'students', label: 'Estudiantes' },
+    { id: 'stats', label: 'Estadisticas del bloque' },
+  ] as const
 
   return (
     <div className="space-y-4">
@@ -957,41 +986,84 @@ function BlockGradeView({
         <BlockMetric icon={<CheckCircle2 className="size-5" />} label="Estado" value={blockState} helper="" tone="success" />
       </div>
 
-      <div className="flex flex-wrap gap-6 border-b border-border text-sm font-bold text-muted-foreground">
-        <span className="border-b-2 border-primary px-3 py-3 text-primary">Matriz de calificaciones</span>
-        <span className="px-3 py-3">Actividades</span>
-        <span className="px-3 py-3">Estudiantes</span>
-        <span className="px-3 py-3">Estadísticas del bloque</span>
+      <div className="flex flex-wrap gap-2 border-b border-border text-sm font-bold text-muted-foreground">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            className={cn(
+              'border-b-2 border-transparent px-3 py-3 transition hover:text-primary',
+              activeTab === tab.id ? 'border-primary text-primary' : 'text-muted-foreground',
+            )}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-        <div className="overflow-x-auto">
+      <section className="min-h-[calc(100vh-24rem)] rounded-lg border border-border bg-card shadow-sm">
+      {activeTab === 'matrix' ? (<div className="space-y-3 p-3">
+      <div className="overflow-hidden rounded-lg border border-border bg-card">
+        <div className="max-h-[calc(100vh-31rem)] overflow-auto">
           <table className="min-w-max border-separate border-spacing-0 text-sm">
             <thead>
               <tr className="bg-muted/50">
                 <th className="sticky left-0 top-0 z-40 w-14 border-b border-r border-border bg-muted px-3 py-4 text-center text-xs font-bold uppercase text-muted-foreground">#</th>
                 <th className="sticky left-14 top-0 z-40 min-w-[14rem] border-b border-r border-border bg-muted px-4 py-4 text-left text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">Estudiante</th>
-                {activities.map((activity, index) => (
-                  <th key={activity.id} className="min-w-[13rem] border-b border-r border-border px-4 py-4 text-center">
-                    <button className="font-bold text-primary hover:underline" onClick={() => onOpenActivity(activity.id)}>
-                      {index + 1}. {activity.name}
-                    </button>
-                    <p className="mt-1 text-xs font-bold text-primary">{activity.maxScore} pts</p>
+                  {activities.map((activity, index) => (
+                    <th
+                      key={activity.id}
+                      role="button"
+                      tabIndex={0}
+                      className="min-w-[13rem] border-b border-r border-border px-4 py-4 text-center outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                      onClick={() => onOpenActivity(activity.id)}
+                      onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          event.preventDefault()
+                          onOpenActivity(activity.id)
+                        }
+                      }}
+                    >
+                      <span className="font-bold text-primary">
+                        {index + 1}. {activity.name}
+                      </span>
+                      <p className="mt-1 text-xs font-bold text-primary">{activity.maxScore} pts</p>
+                    </th>
+                  ))}
+                  <th
+                    role="button"
+                    tabIndex={0}
+                    className="w-28 border-b border-r border-border px-4 py-4 text-center text-xs font-bold uppercase text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                    onClick={onOpenConfig}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault()
+                        onOpenConfig()
+                      }
+                    }}
+                  >
+                    Total /{config.expectedBlockTotal}
                   </th>
-                ))}
-                <th className="w-28 border-b border-r border-border px-4 py-4 text-center text-xs font-bold uppercase text-primary">Total /100</th>
-                <th className="w-28 border-b border-r border-border px-4 py-4 text-center text-xs font-bold uppercase text-muted-foreground">Estado</th>
-                {config.showRecovery ? (
-                  <th className="w-28 border-b border-border px-4 py-4 text-center text-xs font-bold uppercase text-muted-foreground">{recoveryLabel || 'RP'}</th>
-                ) : null}
+                  <th
+                    role="button"
+                    tabIndex={0}
+                    className="w-28 border-b border-r border-border px-4 py-4 text-center text-xs font-bold uppercase text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                    onClick={() => setActiveTab('stats')}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault()
+                        setActiveTab('stats')
+                      }
+                    }}
+                  >
+                    Estado
+                  </th>
               </tr>
             </thead>
             <tbody>
               {students.map((student, index) => {
                 const total = blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
-                const recovery = recoveryScores[blockId]?.[student.enrollmentId] ?? null
-                const effectiveTotal = effectivePeriodScore(total, recovery, config)
-                const status = activities.length === 0 ? 'Sin calificación' : effectiveTotal >= config.passingScore ? 'Aprobado' : 'En recuperación'
+                const status = activities.length === 0 ? 'Sin calificacion' : total >= config.passingScore ? 'Aprobado' : 'En recuperacion'
                 return (
                   <tr key={student.enrollmentId} className="group hover:bg-muted/20">
                     <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-3 py-3 text-center text-muted-foreground group-hover:bg-muted/20">
@@ -1004,41 +1076,15 @@ function BlockGradeView({
                       const record = scoreForActivity(records, student.enrollmentId, activity.id)
                       return (
                         <td key={activity.id} className="border-b border-r border-border px-4 py-2 text-center">
-                          <div className="inline-flex items-center gap-2">
-                            <Input
-                              type="number"
-                              min={0}
-                              max={activity.maxScore}
-                              step="0.01"
-                              defaultValue={record?.score ?? ''}
-                              disabled={saving}
-                              className="grade-cell h-9 w-24 rounded-md border-border/80 bg-card px-2 text-center font-bold"
-                              onKeyDown={focusNextGradeCell}
-                              onBlur={(event) => onSaveScore(student.enrollmentId, activity, event.target.value)}
-                            />
+                          <div className="inline-flex min-h-9 items-center gap-1 rounded-md px-3 text-sm font-bold text-primary">
+                            <span>{record ? formatGrade(record.score) : '-'}</span>
                             <span className="text-xs font-medium text-muted-foreground">/ {activity.maxScore}</span>
                           </div>
                         </td>
                       )
                     })}
-                    <td className="border-b border-r border-border px-4 py-3 text-center text-lg font-black text-primary">{formatGrade(effectiveTotal)}</td>
+                    <td className="border-b border-r border-border px-4 py-3 text-center text-lg font-black text-primary">{formatGrade(total)}</td>
                     <td className="border-b border-r border-border px-4 py-3 text-center"><Badge tone={statusTone(status)}>{status}</Badge></td>
-                    {config.showRecovery ? (
-                      <td className="border-b border-border px-4 py-2 text-center">
-                        <Input
-                          type="number"
-                          min={0}
-                          max={100}
-                          step="0.01"
-                          defaultValue={recovery ?? ''}
-                          disabled={saving}
-                          placeholder={recoveryLabel || 'RP'}
-                          className="grade-cell h-9 w-24 rounded-md border-border/80 bg-card px-2 text-center font-bold"
-                          onKeyDown={focusNextGradeCell}
-                          onBlur={(event) => onSaveRecovery(student.enrollmentId, blockId, event.target.value)}
-                        />
-                      </td>
-                    ) : null}
                   </tr>
                 )
               })}
@@ -1057,7 +1103,6 @@ function BlockGradeView({
                 })}
                 <td className="border-r border-border px-4 py-4 text-center font-black text-primary">{formatGrade(average)} / 100</td>
                 <td className="border-r border-border px-4 py-4 text-center"><Badge tone={statusTone(blockState)}>{blockState}</Badge></td>
-                {config.showRecovery ? <td className="px-4 py-4" /> : null}
               </tr>
             </tbody>
           </table>
@@ -1067,6 +1112,113 @@ function BlockGradeView({
       <div className="rounded-lg border border-primary/15 bg-primary/5 px-4 py-3 text-sm font-medium text-primary">
         La calificación del bloque se obtiene sumando los puntos de cada actividad. Total esperado: {config.expectedBlockTotal} puntos.
       </div>
+      </div>) : null}
+
+      {activeTab === 'activities' ? (
+        <div className="max-h-[calc(100vh-24rem)] overflow-y-auto p-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 className="text-lg font-black text-primary">Actividades del bloque</h3>
+              <p className="mt-1 text-sm text-muted-foreground">Administra las actividades y sus instrumentos antes de evaluar.</p>
+            </div>
+            <Button onClick={onCreateActivity}>
+              <Plus className="size-4" />
+              Crear actividad
+            </Button>
+          </div>
+          <div className="mt-4 grid gap-3 xl:grid-cols-2">
+            {activities.length === 0 ? (
+              <div className="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground">
+                Aun no hay actividades en este bloque.
+              </div>
+            ) : activitySummaries.map(({ activity, averageScore, pending, scored }) => (
+              <article key={activity.id} className="rounded-lg border border-border bg-muted/20 p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <button className="text-left text-base font-black text-primary hover:underline" onClick={() => onOpenActivity(activity.id)}>
+                      {activity.name}
+                    </button>
+                    <p className="mt-1 text-sm text-muted-foreground">{activity.instrumentType || 'Sin instrumento'} / {activity.maxScore} pts</p>
+                  </div>
+                  <Badge tone={pending === 0 ? 'success' : 'warning'}>{pending === 0 ? 'Completada' : `${pending} pendientes`}</Badge>
+                </div>
+                <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
+                  <InfoItem label="Evaluados" value={`${scored}/${students.length}`} />
+                  <InfoItem label="Promedio" value={`${formatGrade(averageScore)} / ${activity.maxScore}`} />
+                  <InfoItem label="Fecha" value={activity.date || 'Sin fecha'} />
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {activeTab === 'students' ? (
+        <div className="max-h-[calc(100vh-24rem)] overflow-auto p-3">
+        <section className="overflow-hidden rounded-lg border border-border bg-card">
+          <table className="min-w-full text-sm">
+            <thead className="bg-muted/50">
+              <tr>
+                <th className="w-14 px-4 py-3 text-center text-xs font-bold uppercase text-muted-foreground">#</th>
+                <th className="px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">Estudiante</th>
+                <th className="w-36 px-4 py-3 text-center text-xs font-bold uppercase text-muted-foreground">Total</th>
+                <th className="w-36 px-4 py-3 text-center text-xs font-bold uppercase text-muted-foreground">Completadas</th>
+                <th className="w-32 px-4 py-3 text-center text-xs font-bold uppercase text-muted-foreground">Pendientes</th>
+                <th className="w-36 px-4 py-3 text-center text-xs font-bold uppercase text-muted-foreground">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {students.map((student, index) => {
+                const total = blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
+                const completed = activities.filter((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).length
+                const pending = Math.max(activities.length - completed, 0)
+                const status = activities.length === 0 ? 'Sin calificacion' : total >= config.passingScore ? 'Aprobado' : 'En recuperacion'
+                return (
+                  <tr key={student.enrollmentId} className="border-t border-border hover:bg-muted/20">
+                    <td className="px-4 py-3 text-center text-muted-foreground">{student.listNumber ?? index + 1}</td>
+                    <td className="px-4 py-3 font-bold text-foreground">{student.lastName}, {student.firstName}</td>
+                    <td className="px-4 py-3 text-center text-lg font-black text-primary">{formatGrade(total)} / {config.expectedBlockTotal}</td>
+                    <td className="px-4 py-3 text-center font-bold">{completed}/{activities.length}</td>
+                    <td className="px-4 py-3 text-center font-bold">{pending}</td>
+                    <td className="px-4 py-3 text-center"><Badge tone={statusTone(status)}>{status}</Badge></td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </section>
+        </div>
+      ) : null}
+
+      {activeTab === 'stats' ? (
+        <div className="max-h-[calc(100vh-24rem)] overflow-y-auto p-4">
+        <section className="space-y-3">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            <BlockMetric icon={<TrendingUp className="size-5" />} label="Promedio" value={formatGrade(average)} helper={`/ ${config.expectedBlockTotal}`} tone="success" />
+            <BlockMetric icon={<CheckCircle2 className="size-5" />} label="Aprobados" value={completedStudents} helper={`${students.length} estudiantes`} tone="default" />
+            <BlockMetric icon={<Hourglass className="size-5" />} label="En riesgo" value={riskStudents} helper="requieren seguimiento" tone="warning" />
+            <BlockMetric icon={<ClipboardList className="size-5" />} label="Pendientes" value={pendingActivities} helper="actividades con faltantes" tone="accent" />
+          </div>
+          <div className="grid gap-3 lg:grid-cols-2">
+            <article className="rounded-lg border border-border bg-card p-4 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Actividad con mejor resultado</p>
+              <h3 className="mt-2 text-lg font-black text-primary">{bestActivity?.activity.name ?? 'Sin datos suficientes'}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {bestActivity ? `${formatGrade(bestActivity.averageScore)} / ${bestActivity.activity.maxScore}` : 'Califica una actividad para calcularlo.'}
+              </p>
+            </article>
+            <article className="rounded-lg border border-border bg-card p-4 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Actividad que requiere refuerzo</p>
+              <h3 className="mt-2 text-lg font-black text-primary">{lowestActivity?.activity.name ?? 'Sin datos suficientes'}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {lowestActivity ? `${formatGrade(lowestActivity.averageScore)} / ${lowestActivity.activity.maxScore}` : 'Califica una actividad para calcularlo.'}
+              </p>
+            </article>
+          </div>
+        </section>
+        </div>
+      ) : null}
+      </section>
     </div>
   )
 
@@ -1698,35 +1850,37 @@ function ActivityBlockHubCard({
   onOpenDraft: (draftId: string) => void
   onSelectBlock: () => void
 }) {
+  const hasItems = drafts.length > 0 || activities.length > 0
+
   return (
-    <article className={cn('flex min-h-[23rem] flex-col rounded-lg border p-4 shadow-sm', accent.card)}>
-      <div className="flex items-start gap-3">
-        <span className={cn('mt-1 h-14 w-1.5 shrink-0 rounded-full', accent.dot)} />
+    <article className={cn('flex min-h-[18rem] flex-col rounded-lg border p-3 shadow-sm', accent.card)}>
+      <div className="flex items-start gap-2">
+        <span className={cn('mt-0.5 h-12 w-1.5 shrink-0 rounded-full', accent.dot)} />
         <div className="min-w-0">
-          <p className="text-xs font-black uppercase tracking-[0.16em] text-primary">{block.shortName}</p>
-          <h3 className="mt-1 text-base font-black leading-tight text-foreground">{blockShortNames[block.id] ?? block.name}</h3>
+          <p className="text-[11px] font-black uppercase tracking-[0.16em] text-primary">{block.shortName}</p>
+          <h3 className="mt-0.5 text-sm font-black leading-tight text-foreground">{blockShortNames[block.id] ?? block.name}</h3>
         </div>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-2">
-        <div className="rounded-lg bg-card/75 p-3 ring-1 ring-border">
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        <div className="rounded-lg bg-card/75 px-3 py-2 ring-1 ring-border">
           <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Creadas</p>
-          <p className="mt-1 text-2xl font-black text-primary">{activities.length}</p>
+          <p className="text-xl font-black leading-tight text-primary">{activities.length}</p>
         </div>
-        <div className="rounded-lg bg-card/75 p-3 ring-1 ring-border">
+        <div className="rounded-lg bg-card/75 px-3 py-2 ring-1 ring-border">
           <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Borradores</p>
-          <p className="mt-1 text-2xl font-black text-primary">{drafts.length}</p>
+          <p className="text-xl font-black leading-tight text-primary">{drafts.length}</p>
         </div>
       </div>
 
-      <Button className="mt-4 w-full" onClick={onSelectBlock}>
+      <Button className="mt-3 h-9 w-full" onClick={onSelectBlock}>
         <Plus className="size-4" />
         Crear actividad
       </Button>
 
-      {drafts.length > 0 ? (
-        <div className="mt-3 max-h-[7.25rem] space-y-2 overflow-y-auto pr-1">
-            {drafts.map((draft) => (
+      {hasItems ? (
+        <div className="mt-3 max-h-[8.25rem] space-y-2 overflow-y-auto pr-1">
+          {drafts.map((draft) => (
               <div
                 key={draft.draftId}
                 role="button"
@@ -1756,12 +1910,7 @@ function ActivityBlockHubCard({
                   </button>
                 </div>
               </div>
-            ))}
-        </div>
-      ) : null}
-
-      {activities.length > 0 ? (
-      <div className="mt-3 max-h-[7.25rem] space-y-2 overflow-y-auto pr-1">
+          ))}
           {activities.map((activity) => (
             <button
               key={activity.id}
@@ -1776,7 +1925,7 @@ function ActivityBlockHubCard({
               <ArrowRight className="ml-3 mt-2 size-4 shrink-0 text-primary" />
             </button>
           ))}
-      </div>
+        </div>
       ) : null}
     </article>
   )
@@ -1811,6 +1960,16 @@ function ActivityCreationView({
   onSaveActivity: () => void
   saving: boolean
 }) {
+  const [creationTab, setCreationTab] = useState<'activity' | 'instrument'>('activity')
+
+  function handleActivityDraftChange(draft: ActivityDraft) {
+    const selectedInstrument = draft.instrumentType && draft.instrumentType !== activityDraft.instrumentType
+    onChangeDraft({ ...draft, competencyBlockId: block.id })
+    if (selectedInstrument) {
+      setCreationTab('instrument')
+    }
+  }
+
   return (
     <section className="space-y-4">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
@@ -1842,44 +2001,77 @@ function ActivityCreationView({
         </Button>
       </div>
 
-      <div className="grid gap-4 xl:grid-cols-[minmax(0,42rem)_minmax(0,1fr)]">
-        <div className="space-y-4">
-          <div className="w-full rounded-lg border border-border bg-card p-4 shadow-sm xl:max-w-2xl">
-            <div className="mb-3 flex flex-col gap-2 border-b border-border pb-3 sm:flex-row sm:items-center sm:justify-between">
-              <h3 className="font-black text-foreground">Información de la actividad</h3>
-              <div className="flex flex-wrap gap-2">
-                {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
-                <Button className="h-9 px-4" onClick={onSaveActivity} disabled={saving}>
-                  Guardar actividad
-                </Button>
-              </div>
-            </div>
+      <div className="flex flex-col gap-3 rounded-lg border border-border bg-card p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="grid grid-cols-2 gap-2 rounded-lg bg-muted/35 p-1">
+          <button
+            type="button"
+            className={cn(
+              'h-9 rounded-md px-4 text-sm font-bold transition',
+              creationTab === 'activity' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground',
+            )}
+            onClick={() => setCreationTab('activity')}
+          >
+            Datos de la actividad
+          </button>
+          <button
+            type="button"
+            className={cn(
+              'h-9 rounded-md px-4 text-sm font-bold transition',
+              creationTab === 'instrument' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground',
+            )}
+            onClick={() => setCreationTab('instrument')}
+          >
+            Instrumento
+          </button>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
+          <Button className="h-9 px-4" onClick={onSaveActivity} disabled={saving}>
+            Guardar actividad
+          </Button>
+        </div>
+      </div>
+
+      {creationTab === 'activity' ? (
+        <div className="w-full rounded-lg border border-border bg-card p-4 shadow-sm xl:max-w-4xl">
+          <div className="mb-3 border-b border-border pb-3">
+            <h3 className="font-black text-foreground">Información de la actividad</h3>
+          </div>
             <ActivityManager
               activityDraft={activityDraft}
               activities={activities}
               editingActivityId={editingActivityId}
               onCancelEdit={onCancelEdit}
-              onChangeDraft={(draft) => onChangeDraft({ ...draft, competencyBlockId: block.id })}
+              onChangeDraft={handleActivityDraftChange}
               onDeleteActivity={onDeleteActivity}
               onDuplicateActivity={onDuplicateActivity}
               onEditActivity={onEditActivity}
               onSaveActivity={onSaveActivity}
-              compactLayout
               saving={saving}
               showActions={false}
               showCompetencySelect={false}
             />
-          </div>
-
         </div>
+      ) : (
         <InstrumentPreview instrumentType={activityDraft.instrumentType} />
-      </div>
+      )}
     </section>
   )
 }
 
 function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
   const title = instrumentTitle(instrumentType)
+  const [rubricCriteria, setRubricCriteria] = useState(4)
+  const [rubricLevels, setRubricLevels] = useState(4)
+  const [scaleCriteria, setScaleCriteria] = useState(5)
+  const [scaleLevels, setScaleLevels] = useState(4)
+  const [checklistCriteria, setChecklistCriteria] = useState(6)
+  const [checklistHasObservations, setChecklistHasObservations] = useState(true)
+  const [weightedCriteria, setWeightedCriteria] = useState(5)
+  const [weightedHasPartial, setWeightedHasPartial] = useState(true)
+  const [instrumentTextSize, setInstrumentTextSize] = useState<'normal' | 'large' | 'xlarge'>('large')
+  const [instrumentBold, setInstrumentBold] = useState(false)
+  const [instrumentItalic, setInstrumentItalic] = useState(false)
 
   return (
     <section className="rounded-lg border border-border bg-card p-4 shadow-sm">
@@ -1890,48 +2082,105 @@ function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
         </p>
           <h3 className="mt-1 text-xl font-black text-primary">{title}</h3>
         </div>
-        <Badge>{instrumentType ? 'Vacío' : 'Pendiente'}</Badge>
+        <div className="flex flex-wrap items-center gap-2">
+          <InstrumentFormatControls
+            bold={instrumentBold}
+            italic={instrumentItalic}
+            onBoldChange={setInstrumentBold}
+            onItalicChange={setInstrumentItalic}
+            onTextSizeChange={setInstrumentTextSize}
+            textSize={instrumentTextSize}
+          />
+          <Badge>{instrumentType ? 'Vacío' : 'Pendiente'}</Badge>
+        </div>
       </div>
 
-      <div className="mt-3 max-h-[32rem] overflow-auto pr-1">
-        {instrumentType === 'rubrica' ? <RubricInstrument /> : null}
-        {instrumentType === 'escala' ? <ScaleInstrument /> : null}
-        {instrumentType === 'lista-cotejo' ? <ChecklistInstrument /> : null}
-        {instrumentType === 'lista-ponderada' ? <WeightedListInstrument /> : null}
+      <div className={cn('mt-3 max-h-[32rem] overflow-auto pr-1', instrumentTypographyClass(instrumentTextSize, instrumentBold, instrumentItalic))}>
+        {instrumentType === 'rubrica' ? (
+          <RubricInstrument
+            criteriaCount={rubricCriteria}
+            levelCount={rubricLevels}
+            onCriteriaCountChange={setRubricCriteria}
+            onLevelCountChange={setRubricLevels}
+          />
+        ) : null}
+        {instrumentType === 'escala' ? (
+          <ScaleInstrument
+            criteriaCount={scaleCriteria}
+            levelCount={scaleLevels}
+            onCriteriaCountChange={setScaleCriteria}
+            onLevelCountChange={setScaleLevels}
+          />
+        ) : null}
+        {instrumentType === 'lista-cotejo' ? (
+          <ChecklistInstrument
+            criteriaCount={checklistCriteria}
+            hasObservations={checklistHasObservations}
+            onCriteriaCountChange={setChecklistCriteria}
+            onHasObservationsChange={setChecklistHasObservations}
+          />
+        ) : null}
+        {instrumentType === 'lista-ponderada' ? (
+          <WeightedListInstrument
+            criteriaCount={weightedCriteria}
+            hasPartial={weightedHasPartial}
+            onCriteriaCountChange={setWeightedCriteria}
+            onHasPartialChange={setWeightedHasPartial}
+          />
+        ) : null}
         {!instrumentType ? <EmptyInstrumentState /> : null}
       </div>
     </section>
   )
 }
 
-function RubricInstrument() {
+function RubricInstrument({
+  criteriaCount,
+  levelCount,
+  onCriteriaCountChange,
+  onLevelCountChange,
+}: {
+  criteriaCount: number
+  levelCount: number
+  onCriteriaCountChange: (value: number) => void
+  onLevelCountChange: (value: number) => void
+}) {
+  const levels = Array.from({ length: levelCount }, (_, index) => ({
+    score: levelCount - index,
+    name: rubricLevelName(index),
+  }))
+
   return (
     <div className="space-y-3">
+      <InstrumentControls>
+        <StepperControl label="Criterios" value={criteriaCount} min={1} max={12} onChange={onCriteriaCountChange} />
+        <StepperControl label="Niveles" value={levelCount} min={2} max={6} onChange={onLevelCountChange} />
+      </InstrumentControls>
       <InstrumentTable>
         <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
             <th className="w-[26%] border border-border px-2 py-2">Criterios</th>
-            <th className="border border-border px-2 py-2">4 Excelente</th>
-            <th className="border border-border px-2 py-2">3 Bueno</th>
-            <th className="border border-border px-2 py-2">2 Satisfactorio</th>
-            <th className="border border-border px-2 py-2">1 Insuficiente</th>
+            {levels.map((level) => (
+              <th key={level.score} className="border border-border px-2 py-2">
+                {level.score} {level.name}
+              </th>
+            ))}
             <th className="w-20 border border-border px-2 py-2">Puntaje</th>
           </tr>
         </thead>
         <tbody>
-          {['Criterio 1', 'Criterio 2', 'Criterio 3', 'Criterio 4'].map((criterion) => (
+          {Array.from({ length: criteriaCount }, (_, index) => `Criterio ${index + 1}`).map((criterion) => (
             <tr key={criterion}>
               <td className="border border-border p-1.5"><InstrumentTextarea placeholder={criterion} /></td>
-              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
-              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
-              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
-              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
-              <td className="border border-border p-1.5"><InstrumentInput placeholder="__/4" /></td>
+              {levels.map((level) => (
+                <td key={level.score} className="border border-border p-1.5"><InstrumentTextarea /></td>
+              ))}
+              <td className="border border-border p-1.5"><InstrumentInput placeholder={`__/${levelCount}`} /></td>
             </tr>
           ))}
           <tr className="bg-sky-50 font-bold">
-            <td className="border border-border px-2 py-2" colSpan={5}>Puntaje total</td>
-            <td className="border border-border p-1.5"><InstrumentInput placeholder="__/20" /></td>
+            <td className="border border-border px-2 py-2" colSpan={levelCount + 1}>Puntaje total</td>
+            <td className="border border-border p-1.5"><InstrumentInput placeholder={`__/${criteriaCount * levelCount}`} /></td>
           </tr>
         </tbody>
       </InstrumentTable>
@@ -1939,28 +2188,43 @@ function RubricInstrument() {
   )
 }
 
-function ScaleInstrument() {
+function ScaleInstrument({
+  criteriaCount,
+  levelCount,
+  onCriteriaCountChange,
+  onLevelCountChange,
+}: {
+  criteriaCount: number
+  levelCount: number
+  onCriteriaCountChange: (value: number) => void
+  onLevelCountChange: (value: number) => void
+}) {
+  const levels = Array.from({ length: levelCount }, (_, index) => levelCount - index)
+
   return (
     <div className="space-y-3">
+      <InstrumentControls>
+        <StepperControl label="Indicadores" value={criteriaCount} min={1} max={12} onChange={onCriteriaCountChange} />
+        <StepperControl label="Niveles" value={levelCount} min={2} max={6} onChange={onLevelCountChange} />
+      </InstrumentControls>
       <InstrumentTable>
         <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
             <th className="w-[34%] border border-border px-2 py-2">Criterios</th>
-            <th className="border border-border px-2 py-2">4</th>
-            <th className="border border-border px-2 py-2">3</th>
-            <th className="border border-border px-2 py-2">2</th>
-            <th className="border border-border px-2 py-2">1</th>
+            {levels.map((level) => (
+              <th key={level} className="border border-border px-2 py-2">{level}</th>
+            ))}
             <th className="w-20 border border-border px-2 py-2">Puntaje</th>
           </tr>
         </thead>
         <tbody>
-          {['Criterio 1', 'Criterio 2', 'Criterio 3', 'Criterio 4', 'Criterio 5'].map((criterion) => (
+          {Array.from({ length: criteriaCount }, (_, index) => `Criterio ${index + 1}`).map((criterion) => (
             <tr key={criterion}>
               <td className="border border-border p-1.5"><InstrumentTextarea placeholder={criterion} /></td>
-              {[4, 3, 2, 1].map((value) => (
-                <td key={value} className="border border-border text-center"><input className="size-4 accent-primary" type="checkbox" /></td>
+              {levels.map((value) => (
+                <td key={value} className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               ))}
-              <td className="border border-border p-1.5"><InstrumentInput placeholder="__/4" /></td>
+              <td className="border border-border p-1.5"><InstrumentInput placeholder={`__/${levelCount}`} /></td>
             </tr>
           ))}
         </tbody>
@@ -1969,25 +2233,39 @@ function ScaleInstrument() {
   )
 }
 
-function ChecklistInstrument() {
+function ChecklistInstrument({
+  criteriaCount,
+  hasObservations,
+  onCriteriaCountChange,
+  onHasObservationsChange,
+}: {
+  criteriaCount: number
+  hasObservations: boolean
+  onCriteriaCountChange: (value: number) => void
+  onHasObservationsChange: (value: boolean) => void
+}) {
   return (
     <div className="space-y-3">
+      <InstrumentControls>
+        <StepperControl label="Indicadores" value={criteriaCount} min={1} max={20} onChange={onCriteriaCountChange} />
+        <ToggleControl label="Observaciones" checked={hasObservations} onChange={onHasObservationsChange} />
+      </InstrumentControls>
       <InstrumentTable>
         <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
             <th className="w-[48%] border border-border px-2 py-2">Criterios</th>
             <th className="border border-border px-2 py-2">Sí</th>
             <th className="border border-border px-2 py-2">No</th>
-            <th className="w-[30%] border border-border px-2 py-2">Observaciones</th>
+            {hasObservations ? <th className="w-[30%] border border-border px-2 py-2">Observaciones</th> : null}
           </tr>
         </thead>
         <tbody>
-          {Array.from({ length: 6 }, (_, index) => (
+          {Array.from({ length: criteriaCount }, (_, index) => (
             <tr key={index}>
               <td className="border border-border p-1.5"><InstrumentTextarea placeholder={`${index + 1}. Criterio`} /></td>
-              <td className="border border-border text-center"><input className="size-4 accent-primary" type="checkbox" /></td>
-              <td className="border border-border text-center"><input className="size-4 accent-primary" type="checkbox" /></td>
-              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
+              <td className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
+              <td className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
+              {hasObservations ? <td className="border border-border p-1.5"><InstrumentTextarea /></td> : null}
             </tr>
           ))}
         </tbody>
@@ -1996,9 +2274,23 @@ function ChecklistInstrument() {
   )
 }
 
-function WeightedListInstrument() {
+function WeightedListInstrument({
+  criteriaCount,
+  hasPartial,
+  onCriteriaCountChange,
+  onHasPartialChange,
+}: {
+  criteriaCount: number
+  hasPartial: boolean
+  onCriteriaCountChange: (value: number) => void
+  onHasPartialChange: (value: boolean) => void
+}) {
   return (
     <div className="space-y-3">
+      <InstrumentControls>
+        <StepperControl label="Criterios" value={criteriaCount} min={1} max={12} onChange={onCriteriaCountChange} />
+        <ToggleControl label="Cumplimiento parcial" checked={hasPartial} onChange={onHasPartialChange} />
+      </InstrumentControls>
       <InstrumentTable>
         <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
@@ -2006,20 +2298,20 @@ function WeightedListInstrument() {
             <th className="w-[28%] border border-border px-2 py-2">Indicadores</th>
             <th className="border border-border px-2 py-2">Pond.</th>
             <th className="border border-border px-2 py-2">Sí</th>
-            <th className="border border-border px-2 py-2">Parcial</th>
+            {hasPartial ? <th className="border border-border px-2 py-2">Parcial</th> : null}
             <th className="border border-border px-2 py-2">No</th>
             <th className="border border-border px-2 py-2">Puntaje</th>
             <th className="w-[20%] border border-border px-2 py-2">Obs.</th>
           </tr>
         </thead>
         <tbody>
-          {Array.from({ length: 5 }, (_, index) => (
+          {Array.from({ length: criteriaCount }, (_, index) => (
             <tr key={index}>
               <td className="border border-border p-1.5"><InstrumentTextarea placeholder={`Criterio ${index + 1}`} /></td>
               <td className="border border-border p-1.5"><InstrumentTextarea /></td>
               <td className="border border-border p-1.5"><InstrumentInput placeholder="%" /></td>
-              {['si', 'parcial', 'no'].map((value) => (
-                <td key={value} className="border border-border text-center"><input className="size-4 accent-primary" type="checkbox" /></td>
+              {['si', ...(hasPartial ? ['parcial'] : []), 'no'].map((value) => (
+                <td key={value} className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               ))}
               <td className="border border-border p-1.5"><InstrumentInput placeholder="%" /></td>
               <td className="border border-border p-1.5"><InstrumentTextarea /></td>
@@ -2028,7 +2320,7 @@ function WeightedListInstrument() {
           <tr className="bg-sky-50 font-bold">
             <td className="border border-border px-2 py-2" colSpan={2}>Total</td>
             <td className="border border-border p-1.5"><InstrumentInput placeholder="100%" /></td>
-            <td className="border border-border" colSpan={3} />
+            <td className="border border-border" colSpan={hasPartial ? 3 : 2} />
             <td className="border border-border p-1.5"><InstrumentInput placeholder="%" /></td>
             <td className="border border-border" />
           </tr>
@@ -2045,6 +2337,142 @@ function EmptyInstrumentState() {
         Selecciona un instrumento para generar aquí una plantilla vacía editable.
       </p>
     </div>
+  )
+}
+
+function InstrumentControls({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex flex-wrap items-center gap-2 rounded-lg border border-border bg-muted/20 p-2">
+      {children}
+    </div>
+  )
+}
+
+function InstrumentFormatControls({
+  bold,
+  italic,
+  onBoldChange,
+  onItalicChange,
+  onTextSizeChange,
+  textSize,
+}: {
+  bold: boolean
+  italic: boolean
+  onBoldChange: (value: boolean) => void
+  onItalicChange: (value: boolean) => void
+  onTextSizeChange: (value: 'normal' | 'large' | 'xlarge') => void
+  textSize: 'normal' | 'large' | 'xlarge'
+}) {
+  const textSizes: Array<{ label: string; value: 'normal' | 'large' | 'xlarge' }> = [
+    { label: 'A-', value: 'normal' },
+    { label: 'A', value: 'large' },
+    { label: 'A+', value: 'xlarge' },
+  ]
+
+  return (
+    <div className="flex items-center gap-1 rounded-lg border border-border bg-card p-1">
+      {textSizes.map((item) => (
+        <button
+          key={item.value}
+          type="button"
+          className={cn(
+            'h-7 rounded-md px-2 text-xs font-black transition hover:bg-primary/10',
+            textSize === item.value ? 'bg-primary text-primary-foreground' : 'text-primary',
+          )}
+          onClick={() => onTextSizeChange(item.value)}
+          aria-label={`Tamaño de texto ${item.label}`}
+        >
+          {item.label}
+        </button>
+      ))}
+      <span className="mx-1 h-5 w-px bg-border" />
+      <button
+        type="button"
+        className={cn('h-7 rounded-md px-2 text-xs font-black transition hover:bg-primary/10', bold ? 'bg-primary text-primary-foreground' : 'text-primary')}
+        onClick={() => onBoldChange(!bold)}
+        aria-label="Alternar negrita"
+      >
+        B
+      </button>
+      <button
+        type="button"
+        className={cn('h-7 rounded-md px-2 text-xs font-black italic transition hover:bg-primary/10', italic ? 'bg-primary text-primary-foreground' : 'text-primary')}
+        onClick={() => onItalicChange(!italic)}
+        aria-label="Alternar cursiva"
+      >
+        I
+      </button>
+    </div>
+  )
+}
+
+function StepperControl({
+  label,
+  max,
+  min,
+  onChange,
+  value,
+}: {
+  label: string
+  max: number
+  min: number
+  onChange: (value: number) => void
+  value: number
+}) {
+  return (
+    <div className="flex items-center gap-2 rounded-md border border-border bg-card px-2 py-1">
+      <span className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{label}</span>
+      <button
+        type="button"
+        className="grid size-7 place-items-center rounded-md text-lg font-bold text-primary hover:bg-primary/10 disabled:text-muted-foreground"
+        disabled={value <= min}
+        onClick={() => onChange(Math.max(min, value - 1))}
+        aria-label={`Reducir ${label}`}
+      >
+        -
+      </button>
+      <span className="w-6 text-center text-sm font-black text-foreground">{value}</span>
+      <button
+        type="button"
+        className="grid size-7 place-items-center rounded-md text-lg font-bold text-primary hover:bg-primary/10 disabled:text-muted-foreground"
+        disabled={value >= max}
+        onClick={() => onChange(Math.min(max, value + 1))}
+        aria-label={`Aumentar ${label}`}
+      >
+        +
+      </button>
+    </div>
+  )
+}
+
+function ToggleControl({
+  checked,
+  label,
+  onChange,
+}: {
+  checked: boolean
+  label: string
+  onChange: (checked: boolean) => void
+}) {
+  return (
+    <label className="flex h-9 items-center gap-2 rounded-md border border-border bg-card px-3 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+      <input
+        className="size-4 accent-primary"
+        type="checkbox"
+        checked={checked}
+        onChange={(event) => onChange(event.target.checked)}
+      />
+      {label}
+    </label>
+  )
+}
+
+function InstrumentCheckPlaceholder() {
+  return (
+    <span
+      aria-hidden="true"
+      className="mx-auto block size-4 rounded border border-muted-foreground/70 bg-card"
+    />
   )
 }
 
@@ -2087,107 +2515,68 @@ function CalculationConfigModal({
 }) {
   return (
     <Modal
-      title="Configurar cálculo de calificaciones"
-      description="Ajusta las reglas según tu forma de evaluar."
+      title="Configurar calculo del bloque"
+      description="Ajusta como se obtiene la calificacion de este bloque de competencias."
       onClose={onClose}
-      className="max-w-6xl rounded-xl"
+      className="max-w-5xl rounded-xl"
     >
-      <div className="grid gap-6 p-6 xl:grid-cols-[minmax(0,1fr)_20rem]">
-        <div className="grid gap-6 lg:grid-cols-2 lg:divide-x lg:divide-border">
-          <div className="grid content-start gap-3 lg:pr-8">
-            <label className="space-y-1.5 text-sm font-bold text-foreground">
-              Nota mínima de aprobación
-              <Input type="number" value={config.passingScore} onChange={(event) => onChange({ ...config, passingScore: Number(event.target.value) || 0 })} />
-            </label>
-            <label className="space-y-1.5 text-sm font-bold text-foreground">
-              Método del bloque
-              <Select value={config.blockMethod} onChange={(event) => onChange({ ...config, blockMethod: event.target.value as GradeCalculationConfig['blockMethod'] })}>
-                <option value="sum">Suma de actividades</option>
-                <option value="average">Promedio de actividades</option>
-                <option value="weighted">Porcentaje ponderado</option>
-              </Select>
-            </label>
-            <label className="space-y-1.5 text-sm font-bold text-foreground">
-              Total esperado por bloque
-              <Input type="number" value={config.expectedBlockTotal} onChange={(event) => onChange({ ...config, expectedBlockTotal: Number(event.target.value) || 100 })} />
-            </label>
-            <label className="space-y-1.5 text-sm font-bold text-foreground">
-              Regla de recuperación
-              <Select value={config.recoveryRule} onChange={(event) => onChange({ ...config, recoveryRule: event.target.value as GradeCalculationConfig['recoveryRule'] })}>
-                <option value="replace">Sustituye la nota del bloque</option>
-                <option value="replace-if-higher">Solo sustituye si mejora</option>
-                <option value="average">Se promedia con el bloque</option>
-                <option value="none">No usar recuperación</option>
-              </Select>
-            </label>
-            <label className="flex items-center gap-3 pt-1 text-sm font-bold text-muted-foreground">
-              <input className="size-5 rounded border-border accent-primary" type="checkbox" checked={config.showRecovery} onChange={(event) => onChange({ ...config, showRecovery: event.target.checked })} />
-              Mostrar columna de recuperación (RP)
-            </label>
-          </div>
-
-          <div className="grid content-start gap-3 lg:pl-8">
-            <label className="space-y-1.5 text-sm font-bold text-foreground">
-              Redondeo final
-              <Select value={config.finalRounding} onChange={(event) => onChange({ ...config, finalRounding: event.target.value as GradeCalculationConfig['finalRounding'] })}>
-                <option value="standard">Redondeo estándar (≥ .5 = +1)</option>
-                <option value="floor">Redondear hacia abajo</option>
-                <option value="ceil">Redondear hacia arriba</option>
-                <option value="decimals">Mantener decimales</option>
-              </Select>
-            </label>
-            <label className="space-y-1.5 text-sm font-bold text-foreground">
-              Decimales en bloques
-              <Select value={String(config.pcDecimals)} onChange={(event) => onChange({ ...config, pcDecimals: Number(event.target.value) })}>
-                <option value="0">Sin decimales</option>
-                <option value="1">1 decimal</option>
-                <option value="2">2 decimales</option>
-                <option value="3">3 decimales</option>
-                <option value="4">4 decimales</option>
-              </Select>
-            </label>
-            <label className="space-y-1.5 text-sm font-bold text-foreground">
-              Decimales en promedio anual
-              <Select value={String(config.annualDecimals)} onChange={(event) => onChange({ ...config, annualDecimals: Number(event.target.value) })}>
-                <option value="0">Sin decimales</option>
-                <option value="1">1 decimal</option>
-                <option value="2">2 decimales</option>
-                <option value="3">3 decimales</option>
-                <option value="4">4 decimales</option>
-              </Select>
-            </label>
-            <label className="space-y-1.5 text-sm font-bold text-foreground">
-              Decimales en nota final
-              <Select value={String(config.finalDecimals)} onChange={(event) => onChange({ ...config, finalDecimals: Number(event.target.value) })}>
-                <option value="0">Sin decimales</option>
-                <option value="1">1 decimal</option>
-                <option value="2">2 decimales</option>
-                <option value="3">3 decimales</option>
-                <option value="4">4 decimales</option>
-              </Select>
-            </label>
-          </div>
+      <div className="grid gap-6 p-6 xl:grid-cols-[minmax(0,1fr)_19rem]">
+        <div className="grid content-start gap-4 md:grid-cols-2">
+          <label className="space-y-1.5 text-sm font-bold text-foreground">
+            Total esperado por bloque
+            <Input type="number" value={config.expectedBlockTotal} onChange={(event) => onChange({ ...config, expectedBlockTotal: Number(event.target.value) || 100 })} />
+          </label>
+          <label className="space-y-1.5 text-sm font-bold text-foreground">
+            Nota minima de aprobacion
+            <Input type="number" value={config.passingScore} onChange={(event) => onChange({ ...config, passingScore: Number(event.target.value) || 0 })} />
+          </label>
+          <label className="space-y-1.5 text-sm font-bold text-foreground">
+            Metodo del bloque
+            <Select value={config.blockMethod} onChange={(event) => onChange({ ...config, blockMethod: event.target.value as GradeCalculationConfig['blockMethod'] })}>
+              <option value="sum">Suma de actividades</option>
+              <option value="average">Promedio de actividades</option>
+              <option value="weighted">Porcentaje ponderado</option>
+            </Select>
+          </label>
+          <label className="space-y-1.5 text-sm font-bold text-foreground">
+            Redondeo de la nota del bloque
+            <Select value={config.finalRounding} onChange={(event) => onChange({ ...config, finalRounding: event.target.value as GradeCalculationConfig['finalRounding'] })}>
+              <option value="standard">Redondeo estandar</option>
+              <option value="floor">Redondear hacia abajo</option>
+              <option value="ceil">Redondear hacia arriba</option>
+              <option value="decimals">Mantener decimales</option>
+            </Select>
+          </label>
+          <label className="space-y-1.5 text-sm font-bold text-foreground">
+            Decimales en nota del bloque
+            <Select value={String(config.pcDecimals)} onChange={(event) => onChange({ ...config, pcDecimals: Number(event.target.value) })}>
+              <option value="0">Sin decimales</option>
+              <option value="1">1 decimal</option>
+              <option value="2">2 decimales</option>
+              <option value="3">3 decimales</option>
+              <option value="4">4 decimales</option>
+            </Select>
+          </label>
         </div>
 
         <aside className="flex flex-col justify-between gap-5">
           <div className="rounded-xl bg-emerald-50 p-5 text-emerald-950">
             <p className="text-sm font-black text-emerald-800">Reglas actuales</p>
             <ul className="mt-4 space-y-4 text-sm font-bold leading-6">
-              <RuleItem>Cada bloque suma {config.expectedBlockTotal} puntos.</RuleItem>
-              <RuleItem>La recuperación sustituye la nota del bloque.</RuleItem>
-              <RuleItem>La nota final es el promedio de las 4 competencias.</RuleItem>
-              <RuleItem>El promedio se redondea según la regla seleccionada.</RuleItem>
+              <RuleItem>El bloque se calcula sobre {config.expectedBlockTotal} puntos.</RuleItem>
+              <RuleItem>La nota minima para aprobar es {config.passingScore}.</RuleItem>
+              <RuleItem>La calificacion se obtiene segun el metodo seleccionado.</RuleItem>
+              <RuleItem>El resultado se redondea segun la regla elegida.</RuleItem>
             </ul>
           </div>
           <Button className="ml-auto h-11 bg-emerald-700 px-6 hover:bg-emerald-800" onClick={onClose}>
-            Guardar configuración
+            Guardar configuracion
           </Button>
         </aside>
       </div>
     </Modal>
   )
 }
-
 function RuleItem({ children }: { children: ReactNode }) {
   return (
     <li className="flex gap-3">
@@ -2471,6 +2860,25 @@ function instrumentTitle(instrumentType: string) {
   return titles[instrumentType] ?? 'Selecciona un instrumento'
 }
 
+function instrumentTypographyClass(
+  textSize: 'normal' | 'large' | 'xlarge',
+  bold: boolean,
+  italic: boolean,
+) {
+  return cn(
+    textSize === 'normal' ? '[&_input]:text-sm [&_table]:text-xs [&_textarea]:text-xs' : '',
+    textSize === 'large' ? '[&_input]:text-base [&_table]:text-sm [&_textarea]:text-sm' : '',
+    textSize === 'xlarge' ? '[&_input]:text-lg [&_table]:text-base [&_textarea]:text-base' : '',
+    bold ? '[&_input]:font-bold [&_td]:font-bold [&_textarea]:font-bold' : '',
+    italic ? '[&_input]:italic [&_td]:italic [&_textarea]:italic' : '',
+  )
+}
+
+function rubricLevelName(index: number) {
+  const names = ['Excelente', 'Bueno', 'Satisfactorio', 'Básico', 'En proceso', 'Insuficiente']
+  return names[index] ?? `Nivel ${index + 1}`
+}
+
 function newActivityDraft(blockId: CompetencyBlockId): ActivityDraft {
   return {
     ...emptyActivityDraft,
@@ -2533,3 +2941,6 @@ function focusNextGradeCell(event: KeyboardEvent<HTMLInputElement>) {
   cells[index + 1]?.focus()
   cells[index + 1]?.select()
 }
+
+
+

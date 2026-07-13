@@ -261,6 +261,40 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  button:not(:disabled):not([aria-disabled='true']),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+    transition:
+      transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease,
+      opacity 180ms ease;
+    will-change: transform;
+  }
+
+  button:not(:disabled):not([aria-disabled='true']):hover,
+  [role='button']:not([aria-disabled='true']):hover {
+    transform: translateY(-1.5px) scale(1.006);
+  }
+
+  button:not(:disabled):not([aria-disabled='true']):active,
+  [role='button']:not([aria-disabled='true']):active {
+    transform: translateY(0) scale(0.992);
+    transition-duration: 110ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button,
+  [role='button'] {
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}
+
 #root {
   min-height: 100vh;
 }
@@ -313,7 +347,38 @@ a {
     transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.sidebar-nav-item {
+  transition:
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease,
+    color 180ms ease;
+  will-change: transform;
+}
+
+.sidebar-nav-icon {
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease,
+    color 180ms ease;
+  will-change: transform;
+}
+
 @media (hover: hover) and (pointer: fine) {
+  .sidebar-nav-item:hover {
+    transform: translateY(-1.5px) scale(1.006);
+  }
+
+  .sidebar-nav-item:active {
+    transform: translateY(0) scale(0.992);
+    transition-duration: 110ms;
+  }
+
+  .sidebar-nav-item:hover .sidebar-nav-icon {
+    transform: translateY(-1px) scale(1.05);
+  }
+
   .sidebar-nav-item:hover .sidebar-tooltip {
     opacity: 1;
     transform: translate(0, -50%);
@@ -334,8 +399,15 @@ a {
   .sidebar-workspace,
   .sidebar-header,
   .sidebar-overlay,
-  .sidebar-label {
+  .sidebar-label,
+  .sidebar-nav-item,
+  .sidebar-nav-icon {
     transition-duration: 1ms;
+  }
+
+  .sidebar-nav-item,
+  .sidebar-nav-icon {
+    transform: none !important;
   }
 
   .sidebar-tooltip {
