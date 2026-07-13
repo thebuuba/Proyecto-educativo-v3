@@ -17,6 +17,7 @@ export type AcademicPeriodOpt = {
   id: string
   name: string
   sequence: number
+  schoolYearId?: string
 }
 
 export type StudentGradeRow = {
@@ -102,3 +103,27 @@ export type SaveGradeInput = {
   evaluationActivityId?: string | null
   gradeId?: string | null
 }
+
+export type GradingWorkspace = {
+  sectionSubjects: SectionSubjectOption[]
+  academicPeriods: AcademicPeriodOpt[]
+  selectedSectionSubjectId: string | null
+  selectedAcademicPeriodId: string | null
+  context: {
+    sectionId: string
+    schoolYearId: string
+  } | null
+  students: StudentGradeRow[]
+  gradeRecords: GradeRecordRow[]
+  activities: GradingActivity[]
+}
+
+export type AnnualGradingPeriod = {
+  academicPeriodId: string
+  sequence: number
+  name: string
+  gradeRecords: GradeRecordRow[]
+  activities: GradingActivity[]
+}
+
+export type GradeCellSaveState = 'saving' | 'saved' | 'error'

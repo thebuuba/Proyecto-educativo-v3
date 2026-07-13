@@ -70,6 +70,29 @@ export class GradingController {
     return this.gradingService.getAcademicPeriods(user.schoolId)
   }
 
+  @Get('workspace')
+  getWorkspace(
+    @CurrentUser() user: AuthenticatedUser,
+    @Query('sectionSubjectId') sectionSubjectId?: string,
+    @Query('academicPeriodId') academicPeriodId?: string,
+    @Query('includeOptions') includeOptions?: string,
+  ) {
+    return this.gradingService.getWorkspace(
+      user.schoolId,
+      sectionSubjectId,
+      academicPeriodId,
+      includeOptions !== 'false',
+    )
+  }
+
+  @Get('annual')
+  getAnnualWorkspace(
+    @CurrentUser() user: AuthenticatedUser,
+    @Query('sectionSubjectId') sectionSubjectId: string,
+  ) {
+    return this.gradingService.getAnnualWorkspace(user.schoolId, sectionSubjectId)
+  }
+
   /**
    * Obtiene los estudiantes para calificar en una materia y período académico.
    *

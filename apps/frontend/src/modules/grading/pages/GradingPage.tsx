@@ -23,6 +23,7 @@ export function GradingPage() {
     recoveryScores,
     loading,
     saving,
+    cellSaveStates,
     error,
     addActivity,
     updateActivity,
@@ -100,8 +101,15 @@ export function GradingPage() {
           </p>
         </div>
       ) : loading ? (
-        <div className="flex min-h-[280px] items-center justify-center text-sm font-medium text-muted-foreground">
-          Cargando calificaciones...
+        <div role="status" aria-label="Cargando calificaciones" className="space-y-3 animate-pulse">
+          <span className="sr-only">Cargando calificaciones...</span>
+          <div className="h-14 rounded-lg border border-border bg-muted/45" />
+          <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-5">
+            {Array.from({ length: 5 }, (_, index) => <div key={index} className="h-24 rounded-lg bg-muted/45" />)}
+          </div>
+          <div className="grid gap-3 xl:grid-cols-4">
+            {Array.from({ length: 4 }, (_, index) => <div key={index} className="h-64 rounded-lg bg-muted/45" />)}
+          </div>
         </div>
       ) : isFinalView ? (
         <GradingBook
@@ -114,6 +122,7 @@ export function GradingPage() {
           recoveryLabel={selectedPeriod.recoveryLabel}
           courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
           saving={saving}
+          cellSaveStates={cellSaveStates}
           initialView="final"
           onAddActivity={addActivity}
           onUpdateActivity={updateActivity}
@@ -135,6 +144,7 @@ export function GradingPage() {
           recoveryLabel={selectedPeriod.recoveryLabel}
           courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
           saving={saving}
+          cellSaveStates={cellSaveStates}
           onAddActivity={addActivity}
           onUpdateActivity={updateActivity}
           onDeleteActivity={deleteActivity}

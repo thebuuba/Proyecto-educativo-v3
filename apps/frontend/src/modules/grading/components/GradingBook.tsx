@@ -26,6 +26,7 @@ import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import type {
   GradeCalculationConfig,
+  GradeCellSaveState,
   GradeRecordRow,
   GradingActivity,
   RecoveryScores,
@@ -33,6 +34,7 @@ import type {
 } from '@/modules/grading/types'
 import {
   blockTotal,
+  activityGradeCellKey,
   competencyBlocks,
   competencyPeriods,
   defaultGradeCalculationConfig,
@@ -41,6 +43,8 @@ import {
   finalSubjectScore,
   formatGrade,
   getRecoveryScores,
+  plainActivityText,
+  recoveryGradeCellKey,
   scoreForActivity,
   sumActivityMaxScore,
   type CompetencyBlockId,
@@ -58,18 +62,20 @@ type GradingBookProps = {
   recoveryLabel: string
   courseTitle: string
   saving: boolean
+  cellSaveStates: Record<string, GradeCellSaveState>
   initialView?: MainView
-  onAddActivity: (activity: Omit<GradingActivity, 'id'>) => void
-  onUpdateActivity: (activity: GradingActivity) => void
-  onDeleteActivity: (activityId: string) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
-  onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => void
+  onAddActivity: (activity: Omit<GradingActivity, 'id'>) => Promise<void>
+  onUpdateActivity: (activity: GradingActivity) => Promise<void>
+  onDeleteActivity: (activityId: string) => Promise<void>
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => Promise<void>
+  onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => Promise<void>
   loadFinalRecords: () => Promise<Map<CompetencyPeriodId, GradeRecordRow[]>>
   getActivitiesForPeriod: (periodId: CompetencyPeriodId) => GradingActivity[]
   onActivityWorkspaceChange?: (active: boolean) => void
 }
 
-type MainView = 'blocks' | 'period' | 'annual' | 'final'
+const mainViewTabs = ['blocks', 'period', 'annual', 'final'] as const
+type MainView = (typeof mainViewTabs)[number]
 type DetailView =
   | { type: 'block'; blockId: CompetencyBlockId }
   | { type: 'activity'; activityId: string }
@@ -149,6 +155,7 @@ export function GradingBook({
   recoveryLabel,
   courseTitle,
   saving,
+  cellSaveStates,
   initialView = 'blocks',
   onAddActivity,
   onUpdateActivity,
@@ -170,6 +177,8 @@ export function GradingBook({
   const [config, setConfig] = useState<GradeCalculationConfig>(defaultGradeCalculationConfig)
   const [recordsByPeriod, setRecordsByPeriod] = useState<Map<CompetencyPeriodId, GradeRecordRow[]>>(new Map())
   const [loadingAnnual, setLoadingAnnual] = useState(false)
+  const [annualError, setAnnualError] = useState<string | null>(null)
+  const [annualRetryKey, setAnnualRetryKey] = useState(0)
 
   useEffect(() => {
     setMainView(initialView)
@@ -253,17 +262,23 @@ export function GradingBook({
     let ignore = false
     async function loadAnnualRecords() {
       setLoadingAnnual(true)
-      const next = await loadFinalRecords()
-      if (!ignore) {
-        setRecordsByPeriod(next)
-        setLoadingAnnual(false)
+      setAnnualError(null)
+      try {
+        const next = await loadFinalRecords()
+        if (!ignore) setRecordsByPeriod(next)
+      } catch (loadError) {
+        if (!ignore) {
+          setAnnualError(loadError instanceof Error ? loadError.message : 'No se pudo cargar la información anual.')
+        }
+      } finally {
+        if (!ignore) setLoadingAnnual(false)
       }
     }
     void loadAnnualRecords()
     return () => {
       ignore = true
     }
-  }, [loadFinalRecords, mainView])
+  }, [annualRetryKey, loadFinalRecords, mainView])
 
   useEffect(() => {
     setDraftsReadyKey(null)
@@ -377,7 +392,7 @@ export function GradingBook({
     })
   }
 
-  function saveActivityDraft() {
+  async function saveActivityDraft() {
     const maxScore = Number(activityDraft.maxScore)
     if (!activityDraft.name.trim() || Number.isNaN(maxScore) || maxScore <= 0) return
     const activity = {
@@ -396,10 +411,10 @@ export function GradingBook({
     }
 
     if (editingActivityId) {
-      onUpdateActivity({ ...activity, id: editingActivityId })
+      await onUpdateActivity({ ...activity, id: editingActivityId })
       setEditingActivityId(null)
     } else {
-      onAddActivity(activity)
+      await onAddActivity(activity)
       discardActivityDraft(activity.competencyBlockId as CompetencyBlockId, activityDraft.draftId)
     }
     setActivityDraft(emptyActivityDraft)
@@ -426,11 +441,16 @@ export function GradingBook({
     setDetailView({ type: 'activity-create', blockId: activity.competencyBlockId as CompetencyBlockId })
   }
 
-  function duplicateActivity(activity: GradingActivity) {
-    onAddActivity({
+  async function duplicateActivity(activity: GradingActivity) {
+    await onAddActivity({
       ...activity,
       name: `${activity.name} copia`,
     })
+  }
+
+  function selectMainView(view: MainView) {
+    setMainView(view)
+    setDetailView(null)
   }
 
   function downloadBlockSummary(format: 'csv' | 'doc') {
@@ -480,13 +500,15 @@ export function GradingBook({
     <div className="space-y-3">
       {!isActivityWorkspace ? (
       <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-2 shadow-sm xl:flex-row xl:items-center xl:justify-between">
-        <div className="flex flex-wrap gap-2">
-          <ViewButton active={mainView === 'blocks'} icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => { setMainView('blocks'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'period'} icon={<ClipboardList className="size-4" />} label="Período" onClick={() => { setMainView('period'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'annual'} icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => { setMainView('annual'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'final'} icon={<Trophy className="size-4" />} label="Resumen final" onClick={() => { setMainView('final'); setDetailView(null) }} />
+        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Vistas del panel de evaluaciones">
+          <ViewButton active={mainView === 'blocks'} tabId="blocks" icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => selectMainView('blocks')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
+          <ViewButton active={mainView === 'period'} tabId="period" icon={<ClipboardList className="size-4" />} label="Período" onClick={() => selectMainView('period')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
+          <ViewButton active={mainView === 'annual'} tabId="annual" icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => selectMainView('annual')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
+          <ViewButton active={mainView === 'final'} tabId="final" icon={<Trophy className="size-4" />} label="Resumen final" onClick={() => selectMainView('final')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
         </div>
         <div className="flex flex-wrap gap-2">
+          {mainView === 'blocks' || mainView === 'period' ? (
+          <>
           <Button
             variant="outline"
             className="h-9 px-3 text-emerald-700"
@@ -505,10 +527,13 @@ export function GradingBook({
             <OfficeIcon app="word" />
             Word
           </Button>
+          </>
+          ) : null}
           <Button variant="outline" className="h-9 px-3" onClick={() => setShowConfig(true)}>
             <Settings className="size-4" />
             Configurar cálculo
           </Button>
+          {mainView === 'blocks' || mainView === 'period' ? (
           <Button className="h-9 px-3" onClick={() => {
             if (detailView?.type === 'block') {
               openActivityCreator(detailView.blockId)
@@ -519,6 +544,7 @@ export function GradingBook({
             <Plus className="size-4" />
             Agregar actividad
           </Button>
+          ) : null}
         </div>
       </div>
       ) : null}
@@ -549,7 +575,7 @@ export function GradingBook({
             records={records}
             recoveryLabel={recoveryLabel}
             recoveryScores={recoveryScores}
-            saving={saving}
+            cellSaveStates={cellSaveStates}
             students={students}
           />
         ) : detailView.type === 'activity-hub' ? (
@@ -595,37 +621,41 @@ export function GradingBook({
             onEditActivity={editActivity}
             onSaveScore={onSaveScore}
             records={records}
-            saving={saving}
+            cellSaveStates={cellSaveStates}
             students={students}
           />
         ) : null
       ) : mainView === 'blocks' ? (
         <BlockMatrixView
           blockSummaries={blockSummaries}
-          config={config}
           onOpenBlock={(blockId) => setDetailView({ type: 'block', blockId })}
-          onOpenActivity={(activityId) => setDetailView({ type: 'activity', activityId })}
-          records={records}
-          students={students}
         />
       ) : mainView === 'period' ? (
         <PeriodSummaryView blockSummaries={blockSummaries} periodName={periodName} recoveryScores={recoveryScores} />
       ) : mainView === 'annual' ? (
-        <AnnualComparisonView
-          config={config}
-          getActivitiesForPeriod={getActivitiesForPeriod}
-          loading={loadingAnnual}
-          recordsByPeriod={recordsByPeriod}
-          students={students}
-        />
+        annualError ? (
+          <AnnualLoadError message={annualError} onRetry={() => setAnnualRetryKey((value) => value + 1)} />
+        ) : (
+          <AnnualComparisonView
+            config={config}
+            getActivitiesForPeriod={getActivitiesForPeriod}
+            loading={loadingAnnual}
+            recordsByPeriod={recordsByPeriod}
+            students={students}
+          />
+        )
       ) : (
-        <AnnualResultView
-          config={config}
-          getActivitiesForPeriod={getActivitiesForPeriod}
-          loading={loadingAnnual}
-          recordsByPeriod={recordsByPeriod}
-          students={students}
-        />
+        annualError ? (
+          <AnnualLoadError message={annualError} onRetry={() => setAnnualRetryKey((value) => value + 1)} />
+        ) : (
+          <AnnualResultView
+            config={config}
+            getActivitiesForPeriod={getActivitiesForPeriod}
+            loading={loadingAnnual}
+            recordsByPeriod={recordsByPeriod}
+            students={students}
+          />
+        )
       )}
 
       {showConfig ? (
@@ -640,17 +670,85 @@ function ViewButton({
   icon,
   label,
   onClick,
+  onKeyDown,
+  tabId,
 }: {
   active: boolean
   icon: ReactNode
   label: string
   onClick: () => void
+  onKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void
+  tabId: MainView
 }) {
   return (
-    <Button variant={active ? 'primary' : 'ghost'} className="h-9 px-3" onClick={onClick}>
+    <Button
+      role="tab"
+      data-tab={tabId}
+      aria-selected={active}
+      tabIndex={active ? 0 : -1}
+      variant={active ? 'primary' : 'ghost'}
+      className="h-9 px-3"
+      onClick={onClick}
+      onKeyDown={onKeyDown}
+    >
       {icon}
       {label}
     </Button>
+  )
+}
+
+function moveTabFocus<T extends string>(
+  event: KeyboardEvent<HTMLButtonElement>,
+  tabs: readonly T[],
+  current: T,
+  onChange: (tab: T) => void,
+) {
+  if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return
+  event.preventDefault()
+  const currentIndex = tabs.indexOf(current)
+  const nextIndex = event.key === 'Home'
+    ? 0
+    : event.key === 'End'
+      ? tabs.length - 1
+      : event.key === 'ArrowRight'
+        ? (currentIndex + 1) % tabs.length
+        : (currentIndex - 1 + tabs.length) % tabs.length
+  const next = tabs[nextIndex]
+  onChange(next)
+  const tablist = event.currentTarget.parentElement
+  window.requestAnimationFrame(() => {
+    tablist?.querySelector<HTMLButtonElement>(`[role="tab"][data-tab="${next}"]`)?.focus()
+  })
+}
+
+function CellSaveIndicator({ state }: { state?: GradeCellSaveState }) {
+  const label = state === 'saving'
+    ? 'Guardando…'
+    : state === 'saved'
+      ? 'Guardado'
+      : state === 'error'
+        ? 'Error al guardar'
+        : ''
+  return (
+    <span
+      aria-live="polite"
+      className={cn(
+        'h-3 text-[10px] font-bold leading-3',
+        state === 'error' ? 'text-destructive' : state === 'saved' ? 'text-emerald-700' : 'text-muted-foreground',
+      )}
+    >
+      {label}
+    </span>
+  )
+}
+
+function AnnualLoadError({ message, onRetry }: { message: string; onRetry: () => void }) {
+  return (
+    <div role="alert" className="flex min-h-[240px] flex-col items-center justify-center gap-3 rounded-lg border border-destructive/20 bg-destructive/5 p-6 text-center">
+      <p className="font-bold text-destructive">No se pudo cargar la vista anual.</p>
+      <p className="max-w-xl text-sm text-muted-foreground">{message}</p>
+      <Button variant="outline" onClick={onRetry}>Reintentar</Button>
+    </div>
   )
 }
 
@@ -725,11 +823,7 @@ function BlockMetric({
 
 function BlockMatrixView({
   blockSummaries,
-  config,
   onOpenBlock,
-  onOpenActivity,
-  records,
-  students,
 }: {
   blockSummaries: Array<{
     block: (typeof competencyBlocks)[number]
@@ -740,11 +834,7 @@ function BlockMatrixView({
     average: number | null
     status: string
   }>
-  config: GradeCalculationConfig
   onOpenBlock: (blockId: CompetencyBlockId) => void
-  onOpenActivity: (activityId: string) => void
-  records: GradeRecordRow[]
-  students: StudentGradeRow[]
 }) {
   return (
     <section className="space-y-3">
@@ -794,86 +884,6 @@ function BlockMatrixView({
     </section>
   )
 
-  return (
-    <div className="grid gap-4 2xl:grid-cols-2">
-      {blockSummaries.map((summary) => {
-        const accent = blockAccents[summary.index]
-        return (
-          <article key={summary.block.id} className={cn('rounded-lg border bg-card p-4 shadow-sm', accent.card)}>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                  Bloque {summary.index + 1}
-                </p>
-                <h3 className="mt-1 text-xl font-bold text-primary">{blockShortNames[summary.block.id]}</h3>
-                <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">{summary.block.name}</p>
-              </div>
-              <div className="text-left sm:text-right">
-                <p className="text-3xl font-black text-primary">
-                  {formatGrade(summary.average)} / {summary.expected}
-                </p>
-                <Badge tone={statusTone(summary.status)} className="mt-2">
-                  {summary.status}
-                </Badge>
-              </div>
-            </div>
-
-            <div className="mt-4 overflow-hidden rounded-lg border border-border bg-card/80">
-              <table className="w-full text-sm">
-                <thead className={accent.panel}>
-                  <tr>
-                    <th className="px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.14em]">Actividad</th>
-                    <th className="w-36 px-4 py-3 text-right text-xs font-bold uppercase tracking-[0.14em]">Promedio / Valor</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {summary.activities.length === 0 ? (
-                    <tr>
-                      <td colSpan={2} className="px-4 py-6 text-center text-sm text-muted-foreground">
-                        Sin actividades para este bloque.
-                      </td>
-                    </tr>
-                  ) : summary.activities.map((activity, index) => {
-                    const average = averageActivityScore(records, students, activity)
-                    return (
-                      <tr key={activity.id} className="border-t border-border hover:bg-muted/20">
-                        <td className="px-4 py-3">
-                          <button className="text-left font-medium text-primary hover:underline" onClick={() => onOpenActivity(activity.id)}>
-                            {index + 1}. {activity.name}
-                          </button>
-                          <p className="mt-1 text-xs text-muted-foreground">{activity.instrumentType || 'Sin instrumento'}</p>
-                        </td>
-                        <td className="px-4 py-3 text-right font-bold text-primary">
-                          {formatGrade(average)} / {activity.maxScore}
-                        </td>
-                      </tr>
-                    )
-                  })}
-                  <tr className="border-t border-border bg-muted/35">
-                    <td className="px-4 py-3 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
-                      Total del bloque
-                    </td>
-                    <td className="px-4 py-3 text-right font-black text-primary">
-                      {formatGrade(summary.average)} / {summary.expected}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-              <p className="text-sm text-muted-foreground">
-                {summary.activities.length} actividades · {summary.maxScore} pts creados · esperado {config.expectedBlockTotal}
-              </p>
-              <Button variant="outline" onClick={() => onOpenBlock(summary.block.id)}>
-                Abrir bloque
-              </Button>
-            </div>
-          </article>
-        )
-      })}
-    </div>
-  )
 }
 
 function BlockGradeView({
@@ -888,7 +898,7 @@ function BlockGradeView({
   records,
   recoveryLabel,
   recoveryScores,
-  saving,
+  cellSaveStates,
   students,
 }: {
   blockId: CompetencyBlockId
@@ -897,14 +907,17 @@ function BlockGradeView({
   courseTitle: string
   onBack: () => void
   onOpenActivity: (activityId: string) => void
-  onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
+  onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => Promise<void>
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => Promise<void>
   records: GradeRecordRow[]
   recoveryLabel: string
   recoveryScores: RecoveryScores
-  saving: boolean
+  cellSaveStates: Record<string, GradeCellSaveState>
   students: StudentGradeRow[]
 }) {
+  const blockTabs = ['matrix', 'activities', 'students', 'stats'] as const
+  type BlockTab = (typeof blockTabs)[number]
+  const [blockTab, setBlockTab] = useState<BlockTab>('matrix')
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
   const blockIndex = competencyBlocks.findIndex((item) => item.id === blockId)
   const studentTotals = students.map((student) => {
@@ -960,13 +973,29 @@ function BlockGradeView({
         <BlockMetric icon={<CheckCircle2 className="size-5" />} label="Estado" value={blockState} helper="" tone="success" />
       </div>
 
-      <div className="flex flex-wrap gap-6 border-b border-border text-sm font-bold text-muted-foreground">
-        <span className="border-b-2 border-primary px-3 py-3 text-primary">Matriz de calificaciones</span>
-        <span className="px-3 py-3">Actividades</span>
-        <span className="px-3 py-3">Estudiantes</span>
-        <span className="px-3 py-3">Estadísticas del bloque</span>
+      <div className="flex flex-wrap gap-2 border-b border-border text-sm font-bold text-muted-foreground" role="tablist" aria-label={`Vistas de ${block.shortName}`}>
+        {blockTabs.map((item) => (
+          <button
+            key={item}
+            type="button"
+            role="tab"
+            data-tab={item}
+            aria-selected={blockTab === item}
+            tabIndex={blockTab === item ? 0 : -1}
+            className={cn(
+              'border-b-2 px-3 py-3 transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+              blockTab === item ? 'border-primary text-primary' : 'border-transparent',
+            )}
+            onClick={() => setBlockTab(item)}
+            onKeyDown={(event) => moveTabFocus(event, blockTabs, blockTab, setBlockTab)}
+          >
+            {item === 'matrix' ? 'Matriz de calificaciones' : item === 'activities' ? 'Actividades' : item === 'students' ? 'Estudiantes' : 'Estadísticas del bloque'}
+          </button>
+        ))}
       </div>
 
+      {blockTab === 'matrix' ? (
+      <div role="tabpanel" className="space-y-4">
       <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
         <div className="overflow-x-auto">
           <table className="min-w-max border-separate border-spacing-0 text-sm">
@@ -1005,20 +1034,26 @@ function BlockGradeView({
                     </td>
                     {activities.map((activity) => {
                       const record = scoreForActivity(records, student.enrollmentId, activity.id)
+                      const saveState = cellSaveStates[activityGradeCellKey(student.enrollmentId, activity.id)]
                       return (
                         <td key={activity.id} className="border-b border-r border-border px-4 py-2 text-center">
                           <div className="inline-flex items-center gap-2">
+                            <div className="flex flex-col items-center gap-0.5">
                             <Input
+                              key={`${record?.id ?? 'empty'}:${record?.score ?? ''}`}
                               type="number"
                               min={0}
                               max={activity.maxScore}
                               step="0.01"
                               defaultValue={record?.score ?? ''}
-                              disabled={saving}
+                              disabled={saveState === 'saving'}
+                              aria-label={`${activity.name} de ${student.firstName} ${student.lastName}`}
                               className="grade-cell h-9 w-24 rounded-md border-border/80 bg-card px-2 text-center font-bold"
                               onKeyDown={focusNextGradeCell}
-                              onBlur={(event) => onSaveScore(student.enrollmentId, activity, event.target.value)}
+                              onBlur={(event) => void onSaveScore(student.enrollmentId, activity, event.target.value)}
                             />
+                            <CellSaveIndicator state={saveState} />
+                            </div>
                             <span className="text-xs font-medium text-muted-foreground">/ {activity.maxScore}</span>
                           </div>
                         </td>
@@ -1028,18 +1063,23 @@ function BlockGradeView({
                     <td className="border-b border-r border-border px-4 py-3 text-center"><Badge tone={statusTone(status)}>{status}</Badge></td>
                     {config.showRecovery ? (
                       <td className="border-b border-border px-4 py-2 text-center">
+                        <div className="flex flex-col items-center gap-0.5">
                         <Input
+                          key={`${student.enrollmentId}:${recovery ?? ''}`}
                           type="number"
                           min={0}
                           max={100}
                           step="0.01"
                           defaultValue={recovery ?? ''}
-                          disabled={saving}
+                          disabled={cellSaveStates[recoveryGradeCellKey(student.enrollmentId, blockId)] === 'saving'}
+                          aria-label={`${recoveryLabel || 'Recuperación'} de ${student.firstName} ${student.lastName}`}
                           placeholder={recoveryLabel || 'RP'}
                           className="grade-cell h-9 w-24 rounded-md border-border/80 bg-card px-2 text-center font-bold"
                           onKeyDown={focusNextGradeCell}
-                          onBlur={(event) => onSaveRecovery(student.enrollmentId, blockId, event.target.value)}
+                          onBlur={(event) => void onSaveRecovery(student.enrollmentId, blockId, event.target.value)}
                         />
+                        <CellSaveIndicator state={cellSaveStates[recoveryGradeCellKey(student.enrollmentId, blockId)]} />
+                        </div>
                       </td>
                     ) : null}
                   </tr>
@@ -1070,9 +1110,173 @@ function BlockGradeView({
       <div className="rounded-lg border border-primary/15 bg-primary/5 px-4 py-3 text-sm font-medium text-primary">
         La calificación del bloque se obtiene sumando los puntos de cada actividad. Total esperado: {config.expectedBlockTotal} puntos.
       </div>
+      </div>
+      ) : (
+        <BlockSecondaryPanel
+          activeTab={blockTab}
+          activities={activities}
+          blockId={blockId}
+          config={config}
+          onOpenActivity={onOpenActivity}
+          records={records}
+          recoveryScores={recoveryScores}
+          students={students}
+        />
+      )}
     </div>
   )
 
+}
+
+function BlockSecondaryPanel({
+  activeTab,
+  activities,
+  blockId,
+  config,
+  onOpenActivity,
+  records,
+  recoveryScores,
+  students,
+}: {
+  activeTab: 'activities' | 'students' | 'stats'
+  activities: GradingActivity[]
+  blockId: CompetencyBlockId
+  config: GradeCalculationConfig
+  onOpenActivity: (activityId: string) => void
+  records: GradeRecordRow[]
+  recoveryScores: RecoveryScores
+  students: StudentGradeRow[]
+}) {
+  const rows = students.map((student) => {
+    const ordinary = blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
+    const recovery = recoveryScores[blockId]?.[student.enrollmentId] ?? null
+    const effective = effectivePeriodScore(ordinary, recovery, config)
+    return { student, ordinary, recovery, effective }
+  })
+
+  if (activeTab === 'activities') {
+    return (
+      <section role="tabpanel" aria-label="Actividades del bloque" className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+        <div className="border-b border-border px-5 py-4">
+          <h3 className="font-black text-primary">Actividades del bloque</h3>
+          <p className="mt-1 text-sm text-muted-foreground">Seguimiento de cobertura y calificaciones pendientes.</p>
+        </div>
+        {activities.length === 0 ? (
+          <p className="px-5 py-10 text-center text-sm text-muted-foreground">Este bloque todavía no tiene actividades.</p>
+        ) : (
+          <div className="divide-y divide-border">
+            {activities.map((activity, index) => {
+              const graded = students.filter((student) => scoreForActivity(records, student.enrollmentId, activity.id)).length
+              const average = averageActivityScore(records, students, activity)
+              return (
+                <button
+                  key={activity.id}
+                  type="button"
+                  className="grid w-full gap-3 px-5 py-4 text-left transition hover:bg-muted/25 sm:grid-cols-[minmax(0,1fr)_8rem_8rem_auto] sm:items-center"
+                  onClick={() => onOpenActivity(activity.id)}
+                >
+                  <span>
+                    <span className="block font-bold text-primary">{index + 1}. {activity.name}</span>
+                    <span className="mt-1 block text-xs text-muted-foreground">{activity.instrumentType || 'Sin instrumento'} · {activity.maxScore} puntos</span>
+                  </span>
+                  <span className="text-sm"><strong>{graded}</strong> / {students.length} evaluados</span>
+                  <span className="text-sm font-bold text-primary">Prom. {formatGrade(average)}</span>
+                  <ArrowRight className="size-4 text-primary" />
+                </button>
+              )
+            })}
+          </div>
+        )}
+      </section>
+    )
+  }
+
+  if (activeTab === 'students') {
+    return (
+      <section role="tabpanel" aria-label="Estudiantes del bloque" className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+        <div className="border-b border-border px-5 py-4">
+          <h3 className="font-black text-primary">Estudiantes del bloque</h3>
+          <p className="mt-1 text-sm text-muted-foreground">Resultado ordinario, recuperación y calificación efectiva.</p>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full text-sm">
+            <thead className="bg-muted/40 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+              <tr>
+                <th className="px-4 py-3 text-left">Estudiante</th>
+                <th className="px-4 py-3 text-center">Ordinaria</th>
+                <th className="px-4 py-3 text-center">Recuperación</th>
+                <th className="px-4 py-3 text-center">Efectiva</th>
+                <th className="px-4 py-3 text-center">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map(({ student, ordinary, recovery, effective }) => {
+                const state = activities.length === 0 ? 'Sin calificación' : effective >= config.passingScore ? 'Aprobado' : 'En recuperación'
+                return (
+                  <tr key={student.enrollmentId} className="border-t border-border">
+                    <td className="px-4 py-3 font-medium">{student.lastName}, {student.firstName}</td>
+                    <td className="px-4 py-3 text-center font-bold">{formatGrade(ordinary)}</td>
+                    <td className="px-4 py-3 text-center">{formatGrade(recovery)}</td>
+                    <td className="px-4 py-3 text-center font-black text-primary">{formatGrade(effective)}</td>
+                    <td className="px-4 py-3 text-center"><Badge tone={statusTone(state)}>{state}</Badge></td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )
+  }
+
+  const gradedScores = rows.map((row) => row.effective).filter((score) => score > 0)
+  const approved = gradedScores.filter((score) => score >= config.passingScore).length
+  const average = averageNumbers(gradedScores)
+  const ranges = [
+    { label: '90–100', count: gradedScores.filter((score) => score >= 90).length },
+    { label: '80–89', count: gradedScores.filter((score) => score >= 80 && score < 90).length },
+    { label: '70–79', count: gradedScores.filter((score) => score >= 70 && score < 80).length },
+    { label: 'Menos de 70', count: gradedScores.filter((score) => score < 70).length },
+  ]
+
+  return (
+    <section role="tabpanel" aria-label="Estadísticas del bloque" className="space-y-4">
+      <div>
+        <h3 className="font-black text-primary">Estadísticas del bloque</h3>
+        <p className="mt-1 text-sm text-muted-foreground">Distribución calculada con la nota efectiva de cada estudiante.</p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <StatCard label="Promedio" value={formatGrade(average)} />
+        <StatCard label="Nota más alta" value={formatGrade(gradedScores.length ? Math.max(...gradedScores) : null)} />
+        <StatCard label="Nota más baja" value={formatGrade(gradedScores.length ? Math.min(...gradedScores) : null)} />
+        <StatCard label="Aprobación" value={gradedScores.length ? `${Math.round((approved / gradedScores.length) * 100)}%` : '—'} />
+      </div>
+      <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Distribución de resultados</p>
+        <div className="mt-4 space-y-3">
+          {ranges.map((range) => {
+            const percentage = gradedScores.length ? (range.count / gradedScores.length) * 100 : 0
+            return (
+              <div key={range.label} className="grid grid-cols-[7rem_minmax(0,1fr)_3rem] items-center gap-3 text-sm">
+                <span className="font-medium">{range.label}</span>
+                <span className="h-2 overflow-hidden rounded-full bg-muted"><span className="block h-full rounded-full bg-primary" style={{ width: `${percentage}%` }} /></span>
+                <span className="text-right font-bold text-primary">{range.count}</span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function StatCard({ label, value }: { label: string; value: string }) {
+  return (
+    <article className="rounded-lg border border-border bg-card p-4 shadow-sm">
+      <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{label}</p>
+      <p className="mt-2 text-3xl font-black text-primary">{value}</p>
+    </article>
+  )
 }
 
 function ActivityDetailView({
@@ -1082,16 +1286,16 @@ function ActivityDetailView({
   onEditActivity,
   onSaveScore,
   records,
-  saving,
+  cellSaveStates,
   students,
 }: {
   activity: GradingActivity
   config: GradeCalculationConfig
   onBack: () => void
   onEditActivity: (activity: GradingActivity) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => Promise<void>
   records: GradeRecordRow[]
-  saving: boolean
+  cellSaveStates: Record<string, GradeCellSaveState>
   students: StudentGradeRow[]
 }) {
   const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId) ?? competencyBlocks[0]
@@ -1111,7 +1315,7 @@ function ActivityDetailView({
         <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-2xl font-bold text-primary">{activity.name}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{activity.description || 'Actividad sin descripción registrada.'}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{plainActivityText(activity.description) || 'Actividad sin descripción registrada.'}</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" onClick={() => onEditActivity(activity)}>
@@ -1121,9 +1325,18 @@ function ActivityDetailView({
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Secciones de la actividad">
         {(['info', 'grades', 'notes'] as const).map((item) => (
-          <Button key={item} variant={tab === item ? 'primary' : 'outline'} onClick={() => setTab(item)}>
+          <Button
+            key={item}
+            role="tab"
+            data-tab={item}
+            aria-selected={tab === item}
+            tabIndex={tab === item ? 0 : -1}
+            variant={tab === item ? 'primary' : 'outline'}
+            onClick={() => setTab(item)}
+            onKeyDown={(event) => moveTabFocus(event, ['info', 'grades', 'notes'] as const, tab, setTab)}
+          >
             {item === 'info' ? 'Información' : item === 'grades' ? 'Calificaciones' : 'Evidencias / Observaciones'}
           </Button>
         ))}
@@ -1145,10 +1358,10 @@ function ActivityDetailView({
           </dl>
         </section>
 
-        <section className="rounded-lg border border-border bg-card shadow-sm">
+        <section role="tabpanel" className="rounded-lg border border-border bg-card shadow-sm">
           {tab === 'info' ? (
             <div className="p-5 text-sm leading-7 text-muted-foreground">
-              <p>{activity.description || 'No hay descripción detallada para esta actividad.'}</p>
+              <p>{plainActivityText(activity.description) || 'No hay descripción detallada para esta actividad.'}</p>
               <p className="mt-4 font-medium text-foreground">Observaciones</p>
               <p>{activity.observations || 'Sin observaciones registradas.'}</p>
             </div>
@@ -1166,21 +1379,27 @@ function ActivityDetailView({
                   {students.map((student) => {
                     const record = scoreForActivity(records, student.enrollmentId, activity.id)
                     const percentage = record ? (record.score / activity.maxScore) * config.expectedBlockTotal : null
+                    const saveState = cellSaveStates[activityGradeCellKey(student.enrollmentId, activity.id)]
                     return (
                       <tr key={student.enrollmentId} className="border-t border-border">
                         <td className="px-4 py-3 font-medium">{student.lastName}, {student.firstName}</td>
                         <td className="px-4 py-2 text-center">
+                          <div className="flex flex-col items-center gap-0.5">
                           <Input
+                            key={`${record?.id ?? 'empty'}:${record?.score ?? ''}`}
                             type="number"
                             min={0}
                             max={activity.maxScore}
                             step="0.01"
                             defaultValue={record?.score ?? ''}
-                            disabled={saving}
+                            disabled={saveState === 'saving'}
+                            aria-label={`${activity.name} de ${student.firstName} ${student.lastName}`}
                             className="grade-cell h-9 w-24 text-center font-bold"
                             onKeyDown={focusNextGradeCell}
-                            onBlur={(event) => onSaveScore(student.enrollmentId, activity, event.target.value)}
+                            onBlur={(event) => void onSaveScore(student.enrollmentId, activity, event.target.value)}
                           />
+                          <CellSaveIndicator state={saveState} />
+                          </div>
                         </td>
                         <td className="px-4 py-3 text-center font-bold text-primary">{formatGrade(percentage)}</td>
                       </tr>
@@ -1369,49 +1588,6 @@ function AnnualComparisonView({
       </div>
     </section>
   )
-
-  return (
-    <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-      <table className="min-w-full text-sm">
-        <thead className="bg-muted/50">
-          <tr>
-            <th className="px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Competencia</th>
-            {competencyPeriods.filter((period) => period.id !== 'final').map((period) => (
-              <th key={period.id} className="w-24 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">{period.shortName}</th>
-            ))}
-            <th className="w-36 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Promedio anual</th>
-          </tr>
-        </thead>
-        <tbody>
-          {competencyBlocks.map((block) => {
-            const periodScores = competencyPeriods
-              .filter((period) => period.id !== 'final')
-              .map((period) => averageBlockForPeriod({
-                blockId: block.id,
-                config,
-                periodId: period.id as CompetencyPeriodId,
-                recordsByPeriod,
-                getActivitiesForPeriod,
-                students,
-              }))
-            const annual = finalBlockAverage(periodScores, config)
-            return (
-              <tr key={block.id} className="border-t border-border">
-                <td className="px-4 py-4">
-                  <p className="font-bold text-primary">{blockShortNames[block.id]}</p>
-                  <p className="text-xs text-muted-foreground">{block.name}</p>
-                </td>
-                {periodScores.map((score, index) => (
-                  <td key={competencyPeriods[index].id} className="px-4 py-4 text-center font-bold text-primary">{formatGrade(score)}</td>
-                ))}
-                <td className="px-4 py-4 text-center text-lg font-black text-primary">{formatGrade(annual)}</td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-    </div>
-  )
 }
 
 function AnnualResultView(props: {
@@ -1490,10 +1666,10 @@ function ActivityManager({
   editingActivityId: string | null
   onCancelEdit: () => void
   onChangeDraft: (draft: ActivityDraft) => void
-  onDeleteActivity: (activityId: string) => void
-  onDuplicateActivity: (activity: GradingActivity) => void
+  onDeleteActivity: (activityId: string) => Promise<void>
+  onDuplicateActivity: (activity: GradingActivity) => Promise<void>
   onEditActivity: (activity: GradingActivity) => void
-  onSaveActivity: () => void
+  onSaveActivity: () => Promise<void>
   saving: boolean
   showCompetencySelect?: boolean
 }) {
@@ -1624,7 +1800,7 @@ function ActivityManager({
         </div>
       </div>
       <div className="flex flex-wrap gap-2">
-        <Button className="h-10 px-5" onClick={onSaveActivity} disabled={saving}>
+        <Button className="h-10 px-5" onClick={() => void onSaveActivity().catch(() => undefined)} disabled={saving}>
           {editingActivityId ? 'Guardar actividad' : 'Agregar actividad'}
         </Button>
         {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
@@ -1639,8 +1815,8 @@ function ActivityManager({
             </div>
             <div className="flex gap-2">
               <Button variant="ghost" size="sm" onClick={() => onEditActivity(activity)}>Editar</Button>
-              <Button variant="outline" size="sm" onClick={() => onDuplicateActivity(activity)}>Duplicar</Button>
-              <Button variant="destructive" size="sm" onClick={() => onDeleteActivity(activity.id)}>Eliminar</Button>
+              <Button variant="outline" size="sm" onClick={() => void onDuplicateActivity(activity).catch(() => undefined)}>Duplicar</Button>
+              <Button variant="destructive" size="sm" onClick={() => void onDeleteActivity(activity.id).catch(() => undefined)}>Eliminar</Button>
             </div>
           </div>
         ))}
@@ -1843,11 +2019,11 @@ function ActivityCreationView({
   onBack: () => void
   onCancelEdit: () => void
   onChangeDraft: (draft: ActivityDraft) => void
-  onDeleteActivity: (activityId: string) => void
-  onDuplicateActivity: (activity: GradingActivity) => void
+  onDeleteActivity: (activityId: string) => Promise<void>
+  onDuplicateActivity: (activity: GradingActivity) => Promise<void>
   onEditActivity: (activity: GradingActivity) => void
   onOpenActivity: (activityId: string) => void
-  onSaveActivity: () => void
+  onSaveActivity: () => Promise<void>
   saving: boolean
   students: StudentGradeRow[]
 }) {

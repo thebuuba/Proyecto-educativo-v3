@@ -81,8 +81,17 @@ export function sumActivityMaxScore(activities: GradingActivity[], blockId: stri
 export function scoreForActivity(records: GradeRecordRow[], enrollmentId: string, activityId: string) {
   return records.find((record) =>
     record.enrollmentId === enrollmentId &&
-    getActivityIdFromRecordName(record.assessmentName) === activityId
+    (record.evaluationActivityId === activityId || getActivityIdFromRecordName(record.assessmentName) === activityId)
   ) ?? null
+}
+
+/** Decide si una edición de celda requiere persistencia en el servidor. */
+export function scoreNeedsPersistence(
+  existingScore: number | null | undefined,
+  nextScore: number | null,
+) {
+  if (nextScore === null) return existingScore !== null && existingScore !== undefined
+  return existingScore !== nextScore
 }
 
 export function blockTotal(input: {
@@ -175,4 +184,22 @@ export function validateScore(value: number, maxScore: number) {
   if (value < 0) return 'No se permiten valores negativos.'
   if (value > maxScore) return `La calificación no puede superar ${maxScore}.`
   return null
+}
+
+export function activityGradeCellKey(enrollmentId: string, activityId: string) {
+  return `${enrollmentId}:activity:${activityId}`
+}
+
+export function recoveryGradeCellKey(enrollmentId: string, blockId: string) {
+  return `${enrollmentId}:recovery:${blockId}`
+}
+
+/** Convierte el Markdown básico que llega de actividades generadas en texto legible. */
+export function plainActivityText(value?: string) {
+  if (!value) return ''
+  return value
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/__(.*?)__/g, '$1')
+    .replace(/^#{1,6}\s+/gm, '')
+    .trim()
 }

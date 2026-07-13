@@ -8,13 +8,35 @@
 import { api } from '@/services/apiClient'
 import type {
   AcademicPeriodOpt,
+  AnnualGradingPeriod,
   GradeRecordRow,
   GradeSummaryStats,
   GradingActivity,
+  GradingWorkspace,
   SaveGradeInput,
   SectionSubjectOption,
   StudentGradeRow,
 } from '@/modules/grading/types'
+
+export async function getGradingWorkspace(input?: {
+  sectionSubjectId?: string
+  academicPeriodId?: string
+  includeOptions?: boolean
+}): Promise<GradingWorkspace> {
+  const params = new URLSearchParams()
+  if (input?.sectionSubjectId) params.set('sectionSubjectId', input.sectionSubjectId)
+  if (input?.academicPeriodId) params.set('academicPeriodId', input.academicPeriodId)
+  if (input?.includeOptions === false) params.set('includeOptions', 'false')
+  const query = params.size > 0 ? `?${params.toString()}` : ''
+  return api.get<GradingWorkspace>(`/grading/workspace${query}`)
+}
+
+export async function getAnnualGradingWorkspace(
+  sectionSubjectId: string,
+): Promise<AnnualGradingPeriod[]> {
+  const params = new URLSearchParams({ sectionSubjectId })
+  return api.get<AnnualGradingPeriod[]>(`/grading/annual?${params.toString()}`)
+}
 
 /** Obtiene las secciones-asignaturas asignadas al docente */
 export async function getTeacherSectionSubjects(): Promise<SectionSubjectOption[]> {
@@ -70,8 +92,8 @@ export async function deleteEvaluationActivity(activityId: string): Promise<void
 }
 
 /** Guarda o actualiza una calificación en la base de datos */
-export async function saveGrade(input: SaveGradeInput): Promise<void> {
-  await api.post('/grading/save', input)
+export async function saveGrade(input: SaveGradeInput): Promise<GradeRecordRow> {
+  return api.post<GradeRecordRow>('/grading/save', input)
 }
 
 export async function deleteGrade(gradeId: string): Promise<void> {
