@@ -4,16 +4,29 @@
 
 import { NestFactory } from '@nestjs/core'
 import { ValidationPipe } from '@nestjs/common'
+import { loadEnvFile } from 'node:process'
 import helmet from 'helmet'
-import { AppModule } from './app.module'
 import { AuditLogInterceptor } from './common/interceptors/audit-log.interceptor'
 import { isAllowedOrigin } from './config/cors-origins'
+import { backendEnvFilePaths } from './config/env-file-paths'
+
+function loadEnvironment() {
+  for (const envFilePath of backendEnvFilePaths) {
+    try {
+      loadEnvFile(envFilePath)
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error
+    }
+  }
+}
 
 /**
  * Crea la aplicación NestJS, configura prefijo global, helmet, CORS y ValidationPipe,
  * y se pone a la escucha en el puerto definido en la variable de entorno PORT (por defecto 3000).
  */
 async function bootstrap() {
+  loadEnvironment()
+  const { AppModule } = await import('./app.module')
   const app = await NestFactory.create(AppModule)
 
   app.setGlobalPrefix('api/v1')
