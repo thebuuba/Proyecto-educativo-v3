@@ -15,24 +15,10 @@ import type {
   DashboardData,
 } from '@/modules/dashboard/types/dashboard'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import { createScopedTtlCache } from '@/utils/scopedTtlCache'
 
-let cachedData: {
-  scope: string
-  data: DashboardData
-  timestamp: number
-} | null = null
 const CACHE_TTL = 60_000
-
-function getFreshCachedData(scope: string | null) {
-  if (
-    scope &&
-    cachedData?.scope === scope &&
-    Date.now() - cachedData.timestamp < CACHE_TTL
-  ) {
-    return cachedData.data
-  }
-  return null
-}
+const dashboardCache = createScopedTtlCache<DashboardData>(CACHE_TTL)
 
 function updateCachedData(
   scope: string | null,
@@ -41,14 +27,8 @@ function updateCachedData(
 ) {
   if (!current) return current
   const next = update(current)
-  if (scope) {
-    cachedData = {
-      scope,
-      data: next,
-      // Una mutación de tareas no renueva la antigüedad de los demás bloques.
-      timestamp: cachedData?.scope === scope ? cachedData.timestamp : Date.now(),
-    }
-  }
+  // Actualiza el valor sin renovar el TTL de los demás bloques del dashboard.
+  dashboardCache.update(scope, () => next)
   return next
 }
 
@@ -57,7 +37,7 @@ export function useDashboard() {
   const { appUser } = useAuth()
   const appUserId = appUser?.id ?? null
   const cacheScope = appUser ? `${appUser.id}:${appUser.schoolId}` : null
-  const [data, setData] = useState<DashboardData | null>(() => getFreshCachedData(cacheScope))
+  const [data, setData] = useState<DashboardData | null>(() => dashboardCache.read(cacheScope))
   const [dataScope, setDataScope] = useState(cacheScope)
   const [loading, setLoading] = useState(!data)
   const [actionLoading, setActionLoading] = useState(false)
@@ -90,13 +70,7 @@ export function useDashboard() {
     try {
       const result = await getDashboardData(appUser)
       if (activeScopeRef.current !== requestedScope) return
-      if (requestedScope) {
-        cachedData = {
-          scope: requestedScope,
-          data: result,
-          timestamp: Date.now(),
-        }
-      }
+      dashboardCache.write(requestedScope, result)
       setData(result)
       setDataScope(requestedScope)
     } catch (error) {
@@ -164,7 +138,7 @@ export function useDashboard() {
   )
 
   useEffect(() => {
-    const cached = getFreshCachedData(cacheScope)
+    const cached = dashboardCache.read(cacheScope)
     if (cached) {
       setData(cached)
       setDataScope(cacheScope)

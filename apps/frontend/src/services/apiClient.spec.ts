@@ -57,6 +57,24 @@ describe('api client session transport', () => {
     await expect(Promise.all([first, second])).resolves.toEqual([[], []])
   })
 
+  it('aborts a GET that exceeds its timeout with a clear error', async () => {
+    vi.useFakeTimers()
+    vi.stubGlobal('fetch', vi.fn((_input, init) => new Promise<Response>((_resolve, reject) => {
+      init?.signal?.addEventListener('abort', () => {
+        reject(new DOMException('Aborted', 'AbortError'))
+      })
+    })))
+
+    const request = api.get('/slow-resource', { timeoutMs: 1_000 })
+    const rejection = expect(request).rejects.toMatchObject({
+      status: 408,
+      message: 'La solicitud tardó demasiado',
+    })
+
+    await vi.advanceTimersByTimeAsync(1_000)
+    await rejection
+  })
+
   it('reuses an opt-in GET response while its TTL is valid', async () => {
     vi.mocked(fetch).mockResolvedValue({
       ok: true,

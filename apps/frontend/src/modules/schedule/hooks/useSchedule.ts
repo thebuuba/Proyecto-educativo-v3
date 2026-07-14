@@ -7,6 +7,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import {
   createScheduleEntry as createScheduleEntryRecord,
@@ -33,26 +34,46 @@ import type {
   UpdateScheduleEntryInput,
   UpdateTimeSlotInput,
 } from '@/modules/schedule/types'
+import { createScopedTtlCache } from '@/utils/scopedTtlCache'
+
+type ScheduleCacheData = {
+  timeSlots: TimeSlot[]
+  entries: ScheduleEntry[]
+  sections: SectionOption[]
+  teachers: TeacherOption[]
+  subjects: SubjectOption[]
+  schoolYearId: string | null
+}
+
+const scheduleCache = createScopedTtlCache<ScheduleCacheData>(60_000)
 
 /** Hook principal para la gestión del horario */
 export function useSchedule() {
-  const [timeSlots, setTimeSlots] = useState<TimeSlot[]>([])
-  const [entries, setEntries] = useState<ScheduleEntry[]>([])
-  const [loading, setLoading] = useState(true)
+  const { appUser } = useAuth()
+  const cacheScope = appUser ? `${appUser.id}:${appUser.schoolId}` : null
+  const cached = scheduleCache.read(cacheScope)
+  const [timeSlots, setTimeSlots] = useState<TimeSlot[]>(cached?.timeSlots ?? [])
+  const [entries, setEntries] = useState<ScheduleEntry[]>(cached?.entries ?? [])
+  const [loading, setLoading] = useState(!cached)
   const [error, setError] = useState<string | null>(null)
   const [filters, setFilters] = useState<ScheduleFilters>({})
-  const [schoolYearId, setSchoolYearId] = useState<string | null>(null)
+  const [schoolYearId, setSchoolYearId] = useState<string | null>(cached?.schoolYearId ?? null)
 
-  const [sections, setSections] = useState<SectionOption[]>([])
-  const [teachers, setTeachers] = useState<TeacherOption[]>([])
-  const [subjects, setSubjects] = useState<SubjectOption[]>([])
+  const [sections, setSections] = useState<SectionOption[]>(cached?.sections ?? [])
+  const [teachers, setTeachers] = useState<TeacherOption[]>(cached?.teachers ?? [])
+  const [subjects, setSubjects] = useState<SubjectOption[]>(cached?.subjects ?? [])
 
   const filtersRef = useRef(filters)
+  const schoolYearIdRef = useRef(schoolYearId)
   const initialLoadDone = useRef(false)
 
   useEffect(() => {
     filtersRef.current = filters
   }, [filters])
+
+  useEffect(() => {
+    schoolYearIdRef.current = schoolYearId
+  }, [schoolYearId])
 
   /** Recarga los bloques horarios desde el servidor */
   const refetchTimeSlots = useCallback(async () => {
@@ -76,7 +97,7 @@ export function useSchedule() {
       const currentFilters = filtersRef.current
       const data = await getScheduleEntries({
         ...currentFilters,
-        schoolYearId: currentFilters.schoolYearId ?? schoolYearId ?? undefined,
+        schoolYearId: currentFilters.schoolYearId ?? schoolYearIdRef.current ?? undefined,
       })
       setEntries(data)
     } catch (error) {
@@ -86,7 +107,7 @@ export function useSchedule() {
           : 'No se pudieron cargar las entradas de horario.',
       )
     }
-  }, [schoolYearId])
+  }, [])
 
   /** Carga los datos iniciales: año escolar, bloques, secciones, docentes, asignaturas */
   const loadInitialData = useCallback(async () => {
@@ -96,21 +117,30 @@ export function useSchedule() {
     try {
       const currentYear = await getCurrentSchoolYear()
       const yearId = currentYear?.id ?? null
+      schoolYearIdRef.current = yearId
       setSchoolYearId(yearId)
 
-      const [slots, sects, tchrs, subjs, entryData] = await Promise.all([
+      const [slots, sects, tchrs, subjs] = await Promise.all([
         getTimeSlots(),
         getSections(),
         getTeachers(),
         getSubjects(),
-        getScheduleEntries({ schoolYearId: yearId ?? undefined }),
       ])
+      const entryData = await getScheduleEntries({ schoolYearId: yearId ?? undefined })
 
       setTimeSlots(slots)
       setSections(sects)
       setTeachers(tchrs)
       setSubjects(subjs)
       setEntries(entryData)
+      scheduleCache.write(cacheScope, {
+        timeSlots: slots,
+        entries: entryData,
+        sections: sects,
+        teachers: tchrs,
+        subjects: subjs,
+        schoolYearId: yearId,
+      })
     } catch (error) {
       setError(
         error instanceof Error
@@ -120,74 +150,93 @@ export function useSchedule() {
     } finally {
       setLoading(false)
     }
-  }, [])
+  }, [cacheScope])
 
   useEffect(() => {
+    const freshCache = scheduleCache.read(cacheScope)
+    if (freshCache) {
+      setTimeSlots(freshCache.timeSlots)
+      setEntries(freshCache.entries)
+      setSections(freshCache.sections)
+      setTeachers(freshCache.teachers)
+      setSubjects(freshCache.subjects)
+      setSchoolYearId(freshCache.schoolYearId)
+      setError(null)
+      setLoading(false)
+      return
+    }
     void loadInitialData()
-  }, [loadInitialData])
+  }, [cacheScope, loadInitialData])
 
   /** Recarga todos los datos (bloques y entradas) */
   const refetchAll = useCallback(async () => {
+    scheduleCache.clear(cacheScope)
     await refetchTimeSlots()
     await refetchEntries()
-  }, [refetchTimeSlots, refetchEntries])
+  }, [cacheScope, refetchTimeSlots, refetchEntries])
 
   /** Crea un nuevo bloque horario y refresca la lista */
   const createTimeSlot = useCallback(
     async (input: CreateTimeSlotInput) => {
       const record = await createTimeSlotRecord(input)
+      scheduleCache.clear(cacheScope)
       await refetchTimeSlots()
       return record
     },
-    [refetchTimeSlots],
+    [cacheScope, refetchTimeSlots],
   )
 
   /** Actualiza un bloque horario y refresca la lista */
   const updateTimeSlot = useCallback(
     async (id: string, input: UpdateTimeSlotInput) => {
       const record = await updateTimeSlotRecord(id, input)
+      scheduleCache.clear(cacheScope)
       await refetchTimeSlots()
       return record
     },
-    [refetchTimeSlots],
+    [cacheScope, refetchTimeSlots],
   )
 
   /** Elimina un bloque horario y refresca la lista */
   const removeTimeSlot = useCallback(
     async (id: string) => {
       await deleteTimeSlotRecord(id)
+      scheduleCache.clear(cacheScope)
       await refetchTimeSlots()
     },
-    [refetchTimeSlots],
+    [cacheScope, refetchTimeSlots],
   )
 
   /** Crea una nueva entrada en el horario y refresca */
   const createEntry = useCallback(
     async (input: CreateScheduleEntryInput) => {
       const record = await createScheduleEntryRecord(input)
+      scheduleCache.clear(cacheScope)
       await refetchEntries()
       return record
     },
-    [refetchEntries],
+    [cacheScope, refetchEntries],
   )
 
   /** Actualiza una entrada de horario y refresca */
   const updateEntry = useCallback(
     async (id: string, input: UpdateScheduleEntryInput) => {
       const record = await updateScheduleEntryRecord(id, input)
+      scheduleCache.clear(cacheScope)
       await refetchEntries()
       return record
     },
-    [refetchEntries],
+    [cacheScope, refetchEntries],
   )
 
   /** Elimina una entrada de horario y refresca */
   const removeEntry = useCallback(
     async (id: string) => {
       await deleteScheduleEntryRecord(id)
+      scheduleCache.clear(cacheScope)
       await refetchEntries()
     },
-    [refetchEntries],
+    [cacheScope, refetchEntries],
   )
 
   useEffect(() => {

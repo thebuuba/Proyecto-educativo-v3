@@ -7,6 +7,7 @@
 // Mantener la API bajo el mismo origen evita CORS y el bloqueo de cookies
 // HttpOnly de terceros. Vite y Vercel reenvían /api al backend real.
 const API_URL = '/api/v1'
+const GET_TIMEOUT_MS = 15_000
 
 export const API_CACHE_TTL = {
   sessionList: 60_000,
@@ -46,6 +47,8 @@ type GetRequestOptions = RequestOptions & {
   cacheTags?: readonly string[]
   /** Omite una respuesta vigente y fuerza una petición de red. */
   forceRefresh?: boolean
+  /** Tiempo máximo de espera antes de cancelar la petición. */
+  timeoutMs?: number
 }
 
 type MutationRequestOptions = RequestOptions & {
@@ -173,6 +176,7 @@ export const api = {
       cacheTtlMs = 0,
       cacheTags = [],
       forceRefresh = false,
+      timeoutMs = GET_TIMEOUT_MS,
       ...fetchOptions
     } = options ?? {}
     const canShare = !fetchOptions.signal && !fetchOptions.headers
@@ -190,29 +194,52 @@ export const api = {
     const requestGeneration = cacheGeneration
     const tagSnapshot = snapshotTagVersions(tags)
 
-    const request = fetch(url, {
-      ...fetchOptions,
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-        ...legacyAuthHeaders(),
-        ...fetchOptions.headers,
-      },
-    }).then(handleResponse<T>).then((value) => {
-      if (
-        canShare &&
-        cacheTtlMs > 0 &&
-        requestGeneration === cacheGeneration &&
-        tagsRemainCurrent(tagSnapshot)
-      ) {
-        storeCachedResponse(key, {
-          value,
-          expiresAt: Date.now() + cacheTtlMs,
-          tags,
+    const request = (async () => {
+      const controller = new AbortController()
+      const externalSignal = fetchOptions.signal
+      let timedOut = false
+      const abortFromExternalSignal = () => controller.abort(externalSignal?.reason)
+      externalSignal?.addEventListener('abort', abortFromExternalSignal, { once: true })
+      if (externalSignal?.aborted) abortFromExternalSignal()
+
+      const timeoutId = window.setTimeout(() => {
+        timedOut = true
+        controller.abort()
+      }, timeoutMs)
+
+      try {
+        const response = await fetch(url, {
+          ...fetchOptions,
+          signal: controller.signal,
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+            ...legacyAuthHeaders(),
+            ...fetchOptions.headers,
+          },
         })
+        const value = await handleResponse<T>(response)
+        if (
+          canShare &&
+          cacheTtlMs > 0 &&
+          requestGeneration === cacheGeneration &&
+          tagsRemainCurrent(tagSnapshot)
+        ) {
+          storeCachedResponse(key, {
+            value,
+            expiresAt: Date.now() + cacheTtlMs,
+            tags,
+          })
+        }
+        return value
+      } catch (error) {
+        if (timedOut) throw new ApiError(408, 'La solicitud tardó demasiado')
+        throw error
+      } finally {
+        window.clearTimeout(timeoutId)
+        externalSignal?.removeEventListener('abort', abortFromExternalSignal)
       }
-      return value
-    })
+    })()
 
     if (canShare) {
       const pending = { promise: request, tags }
