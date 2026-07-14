@@ -3841,9 +3841,10 @@ function InstrumentPreview({
     if (instrumentType === 'rubrica') {
       next['rubrica:meta:criteriaCount'] = String(rubricCriteria)
       next['rubrica:meta:levelCount'] = String(rubricLevels)
+      const automaticPoints = distributeScore(maxScore, rubricCriteria)
       for (let index = 0; index < rubricCriteria; index += 1) {
         const pointsKey = instrumentFieldKey('rubrica', 'points', index)
-        if (!next[pointsKey]) next[pointsKey] = String(rubricLevels)
+        next[pointsKey] = String(automaticPoints[index])
       }
       for (let index = 0; index < rubricLevels; index += 1) {
         const score = rubricLevels - index
@@ -4173,7 +4174,7 @@ function RubricInstrument({
 
   function resizeCriteria(nextCount: number) {
     const next: Record<string, string> = { ...fields, 'rubrica:meta:criteriaCount': String(nextCount) }
-    Array.from({ length: nextCount }, (_, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(levelCount) })
+    distributeScore(maxScore, nextCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(points) })
     if (nextCount < criteriaCount) {
       Object.keys(next).forEach((key) => {
         const match = key.match(/^rubrica:(criterion|descriptor|points):(\d+)/)
@@ -4198,7 +4199,7 @@ function RubricInstrument({
       const match = key.match(/^rubrica:(criterion|descriptor|points):(\d+)/)
       if (match && Number(match[2]) >= nextCount) delete next[key]
     })
-    Array.from({ length: nextCount }, (_, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(levelCount) })
+    distributeScore(maxScore, nextCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(points) })
     next['rubrica:meta:criteriaCount'] = String(nextCount)
     onFieldsChange(next)
     onCriteriaCountChange(nextCount)
@@ -4220,7 +4221,7 @@ function RubricInstrument({
         next[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, newScore)] = fields[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, level.score)] || ''
       }
     })
-    Array.from({ length: criteriaCount }, (_, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(nextCount) })
+    distributeScore(maxScore, criteriaCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(points) })
     onFieldsChange(next)
     onLevelCountChange(nextCount)
   }
@@ -4242,7 +4243,7 @@ function RubricInstrument({
     })
     next[instrumentFieldKey('rubrica', 'level-name', 1)] = rubricLevelName(nextCount - 1)
     next[instrumentFieldKey('rubrica', 'level-points', 1)] = '1'
-    Array.from({ length: criteriaCount }, (_, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(nextCount) })
+    distributeScore(maxScore, criteriaCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(points) })
     onFieldsChange(next)
     onLevelCountChange(nextCount)
   }
@@ -4284,7 +4285,7 @@ function RubricInstrument({
             <tr key={index}>
               <td className="border border-border p-1.5"><InstrumentTextarea placeholder={`${index + 1}. Criterio de evaluación`} value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)} /></td>
               {levels.map((level) => <td key={level.score} className="border border-border p-1.5"><InstrumentTextarea value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)} /></td>)}
-              <td className="border border-border p-1.5"><InstrumentInput value={fields[instrumentFieldKey('rubrica', 'points', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'points', index), value)} placeholder="0" /></td>
+              <td className="border border-border px-2 py-3 text-center"><span className="inline-flex min-w-14 items-center justify-center rounded-lg bg-blue-50 px-2 py-2 font-black text-primary">{criterionPoints[index]} pts</span></td>
               <td className="border border-border text-center"><button type="button" aria-label={`Eliminar criterio ${index + 1}`} title="Eliminar criterio" className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" disabled={criteriaCount <= 1} onClick={() => removeCriterion(index)}><X className="size-4" /></button></td>
             </tr>
           ))}
