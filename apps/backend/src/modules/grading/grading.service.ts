@@ -38,6 +38,16 @@ function mapEvaluationActivity(activity: any) {
   }
 }
 
+function evaluationInstrumentName(type: string) {
+  const names: Record<string, string> = {
+    rubrica: 'Rúbrica de evaluación',
+    'lista-cotejo': 'Lista de cotejo',
+    escala: 'Escala estimativa',
+    'lista-ponderada': 'Lista ponderada',
+  }
+  return names[type] ?? type
+}
+
 function periodDate(schoolYearStart: Date, month: number, day: number) {
   const startYear = schoolYearStart.getUTCFullYear()
   const year = month >= 8 ? startYear : startYear + 1
@@ -358,8 +368,22 @@ export class GradingService {
     if (dto.planningEntryId) {
       await assertPlanningEntryScope(schoolId, dto.planningEntryId, dto.sectionSubjectId, dto.academicPeriodId)
     }
-    if (dto.instrumentId) {
-      await assertInstrumentScope(schoolId, dto.instrumentId)
+    let instrumentId = dto.instrumentId || null
+    if (instrumentId) {
+      await assertInstrumentScope(schoolId, instrumentId)
+    } else if (dto.instrumentType) {
+      const instrumentName = evaluationInstrumentName(dto.instrumentType)
+      const instrument = await prisma.evaluationInstrument.findFirst({
+        where: { schoolId, name: instrumentName, type: dto.instrumentType, status: 'ACTIVE' },
+      }) ?? await prisma.evaluationInstrument.create({
+        data: {
+          schoolId,
+          name: instrumentName,
+          type: dto.instrumentType,
+          maxScore: dto.maxScore,
+        },
+      })
+      instrumentId = instrument.id
     }
 
     const data = {
@@ -368,7 +392,7 @@ export class GradingService {
       sectionSubjectId: dto.sectionSubjectId,
       academicPeriodId: dto.academicPeriodId,
       planningEntryId: dto.planningEntryId || null,
-      instrumentId: dto.instrumentId || null,
+      instrumentId,
       competencyBlockId: dto.competencyBlockId,
       planningMoment: dto.planningMoment || null,
       name: dto.name.trim(),

@@ -2,6 +2,7 @@
   ArrowLeft,
   ArrowRight,
   AlertCircle,
+  BarChart3,
   BookOpen,
   CalendarDays,
   CheckCircle2,
@@ -12,9 +13,11 @@
   Layers,
   Lightbulb,
   Pencil,
+  Play,
   Plus,
   Search,
   Settings,
+  SlidersHorizontal,
   Target,
   Trash2,
   Trophy,
@@ -22,7 +25,7 @@
   Users,
   X,
 } from 'lucide-react'
-import { useEffect, useMemo, useState, type KeyboardEvent, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type Dispatch, type KeyboardEvent, type ReactNode, type SetStateAction } from 'react'
 
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
@@ -76,11 +79,17 @@ type GradingBookProps = {
 }
 
 type MainView = 'blocks' | 'period' | 'annual' | 'final'
-type DetailView =
-  | { type: 'block'; blockId: CompetencyBlockId }
-  | { type: 'activity'; activityId: string }
+type ActivityDetailTab = 'evaluation' | 'results' | 'details'
+type BlockGradeTab = 'matrix' | 'activities' | 'students' | 'stats'
+type DraftsReturnView =
+  | { type: 'blocks' }
   | { type: 'activity-hub' }
-  | { type: 'activity-drafts' }
+  | { type: 'block'; blockId: CompetencyBlockId; initialTab?: BlockGradeTab }
+type DetailView =
+  | { type: 'block'; blockId: CompetencyBlockId; initialTab?: BlockGradeTab }
+  | { type: 'activity'; activityId: string; initialTab?: ActivityDetailTab }
+  | { type: 'activity-hub' }
+  | { type: 'activity-drafts'; initialBlock?: 'all' | CompetencyBlockId; returnTo?: DraftsReturnView }
   | { type: 'activity-create'; blockId: CompetencyBlockId }
 
 const blockAccents = [
@@ -249,16 +258,16 @@ export function GradingBook({
   const selectedActivity = detailView?.type === 'activity'
     ? activities.find((activity) => activity.id === detailView.activityId) ?? null
     : null
-  const isActivityWorkspace = detailView?.type === 'activity-hub' || detailView?.type === 'activity-drafts' || detailView?.type === 'activity-create' || detailView?.type === 'activity'
+  const isFocusedWorkspace = Boolean(detailView)
   const draftStorageKey = useMemo(
     () => `grading-activity-drafts:${courseTitle}:${periodShortName}`,
     [courseTitle, periodShortName],
   )
 
   useEffect(() => {
-    onActivityWorkspaceChange?.(isActivityWorkspace)
+    onActivityWorkspaceChange?.(isFocusedWorkspace)
     return () => onActivityWorkspaceChange?.(false)
-  }, [isActivityWorkspace, onActivityWorkspaceChange])
+  }, [isFocusedWorkspace, onActivityWorkspaceChange])
 
   const blockSummaries = useMemo(
     () => competencyBlocks.map((block, index) => {
@@ -362,7 +371,7 @@ export function GradingBook({
   function openActivityCreator(blockId: CompetencyBlockId) {
     setEditingActivityId(null)
     setActivityDraft(newActivityDraft(blockId))
-    setActivityCreateReturnView(detailView ?? { type: 'activity-hub' })
+    setActivityCreateReturnView(detailView?.type === 'block' ? { ...detailView, initialTab: 'activities' } : detailView ?? { type: 'activity-hub' })
     setDetailView({ type: 'activity-create', blockId })
   }
 
@@ -372,6 +381,18 @@ export function GradingBook({
     setActivityDraft(draft ?? newActivityDraft(blockId))
     setActivityCreateReturnView(detailView ?? { type: 'activity-hub' })
     setDetailView({ type: 'activity-create', blockId })
+  }
+
+  function goBackFromDrafts(returnTo?: DraftsReturnView) {
+    if (returnTo?.type === 'blocks') {
+      setDetailView(null)
+      return
+    }
+    if (returnTo?.type === 'block') {
+      setDetailView({ type: 'block', blockId: returnTo.blockId, initialTab: returnTo.initialTab })
+      return
+    }
+    setDetailView({ type: 'activity-hub' })
   }
 
   function goBackFromActivityCreator() {
@@ -494,7 +515,7 @@ export function GradingBook({
       observations: activity.observations ?? '',
       activityType: activity.activityType ?? 'individual',
     })
-    setActivityCreateReturnView(detailView)
+    setActivityCreateReturnView(detailView?.type === 'block' ? { ...detailView, initialTab: 'activities' } : detailView)
     setDetailView({ type: 'activity-create', blockId: activity.competencyBlockId as CompetencyBlockId })
   }
 
@@ -550,7 +571,7 @@ export function GradingBook({
 
   return (
     <div className="space-y-3">
-      {!isActivityWorkspace ? (
+      {!isFocusedWorkspace ? (
       <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-2 shadow-sm xl:flex-row xl:items-center xl:justify-between">
         <div className="flex flex-wrap gap-2">
           <ViewButton active={mainView === 'blocks'} icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => { setMainView('blocks'); setDetailView(null) }} />
@@ -608,10 +629,19 @@ export function GradingBook({
             activities={activities.filter((activity) => activity.competencyBlockId === selectedBlock.id)}
             config={config}
             courseTitle={courseTitle}
+            draftMetas={draftMetas}
+            initialTab={detailView.initialTab}
             onBack={() => setDetailView(null)}
             onCreateActivity={() => openActivityCreator(selectedBlock.id)}
+            onDeleteActivity={onDeleteActivity}
+            onEditActivity={editActivity}
             onOpenConfig={() => setShowConfig(true)}
-            onOpenActivity={(activityId) => setDetailView({ type: 'activity', activityId })}
+            onOpenActivity={(activityId, initialTab) => setDetailView({ type: 'activity', activityId, initialTab })}
+            onViewDrafts={(blockId) => setDetailView({
+              type: 'activity-drafts',
+              initialBlock: blockId,
+              returnTo: { type: 'block', blockId: selectedBlock.id, initialTab: 'activities' },
+            })}
             records={records}
             students={students}
           />
@@ -621,9 +651,10 @@ export function GradingBook({
             courseTitle={courseTitle}
             draftMetas={draftMetas}
             onBack={() => setDetailView(null)}
+            onDeleteDraft={discardActivityDraft}
             onOpenDraft={openActivityDraft}
             onSelectBlock={openActivityCreator}
-            onViewDrafts={() => setDetailView({ type: 'activity-drafts' })}
+            onViewDrafts={(blockId) => setDetailView({ type: 'activity-drafts', initialBlock: blockId, returnTo: { type: 'activity-hub' } })}
             periodShortName={periodShortName}
             periodName={periodName}
           />
@@ -631,7 +662,8 @@ export function GradingBook({
           <ActivityDraftsView
             courseTitle={courseTitle}
             draftMetas={draftMetas}
-            onBack={() => setDetailView({ type: 'activity-hub' })}
+            initialBlock={detailView.initialBlock}
+            onBack={() => goBackFromDrafts(detailView.returnTo)}
             onCreateActivity={() => openActivityCreator(competencyBlocks[0].id)}
             onDeleteDraft={discardActivityDraft}
             onOpenDraft={openActivityDraft}
@@ -660,7 +692,7 @@ export function GradingBook({
         ) : selectedActivity ? (
           <ActivityDetailView
             activity={selectedActivity}
-            config={config}
+            initialTab={detailView.type === 'activity' ? detailView.initialTab : undefined}
             onBack={() => {
               setDetailView({ type: 'block', blockId: selectedActivity.competencyBlockId as CompetencyBlockId })
             }}
@@ -676,9 +708,11 @@ export function GradingBook({
           blockSummaries={blockSummaries}
           config={config}
           onOpenBlock={(blockId) => setDetailView({ type: 'block', blockId })}
-          onOpenActivity={(activityId) => setDetailView({ type: 'activity', activityId })}
+          draftMetas={draftMetas}
+          onOpenActivity={(activityId, initialTab) => setDetailView({ type: 'activity', activityId, initialTab })}
           records={records}
           students={students}
+          onViewDrafts={(blockId) => setDetailView({ type: 'activity-drafts', initialBlock: blockId, returnTo: { type: 'blocks' } })}
         />
       ) : mainView === 'period' ? (
         <PeriodSummaryView blockSummaries={blockSummaries} periodName={periodName} recoveryScores={recoveryScores} />
@@ -798,8 +832,10 @@ function BlockMetric({
 function BlockMatrixView({
   blockSummaries,
   config,
+  draftMetas,
   onOpenBlock,
   onOpenActivity,
+  onViewDrafts,
   records,
   students,
 }: {
@@ -813,8 +849,10 @@ function BlockMatrixView({
     status: string
   }>
   config: GradeCalculationConfig
+  draftMetas: ActivityDraftMeta[]
   onOpenBlock: (blockId: CompetencyBlockId) => void
-  onOpenActivity: (activityId: string) => void
+  onOpenActivity: (activityId: string, initialTab?: ActivityDetailTab) => void
+  onViewDrafts: (blockId?: CompetencyBlockId) => void
   records: GradeRecordRow[]
   students: StudentGradeRow[]
 }) {
@@ -826,6 +864,7 @@ function BlockMatrixView({
       <div className="grid gap-3 xl:grid-cols-4">
         {blockSummaries.map((summary) => {
           const accent = blockAccents[summary.index]
+          const draftCount = draftMetas.filter((meta) => meta.blockId === summary.block.id).length
           return (
             <article
               key={summary.block.id}
@@ -863,6 +902,19 @@ function BlockMatrixView({
                     <span className="font-medium text-muted-foreground">{summary.activities.length} actividades</span>
                     <Badge tone={statusTone(summary.status)}>{summary.status}</Badge>
                   </div>
+                  {draftCount > 0 ? (
+                    <button
+                      type="button"
+                      className="mt-2 inline-flex w-full items-center justify-between rounded-lg border border-red-200 bg-red-50/80 px-3 py-2 text-xs font-black text-red-700 shadow-sm transition hover:-translate-y-0.5 hover:border-red-300 hover:bg-red-50 hover:shadow-md"
+                      onClick={(event) => {
+                        event.stopPropagation()
+                        onViewDrafts(summary.block.id)
+                      }}
+                    >
+                      <span>{draftCount} borrador{draftCount === 1 ? '' : 'es'}</span>
+                      <ArrowRight className="size-4" />
+                    </button>
+                  ) : null}
                   <Button
                     variant="outline"
                     className="mt-3 h-10 w-full justify-between"
@@ -974,10 +1026,15 @@ function BlockGradeView({
   activities,
   config,
   courseTitle,
+  draftMetas,
+  initialTab = 'matrix',
   onBack,
   onCreateActivity,
+  onDeleteActivity,
+  onEditActivity,
   onOpenConfig,
   onOpenActivity,
+  onViewDrafts,
   records,
   students,
 }: {
@@ -985,14 +1042,19 @@ function BlockGradeView({
   activities: GradingActivity[]
   config: GradeCalculationConfig
   courseTitle: string
+  draftMetas: ActivityDraftMeta[]
+  initialTab?: BlockGradeTab
   onBack: () => void
   onCreateActivity: () => void
+  onDeleteActivity: (activityId: string) => void
+  onEditActivity: (activity: GradingActivity) => void
   onOpenConfig: () => void
-  onOpenActivity: (activityId: string) => void
+  onOpenActivity: (activityId: string, initialTab?: ActivityDetailTab) => void
+  onViewDrafts: (blockId?: CompetencyBlockId) => void
   records: GradeRecordRow[]
   students: StudentGradeRow[]
 }) {
-  const [activeTab, setActiveTab] = useState<'matrix' | 'activities' | 'students' | 'stats'>('matrix')
+  const [activeTab, setActiveTab] = useState<BlockGradeTab>(initialTab)
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
   const blockIndex = competencyBlocks.findIndex((item) => item.id === blockId)
   const studentTotals = students.map((student) => {
@@ -1012,6 +1074,8 @@ function BlockGradeView({
 
   const completedStudents = studentTotals.filter((value) => value >= config.passingScore).length
   const riskStudents = activities.length === 0 ? 0 : studentTotals.filter((value) => value < config.passingScore).length
+  const plannedTotal = sumActivityMaxScore(activities, blockId)
+  const blockDraftCount = draftMetas.filter((meta) => meta.blockId === blockId).length
   const activitySummaries = activities.map((activity) => {
     const scored = students.filter((student) => scoreForActivity(records, student.enrollmentId, activity.id)).length
     const averageScore = averageActivityScore(records, students, activity)
@@ -1064,7 +1128,7 @@ function BlockGradeView({
       </div>
 
       <div className="grid gap-3 xl:grid-cols-5">
-        <BlockMetric icon={<Layers className="size-5" />} label="Total obtenido" value={formatGrade(average)} helper={`/ ${config.expectedBlockTotal} puntos`} tone="default" />
+        <BlockMetric icon={<Layers className="size-5" />} label="Total planificado" value={`${formatGrade(plannedTotal)} pts`} helper={`/ ${config.expectedBlockTotal} esperados`} tone="default" />
         <BlockMetric icon={<Target className="size-5" />} label="Promedio del bloque" value={formatGrade(average)} helper="puntos" tone="success" />
         <BlockMetric icon={<ClipboardList className="size-5" />} label="Actividades" value={activities.length} helper="actividades" tone="accent" />
         <BlockMetric icon={<Hourglass className="size-5" />} label="Pendientes" value={pendingActivities} helper="actividades" tone="warning" />
@@ -1201,39 +1265,139 @@ function BlockGradeView({
 
       {activeTab === 'activities' ? (
         <div className="max-h-[calc(100vh-24rem)] overflow-y-auto p-4">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <h3 className="text-lg font-black text-primary">Actividades del bloque</h3>
-              <p className="mt-1 text-sm text-muted-foreground">Administra las actividades y sus instrumentos antes de evaluar.</p>
+          <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+            <div className="flex flex-col gap-3 border-b border-border p-4 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <h3 className="text-xl font-black text-primary">Actividades del bloque</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Administra, evalúa y da seguimiento a las actividades de este bloque.</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {blockDraftCount > 0 ? (
+                  <Button variant="outline" onClick={() => onViewDrafts(blockId)}>
+                    <FileText className="size-4" />
+                    Borradores ({blockDraftCount})
+                  </Button>
+                ) : null}
+                <Button onClick={onCreateActivity}>
+                  <Plus className="size-4" />
+                  Crear actividad
+                </Button>
+              </div>
             </div>
-            <Button onClick={onCreateActivity}>
-              <Plus className="size-4" />
-              Crear actividad
-            </Button>
-          </div>
-          <div className="mt-4 grid gap-3 xl:grid-cols-2">
+
+            <div className="grid gap-3 border-b border-border p-4 lg:grid-cols-[minmax(12rem,1fr)_14rem_13rem_13rem_3rem]">
+              <label className="relative">
+                <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                <Input className="h-10 pl-9" placeholder="Buscar actividad..." />
+              </label>
+              <Select className="h-10" defaultValue="all">
+                <option value="all">Todos los instrumentos</option>
+                <option value="rubrica">Rúbrica</option>
+                <option value="lista-cotejo">Lista de cotejo</option>
+                <option value="escala">Escala estimativa</option>
+                <option value="lista-ponderada">Lista ponderada</option>
+              </Select>
+              <Select className="h-10" defaultValue="all">
+                <option value="all">Todos los estados</option>
+                <option value="pending">Pendiente</option>
+                <option value="partial">Parcial</option>
+                <option value="complete">Completada</option>
+              </Select>
+              <Select className="h-10" defaultValue="recent">
+                <option value="recent">Fecha (más reciente)</option>
+                <option value="oldest">Fecha (más antigua)</option>
+                <option value="name">Nombre</option>
+              </Select>
+              <Button size="icon" variant="outline" aria-label="Ordenar actividades">
+                <SlidersHorizontal className="size-4" />
+              </Button>
+            </div>
+
             {activities.length === 0 ? (
-              <div className="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground">
+              <div className="p-6 text-sm text-muted-foreground">
                 Aun no hay actividades en este bloque.
               </div>
-            ) : activitySummaries.map(({ activity, averageScore, pending, scored }) => (
-              <article key={activity.id} className="rounded-lg border border-border bg-muted/20 p-4">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <button className="text-left text-base font-black text-primary hover:underline" onClick={() => onOpenActivity(activity.id)}>
-                      {activity.name}
-                    </button>
-                    <p className="mt-1 text-sm text-muted-foreground">{activity.instrumentType || 'Sin instrumento'} / {activity.maxScore} pts</p>
-                  </div>
-                  <Badge tone={pending === 0 ? 'success' : 'warning'}>{pending === 0 ? 'Completada' : `${pending} pendientes`}</Badge>
-                </div>
-                <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
-                  <InfoItem label="Evaluados" value={`${scored}/${students.length}`} />
-                  <InfoItem label="Promedio" value={`${formatGrade(averageScore)} / ${activity.maxScore}`} />
-                  <InfoItem label="Fecha" value={activity.date || 'Sin fecha'} />
-                </div>
-              </article>
-            ))}
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="min-w-[64rem] w-full text-left text-sm">
+                  <thead className="bg-muted/35 text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+                    <tr>
+                      <th className="px-4 py-3">Actividad</th>
+                      <th className="px-4 py-3">Puntos</th>
+                      <th className="px-4 py-3">Instrumento</th>
+                      <th className="px-4 py-3">Fecha</th>
+                      <th className="px-4 py-3">Estado</th>
+                      <th className="px-4 py-3">Progreso</th>
+                      <th className="px-4 py-3 text-right">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {activitySummaries.map(({ activity, scored }) => {
+                      const progress = students.length > 0 ? Math.round((scored / students.length) * 100) : 0
+                      const status = activityEvaluationStatus(scored, students.length)
+                      const statusToneValue = activityEvaluationStatusTone(status)
+                      return (
+                        <tr key={activity.id} className="border-t border-border hover:bg-muted/20">
+                          <td className="px-4 py-4">
+                            <div className="flex items-center gap-3">
+                              <span className={cn('flex size-10 shrink-0 items-center justify-center rounded-full', activityIconTone(activity.instrumentType))}>
+                                <ClipboardList className="size-5" />
+                              </span>
+                              <div className="min-w-0">
+                                <button className="text-left font-black text-primary hover:underline" onClick={() => onOpenActivity(activity.id)}>
+                                  {activity.name || 'Actividad sin nombre'}
+                                </button>
+                              </div>
+                            </div>
+                          </td>
+                          <td className="px-4 py-4 font-black text-foreground">{activity.maxScore} pts</td>
+                          <td className="px-4 py-4">
+                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-muted-foreground">
+                              <span className={cn('size-2 rounded-full', activityInstrumentDot(activity.instrumentType))} />
+                              {activityInstrumentTitle(activity.instrumentType)}
+                            </span>
+                          </td>
+                          <td className="px-4 py-4 text-muted-foreground">{formatActivityDate(activity.date)}</td>
+                          <td className="px-4 py-4"><Badge tone={statusToneValue}>{status}</Badge></td>
+                          <td className="px-4 py-4">
+                            <div className="min-w-28">
+                              <p className="text-xs font-black text-primary">{scored} / {students.length}</p>
+                              <p className="text-[11px] text-muted-foreground">evaluados</p>
+                              <ProgressBar value={progress} className="mt-1.5 h-2" indicatorColor={progress >= 100 ? '#22c55e' : '#1d4ed8'} />
+                              <p className="mt-1 text-[11px] font-bold text-muted-foreground">{progress}%</p>
+                            </div>
+                          </td>
+                          <td className="px-4 py-4">
+                            <div className="flex justify-end gap-2">
+                              <Button
+                                size="sm"
+                                className="h-8 px-3"
+                                onClick={() => onOpenActivity(activity.id, status === 'Completada' ? 'results' : 'evaluation')}
+                              >
+                                <Play className="size-3.5" />
+                                {status === 'Pendiente' ? 'Calificar' : status === 'Parcial' ? 'Continuar' : 'Ver resultados'}
+                              </Button>
+                              <Button size="sm" variant="outline" className="h-8 px-3" aria-label="Editar actividad" onClick={() => onEditActivity(activity)}>
+                                <Pencil className="size-4" />
+                                Editar
+                              </Button>
+                              <Button size="sm" variant="destructive" className="h-8 px-3" aria-label="Eliminar actividad" onClick={() => onDeleteActivity(activity.id)}>
+                                <Trash2 className="size-4" />
+                                Eliminar
+                              </Button>
+                            </div>
+                          </td>
+                        </tr>
+                      )
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            <div className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
+              Mostrando {activities.length === 0 ? 0 : 1} a {activities.length} de {activities.length} actividades
+            </div>
           </div>
         </div>
       ) : null}
@@ -1310,6 +1474,386 @@ function BlockGradeView({
 }
 
 function ActivityDetailView({
+  activity,
+  initialTab = 'evaluation',
+  onBack,
+  onEditActivity,
+  onSaveScore,
+  records,
+  saving,
+  students,
+}: {
+  activity: GradingActivity
+  initialTab?: ActivityDetailTab
+  onBack: () => void
+  onEditActivity: (activity: GradingActivity) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
+  records: GradeRecordRow[]
+  saving: boolean
+  students: StudentGradeRow[]
+}) {
+  const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId) ?? competencyBlocks[0]
+  const [tab, setTab] = useState<ActivityDetailTab>(initialTab)
+  const [studentIndex, setStudentIndex] = useState(0)
+  const selectedStudent = students[studentIndex] ?? students[0] ?? null
+  const average = averageActivityScore(records, students, activity)
+  const evaluatedCount = students.filter((student) => scoreForActivity(records, student.enrollmentId, activity.id)).length
+  const activityStatus = activityEvaluationStatus(evaluatedCount, students.length)
+  const currentRecord = selectedStudent ? scoreForActivity(records, selectedStudent.enrollmentId, activity.id) : null
+  const currentScore = currentRecord?.score ?? suggestedScoreForStudent(studentIndex, activity.maxScore)
+  const rubricPoints = rubricLevelPoints(activity.maxScore)
+  const levelRows = rubricCriteria.map((criterion, index) => {
+    const levelIndex = suggestedLevelIndex(index, currentScore, activity.maxScore)
+    return { criterion, levelIndex, points: rubricPoints[levelIndex] ?? 0 }
+  })
+  const totalRubricScore = Math.min(activity.maxScore, Number(levelRows.reduce((sum, row) => sum + row.points, 0).toFixed(2)))
+  const distribution = gradeDistribution(records, students, activity)
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-medium text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-2">
+          <button className="text-primary hover:underline" onClick={onBack}>Calificaciones</button>
+          <span>&gt;</span>
+          <span>{block.shortName}</span>
+          <span>&gt;</span>
+          <span>Actividades</span>
+          <span>&gt;</span>
+          <span>{tab === 'results' ? 'Resultados' : 'Evaluación'}</span>
+        </div>
+        <button className="font-black text-primary hover:underline" onClick={onBack}>Salir</button>
+      </div>
+
+      <section className="rounded-lg border border-border bg-card p-5 shadow-sm">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex items-start gap-3">
+            <span className={cn('flex size-12 shrink-0 items-center justify-center rounded-full', activityIconTone(activity.instrumentType))}>
+              <ClipboardList className="size-6" />
+            </span>
+            <div>
+              <h2 className="text-2xl font-black text-primary">{activity.name || 'Actividad sin nombre'}</h2>
+              <p className="mt-1 text-sm text-muted-foreground">{activity.description || 'Evaluación de presentación y dominio del tema'}</p>
+            </div>
+          </div>
+          <Badge tone={activityEvaluationStatusTone(activityStatus)}>{activityStatus}</Badge>
+        </div>
+
+        <div className="mt-5 grid gap-4 border-t border-border pt-4 sm:grid-cols-2 lg:grid-cols-4">
+          <InfoItem label="Valor" value={`${activity.maxScore} pts`} />
+          <InfoItem label="Instrumento" value={instrumentTitle(activity.instrumentType || '')} />
+          <InfoItem label="Fecha" value={formatActivityDate(activity.date)} />
+          <InfoItem label="Momento" value={activityMomentTitle(activity.planningMoment)} />
+        </div>
+      </section>
+
+      <div className="flex flex-wrap gap-6 border-b border-border text-sm font-black text-muted-foreground">
+        {([
+          ['evaluation', 'Evaluación'],
+          ['results', 'Resultados'],
+          ['details', 'Detalles'],
+        ] as const).map(([id, label]) => (
+          <button
+            key={id}
+            className={cn('border-b-2 border-transparent px-1 py-3 transition hover:text-primary', tab === id ? 'border-primary text-primary' : null)}
+            onClick={() => setTab(id)}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      {tab === 'evaluation' ? (
+        <ActivityEvaluationPanel
+          activity={activity}
+          currentRecord={currentRecord}
+          levelRows={levelRows}
+          onSaveScore={onSaveScore}
+          saving={saving}
+          selectedStudent={selectedStudent}
+          setStudentIndex={setStudentIndex}
+          studentIndex={studentIndex}
+          students={students}
+          totalRubricScore={totalRubricScore}
+          setTab={setTab}
+        />
+      ) : null}
+
+      {tab === 'results' ? (
+        <ActivityResultsPanel
+          activity={activity}
+          average={average}
+          distribution={distribution}
+          evaluatedCount={evaluatedCount}
+          records={records}
+          students={students}
+        />
+      ) : null}
+
+      {tab === 'details' ? (
+        <section className="grid gap-4 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+          <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">Información de actividad</p>
+            <dl className="mt-4 grid gap-4 text-sm">
+              <InfoItem label="Competencia" value={block.name} />
+              <InfoItem label="Valor" value={`${activity.maxScore} puntos`} />
+              <InfoItem label="Promedio" value={`${formatGrade(average)} / ${activity.maxScore}`} />
+              <InfoItem label="Fecha" value={activity.date || 'Sin fecha'} />
+              <InfoItem label="Momento de planificación" value={activityMomentTitle(activity.planningMoment)} />
+              <InfoItem label="Instrumento" value={instrumentTitle(activity.instrumentType || '')} />
+              <InfoItem label="Técnica de evaluación" value={activity.evaluationTechnique || 'Sin técnica'} />
+            </dl>
+          </div>
+          <div className="rounded-lg border border-border bg-card p-5 text-sm leading-7 text-muted-foreground shadow-sm">
+            <p>{activity.description || 'No hay descripción detallada para esta actividad.'}</p>
+            <Button variant="outline" className="mt-4" onClick={() => onEditActivity(activity)}>
+              <Pencil className="size-4" />
+              Editar actividad
+            </Button>
+          </div>
+        </section>
+      ) : null}
+    </div>
+  )
+}
+
+function ActivityEvaluationPanel({
+  activity,
+  currentRecord,
+  levelRows,
+  onSaveScore,
+  saving,
+  selectedStudent,
+  setStudentIndex,
+  setTab,
+  studentIndex,
+  students,
+  totalRubricScore,
+}: {
+  activity: GradingActivity
+  currentRecord: GradeRecordRow | null
+  levelRows: Array<{ criterion: (typeof rubricCriteria)[number]; levelIndex: number; points: number }>
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
+  saving: boolean
+  selectedStudent: StudentGradeRow | null
+  setStudentIndex: Dispatch<SetStateAction<number>>
+  setTab: Dispatch<SetStateAction<ActivityDetailTab>>
+  studentIndex: number
+  students: StudentGradeRow[]
+  totalRubricScore: number
+}) {
+  const saveCurrentScore = () => {
+    if (!selectedStudent) return
+    onSaveScore(selectedStudent.enrollmentId, activity, String(totalRubricScore))
+  }
+
+  return (
+    <section className="space-y-4">
+      <div className="grid grid-cols-[1fr_minmax(12rem,18rem)_1fr] items-center gap-3">
+        <Button variant="outline" disabled={studentIndex <= 0} onClick={() => setStudentIndex((current) => Math.max(0, current - 1))}>
+          <ArrowLeft className="size-4" />
+          Anterior
+        </Button>
+        <Select value={String(studentIndex)} onChange={(event) => setStudentIndex(Number(event.target.value))} className="h-12 text-center font-black">
+          {students.map((student, index) => (
+            <option key={student.enrollmentId} value={index}>
+              {index + 1} / {students.length} - {student.firstName}
+            </option>
+          ))}
+        </Select>
+        <Button className="justify-self-end" variant="outline" disabled={studentIndex >= students.length - 1} onClick={() => setStudentIndex((current) => Math.min(students.length - 1, current + 1))}>
+          Siguiente
+          <ArrowRight className="size-4" />
+        </Button>
+      </div>
+
+      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+        <div className="flex flex-col gap-3 border-b border-border p-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-3">
+            <span className="grid size-12 place-items-center rounded-full bg-blue-100 text-lg font-black text-primary">
+              {studentInitials(selectedStudent)}
+            </span>
+            <div>
+              <h3 className="font-black text-foreground">{selectedStudent ? `${selectedStudent.firstName} ${selectedStudent.lastName}` : 'Sin estudiante'}</h3>
+              <p className="mt-1 text-xs text-muted-foreground">Código: {selectedStudent?.studentCode || 'N/D'}</p>
+            </div>
+          </div>
+          <Badge tone={currentRecord ? 'success' : 'default'}>{currentRecord ? 'Evaluado' : 'En progreso'}</Badge>
+        </div>
+
+        <div className="border-b border-border p-4">
+          <p className="text-xs font-black uppercase tracking-[0.14em] text-muted-foreground">
+            {instrumentTitle(activity.instrumentType || 'rubrica')} - 4 criterios - Total {activity.maxScore} pts
+          </p>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="min-w-[52rem] w-full text-sm">
+            <thead className="bg-muted/35 text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+              <tr>
+                <th rowSpan={2} className="w-[16rem] border-b border-r border-border px-4 py-3 text-left">Criterios</th>
+                <th colSpan={5} className="border-b border-r border-border px-4 py-2 text-center">Niveles de desempeño</th>
+                <th rowSpan={2} className="w-28 border-b border-border px-4 py-3 text-center">Puntaje</th>
+              </tr>
+              <tr>
+                {rubricLevelLabels(activity.maxScore).map((level) => (
+                  <th key={level.label} className="border-b border-r border-border px-3 py-2 text-center">
+                    <span className="block text-foreground">{level.label}</span>
+                    <span>{formatGrade(level.points)} pts</span>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {levelRows.map((row, criterionIndex) => (
+                <tr key={row.criterion.title} className="border-b border-border">
+                  <td className="border-r border-border px-4 py-4">
+                    <p className="font-black text-foreground">{criterionIndex + 1}. {row.criterion.title}</p>
+                    <p className="mt-1 text-xs leading-5 text-muted-foreground">{row.criterion.description}</p>
+                  </td>
+                  {rubricLevelLabels(activity.maxScore).map((level, levelIndex) => (
+                    <td key={level.label} className="border-r border-border px-4 py-4 text-center">
+                      <span className={cn(
+                        'inline-flex size-5 items-center justify-center rounded-full border-2',
+                        row.levelIndex === levelIndex ? 'border-primary bg-primary shadow-[inset_0_0_0_4px_white]' : 'border-border bg-card',
+                      )} />
+                    </td>
+                  ))}
+                  <td className="px-4 py-4 text-center">
+                    <span className="inline-flex h-10 min-w-20 items-center justify-center rounded-lg border border-border bg-card px-3 font-black text-primary">
+                      {formatGrade(row.points)} / {formatGrade(activity.maxScore / 4)}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="border-t border-border p-4">
+          <label className="text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Observación (opcional)</label>
+          <Textarea className="mt-2 min-h-24" placeholder="Escribe una observación sobre el desempeño del estudiante..." />
+        </div>
+
+        <div className="flex flex-col gap-3 border-t border-border p-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700">
+            <CheckCircle2 className="size-4" />
+            Guardado automáticamente
+          </p>
+          <div className="flex items-center gap-4">
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Puntaje total</p>
+            <p className="text-3xl font-black text-primary">{formatGrade(totalRubricScore)} <span className="text-base text-muted-foreground">/ {activity.maxScore} pts</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-end gap-2">
+        <Button disabled={saving} onClick={() => {
+          saveCurrentScore()
+          setStudentIndex((current) => Math.min(students.length - 1, current + 1))
+        }}>
+          Guardar y siguiente
+        </Button>
+        <Button disabled={saving} variant="outline" onClick={() => {
+          saveCurrentScore()
+          setTab('results')
+        }}>
+          Guardar y salir
+        </Button>
+      </div>
+    </section>
+  )
+}
+
+function ActivityResultsPanel({
+  activity,
+  average,
+  distribution,
+  evaluatedCount,
+  records,
+  students,
+}: {
+  activity: GradingActivity
+  average: number | null
+  distribution: Array<{ color: string; count: number; label: string; percent: number }>
+  evaluatedCount: number
+  records: GradeRecordRow[]
+  students: StudentGradeRow[]
+}) {
+  return (
+    <section className="space-y-4">
+      <div className="grid gap-3 md:grid-cols-3">
+        <BlockMetric icon={<Users className="size-5" />} label="Evaluados" value={`${evaluatedCount} / ${students.length}`} helper="" tone="default" />
+        <BlockMetric icon={<ClipboardList className="size-5" />} label="Promedio general" value={`${formatGrade(average)} / ${activity.maxScore}`} helper="" tone="success" />
+        <BlockMetric icon={<BarChart3 className="size-5" />} label="Porcentaje promedio" value={`${average ? Math.round((average / activity.maxScore) * 100) : 0}%`} helper="" tone="accent" />
+      </div>
+
+      <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
+        <h3 className="text-lg font-black text-primary">Distribución de calificaciones</h3>
+        <div className="mt-4 space-y-4">
+          {distribution.map((item) => (
+            <div key={item.label} className="grid gap-3 sm:grid-cols-[12rem_1fr_5rem] sm:items-center">
+              <p className="text-sm font-bold text-muted-foreground">{item.label}</p>
+              <ProgressBar value={item.percent} indicatorColor={item.color} />
+              <p className="text-sm font-bold text-muted-foreground">{item.count} ({item.percent}%)</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+        <div className="border-b border-border p-4">
+          <h3 className="text-lg font-black text-primary">Lista de estudiantes</h3>
+          <div className="mt-4 grid gap-3 md:grid-cols-[minmax(12rem,1fr)_14rem]">
+            <label className="relative">
+              <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+              <Input className="h-10 pl-9" placeholder="Buscar estudiante..." />
+            </label>
+            <Select className="h-10" defaultValue="all">
+              <option value="all">Todos los niveles</option>
+              <option value="excellent">Excelente</option>
+              <option value="good">Bueno</option>
+              <option value="pending">Pendiente</option>
+            </Select>
+          </div>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-[44rem] w-full text-sm">
+            <thead className="bg-muted/35 text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+              <tr>
+                <th className="w-12 px-4 py-3">#</th>
+                <th className="px-4 py-3 text-left">Estudiante</th>
+                <th className="px-4 py-3">Puntaje</th>
+                <th className="px-4 py-3">Porcentaje</th>
+                <th className="px-4 py-3">Nivel</th>
+                <th className="px-4 py-3">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {students.map((student, index) => {
+                const record = scoreForActivity(records, student.enrollmentId, activity.id)
+                const score = record?.score ?? null
+                const percent = score !== null && activity.maxScore > 0 ? Math.round((score / activity.maxScore) * 100) : null
+                const level = score !== null ? gradeLevel(score, activity.maxScore) : 'Pendiente'
+                return (
+                  <tr key={student.enrollmentId} className="border-t border-border">
+                    <td className="px-4 py-3 text-muted-foreground">{student.listNumber ?? index + 1}</td>
+                    <td className="px-4 py-3 font-bold text-foreground">{student.firstName} {student.lastName}</td>
+                    <td className="px-4 py-3 font-bold text-primary">{score !== null ? `${formatGrade(score)} / ${activity.maxScore}` : '-'}</td>
+                    <td className="px-4 py-3 font-bold">{percent !== null ? `${percent}%` : '-'}</td>
+                    <td className="px-4 py-3"><span className={cn('font-bold', gradeLevelTextColor(level))}>{level}</span></td>
+                    <td className="px-4 py-3"><span className={score !== null ? 'font-bold text-emerald-700' : 'font-bold text-muted-foreground'}>{score !== null ? 'Evaluado' : 'Pendiente'}</span></td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export function LegacyActivityDetailView({
   activity,
   config,
   onBack,
@@ -1884,6 +2428,7 @@ function ActivitiesHubView({
   courseTitle,
   draftMetas,
   onBack,
+  onDeleteDraft,
   onOpenDraft,
   onSelectBlock,
   onViewDrafts,
@@ -1894,9 +2439,10 @@ function ActivitiesHubView({
   courseTitle: string
   draftMetas: ActivityDraftMeta[]
   onBack: () => void
+  onDeleteDraft: (blockId: CompetencyBlockId, draftId?: string) => void
   onOpenDraft: (blockId: CompetencyBlockId, draftId: string) => void
   onSelectBlock: (blockId: CompetencyBlockId) => void
-  onViewDrafts: () => void
+  onViewDrafts: (blockId?: CompetencyBlockId) => void
   periodName: string
   periodShortName: string
 }) {
@@ -1946,6 +2492,7 @@ function ActivitiesHubView({
         blocksWithDrafts={blocksWithDrafts}
         courseTitle={courseTitle}
         draftMetas={recentDrafts}
+        onDeleteDraft={onDeleteDraft}
         periodShortName={periodShortName}
         totalDrafts={draftMetas.length}
         onOpenDraft={onOpenDraft}
@@ -2011,6 +2558,7 @@ function DraftCenter({
   blocksWithDrafts,
   courseTitle,
   draftMetas,
+  onDeleteDraft,
   onOpenDraft,
   onViewDrafts,
   periodShortName,
@@ -2019,6 +2567,7 @@ function DraftCenter({
   blocksWithDrafts: number
   courseTitle: string
   draftMetas: ActivityDraftMeta[]
+  onDeleteDraft: (blockId: CompetencyBlockId, draftId?: string) => void
   onOpenDraft: (blockId: CompetencyBlockId, draftId: string) => void
   onViewDrafts: () => void
   periodShortName: string
@@ -2077,7 +2626,27 @@ function DraftCenter({
                     <span className={cn('inline-flex h-5 items-center whitespace-nowrap rounded-full px-2 text-[10px] font-black ring-1 ring-inset', accent.badge)}>
                       {meta.block.shortName}
                     </span>
-                    <ArrowRight className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+                    <div className="flex items-center gap-1">
+                      <span
+                        role="button"
+                        tabIndex={0}
+                        className="inline-flex size-7 items-center justify-center rounded-md text-destructive transition hover:bg-destructive/10"
+                        aria-label="Eliminar borrador"
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          if (meta.draft.draftId) onDeleteDraft(meta.blockId, meta.draft.draftId)
+                        }}
+                        onKeyDown={(event) => {
+                          if (event.key !== 'Enter' && event.key !== ' ') return
+                          event.preventDefault()
+                          event.stopPropagation()
+                          if (meta.draft.draftId) onDeleteDraft(meta.blockId, meta.draft.draftId)
+                        }}
+                      >
+                        <Trash2 className="size-4" />
+                      </span>
+                      <ArrowRight className="size-4 shrink-0 text-muted-foreground" />
+                    </div>
                   </div>
                   <p className="mt-2 truncate text-sm font-black text-foreground">{meta.draft.name || 'Actividad sin nombre'}</p>
                   <p className="mt-1 line-clamp-2 text-xs leading-4 text-muted-foreground">{periodShortName} - {courseTitle}</p>
@@ -2126,6 +2695,7 @@ function DraftMetric({
 function ActivityDraftsView({
   courseTitle,
   draftMetas,
+  initialBlock = 'all',
   onBack,
   onCreateActivity,
   onDeleteDraft,
@@ -2135,6 +2705,7 @@ function ActivityDraftsView({
 }: {
   courseTitle: string
   draftMetas: ActivityDraftMeta[]
+  initialBlock?: 'all' | CompetencyBlockId
   onBack: () => void
   onCreateActivity: () => void
   onDeleteDraft: (blockId: CompetencyBlockId, draftId?: string) => void
@@ -2142,8 +2713,8 @@ function ActivityDraftsView({
   periodName: string
   periodShortName: string
 }) {
-  const [activeBlock, setActiveBlock] = useState<'all' | CompetencyBlockId>('all')
-  const [blockFilter, setBlockFilter] = useState<'all' | CompetencyBlockId>('all')
+  const [activeBlock, setActiveBlock] = useState<'all' | CompetencyBlockId>(initialBlock)
+  const [blockFilter, setBlockFilter] = useState<'all' | CompetencyBlockId>(initialBlock)
   const [instrumentFilter, setInstrumentFilter] = useState('all')
   const [periodFilter, setPeriodFilter] = useState('all')
   const [query, setQuery] = useState('')
@@ -2218,7 +2789,7 @@ function ActivityDraftsView({
 
       <div className="rounded-lg border border-border bg-card p-3 shadow-sm">
         <div className="flex flex-wrap gap-2 border-b border-border pb-3">
-          <DraftFilterChip active={activeBlock === 'all'} label="Todos" count={draftMetas.length} onClick={() => { setActiveBlock('all'); setPage(1) }} />
+          <DraftFilterChip active={activeBlock === 'all'} label="Todos" count={draftMetas.length} onClick={() => { setActiveBlock('all'); setBlockFilter('all'); setPage(1) }} />
           {competencyBlocks.map((block) => {
             const accent = getBlockAccent(block.id)
 
@@ -2229,7 +2800,7 @@ function ActivityDraftsView({
                 label={block.shortName}
                 count={blockCounts[block.id] ?? 0}
                 accent={accent}
-                onClick={() => { setActiveBlock(block.id); setPage(1) }}
+                onClick={() => { setActiveBlock(block.id); setBlockFilter(block.id); setPage(1) }}
               />
             )
           })}
@@ -3478,6 +4049,126 @@ function InfoItem({ label, value }: { label: string; value: string }) {
       <dd className="mt-1 font-medium text-foreground">{value}</dd>
     </div>
   )
+}
+
+const rubricCriteria = [
+  { title: 'Dominio del contenido', description: 'Demuestra comprensión y manejo adecuado del tema.' },
+  { title: 'Organización y estructura', description: 'Presentación clara, ordenada y bien estructurada.' },
+  { title: 'Expresión oral y lenguaje corporal', description: 'Se expresa con claridad y utiliza adecuadamente su lenguaje corporal.' },
+  { title: 'Uso de recursos y materiales', description: 'Utiliza recursos de apoyo pertinentes y de calidad.' },
+]
+
+function activityEvaluationStatus(scored: number, total: number) {
+  if (total <= 0 || scored === 0) return 'Pendiente'
+  if (scored >= total) return 'Completada'
+  return 'Parcial'
+}
+
+function activityEvaluationStatusTone(status: string): 'success' | 'muted' | 'warning' {
+  if (status === 'Completada') return 'success'
+  return 'warning'
+}
+
+function activityInstrumentDot(instrumentType?: string) {
+  if (instrumentType === 'lista-cotejo') return 'bg-emerald-400'
+  if (instrumentType === 'escala') return 'bg-amber-400'
+  if (instrumentType === 'lista-ponderada') return 'bg-blue-500'
+  return 'bg-violet-400'
+}
+
+function activityInstrumentTitle(instrumentType?: string) {
+  return instrumentType ? instrumentTitle(instrumentType) : 'Instrumento pendiente'
+}
+
+function activityIconTone(instrumentType?: string) {
+  if (instrumentType === 'lista-cotejo') return 'bg-emerald-100 text-emerald-700'
+  if (instrumentType === 'escala') return 'bg-amber-100 text-amber-700'
+  if (instrumentType === 'lista-ponderada') return 'bg-blue-100 text-blue-700'
+  return 'bg-violet-100 text-violet-700'
+}
+
+function formatActivityDate(value?: string) {
+  if (!value) return 'Sin fecha'
+  const date = new Date(`${value}T00:00:00`)
+  if (Number.isNaN(date.getTime())) return value
+  return date.toLocaleDateString('es-DO', { day: '2-digit', month: '2-digit', year: 'numeric' })
+}
+
+function activityMomentTitle(value?: string) {
+  if (value === 'inicio') return 'Inicio de la clase'
+  if (value === 'desarrollo') return 'Durante la clase'
+  if (value === 'cierre') return 'Cierre de la clase'
+  return 'Durante la clase'
+}
+
+function rubricLevelPoints(maxScore: number) {
+  const criterionMax = maxScore / 4
+  return [criterionMax, criterionMax * 0.75, criterionMax * 0.5, criterionMax * 0.25, 0]
+}
+
+function rubricLevelLabels(maxScore: number) {
+  return ['Excelente', 'Bueno', 'Satisfactorio', 'Básico', 'Insuficiente'].map((label, index) => ({
+    label,
+    points: rubricLevelPoints(maxScore)[index] ?? 0,
+  }))
+}
+
+function suggestedScoreForStudent(index: number, maxScore: number) {
+  const ratios = [0.75, 0.9, 0.8, 0.725, 0.85]
+  return Number((maxScore * (ratios[index % ratios.length] ?? 0.75)).toFixed(2))
+}
+
+function suggestedLevelIndex(criterionIndex: number, score: number, maxScore: number) {
+  const ratio = maxScore > 0 ? score / maxScore : 0
+  if (ratio >= 0.9) return criterionIndex === 0 ? 0 : 1
+  if (ratio >= 0.75) return [1, 0, 1, 2][criterionIndex] ?? 1
+  if (ratio >= 0.6) return [2, 1, 2, 3][criterionIndex] ?? 2
+  return [3, 2, 3, 4][criterionIndex] ?? 3
+}
+
+function studentInitials(student: StudentGradeRow | null) {
+  if (!student) return '--'
+  return `${student.firstName.charAt(0)}${student.lastName.charAt(0)}`.toUpperCase()
+}
+
+function gradeLevel(score: number, maxScore: number) {
+  const ratio = maxScore > 0 ? score / maxScore : 0
+  if (ratio >= 0.85) return 'Excelente'
+  if (ratio >= 0.65) return 'Bueno'
+  if (ratio >= 0.45) return 'Satisfactorio'
+  if (ratio >= 0.25) return 'Básico'
+  return 'Insuficiente'
+}
+
+function gradeLevelTextColor(level: string) {
+  if (level === 'Excelente') return 'text-emerald-700'
+  if (level === 'Bueno') return 'text-primary'
+  if (level === 'Satisfactorio') return 'text-amber-700'
+  if (level === 'Básico') return 'text-orange-700'
+  if (level === 'Insuficiente') return 'text-destructive'
+  return 'text-muted-foreground'
+}
+
+function gradeDistribution(records: GradeRecordRow[], students: StudentGradeRow[], activity: GradingActivity) {
+  const groups = [
+    { color: '#22c55e', count: 0, label: 'Excelente (85 - 100%)' },
+    { color: '#2563eb', count: 0, label: 'Bueno (65 - 84%)' },
+    { color: '#fbbf24', count: 0, label: 'Satisfactorio (45 - 64%)' },
+    { color: '#f97316', count: 0, label: 'Básico (25 - 44%)' },
+    { color: '#e5e7eb', count: 0, label: 'Insuficiente (0 - 24%)' },
+  ]
+  students.forEach((student) => {
+    const score = scoreForActivity(records, student.enrollmentId, activity.id)?.score
+    if (typeof score !== 'number') return
+    const ratio = activity.maxScore > 0 ? score / activity.maxScore : 0
+    if (ratio >= 0.85) groups[0].count += 1
+    else if (ratio >= 0.65) groups[1].count += 1
+    else if (ratio >= 0.45) groups[2].count += 1
+    else if (ratio >= 0.25) groups[3].count += 1
+    else groups[4].count += 1
+  })
+  const total = Math.max(1, groups.reduce((sum, item) => sum + item.count, 0))
+  return groups.map((item) => ({ ...item, percent: Math.round((item.count / total) * 100) }))
 }
 
 function ResultMetric({ label, value }: { label: string; value: string }) {
