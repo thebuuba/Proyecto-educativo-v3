@@ -1650,9 +1650,9 @@ function ReadOnlyInstrument({ type, fields, maxScore }: { type?: string; fields:
   if (type === 'rubrica') {
     const levels = [...new Set(entries.filter(([key]) => key.startsWith('rubrica:descriptor:')).map(([key]) => Number(key.split(':')[3])).filter(Number.isFinite))].sort((a, b) => b - a)
     return (
-      <InstrumentTable><thead className="bg-violet-50"><tr><th className="border border-border px-3 py-2">Criterios</th>{levels.map((level) => <th key={level} className="border border-border px-3 py-2 text-center">Nivel {level}</th>)}<th className="border border-border px-3 py-2 text-center">Valor</th></tr></thead><tbody>
-        {indexes.map((index) => <tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type, 'criterion', index)]}</td>{levels.map((level) => <td key={level} className="border border-border px-3 py-3 leading-5 text-muted-foreground">{fields[instrumentFieldKey(type, 'descriptor', index, level)] || '—'}</td>)}<td className="border border-border px-3 py-3 text-center font-bold">— / {maxScore}</td></tr>)}
-      </tbody></InstrumentTable>
+      <div className="space-y-2"><InstrumentTable><thead className="bg-violet-50"><tr><th className="border border-border px-3 py-2">Criterios</th>{levels.map((level) => <th key={level} className="border border-border px-3 py-2 text-center"><span className="block">{fields[instrumentFieldKey(type, 'level-name', level)] || `Nivel ${level}`}</span><span className="text-[10px] font-medium text-muted-foreground">{fields[instrumentFieldKey(type, 'level-points', level)] || level} pts</span></th>)}<th className="border border-border px-3 py-2 text-center">Valor</th></tr></thead><tbody>
+        {indexes.map((index) => <tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type, 'criterion', index)]}</td>{levels.map((level) => <td key={level} className="border border-border px-3 py-3 leading-5 text-muted-foreground">{fields[instrumentFieldKey(type, 'descriptor', index, level)] || '—'}</td>)}<td className="border border-border px-3 py-3 text-center font-bold">{fields[instrumentFieldKey(type, 'points', index)] || '—'} pts</td></tr>)}
+      </tbody></InstrumentTable><p className="text-right text-xs font-black text-primary">Puntuación máxima: {maxScore} pts</p></div>
     )
   }
   const criterionLabel = type === 'lista-ponderada' ? 'Criterio' : 'Indicador'
@@ -3297,10 +3297,13 @@ function ActivityCreationView(props: {
                 <p className="mt-1 text-sm text-muted-foreground">Configura los criterios y niveles que utilizarás para evaluar esta actividad.</p>
               </div>
               <InstrumentPreview
+                key={activityDraft.instrumentType}
+                activityName={activityDraft.name}
                 completed={activityDraft.instrumentCompleted}
                 fields={activityDraft.instrumentFields}
                 highlight={highlightTarget === 'instrumentBody' || highlightTarget === 'instrumentType'}
                 instrumentType={activityDraft.instrumentType}
+                maxScore={Number(activityDraft.maxScore) || 0}
                 onCompletedChange={(instrumentCompleted) => handleDraftChange({ ...activityDraft, instrumentCompleted })}
                 onFieldsChange={(instrumentFields) => handleDraftChange({ ...activityDraft, instrumentFields })}
               />
@@ -3665,10 +3668,13 @@ export function LegacyActivityCreationView({
         </div>
       ) : (
         <InstrumentPreview
+          key={activityDraft.instrumentType}
+          activityName={activityDraft.name}
           completed={activityDraft.instrumentCompleted}
           fields={activityDraft.instrumentFields}
           highlight={highlightTarget === 'instrumentBody' || highlightTarget === 'instrumentType'}
           instrumentType={activityDraft.instrumentType}
+          maxScore={Number(activityDraft.maxScore) || 0}
           onCompletedChange={(instrumentCompleted) => handleActivityDraftChange({ ...activityDraft, instrumentCompleted })}
           onFieldsChange={(instrumentFields) => handleActivityDraftChange({ ...activityDraft, instrumentFields })}
         />
@@ -3753,37 +3759,68 @@ function inferRubricLevels(fields: Record<string, string>, fallback: number) {
   return levels.length > 0 ? Math.max(...levels) : fallback
 }
 
+function defaultRubricStructure(maxScore: number) {
+  const score = Math.max(1, Math.round(maxScore))
+  const preferredCriteria = [4, 5, 3, 6]
+  for (const criteria of preferredCriteria) {
+    const levels = score / criteria
+    if (Number.isInteger(levels) && levels >= 2 && levels <= 6) return { criteria, levels }
+  }
+  return { criteria: 4, levels: 4 }
+}
+
+function distributeScore(maxScore: number, count: number) {
+  const safeCount = Math.max(1, count)
+  const totalCents = Math.max(0, Math.round(maxScore * 100))
+  const base = Math.floor(totalCents / safeCount)
+  const remainder = totalCents - base * safeCount
+  return Array.from({ length: safeCount }, (_, index) => Number(((base + (index < remainder ? 1 : 0)) / 100).toFixed(2)))
+}
+
+function distributeInstrumentField(fields: Record<string, string>, type: string, field: string, count: number, total: number) {
+  const next: Record<string, string> = { ...fields, [`${type}:meta:criteriaCount`]: String(count) }
+  distributeScore(total, count).forEach((value, index) => { next[instrumentFieldKey(type, field, index)] = String(value) })
+  return next
+}
+
 function InstrumentPreview({
+  activityName,
   completed,
   fields,
   highlight,
   instrumentType,
+  maxScore,
   onCompletedChange,
   onFieldsChange,
 }: {
+  activityName: string
   completed: boolean
   fields: Record<string, string>
   highlight?: boolean
   instrumentType: string
+  maxScore: number
   onCompletedChange: (completed: boolean) => void
   onFieldsChange: (fields: Record<string, string>) => void
 }) {
   const title = instrumentTitle(instrumentType)
-  const [rubricCriteria, setRubricCriteria] = useState(() => inferInstrumentCount(fields, 'rubrica', 'criterion', 4))
-  const [rubricLevels, setRubricLevels] = useState(() => inferRubricLevels(fields, 4))
-  const [scaleCriteria, setScaleCriteria] = useState(() => inferInstrumentCount(fields, 'escala', 'criterion', 5))
-  const [scaleLevels, setScaleLevels] = useState(4)
-  const [checklistCriteria, setChecklistCriteria] = useState(() => inferInstrumentCount(fields, 'lista-cotejo', 'criterion', 6))
+  const rubricDefaults = defaultRubricStructure(maxScore)
+  const [rubricCriteria, setRubricCriteria] = useState(() => Number(fields['rubrica:meta:criteriaCount']) || inferInstrumentCount(fields, 'rubrica', 'criterion', rubricDefaults.criteria))
+  const [rubricLevels, setRubricLevels] = useState(() => Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, rubricDefaults.levels))
+  const [scaleCriteria, setScaleCriteria] = useState(() => Number(fields['escala:meta:criteriaCount']) || inferInstrumentCount(fields, 'escala', 'criterion', 5))
+  const [scaleLevels, setScaleLevels] = useState(() => Number(fields['escala:meta:levelCount']) || 4)
+  const [checklistCriteria, setChecklistCriteria] = useState(() => Number(fields['lista-cotejo:meta:criteriaCount']) || inferInstrumentCount(fields, 'lista-cotejo', 'criterion', 6))
   const [checklistHasObservations, setChecklistHasObservations] = useState(true)
-  const [weightedCriteria, setWeightedCriteria] = useState(() => inferInstrumentCount(fields, 'lista-ponderada', 'criterion', 5))
+  const [weightedCriteria, setWeightedCriteria] = useState(() => Number(fields['lista-ponderada:meta:criteriaCount']) || inferInstrumentCount(fields, 'lista-ponderada', 'criterion', 5))
   const [weightedHasPartial, setWeightedHasPartial] = useState(true)
   const [instrumentTextSize, setInstrumentTextSize] = useState<'normal' | 'large' | 'xlarge'>('large')
   const [instrumentBold, setInstrumentBold] = useState(false)
   const [instrumentItalic, setInstrumentItalic] = useState(false)
+  const [showInstrumentPreview, setShowInstrumentPreview] = useState(false)
   const isComplete = isInstrumentComplete({
     checklistCriteria,
     fields,
     instrumentType,
+    maxScore,
     rubricCriteria,
     rubricLevels,
     scaleCriteria,
@@ -3796,8 +3833,67 @@ function InstrumentPreview({
     }
   }, [completed, isComplete, onCompletedChange])
 
+  useEffect(() => {
+    if (!instrumentType) return
+    const next = { ...fields }
+    const titleKey = instrumentFieldKey(instrumentType, 'title')
+    if (!next[titleKey]) next[titleKey] = `${instrumentTitle(instrumentType).replace(' de evaluación', '')} para ${activityName.trim() || 'la actividad'}`
+    if (instrumentType === 'rubrica') {
+      next['rubrica:meta:criteriaCount'] = String(rubricCriteria)
+      next['rubrica:meta:levelCount'] = String(rubricLevels)
+      const criterionPoints = distributeScore(maxScore, rubricCriteria)
+      for (let index = 0; index < rubricCriteria; index += 1) {
+        const pointsKey = instrumentFieldKey('rubrica', 'points', index)
+        if (!next[pointsKey]) next[pointsKey] = String(criterionPoints[index])
+      }
+      for (let index = 0; index < rubricLevels; index += 1) {
+        const score = rubricLevels - index
+        const nameKey = instrumentFieldKey('rubrica', 'level-name', score)
+        if (!next[nameKey]) next[nameKey] = rubricLevelName(index)
+        const levelPointsKey = instrumentFieldKey('rubrica', 'level-points', score)
+        if (!next[levelPointsKey]) next[levelPointsKey] = String(score)
+      }
+    }
+    if (instrumentType === 'escala') {
+      next['escala:meta:criteriaCount'] = String(scaleCriteria)
+      next['escala:meta:levelCount'] = String(scaleLevels)
+      distributeScore(maxScore, scaleCriteria).forEach((points, index) => {
+        const key = instrumentFieldKey('escala', 'points', index)
+        if (!next[key]) next[key] = String(points)
+      })
+    }
+    if (instrumentType === 'lista-cotejo') {
+      next['lista-cotejo:meta:criteriaCount'] = String(checklistCriteria)
+      distributeScore(maxScore, checklistCriteria).forEach((points, index) => {
+        const key = instrumentFieldKey('lista-cotejo', 'points', index)
+        if (!next[key]) next[key] = String(points)
+      })
+    }
+    if (instrumentType === 'lista-ponderada') {
+      next['lista-ponderada:meta:criteriaCount'] = String(weightedCriteria)
+      distributeScore(100, weightedCriteria).forEach((weight, index) => {
+        const key = instrumentFieldKey('lista-ponderada', 'weight', index)
+        if (!next[key]) next[key] = String(weight)
+      })
+    }
+    if (JSON.stringify(next) !== JSON.stringify(fields)) onFieldsChange(next)
+  }, [activityName, checklistCriteria, fields, instrumentType, maxScore, onFieldsChange, rubricCriteria, rubricLevels, scaleCriteria, scaleLevels, weightedCriteria])
+
   function updateField(key: string, value: string) {
     onFieldsChange({ ...fields, [key]: value })
+  }
+
+  function changeRubricLevelCount(value: number) {
+    const next: Record<string, string> = { ...fields, 'rubrica:meta:levelCount': String(value) }
+    if (value < rubricLevels) {
+      Object.keys(next).forEach((key) => {
+        const descriptorMatch = key.match(/^rubrica:descriptor:\d+:(\d+)$/)
+        const levelMatch = key.match(/^rubrica:level-(?:name|points):(\d+)$/)
+        if ((descriptorMatch && Number(descriptorMatch[1]) > value) || (levelMatch && Number(levelMatch[1]) > value)) delete next[key]
+      })
+    }
+    setRubricLevels(value)
+    onFieldsChange(next)
   }
 
   return (
@@ -3842,9 +3938,11 @@ function InstrumentPreview({
             criteriaCount={rubricCriteria}
             fields={fields}
             levelCount={rubricLevels}
+            maxScore={maxScore}
             onFieldChange={updateField}
             onCriteriaCountChange={setRubricCriteria}
-            onLevelCountChange={setRubricLevels}
+            onFieldsChange={onFieldsChange}
+            onLevelCountChange={changeRubricLevelCount}
           />
         ) : null}
         {instrumentType === 'escala' ? (
@@ -3852,9 +3950,10 @@ function InstrumentPreview({
             criteriaCount={scaleCriteria}
             fields={fields}
             levelCount={scaleLevels}
+            maxScore={maxScore}
             onFieldChange={updateField}
-            onCriteriaCountChange={setScaleCriteria}
-            onLevelCountChange={setScaleLevels}
+            onCriteriaCountChange={(value) => { setScaleCriteria(value); onFieldsChange(distributeInstrumentField(fields, 'escala', 'points', value, maxScore)) }}
+            onLevelCountChange={(value) => { setScaleLevels(value); onFieldsChange({ ...fields, 'escala:meta:levelCount': String(value) }) }}
           />
         ) : null}
         {instrumentType === 'lista-cotejo' ? (
@@ -3862,8 +3961,9 @@ function InstrumentPreview({
             criteriaCount={checklistCriteria}
             fields={fields}
             hasObservations={checklistHasObservations}
+            maxScore={maxScore}
             onFieldChange={updateField}
-            onCriteriaCountChange={setChecklistCriteria}
+            onCriteriaCountChange={(value) => { setChecklistCriteria(value); onFieldsChange(distributeInstrumentField(fields, 'lista-cotejo', 'points', value, maxScore)) }}
             onHasObservationsChange={setChecklistHasObservations}
           />
         ) : null}
@@ -3872,13 +3972,16 @@ function InstrumentPreview({
             criteriaCount={weightedCriteria}
             fields={fields}
             hasPartial={weightedHasPartial}
+            maxScore={maxScore}
             onFieldChange={updateField}
-            onCriteriaCountChange={setWeightedCriteria}
+            onCriteriaCountChange={(value) => { setWeightedCriteria(value); onFieldsChange(distributeInstrumentField(fields, 'lista-ponderada', 'weight', value, 100)) }}
             onHasPartialChange={setWeightedHasPartial}
           />
         ) : null}
         {!instrumentType ? <EmptyInstrumentState /> : null}
       </div>
+      {instrumentType && instrumentType !== 'rubrica' ? <div className="mt-3"><Button type="button" size="sm" variant="outline" onClick={() => setShowInstrumentPreview(true)}><Eye className="size-4" />Vista previa de {instrumentTitle(instrumentType).toLocaleLowerCase()}</Button></div> : null}
+      {showInstrumentPreview ? <Modal title={`Vista previa: ${instrumentTitle(instrumentType)}`} onClose={() => setShowInstrumentPreview(false)} className="max-w-[94vw]"><div className="max-h-[78vh] overflow-auto p-5"><ReadOnlyInstrument type={instrumentType} fields={fields} maxScore={maxScore} /></div></Modal> : null}
     </section>
   )
 }
@@ -4053,75 +4156,137 @@ function RubricInstrument({
   criteriaCount,
   fields,
   levelCount,
+  maxScore,
   onFieldChange,
   onCriteriaCountChange,
+  onFieldsChange,
   onLevelCountChange,
 }: {
   criteriaCount: number
   fields: Record<string, string>
   levelCount: number
+  maxScore: number
   onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
+  onFieldsChange: (fields: Record<string, string>) => void
   onLevelCountChange: (value: number) => void
 }) {
-  const levels = Array.from({ length: levelCount }, (_, index) => ({
-    score: levelCount - index,
-    name: rubricLevelName(index),
-  }))
+  const [editingLevels, setEditingLevels] = useState(false)
+  const [showPreview, setShowPreview] = useState(false)
+  const levels = Array.from({ length: levelCount }, (_, index) => {
+    const score = levelCount - index
+    return {
+      score,
+      name: fields[instrumentFieldKey('rubrica', 'level-name', score)] || rubricLevelName(index),
+      points: Number(fields[instrumentFieldKey('rubrica', 'level-points', score)] || score),
+    }
+  })
+  const criterionPoints = Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('rubrica', 'points', index)] || 0))
+  const total = Number(criterionPoints.reduce((sum, points) => sum + (Number.isFinite(points) ? points : 0), 0).toFixed(2))
+  const scoreMatches = Math.abs(total - maxScore) < 0.001
+
+  function resizeCriteria(nextCount: number) {
+    const next: Record<string, string> = { ...fields, 'rubrica:meta:criteriaCount': String(nextCount) }
+    distributeScore(maxScore, nextCount).forEach((points, index) => {
+      next[instrumentFieldKey('rubrica', 'points', index)] = String(points)
+    })
+    if (nextCount < criteriaCount) {
+      Object.keys(next).forEach((key) => {
+        const match = key.match(/^rubrica:(criterion|descriptor|points):(\d+)/)
+        if (match && Number(match[2]) >= nextCount) delete next[key]
+      })
+    }
+    onFieldsChange(next)
+    onCriteriaCountChange(nextCount)
+  }
+
+  function removeCriterion(indexToRemove: number) {
+    if (criteriaCount <= 1) return
+    const nextCount = criteriaCount - 1
+    const next = { ...fields }
+    for (let index = indexToRemove; index < nextCount; index += 1) {
+      next[instrumentFieldKey('rubrica', 'criterion', index)] = next[instrumentFieldKey('rubrica', 'criterion', index + 1)] || ''
+      for (let score = 1; score <= levelCount; score += 1) {
+        next[instrumentFieldKey('rubrica', 'descriptor', index, score)] = next[instrumentFieldKey('rubrica', 'descriptor', index + 1, score)] || ''
+      }
+    }
+    Object.keys(next).forEach((key) => {
+      const match = key.match(/^rubrica:(criterion|descriptor|points):(\d+)/)
+      if (match && Number(match[2]) >= nextCount) delete next[key]
+    })
+    distributeScore(maxScore, nextCount).forEach((points, index) => {
+      next[instrumentFieldKey('rubrica', 'points', index)] = String(points)
+    })
+    next['rubrica:meta:criteriaCount'] = String(nextCount)
+    onFieldsChange(next)
+    onCriteriaCountChange(nextCount)
+  }
 
   return (
     <div className="space-y-3">
-      <InstrumentControls>
-        <StepperControl label="Criterios" value={criteriaCount} min={1} max={12} onChange={onCriteriaCountChange} />
-        <StepperControl label="Niveles" value={levelCount} min={2} max={6} onChange={onLevelCountChange} />
-      </InstrumentControls>
+      <div className="rounded-xl border border-violet-100 bg-violet-50/40 p-3">
+        <div className="grid gap-3 sm:grid-cols-3">
+          <div><p className="text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground">Puntuación máxima</p><p className="mt-1 text-lg font-black text-primary">{maxScore} <span className="text-xs text-muted-foreground">pts</span></p></div>
+          <div><p className="text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground">Niveles de desempeño</p><p className="mt-1 text-lg font-black text-primary">{levelCount} niveles</p></div>
+          <div><p className="text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground">Escala de valoración</p><p className="mt-1 text-sm font-black text-primary">Descriptiva</p></div>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <p className="font-black text-primary">Criterios y niveles de desempeño</p>
+          <p className="text-xs text-muted-foreground">Los puntajes por criterio siempre deben sumar {maxScore} puntos.</p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Button type="button" size="sm" variant="outline" onClick={() => resizeCriteria(Math.min(12, criteriaCount + 1))} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button>
+          <Button type="button" size="sm" variant="outline" onClick={() => setEditingLevels((current) => !current)}><Pencil className="size-4" />Editar niveles</Button>
+        </div>
+      </div>
+
+      {editingLevels ? (
+        <div className="rounded-xl border border-violet-200 bg-violet-50/50 p-3">
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><p className="font-black text-violet-800">Editar niveles de desempeño</p><p className="text-xs text-violet-700/70">Puedes usar entre 2 y 6 niveles.</p></div><StepperControl label="Niveles" value={levelCount} min={2} max={6} onChange={onLevelCountChange} /></div>
+          <div className="grid gap-2 md:grid-cols-2">
+            {levels.map((level) => <div key={level.score} className="grid grid-cols-[1fr_5.5rem] gap-2 rounded-lg border border-violet-100 bg-card p-2"><label className="text-xs font-bold text-muted-foreground">Nombre<Input className="mt-1 h-9" value={fields[instrumentFieldKey('rubrica', 'level-name', level.score)] ?? level.name} onChange={(event) => onFieldChange(instrumentFieldKey('rubrica', 'level-name', level.score), event.target.value)} /></label><label className="text-xs font-bold text-muted-foreground">Valor<Input className="mt-1 h-9" type="number" min={0} step="0.25" value={fields[instrumentFieldKey('rubrica', 'level-points', level.score)] ?? String(level.points)} onChange={(event) => onFieldChange(instrumentFieldKey('rubrica', 'level-points', level.score), event.target.value)} /></label></div>)}
+          </div>
+        </div>
+      ) : null}
+
       <InstrumentTable>
         <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
-            <th className="w-[26%] border border-border px-2 py-2">Criterios</th>
-            {levels.map((level) => (
-              <th key={level.score} className="border border-border px-2 py-2">
-                {level.score} {level.name}
-              </th>
-            ))}
-            <th className="w-20 border border-border px-2 py-2">Puntaje</th>
+            <th className="w-[24%] border border-border px-2 py-2">Criterios de evaluación</th>
+            {levels.map((level) => <th key={level.score} className="border border-border px-2 py-2 text-center"><span className="block text-primary">{level.name}</span><span className="mt-0.5 block normal-case text-muted-foreground">{level.points} pts</span></th>)}
+            <th className="w-24 border border-border px-2 py-2 text-center">Puntaje por criterio</th>
+            <th className="w-10 border border-border" />
           </tr>
         </thead>
         <tbody>
-          {Array.from({ length: criteriaCount }, (_, index) => ({ criterion: `Criterio ${index + 1}`, index })).map(({ criterion, index }) => (
-            <tr key={criterion}>
-              <td className="border border-border p-1.5">
-                <InstrumentTextarea
-                  placeholder={criterion}
-                  value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''}
-                  onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)}
-                />
-              </td>
-              {levels.map((level) => (
-                <td key={level.score} className="border border-border p-1.5">
-                  <InstrumentTextarea
-                    value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''}
-                    onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)}
-                  />
-                </td>
-              ))}
-              <td className="border border-border p-1.5"><InstrumentInput placeholder={`__/${levelCount}`} /></td>
+          {Array.from({ length: criteriaCount }, (_, index) => (
+            <tr key={index}>
+              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={`${index + 1}. Criterio de evaluación`} value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)} /></td>
+              {levels.map((level) => <td key={level.score} className="border border-border p-1.5"><InstrumentTextarea value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)} /></td>)}
+              <td className="border border-border p-1.5"><InstrumentInput value={fields[instrumentFieldKey('rubrica', 'points', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'points', index), value)} placeholder="0" /></td>
+              <td className="border border-border text-center"><button type="button" aria-label={`Eliminar criterio ${index + 1}`} title="Eliminar criterio" className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" disabled={criteriaCount <= 1} onClick={() => removeCriterion(index)}><X className="size-4" /></button></td>
             </tr>
           ))}
-          <tr className="bg-sky-50 font-bold">
-            <td className="border border-border px-2 py-2" colSpan={levelCount + 1}>Puntaje total</td>
-            <td className="border border-border p-1.5"><InstrumentInput placeholder={`__/${criteriaCount * levelCount}`} /></td>
-          </tr>
         </tbody>
       </InstrumentTable>
+
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <Button type="button" size="sm" variant="outline" onClick={() => setShowPreview(true)}><Eye className="size-4" />Vista previa de la rúbrica</Button>
+        <div className="text-right"><p className={cn('text-sm font-black', scoreMatches ? 'text-emerald-600' : 'text-destructive')}>Puntuación máxima total: {total} / {maxScore} pts</p>{!scoreMatches ? <p className="mt-1 text-xs text-destructive">Ajusta los puntajes por criterio hasta completar exactamente {maxScore} puntos.</p> : null}</div>
+      </div>
+
+      {showPreview ? <Modal title="Vista previa de la rúbrica" onClose={() => setShowPreview(false)} className="max-w-[94vw]"><div className="max-h-[78vh] overflow-auto p-5"><ReadOnlyInstrument type="rubrica" fields={fields} maxScore={maxScore} /></div></Modal> : null}
     </div>
   )
 }
-
 function ScaleInstrument({
   criteriaCount,
   fields,
   levelCount,
+  maxScore,
   onFieldChange,
   onCriteriaCountChange,
   onLevelCountChange,
@@ -4129,11 +4294,13 @@ function ScaleInstrument({
   criteriaCount: number
   fields: Record<string, string>
   levelCount: number
+  maxScore: number
   onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
   onLevelCountChange: (value: number) => void
 }) {
   const levels = Array.from({ length: levelCount }, (_, index) => levelCount - index)
+  const total = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('escala', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
 
   return (
     <div className="space-y-3">
@@ -4164,9 +4331,10 @@ function ScaleInstrument({
               {levels.map((value) => (
                 <td key={value} className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               ))}
-              <td className="border border-border p-1.5"><InstrumentInput placeholder={`__/${levelCount}`} /></td>
+              <td className="border border-border p-1.5"><InstrumentInput value={fields[instrumentFieldKey('escala', 'points', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('escala', 'points', index), value)} placeholder="0" /></td>
             </tr>
           ))}
+          <tr className="bg-sky-50 font-bold"><td className="border border-border px-2 py-2" colSpan={levelCount + 1}>Puntuación máxima total</td><td className={cn('border border-border px-2 py-2 text-center', Math.abs(total - maxScore) < 0.001 ? 'text-emerald-600' : 'text-destructive')}>{total} / {maxScore} pts</td></tr>
         </tbody>
       </InstrumentTable>
     </div>
@@ -4177,6 +4345,7 @@ function ChecklistInstrument({
   criteriaCount,
   fields,
   hasObservations,
+  maxScore,
   onFieldChange,
   onCriteriaCountChange,
   onHasObservationsChange,
@@ -4184,10 +4353,12 @@ function ChecklistInstrument({
   criteriaCount: number
   fields: Record<string, string>
   hasObservations: boolean
+  maxScore: number
   onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
   onHasObservationsChange: (value: boolean) => void
 }) {
+  const total = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('lista-cotejo', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
   return (
     <div className="space-y-3">
       <InstrumentControls>
@@ -4200,6 +4371,7 @@ function ChecklistInstrument({
             <th className="w-[48%] border border-border px-2 py-2">Criterios</th>
             <th className="border border-border px-2 py-2">Sí</th>
             <th className="border border-border px-2 py-2">No</th>
+            <th className="w-20 border border-border px-2 py-2">Valor</th>
             {hasObservations ? <th className="w-[30%] border border-border px-2 py-2">Observaciones</th> : null}
           </tr>
         </thead>
@@ -4215,9 +4387,11 @@ function ChecklistInstrument({
               </td>
               <td className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               <td className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
+              <td className="border border-border p-1.5"><InstrumentInput value={fields[instrumentFieldKey('lista-cotejo', 'points', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('lista-cotejo', 'points', index), value)} placeholder="0" /></td>
               {hasObservations ? <td className="border border-border p-1.5"><InstrumentTextarea /></td> : null}
             </tr>
           ))}
+          <tr className="bg-sky-50 font-bold"><td className="border border-border px-2 py-2" colSpan={3}>Puntuación máxima total</td><td className={cn('border border-border px-2 py-2 text-center', Math.abs(total - maxScore) < 0.001 ? 'text-emerald-600' : 'text-destructive')}>{total} / {maxScore} pts</td>{hasObservations ? <td className="border border-border" /> : null}</tr>
         </tbody>
       </InstrumentTable>
     </div>
@@ -4228,6 +4402,7 @@ function WeightedListInstrument({
   criteriaCount,
   fields,
   hasPartial,
+  maxScore,
   onFieldChange,
   onCriteriaCountChange,
   onHasPartialChange,
@@ -4235,10 +4410,12 @@ function WeightedListInstrument({
   criteriaCount: number
   fields: Record<string, string>
   hasPartial: boolean
+  maxScore: number
   onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
   onHasPartialChange: (value: boolean) => void
 }) {
+  const totalWeight = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
   return (
     <div className="space-y-3">
       <InstrumentControls>
@@ -4284,15 +4461,15 @@ function WeightedListInstrument({
               {['si', ...(hasPartial ? ['parcial'] : []), 'no'].map((value) => (
                 <td key={value} className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               ))}
-              <td className="border border-border p-1.5"><InstrumentInput placeholder="%" /></td>
+              <td className="border border-border p-1.5 text-center font-bold text-primary">Hasta {Number(((Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0) / 100) * maxScore).toFixed(2))} pts</td>
               <td className="border border-border p-1.5"><InstrumentTextarea /></td>
             </tr>
           ))}
           <tr className="bg-sky-50 font-bold">
             <td className="border border-border px-2 py-2" colSpan={2}>Total</td>
-            <td className="border border-border p-1.5"><InstrumentInput placeholder="100%" /></td>
+            <td className={cn('border border-border px-2 py-2 text-center', Math.abs(totalWeight - 100) < 0.001 ? 'text-emerald-600' : 'text-destructive')}>{totalWeight}%</td>
             <td className="border border-border" colSpan={hasPartial ? 3 : 2} />
-            <td className="border border-border p-1.5"><InstrumentInput placeholder="%" /></td>
+            <td className="border border-border px-2 py-2 text-center text-primary">{maxScore} pts</td>
             <td className="border border-border" />
           </tr>
         </tbody>
@@ -5378,15 +5555,18 @@ function isInstrumentComplete(input: {
   checklistCriteria: number
   fields: Record<string, string>
   instrumentType: string
+  maxScore: number
   rubricCriteria: number
   rubricLevels: number
   scaleCriteria: number
   weightedCriteria: number
 }) {
-  const { checklistCriteria, fields, instrumentType, rubricCriteria, rubricLevels, scaleCriteria, weightedCriteria } = input
+  const { checklistCriteria, fields, instrumentType, maxScore, rubricCriteria, rubricLevels, scaleCriteria, weightedCriteria } = input
   if (!instrumentType) return false
 
   if (instrumentType === 'rubrica') {
+    const assignedScore = Array.from({ length: rubricCriteria }, (_, index) => Number(fields[instrumentFieldKey('rubrica', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0)
+    if (Math.abs(assignedScore - maxScore) >= 0.001) return false
     for (let criterionIndex = 0; criterionIndex < rubricCriteria; criterionIndex += 1) {
       if (!hasInstrumentField(fields, instrumentFieldKey('rubrica', 'criterion', criterionIndex))) return false
       for (let levelScore = 1; levelScore <= rubricLevels; levelScore += 1) {
@@ -5397,18 +5577,24 @@ function isInstrumentComplete(input: {
   }
 
   if (instrumentType === 'escala') {
+    const assignedScore = Array.from({ length: scaleCriteria }, (_, index) => Number(fields[instrumentFieldKey('escala', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0)
+    if (Math.abs(assignedScore - maxScore) >= 0.001) return false
     return Array.from({ length: scaleCriteria }, (_, index) =>
       hasInstrumentField(fields, instrumentFieldKey('escala', 'criterion', index)),
     ).every(Boolean)
   }
 
   if (instrumentType === 'lista-cotejo') {
+    const assignedScore = Array.from({ length: checklistCriteria }, (_, index) => Number(fields[instrumentFieldKey('lista-cotejo', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0)
+    if (Math.abs(assignedScore - maxScore) >= 0.001) return false
     return Array.from({ length: checklistCriteria }, (_, index) =>
       hasInstrumentField(fields, instrumentFieldKey('lista-cotejo', 'criterion', index)),
     ).every(Boolean)
   }
 
   if (instrumentType === 'lista-ponderada') {
+    const assignedWeight = Array.from({ length: weightedCriteria }, (_, index) => Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0)).reduce((sum, value) => sum + value, 0)
+    if (Math.abs(assignedWeight - 100) >= 0.001) return false
     for (let index = 0; index < weightedCriteria; index += 1) {
       if (!hasInstrumentField(fields, instrumentFieldKey('lista-ponderada', 'criterion', index))) return false
       if (!hasInstrumentField(fields, instrumentFieldKey('lista-ponderada', 'indicator', index))) return false
