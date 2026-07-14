@@ -6,6 +6,7 @@
   AlertCircle,
   AlignCenter,
   AlignLeft,
+  AlignRight,
   Bold,
   BarChart3,
   Beaker,
@@ -3417,6 +3418,7 @@ function ActivityDescriptionEditor({ value, onChange }: { value: string; onChang
   const [characterCount, setCharacterCount] = useState(() => activityDescriptionText(value).length)
   const [activeCommands, setActiveCommands] = useState<Set<string>>(new Set())
   const [blockFormat, setBlockFormat] = useState('p')
+  const [fontSize, setFontSize] = useState('14')
   const [insertPanel, setInsertPanel] = useState<'link' | 'image' | null>(null)
   const [insertUrl, setInsertUrl] = useState('')
 
@@ -3450,17 +3452,59 @@ function ActivityDescriptionEditor({ value, onChange }: { value: string; onChang
     selection?.addRange(range)
   }
 
+  function captureSelection() {
+    const selection = window.getSelection()
+    if (selection?.rangeCount && editorRef.current?.contains(selection.anchorNode)) savedSelectionRef.current = selection.getRangeAt(0).cloneRange()
+  }
+
   function updateToolbarState() {
-    const commands = ['bold', 'italic', 'underline', 'insertUnorderedList', 'insertOrderedList', 'justifyLeft', 'justifyCenter']
-    setActiveCommands(new Set(commands.filter((command) => document.queryCommandState(command))))
-    const currentBlock = String(document.queryCommandValue('formatBlock')).replace(/[<>]/g, '').toLocaleLowerCase()
+    const selection = window.getSelection()
+    const anchor = selection?.anchorNode instanceof Element ? selection.anchorNode : selection?.anchorNode?.parentElement
+    const editor = editorRef.current
+    if (!anchor || !editor?.contains(anchor)) return
+    const closestInsideEditor = (selector: string) => {
+      const match = anchor.closest(selector)
+      return match && editor.contains(match) ? match : null
+    }
+    const next = new Set<string>()
+    if (closestInsideEditor('b, strong')) next.add('bold')
+    if (closestInsideEditor('i, em')) next.add('italic')
+    if (closestInsideEditor('u')) next.add('underline')
+    if (closestInsideEditor('ul')) next.add('insertUnorderedList')
+    if (closestInsideEditor('ol')) next.add('insertOrderedList')
+    const alignedElement = closestInsideEditor('[style*="text-align"]') as HTMLElement | null
+    if (alignedElement?.style.textAlign === 'left') next.add('justifyLeft')
+    if (alignedElement?.style.textAlign === 'center') next.add('justifyCenter')
+    if (alignedElement?.style.textAlign === 'right') next.add('justifyRight')
+    setActiveCommands(next)
+    const blockElement = closestInsideEditor('p, h3, blockquote, div')
+    const currentBlock = blockElement?.tagName.toLocaleLowerCase() ?? 'p'
     setBlockFormat(['p', 'h3', 'blockquote'].includes(currentBlock) ? currentBlock : 'p')
+    const sizedElement = closestInsideEditor('[style*="font-size"]') as HTMLElement | null
+    setFontSize(sizedElement?.style.fontSize.replace('px', '') || '14')
   }
 
   function runCommand(command: string, commandValue?: string) {
     restoreSelection()
     document.execCommand('styleWithCSS', false, 'false')
     document.execCommand(command, false, commandValue)
+    captureSelection()
+    commitEditorValue()
+    updateToolbarState()
+  }
+
+  function applyFontSize(size: string) {
+    restoreSelection()
+    document.execCommand('styleWithCSS', false, 'false')
+    document.execCommand('fontSize', false, '7')
+    editorRef.current?.querySelectorAll('font[size="7"]').forEach((font) => {
+      const span = document.createElement('span')
+      span.style.fontSize = `${size}px`
+      span.append(...Array.from(font.childNodes))
+      font.replaceWith(span)
+    })
+    setFontSize(size)
+    captureSelection()
     commitEditorValue()
     updateToolbarState()
   }
@@ -3508,6 +3552,7 @@ function ActivityDescriptionEditor({ value, onChange }: { value: string; onChang
     { command: 'insertOrderedList', label: 'Lista numerada', icon: <ListOrdered className="size-4" />, action: () => runCommand('insertOrderedList') },
     { command: 'justifyLeft', label: 'Alinear a la izquierda', icon: <AlignLeft className="size-4" />, action: () => runCommand('justifyLeft') },
     { command: 'justifyCenter', label: 'Centrar', icon: <AlignCenter className="size-4" />, action: () => runCommand('justifyCenter') },
+    { command: 'justifyRight', label: 'Alinear a la derecha', icon: <AlignRight className="size-4" />, action: () => runCommand('justifyRight') },
     { command: 'createLink', label: 'Agregar enlace', icon: <Link className="size-4" />, action: () => openInsertPanel('link') },
     { command: 'insertImage', label: 'Agregar imagen', icon: <ImageIcon className="size-4" />, action: () => openInsertPanel('image') },
   ]
@@ -3518,10 +3563,13 @@ function ActivityDescriptionEditor({ value, onChange }: { value: string; onChang
         <Select className="h-8 w-32 border-0 bg-transparent text-sm font-bold shadow-none" value={blockFormat} onMouseDown={() => { const selection = window.getSelection(); if (selection?.rangeCount && editorRef.current?.contains(selection.anchorNode)) savedSelectionRef.current = selection.getRangeAt(0).cloneRange() }} onChange={(event) => { const format = event.target.value; setBlockFormat(format); runCommand('formatBlock', format) }}>
           <option value="p">Párrafo</option><option value="h3">Subtítulo</option><option value="blockquote">Cita</option>
         </Select>
+        <Select aria-label="Tamaño de letra" title="Tamaño de letra" className="h-8 w-20 border-0 bg-transparent text-sm font-bold shadow-none" value={fontSize} onMouseDown={captureSelection} onChange={(event) => applyFontSize(event.target.value)}>
+          {['12', '14', '16', '18', '20', '24', '28', '32'].map((size) => <option key={size} value={size}>{size}</option>)}
+        </Select>
         <span className="mx-1 h-6 w-px bg-border" />
         {tools.map((tool) => <button key={tool.label} type="button" aria-label={tool.label} aria-pressed={activeCommands.has(tool.command) || insertPanel === (tool.command === 'createLink' ? 'link' : tool.command === 'insertImage' ? 'image' : null)} title={tool.label} className={cn('grid size-8 place-items-center rounded-md transition hover:bg-blue-50 hover:text-primary', activeCommands.has(tool.command) ? 'bg-blue-100 text-blue-700 ring-1 ring-blue-200' : 'text-slate-600', (tool.command === 'createLink' && insertPanel === 'link') || (tool.command === 'insertImage' && insertPanel === 'image') ? 'bg-blue-100 text-blue-700 ring-1 ring-blue-200' : '')} onMouseDown={(event) => { event.preventDefault(); tool.action() }}>{tool.icon}</button>)}
       </div>
-      {insertPanel ? <div className="flex flex-col gap-2 border-b border-blue-100 bg-blue-50/40 px-3 py-2 sm:flex-row sm:items-center"><span className="shrink-0 text-xs font-black text-blue-700">{insertPanel === 'link' ? 'Dirección del enlace' : 'Dirección de la imagen'}</span><Input className="h-9 flex-1 bg-card" autoFocus value={insertUrl} placeholder={insertPanel === 'link' ? 'https://ejemplo.com' : 'https://ejemplo.com/imagen.jpg'} onChange={(event) => setInsertUrl(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') { event.preventDefault(); applyInsertion() } if (event.key === 'Escape') setInsertPanel(null) }} /><Button type="button" size="sm" className="h-9" disabled={!normalizeEditorUrl(insertUrl, insertPanel === 'image')} onClick={applyInsertion}>Insertar</Button><Button type="button" size="sm" variant="ghost" className="h-9" onClick={() => setInsertPanel(null)}>Cancelar</Button></div> : null}
+      {insertPanel ? <div className={cn('border-b px-3 py-3', insertPanel === 'image' ? 'border-violet-100 bg-violet-50/50' : 'border-blue-100 bg-blue-50/40')}><div className="flex flex-col gap-2 sm:flex-row sm:items-center"><span className={cn('flex shrink-0 items-center gap-2 text-xs font-black', insertPanel === 'image' ? 'text-violet-700' : 'text-blue-700')}>{insertPanel === 'image' ? <ImageIcon className="size-4" /> : <Link className="size-4" />}{insertPanel === 'link' ? 'Insertar enlace' : 'Insertar imagen'}</span><Input className="h-9 flex-1 bg-card" autoFocus value={insertUrl} placeholder={insertPanel === 'link' ? 'https://sitio-web.com' : 'https://sitio-web.com/imagen.jpg'} onChange={(event) => setInsertUrl(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') { event.preventDefault(); applyInsertion() } if (event.key === 'Escape') setInsertPanel(null) }} /><Button type="button" size="sm" className="h-9" disabled={!normalizeEditorUrl(insertUrl, insertPanel === 'image')} onClick={applyInsertion}>{insertPanel === 'link' ? 'Agregar enlace' : 'Agregar imagen'}</Button><Button type="button" size="sm" variant="ghost" className="h-9" onClick={() => setInsertPanel(null)}>Cancelar</Button></div>{insertPanel === 'image' ? <p className="mt-2 text-xs text-violet-700/75">Pega la dirección directa de una imagen para mostrarla dentro de la descripción.</p> : <p className="mt-2 text-xs text-blue-700/75">El enlace se aplicará al texto seleccionado. Si no hay texto seleccionado, se insertará la dirección.</p>}</div> : null}
       <div
         ref={editorRef}
         contentEditable
@@ -3529,7 +3577,7 @@ function ActivityDescriptionEditor({ value, onChange }: { value: string; onChang
         role="textbox"
         aria-multiline="true"
         data-placeholder="Describe en qué consiste la actividad, qué deberán hacer los estudiantes, los pasos a seguir, los criterios importantes a considerar y cualquier otra información relevante para su realización..."
-        className="min-h-32 px-4 py-3 text-sm leading-6 text-foreground outline-none empty:before:pointer-events-none empty:before:text-muted-foreground empty:before:content-[attr(data-placeholder)] [&_a]:text-primary [&_a]:underline [&_blockquote]:border-l-4 [&_blockquote]:border-blue-200 [&_blockquote]:pl-3 [&_blockquote]:italic [&_h3]:text-base [&_h3]:font-black [&_img]:my-2 [&_img]:max-h-48 [&_img]:max-w-full [&_li]:ml-5 [&_ol]:list-decimal [&_ul]:list-disc"
+        className="min-h-32 px-4 py-3 text-sm leading-6 text-foreground outline-none empty:before:pointer-events-none empty:before:text-muted-foreground empty:before:content-[attr(data-placeholder)] [&_a]:text-primary [&_a]:underline [&_blockquote]:border-l-4 [&_blockquote]:border-blue-200 [&_blockquote]:pl-3 [&_blockquote]:italic [&_h3]:my-1 [&_h3]:text-xl [&_h3]:font-normal [&_h3]:leading-7 [&_img]:my-2 [&_img]:max-h-48 [&_img]:max-w-full [&_li]:ml-5 [&_ol]:list-decimal [&_ul]:list-disc"
         onInput={commitEditorValue}
         onKeyUp={() => updateToolbarState()}
         onMouseUp={() => updateToolbarState()}
@@ -3582,13 +3630,14 @@ function sanitizeActivityDescriptionHtml(value: string) {
   const parsed = new DOMParser().parseFromString(value, 'text/html')
   parsed.querySelectorAll('script, style, iframe, object, embed').forEach((element) => element.remove())
   parsed.body.querySelectorAll('*').forEach((element) => {
-    const allowedTags = new Set(['P', 'DIV', 'BR', 'B', 'STRONG', 'I', 'EM', 'U', 'UL', 'OL', 'LI', 'A', 'IMG', 'H3', 'BLOCKQUOTE'])
+    const allowedTags = new Set(['P', 'DIV', 'BR', 'B', 'STRONG', 'I', 'EM', 'U', 'SPAN', 'UL', 'OL', 'LI', 'A', 'IMG', 'H3', 'BLOCKQUOTE'])
     if (!allowedTags.has(element.tagName)) {
       element.replaceWith(...Array.from(element.childNodes))
       return
     }
     Array.from(element.attributes).forEach((attribute) => {
-      const allowedAttribute = (element.tagName === 'A' && attribute.name === 'href') || (element.tagName === 'IMG' && ['src', 'alt'].includes(attribute.name)) || (attribute.name === 'style' && /^(text-align:\s*(left|center|right);?)$/i.test(attribute.value))
+      const safeStyle = attribute.name === 'style' && attribute.value.split(';').filter(Boolean).every((rule) => /^\s*(text-align:\s*(left|center|right)|font-size:\s*(1[0-9]|2[0-9]|3[0-2])px)\s*$/i.test(rule))
+      const allowedAttribute = (element.tagName === 'A' && attribute.name === 'href') || (element.tagName === 'IMG' && ['src', 'alt'].includes(attribute.name)) || safeStyle
       if (!allowedAttribute || attribute.name.startsWith('on')) element.removeAttribute(attribute.name)
     })
     if (element instanceof HTMLAnchorElement && element.href) {
