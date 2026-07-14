@@ -3841,10 +3841,9 @@ function InstrumentPreview({
     if (instrumentType === 'rubrica') {
       next['rubrica:meta:criteriaCount'] = String(rubricCriteria)
       next['rubrica:meta:levelCount'] = String(rubricLevels)
-      const criterionPoints = distributeScore(maxScore, rubricCriteria)
       for (let index = 0; index < rubricCriteria; index += 1) {
         const pointsKey = instrumentFieldKey('rubrica', 'points', index)
-        if (!next[pointsKey]) next[pointsKey] = String(criterionPoints[index])
+        if (!next[pointsKey]) next[pointsKey] = String(rubricLevels)
       }
       for (let index = 0; index < rubricLevels; index += 1) {
         const score = rubricLevels - index
@@ -4174,9 +4173,7 @@ function RubricInstrument({
 
   function resizeCriteria(nextCount: number) {
     const next: Record<string, string> = { ...fields, 'rubrica:meta:criteriaCount': String(nextCount) }
-    distributeScore(maxScore, nextCount).forEach((points, index) => {
-      next[instrumentFieldKey('rubrica', 'points', index)] = String(points)
-    })
+    Array.from({ length: nextCount }, (_, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(levelCount) })
     if (nextCount < criteriaCount) {
       Object.keys(next).forEach((key) => {
         const match = key.match(/^rubrica:(criterion|descriptor|points):(\d+)/)
@@ -4201,9 +4198,7 @@ function RubricInstrument({
       const match = key.match(/^rubrica:(criterion|descriptor|points):(\d+)/)
       if (match && Number(match[2]) >= nextCount) delete next[key]
     })
-    distributeScore(maxScore, nextCount).forEach((points, index) => {
-      next[instrumentFieldKey('rubrica', 'points', index)] = String(points)
-    })
+    Array.from({ length: nextCount }, (_, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(levelCount) })
     next['rubrica:meta:criteriaCount'] = String(nextCount)
     onFieldsChange(next)
     onCriteriaCountChange(nextCount)
@@ -4225,6 +4220,7 @@ function RubricInstrument({
         next[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, newScore)] = fields[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, level.score)] || ''
       }
     })
+    Array.from({ length: criteriaCount }, (_, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(nextCount) })
     onFieldsChange(next)
     onLevelCountChange(nextCount)
   }
@@ -4246,6 +4242,7 @@ function RubricInstrument({
     })
     next[instrumentFieldKey('rubrica', 'level-name', 1)] = rubricLevelName(nextCount - 1)
     next[instrumentFieldKey('rubrica', 'level-points', 1)] = '1'
+    Array.from({ length: criteriaCount }, (_, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(nextCount) })
     onFieldsChange(next)
     onLevelCountChange(nextCount)
   }
