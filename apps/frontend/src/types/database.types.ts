@@ -830,6 +830,7 @@ export type Database = {
           max_score: number
           name: string
           observations: string
+          resources: string[]
           planning_entry_id: string | null
           planning_moment: string | null
           school_id: string
@@ -856,6 +857,7 @@ export type Database = {
           max_score?: number
           name: string
           observations?: string
+          resources?: string[]
           planning_entry_id?: string | null
           planning_moment?: string | null
           school_id: string
@@ -882,6 +884,7 @@ export type Database = {
           max_score?: number
           name?: string
           observations?: string
+          resources?: string[]
           planning_entry_id?: string | null
           planning_moment?: string | null
           school_id?: string

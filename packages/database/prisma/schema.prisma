@@ -630,6 +630,7 @@ model EvaluationActivity {
   teacherRole       String       @default("") @map("teacher_role")
   evidenceInstructions String    @default("") @map("evidence_instructions")
   observations      String       @default("")
+  resources         String[]     @default([])
   source            String       @default("grading")
   status            RecordStatus @default(ACTIVE)
   createdBy         String?      @map("created_by") @db.Uuid

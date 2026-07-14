@@ -28,8 +28,12 @@ function mapEvaluationActivity(activity: any) {
     teacherRole: activity.teacherRole || undefined,
     instrumentType: activity.instrument?.type || undefined,
     instrumentId: activity.instrumentId ?? undefined,
+    instrumentCriteria: activity.instrument?.criteria && typeof activity.instrument.criteria === 'object'
+      ? activity.instrument.criteria
+      : {},
     evaluationTechnique: activity.evaluationTechnique || undefined,
     observations: activity.observations || undefined,
+    resources: activity.resources ?? [],
     evidenceInstructions: activity.evidenceInstructions || undefined,
     activityType: activity.activityType,
     planningId: activity.planningEntryId ?? undefined,
@@ -371,22 +375,36 @@ export class GradingService {
     let instrumentId = dto.instrumentId || null
     if (instrumentId) {
       await assertInstrumentScope(schoolId, instrumentId)
+      if (dto.instrumentType) {
+        const linkedActivities = await prisma.evaluationActivity.count({ where: { instrumentId, status: 'ACTIVE' } })
+        const instrumentData = {
+          type: dto.instrumentType,
+          name: evaluationInstrumentName(dto.instrumentType),
+          criteria: dto.instrumentCriteria ?? {},
+          maxScore: dto.maxScore,
+        }
+        if (linkedActivities > 1) {
+          const instrument = await prisma.evaluationInstrument.create({ data: { schoolId, ...instrumentData } })
+          instrumentId = instrument.id
+        } else {
+          await prisma.evaluationInstrument.update({ where: { id: instrumentId }, data: instrumentData })
+        }
+      }
     } else if (dto.instrumentType) {
       const instrumentName = evaluationInstrumentName(dto.instrumentType)
-      const instrument = await prisma.evaluationInstrument.findFirst({
-        where: { schoolId, name: instrumentName, type: dto.instrumentType, status: 'ACTIVE' },
-      }) ?? await prisma.evaluationInstrument.create({
+      const instrument = await prisma.evaluationInstrument.create({
         data: {
           schoolId,
           name: instrumentName,
           type: dto.instrumentType,
+          criteria: dto.instrumentCriteria ?? {},
           maxScore: dto.maxScore,
         },
       })
       instrumentId = instrument.id
     }
 
-    const data = {
+    const data: any = {
       schoolId,
       schoolYearId,
       sectionSubjectId: dto.sectionSubjectId,
@@ -405,6 +423,7 @@ export class GradingService {
       teacherRole: dto.teacherRole?.trim() ?? '',
       evidenceInstructions: dto.evidenceInstructions?.trim() ?? '',
       observations: dto.observations?.trim() ?? '',
+      resources: (dto.resources ?? []).map((resource) => resource.trim()).filter(Boolean),
       source: dto.source ?? (dto.planningEntryId ? 'planning' : 'grading'),
       createdBy: userId,
     }

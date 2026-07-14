@@ -50,8 +50,10 @@ export type GradingActivity = {
   teacherRole?: string
   instrumentType?: string
   instrumentId?: string
+  instrumentCriteria?: Record<string, string>
   evaluationTechnique?: string
   observations?: string
+  resources?: string[]
   evidenceInstructions?: string
   futurePlanningLink?: string
   futureInstrumentLink?: string
