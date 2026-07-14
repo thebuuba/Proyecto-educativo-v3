@@ -49,6 +49,7 @@ import {
   finalSubjectScore,
   formatGrade,
   getRecoveryScores,
+  plainActivityText,
   scoreForActivity,
   sumActivityMaxScore,
   type CompetencyBlockId,
@@ -78,7 +79,8 @@ type GradingBookProps = {
   onActivityWorkspaceChange?: (active: boolean) => void
 }
 
-type MainView = 'blocks' | 'period' | 'annual' | 'final'
+const mainViewTabs = ['blocks', 'period', 'annual', 'final'] as const
+type MainView = (typeof mainViewTabs)[number]
 type DetailView =
   | { type: 'block'; blockId: CompetencyBlockId }
   | { type: 'activity'; activityId: string }
@@ -238,6 +240,8 @@ export function GradingBook({
   const [config, setConfig] = useState<GradeCalculationConfig>(defaultGradeCalculationConfig)
   const [recordsByPeriod, setRecordsByPeriod] = useState<Map<CompetencyPeriodId, GradeRecordRow[]>>(new Map())
   const [loadingAnnual, setLoadingAnnual] = useState(false)
+  const [annualError, setAnnualError] = useState<string | null>(null)
+  const [annualRetryKey, setAnnualRetryKey] = useState(0)
 
   useEffect(() => {
     setMainView(initialView)
@@ -325,17 +329,27 @@ export function GradingBook({
     let ignore = false
     async function loadAnnualRecords() {
       setLoadingAnnual(true)
-      const next = await loadFinalRecords()
-      if (!ignore) {
-        setRecordsByPeriod(next)
-        setLoadingAnnual(false)
+      setAnnualError(null)
+      try {
+        const next = await loadFinalRecords()
+        if (!ignore) setRecordsByPeriod(next)
+      } catch (loadError) {
+        if (!ignore) {
+          setAnnualError(
+            loadError instanceof Error
+              ? loadError.message
+              : 'No se pudo cargar la información anual.',
+          )
+        }
+      } finally {
+        if (!ignore) setLoadingAnnual(false)
       }
     }
     void loadAnnualRecords()
     return () => {
       ignore = true
     }
-  }, [loadFinalRecords, mainView])
+  }, [annualRetryKey, loadFinalRecords, mainView])
 
   useEffect(() => {
     setDraftsReadyKey(null)
@@ -544,6 +558,11 @@ export function GradingBook({
     })
   }
 
+  function selectMainView(view: MainView) {
+    setMainView(view)
+    setDetailView(null)
+  }
+
   if (students.length === 0) {
     return (
       <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-center text-sm text-muted-foreground">
@@ -556,11 +575,11 @@ export function GradingBook({
     <div className="space-y-3">
       {!isActivityWorkspace ? (
       <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-2 shadow-sm xl:flex-row xl:items-center xl:justify-between">
-        <div className="flex flex-wrap gap-2">
-          <ViewButton active={mainView === 'blocks'} icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => { setMainView('blocks'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'period'} icon={<ClipboardList className="size-4" />} label="Período" onClick={() => { setMainView('period'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'annual'} icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => { setMainView('annual'); setDetailView(null) }} />
-          <ViewButton active={mainView === 'final'} icon={<Trophy className="size-4" />} label="Resumen final" onClick={() => { setMainView('final'); setDetailView(null) }} />
+        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Vistas del panel de evaluaciones">
+          <ViewButton active={mainView === 'blocks'} tabId="blocks" icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => selectMainView('blocks')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
+          <ViewButton active={mainView === 'period'} tabId="period" icon={<ClipboardList className="size-4" />} label="Período" onClick={() => selectMainView('period')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
+          <ViewButton active={mainView === 'annual'} tabId="annual" icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => selectMainView('annual')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
+          <ViewButton active={mainView === 'final'} tabId="final" icon={<Trophy className="size-4" />} label="Resumen final" onClick={() => selectMainView('final')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
         </div>
         <div className="flex flex-wrap gap-2">
           <Button
@@ -688,21 +707,29 @@ export function GradingBook({
       ) : mainView === 'period' ? (
         <PeriodSummaryView blockSummaries={blockSummaries} periodName={periodName} recoveryScores={recoveryScores} />
       ) : mainView === 'annual' ? (
-        <AnnualComparisonView
-          config={config}
-          getActivitiesForPeriod={getActivitiesForPeriod}
-          loading={loadingAnnual}
-          recordsByPeriod={recordsByPeriod}
-          students={students}
-        />
+        annualError ? (
+          <AnnualLoadError message={annualError} onRetry={() => setAnnualRetryKey((value) => value + 1)} />
+        ) : (
+          <AnnualComparisonView
+            config={config}
+            getActivitiesForPeriod={getActivitiesForPeriod}
+            loading={loadingAnnual}
+            recordsByPeriod={recordsByPeriod}
+            students={students}
+          />
+        )
       ) : (
-        <AnnualResultView
-          config={config}
-          getActivitiesForPeriod={getActivitiesForPeriod}
-          loading={loadingAnnual}
-          recordsByPeriod={recordsByPeriod}
-          students={students}
-        />
+        annualError ? (
+          <AnnualLoadError message={annualError} onRetry={() => setAnnualRetryKey((value) => value + 1)} />
+        ) : (
+          <AnnualResultView
+            config={config}
+            getActivitiesForPeriod={getActivitiesForPeriod}
+            loading={loadingAnnual}
+            recordsByPeriod={recordsByPeriod}
+            students={students}
+          />
+        )
       )}
 
       {showConfig ? (
@@ -717,17 +744,64 @@ function ViewButton({
   icon,
   label,
   onClick,
+  onKeyDown,
+  tabId,
 }: {
   active: boolean
   icon: ReactNode
   label: string
   onClick: () => void
+  onKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void
+  tabId: MainView
 }) {
   return (
-    <Button variant={active ? 'primary' : 'ghost'} className="h-9 px-3" onClick={onClick}>
+    <Button
+      role="tab"
+      data-tab={tabId}
+      aria-selected={active}
+      tabIndex={active ? 0 : -1}
+      variant={active ? 'primary' : 'ghost'}
+      className="h-9 px-3"
+      onClick={onClick}
+      onKeyDown={onKeyDown}
+    >
       {icon}
       {label}
     </Button>
+  )
+}
+
+function moveTabFocus<T extends string>(
+  event: KeyboardEvent<HTMLButtonElement>,
+  tabs: readonly T[],
+  current: T,
+  onChange: (tab: T) => void,
+) {
+  if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return
+  event.preventDefault()
+  const currentIndex = tabs.indexOf(current)
+  const nextIndex = event.key === 'Home'
+    ? 0
+    : event.key === 'End'
+      ? tabs.length - 1
+      : event.key === 'ArrowRight'
+        ? (currentIndex + 1) % tabs.length
+        : (currentIndex - 1 + tabs.length) % tabs.length
+  const next = tabs[nextIndex]
+  onChange(next)
+  const tablist = event.currentTarget.parentElement
+  window.requestAnimationFrame(() => {
+    tablist?.querySelector<HTMLButtonElement>(`[role="tab"][data-tab="${next}"]`)?.focus()
+  })
+}
+
+function AnnualLoadError({ message, onRetry }: { message: string; onRetry: () => void }) {
+  return (
+    <div role="alert" className="flex min-h-[240px] flex-col items-center justify-center gap-3 rounded-lg border border-destructive/20 bg-destructive/5 p-6 text-center">
+      <p className="font-bold text-destructive">No se pudo cargar la vista anual.</p>
+      <p className="max-w-xl text-sm text-muted-foreground">{message}</p>
+      <Button variant="outline" onClick={onRetry}>Reintentar</Button>
+    </div>
   )
 }
 
@@ -998,6 +1072,7 @@ function BlockGradeView({
   students: StudentGradeRow[]
 }) {
   const [activeTab, setActiveTab] = useState<'matrix' | 'activities' | 'students' | 'stats'>('matrix')
+  const blockTabs = ['matrix', 'activities', 'students', 'stats'] as const
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
   const blockIndex = competencyBlocks.findIndex((item) => item.id === blockId)
   const studentTotals = students.map((student) => {
@@ -1037,7 +1112,7 @@ function BlockGradeView({
     { id: 'matrix', label: 'Matriz de calificaciones' },
     { id: 'activities', label: 'Actividades' },
     { id: 'students', label: 'Estudiantes' },
-    { id: 'stats', label: 'Estadisticas del bloque' },
+    { id: 'stats', label: 'Estadísticas del bloque' },
   ] as const
 
   return (
@@ -1076,15 +1151,21 @@ function BlockGradeView({
         <BlockMetric icon={<CheckCircle2 className="size-5" />} label="Estado" value={blockState} helper="" tone="success" />
       </div>
 
-      <div className="flex flex-wrap gap-2 border-b border-border text-sm font-bold text-muted-foreground">
+      <div className="flex flex-wrap gap-2 border-b border-border text-sm font-bold text-muted-foreground" role="tablist" aria-label={`Vistas de ${block.shortName}`}>
         {tabs.map((tab) => (
           <button
             key={tab.id}
+            type="button"
+            role="tab"
+            data-tab={tab.id}
+            aria-selected={activeTab === tab.id}
+            tabIndex={activeTab === tab.id ? 0 : -1}
             className={cn(
               'border-b-2 border-transparent px-3 py-3 transition hover:text-primary',
               activeTab === tab.id ? 'border-primary text-primary' : 'text-muted-foreground',
             )}
             onClick={() => setActiveTab(tab.id)}
+            onKeyDown={(event) => moveTabFocus(event, blockTabs, activeTab, setActiveTab)}
           >
             {tab.label}
           </button>
@@ -1246,6 +1327,9 @@ function BlockGradeView({
       {activeTab === 'students' ? (
         <div className="max-h-[calc(100vh-24rem)] overflow-auto p-3">
         <section className="overflow-hidden rounded-lg border border-border bg-card">
+          <div className="border-b border-border px-4 py-3">
+            <h3 className="font-black text-primary">Estudiantes del bloque</h3>
+          </div>
           <table className="min-w-full text-sm">
             <thead className="bg-muted/50">
               <tr>
@@ -1283,6 +1367,7 @@ function BlockGradeView({
       {activeTab === 'stats' ? (
         <div className="max-h-[calc(100vh-24rem)] overflow-y-auto p-4">
         <section className="space-y-3">
+          <h3 className="font-black text-primary">Estadísticas del bloque</h3>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             <BlockMetric icon={<TrendingUp className="size-5" />} label="Promedio" value={formatGrade(average)} helper={`/ ${config.expectedBlockTotal}`} tone="success" />
             <BlockMetric icon={<CheckCircle2 className="size-5" />} label="Aprobados" value={completedStudents} helper={`${students.length} estudiantes`} tone="default" />
@@ -1374,7 +1459,7 @@ function ActivityDetailView({
         <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-2xl font-bold text-primary">{activity.name}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{activity.description || 'Actividad sin descripción registrada.'}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{plainActivityText(activity.description) || 'Actividad sin descripción registrada.'}</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" onClick={() => onEditActivity(activity)}>
@@ -1384,9 +1469,18 @@ function ActivityDetailView({
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Secciones de la actividad">
         {(['info', 'grades', 'notes'] as const).map((item) => (
-          <Button key={item} variant={tab === item ? 'primary' : 'outline'} onClick={() => setTab(item)}>
+          <Button
+            key={item}
+            role="tab"
+            data-tab={item}
+            aria-selected={tab === item}
+            tabIndex={tab === item ? 0 : -1}
+            variant={tab === item ? 'primary' : 'outline'}
+            onClick={() => setTab(item)}
+            onKeyDown={(event) => moveTabFocus(event, ['info', 'grades', 'notes'] as const, tab, setTab)}
+          >
             {item === 'info' ? 'Información' : item === 'grades' ? 'Calificaciones' : 'Evidencias / Observaciones'}
           </Button>
         ))}
@@ -1411,7 +1505,7 @@ function ActivityDetailView({
         <section className="rounded-lg border border-border bg-card shadow-sm">
           {tab === 'info' ? (
             <div className="p-5 text-sm leading-7 text-muted-foreground">
-              <p>{activity.description || 'No hay descripción detallada para esta actividad.'}</p>
+              <p>{plainActivityText(activity.description) || 'No hay descripción detallada para esta actividad.'}</p>
               <p className="mt-4 font-medium text-foreground">Observaciones</p>
               <p>{activity.observations || 'Sin observaciones registradas.'}</p>
             </div>
@@ -4009,6 +4103,3 @@ function focusNextGradeCell(event: KeyboardEvent<HTMLInputElement>) {
   cells[index + 1]?.focus()
   cells[index + 1]?.select()
 }
-
-
-
