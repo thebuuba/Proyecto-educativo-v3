@@ -1,19 +1,26 @@
-import {
+﻿import {
   ArrowLeft,
   ArrowRight,
+  AlertCircle,
   BookOpen,
   CalendarDays,
   CheckCircle2,
   ClipboardList,
   Download,
+  FileText,
   Hourglass,
   Layers,
+  Lightbulb,
+  Pencil,
   Plus,
+  Search,
   Settings,
   Target,
+  Trash2,
   Trophy,
   TrendingUp,
   Users,
+  X,
 } from 'lucide-react'
 import { useEffect, useMemo, useState, type KeyboardEvent, type ReactNode } from 'react'
 
@@ -73,28 +80,53 @@ type DetailView =
   | { type: 'block'; blockId: CompetencyBlockId }
   | { type: 'activity'; activityId: string }
   | { type: 'activity-hub' }
+  | { type: 'activity-drafts' }
   | { type: 'activity-create'; blockId: CompetencyBlockId }
 
 const blockAccents = [
   {
-    card: 'border-blue-100 bg-blue-50/35',
+    card: 'border-blue-200 bg-blue-50/70',
+    cardBorder: '#bfdbfe',
+    cardTint: '#eff6ff',
     panel: 'bg-blue-50 text-blue-950',
     dot: 'bg-blue-500',
+    badge: 'bg-blue-100 text-blue-700 ring-blue-200',
+    progress: 'bg-blue-600',
+    progressColor: '#2563eb',
+    text: 'text-blue-700',
   },
   {
-    card: 'border-emerald-100 bg-emerald-50/35',
+    card: 'border-emerald-200 bg-emerald-50/70',
+    cardBorder: '#a7f3d0',
+    cardTint: '#ecfdf5',
     panel: 'bg-emerald-50 text-emerald-950',
     dot: 'bg-emerald-500',
+    badge: 'bg-emerald-100 text-emerald-700 ring-emerald-200',
+    progress: 'bg-emerald-600',
+    progressColor: '#059669',
+    text: 'text-emerald-700',
   },
   {
-    card: 'border-amber-100 bg-amber-50/35',
+    card: 'border-amber-200 bg-amber-50/70',
+    cardBorder: '#fde68a',
+    cardTint: '#fffbeb',
     panel: 'bg-amber-50 text-amber-950',
     dot: 'bg-amber-500',
+    badge: 'bg-amber-100 text-amber-700 ring-amber-200',
+    progress: 'bg-amber-500',
+    progressColor: '#f59e0b',
+    text: 'text-amber-700',
   },
   {
-    card: 'border-violet-100 bg-violet-50/35',
+    card: 'border-violet-200 bg-violet-50/70',
+    cardBorder: '#ddd6fe',
+    cardTint: '#f5f3ff',
     panel: 'bg-violet-50 text-violet-950',
     dot: 'bg-violet-500',
+    badge: 'bg-violet-100 text-violet-700 ring-violet-200',
+    progress: 'bg-violet-600',
+    progressColor: '#7c3aed',
+    text: 'text-violet-700',
   },
 ]
 
@@ -105,8 +137,14 @@ const blockShortNames: Record<string, string> = {
   b4: 'Científica y Tecnológica y Ambiental y de la Salud',
 }
 
+function getBlockAccent(blockId: CompetencyBlockId) {
+  const blockIndex = competencyBlocks.findIndex((block) => block.id === blockId)
+  return blockAccents[blockIndex >= 0 ? blockIndex : 0]
+}
+
 type ActivityDraft = {
   draftId?: string
+  updatedAt?: string
   name: string
   maxScore: string
   competencyBlockId: string
@@ -116,16 +154,43 @@ type ActivityDraft = {
   teacherRole: string
   instrumentType: string
   evaluationTechnique: string
+  instrumentCompleted: boolean
+  instrumentFields: Record<string, string>
   planningMoment: string
   observations: string
-  activityType: 'individual' | 'group'
+  activityType: '' | 'individual' | 'group'
 }
 
 type ActivityDraftsByBlock = Partial<Record<CompetencyBlockId, ActivityDraft[]>>
+type ActivityCompletionTarget =
+  | 'name'
+  | 'maxScore'
+  | 'date'
+  | 'evaluationTechnique'
+  | 'activityType'
+  | 'planningMoment'
+  | 'instrumentType'
+  | 'instrumentBody'
+  | 'description'
+type ActivityCompletionIssue = {
+  detail: string
+  tab: 'activity' | 'instrument'
+  target: ActivityCompletionTarget
+  title: string
+}
+type ActivityDraftMeta = {
+  block: (typeof competencyBlocks)[number]
+  blockId: CompetencyBlockId
+  completion: number
+  draft: ActivityDraft
+  missingSummary: string
+  pendingIssues: ActivityCompletionIssue[]
+  updatedAt: string
+}
 
 const emptyActivityDraft: ActivityDraft = {
   name: '',
-  maxScore: '20',
+  maxScore: '',
   competencyBlockId: competencyBlocks[0].id,
   date: '',
   description: '',
@@ -133,9 +198,11 @@ const emptyActivityDraft: ActivityDraft = {
   teacherRole: '',
   instrumentType: '',
   evaluationTechnique: '',
-  planningMoment: 'desarrollo',
+  instrumentCompleted: false,
+  instrumentFields: {},
+  planningMoment: '',
   observations: '',
-  activityType: 'individual',
+  activityType: '',
 }
 
 export function GradingBook({
@@ -182,7 +249,7 @@ export function GradingBook({
   const selectedActivity = detailView?.type === 'activity'
     ? activities.find((activity) => activity.id === detailView.activityId) ?? null
     : null
-  const isActivityWorkspace = detailView?.type === 'activity-hub' || detailView?.type === 'activity-create' || detailView?.type === 'activity'
+  const isActivityWorkspace = detailView?.type === 'activity-hub' || detailView?.type === 'activity-drafts' || detailView?.type === 'activity-create' || detailView?.type === 'activity'
   const draftStorageKey = useMemo(
     () => `grading-activity-drafts:${courseTitle}:${periodShortName}`,
     [courseTitle, periodShortName],
@@ -244,6 +311,10 @@ export function GradingBook({
   const pendingBlocks = blockSummaries.filter((summary) =>
     summary.status === 'Pendiente' || summary.status === 'Sin calificar' || summary.status === 'En recuperación',
   ).length
+  const draftMetas = useMemo(
+    () => buildActivityDraftMetas(activityDrafts),
+    [activityDrafts],
+  )
 
   useEffect(() => {
     if (mainView !== 'annual' && mainView !== 'final') return
@@ -348,6 +419,7 @@ export function GradingBook({
       ...nextDraft,
       draftId: nextDraft.draftId ?? createDraftId(),
       competencyBlockId: blockId,
+      updatedAt: new Date().toISOString(),
     }
     const draftToStore = isMeaningfulActivityDraft(nextDraft) ? normalizedDraft : nextDraft
     if (draftToStore.draftId !== nextDraft.draftId) {
@@ -376,7 +448,8 @@ export function GradingBook({
 
   function saveActivityDraft() {
     const maxScore = Number(activityDraft.maxScore)
-    if (!activityDraft.name.trim() || Number.isNaN(maxScore) || maxScore <= 0) return
+    if (validateActivityCompletion(activityDraft).length > 0 || Number.isNaN(maxScore) || maxScore <= 0) return
+    const activityType = activityDraft.activityType as Exclude<ActivityDraft['activityType'], ''>
     const activity = {
       name: activityDraft.name.trim(),
       maxScore,
@@ -389,7 +462,7 @@ export function GradingBook({
       evaluationTechnique: activityDraft.evaluationTechnique.trim() || undefined,
       planningMoment: activityDraft.planningMoment as GradingActivity['planningMoment'],
       observations: activityDraft.observations.trim() || undefined,
-      activityType: activityDraft.activityType,
+      activityType,
     }
 
     if (editingActivityId) {
@@ -415,6 +488,8 @@ export function GradingBook({
       teacherRole: activity.teacherRole ?? '',
       instrumentType: activity.instrumentType ?? '',
       evaluationTechnique: activity.evaluationTechnique ?? '',
+      instrumentCompleted: Boolean(activity.instrumentType),
+      instrumentFields: {},
       planningMoment: activity.planningMoment ?? '',
       observations: activity.observations ?? '',
       activityType: activity.activityType ?? 'individual',
@@ -506,13 +581,7 @@ export function GradingBook({
             <Settings className="size-4" />
             Configurar cálculo
           </Button>
-          <Button className="h-9 px-3" onClick={() => {
-            if (detailView?.type === 'block') {
-              openActivityCreator(detailView.blockId)
-              return
-            }
-            openActivityHub()
-          }}>
+          <Button className="h-9 px-3" onClick={openActivityHub}>
             <Plus className="size-4" />
             Agregar actividad
           </Button>
@@ -550,13 +619,24 @@ export function GradingBook({
           <ActivitiesHubView
             activities={activities}
             courseTitle={courseTitle}
-            drafts={activityDrafts}
+            draftMetas={draftMetas}
             onBack={() => setDetailView(null)}
-            onDiscardDraft={discardActivityDraft}
-            onOpenActivity={(activityId) => setDetailView({ type: 'activity', activityId })}
             onOpenDraft={openActivityDraft}
             onSelectBlock={openActivityCreator}
+            onViewDrafts={() => setDetailView({ type: 'activity-drafts' })}
+            periodShortName={periodShortName}
             periodName={periodName}
+          />
+        ) : detailView.type === 'activity-drafts' ? (
+          <ActivityDraftsView
+            courseTitle={courseTitle}
+            draftMetas={draftMetas}
+            onBack={() => setDetailView({ type: 'activity-hub' })}
+            onCreateActivity={() => openActivityCreator(competencyBlocks[0].id)}
+            onDeleteDraft={discardActivityDraft}
+            onOpenDraft={openActivityDraft}
+            periodName={periodName}
+            periodShortName={periodShortName}
           />
         ) : detailView.type === 'activity-create' && selectedCreateBlock ? (
           <ActivityCreationView
@@ -752,6 +832,7 @@ function BlockMatrixView({
               role="button"
               tabIndex={0}
               className={cn('overflow-hidden rounded-lg border bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40', accent.card)}
+              style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
               onClick={() => onOpenBlock(summary.block.id)}
               onKeyDown={(event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
@@ -807,7 +888,11 @@ function BlockMatrixView({
       {blockSummaries.map((summary) => {
         const accent = blockAccents[summary.index]
         return (
-          <article key={summary.block.id} className={cn('rounded-lg border bg-card p-4 shadow-sm', accent.card)}>
+          <article
+            key={summary.block.id}
+            className={cn('rounded-lg border bg-card p-4 shadow-sm', accent.card)}
+            style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
+          >
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
@@ -1375,9 +1460,14 @@ function PeriodSummaryView({
       </div>
       <div className="grid gap-4 xl:grid-cols-4">
         {blockSummaries.map((summary) => {
+          const accent = blockAccents[summary.index]
           const hasRecovery = Object.values(recoveryScores[summary.block.id] ?? {}).some((value) => typeof value === 'number')
           return (
-            <article key={summary.block.id} className={cn('rounded-lg border p-5 shadow-sm', blockAccents[summary.index].card)}>
+            <article
+              key={summary.block.id}
+              className={cn('rounded-lg border p-5 shadow-sm', accent.card)}
+              style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
+            >
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
                 {summary.block.shortName}
               </p>
@@ -1595,13 +1685,21 @@ function AnnualResultView(props: {
   return (
     <section className="space-y-4">
       <div className="grid gap-4 xl:grid-cols-4">
-        {competencyBlocks.map((block, index) => (
-          <article key={block.id} className={cn('rounded-lg border p-5 shadow-sm', blockAccents[index].card)}>
+        {competencyBlocks.map((block, index) => {
+          const accent = blockAccents[index]
+
+          return (
+          <article
+            key={block.id}
+            className={cn('rounded-lg border p-5 shadow-sm', accent.card)}
+            style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
+          >
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">{block.shortName}</p>
             <h3 className="mt-2 text-sm font-bold text-primary">{blockShortNames[block.id]}</h3>
             <p className="mt-4 text-3xl font-black text-primary">{formatGrade(blockAverages[index])}</p>
           </article>
-        ))}
+          )
+        })}
       </div>
 
       <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
@@ -1632,8 +1730,10 @@ function ActivityManager({
   onEditActivity,
   onSaveActivity,
   compactLayout = false,
+  highlightTarget,
   saving,
   showActions = true,
+  showActivityList = true,
   showCompetencySelect = true,
 }: {
   activityDraft: ActivityDraft
@@ -1646,10 +1746,15 @@ function ActivityManager({
   onEditActivity: (activity: GradingActivity) => void
   onSaveActivity: () => void
   compactLayout?: boolean
+  highlightTarget?: ActivityCompletionTarget | null
   saving: boolean
   showActions?: boolean
+  showActivityList?: boolean
   showCompetencySelect?: boolean
 }) {
+  const fieldHighlight = (target: ActivityCompletionTarget) =>
+    highlightTarget === target ? 'rounded-lg ring-2 ring-red-400 ring-offset-2 ring-offset-card' : ''
+
   return (
     <div className="grid gap-2">
       {showCompetencySelect ? (
@@ -1660,21 +1765,21 @@ function ActivityManager({
         </Select>
       ) : null}
       <div className={cn('grid gap-2', compactLayout ? 'sm:grid-cols-[minmax(0,1fr)_6rem]' : 'sm:grid-cols-[minmax(0,1fr)_7rem]')}>
-        <label className="grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+        <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', fieldHighlight('name'))}>
           Nombre de la actividad
           <Input className="h-9" value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Ej. Exposición oral sobre ecosistemas" />
         </label>
-        <label className="grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+        <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', fieldHighlight('maxScore'))}>
           Valor
           <Input className="h-9" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" />
         </label>
       </div>
       <div className={cn('grid gap-2', compactLayout ? 'sm:grid-cols-2' : 'sm:grid-cols-3')}>
-        <label className="grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+        <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', fieldHighlight('date'))}>
           Fecha de realización
           <Input className="h-9" type="date" value={activityDraft.date} onChange={(event) => onChangeDraft({ ...activityDraft, date: event.target.value })} />
         </label>
-        <label className="grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+        <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', fieldHighlight('evaluationTechnique'))}>
           Técnica de evaluación
           <Select className="h-9" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })}>
             <option value="" disabled>Ej. Observación directa</option>
@@ -1702,7 +1807,7 @@ function ActivityManager({
             <option value="heteroevaluacion">Heteroevaluación</option>
           </Select>
         </label>
-        <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', compactLayout ? 'sm:col-span-2' : '')}>
+        <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', compactLayout ? 'sm:col-span-2' : '', fieldHighlight('instrumentType'))}>
           Instrumento de evaluación
           <Select className="h-9" value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}>
             <option value="" disabled>Ej. Rúbrica</option>
@@ -1714,17 +1819,25 @@ function ActivityManager({
         </label>
       </div>
       <div className={cn('grid gap-2', compactLayout ? 'sm:grid-cols-2' : 'sm:grid-cols-2')}>
-        <Select className="h-9" value={activityDraft.activityType} onChange={(event) => onChangeDraft({ ...activityDraft, activityType: event.target.value as ActivityDraft['activityType'] })}>
-          <option value="individual">Actividad individual</option>
-          <option value="group">Actividad grupal</option>
-        </Select>
-        <Select className="h-9" value={activityDraft.planningMoment || 'desarrollo'} onChange={(event) => onChangeDraft({ ...activityDraft, planningMoment: event.target.value })}>
-          <option value="inicio">Inicio</option>
-          <option value="desarrollo">Desarrollo</option>
-          <option value="cierre">Cierre</option>
-        </Select>
+        <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', fieldHighlight('activityType'))}>
+          Tipo de actividad
+          <Select className="h-9" value={activityDraft.activityType} onChange={(event) => onChangeDraft({ ...activityDraft, activityType: event.target.value as ActivityDraft['activityType'] })}>
+            <option value="" disabled>Selecciona tipo de actividad</option>
+            <option value="individual">Actividad individual</option>
+            <option value="group">Actividad grupal</option>
+          </Select>
+        </label>
+        <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', fieldHighlight('planningMoment'))}>
+          Momento de la clase
+          <Select className="h-9" value={activityDraft.planningMoment} onChange={(event) => onChangeDraft({ ...activityDraft, planningMoment: event.target.value })}>
+            <option value="" disabled>Selecciona momento de la clase</option>
+            <option value="inicio">Inicio</option>
+            <option value="desarrollo">Desarrollo</option>
+            <option value="cierre">Cierre</option>
+          </Select>
+        </label>
       </div>
-      <div className="space-y-0.5">
+      <div className={cn('space-y-0.5', fieldHighlight('description'))}>
         <label className="text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground" htmlFor="activity-description">
           Descripción de la actividad
         </label>
@@ -1745,7 +1858,7 @@ function ActivityManager({
           {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
         </div>
       ) : null}
-      {activities.length > 0 ? (
+      {showActivityList && activities.length > 0 ? (
       <div className="max-h-52 overflow-y-auto rounded-lg border border-border">
         {activities.map((activity) => (
           <div key={activity.id} className="flex flex-col gap-3 border-b border-border px-4 py-3 text-sm last:border-b-0 sm:flex-row sm:items-center sm:justify-between">
@@ -1769,24 +1882,29 @@ function ActivityManager({
 function ActivitiesHubView({
   activities,
   courseTitle,
-  drafts,
+  draftMetas,
   onBack,
-  onDiscardDraft,
-  onOpenActivity,
   onOpenDraft,
   onSelectBlock,
+  onViewDrafts,
   periodName,
+  periodShortName,
 }: {
   activities: GradingActivity[]
   courseTitle: string
-  drafts: ActivityDraftsByBlock
+  draftMetas: ActivityDraftMeta[]
   onBack: () => void
-  onDiscardDraft: (blockId: CompetencyBlockId, draftId?: string) => void
-  onOpenActivity: (activityId: string) => void
   onOpenDraft: (blockId: CompetencyBlockId, draftId: string) => void
   onSelectBlock: (blockId: CompetencyBlockId) => void
+  onViewDrafts: () => void
   periodName: string
+  periodShortName: string
 }) {
+  const recentDrafts = [...draftMetas]
+    .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
+    .slice(0, 5)
+  const blocksWithDrafts = new Set(draftMetas.map((meta) => meta.blockId)).size
+
   return (
     <section className="space-y-4">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
@@ -1819,14 +1937,20 @@ function ActivitiesHubView({
             activities={activities.filter((activity) => activity.competencyBlockId === block.id)}
             accent={blockAccents[index]}
             block={block}
-            drafts={drafts[block.id] ?? []}
-            onDiscardDraft={(draftId) => onDiscardDraft(block.id, draftId)}
-            onOpenActivity={onOpenActivity}
-            onOpenDraft={(draftId) => onOpenDraft(block.id, draftId)}
+            draftCount={draftMetas.filter((meta) => meta.blockId === block.id).length}
             onSelectBlock={() => onSelectBlock(block.id)}
           />
         ))}
       </div>
+      <DraftCenter
+        blocksWithDrafts={blocksWithDrafts}
+        courseTitle={courseTitle}
+        draftMetas={recentDrafts}
+        periodShortName={periodShortName}
+        totalDrafts={draftMetas.length}
+        onOpenDraft={onOpenDraft}
+        onViewDrafts={onViewDrafts}
+      />
     </section>
   )
 }
@@ -1835,25 +1959,22 @@ function ActivityBlockHubCard({
   accent,
   activities,
   block,
-  drafts,
-  onDiscardDraft,
-  onOpenActivity,
-  onOpenDraft,
+  draftCount,
   onSelectBlock,
 }: {
   accent: (typeof blockAccents)[number]
   activities: GradingActivity[]
   block: (typeof competencyBlocks)[number]
-  drafts: ActivityDraft[]
-  onDiscardDraft: (draftId: string) => void
-  onOpenActivity: (activityId: string) => void
-  onOpenDraft: (draftId: string) => void
+  draftCount: number
   onSelectBlock: () => void
 }) {
-  const hasItems = drafts.length > 0 || activities.length > 0
+  const plannedPoints = activities.reduce((sum, activity) => sum + activity.maxScore, 0)
 
   return (
-    <article className={cn('flex min-h-[18rem] flex-col rounded-lg border p-3 shadow-sm', accent.card)}>
+    <article
+      className={cn('flex min-h-[14rem] flex-col rounded-lg border p-4 shadow-sm', accent.card)}
+      style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
+    >
       <div className="flex items-start gap-2">
         <span className={cn('mt-0.5 h-12 w-1.5 shrink-0 rounded-full', accent.dot)} />
         <div className="min-w-0">
@@ -1869,65 +1990,401 @@ function ActivityBlockHubCard({
         </div>
         <div className="rounded-lg bg-card/75 px-3 py-2 ring-1 ring-border">
           <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Borradores</p>
-          <p className="text-xl font-black leading-tight text-primary">{drafts.length}</p>
+          <p className="text-xl font-black leading-tight text-primary">{draftCount}</p>
         </div>
+      </div>
+
+      <div className="mt-3 rounded-lg bg-card/75 px-3 py-2 text-sm ring-1 ring-border">
+        <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">Total planificado</p>
+        <p className="mt-1 text-lg font-black text-foreground">{plannedPoints} pts</p>
       </div>
 
       <Button className="mt-3 h-9 w-full" onClick={onSelectBlock}>
         <Plus className="size-4" />
         Crear actividad
       </Button>
-
-      {hasItems ? (
-        <div className="mt-3 max-h-[8.25rem] space-y-2 overflow-y-auto pr-1">
-          {drafts.map((draft) => (
-              <div
-                key={draft.draftId}
-                role="button"
-                tabIndex={0}
-                className="w-full rounded-lg border border-primary/20 bg-card/80 px-3 py-2 text-left text-sm transition hover:border-primary hover:bg-card"
-                onClick={() => draft.draftId && onOpenDraft(draft.draftId)}
-                onKeyDown={(event) => {
-                  if (event.key !== 'Enter' && event.key !== ' ') return
-                  event.preventDefault()
-                  if (draft.draftId) onOpenDraft(draft.draftId)
-                }}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <p className="text-xs font-black uppercase tracking-[0.12em] text-amber-600">Borrador</p>
-                    <p className="mt-0.5 truncate font-medium">{draft.name || 'Actividad sin nombre'}</p>
-                  </div>
-                  <button
-                    type="button"
-                    className="rounded-md px-2 py-1 text-xs font-bold text-destructive hover:bg-destructive/10"
-                    onClick={(event) => {
-                      event.stopPropagation()
-                      if (draft.draftId) onDiscardDraft(draft.draftId)
-                    }}
-                  >
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-          ))}
-          {activities.map((activity) => (
-            <button
-              key={activity.id}
-              type="button"
-              className="flex w-full items-start justify-between rounded-lg border border-primary/15 bg-card/80 px-3 py-2 text-left text-sm transition hover:border-primary hover:bg-card"
-              onClick={() => onOpenActivity(activity.id)}
-            >
-              <span className="min-w-0">
-                <span className="block text-xs font-black uppercase tracking-[0.12em] text-primary">Actividad</span>
-                <span className="mt-0.5 block truncate font-medium text-foreground">{activity.name}</span>
-              </span>
-              <ArrowRight className="ml-3 mt-2 size-4 shrink-0 text-primary" />
-            </button>
-          ))}
-        </div>
-      ) : null}
     </article>
+  )
+}
+
+function DraftCenter({
+  blocksWithDrafts,
+  courseTitle,
+  draftMetas,
+  onOpenDraft,
+  onViewDrafts,
+  periodShortName,
+  totalDrafts,
+}: {
+  blocksWithDrafts: number
+  courseTitle: string
+  draftMetas: ActivityDraftMeta[]
+  onOpenDraft: (blockId: CompetencyBlockId, draftId: string) => void
+  onViewDrafts: () => void
+  periodShortName: string
+  totalDrafts: number
+}) {
+  const latestDraft = draftMetas[0] ?? null
+
+  return (
+    <section className="rounded-lg border border-border bg-card p-3 shadow-sm">
+      <div className="grid gap-3 lg:grid-cols-[minmax(18rem,1.15fr)_minmax(10rem,0.7fr)_minmax(14rem,0.95fr)_minmax(12rem,0.8fr)_auto] lg:items-center">
+        <div className="flex min-w-0 items-start gap-3">
+          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+            <FileText className="size-5" />
+          </span>
+          <div className="min-w-0">
+            <h3 className="text-sm font-black text-foreground">Centro de borradores</h3>
+            <p className="mt-1 max-w-md text-xs leading-5 text-muted-foreground">
+              Aqui puedes continuar editando las actividades que dejaste pendientes. Los borradores se guardan automaticamente.
+            </p>
+          </div>
+        </div>
+        <DraftMetric icon={<FileText className="size-4" />} label="Total de borradores" value={totalDrafts} />
+        <DraftMetric icon={<ClipboardList className="size-4" />} label="Bloques con borradores" tone="success" value={blocksWithDrafts} />
+        <DraftMetric icon={<CalendarDays className="size-4" />} label="Ultima edicion" value={latestDraft ? formatDraftDate(latestDraft.updatedAt) : '-'} />
+        <Button variant="outline" className="h-10 justify-center whitespace-nowrap px-4 text-xs text-primary" onClick={onViewDrafts}>
+          Ver todos los borradores
+          <ArrowRight className="size-4" />
+        </Button>
+      </div>
+
+      <div className="mt-3 rounded-lg border border-border p-2.5">
+        <div className="mb-2 flex items-center justify-between">
+          <p className="text-xs font-black text-foreground">Borradores recientes</p>
+          <button type="button" className="text-xs font-black text-primary hover:underline" onClick={onViewDrafts}>
+            Ver todos
+          </button>
+        </div>
+        {draftMetas.length > 0 ? (
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+            {draftMetas.map((meta) => {
+              const accent = getBlockAccent(meta.blockId)
+
+              return (
+                <button
+                  key={meta.draft.draftId}
+                  type="button"
+                  className={cn(
+                    'relative min-h-[8.25rem] overflow-hidden rounded-lg border border-border bg-card px-3 py-2.5 pl-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary hover:shadow-md',
+                    accent.card,
+                  )}
+                  style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
+                  onClick={() => meta.draft.draftId && onOpenDraft(meta.blockId, meta.draft.draftId)}
+                >
+                  <span aria-hidden="true" className={cn('absolute inset-y-3 left-0 w-1 rounded-r-full', accent.dot)} />
+                  <div className="flex items-start justify-between gap-2">
+                    <span className={cn('inline-flex h-5 items-center whitespace-nowrap rounded-full px-2 text-[10px] font-black ring-1 ring-inset', accent.badge)}>
+                      {meta.block.shortName}
+                    </span>
+                    <ArrowRight className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+                  </div>
+                  <p className="mt-2 truncate text-sm font-black text-foreground">{meta.draft.name || 'Actividad sin nombre'}</p>
+                  <p className="mt-1 line-clamp-2 text-xs leading-4 text-muted-foreground">{periodShortName} - {courseTitle}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">Ultima edicion: {formatDraftDate(meta.updatedAt)}</p>
+                  <ProgressBar value={meta.completion} className="mt-3" indicatorColor={accent.progressColor} />
+                  <p className="mt-1 text-xs text-muted-foreground">{meta.completion}% completado</p>
+                </button>
+              )
+            })}
+          </div>
+        ) : (
+          <div className="rounded-lg bg-muted/30 px-4 py-6 text-sm text-muted-foreground">
+            <p className="font-bold text-foreground">No tienes actividades pendientes.</p>
+            <p className="mt-1">Las actividades incompletas que guardes apareceran aqui automaticamente.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+function DraftMetric({
+  icon,
+  label,
+  tone = 'default',
+  value,
+}: {
+  icon: ReactNode
+  label: string
+  tone?: 'default' | 'success'
+  value: string | number
+}) {
+  return (
+    <div className="flex min-h-[3.35rem] items-center gap-3 rounded-lg bg-muted/20 px-3 py-2">
+      <span className={cn('flex size-8 shrink-0 items-center justify-center rounded-lg', tone === 'success' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700')}>
+        {icon}
+      </span>
+      <div className="min-w-0">
+        <p className="whitespace-nowrap text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-muted-foreground">{label}</p>
+        <p className="mt-0.5 truncate text-sm font-black text-foreground">{value}</p>
+      </div>
+    </div>
+  )
+}
+
+function ActivityDraftsView({
+  courseTitle,
+  draftMetas,
+  onBack,
+  onCreateActivity,
+  onDeleteDraft,
+  onOpenDraft,
+  periodName,
+  periodShortName,
+}: {
+  courseTitle: string
+  draftMetas: ActivityDraftMeta[]
+  onBack: () => void
+  onCreateActivity: () => void
+  onDeleteDraft: (blockId: CompetencyBlockId, draftId?: string) => void
+  onOpenDraft: (blockId: CompetencyBlockId, draftId: string) => void
+  periodName: string
+  periodShortName: string
+}) {
+  const [activeBlock, setActiveBlock] = useState<'all' | CompetencyBlockId>('all')
+  const [blockFilter, setBlockFilter] = useState<'all' | CompetencyBlockId>('all')
+  const [instrumentFilter, setInstrumentFilter] = useState('all')
+  const [periodFilter, setPeriodFilter] = useState('all')
+  const [query, setQuery] = useState('')
+  const [sortBy, setSortBy] = useState('updated-desc')
+  const [page, setPage] = useState(1)
+  const pageSize = 10
+
+  const blockCounts = competencyBlocks.reduce<Record<string, number>>((acc, block) => {
+    acc[block.id] = draftMetas.filter((meta) => meta.blockId === block.id).length
+    return acc
+  }, {})
+  const visibleMetas = draftMetas
+    .filter((meta) => activeBlock === 'all' || meta.blockId === activeBlock)
+    .filter((meta) => blockFilter === 'all' || meta.blockId === blockFilter)
+    .filter(() => periodFilter === 'all' || periodFilter === periodShortName)
+    .filter((meta) => instrumentFilter === 'all' || meta.draft.instrumentType === instrumentFilter)
+    .filter((meta) => (meta.draft.name || 'Actividad sin nombre').toLowerCase().includes(query.trim().toLowerCase()))
+    .sort((a, b) => sortDraftMetas(a, b, sortBy))
+  const totalPages = Math.max(1, Math.ceil(visibleMetas.length / pageSize))
+  const safePage = Math.min(page, totalPages)
+  const pageMetas = visibleMetas.slice((safePage - 1) * pageSize, safePage * pageSize)
+  const firstItem = visibleMetas.length === 0 ? 0 : (safePage - 1) * pageSize + 1
+  const lastItem = Math.min(safePage * pageSize, visibleMetas.length)
+
+  function clearFilters() {
+    setActiveBlock('all')
+    setBlockFilter('all')
+    setInstrumentFilter('all')
+    setPeriodFilter('all')
+    setQuery('')
+    setSortBy('updated-desc')
+    setPage(1)
+  }
+
+  function confirmDelete(meta: ActivityDraftMeta) {
+    if (!meta.draft.draftId) return
+    const shouldDelete = window.confirm('Eliminar este borrador? Esta accion no se puede deshacer.')
+    if (shouldDelete) onDeleteDraft(meta.blockId, meta.draft.draftId)
+  }
+
+  return (
+    <section className="space-y-4">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+            <button type="button" className="font-medium text-primary hover:underline" onClick={onBack}>
+              Calificaciones
+            </button>
+            <span>/</span>
+            <button type="button" className="font-medium text-primary hover:underline" onClick={onBack}>
+              Actividades
+            </button>
+            <span>/</span>
+            <span>Borradores</span>
+          </div>
+          <div className="mt-3 flex items-center gap-3">
+            <h2 className="text-3xl font-black text-primary">Borradores de actividades</h2>
+          </div>
+          <p className="mt-1 text-sm text-muted-foreground">Continua editando las actividades que dejaste pendientes de completar.</p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline" onClick={onBack}>
+            <ArrowLeft className="size-4" />
+            Volver
+          </Button>
+          <Button onClick={onCreateActivity}>
+            <Plus className="size-4" />
+            Nueva actividad
+          </Button>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-border bg-card p-3 shadow-sm">
+        <div className="flex flex-wrap gap-2 border-b border-border pb-3">
+          <DraftFilterChip active={activeBlock === 'all'} label="Todos" count={draftMetas.length} onClick={() => { setActiveBlock('all'); setPage(1) }} />
+          {competencyBlocks.map((block) => {
+            const accent = getBlockAccent(block.id)
+
+            return (
+              <DraftFilterChip
+                key={block.id}
+                active={activeBlock === block.id}
+                label={block.shortName}
+                count={blockCounts[block.id] ?? 0}
+                accent={accent}
+                onClick={() => { setActiveBlock(block.id); setPage(1) }}
+              />
+            )
+          })}
+        </div>
+
+        <div className="grid gap-2 py-3 lg:grid-cols-[minmax(14rem,1fr)_12rem_12rem_13rem_13rem]">
+          <label className="relative">
+            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+            <Input className="h-10 pl-9" value={query} onChange={(event) => { setQuery(event.target.value); setPage(1) }} placeholder="Buscar borradores..." />
+          </label>
+          <Select className="h-10" value={blockFilter} onChange={(event) => { setBlockFilter(event.target.value as 'all' | CompetencyBlockId); setPage(1) }}>
+            <option value="all">Todos los bloques</option>
+            {competencyBlocks.map((block) => <option key={block.id} value={block.id}>{block.shortName}</option>)}
+          </Select>
+          <Select className="h-10" value={periodFilter} onChange={(event) => { setPeriodFilter(event.target.value); setPage(1) }}>
+            <option value="all">Todos los periodos</option>
+            <option value={periodShortName}>{periodShortName} - {periodName}</option>
+          </Select>
+          <Select className="h-10" value={instrumentFilter} onChange={(event) => { setInstrumentFilter(event.target.value); setPage(1) }}>
+            <option value="all">Todos los instrumentos</option>
+            <option value="rubrica">Rubrica</option>
+            <option value="lista-cotejo">Lista de cotejo</option>
+            <option value="escala">Escala estimativa</option>
+            <option value="lista-ponderada">Lista ponderada</option>
+          </Select>
+          <Select className="h-10" value={sortBy} onChange={(event) => { setSortBy(event.target.value); setPage(1) }}>
+            <option value="updated-desc">Ultima modificacion</option>
+            <option value="updated-asc">Mas antiguo</option>
+            <option value="name-asc">Nombre A-Z</option>
+            <option value="completion-desc">Mayor porcentaje</option>
+            <option value="completion-asc">Menor porcentaje</option>
+          </Select>
+        </div>
+
+        <div className="overflow-x-auto rounded-lg border border-border">
+          <table className="min-w-[64rem] w-full text-left text-sm">
+            <thead className="bg-muted/40 text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+              <tr>
+                <th className="px-4 py-3">Actividad</th>
+                <th className="px-4 py-3">Bloque</th>
+                <th className="px-4 py-3">Curso / Asignatura</th>
+                <th className="px-4 py-3">Periodo</th>
+                <th className="px-4 py-3">Instrumento</th>
+                <th className="px-4 py-3">Completado</th>
+                <th className="px-4 py-3">Ultima edicion</th>
+                <th className="px-4 py-3 text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pageMetas.map((meta) => {
+                const accent = getBlockAccent(meta.blockId)
+
+                return (
+                <tr key={meta.draft.draftId} className="border-t border-border">
+                  <td className="px-4 py-3">
+                    <div className="flex items-start gap-3">
+                      <span className={cn('mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full', accent.badge)}>
+                        <FileText className="size-4" />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="font-black text-foreground">{meta.draft.name || 'Actividad sin nombre'}</p>
+                        <p className="mt-1 text-xs text-warning">{meta.missingSummary}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-4 py-3">
+                    <span className={cn('inline-flex h-6 items-center whitespace-nowrap rounded-full px-2.5 text-xs font-black ring-1 ring-inset', accent.badge)}>
+                      {meta.block.shortName}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-muted-foreground">{courseTitle}</td>
+                  <td className="px-4 py-3"><Badge tone="muted">{periodShortName}</Badge></td>
+                  <td className="px-4 py-3 text-muted-foreground">{instrumentTitle(meta.draft.instrumentType)}</td>
+                  <td className="px-4 py-3">
+                    <div className="flex min-w-28 items-center gap-2">
+                      <span className={cn('w-9 text-xs font-black', accent.text)}>{meta.completion}%</span>
+                      <ProgressBar value={meta.completion} indicatorColor={accent.progressColor} />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 text-muted-foreground">{formatDraftDate(meta.updatedAt)}</td>
+                  <td className="px-4 py-3">
+                    <div className="flex justify-end gap-2">
+                      <Button size="sm" variant="outline" onClick={() => meta.draft.draftId && onOpenDraft(meta.blockId, meta.draft.draftId)}>
+                        <Pencil className="size-3.5" />
+                        Continuar
+                      </Button>
+                      <Button size="sm" variant="destructive" onClick={() => confirmDelete(meta)}>
+                        <Trash2 className="size-3.5" />
+                        Eliminar
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                )
+              })}
+            </tbody>
+          </table>
+          {pageMetas.length === 0 ? (
+            <div className="px-4 py-10 text-center text-sm text-muted-foreground">
+              <p className="font-bold text-foreground">No hay borradores que coincidan con los filtros seleccionados.</p>
+              <Button variant="outline" className="mt-3 h-9 px-4" onClick={clearFilters}>Limpiar filtros</Button>
+            </div>
+          ) : null}
+        </div>
+
+        {totalPages > 1 ? (
+          <div className="mt-3 flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+            <span>Mostrando {firstItem}-{lastItem} de {visibleMetas.length} borradores</span>
+            <div className="flex items-center gap-2">
+              <Button size="sm" variant="outline" disabled={safePage <= 1} onClick={() => setPage((current) => Math.max(1, current - 1))}>Anterior</Button>
+              <Badge>{safePage}</Badge>
+              <Button size="sm" variant="outline" disabled={safePage >= totalPages} onClick={() => setPage((current) => Math.min(totalPages, current + 1))}>Siguiente</Button>
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </section>
+  )
+}
+
+function DraftFilterChip({
+  accent,
+  active,
+  count,
+  label,
+  onClick,
+}: {
+  accent?: (typeof blockAccents)[number]
+  active: boolean
+  count: number
+  label: string
+  onClick: () => void
+}) {
+  return (
+    <button
+      type="button"
+      className={cn(
+        'inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-black transition',
+        active && !accent ? 'bg-primary text-primary-foreground shadow-sm' : null,
+        active && accent ? cn(accent.progress, 'text-white shadow-sm') : null,
+        !active ? 'bg-muted/55 text-muted-foreground hover:text-foreground' : null,
+      )}
+      onClick={onClick}
+    >
+      {!active && accent ? <span aria-hidden="true" className={cn('size-2 rounded-full', accent.dot)} /> : null}
+      <span>{label}</span>
+      <span className={cn(
+        'inline-flex min-w-5 items-center justify-center rounded-full px-1.5 text-xs',
+        active ? 'bg-primary-foreground/15 text-primary-foreground' : null,
+        !active && accent ? cn('ring-1', accent.badge) : null,
+        !active && !accent ? 'bg-card/80 text-current' : null,
+      )}>
+        {count}
+      </span>
+    </button>
   )
 }
 
@@ -1961,14 +2418,63 @@ function ActivityCreationView({
   saving: boolean
 }) {
   const [creationTab, setCreationTab] = useState<'activity' | 'instrument'>('activity')
+  const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
+  const [highlightTarget, setHighlightTarget] = useState<ActivityCompletionTarget | null>(null)
 
   function handleActivityDraftChange(draft: ActivityDraft) {
     const selectedInstrument = draft.instrumentType && draft.instrumentType !== activityDraft.instrumentType
-    onChangeDraft({ ...draft, competencyBlockId: block.id })
+    onChangeDraft({
+      ...draft,
+      competencyBlockId: block.id,
+      instrumentCompleted: selectedInstrument ? false : draft.instrumentCompleted,
+      instrumentFields: selectedInstrument ? {} : draft.instrumentFields,
+    })
     if (selectedInstrument) {
       setCreationTab('instrument')
     }
   }
+
+  function showMissingItem(issue: ActivityCompletionIssue) {
+    setCreationTab(issue.tab)
+    setHighlightTarget(issue.target)
+    setCompletionIssues([])
+  }
+
+  function handleSaveActivity() {
+    const issues = validateActivityCompletion(activityDraft)
+    if (issues.length > 0) {
+      setCompletionIssues(issues)
+      setHighlightTarget(issues[0]?.target ?? null)
+      setCreationTab(issues[0]?.tab ?? 'activity')
+      return
+    }
+    setCompletionIssues([])
+    setHighlightTarget(null)
+    onSaveActivity()
+  }
+
+  function continueLater() {
+    setCompletionIssues([])
+    setHighlightTarget(null)
+    onBack()
+  }
+
+  function discardIncompleteActivity() {
+    setCompletionIssues([])
+    setHighlightTarget(null)
+    if (editingActivityId) {
+      onCancelEdit()
+      return
+    }
+    onChangeDraft({
+      ...emptyActivityDraft,
+      draftId: activityDraft.draftId,
+      competencyBlockId: block.id,
+    })
+    onBack()
+  }
+
+  const progressMeta = buildActivityDraftMeta(activityDraft, block.id)
 
   return (
     <section className="space-y-4">
@@ -2026,14 +2532,15 @@ function ActivityCreationView({
         </div>
         <div className="flex flex-wrap gap-2">
           {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
-          <Button className="h-9 px-4" onClick={onSaveActivity} disabled={saving}>
+          <Button className="h-9 px-4" onClick={handleSaveActivity} disabled={saving}>
             Guardar actividad
           </Button>
         </div>
       </div>
 
+      <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_16rem]">
       {creationTab === 'activity' ? (
-        <div className="w-full rounded-lg border border-border bg-card p-4 shadow-sm xl:max-w-4xl">
+        <div className="w-full rounded-lg border border-border bg-card p-4 shadow-sm">
           <div className="mb-3 border-b border-border pb-3">
             <h3 className="font-black text-foreground">Información de la actividad</h3>
           </div>
@@ -2048,18 +2555,101 @@ function ActivityCreationView({
               onEditActivity={onEditActivity}
               onSaveActivity={onSaveActivity}
               saving={saving}
+              highlightTarget={highlightTarget}
               showActions={false}
+              showActivityList={false}
               showCompetencySelect={false}
             />
         </div>
       ) : (
-        <InstrumentPreview instrumentType={activityDraft.instrumentType} />
+        <InstrumentPreview
+          completed={activityDraft.instrumentCompleted}
+          fields={activityDraft.instrumentFields}
+          highlight={highlightTarget === 'instrumentBody' || highlightTarget === 'instrumentType'}
+          instrumentType={activityDraft.instrumentType}
+          onCompletedChange={(instrumentCompleted) => handleActivityDraftChange({ ...activityDraft, instrumentCompleted })}
+          onFieldsChange={(instrumentFields) => handleActivityDraftChange({ ...activityDraft, instrumentFields })}
+        />
       )}
+        <ActivityProgressCard meta={progressMeta} onSelectIssue={showMissingItem} />
+      </div>
+      {completionIssues.length > 0 ? (
+        <ActivityCompletionModal
+          deleteLabel={editingActivityId ? 'Descartar cambios' : 'Eliminar borrador'}
+          issues={completionIssues}
+          onClose={() => setCompletionIssues([])}
+          onDelete={discardIncompleteActivity}
+          onSelectIssue={showMissingItem}
+          onSaveDraft={continueLater}
+        />
+      ) : null}
     </section>
   )
 }
 
-function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
+function ActivityProgressCard({
+  meta,
+  onSelectIssue,
+}: {
+  meta: ActivityDraftMeta
+  onSelectIssue: (issue: ActivityCompletionIssue) => void
+}) {
+  return (
+    <aside className="h-fit rounded-lg border border-border bg-card p-4 shadow-sm xl:sticky xl:top-4">
+      <div className="flex items-center gap-2">
+        <Lightbulb className="size-4 text-primary" />
+        <h3 className="font-black text-primary">Tu progreso</h3>
+      </div>
+      <div className="mt-4 flex items-center gap-4">
+        <div className="relative grid size-20 place-items-center rounded-full bg-muted">
+          <div
+            className="absolute inset-0 rounded-full"
+            style={{ background: `conic-gradient(var(--primary) ${meta.completion * 3.6}deg, var(--muted) 0deg)` }}
+          />
+          <div className="relative grid size-16 place-items-center rounded-full bg-card text-lg font-black text-primary">
+            {meta.completion}%
+          </div>
+        </div>
+        <p className="text-sm font-medium text-muted-foreground">Campos completados</p>
+      </div>
+      <div className="mt-4 border-t border-border pt-4">
+        <p className="text-sm font-black text-primary">Faltan por completar</p>
+        {meta.pendingIssues.length > 0 ? (
+          <div className="mt-2 space-y-2">
+            {meta.pendingIssues.map((issue) => (
+              <button
+                key={issue.target}
+                type="button"
+                className="block w-full rounded-md px-2 py-1 text-left text-xs text-muted-foreground transition hover:bg-muted hover:text-foreground"
+                onClick={() => onSelectIssue(issue)}
+              >
+                {issue.title}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <p className="mt-2 text-sm text-success">Todo listo para guardar.</p>
+        )}
+      </div>
+    </aside>
+  )
+}
+
+function InstrumentPreview({
+  completed,
+  fields,
+  highlight,
+  instrumentType,
+  onCompletedChange,
+  onFieldsChange,
+}: {
+  completed: boolean
+  fields: Record<string, string>
+  highlight?: boolean
+  instrumentType: string
+  onCompletedChange: (completed: boolean) => void
+  onFieldsChange: (fields: Record<string, string>) => void
+}) {
   const title = instrumentTitle(instrumentType)
   const [rubricCriteria, setRubricCriteria] = useState(4)
   const [rubricLevels, setRubricLevels] = useState(4)
@@ -2072,9 +2662,28 @@ function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
   const [instrumentTextSize, setInstrumentTextSize] = useState<'normal' | 'large' | 'xlarge'>('large')
   const [instrumentBold, setInstrumentBold] = useState(false)
   const [instrumentItalic, setInstrumentItalic] = useState(false)
+  const isComplete = isInstrumentComplete({
+    checklistCriteria,
+    fields,
+    instrumentType,
+    rubricCriteria,
+    rubricLevels,
+    scaleCriteria,
+    weightedCriteria,
+  })
+
+  useEffect(() => {
+    if (completed !== isComplete) {
+      onCompletedChange(isComplete)
+    }
+  }, [completed, isComplete, onCompletedChange])
+
+  function updateField(key: string, value: string) {
+    onFieldsChange({ ...fields, [key]: value })
+  }
 
   return (
-    <section className="rounded-lg border border-border bg-card p-4 shadow-sm">
+    <section className={cn('rounded-lg border border-border bg-card p-4 shadow-sm', highlight ? 'ring-2 ring-red-400 ring-offset-2 ring-offset-background' : '')}>
       <div className="flex flex-col gap-3 border-b border-border pb-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
@@ -2091,7 +2700,9 @@ function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
             onTextSizeChange={setInstrumentTextSize}
             textSize={instrumentTextSize}
           />
-          <Badge>{instrumentType ? 'Vacío' : 'Pendiente'}</Badge>
+          <Badge tone={isComplete ? 'success' : 'muted'}>
+            {instrumentType ? (isComplete ? 'Completo' : 'Pendiente') : 'Pendiente'}
+          </Badge>
         </div>
       </div>
 
@@ -2099,7 +2710,9 @@ function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
         {instrumentType === 'rubrica' ? (
           <RubricInstrument
             criteriaCount={rubricCriteria}
+            fields={fields}
             levelCount={rubricLevels}
+            onFieldChange={updateField}
             onCriteriaCountChange={setRubricCriteria}
             onLevelCountChange={setRubricLevels}
           />
@@ -2107,7 +2720,9 @@ function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
         {instrumentType === 'escala' ? (
           <ScaleInstrument
             criteriaCount={scaleCriteria}
+            fields={fields}
             levelCount={scaleLevels}
+            onFieldChange={updateField}
             onCriteriaCountChange={setScaleCriteria}
             onLevelCountChange={setScaleLevels}
           />
@@ -2115,7 +2730,9 @@ function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
         {instrumentType === 'lista-cotejo' ? (
           <ChecklistInstrument
             criteriaCount={checklistCriteria}
+            fields={fields}
             hasObservations={checklistHasObservations}
+            onFieldChange={updateField}
             onCriteriaCountChange={setChecklistCriteria}
             onHasObservationsChange={setChecklistHasObservations}
           />
@@ -2123,7 +2740,9 @@ function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
         {instrumentType === 'lista-ponderada' ? (
           <WeightedListInstrument
             criteriaCount={weightedCriteria}
+            fields={fields}
             hasPartial={weightedHasPartial}
+            onFieldChange={updateField}
             onCriteriaCountChange={setWeightedCriteria}
             onHasPartialChange={setWeightedHasPartial}
           />
@@ -2134,14 +2753,184 @@ function InstrumentPreview({ instrumentType }: { instrumentType: string }) {
   )
 }
 
+function ActivityCompletionModal({
+  deleteLabel,
+  issues,
+  onClose,
+  onDelete,
+  onSelectIssue,
+  onSaveDraft,
+}: {
+  deleteLabel: string
+  issues: ActivityCompletionIssue[]
+  onClose: () => void
+  onDelete: () => void
+  onSelectIssue: (issue: ActivityCompletionIssue) => void
+  onSaveDraft: () => void
+}) {
+  return (
+    <Modal
+      title="Actividad incompleta"
+      onClose={onClose}
+      className="max-w-[49rem] rounded-[1.35rem]"
+      hideHeader
+    >
+      <div className="space-y-5 p-7">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-start gap-4">
+            <div className="flex size-20 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-500">
+              <AlertCircle className="size-9" />
+            </div>
+            <div className="pt-2">
+              <h3 className="text-xl font-black text-foreground">Actividad incompleta</h3>
+              <p className="mt-1 text-sm font-medium text-muted-foreground">Aún hay información pendiente por completar.</p>
+              <p className="mt-2 text-sm text-muted-foreground">Revisa los siguientes elementos para poder guardar la actividad.</p>
+            </div>
+          </div>
+          <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}>
+            <X className="size-5" />
+          </Button>
+        </div>
+
+        <div className="overflow-hidden rounded-xl border border-border bg-card">
+          <div className="border-b border-border px-5 py-3">
+            <p className="font-black text-foreground">Elementos pendientes ({issues.length})</p>
+          </div>
+          {issues.map((issue) => (
+            <ActivityCompletionIssueButton key={issue.target} issue={issue} onSelectIssue={onSelectIssue} />
+          ))}
+        </div>
+
+        <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_13rem]">
+          <div className="flex items-center gap-4 rounded-xl border border-blue-200 bg-blue-50 px-5 py-4 text-primary">
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-blue-600 shadow-sm">
+              <Lightbulb className="size-6" />
+            </div>
+            <div>
+              <p className="font-black">Puedes guardar esta actividad como borrador</p>
+              <p className="mt-1 text-sm text-foreground">Se guardará en la sección "Borradores" y podrás editarla más tarde.</p>
+            </div>
+          </div>
+          <Button variant="destructive" className="h-full min-h-16 justify-center" onClick={onDelete}>
+            <Trash2 className="size-5" />
+            {deleteLabel}
+          </Button>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Button variant="outline" className="h-16 justify-start gap-4 px-5 text-left" onClick={onSaveDraft}>
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-muted text-primary">
+              <ClipboardList className="size-5" />
+            </span>
+            <span>
+              <span className="block font-black">Continuar más tarde</span>
+              <span className="block text-xs font-medium text-muted-foreground">Guardar como borrador</span>
+            </span>
+          </Button>
+          <Button className="h-16 justify-center gap-4 px-5" onClick={onClose}>
+            <ArrowRight className="size-6" />
+            <span>
+              <span className="block font-black">Volver a la actividad</span>
+              <span className="block text-xs font-medium text-primary-foreground/80">Seguir editando</span>
+            </span>
+          </Button>
+        </div>
+      </div>
+    </Modal>
+  )
+}
+
+function ActivityCompletionIssueButton({
+  issue,
+  onSelectIssue,
+}: {
+  issue: ActivityCompletionIssue
+  onSelectIssue: (issue: ActivityCompletionIssue) => void
+}) {
+  const visual = completionIssueVisual(issue.target)
+  return (
+    <button
+      type="button"
+      className="flex w-full items-center gap-4 border-b border-border px-5 py-4 text-left transition last:border-b-0 hover:bg-muted/35"
+      onClick={() => onSelectIssue(issue)}
+    >
+      <span className={cn('flex size-12 shrink-0 items-center justify-center rounded-xl', visual.iconBox)}>
+        {visual.icon}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block font-black text-foreground">{issue.title}</span>
+        <span className="mt-1 block text-sm text-muted-foreground">{issue.detail}</span>
+      </span>
+      <span className={cn('ml-3 flex shrink-0 items-center gap-2 text-sm font-black', visual.actionText)}>
+        Ir completar
+        <ArrowRight className="size-4" />
+      </span>
+    </button>
+  )
+}
+
+function completionIssueVisual(target: ActivityCompletionTarget) {
+  if (target === 'date') {
+    return {
+      actionText: 'text-rose-500',
+      icon: <CalendarDays className="size-6" />,
+      iconBox: 'bg-rose-100 text-rose-500',
+    }
+  }
+  if (target === 'activityType') {
+    return {
+      actionText: 'text-violet-500',
+      icon: <Users className="size-6" />,
+      iconBox: 'bg-violet-100 text-violet-500',
+    }
+  }
+  if (target === 'planningMoment') {
+    return {
+      actionText: 'text-orange-500',
+      icon: <BookOpen className="size-6" />,
+      iconBox: 'bg-orange-100 text-orange-500',
+    }
+  }
+  if (target === 'description') {
+    return {
+      actionText: 'text-emerald-600',
+      icon: <FileText className="size-6" />,
+      iconBox: 'bg-emerald-100 text-emerald-600',
+    }
+  }
+  if (target === 'instrumentType' || target === 'instrumentBody') {
+    return {
+      actionText: 'text-blue-600',
+      icon: <ClipboardList className="size-6" />,
+      iconBox: 'bg-blue-100 text-blue-600',
+    }
+  }
+  if (target === 'maxScore') {
+    return {
+      actionText: 'text-amber-600',
+      icon: <Target className="size-6" />,
+      iconBox: 'bg-amber-100 text-amber-600',
+    }
+  }
+  return {
+    actionText: 'text-primary',
+    icon: <FileText className="size-6" />,
+    iconBox: 'bg-primary/10 text-primary',
+  }
+}
+
 function RubricInstrument({
   criteriaCount,
+  fields,
   levelCount,
+  onFieldChange,
   onCriteriaCountChange,
   onLevelCountChange,
 }: {
   criteriaCount: number
+  fields: Record<string, string>
   levelCount: number
+  onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
   onLevelCountChange: (value: number) => void
 }) {
@@ -2169,11 +2958,22 @@ function RubricInstrument({
           </tr>
         </thead>
         <tbody>
-          {Array.from({ length: criteriaCount }, (_, index) => `Criterio ${index + 1}`).map((criterion) => (
+          {Array.from({ length: criteriaCount }, (_, index) => ({ criterion: `Criterio ${index + 1}`, index })).map(({ criterion, index }) => (
             <tr key={criterion}>
-              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={criterion} /></td>
+              <td className="border border-border p-1.5">
+                <InstrumentTextarea
+                  placeholder={criterion}
+                  value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''}
+                  onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)}
+                />
+              </td>
               {levels.map((level) => (
-                <td key={level.score} className="border border-border p-1.5"><InstrumentTextarea /></td>
+                <td key={level.score} className="border border-border p-1.5">
+                  <InstrumentTextarea
+                    value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''}
+                    onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)}
+                  />
+                </td>
               ))}
               <td className="border border-border p-1.5"><InstrumentInput placeholder={`__/${levelCount}`} /></td>
             </tr>
@@ -2190,12 +2990,16 @@ function RubricInstrument({
 
 function ScaleInstrument({
   criteriaCount,
+  fields,
   levelCount,
+  onFieldChange,
   onCriteriaCountChange,
   onLevelCountChange,
 }: {
   criteriaCount: number
+  fields: Record<string, string>
   levelCount: number
+  onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
   onLevelCountChange: (value: number) => void
 }) {
@@ -2218,9 +3022,15 @@ function ScaleInstrument({
           </tr>
         </thead>
         <tbody>
-          {Array.from({ length: criteriaCount }, (_, index) => `Criterio ${index + 1}`).map((criterion) => (
+          {Array.from({ length: criteriaCount }, (_, index) => ({ criterion: `Criterio ${index + 1}`, index })).map(({ criterion, index }) => (
             <tr key={criterion}>
-              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={criterion} /></td>
+              <td className="border border-border p-1.5">
+                <InstrumentTextarea
+                  placeholder={criterion}
+                  value={fields[instrumentFieldKey('escala', 'criterion', index)] ?? ''}
+                  onChange={(value) => onFieldChange(instrumentFieldKey('escala', 'criterion', index), value)}
+                />
+              </td>
               {levels.map((value) => (
                 <td key={value} className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               ))}
@@ -2235,12 +3045,16 @@ function ScaleInstrument({
 
 function ChecklistInstrument({
   criteriaCount,
+  fields,
   hasObservations,
+  onFieldChange,
   onCriteriaCountChange,
   onHasObservationsChange,
 }: {
   criteriaCount: number
+  fields: Record<string, string>
   hasObservations: boolean
+  onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
   onHasObservationsChange: (value: boolean) => void
 }) {
@@ -2262,7 +3076,13 @@ function ChecklistInstrument({
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
             <tr key={index}>
-              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={`${index + 1}. Criterio`} /></td>
+              <td className="border border-border p-1.5">
+                <InstrumentTextarea
+                  placeholder={`${index + 1}. Criterio`}
+                  value={fields[instrumentFieldKey('lista-cotejo', 'criterion', index)] ?? ''}
+                  onChange={(value) => onFieldChange(instrumentFieldKey('lista-cotejo', 'criterion', index), value)}
+                />
+              </td>
               <td className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               <td className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               {hasObservations ? <td className="border border-border p-1.5"><InstrumentTextarea /></td> : null}
@@ -2276,12 +3096,16 @@ function ChecklistInstrument({
 
 function WeightedListInstrument({
   criteriaCount,
+  fields,
   hasPartial,
+  onFieldChange,
   onCriteriaCountChange,
   onHasPartialChange,
 }: {
   criteriaCount: number
+  fields: Record<string, string>
   hasPartial: boolean
+  onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
   onHasPartialChange: (value: boolean) => void
 }) {
@@ -2307,9 +3131,26 @@ function WeightedListInstrument({
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
             <tr key={index}>
-              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={`Criterio ${index + 1}`} /></td>
-              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
-              <td className="border border-border p-1.5"><InstrumentInput placeholder="%" /></td>
+              <td className="border border-border p-1.5">
+                <InstrumentTextarea
+                  placeholder={`Criterio ${index + 1}`}
+                  value={fields[instrumentFieldKey('lista-ponderada', 'criterion', index)] ?? ''}
+                  onChange={(value) => onFieldChange(instrumentFieldKey('lista-ponderada', 'criterion', index), value)}
+                />
+              </td>
+              <td className="border border-border p-1.5">
+                <InstrumentTextarea
+                  value={fields[instrumentFieldKey('lista-ponderada', 'indicator', index)] ?? ''}
+                  onChange={(value) => onFieldChange(instrumentFieldKey('lista-ponderada', 'indicator', index), value)}
+                />
+              </td>
+              <td className="border border-border p-1.5">
+                <InstrumentInput
+                  placeholder="%"
+                  value={fields[instrumentFieldKey('lista-ponderada', 'weight', index)] ?? ''}
+                  onChange={(value) => onFieldChange(instrumentFieldKey('lista-ponderada', 'weight', index), value)}
+                />
+              </td>
               {['si', ...(hasPartial ? ['parcial'] : []), 'no'].map((value) => (
                 <td key={value} className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               ))}
@@ -2486,19 +3327,41 @@ function InstrumentTable({ children }: { children: ReactNode }) {
   )
 }
 
-function InstrumentInput({ placeholder = '' }: { placeholder?: string }) {
+function InstrumentInput({
+  onChange,
+  placeholder = '',
+  value,
+}: {
+  onChange?: (value: string) => void
+  placeholder?: string
+  value?: string
+}) {
   return (
     <input
       className="h-8 w-full rounded-md border border-input bg-card px-2 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+      value={value}
+      onChange={(event) => onChange?.(event.target.value)}
       placeholder={placeholder}
     />
   )
 }
 
-function InstrumentTextarea({ className = '', placeholder = '' }: { className?: string; placeholder?: string }) {
+function InstrumentTextarea({
+  className = '',
+  onChange,
+  placeholder = '',
+  value,
+}: {
+  className?: string
+  onChange?: (value: string) => void
+  placeholder?: string
+  value?: string
+}) {
   return (
     <textarea
       className={cn('h-14 w-full resize-none rounded-md border border-input bg-card px-2 py-1.5 text-xs leading-5 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20', className)}
+      value={value}
+      onChange={(event) => onChange?.(event.target.value)}
       placeholder={placeholder}
     />
   )
@@ -2879,11 +3742,176 @@ function rubricLevelName(index: number) {
   return names[index] ?? `Nivel ${index + 1}`
 }
 
+function buildActivityDraftMetas(drafts: ActivityDraftsByBlock): ActivityDraftMeta[] {
+  return competencyBlocks.flatMap((block) =>
+    (drafts[block.id] ?? []).map((draft) => buildActivityDraftMeta(draft, block.id)),
+  )
+}
+
+function buildActivityDraftMeta(draft: ActivityDraft, blockId: CompetencyBlockId): ActivityDraftMeta {
+  const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
+  const pendingIssues = validateActivityCompletion(draft)
+  const requiredFields = 8
+  const untouchedDraft = !isMeaningfulActivityDraft(draft)
+  const completed = Math.max(0, requiredFields - pendingIssues.length)
+
+  return {
+    block,
+    blockId,
+    completion: untouchedDraft ? 0 : Math.round((completed / requiredFields) * 100),
+    draft,
+    missingSummary: draftMissingSummary(pendingIssues),
+    pendingIssues,
+    updatedAt: draft.updatedAt ?? new Date().toISOString(),
+  }
+}
+
+function draftMissingSummary(issues: ActivityCompletionIssue[]) {
+  if (issues.length === 0) return 'Lista para guardar como actividad'
+  const instrumentIssue = issues.some((issue) => issue.target === 'instrumentBody' || issue.target === 'instrumentType')
+  const descriptionIssue = issues.some((issue) => issue.target === 'description')
+  if (instrumentIssue && descriptionIssue) return 'Faltan descripcion e instrumento'
+  if (instrumentIssue) return 'Falta completar el instrumento'
+  if (descriptionIssue) return 'Falta descripcion de la actividad'
+  return `Faltan ${issues.length} campos por completar`
+}
+
+function sortDraftMetas(a: ActivityDraftMeta, b: ActivityDraftMeta, sortBy: string) {
+  if (sortBy === 'updated-asc') return new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime()
+  if (sortBy === 'name-asc') return (a.draft.name || 'Actividad sin nombre').localeCompare(b.draft.name || 'Actividad sin nombre')
+  if (sortBy === 'completion-desc') return b.completion - a.completion
+  if (sortBy === 'completion-asc') return a.completion - b.completion
+  return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+}
+
+function formatDraftDate(value: string) {
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return '-'
+  const today = new Date()
+  const sameDay = date.toDateString() === today.toDateString()
+  const time = date.toLocaleTimeString('es-DO', { hour: 'numeric', minute: '2-digit' })
+  if (sameDay) return `Hoy, ${time}`
+  return date.toLocaleDateString('es-DO', { day: '2-digit', month: '2-digit', year: 'numeric' })
+}
+
+function ProgressBar({
+  className,
+  indicatorClassName,
+  indicatorColor,
+  value,
+}: {
+  className?: string
+  indicatorClassName?: string
+  indicatorColor?: string
+  value: number
+}) {
+  return (
+    <div className={cn('h-2 w-full overflow-hidden rounded-full bg-muted', className)}>
+      <div
+        className={cn('h-full rounded-full bg-primary transition-all', indicatorClassName)}
+        style={{
+          backgroundColor: indicatorColor,
+          width: `${Math.min(100, Math.max(0, value))}%`,
+        }}
+      />
+    </div>
+  )
+}
+
+function instrumentFieldKey(instrumentType: string, field: string, ...parts: Array<number | string>) {
+  return [instrumentType, field, ...parts].join(':')
+}
+
+function hasInstrumentField(fields: Record<string, string>, key: string) {
+  return Boolean(fields[key]?.trim())
+}
+
+function isInstrumentComplete(input: {
+  checklistCriteria: number
+  fields: Record<string, string>
+  instrumentType: string
+  rubricCriteria: number
+  rubricLevels: number
+  scaleCriteria: number
+  weightedCriteria: number
+}) {
+  const { checklistCriteria, fields, instrumentType, rubricCriteria, rubricLevels, scaleCriteria, weightedCriteria } = input
+  if (!instrumentType) return false
+
+  if (instrumentType === 'rubrica') {
+    for (let criterionIndex = 0; criterionIndex < rubricCriteria; criterionIndex += 1) {
+      if (!hasInstrumentField(fields, instrumentFieldKey('rubrica', 'criterion', criterionIndex))) return false
+      for (let levelScore = 1; levelScore <= rubricLevels; levelScore += 1) {
+        if (!hasInstrumentField(fields, instrumentFieldKey('rubrica', 'descriptor', criterionIndex, levelScore))) return false
+      }
+    }
+    return true
+  }
+
+  if (instrumentType === 'escala') {
+    return Array.from({ length: scaleCriteria }, (_, index) =>
+      hasInstrumentField(fields, instrumentFieldKey('escala', 'criterion', index)),
+    ).every(Boolean)
+  }
+
+  if (instrumentType === 'lista-cotejo') {
+    return Array.from({ length: checklistCriteria }, (_, index) =>
+      hasInstrumentField(fields, instrumentFieldKey('lista-cotejo', 'criterion', index)),
+    ).every(Boolean)
+  }
+
+  if (instrumentType === 'lista-ponderada') {
+    for (let index = 0; index < weightedCriteria; index += 1) {
+      if (!hasInstrumentField(fields, instrumentFieldKey('lista-ponderada', 'criterion', index))) return false
+      if (!hasInstrumentField(fields, instrumentFieldKey('lista-ponderada', 'indicator', index))) return false
+      if (!hasInstrumentField(fields, instrumentFieldKey('lista-ponderada', 'weight', index))) return false
+    }
+    return true
+  }
+
+  return false
+}
+
+function validateActivityCompletion(draft: ActivityDraft): ActivityCompletionIssue[] {
+  const issues: ActivityCompletionIssue[] = []
+  const maxScore = Number(draft.maxScore)
+
+  if (!draft.name.trim()) {
+    issues.push({ detail: 'Escribe un nombre claro para identificar la actividad.', tab: 'activity', target: 'name', title: 'Nombre de la actividad' })
+  }
+  if (Number.isNaN(maxScore) || maxScore <= 0) {
+    issues.push({ detail: 'Indica un valor mayor que cero.', tab: 'activity', target: 'maxScore', title: 'Valor de la actividad' })
+  }
+  if (!draft.date) {
+    issues.push({ detail: 'Selecciona la fecha en que se realizara.', tab: 'activity', target: 'date', title: 'Fecha de realizacion' })
+  }
+  if (!draft.evaluationTechnique) {
+    issues.push({ detail: 'Selecciona la tecnica que usaras para evaluar.', tab: 'activity', target: 'evaluationTechnique', title: 'Tecnica de evaluacion' })
+  }
+  if (!draft.activityType) {
+    issues.push({ detail: 'Indica si la actividad es grupal o individual.', tab: 'activity', target: 'activityType', title: 'Tipo de actividad' })
+  }
+  if (!draft.planningMoment) {
+    issues.push({ detail: 'Selecciona el momento en que se desarrollara la actividad.', tab: 'activity', target: 'planningMoment', title: 'Momento de la clase' })
+  }
+  if (!draft.instrumentType) {
+    issues.push({ detail: 'Selecciona el instrumento que acompana esta actividad.', tab: 'activity', target: 'instrumentType', title: 'Instrumento de evaluacion' })
+  } else if (!draft.instrumentCompleted) {
+    issues.push({ detail: 'Completa los campos requeridos del instrumento seleccionado.', tab: 'instrument', target: 'instrumentBody', title: 'Instrumento incompleto' })
+  }
+  if (!draft.description.trim()) {
+    issues.push({ detail: 'Describe que haran los estudiantes y que evidencia entregaran.', tab: 'activity', target: 'description', title: 'Descripcion de la actividad' })
+  }
+
+  return issues
+}
+
 function newActivityDraft(blockId: CompetencyBlockId): ActivityDraft {
   return {
     ...emptyActivityDraft,
     draftId: createDraftId(),
     competencyBlockId: blockId,
+    updatedAt: new Date().toISOString(),
   }
 }
 
@@ -2903,6 +3931,11 @@ function normalizeStoredActivityDrafts(value: unknown): ActivityDraftsByBlock {
         ...draft,
         draftId: typeof draft.draftId === 'string' ? draft.draftId : createDraftId(),
         competencyBlockId: block.id,
+        instrumentCompleted: Boolean(draft.instrumentCompleted),
+        instrumentFields: draft.instrumentFields && typeof draft.instrumentFields === 'object' && !Array.isArray(draft.instrumentFields)
+          ? draft.instrumentFields as Record<string, string>
+          : {},
+        updatedAt: typeof draft.updatedAt === 'string' ? draft.updatedAt : new Date().toISOString(),
       }))
       .filter(isMeaningfulActivityDraft)
 
@@ -2920,6 +3953,8 @@ function isMeaningfulActivityDraft(draft: ActivityDraft) {
     draft.date ||
     draft.description.trim() ||
     draft.instrumentType ||
+    draft.instrumentCompleted ||
+    Object.values(draft.instrumentFields).some((value) => value.trim()) ||
     draft.evaluationTechnique ||
     draft.maxScore !== emptyActivityDraft.maxScore ||
     draft.activityType !== emptyActivityDraft.activityType ||

@@ -21,6 +21,7 @@ export const schoolYearMonths = [
 ]
 
 export const markCycle: MonthlyAttendanceMark[] = [null, 'P', 'A', 'E', 'R']
+export const maxMonthlyClassPositions = 21
 
 export const markLabels: Record<Exclude<MonthlyAttendanceMark, null>, string> = {
   P: 'Presente',
@@ -61,7 +62,7 @@ export function getWorkedDaysForMonth(input: {
     }
   }
 
-  return days
+  return days.slice(0, maxMonthlyClassPositions)
 }
 
 export function statusToMark(status: AttendanceStatus | null, notes?: string | null): MonthlyAttendanceMark {

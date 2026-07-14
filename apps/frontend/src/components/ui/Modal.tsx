@@ -20,6 +20,8 @@ type ModalProps = {
   onClose: () => void
   /** Clases adicionales para el contenedor del diálogo. */
   className?: string
+  /** Oculta el encabezado estandar para permitir una cabecera personalizada. */
+  hideHeader?: boolean
 }
 
 /**
@@ -31,7 +33,7 @@ type ModalProps = {
  * @param props.children - Contenido del cuerpo.
  * @param props.onClose - Callback de cierre.
  */
-export function Modal({ title, description, children, onClose, className }: ModalProps) {
+export function Modal({ title, description, children, onClose, className, hideHeader = false }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
 
@@ -44,17 +46,19 @@ export function Modal({ title, description, children, onClose, className }: Moda
           className,
         )}
       >
-        <div className="flex shrink-0 items-start justify-between border-b border-border px-5 py-4">
-          <div>
-            <h3 className="text-base font-semibold text-foreground">{title}</h3>
-            {description ? (
-              <p className="mt-1 text-sm text-muted-foreground">{description}</p>
-            ) : null}
+        {!hideHeader ? (
+          <div className="flex shrink-0 items-start justify-between border-b border-border px-5 py-4">
+            <div>
+              <h3 className="text-base font-semibold text-foreground">{title}</h3>
+              {description ? (
+                <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+              ) : null}
+            </div>
+            <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}>
+              <X className="size-5" />
+            </Button>
           </div>
-          <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}>
-            <X className="size-5" />
-          </Button>
-        </div>
+        ) : null}
         <div className="overflow-y-auto">
           {children}
         </div>
