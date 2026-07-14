@@ -27,7 +27,9 @@
   Eye,
   Download,
   Dices,
+  DraftingCompass,
   Drama,
+  Drum,
   Dumbbell,
   Files,
   FileText,
@@ -37,6 +39,8 @@
   Globe,
   GraduationCap,
   Glasses,
+  Goal,
+  Grid3X3,
   Guitar,
   Hand,
   Hash,
@@ -52,6 +56,7 @@
   Map as MapIcon,
   Microscope,
   Medal,
+  Megaphone,
   MessageSquare,
   Mic,
   Music,
@@ -83,13 +88,16 @@
   Shield,
   Target,
   Tags,
+  Tablet,
   TestTube,
   Thermometer,
   Timer,
+  Triangle,
   Monitor,
   Ruler,
   Shapes,
   Video,
+  Volume2,
   Trash2,
   Trophy,
   TrendingUp,
@@ -4836,17 +4844,18 @@ function resourceCategoryIcon(categoryId: string) {
 function resourceIcon(resource: string) {
   const value = resource.toLocaleLowerCase()
   const has = (...terms: string[]) => terms.some((term) => value.includes(term))
-  const iconClass = 'size-4 text-blue-600'
+  const iconClass = cn('size-4', resourceIconColor(resource))
 
   if (has('computadora', 'portátil', 'software educativo', 'simulador virtual')) return <Laptop className={iconClass} />
-  if (has('tableta', 'dispositivo móvil', 'celular')) return <Smartphone className={iconClass} />
+  if (has('tableta')) return <Tablet className={iconClass} />
+  if (has('dispositivo móvil', 'celular')) return <Smartphone className={iconClass} />
   if (has('proyector')) return <Projector className={iconClass} />
   if (has('powerpoint', 'diapositiva', 'pizarra')) return <Presentation className={iconClass} />
   if (has('pantalla', 'televisión')) return <Monitor className={iconClass} />
   if (has('internet', 'wifi', 'globo terráqueo')) return <Globe className={iconClass} />
   if (has('webcam', 'cámara', 'trípode')) return <Camera className={iconClass} />
   if (has('micrófono')) return <Mic className={iconClass} />
-  if (has('altavoz')) return <Speaker className={iconClass} />
+  if (has('altavoz', 'bocina')) return <Volume2 className={iconClass} />
   if (has('audífono')) return <Headphones className={iconClass} />
   if (has('impresora', 'material impreso')) return <Printer className={iconClass} />
   if (has('escáner')) return <ScanLine className={iconClass} />
@@ -4856,7 +4865,9 @@ function resourceIcon(resource: string) {
   if (has('video')) return <Video className={iconClass} />
 
   if (has('calculadora')) return <Calculator className={iconClass} />
-  if (has('compás', 'transportador', 'escuadra', 'cartabón', 'cinta métrica', 'regla')) return <Ruler className={iconClass} />
+  if (has('compás')) return <DraftingCompass className={iconClass} />
+  if (has('transportador', 'escuadra', 'cartabón')) return <Triangle className={iconClass} />
+  if (has('cinta métrica', 'regla')) return <Ruler className={iconClass} />
   if (has('figuras geométricas', 'formas clasificables', 'fracciones circulares')) return <Shapes className={iconClass} />
   if (has('cuerpos geométricos', 'maqueta geográfica', 'caja de arena')) return <Box className={iconClass} />
   if (has('ábaco', 'fichas de conteo', 'números móviles')) return <Hash className={iconClass} />
@@ -4905,14 +4916,19 @@ function resourceIcon(resource: string) {
 
   if (has('guitarra')) return <Guitar className={iconClass} />
   if (has('teclado musical', 'teclado adaptado')) return <Keyboard className={iconClass} />
-  if (has('flauta', 'tambor', 'maracas', 'pandereta', 'xilófono', 'güira', 'partituras', 'atril', 'instrumentos de percusión')) return <Music className={iconClass} />
+  if (has('tambor', 'pandereta', 'instrumentos de percusión')) return <Drum className={iconClass} />
+  if (has('flauta', 'maracas', 'xilófono', 'güira', 'partituras', 'atril')) return <Music className={iconClass} />
   if (has('luces escénicas', 'mesa de luz')) return <Lightbulb className={iconClass} />
 
   if (has('balón', 'pelotas', 'aros', 'discos voladores', 'pelota sensorial')) return <Circle className={iconClass} />
-  if (has('conos', 'obstáculos', 'escalera de agilidad', 'colchonetas')) return <Dumbbell className={iconClass} />
-  if (has('silbato')) return <AudioLines className={iconClass} />
-  if (has('red deportiva', 'portería')) return <Target className={iconClass} />
-  if (has('raquetas', 'bates')) return <Trophy className={iconClass} />
+  if (has('conos')) return <Triangle className={iconClass} />
+  if (has('colchonetas')) return <Layers className={iconClass} />
+  if (has('obstáculos')) return <Target className={iconClass} />
+  if (has('escalera de agilidad')) return <Ruler className={iconClass} />
+  if (has('silbato')) return <Megaphone className={iconClass} />
+  if (has('red deportiva')) return <Grid3X3 className={iconClass} />
+  if (has('portería')) return <Goal className={iconClass} />
+  if (has('raquetas', 'bates')) return <Dumbbell className={iconClass} />
   if (has('testigos de relevo')) return <Medal className={iconClass} />
   if (has('paracaídas recreativo', 'sacos para carrera')) return <CircleDot className={iconClass} />
 
@@ -4927,6 +4943,21 @@ function resourceIcon(resource: string) {
   if (has('libro')) return <BookOpen className={iconClass} />
   if (has('hojas', 'papel', 'cartulina', 'foami')) return <Files className={iconClass} />
   return <FileText className={iconClass} />
+}
+
+function resourceIconColor(resource: string) {
+  const colors = [
+    'text-blue-600',
+    'text-violet-600',
+    'text-emerald-600',
+    'text-amber-600',
+    'text-rose-600',
+    'text-cyan-600',
+    'text-orange-600',
+    'text-fuchsia-600',
+  ]
+  const hash = [...resource].reduce((total, character) => total + character.codePointAt(0)!, 0)
+  return colors[hash % colors.length]
 }
 
 const rubricCriteria = [
