@@ -4,6 +4,7 @@ import type {
 } from '@/modules/attendance/types'
 import {
   formatPercentage,
+  maxMonthlyClassPositions,
   markLabels,
 } from '@/modules/attendance/utils/monthlyAttendance'
 import { cn } from '@/utils/cn'
@@ -41,18 +42,15 @@ export function AttendanceGrid({
   saving,
   onToggle,
 }: AttendanceGridProps) {
+  const positions = Array.from({ length: maxMonthlyClassPositions }, (_, index) => ({
+    position: index + 1,
+    workedDay: workedDays[index] ?? null,
+  }))
+
   if (rows.length === 0) {
     return (
       <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-border bg-card p-6 text-center text-sm text-muted-foreground">
         Este curso todavia no tiene estudiantes matriculados.
-      </div>
-    )
-  }
-
-  if (workedDays.length === 0) {
-    return (
-      <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-border bg-card p-6 text-center text-sm text-muted-foreground">
-        No hay dias trabajados registrados para este curso en el mes seleccionado.
       </div>
     )
   }
@@ -62,43 +60,79 @@ export function AttendanceGrid({
       <div className="flex flex-col gap-3 border-b border-border bg-muted/25 px-5 py-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-xs text-muted-foreground">
-            Haz clic en una celda para cambiar el estado.
+            Posiciones 1-21 arriba; debajo aparecen las fechas reales de clase. Haz clic en una celda activa para cambiar el estado.
           </p>
         </div>
         <AttendanceLegend />
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full border-separate border-spacing-0 text-sm">
+      <div className="max-w-full overflow-x-auto">
+        <table className="min-w-[76rem] border-separate border-spacing-0 text-sm">
           <thead>
             <tr>
-              <th className="sticky left-0 z-20 min-w-[15rem] border-b border-r border-border bg-card px-5 py-3 text-left text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
+              <th rowSpan={3} className="sticky left-0 z-30 min-w-14 border-b border-r border-border bg-card px-3 py-3 text-center text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                #
+              </th>
+              <th rowSpan={3} className="sticky left-14 z-30 min-w-[14rem] border-b border-r border-border bg-card px-5 py-3 text-left text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
                 Estudiante
               </th>
-              {workedDays.map((day) => (
-                <th
-                  key={day.date}
-                  title={formatShortDate(day.date)}
-                  className="w-12 border-b border-border bg-card px-1 py-3 text-center text-xs font-bold text-muted-foreground"
-                >
-                  {day.day}
-                </th>
-              ))}
-              <th className="w-16 border-b border-border bg-card px-2 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
-                Total
+              <th colSpan={maxMonthlyClassPositions} className="border-b border-border bg-card px-2 py-3 text-center text-[11px] font-black uppercase tracking-[0.14em] text-muted-foreground">
+                Dias posibles del mes (Max. {maxMonthlyClassPositions} dias)
               </th>
-              <th className="w-14 border-b border-border bg-card px-2 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
+              <th rowSpan={3} className="sticky right-14 z-30 w-14 border-b border-l border-border bg-card px-2 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
+                T
+              </th>
+              <th rowSpan={3} className="sticky right-0 z-30 w-14 border-b border-l border-border bg-card px-2 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
                 %
               </th>
+            </tr>
+            <tr>
+              {positions.map(({ position, workedDay }) => (
+                <th
+                  key={`position-${position}`}
+                  title={workedDay ? formatShortDate(workedDay.date) : 'Sin clase programada'}
+                  className={cn(
+                    'w-11 border-b border-border px-1 py-2 text-center text-xs font-bold',
+                    workedDay ? 'bg-card text-primary' : 'bg-muted/25 text-muted-foreground/45',
+                  )}
+                >
+                  {position}
+                </th>
+              ))}
+            </tr>
+            <tr>
+              {positions.map(({ position, workedDay }) => (
+                <th
+                  key={`date-${position}`}
+                  title={workedDay ? formatShortDate(workedDay.date) : 'Sin clase programada'}
+                  className={cn(
+                    'w-11 border-b border-border px-1 py-2 text-center text-xs font-black',
+                    workedDay ? 'bg-card text-primary' : 'bg-muted/25 text-muted-foreground/35',
+                  )}
+                >
+                  {workedDay?.day ?? ''}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
             {rows.map((row) => (
               <tr key={row.enrollmentId} className="group">
-                <td className="sticky left-0 z-10 border-b border-r border-border bg-card px-5 py-3 font-semibold text-foreground group-hover:bg-muted/15">
+                <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-3 py-3 text-center font-semibold text-muted-foreground group-hover:bg-muted/15">
+                  {row.listNumber}
+                </td>
+                <td className="sticky left-14 z-20 border-b border-r border-border bg-card px-5 py-3 font-semibold text-foreground group-hover:bg-muted/15">
                   {row.lastName}, {row.firstName}
                 </td>
-                {workedDays.map((day) => {
+                {positions.map(({ position, workedDay }) => {
+                  if (!workedDay) {
+                    return (
+                      <td key={`empty-${position}`} className="border-b border-border bg-muted/15 px-1 py-2 text-center">
+                        <span className="mx-auto block size-8 rounded-xl border border-dashed border-border bg-muted/20" />
+                      </td>
+                    )
+                  }
+                  const day = workedDay
                   const cell = row.cells[day.date]
                   const mark = cell?.mark ?? null
                   return (
@@ -118,10 +152,10 @@ export function AttendanceGrid({
                     </td>
                   )
                 })}
-                <td className="border-b border-border px-2 py-3 text-center font-bold text-primary">
+                <td className="sticky right-14 z-10 border-b border-l border-border bg-card px-2 py-3 text-center font-bold text-primary group-hover:bg-muted/15">
                   {row.presentTotal}
                 </td>
-                <td className="border-b border-border px-2 py-3 text-center font-bold text-primary">
+                <td className="sticky right-0 z-10 border-b border-l border-border bg-card px-2 py-3 text-center font-bold text-primary group-hover:bg-muted/15">
                   {formatPercentage(row.attendancePercentage)}
                 </td>
               </tr>
@@ -134,19 +168,20 @@ export function AttendanceGrid({
 }
 
 function AttendanceLegend() {
-  const items: Array<{ mark: Exclude<MonthlyAttendanceMark, null>; label: string }> = [
+  const items: Array<{ mark: MonthlyAttendanceMark; label: string }> = [
     { mark: 'P', label: 'Presente' },
     { mark: 'A', label: 'Ausente' },
     { mark: 'E', label: 'Excusa' },
     { mark: 'R', label: 'Retirado' },
+    { mark: null, label: 'Vacio' },
   ]
 
   return (
     <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-muted-foreground">
       {items.map((item) => (
-        <span key={item.mark} className="inline-flex items-center gap-1.5">
-          <span className={cn('flex size-6 items-center justify-center rounded-full text-[11px] font-extrabold', markStyles[item.mark])}>
-            {item.mark}
+        <span key={item.mark ?? 'empty'} className="inline-flex items-center gap-1.5">
+          <span className={cn('flex size-6 items-center justify-center rounded-full text-[11px] font-extrabold', item.mark ? markStyles[item.mark] : 'bg-muted text-muted-foreground')}>
+            {item.mark ?? ''}
           </span>
           {item.label}
         </span>

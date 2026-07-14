@@ -107,7 +107,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                 title={isExpanded ? item.label : undefined}
                 className={({ isActive }) =>
                   cn(
-                    'sidebar-nav-item group/nav relative flex min-h-11 items-center gap-3 rounded-xl text-sm font-semibold transition-colors',
+                    'sidebar-nav-item group/nav relative flex min-h-11 items-center gap-3 rounded-xl text-sm font-semibold',
                     isExpanded
                       ? 'px-4'
                       : 'px-4 lg:justify-center lg:gap-0 lg:px-3',
@@ -121,7 +121,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                   <>
                     <span
                       className={cn(
-                        'flex size-8 shrink-0 items-center justify-center rounded-lg',
+                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg',
                         isActive ? 'bg-white/18 text-white' : iconColor,
                       )}
                     >

@@ -1,4 +1,4 @@
-import { AlertCircle, RefreshCw } from 'lucide-react'
+import { AlertCircle, CalendarCheck, RefreshCw } from 'lucide-react'
 import { useMemo } from 'react'
 
 import { Button } from '@/components/ui/Button'
@@ -7,6 +7,8 @@ import { AttendanceGrid } from '@/modules/attendance/components/AttendanceGrid'
 import { AttendanceSummary } from '@/modules/attendance/components/AttendanceSummary'
 import { useAttendance } from '@/modules/attendance/hooks/useAttendance'
 import {
+  getCalendarYearForSchoolMonth,
+  maxMonthlyClassPositions,
   schoolYearMonths,
 } from '@/modules/attendance/utils/monthlyAttendance'
 import type { EnrollmentCourse } from '@/modules/students/types'
@@ -34,6 +36,8 @@ export function AttendancePage() {
     refresh,
   } = useAttendance()
   const groupedCourses = useMemo(() => groupCoursesForSelect(courses), [courses])
+  const selectedMonthInfo = schoolYearMonths.find((month) => month.value === selectedMonth) ?? schoolYearMonths[0]
+  const selectedYear = getCalendarYearForSchoolMonth(selectedMonth, selectedCourse?.schoolYearName)
 
   return (
     <section className="w-full min-w-0">
@@ -98,6 +102,7 @@ export function AttendancePage() {
         </div>
 
         {selectedCourse ? (
+          <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem]">
           <div className="rounded-2xl bg-primary px-6 py-5 text-primary-foreground shadow-md">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/70">
               Curso seleccionado
@@ -109,9 +114,22 @@ export function AttendancePage() {
               Año escolar {selectedCourse.schoolYearName || 'activo'}
             </p>
           </div>
+          <div className="flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4 shadow-sm">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <CalendarCheck className="size-5" />
+            </span>
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                Mes actual
+              </p>
+              <p className="mt-1 text-xl font-black text-primary">{selectedMonthInfo.label}</p>
+              <p className="text-sm font-semibold text-muted-foreground">{selectedYear}</p>
+            </div>
+          </div>
+          </div>
         ) : null}
 
-        <AttendanceSummary stats={monthlyStats} loading={loading} />
+        <AttendanceSummary stats={monthlyStats} loading={loading} maxWorkedDays={maxMonthlyClassPositions} />
 
         {error ? (
           <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
@@ -142,6 +160,7 @@ export function AttendancePage() {
               <span>A = Ausente</span>
               <span>E = Excusa</span>
               <span>R = Retirado</span>
+              <span>Vacio = Sin registro</span>
             </div>
           </div>
           <AttendanceGrid
