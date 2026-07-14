@@ -3883,19 +3883,6 @@ function InstrumentPreview({
     onFieldsChange({ ...fields, [key]: value })
   }
 
-  function changeRubricLevelCount(value: number) {
-    const next: Record<string, string> = { ...fields, 'rubrica:meta:levelCount': String(value) }
-    if (value < rubricLevels) {
-      Object.keys(next).forEach((key) => {
-        const descriptorMatch = key.match(/^rubrica:descriptor:\d+:(\d+)$/)
-        const levelMatch = key.match(/^rubrica:level-(?:name|points):(\d+)$/)
-        if ((descriptorMatch && Number(descriptorMatch[1]) > value) || (levelMatch && Number(levelMatch[1]) > value)) delete next[key]
-      })
-    }
-    setRubricLevels(value)
-    onFieldsChange(next)
-  }
-
   return (
     <section className={cn('rounded-lg border border-border bg-card p-4 shadow-sm', highlight ? 'ring-2 ring-red-400 ring-offset-2 ring-offset-background' : '')}>
       <div className="flex flex-col gap-3 border-b border-border pb-3 sm:flex-row sm:items-start sm:justify-between">
@@ -3942,7 +3929,7 @@ function InstrumentPreview({
             onFieldChange={updateField}
             onCriteriaCountChange={setRubricCriteria}
             onFieldsChange={onFieldsChange}
-            onLevelCountChange={changeRubricLevelCount}
+            onLevelCountChange={setRubricLevels}
           />
         ) : null}
         {instrumentType === 'escala' ? (
@@ -4222,6 +4209,47 @@ function RubricInstrument({
     onCriteriaCountChange(nextCount)
   }
 
+  function removeLevel(scoreToRemove: number) {
+    if (levelCount <= 2) return
+    const remaining = levels.filter((level) => level.score !== scoreToRemove)
+    const nextCount = levelCount - 1
+    const next: Record<string, string> = { ...fields, 'rubrica:meta:levelCount': String(nextCount) }
+    Object.keys(next).forEach((key) => {
+      if (/^rubrica:level-(?:name|points):\d+$/.test(key) || /^rubrica:descriptor:\d+:\d+$/.test(key)) delete next[key]
+    })
+    remaining.forEach((level, index) => {
+      const newScore = nextCount - index
+      next[instrumentFieldKey('rubrica', 'level-name', newScore)] = level.name
+      next[instrumentFieldKey('rubrica', 'level-points', newScore)] = String(level.points)
+      for (let criterionIndex = 0; criterionIndex < criteriaCount; criterionIndex += 1) {
+        next[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, newScore)] = fields[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, level.score)] || ''
+      }
+    })
+    onFieldsChange(next)
+    onLevelCountChange(nextCount)
+  }
+
+  function addLevel() {
+    if (levelCount >= 6) return
+    const nextCount = levelCount + 1
+    const next: Record<string, string> = { ...fields, 'rubrica:meta:levelCount': String(nextCount) }
+    Object.keys(next).forEach((key) => {
+      if (/^rubrica:level-(?:name|points):\d+$/.test(key) || /^rubrica:descriptor:\d+:\d+$/.test(key)) delete next[key]
+    })
+    levels.forEach((level, index) => {
+      const newScore = nextCount - index
+      next[instrumentFieldKey('rubrica', 'level-name', newScore)] = level.name
+      next[instrumentFieldKey('rubrica', 'level-points', newScore)] = String(level.points)
+      for (let criterionIndex = 0; criterionIndex < criteriaCount; criterionIndex += 1) {
+        next[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, newScore)] = fields[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, level.score)] || ''
+      }
+    })
+    next[instrumentFieldKey('rubrica', 'level-name', 1)] = rubricLevelName(nextCount - 1)
+    next[instrumentFieldKey('rubrica', 'level-points', 1)] = '1'
+    onFieldsChange(next)
+    onLevelCountChange(nextCount)
+  }
+
   return (
     <div className="space-y-3">
       <div className="rounded-xl border border-violet-100 bg-violet-50/40 p-3">
@@ -4239,24 +4267,17 @@ function RubricInstrument({
         </div>
         <div className="flex flex-wrap gap-2">
           <Button type="button" size="sm" variant="outline" onClick={() => resizeCriteria(Math.min(12, criteriaCount + 1))} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button>
-          <Button type="button" size="sm" variant="outline" onClick={() => setEditingLevels((current) => !current)}><Pencil className="size-4" />Editar niveles</Button>
+          <Button type="button" size="sm" variant="outline" onClick={() => setEditingLevels(true)}><Pencil className="size-4" />Editar niveles</Button>
         </div>
       </div>
 
-      {editingLevels ? (
-        <div className="rounded-xl border border-violet-200 bg-violet-50/50 p-3">
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><p className="font-black text-violet-800">Editar niveles de desempeño</p><p className="text-xs text-violet-700/70">Puedes usar entre 2 y 6 niveles.</p></div><StepperControl label="Niveles" value={levelCount} min={2} max={6} onChange={onLevelCountChange} /></div>
-          <div className="grid gap-2 md:grid-cols-2">
-            {levels.map((level) => <div key={level.score} className="grid grid-cols-[1fr_5.5rem] gap-2 rounded-lg border border-violet-100 bg-card p-2"><label className="text-xs font-bold text-muted-foreground">Nombre<Input className="mt-1 h-9" value={fields[instrumentFieldKey('rubrica', 'level-name', level.score)] ?? level.name} onChange={(event) => onFieldChange(instrumentFieldKey('rubrica', 'level-name', level.score), event.target.value)} /></label><label className="text-xs font-bold text-muted-foreground">Valor<Input className="mt-1 h-9" type="number" min={0} step="0.25" value={fields[instrumentFieldKey('rubrica', 'level-points', level.score)] ?? String(level.points)} onChange={(event) => onFieldChange(instrumentFieldKey('rubrica', 'level-points', level.score), event.target.value)} /></label></div>)}
-          </div>
-        </div>
-      ) : null}
+      {editingLevels ? <Modal title="Editar niveles de desempeño" onClose={() => setEditingLevels(false)} className="max-w-2xl"><div className="space-y-3 p-5"><div className="flex items-center justify-between gap-3 rounded-lg bg-violet-50 px-3 py-2"><p className="text-sm text-violet-800">Organiza entre 2 y 6 niveles. También puedes eliminarlos directamente desde la tabla.</p><Button type="button" size="sm" variant="outline" disabled={levelCount >= 6} onClick={addLevel}><Plus className="size-4" />Agregar nivel</Button></div><div className="space-y-2">{levels.map((level, index) => <div key={level.score} className="grid grid-cols-[2rem_minmax(0,1fr)_5rem_2rem] items-end gap-2 rounded-lg border border-border bg-card p-2"><span className="mb-2 grid size-7 place-items-center rounded-md bg-violet-50 text-xs font-black text-violet-700">{index + 1}</span><label className="text-xs font-bold text-muted-foreground">Nombre<Input className="mt-1 h-9" value={fields[instrumentFieldKey('rubrica', 'level-name', level.score)] ?? level.name} onChange={(event) => onFieldChange(instrumentFieldKey('rubrica', 'level-name', level.score), event.target.value)} /></label><label className="text-xs font-bold text-muted-foreground">Valor<Input className="mt-1 h-9" type="number" min={0} step="0.25" value={fields[instrumentFieldKey('rubrica', 'level-points', level.score)] ?? String(level.points)} onChange={(event) => onFieldChange(instrumentFieldKey('rubrica', 'level-points', level.score), event.target.value)} /></label><button type="button" aria-label={`Eliminar nivel ${level.name}`} title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'} disabled={levelCount <= 2} className="mb-0.5 grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => removeLevel(level.score)}><Trash2 className="size-4" /></button></div>)}</div><div className="flex justify-end"><Button type="button" onClick={() => setEditingLevels(false)}>Listo</Button></div></div></Modal> : null}
 
       <InstrumentTable>
         <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
             <th className="w-[24%] border border-border px-2 py-2">Criterios de evaluación</th>
-            {levels.map((level) => <th key={level.score} className="border border-border px-2 py-2 text-center"><span className="block text-primary">{level.name}</span><span className="mt-0.5 block normal-case text-muted-foreground">{level.points} pts</span></th>)}
+            {levels.map((level) => <th key={level.score} className="group relative border border-border px-2 py-2 text-center"><span className="block pr-4 text-primary">{level.name}</span><span className="mt-0.5 block pr-4 normal-case text-muted-foreground">{level.points} pts</span><button type="button" aria-label={`Eliminar nivel ${level.name}`} title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'} disabled={levelCount <= 2} className="absolute right-1 top-1 grid size-5 place-items-center rounded text-slate-400 opacity-70 transition hover:bg-red-50 hover:text-destructive group-hover:opacity-100 disabled:hidden" onClick={() => removeLevel(level.score)}><X className="size-3" /></button></th>)}
             <th className="w-24 border border-border px-2 py-2 text-center">Puntaje por criterio</th>
             <th className="w-10 border border-border" />
           </tr>
