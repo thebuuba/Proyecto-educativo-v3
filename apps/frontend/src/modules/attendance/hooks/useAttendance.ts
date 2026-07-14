@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import {
   computeAttendanceStats,
   deleteAttendance,
@@ -25,6 +26,14 @@ import {
 } from '@/modules/attendance/utils/monthlyAttendance'
 import { getScheduleEntries } from '@/modules/schedule/services/scheduleService'
 import type { EnrollmentCourse } from '@/modules/students/types'
+import { createScopedTtlCache } from '@/utils/scopedTtlCache'
+
+type AttendanceInitialData = {
+  courses: EnrollmentCourse[]
+  academicPeriodId: string | null
+}
+
+const attendanceInitialCache = createScopedTtlCache<AttendanceInitialData>(60_000)
 
 function cloneAttendanceByDate(source: Map<string, Map<string, MonthlyAttendanceCell>>) {
   return new Map(
@@ -57,13 +66,18 @@ function updateAttendanceCell(
 }
 
 export function useAttendance() {
-  const [courses, setCourses] = useState<EnrollmentCourse[]>([])
-  const [selectedCourseId, setSelectedCourseId] = useState('')
+  const { appUser } = useAuth()
+  const cacheScope = appUser ? `${appUser.id}:${appUser.schoolId}` : null
+  const cached = attendanceInitialCache.read(cacheScope)
+  const [courses, setCourses] = useState<EnrollmentCourse[]>(cached?.courses ?? [])
+  const [selectedCourseId, setSelectedCourseId] = useState(cached?.courses[0]?.id ?? '')
   const [selectedMonth, setSelectedMonth] = useState(getInitialSchoolMonth)
   const [students, setStudents] = useState<StudentAttendanceRow[]>([])
-  const [academicPeriodId, setAcademicPeriodId] = useState<string | null>(null)
+  const [academicPeriodId, setAcademicPeriodId] = useState<string | null>(
+    cached?.academicPeriodId ?? null,
+  )
   const [classWeekdays, setClassWeekdays] = useState<number[]>([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(!cached)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -100,6 +114,10 @@ export function useAttendance() {
       ])
       setCourses(courseList)
       setAcademicPeriodId(period)
+      attendanceInitialCache.write(cacheScope, {
+        courses: courseList,
+        academicPeriodId: period,
+      })
       if (courseList.length > 0) {
         setSelectedCourseId((current) => current || courseList[0].id)
       }
@@ -108,11 +126,22 @@ export function useAttendance() {
     } finally {
       setLoading(false)
     }
-  }, [])
+  }, [cacheScope])
 
   useEffect(() => {
+    const freshCache = attendanceInitialCache.read(cacheScope)
+    if (freshCache) {
+      setCourses(freshCache.courses)
+      setAcademicPeriodId(freshCache.academicPeriodId)
+      if (freshCache.courses.length > 0) {
+        setSelectedCourseId((current) => current || freshCache.courses[0].id)
+      }
+      setError(null)
+      setLoading(false)
+      return
+    }
     void loadInitialData()
-  }, [loadInitialData])
+  }, [cacheScope, loadInitialData])
 
   const loadMonthlyAttendance = useCallback(async () => {
     if (!selectedCourse) {

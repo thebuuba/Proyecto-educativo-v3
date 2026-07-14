@@ -43,18 +43,23 @@ import type {
   ImportCourseStudentRow,
 } from '@/modules/students/types'
 import { cn } from '@/utils/cn'
+import { createScopedTtlCache } from '@/utils/scopedTtlCache'
 
 type FormMode = 'create' | 'edit' | 'transfer'
+
+const enrollmentCoursesCache = createScopedTtlCache<EnrollmentCourse[]>(60_000)
 
 export function StudentsPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [requestedCourseId] = useState(() => searchParams.get('courseId'))
   const [requestedAction] = useState(() => searchParams.get('action'))
-  const { hasPermission, hasRole } = useAuth()
-  const [courses, setCourses] = useState<EnrollmentCourse[]>([])
+  const { appUser, hasPermission, hasRole } = useAuth()
+  const cacheScope = appUser ? `${appUser.id}:${appUser.schoolId}` : null
+  const cachedCourses = enrollmentCoursesCache.read(cacheScope)
+  const [courses, setCourses] = useState<EnrollmentCourse[]>(cachedCourses ?? [])
   const [selectedCourseId, setSelectedCourseId] = useState('')
   const [students, setStudents] = useState<CourseStudent[]>([])
-  const [loadingCourses, setLoadingCourses] = useState(true)
+  const [loadingCourses, setLoadingCourses] = useState(!cachedCourses)
   const [loadingStudents, setLoadingStudents] = useState(false)
   const [selectedStudent, setSelectedStudent] = useState<CourseStudent | null>(null)
   const [editingStudent, setEditingStudent] = useState<CourseStudent | null>(null)
@@ -89,18 +94,34 @@ export function StudentsPage() {
   useEffect(() => {
     let active = true
 
+    const applyCourses = (data: EnrollmentCourse[]) => {
+      setCourses(data)
+      if (requestedCourseId && data.some((course) => course.id === requestedCourseId)) {
+        setSelectedCourseId(requestedCourseId)
+        setStudents([])
+        setLoadingStudents(true)
+        if (requestedAction === 'new') setIsFormOpen(true)
+        if (requestedAction === 'import') setImportModalOpen(true)
+        setSearchParams({}, { replace: true })
+      }
+    }
+
+    const freshCache = enrollmentCoursesCache.read(cacheScope)
+    if (freshCache) {
+      applyCourses(freshCache)
+      setLoadingCourses(false)
+      return () => {
+        active = false
+      }
+    }
+
+    setLoadingCourses(true)
+
     getEnrollmentCourses()
       .then((data) => {
         if (!active) return
-        setCourses(data)
-        if (requestedCourseId && data.some((course) => course.id === requestedCourseId)) {
-          setSelectedCourseId(requestedCourseId)
-          setStudents([])
-          setLoadingStudents(true)
-          if (requestedAction === 'new') setIsFormOpen(true)
-          if (requestedAction === 'import') setImportModalOpen(true)
-          setSearchParams({}, { replace: true })
-        }
+        enrollmentCoursesCache.write(cacheScope, data)
+        applyCourses(data)
       })
       .catch((error) => {
         if (!active) return
@@ -115,7 +136,7 @@ export function StudentsPage() {
     return () => {
       active = false
     }
-  }, [requestedAction, requestedCourseId, setSearchParams])
+  }, [cacheScope, requestedAction, requestedCourseId, setSearchParams])
 
   useEffect(() => {
     let active = true
@@ -153,6 +174,12 @@ export function StudentsPage() {
     }
 
     setStudents(await getStudentsByCourse(courseId))
+  }
+
+  async function refreshCourses() {
+    const data = await getEnrollmentCourses()
+    enrollmentCoursesCache.write(cacheScope, data)
+    setCourses(data)
   }
 
   function openCreateForm() {
@@ -215,9 +242,10 @@ export function StudentsPage() {
 
       try {
         await transferStudentToCourse(selectedCourseId, editingStudent.id, transferCourseId)
+        enrollmentCoursesCache.clear(cacheScope)
         await Promise.all([
           refreshCourseStudents(selectedCourseId),
-          getEnrollmentCourses().then(setCourses),
+          refreshCourses(),
         ])
         setActionError(null)
         setActionSuccess('Estudiante trasladado correctamente.')
@@ -250,6 +278,7 @@ export function StudentsPage() {
         })
       } else {
         await createStudentInCourse(selectedCourseId, input)
+        enrollmentCoursesCache.clear(cacheScope)
       }
 
       await refreshCourseStudents()
@@ -274,6 +303,7 @@ export function StudentsPage() {
 
     try {
       await withdrawStudentFromCourse(selectedCourseId, deactivateTarget.id)
+      enrollmentCoursesCache.clear(cacheScope)
       await refreshCourseStudents()
       setActionError(null)
       setActionSuccess('Estudiante retirado de la matrícula activa.')
@@ -295,6 +325,7 @@ export function StudentsPage() {
   async function handleImport(rows: ImportCourseStudentRow[]) {
     if (!selectedCourseId) throw new Error('Selecciona un curso.')
     const result = await importStudentsInCourse(selectedCourseId, rows)
+    enrollmentCoursesCache.clear(cacheScope)
     await refreshCourseStudents()
     setActionSuccess(`${result.imported} estudiante${result.imported === 1 ? '' : 's'} importado${result.imported === 1 ? '' : 's'}.`)
     return result

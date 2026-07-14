@@ -7,6 +7,7 @@
 
 import { useCallback, useEffect, useState } from 'react'
 
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import {
   assignSubjectToSection,
   createGrade,
@@ -30,6 +31,7 @@ import type {
   UpdateGradeInput,
   UpdateSectionInput,
 } from '@/modules/courses/types'
+import { createScopedTtlCache } from '@/utils/scopedTtlCache'
 
 /** Catálogos vacíos por defecto */
 const emptyCatalogs: CourseCatalogs = {
@@ -39,6 +41,14 @@ const emptyCatalogs: CourseCatalogs = {
   subjects: [],
   teachers: [],
 }
+
+type CoursesCacheData = {
+  grades: GradeWithSections[]
+  catalogs: CourseCatalogs
+  currentSchoolYear: { id: string; name: string } | null
+}
+
+const coursesCache = createScopedTtlCache<CoursesCacheData>(60_000)
 
 function normalizeText(value: string) {
   return value
@@ -50,10 +60,15 @@ function normalizeText(value: string) {
 
 /** Hook principal para la gestión de cursos y secciones */
 export function useCourses() {
-  const [grades, setGrades] = useState<GradeWithSections[]>([])
-  const [catalogs, setCatalogs] = useState<CourseCatalogs>(emptyCatalogs)
-  const [currentSchoolYear, setCurrentSchoolYear] = useState<{ id: string; name: string } | null>(null)
-  const [loading, setLoading] = useState(true)
+  const { appUser } = useAuth()
+  const cacheScope = appUser ? `${appUser.id}:${appUser.schoolId}` : null
+  const cached = coursesCache.read(cacheScope)
+  const [grades, setGrades] = useState<GradeWithSections[]>(cached?.grades ?? [])
+  const [catalogs, setCatalogs] = useState<CourseCatalogs>(cached?.catalogs ?? emptyCatalogs)
+  const [currentSchoolYear, setCurrentSchoolYear] = useState<{ id: string; name: string } | null>(
+    cached?.currentSchoolYear ?? null,
+  )
+  const [loading, setLoading] = useState(!cached)
   const [error, setError] = useState<string | null>(null)
 
   /** Recarga todos los datos de cursos y catálogos */
@@ -66,6 +81,7 @@ export function useCourses() {
       setGrades(data.grades)
       setCatalogs(data.catalogs)
       setCurrentSchoolYear(data.currentSchoolYear)
+      coursesCache.write(cacheScope, data)
     } catch (error) {
       setError(
         error instanceof Error
@@ -80,67 +96,83 @@ export function useCourses() {
     } finally {
       if (showLoading) setLoading(false)
     }
-  }, [])
+  }, [cacheScope])
 
   useEffect(() => {
+    const freshCache = coursesCache.read(cacheScope)
+    if (freshCache) {
+      setGrades(freshCache.grades)
+      setCatalogs(freshCache.catalogs)
+      setCurrentSchoolYear(freshCache.currentSchoolYear)
+      setError(null)
+      setLoading(false)
+      return
+    }
     void refetch()
-  }, [refetch])
+  }, [cacheScope, refetch])
 
   const addGrade = useCallback(
     async (input: CreateGradeInput) => {
       await createGrade(input)
+      coursesCache.clear(cacheScope)
       void refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   const editGrade = useCallback(
     async (id: string, input: UpdateGradeInput) => {
       await updateGrade(id, input)
+      coursesCache.clear(cacheScope)
       void refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   const removeGrade = useCallback(
     async (id: string) => {
       await deactivateGrade(id)
+      coursesCache.clear(cacheScope)
       void refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   const addSection = useCallback(
     async (input: CreateSectionInput) => {
       await createSection(input)
+      coursesCache.clear(cacheScope)
       void refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   const editSection = useCallback(
     async (id: string, input: UpdateSectionInput) => {
       await updateSection(id, input)
+      coursesCache.clear(cacheScope)
       void refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   const removeSection = useCallback(
     async (id: string) => {
       await deactivateSection(id)
+      coursesCache.clear(cacheScope)
       void refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   const addSubject = useCallback(
     async (input: CreateSubjectInput) => {
       const subject = await createSubject(input)
+      coursesCache.clear(cacheScope)
       void refetch(false)
       return subject
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   const createTeacherAssignment = useCallback(
@@ -170,6 +202,7 @@ export function useCourses() {
           academicCycleId: input.academicCycleId,
           sequence: input.gradeSequence,
         })
+        coursesCache.clear(cacheScope)
         grade = { ...createdGrade, sections: [] } as GradeWithSections
       }
 
@@ -179,6 +212,7 @@ export function useCourses() {
           gradeId: grade.id,
           name: input.sectionName,
         })
+        coursesCache.clear(cacheScope)
       }
 
       let subjectId = input.subjectId
@@ -196,6 +230,7 @@ export function useCourses() {
           code: input.subjectCode,
           name: input.subjectName,
         })
+        coursesCache.clear(cacheScope)
         subjectId = subject.id
       }
 
@@ -214,25 +249,28 @@ export function useCourses() {
         subjectId,
         teacherId: null,
       })
+      coursesCache.clear(cacheScope)
       void refetch(false)
     },
-    [catalogs.subjects, currentSchoolYear, grades, refetch],
+    [cacheScope, catalogs.subjects, currentSchoolYear, grades, refetch],
   )
 
   const assignSubject = useCallback(
     async (input: AssignSubjectInput) => {
       await assignSubjectToSection(input)
+      coursesCache.clear(cacheScope)
       void refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   const removeSubjectAssignment = useCallback(
     async (id: string) => {
       await deactivateSectionSubject(id)
+      coursesCache.clear(cacheScope)
       void refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   return {
