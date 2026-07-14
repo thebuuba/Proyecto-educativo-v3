@@ -3413,7 +3413,12 @@ function ActivityDataSections({ activityDraft, accent, highlightTarget, onChange
 
 function ActivityDescriptionEditor({ value, onChange }: { value: string; onChange: (value: string) => void }) {
   const editorRef = useRef<HTMLDivElement>(null)
+  const savedSelectionRef = useRef<Range | null>(null)
   const [characterCount, setCharacterCount] = useState(() => activityDescriptionText(value).length)
+  const [activeCommands, setActiveCommands] = useState<Set<string>>(new Set())
+  const [blockFormat, setBlockFormat] = useState('p')
+  const [insertPanel, setInsertPanel] = useState<'link' | 'image' | null>(null)
+  const [insertUrl, setInsertUrl] = useState('')
 
   useEffect(() => {
     const editor = editorRef.current
@@ -3423,10 +3428,41 @@ function ActivityDescriptionEditor({ value, onChange }: { value: string; onChang
     setCharacterCount(activityDescriptionText(value).length)
   }, [value])
 
+  useEffect(() => {
+    function handleSelectionChange() {
+      const editor = editorRef.current
+      const selection = window.getSelection()
+      if (!editor || !selection?.rangeCount || !editor.contains(selection.anchorNode)) return
+      savedSelectionRef.current = selection.getRangeAt(0).cloneRange()
+      updateToolbarState()
+    }
+    document.addEventListener('selectionchange', handleSelectionChange)
+    return () => document.removeEventListener('selectionchange', handleSelectionChange)
+  }, [])
+
+  function restoreSelection() {
+    const editor = editorRef.current
+    const range = savedSelectionRef.current
+    if (!editor || !range) return
+    editor.focus()
+    const selection = window.getSelection()
+    selection?.removeAllRanges()
+    selection?.addRange(range)
+  }
+
+  function updateToolbarState() {
+    const commands = ['bold', 'italic', 'underline', 'insertUnorderedList', 'insertOrderedList', 'justifyLeft', 'justifyCenter']
+    setActiveCommands(new Set(commands.filter((command) => document.queryCommandState(command))))
+    const currentBlock = String(document.queryCommandValue('formatBlock')).replace(/[<>]/g, '').toLocaleLowerCase()
+    setBlockFormat(['p', 'h3', 'blockquote'].includes(currentBlock) ? currentBlock : 'p')
+  }
+
   function runCommand(command: string, commandValue?: string) {
-    editorRef.current?.focus()
+    restoreSelection()
+    document.execCommand('styleWithCSS', false, 'false')
     document.execCommand(command, false, commandValue)
     commitEditorValue()
+    updateToolbarState()
   }
 
   function commitEditorValue() {
@@ -3441,37 +3477,51 @@ function ActivityDescriptionEditor({ value, onChange }: { value: string; onChang
     onChange(sanitizeActivityDescriptionHtml(editor.innerHTML))
   }
 
-  function addLink() {
-    const url = window.prompt('Escribe la dirección del enlace:')?.trim()
-    if (url) runCommand('createLink', url)
+  function openInsertPanel(panel: 'link' | 'image') {
+    const selection = window.getSelection()
+    if (selection?.rangeCount && editorRef.current?.contains(selection.anchorNode)) savedSelectionRef.current = selection.getRangeAt(0).cloneRange()
+    setInsertUrl('')
+    setInsertPanel(panel)
   }
 
-  function addImage() {
-    const url = window.prompt('Escribe la dirección de la imagen:')?.trim()
-    if (url) runCommand('insertImage', url)
+  function applyInsertion() {
+    const url = normalizeEditorUrl(insertUrl, insertPanel === 'image')
+    if (!url || !insertPanel) return
+    restoreSelection()
+    const selection = window.getSelection()
+    if (insertPanel === 'link' && selection?.isCollapsed) {
+      document.execCommand('insertHTML', false, `<a href="${escapeHtml(url)}">${escapeHtml(url)}</a>`)
+    } else {
+      document.execCommand(insertPanel === 'link' ? 'createLink' : 'insertImage', false, url)
+    }
+    setInsertPanel(null)
+    setInsertUrl('')
+    commitEditorValue()
+    updateToolbarState()
   }
 
   const tools = [
-    { label: 'Negrita', icon: <Bold className="size-4" />, action: () => runCommand('bold') },
-    { label: 'Cursiva', icon: <Italic className="size-4" />, action: () => runCommand('italic') },
-    { label: 'Subrayado', icon: <Underline className="size-4" />, action: () => runCommand('underline') },
-    { label: 'Lista con viñetas', icon: <List className="size-4" />, action: () => runCommand('insertUnorderedList') },
-    { label: 'Lista numerada', icon: <ListOrdered className="size-4" />, action: () => runCommand('insertOrderedList') },
-    { label: 'Alinear a la izquierda', icon: <AlignLeft className="size-4" />, action: () => runCommand('justifyLeft') },
-    { label: 'Centrar', icon: <AlignCenter className="size-4" />, action: () => runCommand('justifyCenter') },
-    { label: 'Agregar enlace', icon: <Link className="size-4" />, action: addLink },
-    { label: 'Agregar imagen', icon: <ImageIcon className="size-4" />, action: addImage },
+    { command: 'bold', label: 'Negrita', icon: <Bold className="size-4" />, action: () => runCommand('bold') },
+    { command: 'italic', label: 'Cursiva', icon: <Italic className="size-4" />, action: () => runCommand('italic') },
+    { command: 'underline', label: 'Subrayado', icon: <Underline className="size-4" />, action: () => runCommand('underline') },
+    { command: 'insertUnorderedList', label: 'Lista con viñetas', icon: <List className="size-4" />, action: () => runCommand('insertUnorderedList') },
+    { command: 'insertOrderedList', label: 'Lista numerada', icon: <ListOrdered className="size-4" />, action: () => runCommand('insertOrderedList') },
+    { command: 'justifyLeft', label: 'Alinear a la izquierda', icon: <AlignLeft className="size-4" />, action: () => runCommand('justifyLeft') },
+    { command: 'justifyCenter', label: 'Centrar', icon: <AlignCenter className="size-4" />, action: () => runCommand('justifyCenter') },
+    { command: 'createLink', label: 'Agregar enlace', icon: <Link className="size-4" />, action: () => openInsertPanel('link') },
+    { command: 'insertImage', label: 'Agregar imagen', icon: <ImageIcon className="size-4" />, action: () => openInsertPanel('image') },
   ]
 
   return (
     <div className="overflow-hidden rounded-xl border border-input bg-card focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/15">
       <div className="flex flex-wrap items-center gap-1 border-b border-border px-2 py-1.5">
-        <Select className="h-8 w-32 border-0 bg-transparent text-sm font-bold shadow-none" defaultValue="p" onChange={(event) => runCommand('formatBlock', event.target.value)}>
+        <Select className="h-8 w-32 border-0 bg-transparent text-sm font-bold shadow-none" value={blockFormat} onMouseDown={() => { const selection = window.getSelection(); if (selection?.rangeCount && editorRef.current?.contains(selection.anchorNode)) savedSelectionRef.current = selection.getRangeAt(0).cloneRange() }} onChange={(event) => { const format = event.target.value; setBlockFormat(format); runCommand('formatBlock', format) }}>
           <option value="p">Párrafo</option><option value="h3">Subtítulo</option><option value="blockquote">Cita</option>
         </Select>
         <span className="mx-1 h-6 w-px bg-border" />
-        {tools.map((tool) => <button key={tool.label} type="button" aria-label={tool.label} title={tool.label} className="grid size-8 place-items-center rounded-md text-slate-600 transition hover:bg-blue-50 hover:text-primary" onMouseDown={(event) => { event.preventDefault(); tool.action() }}>{tool.icon}</button>)}
+        {tools.map((tool) => <button key={tool.label} type="button" aria-label={tool.label} aria-pressed={activeCommands.has(tool.command) || insertPanel === (tool.command === 'createLink' ? 'link' : tool.command === 'insertImage' ? 'image' : null)} title={tool.label} className={cn('grid size-8 place-items-center rounded-md transition hover:bg-blue-50 hover:text-primary', activeCommands.has(tool.command) ? 'bg-blue-100 text-blue-700 ring-1 ring-blue-200' : 'text-slate-600', (tool.command === 'createLink' && insertPanel === 'link') || (tool.command === 'insertImage' && insertPanel === 'image') ? 'bg-blue-100 text-blue-700 ring-1 ring-blue-200' : '')} onMouseDown={(event) => { event.preventDefault(); tool.action() }}>{tool.icon}</button>)}
       </div>
+      {insertPanel ? <div className="flex flex-col gap-2 border-b border-blue-100 bg-blue-50/40 px-3 py-2 sm:flex-row sm:items-center"><span className="shrink-0 text-xs font-black text-blue-700">{insertPanel === 'link' ? 'Dirección del enlace' : 'Dirección de la imagen'}</span><Input className="h-9 flex-1 bg-card" autoFocus value={insertUrl} placeholder={insertPanel === 'link' ? 'https://ejemplo.com' : 'https://ejemplo.com/imagen.jpg'} onChange={(event) => setInsertUrl(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') { event.preventDefault(); applyInsertion() } if (event.key === 'Escape') setInsertPanel(null) }} /><Button type="button" size="sm" className="h-9" disabled={!normalizeEditorUrl(insertUrl, insertPanel === 'image')} onClick={applyInsertion}>Insertar</Button><Button type="button" size="sm" variant="ghost" className="h-9" onClick={() => setInsertPanel(null)}>Cancelar</Button></div> : null}
       <div
         ref={editorRef}
         contentEditable
@@ -3479,12 +3529,39 @@ function ActivityDescriptionEditor({ value, onChange }: { value: string; onChang
         role="textbox"
         aria-multiline="true"
         data-placeholder="Describe en qué consiste la actividad, qué deberán hacer los estudiantes, los pasos a seguir, los criterios importantes a considerar y cualquier otra información relevante para su realización..."
-        className="min-h-32 px-4 py-3 text-sm leading-6 text-foreground outline-none empty:before:pointer-events-none empty:before:text-muted-foreground empty:before:content-[attr(data-placeholder)] [&_a]:text-primary [&_a]:underline [&_img]:my-2 [&_img]:max-h-48 [&_img]:max-w-full [&_li]:ml-5 [&_ol]:list-decimal [&_ul]:list-disc"
+        className="min-h-32 px-4 py-3 text-sm leading-6 text-foreground outline-none empty:before:pointer-events-none empty:before:text-muted-foreground empty:before:content-[attr(data-placeholder)] [&_a]:text-primary [&_a]:underline [&_blockquote]:border-l-4 [&_blockquote]:border-blue-200 [&_blockquote]:pl-3 [&_blockquote]:italic [&_h3]:text-base [&_h3]:font-black [&_img]:my-2 [&_img]:max-h-48 [&_img]:max-w-full [&_li]:ml-5 [&_ol]:list-decimal [&_ul]:list-disc"
         onInput={commitEditorValue}
+        onKeyUp={() => updateToolbarState()}
+        onMouseUp={() => updateToolbarState()}
+        onPaste={(event) => {
+          event.preventDefault()
+          const editor = editorRef.current
+          if (!editor) return
+          const selectedLength = window.getSelection()?.toString().length ?? 0
+          const remaining = 1500 - editor.innerText.length + selectedLength
+          if (remaining <= 0) return
+          const text = event.clipboardData.getData('text/plain').slice(0, remaining)
+          document.execCommand('insertText', false, text)
+          commitEditorValue()
+        }}
       />
       <div className="px-4 pb-2 text-right text-xs font-medium text-muted-foreground">{characterCount} / 1500 caracteres</div>
     </div>
   )
+}
+
+function normalizeEditorUrl(value: string, imageOnly = false) {
+  const trimmed = value.trim()
+  if (!trimmed) return ''
+  const candidate = /^[a-z][a-z\d+.-]*:/i.test(trimmed) ? trimmed : `https://${trimmed}`
+  try {
+    const parsed = new URL(candidate)
+    if (!['http:', 'https:'].includes(parsed.protocol)) return ''
+    if (imageOnly && !parsed.hostname) return ''
+    return parsed.toString()
+  } catch {
+    return ''
+  }
 }
 
 function descriptionToEditorHtml(value: string) {
@@ -3515,8 +3592,16 @@ function sanitizeActivityDescriptionHtml(value: string) {
       if (!allowedAttribute || attribute.name.startsWith('on')) element.removeAttribute(attribute.name)
     })
     if (element instanceof HTMLAnchorElement && element.href) {
+      const safeHref = normalizeEditorUrl(element.getAttribute('href') ?? '')
+      if (!safeHref) element.removeAttribute('href')
+      else element.href = safeHref
       element.target = '_blank'
       element.rel = 'noopener noreferrer'
+    }
+    if (element instanceof HTMLImageElement) {
+      const safeSource = normalizeEditorUrl(element.getAttribute('src') ?? '', true)
+      if (!safeSource) element.remove()
+      else element.src = safeSource
     }
   })
   return parsed.body.innerHTML
