@@ -96,7 +96,54 @@ export type SectionSubjectAssignment = {
   subjectName: string
   teacherId: string | null
   teacherName: string | null
+  teamCount: number
   status: RecordStatus
+}
+
+export type CourseTeamMemberInput = {
+  enrollmentId: string
+  role?: string
+}
+
+export type CourseTeamInput = {
+  name: string
+  color?: string
+  icon?: string
+  description?: string
+  teamType: 'permanent' | 'temporary'
+  startsAt?: string | null
+  endsAt?: string | null
+  members: CourseTeamMemberInput[]
+}
+
+export type CourseTeamMember = {
+  id: string
+  enrollmentId: string
+  role: string | null
+  enrollment: {
+    id: string
+    student: {
+      id: string
+      studentCode: string
+      firstName: string
+      lastName: string
+    }
+  }
+}
+
+export type CourseTeam = {
+  id: string
+  sectionSubjectId: string
+  schoolYearId: string
+  name: string
+  color: string
+  icon: string
+  description: string
+  teamType: 'permanent' | 'temporary'
+  startsAt: string | null
+  endsAt: string | null
+  orderPosition: number
+  members: CourseTeamMember[]
 }
 
 /** Catálogos completos del sistema: niveles, ciclos, modalidades, asignaturas, docentes */

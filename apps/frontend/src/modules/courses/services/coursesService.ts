@@ -12,6 +12,8 @@ import type {
   CreateSectionInput,
   CreateSubjectInput,
   CourseData,
+  CourseTeam,
+  CourseTeamInput,
   Grade,
   Section,
   Subject,
@@ -67,4 +69,23 @@ export async function assignSubjectToSection(input: AssignSubjectInput): Promise
 /** Desactiva (elimina lógicamente) la asignación de una asignatura a una sección */
 export async function deactivateSectionSubject(id: string): Promise<void> {
   await api.delete(`/courses/section-subjects/${id}`)
+}
+
+export async function getCourseTeams(sectionSubjectId: string): Promise<CourseTeam[]> {
+  return api.get<CourseTeam[]>(`/courses/section-subjects/${sectionSubjectId}/teams`)
+}
+
+export async function createCourseTeam(
+  sectionSubjectId: string,
+  input: CourseTeamInput,
+): Promise<CourseTeam> {
+  return api.post<CourseTeam>(`/courses/section-subjects/${sectionSubjectId}/teams`, input)
+}
+
+export async function updateCourseTeam(id: string, input: Partial<CourseTeamInput>): Promise<CourseTeam> {
+  return api.patch<CourseTeam>(`/courses/teams/${id}`, input)
+}
+
+export async function archiveCourseTeam(id: string): Promise<void> {
+  await api.delete(`/courses/teams/${id}`)
 }

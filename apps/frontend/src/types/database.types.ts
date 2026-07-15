@@ -1848,6 +1848,153 @@ export type Database = {
           },
         ]
       }
+      course_team_members: {
+        Row: {
+          created_at: string
+          enrollment_id: string
+          id: string
+          joined_at: string
+          left_at: string | null
+          role: string | null
+          school_id: string
+          status: Database["public"]["Enums"]["record_status"]
+          team_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          enrollment_id: string
+          id?: string
+          joined_at?: string
+          left_at?: string | null
+          role?: string | null
+          school_id?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          team_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          enrollment_id?: string
+          id?: string
+          joined_at?: string
+          left_at?: string | null
+          role?: string | null
+          school_id?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          team_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "course_team_members_enrollment_id_fkey"
+            columns: ["enrollment_id"]
+            isOneToOne: false
+            referencedRelation: "enrollments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "course_team_members_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "course_team_members_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "course_teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      course_teams: {
+        Row: {
+          color: string
+          created_at: string
+          created_by: string | null
+          description: string
+          ends_at: string | null
+          icon: string
+          id: string
+          name: string
+          order_position: number
+          school_id: string
+          school_year_id: string
+          section_subject_id: string
+          starts_at: string | null
+          status: Database["public"]["Enums"]["record_status"]
+          team_type: string
+          updated_at: string
+        }
+        Insert: {
+          color?: string
+          created_at?: string
+          created_by?: string | null
+          description?: string
+          ends_at?: string | null
+          icon?: string
+          id?: string
+          name: string
+          order_position?: number
+          school_id?: string
+          school_year_id: string
+          section_subject_id: string
+          starts_at?: string | null
+          status?: Database["public"]["Enums"]["record_status"]
+          team_type?: string
+          updated_at?: string
+        }
+        Update: {
+          color?: string
+          created_at?: string
+          created_by?: string | null
+          description?: string
+          ends_at?: string | null
+          icon?: string
+          id?: string
+          name?: string
+          order_position?: number
+          school_id?: string
+          school_year_id?: string
+          section_subject_id?: string
+          starts_at?: string | null
+          status?: Database["public"]["Enums"]["record_status"]
+          team_type?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "course_teams_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "app_users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "course_teams_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "course_teams_school_year_id_fkey"
+            columns: ["school_year_id"]
+            isOneToOne: false
+            referencedRelation: "school_years"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "course_teams_section_subject_id_fkey"
+            columns: ["section_subject_id"]
+            isOneToOne: false
+            referencedRelation: "section_subjects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       schools: {
         Row: {
           center_code: string | null

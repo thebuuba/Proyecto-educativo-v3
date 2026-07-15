@@ -5,16 +5,19 @@ import {
   CheckSquare,
   ClipboardList,
   GraduationCap,
+  LayoutDashboard,
   MapPin,
+  MoreHorizontal,
   Plus,
   Search,
   SearchX,
+  SlidersHorizontal,
   Sparkles,
   Trash2,
   UsersRound,
   X,
 } from 'lucide-react'
-import { memo, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
+import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -26,7 +29,9 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { SectionForm } from '@/modules/courses/components/SectionForm'
 import { SubjectAssignmentForm } from '@/modules/courses/components/SubjectAssignmentForm'
 import { TeacherAssignmentForm } from '@/modules/courses/components/TeacherAssignmentForm'
+import { CourseTeamsPanel } from '@/modules/courses/components/CourseTeamsPanel'
 import { getStudentsBySection } from '@/modules/attendance/services/attendanceService'
+import type { StudentAttendanceRow } from '@/modules/attendance/types'
 import { getStudentsForGrading, getAcademicPeriods } from '@/modules/grading/services/gradingService'
 import { getPlanningEntries } from '@/modules/planning/services/planningService'
 import { getScheduleEntries } from '@/modules/schedule/services/scheduleService'
@@ -142,6 +147,8 @@ export function CoursesPage() {
   const [levelFilter, setLevelFilter] = useState('all')
   const [cycleFilter, setCycleFilter] = useState('all')
   const [subjectFilter, setSubjectFilter] = useState('all')
+  const [gradeFilter, setGradeFilter] = useState('all')
+  const [sectionFilter, setSectionFilter] = useState('all')
   const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null)
 
   function openCreateAssignmentFlow() {
@@ -326,14 +333,28 @@ export function CoursesPage() {
       const matchesLevel = levelFilter === 'all' || item.levelName === levelFilter
       const matchesCycle = cycleFilter === 'all' || item.cycleName === cycleFilter
       const matchesSubject = subjectFilter === 'all' || item.subjectName === subjectFilter
-      return matchesSearch && matchesLevel && matchesCycle && matchesSubject
+      const matchesGrade = gradeFilter === 'all' || item.grade.id === gradeFilter
+      const matchesSection = sectionFilter === 'all' || item.section.id === sectionFilter
+      return matchesSearch && matchesLevel && matchesCycle && matchesSubject && matchesGrade && matchesSection
     })
-  }, [courseCards, cycleFilter, levelFilter, debouncedSearch, subjectFilter])
+  }, [courseCards, cycleFilter, levelFilter, debouncedSearch, subjectFilter, gradeFilter, sectionFilter])
   const levelFilters = useMemo(() => uniqueValues(courseCards.map((item) => item.levelName)), [courseCards])
   const cycleFilters = useMemo(() => uniqueValues(courseCards.map((item) => item.cycleName)), [courseCards])
   const subjectFilters = useMemo(
     () => uniqueValues(courseCards.map((item) => item.subjectName).filter((item) => item !== 'Sin asignatura')),
     [courseCards],
+  )
+  const gradeFilters = useMemo(
+    () => Array.from(new Map(courseCards.map((item) => [item.grade.id, item.grade])).values()),
+    [courseCards],
+  )
+  const sectionFilters = useMemo(
+    () => Array.from(new Map(
+      courseCards
+        .filter((item) => gradeFilter === 'all' || item.grade.id === gradeFilter)
+        .map((item) => [item.section.id, item.section]),
+    ).values()),
+    [courseCards, gradeFilter],
   )
   const groupedCourses = useMemo(() => groupCoursesByLevel(filteredCourseCards), [filteredCourseCards])
   const selectedCourse = useMemo(
@@ -363,7 +384,7 @@ export function CoursesPage() {
       ) : (
         <>
           <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <span className="flex h-5 w-5 items-center justify-center rounded-md bg-primary">
                   <Sparkles className="h-3 w-3 text-primary-foreground" />
@@ -393,7 +414,41 @@ export function CoursesPage() {
             ) : null}
           </header>
 
-          <div className="space-y-3">
+          <section className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-[minmax(16rem,1fr)_repeat(5,minmax(8.5rem,auto))_auto]">
+              <label className="relative min-w-0">
+                <span className="sr-only">Buscar cursos</span>
+                <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                <input
+                  className="h-10 w-full rounded-xl border border-border bg-background pl-9 pr-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15"
+                  placeholder="Buscar cursos, grados o asignaturas…"
+                  value={searchQuery}
+                  onChange={(event) => setSearchQuery(event.target.value)}
+                />
+              </label>
+              <FilterSelect label="Nivel" value={levelFilter} onChange={setLevelFilter} options={levelFilters.map((value) => ({ value, label: cleanLevelName(value) }))} />
+              <FilterSelect label="Ciclo" value={cycleFilter} onChange={setCycleFilter} options={cycleFilters.map((value) => ({ value, label: value }))} />
+              <FilterSelect label="Asignatura" value={subjectFilter} onChange={setSubjectFilter} options={subjectFilters.map((value) => ({ value, label: value }))} />
+              <FilterSelect label="Grado" value={gradeFilter} onChange={(value) => { setGradeFilter(value); setSectionFilter('all') }} options={gradeFilters.map((grade) => ({ value: grade.id, label: grade.name }))} />
+              <FilterSelect label="Sección" value={sectionFilter} onChange={setSectionFilter} options={sectionFilters.map((section) => ({ value: section.id, label: section.name }))} />
+              <button type="button" className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-border bg-background px-3 text-xs font-bold text-muted-foreground hover:border-primary/40 hover:text-primary">
+                <SlidersHorizontal className="size-4" /> Más filtros
+              </button>
+            </div>
+
+            {levelFilter !== 'all' || cycleFilter !== 'all' || subjectFilter !== 'all' || gradeFilter !== 'all' || sectionFilter !== 'all' ? (
+              <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-border pt-3">
+                {levelFilter !== 'all' ? <ActiveFilter label={`Nivel: ${cleanLevelName(levelFilter)}`} onRemove={() => setLevelFilter('all')} /> : null}
+                {cycleFilter !== 'all' ? <ActiveFilter label={`Ciclo: ${cycleFilter}`} onRemove={() => setCycleFilter('all')} /> : null}
+                {subjectFilter !== 'all' ? <ActiveFilter label={`Asignatura: ${subjectFilter}`} onRemove={() => setSubjectFilter('all')} /> : null}
+                {gradeFilter !== 'all' ? <ActiveFilter label={`Grado: ${gradeFilters.find((grade) => grade.id === gradeFilter)?.name ?? ''}`} onRemove={() => { setGradeFilter('all'); setSectionFilter('all') }} /> : null}
+                {sectionFilter !== 'all' ? <ActiveFilter label={`Sección: ${sectionFilters.find((section) => section.id === sectionFilter)?.name ?? ''}`} onRemove={() => setSectionFilter('all')} /> : null}
+                <button type="button" className="ml-1 text-xs font-bold text-primary hover:underline" onClick={() => { setLevelFilter('all'); setCycleFilter('all'); setSubjectFilter('all'); setGradeFilter('all'); setSectionFilter('all') }}>Limpiar filtros</button>
+              </div>
+            ) : null}
+          </section>
+
+          <div className="hidden">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
               <div className="relative flex-1">
                 <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -543,7 +598,7 @@ export function CoursesPage() {
                 <section key={group.key}>
                   <div className="mb-3 mt-2 flex items-center gap-3">
                     <h2 className="text-sm font-extrabold uppercase tracking-[0.15em] text-muted-foreground">
-                      Nivel {group.levelName.toLowerCase()}
+                      Nivel {cleanLevelName(group.levelName).toLowerCase()}
                     </h2>
                     <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold tabular-nums text-muted-foreground">
                       {group.items.length}
@@ -551,24 +606,31 @@ export function CoursesPage() {
                     <div className="h-px flex-1 bg-border" />
                   </div>
 
-                  <div className={cn(
-                    'grid min-w-0 grid-cols-1 gap-4',
-                    group.items.length > 1 && 'md:grid-cols-2',
-                    group.items.length > 2 && '2xl:grid-cols-3',
-                  )}>
-                    {group.items.map((item) => (
-                      <CourseCard
-                        key={item.id}
-                        item={item}
-                        schoolYearName={currentSchoolYear?.name ?? ''}
-                        canManage={canManage}
-                        onOpen={handleOpen}
-                        onAddSection={handleAddSection}
-                        onEditSection={handleEditSection}
-                        onDeleteSection={handleDeleteSection}
-                        onAssignSubject={handleOpenAssignSubject}
-                        onDeleteSubjectAssignment={handleDeleteAssignment}
-                      />
+                  <div className="space-y-5">
+                    {groupCoursesByCycle(group.items).map((cycle) => (
+                      <div key={cycle.name}>
+                        <div className="mb-3 flex items-center gap-2">
+                          <h3 className="text-xs font-extrabold text-foreground">{cycle.name}</h3>
+                          <span className="rounded-full bg-primary/8 px-2 py-0.5 text-[10px] font-bold text-primary">{cycle.items.length} cursos</span>
+                          <div className="h-px flex-1 bg-border/70" />
+                        </div>
+                        <div className={cn('grid min-w-0 grid-cols-1 gap-4', cycle.items.length > 1 && 'md:grid-cols-2', cycle.items.length > 2 && 'xl:grid-cols-3 2xl:grid-cols-4')}>
+                          {cycle.items.map((item) => (
+                            <CourseCard
+                              key={item.id}
+                              item={item}
+                              schoolYearName={currentSchoolYear?.name ?? ''}
+                              canManage={canManage}
+                              onOpen={handleOpen}
+                              onAddSection={handleAddSection}
+                              onEditSection={handleEditSection}
+                              onDeleteSection={handleDeleteSection}
+                              onAssignSubject={handleOpenAssignSubject}
+                              onDeleteSubjectAssignment={handleDeleteAssignment}
+                            />
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </section>
@@ -648,16 +710,16 @@ export function CoursesPage() {
               ? 'Inactivar curso'
               : deleteTarget.kind === 'section'
                 ? 'Inactivar seccion'
-                : 'Eliminar curso'
+              : 'Archivar curso'
           }
           description={
             deleteTarget.kind === 'grade'
               ? `Inactivar el curso "${deleteTarget.label}"? Se conservara el historial relacionado.`
               : deleteTarget.kind === 'section'
                 ? `Inactivar la seccion "${deleteTarget.label}"? Se conservara el historial relacionado.`
-                : `Eliminar el curso "${deleteTarget.label}" del ano escolar activo? Se conservara el historial relacionado.`
+                : `¿Archivar el curso "${deleteTarget.label}" del año escolar activo? El historial y sus evaluaciones se conservarán.`
           }
-          confirmLabel={deleteTarget.kind === 'assignment' ? 'Eliminar curso' : 'Inactivar'}
+          confirmLabel={deleteTarget.kind === 'assignment' ? 'Archivar curso' : 'Inactivar'}
           destructive
           onConfirm={handleDeleteConfirm}
           onClose={() => setDeleteTarget(null)}
@@ -682,8 +744,8 @@ function CourseDetailView({
 }) {
   const palette = getSubjectColor(item.subjectName)
   const courseLabel = `${item.grade.name}.º ${item.section.name}`
-  const [activeTab, setActiveTab] = useState('estudiantes')
-  const [students, setStudents] = useState<Array<{ firstName: string; lastName: string; studentCode: string; status?: string | null }>>([])
+  const [activeTab, setActiveTab] = useState('resumen')
+  const [students, setStudents] = useState<StudentAttendanceRow[]>([])
   const [studentsLoading, setStudentsLoading] = useState(true)
   const [studentsError, setStudentsError] = useState<string | null>(null)
 
@@ -711,27 +773,27 @@ function CourseDetailView({
     : 'Sin registrar'
 
   return (
-    <div className="space-y-7">
-      <header className="rounded-b-3xl bg-muted px-1 pb-0 pt-1">
+    <div className="space-y-6">
+      <header className="overflow-hidden rounded-3xl border border-primary/15 bg-gradient-to-br from-primary/10 via-card to-violet-500/10 px-6 pt-5 shadow-sm">
         <button
           type="button"
-          className="mb-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground transition hover:text-primary"
+          className="mb-5 inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:opacity-75"
           onClick={onBack}
         >
           <ArrowLeft className="size-4" />
           Mis cursos
         </button>
 
-        <div className="flex flex-col gap-8 pb-7 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex flex-col gap-5 pb-5 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex min-w-0 gap-6">
             <div
-              className="flex size-20 shrink-0 items-center justify-center rounded-2xl text-2xl font-extrabold text-white shadow-lg"
+              className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold text-white shadow-lg"
               style={{ backgroundColor: palette.color }}
             >
               {item.grade.name}{item.section.name}
             </div>
             <div className="min-w-0">
-              <h1 className="text-4xl font-extrabold leading-tight text-foreground sm:text-5xl">
+              <h1 className="text-2xl font-extrabold leading-tight text-foreground sm:text-3xl">
                 {courseLabel} - <span style={{ color: palette.color }}>{item.subjectName}</span>
               </h1>
               <div className="mt-4 flex flex-wrap items-center gap-3 text-sm font-bold text-primary">
@@ -750,7 +812,7 @@ function CourseDetailView({
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 lg:min-w-[26rem]">
+          <div className="grid grid-cols-3 gap-2 lg:min-w-[26rem]">
             <MetricBox
               value={studentsLoading ? '…' : capacity === null ? String(students.length) : `${students.length}/${capacity}`}
               label={capacity === null ? 'Estudiantes' : 'Matrícula'}
@@ -761,8 +823,10 @@ function CourseDetailView({
           </div>
         </div>
 
-        <nav className="flex gap-7 overflow-x-auto border-t border-border pt-5">
+        <nav className="flex gap-1 overflow-x-auto border-t border-border pt-2">
+          <DetailTab active={activeTab === 'resumen'} icon={<LayoutDashboard className="size-4" />} label="Resumen" onClick={() => setActiveTab('resumen')} />
           <DetailTab active={activeTab === 'estudiantes'} icon={<UsersRound className="size-4" />} label="Estudiantes" onClick={() => setActiveTab('estudiantes')} />
+          <DetailTab active={activeTab === 'equipos'} icon={<UsersRound className="size-4" />} label="Equipos" onClick={() => setActiveTab('equipos')} />
           <DetailTab active={activeTab === 'asistencia'} icon={<CheckSquare className="size-4" />} label="Asistencia" onClick={() => setActiveTab('asistencia')} />
           <DetailTab active={activeTab === 'calificaciones'} icon={<GraduationCap className="size-4" />} label="Calificaciones" onClick={() => setActiveTab('calificaciones')} />
           <DetailTab active={activeTab === 'planificaciones'} icon={<ClipboardList className="size-4" />} label="Planificaciones" onClick={() => setActiveTab('planificaciones')} />
@@ -770,7 +834,15 @@ function CourseDetailView({
         </nav>
       </header>
 
-      {activeTab === 'estudiantes' ? (
+      {activeTab === 'resumen' ? (
+        <CourseSummary
+          students={students.length}
+          teams={item.assignment?.teamCount ?? 0}
+          subjectName={item.subjectName}
+          teacherName={item.assignment?.teacherName ?? null}
+          onNavigate={setActiveTab}
+        />
+      ) : activeTab === 'estudiantes' ? (
         <EstudiantesTab
           students={students}
           loading={studentsLoading}
@@ -778,6 +850,8 @@ function CourseDetailView({
           courseId={item.assignment?.id ?? null}
           canEnroll={canEnroll}
         />
+      ) : activeTab === 'equipos' ? (
+        <CourseTeamsPanel sectionSubjectId={item.assignment?.id ?? null} students={students} canManage={canEnroll} />
       ) : activeTab === 'asistencia' ? (
         <AsistenciaTab sectionSubjectId={item.assignment?.id ?? null} sectionId={item.section.id} schoolYearId={schoolYearId} />
       ) : activeTab === 'calificaciones' ? (
@@ -789,6 +863,50 @@ function CourseDetailView({
       )}
     </div>
   )
+}
+
+function CourseSummary({ students, teams, subjectName, teacherName, onNavigate }: {
+  students: number
+  teams: number
+  subjectName: string
+  teacherName: string | null
+  onNavigate: (tab: string) => void
+}) {
+  const quickActions = [
+    { label: 'Ver estudiantes', tab: 'estudiantes', icon: <UsersRound className="size-5" /> },
+    { label: 'Organizar equipos', tab: 'equipos', icon: <UsersRound className="size-5" /> },
+    { label: 'Pasar asistencia', tab: 'asistencia', icon: <CheckSquare className="size-5" /> },
+    { label: 'Ver calificaciones', tab: 'calificaciones', icon: <GraduationCap className="size-5" /> },
+  ]
+  return (
+    <div className="grid gap-5 xl:grid-cols-[1.15fr_1fr]">
+      <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+        <h2 className="text-base font-extrabold">Acciones rápidas</h2>
+        <p className="mt-1 text-sm text-muted-foreground">Accede a las tareas más frecuentes de este curso.</p>
+        <div className="mt-5 grid grid-cols-2 gap-3">
+          {quickActions.map((action) => (
+            <button key={action.tab} type="button" onClick={() => onNavigate(action.tab)} className="flex items-center gap-3 rounded-xl border border-border bg-background p-4 text-left text-sm font-bold transition hover:border-primary/40 hover:bg-primary/5 hover:text-primary">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">{action.icon}</span>
+              {action.label}
+            </button>
+          ))}
+        </div>
+      </section>
+      <section className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+        <h2 className="text-base font-extrabold">Resumen del curso</h2>
+        <div className="mt-4 divide-y divide-border overflow-hidden rounded-xl border border-border">
+          <SummaryRow label="Asignatura" value={subjectName} />
+          <SummaryRow label="Docente" value={teacherName ?? 'Sin docente asignado'} />
+          <SummaryRow label="Matrícula activa" value={`${students} estudiantes`} />
+          <SummaryRow label="Equipos creados" value={`${teams} equipos`} />
+        </div>
+      </section>
+    </div>
+  )
+}
+
+function SummaryRow({ label, value }: { label: string; value: string }) {
+  return <div className="flex items-center justify-between gap-4 px-4 py-3"><span className="text-sm text-muted-foreground">{label}</span><span className="text-right text-sm font-bold">{value}</span></div>
 }
 
 function MetricBox({ value, label, detail }: { value: string; label: string; detail?: string }) {
@@ -1149,6 +1267,17 @@ const CourseCard = memo(function CourseCard({
 }) {
   const palette = getSubjectColor(item.subjectName)
   const levelStyle = getLevelStyle(item.levelName)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const close = (event: MouseEvent) => {
+      if (!menuRef.current?.contains(event.target as Node)) setMenuOpen(false)
+    }
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [menuOpen])
   const gradeNumber = item.grade.name.replace('.º', '')
 
   return (
@@ -1180,7 +1309,7 @@ const CourseCard = memo(function CourseCard({
               <h3 className="text-lg font-extrabold tracking-tight text-foreground">
                 {item.grade.name} {item.section.name}
               </h3>
-              <p className="text-sm font-bold" style={{ color: palette.color }}>
+              <p className="mt-0.5 line-clamp-2 min-h-10 max-w-[17rem] text-sm font-bold leading-5" style={{ color: palette.color }}>
                 {item.subjectName}
               </p>
             </div>
@@ -1190,7 +1319,7 @@ const CourseCard = memo(function CourseCard({
             className="rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wide"
             style={{ backgroundColor: levelStyle.soft, color: levelStyle.color }}
           >
-            {item.levelName}
+            {cleanLevelName(item.levelName)}
           </span>
         </div>
 
@@ -1200,6 +1329,9 @@ const CourseCard = memo(function CourseCard({
             {item.section.studentCount ?? 0}
           </span>
           <span className="text-muted-foreground">estudiantes</span>
+          <span className="mx-1 text-border">·</span>
+          <span className="font-bold tabular-nums text-foreground">{item.assignment?.teamCount ?? 0}</span>
+          <span className="text-muted-foreground">equipos</span>
         </div>
 
         <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
@@ -1240,20 +1372,19 @@ const CourseCard = memo(function CourseCard({
             <span className="px-2 text-xs font-bold text-muted-foreground">Vista de curso</span>
           )}
         </div>
-        {canManage && item.assignment && onDeleteSubjectAssignment ? (
-          <button
-            type="button"
-            className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg px-2.5 text-xs font-bold text-destructive transition-colors hover:bg-destructive/10"
-            aria-label="Eliminar curso"
-            title="Eliminar curso"
-            onClick={(event) => {
-              event.stopPropagation()
-              onDeleteSubjectAssignment(item.assignment!)
-            }}
-          >
-            <Trash2 className="h-4 w-4" />
-            <span>Eliminar curso</span>
-          </button>
+        {canManage ? (
+          <div className="relative" ref={menuRef}>
+            <button type="button" className="flex size-8 items-center justify-center rounded-lg text-muted-foreground hover:bg-card hover:text-foreground" aria-label="Más opciones" onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
+              <MoreHorizontal className="size-4" />
+            </button>
+            {menuOpen ? (
+              <div className="absolute bottom-10 right-0 z-20 w-52 overflow-hidden rounded-xl border border-border bg-card p-1.5 shadow-xl">
+                <button type="button" onClick={() => { setMenuOpen(false); onEditSection(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"><CheckSquare className="size-4" /> Editar sección</button>
+                <button type="button" onClick={() => { setMenuOpen(false); onAssignSubject(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"><GraduationCap className="size-4" /> Asignar materia</button>
+                {item.assignment && onDeleteSubjectAssignment ? <button type="button" onClick={() => { setMenuOpen(false); onDeleteSubjectAssignment(item.assignment!) }} className="mt-1 flex w-full items-center gap-2 border-t border-border px-3 py-2 pt-2.5 text-left text-xs font-bold text-destructive hover:bg-destructive/5"><Trash2 className="size-4" /> Archivar curso</button> : null}
+              </div>
+            ) : null}
+          </div>
         ) : null}
       </div>
     </article>
@@ -1317,8 +1448,40 @@ function buildCourseCards(grades: GradeWithSections[]): CourseCardItem[] {
   )
 }
 
+function FilterSelect({ label, value, options, onChange }: {
+  label: string
+  value: string
+  options: Array<{ value: string; label: string }>
+  onChange: (value: string) => void
+}) {
+  return (
+    <label className="relative min-w-0">
+      <span className="sr-only">{label}</span>
+      <select value={value} onChange={(event) => onChange(event.target.value)} className="h-10 w-full min-w-0 appearance-none truncate rounded-xl border border-border bg-background py-0 pl-3 pr-8 text-xs font-bold text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15">
+        <option value="all">{label}: Todos</option>
+        {options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+      </select>
+      <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground">⌄</span>
+    </label>
+  )
+}
+
+function ActiveFilter({ label, onRemove }: { label: string; onRemove: () => void }) {
+  return <span className="inline-flex max-w-xs items-center gap-1.5 rounded-full bg-primary/8 px-3 py-1.5 text-xs font-bold text-primary"><span className="truncate">{label}</span><button type="button" onClick={onRemove} className="rounded-full p-0.5 hover:bg-primary/10" aria-label={`Quitar ${label}`}><X className="size-3" /></button></span>
+}
+
+function cleanLevelName(value: string) {
+  return value.replace(/^nivel\s+/i, '').trim()
+}
+
 function uniqueValues(values: string[]) {
   return Array.from(new Set(values.filter(Boolean)))
+}
+
+function groupCoursesByCycle(items: CourseCardItem[]) {
+  const groups = new Map<string, CourseCardItem[]>()
+  items.forEach((item) => groups.set(item.cycleName, [...(groups.get(item.cycleName) ?? []), item]))
+  return Array.from(groups, ([name, cycleItems]) => ({ name, items: cycleItems }))
 }
 
 function groupCoursesByLevel(items: CourseCardItem[]) {

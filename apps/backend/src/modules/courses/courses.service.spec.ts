@@ -7,6 +7,7 @@ const mocks = vi.hoisted(() => ({
     section: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
     sectionSubject: { findMany: vi.fn(), upsert: vi.fn() },
     enrollment: { groupBy: vi.fn() },
+    courseTeam: { groupBy: vi.fn() },
     subject: { findMany: vi.fn() },
     drAcademicLevel: { findMany: vi.fn() },
     drAcademicCycle: { findMany: vi.fn() },
@@ -65,6 +66,9 @@ describe('CoursesService.getCourseData', () => {
     ])
     mocks.prisma.enrollment.groupBy.mockResolvedValue([
       { sectionId: 'section-1', _count: { id: 12 } },
+    ])
+    mocks.prisma.courseTeam.groupBy.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', _count: { id: 2 } },
     ])
     mocks.prisma.subject.findMany.mockResolvedValue([{ id: 'subject-1', code: 'MAT', name: 'Matemática', description: null, credits: null }])
     mocks.prisma.drAcademicLevel.findMany.mockResolvedValue([{ id: 'level-1', code: 'PRI', name: 'Primaria', sequence: 1 }])
