@@ -1,8 +1,10 @@
 ﻿import {
   Accessibility,
   AudioLines,
+  ArrowDown,
   ArrowLeft,
   ArrowRight,
+  ArrowUp,
   AlertCircle,
   BarChart3,
   Beaker,
@@ -21,7 +23,9 @@
   Circle,
   Clock3,
   ClipboardList,
+  Copy,
   Eye,
+  EllipsisVertical,
   Download,
   Dices,
   DraftingCompass,
@@ -99,15 +103,17 @@
   Users,
   X,
 } from 'lucide-react'
-import { useEffect, useMemo, useState, type Dispatch, type KeyboardEvent, type ReactNode, type SetStateAction } from 'react'
+import { useEffect, useMemo, useRef, useState, type Dispatch, type KeyboardEvent, type ReactNode, type SetStateAction } from 'react'
 
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import { ActivityDescriptionEditor as StructuredActivityDescriptionEditor } from '@/modules/grading/components/ActivityDescriptionEditor'
+import { useFocusTrap } from '@/hooks/useFocusTrap'
 import type {
   GradeCalculationConfig,
   GradeRecordRow,
@@ -177,6 +183,10 @@ const blockAccents = [
     badge: 'bg-blue-100 text-blue-700 ring-blue-200',
     progress: 'bg-blue-600',
     progressColor: '#2563eb',
+    gradient: 'linear-gradient(90deg, #60a5fa 0%, #2563eb 55%, #1d4ed8 100%)',
+    button: 'bg-blue-600 text-white hover:bg-blue-700',
+    border: 'border-blue-200',
+    ring: 'focus-visible:ring-blue-500',
     text: 'text-blue-700',
   },
   {
@@ -188,6 +198,10 @@ const blockAccents = [
     badge: 'bg-emerald-100 text-emerald-700 ring-emerald-200',
     progress: 'bg-emerald-600',
     progressColor: '#059669',
+    gradient: 'linear-gradient(90deg, #34d399 0%, #059669 55%, #047857 100%)',
+    button: 'bg-emerald-600 text-white hover:bg-emerald-700',
+    border: 'border-emerald-200',
+    ring: 'focus-visible:ring-emerald-500',
     text: 'text-emerald-700',
   },
   {
@@ -199,6 +213,10 @@ const blockAccents = [
     badge: 'bg-amber-100 text-amber-700 ring-amber-200',
     progress: 'bg-amber-500',
     progressColor: '#f59e0b',
+    gradient: 'linear-gradient(90deg, #fcd34d 0%, #f59e0b 55%, #d97706 100%)',
+    button: 'bg-amber-500 text-amber-950 hover:bg-amber-600',
+    border: 'border-amber-200',
+    ring: 'focus-visible:ring-amber-500',
     text: 'text-amber-700',
   },
   {
@@ -210,6 +228,10 @@ const blockAccents = [
     badge: 'bg-violet-100 text-violet-700 ring-violet-200',
     progress: 'bg-violet-600',
     progressColor: '#7c3aed',
+    gradient: 'linear-gradient(90deg, #a78bfa 0%, #7c3aed 55%, #6d28d9 100%)',
+    button: 'bg-violet-600 text-white hover:bg-violet-700',
+    border: 'border-violet-200',
+    ring: 'focus-visible:ring-violet-500',
     text: 'text-violet-700',
   },
 ]
@@ -1648,19 +1670,29 @@ function ReadOnlyInstrument({ type, fields, maxScore }: { type?: string; fields:
     return <p className="rounded-lg bg-muted/30 px-4 py-8 text-center text-sm text-muted-foreground">Este instrumento no tiene criterios configurados guardados.</p>
   }
   if (type === 'rubrica') {
-    const levels = [...new Set(entries.filter(([key]) => key.startsWith('rubrica:descriptor:')).map(([key]) => Number(key.split(':')[3])).filter(Number.isFinite))].sort((a, b) => b - a)
+    const levelCount = Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, 4)
+    const levels = Array.from({ length: levelCount }, (_, index) => levelCount - index)
     return (
       <div className="space-y-2"><InstrumentTable><thead className="bg-violet-50"><tr><th className="border border-border px-3 py-2">Criterios</th>{levels.map((level) => <th key={level} className="border border-border px-3 py-2 text-center"><span className="block">{fields[instrumentFieldKey(type, 'level-name', level)] || `Nivel ${level}`}</span><span className="text-[10px] font-medium text-muted-foreground">{fields[instrumentFieldKey(type, 'level-points', level)] || level} pts</span></th>)}<th className="border border-border px-3 py-2 text-center">Valor</th></tr></thead><tbody>
         {indexes.map((index) => <tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type, 'criterion', index)]}</td>{levels.map((level) => <td key={level} className="border border-border px-3 py-3 leading-5 text-muted-foreground">{fields[instrumentFieldKey(type, 'descriptor', index, level)] || '—'}</td>)}<td className="border border-border px-3 py-3 text-center font-bold">{fields[instrumentFieldKey(type, 'points', index)] || '—'} pts</td></tr>)}
       </tbody></InstrumentTable><p className="text-right text-xs font-black text-primary">Puntuación máxima: {maxScore} pts</p></div>
     )
   }
-  const criterionLabel = type === 'lista-ponderada' ? 'Criterio' : 'Indicador'
-  return (
-    <InstrumentTable><thead className="bg-violet-50"><tr><th className="border border-border px-3 py-2">{criterionLabel}</th>{type === 'lista-ponderada' ? <><th className="border border-border px-3 py-2">Descripción</th><th className="border border-border px-3 py-2">Ponderación</th></> : null}<th className="border border-border px-3 py-2 text-center">Escala de valoración</th></tr></thead><tbody>
-      {indexes.map((index) => <tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type, 'criterion', index)] || `Criterio ${index + 1}`}</td>{type === 'lista-ponderada' ? <><td className="border border-border px-3 py-3 text-muted-foreground">{fields[instrumentFieldKey(type, 'indicator', index)] || '—'}</td><td className="border border-border px-3 py-3 text-center">{fields[instrumentFieldKey(type, 'weight', index)] || '—'}</td></> : null}<td className="border border-border px-3 py-3 text-center text-muted-foreground">{type === 'lista-cotejo' ? 'Sí / No' : 'Según niveles definidos'}</td></tr>)}
-    </tbody></InstrumentTable>
-  )
+  if (type === 'lista-cotejo') {
+    const hasNoApply = fields['lista-cotejo:meta:noApply'] === 'true'
+    const hasObservations = fields['lista-cotejo:meta:observations'] !== 'false'
+    const labels = [fields['lista-cotejo:meta:yesLabel'] || 'Sí', fields['lista-cotejo:meta:noLabel'] || 'No', ...(hasNoApply ? [fields['lista-cotejo:meta:naLabel'] || 'No aplica'] : [])]
+    return <div className="space-y-3"><InstrumentTable><thead className="bg-slate-50"><tr><th className="border border-border px-3 py-2">Criterios</th>{labels.map((label) => <th key={label} className="border border-border px-3 py-2 text-center">{label}</th>)}<th className="border border-border px-3 py-2 text-center">Valor</th>{hasObservations ? <th className="border border-border px-3 py-2">Observación</th> : null}</tr></thead><tbody>{indexes.map((index) => <tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)] || `Criterio ${index+1}`}</td>{labels.map((label) => <td key={label} className="border border-border text-center"><InstrumentCheckPlaceholder /></td>)}<td className="border border-border px-3 py-3 text-center font-black">{fields[instrumentFieldKey(type,'points',index)] || 0} pts</td>{hasObservations ? <td className="border border-border px-3 py-3 text-muted-foreground">{fields[instrumentFieldKey(type,'observation',index)] || '—'}</td> : null}</tr>)}</tbody></InstrumentTable><p className="text-right text-sm font-black text-emerald-700">Puntuación máxima: {maxScore} pts</p></div>
+  }
+  if (type === 'escala') {
+    const levelCount = Number(fields['escala:meta:levelCount']) || 4
+    const levels = Array.from({length:levelCount},(_,index)=>levelCount-index)
+    return <div className="space-y-3"><InstrumentTable><thead className="bg-slate-50"><tr><th className="border border-border px-3 py-2">Indicadores</th>{levels.map((level)=><th key={level} className="border border-border px-3 py-2 text-center"><span className="block">{fields[instrumentFieldKey(type,'level-name',level)]||`Nivel ${level}`}</span><span className="text-[10px] font-medium text-muted-foreground">{fields[instrumentFieldKey(type,'level-points',level)]||level} pts</span></th>)}<th className="border border-border px-3 py-2 text-center">Máximo</th></tr></thead><tbody>{indexes.map((index)=><tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)]||`Indicador ${index+1}`}</td>{levels.map((level)=><td key={level} className="border border-border text-center"><InstrumentCheckPlaceholder/></td>)}<td className="border border-border px-3 py-3 text-center font-black">{fields[instrumentFieldKey(type,'points',index)]||0} pts</td></tr>)}</tbody></InstrumentTable><p className="text-right text-sm font-black text-emerald-700">Puntuación máxima: {maxScore} pts</p></div>
+  }
+  const hasPartial = fields['lista-ponderada:meta:partial'] !== 'false'
+  const weightedLabels = { yes: fields['lista-ponderada:meta:yesLabel'] || 'Sí', partial: fields['lista-ponderada:meta:partialLabel'] || 'Parcial', no: fields['lista-ponderada:meta:noLabel'] || 'No' }
+  const totalWeight = indexes.reduce((sum,index)=>sum+Number(fields[instrumentFieldKey(type,'weight',index)]||0),0)
+  return <div className="space-y-3"><InstrumentTable><thead className="bg-slate-50"><tr><th className="border border-border px-3 py-2">Criterio</th><th className="border border-border px-3 py-2">Indicador</th><th className="border border-border px-3 py-2 text-center">Ponderación</th><th className="border border-border px-3 py-2 text-center">Equivalente</th><th className="border border-border px-3 py-2 text-center">{weightedLabels.yes}</th>{hasPartial?<th className="border border-border px-3 py-2 text-center">{weightedLabels.partial}</th>:null}<th className="border border-border px-3 py-2 text-center">{weightedLabels.no}</th></tr></thead><tbody>{indexes.map((index)=>{const weight=Number(fields[instrumentFieldKey(type,'weight',index)]||0);return <tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)]||`Criterio ${index+1}`}</td><td className="border border-border px-3 py-3 text-muted-foreground">{fields[instrumentFieldKey(type,'indicator',index)]||'—'}</td><td className="border border-border px-3 py-3 text-center font-black">{weight}%</td><td className="border border-border px-3 py-3 text-center">{formatInstrumentNumber(weight/100*maxScore)} pts</td><td className="border border-border"><InstrumentCheckPlaceholder/></td>{hasPartial?<td className="border border-border"><InstrumentCheckPlaceholder/></td>:null}<td className="border border-border"><InstrumentCheckPlaceholder/></td></tr>})}</tbody></InstrumentTable><div className="flex justify-between rounded-lg bg-emerald-50 px-4 py-3 text-sm font-black text-emerald-800"><span>Ponderación: {formatInstrumentNumber(totalWeight)}/100 %</span><span>Puntuación máxima: {maxScore} pts</span></div></div>
 }
 
 function ActivityDetailView({
@@ -1691,10 +1723,12 @@ function ActivityDetailView({
   const activityStatus = activityEvaluationStatus(evaluatedCount, students.length)
   const currentRecord = selectedStudent ? scoreForActivity(records, selectedStudent.enrollmentId, activity.id) : null
   const currentScore = currentRecord?.score ?? suggestedScoreForStudent(studentIndex, activity.maxScore)
-  const rubricPoints = rubricLevelPoints(activity.maxScore)
-  const levelRows = rubricCriteria.map((criterion, index) => {
+  const rubricConfiguration = activityRubricConfiguration(activity)
+  const levelRows = rubricConfiguration.criteria.map((criterion, index) => {
     const levelIndex = suggestedLevelIndex(index, currentScore, activity.maxScore)
-    return { criterion, levelIndex, points: rubricPoints[levelIndex] ?? 0 }
+    const highestLevel = rubricConfiguration.levels[0]?.points || 1
+    const selectedLevel = rubricConfiguration.levels[levelIndex]?.points || 0
+    return { criterion, levelIndex, points: Number((criterion.maximum * selectedLevel / highestLevel).toFixed(2)) }
   })
   const totalRubricScore = Math.min(activity.maxScore, Number(levelRows.reduce((sum, row) => sum + row.points, 0).toFixed(2)))
   const distribution = gradeDistribution(records, students, activity)
@@ -1757,6 +1791,7 @@ function ActivityDetailView({
           activity={activity}
           currentRecord={currentRecord}
           levelRows={levelRows}
+          levelLabels={rubricConfiguration.levels}
           onSaveScore={onSaveScore}
           saving={saving}
           selectedStudent={selectedStudent}
@@ -1810,6 +1845,7 @@ function ActivityEvaluationPanel({
   activity,
   currentRecord,
   levelRows,
+  levelLabels,
   onSaveScore,
   saving,
   selectedStudent,
@@ -1821,7 +1857,8 @@ function ActivityEvaluationPanel({
 }: {
   activity: GradingActivity
   currentRecord: GradeRecordRow | null
-  levelRows: Array<{ criterion: (typeof rubricCriteria)[number]; levelIndex: number; points: number }>
+  levelRows: Array<{ criterion: { title: string; description: string; maximum: number }; levelIndex: number; points: number }>
+  levelLabels: Array<{ label: string; points: number }>
   onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
   saving: boolean
   selectedStudent: StudentGradeRow | null
@@ -1872,7 +1909,7 @@ function ActivityEvaluationPanel({
 
         <div className="border-b border-border p-4">
           <p className="text-xs font-black uppercase tracking-[0.14em] text-muted-foreground">
-            {instrumentTitle(activity.instrumentType || 'rubrica')} - 4 criterios - Total {activity.maxScore} pts
+            {instrumentTitle(activity.instrumentType || 'rubrica')} - {levelRows.length} criterios - Total {activity.maxScore} pts
           </p>
         </div>
 
@@ -1881,11 +1918,11 @@ function ActivityEvaluationPanel({
             <thead className="bg-muted/35 text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
               <tr>
                 <th rowSpan={2} className="w-[16rem] border-b border-r border-border px-4 py-3 text-left">Criterios</th>
-                <th colSpan={5} className="border-b border-r border-border px-4 py-2 text-center">Niveles de desempeño</th>
+                <th colSpan={levelLabels.length} className="border-b border-r border-border px-4 py-2 text-center">Niveles de desempeño</th>
                 <th rowSpan={2} className="w-28 border-b border-border px-4 py-3 text-center">Puntaje</th>
               </tr>
               <tr>
-                {rubricLevelLabels(activity.maxScore).map((level) => (
+                {levelLabels.map((level) => (
                   <th key={level.label} className="border-b border-r border-border px-3 py-2 text-center">
                     <span className="block text-foreground">{level.label}</span>
                     <span>{formatGrade(level.points)} pts</span>
@@ -1900,7 +1937,7 @@ function ActivityEvaluationPanel({
                     <p className="font-black text-foreground">{criterionIndex + 1}. {row.criterion.title}</p>
                     <p className="mt-1 text-xs leading-5 text-muted-foreground">{row.criterion.description}</p>
                   </td>
-                  {rubricLevelLabels(activity.maxScore).map((level, levelIndex) => (
+                  {levelLabels.map((level, levelIndex) => (
                     <td key={level.label} className="border-r border-border px-4 py-4 text-center">
                       <span className={cn(
                         'inline-flex size-5 items-center justify-center rounded-full border-2',
@@ -1910,7 +1947,7 @@ function ActivityEvaluationPanel({
                   ))}
                   <td className="px-4 py-4 text-center">
                     <span className="inline-flex h-10 min-w-20 items-center justify-center rounded-lg border border-border bg-card px-3 font-black text-primary">
-                      {formatGrade(row.points)} / {formatGrade(activity.maxScore / 4)}
+                      {formatGrade(row.points)} / {formatGrade(row.criterion.maximum)}
                     </span>
                   </td>
                 </tr>
@@ -2453,6 +2490,34 @@ function AnnualResultView(props: {
   )
 }
 
+const transientHighlightClass = 'rounded-xl ring-2 ring-primary/70 ring-offset-2 ring-offset-background shadow-[0_0_24px_rgba(37,99,235,0.45)] motion-safe:animate-pulse transition-shadow duration-300'
+
+function useTransientActivityHighlight(duration = 3000) {
+  const [highlightTarget, setHighlightTarget] = useState<ActivityCompletionTarget | null>(null)
+  const timeoutRef = useRef<number | null>(null)
+
+  useEffect(() => () => {
+    if (timeoutRef.current !== null) window.clearTimeout(timeoutRef.current)
+  }, [])
+
+  function clearHighlight() {
+    if (timeoutRef.current !== null) window.clearTimeout(timeoutRef.current)
+    timeoutRef.current = null
+    setHighlightTarget(null)
+  }
+
+  function showHighlight(target: ActivityCompletionTarget) {
+    if (timeoutRef.current !== null) window.clearTimeout(timeoutRef.current)
+    setHighlightTarget(target)
+    timeoutRef.current = window.setTimeout(() => {
+      setHighlightTarget(null)
+      timeoutRef.current = null
+    }, duration)
+  }
+
+  return { clearHighlight, highlightTarget, showHighlight }
+}
+
 function ActivityManager({
   activityDraft,
   activities,
@@ -2487,7 +2552,7 @@ function ActivityManager({
   showCompetencySelect?: boolean
 }) {
   const fieldHighlight = (target: ActivityCompletionTarget) =>
-    highlightTarget === target ? 'rounded-lg ring-2 ring-red-400 ring-offset-2 ring-offset-card' : ''
+    highlightTarget === target ? transientHighlightClass : ''
 
   return (
     <div className="grid gap-2">
@@ -3195,7 +3260,7 @@ function ActivityCreationView(props: {
   const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, saving } = props
   const [stage, setStage] = useState<ActivityCreationStage>('activity')
   const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
-  const [highlightTarget, setHighlightTarget] = useState<ActivityCompletionTarget | null>(null)
+  const { clearHighlight, highlightTarget, showHighlight } = useTransientActivityHighlight()
   const accent = getBlockAccent(block.id)
   const progressMeta = buildActivityDraftMeta(activityDraft, block.id)
   const dataIssues = progressMeta.pendingIssues.filter((issue) => issue.tab === 'activity')
@@ -3214,7 +3279,7 @@ function ActivityCreationView(props: {
 
   function goToIssue(issue: ActivityCompletionIssue) {
     setStage(issue.tab === 'instrument' ? 'instrument' : 'activity')
-    setHighlightTarget(issue.target)
+    showHighlight(issue.target)
     setCompletionIssues([])
   }
 
@@ -3243,7 +3308,7 @@ function ActivityCreationView(props: {
         <span>{editingActivityId ? 'Editar actividad' : 'Crear actividad'}</span>
       </div>
 
-      <div className="relative overflow-hidden rounded-xl px-5 py-4 text-white shadow-sm" style={{ background: `linear-gradient(115deg, ${accent.progressColor}, #123b88)` }}>
+      <div className="relative overflow-hidden rounded-xl px-5 py-4 text-white shadow-sm" style={{ background: accent.gradient }}>
         <div className="relative z-10 flex items-center gap-4">
           <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-white/95 text-primary shadow-sm"><ClipboardList className="size-6" /></span>
           <div>
@@ -3265,7 +3330,7 @@ function ActivityCreationView(props: {
             </div>
             <div className="min-w-64 lg:w-72">
               <div className="flex items-center justify-between text-xs font-black"><span>Progreso de la actividad</span><span className={accent.text}>{progressMeta.completion}%</span></div>
-              <ProgressBar value={progressMeta.completion} className="mt-2" indicatorColor={accent.progressColor} />
+              <ProgressBar value={progressMeta.completion} className="mt-2" indicatorGradient={accent.gradient} />
             </div>
           </div>
 
@@ -3275,7 +3340,7 @@ function ActivityCreationView(props: {
                 key={item.id}
                 type="button"
                 className={cn('relative flex min-h-14 items-center justify-center gap-2 border-r border-border px-3 text-sm font-black transition last:border-r-0 hover:bg-muted/30', stage === item.id ? cn(accent.panel, accent.text) : 'text-muted-foreground')}
-                onClick={() => { setStage(item.id); setHighlightTarget(null) }}
+                onClick={() => { setStage(item.id); clearHighlight() }}
               >
                 <span className={cn('grid size-6 shrink-0 place-items-center rounded-full text-xs', item.complete ? 'bg-emerald-500 text-white' : stage === item.id ? cn(accent.progress, 'text-white') : 'bg-muted text-muted-foreground')}>
                   {item.complete ? '✓' : index + 1}
@@ -3292,13 +3357,15 @@ function ActivityCreationView(props: {
 
           {stage === 'instrument' ? (
             <div className="space-y-3">
-              <div className="rounded-xl border border-violet-200 bg-violet-50/70 px-4 py-3">
-                <p className="text-xs font-black uppercase tracking-[0.14em] text-violet-700">Instrumento seleccionado: {instrumentLabel}</p>
+              <div className={cn('rounded-xl border px-4 py-3', accent.card)}>
+                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Instrumento seleccionado: {instrumentLabel}</p>
                 <p className="mt-1 text-sm text-muted-foreground">Configura los criterios y niveles que utilizarás para evaluar esta actividad.</p>
               </div>
               <InstrumentPreview
                 key={activityDraft.instrumentType}
+                accent={accent}
                 activityName={activityDraft.name}
+                block={block}
                 completed={activityDraft.instrumentCompleted}
                 fields={activityDraft.instrumentFields}
                 highlight={highlightTarget === 'instrumentBody' || highlightTarget === 'instrumentType'}
@@ -3321,16 +3388,21 @@ function ActivityCreationView(props: {
               <Button variant="outline" onClick={() => setStage(stage === 'review' ? 'instrument' : 'activity')}><ArrowLeft className="size-4" />{stage === 'review' ? `Volver a ${instrumentLabel}` : 'Volver a datos'}</Button>
             )}
             {stage === 'activity' ? (
-              <Button onClick={() => setStage('instrument')}>Continuar al instrumento<ArrowRight className="size-4" /></Button>
+              <Button className={accent.button} onClick={() => setStage('instrument')}>Continuar al instrumento<ArrowRight className="size-4" /></Button>
             ) : stage === 'instrument' ? (
-              <Button onClick={() => setStage('review')}>Guardar y continuar<ArrowRight className="size-4" /></Button>
+              <Button className={accent.button} onClick={() => setStage('review')}>Guardar y continuar<ArrowRight className="size-4" /></Button>
             ) : (
-              <Button onClick={saveActivity} disabled={saving}><CheckCircle2 className="size-4" />{editingActivityId ? 'Guardar cambios' : 'Guardar actividad'}</Button>
+              <Button className={accent.button} onClick={saveActivity} disabled={saving}><CheckCircle2 className="size-4" />{editingActivityId ? 'Guardar cambios' : 'Guardar actividad'}</Button>
             )}
           </div>
         </main>
 
-        <ActivityProgressCard meta={progressMeta} onSelectIssue={goToIssue} />
+        <ActivityProgressCard
+          currentStage={stage}
+          meta={progressMeta}
+          onSelectIssue={goToIssue}
+          onSelectReview={() => { setStage('review'); clearHighlight() }}
+        />
       </div>
 
       {completionIssues.length > 0 ? (
@@ -3363,7 +3435,7 @@ function ActivityDataSections({ activityDraft, accent, highlightTarget, onChange
   highlightTarget: ActivityCompletionTarget | null
   onChangeDraft: (draft: ActivityDraft) => void
 }) {
-  const highlight = (target: ActivityCompletionTarget) => highlightTarget === target ? 'ring-2 ring-red-400 ring-offset-2' : ''
+  const highlight = (target: ActivityCompletionTarget) => highlightTarget === target ? transientHighlightClass : ''
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
       <CreationFormSection icon={<FileText className="size-4" />} number={1} title="Información general" accent={accent}>
@@ -3524,7 +3596,7 @@ export function LegacyActivityCreationView({
 }) {
   const [creationTab, setCreationTab] = useState<'activity' | 'instrument'>('activity')
   const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
-  const [highlightTarget, setHighlightTarget] = useState<ActivityCompletionTarget | null>(null)
+  const { clearHighlight, highlightTarget, showHighlight } = useTransientActivityHighlight()
 
   function handleActivityDraftChange(draft: ActivityDraft) {
     const selectedInstrument = draft.instrumentType && draft.instrumentType !== activityDraft.instrumentType
@@ -3541,7 +3613,7 @@ export function LegacyActivityCreationView({
 
   function showMissingItem(issue: ActivityCompletionIssue) {
     setCreationTab(issue.tab)
-    setHighlightTarget(issue.target)
+    showHighlight(issue.target)
     setCompletionIssues([])
   }
 
@@ -3549,24 +3621,24 @@ export function LegacyActivityCreationView({
     const issues = validateActivityCompletion(activityDraft)
     if (issues.length > 0) {
       setCompletionIssues(issues)
-      setHighlightTarget(issues[0]?.target ?? null)
+      if (issues[0]) showHighlight(issues[0].target)
       setCreationTab(issues[0]?.tab ?? 'activity')
       return
     }
     setCompletionIssues([])
-    setHighlightTarget(null)
+    clearHighlight()
     onSaveActivity()
   }
 
   function continueLater() {
     setCompletionIssues([])
-    setHighlightTarget(null)
+    clearHighlight()
     onBack()
   }
 
   function discardIncompleteActivity() {
     setCompletionIssues([])
-    setHighlightTarget(null)
+    clearHighlight()
     if (editingActivityId) {
       onCancelEdit()
       return
@@ -3669,7 +3741,9 @@ export function LegacyActivityCreationView({
       ) : (
         <InstrumentPreview
           key={activityDraft.instrumentType}
+          accent={getBlockAccent(block.id)}
           activityName={activityDraft.name}
+          block={block}
           completed={activityDraft.instrumentCompleted}
           fields={activityDraft.instrumentFields}
           highlight={highlightTarget === 'instrumentBody' || highlightTarget === 'instrumentType'}
@@ -3696,48 +3770,90 @@ export function LegacyActivityCreationView({
 }
 
 function ActivityProgressCard({
+  currentStage,
   meta,
   onSelectIssue,
+  onSelectReview,
 }: {
+  currentStage?: ActivityCreationStage
   meta: ActivityDraftMeta
   onSelectIssue: (issue: ActivityCompletionIssue) => void
+  onSelectReview?: () => void
 }) {
+  const accent = getBlockAccent(meta.blockId)
+  const pendingTargets = new Set(meta.pendingIssues.map((issue) => issue.target))
+  const checkpoints: Array<{ label: string; targets: ActivityCompletionTarget[] }> = [
+    { label: 'Nombre de la actividad', targets: ['name'] },
+    { label: 'Valor de la actividad', targets: ['maxScore'] },
+    { label: 'Fecha de realización', targets: ['date'] },
+    { label: 'Momento de la clase', targets: ['planningMoment'] },
+    { label: 'Técnica de evaluación', targets: ['evaluationTechnique'] },
+    { label: 'Instrumento seleccionado', targets: ['instrumentType'] },
+    { label: 'Modalidad de la actividad', targets: ['activityType'] },
+    { label: 'Descripción de la actividad', targets: ['description'] },
+  ]
+  const instrumentType = meta.draft.instrumentType
+  const instrumentFields = meta.draft.instrumentFields
+  const instrumentCount = instrumentType ? Number(instrumentFields[`${instrumentType}:meta:criteriaCount`]) || inferInstrumentCount(instrumentFields, instrumentType, 'criterion', 0) : 0
+  const instrumentValue = instrumentType ? instrumentConfiguredValue(instrumentType, instrumentFields, instrumentCount) : 0
+  const instrumentTarget = instrumentType === 'lista-ponderada' ? 100 : Number(meta.draft.maxScore) || 0
+  const distributedScoreLabel = instrumentType === 'lista-ponderada'
+    ? `Ponderación distribuida (${formatInstrumentNumber(instrumentValue)} de 100 %)`
+    : `Puntos distribuidos en el instrumento (${formatInstrumentNumber(instrumentValue)} de ${formatInstrumentNumber(instrumentTarget)})`
+  const hasInstrumentTitle = Boolean(
+    instrumentFields[instrumentFieldKey(instrumentType, 'title')]?.trim()
+      || (meta.draft.name.trim() && instrumentType),
+  )
+  const instrumentIssue = meta.pendingIssues.find((issue) => issue.target === 'instrumentBody')
+  const instrumentSubchecks = instrumentType ? [
+    { label: 'Título del instrumento', complete: hasInstrumentTitle },
+    { label: instrumentType === 'escala' ? 'Cantidad de indicadores' : 'Cantidad de criterios', complete: instrumentCount > 0 },
+    ...(instrumentType === 'rubrica' || instrumentType === 'escala' ? [{ label: 'Niveles de desempeño', complete: Number(instrumentFields[`${instrumentType}:meta:levelCount`]) >= 2 }] : []),
+    { label: distributedScoreLabel, complete: Math.abs(instrumentValue - instrumentTarget) < 0.001 },
+    { label: 'Contenido del instrumento', complete: meta.draft.instrumentCompleted },
+  ] : []
+  const circumference = 2 * Math.PI * 34
+  const pendingCheckpoint = checkpoints.find((item) => item.targets.some((target) => pendingTargets.has(target)))
+  const nextIssue = pendingCheckpoint
+    ? meta.pendingIssues.find((issue) => pendingCheckpoint.targets.includes(issue.target))
+    : meta.pendingIssues[0]
+  const resourcesComplete = meta.draft.resources.length > 0
+  const reviewComplete = currentStage === 'review'
+
   return (
-    <aside className="h-fit rounded-lg border border-border bg-card p-4 shadow-sm xl:sticky xl:top-4">
+    <aside className={cn('h-fit overflow-hidden rounded-xl border bg-card shadow-sm xl:sticky xl:top-4', accent.border)}>
+      <div className="h-1" style={{ background: accent.gradient }} />
+      <div className="p-4">
       <div className="flex items-center gap-2">
-        <Lightbulb className="size-4 text-primary" />
-        <h3 className="font-black text-primary">Tu progreso</h3>
+        <Lightbulb className={cn('size-4', accent.text)} />
+        <h3 className={cn('font-black', accent.text)}>Tu progreso</h3>
       </div>
       <div className="mt-4 flex items-center gap-4">
-        <div className="relative grid size-20 place-items-center rounded-full bg-muted">
-          <div
-            className="absolute inset-0 rounded-full"
-            style={{ background: `conic-gradient(var(--primary) ${meta.completion * 3.6}deg, var(--muted) 0deg)` }}
-          />
-          <div className="relative grid size-16 place-items-center rounded-full bg-card text-lg font-black text-primary">
+        <div className="relative grid size-20 shrink-0 place-items-center" role="img" aria-label={`${meta.completion}% completado`}>
+          <svg className="absolute inset-0 size-20 -rotate-90" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" strokeWidth="7" className="text-muted" />
+            <circle cx="40" cy="40" r="34" fill="none" stroke={accent.progressColor} strokeWidth="7" strokeLinecap="round" strokeDasharray={circumference} strokeDashoffset={circumference * (1 - meta.completion / 100)} className="motion-safe:transition-[stroke-dashoffset] motion-safe:duration-500 motion-safe:ease-out" />
+          </svg>
+          <div className={cn('relative grid size-14 place-items-center rounded-full bg-card text-lg font-black tabular-nums', accent.text)}>
             {meta.completion}%
           </div>
         </div>
-        <p className="text-sm font-medium text-muted-foreground">Campos completados</p>
+        <div><p className={cn('text-sm font-black', accent.text)}>{meta.completion === 100 ? 'Actividad lista' : meta.completion >= 75 ? 'Actividad casi lista' : 'Actividad en progreso'}</p><p className="mt-1 text-xs leading-5 text-muted-foreground">{meta.completion === 100 ? 'Ya puedes revisar y guardar.' : 'Completa los elementos pendientes.'}</p></div>
       </div>
       <div className="mt-4 border-t border-border pt-4">
-        <p className="text-sm font-black text-primary">Faltan por completar</p>
-        {meta.pendingIssues.length > 0 ? (
-          <div className="mt-2 space-y-2">
-            {meta.pendingIssues.map((issue) => (
-              <button
-                key={issue.target}
-                type="button"
-                className="block w-full rounded-md px-2 py-1 text-left text-xs text-muted-foreground transition hover:bg-muted hover:text-foreground"
-                onClick={() => onSelectIssue(issue)}
-              >
-                {issue.title}
-              </button>
-            ))}
-          </div>
-        ) : (
-          <p className="mt-2 text-sm text-success">Todo listo para guardar.</p>
-        )}
+        <p className={cn('text-xs font-black uppercase tracking-[0.12em]', accent.text)}>Recorrido de la actividad</p>
+        <div className="mt-2 space-y-1">
+          {checkpoints.map((checkpoint) => {
+            const issue = meta.pendingIssues.find((item) => checkpoint.targets.includes(item.target))
+            const complete = !issue
+            return <button key={checkpoint.label} type="button" disabled={complete} className={cn('flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-xs font-bold transition', complete ? 'cursor-default text-emerald-700' : 'text-amber-700 hover:bg-amber-50 focus-visible:outline-none focus-visible:ring-2', accent.ring)} onClick={() => issue && onSelectIssue(issue)}><span className={cn('grid size-5 shrink-0 place-items-center rounded-full border text-[10px]', complete ? 'border-emerald-500 bg-emerald-500 text-white' : 'border-amber-400 bg-amber-50 text-amber-700')}>{complete ? '✓' : '!'}</span><span>{checkpoint.label}</span></button>
+          })}
+          {instrumentSubchecks.map((checkpoint) => <button key={checkpoint.label} type="button" disabled={checkpoint.complete || !instrumentIssue} className={cn('flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-xs font-bold transition', checkpoint.complete ? 'cursor-default text-emerald-700' : 'text-amber-700 hover:bg-amber-50 focus-visible:outline-none focus-visible:ring-2', accent.ring)} onClick={() => instrumentIssue && onSelectIssue(instrumentIssue)}><span className={cn('grid size-5 shrink-0 place-items-center rounded-full border text-[10px]', checkpoint.complete ? 'border-emerald-500 bg-emerald-500 text-white' : 'border-amber-400 bg-amber-50 text-amber-700')}>{checkpoint.complete ? '✓' : '!'}</span><span>{checkpoint.label}</span></button>)}
+          <div className={cn('flex items-center gap-2 px-2 py-1.5 text-xs font-bold', resourcesComplete ? 'text-emerald-700' : 'text-muted-foreground')}><span className={cn('grid size-5 place-items-center rounded-full border text-[10px]', resourcesComplete ? 'border-emerald-500 bg-emerald-500 text-white' : 'border-muted-foreground/40')}>{resourcesComplete ? '✓' : '○'}</span><span>Recursos y materiales <span className="font-medium">— Opcional</span></span></div>
+          <button type="button" disabled={!onSelectReview} className={cn('flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-xs font-bold transition', reviewComplete ? 'text-emerald-700' : 'text-muted-foreground', onSelectReview && !reviewComplete ? 'hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2' : '', accent.ring)} onClick={onSelectReview}><span className={cn('grid size-5 place-items-center rounded-full border text-[10px]', reviewComplete ? 'border-emerald-500 bg-emerald-500 text-white' : 'border-muted-foreground/40')}>{reviewComplete ? '✓' : '○'}</span><span>Revisar y guardar</span></button>
+        </div>
+      </div>
+      {nextIssue ? <Button type="button" variant="outline" className={cn('mt-4 w-full justify-between', accent.text, accent.border)} onClick={() => onSelectIssue(nextIssue)}>Ir al siguiente pendiente<ArrowRight className="size-4" /></Button> : null}
       </div>
     </aside>
   )
@@ -3760,12 +3876,7 @@ function inferRubricLevels(fields: Record<string, string>, fallback: number) {
 }
 
 function defaultRubricStructure(maxScore: number) {
-  const score = Math.max(1, Math.round(maxScore))
-  const preferredCriteria = [4, 5, 3, 6]
-  for (const criteria of preferredCriteria) {
-    const levels = score / criteria
-    if (Number.isInteger(levels) && levels >= 2 && levels <= 6) return { criteria, levels }
-  }
+  void maxScore
   return { criteria: 4, levels: 4 }
 }
 
@@ -3777,14 +3888,10 @@ function distributeScore(maxScore: number, count: number) {
   return Array.from({ length: safeCount }, (_, index) => Number(((base + (index < remainder ? 1 : 0)) / 100).toFixed(2)))
 }
 
-function distributeInstrumentField(fields: Record<string, string>, type: string, field: string, count: number, total: number) {
-  const next: Record<string, string> = { ...fields, [`${type}:meta:criteriaCount`]: String(count) }
-  distributeScore(total, count).forEach((value, index) => { next[instrumentFieldKey(type, field, index)] = String(value) })
-  return next
-}
-
 function InstrumentPreview({
+  accent,
   activityName,
+  block,
   completed,
   fields,
   highlight,
@@ -3793,7 +3900,9 @@ function InstrumentPreview({
   onCompletedChange,
   onFieldsChange,
 }: {
+  accent: (typeof blockAccents)[number]
   activityName: string
+  block: (typeof competencyBlocks)[number]
   completed: boolean
   fields: Record<string, string>
   highlight?: boolean
@@ -3809,13 +3918,11 @@ function InstrumentPreview({
   const [scaleCriteria, setScaleCriteria] = useState(() => Number(fields['escala:meta:criteriaCount']) || inferInstrumentCount(fields, 'escala', 'criterion', 5))
   const [scaleLevels, setScaleLevels] = useState(() => Number(fields['escala:meta:levelCount']) || 4)
   const [checklistCriteria, setChecklistCriteria] = useState(() => Number(fields['lista-cotejo:meta:criteriaCount']) || inferInstrumentCount(fields, 'lista-cotejo', 'criterion', 6))
-  const [checklistHasObservations, setChecklistHasObservations] = useState(true)
+  const [checklistHasObservations, setChecklistHasObservations] = useState(() => fields['lista-cotejo:meta:observations'] !== 'false')
   const [weightedCriteria, setWeightedCriteria] = useState(() => Number(fields['lista-ponderada:meta:criteriaCount']) || inferInstrumentCount(fields, 'lista-ponderada', 'criterion', 5))
-  const [weightedHasPartial, setWeightedHasPartial] = useState(true)
-  const [instrumentTextSize, setInstrumentTextSize] = useState<'normal' | 'large' | 'xlarge'>('large')
-  const [instrumentBold, setInstrumentBold] = useState(false)
-  const [instrumentItalic, setInstrumentItalic] = useState(false)
+  const [weightedHasPartial, setWeightedHasPartial] = useState(() => fields['lista-ponderada:meta:partial'] !== 'false')
   const [showInstrumentPreview, setShowInstrumentPreview] = useState(false)
+  const editorRef = useRef<HTMLElement>(null)
   const isComplete = isInstrumentComplete({
     checklistCriteria,
     fields,
@@ -3849,9 +3956,9 @@ function InstrumentPreview({
       for (let index = 0; index < rubricLevels; index += 1) {
         const score = rubricLevels - index
         const nameKey = instrumentFieldKey('rubrica', 'level-name', score)
-        if (!next[nameKey]) next[nameKey] = rubricLevelName(index)
+        if (!next[nameKey]) next[nameKey] = rubricDefaultLevelNames(rubricLevels)[index]
         const levelPointsKey = instrumentFieldKey('rubrica', 'level-points', score)
-        if (!next[levelPointsKey]) next[levelPointsKey] = String(score)
+        if (next['rubrica:meta:customLevelPoints'] !== 'true' || !next[levelPointsKey]) next[levelPointsKey] = String(defaultRubricLevelPoints(automaticPoints[0] || maxScore, rubricLevels)[index])
       }
     }
     if (instrumentType === 'escala') {
@@ -3859,14 +3966,20 @@ function InstrumentPreview({
       next['escala:meta:levelCount'] = String(scaleLevels)
       distributeScore(maxScore, scaleCriteria).forEach((points, index) => {
         const key = instrumentFieldKey('escala', 'points', index)
-        if (!next[key]) next[key] = String(points)
+        next[key] = String(points)
       })
+      const scaleDefaults = scaleTemplateLevels(next['escala:meta:template'] || 'frecuencia')
+      for (let index = 0; index < scaleLevels; index += 1) {
+        const score = scaleLevels - index
+        if (!next[instrumentFieldKey('escala', 'level-name', score)]) next[instrumentFieldKey('escala', 'level-name', score)] = scaleDefaults[index]?.name || `Nivel ${index + 1}`
+        if (!next[instrumentFieldKey('escala', 'level-points', score)]) next[instrumentFieldKey('escala', 'level-points', score)] = String(scaleDefaults[index]?.points ?? score)
+      }
     }
     if (instrumentType === 'lista-cotejo') {
       next['lista-cotejo:meta:criteriaCount'] = String(checklistCriteria)
       distributeScore(maxScore, checklistCriteria).forEach((points, index) => {
         const key = instrumentFieldKey('lista-cotejo', 'points', index)
-        if (!next[key]) next[key] = String(points)
+        if (next['lista-cotejo:meta:pointsMode'] !== 'individual' || !next[key]) next[key] = String(points)
       })
     }
     if (instrumentType === 'lista-ponderada') {
@@ -3879,53 +3992,47 @@ function InstrumentPreview({
     if (JSON.stringify(next) !== JSON.stringify(fields)) onFieldsChange(next)
   }, [activityName, checklistCriteria, fields, instrumentType, maxScore, onFieldsChange, rubricCriteria, rubricLevels, scaleCriteria, scaleLevels, weightedCriteria])
 
+  useEffect(() => {
+    if (!highlight) return
+    const timeout = window.setTimeout(() => {
+      const emptyField = Array.from(editorRef.current?.querySelectorAll<HTMLTextAreaElement>('textarea') ?? []).find((field) => !field.value.trim())
+      emptyField?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' })
+      emptyField?.focus()
+    }, 80)
+    return () => window.clearTimeout(timeout)
+  }, [highlight, instrumentType])
+
   function updateField(key: string, value: string) {
     onFieldsChange({ ...fields, [key]: value })
   }
 
+  const criterionCount = instrumentType === 'rubrica' ? rubricCriteria : instrumentType === 'escala' ? scaleCriteria : instrumentType === 'lista-cotejo' ? checklistCriteria : weightedCriteria
+  const configuredValue = instrumentConfiguredValue(instrumentType, fields, criterionCount)
+  const configuredTarget = instrumentType === 'lista-ponderada' ? 100 : maxScore
+  const configuredMatches = Math.abs(configuredValue - configuredTarget) < 0.001
+
   return (
-    <section className={cn('rounded-lg border border-border bg-card p-4 shadow-sm', highlight ? 'ring-2 ring-red-400 ring-offset-2 ring-offset-background' : '')}>
-      <div className="flex flex-col gap-3 border-b border-border pb-3 sm:flex-row sm:items-start sm:justify-between">
+    <section ref={editorRef} className={cn('overflow-hidden rounded-xl border bg-card shadow-sm', accent.border, highlight ? transientHighlightClass : '')}>
+      <div className="h-1" style={{ background: accent.gradient }} />
+      <div className="flex flex-col gap-3 px-4 py-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
-          Instrumento de evaluación
-        </p>
-          <h3 className="mt-1 text-xl font-black text-primary">{title}</h3>
+          <p className="text-[11px] font-black uppercase tracking-[0.14em] text-muted-foreground">Instrumento seleccionado</p>
+          <h3 className={cn('mt-1 text-xl font-black', accent.text)}>{title}</h3>
+          <p className="mt-1 text-xs text-muted-foreground">Construye el instrumento que utilizarás para evaluar esta actividad.</p>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <InstrumentFormatControls
-            bold={instrumentBold}
-            italic={instrumentItalic}
-            onBoldChange={setInstrumentBold}
-            onItalicChange={setInstrumentItalic}
-            onTextSizeChange={setInstrumentTextSize}
-            textSize={instrumentTextSize}
-          />
-          <Badge tone={isComplete ? 'success' : 'muted'}>
-            {instrumentType ? (isComplete ? 'Completo' : 'Pendiente') : 'Pendiente'}
-          </Badge>
-        </div>
+        {instrumentType ? <Button type="button" size="sm" variant="outline" onClick={() => setShowInstrumentPreview(true)}><Eye className="size-4" />Vista previa</Button> : null}
       </div>
 
-      {instrumentType ? (
-        <label className="mt-3 block space-y-1.5 text-sm font-bold text-foreground">
-          Título del instrumento
-          <Input
-            className="h-10"
-            value={fields[instrumentFieldKey(instrumentType, 'title')] ?? ''}
-            onChange={(event) => updateField(instrumentFieldKey(instrumentType, 'title'), event.target.value)}
-            placeholder={`Ej. ${title} para ${'la actividad'}`}
-          />
-        </label>
-      ) : null}
+      {instrumentType ? <div className="border-y border-border bg-muted/10 px-4 py-3"><label className="block text-xs font-black text-muted-foreground">Título del instrumento<Input className="mt-1.5 h-10 bg-card" value={fields[instrumentFieldKey(instrumentType, 'title')] ?? ''} onChange={(event) => updateField(instrumentFieldKey(instrumentType, 'title'), event.target.value)} placeholder={`Ej. ${title} para la actividad`} /></label><div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-5"><InstrumentSummaryItem label="Actividad" value={`${maxScore} puntos`} /><InstrumentSummaryItem label={instrumentType === 'escala' ? 'Indicadores' : 'Criterios'} value={String(criterionCount)} /><InstrumentSummaryItem label="Niveles" value={instrumentType === 'rubrica' ? String(rubricLevels) : instrumentType === 'escala' ? String(scaleLevels) : 'No aplica'} /><InstrumentSummaryItem label="Puntuación configurada" value={instrumentType === 'lista-ponderada' ? `${configuredValue}/100 %` : `${configuredValue}/${maxScore} pts`} good={configuredMatches} /><InstrumentSummaryItem label="Estado" value={isComplete ? 'Listo para revisar' : configuredMatches ? 'Faltan contenidos' : `Faltan ${formatInstrumentNumber(Math.max(0, configuredTarget - configuredValue))}${instrumentType === 'lista-ponderada' ? '%' : ' pts'}`} good={isComplete} /></div></div> : null}
 
-      <div className={cn('mt-3 max-h-[32rem] overflow-auto pr-1', instrumentTypographyClass(instrumentTextSize, instrumentBold, instrumentItalic))}>
+      <div className="p-4">
         {instrumentType === 'rubrica' ? (
           <RubricInstrument
             criteriaCount={rubricCriteria}
             fields={fields}
             levelCount={rubricLevels}
             maxScore={maxScore}
+            accent={accent}
             onFieldChange={updateField}
             onCriteriaCountChange={setRubricCriteria}
             onFieldsChange={onFieldsChange}
@@ -3938,8 +4045,10 @@ function InstrumentPreview({
             fields={fields}
             levelCount={scaleLevels}
             maxScore={maxScore}
+            accent={accent}
+            onFieldsChange={onFieldsChange}
             onFieldChange={updateField}
-            onCriteriaCountChange={(value) => { setScaleCriteria(value); onFieldsChange(distributeInstrumentField(fields, 'escala', 'points', value, maxScore)) }}
+            onCriteriaCountChange={setScaleCriteria}
             onLevelCountChange={(value) => { setScaleLevels(value); onFieldsChange({ ...fields, 'escala:meta:levelCount': String(value) }) }}
           />
         ) : null}
@@ -3949,8 +4058,10 @@ function InstrumentPreview({
             fields={fields}
             hasObservations={checklistHasObservations}
             maxScore={maxScore}
+            accent={accent}
+            onFieldsChange={onFieldsChange}
             onFieldChange={updateField}
-            onCriteriaCountChange={(value) => { setChecklistCriteria(value); onFieldsChange(distributeInstrumentField(fields, 'lista-cotejo', 'points', value, maxScore)) }}
+            onCriteriaCountChange={setChecklistCriteria}
             onHasObservationsChange={setChecklistHasObservations}
           />
         ) : null}
@@ -3960,17 +4071,44 @@ function InstrumentPreview({
             fields={fields}
             hasPartial={weightedHasPartial}
             maxScore={maxScore}
+            accent={accent}
+            onFieldsChange={onFieldsChange}
             onFieldChange={updateField}
-            onCriteriaCountChange={(value) => { setWeightedCriteria(value); onFieldsChange(distributeInstrumentField(fields, 'lista-ponderada', 'weight', value, 100)) }}
+            onCriteriaCountChange={setWeightedCriteria}
             onHasPartialChange={setWeightedHasPartial}
           />
         ) : null}
         {!instrumentType ? <EmptyInstrumentState /> : null}
       </div>
-      {instrumentType && instrumentType !== 'rubrica' ? <div className="mt-3"><Button type="button" size="sm" variant="outline" onClick={() => setShowInstrumentPreview(true)}><Eye className="size-4" />Vista previa de {instrumentTitle(instrumentType).toLocaleLowerCase()}</Button></div> : null}
-      {showInstrumentPreview ? <Modal title={`Vista previa: ${instrumentTitle(instrumentType)}`} onClose={() => setShowInstrumentPreview(false)} className="max-w-[94vw]"><div className="max-h-[78vh] overflow-auto p-5"><ReadOnlyInstrument type={instrumentType} fields={fields} maxScore={maxScore} /></div></Modal> : null}
+      {showInstrumentPreview ? <InstrumentPreviewModal accent={accent} activityName={activityName} block={block} fields={fields} instrumentType={instrumentType} maxScore={maxScore} onClose={() => setShowInstrumentPreview(false)} /> : null}
     </section>
   )
+}
+
+function formatInstrumentNumber(value: number) {
+  return Number(value.toFixed(2)).toLocaleString('es-DO', { maximumFractionDigits: 2 })
+}
+
+function instrumentConfiguredValue(type: string, fields: Record<string, string>, count: number) {
+  const field = type === 'lista-ponderada' ? 'weight' : 'points'
+  return Number(Array.from({ length: count }, (_, index) => Number(fields[instrumentFieldKey(type, field, index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
+}
+
+function InstrumentSummaryItem({ good, label, value }: { good?: boolean; label: string; value: string }) {
+  return <div className="rounded-lg border border-border bg-card px-3 py-2"><p className="text-[10px] font-black uppercase tracking-[0.1em] text-muted-foreground">{label}</p><p className={cn('mt-1 truncate text-sm font-black', good === true ? 'text-emerald-700' : good === false ? 'text-amber-700' : 'text-foreground')}>{value}{good ? <CheckCircle2 className="ml-1 inline size-3.5" /> : null}</p></div>
+}
+
+function InstrumentSettingsDrawer({ accent, children, description, onApply, onClose, title }: { accent: (typeof blockAccents)[number]; children: ReactNode; description: string; onApply: () => void; onClose: () => void; title: string }) {
+  const panelRef = useRef<HTMLDivElement>(null)
+  useFocusTrap({ ref: panelRef, active: true, onEscape: onClose })
+  return <div className="fixed inset-0 z-50 bg-slate-950/35 motion-safe:animate-[fadeIn_200ms_ease-out]" role="presentation"><div ref={panelRef} role="dialog" aria-modal="true" aria-labelledby="instrument-settings-title" className="ml-auto flex h-full w-full max-w-[34rem] flex-col border-l border-border bg-card shadow-2xl motion-safe:animate-[slideInRight_250ms_ease-out]"><div className="h-1 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-5 py-4"><div><h3 id="instrument-settings-title" className="text-lg font-black text-foreground">{title}</h3><p className="mt-1 text-sm leading-5 text-muted-foreground">{description}</p></div><Button type="button" variant="ghost" size="icon" aria-label="Cerrar configuración" onClick={onClose}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-y-auto p-5">{children}</div><footer className="flex shrink-0 justify-end gap-3 border-t border-border bg-card px-5 py-4"><Button type="button" variant="outline" onClick={onClose}>Cancelar</Button><Button type="button" className={accent.button} onClick={onApply}>Aplicar cambios</Button></footer></div></div>
+}
+
+function InstrumentPreviewModal({ accent, activityName, block, fields, instrumentType, maxScore, onClose }: { accent: (typeof blockAccents)[number]; activityName: string; block: (typeof competencyBlocks)[number]; fields: Record<string, string>; instrumentType: string; maxScore: number; onClose: () => void }) {
+  const title = fields[instrumentFieldKey(instrumentType, 'title')] || instrumentTitle(instrumentType)
+  const criteriaCount = Number(fields[`${instrumentType}:meta:criteriaCount`]) || inferInstrumentCount(fields, instrumentType, 'criterion', 0)
+  const levelCount = instrumentType === 'rubrica' ? Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, 0) : instrumentType === 'escala' ? Number(fields['escala:meta:levelCount']) || 0 : 0
+  return <Modal title={`Vista previa de ${instrumentTitle(instrumentType).toLocaleLowerCase()}`} onClose={onClose} className="max-h-[90vh] max-w-[94vw] rounded-xl" hideHeader><div className="flex max-h-[90vh] flex-col"><div className="h-1.5 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-6 py-4"><div><p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Vista previa · Solo lectura</p><h3 className="mt-1 text-xl font-black text-foreground">{title}</h3><p className="mt-1 text-sm text-muted-foreground">Actividad: {activityName || 'Sin nombre'} · {block.shortName} · {maxScore} puntos · {criteriaCount} {instrumentType === 'escala' ? 'indicadores' : 'criterios'}{levelCount ? ` · ${levelCount} niveles` : ''}</p></div><Button type="button" variant="ghost" size="icon" aria-label="Cerrar vista previa" onClick={onClose}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-auto bg-muted/10 p-6"><ReadOnlyInstrument type={instrumentType} fields={fields} maxScore={maxScore} /></div><footer className="flex shrink-0 justify-end border-t border-border bg-card px-6 py-4"><Button type="button" className={accent.button} onClick={onClose}>Volver a editar</Button></footer></div></Modal>
 }
 
 function ActivityCompletionModal({
@@ -4140,6 +4278,7 @@ function completionIssueVisual(target: ActivityCompletionTarget) {
 }
 
 function RubricInstrument({
+  accent,
   criteriaCount,
   fields,
   levelCount,
@@ -4149,6 +4288,7 @@ function RubricInstrument({
   onFieldsChange,
   onLevelCountChange,
 }: {
+  accent: (typeof blockAccents)[number]
   criteriaCount: number
   fields: Record<string, string>
   levelCount: number
@@ -4159,13 +4299,17 @@ function RubricInstrument({
   onLevelCountChange: (value: number) => void
 }) {
   const [editingLevels, setEditingLevels] = useState(false)
-  const [showPreview, setShowPreview] = useState(false)
+  const [levelDrafts, setLevelDrafts] = useState<Array<{ id: string; sourceScore: number | null; name: string; points: number }>>([])
+  const [pendingCriterionDelete, setPendingCriterionDelete] = useState<number | null>(null)
+  const [pendingLevelDelete, setPendingLevelDelete] = useState<number | null>(null)
+  const [pendingDraftLevelDelete, setPendingDraftLevelDelete] = useState<string | null>(null)
+  const [highlightedRow, setHighlightedRow] = useState<number | null>(null)
   const levels = Array.from({ length: levelCount }, (_, index) => {
     const score = levelCount - index
     return {
       score,
-      name: fields[instrumentFieldKey('rubrica', 'level-name', score)] || rubricLevelName(index),
-      points: Number(fields[instrumentFieldKey('rubrica', 'level-points', score)] || score),
+      name: fields[instrumentFieldKey('rubrica', 'level-name', score)] || rubricDefaultLevelNames(levelCount)[index],
+      points: Number(fields[instrumentFieldKey('rubrica', 'level-points', score)] || defaultRubricLevelPoints(criterionPointsMaximum(fields, criteriaCount, maxScore), levelCount)[index]),
     }
   })
   const criterionPoints = Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('rubrica', 'points', index)] || 0))
@@ -4183,6 +4327,7 @@ function RubricInstrument({
     }
     onFieldsChange(next)
     onCriteriaCountChange(nextCount)
+    if (nextCount > criteriaCount) focusNewInstrumentRow('rubrica', nextCount - 1, setHighlightedRow)
   }
 
   function removeCriterion(indexToRemove: number) {
@@ -4205,11 +4350,45 @@ function RubricInstrument({
     onCriteriaCountChange(nextCount)
   }
 
+  function requestRemoveCriterion(index: number) {
+    const hasContent = Boolean(fields[instrumentFieldKey('rubrica', 'criterion', index)]?.trim()) || Array.from({ length: levelCount }, (_, levelIndex) => levelCount - levelIndex).some((score) => fields[instrumentFieldKey('rubrica', 'descriptor', index, score)]?.trim())
+    if (hasContent) setPendingCriterionDelete(index)
+    else removeCriterion(index)
+  }
+
+  function moveCriterion(from: number, to: number) {
+    if (to < 0 || to >= criteriaCount || from === to) return
+    const next = { ...fields }
+    const fieldNames = ['criterion', 'points']
+    for (let score = 1; score <= levelCount; score += 1) fieldNames.push(`descriptor:${score}`)
+    fieldNames.forEach((fieldName) => {
+      const [field, score] = fieldName.split(':')
+      const fromKey = score ? instrumentFieldKey('rubrica', field, from, score) : instrumentFieldKey('rubrica', field, from)
+      const toKey = score ? instrumentFieldKey('rubrica', field, to, score) : instrumentFieldKey('rubrica', field, to)
+      const temp = next[fromKey] ?? ''
+      next[fromKey] = next[toKey] ?? ''
+      next[toKey] = temp
+    })
+    onFieldsChange(next)
+  }
+
+  function duplicateCriterion(index: number) {
+    if (criteriaCount >= 12) return
+    const nextCount = criteriaCount + 1
+    const next: Record<string, string> = { ...fields, 'rubrica:meta:criteriaCount': String(nextCount) }
+    next[instrumentFieldKey('rubrica', 'criterion', criteriaCount)] = fields[instrumentFieldKey('rubrica', 'criterion', index)] ? `${fields[instrumentFieldKey('rubrica', 'criterion', index)]} (copia)` : ''
+    for (let score = 1; score <= levelCount; score += 1) next[instrumentFieldKey('rubrica', 'descriptor', criteriaCount, score)] = fields[instrumentFieldKey('rubrica', 'descriptor', index, score)] || ''
+    distributeScore(maxScore, nextCount).forEach((points, row) => { next[instrumentFieldKey('rubrica', 'points', row)] = String(points) })
+    onFieldsChange(next)
+    onCriteriaCountChange(nextCount)
+    focusNewInstrumentRow('rubrica', criteriaCount, setHighlightedRow)
+  }
+
   function removeLevel(scoreToRemove: number) {
     if (levelCount <= 2) return
     const remaining = levels.filter((level) => level.score !== scoreToRemove)
     const nextCount = levelCount - 1
-    const next: Record<string, string> = { ...fields, 'rubrica:meta:levelCount': String(nextCount) }
+    const next: Record<string, string> = { ...fields, 'rubrica:meta:levelCount': String(nextCount), 'rubrica:meta:customLevelPoints': 'true' }
     Object.keys(next).forEach((key) => {
       if (/^rubrica:level-(?:name|points):\d+$/.test(key) || /^rubrica:descriptor:\d+:\d+$/.test(key)) delete next[key]
     })
@@ -4226,123 +4405,188 @@ function RubricInstrument({
     onLevelCountChange(nextCount)
   }
 
-  function addLevel() {
-    if (levelCount >= 6) return
-    const nextCount = levelCount + 1
-    const next: Record<string, string> = { ...fields, 'rubrica:meta:levelCount': String(nextCount) }
-    Object.keys(next).forEach((key) => {
-      if (/^rubrica:level-(?:name|points):\d+$/.test(key) || /^rubrica:descriptor:\d+:\d+$/.test(key)) delete next[key]
+  function requestRemoveLevel(score: number) {
+    const descriptorCount = Array.from({ length: criteriaCount }, (_, index) => fields[instrumentFieldKey('rubrica', 'descriptor', index, score)]?.trim()).filter(Boolean).length
+    if (descriptorCount > 0) setPendingLevelDelete(score)
+    else removeLevel(score)
+  }
+
+  function openLevelEditor() {
+    setLevelDrafts(levels.map((level) => ({ id: `level-${level.score}`, sourceScore: level.score, name: level.name, points: level.points })))
+    setEditingLevels(true)
+  }
+
+  function addLevelDraft() {
+    if (levelDrafts.length >= 6) return
+    const names = rubricDefaultLevelNames(levelDrafts.length + 1)
+    const used = new Set(levelDrafts.map((level) => level.name.trim().toLocaleLowerCase()))
+    const name = names.find((candidate) => !used.has(candidate.toLocaleLowerCase())) || `Nivel ${levelDrafts.length + 1}`
+    const nextPoints = defaultRubricLevelPoints(criterionPointsMaximum(fields, criteriaCount, maxScore), levelDrafts.length + 1)
+    const targetIndex = Math.max(0, names.indexOf(name))
+    setLevelDrafts((current) => {
+      const insertAt = current.findIndex((level) => { const canonicalIndex = names.findIndex((candidate) => candidate.toLocaleLowerCase() === level.name.trim().toLocaleLowerCase()); return canonicalIndex >= 0 && canonicalIndex > targetIndex })
+      const next = [...current]
+      next.splice(insertAt < 0 ? next.length : insertAt, 0, { id: `new-${Date.now()}`, sourceScore: null, name, points: nextPoints[targetIndex] ?? 1 })
+      return next
     })
-    levels.forEach((level, index) => {
+  }
+
+  function moveLevelDraft(index: number, direction: -1 | 1) {
+    const target = index + direction
+    if (target < 0 || target >= levelDrafts.length) return
+    setLevelDrafts((current) => { const next = [...current]; [next[index], next[target]] = [next[target], next[index]]; return next })
+  }
+
+  function applyLevelDrafts() {
+    const nextCount = levelDrafts.length
+    const next: Record<string, string> = { ...fields, 'rubrica:meta:levelCount': String(nextCount), 'rubrica:meta:customLevelPoints': 'true' }
+    Object.keys(next).forEach((key) => { if (/^rubrica:level-(?:name|points):\d+$/.test(key) || /^rubrica:descriptor:\d+:\d+$/.test(key)) delete next[key] })
+    levelDrafts.forEach((level, index) => {
       const newScore = nextCount - index
-      next[instrumentFieldKey('rubrica', 'level-name', newScore)] = level.name
+      next[instrumentFieldKey('rubrica', 'level-name', newScore)] = level.name.trim() || rubricDefaultLevelNames(nextCount)[index]
       next[instrumentFieldKey('rubrica', 'level-points', newScore)] = String(level.points)
-      for (let criterionIndex = 0; criterionIndex < criteriaCount; criterionIndex += 1) {
-        next[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, newScore)] = fields[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, level.score)] || ''
-      }
+      for (let criterionIndex = 0; criterionIndex < criteriaCount; criterionIndex += 1) next[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, newScore)] = level.sourceScore === null ? '' : fields[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, level.sourceScore)] || ''
     })
-    next[instrumentFieldKey('rubrica', 'level-name', 1)] = rubricLevelName(nextCount - 1)
-    next[instrumentFieldKey('rubrica', 'level-points', 1)] = '1'
-    distributeScore(maxScore, criteriaCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(points) })
     onFieldsChange(next)
     onLevelCountChange(nextCount)
+    setEditingLevels(false)
   }
 
   return (
     <div className="space-y-3">
-      <div className="rounded-xl border border-violet-100 bg-violet-50/40 p-3">
-        <div className="grid gap-3 sm:grid-cols-3">
-          <div><p className="text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground">Puntuación máxima</p><p className="mt-1 text-lg font-black text-primary">{maxScore} <span className="text-xs text-muted-foreground">pts</span></p></div>
-          <div><p className="text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground">Niveles de desempeño</p><p className="mt-1 text-lg font-black text-primary">{levelCount} niveles</p></div>
-          <div><p className="text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground">Escala de valoración</p><p className="mt-1 text-sm font-black text-primary">Descriptiva</p></div>
-        </div>
-      </div>
-
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
-          <p className="font-black text-primary">Criterios y niveles de desempeño</p>
-          <p className="text-xs text-muted-foreground">Los puntajes por criterio siempre deben sumar {maxScore} puntos.</p>
+          <p className={cn('font-black', accent.text)}>Criterios y niveles de desempeño</p>
+          <p className="text-xs text-muted-foreground">La puntuación se redistribuye automáticamente para sumar {maxScore} puntos.</p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button type="button" size="sm" variant="outline" onClick={() => resizeCriteria(Math.min(12, criteriaCount + 1))} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button>
-          <Button type="button" size="sm" variant="outline" onClick={() => setEditingLevels(true)}><Pencil className="size-4" />Editar niveles</Button>
+          <Button type="button" size="sm" variant="outline" onClick={openLevelEditor}><Settings className="size-4" />Configurar niveles</Button>
+          <Button type="button" size="sm" className={accent.button} onClick={() => resizeCriteria(Math.min(12, criteriaCount + 1))} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button>
         </div>
       </div>
 
-      {editingLevels ? <Modal title="Editar niveles de desempeño" onClose={() => setEditingLevels(false)} className="max-w-2xl"><div className="space-y-3 p-5"><div className="flex items-center justify-between gap-3 rounded-lg bg-violet-50 px-3 py-2"><p className="text-sm text-violet-800">Organiza entre 2 y 6 niveles. También puedes eliminarlos directamente desde la tabla.</p><Button type="button" size="sm" variant="outline" disabled={levelCount >= 6} onClick={addLevel}><Plus className="size-4" />Agregar nivel</Button></div><div className="space-y-2">{levels.map((level, index) => <div key={level.score} className="grid grid-cols-[2rem_minmax(0,1fr)_5rem_2rem] items-end gap-2 rounded-lg border border-border bg-card p-2"><span className="mb-2 grid size-7 place-items-center rounded-md bg-violet-50 text-xs font-black text-violet-700">{index + 1}</span><label className="text-xs font-bold text-muted-foreground">Nombre<Input className="mt-1 h-9" value={fields[instrumentFieldKey('rubrica', 'level-name', level.score)] ?? level.name} onChange={(event) => onFieldChange(instrumentFieldKey('rubrica', 'level-name', level.score), event.target.value)} /></label><label className="text-xs font-bold text-muted-foreground">Valor<Input className="mt-1 h-9" type="number" min={0} step="0.25" value={fields[instrumentFieldKey('rubrica', 'level-points', level.score)] ?? String(level.points)} onChange={(event) => onFieldChange(instrumentFieldKey('rubrica', 'level-points', level.score), event.target.value)} /></label><button type="button" aria-label={`Eliminar nivel ${level.name}`} title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'} disabled={levelCount <= 2} className="mb-0.5 grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => removeLevel(level.score)}><Trash2 className="size-4" /></button></div>)}</div><div className="flex justify-end"><Button type="button" onClick={() => setEditingLevels(false)}>Listo</Button></div></div></Modal> : null}
+      {editingLevels ? <InstrumentSettingsDrawer accent={accent} title="Configurar niveles de desempeño" description="Personaliza los niveles, su orden y las puntuaciones utilizadas en esta rúbrica." onClose={() => setEditingLevels(false)} onApply={applyLevelDrafts}><div className="space-y-5"><div className={cn('grid grid-cols-2 gap-2 rounded-xl border p-3', accent.card)}><InstrumentSummaryItem label="Niveles" value={String(levelDrafts.length)} /><InstrumentSummaryItem label="Actividad" value={`${maxScore} puntos`} /><InstrumentSummaryItem label="Criterios" value={String(criteriaCount)} /><InstrumentSummaryItem label="Puntuación total" value={`${total}/${maxScore} pts`} good={scoreMatches} /></div><div><div className="mb-2 flex items-center justify-between"><p className="text-sm font-black text-foreground">Mayor a menor desempeño</p><Button type="button" size="sm" variant="outline" disabled={levelDrafts.length >= 6} onClick={addLevelDraft}><Plus className="size-4" />Agregar nivel</Button></div><div className="space-y-2">{levelDrafts.map((level, index) => <div key={level.id} className="grid grid-cols-[2rem_minmax(0,1fr)_5.5rem_2rem] items-end gap-2 rounded-xl border border-border bg-card p-3"><div className="mb-1 flex flex-col"><button type="button" className="grid size-6 place-items-center rounded text-muted-foreground hover:bg-muted" disabled={index === 0} aria-label="Mover nivel arriba" onClick={() => moveLevelDraft(index, -1)}><ArrowUp className="size-3.5" /></button><button type="button" className="grid size-6 place-items-center rounded text-muted-foreground hover:bg-muted" disabled={index === levelDrafts.length - 1} aria-label="Mover nivel abajo" onClick={() => moveLevelDraft(index, 1)}><ArrowDown className="size-3.5" /></button></div><label className="text-xs font-bold text-muted-foreground">Nombre<Input className="mt-1 h-10" value={level.name} onChange={(event) => setLevelDrafts((current) => current.map((item) => item.id === level.id ? { ...item, name: event.target.value } : item))} /></label><label className="text-xs font-bold text-muted-foreground">Valor<Input className="mt-1 h-10" type="number" min={0} step="0.25" value={level.points} onChange={(event) => setLevelDrafts((current) => current.map((item) => item.id === level.id ? { ...item, points: Number(event.target.value) } : item))} /></label><button type="button" aria-label={`Eliminar nivel ${level.name}`} disabled={levelDrafts.length <= 2} className="mb-1 grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => { const descriptors = level.sourceScore === null ? 0 : Array.from({ length: criteriaCount }, (_, row) => fields[instrumentFieldKey('rubrica', 'descriptor', row, level.sourceScore!)]?.trim()).filter(Boolean).length; if (descriptors) setPendingDraftLevelDelete(level.id); else setLevelDrafts((current) => current.filter((item) => item.id !== level.id)) }}><Trash2 className="size-4" /></button></div>)}</div></div><div><p className="mb-2 text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Vista previa de encabezados</p><div className="grid overflow-hidden rounded-lg border border-border" style={{ gridTemplateColumns: `repeat(${Math.max(1, levelDrafts.length)}, minmax(0, 1fr))` }}>{levelDrafts.map((level, index) => <div key={level.id} className="border-r border-border px-2 py-3 text-center last:border-r-0" style={{ backgroundColor: `${accent.progressColor}${Math.max(8, 22 - index * 3).toString(16).padStart(2, '0')}` }}><p className="truncate text-xs font-black text-foreground">{level.name || `Nivel ${index + 1}`}</p><p className="mt-1 text-[10px] text-muted-foreground">{level.points} pts</p></div>)}</div></div></div></InstrumentSettingsDrawer> : null}
+      {pendingDraftLevelDelete ? <ConfirmDialog title="¿Eliminar este nivel?" description="Este nivel contiene descriptores. Si lo eliminas, también se eliminará esa información al aplicar los cambios." confirmLabel="Eliminar nivel" destructive onClose={() => setPendingDraftLevelDelete(null)} onConfirm={() => { setLevelDrafts((current) => current.filter((item) => item.id !== pendingDraftLevelDelete)); setPendingDraftLevelDelete(null) }} /> : null}
 
       <InstrumentTable>
-        <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
+        <thead className="sticky top-0 z-20 bg-slate-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
-            <th className="w-[24%] border border-border px-2 py-2">Criterios de evaluación</th>
-            {levels.map((level) => <th key={level.score} className="group relative border border-border px-2 py-2 text-center"><span className="block pr-4 text-primary">{level.name}</span><span className="mt-0.5 block pr-4 normal-case text-muted-foreground">{level.points} pts</span><button type="button" aria-label={`Eliminar nivel ${level.name}`} title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'} disabled={levelCount <= 2} className="absolute right-1 top-1 grid size-5 place-items-center rounded text-slate-400 opacity-70 transition hover:bg-red-50 hover:text-destructive group-hover:opacity-100 disabled:hidden" onClick={() => removeLevel(level.score)}><X className="size-3" /></button></th>)}
+            <th className="sticky left-0 z-30 w-[24%] border border-border bg-slate-50 px-2 py-2">Criterios de evaluación</th>
+            {levels.map((level, index) => <th key={level.score} className="group relative border border-border px-2 py-2 text-center" style={{ backgroundColor: `${accent.progressColor}${Math.max(8, 22 - index * 3).toString(16).padStart(2, '0')}` }}><span className={cn('block pr-4', accent.text)}>{level.name}</span><span className="mt-0.5 block pr-4 normal-case text-muted-foreground">{level.points} pts</span><button type="button" aria-label={`Eliminar nivel ${level.name}`} title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'} disabled={levelCount <= 2} className="absolute right-1 top-1 grid size-5 place-items-center rounded text-slate-400 opacity-70 transition hover:bg-red-50 hover:text-destructive group-hover:opacity-100 disabled:hidden" onClick={() => requestRemoveLevel(level.score)}><X className="size-3" /></button></th>)}
             <th className="w-24 border border-border px-2 py-2 text-center">Puntaje por criterio</th>
             <th className="w-10 border border-border" />
           </tr>
         </thead>
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
-            <tr key={index}>
-              <td className="border border-border p-1.5"><InstrumentTextarea placeholder={`${index + 1}. Criterio de evaluación`} value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)} /></td>
+            <tr key={index} className={cn('transition-colors motion-safe:duration-500', highlightedRow === index ? accent.panel : '')}>
+              <td className="sticky left-0 z-10 border border-border bg-card p-1.5"><div className="flex items-start gap-1"><span className={cn('mt-1 grid size-6 shrink-0 place-items-center rounded-full text-[10px] font-black text-white', accent.progress)}>{index + 1}</span><InstrumentTextarea dataInstrumentRow={`rubrica-${index}`} placeholder="Criterio de evaluación" value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)} /></div></td>
               {levels.map((level) => <td key={level.score} className="border border-border p-1.5"><InstrumentTextarea value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)} /></td>)}
-              <td className="border border-border px-2 py-3 text-center"><span className="inline-flex min-w-14 items-center justify-center rounded-lg bg-blue-50 px-2 py-2 font-black text-primary">{criterionPoints[index]} pts</span></td>
-              <td className="border border-border text-center"><button type="button" aria-label={`Eliminar criterio ${index + 1}`} title="Eliminar criterio" className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" disabled={criteriaCount <= 1} onClick={() => removeCriterion(index)}><X className="size-4" /></button></td>
+              <td className="border border-border px-2 py-3 text-center"><span className={cn('inline-flex min-w-14 items-center justify-center rounded-lg px-2 py-2 font-black', accent.panel, accent.text)}>{criterionPoints[index]} pts</span></td>
+              <td className="border border-border text-center"><InstrumentRowMenu canMoveDown={index < criteriaCount - 1} canMoveUp={index > 0} onDelete={() => requestRemoveCriterion(index)} onDuplicate={() => duplicateCriterion(index)} onMoveDown={() => moveCriterion(index, index + 1)} onMoveUp={() => moveCriterion(index, index - 1)} /></td>
             </tr>
           ))}
         </tbody>
       </InstrumentTable>
 
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <Button type="button" size="sm" variant="outline" onClick={() => setShowPreview(true)}><Eye className="size-4" />Vista previa de la rúbrica</Button>
-        <div className="text-right"><p className={cn('text-sm font-black', scoreMatches ? 'text-emerald-600' : 'text-destructive')}>Puntuación máxima total: {total} / {maxScore} pts</p>{!scoreMatches ? <p className="mt-1 text-xs text-destructive">Ajusta los puntajes por criterio hasta completar exactamente {maxScore} puntos.</p> : null}</div>
+        <p className="text-xs text-muted-foreground">Los valores por criterio son automáticos y siempre conservan el total.</p>
+        <div className="text-right"><p className={cn('text-sm font-black', scoreMatches ? 'text-emerald-600' : 'text-destructive')}>Puntuación máxima total: {total} / {maxScore} pts</p>{!scoreMatches ? <p className="mt-1 text-xs text-destructive">La puntuación no coincide con el valor de la actividad.</p> : null}</div>
       </div>
-
-      {showPreview ? <Modal title="Vista previa de la rúbrica" onClose={() => setShowPreview(false)} className="max-w-[94vw]"><div className="max-h-[78vh] overflow-auto p-5"><ReadOnlyInstrument type="rubrica" fields={fields} maxScore={maxScore} /></div></Modal> : null}
+      {pendingCriterionDelete !== null ? <ConfirmDialog title="¿Eliminar este criterio?" description={`Se eliminará “${fields[instrumentFieldKey('rubrica', 'criterion', pendingCriterionDelete)] || `Criterio ${pendingCriterionDelete + 1}`}” junto con sus ${levelCount} descriptores asociados. Esta acción no se puede deshacer.`} confirmLabel="Eliminar criterio" destructive onClose={() => setPendingCriterionDelete(null)} onConfirm={() => { removeCriterion(pendingCriterionDelete); setPendingCriterionDelete(null) }} /> : null}
+      {pendingLevelDelete !== null ? <ConfirmDialog title="¿Eliminar este nivel?" description={`Se eliminará “${fields[instrumentFieldKey('rubrica', 'level-name', pendingLevelDelete)] || 'este nivel'}” y todos sus descriptores asociados. Esta acción no se puede deshacer.`} confirmLabel="Eliminar nivel" destructive onClose={() => setPendingLevelDelete(null)} onConfirm={() => { removeLevel(pendingLevelDelete); setPendingLevelDelete(null) }} /> : null}
     </div>
   )
 }
 function ScaleInstrument({
+  accent,
   criteriaCount,
   fields,
   levelCount,
   maxScore,
   onFieldChange,
   onCriteriaCountChange,
+  onFieldsChange,
   onLevelCountChange,
 }: {
+  accent: (typeof blockAccents)[number]
   criteriaCount: number
   fields: Record<string, string>
   levelCount: number
   maxScore: number
   onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
+  onFieldsChange: (fields: Record<string, string>) => void
   onLevelCountChange: (value: number) => void
 }) {
   const levels = Array.from({ length: levelCount }, (_, index) => levelCount - index)
   const total = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('escala', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
+  const [configuring, setConfiguring] = useState(false)
+  const [levelDrafts, setLevelDrafts] = useState<Array<{ id: string; name: string; points: number }>>([])
+  const [template, setTemplate] = useState(fields['escala:meta:template'] || 'frecuencia')
+  const [pendingDelete, setPendingDelete] = useState<number | null>(null)
+  const [highlightedRow, setHighlightedRow] = useState<number | null>(null)
+
+  function addIndicator() {
+    if (criteriaCount >= 12) return
+    const nextCount = criteriaCount + 1
+    const next: Record<string,string> = {...fields,'escala:meta:criteriaCount':String(nextCount)}
+    distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('escala','points',row)]=String(points)})
+    onFieldsChange(next)
+    onCriteriaCountChange(nextCount)
+    focusNewInstrumentRow('escala', criteriaCount, setHighlightedRow)
+  }
+
+  function removeIndicator(index: number) {
+    const nextCount = criteriaCount - 1
+    if (nextCount < 1) return
+    const next = shiftInstrumentRows(fields, 'escala', index, criteriaCount, ['criterion', 'points'])
+    next['escala:meta:criteriaCount'] = String(nextCount)
+    distributeScore(maxScore, nextCount).forEach((points, row) => { next[instrumentFieldKey('escala', 'points', row)] = String(points) })
+    onFieldsChange(next); onCriteriaCountChange(nextCount)
+  }
+
+  function openConfiguration() {
+    const defaults = scaleTemplateLevels(template)
+    setLevelDrafts(levels.map((score, index) => ({ id: `scale-${score}`, name: fields[instrumentFieldKey('escala', 'level-name', score)] || defaults[index]?.name || `Nivel ${index + 1}`, points: Number(fields[instrumentFieldKey('escala', 'level-points', score)] || defaults[index]?.points || score) })))
+    setConfiguring(true)
+  }
+
+  function selectScaleTemplate(nextTemplate: string) {
+    setTemplate(nextTemplate)
+    if (nextTemplate === 'personalizada') return
+    setLevelDrafts(scaleTemplateLevels(nextTemplate).map((level, index) => ({ id: `${nextTemplate}-${index}`, ...level })))
+  }
+
+  function applyConfiguration() {
+    const next: Record<string, string> = { ...fields, 'escala:meta:template': template, 'escala:meta:levelCount': String(levelDrafts.length) }
+    Object.keys(next).forEach((key) => { if (/^escala:level-(?:name|points):\d+$/.test(key)) delete next[key] })
+    levelDrafts.forEach((level, index) => { const score = levelDrafts.length - index; next[instrumentFieldKey('escala', 'level-name', score)] = level.name; next[instrumentFieldKey('escala', 'level-points', score)] = String(level.points) })
+    onFieldsChange(next); onLevelCountChange(levelDrafts.length); setConfiguring(false)
+  }
 
   return (
     <div className="space-y-3">
-      <InstrumentControls>
-        <StepperControl label="Indicadores" value={criteriaCount} min={1} max={12} onChange={onCriteriaCountChange} />
-        <StepperControl label="Niveles" value={levelCount} min={2} max={6} onChange={onLevelCountChange} />
-      </InstrumentControls>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Indicadores y niveles de la escala</p><p className="text-xs text-muted-foreground">Evalúa el grado o frecuencia de desempeño.</p></div><div className="flex gap-2"><Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar escala</Button><Button type="button" size="sm" className={accent.button} onClick={addIndicator} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar indicador</Button></div></div>
+      {configuring ? <InstrumentSettingsDrawer accent={accent} title="Configurar escala estimativa" description="Selecciona una plantilla y personaliza sus niveles, orden y puntuaciones." onClose={() => setConfiguring(false)} onApply={applyConfiguration}><div className="space-y-5"><div><p className="mb-2 text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Tipo de escala</p><div className="grid grid-cols-2 gap-2">{[['frecuencia','Frecuencia'],['desempeno','Desempeño'],['logro','Logro'],['personalizada','Personalizada']].map(([value,label]) => <button key={value} type="button" className={cn('rounded-lg border px-3 py-2 text-left text-sm font-bold transition', template === value ? cn(accent.card, accent.text) : 'border-border hover:bg-muted/30')} onClick={() => selectScaleTemplate(value)}>{label}</button>)}</div></div><div><div className="mb-2 flex items-center justify-between"><p className="text-sm font-black">Niveles</p><Button type="button" size="sm" variant="outline" disabled={levelDrafts.length >= 6} onClick={() => setLevelDrafts((current) => [...current, { id: `new-${Date.now()}`, name: `Nivel ${current.length + 1}`, points: Math.max(0, current.length ? current[current.length - 1].points - 1 : 1) }])}><Plus className="size-4" />Agregar</Button></div><div className="space-y-2">{levelDrafts.map((level) => <div key={level.id} className="grid grid-cols-[minmax(0,1fr)_5rem_2rem] items-end gap-2 rounded-xl border border-border p-3"><label className="text-xs font-bold text-muted-foreground">Nombre<Input className="mt-1 h-10" value={level.name} onChange={(event) => setLevelDrafts((current) => current.map((item) => item.id === level.id ? {...item,name:event.target.value} : item))} /></label><label className="text-xs font-bold text-muted-foreground">Puntos<Input className="mt-1 h-10" type="number" min={0} step="0.25" value={level.points} onChange={(event) => setLevelDrafts((current) => current.map((item) => item.id === level.id ? {...item,points:Number(event.target.value)} : item))} /></label><button type="button" className="mb-1 grid size-8 place-items-center rounded text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" disabled={levelDrafts.length <= 2} aria-label="Eliminar nivel" onClick={() => setLevelDrafts((current) => current.filter((item) => item.id !== level.id))}><Trash2 className="size-4" /></button></div>)}</div></div><div><p className="mb-2 text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Vista previa</p><div className="flex overflow-hidden rounded-lg border border-border">{levelDrafts.map((level) => <div key={level.id} className="min-w-0 flex-1 border-r border-border px-2 py-3 text-center last:border-r-0"><p className="truncate text-xs font-black">{level.name}</p><p className="text-[10px] text-muted-foreground">{level.points} pts</p></div>)}</div></div></div></InstrumentSettingsDrawer> : null}
       <InstrumentTable>
-        <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
+        <thead className="sticky top-0 z-20 bg-slate-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
-            <th className="w-[34%] border border-border px-2 py-2">Criterios</th>
+            <th className="sticky left-0 z-30 w-[34%] border border-border bg-slate-50 px-2 py-2">Indicadores</th>
             {levels.map((level) => (
-              <th key={level} className="border border-border px-2 py-2">{level}</th>
+              <th key={level} className="border border-border px-2 py-2 text-center"><span className={accent.text}>{fields[instrumentFieldKey('escala', 'level-name', level)] || `Nivel ${level}`}</span><span className="mt-0.5 block normal-case text-muted-foreground">{fields[instrumentFieldKey('escala', 'level-points', level)] || level} pts</span></th>
             ))}
             <th className="w-20 border border-border px-2 py-2">Puntaje</th>
+            <th className="w-10 border border-border" />
           </tr>
         </thead>
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => ({ criterion: `Criterio ${index + 1}`, index })).map(({ criterion, index }) => (
-            <tr key={criterion}>
-              <td className="border border-border p-1.5">
+            <tr key={criterion} className={cn('transition-colors motion-safe:duration-500', highlightedRow === index ? accent.panel : '')}>
+              <td className="sticky left-0 z-10 border border-border bg-card p-1.5">
                 <InstrumentTextarea
-                  placeholder={criterion}
+                  dataInstrumentRow={`escala-${index}`}
+                  placeholder={`${index + 1}. Indicador`}
                   value={fields[instrumentFieldKey('escala', 'criterion', index)] ?? ''}
                   onChange={(value) => onFieldChange(instrumentFieldKey('escala', 'criterion', index), value)}
                 />
@@ -4350,55 +4594,76 @@ function ScaleInstrument({
               {levels.map((value) => (
                 <td key={value} className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               ))}
-              <td className="border border-border p-1.5"><InstrumentInput value={fields[instrumentFieldKey('escala', 'points', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('escala', 'points', index), value)} placeholder="0" /></td>
+              <td className="border border-border p-1.5 text-center"><span className={cn('inline-flex rounded-lg px-2 py-2 font-black', accent.panel, accent.text)}>{fields[instrumentFieldKey('escala', 'points', index)] ?? '0'} pts</span></td><td className="border border-border"><InstrumentRowMenu canMoveDown={index < criteriaCount - 1} canMoveUp={index > 0} onDelete={() => fields[instrumentFieldKey('escala', 'criterion', index)]?.trim() ? setPendingDelete(index) : removeIndicator(index)} onDuplicate={() => { if (criteriaCount >= 12) return; const nextCount = criteriaCount + 1; const next = {...fields,'escala:meta:criteriaCount':String(nextCount),[instrumentFieldKey('escala','criterion',criteriaCount)]:`${fields[instrumentFieldKey('escala','criterion',index)] || ''} (copia)`}; distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('escala','points',row)]=String(points)}); onFieldsChange(next); onCriteriaCountChange(nextCount) }} onMoveDown={() => onFieldsChange(swapInstrumentRows(fields,'escala',index,index+1,['criterion','points']))} onMoveUp={() => onFieldsChange(swapInstrumentRows(fields,'escala',index,index-1,['criterion','points']))} /></td>
             </tr>
           ))}
-          <tr className="bg-sky-50 font-bold"><td className="border border-border px-2 py-2" colSpan={levelCount + 1}>Puntuación máxima total</td><td className={cn('border border-border px-2 py-2 text-center', Math.abs(total - maxScore) < 0.001 ? 'text-emerald-600' : 'text-destructive')}>{total} / {maxScore} pts</td></tr>
+          <tr className="bg-emerald-50/60 font-bold"><td className="border border-border px-2 py-2" colSpan={levelCount + 1}>Puntuación máxima total</td><td className={cn('border border-border px-2 py-2 text-center', Math.abs(total - maxScore) < 0.001 ? 'text-emerald-600' : 'text-destructive')}>{total} / {maxScore} pts</td><td className="border border-border" /></tr>
         </tbody>
       </InstrumentTable>
+      {pendingDelete !== null ? <ConfirmDialog title="¿Eliminar este indicador?" description={`Se eliminará “${fields[instrumentFieldKey('escala','criterion',pendingDelete)]}” y su configuración asociada.`} confirmLabel="Eliminar indicador" destructive onClose={() => setPendingDelete(null)} onConfirm={() => { removeIndicator(pendingDelete); setPendingDelete(null) }} /> : null}
     </div>
   )
 }
 
 function ChecklistInstrument({
+  accent,
   criteriaCount,
   fields,
   hasObservations,
   maxScore,
   onFieldChange,
   onCriteriaCountChange,
+  onFieldsChange,
   onHasObservationsChange,
 }: {
+  accent: (typeof blockAccents)[number]
   criteriaCount: number
   fields: Record<string, string>
   hasObservations: boolean
   maxScore: number
   onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
+  onFieldsChange: (fields: Record<string, string>) => void
   onHasObservationsChange: (value: boolean) => void
 }) {
   const total = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('lista-cotejo', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
+  const [configuring, setConfiguring] = useState(false)
+  const [draftObservations, setDraftObservations] = useState(hasObservations)
+  const [draftNoApply, setDraftNoApply] = useState(fields['lista-cotejo:meta:noApply'] === 'true')
+  const [draftUniformPoints, setDraftUniformPoints] = useState(fields['lista-cotejo:meta:pointsMode'] !== 'individual')
+  const [draftLabels, setDraftLabels] = useState({ yes: fields['lista-cotejo:meta:yesLabel'] || 'Sí', no: fields['lista-cotejo:meta:noLabel'] || 'No', na: fields['lista-cotejo:meta:naLabel'] || 'No aplica' })
+  const [pendingDelete, setPendingDelete] = useState<number | null>(null)
+  const [highlightedRow, setHighlightedRow] = useState<number | null>(null)
+  const hasNoApply = fields['lista-cotejo:meta:noApply'] === 'true'
+  const uniformPoints = fields['lista-cotejo:meta:pointsMode'] !== 'individual'
+  const labels = { yes: fields['lista-cotejo:meta:yesLabel'] || 'Sí', no: fields['lista-cotejo:meta:noLabel'] || 'No', na: fields['lista-cotejo:meta:naLabel'] || 'No aplica' }
+
+  function addCriterion() { if (criteriaCount >= 20) return; const nextCount=criteriaCount+1; const next:Record<string,string>={...fields,'lista-cotejo:meta:criteriaCount':String(nextCount)}; if(uniformPoints)distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)});else next[instrumentFieldKey('lista-cotejo','points',criteriaCount)]='0';onFieldsChange(next);onCriteriaCountChange(nextCount); focusNewInstrumentRow('lista-cotejo', criteriaCount, setHighlightedRow) }
+  function removeCriterion(index: number) { if (criteriaCount <= 1) return; const nextCount = criteriaCount - 1; const next = shiftInstrumentRows(fields,'lista-cotejo',index,criteriaCount,['criterion','points','observation']); next['lista-cotejo:meta:criteriaCount']=String(nextCount); if(uniformPoints) distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)}); onFieldsChange(next); onCriteriaCountChange(nextCount) }
+  function openConfiguration() { setDraftObservations(hasObservations); setDraftNoApply(hasNoApply); setDraftUniformPoints(uniformPoints); setDraftLabels(labels); setConfiguring(true) }
+  function applyConfiguration() { const next:Record<string,string>={...fields,'lista-cotejo:meta:observations':String(draftObservations),'lista-cotejo:meta:noApply':String(draftNoApply),'lista-cotejo:meta:pointsMode':draftUniformPoints?'uniform':'individual','lista-cotejo:meta:yesLabel':draftLabels.yes,'lista-cotejo:meta:noLabel':draftLabels.no,'lista-cotejo:meta:naLabel':draftLabels.na}; if(draftUniformPoints) distributeScore(maxScore,criteriaCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)}); onFieldsChange(next); onHasObservationsChange(draftObservations); setConfiguring(false) }
   return (
     <div className="space-y-3">
-      <InstrumentControls>
-        <StepperControl label="Indicadores" value={criteriaCount} min={1} max={20} onChange={onCriteriaCountChange} />
-        <ToggleControl label="Observaciones" checked={hasObservations} onChange={onHasObservationsChange} />
-      </InstrumentControls>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black',accent.text)}>Criterios de cumplimiento</p><p className="text-xs text-muted-foreground">Verifica el cumplimiento de criterios específicos.</p></div><div className="flex gap-2"><Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 20}><Plus className="size-4" />Agregar criterio</Button></div></div>
+      {configuring ? <InstrumentSettingsDrawer accent={accent} title="Configurar lista de cotejo" description="Define las etiquetas, columnas opcionales y distribución de puntos." onClose={() => setConfiguring(false)} onApply={applyConfiguration}><div className="space-y-5"><div><p className="mb-2 text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Etiquetas de respuesta</p><div className="grid gap-2"><label className="text-xs font-bold text-muted-foreground">Respuesta positiva<Input className="mt-1" value={draftLabels.yes} onChange={(event)=>setDraftLabels((current)=>({...current,yes:event.target.value}))} /></label><label className="text-xs font-bold text-muted-foreground">Respuesta negativa<Input className="mt-1" value={draftLabels.no} onChange={(event)=>setDraftLabels((current)=>({...current,no:event.target.value}))} /></label>{draftNoApply ? <label className="text-xs font-bold text-muted-foreground">No aplica<Input className="mt-1" value={draftLabels.na} onChange={(event)=>setDraftLabels((current)=>({...current,na:event.target.value}))} /></label> : null}</div></div><div className="space-y-2"><ToggleControl label="Permitir No aplica" checked={draftNoApply} onChange={setDraftNoApply} /><ToggleControl label="Observaciones por criterio" checked={draftObservations} onChange={setDraftObservations} /><ToggleControl label="Mismo valor para todos" checked={draftUniformPoints} onChange={setDraftUniformPoints} /></div><div className={cn('rounded-xl border p-3',accent.card)}><p className="text-sm font-black">{draftUniformPoints?'Distribución uniforme':'Valor individual por criterio'}</p><p className="mt-1 text-xs text-muted-foreground">{draftUniformPoints?`${maxScore} puntos entre ${criteriaCount} criterios. AulaBase ajusta automáticamente los centésimos para conservar el total exacto.`:'Podrás editar el valor de cada criterio directamente en la tabla.'}</p></div><div><p className="mb-2 text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Vista previa</p><div className="flex overflow-hidden rounded-lg border border-border text-xs font-black"><span className="flex-1 px-3 py-2">Criterio</span><span className="border-l px-3 py-2">{draftLabels.yes}</span><span className="border-l px-3 py-2">{draftLabels.no}</span>{draftNoApply?<span className="border-l px-3 py-2">{draftLabels.na}</span>:null}</div></div></div></InstrumentSettingsDrawer> : null}
       <InstrumentTable>
-        <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
+        <thead className="sticky top-0 z-20 bg-slate-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
-            <th className="w-[48%] border border-border px-2 py-2">Criterios</th>
-            <th className="border border-border px-2 py-2">Sí</th>
-            <th className="border border-border px-2 py-2">No</th>
+            <th className="sticky left-0 z-30 w-[48%] border border-border bg-slate-50 px-2 py-2">Criterios</th>
+            <th className="border border-border px-2 py-2">{labels.yes}</th>
+            <th className="border border-border px-2 py-2">{labels.no}</th>
+            {hasNoApply ? <th className="border border-border px-2 py-2">{labels.na}</th> : null}
             <th className="w-20 border border-border px-2 py-2">Valor</th>
             {hasObservations ? <th className="w-[30%] border border-border px-2 py-2">Observaciones</th> : null}
+            <th className="w-10 border border-border" />
           </tr>
         </thead>
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
-            <tr key={index}>
-              <td className="border border-border p-1.5">
+            <tr key={index} className={cn('transition-colors motion-safe:duration-500',highlightedRow===index?accent.panel:'')}>
+              <td className="sticky left-0 z-10 border border-border bg-card p-1.5">
                 <InstrumentTextarea
+                  dataInstrumentRow={`lista-cotejo-${index}`}
                   placeholder={`${index + 1}. Criterio`}
                   value={fields[instrumentFieldKey('lista-cotejo', 'criterion', index)] ?? ''}
                   onChange={(value) => onFieldChange(instrumentFieldKey('lista-cotejo', 'criterion', index), value)}
@@ -4406,59 +4671,79 @@ function ChecklistInstrument({
               </td>
               <td className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               <td className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
-              <td className="border border-border p-1.5"><InstrumentInput value={fields[instrumentFieldKey('lista-cotejo', 'points', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('lista-cotejo', 'points', index), value)} placeholder="0" /></td>
-              {hasObservations ? <td className="border border-border p-1.5"><InstrumentTextarea /></td> : null}
+              {hasNoApply ? <td className="border border-border text-center"><InstrumentCheckPlaceholder /></td> : null}
+              <td className="border border-border p-1.5 text-center">{uniformPoints?<span className={cn('inline-flex rounded-lg px-2 py-2 font-black',accent.panel,accent.text)}>{fields[instrumentFieldKey('lista-cotejo','points',index)]??'0'} pts</span>:<InstrumentInput value={fields[instrumentFieldKey('lista-cotejo','points',index)]??''} onChange={(value)=>onFieldChange(instrumentFieldKey('lista-cotejo','points',index),value)} placeholder="0"/>}</td>
+              {hasObservations ? <td className="border border-border p-1.5"><InstrumentTextarea value={fields[instrumentFieldKey('lista-cotejo','observation',index)]??''} onChange={(value)=>onFieldChange(instrumentFieldKey('lista-cotejo','observation',index),value)} /></td> : null}<td className="border border-border"><InstrumentRowMenu canMoveDown={index<criteriaCount-1} canMoveUp={index>0} onDelete={()=>fields[instrumentFieldKey('lista-cotejo','criterion',index)]?.trim()?setPendingDelete(index):removeCriterion(index)} onDuplicate={()=>{if(criteriaCount>=20)return;const nextCount=criteriaCount+1;const next:Record<string,string>={...fields,'lista-cotejo:meta:criteriaCount':String(nextCount),[instrumentFieldKey('lista-cotejo','criterion',criteriaCount)]:`${fields[instrumentFieldKey('lista-cotejo','criterion',index)]||''} (copia)`};if(uniformPoints)distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)});else next[instrumentFieldKey('lista-cotejo','points',criteriaCount)]=fields[instrumentFieldKey('lista-cotejo','points',index)]||'0';onFieldsChange(next);onCriteriaCountChange(nextCount)}} onMoveDown={()=>onFieldsChange(swapInstrumentRows(fields,'lista-cotejo',index,index+1,['criterion','points','observation']))} onMoveUp={()=>onFieldsChange(swapInstrumentRows(fields,'lista-cotejo',index,index-1,['criterion','points','observation']))} /></td>
             </tr>
           ))}
-          <tr className="bg-sky-50 font-bold"><td className="border border-border px-2 py-2" colSpan={3}>Puntuación máxima total</td><td className={cn('border border-border px-2 py-2 text-center', Math.abs(total - maxScore) < 0.001 ? 'text-emerald-600' : 'text-destructive')}>{total} / {maxScore} pts</td>{hasObservations ? <td className="border border-border" /> : null}</tr>
+          <tr className="bg-emerald-50/60 font-bold"><td className="border border-border px-2 py-2" colSpan={3+(hasNoApply?1:0)}>Puntuación máxima total</td><td className={cn('border border-border px-2 py-2 text-center', Math.abs(total - maxScore) < 0.001 ? 'text-emerald-600' : 'text-destructive')}>{total} / {maxScore} pts</td>{hasObservations ? <td className="border border-border" /> : null}<td className="border border-border" /></tr>
         </tbody>
       </InstrumentTable>
+      {pendingDelete!==null?<ConfirmDialog title="¿Eliminar este criterio?" description={`Se eliminará “${fields[instrumentFieldKey('lista-cotejo','criterion',pendingDelete)]}” y sus datos asociados.`} confirmLabel="Eliminar criterio" destructive onClose={()=>setPendingDelete(null)} onConfirm={()=>{removeCriterion(pendingDelete);setPendingDelete(null)}}/>:null}
     </div>
   )
 }
 
 function WeightedListInstrument({
+  accent,
   criteriaCount,
   fields,
   hasPartial,
   maxScore,
   onFieldChange,
   onCriteriaCountChange,
+  onFieldsChange,
   onHasPartialChange,
 }: {
+  accent: (typeof blockAccents)[number]
   criteriaCount: number
   fields: Record<string, string>
   hasPartial: boolean
   maxScore: number
   onFieldChange: (key: string, value: string) => void
   onCriteriaCountChange: (value: number) => void
+  onFieldsChange: (fields: Record<string, string>) => void
   onHasPartialChange: (value: boolean) => void
 }) {
   const totalWeight = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
+  const [configuring,setConfiguring]=useState(false)
+  const [draftPartial,setDraftPartial]=useState(hasPartial)
+  const [draftPartialValue,setDraftPartialValue]=useState(Number(fields['lista-ponderada:meta:partialValue']||50))
+  const [draftObservations,setDraftObservations]=useState(fields['lista-ponderada:meta:observations']!=='false')
+  const [draftDecimals,setDraftDecimals]=useState(fields['lista-ponderada:meta:decimals']!=='false')
+  const [draftRedistribute,setDraftRedistribute]=useState(false)
+  const [draftLabels,setDraftLabels]=useState({yes:fields['lista-ponderada:meta:yesLabel']||'Sí',partial:fields['lista-ponderada:meta:partialLabel']||'Parcial',no:fields['lista-ponderada:meta:noLabel']||'No'})
+  const [pendingDelete,setPendingDelete]=useState<number|null>(null)
+  const [highlightedRow,setHighlightedRow]=useState<number|null>(null)
+  const hasObservations=fields['lista-ponderada:meta:observations']!=='false'
+  const labels={yes:fields['lista-ponderada:meta:yesLabel']||'Sí',partial:fields['lista-ponderada:meta:partialLabel']||'Parcial',no:fields['lista-ponderada:meta:noLabel']||'No'}
+  function addCriterion(){if(criteriaCount>=12)return;const nextCount=criteriaCount+1;const next:Record<string,string>={...fields,'lista-ponderada:meta:criteriaCount':String(nextCount)};distributeScore(100,nextCount).forEach((weight,row)=>{next[instrumentFieldKey('lista-ponderada','weight',row)]=String(weight)});onFieldsChange(next);onCriteriaCountChange(nextCount);focusNewInstrumentRow('lista-ponderada',criteriaCount,setHighlightedRow)}
+  function removeCriterion(index:number){if(criteriaCount<=1)return;const nextCount=criteriaCount-1;const next=shiftInstrumentRows(fields,'lista-ponderada',index,criteriaCount,['criterion','indicator','weight','observation']);next['lista-ponderada:meta:criteriaCount']=String(nextCount);distributeScore(100,nextCount).forEach((weight,row)=>{next[instrumentFieldKey('lista-ponderada','weight',row)]=String(weight)});onFieldsChange(next);onCriteriaCountChange(nextCount)}
+  function applyConfiguration(){const next:Record<string,string>={...fields,'lista-ponderada:meta:partial':String(draftPartial),'lista-ponderada:meta:partialValue':String(draftPartialValue),'lista-ponderada:meta:observations':String(draftObservations),'lista-ponderada:meta:decimals':String(draftDecimals),'lista-ponderada:meta:yesLabel':draftLabels.yes,'lista-ponderada:meta:partialLabel':draftLabels.partial,'lista-ponderada:meta:noLabel':draftLabels.no};if(draftRedistribute)distributeScore(100,criteriaCount).forEach((weight,row)=>{next[instrumentFieldKey('lista-ponderada','weight',row)]=String(weight)});onFieldsChange(next);onHasPartialChange(draftPartial);setConfiguring(false)}
   return (
     <div className="space-y-3">
-      <InstrumentControls>
-        <StepperControl label="Criterios" value={criteriaCount} min={1} max={12} onChange={onCriteriaCountChange} />
-        <ToggleControl label="Cumplimiento parcial" checked={hasPartial} onChange={onHasPartialChange} />
-      </InstrumentControls>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black',accent.text)}>Criterios y ponderaciones</p><p className="text-xs text-muted-foreground">Cada porcentaje se convierte automáticamente a puntos.</p></div><div className="flex gap-2"><Button type="button" size="sm" variant="outline" onClick={()=>{setDraftPartial(hasPartial);setDraftPartialValue(Number(fields['lista-ponderada:meta:partialValue']||50));setDraftObservations(fields['lista-ponderada:meta:observations']!=='false');setDraftDecimals(fields['lista-ponderada:meta:decimals']!=='false');setDraftLabels(labels);setDraftRedistribute(false);setConfiguring(true)}}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount>=12}><Plus className="size-4" />Agregar criterio</Button></div></div>
+      {configuring?<InstrumentSettingsDrawer accent={accent} title="Configurar lista ponderada" description="Define el cumplimiento parcial, observaciones y reglas de ponderación." onClose={()=>setConfiguring(false)} onApply={applyConfiguration}><div className="space-y-5"><div className="space-y-2"><ToggleControl label="Permitir cumplimiento parcial" checked={draftPartial} onChange={setDraftPartial}/>{draftPartial?<label className="block text-xs font-bold text-muted-foreground">Valor del cumplimiento parcial (%)<Input className="mt-1" type="number" min={0} max={100} value={draftPartialValue} onChange={(event)=>setDraftPartialValue(Number(event.target.value))}/></label>:null}<ToggleControl label="Permitir valores decimales" checked={draftDecimals} onChange={setDraftDecimals}/><ToggleControl label="Observaciones por criterio" checked={draftObservations} onChange={setDraftObservations}/></div><div><p className="mb-2 text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Etiquetas</p><div className="grid gap-2 sm:grid-cols-3"><Input aria-label="Etiqueta positiva" value={draftLabels.yes} onChange={(event)=>setDraftLabels((current)=>({...current,yes:event.target.value}))}/>{draftPartial?<Input aria-label="Etiqueta parcial" value={draftLabels.partial} onChange={(event)=>setDraftLabels((current)=>({...current,partial:event.target.value}))}/>:null}<Input aria-label="Etiqueta negativa" value={draftLabels.no} onChange={(event)=>setDraftLabels((current)=>({...current,no:event.target.value}))}/></div></div><div className={cn('rounded-xl border p-4',Math.abs((draftRedistribute?100:totalWeight)-100)<.001?accent.card:'border-amber-200 bg-amber-50')}><div className="flex items-center justify-between"><div><p className="text-sm font-black">Ponderación actual: {draftRedistribute?100:totalWeight}/100 %</p><p className="mt-1 text-xs text-muted-foreground">{draftRedistribute?'Se distribuirá uniformemente al aplicar.':totalWeight===100?'Configuración correcta.':totalWeight<100?`Falta distribuir ${formatInstrumentNumber(100-totalWeight)} %.`:`Sobran ${formatInstrumentNumber(totalWeight-100)} %.`}</p></div><Button type="button" size="sm" variant="outline" onClick={()=>setDraftRedistribute(true)}>Redistribuir</Button></div></div><div><p className="mb-2 text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Vista previa</p><div className="flex overflow-hidden rounded-lg border border-border text-xs font-black"><span className="flex-1 px-3 py-2">Criterio</span><span className="border-l px-3 py-2">Peso</span><span className="border-l px-3 py-2">{draftLabels.yes}</span>{draftPartial?<span className="border-l px-3 py-2">{draftLabels.partial}</span>:null}<span className="border-l px-3 py-2">{draftLabels.no}</span></div></div></div></InstrumentSettingsDrawer>:null}
       <InstrumentTable>
-        <thead className="bg-sky-50 text-[10px] font-bold uppercase text-slate-700">
+        <thead className="sticky top-0 z-20 bg-slate-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
             <th className="w-[18%] border border-border px-2 py-2">Criterios</th>
             <th className="w-[28%] border border-border px-2 py-2">Indicadores</th>
             <th className="border border-border px-2 py-2">Pond.</th>
-            <th className="border border-border px-2 py-2">Sí</th>
-            {hasPartial ? <th className="border border-border px-2 py-2">Parcial</th> : null}
-            <th className="border border-border px-2 py-2">No</th>
+            <th className="border border-border px-2 py-2">{labels.yes}</th>
+            {hasPartial ? <th className="border border-border px-2 py-2">{labels.partial}</th> : null}
+            <th className="border border-border px-2 py-2">{labels.no}</th>
             <th className="border border-border px-2 py-2">Puntaje</th>
             <th className="w-[20%] border border-border px-2 py-2">Obs.</th>
+            <th className="w-10 border border-border" />
           </tr>
         </thead>
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
-            <tr key={index}>
+            <tr key={index} className={cn('transition-colors motion-safe:duration-500',highlightedRow===index?accent.panel:'')}>
               <td className="border border-border p-1.5">
                 <InstrumentTextarea
+                  dataInstrumentRow={`lista-ponderada-${index}`}
                   placeholder={`Criterio ${index + 1}`}
                   value={fields[instrumentFieldKey('lista-ponderada', 'criterion', index)] ?? ''}
                   onChange={(value) => onFieldChange(instrumentFieldKey('lista-ponderada', 'criterion', index), value)}
@@ -4481,7 +4766,7 @@ function WeightedListInstrument({
                 <td key={value} className="border border-border text-center"><InstrumentCheckPlaceholder /></td>
               ))}
               <td className="border border-border p-1.5 text-center font-bold text-primary">Hasta {Number(((Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0) / 100) * maxScore).toFixed(2))} pts</td>
-              <td className="border border-border p-1.5"><InstrumentTextarea /></td>
+              {hasObservations?<td className="border border-border p-1.5"><InstrumentTextarea value={fields[instrumentFieldKey('lista-ponderada','observation',index)]??''} onChange={(value)=>onFieldChange(instrumentFieldKey('lista-ponderada','observation',index),value)}/></td>:<td className="border border-border text-center text-muted-foreground">—</td>}<td className="border border-border"><InstrumentRowMenu canMoveDown={index<criteriaCount-1} canMoveUp={index>0} onDelete={()=>fields[instrumentFieldKey('lista-ponderada','criterion',index)]?.trim()||fields[instrumentFieldKey('lista-ponderada','indicator',index)]?.trim()?setPendingDelete(index):removeCriterion(index)} onDuplicate={()=>{if(criteriaCount>=12)return;const nextCount=criteriaCount+1;const next={...fields,'lista-ponderada:meta:criteriaCount':String(nextCount),[instrumentFieldKey('lista-ponderada','criterion',criteriaCount)]:`${fields[instrumentFieldKey('lista-ponderada','criterion',index)]||''} (copia)`,[instrumentFieldKey('lista-ponderada','indicator',criteriaCount)]:fields[instrumentFieldKey('lista-ponderada','indicator',index)]||''};distributeScore(100,nextCount).forEach((weight,row)=>{next[instrumentFieldKey('lista-ponderada','weight',row)]=String(weight)});onFieldsChange(next);onCriteriaCountChange(nextCount)}} onMoveDown={()=>onFieldsChange(swapInstrumentRows(fields,'lista-ponderada',index,index+1,['criterion','indicator','weight','observation']))} onMoveUp={()=>onFieldsChange(swapInstrumentRows(fields,'lista-ponderada',index,index-1,['criterion','indicator','weight','observation']))}/></td>
             </tr>
           ))}
           <tr className="bg-sky-50 font-bold">
@@ -4489,12 +4774,71 @@ function WeightedListInstrument({
             <td className={cn('border border-border px-2 py-2 text-center', Math.abs(totalWeight - 100) < 0.001 ? 'text-emerald-600' : 'text-destructive')}>{totalWeight}%</td>
             <td className="border border-border" colSpan={hasPartial ? 3 : 2} />
             <td className="border border-border px-2 py-2 text-center text-primary">{maxScore} pts</td>
-            <td className="border border-border" />
+            <td className="border border-border" /><td className="border border-border" />
           </tr>
         </tbody>
       </InstrumentTable>
+      {pendingDelete!==null?<ConfirmDialog title="¿Eliminar este criterio?" description={`Se eliminará “${fields[instrumentFieldKey('lista-ponderada','criterion',pendingDelete)]}”, su indicador y ponderación.`} confirmLabel="Eliminar criterio" destructive onClose={()=>setPendingDelete(null)} onConfirm={()=>{removeCriterion(pendingDelete);setPendingDelete(null)}}/>:null}
     </div>
   )
+}
+
+function InstrumentRowMenu({ canMoveDown, canMoveUp, onDelete, onDuplicate, onMoveDown, onMoveUp }: { canMoveDown: boolean; canMoveUp: boolean; onDelete: () => void; onDuplicate: () => void; onMoveDown: () => void; onMoveUp: () => void }) {
+  return <details className="group relative mx-auto w-fit"><summary className="grid size-8 cursor-pointer list-none place-items-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><EllipsisVertical className="size-4" /><span className="sr-only">Acciones de la fila</span></summary><div className="absolute right-0 z-40 mt-1 w-44 overflow-hidden rounded-lg border border-border bg-popover p-1 text-left shadow-xl"><button type="button" className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted" onClick={onDuplicate}><Copy className="size-3.5" />Duplicar</button><button type="button" disabled={!canMoveUp} className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted disabled:opacity-40" onClick={onMoveUp}><ArrowUp className="size-3.5" />Mover arriba</button><button type="button" disabled={!canMoveDown} className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted disabled:opacity-40" onClick={onMoveDown}><ArrowDown className="size-3.5" />Mover abajo</button><div className="my-1 h-px bg-border"/><button type="button" className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold text-destructive hover:bg-red-50" onClick={onDelete}><Trash2 className="size-3.5" />Eliminar</button></div></details>
+}
+
+function focusNewInstrumentRow(type: string, index: number, setHighlightedRow: Dispatch<SetStateAction<number | null>>) {
+  setHighlightedRow(index)
+  window.setTimeout(() => {
+    const field = document.querySelector<HTMLTextAreaElement>(`[data-instrument-row="${type}-${index}"]`)
+    field?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' })
+    field?.focus()
+  }, 50)
+  window.setTimeout(() => setHighlightedRow(null), 1300)
+}
+
+function shiftInstrumentRows(fields: Record<string, string>, type: string, removedIndex: number, count: number, fieldNames: string[]) {
+  const next = { ...fields }
+  for (let index = removedIndex; index < count - 1; index += 1) fieldNames.forEach((field) => { next[instrumentFieldKey(type, field, index)] = next[instrumentFieldKey(type, field, index + 1)] || '' })
+  fieldNames.forEach((field) => { delete next[instrumentFieldKey(type, field, count - 1)] })
+  return next
+}
+
+function swapInstrumentRows(fields: Record<string, string>, type: string, from: number, to: number, fieldNames: string[]) {
+  if (to < 0) return fields
+  const next = { ...fields }
+  fieldNames.forEach((field) => { const fromKey=instrumentFieldKey(type,field,from); const toKey=instrumentFieldKey(type,field,to); const value=next[fromKey]||''; next[fromKey]=next[toKey]||''; next[toKey]=value })
+  return next
+}
+
+function scaleTemplateLevels(template: string) {
+  if (template === 'desempeno') return [{ name: 'Excelente', points: 4 }, { name: 'Bueno', points: 3 }, { name: 'Regular', points: 2 }, { name: 'Deficiente', points: 1 }]
+  if (template === 'logro') return [{ name: 'Logrado', points: 4 }, { name: 'En proceso', points: 3 }, { name: 'Iniciado', points: 2 }, { name: 'No evidenciado', points: 1 }]
+  return [{ name: 'Siempre', points: 4 }, { name: 'Casi siempre', points: 3 }, { name: 'A veces', points: 2 }, { name: 'Nunca', points: 1 }]
+}
+
+function rubricDefaultLevelNames(count: number) {
+  if (count === 2) return ['Logrado', 'En proceso']
+  if (count === 3) return ['Excelente', 'Satisfactorio', 'Insuficiente']
+  if (count === 4) return ['Excelente', 'Bueno', 'Satisfactorio', 'Insuficiente']
+  if (count === 5) return ['Excelente', 'Muy bueno', 'Bueno', 'Básico', 'Insuficiente']
+  if (count === 6) return ['Excelente', 'Muy bueno', 'Bueno', 'Satisfactorio', 'Básico', 'Insuficiente']
+  return Array.from({ length: count }, (_, index) => `Nivel ${index + 1}`)
+}
+
+function defaultRubricLevelPoints(maximum: number, count: number) {
+  const safeMaximum = Math.max(0, Number(maximum) || 0)
+  if (count <= 1) return [safeMaximum]
+  if (safeMaximum >= count) return Array.from({ length: count }, (_, index) => Number((index === count - 1 ? Math.min(1, safeMaximum) : Math.max(1, safeMaximum - index)).toFixed(2)))
+  return Array.from({ length: count }, (_, index) => {
+    if (index === 0) return Number(safeMaximum.toFixed(2))
+    if (index === count - 1) return Number(Math.max(0, safeMaximum / count).toFixed(2))
+    return Number(Math.max(0, safeMaximum * ((count - index) / count)).toFixed(2))
+  })
+}
+
+function criterionPointsMaximum(fields: Record<string, string>, criteriaCount: number, maxScore: number) {
+  return Number(fields[instrumentFieldKey('rubrica', 'points', 0)] || distributeScore(maxScore, criteriaCount)[0] || maxScore)
 }
 
 function EmptyInstrumentState() {
@@ -4503,111 +4847,6 @@ function EmptyInstrumentState() {
       <p className="max-w-sm text-sm leading-6 text-muted-foreground">
         Selecciona un instrumento para generar aquí una plantilla vacía editable.
       </p>
-    </div>
-  )
-}
-
-function InstrumentControls({ children }: { children: ReactNode }) {
-  return (
-    <div className="flex flex-wrap items-center gap-2 rounded-lg border border-border bg-muted/20 p-2">
-      {children}
-    </div>
-  )
-}
-
-function InstrumentFormatControls({
-  bold,
-  italic,
-  onBoldChange,
-  onItalicChange,
-  onTextSizeChange,
-  textSize,
-}: {
-  bold: boolean
-  italic: boolean
-  onBoldChange: (value: boolean) => void
-  onItalicChange: (value: boolean) => void
-  onTextSizeChange: (value: 'normal' | 'large' | 'xlarge') => void
-  textSize: 'normal' | 'large' | 'xlarge'
-}) {
-  const textSizes: Array<{ label: string; value: 'normal' | 'large' | 'xlarge' }> = [
-    { label: 'A-', value: 'normal' },
-    { label: 'A', value: 'large' },
-    { label: 'A+', value: 'xlarge' },
-  ]
-
-  return (
-    <div className="flex items-center gap-1 rounded-lg border border-border bg-card p-1">
-      {textSizes.map((item) => (
-        <button
-          key={item.value}
-          type="button"
-          className={cn(
-            'h-7 rounded-md px-2 text-xs font-black transition hover:bg-primary/10',
-            textSize === item.value ? 'bg-primary text-primary-foreground' : 'text-primary',
-          )}
-          onClick={() => onTextSizeChange(item.value)}
-          aria-label={`Tamaño de texto ${item.label}`}
-        >
-          {item.label}
-        </button>
-      ))}
-      <span className="mx-1 h-5 w-px bg-border" />
-      <button
-        type="button"
-        className={cn('h-7 rounded-md px-2 text-xs font-black transition hover:bg-primary/10', bold ? 'bg-primary text-primary-foreground' : 'text-primary')}
-        onClick={() => onBoldChange(!bold)}
-        aria-label="Alternar negrita"
-      >
-        B
-      </button>
-      <button
-        type="button"
-        className={cn('h-7 rounded-md px-2 text-xs font-black italic transition hover:bg-primary/10', italic ? 'bg-primary text-primary-foreground' : 'text-primary')}
-        onClick={() => onItalicChange(!italic)}
-        aria-label="Alternar cursiva"
-      >
-        I
-      </button>
-    </div>
-  )
-}
-
-function StepperControl({
-  label,
-  max,
-  min,
-  onChange,
-  value,
-}: {
-  label: string
-  max: number
-  min: number
-  onChange: (value: number) => void
-  value: number
-}) {
-  return (
-    <div className="flex items-center gap-2 rounded-md border border-border bg-card px-2 py-1">
-      <span className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">{label}</span>
-      <button
-        type="button"
-        className="grid size-7 place-items-center rounded-md text-lg font-bold text-primary hover:bg-primary/10 disabled:text-muted-foreground"
-        disabled={value <= min}
-        onClick={() => onChange(Math.max(min, value - 1))}
-        aria-label={`Reducir ${label}`}
-      >
-        -
-      </button>
-      <span className="w-6 text-center text-sm font-black text-foreground">{value}</span>
-      <button
-        type="button"
-        className="grid size-7 place-items-center rounded-md text-lg font-bold text-primary hover:bg-primary/10 disabled:text-muted-foreground"
-        disabled={value >= max}
-        onClick={() => onChange(Math.min(max, value + 1))}
-        aria-label={`Aumentar ${label}`}
-      >
-        +
-      </button>
     </div>
   )
 }
@@ -4674,17 +4913,20 @@ function InstrumentInput({
 
 function InstrumentTextarea({
   className = '',
+  dataInstrumentRow,
   onChange,
   placeholder = '',
   value,
 }: {
   className?: string
+  dataInstrumentRow?: string
   onChange?: (value: string) => void
   placeholder?: string
   value?: string
 }) {
   return (
     <textarea
+      data-instrument-row={dataInstrumentRow}
       className={cn('h-14 w-full resize-none rounded-md border border-input bg-card px-2 py-1.5 text-xs leading-5 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20', className)}
       value={value}
       onChange={(event) => onChange?.(event.target.value)}
@@ -5099,7 +5341,7 @@ function resourceIconColor(resource: string) {
   return colors[hash % colors.length]
 }
 
-const rubricCriteria = [
+const defaultEvaluationRubricCriteria = [
   { title: 'Dominio del contenido', description: 'Demuestra comprensión y manejo adecuado del tema.' },
   { title: 'Organización y estructura', description: 'Presentación clara, ordenada y bien estructurada.' },
   { title: 'Expresión oral y lenguaje corporal', description: 'Se expresa con claridad y utiliza adecuadamente su lenguaje corporal.' },
@@ -5154,16 +5396,27 @@ function activityMomentTitle(value?: string) {
   return 'Durante la clase'
 }
 
-function rubricLevelPoints(maxScore: number) {
-  const criterionMax = maxScore / 4
-  return [criterionMax, criterionMax * 0.75, criterionMax * 0.5, criterionMax * 0.25, 0]
-}
-
-function rubricLevelLabels(maxScore: number) {
-  return ['Excelente', 'Bueno', 'Satisfactorio', 'Básico', 'Insuficiente'].map((label, index) => ({
-    label,
-    points: rubricLevelPoints(maxScore)[index] ?? 0,
+function activityRubricConfiguration(activity: GradingActivity) {
+  const fields = activity.instrumentCriteria ?? {}
+  if (activity.instrumentType !== 'rubrica') {
+    const criteriaPoints = distributeScore(activity.maxScore, defaultEvaluationRubricCriteria.length)
+    return {
+      criteria: defaultEvaluationRubricCriteria.map((criterion, index) => ({ ...criterion, maximum: criteriaPoints[index] || 0 })),
+      levels: ['Excelente', 'Bueno', 'Satisfactorio', 'Básico', 'Insuficiente'].map((label, index) => ({ label, points: [5, 4, 3, 2, 1][index] })),
+    }
+  }
+  const criteriaCount = Number(fields['rubrica:meta:criteriaCount']) || inferInstrumentCount(fields, 'rubrica', 'criterion', 4)
+  const levelCount = Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, 4)
+  const criteria = Array.from({ length: criteriaCount }, (_, index) => ({
+    title: fields[instrumentFieldKey('rubrica', 'criterion', index)] || `Criterio ${index + 1}`,
+    description: fields[instrumentFieldKey('rubrica', 'descriptor', index, levelCount)] || 'Criterio configurado en el instrumento de la actividad.',
+    maximum: Number(fields[instrumentFieldKey('rubrica', 'points', index)] || distributeScore(activity.maxScore, criteriaCount)[index] || 0),
   }))
+  const levels = Array.from({ length: levelCount }, (_, index) => {
+    const score = levelCount - index
+    return { label: fields[instrumentFieldKey('rubrica', 'level-name', score)] || rubricDefaultLevelNames(levelCount)[index], points: Number(fields[instrumentFieldKey('rubrica', 'level-points', score)] || defaultRubricLevelPoints(criteria[0]?.maximum || activity.maxScore, levelCount)[index]) }
+  })
+  return { criteria, levels }
 }
 
 function suggestedScoreForStudent(index: number, maxScore: number) {
@@ -5467,25 +5720,6 @@ function instrumentTitle(instrumentType: string) {
   return titles[instrumentType] ?? 'Selecciona un instrumento'
 }
 
-function instrumentTypographyClass(
-  textSize: 'normal' | 'large' | 'xlarge',
-  bold: boolean,
-  italic: boolean,
-) {
-  return cn(
-    textSize === 'normal' ? '[&_input]:text-sm [&_table]:text-xs [&_textarea]:text-xs' : '',
-    textSize === 'large' ? '[&_input]:text-base [&_table]:text-sm [&_textarea]:text-sm' : '',
-    textSize === 'xlarge' ? '[&_input]:text-lg [&_table]:text-base [&_textarea]:text-base' : '',
-    bold ? '[&_input]:font-bold [&_td]:font-bold [&_textarea]:font-bold' : '',
-    italic ? '[&_input]:italic [&_td]:italic [&_textarea]:italic' : '',
-  )
-}
-
-function rubricLevelName(index: number) {
-  const names = ['Excelente', 'Bueno', 'Satisfactorio', 'Básico', 'En proceso', 'Insuficiente']
-  return names[index] ?? `Nivel ${index + 1}`
-}
-
 function buildActivityDraftMetas(drafts: ActivityDraftsByBlock): ActivityDraftMeta[] {
   return competencyBlocks.flatMap((block) =>
     (drafts[block.id] ?? []).map((draft) => buildActivityDraftMeta(draft, block.id)),
@@ -5542,11 +5776,13 @@ function ProgressBar({
   className,
   indicatorClassName,
   indicatorColor,
+  indicatorGradient,
   value,
 }: {
   className?: string
   indicatorClassName?: string
   indicatorColor?: string
+  indicatorGradient?: string
   value: number
 }) {
   return (
@@ -5554,7 +5790,7 @@ function ProgressBar({
       <div
         className={cn('h-full rounded-full bg-primary transition-all', indicatorClassName)}
         style={{
-          backgroundColor: indicatorColor,
+          background: indicatorGradient || indicatorColor,
           width: `${Math.min(100, Math.max(0, value))}%`,
         }}
       />
@@ -5586,6 +5822,10 @@ function isInstrumentComplete(input: {
   if (instrumentType === 'rubrica') {
     const assignedScore = Array.from({ length: rubricCriteria }, (_, index) => Number(fields[instrumentFieldKey('rubrica', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0)
     if (Math.abs(assignedScore - maxScore) >= 0.001) return false
+    const levelNames = Array.from({ length: rubricLevels }, (_, index) => fields[instrumentFieldKey('rubrica', 'level-name', rubricLevels - index)]?.trim().toLocaleLowerCase() || '')
+    const levelPoints = Array.from({ length: rubricLevels }, (_, index) => Number(fields[instrumentFieldKey('rubrica', 'level-points', rubricLevels - index)]))
+    if (levelNames.some((name) => !name) || new Set(levelNames).size !== levelNames.length) return false
+    if (levelPoints.some((points) => !Number.isFinite(points) || points < 0) || levelPoints.some((points, index) => index > 0 && points >= levelPoints[index - 1])) return false
     for (let criterionIndex = 0; criterionIndex < rubricCriteria; criterionIndex += 1) {
       if (!hasInstrumentField(fields, instrumentFieldKey('rubrica', 'criterion', criterionIndex))) return false
       for (let levelScore = 1; levelScore <= rubricLevels; levelScore += 1) {
@@ -5598,6 +5838,9 @@ function isInstrumentComplete(input: {
   if (instrumentType === 'escala') {
     const assignedScore = Array.from({ length: scaleCriteria }, (_, index) => Number(fields[instrumentFieldKey('escala', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0)
     if (Math.abs(assignedScore - maxScore) >= 0.001) return false
+    const levelCount = Number(fields['escala:meta:levelCount']) || 4
+    const levelNames = Array.from({ length: levelCount }, (_, index) => fields[instrumentFieldKey('escala', 'level-name', levelCount - index)]?.trim().toLocaleLowerCase() || '')
+    if (levelNames.some((name) => !name) || new Set(levelNames).size !== levelNames.length) return false
     return Array.from({ length: scaleCriteria }, (_, index) =>
       hasInstrumentField(fields, instrumentFieldKey('escala', 'criterion', index)),
     ).every(Boolean)
@@ -5650,13 +5893,35 @@ function validateActivityCompletion(draft: ActivityDraft): ActivityCompletionIss
   if (!draft.instrumentType) {
     issues.push({ detail: 'Selecciona el instrumento que acompana esta actividad.', tab: 'activity', target: 'instrumentType', title: 'Instrumento de evaluacion' })
   } else if (!draft.instrumentCompleted) {
-    issues.push({ detail: 'Completa los campos requeridos del instrumento seleccionado.', tab: 'instrument', target: 'instrumentBody', title: 'Instrumento incompleto' })
+    const instrumentIssue = describeInstrumentIncomplete(draft)
+    issues.push({ detail: instrumentIssue.detail, tab: 'instrument', target: 'instrumentBody', title: instrumentIssue.title })
   }
   if (!activityDescriptionText(draft.description).trim()) {
     issues.push({ detail: 'Describe que haran los estudiantes y que evidencia entregaran.', tab: 'activity', target: 'description', title: 'Descripcion de la actividad' })
   }
 
   return issues
+}
+
+function describeInstrumentIncomplete(draft: ActivityDraft) {
+  const fields = draft.instrumentFields
+  const type = draft.instrumentType
+  const maxScore = Number(draft.maxScore) || 0
+  const count = Number(fields[`${type}:meta:criteriaCount`]) || inferInstrumentCount(fields, type, 'criterion', 0)
+  const emptyCriteria = Array.from({ length: count }, (_, index) => fields[instrumentFieldKey(type, 'criterion', index)]?.trim()).filter((value) => !value).length
+  if (emptyCriteria > 0) return { title: `Falta completar ${emptyCriteria} ${type === 'escala' ? 'indicadores' : 'criterios'}`, detail: 'Escribe el contenido de las filas vacías para completar el instrumento.' }
+  if (type === 'rubrica') {
+    const levels = Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, 4)
+    const missingDescriptors = Array.from({ length: count }, (_, criterion) => Array.from({ length: levels }, (_, level) => fields[instrumentFieldKey(type, 'descriptor', criterion, level + 1)]?.trim())).flat().filter((value) => !value).length
+    if (missingDescriptors > 0) return { title: `Falta completar ${missingDescriptors} descriptores`, detail: 'Completa las celdas vacías de la matriz de desempeño.' }
+  }
+  if (type === 'lista-ponderada') {
+    const total = instrumentConfiguredValue(type, fields, count)
+    return { title: 'Falta validar la ponderación', detail: `La ponderación actual es ${formatInstrumentNumber(total)}/100 %. Ajusta ${formatInstrumentNumber(Math.abs(100 - total))} %.` }
+  }
+  const total = instrumentConfiguredValue(type, fields, count)
+  if (Math.abs(total - maxScore) >= 0.001) return { title: 'Falta validar la puntuación', detail: `El instrumento suma ${formatInstrumentNumber(total)}/${formatInstrumentNumber(maxScore)} puntos.` }
+  return { title: 'Instrumento incompleto', detail: 'Revisa el título, los niveles y los contenidos requeridos.' }
 }
 
 function newActivityDraft(blockId: CompetencyBlockId): ActivityDraft {
