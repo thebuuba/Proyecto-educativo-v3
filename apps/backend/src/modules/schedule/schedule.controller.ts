@@ -94,12 +94,13 @@ export class ScheduleController {
   findEntries(
     @CurrentUser() user: AuthenticatedUser,
     @Query('sectionId') sectionId?: string,
+    @Query('sectionSubjectId') sectionSubjectId?: string,
     @Query('dayOfWeek') dayOfWeek?: string,
     @Query('schoolYearId') schoolYearId?: string,
     @Query('teacherId') teacherId?: string,
     @Query('gradeId') gradeId?: string,
   ) {
-    return this.scheduleService.findEntries(user.schoolId, sectionId, dayOfWeek, schoolYearId, teacherId, gradeId)
+    return this.scheduleService.findEntries(user.schoolId, sectionId, dayOfWeek, schoolYearId, teacherId, gradeId, sectionSubjectId)
   }
 
   /** Crea una nueva entrada de horario (solo admin, director, coordinador) */

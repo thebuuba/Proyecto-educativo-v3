@@ -4,7 +4,7 @@
  * @description Expone los endpoints REST para la gestión de grados, secciones, materias
  * y la asignación de materias a secciones dentro de un colegio.
  */
-import { Controller, Get, Post, Patch, Delete, Param, Body, UseGuards } from '@nestjs/common'
+import { Controller, Get, Post, Patch, Delete, Param, Body, Query, UseGuards } from '@nestjs/common'
 import { CoursesService } from './courses.service'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
@@ -148,6 +148,42 @@ export class CoursesController {
   @Roles('admin', 'director', 'coordinator')
   removeSectionSubject(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
     return this.coursesService.removeSectionSubject(user.schoolId, id)
+  }
+
+  /** Restaura una asignatura previamente archivada. */
+  @Patch('section-subjects/:id/restore')
+  @Roles('admin', 'director', 'coordinator')
+  restoreSectionSubject(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.coursesService.restoreSectionSubject(user.schoolId, id)
+  }
+
+  /** Elimina definitivamente una asignatura archivada y su historial. */
+  @Delete('section-subjects/:id/permanent')
+  @Roles('admin', 'director', 'coordinator')
+  permanentlyDeleteSectionSubject(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.coursesService.permanentlyDeleteSectionSubject(user.schoolId, id)
+  }
+
+  /** Obtiene los equipos compartidos de una sección. */
+  @Get('sections/:id/teams')
+  getSectionTeams(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Query('schoolYearId') schoolYearId?: string,
+  ) {
+    return this.coursesService.getSectionTeams(user.schoolId, id, schoolYearId)
+  }
+
+  /** Crea un equipo compartido por todas las asignaturas de una sección. */
+  @Post('sections/:id/teams')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  createSectionTeam(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Query('schoolYearId') schoolYearId: string | undefined,
+    @Body() dto: CreateCourseTeamDto,
+  ) {
+    return this.coursesService.createSectionTeam(user.schoolId, user.id, id, schoolYearId, dto)
   }
 
   /** Obtiene los equipos persistentes de una asignatura-sección. */

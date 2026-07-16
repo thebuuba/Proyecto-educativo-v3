@@ -63,14 +63,25 @@ describe('CoursesService.getCourseData', () => {
         teacherId: 'teacher-1',
         status: 'ACTIVE',
       },
+      {
+        id: 'ss-archived',
+        sectionId: 'section-1',
+        gradeId: 'grade-1',
+        subjectId: 'subject-2',
+        teacherId: null,
+        status: 'INACTIVE',
+      },
     ])
     mocks.prisma.enrollment.groupBy.mockResolvedValue([
       { sectionId: 'section-1', _count: { id: 12 } },
     ])
     mocks.prisma.courseTeam.groupBy.mockResolvedValue([
-      { sectionSubjectId: 'ss-1', _count: { id: 2 } },
+      { sectionId: 'section-1', _count: { id: 2 } },
     ])
-    mocks.prisma.subject.findMany.mockResolvedValue([{ id: 'subject-1', code: 'MAT', name: 'Matemática', description: null, credits: null }])
+    mocks.prisma.subject.findMany.mockResolvedValue([
+      { id: 'subject-1', code: 'MAT', name: 'Matemática', description: null, credits: null },
+      { id: 'subject-2', code: 'ART', name: 'Educación Artística', description: null, credits: null },
+    ])
     mocks.prisma.drAcademicLevel.findMany.mockResolvedValue([{ id: 'level-1', code: 'PRI', name: 'Primaria', sequence: 1 }])
     mocks.prisma.drAcademicCycle.findMany.mockResolvedValue([{ id: 'cycle-1', levelId: 'level-1', code: 'C1', name: 'Primer ciclo', sequence: 1, gradeSequenceFrom: 1, gradeSequenceTo: 3 }])
     mocks.prisma.drModality.findMany.mockResolvedValue([{ id: 'mod-1', code: 'GEN', name: 'General', appliesFromGradeSequence: null, appliesToGradeSequence: null }])
@@ -93,6 +104,7 @@ describe('CoursesService.getCourseData', () => {
         {
           id: 'section-1',
           studentCount: 12,
+          teamCount: 2,
           assignments: [
             {
               id: 'ss-1',
@@ -100,9 +112,17 @@ describe('CoursesService.getCourseData', () => {
               teacherName: 'Ana Pérez',
               status: 'active',
             },
+            {
+              id: 'ss-archived',
+              subjectName: 'Educación Artística',
+              status: 'inactive',
+            },
           ],
         },
       ],
+    })
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledWith({
+      where: { schoolId: 'school-1', schoolYearId: 'year-1' },
     })
   })
 

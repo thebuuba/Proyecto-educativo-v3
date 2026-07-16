@@ -41,6 +41,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
   const [periodName, setPeriodName] = useState<string | null>(null)
   const [profileOpen, setProfileOpen] = useState(false)
   const profileRef = useRef<HTMLDivElement>(null)
+  const searchRef = useRef<HTMLInputElement>(null)
 
   const displayName = appUser?.fullName?.trim() || 'Usuario'
   const initials = getInitials(displayName)
@@ -48,6 +49,18 @@ export function Header({ onOpenSidebar }: HeaderProps) {
   const profileMeta = periodName ? `${roleLabel} · ${periodName.toUpperCase()}` : roleLabel
   const isPlanningPage = location.pathname.startsWith('/planificaciones')
   const isGradingPage = location.pathname.startsWith('/calificaciones')
+  const isCoursesPage = location.pathname === '/cursos'
+
+  useEffect(() => {
+    const focusSearch = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault()
+        searchRef.current?.focus()
+      }
+    }
+    window.addEventListener('keydown', focusSearch)
+    return () => window.removeEventListener('keydown', focusSearch)
+  }, [])
 
   useEffect(() => {
     let ignore = false
@@ -129,25 +142,28 @@ export function Header({ onOpenSidebar }: HeaderProps) {
           <Menu className="size-5" />
         </Button>
 
-        {isGradingPage ? (
+        {isGradingPage || isCoursesPage ? (
           <>
             <div className="hidden min-w-0 shrink-0 md:block">
-              <h1 className="text-3xl font-bold leading-none text-primary">
-                Calificaciones
+              <h1 className={isCoursesPage ? 'text-2xl font-extrabold leading-none text-foreground' : 'text-3xl font-bold leading-none text-primary'}>
+                {isCoursesPage ? 'Mis cursos' : 'Calificaciones'}
               </h1>
             </div>
             <label
               htmlFor="global-header-search"
-              className="hidden h-11 min-w-[22rem] max-w-[640px] flex-1 items-center gap-3 rounded-2xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
+              className="hidden h-11 min-w-[22rem] max-w-[680px] flex-1 items-center gap-3 rounded-xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
             >
               <Search className="size-4 shrink-0" />
               <input
+                ref={searchRef}
                 id="global-header-search"
                 type="search"
-                placeholder="Buscar estudiantes, cursos, actividades..."
+                placeholder={isCoursesPage ? 'Buscar cursos, grados, secciones, asignaturas...' : 'Buscar estudiantes, cursos, actividades...'}
                 className="min-w-0 flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
-                aria-label="Buscar estudiantes, cursos, actividades"
+                aria-label={isCoursesPage ? 'Buscar cursos' : 'Buscar estudiantes, cursos, actividades'}
+                onChange={isCoursesPage ? (event) => window.dispatchEvent(new CustomEvent('courses:search', { detail: event.target.value })) : undefined}
               />
+              {isCoursesPage ? <kbd className="rounded-md border border-border bg-muted/50 px-2 py-1 text-[10px] font-bold text-muted-foreground">Ctrl + K</kbd> : null}
             </label>
           </>
         ) : (
@@ -157,6 +173,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
           >
             <Search className="size-4 shrink-0" />
             <input
+              ref={searchRef}
               id="global-header-search"
               type="search"
               placeholder="Buscar estudiantes, cursos, actividades..."

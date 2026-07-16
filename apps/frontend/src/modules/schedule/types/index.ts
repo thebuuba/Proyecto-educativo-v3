@@ -92,6 +92,7 @@ export type ScheduleFilters = {
   schoolYearId?: string
   academicPeriodId?: string
   sectionId?: string
+  sectionSubjectId?: string
   teacherId?: string
   gradeId?: string
 }

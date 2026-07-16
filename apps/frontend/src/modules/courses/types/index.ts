@@ -31,6 +31,7 @@ export type Section = {
   name: string
   capacity: number | null
   studentCount: number
+  teamCount: number
   status: RecordStatus
   createdAt: string
   updatedAt: string
@@ -96,7 +97,6 @@ export type SectionSubjectAssignment = {
   subjectName: string
   teacherId: string | null
   teacherName: string | null
-  teamCount: number
   status: RecordStatus
 }
 
@@ -133,7 +133,8 @@ export type CourseTeamMember = {
 
 export type CourseTeam = {
   id: string
-  sectionSubjectId: string
+  sectionId: string
+  sectionSubjectId: string | null
   schoolYearId: string
   name: string
   color: string

@@ -101,7 +101,7 @@ export class CoursesService {
       prisma.grade.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { sequence: 'asc' } }),
       prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } }),
       prisma.sectionSubject.findMany({
-        where: { schoolId, schoolYearId: currentSchoolYear.id, status: 'ACTIVE' },
+        where: { schoolId, schoolYearId: currentSchoolYear.id },
       }),
       prisma.enrollment.groupBy({
         by: ['sectionId'],
@@ -109,7 +109,7 @@ export class CoursesService {
         _count: { id: true },
       }),
       prisma.courseTeam.groupBy({
-        by: ['sectionSubjectId'],
+        by: ['sectionId'],
         where: { schoolId, schoolYearId: currentSchoolYear.id, status: 'ACTIVE' },
         _count: { id: true },
       }),
@@ -128,8 +128,8 @@ export class CoursesService {
     const studentCountBySectionId = new Map(
       enrollmentCounts.map((item) => [item.sectionId, item._count.id]),
     )
-    const teamCountByAssignmentId = new Map(
-      teamCounts.map((item) => [item.sectionSubjectId, item._count.id]),
+    const teamCountBySectionId = new Map(
+      teamCounts.map((item) => [item.sectionId, item._count.id]),
     )
 
     return {
@@ -145,6 +145,7 @@ export class CoursesService {
             ...section,
             status: status(section.status),
             studentCount: studentCountBySectionId.get(section.id) ?? 0,
+            teamCount: teamCountBySectionId.get(section.id) ?? 0,
             assignments: assignments
               .filter((assignment) => assignment.sectionId === section.id)
               .map((assignment) => {
@@ -159,7 +160,6 @@ export class CoursesService {
                   subjectName: subject?.name ?? '',
                   teacherId: assignment.teacherId,
                   teacherName: teacher ? `${teacher.firstName} ${teacher.lastName}` : null,
-                  teamCount: teamCountByAssignmentId.get(assignment.id) ?? 0,
                   status: status(assignment.status),
                 }
               }),
@@ -461,25 +461,133 @@ export class CoursesService {
     return updated
   }
 
+  /** Restaura una asignatura archivada dentro de su curso. */
+  async restoreSectionSubject(schoolId: string, id: string) {
+    const assignment = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
+    if (!assignment) throw new NotFoundException('Asignatura archivada no encontrada')
+
+    const restored = await prisma.sectionSubject.update({
+      where: { id },
+      data: { status: RecordStatus.ACTIVE },
+    })
+    invalidateSchoolCache(schoolId)
+    return restored
+  }
+
+  /** Elimina definitivamente una asignatura archivada y todo su historial académico asociado. */
+  async permanentlyDeleteSectionSubject(schoolId: string, id: string) {
+    const assignment = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
+    if (!assignment) throw new NotFoundException('Asignatura archivada no encontrada')
+    if (assignment.status !== RecordStatus.INACTIVE) {
+      throw new BadRequestException('Archiva la asignatura antes de eliminarla definitivamente')
+    }
+
+    await prisma.$transaction(async (tx) => {
+      const activities = await tx.evaluationActivity.findMany({
+        where: { schoolId, sectionSubjectId: id },
+        select: { id: true },
+      })
+      const activityIds = activities.map((activity) => activity.id)
+      const groups = activityIds.length
+        ? await tx.evaluationActivityGroup.findMany({
+          where: { activityId: { in: activityIds } },
+          select: { id: true },
+        })
+        : []
+      const groupIds = groups.map((group) => group.id)
+      const gradeRecords = await tx.gradesRecord.findMany({
+        where: { schoolId, sectionSubjectId: id },
+        select: { id: true },
+      })
+      const gradeRecordIds = gradeRecords.map((record) => record.id)
+
+      if (groupIds.length) {
+        await tx.evaluationActivityGroupMember.deleteMany({ where: { groupId: { in: groupIds } } })
+        await tx.evaluationActivityGroup.deleteMany({ where: { id: { in: groupIds } } })
+      }
+      if (activityIds.length) {
+        await tx.evaluationActivityEvidence.deleteMany({ where: { activityId: { in: activityIds } } })
+      }
+      if (gradeRecordIds.length) {
+        await tx.pedagogicalRecovery.deleteMany({ where: { gradeRecordId: { in: gradeRecordIds } } })
+      }
+      await tx.gradesRecord.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.evaluationActivity.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.attendanceClass.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.scheduleEntry.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.planningEntry.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.courseTeam.updateMany({ where: { schoolId, sectionSubjectId: id }, data: { sectionSubjectId: null } })
+      await tx.sectionSubject.delete({ where: { id } })
+    })
+
+    invalidateSchoolCache(schoolId)
+    return { deleted: true }
+  }
+
   /** Lista los equipos del curso con sus integrantes y datos del estudiante. */
-  async getCourseTeams(schoolId: string, sectionSubjectId: string) {
-    await this.requireSectionSubject(schoolId, sectionSubjectId)
+  async getSectionTeams(schoolId: string, sectionId: string, schoolYearId?: string) {
+    await this.requireSection(schoolId, sectionId)
+    const resolvedSchoolYearId = schoolYearId || (await resolveSchoolYear(schoolId)).id
 
     return prisma.courseTeam.findMany({
-      where: { schoolId, sectionSubjectId, status: RecordStatus.ACTIVE },
+      where: { schoolId, sectionId, schoolYearId: resolvedSchoolYearId, status: RecordStatus.ACTIVE },
       orderBy: [{ orderPosition: 'asc' }, { createdAt: 'asc' }],
       include: {
         members: {
           where: { status: RecordStatus.ACTIVE },
           orderBy: { joinedAt: 'asc' },
-          include: {
-            enrollment: {
-              include: { student: true },
-            },
-          },
+          include: { enrollment: { include: { student: true } } },
         },
       },
     })
+  }
+
+  /** Compatibilidad: resuelve la sección desde una asignatura. */
+  async getCourseTeams(schoolId: string, sectionSubjectId: string) {
+    const assignment = await this.requireSectionSubject(schoolId, sectionSubjectId)
+    return this.getSectionTeams(schoolId, assignment.sectionId, assignment.schoolYearId)
+  }
+
+  /** Crea un equipo compartido por todas las asignaturas de una sección. */
+  async createSectionTeam(
+    schoolId: string,
+    userId: string,
+    sectionId: string,
+    schoolYearId: string | undefined,
+    dto: CreateCourseTeamDto,
+  ) {
+    await this.requireSection(schoolId, sectionId)
+    const resolvedSchoolYearId = schoolYearId || (await resolveSchoolYear(schoolId)).id
+    await this.validateTeamMembers(schoolId, sectionId, resolvedSchoolYearId, dto.members)
+
+    const created = await prisma.$transaction(async (tx) => {
+      const order = await tx.courseTeam.count({
+        where: { schoolId, sectionId, schoolYearId: resolvedSchoolYearId, status: RecordStatus.ACTIVE },
+      })
+      const team = await tx.courseTeam.create({
+        data: {
+          schoolId,
+          schoolYearId: resolvedSchoolYearId,
+          sectionId,
+          sectionSubjectId: null,
+          name: dto.name.trim(),
+          color: dto.color ?? '#2563eb',
+          icon: dto.icon ?? 'users',
+          description: dto.description?.trim() ?? '',
+          teamType: dto.teamType,
+          startsAt: dto.startsAt ? new Date(dto.startsAt) : null,
+          endsAt: dto.endsAt ? new Date(dto.endsAt) : null,
+          orderPosition: order,
+          createdBy: userId,
+        },
+      })
+      await this.syncTeamMembers(tx, team, dto.members)
+      return team
+    })
+
+    const teams = await this.getSectionTeams(schoolId, sectionId, resolvedSchoolYearId)
+    invalidateSchoolCache(schoolId)
+    return teams.find((team) => team.id === created.id)
   }
 
   /** Crea un equipo y garantiza que un estudiante no esté en dos equipos permanentes. */
@@ -505,6 +613,7 @@ export class CoursesService {
         data: {
           schoolId,
           schoolYearId: sectionSubject.schoolYearId,
+          sectionId: sectionSubject.sectionId,
           sectionSubjectId,
           name: dto.name.trim(),
           color: dto.color ?? '#2563eb',
@@ -536,11 +645,10 @@ export class CoursesService {
     if (!existing) throw new NotFoundException('Equipo no encontrado')
 
     if (dto.members) {
-      const sectionSubject = await this.requireSectionSubject(schoolId, existing.sectionSubjectId)
       await this.validateTeamMembers(
         schoolId,
-        sectionSubject.sectionId,
-        sectionSubject.schoolYearId,
+        existing.sectionId,
+        existing.schoolYearId,
         dto.members,
       )
     }
@@ -562,7 +670,7 @@ export class CoursesService {
       if (dto.members) await this.syncTeamMembers(tx, team, dto.members)
     })
 
-    const teams = await this.getCourseTeams(schoolId, existing.sectionSubjectId)
+    const teams = await this.getSectionTeams(schoolId, existing.sectionId, existing.schoolYearId)
     invalidateSchoolCache(schoolId)
     return teams.find((team) => team.id === id)
   }
@@ -594,6 +702,14 @@ export class CoursesService {
     return sectionSubject
   }
 
+  private async requireSection(schoolId: string, id: string) {
+    const section = await prisma.section.findFirst({
+      where: { id, schoolId, status: RecordStatus.ACTIVE },
+    })
+    if (!section) throw new NotFoundException('Curso no encontrado')
+    return section
+  }
+
   private async validateTeamMembers(
     schoolId: string,
     sectionId: string,
@@ -617,7 +733,7 @@ export class CoursesService {
 
   private async syncTeamMembers(
     tx: Prisma.TransactionClient,
-    team: { id: string; schoolId: string; schoolYearId: string; sectionSubjectId: string; teamType: string },
+    team: { id: string; schoolId: string; schoolYearId: string; sectionId: string; teamType: string },
     members: Array<{ enrollmentId: string; role?: string }>,
   ) {
     const enrollmentIds = members.map((member) => member.enrollmentId)
@@ -640,7 +756,7 @@ export class CoursesService {
           team: {
             schoolId: team.schoolId,
             schoolYearId: team.schoolYearId,
-            sectionSubjectId: team.sectionSubjectId,
+            sectionId: team.sectionId,
             teamType: 'permanent',
             status: RecordStatus.ACTIVE,
           },

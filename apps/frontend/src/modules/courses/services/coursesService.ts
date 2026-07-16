@@ -71,15 +71,26 @@ export async function deactivateSectionSubject(id: string): Promise<void> {
   await api.delete(`/courses/section-subjects/${id}`)
 }
 
-export async function getCourseTeams(sectionSubjectId: string): Promise<CourseTeam[]> {
-  return api.get<CourseTeam[]>(`/courses/section-subjects/${sectionSubjectId}/teams`)
+/** Restaura una asignatura archivada dentro del curso. */
+export async function restoreSectionSubject(id: string): Promise<void> {
+  await api.patch(`/courses/section-subjects/${id}/restore`, {})
+}
+
+/** Elimina definitivamente una asignatura archivada y todo su historial asociado. */
+export async function deleteSectionSubjectPermanently(id: string): Promise<void> {
+  await api.delete(`/courses/section-subjects/${id}/permanent`)
+}
+
+export async function getCourseTeams(sectionId: string, schoolYearId: string): Promise<CourseTeam[]> {
+  return api.get<CourseTeam[]>(`/courses/sections/${sectionId}/teams?schoolYearId=${encodeURIComponent(schoolYearId)}`)
 }
 
 export async function createCourseTeam(
-  sectionSubjectId: string,
+  sectionId: string,
+  schoolYearId: string,
   input: CourseTeamInput,
 ): Promise<CourseTeam> {
-  return api.post<CourseTeam>(`/courses/section-subjects/${sectionSubjectId}/teams`, input)
+  return api.post<CourseTeam>(`/courses/sections/${sectionId}/teams?schoolYearId=${encodeURIComponent(schoolYearId)}`, input)
 }
 
 export async function updateCourseTeam(id: string, input: Partial<CourseTeamInput>): Promise<CourseTeam> {

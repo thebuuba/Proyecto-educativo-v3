@@ -50,6 +50,7 @@ export async function getScheduleEntries(filters: ScheduleFilters = {}): Promise
   if (filters.schoolYearId) params.set('schoolYearId', filters.schoolYearId)
   if (filters.academicPeriodId) params.set('academicPeriodId', filters.academicPeriodId)
   if (filters.sectionId) params.set('sectionId', filters.sectionId)
+  if (filters.sectionSubjectId) params.set('sectionSubjectId', filters.sectionSubjectId)
   if (filters.teacherId) params.set('teacherId', filters.teacherId)
   if (filters.gradeId) params.set('gradeId', filters.gradeId)
   return api.get<ScheduleEntry[]>(`/schedule/entries?${params}`)

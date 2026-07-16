@@ -1922,7 +1922,8 @@ export type Database = {
           order_position: number
           school_id: string
           school_year_id: string
-          section_subject_id: string
+          section_id: string
+          section_subject_id: string | null
           starts_at: string | null
           status: Database["public"]["Enums"]["record_status"]
           team_type: string
@@ -1940,7 +1941,8 @@ export type Database = {
           order_position?: number
           school_id?: string
           school_year_id: string
-          section_subject_id: string
+          section_id: string
+          section_subject_id?: string | null
           starts_at?: string | null
           status?: Database["public"]["Enums"]["record_status"]
           team_type?: string
@@ -1958,7 +1960,8 @@ export type Database = {
           order_position?: number
           school_id?: string
           school_year_id?: string
-          section_subject_id?: string
+          section_id?: string
+          section_subject_id?: string | null
           starts_at?: string | null
           status?: Database["public"]["Enums"]["record_status"]
           team_type?: string
@@ -1984,6 +1987,13 @@ export type Database = {
             columns: ["school_year_id"]
             isOneToOne: false
             referencedRelation: "school_years"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "course_teams_section_id_fkey"
+            columns: ["section_id"]
+            isOneToOne: false
+            referencedRelation: "sections"
             referencedColumns: ["id"]
           },
           {

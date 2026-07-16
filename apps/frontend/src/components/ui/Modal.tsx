@@ -20,6 +20,8 @@ type ModalProps = {
   onClose: () => void
   /** Clases adicionales para el contenedor del diálogo. */
   className?: string
+  /** Clases adicionales para el contenedor desplazable del contenido. */
+  contentClassName?: string
   /** Oculta el encabezado estandar para permitir una cabecera personalizada. */
   hideHeader?: boolean
 }
@@ -33,7 +35,7 @@ type ModalProps = {
  * @param props.children - Contenido del cuerpo.
  * @param props.onClose - Callback de cierre.
  */
-export function Modal({ title, description, children, onClose, className, hideHeader = false }: ModalProps) {
+export function Modal({ title, description, children, onClose, className, contentClassName, hideHeader = false }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
 
@@ -59,7 +61,7 @@ export function Modal({ title, description, children, onClose, className, hideHe
             </Button>
           </div>
         ) : null}
-        <div className="overflow-y-auto">
+        <div className={cn('overflow-y-auto', contentClassName)}>
           {children}
         </div>
       </div>
