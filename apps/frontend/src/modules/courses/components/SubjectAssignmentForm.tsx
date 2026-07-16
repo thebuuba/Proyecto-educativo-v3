@@ -1,6 +1,6 @@
 /** Ventana para asignar una materia oficial o personalizada a una sección. */
 import { BookOpen, Check, Pencil, Search, X } from 'lucide-react'
-import { useMemo, useState, type FormEvent } from 'react'
+import { useState, type FormEvent } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -57,10 +57,8 @@ export function SubjectAssignmentForm({
       !(subject.id && assignedSubjectIds.has(subject.id)) &&
       !assignedSubjectNames.has(normalizeAcademicText(subject.name)),
   )
-  const visibleSubjects = useMemo(() => {
-    const query = normalizeAcademicText(subjectQuery)
-    return availableSubjects.filter((subject) => !query || normalizeAcademicText(subject.name).includes(query))
-  }, [availableSubjects, subjectQuery])
+  const query = normalizeAcademicText(subjectQuery)
+  const visibleSubjects = availableSubjects.filter((subject) => !query || normalizeAcademicText(subject.name).includes(query))
   const selectedSubject = availableSubjects.find((subject) => subject.key === subjectKey)
   const normalizedNewName = normalizeAcademicText(name)
   const duplicatesAssignedSubject = assignedSubjectNames.has(normalizedNewName)

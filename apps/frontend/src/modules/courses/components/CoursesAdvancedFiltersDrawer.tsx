@@ -194,16 +194,16 @@ export function CoursesAdvancedFiltersDrawer({
   )
 }
 
-export function countAdvancedFilters(filters: CourseAdvancedFilters) {
+function FilterSection({ title, children }: { title: string; children: ReactNode }) {
+  return <section className="border-b border-slate-100 py-5 last:border-0"><h3 className="mb-3 text-xs font-extrabold uppercase tracking-[0.08em] text-slate-700">{title}</h3>{children}</section>
+}
+
+function countAdvancedFilters(filters: CourseAdvancedFilters) {
   return Number(Boolean(filters.minStudents || filters.maxStudents))
     + Number(filters.studentPresence !== 'any')
     + Number(filters.teamPresence !== 'any')
     + Number(filters.setupStatus !== 'any')
     + Number(filters.sortBy !== 'recent')
-}
-
-function FilterSection({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="border-b border-slate-100 py-5 last:border-0"><h3 className="mb-3 text-xs font-extrabold uppercase tracking-[0.08em] text-slate-700">{title}</h3>{children}</section>
 }
 
 function ChoiceGrid({ options, value, onChange }: { options: Option[]; value: string; onChange: (value: string) => void }) {

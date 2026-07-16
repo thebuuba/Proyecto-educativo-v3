@@ -138,6 +138,7 @@ import {
   finalSubjectScore,
   formatGrade,
   getRecoveryScores,
+  plainActivityText,
   scoreForActivity,
   sumActivityMaxScore,
   type CompetencyBlockId,
@@ -3617,11 +3618,12 @@ function normalizeEditorUrl(value: string, imageOnly = false) {
 function descriptionToEditorHtml(value: string) {
   if (!value) return ''
   if (/<\/?[a-z][\s\S]*>/i.test(value)) return sanitizeActivityDescriptionHtml(value)
-  return escapeHtml(value).replace(/\n/g, '<br>')
+  return escapeHtml(plainActivityText(value)).replace(/\n/g, '<br>')
 }
 
 function activityDescriptionText(value: string) {
   if (!value) return ''
+  if (!/<\/?[a-z][\s\S]*>/i.test(value)) return plainActivityText(value)
   if (typeof DOMParser === 'undefined') return value.replace(/<[^>]*>/g, ' ')
   const documentValue = new DOMParser().parseFromString(value, 'text/html')
   return documentValue.body.textContent ?? ''
@@ -4531,6 +4533,11 @@ function completionIssueVisual(target: ActivityCompletionTarget) {
   }
 }
 
+function setDragDocumentState(active: boolean) {
+  document.documentElement.style.cursor = active ? 'grabbing' : ''
+  document.body.style.userSelect = active ? 'none' : ''
+}
+
 function RubricLevelSettingsDrawer({
   accent,
   criteriaCount,
@@ -4564,6 +4571,7 @@ function RubricLevelSettingsDrawer({
 }) {
   const [draggedId, setDraggedId] = useState<string | null>(null)
   const [dragTargetIndex, setDragTargetIndex] = useState<number | null>(null)
+  const [dragPreviewHeight, setDragPreviewHeight] = useState(66)
   const levelListRef = useRef<HTMLDivElement>(null)
   const dragPreviewRef = useRef<HTMLElement | null>(null)
   const pointerDragRef = useRef<{ id: string; offsetY: number; pointerId: number; targetIndex: number } | null>(null)
@@ -4571,8 +4579,7 @@ function RubricLevelSettingsDrawer({
 
   useEffect(() => () => {
     dragPreviewRef.current?.remove()
-    document.documentElement.style.cursor = ''
-    document.body.style.userSelect = ''
+    setDragDocumentState(false)
   }, [])
 
   function normalizeDrafts(next: RubricLevelDraft[]) {
@@ -4607,8 +4614,7 @@ function RubricLevelSettingsDrawer({
     dragPreviewRef.current?.remove()
     dragPreviewRef.current = null
     pointerDragRef.current = null
-    document.documentElement.style.cursor = ''
-    document.body.style.userSelect = ''
+    setDragDocumentState(false)
     setDraggedId(null)
     setDragTargetIndex(null)
   }
@@ -4674,7 +4680,7 @@ function RubricLevelSettingsDrawer({
       window.removeEventListener('pointerup', handlePointerUp)
       window.removeEventListener('pointercancel', handlePointerCancel)
     }
-  }, [draggedId])
+  }, [draggedId, finishPointerDrag])
 
   function startPointerDrag(event: ReactPointerEvent<HTMLButtonElement>, level: RubricLevelDraft) {
     if (event.button !== 0) return
@@ -4685,6 +4691,7 @@ function RubricLevelSettingsDrawer({
     dragPreviewRef.current?.remove()
     const preview = card.cloneNode(true) as HTMLElement
     const bounds = card.getBoundingClientRect()
+    setDragPreviewHeight(bounds.height)
     preview.removeAttribute('data-rubric-level-card')
     preview.querySelectorAll<HTMLElement>('button, input').forEach((element) => { element.tabIndex = -1 })
     Object.assign(preview.style, {
@@ -4708,8 +4715,7 @@ function RubricLevelSettingsDrawer({
     dragPreviewRef.current = preview
     const sourceIndex = drafts.findIndex((draft) => draft.id === level.id)
     pointerDragRef.current = { id: level.id, offsetY: event.clientY - bounds.top, pointerId: event.pointerId, targetIndex: sourceIndex }
-    document.documentElement.style.cursor = 'grabbing'
-    document.body.style.userSelect = 'none'
+    setDragDocumentState(true)
     setDragTargetIndex(sourceIndex)
     setDraggedId(level.id)
   }
@@ -4757,7 +4763,7 @@ function RubricLevelSettingsDrawer({
           <div ref={levelListRef} className="space-y-1.5">
             {renderedDrafts.map((level, index) => {
               if (!level) {
-                return <div key="rubric-level-placeholder" aria-hidden="true" className="grid place-items-center rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50/80 text-[11px] font-black text-emerald-700 shadow-inner transition-all duration-200" style={{ height: `${dragPreviewRef.current?.getBoundingClientRect().height || 66}px` }}>Suelta aquí</div>
+                return <div key="rubric-level-placeholder" aria-hidden="true" className="grid place-items-center rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50/80 text-[11px] font-black text-emerald-700 shadow-inner transition-all duration-200" style={{ height: `${dragPreviewHeight}px` }}>Suelta aquí</div>
               }
               const visual = rubricLevelVisual(index, drafts.length)
               const keyboardIndex = drafts.findIndex((draft) => draft.id === level.id)
@@ -5115,6 +5121,7 @@ function ScaleSettingsDrawer({
 }) {
   const [draggedId, setDraggedId] = useState<string | null>(null)
   const [dragTargetIndex, setDragTargetIndex] = useState<number | null>(null)
+  const [dragPreviewHeight, setDragPreviewHeight] = useState(52)
   const listRef = useRef<HTMLDivElement>(null)
   const dragPreviewRef = useRef<HTMLElement | null>(null)
   const pointerDragRef = useRef<{ id: string; offsetY: number; pointerId: number; targetIndex: number } | null>(null)
@@ -5135,16 +5142,14 @@ function ScaleSettingsDrawer({
 
   useEffect(() => () => {
     dragPreviewRef.current?.remove()
-    document.documentElement.style.cursor = ''
-    document.body.style.userSelect = ''
+    setDragDocumentState(false)
   }, [])
 
   function cleanupPointerDrag() {
     dragPreviewRef.current?.remove()
     dragPreviewRef.current = null
     pointerDragRef.current = null
-    document.documentElement.style.cursor = ''
-    document.body.style.userSelect = ''
+    setDragDocumentState(false)
     setDraggedId(null)
     setDragTargetIndex(null)
   }
@@ -5188,7 +5193,7 @@ function ScaleSettingsDrawer({
     window.addEventListener('pointerup', handlePointerUp)
     window.addEventListener('pointercancel', handlePointerCancel)
     return () => { window.removeEventListener('pointermove', handlePointerMove); window.removeEventListener('pointerup', handlePointerUp); window.removeEventListener('pointercancel', handlePointerCancel) }
-  }, [draggedId])
+  }, [draggedId, finishPointerDrag])
 
   function startPointerDrag(event: ReactPointerEvent<HTMLButtonElement>, level: ScaleLevelDraft) {
     if (event.button !== 0) return
@@ -5197,6 +5202,7 @@ function ScaleSettingsDrawer({
     event.preventDefault()
     const preview = card.cloneNode(true) as HTMLElement
     const bounds = card.getBoundingClientRect()
+    setDragPreviewHeight(bounds.height)
     preview.removeAttribute('data-scale-level-card')
     preview.querySelectorAll<HTMLElement>('button, input').forEach((element) => { element.tabIndex = -1 })
     Object.assign(preview.style, { background: '#ffffff', borderColor: accent.progressColor, boxShadow: '0 22px 50px rgba(15, 23, 42, 0.25)', left: `${bounds.left}px`, margin: '0', opacity: '1', pointerEvents: 'none', position: 'fixed', top: `${bounds.top}px`, transform: 'scale(1.012)', width: `${bounds.width}px`, zIndex: '9999' })
@@ -5204,8 +5210,7 @@ function ScaleSettingsDrawer({
     dragPreviewRef.current = preview
     const sourceIndex = levelDrafts.findIndex((item) => item.id === level.id)
     pointerDragRef.current = { id: level.id, offsetY: event.clientY - bounds.top, pointerId: event.pointerId, targetIndex: sourceIndex }
-    document.documentElement.style.cursor = 'grabbing'
-    document.body.style.userSelect = 'none'
+    setDragDocumentState(true)
     setDragTargetIndex(sourceIndex)
     setDraggedId(level.id)
   }
@@ -5230,7 +5235,7 @@ function ScaleSettingsDrawer({
         <section className="border-t border-border pt-4">
           <div className="flex items-center justify-between gap-3"><div><p className={cn('text-sm font-black', accent.text)}>2. Niveles de la escala</p><p className="text-[10px] text-muted-foreground">Ordenados de mayor a menor valoración. Arrastra para reordenar.</p></div><Button type="button" size="sm" variant="outline" disabled={levelDrafts.length >= 6} onClick={onAddLevel}><Plus className="size-4" />Agregar nivel</Button></div>
           <div ref={listRef} className="mt-2 space-y-1.5">{renderedLevels.map((level, visualIndex) => {
-            if (!level) return <div key="scale-placeholder" className={cn('grid place-items-center rounded-xl border-2 border-dashed text-[10px] font-black', accent.card, accent.border, accent.text)} style={{ height: `${dragPreviewRef.current?.getBoundingClientRect().height || 52}px` }}>Suelta aquí</div>
+            if (!level) return <div key="scale-placeholder" className={cn('grid place-items-center rounded-xl border-2 border-dashed text-[10px] font-black', accent.card, accent.border, accent.text)} style={{ height: `${dragPreviewHeight}px` }}>Suelta aquí</div>
             const index = levelDrafts.findIndex((item) => item.id === level.id)
             const visual = scaleLevelVisual(accent, visualIndex, levelDrafts.length)
             return <div key={level.id} data-scale-level-card data-scale-sort-card className="grid grid-cols-[1.75rem_1.5rem_minmax(0,1fr)_5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm" style={{ borderColor: visual.border }}><button type="button" aria-label={`Arrastrar nivel ${level.name}`} className={cn('grid size-7 touch-none cursor-grab place-items-center rounded-md text-slate-400 hover:bg-muted active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2', accent.ring)} onPointerDown={(event) => startPointerDrag(event, level)} onKeyDown={(event) => { if (event.key === 'ArrowUp') { event.preventDefault(); moveWithKeyboard(index, -1) } else if (event.key === 'ArrowDown') { event.preventDefault(); moveWithKeyboard(index, 1) } }}><GripVertical className="size-4" /></button><span className="grid size-6 place-items-center rounded-full text-[10px] font-black" style={{ backgroundColor: visual.background, color: visual.foreground }}>{visualIndex + 1}</span><Input aria-label={`Nombre del nivel ${visualIndex + 1}`} className="h-8 font-bold" value={level.name} onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, name: event.target.value } : item))} /><label className="relative"><Input aria-label={`Puntos del nivel ${visualIndex + 1}`} className="h-8 pr-7 font-black" type="number" min={0} step="0.25" value={level.points} onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, points: Number(event.target.value) } : item))} /><span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[9px] text-muted-foreground">pts</span></label><button type="button" aria-label={`Eliminar nivel ${level.name}`} disabled={levelDrafts.length <= 2} className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => onLevelsChange((current) => current.filter((item) => item.id !== level.id))}><Trash2 className="size-4" /></button></div>

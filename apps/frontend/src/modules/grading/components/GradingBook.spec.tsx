@@ -97,12 +97,12 @@ describe('GradingBook', () => {
     expect(screen.getByRole('heading', { name: 'Estadísticas del bloque' })).toBeInTheDocument()
 
     await user.click(activitiesTab)
-    await user.click(screen.getByRole('button', { name: /Debate del ecosistema/ }))
+    await user.click(screen.getByRole('button', { name: 'Calificar' }))
+    expect(screen.getByRole('button', { name: 'Evaluación' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Resultados' })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Detalles' }))
     expect(screen.getAllByText('Propósito: argumentar con evidencia.')).toHaveLength(2)
     expect(screen.queryByText(/\*\*Propósito/)).not.toBeInTheDocument()
-    expect(screen.getByRole('tab', { name: 'Información' })).toBeInTheDocument()
-    expect(screen.getByRole('tab', { name: 'Calificaciones' })).toBeInTheDocument()
-    expect(screen.getByRole('tab', { name: 'Evidencias / Observaciones' })).toBeInTheDocument()
   })
 
   it('muestra un error anual recuperable y permite reintentar', async () => {

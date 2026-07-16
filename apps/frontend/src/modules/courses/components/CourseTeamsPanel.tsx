@@ -9,7 +9,7 @@ import {
   UsersRound,
   X,
 } from 'lucide-react'
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
 
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import {
@@ -42,7 +42,7 @@ export function CourseTeamsPanel({
   const [editing, setEditing] = useState<CourseTeam | 'new' | null>(null)
   const [archiveTarget, setArchiveTarget] = useState<CourseTeam | null>(null)
 
-  async function loadTeams() {
+  const loadTeams = useCallback(async () => {
     if (!sectionSubjectId) {
       setTeams([])
       setLoading(false)
@@ -57,11 +57,11 @@ export function CourseTeamsPanel({
     } finally {
       setLoading(false)
     }
-  }
+  }, [sectionSubjectId])
 
   useEffect(() => {
     void loadTeams()
-  }, [sectionSubjectId])
+  }, [loadTeams])
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase('es')

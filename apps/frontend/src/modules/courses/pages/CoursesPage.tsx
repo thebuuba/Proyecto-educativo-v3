@@ -43,7 +43,6 @@ import { TeacherAssignmentForm } from '@/modules/courses/components/TeacherAssig
 import { CourseTeamsPanel } from '@/modules/courses/components/CourseTeamsPanel'
 import {
   CoursesAdvancedFiltersDrawer,
-  countAdvancedFilters,
   type CourseAdvancedFilters,
 } from '@/modules/courses/components/CoursesAdvancedFiltersDrawer'
 import { getStudentsBySection } from '@/modules/attendance/services/attendanceService'
@@ -1483,6 +1482,14 @@ function CourseSummary({ students, teams, subjectName, teacherName, onNavigate }
       </section>
     </div>
   )
+}
+
+function countAdvancedFilters(filters: CourseAdvancedFilters) {
+  return Number(Boolean(filters.minStudents || filters.maxStudents))
+    + Number(filters.studentPresence !== 'any')
+    + Number(filters.teamPresence !== 'any')
+    + Number(filters.setupStatus !== 'any')
+    + Number(filters.sortBy !== 'recent')
 }
 
 const defaultAdvancedFilters: CourseAdvancedFilters = {
