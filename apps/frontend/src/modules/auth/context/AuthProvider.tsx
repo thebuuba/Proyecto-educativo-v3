@@ -75,7 +75,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   /** Limpia el estado de autenticación local. */
   const clearAuthState = useCallback((authError: string | null = null) => {
-    localStorage.removeItem('auth_token')
     setState({
       user: null,
       supabaseAccessToken: null,
@@ -91,8 +90,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   /** Aplica los datos de una sesión (login o registro) al estado global. */
   const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
-    if (response.token) localStorage.setItem('auth_token', response.token)
-    else localStorage.removeItem('auth_token')
     const onboardingComplete = checkOnboarding
       ? (getCachedOnboardingStatus() ?? await getOnboardingStatus().then((status) => {
           setCachedOnboardingStatus(status.complete)

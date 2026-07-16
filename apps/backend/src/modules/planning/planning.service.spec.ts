@@ -232,8 +232,8 @@ describe('PlanningService.generateEntryDraft', () => {
     await attendance.getCurrentPeriod('school-1')
     await grading.getAcademicPeriods('school-1')
     await attendance.getCurrentPeriod('school-1')
-    expect(mocks.prisma.academicPeriod.findMany).toHaveBeenCalledTimes(1)
-    expect(mocks.prisma.academicPeriod.findFirst).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.academicPeriod.findMany).toHaveBeenCalledTimes(2)
+    expect(mocks.prisma.academicPeriod.findFirst).toHaveBeenCalledTimes(2)
 
     await new PlanningService(config({}) as never).updateAcademicPeriod(
       'school-1',
@@ -243,7 +243,7 @@ describe('PlanningService.generateEntryDraft', () => {
     await grading.getAcademicPeriods('school-1')
     await attendance.getCurrentPeriod('school-1')
 
-    expect(mocks.prisma.academicPeriod.findMany).toHaveBeenCalledTimes(2)
-    expect(mocks.prisma.academicPeriod.findFirst).toHaveBeenCalledTimes(3)
+    expect(mocks.prisma.academicPeriod.findMany).toHaveBeenCalledTimes(3)
+    expect(mocks.prisma.academicPeriod.findFirst).toHaveBeenCalledTimes(4)
   })
 })

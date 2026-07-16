@@ -12,9 +12,9 @@
 | [02-base-de-datos](02-base-de-datos.md) | Modelo de datos, esquema Prisma y migraciones |
 | [03-backend/](03-backend/) | Backend NestJS: estructura, módulos, API |
 | [04-frontend/](04-frontend/) | Frontend React: componentes, rutas, módulos |
-| [05-despliegue](05-despliegue.md) | Despliegue con Render y Vercel |
+| [05-despliegue](05-despliegue.md) | Despliegue unificado con Cloudflare y Supabase |
 | [06-flujos-clave](06-flujos-clave.md) | Flujos funcionales del sistema |
-| [07-cambio-de-cuentas](07-cambio-de-cuentas.md) | Migración a nuevas cuentas de Supabase, Render y Vercel |
+| [07-cambio-de-cuentas](07-cambio-de-cuentas.md) | Cambio seguro de cuentas Cloudflare y Supabase |
 
 ## Tecnologías principales
 
@@ -23,9 +23,9 @@
 | Frontend | React 19, TypeScript ~6.0, Vite ~8.0, Tailwind CSS ~4.3, React Router DOM ~7.15 |
 | Backend | NestJS ~11.0, TypeScript ~6.0, Passport/JWT, class-validator |
 | ORM | Prisma ~6.5 con PostgreSQL |
-| Base de datos | Supabase (solo como hosting PostgreSQL) |
+| Base de datos | Supabase PostgreSQL, Auth y Storage |
 | Monorepo | pnpm workspaces + TurboRepo |
-| Despliegue | Backend en Render + frontend en Vercel |
+| Despliegue | Cloudflare Worker + Static Assets + Hyperdrive |
 | Testing | Vitest ~4.1 |
 | Íconos | Lucide React ~1.16 |
 

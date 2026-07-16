@@ -2,10 +2,6 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SchoolAdministrationService } from './school-administration.service'
 
-function mockCache() {
-  return { get: vi.fn(), set: vi.fn(), del: vi.fn() }
-}
-
 const mocks = vi.hoisted(() => ({
   prisma: {
     school: {
@@ -33,11 +29,10 @@ describe('SchoolAdministrationService', () => {
   })
 
   it('updates the real school profile fields', async () => {
-    const cache = mockCache()
     mocks.prisma.school.findUnique.mockResolvedValue({ id: 'school-1' })
     mocks.prisma.school.update.mockResolvedValue({ id: 'school-1' })
 
-    await new SchoolAdministrationService(cache).updateSchool('school-1', {
+    await new SchoolAdministrationService().updateSchool('school-1', {
       name: 'Centro',
       slug: 'centro',
       sector: 'public',
@@ -61,7 +56,6 @@ describe('SchoolAdministrationService', () => {
         officialExportsEnabled: false,
       },
     })
-    expect(cache.del).toHaveBeenCalledWith('school:school-1')
   })
 
   it('sets the current school year in one transaction', async () => {
@@ -70,7 +64,7 @@ describe('SchoolAdministrationService', () => {
     mocks.prisma.schoolYear.update.mockReturnValue('set-current')
     mocks.prisma.$transaction.mockResolvedValue([{ count: 1 }, { id: 'year-1' }])
 
-    await new SchoolAdministrationService(mockCache()).setCurrentSchoolYear('school-1', 'year-1')
+    await new SchoolAdministrationService().setCurrentSchoolYear('school-1', 'year-1')
 
     expect(mocks.prisma.schoolYear.updateMany).toHaveBeenCalledWith({
         where: { schoolId: 'school-1', isCurrent: true },
@@ -98,7 +92,7 @@ describe('SchoolAdministrationService', () => {
     mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1' })
     mocks.prisma.schoolYear.update.mockResolvedValue({ id: 'year-1', name: '2027-2028' })
 
-    await new SchoolAdministrationService(mockCache()).updateSchoolYear(
+    await new SchoolAdministrationService().updateSchoolYear(
       'school-1',
       'year-1',
       { name: '2027-2028' },

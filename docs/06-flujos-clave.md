@@ -39,18 +39,17 @@ Usuario                    Frontend                     Backend                 
    │                          │                           │  Buscar AppUser por email│
    │                          │                           ├─────────────────────────►│
    │                          │                           │◄─────────────────────────│
-   │                          │                           │  Validar bcrypt hash     │
+   │                          │                           │  Validar sesión Supabase │
    │                          │                           │  Cargar roles + permisos │
    │                          │                           ├─────────────────────────►│
    │                          │                           │◄─────────────────────────│
    │                          │                           │  Generar JWT (8h)        │
    │                          │◄──────────────────────────│                          │
    │  ◄────────────────────────┤                           │                          │
-   │  { user, token, roles,   │                           │                          │
+   │  { user, roles,          │                           │                          │
    │    permissions }         │                           │                          │
    │                          │                           │                          │
-   │  Guardar token en        │                           │                          │
-   │  localStorage            │                           │                          │
+   │  Recibir cookie HttpOnly │                           │                          │
    │  Redirigir a Dashboard    │                           │                          │
 ```
 

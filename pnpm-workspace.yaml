@@ -5,9 +5,10 @@ allowBuilds:
   '@nestjs/core': true
   '@prisma/client': true
   '@prisma/engines': true
-  bcrypt: true
   esbuild: true
   prisma: true
+  sharp: true
+  workerd: true
 overrides:
   '@nestjs/platform-express>multer': 2.2.0
   esbuild: 0.28.1

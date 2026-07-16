@@ -14,8 +14,8 @@ describe('smoke', () => {
   })
 
   it('builds the OAuth callback from the current browser origin', () => {
-    expect(getOAuthCallbackUrl('https://aula-base.vercel.app')).toBe(
-      'https://aula-base.vercel.app/auth/callback',
+    expect(getOAuthCallbackUrl('https://app.aulabase.example')).toBe(
+      'https://app.aulabase.example/auth/callback',
     )
   })
 

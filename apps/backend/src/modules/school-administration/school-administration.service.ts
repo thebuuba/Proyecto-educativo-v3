@@ -5,9 +5,7 @@
  * Proporciona operaciones CRUD para datos de la institución, años escolares
  * y consulta de períodos académicos.
  */
-import { Inject, Injectable, NotFoundException } from '@nestjs/common'
-import { CACHE_MANAGER } from '@nestjs/cache-manager'
-import { Cache } from 'cache-manager'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import { invalidateSchoolYearOptions } from '../../common/cache/option-cache'
 import { UpdateSchoolDto } from './dto/update-school.dto'
@@ -16,19 +14,9 @@ import { UpdateSchoolYearDto } from './dto/update-school-year.dto'
 
 @Injectable()
 export class SchoolAdministrationService {
-  constructor(@Inject(CACHE_MANAGER) private cache: Cache) {}
-
-  private schoolCacheKey(schoolId: string) { return `school:${schoolId}` }
-
   /** Obtiene los datos del colegio por su ID */
-  async getSchool(schoolId: string) {
-    const cached = await this.cache.get<unknown>(this.schoolCacheKey(schoolId))
-    if (cached !== undefined) return cached
-
-    const school = await prisma.school.findUnique({ where: { id: schoolId } })
-    // ponytail: 5min TTL, school data changes rarely
-    if (school) await this.cache.set(this.schoolCacheKey(schoolId), school, 300_000)
-    return school
+  getSchool(schoolId: string) {
+    return prisma.school.findUnique({ where: { id: schoolId } })
   }
 
   /** Actualiza los datos del colegio */
@@ -50,7 +38,6 @@ export class SchoolAdministrationService {
         ...(dto.officialExportsEnabled !== undefined && { officialExportsEnabled: dto.officialExportsEnabled }),
       },
     })
-    await this.cache.del(this.schoolCacheKey(schoolId))
     return updated
   }
 

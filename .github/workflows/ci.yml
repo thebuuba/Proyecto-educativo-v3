@@ -24,11 +24,13 @@ jobs:
 
       - run: pnpm --filter @aula/shared build
       - name: Generate Prisma client
-        working-directory: packages/database
-        run: npx prisma generate
+        run: pnpm --filter @aula/database exec prisma generate
       - run: pnpm --filter @aula/database build
       - run: pnpm --filter backend lint
       - run: pnpm --filter backend build
       - run: pnpm --filter backend test
       - run: pnpm --filter frontend lint
+      - run: pnpm --filter frontend test
       - run: pnpm --filter frontend build
+      - name: Verify Cloudflare Worker bundle
+        run: pnpm exec wrangler deploy --dry-run --env=""

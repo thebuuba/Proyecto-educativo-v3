@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "aula-base",
+  "main": "worker.ts",
+  "compatibility_date": "2026-07-16",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./apps/frontend/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "alias": {
+    "@nestjs/microservices": "./cloudflare/optional-nest-module.ts",
+    "@nestjs/microservices/microservices-module": "./cloudflare/optional-nest-module.ts",
+    "@nestjs/websockets/socket-module": "./cloudflare/optional-nest-module.ts",
+    "class-transformer/storage": "./apps/backend/node_modules/class-transformer/cjs/storage.js"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "env": {
+    "staging": {
+      "name": "aula-base-staging"
+    }
+  }
+}
