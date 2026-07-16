@@ -26,13 +26,11 @@ const colors = ['#5b35e5', '#2563eb', '#0ea5a8', '#16a34a', '#f59e0b', '#e83e73'
 const roles = ['Coordinador', 'Secretario', 'Investigador', 'Expositor', 'Diseñador']
 
 export function CourseTeamsPanel({
-  sectionId,
-  schoolYearId,
+  sectionSubjectId,
   students,
   canManage,
 }: {
-  sectionId: string
-  schoolYearId: string | null
+  sectionSubjectId: string | null
   students: StudentAttendanceRow[]
   canManage: boolean
 }) {
@@ -45,7 +43,7 @@ export function CourseTeamsPanel({
   const [archiveTarget, setArchiveTarget] = useState<CourseTeam | null>(null)
 
   async function loadTeams() {
-    if (!schoolYearId) {
+    if (!sectionSubjectId) {
       setTeams([])
       setLoading(false)
       return
@@ -53,7 +51,7 @@ export function CourseTeamsPanel({
     setLoading(true)
     setError(null)
     try {
-      setTeams(await getCourseTeams(sectionId, schoolYearId))
+      setTeams(await getCourseTeams(sectionSubjectId))
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : 'No se pudieron cargar los equipos.')
     } finally {
@@ -63,7 +61,7 @@ export function CourseTeamsPanel({
 
   useEffect(() => {
     void loadTeams()
-  }, [sectionId, schoolYearId])
+  }, [sectionSubjectId])
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase('es')
@@ -81,8 +79,8 @@ export function CourseTeamsPanel({
       .flatMap((team) => team.members.map((member) => member.enrollmentId)),
   )
 
-  if (!schoolYearId) {
-    return <PanelMessage text="No hay un año escolar activo para organizar equipos de trabajo." />
+  if (!sectionSubjectId) {
+    return <PanelMessage text="Selecciona una asignatura para organizar sus equipos de trabajo." />
   }
 
   return (
@@ -181,7 +179,7 @@ export function CourseTeamsPanel({
           students={students}
           onClose={() => setEditing(null)}
           onSave={async (input) => {
-            if (editing === 'new') await createCourseTeam(sectionId, schoolYearId, input)
+            if (editing === 'new') await createCourseTeam(sectionSubjectId, input)
             else await updateCourseTeam(editing.id, input)
             setEditing(null)
             await loadTeams()

@@ -3,16 +3,22 @@ import {
   Archive,
   ArchiveRestore,
   ArrowLeft,
+  Bookmark,
   BookOpen,
+  CalendarCheck2,
   CalendarDays,
+  CheckCircle2,
   CheckSquare,
   ClipboardList,
   GraduationCap,
   LayoutDashboard,
+  Library,
+  LogIn,
   MapPin,
   MoreHorizontal,
   Plus,
   Power,
+  RotateCcw,
   Search,
   SearchX,
   SlidersHorizontal,
@@ -28,6 +34,7 @@ import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
+import { Modal } from '@/components/ui/Modal'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { SectionForm } from '@/modules/courses/components/SectionForm'
@@ -64,6 +71,13 @@ type CourseCardItem = {
   subjectName: string
   levelName: string
   cycleName: string
+}
+
+type SavedCourseView = {
+  id: string
+  name: string
+  search: string
+  filters: CourseAdvancedFilters
 }
 
 type SubjectPalette = { color: string; soft: string }
@@ -115,6 +129,17 @@ function normalizeText(value: string) {
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+}
+
+function loadSavedCourseViews(): SavedCourseView[] {
+  if (typeof window === 'undefined') return []
+  try {
+    const stored = window.localStorage.getItem('aulabase:courses:saved-views')
+    const parsed = stored ? JSON.parse(stored) : []
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
 }
 
 export function CoursesPage() {
@@ -184,6 +209,8 @@ export function CoursesPage() {
   const [gradeFilter, setGradeFilter] = useState('all')
   const [sectionFilter, setSectionFilter] = useState('all')
   const [moreFiltersOpen, setMoreFiltersOpen] = useState(false)
+  const [saveViewOpen, setSaveViewOpen] = useState(false)
+  const [savedViews, setSavedViews] = useState<SavedCourseView[]>(loadSavedCourseViews)
   const [advancedFilters, setAdvancedFilters] = useState<CourseAdvancedFilters>(defaultAdvancedFilters)
   const [advancedDraft, setAdvancedDraft] = useState<CourseAdvancedFilters>(defaultAdvancedFilters)
   const [advancedInitial, setAdvancedInitial] = useState<CourseAdvancedFilters>(defaultAdvancedFilters)
@@ -207,6 +234,52 @@ export function CoursesPage() {
   function closeAdvancedFilters() {
     setMoreFiltersOpen(false)
     requestAnimationFrame(() => moreFiltersButtonRef.current?.focus())
+  }
+
+  function resetCourseFilters() {
+    setSearchQuery('')
+    setLevelFilter('all')
+    setCycleFilter('all')
+    setSubjectFilter('all')
+    setGradeFilter('all')
+    setSectionFilter('all')
+    setAdvancedFilters(defaultAdvancedFilters)
+  }
+
+  function applySavedView(view: SavedCourseView) {
+    setSearchQuery(view.search)
+    setLevelFilter(view.filters.level)
+    setCycleFilter(view.filters.cycle)
+    setSubjectFilter(view.filters.subject)
+    setGradeFilter(view.filters.grade)
+    setSectionFilter(view.filters.section)
+    setAdvancedFilters(view.filters)
+  }
+
+  function saveCurrentView(name: string) {
+    const view: SavedCourseView = {
+      id: crypto.randomUUID(),
+      name,
+      search: searchQuery,
+      filters: {
+        ...advancedFilters,
+        level: levelFilter,
+        cycle: cycleFilter,
+        subject: subjectFilter,
+        grade: gradeFilter,
+        section: sectionFilter,
+      },
+    }
+    const next = [...savedViews, view]
+    setSavedViews(next)
+    localStorage.setItem('aulabase:courses:saved-views', JSON.stringify(next))
+    setSaveViewOpen(false)
+  }
+
+  function removeSavedView(id: string) {
+    const next = savedViews.filter((view) => view.id !== id)
+    setSavedViews(next)
+    localStorage.setItem('aulabase:courses:saved-views', JSON.stringify(next))
   }
 
   function openCreateAssignmentFlow() {
@@ -445,9 +518,23 @@ export function CoursesPage() {
   const totalStudents = useMemo(
     () => {
       const sections = new Map<string, number>()
-      courseCards.forEach((item) => sections.set(item.section.id, item.section.studentCount ?? 0))
+      courseCards.forEach((item) => sections.set(item.section.id, toSafeCount(item.section.studentCount)))
       return Array.from(sections.values()).reduce((sum, count) => sum + count, 0)
     },
+    [courseCards],
+  )
+  const totalAssignments = useMemo(
+    () => courseCards.reduce((total, item) => total + item.assignments.length, 0),
+    [courseCards],
+  )
+  const totalTeams = useMemo(
+    () => courseCards.reduce(
+      (total, item) => total + item.assignments.reduce(
+        (sum, assignment) => sum + toSafeCount(assignment.teamCount),
+        0,
+      ),
+      0,
+    ),
     [courseCards],
   )
 
@@ -489,6 +576,21 @@ export function CoursesPage() {
               </Button>
             ) : null}
           </header>
+
+          <section aria-labelledby="courses-summary-title">
+            <div className="mb-3 flex flex-wrap items-center gap-3">
+              <h2 id="courses-summary-title" className="text-sm font-extrabold text-foreground">Resumen general</h2>
+              <span className="text-xs text-muted-foreground">Año escolar {currentSchoolYear?.name ?? 'sin configurar'}</span>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6">
+              <CourseStatCard icon={<Library className="size-5" />} value={courseCards.length} label="Cursos" detail="Todos los niveles" tone="blue" />
+              <CourseStatCard icon={<UsersRound className="size-5" />} value={totalStudents} label="Estudiantes" detail="Matriculados" tone="green" />
+              <CourseStatCard icon={<BookOpen className="size-5" />} value={totalAssignments} label="Asignaturas" detail="En todas las secciones" tone="violet" />
+              <CourseStatCard icon={<UsersRound className="size-5" />} value={totalTeams} label="Equipos" detail="Por asignatura" tone="orange" />
+              <CourseStatCard icon={<CheckCircle2 className="size-5" />} value={courseCards.length} label="Cursos activos" detail="En este momento" tone="emerald" />
+              <CourseStatCard icon={<CalendarCheck2 className="size-5" />} value={currentSchoolYear?.name ?? '—'} label="Año escolar" detail="Actual" tone="sky" />
+            </div>
+          </section>
 
           <header className="hidden">
             <div className="min-w-0">
@@ -555,9 +657,31 @@ export function CoursesPage() {
                 {advancedFilters.teamPresence !== 'any' ? <ActiveFilter label={advancedFilters.teamPresence === 'with' ? 'Con equipos' : 'Sin equipos'} onRemove={() => setAdvancedFilters((current) => ({ ...current, teamPresence: 'any' }))} /> : null}
                 {advancedFilters.setupStatus !== 'any' ? <ActiveFilter label={{ 'with-teacher': 'Con docente', 'without-teacher': 'Sin docente', 'without-subject': 'Sin asignatura' }[advancedFilters.setupStatus]} onRemove={() => setAdvancedFilters((current) => ({ ...current, setupStatus: 'any' }))} /> : null}
                 {advancedFilters.sortBy !== 'recent' ? <ActiveFilter label="Orden personalizado" onRemove={() => setAdvancedFilters((current) => ({ ...current, sortBy: 'recent' }))} /> : null}
-                <button type="button" className="ml-1 text-xs font-bold text-primary hover:underline" onClick={() => { setLevelFilter('all'); setCycleFilter('all'); setSubjectFilter('all'); setGradeFilter('all'); setSectionFilter('all'); setAdvancedFilters(defaultAdvancedFilters) }}>Limpiar filtros</button>
+                <button type="button" className="ml-1 text-xs font-bold text-primary hover:underline" onClick={resetCourseFilters}>Limpiar filtros</button>
               </div>
             ) : null}
+
+            <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200/80 pt-3">
+              <div className="flex min-w-0 flex-wrap items-center gap-2">
+                {savedViews.length ? (
+                  <>
+                    <span className="text-[11px] font-extrabold uppercase tracking-wide text-muted-foreground">Vistas guardadas</span>
+                    {savedViews.map((view) => (
+                      <span key={view.id} className="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 text-violet-700">
+                        <button type="button" className="px-3 py-1.5 text-xs font-bold hover:text-violet-900" onClick={() => applySavedView(view)}>{view.name}</button>
+                        <button type="button" className="mr-1 rounded-full p-1 hover:bg-violet-100" aria-label={`Eliminar vista ${view.name}`} onClick={() => removeSavedView(view.id)}><X className="size-3" /></button>
+                      </span>
+                    ))}
+                  </>
+                ) : (
+                  <span className="text-xs text-muted-foreground">Guarda una combinaciÃ³n para reutilizarla.</span>
+                )}
+              </div>
+              <div className="flex items-center gap-2">
+                <button type="button" className="inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-xs font-extrabold text-slate-700 shadow-sm transition hover:border-primary/25 hover:text-primary" onClick={() => setSaveViewOpen(true)}><Bookmark className="size-4" /> Guardar vista</button>
+                <button type="button" className="inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-xs font-extrabold text-slate-700 shadow-sm transition hover:border-primary/25 hover:text-primary" onClick={resetCourseFilters}><RotateCcw className="size-4" /> Restablecer filtros</button>
+              </div>
+            </div>
           </section>
 
           <CoursesAdvancedFiltersDrawer
@@ -734,14 +858,13 @@ export function CoursesPage() {
             <div className="space-y-8">
               {groupedCourses.map((group) => (
                 <section key={group.key}>
-                  <div className="mb-3 mt-2 flex items-center gap-3">
-                    <h2 className="text-sm font-extrabold uppercase tracking-[0.15em] text-muted-foreground">
-                      Nivel {cleanLevelName(group.levelName).toLowerCase()}
-                    </h2>
-                    <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold tabular-nums text-muted-foreground">
-                      {group.items.length}
+                  <div className="mb-4 mt-2 flex items-center gap-3">
+                    <span className="flex size-9 items-center justify-center rounded-xl text-white shadow-sm" style={{ backgroundColor: getLevelStyle(group.levelName).color }}><BookOpen className="size-4" /></span>
+                    <h2 className="text-base font-extrabold text-foreground">Nivel {cleanLevelName(group.levelName)}</h2>
+                    <span className="rounded-full px-2.5 py-1 text-[11px] font-extrabold tabular-nums" style={{ color: getLevelStyle(group.levelName).color, backgroundColor: getLevelStyle(group.levelName).soft }}>
+                      {group.items.length} cursos
                     </span>
-                    <div className="h-px flex-1 bg-border" />
+                    <div className="h-px flex-1" style={{ background: `linear-gradient(90deg, ${getLevelStyle(group.levelName).color}55, transparent)` }} />
                   </div>
 
                   <div className="space-y-5">
@@ -843,6 +966,13 @@ export function CoursesPage() {
         />
       ) : null}
 
+      {saveViewOpen ? (
+        <SaveCourseViewDialog
+          onSave={saveCurrentView}
+          onClose={() => setSaveViewOpen(false)}
+        />
+      ) : null}
+
       {deleteTarget ? (
         <ConfirmDialog
           title={
@@ -873,6 +1003,60 @@ export function CoursesPage() {
   )
 }
 
+function CourseStatCard({
+  icon,
+  value,
+  label,
+  detail,
+  tone,
+}: {
+  icon: ReactNode
+  value: string | number
+  label: string
+  detail: string
+  tone: 'blue' | 'green' | 'violet' | 'orange' | 'emerald' | 'sky'
+}) {
+  const tones = {
+    blue: 'bg-blue-50 text-blue-700 ring-blue-100',
+    green: 'bg-green-50 text-green-700 ring-green-100',
+    violet: 'bg-violet-50 text-violet-700 ring-violet-100',
+    orange: 'bg-orange-50 text-orange-700 ring-orange-100',
+    emerald: 'bg-emerald-50 text-emerald-700 ring-emerald-100',
+    sky: 'bg-sky-50 text-sky-700 ring-sky-100',
+  }
+
+  return (
+    <article className="flex min-w-0 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white p-4 shadow-[0_10px_28px_-24px_rgba(15,45,90,0.7)]">
+      <span className={cn('flex size-11 shrink-0 items-center justify-center rounded-xl ring-1', tones[tone])}>{icon}</span>
+      <div className="min-w-0">
+        <p className="truncate text-xl font-extrabold leading-none text-foreground tabular-nums">{value}</p>
+        <p className="mt-1 text-xs font-extrabold text-foreground">{label}</p>
+        <p className="truncate text-[10px] text-muted-foreground">{detail}</p>
+      </div>
+    </article>
+  )
+}
+
+function SaveCourseViewDialog({ onSave, onClose }: { onSave: (name: string) => void; onClose: () => void }) {
+  const [name, setName] = useState('')
+  const validName = name.trim().length > 0
+
+  return (
+    <Modal title="Guardar vista" description="Ponle un nombre a esta combinaciÃ³n de filtros." onClose={onClose} className="max-w-md rounded-2xl" contentClassName="overflow-visible">
+      <form className="space-y-5 p-5" onSubmit={(event) => { event.preventDefault(); if (validName) onSave(name.trim()) }}>
+        <label className="block">
+          <span className="mb-2 block text-sm font-bold text-foreground">Nombre de la vista</span>
+          <input autoFocus value={name} maxLength={40} onChange={(event) => setName(event.target.value)} placeholder="Ejemplo: Secundaria con equipos" className="h-11 w-full rounded-xl border border-border bg-card px-3.5 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15" />
+        </label>
+        <div className="flex justify-end gap-2 border-t border-border pt-4">
+          <Button type="button" variant="outline" onClick={onClose}>Cancelar</Button>
+          <Button type="submit" disabled={!validName}><Bookmark className="size-4" /> Guardar vista</Button>
+        </div>
+      </form>
+    </Modal>
+  )
+}
+
 function CourseWorkspace({
   item,
   schoolYearName,
@@ -897,8 +1081,8 @@ function CourseWorkspace({
   onBack: () => void
 }) {
   const [selectedAssignmentId, setSelectedAssignmentId] = useState<string | null>(null)
+  const [subjectInitialTab, setSubjectInitialTab] = useState('resumen')
   const [workspaceView, setWorkspaceView] = useState<'subjects' | 'teams' | 'archived'>('subjects')
-  const [courseStudents, setCourseStudents] = useState<StudentAttendanceRow[]>([])
   const selectedAssignment = item.assignments.find((assignment) => assignment.id === selectedAssignmentId) ?? null
   const levelStyle = getLevelStyle(item.levelName)
   const teamCount = item.section.teamCount ?? 0
@@ -907,13 +1091,7 @@ function CourseWorkspace({
   useEffect(() => setSelectedAssignmentId(null), [item.section.id])
   useEffect(() => {
     setWorkspaceView('subjects')
-    if (!schoolYearId) {
-      setCourseStudents([])
-      return
-    }
-    getStudentsBySection(item.section.id, schoolYearId)
-      .then(setCourseStudents)
-      .catch(() => setCourseStudents([]))
+    setSubjectInitialTab('resumen')
   }, [item.section.id, schoolYearId])
 
   if (selectedAssignment) {
@@ -923,6 +1101,7 @@ function CourseWorkspace({
         schoolYearName={schoolYearName}
         schoolYearId={schoolYearId}
         canEnroll={canEnroll}
+        initialTab={subjectInitialTab}
         backLabel="Asignaturas del curso"
         onBack={() => setSelectedAssignmentId(null)}
       />
@@ -963,7 +1142,7 @@ function CourseWorkspace({
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <h2 className="text-xl font-extrabold text-foreground">{workspaceView === 'subjects' ? 'Asignaturas' : workspaceView === 'teams' ? 'Equipos del curso' : 'Asignaturas archivadas'}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{workspaceView === 'subjects' ? 'Selecciona una asignatura para entrar a su espacio académico independiente.' : workspaceView === 'teams' ? 'Estos equipos se comparten entre todas las asignaturas de la sección.' : 'Restaura una asignatura o elimina definitivamente su historial académico.'}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{workspaceView === 'subjects' ? 'Selecciona una asignatura para entrar a su espacio académico independiente.' : workspaceView === 'teams' ? 'Selecciona una asignatura para administrar sus equipos propios.' : 'Restaura una asignatura o elimina definitivamente su historial académico.'}</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Button type="button" variant="outline" onClick={() => setWorkspaceView(workspaceView === 'teams' ? 'subjects' : 'teams')} className="h-11 rounded-xl px-5">
@@ -983,9 +1162,26 @@ function CourseWorkspace({
         </div>
 
         {workspaceView === 'teams' ? (
-          <div className="mt-5">
-            <CourseTeamsPanel sectionId={item.section.id} schoolYearId={schoolYearId} students={courseStudents} canManage={canManage} />
-          </div>
+          item.assignments.length ? (
+            <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {item.assignments.map((assignment) => {
+                const palette = getSubjectColor(assignment.subjectName)
+                return (
+                  <button key={assignment.id} type="button" onClick={() => { setSubjectInitialTab('equipos'); setSelectedAssignmentId(assignment.id) }} className="group rounded-2xl border border-border bg-card p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="flex size-11 items-center justify-center rounded-xl text-white" style={{ backgroundColor: palette.color }}><UsersRound className="size-5" /></span>
+                      <span className="rounded-full px-2.5 py-1 text-xs font-extrabold" style={{ backgroundColor: palette.soft, color: palette.color }}>{assignment.teamCount} equipos</span>
+                    </div>
+                    <h3 className="mt-4 font-extrabold text-foreground">{assignment.subjectName}</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">{assignment.teacherName ?? 'Sin docente asignado'}</p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-primary">Administrar equipos <ArrowLeft className="size-3.5 rotate-180" /></span>
+                  </button>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="mt-5 rounded-2xl border border-dashed border-border bg-card px-6 py-14 text-center text-sm text-muted-foreground">Agrega una asignatura antes de crear equipos.</div>
+          )
         ) : workspaceView === 'archived' ? (
           archivedAssignments.length ? (
             <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -1018,22 +1214,28 @@ function CourseWorkspace({
             </div>
           )
         ) : item.assignments.length ? (
-          <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {item.assignments.map((assignment) => {
+          <div className="mt-5 grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_19rem]">
+            <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
+              {item.assignments.map((assignment) => {
               const palette = getSubjectColor(assignment.subjectName)
               return (
                 <article key={assignment.id} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
                   <div className="h-1.5" style={{ backgroundColor: palette.color }} />
-                  <button type="button" onClick={() => setSelectedAssignmentId(assignment.id)} className="w-full p-5 text-left">
+                  <button type="button" onClick={() => { setSubjectInitialTab('resumen'); setSelectedAssignmentId(assignment.id) }} className="w-full p-5 text-left">
                     <div className="flex items-start justify-between gap-3">
                       <span className="flex size-11 shrink-0 items-center justify-center rounded-xl text-white" style={{ backgroundColor: palette.color }}><BookOpen className="size-5" /></span>
                       <span className="rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-extrabold uppercase text-emerald-700">Activo</span>
                     </div>
                     <h3 className="mt-4 line-clamp-2 min-h-12 text-base font-extrabold leading-6" style={{ color: palette.color }}>{assignment.subjectName}</h3>
                     <p className="mt-1 text-xs text-muted-foreground">{assignment.teacherName ?? 'Sin docente asignado'}</p>
-                    <div className="mt-4 grid grid-cols-2 gap-2 border-t border-border pt-4 text-xs">
+                    <div className="mt-4 grid grid-cols-3 gap-2 border-t border-border pt-4 text-xs">
                       <span><strong className="block text-base text-foreground">{item.section.studentCount ?? 0}</strong><span className="text-muted-foreground">estudiantes</span></span>
-                      <span><strong className="block text-base text-foreground">{item.section.teamCount ?? 0}</strong><span className="text-muted-foreground">equipos compartidos</span></span>
+                      <span><strong className="block text-base text-foreground">{assignment.teamCount ?? 0}</strong><span className="text-muted-foreground">equipos</span></span>
+                      <span><strong className="block text-base text-foreground">{assignment.activityCount ?? 0}</strong><span className="text-muted-foreground">actividades</span></span>
+                    </div>
+                    <div className="mt-3 space-y-1 text-[11px] text-muted-foreground">
+                      <p>Asistencia: <strong className="text-foreground">{assignment.lastAttendanceDate ? formatCompactDate(assignment.lastAttendanceDate) : 'Sin registrar'}</strong></p>
+                      <p>Promedio: <strong className="text-foreground">{assignment.averageScore === null ? 'Sin calificar' : formatScore(assignment.averageScore)}</strong></p>
                     </div>
                   </button>
                   {canManage ? (
@@ -1043,7 +1245,9 @@ function CourseWorkspace({
                   ) : null}
                 </article>
               )
-            })}
+              })}
+            </div>
+            <CourseInsights assignments={item.assignments} />
           </div>
         ) : (
           <div className="mt-5 rounded-2xl border border-dashed border-border bg-card px-6 py-16 text-center">
@@ -1058,11 +1262,55 @@ function CourseWorkspace({
   )
 }
 
+function CourseInsights({ assignments }: { assignments: SectionSubjectAssignment[] }) {
+  const recentItems = assignments
+    .flatMap((assignment) => [
+      assignment.lastAttendanceDate ? { id: `${assignment.id}-attendance`, date: assignment.lastAttendanceDate, title: 'Asistencia registrada', detail: assignment.subjectName, icon: <CheckCircle2 className="size-4" /> } : null,
+      assignment.lastPlanningDate ? { id: `${assignment.id}-planning`, date: assignment.lastPlanningDate, title: assignment.lastPlanningTitle || 'PlanificaciÃ³n actualizada', detail: assignment.subjectName, icon: <ClipboardList className="size-4" /> } : null,
+    ])
+    .filter((item): item is NonNullable<typeof item> => Boolean(item))
+    .sort((left, right) => new Date(right.date).getTime() - new Date(left.date).getTime())
+    .slice(0, 4)
+
+  const upcoming = assignments
+    .filter((assignment) => assignment.lastPlanningDate && new Date(assignment.lastPlanningDate).getTime() >= startOfToday())
+    .sort((left, right) => new Date(left.lastPlanningDate!).getTime() - new Date(right.lastPlanningDate!).getTime())
+    .slice(0, 3)
+
+  return (
+    <aside className="space-y-4 xl:sticky xl:top-4">
+      <section className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+        <div className="flex items-center gap-2 text-sm font-extrabold text-foreground"><Sparkles className="size-4 text-primary" /> Actividad reciente</div>
+        {recentItems.length ? (
+          <div className="mt-3 divide-y divide-border">
+            {recentItems.map((item) => (
+              <div key={item.id} className="flex gap-3 py-3 first:pt-1 last:pb-0">
+                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/8 text-primary">{item.icon}</span>
+                <div className="min-w-0"><p className="text-xs font-bold text-foreground">{item.title}</p><p className="truncate text-[11px] text-muted-foreground">{item.detail}</p><p className="mt-0.5 text-[10px] text-muted-foreground">{formatCompactDate(item.date)}</p></div>
+              </div>
+            ))}
+          </div>
+        ) : <p className="mt-3 text-xs leading-5 text-muted-foreground">La actividad del curso aparecerÃ¡ aquÃ­ cuando registres asistencia o planificaciones.</p>}
+      </section>
+
+      <section className="rounded-2xl border border-border bg-gradient-to-br from-white to-violet-50/60 p-4 shadow-sm">
+        <div className="flex items-center gap-2 text-sm font-extrabold text-foreground"><CalendarDays className="size-4 text-violet-600" /> PrÃ³ximas tareas</div>
+        {upcoming.length ? (
+          <div className="mt-3 space-y-2">
+            {upcoming.map((assignment) => <div key={assignment.id} className="rounded-xl border border-violet-100 bg-white p-3"><p className="text-xs font-bold text-foreground">{assignment.lastPlanningTitle || assignment.subjectName}</p><p className="mt-1 text-[10px] text-violet-700">{formatCompactDate(assignment.lastPlanningDate!)}</p></div>)}
+          </div>
+        ) : <p className="mt-3 text-xs leading-5 text-muted-foreground">No hay planificaciones prÃ³ximas registradas.</p>}
+      </section>
+    </aside>
+  )
+}
+
 function SubjectDetailView({
   item,
   schoolYearName,
   schoolYearId,
   canEnroll,
+  initialTab,
   backLabel,
   onBack,
 }: {
@@ -1070,12 +1318,13 @@ function SubjectDetailView({
   schoolYearName: string
   schoolYearId: string | null
   canEnroll: boolean
+  initialTab?: string
   backLabel: string
   onBack: () => void
 }) {
   const palette = getSubjectColor(item.subjectName)
   const courseLabel = `${item.grade.name}.º ${item.section.name}`
-  const [activeTab, setActiveTab] = useState('resumen')
+  const [activeTab, setActiveTab] = useState(initialTab ?? 'resumen')
   const [students, setStudents] = useState<StudentAttendanceRow[]>([])
   const [studentsLoading, setStudentsLoading] = useState(true)
   const [studentsError, setStudentsError] = useState<string | null>(null)
@@ -1168,7 +1417,7 @@ function SubjectDetailView({
       {activeTab === 'resumen' ? (
         <CourseSummary
           students={students.length}
-          teams={item.section.teamCount ?? 0}
+          teams={item.assignment?.teamCount ?? 0}
           subjectName={item.subjectName}
           teacherName={item.assignment?.teacherName ?? null}
           onNavigate={setActiveTab}
@@ -1182,7 +1431,7 @@ function SubjectDetailView({
           canEnroll={canEnroll}
         />
       ) : activeTab === 'equipos' ? (
-        <CourseTeamsPanel sectionId={item.section.id} schoolYearId={schoolYearId} students={students} canManage={canEnroll} />
+        <CourseTeamsPanel sectionSubjectId={item.assignment?.id ?? null} students={students} canManage={canEnroll} />
       ) : activeTab === 'asistencia' ? (
         <AsistenciaTab sectionSubjectId={item.assignment?.id ?? null} sectionId={item.section.id} schoolYearId={schoolYearId} />
       ) : activeTab === 'calificaciones' ? (
@@ -1664,8 +1913,10 @@ const CourseCard = memo(function CourseCard({
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            <span className="size-2 rounded-full bg-emerald-500 shadow-sm" aria-hidden="true" />
+          <div className="flex flex-col items-end gap-1.5">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-emerald-700 ring-1 ring-emerald-100">
+              <span className="size-1.5 rounded-full bg-emerald-500" aria-hidden="true" /> Activo
+            </span>
             <span
               className="rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wide"
               style={{ backgroundColor: levelStyle.soft, color: levelStyle.color }}
@@ -1682,39 +1933,31 @@ const CourseCard = memo(function CourseCard({
         </div>
 
         <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
-          <span className="font-bold text-emerald-600">Activo</span>
           {schoolYearName ? (
             <>
-              <span className="text-border">•</span>
               <span>Año escolar {schoolYearName}</span>
             </>
           ) : null}
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-t border-border px-3 py-2" style={{ backgroundColor: levelStyle.soft }}>
-        <div className="flex items-center gap-0.5">
+      <div className="flex items-center justify-between gap-2 border-t border-border px-3 py-2.5" style={{ backgroundColor: levelStyle.soft }}>
+        <div className="flex min-w-0 items-center gap-1">
           {canManage ? (
-            <>
-              <FooterAction label="Agregar nueva sección" onClick={() => onAddSection(item.grade)}>
-                <Plus className="h-4 w-4" />
-              </FooterAction>
-              <FooterAction label="Asignar asignatura" onClick={() => onAssignSubject(item.grade, item.section.id)}>
-                <BookOpen className="h-4 w-4" />
-              </FooterAction>
-            </>
-          ) : (
-            <span className="px-2 text-xs font-bold text-muted-foreground">Vista de curso</span>
-          )}
+            <FooterAction label="Agregar sección" tooltip="Agregar nueva sección" onClick={() => onAddSection(item.grade)}><Plus className="h-3.5 w-3.5" /></FooterAction>
+          ) : null}
+          <FooterAction label="Entrar al curso" tooltip="Entrar al curso" onClick={() => onOpen(item.id)}><LogIn className="h-3.5 w-3.5" /></FooterAction>
         </div>
         {canManage ? (
           <div className="relative" ref={menuRef}>
-            <button type="button" title="Más acciones" className="flex size-8 items-center justify-center rounded-lg text-muted-foreground transition-all duration-150 hover:scale-105 hover:bg-card hover:text-foreground" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
-              <MoreHorizontal className="size-4" />
+            <button type="button" title="Más acciones" className="inline-flex h-8 items-center gap-1.5 rounded-lg px-2 text-[11px] font-bold text-muted-foreground transition-all duration-150 hover:scale-[1.02] hover:bg-card hover:text-foreground" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
+              <MoreHorizontal className="size-4" /> <span className="hidden 2xl:inline">Más acciones</span>
             </button>
             {menuOpen ? (
               <div role="menu" className="absolute bottom-10 right-0 z-20 w-52 origin-bottom-right overflow-hidden rounded-xl border border-border bg-card p-1.5 shadow-xl motion-safe:animate-[fadeIn_140ms_ease-out]">
                 <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onEditSection(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><CheckSquare className="size-4" /> Editar sección</button>
+                <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onAssignSubject(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><BookOpen className="size-4" /> Asignar asignatura</button>
+                <div className="my-1 border-t border-border" />
                 <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onDeleteSection(item.section) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><Power className="size-4" /> Inactivar sección</button>
               </div>
             ) : null}
@@ -1727,25 +1970,28 @@ const CourseCard = memo(function CourseCard({
 
 function FooterAction({
   label,
+  tooltip,
   onClick,
   children,
 }: {
   label: string
+  tooltip: string
   onClick: () => void
   children: ReactNode
 }) {
   return (
     <button
       type="button"
-      className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-all duration-150 hover:scale-105 hover:bg-secondary hover:text-primary"
+      className="inline-flex h-8 items-center justify-center gap-1.5 rounded-lg px-2 text-[11px] font-bold text-muted-foreground transition-all duration-150 hover:scale-[1.02] hover:bg-secondary hover:text-primary"
       aria-label={label}
-      title={label}
+      title={tooltip}
       onClick={(event) => {
         event.stopPropagation()
         onClick()
       }}
     >
       {children}
+      <span>{label}</span>
     </button>
   )
 }
@@ -1799,6 +2045,27 @@ function cleanLevelName(value: string) {
 
 function uniqueValues(values: string[]) {
   return Array.from(new Set(values.filter(Boolean)))
+}
+
+function toSafeCount(value: unknown) {
+  const numericValue = Number(value)
+  return Number.isFinite(numericValue) && numericValue >= 0 ? numericValue : 0
+}
+
+function formatCompactDate(value: string) {
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return value
+  return new Intl.DateTimeFormat('es-DO', { day: 'numeric', month: 'short', year: 'numeric' }).format(date)
+}
+
+function formatScore(value: number) {
+  return new Intl.NumberFormat('es-DO', { maximumFractionDigits: 1 }).format(value)
+}
+
+function startOfToday() {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  return today.getTime()
 }
 
 function applyCourseFilters(

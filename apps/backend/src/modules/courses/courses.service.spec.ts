@@ -8,6 +8,10 @@ const mocks = vi.hoisted(() => ({
     sectionSubject: { findMany: vi.fn(), upsert: vi.fn() },
     enrollment: { groupBy: vi.fn() },
     courseTeam: { groupBy: vi.fn() },
+    evaluationActivity: { groupBy: vi.fn() },
+    attendanceClass: { findMany: vi.fn() },
+    gradesRecord: { groupBy: vi.fn() },
+    planningEntry: { findMany: vi.fn() },
     subject: { findMany: vi.fn() },
     drAcademicLevel: { findMany: vi.fn() },
     drAcademicCycle: { findMany: vi.fn() },
@@ -76,7 +80,19 @@ describe('CoursesService.getCourseData', () => {
       { sectionId: 'section-1', _count: { id: 12 } },
     ])
     mocks.prisma.courseTeam.groupBy.mockResolvedValue([
-      { sectionId: 'section-1', _count: { id: 2 } },
+      { sectionSubjectId: 'ss-1', _count: { id: 2 } },
+    ])
+    mocks.prisma.evaluationActivity.groupBy.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', _count: { id: 3 } },
+    ])
+    mocks.prisma.attendanceClass.findMany.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', attendanceDate: new Date('2026-07-15T00:00:00.000Z') },
+    ])
+    mocks.prisma.gradesRecord.groupBy.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', _avg: { score: 88.5 } },
+    ])
+    mocks.prisma.planningEntry.findMany.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', plannedDate: new Date('2026-07-20T00:00:00.000Z'), createdAt: new Date('2026-07-10T00:00:00.000Z'), title: 'Sistema solar' },
     ])
     mocks.prisma.subject.findMany.mockResolvedValue([
       { id: 'subject-1', code: 'MAT', name: 'Matemática', description: null, credits: null },
@@ -110,6 +126,10 @@ describe('CoursesService.getCourseData', () => {
               id: 'ss-1',
               subjectName: 'Matemática',
               teacherName: 'Ana Pérez',
+              teamCount: 2,
+              activityCount: 3,
+              averageScore: 88.5,
+              lastPlanningTitle: 'Sistema solar',
               status: 'active',
             },
             {

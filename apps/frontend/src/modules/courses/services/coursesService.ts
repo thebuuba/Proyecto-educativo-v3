@@ -81,16 +81,15 @@ export async function deleteSectionSubjectPermanently(id: string): Promise<void>
   await api.delete(`/courses/section-subjects/${id}/permanent`)
 }
 
-export async function getCourseTeams(sectionId: string, schoolYearId: string): Promise<CourseTeam[]> {
-  return api.get<CourseTeam[]>(`/courses/sections/${sectionId}/teams?schoolYearId=${encodeURIComponent(schoolYearId)}`)
+export async function getCourseTeams(sectionSubjectId: string): Promise<CourseTeam[]> {
+  return api.get<CourseTeam[]>(`/courses/section-subjects/${sectionSubjectId}/teams`)
 }
 
 export async function createCourseTeam(
-  sectionId: string,
-  schoolYearId: string,
+  sectionSubjectId: string,
   input: CourseTeamInput,
 ): Promise<CourseTeam> {
-  return api.post<CourseTeam>(`/courses/sections/${sectionId}/teams?schoolYearId=${encodeURIComponent(schoolYearId)}`, input)
+  return api.post<CourseTeam>(`/courses/section-subjects/${sectionSubjectId}/teams`, input)
 }
 
 export async function updateCourseTeam(id: string, input: Partial<CourseTeamInput>): Promise<CourseTeam> {

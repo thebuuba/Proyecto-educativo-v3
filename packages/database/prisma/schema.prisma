@@ -727,8 +727,8 @@ model CourseTeam {
   creator        AppUser?           @relation(fields: [createdBy], references: [id])
   members        CourseTeamMember[]
 
-  @@unique([sectionId, schoolYearId, name])
-  @@index([schoolId, sectionId, schoolYearId, status])
+  @@unique([sectionSubjectId, schoolYearId, name])
+  @@index([schoolId, sectionSubjectId, schoolYearId, status])
   @@map("course_teams")
 }
 
