@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { useSchedule } from './useSchedule'
 
 const mocks = vi.hoisted(() => ({
+  appUser: { id: 'user-0', schoolId: 'school-0' },
   getCurrentSchoolYear: vi.fn(),
   getTimeSlots: vi.fn(),
   getSections: vi.fn(),
@@ -16,6 +17,10 @@ const mocks = vi.hoisted(() => ({
   deleteTimeSlot: vi.fn(),
   updateScheduleEntry: vi.fn(),
   updateTimeSlot: vi.fn(),
+}))
+
+vi.mock('@/modules/auth/hooks/useAuth', () => ({
+  useAuth: () => ({ appUser: mocks.appUser }),
 }))
 
 vi.mock('@/services/schoolYearService', () => ({
@@ -44,9 +49,15 @@ function deferred<T>() {
   return { promise, resolve }
 }
 
+let userSequence = 0
+
 describe('useSchedule initial load', () => {
   beforeEach(() => {
-    Object.values(mocks).forEach((mock) => mock.mockReset())
+    Object.entries(mocks).forEach(([key, mock]) => {
+      if (key !== 'appUser') (mock as ReturnType<typeof vi.fn>).mockReset()
+    })
+    userSequence += 1
+    mocks.appUser = { id: `user-${userSequence}`, schoolId: 'school-1' }
     mocks.getCurrentSchoolYear.mockResolvedValue({
       id: 'year-1',
       name: '2026-2027',
@@ -54,7 +65,7 @@ describe('useSchedule initial load', () => {
     })
   })
 
-  it('loads independent schedule resources in parallel after resolving the school year', async () => {
+  it('loads independent resources in parallel and entries after the group resolves', async () => {
     const slots = deferred<never[]>()
     const sections = deferred<never[]>()
     const teachers = deferred<never[]>()
@@ -73,8 +84,8 @@ describe('useSchedule initial load', () => {
       expect(mocks.getSections).toHaveBeenCalledTimes(1)
       expect(mocks.getTeachers).toHaveBeenCalledTimes(1)
       expect(mocks.getSubjects).toHaveBeenCalledTimes(1)
-      expect(mocks.getScheduleEntries).toHaveBeenCalledWith({ schoolYearId: 'year-1' })
     })
+    expect(mocks.getScheduleEntries).not.toHaveBeenCalled()
     expect(hook.result.current.loading).toBe(true)
 
     await act(async () => {
@@ -82,9 +93,34 @@ describe('useSchedule initial load', () => {
       sections.resolve([])
       teachers.resolve([])
       subjects.resolve([])
+    })
+    await waitFor(() => {
+      expect(mocks.getScheduleEntries).toHaveBeenCalledWith({ schoolYearId: 'year-1' })
+    })
+
+    await act(async () => {
       entries.resolve([])
     })
     await waitFor(() => expect(hook.result.current.loading).toBe(false))
     hook.unmount()
+  })
+
+  it('reuses the complete snapshot on remount while its TTL is fresh', async () => {
+    mocks.getTimeSlots.mockResolvedValue([])
+    mocks.getSections.mockResolvedValue([])
+    mocks.getTeachers.mockResolvedValue([])
+    mocks.getSubjects.mockResolvedValue([])
+    mocks.getScheduleEntries.mockResolvedValue([])
+
+    const first = renderHook(() => useSchedule())
+    await waitFor(() => expect(first.result.current.loading).toBe(false))
+    first.unmount()
+
+    const second = renderHook(() => useSchedule())
+    expect(second.result.current.loading).toBe(false)
+    expect(mocks.getCurrentSchoolYear).toHaveBeenCalledTimes(1)
+    expect(mocks.getTimeSlots).toHaveBeenCalledTimes(1)
+    expect(mocks.getScheduleEntries).toHaveBeenCalledTimes(1)
+    second.unmount()
   })
 })
