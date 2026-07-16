@@ -52,6 +52,10 @@ El código puede prepararse y validarse localmente antes de esta compuerta. Hype
 
 Usa la conexión directa de Supabase y desactiva expresamente el caché de consultas SQL:
 
+1. Copia `Direct connection` desde el panel **Connect** de Supabase.
+2. Guárdala como `SUPABASE_DIRECT_URL` en `apps/backend/.env`; ese archivo está ignorado por git.
+3. No uses aquí la URL de Supavisor/session/transaction pooler.
+
 ```bash
 pnpm exec wrangler hyperdrive create aula-base-supabase \
   --connection-string "$SUPABASE_DIRECT_URL" \
