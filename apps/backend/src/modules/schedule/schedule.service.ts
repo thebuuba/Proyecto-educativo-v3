@@ -165,8 +165,8 @@ export class ScheduleService {
   }
 
   /** Obtiene las entradas de horario con filtros opcionales, incluyendo día de semana */
-  async findEntries(schoolId: string, sectionId?: string, dayOfWeek?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
-    const where = await this.entryWhere(schoolId, { sectionId, schoolYearId, teacherId, gradeId })
+  async findEntries(schoolId: string, sectionId?: string, dayOfWeek?: string, schoolYearId?: string, teacherId?: string, gradeId?: string, sectionSubjectId?: string) {
+    const where = await this.entryWhere(schoolId, { sectionId, schoolYearId, teacherId, gradeId, sectionSubjectId })
     if (dayOfWeek) where.dayOfWeek = Number(dayOfWeek)
     const entries = await prisma.scheduleEntry.findMany({ where, orderBy: { dayOfWeek: 'asc' } })
     return this.withEntryLabels(schoolId, entries)
@@ -260,10 +260,11 @@ export class ScheduleService {
   /** Construye la cláusula WHERE para consultas de entradas con filtros opcionales */
   private async entryWhere(
     schoolId: string,
-    filters: { sectionId?: string; schoolYearId?: string; teacherId?: string; gradeId?: string },
+    filters: { sectionId?: string; schoolYearId?: string; teacherId?: string; gradeId?: string; sectionSubjectId?: string },
   ) {
     const where: any = { schoolId }
     if (filters.sectionId) where.sectionId = filters.sectionId
+    if (filters.sectionSubjectId) where.sectionSubjectId = filters.sectionSubjectId
     if (filters.schoolYearId) where.schoolYearId = filters.schoolYearId
     if (filters.teacherId) {
       const sectionSubjects = await prisma.sectionSubject.findMany({

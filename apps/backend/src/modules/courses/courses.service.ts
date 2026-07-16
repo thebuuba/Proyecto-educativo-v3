@@ -5,8 +5,8 @@
  * materias y asignación de materias a secciones. Proporciona operaciones CRUD
  * y consultas de datos completos del curso.
  */
-import { Injectable, NotFoundException } from '@nestjs/common'
-import { prisma, RecordStatus } from '@aula/database'
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
+import { prisma, Prisma, RecordStatus } from '@aula/database'
 import {
   invalidateCourseOptions,
   invalidateImplicitSchoolYearOptions,
@@ -19,6 +19,8 @@ import { CreateSectionDto } from './dto/create-section.dto'
 import { UpdateSectionDto } from './dto/update-section.dto'
 import { CreateSubjectDto } from './dto/create-subject.dto'
 import { AssignSubjectDto } from './dto/assign-subject.dto'
+import { CreateCourseTeamDto } from './dto/create-course-team.dto'
+import { UpdateCourseTeamDto } from './dto/update-course-team.dto'
 
 const cache = new Map<
   string,
@@ -108,14 +110,43 @@ export class CoursesService {
   private async _getCourseData(schoolId: string) {
     const currentSchoolYear = await resolveSchoolYear(schoolId)
 
-    const [grades, sections, assignments, enrollmentCounts, subjects, academicLevels, cycles, modalities, teachers] = await Promise.all([
+    const [grades, sections, assignments, enrollmentCounts, teamCounts, activityCounts, lastAttendances, gradeAverages, lastPlannings, subjects, academicLevels, cycles, modalities, teachers] = await Promise.all([
       prisma.grade.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { sequence: 'asc' } }),
       prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } }),
-      prisma.sectionSubject.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.sectionSubject.findMany({
+        where: { schoolId, schoolYearId: currentSchoolYear.id },
+      }),
       prisma.enrollment.groupBy({
         by: ['sectionId'],
         where: { schoolId, schoolYearId: currentSchoolYear.id, status: 'ACTIVE' },
         _count: { id: true },
+      }),
+      prisma.courseTeam.groupBy({
+        by: ['sectionSubjectId'],
+        where: { schoolId, schoolYearId: currentSchoolYear.id, status: 'ACTIVE' },
+        _count: { id: true },
+      }),
+      prisma.evaluationActivity.groupBy({
+        by: ['sectionSubjectId'],
+        where: { schoolId, schoolYearId: currentSchoolYear.id, status: 'ACTIVE' },
+        _count: { id: true },
+      }),
+      prisma.attendanceClass.findMany({
+        where: { schoolId, schoolYearId: currentSchoolYear.id },
+        orderBy: { attendanceDate: 'desc' },
+        distinct: ['sectionSubjectId'],
+        select: { sectionSubjectId: true, attendanceDate: true },
+      }),
+      prisma.gradesRecord.groupBy({
+        by: ['sectionSubjectId'],
+        where: { schoolId, schoolYearId: currentSchoolYear.id },
+        _avg: { score: true },
+      }),
+      prisma.planningEntry.findMany({
+        where: { schoolId, sectionSubject: { schoolYearId: currentSchoolYear.id } },
+        orderBy: [{ plannedDate: 'desc' }, { createdAt: 'desc' }],
+        distinct: ['sectionSubjectId'],
+        select: { sectionSubjectId: true, plannedDate: true, createdAt: true, title: true },
       }),
       prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } }),
       prisma.drAcademicLevel.findMany({ orderBy: { sequence: 'asc' } }),
@@ -132,6 +163,21 @@ export class CoursesService {
     const studentCountBySectionId = new Map(
       enrollmentCounts.map((item) => [item.sectionId, item._count.id]),
     )
+    const teamCountByAssignmentId = new Map(
+      teamCounts.map((item) => [item.sectionSubjectId, item._count.id]),
+    )
+    const activityCountByAssignmentId = new Map(
+      activityCounts.map((item) => [item.sectionSubjectId, item._count.id]),
+    )
+    const attendanceByAssignmentId = new Map(
+      lastAttendances.map((item) => [item.sectionSubjectId, item.attendanceDate]),
+    )
+    const averageByAssignmentId = new Map(
+      gradeAverages.map((item) => [item.sectionSubjectId, item._avg.score]),
+    )
+    const planningByAssignmentId = new Map(
+      lastPlannings.map((item) => [item.sectionSubjectId, item]),
+    )
 
     return {
       grades: grades.map((grade) => ({
@@ -146,6 +192,9 @@ export class CoursesService {
             ...section,
             status: status(section.status),
             studentCount: studentCountBySectionId.get(section.id) ?? 0,
+            teamCount: assignments
+              .filter((assignment) => assignment.sectionId === section.id && assignment.status === RecordStatus.ACTIVE)
+              .reduce((total, assignment) => total + (teamCountByAssignmentId.get(assignment.id) ?? 0), 0),
             assignments: assignments
               .filter((assignment) => assignment.sectionId === section.id)
               .map((assignment) => {
@@ -160,6 +209,16 @@ export class CoursesService {
                   subjectName: subject?.name ?? '',
                   teacherId: assignment.teacherId,
                   teacherName: teacher ? `${teacher.firstName} ${teacher.lastName}` : null,
+                  teamCount: teamCountByAssignmentId.get(assignment.id) ?? 0,
+                  activityCount: activityCountByAssignmentId.get(assignment.id) ?? 0,
+                  lastAttendanceDate: attendanceByAssignmentId.get(assignment.id) ?? null,
+                  averageScore: averageByAssignmentId.get(assignment.id) === null || averageByAssignmentId.get(assignment.id) === undefined
+                    ? null
+                    : Number(averageByAssignmentId.get(assignment.id)),
+                  lastPlanningDate: planningByAssignmentId.get(assignment.id)?.plannedDate
+                    ?? planningByAssignmentId.get(assignment.id)?.createdAt
+                    ?? null,
+                  lastPlanningTitle: planningByAssignmentId.get(assignment.id)?.title ?? null,
                   status: status(assignment.status),
                 }
               }),
@@ -459,5 +518,287 @@ export class CoursesService {
     })
     invalidateSchoolCache(schoolId)
     return updated
+  }
+
+  /** Restaura una asignatura archivada dentro de su curso. */
+  async restoreSectionSubject(schoolId: string, id: string) {
+    const assignment = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
+    if (!assignment) throw new NotFoundException('Asignatura archivada no encontrada')
+
+    const restored = await prisma.sectionSubject.update({
+      where: { id },
+      data: { status: RecordStatus.ACTIVE },
+    })
+    invalidateSchoolCache(schoolId)
+    return restored
+  }
+
+  /** Elimina definitivamente una asignatura archivada y todo su historial académico asociado. */
+  async permanentlyDeleteSectionSubject(schoolId: string, id: string) {
+    const assignment = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
+    if (!assignment) throw new NotFoundException('Asignatura archivada no encontrada')
+    if (assignment.status !== RecordStatus.INACTIVE) {
+      throw new BadRequestException('Archiva la asignatura antes de eliminarla definitivamente')
+    }
+
+    await prisma.$transaction(async (tx) => {
+      const activities = await tx.evaluationActivity.findMany({
+        where: { schoolId, sectionSubjectId: id },
+        select: { id: true },
+      })
+      const activityIds = activities.map((activity) => activity.id)
+      const groups = activityIds.length
+        ? await tx.evaluationActivityGroup.findMany({
+          where: { activityId: { in: activityIds } },
+          select: { id: true },
+        })
+        : []
+      const groupIds = groups.map((group) => group.id)
+      const gradeRecords = await tx.gradesRecord.findMany({
+        where: { schoolId, sectionSubjectId: id },
+        select: { id: true },
+      })
+      const gradeRecordIds = gradeRecords.map((record) => record.id)
+
+      if (groupIds.length) {
+        await tx.evaluationActivityGroupMember.deleteMany({ where: { groupId: { in: groupIds } } })
+        await tx.evaluationActivityGroup.deleteMany({ where: { id: { in: groupIds } } })
+      }
+      if (activityIds.length) {
+        await tx.evaluationActivityEvidence.deleteMany({ where: { activityId: { in: activityIds } } })
+      }
+      if (gradeRecordIds.length) {
+        await tx.pedagogicalRecovery.deleteMany({ where: { gradeRecordId: { in: gradeRecordIds } } })
+      }
+      await tx.gradesRecord.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.evaluationActivity.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.attendanceClass.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.scheduleEntry.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.planningEntry.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      const teams = await tx.courseTeam.findMany({
+        where: { schoolId, sectionSubjectId: id },
+        select: { id: true },
+      })
+      const teamIds = teams.map((team) => team.id)
+      if (teamIds.length) {
+        await tx.courseTeamMember.deleteMany({ where: { teamId: { in: teamIds } } })
+        await tx.courseTeam.deleteMany({ where: { id: { in: teamIds } } })
+      }
+      await tx.sectionSubject.delete({ where: { id } })
+    })
+
+    invalidateSchoolCache(schoolId)
+    return { deleted: true }
+  }
+
+  /** Lista los equipos propios de una asignatura. */
+  async getCourseTeams(schoolId: string, sectionSubjectId: string) {
+    await this.requireSectionSubject(schoolId, sectionSubjectId)
+    return prisma.courseTeam.findMany({
+      where: { schoolId, sectionSubjectId, status: RecordStatus.ACTIVE },
+      orderBy: [{ orderPosition: 'asc' }, { createdAt: 'asc' }],
+      include: {
+        members: {
+          where: { status: RecordStatus.ACTIVE },
+          orderBy: { joinedAt: 'asc' },
+          include: { enrollment: { include: { student: true } } },
+        },
+      },
+    })
+  }
+
+  /** Crea un equipo y garantiza que un estudiante no esté en dos equipos permanentes. */
+  async createCourseTeam(
+    schoolId: string,
+    userId: string,
+    sectionSubjectId: string,
+    dto: CreateCourseTeamDto,
+  ) {
+    const sectionSubject = await this.requireSectionSubject(schoolId, sectionSubjectId)
+    await this.validateTeamMembers(
+      schoolId,
+      sectionSubject.sectionId,
+      sectionSubject.schoolYearId,
+      dto.members,
+    )
+
+    const created = await prisma.$transaction(async (tx) => {
+      const order = await tx.courseTeam.count({
+        where: { schoolId, sectionSubjectId, status: RecordStatus.ACTIVE },
+      })
+      const team = await tx.courseTeam.create({
+        data: {
+          schoolId,
+          schoolYearId: sectionSubject.schoolYearId,
+          sectionId: sectionSubject.sectionId,
+          sectionSubjectId,
+          name: dto.name.trim(),
+          color: dto.color ?? '#2563eb',
+          icon: dto.icon ?? 'users',
+          description: dto.description?.trim() ?? '',
+          teamType: dto.teamType,
+          startsAt: dto.startsAt ? new Date(dto.startsAt) : null,
+          endsAt: dto.endsAt ? new Date(dto.endsAt) : null,
+          orderPosition: order,
+          createdBy: userId,
+        },
+      })
+
+      await this.syncTeamMembers(tx, team, dto.members)
+      return team
+    })
+
+    const [team] = await this.getCourseTeams(schoolId, sectionSubjectId)
+      .then((teams) => teams.filter((item) => item.id === created.id))
+    invalidateSchoolCache(schoolId)
+    return team
+  }
+
+  /** Actualiza la identidad, vigencia y miembros de un equipo existente. */
+  async updateCourseTeam(schoolId: string, id: string, dto: UpdateCourseTeamDto) {
+    const existing = await prisma.courseTeam.findFirst({
+      where: { id, schoolId, status: RecordStatus.ACTIVE },
+    })
+    if (!existing) throw new NotFoundException('Equipo no encontrado')
+
+    if (dto.members) {
+      await this.validateTeamMembers(
+        schoolId,
+        existing.sectionId,
+        existing.schoolYearId,
+        dto.members,
+      )
+    }
+
+    await prisma.$transaction(async (tx) => {
+      const team = await tx.courseTeam.update({
+        where: { id },
+        data: {
+          ...(dto.name !== undefined && { name: dto.name.trim() }),
+          ...(dto.color !== undefined && { color: dto.color }),
+          ...(dto.icon !== undefined && { icon: dto.icon }),
+          ...(dto.description !== undefined && { description: dto.description.trim() }),
+          ...(dto.teamType !== undefined && { teamType: dto.teamType }),
+          ...(dto.startsAt !== undefined && { startsAt: dto.startsAt ? new Date(dto.startsAt) : null }),
+          ...(dto.endsAt !== undefined && { endsAt: dto.endsAt ? new Date(dto.endsAt) : null }),
+        },
+      })
+
+      if (dto.members) await this.syncTeamMembers(tx, team, dto.members)
+    })
+
+    if (!existing.sectionSubjectId) throw new BadRequestException('El equipo no tiene una asignatura asociada')
+    const teams = await this.getCourseTeams(schoolId, existing.sectionSubjectId)
+    invalidateSchoolCache(schoolId)
+    return teams.find((team) => team.id === id)
+  }
+
+  /** Archiva el equipo y cierra sus membresías activas. */
+  async archiveCourseTeam(schoolId: string, id: string) {
+    const team = await prisma.courseTeam.findFirst({ where: { id, schoolId } })
+    if (!team) throw new NotFoundException('Equipo no encontrado')
+
+    const archived = await prisma.$transaction(async (tx) => {
+      await tx.courseTeamMember.updateMany({
+        where: { teamId: id, status: RecordStatus.ACTIVE },
+        data: { status: RecordStatus.INACTIVE, leftAt: new Date() },
+      })
+      return tx.courseTeam.update({
+        where: { id },
+        data: { status: RecordStatus.INACTIVE },
+      })
+    })
+    invalidateSchoolCache(schoolId)
+    return archived
+  }
+
+  private async requireSectionSubject(schoolId: string, id: string) {
+    const sectionSubject = await prisma.sectionSubject.findFirst({
+      where: { id, schoolId, status: RecordStatus.ACTIVE },
+    })
+    if (!sectionSubject) throw new NotFoundException('Curso no encontrado')
+    return sectionSubject
+  }
+
+  private async requireSection(schoolId: string, id: string) {
+    const section = await prisma.section.findFirst({
+      where: { id, schoolId, status: RecordStatus.ACTIVE },
+    })
+    if (!section) throw new NotFoundException('Curso no encontrado')
+    return section
+  }
+
+  private async validateTeamMembers(
+    schoolId: string,
+    sectionId: string,
+    schoolYearId: string,
+    members: Array<{ enrollmentId: string }>,
+  ) {
+    if (!members.length) return
+    const valid = await prisma.enrollment.count({
+      where: {
+        id: { in: members.map((member) => member.enrollmentId) },
+        schoolId,
+        sectionId,
+        schoolYearId,
+        status: RecordStatus.ACTIVE,
+      },
+    })
+    if (valid !== members.length) {
+      throw new BadRequestException('Uno o más integrantes no pertenecen a este curso')
+    }
+  }
+
+  private async syncTeamMembers(
+    tx: Prisma.TransactionClient,
+    team: { id: string; schoolId: string; schoolYearId: string; sectionId: string; sectionSubjectId: string | null; teamType: string },
+    members: Array<{ enrollmentId: string; role?: string }>,
+  ) {
+    const enrollmentIds = members.map((member) => member.enrollmentId)
+
+    await tx.courseTeamMember.updateMany({
+      where: {
+        teamId: team.id,
+        status: RecordStatus.ACTIVE,
+        ...(enrollmentIds.length ? { enrollmentId: { notIn: enrollmentIds } } : {}),
+      },
+      data: { status: RecordStatus.INACTIVE, leftAt: new Date() },
+    })
+
+    if (team.teamType === 'permanent' && enrollmentIds.length) {
+      await tx.courseTeamMember.updateMany({
+        where: {
+          enrollmentId: { in: enrollmentIds },
+          status: RecordStatus.ACTIVE,
+          teamId: { not: team.id },
+          team: {
+            schoolId: team.schoolId,
+            schoolYearId: team.schoolYearId,
+            ...(team.sectionSubjectId ? { sectionSubjectId: team.sectionSubjectId } : { sectionId: team.sectionId }),
+            teamType: 'permanent',
+            status: RecordStatus.ACTIVE,
+          },
+        },
+        data: { status: RecordStatus.INACTIVE, leftAt: new Date() },
+      })
+    }
+
+    for (const member of members) {
+      await tx.courseTeamMember.upsert({
+        where: { teamId_enrollmentId: { teamId: team.id, enrollmentId: member.enrollmentId } },
+        create: {
+          schoolId: team.schoolId,
+          teamId: team.id,
+          enrollmentId: member.enrollmentId,
+          role: member.role?.trim() || null,
+        },
+        update: {
+          role: member.role?.trim() || null,
+          status: RecordStatus.ACTIVE,
+          joinedAt: new Date(),
+          leftAt: null,
+        },
+      })
+    }
   }
 }

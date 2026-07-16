@@ -16,7 +16,9 @@ import {
   deactivateGrade,
   deactivateSection,
   deactivateSectionSubject,
+  deleteSectionSubjectPermanently,
   getCourseData,
+  restoreSectionSubject,
   updateGrade,
   updateSection,
 } from '@/modules/courses/services/coursesService'
@@ -273,6 +275,22 @@ export function useCourses() {
     [cacheScope, refetch],
   )
 
+  const restoreSubjectAssignment = useCallback(
+    async (id: string) => {
+      await restoreSectionSubject(id)
+      await refetch(false)
+    },
+    [refetch],
+  )
+
+  const permanentlyDeleteSubjectAssignment = useCallback(
+    async (id: string) => {
+      await deleteSectionSubjectPermanently(id)
+      await refetch(false)
+    },
+    [refetch],
+  )
+
   return {
     grades,
     catalogs,
@@ -290,5 +308,7 @@ export function useCourses() {
     createTeacherAssignment,
     assignSubject,
     removeSubjectAssignment,
+    restoreSubjectAssignment,
+    permanentlyDeleteSubjectAssignment,
   }
 }

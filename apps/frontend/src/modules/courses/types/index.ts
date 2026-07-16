@@ -31,6 +31,7 @@ export type Section = {
   name: string
   capacity: number | null
   studentCount: number
+  teamCount: number
   status: RecordStatus
   createdAt: string
   updatedAt: string
@@ -96,7 +97,60 @@ export type SectionSubjectAssignment = {
   subjectName: string
   teacherId: string | null
   teacherName: string | null
+  teamCount: number
+  activityCount: number
+  lastAttendanceDate: string | null
+  averageScore: number | null
+  lastPlanningDate: string | null
+  lastPlanningTitle: string | null
   status: RecordStatus
+}
+
+export type CourseTeamMemberInput = {
+  enrollmentId: string
+  role?: string
+}
+
+export type CourseTeamInput = {
+  name: string
+  color?: string
+  icon?: string
+  description?: string
+  teamType: 'permanent' | 'temporary'
+  startsAt?: string | null
+  endsAt?: string | null
+  members: CourseTeamMemberInput[]
+}
+
+export type CourseTeamMember = {
+  id: string
+  enrollmentId: string
+  role: string | null
+  enrollment: {
+    id: string
+    student: {
+      id: string
+      studentCode: string
+      firstName: string
+      lastName: string
+    }
+  }
+}
+
+export type CourseTeam = {
+  id: string
+  sectionId: string
+  sectionSubjectId: string | null
+  schoolYearId: string
+  name: string
+  color: string
+  icon: string
+  description: string
+  teamType: 'permanent' | 'temporary'
+  startsAt: string | null
+  endsAt: string | null
+  orderPosition: number
+  members: CourseTeamMember[]
 }
 
 /** Catálogos completos del sistema: niveles, ciclos, modalidades, asignaturas, docentes */

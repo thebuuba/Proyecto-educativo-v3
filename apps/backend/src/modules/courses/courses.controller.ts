@@ -17,6 +17,8 @@ import { CreateSectionDto } from './dto/create-section.dto'
 import { UpdateSectionDto } from './dto/update-section.dto'
 import { CreateSubjectDto } from './dto/create-subject.dto'
 import { AssignSubjectDto } from './dto/assign-subject.dto'
+import { CreateCourseTeamDto } from './dto/create-course-team.dto'
+import { UpdateCourseTeamDto } from './dto/update-course-team.dto'
 
 @Controller('courses')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -146,5 +148,54 @@ export class CoursesController {
   @Roles('admin', 'director', 'coordinator')
   removeSectionSubject(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
     return this.coursesService.removeSectionSubject(user.schoolId, id)
+  }
+
+  /** Restaura una asignatura previamente archivada. */
+  @Patch('section-subjects/:id/restore')
+  @Roles('admin', 'director', 'coordinator')
+  restoreSectionSubject(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.coursesService.restoreSectionSubject(user.schoolId, id)
+  }
+
+  /** Elimina definitivamente una asignatura archivada y su historial. */
+  @Delete('section-subjects/:id/permanent')
+  @Roles('admin', 'director', 'coordinator')
+  permanentlyDeleteSectionSubject(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.coursesService.permanentlyDeleteSectionSubject(user.schoolId, id)
+  }
+
+  /** Obtiene los equipos propios de una asignatura-sección. */
+  @Get('section-subjects/:id/teams')
+  getCourseTeams(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.coursesService.getCourseTeams(user.schoolId, id)
+  }
+
+  /** Crea un equipo permanente o temporal dentro del curso. */
+  @Post('section-subjects/:id/teams')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  createCourseTeam(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Body() dto: CreateCourseTeamDto,
+  ) {
+    return this.coursesService.createCourseTeam(user.schoolId, user.id, id, dto)
+  }
+
+  /** Actualiza los datos y la composición de un equipo. */
+  @Patch('teams/:id')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  updateCourseTeam(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Body() dto: UpdateCourseTeamDto,
+  ) {
+    return this.coursesService.updateCourseTeam(user.schoolId, id, dto)
+  }
+
+  /** Archiva un equipo sin eliminar su historial. */
+  @Delete('teams/:id')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  archiveCourseTeam(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.coursesService.archiveCourseTeam(user.schoolId, id)
   }
 }

@@ -10,6 +10,11 @@ const mocks = vi.hoisted(() => ({
     section: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
     sectionSubject: { findMany: vi.fn(), upsert: vi.fn() },
     enrollment: { groupBy: vi.fn() },
+    courseTeam: { groupBy: vi.fn() },
+    evaluationActivity: { groupBy: vi.fn() },
+    attendanceClass: { findMany: vi.fn() },
+    gradesRecord: { groupBy: vi.fn() },
+    planningEntry: { findMany: vi.fn() },
     subject: { findMany: vi.fn(), upsert: vi.fn() },
     drAcademicLevel: { findMany: vi.fn() },
     drAcademicCycle: { findMany: vi.fn() },
@@ -65,11 +70,37 @@ describe('CoursesService.getCourseData', () => {
         teacherId: 'teacher-1',
         status: 'ACTIVE',
       },
+      {
+        id: 'ss-archived',
+        sectionId: 'section-1',
+        gradeId: 'grade-1',
+        subjectId: 'subject-2',
+        teacherId: null,
+        status: 'INACTIVE',
+      },
     ])
     mocks.prisma.enrollment.groupBy.mockResolvedValue([
       { sectionId: 'section-1', _count: { id: 12 } },
     ])
-    mocks.prisma.subject.findMany.mockResolvedValue([{ id: 'subject-1', code: 'MAT', name: 'Matemática', description: null, credits: null }])
+    mocks.prisma.courseTeam.groupBy.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', _count: { id: 2 } },
+    ])
+    mocks.prisma.evaluationActivity.groupBy.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', _count: { id: 3 } },
+    ])
+    mocks.prisma.attendanceClass.findMany.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', attendanceDate: new Date('2026-07-15T00:00:00.000Z') },
+    ])
+    mocks.prisma.gradesRecord.groupBy.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', _avg: { score: 88.5 } },
+    ])
+    mocks.prisma.planningEntry.findMany.mockResolvedValue([
+      { sectionSubjectId: 'ss-1', plannedDate: new Date('2026-07-20T00:00:00.000Z'), createdAt: new Date('2026-07-10T00:00:00.000Z'), title: 'Sistema solar' },
+    ])
+    mocks.prisma.subject.findMany.mockResolvedValue([
+      { id: 'subject-1', code: 'MAT', name: 'Matemática', description: null, credits: null },
+      { id: 'subject-2', code: 'ART', name: 'Educación Artística', description: null, credits: null },
+    ])
     mocks.prisma.drAcademicLevel.findMany.mockResolvedValue([{ id: 'level-1', code: 'PRI', name: 'Primaria', sequence: 1 }])
     mocks.prisma.drAcademicCycle.findMany.mockResolvedValue([{ id: 'cycle-1', levelId: 'level-1', code: 'C1', name: 'Primer ciclo', sequence: 1, gradeSequenceFrom: 1, gradeSequenceTo: 3 }])
     mocks.prisma.drModality.findMany.mockResolvedValue([{ id: 'mod-1', code: 'GEN', name: 'General', appliesFromGradeSequence: null, appliesToGradeSequence: null }])
@@ -92,16 +123,29 @@ describe('CoursesService.getCourseData', () => {
         {
           id: 'section-1',
           studentCount: 12,
+          teamCount: 2,
           assignments: [
             {
               id: 'ss-1',
               subjectName: 'Matemática',
               teacherName: 'Ana Pérez',
+              teamCount: 2,
+              activityCount: 3,
+              averageScore: 88.5,
+              lastPlanningTitle: 'Sistema solar',
               status: 'active',
+            },
+            {
+              id: 'ss-archived',
+              subjectName: 'Educación Artística',
+              status: 'inactive',
             },
           ],
         },
       ],
+    })
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledWith({
+      where: { schoolId: 'school-1', schoolYearId: 'year-1' },
     })
   })
 

@@ -14,6 +14,13 @@
   "dependencies": {
     "@aula/shared": "workspace:*",
     "@supabase/supabase-js": "^2.108.2",
+    "@tiptap/core": "^3.27.4",
+    "@tiptap/extension-character-count": "^3.27.4",
+    "@tiptap/extension-text-align": "^3.27.4",
+    "@tiptap/extension-text-style": "^3.27.4",
+    "@tiptap/pm": "^3.27.4",
+    "@tiptap/react": "^3.27.4",
+    "@tiptap/starter-kit": "^3.27.4",
     "lucide-react": "^1.16.0",
     "papaparse": "^5.5.3",
     "react": "^19.2.6",

@@ -1,4 +1,4 @@
-import { IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { IsArray, IsDateString, IsNumber, IsObject, IsOptional, IsString, MaxLength, Min } from 'class-validator'
 
 export class SaveEvaluationActivityDto {
   @IsOptional()
@@ -55,12 +55,21 @@ export class SaveEvaluationActivityDto {
   instrumentType?: string
 
   @IsOptional()
+  @IsObject()
+  instrumentCriteria?: Record<string, string>
+
+  @IsOptional()
   @IsString()
   evaluationTechnique?: string
 
   @IsOptional()
   @IsString()
   observations?: string
+
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  resources?: string[]
 
   @IsOptional()
   @IsString()
