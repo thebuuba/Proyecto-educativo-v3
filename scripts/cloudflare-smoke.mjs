@@ -11,7 +11,8 @@ async function request(path) {
   return response
 }
 
-const home = await request('/')
+const cacheBust = `smoke=${Date.now()}`
+const home = await request(`/?${cacheBust}`)
 assert.equal(home.status, 200, 'La SPA no responde 200')
 assert.match(
   await home.text(),
@@ -23,7 +24,7 @@ for (const header of ['content-security-policy', 'permissions-policy', 'x-conten
   assert.ok(home.headers.get(header), `Falta la cabecera ${header}`)
 }
 
-const deepLink = await request('/cursos')
+const deepLink = await request(`/cursos?${cacheBust}`)
 assert.equal(deepLink.status, 200, 'Una ruta profunda de la SPA no responde 200')
 
 const health = await request('/api/v1/health')
