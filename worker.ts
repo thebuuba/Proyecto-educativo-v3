@@ -20,7 +20,16 @@ async function initialize() {
 
 export default {
   async fetch(request: Request) {
-    await (initialization ??= initialize())
+    try {
+      await (initialization ??= initialize())
+    } catch (error) {
+      initialization = undefined
+      console.error('Worker initialization failed', error)
+      return Response.json(
+        { error: 'Service temporarily unavailable' },
+        { status: 503, headers: { 'Cache-Control': 'no-store' } },
+      )
+    }
     return handleAsNodeRequest(3000, request)
   },
 }

@@ -17,6 +17,7 @@
     "cloudflare:build": "pnpm build && wrangler deploy --dry-run --env=\"\"",
     "cloudflare:deploy:staging": "pnpm build && wrangler deploy --env staging",
     "cloudflare:deploy:production": "pnpm build && wrangler deploy --env=\"\"",
+    "cloudflare:smoke": "node scripts/cloudflare-smoke.mjs",
     "cloudflare:types": "wrangler types",
     "supabase:keepalive": "node scripts/supabase-keepalive.mjs"
   },
