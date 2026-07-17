@@ -50,6 +50,16 @@ export const competencyBlocks = [
 export type CompetencyPeriodId = (typeof competencyPeriods)[number]['id']
 export type CompetencyBlockId = (typeof competencyBlocks)[number]['id']
 
+export type CompactGradeRow = {
+  enrollmentId: string
+  listNumber: number
+  firstName: string
+  lastName: string
+  blockAverages: Record<string, number | null>
+  average: number | null
+  status: 'Sin evaluar' | 'En proceso' | 'Calificado'
+}
+
 const activityPrefix = 'ABV2:activity'
 const recoveryPrefix = 'ABV2:recovery'
 
@@ -83,6 +93,50 @@ export function scoreForActivity(records: GradeRecordRow[], enrollmentId: string
     record.enrollmentId === enrollmentId &&
     (record.evaluationActivityId === activityId || getActivityIdFromRecordName(record.assessmentName) === activityId)
   ) ?? null
+}
+
+export function buildCompactGradeRows(
+  students: StudentGradeRow[],
+  activities: GradingActivity[],
+  records: GradeRecordRow[],
+): CompactGradeRow[] {
+  return students.map((student, index) => {
+    const blockAverages: Record<string, number | null> = {}
+    let earned = 0
+    let possible = 0
+    let scoredActivities = 0
+
+    competencyBlocks.forEach((block) => {
+      const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+      let blockEarned = 0
+      let blockPossible = 0
+      blockActivities.forEach((activity) => {
+        const record = scoreForActivity(records, student.enrollmentId, activity.id)
+        if (!record) return
+        blockEarned += record.score
+        blockPossible += record.maxScore || activity.maxScore
+        earned += record.score
+        possible += record.maxScore || activity.maxScore
+        scoredActivities += 1
+      })
+      blockAverages[block.id] = blockPossible > 0 ? Math.round((blockEarned / blockPossible) * 100) : null
+    })
+
+    return {
+      enrollmentId: student.enrollmentId,
+      listNumber: student.listNumber ?? index + 1,
+      firstName: student.firstName,
+      lastName: student.lastName,
+      blockAverages,
+      average: possible > 0 ? Math.round((earned / possible) * 100) : null,
+      status: scoredActivities === 0 ? 'Sin evaluar' : scoredActivities < activities.length ? 'En proceso' : 'Calificado',
+    }
+  })
+}
+
+export function getRequestedCompetencyBlockId(searchParams: URLSearchParams): CompetencyBlockId | undefined {
+  const value = searchParams.get('competencyBlockId')
+  return competencyBlocks.some((block) => block.id === value) ? value as CompetencyBlockId : undefined
 }
 
 /** Decide si una edición de celda requiere persistencia en el servidor. */

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { getRequestedCompetencyBlockId } from './GradingPage'
+import { getRequestedCompetencyBlockId } from '@/modules/grading/utils/competencyGrades'
 
 describe('acceso contextual al creador de actividades', () => {
   it.each(['b1', 'b2', 'b3', 'b4'] as const)('conserva el bloque %s recibido en la URL', (blockId) => {
