@@ -1,3 +1,6 @@
+[db]
+port = 54332
+
 [auth]
 site_url = "http://localhost:8787"
 additional_redirect_urls = [
