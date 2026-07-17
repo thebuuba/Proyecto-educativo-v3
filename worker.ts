@@ -5,13 +5,18 @@ import { createApplication } from './apps/backend/dist/bootstrap.js'
 let initialization: Promise<void> | undefined
 
 async function initialize() {
-  const hyperdrive = (env as unknown as {
+  const workerEnv = env as unknown as {
     HYPERDRIVE?: { connectionString: string }
-  }).HYPERDRIVE
+    FRONTEND_URL?: string
+  }
+  const hyperdrive = workerEnv.HYPERDRIVE
 
   if (hyperdrive) {
     process.env.DATABASE_URL = hyperdrive.connectionString
     process.env.CLOUDFLARE_WORKER_PRODUCTION = 'true'
+  }
+  if (workerEnv.FRONTEND_URL) {
+    process.env.FRONTEND_URL = workerEnv.FRONTEND_URL
   }
 
   const app = await createApplication()

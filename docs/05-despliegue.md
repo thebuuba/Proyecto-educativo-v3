@@ -114,6 +114,13 @@ Configura en Supabase Auth:
 
 ## Despliegue gradual
 
+Los entornos actuales son:
+
+- Staging: `https://aula-base-staging.prroyectoeducativo00.workers.dev`
+- Producción: `https://aula-base.prroyectoeducativo00.workers.dev`
+
+El workflow `Deploy Cloudflare` permite elegir staging o producción manualmente. Producción usa aprobación en el GitHub Environment; el despliegue automático de staging permanece desactivado hasta que tenga un proyecto Supabase e Hyperdrive propios. Cada entorno requiere `CLOUDFLARE_API_TOKEN` y `SUPABASE_DB_URL` como secretos de GitHub.
+
 Primero staging:
 
 ```bash
