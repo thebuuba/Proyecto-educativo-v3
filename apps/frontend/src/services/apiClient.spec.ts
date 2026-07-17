@@ -12,17 +12,7 @@ describe('api client session transport', () => {
     }))
   })
 
-  it('sends a legacy bearer token only during backend migration', async () => {
-    await api.get('/profile')
-
-    expect(fetch).toHaveBeenCalledWith('/api/v1/profile', expect.objectContaining({
-      credentials: 'include',
-      headers: expect.objectContaining({ Authorization: 'Bearer legacy-token-that-must-not-be-used' }),
-    }))
-  })
-
-  it('uses only the HttpOnly cookie once no legacy token exists', async () => {
-    localStorage.removeItem('auth_token')
+  it('never exposes a legacy localStorage token as an authorization header', async () => {
     await api.get('/profile')
 
     expect(fetch).toHaveBeenCalledWith('/api/v1/profile', expect.objectContaining({

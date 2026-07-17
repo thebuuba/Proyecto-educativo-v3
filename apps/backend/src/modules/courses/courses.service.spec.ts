@@ -242,18 +242,18 @@ describe('CoursesService.getCourseData', () => {
     ).rejects.toThrow('Escribe el nombre exacto de la asignatura para confirmar la eliminación')
   })
 
-  it('invalidates cached course data after a mutation', async () => {
+  it('reloads course data on sequential requests', async () => {
     const service = new CoursesService()
     mocks.prisma.grade.upsert.mockResolvedValue({ id: 'grade-2', name: '2do', status: 'ACTIVE' })
 
     await service.getCourseData('school-1')
     await service.getCourseData('school-1')
-    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(2)
 
     await service.createGrade('school-1', { name: '2do' })
     await service.getCourseData('school-1')
 
-    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(2)
+    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(3)
   })
 
   it('assigns new subjects to the teacher linked to the authenticated account', async () => {
@@ -308,8 +308,8 @@ describe('CoursesService.getCourseData', () => {
     await schedule.getSubjects('school-1')
     await grading.getSectionSubjects('school-1')
     await schedule.getSubjects('school-1')
-    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledTimes(1)
-    expect(mocks.prisma.subject.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledTimes(2)
+    expect(mocks.prisma.subject.findMany).toHaveBeenCalledTimes(2)
 
     await new CoursesService().createSubject('school-1', {
       name: 'Ciencias',
@@ -318,8 +318,8 @@ describe('CoursesService.getCourseData', () => {
     await grading.getSectionSubjects('school-1')
     await schedule.getSubjects('school-1')
 
-    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledTimes(2)
-    expect(mocks.prisma.subject.findMany).toHaveBeenCalledTimes(2)
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledTimes(3)
+    expect(mocks.prisma.subject.findMany).toHaveBeenCalledTimes(3)
   })
 
   it('invalidates dependent options when course data creates the default school year', async () => {
@@ -343,7 +343,7 @@ describe('CoursesService.getCourseData', () => {
     for (const [, loader] of dependentOptions) {
       expect(loader).toHaveBeenCalledTimes(2)
     }
-    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(2)
   })
 })
 

@@ -17,12 +17,12 @@ export function getSessionToken(request: Request): string | null {
 }
 
 function cookieOptions(): CookieOptions {
+  const secure = process.env.NODE_ENV === 'production'
+    || process.env.CLOUDFLARE_WORKER_PRODUCTION === 'true'
   return {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    // Render and Vercel are cross-site in production, so the browser requires
-    // SameSite=None together with Secure. Local development remains same-site.
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+    secure,
+    sameSite: 'lax',
     path: '/',
     maxAge: SESSION_MAX_AGE_MS,
   }

@@ -1,101 +1,151 @@
-# Despliegue
+# Despliegue en Cloudflare y Supabase
 
-## Infraestructura
+## Arquitectura
 
-El proyecto se despliega con dos servicios:
+Un único Cloudflare Worker publica la SPA y ejecuta la API bajo `/api/v1`. Supabase mantiene PostgreSQL, Auth y Storage. Prisma usa `@prisma/adapter-pg`; en Cloudflare recibe la conexión de Hyperdrive y en desarrollo usa `DATABASE_URL`.
 
-- **Backend:** API NestJS en Render.
-- **Frontend:** SPA React en Vercel.
-
-```
-              Render + Vercel
-┌──────────────────────────────────────┐
-│                                      │
-│  ┌─────────────┐    ┌─────────────┐  │
-│  │  Vercel     │    │   Render    │  │
-│  │  Frontend   │──►│  Backend    │  │
-│  │             │    │  Node:3000  │  │
-│  └─────────────┘    └──────┬──────┘  │
-│                            │         │
-│                     ┌──────▼──────┐  │
-│                     │ PostgreSQL  │  │
-│                     │ (Supabase)  │  │
-│                     └─────────────┘  │
-└──────────────────────────────────────┘
+```text
+Navegador ──► Cloudflare Worker
+              ├─ Static Assets: React SPA
+              └─ /api/v1: NestJS ──► Hyperdrive (caché SQL desactivada) ──► Supabase PostgreSQL
+                      ├───────────────────────────────────────────────────► Supabase Auth
+                      └───────────────────────────────────────────────────► Supabase Storage
 ```
 
-## Backend En Render
+Render y Vercel ya no forman parte de la configuración del repositorio.
 
-- Servicio web Node definido en `render.yaml`.
-- Build: instala dependencias, genera Prisma Client y compila `backend`.
-- Start: `node apps/backend/dist/main.js`.
-- Variables requeridas: `DATABASE_URL`, `JWT_SECRET`, `FRONTEND_URL`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_ANON_KEY`.
-
-### Frontend (`vercel.json`)
-
-- Compila `@aula/shared` y luego `frontend`.
-- Publica `apps/frontend/dist`.
-- Usa fallback SPA hacia `index.html`.
-
-## Variables de entorno
-
-### Backend
-
-| Variable | Obligatoria | Descripción |
-|----------|-------------|-------------|
-| `DATABASE_URL` | Sí | Conexión PostgreSQL pooled de Supabase para servidor |
-| `JWT_SECRET` | Sí | Secreto para firmar tokens JWT |
-| `FRONTEND_URL` | Sí | Origen CORS permitido para el frontend |
-| `VERCEL_PROJECT_SLUG` | Para previews | Slug del proyecto Vercel cuyos previews pueden consumir la API |
-| `VERCEL_TEAM_SLUG` | Para previews | Slug del equipo Vercel propietario del proyecto |
-| `SUPABASE_URL` | Sí | URL del proyecto Supabase |
-| `SUPABASE_SERVICE_ROLE_KEY` | Sí | Clave server-only para Auth Admin |
-| `SUPABASE_ANON_KEY` | Sí | Clave pública anon para llamadas Auth |
-| `PORT` | No | Puerto (defecto: 3000) |
-
-### Frontend
-
-| Variable | Obligatoria | Descripción |
-|----------|-------------|-------------|
-| `VITE_API_PROXY_TARGET` | Solo desarrollo | Backend local al que Vite reenvía `/api` |
-| `VITE_SUPABASE_URL` | Sí si OAuth está habilitado | URL del proyecto Supabase |
-| `VITE_SUPABASE_ANON_KEY` | Sí si OAuth está habilitado | Clave pública anon |
-
-## Render (`render.yaml`)
-
-Define el servicio del backend. Los secretos marcados con `sync: false` se llenan en Render Dashboard.
-
-## Vercel (`vercel.json`)
-
-Define el build y salida del frontend.
-
-## Desarrollo local
+## Desarrollo y verificación local
 
 ```bash
-# Instalar dependencias
-corepack enable && corepack prepare pnpm@11.1.2 --activate
 pnpm install
-
-# Configurar backend
 cp apps/backend/.env.example apps/backend/.env
-# Editar DATABASE_URL, JWT_SECRET, FRONTEND_URL y claves Supabase en apps/backend/.env
-
-# Inicializar DB
-supabase db push
-pnpm db:seed
-
-# Iniciar desarrollo
-pnpm dev
-
-# Verificación
-pnpm lint
-pnpm build
+cp apps/frontend/.env.example apps/frontend/.env
+pnpm cloudflare:dev
 ```
 
-Comandos por paquete:
+`cloudflare:dev` compila frontend y backend, carga `apps/backend/.env` y sirve todo en `http://localhost:8787`. No crea ni modifica recursos remotos.
 
 ```bash
-pnpm --filter frontend dev        # Solo frontend
-pnpm --filter backend dev         # Solo backend
-pnpm --filter @aula/database exec prisma studio  # Prisma Studio
+curl http://localhost:8787/api/v1/health
+pnpm cloudflare:build
+```
+
+## Compuerta de cuenta Cloudflare
+
+No ejecutes comandos de creación o despliegue hasta confirmar que Wrangler usa la cuenta destinada a Aula Base:
+
+```bash
+pnpm exec wrangler whoami
+```
+
+Si la cuenta no es la correcta:
+
+```bash
+pnpm exec wrangler logout
+pnpm exec wrangler login
+pnpm exec wrangler whoami
+```
+
+El código puede prepararse y validarse localmente antes de esta compuerta. Hyperdrive, secretos y despliegues deben crearse únicamente después de cambiar a la cuenta correcta.
+
+## Crear Hyperdrive
+
+Usa la conexión directa de Supabase y desactiva expresamente el caché de consultas SQL:
+
+1. Copia `Direct connection` desde el panel **Connect** de Supabase.
+2. Guárdala como `SUPABASE_DIRECT_URL` en `apps/backend/.env`; ese archivo está ignorado por git.
+3. No uses aquí la URL de Supavisor/session/transaction pooler.
+
+```bash
+pnpm exec wrangler hyperdrive create aula-base-supabase \
+  --connection-string "$SUPABASE_DIRECT_URL" \
+  --caching-disabled \
+  --binding HYPERDRIVE \
+  --update-config
+```
+
+Wrangler añadirá el identificador real a `wrangler.jsonc`. La configuración debe contener el mismo binding tanto en producción como en `env.staging`:
+
+```jsonc
+"hyperdrive": [{ "binding": "HYPERDRIVE", "id": "ID_REAL" }]
+```
+
+Nunca guardes la URL o contraseña de PostgreSQL en `wrangler.jsonc`. El Worker reemplaza `DATABASE_URL` con `HYPERDRIVE.connectionString` y activa el modo producción cuando el binding existe.
+
+## Variables y secretos
+
+Secretos exclusivos del Worker:
+
+```bash
+pnpm exec wrangler secret put JWT_SECRET --env staging
+pnpm exec wrangler secret put SUPABASE_URL --env staging
+pnpm exec wrangler secret put SUPABASE_SERVICE_ROLE_KEY --env staging
+pnpm exec wrangler secret put SUPABASE_ANON_KEY --env staging
+pnpm exec wrangler secret put OPENAI_API_KEY --env staging
+```
+
+Repite sin `--env staging` para producción. `SUPABASE_SERVICE_ROLE_KEY`, `JWT_SECRET`, `OPENAI_API_KEY` y la contraseña de PostgreSQL nunca deben usar prefijo `VITE_` ni llegar al navegador.
+
+El build del frontend necesita solo valores públicos:
+
+```text
+VITE_SUPABASE_URL=https://PROJECT_REF.supabase.co
+VITE_SUPABASE_ANON_KEY=clave-publica-anon
+```
+
+## Supabase
+
+Las migraciones viven en `supabase/migrations/` y no se reescriben después de aplicarse. La migración `20260714201742_add_activity_description_images.sql` crea el bucket público limitado a 5 MB y políticas para que cada usuario autenticado escriba únicamente en su carpeta.
+
+Si existen migraciones pendientes:
+
+```bash
+supabase link --project-ref PROJECT_REF
+supabase db push
+pnpm db:generate
+```
+
+Configura en Supabase Auth:
+
+- Site URL: dominio de producción de Cloudflare.
+- Redirect URL staging: `https://DOMINIO_STAGING/auth/callback`.
+- Redirect URL producción: `https://DOMINIO_PRODUCCION/auth/callback`.
+- Redirect URL local: `http://localhost:5173/auth/callback`.
+
+## Despliegue gradual
+
+Primero staging:
+
+```bash
+pnpm cloudflare:deploy:staging
+curl https://DOMINIO_STAGING/api/v1/health
+```
+
+Valida registro/login, cookie HttpOnly, OAuth, lectura y escritura por escuela, subida de imágenes, planificación, calificaciones y cierre de sesión. Revisa errores y latencia en Workers Observability.
+
+Después de aprobar staging:
+
+```bash
+pnpm cloudflare:deploy:production
+curl https://DOMINIO_PRODUCCION/api/v1/health
+```
+
+## Corte y rollback
+
+1. Reduce el TTL DNS antes del corte si se usa dominio propio.
+2. Despliega producción sin eliminar todavía los servicios antiguos.
+3. Actualiza DNS y URLs de Supabase Auth.
+4. Ejecuta el smoke test completo.
+5. Conserva Render/Vercel sin tráfico durante 24–48 horas.
+6. Si falla, revierte DNS y revisa logs; Supabase no necesita rollback porque la base no se mueve.
+7. Cuando producción permanezca estable, elimina Render/Vercel y sus secretos.
+
+## Verificación obligatoria
+
+```bash
+pnpm --filter backend test
+pnpm --filter backend build
+pnpm --filter frontend test
+pnpm --filter frontend build
+pnpm cloudflare:build
 ```

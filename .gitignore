@@ -12,6 +12,7 @@ dist
 dist-ssr
 .next
 *.tsbuildinfo
+worker-configuration.d.ts
 *.local
 .env
 .env.local
@@ -45,4 +46,5 @@ graphify-out/*
 
 # Supabase local CLI state
 supabase/.temp/
+.wrangler/
 .vercel

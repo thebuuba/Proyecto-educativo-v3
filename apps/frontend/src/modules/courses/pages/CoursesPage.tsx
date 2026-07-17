@@ -99,7 +99,12 @@ import { getStudentsBySection } from '@/modules/attendance/services/attendanceSe
 import type { StudentAttendanceRow } from '@/modules/attendance/types'
 import { getAcademicPeriods, getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import type { GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
-import { competencyBlocks, scoreForActivity } from '@/modules/grading/utils/competencyGrades'
+import {
+  buildCompactGradeRows,
+  competencyBlocks,
+  scoreForActivity,
+  type CompactGradeRow,
+} from '@/modules/grading/utils/competencyGrades'
 import { getPlanningEntries } from '@/modules/planning/services/planningService'
 import { getScheduleEntries } from '@/modules/schedule/services/scheduleService'
 import { useCourses } from '@/modules/courses/hooks/useCourses'
@@ -121,6 +126,7 @@ import {
   matchesSectionFilter,
   type CourseFilterOption,
 } from '@/modules/courses/utils/courseFilterOptions'
+import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
 import { cn } from '@/utils/cn'
 
 type CourseCardItem = {
@@ -2151,15 +2157,6 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
   )
 }
 
-export function buildSubjectAttendanceHref(sectionSubjectId: string, returnCourseId: string) {
-  return `/asistencia?${new URLSearchParams({
-    sectionSubjectId,
-    origin: 'subject',
-    returnCourseId,
-    returnSubjectId: sectionSubjectId,
-  }).toString()}`
-}
-
 function DashboardPanel({ title, action, onAction, children }: { title: string; action?: string; onAction?: () => void; children: ReactNode }) {
   return <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_10px_28px_-25px_rgba(15,45,90,0.8)]"><header className="flex min-h-12 items-center justify-between border-b border-slate-100 px-4 py-2"><h2 className="text-sm font-extrabold text-foreground">{title}</h2>{action ? <button type="button" onClick={onAction} className="text-[11px] font-extrabold text-primary hover:underline">{action}</button> : null}</header>{children}</section>
 }
@@ -2510,51 +2507,6 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId }: { secti
       )}
     </div>
   )
-}
-
-type CompactGradeRow = {
-  enrollmentId: string
-  listNumber: number
-  firstName: string
-  lastName: string
-  blockAverages: Record<string, number | null>
-  average: number | null
-  status: 'Sin evaluar' | 'En proceso' | 'Calificado'
-}
-
-export function buildCompactGradeRows(students: StudentGradeRow[], activities: GradingActivity[], records: GradeRecordRow[]): CompactGradeRow[] {
-  return students.map((student, index) => {
-    const blockAverages: Record<string, number | null> = {}
-    let earned = 0
-    let possible = 0
-    let scoredActivities = 0
-
-    competencyBlocks.forEach((block) => {
-      const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
-      let blockEarned = 0
-      let blockPossible = 0
-      blockActivities.forEach((activity) => {
-        const record = scoreForActivity(records, student.enrollmentId, activity.id)
-        if (!record) return
-        blockEarned += record.score
-        blockPossible += record.maxScore || activity.maxScore
-        earned += record.score
-        possible += record.maxScore || activity.maxScore
-        scoredActivities += 1
-      })
-      blockAverages[block.id] = blockPossible > 0 ? Math.round((blockEarned / blockPossible) * 100) : null
-    })
-
-    return {
-      enrollmentId: student.enrollmentId,
-      listNumber: student.listNumber ?? index + 1,
-      firstName: student.firstName,
-      lastName: student.lastName,
-      blockAverages,
-      average: possible > 0 ? Math.round((earned / possible) * 100) : null,
-      status: scoredActivities === 0 ? 'Sin evaluar' : scoredActivities < activities.length ? 'En proceso' : 'Calificado',
-    }
-  })
 }
 
 function buildSubjectGradingHref(sectionSubjectId: string, returnCourseId: string) {

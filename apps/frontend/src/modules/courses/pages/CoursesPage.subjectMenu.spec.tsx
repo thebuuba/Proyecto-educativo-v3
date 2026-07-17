@@ -4,7 +4,9 @@ import { describe, expect, it, vi } from 'vitest'
 import { MemoryRouter } from 'react-router-dom'
 
 import type { SectionSubjectAssignment } from '@/modules/courses/types'
-import { ActivityBlockPickerDialog, buildCompactGradeRows, buildSubjectAttendanceHref, CourseSubjectCard, SubjectAppearanceDialog, SubjectHeaderPortal } from './CoursesPage'
+import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
+import { buildCompactGradeRows } from '@/modules/grading/utils/competencyGrades'
+import { ActivityBlockPickerDialog, CourseSubjectCard, SubjectAppearanceDialog, SubjectHeaderPortal } from './CoursesPage'
 
 function assignment(canDelete: boolean): SectionSubjectAssignment {
   return {

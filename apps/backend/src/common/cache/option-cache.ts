@@ -1,6 +1,6 @@
 import { TtlMemoryCache } from './ttl-memory-cache'
 
-export const optionCache = new TtlMemoryCache({ ttlMs: 60_000, maxEntries: 500 })
+export const optionCache = new TtlMemoryCache()
 
 export const optionCacheKeys = {
   courses: {

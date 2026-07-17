@@ -13,17 +13,25 @@
     "db:migrate": "pnpm --filter @aula/database migrate",
     "db:seed": "pnpm --filter @aula/database seed",
     "db:studio": "pnpm --filter @aula/database studio",
+    "cloudflare:dev": "pnpm build && wrangler dev --env-file apps/backend/.env",
+    "cloudflare:build": "pnpm build && wrangler deploy --dry-run --env=\"\"",
+    "cloudflare:deploy:staging": "pnpm build && wrangler deploy --env staging",
+    "cloudflare:deploy:production": "pnpm build && wrangler deploy --env=\"\"",
+    "cloudflare:smoke": "node scripts/cloudflare-smoke.mjs",
+    "cloudflare:types": "wrangler types",
     "supabase:keepalive": "node scripts/supabase-keepalive.mjs"
   },
   "devDependencies": {
     "prettier": "^3.2.0",
     "supabase": "^2.104.0",
-    "turbo": "^2.5.0"
+    "turbo": "^2.5.0",
+    "wrangler": "^4.111.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "bcrypt",
       "esbuild",
+      "sharp",
+      "workerd",
       "@prisma/client",
       "@prisma/engines",
       "prisma"

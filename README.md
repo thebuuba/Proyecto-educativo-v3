@@ -98,7 +98,9 @@ Comandos de verificacion antes de terminar un cambio:
 ```bash
 pnpm --filter backend test
 pnpm --filter backend build
+pnpm --filter frontend test
 pnpm --filter frontend build
+pnpm cloudflare:build
 ```
 
 Tambien puedes ejecutar comandos por paquete:
@@ -125,7 +127,7 @@ supabase migration new nombre_del_cambio
 
 No edites migraciones antiguas que ya puedan estar aplicadas.
 
-Para mover el proyecto a nuevas cuentas de Supabase, Render y Vercel, sigue
+Para preparar Cloudflare y cambiar de cuenta sin mezclar recursos, sigue
 `docs/07-cambio-de-cuentas.md`.
 
 ## Supabase Keepalive

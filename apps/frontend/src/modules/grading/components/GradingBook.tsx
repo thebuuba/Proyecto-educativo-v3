@@ -4742,32 +4742,28 @@ function RubricLevelSettingsDrawer({
     if (mode === 'automatic') onDraftsChange((current) => automaticRubricLevelDrafts(current, criterionMaximum))
   }
 
-  function cleanupPointerDrag() {
-    dragPreviewRef.current?.remove()
-    dragPreviewRef.current = null
-    pointerDragRef.current = null
-    setDragDocumentState(false)
-    setDraggedId(null)
-    setDragTargetIndex(null)
-  }
-
-  function finishPointerDrag(cancelled = false) {
-    const drag = pointerDragRef.current
-    if (drag && !cancelled) {
-      onDraftsChange((current) => {
-        const source = current.find((item) => item.id === drag.id)
-        if (!source) return current
-        const remaining = current.filter((item) => item.id !== drag.id)
-        const targetIndex = Math.min(remaining.length, Math.max(0, drag.targetIndex))
-        remaining.splice(targetIndex, 0, source)
-        return normalizeDrafts(remaining)
-      })
-    }
-    cleanupPointerDrag()
-  }
-
   useEffect(() => {
     if (!draggedId) return
+
+    function finishPointerDrag(cancelled = false) {
+      const drag = pointerDragRef.current
+      if (drag && !cancelled) {
+        onDraftsChange((current) => {
+          const source = current.find((item) => item.id === drag.id)
+          if (!source) return current
+          const remaining = current.filter((item) => item.id !== drag.id)
+          const targetIndex = Math.min(remaining.length, Math.max(0, drag.targetIndex))
+          remaining.splice(targetIndex, 0, source)
+          return pointMode === 'automatic' ? automaticRubricLevelDrafts(remaining, criterionMaximum) : remaining
+        })
+      }
+      dragPreviewRef.current?.remove()
+      dragPreviewRef.current = null
+      pointerDragRef.current = null
+      setDragDocumentState(false)
+      setDraggedId(null)
+      setDragTargetIndex(null)
+    }
 
     function handlePointerMove(event: PointerEvent) {
       const drag = pointerDragRef.current
@@ -4812,7 +4808,7 @@ function RubricLevelSettingsDrawer({
       window.removeEventListener('pointerup', handlePointerUp)
       window.removeEventListener('pointercancel', handlePointerCancel)
     }
-  }, [draggedId, finishPointerDrag])
+  }, [criterionMaximum, draggedId, onDraftsChange, pointMode])
 
   function startPointerDrag(event: ReactPointerEvent<HTMLButtonElement>, level: RubricLevelDraft) {
     if (event.button !== 0) return
@@ -5277,31 +5273,26 @@ function ScaleSettingsDrawer({
     setDragDocumentState(false)
   }, [])
 
-  function cleanupPointerDrag() {
-    dragPreviewRef.current?.remove()
-    dragPreviewRef.current = null
-    pointerDragRef.current = null
-    setDragDocumentState(false)
-    setDraggedId(null)
-    setDragTargetIndex(null)
-  }
-
-  function finishPointerDrag(cancelled = false) {
-    const drag = pointerDragRef.current
-    if (drag && !cancelled) {
-      onLevelsChange((current) => {
-        const source = current.find((level) => level.id === drag.id)
-        if (!source) return current
-        const remaining = current.filter((level) => level.id !== drag.id)
-        remaining.splice(Math.min(remaining.length, Math.max(0, drag.targetIndex)), 0, source)
-        return remaining
-      })
-    }
-    cleanupPointerDrag()
-  }
-
   useEffect(() => {
     if (!draggedId) return
+    function finishPointerDrag(cancelled = false) {
+      const drag = pointerDragRef.current
+      if (drag && !cancelled) {
+        onLevelsChange((current) => {
+          const source = current.find((level) => level.id === drag.id)
+          if (!source) return current
+          const remaining = current.filter((level) => level.id !== drag.id)
+          remaining.splice(Math.min(remaining.length, Math.max(0, drag.targetIndex)), 0, source)
+          return remaining
+        })
+      }
+      dragPreviewRef.current?.remove()
+      dragPreviewRef.current = null
+      pointerDragRef.current = null
+      setDragDocumentState(false)
+      setDraggedId(null)
+      setDragTargetIndex(null)
+    }
     function handlePointerMove(event: PointerEvent) {
       const drag = pointerDragRef.current
       const list = listRef.current
@@ -5325,7 +5316,7 @@ function ScaleSettingsDrawer({
     window.addEventListener('pointerup', handlePointerUp)
     window.addEventListener('pointercancel', handlePointerCancel)
     return () => { window.removeEventListener('pointermove', handlePointerMove); window.removeEventListener('pointerup', handlePointerUp); window.removeEventListener('pointercancel', handlePointerCancel) }
-  }, [draggedId, finishPointerDrag])
+  }, [draggedId, onLevelsChange])
 
   function startPointerDrag(event: ReactPointerEvent<HTMLButtonElement>, level: ScaleLevelDraft) {
     if (event.button !== 0) return

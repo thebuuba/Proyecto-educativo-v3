@@ -99,13 +99,14 @@ describe('ScheduleService option caching', () => {
     }
     mocks.prisma.timeSlot.findMany
       .mockResolvedValueOnce([original])
+      .mockResolvedValueOnce([original])
       .mockResolvedValueOnce([original, created])
     mocks.prisma.timeSlot.create.mockResolvedValue(created)
     const service = new ScheduleService()
 
     await service.getTimeSlots('school-1')
     await service.getTimeSlots('school-1')
-    expect(mocks.prisma.timeSlot.findMany).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.timeSlot.findMany).toHaveBeenCalledTimes(2)
 
     await service.createTimeSlot('school-1', {
       name: 'Segunda hora',
@@ -114,7 +115,7 @@ describe('ScheduleService option caching', () => {
     })
     const refreshed = await service.getTimeSlots('school-1')
 
-    expect(mocks.prisma.timeSlot.findMany).toHaveBeenCalledTimes(2)
+    expect(mocks.prisma.timeSlot.findMany).toHaveBeenCalledTimes(3)
     expect(refreshed).toHaveLength(2)
   })
 })

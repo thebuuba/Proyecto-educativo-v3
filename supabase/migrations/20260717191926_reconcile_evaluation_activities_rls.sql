@@ -1,3 +1,16 @@
+-- Reaplica el endurecimiento para bases que ya hubieran registrado
+-- 20260712173400 antes de corregir las referencias ambiguas.
+drop policy if exists evaluation_instruments_read_school on public.evaluation_instruments;
+drop policy if exists evaluation_instruments_write_staff on public.evaluation_instruments;
+drop policy if exists evaluation_activities_read_related on public.evaluation_activities;
+drop policy if exists evaluation_activities_manage_related on public.evaluation_activities;
+drop policy if exists evaluation_activity_evidences_read_related on public.evaluation_activity_evidences;
+drop policy if exists evaluation_activity_evidences_manage_related on public.evaluation_activity_evidences;
+drop policy if exists evaluation_activity_groups_read_related on public.evaluation_activity_groups;
+drop policy if exists evaluation_activity_groups_manage_related on public.evaluation_activity_groups;
+drop policy if exists evaluation_activity_group_members_read_related on public.evaluation_activity_group_members;
+drop policy if exists evaluation_activity_group_members_manage_related on public.evaluation_activity_group_members;
+
 alter table public.evaluation_instruments enable row level security;
 alter table public.evaluation_activities enable row level security;
 alter table public.evaluation_activity_evidences enable row level security;

@@ -4,33 +4,15 @@
  * @description Contiene la logica de negocio para el panel de control del colegio.
  * Proporciona estadisticas generales y operaciones CRUD para tareas del dashboard.
  */
-import { Inject, Injectable, NotFoundException } from '@nestjs/common'
-import { CACHE_MANAGER } from '@nestjs/cache-manager'
-import { Cache } from 'cache-manager'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import { CreateTaskDto } from './dto/create-task.dto'
 import { UpdateTaskDto } from './dto/update-task.dto'
 
 @Injectable()
 export class DashboardService {
-  constructor(@Inject(CACHE_MANAGER) private cache: Cache) {}
-
-  private taskCacheKey(schoolId: string) { return `dashboard:tasks:${schoolId}` }
-  private statsCacheKey(schoolId: string) { return `dashboard:stats:${schoolId}` }
-
   /** Obtiene estadisticas del colegio y senales de configuracion inicial. */
   async getStats(schoolId: string) {
-    const cached = await this.cache.get<{
-      studentCount: number
-      teacherCount: number
-      activeEnrollments: number
-      courseCount: number
-      scheduleEntryCount: number
-      attendanceCount: number
-      planningCount: number
-    }>(this.statsCacheKey(schoolId))
-    if (cached !== undefined) return cached
-
     const [
       studentCount,
       teacherCount,
@@ -55,7 +37,7 @@ export class DashboardService {
       prisma.planningEntry.count({ where: { schoolId, status: 'ACTIVE' } }),
     ])
 
-    const result = {
+    return {
       studentCount,
       teacherCount,
       activeEnrollments,
@@ -64,23 +46,15 @@ export class DashboardService {
       attendanceCount: attendanceDailyCount + attendanceClassCount,
       planningCount,
     }
-    // ponytail: in-memory TTL 30s, switch to Redis if multi-instance
-    await this.cache.set(this.statsCacheKey(schoolId), result, 30_000)
-    return result
   }
 
   /** Obtiene las ultimas 10 tareas del dashboard */
   async getTasks(schoolId: string) {
-    const cached = await this.cache.get<unknown[]>(this.taskCacheKey(schoolId))
-    if (cached !== undefined) return cached
-
-    const tasks = await prisma.dashboardTask.findMany({
+    return prisma.dashboardTask.findMany({
       where: { schoolId },
       orderBy: { createdAt: 'desc' },
       take: 10,
     })
-    await this.cache.set(this.taskCacheKey(schoolId), tasks, 30_000)
-    return tasks
   }
 
   /** Crea una nueva tarea en el dashboard */
@@ -96,7 +70,6 @@ export class DashboardService {
         createdBy,
       },
     })
-    await this.cache.del(this.taskCacheKey(schoolId))
     return task
   }
 
@@ -114,7 +87,6 @@ export class DashboardService {
         ...(dto.dueDate !== undefined && { dueDate: dto.dueDate ? new Date(dto.dueDate) : null }),
       },
     })
-    await this.cache.del(this.taskCacheKey(schoolId))
     return updated
   }
 }

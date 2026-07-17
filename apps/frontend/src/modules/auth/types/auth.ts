@@ -82,8 +82,6 @@ export type RegisterCredentials = LoginCredentials & {
 /** Respuesta del servidor tras un inicio de sesión exitoso. */
 export type LoginResponse = {
   user: AuthUser
-  /** Compatibilidad temporal con backends anteriores a la cookie HttpOnly. */
-  token?: string
   appUser: AppUser
   roles: Role[]
   permissions: Permission[]

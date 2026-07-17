@@ -23,29 +23,16 @@ import { CreateCourseTeamDto } from './dto/create-course-team.dto'
 import { UpdateCourseTeamDto } from './dto/update-course-team.dto'
 import { UpdateSectionSubjectAppearanceDto } from './dto/update-section-subject-appearance.dto'
 
-const cache = new Map<
-  string,
-  { data?: unknown; promise?: Promise<unknown>; expiry: number }
->()
-const CACHE_TTL = 60_000
+const cache = new Map<string, Promise<unknown>>()
 
 function withCache<T>(key: string, fn: () => Promise<T>): Promise<T> {
-  const now = Date.now()
-  const entry = cache.get(key)
-  if (entry && entry.expiry > now) {
-    if (entry.promise) return entry.promise as Promise<T>
-    return Promise.resolve(entry.data as T)
-  }
+  const existing = cache.get(key)
+  if (existing) return existing as Promise<T>
 
-  const promise = fn().then((data) => {
-    cache.set(key, { data, expiry: Date.now() + CACHE_TTL })
-    return data
-  }, (error) => {
-    if (cache.get(key)?.promise === promise) cache.delete(key)
-    throw error
+  const promise = fn().finally(() => {
+    if (cache.get(key) === promise) cache.delete(key)
   })
-
-  cache.set(key, { promise, expiry: now + CACHE_TTL })
+  cache.set(key, promise)
   return promise
 }
 

@@ -5,25 +5,31 @@
  */
 
 import { PrismaClient } from '@prisma/client'
+import { PrismaPg } from '@prisma/adapter-pg'
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined }
-const DEFAULT_CONNECTION_LIMIT = '3'
+const DEFAULT_CONNECTION_LIMIT = 3
 
-function databaseUrlWithConnectionLimit(url?: string) {
-  if (!url) return url
+function databaseUrlForPg(url: string) {
+  const parsedUrl = new URL(url)
+  parsedUrl.searchParams.delete('connection_limit')
+  parsedUrl.searchParams.delete('pool_timeout')
+  parsedUrl.searchParams.delete('pgbouncer')
+  return parsedUrl.toString()
+}
 
-  try {
-    const parsedUrl = new URL(url)
-    if (!parsedUrl.searchParams.has('connection_limit')) {
-      parsedUrl.searchParams.set('connection_limit', DEFAULT_CONNECTION_LIMIT)
-    }
-    if (!parsedUrl.searchParams.has('pool_timeout')) {
-      parsedUrl.searchParams.set('pool_timeout', '20')
-    }
-    return parsedUrl.toString()
-  } catch {
-    return url
+function createPrismaClient() {
+  if (!process.env.DATABASE_URL) {
+    throw new Error('DATABASE_URL is required')
   }
+
+  const adapter = new PrismaPg({
+    connectionString: databaseUrlForPg(process.env.DATABASE_URL),
+    max: DEFAULT_CONNECTION_LIMIT,
+    connectionTimeoutMillis: 20_000,
+  })
+
+  return new PrismaClient({ adapter, log: ['error', 'warn'] })
 }
 
 /**
@@ -31,12 +37,7 @@ function databaseUrlWithConnectionLimit(url?: string) {
  * nueva instancia; en desarrollo se reutiliza la almacenada en `globalThis`
  * para prevenir conexiones duplicadas por hot-reload.
  */
-export const prisma = globalForPrisma.prisma ?? new PrismaClient({
-  datasources: process.env.DATABASE_URL
-    ? { db: { url: databaseUrlWithConnectionLimit(process.env.DATABASE_URL) } }
-    : undefined,
-  log: ['error', 'warn'],
-})
+export const prisma = globalForPrisma.prisma ?? createPrismaClient()
 
 if (process.env.NODE_ENV !== 'production') {
   globalForPrisma.prisma = prisma

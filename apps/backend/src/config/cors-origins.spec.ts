@@ -2,27 +2,13 @@ import { describe, expect, it } from 'vitest'
 import { isAllowedOrigin } from './cors-origins'
 
 const config = {
-  frontendUrl: 'https://proyecto-educativo-v3-frontend.vercel.app',
-  vercelProjectSlug: 'proyecto-educativo-v3-frontend',
-  vercelTeamSlug: 'proyecto-educativo-a',
+  frontendUrl: 'https://app.aulabase.example',
 }
 
 describe('CORS origins', () => {
-  it('allows production and this project preview deployments', () => {
+  it('allows only the configured frontend origin', () => {
     expect(isAllowedOrigin(config.frontendUrl, config)).toBe(true)
-    expect(isAllowedOrigin(
-      'https://proyecto-educativo-v3-frontend-b3evaky9o-proyecto-educativo-a.vercel.app',
-      config,
-    )).toBe(true)
-  })
-
-  it('rejects lookalike and unrelated Vercel deployments', () => {
-    expect(isAllowedOrigin('https://evil.vercel.app', config)).toBe(false)
-    expect(isAllowedOrigin(
-      'https://proyecto-educativo-v3-frontend-attack-other-team.vercel.app',
-      config,
-    )).toBe(false)
-    expect(isAllowedOrigin('https://proyecto-educativo-v3-frontend.vercel.app.evil.com', config)).toBe(false)
+    expect(isAllowedOrigin('https://otro.example', config)).toBe(false)
   })
 
   it('allows the configured local development origin', () => {

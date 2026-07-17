@@ -5,7 +5,7 @@
  */
 
 // Mantener la API bajo el mismo origen evita CORS y el bloqueo de cookies
-// HttpOnly de terceros. Vite y Vercel reenvían /api al backend real.
+// HttpOnly de terceros. Vite reenvía /api solo durante el desarrollo local.
 const API_URL = '/api/v1'
 const GET_TIMEOUT_MS = 15_000
 
@@ -141,11 +141,6 @@ function clearResponseCache() {
   tagVersions.clear()
 }
 
-function legacyAuthHeaders(): Record<string, string> {
-  const token = localStorage.getItem('auth_token')
-  return token ? { Authorization: `Bearer ${token}` } : {}
-}
-
 /**
  * Procesa la respuesta HTTP, lanzando ApiError si no es exitosa.
  *
@@ -214,7 +209,6 @@ export const api = {
           credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
-            ...legacyAuthHeaders(),
             ...fetchOptions.headers,
           },
         })
@@ -264,7 +258,7 @@ export const api = {
       ...fetchOptions,
       method: 'POST',
       credentials: 'include',
-      headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...fetchOptions.headers },
+      headers: { 'Content-Type': 'application/json', ...fetchOptions.headers },
       body: body ? JSON.stringify(body) : undefined,
     }).then(handleResponse<T>).then((value) => {
       if (clear) clearResponseCache()
@@ -285,7 +279,7 @@ export const api = {
       ...fetchOptions,
       method: 'PATCH',
       credentials: 'include',
-      headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...fetchOptions.headers },
+      headers: { 'Content-Type': 'application/json', ...fetchOptions.headers },
       body: body ? JSON.stringify(body) : undefined,
     }).then(handleResponse<T>).then((value) => {
       if (clear) clearResponseCache()
@@ -306,7 +300,7 @@ export const api = {
       ...fetchOptions,
       method: 'PUT',
       credentials: 'include',
-      headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...fetchOptions.headers },
+      headers: { 'Content-Type': 'application/json', ...fetchOptions.headers },
       body: body ? JSON.stringify(body) : undefined,
     }).then(handleResponse<T>).then((value) => {
       if (clear) clearResponseCache()
@@ -326,7 +320,7 @@ export const api = {
       ...fetchOptions,
       method: 'DELETE',
       credentials: 'include',
-      headers: { 'Content-Type': 'application/json', ...legacyAuthHeaders(), ...fetchOptions.headers },
+      headers: { 'Content-Type': 'application/json', ...fetchOptions.headers },
     }).then(handleResponse<T>).then((value) => {
       if (clear) clearResponseCache()
       else invalidateCacheTags(tags)

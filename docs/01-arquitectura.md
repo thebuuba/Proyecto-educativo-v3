@@ -5,20 +5,20 @@
 Aula Base V3 es un sistema web de gestión educativa diseñado para centros educativos de República Dominicana. Sigue una arquitectura de **monorepo** con separación clara entre frontend (React SPA) y backend (API REST NestJS), comunicándose mediante HTTP/JSON.
 
 ```
-┌─────────────┐       HTTP/JSON       ┌──────────────┐       Prisma       ┌────────────┐
-│  Frontend   │ ◄──────────────────► │   Backend    │ ◄────────────────► │ PostgreSQL │
-│  React 19   │    JWT (Bearer)       │  NestJS 11   │     (ORM)         │ (Supabase) │
-│  Vite + TS  │                       │  API REST    │                   │            │
-└─────────────┘                       └──────────────┘                   └────────────┘
-      │                                                                       
-      └── React Router ──► AuthProvider ──► apiClient ──► Servicios
+┌──────────────────── Cloudflare Worker ────────────────────┐
+│  Static Assets: React SPA ──► /api/v1: NestJS API         │
+└───────────────────────────────┬────────────────────────────┘
+                                │ Prisma adapter-pg + Hyperdrive
+                                ▼
+                     PostgreSQL / Auth / Storage
+                              Supabase
 ```
 
 ## Principios de diseño
 
 - **Multi-tenant:** Cada escuela es un tenant; todos los registros se scoped por `schoolId`.
 - **RBAC:** Control de acceso basado en roles (admin, director, coordinator, teacher, student, guardian, viewer).
-- **Separación de responsabilidades:** El frontend no depende de Supabase Auth; usa JWT propio del backend.
+- **Sesión segura:** Supabase inicia la identidad y el backend entrega un JWT propio en cookie HttpOnly.
 - **API consistente:** Todas las respuestas envueltas en `{ success: boolean, data?: T, error?: string }`.
 - **Mínimo acoplamiento:** Los servicios del backend no se inyectan entre módulos.
 
@@ -70,10 +70,10 @@ Cada módulo frontend es autocontenido:
 ## Backend (NestJS API)
 
 - **Prefijo global:** `/api/v1`
-- **Autenticación:** JWT con Passport (estrategia `jwt`), 8h de expiración.
+- **Autenticación:** JWT con Passport en cookie HttpOnly, 8h de expiración.
 - **Validación:** `ValidationPipe` global con whitelist, forbidNonWhitelisted, transform.
 - **Seguridad:** Helmet, CORS configurado, Throttler (100 req/60s).
-- **ORM:** Prisma Client inyectado desde `@aula/database`.
+- **ORM:** Prisma Client con `@prisma/adapter-pg`; Hyperdrive aporta la conexión en Cloudflare.
 
 ### Patrón por módulo
 
@@ -109,7 +109,7 @@ modules/<nombre>/
 | Variable | Defecto | Propósito |
 |----------|---------|-----------|
 | `PORT` | 3000 | Puerto del servidor |
-| `DATABASE_URL` | — | Conexión PostgreSQL pooled de Supabase |
+| `DATABASE_URL` | — | Conexión PostgreSQL local; en Cloudflare se reemplaza por Hyperdrive |
 | `JWT_SECRET` | — | Secreto JWT |
 | `FRONTEND_URL` | http://localhost:5173 | Origen CORS |
 | `SUPABASE_URL` | — | URL del proyecto Supabase |
@@ -118,4 +118,4 @@ modules/<nombre>/
 
 ### Frontend
 
-El frontend usa `/api/v1` en el mismo origen. En desarrollo, Vite reenvía `/api` al backend local; en producción, Vercel lo reenvía a Render. Vercel solo debe definir `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`.
+El frontend usa `/api/v1` en el mismo origen. En desarrollo, Vite reenvía `/api` al backend local; en producción, Cloudflare Static Assets y NestJS comparten el mismo Worker.

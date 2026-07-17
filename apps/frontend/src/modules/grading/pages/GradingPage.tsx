@@ -7,7 +7,7 @@ import { Select } from '@/components/ui/Select'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
 import type { SectionSubjectOption } from '@/modules/grading/types'
-import { competencyBlocks, competencyPeriods, type CompetencyBlockId } from '@/modules/grading/utils/competencyGrades'
+import { competencyPeriods, getRequestedCompetencyBlockId } from '@/modules/grading/utils/competencyGrades'
 
 export function GradingPage() {
   const navigate = useNavigate()
@@ -177,11 +177,6 @@ export function GradingPage() {
       )}
     </section>
   )
-}
-
-export function getRequestedCompetencyBlockId(searchParams: URLSearchParams): CompetencyBlockId | undefined {
-  const value = searchParams.get('competencyBlockId')
-  return competencyBlocks.some((block) => block.id === value) ? value as CompetencyBlockId : undefined
 }
 
 function groupSectionSubjects(items: SectionSubjectOption[]) {
