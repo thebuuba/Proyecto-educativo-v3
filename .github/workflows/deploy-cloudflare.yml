@@ -64,6 +64,9 @@ jobs:
       - name: Aplicar migraciones
         run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --yes
 
+      - name: Generar cliente Prisma
+        run: pnpm db:generate
+
       - name: Compilar aplicación
         run: pnpm build
 
