@@ -46,5 +46,6 @@ graphify-out/*
 
 # Supabase local CLI state
 supabase/.temp/
+supabase/.branches/
 .wrangler/
 .vercel
