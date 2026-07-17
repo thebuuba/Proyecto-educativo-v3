@@ -16,14 +16,18 @@ Render y Vercel ya no forman parte de la configuración del repositorio.
 
 ## Desarrollo y verificación local
 
+Requiere Docker Desktop o un runtime compatible con Docker. El comando inicia Supabase local, genera una configuración ignorada por git y obliga a Hyperdrive a usar PostgreSQL local:
+
 ```bash
 pnpm install
-cp apps/backend/.env.example apps/backend/.env
-cp apps/frontend/.env.example apps/frontend/.env
 pnpm cloudflare:dev
 ```
 
-`cloudflare:dev` compila frontend y backend, carga `apps/backend/.env` y sirve todo en `http://localhost:8787`. No crea ni modifica recursos remotos.
+`cloudflare:dev` compila frontend y backend y sirve todo en `http://localhost:8787`. No crea ni modifica recursos remotos. Para detener Supabase:
+
+```bash
+pnpm supabase:stop
+```
 
 ```bash
 curl http://localhost:8787/api/v1/health
@@ -119,7 +123,7 @@ Los entornos actuales son:
 - Staging: `https://aula-base-staging.prroyectoeducativo00.workers.dev`
 - Producción: `https://aula-base.prroyectoeducativo00.workers.dev`
 
-El workflow `Deploy Cloudflare` permite elegir staging o producción manualmente. Producción usa aprobación en el GitHub Environment; el despliegue automático de staging permanece desactivado hasta que tenga un proyecto Supabase e Hyperdrive propios. Cada entorno requiere `CLOUDFLARE_API_TOKEN` y `SUPABASE_DB_URL` como secretos de GitHub.
+El workflow `Deploy Cloudflare` permite elegir staging o producción manualmente. Producción usa aprobación en el GitHub Environment. Staging remoto comparte temporalmente Supabase con producción, por lo que su despliegue automático permanece desactivado y el desarrollo diario se realiza con Supabase local. Cada entorno habilitado requiere `CLOUDFLARE_API_TOKEN` y `SUPABASE_DB_URL` como secretos de GitHub.
 
 El workflow `Smoke Cloudflare` verifica producción cada 30 minutos y también puede ejecutarse manualmente.
 

@@ -1,5 +1,5 @@
 [auth]
-site_url = "https://aula-base.prroyectoeducativo00.workers.dev"
+site_url = "http://localhost:8787"
 additional_redirect_urls = [
   "http://localhost:5173/auth/callback",
   "http://localhost:8787/auth/callback",
