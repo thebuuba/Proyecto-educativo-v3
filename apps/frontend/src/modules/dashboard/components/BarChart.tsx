@@ -33,7 +33,7 @@ export function BarChart({ data }: BarChartProps) {
           </div>
           <div className="text-center">
             <p className="text-xs font-semibold text-foreground">{item.value}%</p>
-            <p className="text-xs text-muted-foreground">{item.label}</p>
+            <p className="max-w-24 truncate text-xs text-muted-foreground" title={item.label}>{item.label}</p>
           </div>
         </div>
       ))}

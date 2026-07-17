@@ -19,23 +19,37 @@ import { UpdateTaskDto } from './dto/update-task.dto'
 export class DashboardController {
   constructor(private dashboardService: DashboardService) {}
 
+  /** Resumen operativo del inicio, limitado al rol y relaciones del usuario. */
+  @Get('overview')
+  getOverview(@CurrentUser() user: AuthenticatedUser) {
+    return this.dashboardService.getOverview(user)
+  }
+
+  /** Datos secundarios que no bloquean la primera pintura del inicio. */
+  @Get('insights')
+  getInsights(@CurrentUser() user: AuthenticatedUser) {
+    return this.dashboardService.getInsights(user)
+  }
+
   /** Obtiene las estadísticas del colegio (estudiantes, profesores, matrículas activas) */
   @Get('stats')
+  @Roles('admin', 'director', 'coordinator')
   getStats(@CurrentUser() user: AuthenticatedUser) {
     return this.dashboardService.getStats(user.schoolId)
   }
 
   /** Obtiene las últimas tareas del dashboard */
   @Get('tasks')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   getTasks(@CurrentUser() user: AuthenticatedUser) {
-    return this.dashboardService.getTasks(user.schoolId)
+    return this.dashboardService.getTasks(user)
   }
 
   /** Crea una nueva tarea en el dashboard (solo admin, director, coordinador, teacher) */
   @Post('tasks')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   createTask(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateTaskDto) {
-    return this.dashboardService.createTask(user.schoolId, user.id, dto)
+    return this.dashboardService.createTask(user, dto)
   }
 
   /** Actualiza una tarea existente del dashboard (solo admin, director, coordinador, teacher) */
@@ -46,6 +60,6 @@ export class DashboardController {
     @Param('id') id: string,
     @Body() dto: UpdateTaskDto,
   ) {
-    return this.dashboardService.updateTask(user.schoolId, id, dto)
+    return this.dashboardService.updateTask(user, id, dto)
   }
 }

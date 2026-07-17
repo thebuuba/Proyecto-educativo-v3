@@ -5,6 +5,7 @@
  */
 
 import { ArrowRight, CalendarDays } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 import type { SmartSuggestion as SmartSuggestionType } from '@/modules/dashboard/types/dashboard'
 
@@ -33,13 +34,13 @@ export function SmartSuggestion({ suggestion }: SmartSuggestionProps) {
           <span className="font-normal text-muted-foreground">{suggestion.description}</span>
         </p>
       </div>
-      <a
-        href={suggestion.path}
+      <Link
+        to={suggestion.path}
         className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-4 py-2 text-xs font-bold text-white transition-opacity hover:opacity-80"
       >
         {suggestion.actionLabel}
         <ArrowRight className="size-3.5 text-accent" />
-      </a>
+      </Link>
     </div>
   )
 }

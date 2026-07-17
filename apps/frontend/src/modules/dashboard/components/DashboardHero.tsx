@@ -16,6 +16,8 @@ type DashboardHeroProps = {
   onStartClass: (item: DashboardClass) => void
   /** Callback al hacer clic en "Ver planificación". */
   onViewPlanning: (item: DashboardClass) => void
+  /** Muestra acciones operativas solo a roles autorizados. */
+  canManageClass?: boolean
 }
 
 /** Hero del dashboard que muestra la próxima clase o un estado vacío. */
@@ -23,6 +25,7 @@ export function DashboardHero({
   nextClass,
   onStartClass,
   onViewPlanning,
+  canManageClass = true,
 }: DashboardHeroProps) {
   const minutes = nextClass?.startsInMinutes ?? null
   const progress = minutes === null ? 0 : Math.max(0, Math.min(100, 100 - (minutes / 90) * 100))
@@ -84,23 +87,25 @@ export function DashboardHero({
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Button
-              className="h-12 rounded-xl px-5"
-              onClick={() => onStartClass(nextClass)}
-            >
-              <Play className="size-5 fill-current" />
-              Iniciar clase
-            </Button>
-            <Button
-              variant="outline"
-              className="h-12 rounded-xl border-white/18 bg-white/5 px-5 text-white hover:bg-white/10"
-              onClick={() => onViewPlanning(nextClass)}
-            >
-              Ver planificación
-              <ArrowRight className="size-5" />
-            </Button>
-          </div>
+          {canManageClass ? (
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Button
+                className="h-12 rounded-xl px-5"
+                onClick={() => onStartClass(nextClass)}
+              >
+                <Play className="size-5 fill-current" />
+                Iniciar clase
+              </Button>
+              <Button
+                variant="outline"
+                className="h-12 rounded-xl border-white/18 bg-white/5 px-5 text-white hover:bg-white/10"
+                onClick={() => onViewPlanning(nextClass)}
+              >
+                Ver planificación
+                <ArrowRight className="size-5" />
+              </Button>
+            </div>
+          ) : null}
         </div>
 
         <div className="lg:col-span-5 flex justify-end">

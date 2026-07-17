@@ -3,13 +3,17 @@
  * asistencia semanal, tareas pendientes, actividad reciente y sugerencias.
  */
 
+import { RefreshCw } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 import { ErrorState } from '@/components/ui'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
 import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
+import { BarChart } from '@/modules/dashboard/components/BarChart'
+import { ChartPanel } from '@/modules/dashboard/components/ChartPanel'
 import { InitialSetupChecklist } from '@/modules/dashboard/components/InitialSetupChecklist'
+import { LineChart } from '@/modules/dashboard/components/LineChart'
 import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
 import { SmartSuggestion } from '@/modules/dashboard/components/SmartSuggestion'
 import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
@@ -44,6 +48,7 @@ export function DashboardPage() {
     actionLoading,
     addTask,
     completeTask,
+    refetch,
   } = useDashboard()
 
   const handleStartClass = (item: DashboardClass) => {
@@ -70,7 +75,7 @@ export function DashboardPage() {
     navigate(`/planificaciones?${params.toString()}`)
   }
 
-  if (loading) {
+  if (loading && !data) {
     return (
       <div className="w-full min-w-0">
         <PageSkeleton />
@@ -88,7 +93,8 @@ export function DashboardPage() {
 
   const hasAgenda = data.todayAgenda.length > 0
   const hasWeeklyAttendance = data.weeklyAttendance.activityCount > 0 || data.weeklyAttendance.average !== null
-  const hasTasks = data.tasks.length > 0
+  const canManageOperations = data.view === 'management' || data.view === 'teacher'
+  const hasTasks = canManageOperations
   const hasRecentActivity = data.recentActivity.length > 0
   const hasOperationalBlocks = hasAgenda || hasWeeklyAttendance || hasTasks || hasRecentActivity
 
@@ -107,6 +113,16 @@ export function DashboardPage() {
         </div>
 
         <div className="flex items-center gap-2 text-xs">
+          <button
+            type="button"
+            onClick={() => void refetch()}
+            disabled={loading}
+            className="inline-flex size-7 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground disabled:opacity-50"
+            aria-label="Actualizar inicio"
+            title="Actualizar inicio"
+          >
+            <RefreshCw className={`size-3.5 ${loading ? 'animate-spin' : ''}`} />
+          </button>
           <span className="inline-flex h-7 items-center rounded-full border border-border bg-card px-3 font-semibold text-muted-foreground">
             {data.context.schoolYearName}
           </span>
@@ -128,12 +144,34 @@ export function DashboardPage() {
           nextClass={data.nextClass}
           onStartClass={handleStartClass}
           onViewPlanning={handleViewPlanning}
+          canManageClass={canManageOperations}
         />
       </div>
 
-      <div className="dashboard-enter" style={{ animationDelay: '60ms', animationDuration: '460ms' }}>
-        <InitialSetupChecklist progress={data.setupProgress} />
-      </div>
+      {data.view === 'management' ? (
+        <div className="dashboard-enter" style={{ animationDelay: '60ms', animationDuration: '460ms' }}>
+          <InitialSetupChecklist progress={data.setupProgress} />
+        </div>
+      ) : null}
+
+      {data.view === 'teacher' && data.teacherAnalytics ? (
+        <section className="grid gap-6 lg:grid-cols-2" aria-label="Resumen académico del docente">
+          <ChartPanel
+            title="Rendimiento por período"
+            description={`${data.teacherAnalytics.gradedRecords} calificaciones publicadas`}
+            value={data.teacherAnalytics.average === null ? '—' : `${data.teacherAnalytics.average}%`}
+          >
+            <LineChart data={data.teacherAnalytics.performanceByPeriod} />
+          </ChartPanel>
+          <ChartPanel
+            title="Promedio por asignatura"
+            description="Resultados de tus cursos en el año escolar actual"
+            value={data.teacherAnalytics.performanceBySubject.length ? `${data.teacherAnalytics.performanceBySubject.length} asignaturas` : '—'}
+          >
+            <BarChart data={data.teacherAnalytics.performanceBySubject} />
+          </ChartPanel>
+        </section>
+      ) : null}
 
       {hasOperationalBlocks ? (
         <div className="grid lg:grid-cols-12 gap-6">

@@ -114,7 +114,7 @@ export const appRoutes: AppRoute[] = [
     label: 'Asistencia',
     icon: CalendarCheck,
     component: AttendancePage,
-    allowedRoles: ['admin', 'coordinator', 'teacher'],
+    allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
   {
     path: '/calificaciones',
@@ -164,7 +164,10 @@ export const appRoutes: AppRoute[] = [
 
 /** Prefetch de cada ruta: llama a la función para cargar el chunk en background. */
 export const routePrefetchers: Record<string, () => void> = {
-  '/inicio': () => void import('@/modules/dashboard/pages/DashboardPage'),
+  '/inicio': () => {
+    void import('@/modules/dashboard/pages/DashboardPage')
+    void import('@/modules/dashboard/services/dashboardService').then(({ getDashboardData }) => getDashboardData(null).catch(() => undefined))
+  },
   '/cursos': () => void import('@/modules/courses/pages/CoursesPage'),
   '/estudiantes': () => void import('@/modules/students/pages/StudentsPage'),
   '/horario': () => void import('@/modules/schedule/pages/SchedulePage'),

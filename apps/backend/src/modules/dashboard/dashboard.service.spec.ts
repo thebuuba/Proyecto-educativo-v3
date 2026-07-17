@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { DashboardService } from './dashboard.service'
+import { buildTeacherAnalytics, calculateAttendanceRate, DashboardService, resolveDashboardView } from './dashboard.service'
 
 function mockCache() {
   return { get: vi.fn(), set: vi.fn(), del: vi.fn() }
@@ -27,9 +27,11 @@ const mocks = vi.hoisted(() => ({
     planningEntry: { count: vi.fn() },
     dashboardTask: {
       create: vi.fn(),
+      findMany: vi.fn(),
       findFirst: vi.fn(),
       update: vi.fn(),
     },
+    appUser: { findFirst: vi.fn() },
   },
 }))
 
@@ -38,6 +40,8 @@ vi.mock('@aula/database', () => ({
 }))
 
 describe('DashboardService', () => {
+  const teacher = { id: 'user-1', email: 'teacher@example.com', schoolId: 'school-1', roles: ['teacher'] }
+
   beforeEach(() => {
     vi.clearAllMocks()
   })
@@ -83,12 +87,11 @@ describe('DashboardService', () => {
     const data = { title: 'Revisar asistencia', status: 'pending', priority: 'high' }
     mocks.prisma.dashboardTask.create.mockResolvedValue({ id: 'task-1', ...data })
 
-    const result = await new DashboardService(cache).createTask('school-1', 'user-1', data)
+    const result = await new DashboardService(cache).createTask(teacher, data)
 
     expect(mocks.prisma.dashboardTask.create).toHaveBeenCalledWith({
-      data: { schoolId: 'school-1', title: 'Revisar asistencia', status: 'pending', priority: 'high', createdBy: 'user-1', dueDate: null, assignedTo: null },
+      data: { schoolId: 'school-1', title: 'Revisar asistencia', status: 'pending', priority: 'high', createdBy: 'user-1', dueDate: null, assignedTo: 'user-1' },
     })
-    expect(cache.del).toHaveBeenCalledWith('dashboard:tasks:school-1')
     expect(result).toEqual({ id: 'task-1', ...data })
   })
 
@@ -97,13 +100,16 @@ describe('DashboardService', () => {
     mocks.prisma.dashboardTask.findFirst.mockResolvedValue({ id: 'task-1', schoolId: 'school-1' })
     mocks.prisma.dashboardTask.update.mockResolvedValue({ id: 'task-1', status: 'completed' })
 
-    const result = await new DashboardService(cache).updateTask('school-1', 'task-1', { status: 'completed' })
+    const result = await new DashboardService(cache).updateTask(teacher, 'task-1', { status: 'completed' })
+
+    expect(mocks.prisma.dashboardTask.findFirst).toHaveBeenCalledWith({
+      where: { id: 'task-1', schoolId: 'school-1', OR: [{ assignedTo: 'user-1' }, { createdBy: 'user-1' }] },
+    })
 
     expect(mocks.prisma.dashboardTask.update).toHaveBeenCalledWith({
       where: { id: 'task-1' },
       data: { status: 'completed' },
     })
-    expect(cache.del).toHaveBeenCalledWith('dashboard:tasks:school-1')
     expect(result).toEqual({ id: 'task-1', status: 'completed' })
   })
 
@@ -111,7 +117,50 @@ describe('DashboardService', () => {
     mocks.prisma.dashboardTask.findFirst.mockResolvedValue(null)
 
     await expect(
-      new DashboardService(mockCache()).updateTask('school-1', 'task-x', { title: 'Nope' }),
+      new DashboardService(mockCache()).updateTask(teacher, 'task-x', { title: 'Nope' }),
     ).rejects.toThrow('Task not found')
+  })
+
+  it('returns only pending tasks owned or created by the user', async () => {
+    mocks.prisma.dashboardTask.findMany.mockResolvedValue([])
+
+    await new DashboardService(mockCache()).getTasks(teacher)
+
+    expect(mocks.prisma.dashboardTask.findMany).toHaveBeenCalledWith({
+      where: { schoolId: 'school-1', status: 'pending', OR: [{ assignedTo: 'user-1' }, { createdBy: 'user-1' }] },
+      orderBy: { createdAt: 'desc' },
+      take: 8,
+    })
+  })
+
+  it('calculates attendance without penalizing excused absences', () => {
+    const date = new Date('2026-07-16T00:00:00.000Z')
+    expect(calculateAttendanceRate([
+      { attendanceDate: date, status: 'PRESENT' },
+      { attendanceDate: date, status: 'LATE' },
+      { attendanceDate: date, status: 'ABSENT' },
+      { attendanceDate: date, status: 'EXCUSED' },
+    ])).toBe(67)
+    expect(resolveDashboardView(['student', 'admin'])).toBe('management')
+  })
+
+  it('groups teacher grades by period and subject', () => {
+    const record = (score: number, period: string, sequence: number, subject: string) => ({
+      score,
+      maxScore: 100,
+      academicPeriod: { name: period, sequence },
+      sectionSubject: { subject: { name: subject } },
+    })
+
+    expect(buildTeacherAnalytics([
+      record(80, 'P1', 1, 'Matemática'),
+      record(100, 'P1', 1, 'Matemática'),
+      record(70, 'P2', 2, 'Lengua Española'),
+    ])).toEqual({
+      average: 83,
+      gradedRecords: 3,
+      performanceByPeriod: [{ label: 'P1', value: 90 }, { label: 'P2', value: 70 }],
+      performanceBySubject: [{ label: 'Matemática', value: 90 }, { label: 'Lengua Española', value: 70 }],
+    })
   })
 })
