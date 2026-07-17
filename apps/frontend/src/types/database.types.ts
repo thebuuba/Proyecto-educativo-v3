@@ -2699,15 +2699,6 @@ export type Database = {
       }
     }
     Functions: {
-      register_school: {
-        Args: {
-          email: string
-          full_name: string
-          school_name: string
-          slug: string
-        }
-        Returns: Json
-      }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
     }

@@ -16,21 +16,28 @@ Render y Vercel ya no forman parte de la configuración del repositorio.
 
 ## Desarrollo y verificación local
 
-Requiere Docker Desktop o un runtime compatible con Docker. El comando inicia Supabase local, genera una configuración ignorada por git y obliga a Hyperdrive a usar PostgreSQL local:
+El desarrollo diario usa el proyecto remoto **Supabase DEV**. No requiere Docker, Colima ni Studio local. Copia el archivo de ejemplo y completa únicamente credenciales de DEV:
 
 ```bash
 pnpm install
+cp .dev.vars.example .dev.vars.local
 pnpm cloudflare:dev
 ```
 
-`cloudflare:dev` compila frontend y backend y sirve todo en `http://localhost:8787`. No crea ni modifica recursos remotos. Para detener Supabase:
+`cloudflare:dev` compila frontend y backend, sirve todo en `http://localhost:8787` y conecta Prisma, Auth y Storage a Supabase DEV. El archivo `.dev.vars.local` está ignorado por Git.
+
+Prisma crea su cliente dentro de cada petición del Worker. No lo conviertas de nuevo en un pool global: Cloudflare limpia las conexiones por invocación y Hyperdrive mantiene el pool compartido junto a PostgreSQL.
+
+Supabase local queda reservado para comprobar migraciones desde cero:
 
 ```bash
+pnpm supabase:local
 pnpm supabase:stop
 ```
 
 ```bash
 curl http://localhost:8787/api/v1/health
+pnpm cloudflare:verify http://localhost:8787
 pnpm cloudflare:build
 ```
 
@@ -57,21 +64,28 @@ El código puede prepararse y validarse localmente antes de esta compuerta. Hype
 Usa la conexión directa de Supabase y desactiva expresamente el caché de consultas SQL:
 
 1. Copia `Direct connection` desde el panel **Connect** de Supabase.
-2. Guárdala como `SUPABASE_DIRECT_URL` en `apps/backend/.env`; ese archivo está ignorado por git.
-3. No uses aquí la URL de Supavisor/session/transaction pooler.
+2. No uses aquí la URL de Supavisor/session/transaction pooler.
+3. Crea una configuración por base de datos; no reutilices producción en staging.
 
 ```bash
+pnpm exec wrangler hyperdrive create aula-base-supabase-dev \
+  --connection-string "$SUPABASE_DEV_DIRECT_URL" \
+  --caching-disabled
+
 pnpm exec wrangler hyperdrive create aula-base-supabase \
-  --connection-string "$SUPABASE_DIRECT_URL" \
-  --caching-disabled \
-  --binding HYPERDRIVE \
-  --update-config
+  --connection-string "$SUPABASE_PROD_DIRECT_URL" \
+  --caching-disabled
 ```
 
-Wrangler añadirá el identificador real a `wrangler.jsonc`. La configuración debe contener el mismo binding tanto en producción como en `env.staging`:
+Guarda únicamente los identificadores devueltos por Wrangler en `wrangler.jsonc`. Producción y staging deben usar configuraciones distintas:
 
 ```jsonc
-"hyperdrive": [{ "binding": "HYPERDRIVE", "id": "ID_REAL" }]
+"hyperdrive": [{ "binding": "HYPERDRIVE", "id": "ID_PROD" }],
+"env": {
+  "staging": {
+    "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "ID_DEV" }]
+  }
+}
 ```
 
 Nunca guardes la URL o contraseña de PostgreSQL en `wrangler.jsonc`. El Worker reemplaza `DATABASE_URL` con `HYPERDRIVE.connectionString` y activa el modo producción cuando el binding existe.
@@ -109,21 +123,20 @@ supabase db push
 pnpm db:generate
 ```
 
-Configura en Supabase Auth:
+Configura cada proyecto en Supabase Auth:
 
-- Site URL: dominio de producción de Cloudflare.
-- Redirect URL staging: `https://DOMINIO_STAGING/auth/callback`.
-- Redirect URL producción: `https://DOMINIO_PRODUCCION/auth/callback`.
-- Redirect URL local: `http://localhost:5173/auth/callback`.
+- DEV: Site URL de staging y redirects de staging y `http://localhost:8787/auth/callback`.
+- PROD: Site URL de producción y redirect de producción.
 
 ## Despliegue gradual
 
 Los entornos actuales son:
 
-- Staging: `https://aula-base-staging.prroyectoeducativo00.workers.dev`
-- Producción: `https://aula-base.prroyectoeducativo00.workers.dev`
+- Desarrollo local: Worker local + Supabase DEV `unibklkegykchotdvijv`.
+- Staging: `https://aula-base-staging.prroyectoeducativo00.workers.dev` + Supabase DEV `unibklkegykchotdvijv`.
+- Producción: `https://aula-base.prroyectoeducativo00.workers.dev` + Supabase PROD `ebkrbfdspofhyljjeotk`.
 
-El workflow `Deploy Cloudflare` permite elegir staging o producción manualmente. Producción usa aprobación en el GitHub Environment. Staging remoto comparte temporalmente Supabase con producción, por lo que su despliegue automático permanece desactivado y el desarrollo diario se realiza con Supabase local. Cada entorno habilitado requiere `CLOUDFLARE_API_TOKEN` y `SUPABASE_DB_URL` como secretos de GitHub.
+El workflow `Deploy Cloudflare` permite desplegar staging manualmente. Cuando el CI de `main` termina correctamente, prepara el despliegue de producción y solicita la aprobación configurada en el GitHub Environment. En ambos casos ejecuta migraciones, despliega el Worker y termina con el smoke test. Cada GitHub Environment requiere su propio `SUPABASE_DB_URL` y un `CLOUDFLARE_API_TOKEN` limitado a la cuenta con permisos **Workers Scripts: Edit**, **Hyperdrive: Read** y **Account Settings: Read**.
 
 El workflow `Smoke Cloudflare` verifica producción cada 30 minutos y también puede ejecutarse manualmente.
 
@@ -132,9 +145,10 @@ Primero staging:
 ```bash
 pnpm cloudflare:deploy:staging
 curl https://DOMINIO_STAGING/api/v1/health
+pnpm cloudflare:verify https://DOMINIO_STAGING
 ```
 
-Valida registro/login, cookie HttpOnly, OAuth, lectura y escritura por escuela, subida de imágenes, planificación, calificaciones y cierre de sesión. Revisa errores y latencia en Workers Observability.
+La prueba de integración valida registro y login por contraseña, cookie segura, aislamiento RLS entre escuelas, subida y eliminación de imágenes, y cierre de sesión. OAuth se comprueba por separado con el proveedor configurado. Revisa errores y latencia en Workers Observability.
 
 Después de aprobar staging:
 

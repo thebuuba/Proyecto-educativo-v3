@@ -43,13 +43,16 @@ supabase/migrations/
 `packages/database/prisma/schema.prisma` debe mantenerse alineado para generar
 Prisma Client y compilar el backend.
 
-## Configuracion
+## Configuracion y desarrollo
 
-El backend requiere `apps/backend/.env`. Crea el archivo a partir del ejemplo:
+El flujo diario reproduce la arquitectura de Cloudflare en un solo proceso local. Crea el archivo ignorado por Git y completa únicamente valores del proyecto Supabase DEV:
 
 ```bash
-cp apps/backend/.env.example apps/backend/.env
+cp .dev.vars.example .dev.vars.local
+pnpm cloudflare:dev
 ```
+
+La aplicación completa queda en `http://localhost:8787`: React sirve la interfaz y NestJS responde bajo `/api/v1`. No hace falta iniciar Docker ni Supabase Studio.
 
 Variables principales:
 
@@ -61,19 +64,20 @@ Variables principales:
 - `SUPABASE_SERVICE_ROLE_KEY`: clave server-only para Auth Admin.
 - `SUPABASE_ANON_KEY`: clave publica anon.
 
-El frontend usa `/api/v1` por defecto. En desarrollo, Vite reenvia las rutas
-`/api` al backend local mediante proxy, por lo que normalmente no hace falta
-configurar una URL absoluta para la API.
+El frontend usa `/api/v1` por defecto, por lo que no necesita una URL absoluta para la API.
 
 No pongas `SUPABASE_SERVICE_ROLE_KEY` ni secretos en variables `VITE_*`.
 `VITE_SUPABASE_ANON_KEY` es publica y solo se usa en el frontend.
 
 ## Base De Datos
 
-Para preparar una base de datos de desarrollo:
+Para aplicar migraciones a Supabase DEV:
 
 ```bash
-supabase db push
+set -a
+source .dev.vars.local
+set +a
+pnpm exec supabase db push --db-url "$DATABASE_URL" --include-all
 pnpm db:generate
 pnpm db:seed
 ```
@@ -85,14 +89,6 @@ pnpm db:generate
 pnpm db:studio
 ```
 
-## Desarrollo
-
-Levanta el monorepo en modo desarrollo:
-
-```bash
-pnpm dev
-```
-
 Comandos de verificacion antes de terminar un cambio:
 
 ```bash
@@ -101,9 +97,10 @@ pnpm --filter backend build
 pnpm --filter frontend test
 pnpm --filter frontend build
 pnpm cloudflare:build
+pnpm cloudflare:verify http://localhost:8787
 ```
 
-Tambien puedes ejecutar comandos por paquete:
+Si necesitas trabajar en un paquete de forma aislada:
 
 ```bash
 pnpm --filter frontend dev

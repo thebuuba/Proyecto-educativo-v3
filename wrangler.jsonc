@@ -8,28 +8,28 @@
     "directory": "./apps/frontend/dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": ["/api/*"],
   },
   "alias": {
     "@nestjs/microservices": "./cloudflare/optional-nest-module.ts",
     "@nestjs/microservices/microservices-module": "./cloudflare/optional-nest-module.ts",
     "@nestjs/websockets/socket-module": "./cloudflare/optional-nest-module.ts",
-    "class-transformer/storage": "./apps/backend/node_modules/class-transformer/cjs/storage.js"
+    "class-transformer/storage": "./apps/backend/node_modules/class-transformer/cjs/storage.js",
   },
   "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "aa6bc681f16b42699381fdcf0f5386b7" }],
   "observability": {
-    "enabled": true
+    "enabled": true,
   },
   "vars": {
-    "FRONTEND_URL": "https://aula-base.prroyectoeducativo00.workers.dev"
+    "FRONTEND_URL": "https://aula-base.prroyectoeducativo00.workers.dev",
   },
   "env": {
     "staging": {
       "name": "aula-base-staging",
       "vars": {
-        "FRONTEND_URL": "https://aula-base-staging.prroyectoeducativo00.workers.dev"
+        "FRONTEND_URL": "https://aula-base-staging.prroyectoeducativo00.workers.dev",
       },
-      "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "aa6bc681f16b42699381fdcf0f5386b7" }]
-    }
-  }
+      "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "d3e9516823d94f17814f3bfde2eb3b72" }],
+    },
+  },
 }
