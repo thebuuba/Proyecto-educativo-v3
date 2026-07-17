@@ -20,9 +20,15 @@
   "observability": {
     "enabled": true
   },
+  "vars": {
+    "FRONTEND_URL": "https://aula-base.prroyectoeducativo00.workers.dev"
+  },
   "env": {
     "staging": {
       "name": "aula-base-staging",
+      "vars": {
+        "FRONTEND_URL": "https://aula-base-staging.prroyectoeducativo00.workers.dev"
+      },
       "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "aa6bc681f16b42699381fdcf0f5386b7" }]
     }
   }
