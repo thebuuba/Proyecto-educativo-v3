@@ -1,14 +1,26 @@
 ﻿import { AlertCircle, BookOpen, CalendarDays } from 'lucide-react'
 
 import { useState } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Select } from '@/components/ui/Select'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
 import type { SectionSubjectOption } from '@/modules/grading/types'
-import { competencyPeriods } from '@/modules/grading/utils/competencyGrades'
+import { competencyBlocks, competencyPeriods, type CompetencyBlockId } from '@/modules/grading/utils/competencyGrades'
 
 export function GradingPage() {
+  const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const requestedSectionSubjectId = searchParams.get('sectionSubjectId') ?? undefined
+  const requestedAction = searchParams.get('action') === 'create-activity' ? 'create' : undefined
+  const requestedBlockId = getRequestedCompetencyBlockId(searchParams)
+  const returnCourseId = searchParams.get('returnCourseId')
+  const returnSubjectId = searchParams.get('returnSubjectId')
+  const returnsToSubject = searchParams.get('origin') === 'subject' && Boolean(returnCourseId && returnSubjectId)
+  const returnToSubject = returnsToSubject
+    ? () => navigate(`/cursos?${new URLSearchParams({ courseId: returnCourseId!, subjectId: returnSubjectId! }).toString()}`)
+    : undefined
   const {
     sectionSubjects,
     selectedSs,
@@ -32,7 +44,7 @@ export function GradingPage() {
     updateRecoveryScore,
     loadFinalRecords,
     getActivitiesForPeriod,
-  } = useGrading()
+  } = useGrading({ initialSectionSubjectId: requestedSectionSubjectId })
 
   const isFinalView = selectedPeriodId === 'final'
   const groupedSectionSubjects = groupSectionSubjects(sectionSubjects)
@@ -124,6 +136,10 @@ export function GradingPage() {
           saving={saving}
           cellSaveStates={cellSaveStates}
           initialView="final"
+          initialActivityAction={requestedAction}
+          initialActivityBlockId={requestedBlockId}
+          originReturnLabel={returnsToSubject ? 'Volver a la asignatura' : undefined}
+          onReturnToOrigin={returnToSubject}
           onAddActivity={addActivity}
           onUpdateActivity={updateActivity}
           onDeleteActivity={deleteActivity}
@@ -145,6 +161,10 @@ export function GradingPage() {
           courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
           saving={saving}
           cellSaveStates={cellSaveStates}
+          initialActivityAction={requestedAction}
+          initialActivityBlockId={requestedBlockId}
+          originReturnLabel={returnsToSubject ? 'Volver a la asignatura' : undefined}
+          onReturnToOrigin={returnToSubject}
           onAddActivity={addActivity}
           onUpdateActivity={updateActivity}
           onDeleteActivity={deleteActivity}
@@ -157,6 +177,11 @@ export function GradingPage() {
       )}
     </section>
   )
+}
+
+export function getRequestedCompetencyBlockId(searchParams: URLSearchParams): CompetencyBlockId | undefined {
+  const value = searchParams.get('competencyBlockId')
+  return competencyBlocks.some((block) => block.id === value) ? value as CompetencyBlockId : undefined
 }
 
 function groupSectionSubjects(items: SectionSubjectOption[]) {

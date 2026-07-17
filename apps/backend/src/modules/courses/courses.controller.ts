@@ -4,7 +4,7 @@
  * @description Expone los endpoints REST para la gestión de grados, secciones, materias
  * y la asignación de materias a secciones dentro de un colegio.
  */
-import { Controller, Get, Post, Patch, Delete, Param, Body, UseGuards } from '@nestjs/common'
+import { Controller, Get, Post, Patch, Delete, Param, Body, Query, UseGuards } from '@nestjs/common'
 import { CoursesService } from './courses.service'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
@@ -19,6 +19,7 @@ import { CreateSubjectDto } from './dto/create-subject.dto'
 import { AssignSubjectDto } from './dto/assign-subject.dto'
 import { CreateCourseTeamDto } from './dto/create-course-team.dto'
 import { UpdateCourseTeamDto } from './dto/update-course-team.dto'
+import { UpdateSectionSubjectAppearanceDto } from './dto/update-section-subject-appearance.dto'
 
 @Controller('courses')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -28,7 +29,7 @@ export class CoursesController {
   /** Obtiene los datos completos del curso: grados, secciones, asignaciones y catálogos */
   @Get('course-data')
   getCourseData(@CurrentUser() user: AuthenticatedUser) {
-    return this.coursesService.getCourseData(user.schoolId)
+    return this.coursesService.getCourseData(user.schoolId, user.id)
   }
 
   /** Obtiene los niveles académicos del sistema */
@@ -134,7 +135,7 @@ export class CoursesController {
   @Post('assign-subject')
   @Roles('admin', 'director', 'coordinator')
   assignSubject(@CurrentUser() user: AuthenticatedUser, @Body() dto: AssignSubjectDto) {
-    return this.coursesService.assignSubject(user.schoolId, dto)
+    return this.coursesService.assignSubject(user.schoolId, dto, user.id)
   }
 
   /** Obtiene todas las asignaciones materia-sección activas */
@@ -150,6 +151,17 @@ export class CoursesController {
     return this.coursesService.removeSectionSubject(user.schoolId, id)
   }
 
+  /** Actualiza exclusivamente la apariencia visual de una asignatura del curso. */
+  @Patch('section-subjects/:id/appearance')
+  @Roles('admin', 'director', 'coordinator')
+  updateSectionSubjectAppearance(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Body() dto: UpdateSectionSubjectAppearanceDto,
+  ) {
+    return this.coursesService.updateSectionSubjectAppearance(user.schoolId, id, dto)
+  }
+
   /** Restaura una asignatura previamente archivada. */
   @Patch('section-subjects/:id/restore')
   @Roles('admin', 'director', 'coordinator')
@@ -160,8 +172,12 @@ export class CoursesController {
   /** Elimina definitivamente una asignatura archivada y su historial. */
   @Delete('section-subjects/:id/permanent')
   @Roles('admin', 'director', 'coordinator')
-  permanentlyDeleteSectionSubject(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
-    return this.coursesService.permanentlyDeleteSectionSubject(user.schoolId, id)
+  permanentlyDeleteSectionSubject(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Query('confirmation') confirmation?: string,
+  ) {
+    return this.coursesService.permanentlyDeleteSectionSubject(user.schoolId, id, confirmation)
   }
 
   /** Obtiene los equipos propios de una asignatura-sección. */

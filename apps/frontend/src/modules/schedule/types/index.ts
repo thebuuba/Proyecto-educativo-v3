@@ -40,6 +40,7 @@ export type ScheduleEntry = {
   subjectName: string
   teacherName: string
   gradeName: string
+  academicLevelName: string
   sectionName: string
   timeSlotName: string
   startTime: string
@@ -111,6 +112,7 @@ export type SectionOption = {
   id: string
   name: string
   gradeName: string
+  academicLevelName: string
 }
 
 /** Opción de docente para seleccionar en formularios */

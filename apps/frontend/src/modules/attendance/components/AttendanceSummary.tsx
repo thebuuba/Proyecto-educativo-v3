@@ -8,7 +8,6 @@ import { cn } from '@/utils/cn'
 type AttendanceSummaryProps = {
   stats: MonthlyAttendanceStats
   loading: boolean
-  maxWorkedDays?: number
 }
 
 const items = [
@@ -18,7 +17,7 @@ const items = [
   { key: 'absences', label: 'Ausencias', helper: 'registradas', icon: UserX, iconClassName: 'bg-warning/14 text-warning' },
 ] as const
 
-export function AttendanceSummary({ stats, loading, maxWorkedDays = 21 }: AttendanceSummaryProps) {
+export function AttendanceSummary({ stats, loading }: AttendanceSummaryProps) {
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((item) => {
@@ -46,7 +45,7 @@ export function AttendanceSummary({ stats, loading, maxWorkedDays = 21 }: Attend
                   )}
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  {item.key === 'workedDays' ? `de ${maxWorkedDays} posibles` : item.helper}
+                  {item.key === 'workedDays' ? 'registrados' : item.helper}
                 </p>
               </div>
             </CardContent>

@@ -17,6 +17,7 @@ import {
   deactivateSection,
   deactivateSectionSubject,
   deleteSectionSubjectPermanently,
+  updateSectionSubjectAppearance,
   getCourseData,
   restoreSectionSubject,
   updateGrade,
@@ -283,9 +284,17 @@ export function useCourses() {
     [refetch],
   )
 
+  const customizeSubjectAssignment = useCallback(
+    async (id: string, input: { color: string | null; icon: string | null }) => {
+      await updateSectionSubjectAppearance(id, input)
+      await refetch(false)
+    },
+    [refetch],
+  )
+
   const permanentlyDeleteSubjectAssignment = useCallback(
-    async (id: string) => {
-      await deleteSectionSubjectPermanently(id)
+    async (id: string, confirmation?: string) => {
+      await deleteSectionSubjectPermanently(id, confirmation)
       await refetch(false)
     },
     [refetch],
@@ -309,6 +318,7 @@ export function useCourses() {
     assignSubject,
     removeSubjectAssignment,
     restoreSubjectAssignment,
+    customizeSubjectAssignment,
     permanentlyDeleteSubjectAssignment,
   }
 }

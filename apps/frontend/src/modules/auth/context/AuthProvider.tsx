@@ -21,6 +21,7 @@ import {
 } from '@/modules/auth/services/authService'
 import { ApiError } from '@/services/apiClient'
 import { supabase } from '@/modules/auth/services/supabaseClient'
+import { shouldReportBootstrapFailure } from '@/modules/auth/utils/bootstrapFailure'
 import type {
   AuthState,
   AuthUser,
@@ -173,10 +174,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
       if (!await restoreFromSupabaseSession()) {
         if (error instanceof ApiError && error.status === 401) {
           clearAuthState()
-        } else {
+        } else if (shouldReportBootstrapFailure(error)) {
           clearAuthState(
             'No se pudo cargar tu perfil. Revisa tu conexión e inténtalo de nuevo.',
           )
+        } else {
+          clearAuthState()
         }
       }
     }

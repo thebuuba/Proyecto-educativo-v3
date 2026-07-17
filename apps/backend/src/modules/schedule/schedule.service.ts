@@ -50,12 +50,13 @@ export class ScheduleService {
           prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' } }),
           prisma.grade.findMany({ where: { schoolId } }),
         ])
-        const gradeMap = new Map(grades.map((g) => [g.id, g.name]))
+        const gradeMap = new Map(grades.map((grade) => [grade.id, grade]))
         return sections.map((s) => ({
           id: s.id,
           name: s.name,
           gradeId: s.gradeId,
-          gradeName: gradeMap.get(s.gradeId) ?? '',
+          gradeName: gradeMap.get(s.gradeId)?.name ?? '',
+          academicLevelName: gradeMap.get(s.gradeId)?.level ?? '',
         }))
       },
     )
@@ -376,6 +377,7 @@ export class ScheduleService {
         subjectName: subject?.name ?? '',
         teacherName: teacher ? `${teacher.firstName} ${teacher.lastName}` : '',
         gradeName: grade?.name ?? '',
+        academicLevelName: grade?.level ?? '',
         sectionName: section?.name ?? '',
         timeSlotName: slot?.name ?? '',
         startTime: slot ? formatTime(slot.startTime) : '',

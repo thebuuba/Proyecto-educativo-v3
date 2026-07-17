@@ -48,7 +48,8 @@ function periodIdForIndex(index: number): CompetencyPeriodId {
   return period && period.id !== 'final' ? period.id : 'p1'
 }
 
-export function useGrading() {
+export function useGrading(options: { initialSectionSubjectId?: string } = {}) {
+  const initialSectionSubjectId = options.initialSectionSubjectId
   const [sectionSubjects, setSectionSubjects] = useState<SectionSubjectOption[]>([])
   const [academicPeriods, setAcademicPeriods] = useState<AcademicPeriodOpt[]>([])
   const [selectedSsId, setSelectedSsIdState] = useState('')
@@ -106,7 +107,10 @@ export function useGrading() {
     setLoading(true)
     setError(null)
     try {
-      const workspace = await getGradingWorkspace()
+      const workspace = await getGradingWorkspace({
+        ...(initialSectionSubjectId ? { sectionSubjectId: initialSectionSubjectId } : {}),
+        includeOptions: true,
+      })
       if (requestId !== workspaceRequestRef.current) return
       const periodIndex = workspace.academicPeriods.findIndex(
         (period) => period.id === workspace.selectedAcademicPeriodId,
@@ -123,7 +127,7 @@ export function useGrading() {
     } finally {
       if (requestId === workspaceRequestRef.current) setLoading(false)
     }
-  }, [applyWorkspace])
+  }, [applyWorkspace, initialSectionSubjectId])
 
   useEffect(() => {
     void loadInitialData()
@@ -247,8 +251,8 @@ export function useGrading() {
     [activities, activitiesByPeriod, selectedPeriodId],
   )
 
-  async function addActivity(activity: Omit<GradingActivity, 'id'>) {
-    if (!selectedSsId || !academicPeriodId || !gradingContext) return
+  async function addActivity(activity: Omit<GradingActivity, 'id'>): Promise<GradingActivity> {
+    if (!selectedSsId || !academicPeriodId || !gradingContext) throw new Error('No hay un curso y período académico activos.')
     setSaving(true)
     setError(null)
     try {
@@ -264,6 +268,7 @@ export function useGrading() {
         return updated
       })
       invalidateAnnualCache()
+      return created
     } catch (saveError) {
       setError(saveError instanceof Error ? saveError.message : 'No se pudo crear la actividad.')
       throw saveError
@@ -272,8 +277,8 @@ export function useGrading() {
     }
   }
 
-  async function updateActivity(activity: GradingActivity) {
-    if (!selectedSsId || !academicPeriodId || !gradingContext) return
+  async function updateActivity(activity: GradingActivity): Promise<GradingActivity> {
+    if (!selectedSsId || !academicPeriodId || !gradingContext) throw new Error('No hay un curso y período académico activos.')
     setSaving(true)
     setError(null)
     try {
@@ -289,6 +294,7 @@ export function useGrading() {
         return updated
       })
       invalidateAnnualCache()
+      return saved
     } catch (saveError) {
       setError(saveError instanceof Error ? saveError.message : 'No se pudo actualizar la actividad.')
       throw saveError

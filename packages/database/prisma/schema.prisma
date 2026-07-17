@@ -464,6 +464,8 @@ model SectionSubject {
   sectionId    String       @map("section_id") @db.Uuid
   subjectId    String       @map("subject_id") @db.Uuid
   teacherId    String?      @map("teacher_id") @db.Uuid
+  appearanceColor String?   @map("appearance_color")
+  appearanceIcon  String?   @map("appearance_icon")
   status       RecordStatus @default(ACTIVE)
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")

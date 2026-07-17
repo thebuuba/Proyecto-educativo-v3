@@ -23,6 +23,7 @@ type AssignedEntry = {
   scheduleEntryId: string
   subjectName: string
   gradeName: string
+  academicLevelName: string
   sectionName: string
   teacherName: string
   startTime: string
@@ -35,6 +36,7 @@ type SectionSubjectOption = {
   label: string
   subjectName: string
   gradeName: string
+  academicLevelName: string
   sectionName: string
   teacherName: string
 }
@@ -96,6 +98,7 @@ export function ScheduleWeekGrid({
         scheduleEntryId: e.id,
         subjectName: e.subjectName,
         gradeName: e.gradeName,
+        academicLevelName: e.academicLevelName,
         sectionName: e.sectionName,
         teacherName: e.teacherName,
         startTime: e.startTime,
@@ -283,7 +286,7 @@ export function ScheduleWeekGrid({
                                 </button>
                               </div>
                               <span className="text-[11px] opacity-75">
-                                {assigned.gradeName} {assigned.sectionName}
+                                {assigned.academicLevelName} · {assigned.gradeName} {assigned.sectionName}
                               </span>
                               <span className="text-[11px] opacity-60">
                                 {formatTime(block.start)} – {formatTime(block.end)}
@@ -381,7 +384,7 @@ export function ScheduleWeekGrid({
                                             {ss.subjectName}
                                           </span>
                                           <span className="block text-xs text-muted-foreground">
-                                            {ss.gradeName} {ss.sectionName} · {ss.teacherName}
+                                            {ss.academicLevelName} · {ss.gradeName} {ss.sectionName} · {ss.teacherName}
                                           </span>
                                         </div>
                                       </button>

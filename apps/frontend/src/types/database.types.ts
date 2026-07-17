@@ -2073,6 +2073,8 @@ export type Database = {
       }
       section_subjects: {
         Row: {
+          appearance_color: string | null
+          appearance_icon: string | null
           created_at: string
           grade_id: string
           id: string
@@ -2085,6 +2087,8 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          appearance_color?: string | null
+          appearance_icon?: string | null
           created_at?: string
           grade_id: string
           id?: string
@@ -2097,6 +2101,8 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          appearance_color?: string | null
+          appearance_icon?: string | null
           created_at?: string
           grade_id?: string
           id?: string

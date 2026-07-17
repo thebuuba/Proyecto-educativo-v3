@@ -158,8 +158,12 @@ type GradingBookProps = {
   saving: boolean
   cellSaveStates: Record<string, GradeCellSaveState>
   initialView?: MainView
-  onAddActivity: (activity: Omit<GradingActivity, 'id'>) => void
-  onUpdateActivity: (activity: GradingActivity) => void
+  initialActivityAction?: 'create'
+  initialActivityBlockId?: CompetencyBlockId
+  originReturnLabel?: string
+  onReturnToOrigin?: () => void
+  onAddActivity: (activity: Omit<GradingActivity, 'id'>) => Promise<GradingActivity>
+  onUpdateActivity: (activity: GradingActivity) => Promise<GradingActivity>
   onDeleteActivity: (activityId: string) => void
   onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
   onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => void
@@ -182,6 +186,10 @@ type DetailView =
   | { type: 'activity-hub' }
   | { type: 'activity-drafts'; initialBlock?: 'all' | CompetencyBlockId; returnTo?: DraftsReturnView }
   | { type: 'activity-create'; blockId: CompetencyBlockId }
+
+type ActivitySaveCompletion =
+  | { kind: 'created'; activity: GradingActivity; updated: boolean }
+  | { kind: 'draft'; blockId: CompetencyBlockId; activityName: string }
 
 const blockAccents = [
   {
@@ -334,6 +342,10 @@ export function GradingBook({
   courseTitle,
   saving,
   initialView = 'blocks',
+  initialActivityAction,
+  initialActivityBlockId,
+  originReturnLabel,
+  onReturnToOrigin,
   onAddActivity,
   onUpdateActivity,
   onDeleteActivity,
@@ -342,13 +354,20 @@ export function GradingBook({
   getActivitiesForPeriod,
   onActivityWorkspaceChange,
 }: GradingBookProps) {
+  const initialLaunchKey = initialActivityAction === 'create'
+    ? `create:${initialActivityBlockId ?? 'select-block'}`
+    : null
   const [mainView, setMainView] = useState<MainView>(initialView)
-  const [detailView, setDetailView] = useState<DetailView | null>(null)
-  const [activityCreateReturnView, setActivityCreateReturnView] = useState<DetailView | null>(null)
+  const [detailView, setDetailView] = useState<DetailView | null>(() => initialActivityAction === 'create'
+    ? initialActivityBlockId
+      ? { type: 'activity-create', blockId: initialActivityBlockId }
+      : { type: 'activity-hub' }
+    : null)
+  const [activityCreateReturnView, setActivityCreateReturnView] = useState<DetailView | null>(() => initialActivityBlockId ? { type: 'activity-hub' } : null)
   const [showConfig, setShowConfig] = useState(false)
   const [infoActivity, setInfoActivity] = useState<GradingActivity | null>(null)
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null)
-  const [activityDraft, setActivityDraft] = useState(emptyActivityDraft)
+  const [activityDraft, setActivityDraft] = useState(() => initialActivityBlockId ? newActivityDraft(initialActivityBlockId) : emptyActivityDraft)
   const [activityDrafts, setActivityDrafts] = useState<ActivityDraftsByBlock>({})
   const [draftsReadyKey, setDraftsReadyKey] = useState<string | null>(null)
   const [config, setConfig] = useState<GradeCalculationConfig>(defaultGradeCalculationConfig)
@@ -356,11 +375,30 @@ export function GradingBook({
   const [loadingAnnual, setLoadingAnnual] = useState(false)
   const [annualError, setAnnualError] = useState<string | null>(null)
   const [annualRetryKey, setAnnualRetryKey] = useState(0)
+  const [activitySaveCompletion, setActivitySaveCompletion] = useState<ActivitySaveCompletion | null>(null)
+  const handledInitialLaunch = useRef(initialLaunchKey)
+  const previousInitialView = useRef(initialView)
 
   useEffect(() => {
+    if (previousInitialView.current === initialView) return
+    previousInitialView.current = initialView
     setMainView(initialView)
     setDetailView(null)
   }, [initialView])
+
+  useEffect(() => {
+    if (!initialLaunchKey || handledInitialLaunch.current === initialLaunchKey) return
+    handledInitialLaunch.current = initialLaunchKey
+    setMainView('blocks')
+    if (initialActivityBlockId) {
+      setEditingActivityId(null)
+      setActivityDraft(newActivityDraft(initialActivityBlockId))
+      setActivityCreateReturnView({ type: 'activity-hub' })
+      setDetailView({ type: 'activity-create', blockId: initialActivityBlockId })
+      return
+    }
+    setDetailView({ type: 'activity-hub' })
+  }, [initialActivityBlockId, initialLaunchKey])
 
   const selectedBlock = detailView?.type === 'block'
     ? competencyBlocks.find((block) => block.id === detailView.blockId) ?? null
@@ -600,7 +638,7 @@ export function GradingBook({
     })
   }
 
-  function saveActivityDraft() {
+  async function saveActivityDraft() {
     const maxScore = Number(activityDraft.maxScore)
     if (validateActivityCompletion(activityDraft).length > 0 || Number.isNaN(maxScore) || maxScore <= 0) return
     const activityType = activityDraft.activityType as Exclude<ActivityDraft['activityType'], ''>
@@ -622,15 +660,18 @@ export function GradingBook({
       activityType,
     }
 
-    if (editingActivityId) {
-      onUpdateActivity({ ...activity, id: editingActivityId })
+    try {
+      const updated = Boolean(editingActivityId)
+      const saved = editingActivityId
+        ? await onUpdateActivity({ ...activity, id: editingActivityId })
+        : await onAddActivity(activity)
+      if (!editingActivityId) discardActivityDraft(activity.competencyBlockId as CompetencyBlockId, activityDraft.draftId)
       setEditingActivityId(null)
-    } else {
-      onAddActivity(activity)
-      discardActivityDraft(activity.competencyBlockId as CompetencyBlockId, activityDraft.draftId)
+      setActivityDraft(emptyActivityDraft)
+      setActivitySaveCompletion({ kind: 'created', activity: saved, updated })
+    } catch {
+      // useGrading exposes the persistence error without abandoning the editor.
     }
-    setActivityDraft(emptyActivityDraft)
-    setDetailView({ type: 'block', blockId: activity.competencyBlockId as CompetencyBlockId })
   }
 
   function editActivity(activity: GradingActivity) {
@@ -831,6 +872,11 @@ export function GradingBook({
             onDuplicateActivity={duplicateActivity}
             onEditActivity={editActivity}
             onSaveActivity={saveActivityDraft}
+            onSaveDraft={() => setActivitySaveCompletion({
+              kind: 'draft',
+              blockId: selectedCreateBlock.id,
+              activityName: activityDraft.name.trim() || 'Actividad sin título',
+            })}
             saving={saving}
           />
         ) : selectedActivity ? (
@@ -892,7 +938,92 @@ export function GradingBook({
       {infoActivity ? (
         <ActivityInfoModal activity={infoActivity} onClose={() => setInfoActivity(null)} />
       ) : null}
+      {activitySaveCompletion ? (
+        <ActivitySavedDialog
+          completion={activitySaveCompletion}
+          returnLabel={originReturnLabel ?? (activitySaveCompletion.kind === 'created' ? 'Volver al bloque' : 'Salir a actividades')}
+          onClose={() => {
+            setActivitySaveCompletion(null)
+            if (activitySaveCompletion.kind === 'created') {
+              setDetailView({ type: 'block', blockId: activitySaveCompletion.activity.competencyBlockId as CompetencyBlockId, initialTab: 'activities' })
+            }
+          }}
+          onCreateAnother={() => {
+            setActivitySaveCompletion(null)
+            openActivityHub()
+          }}
+          onGrade={activitySaveCompletion.kind === 'created' ? () => {
+            setActivitySaveCompletion(null)
+            setDetailView({ type: 'activity', activityId: activitySaveCompletion.activity.id, initialTab: 'evaluation' })
+          } : undefined}
+          onReturn={() => {
+            if (onReturnToOrigin) {
+              onReturnToOrigin()
+              return
+            }
+            setActivitySaveCompletion(null)
+            setDetailView(activitySaveCompletion.kind === 'created'
+              ? { type: 'block', blockId: activitySaveCompletion.activity.competencyBlockId as CompetencyBlockId, initialTab: 'activities' }
+              : { type: 'activity-hub' })
+          }}
+          onView={() => {
+            setActivitySaveCompletion(null)
+            if (activitySaveCompletion.kind === 'created') {
+              setDetailView({ type: 'activity', activityId: activitySaveCompletion.activity.id, initialTab: 'details' })
+            } else {
+              setDetailView({ type: 'activity-drafts', initialBlock: activitySaveCompletion.blockId, returnTo: { type: 'activity-hub' } })
+            }
+          }}
+        />
+      ) : null}
     </div>
+  )
+}
+
+export function ActivitySavedDialog({ completion, returnLabel, onClose, onCreateAnother, onGrade, onReturn, onView }: {
+  completion: ActivitySaveCompletion
+  returnLabel: string
+  onClose: () => void
+  onCreateAnother: () => void
+  onGrade?: () => void
+  onReturn: () => void
+  onView: () => void
+}) {
+  const created = completion.kind === 'created'
+  const title = created
+    ? completion.updated ? 'Actividad actualizada' : 'Actividad creada correctamente'
+    : 'Borrador guardado'
+  const activityName = created ? completion.activity.name : completion.activityName
+
+  return (
+    <Modal title={title} onClose={onClose} className="max-w-2xl rounded-2xl" hideHeader>
+      <div className="p-6 sm:p-7">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-start gap-4">
+            <span className={cn('flex size-14 shrink-0 items-center justify-center rounded-2xl', created ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700')}>
+              {created ? <CheckCircle2 className="size-7" /> : <ClipboardList className="size-7" />}
+            </span>
+            <div>
+              <h3 className="text-xl font-black text-foreground">{title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{created ? 'La actividad y su instrumento ya están disponibles en Evaluación.' : 'Tu progreso se conservó y podrás completar la actividad más adelante.'}</p>
+            </div>
+          </div>
+          <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
+        </div>
+
+        <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+          <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">Actividad</p>
+          <p className="mt-1 font-extrabold text-foreground">{activityName}</p>
+        </div>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {created && onGrade ? <Button className="h-12 justify-center" onClick={onGrade}><GraduationCap className="size-5" /> Calificar ahora</Button> : null}
+          <Button variant="outline" className="h-12 justify-center" onClick={onReturn}><ArrowLeft className="size-5" /> {returnLabel}</Button>
+          <Button variant="outline" className="h-12 justify-center" onClick={onView}><Eye className="size-5" /> {created ? 'Ver actividad' : 'Ver borradores'}</Button>
+          <Button variant="ghost" className="h-12 justify-center text-primary" onClick={onCreateAnother}><Plus className="size-5" /> Crear otra actividad</Button>
+        </div>
+      </div>
+    </Modal>
   )
 }
 
@@ -3367,10 +3498,11 @@ function ActivityCreationView(props: {
   onDeleteActivity: (activityId: string) => void
   onDuplicateActivity: (activity: GradingActivity) => void
   onEditActivity: (activity: GradingActivity) => void
-  onSaveActivity: () => void
+  onSaveActivity: () => void | Promise<void>
+  onSaveDraft: () => void
   saving: boolean
 }) {
-  const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, saving } = props
+  const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving } = props
   const [stage, setStage] = useState<ActivityCreationStage>('activity')
   const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
   const { clearHighlight, highlightTarget, showHighlight } = useTransientActivityHighlight()
@@ -3432,7 +3564,7 @@ function ActivityCreationView(props: {
         : 'Guardar actividad'
 
   return (
-    <section className="space-y-4">
+    <section className="space-y-4" data-competency-block-id={block.id}>
       <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
         <button type="button" className="font-medium text-primary hover:underline" onClick={onBack}>Calificaciones</button>
         <span>›</span><span>{block.shortName}</span><span>›</span>
@@ -3532,7 +3664,7 @@ function ActivityCreationView(props: {
           onClose={() => setCompletionIssues([])}
           onDelete={onBack}
           onSelectIssue={goToIssue}
-          onSaveDraft={onBack}
+          onSaveDraft={() => { setCompletionIssues([]); onSaveDraft() }}
         />
       ) : null}
     </section>

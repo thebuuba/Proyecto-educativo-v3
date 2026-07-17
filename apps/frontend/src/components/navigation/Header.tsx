@@ -50,6 +50,8 @@ export function Header({ onOpenSidebar }: HeaderProps) {
   const isPlanningPage = location.pathname.startsWith('/planificaciones')
   const isGradingPage = location.pathname.startsWith('/calificaciones')
   const isCoursesPage = location.pathname === '/cursos'
+  const courseParams = new URLSearchParams(location.search)
+  const isCourseSubjectDetail = isCoursesPage && courseParams.has('courseId') && courseParams.has('subjectId')
 
   useEffect(() => {
     const focusSearch = (event: KeyboardEvent) => {
@@ -135,7 +137,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-20 border-b border-border bg-card/85 backdrop-blur">
-      <div className="flex h-[74px] items-center gap-4 px-4 sm:px-6 lg:px-8">
+      <div className={isCourseSubjectDetail ? 'flex h-[76px] items-center gap-3 px-4 sm:px-5 lg:px-6' : 'flex h-[74px] items-center gap-4 px-4 sm:px-6 lg:px-8'}>
         <Button
           variant="ghost"
           size="icon"
@@ -148,12 +150,12 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
         {isGradingPage || isCoursesPage ? (
           <>
-            <div className="hidden min-w-0 shrink-0 md:block">
+            {isCourseSubjectDetail ? <div id="course-subject-header-slot" className="flex min-w-0 flex-1 self-stretch items-center" /> : <div className="hidden min-w-0 shrink-0 md:block">
               <h1 className={isCoursesPage ? 'text-2xl font-extrabold leading-none text-foreground' : 'text-3xl font-bold leading-none text-primary'}>
                 {isCoursesPage ? 'Mis cursos' : 'Calificaciones'}
               </h1>
-            </div>
-            <label
+            </div>}
+            {!isCourseSubjectDetail ? <label
               htmlFor="global-header-search"
               className="hidden h-11 min-w-[22rem] max-w-[680px] flex-1 items-center gap-3 rounded-xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
             >
@@ -162,13 +164,13 @@ export function Header({ onOpenSidebar }: HeaderProps) {
                 ref={searchRef}
                 id="global-header-search"
                 type="search"
-                placeholder={isCoursesPage ? 'Buscar cursos, grados, secciones, asignaturas...' : 'Buscar estudiantes, cursos, actividades...'}
+                placeholder={isCoursesPage ? 'Buscar por asignatura, grado, sección, ciclo o nivel...' : 'Buscar estudiantes, cursos, actividades...'}
                 className="min-w-0 flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
                 aria-label={isCoursesPage ? 'Buscar cursos' : 'Buscar estudiantes, cursos, actividades'}
                 onChange={isCoursesPage ? (event) => window.dispatchEvent(new CustomEvent('courses:search', { detail: event.target.value })) : undefined}
               />
               {isCoursesPage ? <kbd className="rounded-md border border-border bg-muted/50 px-2 py-1 text-[10px] font-bold text-muted-foreground">Ctrl + K</kbd> : null}
-            </label>
+            </label> : null}
           </>
         ) : (
           <label
@@ -187,7 +189,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
           </label>
         )}
 
-        <div className="ml-auto flex items-center gap-4">
+        <div className={isCourseSubjectDetail ? 'hidden' : 'ml-auto flex items-center gap-4'}>
           {!isPlanningPage ? (
             <button
               type="button"
@@ -199,15 +201,15 @@ export function Header({ onOpenSidebar }: HeaderProps) {
             </button>
           ) : null}
 
-          <button
+          {!isCourseSubjectDetail ? <button
             type="button"
             className="hidden size-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-muted sm:flex"
             aria-label="Ayuda"
           >
             <CircleHelp className="size-5" />
-          </button>
+          </button> : null}
 
-          <span className="hidden h-10 w-px bg-border md:block" aria-hidden="true" />
+          {!isCourseSubjectDetail ? <span className="hidden h-10 w-px bg-border md:block" aria-hidden="true" /> : null}
 
           <div ref={profileRef} className="relative">
             <button

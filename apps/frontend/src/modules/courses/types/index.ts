@@ -97,12 +97,16 @@ export type SectionSubjectAssignment = {
   subjectName: string
   teacherId: string | null
   teacherName: string | null
+  appearanceColor: string | null
+  appearanceIcon: string | null
   teamCount: number
   activityCount: number
   lastAttendanceDate: string | null
   averageScore: number | null
   lastPlanningDate: string | null
   lastPlanningTitle: string | null
+  relatedDataCount: number
+  canDelete: boolean
   status: RecordStatus
 }
 

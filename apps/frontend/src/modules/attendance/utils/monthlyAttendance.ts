@@ -21,7 +21,6 @@ export const schoolYearMonths = [
 ]
 
 export const markCycle: MonthlyAttendanceMark[] = [null, 'P', 'A', 'E', 'R']
-export const maxMonthlyClassPositions = 21
 
 export const markLabels: Record<Exclude<MonthlyAttendanceMark, null>, string> = {
   P: 'Presente',
@@ -51,7 +50,7 @@ export function getWorkedDaysForMonth(input: {
 }) {
   const monthIndex = Number(input.month) - 1
   const lastDay = new Date(input.year, monthIndex + 1, 0).getDate()
-  const weekdays = input.classWeekdays.length > 0 ? input.classWeekdays : [1, 2, 3, 4, 5]
+  const weekdays = input.classWeekdays
   const days: Array<{ day: number; date: string; weekday: number }> = []
 
   for (let day = 1; day <= lastDay; day++) {
@@ -62,7 +61,7 @@ export function getWorkedDaysForMonth(input: {
     }
   }
 
-  return days.slice(0, maxMonthlyClassPositions)
+  return days
 }
 
 export function statusToMark(status: AttendanceStatus | null, notes?: string | null): MonthlyAttendanceMark {
@@ -101,6 +100,12 @@ export function buildMonthlyRows(input: {
   workedDays: Array<{ date: string }>
   attendanceByDate: Map<string, Map<string, MonthlyAttendanceCell>>
 }) {
+  const recordedDates = new Set(
+    Array.from(input.attendanceByDate.entries())
+      .filter(([, attendance]) => attendance.size > 0)
+      .map(([date]) => date),
+  )
+
   return sortStudentsForRoster(input.students).map<MonthlyStudentAttendanceRow>((student, index) => {
     const cells: Record<string, MonthlyAttendanceCell> = {}
     let presentTotal = 0
@@ -120,8 +125,8 @@ export function buildMonthlyRows(input: {
       listNumber: student.listNumber ?? index + 1,
       cells,
       presentTotal,
-      attendancePercentage: input.workedDays.length > 0
-        ? (presentTotal / input.workedDays.length) * 100
+      attendancePercentage: recordedDates.size > 0
+        ? (presentTotal / recordedDates.size) * 100
         : null,
     }
   })

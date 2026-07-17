@@ -1,5 +1,6 @@
-import { AlertCircle, CalendarCheck, RefreshCw } from 'lucide-react'
-import { useMemo } from 'react'
+import { AlertCircle, ArrowLeft, CalendarCheck, RefreshCw } from 'lucide-react'
+import { useEffect, useMemo } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { Select } from '@/components/ui/Select'
@@ -8,7 +9,6 @@ import { AttendanceSummary } from '@/modules/attendance/components/AttendanceSum
 import { useAttendance } from '@/modules/attendance/hooks/useAttendance'
 import {
   getCalendarYearForSchoolMonth,
-  maxMonthlyClassPositions,
   schoolYearMonths,
 } from '@/modules/attendance/utils/monthlyAttendance'
 import type { EnrollmentCourse } from '@/modules/students/types'
@@ -19,6 +19,8 @@ type CourseGroup = {
 }
 
 export function AttendancePage() {
+  const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const {
     courses,
     selectedCourse,
@@ -38,11 +40,43 @@ export function AttendancePage() {
   const groupedCourses = useMemo(() => groupCoursesForSelect(courses), [courses])
   const selectedMonthInfo = schoolYearMonths.find((month) => month.value === selectedMonth) ?? schoolYearMonths[0]
   const selectedYear = getCalendarYearForSchoolMonth(selectedMonth, selectedCourse?.schoolYearName)
+  const requestedCourseId = searchParams.get('sectionSubjectId')
+  const returnCourseId = searchParams.get('returnCourseId')
+  const returnSubjectId = searchParams.get('returnSubjectId')
+  const returnsToSubject = searchParams.get('origin') === 'subject'
+    && Boolean(returnCourseId && returnSubjectId)
+
+  useEffect(() => {
+    if (
+      requestedCourseId
+      && requestedCourseId !== selectedCourseId
+      && courses.some((course) => course.id === requestedCourseId)
+    ) {
+      setSelectedCourseId(requestedCourseId)
+    }
+  }, [courses, requestedCourseId, selectedCourseId, setSelectedCourseId])
+
+  const returnToSubject = () => {
+    if (!returnCourseId || !returnSubjectId) return
+    navigate(`/cursos?${new URLSearchParams({
+      courseId: returnCourseId,
+      subjectId: returnSubjectId,
+    }).toString()}`)
+  }
 
   return (
     <section className="w-full min-w-0">
       <div className="mb-6 space-y-5">
         <div className="flex flex-col gap-3">
+          {returnsToSubject ? (
+            <button
+              type="button"
+              onClick={returnToSubject}
+              className="inline-flex w-fit items-center gap-2 text-sm font-extrabold text-primary transition hover:opacity-75"
+            >
+              <ArrowLeft className="size-4" /> Volver a la asignatura
+            </button>
+          ) : null}
           <div>
             <h1 className="text-3xl font-bold leading-none text-primary sm:text-4xl">
               Asistencia
@@ -129,7 +163,7 @@ export function AttendancePage() {
           </div>
         ) : null}
 
-        <AttendanceSummary stats={monthlyStats} loading={loading} maxWorkedDays={maxMonthlyClassPositions} />
+        <AttendanceSummary stats={monthlyStats} loading={loading} />
 
         {error ? (
           <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">

@@ -4,7 +4,8 @@ export const optionCache = new TtlMemoryCache()
 
 export const optionCacheKeys = {
   courses: {
-    courseData: (schoolId: string) => `courses:course-data:${schoolId}`,
+    courseData: (schoolId: string, appUserId?: string) => `courses:course-data:${schoolId}${appUserId ? `:${appUserId}` : ''}`,
+    courseDataPrefix: (schoolId: string) => `courses:course-data:${schoolId}`,
   },
   students: {
     enrollmentCourses: (schoolId: string) => `students:enrollment-courses:${schoolId}`,
@@ -29,7 +30,7 @@ export const optionCacheKeys = {
 
 /** Invalida catálogos propios y consumidores luego de cambiar cursos. */
 export function invalidateCourseOptions(schoolId: string) {
-  optionCache.invalidate(optionCacheKeys.courses.courseData(schoolId))
+  optionCache.invalidatePrefix(optionCacheKeys.courses.courseDataPrefix(schoolId))
   optionCache.invalidate(optionCacheKeys.students.enrollmentCourses(schoolId))
   optionCache.invalidate(optionCacheKeys.grading.sectionSubjects(schoolId))
   optionCache.invalidate(optionCacheKeys.schedule.sections(schoolId))
@@ -52,12 +53,12 @@ export function invalidateImplicitSchoolYearOptions(schoolId: string) {
 
 /** Invalida también el curso agregado cuando el cambio vino de administración. */
 export function invalidateSchoolYearOptions(schoolId: string) {
-  optionCache.invalidate(optionCacheKeys.courses.courseData(schoolId))
+  optionCache.invalidatePrefix(optionCacheKeys.courses.courseDataPrefix(schoolId))
   invalidateImplicitSchoolYearOptions(schoolId)
 }
 
 /** Invalida conteos y listas derivadas de matrículas. */
 export function invalidateEnrollmentOptions(schoolId: string) {
-  optionCache.invalidate(optionCacheKeys.courses.courseData(schoolId))
+  optionCache.invalidatePrefix(optionCacheKeys.courses.courseDataPrefix(schoolId))
   optionCache.invalidate(optionCacheKeys.students.enrollmentCourses(schoolId))
 }
