@@ -1,10 +1,10 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import type { ComponentProps } from 'react'
+import { StrictMode, type ComponentProps } from 'react'
 import { describe, expect, it, vi } from 'vitest'
 
 import type { GradingActivity, StudentGradeRow } from '@/modules/grading/types'
-import { GradingBook } from './GradingBook'
+import { ActivitySavedDialog, GradingBook } from './GradingBook'
 
 const students: StudentGradeRow[] = [
   {
@@ -28,7 +28,7 @@ const activities: GradingActivity[] = [
   },
 ]
 
-function renderBook(overrides: Partial<ComponentProps<typeof GradingBook>> = {}) {
+function renderBook(overrides: Partial<ComponentProps<typeof GradingBook>> = {}, options?: { strict?: boolean }) {
   const props: ComponentProps<typeof GradingBook> = {
     students,
     activities,
@@ -49,10 +49,65 @@ function renderBook(overrides: Partial<ComponentProps<typeof GradingBook>> = {})
     getActivitiesForPeriod: vi.fn().mockReturnValue([]),
     ...overrides,
   }
-  return render(<GradingBook {...props} />)
+  const book = <GradingBook {...props} />
+  return render(options?.strict ? <StrictMode>{book}</StrictMode> : book)
 }
 
 describe('GradingBook', () => {
+  it('ofrece acciones contextuales después de crear una actividad', async () => {
+    const user = userEvent.setup()
+    const onGrade = vi.fn()
+    const onReturn = vi.fn()
+    const onView = vi.fn()
+    const onCreateAnother = vi.fn()
+    render(
+      <ActivitySavedDialog
+        completion={{ kind: 'created', activity: activities[0], updated: false }}
+        returnLabel="Volver a la asignatura"
+        onClose={vi.fn()}
+        onCreateAnother={onCreateAnother}
+        onGrade={onGrade}
+        onReturn={onReturn}
+        onView={onView}
+      />,
+    )
+
+    await user.click(screen.getByRole('button', { name: 'Calificar ahora' }))
+    await user.click(screen.getByRole('button', { name: 'Volver a la asignatura' }))
+    await user.click(screen.getByRole('button', { name: 'Ver actividad' }))
+    await user.click(screen.getByRole('button', { name: 'Crear otra actividad' }))
+
+    expect(onGrade).toHaveBeenCalledOnce()
+    expect(onReturn).toHaveBeenCalledOnce()
+    expect(onView).toHaveBeenCalledOnce()
+    expect(onCreateAnother).toHaveBeenCalledOnce()
+  })
+
+  it('abre el selector de bloque cuando llega desde el acceso Nueva actividad', () => {
+    renderBook({ initialActivityAction: 'create' })
+
+    expect(screen.getByRole('heading', { name: 'Actividades' })).toBeInTheDocument()
+    expect(screen.getByText('Elige el bloque de competencias para tu nueva actividad.')).toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: 'Crear actividad' })).toHaveLength(4)
+  })
+
+  it('abre directamente el creador cuando el acceso ya incluye un bloque', () => {
+    const { container } = renderBook({ initialActivityAction: 'create', initialActivityBlockId: 'b3' }, { strict: true })
+
+    expect(screen.getByRole('heading', { name: 'Crear actividad' })).toBeInTheDocument()
+    expect(container.querySelector('[data-competency-block-id="b3"]')).toBeInTheDocument()
+    expect(screen.getAllByText('Ética y Ciudadana y Desarrollo Personal y Espiritual')).toHaveLength(2)
+    expect(screen.queryByText('Elige el bloque de competencias para tu nueva actividad.')).not.toBeInTheDocument()
+  })
+
+  it('mantiene el Bloque 4 sin sustituirlo por el Bloque 2', () => {
+    const { container } = renderBook({ initialActivityAction: 'create', initialActivityBlockId: 'b4' }, { strict: true })
+
+    expect(container.querySelector('[data-competency-block-id="b4"]')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Científica y Tecnológica y Ambiental y de la Salud' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas' })).not.toBeInTheDocument()
+  })
+
   it('convierte todos los tabs del bloque y de la actividad en vistas navegables', async () => {
     const user = userEvent.setup()
     renderBook()

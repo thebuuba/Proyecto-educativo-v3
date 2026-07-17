@@ -35,6 +35,7 @@ type SectionSubjectOption = {
   label: string
   subjectName: string
   gradeName: string
+  academicLevelName: string
   sectionName: string
   teacherName: string
 }
@@ -183,9 +184,10 @@ export function SchedulePage() {
           return subjects.map((s: ApiSectionSubject) => ({
             id: s.id,
             sectionId: section.id,
-            label: `${section.gradeName} ${section.name} - ${s.subjectName}`,
+            label: `${section.academicLevelName} · ${section.gradeName} ${section.name} - ${s.subjectName}`,
             subjectName: s.subjectName,
             gradeName: section.gradeName,
+            academicLevelName: section.academicLevelName,
             sectionName: section.name,
             teacherName: s.teacherName,
           }))

@@ -92,14 +92,28 @@ export async function deactivateSectionSubject(id: string): Promise<void> {
   })
 }
 
+export async function updateSectionSubjectAppearance(
+  id: string,
+  input: { color: string | null; icon: string | null },
+): Promise<void> {
+  await api.patch(`/courses/section-subjects/${id}/appearance`, input, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions],
+  })
+}
+
 /** Restaura una asignatura archivada dentro del curso. */
 export async function restoreSectionSubject(id: string): Promise<void> {
-  await api.patch(`/courses/section-subjects/${id}/restore`, {})
+  await api.patch(`/courses/section-subjects/${id}/restore`, {}, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 /** Elimina definitivamente una asignatura archivada y todo su historial asociado. */
-export async function deleteSectionSubjectPermanently(id: string): Promise<void> {
-  await api.delete(`/courses/section-subjects/${id}/permanent`)
+export async function deleteSectionSubjectPermanently(id: string, confirmation?: string): Promise<void> {
+  const query = confirmation ? `?confirmation=${encodeURIComponent(confirmation)}` : ''
+  await api.delete(`/courses/section-subjects/${id}/permanent${query}`, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
 }
 
 export async function getCourseTeams(sectionSubjectId: string): Promise<CourseTeam[]> {

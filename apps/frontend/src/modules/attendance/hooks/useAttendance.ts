@@ -98,9 +98,13 @@ export function useAttendance() {
     () => buildMonthlyRows({ students, workedDays, attendanceByDate }),
     [attendanceByDate, students, workedDays],
   )
+  const recordedDays = useMemo(
+    () => Array.from(attendanceByDate.values()).filter((attendance) => attendance.size > 0).length,
+    [attendanceByDate],
+  )
   const monthlyStats = useMemo(
-    () => computeMonthlyStats(monthlyRows, workedDays.length),
-    [monthlyRows, workedDays.length],
+    () => computeMonthlyStats(monthlyRows, recordedDays),
+    [monthlyRows, recordedDays],
   )
   const stats = useMemo(() => computeAttendanceStats(students), [students])
 
@@ -157,20 +161,19 @@ export function useAttendance() {
         getStudentsBySection(selectedCourse.sectionId, selectedCourse.schoolYearId),
         getScheduleEntries({
           sectionId: selectedCourse.sectionId,
+          sectionSubjectId: selectedCourse.id,
           schoolYearId: selectedCourse.schoolYearId,
         }),
       ])
-      const courseEntries = scheduleEntries.filter(
-        (entry) => entry.sectionSubjectId === selectedCourse.id,
-      )
-      const weekdays = Array.from(new Set(courseEntries.map((entry) => entry.dayOfWeek)))
-      const fallbackDays = weekdays.length > 0 ? weekdays : [1, 2, 3, 4, 5]
-      setClassWeekdays(fallbackDays)
+      const weekdays = Array.from(new Set(scheduleEntries.map((entry) => entry.dayOfWeek)))
+        .filter((day) => day >= 1 && day <= 7)
+        .sort((first, second) => first - second)
+      setClassWeekdays(weekdays)
 
       const days = getWorkedDaysForMonth({
         year: getCalendarYearForSchoolMonth(selectedMonth, selectedCourse.schoolYearName),
         month: selectedMonth,
-        classWeekdays: fallbackDays,
+        classWeekdays: weekdays,
       })
       const attendance = await getClassAttendanceForMonth(
         selectedCourse.id,

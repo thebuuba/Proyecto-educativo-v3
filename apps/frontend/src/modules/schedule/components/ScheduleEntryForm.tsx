@@ -75,7 +75,7 @@ export function ScheduleEntryForm({
             return subjects.map((subject: SectionSubjectOption) => ({
               sectionId: section.id,
               sectionSubjectId: subject.id,
-              label: `${section.gradeName} ${section.name} - ${subject.subjectName}`,
+              label: `${section.academicLevelName} · ${section.gradeName} ${section.name} - ${subject.subjectName}`,
             }))
           }),
         )

@@ -4,7 +4,6 @@ import type {
 } from '@/modules/attendance/types'
 import {
   formatPercentage,
-  maxMonthlyClassPositions,
   markLabels,
 } from '@/modules/attendance/utils/monthlyAttendance'
 import { cn } from '@/utils/cn'
@@ -42,11 +41,6 @@ export function AttendanceGrid({
   saving,
   onToggle,
 }: AttendanceGridProps) {
-  const positions = Array.from({ length: maxMonthlyClassPositions }, (_, index) => ({
-    position: index + 1,
-    workedDay: workedDays[index] ?? null,
-  }))
-
   if (rows.length === 0) {
     return (
       <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-border bg-card p-6 text-center text-sm text-muted-foreground">
@@ -60,57 +54,46 @@ export function AttendanceGrid({
       <div className="flex flex-col gap-3 border-b border-border bg-muted/25 px-5 py-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-xs text-muted-foreground">
-            Posiciones 1-21 arriba; debajo aparecen las fechas reales de clase. Haz clic en una celda activa para cambiar el estado.
+            Las columnas corresponden a las fechas de clase. Haz clic en una celda para cambiar el estado.
           </p>
         </div>
         <AttendanceLegend />
       </div>
 
       <div className="max-w-full overflow-x-auto">
-        <table className="min-w-[76rem] border-separate border-spacing-0 text-sm">
+        <table className="min-w-[54rem] border-separate border-spacing-0 text-sm">
           <thead>
             <tr>
-              <th rowSpan={3} className="sticky left-0 z-30 min-w-14 border-b border-r border-border bg-card px-3 py-3 text-center text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
+              <th rowSpan={2} className="sticky left-0 z-30 min-w-14 border-b border-r border-border bg-card px-3 py-3 text-center text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
                 #
               </th>
-              <th rowSpan={3} className="sticky left-14 z-30 min-w-[14rem] border-b border-r border-border bg-card px-5 py-3 text-left text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
+              <th rowSpan={2} className="sticky left-14 z-30 min-w-[14rem] border-b border-r border-border bg-card px-5 py-3 text-left text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
                 Estudiante
               </th>
-              <th colSpan={maxMonthlyClassPositions} className="border-b border-border bg-card px-2 py-3 text-center text-[11px] font-black uppercase tracking-[0.14em] text-muted-foreground">
-                Dias posibles del mes (Max. {maxMonthlyClassPositions} dias)
+              <th colSpan={Math.max(workedDays.length, 1)} className="border-b border-border bg-card px-2 py-3 text-center text-[11px] font-black uppercase tracking-[0.14em] text-muted-foreground">
+                Fechas de clase
               </th>
-              <th rowSpan={3} className="sticky right-14 z-30 w-14 border-b border-l border-border bg-card px-2 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
+              <th rowSpan={2} className="sticky right-14 z-30 w-14 border-b border-l border-border bg-card px-2 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
                 T
               </th>
-              <th rowSpan={3} className="sticky right-0 z-30 w-14 border-b border-l border-border bg-card px-2 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
+              <th rowSpan={2} className="sticky right-0 z-30 w-14 border-b border-l border-border bg-card px-2 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
                 %
               </th>
             </tr>
             <tr>
-              {positions.map(({ position, workedDay }) => (
+              {workedDays.length === 0 ? (
                 <th
-                  key={`position-${position}`}
-                  title={workedDay ? formatShortDate(workedDay.date) : 'Sin clase programada'}
-                  className={cn(
-                    'w-11 border-b border-border px-1 py-2 text-center text-xs font-bold',
-                    workedDay ? 'bg-card text-primary' : 'bg-muted/25 text-muted-foreground/45',
-                  )}
+                  className="border-b border-border bg-muted/25 px-3 py-3 text-center text-xs font-semibold text-muted-foreground"
                 >
-                  {position}
+                  Sin fechas programadas
                 </th>
-              ))}
-            </tr>
-            <tr>
-              {positions.map(({ position, workedDay }) => (
+              ) : workedDays.map((workedDay) => (
                 <th
-                  key={`date-${position}`}
-                  title={workedDay ? formatShortDate(workedDay.date) : 'Sin clase programada'}
-                  className={cn(
-                    'w-11 border-b border-border px-1 py-2 text-center text-xs font-black',
-                    workedDay ? 'bg-card text-primary' : 'bg-muted/25 text-muted-foreground/35',
-                  )}
+                  key={workedDay.date}
+                  title={formatShortDate(workedDay.date)}
+                  className="min-w-12 border-b border-border bg-card px-1 py-2 text-center text-xs font-black text-primary"
                 >
-                  {workedDay?.day ?? ''}
+                  {workedDay.day}
                 </th>
               ))}
             </tr>
@@ -124,14 +107,11 @@ export function AttendanceGrid({
                 <td className="sticky left-14 z-20 border-b border-r border-border bg-card px-5 py-3 font-semibold text-foreground group-hover:bg-muted/15">
                   {row.lastName}, {row.firstName}
                 </td>
-                {positions.map(({ position, workedDay }) => {
-                  if (!workedDay) {
-                    return (
-                      <td key={`empty-${position}`} className="border-b border-border bg-muted/15 px-1 py-2 text-center">
-                        <span className="mx-auto block size-8 rounded-xl border border-dashed border-border bg-muted/20" />
-                      </td>
-                    )
-                  }
+                {workedDays.length === 0 ? (
+                  <td className="border-b border-border bg-muted/15 px-3 py-3 text-center text-xs text-muted-foreground">
+                    —
+                  </td>
+                ) : workedDays.map((workedDay) => {
                   const day = workedDay
                   const cell = row.cells[day.date]
                   const mark = cell?.mark ?? null

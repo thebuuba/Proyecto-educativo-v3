@@ -48,7 +48,7 @@ describe('ScheduleService option caching', () => {
 
   it('loads independent section options in parallel', async () => {
     const sections = deferred<Array<{ id: string; name: string; gradeId: string }>>()
-    const grades = deferred<Array<{ id: string; name: string }>>()
+    const grades = deferred<Array<{ id: string; name: string; level: string }>>()
     mocks.prisma.section.findMany.mockReturnValue(sections.promise)
     mocks.prisma.grade.findMany.mockReturnValue(grades.promise)
 
@@ -59,9 +59,9 @@ describe('ScheduleService option caching', () => {
     expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(1)
 
     sections.resolve([{ id: 'section-1', name: 'A', gradeId: 'grade-1' }])
-    grades.resolve([{ id: 'grade-1', name: '1.º' }])
+    grades.resolve([{ id: 'grade-1', name: '1.º', level: 'Secundario' }])
     await expect(request).resolves.toEqual([
-      { id: 'section-1', name: 'A', gradeId: 'grade-1', gradeName: '1.º' },
+      { id: 'section-1', name: 'A', gradeId: 'grade-1', gradeName: '1.º', academicLevelName: 'Secundario' },
     ])
   })
 
@@ -165,7 +165,7 @@ describe('ScheduleService parallel queries', () => {
     const subjects = deferred<Array<{ id: string; name: string }>>()
     const teachers = deferred<Array<{ id: string; firstName: string; lastName: string }>>()
     const sections = deferred<Array<{ id: string; gradeId: string; name: string }>>()
-    const grades = deferred<Array<{ id: string; name: string }>>()
+    const grades = deferred<Array<{ id: string; name: string; level: string }>>()
     const slots = deferred<Array<{ id: string; name: string; startTime: Date; endTime: Date }>>()
     mocks.prisma.scheduleEntry.findMany.mockResolvedValue([
       {
@@ -198,7 +198,7 @@ describe('ScheduleService parallel queries', () => {
     subjects.resolve([{ id: 'subject-1', name: 'Matemática' }])
     teachers.resolve([{ id: 'teacher-1', firstName: 'Ana', lastName: 'Pérez' }])
     sections.resolve([{ id: 'section-1', gradeId: 'grade-1', name: 'A' }])
-    grades.resolve([{ id: 'grade-1', name: '1.º' }])
+    grades.resolve([{ id: 'grade-1', name: '1.º', level: 'Secundario' }])
     slots.resolve([{
       id: 'slot-1',
       name: 'Primera hora',
@@ -212,6 +212,7 @@ describe('ScheduleService parallel queries', () => {
         subjectName: 'Matemática',
         teacherName: 'Ana Pérez',
         gradeName: '1.º',
+        academicLevelName: 'Secundario',
         sectionName: 'A',
         timeSlotName: 'Primera hora',
       }),

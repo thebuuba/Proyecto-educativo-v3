@@ -21,6 +21,7 @@ import { CreateSubjectDto } from './dto/create-subject.dto'
 import { AssignSubjectDto } from './dto/assign-subject.dto'
 import { CreateCourseTeamDto } from './dto/create-course-team.dto'
 import { UpdateCourseTeamDto } from './dto/update-course-team.dto'
+import { UpdateSectionSubjectAppearanceDto } from './dto/update-section-subject-appearance.dto'
 
 const cache = new Map<
   string,
@@ -100,21 +101,33 @@ async function resolveSchoolYear(schoolId: string) {
 @Injectable()
 export class CoursesService {
   /** Obtiene los datos completos del curso: grados, secciones, asignaciones, catálogos y año escolar actual */
-  async getCourseData(schoolId: string) {
+  async getCourseData(schoolId: string, appUserId?: string) {
     return optionCache.withCache(
-      optionCacheKeys.courses.courseData(schoolId),
-      () => this._getCourseData(schoolId),
+      optionCacheKeys.courses.courseData(schoolId, appUserId),
+      () => this._getCourseData(schoolId, appUserId),
     )
   }
 
-  private async _getCourseData(schoolId: string) {
+  private async _getCourseData(schoolId: string, appUserId?: string) {
     const currentSchoolYear = await resolveSchoolYear(schoolId)
 
     const [grades, sections, assignments, enrollmentCounts, teamCounts, activityCounts, lastAttendances, gradeAverages, lastPlannings, subjects, academicLevels, cycles, modalities, teachers] = await Promise.all([
-      prisma.grade.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { sequence: 'asc' } }),
-      prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' }, orderBy: { name: 'asc' } }),
+      prisma.grade.findMany({ where: { schoolId }, orderBy: { sequence: 'asc' } }),
+      prisma.section.findMany({ where: { schoolId }, orderBy: { name: 'asc' } }),
       prisma.sectionSubject.findMany({
         where: { schoolId, schoolYearId: currentSchoolYear.id },
+        include: {
+          _count: {
+            select: {
+              attendanceClasses: true,
+              gradesRecords: true,
+              evaluationActivities: true,
+              courseTeams: true,
+              scheduleEntries: true,
+              planningEntries: true,
+            },
+          },
+        },
       }),
       prisma.enrollment.groupBy({
         by: ['sectionId'],
@@ -160,6 +173,7 @@ export class CoursesService {
     const modalityById = new Map(modalities.map((item) => [item.id, item]))
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const teacherById = new Map(teachers.map((item) => [item.id, item]))
+    const accountTeacher = appUserId ? teachers.find((item) => item.userId === appUserId) ?? null : null
     const studentCountBySectionId = new Map(
       enrollmentCounts.map((item) => [item.sectionId, item._count.id]),
     )
@@ -199,7 +213,10 @@ export class CoursesService {
               .filter((assignment) => assignment.sectionId === section.id)
               .map((assignment) => {
                 const subject = subjectById.get(assignment.subjectId)
-                const teacher = assignment.teacherId ? teacherById.get(assignment.teacherId) : null
+                const teacher = assignment.teacherId ? teacherById.get(assignment.teacherId) : accountTeacher
+                const relatedDataCount = assignment._count
+                  ? Object.values(assignment._count).reduce((total, count) => total + count, 0)
+                  : 0
                 return {
                   id: assignment.id,
                   sectionId: assignment.sectionId,
@@ -207,8 +224,10 @@ export class CoursesService {
                   subjectId: assignment.subjectId,
                   subjectCode: subject?.code ?? '',
                   subjectName: subject?.name ?? '',
-                  teacherId: assignment.teacherId,
+                  teacherId: assignment.teacherId ?? accountTeacher?.id ?? null,
                   teacherName: teacher ? `${teacher.firstName} ${teacher.lastName}` : null,
+                  appearanceColor: assignment.appearanceColor,
+                  appearanceIcon: assignment.appearanceIcon,
                   teamCount: teamCountByAssignmentId.get(assignment.id) ?? 0,
                   activityCount: activityCountByAssignmentId.get(assignment.id) ?? 0,
                   lastAttendanceDate: attendanceByAssignmentId.get(assignment.id) ?? null,
@@ -219,6 +238,8 @@ export class CoursesService {
                     ?? planningByAssignmentId.get(assignment.id)?.createdAt
                     ?? null,
                   lastPlanningTitle: planningByAssignmentId.get(assignment.id)?.title ?? null,
+                  relatedDataCount,
+                  canDelete: relatedDataCount === 0,
                   status: status(assignment.status),
                 }
               }),
@@ -452,7 +473,7 @@ export class CoursesService {
   }
 
   /** Asigna una materia a una sección con un profesor, validando todas las referencias */
-  async assignSubject(schoolId: string, dto: AssignSubjectDto) {
+  async assignSubject(schoolId: string, dto: AssignSubjectDto, appUserId?: string) {
     const schoolYear = dto.schoolYearId
       ? await prisma.schoolYear.findFirst({ where: { id: dto.schoolYearId, schoolId } })
       : null
@@ -464,7 +485,9 @@ export class CoursesService {
       prisma.subject.findFirst({ where: { id: dto.subjectId, schoolId } }),
       dto.teacherId
         ? prisma.teacher.findFirst({ where: { id: dto.teacherId, schoolId } })
-        : Promise.resolve(null),
+        : appUserId
+          ? prisma.teacher.findFirst({ where: { userId: appUserId, schoolId, status: RecordStatus.ACTIVE } })
+          : Promise.resolve(null),
     ])
     if (!grade) throw new NotFoundException('Grade not found')
     if (!section) throw new NotFoundException('Section not found')
@@ -482,13 +505,13 @@ export class CoursesService {
       create: {
         sectionId: dto.sectionId,
         subjectId: dto.subjectId,
-        teacherId: dto.teacherId ?? null,
+        teacherId: teacher?.id ?? null,
         gradeId: dto.gradeId,
         schoolYearId: resolvedSchoolYear.id,
         schoolId,
       },
       update: {
-        teacherId: dto.teacherId ?? null,
+        teacherId: teacher?.id ?? null,
         gradeId: dto.gradeId,
         schoolId,
         status: RecordStatus.ACTIVE,
@@ -520,6 +543,26 @@ export class CoursesService {
     return updated
   }
 
+  /** Guarda solo preferencias visuales; no modifica identidad ni datos académicos. */
+  async updateSectionSubjectAppearance(
+    schoolId: string,
+    id: string,
+    dto: UpdateSectionSubjectAppearanceDto,
+  ) {
+    const assignment = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
+    if (!assignment) throw new NotFoundException('Asignatura no encontrada')
+
+    const updated = await prisma.sectionSubject.update({
+      where: { id },
+      data: {
+        appearanceColor: dto.color ?? null,
+        appearanceIcon: dto.icon ?? null,
+      },
+    })
+    invalidateSchoolCache(schoolId)
+    return updated
+  }
+
   /** Restaura una asignatura archivada dentro de su curso. */
   async restoreSectionSubject(schoolId: string, id: string) {
     const assignment = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
@@ -534,11 +577,30 @@ export class CoursesService {
   }
 
   /** Elimina definitivamente una asignatura archivada y todo su historial académico asociado. */
-  async permanentlyDeleteSectionSubject(schoolId: string, id: string) {
-    const assignment = await prisma.sectionSubject.findFirst({ where: { id, schoolId } })
+  async permanentlyDeleteSectionSubject(schoolId: string, id: string, confirmation?: string) {
+    const assignment = await prisma.sectionSubject.findFirst({
+      where: { id, schoolId },
+      include: {
+        subject: { select: { name: true } },
+        _count: {
+          select: {
+            attendanceClasses: true,
+            gradesRecords: true,
+            evaluationActivities: true,
+            courseTeams: true,
+            scheduleEntries: true,
+            planningEntries: true,
+          },
+        },
+      },
+    })
     if (!assignment) throw new NotFoundException('Asignatura archivada no encontrada')
-    if (assignment.status !== RecordStatus.INACTIVE) {
-      throw new BadRequestException('Archiva la asignatura antes de eliminarla definitivamente')
+    const relatedDataCount = Object.values(assignment._count).reduce((total, count) => total + count, 0)
+    if (assignment.status === RecordStatus.ACTIVE && relatedDataCount > 0) {
+      throw new BadRequestException('Esta asignatura contiene información y solo puede archivarse')
+    }
+    if (assignment.status === RecordStatus.INACTIVE && relatedDataCount > 0 && confirmation !== assignment.subject.name) {
+      throw new BadRequestException('Escribe el nombre exacto de la asignatura para confirmar la eliminación')
     }
 
     await prisma.$transaction(async (tx) => {

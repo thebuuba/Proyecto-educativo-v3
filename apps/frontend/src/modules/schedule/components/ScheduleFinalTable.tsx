@@ -237,7 +237,7 @@ function ScheduleFinalCell({ content }: { content: CellContent }) {
     <div className={cn('flex h-full min-h-16 flex-col justify-center rounded-md border px-2 py-1.5', style)}>
       <p className="text-xs font-extrabold leading-tight">{content.entry.subjectName}</p>
       <p className="mt-1 text-[11px] font-semibold opacity-80">
-        {content.entry.gradeName} {content.entry.sectionName}
+        {content.entry.academicLevelName} · {content.entry.gradeName} {content.entry.sectionName}
       </p>
     </div>
   )

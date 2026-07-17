@@ -8,18 +8,18 @@ const mocks = vi.hoisted(() => ({
   prisma: {
     grade: { findMany: vi.fn(), findFirst: vi.fn(), create: vi.fn(), update: vi.fn(), upsert: vi.fn() },
     section: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
-    sectionSubject: { findMany: vi.fn(), upsert: vi.fn() },
+    sectionSubject: { findMany: vi.fn(), findFirst: vi.fn(), update: vi.fn(), upsert: vi.fn() },
     enrollment: { groupBy: vi.fn() },
     courseTeam: { groupBy: vi.fn() },
     evaluationActivity: { groupBy: vi.fn() },
     attendanceClass: { findMany: vi.fn() },
     gradesRecord: { groupBy: vi.fn() },
     planningEntry: { findMany: vi.fn() },
-    subject: { findMany: vi.fn(), upsert: vi.fn() },
+    subject: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
     drAcademicLevel: { findMany: vi.fn() },
     drAcademicCycle: { findMany: vi.fn() },
     drModality: { findMany: vi.fn() },
-    teacher: { findMany: vi.fn() },
+    teacher: { findMany: vi.fn(), findFirst: vi.fn() },
     schoolYear: { findFirst: vi.fn(), create: vi.fn() },
   },
 }))
@@ -68,7 +68,10 @@ describe('CoursesService.getCourseData', () => {
         gradeId: 'grade-1',
         subjectId: 'subject-1',
         teacherId: 'teacher-1',
+        appearanceColor: '#7C3AED',
+        appearanceIcon: 'calculator',
         status: 'ACTIVE',
+        _count: { attendanceClasses: 0, gradesRecords: 1, evaluationActivities: 3, courseTeams: 2, scheduleEntries: 0, planningEntries: 1 },
       },
       {
         id: 'ss-archived',
@@ -76,7 +79,10 @@ describe('CoursesService.getCourseData', () => {
         gradeId: 'grade-1',
         subjectId: 'subject-2',
         teacherId: null,
+        appearanceColor: null,
+        appearanceIcon: null,
         status: 'INACTIVE',
+        _count: { attendanceClasses: 0, gradesRecords: 0, evaluationActivities: 0, courseTeams: 0, scheduleEntries: 0, planningEntries: 0 },
       },
     ])
     mocks.prisma.enrollment.groupBy.mockResolvedValue([
@@ -104,12 +110,12 @@ describe('CoursesService.getCourseData', () => {
     mocks.prisma.drAcademicLevel.findMany.mockResolvedValue([{ id: 'level-1', code: 'PRI', name: 'Primaria', sequence: 1 }])
     mocks.prisma.drAcademicCycle.findMany.mockResolvedValue([{ id: 'cycle-1', levelId: 'level-1', code: 'C1', name: 'Primer ciclo', sequence: 1, gradeSequenceFrom: 1, gradeSequenceTo: 3 }])
     mocks.prisma.drModality.findMany.mockResolvedValue([{ id: 'mod-1', code: 'GEN', name: 'General', appliesFromGradeSequence: null, appliesToGradeSequence: null }])
-    mocks.prisma.teacher.findMany.mockResolvedValue([{ id: 'teacher-1', firstName: 'Ana', lastName: 'Pérez', email: 'ana@test.local' }])
+    mocks.prisma.teacher.findMany.mockResolvedValue([{ id: 'teacher-1', userId: 'user-1', firstName: 'Ana', lastName: 'Pérez', email: 'ana@test.local' }])
     mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1', name: '2026-2027' })
   })
 
   it('returns the frontend course-data shape', async () => {
-    const result = await new CoursesService().getCourseData('school-1')
+    const result = await new CoursesService().getCourseData('school-1', 'user-1')
 
     expect(result.currentSchoolYear).toEqual({ id: 'year-1', name: '2026-2027' })
     expect(result.catalogs.levels[0].name).toBe('Primaria')
@@ -132,12 +138,20 @@ describe('CoursesService.getCourseData', () => {
               teamCount: 2,
               activityCount: 3,
               averageScore: 88.5,
+              appearanceColor: '#7C3AED',
+              appearanceIcon: 'calculator',
+              relatedDataCount: 7,
+              canDelete: false,
               lastPlanningTitle: 'Sistema solar',
               status: 'active',
             },
             {
               id: 'ss-archived',
               subjectName: 'Educación Artística',
+              teacherId: 'teacher-1',
+              teacherName: 'Ana Pérez',
+              relatedDataCount: 0,
+              canDelete: true,
               status: 'inactive',
             },
           ],
@@ -146,7 +160,86 @@ describe('CoursesService.getCourseData', () => {
     })
     expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledWith({
       where: { schoolId: 'school-1', schoolYearId: 'year-1' },
+      include: {
+        _count: {
+          select: {
+            attendanceClasses: true,
+            gradesRecords: true,
+            evaluationActivities: true,
+            courseTeams: true,
+            scheduleEntries: true,
+            planningEntries: true,
+          },
+        },
+      },
     })
+    expect(mocks.prisma.grade.findMany).toHaveBeenCalledWith({
+      where: { schoolId: 'school-1' },
+      orderBy: { sequence: 'asc' },
+    })
+    expect(mocks.prisma.section.findMany).toHaveBeenCalledWith({
+      where: { schoolId: 'school-1' },
+      orderBy: { name: 'asc' },
+    })
+  })
+
+  it('updates only the assignment appearance and invalidates course data', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1', schoolId: 'school-1' })
+    mocks.prisma.sectionSubject.update.mockResolvedValue({ id: 'ss-1', appearanceColor: '#0E9F6E', appearanceIcon: 'leaf' })
+    const service = new CoursesService()
+
+    const result = await service.updateSectionSubjectAppearance('school-1', 'ss-1', {
+      color: '#0E9F6E',
+      icon: 'leaf',
+    })
+
+    expect(mocks.prisma.sectionSubject.update).toHaveBeenCalledWith({
+      where: { id: 'ss-1' },
+      data: { appearanceColor: '#0E9F6E', appearanceIcon: 'leaf' },
+    })
+    expect(result).toMatchObject({ appearanceColor: '#0E9F6E', appearanceIcon: 'leaf' })
+  })
+
+  it('blocks permanent deletion of an active assignment with any related data', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({
+      id: 'ss-1',
+      schoolId: 'school-1',
+      status: 'ACTIVE',
+      subject: { name: 'Matemática' },
+      _count: {
+        attendanceClasses: 0,
+        gradesRecords: 0,
+        evaluationActivities: 0,
+        courseTeams: 0,
+        scheduleEntries: 1,
+        planningEntries: 0,
+      },
+    })
+
+    await expect(
+      new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-1'),
+    ).rejects.toThrow('Esta asignatura contiene información y solo puede archivarse')
+  })
+
+  it('requires the exact subject name before deleting an archived assignment with data', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({
+      id: 'ss-archived',
+      schoolId: 'school-1',
+      status: 'INACTIVE',
+      subject: { name: 'Ciencias de la Naturaleza' },
+      _count: {
+        attendanceClasses: 1,
+        gradesRecords: 0,
+        evaluationActivities: 0,
+        courseTeams: 0,
+        scheduleEntries: 0,
+        planningEntries: 0,
+      },
+    })
+
+    await expect(
+      new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-archived', 'Ciencias'),
+    ).rejects.toThrow('Escribe el nombre exacto de la asignatura para confirmar la eliminación')
   })
 
   it('invalidates cached course data after a mutation', async () => {
@@ -161,6 +254,30 @@ describe('CoursesService.getCourseData', () => {
     await service.getCourseData('school-1')
 
     expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(2)
+  })
+
+  it('assigns new subjects to the teacher linked to the authenticated account', async () => {
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1', schoolId: 'school-1' })
+    mocks.prisma.grade.findFirst.mockResolvedValue({ id: 'grade-1', schoolId: 'school-1' })
+    mocks.prisma.section.findFirst.mockResolvedValue({ id: 'section-1', schoolId: 'school-1', gradeId: 'grade-1' })
+    mocks.prisma.subject.findFirst.mockResolvedValue({ id: 'subject-1', schoolId: 'school-1' })
+    mocks.prisma.teacher.findFirst.mockResolvedValue({ id: 'teacher-owner', userId: 'user-1', schoolId: 'school-1' })
+    mocks.prisma.sectionSubject.upsert.mockResolvedValue({ id: 'ss-1', teacherId: 'teacher-owner' })
+
+    await new CoursesService().assignSubject('school-1', {
+      schoolYearId: 'year-1',
+      gradeId: 'grade-1',
+      sectionId: 'section-1',
+      subjectId: 'subject-1',
+    }, 'user-1')
+
+    expect(mocks.prisma.teacher.findFirst).toHaveBeenCalledWith({
+      where: { userId: 'user-1', schoolId: 'school-1', status: 'ACTIVE' },
+    })
+    expect(mocks.prisma.sectionSubject.upsert).toHaveBeenCalledWith(expect.objectContaining({
+      create: expect.objectContaining({ teacherId: 'teacher-owner' }),
+      update: expect.objectContaining({ teacherId: 'teacher-owner' }),
+    }))
   })
 
   it('invalidates grading and schedule options after a course mutation', async () => {
