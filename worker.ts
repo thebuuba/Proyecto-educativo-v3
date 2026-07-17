@@ -1,17 +1,26 @@
-import { httpServerHandler } from 'cloudflare:node'
+import { handleAsNodeRequest } from 'cloudflare:node'
 import { env } from 'cloudflare:workers'
 import { createApplication } from './apps/backend/dist/bootstrap.js'
 
-const hyperdrive = (env as unknown as {
-  HYPERDRIVE?: { connectionString: string }
-}).HYPERDRIVE
+let initialization: Promise<void> | undefined
 
-if (hyperdrive) {
-  process.env.DATABASE_URL = hyperdrive.connectionString
-  process.env.CLOUDFLARE_WORKER_PRODUCTION = 'true'
+async function initialize() {
+  const hyperdrive = (env as unknown as {
+    HYPERDRIVE?: { connectionString: string }
+  }).HYPERDRIVE
+
+  if (hyperdrive) {
+    process.env.DATABASE_URL = hyperdrive.connectionString
+    process.env.CLOUDFLARE_WORKER_PRODUCTION = 'true'
+  }
+
+  const app = await createApplication()
+  await app.listen(3000)
 }
 
-const app = await createApplication()
-await app.listen(3000)
-
-export default httpServerHandler({ port: 3000 })
+export default {
+  async fetch(request: Request) {
+    await (initialization ??= initialize())
+    return handleAsNodeRequest(3000, request)
+  },
+}

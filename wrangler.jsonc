@@ -16,12 +16,14 @@
     "@nestjs/websockets/socket-module": "./cloudflare/optional-nest-module.ts",
     "class-transformer/storage": "./apps/backend/node_modules/class-transformer/cjs/storage.js"
   },
+  "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "aa6bc681f16b42699381fdcf0f5386b7" }],
   "observability": {
     "enabled": true
   },
   "env": {
     "staging": {
-      "name": "aula-base-staging"
+      "name": "aula-base-staging",
+      "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "aa6bc681f16b42699381fdcf0f5386b7" }]
     }
   }
 }
