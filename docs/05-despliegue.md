@@ -121,6 +121,8 @@ Los entornos actuales son:
 
 El workflow `Deploy Cloudflare` permite elegir staging o producción manualmente. Producción usa aprobación en el GitHub Environment; el despliegue automático de staging permanece desactivado hasta que tenga un proyecto Supabase e Hyperdrive propios. Cada entorno requiere `CLOUDFLARE_API_TOKEN` y `SUPABASE_DB_URL` como secretos de GitHub.
 
+El workflow `Smoke Cloudflare` verifica producción cada 30 minutos y también puede ejecutarse manualmente.
+
 Primero staging:
 
 ```bash
