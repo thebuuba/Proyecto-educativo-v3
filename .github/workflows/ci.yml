@@ -43,5 +43,9 @@ jobs:
       - run: pnpm --filter frontend lint
       - run: pnpm --filter frontend test
       - run: pnpm --filter frontend build
+      - name: Validate Supabase migrations
+        run: |
+          pnpm exec supabase db start
+          pnpm exec supabase db lint --local
       - name: Verify Cloudflare Worker bundle
         run: pnpm exec wrangler deploy --dry-run --env=""

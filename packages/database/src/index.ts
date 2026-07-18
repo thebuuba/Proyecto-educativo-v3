@@ -1,13 +1,14 @@
 /**
- * @fileoverview Cliente singleton de Prisma para toda la aplicación.
- * En desarrollo reutiliza la instancia almacenada en `globalThis` para evitar
- * múltiples conexiones durante recargas en caliente (hot reload).
+ * @fileoverview Cliente Prisma compartido por el servidor Node y limitado a
+ * cada petición cuando la aplicación se ejecuta en Cloudflare Workers.
  */
 
 import { PrismaClient } from '@prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
+import { AsyncLocalStorage } from 'node:async_hooks'
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined }
+const requestPrisma = new AsyncLocalStorage<PrismaClient>()
 const DEFAULT_CONNECTION_LIMIT = 3
 
 function databaseUrlForPg(url: string) {
@@ -18,13 +19,13 @@ function databaseUrlForPg(url: string) {
   return parsedUrl.toString()
 }
 
-function createPrismaClient() {
-  if (!process.env.DATABASE_URL) {
+function createPrismaClient(databaseUrl = process.env.DATABASE_URL) {
+  if (!databaseUrl) {
     throw new Error('DATABASE_URL is required')
   }
 
   const adapter = new PrismaPg({
-    connectionString: databaseUrlForPg(process.env.DATABASE_URL),
+    connectionString: databaseUrlForPg(databaseUrl),
     max: DEFAULT_CONNECTION_LIMIT,
     connectionTimeoutMillis: 20_000,
   })
@@ -32,15 +33,27 @@ function createPrismaClient() {
   return new PrismaClient({ adapter, log: ['error', 'warn'] })
 }
 
-/**
- * @description Instancia singleton de PrismaClient. En producción se crea una
- * nueva instancia; en desarrollo se reutiliza la almacenada en `globalThis`
- * para prevenir conexiones duplicadas por hot-reload.
- */
-export const prisma = globalForPrisma.prisma ?? createPrismaClient()
+function currentPrisma() {
+  const scoped = requestPrisma.getStore()
+  if (scoped) return scoped
+  return (globalForPrisma.prisma ??= createPrismaClient())
+}
 
-if (process.env.NODE_ENV !== 'production') {
-  globalForPrisma.prisma = prisma
+export const prisma = new Proxy({} as PrismaClient, {
+  get(_target, property) {
+    const client = currentPrisma()
+    const value = Reflect.get(client, property)
+    return typeof value === 'function' ? value.bind(client) : value
+  },
+})
+
+export async function runWithPrismaClient<T>(databaseUrl: string, operation: () => Promise<T>) {
+  const client = createPrismaClient(databaseUrl)
+  try {
+    return await requestPrisma.run(client, operation)
+  } finally {
+    await client.$disconnect()
+  }
 }
 
 export * from '@prisma/client'

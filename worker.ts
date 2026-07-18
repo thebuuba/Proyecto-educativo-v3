@@ -1,14 +1,16 @@
 import { handleAsNodeRequest } from 'cloudflare:node'
 import { env } from 'cloudflare:workers'
+import { runWithPrismaClient } from './packages/database/dist/index.js'
 import { createApplication } from './apps/backend/dist/bootstrap.js'
 
 let initialization: Promise<void> | undefined
 
-async function initialize() {
-  const workerEnv = env as unknown as {
-    HYPERDRIVE?: { connectionString: string }
-    FRONTEND_URL?: string
-  }
+type WorkerEnv = {
+  HYPERDRIVE?: { connectionString: string }
+  FRONTEND_URL?: string
+}
+
+async function initialize(workerEnv: WorkerEnv) {
   const hyperdrive = workerEnv.HYPERDRIVE
 
   if (hyperdrive) {
@@ -25,8 +27,9 @@ async function initialize() {
 
 export default {
   async fetch(request: Request) {
+    const workerEnv = env as unknown as WorkerEnv
     try {
-      await (initialization ??= initialize())
+      await (initialization ??= initialize(workerEnv))
     } catch (error) {
       initialization = undefined
       console.error('Worker initialization failed', error)
@@ -35,6 +38,9 @@ export default {
         { status: 503, headers: { 'Cache-Control': 'no-store' } },
       )
     }
-    return handleAsNodeRequest(3000, request)
+    const handle = () => handleAsNodeRequest(3000, request)
+    return workerEnv.HYPERDRIVE
+      ? runWithPrismaClient(workerEnv.HYPERDRIVE.connectionString, handle)
+      : handle()
   },
 }

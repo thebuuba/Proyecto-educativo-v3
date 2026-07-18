@@ -1,0 +1,10 @@
+DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:54332/postgres
+FRONTEND_URL=http://localhost:8787
+JWT_SECRET=replace-with-a-random-development-secret
+SUPABASE_ANON_KEY=replace-with-local-anon-key
+SUPABASE_SERVICE_ROLE_KEY=replace-with-local-service-role-key
+SUPABASE_URL=http://127.0.0.1:54321
+VITE_SUPABASE_ANON_KEY=replace-with-local-anon-key
+VITE_SUPABASE_URL=http://127.0.0.1:54321
+OPENAI_API_KEY=replace-with-development-openai-key
+OPENAI_MODEL=gpt-5.5

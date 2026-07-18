@@ -4,6 +4,7 @@
 
 import { ValidationPipe, type INestApplication } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
+import { prisma } from '@aula/database'
 import { loadEnvFile } from 'node:process'
 import helmet from 'helmet'
 import { AuditLogInterceptor } from './common/interceptors/audit-log.interceptor'
@@ -66,7 +67,8 @@ export async function createApplication(): Promise<INestApplication> {
     }),
   )
   app.useGlobalInterceptors(new AuditLogInterceptor())
-  app.getHttpAdapter().get('/api/v1/health', (_request, response) => {
+  app.getHttpAdapter().get('/api/v1/health', async (_request, response) => {
+    await prisma.$queryRaw`select 1`
     response.json({ data: { status: 'ok' } })
   })
 
