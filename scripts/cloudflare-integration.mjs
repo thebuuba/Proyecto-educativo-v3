@@ -127,7 +127,7 @@ try {
       body: png,
       signal: AbortSignal.timeout(30_000),
     })
-    assert.ok(upload.ok, `Storage upload/upsert failed with ${upload.status}`)
+    assert.ok(upload.ok, `Storage upload/upsert failed with ${upload.status}: ${await upload.text()}`)
   }
 
   const publicObject = await fetch(
