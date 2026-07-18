@@ -37,7 +37,7 @@ if (build.status !== 0) process.exit(build.status ?? 1)
 
 const dev = spawnSync(
   'pnpm',
-  ['exec', 'wrangler', 'dev', '--local', '--env', 'staging', '--env-file', '.dev.vars.local'],
+  ['exec', 'wrangler', 'dev', '--local', '--env-file', '.dev.vars.local'],
   { env, stdio: 'inherit' },
 )
 process.exit(dev.status ?? 1)

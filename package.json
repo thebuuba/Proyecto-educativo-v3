@@ -15,7 +15,6 @@
     "db:studio": "pnpm --filter @aula/database studio",
     "cloudflare:dev": "node scripts/cloudflare-local.mjs",
     "cloudflare:build": "pnpm build && wrangler deploy --dry-run --env=\"\"",
-    "cloudflare:deploy:staging": "pnpm build && wrangler deploy --env staging",
     "cloudflare:deploy:production": "pnpm build && wrangler deploy --env=\"\"",
     "cloudflare:smoke": "node scripts/cloudflare-smoke.mjs",
     "cloudflare:verify": "node scripts/cloudflare-integration.mjs",

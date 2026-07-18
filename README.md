@@ -45,14 +45,15 @@ Prisma Client y compilar el backend.
 
 ## Configuracion y desarrollo
 
-El flujo diario reproduce la arquitectura de Cloudflare en un solo proceso local. Crea el archivo ignorado por Git y completa únicamente valores del proyecto Supabase DEV:
+El flujo diario reproduce la arquitectura de Cloudflare usando Supabase local. Inicia la base, copia el archivo ignorado por Git y completa `SUPABASE_ANON_KEY` y `SUPABASE_SERVICE_ROLE_KEY` con los valores `ANON_KEY` y `SERVICE_ROLE_KEY` mostrados por `pnpm exec supabase status -o env`:
 
 ```bash
+pnpm supabase:local
 cp .dev.vars.example .dev.vars.local
 pnpm cloudflare:dev
 ```
 
-La aplicación completa queda en `http://localhost:8787`: React sirve la interfaz y NestJS responde bajo `/api/v1`. No hace falta iniciar Docker ni Supabase Studio.
+La aplicación completa queda en `http://localhost:8787`: React sirve la interfaz y NestJS responde bajo `/api/v1`. Docker debe permanecer activo mientras se usa Supabase local.
 
 Variables principales:
 
@@ -71,13 +72,10 @@ No pongas `SUPABASE_SERVICE_ROLE_KEY` ni secretos en variables `VITE_*`.
 
 ## Base De Datos
 
-Para aplicar migraciones a Supabase DEV:
+Para aplicar migraciones a Supabase local:
 
 ```bash
-set -a
-source .dev.vars.local
-set +a
-pnpm exec supabase db push --db-url "$DATABASE_URL" --include-all
+pnpm exec supabase db push --local --include-all
 pnpm db:generate
 pnpm db:seed
 ```

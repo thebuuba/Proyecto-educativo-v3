@@ -5,32 +5,23 @@ on:
     workflows: [CI]
     types: [completed]
   workflow_dispatch:
-    inputs:
-      target:
-        description: Entorno a desplegar
-        required: true
-        type: choice
-        options:
-          - staging
-          - production
 
 permissions:
   contents: read
 
 concurrency:
-  group: deploy-${{ github.event_name == 'workflow_run' && 'production' || inputs.target }}
+  group: deploy-production
   cancel-in-progress: false
 
 jobs:
   deploy:
-    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.event == 'push' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     environment:
-      name: ${{ (github.event_name == 'workflow_dispatch' && inputs.target == 'staging') && 'Staging' || 'Production' }}
+      name: Production
       url: ${{ vars.APP_URL }}
     env:
-      TARGET: ${{ github.event_name == 'workflow_run' && 'production' || inputs.target }}
       APP_URL: ${{ vars.APP_URL }}
       VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
       VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
@@ -61,25 +52,24 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - name: Verificar migraciones pendientes
-        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --dry-run
-
-      - name: Aplicar migraciones
-        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --yes
-
       - name: Generar cliente Prisma
         run: pnpm db:generate
 
       - name: Compilar aplicación
         run: pnpm build
 
+      - name: Verificar bundle del Worker
+        run: pnpm exec wrangler deploy --dry-run --env=""
+
+      - name: Verificar migraciones pendientes
+        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --dry-run
+
+      - name: Aplicar migraciones
+        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --yes
+
       - name: Verificar secretos del Worker
         run: |
-          if [[ "$TARGET" == 'staging' ]]; then
-            secrets=$(pnpm exec wrangler secret list --env staging)
-          else
-            secrets=$(pnpm exec wrangler secret list --env="")
-          fi
+          secrets=$(pnpm exec wrangler secret list --env="")
           for name in JWT_SECRET OPENAI_API_KEY SUPABASE_ANON_KEY SUPABASE_SERVICE_ROLE_KEY SUPABASE_URL; do
             jq -e --arg name "$name" 'any(.[]; .name == $name)' <<< "$secrets" >/dev/null || {
               echo "Falta el secreto $name en Cloudflare" >&2
@@ -88,12 +78,7 @@ jobs:
           done
 
       - name: Desplegar Worker
-        run: |
-          if [[ "$TARGET" == 'staging' ]]; then
-            pnpm exec wrangler deploy --env staging
-          else
-            pnpm exec wrangler deploy --env=""
-          fi
+        run: pnpm exec wrangler deploy --env=""
 
       - name: Smoke test
         run: pnpm cloudflare:smoke "$APP_URL"

@@ -47,8 +47,13 @@ export const prisma = new Proxy({} as PrismaClient, {
   },
 })
 
-export function runWithPrismaClient<T>(databaseUrl: string, operation: () => Promise<T>) {
-  return requestPrisma.run(createPrismaClient(databaseUrl), operation)
+export async function runWithPrismaClient<T>(databaseUrl: string, operation: () => Promise<T>) {
+  const client = createPrismaClient(databaseUrl)
+  try {
+    return await requestPrisma.run(client, operation)
+  } finally {
+    await client.$disconnect()
+  }
 }
 
 export * from '@prisma/client'

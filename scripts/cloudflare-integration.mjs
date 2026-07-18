@@ -15,7 +15,7 @@ const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
 if (!appUrl || !supabaseUrl || !anonKey || !serviceKey) {
   throw new Error(
-    'Uso: carga SUPABASE_URL, SUPABASE_ANON_KEY y SUPABASE_SERVICE_ROLE_KEY; luego ejecuta el comando con la URL de staging',
+    'Uso: carga SUPABASE_URL, SUPABASE_ANON_KEY y SUPABASE_SERVICE_ROLE_KEY; luego ejecuta el comando con la URL objetivo',
   )
 }
 

@@ -16,10 +16,9 @@ Confirma el nombre y Account ID correctos. No reutilices un Hyperdrive, Worker o
 En la cuenta correcta:
 
 1. Crea Hyperdrive con `--caching-disabled` siguiendo `docs/05-despliegue.md`.
-2. Añade el binding `HYPERDRIVE` a producción y staging.
-3. Carga los secretos por entorno.
-4. Despliega staging y valida.
-5. Despliega producción solo después de aprobar staging.
+2. Añade el binding `HYPERDRIVE` al Worker de producción.
+3. Carga los secretos de producción.
+4. Despliega y valida producción.
 
 ## Supabase
 
@@ -41,4 +40,4 @@ Después configura Site URL, redirect URLs, proveedores OAuth y verifica el buck
 - Nunca confirmes `.env`, contraseñas, service role keys ni IDs de sesión.
 - La service role existe solo en el Worker.
 - El frontend recibe únicamente URL y anon key públicas.
-- No elimines la infraestructura anterior hasta completar staging, producción y la ventana de observación.
+- No elimines la infraestructura anterior hasta completar producción y la ventana de observación.

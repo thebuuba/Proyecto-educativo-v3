@@ -23,13 +23,4 @@
   "vars": {
     "FRONTEND_URL": "https://aula-base.prroyectoeducativo00.workers.dev",
   },
-  "env": {
-    "staging": {
-      "name": "aula-base-staging",
-      "vars": {
-        "FRONTEND_URL": "https://aula-base-staging.prroyectoeducativo00.workers.dev",
-      },
-      "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "d3e9516823d94f17814f3bfde2eb3b72" }],
-    },
-  },
 }
