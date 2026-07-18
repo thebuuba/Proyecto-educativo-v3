@@ -37,6 +37,16 @@ export async function getAttendanceCourses(): Promise<EnrollmentCourse[]> {
   })
 }
 
+export async function getAttendanceWorkspace(): Promise<{
+  courses: EnrollmentCourse[]
+  academicPeriodId: string | null
+}> {
+  return api.get('/attendance/workspace', {
+    cacheTtlMs: API_CACHE_TTL.sessionList,
+    cacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions, API_CACHE_TAGS.academicPeriods],
+  })
+}
+
 /** Obtiene los estudiantes inscritos en una sección para un año escolar */
 export async function getStudentsBySection(
   sectionId: string,
@@ -66,25 +76,31 @@ export async function getClassAttendanceForMonth(
 ): Promise<Map<string, Map<string, MonthlyAttendanceCell>>> {
   const result = new Map<string, Map<string, MonthlyAttendanceCell>>()
 
-  await Promise.all(
-    dates.map(async (date) => {
-      const records = await api.get<Array<{
-        id: string
-        enrollmentId: string
-        status: AttendanceStatus
-        notes?: string | null
-      }>>(`/attendance?sectionSubjectId=${sectionSubjectId}&date=${date}`)
-      const dailyMap = new Map<string, MonthlyAttendanceCell>()
-      records.forEach((record) => {
-        dailyMap.set(record.enrollmentId, {
-          attendanceId: record.id,
-          status: record.status,
-          mark: statusToMark(record.status, record.notes),
-        })
-      })
-      result.set(date, dailyMap)
-    }),
-  )
+  if (dates.length === 0) return result
+  const sortedDates = [...dates].sort()
+  const params = new URLSearchParams({
+    sectionSubjectId,
+    from: sortedDates[0],
+    to: sortedDates[sortedDates.length - 1],
+  })
+  const records = await api.get<Array<{
+    id: string
+    enrollmentId: string
+    attendanceDate: string
+    status: AttendanceStatus
+    notes?: string | null
+  }>>(`/attendance/class-range?${params}`)
+  dates.forEach((date) => result.set(date, new Map()))
+  records.forEach((record) => {
+    const date = record.attendanceDate.slice(0, 10)
+    const dailyMap = result.get(date)
+    if (!dailyMap) return
+    dailyMap.set(record.enrollmentId, {
+      attendanceId: record.id,
+      status: record.status,
+      mark: statusToMark(record.status, record.notes),
+    })
+  })
 
   return result
 }

@@ -15,9 +15,8 @@ import {
   duplicatePlanningEntry,
   generateAndCreatePlanningEntry,
   getAcademicPeriods,
-  getCompetencies,
   getPlanningEntries,
-  getTeacherSectionSubjects,
+  getPlanningWorkspace,
   updatePlanningEntry,
 } from '@/modules/planning/services/planningService'
 import type {
@@ -27,7 +26,6 @@ import type {
   PlanningEntryWithDetails,
   PlanningFilters,
 } from '@/modules/planning/types'
-import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import { createScopedTtlCache } from '@/utils/scopedTtlCache'
 
 type PlanningCacheData = {
@@ -116,16 +114,14 @@ export function usePlanning() {
       setLoading(true)
       setError(null)
       try {
-        const currentYear = await getCurrentSchoolYear()
-        if (!currentYear) throw new Error('No hay un año escolar activo.')
-
-        const [periodData, sectionSubjectData, competencyData] = await Promise.all([
-          getAcademicPeriods(currentYear.id),
-          getTeacherSectionSubjects(),
-          getCompetencies(),
-        ])
-        const periodId = periodData[0]?.id ?? null
-        const entryData = periodId ? await getPlanningEntries({}) : []
+        const workspace = await getPlanningWorkspace()
+        if (!workspace) throw new Error('No hay un año escolar activo.')
+        const currentYear = workspace.currentSchoolYear
+        const periodData = workspace.periods
+        const sectionSubjectData = workspace.sectionSubjects
+        const competencyData = workspace.competencies
+        const periodId = workspace.activePeriodId
+        const entryData = workspace.entries
 
         loadedContextRef.current = `${currentYear.id}:${periodId ?? ''}`
         setSchoolYearId(currentYear.id)

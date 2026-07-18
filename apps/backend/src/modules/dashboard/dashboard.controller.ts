@@ -19,6 +19,12 @@ import { UpdateTaskDto } from './dto/update-task.dto'
 export class DashboardController {
   constructor(private dashboardService: DashboardService) {}
 
+  /** Agrupa la carga inicial del panel para evitar cascadas de red. */
+  @Get('workspace')
+  getWorkspace(@CurrentUser() user: AuthenticatedUser) {
+    return this.dashboardService.getWorkspace(user.schoolId)
+  }
+
   /** Obtiene las estadísticas del colegio (estudiantes, profesores, matrículas activas) */
   @Get('stats')
   getStats(@CurrentUser() user: AuthenticatedUser) {

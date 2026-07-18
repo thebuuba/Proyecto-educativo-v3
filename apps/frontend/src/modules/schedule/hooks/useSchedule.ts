@@ -8,16 +8,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
-import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import {
   createScheduleEntry as createScheduleEntryRecord,
   createTimeSlot as createTimeSlotRecord,
   deleteScheduleEntry as deleteScheduleEntryRecord,
   deleteTimeSlot as deleteTimeSlotRecord,
   getScheduleEntries,
-  getSections,
-  getSubjects,
-  getTeachers,
+  getScheduleWorkspace,
   getTimeSlots,
   updateScheduleEntry as updateScheduleEntryRecord,
   updateTimeSlot as updateTimeSlotRecord,
@@ -115,18 +112,16 @@ export function useSchedule() {
     setError(null)
 
     try {
-      const currentYear = await getCurrentSchoolYear()
-      const yearId = currentYear?.id ?? null
+      const workspace = await getScheduleWorkspace()
+      const yearId = workspace.currentSchoolYear?.id ?? null
       schoolYearIdRef.current = yearId
       setSchoolYearId(yearId)
 
-      const [slots, sects, tchrs, subjs] = await Promise.all([
-        getTimeSlots(),
-        getSections(),
-        getTeachers(),
-        getSubjects(),
-      ])
-      const entryData = await getScheduleEntries({ schoolYearId: yearId ?? undefined })
+      const slots = workspace.timeSlots
+      const sects = workspace.sections
+      const tchrs = workspace.teachers
+      const subjs = workspace.subjects
+      const entryData = workspace.entries
 
       setTimeSlots(slots)
       setSections(sects)

@@ -15,6 +15,23 @@ import type {
   PlanningEntryWithDetails,
   PlanningFilters,
 } from '@/modules/planning/types'
+import type { SchoolYearSummary } from '@/services/schoolYearService'
+
+export type PlanningWorkspace = {
+  currentSchoolYear: SchoolYearSummary
+  periods: AcademicPeriodSummary[]
+  activePeriodId: string | null
+  entries: PlanningEntryWithDetails[]
+  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string }[]
+  competencies: CompetencyOption[]
+}
+
+export function getPlanningWorkspace(): Promise<PlanningWorkspace | null> {
+  return api.get<PlanningWorkspace | null>('/planning/workspace', {
+    cacheTtlMs: API_CACHE_TTL.sessionList,
+    cacheTags: [API_CACHE_TAGS.academicPeriods, API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.planningCompetencies, API_CACHE_TAGS.schoolYears],
+  })
+}
 
 /** Obtiene los períodos académicos de un año escolar */
 export async function getAcademicPeriods(schoolYearId: string): Promise<AcademicPeriodSummary[]> {

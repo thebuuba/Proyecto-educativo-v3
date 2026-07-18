@@ -104,6 +104,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                 end={item.path === '/inicio'}
                 onClick={onClose}
                 onMouseEnter={() => routePrefetchers[item.path]?.()}
+                onFocus={() => routePrefetchers[item.path]?.()}
                 title={isExpanded ? item.label : undefined}
                 className={({ isActive }) =>
                   cn(

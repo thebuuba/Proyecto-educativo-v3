@@ -19,13 +19,26 @@ describe('session cookie', () => {
       setHeader: vi.fn(),
     }
 
-    setSessionCookie(response as never, 'signed.jwt.value')
+    setSessionCookie(response as never, 'signed.jwt.value', true)
 
     expect(response.cookie).toHaveBeenCalledWith(SESSION_COOKIE_NAME, 'signed.jwt.value', expect.objectContaining({
       httpOnly: true,
       secure: true,
       sameSite: 'lax',
+      maxAge: 8 * 60 * 60 * 1000,
     }))
     delete process.env.CLOUDFLARE_WORKER_PRODUCTION
+  })
+
+  it('uses a browser-session cookie when remember me is disabled', () => {
+    const response = { cookie: vi.fn(), setHeader: vi.fn() }
+
+    setSessionCookie(response as never, 'signed.jwt.value')
+
+    expect(response.cookie).toHaveBeenCalledWith(
+      SESSION_COOKIE_NAME,
+      'signed.jwt.value',
+      expect.not.objectContaining({ maxAge: expect.any(Number) }),
+    )
   })
 })

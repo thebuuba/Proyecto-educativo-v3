@@ -20,6 +20,23 @@ import type {
   UpdateScheduleEntryInput,
   UpdateTimeSlotInput,
 } from '@/modules/schedule/types'
+import type { SchoolYearSummary } from '@/services/schoolYearService'
+
+export type ScheduleWorkspace = {
+  currentSchoolYear: SchoolYearSummary | null
+  timeSlots: TimeSlot[]
+  entries: ScheduleEntry[]
+  sections: SectionOption[]
+  teachers: TeacherOption[]
+  subjects: SubjectOption[]
+}
+
+export function getScheduleWorkspace(): Promise<ScheduleWorkspace> {
+  return api.get<ScheduleWorkspace>('/schedule/workspace', {
+    cacheTtlMs: API_CACHE_TTL.sessionList,
+    cacheTags: [API_CACHE_TAGS.schedule, API_CACHE_TAGS.schoolYears, API_CACHE_TAGS.timeSlots, API_CACHE_TAGS.courseOptions],
+  })
+}
 
 const dayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']
 const toneByIndex: ScheduleCalendarEntry['tone'][] = ['accent', 'primary', 'success', 'muted']
@@ -67,17 +84,17 @@ export async function getScheduleEntries(filters: ScheduleFilters = {}): Promise
 
 /** Crea una nueva entrada en el horario */
 export async function createScheduleEntry(input: CreateScheduleEntryInput): Promise<ScheduleEntry> {
-  return api.post<ScheduleEntry>('/schedule/entries', input)
+  return api.post<ScheduleEntry>('/schedule/entries', input, { invalidateCacheTags: [API_CACHE_TAGS.schedule] })
 }
 
 /** Actualiza una entrada de horario existente */
 export async function updateScheduleEntry(id: string, input: UpdateScheduleEntryInput): Promise<ScheduleEntry> {
-  return api.patch<ScheduleEntry>(`/schedule/entries/${id}`, input)
+  return api.patch<ScheduleEntry>(`/schedule/entries/${id}`, input, { invalidateCacheTags: [API_CACHE_TAGS.schedule] })
 }
 
 /** Elimina una entrada de horario */
 export async function deleteScheduleEntry(id: string): Promise<void> {
-  await api.delete(`/schedule/entries/${id}`)
+  await api.delete(`/schedule/entries/${id}`, { invalidateCacheTags: [API_CACHE_TAGS.schedule] })
 }
 
 /** Obtiene las secciones disponibles para asignar en el horario */

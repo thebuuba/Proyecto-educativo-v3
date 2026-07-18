@@ -162,15 +162,34 @@ export const appRoutes: AppRoute[] = [
   },
 ]
 
-/** Prefetch de cada ruta: llama a la función para cargar el chunk en background. */
+function prefetch(loaders: Array<() => Promise<unknown>>) {
+  void Promise.all(loaders.map((load) => load())).catch(() => undefined)
+}
+
+/** Precarga el chunk y la carga inicial cacheable al anticipar una navegación. */
 export const routePrefetchers: Record<string, () => void> = {
-  '/inicio': () => void import('@/modules/dashboard/pages/DashboardPage'),
-  '/cursos': () => void import('@/modules/courses/pages/CoursesPage'),
+  '/inicio': () => prefetch([
+    () => import('@/modules/dashboard/pages/DashboardPage'),
+    () => import('@/modules/dashboard/services/dashboardService').then(({ getDashboardData }) => getDashboardData(null)),
+  ]),
+  '/cursos': () => prefetch([
+    () => import('@/modules/courses/pages/CoursesPage'),
+    () => import('@/modules/courses/services/coursesService').then(({ getCourseData }) => getCourseData()),
+  ]),
   '/estudiantes': () => void import('@/modules/students/pages/StudentsPage'),
-  '/horario': () => void import('@/modules/schedule/pages/SchedulePage'),
-  '/asistencia': () => void import('@/modules/attendance/pages/AttendancePage'),
+  '/horario': () => prefetch([
+    () => import('@/modules/schedule/pages/SchedulePage'),
+    () => import('@/modules/schedule/services/scheduleService').then(({ getScheduleWorkspace }) => getScheduleWorkspace()),
+  ]),
+  '/asistencia': () => prefetch([
+    () => import('@/modules/attendance/pages/AttendancePage'),
+    () => import('@/modules/attendance/services/attendanceService').then(({ getAttendanceWorkspace }) => getAttendanceWorkspace()),
+  ]),
   '/calificaciones': () => void import('@/modules/grading/pages/GradingPage'),
-  '/planificaciones': () => void import('@/modules/planning/pages/PlanningPage'),
+  '/planificaciones': () => prefetch([
+    () => import('@/modules/planning/pages/PlanningPage'),
+    () => import('@/modules/planning/services/planningService').then(({ getPlanningWorkspace }) => getPlanningWorkspace()),
+  ]),
   '/reportes': () => void import('@/modules/reports/pages/ReportsPage'),
   '/configuracion': () => void import('@/modules/school-administration/pages/SchoolAdministrationPage'),
 }

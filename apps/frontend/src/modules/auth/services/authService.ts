@@ -15,7 +15,7 @@ import type {
   RegisterCredentials,
   Role,
 } from '@/modules/auth/types/auth'
-import { supabase } from '@/modules/auth/services/supabaseClient'
+import { isRememberSessionEnabled, supabase } from '@/modules/auth/services/supabaseClient'
 import { getOAuthCallbackUrl } from '@/utils/oauthCallback'
 
 /** Restaura perfil, roles, permisos y onboarding en un solo viaje. */
@@ -76,7 +76,10 @@ export async function exchangeOAuthCode(code: string): Promise<string> {
 /** Crea sesión Aula Base desde token Supabase. */
 export async function createAulaSession(supabaseAccessToken: string): Promise<LoginResponse> {
   return api.post<LoginResponse>('/auth/session', undefined, {
-    headers: { Authorization: `Bearer ${supabaseAccessToken}` },
+    headers: {
+      Authorization: `Bearer ${supabaseAccessToken}`,
+      'X-Remember-Session': String(isRememberSessionEnabled()),
+    },
     clearResponseCache: true,
   })
 }

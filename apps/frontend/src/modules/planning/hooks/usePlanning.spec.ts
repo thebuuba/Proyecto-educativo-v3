@@ -5,7 +5,7 @@ import { usePlanning } from './usePlanning'
 
 const mocks = vi.hoisted(() => ({
   appUser: { id: 'user-0', schoolId: 'school-0' },
-  getCurrentSchoolYear: vi.fn(),
+  getPlanningWorkspace: vi.fn(),
   getAcademicPeriods: vi.fn(),
   getTeacherSectionSubjects: vi.fn(),
   getCompetencies: vi.fn(),
@@ -14,10 +14,6 @@ const mocks = vi.hoisted(() => ({
 
 vi.mock('@/modules/auth/hooks/useAuth', () => ({
   useAuth: () => ({ appUser: mocks.appUser }),
-}))
-
-vi.mock('@/services/schoolYearService', () => ({
-  getCurrentSchoolYear: mocks.getCurrentSchoolYear,
 }))
 
 vi.mock('@/modules/planning/services/planningService', () => ({
@@ -29,6 +25,7 @@ vi.mock('@/modules/planning/services/planningService', () => ({
   getAcademicPeriods: mocks.getAcademicPeriods,
   getCompetencies: mocks.getCompetencies,
   getPlanningEntries: mocks.getPlanningEntries,
+  getPlanningWorkspace: mocks.getPlanningWorkspace,
   getTeacherSectionSubjects: mocks.getTeacherSectionSubjects,
   updatePlanningEntry: vi.fn(),
 }))
@@ -42,17 +39,10 @@ describe('usePlanning initial load', () => {
     })
     userSequence += 1
     mocks.appUser = { id: `user-${userSequence}`, schoolId: 'school-1' }
-    mocks.getCurrentSchoolYear.mockResolvedValue({
-      id: 'year-1',
-      name: '2026-2027',
-      isCurrent: true,
-    })
-    mocks.getTeacherSectionSubjects.mockResolvedValue([])
-    mocks.getCompetencies.mockResolvedValue([])
   })
 
   it('releases loading and exposes an error when initialization fails', async () => {
-    mocks.getAcademicPeriods.mockRejectedValue(new Error('Falló la carga de períodos'))
+    mocks.getPlanningWorkspace.mockRejectedValue(new Error('Falló la carga de períodos'))
 
     const hook = renderHook(() => usePlanning())
 
@@ -63,8 +53,11 @@ describe('usePlanning initial load', () => {
   })
 
   it('reuses the complete snapshot on remount while its TTL is fresh', async () => {
-    mocks.getAcademicPeriods.mockResolvedValue([{ id: 'period-1' }])
-    mocks.getPlanningEntries.mockResolvedValue([])
+    mocks.getPlanningWorkspace.mockResolvedValue({
+      currentSchoolYear: { id: 'year-1', name: '2026-2027', isCurrent: true },
+      periods: [{ id: 'period-1' }], activePeriodId: 'period-1', entries: [],
+      sectionSubjects: [], competencies: [],
+    })
 
     const first = renderHook(() => usePlanning())
     await waitFor(() => expect(first.result.current.loading).toBe(false))
@@ -73,9 +66,7 @@ describe('usePlanning initial load', () => {
     const second = renderHook(() => usePlanning())
     expect(second.result.current.loading).toBe(false)
     expect(second.result.current.activePeriodId).toBe('period-1')
-    expect(mocks.getCurrentSchoolYear).toHaveBeenCalledTimes(1)
-    expect(mocks.getAcademicPeriods).toHaveBeenCalledTimes(1)
-    expect(mocks.getPlanningEntries).toHaveBeenCalledTimes(1)
+    expect(mocks.getPlanningWorkspace).toHaveBeenCalledTimes(1)
     second.unmount()
   })
 })

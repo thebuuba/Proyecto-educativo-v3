@@ -3,7 +3,7 @@
  * gestionar tareas pendientes y calcular la asistencia semanal.
  */
 
-import { api } from '@/services/apiClient'
+import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type {
   CreateDashboardTaskInput,
   DashboardData,
@@ -12,7 +12,7 @@ import type {
   WeeklyAttendance,
 } from '@/modules/dashboard/types/dashboard'
 import type { AppUser } from '@/modules/auth/types/auth'
-import { getCurrentSchoolYear } from '@/services/schoolYearService'
+import type { SchoolYearSummary } from '@/services/schoolYearService'
 
 const weekdayLabels = ['LUN', 'MAR', 'MIE', 'JUE', 'VIE']
 
@@ -28,11 +28,17 @@ const emptySetupProgress: DashboardSetupProgress = {
 /** Obtiene los datos completos del dashboard para el usuario actual. */
 export async function getDashboardData(appUser: AppUser | null): Promise<DashboardData> {
   const today = new Date()
-  const [currentSchoolYear, tasks, setupProgress] = await Promise.all([
-    safeBlock(getCurrentSchoolYear(), null),
-    safeBlock(api.get<DashboardTask[]>('/dashboard/tasks'), []),
-    safeBlock(api.get<DashboardSetupProgress>('/dashboard/stats'), emptySetupProgress),
-  ])
+  const workspace = await safeBlock(api.get<{
+    currentSchoolYear: SchoolYearSummary | null
+    tasks: DashboardTask[]
+    setupProgress: DashboardSetupProgress
+  }>('/dashboard/workspace', {
+    cacheTtlMs: API_CACHE_TTL.sessionList,
+    cacheTags: [API_CACHE_TAGS.dashboard, API_CACHE_TAGS.schoolYears],
+  }), null)
+  const currentSchoolYear = workspace?.currentSchoolYear ?? null
+  const tasks = workspace?.tasks ?? []
+  const setupProgress = workspace?.setupProgress ?? emptySetupProgress
 
   return {
     context: {
@@ -54,12 +60,16 @@ export async function getDashboardData(appUser: AppUser | null): Promise<Dashboa
 /** Crea una nueva tarea en el dashboard. */
 export async function createDashboardTask(input: CreateDashboardTaskInput, appUserId: string | null): Promise<DashboardTask> {
   if (!input.title.trim()) throw new Error('Escribe un titulo para la tarea.')
-  return api.post<DashboardTask>('/dashboard/tasks', { ...input, assignedTo: appUserId })
+  return api.post<DashboardTask>('/dashboard/tasks', { ...input, assignedTo: appUserId }, {
+    invalidateCacheTags: [API_CACHE_TAGS.dashboard],
+  })
 }
 
 /** Marca una tarea como completada. */
 export async function completeDashboardTask(id: string): Promise<void> {
-  await api.patch(`/dashboard/tasks/${id}`, { status: 'completed' })
+  await api.patch(`/dashboard/tasks/${id}`, { status: 'completed' }, {
+    invalidateCacheTags: [API_CACHE_TAGS.dashboard],
+  })
 }
 
 /** Ejecuta una promesa y retorna un valor por defecto si falla, sin lanzar error. */

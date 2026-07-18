@@ -21,8 +21,10 @@ const mocks = vi.hoisted(() => ({
     attendanceDaily: { count: vi.fn() },
     attendanceClass: { count: vi.fn() },
     planningEntry: { count: vi.fn() },
+    schoolYear: { findMany: vi.fn() },
     dashboardTask: {
       create: vi.fn(),
+      findMany: vi.fn(),
       findFirst: vi.fn(),
       update: vi.fn(),
     },
@@ -82,6 +84,33 @@ describe('DashboardService', () => {
       data: { schoolId: 'school-1', title: 'Revisar asistencia', status: 'pending', priority: 'high', createdBy: 'user-1', dueDate: null, assignedTo: null },
     })
     expect(result).toEqual({ id: 'task-1', ...data })
+  })
+
+  it('returns the complete dashboard workspace in one service call', async () => {
+    mocks.prisma.schoolYear.findMany.mockResolvedValue([
+      { id: 'year-old', isCurrent: false },
+      { id: 'year-current', isCurrent: true },
+    ])
+    mocks.prisma.dashboardTask.findMany.mockResolvedValue([{ id: 'task-1' }])
+    const counts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    ;[
+      mocks.prisma.student.count,
+      mocks.prisma.teacher.count,
+      mocks.prisma.enrollment.count,
+      mocks.prisma.grade.count,
+      mocks.prisma.section.count,
+      mocks.prisma.sectionSubject.count,
+      mocks.prisma.scheduleEntry.count,
+      mocks.prisma.attendanceDaily.count,
+      mocks.prisma.attendanceClass.count,
+      mocks.prisma.planningEntry.count,
+    ].forEach((count, index) => count.mockResolvedValue(counts[index]))
+
+    const result = await new DashboardService().getWorkspace('school-1')
+
+    expect(result.currentSchoolYear).toEqual({ id: 'year-current', isCurrent: true })
+    expect(result.tasks).toEqual([{ id: 'task-1' }])
+    expect(result.setupProgress.studentCount).toBe(1)
   })
 
   it('updates a task and delegates to prisma', async () => {

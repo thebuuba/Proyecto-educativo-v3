@@ -1,11 +1,12 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
+import type { ScheduleWorkspace } from '@/modules/schedule/services/scheduleService'
 import { useSchedule } from './useSchedule'
 
 const mocks = vi.hoisted(() => ({
   appUser: { id: 'user-0', schoolId: 'school-0' },
-  getCurrentSchoolYear: vi.fn(),
+  getScheduleWorkspace: vi.fn(),
   getTimeSlots: vi.fn(),
   getSections: vi.fn(),
   getTeachers: vi.fn(),
@@ -23,16 +24,13 @@ vi.mock('@/modules/auth/hooks/useAuth', () => ({
   useAuth: () => ({ appUser: mocks.appUser }),
 }))
 
-vi.mock('@/services/schoolYearService', () => ({
-  getCurrentSchoolYear: mocks.getCurrentSchoolYear,
-}))
-
 vi.mock('@/modules/schedule/services/scheduleService', () => ({
   createScheduleEntry: mocks.createScheduleEntry,
   createTimeSlot: mocks.createTimeSlot,
   deleteScheduleEntry: mocks.deleteScheduleEntry,
   deleteTimeSlot: mocks.deleteTimeSlot,
   getScheduleEntries: mocks.getScheduleEntries,
+  getScheduleWorkspace: mocks.getScheduleWorkspace,
   getSections: mocks.getSections,
   getSubjects: mocks.getSubjects,
   getTeachers: mocks.getTeachers,
@@ -58,59 +56,33 @@ describe('useSchedule initial load', () => {
     })
     userSequence += 1
     mocks.appUser = { id: `user-${userSequence}`, schoolId: 'school-1' }
-    mocks.getCurrentSchoolYear.mockResolvedValue({
-      id: 'year-1',
-      name: '2026-2027',
-      isCurrent: true,
-    })
   })
 
-  it('loads independent resources in parallel and entries after the group resolves', async () => {
-    const slots = deferred<never[]>()
-    const sections = deferred<never[]>()
-    const teachers = deferred<never[]>()
-    const subjects = deferred<never[]>()
-    const entries = deferred<never[]>()
-    mocks.getTimeSlots.mockReturnValue(slots.promise)
-    mocks.getSections.mockReturnValue(sections.promise)
-    mocks.getTeachers.mockReturnValue(teachers.promise)
-    mocks.getSubjects.mockReturnValue(subjects.promise)
-    mocks.getScheduleEntries.mockReturnValue(entries.promise)
+  it('loads the initial schedule through one workspace request', async () => {
+    const workspace = deferred<ScheduleWorkspace>()
+    mocks.getScheduleWorkspace.mockReturnValue(workspace.promise)
 
     const hook = renderHook(() => useSchedule())
 
-    await waitFor(() => {
-      expect(mocks.getTimeSlots).toHaveBeenCalledTimes(1)
-      expect(mocks.getSections).toHaveBeenCalledTimes(1)
-      expect(mocks.getTeachers).toHaveBeenCalledTimes(1)
-      expect(mocks.getSubjects).toHaveBeenCalledTimes(1)
-    })
-    expect(mocks.getScheduleEntries).not.toHaveBeenCalled()
+    await waitFor(() => expect(mocks.getScheduleWorkspace).toHaveBeenCalledTimes(1))
     expect(hook.result.current.loading).toBe(true)
 
     await act(async () => {
-      slots.resolve([])
-      sections.resolve([])
-      teachers.resolve([])
-      subjects.resolve([])
-    })
-    await waitFor(() => {
-      expect(mocks.getScheduleEntries).toHaveBeenCalledWith({ schoolYearId: 'year-1' })
-    })
-
-    await act(async () => {
-      entries.resolve([])
+      workspace.resolve({
+        currentSchoolYear: { id: 'year-1', name: '2026-2027', isCurrent: true },
+        timeSlots: [], sections: [], teachers: [], subjects: [], entries: [],
+      })
     })
     await waitFor(() => expect(hook.result.current.loading).toBe(false))
+    expect(hook.result.current.schoolYearId).toBe('year-1')
     hook.unmount()
   })
 
   it('reuses the complete snapshot on remount while its TTL is fresh', async () => {
-    mocks.getTimeSlots.mockResolvedValue([])
-    mocks.getSections.mockResolvedValue([])
-    mocks.getTeachers.mockResolvedValue([])
-    mocks.getSubjects.mockResolvedValue([])
-    mocks.getScheduleEntries.mockResolvedValue([])
+    mocks.getScheduleWorkspace.mockResolvedValue({
+      currentSchoolYear: { id: 'year-1', name: '2026-2027', isCurrent: true },
+      timeSlots: [], sections: [], teachers: [], subjects: [], entries: [],
+    })
 
     const first = renderHook(() => useSchedule())
     await waitFor(() => expect(first.result.current.loading).toBe(false))
@@ -118,9 +90,7 @@ describe('useSchedule initial load', () => {
 
     const second = renderHook(() => useSchedule())
     expect(second.result.current.loading).toBe(false)
-    expect(mocks.getCurrentSchoolYear).toHaveBeenCalledTimes(1)
-    expect(mocks.getTimeSlots).toHaveBeenCalledTimes(1)
-    expect(mocks.getScheduleEntries).toHaveBeenCalledTimes(1)
+    expect(mocks.getScheduleWorkspace).toHaveBeenCalledTimes(1)
     second.unmount()
   })
 })
