@@ -2700,7 +2700,6 @@ export type Database = {
     }
     Functions: {
       show_limit: { Args: never; Returns: number }
-      show_trgm: { Args: { "": string }; Returns: string[] }
     }
     Enums: {
       attendance_status: "present" | "absent" | "late" | "excused"
