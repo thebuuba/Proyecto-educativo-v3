@@ -64,7 +64,7 @@ El código puede prepararse y validarse localmente antes de esta compuerta. Hype
 
 La aplicación usa un solo Hyperdrive de producción, con caché SQL desactivado y TLS obligatorio:
 
-- Producción: `aa6bc681f16b42699381fdcf0f5386b7` → Supabase `ebkrbfdspofhyljjeotk`, usuario `app_backend`.
+- Producción: `aa6bc681f16b42699381fdcf0f5386b7` → Supabase `vqrptqffeezqacwtmlqq`, usuario `app_backend`.
 
 Para rotar la contraseña de `app_backend`, actualiza después el Hyperdrive con la `Direct connection` del proyecto de producción:
 
@@ -136,7 +136,7 @@ Configura cada proyecto en Supabase Auth:
 El flujo activo tiene solo dos destinos:
 
 - Desarrollo local: `http://localhost:8787` con la base configurada localmente.
-- Producción: `https://aula-base.prroyectoeducativo00.workers.dev` con Supabase `ebkrbfdspofhyljjeotk`.
+- Producción: `https://aula-base.prroyectoeducativo00.workers.dev` con Supabase `vqrptqffeezqacwtmlqq` en North Virginia (`us-east-1`).
 
 Un push a `main` ejecuta CI. Si todas las pruebas terminan correctamente, el workflow `Deploy Cloudflare` aplica las migraciones y despliega frontend y backend juntos al Worker de producción. También puede ejecutarse manualmente. El Environment **Production** acepta únicamente ramas protegidas, pero no requiere una segunda aprobación después del CI.
 
