@@ -4,7 +4,7 @@
  * Implementa la lógica de negocio para el registro y consulta de
  * asistencia de estudiantes, tanto diaria como por clase.
  */
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma, AttendanceStatus } from '@aula/database'
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { UpsertAttendanceDto } from './dto/upsert-attendance.dto'
@@ -80,6 +80,15 @@ function toAttendanceStatus(value: string): AttendanceStatus {
  */
 @Injectable()
 export class AttendanceService {
+  /** Agrupa cursos y período requeridos al abrir Asistencia. */
+  async getWorkspace(schoolId: string) {
+    const [courses, currentPeriod] = await Promise.all([
+      this.getCourses(schoolId),
+      this.getCurrentPeriod(schoolId),
+    ])
+    return { courses, academicPeriodId: currentPeriod?.id ?? null }
+  }
+
   async getCourses(schoolId: string) {
     const courses = await prisma.sectionSubject.findMany({
       where: { schoolId, status: 'ACTIVE' },
@@ -159,6 +168,27 @@ export class AttendanceService {
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
     if (date) where.attendanceDate = new Date(date)
     return prisma.attendanceClass.findMany({ where })
+  }
+
+  /** Obtiene todo un intervalo mensual en una sola consulta. */
+  findClassAttendanceRange(schoolId: string, sectionSubjectId: string, from: string, to: string) {
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/
+    if (!sectionSubjectId || !datePattern.test(from) || !datePattern.test(to) || from > to) {
+      throw new BadRequestException('Invalid attendance range')
+    }
+    const fromDate = new Date(`${from}T00:00:00.000Z`)
+    const toDate = new Date(`${to}T00:00:00.000Z`)
+    if (Number.isNaN(fromDate.getTime()) || Number.isNaN(toDate.getTime()) || toDate.getTime() - fromDate.getTime() > 32 * 86_400_000) {
+      throw new BadRequestException('Attendance range must cover at most 32 days')
+    }
+    return prisma.attendanceClass.findMany({
+      where: {
+        schoolId,
+        sectionSubjectId,
+        attendanceDate: { gte: fromDate, lte: toDate },
+      },
+      orderBy: { attendanceDate: 'asc' },
+    })
   }
 
   /**

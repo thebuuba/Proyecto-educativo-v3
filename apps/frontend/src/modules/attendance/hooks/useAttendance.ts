@@ -4,9 +4,8 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import {
   computeAttendanceStats,
   deleteAttendance,
-  getAttendanceCourses,
+  getAttendanceWorkspace,
   getClassAttendanceForMonth,
-  getCurrentAcademicPeriodId,
   getStudentsBySection,
   upsertAttendance,
 } from '@/modules/attendance/services/attendanceService'
@@ -112,10 +111,9 @@ export function useAttendance() {
     setLoading(true)
     setError(null)
     try {
-      const [courseList, period] = await Promise.all([
-        getAttendanceCourses(),
-        getCurrentAcademicPeriodId(),
-      ])
+      const workspace = await getAttendanceWorkspace()
+      const courseList = workspace.courses
+      const period = workspace.academicPeriodId
       setCourses(courseList)
       setAcademicPeriodId(period)
       attendanceInitialCache.write(cacheScope, {

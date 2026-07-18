@@ -11,6 +11,17 @@ import { UpdateTaskDto } from './dto/update-task.dto'
 
 @Injectable()
 export class DashboardService {
+  /** Carga inicial del panel en una sola petición HTTP. */
+  async getWorkspace(schoolId: string) {
+    const [schoolYears, tasks, setupProgress] = await Promise.all([
+      prisma.schoolYear.findMany({ where: { schoolId }, orderBy: { startDate: 'desc' } }),
+      this.getTasks(schoolId),
+      this.getStats(schoolId),
+    ])
+    const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
+    return { currentSchoolYear, tasks, setupProgress }
+  }
+
   /** Obtiene estadisticas del colegio y senales de configuracion inicial. */
   async getStats(schoolId: string) {
     const [

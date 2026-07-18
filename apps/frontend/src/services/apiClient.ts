@@ -18,10 +18,12 @@ export const API_CACHE_TTL = {
 export const API_CACHE_TAGS = {
   academicPeriods: 'academic-periods',
   courseOptions: 'course-options',
+  dashboard: 'dashboard',
   enrollmentOptions: 'enrollment-options',
   planningCompetencies: 'planning-competencies',
   schoolYears: 'school-years',
   timeSlots: 'schedule-time-slots',
+  schedule: 'schedule',
 } as const
 
 /** Error personalizado con código de estado HTTP. */

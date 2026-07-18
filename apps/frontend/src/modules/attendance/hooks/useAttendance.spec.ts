@@ -5,9 +5,8 @@ import { useAttendance } from './useAttendance'
 
 const mocks = vi.hoisted(() => ({
   appUser: { id: 'user-0', schoolId: 'school-0' },
-  getAttendanceCourses: vi.fn(),
+  getAttendanceWorkspace: vi.fn(),
   getClassAttendanceForMonth: vi.fn(),
-  getCurrentAcademicPeriodId: vi.fn(),
   getScheduleEntries: vi.fn(),
   getStudentsBySection: vi.fn(),
 }))
@@ -19,9 +18,8 @@ vi.mock('@/modules/auth/hooks/useAuth', () => ({
 vi.mock('@/modules/attendance/services/attendanceService', () => ({
   computeAttendanceStats: () => ({ present: 0, absent: 0, late: 0, excused: 0, total: 0 }),
   deleteAttendance: vi.fn(),
-  getAttendanceCourses: mocks.getAttendanceCourses,
+  getAttendanceWorkspace: mocks.getAttendanceWorkspace,
   getClassAttendanceForMonth: mocks.getClassAttendanceForMonth,
-  getCurrentAcademicPeriodId: mocks.getCurrentAcademicPeriodId,
   getStudentsBySection: mocks.getStudentsBySection,
   upsertAttendance: vi.fn(),
 }))
@@ -37,16 +35,14 @@ describe('useAttendance course cache', () => {
     vi.restoreAllMocks()
     userSequence += 1
     mocks.appUser = { id: `user-${userSequence}`, schoolId: 'school-1' }
-    mocks.getAttendanceCourses.mockReset()
+    mocks.getAttendanceWorkspace.mockReset()
     mocks.getClassAttendanceForMonth.mockReset()
-    mocks.getCurrentAcademicPeriodId.mockReset()
     mocks.getScheduleEntries.mockReset()
     mocks.getStudentsBySection.mockReset()
   })
 
   it('reuses courses and the period on remount while the TTL is fresh', async () => {
-    mocks.getAttendanceCourses.mockResolvedValue([])
-    mocks.getCurrentAcademicPeriodId.mockResolvedValue('period-1')
+    mocks.getAttendanceWorkspace.mockResolvedValue({ courses: [], academicPeriodId: 'period-1' })
 
     const first = renderHook(() => useAttendance())
     await waitFor(() => expect(first.result.current.loading).toBe(false))
@@ -55,14 +51,12 @@ describe('useAttendance course cache', () => {
     const second = renderHook(() => useAttendance())
     expect(second.result.current.loading).toBe(false)
     expect(second.result.current.courses).toEqual([])
-    expect(mocks.getAttendanceCourses).toHaveBeenCalledTimes(1)
-    expect(mocks.getCurrentAcademicPeriodId).toHaveBeenCalledTimes(1)
+    expect(mocks.getAttendanceWorkspace).toHaveBeenCalledTimes(1)
     second.unmount()
   })
 
   it('releases loading when the initial course request fails', async () => {
-    mocks.getAttendanceCourses.mockRejectedValue(new Error('Falló el catálogo de asistencia'))
-    mocks.getCurrentAcademicPeriodId.mockResolvedValue('period-1')
+    mocks.getAttendanceWorkspace.mockRejectedValue(new Error('Falló el catálogo de asistencia'))
 
     const hook = renderHook(() => useAttendance())
 
@@ -73,8 +67,7 @@ describe('useAttendance course cache', () => {
 
   it('refetches courses and period after the cache TTL expires', async () => {
     const now = vi.spyOn(Date, 'now').mockReturnValue(1_000)
-    mocks.getAttendanceCourses.mockResolvedValue([])
-    mocks.getCurrentAcademicPeriodId.mockResolvedValue('period-1')
+    mocks.getAttendanceWorkspace.mockResolvedValue({ courses: [], academicPeriodId: 'period-1' })
 
     const first = renderHook(() => useAttendance())
     await waitFor(() => expect(first.result.current.loading).toBe(false))
@@ -84,13 +77,12 @@ describe('useAttendance course cache', () => {
     const second = renderHook(() => useAttendance())
     await waitFor(() => expect(second.result.current.loading).toBe(false))
 
-    expect(mocks.getAttendanceCourses).toHaveBeenCalledTimes(2)
-    expect(mocks.getCurrentAcademicPeriodId).toHaveBeenCalledTimes(2)
+    expect(mocks.getAttendanceWorkspace).toHaveBeenCalledTimes(2)
     second.unmount()
   })
 
   it('requests and uses the exact schedule of the selected subject', async () => {
-    mocks.getAttendanceCourses.mockResolvedValue([{
+    mocks.getAttendanceWorkspace.mockResolvedValue({ courses: [{
       id: 'section-subject-1',
       gradeId: 'grade-1',
       sectionId: 'section-1',
@@ -106,8 +98,7 @@ describe('useAttendance course cache', () => {
       schoolYearName: '2026-2027',
       studentCount: 0,
       label: '1.º A - Ciencias de la Tierra y del Universo',
-    }])
-    mocks.getCurrentAcademicPeriodId.mockResolvedValue('period-1')
+    }], academicPeriodId: 'period-1' })
     mocks.getStudentsBySection.mockResolvedValue([])
     mocks.getScheduleEntries.mockResolvedValue([
       { dayOfWeek: 2 },

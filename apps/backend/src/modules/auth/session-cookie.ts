@@ -16,7 +16,7 @@ export function getSessionToken(request: Request): string | null {
   return null
 }
 
-function cookieOptions(): CookieOptions {
+function cookieOptions(rememberSession = false): CookieOptions {
   const secure = process.env.NODE_ENV === 'production'
     || process.env.CLOUDFLARE_WORKER_PRODUCTION === 'true'
   return {
@@ -24,12 +24,12 @@ function cookieOptions(): CookieOptions {
     secure,
     sameSite: 'lax',
     path: '/',
-    maxAge: SESSION_MAX_AGE_MS,
+    ...(rememberSession ? { maxAge: SESSION_MAX_AGE_MS } : {}),
   }
 }
 
-export function setSessionCookie(response: Response, token: string) {
-  response.cookie(SESSION_COOKIE_NAME, token, cookieOptions())
+export function setSessionCookie(response: Response, token: string, rememberSession = false) {
+  response.cookie(SESSION_COOKIE_NAME, token, cookieOptions(rememberSession))
   response.setHeader('Cache-Control', 'private, no-store')
 }
 

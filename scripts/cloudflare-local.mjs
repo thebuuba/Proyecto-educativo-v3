@@ -6,7 +6,7 @@ try {
 } catch (error) {
   if (error.code === 'ENOENT') {
     throw new Error(
-      'Falta .dev.vars.local; copia .dev.vars.example y usa las credenciales de Supabase DEV',
+      'Falta .dev.vars.local; inicia Supabase local y copia .dev.vars.example con sus credenciales',
     )
   }
   throw error

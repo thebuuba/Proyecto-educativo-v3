@@ -23,6 +23,12 @@ import { GenerateAndCreateEntryDto } from './dto/generate-and-create-entry.dto'
 export class PlanningController {
   constructor(private planningService: PlanningService) {}
 
+  /** Agrupa la carga inicial de Planificación para evitar cascadas de red. */
+  @Get('workspace')
+  getWorkspace(@CurrentUser() user: AuthenticatedUser) {
+    return this.planningService.getWorkspace(user.schoolId)
+  }
+
   /** Obtiene las entradas de planificación filtradas por materia-sección */
   @Get()
   findAll(@CurrentUser() user: AuthenticatedUser, @Query('sectionSubjectId') sectionSubjectId?: string) {

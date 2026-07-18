@@ -22,6 +22,12 @@ import { UpdateScheduleEntryDto } from './dto/update-schedule-entry.dto'
 export class ScheduleController {
   constructor(private scheduleService: ScheduleService) {}
 
+  /** Agrupa la carga inicial del horario para evitar cascadas de red. */
+  @Get('workspace')
+  getWorkspace(@CurrentUser() user: AuthenticatedUser) {
+    return this.scheduleService.getWorkspace(user.schoolId)
+  }
+
   /** Obtiene todas las entradas de horario con filtros opcionales */
   @Get()
   findAll(

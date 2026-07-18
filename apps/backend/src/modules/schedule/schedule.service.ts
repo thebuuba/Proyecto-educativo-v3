@@ -31,6 +31,23 @@ function formatTime(value: Date | string) {
 
 @Injectable()
 export class ScheduleService {
+  /** Agrupa todos los datos requeridos al abrir el horario. */
+  async getWorkspace(schoolId: string) {
+    const schoolYears = await prisma.schoolYear.findMany({
+      where: { schoolId },
+      orderBy: { startDate: 'desc' },
+    })
+    const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
+    const [timeSlots, sections, teachers, subjects, entries] = await Promise.all([
+      this.getTimeSlots(schoolId),
+      this.getSections(schoolId),
+      this.getTeachers(schoolId),
+      this.getSubjects(schoolId),
+      this.findEntries(schoolId, undefined, undefined, currentSchoolYear?.id),
+    ])
+    return { currentSchoolYear, timeSlots, sections, teachers, subjects, entries }
+  }
+
   /** Obtiene todas las entradas de horario aplicando filtros opcionales */
   async findAll(schoolId: string, sectionId?: string, schoolYearId?: string, teacherId?: string, gradeId?: string) {
     const where = await this.entryWhere(schoolId, { sectionId, schoolYearId, teacherId, gradeId })

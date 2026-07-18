@@ -16,22 +16,23 @@ Render y Vercel ya no forman parte de la configuración del repositorio.
 
 ## Desarrollo y verificación local
 
-El desarrollo diario usa el proyecto remoto **Supabase DEV**. No requiere Docker, Colima ni Studio local. Copia el archivo de ejemplo y completa únicamente credenciales de DEV:
+El desarrollo diario usa **Supabase local**. La única base remota es la de producción. Inicia los contenedores, copia el archivo de ejemplo y usa la clave `Publishable` en `SUPABASE_ANON_KEY`/`VITE_SUPABASE_ANON_KEY` y la clave `Secret` en `SUPABASE_SERVICE_ROLE_KEY`:
 
 ```bash
 pnpm install
+pnpm supabase:local
 cp .dev.vars.example .dev.vars.local
 pnpm cloudflare:dev
 ```
 
-`cloudflare:dev` compila frontend y backend, sirve todo en `http://localhost:8787` y conecta Prisma, Auth y Storage a Supabase DEV. El archivo `.dev.vars.local` está ignorado por Git.
+`cloudflare:dev` compila frontend y backend, sirve todo en `http://localhost:8787` y conecta Prisma, Auth y Storage a Supabase local. El archivo `.dev.vars.local` está ignorado por Git. Detén los contenedores al terminar con `pnpm supabase:stop`.
 
 Prisma crea su cliente dentro de cada petición del Worker. No lo conviertas de nuevo en un pool global: Cloudflare limpia las conexiones por invocación y Hyperdrive mantiene el pool compartido junto a PostgreSQL.
 
-Supabase local queda reservado para comprobar migraciones desde cero:
+Para comprobar las migraciones desde cero:
 
 ```bash
-pnpm supabase:local
+pnpm exec supabase db reset
 pnpm supabase:stop
 ```
 
@@ -156,15 +157,17 @@ pnpm cloudflare:deploy:production
 curl https://DOMINIO_PRODUCCION/api/v1/health
 ```
 
-## Corte y rollback
+## Rollback
 
-1. Reduce el TTL DNS antes del corte si se usa dominio propio.
-2. Despliega producción sin eliminar todavía los servicios antiguos.
-3. Actualiza DNS y URLs de Supabase Auth.
-4. Ejecuta el smoke test completo.
-5. Conserva Render/Vercel sin tráfico durante 24–48 horas.
-6. Si falla, revierte DNS y revisa logs; Supabase no necesita rollback porque la base no se mueve.
-7. Cuando producción permanezca estable, elimina Render/Vercel y sus secretos.
+Si una versión del Worker falla, lista las versiones recientes y restaura la anterior:
+
+```bash
+pnpm exec wrangler versions list
+pnpm exec wrangler rollback VERSION_ID --message "Rollback de producción"
+pnpm cloudflare:smoke https://aula-base.prroyectoeducativo00.workers.dev
+```
+
+El rollback del Worker no revierte migraciones de PostgreSQL. Las migraciones deben ser compatibles hacia delante; cualquier corrección de base de datos se publica como una migración nueva.
 
 ## Verificación obligatoria
 

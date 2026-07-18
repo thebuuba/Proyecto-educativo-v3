@@ -11,6 +11,10 @@ import { AuthTransitionLink } from '@/modules/auth/components/AuthTransitionLink
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { FacebookIcon, FLOATING_ICONS, GoogleIcon } from '@/components/auth/AuthIcons'
 import { requestPasswordReset } from '@/modules/auth/services/authService'
+import {
+  isRememberSessionEnabled,
+  setRememberSession,
+} from '@/modules/auth/services/supabaseClient'
 
 type LocationState = {
   from?: {
@@ -25,6 +29,7 @@ export function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const [rememberMe, setRememberMe] = useState(isRememberSessionEnabled)
   const [errorMessage, setErrorMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [forgotPasswordSent, setForgotPasswordSent] = useState(false)
@@ -213,6 +218,12 @@ export function LoginPage() {
             <label className="flex cursor-pointer items-center gap-2">
               <input
                 type="checkbox"
+                checked={rememberMe}
+                onChange={(event) => {
+                  const checked = event.target.checked
+                  setRememberMe(checked)
+                  setRememberSession(checked)
+                }}
                 className="size-4 cursor-pointer accent-[#1E3D8F]"
               />
               <span className="text-sm text-gray-600">Recordarme</span>

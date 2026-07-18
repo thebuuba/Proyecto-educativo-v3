@@ -29,6 +29,21 @@ export class AttendanceController {
    */
   constructor(private attendanceService: AttendanceService) {}
 
+  @Get('workspace')
+  getWorkspace(@CurrentUser() user: AuthenticatedUser) {
+    return this.attendanceService.getWorkspace(user.schoolId)
+  }
+
+  @Get('class-range')
+  findClassAttendanceRange(
+    @CurrentUser() user: AuthenticatedUser,
+    @Query('sectionSubjectId') sectionSubjectId: string,
+    @Query('from') from: string,
+    @Query('to') to: string,
+  ) {
+    return this.attendanceService.findClassAttendanceRange(user.schoolId, sectionSubjectId, from, to)
+  }
+
   @Get('courses')
   getCourses(@CurrentUser() user: AuthenticatedUser) {
     return this.attendanceService.getCourses(user.schoolId)

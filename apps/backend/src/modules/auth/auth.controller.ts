@@ -28,8 +28,8 @@ import { clearSessionCookie, setSessionCookie } from './session-cookie'
 
 type AuthSession = Awaited<ReturnType<AuthService['login']>>
 
-function respondWithSession(response: Response, session: AuthSession) {
-  setSessionCookie(response, session.token)
+function respondWithSession(response: Response, session: AuthSession, rememberSession = false) {
+  setSessionCookie(response, session.token, rememberSession)
   const { token: _token, ...publicSession } = session
   return publicSession
 }
@@ -48,11 +48,16 @@ export class AuthController {
   @Post('session')
   async createSession(
     @Headers('authorization') authHeader: string,
+    @Headers('x-remember-session') rememberSession: string | undefined,
     @Res({ passthrough: true }) response: Response,
   ) {
     const token = authHeader?.replace(/^Bearer\s+/i, '')
     if (!token) throw new UnauthorizedException('Missing Authorization header')
-    return respondWithSession(response, await this.authService.createSessionFromSupabaseToken(token))
+    return respondWithSession(
+      response,
+      await this.authService.createSessionFromSupabaseToken(token),
+      rememberSession === 'true',
+    )
   }
 
   @Post('onboarding/complete')

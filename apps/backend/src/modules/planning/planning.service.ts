@@ -40,6 +40,32 @@ type GeneratedPlanningEntry = {
 export class PlanningService {
   constructor(private readonly config: ConfigService) {}
 
+  /** Agrupa todos los datos requeridos al abrir Planificación. */
+  async getWorkspace(schoolId: string) {
+    const schoolYears = await prisma.schoolYear.findMany({
+      where: { schoolId },
+      orderBy: { startDate: 'desc' },
+    })
+    const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
+    if (!currentSchoolYear) return null
+
+    const [periods, sectionSubjects, competencies] = await Promise.all([
+      this.getAcademicPeriods(schoolId, currentSchoolYear.id),
+      this.getSectionSubjects(schoolId),
+      this.getCompetencies(),
+    ])
+    const activePeriodId = periods[0]?.id ?? null
+    const entries = activePeriodId ? await this.findEntries(schoolId) : []
+    return {
+      currentSchoolYear,
+      periods,
+      activePeriodId,
+      entries,
+      sectionSubjects,
+      competencies,
+    }
+  }
+
   /** Obtiene todas las entradas de planificación filtradas por materia-sección */
   findAll(schoolId: string, sectionSubjectId?: string) {
     const where: any = { schoolId }

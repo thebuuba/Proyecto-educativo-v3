@@ -4,7 +4,7 @@ import {
 } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 import { AuthTransitionLink } from '@/modules/auth/components/AuthTransitionLink'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
@@ -250,21 +250,25 @@ export function RegisterPage() {
             />
             <span className="text-sm leading-snug text-gray-600">
               Acepto los{' '}
-              <button
-                type="button"
+              <Link
+                to="/terminos"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-semibold hover:underline"
                 style={{ color: '#1E3D8F' }}
               >
                 términos y condiciones
-              </button>{' '}
+              </Link>{' '}
               y el{' '}
-              <button
-                type="button"
+              <Link
+                to="/privacidad"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-semibold hover:underline"
                 style={{ color: '#1E3D8F' }}
               >
                 aviso de privacidad
-              </button>
+              </Link>
               .
             </span>
           </label>
