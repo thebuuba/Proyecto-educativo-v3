@@ -91,7 +91,7 @@ export function DashboardPage() {
   const hasRecentActivity = data.recentActivity.length > 0
 
   return (
-    <div className="w-full min-w-0 space-y-6">
+    <div className="teacher-dashboard mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-baseline gap-3 flex-wrap">
           <h1 className="text-2xl lg:text-[28px] font-bold tracking-tight text-foreground">
@@ -100,7 +100,8 @@ export function DashboardPage() {
             <span className="text-accent">{data.context.firstName}</span>
           </h1>
           <span className="text-sm text-muted-foreground">
-            · {formatTodayDate()}
+            <span className="hidden sm:inline">· </span>
+            {formatTodayDate()}
           </span>
         </div>
 
@@ -121,27 +122,29 @@ export function DashboardPage() {
         </div>
       )}
 
-      <div className="dashboard-enter" style={{ animationDuration: '520ms' }}>
-        <DashboardHero
-          nextClass={data.nextClass}
-          onStartClass={handleStartClass}
-          onViewPlanning={handleViewPlanning}
-        />
+      <div className="dashboard-priority-grid grid gap-5">
+        <div className="dashboard-day-status dashboard-enter" style={{ animationDuration: '420ms' }}>
+          <DashboardHero
+            nextClass={data.nextClass}
+            onStartClass={handleStartClass}
+            onViewPlanning={handleViewPlanning}
+          />
+        </div>
+
+        <div className="dashboard-setup-slot dashboard-enter" style={{ animationDelay: '50ms', animationDuration: '380ms' }}>
+          <InitialSetupChecklist progress={data.setupProgress} />
+        </div>
       </div>
 
-      <div className="dashboard-enter" style={{ animationDelay: '60ms', animationDuration: '460ms' }}>
-        <InitialSetupChecklist progress={data.setupProgress} />
-      </div>
-
-      <div className="grid lg:grid-cols-12 gap-6">
+      <div className="grid gap-5 lg:grid-cols-12">
         {hasAgenda ? (
           <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
             <TodayAgenda items={data.todayAgenda} />
           </div>
         ) : null}
 
-        <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-6'].join(' ')}>
-          <div className={['grid gap-6', hasTasks ? 'md:grid-cols-2' : ''].join(' ')}>
+        <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-5'].join(' ')}>
+          <div className={['grid gap-5', hasTasks ? 'md:grid-cols-2' : ''].join(' ')}>
             <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
               <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
             </div>

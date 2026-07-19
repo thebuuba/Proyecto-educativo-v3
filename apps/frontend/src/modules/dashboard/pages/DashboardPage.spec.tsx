@@ -42,7 +42,7 @@ describe('DashboardPage', () => {
 
     expect(screen.getByText('Pulso semanal')).toBeInTheDocument()
     expect(screen.getByRole('img', { name: 'Aún no hay registros de asistencia esta semana.' })).toBeInTheDocument()
-    expect(screen.getByText('Esperando el primer registro')).toBeInTheDocument()
+    expect(screen.getByText('Aún no has registrado asistencia esta semana')).toBeInTheDocument()
     expect(screen.getByText('0 registros creados')).toBeInTheDocument()
   })
 })

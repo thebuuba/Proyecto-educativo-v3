@@ -20,8 +20,8 @@ export function SmartSuggestion({ suggestion }: SmartSuggestionProps) {
   }
 
   return (
-    <div className="flex flex-col items-start gap-4 rounded-2xl border border-dashed border-accent/80 bg-muted/50 p-5 lg:flex-row lg:items-center lg:p-6">
-      <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+    <aside className="dashboard-warm-shadow flex flex-col items-start gap-4 rounded-3xl bg-muted p-5 lg:flex-row lg:items-center lg:p-6">
+      <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-card text-accent shadow-[inset_0_0_0_1px_var(--border)]">
         <CalendarDays className="size-5" strokeWidth={2.4} />
       </span>
       <div className="min-w-0 flex-1">
@@ -35,11 +35,11 @@ export function SmartSuggestion({ suggestion }: SmartSuggestionProps) {
       </div>
       <a
         href={suggestion.path}
-        className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-4 py-2 text-xs font-bold text-white transition-opacity hover:opacity-80"
+        className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-[background-color,transform] duration-200 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25 active:translate-y-px"
       >
         {suggestion.actionLabel}
-        <ArrowRight className="size-3.5 text-accent" />
+        <ArrowRight className="size-3.5" />
       </a>
-    </div>
+    </aside>
   )
 }

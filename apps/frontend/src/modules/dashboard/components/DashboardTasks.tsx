@@ -46,10 +46,10 @@ export function DashboardTasks({
   }
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 shadow-sm" style={{ boxShadow: '0 1px 2px rgba(26,31,58,0.04)' }}>
+    <section className="dashboard-warm-shadow rounded-3xl bg-card p-5 sm:p-6">
       <div className="flex items-center justify-between gap-4 mb-4">
-        <h3 className="text-lg font-bold tracking-tight text-foreground">Pendientes</h3>
-        <span className="flex size-8 items-center justify-center rounded-full bg-accent/18 text-sm font-bold text-accent">
+        <h3 className="text-lg font-extrabold tracking-tight text-primary">Pendientes</h3>
+        <span className="flex size-8 items-center justify-center rounded-xl bg-muted text-sm font-bold text-accent tabular-nums">
           {tasks.length}
         </span>
       </div>
@@ -105,14 +105,14 @@ export function DashboardTasks({
       ) : (
         <button
           type="button"
-          className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-muted py-2 text-xs font-semibold text-muted-foreground transition-colors hover:bg-secondary"
+          className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-muted py-2 text-xs font-semibold text-muted-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/20"
           onClick={() => setIsAdding(true)}
         >
           <Plus className="size-3.5" />
           Agregar tarea
         </button>
       )}
-    </div>
+    </section>
   )
 }
 
