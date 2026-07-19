@@ -2544,45 +2544,57 @@ function AnnualComparisonView({
 
   return (
     <section className="space-y-4">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">Matriz anual por períodos</p>
-          <h2 className="mt-1 text-2xl font-black text-primary">Registro anual de competencias</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
+      <header className="flex flex-col gap-4 rounded-2xl bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
+        <div className="flex min-w-0 items-start gap-3">
+          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary-light text-primary" aria-hidden="true">
+            <CalendarDays className="size-5" />
+          </span>
+          <div className="min-w-0">
+            <p className="text-xs font-bold text-primary">Matriz anual por períodos</p>
+            <h2 className="mt-0.5 text-2xl font-extrabold tracking-tight text-foreground">Registro anual de competencias</h2>
+            <p className="mt-1 text-sm leading-5 text-muted-foreground">
             P1, P2, P3 y P4 conservan la nota ordinaria. RP sustituye esa nota solo para el cálculo final.
-          </p>
+            </p>
+          </div>
         </div>
-        <Button variant="outline" onClick={() => window.print()}>
+        <Button variant="outline" className="h-10 self-start px-4 !shadow-none sm:self-auto" onClick={() => window.print()}>
           <Download className="size-4" />
           Descargar
         </Button>
-      </div>
+      </header>
 
-      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-        <div className="max-h-[70vh] overflow-auto">
+      <div className="overflow-hidden rounded-2xl bg-card shadow-sm">
+        <div className="flex flex-col gap-2 border-b border-border px-4 py-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <span>Las columnas de estudiantes permanecen visibles mientras recorres los períodos.</span>
+          <span className="flex items-center gap-3 whitespace-nowrap">
+            <span><strong className="text-primary">P</strong> · Período</span>
+            <span><strong className="text-foreground">RP</strong> · Recuperación</span>
+          </span>
+        </div>
+        <div className="max-h-[68vh] overflow-auto">
           <table className="min-w-[1900px] border-separate border-spacing-0 text-xs">
             <thead>
               <tr>
-                <th rowSpan={2} className="sticky left-0 top-0 z-50 w-12 border-b border-r border-border bg-muted px-2 py-3 text-center font-black uppercase text-muted-foreground">#</th>
-                <th rowSpan={2} className="sticky left-12 top-0 z-50 min-w-[14rem] border-b border-r border-border bg-muted px-3 py-3 text-left font-black uppercase text-muted-foreground">Estudiantes</th>
+                <th rowSpan={2} className="sticky left-0 top-0 z-50 w-12 border-b border-r border-border bg-muted/90 px-2 py-3 text-center font-extrabold text-muted-foreground">#</th>
+                <th rowSpan={2} className="sticky left-12 top-0 z-50 min-w-[14rem] border-b border-r border-border bg-muted/90 px-4 py-3 text-left font-extrabold text-foreground shadow-[8px_0_16px_-14px_rgba(15,23,42,.45)]">Estudiantes</th>
                 {competencyBlocks.map((block, index) => (
-                  <th key={block.id} colSpan={8} className={cn('sticky top-0 z-40 border-b border-r border-border px-3 py-3 text-center font-black', blockAccents[index].panel)}>
+                  <th key={block.id} colSpan={8} className={cn('sticky top-0 z-40 border-b border-r border-border px-3 py-3 text-center font-extrabold leading-5', blockAccents[index].panel)}>
                     {block.shortName}: {blockShortNames[block.id]}
                   </th>
                 ))}
-                <th colSpan={4} className="sticky top-0 z-40 border-b border-r border-border bg-muted px-3 py-3 text-center font-black uppercase text-primary">Promedios de competencias específicas</th>
-                <th rowSpan={2} className="sticky top-0 z-40 w-24 border-b border-r border-border bg-muted px-3 py-3 text-center font-black uppercase text-primary">Calificación final</th>
-                <th rowSpan={2} className="sticky top-0 z-40 w-28 border-b border-border bg-muted px-3 py-3 text-center font-black uppercase text-muted-foreground">Estado</th>
+                <th colSpan={4} className="sticky top-0 z-40 border-b border-r border-border bg-primary-light px-3 py-3 text-center font-extrabold text-primary">Promedios por competencia</th>
+                <th rowSpan={2} className="sticky top-0 z-40 w-24 border-b border-r border-border bg-primary-light px-3 py-3 text-center font-extrabold text-primary">Calificación final</th>
+                <th rowSpan={2} className="sticky top-0 z-40 w-28 border-b border-border bg-muted/90 px-3 py-3 text-center font-extrabold text-muted-foreground">Estado</th>
               </tr>
               <tr>
                 {competencyBlocks.flatMap((block) =>
                   periods.flatMap((period) => [
-                    <th key={`${block.id}-${period.id}`} className="sticky top-[2.6rem] z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-primary">{period.shortName}</th>,
-                    <th key={`${block.id}-${period.id}-rp`} className="sticky top-[2.6rem] z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-muted-foreground">{period.recoveryLabel}</th>,
+                    <th key={`${block.id}-${period.id}`} className="sticky top-16 z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-primary">{period.shortName}</th>,
+                    <th key={`${block.id}-${period.id}-rp`} className="sticky top-16 z-30 border-b border-r border-border bg-muted/40 px-2 py-2 text-center font-bold text-muted-foreground">{period.recoveryLabel}</th>,
                   ]),
                 )}
                 {competencyBlocks.map((block) => (
-                  <th key={`${block.id}-pc`} className="sticky top-[2.6rem] z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-black text-primary">{block.shortName}</th>
+                  <th key={`${block.id}-pc`} className="sticky top-16 z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-black text-primary">{block.shortName}</th>
                 ))}
               </tr>
             </thead>
@@ -2602,9 +2614,9 @@ function AnnualComparisonView({
                 const final = finalSubjectScore(blockAverages, config)
                 const state = final === null ? 'Pendiente' : final >= config.passingScore ? 'Aprobado' : 'En recuperación'
                 return (
-                  <tr key={student.enrollmentId} className="group hover:bg-muted/20">
-                    <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-2 py-3 text-center text-muted-foreground group-hover:bg-muted/20">{student.listNumber ?? index + 1}</td>
-                    <td className="sticky left-12 z-20 border-b border-r border-border bg-card px-3 py-3 font-bold text-foreground group-hover:bg-muted/20">
+                  <tr key={student.enrollmentId} className="group hover:bg-muted/15">
+                    <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-2 py-3 text-center text-muted-foreground group-hover:bg-muted/15">{student.listNumber ?? index + 1}</td>
+                    <td className="sticky left-12 z-20 border-b border-r border-border bg-card px-4 py-3 font-bold text-foreground shadow-[8px_0_16px_-14px_rgba(15,23,42,.35)] group-hover:bg-muted/15">
                       {student.lastName}, {student.firstName}
                     </td>
                     {competencyBlocks.flatMap((block) =>
@@ -2621,7 +2633,7 @@ function AnnualComparisonView({
                           <td key={`${student.enrollmentId}-${block.id}-${period.id}`} className={cn('border-b border-r border-border px-2 py-3 text-center font-bold', gradeColor(result.period, config))}>
                             {formatGrade(result.period)}
                           </td>,
-                          <td key={`${student.enrollmentId}-${block.id}-${period.id}-rp`} className={cn('border-b border-r border-border px-2 py-3 text-center font-bold', result.recovery !== null ? 'bg-emerald-50 text-emerald-700' : 'text-muted-foreground')}>
+                          <td key={`${student.enrollmentId}-${block.id}-${period.id}-rp`} className={cn('border-b border-r border-border bg-muted/15 px-2 py-3 text-center font-bold', result.recovery !== null ? 'bg-emerald-50 text-emerald-700' : 'text-muted-foreground')}>
                             {formatGrade(result.recovery)}
                           </td>,
                         ]
@@ -2642,53 +2654,11 @@ function AnnualComparisonView({
         </div>
       </div>
 
-      <div className="rounded-lg border border-primary/15 bg-primary/5 px-4 py-3 text-sm font-medium text-primary">
-        La calificación final se obtiene promediando los promedios de las 4 competencias específicas. La recuperación sustituye la calificación del período correspondiente.
-      </div>
+      <aside className="flex gap-3 rounded-2xl bg-primary-light/60 px-4 py-3 text-sm leading-5 text-primary">
+        <Calculator className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+        <p>La calificación final promedia las cuatro competencias específicas. La recuperación sustituye la nota del período correspondiente.</p>
+      </aside>
     </section>
-  )
-
-  return (
-    <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-      <table className="min-w-full text-sm">
-        <thead className="bg-muted/50">
-          <tr>
-            <th className="px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Competencia</th>
-            {competencyPeriods.filter((period) => period.id !== 'final').map((period) => (
-              <th key={period.id} className="w-24 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">{period.shortName}</th>
-            ))}
-            <th className="w-36 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Promedio anual</th>
-          </tr>
-        </thead>
-        <tbody>
-          {competencyBlocks.map((block) => {
-            const periodScores = competencyPeriods
-              .filter((period) => period.id !== 'final')
-              .map((period) => averageBlockForPeriod({
-                blockId: block.id,
-                config,
-                periodId: period.id as CompetencyPeriodId,
-                recordsByPeriod,
-                getActivitiesForPeriod,
-                students,
-              }))
-            const annual = finalBlockAverage(periodScores, config)
-            return (
-              <tr key={block.id} className="border-t border-border">
-                <td className="px-4 py-4">
-                  <p className="font-bold text-primary">{blockShortNames[block.id]}</p>
-                  <p className="text-xs text-muted-foreground">{block.name}</p>
-                </td>
-                {periodScores.map((score, index) => (
-                  <td key={competencyPeriods[index].id} className="px-4 py-4 text-center font-bold text-primary">{formatGrade(score)}</td>
-                ))}
-                <td className="px-4 py-4 text-center text-lg font-black text-primary">{formatGrade(annual)}</td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-    </div>
   )
 }
 
