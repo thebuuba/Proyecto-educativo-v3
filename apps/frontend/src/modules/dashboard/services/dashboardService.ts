@@ -32,6 +32,7 @@ export async function getDashboardData(appUser: AppUser | null): Promise<Dashboa
     currentSchoolYear: SchoolYearSummary | null
     tasks: DashboardTask[]
     setupProgress: DashboardSetupProgress
+    weeklyAttendance: WeeklyAttendance
   }>('/dashboard/workspace', {
     cacheTtlMs: API_CACHE_TTL.sessionList,
     cacheTags: [API_CACHE_TAGS.dashboard, API_CACHE_TAGS.schoolYears],
@@ -49,7 +50,7 @@ export async function getDashboardData(appUser: AppUser | null): Promise<Dashboa
     },
     nextClass: null,
     todayAgenda: [],
-    weeklyAttendance: getEmptyWeeklyAttendance(today),
+    weeklyAttendance: workspace?.weeklyAttendance ?? getEmptyWeeklyAttendance(today),
     tasks: tasks ?? [],
     recentActivity: [],
     smartSuggestion: null,

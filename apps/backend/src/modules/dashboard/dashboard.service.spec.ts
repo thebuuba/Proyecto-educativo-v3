@@ -18,8 +18,8 @@ const mocks = vi.hoisted(() => ({
     section: { count: vi.fn() },
     sectionSubject: { count: vi.fn() },
     scheduleEntry: { count: vi.fn() },
-    attendanceDaily: { count: vi.fn() },
-    attendanceClass: { count: vi.fn() },
+    attendanceDaily: { count: vi.fn(), findMany: vi.fn() },
+    attendanceClass: { count: vi.fn(), findMany: vi.fn() },
     planningEntry: { count: vi.fn() },
     schoolYear: { findMany: vi.fn() },
     dashboardTask: {
@@ -92,6 +92,8 @@ describe('DashboardService', () => {
       { id: 'year-current', isCurrent: true },
     ])
     mocks.prisma.dashboardTask.findMany.mockResolvedValue([{ id: 'task-1' }])
+    mocks.prisma.attendanceDaily.findMany.mockResolvedValue([])
+    mocks.prisma.attendanceClass.findMany.mockResolvedValue([])
     const counts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     ;[
       mocks.prisma.student.count,
@@ -111,6 +113,37 @@ describe('DashboardService', () => {
     expect(result.currentSchoolYear).toEqual({ id: 'year-current', isCurrent: true })
     expect(result.tasks).toEqual([{ id: 'task-1' }])
     expect(result.setupProgress.studentCount).toBe(1)
+    expect(result.weeklyAttendance.activityCount).toBe(0)
+  })
+
+  it('calculates weekly attendance and compares it with the previous week', async () => {
+    mocks.prisma.attendanceDaily.findMany.mockResolvedValue([
+      { attendanceDate: new Date('2026-07-06T00:00:00.000Z'), status: 'PRESENT' },
+      { attendanceDate: new Date('2026-07-06T00:00:00.000Z'), status: 'ABSENT' },
+      { attendanceDate: new Date('2026-07-13T00:00:00.000Z'), status: 'PRESENT' },
+      { attendanceDate: new Date('2026-07-13T00:00:00.000Z'), status: 'ABSENT' },
+    ])
+    mocks.prisma.attendanceClass.findMany.mockResolvedValue([
+      { attendanceDate: new Date('2026-07-14T00:00:00.000Z'), status: 'PRESENT' },
+    ])
+
+    const result = await new DashboardService().getWeeklyAttendance(
+      'school-1',
+      new Date('2026-07-14T12:00:00.000Z'),
+    )
+
+    expect(result).toEqual({
+      average: 67,
+      trendPercent: 17,
+      activityCount: 3,
+      days: [
+        { label: 'LUN', value: 50, isToday: false },
+        { label: 'MAR', value: 100, isToday: true },
+        { label: 'MIE', value: null, isToday: false },
+        { label: 'JUE', value: null, isToday: false },
+        { label: 'VIE', value: null, isToday: false },
+      ],
+    })
   })
 
   it('updates a task and delegates to prisma', async () => {

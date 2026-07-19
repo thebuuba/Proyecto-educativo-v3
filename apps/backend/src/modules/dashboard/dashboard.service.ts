@@ -13,13 +13,53 @@ import { UpdateTaskDto } from './dto/update-task.dto'
 export class DashboardService {
   /** Carga inicial del panel en una sola petición HTTP. */
   async getWorkspace(schoolId: string) {
-    const [schoolYears, tasks, setupProgress] = await Promise.all([
+    const [schoolYears, tasks, setupProgress, weeklyAttendance] = await Promise.all([
       prisma.schoolYear.findMany({ where: { schoolId }, orderBy: { startDate: 'desc' } }),
       this.getTasks(schoolId),
       this.getStats(schoolId),
+      this.getWeeklyAttendance(schoolId),
     ])
     const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
-    return { currentSchoolYear, tasks, setupProgress }
+    return { currentSchoolYear, tasks, setupProgress, weeklyAttendance }
+  }
+
+  /** Resume la asistencia de esta semana y la compara con la anterior. */
+  async getWeeklyAttendance(schoolId: string, today = new Date()) {
+    const currentWeekStart = startOfWeek(today)
+    const previousWeekStart = addDays(currentWeekStart, -7)
+    const currentWeekEnd = addDays(currentWeekStart, 4)
+    const [daily, classAttendance] = await Promise.all([
+      prisma.attendanceDaily.findMany({
+        where: { schoolId, attendanceDate: { gte: previousWeekStart, lte: currentWeekEnd } },
+        select: { attendanceDate: true, status: true },
+      }),
+      prisma.attendanceClass.findMany({
+        where: { schoolId, attendanceDate: { gte: previousWeekStart, lte: currentWeekEnd } },
+        select: { attendanceDate: true, status: true },
+      }),
+    ])
+    const records = [...daily, ...classAttendance]
+    const current = records.filter(({ attendanceDate }) => attendanceDate >= currentWeekStart)
+    const previous = records.filter(({ attendanceDate }) => attendanceDate < currentWeekStart)
+    const currentAverage = attendancePercentage(current)
+    const previousAverage = attendancePercentage(previous)
+    const labels = ['LUN', 'MAR', 'MIE', 'JUE', 'VIE']
+
+    return {
+      average: currentAverage,
+      trendPercent: currentAverage === null || previousAverage === null
+        ? null
+        : currentAverage - previousAverage,
+      activityCount: current.length,
+      days: labels.map((label, index) => {
+        const date = addDays(currentWeekStart, index)
+        return {
+          label,
+          value: attendancePercentage(current.filter((record) => sameDate(record.attendanceDate, date))),
+          isToday: sameDate(date, today),
+        }
+      }),
+    }
   }
 
   /** Obtiene estadisticas del colegio y senales de configuracion inicial. */
@@ -100,4 +140,30 @@ export class DashboardService {
     })
     return updated
   }
+}
+
+type AttendanceRecord = { attendanceDate: Date; status: string }
+
+function attendancePercentage(records: AttendanceRecord[]) {
+  if (records.length === 0) return null
+  const present = records.filter(({ status }) => status === 'PRESENT').length
+  return Math.round((present / records.length) * 100)
+}
+
+function startOfWeek(date: Date) {
+  const start = new Date(date)
+  const day = start.getUTCDay() || 7
+  start.setUTCDate(start.getUTCDate() - day + 1)
+  start.setUTCHours(0, 0, 0, 0)
+  return start
+}
+
+function addDays(date: Date, days: number) {
+  const result = new Date(date)
+  result.setUTCDate(result.getUTCDate() + days)
+  return result
+}
+
+function sameDate(first: Date, second: Date) {
+  return first.toISOString().slice(0, 10) === second.toISOString().slice(0, 10)
 }
