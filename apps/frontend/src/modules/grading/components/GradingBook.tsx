@@ -764,7 +764,7 @@ export function GradingBook({
                 <div className="min-w-0 flex-1 overflow-x-auto pb-0.5">
                   <nav className="grading-view-tabs relative grid min-w-[32rem] grid-cols-4 rounded-2xl bg-muted/70 p-1 sm:min-w-0 sm:max-w-[42rem]" aria-label="Vistas del panel de evaluaciones">
                     <span
-                      className="grading-tab-indicator pointer-events-none absolute inset-y-1 left-1 w-[calc((100%_-_0.5rem)/4)] rounded-xl bg-primary transition-transform duration-[260ms] ease-[cubic-bezier(0.32,0.72,0,1)] will-change-transform"
+                      className="grading-tab-indicator pointer-events-none absolute inset-y-1 left-1 w-[calc((100%_-_0.5rem)/4)] rounded-xl bg-primary transition-transform duration-[260ms] ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none will-change-transform"
                       style={{ transform: `translateX(${(['blocks', 'period', 'annual', 'final'] as MainView[]).indexOf(mainView) * 100}%)` }}
                       aria-hidden="true"
                     />
@@ -1053,7 +1053,7 @@ function ViewButton({
       type="button"
       aria-current={active ? 'page' : undefined}
       className={cn(
-        'relative z-10 inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-xl px-2 text-sm font-bold transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.985]',
+        'relative z-10 inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-xl px-2 text-sm font-bold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.985]',
         active ? 'text-primary-foreground' : 'text-muted-foreground hover:text-foreground',
       )}
       onClick={onClick}
@@ -1171,7 +1171,7 @@ function BlockMatrixView({
           return (
             <article
               key={summary.block.id}
-              className="overflow-hidden rounded-2xl bg-card shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              className="overflow-hidden rounded-2xl bg-card shadow-sm transition-shadow duration-200 hover:shadow-md"
             >
               <button
                 type="button"
@@ -1186,7 +1186,7 @@ function BlockMatrixView({
                       {blockShortNames[summary.block.id]}
                     </h3>
                   </div>
-                  <span className={cn('grid size-9 shrink-0 place-items-center rounded-xl transition-transform duration-200 group-hover:translate-x-0.5', accent.panel)} aria-hidden="true">
+                  <span className={cn('grid size-9 shrink-0 place-items-center rounded-xl', accent.panel)} aria-hidden="true">
                     <ArrowRight className="size-4" />
                   </span>
                 </div>
@@ -2544,45 +2544,57 @@ function AnnualComparisonView({
 
   return (
     <section className="space-y-4">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">Matriz anual por períodos</p>
-          <h2 className="mt-1 text-2xl font-black text-primary">Registro anual de competencias</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
+      <header className="flex flex-col gap-4 rounded-2xl bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
+        <div className="flex min-w-0 items-start gap-3">
+          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary-light text-primary" aria-hidden="true">
+            <CalendarDays className="size-5" />
+          </span>
+          <div className="min-w-0">
+            <p className="text-xs font-bold text-primary">Matriz anual por períodos</p>
+            <h2 className="mt-0.5 text-2xl font-extrabold tracking-tight text-foreground">Registro anual de competencias</h2>
+            <p className="mt-1 text-sm leading-5 text-muted-foreground">
             P1, P2, P3 y P4 conservan la nota ordinaria. RP sustituye esa nota solo para el cálculo final.
-          </p>
+            </p>
+          </div>
         </div>
-        <Button variant="outline" onClick={() => window.print()}>
+        <Button variant="outline" className="h-10 self-start px-4 !shadow-none sm:self-auto" onClick={() => window.print()}>
           <Download className="size-4" />
           Descargar
         </Button>
-      </div>
+      </header>
 
-      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-        <div className="max-h-[70vh] overflow-auto">
-          <table className="min-w-[1900px] border-separate border-spacing-0 text-xs">
+      <div className="overflow-hidden rounded-2xl bg-card shadow-sm">
+        <div className="flex flex-col gap-2 border-b border-border px-4 py-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <span>Las columnas de estudiantes permanecen visibles mientras recorres los períodos.</span>
+          <span className="flex items-center gap-3 whitespace-nowrap">
+            <span><strong className="text-primary">P</strong> · Período</span>
+            <span><strong className="text-foreground">RP</strong> · Recuperación</span>
+          </span>
+        </div>
+        <div className="max-h-[68vh] overflow-auto">
+          <table className="min-w-[1900px] border-separate border-spacing-0 text-xs [&_td]:border-border/60 [&_th]:border-border/60">
             <thead>
               <tr>
-                <th rowSpan={2} className="sticky left-0 top-0 z-50 w-12 border-b border-r border-border bg-muted px-2 py-3 text-center font-black uppercase text-muted-foreground">#</th>
-                <th rowSpan={2} className="sticky left-12 top-0 z-50 min-w-[14rem] border-b border-r border-border bg-muted px-3 py-3 text-left font-black uppercase text-muted-foreground">Estudiantes</th>
+                <th rowSpan={2} className="sticky left-0 top-0 z-50 w-12 border-b border-r border-border bg-muted/90 px-2 py-3 text-center font-extrabold text-muted-foreground">#</th>
+                <th rowSpan={2} className="sticky left-12 top-0 z-50 min-w-[14rem] border-b border-r border-border bg-muted/90 px-4 py-3 text-left font-extrabold text-foreground shadow-[8px_0_16px_-14px_rgba(15,23,42,.45)]">Estudiantes</th>
                 {competencyBlocks.map((block, index) => (
-                  <th key={block.id} colSpan={8} className={cn('sticky top-0 z-40 border-b border-r border-border px-3 py-3 text-center font-black', blockAccents[index].panel)}>
+                  <th key={block.id} colSpan={8} className={cn('sticky top-0 z-40 border-b border-r border-border px-3 py-3 text-center font-extrabold leading-5', blockAccents[index].panel)}>
                     {block.shortName}: {blockShortNames[block.id]}
                   </th>
                 ))}
-                <th colSpan={4} className="sticky top-0 z-40 border-b border-r border-border bg-muted px-3 py-3 text-center font-black uppercase text-primary">Promedios de competencias específicas</th>
-                <th rowSpan={2} className="sticky top-0 z-40 w-24 border-b border-r border-border bg-muted px-3 py-3 text-center font-black uppercase text-primary">Calificación final</th>
-                <th rowSpan={2} className="sticky top-0 z-40 w-28 border-b border-border bg-muted px-3 py-3 text-center font-black uppercase text-muted-foreground">Estado</th>
+                <th colSpan={4} className="sticky top-0 z-40 border-b border-r border-border bg-primary-light px-3 py-3 text-center font-extrabold text-primary">Promedios por competencia</th>
+                <th rowSpan={2} className="sticky top-0 z-40 w-24 border-b border-r border-border bg-primary-light px-3 py-3 text-center font-extrabold text-primary">Calificación final</th>
+                <th rowSpan={2} className="sticky top-0 z-40 w-28 border-b border-border bg-muted/90 px-3 py-3 text-center font-extrabold text-muted-foreground">Estado</th>
               </tr>
               <tr>
                 {competencyBlocks.flatMap((block) =>
-                  periods.flatMap((period) => [
-                    <th key={`${block.id}-${period.id}`} className="sticky top-[2.6rem] z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-primary">{period.shortName}</th>,
-                    <th key={`${block.id}-${period.id}-rp`} className="sticky top-[2.6rem] z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-muted-foreground">{period.recoveryLabel}</th>,
+                  periods.flatMap((period, periodIndex) => [
+                    <th key={`${block.id}-${period.id}`} className={cn('sticky top-16 z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-primary', periodIndex === 0 ? 'border-l-2' : null)}>{period.shortName}</th>,
+                    <th key={`${block.id}-${period.id}-rp`} className="sticky top-16 z-30 border-b border-r border-border bg-muted/40 px-2 py-2 text-center font-bold text-muted-foreground">{period.recoveryLabel}</th>,
                   ]),
                 )}
                 {competencyBlocks.map((block) => (
-                  <th key={`${block.id}-pc`} className="sticky top-[2.6rem] z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-black text-primary">{block.shortName}</th>
+                  <th key={`${block.id}-pc`} className="sticky top-16 z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-black text-primary">{block.shortName}</th>
                 ))}
               </tr>
             </thead>
@@ -2602,13 +2614,13 @@ function AnnualComparisonView({
                 const final = finalSubjectScore(blockAverages, config)
                 const state = final === null ? 'Pendiente' : final >= config.passingScore ? 'Aprobado' : 'En recuperación'
                 return (
-                  <tr key={student.enrollmentId} className="group hover:bg-muted/20">
-                    <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-2 py-3 text-center text-muted-foreground group-hover:bg-muted/20">{student.listNumber ?? index + 1}</td>
-                    <td className="sticky left-12 z-20 border-b border-r border-border bg-card px-3 py-3 font-bold text-foreground group-hover:bg-muted/20">
+                  <tr key={student.enrollmentId} className="group transition-colors hover:bg-muted/15">
+                    <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-2 py-3 text-center text-muted-foreground group-hover:bg-muted/15">{student.listNumber ?? index + 1}</td>
+                    <td className="sticky left-12 z-20 border-b border-r border-border bg-card px-4 py-3 font-bold text-foreground shadow-[8px_0_16px_-14px_rgba(15,23,42,.35)] group-hover:bg-muted/15">
                       {student.lastName}, {student.firstName}
                     </td>
                     {competencyBlocks.flatMap((block) =>
-                      periods.flatMap((period) => {
+                      periods.flatMap((period, periodIndex) => {
                         const result = getStudentPeriodBlockScore({
                           blockId: block.id,
                           config,
@@ -2618,10 +2630,10 @@ function AnnualComparisonView({
                           student,
                         })
                         return [
-                          <td key={`${student.enrollmentId}-${block.id}-${period.id}`} className={cn('border-b border-r border-border px-2 py-3 text-center font-bold', gradeColor(result.period, config))}>
+                          <td key={`${student.enrollmentId}-${block.id}-${period.id}`} className={cn('border-b border-r border-border px-2 py-3 text-center font-bold', periodIndex === 0 ? 'border-l-2' : null, gradeColor(result.period, config))}>
                             {formatGrade(result.period)}
                           </td>,
-                          <td key={`${student.enrollmentId}-${block.id}-${period.id}-rp`} className={cn('border-b border-r border-border px-2 py-3 text-center font-bold', result.recovery !== null ? 'bg-emerald-50 text-emerald-700' : 'text-muted-foreground')}>
+                          <td key={`${student.enrollmentId}-${block.id}-${period.id}-rp`} className={cn('border-b border-r border-border bg-muted/15 px-2 py-3 text-center font-bold', result.recovery !== null ? 'bg-emerald-50 text-emerald-700' : 'text-muted-foreground')}>
                             {formatGrade(result.recovery)}
                           </td>,
                         ]
@@ -2642,53 +2654,11 @@ function AnnualComparisonView({
         </div>
       </div>
 
-      <div className="rounded-lg border border-primary/15 bg-primary/5 px-4 py-3 text-sm font-medium text-primary">
-        La calificación final se obtiene promediando los promedios de las 4 competencias específicas. La recuperación sustituye la calificación del período correspondiente.
-      </div>
+      <aside className="flex gap-3 rounded-2xl bg-primary-light/60 px-4 py-3 text-sm leading-5 text-primary">
+        <Calculator className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+        <p>La calificación final promedia las cuatro competencias específicas. La recuperación sustituye la nota del período correspondiente.</p>
+      </aside>
     </section>
-  )
-
-  return (
-    <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-      <table className="min-w-full text-sm">
-        <thead className="bg-muted/50">
-          <tr>
-            <th className="px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Competencia</th>
-            {competencyPeriods.filter((period) => period.id !== 'final').map((period) => (
-              <th key={period.id} className="w-24 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">{period.shortName}</th>
-            ))}
-            <th className="w-36 px-4 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Promedio anual</th>
-          </tr>
-        </thead>
-        <tbody>
-          {competencyBlocks.map((block) => {
-            const periodScores = competencyPeriods
-              .filter((period) => period.id !== 'final')
-              .map((period) => averageBlockForPeriod({
-                blockId: block.id,
-                config,
-                periodId: period.id as CompetencyPeriodId,
-                recordsByPeriod,
-                getActivitiesForPeriod,
-                students,
-              }))
-            const annual = finalBlockAverage(periodScores, config)
-            return (
-              <tr key={block.id} className="border-t border-border">
-                <td className="px-4 py-4">
-                  <p className="font-bold text-primary">{blockShortNames[block.id]}</p>
-                  <p className="text-xs text-muted-foreground">{block.name}</p>
-                </td>
-                {periodScores.map((score, index) => (
-                  <td key={competencyPeriods[index].id} className="px-4 py-4 text-center font-bold text-primary">{formatGrade(score)}</td>
-                ))}
-                <td className="px-4 py-4 text-center text-lg font-black text-primary">{formatGrade(annual)}</td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-    </div>
   )
 }
 
@@ -2792,7 +2762,7 @@ function AnnualResultView(props: {
   )
 }
 
-const transientHighlightClass = 'rounded-xl ring-2 ring-primary/70 ring-offset-2 ring-offset-background shadow-[0_0_24px_rgba(37,99,235,0.45)] motion-safe:animate-pulse transition-shadow duration-300'
+const transientHighlightClass = 'rounded-xl ring-2 ring-primary/70 ring-offset-2 ring-offset-background shadow-[0_0_24px_rgba(37,99,235,0.35)] transition-shadow duration-200'
 
 function useTransientActivityHighlight(duration = 3000) {
   const [highlightTarget, setHighlightTarget] = useState<ActivityCompletionTarget | null>(null)
@@ -3188,45 +3158,41 @@ function DraftCenter({
           {draftMetas.map((meta) => {
               const accent = getBlockAccent(meta.blockId)
 
+              const draftName = meta.draft.name || 'Actividad sin nombre'
+
               return (
-                <button
+                <article
                   key={meta.draft.draftId}
-                  type="button"
-                  className="relative min-h-[8.25rem] overflow-hidden rounded-xl bg-muted/20 px-4 py-3 text-left transition hover:-translate-y-0.5 hover:bg-muted/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  onClick={() => meta.draft.draftId && onOpenDraft(meta.blockId, meta.draft.draftId)}
+                  className="relative min-h-[8.25rem] overflow-hidden rounded-xl bg-muted/20 px-4 py-3 transition-colors hover:bg-muted/35"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <span className={cn('inline-flex h-5 items-center whitespace-nowrap rounded-full px-2 text-[10px] font-black ring-1 ring-inset', accent.badge)}>
                       {meta.block.shortName}
                     </span>
                     <div className="flex items-center gap-1">
-                      <span
-                        role="button"
-                        tabIndex={0}
+                      <button
+                        type="button"
                         className="inline-flex size-7 items-center justify-center rounded-md text-destructive transition hover:bg-destructive/10"
-                        aria-label="Eliminar borrador"
-                        onClick={(event) => {
-                          event.stopPropagation()
-                          if (meta.draft.draftId) onDeleteDraft(meta.blockId, meta.draft.draftId)
-                        }}
-                        onKeyDown={(event) => {
-                          if (event.key !== 'Enter' && event.key !== ' ') return
-                          event.preventDefault()
-                          event.stopPropagation()
-                          if (meta.draft.draftId) onDeleteDraft(meta.blockId, meta.draft.draftId)
-                        }}
+                        aria-label={`Eliminar borrador ${draftName}`}
+                        onClick={() => meta.draft.draftId && onDeleteDraft(meta.blockId, meta.draft.draftId)}
                       >
                         <Trash2 className="size-4" />
-                      </span>
+                      </button>
                       <ArrowRight className="size-4 shrink-0 text-muted-foreground" />
                     </div>
                   </div>
-                  <p className="mt-2 truncate text-sm font-black text-foreground">{meta.draft.name || 'Actividad sin nombre'}</p>
-                  <p className="mt-1 line-clamp-2 text-xs leading-4 text-muted-foreground">{periodShortName} - {courseTitle}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">Ultima edicion: {formatDraftDate(meta.updatedAt)}</p>
-                  <ProgressBar value={meta.completion} className="mt-3" indicatorColor={accent.progressColor} />
-                  <p className="mt-1 text-xs text-muted-foreground">{meta.completion}% completado</p>
-                </button>
+                  <button
+                    type="button"
+                    className="block w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    onClick={() => meta.draft.draftId && onOpenDraft(meta.blockId, meta.draft.draftId)}
+                  >
+                    <p className="mt-2 truncate text-sm font-black text-foreground">{draftName}</p>
+                    <p className="mt-1 line-clamp-2 text-xs leading-4 text-muted-foreground">{periodShortName} - {courseTitle}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">Última edición: {formatDraftDate(meta.updatedAt)}</p>
+                    <ProgressBar value={meta.completion} className="mt-3" indicatorColor={accent.progressColor} />
+                    <p className="mt-1 text-xs text-muted-foreground">{meta.completion}% completado</p>
+                  </button>
+                </article>
               )
           })}
         </div>
@@ -3257,7 +3223,6 @@ function ActivityDraftsView({
   periodShortName: string
 }) {
   const [activeBlock, setActiveBlock] = useState<'all' | CompetencyBlockId>(initialBlock)
-  const [blockFilter, setBlockFilter] = useState<'all' | CompetencyBlockId>(initialBlock)
   const [instrumentFilter, setInstrumentFilter] = useState('all')
   const [periodFilter, setPeriodFilter] = useState('all')
   const [query, setQuery] = useState('')
@@ -3271,7 +3236,6 @@ function ActivityDraftsView({
   }, {})
   const visibleMetas = draftMetas
     .filter((meta) => activeBlock === 'all' || meta.blockId === activeBlock)
-    .filter((meta) => blockFilter === 'all' || meta.blockId === blockFilter)
     .filter(() => periodFilter === 'all' || periodFilter === periodShortName)
     .filter((meta) => instrumentFilter === 'all' || meta.draft.instrumentType === instrumentFilter)
     .filter((meta) => (meta.draft.name || 'Actividad sin nombre').toLowerCase().includes(query.trim().toLowerCase()))
@@ -3284,7 +3248,6 @@ function ActivityDraftsView({
 
   function clearFilters() {
     setActiveBlock('all')
-    setBlockFilter('all')
     setInstrumentFilter('all')
     setPeriodFilter('all')
     setQuery('')
@@ -3294,7 +3257,7 @@ function ActivityDraftsView({
 
   function confirmDelete(meta: ActivityDraftMeta) {
     if (!meta.draft.draftId) return
-    const shouldDelete = window.confirm('Eliminar este borrador? Esta accion no se puede deshacer.')
+    const shouldDelete = window.confirm('¿Eliminar este borrador? Esta acción no se puede deshacer.')
     if (shouldDelete) onDeleteDraft(meta.blockId, meta.draft.draftId)
   }
 
@@ -3337,7 +3300,7 @@ function ActivityDraftsView({
       ) : (
       <div className="rounded-2xl bg-card p-4 shadow-sm">
         <div className="flex gap-2 overflow-x-auto pb-1">
-          <DraftFilterChip active={activeBlock === 'all'} label="Todos" count={draftMetas.length} onClick={() => { setActiveBlock('all'); setBlockFilter('all'); setPage(1) }} />
+          <DraftFilterChip active={activeBlock === 'all'} label="Todos" count={draftMetas.length} onClick={() => { setActiveBlock('all'); setPage(1) }} />
           {competencyBlocks.map((block) => {
             const accent = getBlockAccent(block.id)
 
@@ -3348,33 +3311,29 @@ function ActivityDraftsView({
                 label={block.shortName}
                 count={blockCounts[block.id] ?? 0}
                 accent={accent}
-                onClick={() => { setActiveBlock(block.id); setBlockFilter(block.id); setPage(1) }}
+                onClick={() => { setActiveBlock(block.id); setPage(1) }}
               />
             )
           })}
         </div>
 
-        <div className="mt-3 grid gap-2 rounded-xl bg-muted/20 p-3 lg:grid-cols-[minmax(14rem,1fr)_12rem_12rem_13rem_13rem]">
+        <div className="mt-3 grid gap-2 rounded-xl bg-muted/20 p-3 lg:grid-cols-[minmax(14rem,1fr)_12rem_13rem_13rem]">
           <label className="relative">
             <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-            <Input className="h-10 pl-9" value={query} onChange={(event) => { setQuery(event.target.value); setPage(1) }} placeholder="Buscar borradores..." />
+            <Input aria-label="Buscar borradores" className="h-10 pl-9" value={query} onChange={(event) => { setQuery(event.target.value); setPage(1) }} placeholder="Buscar borradores..." />
           </label>
-          <Select className="h-10" value={blockFilter} onChange={(event) => { setBlockFilter(event.target.value as 'all' | CompetencyBlockId); setPage(1) }}>
-            <option value="all">Todos los bloques</option>
-            {competencyBlocks.map((block) => <option key={block.id} value={block.id}>{block.shortName}</option>)}
-          </Select>
-          <Select className="h-10" value={periodFilter} onChange={(event) => { setPeriodFilter(event.target.value); setPage(1) }}>
+          <Select aria-label="Filtrar por período" className="h-10" value={periodFilter} onChange={(event) => { setPeriodFilter(event.target.value); setPage(1) }}>
             <option value="all">Todos los periodos</option>
             <option value={periodShortName}>{periodShortName} - {periodName}</option>
           </Select>
-          <Select className="h-10" value={instrumentFilter} onChange={(event) => { setInstrumentFilter(event.target.value); setPage(1) }}>
+          <Select aria-label="Filtrar por instrumento" className="h-10" value={instrumentFilter} onChange={(event) => { setInstrumentFilter(event.target.value); setPage(1) }}>
             <option value="all">Todos los instrumentos</option>
             <option value="rubrica">Rúbrica</option>
             <option value="lista-cotejo">Lista de cotejo</option>
             <option value="escala">Escala estimativa</option>
             <option value="lista-ponderada">Lista ponderada</option>
           </Select>
-          <Select className="h-10" value={sortBy} onChange={(event) => { setSortBy(event.target.value); setPage(1) }}>
+          <Select aria-label="Ordenar borradores" className="h-10" value={sortBy} onChange={(event) => { setSortBy(event.target.value); setPage(1) }}>
             <option value="updated-desc">Última modificación</option>
             <option value="updated-asc">Más antiguo</option>
             <option value="name-asc">Nombre A-Z</option>
@@ -3892,11 +3851,11 @@ function ActivityReview({ activityDraft, issues }: { activityDraft: ActivityDraf
       </section>
 
       <section className={cn('rounded-xl border border-l-2 bg-card px-4 py-3 shadow-sm', accent.border)}>
-        <div className="flex items-start gap-3"><span className="grid size-8 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-inset ring-blue-100"><FileText className="size-4" /></span><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center justify-between gap-2"><h4 className={cn('text-xs font-black', accent.text)}>Descripción de la actividad</h4><Button type="button" variant="outline" className="group h-9 rounded-lg border-blue-200 bg-blue-50/70 px-3.5 text-xs font-black text-blue-700 shadow-sm transition-all hover:-translate-y-px hover:border-blue-300 hover:bg-blue-100 hover:text-blue-800 hover:shadow-md" onClick={() => setShowDescriptionPreview(true)}><Eye className="size-4 transition-transform group-hover:scale-110" />Ver descripción completa</Button></div><div className="mt-1 line-clamp-4 text-[11px] leading-5 text-muted-foreground"><ActivityDescriptionContent value={activityDraft.description} fallback="Sin descripción." /></div></div></div>
+        <div className="flex items-start gap-3"><span className="grid size-8 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-inset ring-blue-100"><FileText className="size-4" /></span><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center justify-between gap-2"><h4 className={cn('text-xs font-black', accent.text)}>Descripción de la actividad</h4><Button type="button" variant="outline" className="h-9 rounded-lg border-blue-200 bg-blue-50/70 px-3.5 text-xs font-black text-blue-700 shadow-sm transition-colors hover:border-blue-300 hover:bg-blue-100 hover:text-blue-800" onClick={() => setShowDescriptionPreview(true)}><Eye className="size-4" />Ver descripción completa</Button></div><div className="mt-1 line-clamp-4 text-[11px] leading-5 text-muted-foreground"><ActivityDescriptionContent value={activityDraft.description} fallback="Sin descripción." /></div></div></div>
       </section>
 
       <section className={cn('overflow-hidden rounded-xl border bg-card shadow-sm', accent.border)}>
-        <div className="flex flex-wrap items-center gap-2 border-b border-border px-4 py-3"><span className="grid size-8 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-inset ring-blue-100"><ClipboardList className="size-4" /></span><h4 className={cn('text-xs font-black', accent.text)}>Instrumento de evaluación</h4><span className="text-xs text-muted-foreground">{instrumentTitle(instrumentType)}</span><Badge tone={activityDraft.instrumentCompleted ? 'success' : 'warning'}>{activityDraft.instrumentCompleted ? 'Completo' : 'Incompleto'}</Badge><Button type="button" variant="outline" className="group ml-auto h-9 rounded-lg border-blue-200 bg-blue-50/70 px-3.5 text-xs font-black text-blue-700 shadow-sm transition-all hover:-translate-y-px hover:border-blue-300 hover:bg-blue-100 hover:text-blue-800 hover:shadow-md" onClick={() => setShowInstrumentPreview(true)}><Eye className="size-4 transition-transform group-hover:scale-110" />Ver {instrumentType === 'rubrica' ? 'rúbrica' : 'instrumento'} completo</Button></div>
+        <div className="flex flex-wrap items-center gap-2 border-b border-border px-4 py-3"><span className="grid size-8 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-inset ring-blue-100"><ClipboardList className="size-4" /></span><h4 className={cn('text-xs font-black', accent.text)}>Instrumento de evaluación</h4><span className="text-xs text-muted-foreground">{instrumentTitle(instrumentType)}</span><Badge tone={activityDraft.instrumentCompleted ? 'success' : 'warning'}>{activityDraft.instrumentCompleted ? 'Completo' : 'Incompleto'}</Badge><Button type="button" variant="outline" className="ml-auto h-9 rounded-lg border-blue-200 bg-blue-50/70 px-3.5 text-xs font-black text-blue-700 shadow-sm transition-colors hover:border-blue-300 hover:bg-blue-100 hover:text-blue-800" onClick={() => setShowInstrumentPreview(true)}><Eye className="size-4" />Ver {instrumentType === 'rubrica' ? 'rúbrica' : 'instrumento'} completo</Button></div>
         <div className="grid gap-2.5 rounded-b-xl bg-blue-50/20 p-3" style={{ gridTemplateColumns: `repeat(${Math.max(2, instrumentSummaryTiles.length + 1)}, minmax(0, 1fr))` }}>
           <div className="grid min-h-16 place-items-center rounded-xl border border-blue-100 bg-white px-3 text-center shadow-sm"><div><span className="block text-base font-black text-blue-700">{criteriaCount}</span><span className="text-[11px] font-bold text-slate-700">{instrumentType === 'escala' ? 'Indicadores' : 'Criterios'}</span></div></div>
           {instrumentSummaryTiles.length ? instrumentSummaryTiles.map((tile, index) => { const scaleVisual = instrumentType === 'escala' ? scaleLevelVisual(accent, index, instrumentSummaryTiles.length) : null; const weightedVisual = instrumentType === 'lista-ponderada' ? weightedResponseVisual(index, instrumentSummaryTiles.length) : null; const rubricVisual = instrumentType === 'escala' || instrumentType === 'lista-ponderada' ? null : rubricLevelVisual(index, instrumentSummaryTiles.length); const backgroundColor = scaleVisual?.background ?? weightedVisual?.background ?? rubricVisual?.soft; const borderColor = scaleVisual?.border ?? weightedVisual?.border ?? rubricVisual?.border; const foregroundColor = scaleVisual?.foreground ?? weightedVisual?.foreground ?? rubricVisual?.foreground; return <div key={tile.key} className="grid min-h-16 place-items-center rounded-xl border px-3 text-center shadow-sm" style={{ backgroundColor, borderColor }}><div className="min-w-0"><span className="block truncate text-[11px] font-black" style={{ color: foregroundColor }}>{tile.name}</span><span className="mt-1 block text-[11px] font-bold text-slate-700">{tile.detail}</span></div></div> }) : <div className="grid min-h-16 place-items-center rounded-xl border border-emerald-500 bg-emerald-100 px-3 text-center shadow-sm"><div><span className="block text-base font-black text-emerald-700">{formatInstrumentNumber(Number(activityDraft.maxScore) || 0)}</span><span className="text-[11px] font-bold text-slate-700">Puntos máximos</span></div></div>}
@@ -4177,7 +4136,7 @@ function ActivityProgressCard({
         <div className="relative grid size-20 shrink-0 place-items-center" role="img" aria-label={`${meta.completion}% completado`}>
           <svg className="absolute inset-0 size-20 -rotate-90" viewBox="0 0 80 80" aria-hidden="true">
             <circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" strokeWidth="7" className="text-muted" />
-            <circle cx="40" cy="40" r="34" fill="none" stroke={accent.progressColor} strokeWidth="7" strokeLinecap="round" strokeDasharray={circumference} strokeDashoffset={circumference * (1 - meta.completion / 100)} className="motion-safe:transition-[stroke-dashoffset] motion-safe:duration-500 motion-safe:ease-out" />
+            <circle cx="40" cy="40" r="34" fill="none" stroke={accent.progressColor} strokeWidth="7" strokeLinecap="round" strokeDasharray={circumference} strokeDashoffset={circumference * (1 - meta.completion / 100)} />
           </svg>
           <div className={cn('relative grid size-14 place-items-center rounded-full bg-card text-lg font-black tabular-nums', accent.text)}>
             {meta.completion}%
@@ -4199,7 +4158,7 @@ function ActivityProgressCard({
       </div>
       {nextIssue ? <Button type="button" variant="outline" className={cn('mt-4 w-full justify-between', accent.text, accent.border)} onClick={() => onSelectIssue(nextIssue)}>Ir al siguiente pendiente<ArrowRight className="size-4" /></Button> : null}
       </div>
-      {onCancel && onContinue ? <div className="space-y-2.5 border-t border-border bg-card p-4"><Button type="button" className="h-14 w-full justify-center rounded-xl border-0 bg-[#f04444] text-base font-black text-white shadow-md transition-all hover:-translate-y-px hover:bg-[#dc3636] hover:shadow-lg" onClick={onCancel}><X className="size-5" />Cancelar</Button><Button type="button" className="h-14 w-full justify-center rounded-xl border-0 bg-[#245a9f] text-base font-black text-white shadow-md transition-all hover:-translate-y-px hover:bg-[#1d4c89] hover:shadow-lg" disabled={continueDisabled} onClick={onContinue}>{continueLabel || 'Continuar'}<ArrowRight className="size-5" /></Button>{cancelHint ? <p className="px-1 text-center text-[10px] leading-4 text-muted-foreground">{cancelHint}</p> : null}</div> : null}
+      {onCancel && onContinue ? <div className="space-y-2.5 border-t border-border bg-card p-4"><Button type="button" className="h-14 w-full justify-center rounded-xl border-0 bg-[#f04444] text-base font-black text-white shadow-md transition-colors hover:bg-[#dc3636]" onClick={onCancel}><X className="size-5" />Cancelar</Button><Button type="button" className="h-14 w-full justify-center rounded-xl border-0 bg-[#245a9f] text-base font-black text-white shadow-md transition-colors hover:bg-[#1d4c89]" disabled={continueDisabled} onClick={onContinue}>{continueLabel || 'Continuar'}<ArrowRight className="size-5" /></Button>{cancelHint ? <p className="px-1 text-center text-[10px] leading-4 text-muted-foreground">{cancelHint}</p> : null}</div> : null}
     </aside>
   )
 }
@@ -4917,7 +4876,7 @@ function RubricLevelSettingsDrawer({
           <div ref={levelListRef} className="space-y-1.5">
             {renderedDrafts.map((level, index) => {
               if (!level) {
-                return <div key="rubric-level-placeholder" aria-hidden="true" className="grid place-items-center rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50/80 text-[11px] font-black text-emerald-700 shadow-inner transition-all duration-200" style={{ height: `${dragPreviewHeight}px` }}>Suelta aquí</div>
+                return <div key="rubric-level-placeholder" aria-hidden="true" className="grid place-items-center rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50/80 text-[11px] font-black text-emerald-700 shadow-inner transition-colors duration-150" style={{ height: `${dragPreviewHeight}px` }}>Suelta aquí</div>
               }
               const visual = rubricLevelVisual(index, drafts.length)
               const keyboardIndex = drafts.findIndex((draft) => draft.id === level.id)
@@ -4926,7 +4885,7 @@ function RubricLevelSettingsDrawer({
                   key={level.id}
                   data-rubric-level-card
                   data-rubric-sort-card
-                  className="relative grid grid-cols-[1.75rem_1.75rem_minmax(0,1fr)_5.5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm transition-all duration-200"
+                  className="relative grid grid-cols-[1.75rem_1.75rem_minmax(0,1fr)_5.5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm transition-colors duration-150"
                   style={{ borderColor: visual.border }}
                 >
                   <button
@@ -5196,7 +5155,7 @@ function RubricInstrument({
         </thead>
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
-            <tr key={index} className={cn('transition-colors motion-safe:duration-500', highlightedRow === index ? accent.panel : '')}>
+            <tr key={index} className={cn('transition-colors motion-safe:duration-200', highlightedRow === index ? accent.panel : '')}>
               <td className="sticky left-0 z-10 border border-border bg-card p-1.5"><div className="flex items-start gap-1"><span className={cn('mt-1 grid size-6 shrink-0 place-items-center rounded-full text-[10px] font-black text-white', accent.progress)}>{index + 1}</span><InstrumentTextarea dataInstrumentRow={`rubrica-${index}`} placeholder="Criterio de evaluación" value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)} /></div></td>
               {levels.map((level) => <td key={level.score} className="border border-border p-1.5"><InstrumentTextarea value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)} /></td>)}
               <td className="border border-border px-2 py-3 text-center"><span className={cn('inline-flex min-w-14 items-center justify-center rounded-lg px-2 py-2 font-black', accent.panel, accent.text)}>{criterionPoints[index]} pts</span></td>
@@ -5518,7 +5477,7 @@ function ScaleInstrument({
         </thead>
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => ({ criterion: `Criterio ${index + 1}`, index })).map(({ criterion, index }) => (
-            <tr key={criterion} className={cn('transition-colors motion-safe:duration-500', highlightedRow === index ? accent.panel : '')}>
+            <tr key={criterion} className={cn('transition-colors motion-safe:duration-200', highlightedRow === index ? accent.panel : '')}>
               <td className="sticky left-0 z-10 border border-border bg-card p-1.5">
                 <div className="flex items-start gap-1.5"><span className={cn('mt-1 grid size-6 shrink-0 place-items-center rounded-full text-[10px] font-black text-white', accent.progress)}>{index + 1}</span><InstrumentTextarea
                   dataInstrumentRow={`escala-${index}`}
@@ -5705,7 +5664,7 @@ function ChecklistInstrument({
         </thead>
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
-            <tr key={index} className={cn('transition-colors motion-safe:duration-500',highlightedRow===index?accent.panel:'')}>
+            <tr key={index} className={cn('transition-colors motion-safe:duration-200',highlightedRow===index?accent.panel:'')}>
               <td className="sticky left-0 z-10 border border-border bg-card p-1.5">
                 <InstrumentTextarea
                   dataInstrumentRow={`lista-cotejo-${index}`}
@@ -5851,7 +5810,7 @@ function WeightedListSettingsDrawer({
             {weightedLabelTemplates.map((template) => {
               const active = draftTemplate === template.id
               const summary = template.id === 'personalizadas' ? 'Define tus propios términos' : draftPartial ? template.title : `${template.yes} / ${template.no}`
-              return <button key={template.id} type="button" className={cn('flex min-h-16 items-start gap-3 rounded-xl border bg-card p-3 text-left transition-all hover:-translate-y-px hover:shadow-sm', active ? accent.border : 'border-border')} style={active ? { backgroundColor: accent.cardTint, boxShadow: `inset 0 0 0 1px ${accent.progressColor}` } : undefined} onClick={() => selectTemplate(template.id)}><span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full border-2" style={{ borderColor: active ? accent.progressColor : '#cbd5e1' }}>{active ? <span className="size-2.5 rounded-full" style={{ backgroundColor: accent.progressColor }} /> : null}</span><span><span className="block text-xs font-black text-foreground">{template.title}</span><span className="mt-1 block text-[11px] leading-4 text-muted-foreground">{summary}</span></span></button>
+              return <button key={template.id} type="button" className={cn('flex min-h-16 items-start gap-3 rounded-xl border bg-card p-3 text-left transition-colors hover:bg-muted/20', active ? accent.border : 'border-border')} style={active ? { backgroundColor: accent.cardTint, boxShadow: `inset 0 0 0 1px ${accent.progressColor}` } : undefined} onClick={() => selectTemplate(template.id)}><span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full border-2" style={{ borderColor: active ? accent.progressColor : '#cbd5e1' }}>{active ? <span className="size-2.5 rounded-full" style={{ backgroundColor: accent.progressColor }} /> : null}</span><span><span className="block text-xs font-black text-foreground">{template.title}</span><span className="mt-1 block text-[11px] leading-4 text-muted-foreground">{summary}</span></span></button>
             })}
           </div>
           {draftTemplate === 'personalizadas' ? <div className={cn('grid gap-2 rounded-xl border p-3', accent.card, draftPartial ? 'sm:grid-cols-3' : 'sm:grid-cols-2')}><label className="text-[11px] font-bold text-muted-foreground">Respuesta positiva<Input className="mt-1 h-10 bg-card" value={draftLabels.yes} onChange={(event) => setDraftLabels((current) => ({ ...current, yes: event.target.value }))} /></label>{draftPartial ? <label className="text-[11px] font-bold text-muted-foreground">Respuesta parcial<Input className="mt-1 h-10 bg-card" value={draftLabels.partial} onChange={(event) => setDraftLabels((current) => ({ ...current, partial: event.target.value }))} /></label> : null}<label className="text-[11px] font-bold text-muted-foreground">Respuesta negativa<Input className="mt-1 h-10 bg-card" value={draftLabels.no} onChange={(event) => setDraftLabels((current) => ({ ...current, no: event.target.value }))} /></label></div> : null}
@@ -5958,7 +5917,7 @@ function WeightedListInstrument({
         </thead>
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
-            <tr key={index} className={cn('transition-colors motion-safe:duration-500', highlightedRow === index ? accent.panel : '')}>
+            <tr key={index} className={cn('transition-colors motion-safe:duration-200', highlightedRow === index ? accent.panel : '')}>
               <td className={cn('border bg-card text-center', accent.border)}><span className={cn('mx-auto grid size-7 place-items-center rounded-full text-xs font-black text-white', accent.progress)}>{index + 1}</span></td>
               <td className={cn('border bg-card p-1.5', accent.border)}>
                 <InstrumentTextarea
@@ -6867,6 +6826,13 @@ function getStudentPeriodBlockScore(input: {
   if (activities.length === 0) {
     return { period: null, recovery: null, effective: null }
   }
+  const recovery = getRecoveryScores(records)[input.blockId]?.[input.student.enrollmentId] ?? null
+  const hasRecordedScore = activities.some((activity) =>
+    scoreForActivity(records, input.student.enrollmentId, activity.id),
+  )
+  if (!hasRecordedScore) {
+    return { period: null, recovery, effective: recovery }
+  }
   const period = blockTotal({
     records,
     activities,
@@ -6874,7 +6840,6 @@ function getStudentPeriodBlockScore(input: {
     blockId: input.blockId,
     config: input.config,
   })
-  const recovery = getRecoveryScores(records)[input.blockId]?.[input.student.enrollmentId] ?? null
   return {
     period,
     recovery,
@@ -7118,13 +7083,15 @@ function ProgressBar({
   indicatorGradient?: string
   value: number
 }) {
+  const progress = Math.min(100, Math.max(0, value))
+
   return (
     <div className={cn('h-2 w-full overflow-hidden rounded-full bg-muted', className)}>
       <div
-        className={cn('h-full rounded-full bg-primary transition-all', indicatorClassName)}
+        className={cn('h-full w-full origin-left rounded-full bg-primary transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none', indicatorClassName)}
         style={{
           background: indicatorGradient || indicatorColor,
-          width: `${Math.min(100, Math.max(0, value))}%`,
+          transform: `scaleX(${progress / 100})`,
         }}
       />
     </div>
