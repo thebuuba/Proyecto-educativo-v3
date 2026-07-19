@@ -108,31 +108,37 @@ describe('GradingBook', () => {
     expect(screen.queryByRole('heading', { name: 'Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas' })).not.toBeInTheDocument()
   })
 
-  it('convierte todos los tabs del bloque y de la actividad en vistas navegables', async () => {
+  it('explica el estado pendiente sin mostrar una puntuación vacía', () => {
+    renderBook()
+
+    expect(screen.getByText('Pendiente de calificar')).toBeInTheDocument()
+    expect(screen.getAllByText('Aún sin actividades')).toHaveLength(3)
+    expect(screen.queryByText('— puntos obtenidos de 100')).not.toBeInTheDocument()
+  })
+
+  it('mantiene accesibles las vistas principales y de resultados', async () => {
     const user = userEvent.setup()
     renderBook()
 
-    const blocksTab = screen.getByRole('tab', { name: 'Bloques' })
-    const periodTab = screen.getByRole('tab', { name: 'Período' })
-    const annualTab = screen.getByRole('tab', { name: 'Matriz anual' })
-    const finalTab = screen.getByRole('tab', { name: 'Resumen final' })
-    expect(blocksTab).toHaveAttribute('aria-selected', 'true')
+    const blocksTab = screen.getByRole('button', { name: 'Bloques' })
+    const periodTab = screen.getByRole('button', { name: 'Período' })
+    expect(blocksTab).toHaveAttribute('aria-current', 'page')
 
     await user.click(periodTab)
     expect(screen.getByRole('heading', { name: 'P1 — Agosto, septiembre y octubre' })).toBeInTheDocument()
 
-    periodTab.focus()
-    await user.keyboard('{ArrowRight}')
-    expect(annualTab).toHaveAttribute('aria-selected', 'true')
+    await user.click(screen.getByText('Resultados'))
+    await user.click(screen.getByRole('button', { name: 'Matriz anual' }))
     expect(await screen.findByRole('heading', { name: 'Registro anual de competencias' })).toBeInTheDocument()
 
-    await user.click(finalTab)
+    await user.click(screen.getByText('Resultados'))
+    await user.click(screen.getByRole('button', { name: 'Resumen final' }))
     expect(await screen.findByText('Resultado anual')).toBeInTheDocument()
 
     await user.click(blocksTab)
     expect(screen.getByRole('heading', { name: 'Bloques de competencias' })).toBeInTheDocument()
 
-    await user.click(screen.getAllByRole('button', { name: 'Ver bloque' })[0])
+    await user.click(screen.getByRole('button', { name: /Abrir bloque 1:/ }))
 
     const matrixTab = screen.getByRole('tab', { name: 'Matriz de calificaciones' })
     const activitiesTab = screen.getByRole('tab', { name: 'Actividades' })

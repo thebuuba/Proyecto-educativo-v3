@@ -172,8 +172,7 @@ type GradingBookProps = {
   onActivityWorkspaceChange?: (active: boolean) => void
 }
 
-const mainViewTabs = ['blocks', 'period', 'annual', 'final'] as const
-type MainView = (typeof mainViewTabs)[number]
+type MainView = 'blocks' | 'period' | 'annual' | 'final'
 type ActivityDetailTab = 'evaluation' | 'results' | 'details'
 type BlockGradeTab = 'matrix' | 'activities' | 'students' | 'stats'
 type DraftsReturnView =
@@ -755,55 +754,76 @@ export function GradingBook({
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-5">
       {!isFocusedWorkspace ? (
-      <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-2 shadow-sm xl:flex-row xl:items-center xl:justify-between">
-        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Vistas del panel de evaluaciones">
-          <ViewButton active={mainView === 'blocks'} tabId="blocks" icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => selectMainView('blocks')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
-          <ViewButton active={mainView === 'period'} tabId="period" icon={<ClipboardList className="size-4" />} label="Período" onClick={() => selectMainView('period')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
-          <ViewButton active={mainView === 'annual'} tabId="annual" icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => selectMainView('annual')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
-          <ViewButton active={mainView === 'final'} tabId="final" icon={<Trophy className="size-4" />} label="Resumen final" onClick={() => selectMainView('final')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
+      <header className="rounded-2xl bg-card p-4 shadow-sm sm:p-5">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div className="min-w-0">
+            <h2 className="text-2xl font-extrabold leading-tight tracking-[-0.025em] text-primary">
+              {mainView === 'blocks' ? 'Bloques de competencias' : mainView === 'period' ? 'Resumen del período' : mainView === 'annual' ? 'Matriz anual' : 'Resumen final'}
+            </h2>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">{courseTitle}</span>
+              {' · '}{periodName}{' · '}{students.length} estudiantes
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <details className="group relative">
+              <summary className="inline-flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl border border-border bg-card px-3 text-sm font-semibold text-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+                Más acciones
+                <ChevronDown className="size-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+              </summary>
+              <div className="absolute right-0 z-20 mt-2 w-56 rounded-xl border border-border bg-card p-1.5 shadow-xl">
+                <button type="button" className="flex h-10 w-full items-center gap-2 rounded-lg px-3 text-left text-sm font-medium text-emerald-700 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" onClick={(event) => { downloadBlockSummary('csv'); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                  <OfficeIcon app="excel" /> Exportar a Excel
+                </button>
+                <button type="button" className="flex h-10 w-full items-center gap-2 rounded-lg px-3 text-left text-sm font-medium text-blue-700 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" onClick={(event) => { downloadBlockSummary('doc'); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                  <OfficeIcon app="word" /> Exportar a Word
+                </button>
+                <button type="button" className="flex h-10 w-full items-center gap-2 rounded-lg px-3 text-left text-sm font-medium text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" onClick={(event) => { setShowConfig(true); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                  <Settings className="size-4" /> Configurar cálculo
+                </button>
+              </div>
+            </details>
+            <Button className="h-10 shrink-0 px-4" onClick={openActivityHub}>
+              <Plus className="size-4" />
+              <span className="hidden sm:inline">Agregar actividad</span>
+              <span className="sm:hidden">Agregar</span>
+            </Button>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <Button
-            variant="outline"
-            className="h-9 px-3 text-emerald-700"
-            aria-label="Descargar resumen en Excel"
-            onClick={() => downloadBlockSummary('csv')}
-          >
-            <OfficeIcon app="excel" />
-            Excel
-          </Button>
-          <Button
-            variant="outline"
-            className="h-9 px-3 text-blue-700"
-            aria-label="Descargar resumen en Word"
-            onClick={() => downloadBlockSummary('doc')}
-          >
-            <OfficeIcon app="word" />
-            Word
-          </Button>
-          <Button variant="outline" className="h-9 px-3" onClick={() => setShowConfig(true)}>
-            <Settings className="size-4" />
-            Configurar cálculo
-          </Button>
-          <Button className="h-9 px-3" onClick={openActivityHub}>
-            <Plus className="size-4" />
-            Agregar actividad
-          </Button>
-        </div>
-      </div>
+
+        <nav className="mt-4 flex items-center gap-1 border-t border-border pt-3" aria-label="Vistas del panel de evaluaciones">
+          <ViewButton active={mainView === 'blocks'} icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => selectMainView('blocks')} />
+          <ViewButton active={mainView === 'period'} icon={<ClipboardList className="size-4" />} label="Período" onClick={() => selectMainView('period')} />
+          <details className="group relative">
+            <summary className={cn('inline-flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl px-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden', mainView === 'annual' || mainView === 'final' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground')}>
+              <BarChart3 className="size-4" />
+              Resultados
+              <ChevronDown className="size-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+            </summary>
+            <div className="absolute left-0 z-20 mt-2 w-52 rounded-xl border border-border bg-card p-1.5 shadow-xl">
+              <button type="button" className={cn('flex h-10 w-full items-center gap-2 rounded-lg px-3 text-left text-sm font-medium hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', mainView === 'annual' && 'bg-primary-light text-primary')} onClick={(event) => { selectMainView('annual'); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                <CalendarDays className="size-4" /> Matriz anual
+              </button>
+              <button type="button" className={cn('flex h-10 w-full items-center gap-2 rounded-lg px-3 text-left text-sm font-medium hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', mainView === 'final' && 'bg-primary-light text-primary')} onClick={(event) => { selectMainView('final'); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                <Trophy className="size-4" /> Resumen final
+              </button>
+            </div>
+          </details>
+        </nav>
+      </header>
       ) : null}
 
       {!detailView && mainView === 'blocks' ? (
-        <div className="rounded-lg border border-border bg-card p-3 shadow-sm">
-          <div className="grid gap-2 md:grid-cols-5">
-            <SummaryMetric icon={<Layers className="size-5" />} label="Bloques de competencias" value="4" helper="activos" tone="success" />
-            <SummaryMetric icon={<ClipboardList className="size-5" />} label="Actividades totales" value={activities.length} helper="en el período" tone="default" />
-            <SummaryMetric icon={<Users className="size-5" />} label="Estudiantes" value={students.length} helper="matriculados" tone="accent" />
-            <SummaryMetric icon={<TrendingUp className="size-5" />} label="Promedio general" value={formatGrade(periodAverage)} helper="actual" tone="warning" />
-            <SummaryMetric icon={<Hourglass className="size-5" />} label="Pendientes" value={pendingBlocks} helper="por evaluar" tone="destructive" />
-          </div>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 px-1 text-sm text-muted-foreground" aria-label="Resumen de evaluación">
+          <span><strong className="font-bold text-foreground tabular-nums">{activities.length}</strong> actividades</span>
+          <span className="text-border" aria-hidden="true">•</span>
+          <span><strong className="font-bold text-foreground tabular-nums">{pendingBlocks}</strong> bloques pendientes</span>
+          <span className="hidden text-border sm:inline" aria-hidden="true">•</span>
+          <span className="basis-full sm:basis-auto">
+            {periodAverage === null ? 'Aún no hay calificaciones' : <>Promedio <strong className="font-bold text-primary tabular-nums">{formatGrade(periodAverage)}</strong></>}
+          </span>
         </div>
       ) : null}
 
@@ -1032,26 +1052,18 @@ function ViewButton({
   icon,
   label,
   onClick,
-  onKeyDown,
-  tabId,
 }: {
   active: boolean
   icon: ReactNode
   label: string
   onClick: () => void
-  onKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void
-  tabId: MainView
 }) {
   return (
     <Button
-      role="tab"
-      data-tab={tabId}
-      aria-selected={active}
-      tabIndex={active ? 0 : -1}
+      aria-current={active ? 'page' : undefined}
       variant={active ? 'primary' : 'ghost'}
-      className="h-9 px-3"
+      className={cn('h-10 px-3', !active && 'text-muted-foreground')}
       onClick={onClick}
-      onKeyDown={onKeyDown}
     >
       {icon}
       {label}
@@ -1089,41 +1101,6 @@ function AnnualLoadError({ message, onRetry }: { message: string; onRetry: () =>
       <p className="font-bold text-destructive">No se pudo cargar la vista anual.</p>
       <p className="max-w-xl text-sm text-muted-foreground">{message}</p>
       <Button variant="outline" onClick={onRetry}>Reintentar</Button>
-    </div>
-  )
-}
-
-function SummaryMetric({
-  icon,
-  label,
-  value,
-  helper,
-  tone,
-}: {
-  icon: ReactNode
-  label: string
-  value: number | string
-  helper: string
-  tone: 'default' | 'accent' | 'success' | 'warning' | 'destructive'
-}) {
-  const toneClasses = {
-    default: 'bg-blue-50 text-blue-700',
-    accent: 'bg-violet-50 text-violet-700',
-    success: 'bg-emerald-50 text-emerald-700',
-    warning: 'bg-amber-50 text-amber-700',
-    destructive: 'bg-red-50 text-red-700',
-  }
-
-  return (
-    <div className="flex items-center gap-3 border-border py-1 md:border-r md:last:border-r-0">
-      <div className={cn('grid size-11 place-items-center rounded-full', toneClasses[tone])}>
-        {icon}
-      </div>
-      <div>
-        <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground">{label}</p>
-        <p className="mt-0.5 text-xl font-black leading-none text-primary">{value}</p>
-        <p className="mt-0.5 text-[11px] text-muted-foreground">{helper}</p>
-      </div>
     </div>
   )
 }
@@ -1190,77 +1167,82 @@ function BlockMatrixView({
   students: StudentGradeRow[]
 }) {
   return (
-    <section className="space-y-3">
-      <div>
-        <h2 className="text-2xl font-bold leading-tight text-primary">Bloques de competencias</h2>
-      </div>
-      <div className="grid gap-3 xl:grid-cols-4">
+    <section>
+      <div className="grid gap-4 md:grid-cols-2">
         {blockSummaries.map((summary) => {
           const accent = blockAccents[summary.index]
           const draftCount = draftMetas.filter((meta) => meta.blockId === summary.block.id).length
+          const progress = summary.average === null
+            ? 0
+            : Math.max(0, Math.min(100, (summary.average / summary.expected) * 100))
           return (
             <article
               key={summary.block.id}
-              role="button"
-              tabIndex={0}
-              className={cn('overflow-hidden rounded-lg border bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40', accent.card)}
-              style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
-              onClick={() => onOpenBlock(summary.block.id)}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault()
-                  onOpenBlock(summary.block.id)
-                }
-              }}
+              className="overflow-hidden rounded-2xl bg-card shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
-              <div className={cn('h-1.5', accent.dot)} />
-              <div className="p-4">
-                <Badge tone="default" className="h-6 rounded-lg px-2 text-[11px] uppercase">
-                  Bloque {summary.index + 1}
-                </Badge>
-                <h3 className="mt-2 min-h-12 text-[0.82rem] font-black leading-4 text-primary">
-                  {blockShortNames[summary.block.id]}
-                </h3>
-                <div className="mt-2 flex items-end gap-3">
-                  <div className={cn('grid size-16 place-items-center rounded-full border-4 bg-card text-xl font-black text-primary', accent.panel)}>
-                    {formatGrade(summary.average)}
+              <button
+                type="button"
+                aria-label={`Abrir bloque ${summary.index + 1}: ${blockShortNames[summary.block.id]}`}
+                className={cn('group block w-full px-5 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset', accent.ring)}
+                onClick={() => onOpenBlock(summary.block.id)}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="min-w-0">
+                    <p className={cn('text-xs font-bold', accent.text)}>Bloque {summary.index + 1}</p>
+                    <h3 className="mt-1.5 text-pretty text-base font-extrabold leading-6 text-primary sm:text-lg">
+                      {blockShortNames[summary.block.id]}
+                    </h3>
                   </div>
-                  <p className="pb-2 text-sm font-bold text-muted-foreground">/ {summary.expected}</p>
-                </div>
-                <p className="mt-2 text-xs text-muted-foreground">
-                  {formatGrade(summary.average)} puntos obtenidos de {summary.expected}
-                </p>
-                <div className="mt-3 border-t border-border pt-3">
-                  <div className="flex items-center justify-between gap-3 text-xs">
-                    <span className="font-medium text-muted-foreground">{summary.activities.length} actividades</span>
-                    <Badge tone={statusTone(summary.status)}>{summary.status}</Badge>
-                  </div>
-                  {draftCount > 0 ? (
-                    <button
-                      type="button"
-                      className="mt-2 inline-flex w-full items-center justify-between rounded-lg border border-red-200 bg-red-50/80 px-3 py-2 text-xs font-black text-red-700 shadow-sm transition hover:-translate-y-0.5 hover:border-red-300 hover:bg-red-50 hover:shadow-md"
-                      onClick={(event) => {
-                        event.stopPropagation()
-                        onViewDrafts(summary.block.id)
-                      }}
-                    >
-                      <span>{draftCount} borrador{draftCount === 1 ? '' : 'es'}</span>
-                      <ArrowRight className="size-4" />
-                    </button>
-                  ) : null}
-                  <Button
-                    variant="outline"
-                    className="mt-3 h-10 w-full justify-between"
-                    onClick={(event) => {
-                      event.stopPropagation()
-                      onOpenBlock(summary.block.id)
-                    }}
-                  >
-                    Ver bloque
+                  <span className={cn('grid size-9 shrink-0 place-items-center rounded-xl transition-transform duration-200 group-hover:translate-x-0.5', accent.panel)} aria-hidden="true">
                     <ArrowRight className="size-4" />
-                  </Button>
+                  </span>
                 </div>
-              </div>
+
+                {summary.average === null ? (
+                  <div className="mt-5 flex items-center gap-3">
+                    <span className={cn('grid size-10 shrink-0 place-items-center rounded-xl', accent.panel)} aria-hidden="true">
+                      <Hourglass className="size-5" />
+                    </span>
+                    <div>
+                      <p className="text-sm font-bold text-foreground">
+                        {summary.activities.length === 0 ? 'Aún sin actividades' : 'Pendiente de calificar'}
+                      </p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">
+                        {summary.activities.length === 0 ? 'Agrega una actividad para comenzar.' : 'Registra las primeras calificaciones.'}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="mt-5">
+                    <div className="flex items-end justify-between gap-3">
+                      <p className="text-2xl font-extrabold leading-none text-primary tabular-nums">
+                        {formatGrade(summary.average)} <span className="text-sm font-semibold text-muted-foreground">/ {summary.expected}</span>
+                      </p>
+                      <span className="text-xs text-muted-foreground">Promedio</span>
+                    </div>
+                    <div className="mt-3 h-2 overflow-hidden rounded-full bg-border" aria-label={`${formatGrade(summary.average)} de ${summary.expected} puntos`}>
+                      <span className={cn('block h-full rounded-full', accent.progress)} style={{ width: `${progress}%` }} />
+                    </div>
+                  </div>
+                )}
+
+                <div className="mt-5 flex items-center justify-between gap-3 border-t border-border pt-3 text-xs">
+                  <span className="font-medium text-muted-foreground">{summary.activities.length} actividades</span>
+                  <Badge tone={statusTone(summary.status)}>{summary.status}</Badge>
+                </div>
+              </button>
+              {draftCount > 0 ? (
+                <div className="px-5 pb-5">
+                  <button
+                    type="button"
+                    className="inline-flex w-full items-center justify-between rounded-xl bg-red-50 px-3 py-2 text-xs font-bold text-red-700 transition hover:bg-red-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                    onClick={() => onViewDrafts(summary.block.id)}
+                  >
+                    <span>{draftCount} borrador{draftCount === 1 ? '' : 'es'}</span>
+                    <ArrowRight className="size-4" />
+                  </button>
+                </div>
+              ) : null}
             </article>
           )
         })}
