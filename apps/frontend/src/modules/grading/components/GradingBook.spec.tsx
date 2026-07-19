@@ -83,12 +83,19 @@ describe('GradingBook', () => {
     expect(onCreateAnother).toHaveBeenCalledOnce()
   })
 
-  it('abre el selector de bloque cuando llega desde el acceso Nueva actividad', () => {
+  it('abre el selector de bloque y mantiene accesibles los borradores', async () => {
+    const user = userEvent.setup()
     renderBook({ initialActivityAction: 'create' })
 
     expect(screen.getByRole('heading', { name: 'Actividades' })).toBeInTheDocument()
     expect(screen.getByText('Elige el bloque de competencias para tu nueva actividad.')).toBeInTheDocument()
     expect(screen.getAllByRole('button', { name: 'Crear actividad' })).toHaveLength(4)
+    expect(screen.getByText('Sin borradores pendientes')).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Borradores' }))
+    expect(screen.getByRole('heading', { name: 'Borradores de actividades' })).toBeInTheDocument()
+    expect(screen.getByText('Aún no tienes borradores')).toBeInTheDocument()
+    expect(screen.queryByPlaceholderText('Buscar borradores...')).not.toBeInTheDocument()
   })
 
   it('abre directamente el creador cuando el acceso ya incluye un bloque', () => {
@@ -108,31 +115,41 @@ describe('GradingBook', () => {
     expect(screen.queryByRole('heading', { name: 'Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas' })).not.toBeInTheDocument()
   })
 
-  it('convierte todos los tabs del bloque y de la actividad en vistas navegables', async () => {
+  it('explica el estado pendiente sin mostrar una puntuación vacía', () => {
+    renderBook()
+
+    expect(screen.getByText('Pendiente de calificar')).toBeInTheDocument()
+    expect(screen.getAllByText('Aún sin actividades')).toHaveLength(3)
+    expect(screen.queryByText('— puntos obtenidos de 100')).not.toBeInTheDocument()
+  })
+
+  it('mantiene accesibles las vistas principales y de resultados', async () => {
     const user = userEvent.setup()
     renderBook()
 
-    const blocksTab = screen.getByRole('tab', { name: 'Bloques' })
-    const periodTab = screen.getByRole('tab', { name: 'Período' })
-    const annualTab = screen.getByRole('tab', { name: 'Matriz anual' })
-    const finalTab = screen.getByRole('tab', { name: 'Resumen final' })
-    expect(blocksTab).toHaveAttribute('aria-selected', 'true')
+    const blocksTab = screen.getByRole('button', { name: 'Bloques' })
+    const periodTab = screen.getByRole('button', { name: 'Período' })
+    const annualTab = screen.getByRole('button', { name: 'Matriz anual' })
+    const finalTab = screen.getByRole('button', { name: 'Resumen final' })
+    const tabIndicator = document.querySelector<HTMLElement>('.grading-tab-indicator')
+    expect(blocksTab).toHaveAttribute('aria-current', 'page')
+    expect(tabIndicator).toHaveStyle({ transform: 'translateX(0%)' })
 
     await user.click(periodTab)
-    expect(screen.getByRole('heading', { name: 'P1 — Agosto, septiembre y octubre' })).toBeInTheDocument()
+    expect(periodTab).toHaveAttribute('aria-current', 'page')
+    expect(screen.getByText('Pendiente de calificar')).toBeInTheDocument()
 
-    periodTab.focus()
-    await user.keyboard('{ArrowRight}')
-    expect(annualTab).toHaveAttribute('aria-selected', 'true')
+    await user.click(annualTab)
     expect(await screen.findByRole('heading', { name: 'Registro anual de competencias' })).toBeInTheDocument()
 
     await user.click(finalTab)
-    expect(await screen.findByText('Resultado anual')).toBeInTheDocument()
+    expect(await screen.findByText('Aún no hay resultado anual')).toBeInTheDocument()
+    expect(tabIndicator).toHaveStyle({ transform: 'translateX(300%)' })
 
     await user.click(blocksTab)
-    expect(screen.getByRole('heading', { name: 'Bloques de competencias' })).toBeInTheDocument()
+    expect(blocksTab).toHaveAttribute('aria-current', 'page')
 
-    await user.click(screen.getAllByRole('button', { name: 'Ver bloque' })[0])
+    await user.click(screen.getByRole('button', { name: /Abrir bloque 1:/ }))
 
     const matrixTab = screen.getByRole('tab', { name: 'Matriz de calificaciones' })
     const activitiesTab = screen.getByRole('tab', { name: 'Actividades' })

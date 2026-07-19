@@ -28,6 +28,7 @@
   ClipboardList,
   Copy,
   Eye,
+  Ellipsis,
   EllipsisVertical,
   Download,
   Dices,
@@ -172,8 +173,7 @@ type GradingBookProps = {
   onActivityWorkspaceChange?: (active: boolean) => void
 }
 
-const mainViewTabs = ['blocks', 'period', 'annual', 'final'] as const
-type MainView = (typeof mainViewTabs)[number]
+type MainView = 'blocks' | 'period' | 'annual' | 'final'
 type ActivityDetailTab = 'evaluation' | 'results' | 'details'
 type BlockGradeTab = 'matrix' | 'activities' | 'students' | 'stats'
 type DraftsReturnView =
@@ -755,56 +755,66 @@ export function GradingBook({
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-5">
       {!isFocusedWorkspace ? (
-      <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-2 shadow-sm xl:flex-row xl:items-center xl:justify-between">
-        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Vistas del panel de evaluaciones">
-          <ViewButton active={mainView === 'blocks'} tabId="blocks" icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => selectMainView('blocks')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
-          <ViewButton active={mainView === 'period'} tabId="period" icon={<ClipboardList className="size-4" />} label="Período" onClick={() => selectMainView('period')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
-          <ViewButton active={mainView === 'annual'} tabId="annual" icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => selectMainView('annual')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
-          <ViewButton active={mainView === 'final'} tabId="final" icon={<Trophy className="size-4" />} label="Resumen final" onClick={() => selectMainView('final')} onKeyDown={(event) => moveTabFocus(event, mainViewTabs, mainView, selectMainView)} />
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Button
-            variant="outline"
-            className="h-9 px-3 text-emerald-700"
-            aria-label="Descargar resumen en Excel"
-            onClick={() => downloadBlockSummary('csv')}
-          >
-            <OfficeIcon app="excel" />
-            Excel
-          </Button>
-          <Button
-            variant="outline"
-            className="h-9 px-3 text-blue-700"
-            aria-label="Descargar resumen en Word"
-            onClick={() => downloadBlockSummary('doc')}
-          >
-            <OfficeIcon app="word" />
-            Word
-          </Button>
-          <Button variant="outline" className="h-9 px-3" onClick={() => setShowConfig(true)}>
-            <Settings className="size-4" />
-            Configurar cálculo
-          </Button>
-          <Button className="h-9 px-3" onClick={openActivityHub}>
-            <Plus className="size-4" />
-            Agregar actividad
-          </Button>
-        </div>
-      </div>
-      ) : null}
+        <header className="rounded-3xl bg-card p-3 shadow-sm sm:p-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-1">
+                <div className="min-w-0 flex-1 overflow-x-auto pb-0.5">
+                  <nav className="grading-view-tabs relative grid min-w-[32rem] grid-cols-4 rounded-2xl bg-muted/70 p-1 sm:min-w-0 sm:max-w-[42rem]" aria-label="Vistas del panel de evaluaciones">
+                    <span
+                      className="grading-tab-indicator pointer-events-none absolute inset-y-1 left-1 w-[calc((100%_-_0.5rem)/4)] rounded-xl bg-primary transition-transform duration-[260ms] ease-[cubic-bezier(0.32,0.72,0,1)] will-change-transform"
+                      style={{ transform: `translateX(${(['blocks', 'period', 'annual', 'final'] as MainView[]).indexOf(mainView) * 100}%)` }}
+                      aria-hidden="true"
+                    />
+                    <ViewButton active={mainView === 'blocks'} icon={<BookOpen className="size-4" />} label="Bloques" onClick={() => selectMainView('blocks')} />
+                    <ViewButton active={mainView === 'period'} icon={<ClipboardList className="size-4" />} label="Período" onClick={() => selectMainView('period')} />
+                    <ViewButton active={mainView === 'annual'} icon={<CalendarDays className="size-4" />} label="Matriz anual" onClick={() => selectMainView('annual')} />
+                    <ViewButton active={mainView === 'final'} icon={<Trophy className="size-4" />} label="Resumen final" onClick={() => selectMainView('final')} />
+                  </nav>
+                </div>
 
-      {!detailView && mainView === 'blocks' ? (
-        <div className="rounded-lg border border-border bg-card p-3 shadow-sm">
-          <div className="grid gap-2 md:grid-cols-5">
-            <SummaryMetric icon={<Layers className="size-5" />} label="Bloques de competencias" value="4" helper="activos" tone="success" />
-            <SummaryMetric icon={<ClipboardList className="size-5" />} label="Actividades totales" value={activities.length} helper="en el período" tone="default" />
-            <SummaryMetric icon={<Users className="size-5" />} label="Estudiantes" value={students.length} helper="matriculados" tone="accent" />
-            <SummaryMetric icon={<TrendingUp className="size-5" />} label="Promedio general" value={formatGrade(periodAverage)} helper="actual" tone="warning" />
-            <SummaryMetric icon={<Hourglass className="size-5" />} label="Pendientes" value={pendingBlocks} helper="por evaluar" tone="destructive" />
+                <details className="group relative">
+                  <summary aria-label="Más acciones" title="Más acciones" className="grid size-10 cursor-pointer list-none place-items-center rounded-xl text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+                    <Ellipsis className="size-5" aria-hidden="true" />
+                  </summary>
+                  <div className="absolute right-0 z-20 mt-2 w-56 rounded-xl border border-border bg-card p-1.5 shadow-xl">
+                    <button type="button" className="flex h-10 w-full items-center gap-2 rounded-lg px-3 text-left text-sm font-medium text-emerald-700 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" onClick={(event) => { downloadBlockSummary('csv'); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                      <OfficeIcon app="excel" /> Exportar a Excel
+                    </button>
+                    <button type="button" className="flex h-10 w-full items-center gap-2 rounded-lg px-3 text-left text-sm font-medium text-blue-700 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" onClick={(event) => { downloadBlockSummary('doc'); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                      <OfficeIcon app="word" /> Exportar a Word
+                    </button>
+                    <button type="button" className="flex h-10 w-full items-center gap-2 rounded-lg px-3 text-left text-sm font-medium text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" onClick={(event) => { setShowConfig(true); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                      <Settings className="size-4" /> Configurar cálculo
+                    </button>
+                  </div>
+                </details>
+              </div>
+
+              {!detailView && mainView === 'blocks' ? (
+                <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 px-1 text-sm text-muted-foreground" aria-label="Resumen de evaluación">
+                  <span><strong className="font-bold text-foreground tabular-nums">{students.length}</strong> estudiantes</span>
+                  <span className="text-border" aria-hidden="true">•</span>
+                  <span><strong className="font-bold text-foreground tabular-nums">{activities.length}</strong> actividades</span>
+                  <span className="text-border" aria-hidden="true">•</span>
+                  <span><strong className="font-bold text-foreground tabular-nums">{pendingBlocks}</strong> bloques pendientes</span>
+                  <span className="hidden text-border sm:inline" aria-hidden="true">•</span>
+                  <span className="basis-full sm:basis-auto">
+                    {periodAverage === null ? 'Aún no hay calificaciones' : <>Promedio <strong className="font-bold text-primary tabular-nums">{formatGrade(periodAverage)}</strong></>}
+                  </span>
+                </div>
+              ) : null}
+            </div>
+
+            <Button className="h-10 shrink-0 px-4" onClick={openActivityHub}>
+              <Plus className="size-4" />
+              <span className="hidden sm:inline">Agregar actividad</span>
+              <span className="sm:hidden">Agregar</span>
+            </Button>
           </div>
-        </div>
+        </header>
       ) : null}
 
       {detailView ? (
@@ -905,7 +915,7 @@ export function GradingBook({
           onViewDrafts={(blockId) => setDetailView({ type: 'activity-drafts', initialBlock: blockId, returnTo: { type: 'blocks' } })}
         />
       ) : mainView === 'period' ? (
-        <PeriodSummaryView blockSummaries={blockSummaries} periodName={periodName} recoveryScores={recoveryScores} />
+        <PeriodSummaryView blockSummaries={blockSummaries} recoveryScores={recoveryScores} />
       ) : mainView === 'annual' ? (
         annualError ? (
           <AnnualLoadError message={annualError} onRetry={() => setAnnualRetryKey((value) => value + 1)} />
@@ -1032,30 +1042,25 @@ function ViewButton({
   icon,
   label,
   onClick,
-  onKeyDown,
-  tabId,
 }: {
   active: boolean
   icon: ReactNode
   label: string
   onClick: () => void
-  onKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void
-  tabId: MainView
 }) {
   return (
-    <Button
-      role="tab"
-      data-tab={tabId}
-      aria-selected={active}
-      tabIndex={active ? 0 : -1}
-      variant={active ? 'primary' : 'ghost'}
-      className="h-9 px-3"
+    <button
+      type="button"
+      aria-current={active ? 'page' : undefined}
+      className={cn(
+        'relative z-10 inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-xl px-2 text-sm font-bold transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.985]',
+        active ? 'text-primary-foreground' : 'text-muted-foreground hover:text-foreground',
+      )}
       onClick={onClick}
-      onKeyDown={onKeyDown}
     >
       {icon}
       {label}
-    </Button>
+    </button>
   )
 }
 
@@ -1089,41 +1094,6 @@ function AnnualLoadError({ message, onRetry }: { message: string; onRetry: () =>
       <p className="font-bold text-destructive">No se pudo cargar la vista anual.</p>
       <p className="max-w-xl text-sm text-muted-foreground">{message}</p>
       <Button variant="outline" onClick={onRetry}>Reintentar</Button>
-    </div>
-  )
-}
-
-function SummaryMetric({
-  icon,
-  label,
-  value,
-  helper,
-  tone,
-}: {
-  icon: ReactNode
-  label: string
-  value: number | string
-  helper: string
-  tone: 'default' | 'accent' | 'success' | 'warning' | 'destructive'
-}) {
-  const toneClasses = {
-    default: 'bg-blue-50 text-blue-700',
-    accent: 'bg-violet-50 text-violet-700',
-    success: 'bg-emerald-50 text-emerald-700',
-    warning: 'bg-amber-50 text-amber-700',
-    destructive: 'bg-red-50 text-red-700',
-  }
-
-  return (
-    <div className="flex items-center gap-3 border-border py-1 md:border-r md:last:border-r-0">
-      <div className={cn('grid size-11 place-items-center rounded-full', toneClasses[tone])}>
-        {icon}
-      </div>
-      <div>
-        <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground">{label}</p>
-        <p className="mt-0.5 text-xl font-black leading-none text-primary">{value}</p>
-        <p className="mt-0.5 text-[11px] text-muted-foreground">{helper}</p>
-      </div>
     </div>
   )
 }
@@ -1190,77 +1160,82 @@ function BlockMatrixView({
   students: StudentGradeRow[]
 }) {
   return (
-    <section className="space-y-3">
-      <div>
-        <h2 className="text-2xl font-bold leading-tight text-primary">Bloques de competencias</h2>
-      </div>
-      <div className="grid gap-3 xl:grid-cols-4">
+    <section>
+      <div className="grid gap-4 md:grid-cols-2">
         {blockSummaries.map((summary) => {
           const accent = blockAccents[summary.index]
           const draftCount = draftMetas.filter((meta) => meta.blockId === summary.block.id).length
+          const progress = summary.average === null
+            ? 0
+            : Math.max(0, Math.min(100, (summary.average / summary.expected) * 100))
           return (
             <article
               key={summary.block.id}
-              role="button"
-              tabIndex={0}
-              className={cn('overflow-hidden rounded-lg border bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40', accent.card)}
-              style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
-              onClick={() => onOpenBlock(summary.block.id)}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault()
-                  onOpenBlock(summary.block.id)
-                }
-              }}
+              className="overflow-hidden rounded-2xl bg-card shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
-              <div className={cn('h-1.5', accent.dot)} />
-              <div className="p-4">
-                <Badge tone="default" className="h-6 rounded-lg px-2 text-[11px] uppercase">
-                  Bloque {summary.index + 1}
-                </Badge>
-                <h3 className="mt-2 min-h-12 text-[0.82rem] font-black leading-4 text-primary">
-                  {blockShortNames[summary.block.id]}
-                </h3>
-                <div className="mt-2 flex items-end gap-3">
-                  <div className={cn('grid size-16 place-items-center rounded-full border-4 bg-card text-xl font-black text-primary', accent.panel)}>
-                    {formatGrade(summary.average)}
+              <button
+                type="button"
+                aria-label={`Abrir bloque ${summary.index + 1}: ${blockShortNames[summary.block.id]}`}
+                className={cn('group block w-full px-5 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset', accent.ring)}
+                onClick={() => onOpenBlock(summary.block.id)}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="min-w-0">
+                    <p className={cn('text-xs font-bold', accent.text)}>Bloque {summary.index + 1}</p>
+                    <h3 className="mt-1.5 text-pretty text-base font-extrabold leading-6 text-primary sm:text-lg">
+                      {blockShortNames[summary.block.id]}
+                    </h3>
                   </div>
-                  <p className="pb-2 text-sm font-bold text-muted-foreground">/ {summary.expected}</p>
-                </div>
-                <p className="mt-2 text-xs text-muted-foreground">
-                  {formatGrade(summary.average)} puntos obtenidos de {summary.expected}
-                </p>
-                <div className="mt-3 border-t border-border pt-3">
-                  <div className="flex items-center justify-between gap-3 text-xs">
-                    <span className="font-medium text-muted-foreground">{summary.activities.length} actividades</span>
-                    <Badge tone={statusTone(summary.status)}>{summary.status}</Badge>
-                  </div>
-                  {draftCount > 0 ? (
-                    <button
-                      type="button"
-                      className="mt-2 inline-flex w-full items-center justify-between rounded-lg border border-red-200 bg-red-50/80 px-3 py-2 text-xs font-black text-red-700 shadow-sm transition hover:-translate-y-0.5 hover:border-red-300 hover:bg-red-50 hover:shadow-md"
-                      onClick={(event) => {
-                        event.stopPropagation()
-                        onViewDrafts(summary.block.id)
-                      }}
-                    >
-                      <span>{draftCount} borrador{draftCount === 1 ? '' : 'es'}</span>
-                      <ArrowRight className="size-4" />
-                    </button>
-                  ) : null}
-                  <Button
-                    variant="outline"
-                    className="mt-3 h-10 w-full justify-between"
-                    onClick={(event) => {
-                      event.stopPropagation()
-                      onOpenBlock(summary.block.id)
-                    }}
-                  >
-                    Ver bloque
+                  <span className={cn('grid size-9 shrink-0 place-items-center rounded-xl transition-transform duration-200 group-hover:translate-x-0.5', accent.panel)} aria-hidden="true">
                     <ArrowRight className="size-4" />
-                  </Button>
+                  </span>
                 </div>
-              </div>
+
+                {summary.average === null ? (
+                  <div className="mt-5 flex items-center gap-3">
+                    <span className={cn('grid size-10 shrink-0 place-items-center rounded-xl', accent.panel)} aria-hidden="true">
+                      <Hourglass className="size-5" />
+                    </span>
+                    <div>
+                      <p className="text-sm font-bold text-foreground">
+                        {summary.activities.length === 0 ? 'Aún sin actividades' : 'Pendiente de calificar'}
+                      </p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">
+                        {summary.activities.length === 0 ? 'Agrega una actividad para comenzar.' : 'Registra las primeras calificaciones.'}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="mt-5">
+                    <div className="flex items-end justify-between gap-3">
+                      <p className="text-2xl font-extrabold leading-none text-primary tabular-nums">
+                        {formatGrade(summary.average)} <span className="text-sm font-semibold text-muted-foreground">/ {summary.expected}</span>
+                      </p>
+                      <span className="text-xs text-muted-foreground">Promedio</span>
+                    </div>
+                    <div className="mt-3 h-2 overflow-hidden rounded-full bg-border" aria-label={`${formatGrade(summary.average)} de ${summary.expected} puntos`}>
+                      <span className={cn('block h-full rounded-full', accent.progress)} style={{ width: `${progress}%` }} />
+                    </div>
+                  </div>
+                )}
+
+                <div className="mt-5 flex items-center justify-between gap-3 border-t border-border pt-3 text-xs">
+                  <span className="font-medium text-muted-foreground">{summary.activities.length} actividades</span>
+                  <Badge tone={statusTone(summary.status)}>{summary.status}</Badge>
+                </div>
+              </button>
+              {draftCount > 0 ? (
+                <div className="px-5 pb-5">
+                  <button
+                    type="button"
+                    className="inline-flex w-full items-center justify-between rounded-xl bg-red-50 px-3 py-2 text-xs font-bold text-red-700 transition hover:bg-red-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                    onClick={() => onViewDrafts(summary.block.id)}
+                  >
+                    <span>{draftCount} borrador{draftCount === 1 ? '' : 'es'}</span>
+                    <ArrowRight className="size-4" />
+                  </button>
+                </div>
+              ) : null}
             </article>
           )
         })}
@@ -2477,40 +2452,67 @@ export function LegacyActivityDetailView({
 
 function PeriodSummaryView({
   blockSummaries,
-  periodName,
   recoveryScores,
 }: {
   blockSummaries: Array<{
     block: (typeof competencyBlocks)[number]
     index: number
     average: number | null
+    expected: number
     status: string
   }>
-  periodName: string
   recoveryScores: RecoveryScores
 }) {
   return (
-    <section className="space-y-4">
-      <div>
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">Resumen del período</p>
-        <h2 className="mt-1 text-2xl font-bold text-primary">{periodName}</h2>
-      </div>
-      <div className="grid gap-4 xl:grid-cols-4">
+    <section>
+      <div className="grid gap-4 md:grid-cols-2">
         {blockSummaries.map((summary) => {
           const accent = blockAccents[summary.index]
           const hasRecovery = Object.values(recoveryScores[summary.block.id] ?? {}).some((value) => typeof value === 'number')
+          const progress = summary.average === null
+            ? 0
+            : Math.max(0, Math.min(100, (summary.average / summary.expected) * 100))
           return (
             <article
               key={summary.block.id}
-              className={cn('rounded-lg border p-5 shadow-sm', accent.card)}
-              style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
+              className="rounded-2xl bg-card p-5 shadow-sm"
             >
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+              <p className={cn('text-xs font-bold', accent.text)}>
                 {summary.block.shortName}
               </p>
-              <h3 className="mt-2 min-h-12 text-base font-bold text-primary">{blockShortNames[summary.block.id]}</h3>
-              <p className="mt-4 text-4xl font-black text-primary">{formatGrade(summary.average)}</p>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <h3 className="mt-1.5 text-pretty text-base font-extrabold leading-6 text-primary sm:text-lg">
+                {blockShortNames[summary.block.id]}
+              </h3>
+
+              {summary.average === null ? (
+                <div className="mt-5 flex items-center gap-3">
+                  <span className={cn('grid size-10 shrink-0 place-items-center rounded-xl', accent.panel)} aria-hidden="true">
+                    <Hourglass className="size-5" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-bold text-foreground">
+                      {summary.status === 'Sin actividades' ? 'Aún sin actividades' : 'Pendiente de calificar'}
+                    </p>
+                    <p className="mt-0.5 text-xs text-muted-foreground">
+                      {summary.status === 'Sin actividades' ? 'Agrega una actividad para comenzar.' : 'Registra las primeras calificaciones.'}
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="mt-5">
+                  <div className="flex items-end justify-between gap-3">
+                    <p className="text-2xl font-extrabold leading-none text-primary tabular-nums">
+                      {formatGrade(summary.average)} <span className="text-sm font-semibold text-muted-foreground">/ {summary.expected}</span>
+                    </p>
+                    <span className="text-xs text-muted-foreground">Promedio</span>
+                  </div>
+                  <div className="mt-3 h-2 overflow-hidden rounded-full bg-border" aria-label={`${formatGrade(summary.average)} de ${summary.expected} puntos`}>
+                    <span className={cn('block h-full rounded-full', accent.progress)} style={{ width: `${progress}%` }} />
+                  </div>
+                </div>
+              )}
+
+              <div className="mt-5 flex flex-wrap gap-2 border-t border-border pt-3">
                 <Badge tone={statusTone(summary.status)}>{summary.status}</Badge>
                 {hasRecovery ? <Badge tone="warning">RP · Nota de recuperación</Badge> : null}
               </div>
@@ -2721,37 +2723,71 @@ function AnnualResultView(props: {
 
   return (
     <section className="space-y-4">
-      <div className="grid gap-4 xl:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2">
         {competencyBlocks.map((block, index) => {
           const accent = blockAccents[index]
+          const average = blockAverages[index]
 
           return (
-          <article
-            key={block.id}
-            className={cn('rounded-lg border p-5 shadow-sm', accent.card)}
-            style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">{block.shortName}</p>
-            <h3 className="mt-2 text-sm font-bold text-primary">{blockShortNames[block.id]}</h3>
-            <p className="mt-4 text-3xl font-black text-primary">{formatGrade(blockAverages[index])}</p>
-          </article>
+            <article key={block.id} className="rounded-2xl bg-card p-5 shadow-sm">
+              <p className={cn('text-xs font-bold', accent.text)}>{block.shortName}</p>
+              <h3 className="mt-1.5 text-pretty text-base font-extrabold leading-6 text-primary sm:text-lg">
+                {blockShortNames[block.id]}
+              </h3>
+
+              {average === null ? (
+                <div className="mt-5 flex items-center gap-3">
+                  <span className={cn('grid size-10 shrink-0 place-items-center rounded-xl', accent.panel)} aria-hidden="true">
+                    <Hourglass className="size-5" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-bold text-foreground">Aún sin promedio anual</p>
+                    <p className="mt-0.5 text-xs text-muted-foreground">Completa las calificaciones de los períodos.</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="mt-5">
+                  <div className="flex items-end justify-between gap-3">
+                    <p className="text-2xl font-extrabold leading-none text-primary tabular-nums">
+                      {formatGrade(average)} <span className="text-sm font-semibold text-muted-foreground">/ 100</span>
+                    </p>
+                    <span className="text-xs text-muted-foreground">Promedio anual</span>
+                  </div>
+                  <div className="mt-3 h-2 overflow-hidden rounded-full bg-border" aria-label={`${formatGrade(average)} de 100 puntos`}>
+                    <span className={cn('block h-full rounded-full', accent.progress)} style={{ width: `${Math.max(0, Math.min(100, average))}%` }} />
+                  </div>
+                </div>
+              )}
+            </article>
           )
         })}
       </div>
 
-      <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">Resultado anual</p>
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
-          <ResultMetric label="Promedio general" value={`${formatGrade(generalAverage)} / 100`} />
-          <ResultMetric label="Calificación final" value={`${formatGrade(final)} / 100`} />
-          <div className="rounded-lg border border-border bg-muted/25 p-4">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">Estado</p>
-            <Badge tone={state === 'Aprobado' ? 'success' : state === 'Pendiente' ? 'muted' : 'warning'} className="mt-3">
-              {state}
-            </Badge>
+      {final === null ? (
+        <div className="flex flex-col gap-4 rounded-2xl bg-card p-5 shadow-sm sm:flex-row sm:items-center">
+          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-primary-light text-primary" aria-hidden="true">
+            <Hourglass className="size-5" />
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="font-extrabold text-foreground">Aún no hay resultado anual</p>
+            <p className="mt-1 text-sm text-muted-foreground">Completa las calificaciones de los períodos para calcular el promedio y la nota final.</p>
+          </div>
+          <Badge tone="muted" className="shrink-0">Pendiente</Badge>
+        </div>
+      ) : (
+        <div className="rounded-2xl bg-card p-5 shadow-sm">
+          <div className="grid gap-5 md:grid-cols-3 md:divide-x md:divide-border">
+            <ResultMetric label="Promedio general" value={`${formatGrade(generalAverage)} / 100`} />
+            <ResultMetric label="Calificación final" value={`${formatGrade(final)} / 100`} />
+            <div className="px-2 md:pl-5">
+              <p className="text-xs font-bold text-muted-foreground">Estado</p>
+              <Badge tone={state === 'Aprobado' ? 'success' : 'warning'} className="mt-3">
+                {state}
+              </Badge>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </section>
   )
 }
@@ -2977,31 +3013,36 @@ function ActivitiesHubView({
   const blocksWithDrafts = new Set(draftMetas.map((meta) => meta.blockId)).size
 
   return (
-    <section className="space-y-4">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <div>
-          <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-            <button type="button" className="font-medium text-primary hover:underline" onClick={onBack}>
-              Calificaciones
-            </button>
-            <span>›</span>
-            <span>Actividades</span>
+    <section className="space-y-5">
+      <header className="flex flex-col gap-3 rounded-2xl bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
+        <div className="flex min-w-0 items-start gap-3">
+          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary-light text-primary" aria-hidden="true">
+            <NotebookPen className="size-5" />
+          </span>
+          <div className="min-w-0">
+            <p className="text-xs font-bold text-primary">Nueva actividad</p>
+            <h2 className="mt-0.5 text-2xl font-extrabold tracking-tight text-foreground">Actividades</h2>
+            <p className="mt-1 text-sm text-foreground">
+              Elige el bloque de competencias para tu nueva actividad.
+            </p>
+            <p className="mt-1 truncate text-xs font-medium text-muted-foreground">
+              {courseTitle} · {periodName}
+            </p>
           </div>
-          <h2 className="mt-3 text-3xl font-black text-primary">Actividades</h2>
-          <p className="mt-1 text-sm font-medium text-foreground">
-            {courseTitle} · {periodName}
-          </p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Elige el bloque de competencias para tu nueva actividad.
-          </p>
         </div>
-        <Button variant="outline" onClick={onBack}>
-          <ArrowLeft className="size-4" />
-          Volver
-        </Button>
-      </div>
+        <div className="flex items-center gap-1 self-start">
+          <Button variant="outline" className="h-10 px-3" onClick={() => onViewDrafts()}>
+            <FileText className="size-4" />
+            Borradores
+          </Button>
+          <Button variant="ghost" className="h-10 px-3" onClick={onBack}>
+            <ArrowLeft className="size-4" />
+            Volver
+          </Button>
+        </div>
+      </header>
 
-      <div className="grid gap-4 xl:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2">
         {competencyBlocks.map((block, index) => (
           <ActivityBlockHubCard
             key={block.id}
@@ -3043,38 +3084,37 @@ function ActivityBlockHubCard({
   const plannedPoints = activities.reduce((sum, activity) => sum + activity.maxScore, 0)
 
   return (
-    <article
-      className={cn('flex min-h-[14rem] flex-col rounded-lg border p-4 shadow-sm', accent.card)}
-      style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
-    >
-      <div className="flex items-start gap-2">
-        <span className={cn('mt-0.5 h-12 w-1.5 shrink-0 rounded-full', accent.dot)} />
+    <article className="flex flex-col rounded-2xl bg-card p-4 shadow-sm sm:p-5">
+      <div className="flex items-start gap-3">
+        <span className={cn('grid size-9 shrink-0 place-items-center rounded-xl text-sm font-extrabold', accent.panel)} aria-hidden="true">
+          {block.shortName.replace(/\D/g, '')}
+        </span>
         <div className="min-w-0">
-          <p className="text-[11px] font-black uppercase tracking-[0.16em] text-primary">{block.shortName}</p>
-          <h3 className="mt-0.5 text-sm font-black leading-tight text-foreground">{blockShortNames[block.id] ?? block.name}</h3>
+          <p className={cn('text-xs font-bold', accent.text)}>{block.shortName}</p>
+          <h3 className="mt-1 text-pretty text-base font-extrabold leading-6 text-primary sm:min-h-12 sm:text-lg">{blockShortNames[block.id] ?? block.name}</h3>
         </div>
       </div>
 
-      <div className="mt-3 grid grid-cols-2 gap-2">
-        <div className="rounded-lg bg-card/75 px-3 py-2 ring-1 ring-border">
-          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Creadas</p>
-          <p className="text-xl font-black leading-tight text-primary">{activities.length}</p>
-        </div>
-        <div className="rounded-lg bg-card/75 px-3 py-2 ring-1 ring-border">
-          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Borradores</p>
-          <p className="text-xl font-black leading-tight text-primary">{draftCount}</p>
-        </div>
+      <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+        <span><strong className="font-extrabold text-foreground tabular-nums">{activities.length}</strong> {activities.length === 1 ? 'actividad' : 'actividades'}</span>
+        <span className="text-border" aria-hidden="true">•</span>
+        <span><strong className="font-extrabold text-foreground tabular-nums">{plannedPoints}</strong> pts planificados</span>
+        {draftCount > 0 ? (
+          <>
+            <span className="text-border" aria-hidden="true">•</span>
+            <span className={cn('font-bold', accent.text)}>{draftCount} {draftCount === 1 ? 'borrador' : 'borradores'}</span>
+          </>
+        ) : null}
       </div>
 
-      <div className="mt-3 rounded-lg bg-card/75 px-3 py-2 text-sm ring-1 ring-border">
-        <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">Total planificado</p>
-        <p className="mt-1 text-lg font-black text-foreground">{plannedPoints} pts</p>
-      </div>
-
-      <Button className="mt-auto h-9 w-full" onClick={onSelectBlock}>
+      <button
+        type="button"
+        className="mt-4 inline-flex h-9 w-fit items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.985]"
+        onClick={onSelectBlock}
+      >
         <Plus className="size-4" />
         Crear actividad
-      </Button>
+      </button>
     </article>
   )
 }
@@ -3100,53 +3140,61 @@ function DraftCenter({
 }) {
   const latestDraft = draftMetas[0] ?? null
 
+  if (totalDrafts === 0) {
+    return (
+      <section className="flex flex-col gap-3 rounded-2xl border border-dashed border-border bg-card/60 p-4 sm:flex-row sm:items-center">
+        <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary-light text-primary" aria-hidden="true">
+          <FileText className="size-5" />
+        </span>
+        <div>
+          <h3 className="text-sm font-extrabold text-foreground">Sin borradores pendientes</h3>
+          <p className="mt-1 text-sm leading-5 text-muted-foreground">
+            Las actividades incompletas que guardes aparecerán aquí automáticamente.
+          </p>
+        </div>
+      </section>
+    )
+  }
+
   return (
-    <section className="rounded-lg border border-border bg-card p-3 shadow-sm">
-      <div className="grid gap-3 lg:grid-cols-[minmax(18rem,1.15fr)_minmax(10rem,0.7fr)_minmax(14rem,0.95fr)_minmax(12rem,0.8fr)_auto] lg:items-center">
+    <section className="rounded-2xl bg-card p-5 shadow-sm">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex min-w-0 items-start gap-3">
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-primary-light text-primary">
             <FileText className="size-5" />
           </span>
           <div className="min-w-0">
-            <h3 className="text-sm font-black text-foreground">Centro de borradores</h3>
-            <p className="mt-1 max-w-md text-xs leading-5 text-muted-foreground">
-              Aqui puedes continuar editando las actividades que dejaste pendientes. Los borradores se guardan automaticamente.
+            <h3 className="text-sm font-extrabold text-foreground">Borradores pendientes</h3>
+            <p className="mt-1 max-w-md text-sm leading-5 text-muted-foreground">
+              Continúa las actividades que dejaste incompletas.
             </p>
           </div>
         </div>
-        <DraftMetric icon={<FileText className="size-4" />} label="Total de borradores" value={totalDrafts} />
-        <DraftMetric icon={<ClipboardList className="size-4" />} label="Bloques con borradores" tone="success" value={blocksWithDrafts} />
-        <DraftMetric icon={<CalendarDays className="size-4" />} label="Ultima edicion" value={latestDraft ? formatDraftDate(latestDraft.updatedAt) : '-'} />
-        <Button variant="outline" className="h-10 justify-center whitespace-nowrap px-4 text-xs text-primary" onClick={onViewDrafts}>
-          Ver todos los borradores
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+          <span><strong className="font-extrabold text-foreground tabular-nums">{totalDrafts}</strong> borradores</span>
+          <span className="text-border" aria-hidden="true">•</span>
+          <span><strong className="font-extrabold text-foreground tabular-nums">{blocksWithDrafts}</strong> bloques</span>
+          <span className="text-border" aria-hidden="true">•</span>
+          <span>Última edición: <strong className="font-bold text-foreground">{latestDraft ? formatDraftDate(latestDraft.updatedAt) : '-'}</strong></span>
+        </div>
+        <Button variant="ghost" className="h-10 justify-center px-3 text-primary" onClick={onViewDrafts}>
+          Ver todos
           <ArrowRight className="size-4" />
         </Button>
       </div>
 
-      <div className="mt-3 rounded-lg border border-border p-2.5">
-        <div className="mb-2 flex items-center justify-between">
-          <p className="text-xs font-black text-foreground">Borradores recientes</p>
-          <button type="button" className="text-xs font-black text-primary hover:underline" onClick={onViewDrafts}>
-            Ver todos
-          </button>
-        </div>
-        {draftMetas.length > 0 ? (
-          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-            {draftMetas.map((meta) => {
+      <div className="mt-5 border-t border-border pt-4">
+        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {draftMetas.map((meta) => {
               const accent = getBlockAccent(meta.blockId)
 
               return (
                 <button
                   key={meta.draft.draftId}
                   type="button"
-                  className={cn(
-                    'relative min-h-[8.25rem] overflow-hidden rounded-lg border border-border bg-card px-3 py-2.5 pl-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary hover:shadow-md',
-                    accent.card,
-                  )}
-                  style={{ backgroundColor: accent.cardTint, borderColor: accent.cardBorder }}
+                  className="relative min-h-[8.25rem] overflow-hidden rounded-xl bg-muted/20 px-4 py-3 text-left transition hover:-translate-y-0.5 hover:bg-muted/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   onClick={() => meta.draft.draftId && onOpenDraft(meta.blockId, meta.draft.draftId)}
                 >
-                  <span aria-hidden="true" className={cn('absolute inset-y-3 left-0 w-1 rounded-r-full', accent.dot)} />
                   <div className="flex items-start justify-between gap-2">
                     <span className={cn('inline-flex h-5 items-center whitespace-nowrap rounded-full px-2 text-[10px] font-black ring-1 ring-inset', accent.badge)}>
                       {meta.block.shortName}
@@ -3180,40 +3228,10 @@ function DraftCenter({
                   <p className="mt-1 text-xs text-muted-foreground">{meta.completion}% completado</p>
                 </button>
               )
-            })}
-          </div>
-        ) : (
-          <div className="rounded-lg bg-muted/30 px-4 py-6 text-sm text-muted-foreground">
-            <p className="font-bold text-foreground">No tienes actividades pendientes.</p>
-            <p className="mt-1">Las actividades incompletas que guardes apareceran aqui automaticamente.</p>
-          </div>
-        )}
+          })}
+        </div>
       </div>
     </section>
-  )
-}
-
-function DraftMetric({
-  icon,
-  label,
-  tone = 'default',
-  value,
-}: {
-  icon: ReactNode
-  label: string
-  tone?: 'default' | 'success'
-  value: string | number
-}) {
-  return (
-    <div className="flex min-h-[3.35rem] items-center gap-3 rounded-lg bg-muted/20 px-3 py-2">
-      <span className={cn('flex size-8 shrink-0 items-center justify-center rounded-lg', tone === 'success' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700')}>
-        {icon}
-      </span>
-      <div className="min-w-0">
-        <p className="whitespace-nowrap text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-muted-foreground">{label}</p>
-        <p className="mt-0.5 truncate text-sm font-black text-foreground">{value}</p>
-      </div>
-    </div>
   )
 }
 
@@ -3281,39 +3299,44 @@ function ActivityDraftsView({
   }
 
   return (
-    <section className="space-y-4">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <div>
-          <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-            <button type="button" className="font-medium text-primary hover:underline" onClick={onBack}>
-              Calificaciones
-            </button>
-            <span>/</span>
-            <button type="button" className="font-medium text-primary hover:underline" onClick={onBack}>
-              Actividades
-            </button>
-            <span>/</span>
-            <span>Borradores</span>
+    <section className="space-y-5">
+      <header className="flex flex-col gap-3 rounded-2xl bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
+        <div className="flex min-w-0 items-start gap-3">
+          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary-light text-primary" aria-hidden="true">
+            <FileText className="size-5" />
+          </span>
+          <div className="min-w-0">
+            <p className="text-xs font-bold text-primary">Actividades</p>
+            <h2 className="mt-0.5 text-2xl font-extrabold tracking-tight text-foreground">Borradores de actividades</h2>
+            <p className="mt-1 text-sm text-foreground">Continúa las actividades que dejaste pendientes.</p>
+            <p className="mt-1 truncate text-xs font-medium text-muted-foreground">{courseTitle} · {periodName}</p>
           </div>
-          <div className="mt-3 flex items-center gap-3">
-            <h2 className="text-3xl font-black text-primary">Borradores de actividades</h2>
-          </div>
-          <p className="mt-1 text-sm text-muted-foreground">Continua editando las actividades que dejaste pendientes de completar.</p>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <Button variant="outline" onClick={onBack}>
-            <ArrowLeft className="size-4" />
-            Volver
-          </Button>
-          <Button onClick={onCreateActivity}>
+        <div className="flex flex-wrap items-center gap-1 self-start sm:self-auto">
+          <Button className="h-10 px-4 !shadow-none" onClick={onCreateActivity}>
             <Plus className="size-4" />
             Nueva actividad
           </Button>
+          <Button variant="ghost" className="h-10 px-3" onClick={onBack}>
+            <ArrowLeft className="size-4" />
+            Volver
+          </Button>
         </div>
-      </div>
+      </header>
 
-      <div className="rounded-lg border border-border bg-card p-3 shadow-sm">
-        <div className="flex flex-wrap gap-2 border-b border-border pb-3">
+      {draftMetas.length === 0 ? (
+        <div className="flex min-h-56 flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card/60 px-5 py-10 text-center">
+          <span className="grid size-11 place-items-center rounded-xl bg-primary-light text-primary" aria-hidden="true">
+            <FileText className="size-5" />
+          </span>
+          <h3 className="mt-4 text-base font-extrabold text-foreground">Aún no tienes borradores</h3>
+          <p className="mt-1 max-w-md text-sm leading-5 text-muted-foreground">
+            Cuando guardes una actividad incompleta, podrás continuarla desde aquí.
+          </p>
+        </div>
+      ) : (
+      <div className="rounded-2xl bg-card p-4 shadow-sm">
+        <div className="flex gap-2 overflow-x-auto pb-1">
           <DraftFilterChip active={activeBlock === 'all'} label="Todos" count={draftMetas.length} onClick={() => { setActiveBlock('all'); setBlockFilter('all'); setPage(1) }} />
           {competencyBlocks.map((block) => {
             const accent = getBlockAccent(block.id)
@@ -3331,7 +3354,7 @@ function ActivityDraftsView({
           })}
         </div>
 
-        <div className="grid gap-2 py-3 lg:grid-cols-[minmax(14rem,1fr)_12rem_12rem_13rem_13rem]">
+        <div className="mt-3 grid gap-2 rounded-xl bg-muted/20 p-3 lg:grid-cols-[minmax(14rem,1fr)_12rem_12rem_13rem_13rem]">
           <label className="relative">
             <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <Input className="h-10 pl-9" value={query} onChange={(event) => { setQuery(event.target.value); setPage(1) }} placeholder="Buscar borradores..." />
@@ -3346,31 +3369,32 @@ function ActivityDraftsView({
           </Select>
           <Select className="h-10" value={instrumentFilter} onChange={(event) => { setInstrumentFilter(event.target.value); setPage(1) }}>
             <option value="all">Todos los instrumentos</option>
-            <option value="rubrica">Rubrica</option>
+            <option value="rubrica">Rúbrica</option>
             <option value="lista-cotejo">Lista de cotejo</option>
             <option value="escala">Escala estimativa</option>
             <option value="lista-ponderada">Lista ponderada</option>
           </Select>
           <Select className="h-10" value={sortBy} onChange={(event) => { setSortBy(event.target.value); setPage(1) }}>
-            <option value="updated-desc">Ultima modificacion</option>
-            <option value="updated-asc">Mas antiguo</option>
+            <option value="updated-desc">Última modificación</option>
+            <option value="updated-asc">Más antiguo</option>
             <option value="name-asc">Nombre A-Z</option>
             <option value="completion-desc">Mayor porcentaje</option>
             <option value="completion-asc">Menor porcentaje</option>
           </Select>
         </div>
 
-        <div className="overflow-x-auto rounded-lg border border-border">
+        {pageMetas.length > 0 ? (
+        <div className="mt-3 overflow-x-auto rounded-xl border border-border">
           <table className="min-w-[64rem] w-full text-left text-sm">
             <thead className="bg-muted/40 text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
               <tr>
                 <th className="px-4 py-3">Actividad</th>
                 <th className="px-4 py-3">Bloque</th>
                 <th className="px-4 py-3">Curso / Asignatura</th>
-                <th className="px-4 py-3">Periodo</th>
+                <th className="px-4 py-3">Período</th>
                 <th className="px-4 py-3">Instrumento</th>
                 <th className="px-4 py-3">Completado</th>
-                <th className="px-4 py-3">Ultima edicion</th>
+                <th className="px-4 py-3">Última edición</th>
                 <th className="px-4 py-3 text-right">Acciones</th>
               </tr>
             </thead>
@@ -3423,13 +3447,14 @@ function ActivityDraftsView({
               })}
             </tbody>
           </table>
-          {pageMetas.length === 0 ? (
-            <div className="px-4 py-10 text-center text-sm text-muted-foreground">
-              <p className="font-bold text-foreground">No hay borradores que coincidan con los filtros seleccionados.</p>
-              <Button variant="outline" className="mt-3 h-9 px-4" onClick={clearFilters}>Limpiar filtros</Button>
-            </div>
-          ) : null}
         </div>
+        ) : (
+          <div className="mt-3 flex min-h-48 flex-col items-center justify-center rounded-xl bg-muted/20 px-5 py-8 text-center">
+            <Search className="size-5 text-primary" aria-hidden="true" />
+            <p className="mt-3 text-sm font-bold text-foreground">Ningún borrador coincide con estos filtros</p>
+            <Button variant="ghost" className="mt-2 h-9 px-3 text-primary" onClick={clearFilters}>Limpiar filtros</Button>
+          </div>
+        )}
 
         {totalPages > 1 ? (
           <div className="mt-3 flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
@@ -3442,6 +3467,7 @@ function ActivityDraftsView({
           </div>
         ) : null}
       </div>
+      )}
     </section>
   )
 }
@@ -3463,9 +3489,9 @@ function DraftFilterChip({
     <button
       type="button"
       className={cn(
-        'inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-black transition',
-        active && !accent ? 'bg-primary text-primary-foreground shadow-sm' : null,
-        active && accent ? cn(accent.progress, 'text-white shadow-sm') : null,
+        'inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-bold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        active && !accent ? 'bg-primary text-primary-foreground' : null,
+        active && accent ? cn(accent.progress, 'text-white') : null,
         !active ? 'bg-muted/55 text-muted-foreground hover:text-foreground' : null,
       )}
       onClick={onClick}
@@ -3473,7 +3499,7 @@ function DraftFilterChip({
       {!active && accent ? <span aria-hidden="true" className={cn('size-2 rounded-full', accent.dot)} /> : null}
       <span>{label}</span>
       <span className={cn(
-        'inline-flex min-w-5 items-center justify-center rounded-full px-1.5 text-xs',
+        'inline-flex min-w-5 items-center justify-center rounded-md px-1.5 text-xs',
         active ? 'bg-primary-foreground/15 text-primary-foreground' : null,
         !active && accent ? cn('ring-1', accent.badge) : null,
         !active && !accent ? 'bg-card/80 text-current' : null,
@@ -6182,72 +6208,102 @@ function CalculationConfigModal({
 }) {
   return (
     <Modal
-      title="Configurar calculo del bloque"
-      description="Ajusta como se obtiene la calificacion de este bloque de competencias."
+      title="Configurar cálculo"
       onClose={onClose}
-      className="max-w-5xl rounded-xl"
+      className="max-w-4xl !rounded-2xl border-0"
+      contentClassName="min-h-0"
+      overlayClassName="!bg-slate-950/35"
+      hideHeader
     >
-      <div className="grid gap-6 p-6 xl:grid-cols-[minmax(0,1fr)_19rem]">
-        <div className="grid content-start gap-4 md:grid-cols-2">
-          <label className="space-y-1.5 text-sm font-bold text-foreground">
-            Total esperado por bloque
-            <Input type="number" value={config.expectedBlockTotal} onChange={(event) => onChange({ ...config, expectedBlockTotal: Number(event.target.value) || 100 })} />
-          </label>
-          <label className="space-y-1.5 text-sm font-bold text-foreground">
-            Nota minima de aprobacion
-            <Input type="number" value={config.passingScore} onChange={(event) => onChange({ ...config, passingScore: Number(event.target.value) || 0 })} />
-          </label>
-          <label className="space-y-1.5 text-sm font-bold text-foreground">
-            Metodo del bloque
-            <Select value={config.blockMethod} onChange={(event) => onChange({ ...config, blockMethod: event.target.value as GradeCalculationConfig['blockMethod'] })}>
-              <option value="sum">Suma de actividades</option>
-              <option value="average">Promedio de actividades</option>
-              <option value="weighted">Porcentaje ponderado</option>
-            </Select>
-          </label>
-          <label className="space-y-1.5 text-sm font-bold text-foreground">
-            Redondeo de la nota del bloque
-            <Select value={config.finalRounding} onChange={(event) => onChange({ ...config, finalRounding: event.target.value as GradeCalculationConfig['finalRounding'] })}>
-              <option value="standard">Redondeo estandar</option>
-              <option value="floor">Redondear hacia abajo</option>
-              <option value="ceil">Redondear hacia arriba</option>
-              <option value="decimals">Mantener decimales</option>
-            </Select>
-          </label>
-          <label className="space-y-1.5 text-sm font-bold text-foreground">
-            Decimales en nota del bloque
-            <Select value={String(config.pcDecimals)} onChange={(event) => onChange({ ...config, pcDecimals: Number(event.target.value) })}>
-              <option value="0">Sin decimales</option>
-              <option value="1">1 decimal</option>
-              <option value="2">2 decimales</option>
-              <option value="3">3 decimales</option>
-              <option value="4">4 decimales</option>
-            </Select>
-          </label>
+      <div className="flex max-h-[85vh] flex-col">
+        <header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-5 py-4 sm:px-6 sm:py-5">
+          <div className="flex min-w-0 items-start gap-3">
+            <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary-light text-primary">
+              <Settings className="size-5" aria-hidden="true" />
+            </span>
+            <div>
+              <p className="text-xs font-bold text-primary">Reglas de evaluación</p>
+              <h3 className="mt-0.5 text-xl font-extrabold tracking-tight text-foreground">Configurar cálculo</h3>
+              <p className="mt-1 max-w-xl text-sm leading-5 text-muted-foreground">
+                Define cómo se obtiene la calificación de cada bloque de competencias.
+              </p>
+            </div>
+          </div>
+          <Button variant="ghost" size="icon" aria-label="Cerrar configuración" onClick={onClose}>
+            <X className="size-5" />
+          </Button>
+        </header>
+
+        <div className="min-h-0 overflow-y-auto p-5 sm:p-6">
+          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_17rem]">
+            <div className="grid gap-x-4 gap-y-5 sm:grid-cols-2">
+              <ConfigField label="Total esperado por bloque">
+                <Input className="h-11 bg-muted/25 px-4 font-semibold tabular-nums" type="number" value={config.expectedBlockTotal} onChange={(event) => onChange({ ...config, expectedBlockTotal: Number(event.target.value) || 100 })} />
+              </ConfigField>
+              <ConfigField label="Nota mínima de aprobación">
+                <Input className="h-11 bg-muted/25 px-4 font-semibold tabular-nums" type="number" value={config.passingScore} onChange={(event) => onChange({ ...config, passingScore: Number(event.target.value) || 0 })} />
+              </ConfigField>
+              <ConfigField label="Método del bloque">
+                <Select className="h-11 w-full bg-muted/25 px-4" value={config.blockMethod} onChange={(event) => onChange({ ...config, blockMethod: event.target.value as GradeCalculationConfig['blockMethod'] })}>
+                  <option value="sum">Suma de actividades</option>
+                  <option value="average">Promedio de actividades</option>
+                  <option value="weighted">Porcentaje ponderado</option>
+                </Select>
+              </ConfigField>
+              <ConfigField label="Redondeo de la nota">
+                <Select className="h-11 w-full bg-muted/25 px-4" value={config.finalRounding} onChange={(event) => onChange({ ...config, finalRounding: event.target.value as GradeCalculationConfig['finalRounding'] })}>
+                  <option value="standard">Redondeo estándar</option>
+                  <option value="floor">Redondear hacia abajo</option>
+                  <option value="ceil">Redondear hacia arriba</option>
+                  <option value="decimals">Mantener decimales</option>
+                </Select>
+              </ConfigField>
+              <ConfigField label="Decimales en la nota">
+                <Select className="h-11 w-full bg-muted/25 px-4 sm:max-w-[14rem]" value={String(config.pcDecimals)} onChange={(event) => onChange({ ...config, pcDecimals: Number(event.target.value) })}>
+                  <option value="0">Sin decimales</option>
+                  <option value="1">1 decimal</option>
+                  <option value="2">2 decimales</option>
+                  <option value="3">3 decimales</option>
+                  <option value="4">4 decimales</option>
+                </Select>
+              </ConfigField>
+            </div>
+
+            <aside className="rounded-2xl bg-primary-light/70 p-4 sm:p-5">
+              <p className="text-sm font-extrabold text-primary">Así se calculará</p>
+              <ul className="mt-4 space-y-3 text-sm leading-5 text-foreground">
+                <RuleItem>El bloque tendrá un total de <strong>{config.expectedBlockTotal} puntos</strong>.</RuleItem>
+                <RuleItem>La nota mínima será <strong>{config.passingScore}</strong>.</RuleItem>
+                <RuleItem>Se aplicará el método seleccionado.</RuleItem>
+                <RuleItem>El resultado seguirá la regla de redondeo.</RuleItem>
+              </ul>
+            </aside>
+          </div>
         </div>
 
-        <aside className="flex flex-col justify-between gap-5">
-          <div className="rounded-xl bg-emerald-50 p-5 text-emerald-950">
-            <p className="text-sm font-black text-emerald-800">Reglas actuales</p>
-            <ul className="mt-4 space-y-4 text-sm font-bold leading-6">
-              <RuleItem>El bloque se calcula sobre {config.expectedBlockTotal} puntos.</RuleItem>
-              <RuleItem>La nota minima para aprobar es {config.passingScore}.</RuleItem>
-              <RuleItem>La calificacion se obtiene segun el metodo seleccionado.</RuleItem>
-              <RuleItem>El resultado se redondea segun la regla elegida.</RuleItem>
-            </ul>
-          </div>
-          <Button className="ml-auto h-11 bg-emerald-700 px-6 hover:bg-emerald-800" onClick={onClose}>
-            Guardar configuracion
+        <footer className="flex shrink-0 justify-end border-t border-border bg-card px-5 py-4 sm:px-6">
+          <Button className="h-11 w-full px-6 !shadow-none sm:w-auto" onClick={onClose}>
+            Guardar configuración
           </Button>
-        </aside>
+        </footer>
       </div>
     </Modal>
   )
 }
+
+function ConfigField({ children, label }: { children: ReactNode; label: string }) {
+  return (
+    <label className="space-y-2 text-sm font-bold text-foreground">
+      <span className="block">{label}</span>
+      {children}
+    </label>
+  )
+}
+
 function RuleItem({ children }: { children: ReactNode }) {
   return (
-    <li className="flex gap-3">
-      <span className="mt-0.5 text-lg leading-none text-emerald-700">✓</span>
+    <li className="flex gap-2.5">
+      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
       <span>{children}</span>
     </li>
   )
@@ -6756,9 +6812,9 @@ function gradeDistribution(records: GradeRecordRow[], students: StudentGradeRow[
 
 function ResultMetric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg border border-border bg-muted/25 p-4">
-      <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">{label}</p>
-      <p className="mt-3 text-3xl font-black text-primary">{value}</p>
+    <div className="px-2 md:pl-5 md:first:pl-2">
+      <p className="text-xs font-bold text-muted-foreground">{label}</p>
+      <p className="mt-3 text-2xl font-extrabold text-primary tabular-nums">{value}</p>
     </div>
   )
 }

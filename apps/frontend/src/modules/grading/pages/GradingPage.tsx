@@ -54,15 +54,14 @@ export function GradingPage() {
     <section className="w-full">
       <div className="mb-3 space-y-3">
         {!hideFilters ? (
-        <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-2 shadow-sm lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex min-w-0 flex-1 items-center gap-2">
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-              <BookOpen className="size-4" />
-            </span>
+        <div className="grid gap-3 rounded-2xl bg-card p-3 shadow-sm lg:grid-cols-[minmax(0,1fr)_minmax(18rem,24rem)]">
+          <div className="relative min-w-0">
+            <BookOpen className="pointer-events-none absolute left-3 top-1/2 z-10 size-4 -translate-y-1/2 text-primary" aria-hidden="true" />
             <Select
+              aria-label="Curso y asignatura"
               value={selectedSsId}
               onChange={(event) => setSelectedSsId(event.target.value)}
-              className="h-9 min-w-0 flex-1"
+              className="h-11 w-full min-w-0 pl-10"
             >
               <option value="">
                 {sectionSubjects.length > 0 ? 'Selecciona un curso' : 'No hay asignaciones'}
@@ -79,14 +78,13 @@ export function GradingPage() {
             </Select>
           </div>
 
-          <div className="flex min-w-0 items-center gap-2 lg:w-80">
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-              <CalendarDays className="size-4" />
-            </span>
+          <div className="relative min-w-0">
+            <CalendarDays className="pointer-events-none absolute left-3 top-1/2 z-10 size-4 -translate-y-1/2 text-primary" aria-hidden="true" />
             <Select
+              aria-label="Período de evaluación"
               value={selectedPeriodId}
               onChange={(event) => setSelectedPeriodId(event.target.value as typeof selectedPeriodId)}
-              className="h-9 min-w-0 flex-1"
+              className="h-11 w-full min-w-0 pl-10"
             >
               {competencyPeriods.map((period) => (
                 <option key={period.id} value={period.id}>

@@ -87,13 +87,11 @@ export function DashboardPage() {
   }
 
   const hasAgenda = data.todayAgenda.length > 0
-  const hasWeeklyAttendance = data.weeklyAttendance.activityCount > 0 || data.weeklyAttendance.average !== null
   const hasTasks = data.tasks.length > 0
   const hasRecentActivity = data.recentActivity.length > 0
-  const hasOperationalBlocks = hasAgenda || hasWeeklyAttendance || hasTasks || hasRecentActivity
 
   return (
-    <div className="w-full min-w-0 space-y-6">
+    <div className="teacher-dashboard mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-baseline gap-3 flex-wrap">
           <h1 className="text-2xl lg:text-[28px] font-bold tracking-tight text-foreground">
@@ -102,7 +100,8 @@ export function DashboardPage() {
             <span className="text-accent">{data.context.firstName}</span>
           </h1>
           <span className="text-sm text-muted-foreground">
-            · {formatTodayDate()}
+            <span className="hidden sm:inline">· </span>
+            {formatTodayDate()}
           </span>
         </div>
 
@@ -123,54 +122,50 @@ export function DashboardPage() {
         </div>
       )}
 
-      <div className="dashboard-enter" style={{ animationDuration: '520ms' }}>
-        <DashboardHero
-          nextClass={data.nextClass}
-          onStartClass={handleStartClass}
-          onViewPlanning={handleViewPlanning}
-        />
+      <div className="dashboard-priority-grid grid gap-5">
+        <div className="dashboard-day-status dashboard-enter" style={{ animationDuration: '420ms' }}>
+          <DashboardHero
+            nextClass={data.nextClass}
+            onStartClass={handleStartClass}
+            onViewPlanning={handleViewPlanning}
+          />
+        </div>
+
+        <div className="dashboard-setup-slot dashboard-enter" style={{ animationDelay: '50ms', animationDuration: '380ms' }}>
+          <InitialSetupChecklist progress={data.setupProgress} />
+        </div>
       </div>
 
-      <div className="dashboard-enter" style={{ animationDelay: '60ms', animationDuration: '460ms' }}>
-        <InitialSetupChecklist progress={data.setupProgress} />
-      </div>
+      <div className="grid gap-5 lg:grid-cols-12">
+        {hasAgenda ? (
+          <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
+            <TodayAgenda items={data.todayAgenda} />
+          </div>
+        ) : null}
 
-      {hasOperationalBlocks ? (
-        <div className="grid lg:grid-cols-12 gap-6">
-          {hasAgenda ? (
-            <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
-              <TodayAgenda items={data.todayAgenda} />
+        <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-5'].join(' ')}>
+          <div className={['grid gap-5', hasTasks ? 'md:grid-cols-2' : ''].join(' ')}>
+            <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
+              <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
             </div>
-          ) : null}
-
-          <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-6'].join(' ')}>
-            {hasWeeklyAttendance || hasTasks ? (
-              <div className="grid md:grid-cols-2 gap-6">
-                {hasWeeklyAttendance ? (
-                  <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
-                    <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
-                  </div>
-                ) : null}
-                {hasTasks ? (
-                  <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
-                    <DashboardTasks
-                      tasks={data.tasks}
-                      loading={actionLoading}
-                      onAddTask={addTask}
-                      onCompleteTask={completeTask}
-                    />
-                  </div>
-                ) : null}
-              </div>
-            ) : null}
-            {hasRecentActivity ? (
-              <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
-                <RecentActivity items={data.recentActivity} />
+            {hasTasks ? (
+              <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
+                <DashboardTasks
+                  tasks={data.tasks}
+                  loading={actionLoading}
+                  onAddTask={addTask}
+                  onCompleteTask={completeTask}
+                />
               </div>
             ) : null}
           </div>
+          {hasRecentActivity ? (
+            <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
+              <RecentActivity items={data.recentActivity} />
+            </div>
+          ) : null}
         </div>
-      ) : null}
+      </div>
 
       <div className="dashboard-enter" style={{ animationDelay: '240ms', animationDuration: '280ms' }}>
         <SmartSuggestion suggestion={data.smartSuggestion} />

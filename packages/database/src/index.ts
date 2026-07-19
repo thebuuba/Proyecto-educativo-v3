@@ -11,11 +11,14 @@ const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefi
 const requestPrisma = new AsyncLocalStorage<PrismaClient>()
 const DEFAULT_CONNECTION_LIMIT = 3
 
-function databaseUrlForPg(url: string) {
+export function databaseUrlForPg(url: string) {
   const parsedUrl = new URL(url)
   parsedUrl.searchParams.delete('connection_limit')
   parsedUrl.searchParams.delete('pool_timeout')
   parsedUrl.searchParams.delete('pgbouncer')
+  if (parsedUrl.searchParams.get('sslmode') === 'require' && !parsedUrl.searchParams.has('uselibpqcompat')) {
+    parsedUrl.searchParams.set('uselibpqcompat', 'true')
+  }
   return parsedUrl.toString()
 }
 

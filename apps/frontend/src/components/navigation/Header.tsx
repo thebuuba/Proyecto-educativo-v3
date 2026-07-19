@@ -150,11 +150,9 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
         {isGradingPage || isCoursesPage ? (
           <>
-            {isCourseSubjectDetail ? <div id="course-subject-header-slot" className="flex min-w-0 flex-1 self-stretch items-center" /> : <div className="hidden min-w-0 shrink-0 md:block">
-              <h1 className={isCoursesPage ? 'text-2xl font-extrabold leading-none text-foreground' : 'text-3xl font-bold leading-none text-primary'}>
-                {isCoursesPage ? 'Mis cursos' : 'Calificaciones'}
-              </h1>
-            </div>}
+            {isCourseSubjectDetail ? (
+              <div id="course-subject-header-slot" className="flex min-w-0 flex-1 self-stretch items-center" />
+            ) : null}
             {!isCourseSubjectDetail ? <label
               htmlFor="global-header-search"
               className="hidden h-11 min-w-[22rem] max-w-[680px] flex-1 items-center gap-3 rounded-xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
