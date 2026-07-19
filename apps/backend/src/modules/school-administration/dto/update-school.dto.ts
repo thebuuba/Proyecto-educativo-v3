@@ -1,4 +1,4 @@
-import { IsBoolean, IsOptional, IsString, MaxLength } from 'class-validator'
+import { IsArray, IsBoolean, IsOptional, IsString, MaxLength } from 'class-validator'
 
 export class UpdateSchoolDto {
   @IsOptional()
@@ -36,8 +36,9 @@ export class UpdateSchoolDto {
   primaryModality?: string
 
   @IsOptional()
-  @IsString()
-  enabledSubsystems?: string
+  @IsArray()
+  @IsString({ each: true })
+  enabledSubsystems?: string[]
 
   @IsOptional()
   @IsBoolean()

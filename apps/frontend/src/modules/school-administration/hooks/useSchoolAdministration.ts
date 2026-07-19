@@ -8,6 +8,8 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import { getAcademicPeriods } from '@/modules/planning/services/planningService'
+import type { AcademicPeriodSummary } from '@/modules/planning/types'
 import {
   createSchoolYear,
   getSchoolProfile,
@@ -29,6 +31,7 @@ export function useSchoolAdministration() {
   const { schoolId } = useAuth()
   const [profile, setProfile] = useState<SchoolProfile | null>(null)
   const [schoolYears, setSchoolYears] = useState<SchoolYearItem[]>([])
+  const [academicPeriods, setAcademicPeriods] = useState<AcademicPeriodSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -42,8 +45,11 @@ export function useSchoolAdministration() {
         getSchoolProfile(schoolId),
         getSchoolYears(),
       ])
+      const currentYear = yearsData.find((year) => year.isCurrent) ?? yearsData[0] ?? null
+      const periodsData = currentYear ? await getAcademicPeriods(currentYear.id) : []
       setProfile(profileData)
       setSchoolYears(yearsData)
+      setAcademicPeriods(periodsData)
     } catch (error) {
       setError(
         error instanceof Error
@@ -95,6 +101,7 @@ export function useSchoolAdministration() {
   return {
     profile,
     schoolYears,
+    academicPeriods,
     loading,
     error,
     refetch,

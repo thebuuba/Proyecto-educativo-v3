@@ -34,7 +34,7 @@ export class SchoolAdministrationService {
         ...(dto.centerCode !== undefined && { centerCode: dto.centerCode }),
         ...(dto.schoolShift !== undefined && { schoolShift: dto.schoolShift }),
         ...(dto.primaryModality !== undefined && { primaryModality: dto.primaryModality }),
-        ...(dto.enabledSubsystems !== undefined && { enabledSubsystems: dto.enabledSubsystems as unknown as string[] }),
+        ...(dto.enabledSubsystems !== undefined && { enabledSubsystems: dto.enabledSubsystems }),
         ...(dto.officialExportsEnabled !== undefined && { officialExportsEnabled: dto.officialExportsEnabled }),
       },
     })
