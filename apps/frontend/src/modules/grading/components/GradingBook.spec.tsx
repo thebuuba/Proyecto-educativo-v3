@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { StrictMode, type ComponentProps } from 'react'
-import { describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import type { GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { ActivitySavedDialog, GradingBook } from './GradingBook'
@@ -54,6 +54,10 @@ function renderBook(overrides: Partial<ComponentProps<typeof GradingBook>> = {},
 }
 
 describe('GradingBook', () => {
+  beforeEach(() => {
+    window.localStorage.clear()
+  })
+
   it('ofrece acciones contextuales después de crear una actividad', async () => {
     const user = userEvent.setup()
     const onGrade = vi.fn()
@@ -71,6 +75,8 @@ describe('GradingBook', () => {
         onView={onView}
       />,
     )
+
+    expect(screen.getByRole('dialog', { name: 'Actividad creada correctamente' })).toBeInTheDocument()
 
     await user.click(screen.getByRole('button', { name: 'Calificar ahora' }))
     await user.click(screen.getByRole('button', { name: 'Volver a la asignatura' }))
@@ -105,6 +111,39 @@ describe('GradingBook', () => {
     expect(container.querySelector('[data-competency-block-id="b3"]')).toBeInTheDocument()
     expect(screen.getAllByText('Ética y Ciudadana y Desarrollo Personal y Espiritual')).toHaveLength(2)
     expect(screen.queryByText('Elige el bloque de competencias para tu nueva actividad.')).not.toBeInTheDocument()
+  })
+
+  it('usa un único filtro de bloque para los borradores', async () => {
+    const user = userEvent.setup()
+    const baseDraft = {
+      maxScore: '',
+      date: '',
+      description: '',
+      studentRole: '',
+      teacherRole: '',
+      instrumentType: '',
+      evaluationTechnique: '',
+      instrumentCompleted: false,
+      instrumentFields: {},
+      resources: [],
+      planningMoment: '',
+      observations: '',
+      activityType: '',
+      updatedAt: '2026-07-18T12:00:00.000Z',
+    }
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({
+      b1: [{ ...baseDraft, draftId: 'draft-b1', competencyBlockId: 'b1', name: 'Borrador comunicativo' }],
+      b2: [{ ...baseDraft, draftId: 'draft-b2', competencyBlockId: 'b2', name: 'Borrador lógico' }],
+    }))
+    renderBook({ initialActivityAction: 'create' })
+
+    await screen.findByText('Borradores pendientes')
+    await user.click(screen.getByRole('button', { name: 'Borradores' }))
+
+    expect(screen.getAllByRole('combobox')).toHaveLength(3)
+    await user.click(screen.getByRole('button', { name: /Bloque 1/ }))
+    expect(screen.getByText('Borrador comunicativo')).toBeInTheDocument()
+    expect(screen.queryByText('Borrador lógico')).not.toBeInTheDocument()
   })
 
   it('mantiene el Bloque 4 sin sustituirlo por el Bloque 2', () => {

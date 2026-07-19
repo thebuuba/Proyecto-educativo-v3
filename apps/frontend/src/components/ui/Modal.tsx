@@ -45,6 +45,9 @@ export function Modal({ title, description, children, onClose, className, conten
     <div className={cn('fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6', overlayClassName)}>
       <div
         ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={title}
         className={cn(
           'flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-popover text-popover-foreground shadow-xl',
           className,

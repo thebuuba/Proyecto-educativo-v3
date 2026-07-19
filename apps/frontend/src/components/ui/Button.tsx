@@ -58,7 +58,7 @@ export function Button({
     <button
       type={type}
       className={cn(
-        'inline-flex shrink-0 items-center justify-center font-bold transition-all duration-75 focus-visible:outline-none focus-visible:ring-4 active:scale-[0.985] disabled:cursor-not-allowed disabled:opacity-60',
+        'inline-flex shrink-0 items-center justify-center font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-75 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-4 active:scale-[0.985] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-60',
         variantClasses[variant],
         sizeClasses[size],
         className,
@@ -66,7 +66,7 @@ export function Button({
       disabled={props.disabled || loading}
       {...props}
     >
-      {loading && <LoaderCircle className="animate-spin" />}
+      {loading && <LoaderCircle className="animate-spin motion-reduce:animate-none" />}
       {children}
     </button>
   )
