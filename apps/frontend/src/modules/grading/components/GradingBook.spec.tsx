@@ -191,4 +191,14 @@ describe('GradingBook', () => {
     await waitFor(() => expect(screen.queryByRole('alert')).not.toBeInTheDocument())
     expect(screen.getByRole('heading', { name: 'Registro anual de competencias' })).toBeInTheDocument()
   })
+
+  it('distingue una nota pendiente de una nota cero en la matriz anual', async () => {
+    renderBook({
+      initialView: 'annual',
+      getActivitiesForPeriod: vi.fn().mockReturnValue(activities),
+    })
+
+    expect(await screen.findByRole('heading', { name: 'Registro anual de competencias' })).toBeInTheDocument()
+    expect(screen.queryByText('0')).not.toBeInTheDocument()
+  })
 })

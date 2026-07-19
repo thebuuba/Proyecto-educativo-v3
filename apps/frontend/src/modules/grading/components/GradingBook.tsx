@@ -2572,7 +2572,7 @@ function AnnualComparisonView({
           </span>
         </div>
         <div className="max-h-[68vh] overflow-auto">
-          <table className="min-w-[1900px] border-separate border-spacing-0 text-xs">
+          <table className="min-w-[1900px] border-separate border-spacing-0 text-xs [&_td]:border-border/60 [&_th]:border-border/60">
             <thead>
               <tr>
                 <th rowSpan={2} className="sticky left-0 top-0 z-50 w-12 border-b border-r border-border bg-muted/90 px-2 py-3 text-center font-extrabold text-muted-foreground">#</th>
@@ -2588,8 +2588,8 @@ function AnnualComparisonView({
               </tr>
               <tr>
                 {competencyBlocks.flatMap((block) =>
-                  periods.flatMap((period) => [
-                    <th key={`${block.id}-${period.id}`} className="sticky top-16 z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-primary">{period.shortName}</th>,
+                  periods.flatMap((period, periodIndex) => [
+                    <th key={`${block.id}-${period.id}`} className={cn('sticky top-16 z-30 border-b border-r border-border bg-card px-2 py-2 text-center font-bold text-primary', periodIndex === 0 ? 'border-l-2' : null)}>{period.shortName}</th>,
                     <th key={`${block.id}-${period.id}-rp`} className="sticky top-16 z-30 border-b border-r border-border bg-muted/40 px-2 py-2 text-center font-bold text-muted-foreground">{period.recoveryLabel}</th>,
                   ]),
                 )}
@@ -2614,13 +2614,13 @@ function AnnualComparisonView({
                 const final = finalSubjectScore(blockAverages, config)
                 const state = final === null ? 'Pendiente' : final >= config.passingScore ? 'Aprobado' : 'En recuperación'
                 return (
-                  <tr key={student.enrollmentId} className="group hover:bg-muted/15">
+                  <tr key={student.enrollmentId} className="group transition-colors hover:bg-muted/15">
                     <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-2 py-3 text-center text-muted-foreground group-hover:bg-muted/15">{student.listNumber ?? index + 1}</td>
                     <td className="sticky left-12 z-20 border-b border-r border-border bg-card px-4 py-3 font-bold text-foreground shadow-[8px_0_16px_-14px_rgba(15,23,42,.35)] group-hover:bg-muted/15">
                       {student.lastName}, {student.firstName}
                     </td>
                     {competencyBlocks.flatMap((block) =>
-                      periods.flatMap((period) => {
+                      periods.flatMap((period, periodIndex) => {
                         const result = getStudentPeriodBlockScore({
                           blockId: block.id,
                           config,
@@ -2630,7 +2630,7 @@ function AnnualComparisonView({
                           student,
                         })
                         return [
-                          <td key={`${student.enrollmentId}-${block.id}-${period.id}`} className={cn('border-b border-r border-border px-2 py-3 text-center font-bold', gradeColor(result.period, config))}>
+                          <td key={`${student.enrollmentId}-${block.id}-${period.id}`} className={cn('border-b border-r border-border px-2 py-3 text-center font-bold', periodIndex === 0 ? 'border-l-2' : null, gradeColor(result.period, config))}>
                             {formatGrade(result.period)}
                           </td>,
                           <td key={`${student.enrollmentId}-${block.id}-${period.id}-rp`} className={cn('border-b border-r border-border bg-muted/15 px-2 py-3 text-center font-bold', result.recovery !== null ? 'bg-emerald-50 text-emerald-700' : 'text-muted-foreground')}>
@@ -6837,6 +6837,13 @@ function getStudentPeriodBlockScore(input: {
   if (activities.length === 0) {
     return { period: null, recovery: null, effective: null }
   }
+  const recovery = getRecoveryScores(records)[input.blockId]?.[input.student.enrollmentId] ?? null
+  const hasRecordedScore = activities.some((activity) =>
+    scoreForActivity(records, input.student.enrollmentId, activity.id),
+  )
+  if (!hasRecordedScore) {
+    return { period: null, recovery, effective: recovery }
+  }
   const period = blockTotal({
     records,
     activities,
@@ -6844,7 +6851,6 @@ function getStudentPeriodBlockScore(input: {
     blockId: input.blockId,
     config: input.config,
   })
-  const recovery = getRecoveryScores(records)[input.blockId]?.[input.student.enrollmentId] ?? null
   return {
     period,
     recovery,
