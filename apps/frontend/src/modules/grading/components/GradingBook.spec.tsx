@@ -83,12 +83,19 @@ describe('GradingBook', () => {
     expect(onCreateAnother).toHaveBeenCalledOnce()
   })
 
-  it('abre el selector de bloque cuando llega desde el acceso Nueva actividad', () => {
+  it('abre el selector de bloque y mantiene accesibles los borradores', async () => {
+    const user = userEvent.setup()
     renderBook({ initialActivityAction: 'create' })
 
     expect(screen.getByRole('heading', { name: 'Actividades' })).toBeInTheDocument()
     expect(screen.getByText('Elige el bloque de competencias para tu nueva actividad.')).toBeInTheDocument()
     expect(screen.getAllByRole('button', { name: 'Crear actividad' })).toHaveLength(4)
+    expect(screen.getByText('Sin borradores pendientes')).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Borradores' }))
+    expect(screen.getByRole('heading', { name: 'Borradores de actividades' })).toBeInTheDocument()
+    expect(screen.getByText('Aún no tienes borradores')).toBeInTheDocument()
+    expect(screen.queryByPlaceholderText('Buscar borradores...')).not.toBeInTheDocument()
   })
 
   it('abre directamente el creador cuando el acceso ya incluye un bloque', () => {
@@ -122,21 +129,25 @@ describe('GradingBook', () => {
 
     const blocksTab = screen.getByRole('button', { name: 'Bloques' })
     const periodTab = screen.getByRole('button', { name: 'Período' })
+    const annualTab = screen.getByRole('button', { name: 'Matriz anual' })
+    const finalTab = screen.getByRole('button', { name: 'Resumen final' })
+    const tabIndicator = document.querySelector<HTMLElement>('.grading-tab-indicator')
     expect(blocksTab).toHaveAttribute('aria-current', 'page')
+    expect(tabIndicator).toHaveStyle({ transform: 'translateX(0%)' })
 
     await user.click(periodTab)
-    expect(screen.getByRole('heading', { name: 'P1 — Agosto, septiembre y octubre' })).toBeInTheDocument()
+    expect(periodTab).toHaveAttribute('aria-current', 'page')
+    expect(screen.getByText('Pendiente de calificar')).toBeInTheDocument()
 
-    await user.click(screen.getByText('Resultados'))
-    await user.click(screen.getByRole('button', { name: 'Matriz anual' }))
+    await user.click(annualTab)
     expect(await screen.findByRole('heading', { name: 'Registro anual de competencias' })).toBeInTheDocument()
 
-    await user.click(screen.getByText('Resultados'))
-    await user.click(screen.getByRole('button', { name: 'Resumen final' }))
-    expect(await screen.findByText('Resultado anual')).toBeInTheDocument()
+    await user.click(finalTab)
+    expect(await screen.findByText('Aún no hay resultado anual')).toBeInTheDocument()
+    expect(tabIndicator).toHaveStyle({ transform: 'translateX(300%)' })
 
     await user.click(blocksTab)
-    expect(screen.getByRole('heading', { name: 'Bloques de competencias' })).toBeInTheDocument()
+    expect(blocksTab).toHaveAttribute('aria-current', 'page')
 
     await user.click(screen.getByRole('button', { name: /Abrir bloque 1:/ }))
 

@@ -22,6 +22,8 @@ type ModalProps = {
   className?: string
   /** Clases adicionales para el contenedor desplazable del contenido. */
   contentClassName?: string
+  /** Clases adicionales para el fondo superpuesto. */
+  overlayClassName?: string
   /** Oculta el encabezado estandar para permitir una cabecera personalizada. */
   hideHeader?: boolean
 }
@@ -35,12 +37,12 @@ type ModalProps = {
  * @param props.children - Contenido del cuerpo.
  * @param props.onClose - Callback de cierre.
  */
-export function Modal({ title, description, children, onClose, className, contentClassName, hideHeader = false }: ModalProps) {
+export function Modal({ title, description, children, onClose, className, contentClassName, overlayClassName, hideHeader = false }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
+    <div className={cn('fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6', overlayClassName)}>
       <div
         ref={dialogRef}
         className={cn(
