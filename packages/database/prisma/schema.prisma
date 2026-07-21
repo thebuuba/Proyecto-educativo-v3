@@ -888,6 +888,13 @@ model PlanningEntry {
   sectionSubjectId        String       @map("section_subject_id") @db.Uuid
   academicPeriodId        String       @map("academic_period_id") @db.Uuid
   title                   String
+  schoolNameSnapshot      String?      @map("school_name_snapshot")
+  teacherNameSnapshot     String?      @map("teacher_name_snapshot")
+  curricularArea          String?      @map("curricular_area")
+  educationLevel          String?      @map("education_level")
+  topic                   String?
+  transversalAxis         String?      @map("transversal_axis")
+  fundamentalCompetencies String[]     @default([]) @map("fundamental_competencies")
   sequence                Int          @default(1)
   specificCompetence      String       @default("") @map("specific_competence")
   achievementIndicator    String       @default("") @map("achievement_indicator")

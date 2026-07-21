@@ -101,8 +101,10 @@ export function PlanningDocumentView({ entry, onClose }: PlanningDocumentViewPro
             </header>
 
             <div className="my-6 grid gap-3 sm:grid-cols-2">
-              <Meta label="Centro educativo" value={entry.schoolName || 'AulaBase'} />
-              <Meta label="Docente" value={entry.teacherName || 'Docente'} />
+              <Meta label="Centro educativo" value={entry.schoolNameSnapshot || entry.schoolName || 'AulaBase'} />
+              <Meta label="Docente" value={entry.teacherNameSnapshot || entry.teacherName || 'Docente'} />
+              <Meta label="Área curricular" value={entry.curricularArea || entry.subjectName} />
+              <Meta label="Tema" value={entry.topic || entry.title} />
               <Meta label="Grado y sección" value={course || 'Pendiente'} />
               <Meta label="Asignatura" value={entry.subjectName || 'Pendiente'} />
               <Meta label="Fecha" value={formatDate(entry.plannedDate)} />
@@ -125,6 +127,7 @@ export function PlanningDocumentView({ entry, onClose }: PlanningDocumentViewPro
               <Section title="Actitudes y valores">{entry.contentAttitudinal}</Section>
               <Section title="Indicadores de logro">{entry.achievementIndicator}</Section>
               <Section title="Intención pedagógica">{entry.evidence}</Section>
+              <Section title="Eje transversal">{entry.transversalAxis || 'No especificado'}</Section>
               <Section title="Estrategia de enseñanza">{entry.strategies}</Section>
 
               <section className="border-t border-border pt-4">

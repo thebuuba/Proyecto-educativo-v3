@@ -72,8 +72,10 @@ export function buildPlanningDocumentHtml(entry: PlanningEntryWithDetails) {
     </header>
 
     <div class="meta">
-      <div class="box"><span class="label">Centro educativo</span><span class="value">${escapeHtml(entry.schoolName || 'AulaBase')}</span></div>
-      <div class="box"><span class="label">Docente</span><span class="value">${escapeHtml(entry.teacherName || 'Docente')}</span></div>
+      <div class="box"><span class="label">Centro educativo</span><span class="value">${escapeHtml(entry.schoolNameSnapshot || entry.schoolName || 'AulaBase')}</span></div>
+      <div class="box"><span class="label">Docente</span><span class="value">${escapeHtml(entry.teacherNameSnapshot || entry.teacherName || 'Docente')}</span></div>
+      <div class="box"><span class="label">Area curricular</span><span class="value">${escapeHtml(entry.curricularArea || entry.subjectName)}</span></div>
+      <div class="box"><span class="label">Tema</span><span class="value">${escapeHtml(entry.topic || entry.title)}</span></div>
       <div class="box"><span class="label">Grado y seccion</span><span class="value">${escapeHtml(course)}</span></div>
       <div class="box"><span class="label">Asignatura</span><span class="value">${escapeHtml(entry.subjectName)}</span></div>
       <div class="box"><span class="label">Fecha</span><span class="value">${escapeHtml(formatDate(entry.plannedDate))}</span></div>
@@ -91,6 +93,7 @@ export function buildPlanningDocumentHtml(entry: PlanningEntryWithDetails) {
     ${section('Actitudes y valores', entry.contentAttitudinal)}
     ${section('Indicadores de logro', entry.achievementIndicator)}
     ${section('Intencion pedagogica', entry.evidence)}
+    ${section('Eje transversal', entry.transversalAxis || 'No especificado')}
     ${section('Estrategia de ensenanza', entry.strategies)}
 
     <section class="doc-section">

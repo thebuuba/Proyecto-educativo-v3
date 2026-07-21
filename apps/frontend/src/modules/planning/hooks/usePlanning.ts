@@ -29,10 +29,11 @@ import type {
 import { createScopedTtlCache } from '@/utils/scopedTtlCache'
 
 type PlanningCacheData = {
+  schoolName: string
   periods: AcademicPeriodSummary[]
   activePeriodId: string | null
   entries: PlanningEntryWithDetails[]
-  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string }[]
+  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string; level?: string }[]
   competencies: CompetencyOption[]
   schoolYearId: string
 }
@@ -48,12 +49,13 @@ export function usePlanning() {
   const [activePeriodId, setActivePeriodId] = useState<string | null>(cached?.activePeriodId ?? null)
   const [entries, setEntries] = useState<PlanningEntryWithDetails[]>(cached?.entries ?? [])
   const [sectionSubjects, setSectionSubjects] = useState<
-    { id: string; subjectName: string; sectionName: string; gradeName: string }[]
+    { id: string; subjectName: string; sectionName: string; gradeName: string; level?: string }[]
   >(cached?.sectionSubjects ?? [])
   const [competencies, setCompetencies] = useState<CompetencyOption[]>(cached?.competencies ?? [])
   const [loading, setLoading] = useState(!cached)
   const [error, setError] = useState<string | null>(null)
   const [schoolYearId, setSchoolYearId] = useState<string | null>(cached?.schoolYearId ?? null)
+  const [schoolName, setSchoolName] = useState(cached?.schoolName ?? '')
   const loadedContextRef = useRef(
     cached ? `${cached.schoolYearId}:${cached.activePeriodId ?? ''}` : null,
   )
@@ -105,6 +107,7 @@ export function usePlanning() {
         setSectionSubjects(freshCache.sectionSubjects)
         setCompetencies(freshCache.competencies)
         setSchoolYearId(freshCache.schoolYearId)
+        setSchoolName(freshCache.schoolName)
         loadedContextRef.current = `${freshCache.schoolYearId}:${freshCache.activePeriodId ?? ''}`
         setError(null)
         setLoading(false)
@@ -130,6 +133,7 @@ export function usePlanning() {
         setEntries(entryData)
         setSectionSubjects(sectionSubjectData)
         setCompetencies(competencyData)
+        setSchoolName(workspace.schoolName)
         planningCache.write(cacheScope, {
           periods: periodData,
           activePeriodId: periodId,
@@ -137,6 +141,7 @@ export function usePlanning() {
           sectionSubjects: sectionSubjectData,
           competencies: competencyData,
           schoolYearId: currentYear.id,
+          schoolName: workspace.schoolName,
         })
       } catch (error) {
         setError(
@@ -234,6 +239,7 @@ export function usePlanning() {
 
   return {
     schoolYearId,
+    schoolName,
     periods,
     activePeriodId,
     setActivePeriodId,
