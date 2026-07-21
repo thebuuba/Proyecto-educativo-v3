@@ -1,7 +1,7 @@
 /**
  * @file Componente PeriodManager
  *
- * Modal para gestionar los trimestres académicos: crear,
+ * Modal para gestionar los períodos académicos: crear,
  * listar y eliminar períodos.
  */
 
@@ -26,7 +26,7 @@ type PeriodManagerProps = {
   onClose: () => void
 }
 
-/** Modal para gestionar trimestres académicos */
+/** Modal para gestionar períodos académicos */
 export function PeriodManager({
   schoolYearId,
   periods,
@@ -43,7 +43,7 @@ export function PeriodManager({
 
   async function handleCreate() {
     setError(null)
-    if (!name.trim()) { setError('El nombre del trimestre es requerido.'); return }
+    if (!name.trim()) { setError('El nombre del período es requerido.'); return }
     if (!startDate || !endDate) { setError('Las fechas de inicio y fin son requeridas.'); return }
     if (startDate > endDate) { setError('La fecha de inicio debe ser anterior a la fecha de fin.'); return }
     setSubmitting(true)
@@ -52,7 +52,7 @@ export function PeriodManager({
       setName(''); setSequence(periods.length + 2); setStartDate(''); setEndDate('')
       onRefresh()
     } catch (error) {
-      setError(error instanceof Error ? error.message : 'No se pudo crear el trimestre.')
+      setError(error instanceof Error ? error.message : 'No se pudo crear el período.')
     } finally { setSubmitting(false) }
   }
 
@@ -62,13 +62,13 @@ export function PeriodManager({
       await deleteAcademicPeriod(deleteTarget.id)
       setDeleteTarget(null); onRefresh()
     } catch (error) {
-      console.error('Error al eliminar trimestre académico:', error)
+      console.error('Error al eliminar período académico:', error)
       setDeleteTarget(null)
     }
   }
 
   return (
-    <Modal title="Trimestres académicos" onClose={onClose}>
+    <Modal title="Períodos académicos" onClose={onClose}>
       <div className="space-y-5 p-5">
         {error ? (
           <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
@@ -78,7 +78,7 @@ export function PeriodManager({
 
         {periods.length > 0 && (
           <div className="space-y-2">
-            <p className="text-xs font-medium uppercase text-muted-foreground">Trimestres existentes</p>
+            <p className="text-xs font-medium uppercase text-muted-foreground">Períodos existentes</p>
             {periods.map((period) => (
               <div key={period.id}
                 className="flex items-center justify-between gap-3 rounded-lg border border-border bg-muted px-3 py-2.5">
@@ -98,11 +98,11 @@ export function PeriodManager({
         )}
 
         <div className="border-t border-border pt-4">
-          <p className="mb-4 text-xs font-medium uppercase text-muted-foreground">Nuevo trimestre</p>
+          <p className="mb-4 text-xs font-medium uppercase text-muted-foreground">Nuevo período</p>
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-muted-foreground">Nombre</label>
-              <Input type="text" placeholder="Ej: 1er Trimestre" value={name}
+              <Input type="text" placeholder="Ej: Primer trimestre" value={name}
                 onChange={(e) => setName(e.target.value)} className="mt-1.5" />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -136,7 +136,7 @@ export function PeriodManager({
 
       {deleteTarget ? (
         <ConfirmDialog
-          title="Eliminar trimestre"
+          title="Eliminar período"
           description={`¿Eliminar "${deleteTarget.name}"? Esta acción no se puede deshacer.`}
           confirmLabel="Eliminar" destructive
           onConfirm={handleDelete}

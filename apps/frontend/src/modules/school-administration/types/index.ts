@@ -58,12 +58,6 @@ export type CreateSchoolYearInput = {
   name: string
   startDate: string
   endDate: string
-  periodScheme?: SchoolYearItem['periodScheme']
-  periodCount?: number
-  calendarSource?: string
-  instructionalDays?: number | null
-  studentWeeks?: number | null
-  teacherWeeks?: number | null
   isCurrent?: boolean
 }
 
