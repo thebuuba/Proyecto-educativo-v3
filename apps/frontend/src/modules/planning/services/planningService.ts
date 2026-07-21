@@ -18,11 +18,12 @@ import type {
 import type { SchoolYearSummary } from '@/services/schoolYearService'
 
 export type PlanningWorkspace = {
+  schoolName: string
   currentSchoolYear: SchoolYearSummary
   periods: AcademicPeriodSummary[]
   activePeriodId: string | null
   entries: PlanningEntryWithDetails[]
-  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string }[]
+  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string; level?: string }[]
   competencies: CompetencyOption[]
 }
 
@@ -135,7 +136,7 @@ export async function getCompetencies(): Promise<CompetencyOption[]> {
 
 /** Obtiene las secciones-asignaturas asignadas al docente */
 export async function getTeacherSectionSubjects(teacherId?: string): Promise<
-  { id: string; subjectName: string; sectionName: string; gradeName: string }[]
+  { id: string; subjectName: string; sectionName: string; gradeName: string; level?: string }[]
 > {
   const params = teacherId ? `?teacherId=${teacherId}` : ''
   return api.get(`/planning/section-subjects${params}`, {

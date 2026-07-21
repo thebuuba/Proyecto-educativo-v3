@@ -11,6 +11,14 @@ export class CreatePlanningEntryDto {
   @MaxLength(200)
   title!: string
 
+  @IsOptional() @IsString() @MaxLength(200) schoolNameSnapshot?: string
+  @IsOptional() @IsString() @MaxLength(200) teacherNameSnapshot?: string
+  @IsOptional() @IsString() @MaxLength(120) curricularArea?: string
+  @IsOptional() @IsString() @MaxLength(80) educationLevel?: string
+  @IsOptional() @IsString() @MaxLength(200) topic?: string
+  @IsOptional() @IsString() @MaxLength(120) transversalAxis?: string
+  @IsOptional() @IsArray() @IsString({ each: true }) fundamentalCompetencies?: string[]
+
   @IsOptional()
   @IsNumber()
   @Min(0)

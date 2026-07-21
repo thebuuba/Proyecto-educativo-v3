@@ -22,6 +22,13 @@ export type PlanningEntry = {
   fundamentalCompetenceId: string | null
   fundamentalCompetenceName: string | null
   title: string
+  schoolNameSnapshot?: string | null
+  teacherNameSnapshot?: string | null
+  curricularArea?: string | null
+  educationLevel?: string | null
+  topic?: string | null
+  transversalAxis?: string | null
+  fundamentalCompetencies?: string[]
   sequence: number
   specificCompetence: string
   achievementIndicator: string
@@ -48,6 +55,13 @@ export type CreatePlanningEntryInput = {
   academicPeriodId: string
   fundamentalCompetenceId?: string | null
   title: string
+  schoolNameSnapshot?: string | null
+  teacherNameSnapshot?: string | null
+  curricularArea?: string | null
+  educationLevel?: string | null
+  topic?: string | null
+  transversalAxis?: string | null
+  fundamentalCompetencies?: string[]
   sequence?: number
   specificCompetence?: string
   achievementIndicator?: string
@@ -84,6 +98,7 @@ export type GeneratedPlanningEntry = Required<
   >
 > & {
   durationMinutes: number | null
+  fundamentalCompetencies?: string[]
 }
 
 /** Datos para actualizar una planificación (todos los campos opcionales) */

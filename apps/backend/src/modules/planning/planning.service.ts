@@ -17,6 +17,7 @@ import { GenerateEntryDraftDto } from './dto/generate-entry-draft.dto'
 import { GenerateAndCreateEntryDto } from './dto/generate-and-create-entry.dto'
 
 type GeneratedPlanningEntry = {
+  fundamentalCompetencies: string[]
   title: string
   specificCompetence: string
   achievementIndicator: string
@@ -49,10 +50,11 @@ export class PlanningService {
     const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
     if (!currentSchoolYear) return null
 
-    const [periods, sectionSubjects, competencies] = await Promise.all([
+    const [periods, sectionSubjects, competencies, school] = await Promise.all([
       this.getAcademicPeriods(schoolId, currentSchoolYear.id),
       this.getSectionSubjects(schoolId),
       this.getCompetencies(),
+      prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } }),
     ])
     const activePeriodId = periods[0]?.id ?? null
     const entries = activePeriodId ? await this.findEntries(schoolId) : []
@@ -63,6 +65,7 @@ export class PlanningService {
       entries,
       sectionSubjects,
       competencies,
+      schoolName: school?.name ?? '',
     }
   }
 
@@ -167,6 +170,7 @@ export class PlanningService {
         subjectName: subject?.name ?? '',
         sectionName: section?.name ?? '',
         gradeName: grade?.name ?? '',
+        level: grade?.level ?? '',
         schoolYearId: item.schoolYearId,
         teacherId: item.teacherId,
       }
@@ -310,6 +314,13 @@ export class PlanningService {
         sectionSubjectId: dto.sectionSubjectId,
         academicPeriodId: dto.academicPeriodId,
         title: dto.title,
+        schoolNameSnapshot: dto.schoolNameSnapshot ?? null,
+        teacherNameSnapshot: dto.teacherNameSnapshot ?? null,
+        curricularArea: dto.curricularArea ?? null,
+        educationLevel: dto.educationLevel ?? null,
+        topic: dto.topic ?? null,
+        transversalAxis: dto.transversalAxis ?? null,
+        fundamentalCompetencies: dto.fundamentalCompetencies ?? [],
         sequence: dto.sequence ?? 0,
         specificCompetence: dto.specificCompetence ?? '',
         achievementIndicator: dto.achievementIndicator ?? '',
@@ -358,7 +369,10 @@ export class PlanningService {
       grado: grade?.name ?? dto.gradeName ?? '',
       seccion: section?.name ?? dto.sectionName ?? '',
       asignatura: subject?.name ?? dto.subjectName ?? '',
-      tema: dto.title ?? '',
+      areaCurricular: dto.curricularArea ?? '',
+      nivelEducativo: dto.educationLevel ?? '',
+      tema: dto.topic ?? dto.title ?? '',
+      ejeTransversal: dto.transversalAxis ?? '',
       duracionMinutos: dto.durationMinutes ?? null,
       competenciaFundamental: dto.fundamentalCompetenceName ?? '',
       competenciaEspecifica: dto.specificCompetence ?? '',
@@ -377,7 +391,7 @@ export class PlanningService {
           {
             role: 'system',
             content:
-              'Eres especialista en planificacion docente del sistema educativo dominicano. Genera planificaciones completas, practicas y coherentes con el curriculo por competencias del MINERD. No inventes codigos oficiales. Escribe en espanol dominicano claro.',
+              'Eres especialista en planificación docente del sistema educativo dominicano. Usa como referencia la Adecuación Curricular del Nivel Secundario MINERD 2022 y la malla exacta del área, ciclo y grado indicados. Selecciona únicamente competencias, contenidos e indicadores pertinentes al tema; no inventes códigos ni elementos oficiales. Escribe en español dominicano claro.',
           },
           {
             role: 'user',
@@ -394,6 +408,7 @@ export class PlanningService {
               additionalProperties: false,
               required: [
                 'title',
+                'fundamentalCompetencies',
                 'specificCompetence',
                 'achievementIndicator',
                 'contentConceptual',
@@ -409,6 +424,7 @@ export class PlanningService {
               ],
               properties: {
                 title: { type: 'string' },
+                fundamentalCompetencies: { type: 'array', items: { type: 'string' } },
                 specificCompetence: { type: 'string' },
                 achievementIndicator: { type: 'string' },
                 contentConceptual: { type: 'string' },
@@ -486,6 +502,13 @@ export class PlanningService {
 
     const data: any = {}
     if (dto.title) data.title = dto.title
+    if (dto.schoolNameSnapshot !== undefined) data.schoolNameSnapshot = dto.schoolNameSnapshot
+    if (dto.teacherNameSnapshot !== undefined) data.teacherNameSnapshot = dto.teacherNameSnapshot
+    if (dto.curricularArea !== undefined) data.curricularArea = dto.curricularArea
+    if (dto.educationLevel !== undefined) data.educationLevel = dto.educationLevel
+    if (dto.topic !== undefined) data.topic = dto.topic
+    if (dto.transversalAxis !== undefined) data.transversalAxis = dto.transversalAxis
+    if (dto.fundamentalCompetencies !== undefined) data.fundamentalCompetencies = dto.fundamentalCompetencies
     if (dto.sequence !== undefined) data.sequence = dto.sequence
     if (dto.specificCompetence !== undefined) data.specificCompetence = dto.specificCompetence
     if (dto.achievementIndicator !== undefined) data.achievementIndicator = dto.achievementIndicator

@@ -1,6 +1,11 @@
 import { IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
 
 export class GenerateEntryDraftDto {
+  @IsOptional() @IsString() @MaxLength(120) curricularArea?: string
+  @IsOptional() @IsString() @MaxLength(80) educationLevel?: string
+  @IsOptional() @IsString() @MaxLength(200) topic?: string
+  @IsOptional() @IsString() @MaxLength(120) transversalAxis?: string
+
   @IsOptional()
   @IsString()
   sectionSubjectId?: string

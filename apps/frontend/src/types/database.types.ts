@@ -1662,6 +1662,13 @@ export type Database = {
           specific_competence: string
           status: Database["public"]["Enums"]["record_status"]
           strategies: string
+          school_name_snapshot: string | null
+          teacher_name_snapshot: string | null
+          curricular_area: string | null
+          education_level: string | null
+          topic: string | null
+          transversal_axis: string | null
+          fundamental_competencies: string[]
           title: string
           updated_at: string
         }
@@ -1687,6 +1694,13 @@ export type Database = {
           specific_competence?: string
           status?: Database["public"]["Enums"]["record_status"]
           strategies?: string
+          school_name_snapshot?: string | null
+          teacher_name_snapshot?: string | null
+          curricular_area?: string | null
+          education_level?: string | null
+          topic?: string | null
+          transversal_axis?: string | null
+          fundamental_competencies?: string[]
           title: string
           updated_at?: string
         }
@@ -1712,6 +1726,13 @@ export type Database = {
           specific_competence?: string
           status?: Database["public"]["Enums"]["record_status"]
           strategies?: string
+          school_name_snapshot?: string | null
+          teacher_name_snapshot?: string | null
+          curricular_area?: string | null
+          education_level?: string | null
+          topic?: string | null
+          transversal_axis?: string | null
+          fundamental_competencies?: string[]
           title?: string
           updated_at?: string
         }

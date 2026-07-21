@@ -30,6 +30,7 @@ function normalize(value?: string | null) {
 export function PlanningPage() {
   const {
     schoolYearId,
+    schoolName,
     periods,
     activePeriodId,
     entries,
@@ -153,6 +154,77 @@ export function PlanningPage() {
     } finally {
       setConfirmTarget(null)
     }
+  }
+
+  if (formOpen) {
+    return (
+      <section className="w-full min-w-0 pb-8">
+        <PlanningEntryForm
+          sectionSubjects={sectionSubjects}
+          periods={periods}
+          schoolName={editingEntry?.schoolNameSnapshot || editingEntry?.schoolName || schoolName}
+          initial={
+            editingEntry
+              ? {
+                  entry: {
+                    id: editingEntry.id,
+                    sectionSubjectId: editingEntry.sectionSubjectId,
+                    academicPeriodId: editingEntry.academicPeriodId,
+                    fundamentalCompetenceId: editingEntry.fundamentalCompetenceId,
+                    fundamentalCompetencies: editingEntry.fundamentalCompetencies,
+                    title: editingEntry.title,
+                    schoolNameSnapshot: editingEntry.schoolNameSnapshot ?? editingEntry.schoolName,
+                    teacherNameSnapshot: editingEntry.teacherNameSnapshot ?? editingEntry.teacherName,
+                    curricularArea: editingEntry.curricularArea,
+                    educationLevel: editingEntry.educationLevel,
+                    topic: editingEntry.topic,
+                    transversalAxis: editingEntry.transversalAxis,
+                    specificCompetence: editingEntry.specificCompetence,
+                    achievementIndicator: editingEntry.achievementIndicator,
+                    contentConceptual: editingEntry.contentConceptual,
+                    contentProcedural: editingEntry.contentProcedural,
+                    contentAttitudinal: editingEntry.contentAttitudinal,
+                    strategies: editingEntry.strategies,
+                    activities: editingEntry.activities,
+                    resources: editingEntry.resources,
+                    evaluationMethod: editingEntry.evaluationMethod,
+                    evidence: editingEntry.evidence,
+                    evaluationInstruments: editingEntry.evaluationInstruments,
+                    durationMinutes: editingEntry.durationMinutes,
+                    plannedDate: editingEntry.plannedDate?.slice(0, 10) ?? null,
+                    linkedActivityIds: editingEntry.linkedActivityIds,
+                  },
+                }
+              : {
+                  entry: {
+                    sectionSubjectId: courseFilter,
+                    academicPeriodId: periodFilter || activePeriodId || periods[0]?.id || '',
+                    title: '',
+                  },
+                  academicPeriodId: periodFilter || activePeriodId || periods[0]?.id,
+                }
+          }
+          competencies={competencies}
+          submitting={isSubmitting}
+          error={formError}
+          onSubmit={handleSubmit}
+          onGenerateAndCreate={async (input) => {
+            setIsSubmitting(true)
+            setFormError(null)
+            try {
+              await generateEntry(input)
+              setPeriodFilter(input.academicPeriodId ?? periodFilter)
+              closeForm()
+            } catch (caught) {
+              setFormError(caught instanceof Error ? caught.message : 'No se pudo generar.')
+            } finally {
+              setIsSubmitting(false)
+            }
+          }}
+          onClose={closeForm}
+        />
+      </section>
+    )
   }
 
   return (
@@ -284,64 +356,6 @@ export function PlanningPage() {
           periods={periods}
           onRefresh={refreshPeriods}
           onClose={() => setPeriodManagerOpen(false)}
-        />
-      ) : null}
-
-      {formOpen ? (
-        <PlanningEntryForm
-          sectionSubjects={sectionSubjects}
-          periods={periods}
-          initial={
-            editingEntry
-              ? {
-                  entry: {
-                    id: editingEntry.id,
-                    sectionSubjectId: editingEntry.sectionSubjectId,
-                    academicPeriodId: editingEntry.academicPeriodId,
-                    fundamentalCompetenceId: editingEntry.fundamentalCompetenceId,
-                    title: editingEntry.title,
-                    specificCompetence: editingEntry.specificCompetence,
-                    achievementIndicator: editingEntry.achievementIndicator,
-                    contentConceptual: editingEntry.contentConceptual,
-                    contentProcedural: editingEntry.contentProcedural,
-                    contentAttitudinal: editingEntry.contentAttitudinal,
-                    strategies: editingEntry.strategies,
-                    activities: editingEntry.activities,
-                    resources: editingEntry.resources,
-                    evaluationMethod: editingEntry.evaluationMethod,
-                    evidence: editingEntry.evidence,
-                    evaluationInstruments: editingEntry.evaluationInstruments,
-                    durationMinutes: editingEntry.durationMinutes,
-                    plannedDate: editingEntry.plannedDate?.slice(0, 10) ?? null,
-                  },
-                }
-              : {
-                  entry: {
-                    sectionSubjectId: courseFilter,
-                    academicPeriodId: periodFilter || activePeriodId || periods[0]?.id || '',
-                    title: '',
-                  },
-                  academicPeriodId: periodFilter || activePeriodId || periods[0]?.id,
-                }
-          }
-          competencies={competencies}
-          submitting={isSubmitting}
-          error={formError}
-          onSubmit={handleSubmit}
-          onGenerateAndCreate={async (input) => {
-            setIsSubmitting(true)
-            setFormError(null)
-            try {
-              await generateEntry(input)
-              setPeriodFilter(input.academicPeriodId ?? periodFilter)
-              closeForm()
-            } catch (error) {
-              setFormError(error instanceof Error ? error.message : 'No se pudo generar.')
-            } finally {
-              setIsSubmitting(false)
-            }
-          }}
-          onClose={closeForm}
         />
       ) : null}
 
