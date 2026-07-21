@@ -1,5 +1,7 @@
 import {
   Archive,
+  CalendarDays,
+  Clock3,
   Copy,
   Download,
   Edit3,
@@ -8,6 +10,7 @@ import {
   Trash2,
 } from 'lucide-react'
 
+import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import type { PlanningEntryWithDetails } from '@/modules/planning/types'
 import {
@@ -37,84 +40,118 @@ export function PlanningEntryCard({
   const status = String(entry.status).toLowerCase()
   const statusLabel =
     status === 'archived' ? 'Archivada' : status === 'inactive' ? 'Borrador' : 'Completa'
+  const statusTone = status === 'archived' ? 'muted' : status === 'inactive' ? 'warning' : 'success'
 
   return (
-    <article className="w-full rounded-lg border border-border bg-card p-4 text-left shadow-sm transition hover:border-ring/40 hover:shadow-md">
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0 flex-1">
-          <p className="text-xs font-medium uppercase tracking-wide text-accent">
-            {entry.gradeName} {entry.sectionName} · {entry.subjectName}
-          </p>
-          <p className="mt-1 text-sm font-semibold text-foreground">{entry.title}</p>
-          <p className="mt-1 text-xs text-muted-foreground">{entry.periodName}</p>
+    <article className="flex h-full w-full flex-col overflow-hidden rounded-2xl bg-card text-left shadow-sm transition-shadow duration-200 hover:shadow-md">
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+              {entry.gradeName} {entry.sectionName} · {entry.subjectName}
+            </p>
+            <h2 className="mt-2 line-clamp-2 text-base font-extrabold leading-snug text-foreground">
+              {entry.title}
+            </h2>
+            <p className="mt-1 text-xs font-medium text-muted-foreground">{entry.periodName}</p>
+          </div>
+          <Badge tone={statusTone}>{statusLabel}</Badge>
         </div>
-        <span className="rounded-full bg-muted px-2 py-1 text-xs font-medium text-muted-foreground">
-          {statusLabel}
-        </span>
-      </div>
 
-      <div className="mt-3 flex flex-wrap gap-2">
         {entry.achievementIndicator ? (
-          <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+          <p className="mt-4 rounded-xl bg-primary-light/70 px-3 py-2.5 text-xs leading-5 text-primary">
             {entry.achievementIndicator.length > MAX_INDICATOR_CHARS
               ? `${entry.achievementIndicator.slice(0, MAX_INDICATOR_CHARS)}...`
               : entry.achievementIndicator}
-          </span>
+          </p>
         ) : null}
-        {entry.fundamentalCompetenceName ? (
-          <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-            {entry.fundamentalCompetenceName}
-          </span>
-        ) : null}
-        {entry.durationMinutes ? (
-          <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-            {entry.durationMinutes} min
-          </span>
-        ) : null}
-        {entry.plannedDate ? (
-          <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-            {entry.plannedDate}
-          </span>
-        ) : null}
-      </div>
 
-      <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-3">
-        <Button variant="outline" size="sm" onClick={() => onPreview(entry)}>
-          <Eye className="size-4" />
-          Ver
-        </Button>
-        <Button variant="ghost" size="sm" onClick={() => onEdit(entry)}>
-          <Edit3 className="size-4" />
-          Editar
-        </Button>
-        <Button variant="ghost" size="sm" onClick={() => onDuplicate(entry)}>
-          <Copy className="size-4" />
-          Duplicar
-        </Button>
-        <Button variant="ghost" size="sm" onClick={() => exportPlanningToPdf(entry)}>
-          <Printer className="size-4" />
-          PDF
-        </Button>
-        <Button variant="ghost" size="sm" onClick={() => exportPlanningToWord(entry)}>
-          <Download className="size-4" />
-          Word
-        </Button>
-        {status !== 'archived' ? (
-          <Button variant="ghost" size="sm" onClick={() => onArchive(entry)}>
-            <Archive className="size-4" />
-            Archivar
+        <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs font-semibold text-muted-foreground">
+          {entry.fundamentalCompetenceName ? (
+            <span className="rounded-full bg-muted px-2.5 py-1">
+              {entry.fundamentalCompetenceName}
+            </span>
+          ) : null}
+          {entry.durationMinutes ? (
+            <span className="inline-flex items-center gap-1.5">
+              <Clock3 className="size-3.5 text-primary" />
+              {entry.durationMinutes} min
+            </span>
+          ) : null}
+          {entry.plannedDate ? (
+            <span className="inline-flex items-center gap-1.5">
+              <CalendarDays className="size-3.5 text-primary" />
+              {formatDate(entry.plannedDate)}
+            </span>
+          ) : null}
+        </div>
+
+        <div className="mt-auto flex flex-wrap items-center gap-1 border-t border-border pt-4 [&>*]:shrink-0">
+          <Button variant="outline" size="sm" className="mr-1" onClick={() => onPreview(entry)}>
+            <Eye className="size-4" />
+            Ver
           </Button>
-        ) : null}
-        <Button
-          variant="ghost"
-          size="sm"
-          className="text-destructive hover:text-destructive"
-          onClick={() => onDelete(entry)}
-        >
-          <Trash2 className="size-4" />
-          Eliminar
-        </Button>
+          <Button variant="ghost" size="sm" onClick={() => onEdit(entry)}>
+            <Edit3 className="size-4" />
+            Editar
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Duplicar planificación"
+            title="Duplicar"
+            onClick={() => onDuplicate(entry)}
+          >
+            <Copy className="size-4" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Exportar planificación a PDF"
+            title="Exportar a PDF"
+            onClick={() => exportPlanningToPdf(entry)}
+          >
+            <Printer className="size-4" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Exportar planificación a Word"
+            title="Exportar a Word"
+            onClick={() => exportPlanningToWord(entry)}
+          >
+            <Download className="size-4" />
+          </Button>
+          {status !== 'archived' ? (
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Archivar planificación"
+              title="Archivar"
+              onClick={() => onArchive(entry)}
+            >
+              <Archive className="size-4" />
+            </Button>
+          ) : null}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="ml-auto text-destructive hover:text-destructive"
+            aria-label="Eliminar planificación"
+            title="Eliminar"
+            onClick={() => onDelete(entry)}
+          >
+            <Trash2 className="size-4" />
+          </Button>
+        </div>
       </div>
     </article>
   )
+}
+
+function formatDate(value: string) {
+  return new Intl.DateTimeFormat('es-DO', {
+    day: 'numeric',
+    month: 'short',
+  }).format(new Date(`${value.slice(0, 10)}T00:00:00`))
 }
