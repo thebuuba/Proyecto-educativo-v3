@@ -1,4 +1,4 @@
-import { AlertCircle, Plus, Search, Settings2 } from 'lucide-react'
+import { AlertCircle, CalendarDays, FileText, Filter, Plus, Search, Settings2 } from 'lucide-react'
 import { useMemo, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
@@ -10,10 +10,7 @@ import { PlanningDocumentView } from '@/modules/planning/components/PlanningDocu
 import { PlanningEntryCard } from '@/modules/planning/components/PlanningEntryCard'
 import { PlanningEntryForm } from '@/modules/planning/components/PlanningEntryForm'
 import { usePlanning } from '@/modules/planning/hooks/usePlanning'
-import type {
-  CreatePlanningEntryInput,
-  PlanningEntryWithDetails,
-} from '@/modules/planning/types'
+import type { CreatePlanningEntryInput, PlanningEntryWithDetails } from '@/modules/planning/types'
 
 type ConfirmAction = 'delete' | 'archive'
 
@@ -24,7 +21,10 @@ function sameDate(entryDate: string | null | undefined, filterDate: string) {
 }
 
 function normalize(value?: string | null) {
-  return (value ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  return (value ?? '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
 }
 
 export function PlanningPage() {
@@ -84,6 +84,11 @@ export function PlanningPage() {
       return matchesCourse && matchesSubject && matchesPeriod && matchesDate && matchesSearch
     })
   }, [courseFilter, dateFilter, entries, periodFilter, query, subjectFilter])
+
+  const activePeriod = periods.find((period) => period.id === activePeriodId)
+  const archivedEntries = entries.filter(
+    (entry) => String(entry.status).toLowerCase() === 'archived',
+  ).length
 
   function openCreateForm() {
     setEditingEntry(null)
@@ -174,7 +179,8 @@ export function PlanningPage() {
                     fundamentalCompetencies: editingEntry.fundamentalCompetencies,
                     title: editingEntry.title,
                     schoolNameSnapshot: editingEntry.schoolNameSnapshot ?? editingEntry.schoolName,
-                    teacherNameSnapshot: editingEntry.teacherNameSnapshot ?? editingEntry.teacherName,
+                    teacherNameSnapshot:
+                      editingEntry.teacherNameSnapshot ?? editingEntry.teacherName,
                     curricularArea: editingEntry.curricularArea,
                     educationLevel: editingEntry.educationLevel,
                     topic: editingEntry.topic,
@@ -228,88 +234,144 @@ export function PlanningPage() {
   }
 
   return (
-    <section className="w-full min-w-0">
-      <div className="mb-8">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-accent">
-              Currículo por competencias
-            </p>
-            <h1 className="mt-3 text-4xl font-bold leading-none text-primary sm:text-5xl">
+    <section className="mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
+      <header className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2">
+            <h1 className="text-2xl font-bold tracking-tight text-foreground lg:text-[28px]">
               Planificaciones
             </h1>
-            <p className="mt-3 text-base leading-6 text-muted-foreground">
-              Crea, consulta, edita, duplica y exporta tus planificaciones docentes.
-            </p>
+            {activePeriod ? (
+              <span className="inline-flex h-7 items-center gap-1.5 rounded-full bg-accent/12 px-3 text-xs font-semibold text-accent">
+                <span className="size-1.5 rounded-full bg-accent" />
+                {activePeriod.name} · activo
+              </span>
+            ) : null}
           </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row lg:pb-1">
-            <Button
-              variant="outline"
-              className="h-12 px-5"
-              onClick={() => setPeriodManagerOpen(true)}
-            >
-              <Settings2 className="size-4" />
-              Períodos
-            </Button>
-            <Button
-              variant="primary"
-              className="h-12 px-5"
-              onClick={openCreateForm}
-              disabled={!periods.length}
-            >
-              <Plus className="size-4" />
-              Nueva planificación
-            </Button>
-          </div>
+          <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">
+            Organiza, consulta y exporta tu planificación curricular por competencias.
+          </p>
         </div>
+
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline" onClick={() => setPeriodManagerOpen(true)}>
+            <Settings2 className="size-4" />
+            Períodos
+          </Button>
+          <Button variant="primary" onClick={openCreateForm} disabled={!periods.length}>
+            <Plus className="size-4" />
+            Nueva planificación
+          </Button>
+        </div>
+      </header>
+
+      <div className="grid gap-3 sm:grid-cols-3">
+        <PlanningMetric
+          icon={<FileText className="size-5" />}
+          label="Planificaciones"
+          value={entries.length}
+        />
+        <PlanningMetric
+          icon={<Filter className="size-5" />}
+          label="Resultados visibles"
+          value={filteredEntries.length}
+        />
+        <PlanningMetric
+          icon={<CalendarDays className="size-5" />}
+          label="Archivadas"
+          value={archivedEntries}
+        />
       </div>
 
-      <div className="mb-6 rounded-lg border border-border bg-card p-4 shadow-sm">
-        <div className="grid gap-3 lg:grid-cols-[1.3fr_1fr_1fr_1fr_170px]">
-          <label className="relative block">
-            <span className="sr-only">Buscar por título o tema</span>
-            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              className="pl-9"
-              placeholder="Buscar por título, tema o competencia"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-            />
+      <div className="rounded-3xl bg-card shadow-sm">
+        <div className="flex items-center justify-between gap-3 border-b border-border px-5 py-4">
+          <div className="flex items-center gap-3">
+            <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Filter className="size-4" />
+            </span>
+            <div>
+              <h2 className="text-sm font-bold text-foreground">Filtrar planificaciones</h2>
+              <p className="text-xs text-muted-foreground">
+                Afina la lista por curso, asignatura, período o fecha.
+              </p>
+            </div>
+          </div>
+          <span className="hidden text-xs font-semibold text-muted-foreground sm:block">
+            {filteredEntries.length} {filteredEntries.length === 1 ? 'resultado' : 'resultados'}
+          </span>
+        </div>
+
+        <div className="grid gap-4 p-5 md:grid-cols-2 xl:grid-cols-[minmax(0,1.35fr)_repeat(3,minmax(0,1fr))_170px]">
+          <label className="grid min-w-0 gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+              Buscar
+            </span>
+            <span className="relative block">
+              <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                className="w-full pl-9"
+                placeholder="Título, tema o competencia"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+              />
+            </span>
           </label>
 
-          <Select value={courseFilter} onChange={(event) => setCourseFilter(event.target.value)}>
-            <option value="">Todos los cursos</option>
-            {sectionSubjects.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.gradeName} {item.sectionName} — {item.subjectName}
-              </option>
-            ))}
-          </Select>
+          <label className="grid min-w-0 gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+              Curso
+            </span>
+            <Select value={courseFilter} onChange={(event) => setCourseFilter(event.target.value)}>
+              <option value="">Todos los cursos</option>
+              {sectionSubjects.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {item.gradeName} {item.sectionName} — {item.subjectName}
+                </option>
+              ))}
+            </Select>
+          </label>
 
-          <Select value={subjectFilter} onChange={(event) => setSubjectFilter(event.target.value)}>
-            <option value="">Todas las asignaturas</option>
-            {subjects.map((subject) => (
-              <option key={subject} value={subject}>
-                {subject}
-              </option>
-            ))}
-          </Select>
+          <label className="grid min-w-0 gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+              Asignatura
+            </span>
+            <Select
+              value={subjectFilter}
+              onChange={(event) => setSubjectFilter(event.target.value)}
+            >
+              <option value="">Todas las asignaturas</option>
+              {subjects.map((subject) => (
+                <option key={subject} value={subject}>
+                  {subject}
+                </option>
+              ))}
+            </Select>
+          </label>
 
-          <Select value={periodFilter} onChange={(event) => setPeriodFilter(event.target.value)}>
-            <option value="">Todos los períodos</option>
-            {periods.map((period) => (
-              <option key={period.id} value={period.id}>
-                {period.name}
-              </option>
-            ))}
-          </Select>
+          <label className="grid min-w-0 gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+              Período
+            </span>
+            <Select value={periodFilter} onChange={(event) => setPeriodFilter(event.target.value)}>
+              <option value="">Todos los períodos</option>
+              {periods.map((period) => (
+                <option key={period.id} value={period.id}>
+                  {period.name}
+                </option>
+              ))}
+            </Select>
+          </label>
 
-          <Input
-            type="date"
-            value={dateFilter}
-            onChange={(event) => setDateFilter(event.target.value)}
-          />
+          <label className="grid min-w-0 gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+              Fecha
+            </span>
+            <Input
+              type="date"
+              value={dateFilter}
+              onChange={(event) => setDateFilter(event.target.value)}
+            />
+          </label>
         </div>
       </div>
 
@@ -325,7 +387,7 @@ export function PlanningPage() {
           Cargando planificaciones...
         </div>
       ) : filteredEntries.length > 0 ? (
-        <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
           {filteredEntries.map((entry) => (
             <PlanningEntryCard
               key={entry.id}
@@ -339,8 +401,11 @@ export function PlanningPage() {
           ))}
         </div>
       ) : (
-        <div className="flex min-h-[220px] flex-col items-center justify-center rounded-lg border border-dashed border-border bg-card text-center">
-          <p className="text-sm font-medium text-muted-foreground">
+        <div className="flex min-h-[260px] flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card p-6 text-center">
+          <span className="flex size-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <FileText className="size-6" />
+          </span>
+          <p className="mt-4 text-sm font-semibold text-foreground">
             No hay planificaciones que coincidan con los filtros actuales.
           </p>
           <Button variant="outline" className="mt-4" onClick={openCreateForm}>
@@ -378,5 +443,29 @@ export function PlanningPage() {
         />
       ) : null}
     </section>
+  )
+}
+
+function PlanningMetric({
+  icon,
+  label,
+  value,
+}: {
+  icon: React.ReactNode
+  label: string
+  value: number
+}) {
+  return (
+    <div className="flex items-center gap-4 rounded-2xl bg-card px-5 py-4 shadow-sm">
+      <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+        {icon}
+      </span>
+      <div>
+        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+          {label}
+        </p>
+        <p className="mt-0.5 text-2xl font-black tabular-nums text-primary">{value}</p>
+      </div>
+    </div>
   )
 }
