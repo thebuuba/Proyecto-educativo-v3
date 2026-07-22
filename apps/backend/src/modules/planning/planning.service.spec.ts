@@ -214,6 +214,7 @@ describe('PlanningService.generateEntryDraft', () => {
         sectionSubjectId: 'ss-1',
         academicPeriodId: 'period-1',
         title: 'Título definido por el docente',
+        sequence: 1,
         durationMinutes: 45,
         specificCompetence: 'Competencia oficial extensa.',
         achievementIndicator: 'Indicador oficial.',

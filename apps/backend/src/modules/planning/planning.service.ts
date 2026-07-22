@@ -340,7 +340,7 @@ export class PlanningService {
         curriculumOrdinance: dto.curriculumOrdinance ?? null,
         curriculumSourcePages: dto.curriculumSourcePages ?? null,
         fundamentalCompetencies: dto.fundamentalCompetencies ?? [],
-        sequence: dto.sequence ?? 0,
+        sequence: dto.sequence ?? 1,
         specificCompetence: dto.specificCompetence ?? '',
         achievementIndicator: dto.achievementIndicator ?? '',
         contentConceptual: dto.contentConceptual ?? '',
