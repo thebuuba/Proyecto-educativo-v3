@@ -16,12 +16,17 @@ export type PlanningDay = {
   cierre: string
   evidence: string
   evaluationMethod: string
+  evaluationInstruments?: string
+  metacognition?: string
+  resources?: string
 }
 
 export type PlanningActivities = {
   inicio: string
   desarrollo: string
   cierre: string
+  learningSituation?: string
+  metacognition?: string
   days?: PlanningDay[]
 }
 

@@ -11,12 +11,17 @@ export class PlanningDayDto {
   @IsString() @MaxLength(10_000) cierre!: string
   @IsString() @MaxLength(10_000) evidence!: string
   @IsString() @MaxLength(10_000) evaluationMethod!: string
+  @IsOptional() @IsString() @MaxLength(10_000) evaluationInstruments?: string
+  @IsOptional() @IsString() @MaxLength(10_000) metacognition?: string
+  @IsOptional() @IsString() @MaxLength(10_000) resources?: string
 }
 
 export class PlanningActivitiesDto {
   @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) inicio!: string
   @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) desarrollo!: string
   @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) cierre!: string
+  @IsOptional() @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) learningSituation?: string
+  @IsOptional() @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) metacognition?: string
 
   @IsOptional()
   @IsArray()

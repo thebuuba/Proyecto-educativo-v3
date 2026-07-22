@@ -146,9 +146,11 @@ export function PlanningEntryForm({
   const [contentProcedural, setContentProcedural] = useState(initial?.entry.contentProcedural ?? '')
   const [contentAttitudinal, setContentAttitudinal] = useState(initial?.entry.contentAttitudinal ?? '')
   const [strategies, setStrategies] = useState(initial?.entry.strategies ?? '')
+  const [learningSituation, setLearningSituation] = useState(initial?.entry.activities?.learningSituation ?? '')
   const [inicio, setInicio] = useState(initial?.entry.activities?.inicio ?? '')
   const [desarrollo, setDesarrollo] = useState(initial?.entry.activities?.desarrollo ?? '')
   const [cierre, setCierre] = useState(initial?.entry.activities?.cierre ?? '')
+  const [metacognition, setMetacognition] = useState(initial?.entry.activities?.metacognition ?? '')
   const [days, setDays] = useState<PlanningDay[]>(initial?.entry.activities?.days ?? [])
   const [resources, setResources] = useState(initial?.entry.resources ?? '')
   const [evaluationMethod, setEvaluationMethod] = useState(initial?.entry.evaluationMethod ?? '')
@@ -323,8 +325,9 @@ export function PlanningEntryForm({
       contentAttitudinal,
       strategies,
       activities: planningType === 'DAILY'
-        ? { inicio, desarrollo, cierre }
+        ? { learningSituation, inicio, desarrollo, cierre, metacognition }
         : {
+            learningSituation,
             inicio: summarizeDays('inicio'),
             desarrollo: summarizeDays('desarrollo'),
             cierre: summarizeDays('cierre'),
@@ -385,9 +388,11 @@ export function PlanningEntryForm({
   function applyActivitySuggestion(draft: GeneratedPlanningEntry) {
     if (!title.trim()) setTitle(draft.title)
     setStrategies(draft.strategies)
+    setLearningSituation(draft.activities.learningSituation ?? '')
     setInicio(draft.activities.inicio)
     setDesarrollo(draft.activities.desarrollo)
     setCierre(draft.activities.cierre)
+    setMetacognition(draft.activities.metacognition ?? '')
     if (planningType !== 'DAILY' && draft.activities.days) {
       setDays(draft.activities.days.map((day, index) => ({
         ...day,
@@ -511,11 +516,13 @@ export function PlanningEntryForm({
             <Button type="button" variant="outline" size="sm" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Sugerir actividades</Button>
           </div>
           {alignmentWarning ? <div className="rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950"><p className="font-extrabold">Revisa la coherencia del tema</p><p className="mt-1 leading-6">{alignmentWarning}</p><label className="mt-3 flex cursor-pointer items-start gap-2 font-bold"><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={alignmentConfirmed} onChange={(event) => setAlignmentConfirmed(event.target.checked)} /><span>Confirmo que este tema corresponde a la asignatura seleccionada.</span></label></div> : null}
+          <Field label="Situación de aprendizaje"><Textarea rows={4} value={learningSituation} onChange={(event) => setLearningSituation(event.target.value)} placeholder="Contexto, reto o problema que dará sentido a lo que aprenderán los estudiantes." /></Field>
           {planningType === 'DAILY' ? <div className="grid gap-4 lg:grid-cols-3">
             <MomentField title="Inicio" hint="Motivación, saberes previos y propósito" value={inicio} onChange={setInicio} />
             <MomentField title="Desarrollo" hint="Actividad principal y construcción del aprendizaje" value={desarrollo} onChange={setDesarrollo} />
             <MomentField title="Cierre" hint="Síntesis, reflexión y retroalimentación" value={cierre} onChange={setCierre} />
           </div> : <div className="grid gap-4">{days.map((day, index) => <PlanningDayField key={day.day} day={day} date={plannedDate ? addWeekdays(plannedDate, index) : ''} onChange={(field, value) => setDays((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, [field]: value } : item))} />)}</div>}
+          {planningType === 'DAILY' ? <Field label="Metacognición"><Textarea rows={3} value={metacognition} onChange={(event) => setMetacognition(event.target.value)} placeholder="Ej.: ¿Qué aprendí?, ¿cómo lo aprendí? y ¿dónde puedo aplicarlo?" /></Field> : null}
           <Field label="¿Cómo demostrarán los estudiantes lo aprendido?" required><Textarea rows={4} value={evidence} onChange={(event) => setEvidence(event.target.value)} placeholder="Ej.: Elaborarán un modelo de la célula y explicarán la función de sus partes mediante una lista de cotejo." /></Field>
         </div> : null}
 
@@ -611,7 +618,7 @@ function MomentField({ title, hint, value, onChange }: { title: string; hint: st
 function PlanningDayField({ day, date, onChange }: {
   day: PlanningDay
   date: string
-  onChange: (field: 'inicio' | 'desarrollo' | 'cierre' | 'evidence' | 'evaluationMethod', value: string) => void
+  onChange: (field: 'inicio' | 'desarrollo' | 'cierre' | 'evidence' | 'evaluationMethod' | 'evaluationInstruments' | 'metacognition' | 'resources', value: string) => void
 }) {
-  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-center justify-between gap-3 border-b border-border bg-primary/[0.045] px-4 py-3"><h3 className="font-extrabold text-primary">Día {day.day}</h3><span className="text-xs font-bold text-muted-foreground">{date || 'Fecha pendiente'}</span></header><div className="grid gap-4 p-4 lg:grid-cols-3"><Field label="Inicio" required><Textarea rows={4} value={day.inicio} onChange={(event) => onChange('inicio', event.target.value)} /></Field><Field label="Desarrollo" required><Textarea rows={4} value={day.desarrollo} onChange={(event) => onChange('desarrollo', event.target.value)} /></Field><Field label="Cierre" required><Textarea rows={4} value={day.cierre} onChange={(event) => onChange('cierre', event.target.value)} /></Field><Field label="Evidencia" required><Textarea rows={3} value={day.evidence} onChange={(event) => onChange('evidence', event.target.value)} /></Field><div className="lg:col-span-2"><Field label="Evaluación" required><Textarea rows={3} value={day.evaluationMethod} onChange={(event) => onChange('evaluationMethod', event.target.value)} /></Field></div></div></section>
+  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-center justify-between gap-3 border-b border-border bg-primary/[0.045] px-4 py-3"><h3 className="font-extrabold text-primary">Día {day.day}</h3><span className="text-xs font-bold text-muted-foreground">{date || 'Fecha pendiente'}</span></header><div className="grid gap-4 p-4 lg:grid-cols-3"><Field label="Inicio" required><Textarea rows={4} value={day.inicio} onChange={(event) => onChange('inicio', event.target.value)} /></Field><Field label="Desarrollo" required><Textarea rows={4} value={day.desarrollo} onChange={(event) => onChange('desarrollo', event.target.value)} /></Field><Field label="Cierre" required><Textarea rows={4} value={day.cierre} onChange={(event) => onChange('cierre', event.target.value)} /></Field><Field label="Evidencia" required><Textarea rows={3} value={day.evidence} onChange={(event) => onChange('evidence', event.target.value)} /></Field><Field label="Técnica de evaluación" required><Textarea rows={3} value={day.evaluationMethod} onChange={(event) => onChange('evaluationMethod', event.target.value)} /></Field><Field label="Instrumento"><Textarea rows={3} value={day.evaluationInstruments ?? ''} onChange={(event) => onChange('evaluationInstruments', event.target.value)} /></Field><Field label="Metacognición"><Textarea rows={3} value={day.metacognition ?? ''} onChange={(event) => onChange('metacognition', event.target.value)} placeholder="Preguntas de reflexión" /></Field><div className="lg:col-span-2"><Field label="Recursos"><Textarea rows={3} value={day.resources ?? ''} onChange={(event) => onChange('resources', event.target.value)} /></Field></div></div></section>
 }

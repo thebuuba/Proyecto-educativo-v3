@@ -24,6 +24,8 @@ type GeneratedPlanningEntry = {
     inicio: string
     desarrollo: string
     cierre: string
+    learningSituation?: string
+    metacognition?: string
     days?: Array<{
       day: number
       date?: string | null
@@ -32,6 +34,9 @@ type GeneratedPlanningEntry = {
       cierre: string
       evidence: string
       evaluationMethod: string
+      evaluationInstruments?: string
+      metacognition?: string
+      resources?: string
     }>
   }
   resources: string
@@ -409,7 +414,7 @@ export class PlanningService {
       {
         role: 'system',
         content:
-          'Eres especialista en planificación docente del sistema educativo dominicano. En el Nivel Secundario respeta la Adecuación Curricular MINERD 2023, puesta en vigencia por la Ordenanza 03-2023. Trata las competencias, contenidos e indicadores suministrados como contexto y no los reescribas. DAILY es una clase; UNIT es una unidad; SEQUENCE es una secuencia didáctica. Para UNIT o SEQUENCE devuelve exactamente cantidadDias elementos en activities.days; cada elemento debe incluir day, date:null, inicio, desarrollo, cierre, evidence y evaluationMethod. Si el tema contradice claramente la asignatura, explica brevemente el problema en alignmentWarning; si es compatible usa null. Responde exclusivamente con un objeto JSON con esta forma: {"title":"","strategies":"","activities":{"inicio":"","desarrollo":"","cierre":"","days":[]},"resources":"","evaluationMethod":"","evidence":"","evaluationInstruments":"","durationMinutes":null,"alignmentWarning":null}.',
+          'Eres especialista en planificación docente del sistema educativo dominicano. En el Nivel Secundario respeta la Adecuación Curricular MINERD 2023, puesta en vigencia por la Ordenanza 03-2023. Trata las competencias, contenidos e indicadores suministrados como contexto y no los reescribas. DAILY es una clase; UNIT es una unidad; SEQUENCE es una secuencia didáctica. Redacta una situación de aprendizaje contextualizada. Para UNIT o SEQUENCE devuelve exactamente cantidadDias elementos en activities.days; cada elemento debe incluir day, date:null, inicio, desarrollo, cierre, evidence, evaluationMethod, evaluationInstruments, metacognition y resources. Si el tema contradice claramente la asignatura, explica brevemente el problema en alignmentWarning; si es compatible usa null. Responde exclusivamente con un objeto JSON con esta forma: {"title":"","strategies":"","activities":{"learningSituation":"","inicio":"","desarrollo":"","cierre":"","metacognition":"","days":[]},"resources":"","evaluationMethod":"","evidence":"","evaluationInstruments":"","durationMinutes":null,"alignmentWarning":null}.',
       },
       {
         role: 'user',
