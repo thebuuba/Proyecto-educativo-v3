@@ -292,6 +292,8 @@ export function PlanningEntryForm({
     setValidationError('')
     return quickPlanningValidationError(targetStep, {
       courseKey, sectionSubjectId, academicPeriodId, plannedDate, topic, duration,
+      periodStartDate: selectedPeriod?.startDate.slice(0, 10),
+      periodEndDate: selectedPeriod?.endDate.slice(0, 10),
       inicio, desarrollo, cierre, evidence, fundamentalCompetencies,
       specificCompetence, achievementIndicator,
     })
@@ -435,7 +437,7 @@ export function PlanningEntryForm({
           <Field label="Curso" required><Select value={courseKey} onChange={(event) => { setCourseKey(event.target.value); setSectionSubjectId(''); setCurricularArea('') }}><option value="">Selecciona...</option><optgroup label="Primaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field>
           <Field label="Asignatura" required><Select value={sectionSubjectId} disabled={!courseKey} onChange={(event) => { const value = event.target.value; setSectionSubjectId(value); const subject = sectionSubjects.find((item) => item.id === value); setCurricularArea(subject ? curricularAreaFor(subject.subjectName) : '') }}><option value="">{courseKey ? 'Selecciona...' : 'Selecciona primero el curso'}</option>{subjectOptions.map((item) => <option key={item.id} value={item.id}>{item.subjectName}</option>)}</Select></Field>
           <div className="md:col-span-2"><Field label="Tema o propósito de la clase" required><Input value={topic} placeholder="Ej.: La célula y sus funciones" onChange={(event) => setTopic(event.target.value)} /></Field></div>
-          <Field label="Fecha" required><Input type="date" value={plannedDate} onChange={(event) => setPlannedDate(event.target.value)} /></Field>
+          <Field label="Fecha" required><Input type="date" min={selectedPeriod?.startDate.slice(0, 10)} max={selectedPeriod?.endDate.slice(0, 10)} value={plannedDate} onChange={(event) => setPlannedDate(event.target.value)} /></Field>
           <Field label="Duración total (minutos)" required><Input type="number" min={1} value={duration} onChange={(event) => setDuration(event.target.value)} placeholder="Ej.: 90" /></Field>
           {!academicPeriodId ? <div className="md:col-span-2"><Field label="Período académico" required><Select value={academicPeriodId} onChange={(event) => setAcademicPeriodId(event.target.value)}><option value="">Selecciona...</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Select></Field></div> : null}
           <div className="md:col-span-2 grid gap-3 rounded-2xl border border-border bg-muted/40 p-4 text-sm sm:grid-cols-3">

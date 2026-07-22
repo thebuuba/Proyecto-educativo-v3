@@ -3,6 +3,8 @@ export type QuickPlanningValues = {
   sectionSubjectId: string
   academicPeriodId: string
   plannedDate: string
+  periodStartDate?: string
+  periodEndDate?: string
   topic: string
   duration: string
   inicio: string
@@ -26,6 +28,10 @@ export function quickPlanningValidationError(targetStep: number, values: QuickPl
   if (targetStep >= 1 && !values.sectionSubjectId) return 'Selecciona la asignatura.'
   if (targetStep >= 1 && !values.academicPeriodId) return 'Selecciona el período académico.'
   if (targetStep >= 1 && !values.plannedDate) return 'Selecciona la fecha de la planificación.'
+  if (targetStep >= 1 && values.periodStartDate && values.periodEndDate
+    && (values.plannedDate < values.periodStartDate || values.plannedDate > values.periodEndDate)) {
+    return 'La fecha planificada debe estar dentro del período académico.'
+  }
   if (targetStep >= 1 && !values.topic.trim()) return 'Escribe el tema que se trabajará.'
   if (targetStep >= 1 && (!values.duration || Number(values.duration) < 1)) return 'Indica la duración de la clase.'
   if (targetStep >= 2 && !values.inicio.trim()) return 'Describe brevemente cómo iniciarás la clase.'

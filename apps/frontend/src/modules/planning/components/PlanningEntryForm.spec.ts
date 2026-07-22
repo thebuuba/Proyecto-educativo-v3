@@ -27,6 +27,12 @@ describe('planificación rápida', () => {
     expect(quickPlanningValidationError(2, { ...completePlanning, desarrollo: '' })).toContain('actividad principal')
     expect(quickPlanningValidationError(3, { ...completePlanning, specificCompetence: '' })).toContain('competencias específicas')
     expect(quickPlanningValidationError(3, completePlanning)).toBe('')
+    expect(quickPlanningValidationError(1, {
+      ...completePlanning,
+      plannedDate: '2000-11-12',
+      periodStartDate: '2026-08-01',
+      periodEndDate: '2026-10-31',
+    })).toContain('dentro del período académico')
   })
 
   it('limita el contexto curricular enviado al generador', () => {
