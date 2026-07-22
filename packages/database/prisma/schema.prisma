@@ -888,6 +888,8 @@ model PlanningEntry {
   sectionSubjectId        String       @map("section_subject_id") @db.Uuid
   academicPeriodId        String       @map("academic_period_id") @db.Uuid
   title                   String
+  planningType            String       @default("DAILY") @map("planning_type")
+  durationDays            Int          @default(1) @map("duration_days")
   schoolNameSnapshot      String?      @map("school_name_snapshot")
   teacherNameSnapshot     String?      @map("teacher_name_snapshot")
   curricularArea          String?      @map("curricular_area")

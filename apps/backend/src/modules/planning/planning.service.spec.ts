@@ -109,6 +109,7 @@ describe('PlanningService.generateEntryDraft', () => {
       model: 'test-model',
       thinking: { type: 'disabled' },
       response_format: { type: 'json_object' },
+      max_tokens: 1500,
     })
     expect(requestBody.messages[1].content).toContain('Ciudadanía digital')
     expect(result.activities.desarrollo).toContain('entrevista')
@@ -201,6 +202,8 @@ describe('PlanningService.generateEntryDraft', () => {
       plannedDate: '2026-06-25',
       title: 'Título definido por el docente',
       durationMinutes: 45,
+      planningType: 'SEQUENCE',
+      durationDays: 5,
       specificCompetence: 'Competencia oficial extensa.',
       achievementIndicator: 'Indicador oficial.',
       contentConceptual: 'Contenido conceptual oficial.',
@@ -214,6 +217,8 @@ describe('PlanningService.generateEntryDraft', () => {
         sectionSubjectId: 'ss-1',
         academicPeriodId: 'period-1',
         title: 'Título definido por el docente',
+        planningType: 'SEQUENCE',
+        durationDays: 5,
         sequence: 1,
         durationMinutes: 45,
         specificCompetence: 'Competencia oficial extensa.',
@@ -222,6 +227,34 @@ describe('PlanningService.generateEntryDraft', () => {
         activities: expect.objectContaining({ desarrollo: 'Preparan el guion.' }),
       }),
     })
+  })
+
+  it('does not save when AI detects a clear subject mismatch', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({
+      id: 'ss-1', gradeId: 'grade-1', sectionId: 'section-1', subjectId: 'subject-1', schoolYearId: 'year-1',
+    })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      id: 'period-1', schoolYearId: 'year-1', startDate: new Date('2026-08-01'), endDate: new Date('2026-10-31'),
+    })
+    mocks.prisma.grade.findFirst.mockResolvedValue({ name: '1ro' })
+    mocks.prisma.section.findFirst.mockResolvedValue({ name: 'A' })
+    mocks.prisma.subject.findFirst.mockResolvedValue({ name: 'Lengua Española' })
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({ choices: [{ message: { content: JSON.stringify({
+        title: 'La materia', strategies: '',
+        activities: { inicio: 'Exploran.', desarrollo: 'Clasifican.', cierre: 'Explican.' },
+        resources: '', evaluationMethod: '', evidence: '', evaluationInstruments: '', durationMinutes: 45,
+        alignmentWarning: 'El tema corresponde a Ciencias de la Naturaleza, no a Lengua Española.',
+      }) } }] }),
+    } as never)
+
+    await expect(new PlanningService(
+      config({ DEEPSEEK_API_KEY: 'test-key' }) as never,
+    ).generateAndCreateEntry('school-1', {
+      sectionSubjectId: 'ss-1', academicPeriodId: 'period-1', title: 'La materia',
+    })).rejects.toThrow('Revisa la coherencia curricular')
+    expect(mocks.prisma.planningEntry.create).not.toHaveBeenCalled()
   })
 
   it('rejects a period from a different school year', async () => {

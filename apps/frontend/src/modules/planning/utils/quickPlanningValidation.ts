@@ -1,4 +1,6 @@
 export type QuickPlanningValues = {
+  planningType: 'DAILY' | 'UNIT' | 'SEQUENCE'
+  durationDays: string
   courseKey: string
   sectionSubjectId: string
   academicPeriodId: string
@@ -34,6 +36,10 @@ export function quickPlanningValidationError(targetStep: number, values: QuickPl
   }
   if (targetStep >= 1 && !values.topic.trim()) return 'Escribe el tema que se trabajará.'
   if (targetStep >= 1 && (!values.duration || Number(values.duration) < 1)) return 'Indica la duración de la clase.'
+  if (targetStep >= 1 && values.planningType !== 'DAILY'
+    && (!values.durationDays || Number(values.durationDays) < 1 || Number(values.durationDays) > 30)) {
+    return 'Indica una cantidad de días entre 1 y 30.'
+  }
   if (targetStep >= 2 && !values.inicio.trim()) return 'Describe brevemente cómo iniciarás la clase.'
   if (targetStep >= 2 && !values.desarrollo.trim()) return 'Describe la actividad principal de la clase.'
   if (targetStep >= 2 && !values.cierre.trim()) return 'Describe cómo cerrarás la clase.'

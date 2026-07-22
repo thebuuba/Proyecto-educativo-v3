@@ -1657,6 +1657,8 @@ export type Database = {
           evidence: string
           fundamental_competence_id: string | null
           id: string
+          planning_type: string
+          duration_days: number
           planned_date: string | null
           resources: string
           school_id: string
@@ -1692,6 +1694,8 @@ export type Database = {
           evidence?: string
           fundamental_competence_id?: string | null
           id?: string
+          planning_type?: string
+          duration_days?: number
           planned_date?: string | null
           resources?: string
           school_id?: string
@@ -1727,6 +1731,8 @@ export type Database = {
           evidence?: string
           fundamental_competence_id?: string | null
           id?: string
+          planning_type?: string
+          duration_days?: number
           planned_date?: string | null
           resources?: string
           school_id?: string

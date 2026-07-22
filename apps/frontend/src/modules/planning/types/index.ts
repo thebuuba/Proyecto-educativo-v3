@@ -14,6 +14,8 @@ export type PlanningActivities = {
   cierre: string
 }
 
+export type PlanningType = 'DAILY' | 'UNIT' | 'SEQUENCE'
+
 /** Entrada completa de planificación curricular */
 export type PlanningEntry = {
   id: string
@@ -22,6 +24,8 @@ export type PlanningEntry = {
   fundamentalCompetenceId: string | null
   fundamentalCompetenceName: string | null
   title: string
+  planningType?: PlanningType
+  durationDays?: number
   schoolNameSnapshot?: string | null
   teacherNameSnapshot?: string | null
   curricularArea?: string | null
@@ -58,6 +62,8 @@ export type CreatePlanningEntryInput = {
   academicPeriodId: string
   fundamentalCompetenceId?: string | null
   title: string
+  planningType?: PlanningType
+  durationDays?: number
   schoolNameSnapshot?: string | null
   teacherNameSnapshot?: string | null
   curricularArea?: string | null
@@ -100,6 +106,7 @@ export type GeneratedPlanningEntry = Required<
   >
 > & {
   durationMinutes: number | null
+  alignmentWarning: string | null
 }
 
 /** Datos para actualizar una planificación (todos los campos opcionales) */

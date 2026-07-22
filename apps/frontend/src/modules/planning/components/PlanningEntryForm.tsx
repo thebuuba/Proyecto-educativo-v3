@@ -40,6 +40,7 @@ import type {
   CompetencyOption,
   CreatePlanningEntryInput,
   GeneratedPlanningEntry,
+  PlanningType,
 } from '@/modules/planning/types'
 import {
   curriculumPromptExcerpt,
@@ -83,6 +84,12 @@ const transversalAxes = [
   'Alfabetización Imprescindible',
   'Ciudadanía y Convivencia',
 ]
+
+const planningTypeLabels: Record<PlanningType, string> = {
+  DAILY: 'Planificación diaria',
+  UNIT: 'Unidad de aprendizaje',
+  SEQUENCE: 'Secuencia didáctica',
+}
 
 function curricularAreaFor(subjectName: string) {
   const name = subjectName.toLowerCase()
@@ -131,6 +138,8 @@ export function PlanningEntryForm({
   const [fundamentalCompetenceId, setFundamentalCompetenceId] = useState(initial?.entry.fundamentalCompetenceId ?? '')
   const [fundamentalCompetencies, setFundamentalCompetencies] = useState<string[]>(initial?.entry.fundamentalCompetencies ?? [])
   const [title, setTitle] = useState(initial?.entry.title ?? '')
+  const [planningType, setPlanningType] = useState<PlanningType>(initial?.entry.planningType ?? 'DAILY')
+  const [durationDays, setDurationDays] = useState(String(initial?.entry.durationDays ?? 1))
   const [topic, setTopic] = useState(initial?.entry.topic ?? '')
   const [schoolNameValue, setSchoolNameValue] = useState(initial?.entry.schoolNameSnapshot ?? schoolName ?? '')
   const [teacherName, setTeacherName] = useState(initial?.entry.teacherNameSnapshot ?? appUser?.fullName ?? '')
@@ -272,6 +281,8 @@ export function PlanningEntryForm({
       fundamentalCompetenceId: fundamentalCompetenceId || null,
       fundamentalCompetencies,
       title: title.trim() || topic.trim(),
+      planningType,
+      durationDays: planningType === 'DAILY' ? 1 : Number(durationDays),
       schoolNameSnapshot: schoolNameValue.trim() || null,
       teacherNameSnapshot: teacherName.trim() || null,
       curricularArea: curricularArea || null,
@@ -302,6 +313,7 @@ export function PlanningEntryForm({
     setValidationError('')
     return quickPlanningValidationError(targetStep, {
       courseKey, sectionSubjectId, academicPeriodId, plannedDate, topic, duration,
+      planningType, durationDays,
       periodStartDate: selectedPeriod?.startDate.slice(0, 10),
       periodEndDate: selectedPeriod?.endDate.slice(0, 10),
       inicio, desarrollo, cierre, evidence, fundamentalCompetencies,
@@ -349,6 +361,8 @@ export function PlanningEntryForm({
     const competence = competencies.find((item) => item.id === fundamentalCompetenceId)
     return generatePlanningEntry({
       sectionSubjectId,
+      planningType,
+      durationDays: planningType === 'DAILY' ? 1 : Number(durationDays),
       title,
       topic: topic.trim(),
       curricularArea,
@@ -371,7 +385,11 @@ export function PlanningEntryForm({
   async function handleGenerate() {
     setValidationError('')
     setGenerating(true)
-    try { applyActivitySuggestion(await requestDraft()) }
+    try {
+      const draft = await requestDraft()
+      applyActivitySuggestion(draft)
+      if (draft.alignmentWarning) setValidationError(`Revisa la coherencia curricular: ${draft.alignmentWarning}`)
+    }
     catch (caught) { setValidationError(caught instanceof Error ? caught.message : 'No se pudo generar la planificación.') }
     finally { setGenerating(false) }
   }
@@ -441,14 +459,16 @@ export function PlanningEntryForm({
 
         {step === 1 ? <div className="grid gap-x-6 gap-y-5 p-5 sm:p-7 md:grid-cols-2">
           <div className="md:col-span-2 rounded-2xl bg-primary-light/70 p-4 text-sm leading-6 text-primary">
-            <p className="font-extrabold">Solo completa cinco decisiones.</p>
+            <p className="font-extrabold">Completa solo las decisiones esenciales.</p>
             <p className="text-primary/80">El centro, docente, período, área, competencias, contenidos e indicadores se incorporan automáticamente.</p>
           </div>
+          <div className="md:col-span-2"><Field label="Tipo de planificación" required><Select value={planningType} onChange={(event) => setPlanningType(event.target.value as PlanningType)}><option value="DAILY">Planificación diaria</option><option value="UNIT">Unidad de aprendizaje</option><option value="SEQUENCE">Secuencia didáctica</option></Select></Field></div>
           <Field label="Curso" required><Select value={courseKey} onChange={(event) => { setCourseKey(event.target.value); setSectionSubjectId(''); setCurricularArea('') }}><option value="">Selecciona...</option><optgroup label="Primaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field>
           <Field label="Asignatura" required><Select value={sectionSubjectId} disabled={!courseKey} onChange={(event) => { const value = event.target.value; setSectionSubjectId(value); const subject = sectionSubjects.find((item) => item.id === value); setCurricularArea(subject ? curricularAreaFor(subject.subjectName) : '') }}><option value="">{courseKey ? 'Selecciona...' : 'Selecciona primero el curso'}</option>{subjectOptions.map((item) => <option key={item.id} value={item.id}>{item.subjectName}</option>)}</Select></Field>
           <div className="md:col-span-2"><Field label="Tema o propósito de la clase" required><Input value={topic} placeholder="Ej.: La célula y sus funciones" onChange={(event) => setTopic(event.target.value)} /></Field></div>
           <Field label="Fecha" required><Input type="date" min={selectedPeriod?.startDate.slice(0, 10)} max={selectedPeriod?.endDate.slice(0, 10)} value={plannedDate} onChange={(event) => setPlannedDate(event.target.value)} /></Field>
           <Field label="Duración total (minutos)" required><Input type="number" min={1} value={duration} onChange={(event) => setDuration(event.target.value)} placeholder="Ej.: 90" /></Field>
+          {planningType !== 'DAILY' ? <Field label="Cantidad de días" required><Input type="number" min={1} max={30} value={durationDays} onChange={(event) => setDurationDays(event.target.value)} /></Field> : null}
           {!academicPeriodId ? <div className="md:col-span-2"><Field label="Período académico" required><Select value={academicPeriodId} onChange={(event) => setAcademicPeriodId(event.target.value)}><option value="">Selecciona...</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Select></Field></div> : null}
           <div className="md:col-span-2 grid gap-3 rounded-2xl border border-border bg-muted/40 p-4 text-sm sm:grid-cols-3">
             <AutoContext label="Centro" value={schoolNameValue || 'Se completará automáticamente'} />
@@ -475,7 +495,8 @@ export function PlanningEntryForm({
         </div> : null}
 
         {step === 3 ? <div className="grid gap-5 p-5 sm:p-7">
-          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
+            <ReviewItem label="Tipo" value={planningTypeLabels[planningType]} />
             <ReviewItem label="Curso y asignatura" value={selectedSectionSubject ? `${selectedSectionSubject.gradeName} ${selectedSectionSubject.sectionName} · ${selectedSectionSubject.subjectName}` : 'Sin seleccionar'} />
             <ReviewItem label="Tema" value={topic || 'Sin tema'} />
             <ReviewItem label="Fecha" value={plannedDate || 'Sin fecha'} />

@@ -202,6 +202,8 @@ export function PlanningPage() {
                     fundamentalCompetenceId: editingEntry.fundamentalCompetenceId,
                     fundamentalCompetencies: editingEntry.fundamentalCompetencies,
                     title: editingEntry.title,
+                    planningType: editingEntry.planningType,
+                    durationDays: editingEntry.durationDays,
                     schoolNameSnapshot: editingEntry.schoolNameSnapshot ?? editingEntry.schoolName,
                     teacherNameSnapshot:
                       editingEntry.teacherNameSnapshot ?? editingEntry.teacherName,

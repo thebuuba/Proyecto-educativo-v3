@@ -1,5 +1,7 @@
-import { IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { IsIn, IsInt, IsNumber, IsOptional, IsString, Max, MaxLength, Min } from 'class-validator'
 export class GenerateEntryDraftDto {
+  @IsOptional() @IsIn(['DAILY', 'UNIT', 'SEQUENCE']) planningType?: string
+  @IsOptional() @IsInt() @Min(1) @Max(30) durationDays?: number
   @IsOptional() @IsString() @MaxLength(120) curricularArea?: string
   @IsOptional() @IsString() @MaxLength(80) educationLevel?: string
   @IsOptional() @IsString() @MaxLength(200) topic?: string

@@ -26,6 +26,12 @@ function formatDate(value?: string | null) {
   }).format(date)
 }
 
+const planningTypeLabels = {
+  DAILY: 'Planificación diaria',
+  UNIT: 'Unidad de aprendizaje',
+  SEQUENCE: 'Secuencia didáctica',
+} as const
+
 function Section({ title, children }: { title: string; children?: ReactNode }) {
   return (
     <section className="border-t border-border pt-4">
@@ -107,6 +113,8 @@ export function PlanningDocumentView({ entry, onClose }: PlanningDocumentViewPro
               <Meta label="Tema" value={entry.topic || entry.title} />
               <Meta label="Grado y sección" value={course || 'Pendiente'} />
               <Meta label="Asignatura" value={entry.subjectName || 'Pendiente'} />
+              <Meta label="Tipo" value={planningTypeLabels[entry.planningType ?? 'DAILY']} />
+              {entry.planningType && entry.planningType !== 'DAILY' ? <Meta label="Cantidad de días" value={String(entry.durationDays ?? 1)} /> : null}
               <Meta label="Fecha" value={formatDate(entry.plannedDate)} />
               <Meta
                 label="Duración"

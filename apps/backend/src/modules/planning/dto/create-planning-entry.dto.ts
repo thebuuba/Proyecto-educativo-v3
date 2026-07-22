@@ -1,5 +1,5 @@
 import { Type } from 'class-transformer'
-import { IsArray, IsDateString, IsNumber, IsObject, IsOptional, IsString, MaxLength, Min, ValidateNested } from 'class-validator'
+import { IsArray, IsDateString, IsIn, IsInt, IsNumber, IsObject, IsOptional, IsString, Max, MaxLength, Min, ValidateNested } from 'class-validator'
 import {
   MAX_CURRICULUM_TEXT_LENGTH,
   PlanningActivitiesDto,
@@ -15,6 +15,9 @@ export class CreatePlanningEntryDto {
   @IsString()
   @MaxLength(200)
   title!: string
+
+  @IsOptional() @IsIn(['DAILY', 'UNIT', 'SEQUENCE']) planningType?: string
+  @IsOptional() @IsInt() @Min(1) @Max(30) durationDays?: number
 
   @IsOptional() @IsString() @MaxLength(200) schoolNameSnapshot?: string
   @IsOptional() @IsString() @MaxLength(200) teacherNameSnapshot?: string

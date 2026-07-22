@@ -1,5 +1,11 @@
 import type { PlanningEntryWithDetails } from '@/modules/planning/types'
 
+const planningTypeLabels = {
+  DAILY: 'Planificación diaria',
+  UNIT: 'Unidad de aprendizaje',
+  SEQUENCE: 'Secuencia didáctica',
+} as const
+
 function escapeHtml(value?: string | number | null) {
   return String(value ?? '')
     .replaceAll('&', '&amp;')
@@ -78,6 +84,8 @@ export function buildPlanningDocumentHtml(entry: PlanningEntryWithDetails) {
       <div class="box"><span class="label">Tema</span><span class="value">${escapeHtml(entry.topic || entry.title)}</span></div>
       <div class="box"><span class="label">Grado y seccion</span><span class="value">${escapeHtml(course)}</span></div>
       <div class="box"><span class="label">Asignatura</span><span class="value">${escapeHtml(entry.subjectName)}</span></div>
+      <div class="box"><span class="label">Tipo</span><span class="value">${escapeHtml(planningTypeLabels[entry.planningType ?? 'DAILY'])}</span></div>
+      ${entry.planningType && entry.planningType !== 'DAILY' ? `<div class="box"><span class="label">Cantidad de dias</span><span class="value">${escapeHtml(entry.durationDays ?? 1)}</span></div>` : ''}
       <div class="box"><span class="label">Fecha</span><span class="value">${escapeHtml(formatDate(entry.plannedDate))}</span></div>
       <div class="box"><span class="label">Duracion</span><span class="value">${entry.durationMinutes ? `${entry.durationMinutes} minutos` : 'Pendiente'}</span></div>
       <div class="box"><span class="label">Periodo</span><span class="value">${escapeHtml(entry.periodName)}</span></div>

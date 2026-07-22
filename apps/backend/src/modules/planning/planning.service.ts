@@ -29,6 +29,7 @@ type GeneratedPlanningEntry = {
   evidence: string
   evaluationInstruments: string
   durationMinutes: number | null
+  alignmentWarning: string | null
 }
 
 const AI_CONTEXT_LIMIT = 1000
@@ -264,6 +265,8 @@ export class PlanningService {
         sectionSubjectId: sourceEntry.sectionSubjectId,
         academicPeriodId: sourceEntry.academicPeriodId,
         title: `${sourceEntry.title} (copia)`,
+        planningType: sourceEntry.planningType,
+        durationDays: sourceEntry.durationDays,
         sequence: sourceEntry.sequence,
         specificCompetence: sourceEntry.specificCompetence,
         achievementIndicator: sourceEntry.achievementIndicator,
@@ -330,6 +333,8 @@ export class PlanningService {
         sectionSubjectId: dto.sectionSubjectId,
         academicPeriodId: dto.academicPeriodId,
         title: dto.title,
+        planningType: dto.planningType ?? 'DAILY',
+        durationDays: dto.durationDays ?? 1,
         schoolNameSnapshot: dto.schoolNameSnapshot ?? null,
         teacherNameSnapshot: dto.teacherNameSnapshot ?? null,
         curricularArea: dto.curricularArea ?? null,
@@ -383,6 +388,8 @@ export class PlanningService {
       : [null, null, null]
 
     const prompt = {
+      tipoPlanificacion: dto.planningType ?? 'DAILY',
+      cantidadDias: dto.durationDays ?? 1,
       grado: grade?.name ?? dto.gradeName ?? '',
       seccion: section?.name ?? dto.sectionName ?? '',
       asignatura: subject?.name ?? dto.subjectName ?? '',
@@ -404,7 +411,7 @@ export class PlanningService {
       {
         role: 'system',
         content:
-          'Eres especialista en planificación docente del sistema educativo dominicano. En el Nivel Secundario respeta la Adecuación Curricular MINERD 2023, puesta en vigencia por la Ordenanza 03-2023. Trata las competencias, contenidos e indicadores suministrados como contexto y no los reescribas. Responde exclusivamente con un objeto JSON con esta forma: {"title":"","strategies":"","activities":{"inicio":"","desarrollo":"","cierre":""},"resources":"","evaluationMethod":"","evidence":"","evaluationInstruments":"","durationMinutes":null}.',
+          'Eres especialista en planificación docente del sistema educativo dominicano. En el Nivel Secundario respeta la Adecuación Curricular MINERD 2023, puesta en vigencia por la Ordenanza 03-2023. Trata las competencias, contenidos e indicadores suministrados como contexto y no los reescribas. DAILY es una clase; UNIT es una unidad; SEQUENCE es una secuencia didáctica. Para UNIT o SEQUENCE organiza inicio, desarrollo y cierre por días. Si el tema contradice claramente la asignatura, explica brevemente el problema en alignmentWarning; si es compatible usa null. Responde exclusivamente con un objeto JSON con esta forma: {"title":"","strategies":"","activities":{"inicio":"","desarrollo":"","cierre":""},"resources":"","evaluationMethod":"","evidence":"","evaluationInstruments":"","durationMinutes":null,"alignmentWarning":null}.',
       },
       {
         role: 'user',
@@ -428,7 +435,7 @@ export class PlanningService {
             messages,
             thinking: { type: 'disabled' },
             response_format: { type: 'json_object' },
-            max_tokens: 2500,
+            max_tokens: (dto.planningType ?? 'DAILY') === 'DAILY' ? 1500 : 2500,
             temperature: 0.3,
             user_id: schoolId,
           }),
@@ -458,6 +465,7 @@ export class PlanningService {
     } catch {
       throw new BadRequestException('La IA devolvió una planificación con formato inválido.')
     }
+    draft.alignmentWarning ??= null
 
     this.validateGeneratedDraft(draft)
     return draft
@@ -466,10 +474,15 @@ export class PlanningService {
   /** Genera y guarda una planificación en una sola operación. */
   async generateAndCreateEntry(schoolId: string, dto: GenerateAndCreateEntryDto) {
     const draft = await this.generateEntryDraft(schoolId, dto)
+    if (draft.alignmentWarning) {
+      throw new BadRequestException(`Revisa la coherencia curricular: ${draft.alignmentWarning}`)
+    }
 
     return this.createEntry(schoolId, {
       ...dto,
       title: dto.title?.trim() || draft.title.trim(),
+      planningType: dto.planningType ?? 'DAILY',
+      durationDays: dto.durationDays ?? 1,
       strategies: draft.strategies,
       activities: draft.activities,
       resources: draft.resources,
@@ -497,6 +510,9 @@ export class PlanningService {
     if (draft.durationMinutes !== null && (!Number.isFinite(draft.durationMinutes) || draft.durationMinutes < 0)) {
       throw new BadRequestException('La IA devolvió una duración inválida.')
     }
+    if (draft.alignmentWarning !== null && typeof draft.alignmentWarning !== 'string') {
+      throw new BadRequestException('La IA devolvió una validación curricular inválida.')
+    }
   }
 
   /** Actualiza una entrada de planificación existente */
@@ -506,6 +522,8 @@ export class PlanningService {
 
     const data: any = {}
     if (dto.title) data.title = dto.title
+    if (dto.planningType !== undefined) data.planningType = dto.planningType
+    if (dto.durationDays !== undefined) data.durationDays = dto.durationDays
     if (dto.schoolNameSnapshot !== undefined) data.schoolNameSnapshot = dto.schoolNameSnapshot
     if (dto.teacherNameSnapshot !== undefined) data.teacherNameSnapshot = dto.teacherNameSnapshot
     if (dto.curricularArea !== undefined) data.curricularArea = dto.curricularArea

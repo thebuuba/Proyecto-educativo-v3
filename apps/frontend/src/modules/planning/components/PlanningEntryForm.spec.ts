@@ -6,6 +6,8 @@ import {
 } from '@/modules/planning/utils/quickPlanningValidation'
 
 const completePlanning = {
+  planningType: 'DAILY' as const,
+  durationDays: '1',
   courseKey: 'Secundaria::1.º::A',
   sectionSubjectId: 'subject',
   academicPeriodId: 'period',
@@ -27,6 +29,11 @@ describe('planificación rápida', () => {
     expect(quickPlanningValidationError(2, { ...completePlanning, desarrollo: '' })).toContain('actividad principal')
     expect(quickPlanningValidationError(3, { ...completePlanning, specificCompetence: '' })).toContain('competencias específicas')
     expect(quickPlanningValidationError(3, completePlanning)).toBe('')
+    expect(quickPlanningValidationError(1, {
+      ...completePlanning,
+      planningType: 'SEQUENCE',
+      durationDays: '31',
+    })).toContain('entre 1 y 30')
     expect(quickPlanningValidationError(1, {
       ...completePlanning,
       plannedDate: '2000-11-12',

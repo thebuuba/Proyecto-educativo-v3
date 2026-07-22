@@ -1,7 +1,9 @@
-import { IsArray, IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { IsArray, IsDateString, IsIn, IsInt, IsNumber, IsOptional, IsString, Max, MaxLength, Min } from 'class-validator'
 import { MAX_CURRICULUM_TEXT_LENGTH } from './planning-curriculum-fields.dto'
 
 export class GenerateAndCreateEntryDto {
+  @IsOptional() @IsIn(['DAILY', 'UNIT', 'SEQUENCE']) planningType?: string
+  @IsOptional() @IsInt() @Min(1) @Max(30) durationDays?: number
   @IsOptional() @IsString() @MaxLength(200) schoolNameSnapshot?: string
   @IsOptional() @IsString() @MaxLength(200) teacherNameSnapshot?: string
   @IsOptional() @IsString() @MaxLength(120) curricularArea?: string
