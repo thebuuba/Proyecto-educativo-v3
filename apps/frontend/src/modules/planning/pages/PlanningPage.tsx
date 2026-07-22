@@ -1,4 +1,14 @@
-import { AlertCircle, CalendarDays, FileText, Filter, Plus, Search, Settings2 } from 'lucide-react'
+import {
+  AlertCircle,
+  CalendarDays,
+  FileText,
+  Filter,
+  Grid2X2,
+  List,
+  Plus,
+  Search,
+  Settings2,
+} from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
@@ -14,6 +24,7 @@ import { usePlanning } from '@/modules/planning/hooks/usePlanning'
 import type { CreatePlanningEntryInput, PlanningEntryWithDetails } from '@/modules/planning/types'
 
 type ConfirmAction = 'delete' | 'archive'
+type ViewMode = 'grid' | 'list'
 
 function sameDate(entryDate: string | null | undefined, filterDate: string) {
   if (!filterDate) return true
@@ -62,6 +73,7 @@ export function PlanningPage() {
   const [subjectFilter, setSubjectFilter] = useState('')
   const [periodFilter, setPeriodFilter] = useState(activePeriodId ?? '')
   const [dateFilter, setDateFilter] = useState('')
+  const [viewMode, setViewMode] = useState<ViewMode>('grid')
   const openedCurriculumRequest = useRef<string | null>(null)
   const requestedCurriculumId = searchParams.get('malla')
   const requestedGrade = searchParams.get('grado')
@@ -413,18 +425,43 @@ export function PlanningPage() {
           Cargando planificaciones...
         </div>
       ) : filteredEntries.length > 0 ? (
-        <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
-          {filteredEntries.map((entry) => (
-            <PlanningEntryCard
-              key={entry.id}
-              entry={entry}
-              onPreview={setPreviewEntry}
-              onEdit={openEditForm}
-              onDuplicate={handleDuplicate}
-              onArchive={requestArchive}
-              onDelete={requestDelete}
-            />
-          ))}
+        <div className="space-y-3">
+          <div className="flex justify-end">
+            <div className="inline-flex rounded-xl border border-border bg-card p-1 shadow-sm" aria-label="Vista de planificaciones">
+              <button
+                type="button"
+                aria-label="Ver en cuadros"
+                aria-pressed={viewMode === 'grid'}
+                className={`flex size-9 items-center justify-center rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
+                onClick={() => setViewMode('grid')}
+              >
+                <Grid2X2 className="size-4" />
+              </button>
+              <button
+                type="button"
+                aria-label="Ver como lista"
+                aria-pressed={viewMode === 'list'}
+                className={`flex size-9 items-center justify-center rounded-lg transition-colors ${viewMode === 'list' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
+                onClick={() => setViewMode('list')}
+              >
+                <List className="size-4" />
+              </button>
+            </div>
+          </div>
+          <div className={viewMode === 'grid' ? 'grid gap-5 lg:grid-cols-2 xl:grid-cols-3' : 'grid gap-3'}>
+            {filteredEntries.map((entry) => (
+              <PlanningEntryCard
+                key={entry.id}
+                entry={entry}
+                viewMode={viewMode}
+                onPreview={setPreviewEntry}
+                onEdit={openEditForm}
+                onDuplicate={handleDuplicate}
+                onArchive={requestArchive}
+                onDelete={requestDelete}
+              />
+            ))}
+          </div>
         </div>
       ) : (
         <div className="flex min-h-[260px] flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card p-6 text-center">
