@@ -9,6 +9,7 @@ import type {
   DashboardData,
   DashboardSetupProgress,
   DashboardTask,
+  SmartSuggestion,
   WeeklyAttendance,
 } from '@/modules/dashboard/types/dashboard'
 import type { AppUser } from '@/modules/auth/types/auth'
@@ -33,6 +34,7 @@ export async function getDashboardData(appUser: AppUser | null): Promise<Dashboa
     tasks: DashboardTask[]
     setupProgress: DashboardSetupProgress
     weeklyAttendance: WeeklyAttendance
+    smartSuggestion: SmartSuggestion
   }>('/dashboard/workspace', {
     cacheTtlMs: API_CACHE_TTL.sessionList,
     cacheTags: [API_CACHE_TAGS.dashboard, API_CACHE_TAGS.schoolYears],
@@ -53,9 +55,22 @@ export async function getDashboardData(appUser: AppUser | null): Promise<Dashboa
     weeklyAttendance: workspace?.weeklyAttendance ?? getEmptyWeeklyAttendance(today),
     tasks: tasks ?? [],
     recentActivity: [],
-    smartSuggestion: null,
+    smartSuggestion: workspace?.smartSuggestion ?? getSmartSuggestion(setupProgress, workspace?.weeklyAttendance ?? null),
     setupProgress: setupProgress ?? emptySetupProgress,
   }
+}
+
+export function getSmartSuggestion(
+  progress: DashboardSetupProgress,
+  attendance: WeeklyAttendance | null,
+): SmartSuggestion {
+  if (progress.courseCount === 0) return { title: 'Crea tu primer curso.', description: 'Es el punto de partida para organizar el resto del trabajo.', actionLabel: 'Crear curso', path: '/cursos' }
+  if (progress.studentCount === 0 && progress.activeEnrollments === 0) return { title: 'Agrega tus estudiantes.', description: 'Así podrás registrar asistencia y calificaciones.', actionLabel: 'Agregar estudiantes', path: '/estudiantes' }
+  if (progress.scheduleEntryCount === 0) return { title: 'Configura el horario.', description: 'Inicio podrá mostrarte tus próximas clases.', actionLabel: 'Crear horario', path: '/horario' }
+  if (progress.planningCount === 0) return { title: 'Prepara tu primera planificación.', description: 'DeepSeek puede ayudarte a generar el borrador.', actionLabel: 'Planificar', path: '/planificaciones' }
+  if (!attendance?.activityCount) return { title: 'Aún no hay asistencia esta semana.', description: 'Registra la primera para dar seguimiento al grupo.', actionLabel: 'Registrar asistencia', path: '/asistencia' }
+  if (attendance.average !== null && attendance.average < 80) return { title: `La asistencia semanal está en ${attendance.average} %.`, description: 'Conviene revisar las ausencias antes de que termine la semana.', actionLabel: 'Revisar asistencia', path: '/asistencia' }
+  return null
 }
 
 /** Crea una nueva tarea en el dashboard. */
