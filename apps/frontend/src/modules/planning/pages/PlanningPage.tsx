@@ -35,6 +35,7 @@ export function PlanningPage() {
     schoolName,
     periods,
     activePeriodId,
+    setActivePeriodId,
     entries,
     sectionSubjects,
     competencies,
@@ -66,6 +67,10 @@ export function PlanningPage() {
   const requestedCurriculumId = searchParams.get('malla')
   const requestedGrade = searchParams.get('grado')
   const requestedArea = searchParams.get('area')
+
+  useEffect(() => {
+    if (activePeriodId && !periodFilter) setPeriodFilter(activePeriodId)
+  }, [activePeriodId, periodFilter])
 
   useEffect(() => {
     if (
@@ -137,6 +142,7 @@ export function PlanningPage() {
         await addEntry(input)
       }
       setPeriodFilter(input.academicPeriodId)
+      setActivePeriodId(input.academicPeriodId)
       closeForm()
     } catch (error) {
       setFormError(error instanceof Error ? error.message : 'No se pudo guardar.')
@@ -246,6 +252,7 @@ export function PlanningPage() {
             try {
               await generateEntry(input)
               setPeriodFilter(input.academicPeriodId ?? periodFilter)
+              setActivePeriodId(input.academicPeriodId ?? null)
               closeForm()
             } catch (caught) {
               setFormError(caught instanceof Error ? caught.message : 'No se pudo generar.')
@@ -378,7 +385,13 @@ export function PlanningPage() {
             <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
               Período
             </span>
-            <Select value={periodFilter} onChange={(event) => setPeriodFilter(event.target.value)}>
+            <Select
+              value={periodFilter}
+              onChange={(event) => {
+                setPeriodFilter(event.target.value)
+                setActivePeriodId(event.target.value || null)
+              }}
+            >
               <option value="">Todos los períodos</option>
               {periods.map((period) => (
                 <option key={period.id} value={period.id}>

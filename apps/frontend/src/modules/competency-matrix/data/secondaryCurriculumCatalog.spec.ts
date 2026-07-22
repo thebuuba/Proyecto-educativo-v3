@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 import {
   findCurriculumSubject,
   getCurriculumForGrade,
+  secondaryGradeFromCourse,
   secondaryGradeFromName,
   secondaryCurriculumSubjects,
   secondaryGrades,
@@ -38,8 +39,12 @@ describe('catálogo curricular de secundaria', () => {
 
   it('relaciona los nombres usados por Cursos con su malla oficial', () => {
     expect(secondaryGradeFromName('4.º de Secundaria')).toBe(4)
+    expect(secondaryGradeFromCourse('4.º', 'Primario')).toBeNull()
+    expect(secondaryGradeFromCourse('4.º', 'Nivel Secundario')).toBe(4)
     expect(findCurriculumSubject(4, 'Educación Física')?.id).toBe('educacion-fisica')
     expect(findCurriculumSubject(5, 'Ciencias de la Naturaleza: Química')?.id).toBe('ciencias-naturaleza')
+    expect(findCurriculumSubject(4, 'Manejo de la Información en Inglés')?.id).toBe('optativa-hlm-ingles')
+    expect(findCurriculumSubject(6, 'Ciudadanía y Democracia Participativa')?.id).toBe('optativa-hcs-sociales')
     expect(findCurriculumSubject(6, 'Salida Optativa', 'optativa-ciencias-tecnologia')?.id).toBe('optativa-ciencias-tecnologia')
   })
 })

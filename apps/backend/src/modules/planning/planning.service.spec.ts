@@ -66,16 +66,13 @@ describe('PlanningService.generateEntryDraft', () => {
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: true,
       json: vi.fn().mockResolvedValue({
-        choices: [
+        output: [
           {
-            message: {
-              content: JSON.stringify({
+            type: 'message',
+            content: [{
+              type: 'output_text',
+              text: JSON.stringify({
                 title: 'La entrevista',
-                specificCompetence: 'Produce entrevistas orales y escritas.',
-                achievementIndicator: 'Realiza preguntas pertinentes.',
-                contentConceptual: 'La entrevista y sus partes.',
-                contentProcedural: 'Redaccion de preguntas.',
-                contentAttitudinal: 'Respeto al escuchar.',
                 strategies: 'Situacion de aprendizaje y trabajo colaborativo.',
                 activities: {
                   inicio: 'Exploran entrevistas conocidas.',
@@ -88,7 +85,7 @@ describe('PlanningService.generateEntryDraft', () => {
                 evaluationInstruments: 'Lista de cotejo.',
                 durationMinutes: 90,
               }),
-            },
+            }],
           },
         ],
       }),
@@ -103,7 +100,7 @@ describe('PlanningService.generateEntryDraft', () => {
     })
 
     expect(fetch).toHaveBeenCalledWith(
-      'https://api.openai.com/v1/chat/completions',
+      'https://api.openai.com/v1/responses',
       expect.objectContaining({
         method: 'POST',
         headers: expect.objectContaining({ Authorization: 'Bearer test-key' }),
@@ -112,8 +109,10 @@ describe('PlanningService.generateEntryDraft', () => {
     const requestBody = JSON.parse(vi.mocked(fetch).mock.calls[0][1]?.body as string)
     expect(requestBody).toMatchObject({
       model: 'test-model',
+      reasoning: { effort: 'low' },
+      text: { format: { type: 'json_schema', strict: true } },
     })
-    expect(requestBody.messages[1].content).toContain('Ciudadanía digital')
+    expect(requestBody.input[1].content).toContain('Ciudadanía digital')
     expect(result.activities.desarrollo).toContain('entrevista')
     expect(result.durationMinutes).toBe(90)
   })
@@ -124,8 +123,14 @@ describe('PlanningService.generateEntryDraft', () => {
       gradeId: 'grade-1',
       sectionId: 'section-1',
       subjectId: 'subject-1',
+      schoolYearId: 'year-1',
     })
-    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      id: 'period-1',
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-06-01'),
+      endDate: new Date('2026-06-30'),
+    })
     mocks.prisma.grade.findFirst.mockResolvedValue({ name: '4to' })
     mocks.prisma.section.findFirst.mockResolvedValue({ name: 'A' })
     mocks.prisma.subject.findFirst.mockResolvedValue({ name: 'Lengua Española' })
@@ -134,16 +139,13 @@ describe('PlanningService.generateEntryDraft', () => {
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: true,
       json: vi.fn().mockResolvedValue({
-        choices: [
+        output: [
           {
-            message: {
-              content: JSON.stringify({
+            type: 'message',
+            content: [{
+              type: 'output_text',
+              text: JSON.stringify({
                 title: 'La entrevista',
-                specificCompetence: 'Produce entrevistas.',
-                achievementIndicator: 'Formula preguntas pertinentes.',
-                contentConceptual: 'La entrevista.',
-                contentProcedural: 'Elaboracion de guion.',
-                contentAttitudinal: 'Escucha respetuosa.',
                 strategies: 'Trabajo colaborativo.',
                 activities: {
                   inicio: 'Conversan sobre entrevistas.',
@@ -156,7 +158,7 @@ describe('PlanningService.generateEntryDraft', () => {
                 evaluationInstruments: 'Lista de cotejo.',
                 durationMinutes: 90,
               }),
-            },
+            }],
           },
         ],
       }),
@@ -168,6 +170,13 @@ describe('PlanningService.generateEntryDraft', () => {
       sectionSubjectId: 'ss-1',
       academicPeriodId: 'period-1',
       plannedDate: '2026-06-25',
+      title: 'Título definido por el docente',
+      durationMinutes: 45,
+      specificCompetence: 'Competencia oficial extensa.',
+      achievementIndicator: 'Indicador oficial.',
+      contentConceptual: 'Contenido conceptual oficial.',
+      contentProcedural: 'Contenido procedimental oficial.',
+      contentAttitudinal: 'Contenido actitudinal oficial.',
     })
 
     expect(mocks.prisma.planningEntry.create).toHaveBeenCalledWith({
@@ -175,26 +184,58 @@ describe('PlanningService.generateEntryDraft', () => {
         schoolId: 'school-1',
         sectionSubjectId: 'ss-1',
         academicPeriodId: 'period-1',
-        title: 'La entrevista',
+        title: 'Título definido por el docente',
+        durationMinutes: 45,
+        specificCompetence: 'Competencia oficial extensa.',
+        achievementIndicator: 'Indicador oficial.',
+        contentConceptual: 'Contenido conceptual oficial.',
         activities: expect.objectContaining({ desarrollo: 'Preparan el guion.' }),
       }),
     })
+  })
+
+  it('rejects a period from a different school year', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-2',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+
+    await expect(new PlanningService(config({}) as never).createEntry('school-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      title: 'Planificación',
+    })).rejects.toThrow('El curso y el período deben pertenecer al mismo año escolar.')
+  })
+
+  it('rejects a planned date outside its academic period', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+
+    await expect(new PlanningService(config({}) as never).createEntry('school-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      title: 'Planificación',
+      plannedDate: '2026-11-01',
+    })).rejects.toThrow('La fecha planificada debe estar dentro del período académico.')
   })
 
   it('rejects incomplete generated activities', async () => {
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: true,
       json: vi.fn().mockResolvedValue({
-        choices: [
+        output: [
           {
-            message: {
-              content: JSON.stringify({
+            type: 'message',
+            content: [{
+              type: 'output_text',
+              text: JSON.stringify({
                 title: 'La entrevista',
-                specificCompetence: 'Produce entrevistas.',
-                achievementIndicator: 'Formula preguntas pertinentes.',
-                contentConceptual: 'La entrevista.',
-                contentProcedural: 'Elaboracion de guion.',
-                contentAttitudinal: 'Escucha respetuosa.',
                 strategies: 'Trabajo colaborativo.',
                 activities: { inicio: '', desarrollo: 'Preparan el guion.', cierre: 'Comparten.' },
                 resources: 'Cuaderno.',
@@ -203,7 +244,7 @@ describe('PlanningService.generateEntryDraft', () => {
                 evaluationInstruments: 'Lista de cotejo.',
                 durationMinutes: 90,
               }),
-            },
+            }],
           },
         ],
       }),

@@ -197,6 +197,10 @@ export function secondaryGradeFromName(value: string): SecondaryGrade | null {
   return match ? Number(match[1]) as SecondaryGrade : null
 }
 
+export function secondaryGradeFromCourse(gradeName: string, educationLevel: string): SecondaryGrade | null {
+  return normalize(educationLevel).includes('secund') ? secondaryGradeFromName(gradeName) : null
+}
+
 function normalize(value: string) {
   return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 }
@@ -213,6 +217,11 @@ export function findCurriculumSubject(
   }
 
   const name = normalize(subjectName)
+  const exactCourse = name
+    ? items.find((item) => normalize(item.courseNames?.[grade] ?? '') === name)
+    : undefined
+  if (exactCourse) return exactCourse
+
   const id = name.includes('lengua espanola') ? 'lengua-espanola'
     : name.includes('ingles') ? 'ingles'
       : name.includes('frances') ? 'frances'

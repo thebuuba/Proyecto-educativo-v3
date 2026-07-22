@@ -17,13 +17,7 @@ import { GenerateEntryDraftDto } from './dto/generate-entry-draft.dto'
 import { GenerateAndCreateEntryDto } from './dto/generate-and-create-entry.dto'
 
 type GeneratedPlanningEntry = {
-  fundamentalCompetencies: string[]
   title: string
-  specificCompetence: string
-  achievementIndicator: string
-  contentConceptual: string
-  contentProcedural: string
-  contentAttitudinal: string
   strategies: string
   activities: {
     inicio: string
@@ -35,6 +29,12 @@ type GeneratedPlanningEntry = {
   evidence: string
   evaluationInstruments: string
   durationMinutes: number | null
+}
+
+const AI_CONTEXT_LIMIT = 1000
+
+function aiContextExcerpt(value?: string) {
+  return value?.trim().slice(0, AI_CONTEXT_LIMIT) ?? ''
 }
 
 @Injectable()
@@ -57,7 +57,7 @@ export class PlanningService {
       prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } }),
     ])
     const activePeriodId = periods[0]?.id ?? null
-    const entries = activePeriodId ? await this.findEntries(schoolId) : []
+    const entries = activePeriodId ? await this.findEntries(schoolId, undefined, activePeriodId) : []
     return {
       currentSchoolYear,
       periods,
@@ -153,10 +153,12 @@ export class PlanningService {
   async getSectionSubjects(schoolId: string, teacherId?: string) {
     const where: any = { schoolId, status: 'ACTIVE' }
     if (teacherId) where.teacherId = teacherId
-    const items = await prisma.sectionSubject.findMany({ where })
-    const subjects = await prisma.subject.findMany({ where: { schoolId } })
-    const sections = await prisma.section.findMany({ where: { schoolId } })
-    const grades = await prisma.grade.findMany({ where: { schoolId } })
+    const [items, subjects, sections, grades] = await Promise.all([
+      prisma.sectionSubject.findMany({ where }),
+      prisma.subject.findMany({ where: { schoolId } }),
+      prisma.section.findMany({ where: { schoolId } }),
+      prisma.grade.findMany({ where: { schoolId } }),
+    ])
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
     const gradeById = new Map(grades.map((item) => [item.id, item]))
@@ -186,23 +188,25 @@ export class PlanningService {
       where,
       orderBy: [{ plannedDate: 'desc' }, { updatedAt: 'desc' }],
     })
-    const sectionSubjects = await prisma.sectionSubject.findMany({ where: { schoolId } })
-    const subjects = await prisma.subject.findMany({ where: { schoolId } })
-    const sections = await prisma.section.findMany({ where: { schoolId } })
-    const grades = await prisma.grade.findMany({ where: { schoolId } })
-    const periods = await prisma.academicPeriod.findMany({ where: { schoolId } })
-    const schoolYears = await prisma.schoolYear.findMany({ where: { schoolId } })
-    const competencies = await prisma.drCompetency.findMany({})
-    const school = await prisma.school.findUnique({ where: { id: schoolId } })
-    const teachers = await prisma.teacher.findMany({ where: { schoolId } })
-    const linkedActivities = await prisma.evaluationActivity.findMany({
-      where: {
-        schoolId,
-        planningEntryId: { in: entries.map((entry) => entry.id) },
-        status: 'ACTIVE',
-      },
-      select: { id: true, planningEntryId: true },
-    })
+    const [sectionSubjects, subjects, sections, grades, periods, schoolYears, competencies, school, teachers, linkedActivities] = await Promise.all([
+      prisma.sectionSubject.findMany({ where: { schoolId } }),
+      prisma.subject.findMany({ where: { schoolId } }),
+      prisma.section.findMany({ where: { schoolId } }),
+      prisma.grade.findMany({ where: { schoolId } }),
+      prisma.academicPeriod.findMany({ where: { schoolId } }),
+      prisma.schoolYear.findMany({ where: { schoolId } }),
+      prisma.drCompetency.findMany({}),
+      prisma.school.findUnique({ where: { id: schoolId } }),
+      prisma.teacher.findMany({ where: { schoolId } }),
+      prisma.evaluationActivity.findMany({
+        where: {
+          schoolId,
+          planningEntryId: { in: entries.map((entry) => entry.id) },
+          status: 'ACTIVE',
+        },
+        select: { id: true, planningEntryId: true },
+      }),
+    ])
     const sectionSubjectById = new Map(sectionSubjects.map((item) => [item.id, item]))
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
@@ -310,6 +314,15 @@ export class PlanningService {
     const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
+    if (sectionSubject.schoolYearId !== academicPeriod.schoolYearId) {
+      throw new BadRequestException('El curso y el período deben pertenecer al mismo año escolar.')
+    }
+    if (dto.plannedDate) {
+      const plannedDate = new Date(dto.plannedDate)
+      if (plannedDate < academicPeriod.startDate || plannedDate > academicPeriod.endDate) {
+        throw new BadRequestException('La fecha planificada debe estar dentro del período académico.')
+      }
+    }
 
     const entry = await prisma.planningEntry.create({
       data: {
@@ -361,15 +374,13 @@ export class PlanningService {
       throw new NotFoundException('Section subject not found')
     }
 
-    const grade = sectionSubject
-      ? await prisma.grade.findFirst({ where: { id: sectionSubject.gradeId, schoolId } })
-      : null
-    const section = sectionSubject
-      ? await prisma.section.findFirst({ where: { id: sectionSubject.sectionId, schoolId } })
-      : null
-    const subject = sectionSubject
-      ? await prisma.subject.findFirst({ where: { id: sectionSubject.subjectId, schoolId } })
-      : null
+    const [grade, section, subject] = sectionSubject
+      ? await Promise.all([
+          prisma.grade.findFirst({ where: { id: sectionSubject.gradeId, schoolId } }),
+          prisma.section.findFirst({ where: { id: sectionSubject.sectionId, schoolId } }),
+          prisma.subject.findFirst({ where: { id: sectionSubject.subjectId, schoolId } }),
+        ])
+      : [null, null, null]
 
     const prompt = {
       grado: grade?.name ?? dto.gradeName ?? '',
@@ -382,83 +393,88 @@ export class PlanningService {
       contextoPoliticaCurricular: dto.curricularPolicyContext ?? '',
       duracionMinutos: dto.durationMinutes ?? null,
       competenciaFundamental: dto.fundamentalCompetenceName ?? '',
-      competenciaEspecifica: dto.specificCompetence ?? '',
-      indicadorLogro: dto.achievementIndicator ?? '',
+      competenciaEspecifica: aiContextExcerpt(dto.specificCompetence),
+      indicadorLogro: aiContextExcerpt(dto.achievementIndicator),
+      contenidosConceptuales: aiContextExcerpt(dto.contentConceptual),
+      contenidosProcedimentales: aiContextExcerpt(dto.contentProcedural),
+      contenidosActitudinales: aiContextExcerpt(dto.contentAttitudinal),
     }
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: this.config.get<string>('OPENAI_MODEL') ?? 'gpt-5.5',
-        messages: [
-          {
-            role: 'system',
-            content:
-              'Eres especialista en planificación docente del sistema educativo dominicano. Usa como referencia la Adecuación Curricular del Nivel Secundario MINERD 2023, puesta en vigencia por la Ordenanza 03-2023, y la malla exacta del área, ciclo y grado indicados. Integra el contexto de política curricular indicado de forma transversal y pertinente, sin convertirlo en una asignatura adicional. Selecciona únicamente competencias, contenidos e indicadores pertinentes al tema; no inventes códigos ni elementos oficiales. Escribe en español dominicano claro.',
-          },
-          {
-            role: 'user',
-            content: `Crea una planificacion escolar completa usando estos datos: ${JSON.stringify(prompt)}. Debe incluir situacion de aprendizaje integrada dentro de estrategias o actividades, contenidos conceptuales/procedimentales/actitudinales, secuencia inicio/desarrollo/cierre, evaluacion formativa, evidencias e instrumentos.`,
-          },
-        ],
-        response_format: {
-          type: 'json_schema',
-          json_schema: {
-            name: 'generated_planning_entry',
-            strict: true,
-            schema: {
-              type: 'object',
-              additionalProperties: false,
-              required: [
-                'title',
-                'fundamentalCompetencies',
-                'specificCompetence',
-                'achievementIndicator',
-                'contentConceptual',
-                'contentProcedural',
-                'contentAttitudinal',
-                'strategies',
-                'activities',
-                'resources',
-                'evaluationMethod',
-                'evidence',
-                'evaluationInstruments',
-                'durationMinutes',
-              ],
-              properties: {
-                title: { type: 'string' },
-                fundamentalCompetencies: { type: 'array', items: { type: 'string' } },
-                specificCompetence: { type: 'string' },
-                achievementIndicator: { type: 'string' },
-                contentConceptual: { type: 'string' },
-                contentProcedural: { type: 'string' },
-                contentAttitudinal: { type: 'string' },
-                strategies: { type: 'string' },
-                activities: {
-                  type: 'object',
-                  additionalProperties: false,
-                  required: ['inicio', 'desarrollo', 'cierre'],
-                  properties: {
-                    inicio: { type: 'string' },
-                    desarrollo: { type: 'string' },
-                    cierre: { type: 'string' },
+    let response: Response
+    try {
+      response = await fetch('https://api.openai.com/v1/responses', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        signal: AbortSignal.timeout(45_000),
+        body: JSON.stringify({
+          model: this.config.get<string>('OPENAI_MODEL') ?? 'gpt-5.6-terra',
+          reasoning: { effort: 'low' },
+          input: [
+            {
+              role: 'developer',
+              content:
+                'Eres especialista en planificación docente del sistema educativo dominicano. En el Nivel Secundario respeta la Adecuación Curricular MINERD 2023, puesta en vigencia por la Ordenanza 03-2023. Trata las competencias, contenidos e indicadores suministrados como contexto de la planificación y no los reescribas. Genera únicamente la experiencia didáctica solicitada, en español dominicano claro.',
+            },
+            {
+              role: 'user',
+              content: `Propón la experiencia didáctica para esta planificación: ${JSON.stringify(prompt)}. Incluye situación de aprendizaje integrada, secuencia inicio/desarrollo/cierre, evaluación formativa, evidencias e instrumentos. No devuelvas competencias, contenidos ni indicadores curriculares.`,
+            },
+          ],
+          text: {
+            verbosity: 'low',
+            format: {
+              type: 'json_schema',
+              name: 'generated_planning_entry',
+              strict: true,
+              schema: {
+                type: 'object',
+                additionalProperties: false,
+                required: [
+                  'title',
+                  'strategies',
+                  'activities',
+                  'resources',
+                  'evaluationMethod',
+                  'evidence',
+                  'evaluationInstruments',
+                  'durationMinutes',
+                ],
+                properties: {
+                  title: { type: 'string' },
+                  strategies: { type: 'string' },
+                  activities: {
+                    type: 'object',
+                    additionalProperties: false,
+                    required: ['inicio', 'desarrollo', 'cierre'],
+                    properties: {
+                      inicio: { type: 'string' },
+                      desarrollo: { type: 'string' },
+                      cierre: { type: 'string' },
+                    },
                   },
+                  resources: { type: 'string' },
+                  evaluationMethod: { type: 'string' },
+                  evidence: { type: 'string' },
+                  evaluationInstruments: { type: 'string' },
+                  durationMinutes: { type: ['number', 'null'] },
                 },
-                resources: { type: 'string' },
-                evaluationMethod: { type: 'string' },
-                evidence: { type: 'string' },
-                evaluationInstruments: { type: 'string' },
-                durationMinutes: { type: ['number', 'null'] },
               },
             },
           },
-        },
-      }),
-    })
+          max_output_tokens: 2500,
+          store: false,
+          safety_identifier: schoolId,
+        }),
+      })
+    } catch (error) {
+      if (error instanceof Error && (error.name === 'AbortError' || error.name === 'TimeoutError')) {
+        throw new ServiceUnavailableException('La generación tardó demasiado. Inténtalo nuevamente.')
+      }
+      throw new ServiceUnavailableException('No se pudo conectar con el servicio de IA.')
+    }
 
     const data = await response.json().catch(() => null)
     if (!response.ok) {
@@ -466,7 +482,11 @@ export class PlanningService {
       throw new ServiceUnavailableException('Error al generar borrador con la IA')
     }
 
-    const content = data?.choices?.[0]?.message?.content
+    const content = data?.output
+      ?.flatMap((item: { type?: string; content?: Array<{ type?: string; text?: string }> }) =>
+        item.type === 'message' ? item.content ?? [] : [],
+      )
+      .find((item: { type?: string }) => item.type === 'output_text')?.text
     if (typeof content !== 'string') {
       throw new BadRequestException('La IA no devolvió una planificación válida.')
     }
@@ -488,8 +508,14 @@ export class PlanningService {
 
     return this.createEntry(schoolId, {
       ...dto,
-      ...draft,
-      title: draft.title.trim(),
+      title: dto.title?.trim() || draft.title.trim(),
+      strategies: draft.strategies,
+      activities: draft.activities,
+      resources: draft.resources,
+      evaluationMethod: draft.evaluationMethod,
+      evidence: draft.evidence,
+      evaluationInstruments: draft.evaluationInstruments,
+      durationMinutes: dto.durationMinutes ?? draft.durationMinutes,
       fundamentalCompetenceId: dto.fundamentalCompetenceId ?? null,
       plannedDate: dto.plannedDate ?? null,
     } as unknown as CreatePlanningEntryDto)

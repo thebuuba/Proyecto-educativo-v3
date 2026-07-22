@@ -1,4 +1,4 @@
-import { IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { IsArray, IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
 import { MAX_CURRICULUM_TEXT_LENGTH } from './planning-curriculum-fields.dto'
 
 export class GenerateAndCreateEntryDto {
@@ -16,9 +16,8 @@ export class GenerateAndCreateEntryDto {
   @IsString()
   academicPeriodId!: string
 
-  @IsOptional()
   @IsString()
-  sectionSubjectId?: string
+  sectionSubjectId!: string
 
   @IsOptional()
   @IsString()
@@ -44,6 +43,20 @@ export class GenerateAndCreateEntryDto {
   @IsString()
   @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   achievementIndicator?: string
+
+  @IsOptional() @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) contentConceptual?: string
+  @IsOptional() @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) contentProcedural?: string
+  @IsOptional() @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) contentAttitudinal?: string
+
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  fundamentalCompetencies?: string[]
+
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  linkedActivityIds?: string[]
 
   @IsOptional()
   @IsString()

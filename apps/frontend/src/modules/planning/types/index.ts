@@ -91,11 +91,6 @@ export type GeneratedPlanningEntry = Required<
   Pick<
     CreatePlanningEntryInput,
     | 'title'
-    | 'specificCompetence'
-    | 'achievementIndicator'
-    | 'contentConceptual'
-    | 'contentProcedural'
-    | 'contentAttitudinal'
     | 'strategies'
     | 'activities'
     | 'resources'
@@ -105,7 +100,6 @@ export type GeneratedPlanningEntry = Required<
   >
 > & {
   durationMinutes: number | null
-  fundamentalCompetencies?: string[]
 }
 
 /** Datos para actualizar una planificación (todos los campos opcionales) */

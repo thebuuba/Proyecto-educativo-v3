@@ -42,21 +42,56 @@ const firstCycleBaseSubjects = [
 
 const secondCycleBaseSubjects = [
   { code: 'LEN', name: 'Lengua Española' },
-  { code: 'OPT-HLM', name: 'Salida Optativa: Humanidades y Lenguas Modernas' },
-  { code: 'OPT-HCS', name: 'Salida Optativa: Humanidades y Ciencias Sociales' },
   { code: 'ING', name: 'Lenguas Extranjeras: Inglés' },
-  { code: 'OPT-HLM', name: 'Salida Optativa: Humanidades y Lenguas Modernas' },
   { code: 'FRA', name: 'Lenguas Extranjeras: Francés' },
   { code: 'MAT', name: 'Matemática' },
-  { code: 'OPT-MT', name: 'Salida Optativa: Matemática y Tecnología' },
   { code: 'SOC', name: 'Ciencias Sociales' },
-  { code: 'OPT-HCS', name: 'Salida Optativa: Humanidades y Ciencias Sociales' },
   { code: 'NAT-BIO', name: 'Ciencias de la Naturaleza: Biología' },
-  { code: 'OPT-CT', name: 'Salida Optativa: Ciencias y Tecnología' },
   { code: 'ART', name: 'Educación Artística' },
   { code: 'EFI', name: 'Educación Física' },
   { code: 'FHR', name: 'Formación Integral Humana y Religiosa' },
 ]
+
+const secondCycleOptatives = {
+  4: [
+    { code: 'OPT-HLM-LEN-4', name: 'Apreciación y Producción Literarias' },
+    { code: 'OPT-HLM-ING-4', name: 'Manejo de la Información en Inglés' },
+    { code: 'OPT-HCS-LEN-4', name: 'Apreciación y Producción Literaria' },
+    { code: 'OPT-HCS-SOC-4', name: 'Filosofía Social y Pensamiento Dominicano' },
+    { code: 'OPT-MT-4', name: 'Matemática Financiera y Tecnología' },
+    { code: 'OPT-CT-4', name: 'Biología y Computación' },
+  ],
+  5: [
+    { code: 'OPT-HLM-LEN-5', name: 'Apreciación y Producción Literarias' },
+    { code: 'OPT-HLM-ING-5', name: 'Apreciación de la Literatura Anglófona' },
+    { code: 'OPT-HCS-LEN-5', name: 'Apreciación y Producción Literaria' },
+    { code: 'OPT-HCS-SOC-5', name: 'Geografía Humana y Demografía' },
+    { code: 'OPT-MT-5', name: 'Estadística, Probabilidad y Tecnología' },
+    { code: 'OPT-CT-5', name: 'Química y Computación' },
+  ],
+  6: [
+    { code: 'OPT-HLM-LEN-6', name: 'Análisis y Producción de Textos Periodísticos y Publicitarios' },
+    { code: 'OPT-HLM-ING-6', name: 'Análisis Crítico y Evaluación de Textos en Inglés' },
+    { code: 'OPT-HCS-LEN-6', name: 'Análisis y Producción de Textos Científicos y Profesionales' },
+    { code: 'OPT-HCS-SOC-6', name: 'Ciudadanía y Democracia Participativa' },
+    { code: 'OPT-MT-6', name: 'Trigonometría, Cálculo Diferencial y Tecnología' },
+    { code: 'OPT-CT-6', name: 'Física y Computación' },
+  ],
+} as const
+
+function secondCycleSubjectsForGrade(grade: 4 | 5 | 6, scienceCode: string, scienceName: string) {
+  const base = withNaturalScience(secondCycleBaseSubjects, scienceCode, scienceName)
+  const [hlmLanguage, hlmEnglish, hcsLanguage, hcsSocial, mathTechnology, scienceTechnology] = secondCycleOptatives[grade]
+  return [
+    base[0], hlmLanguage, hcsLanguage,
+    base[1], hlmEnglish,
+    base[2],
+    base[3], mathTechnology,
+    base[4], hcsSocial,
+    base[5], scienceTechnology,
+    ...base.slice(6),
+  ]
+}
 
 const primaryFirstCycleSubjects = [
   { code: 'PRI-LEN', name: 'Lengua Espa\u00f1ola' },
@@ -196,7 +231,10 @@ export const defaultAcademicStructure: LevelOption[] = [
             code: 'secondary-4',
             label: '4.º',
             sequence: 4,
-            subjects: subjectsForGrade('secondary-4', secondCycleBaseSubjects),
+            subjects: subjectsForGrade(
+              'secondary-4',
+              secondCycleSubjectsForGrade(4, 'NAT-BIO', 'Ciencias de la Naturaleza: Biología'),
+            ),
           },
           {
             code: 'secondary-5',
@@ -204,7 +242,7 @@ export const defaultAcademicStructure: LevelOption[] = [
             sequence: 5,
             subjects: subjectsForGrade(
               'secondary-5',
-              withNaturalScience(secondCycleBaseSubjects, 'NAT-QUI', 'Ciencias de la Naturaleza: Química'),
+              secondCycleSubjectsForGrade(5, 'NAT-QUI', 'Ciencias de la Naturaleza: Química'),
             ),
           },
           {
@@ -213,7 +251,7 @@ export const defaultAcademicStructure: LevelOption[] = [
             sequence: 6,
             subjects: subjectsForGrade(
               'secondary-6',
-              withNaturalScience(secondCycleBaseSubjects, 'NAT-FIS', 'Ciencias de la Naturaleza: Física'),
+              secondCycleSubjectsForGrade(6, 'NAT-FIS', 'Ciencias de la Naturaleza: Física'),
             ),
           },
         ],

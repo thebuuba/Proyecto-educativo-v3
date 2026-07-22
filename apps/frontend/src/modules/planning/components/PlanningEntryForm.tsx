@@ -22,6 +22,7 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { getEvaluationActivities } from '@/modules/grading/services/gradingService'
 import {
   findCurriculumSubject,
+  secondaryGradeFromCourse,
   secondaryGradeFromName,
 } from '@/modules/competency-matrix/data/secondaryCurriculumCatalog'
 import {
@@ -163,7 +164,10 @@ export function PlanningEntryForm({
   const selectedPeriod = periods.find((period) => period.id === academicPeriodId)
   const referencedGrade = curriculumReference ? secondaryGradeFromName(curriculumReference.grade) : null
   const curriculumGrade = selectedSectionSubject
-    ? secondaryGradeFromName(selectedSectionSubject.gradeName)
+    ? secondaryGradeFromCourse(
+        selectedSectionSubject.gradeName,
+        educationLevelFor(selectedSectionSubject.gradeName, selectedSectionSubject.level),
+      )
     : referencedGrade
   const preferredCurriculumId = curriculumGrade === referencedGrade ? curriculumReference?.subjectId : undefined
   const curriculumSubject = curriculumGrade && selectedSectionSubject
@@ -299,12 +303,6 @@ export function PlanningEntryForm({
       setValidationError(message)
       return
     }
-    if (step === 1 && !initial?.entry.id && !specificCompetence && !achievementIndicator) {
-      setGenerating(true)
-      try { applyDraft(await requestDraft()) }
-      catch (caught) { setValidationError(caught instanceof Error ? caught.message : 'No se pudieron cargar las sugerencias curriculares. Puedes completar los campos manualmente.') }
-      finally { setGenerating(false) }
-    }
     setStep((current) => Math.min(3, current + 1))
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -320,30 +318,6 @@ export function PlanningEntryForm({
       return
     }
     await onSubmit(buildInput())
-  }
-
-  function applyDraft(draft: GeneratedPlanningEntry) {
-    if (draft.fundamentalCompetencies?.length) {
-      const suggested = competencies.filter((option) => draft.fundamentalCompetencies?.some((name) => name.toLowerCase().includes(option.name.toLowerCase()) || option.name.toLowerCase().includes(name.toLowerCase())))
-      const names = suggested.length ? suggested.map((option) => option.name) : draft.fundamentalCompetencies
-      setFundamentalCompetencies(names)
-      setFundamentalCompetenceId(suggested[0]?.id ?? '')
-    }
-    if (!title.trim()) setTitle(draft.title)
-    setSpecificCompetence(draft.specificCompetence)
-    setAchievementIndicator(draft.achievementIndicator)
-    setContentConceptual(draft.contentConceptual)
-    setContentProcedural(draft.contentProcedural)
-    setContentAttitudinal(draft.contentAttitudinal)
-    setStrategies(draft.strategies)
-    setInicio(draft.activities.inicio)
-    setDesarrollo(draft.activities.desarrollo)
-    setCierre(draft.activities.cierre)
-    setResources(draft.resources)
-    setEvaluationMethod(draft.evaluationMethod)
-    setEvidence(draft.evidence)
-    setEvaluationInstruments(draft.evaluationInstruments)
-    setDuration(draft.durationMinutes ? String(draft.durationMinutes) : duration)
   }
 
   function applyActivitySuggestion(draft: GeneratedPlanningEntry) {
@@ -372,6 +346,9 @@ export function PlanningEntryForm({
       durationMinutes: duration ? Number(duration) : null,
       specificCompetence: curriculumPromptExcerpt(specificCompetence),
       achievementIndicator: curriculumPromptExcerpt(achievementIndicator),
+      contentConceptual: curriculumPromptExcerpt(contentConceptual),
+      contentProcedural: curriculumPromptExcerpt(contentProcedural),
+      contentAttitudinal: curriculumPromptExcerpt(contentAttitudinal),
       subjectName: selectedSectionSubject?.subjectName,
       sectionName: selectedSectionSubject?.sectionName,
       gradeName: selectedSectionSubject?.gradeName,
