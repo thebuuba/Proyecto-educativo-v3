@@ -12,7 +12,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react'
 import type { FormEvent, ReactNode } from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -171,6 +171,29 @@ export function PlanningEntryForm({
     ? getSecondaryCurriculumContent(curriculumGrade, curriculumSubject.id)
     : null
 
+  const applyOfficialCurriculum = useCallback((source = curriculumContent) => {
+    if (!source) return
+
+    const officialNames = source.fundamentalCompetencies.map((name) => name.toLowerCase())
+    const matchingCompetencies = competencies.filter((option) => {
+      const optionName = option.name.toLowerCase()
+      return officialNames.some((name) => name.includes(optionName) || optionName.includes(name))
+    })
+
+    setFundamentalCompetencies(
+      matchingCompetencies.length
+        ? matchingCompetencies.map((option) => option.name)
+        : source.fundamentalCompetencies,
+    )
+    setFundamentalCompetenceId(matchingCompetencies[0]?.id ?? '')
+    setSpecificCompetence(source.specificCompetence)
+    setContentConceptual(source.contentConceptual)
+    setContentProcedural(source.contentProcedural)
+    setContentAttitudinal(source.contentAttitudinal)
+    setAchievementIndicator(source.achievementIndicator)
+    lastAppliedCurriculum.current = source
+  }, [competencies, curriculumContent])
+
   useEffect(() => {
     if (!curriculumContent || initial?.entry.id) return
 
@@ -186,7 +209,16 @@ export function PlanningEntryForm({
       || Boolean(previous && curriculumFieldsMatch(fields, previous))
 
     if (canReplace) applyOfficialCurriculum(curriculumContent)
-  }, [curriculumContent, initial?.entry.id])
+  }, [
+    achievementIndicator,
+    applyOfficialCurriculum,
+    contentAttitudinal,
+    contentConceptual,
+    contentProcedural,
+    curriculumContent,
+    initial?.entry.id,
+    specificCompetence,
+  ])
 
   useEffect(() => {
     let ignore = false
@@ -228,29 +260,6 @@ export function PlanningEntryForm({
       plannedDate: plannedDate || null,
       linkedActivityIds,
     }
-  }
-
-  function applyOfficialCurriculum(source = curriculumContent) {
-    if (!source) return
-
-    const officialNames = source.fundamentalCompetencies.map((name) => name.toLowerCase())
-    const matchingCompetencies = competencies.filter((option) => {
-      const optionName = option.name.toLowerCase()
-      return officialNames.some((name) => name.includes(optionName) || optionName.includes(name))
-    })
-
-    setFundamentalCompetencies(
-      matchingCompetencies.length
-        ? matchingCompetencies.map((option) => option.name)
-        : source.fundamentalCompetencies,
-    )
-    setFundamentalCompetenceId(matchingCompetencies[0]?.id ?? '')
-    setSpecificCompetence(source.specificCompetence)
-    setContentConceptual(source.contentConceptual)
-    setContentProcedural(source.contentProcedural)
-    setContentAttitudinal(source.contentAttitudinal)
-    setAchievementIndicator(source.achievementIndicator)
-    lastAppliedCurriculum.current = source
   }
 
   function validateStep(targetStep: number) {
@@ -370,42 +379,47 @@ export function PlanningEntryForm({
     } finally { setGenerating(false) }
   }
 
+  const ActiveStepIcon = steps[step - 1]?.icon ?? School
+
   return (
-    <form className="space-y-5" onSubmit={handleSubmit}>
+    <form className="mx-auto w-full max-w-[1440px] space-y-5 pb-4" onSubmit={handleSubmit}>
       <header className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-        <div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="min-w-0">
+          <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
             <button type="button" className="font-medium text-primary hover:underline" onClick={onClose}>Planificaciones</button>
             <span>›</span><span>{initial?.entry.id ? 'Editar planificación' : 'Nueva planificación'}</span>
           </div>
-          <h1 className="mt-3 text-3xl font-black text-primary">{initial?.entry.id ? 'Editar planificación' : 'Crear planificación'}</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Completa las tres partes de la planificación docente.</p>
+          <h1 className="mt-3 text-2xl font-extrabold tracking-[-0.025em] text-primary sm:text-[28px]">{initial?.entry.id ? 'Editar planificación' : 'Crear planificación'}</h1>
+          <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">Completa las tres partes de la planificación docente.</p>
         </div>
-        <Button type="button" variant="outline" onClick={onClose}><ArrowLeft className="size-4" />Volver</Button>
+        <Button type="button" variant="outline" size="sm" className="w-fit" onClick={onClose}><ArrowLeft className="size-4" />Volver</Button>
       </header>
 
-      <nav className="grid overflow-hidden rounded-xl border border-border bg-card shadow-sm md:grid-cols-3" aria-label="Pasos de la planificación">
+      <nav className="grid gap-1 rounded-2xl border border-border bg-card p-1.5 shadow-sm md:grid-cols-3" aria-label="Pasos de la planificación">
         {steps.map((item) => {
           const Icon = item.icon
           const active = step === item.number
           const complete = step > item.number
           return (
-            <button key={item.number} type="button" className={cn('flex items-center gap-3 border-b border-border px-4 py-4 text-left transition last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0', active && 'bg-primary text-primary-foreground', !active && 'hover:bg-muted/50')} onClick={() => setStep(item.number)}>
-              <span className={cn('grid size-10 shrink-0 place-items-center rounded-full border font-black', active ? 'border-primary-foreground/30 bg-primary-foreground/15' : complete ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-border bg-muted text-muted-foreground')}>
-                {complete ? <Check className="size-5" /> : <Icon className="size-5" />}
+            <button key={item.number} type="button" className={cn('flex items-center gap-3 rounded-xl px-3 py-3 text-left transition-[color,background-color,box-shadow,transform] duration-150 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20 sm:px-4', active ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20' : 'hover:bg-muted/70')} onClick={() => setStep(item.number)} aria-current={active ? 'step' : undefined}>
+              <span className={cn('grid size-10 shrink-0 place-items-center rounded-xl font-black', active ? 'bg-primary-foreground/15 text-primary-foreground' : complete ? 'bg-primary-light text-primary' : 'bg-muted text-muted-foreground')}>
+                {complete ? <Check className="size-4" /> : <Icon className="size-4" />}
               </span>
-              <span><span className="block text-xs font-bold opacity-75">Parte {item.number}</span><span className="block font-black">{item.title}</span><span className="block text-xs opacity-75">{item.description}</span></span>
+              <span className="min-w-0"><span className="block text-[10px] font-bold uppercase tracking-[0.14em] opacity-70">Parte {item.number}</span><span className="block truncate text-sm font-extrabold sm:text-base">{item.title}</span><span className="hidden truncate text-xs opacity-70 sm:block">{item.description}</span></span>
             </button>
           )
         })}
       </nav>
 
-      {validationError || error ? <div className="flex gap-3 rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive"><AlertCircle className="mt-0.5 size-4 shrink-0" /><p>{validationError || error}</p></div> : null}
+      {validationError || error ? <div className="flex gap-3 rounded-2xl border border-destructive/20 bg-destructive/10 p-4 text-sm font-medium text-destructive"><AlertCircle className="mt-0.5 size-4 shrink-0" /><p>{validationError || error}</p></div> : null}
 
-      <section className="rounded-xl border border-border bg-card shadow-sm">
-        <div className="border-b border-border px-5 py-4"><p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">Parte {step} de 3</p><h2 className="mt-1 text-xl font-black text-foreground">{steps[step - 1]?.title}</h2></div>
+      <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+        <div className="flex items-center gap-4 border-b border-border bg-primary/[0.035] px-5 py-5 sm:px-7">
+          <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-md shadow-primary/20"><ActiveStepIcon className="size-5" /></span>
+          <div><p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary/70">Parte {step} de 3</p><h2 className="mt-0.5 text-xl font-extrabold tracking-tight text-foreground">{steps[step - 1]?.title}</h2></div>
+        </div>
 
-        {step === 1 ? <div className="grid gap-5 p-5 md:grid-cols-2">
+        {step === 1 ? <div className="grid gap-x-6 gap-y-5 p-5 sm:p-7 md:grid-cols-2">
           <Field label="Centro educativo" required><Input value={schoolNameValue} onChange={(event) => setSchoolNameValue(event.target.value)} placeholder="Nombre del centro educativo" /></Field>
           <Field label="Nombre del docente" required><Input value={teacherName} onChange={(event) => setTeacherName(event.target.value)} placeholder="Nombre completo del docente" /></Field>
           <Field label="Curso" required><Select value={courseKey} onChange={(event) => { setCourseKey(event.target.value); setSectionSubjectId('') }}><option value="">Selecciona...</option><optgroup label="Primaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field>
@@ -418,9 +432,9 @@ export function PlanningEntryForm({
           <div className="md:col-span-2"><Field label="Eje transversal" required><Select value={transversalAxis} onChange={(event) => setTransversalAxis(event.target.value)}><option value="">Selecciona...</option>{transversalAxes.map((axis) => <option key={axis} value={axis}>{axis}</option>)}</Select></Field></div>
         </div> : null}
 
-        {step === 2 ? <div className="grid gap-5 p-5">
+        {step === 2 ? <div className="grid gap-5 p-5 sm:p-7">
           {curriculumGrade && curriculumSubject ? (
-            <div className="flex flex-col gap-3 rounded-xl border border-primary/15 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-3 rounded-2xl border border-primary/15 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
               <div>
                 <p className="flex items-center gap-2 text-sm font-bold text-foreground"><FileCheck2 className="size-4 text-primary" />Malla oficial vinculada</p>
                 <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
@@ -442,7 +456,7 @@ export function PlanningEntryForm({
               </div>
             </div>
           ) : null}
-          <Field label="Competencias fundamentales" required><div className="grid gap-2 rounded-xl border border-border p-3 md:grid-cols-2">{competencies.map((item) => { const checked = fundamentalCompetencies.includes(item.name); return <label key={item.id} className={cn('flex cursor-pointer items-start gap-2 rounded-lg border p-3 text-sm transition', checked ? 'border-primary/40 bg-primary/5' : 'border-border')}><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={checked} onChange={(event) => { setFundamentalCompetencies((current) => event.target.checked ? [...current, item.name] : current.filter((name) => name !== item.name)); if (event.target.checked && !fundamentalCompetenceId) setFundamentalCompetenceId(item.id); if (!event.target.checked && fundamentalCompetenceId === item.id) setFundamentalCompetenceId('') }} /><span>{item.name}</span></label> })}</div></Field>
+          <Field label="Competencias fundamentales" required><div className="grid gap-2 rounded-2xl bg-muted/55 p-2 md:grid-cols-2">{competencies.map((item) => { const checked = fundamentalCompetencies.includes(item.name); return <label key={item.id} className={cn('flex cursor-pointer items-start gap-2 rounded-xl border bg-card p-3 text-sm transition-[border-color,background-color,box-shadow] duration-150', checked ? 'border-primary/35 bg-primary/5 shadow-sm' : 'border-border hover:border-primary/20')}><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={checked} onChange={(event) => { setFundamentalCompetencies((current) => event.target.checked ? [...current, item.name] : current.filter((name) => name !== item.name)); if (event.target.checked && !fundamentalCompetenceId) setFundamentalCompetenceId(item.id); if (!event.target.checked && fundamentalCompetenceId === item.id) setFundamentalCompetenceId('') }} /><span>{item.name}</span></label> })}</div></Field>
           <Field label="Competencias específicas" required><Textarea rows={4} value={specificCompetence} placeholder="Competencias específicas que se desarrollarán" onChange={(event) => setSpecificCompetence(event.target.value)} /></Field>
           <div className="grid gap-4 lg:grid-cols-3">
             <Field label="Contenidos conceptuales"><Textarea rows={5} value={contentConceptual} placeholder="Conceptos, datos y hechos" onChange={(event) => setContentConceptual(event.target.value)} /></Field>
@@ -452,7 +466,7 @@ export function PlanningEntryForm({
           <Field label="Indicadores de logro" required><Textarea rows={4} value={achievementIndicator} placeholder="Resultados observables que demostrarán el aprendizaje" onChange={(event) => setAchievementIndicator(event.target.value)} /></Field>
         </div> : null}
 
-        {step === 3 ? <div className="grid gap-5 p-5">
+        {step === 3 ? <div className="grid gap-5 p-5 sm:p-7">
           <div className="grid gap-4 lg:grid-cols-3">
             <MomentField title="Inicio" hint="Motivación, recuperación de saberes previos y propósito" value={inicio} onChange={setInicio} />
             <MomentField title="Desarrollo" hint="Construcción del aprendizaje y actividades principales" value={desarrollo} onChange={setDesarrollo} />
@@ -464,18 +478,18 @@ export function PlanningEntryForm({
         </div> : null}
       </section>
 
-      <footer className="flex flex-col-reverse gap-3 rounded-xl border border-border bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex gap-2"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><ArrowLeft className="size-4" />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
-        <div className="flex gap-2">{step > 1 ? <Button type="button" variant="outline" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Completar con IA</Button> : null}{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
+      <footer className="sticky bottom-3 z-20 flex flex-col-reverse gap-3 rounded-2xl border border-border bg-card/95 p-3 shadow-[0_16px_40px_-24px_rgba(30,79,143,.45)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:p-4">
+        <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><ArrowLeft className="size-4" />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
+        <div className="grid gap-2 sm:flex">{step > 1 ? <Button type="button" variant="outline" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Completar con IA</Button> : null}{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
       </footer>
     </form>
   )
 }
 
 function Field({ children, label, required = false }: { children: ReactNode; label: string; required?: boolean }) {
-  return <label className="grid gap-1.5 text-sm font-bold text-foreground"><span>{label}{required ? <span className="text-destructive"> *</span> : null}</span>{children}</label>
+  return <label className="grid gap-2 text-[13px] font-bold text-foreground"><span>{label}{required ? <span className="text-destructive"> *</span> : null}</span>{children}</label>
 }
 
 function MomentField({ title, hint, value, onChange }: { title: string; hint: string; value: string; onChange: (value: string) => void }) {
-  return <div className="overflow-hidden rounded-xl border border-border bg-card"><div className="border-b border-border bg-primary/5 px-4 py-3"><h3 className="font-black text-primary">{title}</h3><p className="mt-0.5 text-xs text-muted-foreground">{hint}</p></div><Textarea className="min-h-48 resize-y rounded-none border-0 shadow-none focus:ring-0" value={value} onChange={(event) => onChange(event.target.value)} placeholder={`Describe las actividades de ${title.toLowerCase()}...`} /></div>
+  return <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><div className="border-b border-border bg-primary/[0.045] px-4 py-3"><h3 className="font-extrabold text-primary">{title}</h3><p className="mt-0.5 text-xs leading-5 text-muted-foreground">{hint}</p></div><Textarea className="min-h-48 resize-y rounded-none border-0 shadow-none focus:ring-0" value={value} onChange={(event) => onChange(event.target.value)} placeholder={`Describe las actividades de ${title.toLowerCase()}...`} /></div>
 }
