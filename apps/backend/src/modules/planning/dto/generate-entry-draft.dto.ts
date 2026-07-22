@@ -6,6 +6,7 @@ export class GenerateEntryDraftDto {
   @IsOptional() @IsString() @MaxLength(80) educationLevel?: string
   @IsOptional() @IsString() @MaxLength(200) topic?: string
   @IsOptional() @IsString() @MaxLength(120) transversalAxis?: string
+  @IsOptional() @IsString() @MaxLength(1000) curricularPolicyContext?: string
 
   @IsOptional()
   @IsString()

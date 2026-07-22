@@ -128,6 +128,7 @@ export function PlanningDocumentView({ entry, onClose }: PlanningDocumentViewPro
               <Section title="Indicadores de logro">{entry.achievementIndicator}</Section>
               <Section title="Intención pedagógica">{entry.evidence}</Section>
               <Section title="Eje transversal">{entry.transversalAxis || 'No especificado'}</Section>
+              {entry.curriculumVersion ? <Section title="Fuente curricular">MINERD {entry.curriculumVersion} · {entry.curriculumOrdinance || 'Normativa no registrada'}{entry.curriculumSourcePages ? ` · páginas ${entry.curriculumSourcePages}` : ''}</Section> : null}
               <Section title="Estrategia de enseñanza">{entry.strategies}</Section>
 
               <section className="border-t border-border pt-4">

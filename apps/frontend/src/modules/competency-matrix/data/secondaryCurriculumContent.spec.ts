@@ -31,9 +31,9 @@ describe('contenido oficial de las mallas de secundaria', () => {
     const firstSpanish = getSecondaryCurriculumContent(1, 'lengua-espanola')
     const fourthBiology = getSecondaryCurriculumContent(4, 'ciencias-naturaleza')
 
-    expect(firstSpanish?.sourcePages).toEqual({ start: 24, end: 27 })
+    expect(firstSpanish?.sourcePages).toEqual({ start: 69, end: 75 })
     expect(firstSpanish?.contentConceptual).toContain('La noticia')
-    expect(fourthBiology?.sourcePages).toEqual({ start: 228, end: 231 })
+    expect(fourthBiology?.sourcePages).toEqual({ start: 312, end: 315 })
     expect(fourthBiology?.contentConceptual).toContain('Genética')
   })
 

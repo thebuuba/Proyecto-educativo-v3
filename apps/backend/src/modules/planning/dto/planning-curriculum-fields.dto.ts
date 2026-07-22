@@ -1,6 +1,6 @@
 import { IsString, MaxLength } from 'class-validator'
 
-export const MAX_CURRICULUM_TEXT_LENGTH = 20_000
+export const MAX_CURRICULUM_TEXT_LENGTH = 50_000
 
 export class PlanningActivitiesDto {
   @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) inicio!: string

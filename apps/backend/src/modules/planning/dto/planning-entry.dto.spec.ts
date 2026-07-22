@@ -11,7 +11,7 @@ const curriculumFields = {
   specificCompetence: 'a'.repeat(2_200),
   achievementIndicator: 'a'.repeat(4_600),
   contentConceptual: 'a'.repeat(7_700),
-  contentProcedural: 'a'.repeat(8_600),
+  contentProcedural: 'a'.repeat(30_000),
   contentAttitudinal: 'a'.repeat(3_600),
   activities: { inicio: 'Explorar', desarrollo: 'Practicar', cierre: 'Evaluar' },
 }
@@ -24,5 +24,18 @@ describe('DTO de planificación', () => {
     const errors = await validate(plainToInstance(Dto, { ...required, ...curriculumFields }))
 
     expect(errors).toEqual([])
+  })
+
+  it('rechaza campos curriculares que exceden el límite de seguridad', async () => {
+    const dto = plainToInstance(CreatePlanningEntryDto, {
+      sectionSubjectId: 'section',
+      academicPeriodId: 'period',
+      title: 'Unidad',
+      specificCompetence: 'a'.repeat(50_001),
+    })
+
+    const errors = await validate(dto)
+
+    expect(errors.some((error) => error.property === 'specificCompetence')).toBe(true)
   })
 })

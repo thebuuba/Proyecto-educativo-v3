@@ -12,6 +12,9 @@ export class UpdatePlanningEntryDto {
   @IsOptional() @IsString() @MaxLength(80) educationLevel?: string
   @IsOptional() @IsString() @MaxLength(200) topic?: string
   @IsOptional() @IsString() @MaxLength(120) transversalAxis?: string
+  @IsOptional() @IsString() @MaxLength(20) curriculumVersion?: string
+  @IsOptional() @IsString() @MaxLength(80) curriculumOrdinance?: string
+  @IsOptional() @IsString() @MaxLength(40) curriculumSourcePages?: string
   @IsOptional() @IsArray() @IsString({ each: true }) fundamentalCompetencies?: string[]
 
   @IsOptional()

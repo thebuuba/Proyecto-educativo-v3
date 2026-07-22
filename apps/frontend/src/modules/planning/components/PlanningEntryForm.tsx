@@ -27,7 +27,9 @@ import {
 import {
   curriculumFieldsAreEmpty,
   curriculumFieldsMatch,
+  currentMinerdPolicyContext,
   getSecondaryCurriculumContent,
+  secondaryCurriculumSource,
 } from '@/modules/competency-matrix/data/secondaryCurriculumContent'
 import type { SecondaryCurriculumContent } from '@/modules/competency-matrix/data/secondaryCurriculumContent'
 import type { GradingActivity } from '@/modules/grading/types'
@@ -249,6 +251,7 @@ export function PlanningEntryForm({
   }, [academicPeriodId, sectionSubjectId])
 
   function buildInput(): CreatePlanningEntryInput {
+    const sourcePages = curriculumContent?.sourcePages
     return {
       sectionSubjectId,
       academicPeriodId,
@@ -261,6 +264,9 @@ export function PlanningEntryForm({
       educationLevel: selectedSectionSubject ? educationLevelFor(selectedSectionSubject.gradeName, selectedSectionSubject.level) : null,
       topic: topic.trim() || null,
       transversalAxis: transversalAxis || null,
+      curriculumVersion: curriculumContent ? secondaryCurriculumSource.version : initial?.entry.curriculumVersion ?? null,
+      curriculumOrdinance: curriculumContent ? secondaryCurriculumSource.ordinance : initial?.entry.curriculumOrdinance ?? null,
+      curriculumSourcePages: sourcePages ? `${sourcePages.start}-${sourcePages.end}` : initial?.entry.curriculumSourcePages ?? null,
       specificCompetence,
       achievementIndicator,
       contentConceptual,
@@ -362,6 +368,7 @@ export function PlanningEntryForm({
       curricularArea,
       educationLevel: selectedSectionSubject ? educationLevelFor(selectedSectionSubject.gradeName, selectedSectionSubject.level) : undefined,
       transversalAxis,
+      curricularPolicyContext: currentMinerdPolicyContext,
       durationMinutes: duration ? Number(duration) : null,
       specificCompetence: curriculumPromptExcerpt(specificCompetence),
       achievementIndicator: curriculumPromptExcerpt(achievementIndicator),
@@ -396,6 +403,7 @@ export function PlanningEntryForm({
         sectionName: selectedSectionSubject?.sectionName,
         gradeName: selectedSectionSubject?.gradeName,
         fundamentalCompetenceName: competence?.name,
+        curricularPolicyContext: currentMinerdPolicyContext,
       })
     } catch (caught) {
       setValidationError(caught instanceof Error ? caught.message : 'No se pudo generar la planificación.')
@@ -458,6 +466,10 @@ export function PlanningEntryForm({
             <AutoContext label="Docente" value={teacherName || 'Se completará automáticamente'} />
             <AutoContext label="Período" value={selectedPeriod?.name || 'Se completará automáticamente'} />
           </div>
+          <div className="md:col-span-2 flex flex-col gap-1 rounded-2xl border border-border bg-card p-4 text-xs leading-5 text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+            <span>Calendario 2026–2027 aprobado: el centro conserva sus períodos configurables e incorpora un banco de recuperación de dos semanas cuando MINERD publique la versión final.</span>
+            <a className="shrink-0 font-bold text-primary hover:underline" href="https://minerd.gob.do/comunicaciones/noticias/consejo-nacional-de-educacion-aprueba-calendario-escolar-2026-2027-y-oficializa-estrategia-nacional-de-competencias-digitales" target="_blank" rel="noreferrer">Ver comunicado</a>
+          </div>
         </div> : null}
 
         {step === 2 ? <div className="grid gap-5 p-5 sm:p-7">
@@ -485,9 +497,9 @@ export function PlanningEntryForm({
               <div>
                 <p className="flex items-center gap-2 text-sm font-bold text-foreground"><FileCheck2 className="size-4 text-primary" />Malla oficial vinculada</p>
                 <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
-                  {curriculumSubject.courseNames?.[curriculumGrade] || curriculumSubject.subject} · {curriculumGrade}.º de Secundaria
+                  {curriculumSubject.courseNames?.[curriculumGrade] || curriculumSubject.subject} · {curriculumGrade}.º de Secundaria · páginas {curriculumContent?.sourcePages.start}-{curriculumContent?.sourcePages.end}
                 </p>
-                {curriculumContent ? <p className="mt-1 text-xs font-medium text-primary">Competencias, contenidos e indicadores cargados desde el PDF oficial.</p> : null}
+                {curriculumContent ? <p className="mt-1 text-xs font-medium text-primary">MINERD {secondaryCurriculumSource.version} · {secondaryCurriculumSource.ordinance}. Competencias, contenidos e indicadores cargados desde el PDF oficial.</p> : null}
               </div>
               <div className="flex flex-col gap-2 sm:flex-row">
                 {curriculumContent ? <button type="button" className="inline-flex h-10 shrink-0 items-center justify-center rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20" onClick={() => applyOfficialCurriculum()}>Recargar datos oficiales</button> : null}
@@ -503,6 +515,13 @@ export function PlanningEntryForm({
               </div>
             </div>
           ) : null}
+          <div className="rounded-2xl border border-primary/15 bg-primary/[0.035] p-4 sm:p-5">
+            <p className="text-sm font-extrabold text-foreground">Enfoques nacionales incorporados en las sugerencias</p>
+            <div className="mt-3 grid gap-2 text-xs leading-5 text-muted-foreground md:grid-cols-2">
+              <p className="rounded-xl border border-border bg-card p-3"><span className="block font-bold text-primary">Moral, Cívica y Ética Ciudadana</span>Aplicación transversal conforme a la Ordenanza 02-2025, sin agregar otra asignatura ni carga horaria.</p>
+              <p className="rounded-xl border border-border bg-card p-3"><span className="block font-bold text-primary">Competencias digitales e IA</span>Pensamiento computacional, ciudadanía digital y uso ético de la IA, integrados cuando sean pertinentes.</p>
+            </div>
+          </div>
           <details className="group overflow-hidden rounded-2xl border border-border bg-card">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-3 bg-muted/45 px-4 py-4 font-extrabold text-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20 sm:px-5"><span>Revisar datos curriculares oficiales</span><span className="text-xs font-bold text-primary group-open:hidden">Mostrar</span><span className="hidden text-xs font-bold text-primary group-open:inline">Ocultar</span></summary>
             <div className="grid gap-5 border-t border-border p-4 sm:p-5">

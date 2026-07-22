@@ -99,6 +99,7 @@ describe('PlanningService.generateEntryDraft', () => {
     ).generateEntryDraft('school-1', {
       sectionSubjectId: 'ss-1',
       title: 'La entrevista',
+      curricularPolicyContext: 'Ciudadanía digital y uso ético de la inteligencia artificial.',
     })
 
     expect(fetch).toHaveBeenCalledWith(
@@ -108,9 +109,11 @@ describe('PlanningService.generateEntryDraft', () => {
         headers: expect.objectContaining({ Authorization: 'Bearer test-key' }),
       }),
     )
-    expect(JSON.parse(vi.mocked(fetch).mock.calls[0][1]?.body as string)).toMatchObject({
+    const requestBody = JSON.parse(vi.mocked(fetch).mock.calls[0][1]?.body as string)
+    expect(requestBody).toMatchObject({
       model: 'test-model',
     })
+    expect(requestBody.messages[1].content).toContain('Ciudadanía digital')
     expect(result.activities.desarrollo).toContain('entrevista')
     expect(result.durationMinutes).toBe(90)
   })

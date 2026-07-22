@@ -32,8 +32,8 @@ describe('catálogo curricular de secundaria', () => {
     )
 
     expect(entries).toHaveLength(72)
-    expect(entries.every(({ start, end }) => start > 0 && end >= start && end <= 385)).toBe(true)
-    expect(secondaryCurriculumSubjects[0]?.pages[1]).toEqual({ start: 24, end: 27 })
+    expect(entries.every(({ start, end }) => start > 0 && end >= start && end <= 520)).toBe(true)
+    expect(secondaryCurriculumSubjects[0]?.pages[1]).toEqual({ start: 69, end: 75 })
   })
 
   it('relaciona los nombres usados por Cursos con su malla oficial', () => {

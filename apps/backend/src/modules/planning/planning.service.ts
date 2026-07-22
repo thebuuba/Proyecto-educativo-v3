@@ -266,6 +266,9 @@ export class PlanningService {
         contentConceptual: sourceEntry.contentConceptual,
         contentProcedural: sourceEntry.contentProcedural,
         contentAttitudinal: sourceEntry.contentAttitudinal,
+        curriculumVersion: sourceEntry.curriculumVersion,
+        curriculumOrdinance: sourceEntry.curriculumOrdinance,
+        curriculumSourcePages: sourceEntry.curriculumSourcePages,
         strategies: sourceEntry.strategies,
         activities: sourceEntry.activities ?? { inicio: '', desarrollo: '', cierre: '' },
         resources: sourceEntry.resources,
@@ -320,6 +323,9 @@ export class PlanningService {
         educationLevel: dto.educationLevel ?? null,
         topic: dto.topic ?? null,
         transversalAxis: dto.transversalAxis ?? null,
+        curriculumVersion: dto.curriculumVersion ?? null,
+        curriculumOrdinance: dto.curriculumOrdinance ?? null,
+        curriculumSourcePages: dto.curriculumSourcePages ?? null,
         fundamentalCompetencies: dto.fundamentalCompetencies ?? [],
         sequence: dto.sequence ?? 0,
         specificCompetence: dto.specificCompetence ?? '',
@@ -373,6 +379,7 @@ export class PlanningService {
       nivelEducativo: dto.educationLevel ?? '',
       tema: dto.topic ?? dto.title ?? '',
       ejeTransversal: dto.transversalAxis ?? '',
+      contextoPoliticaCurricular: dto.curricularPolicyContext ?? '',
       duracionMinutos: dto.durationMinutes ?? null,
       competenciaFundamental: dto.fundamentalCompetenceName ?? '',
       competenciaEspecifica: dto.specificCompetence ?? '',
@@ -391,7 +398,7 @@ export class PlanningService {
           {
             role: 'system',
             content:
-              'Eres especialista en planificación docente del sistema educativo dominicano. Usa como referencia la Adecuación Curricular del Nivel Secundario MINERD 2022 y la malla exacta del área, ciclo y grado indicados. Selecciona únicamente competencias, contenidos e indicadores pertinentes al tema; no inventes códigos ni elementos oficiales. Escribe en español dominicano claro.',
+              'Eres especialista en planificación docente del sistema educativo dominicano. Usa como referencia la Adecuación Curricular del Nivel Secundario MINERD 2023, puesta en vigencia por la Ordenanza 03-2023, y la malla exacta del área, ciclo y grado indicados. Integra el contexto de política curricular indicado de forma transversal y pertinente, sin convertirlo en una asignatura adicional. Selecciona únicamente competencias, contenidos e indicadores pertinentes al tema; no inventes códigos ni elementos oficiales. Escribe en español dominicano claro.',
           },
           {
             role: 'user',
@@ -508,6 +515,9 @@ export class PlanningService {
     if (dto.educationLevel !== undefined) data.educationLevel = dto.educationLevel
     if (dto.topic !== undefined) data.topic = dto.topic
     if (dto.transversalAxis !== undefined) data.transversalAxis = dto.transversalAxis
+    if (dto.curriculumVersion !== undefined) data.curriculumVersion = dto.curriculumVersion
+    if (dto.curriculumOrdinance !== undefined) data.curriculumOrdinance = dto.curriculumOrdinance
+    if (dto.curriculumSourcePages !== undefined) data.curriculumSourcePages = dto.curriculumSourcePages
     if (dto.fundamentalCompetencies !== undefined) data.fundamentalCompetencies = dto.fundamentalCompetencies
     if (dto.sequence !== undefined) data.sequence = dto.sequence
     if (dto.specificCompetence !== undefined) data.specificCompetence = dto.specificCompetence

@@ -94,6 +94,7 @@ export function buildPlanningDocumentHtml(entry: PlanningEntryWithDetails) {
     ${section('Indicadores de logro', entry.achievementIndicator)}
     ${section('Intencion pedagogica', entry.evidence)}
     ${section('Eje transversal', entry.transversalAxis || 'No especificado')}
+    ${entry.curriculumVersion ? section('Fuente curricular', `MINERD ${entry.curriculumVersion} · ${entry.curriculumOrdinance || 'Normativa no registrada'}${entry.curriculumSourcePages ? ` · paginas ${entry.curriculumSourcePages}` : ''}`) : ''}
     ${section('Estrategia de ensenanza', entry.strategies)}
 
     <section class="doc-section">

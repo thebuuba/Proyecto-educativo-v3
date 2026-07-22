@@ -28,6 +28,9 @@ export type PlanningEntry = {
   educationLevel?: string | null
   topic?: string | null
   transversalAxis?: string | null
+  curriculumVersion?: string | null
+  curriculumOrdinance?: string | null
+  curriculumSourcePages?: string | null
   fundamentalCompetencies?: string[]
   sequence: number
   specificCompetence: string
@@ -61,6 +64,10 @@ export type CreatePlanningEntryInput = {
   educationLevel?: string | null
   topic?: string | null
   transversalAxis?: string | null
+  curriculumVersion?: string | null
+  curriculumOrdinance?: string | null
+  curriculumSourcePages?: string | null
+  curricularPolicyContext?: string
   fundamentalCompetencies?: string[]
   sequence?: number
   specificCompetence?: string

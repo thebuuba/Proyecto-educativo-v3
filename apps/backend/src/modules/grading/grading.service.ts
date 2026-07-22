@@ -6,6 +6,7 @@
  */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { academicPeriodDate, defaultAcademicPeriods } from '../../common/academic-period-defaults'
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SaveGradeDto } from './dto/save-grade.dto'
 import { SaveEvaluationActivityDto } from './dto/save-evaluation-activity.dto'
@@ -13,13 +14,6 @@ import { SaveEvaluationActivityDto } from './dto/save-evaluation-activity.dto'
 export function __test__clearGradingCache() {
   optionCache.clear()
 }
-
-const baseGradingPeriods = [
-  { name: 'P1 — Agosto, septiembre y octubre', sequence: 1, startMonth: 8, startDay: 1, endMonth: 10, endDay: 31 },
-  { name: 'P2 — Noviembre, diciembre y enero', sequence: 2, startMonth: 11, startDay: 1, endMonth: 1, endDay: 31 },
-  { name: 'P3 — Febrero, marzo y abril', sequence: 3, startMonth: 2, startDay: 1, endMonth: 4, endDay: 30 },
-  { name: 'P4 — Mayo', sequence: 4, startMonth: 5, startDay: 1, endMonth: 5, endDay: 31 },
-]
 
 function mapEvaluationActivity(activity: any) {
   return {
@@ -78,12 +72,6 @@ function evaluationInstrumentName(type: string) {
     'lista-ponderada': 'Lista ponderada',
   }
   return names[type] ?? type
-}
-
-function periodDate(schoolYearStart: Date, month: number, day: number) {
-  const startYear = schoolYearStart.getUTCFullYear()
-  const year = month >= 8 ? startYear : startYear + 1
-  return new Date(Date.UTC(year, month - 1, day))
 }
 
 async function assertEvaluationActivityScope(
@@ -415,13 +403,13 @@ export class GradingService {
     if (!schoolYear) return []
 
     await prisma.academicPeriod.createMany({
-      data: baseGradingPeriods.map((period) => ({
+      data: defaultAcademicPeriods.map((period) => ({
         schoolId,
         schoolYearId: schoolYear.id,
         name: period.name,
         sequence: period.sequence,
-        startDate: periodDate(schoolYear.startDate, period.startMonth, period.startDay),
-        endDate: periodDate(schoolYear.startDate, period.endMonth, period.endDay),
+        startDate: academicPeriodDate(schoolYear.startDate, period.startMonth, period.startDay),
+        endDate: academicPeriodDate(schoolYear.startDate, period.endMonth, period.endDay),
       })),
       skipDuplicates: true,
     })
