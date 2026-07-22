@@ -179,6 +179,16 @@ export function PlanningEntryForm({
     ? getSecondaryCurriculumContent(curriculumGrade, curriculumSubject.id)
     : null
 
+  useEffect(() => {
+    if (!selectedPeriod) return
+    const startDate = selectedPeriod.startDate.slice(0, 10)
+    const endDate = selectedPeriod.endDate.slice(0, 10)
+    if (!plannedDate || plannedDate < startDate || plannedDate > endDate) {
+      setPlannedDate(startDate)
+      setValidationError('')
+    }
+  }, [plannedDate, selectedPeriod])
+
   function applyOfficialCurriculum(source = curriculumContent) {
     if (!source) return
 
