@@ -426,7 +426,7 @@ export function PlanningPage() {
         </div>
       ) : filteredEntries.length > 0 ? (
         <div className="space-y-3">
-          <div className="flex justify-end">
+          <div className="flex justify-start">
             <div className="inline-flex rounded-xl border border-border bg-card p-1 shadow-sm" aria-label="Vista de planificaciones">
               <button
                 type="button"
