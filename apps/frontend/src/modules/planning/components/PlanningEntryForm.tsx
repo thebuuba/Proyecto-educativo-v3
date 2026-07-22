@@ -5,13 +5,14 @@ import {
   BookOpen,
   Check,
   ClipboardList,
+  FileCheck2,
   Link2,
   School,
   Sparkles,
   ArrowUpRight,
 } from 'lucide-react'
 import type { FormEvent, ReactNode } from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -23,6 +24,12 @@ import {
   findCurriculumSubject,
   secondaryGradeFromName,
 } from '@/modules/competency-matrix/data/secondaryCurriculumCatalog'
+import {
+  curriculumFieldsAreEmpty,
+  curriculumFieldsMatch,
+  getSecondaryCurriculumContent,
+} from '@/modules/competency-matrix/data/secondaryCurriculumContent'
+import type { SecondaryCurriculumContent } from '@/modules/competency-matrix/data/secondaryCurriculumContent'
 import type { GradingActivity } from '@/modules/grading/types'
 import { generatePlanningEntry } from '@/modules/planning/services/planningService'
 import type {
@@ -139,6 +146,7 @@ export function PlanningEntryForm({
   const [generating, setGenerating] = useState(false)
   const [availableActivities, setAvailableActivities] = useState<GradingActivity[]>([])
   const [linkedActivityIds, setLinkedActivityIds] = useState<string[]>(initial?.entry.linkedActivityIds ?? [])
+  const lastAppliedCurriculum = useRef<SecondaryCurriculumContent | null>(null)
 
   const selectedSectionSubject = sectionSubjects.find((item) => item.id === sectionSubjectId)
   const courseOptions = Array.from(new Map(sectionSubjects.map((item) => [courseKeyFor(item), { key: courseKeyFor(item), gradeName: item.gradeName, sectionName: item.sectionName, level: item.level }])).values())
@@ -159,6 +167,26 @@ export function PlanningEntryForm({
     : curriculumGrade && curriculumReference
       ? findCurriculumSubject(curriculumGrade, '', curriculumReference.subjectId)
       : null
+  const curriculumContent = curriculumGrade && curriculumSubject
+    ? getSecondaryCurriculumContent(curriculumGrade, curriculumSubject.id)
+    : null
+
+  useEffect(() => {
+    if (!curriculumContent || initial?.entry.id) return
+
+    const fields = {
+      specificCompetence,
+      contentConceptual,
+      contentProcedural,
+      contentAttitudinal,
+      achievementIndicator,
+    }
+    const previous = lastAppliedCurriculum.current
+    const canReplace = curriculumFieldsAreEmpty(fields)
+      || Boolean(previous && curriculumFieldsMatch(fields, previous))
+
+    if (canReplace) applyOfficialCurriculum(curriculumContent)
+  }, [curriculumContent, initial?.entry.id])
 
   useEffect(() => {
     let ignore = false
@@ -200,6 +228,29 @@ export function PlanningEntryForm({
       plannedDate: plannedDate || null,
       linkedActivityIds,
     }
+  }
+
+  function applyOfficialCurriculum(source = curriculumContent) {
+    if (!source) return
+
+    const officialNames = source.fundamentalCompetencies.map((name) => name.toLowerCase())
+    const matchingCompetencies = competencies.filter((option) => {
+      const optionName = option.name.toLowerCase()
+      return officialNames.some((name) => name.includes(optionName) || optionName.includes(name))
+    })
+
+    setFundamentalCompetencies(
+      matchingCompetencies.length
+        ? matchingCompetencies.map((option) => option.name)
+        : source.fundamentalCompetencies,
+    )
+    setFundamentalCompetenceId(matchingCompetencies[0]?.id ?? '')
+    setSpecificCompetence(source.specificCompetence)
+    setContentConceptual(source.contentConceptual)
+    setContentProcedural(source.contentProcedural)
+    setContentAttitudinal(source.contentAttitudinal)
+    setAchievementIndicator(source.achievementIndicator)
+    lastAppliedCurriculum.current = source
   }
 
   function validateStep(targetStep: number) {
@@ -371,20 +422,24 @@ export function PlanningEntryForm({
           {curriculumGrade && curriculumSubject ? (
             <div className="flex flex-col gap-3 rounded-xl border border-primary/15 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-sm font-bold text-foreground">Malla oficial vinculada</p>
+                <p className="flex items-center gap-2 text-sm font-bold text-foreground"><FileCheck2 className="size-4 text-primary" />Malla oficial vinculada</p>
                 <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
                   {curriculumSubject.courseNames?.[curriculumGrade] || curriculumSubject.subject} · {curriculumGrade}.º de Secundaria
                 </p>
+                {curriculumContent ? <p className="mt-1 text-xs font-medium text-primary">Competencias, contenidos e indicadores cargados desde el PDF oficial.</p> : null}
               </div>
-              <a
-                href={`/matriz?${new URLSearchParams({ grado: String(curriculumGrade), malla: curriculumSubject.id }).toString()}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-border bg-card px-4 text-sm font-bold text-foreground shadow-sm transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20"
-              >
-                Consultar fuente
-                <ArrowUpRight className="size-4" />
-              </a>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                {curriculumContent ? <button type="button" className="inline-flex h-10 shrink-0 items-center justify-center rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20" onClick={() => applyOfficialCurriculum()}>Recargar datos oficiales</button> : null}
+                <a
+                  href={`/matriz?${new URLSearchParams({ grado: String(curriculumGrade), malla: curriculumSubject.id }).toString()}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-border bg-card px-4 text-sm font-bold text-foreground shadow-sm transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20"
+                >
+                  Consultar fuente
+                  <ArrowUpRight className="size-4" />
+                </a>
+              </div>
             </div>
           ) : null}
           <Field label="Competencias fundamentales" required><div className="grid gap-2 rounded-xl border border-border p-3 md:grid-cols-2">{competencies.map((item) => { const checked = fundamentalCompetencies.includes(item.name); return <label key={item.id} className={cn('flex cursor-pointer items-start gap-2 rounded-lg border p-3 text-sm transition', checked ? 'border-primary/40 bg-primary/5' : 'border-border')}><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={checked} onChange={(event) => { setFundamentalCompetencies((current) => event.target.checked ? [...current, item.name] : current.filter((name) => name !== item.name)); if (event.target.checked && !fundamentalCompetenceId) setFundamentalCompetenceId(item.id); if (!event.target.checked && fundamentalCompetenceId === item.id) setFundamentalCompetenceId('') }} /><span>{item.name}</span></label> })}</div></Field>
