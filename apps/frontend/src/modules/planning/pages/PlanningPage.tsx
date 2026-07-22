@@ -1,5 +1,6 @@
 import { AlertCircle, CalendarDays, FileText, Filter, Plus, Search, Settings2 } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -28,6 +29,7 @@ function normalize(value?: string | null) {
 }
 
 export function PlanningPage() {
+  const [searchParams] = useSearchParams()
   const {
     schoolYearId,
     schoolName,
@@ -60,6 +62,22 @@ export function PlanningPage() {
   const [subjectFilter, setSubjectFilter] = useState('')
   const [periodFilter, setPeriodFilter] = useState(activePeriodId ?? '')
   const [dateFilter, setDateFilter] = useState('')
+  const openedCurriculumRequest = useRef<string | null>(null)
+  const requestedCurriculumId = searchParams.get('malla')
+  const requestedGrade = searchParams.get('grado')
+  const requestedArea = searchParams.get('area')
+
+  useEffect(() => {
+    if (
+      loading || !requestedCurriculumId || !periods.length ||
+      openedCurriculumRequest.current === requestedCurriculumId
+    ) return
+
+    openedCurriculumRequest.current = requestedCurriculumId
+    setEditingEntry(null)
+    setFormError(null)
+    setFormOpen(true)
+  }, [loading, periods.length, requestedCurriculumId])
 
   const subjects = useMemo(
     () => Array.from(new Set(sectionSubjects.map((item) => item.subjectName))).sort(),
@@ -206,11 +224,16 @@ export function PlanningPage() {
                     sectionSubjectId: courseFilter,
                     academicPeriodId: periodFilter || activePeriodId || periods[0]?.id || '',
                     title: '',
+                    curricularArea: requestedArea,
                   },
                   academicPeriodId: periodFilter || activePeriodId || periods[0]?.id,
                 }
           }
           competencies={competencies}
+          curriculumReference={!editingEntry && requestedCurriculumId && requestedGrade ? {
+            grade: requestedGrade,
+            subjectId: requestedCurriculumId,
+          } : undefined}
           submitting={isSubmitting}
           error={formError}
           onSubmit={handleSubmit}

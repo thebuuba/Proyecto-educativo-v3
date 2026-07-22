@@ -24,6 +24,7 @@ const routeIconColors: Record<string, string> = {
   '/asistencia': 'bg-emerald-100 text-emerald-700',
   '/calificaciones': 'bg-pink-100 text-pink-700',
   '/planificaciones': 'bg-orange-100 text-orange-700',
+  '/matriz': 'bg-teal-100 text-teal-700',
   '/reportes': 'bg-indigo-100 text-indigo-700',
   '/configuracion': 'bg-slate-100 text-slate-700',
 }
