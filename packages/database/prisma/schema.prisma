@@ -888,12 +888,17 @@ model PlanningEntry {
   sectionSubjectId        String       @map("section_subject_id") @db.Uuid
   academicPeriodId        String       @map("academic_period_id") @db.Uuid
   title                   String
+  planningType            String       @default("DAILY") @map("planning_type")
+  durationDays            Int          @default(1) @map("duration_days")
   schoolNameSnapshot      String?      @map("school_name_snapshot")
   teacherNameSnapshot     String?      @map("teacher_name_snapshot")
   curricularArea          String?      @map("curricular_area")
   educationLevel          String?      @map("education_level")
   topic                   String?
   transversalAxis         String?      @map("transversal_axis")
+  curriculumVersion       String?      @map("curriculum_version")
+  curriculumOrdinance     String?      @map("curriculum_ordinance")
+  curriculumSourcePages   String?      @map("curriculum_source_pages")
   fundamentalCompetencies String[]     @default([]) @map("fundamental_competencies")
   sequence                Int          @default(1)
   specificCompetence      String       @default("") @map("specific_competence")

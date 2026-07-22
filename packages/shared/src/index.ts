@@ -81,3 +81,15 @@ export function splitFullName(fullName: string, lastNameFallback = 'Sin apellido
   const lastName = parts.join(' ') || lastNameFallback
   return { firstName, lastName }
 }
+
+/** Suma días lectivos de lunes a viernes a una fecha ISO (YYYY-MM-DD). */
+export function addWeekdays(startDate: string, offset: number) {
+  const date = new Date(`${startDate}T12:00:00Z`)
+  let remaining = Math.max(0, Math.trunc(offset))
+  while (remaining > 0) {
+    date.setUTCDate(date.getUTCDate() + 1)
+    const weekday = date.getUTCDay()
+    if (weekday !== 0 && weekday !== 6) remaining -= 1
+  }
+  return date.toISOString().slice(0, 10)
+}

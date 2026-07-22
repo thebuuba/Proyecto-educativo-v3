@@ -1,12 +1,22 @@
-import { IsArray, IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { Type } from 'class-transformer'
+import { IsArray, IsDateString, IsIn, IsInt, IsNumber, IsObject, IsOptional, IsString, Max, MaxLength, Min, ValidateNested } from 'class-validator'
+import {
+  MAX_CURRICULUM_TEXT_LENGTH,
+  PlanningActivitiesDto,
+} from './planning-curriculum-fields.dto'
 
 export class UpdatePlanningEntryDto {
+  @IsOptional() @IsIn(['DAILY', 'UNIT', 'SEQUENCE']) planningType?: string
+  @IsOptional() @IsInt() @Min(1) @Max(30) durationDays?: number
   @IsOptional() @IsString() @MaxLength(200) schoolNameSnapshot?: string
   @IsOptional() @IsString() @MaxLength(200) teacherNameSnapshot?: string
   @IsOptional() @IsString() @MaxLength(120) curricularArea?: string
   @IsOptional() @IsString() @MaxLength(80) educationLevel?: string
   @IsOptional() @IsString() @MaxLength(200) topic?: string
   @IsOptional() @IsString() @MaxLength(120) transversalAxis?: string
+  @IsOptional() @IsString() @MaxLength(20) curriculumVersion?: string
+  @IsOptional() @IsString() @MaxLength(80) curriculumOrdinance?: string
+  @IsOptional() @IsString() @MaxLength(40) curriculumSourcePages?: string
   @IsOptional() @IsArray() @IsString({ each: true }) fundamentalCompetencies?: string[]
 
   @IsOptional()
@@ -21,27 +31,27 @@ export class UpdatePlanningEntryDto {
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   specificCompetence?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   achievementIndicator?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   contentConceptual?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   contentProcedural?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   contentAttitudinal?: string
 
   @IsOptional()
@@ -50,8 +60,10 @@ export class UpdatePlanningEntryDto {
   strategies?: string
 
   @IsOptional()
-  @IsString()
-  activities?: string
+  @IsObject()
+  @ValidateNested()
+  @Type(() => PlanningActivitiesDto)
+  activities?: PlanningActivitiesDto
 
   @IsOptional()
   @IsString()

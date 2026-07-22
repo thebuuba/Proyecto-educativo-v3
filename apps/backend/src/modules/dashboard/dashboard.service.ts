@@ -5,12 +5,15 @@
  * Proporciona estadisticas generales y operaciones CRUD para tareas del dashboard.
  */
 import { Injectable, NotFoundException } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
 import { prisma } from '@aula/database'
 import { CreateTaskDto } from './dto/create-task.dto'
 import { UpdateTaskDto } from './dto/update-task.dto'
 
 @Injectable()
 export class DashboardService {
+  constructor(private readonly config?: ConfigService) {}
+
   /** Carga inicial del panel en una sola petición HTTP. */
   async getWorkspace(schoolId: string) {
     const [schoolYears, tasks, setupProgress, weeklyAttendance] = await Promise.all([
@@ -20,7 +23,58 @@ export class DashboardService {
       this.getWeeklyAttendance(schoolId),
     ])
     const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
-    return { currentSchoolYear, tasks, setupProgress, weeklyAttendance }
+    const smartSuggestion = await this.getAiSuggestion(schoolId, setupProgress, weeklyAttendance, tasks.length)
+    return { currentSchoolYear, tasks, setupProgress, weeklyAttendance, smartSuggestion }
+  }
+
+  private async getAiSuggestion(
+    schoolId: string,
+    progress: Awaited<ReturnType<DashboardService['getStats']>>,
+    attendance: Awaited<ReturnType<DashboardService['getWeeklyAttendance']>>,
+    pendingTasks: number,
+  ) {
+    const apiKey = this.config?.get<string>('DEEPSEEK_API_KEY')
+    if (!apiKey) return null
+
+    try {
+      const response = await fetch('https://api.deepseek.com/chat/completions', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        signal: AbortSignal.timeout(10_000),
+        body: JSON.stringify({
+          model: this.config?.get<string>('DEEPSEEK_MODEL') ?? 'deepseek-v4-flash',
+          messages: [
+            {
+              role: 'system',
+              content: 'Eres el asistente de inicio de un sistema escolar dominicano. Elige una sola acción concreta y prioritaria. No inventes datos. Responde solo JSON: {"title":"","description":"","actionLabel":"","path":""}. path debe ser una de: /cursos, /estudiantes, /horario, /asistencia, /planificaciones, /calificaciones.',
+            },
+            {
+              role: 'user',
+              content: JSON.stringify({ progress, weeklyAttendance: attendance, pendingTasks }),
+            },
+          ],
+          thinking: { type: 'disabled' },
+          response_format: { type: 'json_object' },
+          max_tokens: 180,
+          temperature: 0.2,
+          user_id: schoolId,
+        }),
+      })
+      if (!response.ok) return null
+      const data = await response.json() as { choices?: Array<{ message?: { content?: string } }> }
+      const suggestion = JSON.parse(data.choices?.[0]?.message?.content ?? 'null') as Record<string, unknown> | null
+      const paths = new Set(['/cursos', '/estudiantes', '/horario', '/asistencia', '/planificaciones', '/calificaciones'])
+      return suggestion
+        && typeof suggestion.title === 'string'
+        && typeof suggestion.description === 'string'
+        && typeof suggestion.actionLabel === 'string'
+        && typeof suggestion.path === 'string'
+        && paths.has(suggestion.path)
+        ? suggestion
+        : null
+    } catch {
+      return null
+    }
   }
 
   /** Resume la asistencia de esta semana y la compara con la anterior. */

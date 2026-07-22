@@ -1647,6 +1647,9 @@ export type Database = {
           content_attitudinal: string
           content_conceptual: string
           content_procedural: string
+          curriculum_ordinance: string | null
+          curriculum_source_pages: string | null
+          curriculum_version: string | null
           created_at: string
           duration_minutes: number | null
           evaluation_instruments: string
@@ -1654,6 +1657,8 @@ export type Database = {
           evidence: string
           fundamental_competence_id: string | null
           id: string
+          planning_type: string
+          duration_days: number
           planned_date: string | null
           resources: string
           school_id: string
@@ -1679,6 +1684,9 @@ export type Database = {
           content_attitudinal?: string
           content_conceptual?: string
           content_procedural?: string
+          curriculum_ordinance?: string | null
+          curriculum_source_pages?: string | null
+          curriculum_version?: string | null
           created_at?: string
           duration_minutes?: number | null
           evaluation_instruments?: string
@@ -1686,6 +1694,8 @@ export type Database = {
           evidence?: string
           fundamental_competence_id?: string | null
           id?: string
+          planning_type?: string
+          duration_days?: number
           planned_date?: string | null
           resources?: string
           school_id?: string
@@ -1711,6 +1721,9 @@ export type Database = {
           content_attitudinal?: string
           content_conceptual?: string
           content_procedural?: string
+          curriculum_ordinance?: string | null
+          curriculum_source_pages?: string | null
+          curriculum_version?: string | null
           created_at?: string
           duration_minutes?: number | null
           evaluation_instruments?: string
@@ -1718,6 +1731,8 @@ export type Database = {
           evidence?: string
           fundamental_competence_id?: string | null
           id?: string
+          planning_type?: string
+          duration_days?: number
           planned_date?: string | null
           resources?: string
           school_id?: string

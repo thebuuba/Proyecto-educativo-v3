@@ -132,11 +132,10 @@ export const appRoutes: AppRoute[] = [
   },
   {
     path: '/matriz',
-    label: 'Matriz',
+    label: 'Matriz curricular',
     icon: Grid3x3,
     component: CompetencyMatrixPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
-    showInSidebar: false,
   },
   {
     path: '/reportes',
@@ -190,6 +189,7 @@ export const routePrefetchers: Record<string, () => void> = {
     () => import('@/modules/planning/pages/PlanningPage'),
     () => import('@/modules/planning/services/planningService').then(({ getPlanningWorkspace }) => getPlanningWorkspace()),
   ]),
+  '/matriz': () => void import('@/modules/competency-matrix/pages/CompetencyMatrixPage'),
   '/reportes': () => void import('@/modules/reports/pages/ReportsPage'),
   '/configuracion': () => void import('@/modules/school-administration/pages/SchoolAdministrationPage'),
 }

@@ -102,10 +102,10 @@ pnpm exec wrangler secret put JWT_SECRET
 pnpm exec wrangler secret put SUPABASE_URL
 pnpm exec wrangler secret put SUPABASE_SERVICE_ROLE_KEY
 pnpm exec wrangler secret put SUPABASE_ANON_KEY
-pnpm exec wrangler secret put OPENAI_API_KEY
+pnpm exec wrangler secret put DEEPSEEK_API_KEY
 ```
 
-`SUPABASE_SERVICE_ROLE_KEY`, `JWT_SECRET`, `OPENAI_API_KEY` y la contraseña de PostgreSQL nunca deben usar prefijo `VITE_` ni llegar al navegador.
+`SUPABASE_SERVICE_ROLE_KEY`, `JWT_SECRET`, `DEEPSEEK_API_KEY` y la contraseña de PostgreSQL nunca deben usar prefijo `VITE_` ni llegar al navegador.
 
 El build del frontend necesita solo valores públicos:
 

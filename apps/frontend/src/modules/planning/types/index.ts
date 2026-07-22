@@ -8,11 +8,29 @@
 import type { RecordStatus } from '@/types/domain'
 
 /** Momentos de la clase: inicio, desarrollo y cierre */
+export type PlanningDay = {
+  day: number
+  date?: string | null
+  inicio: string
+  desarrollo: string
+  cierre: string
+  evidence: string
+  evaluationMethod: string
+  evaluationInstruments?: string
+  metacognition?: string
+  resources?: string
+}
+
 export type PlanningActivities = {
   inicio: string
   desarrollo: string
   cierre: string
+  learningSituation?: string
+  metacognition?: string
+  days?: PlanningDay[]
 }
+
+export type PlanningType = 'DAILY' | 'UNIT' | 'SEQUENCE'
 
 /** Entrada completa de planificación curricular */
 export type PlanningEntry = {
@@ -22,12 +40,17 @@ export type PlanningEntry = {
   fundamentalCompetenceId: string | null
   fundamentalCompetenceName: string | null
   title: string
+  planningType?: PlanningType
+  durationDays?: number
   schoolNameSnapshot?: string | null
   teacherNameSnapshot?: string | null
   curricularArea?: string | null
   educationLevel?: string | null
   topic?: string | null
   transversalAxis?: string | null
+  curriculumVersion?: string | null
+  curriculumOrdinance?: string | null
+  curriculumSourcePages?: string | null
   fundamentalCompetencies?: string[]
   sequence: number
   specificCompetence: string
@@ -55,12 +78,19 @@ export type CreatePlanningEntryInput = {
   academicPeriodId: string
   fundamentalCompetenceId?: string | null
   title: string
+  planningType?: PlanningType
+  durationDays?: number
   schoolNameSnapshot?: string | null
   teacherNameSnapshot?: string | null
   curricularArea?: string | null
   educationLevel?: string | null
   topic?: string | null
   transversalAxis?: string | null
+  curriculumVersion?: string | null
+  curriculumOrdinance?: string | null
+  curriculumSourcePages?: string | null
+  curricularPolicyContext?: string
+  allowAlignmentOverride?: boolean
   fundamentalCompetencies?: string[]
   sequence?: number
   specificCompetence?: string
@@ -84,11 +114,6 @@ export type GeneratedPlanningEntry = Required<
   Pick<
     CreatePlanningEntryInput,
     | 'title'
-    | 'specificCompetence'
-    | 'achievementIndicator'
-    | 'contentConceptual'
-    | 'contentProcedural'
-    | 'contentAttitudinal'
     | 'strategies'
     | 'activities'
     | 'resources'
@@ -98,7 +123,7 @@ export type GeneratedPlanningEntry = Required<
   >
 > & {
   durationMinutes: number | null
-  fundamentalCompetencies?: string[]
+  alignmentWarning: string | null
 }
 
 /** Datos para actualizar una planificación (todos los campos opcionales) */

@@ -25,6 +25,12 @@ const mocks = vi.hoisted(() => ({
     },
     planningEntry: {
       create: vi.fn(),
+      findFirst: vi.fn(),
+      update: vi.fn(),
+    },
+    evaluationActivity: {
+      count: vi.fn(),
+      updateMany: vi.fn(),
     },
   },
 }))
@@ -37,6 +43,27 @@ const config = (values: Record<string, string | undefined>) => ({
   get: vi.fn((key: string) => values[key]),
 })
 
+const curriculumFields = {
+  fundamentalCompetencies: ['Comunicativa'],
+  specificCompetence: 'Competencia oficial extensa.',
+  achievementIndicator: 'Indicador oficial.',
+  contentConceptual: 'Contenido conceptual oficial.',
+  contentProcedural: 'Contenido procedimental oficial.',
+  contentAttitudinal: 'Contenido actitudinal oficial.',
+}
+
+function generatedDays(count: number) {
+  return Array.from({ length: count }, (_, index) => ({
+    day: index + 1,
+    date: null,
+    inicio: `Inicio ${index + 1}.`,
+    desarrollo: `Desarrollo ${index + 1}.`,
+    cierre: `Cierre ${index + 1}.`,
+    evidence: `Evidencia ${index + 1}.`,
+    evaluationMethod: `Evaluación ${index + 1}.`,
+  }))
+}
+
 describe('PlanningService.generateEntryDraft', () => {
   beforeEach(() => {
     vi.clearAllMocks()
@@ -44,7 +71,7 @@ describe('PlanningService.generateEntryDraft', () => {
     vi.stubGlobal('fetch', vi.fn())
   })
 
-  it('requires an OpenAI API key', async () => {
+  it('requires a DeepSeek API key', async () => {
     const service = new PlanningService(config({}) as never)
 
     await expect(service.generateEntryDraft('school-1', {})).rejects.toBeInstanceOf(
@@ -71,11 +98,6 @@ describe('PlanningService.generateEntryDraft', () => {
             message: {
               content: JSON.stringify({
                 title: 'La entrevista',
-                specificCompetence: 'Produce entrevistas orales y escritas.',
-                achievementIndicator: 'Realiza preguntas pertinentes.',
-                contentConceptual: 'La entrevista y sus partes.',
-                contentProcedural: 'Redaccion de preguntas.',
-                contentAttitudinal: 'Respeto al escuchar.',
                 strategies: 'Situacion de aprendizaje y trabajo colaborativo.',
                 activities: {
                   inicio: 'Exploran entrevistas conocidas.',
@@ -95,24 +117,63 @@ describe('PlanningService.generateEntryDraft', () => {
     } as never)
 
     const result = await new PlanningService(
-      config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
+      config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
     ).generateEntryDraft('school-1', {
       sectionSubjectId: 'ss-1',
       title: 'La entrevista',
+      curricularPolicyContext: 'Ciudadanía digital y uso ético de la inteligencia artificial.',
     })
 
     expect(fetch).toHaveBeenCalledWith(
-      'https://api.openai.com/v1/chat/completions',
+      'https://api.deepseek.com/chat/completions',
       expect.objectContaining({
         method: 'POST',
         headers: expect.objectContaining({ Authorization: 'Bearer test-key' }),
       }),
     )
-    expect(JSON.parse(vi.mocked(fetch).mock.calls[0][1]?.body as string)).toMatchObject({
+    const requestBody = JSON.parse(vi.mocked(fetch).mock.calls[0][1]?.body as string)
+    expect(requestBody).toMatchObject({
       model: 'test-model',
+      thinking: { type: 'disabled' },
+      response_format: { type: 'json_object' },
+      max_tokens: 1500,
     })
+    expect(requestBody.messages[1].content).toContain('Ciudadanía digital')
     expect(result.activities.desarrollo).toContain('entrevista')
     expect(result.durationMinutes).toBe(90)
+  })
+
+  it('retries once when DeepSeek returns empty JSON content', async () => {
+    vi.mocked(fetch)
+      .mockResolvedValueOnce({
+        ok: true,
+        json: vi.fn().mockResolvedValue({ choices: [{ message: { content: '' } }] }),
+      } as never)
+      .mockResolvedValueOnce({
+        ok: true,
+        json: vi.fn().mockResolvedValue({
+          choices: [{
+            message: {
+              content: JSON.stringify({
+                title: 'La entrevista',
+                strategies: 'Trabajo colaborativo.',
+                activities: { inicio: 'Exploran.', desarrollo: 'Entrevistan.', cierre: 'Reflexionan.' },
+                resources: 'Cuaderno.',
+                evaluationMethod: 'Observación.',
+                evidence: 'Guion.',
+                evaluationInstruments: 'Lista de cotejo.',
+                durationMinutes: 45,
+              }),
+            },
+          }],
+        }),
+      } as never)
+
+    await new PlanningService(
+      config({ DEEPSEEK_API_KEY: 'test-key' }) as never,
+    ).generateEntryDraft('school-1', {})
+
+    expect(fetch).toHaveBeenCalledTimes(2)
   })
 
   it('generates and creates the planning entry in one server operation', async () => {
@@ -121,8 +182,14 @@ describe('PlanningService.generateEntryDraft', () => {
       gradeId: 'grade-1',
       sectionId: 'section-1',
       subjectId: 'subject-1',
+      schoolYearId: 'year-1',
     })
-    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      id: 'period-1',
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-06-01'),
+      endDate: new Date('2026-06-30'),
+    })
     mocks.prisma.grade.findFirst.mockResolvedValue({ name: '4to' })
     mocks.prisma.section.findFirst.mockResolvedValue({ name: 'A' })
     mocks.prisma.subject.findFirst.mockResolvedValue({ name: 'Lengua Española' })
@@ -136,16 +203,12 @@ describe('PlanningService.generateEntryDraft', () => {
             message: {
               content: JSON.stringify({
                 title: 'La entrevista',
-                specificCompetence: 'Produce entrevistas.',
-                achievementIndicator: 'Formula preguntas pertinentes.',
-                contentConceptual: 'La entrevista.',
-                contentProcedural: 'Elaboracion de guion.',
-                contentAttitudinal: 'Escucha respetuosa.',
                 strategies: 'Trabajo colaborativo.',
                 activities: {
                   inicio: 'Conversan sobre entrevistas.',
                   desarrollo: 'Preparan el guion.',
                   cierre: 'Comparten hallazgos.',
+                  days: generatedDays(5),
                 },
                 resources: 'Cuaderno y pizarra.',
                 evaluationMethod: 'Observacion.',
@@ -160,11 +223,16 @@ describe('PlanningService.generateEntryDraft', () => {
     } as never)
 
     await new PlanningService(
-      config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
+      config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
     ).generateAndCreateEntry('school-1', {
       sectionSubjectId: 'ss-1',
       academicPeriodId: 'period-1',
-      plannedDate: '2026-06-25',
+      plannedDate: '2026-06-22',
+      title: 'Título definido por el docente',
+      durationMinutes: 45,
+      planningType: 'SEQUENCE',
+      durationDays: 5,
+      ...curriculumFields,
     })
 
     expect(mocks.prisma.planningEntry.create).toHaveBeenCalledWith({
@@ -172,10 +240,144 @@ describe('PlanningService.generateEntryDraft', () => {
         schoolId: 'school-1',
         sectionSubjectId: 'ss-1',
         academicPeriodId: 'period-1',
-        title: 'La entrevista',
-        activities: expect.objectContaining({ desarrollo: 'Preparan el guion.' }),
+        title: 'Título definido por el docente',
+        planningType: 'SEQUENCE',
+        durationDays: 5,
+        sequence: 1,
+        durationMinutes: 45,
+        specificCompetence: 'Competencia oficial extensa.',
+        achievementIndicator: 'Indicador oficial.',
+        contentConceptual: 'Contenido conceptual oficial.',
+        activities: expect.objectContaining({
+          desarrollo: 'Preparan el guion.',
+          days: expect.arrayContaining([
+            expect.objectContaining({ day: 5, date: '2026-06-26' }),
+          ]),
+        }),
       }),
     })
+  })
+
+  it('does not save when AI detects a clear subject mismatch', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({
+      id: 'ss-1', gradeId: 'grade-1', sectionId: 'section-1', subjectId: 'subject-1', schoolYearId: 'year-1',
+    })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      id: 'period-1', schoolYearId: 'year-1', startDate: new Date('2026-08-01'), endDate: new Date('2026-10-31'),
+    })
+    mocks.prisma.grade.findFirst.mockResolvedValue({ name: '1ro' })
+    mocks.prisma.section.findFirst.mockResolvedValue({ name: 'A' })
+    mocks.prisma.subject.findFirst.mockResolvedValue({ name: 'Lengua Española' })
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({ choices: [{ message: { content: JSON.stringify({
+        title: 'La materia', strategies: '',
+        activities: { inicio: 'Exploran.', desarrollo: 'Clasifican.', cierre: 'Explican.' },
+        resources: '', evaluationMethod: '', evidence: '', evaluationInstruments: '', durationMinutes: 45,
+        alignmentWarning: 'El tema corresponde a Ciencias de la Naturaleza, no a Lengua Española.',
+      }) } }] }),
+    } as never)
+
+    await expect(new PlanningService(
+      config({ DEEPSEEK_API_KEY: 'test-key' }) as never,
+    ).generateAndCreateEntry('school-1', {
+      sectionSubjectId: 'ss-1', academicPeriodId: 'period-1', title: 'La materia',
+      ...curriculumFields,
+    })).rejects.toThrow('Revisa la coherencia curricular')
+    expect(mocks.prisma.planningEntry.create).not.toHaveBeenCalled()
+  })
+
+  it('rejects a period from a different school year', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-2',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+
+    await expect(new PlanningService(config({}) as never).createEntry('school-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      title: 'Planificación',
+    })).rejects.toThrow('El curso y el período deben pertenecer al mismo año escolar.')
+  })
+
+  it('rejects a planned date outside its academic period', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+
+    await expect(new PlanningService(config({}) as never).createEntry('school-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      title: 'Planificación',
+      plannedDate: '2026-11-01',
+    })).rejects.toThrow('Todas las fechas de la planificación deben estar dentro del período académico.')
+  })
+
+  it('rejects a multi-day planning whose last weekday exceeds the period', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+
+    await expect(new PlanningService(config({}) as never).createEntry('school-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      title: 'Secuencia',
+      plannedDate: '2026-10-30',
+      planningType: 'SEQUENCE',
+      durationDays: 2,
+      activities: { inicio: '', desarrollo: '', cierre: '', days: generatedDays(2) },
+      ...curriculumFields,
+    })).rejects.toThrow('Todas las fechas de la planificación deben estar dentro del período académico.')
+  })
+
+  it('revalidates the academic period when updating a planning', async () => {
+    mocks.prisma.planningEntry.findFirst.mockResolvedValue({
+      id: 'planning-1',
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      plannedDate: new Date('2026-08-20'),
+      planningType: 'DAILY',
+      durationDays: 1,
+      activities: { inicio: 'Inicio.', desarrollo: 'Desarrollo.', cierre: 'Cierre.' },
+      ...curriculumFields,
+    })
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+
+    await expect(new PlanningService(config({}) as never).updateEntry('school-1', 'planning-1', {
+      plannedDate: '2026-11-01',
+    })).rejects.toThrow('Todas las fechas de la planificación deben estar dentro del período académico.')
+    expect(mocks.prisma.planningEntry.update).not.toHaveBeenCalled()
+  })
+
+  it('rejects linked activities from another course or period', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+    mocks.prisma.evaluationActivity.count.mockResolvedValue(1)
+
+    await expect(new PlanningService(config({}) as never).createEntry('school-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      title: 'Planificación',
+      linkedActivityIds: ['activity-1', 'activity-2'],
+      ...curriculumFields,
+    })).rejects.toThrow('Las actividades vinculadas deben pertenecer al mismo curso y período.')
   })
 
   it('rejects incomplete generated activities', async () => {
@@ -187,11 +389,6 @@ describe('PlanningService.generateEntryDraft', () => {
             message: {
               content: JSON.stringify({
                 title: 'La entrevista',
-                specificCompetence: 'Produce entrevistas.',
-                achievementIndicator: 'Formula preguntas pertinentes.',
-                contentConceptual: 'La entrevista.',
-                contentProcedural: 'Elaboracion de guion.',
-                contentAttitudinal: 'Escucha respetuosa.',
                 strategies: 'Trabajo colaborativo.',
                 activities: { inicio: '', desarrollo: 'Preparan el guion.', cierre: 'Comparten.' },
                 resources: 'Cuaderno.',
@@ -208,7 +405,7 @@ describe('PlanningService.generateEntryDraft', () => {
 
     await expect(
       new PlanningService(
-        config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
+        config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
       ).generateEntryDraft('school-1', {}),
     ).rejects.toThrow('La IA no generó la secuencia completa de actividades.')
   })
