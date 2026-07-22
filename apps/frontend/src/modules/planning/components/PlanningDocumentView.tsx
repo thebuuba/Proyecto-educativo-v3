@@ -139,20 +139,41 @@ export function PlanningDocumentView({ entry, onClose }: PlanningDocumentViewPro
               {entry.curriculumVersion ? <Section title="Fuente curricular">MINERD {entry.curriculumVersion} · {entry.curriculumOrdinance || 'Normativa no registrada'}{entry.curriculumSourcePages ? ` · páginas ${entry.curriculumSourcePages}` : ''}</Section> : null}
               <Section title="Estrategia de enseñanza">{entry.strategies}</Section>
 
-              <section className="border-t border-border pt-4">
-                <h4 className="text-sm font-bold text-primary">Momentos de clase</h4>
-                <div className="mt-3 grid gap-3 md:grid-cols-3">
-                  <Moment title="Inicio" value={entry.activities?.inicio} />
-                  <Moment title="Desarrollo" value={entry.activities?.desarrollo} />
-                  <Moment title="Cierre" value={entry.activities?.cierre} />
-                </div>
-              </section>
-
-              <Section title="Actividades">
-                {[entry.activities?.inicio, entry.activities?.desarrollo, entry.activities?.cierre]
-                  .filter(Boolean)
-                  .join('\n\n')}
-              </Section>
+              {entry.activities?.days?.length ? (
+                <section className="border-t border-border pt-4">
+                  <h4 className="text-sm font-bold text-primary">Desarrollo por día</h4>
+                  <div className="mt-3 space-y-4">
+                    {entry.activities.days.map((day) => (
+                      <div key={day.day} className="rounded-lg border border-border bg-muted/20 p-4">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <h5 className="font-bold text-foreground">Día {day.day}</h5>
+                          <span className="text-xs font-semibold text-muted-foreground">
+                            {formatDate(day.date)}
+                          </span>
+                        </div>
+                        <div className="mt-3 grid gap-3 md:grid-cols-3">
+                          <Moment title="Inicio" value={day.inicio} />
+                          <Moment title="Desarrollo" value={day.desarrollo} />
+                          <Moment title="Cierre" value={day.cierre} />
+                        </div>
+                        <div className="mt-3 grid gap-3 md:grid-cols-2">
+                          <Moment title="Evidencia" value={day.evidence} />
+                          <Moment title="Evaluación" value={day.evaluationMethod} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ) : (
+                <section className="border-t border-border pt-4">
+                  <h4 className="text-sm font-bold text-primary">Momentos de clase</h4>
+                  <div className="mt-3 grid gap-3 md:grid-cols-3">
+                    <Moment title="Inicio" value={entry.activities?.inicio} />
+                    <Moment title="Desarrollo" value={entry.activities?.desarrollo} />
+                    <Moment title="Cierre" value={entry.activities?.cierre} />
+                  </div>
+                </section>
+              )}
               <Section title="Técnicas de evaluación">{entry.evaluationMethod}</Section>
               <Section title="Instrumentos">{entry.evaluationInstruments}</Section>
               <Section title="Recursos">{entry.resources}</Section>

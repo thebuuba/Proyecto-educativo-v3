@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import type { FormEvent, ReactNode } from 'react'
 import { useEffect, useRef, useState } from 'react'
+import { addWeekdays } from '@aula/shared'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -40,6 +41,7 @@ import type {
   CompetencyOption,
   CreatePlanningEntryInput,
   GeneratedPlanningEntry,
+  PlanningDay,
   PlanningType,
 } from '@/modules/planning/types'
 import {
@@ -62,12 +64,6 @@ type PlanningEntryFormProps = {
   error: string | null
   curriculumReference?: { grade: string; subjectId: string }
   onSubmit: (input: CreatePlanningEntryInput) => Promise<void>
-  onGenerateAndCreate: (input: CreatePlanningEntryInput & {
-    subjectName?: string
-    sectionName?: string
-    gradeName?: string
-    fundamentalCompetenceName?: string
-  }) => Promise<void>
   onClose: () => void
 }
 
@@ -126,7 +122,6 @@ export function PlanningEntryForm({
   error,
   curriculumReference,
   onSubmit,
-  onGenerateAndCreate,
   onClose,
 }: PlanningEntryFormProps) {
   const { appUser } = useAuth()
@@ -154,6 +149,7 @@ export function PlanningEntryForm({
   const [inicio, setInicio] = useState(initial?.entry.activities?.inicio ?? '')
   const [desarrollo, setDesarrollo] = useState(initial?.entry.activities?.desarrollo ?? '')
   const [cierre, setCierre] = useState(initial?.entry.activities?.cierre ?? '')
+  const [days, setDays] = useState<PlanningDay[]>(initial?.entry.activities?.days ?? [])
   const [resources, setResources] = useState(initial?.entry.resources ?? '')
   const [evaluationMethod, setEvaluationMethod] = useState(initial?.entry.evaluationMethod ?? '')
   const [evidence, setEvidence] = useState(initial?.entry.evidence ?? '')
@@ -162,6 +158,8 @@ export function PlanningEntryForm({
   const [plannedDate, setPlannedDate] = useState(initial?.entry.plannedDate ?? '')
   const [validationError, setValidationError] = useState('')
   const [generating, setGenerating] = useState(false)
+  const [alignmentWarning, setAlignmentWarning] = useState('')
+  const [alignmentConfirmed, setAlignmentConfirmed] = useState(false)
   const [availableActivities, setAvailableActivities] = useState<GradingActivity[]>([])
   const [linkedActivityIds, setLinkedActivityIds] = useState<string[]>(initial?.entry.linkedActivityIds ?? [])
   const lastAppliedCurriculum = useRef<SecondaryCurriculumContent | null>(null)
@@ -187,6 +185,24 @@ export function PlanningEntryForm({
   const curriculumContent = curriculumGrade && curriculumSubject
     ? getSecondaryCurriculumContent(curriculumGrade, curriculumSubject.id)
     : null
+
+  useEffect(() => {
+    if (planningType === 'DAILY') return
+    const count = Math.min(30, Math.max(1, Number(durationDays) || 1))
+    setDays((current) => Array.from({ length: count }, (_, index) => current[index] ?? {
+      day: index + 1,
+      inicio: '',
+      desarrollo: '',
+      cierre: '',
+      evidence: '',
+      evaluationMethod: '',
+    }).map((day, index) => ({ ...day, day: index + 1 })))
+  }, [durationDays, planningType])
+
+  useEffect(() => {
+    setAlignmentWarning('')
+    setAlignmentConfirmed(false)
+  }, [sectionSubjectId, topic])
 
   useEffect(() => {
     if (!selectedPeriod) return
@@ -275,6 +291,14 @@ export function PlanningEntryForm({
 
   function buildInput(): CreatePlanningEntryInput {
     const sourcePages = curriculumContent?.sourcePages
+    const plannedDays = planningType === 'DAILY' ? undefined : days.map((day, index) => ({
+      ...day,
+      day: index + 1,
+      date: plannedDate ? addWeekdays(plannedDate, index) : null,
+    }))
+    const summarizeDays = (field: 'inicio' | 'desarrollo' | 'cierre') => plannedDays
+      ?.map((day) => `Día ${day.day}: ${day[field]}`)
+      .join('\n\n') ?? ''
     return {
       sectionSubjectId,
       academicPeriodId,
@@ -298,7 +322,14 @@ export function PlanningEntryForm({
       contentProcedural,
       contentAttitudinal,
       strategies,
-      activities: { inicio, desarrollo, cierre },
+      activities: planningType === 'DAILY'
+        ? { inicio, desarrollo, cierre }
+        : {
+            inicio: summarizeDays('inicio'),
+            desarrollo: summarizeDays('desarrollo'),
+            cierre: summarizeDays('cierre'),
+            days: plannedDays,
+          },
       resources,
       evaluationMethod: evaluationMethod.trim() || evidence.trim(),
       evidence,
@@ -313,11 +344,12 @@ export function PlanningEntryForm({
     setValidationError('')
     return quickPlanningValidationError(targetStep, {
       courseKey, sectionSubjectId, academicPeriodId, plannedDate, topic, duration,
-      planningType, durationDays,
+      planningType, durationDays, days,
       periodStartDate: selectedPeriod?.startDate.slice(0, 10),
       periodEndDate: selectedPeriod?.endDate.slice(0, 10),
       inicio, desarrollo, cierre, evidence, fundamentalCompetencies,
-      specificCompetence, achievementIndicator,
+      specificCompetence, achievementIndicator, contentConceptual,
+      contentProcedural, contentAttitudinal,
     })
   }
 
@@ -333,11 +365,17 @@ export function PlanningEntryForm({
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (alignmentWarning && !alignmentConfirmed) {
+      setValidationError('Confirma que deseas continuar con el tema señalado antes de guardar.')
+      return
+    }
     const message = validateStep(3)
     if (message) {
       setValidationError(message)
       const curriculumError = message.includes('curriculares') || message.includes('competencia') || message.includes('indicadores')
-      const activitiesError = message.includes('iniciarás') || message.includes('actividad principal') || message.includes('cerrarás') || message.includes('estudiantes')
+      const activitiesError = message.includes('iniciarás') || message.includes('actividad principal')
+        || message.includes('cerrarás') || message.includes('estudiantes')
+        || message.includes('actividades') || message.includes('evaluación') || message.includes('días')
       setStep(curriculumError ? 3 : activitiesError ? 2 : 1)
       return
     }
@@ -350,6 +388,13 @@ export function PlanningEntryForm({
     setInicio(draft.activities.inicio)
     setDesarrollo(draft.activities.desarrollo)
     setCierre(draft.activities.cierre)
+    if (planningType !== 'DAILY' && draft.activities.days) {
+      setDays(draft.activities.days.map((day, index) => ({
+        ...day,
+        day: index + 1,
+        date: plannedDate ? addWeekdays(plannedDate, index) : null,
+      })))
+    }
     setResources(draft.resources)
     setEvaluationMethod(draft.evaluationMethod)
     setEvidence(draft.evidence)
@@ -388,33 +433,12 @@ export function PlanningEntryForm({
     try {
       const draft = await requestDraft()
       applyActivitySuggestion(draft)
+      setAlignmentWarning(draft.alignmentWarning ?? '')
+      setAlignmentConfirmed(false)
       if (draft.alignmentWarning) setValidationError(`Revisa la coherencia curricular: ${draft.alignmentWarning}`)
     }
     catch (caught) { setValidationError(caught instanceof Error ? caught.message : 'No se pudo generar la planificación.') }
     finally { setGenerating(false) }
-  }
-
-  async function handleGenerateAndSave() {
-    const message = validateStep(1)
-    if (message) {
-      setValidationError(message)
-      setStep(1)
-      return
-    }
-    const competence = competencies.find((item) => item.id === fundamentalCompetenceId)
-    setGenerating(true)
-    try {
-      await onGenerateAndCreate({
-        ...buildInput(),
-        subjectName: selectedSectionSubject?.subjectName,
-        sectionName: selectedSectionSubject?.sectionName,
-        gradeName: selectedSectionSubject?.gradeName,
-        fundamentalCompetenceName: competence?.name,
-        curricularPolicyContext: currentMinerdPolicyContext,
-      })
-    } catch (caught) {
-      setValidationError(caught instanceof Error ? caught.message : 'No se pudo generar la planificación.')
-    } finally { setGenerating(false) }
   }
 
   const ActiveStepIcon = steps[step - 1]?.icon ?? School
@@ -486,11 +510,12 @@ export function PlanningEntryForm({
             <div><p className="font-extrabold text-primary">Describe la experiencia de aprendizaje</p><p className="mt-0.5 text-xs leading-5 text-primary/75">Puedes escribirla directamente o usar “Completar con IA” como punto de partida editable.</p></div>
             <Button type="button" variant="outline" size="sm" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Sugerir actividades</Button>
           </div>
-          <div className="grid gap-4 lg:grid-cols-3">
+          {alignmentWarning ? <div className="rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950"><p className="font-extrabold">Revisa la coherencia del tema</p><p className="mt-1 leading-6">{alignmentWarning}</p><label className="mt-3 flex cursor-pointer items-start gap-2 font-bold"><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={alignmentConfirmed} onChange={(event) => setAlignmentConfirmed(event.target.checked)} /><span>Confirmo que este tema corresponde a la asignatura seleccionada.</span></label></div> : null}
+          {planningType === 'DAILY' ? <div className="grid gap-4 lg:grid-cols-3">
             <MomentField title="Inicio" hint="Motivación, saberes previos y propósito" value={inicio} onChange={setInicio} />
             <MomentField title="Desarrollo" hint="Actividad principal y construcción del aprendizaje" value={desarrollo} onChange={setDesarrollo} />
             <MomentField title="Cierre" hint="Síntesis, reflexión y retroalimentación" value={cierre} onChange={setCierre} />
-          </div>
+          </div> : <div className="grid gap-4">{days.map((day, index) => <PlanningDayField key={day.day} day={day} date={plannedDate ? addWeekdays(plannedDate, index) : ''} onChange={(field, value) => setDays((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, [field]: value } : item))} />)}</div>}
           <Field label="¿Cómo demostrarán los estudiantes lo aprendido?" required><Textarea rows={4} value={evidence} onChange={(event) => setEvidence(event.target.value)} placeholder="Ej.: Elaborarán un modelo de la célula y explicarán la función de sus partes mediante una lista de cotejo." /></Field>
         </div> : null}
 
@@ -500,7 +525,7 @@ export function PlanningEntryForm({
             <ReviewItem label="Curso y asignatura" value={selectedSectionSubject ? `${selectedSectionSubject.gradeName} ${selectedSectionSubject.sectionName} · ${selectedSectionSubject.subjectName}` : 'Sin seleccionar'} />
             <ReviewItem label="Tema" value={topic || 'Sin tema'} />
             <ReviewItem label="Fecha" value={plannedDate || 'Sin fecha'} />
-            <ReviewItem label="Duración" value={duration ? `${duration} minutos` : 'Sin duración'} />
+            <ReviewItem label="Duración" value={duration ? planningType === 'DAILY' ? `${duration} minutos` : `${durationDays} días · ${duration} minutos` : 'Sin duración'} />
           </div>
           {curriculumGrade && curriculumSubject ? (
             <div className="flex flex-col gap-3 rounded-2xl border border-primary/15 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
@@ -560,7 +585,7 @@ export function PlanningEntryForm({
       </section>
 
       <footer className="sticky bottom-3 z-20 flex flex-col-reverse gap-3 rounded-2xl border border-border bg-card/95 p-3 shadow-[0_16px_40px_-24px_rgba(30,79,143,.45)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:p-4">
-        <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><ArrowLeft className="size-4" />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
+        <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><ArrowLeft className="size-4" />{step === 1 ? 'Cancelar' : 'Anterior'}</Button></div>
         <div className="grid gap-2 sm:flex">{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
       </footer>
     </form>
@@ -581,4 +606,12 @@ function ReviewItem({ label, value }: { label: string; value: string }) {
 
 function MomentField({ title, hint, value, onChange }: { title: string; hint: string; value: string; onChange: (value: string) => void }) {
   return <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><div className="border-b border-border bg-primary/[0.045] px-4 py-3"><h3 className="font-extrabold text-primary">{title}</h3><p className="mt-0.5 text-xs leading-5 text-muted-foreground">{hint}</p></div><Textarea className="min-h-48 resize-y rounded-none border-0 shadow-none focus:ring-0" value={value} onChange={(event) => onChange(event.target.value)} placeholder={`Describe las actividades de ${title.toLowerCase()}...`} /></div>
+}
+
+function PlanningDayField({ day, date, onChange }: {
+  day: PlanningDay
+  date: string
+  onChange: (field: 'inicio' | 'desarrollo' | 'cierre' | 'evidence' | 'evaluationMethod', value: string) => void
+}) {
+  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-center justify-between gap-3 border-b border-border bg-primary/[0.045] px-4 py-3"><h3 className="font-extrabold text-primary">Día {day.day}</h3><span className="text-xs font-bold text-muted-foreground">{date || 'Fecha pendiente'}</span></header><div className="grid gap-4 p-4 lg:grid-cols-3"><Field label="Inicio" required><Textarea rows={4} value={day.inicio} onChange={(event) => onChange('inicio', event.target.value)} /></Field><Field label="Desarrollo" required><Textarea rows={4} value={day.desarrollo} onChange={(event) => onChange('desarrollo', event.target.value)} /></Field><Field label="Cierre" required><Textarea rows={4} value={day.cierre} onChange={(event) => onChange('cierre', event.target.value)} /></Field><Field label="Evidencia" required><Textarea rows={3} value={day.evidence} onChange={(event) => onChange('evidence', event.target.value)} /></Field><div className="lg:col-span-2"><Field label="Evaluación" required><Textarea rows={3} value={day.evaluationMethod} onChange={(event) => onChange('evaluationMethod', event.target.value)} /></Field></div></div></section>
 }

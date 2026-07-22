@@ -8,6 +8,7 @@ import {
 const completePlanning = {
   planningType: 'DAILY' as const,
   durationDays: '1',
+  days: [],
   courseKey: 'Secundaria::1.º::A',
   sectionSubjectId: 'subject',
   academicPeriodId: 'period',
@@ -21,6 +22,9 @@ const completePlanning = {
   fundamentalCompetencies: ['Comunicativa'],
   specificCompetence: 'Explica los procesos celulares.',
   achievementIndicator: 'Describe las partes de la célula.',
+  contentConceptual: 'La célula y sus partes.',
+  contentProcedural: 'Construcción de un modelo celular.',
+  contentAttitudinal: 'Valoración del trabajo científico.',
 }
 
 describe('planificación rápida', () => {
@@ -40,6 +44,20 @@ describe('planificación rápida', () => {
       periodStartDate: '2026-08-01',
       periodEndDate: '2026-10-31',
     })).toContain('dentro del período académico')
+    expect(quickPlanningValidationError(1, {
+      ...completePlanning,
+      planningType: 'SEQUENCE',
+      durationDays: '2',
+      plannedDate: '2026-10-30',
+      periodStartDate: '2026-08-01',
+      periodEndDate: '2026-10-31',
+    })).toContain('termina fuera')
+    expect(quickPlanningValidationError(2, {
+      ...completePlanning,
+      planningType: 'UNIT',
+      durationDays: '2',
+      days: [],
+    })).toContain('todos los días')
   })
 
   it('limita el contexto curricular enviado al generador', () => {

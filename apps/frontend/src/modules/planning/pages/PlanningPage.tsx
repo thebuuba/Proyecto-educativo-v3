@@ -42,7 +42,6 @@ export function PlanningPage() {
     loading,
     error,
     addEntry,
-    generateEntry,
     editEntry,
     removeEntry,
     duplicateEntry,
@@ -248,20 +247,6 @@ export function PlanningPage() {
           submitting={isSubmitting}
           error={formError}
           onSubmit={handleSubmit}
-          onGenerateAndCreate={async (input) => {
-            setIsSubmitting(true)
-            setFormError(null)
-            try {
-              await generateEntry(input)
-              setPeriodFilter(input.academicPeriodId ?? periodFilter)
-              setActivePeriodId(input.academicPeriodId ?? null)
-              closeForm()
-            } catch (caught) {
-              setFormError(caught instanceof Error ? caught.message : 'No se pudo generar.')
-            } finally {
-              setIsSubmitting(false)
-            }
-          }}
           onClose={closeForm}
         />
       </section>

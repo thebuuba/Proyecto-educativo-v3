@@ -30,7 +30,7 @@ export type PlanningWorkspace = {
 export function getPlanningWorkspace(): Promise<PlanningWorkspace | null> {
   return api.get<PlanningWorkspace | null>('/planning/workspace', {
     cacheTtlMs: API_CACHE_TTL.sessionList,
-    cacheTags: [API_CACHE_TAGS.academicPeriods, API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.planningCompetencies, API_CACHE_TAGS.schoolYears],
+    cacheTags: [API_CACHE_TAGS.academicPeriods, API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.planningCompetencies, API_CACHE_TAGS.planningEntries, API_CACHE_TAGS.schoolYears],
   })
 }
 
@@ -80,17 +80,23 @@ export async function getPlanningEntries(filters: PlanningFilters): Promise<Plan
   const params = new URLSearchParams()
   if (filters.academicPeriodId) params.set('academicPeriodId', filters.academicPeriodId)
   if (filters.sectionSubjectId) params.set('sectionSubjectId', filters.sectionSubjectId)
-  return api.get<PlanningEntryWithDetails[]>(`/planning/entries?${params}`)
+  return api.get<PlanningEntryWithDetails[]>(`/planning/entries?${params}`, {
+    cacheTags: [API_CACHE_TAGS.planningEntries],
+  })
 }
 
 /** Crea una nueva entrada de planificación */
 export async function createPlanningEntry(input: CreatePlanningEntryInput): Promise<void> {
-  await api.post('/planning/entries', input)
+  await api.post('/planning/entries', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.planningEntries],
+  })
 }
 
 /** Actualiza una entrada de planificación existente */
 export async function updatePlanningEntry(id: string, input: CreatePlanningEntryInput): Promise<void> {
-  await api.patch(`/planning/entries/${id}`, input)
+  await api.patch(`/planning/entries/${id}`, input, {
+    invalidateCacheTags: [API_CACHE_TAGS.planningEntries],
+  })
 }
 
 /** Genera una planificación completa con IA */
@@ -110,20 +116,28 @@ export async function generateAndCreatePlanningEntry(input: Partial<CreatePlanni
   gradeName?: string
   fundamentalCompetenceName?: string
 }): Promise<void> {
-  await api.post('/planning/entries/generate-and-create', input)
+  await api.post('/planning/entries/generate-and-create', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.planningEntries],
+  })
 }
 
 /** Elimina una entrada de planificación */
 export async function deletePlanningEntry(id: string): Promise<void> {
-  await api.delete(`/planning/entries/${id}`)
+  await api.delete(`/planning/entries/${id}`, {
+    invalidateCacheTags: [API_CACHE_TAGS.planningEntries],
+  })
 }
 
 export async function duplicatePlanningEntry(id: string): Promise<void> {
-  await api.post(`/planning/entries/${id}/duplicate`)
+  await api.post(`/planning/entries/${id}/duplicate`, undefined, {
+    invalidateCacheTags: [API_CACHE_TAGS.planningEntries],
+  })
 }
 
 export async function archivePlanningEntry(id: string): Promise<void> {
-  await api.patch(`/planning/entries/${id}/archive`)
+  await api.patch(`/planning/entries/${id}/archive`, undefined, {
+    invalidateCacheTags: [API_CACHE_TAGS.planningEntries],
+  })
 }
 
 /** Obtiene las competencias fundamentales disponibles */

@@ -25,6 +25,12 @@ const mocks = vi.hoisted(() => ({
     },
     planningEntry: {
       create: vi.fn(),
+      findFirst: vi.fn(),
+      update: vi.fn(),
+    },
+    evaluationActivity: {
+      count: vi.fn(),
+      updateMany: vi.fn(),
     },
   },
 }))
@@ -36,6 +42,27 @@ vi.mock('@aula/database', () => ({
 const config = (values: Record<string, string | undefined>) => ({
   get: vi.fn((key: string) => values[key]),
 })
+
+const curriculumFields = {
+  fundamentalCompetencies: ['Comunicativa'],
+  specificCompetence: 'Competencia oficial extensa.',
+  achievementIndicator: 'Indicador oficial.',
+  contentConceptual: 'Contenido conceptual oficial.',
+  contentProcedural: 'Contenido procedimental oficial.',
+  contentAttitudinal: 'Contenido actitudinal oficial.',
+}
+
+function generatedDays(count: number) {
+  return Array.from({ length: count }, (_, index) => ({
+    day: index + 1,
+    date: null,
+    inicio: `Inicio ${index + 1}.`,
+    desarrollo: `Desarrollo ${index + 1}.`,
+    cierre: `Cierre ${index + 1}.`,
+    evidence: `Evidencia ${index + 1}.`,
+    evaluationMethod: `Evaluación ${index + 1}.`,
+  }))
+}
 
 describe('PlanningService.generateEntryDraft', () => {
   beforeEach(() => {
@@ -181,6 +208,7 @@ describe('PlanningService.generateEntryDraft', () => {
                   inicio: 'Conversan sobre entrevistas.',
                   desarrollo: 'Preparan el guion.',
                   cierre: 'Comparten hallazgos.',
+                  days: generatedDays(5),
                 },
                 resources: 'Cuaderno y pizarra.',
                 evaluationMethod: 'Observacion.',
@@ -199,16 +227,12 @@ describe('PlanningService.generateEntryDraft', () => {
     ).generateAndCreateEntry('school-1', {
       sectionSubjectId: 'ss-1',
       academicPeriodId: 'period-1',
-      plannedDate: '2026-06-25',
+      plannedDate: '2026-06-22',
       title: 'Título definido por el docente',
       durationMinutes: 45,
       planningType: 'SEQUENCE',
       durationDays: 5,
-      specificCompetence: 'Competencia oficial extensa.',
-      achievementIndicator: 'Indicador oficial.',
-      contentConceptual: 'Contenido conceptual oficial.',
-      contentProcedural: 'Contenido procedimental oficial.',
-      contentAttitudinal: 'Contenido actitudinal oficial.',
+      ...curriculumFields,
     })
 
     expect(mocks.prisma.planningEntry.create).toHaveBeenCalledWith({
@@ -224,7 +248,12 @@ describe('PlanningService.generateEntryDraft', () => {
         specificCompetence: 'Competencia oficial extensa.',
         achievementIndicator: 'Indicador oficial.',
         contentConceptual: 'Contenido conceptual oficial.',
-        activities: expect.objectContaining({ desarrollo: 'Preparan el guion.' }),
+        activities: expect.objectContaining({
+          desarrollo: 'Preparan el guion.',
+          days: expect.arrayContaining([
+            expect.objectContaining({ day: 5, date: '2026-06-26' }),
+          ]),
+        }),
       }),
     })
   })
@@ -253,6 +282,7 @@ describe('PlanningService.generateEntryDraft', () => {
       config({ DEEPSEEK_API_KEY: 'test-key' }) as never,
     ).generateAndCreateEntry('school-1', {
       sectionSubjectId: 'ss-1', academicPeriodId: 'period-1', title: 'La materia',
+      ...curriculumFields,
     })).rejects.toThrow('Revisa la coherencia curricular')
     expect(mocks.prisma.planningEntry.create).not.toHaveBeenCalled()
   })
@@ -285,7 +315,69 @@ describe('PlanningService.generateEntryDraft', () => {
       academicPeriodId: 'period-1',
       title: 'Planificación',
       plannedDate: '2026-11-01',
-    })).rejects.toThrow('La fecha planificada debe estar dentro del período académico.')
+    })).rejects.toThrow('Todas las fechas de la planificación deben estar dentro del período académico.')
+  })
+
+  it('rejects a multi-day planning whose last weekday exceeds the period', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+
+    await expect(new PlanningService(config({}) as never).createEntry('school-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      title: 'Secuencia',
+      plannedDate: '2026-10-30',
+      planningType: 'SEQUENCE',
+      durationDays: 2,
+      activities: { inicio: '', desarrollo: '', cierre: '', days: generatedDays(2) },
+      ...curriculumFields,
+    })).rejects.toThrow('Todas las fechas de la planificación deben estar dentro del período académico.')
+  })
+
+  it('revalidates the academic period when updating a planning', async () => {
+    mocks.prisma.planningEntry.findFirst.mockResolvedValue({
+      id: 'planning-1',
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      plannedDate: new Date('2026-08-20'),
+      planningType: 'DAILY',
+      durationDays: 1,
+      activities: { inicio: 'Inicio.', desarrollo: 'Desarrollo.', cierre: 'Cierre.' },
+      ...curriculumFields,
+    })
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+
+    await expect(new PlanningService(config({}) as never).updateEntry('school-1', 'planning-1', {
+      plannedDate: '2026-11-01',
+    })).rejects.toThrow('Todas las fechas de la planificación deben estar dentro del período académico.')
+    expect(mocks.prisma.planningEntry.update).not.toHaveBeenCalled()
+  })
+
+  it('rejects linked activities from another course or period', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({
+      schoolYearId: 'year-1',
+      startDate: new Date('2026-08-01'),
+      endDate: new Date('2026-10-31'),
+    })
+    mocks.prisma.evaluationActivity.count.mockResolvedValue(1)
+
+    await expect(new PlanningService(config({}) as never).createEntry('school-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      title: 'Planificación',
+      linkedActivityIds: ['activity-1', 'activity-2'],
+      ...curriculumFields,
+    })).rejects.toThrow('Las actividades vinculadas deben pertenecer al mismo curso y período.')
   })
 
   it('rejects incomplete generated activities', async () => {

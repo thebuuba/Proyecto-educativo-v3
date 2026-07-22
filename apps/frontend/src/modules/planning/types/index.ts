@@ -8,10 +8,21 @@
 import type { RecordStatus } from '@/types/domain'
 
 /** Momentos de la clase: inicio, desarrollo y cierre */
+export type PlanningDay = {
+  day: number
+  date?: string | null
+  inicio: string
+  desarrollo: string
+  cierre: string
+  evidence: string
+  evaluationMethod: string
+}
+
 export type PlanningActivities = {
   inicio: string
   desarrollo: string
   cierre: string
+  days?: PlanningDay[]
 }
 
 export type PlanningType = 'DAILY' | 'UNIT' | 'SEQUENCE'
@@ -74,6 +85,7 @@ export type CreatePlanningEntryInput = {
   curriculumOrdinance?: string | null
   curriculumSourcePages?: string | null
   curricularPolicyContext?: string
+  allowAlignmentOverride?: boolean
   fundamentalCompetencies?: string[]
   sequence?: number
   specificCompetence?: string

@@ -40,6 +40,42 @@ function section(title: string, body?: string | null) {
   `
 }
 
+function planningDays(entry: PlanningEntryWithDetails) {
+  const days = entry.activities?.days
+  if (!days?.length) {
+    return `
+      <section class="doc-section">
+        <h2>Momentos de clase</h2>
+        <div class="moments">
+          <div class="box"><span class="label">Inicio</span><p>${paragraph(entry.activities?.inicio)}</p></div>
+          <div class="box"><span class="label">Desarrollo</span><p>${paragraph(entry.activities?.desarrollo)}</p></div>
+          <div class="box"><span class="label">Cierre</span><p>${paragraph(entry.activities?.cierre)}</p></div>
+        </div>
+      </section>
+    `
+  }
+
+  return `
+    <section class="doc-section">
+      <h2>Desarrollo por dia</h2>
+      ${days.map((day) => `
+        <div class="day">
+          <h3>Dia ${escapeHtml(day.day)} · ${escapeHtml(formatDate(day.date))}</h3>
+          <div class="moments">
+            <div class="box"><span class="label">Inicio</span><p>${paragraph(day.inicio)}</p></div>
+            <div class="box"><span class="label">Desarrollo</span><p>${paragraph(day.desarrollo)}</p></div>
+            <div class="box"><span class="label">Cierre</span><p>${paragraph(day.cierre)}</p></div>
+          </div>
+          <div class="moments two">
+            <div class="box"><span class="label">Evidencia</span><p>${paragraph(day.evidence)}</p></div>
+            <div class="box"><span class="label">Evaluacion</span><p>${paragraph(day.evaluationMethod)}</p></div>
+          </div>
+        </div>
+      `).join('')}
+    </section>
+  `
+}
+
 export function buildPlanningDocumentHtml(entry: PlanningEntryWithDetails) {
   const course = `${entry.gradeName} ${entry.sectionName}`.trim()
 
@@ -63,6 +99,9 @@ export function buildPlanningDocumentHtml(entry: PlanningEntryWithDetails) {
     .doc-section h2 { color: #1f4e95; font-size: 15px; margin: 0 0 8px; }
     .doc-section p { line-height: 1.55; margin: 0; }
     .moments { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
+    .moments.two { grid-template-columns: repeat(2, 1fr); margin-top: 10px; }
+    .day { border: 1px solid #d9e2ef; border-radius: 8px; margin-top: 12px; padding: 14px; }
+    .day h3 { font-size: 14px; margin: 0 0 10px; }
     @media print {
       body { background: #fff; }
       main { box-shadow: none; margin: 0; max-width: none; padding: 24px; }
@@ -105,16 +144,7 @@ export function buildPlanningDocumentHtml(entry: PlanningEntryWithDetails) {
     ${entry.curriculumVersion ? section('Fuente curricular', `MINERD ${entry.curriculumVersion} · ${entry.curriculumOrdinance || 'Normativa no registrada'}${entry.curriculumSourcePages ? ` · paginas ${entry.curriculumSourcePages}` : ''}`) : ''}
     ${section('Estrategia de ensenanza', entry.strategies)}
 
-    <section class="doc-section">
-      <h2>Momentos de clase</h2>
-      <div class="moments">
-        <div class="box"><span class="label">Inicio</span><p>${paragraph(entry.activities?.inicio)}</p></div>
-        <div class="box"><span class="label">Desarrollo</span><p>${paragraph(entry.activities?.desarrollo)}</p></div>
-        <div class="box"><span class="label">Cierre</span><p>${paragraph(entry.activities?.cierre)}</p></div>
-      </div>
-    </section>
-
-    ${section('Actividades', [entry.activities?.inicio, entry.activities?.desarrollo, entry.activities?.cierre].filter(Boolean).join('\n\n'))}
+    ${planningDays(entry)}
     ${section('Tecnicas de evaluacion', entry.evaluationMethod)}
     ${section('Instrumentos', entry.evaluationInstruments)}
     ${section('Recursos', entry.resources)}
