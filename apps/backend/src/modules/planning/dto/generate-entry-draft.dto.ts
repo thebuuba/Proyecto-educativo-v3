@@ -1,4 +1,5 @@
 import { IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { MAX_CURRICULUM_TEXT_LENGTH } from './planning-curriculum-fields.dto'
 
 export class GenerateEntryDraftDto {
   @IsOptional() @IsString() @MaxLength(120) curricularArea?: string
@@ -27,12 +28,12 @@ export class GenerateEntryDraftDto {
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   specificCompetence?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   achievementIndicator?: string
 
   @IsOptional()

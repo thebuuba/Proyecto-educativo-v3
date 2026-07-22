@@ -1,4 +1,9 @@
-import { IsArray, IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { Type } from 'class-transformer'
+import { IsArray, IsDateString, IsNumber, IsObject, IsOptional, IsString, MaxLength, Min, ValidateNested } from 'class-validator'
+import {
+  MAX_CURRICULUM_TEXT_LENGTH,
+  PlanningActivitiesDto,
+} from './planning-curriculum-fields.dto'
 
 export class UpdatePlanningEntryDto {
   @IsOptional() @IsString() @MaxLength(200) schoolNameSnapshot?: string
@@ -21,27 +26,27 @@ export class UpdatePlanningEntryDto {
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   specificCompetence?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   achievementIndicator?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   contentConceptual?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   contentProcedural?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   contentAttitudinal?: string
 
   @IsOptional()
@@ -50,8 +55,10 @@ export class UpdatePlanningEntryDto {
   strategies?: string
 
   @IsOptional()
-  @IsString()
-  activities?: string
+  @IsObject()
+  @ValidateNested()
+  @Type(() => PlanningActivitiesDto)
+  activities?: PlanningActivitiesDto
 
   @IsOptional()
   @IsString()

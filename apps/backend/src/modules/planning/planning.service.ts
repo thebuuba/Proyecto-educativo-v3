@@ -328,7 +328,7 @@ export class PlanningService {
         contentProcedural: dto.contentProcedural ?? '',
         contentAttitudinal: dto.contentAttitudinal ?? '',
         strategies: dto.strategies ?? '',
-        activities: dto.activities ?? { inicio: '', desarrollo: '', cierre: '' },
+        activities: dto.activities ? { ...dto.activities } : { inicio: '', desarrollo: '', cierre: '' },
         resources: dto.resources ?? '',
         evaluationMethod: dto.evaluationMethod ?? '',
         durationMinutes: dto.durationMinutes ?? null,
