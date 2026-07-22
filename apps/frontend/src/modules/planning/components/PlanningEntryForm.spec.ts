@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
-import { quickPlanningValidationError } from '@/modules/planning/utils/quickPlanningValidation'
+import {
+  curriculumPromptExcerpt,
+  quickPlanningValidationError,
+} from '@/modules/planning/utils/quickPlanningValidation'
 
 const completePlanning = {
   courseKey: 'Secundaria::1.º::A',
@@ -24,5 +27,14 @@ describe('planificación rápida', () => {
     expect(quickPlanningValidationError(2, { ...completePlanning, desarrollo: '' })).toContain('actividad principal')
     expect(quickPlanningValidationError(3, { ...completePlanning, specificCompetence: '' })).toContain('competencias específicas')
     expect(quickPlanningValidationError(3, completePlanning)).toBe('')
+  })
+
+  it('limita el contexto curricular enviado al generador', () => {
+    const officialCurriculum = 'Competencia oficial. '.repeat(100)
+    const excerpt = curriculumPromptExcerpt(officialCurriculum)
+
+    expect(excerpt.length).toBeLessThanOrEqual(1_000)
+    expect(excerpt.endsWith('…')).toBe(true)
+    expect(curriculumPromptExcerpt('Texto breve')).toBe('Texto breve')
   })
 })

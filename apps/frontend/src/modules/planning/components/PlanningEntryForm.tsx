@@ -38,7 +38,10 @@ import type {
   CreatePlanningEntryInput,
   GeneratedPlanningEntry,
 } from '@/modules/planning/types'
-import { quickPlanningValidationError } from '@/modules/planning/utils/quickPlanningValidation'
+import {
+  curriculumPromptExcerpt,
+  quickPlanningValidationError,
+} from '@/modules/planning/utils/quickPlanningValidation'
 import { cn } from '@/utils/cn'
 
 type PlanningEntryFormProps = {
@@ -337,6 +340,18 @@ export function PlanningEntryForm({
     setDuration(draft.durationMinutes ? String(draft.durationMinutes) : duration)
   }
 
+  function applyActivitySuggestion(draft: GeneratedPlanningEntry) {
+    if (!title.trim()) setTitle(draft.title)
+    setStrategies(draft.strategies)
+    setInicio(draft.activities.inicio)
+    setDesarrollo(draft.activities.desarrollo)
+    setCierre(draft.activities.cierre)
+    setResources(draft.resources)
+    setEvaluationMethod(draft.evaluationMethod)
+    setEvidence(draft.evidence)
+    setEvaluationInstruments(draft.evaluationInstruments)
+  }
+
   async function requestDraft() {
     if (!sectionSubjectId) throw new Error('Selecciona un área curricular y una asignatura para generar la planificación.')
     const competence = competencies.find((item) => item.id === fundamentalCompetenceId)
@@ -348,8 +363,8 @@ export function PlanningEntryForm({
       educationLevel: selectedSectionSubject ? educationLevelFor(selectedSectionSubject.gradeName, selectedSectionSubject.level) : undefined,
       transversalAxis,
       durationMinutes: duration ? Number(duration) : null,
-      specificCompetence,
-      achievementIndicator,
+      specificCompetence: curriculumPromptExcerpt(specificCompetence),
+      achievementIndicator: curriculumPromptExcerpt(achievementIndicator),
       subjectName: selectedSectionSubject?.subjectName,
       sectionName: selectedSectionSubject?.sectionName,
       gradeName: selectedSectionSubject?.gradeName,
@@ -360,7 +375,7 @@ export function PlanningEntryForm({
   async function handleGenerate() {
     setValidationError('')
     setGenerating(true)
-    try { applyDraft(await requestDraft()) }
+    try { applyActivitySuggestion(await requestDraft()) }
     catch (caught) { setValidationError(caught instanceof Error ? caught.message : 'No se pudo generar la planificación.') }
     finally { setGenerating(false) }
   }

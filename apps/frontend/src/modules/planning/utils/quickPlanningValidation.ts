@@ -14,6 +14,13 @@ export type QuickPlanningValues = {
   achievementIndicator: string
 }
 
+const GENERATION_CONTEXT_MAX_LENGTH = 1_000
+
+export function curriculumPromptExcerpt(value: string) {
+  if (value.length <= GENERATION_CONTEXT_MAX_LENGTH) return value
+  return `${value.slice(0, GENERATION_CONTEXT_MAX_LENGTH - 1).trimEnd()}…`
+}
+
 export function quickPlanningValidationError(targetStep: number, values: QuickPlanningValues) {
   if (targetStep >= 1 && !values.courseKey) return 'Selecciona el curso.'
   if (targetStep >= 1 && !values.sectionSubjectId) return 'Selecciona la asignatura.'
