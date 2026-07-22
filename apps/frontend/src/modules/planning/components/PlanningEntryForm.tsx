@@ -12,7 +12,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react'
 import type { FormEvent, ReactNode } from 'react'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -38,6 +38,7 @@ import type {
   CreatePlanningEntryInput,
   GeneratedPlanningEntry,
 } from '@/modules/planning/types'
+import { quickPlanningValidationError } from '@/modules/planning/utils/quickPlanningValidation'
 import { cn } from '@/utils/cn'
 
 type PlanningEntryFormProps = {
@@ -64,9 +65,9 @@ type PlanningEntryFormProps = {
 }
 
 const steps = [
-  { number: 1, title: 'Datos generales', description: 'Contexto de la unidad', icon: School },
-  { number: 2, title: 'Secuencia curricular', description: 'Competencias y contenidos', icon: BookOpen },
-  { number: 3, title: 'Secuencia didáctica', description: 'Desarrollo de la clase', icon: ClipboardList },
+  { number: 1, title: 'Enfoque de la clase', description: 'Curso, tema y tiempo', icon: School },
+  { number: 2, title: 'Desarrollo', description: 'Actividades y evidencia', icon: ClipboardList },
+  { number: 3, title: 'Revisar y guardar', description: 'Currículo y detalles', icon: BookOpen },
 ] as const
 
 const transversalAxes = [
@@ -116,8 +117,10 @@ export function PlanningEntryForm({
   onClose,
 }: PlanningEntryFormProps) {
   const { appUser } = useAuth()
+  const initialSectionSubjectId = initial?.sectionSubjectId ?? initial?.entry.sectionSubjectId ?? ''
+  const initialSectionSubject = sectionSubjects.find((item) => item.id === initialSectionSubjectId)
   const [step, setStep] = useState(1)
-  const [sectionSubjectId, setSectionSubjectId] = useState(initial?.sectionSubjectId ?? initial?.entry.sectionSubjectId ?? '')
+  const [sectionSubjectId, setSectionSubjectId] = useState(initialSectionSubjectId)
   const [academicPeriodId, setAcademicPeriodId] = useState(initial?.academicPeriodId ?? initial?.entry.academicPeriodId ?? '')
   const [fundamentalCompetenceId, setFundamentalCompetenceId] = useState(initial?.entry.fundamentalCompetenceId ?? '')
   const [fundamentalCompetencies, setFundamentalCompetencies] = useState<string[]>(initial?.entry.fundamentalCompetencies ?? [])
@@ -125,7 +128,7 @@ export function PlanningEntryForm({
   const [topic, setTopic] = useState(initial?.entry.topic ?? '')
   const [schoolNameValue, setSchoolNameValue] = useState(initial?.entry.schoolNameSnapshot ?? schoolName ?? '')
   const [teacherName, setTeacherName] = useState(initial?.entry.teacherNameSnapshot ?? appUser?.fullName ?? '')
-  const [curricularArea, setCurricularArea] = useState(initial?.entry.curricularArea ?? '')
+  const [curricularArea, setCurricularArea] = useState(initial?.entry.curricularArea ?? (initialSectionSubject ? curricularAreaFor(initialSectionSubject.subjectName) : ''))
   const [transversalAxis, setTransversalAxis] = useState(initial?.entry.transversalAxis ?? '')
   const [specificCompetence, setSpecificCompetence] = useState(initial?.entry.specificCompetence ?? '')
   const [achievementIndicator, setAchievementIndicator] = useState(initial?.entry.achievementIndicator ?? '')
@@ -151,12 +154,8 @@ export function PlanningEntryForm({
   const selectedSectionSubject = sectionSubjects.find((item) => item.id === sectionSubjectId)
   const courseOptions = Array.from(new Map(sectionSubjects.map((item) => [courseKeyFor(item), { key: courseKeyFor(item), gradeName: item.gradeName, sectionName: item.sectionName, level: item.level }])).values())
   const [courseKey, setCourseKey] = useState(selectedSectionSubject ? courseKeyFor(selectedSectionSubject) : '')
-  const areaOptions = Array.from(new Set(sectionSubjects.map((item) => curricularAreaFor(item.subjectName)))).sort()
-  const subjectOptions = sectionSubjects.filter((item) => {
-    const matchesCourse = !courseKey || courseKeyFor(item) === courseKey
-    const matchesArea = !curricularArea || curricularAreaFor(item.subjectName) === curricularArea
-    return matchesCourse && matchesArea
-  })
+  const subjectOptions = sectionSubjects.filter((item) => !courseKey || courseKeyFor(item) === courseKey)
+  const selectedPeriod = periods.find((period) => period.id === academicPeriodId)
   const referencedGrade = curriculumReference ? secondaryGradeFromName(curriculumReference.grade) : null
   const curriculumGrade = selectedSectionSubject
     ? secondaryGradeFromName(selectedSectionSubject.gradeName)
@@ -171,7 +170,7 @@ export function PlanningEntryForm({
     ? getSecondaryCurriculumContent(curriculumGrade, curriculumSubject.id)
     : null
 
-  const applyOfficialCurriculum = useCallback((source = curriculumContent) => {
+  function applyOfficialCurriculum(source = curriculumContent) {
     if (!source) return
 
     const officialNames = source.fundamentalCompetencies.map((name) => name.toLowerCase())
@@ -192,7 +191,7 @@ export function PlanningEntryForm({
     setContentAttitudinal(source.contentAttitudinal)
     setAchievementIndicator(source.achievementIndicator)
     lastAppliedCurriculum.current = source
-  }, [competencies, curriculumContent])
+  }
 
   useEffect(() => {
     if (!curriculumContent || initial?.entry.id) return
@@ -208,10 +207,24 @@ export function PlanningEntryForm({
     const canReplace = curriculumFieldsAreEmpty(fields)
       || Boolean(previous && curriculumFieldsMatch(fields, previous))
 
-    if (canReplace) applyOfficialCurriculum(curriculumContent)
+    if (canReplace) {
+      const officialNames = curriculumContent.fundamentalCompetencies.map((name) => name.toLowerCase())
+      const matchingCompetencies = competencies.filter((option) => {
+        const optionName = option.name.toLowerCase()
+        return officialNames.some((name) => name.includes(optionName) || optionName.includes(name))
+      })
+      setFundamentalCompetencies(matchingCompetencies.length ? matchingCompetencies.map((option) => option.name) : curriculumContent.fundamentalCompetencies)
+      setFundamentalCompetenceId(matchingCompetencies[0]?.id ?? '')
+      setSpecificCompetence(curriculumContent.specificCompetence)
+      setContentConceptual(curriculumContent.contentConceptual)
+      setContentProcedural(curriculumContent.contentProcedural)
+      setContentAttitudinal(curriculumContent.contentAttitudinal)
+      setAchievementIndicator(curriculumContent.achievementIndicator)
+      lastAppliedCurriculum.current = curriculumContent
+    }
   }, [
     achievementIndicator,
-    applyOfficialCurriculum,
+    competencies,
     contentAttitudinal,
     contentConceptual,
     contentProcedural,
@@ -238,7 +251,7 @@ export function PlanningEntryForm({
       academicPeriodId,
       fundamentalCompetenceId: fundamentalCompetenceId || null,
       fundamentalCompetencies,
-      title: title.trim(),
+      title: title.trim() || topic.trim(),
       schoolNameSnapshot: schoolNameValue.trim() || null,
       teacherNameSnapshot: teacherName.trim() || null,
       curricularArea: curricularArea || null,
@@ -253,7 +266,7 @@ export function PlanningEntryForm({
       strategies,
       activities: { inicio, desarrollo, cierre },
       resources,
-      evaluationMethod,
+      evaluationMethod: evaluationMethod.trim() || evidence.trim(),
       evidence,
       evaluationInstruments,
       durationMinutes: duration ? Number(duration) : null,
@@ -264,18 +277,11 @@ export function PlanningEntryForm({
 
   function validateStep(targetStep: number) {
     setValidationError('')
-    if (targetStep >= 1 && !sectionSubjectId) return 'Selecciona el área curricular y la asignatura.'
-    if (targetStep >= 1 && !courseKey) return 'Selecciona el curso.'
-    if (targetStep >= 1 && !curricularArea) return 'Selecciona el área curricular.'
-    if (targetStep >= 1 && !academicPeriodId) return 'Selecciona el período académico.'
-    if (targetStep >= 1 && !plannedDate) return 'Selecciona la fecha de la planificación.'
-    if (targetStep >= 1 && !title.trim()) return 'Escribe el título de la unidad de aprendizaje.'
-    if (targetStep >= 1 && !topic.trim()) return 'Escribe el tema que se trabajará.'
-    if (targetStep >= 1 && !transversalAxis) return 'Selecciona un eje transversal.'
-    if (targetStep >= 2 && !fundamentalCompetencies.length) return 'Selecciona al menos una competencia fundamental.'
-    if (targetStep >= 2 && !specificCompetence.trim()) return 'Escribe las competencias específicas.'
-    if (targetStep >= 2 && !achievementIndicator.trim()) return 'Escribe los indicadores de logro.'
-    return ''
+    return quickPlanningValidationError(targetStep, {
+      courseKey, sectionSubjectId, academicPeriodId, plannedDate, topic, duration,
+      inicio, desarrollo, cierre, evidence, fundamentalCompetencies,
+      specificCompetence, achievementIndicator,
+    })
   }
 
   async function goNext() {
@@ -296,10 +302,12 @@ export function PlanningEntryForm({
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const message = validateStep(2)
+    const message = validateStep(3)
     if (message) {
       setValidationError(message)
-      setStep(message.includes('competencia') || message.includes('indicadores') ? 2 : 1)
+      const curriculumError = message.includes('curriculares') || message.includes('competencia') || message.includes('indicadores')
+      const activitiesError = message.includes('iniciarás') || message.includes('actividad principal') || message.includes('cerrarás') || message.includes('estudiantes')
+      setStep(curriculumError ? 3 : activitiesError ? 2 : 1)
       return
     }
     await onSubmit(buildInput())
@@ -390,7 +398,7 @@ export function PlanningEntryForm({
             <span>›</span><span>{initial?.entry.id ? 'Editar planificación' : 'Nueva planificación'}</span>
           </div>
           <h1 className="mt-3 text-2xl font-extrabold tracking-[-0.025em] text-primary sm:text-[28px]">{initial?.entry.id ? 'Editar planificación' : 'Crear planificación'}</h1>
-          <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">Completa las tres partes de la planificación docente.</p>
+          <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">Tú defines la clase; el sistema completa la información curricular y administrativa.</p>
         </div>
         <Button type="button" variant="outline" size="sm" className="w-fit" onClick={onClose}><ArrowLeft className="size-4" />Volver</Button>
       </header>
@@ -420,19 +428,43 @@ export function PlanningEntryForm({
         </div>
 
         {step === 1 ? <div className="grid gap-x-6 gap-y-5 p-5 sm:p-7 md:grid-cols-2">
-          <Field label="Centro educativo" required><Input value={schoolNameValue} onChange={(event) => setSchoolNameValue(event.target.value)} placeholder="Nombre del centro educativo" /></Field>
-          <Field label="Nombre del docente" required><Input value={teacherName} onChange={(event) => setTeacherName(event.target.value)} placeholder="Nombre completo del docente" /></Field>
-          <Field label="Curso" required><Select value={courseKey} onChange={(event) => { setCourseKey(event.target.value); setSectionSubjectId('') }}><option value="">Selecciona...</option><optgroup label="Primaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field>
-          <Field label="Área curricular" required><Select value={curricularArea} onChange={(event) => { setCurricularArea(event.target.value); setSectionSubjectId('') }}><option value="">Selecciona...</option>{areaOptions.map((area) => <option key={area} value={area}>{area}</option>)}</Select></Field>
-          <div className="md:col-span-2"><Field label="Asignatura" required><Select value={sectionSubjectId} onChange={(event) => setSectionSubjectId(event.target.value)}><option value="">Selecciona...</option><optgroup label="Primaria">{subjectOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.id} value={item.id}>{item.subjectName} — {item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{subjectOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.id} value={item.id}>{item.subjectName} — {item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field></div>
-          <Field label="Período académico" required><Select value={academicPeriodId} onChange={(event) => setAcademicPeriodId(event.target.value)}><option value="">Selecciona...</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Select></Field>
+          <div className="md:col-span-2 rounded-2xl bg-primary-light/70 p-4 text-sm leading-6 text-primary">
+            <p className="font-extrabold">Solo completa cinco decisiones.</p>
+            <p className="text-primary/80">El centro, docente, período, área, competencias, contenidos e indicadores se incorporan automáticamente.</p>
+          </div>
+          <Field label="Curso" required><Select value={courseKey} onChange={(event) => { setCourseKey(event.target.value); setSectionSubjectId(''); setCurricularArea('') }}><option value="">Selecciona...</option><optgroup label="Primaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field>
+          <Field label="Asignatura" required><Select value={sectionSubjectId} disabled={!courseKey} onChange={(event) => { const value = event.target.value; setSectionSubjectId(value); const subject = sectionSubjects.find((item) => item.id === value); setCurricularArea(subject ? curricularAreaFor(subject.subjectName) : '') }}><option value="">{courseKey ? 'Selecciona...' : 'Selecciona primero el curso'}</option>{subjectOptions.map((item) => <option key={item.id} value={item.id}>{item.subjectName}</option>)}</Select></Field>
+          <div className="md:col-span-2"><Field label="Tema o propósito de la clase" required><Input value={topic} placeholder="Ej.: La célula y sus funciones" onChange={(event) => setTopic(event.target.value)} /></Field></div>
           <Field label="Fecha" required><Input type="date" value={plannedDate} onChange={(event) => setPlannedDate(event.target.value)} /></Field>
-          <div className="md:col-span-2"><Field label="Título de la unidad de aprendizaje" required><Input value={title} placeholder="Ej.: El sistema solar y nuestro lugar en el universo" onChange={(event) => setTitle(event.target.value)} /></Field></div>
-          <div className="md:col-span-2"><Field label="Tema" required><Input value={topic} placeholder="Ej.: La célula" onChange={(event) => setTopic(event.target.value)} /></Field></div>
-          <div className="md:col-span-2"><Field label="Eje transversal" required><Select value={transversalAxis} onChange={(event) => setTransversalAxis(event.target.value)}><option value="">Selecciona...</option>{transversalAxes.map((axis) => <option key={axis} value={axis}>{axis}</option>)}</Select></Field></div>
+          <Field label="Duración total (minutos)" required><Input type="number" min={1} value={duration} onChange={(event) => setDuration(event.target.value)} placeholder="Ej.: 90" /></Field>
+          {!academicPeriodId ? <div className="md:col-span-2"><Field label="Período académico" required><Select value={academicPeriodId} onChange={(event) => setAcademicPeriodId(event.target.value)}><option value="">Selecciona...</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Select></Field></div> : null}
+          <div className="md:col-span-2 grid gap-3 rounded-2xl border border-border bg-muted/40 p-4 text-sm sm:grid-cols-3">
+            <AutoContext label="Centro" value={schoolNameValue || 'Se completará automáticamente'} />
+            <AutoContext label="Docente" value={teacherName || 'Se completará automáticamente'} />
+            <AutoContext label="Período" value={selectedPeriod?.name || 'Se completará automáticamente'} />
+          </div>
         </div> : null}
 
         {step === 2 ? <div className="grid gap-5 p-5 sm:p-7">
+          <div className="flex flex-col gap-3 rounded-2xl bg-primary-light/70 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div><p className="font-extrabold text-primary">Describe la experiencia de aprendizaje</p><p className="mt-0.5 text-xs leading-5 text-primary/75">Puedes escribirla directamente o usar “Completar con IA” como punto de partida editable.</p></div>
+            <Button type="button" variant="outline" size="sm" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Sugerir actividades</Button>
+          </div>
+          <div className="grid gap-4 lg:grid-cols-3">
+            <MomentField title="Inicio" hint="Motivación, saberes previos y propósito" value={inicio} onChange={setInicio} />
+            <MomentField title="Desarrollo" hint="Actividad principal y construcción del aprendizaje" value={desarrollo} onChange={setDesarrollo} />
+            <MomentField title="Cierre" hint="Síntesis, reflexión y retroalimentación" value={cierre} onChange={setCierre} />
+          </div>
+          <Field label="¿Cómo demostrarán los estudiantes lo aprendido?" required><Textarea rows={4} value={evidence} onChange={(event) => setEvidence(event.target.value)} placeholder="Ej.: Elaborarán un modelo de la célula y explicarán la función de sus partes mediante una lista de cotejo." /></Field>
+        </div> : null}
+
+        {step === 3 ? <div className="grid gap-5 p-5 sm:p-7">
+          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            <ReviewItem label="Curso y asignatura" value={selectedSectionSubject ? `${selectedSectionSubject.gradeName} ${selectedSectionSubject.sectionName} · ${selectedSectionSubject.subjectName}` : 'Sin seleccionar'} />
+            <ReviewItem label="Tema" value={topic || 'Sin tema'} />
+            <ReviewItem label="Fecha" value={plannedDate || 'Sin fecha'} />
+            <ReviewItem label="Duración" value={duration ? `${duration} minutos` : 'Sin duración'} />
+          </div>
           {curriculumGrade && curriculumSubject ? (
             <div className="flex flex-col gap-3 rounded-2xl border border-primary/15 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
               <div>
@@ -456,31 +488,36 @@ export function PlanningEntryForm({
               </div>
             </div>
           ) : null}
-          <Field label="Competencias fundamentales" required><div className="grid gap-2 rounded-2xl bg-muted/55 p-2 md:grid-cols-2">{competencies.map((item) => { const checked = fundamentalCompetencies.includes(item.name); return <label key={item.id} className={cn('flex cursor-pointer items-start gap-2 rounded-xl border bg-card p-3 text-sm transition-[border-color,background-color,box-shadow] duration-150', checked ? 'border-primary/35 bg-primary/5 shadow-sm' : 'border-border hover:border-primary/20')}><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={checked} onChange={(event) => { setFundamentalCompetencies((current) => event.target.checked ? [...current, item.name] : current.filter((name) => name !== item.name)); if (event.target.checked && !fundamentalCompetenceId) setFundamentalCompetenceId(item.id); if (!event.target.checked && fundamentalCompetenceId === item.id) setFundamentalCompetenceId('') }} /><span>{item.name}</span></label> })}</div></Field>
-          <Field label="Competencias específicas" required><Textarea rows={4} value={specificCompetence} placeholder="Competencias específicas que se desarrollarán" onChange={(event) => setSpecificCompetence(event.target.value)} /></Field>
-          <div className="grid gap-4 lg:grid-cols-3">
-            <Field label="Contenidos conceptuales"><Textarea rows={5} value={contentConceptual} placeholder="Conceptos, datos y hechos" onChange={(event) => setContentConceptual(event.target.value)} /></Field>
-            <Field label="Contenidos procedimentales"><Textarea rows={5} value={contentProcedural} placeholder="Procedimientos, técnicas y métodos" onChange={(event) => setContentProcedural(event.target.value)} /></Field>
-            <Field label="Contenidos actitudinales"><Textarea rows={5} value={contentAttitudinal} placeholder="Actitudes, valores y normas" onChange={(event) => setContentAttitudinal(event.target.value)} /></Field>
-          </div>
-          <Field label="Indicadores de logro" required><Textarea rows={4} value={achievementIndicator} placeholder="Resultados observables que demostrarán el aprendizaje" onChange={(event) => setAchievementIndicator(event.target.value)} /></Field>
-        </div> : null}
-
-        {step === 3 ? <div className="grid gap-5 p-5 sm:p-7">
-          <div className="grid gap-4 lg:grid-cols-3">
-            <MomentField title="Inicio" hint="Motivación, recuperación de saberes previos y propósito" value={inicio} onChange={setInicio} />
-            <MomentField title="Desarrollo" hint="Construcción del aprendizaje y actividades principales" value={desarrollo} onChange={setDesarrollo} />
-            <MomentField title="Cierre" hint="Síntesis, reflexión, evaluación y retroalimentación" value={cierre} onChange={setCierre} />
-          </div>
-          <div className="grid gap-4 md:grid-cols-2"><Field label="Recursos"><Textarea rows={3} value={resources} onChange={(event) => setResources(event.target.value)} placeholder="Materiales, tecnología y espacios" /></Field><Field label="Evaluación"><Textarea rows={3} value={evaluationMethod} onChange={(event) => setEvaluationMethod(event.target.value)} placeholder="Métodos y criterios de evaluación" /></Field><Field label="Evidencias de aprendizaje"><Textarea rows={3} value={evidence} onChange={(event) => setEvidence(event.target.value)} placeholder="Productos y desempeños observables" /></Field><Field label="Instrumentos"><Textarea rows={3} value={evaluationInstruments} onChange={(event) => setEvaluationInstruments(event.target.value)} placeholder="Rúbrica, lista de cotejo, portafolio..." /></Field></div>
-          <Field label="Duración total (minutos)"><Input type="number" min={1} value={duration} onChange={(event) => setDuration(event.target.value)} placeholder="Ej.: 90" /></Field>
-          <div className="rounded-xl border border-border bg-muted/20 p-4"><div className="flex items-center justify-between gap-3"><div><h3 className="flex items-center gap-2 font-black"><Link2 className="size-4 text-primary" />Actividades evaluativas vinculadas</h3><p className="mt-1 text-xs text-muted-foreground">Selecciona actividades existentes para integrarlas a esta planificación.</p></div><span className="text-xs font-bold text-primary">{linkedActivityIds.length} seleccionada{linkedActivityIds.length === 1 ? '' : 's'}</span></div><div className="mt-3 grid gap-2">{availableActivities.length ? availableActivities.map((activity) => <label key={activity.id} className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-card p-3"><input type="checkbox" className="mt-1 size-4 accent-primary" checked={linkedActivityIds.includes(activity.id)} onChange={(event) => setLinkedActivityIds((current) => event.target.checked ? [...new Set([...current, activity.id])] : current.filter((id) => id !== activity.id))} /><span><span className="block text-sm font-bold">{activity.name}</span><span className="text-xs text-muted-foreground">{activity.maxScore} puntos · {activity.planningMoment || 'Sin momento'}</span></span></label>) : <p className="rounded-lg border border-dashed border-border bg-card p-3 text-sm text-muted-foreground">No hay actividades disponibles para el curso y período seleccionados.</p>}</div></div>
+          <details className="group overflow-hidden rounded-2xl border border-border bg-card">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 bg-muted/45 px-4 py-4 font-extrabold text-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20 sm:px-5"><span>Revisar datos curriculares oficiales</span><span className="text-xs font-bold text-primary group-open:hidden">Mostrar</span><span className="hidden text-xs font-bold text-primary group-open:inline">Ocultar</span></summary>
+            <div className="grid gap-5 border-t border-border p-4 sm:p-5">
+              <Field label="Competencias fundamentales" required><div className="grid gap-2 rounded-2xl bg-muted/55 p-2 md:grid-cols-2">{competencies.map((item) => { const checked = fundamentalCompetencies.includes(item.name); return <label key={item.id} className={cn('flex cursor-pointer items-start gap-2 rounded-xl border bg-card p-3 text-sm transition-[border-color,background-color,box-shadow] duration-150', checked ? 'border-primary/35 bg-primary/5 shadow-sm' : 'border-border hover:border-primary/20')}><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={checked} onChange={(event) => { setFundamentalCompetencies((current) => event.target.checked ? [...current, item.name] : current.filter((name) => name !== item.name)); if (event.target.checked && !fundamentalCompetenceId) setFundamentalCompetenceId(item.id); if (!event.target.checked && fundamentalCompetenceId === item.id) setFundamentalCompetenceId('') }} /><span>{item.name}</span></label> })}</div></Field>
+              <Field label="Competencias específicas" required><Textarea rows={5} value={specificCompetence} onChange={(event) => setSpecificCompetence(event.target.value)} /></Field>
+              <div className="grid gap-4 lg:grid-cols-3"><Field label="Contenidos conceptuales"><Textarea rows={6} value={contentConceptual} onChange={(event) => setContentConceptual(event.target.value)} /></Field><Field label="Contenidos procedimentales"><Textarea rows={6} value={contentProcedural} onChange={(event) => setContentProcedural(event.target.value)} /></Field><Field label="Contenidos actitudinales"><Textarea rows={6} value={contentAttitudinal} onChange={(event) => setContentAttitudinal(event.target.value)} /></Field></div>
+              <Field label="Indicadores de logro" required><Textarea rows={5} value={achievementIndicator} onChange={(event) => setAchievementIndicator(event.target.value)} /></Field>
+            </div>
+          </details>
+          <details className="group overflow-hidden rounded-2xl border border-border bg-card">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 bg-muted/45 px-4 py-4 font-extrabold text-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20 sm:px-5"><span>Opciones adicionales</span><span className="text-xs font-bold text-primary group-open:hidden">Mostrar</span><span className="hidden text-xs font-bold text-primary group-open:inline">Ocultar</span></summary>
+            <div className="grid gap-4 border-t border-border p-4 sm:grid-cols-2 sm:p-5">
+              <Field label="Título de la planificación"><Input value={title} placeholder={topic || 'Título'} onChange={(event) => setTitle(event.target.value)} /></Field>
+              <Field label="Eje transversal"><Select value={transversalAxis} onChange={(event) => setTransversalAxis(event.target.value)}><option value="">Sin especificar</option>{transversalAxes.map((axis) => <option key={axis} value={axis}>{axis}</option>)}</Select></Field>
+              <Field label="Centro educativo"><Input value={schoolNameValue} onChange={(event) => setSchoolNameValue(event.target.value)} /></Field>
+              <Field label="Nombre del docente"><Input value={teacherName} onChange={(event) => setTeacherName(event.target.value)} /></Field>
+              <Field label="Período académico"><Select value={academicPeriodId} onChange={(event) => setAcademicPeriodId(event.target.value)}>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Select></Field>
+              <Field label="Estrategias"><Textarea rows={3} value={strategies} onChange={(event) => setStrategies(event.target.value)} /></Field>
+              <Field label="Recursos"><Textarea rows={3} value={resources} onChange={(event) => setResources(event.target.value)} /></Field>
+              <Field label="Evaluación"><Textarea rows={3} value={evaluationMethod} onChange={(event) => setEvaluationMethod(event.target.value)} placeholder={evidence} /></Field>
+              <Field label="Instrumentos"><Textarea rows={3} value={evaluationInstruments} onChange={(event) => setEvaluationInstruments(event.target.value)} placeholder="Rúbrica, lista de cotejo, portafolio..." /></Field>
+              <div className="sm:col-span-2 rounded-xl border border-border bg-muted/20 p-4"><div className="flex items-center justify-between gap-3"><div><h3 className="flex items-center gap-2 font-extrabold"><Link2 className="size-4 text-primary" />Actividades evaluativas vinculadas</h3><p className="mt-1 text-xs text-muted-foreground">Selecciona actividades existentes para integrarlas a esta planificación.</p></div><span className="text-xs font-bold text-primary">{linkedActivityIds.length} seleccionada{linkedActivityIds.length === 1 ? '' : 's'}</span></div><div className="mt-3 grid gap-2">{availableActivities.length ? availableActivities.map((activity) => <label key={activity.id} className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-card p-3"><input type="checkbox" className="mt-1 size-4 accent-primary" checked={linkedActivityIds.includes(activity.id)} onChange={(event) => setLinkedActivityIds((current) => event.target.checked ? [...new Set([...current, activity.id])] : current.filter((id) => id !== activity.id))} /><span><span className="block text-sm font-bold">{activity.name}</span><span className="text-xs text-muted-foreground">{activity.maxScore} puntos · {activity.planningMoment || 'Sin momento'}</span></span></label>) : <p className="rounded-lg border border-dashed border-border bg-card p-3 text-sm text-muted-foreground">No hay actividades disponibles para el curso y período seleccionados.</p>}</div></div>
+            </div>
+          </details>
         </div> : null}
       </section>
 
       <footer className="sticky bottom-3 z-20 flex flex-col-reverse gap-3 rounded-2xl border border-border bg-card/95 p-3 shadow-[0_16px_40px_-24px_rgba(30,79,143,.45)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:p-4">
         <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><ArrowLeft className="size-4" />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
-        <div className="grid gap-2 sm:flex">{step > 1 ? <Button type="button" variant="outline" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Completar con IA</Button> : null}{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
+        <div className="grid gap-2 sm:flex">{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
       </footer>
     </form>
   )
@@ -488,6 +525,14 @@ export function PlanningEntryForm({
 
 function Field({ children, label, required = false }: { children: ReactNode; label: string; required?: boolean }) {
   return <label className="grid gap-2 text-[13px] font-bold text-foreground"><span>{label}{required ? <span className="text-destructive"> *</span> : null}</span>{children}</label>
+}
+
+function AutoContext({ label, value }: { label: string; value: string }) {
+  return <div className="min-w-0"><p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">{label}</p><p className="mt-1 truncate font-bold text-foreground" title={value}>{value}</p></div>
+}
+
+function ReviewItem({ label, value }: { label: string; value: string }) {
+  return <div className="min-w-0 bg-card p-4"><p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">{label}</p><p className="mt-1 line-clamp-2 text-sm font-extrabold text-foreground" title={value}>{value}</p></div>
 }
 
 function MomentField({ title, hint, value, onChange }: { title: string; hint: string; value: string; onChange: (value: string) => void }) {
