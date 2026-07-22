@@ -44,7 +44,7 @@ describe('PlanningService.generateEntryDraft', () => {
     vi.stubGlobal('fetch', vi.fn())
   })
 
-  it('requires an OpenAI API key', async () => {
+  it('requires a DeepSeek API key', async () => {
     const service = new PlanningService(config({}) as never)
 
     await expect(service.generateEntryDraft('school-1', {})).rejects.toBeInstanceOf(
@@ -66,12 +66,10 @@ describe('PlanningService.generateEntryDraft', () => {
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: true,
       json: vi.fn().mockResolvedValue({
-        output: [
+        choices: [
           {
-            type: 'message',
-            content: [{
-              type: 'output_text',
-              text: JSON.stringify({
+            message: {
+              content: JSON.stringify({
                 title: 'La entrevista',
                 strategies: 'Situacion de aprendizaje y trabajo colaborativo.',
                 activities: {
@@ -85,14 +83,14 @@ describe('PlanningService.generateEntryDraft', () => {
                 evaluationInstruments: 'Lista de cotejo.',
                 durationMinutes: 90,
               }),
-            }],
+            },
           },
         ],
       }),
     } as never)
 
     const result = await new PlanningService(
-      config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
+      config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
     ).generateEntryDraft('school-1', {
       sectionSubjectId: 'ss-1',
       title: 'La entrevista',
@@ -100,7 +98,7 @@ describe('PlanningService.generateEntryDraft', () => {
     })
 
     expect(fetch).toHaveBeenCalledWith(
-      'https://api.openai.com/v1/responses',
+      'https://api.deepseek.com/chat/completions',
       expect.objectContaining({
         method: 'POST',
         headers: expect.objectContaining({ Authorization: 'Bearer test-key' }),
@@ -109,12 +107,45 @@ describe('PlanningService.generateEntryDraft', () => {
     const requestBody = JSON.parse(vi.mocked(fetch).mock.calls[0][1]?.body as string)
     expect(requestBody).toMatchObject({
       model: 'test-model',
-      reasoning: { effort: 'low' },
-      text: { format: { type: 'json_schema', strict: true } },
+      thinking: { type: 'disabled' },
+      response_format: { type: 'json_object' },
     })
-    expect(requestBody.input[1].content).toContain('Ciudadanía digital')
+    expect(requestBody.messages[1].content).toContain('Ciudadanía digital')
     expect(result.activities.desarrollo).toContain('entrevista')
     expect(result.durationMinutes).toBe(90)
+  })
+
+  it('retries once when DeepSeek returns empty JSON content', async () => {
+    vi.mocked(fetch)
+      .mockResolvedValueOnce({
+        ok: true,
+        json: vi.fn().mockResolvedValue({ choices: [{ message: { content: '' } }] }),
+      } as never)
+      .mockResolvedValueOnce({
+        ok: true,
+        json: vi.fn().mockResolvedValue({
+          choices: [{
+            message: {
+              content: JSON.stringify({
+                title: 'La entrevista',
+                strategies: 'Trabajo colaborativo.',
+                activities: { inicio: 'Exploran.', desarrollo: 'Entrevistan.', cierre: 'Reflexionan.' },
+                resources: 'Cuaderno.',
+                evaluationMethod: 'Observación.',
+                evidence: 'Guion.',
+                evaluationInstruments: 'Lista de cotejo.',
+                durationMinutes: 45,
+              }),
+            },
+          }],
+        }),
+      } as never)
+
+    await new PlanningService(
+      config({ DEEPSEEK_API_KEY: 'test-key' }) as never,
+    ).generateEntryDraft('school-1', {})
+
+    expect(fetch).toHaveBeenCalledTimes(2)
   })
 
   it('generates and creates the planning entry in one server operation', async () => {
@@ -139,12 +170,10 @@ describe('PlanningService.generateEntryDraft', () => {
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: true,
       json: vi.fn().mockResolvedValue({
-        output: [
+        choices: [
           {
-            type: 'message',
-            content: [{
-              type: 'output_text',
-              text: JSON.stringify({
+            message: {
+              content: JSON.stringify({
                 title: 'La entrevista',
                 strategies: 'Trabajo colaborativo.',
                 activities: {
@@ -158,14 +187,14 @@ describe('PlanningService.generateEntryDraft', () => {
                 evaluationInstruments: 'Lista de cotejo.',
                 durationMinutes: 90,
               }),
-            }],
+            },
           },
         ],
       }),
     } as never)
 
     await new PlanningService(
-      config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
+      config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
     ).generateAndCreateEntry('school-1', {
       sectionSubjectId: 'ss-1',
       academicPeriodId: 'period-1',
@@ -229,12 +258,10 @@ describe('PlanningService.generateEntryDraft', () => {
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: true,
       json: vi.fn().mockResolvedValue({
-        output: [
+        choices: [
           {
-            type: 'message',
-            content: [{
-              type: 'output_text',
-              text: JSON.stringify({
+            message: {
+              content: JSON.stringify({
                 title: 'La entrevista',
                 strategies: 'Trabajo colaborativo.',
                 activities: { inicio: '', desarrollo: 'Preparan el guion.', cierre: 'Comparten.' },
@@ -244,7 +271,7 @@ describe('PlanningService.generateEntryDraft', () => {
                 evaluationInstruments: 'Lista de cotejo.',
                 durationMinutes: 90,
               }),
-            }],
+            },
           },
         ],
       }),
@@ -252,7 +279,7 @@ describe('PlanningService.generateEntryDraft', () => {
 
     await expect(
       new PlanningService(
-        config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
+        config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
       ).generateEntryDraft('school-1', {}),
     ).rejects.toThrow('La IA no generó la secuencia completa de actividades.')
   })
