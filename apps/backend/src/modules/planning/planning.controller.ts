@@ -74,8 +74,12 @@ export class PlanningController {
 
   /** Obtiene las materias asignadas a secciones, filtradas por profesor */
   @Get('section-subjects')
-  getSectionSubjects(@CurrentUser() user: AuthenticatedUser, @Query('teacherId') teacherId?: string) {
-    return this.planningService.getSectionSubjects(user.schoolId, teacherId)
+  getSectionSubjects(
+    @CurrentUser() user: AuthenticatedUser,
+    @Query('teacherId') teacherId?: string,
+    @Query('schoolYearId') schoolYearId?: string,
+  ) {
+    return this.planningService.getSectionSubjects(user.schoolId, teacherId, schoolYearId)
   }
 
   /** Obtiene las entradas de planificación filtradas por materia-sección y período */

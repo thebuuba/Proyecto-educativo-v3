@@ -52,7 +52,7 @@ export class PlanningService {
 
     const [periods, sectionSubjects, competencies, school] = await Promise.all([
       this.getAcademicPeriods(schoolId, currentSchoolYear.id),
-      this.getSectionSubjects(schoolId),
+      this.getSectionSubjects(schoolId, undefined, currentSchoolYear.id),
       this.getCompetencies(),
       prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } }),
     ])
@@ -150,31 +150,38 @@ export class PlanningService {
   }
 
   /** Obtiene las materias asignadas a secciones activas, filtradas por profesor */
-  async getSectionSubjects(schoolId: string, teacherId?: string) {
+  async getSectionSubjects(schoolId: string, teacherId?: string, schoolYearId?: string) {
     const where: any = { schoolId, status: 'ACTIVE' }
     if (teacherId) where.teacherId = teacherId
+    if (schoolYearId) where.schoolYearId = schoolYearId
     const items = await prisma.sectionSubject.findMany({ where })
-    const subjects = await prisma.subject.findMany({ where: { schoolId } })
-    const sections = await prisma.section.findMany({ where: { schoolId } })
-    const grades = await prisma.grade.findMany({ where: { schoolId } })
+    const subjects = await prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' } })
+    const sections = await prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' } })
+    const grades = await prisma.grade.findMany({ where: { schoolId, status: 'ACTIVE' } })
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
     const gradeById = new Map(grades.map((item) => [item.id, item]))
 
-    return items.map((item) => {
+    return items.flatMap((item) => {
       const subject = subjectById.get(item.subjectId)
       const section = sectionById.get(item.sectionId)
       const grade = section ? gradeById.get(section.gradeId) : gradeById.get(item.gradeId)
-      return {
+      if (!subject || !section || !grade) return []
+      return [{
         id: item.id,
-        subjectName: subject?.name ?? '',
-        sectionName: section?.name ?? '',
-        gradeName: grade?.name ?? '',
-        level: grade?.level ?? '',
+        subjectName: subject.name,
+        sectionName: section.name,
+        gradeName: grade.name,
+        level: grade.level ?? '',
+        gradeSequence: grade.sequence ?? 0,
         schoolYearId: item.schoolYearId,
         teacherId: item.teacherId,
-      }
-    })
+      }]
+    }).sort((left, right) =>
+      left.gradeSequence - right.gradeSequence ||
+      left.sectionName.localeCompare(right.sectionName, 'es', { numeric: true }) ||
+      left.subjectName.localeCompare(right.subjectName, 'es'),
+    )
   }
 
   /** Obtiene las entradas de planificación filtradas por materia-sección y período */

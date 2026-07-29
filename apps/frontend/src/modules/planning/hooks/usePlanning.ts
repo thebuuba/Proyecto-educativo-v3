@@ -33,7 +33,15 @@ type PlanningCacheData = {
   periods: AcademicPeriodSummary[]
   activePeriodId: string | null
   entries: PlanningEntryWithDetails[]
-  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string; level?: string }[]
+  sectionSubjects: {
+    id: string
+    subjectName: string
+    sectionName: string
+    gradeName: string
+    level?: string
+    gradeSequence?: number
+    schoolYearId?: string
+  }[]
   competencies: CompetencyOption[]
   schoolYearId: string
 }
@@ -49,7 +57,15 @@ export function usePlanning() {
   const [activePeriodId, setActivePeriodId] = useState<string | null>(cached?.activePeriodId ?? null)
   const [entries, setEntries] = useState<PlanningEntryWithDetails[]>(cached?.entries ?? [])
   const [sectionSubjects, setSectionSubjects] = useState<
-    { id: string; subjectName: string; sectionName: string; gradeName: string; level?: string }[]
+    {
+      id: string
+      subjectName: string
+      sectionName: string
+      gradeName: string
+      level?: string
+      gradeSequence?: number
+      schoolYearId?: string
+    }[]
   >(cached?.sectionSubjects ?? [])
   const [competencies, setCompetencies] = useState<CompetencyOption[]>(cached?.competencies ?? [])
   const [loading, setLoading] = useState(!cached)

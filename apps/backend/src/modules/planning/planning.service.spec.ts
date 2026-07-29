@@ -8,15 +8,19 @@ const mocks = vi.hoisted(() => ({
   prisma: {
     sectionSubject: {
       findFirst: vi.fn(),
+      findMany: vi.fn(),
     },
     grade: {
       findFirst: vi.fn(),
+      findMany: vi.fn(),
     },
     section: {
       findFirst: vi.fn(),
+      findMany: vi.fn(),
     },
     subject: {
       findFirst: vi.fn(),
+      findMany: vi.fn(),
     },
     academicPeriod: {
       findMany: vi.fn(),
@@ -50,6 +54,66 @@ describe('PlanningService.generateEntryDraft', () => {
     await expect(service.generateEntryDraft('school-1', {})).rejects.toBeInstanceOf(
       ServiceUnavailableException,
     )
+  })
+
+  it('lists only active course assignments from the selected school year in hierarchy order', async () => {
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([
+      {
+        id: 'ss-5',
+        schoolYearId: 'year-current',
+        subjectId: 'chemistry',
+        sectionId: 'section-5-a',
+        gradeId: 'grade-5',
+        teacherId: null,
+      },
+      {
+        id: 'ss-orphan',
+        schoolYearId: 'year-current',
+        subjectId: 'inactive-subject',
+        sectionId: 'section-1-h',
+        gradeId: 'grade-1',
+        teacherId: null,
+      },
+      {
+        id: 'ss-1',
+        schoolYearId: 'year-current',
+        subjectId: 'earth-science',
+        sectionId: 'section-1-a',
+        gradeId: 'grade-1',
+        teacherId: null,
+      },
+    ])
+    mocks.prisma.subject.findMany.mockResolvedValue([
+      { id: 'chemistry', name: 'Química' },
+      { id: 'earth-science', name: 'Ciencias de la Tierra y del Universo' },
+    ])
+    mocks.prisma.section.findMany.mockResolvedValue([
+      { id: 'section-5-a', gradeId: 'grade-5', name: 'A' },
+      { id: 'section-1-a', gradeId: 'grade-1', name: 'A' },
+    ])
+    mocks.prisma.grade.findMany.mockResolvedValue([
+      { id: 'grade-5', name: '5.º', level: 'Secundario', sequence: 5 },
+      { id: 'grade-1', name: '1.º', level: 'Secundario', sequence: 1 },
+    ])
+
+    const result = await new PlanningService(config({}) as never).getSectionSubjects(
+      'school-1',
+      undefined,
+      'year-current',
+    )
+
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledWith({
+      where: {
+        schoolId: 'school-1',
+        schoolYearId: 'year-current',
+        status: 'ACTIVE',
+      },
+    })
+    expect(mocks.prisma.subject.findMany).toHaveBeenCalledWith({
+      where: { schoolId: 'school-1', status: 'ACTIVE' },
+    })
+    expect(result.map((item) => item.id)).toEqual(['ss-1', 'ss-5'])
+    expect(result).not.toEqual(expect.arrayContaining([expect.objectContaining({ id: 'ss-orphan' })]))
   })
 
   it('generates a complete planning draft using school data', async () => {
