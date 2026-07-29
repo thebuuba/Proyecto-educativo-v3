@@ -24,6 +24,7 @@
     "supabase:keepalive": "node scripts/supabase-keepalive.mjs"
   },
   "devDependencies": {
+    "pdfjs-dist": "^6.1.200",
     "prettier": "^3.2.0",
     "supabase": "^2.104.0",
     "turbo": "^2.5.0",

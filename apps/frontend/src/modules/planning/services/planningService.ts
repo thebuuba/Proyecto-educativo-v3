@@ -23,7 +23,15 @@ export type PlanningWorkspace = {
   periods: AcademicPeriodSummary[]
   activePeriodId: string | null
   entries: PlanningEntryWithDetails[]
-  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string; level?: string }[]
+  sectionSubjects: {
+    id: string
+    subjectName: string
+    sectionName: string
+    gradeName: string
+    level?: string
+    gradeSequence?: number
+    schoolYearId?: string
+  }[]
   competencies: CompetencyOption[]
 }
 

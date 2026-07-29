@@ -24,12 +24,9 @@ export function getAuthBootstrap(): Promise<AuthBootstrap> {
 }
 
 /** Inicia sesión con correo y contraseña. */
-export async function login({ email, password }: LoginCredentials): Promise<LoginResponse> {
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password })
-  if (error) throw new Error(error.message)
-  const token = data.session?.access_token
-  if (!token) throw new Error('No se pudo iniciar sesión.')
-  return createAulaSession(token)
+export async function login(credentials: LoginCredentials): Promise<LoginResponse> {
+  // El backend autentica con Supabase y devuelve la sesión de Aula Base.
+  return api.post<LoginResponse>('/auth/login', credentials)
 }
 
 /** Registra una nueva institución con los datos del administrador. */

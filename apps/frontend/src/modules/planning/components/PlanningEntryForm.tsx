@@ -10,7 +10,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 import type { FormEvent, ReactNode } from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -19,6 +19,10 @@ import { Textarea } from '@/components/ui/Textarea'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { getEvaluationActivities } from '@/modules/grading/services/gradingService'
 import type { GradingActivity } from '@/modules/grading/types'
+import {
+  curricularAreaForSubject,
+  curriculumUnitsFor,
+} from '@/modules/planning/data/secondaryCurriculum'
 import { generatePlanningEntry } from '@/modules/planning/services/planningService'
 import type {
   AcademicPeriodSummary,
@@ -29,7 +33,14 @@ import type {
 import { cn } from '@/utils/cn'
 
 type PlanningEntryFormProps = {
-  sectionSubjects: { id: string; subjectName: string; sectionName: string; gradeName: string; level?: string }[]
+  sectionSubjects: {
+    id: string
+    subjectName: string
+    sectionName: string
+    gradeName: string
+    level?: string
+    gradeSequence?: number
+  }[]
   periods: AcademicPeriodSummary[]
   competencies: CompetencyOption[]
   schoolName?: string
@@ -64,19 +75,6 @@ const transversalAxes = [
   'Ciudadanía y Convivencia',
 ]
 
-function curricularAreaFor(subjectName: string) {
-  const name = subjectName.toLowerCase()
-  if (name.includes('matem')) return 'Matemática'
-  if (name.includes('lengua española')) return 'Lengua Española'
-  if (name.includes('inglés') || name.includes('francés') || name.includes('lengua moderna')) return 'Lenguas Extranjeras'
-  if (name.includes('biolog') || name.includes('quím') || name.includes('físic') || name.includes('naturaleza') || name.includes('tierra') || name.includes('vida')) return 'Ciencias de la Naturaleza'
-  if (name.includes('social') || name.includes('historia') || name.includes('geograf')) return 'Ciencias Sociales'
-  if (name.includes('art')) return 'Educación Artística'
-  if (name.includes('educación física') || name.includes('deporte')) return 'Educación Física'
-  if (name.includes('relig') || name.includes('humana')) return 'Formación Integral Humana y Religiosa'
-  return 'Otras áreas curriculares'
-}
-
 function educationLevelFor(gradeName: string, explicitLevel?: string) {
   if (explicitLevel) return explicitLevel.toLowerCase().includes('prim') ? 'Primaria' : explicitLevel.toLowerCase().includes('sec') ? 'Secundaria' : explicitLevel
   const name = gradeName.toLowerCase()
@@ -88,6 +86,8 @@ function educationLevelFor(gradeName: string, explicitLevel?: string) {
 function courseKeyFor(item: { gradeName: string; sectionName: string; level?: string }) {
   return `${educationLevelFor(item.gradeName, item.level)}::${item.gradeName}::${item.sectionName}`
 }
+
+const courseCollator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' })
 
 export function PlanningEntryForm({
   sectionSubjects,
@@ -134,14 +134,95 @@ export function PlanningEntryForm({
   const [linkedActivityIds, setLinkedActivityIds] = useState<string[]>(initial?.entry.linkedActivityIds ?? [])
 
   const selectedSectionSubject = sectionSubjects.find((item) => item.id === sectionSubjectId)
-  const courseOptions = Array.from(new Map(sectionSubjects.map((item) => [courseKeyFor(item), { key: courseKeyFor(item), gradeName: item.gradeName, sectionName: item.sectionName, level: item.level }])).values())
-  const [courseKey, setCourseKey] = useState(selectedSectionSubject ? courseKeyFor(selectedSectionSubject) : '')
-  const areaOptions = Array.from(new Set(sectionSubjects.map((item) => curricularAreaFor(item.subjectName)))).sort()
-  const subjectOptions = sectionSubjects.filter((item) => {
-    const matchesCourse = !courseKey || courseKeyFor(item) === courseKey
-    const matchesArea = !curricularArea || curricularAreaFor(item.subjectName) === curricularArea
-    return matchesCourse && matchesArea
+  const courseOptions = Array.from(
+    new Map(
+      sectionSubjects.map((item) => [
+        courseKeyFor(item),
+        {
+          key: courseKeyFor(item),
+          gradeName: item.gradeName,
+          sectionName: item.sectionName,
+          level: item.level,
+          gradeSequence: item.gradeSequence,
+        },
+      ]),
+    ).values(),
+  ).sort((left, right) => {
+    const leftLevel = educationLevelFor(left.gradeName, left.level)
+    const rightLevel = educationLevelFor(right.gradeName, right.level)
+    const levelOrder = (level: string) =>
+      level === 'Primaria' ? 0 : level === 'Secundaria' ? 1 : 2
+    return (
+      levelOrder(leftLevel) - levelOrder(rightLevel) ||
+      (left.gradeSequence ?? Number.MAX_SAFE_INTEGER) -
+        (right.gradeSequence ?? Number.MAX_SAFE_INTEGER) ||
+      courseCollator.compare(left.gradeName, right.gradeName) ||
+      courseCollator.compare(left.sectionName, right.sectionName)
+    )
   })
+  const [courseKey, setCourseKey] = useState(selectedSectionSubject ? courseKeyFor(selectedSectionSubject) : '')
+  const courseSubjects = useMemo(
+    () => sectionSubjects.filter((item) => courseKeyFor(item) === courseKey),
+    [courseKey, sectionSubjects],
+  )
+  const areaOptions = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          courseSubjects
+            .map((item) => curricularAreaForSubject(item.subjectName))
+            .filter((area): area is string => Boolean(area)),
+        ),
+      ),
+    [courseSubjects],
+  )
+  const subjectOptions = useMemo(
+    () =>
+      courseSubjects.filter(
+        (item) =>
+          !curricularArea ||
+          curricularAreaForSubject(item.subjectName) === curricularArea,
+      ),
+    [courseSubjects, curricularArea],
+  )
+  const curriculumUnits = selectedSectionSubject
+    ? curriculumUnitsFor(
+        selectedSectionSubject.gradeName,
+        curricularArea,
+        selectedSectionSubject.level,
+        selectedSectionSubject.subjectName,
+      )
+    : []
+  const selectedUnit = curriculumUnits.find((unit) => unit.title === title)
+  const topicOptions = selectedUnit?.topics ?? []
+
+  useEffect(() => {
+    if (!courseKey) {
+      setCurricularArea('')
+      setSectionSubjectId('')
+      return
+    }
+    if (curricularArea && !areaOptions.includes(curricularArea)) {
+      setCurricularArea('')
+      setSectionSubjectId('')
+    }
+  }, [areaOptions, courseKey, curricularArea])
+
+  useEffect(() => {
+    if (!curricularArea) return
+    if (subjectOptions.length === 1) {
+      setSectionSubjectId(subjectOptions[0]?.id ?? '')
+    } else if (
+      sectionSubjectId &&
+      !subjectOptions.some((item) => item.id === sectionSubjectId)
+    ) {
+      setSectionSubjectId('')
+    }
+  }, [curricularArea, sectionSubjectId, subjectOptions])
+
+  useEffect(() => {
+    if (topicOptions.length === 1 && !topic) setTopic(topicOptions[0] ?? '')
+  }, [topic, topicOptions])
 
   useEffect(() => {
     let ignore = false
@@ -340,13 +421,13 @@ export function PlanningEntryForm({
         {step === 1 ? <div className="grid gap-5 p-5 md:grid-cols-2">
           <Field label="Centro educativo" required><Input value={schoolNameValue} onChange={(event) => setSchoolNameValue(event.target.value)} placeholder="Nombre del centro educativo" /></Field>
           <Field label="Nombre del docente" required><Input value={teacherName} onChange={(event) => setTeacherName(event.target.value)} placeholder="Nombre completo del docente" /></Field>
-          <Field label="Curso" required><Select value={courseKey} onChange={(event) => { setCourseKey(event.target.value); setSectionSubjectId('') }}><option value="">Selecciona...</option><optgroup label="Primaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field>
-          <Field label="Área curricular" required><Select value={curricularArea} onChange={(event) => { setCurricularArea(event.target.value); setSectionSubjectId('') }}><option value="">Selecciona...</option>{areaOptions.map((area) => <option key={area} value={area}>{area}</option>)}</Select></Field>
-          <div className="md:col-span-2"><Field label="Asignatura" required><Select value={sectionSubjectId} onChange={(event) => setSectionSubjectId(event.target.value)}><option value="">Selecciona...</option><optgroup label="Primaria">{subjectOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.id} value={item.id}>{item.subjectName} — {item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{subjectOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.id} value={item.id}>{item.subjectName} — {item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field></div>
+          <Field label="Curso" required><Select value={courseKey} onChange={(event) => { setCourseKey(event.target.value); setCurricularArea(''); setSectionSubjectId(''); setTitle(''); setTopic('') }}><option value="">Selecciona...</option><optgroup label="Primaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field>
+          <Field label="Área curricular" required><Select value={curricularArea} disabled={!courseKey} onChange={(event) => { setCurricularArea(event.target.value); setSectionSubjectId(''); setTitle(''); setTopic('') }}><option value="">{courseKey ? 'Selecciona...' : 'Selecciona primero el curso'}</option>{areaOptions.map((area) => <option key={area} value={area}>{area}</option>)}</Select></Field>
+          <div className="md:col-span-2"><Field label="Asignatura" required><Select value={sectionSubjectId} disabled={!courseKey || !curricularArea} onChange={(event) => { setSectionSubjectId(event.target.value); setTitle(''); setTopic('') }}><option value="">{curricularArea ? 'Selecciona...' : 'Selecciona primero el área'}</option>{subjectOptions.map((item) => <option key={item.id} value={item.id}>{item.subjectName} — {item.gradeName} {item.sectionName}</option>)}</Select></Field></div>
           <Field label="Período académico" required><Select value={academicPeriodId} onChange={(event) => setAcademicPeriodId(event.target.value)}><option value="">Selecciona...</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Select></Field>
           <Field label="Fecha" required><Input type="date" value={plannedDate} onChange={(event) => setPlannedDate(event.target.value)} /></Field>
-          <div className="md:col-span-2"><Field label="Título de la unidad de aprendizaje" required><Input value={title} placeholder="Ej.: El sistema solar y nuestro lugar en el universo" onChange={(event) => setTitle(event.target.value)} /></Field></div>
-          <div className="md:col-span-2"><Field label="Tema" required><Input value={topic} placeholder="Ej.: La célula" onChange={(event) => setTopic(event.target.value)} /></Field></div>
+          <div className="md:col-span-2 rounded-xl border border-border bg-muted/20 p-4"><Field label="Título de la unidad de aprendizaje" required><Select className="w-full bg-card" value={title} disabled={!sectionSubjectId || curriculumUnits.length === 0} onChange={(event) => { setTitle(event.target.value); setTopic('') }}><option value="">{sectionSubjectId ? (curriculumUnits.length ? 'Selecciona una unidad...' : 'No hay unidades curriculares para esta selección') : 'Selecciona primero la asignatura'}</option>{title && !curriculumUnits.some((unit) => unit.title === title) ? <option value={title}>{title}</option> : null}{curriculumUnits.map((unit) => <option key={unit.title} value={unit.title}>{unit.title}</option>)}</Select><p className="mt-2 text-xs text-muted-foreground">{curriculumUnits.length ? `${curriculumUnits.length} unidades generales del currículo para el grado y la asignatura seleccionados.` : 'Aquí aparecerán únicamente las unidades generales del currículo.'}</p></Field></div>
+          <div className="md:col-span-2 rounded-xl border border-border bg-muted/20 p-4"><Field label="Tema" required><Select className="w-full bg-card" value={topic} disabled={!title || topicOptions.length === 0} onChange={(event) => setTopic(event.target.value)}><option value="">{title ? (topicOptions.length ? 'Selecciona un tema...' : 'Esta unidad no tiene subtemas registrados') : 'Selecciona primero la unidad'}</option>{topic && !topicOptions.includes(topic) ? <option value={topic}>{topic}</option> : null}{topicOptions.map((item) => <option key={item} value={item}>{item}</option>)}</Select><p className="mt-2 text-xs text-muted-foreground">{title ? `${topicOptions.length} temas pertenecientes únicamente a «${title}».` : 'Los temas se habilitan después de elegir una unidad.'}</p></Field></div>
           <div className="md:col-span-2"><Field label="Eje transversal" required><Select value={transversalAxis} onChange={(event) => setTransversalAxis(event.target.value)}><option value="">Selecciona...</option>{transversalAxes.map((axis) => <option key={axis} value={axis}>{axis}</option>)}</Select></Field></div>
         </div> : null}
 
