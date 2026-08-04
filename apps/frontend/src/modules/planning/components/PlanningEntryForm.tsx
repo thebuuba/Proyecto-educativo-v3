@@ -282,17 +282,11 @@ export function PlanningEntryForm({
     return ''
   }
 
-  async function goNext() {
+  function goNext() {
     const message = validateStep(step)
     if (message) {
       setValidationError(message)
       return
-    }
-    if (step === 1 && !initial?.entry.id && !specificCompetence && !achievementIndicator) {
-      setGenerating(true)
-      try { applyDraft(await requestDraft()) }
-      catch (caught) { setValidationError(caught instanceof Error ? caught.message : 'No se pudieron cargar las sugerencias curriculares. Puedes completar los campos manualmente.') }
-      finally { setGenerating(false) }
     }
     setStep((current) => Math.min(3, current + 1))
     window.scrollTo({ top: 0, behavior: 'smooth' })
