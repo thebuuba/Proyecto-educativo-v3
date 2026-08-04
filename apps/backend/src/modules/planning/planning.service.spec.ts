@@ -48,7 +48,7 @@ describe('PlanningService.generateEntryDraft', () => {
     vi.stubGlobal('fetch', vi.fn())
   })
 
-  it('requires an OpenAI API key', async () => {
+  it('requires a DeepSeek API key', async () => {
     const service = new PlanningService(config({}) as never)
 
     await expect(service.generateEntryDraft('school-1', {})).rejects.toBeInstanceOf(
@@ -135,6 +135,7 @@ describe('PlanningService.generateEntryDraft', () => {
             message: {
               content: JSON.stringify({
                 title: 'La entrevista',
+                fundamentalCompetencies: ['Competencia Comunicativa'],
                 specificCompetence: 'Produce entrevistas orales y escritas.',
                 achievementIndicator: 'Realiza preguntas pertinentes.',
                 contentConceptual: 'La entrevista y sus partes.',
@@ -159,14 +160,14 @@ describe('PlanningService.generateEntryDraft', () => {
     } as never)
 
     const result = await new PlanningService(
-      config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
+      config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
     ).generateEntryDraft('school-1', {
       sectionSubjectId: 'ss-1',
       title: 'La entrevista',
     })
 
     expect(fetch).toHaveBeenCalledWith(
-      'https://api.openai.com/v1/chat/completions',
+      'https://api.deepseek.com/chat/completions',
       expect.objectContaining({
         method: 'POST',
         headers: expect.objectContaining({ Authorization: 'Bearer test-key' }),
@@ -174,9 +175,55 @@ describe('PlanningService.generateEntryDraft', () => {
     )
     expect(JSON.parse(vi.mocked(fetch).mock.calls[0][1]?.body as string)).toMatchObject({
       model: 'test-model',
+      thinking: { type: 'disabled' },
+      response_format: { type: 'json_object' },
     })
     expect(result.activities.desarrollo).toContain('entrevista')
     expect(result.durationMinutes).toBe(90)
+  })
+
+  it('retries once when DeepSeek returns empty JSON content', async () => {
+    vi.mocked(fetch)
+      .mockResolvedValueOnce({
+        ok: true,
+        json: vi.fn().mockResolvedValue({ choices: [{ message: { content: '' } }] }),
+      } as never)
+      .mockResolvedValueOnce({
+        ok: true,
+        json: vi.fn().mockResolvedValue({
+          choices: [{
+            message: {
+              content: JSON.stringify({
+                title: 'La entrevista',
+                fundamentalCompetencies: ['Competencia Comunicativa'],
+                specificCompetence: 'Produce entrevistas.',
+                achievementIndicator: 'Formula preguntas pertinentes.',
+                contentConceptual: 'La entrevista.',
+                contentProcedural: 'Elaboración de un guion.',
+                contentAttitudinal: 'Escucha respetuosa.',
+                strategies: 'Trabajo colaborativo.',
+                activities: {
+                  inicio: 'Exploran entrevistas.',
+                  desarrollo: 'Preparan el guion.',
+                  cierre: 'Comparten hallazgos.',
+                },
+                resources: 'Cuaderno.',
+                evaluationMethod: 'Observación.',
+                evidence: 'Guion.',
+                evaluationInstruments: 'Lista de cotejo.',
+                durationMinutes: 45,
+              }),
+            },
+          }],
+        }),
+      } as never)
+
+    const result = await new PlanningService(
+      config({ DEEPSEEK_API_KEY: 'test-key' }) as never,
+    ).generateEntryDraft('school-1', {})
+
+    expect(fetch).toHaveBeenCalledTimes(2)
+    expect(result.durationMinutes).toBe(45)
   })
 
   it('generates and creates the planning entry in one server operation', async () => {
@@ -200,6 +247,7 @@ describe('PlanningService.generateEntryDraft', () => {
             message: {
               content: JSON.stringify({
                 title: 'La entrevista',
+                fundamentalCompetencies: ['Competencia Comunicativa'],
                 specificCompetence: 'Produce entrevistas.',
                 achievementIndicator: 'Formula preguntas pertinentes.',
                 contentConceptual: 'La entrevista.',
@@ -224,7 +272,7 @@ describe('PlanningService.generateEntryDraft', () => {
     } as never)
 
     await new PlanningService(
-      config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
+      config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
     ).generateAndCreateEntry('school-1', {
       sectionSubjectId: 'ss-1',
       academicPeriodId: 'period-1',
@@ -251,6 +299,7 @@ describe('PlanningService.generateEntryDraft', () => {
             message: {
               content: JSON.stringify({
                 title: 'La entrevista',
+                fundamentalCompetencies: ['Competencia Comunicativa'],
                 specificCompetence: 'Produce entrevistas.',
                 achievementIndicator: 'Formula preguntas pertinentes.',
                 contentConceptual: 'La entrevista.',
@@ -272,7 +321,7 @@ describe('PlanningService.generateEntryDraft', () => {
 
     await expect(
       new PlanningService(
-        config({ OPENAI_API_KEY: 'test-key', OPENAI_MODEL: 'test-model' }) as never,
+        config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
       ).generateEntryDraft('school-1', {}),
     ).rejects.toThrow('La IA no generó la secuencia completa de actividades.')
   })

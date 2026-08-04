@@ -351,8 +351,8 @@ export class PlanningService {
 
   /** Genera una planificación completa con IA siguiendo el currículo dominicano por competencias. */
   async generateEntryDraft(schoolId: string, dto: GenerateEntryDraftDto): Promise<GeneratedPlanningEntry> {
-    const apiKey = this.config.get<string>('OPENAI_API_KEY')
-    if (!apiKey) throw new ServiceUnavailableException('OPENAI_API_KEY no está configurado.')
+    const apiKey = this.config.get<string>('DEEPSEEK_API_KEY')
+    if (!apiKey) throw new ServiceUnavailableException('DEEPSEEK_API_KEY no está configurado.')
 
     const sectionSubject = dto.sectionSubjectId
       ? await prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } })
@@ -386,88 +386,57 @@ export class PlanningService {
       indicadorLogro: dto.achievementIndicator ?? '',
     }
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
+    const messages = [
+      {
+        role: 'system',
+        content:
+          'Eres especialista en planificación docente del sistema educativo dominicano. Usa como referencia la Adecuación Curricular del Nivel Secundario MINERD 2022 y la malla exacta del área, ciclo y grado indicados. Selecciona únicamente competencias, contenidos e indicadores pertinentes al tema; no inventes códigos ni elementos oficiales. Escribe en español dominicano claro. Responde exclusivamente con JSON válido usando exactamente estas propiedades: title, fundamentalCompetencies, specificCompetence, achievementIndicator, contentConceptual, contentProcedural, contentAttitudinal, strategies, activities (con inicio, desarrollo y cierre), resources, evaluationMethod, evidence, evaluationInstruments y durationMinutes.',
       },
-      body: JSON.stringify({
-        model: this.config.get<string>('OPENAI_MODEL') ?? 'gpt-5.5',
-        messages: [
-          {
-            role: 'system',
-            content:
-              'Eres especialista en planificación docente del sistema educativo dominicano. Usa como referencia la Adecuación Curricular del Nivel Secundario MINERD 2022 y la malla exacta del área, ciclo y grado indicados. Selecciona únicamente competencias, contenidos e indicadores pertinentes al tema; no inventes códigos ni elementos oficiales. Escribe en español dominicano claro.',
-          },
-          {
-            role: 'user',
-            content: `Crea una planificacion escolar completa usando estos datos: ${JSON.stringify(prompt)}. Debe incluir situacion de aprendizaje integrada dentro de estrategias o actividades, contenidos conceptuales/procedimentales/actitudinales, secuencia inicio/desarrollo/cierre, evaluacion formativa, evidencias e instrumentos.`,
-          },
-        ],
-        response_format: {
-          type: 'json_schema',
-          json_schema: {
-            name: 'generated_planning_entry',
-            strict: true,
-            schema: {
-              type: 'object',
-              additionalProperties: false,
-              required: [
-                'title',
-                'fundamentalCompetencies',
-                'specificCompetence',
-                'achievementIndicator',
-                'contentConceptual',
-                'contentProcedural',
-                'contentAttitudinal',
-                'strategies',
-                'activities',
-                'resources',
-                'evaluationMethod',
-                'evidence',
-                'evaluationInstruments',
-                'durationMinutes',
-              ],
-              properties: {
-                title: { type: 'string' },
-                fundamentalCompetencies: { type: 'array', items: { type: 'string' } },
-                specificCompetence: { type: 'string' },
-                achievementIndicator: { type: 'string' },
-                contentConceptual: { type: 'string' },
-                contentProcedural: { type: 'string' },
-                contentAttitudinal: { type: 'string' },
-                strategies: { type: 'string' },
-                activities: {
-                  type: 'object',
-                  additionalProperties: false,
-                  required: ['inicio', 'desarrollo', 'cierre'],
-                  properties: {
-                    inicio: { type: 'string' },
-                    desarrollo: { type: 'string' },
-                    cierre: { type: 'string' },
-                  },
-                },
-                resources: { type: 'string' },
-                evaluationMethod: { type: 'string' },
-                evidence: { type: 'string' },
-                evaluationInstruments: { type: 'string' },
-                durationMinutes: { type: ['number', 'null'] },
-              },
-            },
-          },
-        },
-      }),
-    })
+      {
+        role: 'user',
+        content: `Crea una planificación escolar completa en formato JSON usando estos datos: ${JSON.stringify(prompt)}. Debe incluir situación de aprendizaje integrada dentro de estrategias o actividades, contenidos conceptuales/procedimentales/actitudinales, secuencia inicio/desarrollo/cierre, evaluación formativa, evidencias e instrumentos.`,
+      },
+    ]
 
-    const data = await response.json().catch(() => null)
-    if (!response.ok) {
-      console.error('[OpenAI Error]', data?.error?.message ?? response.statusText)
-      throw new ServiceUnavailableException('Error al generar borrador con la IA')
+    let content = ''
+    for (let attempt = 0; attempt < 2 && !content.trim(); attempt += 1) {
+      let response: Response
+      try {
+        response = await fetch('https://api.deepseek.com/chat/completions', {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+          },
+          signal: AbortSignal.timeout(45_000),
+          body: JSON.stringify({
+            model: this.config.get<string>('DEEPSEEK_MODEL') ?? 'deepseek-v4-flash',
+            messages,
+            thinking: { type: 'disabled' },
+            response_format: { type: 'json_object' },
+            max_tokens: 3000,
+            temperature: 0.3,
+            user_id: schoolId,
+          }),
+        })
+      } catch (error) {
+        if (error instanceof Error && (error.name === 'AbortError' || error.name === 'TimeoutError')) {
+          throw new ServiceUnavailableException('La generación tardó demasiado. Inténtalo nuevamente.')
+        }
+        throw new ServiceUnavailableException('No se pudo conectar con el servicio de IA.')
+      }
+
+      const data = await response.json().catch(() => null)
+      if (!response.ok) {
+        console.error('[DeepSeek Error]', data?.error?.message ?? response.statusText)
+        throw new ServiceUnavailableException('Error al generar borrador con la IA')
+      }
+      content = typeof data?.choices?.[0]?.message?.content === 'string'
+        ? data.choices[0].message.content
+        : ''
     }
 
-    const content = data?.choices?.[0]?.message?.content
-    if (typeof content !== 'string') {
+    if (!content.trim()) {
       throw new BadRequestException('La IA no devolvió una planificación válida.')
     }
 
@@ -496,9 +465,36 @@ export class PlanningService {
   }
 
   private validateGeneratedDraft(draft: GeneratedPlanningEntry) {
+    const requiredTextFields = [
+      'title',
+      'specificCompetence',
+      'achievementIndicator',
+      'contentConceptual',
+      'contentProcedural',
+      'contentAttitudinal',
+      'strategies',
+      'resources',
+      'evaluationMethod',
+      'evidence',
+      'evaluationInstruments',
+    ] as const
+    if (!draft || requiredTextFields.some((field) => typeof draft[field] !== 'string')) {
+      throw new BadRequestException('La IA devolvió una planificación incompleta.')
+    }
+    if (!Array.isArray(draft.fundamentalCompetencies)
+      || draft.fundamentalCompetencies.some((item) => typeof item !== 'string')) {
+      throw new BadRequestException('La IA devolvió competencias fundamentales inválidas.')
+    }
     if (!draft.title.trim()) throw new BadRequestException('La IA no generó un título válido.')
-    if (!draft.activities.inicio.trim() || !draft.activities.desarrollo.trim() || !draft.activities.cierre.trim()) {
+    if (!draft.activities || ['inicio', 'desarrollo', 'cierre'].some((field) =>
+      typeof draft.activities[field as keyof typeof draft.activities] !== 'string'
+      || !draft.activities[field as keyof typeof draft.activities].trim()
+    )) {
       throw new BadRequestException('La IA no generó la secuencia completa de actividades.')
+    }
+    if (draft.durationMinutes !== null
+      && (!Number.isFinite(draft.durationMinutes) || draft.durationMinutes < 0)) {
+      throw new BadRequestException('La IA devolvió una duración inválida.')
     }
   }
 
