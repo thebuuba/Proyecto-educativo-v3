@@ -335,7 +335,9 @@ export class PlanningService {
         contentProcedural: dto.contentProcedural ?? '',
         contentAttitudinal: dto.contentAttitudinal ?? '',
         strategies: dto.strategies ?? '',
-        activities: dto.activities ?? { inicio: '', desarrollo: '', cierre: '' },
+        activities: dto.activities
+          ? { ...dto.activities }
+          : { inicio: '', desarrollo: '', cierre: '' },
         resources: dto.resources ?? '',
         evaluationMethod: dto.evaluationMethod ?? '',
         durationMinutes: dto.durationMinutes ?? null,
@@ -532,7 +534,7 @@ export class PlanningService {
     if (dto.contentProcedural !== undefined) data.contentProcedural = dto.contentProcedural
     if (dto.contentAttitudinal !== undefined) data.contentAttitudinal = dto.contentAttitudinal
     if (dto.strategies !== undefined) data.strategies = dto.strategies
-    if (dto.activities !== undefined) data.activities = dto.activities
+    if (dto.activities !== undefined) data.activities = { ...dto.activities }
     if (dto.resources !== undefined) data.resources = dto.resources
     if (dto.evaluationMethod !== undefined) data.evaluationMethod = dto.evaluationMethod
     if (dto.durationMinutes !== undefined) data.durationMinutes = dto.durationMinutes

@@ -1,4 +1,6 @@
-import { IsArray, IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { Type } from 'class-transformer'
+import { IsArray, IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min, ValidateNested } from 'class-validator'
+import { PlanningActivitiesDto } from './planning-activities.dto'
 
 export class UpdatePlanningEntryDto {
   @IsOptional() @IsString() @MaxLength(200) schoolNameSnapshot?: string
@@ -50,8 +52,9 @@ export class UpdatePlanningEntryDto {
   strategies?: string
 
   @IsOptional()
-  @IsString()
-  activities?: string
+  @ValidateNested()
+  @Type(() => PlanningActivitiesDto)
+  activities?: PlanningActivitiesDto
 
   @IsOptional()
   @IsString()
