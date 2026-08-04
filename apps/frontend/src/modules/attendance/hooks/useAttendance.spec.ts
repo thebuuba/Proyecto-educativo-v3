@@ -1,5 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { useAttendance } from './useAttendance'
 
@@ -31,6 +31,10 @@ vi.mock('@/modules/schedule/services/scheduleService', () => ({
 let userSequence = 0
 
 describe('useAttendance course cache', () => {
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
   beforeEach(() => {
     vi.restoreAllMocks()
     userSequence += 1
@@ -82,6 +86,9 @@ describe('useAttendance course cache', () => {
   })
 
   it('requests and uses the exact schedule of the selected subject', async () => {
+    vi.useFakeTimers({ toFake: ['Date'] })
+    vi.setSystemTime(new Date('2026-09-01T12:00:00Z'))
+
     mocks.getAttendanceWorkspace.mockResolvedValue({ courses: [{
       id: 'section-subject-1',
       gradeId: 'grade-1',
