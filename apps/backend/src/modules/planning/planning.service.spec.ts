@@ -291,7 +291,7 @@ describe('PlanningService.generateEntryDraft', () => {
   })
 
   it('rejects incomplete generated activities', async () => {
-    vi.mocked(fetch).mockResolvedValueOnce({
+    vi.mocked(fetch).mockResolvedValue({
       ok: true,
       json: vi.fn().mockResolvedValue({
         choices: [
@@ -324,6 +324,7 @@ describe('PlanningService.generateEntryDraft', () => {
         config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
       ).generateEntryDraft('school-1', {}),
     ).rejects.toThrow('La IA no generó la secuencia completa de actividades.')
+    expect(fetch).toHaveBeenCalledTimes(2)
   })
 
   it('invalidates grading and attendance options after changing a period', async () => {
