@@ -328,7 +328,7 @@ export class PlanningService {
         topic: dto.topic ?? null,
         transversalAxis: dto.transversalAxis ?? null,
         fundamentalCompetencies: dto.fundamentalCompetencies ?? [],
-        sequence: dto.sequence ?? 0,
+        sequence: dto.sequence ?? 1,
         specificCompetence: dto.specificCompetence ?? '',
         achievementIndicator: dto.achievementIndicator ?? '',
         contentConceptual: dto.contentConceptual ?? '',

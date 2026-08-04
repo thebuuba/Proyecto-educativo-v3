@@ -18,7 +18,7 @@ export class UpdatePlanningEntryDto {
 
   @IsOptional()
   @IsNumber()
-  @Min(0)
+  @Min(1)
   sequence?: number
 
   @IsOptional()
