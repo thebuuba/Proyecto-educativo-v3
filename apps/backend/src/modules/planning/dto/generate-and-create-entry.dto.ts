@@ -1,19 +1,26 @@
-import { IsDateString, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { IsArray, IsBoolean, IsDateString, IsIn, IsInt, IsNumber, IsOptional, IsString, Max, MaxLength, Min } from 'class-validator'
+import { MAX_CURRICULUM_TEXT_LENGTH } from './planning-curriculum-fields.dto'
 
 export class GenerateAndCreateEntryDto {
+  @IsOptional() @IsIn(['DAILY', 'UNIT', 'SEQUENCE']) planningType?: string
+  @IsOptional() @IsInt() @Min(1) @Max(30) durationDays?: number
+  @IsOptional() @IsBoolean() allowAlignmentOverride?: boolean
   @IsOptional() @IsString() @MaxLength(200) schoolNameSnapshot?: string
   @IsOptional() @IsString() @MaxLength(200) teacherNameSnapshot?: string
   @IsOptional() @IsString() @MaxLength(120) curricularArea?: string
   @IsOptional() @IsString() @MaxLength(80) educationLevel?: string
   @IsOptional() @IsString() @MaxLength(200) topic?: string
   @IsOptional() @IsString() @MaxLength(120) transversalAxis?: string
+  @IsOptional() @IsString() @MaxLength(1000) curricularPolicyContext?: string
+  @IsOptional() @IsString() @MaxLength(20) curriculumVersion?: string
+  @IsOptional() @IsString() @MaxLength(80) curriculumOrdinance?: string
+  @IsOptional() @IsString() @MaxLength(40) curriculumSourcePages?: string
 
   @IsString()
   academicPeriodId!: string
 
-  @IsOptional()
   @IsString()
-  sectionSubjectId?: string
+  sectionSubjectId!: string
 
   @IsOptional()
   @IsString()
@@ -32,13 +39,27 @@ export class GenerateAndCreateEntryDto {
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   specificCompetence?: string
 
   @IsOptional()
   @IsString()
-  @MaxLength(1000)
+  @MaxLength(MAX_CURRICULUM_TEXT_LENGTH)
   achievementIndicator?: string
+
+  @IsOptional() @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) contentConceptual?: string
+  @IsOptional() @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) contentProcedural?: string
+  @IsOptional() @IsString() @MaxLength(MAX_CURRICULUM_TEXT_LENGTH) contentAttitudinal?: string
+
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  fundamentalCompetencies?: string[]
+
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  linkedActivityIds?: string[]
 
   @IsOptional()
   @IsString()

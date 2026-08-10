@@ -1,5 +1,16 @@
-import { AlertCircle, CalendarDays, FileText, Filter, Plus, Search, Settings2 } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import {
+  AlertCircle,
+  CalendarDays,
+  FileText,
+  Filter,
+  Grid2X2,
+  List,
+  Plus,
+  Search,
+  Settings2,
+} from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -13,6 +24,7 @@ import { usePlanning } from '@/modules/planning/hooks/usePlanning'
 import type { CreatePlanningEntryInput, PlanningEntryWithDetails } from '@/modules/planning/types'
 
 type ConfirmAction = 'delete' | 'archive'
+type ViewMode = 'grid' | 'list'
 
 function sameDate(entryDate: string | null | undefined, filterDate: string) {
   if (!filterDate) return true
@@ -28,18 +40,19 @@ function normalize(value?: string | null) {
 }
 
 export function PlanningPage() {
+  const [searchParams] = useSearchParams()
   const {
     schoolYearId,
     schoolName,
     periods,
     activePeriodId,
+    setActivePeriodId,
     entries,
     sectionSubjects,
     competencies,
     loading,
     error,
     addEntry,
-    generateEntry,
     editEntry,
     removeEntry,
     duplicateEntry,
@@ -60,6 +73,27 @@ export function PlanningPage() {
   const [subjectFilter, setSubjectFilter] = useState('')
   const [periodFilter, setPeriodFilter] = useState(activePeriodId ?? '')
   const [dateFilter, setDateFilter] = useState('')
+  const [viewMode, setViewMode] = useState<ViewMode>('grid')
+  const openedCurriculumRequest = useRef<string | null>(null)
+  const requestedCurriculumId = searchParams.get('malla')
+  const requestedGrade = searchParams.get('grado')
+  const requestedArea = searchParams.get('area')
+
+  useEffect(() => {
+    if (activePeriodId && !periodFilter) setPeriodFilter(activePeriodId)
+  }, [activePeriodId, periodFilter])
+
+  useEffect(() => {
+    if (
+      loading || !requestedCurriculumId || !periods.length ||
+      openedCurriculumRequest.current === requestedCurriculumId
+    ) return
+
+    openedCurriculumRequest.current = requestedCurriculumId
+    setEditingEntry(null)
+    setFormError(null)
+    setFormOpen(true)
+  }, [loading, periods.length, requestedCurriculumId])
 
   const subjects = useMemo(
     () => Array.from(new Set(sectionSubjects.map((item) => item.subjectName))).sort(),
@@ -119,6 +153,7 @@ export function PlanningPage() {
         await addEntry(input)
       }
       setPeriodFilter(input.academicPeriodId)
+      setActivePeriodId(input.academicPeriodId)
       closeForm()
     } catch (error) {
       setFormError(error instanceof Error ? error.message : 'No se pudo guardar.')
@@ -178,6 +213,8 @@ export function PlanningPage() {
                     fundamentalCompetenceId: editingEntry.fundamentalCompetenceId,
                     fundamentalCompetencies: editingEntry.fundamentalCompetencies,
                     title: editingEntry.title,
+                    planningType: editingEntry.planningType,
+                    durationDays: editingEntry.durationDays,
                     schoolNameSnapshot: editingEntry.schoolNameSnapshot ?? editingEntry.schoolName,
                     teacherNameSnapshot:
                       editingEntry.teacherNameSnapshot ?? editingEntry.teacherName,
@@ -185,6 +222,9 @@ export function PlanningPage() {
                     educationLevel: editingEntry.educationLevel,
                     topic: editingEntry.topic,
                     transversalAxis: editingEntry.transversalAxis,
+                    curriculumVersion: editingEntry.curriculumVersion,
+                    curriculumOrdinance: editingEntry.curriculumOrdinance,
+                    curriculumSourcePages: editingEntry.curriculumSourcePages,
                     specificCompetence: editingEntry.specificCompetence,
                     achievementIndicator: editingEntry.achievementIndicator,
                     contentConceptual: editingEntry.contentConceptual,
@@ -206,27 +246,19 @@ export function PlanningPage() {
                     sectionSubjectId: courseFilter,
                     academicPeriodId: periodFilter || activePeriodId || periods[0]?.id || '',
                     title: '',
+                    curricularArea: requestedArea,
                   },
                   academicPeriodId: periodFilter || activePeriodId || periods[0]?.id,
                 }
           }
           competencies={competencies}
+          curriculumReference={!editingEntry && requestedCurriculumId && requestedGrade ? {
+            grade: requestedGrade,
+            subjectId: requestedCurriculumId,
+          } : undefined}
           submitting={isSubmitting}
           error={formError}
           onSubmit={handleSubmit}
-          onGenerateAndCreate={async (input) => {
-            setIsSubmitting(true)
-            setFormError(null)
-            try {
-              await generateEntry(input)
-              setPeriodFilter(input.academicPeriodId ?? periodFilter)
-              closeForm()
-            } catch (caught) {
-              setFormError(caught instanceof Error ? caught.message : 'No se pudo generar.')
-            } finally {
-              setIsSubmitting(false)
-            }
-          }}
           onClose={closeForm}
         />
       </section>
@@ -352,7 +384,13 @@ export function PlanningPage() {
             <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
               Período
             </span>
-            <Select value={periodFilter} onChange={(event) => setPeriodFilter(event.target.value)}>
+            <Select
+              value={periodFilter}
+              onChange={(event) => {
+                setPeriodFilter(event.target.value)
+                setActivePeriodId(event.target.value || null)
+              }}
+            >
               <option value="">Todos los períodos</option>
               {periods.map((period) => (
                 <option key={period.id} value={period.id}>
@@ -387,18 +425,43 @@ export function PlanningPage() {
           Cargando planificaciones...
         </div>
       ) : filteredEntries.length > 0 ? (
-        <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
-          {filteredEntries.map((entry) => (
-            <PlanningEntryCard
-              key={entry.id}
-              entry={entry}
-              onPreview={setPreviewEntry}
-              onEdit={openEditForm}
-              onDuplicate={handleDuplicate}
-              onArchive={requestArchive}
-              onDelete={requestDelete}
-            />
-          ))}
+        <div className="space-y-3">
+          <div className="flex justify-start">
+            <div className="inline-flex rounded-xl border border-border bg-card p-1 shadow-sm" aria-label="Vista de planificaciones">
+              <button
+                type="button"
+                aria-label="Ver en cuadros"
+                aria-pressed={viewMode === 'grid'}
+                className={`flex size-9 items-center justify-center rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
+                onClick={() => setViewMode('grid')}
+              >
+                <Grid2X2 className="size-4" />
+              </button>
+              <button
+                type="button"
+                aria-label="Ver como lista"
+                aria-pressed={viewMode === 'list'}
+                className={`flex size-9 items-center justify-center rounded-lg transition-colors ${viewMode === 'list' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
+                onClick={() => setViewMode('list')}
+              >
+                <List className="size-4" />
+              </button>
+            </div>
+          </div>
+          <div className={viewMode === 'grid' ? 'grid gap-5 lg:grid-cols-2 xl:grid-cols-3' : 'grid gap-3'}>
+            {filteredEntries.map((entry) => (
+              <PlanningEntryCard
+                key={entry.id}
+                entry={entry}
+                viewMode={viewMode}
+                onPreview={setPreviewEntry}
+                onEdit={openEditForm}
+                onDuplicate={handleDuplicate}
+                onArchive={requestArchive}
+                onDelete={requestDelete}
+              />
+            ))}
+          </div>
         </div>
       ) : (
         <div className="flex min-h-[260px] flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card p-6 text-center">

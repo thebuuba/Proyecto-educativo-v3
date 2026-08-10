@@ -13,7 +13,6 @@ import {
   createPlanningEntry,
   deletePlanningEntry,
   duplicatePlanningEntry,
-  generateAndCreatePlanningEntry,
   getAcademicPeriods,
   getPlanningEntries,
   getPlanningWorkspace,
@@ -174,12 +173,12 @@ export function usePlanning() {
   }, [cacheScope])
 
   useEffect(() => {
-    if (activePeriodId && schoolYearId) {
-      const context = `${schoolYearId}:${activePeriodId}`
+    if (schoolYearId) {
+      const context = `${schoolYearId}:${activePeriodId ?? ''}`
       if (loadedContextRef.current === context) return
       loadedContextRef.current = context
       planningCache.clear(cacheScope)
-      void fetchEntries({})
+      void fetchEntries(activePeriodId ? { academicPeriodId: activePeriodId } : {})
     }
   }, [activePeriodId, schoolYearId, cacheScope, fetchEntries])
 
@@ -188,24 +187,9 @@ export function usePlanning() {
     async (input: CreatePlanningEntryInput) => {
       await createPlanningEntry(input)
       planningCache.clear(cacheScope)
-      await fetchEntries({})
+      await fetchEntries(activePeriodId ? { academicPeriodId: activePeriodId } : {})
     },
-    [cacheScope, fetchEntries],
-  )
-
-  /** Genera una planificación con IA, la guarda y refresca la lista */
-  const generateEntry = useCallback(
-    async (input: CreatePlanningEntryInput & {
-      subjectName?: string
-      sectionName?: string
-      gradeName?: string
-      fundamentalCompetenceName?: string
-    }) => {
-      await generateAndCreatePlanningEntry(input)
-      planningCache.clear(cacheScope)
-      await fetchEntries({})
-    },
-    [cacheScope, fetchEntries],
+    [activePeriodId, cacheScope, fetchEntries],
   )
 
   /** Actualiza una planificación existente y refresca la lista */
@@ -213,9 +197,9 @@ export function usePlanning() {
     async (id: string, input: CreatePlanningEntryInput) => {
       await updatePlanningEntry(id, input)
       planningCache.clear(cacheScope)
-      await fetchEntries({})
+      await fetchEntries(activePeriodId ? { academicPeriodId: activePeriodId } : {})
     },
-    [cacheScope, fetchEntries],
+    [activePeriodId, cacheScope, fetchEntries],
   )
 
   /** Elimina una planificación y refresca la lista */
@@ -223,27 +207,27 @@ export function usePlanning() {
     async (id: string) => {
       await deletePlanningEntry(id)
       planningCache.clear(cacheScope)
-      await fetchEntries({})
+      await fetchEntries(activePeriodId ? { academicPeriodId: activePeriodId } : {})
     },
-    [cacheScope, fetchEntries],
+    [activePeriodId, cacheScope, fetchEntries],
   )
 
   const duplicateEntry = useCallback(
     async (id: string) => {
       await duplicatePlanningEntry(id)
       planningCache.clear(cacheScope)
-      await fetchEntries({})
+      await fetchEntries(activePeriodId ? { academicPeriodId: activePeriodId } : {})
     },
-    [cacheScope, fetchEntries],
+    [activePeriodId, cacheScope, fetchEntries],
   )
 
   const archiveEntry = useCallback(
     async (id: string) => {
       await archivePlanningEntry(id)
       planningCache.clear(cacheScope)
-      await fetchEntries({})
+      await fetchEntries(activePeriodId ? { academicPeriodId: activePeriodId } : {})
     },
-    [cacheScope, fetchEntries],
+    [activePeriodId, cacheScope, fetchEntries],
   )
 
   const refreshPeriods = useCallback(async () => {
@@ -265,7 +249,6 @@ export function usePlanning() {
     loading,
     error,
     addEntry,
-    generateEntry,
     editEntry,
     removeEntry,
     duplicateEntry,

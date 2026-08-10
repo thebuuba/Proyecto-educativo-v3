@@ -54,12 +54,12 @@ describe('PlanningEntryForm', () => {
             topic: 'Función y estructura',
             transversalAxis: 'Ciudadanía y Convivencia',
             plannedDate: '2026-08-04',
+            durationMinutes: 90,
           },
         }}
         submitting={false}
         error={null}
         onSubmit={vi.fn()}
-        onGenerateAndCreate={vi.fn()}
         onClose={vi.fn()}
       />,
     )

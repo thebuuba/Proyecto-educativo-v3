@@ -1,4 +1,5 @@
 import 'reflect-metadata'
+
 import { plainToInstance } from 'class-transformer'
 import { validate } from 'class-validator'
 import { describe, expect, it } from 'vitest'
@@ -6,39 +7,35 @@ import { describe, expect, it } from 'vitest'
 import { CreatePlanningEntryDto } from './create-planning-entry.dto'
 import { UpdatePlanningEntryDto } from './update-planning-entry.dto'
 
-const activities = {
-  inicio: 'Recuperación de saberes previos.',
-  desarrollo: 'Construcción guiada del aprendizaje.',
-  cierre: 'Síntesis y evaluación formativa.',
+const curriculumFields = {
+  specificCompetence: 'a'.repeat(2_200),
+  achievementIndicator: 'a'.repeat(4_600),
+  contentConceptual: 'a'.repeat(7_700),
+  contentProcedural: 'a'.repeat(30_000),
+  contentAttitudinal: 'a'.repeat(3_600),
+  activities: { inicio: 'Explorar', desarrollo: 'Practicar', cierre: 'Evaluar' },
 }
 
-describe('planning entry DTO activities', () => {
-  it('accepts the structured activities object when creating an entry', async () => {
-    const dto = plainToInstance(CreatePlanningEntryDto, {
-      sectionSubjectId: 'section-subject-1',
-      academicPeriodId: 'period-1',
-      title: 'La noticia',
-      activities,
-    })
+describe('DTO de planificación', () => {
+  it.each([
+    [CreatePlanningEntryDto, { sectionSubjectId: 'section', academicPeriodId: 'period', title: 'Unidad' }],
+    [UpdatePlanningEntryDto, {}],
+  ])('acepta la malla oficial completa y actividades estructuradas', async (Dto, required) => {
+    const errors = await validate(plainToInstance(Dto, { ...required, ...curriculumFields }))
 
-    expect(await validate(dto)).toEqual([])
+    expect(errors).toEqual([])
   })
 
-  it('accepts the structured activities object when updating an entry', async () => {
-    const dto = plainToInstance(UpdatePlanningEntryDto, { activities })
-
-    expect(await validate(dto)).toEqual([])
-  })
-
-  it('rejects the obsolete string representation', async () => {
+  it('rechaza campos curriculares que exceden el límite de seguridad', async () => {
     const dto = plainToInstance(CreatePlanningEntryDto, {
-      sectionSubjectId: 'section-subject-1',
-      academicPeriodId: 'period-1',
-      title: 'La noticia',
-      activities: 'Inicio, desarrollo y cierre',
+      sectionSubjectId: 'section',
+      academicPeriodId: 'period',
+      title: 'Unidad',
+      specificCompetence: 'a'.repeat(50_001),
     })
 
     const errors = await validate(dto)
-    expect(errors.some((error) => error.property === 'activities')).toBe(true)
+
+    expect(errors.some((error) => error.property === 'specificCompetence')).toBe(true)
   })
 })

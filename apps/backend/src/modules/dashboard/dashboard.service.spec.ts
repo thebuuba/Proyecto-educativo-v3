@@ -116,6 +116,25 @@ describe('DashboardService', () => {
     expect(result.weeklyAttendance.activityCount).toBe(0)
   })
 
+  it('accepts a valid DeepSeek dashboard suggestion', async () => {
+    const service = new DashboardService({ get: vi.fn((key: string) => key === 'DEEPSEEK_API_KEY' ? 'test-key' : 'test-model') } as never)
+    const progress = { studentCount: 1, teacherCount: 1, activeEnrollments: 1, courseCount: 1, scheduleEntryCount: 1, attendanceCount: 1, planningCount: 1 }
+    const attendance = { average: 75, trendPercent: -5, activityCount: 4, days: [] }
+    mocks.prisma.schoolYear.findMany.mockResolvedValue([])
+    vi.spyOn(service, 'getTasks').mockResolvedValue([])
+    vi.spyOn(service, 'getStats').mockResolvedValue(progress)
+    vi.spyOn(service, 'getWeeklyAttendance').mockResolvedValue(attendance)
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ choices: [{ message: { content: JSON.stringify({ title: 'Revisa la asistencia.', description: 'El promedio semanal bajó.', actionLabel: 'Revisar', path: '/asistencia' }) } }] }),
+    }))
+
+    const result = await service.getWorkspace('school-1')
+
+    expect(result.smartSuggestion?.path).toBe('/asistencia')
+    vi.unstubAllGlobals()
+  })
+
   it('calculates weekly attendance and compares it with the previous week', async () => {
     mocks.prisma.attendanceDaily.findMany.mockResolvedValue([
       { attendanceDate: new Date('2026-07-06T00:00:00.000Z'), status: 'PRESENT' },

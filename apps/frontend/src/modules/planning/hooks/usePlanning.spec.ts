@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react'
+import { act, renderHook, waitFor } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { usePlanning } from './usePlanning'
@@ -68,5 +68,26 @@ describe('usePlanning initial load', () => {
     expect(second.result.current.activePeriodId).toBe('period-1')
     expect(mocks.getPlanningWorkspace).toHaveBeenCalledTimes(1)
     second.unmount()
+  })
+
+  it('loads only the entries for the selected period', async () => {
+    mocks.getPlanningWorkspace.mockResolvedValue({
+      currentSchoolYear: { id: 'year-1', name: '2026-2027', isCurrent: true },
+      periods: [{ id: 'period-1' }, { id: 'period-2' }],
+      activePeriodId: 'period-1',
+      entries: [],
+      sectionSubjects: [],
+      competencies: [],
+    })
+    mocks.getPlanningEntries.mockResolvedValue([])
+
+    const hook = renderHook(() => usePlanning())
+    await waitFor(() => expect(hook.result.current.loading).toBe(false))
+    act(() => hook.result.current.setActivePeriodId('period-2'))
+
+    await waitFor(() => expect(mocks.getPlanningEntries).toHaveBeenCalledWith({
+      academicPeriodId: 'period-2',
+    }))
+    hook.unmount()
   })
 })
