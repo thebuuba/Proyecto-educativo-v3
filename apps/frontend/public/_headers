@@ -1,4 +1,5 @@
 /*
+  Cache-Control: no-cache, no-store, must-revalidate
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://*.supabase.co; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
   Permissions-Policy: camera=(), geolocation=(), microphone=(), payment=(), usb=()
   Referrer-Policy: strict-origin-when-cross-origin
@@ -16,4 +17,4 @@
   Cache-Control: no-cache, no-store, must-revalidate
 
 /manifest.webmanifest
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: no-cache, no-store, must-revalidate
