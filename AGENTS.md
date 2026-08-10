@@ -12,3 +12,4 @@
 - Write all commit messages in Spanish.
 - Prefer small PRs: one feature/fix per branch.
 - Do not add dependencies unless the standard library or existing packages cannot solve the task.
+- Para ahorrar tokens, delega tareas acotadas de anÃ¡lisis, implementaciÃ³n o revisiÃ³n al agente `deepseek-worker` de OpenCode cuando estÃ© disponible; revisa siempre su resultado antes de confirmar cambios.

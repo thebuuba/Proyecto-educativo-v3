@@ -466,7 +466,7 @@ export function PlanningEntryForm({
   const ActiveStepIcon = steps[step - 1]?.icon ?? School
 
   return (
-    <form className="mx-auto w-full max-w-[1440px] space-y-5 pb-4" onSubmit={handleSubmit}>
+    <form className="app-content-frame space-y-5 pb-4" onSubmit={handleSubmit}>
       <header className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0">
           <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">

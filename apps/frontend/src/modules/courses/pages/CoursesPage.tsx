@@ -46,7 +46,6 @@ import {
   LogIn,
   Microscope,
   MoreHorizontal,
-  MoreVertical,
   Music2,
   Paintbrush,
   Palette as PaletteIcon,
@@ -69,14 +68,12 @@ import {
   Telescope,
   Theater,
   Trash2,
-  Users,
   UsersRound,
   FlaskConical,
   Wrench,
   X,
 } from 'lucide-react'
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
-import { createPortal } from 'react-dom'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -128,6 +125,7 @@ import {
 } from '@/modules/courses/utils/courseFilterOptions'
 import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
 import { cn } from '@/utils/cn'
+import { getSubjectPalette as getSubjectColor, type SubjectPalette } from '@/utils/subjectPalette'
 
 type CourseCardItem = {
   id: string
@@ -141,42 +139,12 @@ type CourseCardItem = {
   archived: boolean
 }
 
-type SubjectPalette = { color: string; soft: string }
-
-// El orden importa: primero se detectan las materias específicas y después
-// sus familias generales. Así, por ejemplo, Educación Física no hereda
-// accidentalmente el color de Ciencias Físicas.
-const subjectColorRules: Array<{ terms: string[]; palette: SubjectPalette }> = [
-  { terms: ['educacion fisica', 'deporte'], palette: { color: '#e23f49', soft: '#e23f491a' } },
-  { terms: ['ciencias de la vida', 'biologia', 'ecologia'], palette: { color: '#06945c', soft: '#06945c1a' } },
-  { terms: ['ciencias de la tierra', 'tierra y del universo', 'geologia', 'astronomia'], palette: { color: '#008d82', soft: '#008d821a' } },
-  { terms: ['quimica'], palette: { color: '#00869b', soft: '#00869b1a' } },
-  { terms: ['ciencias fisicas', 'fisica'], palette: { color: '#7040dc', soft: '#7040dc1a' } },
-  { terms: ['ciencias naturales', 'ciencias de la naturaleza'], palette: { color: '#138a4b', soft: '#138a4b1a' } },
-  { terms: ['matematica', 'algebra', 'geometria'], palette: { color: '#6734d1', soft: '#6734d11a' } },
-  { terms: ['lengua espanola', 'literatura', 'comunicacion'], palette: { color: '#1d61c7', soft: '#1d61c71a' } },
-  { terms: ['ingles', 'frances', 'idioma', 'lenguas modernas'], palette: { color: '#0086a6', soft: '#0086a61a' } },
-  { terms: ['ciencias sociales', 'historia', 'geografia', 'civica'], palette: { color: '#d96008', soft: '#d960081a' } },
-  { terms: ['educacion artistica', 'arte', 'musica'], palette: { color: '#d12f7c', soft: '#d12f7c1a' } },
-  { terms: ['tecnologia', 'informatica', 'computacion'], palette: { color: '#007fb8', soft: '#007fb81a' } },
-  { terms: ['formacion integral', 'etica', 'religion'], palette: { color: '#4f54ca', soft: '#4f54ca1a' } },
-  { terms: ['orientacion', 'tutoria'], palette: { color: '#b87500', soft: '#b875001a' } },
-]
-
-const defaultSubjectColor: SubjectPalette = { color: '#3f5872', soft: '#3f587218' }
-
 const levelStyles: Record<string, { color: string; soft: string }> = {
   'Primaria': { color: '#1e4f8f', soft: 'hsl(224 62% 33% / 0.08)' },
   'Secundaria': { color: '#6f3cc3', soft: 'hsl(262 52% 47% / 0.08)' },
 }
 
 const defaultLevelStyle = { color: '#1e4f8f', soft: 'hsl(224 62% 33% / 0.08)' }
-
-function getSubjectColor(subjectName: string) {
-  const normalized = normalizeText(subjectName)
-  const match = subjectColorRules.find(({ terms }) => terms.some((term) => normalized.includes(term)))
-  return match?.palette ?? defaultSubjectColor
-}
 
 function getLevelStyle(levelName: string) {
   const normalized = normalizeText(levelName)
@@ -613,29 +581,34 @@ export function CoursesPage() {
         <>
           <h1 className="sr-only">Mis cursos</h1>
 
-          <section aria-labelledby="courses-summary-title">
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex flex-wrap items-center gap-3">
-                <h2 id="courses-summary-title" className="text-sm font-extrabold text-foreground">Resumen general</h2>
-                <span className="text-xs text-muted-foreground">Año escolar {currentSchoolYear?.name ?? 'sin configurar'}</span>
+          <section aria-labelledby="courses-summary-title" className="rounded-3xl bg-card p-4 shadow-sm sm:p-5">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="min-w-0">
+                <div className="flex items-center gap-3">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><Library className="size-5" /></span>
+                  <div>
+                    <h2 id="courses-summary-title" className="text-xl font-black tracking-tight text-foreground sm:text-2xl">Mis cursos</h2>
+                    <p className="mt-0.5 text-xs text-muted-foreground">Año escolar {currentSchoolYear?.name ?? 'sin configurar'}</p>
+                  </div>
+                </div>
+                <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground" aria-label="Resumen de cursos">
+                  <span><strong className="font-bold text-foreground tabular-nums">{activeCourseCards.length}</strong> cursos</span>
+                  <span className="text-border" aria-hidden="true">•</span>
+                  <span><strong className="font-bold text-foreground tabular-nums">{totalStudents}</strong> estudiantes</span>
+                  <span className="text-border" aria-hidden="true">•</span>
+                  <span><strong className="font-bold text-foreground tabular-nums">{totalAssignments}</strong> asignaturas</span>
+                  <span className="text-border" aria-hidden="true">•</span>
+                  <span><strong className="font-bold text-foreground tabular-nums">{totalTeams}</strong> equipos</span>
+                </div>
               </div>
               {canManage ? (
                 <Button
-                  className="h-10 justify-center rounded-lg border-0 px-5 text-white shadow-md"
-                  style={{ background: 'linear-gradient(135deg, #6538e8, #4f25d0)' }}
+                  className="h-10 shrink-0 justify-center rounded-xl px-5"
                   onClick={openCreateAssignmentFlow}
                 >
                   <Plus className="h-4 w-4" /> Nuevo curso
                 </Button>
               ) : null}
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6">
-              <CourseStatCard icon={<Library className="size-5" />} value={activeCourseCards.length} label="Cursos" detail="Todos los niveles" tone="blue" />
-              <CourseStatCard icon={<UsersRound className="size-5" />} value={totalStudents} label="Estudiantes" detail="Matriculados" tone="green" />
-              <CourseStatCard icon={<BookOpen className="size-5" />} value={totalAssignments} label="Asignaturas" detail="En todas las secciones" tone="violet" />
-              <CourseStatCard icon={<UsersRound className="size-5" />} value={totalTeams} label="Equipos" detail="Por asignatura" tone="orange" />
-              <CourseStatCard icon={<CheckCircle2 className="size-5" />} value={activeCourseCards.length} label="Cursos activos" detail="En este momento" tone="emerald" />
-              <CourseStatCard icon={<CalendarCheck2 className="size-5" />} value={currentSchoolYear?.name ?? '—'} label="Año escolar" detail="Actual" tone="sky" />
             </div>
           </section>
 
@@ -670,8 +643,14 @@ export function CoursesPage() {
             ) : null}
           </header>
 
-          <section className="relative rounded-2xl border border-slate-200/90 bg-gradient-to-br from-white via-white to-slate-50/80 p-4 shadow-[0_10px_30px_-22px_rgba(15,45,90,0.55)] ring-1 ring-slate-100">
-            <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <section className="rounded-3xl bg-card p-4 shadow-sm">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary"><SlidersHorizontal className="size-4" /></span>
+              <div>
+                <h2 className="text-sm font-black text-foreground">Filtrar cursos</h2>
+                <p className="text-xs text-muted-foreground">Encuentra rápidamente el curso que necesitas.</p>
+              </div>
+            </div>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(6,minmax(8.5rem,1fr))_auto]">
               <FilterSelect label="Nivel" value={levelFilter} onChange={(value) => { setLevelFilter(value); setCycleFilter('all'); setSubjectFilter('all'); setGradeFilter('all'); setSectionFilter('all') }} options={levelFilters.map((value) => ({ value, label: cleanLevelName(value) }))} />
               <FilterSelect label="Ciclo" value={cycleFilter} onChange={(value) => { setCycleFilter(value); setSubjectFilter('all'); setGradeFilter('all'); setSectionFilter('all') }} options={cycleFilters} />
@@ -685,7 +664,7 @@ export function CoursesPage() {
                 aria-expanded={moreFiltersOpen}
                 aria-controls="course-advanced-filters"
                 onClick={openAdvancedFilters}
-                className={cn('inline-flex h-11 items-center justify-center gap-2 rounded-xl border px-4 text-xs font-extrabold transition-all', moreFiltersOpen ? 'border-primary/30 bg-primary text-white shadow-md shadow-primary/15' : 'border-slate-200 bg-white text-slate-600 shadow-sm hover:border-primary/30 hover:text-primary')}
+                className={cn('inline-flex h-11 items-center justify-center gap-2 rounded-xl border px-4 text-xs font-bold transition', moreFiltersOpen ? 'border-primary bg-primary text-primary-foreground shadow-sm' : 'border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground')}
               >
                 <SlidersHorizontal className="size-4" /> Más filtros
                 {countAdvancedFilters(advancedFilters) ? <span className={cn('flex size-5 items-center justify-center rounded-full text-[10px]', moreFiltersOpen ? 'bg-white text-primary' : 'bg-primary text-white')}>{countAdvancedFilters(advancedFilters)}</span> : null}
@@ -707,8 +686,8 @@ export function CoursesPage() {
               </div>
             ) : null}
 
-            <div className="mt-3 flex justify-end border-t border-slate-200/80 pt-3">
-              <button type="button" className="inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-xs font-extrabold text-slate-700 shadow-sm transition hover:border-primary/25 hover:text-primary" onClick={resetCourseFilters}><RotateCcw className="size-4" /> Restablecer filtros</button>
+            <div className="mt-3 flex justify-end border-t border-border pt-3">
+              <button type="button" className="inline-flex h-9 items-center gap-2 rounded-lg px-3 text-xs font-bold text-muted-foreground transition hover:bg-muted hover:text-foreground" onClick={resetCourseFilters}><RotateCcw className="size-4" /> Restablecer filtros</button>
             </div>
           </section>
 
@@ -885,8 +864,8 @@ export function CoursesPage() {
               {groupedCourses.map((group) => (
                 <section key={group.key}>
                   <div className="mb-4 mt-2 flex items-center gap-3">
-                    <span className="flex size-9 items-center justify-center rounded-xl text-white shadow-sm" style={{ backgroundColor: getLevelStyle(group.levelName).color }}><BookOpen className="size-4" /></span>
-                    <h2 className="text-base font-extrabold text-foreground">Nivel {cleanLevelName(group.levelName)}</h2>
+                    <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary"><BookOpen className="size-4" /></span>
+                    <h2 className="text-base font-black text-foreground">Nivel {cleanLevelName(group.levelName)}</h2>
                     <span className="rounded-full px-2.5 py-1 text-[11px] font-extrabold tabular-nums" style={{ color: getLevelStyle(group.levelName).color, backgroundColor: getLevelStyle(group.levelName).soft }}>
                       {group.items.length} cursos
                     </span>
@@ -906,7 +885,6 @@ export function CoursesPage() {
                             <CourseCard
                               key={item.id}
                               item={item}
-                              schoolYearName={currentSchoolYear?.name ?? ''}
                               canManage={canManage}
                               onOpen={handleOpen}
                               onAddSection={handleAddSection}
@@ -1037,40 +1015,6 @@ export function CoursesPage() {
   )
 }
 
-function CourseStatCard({
-  icon,
-  value,
-  label,
-  detail,
-  tone,
-}: {
-  icon: ReactNode
-  value: string | number
-  label: string
-  detail: string
-  tone: 'blue' | 'green' | 'violet' | 'orange' | 'emerald' | 'sky'
-}) {
-  const tones = {
-    blue: 'bg-blue-50 text-blue-700 ring-blue-100',
-    green: 'bg-green-50 text-green-700 ring-green-100',
-    violet: 'bg-violet-50 text-violet-700 ring-violet-100',
-    orange: 'bg-orange-50 text-orange-700 ring-orange-100',
-    emerald: 'bg-emerald-50 text-emerald-700 ring-emerald-100',
-    sky: 'bg-sky-50 text-sky-700 ring-sky-100',
-  }
-
-  return (
-    <article className="flex min-w-0 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white p-4 shadow-[0_10px_28px_-24px_rgba(15,45,90,0.7)]">
-      <span className={cn('flex size-11 shrink-0 items-center justify-center rounded-xl ring-1', tones[tone])}>{icon}</span>
-      <div className="min-w-0">
-        <p className="truncate text-xl font-extrabold leading-none text-foreground tabular-nums">{value}</p>
-        <p className="mt-1 text-xs font-extrabold text-foreground">{label}</p>
-        <p className="truncate text-[10px] text-muted-foreground">{detail}</p>
-      </div>
-    </article>
-  )
-}
-
 function CourseWorkspace({
   item,
   initialAssignmentId,
@@ -1142,7 +1086,7 @@ function CourseWorkspace({
         <ArrowLeft className="size-4" /> Volver a mis cursos
       </button>
 
-      <header className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_12px_35px_-28px_rgba(15,45,90,0.75)]">
+      <header className="rounded-3xl bg-card p-5 shadow-sm">
         <div className="flex flex-col justify-between gap-5 xl:flex-row xl:items-center">
           <div className="flex min-w-0 items-center gap-4">
             <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold text-white shadow-md" style={{ backgroundColor: levelStyle.color }}>
@@ -1271,8 +1215,7 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
       aria-label={`Entrar a la asignatura ${assignment.subjectName}`}
       onClick={() => onOpen('resumen')}
       onKeyDown={openAssignmentFromKeyboard}
-      className="group relative flex min-h-[20rem] cursor-pointer flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_12px_28px_-24px_rgba(15,45,90,0.8)] transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
-      style={{ borderTopColor: palette.color, borderTopWidth: 4 }}
+      className="group relative flex min-h-[18rem] cursor-pointer flex-col rounded-2xl bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-center gap-3">
@@ -1320,8 +1263,7 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
 function ArchivedSubjectCard({ assignment, onRestore, onDelete }: { assignment: SectionSubjectAssignment; onRestore: () => void; onDelete: () => void }) {
   const palette = getAssignmentPalette(assignment)
   return (
-    <article className="relative overflow-visible rounded-2xl border border-border bg-card shadow-sm">
-      <div className="h-1.5 rounded-t-2xl opacity-70" style={{ backgroundColor: palette.color }} />
+    <article className="relative overflow-visible rounded-2xl bg-card shadow-sm">
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
           <span className="flex size-11 items-center justify-center rounded-xl text-white opacity-80" style={{ backgroundColor: palette.color }}>{getSubjectIcon(assignment.subjectName, assignment.appearanceIcon)}</span>
@@ -1556,7 +1498,7 @@ export function SubjectAppearanceDialog({ assignment, onSave, onClose }: { assig
   return (
     <Modal title="Personalizar apariencia" description="Cambia únicamente el aspecto visual de esta asignatura." onClose={onClose} className="max-w-2xl" contentClassName="overflow-x-hidden">
       <div className="space-y-6 p-5">
-        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4" style={{ borderTopColor: previewPalette.color, borderTopWidth: 4 }}>
+        <div className="flex items-center gap-3 rounded-2xl bg-card p-4 shadow-sm">
           <span className="flex size-11 items-center justify-center rounded-xl text-white" style={{ backgroundColor: previewPalette.color }}>{getSubjectIcon(assignment.subjectName, icon)}</span>
           <div><p className="font-extrabold text-foreground">{assignment.subjectName}</p><p className="text-xs text-muted-foreground">Vista previa de la tarjeta</p></div>
         </div>
@@ -1801,8 +1743,6 @@ function SubjectDetailView({
   const palette = item.assignment ? getAssignmentPalette(item.assignment) : getSubjectColor(item.subjectName)
   const courseLabel = `${item.grade.name} ${item.section.name}`.trim()
   const [activeTab, setActiveTab] = useState(initialTab ?? 'resumen')
-  const [teamSummary, setTeamSummary] = useState({ teams: item.assignment?.teamCount ?? 0, assignedStudents: 0 })
-  const updateTeamSummary = useCallback((summary: { teams: number; assignedStudents: number }) => setTeamSummary((current) => current.teams === summary.teams && current.assignedStudents === summary.assignedStudents ? current : summary), [])
   const [students, setStudents] = useState<StudentAttendanceRow[]>([])
   const [studentsLoading, setStudentsLoading] = useState(true)
   const [studentsError, setStudentsError] = useState<string | null>(null)
@@ -1811,26 +1751,7 @@ function SubjectDetailView({
     gradeRecords: Array<{ score: number; maxScore: number; evaluationActivityId?: string | null }>
     plannings: Array<{ id: string; title: string; plannedDate: string | null }>
   }>({ activities: [], gradeRecords: [], plannings: [] })
-  const [overviewLoading, setOverviewLoading] = useState(true)
   const [activityBlockPickerOpen, setActivityBlockPickerOpen] = useState(false)
-  const [subjectHeaderSlot, setSubjectHeaderSlot] = useState<HTMLElement | null>(null)
-
-  useEffect(() => {
-    const connectHeaderSlot = () => {
-      const slot = document.getElementById('course-subject-header-slot')
-      if (!slot) return false
-      setSubjectHeaderSlot(slot)
-      return true
-    }
-
-    if (connectHeaderSlot()) return undefined
-
-    const observer = new MutationObserver(() => {
-      if (connectHeaderSlot()) observer.disconnect()
-    })
-    observer.observe(document.body, { childList: true, subtree: true })
-    return () => observer.disconnect()
-  }, [])
 
   useEffect(() => {
     if (!schoolYearId) {
@@ -1849,11 +1770,9 @@ function SubjectDetailView({
 
   useEffect(() => {
     if (!item.assignment?.id) {
-      setOverviewLoading(false)
       return
     }
     let active = true
-    setOverviewLoading(true)
     Promise.allSettled([
       getGradingWorkspace({ sectionSubjectId: item.assignment.id, includeOptions: false }),
       getPlanningEntries({ sectionSubjectId: item.assignment.id }),
@@ -1864,7 +1783,7 @@ function SubjectDetailView({
         gradeRecords: gradingResult.status === 'fulfilled' ? gradingResult.value.gradeRecords : [],
         plannings: planningResult.status === 'fulfilled' ? planningResult.value.map((entry) => ({ id: entry.id, title: entry.title, plannedDate: entry.plannedDate })) : [],
       })
-    }).finally(() => { if (active) setOverviewLoading(false) })
+    })
     return () => { active = false }
   }, [item.assignment?.id])
 
@@ -1891,13 +1810,23 @@ function SubjectDetailView({
     { id: 'reportes', label: 'Reportes', icon: <ChartColumn className="size-4" /> },
     { id: 'configuracion', label: 'Configuración', icon: <SlidersHorizontal className="size-4" /> },
   ]
-  const assignedTeamStudents = Math.min(teamSummary.assignedStudents, students.length)
+  const subjectActions = [
+    { label: 'Nueva actividad', icon: <Plus className="size-4" />, onSelect: () => setActivityBlockPickerOpen(true) },
+    { label: 'Organizar equipos', icon: <UsersRound className="size-4" />, onSelect: () => setActiveTab('equipos') },
+    { label: 'Registrar asistencia', icon: <CalendarCheck2 className="size-4" />, onSelect: () => {
+      if (item.assignment) navigate(buildSubjectAttendanceHref(item.assignment.id, item.id))
+    } },
+    { label: 'Gestionar calificaciones', icon: <GraduationCap className="size-4" />, onSelect: () => setActiveTab('calificaciones') },
+    { label: 'Crear planificación', icon: <CalendarDays className="size-4" />, onSelect: () => setActiveTab('planificaciones') },
+    { label: 'Recursos', icon: <Library className="size-4" />, onSelect: () => setActiveTab('recursos') },
+    { label: 'Reportes', icon: <ChartColumn className="size-4" />, onSelect: () => setActiveTab('reportes') },
+    { label: 'Configuración', icon: <SlidersHorizontal className="size-4" />, onSelect: () => setActiveTab('configuracion') },
+  ]
 
   return (
     <div className="space-y-3">
-      <div className="sticky top-[76px] z-10 space-y-2 bg-background/95 pb-2 backdrop-blur-sm">
-      <SubjectHeaderPortal target={subjectHeaderSlot}><header className="w-full overflow-hidden">
-        <div className="flex h-[66px] items-center gap-3 px-2.5">
+      <header className="w-full overflow-visible rounded-2xl bg-card shadow-sm">
+        <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
           <div className="flex min-w-0 flex-1 items-center gap-3">
             <button type="button" className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-xs font-extrabold text-primary transition hover:border-primary/25 hover:bg-primary/[0.04]" onClick={onBack} aria-label={backLabel} title={backLabel}><ArrowLeft className="size-4" /><span className="hidden sm:inline">Volver</span></button>
             <div className="flex size-12 shrink-0 items-center justify-center rounded-xl text-white shadow-sm [&>svg]:size-6" style={{ backgroundColor: palette.color }}>{getSubjectIcon(item.subjectName, item.assignment?.appearanceIcon)}</div>
@@ -1910,29 +1839,26 @@ function SubjectDetailView({
             </div>
           </div>
 
-          <div className="hidden shrink-0 items-center divide-x divide-slate-100 min-[1100px]:flex">
-            {activeTab === 'equipos' ? <>
-              <SubjectHeaderMetric icon={<UsersRound className="size-4" />} value={studentsLoading ? '…' : students.length} label="Estudiantes" detail="Matriculados" tone="emerald" />
-              <SubjectHeaderMetric icon={<UsersRound className="size-4" />} value={teamSummary.teams} label="Equipos" detail="Creados" tone="violet" />
-              <SubjectHeaderMetric icon={<Users className="size-4" />} value={`${assignedTeamStudents} / ${students.length}`} label="Estudiantes" detail="En equipos" tone="cyan" />
-              <SubjectHeaderMetric icon={<GraduationCap className="size-4" />} value={Math.max(students.length - assignedTeamStudents, 0)} label="Sin equipo" detail="Por asignar" tone="orange" />
-            </> : <>
-              <SubjectHeaderMetric icon={<UsersRound className="size-4" />} value={studentsLoading ? '…' : students.length} label="Estudiantes" detail="Matriculados" tone="emerald" />
-              <SubjectHeaderMetric icon={<UsersRound className="size-4" />} value={item.assignment?.teamCount ?? 0} label="Equipos" detail="Creados" tone="violet" />
-              <SubjectHeaderMetric icon={<ClipboardList className="size-4" />} value={overviewLoading ? '…' : activityCount} label="Actividades" detail="Totales" tone="blue" />
-              <SubjectHeaderMetric icon={<ChartColumn className="size-4" />} value={averageScore === null ? '—' : `${averageScore}%`} label="Promedio" detail="General" tone="orange" />
-              <SubjectHeaderMetric icon={<CalendarCheck2 className="size-4" />} value={attendancePercent === null ? '—' : `${attendancePercent}%`} label="Asistencia" detail="Promedio" tone="cyan" />
-            </>}
-            <button type="button" onClick={() => setActiveTab('configuracion')} aria-label="Más opciones de la asignatura" className="ml-2 flex size-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 shadow-sm transition hover:border-primary/20 hover:bg-slate-50 hover:text-primary"><MoreVertical className="size-5" /></button>
-          </div>
+          <details className="group relative shrink-0">
+            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary-hover [&::-webkit-details-marker]:hidden">
+              Acciones <ChevronDown className="size-4 transition group-open:rotate-180" />
+            </summary>
+            <div className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-border bg-card p-2 shadow-xl">
+              {subjectActions.map((action) => (
+                <button key={action.label} type="button" className="flex h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-semibold text-foreground transition hover:bg-muted" onClick={(event) => { action.onSelect(); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                  <span className="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">{action.icon}</span>
+                  {action.label}
+                </button>
+              ))}
+            </div>
+          </details>
         </div>
 
-      </header></SubjectHeaderPortal>
+      </header>
 
-        <nav className="grid w-full grid-cols-2 gap-1 rounded-xl border border-primary/50 bg-white p-2 shadow-[0_7px_18px_-16px_rgba(29,78,216,0.9)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-15px_rgba(29,78,216,0.65)] sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-11" aria-label="Secciones de la asignatura">
+        <nav className="grid w-full grid-cols-2 gap-1 rounded-2xl bg-card p-1.5 shadow-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-11" aria-label="Secciones de la asignatura">
           {subjectTabs.map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} onClick={() => setActiveTab(tab.id)} />)}
         </nav>
-      </div>
 
       {activeTab === 'resumen' ? (
         <SubjectOverviewDashboard
@@ -1945,11 +1871,6 @@ function SubjectDetailView({
           attendancePercent={attendancePercent}
           averageScore={averageScore}
           lastAttendanceDate={item.assignment?.lastAttendanceDate ?? null}
-          onCreateActivity={() => setActivityBlockPickerOpen(true)}
-          onRegisterAttendance={() => {
-            if (!item.assignment) return
-            navigate(buildSubjectAttendanceHref(item.assignment.id, item.id))
-          }}
           onNavigate={setActiveTab}
         />
       ) : activeTab === 'estudiantes' ? (
@@ -1961,7 +1882,7 @@ function SubjectDetailView({
           canEnroll={canEnroll}
         />
       ) : activeTab === 'equipos' ? (
-        <CourseTeamsPanel sectionSubjectId={item.assignment?.id ?? null} students={students} canManage={canEnroll} onSummaryChange={updateTeamSummary} />
+        <CourseTeamsPanel sectionSubjectId={item.assignment?.id ?? null} students={students} canManage={canEnroll} />
       ) : activeTab === 'actividades' ? (
         <SubjectModulePanel icon={<CheckSquare className="size-6" />} title="Actividades" description="Crea, organiza y evalúa las actividades de esta asignatura desde el espacio de evaluación." href={`/calificaciones?sectionSubjectId=${encodeURIComponent(item.assignment?.id ?? '')}`} action="Gestionar actividades" />
       ) : activeTab === 'asistencia' ? (
@@ -1991,15 +1912,6 @@ function SubjectDetailView({
       ) : null}
     </div>
   )
-}
-
-export function SubjectHeaderPortal({ target, children }: { target: HTMLElement | null; children: ReactNode }) {
-  return target ? createPortal(children, target) : null
-}
-
-function SubjectHeaderMetric({ icon, value, label, detail, tone }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'emerald' | 'violet' | 'blue' | 'orange' | 'cyan' }) {
-  const tones = { emerald: 'bg-emerald-50 text-emerald-600', violet: 'bg-violet-50 text-violet-600', blue: 'bg-blue-50 text-blue-600', orange: 'bg-orange-50 text-orange-600', cyan: 'bg-cyan-50 text-cyan-600' }
-  return <div className="flex min-w-[6.4rem] shrink-0 items-center gap-2 px-2.5 py-1"><span className={cn('flex size-8 shrink-0 items-center justify-center rounded-lg [&>svg]:size-4', tones[tone])}>{icon}</span><span className="min-w-0"><strong className="block text-base leading-none text-foreground tabular-nums">{value}</strong><span className="mt-1 block text-[10px] font-extrabold leading-none text-slate-700">{label}</span><span className="mt-0.5 block text-[9px] leading-none text-muted-foreground">{detail}</span></span></div>
 }
 
 export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, subjectName, onClose }: {
@@ -2068,7 +1980,7 @@ export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, 
   )
 }
 
-function SubjectOverviewDashboard({ students, teams, activities, activityCount, gradeRecords, plannings, attendancePercent, averageScore, lastAttendanceDate, onCreateActivity, onRegisterAttendance, onNavigate }: {
+function SubjectOverviewDashboard({ students, teams, activities, activityCount, gradeRecords, plannings, attendancePercent, averageScore, lastAttendanceDate, onNavigate }: {
   students: number
   teams: number
   activities: Array<{ id: string; name: string; date?: string; activityType?: 'individual' | 'group'; instrumentId?: string }>
@@ -2078,20 +1990,8 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
   attendancePercent: number | null
   averageScore: number | null
   lastAttendanceDate: string | null
-  onCreateActivity: () => void
-  onRegisterAttendance: () => void
   onNavigate: (tab: string) => void
 }) {
-  const quickActions = [
-    { label: 'Nueva actividad', detail: 'Crear una nueva actividad', tab: 'create-activity', icon: <Plus className="size-4" />, tone: 'bg-emerald-50 text-emerald-600' },
-    { label: 'Organizar equipos', detail: 'Crear y gestionar equipos', tab: 'equipos', icon: <UsersRound className="size-4" />, tone: 'bg-blue-50 text-blue-600' },
-    { label: 'Registrar asistencia', detail: 'Tomar asistencia ahora', tab: 'asistencia', icon: <CalendarCheck2 className="size-4" />, tone: 'bg-blue-50 text-blue-600' },
-    { label: 'Gestionar calificaciones', detail: 'Ver y registrar notas', tab: 'calificaciones', icon: <GraduationCap className="size-4" />, tone: 'bg-violet-50 text-violet-600' },
-    { label: 'Crear planificación', detail: 'Planificar clases', tab: 'planificaciones', icon: <CalendarDays className="size-4" />, tone: 'bg-violet-50 text-violet-600' },
-    { label: 'Recursos', detail: 'Gestionar archivos y enlaces', tab: 'recursos', icon: <Library className="size-4" />, tone: 'bg-orange-50 text-orange-600' },
-    { label: 'Reportes', detail: 'Generar reportes', tab: 'reportes', icon: <ChartColumn className="size-4" />, tone: 'bg-violet-50 text-violet-600' },
-    { label: 'Configuración', detail: 'Ajustes de la asignatura', tab: 'configuracion', icon: <SlidersHorizontal className="size-4" />, tone: 'bg-slate-100 text-slate-600' },
-  ]
   const datedActivities = activities.filter((activity) => activity.date).sort((a, b) => new Date(a.date ?? 0).getTime() - new Date(b.date ?? 0).getTime())
   const upcomingActivities = datedActivities.filter((activity) => new Date(activity.date ?? 0).getTime() >= startOfToday()).slice(0, 3)
   const recentActivity = [...datedActivities].sort((a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime())[0] ?? activities[0]
@@ -2101,17 +2001,7 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
 
   return (
     <div className="space-y-4">
-      <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr_0.95fr]">
-        <DashboardPanel title="Acciones rápidas">
-          <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-4">
-            {quickActions.map((action) => {
-              const content = <><span className={cn('flex size-8 items-center justify-center rounded-lg', action.tone)}>{action.icon}</span><span className="mt-2 block text-xs font-extrabold leading-4 text-foreground">{action.label}</span><span className="mt-1 block text-[10px] leading-4 text-muted-foreground">{action.detail}</span></>
-              const className = 'rounded-xl border border-slate-200 bg-white p-3 text-left transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-sm'
-              return <button key={action.tab} type="button" onClick={() => action.tab === 'create-activity' ? onCreateActivity() : action.tab === 'asistencia' ? onRegisterAttendance() : onNavigate(action.tab)} className={className}>{content}</button>
-            })}
-          </div>
-        </DashboardPanel>
-
+      <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
         <DashboardPanel title="Próximas actividades" action="Ver todas" onAction={() => onNavigate('actividades')}>
           <div className="space-y-2 p-3">
             {upcomingActivities.length ? upcomingActivities.map((activity) => <ActivityPreview key={activity.id} activity={activity} />) : <CompactEmpty icon={<CalendarClock className="size-5" />} text="No hay actividades próximas." />}
@@ -2225,7 +2115,7 @@ function DetailTab({ active, icon, label, onClick }: { active?: boolean; icon: R
     <button
       type="button"
       className={cn(
-        'relative flex h-11 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-transparent px-2 text-sm font-extrabold text-slate-600 transition hover:-translate-y-px hover:bg-primary/5 hover:text-primary',
+        'relative flex h-10 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-2 text-sm font-bold text-muted-foreground transition hover:bg-primary/5 hover:text-primary',
         active && 'bg-primary/[0.055] text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-t-full after:bg-primary',
       )}
       onClick={onClick}
@@ -2613,7 +2503,6 @@ function HorarioTab({ sectionId, sectionSubjectId }: { sectionId: string; sectio
 
 const CourseCard = memo(function CourseCard({
   item,
-  schoolYearName,
   canManage,
   onOpen,
   onAddSection,
@@ -2622,7 +2511,6 @@ const CourseCard = memo(function CourseCard({
   onAssignSubject,
 }: {
   item: CourseCardItem
-  schoolYearName: string
   canManage: boolean
   onOpen: (id: string) => void
   onAddSection: (grade: GradeWithSections) => void
@@ -2654,11 +2542,10 @@ const CourseCard = memo(function CourseCard({
 
   return (
     <article
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:ring-2 hover:ring-slate-200/80"
+      className="group relative flex flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
     >
-      <span className="absolute inset-x-0 top-0 h-1" style={{ backgroundColor: levelStyle.color }} aria-hidden="true" />
       <div
-        className="flex flex-1 cursor-pointer flex-col p-5 pb-4 pt-6"
+        className="flex flex-1 cursor-pointer flex-col p-4"
         role="button"
         tabIndex={0}
         onClick={() => onOpen(item.id)}
@@ -2669,62 +2556,50 @@ const CourseCard = memo(function CourseCard({
           }
         }}
       >
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-3.5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-3">
             <span
-              className="flex h-12 w-12 items-center justify-center rounded-xl text-base font-extrabold text-white"
+              className="flex size-11 shrink-0 items-center justify-center rounded-xl text-sm font-black text-white"
               style={{ backgroundColor: levelStyle.color }}
             >
               {gradeNumber}
               <span className="ml-px text-xs font-bold opacity-80">{item.section.name}</span>
             </span>
-            <div>
-              <h3 className="text-lg font-extrabold tracking-tight text-foreground">
+            <div className="min-w-0">
+              <h3 className="truncate text-base font-black tracking-tight text-foreground">
                 {item.grade.name} {item.section.name}
               </h3>
-              <p className="mt-1 text-sm font-semibold text-muted-foreground">{item.cycleName}</p>
+              <p className="mt-0.5 truncate text-xs font-medium text-muted-foreground">
+                {item.cycleName} · {cleanLevelName(item.levelName)}
+              </p>
             </div>
           </div>
 
-          <div className="flex flex-col items-end gap-1.5">
-            <span className={cn('inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide ring-1', item.archived ? 'bg-slate-100 text-slate-600 ring-slate-200' : 'bg-emerald-50 text-emerald-700 ring-emerald-100')}>
+          <div className="shrink-0">
+            <span className={cn('inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide', item.archived ? 'bg-muted text-muted-foreground' : 'bg-emerald-50 text-emerald-700')}>
               <span className={cn('size-1.5 rounded-full', item.archived ? 'bg-slate-400' : 'bg-emerald-500')} aria-hidden="true" /> {item.archived ? 'Archivado' : 'Activo'}
-            </span>
-            <span
-              className="rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wide"
-              style={{ backgroundColor: levelStyle.soft, color: levelStyle.color }}
-            >
-              {cleanLevelName(item.levelName)}
             </span>
           </div>
         </div>
 
-        <div className="mt-5 grid grid-cols-3 gap-2 rounded-xl bg-muted/55 p-3 text-center">
-          <span><strong className="block text-base text-foreground">{item.section.studentCount ?? 0}</strong><span className="text-[11px] text-muted-foreground">estudiantes</span></span>
-          <span className="border-x border-border"><strong className="block text-base text-foreground">{item.assignments.length}</strong><span className="text-[11px] text-muted-foreground">asignaturas</span></span>
-          <span><strong className="block text-base text-foreground">{teamCount}</strong><span className="text-[11px] text-muted-foreground">equipos</span></span>
-        </div>
-
-        <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
-          {schoolYearName ? (
-            <>
-              <span>Año escolar {schoolYearName}</span>
-            </>
-          ) : null}
+        <div className="mt-4 grid grid-cols-3 divide-x divide-border rounded-xl bg-muted/40 py-2.5 text-center">
+          <span><strong className="block text-sm font-black text-foreground tabular-nums">{item.section.studentCount ?? 0}</strong><span className="text-[10px] text-muted-foreground">estudiantes</span></span>
+          <span><strong className="block text-sm font-black text-foreground tabular-nums">{item.assignments.length}</strong><span className="text-[10px] text-muted-foreground">asignaturas</span></span>
+          <span><strong className="block text-sm font-black text-foreground tabular-nums">{teamCount}</strong><span className="text-[10px] text-muted-foreground">equipos</span></span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-2 border-t border-border px-3 py-2.5" style={{ backgroundColor: levelStyle.soft }}>
+      <div className="flex items-center justify-between gap-2 border-t border-border px-3 py-2">
         <div className="flex min-w-0 items-center gap-1">
           {canManage ? (
-            <FooterAction label="Agregar sección" tooltip="Agregar nueva sección" onClick={() => onAddSection(item.grade)}><Plus className="h-3.5 w-3.5" /></FooterAction>
+            <FooterAction label="Sección" tooltip="Agregar nueva sección" onClick={() => onAddSection(item.grade)}><Plus className="h-3.5 w-3.5" /></FooterAction>
           ) : null}
-          <FooterAction label="Entrar al curso" tooltip="Entrar al curso" onClick={() => onOpen(item.id)}><LogIn className="h-3.5 w-3.5" /></FooterAction>
+          <FooterAction label="Entrar" tooltip="Entrar al curso" onClick={() => onOpen(item.id)}><LogIn className="h-3.5 w-3.5" /></FooterAction>
         </div>
         {canManage ? (
           <div className="relative" ref={menuRef}>
-            <button type="button" title="Más acciones" className="inline-flex h-8 items-center gap-1.5 rounded-lg px-2 text-[11px] font-bold text-muted-foreground transition-all duration-150 hover:scale-[1.02] hover:bg-card hover:text-foreground" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
-              <MoreHorizontal className="size-4" /> <span className="hidden 2xl:inline">Más acciones</span>
+            <button type="button" title="Más acciones" className="inline-flex size-8 items-center justify-center rounded-lg text-muted-foreground transition hover:bg-muted hover:text-foreground" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
+              <MoreHorizontal className="size-4" />
             </button>
             {menuOpen ? (
               <div role="menu" className="absolute bottom-10 right-0 z-20 w-52 origin-bottom-right overflow-hidden rounded-xl border border-border bg-card p-1.5 shadow-xl motion-safe:animate-[fadeIn_140ms_ease-out]">
@@ -2802,7 +2677,7 @@ function FilterSelect({ label, value, options, onChange }: {
   return (
     <label className="relative min-w-0">
       <span className="sr-only">{label}</span>
-      <select value={value} onChange={(event) => onChange(event.target.value)} className="h-11 w-full min-w-0 appearance-none truncate rounded-xl border border-slate-200 bg-white py-0 pl-3.5 pr-9 text-xs font-extrabold text-slate-800 shadow-sm outline-none transition hover:border-primary/25 focus:border-primary/45 focus:ring-2 focus:ring-primary/10">
+      <select value={value} onChange={(event) => onChange(event.target.value)} className="h-11 w-full min-w-0 appearance-none truncate rounded-xl border border-border bg-card py-0 pl-3.5 pr-9 text-xs font-bold text-foreground outline-none transition hover:bg-muted/40 focus:border-ring focus:ring-4 focus:ring-ring/20">
         <option value="all">{label}: Todos</option>
         {groupedOptions.length ? groupedOptions.map((group) => (
           <optgroup key={group.label} label={group.label}>
@@ -2810,7 +2685,7 @@ function FilterSelect({ label, value, options, onChange }: {
           </optgroup>
         )) : options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
       </select>
-      <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-400">⌄</span>
+      <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground">⌄</span>
     </label>
   )
 }

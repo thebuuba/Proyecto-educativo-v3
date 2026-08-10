@@ -91,7 +91,7 @@ export function DashboardPage() {
   const hasRecentActivity = data.recentActivity.length > 0
 
   return (
-    <div className="teacher-dashboard mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
+    <div className="app-content-frame teacher-dashboard space-y-5">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-baseline gap-3 flex-wrap">
           <h1 className="text-2xl lg:text-[28px] font-bold tracking-tight text-foreground">

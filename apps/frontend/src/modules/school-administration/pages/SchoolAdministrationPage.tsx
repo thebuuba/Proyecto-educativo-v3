@@ -36,7 +36,7 @@ export function SchoolAdministrationPage() {
   const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
 
   return (
-    <section className="teacher-dashboard mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
+    <section className="app-content-frame teacher-dashboard space-y-5">
       <header className="dashboard-warm-shadow relative overflow-hidden rounded-3xl border border-border bg-card px-5 py-6 sm:px-7 lg:px-8">
         <div className="dashboard-paper-lines pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] opacity-70 sm:block" aria-hidden="true" />
         <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">

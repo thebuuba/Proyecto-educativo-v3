@@ -72,7 +72,7 @@ export function CompetencyMatrixPage() {
   })
 
   return (
-    <section className="mx-auto w-full min-w-0 max-w-[1440px] space-y-5 pb-8">
+    <section className="app-content-frame space-y-5 pb-8">
       <header className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">

@@ -8,6 +8,7 @@ import type { ScheduleEntry } from '@/modules/schedule/types'
 import { formatTime, getDurationHours } from '@/modules/schedule/utils/scheduleGrid'
 import type { ScheduleBlock, ScheduleConfig } from '@/modules/schedule/components/ScheduleWizard'
 import { cn } from '@/utils/cn'
+import { getSubjectPalette } from '@/utils/subjectPalette'
 
 type PedagogicalBlock = {
   dayOfWeek: number
@@ -31,30 +32,11 @@ type CellContent =
   | { kind: 'pedagogical'; block: PedagogicalBlock }
   | { kind: 'empty' }
 
-const SUBJECT_STYLES = [
-  'bg-sky-50 text-sky-900 border-sky-200',
-  'bg-emerald-50 text-emerald-900 border-emerald-200',
-  'bg-violet-50 text-violet-900 border-violet-200',
-  'bg-amber-50 text-amber-900 border-amber-200',
-  'bg-rose-50 text-rose-900 border-rose-200',
-  'bg-teal-50 text-teal-900 border-teal-200',
-  'bg-orange-50 text-orange-900 border-orange-200',
-]
-
 const SHIFT_LABELS: Record<string, string> = {
   morning: 'Matutina',
   afternoon: 'Vespertina',
   evening: 'Nocturna',
   extended: 'Extendida',
-}
-
-function hashString(value: string) {
-  let hash = 0
-  for (let index = 0; index < value.length; index++) {
-    hash = ((hash << 5) - hash) + value.charCodeAt(index)
-    hash |= 0
-  }
-  return Math.abs(hash)
 }
 
 function getCellKey(dayOfWeek: number, block: Pick<ScheduleBlock, 'start' | 'end'>) {
@@ -231,10 +213,10 @@ function ScheduleFinalCell({ content }: { content: CellContent }) {
     )
   }
 
-  const style = SUBJECT_STYLES[hashString(content.entry.subjectName) % SUBJECT_STYLES.length]
+  const palette = getSubjectPalette(content.entry.subjectName)
 
   return (
-    <div className={cn('flex h-full min-h-16 flex-col justify-center rounded-md border px-2 py-1.5', style)}>
+    <div className="flex h-full min-h-16 flex-col justify-center rounded-md border px-2 py-1.5" style={{ backgroundColor: palette.soft, borderColor: `${palette.color}33`, color: palette.color }}>
       <p className="text-xs font-extrabold leading-tight">{content.entry.subjectName}</p>
       <p className="mt-1 text-[11px] font-semibold opacity-80">
         {content.entry.academicLevelName} · {content.entry.gradeName} {content.entry.sectionName}

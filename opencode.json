@@ -2,7 +2,33 @@
   "$schema": "https://opencode.ai/config.json",
   "model": "opencode/deepseek-v4-flash-free",
   "plugin": [
-    "superpowers@git+https://github.com/obra/superpowers.git",
-    "/Users/natanael/.config/opencode/ponytail/.opencode/plugins/ponytail.mjs"  // ponytail: absolute path, replace per-dev
-  ]
+    "superpowers@git+https://github.com/obra/superpowers.git"
+  ],
+  "agent": {
+    "deepseek-worker": {
+      "description": "Agente auxiliar DeepSeek para analizar, implementar y probar tareas acotadas del proyecto",
+      "mode": "primary",
+      "model": "opencode/deepseek-v4-flash-free",
+      "prompt": "Trabaja como agente auxiliar. Respeta AGENTS.md, usa pnpm, no leas ni muestres secretos, limita los cambios a la tarea recibida y entrega un resumen con archivos modificados y validaciones. No hagas commit, push, merge ni despliegues: el agente principal revisa y ejecuta esas acciones.",
+      "permission": {
+        "edit": "allow",
+        "bash": {
+          "*": "allow",
+          "git commit*": "deny",
+          "git push*": "deny",
+          "git merge*": "deny",
+          "git rebase*": "deny",
+          "git reset*": "deny",
+          "git clean*": "deny",
+          "git tag*": "deny",
+          "git branch -D*": "deny",
+          "git checkout -B*": "deny",
+          "git stash drop*": "deny",
+          "rm *": "deny",
+          "Remove-Item*": "deny"
+        },
+        "external_directory": "deny"
+      }
+    }
+  }
 }

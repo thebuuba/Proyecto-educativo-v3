@@ -135,6 +135,13 @@ body {
   background: var(--background);
 }
 
+/* El contenido autenticado aprovecha el ancho real disponible. Antes, varias
+   vistas quedaban fijadas a 1440 px y parecían encogidas en monitores grandes. */
+.app-content-frame {
+  width: 100%;
+  min-width: 0;
+}
+
 .dashboard-paper-lines {
   background-image: repeating-linear-gradient(
     to bottom,
