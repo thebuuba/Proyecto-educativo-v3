@@ -1875,7 +1875,7 @@ function SubjectDetailView({
 
       </header></SubjectHeaderPortal>
 
-        <nav className="flex w-full gap-1 overflow-x-auto rounded-2xl bg-card p-1.5 shadow-sm" aria-label="Secciones de la asignatura">
+        <nav className="grid w-full grid-cols-2 gap-1 rounded-2xl bg-card p-1.5 shadow-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-11" aria-label="Secciones de la asignatura">
           {subjectTabs.map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} onClick={() => setActiveTab(tab.id)} />)}
         </nav>
 
@@ -2138,7 +2138,7 @@ function DetailTab({ active, icon, label, onClick }: { active?: boolean; icon: R
     <button
       type="button"
       className={cn(
-        'relative flex h-10 min-w-32 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-3 text-sm font-bold text-muted-foreground transition hover:bg-primary/5 hover:text-primary',
+        'relative flex h-10 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-2 text-sm font-bold text-muted-foreground transition hover:bg-primary/5 hover:text-primary',
         active && 'bg-primary/[0.055] text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-t-full after:bg-primary',
       )}
       onClick={onClick}
