@@ -46,7 +46,6 @@ import {
   LogIn,
   Microscope,
   MoreHorizontal,
-  MoreVertical,
   Music2,
   Paintbrush,
   Palette as PaletteIcon,
@@ -69,7 +68,6 @@ import {
   Telescope,
   Theater,
   Trash2,
-  Users,
   UsersRound,
   FlaskConical,
   Wrench,
@@ -1746,8 +1744,6 @@ function SubjectDetailView({
   const palette = item.assignment ? getAssignmentPalette(item.assignment) : getSubjectColor(item.subjectName)
   const courseLabel = `${item.grade.name} ${item.section.name}`.trim()
   const [activeTab, setActiveTab] = useState(initialTab ?? 'resumen')
-  const [teamSummary, setTeamSummary] = useState({ teams: item.assignment?.teamCount ?? 0, assignedStudents: 0 })
-  const updateTeamSummary = useCallback((summary: { teams: number; assignedStudents: number }) => setTeamSummary((current) => current.teams === summary.teams && current.assignedStudents === summary.assignedStudents ? current : summary), [])
   const [students, setStudents] = useState<StudentAttendanceRow[]>([])
   const [studentsLoading, setStudentsLoading] = useState(true)
   const [studentsError, setStudentsError] = useState<string | null>(null)
@@ -1756,7 +1752,6 @@ function SubjectDetailView({
     gradeRecords: Array<{ score: number; maxScore: number; evaluationActivityId?: string | null }>
     plannings: Array<{ id: string; title: string; plannedDate: string | null }>
   }>({ activities: [], gradeRecords: [], plannings: [] })
-  const [overviewLoading, setOverviewLoading] = useState(true)
   const [activityBlockPickerOpen, setActivityBlockPickerOpen] = useState(false)
   const [subjectHeaderSlot, setSubjectHeaderSlot] = useState<HTMLElement | null>(null)
 
@@ -1794,11 +1789,9 @@ function SubjectDetailView({
 
   useEffect(() => {
     if (!item.assignment?.id) {
-      setOverviewLoading(false)
       return
     }
     let active = true
-    setOverviewLoading(true)
     Promise.allSettled([
       getGradingWorkspace({ sectionSubjectId: item.assignment.id, includeOptions: false }),
       getPlanningEntries({ sectionSubjectId: item.assignment.id }),
@@ -1809,7 +1802,7 @@ function SubjectDetailView({
         gradeRecords: gradingResult.status === 'fulfilled' ? gradingResult.value.gradeRecords : [],
         plannings: planningResult.status === 'fulfilled' ? planningResult.value.map((entry) => ({ id: entry.id, title: entry.title, plannedDate: entry.plannedDate })) : [],
       })
-    }).finally(() => { if (active) setOverviewLoading(false) })
+    })
     return () => { active = false }
   }, [item.assignment?.id])
 
@@ -1836,12 +1829,22 @@ function SubjectDetailView({
     { id: 'reportes', label: 'Reportes', icon: <ChartColumn className="size-4" /> },
     { id: 'configuracion', label: 'Configuración', icon: <SlidersHorizontal className="size-4" /> },
   ]
-  const assignedTeamStudents = Math.min(teamSummary.assignedStudents, students.length)
+  const subjectActions = [
+    { label: 'Nueva actividad', icon: <Plus className="size-4" />, onSelect: () => setActivityBlockPickerOpen(true) },
+    { label: 'Organizar equipos', icon: <UsersRound className="size-4" />, onSelect: () => setActiveTab('equipos') },
+    { label: 'Registrar asistencia', icon: <CalendarCheck2 className="size-4" />, onSelect: () => {
+      if (item.assignment) navigate(buildSubjectAttendanceHref(item.assignment.id, item.id))
+    } },
+    { label: 'Gestionar calificaciones', icon: <GraduationCap className="size-4" />, onSelect: () => setActiveTab('calificaciones') },
+    { label: 'Crear planificación', icon: <CalendarDays className="size-4" />, onSelect: () => setActiveTab('planificaciones') },
+    { label: 'Recursos', icon: <Library className="size-4" />, onSelect: () => setActiveTab('recursos') },
+    { label: 'Reportes', icon: <ChartColumn className="size-4" />, onSelect: () => setActiveTab('reportes') },
+    { label: 'Configuración', icon: <SlidersHorizontal className="size-4" />, onSelect: () => setActiveTab('configuracion') },
+  ]
 
   return (
     <div className="space-y-3">
-      <div className="sticky top-[76px] z-10 space-y-2 bg-background/95 pb-2 backdrop-blur-sm">
-      <SubjectHeaderPortal target={subjectHeaderSlot}><header className="w-full overflow-hidden">
+      <SubjectHeaderPortal target={subjectHeaderSlot}><header className="w-full overflow-visible">
         <div className="flex h-[66px] items-center gap-3 px-2.5">
           <div className="flex min-w-0 flex-1 items-center gap-3">
             <button type="button" className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-xs font-extrabold text-primary transition hover:border-primary/25 hover:bg-primary/[0.04]" onClick={onBack} aria-label={backLabel} title={backLabel}><ArrowLeft className="size-4" /><span className="hidden sm:inline">Volver</span></button>
@@ -1855,29 +1858,26 @@ function SubjectDetailView({
             </div>
           </div>
 
-          <div className="hidden shrink-0 items-center divide-x divide-slate-100 min-[1100px]:flex">
-            {activeTab === 'equipos' ? <>
-              <SubjectHeaderMetric icon={<UsersRound className="size-4" />} value={studentsLoading ? '…' : students.length} label="Estudiantes" detail="Matriculados" tone="emerald" />
-              <SubjectHeaderMetric icon={<UsersRound className="size-4" />} value={teamSummary.teams} label="Equipos" detail="Creados" tone="violet" />
-              <SubjectHeaderMetric icon={<Users className="size-4" />} value={`${assignedTeamStudents} / ${students.length}`} label="Estudiantes" detail="En equipos" tone="cyan" />
-              <SubjectHeaderMetric icon={<GraduationCap className="size-4" />} value={Math.max(students.length - assignedTeamStudents, 0)} label="Sin equipo" detail="Por asignar" tone="orange" />
-            </> : <>
-              <SubjectHeaderMetric icon={<UsersRound className="size-4" />} value={studentsLoading ? '…' : students.length} label="Estudiantes" detail="Matriculados" tone="emerald" />
-              <SubjectHeaderMetric icon={<UsersRound className="size-4" />} value={item.assignment?.teamCount ?? 0} label="Equipos" detail="Creados" tone="violet" />
-              <SubjectHeaderMetric icon={<ClipboardList className="size-4" />} value={overviewLoading ? '…' : activityCount} label="Actividades" detail="Totales" tone="blue" />
-              <SubjectHeaderMetric icon={<ChartColumn className="size-4" />} value={averageScore === null ? '—' : `${averageScore}%`} label="Promedio" detail="General" tone="orange" />
-              <SubjectHeaderMetric icon={<CalendarCheck2 className="size-4" />} value={attendancePercent === null ? '—' : `${attendancePercent}%`} label="Asistencia" detail="Promedio" tone="cyan" />
-            </>}
-            <button type="button" onClick={() => setActiveTab('configuracion')} aria-label="Más opciones de la asignatura" className="ml-2 flex size-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 shadow-sm transition hover:border-primary/20 hover:bg-slate-50 hover:text-primary"><MoreVertical className="size-5" /></button>
-          </div>
+          <details className="group relative shrink-0">
+            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary-hover [&::-webkit-details-marker]:hidden">
+              Acciones <ChevronDown className="size-4 transition group-open:rotate-180" />
+            </summary>
+            <div className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-border bg-card p-2 shadow-xl">
+              {subjectActions.map((action) => (
+                <button key={action.label} type="button" className="flex h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-semibold text-foreground transition hover:bg-muted" onClick={(event) => { action.onSelect(); event.currentTarget.closest('details')?.removeAttribute('open') }}>
+                  <span className="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">{action.icon}</span>
+                  {action.label}
+                </button>
+              ))}
+            </div>
+          </details>
         </div>
 
       </header></SubjectHeaderPortal>
 
-        <nav className="grid w-full grid-cols-2 gap-1 rounded-xl border border-primary/50 bg-white p-2 shadow-[0_7px_18px_-16px_rgba(29,78,216,0.9)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-15px_rgba(29,78,216,0.65)] sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-11" aria-label="Secciones de la asignatura">
+        <nav className="flex w-full gap-1 overflow-x-auto rounded-2xl bg-card p-1.5 shadow-sm" aria-label="Secciones de la asignatura">
           {subjectTabs.map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} onClick={() => setActiveTab(tab.id)} />)}
         </nav>
-      </div>
 
       {activeTab === 'resumen' ? (
         <SubjectOverviewDashboard
@@ -1890,11 +1890,6 @@ function SubjectDetailView({
           attendancePercent={attendancePercent}
           averageScore={averageScore}
           lastAttendanceDate={item.assignment?.lastAttendanceDate ?? null}
-          onCreateActivity={() => setActivityBlockPickerOpen(true)}
-          onRegisterAttendance={() => {
-            if (!item.assignment) return
-            navigate(buildSubjectAttendanceHref(item.assignment.id, item.id))
-          }}
           onNavigate={setActiveTab}
         />
       ) : activeTab === 'estudiantes' ? (
@@ -1906,7 +1901,7 @@ function SubjectDetailView({
           canEnroll={canEnroll}
         />
       ) : activeTab === 'equipos' ? (
-        <CourseTeamsPanel sectionSubjectId={item.assignment?.id ?? null} students={students} canManage={canEnroll} onSummaryChange={updateTeamSummary} />
+        <CourseTeamsPanel sectionSubjectId={item.assignment?.id ?? null} students={students} canManage={canEnroll} />
       ) : activeTab === 'actividades' ? (
         <SubjectModulePanel icon={<CheckSquare className="size-6" />} title="Actividades" description="Crea, organiza y evalúa las actividades de esta asignatura desde el espacio de evaluación." href={`/calificaciones?sectionSubjectId=${encodeURIComponent(item.assignment?.id ?? '')}`} action="Gestionar actividades" />
       ) : activeTab === 'asistencia' ? (
@@ -1940,11 +1935,6 @@ function SubjectDetailView({
 
 export function SubjectHeaderPortal({ target, children }: { target: HTMLElement | null; children: ReactNode }) {
   return target ? createPortal(children, target) : null
-}
-
-function SubjectHeaderMetric({ icon, value, label, detail, tone }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'emerald' | 'violet' | 'blue' | 'orange' | 'cyan' }) {
-  const tones = { emerald: 'bg-emerald-50 text-emerald-600', violet: 'bg-violet-50 text-violet-600', blue: 'bg-blue-50 text-blue-600', orange: 'bg-orange-50 text-orange-600', cyan: 'bg-cyan-50 text-cyan-600' }
-  return <div className="flex min-w-[6.4rem] shrink-0 items-center gap-2 px-2.5 py-1"><span className={cn('flex size-8 shrink-0 items-center justify-center rounded-lg [&>svg]:size-4', tones[tone])}>{icon}</span><span className="min-w-0"><strong className="block text-base leading-none text-foreground tabular-nums">{value}</strong><span className="mt-1 block text-[10px] font-extrabold leading-none text-slate-700">{label}</span><span className="mt-0.5 block text-[9px] leading-none text-muted-foreground">{detail}</span></span></div>
 }
 
 export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, subjectName, onClose }: {
@@ -2013,7 +2003,7 @@ export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, 
   )
 }
 
-function SubjectOverviewDashboard({ students, teams, activities, activityCount, gradeRecords, plannings, attendancePercent, averageScore, lastAttendanceDate, onCreateActivity, onRegisterAttendance, onNavigate }: {
+function SubjectOverviewDashboard({ students, teams, activities, activityCount, gradeRecords, plannings, attendancePercent, averageScore, lastAttendanceDate, onNavigate }: {
   students: number
   teams: number
   activities: Array<{ id: string; name: string; date?: string; activityType?: 'individual' | 'group'; instrumentId?: string }>
@@ -2023,20 +2013,8 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
   attendancePercent: number | null
   averageScore: number | null
   lastAttendanceDate: string | null
-  onCreateActivity: () => void
-  onRegisterAttendance: () => void
   onNavigate: (tab: string) => void
 }) {
-  const quickActions = [
-    { label: 'Nueva actividad', detail: 'Crear una nueva actividad', tab: 'create-activity', icon: <Plus className="size-4" />, tone: 'bg-emerald-50 text-emerald-600' },
-    { label: 'Organizar equipos', detail: 'Crear y gestionar equipos', tab: 'equipos', icon: <UsersRound className="size-4" />, tone: 'bg-blue-50 text-blue-600' },
-    { label: 'Registrar asistencia', detail: 'Tomar asistencia ahora', tab: 'asistencia', icon: <CalendarCheck2 className="size-4" />, tone: 'bg-blue-50 text-blue-600' },
-    { label: 'Gestionar calificaciones', detail: 'Ver y registrar notas', tab: 'calificaciones', icon: <GraduationCap className="size-4" />, tone: 'bg-violet-50 text-violet-600' },
-    { label: 'Crear planificación', detail: 'Planificar clases', tab: 'planificaciones', icon: <CalendarDays className="size-4" />, tone: 'bg-violet-50 text-violet-600' },
-    { label: 'Recursos', detail: 'Gestionar archivos y enlaces', tab: 'recursos', icon: <Library className="size-4" />, tone: 'bg-orange-50 text-orange-600' },
-    { label: 'Reportes', detail: 'Generar reportes', tab: 'reportes', icon: <ChartColumn className="size-4" />, tone: 'bg-violet-50 text-violet-600' },
-    { label: 'Configuración', detail: 'Ajustes de la asignatura', tab: 'configuracion', icon: <SlidersHorizontal className="size-4" />, tone: 'bg-slate-100 text-slate-600' },
-  ]
   const datedActivities = activities.filter((activity) => activity.date).sort((a, b) => new Date(a.date ?? 0).getTime() - new Date(b.date ?? 0).getTime())
   const upcomingActivities = datedActivities.filter((activity) => new Date(activity.date ?? 0).getTime() >= startOfToday()).slice(0, 3)
   const recentActivity = [...datedActivities].sort((a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime())[0] ?? activities[0]
@@ -2046,17 +2024,7 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
 
   return (
     <div className="space-y-4">
-      <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr_0.95fr]">
-        <DashboardPanel title="Acciones rápidas">
-          <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-4">
-            {quickActions.map((action) => {
-              const content = <><span className={cn('flex size-8 items-center justify-center rounded-lg', action.tone)}>{action.icon}</span><span className="mt-2 block text-xs font-extrabold leading-4 text-foreground">{action.label}</span><span className="mt-1 block text-[10px] leading-4 text-muted-foreground">{action.detail}</span></>
-              const className = 'rounded-xl border border-slate-200 bg-white p-3 text-left transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-sm'
-              return <button key={action.tab} type="button" onClick={() => action.tab === 'create-activity' ? onCreateActivity() : action.tab === 'asistencia' ? onRegisterAttendance() : onNavigate(action.tab)} className={className}>{content}</button>
-            })}
-          </div>
-        </DashboardPanel>
-
+      <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
         <DashboardPanel title="Próximas actividades" action="Ver todas" onAction={() => onNavigate('actividades')}>
           <div className="space-y-2 p-3">
             {upcomingActivities.length ? upcomingActivities.map((activity) => <ActivityPreview key={activity.id} activity={activity} />) : <CompactEmpty icon={<CalendarClock className="size-5" />} text="No hay actividades próximas." />}
@@ -2170,7 +2138,7 @@ function DetailTab({ active, icon, label, onClick }: { active?: boolean; icon: R
     <button
       type="button"
       className={cn(
-        'relative flex h-11 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-transparent px-2 text-sm font-extrabold text-slate-600 transition hover:-translate-y-px hover:bg-primary/5 hover:text-primary',
+        'relative flex h-10 min-w-32 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-3 text-sm font-bold text-muted-foreground transition hover:bg-primary/5 hover:text-primary',
         active && 'bg-primary/[0.055] text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-t-full after:bg-primary',
       )}
       onClick={onClick}
