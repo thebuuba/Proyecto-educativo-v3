@@ -15,7 +15,13 @@ const cacheBust = `smoke=${Date.now()}`
 const home = await request(`/?${cacheBust}`)
 assert.equal(home.status, 200, 'La SPA no responde 200')
 assert.match(
-  await home.text(),
+  home.headers.get('cache-control') ?? '',
+  /no-store/,
+  'La navegación principal permite conservar HTML obsoleto en caché',
+)
+const homeHtml = await home.text()
+assert.match(
+  homeHtml,
   /<title>Aula Base<\/title>/,
   'La respuesta no es la SPA de Aula Base',
 )
@@ -26,6 +32,21 @@ for (const header of ['content-security-policy', 'permissions-policy', 'x-conten
 
 const deepLink = await request(`/cursos?${cacheBust}`)
 assert.equal(deepLink.status, 200, 'Una ruta profunda de la SPA no responde 200')
+assert.match(
+  deepLink.headers.get('cache-control') ?? '',
+  /no-store/,
+  'Las rutas de la SPA permiten conservar HTML obsoleto en caché',
+)
+
+const assetPath = homeHtml.match(/(?:src|href)="(\/assets\/[^"]+)"/)?.[1]
+assert.ok(assetPath, 'La SPA no referencia un recurso versionado')
+const asset = await request(assetPath)
+assert.equal(asset.status, 200, 'Un recurso versionado no responde 200')
+assert.match(
+  asset.headers.get('cache-control') ?? '',
+  /immutable/,
+  'Los recursos versionados no conservan la política de caché inmutable',
+)
 
 const health = await request('/api/v1/health')
 assert.equal(health.status, 200, 'El health check no responde 200')

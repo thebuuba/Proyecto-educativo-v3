@@ -38,7 +38,19 @@ export default defineConfig(({ mode }) => {
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
+        // La navegación siempre consulta la versión desplegada. Los bundles
+        // con hash siguen precargándose y pueden conservarse de forma segura.
+        globPatterns: ['**/*.{js,css,svg,png,ico,woff2}'],
+        navigateFallback: null,
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
+        runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkOnly',
+          },
+        ],
       },
       manifest: {
         name: 'Aula Base',
