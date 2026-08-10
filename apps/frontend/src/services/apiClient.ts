@@ -21,6 +21,7 @@ export const API_CACHE_TAGS = {
   dashboard: 'dashboard',
   enrollmentOptions: 'enrollment-options',
   planningCompetencies: 'planning-competencies',
+  planningEntries: 'planning-entries',
   schoolYears: 'school-years',
   timeSlots: 'schedule-time-slots',
   schedule: 'schedule',

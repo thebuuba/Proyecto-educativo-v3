@@ -17,6 +17,7 @@ import { CreatePlanningEntryDto } from './dto/create-planning-entry.dto'
 import { UpdatePlanningEntryDto } from './dto/update-planning-entry.dto'
 import { GenerateEntryDraftDto } from './dto/generate-entry-draft.dto'
 import { GenerateAndCreateEntryDto } from './dto/generate-and-create-entry.dto'
+import { Throttle } from '@nestjs/throttler'
 
 @Controller('planning')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -113,6 +114,7 @@ export class PlanningController {
 
   /** Genera un borrador completo de planificación con IA */
   @Post('entries/generate')
+  @Throttle({ default: { limit: 5, ttl: 60000 } })
   @Roles('admin', 'director', 'coordinator', 'teacher')
   generateEntryDraft(@CurrentUser() user: AuthenticatedUser, @Body() dto: GenerateEntryDraftDto) {
     return this.planningService.generateEntryDraft(user.schoolId, dto)
@@ -120,6 +122,7 @@ export class PlanningController {
 
   /** Genera y guarda una planificación completa con IA */
   @Post('entries/generate-and-create')
+  @Throttle({ default: { limit: 5, ttl: 60000 } })
   @Roles('admin', 'director', 'coordinator', 'teacher')
   generateAndCreateEntry(@CurrentUser() user: AuthenticatedUser, @Body() dto: GenerateAndCreateEntryDto) {
     return this.planningService.generateAndCreateEntry(user.schoolId, dto)

@@ -1,10 +1,12 @@
-import { IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator'
-
+import { IsIn, IsInt, IsNumber, IsOptional, IsString, Max, MaxLength, Min } from 'class-validator'
 export class GenerateEntryDraftDto {
+  @IsOptional() @IsIn(['DAILY', 'UNIT', 'SEQUENCE']) planningType?: string
+  @IsOptional() @IsInt() @Min(1) @Max(30) durationDays?: number
   @IsOptional() @IsString() @MaxLength(120) curricularArea?: string
   @IsOptional() @IsString() @MaxLength(80) educationLevel?: string
   @IsOptional() @IsString() @MaxLength(200) topic?: string
   @IsOptional() @IsString() @MaxLength(120) transversalAxis?: string
+  @IsOptional() @IsString() @MaxLength(1000) curricularPolicyContext?: string
 
   @IsOptional()
   @IsString()
@@ -34,6 +36,10 @@ export class GenerateEntryDraftDto {
   @IsString()
   @MaxLength(1000)
   achievementIndicator?: string
+
+  @IsOptional() @IsString() @MaxLength(1000) contentConceptual?: string
+  @IsOptional() @IsString() @MaxLength(1000) contentProcedural?: string
+  @IsOptional() @IsString() @MaxLength(1000) contentAttitudinal?: string
 
   @IsOptional()
   @IsString()

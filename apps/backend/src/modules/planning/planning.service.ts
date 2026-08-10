@@ -8,6 +8,7 @@
 import { BadRequestException, ConflictException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { prisma } from '@aula/database'
+import { addWeekdays } from '@aula/shared'
 import { invalidateAcademicPeriodOptions } from '../../common/cache/option-cache'
 import { CreateAcademicPeriodDto } from './dto/create-academic-period.dto'
 import { UpdateAcademicPeriodDto } from './dto/update-academic-period.dto'
@@ -17,24 +18,39 @@ import { GenerateEntryDraftDto } from './dto/generate-entry-draft.dto'
 import { GenerateAndCreateEntryDto } from './dto/generate-and-create-entry.dto'
 
 type GeneratedPlanningEntry = {
-  fundamentalCompetencies: string[]
   title: string
-  specificCompetence: string
-  achievementIndicator: string
-  contentConceptual: string
-  contentProcedural: string
-  contentAttitudinal: string
   strategies: string
   activities: {
     inicio: string
     desarrollo: string
     cierre: string
+    learningSituation?: string
+    metacognition?: string
+    days?: Array<{
+      day: number
+      date?: string | null
+      inicio: string
+      desarrollo: string
+      cierre: string
+      evidence: string
+      evaluationMethod: string
+      evaluationInstruments?: string
+      metacognition?: string
+      resources?: string
+    }>
   }
   resources: string
   evaluationMethod: string
   evidence: string
   evaluationInstruments: string
   durationMinutes: number | null
+  alignmentWarning: string | null
+}
+
+const AI_CONTEXT_LIMIT = 1000
+
+function aiContextExcerpt(value?: string) {
+  return value?.trim().slice(0, AI_CONTEXT_LIMIT) ?? ''
 }
 
 @Injectable()
@@ -52,12 +68,12 @@ export class PlanningService {
 
     const [periods, sectionSubjects, competencies, school] = await Promise.all([
       this.getAcademicPeriods(schoolId, currentSchoolYear.id),
-      this.getSectionSubjects(schoolId, undefined, currentSchoolYear.id),
+      this.getSectionSubjects(schoolId),
       this.getCompetencies(),
       prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } }),
     ])
     const activePeriodId = periods[0]?.id ?? null
-    const entries = activePeriodId ? await this.findEntries(schoolId) : []
+    const entries = activePeriodId ? await this.findEntries(schoolId, undefined, activePeriodId) : []
     return {
       currentSchoolYear,
       periods,
@@ -154,10 +170,12 @@ export class PlanningService {
     const where: any = { schoolId, status: 'ACTIVE' }
     if (teacherId) where.teacherId = teacherId
     if (schoolYearId) where.schoolYearId = schoolYearId
-    const items = await prisma.sectionSubject.findMany({ where })
-    const subjects = await prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' } })
-    const sections = await prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' } })
-    const grades = await prisma.grade.findMany({ where: { schoolId, status: 'ACTIVE' } })
+    const [items, subjects, sections, grades] = await Promise.all([
+      prisma.sectionSubject.findMany({ where }),
+      prisma.subject.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.section.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.grade.findMany({ where: { schoolId, status: 'ACTIVE' } }),
+    ])
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
     const gradeById = new Map(grades.map((item) => [item.id, item]))
@@ -172,15 +190,15 @@ export class PlanningService {
         subjectName: subject.name,
         sectionName: section.name,
         gradeName: grade.name,
-        level: grade.level ?? '',
+        level: grade?.level ?? '',
         gradeSequence: grade.sequence ?? 0,
         schoolYearId: item.schoolYearId,
         teacherId: item.teacherId,
       }]
     }).sort((left, right) =>
-      left.gradeSequence - right.gradeSequence ||
-      left.sectionName.localeCompare(right.sectionName, 'es', { numeric: true }) ||
-      left.subjectName.localeCompare(right.subjectName, 'es'),
+      left.gradeSequence - right.gradeSequence
+      || left.sectionName.localeCompare(right.sectionName, 'es', { numeric: true })
+      || left.subjectName.localeCompare(right.subjectName, 'es'),
     )
   }
 
@@ -193,23 +211,25 @@ export class PlanningService {
       where,
       orderBy: [{ plannedDate: 'desc' }, { updatedAt: 'desc' }],
     })
-    const sectionSubjects = await prisma.sectionSubject.findMany({ where: { schoolId } })
-    const subjects = await prisma.subject.findMany({ where: { schoolId } })
-    const sections = await prisma.section.findMany({ where: { schoolId } })
-    const grades = await prisma.grade.findMany({ where: { schoolId } })
-    const periods = await prisma.academicPeriod.findMany({ where: { schoolId } })
-    const schoolYears = await prisma.schoolYear.findMany({ where: { schoolId } })
-    const competencies = await prisma.drCompetency.findMany({})
-    const school = await prisma.school.findUnique({ where: { id: schoolId } })
-    const teachers = await prisma.teacher.findMany({ where: { schoolId } })
-    const linkedActivities = await prisma.evaluationActivity.findMany({
-      where: {
-        schoolId,
-        planningEntryId: { in: entries.map((entry) => entry.id) },
-        status: 'ACTIVE',
-      },
-      select: { id: true, planningEntryId: true },
-    })
+    const [sectionSubjects, subjects, sections, grades, periods, schoolYears, competencies, school, teachers, linkedActivities] = await Promise.all([
+      prisma.sectionSubject.findMany({ where: { schoolId } }),
+      prisma.subject.findMany({ where: { schoolId } }),
+      prisma.section.findMany({ where: { schoolId } }),
+      prisma.grade.findMany({ where: { schoolId } }),
+      prisma.academicPeriod.findMany({ where: { schoolId } }),
+      prisma.schoolYear.findMany({ where: { schoolId } }),
+      prisma.drCompetency.findMany({}),
+      prisma.school.findUnique({ where: { id: schoolId } }),
+      prisma.teacher.findMany({ where: { schoolId } }),
+      prisma.evaluationActivity.findMany({
+        where: {
+          schoolId,
+          planningEntryId: { in: entries.map((entry) => entry.id) },
+          status: 'ACTIVE',
+        },
+        select: { id: true, planningEntryId: true },
+      }),
+    ])
     const sectionSubjectById = new Map(sectionSubjects.map((item) => [item.id, item]))
     const subjectById = new Map(subjects.map((item) => [item.id, item]))
     const sectionById = new Map(sections.map((item) => [item.id, item]))
@@ -267,12 +287,17 @@ export class PlanningService {
         sectionSubjectId: sourceEntry.sectionSubjectId,
         academicPeriodId: sourceEntry.academicPeriodId,
         title: `${sourceEntry.title} (copia)`,
+        planningType: sourceEntry.planningType,
+        durationDays: sourceEntry.durationDays,
         sequence: sourceEntry.sequence,
         specificCompetence: sourceEntry.specificCompetence,
         achievementIndicator: sourceEntry.achievementIndicator,
         contentConceptual: sourceEntry.contentConceptual,
         contentProcedural: sourceEntry.contentProcedural,
         contentAttitudinal: sourceEntry.contentAttitudinal,
+        curriculumVersion: sourceEntry.curriculumVersion,
+        curriculumOrdinance: sourceEntry.curriculumOrdinance,
+        curriculumSourcePages: sourceEntry.curriculumSourcePages,
         strategies: sourceEntry.strategies,
         activities: sourceEntry.activities ?? { inicio: '', desarrollo: '', cierre: '' },
         resources: sourceEntry.resources,
@@ -310,10 +335,7 @@ export class PlanningService {
 
   /** Crea una nueva entrada de planificación validando las referencias */
   async createEntry(schoolId: string, dto: CreatePlanningEntryDto) {
-    const sectionSubject = await prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } })
-    const academicPeriod = await prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } })
-    if (!sectionSubject) throw new NotFoundException('Section subject not found')
-    if (!academicPeriod) throw new NotFoundException('Academic period not found')
+    await this.validateEntryContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, dto)
 
     const entry = await prisma.planningEntry.create({
       data: {
@@ -321,12 +343,17 @@ export class PlanningService {
         sectionSubjectId: dto.sectionSubjectId,
         academicPeriodId: dto.academicPeriodId,
         title: dto.title,
+        planningType: dto.planningType ?? 'DAILY',
+        durationDays: dto.durationDays ?? 1,
         schoolNameSnapshot: dto.schoolNameSnapshot ?? null,
         teacherNameSnapshot: dto.teacherNameSnapshot ?? null,
         curricularArea: dto.curricularArea ?? null,
         educationLevel: dto.educationLevel ?? null,
         topic: dto.topic ?? null,
         transversalAxis: dto.transversalAxis ?? null,
+        curriculumVersion: dto.curriculumVersion ?? null,
+        curriculumOrdinance: dto.curriculumOrdinance ?? null,
+        curriculumSourcePages: dto.curriculumSourcePages ?? null,
         fundamentalCompetencies: dto.fundamentalCompetencies ?? [],
         sequence: dto.sequence ?? 1,
         specificCompetence: dto.specificCompetence ?? '',
@@ -335,9 +362,7 @@ export class PlanningService {
         contentProcedural: dto.contentProcedural ?? '',
         contentAttitudinal: dto.contentAttitudinal ?? '',
         strategies: dto.strategies ?? '',
-        activities: dto.activities
-          ? { ...dto.activities }
-          : { inicio: '', desarrollo: '', cierre: '' },
+        activities: (dto.activities ? { ...dto.activities } : { inicio: '', desarrollo: '', cierre: '' }) as any,
         resources: dto.resources ?? '',
         evaluationMethod: dto.evaluationMethod ?? '',
         durationMinutes: dto.durationMinutes ?? null,
@@ -364,17 +389,17 @@ export class PlanningService {
       throw new NotFoundException('Section subject not found')
     }
 
-    const grade = sectionSubject
-      ? await prisma.grade.findFirst({ where: { id: sectionSubject.gradeId, schoolId } })
-      : null
-    const section = sectionSubject
-      ? await prisma.section.findFirst({ where: { id: sectionSubject.sectionId, schoolId } })
-      : null
-    const subject = sectionSubject
-      ? await prisma.subject.findFirst({ where: { id: sectionSubject.subjectId, schoolId } })
-      : null
+    const [grade, section, subject] = sectionSubject
+      ? await Promise.all([
+          prisma.grade.findFirst({ where: { id: sectionSubject.gradeId, schoolId } }),
+          prisma.section.findFirst({ where: { id: sectionSubject.sectionId, schoolId } }),
+          prisma.subject.findFirst({ where: { id: sectionSubject.subjectId, schoolId } }),
+        ])
+      : [null, null, null]
 
     const prompt = {
+      tipoPlanificacion: dto.planningType ?? 'DAILY',
+      cantidadDias: dto.durationDays ?? 1,
       grado: grade?.name ?? dto.gradeName ?? '',
       seccion: section?.name ?? dto.sectionName ?? '',
       asignatura: subject?.name ?? dto.subjectName ?? '',
@@ -382,21 +407,25 @@ export class PlanningService {
       nivelEducativo: dto.educationLevel ?? '',
       tema: dto.topic ?? dto.title ?? '',
       ejeTransversal: dto.transversalAxis ?? '',
+      contextoPoliticaCurricular: dto.curricularPolicyContext ?? '',
       duracionMinutos: dto.durationMinutes ?? null,
       competenciaFundamental: dto.fundamentalCompetenceName ?? '',
-      competenciaEspecifica: dto.specificCompetence ?? '',
-      indicadorLogro: dto.achievementIndicator ?? '',
+      competenciaEspecifica: aiContextExcerpt(dto.specificCompetence),
+      indicadorLogro: aiContextExcerpt(dto.achievementIndicator),
+      contenidosConceptuales: aiContextExcerpt(dto.contentConceptual),
+      contenidosProcedimentales: aiContextExcerpt(dto.contentProcedural),
+      contenidosActitudinales: aiContextExcerpt(dto.contentAttitudinal),
     }
 
     const messages = [
       {
         role: 'system',
         content:
-          'Eres especialista en planificación docente del sistema educativo dominicano. Usa como referencia la Adecuación Curricular del Nivel Secundario MINERD 2022 y la malla exacta del área, ciclo y grado indicados. Selecciona únicamente competencias, contenidos e indicadores pertinentes al tema; no inventes códigos ni elementos oficiales. Escribe en español dominicano claro. Responde exclusivamente con un objeto JSON válido y completo, sin texto adicional. Usa exactamente esta estructura y no omitas ninguna propiedad: {"title":"","fundamentalCompetencies":[""],"specificCompetence":"","achievementIndicator":"","contentConceptual":"","contentProcedural":"","contentAttitudinal":"","strategies":"","activities":{"inicio":"","desarrollo":"","cierre":""},"resources":"","evaluationMethod":"","evidence":"","evaluationInstruments":"","durationMinutes":null}.',
+          'Eres especialista en planificación docente del sistema educativo dominicano. En el Nivel Secundario respeta la Adecuación Curricular MINERD 2023, puesta en vigencia por la Ordenanza 03-2023. Trata las competencias, contenidos e indicadores suministrados como contexto y no los reescribas. DAILY es una clase; UNIT es una unidad; SEQUENCE es una secuencia didáctica. Redacta una situación de aprendizaje contextualizada. Para UNIT o SEQUENCE devuelve exactamente cantidadDias elementos en activities.days; cada elemento debe incluir day, date:null, inicio, desarrollo, cierre, evidence, evaluationMethod, evaluationInstruments, metacognition y resources. Si el tema contradice claramente la asignatura, explica brevemente el problema en alignmentWarning; si es compatible usa null. Responde exclusivamente con un objeto JSON con esta forma: {"title":"","strategies":"","activities":{"learningSituation":"","inicio":"","desarrollo":"","cierre":"","metacognition":"","days":[]},"resources":"","evaluationMethod":"","evidence":"","evaluationInstruments":"","durationMinutes":null,"alignmentWarning":null}.',
       },
       {
         role: 'user',
-        content: `Crea una planificación escolar completa en formato JSON usando estos datos: ${JSON.stringify(prompt)}. Debe incluir situación de aprendizaje integrada dentro de estrategias o actividades, contenidos conceptuales/procedimentales/actitudinales, secuencia inicio/desarrollo/cierre, evaluación formativa, evidencias e instrumentos.`,
+        content: `Propón la experiencia didáctica para esta planificación: ${JSON.stringify(prompt)}. Incluye situación de aprendizaje integrada, secuencia inicio/desarrollo/cierre, evaluación formativa, evidencias e instrumentos. No devuelvas competencias, contenidos ni indicadores curriculares.`,
       },
     ]
 
@@ -416,7 +445,7 @@ export class PlanningService {
             messages,
             thinking: { type: 'disabled' },
             response_format: { type: 'json_object' },
-            max_tokens: 3000,
+            max_tokens: (dto.planningType ?? 'DAILY') === 'DAILY' ? 1500 : 2500,
             temperature: 0.3,
             user_id: schoolId,
           }),
@@ -441,10 +470,10 @@ export class PlanningService {
         continue
       }
 
-      let draft: GeneratedPlanningEntry
       try {
-        draft = JSON.parse(content) as GeneratedPlanningEntry
-        this.validateGeneratedDraft(draft)
+        const draft = JSON.parse(content) as GeneratedPlanningEntry
+        draft.alignmentWarning ??= null
+        this.validateGeneratedDraft(draft, dto.planningType ?? 'DAILY', dto.durationDays ?? 1)
         return draft
       } catch (error) {
         lastDraftError = error instanceof BadRequestException
@@ -456,7 +485,7 @@ export class PlanningService {
             {
               role: 'user',
               content:
-                'La respuesta anterior está incompleta o no respeta la estructura. Devuelve nuevamente el objeto JSON completo, con todas las propiedades requeridas y actividades no vacías.',
+                'La respuesta anterior está incompleta o no respeta la estructura. Devuelve nuevamente el objeto JSON completo, con todas las propiedades requeridas, actividades no vacías y todos los días solicitados.',
             },
           )
         }
@@ -468,48 +497,69 @@ export class PlanningService {
 
   /** Genera y guarda una planificación en una sola operación. */
   async generateAndCreateEntry(schoolId: string, dto: GenerateAndCreateEntryDto) {
+    this.validateCurriculumFields(dto)
     const draft = await this.generateEntryDraft(schoolId, dto)
+    if (draft.alignmentWarning && !dto.allowAlignmentOverride) {
+      throw new BadRequestException(`Revisa la coherencia curricular: ${draft.alignmentWarning}`)
+    }
+
+    const activities = dto.planningType !== 'DAILY' && draft.activities.days
+      ? {
+          ...draft.activities,
+          days: draft.activities.days.map((day, index) => ({
+            ...day,
+            day: index + 1,
+            date: dto.plannedDate ? addWeekdays(dto.plannedDate, index) : null,
+          })),
+        }
+      : draft.activities
 
     return this.createEntry(schoolId, {
       ...dto,
-      ...draft,
-      title: draft.title.trim(),
+      title: dto.title?.trim() || draft.title.trim(),
+      planningType: dto.planningType ?? 'DAILY',
+      durationDays: dto.durationDays ?? 1,
+      strategies: draft.strategies,
+      activities,
+      resources: draft.resources,
+      evaluationMethod: draft.evaluationMethod,
+      evidence: draft.evidence,
+      evaluationInstruments: draft.evaluationInstruments,
+      durationMinutes: dto.durationMinutes ?? draft.durationMinutes,
       fundamentalCompetenceId: dto.fundamentalCompetenceId ?? null,
       plannedDate: dto.plannedDate ?? null,
     } as unknown as CreatePlanningEntryDto)
   }
 
-  private validateGeneratedDraft(draft: GeneratedPlanningEntry) {
-    const requiredTextFields = [
-      'title',
-      'specificCompetence',
-      'achievementIndicator',
-      'contentConceptual',
-      'contentProcedural',
-      'contentAttitudinal',
-      'strategies',
-      'resources',
-      'evaluationMethod',
-      'evidence',
-      'evaluationInstruments',
-    ] as const
-    if (!draft || requiredTextFields.some((field) => typeof draft[field] !== 'string')) {
+  private validateGeneratedDraft(draft: GeneratedPlanningEntry, planningType: string, durationDays: number) {
+    const textFields = ['title', 'strategies', 'resources', 'evaluationMethod', 'evidence', 'evaluationInstruments'] as const
+    if (textFields.some((field) => typeof draft?.[field] !== 'string')) {
       throw new BadRequestException('La IA devolvió una planificación incompleta.')
     }
-    if (!Array.isArray(draft.fundamentalCompetencies)
-      || draft.fundamentalCompetencies.some((item) => typeof item !== 'string')) {
-      throw new BadRequestException('La IA devolvió competencias fundamentales inválidas.')
-    }
     if (!draft.title.trim()) throw new BadRequestException('La IA no generó un título válido.')
-    if (!draft.activities || ['inicio', 'desarrollo', 'cierre'].some((field) =>
-      typeof draft.activities[field as keyof typeof draft.activities] !== 'string'
-      || !draft.activities[field as keyof typeof draft.activities].trim()
-    )) {
+    if (!draft.activities
+      || !draft.activities.inicio?.trim()
+      || !draft.activities.desarrollo?.trim()
+      || !draft.activities.cierre?.trim()) {
       throw new BadRequestException('La IA no generó la secuencia completa de actividades.')
     }
-    if (draft.durationMinutes !== null
-      && (!Number.isFinite(draft.durationMinutes) || draft.durationMinutes < 0)) {
+    if (draft.durationMinutes !== null && (!Number.isFinite(draft.durationMinutes) || draft.durationMinutes < 0)) {
       throw new BadRequestException('La IA devolvió una duración inválida.')
+    }
+    if (draft.alignmentWarning !== null && typeof draft.alignmentWarning !== 'string') {
+      throw new BadRequestException('La IA devolvió una validación curricular inválida.')
+    }
+    if (planningType !== 'DAILY') {
+      if (!Array.isArray(draft.activities.days) || draft.activities.days.length !== durationDays) {
+        throw new BadRequestException('La IA no generó todos los días de la planificación.')
+      }
+      const invalidDay = draft.activities.days.some((day, index) =>
+        day?.day !== index + 1
+        || ['inicio', 'desarrollo', 'cierre', 'evidence', 'evaluationMethod'].some((field) =>
+          typeof day?.[field as keyof typeof day] !== 'string' || !String(day[field as keyof typeof day]).trim()
+        )
+      )
+      if (invalidDay) throw new BadRequestException('La IA devolvió días incompletos o desordenados.')
     }
   }
 
@@ -518,14 +568,38 @@ export class PlanningService {
     const entry = await prisma.planningEntry.findFirst({ where: { id, schoolId } })
     if (!entry) throw new NotFoundException('Planning entry not found')
 
+    await this.validateEntryContext(schoolId, entry.sectionSubjectId, entry.academicPeriodId, {
+      plannedDate: dto.plannedDate === undefined ? entry.plannedDate?.toISOString().slice(0, 10) : dto.plannedDate,
+      planningType: dto.planningType ?? entry.planningType,
+      durationDays: dto.durationDays ?? entry.durationDays,
+      fundamentalCompetencies: dto.fundamentalCompetencies ?? entry.fundamentalCompetencies,
+      specificCompetence: dto.specificCompetence ?? entry.specificCompetence,
+      achievementIndicator: dto.achievementIndicator ?? entry.achievementIndicator,
+      contentConceptual: dto.contentConceptual ?? entry.contentConceptual,
+      contentProcedural: dto.contentProcedural ?? entry.contentProcedural,
+      contentAttitudinal: dto.contentAttitudinal ?? entry.contentAttitudinal,
+      activities: (dto.activities ?? entry.activities) as {
+        inicio: string
+        desarrollo: string
+        cierre: string
+        days?: Array<{ day: number; inicio: string; desarrollo: string; cierre: string; evidence: string; evaluationMethod: string }>
+      },
+      linkedActivityIds: dto.linkedActivityIds,
+    })
+
     const data: any = {}
     if (dto.title) data.title = dto.title
+    if (dto.planningType !== undefined) data.planningType = dto.planningType
+    if (dto.durationDays !== undefined) data.durationDays = dto.durationDays
     if (dto.schoolNameSnapshot !== undefined) data.schoolNameSnapshot = dto.schoolNameSnapshot
     if (dto.teacherNameSnapshot !== undefined) data.teacherNameSnapshot = dto.teacherNameSnapshot
     if (dto.curricularArea !== undefined) data.curricularArea = dto.curricularArea
     if (dto.educationLevel !== undefined) data.educationLevel = dto.educationLevel
     if (dto.topic !== undefined) data.topic = dto.topic
     if (dto.transversalAxis !== undefined) data.transversalAxis = dto.transversalAxis
+    if (dto.curriculumVersion !== undefined) data.curriculumVersion = dto.curriculumVersion
+    if (dto.curriculumOrdinance !== undefined) data.curriculumOrdinance = dto.curriculumOrdinance
+    if (dto.curriculumSourcePages !== undefined) data.curriculumSourcePages = dto.curriculumSourcePages
     if (dto.fundamentalCompetencies !== undefined) data.fundamentalCompetencies = dto.fundamentalCompetencies
     if (dto.sequence !== undefined) data.sequence = dto.sequence
     if (dto.specificCompetence !== undefined) data.specificCompetence = dto.specificCompetence
@@ -574,6 +648,102 @@ export class PlanningService {
         source: 'planning',
       },
     })
+  }
+
+  private validateCurriculumFields(dto: {
+    fundamentalCompetencies?: string[]
+    specificCompetence?: string
+    achievementIndicator?: string
+    contentConceptual?: string
+    contentProcedural?: string
+    contentAttitudinal?: string
+  }) {
+    if (!dto.fundamentalCompetencies?.length
+      || !dto.specificCompetence?.trim()
+      || !dto.achievementIndicator?.trim()
+      || !dto.contentConceptual?.trim()
+      || !dto.contentProcedural?.trim()
+      || !dto.contentAttitudinal?.trim()) {
+      throw new BadRequestException('La planificación requiere competencias, contenidos e indicadores curriculares completos.')
+    }
+  }
+
+  private async validateEntryContext(
+    schoolId: string,
+    sectionSubjectId: string,
+    academicPeriodId: string,
+    dto: {
+      plannedDate?: string | null
+      planningType?: string
+      durationDays?: number
+      fundamentalCompetencies?: string[]
+      specificCompetence?: string
+      achievementIndicator?: string
+      contentConceptual?: string
+      contentProcedural?: string
+      contentAttitudinal?: string
+      activities?: {
+        inicio: string
+        desarrollo: string
+        cierre: string
+        days?: Array<{ day: number; inicio: string; desarrollo: string; cierre: string; evidence: string; evaluationMethod: string }>
+      }
+      linkedActivityIds?: string[]
+    },
+  ) {
+    const [sectionSubject, academicPeriod] = await Promise.all([
+      prisma.sectionSubject.findFirst({ where: { id: sectionSubjectId, schoolId } }),
+      prisma.academicPeriod.findFirst({ where: { id: academicPeriodId, schoolId } }),
+    ])
+    if (!sectionSubject) throw new NotFoundException('Section subject not found')
+    if (!academicPeriod) throw new NotFoundException('Academic period not found')
+    if (sectionSubject.schoolYearId !== academicPeriod.schoolYearId) {
+      throw new BadRequestException('El curso y el período deben pertenecer al mismo año escolar.')
+    }
+
+    if (dto.plannedDate) {
+      const start = dto.plannedDate.slice(0, 10)
+      const periodStart = academicPeriod.startDate.toISOString().slice(0, 10)
+      const periodEnd = academicPeriod.endDate.toISOString().slice(0, 10)
+      const end = addWeekdays(start, (dto.planningType ?? 'DAILY') === 'DAILY' ? 0 : (dto.durationDays ?? 1) - 1)
+      if (start < periodStart || end > periodEnd) {
+        throw new BadRequestException('Todas las fechas de la planificación deben estar dentro del período académico.')
+      }
+    }
+
+    this.validateCurriculumFields(dto)
+
+    if (dto.planningType && dto.planningType !== 'DAILY') {
+      const expectedDays = dto.durationDays ?? 1
+      const days = dto.activities?.days
+      const validDays = Array.isArray(days)
+        && days.length === expectedDays
+        && days.every((day, index) => day.day === index + 1
+          && day.inicio?.trim()
+          && day.desarrollo?.trim()
+          && day.cierre?.trim()
+          && day.evidence?.trim()
+          && day.evaluationMethod?.trim())
+      if (!validDays) {
+        throw new BadRequestException('Completa las actividades y la evaluación de todos los días de la planificación.')
+      }
+    }
+
+    const activityIds = [...new Set(dto.linkedActivityIds ?? [])]
+    if (activityIds.length) {
+      const matchingActivities = await prisma.evaluationActivity.count({
+        where: {
+          id: { in: activityIds },
+          schoolId,
+          sectionSubjectId,
+          academicPeriodId,
+          status: 'ACTIVE',
+        },
+      })
+      if (matchingActivities !== activityIds.length) {
+        throw new BadRequestException('Las actividades vinculadas deben pertenecer al mismo curso y período.')
+      }
+    }
   }
 
   /** Elimina una entrada de planificación por su ID */
