@@ -917,7 +917,6 @@ export function CoursesPage() {
                             <CourseCard
                               key={item.id}
                               item={item}
-                              schoolYearName={currentSchoolYear?.name ?? ''}
                               canManage={canManage}
                               onOpen={handleOpen}
                               onAddSection={handleAddSection}
@@ -2590,7 +2589,6 @@ function HorarioTab({ sectionId, sectionSubjectId }: { sectionId: string; sectio
 
 const CourseCard = memo(function CourseCard({
   item,
-  schoolYearName,
   canManage,
   onOpen,
   onAddSection,
@@ -2599,7 +2597,6 @@ const CourseCard = memo(function CourseCard({
   onAssignSubject,
 }: {
   item: CourseCardItem
-  schoolYearName: string
   canManage: boolean
   onOpen: (id: string) => void
   onAddSection: (grade: GradeWithSections) => void
@@ -2633,9 +2630,8 @@ const CourseCard = memo(function CourseCard({
     <article
       className="group relative flex flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
     >
-      <span className="absolute inset-x-0 top-0 h-1" style={{ backgroundColor: levelStyle.color }} aria-hidden="true" />
       <div
-        className="flex flex-1 cursor-pointer flex-col p-5 pb-4 pt-6"
+        className="flex flex-1 cursor-pointer flex-col p-4"
         role="button"
         tabIndex={0}
         onClick={() => onOpen(item.id)}
@@ -2646,62 +2642,50 @@ const CourseCard = memo(function CourseCard({
           }
         }}
       >
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-3.5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-3">
             <span
-              className="flex h-12 w-12 items-center justify-center rounded-xl text-base font-extrabold text-white"
+              className="flex size-11 shrink-0 items-center justify-center rounded-xl text-sm font-black text-white"
               style={{ backgroundColor: levelStyle.color }}
             >
               {gradeNumber}
               <span className="ml-px text-xs font-bold opacity-80">{item.section.name}</span>
             </span>
-            <div>
-              <h3 className="text-lg font-extrabold tracking-tight text-foreground">
+            <div className="min-w-0">
+              <h3 className="truncate text-base font-black tracking-tight text-foreground">
                 {item.grade.name} {item.section.name}
               </h3>
-              <p className="mt-1 text-sm font-semibold text-muted-foreground">{item.cycleName}</p>
+              <p className="mt-0.5 truncate text-xs font-medium text-muted-foreground">
+                {item.cycleName} · {cleanLevelName(item.levelName)}
+              </p>
             </div>
           </div>
 
-          <div className="flex flex-col items-end gap-1.5">
-            <span className={cn('inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide ring-1', item.archived ? 'bg-slate-100 text-slate-600 ring-slate-200' : 'bg-emerald-50 text-emerald-700 ring-emerald-100')}>
+          <div className="shrink-0">
+            <span className={cn('inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide', item.archived ? 'bg-muted text-muted-foreground' : 'bg-emerald-50 text-emerald-700')}>
               <span className={cn('size-1.5 rounded-full', item.archived ? 'bg-slate-400' : 'bg-emerald-500')} aria-hidden="true" /> {item.archived ? 'Archivado' : 'Activo'}
-            </span>
-            <span
-              className="rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wide"
-              style={{ backgroundColor: levelStyle.soft, color: levelStyle.color }}
-            >
-              {cleanLevelName(item.levelName)}
             </span>
           </div>
         </div>
 
-        <div className="mt-5 grid grid-cols-3 gap-2 rounded-xl bg-muted/55 p-3 text-center">
-          <span><strong className="block text-base text-foreground">{item.section.studentCount ?? 0}</strong><span className="text-[11px] text-muted-foreground">estudiantes</span></span>
-          <span className="border-x border-border"><strong className="block text-base text-foreground">{item.assignments.length}</strong><span className="text-[11px] text-muted-foreground">asignaturas</span></span>
-          <span><strong className="block text-base text-foreground">{teamCount}</strong><span className="text-[11px] text-muted-foreground">equipos</span></span>
-        </div>
-
-        <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
-          {schoolYearName ? (
-            <>
-              <span>Año escolar {schoolYearName}</span>
-            </>
-          ) : null}
+        <div className="mt-4 grid grid-cols-3 divide-x divide-border rounded-xl bg-muted/40 py-2.5 text-center">
+          <span><strong className="block text-sm font-black text-foreground tabular-nums">{item.section.studentCount ?? 0}</strong><span className="text-[10px] text-muted-foreground">estudiantes</span></span>
+          <span><strong className="block text-sm font-black text-foreground tabular-nums">{item.assignments.length}</strong><span className="text-[10px] text-muted-foreground">asignaturas</span></span>
+          <span><strong className="block text-sm font-black text-foreground tabular-nums">{teamCount}</strong><span className="text-[10px] text-muted-foreground">equipos</span></span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-2 border-t border-border px-3 py-2.5" style={{ backgroundColor: levelStyle.soft }}>
+      <div className="flex items-center justify-between gap-2 border-t border-border px-3 py-2">
         <div className="flex min-w-0 items-center gap-1">
           {canManage ? (
-            <FooterAction label="Agregar sección" tooltip="Agregar nueva sección" onClick={() => onAddSection(item.grade)}><Plus className="h-3.5 w-3.5" /></FooterAction>
+            <FooterAction label="Sección" tooltip="Agregar nueva sección" onClick={() => onAddSection(item.grade)}><Plus className="h-3.5 w-3.5" /></FooterAction>
           ) : null}
-          <FooterAction label="Entrar al curso" tooltip="Entrar al curso" onClick={() => onOpen(item.id)}><LogIn className="h-3.5 w-3.5" /></FooterAction>
+          <FooterAction label="Entrar" tooltip="Entrar al curso" onClick={() => onOpen(item.id)}><LogIn className="h-3.5 w-3.5" /></FooterAction>
         </div>
         {canManage ? (
           <div className="relative" ref={menuRef}>
-            <button type="button" title="Más acciones" className="inline-flex h-8 items-center gap-1.5 rounded-lg px-2 text-[11px] font-bold text-muted-foreground transition-all duration-150 hover:scale-[1.02] hover:bg-card hover:text-foreground" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
-              <MoreHorizontal className="size-4" /> <span className="hidden 2xl:inline">Más acciones</span>
+            <button type="button" title="Más acciones" className="inline-flex size-8 items-center justify-center rounded-lg text-muted-foreground transition hover:bg-muted hover:text-foreground" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
+              <MoreHorizontal className="size-4" />
             </button>
             {menuOpen ? (
               <div role="menu" className="absolute bottom-10 right-0 z-20 w-52 origin-bottom-right overflow-hidden rounded-xl border border-border bg-card p-1.5 shadow-xl motion-safe:animate-[fadeIn_140ms_ease-out]">
