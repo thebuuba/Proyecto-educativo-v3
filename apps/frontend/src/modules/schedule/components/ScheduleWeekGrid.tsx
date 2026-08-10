@@ -3,21 +3,10 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
-import { cn } from '@/utils/cn'
 import type { ScheduleEntry } from '@/modules/schedule/types'
 import { formatTime, getDurationHours } from '@/modules/schedule/utils/scheduleGrid'
 import type { ScheduleBlock, ScheduleConfig } from '@/modules/schedule/components/ScheduleWizard'
-
-const SUBJECT_PALETTE = [
-  { chip: 'bg-sky-100/80 text-sky-800', dot: 'bg-sky-500' },
-  { chip: 'bg-orange-100/80 text-orange-800', dot: 'bg-orange-500' },
-  { chip: 'bg-emerald-100/80 text-emerald-800', dot: 'bg-emerald-500' },
-  { chip: 'bg-violet-100/80 text-violet-800', dot: 'bg-violet-500' },
-  { chip: 'bg-rose-100/80 text-rose-800', dot: 'bg-rose-500' },
-  { chip: 'bg-teal-100/80 text-teal-800', dot: 'bg-teal-500' },
-  { chip: 'bg-amber-100/80 text-amber-800', dot: 'bg-amber-500' },
-  { chip: 'bg-red-100/80 text-red-800', dot: 'bg-red-500' },
-]
+import { getSubjectPalette } from '@/utils/subjectPalette'
 
 type AssignedEntry = {
   scheduleEntryId: string
@@ -61,15 +50,6 @@ type ScheduleWeekGridProps = {
   onMarkPedagogical: (dayOfWeek: number, block: ScheduleBlock) => void
   onRemovePedagogical: (dayOfWeek: number, block: Pick<ScheduleBlock, 'start' | 'end'>) => void
   loading?: boolean
-}
-
-function hashString(value: string) {
-  let hash = 0
-  for (let index = 0; index < value.length; index++) {
-    hash = ((hash << 5) - hash) + value.charCodeAt(index)
-    hash |= 0
-  }
-  return Math.abs(hash)
 }
 
 export function ScheduleWeekGrid({
@@ -149,10 +129,6 @@ export function ScheduleWeekGrid({
   const totalSlots = activeDays.length * classCount
   const filledSlots = entries.length + pedagogicalBlocks.length
   const freeSlots = Math.max(totalSlots - filledSlots, 0)
-
-  function getColor(subjectName: string) {
-    return SUBJECT_PALETTE[hashString(subjectName) % SUBJECT_PALETTE.length]
-  }
 
   function getCellKey(dayOfWeek: number, block: ScheduleBlock) {
     return `${dayOfWeek}:${formatTime(block.start)}-${formatTime(block.end)}`
@@ -258,16 +234,14 @@ export function ScheduleWeekGrid({
                       const entryKey = getCellKey(day.dayOfWeek, block)
                       const assigned = entriesByCell.get(entryKey)
                       const pedagogical = pedagogicalBlocksByCell.get(entryKey)
-                      const color = assigned ? getColor(assigned.subjectName) : null
+                      const color = assigned ? getSubjectPalette(assigned.subjectName) : null
 
                       return (
                         <div key={block.id} className="relative">
                           {assigned && color ? (
                             <div
-                              className={cn(
-                                'group flex h-28 flex-col justify-between rounded-xl px-3 py-2.5 text-left transition-transform hover:scale-[1.02]',
-                                color.chip,
-                              )}
+                              className="group flex h-28 flex-col justify-between rounded-xl px-3 py-2.5 text-left transition-transform hover:scale-[1.02]"
+                              style={{ backgroundColor: color.soft, color: color.color }}
                             >
                               <div className="flex items-center justify-between gap-2">
                                 <span className="line-clamp-4 text-[13px] font-semibold leading-[1.15]">
@@ -374,10 +348,8 @@ export function ScheduleWeekGrid({
                                         }}
                                       >
                                         <span
-                                          className={cn(
-                                            'size-2.5 shrink-0 rounded-full',
-                                            getColor(ss.subjectName).dot,
-                                          )}
+                                          className="size-2.5 shrink-0 rounded-full"
+                                          style={{ backgroundColor: getSubjectPalette(ss.subjectName).color }}
                                         />
                                         <div className="min-w-0">
                                           <span className="block font-medium text-foreground">

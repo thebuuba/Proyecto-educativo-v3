@@ -128,6 +128,7 @@ import {
 } from '@/modules/courses/utils/courseFilterOptions'
 import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
 import { cn } from '@/utils/cn'
+import { getSubjectPalette as getSubjectColor, type SubjectPalette } from '@/utils/subjectPalette'
 
 type CourseCardItem = {
   id: string
@@ -141,42 +142,12 @@ type CourseCardItem = {
   archived: boolean
 }
 
-type SubjectPalette = { color: string; soft: string }
-
-// El orden importa: primero se detectan las materias específicas y después
-// sus familias generales. Así, por ejemplo, Educación Física no hereda
-// accidentalmente el color de Ciencias Físicas.
-const subjectColorRules: Array<{ terms: string[]; palette: SubjectPalette }> = [
-  { terms: ['educacion fisica', 'deporte'], palette: { color: '#e23f49', soft: '#e23f491a' } },
-  { terms: ['ciencias de la vida', 'biologia', 'ecologia'], palette: { color: '#06945c', soft: '#06945c1a' } },
-  { terms: ['ciencias de la tierra', 'tierra y del universo', 'geologia', 'astronomia'], palette: { color: '#008d82', soft: '#008d821a' } },
-  { terms: ['quimica'], palette: { color: '#00869b', soft: '#00869b1a' } },
-  { terms: ['ciencias fisicas', 'fisica'], palette: { color: '#7040dc', soft: '#7040dc1a' } },
-  { terms: ['ciencias naturales', 'ciencias de la naturaleza'], palette: { color: '#138a4b', soft: '#138a4b1a' } },
-  { terms: ['matematica', 'algebra', 'geometria'], palette: { color: '#6734d1', soft: '#6734d11a' } },
-  { terms: ['lengua espanola', 'literatura', 'comunicacion'], palette: { color: '#1d61c7', soft: '#1d61c71a' } },
-  { terms: ['ingles', 'frances', 'idioma', 'lenguas modernas'], palette: { color: '#0086a6', soft: '#0086a61a' } },
-  { terms: ['ciencias sociales', 'historia', 'geografia', 'civica'], palette: { color: '#d96008', soft: '#d960081a' } },
-  { terms: ['educacion artistica', 'arte', 'musica'], palette: { color: '#d12f7c', soft: '#d12f7c1a' } },
-  { terms: ['tecnologia', 'informatica', 'computacion'], palette: { color: '#007fb8', soft: '#007fb81a' } },
-  { terms: ['formacion integral', 'etica', 'religion'], palette: { color: '#4f54ca', soft: '#4f54ca1a' } },
-  { terms: ['orientacion', 'tutoria'], palette: { color: '#b87500', soft: '#b875001a' } },
-]
-
-const defaultSubjectColor: SubjectPalette = { color: '#3f5872', soft: '#3f587218' }
-
 const levelStyles: Record<string, { color: string; soft: string }> = {
   'Primaria': { color: '#1e4f8f', soft: 'hsl(224 62% 33% / 0.08)' },
   'Secundaria': { color: '#6f3cc3', soft: 'hsl(262 52% 47% / 0.08)' },
 }
 
 const defaultLevelStyle = { color: '#1e4f8f', soft: 'hsl(224 62% 33% / 0.08)' }
-
-function getSubjectColor(subjectName: string) {
-  const normalized = normalizeText(subjectName)
-  const match = subjectColorRules.find(({ terms }) => terms.some((term) => normalized.includes(term)))
-  return match?.palette ?? defaultSubjectColor
-}
 
 function getLevelStyle(levelName: string) {
   const normalized = normalizeText(levelName)
@@ -1247,8 +1218,7 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
       aria-label={`Entrar a la asignatura ${assignment.subjectName}`}
       onClick={() => onOpen('resumen')}
       onKeyDown={openAssignmentFromKeyboard}
-      className="group relative flex min-h-[20rem] cursor-pointer flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_12px_28px_-24px_rgba(15,45,90,0.8)] transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
-      style={{ borderTopColor: palette.color, borderTopWidth: 4 }}
+      className="group relative flex min-h-[18rem] cursor-pointer flex-col rounded-2xl bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-center gap-3">
@@ -1296,8 +1266,7 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
 function ArchivedSubjectCard({ assignment, onRestore, onDelete }: { assignment: SectionSubjectAssignment; onRestore: () => void; onDelete: () => void }) {
   const palette = getAssignmentPalette(assignment)
   return (
-    <article className="relative overflow-visible rounded-2xl border border-border bg-card shadow-sm">
-      <div className="h-1.5 rounded-t-2xl opacity-70" style={{ backgroundColor: palette.color }} />
+    <article className="relative overflow-visible rounded-2xl bg-card shadow-sm">
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
           <span className="flex size-11 items-center justify-center rounded-xl text-white opacity-80" style={{ backgroundColor: palette.color }}>{getSubjectIcon(assignment.subjectName, assignment.appearanceIcon)}</span>
@@ -1532,7 +1501,7 @@ export function SubjectAppearanceDialog({ assignment, onSave, onClose }: { assig
   return (
     <Modal title="Personalizar apariencia" description="Cambia únicamente el aspecto visual de esta asignatura." onClose={onClose} className="max-w-2xl" contentClassName="overflow-x-hidden">
       <div className="space-y-6 p-5">
-        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4" style={{ borderTopColor: previewPalette.color, borderTopWidth: 4 }}>
+        <div className="flex items-center gap-3 rounded-2xl bg-card p-4 shadow-sm">
           <span className="flex size-11 items-center justify-center rounded-xl text-white" style={{ backgroundColor: previewPalette.color }}>{getSubjectIcon(assignment.subjectName, icon)}</span>
           <div><p className="font-extrabold text-foreground">{assignment.subjectName}</p><p className="text-xs text-muted-foreground">Vista previa de la tarjeta</p></div>
         </div>
