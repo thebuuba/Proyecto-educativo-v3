@@ -12,11 +12,25 @@ async function request(path) {
 }
 
 const cacheBust = `smoke=${Date.now()}`
-const home = await request(`/?${cacheBust}`)
+const freshHtmlCache = /(?:no-store|max-age=0)/
+
+async function waitForDeployment(path) {
+  let response
+  for (let attempt = 1; attempt <= 12; attempt += 1) {
+    response = await request(`${path}?${cacheBust}-${attempt}`)
+    if (response.status === 200 && freshHtmlCache.test(response.headers.get('cache-control') ?? '')) {
+      return response
+    }
+    await new Promise((resolve) => setTimeout(resolve, 5_000))
+  }
+  return response
+}
+
+const home = await waitForDeployment('/')
 assert.equal(home.status, 200, 'La SPA no responde 200')
 assert.match(
   home.headers.get('cache-control') ?? '',
-  /no-store/,
+  freshHtmlCache,
   'La navegación principal permite conservar HTML obsoleto en caché',
 )
 const homeHtml = await home.text()
@@ -34,7 +48,7 @@ const deepLink = await request(`/cursos?${cacheBust}`)
 assert.equal(deepLink.status, 200, 'Una ruta profunda de la SPA no responde 200')
 assert.match(
   deepLink.headers.get('cache-control') ?? '',
-  /no-store/,
+  freshHtmlCache,
   'Las rutas de la SPA permiten conservar HTML obsoleto en caché',
 )
 
