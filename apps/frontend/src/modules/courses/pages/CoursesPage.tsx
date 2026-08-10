@@ -629,6 +629,8 @@ export function CoursesPage() {
                   <span><strong className="font-bold text-foreground tabular-nums">{totalStudents}</strong> estudiantes</span>
                   <span className="text-border" aria-hidden="true">•</span>
                   <span><strong className="font-bold text-foreground tabular-nums">{totalAssignments}</strong> asignaturas</span>
+                  <span className="text-border" aria-hidden="true">•</span>
+                  <span><strong className="font-bold text-foreground tabular-nums">{totalTeams}</strong> equipos</span>
                 </div>
               </div>
               {canManage ? (
@@ -639,14 +641,6 @@ export function CoursesPage() {
                   <Plus className="h-4 w-4" /> Nuevo curso
                 </Button>
               ) : null}
-            </div>
-            <div className="mt-4 grid gap-3 border-t border-border pt-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6">
-              <CourseStatCard icon={<Library className="size-5" />} value={activeCourseCards.length} label="Cursos" detail="Todos los niveles" tone="blue" />
-              <CourseStatCard icon={<UsersRound className="size-5" />} value={totalStudents} label="Estudiantes" detail="Matriculados" tone="green" />
-              <CourseStatCard icon={<BookOpen className="size-5" />} value={totalAssignments} label="Asignaturas" detail="En todas las secciones" tone="violet" />
-              <CourseStatCard icon={<UsersRound className="size-5" />} value={totalTeams} label="Equipos" detail="Por asignatura" tone="orange" />
-              <CourseStatCard icon={<CheckCircle2 className="size-5" />} value={activeCourseCards.length} label="Cursos activos" detail="En este momento" tone="emerald" />
-              <CourseStatCard icon={<CalendarCheck2 className="size-5" />} value={currentSchoolYear?.name ?? '—'} label="Año escolar" detail="Actual" tone="sky" />
             </div>
           </section>
 
@@ -1051,40 +1045,6 @@ export function CoursesPage() {
         />
       ) : null}
     </div>
-  )
-}
-
-function CourseStatCard({
-  icon,
-  value,
-  label,
-  detail,
-  tone,
-}: {
-  icon: ReactNode
-  value: string | number
-  label: string
-  detail: string
-  tone: 'blue' | 'green' | 'violet' | 'orange' | 'emerald' | 'sky'
-}) {
-  const tones = {
-    blue: 'bg-blue-50 text-blue-700 ring-blue-100',
-    green: 'bg-green-50 text-green-700 ring-green-100',
-    violet: 'bg-violet-50 text-violet-700 ring-violet-100',
-    orange: 'bg-orange-50 text-orange-700 ring-orange-100',
-    emerald: 'bg-emerald-50 text-emerald-700 ring-emerald-100',
-    sky: 'bg-sky-50 text-sky-700 ring-sky-100',
-  }
-
-  return (
-    <article className="flex min-w-0 items-center gap-3 rounded-2xl bg-muted/35 p-3.5">
-      <span className={cn('flex size-11 shrink-0 items-center justify-center rounded-xl ring-1', tones[tone])}>{icon}</span>
-      <div className="min-w-0">
-        <p className="truncate text-xl font-extrabold leading-none text-foreground tabular-nums">{value}</p>
-        <p className="mt-1 text-xs font-extrabold text-foreground">{label}</p>
-        <p className="truncate text-[10px] text-muted-foreground">{detail}</p>
-      </div>
-    </article>
   )
 }
 
