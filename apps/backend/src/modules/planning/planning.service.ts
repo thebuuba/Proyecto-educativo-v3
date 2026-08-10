@@ -328,14 +328,16 @@ export class PlanningService {
         topic: dto.topic ?? null,
         transversalAxis: dto.transversalAxis ?? null,
         fundamentalCompetencies: dto.fundamentalCompetencies ?? [],
-        sequence: dto.sequence ?? 0,
+        sequence: dto.sequence ?? 1,
         specificCompetence: dto.specificCompetence ?? '',
         achievementIndicator: dto.achievementIndicator ?? '',
         contentConceptual: dto.contentConceptual ?? '',
         contentProcedural: dto.contentProcedural ?? '',
         contentAttitudinal: dto.contentAttitudinal ?? '',
         strategies: dto.strategies ?? '',
-        activities: dto.activities ?? { inicio: '', desarrollo: '', cierre: '' },
+        activities: dto.activities
+          ? { ...dto.activities }
+          : { inicio: '', desarrollo: '', cierre: '' },
         resources: dto.resources ?? '',
         evaluationMethod: dto.evaluationMethod ?? '',
         durationMinutes: dto.durationMinutes ?? null,
@@ -390,7 +392,7 @@ export class PlanningService {
       {
         role: 'system',
         content:
-          'Eres especialista en planificación docente del sistema educativo dominicano. Usa como referencia la Adecuación Curricular del Nivel Secundario MINERD 2022 y la malla exacta del área, ciclo y grado indicados. Selecciona únicamente competencias, contenidos e indicadores pertinentes al tema; no inventes códigos ni elementos oficiales. Escribe en español dominicano claro. Responde exclusivamente con JSON válido usando exactamente estas propiedades: title, fundamentalCompetencies, specificCompetence, achievementIndicator, contentConceptual, contentProcedural, contentAttitudinal, strategies, activities (con inicio, desarrollo y cierre), resources, evaluationMethod, evidence, evaluationInstruments y durationMinutes.',
+          'Eres especialista en planificación docente del sistema educativo dominicano. Usa como referencia la Adecuación Curricular del Nivel Secundario MINERD 2022 y la malla exacta del área, ciclo y grado indicados. Selecciona únicamente competencias, contenidos e indicadores pertinentes al tema; no inventes códigos ni elementos oficiales. Escribe en español dominicano claro. Responde exclusivamente con un objeto JSON válido y completo, sin texto adicional. Usa exactamente esta estructura y no omitas ninguna propiedad: {"title":"","fundamentalCompetencies":[""],"specificCompetence":"","achievementIndicator":"","contentConceptual":"","contentProcedural":"","contentAttitudinal":"","strategies":"","activities":{"inicio":"","desarrollo":"","cierre":""},"resources":"","evaluationMethod":"","evidence":"","evaluationInstruments":"","durationMinutes":null}.',
       },
       {
         role: 'user',
@@ -398,8 +400,8 @@ export class PlanningService {
       },
     ]
 
-    let content = ''
-    for (let attempt = 0; attempt < 2 && !content.trim(); attempt += 1) {
+    let lastDraftError: BadRequestException | null = null
+    for (let attempt = 0; attempt < 2; attempt += 1) {
       let response: Response
       try {
         response = await fetch('https://api.deepseek.com/chat/completions', {
@@ -431,24 +433,37 @@ export class PlanningService {
         console.error('[DeepSeek Error]', data?.error?.message ?? response.statusText)
         throw new ServiceUnavailableException('Error al generar borrador con la IA')
       }
-      content = typeof data?.choices?.[0]?.message?.content === 'string'
+      const content = typeof data?.choices?.[0]?.message?.content === 'string'
         ? data.choices[0].message.content
         : ''
+      if (!content.trim()) {
+        lastDraftError = new BadRequestException('La IA no devolvió una planificación válida.')
+        continue
+      }
+
+      let draft: GeneratedPlanningEntry
+      try {
+        draft = JSON.parse(content) as GeneratedPlanningEntry
+        this.validateGeneratedDraft(draft)
+        return draft
+      } catch (error) {
+        lastDraftError = error instanceof BadRequestException
+          ? error
+          : new BadRequestException('La IA devolvió una planificación con formato inválido.')
+        if (attempt === 0) {
+          messages.push(
+            { role: 'assistant', content },
+            {
+              role: 'user',
+              content:
+                'La respuesta anterior está incompleta o no respeta la estructura. Devuelve nuevamente el objeto JSON completo, con todas las propiedades requeridas y actividades no vacías.',
+            },
+          )
+        }
+      }
     }
 
-    if (!content.trim()) {
-      throw new BadRequestException('La IA no devolvió una planificación válida.')
-    }
-
-    let draft: GeneratedPlanningEntry
-    try {
-      draft = JSON.parse(content) as GeneratedPlanningEntry
-    } catch {
-      throw new BadRequestException('La IA devolvió una planificación con formato inválido.')
-    }
-
-    this.validateGeneratedDraft(draft)
-    return draft
+    throw lastDraftError ?? new BadRequestException('La IA no devolvió una planificación válida.')
   }
 
   /** Genera y guarda una planificación en una sola operación. */
@@ -519,7 +534,7 @@ export class PlanningService {
     if (dto.contentProcedural !== undefined) data.contentProcedural = dto.contentProcedural
     if (dto.contentAttitudinal !== undefined) data.contentAttitudinal = dto.contentAttitudinal
     if (dto.strategies !== undefined) data.strategies = dto.strategies
-    if (dto.activities !== undefined) data.activities = dto.activities
+    if (dto.activities !== undefined) data.activities = { ...dto.activities }
     if (dto.resources !== undefined) data.resources = dto.resources
     if (dto.evaluationMethod !== undefined) data.evaluationMethod = dto.evaluationMethod
     if (dto.durationMinutes !== undefined) data.durationMinutes = dto.durationMinutes

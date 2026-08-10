@@ -290,8 +290,36 @@ describe('PlanningService.generateEntryDraft', () => {
     })
   })
 
+  it('uses a database-valid sequence when saving a manual planning entry', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1' })
+    mocks.prisma.planningEntry.create.mockResolvedValue({ id: 'planning-1' })
+
+    await new PlanningService(config({}) as never).createEntry('school-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      title: 'La noticia',
+      activities: {
+        inicio: 'Exploran saberes previos.',
+        desarrollo: 'Analizan una noticia.',
+        cierre: 'Comparten conclusiones.',
+      },
+    })
+
+    expect(mocks.prisma.planningEntry.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        sequence: 1,
+        activities: {
+          inicio: 'Exploran saberes previos.',
+          desarrollo: 'Analizan una noticia.',
+          cierre: 'Comparten conclusiones.',
+        },
+      }),
+    })
+  })
+
   it('rejects incomplete generated activities', async () => {
-    vi.mocked(fetch).mockResolvedValueOnce({
+    vi.mocked(fetch).mockResolvedValue({
       ok: true,
       json: vi.fn().mockResolvedValue({
         choices: [
@@ -324,6 +352,7 @@ describe('PlanningService.generateEntryDraft', () => {
         config({ DEEPSEEK_API_KEY: 'test-key', DEEPSEEK_MODEL: 'test-model' }) as never,
       ).generateEntryDraft('school-1', {}),
     ).rejects.toThrow('La IA no generó la secuencia completa de actividades.')
+    expect(fetch).toHaveBeenCalledTimes(2)
   })
 
   it('invalidates grading and attendance options after changing a period', async () => {
