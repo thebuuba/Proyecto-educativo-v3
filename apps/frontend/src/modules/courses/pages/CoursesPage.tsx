@@ -74,7 +74,6 @@ import {
   X,
 } from 'lucide-react'
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
-import { createPortal } from 'react-dom'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -1753,24 +1752,6 @@ function SubjectDetailView({
     plannings: Array<{ id: string; title: string; plannedDate: string | null }>
   }>({ activities: [], gradeRecords: [], plannings: [] })
   const [activityBlockPickerOpen, setActivityBlockPickerOpen] = useState(false)
-  const [subjectHeaderSlot, setSubjectHeaderSlot] = useState<HTMLElement | null>(null)
-
-  useEffect(() => {
-    const connectHeaderSlot = () => {
-      const slot = document.getElementById('course-subject-header-slot')
-      if (!slot) return false
-      setSubjectHeaderSlot(slot)
-      return true
-    }
-
-    if (connectHeaderSlot()) return undefined
-
-    const observer = new MutationObserver(() => {
-      if (connectHeaderSlot()) observer.disconnect()
-    })
-    observer.observe(document.body, { childList: true, subtree: true })
-    return () => observer.disconnect()
-  }, [])
 
   useEffect(() => {
     if (!schoolYearId) {
@@ -1844,8 +1825,8 @@ function SubjectDetailView({
 
   return (
     <div className="space-y-3">
-      <SubjectHeaderPortal target={subjectHeaderSlot}><header className="w-full overflow-visible">
-        <div className="flex h-[66px] items-center gap-3 px-2.5">
+      <header className="w-full overflow-visible rounded-2xl bg-card shadow-sm">
+        <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
           <div className="flex min-w-0 flex-1 items-center gap-3">
             <button type="button" className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-xs font-extrabold text-primary transition hover:border-primary/25 hover:bg-primary/[0.04]" onClick={onBack} aria-label={backLabel} title={backLabel}><ArrowLeft className="size-4" /><span className="hidden sm:inline">Volver</span></button>
             <div className="flex size-12 shrink-0 items-center justify-center rounded-xl text-white shadow-sm [&>svg]:size-6" style={{ backgroundColor: palette.color }}>{getSubjectIcon(item.subjectName, item.assignment?.appearanceIcon)}</div>
@@ -1873,7 +1854,7 @@ function SubjectDetailView({
           </details>
         </div>
 
-      </header></SubjectHeaderPortal>
+      </header>
 
         <nav className="grid w-full grid-cols-2 gap-1 rounded-2xl bg-card p-1.5 shadow-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-11" aria-label="Secciones de la asignatura">
           {subjectTabs.map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} onClick={() => setActiveTab(tab.id)} />)}
@@ -1931,10 +1912,6 @@ function SubjectDetailView({
       ) : null}
     </div>
   )
-}
-
-export function SubjectHeaderPortal({ target, children }: { target: HTMLElement | null; children: ReactNode }) {
-  return target ? createPortal(children, target) : null
 }
 
 export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, subjectName, onClose }: {

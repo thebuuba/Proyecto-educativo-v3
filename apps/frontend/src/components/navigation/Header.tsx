@@ -50,8 +50,6 @@ export function Header({ onOpenSidebar }: HeaderProps) {
   const isPlanningPage = location.pathname.startsWith('/planificaciones')
   const isGradingPage = location.pathname.startsWith('/calificaciones')
   const isCoursesPage = location.pathname === '/cursos'
-  const courseParams = new URLSearchParams(location.search)
-  const isCourseSubjectDetail = isCoursesPage && courseParams.has('courseId') && courseParams.has('subjectId')
 
   useEffect(() => {
     const focusSearch = (event: KeyboardEvent) => {
@@ -137,7 +135,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-20 border-b border-border bg-card/85 backdrop-blur">
-      <div className={isCourseSubjectDetail ? 'flex h-[76px] items-center gap-3 px-4 sm:px-5 lg:px-6' : 'flex h-[74px] items-center gap-4 px-4 sm:px-6 lg:px-8'}>
+      <div className="flex h-[74px] items-center gap-4 px-4 sm:px-6 lg:px-8">
         <Button
           variant="ghost"
           size="icon"
@@ -149,11 +147,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
         </Button>
 
         {isGradingPage || isCoursesPage ? (
-          <>
-            {isCourseSubjectDetail ? (
-              <div id="course-subject-header-slot" className="flex min-w-0 flex-1 self-stretch items-center" />
-            ) : null}
-            {!isCourseSubjectDetail ? <label
+          <label
               htmlFor="global-header-search"
               className="hidden h-11 min-w-[22rem] max-w-[680px] flex-1 items-center gap-3 rounded-xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
             >
@@ -168,8 +162,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
                 onChange={isCoursesPage ? (event) => window.dispatchEvent(new CustomEvent('courses:search', { detail: event.target.value })) : undefined}
               />
               {isCoursesPage ? <kbd className="rounded-md border border-border bg-muted/50 px-2 py-1 text-[10px] font-bold text-muted-foreground">Ctrl + K</kbd> : null}
-            </label> : null}
-          </>
+            </label>
         ) : (
           <label
             htmlFor="global-header-search"
@@ -187,7 +180,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
           </label>
         )}
 
-        <div className={isCourseSubjectDetail ? 'hidden' : 'ml-auto flex items-center gap-4'}>
+        <div className="ml-auto flex items-center gap-4">
           {!isPlanningPage ? (
             <button
               type="button"
@@ -199,15 +192,15 @@ export function Header({ onOpenSidebar }: HeaderProps) {
             </button>
           ) : null}
 
-          {!isCourseSubjectDetail ? <button
+          <button
             type="button"
             className="hidden size-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-muted sm:flex"
             aria-label="Ayuda"
           >
             <CircleHelp className="size-5" />
-          </button> : null}
+          </button>
 
-          {!isCourseSubjectDetail ? <span className="hidden h-10 w-px bg-border md:block" aria-hidden="true" /> : null}
+          <span className="hidden h-10 w-px bg-border md:block" aria-hidden="true" />
 
           <div ref={profileRef} className="relative">
             <button

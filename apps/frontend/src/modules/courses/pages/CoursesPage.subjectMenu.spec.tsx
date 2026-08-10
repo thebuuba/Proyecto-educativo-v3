@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom'
 import type { SectionSubjectAssignment } from '@/modules/courses/types'
 import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
 import { buildCompactGradeRows } from '@/modules/grading/utils/competencyGrades'
-import { ActivityBlockPickerDialog, CourseSubjectCard, SubjectAppearanceDialog, SubjectHeaderPortal } from './CoursesPage'
+import { ActivityBlockPickerDialog, CourseSubjectCard, SubjectAppearanceDialog } from './CoursesPage'
 
 function assignment(canDelete: boolean): SectionSubjectAssignment {
   return {
@@ -84,18 +84,6 @@ describe('menú administrativo de una asignatura activa', () => {
       status: 'Calificado',
       blockAverages: { b1: 80 },
     })
-  })
-
-  it('nunca coloca el encabezado de la asignatura dentro del contenido como alternativa', () => {
-    const view = render(<SubjectHeaderPortal target={null}><div>Encabezado superior</div></SubjectHeaderPortal>)
-
-    expect(screen.queryByText('Encabezado superior')).not.toBeInTheDocument()
-
-    const target = document.createElement('div')
-    document.body.appendChild(target)
-    view.rerender(<SubjectHeaderPortal target={target}><div>Encabezado superior</div></SubjectHeaderPortal>)
-    expect(target).toHaveTextContent('Encabezado superior')
-    target.remove()
   })
 
   it('conserva la asignatura y la ruta de retorno al abrir asistencia', () => {
