@@ -13,6 +13,7 @@ import {
   createPlanningEntry,
   deletePlanningEntry,
   duplicatePlanningEntry,
+  generateAndCreatePlanningEntry,
   getAcademicPeriods,
   getPlanningEntries,
   getPlanningWorkspace,
@@ -192,6 +193,21 @@ export function usePlanning() {
     [activePeriodId, cacheScope, fetchEntries],
   )
 
+  /** Genera una planificación con IA, la guarda y refresca la lista. */
+  const generateEntry = useCallback(
+    async (input: CreatePlanningEntryInput & {
+      subjectName?: string
+      sectionName?: string
+      gradeName?: string
+      fundamentalCompetenceName?: string
+    }) => {
+      await generateAndCreatePlanningEntry(input)
+      planningCache.clear(cacheScope)
+      await fetchEntries(activePeriodId ? { academicPeriodId: activePeriodId } : {})
+    },
+    [activePeriodId, cacheScope, fetchEntries],
+  )
+
   /** Actualiza una planificación existente y refresca la lista */
   const editEntry = useCallback(
     async (id: string, input: CreatePlanningEntryInput) => {
@@ -249,6 +265,7 @@ export function usePlanning() {
     loading,
     error,
     addEntry,
+    generateEntry,
     editEntry,
     removeEntry,
     duplicateEntry,

@@ -52,11 +52,17 @@ export function quickPlanningValidationError(targetStep: number, values: QuickPl
     && addWeekdays(values.plannedDate, Number(values.durationDays) - 1) > values.periodEndDate) {
     return 'La planificación termina fuera del período académico.'
   }
-  if (targetStep >= 2 && values.planningType === 'DAILY' && !values.inicio.trim()) return 'Describe brevemente cómo iniciarás la clase.'
-  if (targetStep >= 2 && values.planningType === 'DAILY' && !values.desarrollo.trim()) return 'Describe la actividad principal de la clase.'
-  if (targetStep >= 2 && values.planningType === 'DAILY' && !values.cierre.trim()) return 'Describe cómo cerrarás la clase.'
-  if (targetStep >= 2 && !values.evidence.trim()) return 'Indica cómo demostrarán los estudiantes lo aprendido.'
-  if (targetStep >= 2 && values.planningType !== 'DAILY') {
+  if (targetStep >= 2 && !values.fundamentalCompetencies.length) return 'Revisa las competencias fundamentales en la secuencia curricular.'
+  if (targetStep >= 2 && !values.specificCompetence.trim()) return 'Revisa las competencias específicas en la secuencia curricular.'
+  if (targetStep >= 2 && (!values.contentConceptual.trim() || !values.contentProcedural.trim() || !values.contentAttitudinal.trim())) {
+    return 'Revisa los contenidos conceptuales, procedimentales y actitudinales en la secuencia curricular.'
+  }
+  if (targetStep >= 2 && !values.achievementIndicator.trim()) return 'Revisa los indicadores de logro en la secuencia curricular.'
+  if (targetStep >= 3 && values.planningType === 'DAILY' && !values.inicio.trim()) return 'Describe brevemente cómo iniciarás la clase.'
+  if (targetStep >= 3 && values.planningType === 'DAILY' && !values.desarrollo.trim()) return 'Describe la actividad principal de la clase.'
+  if (targetStep >= 3 && values.planningType === 'DAILY' && !values.cierre.trim()) return 'Describe cómo cerrarás la clase.'
+  if (targetStep >= 3 && !values.evidence.trim()) return 'Indica cómo demostrarán los estudiantes lo aprendido.'
+  if (targetStep >= 3 && values.planningType !== 'DAILY') {
     if (values.days.length !== Number(values.durationDays)) return 'Completa todos los días de la planificación.'
     const incompleteDay = values.days.find((day) =>
       !day.inicio.trim() || !day.desarrollo.trim() || !day.cierre.trim()
@@ -64,11 +70,5 @@ export function quickPlanningValidationError(targetStep: number, values: QuickPl
     )
     if (incompleteDay) return `Completa las actividades y evaluación del día ${incompleteDay.day}.`
   }
-  if (targetStep >= 3 && !values.fundamentalCompetencies.length) return 'Revisa las competencias fundamentales en los detalles curriculares.'
-  if (targetStep >= 3 && !values.specificCompetence.trim()) return 'Revisa las competencias específicas en los detalles curriculares.'
-  if (targetStep >= 3 && (!values.contentConceptual.trim() || !values.contentProcedural.trim() || !values.contentAttitudinal.trim())) {
-    return 'Revisa los contenidos conceptuales, procedimentales y actitudinales en los detalles curriculares.'
-  }
-  if (targetStep >= 3 && !values.achievementIndicator.trim()) return 'Revisa los indicadores de logro en los detalles curriculares.'
   return ''
 }

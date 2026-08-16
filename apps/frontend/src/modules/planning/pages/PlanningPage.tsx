@@ -53,6 +53,7 @@ export function PlanningPage() {
     loading,
     error,
     addEntry,
+    generateEntry,
     editEntry,
     removeEntry,
     duplicateEntry,
@@ -259,6 +260,20 @@ export function PlanningPage() {
           submitting={isSubmitting}
           error={formError}
           onSubmit={handleSubmit}
+          onGenerateAndCreate={async (input) => {
+            setIsSubmitting(true)
+            setFormError(null)
+            try {
+              await generateEntry(input)
+              setPeriodFilter(input.academicPeriodId)
+              setActivePeriodId(input.academicPeriodId)
+              closeForm()
+            } catch (caught) {
+              setFormError(caught instanceof Error ? caught.message : 'No se pudo generar.')
+            } finally {
+              setIsSubmitting(false)
+            }
+          }}
           onClose={closeForm}
         />
       </section>
@@ -266,7 +281,7 @@ export function PlanningPage() {
   }
 
   return (
-    <section className="app-content-frame space-y-5">
+    <section className="mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
       <header className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">

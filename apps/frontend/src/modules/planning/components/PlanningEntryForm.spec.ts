@@ -30,8 +30,8 @@ const completePlanning = {
 describe('planificación rápida', () => {
   it('solo exige decisiones docentes al principio y valida el currículo al guardar', () => {
     expect(quickPlanningValidationError(1, { ...completePlanning, inicio: '', evidence: '' })).toBe('')
-    expect(quickPlanningValidationError(2, { ...completePlanning, desarrollo: '' })).toContain('actividad principal')
-    expect(quickPlanningValidationError(3, { ...completePlanning, specificCompetence: '' })).toContain('competencias específicas')
+    expect(quickPlanningValidationError(2, { ...completePlanning, specificCompetence: '' })).toContain('competencias específicas')
+    expect(quickPlanningValidationError(3, { ...completePlanning, desarrollo: '' })).toContain('actividad principal')
     expect(quickPlanningValidationError(3, completePlanning)).toBe('')
     expect(quickPlanningValidationError(1, {
       ...completePlanning,
@@ -52,7 +52,7 @@ describe('planificación rápida', () => {
       periodStartDate: '2026-08-01',
       periodEndDate: '2026-10-31',
     })).toContain('termina fuera')
-    expect(quickPlanningValidationError(2, {
+    expect(quickPlanningValidationError(3, {
       ...completePlanning,
       planningType: 'UNIT',
       durationDays: '2',
