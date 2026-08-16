@@ -1,4 +1,7 @@
-import { IsOptional, IsString } from 'class-validator'
+import { IsIn, IsOptional, IsString } from 'class-validator'
+
+export const reportKinds = ['boletin', 'registro-grado', 'asistencia', 'rendimiento', 'promocion', 'todos'] as const
+export const reportFormats = ['csv', 'xls', 'pdf'] as const
 
 export class ExportReportDto {
   @IsOptional()
@@ -6,12 +9,12 @@ export class ExportReportDto {
   type?: string
 
   @IsOptional()
-  @IsString()
-  kind?: string
+  @IsIn(reportKinds)
+  kind?: (typeof reportKinds)[number]
 
   @IsOptional()
-  @IsString()
-  format?: string
+  @IsIn(reportFormats)
+  format?: (typeof reportFormats)[number]
 
   @IsOptional()
   @IsString()
