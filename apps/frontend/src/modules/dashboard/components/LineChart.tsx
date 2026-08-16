@@ -1,57 +1,33 @@
-/**
- * Componente LineChart — Gráfico de líneas SVG para visualizar
- * el rendimiento académico mensual con puntos y área rellena.
- */
-
+/** Gráfico de líneas SVG reutilizable para métricas porcentuales. */
 import type { ChartDatum } from '@/modules/dashboard/types/dashboard'
 
 type LineChartProps = {
-  /** Datos para los puntos del gráfico. */
   data: ChartDatum[]
+  ariaLabel?: string
+  emptyMessage?: string
 }
 
-/** Gráfico de líneas con área rellena para rendimiento académico. */
-export function LineChart({ data }: LineChartProps) {
+export function LineChart({ data, ariaLabel = 'Gráfico de líneas', emptyMessage = 'No hay datos disponibles.' }: LineChartProps) {
   if (data.length === 0) {
-    return (
-      <div className="flex h-64 items-center justify-center text-sm font-medium text-muted-foreground">
-        No hay calificaciones publicadas para este trimestre.
-      </div>
-    )
+    return <div className="flex h-64 items-center justify-center text-sm font-medium text-muted-foreground">{emptyMessage}</div>
   }
 
   const width = 520
   const height = 220
   const padding = 28
-  const values = data.map((item) => item.value)
+  const values = data.map(({ value }) => value)
   const min = Math.min(...values) - 4
-  const max = Math.max(...values) + 4
-
-  const points = data.map((item, index) => {
-    const x =
-      data.length === 1
-        ? width / 2
-        : padding + (index * (width - padding * 2)) / (data.length - 1)
-    const y =
-      height -
-      padding -
-      ((item.value - min) / (max - min)) * (height - padding * 2)
-
-    return { ...item, x, y }
-  })
-
-  const path = points
-    .map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`)
-    .join(' ')
+  const range = Math.max(Math.max(...values) + 4 - min, 1)
+  const points = data.map((item, index) => ({
+    ...item,
+    x: data.length === 1 ? width / 2 : padding + (index * (width - padding * 2)) / (data.length - 1),
+    y: height - padding - ((item.value - min) / range) * (height - padding * 2),
+  }))
+  const path = points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
 
   return (
     <div className="overflow-hidden">
-      <svg
-        className="h-64 w-full"
-        viewBox={`0 0 ${width} ${height}`}
-        role="img"
-        aria-label="Rendimiento académico mensual"
-      >
+      <svg className="h-64 w-full" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={ariaLabel}>
         <defs>
           <linearGradient id="performanceFill" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.18" />
@@ -60,32 +36,20 @@ export function LineChart({ data }: LineChartProps) {
         </defs>
         {[0, 1, 2, 3].map((line) => {
           const y = padding + (line * (height - padding * 2)) / 3
-          return (
-            <line
-              key={line}
-              x1={padding}
-              x2={width - padding}
-              y1={y}
-              y2={y}
-              stroke="var(--border)"
-              strokeDasharray="4 6"
-            />
-          )
+          return <line key={line} x1={padding} x2={width - padding} y1={y} y2={y} stroke="var(--border)" strokeDasharray="4 6" />
         })}
-        <path
-          d={`${path} L ${width - padding} ${height - padding} L ${padding} ${height - padding} Z`}
-          fill="url(#performanceFill)"
-        />
+        <path d={`${path} L ${width - padding} ${height - padding} L ${padding} ${height - padding} Z`} fill="url(#performanceFill)" />
         <path d={path} fill="none" stroke="var(--primary)" strokeLinecap="round" strokeWidth="4" />
         {points.map((point) => (
           <g key={point.label}>
-            <circle cx={point.x} cy={point.y} r="5" fill="var(--card)" stroke="var(--accent)" strokeWidth="3" />
-            <text x={point.x} y={height - 6} textAnchor="middle" className="fill-muted-foreground text-xs">
-              {point.label}
-            </text>
+            <circle cx={point.x} cy={point.y} r="5" fill="var(--card)" stroke="var(--accent)" strokeWidth="3">
+              <title>{`${point.label}: ${point.value}%`}</title>
+            </circle>
+            <text x={point.x} y={height - 6} textAnchor="middle" className="fill-muted-foreground text-xs">{point.label}</text>
           </g>
         ))}
       </svg>
+      <p className="sr-only">{data.map(({ label, value }) => `${label}: ${value}%`).join(', ')}</p>
     </div>
   )
 }

@@ -22,6 +22,12 @@ export class ReportsController {
     return this.reportsService.getStudentReport(user.schoolId, studentId)
   }
 
+  /** Resume asistencia, rendimiento y promoción para el panel de reportes. */
+  @Get('summary')
+  getSummary(@CurrentUser() user: AuthenticatedUser) {
+    return this.reportsService.getSummary(user.schoolId)
+  }
+
   /** Exporta un reporte en el formato especificado (estudiante, calificaciones, CSV) */
   @Post('export')
   exportReport(@CurrentUser() user: AuthenticatedUser, @Body() dto: ExportReportDto) {

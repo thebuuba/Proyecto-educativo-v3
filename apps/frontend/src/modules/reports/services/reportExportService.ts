@@ -1,20 +1,35 @@
-/**
- * @file Servicio de Reportes
- *
- * Proporciona funciones para generar exportaciones de
- * reportes académicos y de asistencia.
- */
+/** Cliente del panel de reportes y sus exportaciones. */
+import { api, API_CACHE_TTL } from '@/services/apiClient'
 
-import { api } from '@/services/apiClient'
+export type ReportKind = 'boletin' | 'registro-grado' | 'asistencia' | 'rendimiento' | 'promocion'
+export type ExportReportKind = ReportKind | 'todos'
+export type ExportFormat = 'csv' | 'xls' | 'pdf'
 
-/** Payload de exportación con contenido y metadatos */
-type ExportPayload = { filename: string; mimeType: string; content: string }
+export type ReportSummary = {
+  schoolYearName: string
+  totals: {
+    students: number
+    attendanceRate: number | null
+    academicAverage: number | null
+    promoted: number
+  }
+  attendanceByMonth: Array<{ label: string; value: number | null }>
+  performanceByGrade: Array<{ label: string; value: number }>
+  promotion: { promoted: number; pending: number; retained: number }
+  generatedAt: string
+}
 
-/** Solicita la generación de un reporte exportable */
-export async function createReportExport(
-  schoolId: string,
-  kind: string,
-  format: string,
-): Promise<ExportPayload> {
-  return api.post<ExportPayload>('/reports/export', { schoolId, kind, format })
+type ExportPayload = {
+  filename: string
+  mimeType: string
+  content: string
+  disposition: 'download' | 'print'
+}
+
+export function getReportSummary() {
+  return api.get<ReportSummary>('/reports/summary', { cacheTtlMs: API_CACHE_TTL.sessionList })
+}
+
+export function createReportExport(kind: ExportReportKind, format: ExportFormat) {
+  return api.post<ExportPayload>('/reports/export', { kind, format })
 }

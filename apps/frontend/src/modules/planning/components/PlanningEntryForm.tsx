@@ -35,6 +35,7 @@ import {
 } from '@/modules/competency-matrix/data/secondaryCurriculumContent'
 import type { SecondaryCurriculumContent } from '@/modules/competency-matrix/data/secondaryCurriculumContent'
 import type { GradingActivity } from '@/modules/grading/types'
+import { curriculumUnitsFor } from '@/modules/planning/data/secondaryCurriculum'
 import { generatePlanningEntry } from '@/modules/planning/services/planningService'
 import type {
   AcademicPeriodSummary,
@@ -64,13 +65,19 @@ type PlanningEntryFormProps = {
   error: string | null
   curriculumReference?: { grade: string; subjectId: string }
   onSubmit: (input: CreatePlanningEntryInput) => Promise<void>
+  onGenerateAndCreate: (input: CreatePlanningEntryInput & {
+    subjectName?: string
+    sectionName?: string
+    gradeName?: string
+    fundamentalCompetenceName?: string
+  }) => Promise<void>
   onClose: () => void
 }
 
 const steps = [
-  { number: 1, title: 'Enfoque de la clase', description: 'Curso, tema y tiempo', icon: School },
-  { number: 2, title: 'Desarrollo', description: 'Actividades y evidencia', icon: ClipboardList },
-  { number: 3, title: 'Revisar y guardar', description: 'Currículo y detalles', icon: BookOpen },
+  { number: 1, title: 'Datos generales', description: 'Contexto de la unidad', icon: School },
+  { number: 2, title: 'Secuencia curricular', description: 'Competencias y contenidos', icon: BookOpen },
+  { number: 3, title: 'Secuencia didáctica', description: 'Desarrollo de la clase', icon: ClipboardList },
 ] as const
 
 const transversalAxes = [
@@ -124,6 +131,7 @@ export function PlanningEntryForm({
   error,
   curriculumReference,
   onSubmit,
+  onGenerateAndCreate,
   onClose,
 }: PlanningEntryFormProps) {
   const { appUser } = useAuth()
@@ -186,7 +194,28 @@ export function PlanningEntryForm({
       || courseCollator.compare(left.sectionName, right.sectionName)
   }), [sectionSubjects])
   const [courseKey, setCourseKey] = useState(selectedSectionSubject ? courseKeyFor(selectedSectionSubject) : '')
-  const subjectOptions = sectionSubjects.filter((item) => !courseKey || courseKeyFor(item) === courseKey)
+  const courseSubjectOptions = useMemo(
+    () => sectionSubjects.filter((item) => !courseKey || courseKeyFor(item) === courseKey),
+    [courseKey, sectionSubjects],
+  )
+  const areaOptions = useMemo(
+    () => Array.from(new Set(courseSubjectOptions.map((item) => curricularAreaFor(item.subjectName)))).sort(),
+    [courseSubjectOptions],
+  )
+  const subjectOptions = useMemo(
+    () => courseSubjectOptions.filter((item) => !curricularArea || curricularAreaFor(item.subjectName) === curricularArea),
+    [courseSubjectOptions, curricularArea],
+  )
+  const curriculumUnits = selectedSectionSubject
+    ? curriculumUnitsFor(
+        selectedSectionSubject.gradeName,
+        curricularArea,
+        selectedSectionSubject.level,
+        selectedSectionSubject.subjectName,
+      )
+    : []
+  const selectedCurriculumUnit = curriculumUnits.find((unit) => unit.title === title)
+  const topicOptions = selectedCurriculumUnit?.topics ?? []
   const selectedPeriod = periods.find((period) => period.id === academicPeriodId)
   const referencedGrade = curriculumReference ? secondaryGradeFromName(curriculumReference.grade) : null
   const curriculumGrade = selectedSectionSubject
@@ -217,6 +246,21 @@ export function PlanningEntryForm({
       evaluationMethod: '',
     }).map((day, index) => ({ ...day, day: index + 1 })))
   }, [durationDays, planningType])
+
+  useEffect(() => {
+    if (!curricularArea) return
+    if (subjectOptions.length === 1 && !sectionSubjectId) {
+      setSectionSubjectId(subjectOptions[0]?.id ?? '')
+    } else if (sectionSubjectId && !subjectOptions.some((item) => item.id === sectionSubjectId)) {
+      setSectionSubjectId('')
+      setTitle('')
+      setTopic('')
+    }
+  }, [curricularArea, sectionSubjectId, subjectOptions])
+
+  useEffect(() => {
+    if (topicOptions.length === 1 && !topic) setTopic(topicOptions[0] ?? '')
+  }, [topic, topicOptions])
 
   useEffect(() => {
     setAlignmentWarning('')
@@ -396,7 +440,7 @@ export function PlanningEntryForm({
       const activitiesError = message.includes('iniciarás') || message.includes('actividad principal')
         || message.includes('cerrarás') || message.includes('estudiantes')
         || message.includes('actividades') || message.includes('evaluación') || message.includes('días')
-      setStep(curriculumError ? 3 : activitiesError ? 2 : 1)
+      setStep(curriculumError ? 2 : activitiesError ? 3 : 1)
       return
     }
     await onSubmit(buildInput())
@@ -463,94 +507,87 @@ export function PlanningEntryForm({
     finally { setGenerating(false) }
   }
 
-  const ActiveStepIcon = steps[step - 1]?.icon ?? School
+  async function handleGenerateAndSave() {
+    const message = validateStep(1)
+    if (message) {
+      setValidationError(message)
+      setStep(1)
+      return
+    }
+    const competence = competencies.find((item) => item.id === fundamentalCompetenceId)
+    setGenerating(true)
+    setValidationError('')
+    try {
+      await onGenerateAndCreate({
+        ...buildInput(),
+        subjectName: selectedSectionSubject?.subjectName,
+        sectionName: selectedSectionSubject?.sectionName,
+        gradeName: selectedSectionSubject?.gradeName,
+        fundamentalCompetenceName: competence?.name,
+      })
+    } catch (caught) {
+      setValidationError(caught instanceof Error ? caught.message : 'No se pudo generar la planificación.')
+    } finally {
+      setGenerating(false)
+    }
+  }
 
   return (
-    <form className="app-content-frame space-y-5 pb-4" onSubmit={handleSubmit}>
+    <form className="mx-auto w-full min-w-0 max-w-[1440px] space-y-5" onSubmit={handleSubmit}>
       <header className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0">
           <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
             <button type="button" className="font-medium text-primary hover:underline" onClick={onClose}>Planificaciones</button>
             <span>›</span><span>{initial?.entry.id ? 'Editar planificación' : 'Nueva planificación'}</span>
           </div>
-          <h1 className="mt-3 text-2xl font-extrabold tracking-[-0.025em] text-primary sm:text-[28px]">{initial?.entry.id ? 'Editar planificación' : 'Crear planificación'}</h1>
-          <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">Tú defines la clase; el sistema completa la información curricular y administrativa.</p>
+          <h1 className="mt-3 text-3xl font-black text-primary">{initial?.entry.id ? 'Editar planificación' : 'Crear planificación'}</h1>
+          <p className="mt-1 text-sm text-muted-foreground">Completa las tres partes de la planificación docente.</p>
         </div>
-        <Button type="button" variant="outline" size="sm" className="w-fit" onClick={onClose}><ArrowLeft className="size-4" />Volver</Button>
+        <Button type="button" variant="outline" onClick={onClose}><ArrowLeft className="size-4" />Volver</Button>
       </header>
 
-      <nav className="grid gap-1 rounded-2xl border border-border bg-card p-1.5 shadow-sm md:grid-cols-3" aria-label="Pasos de la planificación">
+      <nav className="grid overflow-hidden rounded-xl border border-border bg-card shadow-sm md:grid-cols-3" aria-label="Pasos de la planificación">
         {steps.map((item) => {
           const Icon = item.icon
           const active = step === item.number
           const complete = step > item.number
           return (
-            <button key={item.number} type="button" className={cn('flex items-center gap-3 rounded-xl px-3 py-3 text-left transition-[color,background-color,box-shadow,transform] duration-150 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20 sm:px-4', active ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20' : 'hover:bg-muted/70')} onClick={() => setStep(item.number)} aria-current={active ? 'step' : undefined}>
-              <span className={cn('grid size-10 shrink-0 place-items-center rounded-xl font-black', active ? 'bg-primary-foreground/15 text-primary-foreground' : complete ? 'bg-primary-light text-primary' : 'bg-muted text-muted-foreground')}>
-                {complete ? <Check className="size-4" /> : <Icon className="size-4" />}
+            <button key={item.number} type="button" className={cn('flex items-center gap-3 border-b border-border px-4 py-4 text-left transition last:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20 md:border-b-0 md:border-r md:last:border-r-0', active && 'bg-primary text-primary-foreground', !active && 'hover:bg-muted/50')} onClick={() => setStep(item.number)} aria-current={active ? 'step' : undefined}>
+              <span className={cn('grid size-10 shrink-0 place-items-center rounded-full border font-black', active ? 'border-primary-foreground/30 bg-primary-foreground/15' : complete ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-border bg-muted text-muted-foreground')}>
+                {complete ? <Check className="size-5" /> : <Icon className="size-5" />}
               </span>
-              <span className="min-w-0"><span className="block text-[10px] font-bold uppercase tracking-[0.14em] opacity-70">Parte {item.number}</span><span className="block truncate text-sm font-extrabold sm:text-base">{item.title}</span><span className="hidden truncate text-xs opacity-70 sm:block">{item.description}</span></span>
+              <span className="min-w-0"><span className="block text-xs font-bold opacity-75">Parte {item.number}</span><span className="block truncate font-black">{item.title}</span><span className="hidden truncate text-xs opacity-75 sm:block">{item.description}</span></span>
             </button>
           )
         })}
       </nav>
 
-      {validationError || error ? <div className="flex gap-3 rounded-2xl border border-destructive/20 bg-destructive/10 p-4 text-sm font-medium text-destructive"><AlertCircle className="mt-0.5 size-4 shrink-0" /><p>{validationError || error}</p></div> : null}
+      {validationError || error ? <div className="flex gap-3 rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive"><AlertCircle className="mt-0.5 size-4 shrink-0" /><p>{validationError || error}</p></div> : null}
 
-      <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
-        <div className="flex items-center gap-4 border-b border-border bg-primary/[0.035] px-5 py-5 sm:px-7">
-          <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-md shadow-primary/20"><ActiveStepIcon className="size-5" /></span>
-          <div><p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary/70">Parte {step} de 3</p><h2 className="mt-0.5 text-xl font-extrabold tracking-tight text-foreground">{steps[step - 1]?.title}</h2></div>
-        </div>
+      <section className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+        <div className="border-b border-border px-5 py-4"><p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">Parte {step} de 3</p><h2 className="mt-1 text-xl font-black text-foreground">{steps[step - 1]?.title}</h2></div>
 
-        {step === 1 ? <div className="grid gap-x-6 gap-y-5 p-5 sm:p-7 md:grid-cols-2">
-          <div className="md:col-span-2 rounded-2xl bg-primary-light/70 p-4 text-sm leading-6 text-primary">
-            <p className="font-extrabold">Completa solo las decisiones esenciales.</p>
-            <p className="text-primary/80">El centro, docente, período, área, competencias, contenidos e indicadores se incorporan automáticamente.</p>
-          </div>
-          <div className="md:col-span-2"><Field label="Tipo de planificación" required><Select value={planningType} onChange={(event) => setPlanningType(event.target.value as PlanningType)}><option value="DAILY">Planificación diaria</option><option value="UNIT">Unidad de aprendizaje</option><option value="SEQUENCE">Secuencia didáctica</option></Select></Field></div>
-          <Field label="Curso" required><Select value={courseKey} onChange={(event) => { setCourseKey(event.target.value); setSectionSubjectId(''); setCurricularArea('') }}><option value="">Selecciona...</option><optgroup label="Primaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field>
-          <Field label="Asignatura" required><Select value={sectionSubjectId} disabled={!courseKey} onChange={(event) => { const value = event.target.value; setSectionSubjectId(value); const subject = sectionSubjects.find((item) => item.id === value); setCurricularArea(subject ? curricularAreaFor(subject.subjectName) : '') }}><option value="">{courseKey ? 'Selecciona...' : 'Selecciona primero el curso'}</option>{subjectOptions.map((item) => <option key={item.id} value={item.id}>{item.subjectName}</option>)}</Select></Field>
-          <div className="md:col-span-2"><Field label="Tema o propósito de la clase" required><Input value={topic} placeholder="Ej.: La célula y sus funciones" onChange={(event) => setTopic(event.target.value)} /></Field></div>
+        {step === 1 ? <div className="grid gap-5 p-5 md:grid-cols-2">
+          <Field label="Centro educativo"><Input value={schoolNameValue} onChange={(event) => setSchoolNameValue(event.target.value)} placeholder="Nombre del centro educativo" /></Field>
+          <Field label="Nombre del docente"><Input value={teacherName} onChange={(event) => setTeacherName(event.target.value)} placeholder="Nombre completo del docente" /></Field>
+          <Field label="Curso" required><Select value={courseKey} onChange={(event) => { setCourseKey(event.target.value); setSectionSubjectId(''); setCurricularArea(''); setTitle(''); setTopic('') }}><option value="">Selecciona...</option><optgroup label="Primaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Primaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup><optgroup label="Secundaria">{courseOptions.filter((item) => educationLevelFor(item.gradeName, item.level) === 'Secundaria').map((item) => <option key={item.key} value={item.key}>{item.gradeName} {item.sectionName}</option>)}</optgroup></Select></Field>
+          <Field label="Área curricular" required><Select value={curricularArea} disabled={!courseKey} onChange={(event) => { setCurricularArea(event.target.value); setSectionSubjectId(''); setTitle(''); setTopic('') }}><option value="">{courseKey ? 'Selecciona...' : 'Selecciona primero el curso'}</option>{areaOptions.map((area) => <option key={area} value={area}>{area}</option>)}</Select></Field>
+          <div className="md:col-span-2"><Field label="Asignatura" required><Select value={sectionSubjectId} disabled={!courseKey || !curricularArea} onChange={(event) => { setSectionSubjectId(event.target.value); setTitle(''); setTopic('') }}><option value="">{curricularArea ? 'Selecciona...' : 'Selecciona primero el área curricular'}</option>{subjectOptions.map((item) => <option key={item.id} value={item.id}>{item.subjectName}</option>)}</Select></Field></div>
+          <Field label="Período académico" required><Select value={academicPeriodId} onChange={(event) => setAcademicPeriodId(event.target.value)}><option value="">Selecciona...</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Select></Field>
           <Field label="Fecha" required><Input type="date" min={selectedPeriod?.startDate.slice(0, 10)} max={selectedPeriod?.endDate.slice(0, 10)} value={plannedDate} onChange={(event) => setPlannedDate(event.target.value)} /></Field>
+          <div className="md:col-span-2">{curriculumUnits.length ? <Field label="Unidad de aprendizaje"><Select value={title} onChange={(event) => { setTitle(event.target.value); setTopic('') }}><option value="">Selecciona una unidad...</option>{title && !curriculumUnits.some((unit) => unit.title === title) ? <option value={title}>{title}</option> : null}{curriculumUnits.map((unit) => <option key={unit.title} value={unit.title}>{unit.title}</option>)}</Select><p className="text-xs font-normal text-muted-foreground">Unidades oficiales disponibles para el grado y la asignatura seleccionados.</p></Field> : <Field label="Título de la unidad de aprendizaje"><Input value={title} placeholder="Ej.: El sistema solar y nuestro lugar en el universo" onChange={(event) => setTitle(event.target.value)} /></Field>}</div>
+          <div className="md:col-span-2">{curriculumUnits.length ? <Field label="Tema o subtema" required><Select value={topic} disabled={!title} onChange={(event) => setTopic(event.target.value)}><option value="">{title ? 'Selecciona un tema...' : 'Selecciona primero la unidad'}</option>{topic && !topicOptions.includes(topic) ? <option value={topic}>{topic}</option> : null}{topicOptions.map((item) => <option key={item} value={item}>{item}</option>)}</Select><p className="text-xs font-normal text-muted-foreground">Temas vinculados a la unidad curricular seleccionada.</p></Field> : <Field label="Tema" required><Input value={topic} placeholder="Ej.: La célula" onChange={(event) => setTopic(event.target.value)} /></Field>}</div>
+          <div className="md:col-span-2"><Field label="Eje transversal"><Select value={transversalAxis} onChange={(event) => setTransversalAxis(event.target.value)}><option value="">Sin especificar</option>{transversalAxes.map((axis) => <option key={axis} value={axis}>{axis}</option>)}</Select></Field></div>
+          <Field label="Tipo de planificación" required><Select value={planningType} onChange={(event) => setPlanningType(event.target.value as PlanningType)}><option value="DAILY">Planificación diaria</option><option value="UNIT">Unidad de aprendizaje</option><option value="SEQUENCE">Secuencia didáctica</option></Select></Field>
           <Field label="Duración total (minutos)" required><Input type="number" min={1} value={duration} onChange={(event) => setDuration(event.target.value)} placeholder="Ej.: 90" /></Field>
           {planningType !== 'DAILY' ? <Field label="Cantidad de días" required><Input type="number" min={1} max={30} value={durationDays} onChange={(event) => setDurationDays(event.target.value)} /></Field> : null}
-          {!academicPeriodId ? <div className="md:col-span-2"><Field label="Período académico" required><Select value={academicPeriodId} onChange={(event) => setAcademicPeriodId(event.target.value)}><option value="">Selecciona...</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Select></Field></div> : null}
-          <div className="md:col-span-2 grid gap-3 rounded-2xl border border-border bg-muted/40 p-4 text-sm sm:grid-cols-3">
-            <AutoContext label="Centro" value={schoolNameValue || 'Se completará automáticamente'} />
-            <AutoContext label="Docente" value={teacherName || 'Se completará automáticamente'} />
-            <AutoContext label="Período" value={selectedPeriod?.name || 'Se completará automáticamente'} />
-          </div>
-          <div className="md:col-span-2 flex flex-col gap-1 rounded-2xl border border-border bg-card p-4 text-xs leading-5 text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-            <span>Calendario 2026–2027 aprobado: el centro conserva sus períodos configurables e incorpora un banco de recuperación de dos semanas cuando MINERD publique la versión final.</span>
-            <a className="shrink-0 font-bold text-primary hover:underline" href="https://minerd.gob.do/comunicaciones/noticias/consejo-nacional-de-educacion-aprueba-calendario-escolar-2026-2027-y-oficializa-estrategia-nacional-de-competencias-digitales" target="_blank" rel="noreferrer">Ver comunicado</a>
+          <div className="md:col-span-2 flex flex-col gap-1 rounded-xl border border-border bg-card p-4 text-xs leading-5 text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+            <span>La fecha y la duración se validan contra el período académico activo; las unidades y secuencias distribuyen automáticamente los días lectivos.</span>
+            <a className="shrink-0 font-bold text-primary hover:underline" href="https://minerd.gob.do/comunicaciones/noticias/consejo-nacional-de-educacion-aprueba-calendario-escolar-2026-2027-y-oficializa-estrategia-nacional-de-competencias-digitales" target="_blank" rel="noreferrer">Ver calendario</a>
           </div>
         </div> : null}
 
-        {step === 2 ? <div className="grid gap-5 p-5 sm:p-7">
-          <div className="flex flex-col gap-3 rounded-2xl bg-primary-light/70 p-4 sm:flex-row sm:items-center sm:justify-between">
-            <div><p className="font-extrabold text-primary">Describe la experiencia de aprendizaje</p><p className="mt-0.5 text-xs leading-5 text-primary/75">Puedes escribirla directamente o usar “Completar con IA” como punto de partida editable.</p></div>
-            <Button type="button" variant="outline" size="sm" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Sugerir actividades</Button>
-          </div>
-          {alignmentWarning ? <div className="rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950"><p className="font-extrabold">Revisa la coherencia del tema</p><p className="mt-1 leading-6">{alignmentWarning}</p><label className="mt-3 flex cursor-pointer items-start gap-2 font-bold"><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={alignmentConfirmed} onChange={(event) => setAlignmentConfirmed(event.target.checked)} /><span>Confirmo que este tema corresponde a la asignatura seleccionada.</span></label></div> : null}
-          <Field label="Situación de aprendizaje"><Textarea rows={4} value={learningSituation} onChange={(event) => setLearningSituation(event.target.value)} placeholder="Contexto, reto o problema que dará sentido a lo que aprenderán los estudiantes." /></Field>
-          {planningType === 'DAILY' ? <div className="grid gap-4 lg:grid-cols-3">
-            <MomentField title="Inicio" hint="Motivación, saberes previos y propósito" value={inicio} onChange={setInicio} />
-            <MomentField title="Desarrollo" hint="Actividad principal y construcción del aprendizaje" value={desarrollo} onChange={setDesarrollo} />
-            <MomentField title="Cierre" hint="Síntesis, reflexión y retroalimentación" value={cierre} onChange={setCierre} />
-          </div> : <div className="grid gap-4">{days.map((day, index) => <PlanningDayField key={day.day} day={day} date={plannedDate ? addWeekdays(plannedDate, index) : ''} onChange={(field, value) => setDays((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, [field]: value } : item))} />)}</div>}
-          {planningType === 'DAILY' ? <Field label="Metacognición"><Textarea rows={3} value={metacognition} onChange={(event) => setMetacognition(event.target.value)} placeholder="Ej.: ¿Qué aprendí?, ¿cómo lo aprendí? y ¿dónde puedo aplicarlo?" /></Field> : null}
-          <Field label="¿Cómo demostrarán los estudiantes lo aprendido?" required><Textarea rows={4} value={evidence} onChange={(event) => setEvidence(event.target.value)} placeholder="Ej.: Elaborarán un modelo de la célula y explicarán la función de sus partes mediante una lista de cotejo." /></Field>
-        </div> : null}
-
-        {step === 3 ? <div className="grid gap-5 p-5 sm:p-7">
-          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
-            <ReviewItem label="Tipo" value={planningTypeLabels[planningType]} />
-            <ReviewItem label="Curso y asignatura" value={selectedSectionSubject ? `${selectedSectionSubject.gradeName} ${selectedSectionSubject.sectionName} · ${selectedSectionSubject.subjectName}` : 'Sin seleccionar'} />
-            <ReviewItem label="Tema" value={topic || 'Sin tema'} />
-            <ReviewItem label="Fecha" value={plannedDate || 'Sin fecha'} />
-            <ReviewItem label="Duración" value={duration ? planningType === 'DAILY' ? `${duration} minutos` : `${durationDays} días · ${duration} minutos` : 'Sin duración'} />
-          </div>
+        {step === 2 ? <div className="grid gap-5 p-5">
           {curriculumGrade && curriculumSubject ? (
             <div className="flex flex-col gap-3 rounded-2xl border border-primary/15 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
               <div>
@@ -574,6 +611,10 @@ export function PlanningEntryForm({
               </div>
             </div>
           ) : null}
+          <Field label="Competencias fundamentales" required><div className="grid gap-2 rounded-xl border border-border p-3 md:grid-cols-2">{competencies.map((item) => { const checked = fundamentalCompetencies.includes(item.name); return <label key={item.id} className={cn('flex cursor-pointer items-start gap-2 rounded-lg border p-3 text-sm transition', checked ? 'border-primary/40 bg-primary/5' : 'border-border')}><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={checked} onChange={(event) => { setFundamentalCompetencies((current) => event.target.checked ? [...current, item.name] : current.filter((name) => name !== item.name)); if (event.target.checked && !fundamentalCompetenceId) setFundamentalCompetenceId(item.id); if (!event.target.checked && fundamentalCompetenceId === item.id) setFundamentalCompetenceId('') }} /><span>{item.name}</span></label> })}</div></Field>
+          <Field label="Competencias específicas" required><Textarea rows={5} value={specificCompetence} onChange={(event) => setSpecificCompetence(event.target.value)} /></Field>
+          <div className="grid gap-4 lg:grid-cols-3"><Field label="Contenidos conceptuales" required><Textarea rows={6} value={contentConceptual} onChange={(event) => setContentConceptual(event.target.value)} /></Field><Field label="Contenidos procedimentales" required><Textarea rows={6} value={contentProcedural} onChange={(event) => setContentProcedural(event.target.value)} /></Field><Field label="Contenidos actitudinales" required><Textarea rows={6} value={contentAttitudinal} onChange={(event) => setContentAttitudinal(event.target.value)} /></Field></div>
+          <Field label="Indicadores de logro" required><Textarea rows={5} value={achievementIndicator} onChange={(event) => setAchievementIndicator(event.target.value)} /></Field>
           <div className="rounded-2xl border border-primary/15 bg-primary/[0.035] p-4 sm:p-5">
             <p className="text-sm font-extrabold text-foreground">Enfoques nacionales incorporados en las sugerencias</p>
             <div className="mt-3 grid gap-2 text-xs leading-5 text-muted-foreground md:grid-cols-2">
@@ -581,47 +622,37 @@ export function PlanningEntryForm({
               <p className="rounded-xl border border-border bg-card p-3"><span className="block font-bold text-primary">Competencias digitales e IA</span>Pensamiento computacional, ciudadanía digital y uso ético de la IA, integrados cuando sean pertinentes.</p>
             </div>
           </div>
-          <details className="group overflow-hidden rounded-2xl border border-border bg-card">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 bg-muted/45 px-4 py-4 font-extrabold text-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20 sm:px-5"><span>Revisar datos curriculares oficiales</span><span className="text-xs font-bold text-primary group-open:hidden">Mostrar</span><span className="hidden text-xs font-bold text-primary group-open:inline">Ocultar</span></summary>
-            <div className="grid gap-5 border-t border-border p-4 sm:p-5">
-              <Field label="Competencias fundamentales" required><div className="grid gap-2 rounded-2xl bg-muted/55 p-2 md:grid-cols-2">{competencies.map((item) => { const checked = fundamentalCompetencies.includes(item.name); return <label key={item.id} className={cn('flex cursor-pointer items-start gap-2 rounded-xl border bg-card p-3 text-sm transition-[border-color,background-color,box-shadow] duration-150', checked ? 'border-primary/35 bg-primary/5 shadow-sm' : 'border-border hover:border-primary/20')}><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={checked} onChange={(event) => { setFundamentalCompetencies((current) => event.target.checked ? [...current, item.name] : current.filter((name) => name !== item.name)); if (event.target.checked && !fundamentalCompetenceId) setFundamentalCompetenceId(item.id); if (!event.target.checked && fundamentalCompetenceId === item.id) setFundamentalCompetenceId('') }} /><span>{item.name}</span></label> })}</div></Field>
-              <Field label="Competencias específicas" required><Textarea rows={5} value={specificCompetence} onChange={(event) => setSpecificCompetence(event.target.value)} /></Field>
-              <div className="grid gap-4 lg:grid-cols-3"><Field label="Contenidos conceptuales"><Textarea rows={6} value={contentConceptual} onChange={(event) => setContentConceptual(event.target.value)} /></Field><Field label="Contenidos procedimentales"><Textarea rows={6} value={contentProcedural} onChange={(event) => setContentProcedural(event.target.value)} /></Field><Field label="Contenidos actitudinales"><Textarea rows={6} value={contentAttitudinal} onChange={(event) => setContentAttitudinal(event.target.value)} /></Field></div>
-              <Field label="Indicadores de logro" required><Textarea rows={5} value={achievementIndicator} onChange={(event) => setAchievementIndicator(event.target.value)} /></Field>
-            </div>
-          </details>
-          <details className="group overflow-hidden rounded-2xl border border-border bg-card">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 bg-muted/45 px-4 py-4 font-extrabold text-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20 sm:px-5"><span>Opciones adicionales</span><span className="text-xs font-bold text-primary group-open:hidden">Mostrar</span><span className="hidden text-xs font-bold text-primary group-open:inline">Ocultar</span></summary>
-            <div className="grid gap-4 border-t border-border p-4 sm:grid-cols-2 sm:p-5">
-              <Field label="Título de la planificación"><Input value={title} placeholder={topic || 'Título'} onChange={(event) => setTitle(event.target.value)} /></Field>
-              <Field label="Eje transversal"><Select value={transversalAxis} onChange={(event) => setTransversalAxis(event.target.value)}><option value="">Sin especificar</option>{transversalAxes.map((axis) => <option key={axis} value={axis}>{axis}</option>)}</Select></Field>
-              <Field label="Centro educativo"><Input value={schoolNameValue} onChange={(event) => setSchoolNameValue(event.target.value)} /></Field>
-              <Field label="Nombre del docente"><Input value={teacherName} onChange={(event) => setTeacherName(event.target.value)} /></Field>
-              <Field label="Período académico"><Select value={academicPeriodId} onChange={(event) => setAcademicPeriodId(event.target.value)}>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Select></Field>
-              <Field label="Estrategias"><Textarea rows={3} value={strategies} onChange={(event) => setStrategies(event.target.value)} /></Field>
-              <Field label="Recursos"><Textarea rows={3} value={resources} onChange={(event) => setResources(event.target.value)} /></Field>
-              <Field label="Evaluación"><Textarea rows={3} value={evaluationMethod} onChange={(event) => setEvaluationMethod(event.target.value)} placeholder={evidence} /></Field>
-              <Field label="Instrumentos"><Textarea rows={3} value={evaluationInstruments} onChange={(event) => setEvaluationInstruments(event.target.value)} placeholder="Rúbrica, lista de cotejo, portafolio..." /></Field>
-              <div className="sm:col-span-2 rounded-xl border border-border bg-muted/20 p-4"><div className="flex items-center justify-between gap-3"><div><h3 className="flex items-center gap-2 font-extrabold"><Link2 className="size-4 text-primary" />Actividades evaluativas vinculadas</h3><p className="mt-1 text-xs text-muted-foreground">Selecciona actividades existentes para integrarlas a esta planificación.</p></div><span className="text-xs font-bold text-primary">{linkedActivityIds.length} seleccionada{linkedActivityIds.length === 1 ? '' : 's'}</span></div><div className="mt-3 grid gap-2">{availableActivities.length ? availableActivities.map((activity) => <label key={activity.id} className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-card p-3"><input type="checkbox" className="mt-1 size-4 accent-primary" checked={linkedActivityIds.includes(activity.id)} onChange={(event) => setLinkedActivityIds((current) => event.target.checked ? [...new Set([...current, activity.id])] : current.filter((id) => id !== activity.id))} /><span><span className="block text-sm font-bold">{activity.name}</span><span className="text-xs text-muted-foreground">{activity.maxScore} puntos · {activity.planningMoment || 'Sin momento'}</span></span></label>) : <p className="rounded-lg border border-dashed border-border bg-card p-3 text-sm text-muted-foreground">No hay actividades disponibles para el curso y período seleccionados.</p>}</div></div>
-            </div>
-          </details>
+        </div> : null}
+
+        {step === 3 ? <div className="grid gap-5 p-5">
+          <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
+            <ReviewItem label="Tipo" value={planningTypeLabels[planningType]} />
+            <ReviewItem label="Curso y asignatura" value={selectedSectionSubject ? `${selectedSectionSubject.gradeName} ${selectedSectionSubject.sectionName} · ${selectedSectionSubject.subjectName}` : 'Sin seleccionar'} />
+            <ReviewItem label="Tema" value={topic || 'Sin tema'} />
+            <ReviewItem label="Fecha" value={plannedDate || 'Sin fecha'} />
+            <ReviewItem label="Duración" value={duration ? planningType === 'DAILY' ? `${duration} minutos` : `${durationDays} días · ${duration} minutos` : 'Sin duración'} />
+          </div>
+          <div className="rounded-xl border border-border bg-primary-light/70 p-4"><p className="font-black text-primary">Desarrolla la secuencia didáctica</p><p className="mt-1 text-sm text-primary/80">Puedes completarla manualmente o usar la IA como borrador editable.</p></div>
+          {alignmentWarning ? <div className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950"><p className="font-extrabold">Revisa la coherencia del tema</p><p className="mt-1 leading-6">{alignmentWarning}</p><label className="mt-3 flex cursor-pointer items-start gap-2 font-bold"><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={alignmentConfirmed} onChange={(event) => setAlignmentConfirmed(event.target.checked)} /><span>Confirmo que este tema corresponde a la asignatura seleccionada.</span></label></div> : null}
+          <Field label="Situación de aprendizaje"><Textarea rows={4} value={learningSituation} onChange={(event) => setLearningSituation(event.target.value)} placeholder="Contexto, reto o problema que dará sentido a lo que aprenderán los estudiantes." /></Field>
+          {planningType === 'DAILY' ? <div className="grid gap-4 lg:grid-cols-3"><MomentField title="Inicio" hint="Motivación, saberes previos y propósito" value={inicio} onChange={setInicio} /><MomentField title="Desarrollo" hint="Actividad principal y construcción del aprendizaje" value={desarrollo} onChange={setDesarrollo} /><MomentField title="Cierre" hint="Síntesis, reflexión y retroalimentación" value={cierre} onChange={setCierre} /></div> : <div className="grid gap-4">{days.map((day, index) => <PlanningDayField key={day.day} day={day} date={plannedDate ? addWeekdays(plannedDate, index) : ''} onChange={(field, value) => setDays((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, [field]: value } : item))} />)}</div>}
+          {planningType === 'DAILY' ? <Field label="Metacognición"><Textarea rows={3} value={metacognition} onChange={(event) => setMetacognition(event.target.value)} placeholder="Ej.: ¿Qué aprendí?, ¿cómo lo aprendí? y ¿dónde puedo aplicarlo?" /></Field> : null}
+          <Field label="Evidencias de aprendizaje" required><Textarea rows={4} value={evidence} onChange={(event) => setEvidence(event.target.value)} placeholder="Productos y desempeños observables" /></Field>
+          <div className="grid gap-4 md:grid-cols-2"><Field label="Estrategias"><Textarea rows={3} value={strategies} onChange={(event) => setStrategies(event.target.value)} /></Field><Field label="Recursos"><Textarea rows={3} value={resources} onChange={(event) => setResources(event.target.value)} /></Field><Field label="Evaluación"><Textarea rows={3} value={evaluationMethod} onChange={(event) => setEvaluationMethod(event.target.value)} placeholder={evidence} /></Field><Field label="Instrumentos"><Textarea rows={3} value={evaluationInstruments} onChange={(event) => setEvaluationInstruments(event.target.value)} placeholder="Rúbrica, lista de cotejo, portafolio..." /></Field></div>
+          <div className="rounded-xl border border-border bg-muted/20 p-4"><div className="flex items-center justify-between gap-3"><div><h3 className="flex items-center gap-2 font-black"><Link2 className="size-4 text-primary" />Actividades evaluativas vinculadas</h3><p className="mt-1 text-xs text-muted-foreground">Selecciona actividades existentes para integrarlas a esta planificación.</p></div><span className="text-xs font-bold text-primary">{linkedActivityIds.length} seleccionada{linkedActivityIds.length === 1 ? '' : 's'}</span></div><div className="mt-3 grid gap-2">{availableActivities.length ? availableActivities.map((activity) => <label key={activity.id} className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-card p-3"><input type="checkbox" className="mt-1 size-4 accent-primary" checked={linkedActivityIds.includes(activity.id)} onChange={(event) => setLinkedActivityIds((current) => event.target.checked ? [...new Set([...current, activity.id])] : current.filter((id) => id !== activity.id))} /><span><span className="block text-sm font-bold">{activity.name}</span><span className="text-xs text-muted-foreground">{activity.maxScore} puntos · {activity.planningMoment || 'Sin momento'}</span></span></label>) : <p className="rounded-lg border border-dashed border-border bg-card p-3 text-sm text-muted-foreground">No hay actividades disponibles para el curso y período seleccionados.</p>}</div></div>
         </div> : null}
       </section>
 
-      <footer className="sticky bottom-3 z-20 flex flex-col-reverse gap-3 rounded-2xl border border-border bg-card/95 p-3 shadow-[0_16px_40px_-24px_rgba(30,79,143,.45)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:p-4">
-        <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><ArrowLeft className="size-4" />{step === 1 ? 'Cancelar' : 'Anterior'}</Button></div>
-        <div className="grid gap-2 sm:flex">{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
+      <footer className="flex flex-col-reverse gap-3 rounded-xl border border-border bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><ArrowLeft className="size-4" />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 && !initial?.entry.id ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
+        <div className="grid gap-2 sm:flex">{step === 3 ? <Button type="button" variant="outline" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Completar con IA</Button> : null}{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
       </footer>
     </form>
   )
 }
 
 function Field({ children, label, required = false }: { children: ReactNode; label: string; required?: boolean }) {
-  return <label className="grid gap-2 text-[13px] font-bold text-foreground"><span>{label}{required ? <span className="text-destructive"> *</span> : null}</span>{children}</label>
-}
-
-function AutoContext({ label, value }: { label: string; value: string }) {
-  return <div className="min-w-0"><p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">{label}</p><p className="mt-1 truncate font-bold text-foreground" title={value}>{value}</p></div>
+  return <label className="grid gap-1.5 text-sm font-bold text-foreground"><span>{label}{required ? <span className="text-destructive"> *</span> : null}</span>{children}</label>
 }
 
 function ReviewItem({ label, value }: { label: string; value: string }) {
@@ -629,7 +660,7 @@ function ReviewItem({ label, value }: { label: string; value: string }) {
 }
 
 function MomentField({ title, hint, value, onChange }: { title: string; hint: string; value: string; onChange: (value: string) => void }) {
-  return <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><div className="border-b border-border bg-primary/[0.045] px-4 py-3"><h3 className="font-extrabold text-primary">{title}</h3><p className="mt-0.5 text-xs leading-5 text-muted-foreground">{hint}</p></div><Textarea className="min-h-48 resize-y rounded-none border-0 shadow-none focus:ring-0" value={value} onChange={(event) => onChange(event.target.value)} placeholder={`Describe las actividades de ${title.toLowerCase()}...`} /></div>
+  return <div className="overflow-hidden rounded-xl border border-border bg-card"><div className="border-b border-border bg-primary/5 px-4 py-3"><h3 className="font-black text-primary">{title}</h3><p className="mt-0.5 text-xs text-muted-foreground">{hint}</p></div><Textarea className="min-h-48 resize-y rounded-none border-0 shadow-none focus:ring-0" value={value} onChange={(event) => onChange(event.target.value)} placeholder={`Describe las actividades de ${title.toLowerCase()}...`} /></div>
 }
 
 function PlanningDayField({ day, date, onChange }: {
