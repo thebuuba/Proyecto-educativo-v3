@@ -8,6 +8,7 @@ import { Link, Navigate } from 'react-router-dom'
 
 import { AuthTransitionLink } from '@/modules/auth/components/AuthTransitionLink'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import { isValidPassword } from '@/modules/auth/utils/password'
 import { FacebookIcon, FLOATING_ICONS, GoogleIcon } from '@/components/auth/AuthIcons'
 
 function getRegisterErrorMessage(error: unknown) {
@@ -17,6 +18,10 @@ function getRegisterErrorMessage(error: unknown) {
 
   if (error.message.toLowerCase().includes('already registered')) {
     return 'Este correo ya está registrado'
+  }
+
+  if (error.message.toLowerCase().includes('password should contain')) {
+    return 'La contraseña debe incluir una mayúscula, una minúscula y un número.'
   }
 
   return error.message
@@ -54,6 +59,11 @@ export function RegisterPage() {
 
     if (password !== confirmPassword) {
       setErrorMessage('Las contraseñas no coinciden.')
+      return
+    }
+
+    if (!isValidPassword(password)) {
+      setErrorMessage('La contraseña debe tener al menos 8 caracteres e incluir una mayúscula, una minúscula y un número.')
       return
     }
 
@@ -180,9 +190,9 @@ export function RegisterPage() {
             <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'}
-                placeholder="Mínimo 6 caracteres"
+                placeholder="Mínimo 8 caracteres"
                 required
-                minLength={6}
+                minLength={8}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 pr-11 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10"
@@ -196,6 +206,9 @@ export function RegisterPage() {
                 {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
               </button>
             </div>
+            <p className="mt-1.5 text-xs text-gray-500">
+              Usa al menos 8 caracteres, una mayúscula, una minúscula y un número.
+            </p>
           </div>
 
           <div>
