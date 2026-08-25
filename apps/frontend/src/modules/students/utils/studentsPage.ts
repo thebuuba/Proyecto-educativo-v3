@@ -6,6 +6,15 @@ export function getCourseSubjects(course: EnrollmentCourse) {
     : [{ id: course.subjectId, name: course.subjectName, area: course.area }]
 }
 
+export function groupEnrollmentCourses(courses: EnrollmentCourse[]) {
+  const groups = { Primaria: [] as EnrollmentCourse[], Secundaria: [] as EnrollmentCourse[], Otros: [] as EnrollmentCourse[] }
+  for (const course of courses) {
+    const level = course.academicLevelName.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+    groups[level.includes('primar') ? 'Primaria' : level.includes('secund') ? 'Secundaria' : 'Otros'].push(course)
+  }
+  return Object.entries(groups).filter(([, items]) => items.length)
+}
+
 export function splitFullName(fullName: string) {
   const parts = fullName.trim().split(/\s+/).filter(Boolean)
   const firstName = parts.shift() || fullName.trim()

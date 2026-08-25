@@ -3,6 +3,7 @@
  */
 
 import {
+  Archive,
   ArrowLeft,
   BookOpen,
   CalendarRange,
@@ -25,7 +26,7 @@ import { StudentDetailPanel } from '@/modules/students/components/StudentDetailP
 import { StudentForm } from '@/modules/students/components/StudentForm'
 import { StudentsTable } from '@/modules/students/components/StudentsTable'
 import { CourseCard, FeedbackMessage, SubjectSummary } from '@/modules/students/components/StudentsPageParts'
-import { buildStudentsCsv, splitFullName, toStudentStatus } from '@/modules/students/utils/studentsPage'
+import { buildStudentsCsv, groupEnrollmentCourses, splitFullName, toStudentStatus } from '@/modules/students/utils/studentsPage'
 import {
   createStudentInCourse,
   getEnrollmentCourses,
@@ -77,6 +78,7 @@ export function StudentsPage() {
     () => courses.find((course) => course.id === selectedCourseId) ?? null,
     [courses, selectedCourseId],
   )
+  const groupedCourses = useMemo(() => groupEnrollmentCourses(courses), [courses])
 
   const canCreateEnrollment = hasRole(['admin', 'director', 'coordinator', 'teacher'])
   const canEditStudent = hasRole(['admin', 'director', 'coordinator'])
@@ -368,10 +370,10 @@ export function StudentsPage() {
             required
           >
             <option value="">Selecciona un curso</option>
-            {courses.map((course) => (
-              <option key={course.id} value={course.id}>
-                {course.label}
-              </option>
+            {groupedCourses.map(([level, levelCourses]) => (
+              <optgroup key={level} label={level}>
+                {levelCourses.map((course) => <option key={course.id} value={course.id}>{course.label}</option>)}
+              </optgroup>
             ))}
           </Select>
         </label>
@@ -414,16 +416,31 @@ export function StudentsPage() {
             </span>
           </div>
 
-          <div className={cn(
-            'grid min-w-0 grid-cols-1 gap-4 p-5 sm:p-7',
-            courses.length > 1 && '2xl:grid-cols-2',
-          )}>
-            {courses.map((course) => (
-              <CourseCard
-                key={course.id}
-                course={course}
-                onSelect={() => selectCourse(course.id)}
-              />
+          <div className="space-y-8 p-5 sm:p-7">
+            {groupedCourses.map(([level, levelCourses]) => (
+              <section key={level} aria-labelledby={`courses-${level.toLowerCase()}`}>
+                <div className="mb-4 flex items-center gap-3">
+                  <h3 id={`courses-${level.toLowerCase()}`} className="text-lg font-extrabold text-primary">{level}</h3>
+                  <span className="rounded-full bg-primary/8 px-2.5 py-1 text-xs font-bold text-primary">{levelCourses.length} curso{levelCourses.length === 1 ? '' : 's'}</span>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className={cn('grid min-w-0 grid-cols-1 gap-4', levelCourses.length > 1 && '2xl:grid-cols-2')}>
+                  {levelCourses.map((course) => (
+                    <div key={course.id} className="relative">
+                      <CourseCard course={course} onSelect={() => selectCourse(course.id)} />
+                      {canCreateEnrollment ? (
+                        <Link
+                          to={`/cursos?courseId=${course.sectionId}`}
+                          aria-label={`Administrar curso ${course.gradeName} ${course.sectionName}`}
+                          className="absolute right-4 top-4 inline-flex size-11 items-center justify-center gap-2 rounded-xl border border-border bg-card text-xs font-bold text-muted-foreground shadow-sm transition hover:border-primary/30 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-auto sm:px-3"
+                        >
+                          <Archive className="size-4" /> <span className="hidden sm:inline">Administrar curso</span>
+                        </Link>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         </section>

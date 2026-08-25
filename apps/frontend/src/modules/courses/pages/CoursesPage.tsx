@@ -88,6 +88,7 @@ import { SectionForm } from '@/modules/courses/components/SectionForm'
 import { SubjectAssignmentForm } from '@/modules/courses/components/SubjectAssignmentForm'
 import { TeacherAssignmentForm } from '@/modules/courses/components/TeacherAssignmentForm'
 import { CourseTeamsPanel } from '@/modules/courses/components/CourseTeamsPanel'
+import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import {
   CoursesAdvancedFiltersDrawer,
   type CourseAdvancedFilters,
@@ -108,6 +109,7 @@ import { useCourses } from '@/modules/courses/hooks/useCourses'
 import type {
   CreateSubjectInput,
   GradeWithSections,
+  CourseTeam,
   Section,
   SectionSubjectAssignment,
   Subject,
@@ -643,14 +645,16 @@ export function CoursesPage() {
             ) : null}
           </header>
 
-          <section className="rounded-3xl bg-card p-4 shadow-sm">
-            <div className="mb-4 flex items-center gap-3">
+          <details className="group rounded-3xl bg-card shadow-sm">
+            <summary className="flex cursor-pointer list-none items-center gap-3 rounded-3xl p-4 transition hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-details-marker]:hidden">
               <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary"><SlidersHorizontal className="size-4" /></span>
-              <div>
+              <div className="min-w-0 flex-1">
                 <h2 className="text-sm font-black text-foreground">Filtrar cursos</h2>
                 <p className="text-xs text-muted-foreground">Encuentra rápidamente el curso que necesitas.</p>
               </div>
-            </div>
+              <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" aria-hidden="true" />
+            </summary>
+            <div className="px-4 pb-4">
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(6,minmax(8.5rem,1fr))_auto]">
               <FilterSelect label="Nivel" value={levelFilter} onChange={(value) => { setLevelFilter(value); setCycleFilter('all'); setSubjectFilter('all'); setGradeFilter('all'); setSectionFilter('all') }} options={levelFilters.map((value) => ({ value, label: cleanLevelName(value) }))} />
               <FilterSelect label="Ciclo" value={cycleFilter} onChange={(value) => { setCycleFilter(value); setSubjectFilter('all'); setGradeFilter('all'); setSectionFilter('all') }} options={cycleFilters} />
@@ -689,7 +693,8 @@ export function CoursesPage() {
             <div className="mt-3 flex justify-end border-t border-border pt-3">
               <button type="button" className="inline-flex h-9 items-center gap-2 rounded-lg px-3 text-xs font-bold text-muted-foreground transition hover:bg-muted hover:text-foreground" onClick={resetCourseFilters}><RotateCcw className="size-4" /> Restablecer filtros</button>
             </div>
-          </section>
+            </div>
+          </details>
 
           <CoursesAdvancedFiltersDrawer
             open={moreFiltersOpen}
@@ -1747,10 +1752,12 @@ function SubjectDetailView({
   const [studentsLoading, setStudentsLoading] = useState(true)
   const [studentsError, setStudentsError] = useState<string | null>(null)
   const [overview, setOverview] = useState<{
-    activities: Array<{ id: string; name: string; date?: string; activityType?: 'individual' | 'group'; instrumentId?: string }>
-    gradeRecords: Array<{ score: number; maxScore: number; evaluationActivityId?: string | null }>
+    gradingStudents: StudentGradeRow[]
+    activities: GradingActivity[]
+    gradeRecords: GradeRecordRow[]
+    teams: CourseTeam[]
     plannings: Array<{ id: string; title: string; plannedDate: string | null }>
-  }>({ activities: [], gradeRecords: [], plannings: [] })
+  }>({ gradingStudents: [], activities: [], gradeRecords: [], teams: [], plannings: [] })
   const [activityBlockPickerOpen, setActivityBlockPickerOpen] = useState(false)
 
   useEffect(() => {
@@ -1776,11 +1783,14 @@ function SubjectDetailView({
     Promise.allSettled([
       getGradingWorkspace({ sectionSubjectId: item.assignment.id, includeOptions: false }),
       getPlanningEntries({ sectionSubjectId: item.assignment.id }),
-    ]).then(([gradingResult, planningResult]) => {
+      getCourseTeams(item.assignment.id),
+    ]).then(([gradingResult, planningResult, teamsResult]) => {
       if (!active) return
       setOverview({
+        gradingStudents: gradingResult.status === 'fulfilled' ? gradingResult.value.students : [],
         activities: gradingResult.status === 'fulfilled' ? gradingResult.value.activities : [],
         gradeRecords: gradingResult.status === 'fulfilled' ? gradingResult.value.gradeRecords : [],
+        teams: teamsResult.status === 'fulfilled' ? teamsResult.value : [],
         plannings: planningResult.status === 'fulfilled' ? planningResult.value.map((entry) => ({ id: entry.id, title: entry.title, plannedDate: entry.plannedDate })) : [],
       })
     })
@@ -1880,6 +1890,10 @@ function SubjectDetailView({
           error={studentsError}
           courseId={item.assignment?.id ?? null}
           canEnroll={canEnroll}
+          gradingStudents={overview.gradingStudents}
+          activities={overview.activities}
+          gradeRecords={overview.gradeRecords}
+          teams={overview.teams}
         />
       ) : activeTab === 'equipos' ? (
         <CourseTeamsPanel sectionSubjectId={item.assignment?.id ?? null} students={students} canManage={canEnroll} />
@@ -2022,11 +2036,11 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
 
       <DashboardPanel title="Resumen académico">
         <div className="grid gap-2 p-3 sm:grid-cols-2 xl:grid-cols-5">
-          <AcademicSummaryCard icon={<ClipboardList className="size-4" />} value={activityCount} label="Actividades creadas" detail={`${evaluatedActivityIds.size} evaluadas · ${pendingActivities} pendientes`} tone="violet" />
-          <AcademicSummaryCard icon={<FileText className="size-4" />} value={plannings.length} label="Planificaciones creadas" detail={`${plannings.filter((entry) => entry.plannedDate).length} programadas`} tone="orange" />
-          <AcademicSummaryCard icon={<UsersRound className="size-4" />} value={teams} label="Equipos creados" detail={`${students} estudiantes`} tone="blue" />
-          <AcademicSummaryCard icon={<CalendarCheck2 className="size-4" />} value={attendancePercent === null ? '—' : `${attendancePercent}%`} label="Asistencia promedio" detail="Período actual" tone="emerald" />
-          <AcademicSummaryCard icon={<ChartColumn className="size-4" />} value={averageScore === null ? '—' : `${averageScore}%`} label="Promedio general" detail={`${gradeRecords.length} registros`} tone="orange" />
+          <AcademicSummaryCard icon={<ClipboardList className="size-4" />} value={activityCount} label="Actividades creadas" detail={`${evaluatedActivityIds.size} evaluadas · ${pendingActivities} pendientes`} tone="violet" onClick={() => onNavigate('actividades')} />
+          <AcademicSummaryCard icon={<FileText className="size-4" />} value={plannings.length} label="Planificaciones creadas" detail={`${plannings.filter((entry) => entry.plannedDate).length} programadas`} tone="orange" onClick={() => onNavigate('planificaciones')} />
+          <AcademicSummaryCard icon={<UsersRound className="size-4" />} value={teams} label="Equipos creados" detail={`${students} estudiantes`} tone="blue" onClick={() => onNavigate('equipos')} />
+          <AcademicSummaryCard icon={<CalendarCheck2 className="size-4" />} value={attendancePercent === null ? '—' : `${attendancePercent}%`} label="Asistencia promedio" detail="Período actual" tone="emerald" onClick={() => onNavigate('asistencia')} />
+          <AcademicSummaryCard icon={<ChartColumn className="size-4" />} value={averageScore === null ? '—' : `${averageScore}%`} label="Promedio general" detail={`${gradeRecords.length} registros`} tone="orange" onClick={() => onNavigate('calificaciones')} />
         </div>
       </DashboardPanel>
 
@@ -2056,9 +2070,9 @@ function ActivityPreview({ activity }: { activity: { name: string; date?: string
   return <div className="flex items-center gap-3 rounded-xl border border-slate-100 p-2.5"><span className="flex size-10 shrink-0 flex-col items-center justify-center rounded-lg border border-emerald-200 text-emerald-700"><strong className="text-sm leading-none">{date ? date.getDate() : '—'}</strong><span className="mt-0.5 text-[9px] font-extrabold uppercase">{date ? date.toLocaleDateString('es-DO', { month: 'short' }).replace('.', '') : 'S/F'}</span></span><span className="min-w-0 flex-1"><span className="block truncate text-[11px] font-extrabold">{activity.name}</span><span className="mt-1 block text-[10px] text-muted-foreground">{activity.activityType === 'group' ? 'Trabajo en equipos' : 'Actividad individual'}</span></span><span className="rounded-full bg-amber-50 px-2 py-1 text-[10px] font-bold text-amber-700">Pendiente</span></div>
 }
 
-function AcademicSummaryCard({ icon, value, label, detail, tone }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'violet' | 'orange' | 'blue' | 'emerald' }) {
+function AcademicSummaryCard({ icon, value, label, detail, tone, onClick }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'violet' | 'orange' | 'blue' | 'emerald'; onClick: () => void }) {
   const tones = { violet: 'bg-violet-50 text-violet-600', orange: 'bg-orange-50 text-orange-600', blue: 'bg-blue-50 text-blue-600', emerald: 'bg-emerald-50 text-emerald-600' }
-  return <div className="rounded-xl border border-slate-200 bg-white p-3"><div className="flex items-center gap-2.5"><span className={cn('flex size-9 items-center justify-center rounded-lg', tones[tone])}>{icon}</span><div><strong className="block text-xl leading-none">{value}</strong><span className="mt-1 block text-xs font-bold leading-tight text-slate-700">{label}</span></div></div><p className="mt-3 border-t border-slate-100 pt-2.5 text-xs leading-4 text-muted-foreground">{detail}</p></div>
+  return <button type="button" onClick={onClick} aria-label={`Ir a ${label}`} className="w-full rounded-xl border border-slate-200 bg-white p-3 text-left transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><span className="flex items-center gap-2.5"><span className={cn('flex size-9 items-center justify-center rounded-lg', tones[tone])}>{icon}</span><span><strong className="block text-xl leading-none">{value}</strong><span className="mt-1 block text-xs font-bold leading-tight text-slate-700">{label}</span></span></span><span className="mt-3 block border-t border-slate-100 pt-2.5 text-xs leading-4 text-muted-foreground">{detail}</span></button>
 }
 
 function NoticeRow({ tone, title, detail, action, onAction }: { tone: 'amber' | 'blue'; title: string; detail: string; action?: string; onAction?: () => void }) {
@@ -2126,13 +2140,21 @@ function DetailTab({ active, icon, label, onClick }: { active?: boolean; icon: R
   )
 }
 
-function EstudiantesTab({ students, loading, error, courseId, canEnroll }: {
-  students: Array<{ firstName: string; lastName: string; studentCode: string }>
+function EstudiantesTab({ students, loading, error, courseId, canEnroll, gradingStudents, activities, gradeRecords, teams }: {
+  students: StudentAttendanceRow[]
   loading: boolean
   error: string | null
   courseId: string | null
   canEnroll: boolean
+  gradingStudents: StudentGradeRow[]
+  activities: GradingActivity[]
+  gradeRecords: GradeRecordRow[]
+  teams: CourseTeam[]
 }) {
+  const [search, setSearch] = useState('')
+  const [filter, setFilter] = useState<'all' | 'team' | 'no-team' | 'pending'>('all')
+  const [selectedEnrollmentId, setSelectedEnrollmentId] = useState<string | null>(null)
+
   if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando estudiantes...</div>
   if (error) return <ErrorState message={error} />
   if (!students.length) {
@@ -2184,26 +2206,152 @@ function EstudiantesTab({ students, loading, error, courseId, canEnroll }: {
     )
   }
 
+  const teamByEnrollment = new Map(teams.flatMap((team) => team.members.map((member) => [member.enrollmentId, team] as const)))
+  const gradingByEnrollment = new Map(gradingStudents.map((student) => [student.enrollmentId, student]))
+  const rows = students.map((student, index) => {
+    const gradingStudent = gradingByEnrollment.get(student.enrollmentId)
+    const records = gradeRecords.filter((record) => record.enrollmentId === student.enrollmentId && record.maxScore > 0)
+    const activityRecords = activities.map((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).filter((record): record is GradeRecordRow => Boolean(record))
+    const earned = activityRecords.reduce((sum, record) => sum + record.score, 0)
+    const possible = activityRecords.reduce((sum, record) => sum + record.maxScore, 0)
+    const average = possible > 0 ? Math.round((earned / possible) * 100) : null
+    const completed = activityRecords.length
+    const progressStatus: 'Al día' | 'En progreso' | 'Sin actividad' = activities.length > 0 && completed >= activities.length
+      ? 'Al día'
+      : completed > 0
+        ? 'En progreso'
+        : 'Sin actividad'
+    return {
+      ...student,
+      listNumber: gradingStudent?.listNumber ?? student.listNumber ?? index + 1,
+      team: teamByEnrollment.get(student.enrollmentId) ?? null,
+      records,
+      completed,
+      average,
+      progressStatus,
+    }
+  })
+  const normalizedSearch = search.trim().toLocaleLowerCase('es')
+  const filteredRows = rows.filter((row) => {
+    const matchesSearch = !normalizedSearch || `${row.firstName} ${row.lastName}`.toLocaleLowerCase('es').includes(normalizedSearch)
+    const matchesFilter = filter === 'all'
+      || (filter === 'team' && row.team)
+      || (filter === 'no-team' && !row.team)
+      || (filter === 'pending' && row.completed < activities.length)
+    return matchesSearch && matchesFilter
+  })
+  const selected = rows.find((row) => row.enrollmentId === selectedEnrollmentId) ?? null
+  const pendingActivities = activities.filter((activity) => rows.some((row) => !scoreForActivity(row.records, row.enrollmentId, activity.id))).length
+  const evaluatedRows = rows.filter((row) => row.average !== null)
+  const courseAverage = evaluatedRows.length
+    ? Math.round(evaluatedRows.reduce((sum, row) => sum + (row.average ?? 0), 0) / evaluatedRows.length)
+    : null
+
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-      <table className="w-full text-left text-sm">
-        <thead className="border-b border-border bg-muted text-xs font-bold uppercase tracking-wide text-muted-foreground">
-          <tr>
-            <th className="px-5 py-3">Codigo</th>
-            <th className="px-5 py-3">Nombre</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-border">
-          {students.map((s) => (
-            <tr key={s.studentCode} className="text-foreground">
-              <td className="px-5 py-3 font-mono text-xs text-muted-foreground">{s.studentCode}</td>
-              <td className="px-5 py-3 font-medium">{s.firstName} {s.lastName}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <section className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h2 className="text-lg font-extrabold text-foreground">Estudiantes de la asignatura</h2>
+          <p className="mt-0.5 text-xs text-muted-foreground">Consulta el progreso general y abre el detalle de cada estudiante.</p>
+        </div>
+        <button type="button" disabled title="Próximamente" className="inline-flex h-9 cursor-not-allowed items-center gap-2 rounded-lg border border-border px-3 text-xs font-bold text-muted-foreground opacity-70"><FileText className="size-4" /> Exportar</button>
+      </div>
+
+      <div className="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-4">
+        <StudentMetric icon={<UsersRound className="size-4" />} value={rows.length} label="Estudiantes matriculados" tone="bg-blue-50 text-blue-700" />
+        <StudentMetric icon={<UsersRound className="size-4" />} value={teams.length} label="Equipos" tone="bg-emerald-50 text-emerald-700" />
+        <StudentMetric icon={<ClipboardList className="size-4" />} value={pendingActivities} label="Actividades pendientes" tone="bg-violet-50 text-violet-700" />
+        <StudentMetric icon={<ChartColumn className="size-4" />} value={courseAverage === null ? '—' : `${courseAverage}%`} label="Promedio del curso" tone="bg-orange-50 text-orange-700" />
+      </div>
+
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <label className="relative min-w-52 flex-1 sm:max-w-xs">
+          <span className="sr-only">Buscar estudiante</span>
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+          <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar estudiante..." className="h-9 w-full rounded-lg border border-border bg-background pl-9 pr-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10" />
+        </label>
+        {([
+          ['all', 'Todos'],
+          ['team', 'Con equipo'],
+          ['no-team', 'Sin equipo'],
+          ['pending', 'Con pendientes'],
+        ] as const).map(([value, label]) => (
+          <button key={value} type="button" onClick={() => setFilter(value)} className={cn('h-8 rounded-full border px-3 text-xs font-bold transition', filter === value ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-primary')}>{label}</button>
+        ))}
+      </div>
+
+      <div className={cn('mt-4 grid gap-4', selected && 'xl:grid-cols-[minmax(0,1fr)_21rem]')}>
+        <div className="min-w-0 overflow-hidden rounded-xl border border-border">
+          <div className="max-h-[30rem] overflow-auto">
+            <table className="w-full min-w-[760px] text-left text-xs">
+              <thead className="sticky top-0 z-10 border-b border-border bg-muted text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
+                <tr><th className="w-12 px-3 py-3 text-center">#</th><th className="px-3 py-3">Estudiante</th><th className="px-3 py-3">Equipo</th><th className="px-3 py-3">Actividades</th><th className="px-3 py-3">Promedio</th><th className="px-3 py-3">Asistencia</th><th className="px-3 py-3">Estado</th></tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {filteredRows.map((row) => (
+                  <tr key={row.enrollmentId} tabIndex={0} role="button" onClick={() => setSelectedEnrollmentId(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') setSelectedEnrollmentId(row.enrollmentId) }} className={cn('cursor-pointer text-foreground outline-none transition hover:bg-primary/[0.035] focus:bg-primary/[0.05]', selectedEnrollmentId === row.enrollmentId && 'bg-primary/[0.055]')}>
+                    <td className="px-3 py-3 text-center font-bold text-muted-foreground">{row.listNumber}</td>
+                    <td className="px-3 py-3 font-bold">{row.lastName}, {row.firstName}</td>
+                    <td className="px-3 py-3">{row.team ? <span className="font-semibold text-emerald-700">{row.team.name}</span> : <span className="text-muted-foreground">Sin equipo</span>}</td>
+                    <td className="px-3 py-3"><span className="font-bold tabular-nums">{row.completed} / {activities.length}</span><div className="mt-1 h-1 w-20 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: activities.length ? `${Math.min(100, (row.completed / activities.length) * 100)}%` : '0%' }} /></div></td>
+                    <td className="px-3 py-3 font-bold tabular-nums">{row.average === null ? '—' : `${row.average}%`}</td>
+                    <td className="px-3 py-3 text-muted-foreground">—</td>
+                    <td className="px-3 py-3"><StudentStatusBadge status={row.progressStatus} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {!filteredRows.length ? <p className="px-4 py-10 text-center text-sm text-muted-foreground">No hay estudiantes que coincidan con el filtro.</p> : null}
+          <p className="border-t border-border px-3 py-2 text-[11px] text-muted-foreground">Mostrando {filteredRows.length} de {rows.length} estudiantes</p>
+        </div>
+
+        {selected ? <StudentDetailPanel student={selected} activities={activities} onClose={() => setSelectedEnrollmentId(null)} /> : null}
+      </div>
+
+      <div className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-primary/[0.035] px-4 py-3 text-xs text-muted-foreground"><Sparkles className="size-4 text-primary" /><span><strong className="text-foreground">Consejo rápido:</strong> haz clic en cualquier estudiante para ver su progreso detallado.</span></div>
+    </section>
   )
+}
+
+function StudentMetric({ icon, value, label, tone }: { icon: ReactNode; value: string | number; label: string; tone: string }) {
+  return <div className="flex min-h-16 items-center gap-3 rounded-xl border border-border px-3 py-2.5"><span className={cn('flex size-9 shrink-0 items-center justify-center rounded-lg', tone)}>{icon}</span><span><strong className="block text-lg leading-none tabular-nums text-foreground">{value}</strong><span className="mt-1 block text-[10px] font-semibold text-muted-foreground">{label}</span></span></div>
+}
+
+function StudentStatusBadge({ status }: { status: 'Al día' | 'En progreso' | 'Sin actividad' }) {
+  return <span className={cn('inline-flex rounded-full px-2 py-1 text-[10px] font-bold', status === 'Al día' ? 'bg-emerald-50 text-emerald-700' : status === 'En progreso' ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600')}>{status}</span>
+}
+
+function StudentDetailPanel({ student, activities, onClose }: {
+  student: StudentAttendanceRow & { team: CourseTeam | null; records: GradeRecordRow[]; completed: number; average: number | null; progressStatus: 'Al día' | 'En progreso' | 'Sin actividad' }
+  activities: GradingActivity[]
+  onClose: () => void
+}) {
+  const blockAverages = competencyBlocks.map((block) => {
+    const activityIds = new Set(activities.filter((activity) => activity.competencyBlockId === block.id).map((activity) => activity.id))
+    const records = [...activityIds].map((activityId) => scoreForActivity(student.records, student.enrollmentId, activityId)).filter((record): record is GradeRecordRow => Boolean(record && record.maxScore > 0))
+    return { ...block, average: records.length ? Math.round(records.reduce((sum, record) => sum + (record.score / record.maxScore) * 100, 0) / records.length) : null }
+  })
+  return (
+    <aside className="rounded-xl border border-border bg-background p-4 shadow-sm" aria-label={`Detalle de ${student.firstName} ${student.lastName}`}>
+      <div className="flex items-start justify-between gap-3"><div><h3 className="font-extrabold text-foreground">{student.firstName} {student.lastName}</h3><p className="mt-1 text-xs text-muted-foreground">{student.team?.name ?? 'Sin equipo'}</p></div><button type="button" onClick={onClose} className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground" aria-label="Cerrar detalle"><X className="size-4" /></button></div>
+      <div className="mt-4 grid grid-cols-3 gap-2"><DetailMetric value={`${student.completed}/${activities.length}`} label="Actividades" /><DetailMetric value={student.average === null ? '—' : `${student.average}%`} label="Promedio" /><DetailMetric value="—" label="Asistencia" /></div>
+      <h4 className="mt-5 text-xs font-extrabold text-foreground">Promedio por bloque</h4>
+      <div className="mt-2 grid grid-cols-2 gap-2">{blockAverages.map((block) => <div key={block.id} title={block.name} className="rounded-lg border border-border p-2 text-center"><strong className="block text-sm text-primary">{block.average === null ? '—' : `${block.average}%`}</strong><span className="mt-0.5 block text-[10px] text-muted-foreground">{block.shortName}</span></div>)}</div>
+      <div className="mt-5 flex items-center justify-between"><h4 className="text-xs font-extrabold text-foreground">Actividades</h4><span className="text-[10px] text-muted-foreground">{activities.length} en total</span></div>
+      <div className="mt-2 max-h-64 space-y-2 overflow-auto pr-1">
+        {activities.length ? activities.map((activity) => {
+          const record = scoreForActivity(student.records, student.enrollmentId, activity.id)
+          const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId)
+          return <details key={activity.id} className="group rounded-lg border border-border bg-card"><summary className="cursor-pointer list-none p-2.5"><div className="flex items-center justify-between gap-2"><span className="min-w-0 truncate text-xs font-bold text-foreground">{activity.name}</span><span className={cn('shrink-0 text-[10px] font-bold', record ? 'text-primary' : 'text-muted-foreground')}>{record ? `${record.score}/${record.maxScore}` : 'Pendiente'}</span></div><p className="mt-1 text-[10px] text-muted-foreground">{block?.shortName ?? 'Sin bloque'}</p></summary><div className="border-t border-border px-2.5 py-2 text-[11px] text-muted-foreground">{record ? `Resultado: ${Math.round((record.score / record.maxScore) * 100)}%. ${record.status ?? 'Calificada'}.` : 'Esta actividad todavía no ha sido completada o calificada.'}</div></details>
+        }) : <p className="rounded-lg bg-muted px-3 py-5 text-center text-xs text-muted-foreground">No hay actividades creadas.</p>}
+      </div>
+    </aside>
+  )
+}
+
+function DetailMetric({ value, label }: { value: string; label: string }) {
+  return <div className="rounded-lg bg-muted/70 px-2 py-2 text-center"><strong className="block text-sm text-foreground">{value}</strong><span className="text-[9px] font-semibold text-muted-foreground">{label}</span></div>
 }
 
 function EmptyStep({ number, text }: { number: string; text: string }) {

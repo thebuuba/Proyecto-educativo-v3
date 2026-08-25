@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildStudentsCsv, splitFullName, toStudentStatus } from './studentsPage'
+import { buildStudentsCsv, groupEnrollmentCourses, splitFullName, toStudentStatus } from './studentsPage'
 
 describe('student page utilities', () => {
   it('normalizes names and form statuses', () => {
@@ -14,5 +14,17 @@ describe('student page utilities', () => {
       { gradeName: '1ro', sectionName: 'A', area: 'General', subjectName: 'Lengua', subjectId: 's1', shift: 'Mañana', schoolYearName: '2026-2027', subjects: [] } as never,
     )
     expect(csv).toContain('"Ana ""Nani"" Pérez"')
+  })
+
+  it('groups courses by primary and secondary level', () => {
+    const groups = groupEnrollmentCourses([
+      { id: 'p1', academicLevelName: 'Nivel Primario' },
+      { id: 's1', academicLevelName: 'Secundaria' },
+    ] as never)
+
+    expect(groups.map(([name, courses]) => [name, courses.map((course) => course.id)])).toEqual([
+      ['Primaria', ['p1']],
+      ['Secundaria', ['s1']],
+    ])
   })
 })
