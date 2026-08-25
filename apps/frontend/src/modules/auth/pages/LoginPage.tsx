@@ -86,7 +86,7 @@ export function LoginPage() {
   }
 
   return (
-    <main className="auth-screen page-enter relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10" style={{ backgroundColor: '#FAFBFC' }}>
+    <main className="auth-screen page-enter relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 py-10">
       <div className="pointer-events-none absolute inset-0">
         {FLOATING_ICONS.map((item, i) => (
           <item.Icon
@@ -97,7 +97,7 @@ export function LoginPage() {
               left: item.left,
               width: item.size,
               height: item.size,
-              color: '#1E3D8F',
+              color: 'var(--primary)',
               opacity: 0.06,
               transform: `translate(-50%, -50%) rotate(${item.rotate}deg)`,
             }}
@@ -111,7 +111,7 @@ export function LoginPage() {
             right: '-10%',
             width: 500,
             height: 500,
-            background: 'radial-gradient(circle, rgba(30,61,143,0.08) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(74,162,227,0.12) 0%, transparent 70%)',
           }}
         />
         <div
@@ -121,7 +121,7 @@ export function LoginPage() {
             left: '-10%',
             width: 500,
             height: 500,
-            background: 'radial-gradient(circle, rgba(30,61,143,0.06) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(74,162,227,0.09) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -129,8 +129,7 @@ export function LoginPage() {
       <div className="auth-panel relative z-10 w-full max-w-sm">
         <div className="mb-10 flex flex-col items-center">
           <div
-            className="mb-4 flex size-14 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-md"
-            style={{ backgroundColor: '#1E3D8F', boxShadow: '0 4px 14px rgba(30,61,143,0.25)' }}
+            className="mb-4 flex size-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-primary-foreground shadow-md shadow-primary/25"
           >
             AB
           </div>
@@ -183,7 +182,7 @@ export function LoginPage() {
                 setEmail(e.target.value)
                 setErrorMessage('')
               }}
-              className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10"
+              className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/15"
             />
           </div>
 
@@ -201,7 +200,7 @@ export function LoginPage() {
                   setPassword(e.target.value)
                   setErrorMessage('')
                 }}
-                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 pr-11 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10"
+                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 pr-11 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/15"
               />
               <button
                 type="button"
@@ -224,15 +223,14 @@ export function LoginPage() {
                   setRememberMe(checked)
                   setRememberSession(checked)
                 }}
-                className="size-4 cursor-pointer accent-[#1E3D8F]"
+                className="size-4 cursor-pointer accent-primary"
               />
               <span className="text-sm text-gray-600">Recordarme</span>
             </label>
             <button
               type="button"
               onClick={handleForgotPassword}
-              className="text-sm font-medium hover:underline"
-              style={{ color: '#1E3D8F' }}
+              className="text-sm font-medium text-foreground decoration-primary hover:underline"
             >
               ¿Olvidaste tu contraseña?
             </button>
@@ -241,8 +239,7 @@ export function LoginPage() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-100 hover:opacity-90 active:scale-[0.94] active:shadow-none disabled:cursor-not-allowed disabled:opacity-60"
-            style={{ backgroundColor: '#1E3D8F' }}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-100 hover:bg-primary-hover active:scale-[0.94] active:shadow-none disabled:cursor-not-allowed disabled:opacity-60"
           >
             {isSubmitting ? 'Ingresando...' : 'Iniciar sesión'}
           </button>
@@ -283,8 +280,7 @@ export function LoginPage() {
           <AuthTransitionLink
             to="/registro"
             direction="forward"
-            className="font-semibold hover:underline"
-            style={{ color: '#1E3D8F' }}
+            className="font-semibold text-foreground decoration-primary hover:underline"
           >
             Regístrate
           </AuthTransitionLink>

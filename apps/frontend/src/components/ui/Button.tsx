@@ -24,7 +24,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary text-primary-foreground shadow-[0_4px_18px_rgba(31,78,95,.30)] hover:opacity-90 focus-visible:ring-ring',
+    'bg-primary text-primary-foreground shadow-[0_4px_18px_rgba(74,162,227,.30)] hover:bg-primary-hover focus-visible:ring-ring',
   secondary:
     'bg-card text-foreground shadow-sm hover:bg-muted focus-visible:ring-ring',
   ghost:

@@ -6922,11 +6922,11 @@ function blockSummaryDoc(payload: BlockSummaryExport) {
     <title>Resumen de bloques</title>
     <style>
       body { font-family: Arial, sans-serif; color: #111827; }
-      h1 { color: #1f4e95; font-size: 24px; margin-bottom: 4px; }
+      h1 { color: #272320; font-size: 24px; margin-bottom: 4px; }
       p { margin: 4px 0; }
       table { border-collapse: collapse; width: 100%; margin-top: 18px; }
       th, td { border: 1px solid #d9e2ec; padding: 8px; font-size: 12px; }
-      th { background: #eef4ff; color: #1f4e95; text-align: left; }
+      th { background: #DDEEF9; color: #272320; text-align: left; }
     </style>
   </head>
   <body>

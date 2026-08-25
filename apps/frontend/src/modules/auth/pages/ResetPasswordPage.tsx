@@ -67,11 +67,11 @@ export function ResetPasswordPage() {
         <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
           <input className="w-full rounded-xl border border-gray-200 px-4 py-3" type="password" required value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Nueva contraseña" autoComplete="new-password" />
           <input className="w-full rounded-xl border border-gray-200 px-4 py-3" type="password" required value={confirmation} onChange={(event) => setConfirmation(event.target.value)} placeholder="Confirmar contraseña" autoComplete="new-password" />
-          <button className="w-full rounded-xl bg-[#1E3D8F] px-4 py-3 font-medium text-white disabled:opacity-60" disabled={submitting || !sessionReady} type="submit">
+          <button className="w-full rounded-xl bg-primary px-4 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary-hover disabled:opacity-60" disabled={submitting || !sessionReady} type="submit">
             {submitting ? 'Guardando…' : 'Guardar contraseña'}
           </button>
         </form>
-        <Link className="mt-5 block text-center text-sm font-medium text-[#1E3D8F]" to="/login">Volver al inicio de sesión</Link>
+        <Link className="mt-5 block text-center text-sm font-medium text-foreground decoration-primary hover:underline" to="/login">Volver al inicio de sesión</Link>
       </section>
     </main>
   )
