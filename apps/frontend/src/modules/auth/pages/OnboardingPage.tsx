@@ -12,7 +12,7 @@ import { FLOATING_ICONS } from '@/components/auth/AuthIcons'
 const DRAFT_KEY = 'aulabase:onboarding-draft'
 const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
 const totalSteps = 2
-const inputClass = 'mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10'
+const inputClass = 'mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/15'
 const labelClass = 'text-sm font-semibold text-gray-700'
 const optionRowClass = 'grid gap-3 py-4 md:grid-cols-[150px_1fr] md:items-start'
 const optionListClass = 'flex flex-wrap gap-2'
@@ -202,8 +202,8 @@ function ChoiceButton({
       className={[
         'rounded-lg border px-3 py-2 text-sm font-semibold transition',
         active
-          ? 'border-[#1E3D8F] bg-[#1E3D8F]/10 text-[#1E3D8F]'
-          : 'border-gray-200 bg-white text-gray-700 hover:border-[#1E3D8F]/40 hover:bg-[#1E3D8F]/5',
+          ? 'border-primary bg-primary/10 text-foreground'
+          : 'border-gray-200 bg-white text-gray-700 hover:border-primary/40 hover:bg-primary/5',
       ].join(' ')}
     >
       {children}
@@ -263,11 +263,10 @@ export function OnboardingPage() {
 
   if (loading) {
     return (
-      <main className="page-enter grid min-h-screen place-items-center px-4 text-center text-gray-900" style={{ backgroundColor: '#FAFBFC' }}>
+      <main className="page-enter grid min-h-screen place-items-center bg-background px-4 text-center text-gray-900">
         <div>
           <div
-            className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-md"
-            style={{ backgroundColor: '#1E3D8F', boxShadow: '0 4px 14px rgba(30,61,143,0.25)' }}
+            className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-primary-foreground shadow-md shadow-primary/25"
           >
             AB
           </div>
@@ -442,7 +441,7 @@ export function OnboardingPage() {
 
   if (showWelcome) {
     return (
-      <main className="page-enter relative grid min-h-screen place-items-center overflow-hidden px-4 text-gray-900" style={{ backgroundColor: '#FAFBFC' }}>
+      <main className="page-enter relative grid min-h-screen place-items-center overflow-hidden bg-background px-4 text-gray-900">
         <div className="pointer-events-none absolute inset-0">
           {FLOATING_ICONS.map((item, i) => (
             <item.Icon
@@ -453,7 +452,7 @@ export function OnboardingPage() {
                 left: item.left,
                 width: item.size,
                 height: item.size,
-                color: '#1E3D8F',
+                color: 'var(--primary)',
                 opacity: 0.08,
                 transform: `translate(-50%, -50%) rotate(${item.rotate}deg)`,
               }}
@@ -464,8 +463,8 @@ export function OnboardingPage() {
 
         <div className="relative z-10 flex max-w-md flex-col items-center text-center">
           <div className="relative mb-6">
-            <div className="absolute inset-0 animate-ping rounded-full bg-[#1E3D8F]/20" />
-            <div className="relative flex size-20 items-center justify-center rounded-3xl bg-[#1E3D8F] text-white shadow-[0_18px_45px_rgba(30,61,143,0.25)]">
+            <div className="absolute inset-0 animate-ping rounded-full bg-primary/20" />
+            <div className="relative flex size-20 items-center justify-center rounded-3xl bg-primary text-primary-foreground shadow-xl shadow-primary/25">
               <Sparkles className="size-9 animate-pulse" strokeWidth={2.2} />
             </div>
           </div>
@@ -477,7 +476,7 @@ export function OnboardingPage() {
   }
 
   return (
-    <main className="page-enter relative min-h-screen overflow-hidden px-4 py-10 text-gray-900" style={{ backgroundColor: '#FAFBFC' }}>
+    <main className="page-enter relative min-h-screen overflow-hidden bg-background px-4 py-10 text-gray-900">
       <div className="pointer-events-none absolute inset-0">
         {FLOATING_ICONS.map((item, i) => (
           <item.Icon
@@ -488,7 +487,7 @@ export function OnboardingPage() {
               left: item.left,
               width: item.size,
               height: item.size,
-              color: '#1E3D8F',
+              color: 'var(--primary)',
               opacity: 0.06,
               transform: `translate(-50%, -50%) rotate(${item.rotate}deg)`,
             }}
@@ -502,7 +501,7 @@ export function OnboardingPage() {
             right: '-10%',
             width: 500,
             height: 500,
-            background: 'radial-gradient(circle, rgba(30,61,143,0.08) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(74,162,227,0.12) 0%, transparent 70%)',
           }}
         />
         <div
@@ -512,7 +511,7 @@ export function OnboardingPage() {
             left: '-10%',
             width: 500,
             height: 500,
-            background: 'radial-gradient(circle, rgba(30,61,143,0.06) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(74,162,227,0.08) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -520,8 +519,7 @@ export function OnboardingPage() {
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-3xl flex-col justify-center">
         <div className="mb-8 flex flex-col items-center">
           <div
-            className="mb-4 flex size-14 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-md"
-            style={{ backgroundColor: '#1E3D8F', boxShadow: '0 4px 14px rgba(30,61,143,0.25)' }}
+            className="mb-4 flex size-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-primary-foreground shadow-md shadow-primary/25"
           >
             AB
           </div>
@@ -546,11 +544,11 @@ export function OnboardingPage() {
               Atras
             </button>
             {step < totalSteps - 1 ? (
-              <button type="button" onClick={goNext} className="rounded-xl bg-[#1E3D8F] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-100 hover:opacity-90 active:scale-[0.94] active:shadow-none">
+              <button type="button" onClick={goNext} className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-100 hover:bg-primary-hover active:scale-[0.94] active:shadow-none">
                 Siguiente
               </button>
             ) : (
-              <button type="button" onClick={() => void handleSubmit()} disabled={submitting} className="rounded-xl bg-[#1E3D8F] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-100 hover:opacity-90 active:scale-[0.94] active:shadow-none disabled:opacity-60">
+              <button type="button" onClick={() => void handleSubmit()} disabled={submitting} className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-100 hover:bg-primary-hover active:scale-[0.94] active:shadow-none disabled:opacity-60">
                 {submitting ? 'Guardando...' : 'Entrar a AulaBase'}
               </button>
             )}

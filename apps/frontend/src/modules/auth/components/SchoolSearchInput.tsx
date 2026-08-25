@@ -150,7 +150,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
         onChange={handleInput}
         onKeyDown={handleKeyDown}
         onFocus={() => { if (results.length > 0) setOpen(true) }}
-        className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-[#1E3D8F] focus:outline-none focus:ring-2 focus:ring-[#1E3D8F]/10"
+        className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/15"
       />
 
       {open && results.length > 0 && createPortal(
@@ -172,7 +172,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
               onMouseEnter={() => setHighlightedIndex(index)}
               onMouseDown={() => select(school)}
               className={`flex cursor-pointer items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
-                index === highlightedIndex ? 'bg-[#1E3D8F]/10 text-[#1E3D8F]' : 'text-gray-700'
+                index === highlightedIndex ? 'bg-primary/10 text-foreground' : 'text-gray-700'
               }`}
             >
               <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-xs font-bold text-gray-500">
@@ -193,7 +193,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
 
       {loading && (
         <div className="absolute right-3 top-1/2 -translate-y-1/2">
-          <div className="size-4 animate-spin rounded-full border-2 border-gray-300 border-t-[#1E3D8F]" />
+          <div className="size-4 animate-spin rounded-full border-2 border-gray-300 border-t-primary" />
         </div>
       )}
 

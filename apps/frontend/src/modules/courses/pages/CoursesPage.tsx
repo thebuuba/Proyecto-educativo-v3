@@ -142,11 +142,11 @@ type CourseCardItem = {
 }
 
 const levelStyles: Record<string, { color: string; soft: string }> = {
-  'Primaria': { color: '#1e4f8f', soft: 'hsl(224 62% 33% / 0.08)' },
+  'Primaria': { color: '#4AA2E3', soft: 'rgb(74 162 227 / 0.12)' },
   'Secundaria': { color: '#6f3cc3', soft: 'hsl(262 52% 47% / 0.08)' },
 }
 
-const defaultLevelStyle = { color: '#1e4f8f', soft: 'hsl(224 62% 33% / 0.08)' }
+const defaultLevelStyle = { color: '#4AA2E3', soft: 'rgb(74 162 227 / 0.12)' }
 
 function getLevelStyle(levelName: string) {
   const normalized = normalizeText(levelName)
@@ -671,7 +671,7 @@ export function CoursesPage() {
                 className={cn('inline-flex h-11 items-center justify-center gap-2 rounded-xl border px-4 text-xs font-bold transition', moreFiltersOpen ? 'border-primary bg-primary text-primary-foreground shadow-sm' : 'border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground')}
               >
                 <SlidersHorizontal className="size-4" /> Más filtros
-                {countAdvancedFilters(advancedFilters) ? <span className={cn('flex size-5 items-center justify-center rounded-full text-[10px]', moreFiltersOpen ? 'bg-white text-primary' : 'bg-primary text-white')}>{countAdvancedFilters(advancedFilters)}</span> : null}
+                {countAdvancedFilters(advancedFilters) ? <span className={cn('flex size-5 items-center justify-center rounded-full text-[10px]', moreFiltersOpen ? 'bg-white text-primary' : 'bg-primary text-primary-foreground')}>{countAdvancedFilters(advancedFilters)}</span> : null}
               </button>
             </div>
 
@@ -1094,7 +1094,7 @@ function CourseWorkspace({
       <header className="rounded-3xl bg-card p-5 shadow-sm">
         <div className="flex flex-col justify-between gap-5 xl:flex-row xl:items-center">
           <div className="flex min-w-0 items-center gap-4">
-            <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold text-white shadow-md" style={{ backgroundColor: levelStyle.color }}>
+            <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold text-primary-foreground shadow-md" style={{ backgroundColor: levelStyle.color }}>
               {getCourseCompactLabel(item.grade.name, item.section.name)}
             </span>
             <div className="min-w-0">
@@ -1129,7 +1129,7 @@ function CourseWorkspace({
               </Button>
             ) : null}
             {canManage && workspaceView === 'subjects' ? (
-              <Button type="button" onClick={() => onAssignSubject(item.grade, item.section.id)} className="h-10 rounded-xl bg-primary px-5 text-white shadow-md">
+              <Button type="button" onClick={() => onAssignSubject(item.grade, item.section.id)} className="h-10 rounded-xl bg-primary px-5 text-primary-foreground shadow-md">
                 <Plus className="size-4" /> Agregar asignatura
               </Button>
             ) : null}
@@ -1590,7 +1590,7 @@ function SubjectIconOptionButton({ option, selected, onSelect }: { option: Subje
       onClick={onSelect}
       className={cn(
         'flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl border px-1 py-2 text-center transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30',
-        selected ? 'border-primary bg-primary text-white shadow-sm' : 'border-slate-200 bg-white text-slate-600 hover:border-primary/30 hover:bg-primary/[0.03] hover:text-primary',
+        selected ? 'border-primary bg-primary text-primary-foreground shadow-sm' : 'border-slate-200 bg-white text-slate-600 hover:border-primary/30 hover:bg-primary/[0.03] hover:text-primary',
       )}
     >
       {getAppearanceIcon(option.value)}
@@ -2053,7 +2053,7 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
         </DashboardPanel>
         <DashboardPanel title="Reportes rápidos">
           <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4">
-            {['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report, index) => <Link key={report} to="/reportes" className="rounded-xl border border-slate-200 bg-white p-3 text-center transition duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_24px_-14px_rgba(29,78,216,0.45)] active:translate-y-0"><span className={cn('mx-auto flex size-8 items-center justify-center rounded-lg', index % 2 ? 'bg-emerald-50 text-emerald-600' : 'bg-violet-50 text-violet-600')}><FileText className="size-4" /></span><span className="mt-2 block text-[11px] font-extrabold leading-4">Reporte de {report.toLowerCase()}</span><span className="mt-2 block text-[10px] font-bold text-primary">Generar PDF</span></Link>)}
+            {['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report, index) => <Link key={report} to="/reportes" className="rounded-xl border border-slate-200 bg-white p-3 text-center transition duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_24px_-14px_rgba(74,162,227,0.45)] active:translate-y-0"><span className={cn('mx-auto flex size-8 items-center justify-center rounded-lg', index % 2 ? 'bg-emerald-50 text-emerald-600' : 'bg-violet-50 text-violet-600')}><FileText className="size-4" /></span><span className="mt-2 block text-[11px] font-extrabold leading-4">Reporte de {report.toLowerCase()}</span><span className="mt-2 block text-[10px] font-bold text-primary">Generar PDF</span></Link>)}
           </div>
         </DashboardPanel>
       </div>
@@ -2084,7 +2084,7 @@ function CompactEmpty({ icon, text }: { icon: ReactNode; text: string }) {
 }
 
 function SubjectModulePanel({ icon, title, description, href, action, onAction }: { icon: ReactNode; title: string; description: string; href?: string; action: string; onAction?: () => void }) {
-  const content = <><span className="flex size-14 items-center justify-center rounded-2xl bg-primary/8 text-primary">{icon}</span><h2 className="mt-4 text-lg font-extrabold">{title}</h2><p className="mt-2 max-w-lg text-sm leading-6 text-muted-foreground">{description}</p><span className="mt-5 inline-flex h-10 items-center justify-center rounded-xl bg-primary px-5 text-sm font-bold text-white">{action}</span></>
+  const content = <><span className="flex size-14 items-center justify-center rounded-2xl bg-primary/8 text-primary">{icon}</span><h2 className="mt-4 text-lg font-extrabold">{title}</h2><p className="mt-2 max-w-lg text-sm leading-6 text-muted-foreground">{description}</p><span className="mt-5 inline-flex h-10 items-center justify-center rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground">{action}</span></>
   return href ? <Link to={href} className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">{content}</Link> : <button type="button" onClick={onAction} className="flex min-h-72 w-full flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">{content}</button>
 }
 
@@ -2707,7 +2707,7 @@ const CourseCard = memo(function CourseCard({
         <div className="flex items-start justify-between gap-3">
           <div className="flex min-w-0 items-center gap-3">
             <span
-              className="flex size-11 shrink-0 items-center justify-center rounded-xl text-sm font-black text-white"
+              className="flex size-11 shrink-0 items-center justify-center rounded-xl text-sm font-black text-primary-foreground"
               style={{ backgroundColor: levelStyle.color }}
             >
               {gradeNumber}

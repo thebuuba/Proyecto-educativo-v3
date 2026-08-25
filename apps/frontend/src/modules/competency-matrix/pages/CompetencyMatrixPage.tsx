@@ -274,7 +274,7 @@ function CurriculumList({
                 active ? 'bg-primary text-primary-foreground shadow-[0_4px_16px_rgba(31,78,95,.20)]' : 'bg-card text-foreground shadow-sm hover:bg-muted',
               )}
             >
-              <span className={cn('mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg', active ? 'bg-white/15 text-white' : 'bg-primary/10 text-primary')}>
+              <span className={cn('mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg', active ? 'bg-white/35 text-primary-foreground' : 'bg-primary/10 text-primary')}>
                 <Icon className="size-4.5" />
               </span>
               <span className="min-w-0">

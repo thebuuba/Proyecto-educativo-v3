@@ -16,9 +16,10 @@ import { type ComponentType, useEffect, useRef, useState } from 'react'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
 
-const primary = '#1e4f8f'
-const primaryLight = '#edf4fb'
-const primaryBorder = '#b7cfe6'
+const primary = '#4AA2E3'
+const primaryInk = '#272320'
+const primaryLight = '#DDEEF9'
+const primaryBorder = '#7ED2FB'
 
 const features = [
   {
@@ -141,11 +142,11 @@ function AnimatedStat({ value, label, suffix, icon: Icon, compact }: {
 
   return (
     <div ref={ref} className="flex items-center gap-4">
-      <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl" style={{ background: primaryLight, color: primary }}>
+      <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl" style={{ background: primaryLight, color: primaryInk }}>
         <Icon size={20} />
       </div>
       <div>
-        <p className="text-2xl font-extrabold leading-none" style={{ color: primary }}>
+        <p className="text-2xl font-extrabold leading-none" style={{ color: primaryInk }}>
           {compact ? formatStat(count, true) : formatStat(count)}{suffix}
         </p>
         <p className="mt-0.5 text-sm text-[#6B7280]">{label}</p>
@@ -202,14 +203,14 @@ export function PromoPage() {
           <div className="min-w-0">
             <span
               className="fu fu1 mb-6 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-bold"
-              style={{ background: primaryLight, color: primary, border: `1px solid ${primaryBorder}` }}
+              style={{ background: primaryLight, color: primaryInk, border: `1px solid ${primaryBorder}` }}
             >
               La plataforma #1 para docentes
             </span>
             <h1 className="fu fu2 mb-5 text-[clamp(2.5rem,10vw,3.25rem)] font-extrabold leading-[1.06] text-[#0D1117]">
               Tu aula,
               <br />
-              <span style={{ color: primary }}>digitalizada</span>
+              <span style={{ color: primaryInk }}>digitalizada</span>
               <br />y organizada.
             </h1>
             <p className="fu fu3 mb-8 max-w-[440px] text-[clamp(1rem,3.6vw,1.0625rem)] leading-relaxed text-[#4B5563]">
@@ -218,8 +219,8 @@ export function PromoPage() {
             <div className="fu fu4 flex flex-wrap items-center gap-4">
               <Link
                 to="/registro"
-                className="flex w-full items-center justify-center gap-2 rounded-2xl px-7 py-4 text-[15px] font-bold text-white transition-all hover:scale-[1.02] active:scale-[0.985] sm:w-auto"
-                style={{ background: primary, boxShadow: '0 6px 20px rgba(30,79,143,.30)' }}
+                className="flex w-full items-center justify-center gap-2 rounded-2xl px-7 py-4 text-[15px] font-bold text-[#272320] transition-all hover:scale-[1.02] active:scale-[0.985] sm:w-auto"
+                style={{ background: primary, boxShadow: '0 6px 20px rgba(74,162,227,.30)' }}
               >
                 Empezar gratis <ArrowRight size={16} />
               </Link>
@@ -236,7 +237,7 @@ export function PromoPage() {
           <div className="fu fu4 relative min-w-0 pb-16 sm:pb-10">
             <div
               className="overflow-hidden rounded-3xl border border-[#E5E7EB] shadow-2xl"
-              style={{ boxShadow: '0 24px 64px rgba(30,79,143,.14)' }}
+              style={{ boxShadow: '0 24px 64px rgba(74,162,227,.18)' }}
             >
               <div className="bg-[#F0F4F5] p-3 sm:p-5">
                 <div className="mb-4 flex items-center justify-between">
@@ -254,7 +255,7 @@ export function PromoPage() {
                 <div className="mb-3 grid grid-cols-3 gap-2">
                   {[
                     { label: 'Asistencia', value: '94%', color: '#059669' },
-                    { label: 'Mis grupos', value: '6', color: primary },
+                    { label: 'Mis grupos', value: '6', color: primaryInk },
                     { label: 'Pendientes', value: '3', color: '#D97706' },
                   ].map((item) => (
                     <div key={item.label} className="min-w-0 rounded-xl bg-white p-2.5 sm:p-3">
@@ -274,7 +275,7 @@ export function PromoPage() {
                   ].map((student) => (
                     <div key={student.name} className="flex items-center justify-between gap-2 border-b border-[#F3F4F6] py-1.5 last:border-0">
                       <div className="flex min-w-0 items-center gap-2">
-                        <div className="flex size-5 items-center justify-center rounded-full text-[9px] font-bold text-white" style={{ background: primary }}>
+                        <div className="flex size-5 items-center justify-center rounded-full text-[9px] font-bold text-[#272320]" style={{ background: primary }}>
                           {student.name[0]}
                         </div>
                         <p className="truncate text-[11px] font-medium text-[#374151]">{student.name}</p>
@@ -312,7 +313,7 @@ export function PromoPage() {
       <RevealSection>
         <section className="w-full px-4 py-16 sm:px-8 md:py-24 lg:px-14 2xl:px-20">
           <div className="mb-10 text-center md:mb-14">
-            <span className="mb-4 inline-flex rounded-full px-3 py-1.5 text-[11px] font-bold" style={{ background: primaryLight, color: primary, border: `1px solid ${primaryBorder}` }}>
+            <span className="mb-4 inline-flex rounded-full px-3 py-1.5 text-[11px] font-bold" style={{ background: primaryLight, color: primaryInk, border: `1px solid ${primaryBorder}` }}>
               Características
             </span>
             <h2 className="mb-4 text-[clamp(2rem,8vw,2.375rem)] font-extrabold leading-tight text-[#0D1117]">
@@ -331,7 +332,7 @@ export function PromoPage() {
               return (
                 <RevealSection key={feature.title} delay={i * 100}>
                   <div className="group rounded-2xl border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                    <div className="mb-4 flex size-11 items-center justify-center rounded-2xl transition-all duration-300 group-hover:scale-110" style={{ background: primaryLight, color: primary }}>
+                    <div className="mb-4 flex size-11 items-center justify-center rounded-2xl transition-all duration-300 group-hover:scale-110" style={{ background: primaryLight, color: primaryInk }}>
                       <Icon size={22} />
                     </div>
                     <h3 className="mb-2 text-base font-bold text-[#111827]">{feature.title}</h3>
@@ -348,7 +349,7 @@ export function PromoPage() {
         <section id="precios" className="bg-[#F0F4F5] py-16 md:py-24">
           <div className="w-full px-4 sm:px-8 lg:px-14 2xl:px-20">
             <div className="mb-10 text-center md:mb-14">
-              <span className="mb-4 inline-flex rounded-full px-3 py-1.5 text-[11px] font-bold" style={{ background: primaryLight, color: primary, border: `1px solid ${primaryBorder}` }}>
+              <span className="mb-4 inline-flex rounded-full px-3 py-1.5 text-[11px] font-bold" style={{ background: primaryLight, color: primaryInk, border: `1px solid ${primaryBorder}` }}>
                 Precios
               </span>
               <h2 className="mb-4 text-[clamp(2rem,8vw,2.375rem)] font-extrabold leading-tight text-[#0D1117]">
@@ -366,8 +367,8 @@ export function PromoPage() {
                     style={{
                       background: plan.highlight ? primary : '#FFFFFF',
                       borderColor: plan.highlight ? 'transparent' : '#E5E7EB',
-                      boxShadow: plan.highlight ? '0 16px 48px rgba(30,79,143,.28)' : 'none',
-                      color: plan.highlight ? '#FFFFFF' : '#111827',
+                      boxShadow: plan.highlight ? '0 16px 48px rgba(74,162,227,.30)' : 'none',
+                      color: plan.highlight ? '#272320' : '#272320',
                     }}
                   >
                     {plan.highlight ? (
@@ -384,8 +385,8 @@ export function PromoPage() {
                     <div className="mb-7 space-y-2.5">
                       {plan.features.map((feature) => (
                         <div key={feature} className="flex items-center gap-2.5">
-                          <div className="flex size-4 shrink-0 items-center justify-center rounded-full" style={{ background: plan.highlight ? 'rgba(255,255,255,.2)' : primaryLight }}>
-                            <Check size={9} color={plan.highlight ? '#FFFFFF' : primary} strokeWidth={3} />
+                          <div className="flex size-4 shrink-0 items-center justify-center rounded-full" style={{ background: plan.highlight ? 'rgba(255,255,255,.45)' : primaryLight }}>
+                            <Check size={9} color={plan.highlight ? '#272320' : primaryInk} strokeWidth={3} />
                           </div>
                           <p className="text-[13px] opacity-90">{feature}</p>
                         </div>
@@ -396,8 +397,8 @@ export function PromoPage() {
                       className="flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold transition-all hover:scale-[1.02]"
                       style={{
                         background: plan.highlight ? '#FFFFFF' : primary,
-                        color: plan.highlight ? primary : '#FFFFFF',
-                        boxShadow: plan.highlight ? 'none' : '0 3px 12px rgba(30,79,143,.20)',
+                        color: plan.highlight ? primaryInk : '#272320',
+                        boxShadow: plan.highlight ? 'none' : '0 3px 12px rgba(74,162,227,.24)',
                       }}
                     >
                       {plan.cta} <ArrowRight size={14} />
@@ -412,7 +413,7 @@ export function PromoPage() {
 
       <RevealSection>
         <section id="testimonios" className="py-16 md:py-24" style={{ background: primary }}>
-          <div className="mx-auto max-w-3xl px-4 text-center text-white sm:px-8 lg:px-14 2xl:px-20">
+          <div className="mx-auto max-w-3xl px-4 text-center text-[#272320] sm:px-8 lg:px-14 2xl:px-20">
             <h2 className="mb-4 text-[clamp(2.125rem,8vw,2.625rem)] font-extrabold leading-tight">
               Empieza hoy.
               <br />
@@ -422,10 +423,10 @@ export function PromoPage() {
               Únete a más de 12,000 docentes que ya gestionan su trabajo con Aula Base. Gratis para siempre en el plan básico.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-8 py-4 text-[15px] font-bold transition-all hover:scale-[1.02] sm:w-auto" style={{ color: primary }}>
+              <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-8 py-4 text-[15px] font-bold transition-all hover:scale-[1.02] sm:w-auto" style={{ color: primaryInk }}>
                 Crear cuenta gratis <ArrowRight size={16} />
               </Link>
-              <Link to="/login" className="w-full rounded-2xl border border-white/30 px-8 py-4 text-[15px] font-semibold text-white transition hover:bg-white/10 sm:w-auto">
+              <Link to="/login" className="w-full rounded-2xl border border-[#272320]/30 px-8 py-4 text-[15px] font-semibold text-[#272320] transition hover:bg-white/25 sm:w-auto">
                 Iniciar sesión
               </Link>
             </div>

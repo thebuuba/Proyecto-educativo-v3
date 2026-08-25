@@ -17,16 +17,16 @@ type SidebarProps = {
 }
 
 const routeIconColors: Record<string, string> = {
-  '/inicio': 'bg-blue-100 text-blue-700',
-  '/estudiantes': 'bg-violet-100 text-violet-700',
-  '/cursos': 'bg-amber-100 text-amber-700',
-  '/horario': 'bg-cyan-100 text-cyan-700',
-  '/asistencia': 'bg-emerald-100 text-emerald-700',
-  '/calificaciones': 'bg-pink-100 text-pink-700',
-  '/planificaciones': 'bg-orange-100 text-orange-700',
-  '/matriz': 'bg-teal-100 text-teal-700',
-  '/reportes': 'bg-indigo-100 text-indigo-700',
-  '/configuracion': 'bg-slate-100 text-slate-700',
+  '/inicio': 'bg-brand-blue-light text-foreground',
+  '/estudiantes': 'bg-brand-lavender-light text-foreground',
+  '/cursos': 'bg-brand-yellow-cream text-foreground',
+  '/horario': 'bg-brand-blue-light text-foreground',
+  '/asistencia': 'bg-brand-green-cream text-foreground',
+  '/calificaciones': 'bg-brand-lilac-light text-foreground',
+  '/planificaciones': 'bg-brand-yellow-cream text-foreground',
+  '/matriz': 'bg-brand-green-pale text-foreground',
+  '/reportes': 'bg-brand-lavender text-foreground',
+  '/configuracion': 'bg-brand-yellow-soft/40 text-muted-foreground',
 }
 
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
@@ -124,7 +124,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                     <span
                       className={cn(
                         'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg',
-                        isActive ? 'bg-white/18 text-white' : iconColor,
+                        isActive ? 'bg-white/35 text-sidebar-primary-foreground' : iconColor,
                       )}
                     >
                       <Icon className="size-4.5 shrink-0" />
