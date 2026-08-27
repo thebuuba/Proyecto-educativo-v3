@@ -20,8 +20,8 @@ export function SmartSuggestion({ suggestion }: SmartSuggestionProps) {
   }
 
   return (
-    <aside className="dashboard-warm-shadow flex flex-col items-start gap-4 rounded-3xl bg-secondary-container p-5 text-on-secondary-container lg:flex-row lg:items-center lg:p-6">
-      <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-card text-accent shadow-[inset_0_0_0_1px_var(--border)]">
+    <aside className="dashboard-warm-shadow flex flex-col items-start gap-4 rounded-3xl border border-border border-l-4 border-l-accent bg-card p-5 text-card-foreground lg:flex-row lg:items-center lg:p-6">
+      <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-secondary-container text-accent">
         <CalendarDays className="size-5" strokeWidth={2.4} />
       </span>
       <div className="min-w-0 flex-1">
