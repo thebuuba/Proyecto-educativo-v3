@@ -109,8 +109,8 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                   <>
                     <span
                       className={cn(
-                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg bg-sidebar-primary/10 text-sidebar-primary',
-                        isActive && 'bg-sidebar-primary text-sidebar-primary-foreground shadow-md shadow-sidebar-primary/25',
+                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg bg-sidebar-primary/10 text-sidebar-foreground/85',
+                        isActive && 'bg-card text-sidebar-foreground shadow-sm ring-1 ring-sidebar-primary/15',
                       )}
                     >
                       <Icon className="size-4.5 shrink-0" />
