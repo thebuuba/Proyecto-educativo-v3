@@ -19,7 +19,7 @@ import {
   logout as logoutService,
   getAuthBootstrap,
 } from '@/modules/auth/services/authService'
-import { ApiError } from '@/services/apiClient'
+import { ApiError, AUTH_UNAUTHORIZED_EVENT } from '@/services/apiClient'
 import { supabase } from '@/modules/auth/services/supabaseClient'
 import { shouldReportBootstrapFailure } from '@/modules/auth/utils/bootstrapFailure'
 import type {
@@ -187,6 +187,17 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   useEffect(() => {
     void loadAuthState()
+  }, [loadAuthState])
+
+  useEffect(() => {
+    let recovering = false
+    const recoverSession = () => {
+      if (recovering) return
+      recovering = true
+      void loadAuthState().finally(() => { recovering = false })
+    }
+    window.addEventListener(AUTH_UNAUTHORIZED_EVENT, recoverSession)
+    return () => window.removeEventListener(AUTH_UNAUTHORIZED_EVENT, recoverSession)
   }, [loadAuthState])
 
   useEffect(() => {

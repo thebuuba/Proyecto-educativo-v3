@@ -9,6 +9,8 @@
 const API_URL = '/api/v1'
 const GET_TIMEOUT_MS = 15_000
 
+export const AUTH_UNAUTHORIZED_EVENT = 'aulabase:unauthorized'
+
 export const API_CACHE_TTL = {
   sessionList: 60_000,
   options: 120_000,
@@ -150,11 +152,14 @@ function clearResponseCache() {
  * @param res - Respuesta de fetch.
  * @returns Datos extraídos del cuerpo de la respuesta.
  */
-async function handleResponse<T>(res: Response): Promise<T> {
+async function handleResponse<T>(res: Response, path: string): Promise<T> {
   if (!res.ok) {
     const body = await res.json().catch(() => ({}))
     const error = new ApiError(res.status, body.error || body.message || `Error ${res.status}`)
-    if (res.status === 401) clearResponseCache()
+    if (res.status === 401) {
+      clearResponseCache()
+      if (!path.startsWith('/auth/')) window.dispatchEvent(new Event(AUTH_UNAUTHORIZED_EVENT))
+    }
     throw error
   }
   const body = await res.json()
@@ -215,7 +220,7 @@ export const api = {
             ...fetchOptions.headers,
           },
         })
-        const value = await handleResponse<T>(response)
+        const value = await handleResponse<T>(response, path)
         if (
           canShare &&
           cacheTtlMs > 0 &&
@@ -263,7 +268,7 @@ export const api = {
       credentials: 'include',
       headers: { 'Content-Type': 'application/json', ...fetchOptions.headers },
       body: body ? JSON.stringify(body) : undefined,
-    }).then(handleResponse<T>).then((value) => {
+    }).then((response) => handleResponse<T>(response, path)).then((value) => {
       if (clear) clearResponseCache()
       else invalidateCacheTags(tags)
       return value
@@ -284,7 +289,7 @@ export const api = {
       credentials: 'include',
       headers: { 'Content-Type': 'application/json', ...fetchOptions.headers },
       body: body ? JSON.stringify(body) : undefined,
-    }).then(handleResponse<T>).then((value) => {
+    }).then((response) => handleResponse<T>(response, path)).then((value) => {
       if (clear) clearResponseCache()
       else invalidateCacheTags(tags)
       return value
@@ -305,7 +310,7 @@ export const api = {
       credentials: 'include',
       headers: { 'Content-Type': 'application/json', ...fetchOptions.headers },
       body: body ? JSON.stringify(body) : undefined,
-    }).then(handleResponse<T>).then((value) => {
+    }).then((response) => handleResponse<T>(response, path)).then((value) => {
       if (clear) clearResponseCache()
       else invalidateCacheTags(tags)
       return value
@@ -324,7 +329,7 @@ export const api = {
       method: 'DELETE',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json', ...fetchOptions.headers },
-    }).then(handleResponse<T>).then((value) => {
+    }).then((response) => handleResponse<T>(response, path)).then((value) => {
       if (clear) clearResponseCache()
       else invalidateCacheTags(tags)
       return value
