@@ -40,7 +40,7 @@ export function DashboardHero({
 
   if (!nextClass) {
     return (
-      <section className="dashboard-warm-shadow relative h-full min-h-44 overflow-hidden rounded-3xl border border-primary/10 bg-brand-blue-light/60 px-5 py-6 sm:px-7 lg:px-8">
+      <section className="dashboard-warm-shadow relative h-full min-h-44 overflow-hidden rounded-3xl border border-primary/10 bg-primary-container/60 px-5 py-6 text-on-primary-container sm:px-7 lg:px-8">
         <div className="dashboard-paper-lines pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] opacity-70 sm:block" aria-hidden="true" />
 
         <div className="relative flex h-full items-center gap-5 sm:gap-7">
@@ -67,7 +67,7 @@ export function DashboardHero({
   }
 
   return (
-    <section className="dashboard-warm-shadow relative h-full overflow-hidden rounded-3xl border border-primary/10 bg-brand-blue-light/60 px-5 py-6 sm:px-7 lg:px-8">
+    <section className="dashboard-warm-shadow relative h-full overflow-hidden rounded-3xl border border-primary/10 bg-primary-container/60 px-5 py-6 text-on-primary-container sm:px-7 lg:px-8">
       <div className="dashboard-paper-lines pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] opacity-60 sm:block" aria-hidden="true" />
 
       <div className="relative grid h-full items-center gap-6 lg:grid-cols-[minmax(0,1fr)_11rem]">

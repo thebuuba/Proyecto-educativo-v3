@@ -66,9 +66,9 @@ export function InitialSetupChecklist({ progress }: InitialSetupChecklistProps) 
   const Icon = nextStep.icon
 
   return (
-    <section className="setup-next-step dashboard-warm-shadow flex h-full flex-col rounded-3xl bg-brand-yellow-cream p-5 sm:p-6">
+    <section className="setup-next-step dashboard-warm-shadow flex h-full flex-col rounded-3xl bg-warning-container p-5 text-on-warning-container sm:p-6">
       <div className="flex min-w-0 gap-4">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand-yellow text-foreground shadow-lg shadow-brand-yellow/25">
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-warning text-warning-foreground shadow-lg shadow-warning/25">
             <Icon className="size-5" />
         </span>
         <div className="min-w-0">

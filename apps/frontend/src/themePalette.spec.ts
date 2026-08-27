@@ -50,11 +50,28 @@ describe('paleta visual accesible de AulaBase', () => {
     const css = readSource('./index.css').toUpperCase()
 
     expect(css).toContain('--PRIMARY: VAR(--PALETTE-BLUE);')
-    expect(css).toContain('--PRIMARY-FOREGROUND: VAR(--PALETTE-WHITE);')
-    expect(css).toContain('--ACCENT: VAR(--PALETTE-PLUM);')
-    expect(css).toContain('--ACCENT-FOREGROUND: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--PRIMARY-FOREGROUND: VAR(--ON-PRIMARY);')
+    expect(css).toContain('--ACCENT: VAR(--SECONDARY);')
+    expect(css).toContain('--ACCENT-FOREGROUND: VAR(--ON-SECONDARY);')
     expect(css).toContain('--BACKGROUND: VAR(--PALETTE-SURFACE);')
-    expect(css).toContain('--FOREGROUND: VAR(--PALETTE-INK);')
+    expect(css).toContain('--FOREGROUND: VAR(--ON-BACKGROUND);')
+  })
+
+  it('define roles Material y colores on para cada contenedor', () => {
+    const css = readSource('./index.css').toUpperCase()
+
+    expect(css).toContain('--ON-PRIMARY: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--PRIMARY-CONTAINER: VAR(--PALETTE-BLUE-LIGHT);')
+    expect(css).toContain('--ON-PRIMARY-CONTAINER: VAR(--PALETTE-INK);')
+    expect(css).toContain('--SECONDARY: VAR(--PALETTE-PLUM);')
+    expect(css).toContain('--SECONDARY-CONTAINER: VAR(--PALETTE-LAVENDER-LIGHT);')
+    expect(css).toContain('--ON-SECONDARY-CONTAINER: VAR(--PALETTE-INK);')
+    expect(css).toContain('--TERTIARY-CONTAINER: VAR(--PALETTE-GREEN-CREAM);')
+    expect(css).toContain('--ON-TERTIARY-CONTAINER: VAR(--PALETTE-INK);')
+    expect(css).toContain('--WARNING-CONTAINER: VAR(--PALETTE-YELLOW-CREAM);')
+    expect(css).toContain('--ON-WARNING-CONTAINER: VAR(--PALETTE-INK);')
+    expect(css).toContain('--SURFACE: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--ON-SURFACE: VAR(--PALETTE-INK);')
   })
 
   it('elimina del frontend los azules anteriores y los tonos de marca no aprobados', () => {
@@ -69,5 +86,9 @@ describe('paleta visual accesible de AulaBase', () => {
     expect(contrastRatio('#1F5D84', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
     expect(contrastRatio('#7B3F8C', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
     expect(contrastRatio('#68635F', '#F8F8F6')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#252321', '#DDF1FA')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#252321', '#F6E6FA')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#252321', '#F1F3C4')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#252321', '#FFF3C4')).toBeGreaterThanOrEqual(4.5)
   })
 })

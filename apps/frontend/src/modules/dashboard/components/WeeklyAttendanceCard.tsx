@@ -71,7 +71,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
 
   if (!hasData) {
     return (
-      <section className="dashboard-warm-shadow flex min-h-32 flex-col gap-5 rounded-[1.375rem] bg-brand-green-cream p-5 sm:flex-row sm:items-center sm:px-6">
+      <section className="dashboard-warm-shadow flex min-h-32 flex-col gap-5 rounded-[1.375rem] bg-tertiary-container p-5 text-on-tertiary-container sm:flex-row sm:items-center sm:px-6">
         <span
           className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-card text-accent shadow-[inset_0_0_0_1px_var(--border)]"
           role="img"
@@ -109,7 +109,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
     : TrendingUp
 
   return (
-    <section className="dashboard-warm-shadow overflow-hidden rounded-3xl border border-success/15 bg-brand-green-cream p-5 sm:p-6">
+    <section className="dashboard-warm-shadow overflow-hidden rounded-3xl border border-tertiary/15 bg-tertiary-container p-5 text-on-tertiary-container sm:p-6">
       <div className="grid gap-5 lg:grid-cols-[12rem_minmax(0,1fr)] lg:items-center">
         <div>
           <div className="flex items-center gap-2">

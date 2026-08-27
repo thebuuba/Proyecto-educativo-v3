@@ -18,7 +18,7 @@ type TodayAgendaProps = {
 /** Agenda del día con la lista de clases programadas. */
 export function TodayAgenda({ items }: TodayAgendaProps) {
   return (
-    <section className="dashboard-warm-shadow rounded-3xl bg-brand-lavender-light p-5 sm:p-6">
+    <section className="dashboard-warm-shadow rounded-3xl bg-secondary-container p-5 text-on-secondary-container sm:p-6">
       <div className="flex items-start justify-between gap-4 mb-4">
         <div>
           <h3 className="text-lg font-extrabold tracking-tight text-foreground">Tu agenda de hoy</h3>

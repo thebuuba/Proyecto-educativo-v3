@@ -17,16 +17,16 @@ type SidebarProps = {
 }
 
 const routeIconBackgrounds: Record<string, string> = {
-  '/inicio': 'bg-brand-blue-light',
-  '/estudiantes': 'bg-brand-lavender-light',
-  '/cursos': 'bg-brand-yellow-cream',
-  '/horario': 'bg-brand-blue-light',
-  '/asistencia': 'bg-brand-green-cream',
-  '/calificaciones': 'bg-brand-lilac-light',
-  '/planificaciones': 'bg-brand-yellow-cream',
-  '/matriz': 'bg-brand-green-pale',
-  '/reportes': 'bg-brand-lavender',
-  '/configuracion': 'bg-brand-yellow-soft/55',
+  '/inicio': 'bg-primary-container',
+  '/estudiantes': 'bg-secondary-container',
+  '/cursos': 'bg-warning-container',
+  '/horario': 'bg-primary-container',
+  '/asistencia': 'bg-tertiary-container',
+  '/calificaciones': 'bg-secondary-container',
+  '/planificaciones': 'bg-warning-container',
+  '/matriz': 'bg-tertiary-container',
+  '/reportes': 'bg-secondary-container',
+  '/configuracion': 'bg-warning-container',
 }
 
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
@@ -96,7 +96,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
         )}>
           {visibleRoutes.map((item) => {
             const Icon = item.icon
-            const iconBackground = routeIconBackgrounds[item.path] ?? 'bg-brand-blue-light'
+            const iconBackground = routeIconBackgrounds[item.path] ?? 'bg-primary-container'
 
             return (
               <NavLink
