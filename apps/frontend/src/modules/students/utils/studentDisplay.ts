@@ -77,7 +77,7 @@ export function getDisplayStatus(student: StudentListItem) {
   ) {
     return {
       label: 'Atención',
-      className: 'bg-accent/18 text-accent-foreground',
+      className: 'bg-accent/12 text-accent',
       dotClassName: 'bg-accent',
     }
   }

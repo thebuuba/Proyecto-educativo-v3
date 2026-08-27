@@ -10,7 +10,7 @@ type BadgeTone = 'default' | 'accent' | 'success' | 'warning' | 'destructive' | 
 
 const toneClasses: Record<BadgeTone, string> = {
   default: 'bg-primary/10 text-primary ring-primary/15',
-  accent: 'bg-accent/18 text-accent-foreground ring-accent/30',
+  accent: 'bg-accent/12 text-accent ring-accent/25',
   success: 'bg-success/12 text-success ring-success/20',
   warning: 'bg-warning/14 text-warning ring-warning/25',
   destructive: 'bg-destructive/12 text-destructive ring-destructive/20',

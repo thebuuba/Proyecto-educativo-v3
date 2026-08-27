@@ -48,6 +48,7 @@
   --color-brand-green-pale: var(--palette-green-pale);
   --color-brand-lavender-light: var(--palette-lavender-light);
   --color-brand-lavender: var(--palette-lavender);
+  --color-brand-indigo: var(--palette-indigo);
   --color-brand-purple-light: var(--palette-purple-light);
   --color-brand-lilac-light: var(--palette-lilac-light);
   --color-brand-orange: var(--palette-orange);
@@ -58,9 +59,9 @@
   /* Paleta definitiva de AulaBase. Los componentes consumen los tokens
      semánticos de abajo y no necesitan conocer valores hexadecimales. */
   --palette-white: #FFFFFF;
-  --palette-surface: #F8F8F6;
-  --palette-ink: #272320;
-  --palette-text-muted: #6F6D6B;
+  --palette-surface: #F5F5F7;
+  --palette-ink: #1D1D1F;
+  --palette-text-muted: #5F6368;
   --palette-yellow-cream: #FCF3CC;
   --palette-yellow-soft: #F8E694;
   --palette-yellow: #FFD64F;
@@ -72,9 +73,10 @@
   --palette-lavender: #DDD5F9;
   --palette-purple-light: #E6AEF7;
   --palette-lilac-light: #F6E9FD;
-  --palette-blue: #4AA2E3;
-  --palette-sky: #7ED2FB;
-  --palette-blue-light: #DDEEF9;
+  --palette-blue: #0A66C2;
+  --palette-sky: #3385D1;
+  --palette-blue-light: #EAF3FC;
+  --palette-indigo: #5856D6;
   --palette-orange: #F36C21;
 
   --background: var(--palette-surface);
@@ -84,33 +86,33 @@
   --popover: var(--palette-white);
   --popover-foreground: var(--palette-ink);
   --primary: var(--palette-blue);
-  --primary-foreground: var(--palette-ink);
+  --primary-foreground: var(--palette-white);
   --secondary: var(--palette-blue-light);
   --secondary-foreground: var(--palette-ink);
   --muted: var(--palette-surface);
   --muted-foreground: var(--palette-text-muted);
-  --accent: var(--palette-lavender);
-  --accent-foreground: var(--palette-ink);
+  --accent: var(--palette-indigo);
+  --accent-foreground: var(--palette-white);
   --destructive: #b42318;
   --destructive-foreground: #ffffff;
   --success: var(--palette-olive);
   --success-foreground: var(--palette-ink);
   --warning: var(--palette-yellow);
   --warning-foreground: var(--palette-ink);
-  --border: #e4e0db;
-  --input: #d8d3ce;
-  --ring: #1973b5;
-  --accent-hover: var(--palette-purple-light);
-  --primary-hover: var(--palette-sky);
+  --border: #D2D2D7;
+  --input: #C7C7CC;
+  --ring: var(--palette-blue);
+  --accent-hover: #4947B8;
+  --primary-hover: #0857A6;
   --destructive-hover: #921c14;
   --sidebar: var(--palette-white);
   --sidebar-foreground: var(--palette-ink);
   --sidebar-primary: var(--palette-blue);
-  --sidebar-primary-foreground: var(--palette-ink);
+  --sidebar-primary-foreground: var(--palette-white);
   --sidebar-accent: var(--palette-blue-light);
   --sidebar-accent-foreground: var(--palette-ink);
-  --sidebar-border: #e4e0db;
-  --sidebar-ring: #1973b5;
+  --sidebar-border: #D2D2D7;
+  --sidebar-ring: var(--palette-blue);
   --primary-light: var(--palette-blue-light);
   --primary-border: var(--palette-sky);
   --success-light: var(--palette-green-cream);
@@ -127,7 +129,7 @@
   --text-body: var(--palette-ink);
   --text-muted: var(--palette-text-muted);
   --text-faint: var(--palette-text-muted);
-  --text-placeholder: #85817e;
+  --text-placeholder: #77777C;
 
   color: var(--foreground);
   background: var(--background);
@@ -184,12 +186,12 @@ body {
     to bottom,
     transparent 0,
     transparent 27px,
-    rgb(74 162 227 / 10%) 28px
+    rgb(10 102 194 / 8%) 28px
   );
 }
 
 .dashboard-warm-shadow {
-  box-shadow: 0 16px 40px -28px rgb(74 162 227 / 34%);
+  box-shadow: 0 16px 40px -28px rgb(29 29 31 / 28%);
 }
 
 @media (min-width: 1024px) {

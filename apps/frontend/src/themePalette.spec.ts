@@ -26,29 +26,17 @@ function contrastRatio(first: string, second: string): number {
   return (light + 0.05) / (dark + 0.05)
 }
 
-describe('paleta visual definitiva de AulaBase', () => {
-  it('declara todos los colores aprobados como tokens globales', () => {
+describe('paleta visual accesible de AulaBase', () => {
+  it('declara los colores base como tokens globales', () => {
     const css = readSource('./index.css').toUpperCase()
     const approvedColors = [
       '#FFFFFF',
-      '#F8F8F6',
-      '#272320',
-      '#6F6D6B',
-      '#FCF3CC',
-      '#F8E694',
-      '#FFD64F',
-      '#A9B452',
-      '#CED25F',
-      '#F1F1CC',
-      '#E6E7A0',
-      '#ECE9FC',
-      '#DDD5F9',
-      '#E6AEF7',
-      '#F6E9FD',
-      '#4AA2E3',
-      '#7ED2FB',
-      '#DDEEF9',
-      '#F36C21',
+      '#F5F5F7',
+      '#1D1D1F',
+      '#5F6368',
+      '#0A66C2',
+      '#EAF3FC',
+      '#5856D6',
     ]
 
     approvedColors.forEach((color) => expect(css).toContain(color))
@@ -58,7 +46,9 @@ describe('paleta visual definitiva de AulaBase', () => {
     const css = readSource('./index.css').toUpperCase()
 
     expect(css).toContain('--PRIMARY: VAR(--PALETTE-BLUE);')
-    expect(css).toContain('--PRIMARY-FOREGROUND: VAR(--PALETTE-INK);')
+    expect(css).toContain('--PRIMARY-FOREGROUND: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--ACCENT: VAR(--PALETTE-INDIGO);')
+    expect(css).toContain('--ACCENT-FOREGROUND: VAR(--PALETTE-WHITE);')
     expect(css).toContain('--BACKGROUND: VAR(--PALETTE-SURFACE);')
     expect(css).toContain('--FOREGROUND: VAR(--PALETTE-INK);')
   })
@@ -70,8 +60,10 @@ describe('paleta visual definitiva de AulaBase', () => {
     expect(allSources).not.toMatch(/#216b9f|#7053a6|#8a6a00|#66702a|#8c3fa4|#b94b11/)
   })
 
-  it('mantiene contraste AA en los botones principales y su estado hover', () => {
-    expect(contrastRatio('#4AA2E3', '#272320')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#7ED2FB', '#272320')).toBeGreaterThanOrEqual(4.5)
+  it('mantiene contraste AA en acciones y textos', () => {
+    expect(contrastRatio('#0A66C2', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#0857A6', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#5856D6', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#5F6368', '#F5F5F7')).toBeGreaterThanOrEqual(4.5)
   })
 })
