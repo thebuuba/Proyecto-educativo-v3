@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { api } from './apiClient'
+import { api, AUTH_UNAUTHORIZED_EVENT } from './apiClient'
 
 describe('api client session transport', () => {
   beforeEach(() => {
@@ -219,6 +219,22 @@ describe('api client session transport', () => {
     await expect(api.get('/auth/bootstrap')).rejects.toMatchObject({ status: 401 })
     await expect(api.get('/school-administration/school-years', options)).resolves.toEqual(['second-session'])
     expect(fetch).toHaveBeenCalledTimes(3)
+  })
+
+  it('notifies the auth provider when a protected request loses authorization', async () => {
+    const onUnauthorized = vi.fn()
+    window.addEventListener(AUTH_UNAUTHORIZED_EVENT, onUnauthorized)
+    vi.mocked(fetch).mockResolvedValue({
+      ok: false,
+      status: 401,
+      json: vi.fn().mockResolvedValue({ message: 'Unauthorized' }),
+    } as unknown as Response)
+
+    await expect(api.get('/attendance/students')).rejects.toMatchObject({ status: 401 })
+    await expect(api.post('/auth/login')).rejects.toMatchObject({ status: 401 })
+
+    expect(onUnauthorized).toHaveBeenCalledTimes(1)
+    window.removeEventListener(AUTH_UNAUTHORIZED_EVENT, onUnauthorized)
   })
 
   it('bounds the response cache and evicts the least recently used entry', async () => {
