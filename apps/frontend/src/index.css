@@ -48,7 +48,7 @@
   --color-brand-green-pale: var(--palette-green-pale);
   --color-brand-lavender-light: var(--palette-lavender-light);
   --color-brand-lavender: var(--palette-lavender);
-  --color-brand-steel: var(--palette-steel);
+  --color-brand-plum: var(--palette-plum);
   --color-brand-purple-light: var(--palette-purple-light);
   --color-brand-lilac-light: var(--palette-lilac-light);
   --color-brand-orange: var(--palette-orange);
@@ -59,25 +59,25 @@
   /* Paleta definitiva de AulaBase. Los componentes consumen los tokens
      semánticos de abajo y no necesitan conocer valores hexadecimales. */
   --palette-white: #FFFFFF;
-  --palette-surface: #F7F8FA;
-  --palette-ink: #20262C;
-  --palette-text-muted: #626D77;
-  --palette-yellow-cream: #FCF3CC;
-  --palette-yellow-soft: #F8E694;
-  --palette-yellow: #FFD64F;
-  --palette-olive: #A9B452;
-  --palette-lime: #CED25F;
-  --palette-green-cream: #F1F1CC;
-  --palette-green-pale: #E6E7A0;
-  --palette-lavender-light: #ECE9FC;
-  --palette-lavender: #DDD5F9;
-  --palette-purple-light: #E6AEF7;
-  --palette-lilac-light: #F6E9FD;
-  --palette-blue: #3B5F7A;
-  --palette-sky: #6F8FA8;
-  --palette-blue-light: #EAF0F5;
-  --palette-steel: #526D82;
-  --palette-orange: #F36C21;
+  --palette-surface: #F8F8F6;
+  --palette-ink: #252321;
+  --palette-text-muted: #68635F;
+  --palette-yellow-cream: #FFF3C4;
+  --palette-yellow-soft: #FFE58A;
+  --palette-yellow: #FFD34E;
+  --palette-olive: #A7B638;
+  --palette-lime: #CDD944;
+  --palette-green-cream: #F1F3C4;
+  --palette-green-pale: #E4E98F;
+  --palette-lavender-light: #F6E6FA;
+  --palette-lavender: #E9C8F2;
+  --palette-purple-light: #DC8CEC;
+  --palette-lilac-light: #F8EBFB;
+  --palette-blue: #236A96;
+  --palette-sky: #25A8D8;
+  --palette-blue-light: #DDF1FA;
+  --palette-plum: #7B3F8C;
+  --palette-orange: #F27032;
 
   --background: var(--palette-surface);
   --foreground: var(--palette-ink);
@@ -91,7 +91,7 @@
   --secondary-foreground: var(--palette-ink);
   --muted: var(--palette-surface);
   --muted-foreground: var(--palette-text-muted);
-  --accent: var(--palette-steel);
+  --accent: var(--palette-plum);
   --accent-foreground: var(--palette-white);
   --destructive: #b42318;
   --destructive-foreground: #ffffff;
@@ -99,11 +99,11 @@
   --success-foreground: var(--palette-ink);
   --warning: var(--palette-yellow);
   --warning-foreground: var(--palette-ink);
-  --border: #DCE1E6;
-  --input: #C9D0D6;
+  --border: #E2DED8;
+  --input: #D2CDC6;
   --ring: var(--palette-blue);
-  --accent-hover: #455D70;
-  --primary-hover: #304F68;
+  --accent-hover: #633372;
+  --primary-hover: #1F5D84;
   --destructive-hover: #921c14;
   --sidebar: var(--palette-white);
   --sidebar-foreground: var(--palette-ink);
@@ -111,7 +111,7 @@
   --sidebar-primary-foreground: var(--palette-white);
   --sidebar-accent: var(--palette-blue-light);
   --sidebar-accent-foreground: var(--palette-ink);
-  --sidebar-border: #DCE1E6;
+  --sidebar-border: #E2DED8;
   --sidebar-ring: var(--palette-blue);
   --primary-light: var(--palette-blue-light);
   --primary-border: var(--palette-sky);
@@ -129,7 +129,7 @@
   --text-body: var(--palette-ink);
   --text-muted: var(--palette-text-muted);
   --text-faint: var(--palette-text-muted);
-  --text-placeholder: #747F88;
+  --text-placeholder: #7B746E;
 
   color: var(--foreground);
   background: var(--background);
@@ -186,7 +186,7 @@ body {
     to bottom,
     transparent 0,
     transparent 27px,
-    rgb(59 95 122 / 7%) 28px
+    rgb(35 106 150 / 7%) 28px
   );
 }
 

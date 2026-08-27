@@ -31,12 +31,16 @@ describe('paleta visual accesible de AulaBase', () => {
     const css = readSource('./index.css').toUpperCase()
     const approvedColors = [
       '#FFFFFF',
-      '#F7F8FA',
-      '#20262C',
-      '#626D77',
-      '#3B5F7A',
-      '#EAF0F5',
-      '#526D82',
+      '#F8F8F6',
+      '#252321',
+      '#68635F',
+      '#236A96',
+      '#DDF1FA',
+      '#7B3F8C',
+      '#FFF3C4',
+      '#CDD944',
+      '#F6E6FA',
+      '#25A8D8',
     ]
 
     approvedColors.forEach((color) => expect(css).toContain(color))
@@ -47,7 +51,7 @@ describe('paleta visual accesible de AulaBase', () => {
 
     expect(css).toContain('--PRIMARY: VAR(--PALETTE-BLUE);')
     expect(css).toContain('--PRIMARY-FOREGROUND: VAR(--PALETTE-WHITE);')
-    expect(css).toContain('--ACCENT: VAR(--PALETTE-STEEL);')
+    expect(css).toContain('--ACCENT: VAR(--PALETTE-PLUM);')
     expect(css).toContain('--ACCENT-FOREGROUND: VAR(--PALETTE-WHITE);')
     expect(css).toContain('--BACKGROUND: VAR(--PALETTE-SURFACE);')
     expect(css).toContain('--FOREGROUND: VAR(--PALETTE-INK);')
@@ -61,9 +65,9 @@ describe('paleta visual accesible de AulaBase', () => {
   })
 
   it('mantiene contraste AA en acciones y textos', () => {
-    expect(contrastRatio('#3B5F7A', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#304F68', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#526D82', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#626D77', '#F7F8FA')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#236A96', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#1F5D84', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#7B3F8C', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#68635F', '#F8F8F6')).toBeGreaterThanOrEqual(4.5)
   })
 })

@@ -40,13 +40,13 @@ export function DashboardHero({
 
   if (!nextClass) {
     return (
-      <section className="dashboard-warm-shadow relative h-full min-h-44 overflow-hidden rounded-3xl border border-border bg-card px-5 py-6 sm:px-7 lg:px-8">
+      <section className="dashboard-warm-shadow relative h-full min-h-44 overflow-hidden rounded-3xl border border-primary/10 bg-brand-blue-light/60 px-5 py-6 sm:px-7 lg:px-8">
         <div className="dashboard-paper-lines pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] opacity-70 sm:block" aria-hidden="true" />
 
         <div className="relative flex h-full items-center gap-5 sm:gap-7">
           <time
             dateTime={date.isoDate}
-            className="flex size-[5.25rem] shrink-0 flex-col items-center justify-center rounded-2xl border border-border bg-muted text-primary shadow-[inset_0_1px_0_rgba(255,255,255,.8)]"
+            className="flex size-[5.25rem] shrink-0 flex-col items-center justify-center rounded-2xl border border-primary/10 bg-card/85 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,.8)]"
           >
             <span className="text-[11px] font-bold tracking-[0.18em] text-accent">{date.weekday}</span>
             <span className="mt-0.5 text-4xl font-extrabold leading-none tracking-tight tabular-nums">{date.day}</span>
@@ -54,7 +54,7 @@ export function DashboardHero({
 
           <div className="min-w-0 max-w-2xl">
             <p className="text-xs font-semibold text-accent">Tu estado de hoy</p>
-            <h2 className="mt-1.5 text-3xl font-extrabold leading-tight tracking-[-0.035em] text-primary sm:text-4xl">
+            <h2 className="mt-1.5 text-3xl font-extrabold leading-tight tracking-[-0.035em] text-foreground sm:text-4xl">
               Hoy tienes la agenda libre
             </h2>
             <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground sm:text-[15px]">
@@ -67,7 +67,7 @@ export function DashboardHero({
   }
 
   return (
-    <section className="dashboard-warm-shadow relative h-full overflow-hidden rounded-3xl border border-border bg-card px-5 py-6 sm:px-7 lg:px-8">
+    <section className="dashboard-warm-shadow relative h-full overflow-hidden rounded-3xl border border-primary/10 bg-brand-blue-light/60 px-5 py-6 sm:px-7 lg:px-8">
       <div className="dashboard-paper-lines pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] opacity-60 sm:block" aria-hidden="true" />
 
       <div className="relative grid h-full items-center gap-6 lg:grid-cols-[minmax(0,1fr)_11rem]">
@@ -79,7 +79,7 @@ export function DashboardHero({
               : `Próxima clase · empieza en ${minutes ?? 0} min`}
           </div>
 
-          <h2 className="mt-2 text-3xl font-extrabold leading-tight tracking-[-0.035em] text-primary sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-extrabold leading-tight tracking-[-0.035em] text-foreground sm:text-4xl">
             {nextClass.subjectName}
           </h2>
           <p className="mt-1 text-base font-semibold text-muted-foreground">

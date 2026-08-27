@@ -46,9 +46,9 @@ export function DashboardTasks({
   }
 
   return (
-    <section className="dashboard-warm-shadow rounded-3xl bg-card p-5 sm:p-6">
+    <section className="dashboard-warm-shadow rounded-3xl bg-brand-yellow-cream p-5 sm:p-6">
       <div className="flex items-center justify-between gap-4 mb-4">
-        <h3 className="text-lg font-extrabold tracking-tight text-primary">Pendientes</h3>
+        <h3 className="text-lg font-extrabold tracking-tight text-foreground">Pendientes</h3>
         <span className="flex size-8 items-center justify-center rounded-xl bg-muted text-sm font-bold text-accent tabular-nums">
           {tasks.length}
         </span>

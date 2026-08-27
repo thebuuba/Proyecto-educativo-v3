@@ -24,9 +24,9 @@ const icons = {
 /** Panel de actividad reciente del dashboard. */
 export function RecentActivity({ items }: RecentActivityProps) {
   return (
-    <section className="dashboard-warm-shadow rounded-3xl bg-card p-5 sm:p-6">
+    <section className="dashboard-warm-shadow rounded-3xl bg-brand-blue-light p-5 sm:p-6">
       <div className="flex items-center justify-between gap-4 mb-4">
-        <h3 className="text-lg font-extrabold tracking-tight text-primary">Actividad reciente</h3>
+        <h3 className="text-lg font-extrabold tracking-tight text-foreground">Actividad reciente</h3>
         <Link
           to="/reportes"
           className="shrink-0 rounded-md text-xs font-semibold text-accent transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/20"

@@ -16,6 +16,19 @@ type SidebarProps = {
   onToggleExpanded: () => void
 }
 
+const routeIconBackgrounds: Record<string, string> = {
+  '/inicio': 'bg-brand-blue-light',
+  '/estudiantes': 'bg-brand-lavender-light',
+  '/cursos': 'bg-brand-yellow-cream',
+  '/horario': 'bg-brand-blue-light',
+  '/asistencia': 'bg-brand-green-cream',
+  '/calificaciones': 'bg-brand-lilac-light',
+  '/planificaciones': 'bg-brand-yellow-cream',
+  '/matriz': 'bg-brand-green-pale',
+  '/reportes': 'bg-brand-lavender',
+  '/configuracion': 'bg-brand-yellow-soft/55',
+}
+
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
   const { hasRole, logout } = useAuth()
   const visibleRoutes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
@@ -83,6 +96,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
         )}>
           {visibleRoutes.map((item) => {
             const Icon = item.icon
+            const iconBackground = routeIconBackgrounds[item.path] ?? 'bg-brand-blue-light'
 
             return (
               <NavLink
@@ -109,8 +123,9 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                   <>
                     <span
                       className={cn(
-                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg bg-sidebar-primary/10 text-sidebar-foreground/85',
-                        isActive && 'bg-card text-sidebar-foreground shadow-sm ring-1 ring-sidebar-primary/15',
+                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg text-sidebar-foreground/85',
+                        iconBackground,
+                        isActive && 'text-sidebar-foreground shadow-sm ring-1 ring-sidebar-primary/20',
                       )}
                     >
                       <Icon className="size-4.5 shrink-0" />
