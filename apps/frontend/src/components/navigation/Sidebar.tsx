@@ -16,19 +16,6 @@ type SidebarProps = {
   onToggleExpanded: () => void
 }
 
-const routeIconColors: Record<string, string> = {
-  '/inicio': 'bg-brand-blue-light text-foreground',
-  '/estudiantes': 'bg-brand-lavender-light text-foreground',
-  '/cursos': 'bg-brand-yellow-cream text-foreground',
-  '/horario': 'bg-brand-blue-light text-foreground',
-  '/asistencia': 'bg-brand-green-cream text-foreground',
-  '/calificaciones': 'bg-brand-lilac-light text-foreground',
-  '/planificaciones': 'bg-brand-yellow-cream text-foreground',
-  '/matriz': 'bg-brand-green-pale text-foreground',
-  '/reportes': 'bg-brand-lavender text-foreground',
-  '/configuracion': 'bg-brand-yellow-soft/40 text-muted-foreground',
-}
-
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
   const { hasRole, logout } = useAuth()
   const visibleRoutes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
@@ -96,7 +83,6 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
         )}>
           {visibleRoutes.map((item) => {
             const Icon = item.icon
-            const iconColor = routeIconColors[item.path] ?? routeIconColors['/inicio']
 
             return (
               <NavLink
@@ -114,7 +100,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                       ? 'px-4'
                       : 'px-4 lg:justify-center lg:gap-0 lg:px-3',
                     isActive
-                      ? 'bg-sidebar-primary text-sidebar-primary-foreground shadow-lg shadow-sidebar-primary/20'
+                      ? 'bg-sidebar-primary/10 text-sidebar-primary ring-1 ring-sidebar-primary/15'
                       : 'text-sidebar-foreground/75 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
                   )
                 }
@@ -123,8 +109,8 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                   <>
                     <span
                       className={cn(
-                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg',
-                        isActive ? 'bg-white/35 text-sidebar-primary-foreground' : iconColor,
+                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg bg-sidebar-primary/10 text-sidebar-primary',
+                        isActive && 'bg-sidebar-primary text-sidebar-primary-foreground shadow-md shadow-sidebar-primary/25',
                       )}
                     >
                       <Icon className="size-4.5 shrink-0" />
