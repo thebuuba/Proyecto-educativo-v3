@@ -413,8 +413,21 @@ export class StudentsService {
             status: toRecordStatus(dto.status) as RecordStatus,
           },
         }))
-      await tx.enrollment.create({
-        data: {
+      await tx.enrollment.upsert({
+        where: {
+          studentId_schoolYearId: {
+            studentId: created.id,
+            schoolYearId: course.schoolYearId,
+          },
+        },
+        update: {
+          gradeId: course.gradeId,
+          sectionId: course.sectionId,
+          status: 'ACTIVE',
+          academicStatus: 'active',
+          transferNotes: null,
+        },
+        create: {
           schoolId,
           studentId: created.id,
           schoolYearId: course.schoolYearId,
@@ -523,6 +536,7 @@ export class StudentsService {
     const newStudents: { schoolId: string; studentCode: string; firstName: string; lastName: string; birthDate: Date; status: RecordStatus }[] = []
     const enrollments: { schoolId: string; studentId: string; schoolYearId: string; gradeId: string; sectionId: string; status: EnrollmentStatus }[] = []
     let imported = 0
+    const reusableStudentIds: string[] = []
     const errors: ImportStudentError[] = []
 
     for (const row of validRows) {
@@ -531,6 +545,7 @@ export class StudentsService {
       const { firstName, lastName } = splitFullName(row.fullName)
 
       if (existing) {
+        reusableStudentIds.push(existing.id)
         enrollments.push({
           schoolId,
           studentId: existing.id,
@@ -539,7 +554,6 @@ export class StudentsService {
           sectionId: course.sectionId,
           status: 'ACTIVE',
         })
-        imported++
       } else {
         newStudents.push({
           schoolId,
@@ -568,11 +582,30 @@ export class StudentsService {
           status: EnrollmentStatus.ACTIVE,
         })
       }
-      imported += created.length
+    }
+
+    if (reusableStudentIds.length > 0) {
+      const reactivated = await prisma.enrollment.updateMany({
+        where: {
+          schoolId,
+          studentId: { in: reusableStudentIds },
+          schoolYearId: course.schoolYearId,
+          status: { not: 'ACTIVE' },
+        },
+        data: {
+          gradeId: course.gradeId,
+          sectionId: course.sectionId,
+          status: 'ACTIVE',
+          academicStatus: 'active',
+          transferNotes: null,
+        },
+      })
+      imported += reactivated.count
     }
 
     if (enrollments.length > 0) {
-      await prisma.enrollment.createMany({ data: enrollments, skipDuplicates: true })
+      const created = await prisma.enrollment.createMany({ data: enrollments, skipDuplicates: true })
+      imported += created.count
       invalidateEnrollmentOptions(schoolId)
     }
 

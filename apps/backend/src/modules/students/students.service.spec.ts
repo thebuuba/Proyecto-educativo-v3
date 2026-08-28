@@ -17,6 +17,8 @@ const mocks = vi.hoisted(() => ({
       findFirst: vi.fn(),
       findMany: vi.fn(),
       update: vi.fn(),
+      updateMany: vi.fn(),
+      upsert: vi.fn(),
     },
     student: { create: vi.fn(), createMany: vi.fn(), findFirst: vi.fn(), findMany: vi.fn() },
     studentGuardian: { findMany: vi.fn() },
@@ -62,7 +64,7 @@ describe('StudentsService course enrollment', () => {
     mocks.prisma.$transaction.mockImplementation((callback) =>
       callback({
         student: { create: mocks.prisma.student.create },
-        enrollment: { create: mocks.prisma.enrollment.create },
+        enrollment: { upsert: mocks.prisma.enrollment.upsert },
       }),
     )
     mocks.prisma.grade.findMany.mockResolvedValue([
@@ -296,7 +298,7 @@ describe('StudentsService course enrollment', () => {
       lastName: 'Gómez',
       status: 'ACTIVE',
     })
-    mocks.prisma.enrollment.create.mockResolvedValue({ id: 'enrollment-1' })
+    mocks.prisma.enrollment.upsert.mockResolvedValue({ id: 'enrollment-1' })
 
     const result = await createService().createStudentInCourse(
       'school-1',
@@ -315,8 +317,19 @@ describe('StudentsService course enrollment', () => {
         lastName: 'Gómez',
       }),
     })
-    expect(mocks.prisma.enrollment.create).toHaveBeenCalledWith({
-      data: expect.objectContaining({
+    expect(mocks.prisma.enrollment.upsert).toHaveBeenCalledWith({
+      where: {
+        studentId_schoolYearId: {
+          studentId: 'student-1',
+          schoolYearId: 'year-1',
+        },
+      },
+      update: expect.objectContaining({
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        status: 'ACTIVE',
+      }),
+      create: expect.objectContaining({
         schoolId: 'school-1',
         studentId: 'student-1',
         schoolYearId: 'year-1',
@@ -342,7 +355,7 @@ describe('StudentsService course enrollment', () => {
     mocks.prisma.enrollment.findFirst
       .mockResolvedValueOnce(null)
       .mockResolvedValueOnce(null)
-    mocks.prisma.enrollment.create.mockResolvedValue({ id: 'enrollment-1' })
+    mocks.prisma.enrollment.upsert.mockResolvedValue({ id: 'enrollment-1' })
 
     const result = await createService().createStudentInCourse(
       'school-1',
@@ -354,15 +367,15 @@ describe('StudentsService course enrollment', () => {
     )
 
     expect(mocks.prisma.student.create).not.toHaveBeenCalled()
-    expect(mocks.prisma.enrollment.create).toHaveBeenCalledWith({
-      data: expect.objectContaining({
+    expect(mocks.prisma.enrollment.upsert).toHaveBeenCalledWith(expect.objectContaining({
+      create: expect.objectContaining({
         schoolId: 'school-1',
         studentId: 'student-1',
         schoolYearId: 'year-1',
         gradeId: 'grade-1',
         sectionId: 'section-1',
       }),
-    })
+    }))
     expect(result).toEqual(
       expect.objectContaining({ id: 'student-1', fullName: 'Ana Gómez' }),
     )
@@ -443,6 +456,44 @@ describe('StudentsService course enrollment', () => {
 
     expect(result).toEqual({ imported: 1, errors: [] })
     expect(mocks.prisma.student.createMany).toHaveBeenCalledTimes(1)
+  })
+
+  it('reactivates withdrawn enrollments when importing the same students again', async () => {
+    mockCourse()
+    mocks.prisma.student.findFirst.mockResolvedValue({
+      id: 'student-1',
+      studentCode: '2026001',
+    })
+    mocks.prisma.enrollment.findFirst.mockResolvedValue(null)
+    mocks.prisma.student.findMany.mockResolvedValueOnce([{
+      id: 'student-1',
+      studentCode: '2026001',
+      firstName: 'Ana',
+      lastName: 'Gomez',
+    }])
+    mocks.prisma.enrollment.updateMany.mockResolvedValue({ count: 1 })
+    mocks.prisma.enrollment.createMany.mockResolvedValue({ count: 0 })
+
+    const result = await createService().importStudentsInCourse(
+      'school-1',
+      'course-1',
+      [{ studentCode: '2026001', fullName: 'Ana Gomez' }],
+    )
+
+    expect(mocks.prisma.enrollment.updateMany).toHaveBeenCalledWith({
+      where: expect.objectContaining({
+        studentId: { in: ['student-1'] },
+        schoolYearId: 'year-1',
+        status: { not: 'ACTIVE' },
+      }),
+      data: expect.objectContaining({
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        status: 'ACTIVE',
+        academicStatus: 'active',
+      }),
+    })
+    expect(result).toEqual({ imported: 1, errors: [] })
   })
 
   it('withdraws a student from the selected course enrollment', async () => {
