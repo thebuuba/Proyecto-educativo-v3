@@ -330,12 +330,16 @@ export class StudentsService {
       enrollments.map((item) => [item.studentId, item]),
     )
 
-    return students.map((student) => ({
-      ...student,
-      status: String(student.status).toLowerCase(),
-      fullName: `${student.firstName} ${student.lastName}`.trim(),
-      enrollmentId: enrollmentByStudentId.get(student.id)?.id ?? null,
-    }))
+    return students
+      .map((student) => ({
+        ...student,
+        status: String(student.status).toLowerCase(),
+        fullName: `${student.firstName} ${student.lastName}`.trim(),
+        enrollmentId: enrollmentByStudentId.get(student.id)?.id ?? null,
+      }))
+      .sort((first, second) =>
+        first.studentCode.localeCompare(second.studentCode, 'es', { numeric: true }),
+      )
   }
 
   private async findReusableStudentByCode(

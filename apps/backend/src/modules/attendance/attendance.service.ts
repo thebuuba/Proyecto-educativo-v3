@@ -240,8 +240,10 @@ export class AttendanceService {
         firstName: student?.firstName ?? '',
         lastName: student?.lastName ?? '',
       }
-    })
+      })
       .sort((first, second) => {
+        const studentCode = first.studentCode.localeCompare(second.studentCode, 'es', { numeric: true })
+        if (studentCode !== 0) return studentCode
         const lastName = first.lastName.localeCompare(second.lastName, 'es')
         if (lastName !== 0) return lastName
         return first.firstName.localeCompare(second.firstName, 'es')

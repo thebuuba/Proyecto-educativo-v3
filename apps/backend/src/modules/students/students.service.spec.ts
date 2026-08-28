@@ -458,6 +458,24 @@ describe('StudentsService course enrollment', () => {
     expect(mocks.prisma.student.createMany).toHaveBeenCalledTimes(1)
   })
 
+  it('orders course students by their numeric code', async () => {
+    mockCourse()
+    mocks.prisma.enrollment.findMany.mockResolvedValue([
+      { id: 'enrollment-10', studentId: 'student-10' },
+      { id: 'enrollment-2', studentId: 'student-2' },
+      { id: 'enrollment-1', studentId: 'student-1' },
+    ])
+    mocks.prisma.student.findMany.mockResolvedValue([
+      { id: 'student-10', studentCode: 'A10', firstName: 'Diez', lastName: 'Alumno', status: 'ACTIVE' },
+      { id: 'student-2', studentCode: 'A2', firstName: 'Dos', lastName: 'Alumno', status: 'ACTIVE' },
+      { id: 'student-1', studentCode: 'A1', firstName: 'Uno', lastName: 'Alumno', status: 'ACTIVE' },
+    ])
+
+    const result = await createService().getStudentsByCourse('school-1', 'course-1')
+
+    expect(result.map(({ studentCode }) => studentCode)).toEqual(['A1', 'A2', 'A10'])
+  })
+
   it('reactivates withdrawn enrollments when importing the same students again', async () => {
     mockCourse()
     mocks.prisma.student.findFirst.mockResolvedValue({
