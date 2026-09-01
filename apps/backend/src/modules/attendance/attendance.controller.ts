@@ -44,6 +44,14 @@ export class AttendanceController {
     return this.attendanceService.findClassAttendanceRange(user.schoolId, sectionSubjectId, from, to)
   }
 
+  @Get('class-history')
+  findClassAttendanceHistory(
+    @CurrentUser() user: AuthenticatedUser,
+    @Query('sectionSubjectId') sectionSubjectId: string,
+  ) {
+    return this.attendanceService.findClassAttendanceHistory(user.schoolId, sectionSubjectId)
+  }
+
   @Get('courses')
   getCourses(@CurrentUser() user: AuthenticatedUser) {
     return this.attendanceService.getCourses(user.schoolId)

@@ -120,6 +120,11 @@ export class GradingController {
     return this.gradingService.getActivities(user.schoolId, { sectionSubjectId, academicPeriodId, planningEntryId })
   }
 
+  @Get('activity-center')
+  getActivityCenter(@CurrentUser() user: AuthenticatedUser) {
+    return this.gradingService.getActivityCenter(user.schoolId, user.id, user.roles)
+  }
+
   @Post('activities')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   saveActivity(@CurrentUser() user: AuthenticatedUser, @Body() dto: SaveEvaluationActivityDto) {

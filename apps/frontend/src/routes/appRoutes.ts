@@ -5,12 +5,14 @@ import {
   BookOpen,
   CalendarCheck,
   CalendarClock,
+  CheckSquare,
   ChartNoAxesCombined,
   GraduationCap,
   Grid3x3,
   LayoutDashboard,
   LibraryBig,
   NotebookPen,
+  BookMarked,
   Settings,
   UsersRound,
 } from 'lucide-react'
@@ -41,7 +43,9 @@ const ProfilePage = lazyPage(() => import('@/modules/profile/pages/ProfilePage')
 const SchedulePage = lazyPage(() => import('@/modules/schedule/pages/SchedulePage'), 'SchedulePage')
 const SchoolAdministrationPage = lazyPage(() => import('@/modules/school-administration/pages/SchoolAdministrationPage'), 'SchoolAdministrationPage')
 const StudentsPage = lazyPage(() => import('@/modules/students/pages/StudentsPage'), 'StudentsPage')
+const ActivitiesPage = lazyPage(() => import('@/modules/activities/pages/ActivitiesPage'), 'ActivitiesPage')
 const SubjectsPage = lazyPage(() => import('@/modules/subjects/pages/SubjectsPage'), 'SubjectsPage')
+const JournalPage = lazyPage(() => import('@/modules/journal/pages/JournalPage'), 'JournalPage')
 
 /** Definición de una ruta de la aplicación. */
 export type AppRoute = {
@@ -85,7 +89,7 @@ export const appRoutes: AppRoute[] = [
     label: 'Cursos',
     icon: LibraryBig,
     component: CoursesPage,
-    allowedRoles: ['admin', 'director', 'coordinator'],
+    allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
   {
     path: '/estudiantes',
@@ -93,6 +97,7 @@ export const appRoutes: AppRoute[] = [
     icon: UsersRound,
     component: StudentsPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+    showInSidebar: false,
   },
   {
     path: '/asignaturas',
@@ -124,6 +129,13 @@ export const appRoutes: AppRoute[] = [
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher', 'student', 'guardian'],
   },
   {
+    path: '/actividades',
+    label: 'Actividades',
+    icon: CheckSquare,
+    component: ActivitiesPage,
+    allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+  },
+  {
     path: '/planificaciones',
     label: 'Planificación',
     icon: NotebookPen,
@@ -135,6 +147,13 @@ export const appRoutes: AppRoute[] = [
     label: 'Matriz curricular',
     icon: Grid3x3,
     component: CompetencyMatrixPage,
+    allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+  },
+  {
+    path: '/bitacora',
+    label: 'Bitácora',
+    icon: BookMarked,
+    component: JournalPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
   {
@@ -176,6 +195,10 @@ export const routePrefetchers: Record<string, () => void> = {
     () => import('@/modules/courses/services/coursesService').then(({ getCourseData }) => getCourseData()),
   ]),
   '/estudiantes': () => void import('@/modules/students/pages/StudentsPage'),
+  '/actividades': () => prefetch([
+    () => import('@/modules/activities/pages/ActivitiesPage'),
+    () => import('@/modules/grading/services/gradingService').then(({ getActivityCenter }) => getActivityCenter()),
+  ]),
   '/horario': () => prefetch([
     () => import('@/modules/schedule/pages/SchedulePage'),
     () => import('@/modules/schedule/services/scheduleService').then(({ getScheduleWorkspace }) => getScheduleWorkspace()),
@@ -191,6 +214,10 @@ export const routePrefetchers: Record<string, () => void> = {
   ]),
   '/matriz': () => void import('@/modules/competency-matrix/pages/CompetencyMatrixPage'),
   '/reportes': () => void import('@/modules/reports/pages/ReportsPage'),
+  '/bitacora': () => prefetch([
+    () => import('@/modules/journal/pages/JournalPage'),
+    () => import('@/modules/journal/services/journalService').then(({ getJournalEntries }) => getJournalEntries()),
+  ]),
   '/configuracion': () => void import('@/modules/school-administration/pages/SchoolAdministrationPage'),
 }
 

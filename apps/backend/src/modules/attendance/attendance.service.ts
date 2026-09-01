@@ -179,6 +179,22 @@ export class AttendanceService {
     })
   }
 
+  /** Historial de la asignatura; la agrupación por sesión se hace en el cliente. */
+  findClassAttendanceHistory(schoolId: string, sectionSubjectId: string) {
+    if (!sectionSubjectId) throw new BadRequestException('sectionSubjectId is required')
+    return prisma.attendanceClass.findMany({
+      where: { schoolId, sectionSubjectId },
+      select: {
+        id: true,
+        enrollmentId: true,
+        attendanceDate: true,
+        status: true,
+        notes: true,
+      },
+      orderBy: { attendanceDate: 'desc' },
+    })
+  }
+
   /**
    * Obtiene los registros de asistencia diaria, opcionalmente filtrados
    * por matrícula y fecha.

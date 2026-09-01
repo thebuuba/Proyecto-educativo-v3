@@ -1,4 +1,4 @@
-import { IsArray, IsDateString, IsNumber, IsObject, IsOptional, IsString, MaxLength, Min } from 'class-validator'
+import { IsArray, IsDateString, IsNumber, IsObject, IsOptional, IsString, IsUUID, MaxLength, Min } from 'class-validator'
 
 export class SaveEvaluationActivityDto {
   @IsOptional()
@@ -78,6 +78,11 @@ export class SaveEvaluationActivityDto {
   @IsOptional()
   @IsString()
   activityType?: 'individual' | 'group'
+
+  @IsOptional()
+  @IsArray()
+  @IsUUID('4', { each: true })
+  teamIds?: string[]
 
   @IsOptional()
   @IsString()

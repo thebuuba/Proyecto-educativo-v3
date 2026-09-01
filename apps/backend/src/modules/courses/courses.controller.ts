@@ -182,8 +182,12 @@ export class CoursesController {
 
   /** Obtiene los equipos propios de una asignatura-sección. */
   @Get('section-subjects/:id/teams')
-  getCourseTeams(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
-    return this.coursesService.getCourseTeams(user.schoolId, id)
+  getCourseTeams(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Query('archived') archived?: string,
+  ) {
+    return this.coursesService.getCourseTeams(user.schoolId, id, archived === 'true')
   }
 
   /** Crea un equipo permanente o temporal dentro del curso. */
@@ -213,5 +217,21 @@ export class CoursesController {
   @Roles('admin', 'director', 'coordinator', 'teacher')
   archiveCourseTeam(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
     return this.coursesService.archiveCourseTeam(user.schoolId, id)
+  }
+
+  @Post('teams/:id/restore')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  restoreCourseTeam(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.coursesService.restoreCourseTeam(user.schoolId, id)
+  }
+
+  @Delete('teams/:id/permanent')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  deleteCourseTeamPermanently(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Query('confirmation') confirmation = '',
+  ) {
+    return this.coursesService.deleteCourseTeamPermanently(user.schoolId, id, confirmation)
   }
 }

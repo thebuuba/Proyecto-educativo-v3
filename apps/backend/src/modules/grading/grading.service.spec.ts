@@ -23,9 +23,60 @@ const mocks = vi.hoisted(() => ({
     },
     evaluationActivity: {
       findMany: vi.fn(),
+      create: vi.fn(),
     },
+    courseTeam: { findMany: vi.fn() },
   },
 }))
+
+describe('GradingService activity teams', () => {
+  beforeEach(() => vi.clearAllMocks())
+
+  it('rejects teams from outside the selected subject', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1', schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1', schoolYearId: 'year-1' })
+    mocks.prisma.courseTeam.findMany.mockResolvedValue([])
+
+    await expect(new GradingService().saveActivity('school-1', 'user-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      competencyBlockId: 'b1',
+      name: 'Proyecto grupal',
+      maxScore: 20,
+      activityType: 'group',
+      teamIds: ['team-other-subject'],
+    })).rejects.toThrow('asignatura')
+    expect(mocks.prisma.evaluationActivity.create).not.toHaveBeenCalled()
+  })
+})
+
+describe('GradingService instrument evidence', () => {
+  beforeEach(() => vi.clearAllMocks())
+
+  it('rejects criterion totals that do not match the saved grade', async () => {
+    await expect(new GradingService().saveGrade('school-1', {
+      score: 18,
+      instrumentResult: {
+        instrumentType: 'rubrica',
+        selections: [0, 1],
+        criterionScores: [10, 5],
+        completedAt: '2026-09-01T12:00:00.000Z',
+      },
+    })).rejects.toThrow('no coincide')
+  })
+
+  it('rejects incomplete criterion selections', async () => {
+    await expect(new GradingService().saveGrade('school-1', {
+      score: 15,
+      instrumentResult: {
+        instrumentType: 'lista-cotejo',
+        selections: [0, null],
+        criterionScores: [15, 0],
+        completedAt: '2026-09-01T12:00:00.000Z',
+      },
+    })).rejects.toThrow('no es valido')
+  })
+})
 
 vi.mock('@aula/database', () => ({
   prisma: mocks.prisma,

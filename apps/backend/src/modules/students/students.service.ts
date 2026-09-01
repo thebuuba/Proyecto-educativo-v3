@@ -32,7 +32,7 @@ type CourseForEnrollment = {
   schoolYearId: string
   gradeId: string
   sectionId: string
-  subjectId: string
+  subjectId?: string
 }
 
 type ImportPreviewRow = {
@@ -174,12 +174,28 @@ function getEnrollmentCourseGradeOrder(course: EnrollmentCourseSummary) {
 @Injectable()
 export class StudentsService {
   private async getCourseOrThrow(schoolId: string, courseId: string) {
-    const course = await prisma.sectionSubject.findFirst({
+    const assignment = await prisma.sectionSubject.findFirst({
       where: { id: courseId, schoolId, status: 'ACTIVE' },
     })
+    if (assignment) return assignment
 
-    if (!course) throw new NotFoundException('Course not found')
-    return course
+    const section = await prisma.section.findFirst({
+      where: { id: courseId, schoolId, status: 'ACTIVE' },
+    })
+    if (!section) throw new NotFoundException('Course not found')
+
+    const schoolYear = await prisma.schoolYear.findFirst({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: { startDate: 'desc' },
+    })
+    if (!schoolYear) throw new NotFoundException('Active school year not found')
+
+    return {
+      id: section.id,
+      schoolYearId: schoolYear.id,
+      gradeId: section.gradeId,
+      sectionId: section.id,
+    }
   }
 
   async getEnrollmentCourses(schoolId: string) {
@@ -285,7 +301,7 @@ export class StudentsService {
         subjects.length === 1 ? subjects[0].name : `${subjects.length} asignaturas`
 
       return {
-        id: course.id,
+        id: course.sectionId,
         gradeId: course.gradeId,
         sectionId: course.sectionId,
         subjectId: course.subjectId,

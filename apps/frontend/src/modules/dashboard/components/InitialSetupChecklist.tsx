@@ -29,8 +29,8 @@ export function InitialSetupChecklist({ progress }: InitialSetupChecklistProps) 
     {
       id: 'students',
       title: 'Agrega estudiantes',
-      actionLabel: 'Ir a matricula',
-      path: '/estudiantes',
+      actionLabel: 'Ir a cursos',
+      path: '/cursos',
       done: progress.studentCount > 0 || progress.activeEnrollments > 0,
       icon: UsersRound,
     },

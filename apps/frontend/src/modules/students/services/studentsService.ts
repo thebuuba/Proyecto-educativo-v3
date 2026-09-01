@@ -141,7 +141,7 @@ export async function createStudentInCourse(
   input: CreateCourseStudentInput,
 ): Promise<CourseStudent> {
   return api.post<CourseStudent>(`/students/courses/${courseId}/students`, input, {
-    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions, API_CACHE_TAGS.courseOptions],
   })
 }
 
@@ -157,7 +157,7 @@ export async function importStudentsInCourse(
   students: ImportCourseStudentRow[],
 ): Promise<{ imported: number; errors: { row: number; reason: string }[] }> {
   return api.post(`/students/courses/${courseId}/import`, { students }, {
-    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions, API_CACHE_TAGS.courseOptions],
   })
 }
 
@@ -166,7 +166,7 @@ export async function withdrawStudentFromCourse(
   studentId: string,
 ): Promise<void> {
   await api.patch(`/students/courses/${courseId}/students/${studentId}/withdraw`, {}, {
-    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions, API_CACHE_TAGS.courseOptions],
   })
 }
 
@@ -178,7 +178,7 @@ export async function transferStudentToCourse(
   await api.patch(`/students/courses/${courseId}/students/${studentId}/transfer`, {
     targetCourseId,
   }, {
-    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions],
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions, API_CACHE_TAGS.courseOptions],
   })
 }
 

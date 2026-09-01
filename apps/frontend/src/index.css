@@ -194,6 +194,23 @@ html {
   }
 }
 
+.field {
+  min-height: 3rem;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+  padding-inline: 1rem;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.field:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ring) 12%, transparent);
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;

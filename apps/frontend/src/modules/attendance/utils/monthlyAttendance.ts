@@ -26,7 +26,7 @@ export const markLabels: Record<Exclude<MonthlyAttendanceMark, null>, string> = 
   P: 'Presente',
   A: 'Ausente',
   E: 'Excusa',
-  R: 'Retirado',
+  R: 'Retardo',
 }
 
 export function getInitialSchoolMonth() {
@@ -68,6 +68,7 @@ export function statusToMark(status: AttendanceStatus | null, notes?: string | n
   const normalizedStatus = typeof status === 'string' ? status.toLowerCase() : status
   if (normalizedStatus === 'present') return 'P'
   if (normalizedStatus === 'absent') return 'A'
+  if (normalizedStatus === 'late') return 'R'
   if (normalizedStatus === 'excused') return notes === 'retired' ? 'R' : 'E'
   return null
 }
@@ -75,7 +76,8 @@ export function statusToMark(status: AttendanceStatus | null, notes?: string | n
 export function markToStatus(mark: MonthlyAttendanceMark): AttendanceStatus | null {
   if (mark === 'P') return 'present'
   if (mark === 'A') return 'absent'
-  if (mark === 'E' || mark === 'R') return 'excused'
+  if (mark === 'E') return 'excused'
+  if (mark === 'R') return 'late'
   return null
 }
 

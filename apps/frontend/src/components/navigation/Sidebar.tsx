@@ -19,6 +19,7 @@ type SidebarProps = {
 const routeIconBackgrounds: Record<string, string> = {
   '/inicio': 'bg-primary-container',
   '/estudiantes': 'bg-secondary-container',
+  '/actividades': 'bg-violet-100',
   '/cursos': 'bg-warning-container',
   '/horario': 'bg-primary-container',
   '/asistencia': 'bg-tertiary-container',

@@ -10,6 +10,7 @@ import {
 } from '@/modules/grading/services/gradingService'
 import type {
   AcademicPeriodOpt,
+  EvaluatedInstrumentResult,
   GradeCellSaveState,
   GradeRecordRow,
   GradingActivity,
@@ -48,8 +49,9 @@ function periodIdForIndex(index: number): CompetencyPeriodId {
   return period && period.id !== 'final' ? period.id : 'p1'
 }
 
-export function useGrading(options: { initialSectionSubjectId?: string } = {}) {
+export function useGrading(options: { initialSectionSubjectId?: string; initialAcademicPeriodId?: string } = {}) {
   const initialSectionSubjectId = options.initialSectionSubjectId
+  const initialAcademicPeriodId = options.initialAcademicPeriodId
   const [sectionSubjects, setSectionSubjects] = useState<SectionSubjectOption[]>([])
   const [academicPeriods, setAcademicPeriods] = useState<AcademicPeriodOpt[]>([])
   const [selectedSsId, setSelectedSsIdState] = useState('')
@@ -109,6 +111,7 @@ export function useGrading(options: { initialSectionSubjectId?: string } = {}) {
     try {
       const workspace = await getGradingWorkspace({
         ...(initialSectionSubjectId ? { sectionSubjectId: initialSectionSubjectId } : {}),
+        ...(initialAcademicPeriodId ? { academicPeriodId: initialAcademicPeriodId } : {}),
         includeOptions: true,
       })
       if (requestId !== workspaceRequestRef.current) return
@@ -127,7 +130,7 @@ export function useGrading(options: { initialSectionSubjectId?: string } = {}) {
     } finally {
       if (requestId === workspaceRequestRef.current) setLoading(false)
     }
-  }, [applyWorkspace, initialSectionSubjectId])
+  }, [applyWorkspace, initialAcademicPeriodId, initialSectionSubjectId])
 
   useEffect(() => {
     void loadInitialData()
@@ -327,12 +330,12 @@ export function useGrading(options: { initialSectionSubjectId?: string } = {}) {
   }, [])
 
   const updateActivityScore = useCallback(
-    async (enrollmentId: string, activity: GradingActivity, value: string) => {
+    async (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => {
       if (!gradingContext || !academicPeriodId) return
       const score = value.trim() === '' ? null : Number(value)
       const existing = gradeRecords.find((record) => activityRecordMatches(record, enrollmentId, activity.id))
       const cellKey = activityGradeCellKey(enrollmentId, activity.id)
-      if (!scoreNeedsPersistence(existing?.score, score)) return
+      if (!instrumentResult && !scoreNeedsPersistence(existing?.score, score)) return
       if (score !== null) {
         const validationError = validateScore(score, activity.maxScore)
         if (validationError) {
@@ -374,6 +377,7 @@ export function useGrading(options: { initialSectionSubjectId?: string } = {}) {
         assessmentName: activityRecordName(activity),
         status: existing?.status ?? 'draft',
         evaluationActivityId: activity.id,
+        instrumentResult: instrumentResult ?? existing?.instrumentResult ?? null,
       }
       setGradeRecords((current) => existing
         ? current.map((record) => record.id === existing.id ? optimistic : record)
@@ -391,6 +395,7 @@ export function useGrading(options: { initialSectionSubjectId?: string } = {}) {
           assessmentName: activityRecordName(activity),
           evaluationActivityId: activity.id,
           gradeId: existing?.id ?? null,
+          instrumentResult,
         })
         if (activeSectionSubjectRef.current === sectionSubjectAtSave) {
           setGradeRecords((current) => current.map((record) => record.id === optimisticId ? saved : record))

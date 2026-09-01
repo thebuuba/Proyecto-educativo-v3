@@ -123,6 +123,9 @@ export type CourseTeamInput = {
   teamType: 'permanent' | 'temporary'
   startsAt?: string | null
   endsAt?: string | null
+  validityType?: 'activity' | 'date' | 'period' | 'project' | 'undefined'
+  validityReferenceId?: string | null
+  validityPeriod?: 'P1' | 'P2' | 'P3' | 'P4' | null
   members: CourseTeamMemberInput[]
 }
 
@@ -130,6 +133,9 @@ export type CourseTeamMember = {
   id: string
   enrollmentId: string
   role: string | null
+  joinedAt?: string
+  leftAt?: string | null
+  status?: 'ACTIVE' | 'INACTIVE'
   enrollment: {
     id: string
     student: {
@@ -153,7 +159,16 @@ export type CourseTeam = {
   teamType: 'permanent' | 'temporary'
   startsAt: string | null
   endsAt: string | null
+  validityType?: 'activity' | 'date' | 'period' | 'project' | 'undefined'
+  validityReferenceId?: string | null
+  validityPeriod?: 'P1' | 'P2' | 'P3' | 'P4' | null
   orderPosition: number
+  status?: 'ACTIVE' | 'INACTIVE'
+  activityCount?: number
+  lastActivity?: { id: string; name: string; date: string | null } | null
+  canDelete?: boolean
+  createdAt?: string
+  updatedAt?: string
   members: CourseTeamMember[]
 }
 

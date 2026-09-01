@@ -4,7 +4,7 @@ import { StrictMode, type ComponentProps } from 'react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import type { GradingActivity, StudentGradeRow } from '@/modules/grading/types'
-import { ActivitySavedDialog, GradingBook } from './GradingBook'
+import { ActivitySavedDialog, GradingBook, activityRubricConfiguration } from './GradingBook'
 
 const students: StudentGradeRow[] = [
   {
@@ -56,6 +56,28 @@ function renderBook(overrides: Partial<ComponentProps<typeof GradingBook>> = {},
 describe('GradingBook', () => {
   beforeEach(() => {
     window.localStorage.clear()
+  })
+
+  it('usa los criterios reales de una lista de cotejo al evaluar', () => {
+    const configuration = activityRubricConfiguration({
+      ...activities[0],
+      instrumentType: 'lista-cotejo',
+      instrumentCriteria: {
+        'lista-cotejo:meta:criteriaCount': '2',
+        'lista-cotejo:criterion:0': 'Presenta evidencia verificable',
+        'lista-cotejo:points:0': '15',
+        'lista-cotejo:criterion:1': 'Explica la conclusion',
+        'lista-cotejo:points:1': '10',
+        'lista-cotejo:meta:yesLabel': 'Cumple',
+        'lista-cotejo:meta:noLabel': 'Aun no',
+      },
+    })
+
+    expect(configuration.criteria).toEqual([
+      expect.objectContaining({ title: 'Presenta evidencia verificable', maximum: 15 }),
+      expect.objectContaining({ title: 'Explica la conclusion', maximum: 10 }),
+    ])
+    expect(configuration.levels.map((level) => level.label)).toEqual(['Cumple', 'Aun no'])
   })
 
   it('ofrece acciones contextuales después de crear una actividad', async () => {

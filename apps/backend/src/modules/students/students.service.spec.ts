@@ -7,9 +7,9 @@ const mocks = vi.hoisted(() => ({
     $transaction: vi.fn(),
     sectionSubject: { findFirst: vi.fn(), findMany: vi.fn() },
     grade: { findMany: vi.fn() },
-    section: { findMany: vi.fn() },
+    section: { findFirst: vi.fn(), findMany: vi.fn() },
     subject: { findMany: vi.fn() },
-    schoolYear: { findMany: vi.fn() },
+    schoolYear: { findFirst: vi.fn(), findMany: vi.fn() },
     enrollment: {
       groupBy: vi.fn(),
       create: vi.fn(),
@@ -84,7 +84,7 @@ describe('StudentsService course enrollment', () => {
   it('lists courses available for enrollment with student counts', async () => {
     mocks.prisma.sectionSubject.findMany.mockResolvedValue([
       {
-        id: 'course-1',
+        id: 'section-1',
         schoolYearId: 'year-1',
         gradeId: 'grade-1',
         sectionId: 'section-1',
@@ -108,7 +108,7 @@ describe('StudentsService course enrollment', () => {
 
     expect(result).toEqual([
       expect.objectContaining({
-        id: 'course-1',
+        id: 'section-1',
         label: '3ro Secundaria A - Lengua Española - 2026-2027',
         studentCount: 2,
       }),
@@ -118,7 +118,7 @@ describe('StudentsService course enrollment', () => {
   it('groups multiple subjects from the same section into one enrollment course', async () => {
     mocks.prisma.sectionSubject.findMany.mockResolvedValue([
       {
-        id: 'course-1',
+        id: 'section-1',
         schoolYearId: 'year-1',
         gradeId: 'grade-1',
         sectionId: 'section-1',
@@ -146,7 +146,7 @@ describe('StudentsService course enrollment', () => {
 
     expect(result).toHaveLength(1)
     expect(result[0]).toEqual(expect.objectContaining({
-      id: 'course-1',
+      id: 'section-1',
       label: '3ro Secundaria A - 2 asignaturas - 2026-2027',
       subjectName: '2 asignaturas',
       subjectCount: 2,
@@ -161,7 +161,7 @@ describe('StudentsService course enrollment', () => {
   it('starts all enrollment course lookups before waiting for any result', async () => {
     mocks.prisma.sectionSubject.findMany.mockResolvedValue([
       {
-        id: 'course-1',
+        id: 'section-1',
         schoolYearId: 'year-1',
         gradeId: 'grade-1',
         sectionId: 'section-1',
@@ -203,7 +203,7 @@ describe('StudentsService course enrollment', () => {
 
     await expect(resultPromise).resolves.toEqual([
       expect.objectContaining({
-        id: 'course-1',
+        id: 'section-1',
         label: '3ro Secundaria A - Lengua Española - 2026-2027',
         studentCount: 2,
       }),
@@ -456,6 +456,18 @@ describe('StudentsService course enrollment', () => {
 
     expect(result).toEqual({ imported: 1, errors: [] })
     expect(mocks.prisma.student.createMany).toHaveBeenCalledTimes(1)
+  })
+
+  it('accepts a section id as the course enrollment context', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue(null)
+    mocks.prisma.section.findFirst.mockResolvedValue({ id: 'section-1', gradeId: 'grade-1', status: 'ACTIVE' })
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1', status: 'ACTIVE' })
+    mocks.prisma.enrollment.findMany.mockResolvedValue([])
+
+    await expect(createService().getStudentsByCourse('school-1', 'section-1')).resolves.toEqual([])
+    expect(mocks.prisma.enrollment.findMany).toHaveBeenCalledWith({
+      where: expect.objectContaining({ schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1' }),
+    })
   })
 
   it('orders course students by their numeric code', async () => {

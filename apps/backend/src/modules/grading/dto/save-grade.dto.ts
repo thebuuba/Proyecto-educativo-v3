@@ -1,4 +1,4 @@
-import { IsNumber, IsOptional, IsString, Min, Max } from 'class-validator'
+import { IsNumber, IsObject, IsOptional, IsString, Min, Max } from 'class-validator'
 
 export class SaveGradeDto {
   @IsOptional()
@@ -40,4 +40,8 @@ export class SaveGradeDto {
   @IsOptional()
   @IsString()
   assessmentName?: string
+
+  @IsOptional()
+  @IsObject()
+  instrumentResult?: Record<string, unknown>
 }

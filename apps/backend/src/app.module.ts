@@ -22,6 +22,7 @@ import { ReportsModule } from './modules/reports/reports.module'
 import { ProfileModule } from './modules/profile/profile.module'
 import { SubjectsModule } from './modules/subjects/subjects.module'
 import { SchoolsModule } from './modules/schools/schools.module'
+import { JournalModule } from './modules/journal/journal.module'
 import { backendEnvFilePaths } from './config/env-file-paths'
 
 /**
@@ -49,6 +50,7 @@ import { backendEnvFilePaths } from './config/env-file-paths'
     ProfileModule,
     SubjectsModule,
     SchoolsModule,
+    JournalModule,
   ],
   providers: [
     { provide: APP_GUARD, useClass: ThrottlerGuard },

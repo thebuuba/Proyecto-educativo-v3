@@ -35,6 +35,9 @@ function mapEvaluationActivity(activity: any) {
     resources: activity.resources ?? [],
     evidenceInstructions: activity.evidenceInstructions || undefined,
     activityType: activity.activityType,
+    teamIds: [...new Set((activity.groups ?? [])
+      .map((group: { courseTeamId?: string | null }) => group.courseTeamId)
+      .filter(Boolean))],
     planningId: activity.planningEntryId ?? undefined,
     planningMoment: activity.planningMoment ?? '',
     source: activity.source,
@@ -51,6 +54,33 @@ function mapGradeRecord(grade: any) {
     assessmentName: grade.assessmentName,
     status: grade.status.toLowerCase(),
     evaluationActivityId: grade.evaluationActivityId,
+    instrumentResult: grade.instrumentResult ?? null,
+  }
+}
+
+function validateInstrumentResult(result: Record<string, unknown> | undefined, score: number) {
+  if (result === undefined) return
+
+  const { instrumentType, selections, criterionScores, completedAt } = result
+  const validSelections = Array.isArray(selections)
+    && selections.length > 0
+    && selections.length <= 100
+    && selections.every((value) => Number.isInteger(value) && Number(value) >= 0 && Number(value) <= 50)
+  const validScores = Array.isArray(criterionScores)
+    && criterionScores.length === (Array.isArray(selections) ? selections.length : -1)
+    && criterionScores.every((value) => typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 100)
+  const validCompletedAt = typeof completedAt === 'string'
+    && completedAt.length <= 40
+    && Number.isFinite(Date.parse(completedAt))
+
+  if (typeof instrumentType !== 'string' || !instrumentType.trim() || instrumentType.length > 50
+    || !validSelections || !validScores || !validCompletedAt) {
+    throw new BadRequestException('El resultado del instrumento de evaluacion no es valido')
+  }
+
+  const criterionTotal = (criterionScores as number[]).reduce((total, value) => total + value, 0)
+  if (Math.abs(criterionTotal - score) > 0.01) {
+    throw new BadRequestException('El desglose del instrumento no coincide con la calificacion')
   }
 }
 
@@ -148,9 +178,13 @@ export class GradingService {
     )
   }
 
-  private async loadSectionSubjects(schoolId: string) {
+  private async loadSectionSubjects(schoolId: string, appUserId?: string) {
     const items = await prisma.sectionSubject.findMany({
-      where: { schoolId, status: 'ACTIVE' },
+      where: {
+        schoolId,
+        status: 'ACTIVE',
+        ...(appUserId ? { teacher: { userId: appUserId } } : {}),
+      },
       select: {
         id: true,
         sectionId: true,
@@ -478,6 +512,7 @@ export class GradingService {
    * @throws NotFoundException si el registro o alguna entidad relacionada no existe.
    */
   async saveGrade(schoolId: string, dto: SaveGradeDto) {
+    validateInstrumentResult(dto.instrumentResult, dto.score)
     if (dto.gradeId) {
       const grade = await prisma.gradesRecord.findFirst({ where: { id: dto.gradeId, schoolId } })
       if (!grade) throw new NotFoundException('Grade record not found')
@@ -497,6 +532,7 @@ export class GradingService {
           weight: dto.weight,
           assessmentName: dto.assessmentName,
           evaluationActivityId: dto.evaluationActivityId === undefined ? undefined : dto.evaluationActivityId,
+          instrumentResult: dto.instrumentResult === undefined ? undefined : dto.instrumentResult as any,
         },
       })
       return mapGradeRecord(updated)
@@ -537,6 +573,7 @@ export class GradingService {
         weight: dto.weight ?? 1,
         assessmentName: dto.assessmentName ?? '',
         evaluationActivityId: dto.evaluationActivityId ?? undefined,
+        instrumentResult: dto.instrumentResult as any,
       },
     })
     return mapGradeRecord(created)
@@ -553,11 +590,70 @@ export class GradingService {
 
     const activities = await prisma.evaluationActivity.findMany({
       where,
-      include: { instrument: true },
+      include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
       orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
     })
 
     return activities.map(mapEvaluationActivity)
+  }
+
+  async getActivityCenter(schoolId: string, appUserId?: string, roles: string[] = []) {
+    const teacherOnly = roles.includes('teacher')
+      && !roles.some((role) => ['admin', 'director', 'coordinator'].includes(role))
+    const sectionSubjectScope = teacherOnly && appUserId
+      ? { teacher: { userId: appUserId } }
+      : {}
+    const [sectionSubjects, academicPeriods, activities, enrollmentCounts] = await Promise.all([
+      teacherOnly && appUserId
+        ? this.loadSectionSubjects(schoolId, appUserId)
+        : this.getSectionSubjects(schoolId),
+      this.getAcademicPeriods(schoolId),
+      prisma.evaluationActivity.findMany({
+        where: { schoolId, status: 'ACTIVE', sectionSubject: sectionSubjectScope },
+        include: {
+          instrument: true,
+          academicPeriod: { select: { name: true } },
+          sectionSubject: {
+            select: {
+              id: true,
+              sectionId: true,
+              schoolYearId: true,
+              grade: { select: { name: true } },
+              section: { select: { name: true } },
+              subject: { select: { name: true } },
+            },
+          },
+          groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } },
+          _count: { select: { gradesRecords: true } },
+        },
+        orderBy: [{ activityDate: 'desc' }, { createdAt: 'desc' }],
+      }),
+      prisma.enrollment.groupBy({
+        by: ['schoolYearId', 'sectionId'],
+        where: { schoolId, status: 'ACTIVE' },
+        _count: { id: true },
+      }),
+    ])
+    const studentsByCourse = new Map(enrollmentCounts.map((item) => [
+      `${item.schoolYearId}:${item.sectionId}`,
+      item._count.id,
+    ]))
+
+    return {
+      sectionSubjects,
+      academicPeriods,
+      activities: activities.map((activity) => ({
+        ...mapEvaluationActivity(activity),
+        sectionSubjectId: activity.sectionSubjectId,
+        academicPeriodId: activity.academicPeriodId,
+        courseId: activity.sectionSubject.sectionId,
+        courseLabel: `${activity.sectionSubject.grade.name} ${activity.sectionSubject.section.name}`.trim(),
+        subjectName: activity.sectionSubject.subject.name,
+        periodName: activity.academicPeriod.name,
+        evaluatedCount: activity._count.gradesRecords,
+        studentCount: studentsByCourse.get(`${activity.sectionSubject.schoolYearId}:${activity.sectionSubject.sectionId}`) ?? 0,
+      })),
+    }
   }
 
   async saveActivity(schoolId: string, userId: string, dto: SaveEvaluationActivityDto) {
@@ -576,6 +672,21 @@ export class GradingService {
     }
     if (dto.planningEntryId) {
       await assertPlanningEntryScope(schoolId, dto.planningEntryId, dto.sectionSubjectId, dto.academicPeriodId)
+    }
+    const requestedTeamIds = dto.activityType === 'group' ? [...new Set(dto.teamIds ?? [])] : []
+    const requestedTeams = requestedTeamIds.length
+      ? await prisma.courseTeam.findMany({
+          where: {
+            id: { in: requestedTeamIds },
+            schoolId,
+            sectionSubjectId: dto.sectionSubjectId,
+            status: 'ACTIVE',
+          },
+          include: { members: { where: { status: 'ACTIVE' } } },
+        })
+      : []
+    if (requestedTeams.length !== requestedTeamIds.length) {
+      throw new BadRequestException('Uno o mas equipos no pertenecen a esta asignatura')
     }
     let instrumentId = dto.instrumentId || null
     if (instrumentId) {
@@ -639,16 +750,74 @@ export class GradingService {
       const updated = await prisma.evaluationActivity.update({
         where: { id: dto.id },
         data,
-        include: { instrument: true },
+        include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
       })
-      return mapEvaluationActivity(updated)
+      await this.syncActivityTeams(updated.id, schoolId, requestedTeams)
+      const refreshed = await prisma.evaluationActivity.findUnique({
+        where: { id: updated.id },
+        include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
+      })
+      return mapEvaluationActivity(refreshed)
     }
 
     const created = await prisma.evaluationActivity.create({
       data,
-      include: { instrument: true },
+      include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
     })
-    return mapEvaluationActivity(created)
+    await this.syncActivityTeams(created.id, schoolId, requestedTeams)
+    const refreshed = await prisma.evaluationActivity.findUnique({
+      where: { id: created.id },
+      include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
+    })
+    return mapEvaluationActivity(refreshed)
+  }
+
+  private async syncActivityTeams(
+    activityId: string,
+    schoolId: string,
+    teams: Array<{ id: string; name: string; members: Array<{ enrollmentId: string }> }>,
+  ) {
+    const teamIds = teams.map(({ id }) => id)
+    await prisma.$transaction(async (tx) => {
+      await tx.evaluationActivityGroup.updateMany({
+        where: {
+          activityId,
+          status: 'ACTIVE',
+          courseTeamId: teamIds.length ? { notIn: teamIds } : { not: null },
+        },
+        data: { status: 'INACTIVE' },
+      })
+
+      for (const team of teams) {
+        const existing = await tx.evaluationActivityGroup.findFirst({
+          where: { activityId, courseTeamId: team.id },
+        })
+        const group = existing
+          ? await tx.evaluationActivityGroup.update({
+              where: { id: existing.id },
+              data: { name: team.name, status: 'ACTIVE' },
+            })
+          : await tx.evaluationActivityGroup.create({
+              data: { activityId, courseTeamId: team.id, schoolId, name: team.name },
+            })
+        const enrollmentIds = team.members.map(({ enrollmentId }) => enrollmentId)
+        await tx.evaluationActivityGroupMember.updateMany({
+          where: {
+            groupId: group.id,
+            status: 'ACTIVE',
+            ...(enrollmentIds.length ? { enrollmentId: { notIn: enrollmentIds } } : {}),
+          },
+          data: { status: 'INACTIVE' },
+        })
+        for (const enrollmentId of enrollmentIds) {
+          await tx.evaluationActivityGroupMember.upsert({
+            where: { groupId_enrollmentId: { groupId: group.id, enrollmentId } },
+            create: { groupId: group.id, schoolId, enrollmentId },
+            update: { status: 'ACTIVE' },
+          })
+        }
+      }
+    })
   }
 
   async linkActivityToPlanning(

@@ -8,6 +8,7 @@
 import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type {
   AcademicPeriodOpt,
+  ActivityCenterWorkspace,
   AnnualGradingPeriod,
   GradeRecordRow,
   GradeSummaryStats,
@@ -17,6 +18,10 @@ import type {
   SectionSubjectOption,
   StudentGradeRow,
 } from '@/modules/grading/types'
+
+export async function getActivityCenter(): Promise<ActivityCenterWorkspace> {
+  return api.get<ActivityCenterWorkspace>('/grading/activity-center')
+}
 
 export async function getGradingWorkspace(input?: {
   sectionSubjectId?: string

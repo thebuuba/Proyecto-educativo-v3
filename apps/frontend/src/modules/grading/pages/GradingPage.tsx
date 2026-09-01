@@ -1,10 +1,12 @@
 ﻿import { AlertCircle, BookOpen, CalendarDays } from 'lucide-react'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Select } from '@/components/ui/Select'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
+import { getCourseTeams } from '@/modules/courses/services/coursesService'
+import type { CourseTeam } from '@/modules/courses/types'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
 import type { SectionSubjectOption } from '@/modules/grading/types'
 import { competencyPeriods, getRequestedCompetencyBlockId } from '@/modules/grading/utils/competencyGrades'
@@ -13,14 +15,20 @@ export function GradingPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const requestedSectionSubjectId = searchParams.get('sectionSubjectId') ?? undefined
+  const requestedAcademicPeriodId = searchParams.get('academicPeriodId') ?? undefined
   const requestedAction = searchParams.get('action') === 'create-activity' ? 'create' : undefined
   const requestedBlockId = getRequestedCompetencyBlockId(searchParams)
+  const requestedActivityId = searchParams.get('activityId') ?? undefined
+  const requestedActivityMode = searchParams.get('activityMode') === 'edit' ? 'edit' : searchParams.get('activityMode') === 'evaluate' ? 'evaluate' : searchParams.get('activityMode') === 'results' ? 'results' : 'view'
   const returnCourseId = searchParams.get('returnCourseId')
   const returnSubjectId = searchParams.get('returnSubjectId')
+  const returnTab = searchParams.get('returnTab')
   const returnsToSubject = searchParams.get('origin') === 'subject' && Boolean(returnCourseId && returnSubjectId)
-  const returnToSubject = returnsToSubject
-    ? () => navigate(`/cursos?${new URLSearchParams({ courseId: returnCourseId!, subjectId: returnSubjectId! }).toString()}`)
-    : undefined
+  const returnsToActivities = searchParams.get('origin') === 'activities'
+  const returnToOrigin = returnsToSubject
+    ? () => navigate(`/cursos?${new URLSearchParams({ courseId: returnCourseId!, subjectId: returnSubjectId!, ...(returnTab ? { tab: returnTab } : {}) }).toString()}`)
+    : returnsToActivities ? () => navigate('/actividades') : undefined
+  const originReturnLabel = returnsToSubject ? 'Volver a la asignatura' : returnsToActivities ? 'Volver a actividades' : undefined
   const {
     sectionSubjects,
     selectedSs,
@@ -44,11 +52,22 @@ export function GradingPage() {
     updateRecoveryScore,
     loadFinalRecords,
     getActivitiesForPeriod,
-  } = useGrading({ initialSectionSubjectId: requestedSectionSubjectId })
+  } = useGrading({ initialSectionSubjectId: requestedSectionSubjectId, initialAcademicPeriodId: requestedAcademicPeriodId })
 
   const isFinalView = selectedPeriodId === 'final'
   const groupedSectionSubjects = groupSectionSubjects(sectionSubjects)
   const [hideFilters, setHideFilters] = useState(false)
+  const [teams, setTeams] = useState<CourseTeam[]>([])
+
+  useEffect(() => {
+    let active = true
+    if (!selectedSsId) {
+      setTeams([])
+      return
+    }
+    void getCourseTeams(selectedSsId).then((result) => { if (active) setTeams(result) }).catch(() => { if (active) setTeams([]) })
+    return () => { active = false }
+  }, [selectedSsId])
 
   return (
     <section className="w-full">
@@ -124,6 +143,7 @@ export function GradingPage() {
       ) : isFinalView ? (
         <GradingBook
           students={students}
+          teams={teams}
           activities={activities}
           records={gradeRecords}
           recoveryScores={recoveryScores}
@@ -136,8 +156,10 @@ export function GradingPage() {
           initialView="final"
           initialActivityAction={requestedAction}
           initialActivityBlockId={requestedBlockId}
-          originReturnLabel={returnsToSubject ? 'Volver a la asignatura' : undefined}
-          onReturnToOrigin={returnToSubject}
+          initialActivityId={requestedActivityId}
+          initialActivityMode={requestedActivityMode}
+          originReturnLabel={originReturnLabel}
+          onReturnToOrigin={returnToOrigin}
           onAddActivity={addActivity}
           onUpdateActivity={updateActivity}
           onDeleteActivity={deleteActivity}
@@ -150,6 +172,7 @@ export function GradingPage() {
       ) : (
         <GradingBook
           students={students}
+          teams={teams}
           activities={activities}
           records={gradeRecords}
           recoveryScores={recoveryScores}
@@ -161,8 +184,10 @@ export function GradingPage() {
           cellSaveStates={cellSaveStates}
           initialActivityAction={requestedAction}
           initialActivityBlockId={requestedBlockId}
-          originReturnLabel={returnsToSubject ? 'Volver a la asignatura' : undefined}
-          onReturnToOrigin={returnToSubject}
+          initialActivityId={requestedActivityId}
+          initialActivityMode={requestedActivityMode}
+          originReturnLabel={originReturnLabel}
+          onReturnToOrigin={returnToOrigin}
           onAddActivity={addActivity}
           onUpdateActivity={updateActivity}
           onDeleteActivity={deleteActivity}
