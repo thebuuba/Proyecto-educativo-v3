@@ -1,0 +1,208 @@
+/*
+ * Lenguaje visual del panel de Cursos.
+ * Mantiene la lógica existente y alinea la jerarquía con el Inicio:
+ * superficies blancas, color con intención y menos capas visuales.
+ */
+
+body:has(#courses-summary-title) {
+  --courses-radius: 24px;
+  --courses-shadow: 0 16px 40px -30px color-mix(in srgb, var(--palette-text) 24%, transparent);
+}
+
+/* Resumen: una sola superficie principal, compacta y tranquila. */
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] {
+  border: 1px solid color-mix(in srgb, var(--palette-gray) 68%, var(--palette-white));
+  border-radius: var(--courses-radius);
+  box-shadow: var(--courses-shadow);
+}
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] > div {
+  align-items: center;
+}
+
+body:has(#courses-summary-title) #courses-summary-title {
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  letter-spacing: -0.025em;
+}
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] [aria-label='Resumen de cursos'] {
+  margin-top: 0.65rem;
+  gap: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+}
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] [aria-label='Resumen de cursos'] strong {
+  font-size: 0.85rem;
+}
+
+/* Filtros: se comportan como barra de herramientas, no como segunda cabecera. */
+body:has(#courses-summary-title) details.group {
+  border: 1px solid color-mix(in srgb, var(--palette-gray) 72%, var(--palette-white));
+  border-radius: 20px;
+  box-shadow: 0 10px 28px -26px color-mix(in srgb, var(--palette-text) 20%, transparent);
+}
+
+body:has(#courses-summary-title) details.group > summary {
+  min-height: 60px;
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+}
+
+body:has(#courses-summary-title) details.group > summary > span:first-child {
+  background: var(--palette-blue-light) !important;
+  color: var(--palette-text) !important;
+}
+
+body:has(#courses-summary-title) details.group[open] {
+  box-shadow: var(--courses-shadow);
+}
+
+/* Nivel y ciclo: jerarquía tipográfica, sin competir con las tarjetas. */
+body:has(#courses-summary-title) .space-y-8 > section {
+  margin-top: 0;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section > div:first-child {
+  margin-block: 0 0.8rem;
+  gap: 0.6rem;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section > div:first-child > span:first-child {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.7rem;
+  background: var(--palette-blue-light) !important;
+  color: var(--palette-text) !important;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section > div:first-child > span:nth-child(3) {
+  background: var(--palette-blue-light) !important;
+  color: var(--palette-text) !important;
+  padding: 0.25rem 0.6rem;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section > div:first-child > div.h-px {
+  background: color-mix(in srgb, var(--palette-blue) 20%, var(--palette-gray)) !important;
+}
+
+body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 {
+  margin-bottom: 0.7rem;
+}
+
+body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > span {
+  background: color-mix(in srgb, var(--palette-gray) 55%, var(--palette-white)) !important;
+  color: var(--palette-text) !important;
+}
+
+body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > div.h-px {
+  background: color-mix(in srgb, var(--palette-gray) 76%, var(--palette-white)) !important;
+}
+
+/* Tres tarjetas útiles por fila en escritorio; dos en tablet y una en móvil. */
+body:has(#courses-summary-title) div.grid:has(> article.group) {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  body:has(#courses-summary-title) div.grid:has(> article.group) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  body:has(#courses-summary-title) div.grid:has(> article.group) {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Tarjeta de curso: menos cajas internas, más lectura inmediata. */
+body:has(#courses-summary-title) article.group {
+  min-width: 0;
+  overflow: visible;
+  border: 1px solid color-mix(in srgb, var(--palette-gray) 74%, var(--palette-white));
+  border-radius: 22px !important;
+  box-shadow: 0 14px 34px -30px color-mix(in srgb, var(--palette-text) 30%, transparent) !important;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body:has(#courses-summary-title) article.group:hover {
+    transform: translateY(-2px) !important;
+    border-color: color-mix(in srgb, var(--palette-blue) 30%, var(--palette-gray));
+    box-shadow: 0 20px 42px -30px color-mix(in srgb, var(--palette-text) 34%, transparent) !important;
+  }
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] {
+  padding: 1rem;
+}
+
+/* El color del nivel deja de variar por Primaria/Secundaria: azul = navegación/curso. */
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child span[style] {
+  background: var(--palette-blue) !important;
+  color: var(--palette-text) !important;
+  box-shadow: none !important;
+}
+
+/* Estado activo usa el verde oficial, en una dosis pequeña. */
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child > div:last-child > span {
+  background: color-mix(in srgb, var(--palette-green) 15%, var(--palette-white)) !important;
+  color: var(--palette-text) !important;
+  letter-spacing: 0.035em;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child > div:last-child > span > span {
+  background: var(--palette-green) !important;
+}
+
+/* Métricas: una franja neutra, sin parecer tres tarjetas dentro de otra tarjeta. */
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid {
+  margin-top: 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--palette-gray) 66%, var(--palette-white));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--palette-gray) 30%, var(--palette-white)) !important;
+  padding-block: 0.65rem;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span {
+  padding-inline: 0.35rem;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid strong {
+  font-size: 0.9rem;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid span span {
+  font-size: 0.65rem;
+}
+
+/* Pie: acciones discretas; Entrar conserva prioridad visual sin otro botón sólido. */
+body:has(#courses-summary-title) article.group > div:last-child {
+  min-height: 44px;
+  padding: 0.45rem 0.7rem;
+  border-color: color-mix(in srgb, var(--palette-gray) 70%, var(--palette-white));
+}
+
+body:has(#courses-summary-title) article.group > div:last-child button {
+  min-height: 34px;
+}
+
+/* Espaciado general más parecido al Inicio. */
+body:has(#courses-summary-title) .space-y-8 {
+  row-gap: 1.65rem;
+}
+
+body:has(#courses-summary-title) .space-y-5 {
+  row-gap: 1.1rem;
+}
+
+@media (max-width: 640px) {
+  body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] {
+    border-radius: 20px;
+  }
+
+  body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] [aria-label='Resumen de cursos'] {
+    gap: 0.4rem 0.55rem;
+  }
+}
