@@ -1,0 +1,106 @@
+/*
+ * Capa visual interna de Evaluación.
+ * GradingBook todavía conserva nombres históricos de Tailwind para C1-C4;
+ * aquí se traducen únicamente dentro del workspace de evaluación a las
+ * cuatro familias oficiales de AulaBase.
+ */
+
+.grading-workspace {
+  --grading-card-shadow: 0 16px 40px -30px color-mix(in srgb, var(--foreground) 20%, transparent);
+}
+
+.grading-workspace :where(section, article).bg-card,
+.grading-workspace :where(div).bg-card.shadow-sm {
+  border-color: transparent;
+  box-shadow: var(--grading-card-shadow);
+}
+
+/* C1 · azul: información, comunicación y navegación. */
+.grading-workspace :where(.bg-blue-50, .bg-blue-50\/70, .bg-blue-100) {
+  background: color-mix(in srgb, var(--primary) 14%, var(--card)) !important;
+}
+.grading-workspace :where(.bg-blue-500, .bg-blue-600, .bg-blue-700) {
+  background: var(--primary) !important;
+}
+.grading-workspace :where(.text-blue-500, .text-blue-600, .text-blue-700, .text-blue-800, .text-blue-950) {
+  color: var(--primary-variant) !important;
+}
+.grading-workspace :where(.border-blue-200, .border-blue-300) {
+  border-color: color-mix(in srgb, var(--primary) 34%, var(--card)) !important;
+}
+.grading-workspace :where(.ring-blue-200, .ring-blue-300) {
+  --tw-ring-color: color-mix(in srgb, var(--primary) 28%, transparent) !important;
+}
+
+/* C2 · verde: logro, completado y progreso positivo. */
+.grading-workspace :where(.bg-emerald-50, .bg-emerald-50\/70, .bg-emerald-100, .bg-green-50, .bg-green-100) {
+  background: color-mix(in srgb, var(--success) 16%, var(--card)) !important;
+}
+.grading-workspace :where(.bg-emerald-500, .bg-emerald-600, .bg-emerald-700, .bg-green-500, .bg-green-600) {
+  background: var(--success) !important;
+}
+.grading-workspace :where(.text-emerald-500, .text-emerald-600, .text-emerald-700, .text-emerald-800, .text-emerald-950, .text-green-600, .text-green-700) {
+  color: color-mix(in srgb, var(--success) 58%, var(--foreground)) !important;
+}
+.grading-workspace :where(.border-emerald-200, .border-emerald-300, .border-green-200, .border-green-300) {
+  border-color: color-mix(in srgb, var(--success) 36%, var(--card)) !important;
+}
+.grading-workspace :where(.ring-emerald-200, .ring-emerald-300) {
+  --tw-ring-color: color-mix(in srgb, var(--success) 30%, transparent) !important;
+}
+
+/* C3 · amarillo: proceso, pendiente y atención. */
+.grading-workspace :where(.bg-amber-50, .bg-amber-50\/70, .bg-amber-100, .bg-yellow-50, .bg-yellow-100) {
+  background: color-mix(in srgb, var(--warning) 25%, var(--card)) !important;
+}
+.grading-workspace :where(.bg-amber-500, .bg-amber-600, .bg-yellow-500) {
+  background: var(--warning) !important;
+}
+.grading-workspace :where(.text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800, .text-amber-950, .text-yellow-600, .text-yellow-700) {
+  color: var(--foreground) !important;
+}
+.grading-workspace :where(.border-amber-200, .border-amber-300, .border-yellow-200, .border-yellow-300) {
+  border-color: color-mix(in srgb, var(--warning) 48%, var(--card)) !important;
+}
+.grading-workspace :where(.ring-amber-200, .ring-amber-300) {
+  --tw-ring-color: color-mix(in srgb, var(--warning) 36%, transparent) !important;
+}
+
+/* C4 · coral: cuarto bloque e incidencias; desaparece el violeta de la UI. */
+.grading-workspace :where(.bg-violet-50, .bg-violet-50\/70, .bg-violet-100, .bg-rose-50, .bg-red-50) {
+  background: color-mix(in srgb, var(--destructive) 15%, var(--card)) !important;
+}
+.grading-workspace :where(.bg-violet-500, .bg-violet-600, .bg-violet-700, .bg-rose-500, .bg-red-500) {
+  background: var(--destructive) !important;
+}
+.grading-workspace :where(.text-violet-500, .text-violet-600, .text-violet-700, .text-violet-800, .text-violet-950, .text-rose-600, .text-red-600, .text-red-700) {
+  color: color-mix(in srgb, var(--destructive) 62%, var(--foreground)) !important;
+}
+.grading-workspace :where(.border-violet-200, .border-violet-300, .border-rose-200, .border-red-200) {
+  border-color: color-mix(in srgb, var(--destructive) 34%, var(--card)) !important;
+}
+.grading-workspace :where(.ring-violet-200, .ring-violet-300) {
+  --tw-ring-color: color-mix(in srgb, var(--destructive) 30%, transparent) !important;
+}
+
+/* El texto sobre colores de marca se mantiene oscuro según la identidad AulaBase. */
+.grading-workspace :where(.bg-blue-600, .bg-emerald-600, .bg-violet-600, .bg-amber-500).text-white {
+  color: var(--foreground) !important;
+}
+
+/* Tablas densas: fondo blanco y hover muy suave para no competir con las notas. */
+.grading-workspace table {
+  background: var(--card);
+}
+.grading-workspace thead {
+  color: var(--muted-foreground);
+}
+.grading-workspace tbody tr:hover {
+  background: color-mix(in srgb, var(--primary) 5%, var(--card));
+}
+
+/* Menús de exportación: la aplicación manda; Word/Excel no crean otra identidad. */
+.grading-workspace details [class*='text-emerald-700'],
+.grading-workspace details [class*='text-blue-700'] {
+  color: var(--foreground) !important;
+}
