@@ -54,12 +54,14 @@ export function Button({
   variant = 'primary',
   size = 'md',
   type = 'button',
-  loading,
+  loading = false,
+  disabled = false,
   children,
   ...props
 }: ButtonProps) {
   return (
     <button
+      {...props}
       type={type}
       className={cn(
         'inline-flex shrink-0 items-center justify-center font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform,filter] duration-150 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-4 active:scale-[0.985] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-60',
@@ -67,10 +69,10 @@ export function Button({
         sizeClasses[size],
         className,
       )}
-      disabled={props.disabled || loading}
-      {...props}
+      disabled={disabled || loading}
+      aria-busy={loading || undefined}
     >
-      {loading && <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" />}
+      {loading ? <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" /> : null}
       {children}
     </button>
   )
