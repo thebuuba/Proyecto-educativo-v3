@@ -57,7 +57,7 @@ export function JournalPage() {
     return groups
   }, new Map<string, JournalEntry[]>()), [visible])
   const pending = entries.filter((entry) => entry.status === 'ACTIVE' && entry.followUpStatus === 'pending')
-  const weekStart = Date.now() - 7 * 86400000
+  const [weekStart] = useState(() => Date.now() - 7 * 86400000)
 
   const mutate = async (action: () => Promise<unknown>) => { await action(); await refresh() }
   const archive = async (entry: JournalEntry) => { await mutate(() => entry.status === 'ARCHIVED' ? restoreJournalEntry(entry.id) : archiveJournalEntry(entry.id)) }
@@ -85,7 +85,7 @@ function JournalCard({ entry, onEdit, onArchive, onDelete, onComplete }: { entry
 }
 
 function JournalForm({ entry, courses, initialSectionId, initialSubjectId, initialType, initialStudentId, onClose, onSaved }: { entry: JournalEntry | null; courses: EnrollmentCourse[]; initialSectionId: string; initialSubjectId: string; initialType?: JournalEntryType; initialStudentId: string; onClose: () => void; onSaved: () => Promise<void> }) {
-  const initialDate = entry?.occurredAt ? entry.occurredAt.slice(0, 16) : new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16)
+  const [initialDate] = useState(() => entry?.occurredAt ? entry.occurredAt.slice(0, 16) : new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16))
   const [form, setForm] = useState<SaveJournalEntry>({ entryType: entry?.entryType ?? initialType ?? 'quick_note', title: entry?.title ?? '', content: entry?.content ?? '', occurredAt: initialDate, sectionId: entry?.sectionId ?? initialSectionId, sectionSubjectId: entry?.sectionSubjectId ?? initialSubjectId, schoolYearId: entry?.schoolYearId ?? undefined, academicPeriodId: entry?.academicPeriodId ?? undefined, studentIds: entry?.students.map(s => s.student.id) ?? (initialStudentId ? [initialStudentId] : []), tags: entry?.tags ?? [], requiresFollowUp: entry?.requiresFollowUp ?? false, followUpDate: entry?.followUpDate?.slice(0,10), followUpStatus: entry?.followUpStatus ?? 'none' })
   const [students, setStudents] = useState<StudentAttendanceRow[]>([]), [saving, setSaving] = useState(false), [error, setError] = useState('')
   const sectionCourses = courses.filter(c => c.sectionId === form.sectionId)

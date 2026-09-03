@@ -6722,6 +6722,7 @@ function activityMomentTitle(value?: string) {
   return 'Sin definir'
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function activityRubricConfiguration(activity: GradingActivity) {
   const fields = activity.instrumentCriteria ?? {}
   if (activity.instrumentType === 'escala') {
