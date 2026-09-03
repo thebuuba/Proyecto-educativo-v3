@@ -1,19 +1,10 @@
-import { readFileSync, readdirSync } from 'node:fs'
-import { join } from 'node:path'
+import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 import { describe, expect, it } from 'vitest'
 
 const readSource = (relativePath: string) =>
   readFileSync(fileURLToPath(new URL(relativePath, import.meta.url)), 'utf8')
-
-const sourceRoot = join(process.cwd(), 'src')
-
-function frontendSources(): string[] {
-  return readdirSync(sourceRoot, { recursive: true, withFileTypes: true })
-    .filter((entry) => entry.isFile() && /\.(css|ts|tsx)$/.test(entry.name) && entry.name !== 'themePalette.spec.ts')
-    .map((entry) => readFileSync(`${entry.parentPath}/${entry.name}`, 'utf8'))
-}
 
 function contrastRatio(first: string, second: string): number {
   const luminance = (hex: string) => {
@@ -26,7 +17,7 @@ function contrastRatio(first: string, second: string): number {
   return (light + 0.05) / (dark + 0.05)
 }
 
-describe('paleta visual accesible de AulaBase', () => {
+describe('paleta visual de AulaBase', () => {
   it('carga la capa semántica después de los estilos base', () => {
     const main = readSource('./main.tsx')
     const baseImport = main.indexOf("import './index.css'")
@@ -36,75 +27,30 @@ describe('paleta visual accesible de AulaBase', () => {
     expect(semanticImport).toBeGreaterThan(baseImport)
   })
 
-  it('declara la opción A de azul petróleo, salvia y crema', () => {
+  it('declara exactamente los cinco colores aprobados', () => {
     const css = readSource('./semantic-palette.css').toUpperCase()
-    const approvedColors = [
-      '#FFFFFF',
-      '#F7F9F8',
-      '#F0F4F2',
-      '#1F2933',
-      '#657278',
-      '#256F7B',
-      '#1E5963',
-      '#E5F2F3',
-      '#6F927D',
-      '#52745F',
-      '#EAF2ED',
-      '#D49A52',
-      '#FBF3E7',
-      '#B5474D',
-      '#FAECEC',
-    ]
+    const approvedColors = ['#8A00D4', '#D527B7', '#F782C2', '#F9C46B', '#E3E3E3']
+    const declaredHexColors = [...new Set(css.match(/#[0-9A-F]{6}/g) ?? [])].sort()
 
-    approvedColors.forEach((color) => expect(css).toContain(color))
+    expect(declaredHexColors).toEqual([...approvedColors].sort())
   })
 
-  it('asigna cada color a un rol semántico estable', () => {
+  it('asigna los cinco colores a una jerarquía consistente', () => {
     const css = readSource('./semantic-palette.css').toUpperCase()
 
-    expect(css).toContain('--PRIMARY: #256F7B;')
-    expect(css).toContain('--PRIMARY-VARIANT: #1E5963;')
-    expect(css).toContain('--PRIMARY-CONTAINER: #E5F2F3;')
-    expect(css).toContain('--SECONDARY: #52745F;')
-    expect(css).toContain('--SECONDARY-CONTAINER: #EAF2ED;')
-    expect(css).toContain('--TERTIARY: #3F7A5F;')
-    expect(css).toContain('--WARNING: #9A641F;')
-    expect(css).toContain('--WARNING-CONTAINER: #FBF3E7;')
-    expect(css).toContain('--DESTRUCTIVE: #B5474D;')
-    expect(css).toContain('--BACKGROUND: #F7F9F8;')
-    expect(css).toContain('--CARD: #FFFFFF;')
-    expect(css).toContain('--FOREGROUND: #1F2933;')
-    expect(css).toContain('--BORDER: #DFE6E3;')
+    expect(css).toContain('--PALETTE-PURPLE: #8A00D4;')
+    expect(css).toContain('--PALETTE-FUCHSIA: #D527B7;')
+    expect(css).toContain('--PALETTE-PINK: #F782C2;')
+    expect(css).toContain('--PALETTE-GOLD: #F9C46B;')
+    expect(css).toContain('--PALETTE-GRAY: #E3E3E3;')
+    expect(css).toContain('--PRIMARY: VAR(--PALETTE-PURPLE);')
+    expect(css).toContain('--BACKGROUND: VAR(--PALETTE-GRAY);')
+    expect(css).toContain('--FOREGROUND: VAR(--PALETTE-PURPLE);')
+    expect(css).toContain('--BORDER: VAR(--PALETTE-PINK);')
+    expect(css).toContain('--WARNING: VAR(--PALETTE-GOLD);')
   })
 
-  it('mantiene la navegación clara y usa petróleo para selección', () => {
-    const css = readSource('./semantic-palette.css').toUpperCase()
-
-    expect(css).toContain('--SIDEBAR: #FFFFFF;')
-    expect(css).toContain('--SIDEBAR-FOREGROUND: #657278;')
-    expect(css).toContain('--SIDEBAR-PRIMARY: #256F7B;')
-    expect(css).toContain('--SIDEBAR-ACCENT: #E5F2F3;')
-    expect(css).toContain('--SIDEBAR-ACCENT-FOREGROUND: #1E5963;')
-  })
-
-  it('conserva el frontend libre de los tonos históricos descartados', () => {
-    const allSources = frontendSources().join('\n').toLowerCase()
-
-    expect(allSources).not.toMatch(/#1e3d8f|#1e4f8f|#1f4e95/)
-    expect(allSources).not.toMatch(/#216b9f|#7053a6|#8a6a00|#66702a|#8c3fa4|#b94b11/)
-  })
-
-  it('mantiene contraste AA en acciones, estados y textos', () => {
-    expect(contrastRatio('#256F7B', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#1E5963', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#52745F', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#657278', '#F7F9F8')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#1F2933', '#E5F2F3')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#1F2933', '#EAF2ED')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#1F2933', '#FBF3E7')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#3F7A5F', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#9A641F', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#B5474D', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#D6E9DF', '#214E55')).toBeGreaterThanOrEqual(4.5)
+  it('mantiene el contraste principal entre morado y gris', () => {
+    expect(contrastRatio('#8A00D4', '#E3E3E3')).toBeGreaterThanOrEqual(4.5)
   })
 })
