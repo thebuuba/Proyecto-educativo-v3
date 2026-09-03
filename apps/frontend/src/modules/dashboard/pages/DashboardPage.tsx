@@ -92,7 +92,7 @@ export function DashboardPage() {
   }
 
   const hasAgenda = data.todayAgenda.length > 0
-  const hasWeeklyAttendance = data.weeklyAttendance.activityCount > 0 || data.weeklyAttendance.average !== null
+  const hasWeeklyAttendance = data.weeklyAttendance.days.length > 0
   const canManageOperations = data.view === 'management' || data.view === 'teacher'
   const hasTasks = canManageOperations
   const hasRecentActivity = data.recentActivity.length > 0
