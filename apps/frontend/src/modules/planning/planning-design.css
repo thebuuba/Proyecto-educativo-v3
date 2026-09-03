@@ -1,0 +1,111 @@
+/*
+ * Identidad y compatibilidad localizada de Planificación.
+ * Amarillo = preparación/paso actual, verde = completado,
+ * azul = navegación/acción, coral = incidencia.
+ */
+
+main[data-module='planificaciones'] :where(.bg-blue-50, .bg-cyan-50, .bg-sky-50, .bg-violet-50, .bg-indigo-50) {
+  background-color: color-mix(in srgb, var(--primary) 13%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.bg-blue-100, .bg-cyan-100, .bg-sky-100, .bg-violet-100, .bg-indigo-100) {
+  background-color: color-mix(in srgb, var(--primary) 20%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.text-blue-500, .text-blue-600, .text-blue-700, .text-blue-800, .text-cyan-500, .text-cyan-600, .text-cyan-700, .text-cyan-800, .text-sky-500, .text-sky-600, .text-sky-700, .text-violet-500, .text-violet-600, .text-violet-700, .text-violet-800, .text-indigo-500, .text-indigo-600, .text-indigo-700) {
+  color: var(--primary-variant) !important;
+}
+
+main[data-module='planificaciones'] :where(.border-blue-200, .border-blue-300, .border-cyan-200, .border-cyan-300, .border-violet-200, .border-violet-300, .border-indigo-200) {
+  border-color: color-mix(in srgb, var(--primary) 34%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.bg-emerald-50, .bg-green-50, .bg-lime-50) {
+  background-color: color-mix(in srgb, var(--success) 16%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.bg-emerald-100, .bg-green-100, .bg-lime-100) {
+  background-color: color-mix(in srgb, var(--success) 24%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.text-emerald-500, .text-emerald-600, .text-emerald-700, .text-emerald-800, .text-green-500, .text-green-600, .text-green-700, .text-green-800, .text-lime-600, .text-lime-700) {
+  color: color-mix(in srgb, var(--success) 62%, var(--foreground)) !important;
+}
+
+main[data-module='planificaciones'] :where(.border-emerald-200, .border-emerald-300, .border-green-200, .border-green-300) {
+  border-color: color-mix(in srgb, var(--success) 38%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.bg-amber-50, .bg-yellow-50, .bg-orange-50, .bg-accent\/12) {
+  background-color: color-mix(in srgb, var(--warning) 24%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.bg-amber-100, .bg-yellow-100) {
+  background-color: color-mix(in srgb, var(--warning) 34%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800, .text-yellow-600, .text-yellow-700, .text-orange-600, .text-orange-700, .text-accent) {
+  color: color-mix(in srgb, var(--warning) 54%, var(--foreground)) !important;
+}
+
+main[data-module='planificaciones'] :where(.border-amber-200, .border-amber-300, .border-yellow-200, .border-yellow-300) {
+  border-color: color-mix(in srgb, var(--warning) 48%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.bg-red-50, .bg-rose-50) {
+  background-color: color-mix(in srgb, var(--destructive) 14%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.bg-red-100, .bg-rose-100) {
+  background-color: color-mix(in srgb, var(--destructive) 22%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.text-red-500, .text-red-600, .text-red-700, .text-red-800, .text-rose-500, .text-rose-600, .text-rose-700) {
+  color: color-mix(in srgb, var(--destructive) 62%, var(--foreground)) !important;
+}
+
+main[data-module='planificaciones'] :where(.border-red-100, .border-red-200, .border-red-300, .border-rose-200) {
+  border-color: color-mix(in srgb, var(--destructive) 34%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.bg-slate-50, .bg-gray-50, .bg-zinc-50) {
+  background-color: color-mix(in srgb, var(--palette-gray) 38%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(h1, h2).text-primary,
+main[data-module='planificaciones'] :where(h1, h2).text-accent {
+  color: var(--foreground) !important;
+}
+
+/* Asistente de creación: el paso actual es preparación, no acción primaria. */
+main[data-module='planificaciones'] nav[aria-label='Pasos de la planificación'] {
+  overflow: hidden;
+  border-color: transparent !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 16px 40px -30px color-mix(in srgb, var(--foreground) 20%, transparent) !important;
+}
+
+main[data-module='planificaciones'] nav[aria-label='Pasos de la planificación'] button[aria-current='step'] {
+  background: color-mix(in srgb, var(--warning) 32%, var(--card)) !important;
+  color: var(--foreground) !important;
+}
+
+main[data-module='planificaciones'] nav[aria-label='Pasos de la planificación'] button[aria-current='step'] > span:first-child {
+  border-color: color-mix(in srgb, var(--warning) 55%, var(--card)) !important;
+  background: var(--warning) !important;
+  color: var(--warning-foreground) !important;
+}
+
+main[data-module='planificaciones'] form > header h1 {
+  color: var(--foreground) !important;
+}
+
+main[data-module='planificaciones'] form > section.rounded-xl {
+  border-color: transparent !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 16px 40px -30px color-mix(in srgb, var(--foreground) 20%, transparent) !important;
+}
+
+main[data-module='planificaciones'] form > section.rounded-xl > div:first-child p.text-accent {
+  color: color-mix(in srgb, var(--warning) 62%, var(--foreground)) !important;
+}
