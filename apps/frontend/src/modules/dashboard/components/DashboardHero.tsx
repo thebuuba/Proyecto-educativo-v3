@@ -180,8 +180,10 @@ export function DashboardHero({
 
   return (
     <section
-      className={`relative overflow-hidden rounded-[28px] shadow-xl transition-[width,padding] duration-500 ease-out ${
-        collapsed ? 'w-[220px] max-w-full p-3 sm:w-[244px]' : 'w-full p-8 lg:p-10'
+      className={`relative overflow-hidden shadow-xl transition-[width,padding,border-radius] duration-500 ease-out ${
+        collapsed
+          ? 'w-[200px] max-w-full rounded-full p-1 sm:w-[216px]'
+          : 'w-full rounded-[28px] p-8 lg:p-10'
       }`}
       style={{ backgroundColor: '#1a1f3a', boxShadow: '0 20px 50px -10px rgba(26,31,58,0.3)' }}
     >
@@ -200,15 +202,17 @@ export function DashboardHero({
       <button
         type="button"
         onClick={() => setCollapsed((value) => !value)}
-        className="absolute right-3 top-3 z-20 inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/8 text-white/65 backdrop-blur transition-colors hover:bg-white/14 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        className={`absolute z-20 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/10 text-white/65 backdrop-blur transition-colors hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+          collapsed ? 'right-1 top-1 size-8' : 'right-3 top-3 size-10'
+        }`}
         aria-label={collapsed ? 'Expandir información de la clase' : 'Contraer información de la clase'}
         title={collapsed ? 'Expandir' : 'Contraer'}
       >
-        {collapsed ? <ChevronRight className="size-5" /> : <ChevronLeft className="size-5" />}
+        {collapsed ? <ChevronRight className="size-4" /> : <ChevronLeft className="size-5" />}
       </button>
 
       {collapsed ? (
-        <div className="relative flex justify-center pr-2 pt-2">
+        <div className="relative flex justify-center">
           <CountdownCircle item={nextClass} seconds={countdownSeconds} compact />
         </div>
       ) : (
