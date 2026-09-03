@@ -1,15 +1,16 @@
 /**
- * Componente StudentForm - Modal rapido para matricular estudiantes por curso.
+ * Componente StudentForm - Modal rápido para matricular estudiantes por curso.
  */
 
-import { AlertCircle, ChevronDown, ChevronUp, X } from 'lucide-react'
+import { ArrowRightLeft, ChevronDown, ChevronUp, PencilLine, UserPlus } from 'lucide-react'
 import type { FormEvent, ReactNode } from 'react'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
+import { Modal } from '@/components/ui/Modal'
+import { FeedbackBanner, SemanticIcon, StatusBadge, type SemanticTone } from '@/components/ui/SemanticUI'
 import { Select } from '@/components/ui/Select'
-import { useFocusTrap } from '@/hooks/useFocusTrap'
 import type {
   CourseStudent,
   CreateCourseStudentInput,
@@ -42,6 +43,36 @@ const genderOptions = [
   { value: 'male', label: 'Masculino' },
   { value: 'female', label: 'Femenino' },
 ]
+
+const modePresentation: Record<StudentFormMode, {
+  title: string
+  description: string
+  eyebrow: string
+  tone: SemanticTone
+  icon: typeof UserPlus
+}> = {
+  create: {
+    title: 'Agregar estudiante',
+    description: 'Registra los datos esenciales para incorporarlo a la matrícula activa.',
+    eyebrow: 'Nueva matrícula',
+    tone: 'success',
+    icon: UserPlus,
+  },
+  edit: {
+    title: 'Editar estudiante',
+    description: 'Actualiza los datos del expediente sin alterar su historial académico.',
+    eyebrow: 'Expediente',
+    tone: 'info',
+    icon: PencilLine,
+  },
+  transfer: {
+    title: 'Trasladar estudiante',
+    description: 'Selecciona el curso destino y conserva el registro del movimiento.',
+    eyebrow: 'Traslado',
+    tone: 'warning',
+    icon: ArrowRightLeft,
+  },
+}
 
 export function StudentForm({
   student,
@@ -108,51 +139,58 @@ export function StudentForm({
     })
   }
 
-  const dialogRef = useRef<HTMLDivElement>(null)
-  useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
-
-  const title = {
-    create: 'Agregar estudiante',
-    edit: 'Editar estudiante',
-    transfer: 'Trasladar estudiante',
-  }[mode]
+  const presentation = modePresentation[mode]
+  const PresentationIcon = presentation.icon
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
-      <div
-        ref={dialogRef}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="student-form-title"
-        className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xl"
-      >
-        <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
+    <Modal
+      title={presentation.title}
+      description={presentation.description}
+      onClose={onClose}
+      className="max-w-2xl"
+      contentClassName="p-0"
+    >
+      <form className="space-y-5 p-5" onSubmit={handleSubmit}>
+        <div className="flex items-center justify-between gap-4 rounded-2xl bg-success/10 px-4 py-3">
+          <div className="flex min-w-0 items-center gap-3">
+            <SemanticIcon
+              icon={PresentationIcon}
+              tone={presentation.tone}
+              className="size-10 rounded-xl"
+              iconClassName="size-4"
+            />
+            <div className="min-w-0">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted-foreground">
+                {presentation.eyebrow}
+              </p>
+              <p className="mt-0.5 truncate text-sm font-bold text-foreground">
+                {student?.fullName || 'Nuevo expediente estudiantil'}
+              </p>
+            </div>
+          </div>
+          <StatusBadge tone={mode === 'transfer' ? 'warning' : mode === 'edit' ? 'info' : 'success'}>
+            {mode === 'transfer' ? 'Cambio de curso' : mode === 'edit' ? 'Edición' : 'Matrícula activa'}
+          </StatusBadge>
+        </div>
+
+        {validationError || error ? (
+          <FeedbackBanner role="alert" tone="danger">
+            {validationError || error}
+          </FeedbackBanner>
+        ) : null}
+
+        <section aria-labelledby="student-essential-data" className="space-y-4">
           <div>
-            <h3 id="student-form-title" className="text-base font-semibold text-foreground">{title}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <h4 id="student-essential-data" className="text-sm font-extrabold text-foreground">
+              Datos esenciales
+            </h4>
+            <p className="mt-0.5 text-xs text-muted-foreground">
               Código o matrícula y nombre completo son obligatorios.
             </p>
           </div>
-          <button
-            type="button"
-            className="inline-flex size-9 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground"
-            aria-label="Cerrar formulario"
-            onClick={onClose}
-          >
-            <X className="size-5" />
-          </button>
-        </div>
-
-        <form className="flex-1 space-y-5 overflow-y-auto p-5" onSubmit={handleSubmit}>
-          {validationError || error ? (
-            <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
-              <AlertCircle className="mt-0.5 size-4 shrink-0" />
-              <p>{validationError || error}</p>
-            </div>
-          ) : null}
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Código o matrícula">
+            <Field label="Código o matrícula" required>
               <Input
                 type="text"
                 required
@@ -161,7 +199,7 @@ export function StudentForm({
               />
             </Field>
 
-            <Field label="Nombre completo">
+            <Field label="Nombre completo" required>
               <Input
                 type="text"
                 required
@@ -172,7 +210,7 @@ export function StudentForm({
           </div>
 
           {mode === 'transfer' ? (
-            <Field label="Curso destino">
+            <Field label="Curso destino" required>
               <Select
                 value={transferCourseId}
                 onChange={(event) => onTransferCourseChange?.(event.target.value)}
@@ -188,120 +226,127 @@ export function StudentForm({
               </Select>
             </Field>
           ) : null}
+        </section>
 
+        <div className="border-t border-border/70 pt-4">
           <button
             type="button"
-            className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-accent"
+            className="inline-flex min-h-10 items-center gap-2 rounded-xl px-1 text-sm font-bold text-primary-variant transition hover:text-primary"
             aria-expanded={showMore}
             onClick={() => setShowMore((value) => !value)}
           >
             {showMore ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
-            Más información del estudiante
+            {showMore ? 'Ocultar información adicional' : 'Agregar información adicional'}
           </button>
+        </div>
 
-          {showMore ? (
-            <div className="grid gap-4 rounded-lg border border-border bg-muted/40 p-4 sm:grid-cols-2">
-              <Field label="Documento">
-                <Input
-                  type="text"
-                  value={documentId}
-                  onChange={(event) => setDocumentId(event.target.value)}
-                  onBlur={() => setDocumentId((current) => formatCedula(current))}
-                  placeholder="000-0000000-0"
-                />
-              </Field>
+        {showMore ? (
+          <section className="grid gap-4 rounded-2xl bg-muted/55 p-4 sm:grid-cols-2" aria-label="Información adicional del estudiante">
+            <Field label="Documento">
+              <Input
+                type="text"
+                value={documentId}
+                onChange={(event) => setDocumentId(event.target.value)}
+                onBlur={() => setDocumentId((current) => formatCedula(current))}
+                placeholder="000-0000000-0"
+              />
+            </Field>
 
-              <Field label="Fecha de nacimiento">
-                <Input
-                  type="date"
-                  value={birthDate}
-                  onChange={(event) => setBirthDate(event.target.value)}
-                />
-              </Field>
+            <Field label="Fecha de nacimiento">
+              <Input
+                type="date"
+                value={birthDate}
+                onChange={(event) => setBirthDate(event.target.value)}
+              />
+            </Field>
 
-              <Field label="Género">
-                <Select value={gender} onChange={(event) => setGender(event.target.value)}>
-                  {genderOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </Select>
-              </Field>
+            <Field label="Género">
+              <Select value={gender} onChange={(event) => setGender(event.target.value)}>
+                {genderOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </Select>
+            </Field>
 
-              <Field label="Estado">
-                <Select
-                  value={status}
-                  onChange={(event) =>
-                    setStatus(event.target.value as NonNullable<CreateCourseStudentInput['status']>)
-                  }
-                >
-                  {statusOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </Select>
-              </Field>
+            <Field label="Estado">
+              <Select
+                value={status}
+                onChange={(event) =>
+                  setStatus(event.target.value as NonNullable<CreateCourseStudentInput['status']>)
+                }
+              >
+                {statusOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </Select>
+            </Field>
 
-              <Field label="Teléfono del tutor">
-                <Input
-                  type="tel"
-                  value={guardianPhone}
-                  onChange={(event) => setGuardianPhone(event.target.value)}
-                />
-              </Field>
+            <Field label="Teléfono del tutor">
+              <Input
+                type="tel"
+                value={guardianPhone}
+                onChange={(event) => setGuardianPhone(event.target.value)}
+              />
+            </Field>
 
-              <Field label="Correo del tutor">
-                <Input
-                  type="email"
-                  value={guardianEmail}
-                  onChange={(event) => setGuardianEmail(event.target.value)}
-                />
-              </Field>
+            <Field label="Correo del tutor">
+              <Input
+                type="email"
+                value={guardianEmail}
+                onChange={(event) => setGuardianEmail(event.target.value)}
+              />
+            </Field>
 
-              <Field label="Dirección">
-                <Input
-                  type="text"
-                  value={address}
-                  onChange={(event) => setAddress(event.target.value)}
-                />
-              </Field>
+            <Field label="Dirección">
+              <Input
+                type="text"
+                value={address}
+                onChange={(event) => setAddress(event.target.value)}
+              />
+            </Field>
 
-              <Field label="Observaciones">
-                <Input
-                  type="text"
-                  value={observations}
-                  onChange={(event) => setObservations(event.target.value)}
-                />
-              </Field>
-            </div>
-          ) : null}
+            <Field label="Observaciones">
+              <Input
+                type="text"
+                value={observations}
+                onChange={(event) => setObservations(event.target.value)}
+              />
+            </Field>
+          </section>
+        ) : null}
 
-          <div className="flex justify-end gap-3 border-t border-border pt-5">
-            <Button variant="outline" onClick={onClose}>
-              Cancelar
-            </Button>
-            <Button type="submit" disabled={submitting} loading={submitting}>
-              {submitting ? 'Guardando...' : 'Guardar'}
-            </Button>
-          </div>
-        </form>
-      </div>
-    </div>
+        <div className="flex flex-col-reverse gap-2 border-t border-border pt-5 sm:flex-row sm:justify-end">
+          <Button type="button" variant="outline" onClick={onClose} disabled={submitting}>
+            Cancelar
+          </Button>
+          <Button type="submit" loading={submitting} disabled={submitting}>
+            {mode === 'transfer' ? 'Confirmar traslado' : mode === 'edit' ? 'Guardar cambios' : 'Agregar estudiante'}
+          </Button>
+        </div>
+      </form>
+    </Modal>
   )
 }
 
 function Field({
   label,
+  required = false,
   children,
 }: {
   label: string
+  required?: boolean
   children: ReactNode
 }) {
   return (
-    <label className="block text-sm font-medium text-muted-foreground">
-      {label}
+    <label className="block text-sm font-semibold text-foreground">
+      <span className="inline-flex items-center gap-1">
+        {label}
+        {required ? <span className="text-destructive" aria-hidden="true">*</span> : null}
+      </span>
       <span className="mt-2 block">{children}</span>
     </label>
   )
