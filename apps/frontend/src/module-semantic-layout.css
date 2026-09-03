@@ -123,6 +123,27 @@ main[data-module='estudiantes'] :where(.bg-destructive\/10, .bg-red-50) {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Horario                                                                    */
+/* -------------------------------------------------------------------------- */
+
+main[data-module='horario'] > section > div > header:first-child {
+  border-radius: 1.5rem;
+  background: var(--card);
+  padding: 1rem 1.25rem;
+  box-shadow: 0 16px 40px -28px color-mix(in srgb, var(--foreground) 22%, transparent);
+}
+
+main[data-module='horario'] > section > div > header:first-child > div > span {
+  background: color-mix(in srgb, var(--primary) 14%, var(--card)) !important;
+  color: var(--primary-variant) !important;
+  border-radius: 1rem !important;
+}
+
+main[data-module='horario'] > section > div > header:first-child h1 {
+  color: var(--foreground) !important;
+}
+
+/* -------------------------------------------------------------------------- */
 /* Bitácora                                                                   */
 /* -------------------------------------------------------------------------- */
 
@@ -131,6 +152,12 @@ main[data-module='bitacora'] {
   --journal-observation: var(--success);
   --journal-idea: var(--warning);
   --journal-incident: var(--destructive);
+}
+
+/* La identidad del módulo es coral; búsqueda y acciones siguen usando azul. */
+main[data-module='bitacora'] header .bg-violet-100 {
+  background: color-mix(in srgb, var(--destructive) 15%, var(--card)) !important;
+  color: color-mix(in srgb, var(--destructive) 72%, var(--foreground)) !important;
 }
 
 /* -------------------------------------------------------------------------- */
