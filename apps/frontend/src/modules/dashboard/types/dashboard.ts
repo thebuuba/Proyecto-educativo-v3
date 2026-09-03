@@ -141,9 +141,10 @@ export type DashboardData = {
   smartSuggestion: SmartSuggestion
   setupProgress: DashboardSetupProgress
   teacherAnalytics: TeacherDashboardAnalytics | null
+  journalSummary: DashboardJournalSummary | null
 }
 
-export type DashboardInsights = Pick<DashboardData, 'recentActivity' | 'teacherAnalytics'>
+export type DashboardInsights = Pick<DashboardData, 'recentActivity' | 'teacherAnalytics' | 'journalSummary'>
 
 /** Entrada para crear una nueva tarea en el dashboard. */
 export type CreateDashboardTaskInput = {
@@ -175,6 +176,18 @@ export type TeacherDashboardAnalytics = {
   gradedRecords: number
   performanceByPeriod: ChartDatum[]
   performanceBySubject: ChartDatum[]
+}
+
+export type DashboardJournalSummary = {
+  activeCount: number
+  pendingCount: number
+  recentEntries: Array<{
+    id: string
+    title: string | null
+    entryType: string
+    occurredAt: string
+    relativeTime: string
+  }>
 }
 
 /** Estudiante mostrado en la tabla de estudiantes recientes. */
