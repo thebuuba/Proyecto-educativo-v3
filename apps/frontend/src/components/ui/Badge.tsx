@@ -9,20 +9,15 @@ import { cn } from '@/utils/cn'
 type BadgeTone = 'default' | 'accent' | 'success' | 'warning' | 'destructive' | 'muted'
 
 const toneClasses: Record<BadgeTone, string> = {
-  default: 'bg-primary/10 text-primary ring-primary/15',
-  accent: 'bg-accent/12 text-accent ring-accent/25',
-  success: 'bg-success/12 text-success ring-success/20',
-  warning: 'bg-warning/14 text-warning ring-warning/25',
-  destructive: 'bg-destructive/12 text-destructive ring-destructive/20',
+  default: 'bg-primary/12 text-primary-variant ring-primary/20',
+  accent: 'bg-accent/14 text-foreground ring-accent/25',
+  success: 'bg-success/16 text-foreground ring-success/25',
+  warning: 'bg-warning/24 text-warning-foreground ring-warning/35',
+  destructive: 'bg-destructive/14 text-foreground ring-destructive/25',
   muted: 'bg-muted text-muted-foreground ring-border',
 }
 
-/**
- * Insignia redondeada para mostrar etiquetas o estados.
- *
- * @param props.tone - Color de la insignia.
- * @param props.children - Contenido textual de la insignia.
- */
+/** Insignia redondeada para mostrar etiquetas o estados. */
 export function Badge({
   tone = 'default',
   className,
@@ -37,7 +32,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        'inline-flex h-6 items-center rounded-full px-2.5 text-xs font-semibold ring-1 ring-inset',
+        'inline-flex h-7 items-center rounded-full px-2.5 text-[11px] font-bold ring-1 ring-inset',
         toneClasses[tone],
         className,
       )}
