@@ -65,37 +65,37 @@ export function AttendancePage() {
   }
 
   return (
-    <section className="w-full min-w-0">
-      <div className="mb-6 space-y-5">
-        <div className="flex flex-col gap-3">
+    <section className="w-full min-w-0 space-y-4 pb-10">
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div className="min-w-0">
           {returnsToSubject ? (
             <button
               type="button"
               onClick={returnToSubject}
-              className="inline-flex w-fit items-center gap-2 text-sm font-extrabold text-primary transition hover:opacity-75"
+              className="mb-3 inline-flex w-fit items-center gap-2 text-xs font-extrabold text-primary transition hover:opacity-75"
             >
               <ArrowLeft className="size-4" /> Volver a la asignatura
             </button>
           ) : null}
-          <div>
-            <h1 className="text-3xl font-bold leading-none text-primary sm:text-4xl">
-              Asistencia
-            </h1>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              Registro mensual por asignatura.
-            </p>
-          </div>
+          <h1 className="text-2xl font-black tracking-tight text-foreground sm:text-3xl">
+            Asistencia
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Registro mensual por asignatura.
+          </p>
         </div>
+      </header>
 
+      <section className="rounded-3xl bg-card p-4 shadow-sm sm:p-5">
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem_auto] lg:items-end">
-          <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+          <label className="grid min-w-0 gap-1.5">
+            <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
               Curso
-            </label>
+            </span>
             <Select
               value={selectedCourseId}
               onChange={(event) => setSelectedCourseId(event.target.value)}
-              className="w-full"
+              className="h-11 w-full"
             >
               <option value="">
                 {courses.length > 0 ? 'Selecciona un curso' : 'No hay cursos disponibles'}
@@ -110,16 +110,16 @@ export function AttendancePage() {
                 </optgroup>
               ))}
             </Select>
-          </div>
+          </label>
 
-          <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+          <label className="grid gap-1.5">
+            <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
               Mes
-            </label>
+            </span>
             <Select
               value={selectedMonth}
               onChange={(event) => setSelectedMonth(event.target.value)}
-              className="w-full"
+              className="h-11 w-full"
             >
               {schoolYearMonths.map((month) => (
                 <option key={month.value} value={month.value}>
@@ -127,83 +127,76 @@ export function AttendancePage() {
                 </option>
               ))}
             </Select>
-          </div>
+          </label>
 
-          <Button variant="outline" className="h-12 px-5" onClick={refresh}>
+          <Button variant="outline" className="h-11 gap-2 rounded-xl bg-card px-4" onClick={refresh}>
             <RefreshCw className="size-4" />
             Actualizar
           </Button>
         </div>
+      </section>
 
-        {selectedCourse ? (
-          <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem]">
-          <div className="rounded-2xl bg-primary px-6 py-5 text-primary-foreground shadow-md">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/70">
-              Curso seleccionado
-            </p>
-            <h2 className="mt-2 text-xl font-bold leading-tight">
-              {selectedCourse.gradeName} {selectedCourse.sectionName} · {selectedCourse.subjectName}
-            </h2>
-            <p className="mt-1 text-sm text-primary-foreground/75">
-              Año escolar {selectedCourse.schoolYearName || 'activo'}
-            </p>
-          </div>
-          <div className="flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4 shadow-sm">
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-              <CalendarCheck className="size-5" />
-            </span>
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
-                Mes actual
-              </p>
-              <p className="mt-1 text-xl font-black text-primary">{selectedMonthInfo.label}</p>
-              <p className="text-sm font-semibold text-muted-foreground">{selectedYear}</p>
+      {selectedCourse ? (
+        <section className="rounded-3xl bg-card p-4 shadow-sm sm:p-5">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex min-w-0 items-center gap-3">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <CalendarCheck className="size-5" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
+                  Curso seleccionado
+                </p>
+                <h2 className="mt-1 truncate text-lg font-black tracking-tight text-foreground">
+                  {selectedCourse.gradeName} {selectedCourse.sectionName} · {selectedCourse.subjectName}
+                </h2>
+                <p className="mt-0.5 text-xs text-muted-foreground">
+                  Año escolar {selectedCourse.schoolYearName || 'activo'}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex shrink-0 items-center gap-3 rounded-2xl bg-muted/35 px-4 py-3 sm:min-w-[12rem]">
+              <div className="min-w-0">
+                <p className="text-[9px] font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
+                  Mes del registro
+                </p>
+                <div className="mt-1 flex items-baseline gap-2">
+                  <span className="text-base font-black text-foreground">{selectedMonthInfo.label}</span>
+                  <span className="text-xs font-semibold text-muted-foreground">{selectedYear}</span>
+                </div>
+              </div>
             </div>
           </div>
-          </div>
-        ) : null}
+        </section>
+      ) : null}
 
-        <AttendanceSummary stats={monthlyStats} loading={loading} />
+      <AttendanceSummary stats={monthlyStats} loading={loading} />
 
-        {error ? (
-          <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
-            <AlertCircle className="mt-0.5 size-4 shrink-0" />
-            <p>{error}</p>
-          </div>
-        ) : null}
-      </div>
+      {error ? (
+        <div className="flex gap-3 rounded-2xl bg-destructive/12 p-3.5 text-sm text-foreground">
+          <AlertCircle className="mt-0.5 size-4 shrink-0 text-destructive" />
+          <p>{error}</p>
+        </div>
+      ) : null}
 
       {!selectedCourseId && !loading ? (
-        <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-center">
-          <p className="text-sm text-muted-foreground">
+        <div className="flex min-h-[260px] items-center justify-center rounded-3xl bg-card p-6 text-center shadow-sm">
+          <p className="max-w-sm text-sm text-muted-foreground">
             Selecciona un curso para ver su registro mensual de asistencia.
           </p>
         </div>
       ) : loading ? (
-        <div className="flex min-h-[280px] items-center justify-center text-sm font-medium text-muted-foreground">
+        <div className="flex min-h-[260px] items-center justify-center rounded-3xl bg-card text-sm font-medium text-muted-foreground shadow-sm">
           Cargando asistencia mensual...
         </div>
       ) : (
-        <div className="space-y-3">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs text-muted-foreground">
-              {saving ? 'Guardando...' : 'Clic: vacío → P → A → E → R → vacío'}
-            </p>
-            <div className="flex flex-wrap gap-2 text-xs font-bold text-muted-foreground">
-              <span>P = Presente</span>
-              <span>A = Ausente</span>
-              <span>E = Excusa</span>
-              <span>R = Retirado</span>
-              <span>Vacio = Sin registro</span>
-            </div>
-          </div>
-          <AttendanceGrid
-            rows={monthlyRows}
-            workedDays={workedDays}
-            saving={saving}
-            onToggle={toggleCell}
-          />
-        </div>
+        <AttendanceGrid
+          rows={monthlyRows}
+          workedDays={workedDays}
+          saving={saving}
+          onToggle={toggleCell}
+        />
       )}
     </section>
   )
