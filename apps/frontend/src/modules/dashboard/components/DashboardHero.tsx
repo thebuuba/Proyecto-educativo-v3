@@ -142,7 +142,7 @@ export function DashboardHero({
     return (
       <section
         className="ml-auto w-full max-w-[520px] rounded-3xl border border-white/5 px-5 py-5 text-white shadow-lg"
-        style={{ backgroundColor: '#1a1f3a' }}
+        style={{ backgroundColor: 'var(--primary)' }}
       >
         <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-accent">Sin clase programada</p>
         <h2 className="mt-2 text-xl font-bold">Agenda libre</h2>
@@ -156,7 +156,7 @@ export function DashboardHero({
   return (
     <section
       className="relative ml-auto w-full max-w-[520px] overflow-hidden rounded-3xl border border-white/5 p-5 pr-[7.5rem] text-white shadow-lg sm:p-6 sm:pr-[8.5rem]"
-      style={{ backgroundColor: '#1a1f3a', boxShadow: '0 16px 36px -18px rgba(26,31,58,0.55)' }}
+      style={{ backgroundColor: 'var(--primary)', boxShadow: '0 16px 36px -18px color-mix(in srgb, var(--primary) 55%, transparent)' }}
     >
       <div
         className="pointer-events-none absolute -right-14 -top-20 size-60 rounded-full opacity-25"
