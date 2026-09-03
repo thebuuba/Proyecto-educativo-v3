@@ -166,3 +166,59 @@
 .content-density-compact :where(input:not([type='checkbox'], [type='radio']), select, textarea) {
   border-radius: 0.75rem;
 }
+
+/* Grid personalizable del Inicio. */
+.dashboard-custom-grid {
+  align-items: stretch;
+}
+
+.dashboard-grid-widget {
+  border-radius: 1.5rem;
+  transition:
+    opacity 160ms ease,
+    filter 160ms ease,
+    outline-color 160ms ease;
+}
+
+.dashboard-grid-widget-content {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--palette-text) 22%, transparent) transparent;
+}
+
+.dashboard-grid-widget-content > * {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100%;
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+
+.dashboard-custom-grid[data-editing='true'] .dashboard-grid-widget {
+  outline: 1.5px dashed color-mix(in srgb, var(--palette-blue) 55%, var(--palette-white));
+  outline-offset: 3px;
+}
+
+.dashboard-grid-widget[data-interacting='true'] {
+  opacity: 0.94;
+  filter: drop-shadow(0 14px 18px color-mix(in srgb, var(--palette-text) 18%, transparent));
+}
+
+.dashboard-widget-drag-handle {
+  cursor: grab;
+  user-select: none;
+}
+
+.dashboard-widget-drag-handle:active {
+  cursor: grabbing;
+}
+
+.dashboard-widget-resize-handle {
+  cursor: nwse-resize;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-grid-widget {
+    transition: none;
+  }
+}
