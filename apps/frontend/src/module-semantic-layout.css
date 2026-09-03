@@ -69,27 +69,6 @@ main[data-module='planificaciones'] :where(.text-accent, .text-amber-700, .text-
 }
 
 /* -------------------------------------------------------------------------- */
-/* Horario                                                                    */
-/* -------------------------------------------------------------------------- */
-
-main[data-module='horario'] > section > div > header:first-child {
-  border-radius: 1.5rem;
-  background: var(--card);
-  padding: 1rem 1.25rem;
-  box-shadow: 0 16px 40px -28px color-mix(in srgb, var(--foreground) 22%, transparent);
-}
-
-main[data-module='horario'] > section > div > header:first-child > div > span {
-  background: color-mix(in srgb, var(--primary) 14%, var(--card)) !important;
-  color: var(--primary-variant) !important;
-  border-radius: 1rem !important;
-}
-
-main[data-module='horario'] > section > div > header:first-child h1 {
-  color: var(--foreground) !important;
-}
-
-/* -------------------------------------------------------------------------- */
 /* Evaluación / Calificaciones                                                */
 /* -------------------------------------------------------------------------- */
 
