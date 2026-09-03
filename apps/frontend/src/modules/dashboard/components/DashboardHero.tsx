@@ -11,7 +11,7 @@ import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
 
 const DASHBOARD_TIME_ZONE = 'America/Santo_Domingo'
 const DAY_SECONDS = 24 * 60 * 60
-const COUNTDOWN_THRESHOLD_SECONDS = 30 * 60
+const COUNTDOWN_THRESHOLD_SECONDS = 60 * 60
 const RING_CIRCUMFERENCE = 2 * Math.PI * 45
 
 const dashboardClockFormatter = new Intl.DateTimeFormat('en-GB', {
@@ -63,16 +63,31 @@ function formatCountdown(totalSeconds: number) {
   return `${minutes}:${String(seconds).padStart(2, '0')}`
 }
 
+function formatHumanCountdown(totalSeconds: number) {
+  if (totalSeconds < 60) return 'menos de 1 min'
+
+  const totalMinutes = Math.ceil(totalSeconds / 60)
+  const hours = Math.floor(totalMinutes / 60)
+  const minutes = totalMinutes % 60
+
+  if (hours <= 0) return `${totalMinutes} min`
+  if (minutes === 0) return `${hours} h`
+  return `${hours} h ${minutes} min`
+}
+
 function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: number }) {
   const isCurrent = item.status === 'current'
   const showCountdown = isCurrent || seconds <= COUNTDOWN_THRESHOLD_SECONDS
   const durationSeconds = Math.max(1, item.durationMinutes * 60)
   const progress = isCurrent
     ? Math.max(0, Math.min(100, (seconds / durationSeconds) * 100))
-    : Math.max(0, Math.min(100, 100 - (seconds / (90 * 60)) * 100))
-  const ringLength = showCountdown ? (progress / 100) * RING_CIRCUMFERENCE : 0
+    : Math.max(0, Math.min(100, 100 - (seconds / COUNTDOWN_THRESHOLD_SECONDS) * 100))
+  const ringLength = showCountdown
+    ? (progress / 100) * RING_CIRCUMFERENCE
+    : RING_CIRCUMFERENCE * 0.035
   const label = isCurrent ? 'Termina' : showCountdown ? 'Empieza' : 'Hora'
   const value = showCountdown ? formatCountdown(seconds) : item.startTime.slice(0, 5)
+  const accent = isCurrent ? 'var(--palette-green)' : 'var(--palette-gold)'
 
   return (
     <div
@@ -85,8 +100,7 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
           cy="60"
           r="45"
           fill="none"
-          stroke="var(--class-muted)"
-          strokeOpacity="0.58"
+          stroke="var(--palette-gray)"
           strokeWidth="11"
         />
         <circle
@@ -94,7 +108,7 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
           cy="60"
           r="45"
           fill="none"
-          stroke="var(--class-accent)"
+          stroke={accent}
           strokeDasharray={`${ringLength} ${RING_CIRCUMFERENCE}`}
           strokeLinecap="round"
           strokeWidth="11"
@@ -155,7 +169,7 @@ export function DashboardHero({
         className="ml-auto w-full max-w-[420px] rounded-3xl px-3.5 py-3.5 text-[var(--class-foreground)] shadow-sm sm:px-4 sm:py-4"
         style={{ backgroundColor: 'var(--class-panel)' }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.22em]">Sin clase programada</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-accent">Sin clase programada</p>
         <h2 className="mt-2 text-xl font-bold">Agenda libre</h2>
         <p className="mt-1 text-sm text-[var(--class-muted)]">No tienes otra clase programada para hoy.</p>
       </section>
@@ -163,6 +177,10 @@ export function DashboardHero({
   }
 
   const isCurrent = nextClass.status === 'current'
+  const temporalMessage = isCurrent
+    ? `Termina en ${formatHumanCountdown(countdownSeconds)}`
+    : `Faltan ${formatHumanCountdown(countdownSeconds)}`
+  const stateColor = isCurrent ? 'var(--palette-green)' : 'var(--palette-gold)'
 
   return (
     <section
@@ -175,7 +193,7 @@ export function DashboardHero({
 
       <div className="relative min-w-0">
         <div className="inline-flex items-center gap-2">
-          <span className="size-1.5 animate-pulse rounded-full bg-[var(--class-accent)]" />
+          <span className="size-1.5 animate-pulse rounded-full" style={{ backgroundColor: stateColor }} />
           <span className="text-[10px] font-bold uppercase tracking-[0.22em]">
             {isCurrent ? 'Clase en curso' : 'Próxima clase'}
           </span>
@@ -184,9 +202,19 @@ export function DashboardHero({
         <h2 className="mt-2 line-clamp-2 text-lg font-extrabold leading-tight tracking-tight sm:text-xl">
           {nextClass.subjectName}
         </h2>
-        <p className="mt-1 text-sm font-semibold text-[var(--class-muted)]">
-          {nextClass.gradeName} {nextClass.sectionName}
-        </p>
+
+        <div className="mt-1 flex flex-wrap items-center gap-2">
+          <p className="text-sm font-semibold text-[var(--class-muted)]">
+            {nextClass.gradeName} {nextClass.sectionName}
+          </p>
+          <span
+            className="inline-flex rounded-full px-2 py-0.5 text-[10px] font-bold text-foreground"
+            style={{ backgroundColor: `color-mix(in srgb, ${stateColor} 24%, var(--palette-white))` }}
+            aria-live="polite"
+          >
+            {temporalMessage}
+          </span>
+        </div>
 
         <div className="mt-2.5 grid gap-1 text-xs text-[var(--class-muted)]">
           <span className="inline-flex items-center gap-2">
@@ -207,7 +235,7 @@ export function DashboardHero({
           <div className="mt-3 flex flex-wrap gap-2">
             <Button
               variant="secondary"
-              className="h-9 rounded-xl bg-[var(--palette-blue)] px-3 text-xs text-[var(--palette-white)] hover:bg-[var(--primary-hover)]"
+              className="h-9 rounded-xl bg-[var(--palette-blue)] px-3 text-xs text-[var(--palette-text)] hover:bg-[var(--primary-hover)]"
               onClick={() => onStartClass(nextClass)}
             >
               <Play className="size-4 fill-current" />
