@@ -181,9 +181,11 @@
 }
 
 .dashboard-grid-widget-content {
+  background: transparent;
+}
+
+.dashboard-grid-widget[data-manual-height='true'] .dashboard-grid-widget-content {
   background: var(--card);
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--palette-text) 22%, transparent) transparent;
 }
 
 .dashboard-grid-widget-content > * {
