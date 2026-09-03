@@ -1,3 +1,4 @@
+import { CalendarDays } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
@@ -338,42 +339,40 @@ export function SchedulePage() {
     ? 'Configura la estructura de tu semana académica en unos pocos pasos.'
     : assignmentMode
       ? 'Completa o corrige las asignaciones antes de volver a la vista final.'
-      : `${entries.length} clases organizadas en una vista semanal unificada.`
+      : `${entries.length} clases organizadas de lunes a viernes.`
 
   return (
-    <PageShell
-      title=""
-      description=""
-    >
-      <div className="w-full min-w-0 space-y-8 pb-10">
-        {/* Page header */}
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              Planificación
-            </p>
-            <h1 className="mt-1 text-4xl font-bold tracking-tight text-foreground">
-              Horario docente
-            </h1>
-            <p className="mt-2 max-w-lg text-muted-foreground">
-              {description}
-            </p>
+    <PageShell title="" description="">
+      <div className="w-full min-w-0 space-y-5 pb-10">
+        <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex min-w-0 items-center gap-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <CalendarDays className="size-5" />
+            </span>
+            <div className="min-w-0">
+              <h1 className="text-2xl font-extrabold tracking-tight text-foreground">Horario docente</h1>
+              <p className="mt-0.5 text-sm text-muted-foreground">{description}</p>
+            </div>
           </div>
-        </div>
+          {assignmentMode && !showWizard ? (
+            <Button variant="outline" className="h-10 rounded-xl bg-card px-4" onClick={() => setAssignmentMode(false)}>
+              Ver horario final
+            </Button>
+          ) : null}
+        </header>
 
         {error || saveError ? (
-          <div className="rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
+          <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-sm text-destructive">
             {error || saveError}
           </div>
         ) : null}
 
         {loading ? (
-          <div className="flex items-center justify-center rounded-2xl border border-border bg-card py-32 text-sm text-muted-foreground">
+          <div className="flex items-center justify-center rounded-3xl border border-border/70 bg-card py-32 text-sm text-muted-foreground shadow-sm">
             Cargando horario...
           </div>
         ) : null}
 
-        {/* Show wizard if no structure */}
         {!loading && !hasStructure ? (
           <div className="mx-auto max-w-3xl">
             <ScheduleWizard
@@ -384,7 +383,6 @@ export function SchedulePage() {
           </div>
         ) : null}
 
-        {/* Show final schedule when structure exists */}
         {!loading && showFinalSchedule && config ? (
           <ScheduleFinalTable
             config={config}
@@ -397,31 +395,22 @@ export function SchedulePage() {
           />
         ) : null}
 
-        {/* Show assignment grid when editing assignments */}
         {!loading && showAssignmentGrid && config ? (
-          <div className="space-y-4">
-            <div className="flex justify-end">
-              <Button onClick={() => setAssignmentMode(false)}>
-                Ver horario final
-              </Button>
-            </div>
-            <ScheduleWeekGrid
-              config={config}
-              blocks={gridBlocks}
-              entries={entries}
-              pedagogicalBlocks={visiblePedagogicalBlocks}
-              sectionSubjects={sectionSubjects}
-              activeDays={days}
-              onEdit={() => setShowWizard(true)}
-              onAssign={handleAssign}
-              onRemove={handleRemove}
-              onMarkPedagogical={markPedagogicalBlock}
-              onRemovePedagogical={removePedagogicalBlock}
-            />
-          </div>
+          <ScheduleWeekGrid
+            config={config}
+            blocks={gridBlocks}
+            entries={entries}
+            pedagogicalBlocks={visiblePedagogicalBlocks}
+            sectionSubjects={sectionSubjects}
+            activeDays={days}
+            onEdit={() => setShowWizard(true)}
+            onAssign={handleAssign}
+            onRemove={handleRemove}
+            onMarkPedagogical={markPedagogicalBlock}
+            onRemovePedagogical={removePedagogicalBlock}
+          />
         ) : null}
 
-        {/* Edit wizard overlay */}
         {!loading && showWizard && config ? (
           <div className="mx-auto max-w-3xl">
             <ScheduleWizard

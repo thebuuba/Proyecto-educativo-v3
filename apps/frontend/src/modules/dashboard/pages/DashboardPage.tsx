@@ -8,13 +8,17 @@ import { useNavigate } from 'react-router-dom'
 
 import { ErrorState } from '@/components/ui'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
-import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
-import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
 import { BarChart } from '@/modules/dashboard/components/BarChart'
 import { ChartPanel } from '@/modules/dashboard/components/ChartPanel'
+import {
+  DashboardEditableGrid,
+  type DashboardGridWidget,
+} from '@/modules/dashboard/components/DashboardEditableGrid'
+import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
+import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
 import { InitialSetupChecklist } from '@/modules/dashboard/components/InitialSetupChecklist'
-import { LineChart } from '@/modules/dashboard/components/LineChart'
 import { JournalSummaryCard } from '@/modules/dashboard/components/JournalSummaryCard'
+import { LineChart } from '@/modules/dashboard/components/LineChart'
 import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
 import { SmartSuggestion } from '@/modules/dashboard/components/SmartSuggestion'
 import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
@@ -87,14 +91,92 @@ export function DashboardPage() {
   const hasWeeklyAttendance = data.weeklyAttendance.days.length > 0
   const canManageOperations = data.view === 'management' || data.view === 'teacher'
   const hasTasks = canManageOperations
-  const hasRecentActivity = data.recentActivity.length > 0
-  const hasOperationalBlocks = hasAgenda || hasWeeklyAttendance || hasTasks || hasRecentActivity
+  const hasOperationalBlocks = hasAgenda || hasWeeklyAttendance || hasTasks || canManageOperations
+  const journalSummary = data.journalSummary ?? {
+    activeCount: 0,
+    pendingCount: 0,
+    recentEntries: [],
+  }
+
+  const managementWidgets: DashboardGridWidget[] = data.view === 'management'
+    ? [
+        {
+          id: 'setup',
+          label: 'Preparación inicial',
+          content: <InitialSetupChecklist progress={data.setupProgress} />,
+          layout: { x: 0, y: 0, w: 9, h: 10, minW: 5, minH: 4, maxW: 12 },
+        },
+        {
+          id: 'next-class',
+          label: 'Próxima clase',
+          content: (
+            <DashboardHero
+              nextClass={data.nextClass}
+              onStartClass={handleStartClass}
+              onViewPlanning={handleViewPlanning}
+              canManageClass={canManageOperations}
+              onCountdownEnd={refetch}
+            />
+          ),
+          layout: { x: 9, y: 0, w: 3, h: 19, minW: 3, minH: 8, maxW: 5 },
+        },
+        ...(hasAgenda
+          ? [{
+              id: 'agenda',
+              label: 'Agenda de hoy',
+              content: <TodayAgenda items={data.todayAgenda} />,
+              layout: { x: 0, y: 10, w: 5, h: 27, minW: 4, minH: 10, maxW: 8 },
+            } satisfies DashboardGridWidget]
+          : []),
+        ...(hasWeeklyAttendance
+          ? [{
+              id: 'attendance',
+              label: 'Pulso semanal',
+              content: <WeeklyAttendanceCard attendance={data.weeklyAttendance} />,
+              layout: { x: 5, y: 10, w: 4, h: 13, minW: 3, minH: 7, maxW: 7 },
+            } satisfies DashboardGridWidget]
+          : []),
+        {
+          id: 'tasks',
+          label: 'Pendientes',
+          content: (
+            <DashboardTasks
+              tasks={data.tasks}
+              loading={actionLoading}
+              onAddTask={addTask}
+              onCompleteTask={completeTask}
+            />
+          ),
+          layout: { x: 5, y: 23, w: 4, h: 10, minW: 3, minH: 6, maxW: 7 },
+        },
+        {
+          id: 'recent',
+          label: 'Actividad reciente',
+          content: <RecentActivity items={data.recentActivity} />,
+          layout: { x: 9, y: 19, w: 3, h: 19, minW: 3, minH: 8, maxW: 7 },
+        },
+        {
+          id: 'journal',
+          label: 'Bitácora docente',
+          content: <JournalSummaryCard summary={journalSummary} />,
+          layout: { x: 5, y: 33, w: 7, h: 13, minW: 4, minH: 7, maxW: 12 },
+        },
+        ...(data.smartSuggestion
+          ? [{
+              id: 'suggestion',
+              label: 'Sugerencia inteligente',
+              content: <SmartSuggestion suggestion={data.smartSuggestion} />,
+              layout: { x: 0, y: 46, w: 12, h: 8, minW: 5, minH: 4, maxW: 12 },
+            } satisfies DashboardGridWidget]
+          : []),
+      ]
+    : []
 
   return (
     <div className="w-full min-w-0 space-y-6">
       <header className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-baseline gap-3 flex-wrap">
-          <h1 className="text-2xl lg:text-[28px] font-bold tracking-tight text-foreground">
+        <div className="flex flex-wrap items-baseline gap-3">
+          <h1 className="text-2xl font-bold tracking-tight text-foreground lg:text-[28px]">
             {getGreeting()},
             {' '}
             <span className="text-accent">{data.context.firstName}</span>
@@ -119,7 +201,7 @@ export function DashboardPage() {
             {data.context.schoolYearName}
           </span>
           <span className="inline-flex h-7 items-center gap-1.5 rounded-full bg-accent/12 px-3 font-semibold text-accent">
-            <span className="size-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="size-1.5 animate-pulse rounded-full bg-accent" />
             {data.context.periodName} · activo
           </span>
         </div>
@@ -131,85 +213,91 @@ export function DashboardPage() {
         </div>
       )}
 
-      <div className="dashboard-enter" style={{ animationDuration: '520ms' }}>
-        <DashboardHero
-          nextClass={data.nextClass}
-          onStartClass={handleStartClass}
-          onViewPlanning={handleViewPlanning}
-          canManageClass={canManageOperations}
-        />
-      </div>
-
       {data.view === 'management' ? (
-        <div className="dashboard-enter" style={{ animationDelay: '60ms', animationDuration: '460ms' }}>
-          <InitialSetupChecklist progress={data.setupProgress} />
-        </div>
-      ) : null}
+        <DashboardEditableGrid
+          widgets={managementWidgets}
+          storageKey="aulabase:dashboard-layout:management:v4"
+        />
+      ) : (
+        <>
+          <div className="dashboard-enter" style={{ animationDuration: '520ms' }}>
+            <DashboardHero
+              nextClass={data.nextClass}
+              onStartClass={handleStartClass}
+              onViewPlanning={handleViewPlanning}
+              canManageClass={canManageOperations}
+              onCountdownEnd={refetch}
+            />
+          </div>
 
-      {data.view === 'teacher' && data.teacherAnalytics ? (
-        <section className="grid gap-6 lg:grid-cols-2" aria-label="Resumen académico del docente">
-          <ChartPanel
-            title="Rendimiento por período"
-            description={`${data.teacherAnalytics.gradedRecords} calificaciones publicadas`}
-            value={data.teacherAnalytics.average === null ? '—' : `${data.teacherAnalytics.average}%`}
-          >
-            <LineChart data={data.teacherAnalytics.performanceByPeriod} />
-          </ChartPanel>
-          <ChartPanel
-            title="Promedio por asignatura"
-            description="Resultados de tus cursos en el año escolar actual"
-            value={data.teacherAnalytics.performanceBySubject.length ? `${data.teacherAnalytics.performanceBySubject.length} asignaturas` : '—'}
-          >
-            <BarChart data={data.teacherAnalytics.performanceBySubject} />
-          </ChartPanel>
-        </section>
-      ) : null}
+          {data.view === 'teacher' && data.teacherAnalytics ? (
+            <section className="grid gap-6 lg:grid-cols-2" aria-label="Resumen académico del docente">
+              <ChartPanel
+                title="Rendimiento por período"
+                description={`${data.teacherAnalytics.gradedRecords} calificaciones publicadas`}
+                value={data.teacherAnalytics.average === null ? '—' : `${data.teacherAnalytics.average}%`}
+              >
+                <LineChart data={data.teacherAnalytics.performanceByPeriod} />
+              </ChartPanel>
+              <ChartPanel
+                title="Promedio por asignatura"
+                description="Resultados de tus cursos en el año escolar actual"
+                value={data.teacherAnalytics.performanceBySubject.length ? `${data.teacherAnalytics.performanceBySubject.length} asignaturas` : '—'}
+              >
+                <BarChart data={data.teacherAnalytics.performanceBySubject} />
+              </ChartPanel>
+            </section>
+          ) : null}
 
-      {hasOperationalBlocks ? (
-        <div className="grid lg:grid-cols-12 gap-6">
-          {hasAgenda ? (
-            <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
-              <TodayAgenda items={data.todayAgenda} />
+          {hasOperationalBlocks ? (
+            <div className="grid gap-6 lg:grid-cols-12 lg:items-start">
+              {hasAgenda ? (
+                <div className="dashboard-enter lg:col-span-5 lg:self-start" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
+                  <TodayAgenda items={data.todayAgenda} />
+                </div>
+              ) : null}
+
+              <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-6'].join(' ')}>
+                {hasWeeklyAttendance || hasTasks ? (
+                  <div className="grid gap-6 md:grid-cols-2 md:items-start">
+                    {hasWeeklyAttendance ? (
+                      <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
+                        <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
+                      </div>
+                    ) : null}
+                    {hasTasks ? (
+                      <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
+                        <DashboardTasks
+                          tasks={data.tasks}
+                          loading={actionLoading}
+                          onAddTask={addTask}
+                          onCompleteTask={completeTask}
+                        />
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                {canManageOperations ? (
+                  <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
+                    <RecentActivity items={data.recentActivity} />
+                  </div>
+                ) : null}
+
+                {canManageOperations ? (
+                  <div className="dashboard-enter" style={{ animationDelay: '230ms', animationDuration: '300ms' }}>
+                    <JournalSummaryCard summary={journalSummary} />
+                  </div>
+                ) : null}
+              </div>
             </div>
           ) : null}
 
-          <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-6'].join(' ')}>
-            {hasWeeklyAttendance || hasTasks ? (
-              <div className="grid md:grid-cols-2 gap-6">
-                {hasWeeklyAttendance ? (
-                  <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
-                    <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
-                  </div>
-                ) : null}
-                {hasTasks ? (
-                  <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
-                    <DashboardTasks
-                      tasks={data.tasks}
-                      loading={actionLoading}
-                      onAddTask={addTask}
-                      onCompleteTask={completeTask}
-                    />
-                  </div>
-                ) : null}
-              </div>
-            ) : null}
-            {hasRecentActivity ? (
-              <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
-                <RecentActivity items={data.recentActivity} />
-              </div>
-            ) : null}
-            {canManageOperations && data.journalSummary ? (
-              <div className="dashboard-enter" style={{ animationDelay: '230ms', animationDuration: '300ms' }}>
-                <JournalSummaryCard summary={data.journalSummary} />
-              </div>
-            ) : null}
+          <div className="dashboard-enter" style={{ animationDelay: '240ms', animationDuration: '280ms' }}>
+            <SmartSuggestion suggestion={data.smartSuggestion} />
           </div>
-        </div>
-      ) : null}
-
-      <div className="dashboard-enter" style={{ animationDelay: '240ms', animationDuration: '280ms' }}>
-        <SmartSuggestion suggestion={data.smartSuggestion} />
-      </div>
+        </>
+      )}
     </div>
   )
 }

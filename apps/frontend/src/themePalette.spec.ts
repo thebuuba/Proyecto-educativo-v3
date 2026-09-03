@@ -1,19 +1,10 @@
-import { readFileSync, readdirSync } from 'node:fs'
-import { join } from 'node:path'
+import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 import { describe, expect, it } from 'vitest'
 
 const readSource = (relativePath: string) =>
   readFileSync(fileURLToPath(new URL(relativePath, import.meta.url)), 'utf8')
-
-const sourceRoot = join(process.cwd(), 'src')
-
-function frontendSources(): string[] {
-  return readdirSync(sourceRoot, { recursive: true, withFileTypes: true })
-    .filter((entry) => entry.isFile() && /\.(css|ts|tsx)$/.test(entry.name) && entry.name !== 'themePalette.spec.ts')
-    .map((entry) => readFileSync(`${entry.parentPath}/${entry.name}`, 'utf8'))
-}
 
 function contrastRatio(first: string, second: string): number {
   const luminance = (hex: string) => {
@@ -26,69 +17,70 @@ function contrastRatio(first: string, second: string): number {
   return (light + 0.05) / (dark + 0.05)
 }
 
-describe('paleta visual accesible de AulaBase', () => {
-  it('declara los colores base como tokens globales', () => {
-    const css = readSource('./index.css').toUpperCase()
-    const approvedColors = [
-      '#FFFFFF',
-      '#F8F8F6',
-      '#252321',
-      '#68635F',
-      '#236A96',
-      '#DDF1FA',
-      '#7B3F8C',
-      '#FFF3C4',
-      '#CDD944',
-      '#F6E6FA',
-      '#25A8D8',
-    ]
+describe('paleta visual de AulaBase', () => {
+  it('carga la capa semántica después de los estilos base', () => {
+    const main = readSource('./main.tsx')
+    const baseImport = main.indexOf("import './index.css'")
+    const semanticImport = main.indexOf("import './semantic-palette.css'")
 
-    approvedColors.forEach((color) => expect(css).toContain(color))
+    expect(baseImport).toBeGreaterThanOrEqual(0)
+    expect(semanticImport).toBeGreaterThan(baseImport)
   })
 
-  it('usa el azul aprobado como principal con texto cálido legible', () => {
-    const css = readSource('./index.css').toUpperCase()
+  it('declara la paleta aprobada, blanco y texto neutral', () => {
+    const css = readSource('./semantic-palette.css').toUpperCase()
+    const approvedColors = [
+      '#3CB7E2',
+      '#66D64F',
+      '#F6886F',
+      '#F9C46B',
+      '#E3E3E3',
+      '#FFFFFF',
+      '#2F3542',
+    ]
+    const declaredHexColors = [...new Set(css.match(/#[0-9A-F]{6}/g) ?? [])].sort()
+
+    expect(declaredHexColors).toEqual([...approvedColors].sort())
+  })
+
+  it('asigna cada color a un rol semántico estable', () => {
+    const css = readSource('./semantic-palette.css').toUpperCase()
+
+    expect(css).toContain('--PALETTE-BLUE: #3CB7E2;')
+    expect(css).toContain('--PALETTE-GREEN: #66D64F;')
+    expect(css).toContain('--PALETTE-CORAL: #F6886F;')
+    expect(css).toContain('--PALETTE-GOLD: #F9C46B;')
+    expect(css).toContain('--PALETTE-GRAY: #E3E3E3;')
+    expect(css).toContain('--PALETTE-WHITE: #FFFFFF;')
+    expect(css).toContain('--PALETTE-TEXT: #2F3542;')
 
     expect(css).toContain('--PRIMARY: VAR(--PALETTE-BLUE);')
-    expect(css).toContain('--PRIMARY-FOREGROUND: VAR(--ON-PRIMARY);')
-    expect(css).toContain('--ACCENT: VAR(--SECONDARY);')
-    expect(css).toContain('--ACCENT-FOREGROUND: VAR(--ON-SECONDARY);')
-    expect(css).toContain('--BACKGROUND: VAR(--PALETTE-SURFACE);')
-    expect(css).toContain('--FOREGROUND: VAR(--ON-BACKGROUND);')
+    expect(css).toContain('--TERTIARY: VAR(--PALETTE-GREEN);')
+    expect(css).toContain('--SECONDARY: VAR(--PALETTE-CORAL);')
+    expect(css).toContain('--DESTRUCTIVE: VAR(--PALETTE-CORAL);')
+    expect(css).toContain('--WARNING: VAR(--PALETTE-GOLD);')
+    expect(css).toContain('--CARD: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--FOREGROUND: VAR(--PALETTE-TEXT);')
+    expect(css).toContain('--BORDER: VAR(--PALETTE-GRAY);')
   })
 
-  it('define roles Material y colores on para cada contenedor', () => {
-    const css = readSource('./index.css').toUpperCase()
+  it('mantiene las tarjetas y la navegación sobre superficies blancas', () => {
+    const css = readSource('./semantic-palette.css').toUpperCase()
 
-    expect(css).toContain('--ON-PRIMARY: VAR(--PALETTE-WHITE);')
-    expect(css).toContain('--PRIMARY-CONTAINER: VAR(--PALETTE-BLUE-LIGHT);')
-    expect(css).toContain('--ON-PRIMARY-CONTAINER: VAR(--PALETTE-INK);')
-    expect(css).toContain('--SECONDARY: VAR(--PALETTE-PLUM);')
-    expect(css).toContain('--SECONDARY-CONTAINER: VAR(--PALETTE-LAVENDER-LIGHT);')
-    expect(css).toContain('--ON-SECONDARY-CONTAINER: VAR(--PALETTE-INK);')
-    expect(css).toContain('--TERTIARY-CONTAINER: VAR(--PALETTE-GREEN-CREAM);')
-    expect(css).toContain('--ON-TERTIARY-CONTAINER: VAR(--PALETTE-INK);')
-    expect(css).toContain('--WARNING-CONTAINER: VAR(--PALETTE-YELLOW-CREAM);')
-    expect(css).toContain('--ON-WARNING-CONTAINER: VAR(--PALETTE-INK);')
     expect(css).toContain('--SURFACE: VAR(--PALETTE-WHITE);')
-    expect(css).toContain('--ON-SURFACE: VAR(--PALETTE-INK);')
+    expect(css).toContain('--CARD: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--SIDEBAR: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--BG-SURFACE: VAR(--PALETTE-WHITE);')
   })
 
-  it('elimina del frontend los azules anteriores y los tonos de marca no aprobados', () => {
-    const allSources = frontendSources().join('\n').toLowerCase()
+  it('usa texto oscuro legible sobre todos los colores principales', () => {
+    const text = '#2F3542'
 
-    expect(allSources).not.toMatch(/#1e3d8f|#1e4f8f|#1f4e95/)
-    expect(allSources).not.toMatch(/#216b9f|#7053a6|#8a6a00|#66702a|#8c3fa4|#b94b11/)
-  })
-
-  it('mantiene contraste AA en acciones y textos', () => {
-    expect(contrastRatio('#236A96', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#1F5D84', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#7B3F8C', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#68635F', '#F8F8F6')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#252321', '#DDF1FA')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#252321', '#F6E6FA')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#252321', '#F1F3C4')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#252321', '#FFF3C4')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#3CB7E2', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#66D64F', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#F6886F', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#F9C46B', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#E3E3E3', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#FFFFFF', text)).toBeGreaterThanOrEqual(4.5)
   })
 })

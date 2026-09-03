@@ -16,7 +16,7 @@ type QuickActionsProps = {
 /** Panel de accesos rápidos del dashboard. */
 export function QuickActions({ actions }: QuickActionsProps) {
   return (
-    <Card className="p-5">
+    <Card className="border-0 p-5">
       <CardTitle>Accesos rápidos</CardTitle>
       <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
         {actions.map((action) => {

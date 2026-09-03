@@ -52,8 +52,8 @@ export function InitialSetupChecklist({ progress }: InitialSetupChecklistProps) 
     },
     {
       id: 'planning',
-      title: 'Prepara una planificacion',
-      actionLabel: 'Ir a planificacion',
+      title: 'Prepara una planificación',
+      actionLabel: 'Ir a planificación',
       path: '/planificaciones',
       done: progress.planningCount > 0,
       icon: NotebookPen,
@@ -66,22 +66,22 @@ export function InitialSetupChecklist({ progress }: InitialSetupChecklistProps) 
   const Icon = nextStep.icon
 
   return (
-    <section className="setup-next-step dashboard-warm-shadow flex h-full flex-col rounded-3xl border border-border border-t-4 border-t-warning bg-card p-5 text-card-foreground sm:p-6">
-      <div className="flex min-w-0 gap-4">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-warning text-warning-foreground shadow-lg shadow-warning/25">
-            <Icon className="size-5" />
+    <section className="setup-next-step dashboard-warm-shadow rounded-3xl bg-card p-4 text-card-foreground sm:p-5">
+      <div className="flex min-w-0 items-center gap-3.5">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-warning text-warning-foreground shadow-sm">
+          <Icon className="size-5" />
         </span>
         <div className="min-w-0">
-          <p className="text-xs font-semibold text-accent">
+          <p className="text-[11px] font-semibold text-accent">
             Para dejar todo listo
           </p>
-          <h2 className="mt-1.5 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-foreground">
+          <h2 className="mt-1 text-xl font-extrabold leading-tight tracking-[-0.025em] text-foreground sm:text-[22px]">
             {nextStep.title}.
           </h2>
         </div>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-4">
         <div className="flex gap-1.5" aria-label={`${completedCount} de ${steps.length} pasos completados`}>
           {steps.map((step) => (
             <span
@@ -91,14 +91,14 @@ export function InitialSetupChecklist({ progress }: InitialSetupChecklistProps) 
             />
           ))}
         </div>
-        <p className="mt-2 text-xs font-medium text-muted-foreground">
+        <p className="mt-1.5 text-[11px] font-medium text-muted-foreground">
           {completedCount}/{steps.length} pasos completados
         </p>
       </div>
 
       <Link
         to={nextStep.path}
-        className="mt-6 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground transition-[background-color,transform,box-shadow] duration-200 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25 active:translate-y-px"
+        className="mt-4 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground transition-[background-color,transform,box-shadow] duration-200 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25 active:translate-y-px"
       >
         {nextStep.actionLabel}
         <ArrowRight className="size-4" aria-hidden="true" />

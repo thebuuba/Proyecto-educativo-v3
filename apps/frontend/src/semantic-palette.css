@@ -1,0 +1,231 @@
+:root {
+  /*
+   * Paleta oficial de AulaBase.
+   * Los cinco colores de marca se complementan únicamente con blanco y un
+   * neutral oscuro para texto. Los tonos suaves se derivan con color-mix.
+   */
+  --palette-blue: #3CB7E2;
+  --palette-green: #66D64F;
+  --palette-coral: #F6886F;
+  --palette-gold: #F9C46B;
+  --palette-gray: #E3E3E3;
+  --palette-white: #FFFFFF;
+  --palette-text: #2F3542;
+  --page-background: color-mix(
+    in srgb,
+    var(--palette-blue) 8%,
+    color-mix(in srgb, var(--palette-gray) 18%, var(--palette-white))
+  );
+
+  /* Alias heredados para que los módulos existentes consuman la nueva paleta. */
+  --palette-surface: var(--palette-white);
+  --palette-ink: var(--palette-text);
+  --palette-text-muted: color-mix(in srgb, var(--palette-text) 68%, var(--palette-white));
+  --palette-sky: var(--palette-blue);
+  --palette-blue-light: color-mix(in srgb, var(--palette-blue) 16%, var(--palette-white));
+  --palette-plum: var(--palette-coral);
+  --palette-purple-light: color-mix(in srgb, var(--palette-coral) 20%, var(--palette-white));
+  --palette-lavender: color-mix(in srgb, var(--palette-coral) 16%, var(--palette-white));
+  --palette-lavender-light: color-mix(in srgb, var(--palette-coral) 12%, var(--palette-white));
+  --palette-lilac-light: color-mix(in srgb, var(--palette-gray) 55%, var(--palette-white));
+  --palette-olive: var(--palette-green);
+  --palette-lime: var(--palette-green);
+  --palette-green-cream: color-mix(in srgb, var(--palette-green) 16%, var(--palette-white));
+  --palette-green-pale: color-mix(in srgb, var(--palette-green) 24%, var(--palette-white));
+  --palette-yellow: var(--palette-gold);
+  --palette-yellow-soft: var(--palette-gold);
+  --palette-yellow-cream: color-mix(in srgb, var(--palette-gold) 24%, var(--palette-white));
+  --palette-orange: var(--palette-coral);
+
+  /* Superficies: fondo muy claro, tarjetas blancas y texto oscuro. */
+  --background: var(--page-background);
+  --on-background: var(--palette-text);
+  --surface: var(--palette-white);
+  --on-surface: var(--palette-text);
+  --surface-variant: color-mix(in srgb, var(--palette-gray) 72%, var(--palette-white));
+  --on-surface-variant: color-mix(in srgb, var(--palette-text) 72%, var(--palette-white));
+
+  /* Azul: identidad, navegación, enlaces y acciones principales. */
+  --primary: var(--palette-blue);
+  --primary-variant: color-mix(in srgb, var(--palette-blue) 82%, var(--palette-text));
+  --on-primary: var(--palette-text);
+  --primary-container: color-mix(in srgb, var(--palette-blue) 16%, var(--palette-white));
+  --on-primary-container: var(--palette-text);
+
+  /* Coral: acento secundario y llamadas de atención no críticas. */
+  --secondary: var(--palette-coral);
+  --secondary-variant: color-mix(in srgb, var(--palette-coral) 82%, var(--palette-text));
+  --on-secondary: var(--palette-text);
+  --secondary-container: color-mix(in srgb, var(--palette-coral) 16%, var(--palette-white));
+  --on-secondary-container: var(--palette-text);
+
+  /* Verde: éxito, completado, aprobado y sincronizado. */
+  --tertiary: var(--palette-green);
+  --on-tertiary: var(--palette-text);
+  --tertiary-container: color-mix(in srgb, var(--palette-green) 16%, var(--palette-white));
+  --on-tertiary-container: var(--palette-text);
+
+  /* Amarillo: pendientes, avisos y elementos que requieren atención. */
+  --warning: var(--palette-gold);
+  --warning-foreground: var(--palette-text);
+  --warning-container: color-mix(in srgb, var(--palette-gold) 24%, var(--palette-white));
+  --on-warning-container: var(--palette-text);
+
+  /* Coral también representa error/destructivo; la forma e iconografía diferencian el estado. */
+  --destructive: var(--palette-coral);
+  --destructive-foreground: var(--palette-text);
+  --destructive-hover: color-mix(in srgb, var(--palette-coral) 78%, var(--palette-text));
+  --danger-light: color-mix(in srgb, var(--palette-coral) 16%, var(--palette-white));
+
+  /* Tokens generales de la aplicación. */
+  --foreground: var(--palette-text);
+  --card: var(--palette-white);
+  --card-foreground: var(--palette-text);
+  --popover: var(--palette-white);
+  --popover-foreground: var(--palette-text);
+  --primary-foreground: var(--palette-text);
+  --secondary-foreground: var(--palette-text);
+  --muted: color-mix(in srgb, var(--palette-gray) 66%, var(--palette-white));
+  --muted-foreground: color-mix(in srgb, var(--palette-text) 70%, var(--palette-white));
+  --accent: var(--palette-coral);
+  --accent-foreground: var(--palette-text);
+  --success: var(--palette-green);
+  --success-foreground: var(--palette-text);
+  --border: var(--palette-gray);
+  --input: var(--palette-gray);
+  --ring: var(--palette-blue);
+  --accent-hover: color-mix(in srgb, var(--palette-coral) 82%, var(--palette-text));
+  --primary-hover: color-mix(in srgb, var(--palette-blue) 82%, var(--palette-text));
+
+  /* Navegación: blanca y tranquila; azul solo para selección y acción. */
+  --sidebar: var(--palette-white);
+  --sidebar-foreground: var(--palette-text);
+  --sidebar-primary: var(--palette-blue);
+  --sidebar-primary-foreground: var(--palette-text);
+  --sidebar-accent: color-mix(in srgb, var(--palette-blue) 14%, var(--palette-white));
+  --sidebar-accent-foreground: var(--palette-text);
+  --sidebar-border: var(--palette-gray);
+  --sidebar-ring: var(--palette-blue);
+
+  /* Compatibilidad con vistas existentes. */
+  --primary-light: color-mix(in srgb, var(--palette-blue) 16%, var(--palette-white));
+  --primary-border: var(--palette-blue);
+  --success-light: color-mix(in srgb, var(--palette-green) 16%, var(--palette-white));
+  --warning-light: color-mix(in srgb, var(--palette-gold) 24%, var(--palette-white));
+  --bg-auth-outer: color-mix(in srgb, var(--palette-blue) 12%, var(--palette-white));
+  --bg-left-panel: var(--palette-white);
+  --bg-right-panel: var(--page-background);
+  --bg-page: var(--page-background);
+  --bg-surface: var(--palette-white);
+  --bg-alt: color-mix(in srgb, var(--palette-gray) 68%, var(--palette-white));
+  --text-heading: var(--palette-text);
+  --text-body: var(--palette-text);
+  --text-muted: color-mix(in srgb, var(--palette-text) 70%, var(--palette-white));
+  --text-faint: color-mix(in srgb, var(--palette-text) 58%, var(--palette-white));
+  --text-placeholder: color-mix(in srgb, var(--palette-text) 58%, var(--palette-white));
+
+  /* Panel de clase: el azul lo hace visible sin introducir otra familia cromática. */
+  --class-panel: var(--palette-white);
+  --class-foreground: var(--palette-text);
+  --class-accent: var(--palette-gold);
+  --class-muted: color-mix(in srgb, var(--palette-text) 72%, var(--palette-white));
+}
+
+.dashboard-paper-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    color-mix(in srgb, var(--palette-blue) 7%, transparent) 28px
+  );
+}
+
+.dot-grid {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--palette-text) 12%, transparent) 1px,
+    transparent 1px
+  );
+}
+
+.dashboard-warm-shadow {
+  box-shadow: 0 16px 40px -28px color-mix(in srgb, var(--palette-text) 22%, transparent);
+}
+
+/* Las tarjetas del contenido autenticado comparten el lenguaje del inicio.
+   Los bordes se reservan para controles, tablas y estados interactivos. */
+.content-density-compact :where(section, article).bg-card,
+.content-density-compact :where(div).bg-card.shadow-sm,
+.content-density-compact :where(div).bg-card.border-dashed,
+.content-density-compact :where(section, article).bg-white,
+.content-density-compact :where(div).bg-white.shadow-sm {
+  border-color: transparent;
+  border-radius: 1.5rem;
+  box-shadow: 0 16px 40px -28px color-mix(in srgb, var(--palette-text) 22%, transparent);
+}
+
+.content-density-compact :where(input:not([type='checkbox'], [type='radio']), select, textarea) {
+  border-radius: 0.75rem;
+}
+
+/* Grid personalizable del Inicio. */
+.dashboard-custom-grid {
+  align-items: stretch;
+}
+
+.dashboard-grid-widget {
+  border-radius: 1.5rem;
+  transition:
+    opacity 160ms ease,
+    filter 160ms ease,
+    outline-color 160ms ease;
+}
+
+.dashboard-grid-widget-content {
+  background: transparent;
+}
+
+.dashboard-grid-widget[data-manual-height='true'] .dashboard-grid-widget-content {
+  background: var(--card);
+}
+
+.dashboard-grid-widget-content > * {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+
+.dashboard-grid-widget-content > * > * {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+
+.dashboard-custom-grid[data-editing='true'] .dashboard-grid-widget {
+  outline: 1.5px dashed color-mix(in srgb, var(--palette-blue) 55%, var(--palette-white));
+  outline-offset: 3px;
+}
+
+.dashboard-grid-widget[data-interacting='true'] {
+  opacity: 0.94;
+  filter: drop-shadow(0 14px 18px color-mix(in srgb, var(--palette-text) 18%, transparent));
+}
+
+.dashboard-widget-drag-handle {
+  cursor: grab;
+  user-select: none;
+}
+
+.dashboard-widget-drag-handle:active {
+  cursor: grabbing;
+}
+
+.dashboard-widget-resize-handle {
+  cursor: nwse-resize;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-grid-widget {
+    transition: none;
+  }
+}

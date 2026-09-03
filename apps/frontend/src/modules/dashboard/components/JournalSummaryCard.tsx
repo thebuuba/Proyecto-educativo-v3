@@ -14,7 +14,7 @@ const entryLabels: Record<string, string> = {
 
 export function JournalSummaryCard({ summary }: { summary: DashboardJournalSummary }) {
   return (
-    <section className="dashboard-warm-shadow rounded-3xl border border-border border-t-4 border-t-accent bg-card p-5 text-card-foreground sm:p-6">
+    <section className="dashboard-warm-shadow rounded-3xl bg-card p-5 text-card-foreground sm:p-6">
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center gap-3">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-accent/10 text-accent">

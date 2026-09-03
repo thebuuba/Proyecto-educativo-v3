@@ -46,8 +46,8 @@ export function DashboardTasks({
   }
 
   return (
-    <section className="dashboard-warm-shadow rounded-3xl border border-border border-t-4 border-t-warning bg-card p-5 text-card-foreground sm:p-6">
-      <div className="flex items-center justify-between gap-4 mb-4">
+    <section className="dashboard-warm-shadow rounded-3xl bg-card p-5 text-card-foreground sm:p-6">
+      <div className="mb-4 flex items-center justify-between gap-4">
         <h3 className="text-lg font-extrabold tracking-tight text-foreground">Pendientes</h3>
         <span className="flex size-8 items-center justify-center rounded-xl bg-muted text-sm font-bold text-accent tabular-nums">
           {tasks.length}
@@ -63,7 +63,7 @@ export function DashboardTasks({
           tasks.map((task) => (
             <label
               key={task.id}
-              className="flex cursor-pointer items-center gap-3 rounded-xl p-2 -mx-2 transition-colors hover:bg-muted/70"
+              className="-mx-2 flex cursor-pointer items-center gap-3 rounded-xl p-2 transition-colors hover:bg-muted/70"
             >
               <input
                 type="checkbox"
@@ -105,7 +105,7 @@ export function DashboardTasks({
       ) : (
         <button
           type="button"
-          className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-muted py-2 text-xs font-semibold text-muted-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/20"
+          className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-primary/25 bg-primary/10 py-2 text-xs font-semibold text-primary transition-colors hover:border-primary/35 hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
           onClick={() => setIsAdding(true)}
         >
           <Plus className="size-3.5" />

@@ -1,9 +1,7 @@
-import { CalendarDays, ClipboardList, Pencil, Settings2 } from 'lucide-react'
+import { CalendarDays, ChevronDown, ClipboardList, Pencil, Settings2 } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { useMemo } from 'react'
 
-import { Badge } from '@/components/ui/Badge'
-import { Button } from '@/components/ui/Button'
 import type { ScheduleEntry } from '@/modules/schedule/types'
 import { formatTime, getDurationHours } from '@/modules/schedule/utils/scheduleGrid'
 import type { ScheduleBlock, ScheduleConfig } from '@/modules/schedule/components/ScheduleWizard'
@@ -68,6 +66,7 @@ export function ScheduleFinalTable({
     (sum, entry) => sum + getDurationHours(entry.startTime, entry.endTime),
     0,
   )
+  const today = new Date().getDay()
 
   const entriesByCell = useMemo(() => {
     const map = new Map<string, ScheduleEntry>()
@@ -97,97 +96,154 @@ export function ScheduleFinalTable({
   }
 
   return (
-    <div className="space-y-5">
-      <div className="flex flex-wrap items-center gap-3">
-        <div className="mr-auto">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            Mi semana académica
-          </h2>
-          <p className="text-sm text-muted-foreground">
-            Vista final unificada del horario docente.
-          </p>
-        </div>
-        <Badge tone="accent" className="rounded-full px-3 py-1">
-          Tanda {SHIFT_LABELS[config.shift] ?? config.shift}
-        </Badge>
-        <Badge tone="default" className="rounded-full px-3 py-1">
-          {classCount} períodos · {config.structureMode === 'custom' ? 'duración variable' : `${config.blockDuration} min`}
-        </Badge>
-        <Button variant="outline" size="sm" onClick={onConfigureAssignments} className="gap-1.5 rounded-full bg-card">
-          <Settings2 className="size-3.5" />
-          Asignar clases
-        </Button>
-        <Button variant="outline" size="sm" onClick={onEditStructure} className="gap-1.5 rounded-full bg-card">
-          <Pencil className="size-3.5" />
-          Editar horario
-        </Button>
-      </div>
+    <div className="space-y-4">
+      <section className="rounded-3xl border border-border/70 bg-card p-4 shadow-sm sm:p-5">
+        <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl">
+                Semana académica
+              </h2>
+              <span className="rounded-full bg-primary/8 px-2.5 py-1 text-[10px] font-extrabold text-primary">
+                {entries.length} clases
+              </span>
+            </div>
+            <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+              <span>{SHIFT_LABELS[config.shift] ?? config.shift}</span>
+              <span className="text-border">•</span>
+              <span>{classCount} períodos</span>
+              <span className="text-border">•</span>
+              <span>{config.structureMode === 'custom' ? 'Duración variable' : `${config.blockDuration} min por período`}</span>
+              <span className="text-border">•</span>
+              <span>{formatDuration(totalHours)} lectivas</span>
+              {pedagogicalBlocks.length ? (
+                <>
+                  <span className="text-border">•</span>
+                  <span>{pedagogicalBlocks.length} horas pedagógicas</span>
+                </>
+              ) : null}
+            </div>
+          </div>
 
-      <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-        <div className="grid grid-cols-[7.5rem_repeat(var(--day-count),minmax(0,1fr))] bg-primary text-primary-foreground" style={{ '--day-count': activeDays.length } as CSSProperties}>
-          <div className="flex items-center justify-center border-r border-primary-foreground/20 px-3 py-3 text-xs font-bold uppercase tracking-widest">
+          <details className="group/actions relative shrink-0">
+            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl border border-border bg-card px-4 text-xs font-extrabold text-foreground shadow-sm transition hover:bg-muted/40 [&::-webkit-details-marker]:hidden">
+              Acciones
+              <ChevronDown className="size-4 text-muted-foreground transition-transform group-open/actions:rotate-180" />
+            </summary>
+            <div className="absolute right-0 top-full z-30 mt-2 w-52 overflow-hidden rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+              <button
+                type="button"
+                onClick={onConfigureAssignments}
+                className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left text-xs font-bold text-foreground transition hover:bg-muted"
+              >
+                <Settings2 className="size-4 text-primary" />
+                Asignar clases
+              </button>
+              <button
+                type="button"
+                onClick={onEditStructure}
+                className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left text-xs font-bold text-foreground transition hover:bg-muted"
+              >
+                <Pencil className="size-4 text-primary" />
+                Editar estructura
+              </button>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section className="overflow-hidden rounded-3xl border border-border/70 bg-card shadow-sm">
+        <div
+          className="grid grid-cols-[6.75rem_repeat(var(--day-count),minmax(0,1fr))] border-b border-border/70 bg-card"
+          style={{ '--day-count': activeDays.length } as CSSProperties}
+        >
+          <div className="flex items-center justify-center border-r border-border/70 px-3 py-3 text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted-foreground">
             Hora
           </div>
-          {activeDays.map((day) => (
-            <div key={day.dayOfWeek} className="border-r border-primary-foreground/20 px-3 py-3 text-center last:border-r-0">
-              <p className="text-sm font-extrabold uppercase tracking-widest">{day.name}</p>
-            </div>
-          ))}
+          {activeDays.map((day) => {
+            const isToday = day.dayOfWeek === today
+            return (
+              <div
+                key={day.dayOfWeek}
+                className={cn(
+                  'relative border-r border-border/70 px-3 py-3 text-center last:border-r-0',
+                  isToday && 'bg-primary/[0.045]',
+                )}
+              >
+                {isToday ? <span className="absolute inset-x-8 top-0 h-0.5 rounded-b-full bg-primary" /> : null}
+                <p className={cn('text-xs font-extrabold uppercase tracking-[0.12em] text-foreground', isToday && 'text-primary')}>
+                  {day.name}
+                </p>
+                {isToday ? <p className="mt-0.5 text-[9px] font-bold text-primary">Hoy</p> : null}
+              </div>
+            )
+          })}
         </div>
 
-        <div className="divide-y divide-border">
+        <div className="divide-y divide-border/60">
           {blocks.map((block, index) => {
             const isBreak = block.type === 'break'
 
             return (
               <div
                 key={block.id}
-                className="grid grid-cols-[7.5rem_repeat(var(--day-count),minmax(0,1fr))]"
+                className="grid grid-cols-[6.75rem_repeat(var(--day-count),minmax(0,1fr))]"
                 style={{ '--day-count': activeDays.length } as CSSProperties}
               >
-                <div className={cn(
-                  'flex flex-col items-center justify-center border-r border-border px-2 py-3 text-center text-xs',
-                  isBreak ? 'bg-amber-100/80 text-amber-800' : 'bg-muted/50 text-muted-foreground',
-                )}>
-                  <span className="font-extrabold text-foreground">{index + 1}</span>
-                  <span>{formatTime(block.start)}</span>
-                  <span>{formatTime(block.end)}</span>
+                <div
+                  className={cn(
+                    'flex flex-col items-center justify-center border-r border-border/70 px-2 py-3 text-center',
+                    isBreak ? 'bg-warning/10' : 'bg-muted/20',
+                  )}
+                >
+                  <span className="text-[10px] font-extrabold text-muted-foreground">P{index + 1}</span>
+                  <span className="mt-0.5 text-xs font-extrabold tabular-nums text-foreground">{formatTime(block.start)}</span>
+                  <span className="text-[10px] tabular-nums text-muted-foreground">{formatTime(block.end)}</span>
                 </div>
 
-                {activeDays.map((day) => {
-                  if (isBreak) {
+                {isBreak ? (
+                  <div
+                    className="col-[2/-1] flex min-h-14 items-center justify-center gap-2 px-4 py-2 text-center"
+                    style={{ backgroundColor: 'color-mix(in srgb, var(--palette-yellow) 22%, var(--palette-white))' }}
+                  >
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-foreground">
+                      {block.label}
+                    </span>
+                    <span className="text-[10px] font-semibold text-muted-foreground">
+                      {formatTime(block.start)}–{formatTime(block.end)}
+                    </span>
+                  </div>
+                ) : (
+                  activeDays.map((day) => {
+                    const content = getCellContent(day.dayOfWeek, block)
+                    const isToday = day.dayOfWeek === today
                     return (
                       <div
                         key={day.dayOfWeek}
-                        className="flex min-h-14 items-center justify-center border-r border-border bg-amber-50 px-2 py-2 text-center text-xs font-extrabold uppercase tracking-widest text-amber-800 last:border-r-0"
+                        className={cn(
+                          'min-h-[76px] border-r border-border/60 p-1.5 last:border-r-0',
+                          isToday && 'bg-primary/[0.018]',
+                        )}
                       >
-                        {block.label}
+                        <ScheduleFinalCell content={content} />
                       </div>
                     )
-                  }
-
-                  const content = getCellContent(day.dayOfWeek, block)
-
-                  return (
-                    <div key={day.dayOfWeek} className="min-h-20 border-r border-border p-1.5 last:border-r-0">
-                      <ScheduleFinalCell content={content} />
-                    </div>
-                  )
-                })}
+                  })
+                )}
               </div>
             )
           })}
         </div>
       </section>
 
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-1 text-xs text-muted-foreground">
         <span className="inline-flex items-center gap-2 font-semibold text-foreground">
-          <CalendarDays className="size-4" />
+          <CalendarDays className="size-3.5 text-primary" />
           {entries.length} clases
         </span>
         <span>{formatDuration(totalHours)}</span>
         <span className="inline-flex items-center gap-2">
-          <ClipboardList className="size-4" />
+          <ClipboardList className="size-3.5" />
           {pedagogicalBlocks.length} horas pedagógicas
         </span>
       </div>
@@ -198,7 +254,7 @@ export function ScheduleFinalTable({
 function ScheduleFinalCell({ content }: { content: CellContent }) {
   if (content.kind === 'empty') {
     return (
-      <div className="flex h-full min-h-16 items-center justify-center rounded-md border border-dashed border-border bg-muted/20 text-xs font-medium text-muted-foreground">
+      <div className="flex h-full min-h-16 items-center justify-center rounded-xl border border-dashed border-border/70 bg-muted/10 text-[10px] font-semibold text-muted-foreground/70">
         Libre
       </div>
     )
@@ -206,9 +262,9 @@ function ScheduleFinalCell({ content }: { content: CellContent }) {
 
   if (content.kind === 'pedagogical') {
     return (
-      <div className="flex h-full min-h-16 flex-col justify-center rounded-md border border-slate-200 bg-slate-50 px-2 py-1.5 text-slate-700">
+      <div className="flex h-full min-h-16 flex-col justify-center rounded-xl border border-border/70 bg-muted/30 px-3 py-2 text-foreground">
         <p className="text-xs font-extrabold leading-tight">{content.block.label}</p>
-        <p className="mt-1 text-[11px] text-slate-500">Trabajo no lectivo</p>
+        <p className="mt-1 text-[10px] font-medium text-muted-foreground">Trabajo no lectivo</p>
       </div>
     )
   }
@@ -216,10 +272,15 @@ function ScheduleFinalCell({ content }: { content: CellContent }) {
   const palette = getSubjectPalette(content.entry.subjectName)
 
   return (
-    <div className="flex h-full min-h-16 flex-col justify-center rounded-md border px-2 py-1.5" style={{ backgroundColor: palette.soft, borderColor: `${palette.color}33`, color: palette.color }}>
-      <p className="text-xs font-extrabold leading-tight">{content.entry.subjectName}</p>
-      <p className="mt-1 text-[11px] font-semibold opacity-80">
-        {content.entry.academicLevelName} · {content.entry.gradeName} {content.entry.sectionName}
+    <div
+      className="flex h-full min-h-16 flex-col justify-center rounded-xl px-3 py-2 shadow-[0_8px_20px_-20px_rgba(47,53,66,0.28)]"
+      style={{ backgroundColor: palette.soft }}
+    >
+      <p className="text-xs font-extrabold leading-tight" style={{ color: palette.color }}>
+        {content.entry.subjectName}
+      </p>
+      <p className="mt-1 text-[10px] font-semibold text-muted-foreground">
+        {content.entry.gradeName} {content.entry.sectionName} · {content.entry.academicLevelName}
       </p>
     </div>
   )

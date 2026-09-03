@@ -46,7 +46,6 @@ import {
   Leaf,
   Library,
   Laptop,
-  LogIn,
   Microscope,
   MoreHorizontal,
   Music2,
@@ -93,10 +92,7 @@ import { TeacherAssignmentForm } from '@/modules/courses/components/TeacherAssig
 import { CourseTeamsPanel } from '@/modules/courses/components/CourseTeamsPanel'
 import { CourseStudentsPanel } from '@/modules/courses/components/CourseStudentsPanel'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
-import {
-  CoursesAdvancedFiltersDrawer,
-  type CourseAdvancedFilters,
-} from '@/modules/courses/components/CoursesAdvancedFiltersDrawer'
+import type { CourseAdvancedFilters } from '@/modules/courses/components/CoursesAdvancedFiltersDrawer'
 import { getClassAttendanceHistory, getCurrentAcademicPeriodId, getStudentsBySection, upsertAttendance, type ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
 import type { MonthlyAttendanceMark, StudentAttendanceRow } from '@/modules/attendance/types'
 import { markToStatus, sortStudentsForRoster, statusToMark } from '@/modules/attendance/utils/monthlyAttendance'
@@ -123,13 +119,10 @@ import type {
 } from '@/modules/courses/types'
 import {
   buildCycleFilterOptions,
-  buildGradeFilterOptions,
-  buildSectionFilterOptions,
   filterCourseOptionItems,
   matchesCourseSearch,
   matchesCourseStateFilters,
   matchesSectionFilter,
-  type CourseFilterOption,
 } from '@/modules/courses/utils/courseFilterOptions'
 import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
 import { cn } from '@/utils/cn'
@@ -237,13 +230,7 @@ export function CoursesPage() {
   const [levelFilter, setLevelFilter] = useState('all')
   const [cycleFilter, setCycleFilter] = useState('all')
   const [subjectFilter, setSubjectFilter] = useState('all')
-  const [gradeFilter, setGradeFilter] = useState('all')
-  const [sectionFilter, setSectionFilter] = useState('all')
-  const [moreFiltersOpen, setMoreFiltersOpen] = useState(false)
-  const [advancedFilters, setAdvancedFilters] = useState<CourseAdvancedFilters>(defaultAdvancedFilters)
-  const [advancedDraft, setAdvancedDraft] = useState<CourseAdvancedFilters>(defaultAdvancedFilters)
-  const [advancedInitial, setAdvancedInitial] = useState<CourseAdvancedFilters>(defaultAdvancedFilters)
-  const moreFiltersButtonRef = useRef<HTMLButtonElement>(null)
+  const advancedFilters = defaultAdvancedFilters
   const [selectedCourseId, setSelectedCourseId] = useState<string | null>(() => searchParams.get('courseId'))
 
   useEffect(() => {
@@ -260,35 +247,6 @@ export function CoursesPage() {
     setSelectedCourseId(courseId)
   }, [searchParams, setSearchParams])
 
-  function openAdvancedFilters() {
-    const snapshot: CourseAdvancedFilters = {
-      ...advancedFilters,
-      level: levelFilter,
-      cycle: cycleFilter,
-      subject: subjectFilter,
-      grade: gradeFilter,
-      section: sectionFilter,
-    }
-    setAdvancedDraft(snapshot)
-    setAdvancedInitial(snapshot)
-    setMoreFiltersOpen(true)
-  }
-
-  function closeAdvancedFilters() {
-    setMoreFiltersOpen(false)
-    requestAnimationFrame(() => moreFiltersButtonRef.current?.focus())
-  }
-
-  function resetCourseFilters() {
-    setSearchQuery('')
-    setLevelFilter('all')
-    setCycleFilter('all')
-    setSubjectFilter('all')
-    setGradeFilter('all')
-    setSectionFilter('all')
-    setAdvancedFilters(defaultAdvancedFilters)
-  }
-
   function openCreateAssignmentFlow() {
     setAssignmentFlowError(null)
     setAssignmentFlowOpen(true)
@@ -304,6 +262,11 @@ export function CoursesPage() {
     setEditingSection(null)
     setSectionFormError(null)
     setSectionFormOpen(true)
+  }
+
+  function openCreateSectionFromActions() {
+    const grade = grades.find((item) => item.status === 'active') ?? grades[0]
+    if (grade) openCreateSection(grade)
   }
 
   function openEditSection(grade: GradeWithSections, sectionId: string) {
@@ -473,21 +436,17 @@ export function CoursesPage() {
   const courseCards = useMemo(() => buildCourseCards(grades), [grades])
   const activeCourseCards = useMemo(() => courseCards.filter((item) => !item.archived), [courseCards])
   const filterOptionCourseCards = advancedFilters.showArchived ? courseCards : activeCourseCards
-  const drawerOptionCourseCards = advancedDraft.showArchived ? courseCards : activeCourseCards
   const appliedCourseFilters = useMemo<CourseAdvancedFilters>(() => ({
     ...advancedFilters,
     level: levelFilter,
     cycle: cycleFilter,
     subject: subjectFilter,
-    grade: gradeFilter,
-    section: sectionFilter,
-  }), [advancedFilters, cycleFilter, gradeFilter, levelFilter, sectionFilter, subjectFilter])
+  }), [cycleFilter, levelFilter, subjectFilter])
   const filteredCourseCards = useMemo(
     () => applyCourseFilters(courseCards, appliedCourseFilters, debouncedSearch),
     [appliedCourseFilters, courseCards, debouncedSearch],
   )
   const levelFilters = useMemo(() => uniqueValues(filterOptionCourseCards.map((item) => item.levelName)), [filterOptionCourseCards])
-  const drawerLevelFilters = useMemo(() => uniqueValues(drawerOptionCourseCards.map((item) => item.levelName)), [drawerOptionCourseCards])
   const cycleFilterItems = useMemo(
     () => filterCourseOptionItems(filterOptionCourseCards, { level: levelFilter }),
     [filterOptionCourseCards, levelFilter],
@@ -500,43 +459,6 @@ export function CoursesPage() {
   const subjectFilters = useMemo(
     () => uniqueValues(subjectFilterItems.flatMap((item) => item.assignments.map((assignment) => assignment.subjectName))),
     [subjectFilterItems],
-  )
-  const gradeFilterItems = useMemo(
-    () => filterCourseOptionItems(filterOptionCourseCards, { level: levelFilter, cycle: cycleFilter, subject: subjectFilter }),
-    [cycleFilter, filterOptionCourseCards, levelFilter, subjectFilter],
-  )
-  const gradeFilters = useMemo(() => buildGradeFilterOptions(gradeFilterItems), [gradeFilterItems])
-  const sectionFilterItems = useMemo(
-    () => filterCourseOptionItems(filterOptionCourseCards, { level: levelFilter, cycle: cycleFilter, subject: subjectFilter, grade: gradeFilter }),
-    [cycleFilter, filterOptionCourseCards, gradeFilter, levelFilter, subjectFilter],
-  )
-  const sectionFilters = useMemo(() => buildSectionFilterOptions(sectionFilterItems), [sectionFilterItems])
-  const drawerCycleFilterItems = useMemo(
-    () => filterCourseOptionItems(drawerOptionCourseCards, { level: advancedDraft.level }),
-    [advancedDraft.level, drawerOptionCourseCards],
-  )
-  const drawerCycleFilters = useMemo(() => buildCycleFilterOptions(drawerCycleFilterItems), [drawerCycleFilterItems])
-  const drawerSubjectFilterItems = useMemo(
-    () => filterCourseOptionItems(drawerOptionCourseCards, { level: advancedDraft.level, cycle: advancedDraft.cycle }),
-    [advancedDraft.cycle, advancedDraft.level, drawerOptionCourseCards],
-  )
-  const drawerSubjectFilters = useMemo(
-    () => uniqueValues(drawerSubjectFilterItems.flatMap((item) => item.assignments.map((assignment) => assignment.subjectName))),
-    [drawerSubjectFilterItems],
-  )
-  const drawerGradeFilterItems = useMemo(
-    () => filterCourseOptionItems(drawerOptionCourseCards, { level: advancedDraft.level, cycle: advancedDraft.cycle, subject: advancedDraft.subject }),
-    [advancedDraft.cycle, advancedDraft.level, advancedDraft.subject, drawerOptionCourseCards],
-  )
-  const drawerGradeFilters = useMemo(() => buildGradeFilterOptions(drawerGradeFilterItems), [drawerGradeFilterItems])
-  const drawerSectionFilterItems = useMemo(
-    () => filterCourseOptionItems(drawerOptionCourseCards, { level: advancedDraft.level, cycle: advancedDraft.cycle, subject: advancedDraft.subject, grade: advancedDraft.grade }),
-    [advancedDraft.cycle, advancedDraft.grade, advancedDraft.level, advancedDraft.subject, drawerOptionCourseCards],
-  )
-  const drawerSectionFilters = useMemo(() => buildSectionFilterOptions(drawerSectionFilterItems), [drawerSectionFilterItems])
-  const advancedPreviewCount = useMemo(
-    () => applyCourseFilters(courseCards, advancedDraft, debouncedSearch).length,
-    [advancedDraft, courseCards, debouncedSearch],
   )
   const groupedCourses = useMemo(() => groupCoursesByLevel(filteredCourseCards), [filteredCourseCards])
   const selectedCourse = useMemo(
@@ -591,17 +513,36 @@ export function CoursesPage() {
         <>
           <h1 className="sr-only">Mis cursos</h1>
 
-          <section aria-labelledby="courses-summary-title" className="rounded-3xl bg-card p-4 shadow-sm sm:p-5">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:justify-between">
+          {canManage ? (
+            <div className="order-2 flex shrink-0 items-start justify-end">
+              <details className="group relative">
+                <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 [&::-webkit-details-marker]:hidden">
+                  Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+                  <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted">
+                    <Plus className="size-4 text-primary" /> Nueva sección
+                  </button>
+                  <button type="button" onClick={openCreateAssignmentFlow} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted">
+                    <Plus className="size-4 text-primary" /> Nuevo curso
+                  </button>
+                </div>
+              </details>
+            </div>
+          ) : null}
+
+          <section aria-labelledby="courses-summary-title" className="order-1 flex h-10 min-w-0 flex-1 items-center overflow-hidden rounded-xl bg-card px-3 shadow-sm sm:px-4 [&_p]:hidden">
+            <div className="flex min-w-0 items-center gap-2.5">
               <div className="min-w-0">
                 <div className="flex items-center gap-3">
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><Library className="size-5" /></span>
-                  <div>
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary"><Library className="size-4" /></span>
+                  <div className="min-w-0">
                     <h2 id="courses-summary-title" className="text-xl font-black tracking-tight text-foreground sm:text-2xl">Mis cursos</h2>
                     <p className="mt-0.5 text-xs text-muted-foreground">Año escolar {currentSchoolYear?.name ?? 'sin configurar'}</p>
                   </div>
                 </div>
-                <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground" aria-label="Resumen de cursos">
+                <div className="hidden" aria-label="Resumen de cursos">
                   <span><strong className="font-bold text-foreground tabular-nums">{activeCourseCards.length}</strong> cursos</span>
                   <span className="text-border" aria-hidden="true">•</span>
                   <span><strong className="font-bold text-foreground tabular-nums">{totalStudents}</strong> estudiantes</span>
@@ -611,16 +552,9 @@ export function CoursesPage() {
                   <span><strong className="font-bold text-foreground tabular-nums">{totalTeams}</strong> equipos</span>
                 </div>
               </div>
-              {canManage ? (
-                <Button
-                  className="h-10 shrink-0 justify-center rounded-xl px-5"
-                  onClick={openCreateAssignmentFlow}
-                >
-                  <Plus className="h-4 w-4" /> Nuevo curso
-                </Button>
-              ) : null}
             </div>
           </section>
+          </div>
 
           <header className="hidden">
             <div className="min-w-0">
@@ -652,81 +586,6 @@ export function CoursesPage() {
               </Button>
             ) : null}
           </header>
-
-          <details className="group rounded-3xl bg-card shadow-sm">
-            <summary className="flex cursor-pointer list-none items-center gap-3 rounded-3xl p-4 transition hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-details-marker]:hidden">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary"><SlidersHorizontal className="size-4" /></span>
-              <div className="min-w-0 flex-1">
-                <h2 className="text-sm font-black text-foreground">Filtrar cursos</h2>
-                <p className="text-xs text-muted-foreground">Encuentra rápidamente el curso que necesitas.</p>
-              </div>
-              <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" aria-hidden="true" />
-            </summary>
-            <div className="px-4 pb-4">
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(6,minmax(8.5rem,1fr))_auto]">
-              <FilterSelect label="Nivel" value={levelFilter} onChange={(value) => { setLevelFilter(value); setCycleFilter('all'); setSubjectFilter('all'); setGradeFilter('all'); setSectionFilter('all') }} options={levelFilters.map((value) => ({ value, label: cleanLevelName(value) }))} />
-              <FilterSelect label="Ciclo" value={cycleFilter} onChange={(value) => { setCycleFilter(value); setSubjectFilter('all'); setGradeFilter('all'); setSectionFilter('all') }} options={cycleFilters} />
-              <FilterSelect label="Asignatura" value={subjectFilter} onChange={(value) => { setSubjectFilter(value); setGradeFilter('all'); setSectionFilter('all') }} options={subjectFilters.map((value) => ({ value, label: value }))} />
-              <FilterSelect label="Grado" value={gradeFilter} onChange={(value) => { setGradeFilter(value); setSectionFilter('all') }} options={gradeFilters} />
-              <FilterSelect label="Sección" value={sectionFilter} onChange={setSectionFilter} options={sectionFilters} />
-              <FilterSelect label="Año" value={currentSchoolYear?.id ?? 'all'} onChange={() => undefined} options={currentSchoolYear ? [{ value: currentSchoolYear.id, label: currentSchoolYear.name }] : []} />
-              <button
-                ref={moreFiltersButtonRef}
-                type="button"
-                aria-expanded={moreFiltersOpen}
-                aria-controls="course-advanced-filters"
-                onClick={openAdvancedFilters}
-                className={cn('inline-flex h-11 items-center justify-center gap-2 rounded-xl border px-4 text-xs font-bold transition', moreFiltersOpen ? 'border-primary bg-primary text-primary-foreground shadow-sm' : 'border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground')}
-              >
-                <SlidersHorizontal className="size-4" /> Más filtros
-                {countAdvancedFilters(advancedFilters) ? <span className={cn('flex size-5 items-center justify-center rounded-full text-[10px]', moreFiltersOpen ? 'bg-white text-primary' : 'bg-primary text-primary-foreground')}>{countAdvancedFilters(advancedFilters)}</span> : null}
-              </button>
-            </div>
-
-            {levelFilter !== 'all' || cycleFilter !== 'all' || subjectFilter !== 'all' || gradeFilter !== 'all' || sectionFilter !== 'all' || countAdvancedFilters(advancedFilters) ? (
-              <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-border pt-3">
-                {levelFilter !== 'all' ? <ActiveFilter label={`Nivel: ${cleanLevelName(levelFilter)}`} onRemove={() => setLevelFilter('all')} /> : null}
-                {cycleFilter !== 'all' ? <ActiveFilter label={`Ciclo: ${cycleFilter}`} onRemove={() => setCycleFilter('all')} /> : null}
-                {subjectFilter !== 'all' ? <ActiveFilter label={`Asignatura: ${subjectFilter}`} onRemove={() => setSubjectFilter('all')} /> : null}
-                {gradeFilter !== 'all' ? <ActiveFilter label={`Grado: ${gradeFilters.find((grade) => grade.value === gradeFilter)?.label ?? ''}`} onRemove={() => { setGradeFilter('all'); setSectionFilter('all') }} /> : null}
-                {sectionFilter !== 'all' ? <ActiveFilter label={`Sección: ${sectionFilters.find((section) => section.value === sectionFilter)?.label ?? sectionFilter}`} onRemove={() => setSectionFilter('all')} /> : null}
-                {advancedFilters.showArchived ? <ActiveFilter label="Incluye cursos archivados" onRemove={() => setAdvancedFilters((current) => ({ ...current, showArchived: false }))} /> : null}
-                {advancedFilters.onlyWithTeams ? <ActiveFilter label="Solo cursos con equipos" onRemove={() => setAdvancedFilters((current) => ({ ...current, onlyWithTeams: false }))} /> : null}
-                {advancedFilters.onlyWithoutStudents ? <ActiveFilter label="Solo cursos sin estudiantes" onRemove={() => setAdvancedFilters((current) => ({ ...current, onlyWithoutStudents: false }))} /> : null}
-                {advancedFilters.sortBy !== 'current' ? <ActiveFilter label={`Orden: ${getSortLabel(advancedFilters.sortBy)}`} onRemove={() => setAdvancedFilters((current) => ({ ...current, sortBy: 'current' }))} /> : null}
-                <button type="button" className="ml-1 text-xs font-bold text-primary hover:underline" onClick={resetCourseFilters}>Limpiar filtros</button>
-              </div>
-            ) : null}
-
-            <div className="mt-3 flex justify-end border-t border-border pt-3">
-              <button type="button" className="inline-flex h-9 items-center gap-2 rounded-lg px-3 text-xs font-bold text-muted-foreground transition hover:bg-muted hover:text-foreground" onClick={resetCourseFilters}><RotateCcw className="size-4" /> Restablecer filtros</button>
-            </div>
-            </div>
-          </details>
-
-          <CoursesAdvancedFiltersDrawer
-            open={moreFiltersOpen}
-            filters={advancedDraft}
-            initialFilters={advancedInitial}
-            levelOptions={drawerLevelFilters.map((value) => ({ value, label: cleanLevelName(value) }))}
-            cycleOptions={drawerCycleFilters}
-            subjectOptions={drawerSubjectFilters.map((value) => ({ value, label: value }))}
-            gradeOptions={drawerGradeFilters}
-            sectionOptions={drawerSectionFilters}
-            resultCount={advancedPreviewCount}
-            onChange={setAdvancedDraft}
-            onReset={() => setAdvancedDraft(defaultAdvancedFilters)}
-            onClose={closeAdvancedFilters}
-            onApply={() => {
-              setLevelFilter(advancedDraft.level)
-              setCycleFilter(advancedDraft.cycle)
-              setSubjectFilter(advancedDraft.subject)
-              setGradeFilter(advancedDraft.grade)
-              setSectionFilter(advancedDraft.section)
-              setAdvancedFilters(advancedDraft)
-              closeAdvancedFilters()
-            }}
-          />
 
           <div className="hidden">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
@@ -1286,7 +1145,6 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
         <span className="text-[9px] font-semibold text-muted-foreground">Promedio general</span>
       </div>
 
-      <div className="mt-3 inline-flex h-9 items-center justify-center gap-2 border-t border-slate-100 pt-3 text-xs font-extrabold text-primary">Entrar a la asignatura <ArrowLeft className="size-3.5 rotate-180 transition-transform group-hover:translate-x-0.5" /></div>
     </article>
   )
 }
@@ -2189,24 +2047,6 @@ function formatShortDate(value?: string | null) {
   return date.toLocaleDateString('es-DO', { day: 'numeric', month: 'long', year: 'numeric' })
 }
 
-function countAdvancedFilters(filters: CourseAdvancedFilters) {
-  return Number(filters.showArchived)
-    + Number(filters.onlyWithTeams)
-    + Number(filters.onlyWithoutStudents)
-    + Number(filters.sortBy !== 'current')
-}
-
-function getSortLabel(sortBy: CourseAdvancedFilters['sortBy']) {
-  return {
-    current: 'Orden actual',
-    name: 'Nombre',
-    grade: 'Grado',
-    students: 'Cantidad de estudiantes',
-    newest: 'Más recientes',
-    oldest: 'Más antiguos',
-  }[sortBy]
-}
-
 const defaultAdvancedFilters: CourseAdvancedFilters = {
   level: 'all',
   cycle: 'all',
@@ -2971,7 +2811,6 @@ const CourseCard = memo(function CourseCard({
           {canManage ? (
             <FooterAction label="Sección" tooltip="Agregar nueva sección" onClick={() => onAddSection(item.grade)}><Plus className="h-3.5 w-3.5" /></FooterAction>
           ) : null}
-          <FooterAction label="Entrar" tooltip="Entrar al curso" onClick={() => onOpen(item.id)}><LogIn className="h-3.5 w-3.5" /></FooterAction>
         </div>
         {canManage ? (
           <div className="relative" ref={menuRef}>
@@ -3041,44 +2880,6 @@ function buildCourseCards(grades: GradeWithSections[]): CourseCardItem[] {
       }
     }),
   )
-}
-
-function FilterSelect({ label, value, options, onChange }: {
-  label: string
-  value: string
-  options: CourseFilterOption[]
-  onChange: (value: string) => void
-}) {
-  const groupedOptions = groupFilterOptions(options)
-
-  return (
-    <label className="relative min-w-0">
-      <span className="sr-only">{label}</span>
-      <select value={value} onChange={(event) => onChange(event.target.value)} className="h-11 w-full min-w-0 appearance-none truncate rounded-xl border border-border bg-card py-0 pl-3.5 pr-9 text-xs font-bold text-foreground outline-none transition hover:bg-muted/40 focus:border-ring focus:ring-4 focus:ring-ring/20">
-        <option value="all">{label}: Todos</option>
-        {groupedOptions.length ? groupedOptions.map((group) => (
-          <optgroup key={group.label} label={group.label}>
-            {group.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
-          </optgroup>
-        )) : options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
-      </select>
-      <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground">⌄</span>
-    </label>
-  )
-}
-
-function groupFilterOptions(options: CourseFilterOption[]) {
-  if (!options.some((option) => option.group)) return []
-  const groups = new Map<string, CourseFilterOption[]>()
-  for (const option of options) {
-    const group = option.group ?? 'Otros'
-    groups.set(group, [...(groups.get(group) ?? []), option])
-  }
-  return Array.from(groups, ([label, grouped]) => ({ label, options: grouped }))
-}
-
-function ActiveFilter({ label, onRemove }: { label: string; onRemove: () => void }) {
-  return <span className="inline-flex max-w-xs items-center gap-1.5 rounded-full bg-primary/8 px-3 py-1.5 text-xs font-bold text-primary"><span className="truncate">{label}</span><button type="button" onClick={onRemove} className="rounded-full p-0.5 hover:bg-primary/10" aria-label={`Quitar ${label}`}><X className="size-3" /></button></span>
 }
 
 function cleanLevelName(value: string) {

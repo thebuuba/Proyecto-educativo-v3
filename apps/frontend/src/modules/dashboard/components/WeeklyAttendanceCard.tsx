@@ -71,7 +71,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
 
   if (!hasData) {
     return (
-      <section className="dashboard-warm-shadow flex min-h-32 flex-col gap-5 rounded-[1.375rem] border border-border border-l-4 border-l-tertiary bg-card p-5 text-card-foreground sm:flex-row sm:items-center sm:px-6">
+      <section className="dashboard-warm-shadow flex min-h-32 flex-col gap-5 rounded-[1.375rem] bg-card p-5 text-card-foreground sm:flex-row sm:items-center sm:px-6">
         <span
           className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-tertiary-container text-on-tertiary-container"
           role="img"
@@ -109,8 +109,8 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
     : TrendingUp
 
   return (
-    <section className="dashboard-warm-shadow overflow-hidden rounded-3xl border border-border border-l-4 border-l-tertiary bg-card p-5 text-card-foreground sm:p-6">
-      <div className="grid gap-5 lg:grid-cols-[12rem_minmax(0,1fr)] lg:items-center">
+    <section className="dashboard-warm-shadow overflow-hidden rounded-3xl bg-card p-5 text-card-foreground sm:p-6">
+      <div className="grid gap-4 sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:items-center">
         <div>
           <div className="flex items-center gap-2">
             <span className="flex size-8 items-center justify-center rounded-xl bg-tertiary-container text-on-tertiary-container">
@@ -120,10 +120,10 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
           </div>
 
           <div className="mt-4 flex items-end gap-2">
-            <p className="text-4xl font-extrabold tracking-[-0.04em] text-primary tabular-nums">
+            <p className="text-3xl font-extrabold tracking-[-0.04em] text-primary tabular-nums sm:text-[34px]">
               {attendance.average}%
             </p>
-            <p className="pb-1 text-sm text-muted-foreground">promedio</p>
+            <p className="pb-1 text-xs text-muted-foreground">promedio</p>
           </div>
 
           {attendance.trendPercent !== null && (
@@ -135,7 +135,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
           )}
         </div>
 
-        <div className="rounded-2xl bg-muted px-2 pb-3 pt-2 sm:px-4">
+        <div className="min-w-0 rounded-2xl bg-muted px-3 pb-3 pt-2">
           <svg
             viewBox="0 0 920 170"
             className="h-auto w-full overflow-visible"
@@ -206,11 +206,13 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
             ))}
           </svg>
 
-          <div className="grid grid-cols-5 px-1">
+          <div className="grid grid-cols-5 gap-1 px-1">
             {attendance.days.map((day) => (
-              <div key={day.label} className="text-center">
-                <p className="text-xs font-bold text-primary tabular-nums">{day.value}%</p>
-                <p className={cn('mt-1 text-[10px] font-semibold tracking-wide', day.isToday ? 'text-accent' : 'text-muted-foreground')}>
+              <div key={day.label} className="min-w-0 text-center">
+                <p className="truncate text-[10px] font-bold text-primary tabular-nums">
+                  {day.value === null ? '—' : `${day.value}%`}
+                </p>
+                <p className={cn('mt-1 text-[9px] font-semibold tracking-wide', day.isToday ? 'text-accent' : 'text-muted-foreground')}>
                   {day.label}
                 </p>
               </div>

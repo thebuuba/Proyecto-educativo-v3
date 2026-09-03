@@ -1,0 +1,383 @@
+/*
+ * Lenguaje visual del panel de Cursos.
+ * La vista principal comparte la misma idea del Inicio: superficies blancas,
+ * aire, una jerarquía clara y color solo cuando comunica una acción o estado.
+ */
+
+body:has(#courses-summary-title) {
+  --courses-radius: 24px;
+  --courses-shadow: 0 18px 42px -34px color-mix(in srgb, var(--palette-text) 28%, transparent);
+  --courses-soft-border: color-mix(in srgb, var(--palette-gray) 62%, var(--palette-white));
+}
+
+/* -------------------------------------------------------------------------- */
+/* Cabecera                                                                    */
+/* -------------------------------------------------------------------------- */
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] {
+  height: auto !important;
+  min-height: 82px;
+  padding: 0.95rem 1.15rem !important;
+  overflow: visible !important;
+  border: 1px solid var(--courses-soft-border);
+  border-radius: var(--courses-radius) !important;
+  box-shadow: var(--courses-shadow) !important;
+}
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] > div {
+  align-items: center;
+}
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] > div > div {
+  width: 100%;
+}
+
+body:has(#courses-summary-title) #courses-summary-title {
+  font-size: 1.35rem !important;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] p {
+  display: block !important;
+  margin-top: 0.2rem !important;
+  font-size: 0.72rem !important;
+}
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] [aria-label='Resumen de cursos'] {
+  display: flex !important;
+  margin-top: 0.65rem !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.65rem;
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+}
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] [aria-label='Resumen de cursos'] strong {
+  color: var(--foreground);
+  font-size: 0.76rem;
+}
+
+body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] + * {
+  flex-shrink: 0;
+}
+
+body:has(#courses-summary-title) details.group > summary {
+  box-shadow: none;
+}
+
+body:has(#courses-summary-title) .order-2 details.group > summary {
+  height: 44px !important;
+  min-height: 44px !important;
+  border: 1px solid color-mix(in srgb, var(--palette-blue) 35%, var(--palette-white));
+  border-radius: 14px !important;
+  padding: 0 1rem !important;
+  background: var(--primary) !important;
+  box-shadow: 0 10px 24px -18px color-mix(in srgb, var(--palette-blue) 70%, transparent) !important;
+}
+
+body:has(#courses-summary-title) .order-2 details.group > div {
+  border-color: var(--courses-soft-border) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--courses-shadow) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Nivel y ciclo                                                               */
+/* -------------------------------------------------------------------------- */
+
+body:has(#courses-summary-title) .space-y-8 {
+  row-gap: 2rem;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section {
+  margin-top: 0;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section > div:first-child {
+  margin: 0 0 0.85rem !important;
+  gap: 0.55rem !important;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section > div:first-child > span:first-child {
+  width: 2rem !important;
+  height: 2rem !important;
+  border-radius: 0.7rem !important;
+  background: var(--palette-blue-light) !important;
+  color: var(--palette-text) !important;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section > div:first-child > h2 {
+  font-size: 0.95rem;
+  letter-spacing: -0.015em;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section > div:first-child > span:nth-child(3) {
+  padding: 0.2rem 0.55rem !important;
+  border-radius: 999px;
+  background: var(--palette-blue-light) !important;
+  color: var(--palette-text) !important;
+  font-size: 0.66rem !important;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section > div:first-child > div.h-px,
+body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > div.h-px {
+  display: none !important;
+}
+
+body:has(#courses-summary-title) .space-y-5 {
+  row-gap: 1.4rem;
+}
+
+body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 {
+  width: fit-content;
+  margin-bottom: 0.7rem !important;
+  gap: 0.45rem !important;
+}
+
+body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > h3 {
+  color: color-mix(in srgb, var(--palette-text) 86%, var(--palette-white));
+  font-size: 0.72rem;
+}
+
+body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > span {
+  padding: 0.18rem 0.48rem !important;
+  background: color-mix(in srgb, var(--palette-gray) 42%, var(--palette-white)) !important;
+  color: var(--muted-foreground) !important;
+  font-size: 0.62rem !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Grid                                                                        */
+/* -------------------------------------------------------------------------- */
+
+body:has(#courses-summary-title) div.grid:has(> article.group) {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  body:has(#courses-summary-title) div.grid:has(> article.group) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  body:has(#courses-summary-title) div.grid:has(> article.group) {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tarjeta de curso                                                            */
+/* -------------------------------------------------------------------------- */
+
+body:has(#courses-summary-title) article.group {
+  position: relative;
+  min-width: 0;
+  min-height: 156px;
+  overflow: visible !important;
+  border: 1px solid transparent;
+  border-radius: 22px !important;
+  background: var(--card);
+  box-shadow: 0 14px 34px -30px color-mix(in srgb, var(--palette-text) 34%, transparent) !important;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body:has(#courses-summary-title) article.group:hover {
+    transform: translateY(-2px) !important;
+    border-color: color-mix(in srgb, var(--palette-blue) 22%, var(--palette-white));
+    box-shadow: 0 20px 44px -30px color-mix(in srgb, var(--palette-text) 36%, transparent) !important;
+  }
+}
+
+/* La zona clicable concentra toda la información útil y reserva el cierre. */
+body:has(#courses-summary-title) article.group > div[role='button'] {
+  position: relative;
+  min-height: 156px;
+  padding: 0.95rem 1rem 3.2rem !important;
+}
+
+/* Cabecera: identificador, nombre y estado en una sola lectura. */
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center !important;
+  gap: 0.7rem !important;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child > div:first-child {
+  display: contents !important;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child span[style] {
+  width: 2.7rem !important;
+  height: 2.7rem !important;
+  border-radius: 12px !important;
+  background: var(--palette-blue) !important;
+  color: var(--palette-text) !important;
+  box-shadow: none !important;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] h3 {
+  font-size: 0.95rem;
+  line-height: 1.15;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] p {
+  margin-top: 0.2rem !important;
+  font-size: 0.66rem !important;
+  font-weight: 500 !important;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child > div:last-child > span {
+  padding: 0.28rem 0.58rem !important;
+  background: color-mix(in srgb, var(--palette-green) 15%, var(--palette-white)) !important;
+  color: var(--palette-text) !important;
+  letter-spacing: 0.025em !important;
+  font-size: 0.58rem !important;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child > div:last-child > span > span {
+  background: var(--palette-green) !important;
+}
+
+/* Métricas como chips: cada dato se lee como una unidad y deja de parecer tabla. */
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0.4rem !important;
+  margin-top: 0.8rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span {
+  display: flex !important;
+  min-width: 0;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.48rem 0.42rem !important;
+  border: 1px solid color-mix(in srgb, var(--palette-gray) 60%, var(--palette-white)) !important;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--palette-gray) 25%, var(--palette-white));
+  white-space: nowrap;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span + span {
+  border-left-width: 1px !important;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid strong {
+  display: inline !important;
+  flex: none;
+  font-size: 0.78rem;
+  line-height: 1;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid span span {
+  display: inline !important;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.56rem;
+  line-height: 1;
+}
+
+/* Cierre visual de acceso: claro y consistente con el Inicio. */
+body:has(#courses-summary-title) article.group > div[role='button']::after {
+  content: 'Entrar al curso  →';
+  position: absolute;
+  left: 1rem;
+  right: 3.5rem;
+  bottom: 0.72rem;
+  display: flex;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--palette-blue) 12%, var(--palette-white));
+  color: var(--primary);
+  font-size: 0.67rem;
+  font-weight: 800;
+  line-height: 1;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body:has(#courses-summary-title) article.group:hover > div[role='button']::after {
+    background: color-mix(in srgb, var(--palette-blue) 18%, var(--palette-white));
+  }
+}
+
+/* El menú contextual queda aislado en la misma franja inferior. */
+body:has(#courses-summary-title) article.group > div:last-child {
+  position: absolute;
+  right: 0.72rem;
+  bottom: 0.72rem;
+  min-height: 32px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent;
+}
+
+body:has(#courses-summary-title) article.group > div:last-child > div:first-child {
+  display: none !important;
+}
+
+body:has(#courses-summary-title) article.group > div:last-child button {
+  min-height: 32px;
+}
+
+body:has(#courses-summary-title) article.group > div:last-child button[aria-label='Más acciones'] {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--palette-gray) 30%, var(--palette-white));
+  color: var(--muted-foreground);
+}
+
+body:has(#courses-summary-title) article.group > div:last-child button[aria-label='Más acciones']:hover {
+  background: color-mix(in srgb, var(--palette-gray) 48%, var(--palette-white));
+  color: var(--foreground);
+}
+
+body:has(#courses-summary-title) article.group > div:last-child [role='menu'] {
+  border-color: var(--courses-soft-border) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--courses-shadow) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Responsive                                                                  */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] {
+    min-height: 92px;
+    border-radius: 20px !important;
+  }
+
+  body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] [aria-label='Resumen de cursos'] {
+    gap: 0.2rem 0.5rem;
+  }
+
+  body:has(#courses-summary-title) article.group,
+  body:has(#courses-summary-title) article.group > div[role='button'] {
+    min-height: 164px;
+  }
+
+  body:has(#courses-summary-title) article.group > div[role='button'] > div.grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.3rem !important;
+  }
+
+  body:has(#courses-summary-title) article.group > div[role='button'] {
+    padding-bottom: 3.2rem !important;
+  }
+}

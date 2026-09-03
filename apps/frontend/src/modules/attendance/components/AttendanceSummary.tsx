@@ -11,42 +11,40 @@ type AttendanceSummaryProps = {
 }
 
 const items = [
-  { key: 'totalStudents', label: 'Estudiantes', helper: 'matriculados', icon: UserCheck, iconClassName: 'bg-success/12 text-success' },
-  { key: 'workedDays', label: 'Días trabajados', helper: 'del mes', icon: CalendarCheck, iconClassName: 'bg-success/12 text-success' },
-  { key: 'averageAttendance', label: 'Promedio', helper: 'asistencia', icon: TrendingUp, iconClassName: 'bg-success/12 text-success' },
-  { key: 'absences', label: 'Ausencias', helper: 'registradas', icon: UserX, iconClassName: 'bg-warning/14 text-warning' },
+  { key: 'totalStudents', label: 'Estudiantes', helper: 'matriculados', icon: UserCheck, iconClassName: 'bg-primary/10 text-primary' },
+  { key: 'workedDays', label: 'Días trabajados', helper: 'registrados', icon: CalendarCheck, iconClassName: 'bg-success/14 text-foreground' },
+  { key: 'averageAttendance', label: 'Promedio', helper: 'asistencia', icon: TrendingUp, iconClassName: 'bg-primary/10 text-primary' },
+  { key: 'absences', label: 'Ausencias', helper: 'registradas', icon: UserX, iconClassName: 'bg-destructive/12 text-foreground' },
 ] as const
 
 export function AttendanceSummary({ stats, loading }: AttendanceSummaryProps) {
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
       {items.map((item) => {
         const value = stats[item.key]
         const Icon = item.icon
         return (
-          <Card key={item.key} className="rounded-xl">
-            <CardContent className="flex items-center gap-4 p-4">
-              <div className={cn('flex size-11 shrink-0 items-center justify-center rounded-xl', item.iconClassName)}>
-                <Icon className="size-5" />
+          <Card key={item.key} className="rounded-2xl border-0 bg-card shadow-sm">
+            <CardContent className="flex min-h-[88px] items-center gap-3 p-3.5 sm:p-4">
+              <div className={cn('flex size-10 shrink-0 items-center justify-center rounded-xl', item.iconClassName)}>
+                <Icon className="size-[18px]" />
               </div>
-              <div className="min-w-0">
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
                   {item.label}
                 </p>
-                <div className={cn('mt-1', loading && 'animate-pulse')}>
+                <div className={cn('mt-1 flex items-baseline gap-2', loading && 'animate-pulse')}>
                   {loading ? (
-                    <div className="h-7 w-14 rounded-lg bg-muted" />
+                    <div className="h-6 w-12 rounded-lg bg-muted" />
                   ) : (
-                    <p className="text-2xl font-bold leading-none text-primary">
+                    <p className="text-xl font-black leading-none tracking-tight text-foreground">
                       {item.key === 'averageAttendance'
                         ? formatPercentage(value)
                         : value ?? 0}
                     </p>
                   )}
+                  <span className="truncate text-[11px] text-muted-foreground">{item.helper}</span>
                 </div>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {item.key === 'workedDays' ? 'registrados' : item.helper}
-                </p>
               </div>
             </CardContent>
           </Card>

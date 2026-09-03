@@ -21,7 +21,7 @@ type ChartPanelProps = {
 /** Panel contenedor para gráficos del dashboard. */
 export function ChartPanel({ title, description, value, children }: ChartPanelProps) {
   return (
-    <Card className="p-5">
+    <Card className="border-0 p-5">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <CardTitle>{title}</CardTitle>

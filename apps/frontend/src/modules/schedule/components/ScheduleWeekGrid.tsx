@@ -1,7 +1,6 @@
 import { ClipboardList, Coffee, Pencil, Plus, X } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
-import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import type { ScheduleEntry } from '@/modules/schedule/types'
 import { formatTime, getDurationHours } from '@/modules/schedule/utils/scheduleGrid'
@@ -69,6 +68,7 @@ export function ScheduleWeekGrid({
   const classCount = blocks.filter((b) => b.type === 'class').length
   const [openDropdown, setOpenDropdown] = useState<{ day: number; blockId: string } | null>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const today = new Date().getDay()
 
   const entriesByCell = useMemo(() => {
     const map = new Map<string, AssignedEntry>()
@@ -155,78 +155,85 @@ export function ScheduleWeekGrid({
   }
 
   return (
-    <div className="space-y-5">
-      {/* Header */}
-      <div className="flex flex-wrap items-center gap-3">
-        <div className="mr-auto">
-          <h2 className="text-lg font-semibold text-foreground">
-            Configurar asignaciones
-          </h2>
-          <p className="text-sm text-muted-foreground">
-            Toca un período vacío para asignarle una materia u hora pedagógica.
-          </p>
+    <div className="space-y-4">
+      <section className="rounded-3xl border border-border/70 bg-card p-4 shadow-sm sm:p-5">
+        <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="text-xl font-extrabold tracking-tight text-foreground">Asignar clases</h2>
+              <span className="rounded-full bg-primary/8 px-2.5 py-1 text-[10px] font-extrabold text-primary">
+                {filledSlots}/{totalSlots} ocupados
+              </span>
+            </div>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Selecciona un espacio libre para asignar una materia o marcar una hora pedagógica.
+            </p>
+            <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+              <span>{SHIFT_LABELS[config.shift] ?? config.shift}</span>
+              <span className="text-border">•</span>
+              <span>{classCount} períodos</span>
+              <span className="text-border">•</span>
+              <span>{hoursFormatted}</span>
+              {freeSlots > 0 ? (
+                <>
+                  <span className="text-border">•</span>
+                  <span>{freeSlots} espacios libres</span>
+                </>
+              ) : null}
+            </div>
+          </div>
+          <Button variant="outline" size="sm" onClick={onEdit} className="h-10 gap-2 rounded-xl bg-card px-4">
+            <Pencil className="size-4" />
+            Editar estructura
+          </Button>
         </div>
-        <Badge tone="accent" className="rounded-full px-3 py-1">
-          Tanda {SHIFT_LABELS[config.shift] ?? config.shift}
-        </Badge>
-        <Badge tone="default" className="rounded-full px-3 py-1">
-          {classCount} períodos · {config.structureMode === 'custom' ? 'duración variable' : `${config.blockDuration} min`}
-        </Badge>
-        {freeSlots > 0 ? (
-          <Badge tone="muted" className="rounded-full px-3 py-1">
-            {filledSlots}/{totalSlots} ocupados
-          </Badge>
-        ) : null}
-        <Button variant="outline" size="sm" onClick={onEdit} className="gap-1.5 rounded-full bg-card">
-          <Pencil className="size-3.5" />
-          Editar horario
-        </Button>
-      </div>
+      </section>
 
-      {/* Loading */}
       {loading ? (
-        <div className="flex items-center justify-center rounded-2xl border border-border bg-card py-20 text-sm text-muted-foreground">
+        <div className="flex items-center justify-center rounded-3xl border border-border/70 bg-card py-20 text-sm text-muted-foreground shadow-sm">
           Cargando horario...
         </div>
       ) : (
         <>
-          {/* Grid */}
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-5">
             {activeDays.map((day) => {
               const dayEntries = entries.filter((e) => e.dayOfWeek === day.dayOfWeek)
               const dayHours = dayEntries.reduce(
                 (sum, e) => sum + getDurationHours(e.startTime, e.endTime),
                 0,
               )
+              const isToday = day.dayOfWeek === today
 
               return (
-                <div
+                <section
                   key={day.dayOfWeek}
-                  className="flex min-h-[34rem] min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm"
+                  className="min-w-0 overflow-visible rounded-3xl border border-border/70 bg-card shadow-sm"
                 >
-                  {/* Day header */}
-                  <div className="bg-primary px-4 py-3 text-center">
-                    <p className="text-sm font-bold uppercase tracking-widest text-primary-foreground">
-                      {day.name}
-                    </p>
-                    {dayHours > 0 ? (
-                      <p className="mt-0.5 text-[11px] font-semibold text-primary-foreground/65">
-                        {formatDuration(dayHours)}
+                  <header className={`relative border-b border-border/70 px-4 py-3 ${isToday ? 'bg-primary/[0.045]' : 'bg-card'}`}>
+                    {isToday ? <span className="absolute inset-x-8 top-0 h-0.5 rounded-b-full bg-primary" /> : null}
+                    <div className="flex items-center justify-between gap-2">
+                      <p className={`text-xs font-extrabold uppercase tracking-[0.12em] ${isToday ? 'text-primary' : 'text-foreground'}`}>
+                        {day.name}
                       </p>
-                    ) : null}
-                  </div>
+                      {isToday ? <span className="text-[9px] font-extrabold text-primary">Hoy</span> : null}
+                    </div>
+                    <p className="mt-0.5 text-[10px] font-semibold text-muted-foreground">
+                      {dayHours > 0 ? formatDuration(dayHours) : 'Sin clases asignadas'}
+                    </p>
+                  </header>
 
-                  {/* Blocks */}
-                  <div className="flex max-h-[31rem] flex-col gap-2 overflow-y-auto p-3">
+                  <div className="flex flex-col gap-2 p-2.5">
                     {blocks.map((block) => {
                       if (block.type === 'break') {
                         return (
                           <div
                             key={block.id}
-                            className="flex min-h-12 items-center justify-center gap-2 rounded-xl border border-amber-200 bg-amber-100/80 px-3 py-2 text-[11px] font-bold uppercase tracking-widest text-amber-700"
+                            className="flex min-h-11 items-center justify-center gap-2 rounded-xl px-3 py-2 text-center"
+                            style={{ backgroundColor: 'color-mix(in srgb, var(--palette-yellow) 22%, var(--palette-white))' }}
                           >
-                            <Coffee className="size-3.5" />
-                            {block.label} - {formatTime(block.start)} a {formatTime(block.end)}
+                            <Coffee className="size-3.5 text-foreground" />
+                            <span className="text-[10px] font-extrabold uppercase tracking-[0.1em] text-foreground">{block.label}</span>
+                            <span className="text-[9px] text-muted-foreground">{formatTime(block.start)}–{formatTime(block.end)}</span>
                           </div>
                         )
                       }
@@ -234,17 +241,20 @@ export function ScheduleWeekGrid({
                       const entryKey = getCellKey(day.dayOfWeek, block)
                       const assigned = entriesByCell.get(entryKey)
                       const pedagogical = pedagogicalBlocksByCell.get(entryKey)
-                      const color = assigned ? getSubjectPalette(assigned.subjectName) : null
+                      const assignedPalette = assigned ? getSubjectPalette(assigned.subjectName) : null
 
                       return (
                         <div key={block.id} className="relative">
-                          {assigned && color ? (
+                          {assigned && assignedPalette ? (
                             <div
-                              className="group flex h-28 flex-col justify-between rounded-xl px-3 py-2.5 text-left transition-transform hover:scale-[1.02]"
-                              style={{ backgroundColor: color.soft, color: color.color }}
+                              className="group flex min-h-[86px] flex-col justify-between rounded-xl px-3 py-2.5 shadow-[0_8px_20px_-20px_rgba(47,53,66,0.28)]"
+                              style={{ backgroundColor: assignedPalette.soft }}
                             >
-                              <div className="flex items-center justify-between gap-2">
-                                <span className="line-clamp-4 text-[13px] font-semibold leading-[1.15]">
+                              <div className="flex items-start justify-between gap-2">
+                                <span
+                                  className="line-clamp-3 text-[12px] font-extrabold leading-[1.2]"
+                                  style={{ color: assignedPalette.color }}
+                                >
                                   {assigned.subjectName}
                                 </span>
                                 <button
@@ -253,23 +263,23 @@ export function ScheduleWeekGrid({
                                     e.stopPropagation()
                                     onRemove(assigned.scheduleEntryId)
                                   }}
-                                  className="shrink-0 rounded-full p-0.5 opacity-0 transition-opacity hover:bg-black/10 group-hover:opacity-100"
+                                  className="shrink-0 rounded-lg p-1 text-muted-foreground opacity-0 transition hover:bg-white/60 group-hover:opacity-100 focus-visible:opacity-100"
                                   aria-label="Quitar asignatura"
                                 >
-                                  <X className="size-3" />
+                                  <X className="size-3.5" />
                                 </button>
                               </div>
-                              <span className="text-[11px] opacity-75">
-                                {assigned.academicLevelName} · {assigned.gradeName} {assigned.sectionName}
+                              <span className="text-[10px] font-semibold text-muted-foreground">
+                                {assigned.gradeName} {assigned.sectionName} · {assigned.academicLevelName}
                               </span>
-                              <span className="text-[11px] opacity-60">
-                                {formatTime(block.start)} – {formatTime(block.end)}
+                              <span className="text-[9px] font-medium tabular-nums text-muted-foreground/80">
+                                {formatTime(block.start)}–{formatTime(block.end)}
                               </span>
                             </div>
                           ) : pedagogical ? (
-                            <div className="group flex h-28 flex-col justify-between rounded-xl bg-slate-100 px-3 py-2.5 text-left text-slate-700 transition-transform hover:scale-[1.02]">
-                              <div className="flex items-center justify-between gap-2">
-                                <span className="line-clamp-3 text-sm font-semibold leading-tight">
+                            <div className="group flex min-h-[86px] flex-col justify-between rounded-xl border border-border/70 bg-muted/30 px-3 py-2.5 text-left">
+                              <div className="flex items-start justify-between gap-2">
+                                <span className="line-clamp-2 text-xs font-extrabold leading-tight text-foreground">
                                   {pedagogical.label}
                                 </span>
                                 <button
@@ -278,122 +288,113 @@ export function ScheduleWeekGrid({
                                     e.stopPropagation()
                                     onRemovePedagogical(day.dayOfWeek, block)
                                   }}
-                                  className="shrink-0 rounded-full p-0.5 opacity-0 transition-opacity hover:bg-black/10 group-hover:opacity-100"
+                                  className="shrink-0 rounded-lg p-1 text-muted-foreground opacity-0 transition hover:bg-muted group-hover:opacity-100 focus-visible:opacity-100"
                                   aria-label="Quitar hora pedagógica"
                                 >
-                                  <X className="size-3" />
+                                  <X className="size-3.5" />
                                 </button>
                               </div>
-                              <span className="text-[11px] opacity-70">
-                                Trabajo no lectivo
-                              </span>
-                              <span className="text-[11px] opacity-60">
-                                {formatTime(block.start)} - {formatTime(block.end)}
+                              <span className="text-[10px] text-muted-foreground">Trabajo no lectivo</span>
+                              <span className="text-[9px] tabular-nums text-muted-foreground/80">
+                                {formatTime(block.start)}–{formatTime(block.end)}
                               </span>
                             </div>
                           ) : (
                             <button
                               type="button"
                               onClick={() => handleCellClick(day.dayOfWeek, block)}
-                              className="group flex h-28 w-full items-center justify-between rounded-xl border border-dashed border-border px-3 py-2.5 text-left transition-colors hover:border-primary/50 hover:bg-accent/30"
+                              className="group flex min-h-[86px] w-full flex-col justify-between rounded-xl border border-dashed border-border/80 bg-muted/5 px-3 py-2.5 text-left transition hover:border-primary/40 hover:bg-primary/[0.025]"
                             >
-                              <span className="text-[11px] font-medium text-muted-foreground">
-                                {formatTime(block.start)} – {formatTime(block.end)}
+                              <span className="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground">Espacio libre</span>
+                              <span className="flex items-center justify-between gap-2 text-[10px] font-semibold tabular-nums text-muted-foreground">
+                                {formatTime(block.start)}–{formatTime(block.end)}
+                                <Plus className="size-3.5 transition group-hover:text-primary" />
                               </span>
-                              <Plus className="size-3.5 text-muted-foreground/50 group-hover:text-primary" />
                             </button>
                           )}
 
-                          {/* Dropdown */}
-                          {openDropdown?.day === day.dayOfWeek &&
-                            openDropdown?.blockId === block.id && (
-                              <div
-                                ref={dropdownRef}
-                                className="absolute left-0 right-0 top-full z-50 mt-1 overflow-hidden rounded-xl border border-border bg-card shadow-lg"
-                              >
-                                <div className="max-h-56 overflow-y-auto">
-                                  <button
-                                    type="button"
-                                    className="flex w-full items-center gap-3 border-b border-border px-4 py-2.5 text-left text-sm transition-colors hover:bg-muted"
-                                    onClick={() => {
-                                      onMarkPedagogical(day.dayOfWeek, block)
-                                      setOpenDropdown(null)
-                                    }}
-                                  >
-                                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-600">
-                                      <ClipboardList className="size-3.5" />
+                          {openDropdown?.day === day.dayOfWeek && openDropdown?.blockId === block.id ? (
+                            <div
+                              ref={dropdownRef}
+                              className="absolute left-0 right-0 top-full z-50 mt-1 overflow-hidden rounded-2xl border border-border bg-card shadow-xl"
+                            >
+                              <div className="max-h-64 overflow-y-auto p-1.5">
+                                <button
+                                  type="button"
+                                  className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition hover:bg-muted"
+                                  onClick={() => {
+                                    onMarkPedagogical(day.dayOfWeek, block)
+                                    setOpenDropdown(null)
+                                  }}
+                                >
+                                  <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-muted text-muted-foreground">
+                                    <ClipboardList className="size-4" />
+                                  </span>
+                                  <div className="min-w-0">
+                                    <span className="block text-xs font-extrabold text-foreground">
+                                      {config.pedagogicalLabel || 'Hora pedagógica'}
                                     </span>
-                                    <div className="min-w-0">
-                                      <span className="block font-medium text-foreground">
-                                        {config.pedagogicalLabel || 'Hora pedagógica'}
-                                      </span>
-                                      <span className="block text-xs text-muted-foreground">
-                                        Bloque no lectivo editable
-                                      </span>
-                                    </div>
-                                  </button>
-                                  {sectionSubjects.length === 0 ? (
-                                    <div className="px-4 py-3 text-xs text-muted-foreground">
-                                      No hay cursos disponibles. Crea cursos primero.
-                                    </div>
-                                  ) : (
-                                    sectionSubjects.map((ss) => (
+                                    <span className="block text-[10px] text-muted-foreground">Trabajo no lectivo</span>
+                                  </div>
+                                </button>
+                                <div className="my-1 border-t border-border/70" />
+                                {sectionSubjects.length === 0 ? (
+                                  <div className="px-3 py-4 text-center text-xs text-muted-foreground">
+                                    No hay cursos disponibles. Crea cursos primero.
+                                  </div>
+                                ) : (
+                                  sectionSubjects.map((ss) => {
+                                    const palette = getSubjectPalette(ss.subjectName)
+                                    return (
                                       <button
                                         key={ss.id}
                                         type="button"
-                                        className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors hover:bg-muted"
+                                        className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition hover:bg-primary/[0.035]"
                                         onClick={() => {
                                           onAssign(day.dayOfWeek, block, ss.id, ss.sectionId)
                                           setOpenDropdown(null)
                                         }}
                                       >
-                                        <span
-                                          className="size-2.5 shrink-0 rounded-full"
-                                          style={{ backgroundColor: getSubjectPalette(ss.subjectName).color }}
-                                        />
+                                        <span className="size-2.5 shrink-0 rounded-full" style={{ backgroundColor: palette.color }} />
                                         <div className="min-w-0">
-                                          <span className="block font-medium text-foreground">
-                                            {ss.subjectName}
-                                          </span>
-                                          <span className="block text-xs text-muted-foreground">
-                                            {ss.academicLevelName} · {ss.gradeName} {ss.sectionName} · {ss.teacherName}
+                                          <span className="block text-xs font-extrabold text-foreground">{ss.subjectName}</span>
+                                          <span className="block truncate text-[10px] text-muted-foreground">
+                                            {ss.gradeName} {ss.sectionName} · {ss.academicLevelName} · {ss.teacherName}
                                           </span>
                                         </div>
                                       </button>
-                                    ))
-                                  )}
-                                </div>
+                                    )
+                                  })
+                                )}
                               </div>
-                            )}
+                            </div>
+                          ) : null}
                         </div>
                       )
                     })}
                   </div>
-                </div>
+                </section>
               )
             })}
           </div>
 
-          {/* Summary footer */}
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">
-              {entries.length} clases
-            </span>
-            <span className="text-border">·</span>
+          <footer className="flex flex-wrap items-center gap-x-3 gap-y-1 px-1 text-xs text-muted-foreground">
+            <span className="font-semibold text-foreground">{entries.length} clases</span>
+            <span className="text-border">•</span>
             <span>{hoursFormatted}</span>
             {pedagogicalBlocks.length > 0 ? (
               <>
-                <span className="text-border">·</span>
+                <span className="text-border">•</span>
                 <span>{pedagogicalBlocks.length} horas pedagógicas</span>
               </>
             ) : null}
             {freeSlots > 0 ? (
               <>
-                <span className="text-border">·</span>
+                <span className="text-border">•</span>
                 <span>{freeSlots} espacios libres</span>
               </>
             ) : null}
-          </div>
+          </footer>
         </>
       )}
     </div>
