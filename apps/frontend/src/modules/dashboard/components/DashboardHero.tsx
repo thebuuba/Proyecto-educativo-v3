@@ -1,17 +1,9 @@
 /**
  * Componente DashboardHero — Muestra la clase activa o la siguiente clase
- * del docente, con un contador en vivo que puede quedar contraído.
+ * del docente en una tarjeta compacta con contador en vivo.
  */
 
-import {
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Clock3,
-  MapPin,
-  Play,
-  UsersRound,
-} from 'lucide-react'
+import { ArrowRight, Clock3, MapPin, Play, UsersRound } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
@@ -30,15 +22,10 @@ const dashboardClockFormatter = new Intl.DateTimeFormat('en-GB', {
 })
 
 type DashboardHeroProps = {
-  /** Clase activa o siguiente clase del día (puede ser nulo). */
   nextClass: DashboardClass | null
-  /** Callback al hacer clic en "Iniciar clase". */
   onStartClass: (item: DashboardClass) => void
-  /** Callback al hacer clic en "Ver planificación". */
   onViewPlanning: (item: DashboardClass) => void
-  /** Muestra acciones operativas solo a roles autorizados. */
   canManageClass?: boolean
-  /** Se ejecuta cuando la clase actual termina o comienza la siguiente. */
   onCountdownEnd?: () => void
 }
 
@@ -62,7 +49,6 @@ function getCountdownSeconds(item: DashboardClass, now = new Date()) {
   const targetSeconds = timeToSeconds(item.status === 'current' ? item.endTime : item.startTime)
   let difference = targetSeconds - currentSeconds
 
-  // Protege horarios que eventualmente crucen medianoche sin alterar el flujo normal del día.
   if (difference < 0 && targetSeconds < 3 * 60 * 60 && currentSeconds > 21 * 60 * 60) {
     difference += DAY_SECONDS
   }
@@ -76,30 +62,22 @@ function formatCountdown(totalSeconds: number) {
   return `${minutes}:${String(seconds).padStart(2, '0')}`
 }
 
-function CountdownCircle({
-  item,
-  seconds,
-  compact = false,
-}: {
-  item: DashboardClass
-  seconds: number
-  compact?: boolean
-}) {
+function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: number }) {
   const isCurrent = item.status === 'current'
   const durationSeconds = Math.max(1, item.durationMinutes * 60)
   const progress = isCurrent
     ? Math.max(0, Math.min(100, (seconds / durationSeconds) * 100))
     : Math.max(0, Math.min(100, 100 - (seconds / (90 * 60)) * 100))
   const ringLength = (progress / 100) * RING_CIRCUMFERENCE
-  const label = isCurrent ? 'Termina en' : 'Empieza en'
+  const label = isCurrent ? 'Termina' : 'Empieza'
 
   return (
     <div
-      className={`relative flex shrink-0 items-center justify-center ${compact ? 'size-44 sm:size-48' : 'size-48 sm:size-56'}`}
-      aria-label={`${label} ${formatCountdown(seconds)}`}
+      className="relative flex size-[88px] shrink-0 items-center justify-center sm:size-24"
+      aria-label={`${label} en ${formatCountdown(seconds)}`}
     >
       <svg className="absolute inset-0 size-full -rotate-90" viewBox="0 0 120 120" aria-hidden="true">
-        <circle cx="60" cy="60" r="45" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="8" />
+        <circle cx="60" cy="60" r="45" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="8" />
         <circle
           cx="60"
           cy="60"
@@ -112,20 +90,18 @@ function CountdownCircle({
           className="transition-[stroke-dasharray] duration-1000 ease-linear"
         />
       </svg>
-      <div className="text-center">
-        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent sm:text-[11px]">
+      <div className="text-center leading-none">
+        <p className="text-[8px] font-bold uppercase tracking-[0.16em] text-accent sm:text-[9px]">
           {label}
         </p>
-        <p className={`mt-1 font-bold tabular-nums text-accent ${compact ? 'text-4xl sm:text-5xl' : 'text-5xl sm:text-6xl'}`}>
+        <p className="mt-1 text-xl font-extrabold tabular-nums text-accent sm:text-2xl">
           {formatCountdown(seconds)}
         </p>
-        <p className="mt-1 text-xs font-semibold text-white/50 sm:text-sm">min:seg</p>
       </div>
     </div>
   )
 }
 
-/** Hero del dashboard que muestra la próxima clase o un estado vacío. */
 export function DashboardHero({
   nextClass,
   onStartClass,
@@ -133,7 +109,6 @@ export function DashboardHero({
   canManageClass = true,
   onCountdownEnd,
 }: DashboardHeroProps) {
-  const [collapsed, setCollapsed] = useState(false)
   const [countdownSeconds, setCountdownSeconds] = useState(() =>
     nextClass ? getCountdownSeconds(nextClass) : 0,
   )
@@ -165,114 +140,87 @@ export function DashboardHero({
 
   if (!nextClass) {
     return (
-      <section className="relative rounded-[28px] bg-primary px-6 py-8 text-primary-foreground shadow-xl shadow-primary/10 sm:px-8 lg:px-10 lg:py-10">
-        <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.18)_1px,transparent_0)] [background-size:24px_24px]" />
-        <div className="relative">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-accent">Sin clase programada</p>
-          <h2 className="mt-5 text-4xl font-bold leading-tight text-white sm:text-5xl">Agenda libre</h2>
-          <p className="mt-5 max-w-xl text-base text-white/65">
-            No hay clases activas para hoy. Puedes revisar el horario o trabajar con pendientes.
-          </p>
-        </div>
+      <section
+        className="ml-auto w-full max-w-[520px] rounded-3xl border border-white/5 px-5 py-5 text-white shadow-lg"
+        style={{ backgroundColor: '#1a1f3a' }}
+      >
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-accent">Sin clase programada</p>
+        <h2 className="mt-2 text-xl font-bold">Agenda libre</h2>
+        <p className="mt-1 text-sm text-white/55">No tienes otra clase programada para hoy.</p>
       </section>
     )
   }
 
+  const isCurrent = nextClass.status === 'current'
+
   return (
     <section
-      className={`relative overflow-hidden shadow-xl transition-[width,padding,border-radius] duration-500 ease-out ${
-        collapsed
-          ? 'w-[200px] max-w-full rounded-full p-1 sm:w-[216px]'
-          : 'w-full rounded-[28px] p-8 lg:p-10'
-      }`}
-      style={{ backgroundColor: '#1a1f3a', boxShadow: '0 20px 50px -10px rgba(26,31,58,0.3)' }}
+      className="relative ml-auto w-full max-w-[520px] overflow-hidden rounded-3xl border border-white/5 p-5 pr-[7.5rem] text-white shadow-lg sm:p-6 sm:pr-[8.5rem]"
+      style={{ backgroundColor: '#1a1f3a', boxShadow: '0 16px 36px -18px rgba(26,31,58,0.55)' }}
     >
       <div
-        className="pointer-events-none absolute -right-10 -top-20 size-[400px] rounded-full opacity-40"
-        style={{ background: 'radial-gradient(circle, rgba(255,139,107,0.5) 0%, transparent 70%)' }}
+        className="pointer-events-none absolute -right-14 -top-20 size-60 rounded-full opacity-25"
+        style={{ background: 'radial-gradient(circle, rgba(255,139,107,0.45) 0%, transparent 70%)' }}
       />
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-          backgroundSize: '24px 24px',
+          backgroundSize: '22px 22px',
         }}
       />
 
-      <button
-        type="button"
-        onClick={() => setCollapsed((value) => !value)}
-        className={`absolute z-20 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/10 text-white/65 backdrop-blur transition-colors hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-          collapsed ? 'right-1 top-1 size-8' : 'right-3 top-3 size-10'
-        }`}
-        aria-label={collapsed ? 'Expandir información de la clase' : 'Contraer información de la clase'}
-        title={collapsed ? 'Expandir' : 'Contraer'}
-      >
-        {collapsed ? <ChevronRight className="size-4" /> : <ChevronLeft className="size-5" />}
-      </button>
+      <div className="absolute right-4 top-4 z-10 sm:right-5 sm:top-5">
+        <CountdownBadge item={nextClass} seconds={countdownSeconds} />
+      </div>
 
-      {collapsed ? (
-        <div className="relative flex justify-center">
-          <CountdownCircle item={nextClass} seconds={countdownSeconds} compact />
+      <div className="relative min-w-0">
+        <div className="inline-flex items-center gap-2">
+          <span className="size-1.5 animate-pulse rounded-full bg-accent" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-accent">
+            {isCurrent ? 'Clase en curso' : 'Próxima clase'}
+          </span>
         </div>
-      ) : (
-        <div className="relative grid items-end gap-8 lg:grid-cols-12">
-          <div className="space-y-4 lg:col-span-7">
-            <div className="inline-flex items-center gap-2">
-              <span className="size-1.5 animate-pulse rounded-full bg-accent" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-accent">
-                {nextClass.status === 'current'
-                  ? 'Clase en curso'
-                  : `Tu próxima clase · empieza en ${Math.ceil(countdownSeconds / 60)} min`}
-              </span>
-            </div>
 
-            <h2 className="text-4xl font-bold leading-[1.05] tracking-tight text-white lg:text-5xl">
-              {nextClass.subjectName}
-              <br />
-              <span className="font-medium text-white/50">
-                para {nextClass.gradeName} {nextClass.sectionName}
-              </span>
-            </h2>
+        <h2 className="mt-3 line-clamp-2 text-xl font-extrabold leading-tight tracking-tight sm:text-2xl">
+          {nextClass.subjectName}
+        </h2>
+        <p className="mt-1 text-sm font-semibold text-white/55">
+          {nextClass.gradeName} {nextClass.sectionName}
+        </p>
 
-            <div className="flex flex-wrap items-center gap-4 text-sm text-white/60">
-              <span className="inline-flex items-center gap-2">
-                <Clock3 className="size-4 text-accent" />
-                {nextClass.startTime.slice(0, 5)}–{nextClass.endTime.slice(0, 5)} · {nextClass.durationMinutes} min
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <MapPin className="size-4 text-accent" />
-                {nextClass.room ?? 'Aula sin asignar'}
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <UsersRound className="size-4 text-accent" />
-                {nextClass.studentCount} estudiantes
-              </span>
-            </div>
-
-            {canManageClass ? (
-              <div className="flex flex-wrap gap-3 pt-2">
-                <Button className="h-12 rounded-xl px-5" onClick={() => onStartClass(nextClass)}>
-                  <Play className="size-5 fill-current" />
-                  Iniciar clase
-                </Button>
-                <Button
-                  variant="outline"
-                  className="h-12 rounded-xl border-white/18 bg-white/5 px-5 text-white hover:bg-white/10"
-                  onClick={() => onViewPlanning(nextClass)}
-                >
-                  Ver planificación
-                  <ArrowRight className="size-5" />
-                </Button>
-              </div>
-            ) : null}
-          </div>
-
-          <div className="flex justify-end lg:col-span-5">
-            <CountdownCircle item={nextClass} seconds={countdownSeconds} />
-          </div>
+        <div className="mt-4 grid gap-2 text-xs text-white/60">
+          <span className="inline-flex items-center gap-2">
+            <Clock3 className="size-3.5 shrink-0 text-accent" />
+            {nextClass.startTime.slice(0, 5)}–{nextClass.endTime.slice(0, 5)}
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <MapPin className="size-3.5 shrink-0 text-accent" />
+            {nextClass.room ?? 'Aula sin asignar'}
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <UsersRound className="size-3.5 shrink-0 text-accent" />
+            {nextClass.studentCount} estudiantes
+          </span>
         </div>
-      )}
+
+        {canManageClass ? (
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Button className="h-10 rounded-xl px-4 text-sm" onClick={() => onStartClass(nextClass)}>
+              <Play className="size-4 fill-current" />
+              Iniciar clase
+            </Button>
+            <Button
+              variant="outline"
+              className="h-10 rounded-xl border-white/15 bg-white/5 px-4 text-sm text-white hover:bg-white/10"
+              onClick={() => onViewPlanning(nextClass)}
+            >
+              Planificación
+              <ArrowRight className="size-4" />
+            </Button>
+          </div>
+        ) : null}
+      </div>
     </section>
   )
 }
