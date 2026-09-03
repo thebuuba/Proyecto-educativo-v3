@@ -1,4 +1,5 @@
 import {
+  AlertCircle,
   ArrowRight,
   BookOpen,
   CalendarRange,
@@ -94,10 +95,11 @@ export function SubjectSummary({ course, expanded = false }: { course: Enrollmen
 
 export function FeedbackMessage({ tone, message }: { tone: 'error' | 'success'; message: string | null }) {
   if (!message) return null
+  const Icon = tone === 'error' ? AlertCircle : CheckCircle2
 
   return (
     <FeedbackBanner tone={tone === 'error' ? 'danger' : 'success'} className="flex gap-3">
-      <CheckCircle2 className={cn('mt-0.5 size-4 shrink-0', tone === 'error' ? 'text-destructive' : 'text-success')} />
+      <Icon className={cn('mt-0.5 size-4 shrink-0', tone === 'error' ? 'text-destructive' : 'text-success')} />
       <p>{message}</p>
     </FeedbackBanner>
   )
