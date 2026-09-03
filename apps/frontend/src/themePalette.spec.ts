@@ -36,25 +36,24 @@ describe('paleta visual accesible de AulaBase', () => {
     expect(semanticImport).toBeGreaterThan(baseImport)
   })
 
-  it('declara una paleta principal contenida y profesional', () => {
+  it('declara la opción A de azul petróleo, salvia y crema', () => {
     const css = readSource('./semantic-palette.css').toUpperCase()
     const approvedColors = [
       '#FFFFFF',
-      '#F7F8FA',
-      '#F1F4F8',
-      '#172033',
-      '#667085',
-      '#3B5CCC',
-      '#304CAC',
-      '#EBF0FF',
-      '#7867C6',
-      '#F0EDFF',
-      '#37805E',
-      '#EAF6EF',
-      '#A66517',
-      '#FFF5DC',
-      '#C2414B',
-      '#FDECEF',
+      '#F7F9F8',
+      '#F0F4F2',
+      '#1F2933',
+      '#657278',
+      '#256F7B',
+      '#1E5963',
+      '#E5F2F3',
+      '#6F927D',
+      '#52745F',
+      '#EAF2ED',
+      '#D49A52',
+      '#FBF3E7',
+      '#B5474D',
+      '#FAECEC',
     ]
 
     approvedColors.forEach((color) => expect(css).toContain(color))
@@ -63,30 +62,29 @@ describe('paleta visual accesible de AulaBase', () => {
   it('asigna cada color a un rol semántico estable', () => {
     const css = readSource('./semantic-palette.css').toUpperCase()
 
-    expect(css).toContain('--PRIMARY: #3B5CCC;')
-    expect(css).toContain('--PRIMARY-VARIANT: #304CAC;')
-    expect(css).toContain('--PRIMARY-CONTAINER: #EBF0FF;')
-    expect(css).toContain('--SECONDARY: #7867C6;')
-    expect(css).toContain('--SECONDARY-CONTAINER: #F0EDFF;')
-    expect(css).toContain('--TERTIARY: #37805E;')
-    expect(css).toContain('--TERTIARY-CONTAINER: #EAF6EF;')
-    expect(css).toContain('--WARNING: #A66517;')
-    expect(css).toContain('--WARNING-CONTAINER: #FFF5DC;')
-    expect(css).toContain('--DESTRUCTIVE: #C2414B;')
-    expect(css).toContain('--BACKGROUND: #F7F8FA;')
+    expect(css).toContain('--PRIMARY: #256F7B;')
+    expect(css).toContain('--PRIMARY-VARIANT: #1E5963;')
+    expect(css).toContain('--PRIMARY-CONTAINER: #E5F2F3;')
+    expect(css).toContain('--SECONDARY: #52745F;')
+    expect(css).toContain('--SECONDARY-CONTAINER: #EAF2ED;')
+    expect(css).toContain('--TERTIARY: #3F7A5F;')
+    expect(css).toContain('--WARNING: #9A641F;')
+    expect(css).toContain('--WARNING-CONTAINER: #FBF3E7;')
+    expect(css).toContain('--DESTRUCTIVE: #B5474D;')
+    expect(css).toContain('--BACKGROUND: #F7F9F8;')
     expect(css).toContain('--CARD: #FFFFFF;')
-    expect(css).toContain('--FOREGROUND: #172033;')
-    expect(css).toContain('--BORDER: #E4E7EC;')
+    expect(css).toContain('--FOREGROUND: #1F2933;')
+    expect(css).toContain('--BORDER: #DFE6E3;')
   })
 
-  it('mantiene la navegación en neutrales y reserva el azul para selección', () => {
+  it('mantiene la navegación clara y usa petróleo para selección', () => {
     const css = readSource('./semantic-palette.css').toUpperCase()
 
     expect(css).toContain('--SIDEBAR: #FFFFFF;')
-    expect(css).toContain('--SIDEBAR-FOREGROUND: #667085;')
-    expect(css).toContain('--SIDEBAR-PRIMARY: #3B5CCC;')
-    expect(css).toContain('--SIDEBAR-ACCENT: #EBF0FF;')
-    expect(css).toContain('--SIDEBAR-ACCENT-FOREGROUND: #304CAC;')
+    expect(css).toContain('--SIDEBAR-FOREGROUND: #657278;')
+    expect(css).toContain('--SIDEBAR-PRIMARY: #256F7B;')
+    expect(css).toContain('--SIDEBAR-ACCENT: #E5F2F3;')
+    expect(css).toContain('--SIDEBAR-ACCENT-FOREGROUND: #1E5963;')
   })
 
   it('conserva el frontend libre de los tonos históricos descartados', () => {
@@ -97,17 +95,16 @@ describe('paleta visual accesible de AulaBase', () => {
   })
 
   it('mantiene contraste AA en acciones, estados y textos', () => {
-    expect(contrastRatio('#3B5CCC', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#304CAC', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#7867C6', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#667085', '#F7F8FA')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#172033', '#EBF0FF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#172033', '#F0EDFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#172033', '#EAF6EF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#172033', '#FFF5DC')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#37805E', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#A66517', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#C2414B', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#B8C6FF', '#263552')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#256F7B', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#1E5963', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#52745F', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#657278', '#F7F9F8')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#1F2933', '#E5F2F3')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#1F2933', '#EAF2ED')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#1F2933', '#FBF3E7')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#3F7A5F', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#9A641F', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#B5474D', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#D6E9DF', '#214E55')).toBeGreaterThanOrEqual(4.5)
   })
 })
