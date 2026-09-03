@@ -4,6 +4,10 @@
  * Los componentes nuevos deben usar tokens/Componentes de SemanticUI directamente.
  */
 
+/* Utilidades semánticas que Tailwind heredado todavía no expone en @theme. */
+.text-primary-variant { color: var(--primary-variant) !important; }
+.text-secondary-variant { color: var(--secondary-variant) !important; }
+
 .content-density-compact :where(.bg-blue-50, .bg-cyan-50, .bg-sky-50, .bg-violet-50, .bg-indigo-50) {
   background-color: color-mix(in srgb, var(--primary) 13%, var(--card)) !important;
 }
