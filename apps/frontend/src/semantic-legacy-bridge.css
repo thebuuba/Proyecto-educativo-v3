@@ -1,85 +1,9 @@
 /*
- * Puente temporal únicamente para los dos módulos grandes que todavía
- * conservan subcomponentes con clases Tailwind históricas: Cursos y
- * Planificación. El resto de las pantallas autenticadas ya consume tokens
- * semánticos o una capa visual propia.
+ * Compatibilidad temporal de las pantallas de acceso.
+ * Los módulos autenticados ya gestionan su identidad con componentes
+ * semánticos o con una capa visual localizada dentro del propio módulo.
  */
 
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.bg-blue-50, .bg-cyan-50, .bg-sky-50, .bg-violet-50, .bg-indigo-50) {
-  background-color: color-mix(in srgb, var(--primary) 13%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.bg-blue-100, .bg-cyan-100, .bg-sky-100, .bg-violet-100, .bg-indigo-100) {
-  background-color: color-mix(in srgb, var(--primary) 20%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.text-blue-500, .text-blue-600, .text-blue-700, .text-blue-800, .text-cyan-500, .text-cyan-600, .text-cyan-700, .text-cyan-800, .text-sky-500, .text-sky-600, .text-sky-700, .text-violet-500, .text-violet-600, .text-violet-700, .text-violet-800, .text-indigo-500, .text-indigo-600, .text-indigo-700) {
-  color: var(--primary-variant) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.border-blue-200, .border-blue-300, .border-cyan-200, .border-cyan-300, .border-violet-200, .border-violet-300, .border-indigo-200) {
-  border-color: color-mix(in srgb, var(--primary) 34%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.bg-emerald-50, .bg-green-50, .bg-lime-50) {
-  background-color: color-mix(in srgb, var(--success) 16%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.bg-emerald-100, .bg-green-100, .bg-lime-100) {
-  background-color: color-mix(in srgb, var(--success) 24%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.text-emerald-500, .text-emerald-600, .text-emerald-700, .text-emerald-800, .text-green-500, .text-green-600, .text-green-700, .text-green-800, .text-lime-600, .text-lime-700) {
-  color: color-mix(in srgb, var(--success) 62%, var(--foreground)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.border-emerald-200, .border-emerald-300, .border-green-200, .border-green-300) {
-  border-color: color-mix(in srgb, var(--success) 38%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.bg-amber-50, .bg-yellow-50, .bg-orange-50) {
-  background-color: color-mix(in srgb, var(--warning) 24%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.bg-amber-100, .bg-yellow-100) {
-  background-color: color-mix(in srgb, var(--warning) 34%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800, .text-yellow-600, .text-yellow-700, .text-orange-600, .text-orange-700) {
-  color: color-mix(in srgb, var(--warning) 54%, var(--foreground)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.border-amber-200, .border-amber-300, .border-yellow-200, .border-yellow-300) {
-  border-color: color-mix(in srgb, var(--warning) 48%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.bg-red-50, .bg-rose-50) {
-  background-color: color-mix(in srgb, var(--destructive) 14%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.bg-red-100, .bg-rose-100) {
-  background-color: color-mix(in srgb, var(--destructive) 22%, var(--card)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.text-red-500, .text-red-600, .text-red-700, .text-red-800, .text-rose-500, .text-rose-600, .text-rose-700) {
-  color: color-mix(in srgb, var(--destructive) 62%, var(--foreground)) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.border-red-100, .border-red-200, .border-red-300, .border-rose-200) {
-  border-color: color-mix(in srgb, var(--destructive) 34%, var(--card)) !important;
-}
-
-/* Los encabezados heredados de esos módulos deben seguir siendo oscuros. */
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(h1, h2).text-primary,
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(h1, h2).text-accent {
-  color: var(--foreground) !important;
-}
-
-:is(main[data-module='cursos'], main[data-module='planificaciones']) :where(.bg-slate-50, .bg-gray-50, .bg-zinc-50) {
-  background-color: color-mix(in srgb, var(--palette-gray) 38%, var(--card)) !important;
-}
-
-/* Auth usa la misma semántica y las mismas superficies que el producto. */
 .auth-input {
   width: 100%;
   border: 1px solid var(--border);
@@ -104,9 +28,11 @@
 .auth-screen :where(.bg-red-50) {
   background-color: color-mix(in srgb, var(--destructive) 14%, var(--card)) !important;
 }
+
 .auth-screen :where(.border-red-100, .border-red-200) {
   border-color: color-mix(in srgb, var(--destructive) 32%, var(--card)) !important;
 }
+
 .auth-screen :where(.text-red-500, .text-red-600) {
   color: color-mix(in srgb, var(--destructive) 62%, var(--foreground)) !important;
 }
