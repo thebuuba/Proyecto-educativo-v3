@@ -108,6 +108,8 @@ export type RecentActivityItem = {
   relativeTime: string
   /** Tipo de actividad. */
   kind: 'grade' | 'attendance' | 'planning' | 'report'
+  /** Ruta relacionada con la actividad. */
+  path: string
 }
 
 /** Sugerencia inteligente mostrada en el dashboard (puede ser nulo). */
@@ -129,6 +131,7 @@ export type DashboardSetupProgress = {
 
 /** Datos completos del dashboard. */
 export type DashboardData = {
+  view: 'management' | 'teacher' | 'student' | 'guardian' | 'viewer'
   context: DashboardContext
   nextClass: DashboardClass | null
   todayAgenda: TodayAgendaItem[]
@@ -137,7 +140,10 @@ export type DashboardData = {
   recentActivity: RecentActivityItem[]
   smartSuggestion: SmartSuggestion
   setupProgress: DashboardSetupProgress
+  teacherAnalytics: TeacherDashboardAnalytics | null
 }
+
+export type DashboardInsights = Pick<DashboardData, 'recentActivity' | 'teacherAnalytics'>
 
 /** Entrada para crear una nueva tarea en el dashboard. */
 export type CreateDashboardTaskInput = {
@@ -162,6 +168,13 @@ export type DashboardStat = {
 export type ChartDatum = {
   label: string
   value: number
+}
+
+export type TeacherDashboardAnalytics = {
+  average: number | null
+  gradedRecords: number
+  performanceByPeriod: ChartDatum[]
+  performanceBySubject: ChartDatum[]
 }
 
 /** Estudiante mostrado en la tabla de estudiantes recientes. */

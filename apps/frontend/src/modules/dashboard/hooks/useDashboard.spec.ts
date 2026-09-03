@@ -2,12 +2,13 @@ import { act, renderHook, waitFor } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import type { AppUser } from '@/modules/auth/types/auth'
-import type { DashboardData, DashboardTask } from '@/modules/dashboard/types/dashboard'
+import type { DashboardData, DashboardInsights, DashboardTask } from '@/modules/dashboard/types/dashboard'
 import { useDashboard } from './useDashboard'
 
 const mocks = vi.hoisted(() => ({
   appUser: null as AppUser | null,
   getDashboardData: vi.fn(),
+  getDashboardInsights: vi.fn(),
   createDashboardTask: vi.fn(),
   completeDashboardTask: vi.fn(),
 }))
@@ -18,6 +19,7 @@ vi.mock('@/modules/auth/hooks/useAuth', () => ({
 
 vi.mock('@/modules/dashboard/services/dashboardService', () => ({
   getDashboardData: mocks.getDashboardData,
+  getDashboardInsights: mocks.getDashboardInsights,
   createDashboardTask: mocks.createDashboardTask,
   completeDashboardTask: mocks.completeDashboardTask,
 }))
@@ -52,6 +54,7 @@ function makeTask(id: string): DashboardTask {
 
 function makeDashboard(name: string, tasks: DashboardTask[] = []): DashboardData {
   return {
+    view: 'teacher',
     context: {
       firstName: name,
       formattedDate: 'lunes, 13 de julio',
@@ -69,6 +72,7 @@ function makeDashboard(name: string, tasks: DashboardTask[] = []): DashboardData
     tasks,
     recentActivity: [],
     smartSuggestion: null,
+    teacherAnalytics: null,
     setupProgress: {
       courseCount: 0,
       studentCount: 0,
@@ -92,6 +96,8 @@ describe('useDashboard cache', () => {
   beforeEach(() => {
     vi.restoreAllMocks()
     mocks.getDashboardData.mockReset()
+    mocks.getDashboardInsights.mockReset()
+    mocks.getDashboardInsights.mockResolvedValue({ recentActivity: [], teacherAnalytics: null })
     mocks.createDashboardTask.mockReset()
     mocks.completeDashboardTask.mockReset()
     mocks.appUser = makeUser()
@@ -111,6 +117,24 @@ describe('useDashboard cache', () => {
     expect(second.result.current.data).toEqual(dashboard)
     expect(mocks.getDashboardData).toHaveBeenCalledTimes(1)
     second.unmount()
+  })
+
+  it('shows the main cards before secondary insights finish', async () => {
+    const insights = deferred<DashboardInsights>()
+    mocks.getDashboardData.mockResolvedValue(makeDashboard('Ada'))
+    mocks.getDashboardInsights.mockReturnValue(insights.promise)
+
+    const hook = renderHook(() => useDashboard())
+    await waitFor(() => expect(hook.result.current.loading).toBe(false))
+    expect(hook.result.current.data?.context.firstName).toBe('Ada')
+    expect(hook.result.current.data?.teacherAnalytics).toBeNull()
+
+    insights.resolve({
+      recentActivity: [],
+      teacherAnalytics: { average: 90, gradedRecords: 2, performanceByPeriod: [], performanceBySubject: [] },
+    })
+    await waitFor(() => expect(hook.result.current.data?.teacherAnalytics?.average).toBe(90))
+    hook.unmount()
   })
 
   it('refetches after the TTL and when refresh is requested manually', async () => {

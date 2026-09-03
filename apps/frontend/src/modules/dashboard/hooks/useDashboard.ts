@@ -9,6 +9,7 @@ import {
   completeDashboardTask,
   createDashboardTask,
   getDashboardData,
+  getDashboardInsights,
 } from '@/modules/dashboard/services/dashboardService'
 import type {
   CreateDashboardTaskInput,
@@ -62,17 +63,23 @@ export function useDashboard() {
     if (activeScopeRef.current === scope) setActionLoading(remaining > 0)
   }, [])
 
-  const refetch = useCallback(async () => {
+  const refetch = useCallback(async (forceRefresh = true) => {
     const requestedScope = cacheScope
     setLoading(true)
     setError(null)
 
     try {
-      const result = await getDashboardData(appUser)
+      const result = await getDashboardData(appUser, forceRefresh)
       if (activeScopeRef.current !== requestedScope) return
       dashboardCache.write(requestedScope, result)
       setData(result)
       setDataScope(requestedScope)
+      setLoading(false)
+
+      void getDashboardInsights().then((insights) => {
+        if (activeScopeRef.current !== requestedScope) return
+        setData((current) => updateCachedData(requestedScope, current, (dashboard) => ({ ...dashboard, ...insights })))
+      }).catch(() => undefined)
     } catch (error) {
       if (activeScopeRef.current !== requestedScope) return
       setData(null)
@@ -149,8 +156,14 @@ export function useDashboard() {
 
     setData(null)
     setDataScope(cacheScope)
-    void refetch()
+    void refetch(false)
   }, [cacheScope, refetch])
+
+  useEffect(() => {
+    const refreshOnFocus = () => void refetch()
+    window.addEventListener('focus', refreshOnFocus)
+    return () => window.removeEventListener('focus', refreshOnFocus)
+  }, [refetch])
 
   const scopedData = dataScope === cacheScope ? data : null
   const scopedLoading = dataScope === cacheScope ? loading : true
