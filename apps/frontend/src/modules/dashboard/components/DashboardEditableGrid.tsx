@@ -25,7 +25,10 @@ type DashboardEditableGridProps = {
   storageKey: string
 }
 
-type LayoutItem = DashboardWidgetLayout & { id: string }
+type LayoutItem = DashboardWidgetLayout & {
+  id: string
+  manualH?: boolean
+}
 
 type Interaction = {
   kind: 'move' | 'resize'
@@ -37,8 +40,8 @@ type Interaction = {
 }
 
 const COLS = 12
-const ROW_HEIGHT = 44
-const GAP = 20
+const ROW_HEIGHT = 28
+const GAP = 16
 const DESKTOP_MIN_WIDTH = 1024
 
 function overlaps(a: LayoutItem, b: LayoutItem) {
@@ -54,7 +57,7 @@ function clampItem(item: LayoutItem): LayoutItem {
   const minW = item.minW ?? 1
   const minH = item.minH ?? 1
   const maxW = Math.min(COLS, item.maxW ?? COLS)
-  const maxH = item.maxH ?? 30
+  const maxH = item.maxH ?? 40
   const w = Math.max(minW, Math.min(maxW, item.w))
   const h = Math.max(minH, Math.min(maxH, item.h))
   const x = Math.max(0, Math.min(COLS - w, item.x))
@@ -126,6 +129,7 @@ function reconcileLayout(widgets: DashboardGridWidget[], saved?: LayoutItem[]) {
         y: stored.y,
         w: stored.w,
         h: stored.h,
+        manualH: stored.manualH,
       } : {}),
     })
   })
@@ -152,7 +156,7 @@ function rowsForHeight(height: number) {
 
 export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditableGridProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const contentRefs = useRef(new Map<string, HTMLDivElement>())
+  const measureRefs = useRef(new Map<string, HTMLDivElement>())
   const widgetsRef = useRef(widgets)
   const [containerWidth, setContainerWidth] = useState(0)
   const [editing, setEditing] = useState(false)
@@ -191,23 +195,24 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
 
     setLayout((current) => {
       let changed = false
-      const grown = current.map((item) => {
-        const node = contentRefs.current.get(item.id)
+      const fitted = current.map((item) => {
+        const node = measureRefs.current.get(item.id)
         if (!node) return item
 
-        const contentHeight = node.scrollHeight
-        const requiredRows = rowsForHeight(contentHeight)
-        const maxH = item.maxH ?? 30
-        const safeRows = Math.min(maxH, Math.max(item.minH ?? 1, requiredRows))
+        const naturalHeight = Math.max(node.scrollHeight, node.getBoundingClientRect().height)
+        const requiredRows = rowsForHeight(naturalHeight)
+        const maxH = item.maxH ?? 40
+        const contentRows = Math.min(maxH, Math.max(item.minH ?? 1, requiredRows))
+        const nextH = item.manualH ? Math.max(item.h, contentRows) : contentRows
 
-        if (safeRows <= item.h) return item
+        if (nextH === item.h) return item
         changed = true
-        return { ...item, h: safeRows }
+        return { ...item, h: nextH }
       })
 
-      return changed ? compactLayout(grown) : current
+      return changed ? compactLayout(fitted) : current
     })
-  })
+  }, [containerWidth, interaction, isDesktop, widgetSignature])
 
   useEffect(() => {
     if (typeof window === 'undefined') return undefined
@@ -235,7 +240,12 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
 
       const candidate = interaction.kind === 'move'
         ? { ...start, x: start.x + deltaCols, y: start.y + deltaRows }
-        : { ...start, w: start.w + deltaCols, h: start.h + deltaRows }
+        : {
+            ...start,
+            w: start.w + deltaCols,
+            h: start.h + deltaRows,
+            manualH: true,
+          }
 
       setLayout(resolveCollisions(interaction.startLayout, interaction.id, clampItem(candidate)))
     }
@@ -360,14 +370,16 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
                     </button>
                   ) : null}
 
-                  <div
-                    ref={(node) => {
-                      if (node) contentRefs.current.set(widget.id, node)
-                      else contentRefs.current.delete(widget.id)
-                    }}
-                    className="dashboard-grid-widget-content h-full min-h-0 overflow-auto rounded-3xl"
-                  >
-                    {widget.content}
+                  <div className="dashboard-grid-widget-content h-full min-h-0 overflow-hidden rounded-3xl">
+                    <div
+                      ref={(node) => {
+                        if (node) measureRefs.current.set(widget.id, node)
+                        else measureRefs.current.delete(widget.id)
+                      }}
+                      className="min-h-0"
+                    >
+                      {widget.content}
+                    </div>
                   </div>
 
                   {editing ? (
