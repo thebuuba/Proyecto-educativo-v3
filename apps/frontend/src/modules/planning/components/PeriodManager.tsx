@@ -5,13 +5,14 @@
  * listar y eliminar períodos.
  */
 
-import { AlertCircle, Plus, Trash2 } from 'lucide-react'
+import { CalendarDays, Plus, Trash2 } from 'lucide-react'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
+import { FeedbackBanner, StatusBadge } from '@/components/ui/SemanticUI'
 import {
   createAcademicPeriod,
   deleteAcademicPeriod,
@@ -49,98 +50,144 @@ export function PeriodManager({
     setSubmitting(true)
     try {
       await createAcademicPeriod({ schoolYearId, name: name.trim(), sequence, startDate, endDate })
-      setName(''); setSequence(periods.length + 2); setStartDate(''); setEndDate('')
+      setName('')
+      setSequence(periods.length + 2)
+      setStartDate('')
+      setEndDate('')
       onRefresh()
-    } catch (error) {
-      setError(error instanceof Error ? error.message : 'No se pudo crear el período.')
-    } finally { setSubmitting(false) }
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : 'No se pudo crear el período.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   async function handleDelete() {
     if (!deleteTarget) return
     try {
       await deleteAcademicPeriod(deleteTarget.id)
-      setDeleteTarget(null); onRefresh()
-    } catch (error) {
-      console.error('Error al eliminar período académico:', error)
+      setDeleteTarget(null)
+      onRefresh()
+    } catch (caught) {
+      console.error('Error al eliminar período académico:', caught)
       setDeleteTarget(null)
     }
   }
 
   return (
-    <Modal title="Períodos académicos" onClose={onClose}>
+    <Modal
+      title="Períodos académicos"
+      description="Organiza los trimestres o períodos del año escolar activo."
+      icon={CalendarDays}
+      tone="warning"
+      eyebrow="Planificación"
+      onClose={onClose}
+    >
       <div className="space-y-5 p-5">
-        {error ? (
-          <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
-            <AlertCircle className="mt-0.5 size-4 shrink-0" /><p>{error}</p>
-          </div>
-        ) : null}
+        {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
 
-        {periods.length > 0 && (
-          <div className="space-y-2">
-            <p className="text-xs font-medium uppercase text-muted-foreground">Períodos existentes</p>
-            {periods.map((period) => (
-              <div key={period.id}
-                className="flex items-center justify-between gap-3 rounded-lg border border-border bg-muted px-3 py-2.5">
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-foreground">{period.sequence}. {period.name}</p>
-                  <p className="text-xs text-muted-foreground">{period.startDate} → {period.endDate}</p>
-                </div>
-                <button type="button"
-                  className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground hover:bg-background hover:text-destructive"
-                  aria-label={`Eliminar ${period.name}`}
-                  onClick={() => setDeleteTarget(period)}>
-                  <Trash2 className="size-3.5" />
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-
-        <div className="border-t border-border pt-4">
-          <p className="mb-4 text-xs font-medium uppercase text-muted-foreground">Nuevo período</p>
-          <div className="space-y-4">
+        <section>
+          <div className="mb-3 flex items-center justify-between gap-3">
             <div>
-              <label className="block text-sm font-medium text-muted-foreground">Nombre</label>
-              <Input type="text" placeholder="Ej: Primer trimestre" value={name}
-                onChange={(e) => setName(e.target.value)} className="mt-1.5" />
+              <h4 className="text-sm font-extrabold text-foreground">Períodos existentes</h4>
+              <p className="mt-0.5 text-xs text-muted-foreground">{periods.length} período{periods.length === 1 ? '' : 's'} configurado{periods.length === 1 ? '' : 's'}.</p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-muted-foreground">Secuencia</label>
-                <Input type="number" min={1} value={sequence}
-                  onChange={(e) => setSequence(Number(e.target.value))} className="mt-1.5" />
-              </div>
-              <div />
+            <StatusBadge tone={periods.length ? 'success' : 'warning'}>{periods.length ? 'Configurados' : 'Pendiente'}</StatusBadge>
+          </div>
+
+          {periods.length > 0 ? (
+            <div className="space-y-2">
+              {periods.map((period) => (
+                <div
+                  key={period.id}
+                  className="flex items-center justify-between gap-3 rounded-2xl bg-muted/45 px-4 py-3"
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-warning/22 text-xs font-black text-foreground">
+                        {period.sequence}
+                      </span>
+                      <p className="truncate text-sm font-extrabold text-foreground">{period.name}</p>
+                    </div>
+                    <p className="mt-1 pl-10 text-xs text-muted-foreground">{period.startDate} → {period.endDate}</p>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    className="shrink-0 text-destructive hover:text-destructive"
+                    aria-label={`Eliminar ${period.name}`}
+                    onClick={() => setDeleteTarget(period)}
+                  >
+                    <Trash2 className="size-4" />
+                  </Button>
+                </div>
+              ))}
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-muted-foreground">Fecha inicio</label>
-                <Input type="date" value={startDate}
-                  onChange={(e) => setStartDate(e.target.value)} className="mt-1.5" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-muted-foreground">Fecha fin</label>
-                <Input type="date" value={endDate}
-                  onChange={(e) => setEndDate(e.target.value)} className="mt-1.5" />
-              </div>
+          ) : (
+            <div className="rounded-2xl bg-warning/14 p-4 text-sm text-muted-foreground">
+              Todavía no hay períodos. Crea el primero para poder organizar planificaciones y evaluaciones por fecha.
             </div>
+          )}
+        </section>
+
+        <section className="rounded-2xl bg-warning/12 p-4 sm:p-5">
+          <div className="mb-4">
+            <h4 className="text-sm font-extrabold text-foreground">Nuevo período</h4>
+            <p className="mt-0.5 text-xs text-muted-foreground">Define el nombre, orden y rango de fechas.</p>
+          </div>
+
+          <div className="space-y-4">
+            <label className="block text-sm font-semibold text-foreground">
+              Nombre
+              <Input
+                type="text"
+                placeholder="Ej.: Primer trimestre"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                className="mt-1.5"
+              />
+            </label>
+
+            <div className="grid gap-4 sm:grid-cols-[9rem_minmax(0,1fr)_minmax(0,1fr)]">
+              <label className="block text-sm font-semibold text-foreground">
+                Secuencia
+                <Input
+                  type="number"
+                  min={1}
+                  value={sequence}
+                  onChange={(event) => setSequence(Number(event.target.value))}
+                  className="mt-1.5"
+                />
+              </label>
+              <label className="block text-sm font-semibold text-foreground">
+                Fecha inicio
+                <Input type="date" value={startDate} onChange={(event) => setStartDate(event.target.value)} className="mt-1.5" />
+              </label>
+              <label className="block text-sm font-semibold text-foreground">
+                Fecha fin
+                <Input type="date" value={endDate} onChange={(event) => setEndDate(event.target.value)} className="mt-1.5" />
+              </label>
+            </div>
+
             <div className="flex justify-end">
-              <Button onClick={handleCreate} disabled={submitting} loading={submitting}>
-                <Plus className="size-4" /> Agregar trimestre
+              <Button onClick={handleCreate} loading={submitting} disabled={submitting}>
+                <Plus className="size-4" /> Agregar período
               </Button>
             </div>
           </div>
-        </div>
+        </section>
       </div>
 
       {deleteTarget ? (
         <ConfirmDialog
           title="Eliminar período"
-          description={`¿Eliminar "${deleteTarget.name}"? Esta acción no se puede deshacer.`}
-          confirmLabel="Eliminar" destructive
+          description={`¿Eliminar “${deleteTarget.name}”? Esta acción no se puede deshacer.`}
+          confirmLabel="Eliminar"
+          destructive
           onConfirm={handleDelete}
-          onClose={() => setDeleteTarget(null)} />
+          onClose={() => setDeleteTarget(null)}
+        />
       ) : null}
     </Modal>
   )
