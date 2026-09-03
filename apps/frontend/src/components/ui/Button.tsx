@@ -24,13 +24,13 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary text-primary-foreground shadow-lg shadow-primary/18 hover:bg-primary-hover focus-visible:ring-ring',
+    'bg-primary text-primary-foreground shadow-sm hover:bg-primary-hover hover:shadow-md focus-visible:ring-ring',
   secondary:
-    'bg-card text-foreground shadow-sm hover:bg-muted focus-visible:ring-ring',
+    'bg-card text-foreground hover:bg-muted focus-visible:ring-ring',
   ghost:
     'text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:ring-ring',
   outline:
-    'border border-border bg-card text-foreground shadow-sm hover:bg-muted focus-visible:ring-ring',
+    'border border-border bg-card text-foreground hover:bg-muted focus-visible:ring-ring',
   success:
     'bg-success text-success-foreground shadow-sm hover:brightness-95 focus-visible:ring-success',
   warning:
@@ -62,7 +62,7 @@ export function Button({
     <button
       type={type}
       className={cn(
-        'inline-flex shrink-0 items-center justify-center font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform,filter] duration-100 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-4 active:scale-[0.985] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-60',
+        'inline-flex shrink-0 items-center justify-center font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform,filter] duration-150 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-4 active:scale-[0.985] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-60',
         variantClasses[variant],
         sizeClasses[size],
         className,
