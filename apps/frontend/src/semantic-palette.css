@@ -1,0 +1,127 @@
+:root {
+  /*
+   * Paleta semántica de AulaBase.
+   * Esta capa se carga después de index.css para conservar compatibilidad con
+   * los componentes existentes mientras unifica el lenguaje visual del sistema.
+   */
+  --palette-white: #FFFFFF;
+  --palette-surface: #F7F8FA;
+  --palette-ink: #172033;
+  --palette-text-muted: #667085;
+
+  /* Acción e información principal */
+  --palette-blue: #3B5CCC;
+  --palette-sky: #6F8BEA;
+  --palette-blue-light: #EBF0FF;
+
+  /* Apoyo pedagógico / IA / planificación */
+  --palette-plum: #7867C6;
+  --palette-purple-light: #A89BE5;
+  --palette-lavender: #D9D2FF;
+  --palette-lavender-light: #F0EDFF;
+  --palette-lilac-light: #F7F5FF;
+
+  /* Estados positivos */
+  --palette-olive: #37805E;
+  --palette-lime: #8DBE9F;
+  --palette-green-cream: #EAF6EF;
+  --palette-green-pale: #D8EFE2;
+
+  /* Atención, no decoración */
+  --palette-yellow: #A66517;
+  --palette-yellow-soft: #E8C989;
+  --palette-yellow-cream: #FFF5DC;
+  --palette-orange: #A66517;
+
+  /* Superficies y jerarquía */
+  --background: #F7F8FA;
+  --on-background: #172033;
+  --surface: #FFFFFF;
+  --on-surface: #172033;
+  --surface-variant: #F1F4F8;
+  --on-surface-variant: #667085;
+
+  /* Acción principal */
+  --primary: #3B5CCC;
+  --primary-variant: #304CAC;
+  --on-primary: #FFFFFF;
+  --primary-container: #EBF0FF;
+  --on-primary-container: #172033;
+
+  /* Acento de apoyo */
+  --secondary: #7867C6;
+  --secondary-variant: #6354AA;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #F0EDFF;
+  --on-secondary-container: #172033;
+
+  /* Éxito */
+  --tertiary: #37805E;
+  --on-tertiary: #FFFFFF;
+  --tertiary-container: #EAF6EF;
+  --on-tertiary-container: #172033;
+
+  /* Advertencia */
+  --warning: #A66517;
+  --warning-foreground: #FFFFFF;
+  --warning-container: #FFF5DC;
+  --on-warning-container: #172033;
+
+  /* Error */
+  --destructive: #C2414B;
+  --destructive-foreground: #FFFFFF;
+  --destructive-hover: #A9343E;
+  --danger-light: #FDECEF;
+
+  /* Tokens de aplicación */
+  --foreground: #172033;
+  --card: #FFFFFF;
+  --card-foreground: #172033;
+  --popover: #FFFFFF;
+  --popover-foreground: #172033;
+  --primary-foreground: #FFFFFF;
+  --secondary-foreground: #172033;
+  --muted: #F1F4F8;
+  --muted-foreground: #667085;
+  --accent: #7867C6;
+  --accent-foreground: #FFFFFF;
+  --success: #37805E;
+  --success-foreground: #FFFFFF;
+  --border: #E4E7EC;
+  --input: #CDD5DF;
+  --ring: #3B5CCC;
+  --accent-hover: #6354AA;
+  --primary-hover: #304CAC;
+
+  /* Navegación */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #667085;
+  --sidebar-primary: #3B5CCC;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EBF0FF;
+  --sidebar-accent-foreground: #304CAC;
+  --sidebar-border: #E4E7EC;
+  --sidebar-ring: #3B5CCC;
+
+  /* Compatibilidad con vistas existentes */
+  --primary-light: #EBF0FF;
+  --primary-border: #6F8BEA;
+  --success-light: #EAF6EF;
+  --warning-light: #FFF5DC;
+  --bg-auth-outer: #EBF0FF;
+  --bg-left-panel: #FFFFFF;
+  --bg-right-panel: #F7F8FA;
+  --bg-page: #F7F8FA;
+  --bg-surface: #FFFFFF;
+  --bg-alt: #F1F4F8;
+  --text-heading: #172033;
+  --text-body: #172033;
+  --text-muted: #667085;
+  --text-faint: #667085;
+  --text-placeholder: #7A8495;
+
+  /* Panel temporal de clase: oscuro para destacar sin contaminar el resto */
+  --class-panel: #263552;
+  --class-accent: #B8C6FF;
+  --class-muted: #C7D0E2;
+}
