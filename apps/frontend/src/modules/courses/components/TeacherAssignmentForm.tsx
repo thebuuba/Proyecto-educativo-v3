@@ -1,10 +1,12 @@
-﻿import { useState } from 'react'
+﻿import { BookOpen, Plus } from 'lucide-react'
+import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { Plus } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
+import { FeedbackBanner } from '@/components/ui/SemanticUI'
+import { Select } from '@/components/ui/Select'
 import {
   attachExistingSubjectIds,
   defaultAcademicStructure,
@@ -22,9 +24,6 @@ type TeacherAssignmentFormProps = {
   onSubmit: (input: TeacherAssignmentInput) => Promise<void>
   onClose: () => void
 }
-
-const selectClassName =
-  'h-10 w-full rounded-lg border border-input bg-card px-3 text-sm text-foreground outline-none focus-visible:ring-4 focus-visible:ring-ring/35'
 
 export function TeacherAssignmentForm({
   catalogs,
@@ -135,74 +134,53 @@ export function TeacherAssignmentForm({
   return (
     <Modal
       title="Nuevo curso"
-      description="Configura un curso indicando el nivel, ciclo, grado, sección y asignatura que impartirás durante el año escolar."
+      description="Configura el nivel, ciclo, grado, sección y asignatura que impartirás durante el año escolar."
+      icon={BookOpen}
+      tone="info"
       onClose={onClose}
     >
-      <form onSubmit={handleSubmit} className="space-y-4 p-5">
-        {error ? (
-          <div className="rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
-            {error}
-          </div>
-        ) : null}
+      <form onSubmit={handleSubmit} className="space-y-4 p-5 sm:p-6">
+        {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
 
         <label className="block space-y-2">
-          <span className="text-sm font-medium text-foreground">Nivel educativo</span>
-          <select className={selectClassName} value={selectedLevel?.code ?? ''} onChange={(event) => handleLevelChange(event.target.value)} autoFocus>
+          <span className="text-sm font-extrabold text-foreground">Nivel educativo</span>
+          <Select value={selectedLevel?.code ?? ''} onChange={(event) => handleLevelChange(event.target.value)} autoFocus>
             {defaultAcademicStructure.map((level) => (
-              <option key={level.code} value={level.code}>
-                {level.label}
-              </option>
+              <option key={level.code} value={level.code}>{level.label}</option>
             ))}
-          </select>
+          </Select>
         </label>
 
         <label className="block space-y-2">
-          <span className="text-sm font-medium text-foreground">Ciclo</span>
-          <select className={selectClassName} value={selectedCycle?.code ?? ''} onChange={(event) => handleCycleChange(event.target.value)} disabled={!availableCycles.length}>
-            {availableCycles.length ? (
-              availableCycles.map((cycle) => (
-                <option key={cycle.code} value={cycle.code}>
-                  {cycle.label}
-                </option>
-              ))
-            ) : (
-              <option value="">Sin ciclos disponibles</option>
-            )}
-          </select>
+          <span className="text-sm font-extrabold text-foreground">Ciclo</span>
+          <Select value={selectedCycle?.code ?? ''} onChange={(event) => handleCycleChange(event.target.value)} disabled={!availableCycles.length}>
+            {availableCycles.length
+              ? availableCycles.map((cycle) => <option key={cycle.code} value={cycle.code}>{cycle.label}</option>)
+              : <option value="">Sin ciclos disponibles</option>}
+          </Select>
         </label>
 
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="space-y-2">
-            <span className="text-sm font-medium text-foreground">Grado</span>
-            <select className={selectClassName} value={selectedGrade?.code ?? ''} onChange={(event) => handleGradeChange(event.target.value)} disabled={!(selectedCycle?.grades?.length)}>
-              {selectedCycle?.grades?.length ? (
-                selectedCycle.grades.map((grade) => (
-                  <option key={grade.code} value={grade.code}>
-                    {grade.label}
-                  </option>
-                ))
-              ) : (
-                <option value="">Sin grados disponibles</option>
-              )}
-            </select>
+            <span className="text-sm font-extrabold text-foreground">Grado</span>
+            <Select value={selectedGrade?.code ?? ''} onChange={(event) => handleGradeChange(event.target.value)} disabled={!(selectedCycle?.grades?.length)}>
+              {selectedCycle?.grades?.length
+                ? selectedCycle.grades.map((grade) => <option key={grade.code} value={grade.code}>{grade.label}</option>)
+                : <option value="">Sin grados disponibles</option>}
+            </Select>
           </label>
 
           <label className="space-y-2">
-            <span className="text-sm font-medium text-foreground">Sección</span>
-            <select className={selectClassName} value={sectionName} onChange={(event) => setSectionName(event.target.value)}>
-              {defaultSectionOptions.map((section) => (
-                <option key={section} value={section}>
-                  {section}
-                </option>
-              ))}
-            </select>
+            <span className="text-sm font-extrabold text-foreground">Sección</span>
+            <Select value={sectionName} onChange={(event) => setSectionName(event.target.value)}>
+              {defaultSectionOptions.map((section) => <option key={section} value={section}>{section}</option>)}
+            </Select>
           </label>
         </div>
 
         <label className="block space-y-2">
-          <span className="text-sm font-medium text-foreground">Asignatura</span>
-          <select
-            className={selectClassName}
+          <span className="text-sm font-extrabold text-foreground">Asignatura</span>
+          <Select
             value={subjectKey}
             onChange={(event) => {
               setSubjectKey(event.target.value)
@@ -214,21 +192,11 @@ export function TeacherAssignmentForm({
             {subjectOptions.length ? (
               <>
                 <option value="">Selecciona una asignatura</option>
-                {curricularSubjectOptions.map((subject) => (
-                  <option key={subject.key} value={subject.key}>
-                    {subject.name}
-                  </option>
-                ))}
-                {extracurricularSubjectOptions.map((subject) => (
-                  <option key={subject.key} value={subject.key}>
-                    {subject.name}
-                  </option>
-                ))}
+                {curricularSubjectOptions.map((subject) => <option key={subject.key} value={subject.key}>{subject.name}</option>)}
+                {extracurricularSubjectOptions.map((subject) => <option key={subject.key} value={subject.key}>{subject.name}</option>)}
               </>
-            ) : (
-              <option value="">Sin asignaturas disponibles</option>
-            )}
-          </select>
+            ) : <option value="">Sin asignaturas disponibles</option>}
+          </Select>
         </label>
 
         {!isCreatingExtracurricular ? (
@@ -243,14 +211,18 @@ export function TeacherAssignmentForm({
             }}
           >
             <Plus className="size-4" />
-            Crear asignatura
+            Crear asignatura personalizada
           </Button>
         ) : null}
 
         {isCreatingExtracurricular ? (
-          <div className="space-y-2 rounded-lg border border-border bg-muted/30 p-3">
+          <div className="space-y-3 rounded-2xl bg-warning/18 p-4">
+            <div>
+              <p className="text-sm font-extrabold text-foreground">Asignatura personalizada</p>
+              <p className="mt-1 text-xs leading-5 text-muted-foreground">Úsala solo cuando la materia no exista en el catálogo oficial.</p>
+            </div>
             <label className="block space-y-2">
-              <span className="text-sm font-medium text-foreground">Nueva asignatura extracurricular</span>
+              <span className="text-sm font-extrabold text-foreground">Nombre de la asignatura</span>
               <Input
                 value={newSubjectName}
                 onChange={(event) => setNewSubjectName(event.target.value)}
@@ -259,30 +231,26 @@ export function TeacherAssignmentForm({
               />
             </label>
             {subjectNameExists ? (
-              <p className="text-sm font-medium text-warning">
-                Esta asignatura ya existe. Selecciónala en la lista para reutilizarla.
-              </p>
+              <FeedbackBanner tone="warning">Esta asignatura ya existe. Selecciónala en la lista para reutilizarla.</FeedbackBanner>
             ) : null}
-            <button
+            <Button
               type="button"
-              className="text-sm font-semibold text-muted-foreground hover:text-foreground"
+              variant="ghost"
+              size="sm"
+              className="w-fit px-2 text-xs"
               onClick={() => {
                 setIsCreatingExtracurricular(false)
                 setNewSubjectName('')
               }}
             >
               Cancelar nueva asignatura
-            </button>
+            </Button>
           </div>
         ) : null}
 
-        <div className="flex justify-end gap-3 pt-2">
-          <Button variant="outline" type="button" onClick={onClose}>
-            Cancelar
-          </Button>
-          <Button type="submit" loading={submitting} disabled={!canSubmit}>
-            Crear curso
-          </Button>
+        <div className="flex justify-end gap-3 border-t border-border pt-4">
+          <Button variant="outline" type="button" onClick={onClose}>Cancelar</Button>
+          <Button type="submit" loading={submitting} disabled={!canSubmit}>Crear curso</Button>
         </div>
       </form>
     </Modal>
