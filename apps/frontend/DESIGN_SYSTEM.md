@@ -109,11 +109,34 @@ Los bloques C1-C4 son identidad académica dentro de Evaluación; los estados de
 - Archivada: `neutral`.
 - Incompleta/error: `danger`.
 
-## Colores de asignaturas
+## Colores de identidad local
+
+### Asignaturas
 
 Una asignatura puede recibir una variante estable derivada únicamente de las cuatro familias oficiales para facilitar identificación visual. La misma materia debe conservar el mismo color en Horario y en contextos donde identificar materias rápidamente aporte valor.
 
 El color de una asignatura es identidad, no estado. No reutilizarlo para indicar error, éxito o pendiente.
+
+### Equipos
+
+El color elegido para un equipo es metadato de identidad del equipo, no un nuevo color semántico de AulaBase.
+
+Puede aparecer únicamente en detalles pequeños como:
+
+- icono del equipo;
+- avatar o iniciales;
+- punto/acento identificador;
+- indicador fino de identidad.
+
+No debe controlar:
+
+- estados `activo`, `archivado`, `completado` o `pendiente`;
+- botones principales;
+- alertas o errores;
+- fondos grandes de tarjetas/páginas;
+- navegación.
+
+Esas funciones siempre usan los tokens semánticos oficiales.
 
 ## Prohibido
 
@@ -187,8 +210,8 @@ Usar `EmptyState`. Debe explicar qué falta y, cuando tenga sentido, ofrecer una
 
 No existe un puente global de colores heredados. Nunca crear uno nuevo.
 
-- Cursos mantiene temporalmente `modules/courses/courses-semantic-compat.css`, limitado exclusivamente a `main[data-module='cursos']`.
-- Planificación mantiene temporalmente `modules/planning/planning-design.css`, limitado exclusivamente a `main[data-module='planificaciones']`.
+- Cursos mantiene temporalmente `modules/courses/courses-semantic-compat.css`, limitado exclusivamente a `main[data-module='cursos']`, porque `CoursesPage` y `CourseTeamsPanel` todavía contienen algunos nombres históricos. Su alcance debe reducirse al descomponer esos archivos.
+- Planificación ya está migrada directamente a tokens semánticos y no tiene una hoja de compatibilidad heredada.
 - Auth usa `modules/auth/auth-design.css` para los estilos compartidos de acceso.
 - Evaluación mantiene `modules/grading/grading-design.css` dentro de `grading-workspace` mientras `GradingBook` se descompone en componentes más pequeños.
 - `module-semantic-layout.css` solo puede contener utilidades o reglas realmente transversales; no debe alojar una identidad de módulo.
