@@ -73,6 +73,7 @@ function makeDashboard(name: string, tasks: DashboardTask[] = []): DashboardData
     recentActivity: [],
     smartSuggestion: null,
     teacherAnalytics: null,
+    journalSummary: null,
     setupProgress: {
       courseCount: 0,
       studentCount: 0,
@@ -97,7 +98,7 @@ describe('useDashboard cache', () => {
     vi.restoreAllMocks()
     mocks.getDashboardData.mockReset()
     mocks.getDashboardInsights.mockReset()
-    mocks.getDashboardInsights.mockResolvedValue({ recentActivity: [], teacherAnalytics: null })
+    mocks.getDashboardInsights.mockResolvedValue({ recentActivity: [], teacherAnalytics: null, journalSummary: null })
     mocks.createDashboardTask.mockReset()
     mocks.completeDashboardTask.mockReset()
     mocks.appUser = makeUser()
@@ -132,6 +133,7 @@ describe('useDashboard cache', () => {
     insights.resolve({
       recentActivity: [],
       teacherAnalytics: { average: 90, gradedRecords: 2, performanceByPeriod: [], performanceBySubject: [] },
+      journalSummary: null,
     })
     await waitFor(() => expect(hook.result.current.data?.teacherAnalytics?.average).toBe(90))
     hook.unmount()

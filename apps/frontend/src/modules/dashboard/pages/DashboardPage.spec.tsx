@@ -7,6 +7,7 @@ import { DashboardPage } from './DashboardPage'
 vi.mock('@/modules/dashboard/hooks/useDashboard', () => ({
   useDashboard: () => ({
     data: {
+      view: 'teacher',
       context: { firstName: 'Ada', formattedDate: '', schoolYearName: '2026-2027', periodName: 'P1' },
       nextClass: null,
       todayAgenda: [],
@@ -27,12 +28,18 @@ vi.mock('@/modules/dashboard/hooks/useDashboard', () => ({
         attendanceCount: 0,
         planningCount: 1,
       },
+      journalSummary: {
+        activeCount: 2,
+        pendingCount: 1,
+        recentEntries: [],
+      },
     },
     error: null,
     loading: false,
     actionLoading: false,
     addTask: vi.fn(),
     completeTask: vi.fn(),
+    refetch: vi.fn(),
   }),
 }))
 
@@ -44,5 +51,7 @@ describe('DashboardPage', () => {
     expect(screen.getByRole('img', { name: 'Aún no hay registros de asistencia esta semana.' })).toBeInTheDocument()
     expect(screen.getByText('Aún no has registrado asistencia esta semana')).toBeInTheDocument()
     expect(screen.getByText('0 registros creados')).toBeInTheDocument()
+    expect(screen.getByText('Bitácora docente')).toBeInTheDocument()
+    expect(screen.getByText('2 anotaciones · 1 seguimientos pendientes')).toBeInTheDocument()
   })
 })

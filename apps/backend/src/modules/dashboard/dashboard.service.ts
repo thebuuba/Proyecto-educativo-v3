@@ -105,6 +105,7 @@ export class DashboardService {
       smartSuggestion: this.getSuggestion(view, setupProgress, nextClass),
       setupProgress,
       teacherAnalytics: null,
+      journalSummary: null,
     }
   }
 
@@ -116,11 +117,12 @@ export class DashboardService {
       scopeWithoutYear ? this.getViewerScope(user, view, null) : Promise.resolve(null),
     ])
     const scope = initialScope ?? await this.getViewerScope(user, view, schoolYear?.id ?? null)
-    const [recentActivity, teacherAnalytics] = await Promise.all([
+    const [recentActivity, teacherAnalytics, journalSummary] = await Promise.all([
       this.getRecentActivity(user, scope, now),
       this.getTeacherAnalytics(user.schoolId, schoolYear?.id ?? null, scope),
+      this.getJournalSummary(user, view, now),
     ])
-    return { recentActivity, teacherAnalytics }
+    return { recentActivity, teacherAnalytics, journalSummary }
   }
 
   private async getAcademicContext(schoolId: string, now: Date) {
@@ -330,6 +332,30 @@ export class DashboardService {
       take: 2_000,
     })
     return buildTeacherAnalytics(records)
+  }
+
+  private async getJournalSummary(user: AuthenticatedUser, view: DashboardView, now: Date) {
+    if (view !== 'management' && view !== 'teacher') return null
+    const where = { schoolId: user.schoolId, createdById: user.id, status: 'ACTIVE' as const }
+    const [activeCount, pendingCount, recentEntries] = await Promise.all([
+      prisma.teacherJournalEntry.count({ where }),
+      prisma.teacherJournalEntry.count({ where: { ...where, followUpStatus: 'pending' } }),
+      prisma.teacherJournalEntry.findMany({
+        where,
+        select: { id: true, title: true, entryType: true, occurredAt: true },
+        orderBy: [{ occurredAt: 'desc' }, { createdAt: 'desc' }],
+        take: 3,
+      }),
+    ])
+    return {
+      activeCount,
+      pendingCount,
+      recentEntries: recentEntries.map((entry) => ({
+        ...entry,
+        occurredAt: entry.occurredAt.toISOString(),
+        relativeTime: relativeTime(entry.occurredAt, now),
+      })),
+    }
   }
 
   private getSuggestion(view: DashboardView, setup: any, nextClass: any) {

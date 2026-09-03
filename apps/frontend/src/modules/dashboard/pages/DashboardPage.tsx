@@ -14,6 +14,7 @@ import { BarChart } from '@/modules/dashboard/components/BarChart'
 import { ChartPanel } from '@/modules/dashboard/components/ChartPanel'
 import { InitialSetupChecklist } from '@/modules/dashboard/components/InitialSetupChecklist'
 import { LineChart } from '@/modules/dashboard/components/LineChart'
+import { JournalSummaryCard } from '@/modules/dashboard/components/JournalSummaryCard'
 import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
 import { SmartSuggestion } from '@/modules/dashboard/components/SmartSuggestion'
 import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
@@ -204,6 +205,11 @@ export function DashboardPage() {
             {hasRecentActivity ? (
               <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
                 <RecentActivity items={data.recentActivity} />
+              </div>
+            ) : null}
+            {canManageOperations && data.journalSummary ? (
+              <div className="dashboard-enter" style={{ animationDelay: '230ms', animationDuration: '300ms' }}>
+                <JournalSummaryCard summary={data.journalSummary} />
               </div>
             ) : null}
           </div>
