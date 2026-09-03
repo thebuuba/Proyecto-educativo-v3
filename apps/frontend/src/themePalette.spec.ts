@@ -27,30 +27,60 @@ describe('paleta visual de AulaBase', () => {
     expect(semanticImport).toBeGreaterThan(baseImport)
   })
 
-  it('declara exactamente los cinco colores aprobados', () => {
+  it('declara la paleta aprobada, blanco y texto neutral', () => {
     const css = readSource('./semantic-palette.css').toUpperCase()
-    const approvedColors = ['#8A00D4', '#D527B7', '#F782C2', '#F9C46B', '#E3E3E3']
+    const approvedColors = [
+      '#3CB7E2',
+      '#66D64F',
+      '#F6886F',
+      '#F9C46B',
+      '#E3E3E3',
+      '#FFFFFF',
+      '#2F3542',
+    ]
     const declaredHexColors = [...new Set(css.match(/#[0-9A-F]{6}/g) ?? [])].sort()
 
     expect(declaredHexColors).toEqual([...approvedColors].sort())
   })
 
-  it('asigna los cinco colores a una jerarquía consistente', () => {
+  it('asigna cada color a un rol semántico estable', () => {
     const css = readSource('./semantic-palette.css').toUpperCase()
 
-    expect(css).toContain('--PALETTE-PURPLE: #8A00D4;')
-    expect(css).toContain('--PALETTE-FUCHSIA: #D527B7;')
-    expect(css).toContain('--PALETTE-PINK: #F782C2;')
+    expect(css).toContain('--PALETTE-BLUE: #3CB7E2;')
+    expect(css).toContain('--PALETTE-GREEN: #66D64F;')
+    expect(css).toContain('--PALETTE-CORAL: #F6886F;')
     expect(css).toContain('--PALETTE-GOLD: #F9C46B;')
     expect(css).toContain('--PALETTE-GRAY: #E3E3E3;')
-    expect(css).toContain('--PRIMARY: VAR(--PALETTE-PURPLE);')
-    expect(css).toContain('--BACKGROUND: VAR(--PALETTE-GRAY);')
-    expect(css).toContain('--FOREGROUND: VAR(--PALETTE-PURPLE);')
-    expect(css).toContain('--BORDER: VAR(--PALETTE-PINK);')
+    expect(css).toContain('--PALETTE-WHITE: #FFFFFF;')
+    expect(css).toContain('--PALETTE-TEXT: #2F3542;')
+
+    expect(css).toContain('--PRIMARY: VAR(--PALETTE-BLUE);')
+    expect(css).toContain('--TERTIARY: VAR(--PALETTE-GREEN);')
+    expect(css).toContain('--SECONDARY: VAR(--PALETTE-CORAL);')
+    expect(css).toContain('--DESTRUCTIVE: VAR(--PALETTE-CORAL);')
     expect(css).toContain('--WARNING: VAR(--PALETTE-GOLD);')
+    expect(css).toContain('--CARD: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--FOREGROUND: VAR(--PALETTE-TEXT);')
+    expect(css).toContain('--BORDER: VAR(--PALETTE-GRAY);')
   })
 
-  it('mantiene el contraste principal entre morado y gris', () => {
-    expect(contrastRatio('#8A00D4', '#E3E3E3')).toBeGreaterThanOrEqual(4.5)
+  it('mantiene las tarjetas y la navegación sobre superficies blancas', () => {
+    const css = readSource('./semantic-palette.css').toUpperCase()
+
+    expect(css).toContain('--SURFACE: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--CARD: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--SIDEBAR: VAR(--PALETTE-WHITE);')
+    expect(css).toContain('--BG-SURFACE: VAR(--PALETTE-WHITE);')
+  })
+
+  it('usa texto oscuro legible sobre todos los colores principales', () => {
+    const text = '#2F3542'
+
+    expect(contrastRatio('#3CB7E2', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#66D64F', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#F6886F', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#F9C46B', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#E3E3E3', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#FFFFFF', text)).toBeGreaterThanOrEqual(4.5)
   })
 })
