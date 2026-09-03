@@ -27,68 +27,87 @@ function contrastRatio(first: string, second: string): number {
 }
 
 describe('paleta visual accesible de AulaBase', () => {
-  it('declara los colores base como tokens globales', () => {
-    const css = readSource('./index.css').toUpperCase()
+  it('carga la capa semántica después de los estilos base', () => {
+    const main = readSource('./main.tsx')
+    const baseImport = main.indexOf("import './index.css'")
+    const semanticImport = main.indexOf("import './semantic-palette.css'")
+
+    expect(baseImport).toBeGreaterThanOrEqual(0)
+    expect(semanticImport).toBeGreaterThan(baseImport)
+  })
+
+  it('declara una paleta principal contenida y profesional', () => {
+    const css = readSource('./semantic-palette.css').toUpperCase()
     const approvedColors = [
       '#FFFFFF',
-      '#F8F8F6',
-      '#252321',
-      '#68635F',
-      '#236A96',
-      '#DDF1FA',
-      '#7B3F8C',
-      '#FFF3C4',
-      '#CDD944',
-      '#F6E6FA',
-      '#25A8D8',
+      '#F7F8FA',
+      '#F1F4F8',
+      '#172033',
+      '#667085',
+      '#3B5CCC',
+      '#304CAC',
+      '#EBF0FF',
+      '#7867C6',
+      '#F0EDFF',
+      '#37805E',
+      '#EAF6EF',
+      '#A66517',
+      '#FFF5DC',
+      '#C2414B',
+      '#FDECEF',
     ]
 
     approvedColors.forEach((color) => expect(css).toContain(color))
   })
 
-  it('usa el azul aprobado como principal con texto cálido legible', () => {
-    const css = readSource('./index.css').toUpperCase()
+  it('asigna cada color a un rol semántico estable', () => {
+    const css = readSource('./semantic-palette.css').toUpperCase()
 
-    expect(css).toContain('--PRIMARY: VAR(--PALETTE-BLUE);')
-    expect(css).toContain('--PRIMARY-FOREGROUND: VAR(--ON-PRIMARY);')
-    expect(css).toContain('--ACCENT: VAR(--SECONDARY);')
-    expect(css).toContain('--ACCENT-FOREGROUND: VAR(--ON-SECONDARY);')
-    expect(css).toContain('--BACKGROUND: VAR(--PALETTE-SURFACE);')
-    expect(css).toContain('--FOREGROUND: VAR(--ON-BACKGROUND);')
+    expect(css).toContain('--PRIMARY: #3B5CCC;')
+    expect(css).toContain('--PRIMARY-VARIANT: #304CAC;')
+    expect(css).toContain('--PRIMARY-CONTAINER: #EBF0FF;')
+    expect(css).toContain('--SECONDARY: #7867C6;')
+    expect(css).toContain('--SECONDARY-CONTAINER: #F0EDFF;')
+    expect(css).toContain('--TERTIARY: #37805E;')
+    expect(css).toContain('--TERTIARY-CONTAINER: #EAF6EF;')
+    expect(css).toContain('--WARNING: #A66517;')
+    expect(css).toContain('--WARNING-CONTAINER: #FFF5DC;')
+    expect(css).toContain('--DESTRUCTIVE: #C2414B;')
+    expect(css).toContain('--BACKGROUND: #F7F8FA;')
+    expect(css).toContain('--CARD: #FFFFFF;')
+    expect(css).toContain('--FOREGROUND: #172033;')
+    expect(css).toContain('--BORDER: #E4E7EC;')
   })
 
-  it('define roles Material y colores on para cada contenedor', () => {
-    const css = readSource('./index.css').toUpperCase()
+  it('mantiene la navegación en neutrales y reserva el azul para selección', () => {
+    const css = readSource('./semantic-palette.css').toUpperCase()
 
-    expect(css).toContain('--ON-PRIMARY: VAR(--PALETTE-WHITE);')
-    expect(css).toContain('--PRIMARY-CONTAINER: VAR(--PALETTE-BLUE-LIGHT);')
-    expect(css).toContain('--ON-PRIMARY-CONTAINER: VAR(--PALETTE-INK);')
-    expect(css).toContain('--SECONDARY: VAR(--PALETTE-PLUM);')
-    expect(css).toContain('--SECONDARY-CONTAINER: VAR(--PALETTE-LAVENDER-LIGHT);')
-    expect(css).toContain('--ON-SECONDARY-CONTAINER: VAR(--PALETTE-INK);')
-    expect(css).toContain('--TERTIARY-CONTAINER: VAR(--PALETTE-GREEN-CREAM);')
-    expect(css).toContain('--ON-TERTIARY-CONTAINER: VAR(--PALETTE-INK);')
-    expect(css).toContain('--WARNING-CONTAINER: VAR(--PALETTE-YELLOW-CREAM);')
-    expect(css).toContain('--ON-WARNING-CONTAINER: VAR(--PALETTE-INK);')
-    expect(css).toContain('--SURFACE: VAR(--PALETTE-WHITE);')
-    expect(css).toContain('--ON-SURFACE: VAR(--PALETTE-INK);')
+    expect(css).toContain('--SIDEBAR: #FFFFFF;')
+    expect(css).toContain('--SIDEBAR-FOREGROUND: #667085;')
+    expect(css).toContain('--SIDEBAR-PRIMARY: #3B5CCC;')
+    expect(css).toContain('--SIDEBAR-ACCENT: #EBF0FF;')
+    expect(css).toContain('--SIDEBAR-ACCENT-FOREGROUND: #304CAC;')
   })
 
-  it('elimina del frontend los azules anteriores y los tonos de marca no aprobados', () => {
+  it('conserva el frontend libre de los tonos históricos descartados', () => {
     const allSources = frontendSources().join('\n').toLowerCase()
 
     expect(allSources).not.toMatch(/#1e3d8f|#1e4f8f|#1f4e95/)
     expect(allSources).not.toMatch(/#216b9f|#7053a6|#8a6a00|#66702a|#8c3fa4|#b94b11/)
   })
 
-  it('mantiene contraste AA en acciones y textos', () => {
-    expect(contrastRatio('#236A96', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#1F5D84', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#7B3F8C', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#68635F', '#F8F8F6')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#252321', '#DDF1FA')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#252321', '#F6E6FA')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#252321', '#F1F3C4')).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#252321', '#FFF3C4')).toBeGreaterThanOrEqual(4.5)
+  it('mantiene contraste AA en acciones, estados y textos', () => {
+    expect(contrastRatio('#3B5CCC', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#304CAC', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#7867C6', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#667085', '#F7F8FA')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#172033', '#EBF0FF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#172033', '#F0EDFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#172033', '#EAF6EF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#172033', '#FFF5DC')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#37805E', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#A66517', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#C2414B', '#FFFFFF')).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#B8C6FF', '#263552')).toBeGreaterThanOrEqual(4.5)
   })
 })
