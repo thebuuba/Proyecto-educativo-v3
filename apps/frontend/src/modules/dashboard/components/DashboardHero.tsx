@@ -82,7 +82,8 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
           cy="60"
           r="45"
           fill="none"
-          stroke="var(--palette-pink)"
+          stroke="var(--palette-white)"
+          strokeOpacity="0.58"
           strokeWidth="8"
         />
         <circle
@@ -97,11 +98,11 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
           className="transition-[stroke-dasharray] duration-1000 ease-linear"
         />
       </svg>
-      <div className="text-center leading-none">
-        <p className="text-[8px] font-bold uppercase tracking-[0.16em] text-[var(--class-accent)] sm:text-[9px]">
+      <div className="text-center leading-none text-[var(--class-foreground)]">
+        <p className="text-[8px] font-bold uppercase tracking-[0.16em] sm:text-[9px]">
           {label}
         </p>
-        <p className="mt-1 text-xl font-extrabold tabular-nums text-[var(--class-accent)] sm:text-2xl">
+        <p className="mt-1 text-xl font-extrabold tabular-nums sm:text-2xl">
           {formatCountdown(seconds)}
         </p>
       </div>
@@ -148,12 +149,10 @@ export function DashboardHero({
   if (!nextClass) {
     return (
       <section
-        className="ml-auto w-full max-w-[520px] rounded-3xl border border-[var(--palette-pink)] px-5 py-5 text-[var(--palette-gray)]"
+        className="ml-auto w-full max-w-[520px] rounded-3xl border border-border px-5 py-5 text-[var(--class-foreground)] shadow-sm"
         style={{ backgroundColor: 'var(--class-panel)' }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--class-accent)]">
-          Sin clase programada
-        </p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em]">Sin clase programada</p>
         <h2 className="mt-2 text-xl font-bold">Agenda libre</h2>
         <p className="mt-1 text-sm text-[var(--class-muted)]">No tienes otra clase programada para hoy.</p>
       </section>
@@ -164,7 +163,7 @@ export function DashboardHero({
 
   return (
     <section
-      className="relative ml-auto w-full max-w-[520px] overflow-hidden rounded-3xl border border-[var(--palette-pink)] p-5 pr-[7.5rem] text-[var(--palette-gray)] sm:p-6 sm:pr-[8.5rem]"
+      className="relative ml-auto w-full max-w-[520px] overflow-hidden rounded-3xl border border-border p-5 pr-[7.5rem] text-[var(--class-foreground)] shadow-sm sm:p-6 sm:pr-[8.5rem]"
       style={{ backgroundColor: 'var(--class-panel)' }}
     >
       <div className="absolute right-4 top-4 z-10 sm:right-5 sm:top-5">
@@ -174,7 +173,7 @@ export function DashboardHero({
       <div className="relative min-w-0">
         <div className="inline-flex items-center gap-2">
           <span className="size-1.5 animate-pulse rounded-full bg-[var(--class-accent)]" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--class-accent)]">
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em]">
             {isCurrent ? 'Clase en curso' : 'Próxima clase'}
           </span>
         </div>
@@ -188,28 +187,32 @@ export function DashboardHero({
 
         <div className="mt-4 grid gap-2 text-xs text-[var(--class-muted)]">
           <span className="inline-flex items-center gap-2">
-            <Clock3 className="size-3.5 shrink-0 text-[var(--class-accent)]" />
+            <Clock3 className="size-3.5 shrink-0 text-[var(--class-foreground)]" />
             {nextClass.startTime.slice(0, 5)}–{nextClass.endTime.slice(0, 5)}
           </span>
           <span className="inline-flex items-center gap-2">
-            <MapPin className="size-3.5 shrink-0 text-[var(--class-accent)]" />
+            <MapPin className="size-3.5 shrink-0 text-[var(--class-foreground)]" />
             {nextClass.room ?? 'Aula sin asignar'}
           </span>
           <span className="inline-flex items-center gap-2">
-            <UsersRound className="size-3.5 shrink-0 text-[var(--class-accent)]" />
+            <UsersRound className="size-3.5 shrink-0 text-[var(--class-foreground)]" />
             {nextClass.studentCount} estudiantes
           </span>
         </div>
 
         {canManageClass ? (
           <div className="mt-5 flex flex-wrap gap-2">
-            <Button className="h-10 rounded-xl px-4 text-sm" onClick={() => onStartClass(nextClass)}>
+            <Button
+              variant="secondary"
+              className="h-10 rounded-xl bg-[var(--palette-white)] px-4 text-sm text-[var(--palette-text)] hover:bg-[var(--palette-gray)]"
+              onClick={() => onStartClass(nextClass)}
+            >
               <Play className="size-4 fill-current" />
               Iniciar clase
             </Button>
             <Button
               variant="outline"
-              className="h-10 rounded-xl border-[var(--palette-gold)] bg-transparent px-4 text-sm text-[var(--palette-gray)] hover:bg-[var(--palette-gold)] hover:text-[var(--palette-purple)]"
+              className="h-10 rounded-xl border-[var(--palette-text)] bg-transparent px-4 text-sm text-[var(--palette-text)] hover:bg-[var(--palette-white)]"
               onClick={() => onViewPlanning(nextClass)}
             >
               Planificación
