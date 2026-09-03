@@ -68,6 +68,40 @@ main[data-module='planificaciones'] :where(.text-accent, .text-amber-700, .text-
   color: var(--foreground) !important;
 }
 
+/* El asistente de tres pasos pertenece a Planificación: amarillo identifica
+   el paso actual y verde confirma lo ya completado. */
+main[data-module='planificaciones'] nav[aria-label='Pasos de la planificación'] {
+  overflow: hidden;
+  border-color: transparent !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 16px 40px -30px color-mix(in srgb, var(--foreground) 20%, transparent) !important;
+}
+
+main[data-module='planificaciones'] nav[aria-label='Pasos de la planificación'] button[aria-current='step'] {
+  background: color-mix(in srgb, var(--warning) 32%, var(--card)) !important;
+  color: var(--foreground) !important;
+}
+
+main[data-module='planificaciones'] nav[aria-label='Pasos de la planificación'] button[aria-current='step'] > span:first-child {
+  border-color: color-mix(in srgb, var(--warning) 55%, var(--card)) !important;
+  background: var(--warning) !important;
+  color: var(--warning-foreground) !important;
+}
+
+main[data-module='planificaciones'] form > header h1 {
+  color: var(--foreground) !important;
+}
+
+main[data-module='planificaciones'] form > section.rounded-xl {
+  border-color: transparent !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 16px 40px -30px color-mix(in srgb, var(--foreground) 20%, transparent) !important;
+}
+
+main[data-module='planificaciones'] form > section.rounded-xl > div:first-child p.text-accent {
+  color: color-mix(in srgb, var(--warning) 62%, var(--foreground)) !important;
+}
+
 /* -------------------------------------------------------------------------- */
 /* Evaluación / Calificaciones                                                */
 /* -------------------------------------------------------------------------- */
