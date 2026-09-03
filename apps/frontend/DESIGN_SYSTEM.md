@@ -41,7 +41,7 @@ Preferir siempre los componentes de `src/components/ui/SemanticUI.tsx`:
 - `ProgressIndicator`: progreso.
 - `FeedbackBanner`: éxito, aviso o error.
 
-También usar `Button`, `Card`, `EmptyState`, `Input`, `Select` y `Modal` antes de crear variantes locales.
+También usar `Button`, `Card`, `EmptyState`, `Input`, `Select`, `Textarea`, `Modal` y `ConfirmDialog` antes de crear variantes locales.
 
 ## Regla de superficies
 
@@ -84,10 +84,16 @@ La identidad del módulo se comunica mediante el icono semántico:
 
 ### Evaluación
 
+- C1: familia azul oficial.
+- C2: familia verde oficial.
+- C3: familia amarilla oficial.
+- C4: familia coral oficial.
 - Completada/aprobada: `success`.
 - En evaluación: `info`.
 - Pendiente/recuperación: `warning`.
 - Conflicto/error: `danger`.
+
+Los bloques C1-C4 son identidad académica dentro de Evaluación; los estados de una actividad o estudiante siguen usando la semántica de estado correspondiente.
 
 ### Actividades
 
@@ -103,9 +109,9 @@ La identidad del módulo se comunica mediante el icono semántico:
 - Archivada: `neutral`.
 - Incompleta/error: `danger`.
 
-## Colores de asignaturas en Horario
+## Colores de asignaturas
 
-Una asignatura puede recibir una variante derivada de las cuatro familias oficiales para facilitar identificación visual. La misma asignatura debe conservar siempre el mismo color durante toda la semana.
+Una asignatura puede recibir una variante estable derivada únicamente de las cuatro familias oficiales para facilitar identificación visual. La misma materia debe conservar el mismo color en Horario y en contextos donde identificar materias rápidamente aporte valor.
 
 El color de una asignatura es identidad, no estado. No reutilizarlo para indicar error, éxito o pendiente.
 
@@ -148,6 +154,15 @@ O, preferiblemente, `SemanticUI`.
 - Atención explícita: `warning` solo cuando la acción requiera cuidado.
 - Acciones poco frecuentes deben ir en un menú `Acciones` o `…`.
 
+## Formularios y modales
+
+- Usar `Input`, `Select` y `Textarea`; no crear tamaños/focos locales salvo necesidad real.
+- Los controles estándar comparten altura, radio y foco azul.
+- `Modal` debe encargarse de cabecera, icono semántico y cierre.
+- `ConfirmDialog` debe usarse para confirmaciones y acciones destructivas.
+- No crear gradientes de marca en botones de formularios.
+- El contexto del módulo puede usar un tono semántico; la acción principal sigue siendo azul salvo que el significado exija otra cosa.
+
 ## Tablas
 
 - Fondo blanco.
@@ -170,9 +185,14 @@ Usar `EmptyState`. Debe explicar qué falta y, cuando tenga sentido, ofrecer una
 
 ## Compatibilidad heredada
 
-`semantic-legacy-bridge.css` traduce temporalmente colores antiguos a la paleta oficial. No usar ese puente como excusa para escribir código nuevo con clases de colores heredadas.
+La compatibilidad heredada debe ser cada vez más pequeña, nunca expandirse.
 
-`module-semantic-layout.css` normaliza módulos grandes que todavía no han sido refactorizados completamente.
+- `semantic-legacy-bridge.css` está limitado a subcomponentes heredados de **Cursos** y **Planificación**, además de compatibilidad de Auth. No ampliar su alcance a otros módulos.
+- `module-semantic-layout.css` contiene únicamente ajustes localizados de módulos todavía grandes; una pantalla nueva no debe depender de él.
+- Evaluación tiene su propia capa `modules/grading/grading-design.css` para traducir temporalmente los nombres históricos C1-C4 dentro de `grading-workspace`. Esas reglas no deben filtrarse a otras pantallas.
+- Todo componente nuevo debe usar directamente los tokens o componentes semánticos.
+
+Cuando se migre un subcomponente heredado, retirar su regla de compatibilidad correspondiente en el mismo cambio cuando sea seguro hacerlo.
 
 ## Criterio final
 
