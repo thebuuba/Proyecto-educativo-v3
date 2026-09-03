@@ -11,7 +11,10 @@
 
 /* Información / navegación: cualquier azul, cyan, índigo o violeta heredado
    se traduce a la familia azul oficial de AulaBase. */
-main[data-module='cursos'] :where(.bg-blue-50, .bg-cyan-50, .bg-sky-50, .bg-violet-50, .bg-indigo-50) {
+main[data-module='cursos'] :where(
+  .bg-blue-50, .bg-blue-50\/60, .bg-blue-50\/70, .bg-blue-50\/80, .bg-blue-50\/90,
+  .bg-cyan-50, .bg-sky-50, .bg-violet-50, .bg-indigo-50
+) {
   background-color: color-mix(in srgb, var(--primary) 13%, var(--card)) !important;
 }
 
@@ -19,12 +22,27 @@ main[data-module='cursos'] :where(.bg-blue-100, .bg-cyan-100, .bg-sky-100, .bg-v
   background-color: color-mix(in srgb, var(--primary) 20%, var(--card)) !important;
 }
 
-main[data-module='cursos'] :where(.text-blue-300, .text-blue-500, .text-blue-600, .text-blue-700, .text-blue-800, .text-cyan-500, .text-cyan-600, .text-cyan-700, .text-cyan-800, .text-sky-500, .text-sky-600, .text-sky-700, .text-violet-400, .text-violet-500, .text-violet-600, .text-violet-700, .text-violet-800, .text-indigo-500, .text-indigo-600, .text-indigo-700) {
+main[data-module='cursos'] :where(
+  .text-blue-300, .text-blue-500, .text-blue-600, .text-blue-700, .text-blue-800,
+  .text-cyan-500, .text-cyan-600, .text-cyan-700, .text-cyan-800,
+  .text-sky-500, .text-sky-600, .text-sky-700,
+  .text-violet-400, .text-violet-500, .text-violet-600, .text-violet-700, .text-violet-800,
+  .text-indigo-500, .text-indigo-600, .text-indigo-700
+) {
   color: var(--primary-variant) !important;
 }
 
-main[data-module='cursos'] :where(.border-blue-100, .border-blue-200, .border-blue-300, .border-cyan-200, .border-cyan-300, .border-violet-200, .border-violet-300, .border-violet-400, .border-indigo-200) {
+main[data-module='cursos'] :where(
+  .border-blue-100, .border-blue-200, .border-blue-300,
+  .border-cyan-200, .border-cyan-300,
+  .border-violet-200, .border-violet-300, .border-violet-400,
+  .border-indigo-200
+) {
   border-color: color-mix(in srgb, var(--primary) 34%, var(--card)) !important;
+}
+
+main[data-module='cursos'] :where(.ring-blue-100, .ring-cyan-100, .ring-violet-100, .ring-indigo-100) {
+  --tw-ring-color: color-mix(in srgb, var(--primary) 28%, transparent) !important;
 }
 
 /* Éxito / activo. */
@@ -36,7 +54,11 @@ main[data-module='cursos'] :where(.bg-emerald-100, .bg-green-100, .bg-lime-100) 
   background-color: color-mix(in srgb, var(--success) 24%, var(--card)) !important;
 }
 
-main[data-module='cursos'] :where(.text-emerald-500, .text-emerald-600, .text-emerald-700, .text-emerald-800, .text-green-500, .text-green-600, .text-green-700, .text-green-800, .text-lime-600, .text-lime-700) {
+main[data-module='cursos'] :where(
+  .text-emerald-500, .text-emerald-600, .text-emerald-700, .text-emerald-800,
+  .text-green-500, .text-green-600, .text-green-700, .text-green-800,
+  .text-lime-600, .text-lime-700
+) {
   color: color-mix(in srgb, var(--success) 60%, var(--foreground)) !important;
 }
 
@@ -44,21 +66,37 @@ main[data-module='cursos'] :where(.border-emerald-200, .border-emerald-300, .bor
   border-color: color-mix(in srgb, var(--success) 38%, var(--card)) !important;
 }
 
+main[data-module='cursos'] :where(.ring-emerald-100, .ring-green-100) {
+  --tw-ring-color: color-mix(in srgb, var(--success) 32%, transparent) !important;
+}
+
 /* Pendiente / preparación / atención. */
-main[data-module='cursos'] :where(.bg-amber-50, .bg-yellow-50, .bg-orange-50) {
+main[data-module='cursos'] :where(
+  .bg-amber-50, .bg-amber-50\/60,
+  .bg-yellow-50,
+  .bg-orange-50
+) {
   background-color: color-mix(in srgb, var(--warning) 24%, var(--card)) !important;
 }
 
-main[data-module='cursos'] :where(.bg-amber-100, .bg-yellow-100) {
+main[data-module='cursos'] :where(.bg-amber-100, .bg-yellow-100, .bg-orange-100) {
   background-color: color-mix(in srgb, var(--warning) 34%, var(--card)) !important;
 }
 
-main[data-module='cursos'] :where(.text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800, .text-yellow-600, .text-yellow-700, .text-orange-400, .text-orange-600, .text-orange-700) {
+main[data-module='cursos'] :where(
+  .text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800, .text-amber-950,
+  .text-yellow-600, .text-yellow-700,
+  .text-orange-400, .text-orange-500, .text-orange-600, .text-orange-700
+) {
   color: color-mix(in srgb, var(--warning) 54%, var(--foreground)) !important;
 }
 
-main[data-module='cursos'] :where(.border-amber-200, .border-amber-300, .border-yellow-200, .border-yellow-300) {
+main[data-module='cursos'] :where(.border-amber-200, .border-amber-300, .border-yellow-200, .border-yellow-300, .border-orange-200, .border-orange-300) {
   border-color: color-mix(in srgb, var(--warning) 48%, var(--card)) !important;
+}
+
+main[data-module='cursos'] :where(.ring-amber-100, .ring-yellow-100, .ring-orange-100) {
+  --tw-ring-color: color-mix(in srgb, var(--warning) 38%, transparent) !important;
 }
 
 /* Error / incidencia / destructivo. */
@@ -79,7 +117,10 @@ main[data-module='cursos'] :where(.border-red-100, .border-red-200, .border-red-
 }
 
 /* Neutros históricos del workspace de Cursos/Equipos. */
-main[data-module='cursos'] :where(.bg-slate-50, .bg-gray-50, .bg-zinc-50) {
+main[data-module='cursos'] :where(
+  .bg-slate-50, .bg-slate-50\/40, .bg-slate-50\/50, .bg-slate-50\/60, .bg-slate-50\/70, .bg-slate-50\/80,
+  .bg-gray-50, .bg-zinc-50
+) {
   background-color: color-mix(in srgb, var(--palette-gray) 38%, var(--card)) !important;
 }
 
@@ -87,11 +128,18 @@ main[data-module='cursos'] :where(.bg-slate-100, .bg-gray-100, .bg-zinc-100) {
   background-color: color-mix(in srgb, var(--palette-gray) 58%, var(--card)) !important;
 }
 
-main[data-module='cursos'] :where(.border-slate-100, .border-slate-200, .border-slate-300, .border-gray-100, .border-gray-200, .border-zinc-200) {
+main[data-module='cursos'] :where(
+  .border-slate-100, .border-slate-200, .border-slate-300,
+  .border-gray-100, .border-gray-200, .border-zinc-200
+) {
   border-color: var(--border) !important;
 }
 
-main[data-module='cursos'] :where(.text-slate-400, .text-slate-500, .text-gray-400, .text-gray-500) {
+main[data-module='cursos'] :where(.ring-slate-200, .ring-gray-200, .ring-zinc-200) {
+  --tw-ring-color: color-mix(in srgb, var(--border) 75%, transparent) !important;
+}
+
+main[data-module='cursos'] :where(.text-slate-300, .text-slate-400, .text-slate-500, .text-gray-400, .text-gray-500) {
   color: var(--muted-foreground) !important;
 }
 
@@ -99,15 +147,26 @@ main[data-module='cursos'] :where(.text-slate-600, .text-slate-700, .text-slate-
   color: var(--foreground) !important;
 }
 
-/* Gradientes decorativos antiguos del estado vacío de Equipos se reducen a
-   las mismas familias azul/verde/amarillo oficiales. */
-main[data-module='cursos'] :where(.from-blue-50, .from-blue-50\/90) {
-  --tw-gradient-from: color-mix(in srgb, var(--primary) 12%, var(--card)) var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: color-mix(in srgb, var(--primary) 0%, transparent) var(--tw-gradient-to-position) !important;
+/* AulaBase no usa gradientes decorativos en módulos de negocio. Las clases
+   heredadas de Cursos se convierten en superficies suaves semánticas. */
+main[data-module='cursos'] :where(.bg-gradient-to-r, .bg-gradient-to-br, .bg-gradient-to-b, .bg-gradient-to-tr) {
+  background-image: none !important;
+  background-color: color-mix(in srgb, var(--primary) 12%, var(--card)) !important;
 }
 
-main[data-module='cursos'] :where(.to-indigo-100, .to-indigo-50\/70) {
-  --tw-gradient-to: color-mix(in srgb, var(--primary) 20%, var(--card)) var(--tw-gradient-to-position) !important;
+main[data-module='cursos'] :where(.from-blue-50, .from-blue-50\/90, .to-indigo-100, .to-indigo-50\/70) {
+  --tw-gradient-from: transparent !important;
+  --tw-gradient-to: transparent !important;
+}
+
+/* Estados conocidos dentro del workspace de curso. El color del equipo puede
+   seguir en iconos/avatares, pero los estados académicos mandan sobre él. */
+main[data-module='cursos'] :where([aria-label*='Pendiente'], [data-status='pending']) {
+  --course-status-color: var(--warning);
+}
+
+main[data-module='cursos'] :where([aria-label*='Activo'], [data-status='active']) {
+  --course-status-color: var(--success);
 }
 
 /* Los encabezados del módulo son siempre oscuros. */
