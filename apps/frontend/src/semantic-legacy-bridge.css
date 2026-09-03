@@ -79,7 +79,28 @@
   background-color: color-mix(in srgb, var(--palette-gray) 38%, var(--card)) !important;
 }
 
-/* Auth conserva identidad propia pero usa la misma semántica de feedback. */
+/* Auth usa la misma semántica y las mismas superficies que el producto. */
+.auth-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+  padding: 0.75rem 1rem;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+.auth-input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.auth-input:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 16%, transparent);
+}
+
 .auth-screen :where(.bg-red-50) {
   background-color: color-mix(in srgb, var(--destructive) 14%, var(--card)) !important;
 }
