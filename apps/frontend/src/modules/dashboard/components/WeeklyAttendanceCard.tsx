@@ -73,7 +73,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
     return (
       <section className="dashboard-warm-shadow flex min-h-32 flex-col gap-5 rounded-[1.375rem] bg-card p-5 text-card-foreground sm:flex-row sm:items-center sm:px-6">
         <span
-          className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-tertiary-container text-on-tertiary-container"
+          className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-success/16 text-foreground"
           role="img"
           aria-label="Aún no hay registros de asistencia esta semana."
         >
@@ -113,7 +113,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
       <div className="grid gap-4 sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:items-center">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex size-8 items-center justify-center rounded-xl bg-tertiary-container text-on-tertiary-container">
+            <span className="flex size-8 items-center justify-center rounded-xl bg-success/16 text-foreground">
               <CalendarCheck2 className="size-4" aria-hidden="true" />
             </span>
             <p className="text-xs font-semibold text-accent">Pulso semanal</p>
@@ -144,8 +144,8 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
           >
             <defs>
               <linearGradient id="attendance-area-gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.24" />
-                <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.01" />
+                <stop offset="0%" stopColor="var(--success)" stopOpacity="0.24" />
+                <stop offset="100%" stopColor="var(--success)" stopOpacity="0.01" />
               </linearGradient>
             </defs>
 
@@ -176,7 +176,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
                       className="attendance-chart-line"
                       d={linePath}
                       fill="none"
-                      stroke="var(--accent)"
+                      stroke="var(--success)"
                       strokeWidth="3.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -198,7 +198,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
                   cy={point.y}
                   r="6"
                   fill="var(--card)"
-                  stroke="var(--accent)"
+                  stroke="var(--success)"
                   strokeWidth="3"
                 />
                 <title>{`${attendance.days[point.index].label}: ${point.value}%`}</title>
