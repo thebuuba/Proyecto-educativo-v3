@@ -7,6 +7,7 @@ import type { ScheduleEntry } from '@/modules/schedule/types'
 import { formatTime, getDurationHours } from '@/modules/schedule/utils/scheduleGrid'
 import type { ScheduleBlock, ScheduleConfig } from '@/modules/schedule/components/ScheduleWizard'
 import { cn } from '@/utils/cn'
+import { getSubjectPalette } from '@/utils/subjectPalette'
 
 type PedagogicalBlock = {
   dayOfWeek: number
@@ -255,10 +256,17 @@ function ScheduleFinalCell({ content }: { content: CellContent }) {
     )
   }
 
+  const palette = getSubjectPalette(content.entry.subjectName)
+
   return (
-    <div className="relative flex h-full min-h-16 flex-col justify-center overflow-hidden rounded-xl border border-primary/15 bg-card px-3 py-2 shadow-[0_8px_20px_-20px_rgba(47,53,66,0.35)]">
-      <span className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-primary" />
-      <p className="pl-1 text-xs font-extrabold leading-tight text-foreground">{content.entry.subjectName}</p>
+    <div
+      className="relative flex h-full min-h-16 flex-col justify-center overflow-hidden rounded-xl border px-3 py-2 shadow-[0_8px_20px_-20px_rgba(47,53,66,0.35)]"
+      style={{ backgroundColor: palette.soft, borderColor: `${palette.color}38` }}
+    >
+      <span className="absolute inset-y-2 left-0 w-1 rounded-r-full" style={{ backgroundColor: palette.color }} />
+      <p className="pl-1 text-xs font-extrabold leading-tight" style={{ color: palette.color }}>
+        {content.entry.subjectName}
+      </p>
       <p className="mt-1 pl-1 text-[10px] font-semibold text-muted-foreground">
         {content.entry.gradeName} {content.entry.sectionName} · {content.entry.academicLevelName}
       </p>
