@@ -148,6 +148,9 @@ function readStoredLayout(storageKey: string) {
 
 export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditableGridProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const widgetsRef = useRef(widgets)
+  widgetsRef.current = widgets
+
   const [containerWidth, setContainerWidth] = useState(0)
   const [editing, setEditing] = useState(false)
   const [interaction, setInteraction] = useState<Interaction | null>(null)
@@ -165,14 +168,16 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
     const updateWidth = () => setContainerWidth(node.getBoundingClientRect().width)
     updateWidth()
 
+    if (typeof ResizeObserver === 'undefined') return undefined
+
     const observer = new ResizeObserver(updateWidth)
     observer.observe(node)
     return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
-    setLayout((current) => reconcileLayout(widgets, current))
-  }, [widgetSignature, widgets])
+    setLayout((current) => reconcileLayout(widgetsRef.current, current))
+  }, [widgetSignature])
 
   useEffect(() => {
     if (typeof window === 'undefined') return undefined
@@ -240,7 +245,7 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
   }
 
   const resetLayout = () => {
-    const next = reconcileLayout(widgets)
+    const next = reconcileLayout(widgetsRef.current)
     setLayout(next)
     if (typeof window !== 'undefined') window.localStorage.removeItem(storageKey)
   }
