@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "postinstall": "prisma generate --schema prisma/schema.prisma",
     "generate": "dotenv -e ../../apps/backend/.env -- prisma generate",
     "migrate": "dotenv -e ../../apps/backend/.env -- prisma migrate dev",
     "seed": "dotenv -e ../../apps/backend/.env -- tsx src/seed.ts",
