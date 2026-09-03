@@ -1,0 +1,161 @@
+/*
+ * Reglas de composición por módulo para pantallas grandes que aún conservan
+ * estructura heredada. La lógica queda intacta y el lenguaje visual se
+ * normaliza mediante data-module expuesto por AppLayout.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Planificación                                                              */
+/* -------------------------------------------------------------------------- */
+
+main[data-module='planificaciones'] > section > header:first-child {
+  border-radius: 1.5rem;
+  background: var(--card);
+  padding: 1.15rem 1.35rem;
+  box-shadow: 0 16px 40px -28px color-mix(in srgb, var(--foreground) 22%, transparent);
+}
+
+main[data-module='planificaciones'] > section > header:first-child h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--foreground);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+main[data-module='planificaciones'] > section > header:first-child h1::before {
+  content: '';
+  width: 0.75rem;
+  height: 0.75rem;
+  flex: 0 0 auto;
+  border-radius: 0.3rem;
+  background: var(--warning);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--warning) 22%, transparent);
+}
+
+main[data-module='planificaciones'] nav[aria-label='Secciones de Planificación'] {
+  border-radius: 1.5rem;
+  background: var(--card);
+  box-shadow: 0 16px 40px -30px color-mix(in srgb, var(--foreground) 18%, transparent);
+}
+
+main[data-module='planificaciones'] nav[aria-label='Secciones de Planificación'] button {
+  min-height: 2.75rem;
+  border-radius: 0.9rem;
+}
+
+main[data-module='planificaciones'] nav[aria-label='Secciones de Planificación'] button[aria-current='page'],
+main[data-module='planificaciones'] nav[aria-label='Secciones de Planificación'] button[data-active='true'] {
+  background: color-mix(in srgb, var(--primary) 14%, var(--card));
+  color: var(--foreground);
+}
+
+main[data-module='planificaciones'] :where(.bg-accent\/12, .bg-amber-50, .bg-yellow-50) {
+  background: color-mix(in srgb, var(--warning) 24%, var(--card)) !important;
+  color: var(--foreground) !important;
+}
+
+main[data-module='planificaciones'] :where(.bg-emerald-50, .bg-green-50) {
+  background: color-mix(in srgb, var(--success) 16%, var(--card)) !important;
+}
+
+main[data-module='planificaciones'] :where(.text-accent, .text-amber-700, .text-yellow-700) {
+  color: var(--foreground) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Matrícula / Estudiantes                                                    */
+/* -------------------------------------------------------------------------- */
+
+main[data-module='estudiantes'] > section > div:first-child {
+  border-radius: 1.5rem;
+  background: var(--card);
+  padding: 1.15rem 1.35rem;
+  box-shadow: 0 16px 40px -28px color-mix(in srgb, var(--foreground) 22%, transparent);
+}
+
+main[data-module='estudiantes'] > section > div:first-child h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--foreground) !important;
+  font-size: 1.5rem !important;
+  line-height: 1.15 !important;
+}
+
+main[data-module='estudiantes'] > section > div:first-child h1::before {
+  content: '';
+  width: 0.75rem;
+  height: 0.75rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--success);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--success) 18%, transparent);
+}
+
+main[data-module='estudiantes'] :where(section.rounded-3xl, article.rounded-3xl) {
+  border-color: transparent !important;
+}
+
+main[data-module='estudiantes'] :where(.text-primary) {
+  color: var(--primary-variant);
+}
+
+main[data-module='estudiantes'] :where(h1.text-primary, h2.text-primary, h3.text-primary) {
+  color: var(--foreground) !important;
+}
+
+main[data-module='estudiantes'] :where(.bg-primary\/\[0\.035\], .bg-primary\/5, .bg-primary\/8) {
+  background: color-mix(in srgb, var(--primary) 9%, var(--card)) !important;
+}
+
+main[data-module='estudiantes'] :where(.bg-success\/10, .bg-emerald-50, .bg-green-50) {
+  background: color-mix(in srgb, var(--success) 16%, var(--card)) !important;
+}
+
+main[data-module='estudiantes'] :where(.bg-warning\/10, .bg-amber-50, .bg-yellow-50) {
+  background: color-mix(in srgb, var(--warning) 23%, var(--card)) !important;
+}
+
+main[data-module='estudiantes'] :where(.bg-destructive\/10, .bg-red-50) {
+  background: color-mix(in srgb, var(--destructive) 14%, var(--card)) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Bitácora                                                                   */
+/* -------------------------------------------------------------------------- */
+
+main[data-module='bitacora'] {
+  --journal-note: var(--primary);
+  --journal-observation: var(--success);
+  --journal-idea: var(--warning);
+  --journal-incident: var(--destructive);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Consistencia de tablas y controles en módulos académicos                   */
+/* -------------------------------------------------------------------------- */
+
+main[data-module='asistencia'] table,
+main[data-module='calificaciones'] table,
+main[data-module='estudiantes'] table {
+  background: var(--card);
+}
+
+main[data-module='asistencia'] thead,
+main[data-module='calificaciones'] thead,
+main[data-module='estudiantes'] thead {
+  color: var(--muted-foreground);
+}
+
+main[data-module='asistencia'] tbody tr:hover,
+main[data-module='calificaciones'] tbody tr:hover,
+main[data-module='estudiantes'] tbody tr:hover {
+  background: color-mix(in srgb, var(--primary) 5%, var(--card));
+}
+
+/* Los menús secundarios no deben competir con la acción primaria. */
+main[data-module] :where(button, a).bg-card.border.border-border {
+  box-shadow: none;
+}
