@@ -10,6 +10,48 @@
  */
 
 /* -------------------------------------------------------------------------- */
+/* Cursos: espacio interno de un curso                                        */
+/* -------------------------------------------------------------------------- */
+
+/* El nivel académico no crea otra identidad cromática: la ficha del curso
+   siempre usa el azul oficial; el estado usa verde y la atención amarillo. */
+main[data-module='cursos'] header.rounded-3xl.bg-card > div > div.flex.min-w-0 > span.flex.size-16 {
+  background: var(--primary) !important;
+  color: var(--foreground) !important;
+  box-shadow: none !important;
+}
+
+main[data-module='cursos'] :where(.bg-emerald-50, .bg-green-50) {
+  background: color-mix(in srgb, var(--success) 16%, var(--card)) !important;
+}
+
+main[data-module='cursos'] :where(.text-emerald-600, .text-emerald-700, .text-green-700) {
+  color: color-mix(in srgb, var(--success) 58%, var(--foreground)) !important;
+}
+
+main[data-module='cursos'] :where(.bg-violet-50, .bg-violet-100) {
+  background: color-mix(in srgb, var(--primary) 14%, var(--card)) !important;
+}
+
+main[data-module='cursos'] :where(.text-violet-600, .text-violet-700) {
+  color: var(--primary-variant) !important;
+}
+
+main[data-module='cursos'] :where(.bg-orange-50, .bg-amber-50, .bg-yellow-50) {
+  background: color-mix(in srgb, var(--warning) 24%, var(--card)) !important;
+}
+
+main[data-module='cursos'] :where(.text-orange-600, .text-orange-700, .text-amber-700) {
+  color: var(--foreground) !important;
+}
+
+main[data-module='cursos'] header.rounded-3xl.bg-card,
+main[data-module='cursos'] section.rounded-2xl.bg-card {
+  border-color: transparent !important;
+  box-shadow: 0 16px 40px -30px color-mix(in srgb, var(--foreground) 20%, transparent);
+}
+
+/* -------------------------------------------------------------------------- */
 /* Planificación: subcomponentes heredados                                    */
 /* -------------------------------------------------------------------------- */
 
