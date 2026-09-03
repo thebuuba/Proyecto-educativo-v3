@@ -8,13 +8,13 @@ import { useNavigate } from 'react-router-dom'
 
 import { ErrorState } from '@/components/ui'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
-import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
-import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
 import { BarChart } from '@/modules/dashboard/components/BarChart'
 import { ChartPanel } from '@/modules/dashboard/components/ChartPanel'
+import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
+import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
 import { InitialSetupChecklist } from '@/modules/dashboard/components/InitialSetupChecklist'
-import { LineChart } from '@/modules/dashboard/components/LineChart'
 import { JournalSummaryCard } from '@/modules/dashboard/components/JournalSummaryCard'
+import { LineChart } from '@/modules/dashboard/components/LineChart'
 import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
 import { SmartSuggestion } from '@/modules/dashboard/components/SmartSuggestion'
 import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
@@ -93,8 +93,8 @@ export function DashboardPage() {
   return (
     <div className="w-full min-w-0 space-y-6">
       <header className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-baseline gap-3 flex-wrap">
-          <h1 className="text-2xl lg:text-[28px] font-bold tracking-tight text-foreground">
+        <div className="flex flex-wrap items-baseline gap-3">
+          <h1 className="text-2xl font-bold tracking-tight text-foreground lg:text-[28px]">
             {getGreeting()},
             {' '}
             <span className="text-accent">{data.context.firstName}</span>
@@ -119,7 +119,7 @@ export function DashboardPage() {
             {data.context.schoolYearName}
           </span>
           <span className="inline-flex h-7 items-center gap-1.5 rounded-full bg-accent/12 px-3 font-semibold text-accent">
-            <span className="size-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="size-1.5 animate-pulse rounded-full bg-accent" />
             {data.context.periodName} · activo
           </span>
         </div>
@@ -137,6 +137,7 @@ export function DashboardPage() {
           onStartClass={handleStartClass}
           onViewPlanning={handleViewPlanning}
           canManageClass={canManageOperations}
+          onCountdownEnd={refetch}
         />
       </div>
 
@@ -166,7 +167,7 @@ export function DashboardPage() {
       ) : null}
 
       {hasOperationalBlocks ? (
-        <div className="grid lg:grid-cols-12 gap-6">
+        <div className="grid gap-6 lg:grid-cols-12">
           {hasAgenda ? (
             <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
               <TodayAgenda items={data.todayAgenda} />
@@ -175,7 +176,7 @@ export function DashboardPage() {
 
           <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-6'].join(' ')}>
             {hasWeeklyAttendance || hasTasks ? (
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid gap-6 md:grid-cols-2">
                 {hasWeeklyAttendance ? (
                   <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
                     <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
