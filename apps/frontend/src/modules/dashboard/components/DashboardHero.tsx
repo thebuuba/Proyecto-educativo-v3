@@ -77,7 +77,14 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
       aria-label={`${label} en ${formatCountdown(seconds)}`}
     >
       <svg className="absolute inset-0 size-full -rotate-90" viewBox="0 0 120 120" aria-hidden="true">
-        <circle cx="60" cy="60" r="45" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="8" />
+        <circle
+          cx="60"
+          cy="60"
+          r="45"
+          fill="none"
+          stroke="var(--palette-pink)"
+          strokeWidth="8"
+        />
         <circle
           cx="60"
           cy="60"
@@ -141,10 +148,12 @@ export function DashboardHero({
   if (!nextClass) {
     return (
       <section
-        className="ml-auto w-full max-w-[520px] rounded-3xl border border-white/8 px-5 py-5 text-white shadow-lg"
+        className="ml-auto w-full max-w-[520px] rounded-3xl border border-[var(--palette-pink)] px-5 py-5 text-[var(--palette-gray)]"
         style={{ backgroundColor: 'var(--class-panel)' }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--class-accent)]">Sin clase programada</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--class-accent)]">
+          Sin clase programada
+        </p>
         <h2 className="mt-2 text-xl font-bold">Agenda libre</h2>
         <p className="mt-1 text-sm text-[var(--class-muted)]">No tienes otra clase programada para hoy.</p>
       </section>
@@ -155,26 +164,9 @@ export function DashboardHero({
 
   return (
     <section
-      className="relative ml-auto w-full max-w-[520px] overflow-hidden rounded-3xl border border-white/8 p-5 pr-[7.5rem] text-white shadow-lg sm:p-6 sm:pr-[8.5rem]"
-      style={{
-        backgroundColor: 'var(--class-panel)',
-        boxShadow: '0 16px 36px -18px color-mix(in srgb, var(--class-panel) 65%, transparent)',
-      }}
+      className="relative ml-auto w-full max-w-[520px] overflow-hidden rounded-3xl border border-[var(--palette-pink)] p-5 pr-[7.5rem] text-[var(--palette-gray)] sm:p-6 sm:pr-[8.5rem]"
+      style={{ backgroundColor: 'var(--class-panel)' }}
     >
-      <div
-        className="pointer-events-none absolute -right-14 -top-20 size-60 rounded-full opacity-30"
-        style={{
-          background: 'radial-gradient(circle, color-mix(in srgb, var(--class-accent) 36%, transparent) 0%, transparent 70%)',
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-          backgroundSize: '22px 22px',
-        }}
-      />
-
       <div className="absolute right-4 top-4 z-10 sm:right-5 sm:top-5">
         <CountdownBadge item={nextClass} seconds={countdownSeconds} />
       </div>
@@ -217,7 +209,7 @@ export function DashboardHero({
             </Button>
             <Button
               variant="outline"
-              className="h-10 rounded-xl border-white/15 bg-white/5 px-4 text-sm text-white hover:bg-white/10"
+              className="h-10 rounded-xl border-[var(--palette-gold)] bg-transparent px-4 text-sm text-[var(--palette-gray)] hover:bg-[var(--palette-gold)] hover:text-[var(--palette-purple)]"
               onClick={() => onViewPlanning(nextClass)}
             >
               Planificación
