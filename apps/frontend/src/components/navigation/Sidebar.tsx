@@ -16,17 +16,17 @@ type SidebarProps = {
   onToggleExpanded: () => void
 }
 
-const routeIconColors: Record<string, string> = {
-  '/inicio': 'bg-blue-100 text-blue-700',
-  '/estudiantes': 'bg-violet-100 text-violet-700',
-  '/cursos': 'bg-amber-100 text-amber-700',
-  '/horario': 'bg-cyan-100 text-cyan-700',
-  '/asistencia': 'bg-emerald-100 text-emerald-700',
-  '/calificaciones': 'bg-pink-100 text-pink-700',
-  '/planificaciones': 'bg-orange-100 text-orange-700',
-  '/matriz': 'bg-teal-100 text-teal-700',
-  '/reportes': 'bg-indigo-100 text-indigo-700',
-  '/configuracion': 'bg-slate-100 text-slate-700',
+const routeIconBackgrounds: Record<string, string> = {
+  '/inicio': 'bg-primary-container',
+  '/estudiantes': 'bg-secondary-container',
+  '/actividades': 'bg-violet-100',
+  '/cursos': 'bg-warning-container',
+  '/horario': 'bg-primary-container',
+  '/asistencia': 'bg-tertiary-container',
+  '/calificaciones': 'bg-secondary-container',
+  '/planificaciones': 'bg-warning-container',
+  '/reportes': 'bg-secondary-container',
+  '/configuracion': 'bg-warning-container',
 }
 
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
@@ -96,7 +96,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
         )}>
           {visibleRoutes.map((item) => {
             const Icon = item.icon
-            const iconColor = routeIconColors[item.path] ?? routeIconColors['/inicio']
+            const iconBackground = routeIconBackgrounds[item.path] ?? 'bg-primary-container'
 
             return (
               <NavLink
@@ -114,7 +114,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                       ? 'px-4'
                       : 'px-4 lg:justify-center lg:gap-0 lg:px-3',
                     isActive
-                      ? 'bg-sidebar-primary text-sidebar-primary-foreground shadow-lg shadow-sidebar-primary/20'
+                      ? 'bg-sidebar-primary/10 text-sidebar-primary ring-1 ring-sidebar-primary/15'
                       : 'text-sidebar-foreground/75 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
                   )
                 }
@@ -123,8 +123,9 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                   <>
                     <span
                       className={cn(
-                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg',
-                        isActive ? 'bg-white/18 text-white' : iconColor,
+                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg text-sidebar-foreground/85',
+                        iconBackground,
+                        isActive && 'text-sidebar-foreground shadow-sm ring-1 ring-sidebar-primary/20',
                       )}
                     >
                       <Icon className="size-4.5 shrink-0" />

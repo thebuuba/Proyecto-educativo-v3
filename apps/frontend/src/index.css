@@ -9,9 +9,23 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+  --color-primary-foreground: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-secondary: var(--secondary-container);
+  --color-secondary-foreground: var(--on-secondary-container);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-foreground: var(--on-tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-warning-container: var(--warning-container);
+  --color-on-warning-container: var(--on-warning-container);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-surface-variant: var(--surface-variant);
+  --color-on-surface-variant: var(--on-surface-variant);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
@@ -36,61 +50,119 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-blue: var(--palette-blue);
+  --color-brand-sky: var(--palette-sky);
+  --color-brand-blue-light: var(--palette-blue-light);
+  --color-brand-yellow-cream: var(--palette-yellow-cream);
+  --color-brand-yellow-soft: var(--palette-yellow-soft);
+  --color-brand-yellow: var(--palette-yellow);
+  --color-brand-olive: var(--palette-olive);
+  --color-brand-lime: var(--palette-lime);
+  --color-brand-green-cream: var(--palette-green-cream);
+  --color-brand-green-pale: var(--palette-green-pale);
+  --color-brand-lavender-light: var(--palette-lavender-light);
+  --color-brand-lavender: var(--palette-lavender);
+  --color-brand-plum: var(--palette-plum);
+  --color-brand-purple-light: var(--palette-purple-light);
+  --color-brand-lilac-light: var(--palette-lilac-light);
+  --color-brand-orange: var(--palette-orange);
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 :root {
-  --background: #f6f9fc;
-  --foreground: #111827;
-  --card: #ffffff;
-  --card-foreground: #111827;
-  --popover: #ffffff;
-  --popover-foreground: #111827;
-  --primary: #1e4f8f;
-  --primary-foreground: #ffffff;
-  --secondary: #f3f7fb;
-  --secondary-foreground: #314158;
-  --muted: #f3f7fb;
-  --muted-foreground: #4b5563;
-  --accent: #1e4f8f;
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
+  /* Paleta definitiva de AulaBase. Los componentes consumen los tokens
+     semánticos de abajo y no necesitan conocer valores hexadecimales. */
+  --palette-white: #FFFFFF;
+  --palette-surface: #F8F8F6;
+  --palette-ink: #252321;
+  --palette-text-muted: #68635F;
+  --palette-yellow-cream: #FFF3C4;
+  --palette-yellow-soft: #FFE58A;
+  --palette-yellow: #FFD34E;
+  --palette-olive: #A7B638;
+  --palette-lime: #CDD944;
+  --palette-green-cream: #F1F3C4;
+  --palette-green-pale: #E4E98F;
+  --palette-lavender-light: #F6E6FA;
+  --palette-lavender: #E9C8F2;
+  --palette-purple-light: #DC8CEC;
+  --palette-lilac-light: #F8EBFB;
+  --palette-blue: #236A96;
+  --palette-sky: #25A8D8;
+  --palette-blue-light: #DDF1FA;
+  --palette-plum: #7B3F8C;
+  --palette-orange: #F27032;
+
+  --background: var(--palette-surface);
+  --on-background: var(--palette-ink);
+  --surface: var(--palette-white);
+  --on-surface: var(--palette-ink);
+  --surface-variant: var(--palette-surface);
+  --on-surface-variant: var(--palette-text-muted);
+  --primary: var(--palette-blue);
+  --primary-variant: #1F5D84;
+  --on-primary: var(--palette-white);
+  --primary-container: var(--palette-blue-light);
+  --on-primary-container: var(--palette-ink);
+  --secondary: var(--palette-plum);
+  --secondary-variant: #633372;
+  --on-secondary: var(--palette-white);
+  --secondary-container: var(--palette-lavender-light);
+  --on-secondary-container: var(--palette-ink);
+  --tertiary: var(--palette-olive);
+  --on-tertiary: var(--palette-ink);
+  --tertiary-container: var(--palette-green-cream);
+  --on-tertiary-container: var(--palette-ink);
+  --warning-container: var(--palette-yellow-cream);
+  --on-warning-container: var(--palette-ink);
+  --foreground: var(--on-background);
+  --card: var(--surface);
+  --card-foreground: var(--on-surface);
+  --popover: var(--surface);
+  --popover-foreground: var(--on-surface);
+  --primary-foreground: var(--on-primary);
+  --secondary-foreground: var(--on-secondary-container);
+  --muted: var(--surface-variant);
+  --muted-foreground: var(--on-surface-variant);
+  --accent: var(--secondary);
+  --accent-foreground: var(--on-secondary);
+  --destructive: #b42318;
   --destructive-foreground: #ffffff;
-  --success: #059669;
-  --success-foreground: #ffffff;
-  --warning: #d97706;
-  --warning-foreground: #111827;
-  --border: #dbe5ef;
-  --input: #dbe5ef;
-  --ring: #2f6fb4;
-  --accent-hover: #173f73;
-  --primary-hover: #173f73;
-  --destructive-hover: #ef4444;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #111827;
-  --sidebar-primary: #1e4f8f;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #edf4fb;
-  --sidebar-accent-foreground: #1e4f8f;
-  --sidebar-border: #dbe5ef;
-  --sidebar-ring: #2f6fb4;
-  --primary-light: #edf4fb;
-  --primary-border: #b7cfe6;
-  --success-light: #d1fae5;
-  --warning-light: #fef3c7;
-  --danger-light: #fee2e2;
+  --success: var(--tertiary);
+  --success-foreground: var(--on-tertiary);
+  --warning: var(--palette-yellow);
+  --warning-foreground: var(--palette-ink);
+  --border: #E2DED8;
+  --input: #D2CDC6;
+  --ring: var(--palette-blue);
+  --accent-hover: var(--secondary-variant);
+  --primary-hover: var(--primary-variant);
+  --destructive-hover: #921c14;
+  --sidebar: var(--palette-white);
+  --sidebar-foreground: var(--palette-ink);
+  --sidebar-primary: var(--palette-blue);
+  --sidebar-primary-foreground: var(--palette-white);
+  --sidebar-accent: var(--palette-blue-light);
+  --sidebar-accent-foreground: var(--palette-ink);
+  --sidebar-border: #E2DED8;
+  --sidebar-ring: var(--palette-blue);
+  --primary-light: var(--palette-blue-light);
+  --primary-border: var(--palette-sky);
+  --success-light: var(--palette-green-cream);
+  --warning-light: var(--palette-yellow-cream);
+  --danger-light: #fde8e5;
   --social-fb: #1877f2;
-  --bg-auth-outer: #e9ebed;
-  --bg-left-panel: #ffffff;
-  --bg-right-panel: #f0f1f3;
-  --bg-page: #f6f9fc;
-  --bg-surface: #ffffff;
-  --bg-alt: #f9fafb;
-  --text-heading: #111827;
-  --text-body: #374151;
-  --text-muted: #4b5563;
-  --text-faint: #6b7280;
-  --text-placeholder: #9ca3af;
+  --bg-auth-outer: var(--palette-blue-light);
+  --bg-left-panel: var(--palette-white);
+  --bg-right-panel: var(--palette-surface);
+  --bg-page: var(--palette-surface);
+  --bg-surface: var(--palette-white);
+  --bg-alt: var(--palette-surface);
+  --text-heading: var(--palette-ink);
+  --text-body: var(--palette-ink);
+  --text-muted: var(--palette-text-muted);
+  --text-faint: var(--palette-text-muted);
+  --text-placeholder: #7B746E;
 
   color: var(--foreground);
   background: var(--background);
@@ -122,6 +194,23 @@ html {
   }
 }
 
+.field {
+  min-height: 3rem;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+  padding-inline: 1rem;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.field:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ring) 12%, transparent);
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;
@@ -147,12 +236,12 @@ body {
     to bottom,
     transparent 0,
     transparent 27px,
-    rgb(30 79 143 / 7%) 28px
+    rgb(35 106 150 / 7%) 28px
   );
 }
 
 .dashboard-warm-shadow {
-  box-shadow: 0 16px 40px -28px rgb(30 79 143 / 28%);
+  box-shadow: 0 16px 40px -28px rgb(29 29 31 / 28%);
 }
 
 @media (min-width: 1024px) {
@@ -178,7 +267,7 @@ body {
 }
 
 .dot-grid {
-  background-image: radial-gradient(#cbd5d8 1px, transparent 1px);
+  background-image: radial-gradient(#d8d3ce 1px, transparent 1px);
   background-size: 22px 22px;
 }
 

@@ -179,6 +179,22 @@ export class AttendanceService {
     })
   }
 
+  /** Historial de la asignatura; la agrupación por sesión se hace en el cliente. */
+  findClassAttendanceHistory(schoolId: string, sectionSubjectId: string) {
+    if (!sectionSubjectId) throw new BadRequestException('sectionSubjectId is required')
+    return prisma.attendanceClass.findMany({
+      where: { schoolId, sectionSubjectId },
+      select: {
+        id: true,
+        enrollmentId: true,
+        attendanceDate: true,
+        status: true,
+        notes: true,
+      },
+      orderBy: { attendanceDate: 'desc' },
+    })
+  }
+
   /**
    * Obtiene los registros de asistencia diaria, opcionalmente filtrados
    * por matrícula y fecha.
@@ -240,8 +256,10 @@ export class AttendanceService {
         firstName: student?.firstName ?? '',
         lastName: student?.lastName ?? '',
       }
-    })
+      })
       .sort((first, second) => {
+        const studentCode = first.studentCode.localeCompare(second.studentCode, 'es', { numeric: true })
+        if (studentCode !== 0) return studentCode
         const lastName = first.lastName.localeCompare(second.lastName, 'es')
         if (lastName !== 0) return lastName
         return first.firstName.localeCompare(second.firstName, 'es')

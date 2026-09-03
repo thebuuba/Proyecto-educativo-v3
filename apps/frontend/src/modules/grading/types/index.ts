@@ -38,6 +38,14 @@ export type GradeRecordRow = {
   assessmentName: string
   status: GradeRecordStatus | null
   evaluationActivityId?: string | null
+  instrumentResult?: EvaluatedInstrumentResult | null
+}
+
+export type EvaluatedInstrumentResult = {
+  instrumentType: string
+  selections: number[]
+  criterionScores: number[]
+  completedAt: string
 }
 
 export type GradingActivity = {
@@ -59,9 +67,27 @@ export type GradingActivity = {
   futurePlanningLink?: string
   futureInstrumentLink?: string
   activityType?: 'individual' | 'group'
+  teamIds?: string[]
   planningId?: string
   planningMoment?: 'inicio' | 'desarrollo' | 'cierre' | ''
   source?: 'grading' | 'planning'
+}
+
+export type GlobalActivity = GradingActivity & {
+  sectionSubjectId: string
+  academicPeriodId: string
+  courseId: string
+  courseLabel: string
+  subjectName: string
+  periodName: string
+  evaluatedCount: number
+  studentCount: number
+}
+
+export type ActivityCenterWorkspace = {
+  sectionSubjects: SectionSubjectOption[]
+  academicPeriods: AcademicPeriodOpt[]
+  activities: GlobalActivity[]
 }
 
 export type RecoveryScores = Record<string, Record<string, number | null>>
@@ -104,6 +130,7 @@ export type SaveGradeInput = {
   assessmentName: string
   evaluationActivityId?: string | null
   gradeId?: string | null
+  instrumentResult?: EvaluatedInstrumentResult
 }
 
 export type GradingWorkspace = {

@@ -52,6 +52,18 @@ export class CreateCourseTeamDto {
   @IsDateString()
   endsAt?: string | null
 
+  @IsOptional()
+  @IsIn(['activity', 'date', 'period', 'project', 'undefined'])
+  validityType?: 'activity' | 'date' | 'period' | 'project' | 'undefined'
+
+  @IsOptional()
+  @IsUUID()
+  validityReferenceId?: string | null
+
+  @IsOptional()
+  @IsIn(['P1', 'P2', 'P3', 'P4'])
+  validityPeriod?: 'P1' | 'P2' | 'P3' | 'P4' | null
+
   @IsArray()
   @ArrayUnique((member: CourseTeamMemberDto) => member.enrollmentId)
   @ValidateNested({ each: true })

@@ -83,25 +83,25 @@ export function buildPlanningDocumentHtml(entry: PlanningEntryWithDetails) {
   <style>
     @page { size: A4 landscape; margin: 9mm; }
     * { box-sizing: border-box; }
-    body { background: #eef3f9; color: #17233a; font-family: Arial, Helvetica, sans-serif; font-size: 10px; margin: 0; }
-    main { background: #fff; border: 1px solid #cbd8e8; margin: 20px auto; max-width: 1120px; }
-    .hero { background: #1f4e95; color: #fff; padding: 16px 18px; }
-    .hero-table { border: 0; color: #fff; width: 100%; }
+    body { background: #F8F8F6; color: #272320; font-family: Arial, Helvetica, sans-serif; font-size: 10px; margin: 0; }
+    main { background: #FFFFFF; border: 1px solid #DDEEF9; margin: 20px auto; max-width: 1120px; }
+    .hero { background: #4AA2E3; color: #272320; padding: 16px 18px; }
+    .hero-table { border: 0; color: #272320; width: 100%; }
     .hero-table td { border: 0; padding: 0; vertical-align: middle; }
     .hero-table td:last-child { text-align: right; }
     .eyebrow { font-size: 8px; font-weight: 700; letter-spacing: .2em; opacity: .75; text-transform: uppercase; }
     h1 { font-size: 20px; margin: 4px 0 0; }
     .content { padding: 14px; }
-    .band { background: #1f4e95; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .13em; margin: 12px 0 0; padding: 6px 8px; text-transform: uppercase; }
+    .band { background: #4AA2E3; color: #272320; font-size: 9px; font-weight: 700; letter-spacing: .13em; margin: 12px 0 0; padding: 6px 8px; text-transform: uppercase; }
     table { border-collapse: collapse; table-layout: fixed; width: 100%; }
     td, th { border: 1px solid #cbd8e8; padding: 7px; vertical-align: top; }
     .meta td { width: 25%; }
     .label, .curriculum-title { color: #627087; display: block; font-size: 7px; font-weight: 700; letter-spacing: .1em; margin-bottom: 3px; text-transform: uppercase; }
-    .curriculum-title { color: #1f4e95; font-size: 8px; }
+    .curriculum-title { color: #272320; font-size: 8px; }
     p { line-height: 1.4; margin: 0; }
     .context td { width: 50%; }
     .sequence thead { display: table-header-group; }
-    .sequence th { background: #eaf1fa; color: #1f4e95; font-size: 8px; letter-spacing: .05em; text-align: left; text-transform: uppercase; }
+    .sequence th { background: #DDEEF9; color: #272320; font-size: 8px; letter-spacing: .05em; text-align: left; text-transform: uppercase; }
     .sequence tbody tr { break-inside: avoid; page-break-inside: avoid; }
     .sequence tbody tr:nth-child(even) { background: #f7f9fc; }
     .sequence .date { width: 10%; }

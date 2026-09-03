@@ -32,7 +32,7 @@ type CourseForEnrollment = {
   schoolYearId: string
   gradeId: string
   sectionId: string
-  subjectId: string
+  subjectId?: string
 }
 
 type ImportPreviewRow = {
@@ -62,6 +62,10 @@ type ImportStudentError = {
 /** Fecha de nacimiento por defecto usada cuando no se puede parsear la fecha en una importación. */
 const IMPORT_FALLBACK_BIRTH_DATE = new Date('2000-01-01T00:00:00')
 const FAST_ENROLLMENT_BIRTH_DATE = new Date('2000-01-01T00:00:00')
+
+function normalizeStudentName(value: string) {
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es').replace(/\s+/g, ' ').trim().split(' ').sort().join(' ')
+}
 
 /**
  * Limpia un valor desconocido retornando su representación como texto
@@ -174,12 +178,28 @@ function getEnrollmentCourseGradeOrder(course: EnrollmentCourseSummary) {
 @Injectable()
 export class StudentsService {
   private async getCourseOrThrow(schoolId: string, courseId: string) {
-    const course = await prisma.sectionSubject.findFirst({
+    const assignment = await prisma.sectionSubject.findFirst({
       where: { id: courseId, schoolId, status: 'ACTIVE' },
     })
+    if (assignment) return assignment
 
-    if (!course) throw new NotFoundException('Course not found')
-    return course
+    const section = await prisma.section.findFirst({
+      where: { id: courseId, schoolId, status: 'ACTIVE' },
+    })
+    if (!section) throw new NotFoundException('Course not found')
+
+    const schoolYear = await prisma.schoolYear.findFirst({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: { startDate: 'desc' },
+    })
+    if (!schoolYear) throw new NotFoundException('Active school year not found')
+
+    return {
+      id: section.id,
+      schoolYearId: schoolYear.id,
+      gradeId: section.gradeId,
+      sectionId: section.id,
+    }
   }
 
   async getEnrollmentCourses(schoolId: string) {
@@ -285,7 +305,7 @@ export class StudentsService {
         subjects.length === 1 ? subjects[0].name : `${subjects.length} asignaturas`
 
       return {
-        id: course.id,
+        id: course.sectionId,
         gradeId: course.gradeId,
         sectionId: course.sectionId,
         subjectId: course.subjectId,
@@ -308,7 +328,7 @@ export class StudentsService {
     }).sort(compareEnrollmentCourses)
   }
 
-  async getStudentsByCourse(schoolId: string, courseId: string) {
+  async getStudentsByCourse(schoolId: string, courseId: string, status: 'active' | 'withdrawn' = 'active') {
     const course = await this.getCourseOrThrow(schoolId, courseId)
     const enrollments = await prisma.enrollment.findMany({
       where: {
@@ -316,11 +336,18 @@ export class StudentsService {
         schoolYearId: course.schoolYearId,
         gradeId: course.gradeId,
         sectionId: course.sectionId,
-        status: 'ACTIVE',
+        status: status === 'withdrawn' ? 'WITHDRAWN' : 'ACTIVE',
       },
+      include: { _count: { select: { attendanceDailies: true, attendanceClasses: true, gradesRecords: true, evaluationActivityGroupMembers: true, courseTeamMembers: true } } },
     })
     const studentIds = enrollments.map((item) => item.studentId)
     if (studentIds.length === 0) return []
+
+    const journalStudents = await prisma.teacherJournalStudent.findMany({
+      where: { schoolId, studentId: { in: studentIds } },
+      select: { studentId: true },
+    })
+    const studentsWithJournal = new Set((journalStudents ?? []).map((item) => item.studentId))
 
     const students = await prisma.student.findMany({
       where: { schoolId, id: { in: studentIds } },
@@ -330,12 +357,26 @@ export class StudentsService {
       enrollments.map((item) => [item.studentId, item]),
     )
 
-    return students.map((student) => ({
-      ...student,
-      status: String(student.status).toLowerCase(),
-      fullName: `${student.firstName} ${student.lastName}`.trim(),
-      enrollmentId: enrollmentByStudentId.get(student.id)?.id ?? null,
-    }))
+    return students
+      .map((student) => ({
+        ...student,
+        status: String(student.status).toLowerCase(),
+        fullName: `${student.firstName} ${student.lastName}`.trim(),
+        enrollmentId: enrollmentByStudentId.get(student.id)?.id ?? null,
+        listNumber: enrollmentByStudentId.get(student.id)?.listNumber ?? null,
+        canDeletePermanently: !studentsWithJournal.has(student.id)
+          && Object.values(enrollmentByStudentId.get(student.id)?._count ?? {}).every((count) => count === 0),
+      }))
+      .sort((first, second) => (first.listNumber ?? Number.MAX_SAFE_INTEGER) - (second.listNumber ?? Number.MAX_SAFE_INTEGER)
+        || first.fullName.localeCompare(second.fullName, 'es'))
+  }
+
+  private async getNextListNumber(schoolId: string, course: CourseForEnrollment) {
+    const enrollments = await prisma.enrollment.findMany({
+      where: { schoolId, schoolYearId: course.schoolYearId, gradeId: course.gradeId, sectionId: course.sectionId, status: 'ACTIVE' },
+      select: { listNumber: true },
+    })
+    return Math.max(0, ...((enrollments ?? []).map((item) => item.listNumber ?? 0))) + 1
   }
 
   private async findReusableStudentByCode(
@@ -388,11 +429,13 @@ export class StudentsService {
     dto: CreateCourseStudentDto,
   ) {
     const course = await this.getCourseOrThrow(schoolId, courseId)
+    const studentCode = dto.studentCode?.trim() || `TEMP-${crypto.randomUUID()}`
     const reusableStudent = await this.findReusableStudentByCode(
       schoolId,
       course,
-      dto.studentCode,
+      studentCode,
     )
+    const listNumber = await this.getNextListNumber(schoolId, course)
     const { firstName, lastName } = splitFullName(dto.fullName)
 
     const student = await prisma.$transaction(async (tx) => {
@@ -401,7 +444,7 @@ export class StudentsService {
         (await tx.student.create({
           data: {
             schoolId,
-            studentCode: dto.studentCode,
+            studentCode,
             firstName,
             lastName,
             documentId: dto.documentId || null,
@@ -413,14 +456,29 @@ export class StudentsService {
             status: toRecordStatus(dto.status) as RecordStatus,
           },
         }))
-      await tx.enrollment.create({
-        data: {
+      await tx.enrollment.upsert({
+        where: {
+          studentId_schoolYearId: {
+            studentId: created.id,
+            schoolYearId: course.schoolYearId,
+          },
+        },
+        update: {
+          gradeId: course.gradeId,
+          sectionId: course.sectionId,
+          status: 'ACTIVE',
+          academicStatus: 'active',
+          transferNotes: null,
+          listNumber,
+        },
+        create: {
           schoolId,
           studentId: created.id,
           schoolYearId: course.schoolYearId,
           gradeId: course.gradeId,
           sectionId: course.sectionId,
           status: 'ACTIVE',
+          listNumber,
         },
       })
       return created
@@ -440,15 +498,30 @@ export class StudentsService {
   ) {
     const course = await this.getCourseOrThrow(schoolId, courseId)
     const seenCodes = new Set<string>()
+    const seenNames = new Set<string>()
+    const hasRowsWithoutCode = rows.some((row) => !cleanText(row.studentCode))
+    const existingNames = hasRowsWithoutCode
+      ? new Set(((await prisma.student.findMany({
+          where: {
+            schoolId,
+            enrollments: { some: { schoolYearId: course.schoolYearId, gradeId: course.gradeId, sectionId: course.sectionId, status: 'ACTIVE' } },
+          },
+          select: { firstName: true, lastName: true },
+        })) ?? []).map((student) => normalizeStudentName(`${student.firstName} ${student.lastName}`)))
+      : new Set<string>()
     const preview: ImportPreviewRow[] = []
 
     for (const [index, row] of rows.entries()) {
       const studentCode = cleanText(row.studentCode)
       const fullName = cleanText(row.fullName)
       const errors: string[] = []
-      const duplicate = studentCode ? seenCodes.has(studentCode) : false
+      const normalizedName = normalizeStudentName(fullName)
+      const duplicate = studentCode
+        ? seenCodes.has(studentCode)
+        : Boolean(normalizedName && (seenNames.has(normalizedName) || existingNames.has(normalizedName)))
       if (!fullName) errors.push('Nombre requerido.')
       if (studentCode) seenCodes.add(studentCode)
+      if (normalizedName) seenNames.add(normalizedName)
       if (studentCode) {
         const existingStudent = await prisma.student.findFirst({
           where: { schoolId, studentCode },
@@ -512,6 +585,7 @@ export class StudentsService {
     if (validRows.length === 0) return { imported: 0, errors: [] }
 
     const course = await this.getCourseOrThrow(schoolId, courseId)
+    let nextListNumber = await this.getNextListNumber(schoolId, course)
     const codes = validRows.map((r) => r.studentCode).filter(Boolean) as string[]
     const existingByCode = codes.length > 0
       ? new Map((await prisma.student.findMany({
@@ -521,8 +595,9 @@ export class StudentsService {
       : new Map()
 
     const newStudents: { schoolId: string; studentCode: string; firstName: string; lastName: string; birthDate: Date; status: RecordStatus }[] = []
-    const enrollments: { schoolId: string; studentId: string; schoolYearId: string; gradeId: string; sectionId: string; status: EnrollmentStatus }[] = []
+    const enrollments: { schoolId: string; studentId: string; schoolYearId: string; gradeId: string; sectionId: string; status: EnrollmentStatus; listNumber: number }[] = []
     let imported = 0
+    const reusableStudentIds: string[] = []
     const errors: ImportStudentError[] = []
 
     for (const row of validRows) {
@@ -531,15 +606,7 @@ export class StudentsService {
       const { firstName, lastName } = splitFullName(row.fullName)
 
       if (existing) {
-        enrollments.push({
-          schoolId,
-          studentId: existing.id,
-          schoolYearId: course.schoolYearId,
-          gradeId: course.gradeId,
-          sectionId: course.sectionId,
-          status: 'ACTIVE',
-        })
-        imported++
+        reusableStudentIds.push(existing.id)
       } else {
         newStudents.push({
           schoolId,
@@ -566,13 +633,22 @@ export class StudentsService {
           gradeId: course.gradeId,
           sectionId: course.sectionId,
           status: EnrollmentStatus.ACTIVE,
+          listNumber: nextListNumber++,
         })
       }
-      imported += created.length
+    }
+
+    if (reusableStudentIds.length > 0) {
+      const reactivated = await Promise.all(reusableStudentIds.map((studentId) => prisma.enrollment.updateMany({
+        where: { schoolId, studentId, schoolYearId: course.schoolYearId, status: { not: 'ACTIVE' } },
+        data: { gradeId: course.gradeId, sectionId: course.sectionId, status: 'ACTIVE', listNumber: nextListNumber++, academicStatus: 'active', transferNotes: null },
+      })))
+      imported += reactivated.reduce((total, result) => total + result.count, 0)
     }
 
     if (enrollments.length > 0) {
-      await prisma.enrollment.createMany({ data: enrollments, skipDuplicates: true })
+      const created = await prisma.enrollment.createMany({ data: enrollments, skipDuplicates: true })
+      imported += created.count
       invalidateEnrollmentOptions(schoolId)
     }
 
@@ -607,6 +683,69 @@ export class StudentsService {
     })
     invalidateEnrollmentOptions(schoolId)
     return updated
+  }
+
+  async restoreStudentToCourse(schoolId: string, courseId: string, studentId: string) {
+    const course = await this.getCourseOrThrow(schoolId, courseId)
+    const enrollment = await prisma.enrollment.findFirst({
+      where: { schoolId, studentId, schoolYearId: course.schoolYearId, gradeId: course.gradeId, sectionId: course.sectionId, status: 'WITHDRAWN' },
+    })
+    if (!enrollment) throw new NotFoundException('Enrollment not found')
+    const updated = await prisma.enrollment.update({
+      where: { id: enrollment.id },
+      data: { status: 'ACTIVE', academicStatus: 'active', listNumber: await this.getNextListNumber(schoolId, course) },
+    })
+    invalidateEnrollmentOptions(schoolId)
+    return updated
+  }
+
+  async updateCourseStudentListNumber(schoolId: string, courseId: string, studentId: string, listNumber: number) {
+    const course = await this.getCourseOrThrow(schoolId, courseId)
+    const enrollments = await prisma.enrollment.findMany({
+      where: { schoolId, schoolYearId: course.schoolYearId, gradeId: course.gradeId, sectionId: course.sectionId, status: 'ACTIVE' },
+    })
+    const current = (enrollments ?? []).find((item) => item.studentId === studentId)
+    if (!current) throw new NotFoundException('Enrollment not found')
+    const occupied = (enrollments ?? []).find((item) => item.listNumber === listNumber)
+    await prisma.$transaction(async (tx) => {
+      await tx.enrollment.update({ where: { id: current.id }, data: { listNumber: null } })
+      if (occupied && occupied.id !== current.id) await tx.enrollment.update({ where: { id: occupied.id }, data: { listNumber: current.listNumber } })
+      await tx.enrollment.update({ where: { id: current.id }, data: { listNumber } })
+    })
+    return { listNumber }
+  }
+
+  async reorderCourseStudents(schoolId: string, courseId: string, studentIds: string[]) {
+    const course = await this.getCourseOrThrow(schoolId, courseId)
+    const enrollments = await prisma.enrollment.findMany({
+      where: { schoolId, schoolYearId: course.schoolYearId, gradeId: course.gradeId, sectionId: course.sectionId, status: 'ACTIVE' },
+      select: { id: true, studentId: true },
+    })
+    if ((enrollments ?? []).length !== studentIds.length || new Set(studentIds).size !== studentIds.length) {
+      throw new BadRequestException('La lista debe incluir una sola vez a todos los estudiantes activos.')
+    }
+    const byStudent = new Map((enrollments ?? []).map((item) => [item.studentId, item.id]))
+    if (studentIds.some((id) => !byStudent.has(id))) throw new BadRequestException('La lista contiene estudiantes que no pertenecen al curso.')
+    await prisma.$transaction(async (tx) => {
+      await Promise.all((enrollments ?? []).map((item) => tx.enrollment.update({ where: { id: item.id }, data: { listNumber: null } })))
+      await Promise.all(studentIds.map((id, index) => tx.enrollment.update({ where: { id: byStudent.get(id)! }, data: { listNumber: index + 1 } })))
+    })
+    return { updated: studentIds.length }
+  }
+
+  async deleteCourseStudentPermanently(schoolId: string, courseId: string, studentId: string) {
+    const course = await this.getCourseOrThrow(schoolId, courseId)
+    const enrollment = await prisma.enrollment.findFirst({
+      where: { schoolId, studentId, schoolYearId: course.schoolYearId, gradeId: course.gradeId, sectionId: course.sectionId },
+      include: { _count: { select: { attendanceDailies: true, attendanceClasses: true, gradesRecords: true, evaluationActivityGroupMembers: true, courseTeamMembers: true } } },
+    })
+    if (!enrollment) throw new NotFoundException('Enrollment not found')
+    const journalCount = await prisma.teacherJournalStudent.count({ where: { schoolId, studentId } })
+    const hasHistory = journalCount > 0 || Object.values(enrollment._count).some((count) => count > 0)
+    if (hasHistory) throw new BadRequestException('El estudiante tiene historial académico y solo puede retirarse del curso.')
+    await prisma.enrollment.delete({ where: { id: enrollment.id } })
+    invalidateEnrollmentOptions(schoolId)
+    return { deleted: true }
   }
 
   async transferStudentToCourse(

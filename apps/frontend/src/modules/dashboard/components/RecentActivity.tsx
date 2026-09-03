@@ -24,9 +24,9 @@ const icons = {
 /** Panel de actividad reciente del dashboard. */
 export function RecentActivity({ items }: RecentActivityProps) {
   return (
-    <section className="dashboard-warm-shadow rounded-3xl bg-card p-5 sm:p-6">
+    <section className="dashboard-warm-shadow rounded-3xl border border-border border-t-4 border-t-primary bg-card p-5 text-card-foreground sm:p-6">
       <div className="flex items-center justify-between gap-4 mb-4">
-        <h3 className="text-lg font-extrabold tracking-tight text-primary">Actividad reciente</h3>
+        <h3 className="text-lg font-extrabold tracking-tight text-foreground">Actividad reciente</h3>
         <Link
           to="/reportes"
           className="shrink-0 rounded-md text-xs font-semibold text-accent transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/20"
@@ -45,15 +45,17 @@ export function RecentActivity({ items }: RecentActivityProps) {
             const Icon = icons[item.kind] ?? FileText
 
             return (
-              <li key={item.id} className="flex items-start gap-3 rounded-xl p-2 -mx-2 transition-colors hover:bg-muted/70">
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-muted text-muted-foreground">
-                  <Icon className="size-[18px]" strokeWidth={2} />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-semibold text-foreground">{item.title}</p>
-                  <p className="truncate text-xs text-muted-foreground">{item.description}</p>
-                </div>
-                <span className="mt-1 shrink-0 text-[11px] text-muted-foreground">{item.relativeTime}</span>
+              <li key={item.id}>
+                <Link to={item.path} className="flex items-start gap-3 rounded-xl p-2 -mx-2 transition-colors hover:bg-muted/70">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-muted text-muted-foreground">
+                    <Icon className="size-[18px]" strokeWidth={2} />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                    <p className="truncate text-xs text-muted-foreground">{item.description}</p>
+                  </div>
+                  <span className="mt-1 shrink-0 text-[11px] text-muted-foreground">{item.relativeTime}</span>
+                </Link>
               </li>
             )
           })}

@@ -116,8 +116,8 @@ export async function deleteSectionSubjectPermanently(id: string, confirmation?:
   })
 }
 
-export async function getCourseTeams(sectionSubjectId: string): Promise<CourseTeam[]> {
-  return api.get<CourseTeam[]>(`/courses/section-subjects/${sectionSubjectId}/teams`)
+export async function getCourseTeams(sectionSubjectId: string, archived = false): Promise<CourseTeam[]> {
+  return api.get<CourseTeam[]>(`/courses/section-subjects/${sectionSubjectId}/teams${archived ? '?archived=true' : ''}`)
 }
 
 export async function createCourseTeam(
@@ -133,4 +133,12 @@ export async function updateCourseTeam(id: string, input: Partial<CourseTeamInpu
 
 export async function archiveCourseTeam(id: string): Promise<void> {
   await api.delete(`/courses/teams/${id}`)
+}
+
+export async function restoreCourseTeam(id: string): Promise<void> {
+  await api.post(`/courses/teams/${id}/restore`, {})
+}
+
+export async function deleteCourseTeamPermanently(id: string, confirmation: string): Promise<void> {
+  await api.delete(`/courses/teams/${id}/permanent?confirmation=${encodeURIComponent(confirmation)}`)
 }

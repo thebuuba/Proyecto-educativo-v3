@@ -12,15 +12,15 @@ export function Logo({ small = false }: { small?: boolean }) {
     <div className="flex items-center gap-3">
       <div
         className={`${small ? 'flex size-7 items-center justify-center rounded-lg' : 'flex size-8 items-center justify-center rounded-xl'} bg-primary`}
-        style={{ boxShadow: '0 3px 10px rgba(30,79,143,.28)' }}
+        style={{ boxShadow: '0 3px 10px rgba(74,162,227,.30)' }}
       >
-        <span className={small ? 'text-[10px] font-extrabold text-white' : 'text-[11px] font-extrabold text-white'}>
+        <span className={small ? 'text-[10px] font-extrabold text-primary-foreground' : 'text-[11px] font-extrabold text-primary-foreground'}>
           AB
         </span>
       </div>
       <div>
         <p className="text-sm font-extrabold leading-none text-[#111827]">Aula Base</p>
-        {!small ? <p className="mt-0.5 text-[10px] text-primary-hover">Sistema docente</p> : null}
+        {!small ? <p className="mt-0.5 text-[10px] text-muted-foreground">Sistema docente</p> : null}
       </div>
     </div>
   )
@@ -53,8 +53,8 @@ export function PromoLayout({ children }: { children: React.ReactNode }) {
             </Link>
             <Link
               to="/registro"
-              className="hidden items-center gap-1.5 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 sm:flex"
-              style={{ boxShadow: '0 3px 12px rgba(30,79,143,.25)' }}
+              className="hidden items-center gap-1.5 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground transition-all hover:bg-primary-hover sm:flex"
+              style={{ boxShadow: '0 3px 12px rgba(74,162,227,.28)' }}
             >
               Empezar gratis <ArrowRight size={14} />
             </Link>

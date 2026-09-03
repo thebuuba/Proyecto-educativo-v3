@@ -119,11 +119,13 @@ import { Modal } from '@/components/ui/Modal'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import { ActivityDescriptionEditor as StructuredActivityDescriptionEditor } from '@/modules/grading/components/ActivityDescriptionEditor'
+import type { CourseTeam } from '@/modules/courses/types'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
 import type {
   GradeCalculationConfig,
   GradeCellSaveState,
   GradeRecordRow,
+  EvaluatedInstrumentResult,
   GradingActivity,
   RecoveryScores,
   StudentGradeRow,
@@ -149,6 +151,7 @@ import { cn } from '@/utils/cn'
 
 type GradingBookProps = {
   students: StudentGradeRow[]
+  teams?: CourseTeam[]
   activities: GradingActivity[]
   records: GradeRecordRow[]
   recoveryScores: RecoveryScores
@@ -161,12 +164,14 @@ type GradingBookProps = {
   initialView?: MainView
   initialActivityAction?: 'create'
   initialActivityBlockId?: CompetencyBlockId
+  initialActivityId?: string
+  initialActivityMode?: 'view' | 'edit' | 'evaluate' | 'results'
   originReturnLabel?: string
   onReturnToOrigin?: () => void
   onAddActivity: (activity: Omit<GradingActivity, 'id'>) => Promise<GradingActivity>
   onUpdateActivity: (activity: GradingActivity) => Promise<GradingActivity>
   onDeleteActivity: (activityId: string) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
   onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => void
   loadFinalRecords: () => Promise<Map<CompetencyPeriodId, GradeRecordRow[]>>
   getActivitiesForPeriod: (periodId: CompetencyPeriodId) => GradingActivity[]
@@ -285,6 +290,7 @@ type ActivityDraft = {
   planningMoment: string
   observations: string
   activityType: '' | 'individual' | 'group'
+  teamIds: string[]
 }
 
 type ActivityDraftsByBlock = Partial<Record<CompetencyBlockId, ActivityDraft[]>>
@@ -330,10 +336,12 @@ const emptyActivityDraft: ActivityDraft = {
   planningMoment: '',
   observations: '',
   activityType: '',
+  teamIds: [],
 }
 
 export function GradingBook({
   students,
+  teams = [],
   activities,
   records,
   recoveryScores,
@@ -344,6 +352,8 @@ export function GradingBook({
   initialView = 'blocks',
   initialActivityAction,
   initialActivityBlockId,
+  initialActivityId,
+  initialActivityMode = 'view',
   originReturnLabel,
   onReturnToOrigin,
   onAddActivity,
@@ -362,7 +372,9 @@ export function GradingBook({
     ? initialActivityBlockId
       ? { type: 'activity-create', blockId: initialActivityBlockId }
       : { type: 'activity-hub' }
-    : null)
+    : initialActivityId
+      ? { type: 'activity', activityId: initialActivityId, initialTab: initialActivityMode === 'evaluate' ? 'evaluation' : initialActivityMode === 'results' ? 'results' : 'details' }
+      : null)
   const [activityCreateReturnView, setActivityCreateReturnView] = useState<DetailView | null>(() => initialActivityBlockId ? { type: 'activity-hub' } : null)
   const [showConfig, setShowConfig] = useState(false)
   const [infoActivity, setInfoActivity] = useState<GradingActivity | null>(null)
@@ -377,6 +389,7 @@ export function GradingBook({
   const [annualRetryKey, setAnnualRetryKey] = useState(0)
   const [activitySaveCompletion, setActivitySaveCompletion] = useState<ActivitySaveCompletion | null>(null)
   const handledInitialLaunch = useRef(initialLaunchKey)
+  const handledInitialEdit = useRef<string | null>(null)
   const previousInitialView = useRef(initialView)
 
   useEffect(() => {
@@ -399,6 +412,35 @@ export function GradingBook({
     }
     setDetailView({ type: 'activity-hub' })
   }, [initialActivityBlockId, initialLaunchKey])
+
+  useEffect(() => {
+    if (!initialActivityId || initialActivityMode !== 'edit' || handledInitialEdit.current === initialActivityId) return
+    const activity = activities.find((item) => item.id === initialActivityId)
+    if (!activity) return
+    handledInitialEdit.current = initialActivityId
+    setEditingActivityId(activity.id)
+    setActivityDraft({
+      name: activity.name,
+      maxScore: String(activity.maxScore),
+      competencyBlockId: activity.competencyBlockId,
+      date: activity.date ?? '',
+      description: activity.description ?? '',
+      studentRole: activity.studentRole ?? '',
+      teacherRole: activity.teacherRole ?? '',
+      instrumentType: activity.instrumentType ?? '',
+      instrumentId: activity.instrumentId,
+      evaluationTechnique: activity.evaluationTechnique ?? '',
+      instrumentCompleted: Boolean(activity.instrumentType),
+      instrumentFields: activity.instrumentCriteria ?? {},
+      resources: activity.resources ?? [],
+      planningMoment: activity.planningMoment ?? '',
+      observations: activity.observations ?? '',
+      activityType: activity.activityType ?? 'individual',
+      teamIds: activity.teamIds ?? [],
+    })
+    setActivityCreateReturnView({ type: 'activity', activityId: activity.id, initialTab: 'details' })
+    setDetailView({ type: 'activity-create', blockId: activity.competencyBlockId as CompetencyBlockId })
+  }, [activities, initialActivityId, initialActivityMode])
 
   const selectedBlock = detailView?.type === 'block'
     ? competencyBlocks.find((block) => block.id === detailView.blockId) ?? null
@@ -658,6 +700,7 @@ export function GradingBook({
       observations: activityDraft.observations.trim() || undefined,
       resources: activityDraft.resources,
       activityType,
+      teamIds: activityType === 'group' ? activityDraft.teamIds : [],
     }
 
     try {
@@ -693,6 +736,7 @@ export function GradingBook({
       planningMoment: activity.planningMoment ?? '',
       observations: activity.observations ?? '',
       activityType: activity.activityType ?? 'individual',
+      teamIds: activity.teamIds ?? [],
     })
     setActivityCreateReturnView(detailView?.type === 'block' ? { ...detailView, initialTab: 'activities' } : detailView)
     setDetailView({ type: 'activity-create', blockId: activity.competencyBlockId as CompetencyBlockId })
@@ -868,6 +912,7 @@ export function GradingBook({
         ) : detailView.type === 'activity-create' && selectedCreateBlock ? (
           <ActivityCreationView
             activityDraft={activityDraft}
+            teams={teams}
             hasDraft={Boolean(activityDraft.draftId && isMeaningfulActivityDraft(activityDraft)) && !editingActivityId}
             activities={activities.filter((activity) => activity.competencyBlockId === selectedCreateBlock.id)}
             block={selectedCreateBlock}
@@ -894,6 +939,10 @@ export function GradingBook({
             activity={selectedActivity}
             initialTab={detailView.type === 'activity' ? detailView.initialTab : undefined}
             onBack={() => {
+              if (initialActivityId && onReturnToOrigin) {
+                onReturnToOrigin()
+                return
+              }
               setDetailView({ type: 'block', blockId: selectedActivity.competencyBlockId as CompetencyBlockId })
             }}
             onEditActivity={editActivity}
@@ -1934,7 +1983,7 @@ function ActivityDetailView({
   initialTab?: ActivityDetailTab
   onBack: () => void
   onEditActivity: (activity: GradingActivity) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
   records: GradeRecordRow[]
   saving: boolean
   students: StudentGradeRow[]
@@ -1947,15 +1996,22 @@ function ActivityDetailView({
   const evaluatedCount = students.filter((student) => scoreForActivity(records, student.enrollmentId, activity.id)).length
   const activityStatus = activityEvaluationStatus(evaluatedCount, students.length)
   const currentRecord = selectedStudent ? scoreForActivity(records, selectedStudent.enrollmentId, activity.id) : null
-  const currentScore = currentRecord?.score ?? suggestedScoreForStudent(studentIndex, activity.maxScore)
   const rubricConfiguration = activityRubricConfiguration(activity)
+  const [levelSelections, setLevelSelections] = useState<Array<number | null>>([])
+  useEffect(() => {
+    const saved = currentRecord?.instrumentResult?.selections
+    setLevelSelections(saved?.length === rubricConfiguration.criteria.length
+      ? saved.map((value) => Number.isInteger(value) && value >= 0 && value < rubricConfiguration.levels.length ? value : null)
+      : rubricConfiguration.criteria.map(() => null))
+  }, [activity.id, currentRecord?.id, selectedStudent?.enrollmentId])
   const levelRows = rubricConfiguration.criteria.map((criterion, index) => {
-    const levelIndex = Math.min(rubricConfiguration.levels.length - 1, suggestedLevelIndex(index, currentScore, activity.maxScore))
+    const levelIndex = levelSelections[index] ?? null
     const highestLevel = rubricConfiguration.levels[0]?.points || 1
-    const selectedLevel = rubricConfiguration.levels[levelIndex]?.points || 0
-    return { criterion, levelIndex, points: Number((criterion.maximum * selectedLevel / highestLevel).toFixed(2)) }
+    const selectedLevel = levelIndex === null ? null : rubricConfiguration.levels[levelIndex]?.points ?? 0
+    return { criterion, levelIndex, points: selectedLevel === null ? null : Number((criterion.maximum * selectedLevel / highestLevel).toFixed(2)) }
   })
-  const totalRubricScore = Math.min(activity.maxScore, Number(levelRows.reduce((sum, row) => sum + row.points, 0).toFixed(2)))
+  const instrumentComplete = levelRows.length > 0 && levelRows.every((row) => row.levelIndex !== null)
+  const totalRubricScore = instrumentComplete ? Math.min(activity.maxScore, Number(levelRows.reduce((sum, row) => sum + (row.points ?? 0), 0).toFixed(2))) : null
   const distribution = gradeDistribution(records, students, activity)
 
   return (
@@ -2017,7 +2073,9 @@ function ActivityDetailView({
           currentRecord={currentRecord}
           levelRows={levelRows}
           levelLabels={rubricConfiguration.levels}
+          instrumentComplete={instrumentComplete}
           onSaveScore={onSaveScore}
+          onSelectLevel={(criterionIndex, levelIndex) => setLevelSelections((current) => rubricConfiguration.criteria.map((_, index) => index === criterionIndex ? levelIndex : current[index] ?? null))}
           saving={saving}
           selectedStudent={selectedStudent}
           setStudentIndex={setStudentIndex}
@@ -2071,7 +2129,9 @@ function ActivityEvaluationPanel({
   currentRecord,
   levelRows,
   levelLabels,
+  instrumentComplete,
   onSaveScore,
+  onSelectLevel,
   saving,
   selectedStudent,
   setStudentIndex,
@@ -2082,20 +2142,27 @@ function ActivityEvaluationPanel({
 }: {
   activity: GradingActivity
   currentRecord: GradeRecordRow | null
-  levelRows: Array<{ criterion: { title: string; description: string; maximum: number }; levelIndex: number; points: number }>
+  levelRows: Array<{ criterion: { title: string; description: string; maximum: number }; levelIndex: number | null; points: number | null }>
   levelLabels: Array<{ label: string; points: number }>
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
+  instrumentComplete: boolean
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
+  onSelectLevel: (criterionIndex: number, levelIndex: number) => void
   saving: boolean
   selectedStudent: StudentGradeRow | null
   setStudentIndex: Dispatch<SetStateAction<number>>
   setTab: Dispatch<SetStateAction<ActivityDetailTab>>
   studentIndex: number
   students: StudentGradeRow[]
-  totalRubricScore: number
+  totalRubricScore: number | null
 }) {
   const saveCurrentScore = () => {
-    if (!selectedStudent) return
-    onSaveScore(selectedStudent.enrollmentId, activity, String(totalRubricScore))
+    if (!selectedStudent || totalRubricScore === null) return
+    onSaveScore(selectedStudent.enrollmentId, activity, String(totalRubricScore), {
+      instrumentType: activity.instrumentType ?? '',
+      selections: levelRows.map((row) => row.levelIndex!),
+      criterionScores: levelRows.map((row) => row.points!),
+      completedAt: new Date().toISOString(),
+    })
   }
 
   return (
@@ -2138,6 +2205,8 @@ function ActivityEvaluationPanel({
           </p>
         </div>
 
+        {currentRecord && !currentRecord.instrumentResult ? <p className="border-b border-amber-200 bg-amber-50 px-4 py-3 text-xs font-bold text-amber-800">Esta calificación histórica conserva el total, pero no el desglose por criterio. Selecciona los niveles para registrar su evidencia evaluada.</p> : null}
+
         <div className={cn('overflow-x-auto', instrumentTypographyClass(activity.instrumentType, activity.instrumentCriteria ?? {}))}>
           <table className="min-w-[52rem] w-full text-sm">
             <thead className="bg-muted/35 text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
@@ -2165,15 +2234,15 @@ function ActivityEvaluationPanel({
                   </td>
                   {levelLabels.map((level, levelIndex) => (
                     <td key={level.label} className="border-r border-border px-4 py-4 text-center">
-                      <span className={cn(
-                        'inline-flex size-5 items-center justify-center rounded-full border-2',
+                      <button type="button" aria-label={`${row.criterion.title}: ${level.label}`} aria-pressed={row.levelIndex === levelIndex} onClick={() => onSelectLevel(criterionIndex, levelIndex)} className={cn(
+                        'inline-flex size-11 items-center justify-center rounded-full border-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                         row.levelIndex === levelIndex ? 'border-primary bg-primary shadow-[inset_0_0_0_4px_white]' : 'border-border bg-card',
                       )} />
                     </td>
                   ))}
                   <td className="px-4 py-4 text-center">
                     <span className="inline-flex h-10 min-w-20 items-center justify-center rounded-lg border border-border bg-card px-3 font-black text-primary">
-                      {formatGrade(row.points)} / {formatGrade(row.criterion.maximum)}
+                      {row.points === null ? '—' : formatGrade(row.points)} / {formatGrade(row.criterion.maximum)}
                     </span>
                   </td>
                 </tr>
@@ -2194,19 +2263,19 @@ function ActivityEvaluationPanel({
           </p>
           <div className="flex items-center gap-4">
             <p className="text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Puntaje total</p>
-            <p className="text-3xl font-black text-primary">{formatGrade(totalRubricScore)} <span className="text-base text-muted-foreground">/ {activity.maxScore} pts</span></p>
+            <p className="text-3xl font-black text-primary">{totalRubricScore === null ? currentRecord?.score ?? '—' : formatGrade(totalRubricScore)} <span className="text-base text-muted-foreground">/ {activity.maxScore} pts</span></p>
           </div>
         </div>
       </div>
 
       <div className="flex justify-end gap-2">
-        <Button disabled={saving} onClick={() => {
+        <Button disabled={saving || !instrumentComplete} onClick={() => {
           saveCurrentScore()
           setStudentIndex((current) => Math.min(students.length - 1, current + 1))
         }}>
           Guardar y siguiente
         </Button>
-        <Button disabled={saving} variant="outline" onClick={() => {
+        <Button disabled={saving || !instrumentComplete} variant="outline" onClick={() => {
           saveCurrentScore()
           setTab('results')
         }}>
@@ -2321,7 +2390,7 @@ export function LegacyActivityDetailView({
   config: GradeCalculationConfig
   onBack: () => void
   onEditActivity: (activity: GradingActivity) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
   records: GradeRecordRow[]
   cellSaveStates: Record<string, GradeCellSaveState>
   saving: boolean
@@ -3473,6 +3542,7 @@ type ActivityCreationStage = 'activity' | 'instrument' | 'review'
 
 function ActivityCreationView(props: {
   activityDraft: ActivityDraft
+  teams: CourseTeam[]
   hasDraft: boolean
   activities: GradingActivity[]
   block: (typeof competencyBlocks)[number]
@@ -3487,7 +3557,7 @@ function ActivityCreationView(props: {
   onSaveDraft: () => void
   saving: boolean
 }) {
-  const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving } = props
+  const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving, teams } = props
   const [stage, setStage] = useState<ActivityCreationStage>('activity')
   const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
   const { clearHighlight, highlightTarget, showHighlight } = useTransientActivityHighlight()
@@ -3600,7 +3670,7 @@ function ActivityCreationView(props: {
           </nav>
 
           {stage === 'activity' ? (
-            <ActivityDataSections activityDraft={activityDraft} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} />
+            <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} />
           ) : null}
 
           {stage === 'instrument' ? (
@@ -3666,8 +3736,9 @@ const evaluationTechniqueOptions = [
   ['prueba-escrita', 'Prueba escrita'], ['autoevaluacion', 'Autoevaluación'], ['coevaluacion', 'Coevaluación'], ['heteroevaluacion', 'Heteroevaluación'],
 ] as const
 
-function ActivityDataSections({ activityDraft, accent, highlightTarget, onChangeDraft }: {
+function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft }: {
   activityDraft: ActivityDraft
+  teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
   highlightTarget: ActivityCompletionTarget | null
   onChangeDraft: (draft: ActivityDraft) => void
@@ -3704,6 +3775,8 @@ function ActivityDataSections({ activityDraft, accent, highlightTarget, onChange
             </button>
           ))}
         </div>
+
+        {activityDraft.activityType === 'group' ? <div className="mt-4 rounded-xl border border-border bg-muted/20 p-4"><div className="flex flex-wrap items-center justify-between gap-2"><div><p className="text-sm font-black">Equipos de esta asignatura</p><p className="mt-1 text-xs text-muted-foreground">Reutiliza los equipos existentes sin volver a organizar estudiantes.</p></div><span className="text-xs font-bold text-primary">{(activityDraft.teamIds ?? []).length} seleccionados</span></div>{teams.length ? <div className="mt-3 grid gap-2 sm:grid-cols-2">{teams.map((team) => { const selected = (activityDraft.teamIds ?? []).includes(team.id); return <label key={team.id} className={cn('flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border px-3 transition', selected ? cn(accent.card, accent.text) : 'border-border bg-card hover:border-primary/40')}><input type="checkbox" checked={selected} onChange={() => onChangeDraft({ ...activityDraft, teamIds: selected ? (activityDraft.teamIds ?? []).filter((id) => id !== team.id) : [...(activityDraft.teamIds ?? []), team.id] })} className="size-4 rounded accent-primary" /><span className="grid size-8 place-items-center rounded-full text-xs font-black text-white" style={{ backgroundColor: team.color }}>{team.name.charAt(0)}</span><span className="min-w-0 flex-1"><span className="block truncate text-sm font-black">{team.name}</span><span className="block text-[10px] text-muted-foreground">{team.members.length} integrantes · {team.teamType === 'permanent' ? 'Permanente' : 'Temporal'}</span></span></label>})}</div> : <p className="mt-3 rounded-xl border border-dashed border-border p-4 text-center text-xs text-muted-foreground">No hay equipos activos en esta asignatura. Créelos desde la pestaña Equipos.</p>}</div> : null}
       </CreationFormSection>
 
       <CreationFormSection icon={<Box className="size-4" />} number={5} title="Recursos y materiales" optional accent={accent}>
@@ -6649,7 +6722,8 @@ function activityMomentTitle(value?: string) {
   return 'Sin definir'
 }
 
-function activityRubricConfiguration(activity: GradingActivity) {
+// eslint-disable-next-line react-refresh/only-export-components
+export function activityRubricConfiguration(activity: GradingActivity) {
   const fields = activity.instrumentCriteria ?? {}
   if (activity.instrumentType === 'escala') {
     const criteriaCount = Number(fields['escala:meta:criteriaCount']) || inferInstrumentCount(fields, 'escala', 'criterion', 5)
@@ -6690,6 +6764,20 @@ function activityRubricConfiguration(activity: GradingActivity) {
       ],
     }
   }
+  if (activity.instrumentType === 'lista-cotejo') {
+    const criteriaCount = Number(fields['lista-cotejo:meta:criteriaCount']) || inferInstrumentCount(fields, 'lista-cotejo', 'criterion', 0)
+    return {
+      criteria: Array.from({ length: criteriaCount }, (_, index) => ({
+        title: fields[instrumentFieldKey('lista-cotejo', 'criterion', index)] || `Criterio ${index + 1}`,
+        description: 'Criterio configurado en la lista de cotejo de la actividad.',
+        maximum: Number(fields[instrumentFieldKey('lista-cotejo', 'points', index)] || 0),
+      })),
+      levels: [
+        { label: fields['lista-cotejo:meta:yesLabel'] || 'Sí', points: 1 },
+        { label: fields['lista-cotejo:meta:noLabel'] || 'No', points: 0 },
+      ],
+    }
+  }
   if (activity.instrumentType !== 'rubrica') {
     const criteriaPoints = distributeScore(activity.maxScore, defaultEvaluationRubricCriteria.length)
     return {
@@ -6709,19 +6797,6 @@ function activityRubricConfiguration(activity: GradingActivity) {
     return { label: fields[instrumentFieldKey('rubrica', 'level-name', score)] || rubricDefaultLevelNames(levelCount)[index], points: Number(fields[instrumentFieldKey('rubrica', 'level-points', score)] || defaultRubricLevelPoints(criteria[0]?.maximum || activity.maxScore, levelCount)[index]) }
   })
   return { criteria, levels }
-}
-
-function suggestedScoreForStudent(index: number, maxScore: number) {
-  const ratios = [0.75, 0.9, 0.8, 0.725, 0.85]
-  return Number((maxScore * (ratios[index % ratios.length] ?? 0.75)).toFixed(2))
-}
-
-function suggestedLevelIndex(criterionIndex: number, score: number, maxScore: number) {
-  const ratio = maxScore > 0 ? score / maxScore : 0
-  if (ratio >= 0.9) return criterionIndex === 0 ? 0 : 1
-  if (ratio >= 0.75) return [1, 0, 1, 2][criterionIndex] ?? 1
-  if (ratio >= 0.6) return [2, 1, 2, 3][criterionIndex] ?? 2
-  return [3, 2, 3, 4][criterionIndex] ?? 3
 }
 
 function studentInitials(student: StudentGradeRow | null) {
@@ -6922,11 +6997,11 @@ function blockSummaryDoc(payload: BlockSummaryExport) {
     <title>Resumen de bloques</title>
     <style>
       body { font-family: Arial, sans-serif; color: #111827; }
-      h1 { color: #1f4e95; font-size: 24px; margin-bottom: 4px; }
+      h1 { color: #272320; font-size: 24px; margin-bottom: 4px; }
       p { margin: 4px 0; }
       table { border-collapse: collapse; width: 100%; margin-top: 18px; }
       th, td { border: 1px solid #d9e2ec; padding: 8px; font-size: 12px; }
-      th { background: #eef4ff; color: #1f4e95; text-align: left; }
+      th { background: #DDEEF9; color: #272320; text-align: left; }
     </style>
   </head>
   <body>

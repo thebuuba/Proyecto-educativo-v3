@@ -105,6 +105,18 @@ export async function getClassAttendanceForMonth(
   return result
 }
 
+export type ClassAttendanceHistoryRecord = {
+  id: string
+  enrollmentId: string
+  attendanceDate: string
+  status: AttendanceStatus
+  notes?: string | null
+}
+
+export function getClassAttendanceHistory(sectionSubjectId: string): Promise<ClassAttendanceHistoryRecord[]> {
+  return api.get(`/attendance/class-history?${new URLSearchParams({ sectionSubjectId })}`)
+}
+
 /** Crea o actualiza un registro de asistencia (upsert) */
 export async function upsertAttendance(input: UpsertAttendanceInput): Promise<{ id: string }> {
   return api.post<{ id: string }>('/attendance/upsert', input)

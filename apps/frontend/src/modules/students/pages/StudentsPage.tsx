@@ -50,10 +50,15 @@ type FormMode = 'create' | 'edit' | 'transfer'
 
 const enrollmentCoursesCache = createScopedTtlCache<EnrollmentCourse[]>(60_000)
 
-export function StudentsPage() {
+export function StudentsPage({ initialCourseId, initialAction, embedded = false, onBack }: {
+  initialCourseId?: string
+  initialAction?: 'new' | 'import'
+  embedded?: boolean
+  onBack?: () => void
+} = {}) {
   const [searchParams, setSearchParams] = useSearchParams()
-  const [requestedCourseId] = useState(() => searchParams.get('courseId'))
-  const [requestedAction] = useState(() => searchParams.get('action'))
+  const [requestedCourseId] = useState(() => initialCourseId ?? searchParams.get('courseId'))
+  const [requestedAction] = useState(() => initialAction ?? searchParams.get('action'))
   const { appUser, hasPermission, hasRole } = useAuth()
   const cacheScope = appUser ? `${appUser.id}:${appUser.schoolId}` : null
   const cachedCourses = enrollmentCoursesCache.read(cacheScope)
@@ -104,7 +109,7 @@ export function StudentsPage() {
         setLoadingStudents(true)
         if (requestedAction === 'new') setIsFormOpen(true)
         if (requestedAction === 'import') setImportModalOpen(true)
-        setSearchParams({}, { replace: true })
+        if (!embedded) setSearchParams({}, { replace: true })
       }
     }
 
@@ -138,7 +143,7 @@ export function StudentsPage() {
     return () => {
       active = false
     }
-  }, [cacheScope, requestedAction, requestedCourseId, setSearchParams])
+  }, [cacheScope, embedded, requestedAction, requestedCourseId, setSearchParams])
 
   useEffect(() => {
     let active = true
@@ -350,7 +355,7 @@ export function StudentsPage() {
 
   return (
     <section className="w-full min-w-0 space-y-5">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      {!embedded ? <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h1 className="text-3xl font-bold leading-none text-primary sm:text-4xl">
             Matrícula
@@ -377,12 +382,12 @@ export function StudentsPage() {
             ))}
           </Select>
         </label>
-      </div>
+      </div> : null}
 
       <FeedbackMessage tone="error" message={actionError} />
       <FeedbackMessage tone="success" message={actionSuccess} />
 
-      {!loadingCourses && courses.length > 0 ? <EnrollmentFlowSteps hasSelectedCourse={Boolean(selectedCourse)} /> : null}
+      {!embedded && !loadingCourses && courses.length > 0 ? <EnrollmentFlowSteps hasSelectedCourse={Boolean(selectedCourse)} /> : null}
 
       {loadingCourses ? (
         <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-border bg-card text-sm font-medium text-muted-foreground">
@@ -449,10 +454,10 @@ export function StudentsPage() {
           <button
             type="button"
             className="inline-flex w-fit items-center gap-2 rounded-lg text-sm font-bold text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            onClick={() => selectCourse('')}
+            onClick={() => embedded ? onBack?.() : selectCourse('')}
           >
             <ArrowLeft className="size-4" />
-            Volver a cursos disponibles
+            {embedded ? 'Volver al curso' : 'Volver a cursos disponibles'}
           </button>
 
           <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
@@ -465,7 +470,7 @@ export function StudentsPage() {
                   <div className="min-w-0">
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary/70">Curso seleccionado</p>
                     <h2 className="mt-1 break-words text-2xl font-extrabold tracking-tight text-primary">
-                      {selectedCourse.gradeName} {selectedCourse.sectionName} · {selectedCourse.subjectName}
+                      {selectedCourse.gradeName} {selectedCourse.sectionName}
                     </h2>
                     <p className="mt-1 text-sm font-medium text-muted-foreground">
                       Año escolar {selectedCourse.schoolYearName}
@@ -536,6 +541,8 @@ export function StudentsPage() {
                 onEdit={openEditForm}
                 onDeactivate={setDeactivateTarget}
                 onTransfer={openTransferForm}
+                onAdd={openCreateForm}
+                onImport={() => setImportModalOpen(true)}
               />
             ) : (
               <div className="grid min-h-[310px] gap-8 px-6 py-9 md:grid-cols-[1.15fr_0.85fr] md:px-9">

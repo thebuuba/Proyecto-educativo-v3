@@ -387,6 +387,9 @@ export type Database = {
           status: Database["public"]["Enums"]["record_status"]
           team_type: string
           updated_at: string
+          validity_period: string | null
+          validity_reference_id: string | null
+          validity_type: string
         }
         Insert: {
           color?: string
@@ -406,6 +409,9 @@ export type Database = {
           status?: Database["public"]["Enums"]["record_status"]
           team_type?: string
           updated_at?: string
+          validity_period?: string | null
+          validity_reference_id?: string | null
+          validity_type?: string
         }
         Update: {
           color?: string
@@ -425,6 +431,9 @@ export type Database = {
           status?: Database["public"]["Enums"]["record_status"]
           team_type?: string
           updated_at?: string
+          validity_period?: string | null
+          validity_reference_id?: string | null
+          validity_type?: string
         }
         Relationships: [
           {
@@ -773,6 +782,7 @@ export type Database = {
           grade_id: string
           id: string
           is_repeating: boolean
+          list_number: number | null
           modality_id: string | null
           promotion_status: string | null
           school_id: string
@@ -794,6 +804,7 @@ export type Database = {
           grade_id: string
           id?: string
           is_repeating?: boolean
+          list_number?: number | null
           modality_id?: string | null
           promotion_status?: string | null
           school_id?: string
@@ -815,6 +826,7 @@ export type Database = {
           grade_id?: string
           id?: string
           is_repeating?: boolean
+          list_number?: number | null
           modality_id?: string | null
           promotion_status?: string | null
           school_id?: string
@@ -1144,6 +1156,7 @@ export type Database = {
       evaluation_activity_groups: {
         Row: {
           activity_id: string
+          course_team_id: string | null
           created_at: string
           id: string
           name: string
@@ -1155,6 +1168,7 @@ export type Database = {
         }
         Insert: {
           activity_id: string
+          course_team_id?: string | null
           created_at?: string
           id?: string
           name: string
@@ -1166,6 +1180,7 @@ export type Database = {
         }
         Update: {
           activity_id?: string
+          course_team_id?: string | null
           created_at?: string
           id?: string
           name?: string
@@ -1181,6 +1196,13 @@ export type Database = {
             columns: ["activity_id"]
             isOneToOne: false
             referencedRelation: "evaluation_activities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "evaluation_activity_groups_course_team_id_fkey"
+            columns: ["course_team_id"]
+            isOneToOne: false
+            referencedRelation: "course_teams"
             referencedColumns: ["id"]
           },
           {
@@ -1320,6 +1342,7 @@ export type Database = {
           created_at: string
           enrollment_id: string
           evaluation_activity_id: string | null
+          instrument_result: Json | null
           id: string
           max_score: number
           recorded_by: string | null
@@ -1338,6 +1361,7 @@ export type Database = {
           created_at?: string
           enrollment_id: string
           evaluation_activity_id?: string | null
+          instrument_result?: Json | null
           id?: string
           max_score?: number
           recorded_by?: string | null
@@ -1356,6 +1380,7 @@ export type Database = {
           created_at?: string
           enrollment_id?: string
           evaluation_activity_id?: string | null
+          instrument_result?: Json | null
           id?: string
           max_score?: number
           recorded_by?: string | null
@@ -2451,6 +2476,75 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      teacher_journal_entries: {
+        Row: {
+          academic_period_id: string | null
+          content: string
+          created_at: string
+          created_by: string
+          entry_type: string
+          follow_up_date: string | null
+          follow_up_status: string
+          id: string
+          occurred_at: string
+          requires_follow_up: boolean
+          school_id: string
+          school_year_id: string | null
+          section_id: string | null
+          section_subject_id: string | null
+          status: Database["public"]["Enums"]["record_status"]
+          tags: string[]
+          title: string | null
+          updated_at: string
+        }
+        Insert: {
+          academic_period_id?: string | null
+          content: string
+          created_at?: string
+          created_by: string
+          entry_type: string
+          follow_up_date?: string | null
+          follow_up_status?: string
+          id?: string
+          occurred_at?: string
+          requires_follow_up?: boolean
+          school_id?: string
+          school_year_id?: string | null
+          section_id?: string | null
+          section_subject_id?: string | null
+          status?: Database["public"]["Enums"]["record_status"]
+          tags?: string[]
+          title?: string | null
+          updated_at?: string
+        }
+        Update: {
+          academic_period_id?: string | null
+          content?: string
+          created_at?: string
+          created_by?: string
+          entry_type?: string
+          follow_up_date?: string | null
+          follow_up_status?: string
+          id?: string
+          occurred_at?: string
+          requires_follow_up?: boolean
+          school_id?: string
+          school_year_id?: string | null
+          section_id?: string | null
+          section_subject_id?: string | null
+          status?: Database["public"]["Enums"]["record_status"]
+          tags?: string[]
+          title?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      teacher_journal_students: {
+        Row: { created_at: string; entry_id: string; school_id: string; student_id: string }
+        Insert: { created_at?: string; entry_id: string; school_id?: string; student_id: string }
+        Update: { created_at?: string; entry_id?: string; school_id?: string; student_id?: string }
+        Relationships: []
       }
       teachers: {
         Row: {

@@ -3,13 +3,17 @@
  * asistencia semanal, tareas pendientes, actividad reciente y sugerencias.
  */
 
+import { RefreshCw } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 import { ErrorState } from '@/components/ui'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
 import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
+import { BarChart } from '@/modules/dashboard/components/BarChart'
+import { ChartPanel } from '@/modules/dashboard/components/ChartPanel'
 import { InitialSetupChecklist } from '@/modules/dashboard/components/InitialSetupChecklist'
+import { LineChart } from '@/modules/dashboard/components/LineChart'
 import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
 import { SmartSuggestion } from '@/modules/dashboard/components/SmartSuggestion'
 import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
@@ -44,6 +48,7 @@ export function DashboardPage() {
     actionLoading,
     addTask,
     completeTask,
+    refetch,
   } = useDashboard()
 
   const handleStartClass = (item: DashboardClass) => {
@@ -70,7 +75,7 @@ export function DashboardPage() {
     navigate(`/planificaciones?${params.toString()}`)
   }
 
-  if (loading) {
+  if (loading && !data) {
     return (
       <div className="w-full min-w-0">
         <PageSkeleton />
@@ -87,11 +92,14 @@ export function DashboardPage() {
   }
 
   const hasAgenda = data.todayAgenda.length > 0
-  const hasTasks = data.tasks.length > 0
+  const hasWeeklyAttendance = data.weeklyAttendance.days.length > 0
+  const canManageOperations = data.view === 'management' || data.view === 'teacher'
+  const hasTasks = canManageOperations
   const hasRecentActivity = data.recentActivity.length > 0
+  const hasOperationalBlocks = hasAgenda || hasWeeklyAttendance || hasTasks || hasRecentActivity
 
   return (
-    <div className="app-content-frame teacher-dashboard space-y-5">
+    <div className="w-full min-w-0 space-y-6">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-baseline gap-3 flex-wrap">
           <h1 className="text-2xl lg:text-[28px] font-bold tracking-tight text-foreground">
@@ -100,12 +108,21 @@ export function DashboardPage() {
             <span className="text-accent">{data.context.firstName}</span>
           </h1>
           <span className="text-sm text-muted-foreground">
-            <span className="hidden sm:inline">· </span>
-            {formatTodayDate()}
+            · {formatTodayDate()}
           </span>
         </div>
 
         <div className="flex items-center gap-2 text-xs">
+          <button
+            type="button"
+            onClick={() => void refetch()}
+            disabled={loading}
+            className="inline-flex size-7 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground disabled:opacity-50"
+            aria-label="Actualizar inicio"
+            title="Actualizar inicio"
+          >
+            <RefreshCw className={`size-3.5 ${loading ? 'animate-spin' : ''}`} />
+          </button>
           <span className="inline-flex h-7 items-center rounded-full border border-border bg-card px-3 font-semibold text-muted-foreground">
             {data.context.schoolYearName}
           </span>
@@ -122,50 +139,76 @@ export function DashboardPage() {
         </div>
       )}
 
-      <div className="dashboard-priority-grid grid gap-5">
-        <div className="dashboard-day-status dashboard-enter" style={{ animationDuration: '420ms' }}>
-          <DashboardHero
-            nextClass={data.nextClass}
-            onStartClass={handleStartClass}
-            onViewPlanning={handleViewPlanning}
-          />
-        </div>
-
-        <div className="dashboard-setup-slot dashboard-enter" style={{ animationDelay: '50ms', animationDuration: '380ms' }}>
-          <InitialSetupChecklist progress={data.setupProgress} />
-        </div>
+      <div className="dashboard-enter" style={{ animationDuration: '520ms' }}>
+        <DashboardHero
+          nextClass={data.nextClass}
+          onStartClass={handleStartClass}
+          onViewPlanning={handleViewPlanning}
+          canManageClass={canManageOperations}
+        />
       </div>
 
-      <div className="grid gap-5 lg:grid-cols-12">
-        {hasAgenda ? (
-          <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
-            <TodayAgenda items={data.todayAgenda} />
-          </div>
-        ) : null}
+      {data.view === 'management' ? (
+        <div className="dashboard-enter" style={{ animationDelay: '60ms', animationDuration: '460ms' }}>
+          <InitialSetupChecklist progress={data.setupProgress} />
+        </div>
+      ) : null}
 
-        <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-5'].join(' ')}>
-          <div className={['grid gap-5', hasTasks ? 'md:grid-cols-2' : ''].join(' ')}>
-            <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
-              <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
+      {data.view === 'teacher' && data.teacherAnalytics ? (
+        <section className="grid gap-6 lg:grid-cols-2" aria-label="Resumen académico del docente">
+          <ChartPanel
+            title="Rendimiento por período"
+            description={`${data.teacherAnalytics.gradedRecords} calificaciones publicadas`}
+            value={data.teacherAnalytics.average === null ? '—' : `${data.teacherAnalytics.average}%`}
+          >
+            <LineChart data={data.teacherAnalytics.performanceByPeriod} />
+          </ChartPanel>
+          <ChartPanel
+            title="Promedio por asignatura"
+            description="Resultados de tus cursos en el año escolar actual"
+            value={data.teacherAnalytics.performanceBySubject.length ? `${data.teacherAnalytics.performanceBySubject.length} asignaturas` : '—'}
+          >
+            <BarChart data={data.teacherAnalytics.performanceBySubject} />
+          </ChartPanel>
+        </section>
+      ) : null}
+
+      {hasOperationalBlocks ? (
+        <div className="grid lg:grid-cols-12 gap-6">
+          {hasAgenda ? (
+            <div className="dashboard-enter lg:col-span-5" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
+              <TodayAgenda items={data.todayAgenda} />
             </div>
-            {hasTasks ? (
-              <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
-                <DashboardTasks
-                  tasks={data.tasks}
-                  loading={actionLoading}
-                  onAddTask={addTask}
-                  onCompleteTask={completeTask}
-                />
+          ) : null}
+
+          <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-6'].join(' ')}>
+            {hasWeeklyAttendance || hasTasks ? (
+              <div className="grid md:grid-cols-2 gap-6">
+                {hasWeeklyAttendance ? (
+                  <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
+                    <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
+                  </div>
+                ) : null}
+                {hasTasks ? (
+                  <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
+                    <DashboardTasks
+                      tasks={data.tasks}
+                      loading={actionLoading}
+                      onAddTask={addTask}
+                      onCompleteTask={completeTask}
+                    />
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+            {hasRecentActivity ? (
+              <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
+                <RecentActivity items={data.recentActivity} />
               </div>
             ) : null}
           </div>
-          {hasRecentActivity ? (
-            <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
-              <RecentActivity items={data.recentActivity} />
-            </div>
-          ) : null}
         </div>
-      </div>
+      ) : null}
 
       <div className="dashboard-enter" style={{ animationDelay: '240ms', animationDuration: '280ms' }}>
         <SmartSuggestion suggestion={data.smartSuggestion} />

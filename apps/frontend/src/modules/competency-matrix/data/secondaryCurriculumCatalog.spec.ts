@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
 import {
+  curriculumEducationLevels,
   findCurriculumSubject,
+  getCurriculumCycle,
   getCurriculumForGrade,
   secondaryGradeFromCourse,
   secondaryGradeFromName,
@@ -10,6 +12,13 @@ import {
 } from './secondaryCurriculumCatalog'
 
 describe('catálogo curricular de secundaria', () => {
+  it('separa los niveles y sus ciclos sin mezclar grados', () => {
+    expect(curriculumEducationLevels.map((level) => level.id)).toEqual(['primary', 'secondary'])
+    expect(getCurriculumCycle('primary', 'first').grades).toEqual([1, 2, 3])
+    expect(getCurriculumCycle('secondary', 'second').grades).toEqual([4, 5, 6])
+    expect(curriculumEducationLevels.find((level) => level.id === 'primary')?.available).toBe(false)
+  })
+
   it('mantiene los seis grados en orden y dentro de su ciclo', () => {
     expect(secondaryGrades.map((item) => item.grade)).toEqual([1, 2, 3, 4, 5, 6])
     expect(secondaryGrades.map((item) => item.cycle)).toEqual([

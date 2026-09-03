@@ -10,7 +10,7 @@ import { cn } from '@/utils/cn'
 /** Clases de color para cada tono disponible. */
 const toneClasses: Record<DashboardTone, string> = {
   amber: 'bg-warning/14 text-warning ring-warning/25',
-  cyan: 'bg-accent/16 text-accent-foreground ring-accent/30',
+  cyan: 'bg-accent/12 text-accent ring-accent/25',
   emerald: 'bg-success/12 text-success ring-success/20',
   indigo: 'bg-primary/10 text-primary ring-primary/15',
 }

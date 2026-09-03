@@ -7,9 +7,9 @@ const mocks = vi.hoisted(() => ({
     $transaction: vi.fn(),
     sectionSubject: { findFirst: vi.fn(), findMany: vi.fn() },
     grade: { findMany: vi.fn() },
-    section: { findMany: vi.fn() },
+    section: { findFirst: vi.fn(), findMany: vi.fn() },
     subject: { findMany: vi.fn() },
-    schoolYear: { findMany: vi.fn() },
+    schoolYear: { findFirst: vi.fn(), findMany: vi.fn() },
     enrollment: {
       groupBy: vi.fn(),
       create: vi.fn(),
@@ -17,8 +17,11 @@ const mocks = vi.hoisted(() => ({
       findFirst: vi.fn(),
       findMany: vi.fn(),
       update: vi.fn(),
+      updateMany: vi.fn(),
+      upsert: vi.fn(),
     },
     student: { create: vi.fn(), createMany: vi.fn(), findFirst: vi.fn(), findMany: vi.fn() },
+    teacherJournalStudent: { findMany: vi.fn(), count: vi.fn() },
     studentGuardian: { findMany: vi.fn() },
     guardianNotification: { createMany: vi.fn() },
   },
@@ -62,9 +65,11 @@ describe('StudentsService course enrollment', () => {
     mocks.prisma.$transaction.mockImplementation((callback) =>
       callback({
         student: { create: mocks.prisma.student.create },
-        enrollment: { create: mocks.prisma.enrollment.create },
+        enrollment: { upsert: mocks.prisma.enrollment.upsert },
       }),
     )
+    mocks.prisma.teacherJournalStudent.findMany.mockResolvedValue([])
+    mocks.prisma.teacherJournalStudent.count.mockResolvedValue(0)
     mocks.prisma.grade.findMany.mockResolvedValue([
       { id: 'grade-1', name: '3ro Secundaria', level: 'Nivel Secundario' },
     ])
@@ -82,7 +87,7 @@ describe('StudentsService course enrollment', () => {
   it('lists courses available for enrollment with student counts', async () => {
     mocks.prisma.sectionSubject.findMany.mockResolvedValue([
       {
-        id: 'course-1',
+        id: 'section-1',
         schoolYearId: 'year-1',
         gradeId: 'grade-1',
         sectionId: 'section-1',
@@ -106,7 +111,7 @@ describe('StudentsService course enrollment', () => {
 
     expect(result).toEqual([
       expect.objectContaining({
-        id: 'course-1',
+        id: 'section-1',
         label: '3ro Secundaria A - Lengua Española - 2026-2027',
         studentCount: 2,
       }),
@@ -116,7 +121,7 @@ describe('StudentsService course enrollment', () => {
   it('groups multiple subjects from the same section into one enrollment course', async () => {
     mocks.prisma.sectionSubject.findMany.mockResolvedValue([
       {
-        id: 'course-1',
+        id: 'section-1',
         schoolYearId: 'year-1',
         gradeId: 'grade-1',
         sectionId: 'section-1',
@@ -144,7 +149,7 @@ describe('StudentsService course enrollment', () => {
 
     expect(result).toHaveLength(1)
     expect(result[0]).toEqual(expect.objectContaining({
-      id: 'course-1',
+      id: 'section-1',
       label: '3ro Secundaria A - 2 asignaturas - 2026-2027',
       subjectName: '2 asignaturas',
       subjectCount: 2,
@@ -159,7 +164,7 @@ describe('StudentsService course enrollment', () => {
   it('starts all enrollment course lookups before waiting for any result', async () => {
     mocks.prisma.sectionSubject.findMany.mockResolvedValue([
       {
-        id: 'course-1',
+        id: 'section-1',
         schoolYearId: 'year-1',
         gradeId: 'grade-1',
         sectionId: 'section-1',
@@ -201,7 +206,7 @@ describe('StudentsService course enrollment', () => {
 
     await expect(resultPromise).resolves.toEqual([
       expect.objectContaining({
-        id: 'course-1',
+        id: 'section-1',
         label: '3ro Secundaria A - Lengua Española - 2026-2027',
         studentCount: 2,
       }),
@@ -296,7 +301,7 @@ describe('StudentsService course enrollment', () => {
       lastName: 'Gómez',
       status: 'ACTIVE',
     })
-    mocks.prisma.enrollment.create.mockResolvedValue({ id: 'enrollment-1' })
+    mocks.prisma.enrollment.upsert.mockResolvedValue({ id: 'enrollment-1' })
 
     const result = await createService().createStudentInCourse(
       'school-1',
@@ -315,14 +320,27 @@ describe('StudentsService course enrollment', () => {
         lastName: 'Gómez',
       }),
     })
-    expect(mocks.prisma.enrollment.create).toHaveBeenCalledWith({
-      data: expect.objectContaining({
+    expect(mocks.prisma.enrollment.upsert).toHaveBeenCalledWith({
+      where: {
+        studentId_schoolYearId: {
+          studentId: 'student-1',
+          schoolYearId: 'year-1',
+        },
+      },
+      update: expect.objectContaining({
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        status: 'ACTIVE',
+        listNumber: 1,
+      }),
+      create: expect.objectContaining({
         schoolId: 'school-1',
         studentId: 'student-1',
         schoolYearId: 'year-1',
         gradeId: 'grade-1',
         sectionId: 'section-1',
         status: 'ACTIVE',
+        listNumber: 1,
       }),
     })
     expect(result).toEqual(
@@ -342,7 +360,7 @@ describe('StudentsService course enrollment', () => {
     mocks.prisma.enrollment.findFirst
       .mockResolvedValueOnce(null)
       .mockResolvedValueOnce(null)
-    mocks.prisma.enrollment.create.mockResolvedValue({ id: 'enrollment-1' })
+    mocks.prisma.enrollment.upsert.mockResolvedValue({ id: 'enrollment-1' })
 
     const result = await createService().createStudentInCourse(
       'school-1',
@@ -354,15 +372,15 @@ describe('StudentsService course enrollment', () => {
     )
 
     expect(mocks.prisma.student.create).not.toHaveBeenCalled()
-    expect(mocks.prisma.enrollment.create).toHaveBeenCalledWith({
-      data: expect.objectContaining({
+    expect(mocks.prisma.enrollment.upsert).toHaveBeenCalledWith(expect.objectContaining({
+      create: expect.objectContaining({
         schoolId: 'school-1',
         studentId: 'student-1',
         schoolYearId: 'year-1',
         gradeId: 'grade-1',
         sectionId: 'section-1',
       }),
-    })
+    }))
     expect(result).toEqual(
       expect.objectContaining({ id: 'student-1', fullName: 'Ana Gómez' }),
     )
@@ -397,6 +415,22 @@ describe('StudentsService course enrollment', () => {
     expect(result.rows[1]).toEqual(expect.objectContaining({ duplicate: true }))
     expect(result.rows[2].errors).toContain('Ya existe en este curso.')
     expect(result.rows[3].errors).toContain('Nombre requerido.')
+  })
+
+  it('flags a name-only duplicate even when the name order differs', async () => {
+    mockCourse()
+    mocks.prisma.student.findMany.mockResolvedValueOnce([
+      { firstName: 'Arcelis', lastName: 'Blanco Domínguez' },
+    ])
+
+    const result = await createService().previewCourseImport(
+      'school-1',
+      'course-1',
+      [{ fullName: 'Dominguez Arcelis Blanco' }],
+    )
+
+    expect(result.duplicates).toBe(1)
+    expect(result.rows[0].duplicate).toBe(true)
   })
 
   it('imports only valid preview rows into the course', async () => {
@@ -443,6 +477,74 @@ describe('StudentsService course enrollment', () => {
 
     expect(result).toEqual({ imported: 1, errors: [] })
     expect(mocks.prisma.student.createMany).toHaveBeenCalledTimes(1)
+  })
+
+  it('accepts a section id as the course enrollment context', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue(null)
+    mocks.prisma.section.findFirst.mockResolvedValue({ id: 'section-1', gradeId: 'grade-1', status: 'ACTIVE' })
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1', status: 'ACTIVE' })
+    mocks.prisma.enrollment.findMany.mockResolvedValue([])
+
+    await expect(createService().getStudentsByCourse('school-1', 'section-1')).resolves.toEqual([])
+    expect(mocks.prisma.enrollment.findMany).toHaveBeenCalledWith(expect.objectContaining({
+      where: expect.objectContaining({ schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1' }),
+    }))
+  })
+
+  it('orders course students by their persisted list number', async () => {
+    mockCourse()
+    mocks.prisma.enrollment.findMany.mockResolvedValue([
+      { id: 'enrollment-10', studentId: 'student-10', listNumber: 3 },
+      { id: 'enrollment-2', studentId: 'student-2', listNumber: 2 },
+      { id: 'enrollment-1', studentId: 'student-1', listNumber: 1 },
+    ])
+    mocks.prisma.student.findMany.mockResolvedValue([
+      { id: 'student-10', studentCode: 'A10', firstName: 'Diez', lastName: 'Alumno', status: 'ACTIVE' },
+      { id: 'student-2', studentCode: 'A2', firstName: 'Dos', lastName: 'Alumno', status: 'ACTIVE' },
+      { id: 'student-1', studentCode: 'A1', firstName: 'Uno', lastName: 'Alumno', status: 'ACTIVE' },
+    ])
+
+    const result = await createService().getStudentsByCourse('school-1', 'course-1')
+
+    expect(result.map(({ studentCode }) => studentCode)).toEqual(['A1', 'A2', 'A10'])
+  })
+
+  it('reactivates withdrawn enrollments when importing the same students again', async () => {
+    mockCourse()
+    mocks.prisma.student.findFirst.mockResolvedValue({
+      id: 'student-1',
+      studentCode: '2026001',
+    })
+    mocks.prisma.enrollment.findFirst.mockResolvedValue(null)
+    mocks.prisma.student.findMany.mockResolvedValueOnce([{
+      id: 'student-1',
+      studentCode: '2026001',
+      firstName: 'Ana',
+      lastName: 'Gomez',
+    }])
+    mocks.prisma.enrollment.updateMany.mockResolvedValue({ count: 1 })
+    mocks.prisma.enrollment.createMany.mockResolvedValue({ count: 0 })
+
+    const result = await createService().importStudentsInCourse(
+      'school-1',
+      'course-1',
+      [{ studentCode: '2026001', fullName: 'Ana Gomez' }],
+    )
+
+    expect(mocks.prisma.enrollment.updateMany).toHaveBeenCalledWith({
+      where: expect.objectContaining({
+        studentId: 'student-1',
+        schoolYearId: 'year-1',
+        status: { not: 'ACTIVE' },
+      }),
+      data: expect.objectContaining({
+        gradeId: 'grade-1',
+        sectionId: 'section-1',
+        status: 'ACTIVE',
+        academicStatus: 'active',
+      }),
+    })
+    expect(result).toEqual({ imported: 1, errors: [] })
   })
 
   it('withdraws a student from the selected course enrollment', async () => {

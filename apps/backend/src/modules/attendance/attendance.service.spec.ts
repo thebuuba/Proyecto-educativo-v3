@@ -13,6 +13,12 @@ const mocks = vi.hoisted(() => ({
     attendanceClass: {
       findMany: vi.fn(),
     },
+    enrollment: {
+      findMany: vi.fn(),
+    },
+    student: {
+      findMany: vi.fn(),
+    },
   },
 }))
 
@@ -92,5 +98,30 @@ describe('AttendanceService.findClassAttendanceRange', () => {
     expect(() => service.findClassAttendanceRange('school-1', '', '2026-09-01', '2026-09-30')).toThrow()
     expect(() => service.findClassAttendanceRange('school-1', 'subject-1', '2026-01-01', '2026-03-01')).toThrow()
     expect(mocks.prisma.attendanceClass.findMany).not.toHaveBeenCalled()
+  })
+})
+
+describe('AttendanceService.getStudentsBySection', () => {
+  beforeEach(() => vi.clearAllMocks())
+
+  it('uses the numeric student code as the attendance list order', async () => {
+    mocks.prisma.enrollment.findMany.mockResolvedValue([
+      { id: 'enrollment-10', studentId: 'student-10' },
+      { id: 'enrollment-2', studentId: 'student-2' },
+      { id: 'enrollment-1', studentId: 'student-1' },
+    ])
+    mocks.prisma.student.findMany.mockResolvedValue([
+      { id: 'student-10', studentCode: 'A10', firstName: 'Diez', lastName: 'Alumno' },
+      { id: 'student-2', studentCode: 'A2', firstName: 'Dos', lastName: 'Alumno' },
+      { id: 'student-1', studentCode: 'A1', firstName: 'Uno', lastName: 'Alumno' },
+    ])
+
+    const result = await new AttendanceService().getStudentsBySection('school-1', 'section-1', 'year-1')
+
+    expect(result.map(({ studentCode, listNumber }) => ({ studentCode, listNumber }))).toEqual([
+      { studentCode: 'A1', listNumber: 1 },
+      { studentCode: 'A2', listNumber: 2 },
+      { studentCode: 'A10', listNumber: 3 },
+    ])
   })
 })

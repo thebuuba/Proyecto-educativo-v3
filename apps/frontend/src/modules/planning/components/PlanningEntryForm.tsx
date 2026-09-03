@@ -600,7 +600,7 @@ export function PlanningEntryForm({
               <div className="flex flex-col gap-2 sm:flex-row">
                 {curriculumContent ? <button type="button" className="inline-flex h-10 shrink-0 items-center justify-center rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20" onClick={() => applyOfficialCurriculum()}>Recargar datos oficiales</button> : null}
                 <a
-                  href={`/matriz?${new URLSearchParams({ grado: String(curriculumGrade), malla: curriculumSubject.id }).toString()}`}
+                  href={`/planificaciones?${new URLSearchParams({ tab: 'curriculo', level: 'secondary', grade: String(curriculumGrade), subjectId: curriculumSubject.id }).toString()}`}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-border bg-card px-4 text-sm font-bold text-foreground shadow-sm transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20"

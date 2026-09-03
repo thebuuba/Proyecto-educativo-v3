@@ -7,12 +7,15 @@ import type { CourseTeam } from '@/modules/courses/types'
 import { CourseTeamsPanel } from './CourseTeamsPanel'
 
 const getCourseTeams = vi.fn()
+const restoreCourseTeam = vi.fn()
 
 vi.mock('@/modules/courses/services/coursesService', () => ({
   getCourseTeams: (...args: unknown[]) => getCourseTeams(...args),
   createCourseTeam: vi.fn(),
   updateCourseTeam: vi.fn(),
   archiveCourseTeam: vi.fn(),
+  restoreCourseTeam: (...args: unknown[]) => restoreCourseTeam(...args),
+  deleteCourseTeamPermanently: vi.fn(),
 }))
 
 const students: StudentAttendanceRow[] = [
@@ -36,7 +39,10 @@ const teams: CourseTeam[] = [
 ]
 
 describe('panel de equipos del curso', () => {
-  beforeEach(() => getCourseTeams.mockResolvedValue(teams))
+  beforeEach(() => {
+    getCourseTeams.mockImplementation((_id: string, archived = false) => Promise.resolve(archived ? [] : teams))
+    restoreCourseTeam.mockResolvedValue(undefined)
+  })
 
   it('presenta el resumen real y los estudiantes pendientes', async () => {
     render(<CourseTeamsPanel sectionSubjectId="subject-1" students={students} canManage />)
@@ -76,12 +82,12 @@ describe('panel de equipos del curso', () => {
     expect(screen.getByText('Información del equipo')).toBeInTheDocument()
     expect(screen.getByText('Seleccionar integrantes')).toBeInTheDocument()
 
-    await user.click(screen.getByRole('checkbox', { name: /Ana Pérez/ }))
-    expect(screen.getByText('1 estudiante seleccionado')).toBeInTheDocument()
+    await user.click(screen.getByRole('checkbox', { name: /Luis Díaz/ }))
+    expect(screen.getByText(/1 estudiante seleccionado de 3/)).toBeInTheDocument()
   })
 
   it('muestra el estado inicial y abre la guía rápida completa', async () => {
-    getCourseTeams.mockResolvedValueOnce([])
+    getCourseTeams.mockResolvedValue([])
     const user = userEvent.setup()
     render(<CourseTeamsPanel sectionSubjectId="subject-1" students={students} canManage />)
 
@@ -97,5 +103,48 @@ describe('panel de equipos del curso', () => {
     expect(guide).toHaveTextContent('Crear actividad grupal')
     expect(guide).toHaveTextContent('Evaluar')
     expect(guide).toHaveTextContent('Calificaciones')
+  })
+
+  it('mantiene los archivados fuera de los activos y permite restaurarlos', async () => {
+    getCourseTeams.mockImplementation((_id: string, archived = false) => Promise.resolve(archived ? [{ ...teams[0], status: 'INACTIVE' }] : [teams[1]]))
+    const user = userEvent.setup()
+    render(<CourseTeamsPanel sectionSubjectId="subject-1" students={students} canManage />)
+
+    expect(await screen.findByText('Equipo Tesla')).toBeInTheDocument()
+    expect(screen.queryByText('Equipo Newton')).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Archivados (1)' }))
+    expect(await screen.findByText('Equipo Newton')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Opciones de Equipo Newton' }))
+    await user.click(screen.getByRole('button', { name: 'Restaurar equipo' }))
+    expect(restoreCourseTeam).toHaveBeenCalledWith('team-1')
+  })
+
+  it('abre la misma vista subordinada desde la tarjeta y conserva solo las pestañas del equipo', async () => {
+    const user = userEvent.setup()
+    const onTeamChange = vi.fn()
+    render(<CourseTeamsPanel
+      sectionSubjectId="subject-1"
+      students={students}
+      canManage
+      activities={[{ id: 'activity-1', name: 'Práctica de laboratorio', date: '2026-09-18', teamIds: ['team-1'] }]}
+      context={{ courseLabel: '2.º A', subjectName: 'Ciencias de la Naturaleza', schoolYearName: '2026-2027' }}
+      onTeamChange={onTeamChange}
+    />)
+
+    await user.click(await screen.findByText('Equipo Newton'))
+
+    expect(onTeamChange).toHaveBeenLastCalledWith('team-1')
+    expect(screen.getByRole('heading', { name: 'Equipo Newton' })).toBeInTheDocument()
+    expect(screen.getByText('2.º A · Ciencias de la Naturaleza · Año escolar 2026-2027')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Resumen' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Integrantes' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Actividades' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Historial' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Asistencia' })).not.toBeInTheDocument()
+    expect(screen.getAllByText('Práctica de laboratorio')).toHaveLength(2)
+
+    await user.click(screen.getByRole('button', { name: 'Volver a equipos' }))
+    expect(onTeamChange).toHaveBeenLastCalledWith(null)
+    expect(screen.getAllByRole('button', { name: 'Ver equipo' })).toHaveLength(2)
   })
 })

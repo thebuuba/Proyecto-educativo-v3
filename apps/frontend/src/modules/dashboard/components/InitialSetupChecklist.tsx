@@ -29,8 +29,8 @@ export function InitialSetupChecklist({ progress }: InitialSetupChecklistProps) 
     {
       id: 'students',
       title: 'Agrega estudiantes',
-      actionLabel: 'Ir a matricula',
-      path: '/estudiantes',
+      actionLabel: 'Ir a cursos',
+      path: '/cursos',
       done: progress.studentCount > 0 || progress.activeEnrollments > 0,
       icon: UsersRound,
     },
@@ -66,16 +66,16 @@ export function InitialSetupChecklist({ progress }: InitialSetupChecklistProps) 
   const Icon = nextStep.icon
 
   return (
-    <section className="setup-next-step dashboard-warm-shadow flex h-full flex-col rounded-3xl bg-card p-5 sm:p-6">
+    <section className="setup-next-step dashboard-warm-shadow flex h-full flex-col rounded-3xl border border-border border-t-4 border-t-warning bg-card p-5 text-card-foreground sm:p-6">
       <div className="flex min-w-0 gap-4">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg shadow-primary/20">
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-warning text-warning-foreground shadow-lg shadow-warning/25">
             <Icon className="size-5" />
         </span>
         <div className="min-w-0">
           <p className="text-xs font-semibold text-accent">
             Para dejar todo listo
           </p>
-          <h2 className="mt-1.5 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-primary">
+          <h2 className="mt-1.5 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-foreground">
             {nextStep.title}.
           </h2>
         </div>

@@ -4,15 +4,10 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { useAttendance } from './useAttendance'
 
 const mocks = vi.hoisted(() => ({
-  appUser: { id: 'user-0', schoolId: 'school-0' },
   getAttendanceWorkspace: vi.fn(),
   getClassAttendanceForMonth: vi.fn(),
   getScheduleEntries: vi.fn(),
   getStudentsBySection: vi.fn(),
-}))
-
-vi.mock('@/modules/auth/hooks/useAuth', () => ({
-  useAuth: () => ({ appUser: mocks.appUser }),
 }))
 
 vi.mock('@/modules/attendance/services/attendanceService', () => ({
@@ -28,34 +23,31 @@ vi.mock('@/modules/schedule/services/scheduleService', () => ({
   getScheduleEntries: mocks.getScheduleEntries,
 }))
 
-let userSequence = 0
-
-describe('useAttendance course cache', () => {
+describe('useAttendance workspace freshness', () => {
   afterEach(() => {
     vi.useRealTimers()
   })
 
   beforeEach(() => {
     vi.restoreAllMocks()
-    userSequence += 1
-    mocks.appUser = { id: `user-${userSequence}`, schoolId: 'school-1' }
     mocks.getAttendanceWorkspace.mockReset()
     mocks.getClassAttendanceForMonth.mockReset()
     mocks.getScheduleEntries.mockReset()
     mocks.getStudentsBySection.mockReset()
   })
 
-  it('reuses courses and the period on remount while the TTL is fresh', async () => {
-    mocks.getAttendanceWorkspace.mockResolvedValue({ courses: [], academicPeriodId: 'period-1' })
+  it('reloads the workspace on remount so enrollment changes are visible', async () => {
+    mocks.getAttendanceWorkspace
+      .mockResolvedValueOnce({ courses: [], academicPeriodId: 'period-1' })
+      .mockResolvedValueOnce({ courses: [], academicPeriodId: 'period-2' })
 
     const first = renderHook(() => useAttendance())
     await waitFor(() => expect(first.result.current.loading).toBe(false))
     first.unmount()
 
     const second = renderHook(() => useAttendance())
-    expect(second.result.current.loading).toBe(false)
-    expect(second.result.current.courses).toEqual([])
-    expect(mocks.getAttendanceWorkspace).toHaveBeenCalledTimes(1)
+    await waitFor(() => expect(second.result.current.loading).toBe(false))
+    expect(mocks.getAttendanceWorkspace).toHaveBeenCalledTimes(2)
     second.unmount()
   })
 
@@ -67,22 +59,6 @@ describe('useAttendance course cache', () => {
     await waitFor(() => expect(hook.result.current.loading).toBe(false))
     expect(hook.result.current.error).toBe('Falló el catálogo de asistencia')
     hook.unmount()
-  })
-
-  it('refetches courses and period after the cache TTL expires', async () => {
-    const now = vi.spyOn(Date, 'now').mockReturnValue(1_000)
-    mocks.getAttendanceWorkspace.mockResolvedValue({ courses: [], academicPeriodId: 'period-1' })
-
-    const first = renderHook(() => useAttendance())
-    await waitFor(() => expect(first.result.current.loading).toBe(false))
-    first.unmount()
-
-    now.mockReturnValue(61_000)
-    const second = renderHook(() => useAttendance())
-    await waitFor(() => expect(second.result.current.loading).toBe(false))
-
-    expect(mocks.getAttendanceWorkspace).toHaveBeenCalledTimes(2)
-    second.unmount()
   })
 
   it('requests and uses the exact schedule of the selected subject', async () => {

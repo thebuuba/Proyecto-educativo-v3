@@ -23,7 +23,9 @@ import {
   CreateCourseStudentDto,
   ImportCourseStudentsDto,
   ImportCourseStudentsPreviewDto,
+  ReorderCourseStudentsDto,
   TransferCourseStudentDto,
+  UpdateCourseStudentListNumberDto,
 } from './dto/course-enrollment.dto'
 import { ImportStudentsDto } from './dto/import-students.dto'
 import { NotifyGuardiansDto } from './dto/notify-guardians.dto'
@@ -113,8 +115,9 @@ export class StudentsController {
   getStudentsByCourse(
     @CurrentUser() user: AuthenticatedUser,
     @Param('courseId') courseId: string,
+    @Query('status') status?: 'active' | 'withdrawn',
   ) {
-    return this.studentsService.getStudentsByCourse(user.schoolId, courseId)
+    return this.studentsService.getStudentsByCourse(user.schoolId, courseId, status)
   }
 
   @Post('courses/:courseId/students')
@@ -173,6 +176,30 @@ export class StudentsController {
     )
   }
 
+  @Patch('courses/:courseId/students/:studentId/restore')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  restoreStudentToCourse(@CurrentUser() user: AuthenticatedUser, @Param('courseId') courseId: string, @Param('studentId') studentId: string) {
+    return this.studentsService.restoreStudentToCourse(user.schoolId, courseId, studentId)
+  }
+
+  @Patch('courses/:courseId/students/:studentId/list-number')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  updateCourseStudentListNumber(@CurrentUser() user: AuthenticatedUser, @Param('courseId') courseId: string, @Param('studentId') studentId: string, @Body() dto: UpdateCourseStudentListNumberDto) {
+    return this.studentsService.updateCourseStudentListNumber(user.schoolId, courseId, studentId, dto.listNumber)
+  }
+
+  @Patch('courses/:courseId/students/reorder')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  reorderCourseStudents(@CurrentUser() user: AuthenticatedUser, @Param('courseId') courseId: string, @Body() dto: ReorderCourseStudentsDto) {
+    return this.studentsService.reorderCourseStudents(user.schoolId, courseId, dto.studentIds)
+  }
+
+  @Delete('courses/:courseId/students/:studentId')
+  @Roles('admin', 'director', 'coordinator')
+  deleteCourseStudentPermanently(@CurrentUser() user: AuthenticatedUser, @Param('courseId') courseId: string, @Param('studentId') studentId: string) {
+    return this.studentsService.deleteCourseStudentPermanently(user.schoolId, courseId, studentId)
+  }
+
   @Patch('courses/:courseId/students/:studentId/transfer')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   transferStudentToCourse(
@@ -227,7 +254,7 @@ export class StudentsController {
    * @returns El estudiante actualizado.
    */
   @Patch(':id')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   update(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,

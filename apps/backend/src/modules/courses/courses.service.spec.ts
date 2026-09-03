@@ -10,7 +10,8 @@ const mocks = vi.hoisted(() => ({
     section: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
     sectionSubject: { findMany: vi.fn(), findFirst: vi.fn(), update: vi.fn(), upsert: vi.fn() },
     enrollment: { groupBy: vi.fn() },
-    courseTeam: { groupBy: vi.fn() },
+    courseTeam: { groupBy: vi.fn(), findFirst: vi.fn(), findMany: vi.fn(), update: vi.fn(), delete: vi.fn(), count: vi.fn(), create: vi.fn() },
+    courseTeamMember: { updateMany: vi.fn(), deleteMany: vi.fn(), upsert: vi.fn() },
     evaluationActivity: { groupBy: vi.fn() },
     attendanceClass: { findMany: vi.fn() },
     gradesRecord: { groupBy: vi.fn() },
@@ -21,6 +22,7 @@ const mocks = vi.hoisted(() => ({
     drModality: { findMany: vi.fn() },
     teacher: { findMany: vi.fn(), findFirst: vi.fn() },
     schoolYear: { findFirst: vi.fn(), create: vi.fn() },
+    $transaction: vi.fn(),
   },
 }))
 
@@ -344,6 +346,42 @@ describe('CoursesService.getCourseData', () => {
       expect(loader).toHaveBeenCalledTimes(2)
     }
     expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(2)
+  })
+})
+
+describe('CoursesService team lifecycle', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+    mocks.prisma.$transaction.mockImplementation(async (callback: (tx: typeof mocks.prisma) => unknown) => callback(mocks.prisma))
+  })
+
+  it('archives without deactivating memberships', async () => {
+    mocks.prisma.courseTeam.findFirst.mockResolvedValue({ id: 'team-1', schoolId: 'school-1', status: 'ACTIVE' })
+    mocks.prisma.courseTeam.update.mockResolvedValue({ id: 'team-1', status: 'INACTIVE' })
+
+    await new CoursesService().archiveCourseTeam('school-1', 'team-1')
+
+    expect(mocks.prisma.courseTeam.update).toHaveBeenCalledWith({ where: { id: 'team-1' }, data: { status: 'INACTIVE' } })
+    expect(mocks.prisma.courseTeamMember.updateMany).not.toHaveBeenCalled()
+  })
+
+  it('returns a clear conflict when a team name already exists', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ sectionId: 'section-1', schoolYearId: 'year-1' })
+    mocks.prisma.courseTeam.count.mockResolvedValue(1)
+    mocks.prisma.courseTeam.create.mockRejectedValue({ code: 'P2002' })
+
+    await expect(new CoursesService().createCourseTeam('school-1', 'user-1', 'subject-1', {
+      name: 'Equipo 1',
+      teamType: 'permanent',
+      members: [],
+    })).rejects.toThrow('Ya existe un equipo llamado "Equipo 1" en esta asignatura')
+  })
+
+  it('blocks direct deletion when an active team has academic history', async () => {
+    mocks.prisma.courseTeam.findFirst.mockResolvedValue({ id: 'team-1', name: 'Equipo Newton', status: 'ACTIVE', _count: { activityGroups: 1 } })
+
+    await expect(new CoursesService().deleteCourseTeamPermanently('school-1', 'team-1', 'Equipo Newton')).rejects.toThrow('historial')
+    expect(mocks.prisma.courseTeam.delete).not.toHaveBeenCalled()
   })
 })
 

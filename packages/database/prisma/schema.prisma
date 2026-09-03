@@ -102,6 +102,8 @@ model School {
   dashboardTasks        DashboardTask[]
   userRoles             UserRole[]
   drEvaluationRules     DrEvaluationRule[]
+  teacherJournalEntries TeacherJournalEntry[]
+  teacherJournalStudents TeacherJournalStudent[]
 
   @@index([name])
   @@index([district])
@@ -181,6 +183,7 @@ model AppUser {
   generatedReports              Report[]
   assignedDashboardTasks        DashboardTask[]        @relation("DashboardAssignee")
   createdDashboardTasks         DashboardTask[]        @relation("DashboardCreator")
+  teacherJournalEntries         TeacherJournalEntry[]
 
   @@map("app_users")
 }
@@ -229,6 +232,7 @@ model SchoolYear {
   courseTeams          CourseTeam[]
   reports              Report[]
   scheduleEntries      ScheduleEntry[]
+  teacherJournalEntries TeacherJournalEntry[]
 
   @@unique([schoolId, name])
   @@index([schoolId, isCurrent])
@@ -256,6 +260,7 @@ model AcademicPeriod {
   scheduleEntries      ScheduleEntry[]
   planningEntries      PlanningEntry[]
   reports              Report[]
+  teacherJournalEntries TeacherJournalEntry[]
 
   @@unique([schoolYearId, sequence])
   @@unique([schoolYearId, name])
@@ -308,6 +313,7 @@ model Section {
   scheduleEntries   ScheduleEntry[]
   gradesRecords     GradesRecord[]
   courseTeams       CourseTeam[]
+  teacherJournalEntries TeacherJournalEntry[]
 
   @@unique([gradeId, name])
   @@unique([id, gradeId])
@@ -384,6 +390,7 @@ model Student {
   guardianNotifications GuardianNotification[]
   studentGuardians      StudentGuardian[]
   reports               Report[]
+  teacherJournalStudents TeacherJournalStudent[]
 
   @@unique([schoolId, studentCode])
   @@unique([schoolId, documentId])
@@ -482,6 +489,7 @@ model SectionSubject {
   courseTeams          CourseTeam[]
   scheduleEntries      ScheduleEntry[]
   planningEntries      PlanningEntry[]
+  teacherJournalEntries TeacherJournalEntry[]
 
   @@unique([schoolYearId, sectionId, subjectId])
   @@unique([id, schoolYearId, sectionId])
@@ -497,6 +505,7 @@ model Enrollment {
   schoolId        String           @map("school_id") @db.Uuid
   gradeId         String           @map("grade_id") @db.Uuid
   sectionId       String           @map("section_id") @db.Uuid
+  listNumber      Int?             @map("list_number")
   enrollmentDate  DateTime         @default(now()) @map("enrollment_date") @db.Date
   academicLevelId String?          @map("academic_level_id") @db.Uuid
   academicCycleId String?          @map("academic_cycle_id") @db.Uuid
@@ -594,6 +603,7 @@ model GradesRecord {
   sectionSubjectId     String            @map("section_subject_id") @db.Uuid
   academicPeriodId     String            @map("academic_period_id") @db.Uuid
   evaluationActivityId String?           @map("evaluation_activity_id") @db.Uuid
+  instrumentResult     Json?             @map("instrument_result")
   assessmentName       String            @map("assessment_name")
   score                Decimal           @db.Decimal(8, 2)
   maxScore             Decimal           @default(100) @map("max_score") @db.Decimal(8, 2)
@@ -716,6 +726,9 @@ model CourseTeam {
   teamType         String       @default("permanent") @map("team_type")
   startsAt         DateTime?    @map("starts_at") @db.Date
   endsAt           DateTime?    @map("ends_at") @db.Date
+  validityType     String       @default("undefined") @map("validity_type")
+  validityReferenceId String?   @map("validity_reference_id") @db.Uuid
+  validityPeriod   String?      @map("validity_period")
   orderPosition    Int          @default(0) @map("order_position")
   status           RecordStatus @default(ACTIVE)
   createdBy        String?      @map("created_by") @db.Uuid
@@ -728,6 +741,7 @@ model CourseTeam {
   sectionSubject SectionSubject?    @relation(fields: [sectionSubjectId], references: [id])
   creator        AppUser?           @relation(fields: [createdBy], references: [id])
   members        CourseTeamMember[]
+  activityGroups EvaluationActivityGroup[]
 
   @@unique([sectionSubjectId, schoolYearId, name])
   @@index([schoolId, sectionSubjectId, schoolYearId, status])
@@ -759,6 +773,7 @@ model CourseTeamMember {
 model EvaluationActivityGroup {
   id         String       @id @default(uuid()) @db.Uuid
   activityId String       @map("activity_id") @db.Uuid
+  courseTeamId String?    @map("course_team_id") @db.Uuid
   schoolId   String       @map("school_id") @db.Uuid
   name       String
   score      Decimal?     @db.Decimal(8, 2)
@@ -768,10 +783,13 @@ model EvaluationActivityGroup {
   updatedAt  DateTime     @updatedAt @map("updated_at")
 
   activity EvaluationActivity              @relation(fields: [activityId], references: [id])
+  courseTeam CourseTeam?                    @relation(fields: [courseTeamId], references: [id], onDelete: SetNull)
   school   School                          @relation(fields: [schoolId], references: [id])
   members  EvaluationActivityGroupMember[]
 
   @@index([activityId])
+  @@index([courseTeamId])
+  @@unique([activityId, courseTeamId])
   @@map("evaluation_activity_groups")
 }
 
@@ -1048,4 +1066,52 @@ model DrEvaluationRule {
   modality DrModality?      @relation(fields: [modalityId], references: [id])
 
   @@map("dr_evaluation_rules")
+}
+
+model TeacherJournalEntry {
+  id                String       @id @default(uuid()) @db.Uuid
+  schoolId          String       @map("school_id") @db.Uuid
+  createdById       String       @map("created_by") @db.Uuid
+  schoolYearId      String?      @map("school_year_id") @db.Uuid
+  sectionId         String?      @map("section_id") @db.Uuid
+  sectionSubjectId  String?      @map("section_subject_id") @db.Uuid
+  academicPeriodId  String?      @map("academic_period_id") @db.Uuid
+  entryType         String       @map("entry_type")
+  title             String?
+  content           String
+  occurredAt        DateTime     @default(now()) @map("occurred_at")
+  tags              String[]     @default([])
+  requiresFollowUp  Boolean      @default(false) @map("requires_follow_up")
+  followUpDate      DateTime?    @map("follow_up_date") @db.Date
+  followUpStatus    String       @default("none") @map("follow_up_status")
+  status            RecordStatus @default(ACTIVE)
+  createdAt         DateTime     @default(now()) @map("created_at")
+  updatedAt         DateTime     @updatedAt @map("updated_at")
+
+  school          School           @relation(fields: [schoolId], references: [id])
+  createdBy       AppUser          @relation(fields: [createdById], references: [id])
+  schoolYear     SchoolYear?      @relation(fields: [schoolYearId], references: [id])
+  section        Section?         @relation(fields: [sectionId], references: [id])
+  sectionSubject SectionSubject?  @relation(fields: [sectionSubjectId], references: [id])
+  academicPeriod AcademicPeriod?  @relation(fields: [academicPeriodId], references: [id])
+  students       TeacherJournalStudent[]
+
+  @@index([schoolId, createdById, status, occurredAt])
+  @@index([sectionId, sectionSubjectId])
+  @@map("teacher_journal_entries")
+}
+
+model TeacherJournalStudent {
+  entryId   String   @map("entry_id") @db.Uuid
+  studentId String   @map("student_id") @db.Uuid
+  schoolId  String   @map("school_id") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at")
+
+  entry   TeacherJournalEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  student Student             @relation(fields: [studentId], references: [id])
+  school  School              @relation(fields: [schoolId], references: [id])
+
+  @@id([entryId, studentId])
+  @@index([studentId])
+  @@map("teacher_journal_students")
 }

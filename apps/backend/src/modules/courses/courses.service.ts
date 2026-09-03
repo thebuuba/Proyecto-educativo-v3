@@ -5,7 +5,7 @@
  * materias y asignación de materias a secciones. Proporciona operaciones CRUD
  * y consultas de datos completos del curso.
  */
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, ConflictException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma, Prisma, RecordStatus } from '@aula/database'
 import {
   invalidateCourseOptions,
@@ -641,18 +641,35 @@ export class CoursesService {
   }
 
   /** Lista los equipos propios de una asignatura. */
-  async getCourseTeams(schoolId: string, sectionSubjectId: string) {
+  async getCourseTeams(schoolId: string, sectionSubjectId: string, archived = false) {
     await this.requireSectionSubject(schoolId, sectionSubjectId)
-    return prisma.courseTeam.findMany({
-      where: { schoolId, sectionSubjectId, status: RecordStatus.ACTIVE },
+    const teams = await prisma.courseTeam.findMany({
+      where: { schoolId, sectionSubjectId, status: archived ? RecordStatus.INACTIVE : RecordStatus.ACTIVE },
       orderBy: [{ orderPosition: 'asc' }, { createdAt: 'asc' }],
       include: {
         members: {
-          where: { status: RecordStatus.ACTIVE },
+          ...(archived ? {} : { where: { status: RecordStatus.ACTIVE } }),
           orderBy: { joinedAt: 'asc' },
           include: { enrollment: { include: { student: true } } },
         },
+        activityGroups: {
+          where: { status: RecordStatus.ACTIVE },
+          select: { activity: { select: { id: true, name: true, activityDate: true } } },
+        },
       },
+    })
+    return teams.map(({ activityGroups, ...team }) => {
+      const activities = activityGroups
+        .map(({ activity }) => activity)
+        .sort((first, second) => (second.activityDate?.getTime() ?? 0) - (first.activityDate?.getTime() ?? 0))
+      return {
+        ...team,
+        activityCount: activities.length,
+        lastActivity: activities[0]
+          ? { ...activities[0], date: activities[0].activityDate?.toISOString().slice(0, 10) ?? null }
+          : null,
+        canDelete: activities.length === 0,
+      }
     })
   }
 
@@ -670,6 +687,7 @@ export class CoursesService {
       sectionSubject.schoolYearId,
       dto.members,
     )
+    await this.validateTeamValidity(schoolId, sectionSubjectId, dto)
 
     const created = await prisma.$transaction(async (tx) => {
       const order = await tx.courseTeam.count({
@@ -688,6 +706,9 @@ export class CoursesService {
           teamType: dto.teamType,
           startsAt: dto.startsAt ? new Date(dto.startsAt) : null,
           endsAt: dto.endsAt ? new Date(dto.endsAt) : null,
+          validityType: dto.teamType === 'temporary' ? dto.validityType ?? 'undefined' : 'undefined',
+          validityReferenceId: dto.teamType === 'temporary' ? dto.validityReferenceId ?? null : null,
+          validityPeriod: dto.teamType === 'temporary' ? dto.validityPeriod ?? null : null,
           orderPosition: order,
           createdBy: userId,
         },
@@ -695,6 +716,11 @@ export class CoursesService {
 
       await this.syncTeamMembers(tx, team, dto.members)
       return team
+    }).catch((error: unknown) => {
+      if (typeof error === 'object' && error !== null && 'code' in error && error.code === 'P2002') {
+        throw new ConflictException(`Ya existe un equipo llamado "${dto.name.trim()}" en esta asignatura`)
+      }
+      throw error
     })
 
     const [team] = await this.getCourseTeams(schoolId, sectionSubjectId)
@@ -718,6 +744,7 @@ export class CoursesService {
         dto.members,
       )
     }
+    await this.validateTeamValidity(schoolId, existing.sectionSubjectId, { ...existing, ...dto })
 
     await prisma.$transaction(async (tx) => {
       const team = await tx.courseTeam.update({
@@ -730,6 +757,9 @@ export class CoursesService {
           ...(dto.teamType !== undefined && { teamType: dto.teamType }),
           ...(dto.startsAt !== undefined && { startsAt: dto.startsAt ? new Date(dto.startsAt) : null }),
           ...(dto.endsAt !== undefined && { endsAt: dto.endsAt ? new Date(dto.endsAt) : null }),
+          ...(dto.validityType !== undefined && { validityType: dto.validityType }),
+          ...(dto.validityReferenceId !== undefined && { validityReferenceId: dto.validityReferenceId }),
+          ...(dto.validityPeriod !== undefined && { validityPeriod: dto.validityPeriod }),
         },
       })
 
@@ -742,23 +772,66 @@ export class CoursesService {
     return teams.find((team) => team.id === id)
   }
 
-  /** Archiva el equipo y cierra sus membresías activas. */
+  /** Archiva el equipo sin alterar su composición ni su historial. */
   async archiveCourseTeam(schoolId: string, id: string) {
-    const team = await prisma.courseTeam.findFirst({ where: { id, schoolId } })
+    const team = await prisma.courseTeam.findFirst({ where: { id, schoolId, status: RecordStatus.ACTIVE } })
     if (!team) throw new NotFoundException('Equipo no encontrado')
 
-    const archived = await prisma.$transaction(async (tx) => {
-      await tx.courseTeamMember.updateMany({
-        where: { teamId: id, status: RecordStatus.ACTIVE },
-        data: { status: RecordStatus.INACTIVE, leftAt: new Date() },
-      })
-      return tx.courseTeam.update({
-        where: { id },
-        data: { status: RecordStatus.INACTIVE },
-      })
+    const archived = await prisma.courseTeam.update({
+      where: { id },
+      data: { status: RecordStatus.INACTIVE },
     })
     invalidateSchoolCache(schoolId)
     return archived
+  }
+
+  async restoreCourseTeam(schoolId: string, id: string) {
+    const team = await prisma.courseTeam.findFirst({
+      where: { id, schoolId, status: RecordStatus.INACTIVE },
+      include: { members: { where: { status: RecordStatus.ACTIVE } } },
+    })
+    if (!team) throw new NotFoundException('Equipo archivado no encontrado')
+
+    await prisma.$transaction(async (tx) => {
+      if (team.teamType === 'permanent' && team.members.length) {
+        await tx.courseTeamMember.updateMany({
+          where: {
+            enrollmentId: { in: team.members.map(({ enrollmentId }) => enrollmentId) },
+            status: RecordStatus.ACTIVE,
+            teamId: { not: team.id },
+            team: {
+              schoolId,
+              sectionSubjectId: team.sectionSubjectId,
+              teamType: 'permanent',
+              status: RecordStatus.ACTIVE,
+            },
+          },
+          data: { status: RecordStatus.INACTIVE, leftAt: new Date() },
+        })
+      }
+      await tx.courseTeam.update({ where: { id }, data: { status: RecordStatus.ACTIVE } })
+    })
+    invalidateSchoolCache(schoolId)
+    return { restored: true }
+  }
+
+  async deleteCourseTeamPermanently(schoolId: string, id: string, confirmation: string) {
+    const team = await prisma.courseTeam.findFirst({
+      where: { id, schoolId },
+      include: { _count: { select: { activityGroups: true } } },
+    })
+    if (!team) throw new NotFoundException('Equipo no encontrado')
+    if (confirmation !== team.name) throw new BadRequestException('Escribe el nombre exacto del equipo para confirmar')
+    if (team.status === RecordStatus.ACTIVE && team._count.activityGroups > 0) {
+      throw new BadRequestException('Un equipo con historial académico solo puede archivarse')
+    }
+
+    await prisma.$transaction(async (tx) => {
+      await tx.courseTeamMember.deleteMany({ where: { teamId: id } })
+      await tx.courseTeam.delete({ where: { id } })
+    })
+    invalidateSchoolCache(schoolId)
+    return { deleted: true }
   }
 
   private async requireSectionSubject(schoolId: string, id: string) {
@@ -767,6 +840,23 @@ export class CoursesService {
     })
     if (!sectionSubject) throw new NotFoundException('Curso no encontrado')
     return sectionSubject
+  }
+
+  private async validateTeamValidity(
+    schoolId: string,
+    sectionSubjectId: string | null,
+    team: { teamType?: string; validityType?: string; validityReferenceId?: string | null; validityPeriod?: string | null; endsAt?: string | Date | null },
+  ) {
+    if (team.teamType !== 'temporary') return
+    if (team.validityType === 'date' && !team.endsAt) throw new BadRequestException('Selecciona la fecha de vigencia')
+    if (team.validityType === 'period' && !team.validityPeriod) throw new BadRequestException('Selecciona el período de vigencia')
+    if (team.validityType === 'activity' || team.validityType === 'project') {
+      if (!team.validityReferenceId) throw new BadRequestException('Selecciona la actividad o proyecto vinculado')
+      const activity = await prisma.evaluationActivity.findFirst({
+        where: { id: team.validityReferenceId, schoolId, sectionSubjectId: sectionSubjectId ?? undefined },
+      })
+      if (!activity) throw new BadRequestException('La actividad o proyecto no pertenece a esta asignatura')
+    }
   }
 
   private async requireSection(schoolId: string, id: string) {
