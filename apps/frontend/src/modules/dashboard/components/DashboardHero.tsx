@@ -83,7 +83,7 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
           cy="60"
           r="45"
           fill="none"
-          stroke="var(--accent)"
+          stroke="var(--class-accent)"
           strokeDasharray={`${ringLength} ${RING_CIRCUMFERENCE}`}
           strokeLinecap="round"
           strokeWidth="8"
@@ -91,10 +91,10 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
         />
       </svg>
       <div className="text-center leading-none">
-        <p className="text-[8px] font-bold uppercase tracking-[0.16em] text-accent sm:text-[9px]">
+        <p className="text-[8px] font-bold uppercase tracking-[0.16em] text-[var(--class-accent)] sm:text-[9px]">
           {label}
         </p>
-        <p className="mt-1 text-xl font-extrabold tabular-nums text-accent sm:text-2xl">
+        <p className="mt-1 text-xl font-extrabold tabular-nums text-[var(--class-accent)] sm:text-2xl">
           {formatCountdown(seconds)}
         </p>
       </div>
@@ -141,12 +141,12 @@ export function DashboardHero({
   if (!nextClass) {
     return (
       <section
-        className="ml-auto w-full max-w-[520px] rounded-3xl border border-white/5 px-5 py-5 text-white shadow-lg"
-        style={{ backgroundColor: 'var(--primary)' }}
+        className="ml-auto w-full max-w-[520px] rounded-3xl border border-white/8 px-5 py-5 text-white shadow-lg"
+        style={{ backgroundColor: 'var(--class-panel)' }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-accent">Sin clase programada</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--class-accent)]">Sin clase programada</p>
         <h2 className="mt-2 text-xl font-bold">Agenda libre</h2>
-        <p className="mt-1 text-sm text-white/55">No tienes otra clase programada para hoy.</p>
+        <p className="mt-1 text-sm text-[var(--class-muted)]">No tienes otra clase programada para hoy.</p>
       </section>
     )
   }
@@ -155,12 +155,17 @@ export function DashboardHero({
 
   return (
     <section
-      className="relative ml-auto w-full max-w-[520px] overflow-hidden rounded-3xl border border-white/5 p-5 pr-[7.5rem] text-white shadow-lg sm:p-6 sm:pr-[8.5rem]"
-      style={{ backgroundColor: 'var(--primary)', boxShadow: '0 16px 36px -18px color-mix(in srgb, var(--primary) 55%, transparent)' }}
+      className="relative ml-auto w-full max-w-[520px] overflow-hidden rounded-3xl border border-white/8 p-5 pr-[7.5rem] text-white shadow-lg sm:p-6 sm:pr-[8.5rem]"
+      style={{
+        backgroundColor: 'var(--class-panel)',
+        boxShadow: '0 16px 36px -18px color-mix(in srgb, var(--class-panel) 65%, transparent)',
+      }}
     >
       <div
-        className="pointer-events-none absolute -right-14 -top-20 size-60 rounded-full opacity-25"
-        style={{ background: 'radial-gradient(circle, rgba(255,139,107,0.45) 0%, transparent 70%)' }}
+        className="pointer-events-none absolute -right-14 -top-20 size-60 rounded-full opacity-30"
+        style={{
+          background: 'radial-gradient(circle, color-mix(in srgb, var(--class-accent) 36%, transparent) 0%, transparent 70%)',
+        }}
       />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
@@ -176,8 +181,8 @@ export function DashboardHero({
 
       <div className="relative min-w-0">
         <div className="inline-flex items-center gap-2">
-          <span className="size-1.5 animate-pulse rounded-full bg-accent" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-accent">
+          <span className="size-1.5 animate-pulse rounded-full bg-[var(--class-accent)]" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--class-accent)]">
             {isCurrent ? 'Clase en curso' : 'Próxima clase'}
           </span>
         </div>
@@ -185,21 +190,21 @@ export function DashboardHero({
         <h2 className="mt-3 line-clamp-2 text-xl font-extrabold leading-tight tracking-tight sm:text-2xl">
           {nextClass.subjectName}
         </h2>
-        <p className="mt-1 text-sm font-semibold text-white/55">
+        <p className="mt-1 text-sm font-semibold text-[var(--class-muted)]">
           {nextClass.gradeName} {nextClass.sectionName}
         </p>
 
-        <div className="mt-4 grid gap-2 text-xs text-white/60">
+        <div className="mt-4 grid gap-2 text-xs text-[var(--class-muted)]">
           <span className="inline-flex items-center gap-2">
-            <Clock3 className="size-3.5 shrink-0 text-accent" />
+            <Clock3 className="size-3.5 shrink-0 text-[var(--class-accent)]" />
             {nextClass.startTime.slice(0, 5)}–{nextClass.endTime.slice(0, 5)}
           </span>
           <span className="inline-flex items-center gap-2">
-            <MapPin className="size-3.5 shrink-0 text-accent" />
+            <MapPin className="size-3.5 shrink-0 text-[var(--class-accent)]" />
             {nextClass.room ?? 'Aula sin asignar'}
           </span>
           <span className="inline-flex items-center gap-2">
-            <UsersRound className="size-3.5 shrink-0 text-accent" />
+            <UsersRound className="size-3.5 shrink-0 text-[var(--class-accent)]" />
             {nextClass.studentCount} estudiantes
           </span>
         </div>
