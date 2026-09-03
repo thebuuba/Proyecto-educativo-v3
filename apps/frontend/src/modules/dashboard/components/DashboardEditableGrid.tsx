@@ -1,6 +1,6 @@
 import { Check, GripVertical, LayoutDashboard, MoveDiagonal2, RotateCcw } from 'lucide-react'
 import type { PointerEvent as ReactPointerEvent, ReactNode } from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 export type DashboardWidgetLayout = {
   x: number
@@ -146,8 +146,13 @@ function readStoredLayout(storageKey: string) {
   }
 }
 
+function rowsForHeight(height: number) {
+  return Math.max(1, Math.ceil((height + GAP) / (ROW_HEIGHT + GAP)))
+}
+
 export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditableGridProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const contentRefs = useRef(new Map<string, HTMLDivElement>())
   const widgetsRef = useRef(widgets)
   const [containerWidth, setContainerWidth] = useState(0)
   const [editing, setEditing] = useState(false)
@@ -180,6 +185,29 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
   useEffect(() => {
     setLayout((current) => reconcileLayout(widgetsRef.current, current))
   }, [widgetSignature])
+
+  useLayoutEffect(() => {
+    if (!isDesktop || interaction) return
+
+    setLayout((current) => {
+      let changed = false
+      const grown = current.map((item) => {
+        const node = contentRefs.current.get(item.id)
+        if (!node) return item
+
+        const contentHeight = node.scrollHeight
+        const requiredRows = rowsForHeight(contentHeight)
+        const maxH = item.maxH ?? 30
+        const safeRows = Math.min(maxH, Math.max(item.minH ?? 1, requiredRows))
+
+        if (safeRows <= item.h) return item
+        changed = true
+        return { ...item, h: safeRows }
+      })
+
+      return changed ? compactLayout(grown) : current
+    })
+  })
 
   useEffect(() => {
     if (typeof window === 'undefined') return undefined
@@ -332,7 +360,13 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
                     </button>
                   ) : null}
 
-                  <div className="dashboard-grid-widget-content h-full min-h-0 overflow-auto rounded-3xl">
+                  <div
+                    ref={(node) => {
+                      if (node) contentRefs.current.set(widget.id, node)
+                      else contentRefs.current.delete(widget.id)
+                    }}
+                    className="dashboard-grid-widget-content h-full min-h-0 overflow-auto rounded-3xl"
+                  >
                     {widget.content}
                   </div>
 
