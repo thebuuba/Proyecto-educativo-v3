@@ -1,20 +1,13 @@
 /**
  * @file Página de Administración Escolar
- *
- * Vista principal de parámetros institucionales con secciones
- * para perfil del centro, años escolares y próximas funciones.
  */
 
-import {
-  AlertCircle,
-  CalendarRange,
-  RefreshCw,
-  Settings2,
-} from 'lucide-react'
+import { CalendarRange, RefreshCw, Settings2 } from 'lucide-react'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
+import { FeedbackBanner, PageHero, SemanticIcon, StatusBadge } from '@/components/ui/SemanticUI'
 import { PeriodManager } from '@/modules/planning/components/PeriodManager'
 import { AcademicYearManager } from '@/modules/school-administration/components/AcademicYearManager'
 import { SchoolProfileForm } from '@/modules/school-administration/components/SchoolProfileForm'
@@ -37,40 +30,28 @@ export function SchoolAdministrationPage() {
 
   return (
     <section className="app-content-frame teacher-dashboard space-y-5">
-      <header className="dashboard-warm-shadow relative overflow-hidden rounded-3xl border border-border bg-card px-5 py-6 sm:px-7 lg:px-8">
-        <div className="dashboard-paper-lines pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] opacity-70 sm:block" aria-hidden="true" />
-        <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-accent">
-              <Settings2 className="size-4" aria-hidden="true" />
-              Configuración
-            </div>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Administración escolar
-            </h1>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base">
-              Gestiona la identidad institucional, el calendario y las reglas operativas del centro.
-            </p>
-          </div>
-
-          <Button variant="outline" className="h-11 bg-card px-5" onClick={() => void refetch()}>
-            <RefreshCw className="size-4" />
-            Actualizar
+      <PageHero
+        title="Administración escolar"
+        description="Gestiona la identidad institucional, el calendario y las reglas operativas del centro."
+        icon={Settings2}
+        tone="info"
+        eyebrow="Configuración"
+        actions={
+          <Button variant="outline" onClick={() => void refetch()}>
+            <RefreshCw className="size-4" /> Actualizar
           </Button>
+        }
+      >
+        <div className="flex flex-wrap items-center gap-2">
+          {currentSchoolYear ? <StatusBadge tone="success">{currentSchoolYear.name} activo</StatusBadge> : <StatusBadge tone="warning">Sin año activo</StatusBadge>}
+          <span className="text-xs text-muted-foreground">{academicPeriods.length} período{academicPeriods.length === 1 ? '' : 's'} configurado{academicPeriods.length === 1 ? '' : 's'}</span>
         </div>
-      </header>
+      </PageHero>
 
-      {error ? (
-        <div className="mb-6 flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
-          <AlertCircle className="mt-0.5 size-4 shrink-0" />
-          <p>{error}</p>
-        </div>
-      ) : null}
+      {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
 
       {loading && !profile ? (
-        <div className="flex min-h-[280px] items-center justify-center text-sm font-medium text-muted-foreground">
-          Cargando configuración...
-        </div>
+        <Card><CardContent className="flex min-h-[220px] items-center justify-center text-sm font-medium text-muted-foreground">Cargando configuración...</CardContent></Card>
       ) : (
         <div className="space-y-5">
           <section id="centro-educativo" className="scroll-mt-6">
@@ -78,29 +59,21 @@ export function SchoolAdministrationPage() {
           </section>
 
           <section id="anos-escolares" className="scroll-mt-6">
-            <AcademicYearManager
-              schoolYears={schoolYears}
-              onAdd={addSchoolYear}
-              onActivate={activateSchoolYear}
-            />
+            <AcademicYearManager schoolYears={schoolYears} onAdd={addSchoolYear} onActivate={activateSchoolYear} />
           </section>
 
           <section id="periodos-academicos" className="scroll-mt-6">
             <Card>
-              <CardHeader className="flex flex-row items-start justify-between gap-4">
-                <div>
-                  <CardTitle>Períodos académicos</CardTitle>
-                  <CardDescription>
-                    Trimestres o períodos del año escolar activo.
-                  </CardDescription>
+              <CardHeader className="flex flex-row items-start justify-between gap-4 border-b-0 pb-2">
+                <div className="flex items-start gap-3">
+                  <SemanticIcon icon={CalendarRange} tone="warning" className="size-10 rounded-xl" iconClassName="size-4" />
+                  <div>
+                    <CardTitle>Períodos académicos</CardTitle>
+                    <CardDescription>Trimestres o períodos del año escolar activo.</CardDescription>
+                  </div>
                 </div>
-                <Button
-                  size="sm"
-                  disabled={!currentSchoolYear}
-                  onClick={() => setPeriodManagerOpen(true)}
-                >
-                  <CalendarRange className="size-4" />
-                  Gestionar
+                <Button size="sm" disabled={!currentSchoolYear} onClick={() => setPeriodManagerOpen(true)}>
+                  <CalendarRange className="size-4" /> Gestionar
                 </Button>
               </CardHeader>
               <CardContent>
@@ -111,9 +84,14 @@ export function SchoolAdministrationPage() {
                 ) : (
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {academicPeriods.map((period) => (
-                      <div key={period.id} className="rounded-xl border border-border bg-muted/35 p-4">
-                        <p className="text-sm font-bold text-foreground">{period.sequence}. {period.name}</p>
-                        <p className="mt-1 text-xs text-muted-foreground">{period.startDate} — {period.endDate}</p>
+                      <div key={period.id} className="rounded-2xl bg-warning/14 p-4">
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <p className="text-sm font-extrabold text-foreground">{period.sequence}. {period.name}</p>
+                            <p className="mt-1 text-xs text-muted-foreground">{period.startDate} — {period.endDate}</p>
+                          </div>
+                          {currentSchoolYear.isCurrent ? <span className="size-2 rounded-full bg-warning" /> : null}
+                        </div>
                       </div>
                     ))}
                   </div>
