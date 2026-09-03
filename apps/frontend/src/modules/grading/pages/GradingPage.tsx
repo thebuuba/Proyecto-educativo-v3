@@ -1,8 +1,10 @@
-﻿import { AlertCircle, BookOpen, CalendarDays } from 'lucide-react'
+import { BookOpen, CalendarDays, GraduationCap } from 'lucide-react'
 
 import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
+import { EmptyState } from '@/components/ui/EmptyState'
+import { FeedbackBanner, FilterBar, PageHero, StatusBadge } from '@/components/ui/SemanticUI'
 import { Select } from '@/components/ui/Select'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
@@ -70,105 +72,74 @@ export function GradingPage() {
   }, [selectedSsId])
 
   return (
-    <section className="w-full">
-      <div className="mb-3 space-y-3">
-        {!hideFilters ? (
-        <div className="grid gap-3 rounded-2xl bg-card p-3 shadow-sm lg:grid-cols-[minmax(0,1fr)_minmax(18rem,24rem)]">
-          <div className="relative min-w-0">
-            <BookOpen className="pointer-events-none absolute left-3 top-1/2 z-10 size-4 -translate-y-1/2 text-primary" aria-hidden="true" />
-            <Select
-              aria-label="Curso y asignatura"
-              value={selectedSsId}
-              onChange={(event) => setSelectedSsId(event.target.value)}
-              className="h-11 w-full min-w-0 pl-10"
-            >
-              <option value="">
-                {sectionSubjects.length > 0 ? 'Selecciona un curso' : 'No hay asignaciones'}
-              </option>
-              {groupedSectionSubjects.map((group) => (
-                <optgroup key={group.label} label={group.label}>
-                  {group.items.map((ss) => (
-                    <option key={ss.id} value={ss.id}>
-                      {ss.gradeName} {ss.sectionName} — {ss.subjectName}
-                    </option>
-                  ))}
-                </optgroup>
-              ))}
-            </Select>
-          </div>
+    <section className="w-full space-y-4">
+      {!hideFilters ? (
+        <>
+          <PageHero
+            title="Evaluación"
+            description="Registra actividades, califica evidencias y consulta el progreso por competencias."
+            icon={GraduationCap}
+            tone="info"
+          >
+            <div className="flex flex-wrap items-center gap-2">
+              {selectedSs ? <StatusBadge tone="info">{selectedSs.gradeName} {selectedSs.sectionName} · {selectedSs.subjectName}</StatusBadge> : <StatusBadge tone="warning">Selecciona un curso</StatusBadge>}
+              <StatusBadge tone={isFinalView ? 'success' : 'warning'}>{selectedPeriod.name}</StatusBadge>
+            </div>
+          </PageHero>
 
-          <div className="relative min-w-0">
-            <CalendarDays className="pointer-events-none absolute left-3 top-1/2 z-10 size-4 -translate-y-1/2 text-primary" aria-hidden="true" />
-            <Select
-              aria-label="Período de evaluación"
-              value={selectedPeriodId}
-              onChange={(event) => setSelectedPeriodId(event.target.value as typeof selectedPeriodId)}
-              className="h-11 w-full min-w-0 pl-10"
-            >
-              {competencyPeriods.map((period) => (
-                <option key={period.id} value={period.id}>
-                  {period.name}
-                </option>
-              ))}
-            </Select>
-          </div>
-        </div>
-        ) : null}
+          <FilterBar className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,24rem)]">
+            <div className="relative min-w-0">
+              <BookOpen className="pointer-events-none absolute left-3 top-1/2 z-10 size-4 -translate-y-1/2 text-primary" aria-hidden="true" />
+              <Select
+                aria-label="Curso y asignatura"
+                value={selectedSsId}
+                onChange={(event) => setSelectedSsId(event.target.value)}
+                className="h-11 w-full min-w-0 pl-10"
+              >
+                <option value="">{sectionSubjects.length > 0 ? 'Selecciona un curso' : 'No hay asignaciones'}</option>
+                {groupedSectionSubjects.map((group) => (
+                  <optgroup key={group.label} label={group.label}>
+                    {group.items.map((ss) => <option key={ss.id} value={ss.id}>{ss.gradeName} {ss.sectionName} — {ss.subjectName}</option>)}
+                  </optgroup>
+                ))}
+              </Select>
+            </div>
 
-        {error ? (
-          <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
-            <AlertCircle className="mt-0.5 size-4 shrink-0" />
-            <p>{error}</p>
-          </div>
-        ) : null}
-      </div>
+            <div className="relative min-w-0">
+              <CalendarDays className="pointer-events-none absolute left-3 top-1/2 z-10 size-4 -translate-y-1/2 text-warning" aria-hidden="true" />
+              <Select
+                aria-label="Período de evaluación"
+                value={selectedPeriodId}
+                onChange={(event) => setSelectedPeriodId(event.target.value as typeof selectedPeriodId)}
+                className="h-11 w-full min-w-0 pl-10"
+              >
+                {competencyPeriods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}
+              </Select>
+            </div>
+          </FilterBar>
+        </>
+      ) : null}
+
+      {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
 
       {!selectedSsId ? (
-        <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-center">
-          <p className="text-sm text-muted-foreground">
-            Selecciona un curso para gestionar sus calificaciones.
-          </p>
-        </div>
+        <EmptyState
+          title="Selecciona un curso"
+          description="Elige el curso y la asignatura para gestionar actividades, calificaciones y recuperación."
+          icon={GraduationCap}
+          tone="warning"
+        />
       ) : loading ? (
         <div role="status" aria-label="Cargando calificaciones" className="space-y-3 animate-pulse">
           <span className="sr-only">Cargando calificaciones...</span>
-          <div className="h-14 rounded-lg border border-border bg-muted/45" />
+          <div className="h-14 rounded-2xl bg-muted/55" />
           <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-5">
-            {Array.from({ length: 5 }, (_, index) => <div key={index} className="h-24 rounded-lg bg-muted/45" />)}
+            {Array.from({ length: 5 }, (_, index) => <div key={index} className="h-24 rounded-2xl bg-muted/55" />)}
           </div>
           <div className="grid gap-3 xl:grid-cols-4">
-            {Array.from({ length: 4 }, (_, index) => <div key={index} className="h-64 rounded-lg bg-muted/45" />)}
+            {Array.from({ length: 4 }, (_, index) => <div key={index} className="h-64 rounded-3xl bg-muted/55" />)}
           </div>
         </div>
-      ) : isFinalView ? (
-        <GradingBook
-          students={students}
-          teams={teams}
-          activities={activities}
-          records={gradeRecords}
-          recoveryScores={recoveryScores}
-          periodName={selectedPeriod.name}
-          periodShortName={selectedPeriod.shortName}
-          recoveryLabel={selectedPeriod.recoveryLabel}
-          courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
-          saving={saving}
-          cellSaveStates={cellSaveStates}
-          initialView="final"
-          initialActivityAction={requestedAction}
-          initialActivityBlockId={requestedBlockId}
-          initialActivityId={requestedActivityId}
-          initialActivityMode={requestedActivityMode}
-          originReturnLabel={originReturnLabel}
-          onReturnToOrigin={returnToOrigin}
-          onAddActivity={addActivity}
-          onUpdateActivity={updateActivity}
-          onDeleteActivity={deleteActivity}
-          onSaveScore={updateActivityScore}
-          onSaveRecovery={updateRecoveryScore}
-          loadFinalRecords={loadFinalRecords}
-          getActivitiesForPeriod={getActivitiesForPeriod}
-          onActivityWorkspaceChange={setHideFilters}
-        />
       ) : (
         <GradingBook
           students={students}
@@ -182,6 +153,7 @@ export function GradingPage() {
           courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
           saving={saving}
           cellSaveStates={cellSaveStates}
+          {...(isFinalView ? { initialView: 'final' as const } : {})}
           initialActivityAction={requestedAction}
           initialActivityBlockId={requestedBlockId}
           initialActivityId={requestedActivityId}
@@ -205,14 +177,12 @@ export function GradingPage() {
 function groupSectionSubjects(items: SectionSubjectOption[]) {
   const orderedItems = [...items].sort(compareSectionSubjects)
   const groups = new Map<string, SectionSubjectOption[]>()
-
   orderedItems.forEach((item) => {
     const label = getLevelLabel(item)
     const groupItems = groups.get(label) ?? []
     groupItems.push(item)
     groups.set(label, groupItems)
   })
-
   return Array.from(groups.entries())
     .sort(([firstLabel, firstItems], [secondLabel, secondItems]) => {
       const levelOrder = getLevelOrder(firstItems[0]) - getLevelOrder(secondItems[0])
@@ -225,13 +195,10 @@ function groupSectionSubjects(items: SectionSubjectOption[]) {
 function compareSectionSubjects(first: SectionSubjectOption, second: SectionSubjectOption) {
   const levelOrder = getLevelOrder(first) - getLevelOrder(second)
   if (levelOrder !== 0) return levelOrder
-
   const gradeOrder = getGradeOrder(first) - getGradeOrder(second)
   if (gradeOrder !== 0) return gradeOrder
-
   const sectionOrder = first.sectionName.localeCompare(second.sectionName, 'es', { numeric: true })
   if (sectionOrder !== 0) return sectionOrder
-
   return first.subjectName.localeCompare(second.subjectName, 'es')
 }
 
@@ -256,8 +223,5 @@ function getGradeOrder(item: SectionSubjectOption) {
 }
 
 function normalizeText(value: string) {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 }
