@@ -45,10 +45,10 @@ main[data-module='planificaciones'] nav[aria-label='Secciones de Planificación'
   border-radius: 0.9rem;
 }
 
-main[data-module='planificaciones'] nav[aria-label='Secciones de Planificación'] button[aria-current='page'],
-main[data-module='planificaciones'] nav[aria-label='Secciones de Planificación'] button[data-active='true'] {
-  background: color-mix(in srgb, var(--primary) 14%, var(--card));
-  color: var(--foreground);
+main[data-module='planificaciones'] nav[aria-label='Secciones de Planificación'] button[aria-pressed='true'] {
+  background: color-mix(in srgb, var(--warning) 30%, var(--card)) !important;
+  color: var(--foreground) !important;
+  box-shadow: none !important;
 }
 
 main[data-module='planificaciones'] :where(.bg-accent\/12, .bg-amber-50, .bg-yellow-50) {
@@ -62,6 +62,14 @@ main[data-module='planificaciones'] :where(.bg-emerald-50, .bg-green-50) {
 
 main[data-module='planificaciones'] :where(.text-accent, .text-amber-700, .text-yellow-700) {
   color: var(--foreground) !important;
+}
+
+main[data-module='planificaciones'] section.w-full.min-w-0.space-y-5 > header {
+  padding-inline: 0.15rem;
+}
+
+main[data-module='planificaciones'] section.w-full.min-w-0.space-y-5 > div.rounded-3xl.bg-card {
+  box-shadow: 0 16px 40px -30px color-mix(in srgb, var(--foreground) 18%, transparent);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -106,7 +114,12 @@ main[data-module='estudiantes'] :where(h1.text-primary, h2.text-primary, h3.text
   color: var(--foreground) !important;
 }
 
-main[data-module='estudiantes'] :where(.bg-primary\/\[0\.035\], .bg-primary\/5, .bg-primary\/8) {
+/* Contexto de matrícula en verde suave; azul se reserva para acciones. */
+main[data-module='estudiantes'] :where(.bg-primary\/\[0\.035\], .bg-primary\/\[0\.045\]) {
+  background: color-mix(in srgb, var(--success) 12%, var(--card)) !important;
+}
+
+main[data-module='estudiantes'] :where(.bg-primary\/5, .bg-primary\/8) {
   background: color-mix(in srgb, var(--primary) 9%, var(--card)) !important;
 }
 
@@ -120,6 +133,16 @@ main[data-module='estudiantes'] :where(.bg-warning\/10, .bg-amber-50, .bg-yellow
 
 main[data-module='estudiantes'] :where(.bg-destructive\/10, .bg-red-50) {
   background: color-mix(in srgb, var(--destructive) 14%, var(--card)) !important;
+}
+
+main[data-module='estudiantes'] span.bg-primary.text-primary-foreground.shadow-lg {
+  background: var(--success) !important;
+  color: var(--foreground) !important;
+  box-shadow: none !important;
+}
+
+main[data-module='estudiantes'] section.overflow-hidden.rounded-3xl {
+  box-shadow: 0 16px 40px -30px color-mix(in srgb, var(--foreground) 20%, transparent);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -152,12 +175,6 @@ main[data-module='bitacora'] {
   --journal-observation: var(--success);
   --journal-idea: var(--warning);
   --journal-incident: var(--destructive);
-}
-
-/* La identidad del módulo es coral; búsqueda y acciones siguen usando azul. */
-main[data-module='bitacora'] header .bg-violet-100 {
-  background: color-mix(in srgb, var(--destructive) 15%, var(--card)) !important;
-  color: color-mix(in srgb, var(--destructive) 72%, var(--foreground)) !important;
 }
 
 /* -------------------------------------------------------------------------- */
