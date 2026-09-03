@@ -75,6 +75,14 @@ function compactLayout(items: LayoutItem[], pinnedId?: string) {
 
   movable.forEach((item) => {
     let next = clampItem(item)
+    let guard = 0
+
+    while (placed.some((other) => overlaps(next, other)) && guard < 100) {
+      guard += 1
+      const colliders = placed.filter((other) => overlaps(next, other))
+      const nextY = Math.max(...colliders.map((other) => other.y + other.h))
+      next = { ...next, y: nextY }
+    }
 
     while (next.y > 0) {
       const candidate = { ...next, y: next.y - 1 }
