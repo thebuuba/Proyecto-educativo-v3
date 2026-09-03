@@ -1,5 +1,5 @@
 import { CheckCircle, Eye, EyeOff } from 'lucide-react'
-import type { FormEvent } from 'react'
+import type { FormEvent, ReactNode } from 'react'
 import { useState } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
 
@@ -188,14 +188,14 @@ function AuthBackdrop() {
   </div>
 }
 
-function AuthField({ label, children }: { label: string; children: React.ReactNode }) {
+function AuthField({ label, children }: { label: string; children: ReactNode }) {
   return <label className="block"><span className="mb-1.5 block text-sm font-semibold text-foreground">{label}</span>{children}</label>
 }
 
-function SuccessMessage({ children }: { children: React.ReactNode }) {
+function SuccessMessage({ children }: { children: ReactNode }) {
   return <div className="mb-5 flex items-center gap-2.5 rounded-2xl border border-success/30 bg-success/16 px-4 py-3 text-foreground"><CheckCircle className="size-4 shrink-0" /><span className="text-sm font-medium">{children}</span></div>
 }
 
-function ProviderButton({ children, onClick }: { children: React.ReactNode; onClick: () => void }) {
+function ProviderButton({ children, onClick }: { children: ReactNode; onClick: () => void }) {
   return <button type="button" onClick={onClick} className="flex items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted active:scale-[0.985]">{children}</button>
 }
