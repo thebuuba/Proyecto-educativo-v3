@@ -20,10 +20,12 @@
 - AulaBase uses only the official palette defined in `apps/frontend/src/semantic-palette.css`: blue, green, coral, yellow, gray, white, and dark text.
 - Color is semantic, not decorative: blue=information/action, green=success/completed, yellow=warning/pending/preparation, coral=danger/incident, gray=neutral/inactive.
 - Prefer shared components from `apps/frontend/src/components/ui/SemanticUI.tsx` (`PageHero`, `SemanticIcon`, `StatusBadge`, `MetricTile`, `FilterBar`, `SectionHeader`, `ProgressIndicator`, `FeedbackBanner`).
-- Prefer existing shared `Button`, `Card`, `EmptyState`, `Input`, `Select`, and `Modal` components over page-local variants.
+- Prefer existing shared `Button`, `Card`, `EmptyState`, `Input`, `Select`, `Textarea`, `Modal`, and `ConfirmDialog` components over page-local variants.
 - Do not introduce new Tailwind identity colors such as violet, cyan, emerald, amber, rose, or arbitrary hex/RGB values in business modules. Use semantic tokens instead.
 - Page titles must use the dark foreground color. Module identity should come from semantic icons, badges, progress, and small soft surfaces.
 - Keep primary surfaces white. Do not paint large cards or page headers with saturated brand/status colors.
 - Use at most one strong primary action per visual region. Put infrequent actions in `Acciones`/ellipsis menus.
-- Subject colors in the schedule may use stable variants derived only from the official AulaBase palette; subject color is identity, not status.
-- `semantic-legacy-bridge.css` exists only for legacy compatibility. New code must not depend on legacy color classes.
+- Subject colors may use stable variants derived only from the official AulaBase palette; subject color is identity, not status.
+- `semantic-legacy-bridge.css` is restricted to legacy subcomponents in Cursos/Planificación plus Auth compatibility. Never expand it to a new authenticated module.
+- Evaluación may use `modules/grading/grading-design.css` only inside `grading-workspace` while `GradingBook` is decomposed; do not reuse those legacy mappings elsewhere.
+- New or migrated code must consume semantic tokens/components directly and should remove obsolete compatibility rules when safe.
