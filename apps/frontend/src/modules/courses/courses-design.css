@@ -59,7 +59,6 @@ body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'
   font-size: 0.76rem;
 }
 
-/* El menú global deja de competir con la cabecera. */
 body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] + * {
   flex-shrink: 0;
 }
@@ -68,7 +67,6 @@ body:has(#courses-summary-title) details.group > summary {
   box-shadow: none;
 }
 
-/* En la cabecera actual, el único details visible es el menú de acciones. */
 body:has(#courses-summary-title) .order-2 details.group > summary {
   height: 44px !important;
   min-height: 44px !important;
@@ -123,7 +121,6 @@ body:has(#courses-summary-title) .space-y-8 > section > div:first-child > span:n
   font-size: 0.66rem !important;
 }
 
-/* Las líneas largas son las que hacían que la pantalla pareciera una tabla. */
 body:has(#courses-summary-title) .space-y-8 > section > div:first-child > div.h-px,
 body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > div.h-px {
   display: none !important;
@@ -179,7 +176,7 @@ body:has(#courses-summary-title) div.grid:has(> article.group) {
 body:has(#courses-summary-title) article.group {
   position: relative;
   min-width: 0;
-  min-height: 174px;
+  min-height: 156px;
   overflow: visible !important;
   border: 1px solid transparent;
   border-radius: 22px !important;
@@ -196,14 +193,28 @@ body:has(#courses-summary-title) article.group {
   }
 }
 
+/* La zona clicable concentra toda la información útil y reserva el cierre. */
 body:has(#courses-summary-title) article.group > div[role='button'] {
-  padding: 1rem 1rem 0.9rem !important;
+  position: relative;
+  min-height: 156px;
+  padding: 0.95rem 1rem 3.2rem !important;
 }
 
-/* Azul único para la identificación visual del curso. */
+/* Cabecera: identificador, nombre y estado en una sola lectura. */
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center !important;
+  gap: 0.7rem !important;
+}
+
+body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child > div:first-child {
+  display: contents !important;
+}
+
 body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child span[style] {
-  width: 2.75rem !important;
-  height: 2.75rem !important;
+  width: 2.7rem !important;
+  height: 2.7rem !important;
   border-radius: 12px !important;
   background: var(--palette-blue) !important;
   color: var(--palette-text) !important;
@@ -216,12 +227,11 @@ body:has(#courses-summary-title) article.group > div[role='button'] h3 {
 }
 
 body:has(#courses-summary-title) article.group > div[role='button'] p {
-  margin-top: 0.25rem !important;
-  font-size: 0.69rem !important;
+  margin-top: 0.2rem !important;
+  font-size: 0.66rem !important;
   font-weight: 500 !important;
 }
 
-/* Estado: pequeño, semántico y sin robar atención. */
 body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child > div:last-child > span {
   padding: 0.28rem 0.58rem !important;
   background: color-mix(in srgb, var(--palette-green) 15%, var(--palette-white)) !important;
@@ -234,66 +244,83 @@ body:has(#courses-summary-title) article.group > div[role='button'] > div:first-
   background: var(--palette-green) !important;
 }
 
-/* Las métricas dejan de vivir en un gran rectángulo gris. */
+/* Métricas como chips: cada dato se lee como una unidad y deja de parecer tabla. */
 body:has(#courses-summary-title) article.group > div[role='button'] > div.grid {
-  margin-top: 1rem !important;
-  padding: 0.2rem 0 0.15rem !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0.4rem !important;
+  margin-top: 0.8rem !important;
+  padding: 0 !important;
   border: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
 }
 
 body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span {
-  padding-inline: 0.4rem;
+  display: flex !important;
+  min-width: 0;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.48rem 0.42rem !important;
+  border: 1px solid color-mix(in srgb, var(--palette-gray) 60%, var(--palette-white)) !important;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--palette-gray) 25%, var(--palette-white));
+  white-space: nowrap;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span:first-child {
-  padding-left: 0;
-}
-
-body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span:last-child {
-  padding-right: 0;
+body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span + span {
+  border-left-width: 1px !important;
 }
 
 body:has(#courses-summary-title) article.group > div[role='button'] > div.grid strong {
-  font-size: 0.86rem;
-  line-height: 1.1;
+  display: inline !important;
+  flex: none;
+  font-size: 0.78rem;
+  line-height: 1;
 }
 
 body:has(#courses-summary-title) article.group > div[role='button'] > div.grid span span {
-  font-size: 0.61rem;
+  display: inline !important;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.56rem;
+  line-height: 1;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] > div.grid.divide-x > :not([hidden]) ~ :not([hidden]) {
-  border-color: color-mix(in srgb, var(--palette-gray) 62%, var(--palette-white));
-}
-
-/* La acción principal queda dentro del área clicable de la tarjeta. */
+/* Cierre visual de acceso: claro y consistente con el Inicio. */
 body:has(#courses-summary-title) article.group > div[role='button']::after {
   content: 'Entrar al curso  →';
-  display: inline-flex;
-  width: fit-content;
-  margin-top: 1rem;
+  position: absolute;
+  left: 1rem;
+  right: 3.5rem;
+  bottom: 0.72rem;
+  display: flex;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--palette-blue) 12%, var(--palette-white));
   color: var(--primary);
-  font-size: 0.7rem;
+  font-size: 0.67rem;
   font-weight: 800;
   line-height: 1;
-  transition: transform 160ms ease;
+  transition: background 160ms ease, transform 160ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   body:has(#courses-summary-title) article.group:hover > div[role='button']::after {
-    transform: translateX(2px);
+    background: color-mix(in srgb, var(--palette-blue) 18%, var(--palette-white));
   }
 }
 
-/* El pie solo conserva el menú contextual. Agregar sección vive ahí y deja de
-   repetirse como acción visible en cada tarjeta. */
+/* El menú contextual queda aislado en la misma franja inferior. */
 body:has(#courses-summary-title) article.group > div:last-child {
   position: absolute;
-  right: 0.65rem;
-  bottom: 0.45rem;
-  min-height: 34px !important;
+  right: 0.72rem;
+  bottom: 0.72rem;
+  min-height: 32px !important;
   padding: 0 !important;
   border: 0 !important;
   background: transparent;
@@ -310,7 +337,14 @@ body:has(#courses-summary-title) article.group > div:last-child button {
 body:has(#courses-summary-title) article.group > div:last-child button[aria-label='Más acciones'] {
   width: 32px;
   height: 32px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--palette-gray) 30%, var(--palette-white));
   color: var(--muted-foreground);
+}
+
+body:has(#courses-summary-title) article.group > div:last-child button[aria-label='Más acciones']:hover {
+  background: color-mix(in srgb, var(--palette-gray) 48%, var(--palette-white));
+  color: var(--foreground);
 }
 
 body:has(#courses-summary-title) article.group > div:last-child [role='menu'] {
@@ -333,7 +367,17 @@ body:has(#courses-summary-title) article.group > div:last-child [role='menu'] {
     gap: 0.2rem 0.5rem;
   }
 
-  body:has(#courses-summary-title) article.group {
-    min-height: 168px;
+  body:has(#courses-summary-title) article.group,
+  body:has(#courses-summary-title) article.group > div[role='button'] {
+    min-height: 164px;
+  }
+
+  body:has(#courses-summary-title) article.group > div[role='button'] > div.grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.3rem !important;
+  }
+
+  body:has(#courses-summary-title) article.group > div[role='button'] {
+    padding-bottom: 3.2rem !important;
   }
 }
