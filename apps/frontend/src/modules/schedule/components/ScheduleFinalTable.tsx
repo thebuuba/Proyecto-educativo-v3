@@ -1,8 +1,7 @@
-import { CalendarDays, ClipboardList, Pencil, Settings2 } from 'lucide-react'
+import { CalendarDays, ChevronDown, ClipboardList, Pencil, Settings2 } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { useMemo } from 'react'
 
-import { Button } from '@/components/ui/Button'
 import type { ScheduleEntry } from '@/modules/schedule/types'
 import { formatTime, getDurationHours } from '@/modules/schedule/utils/scheduleGrid'
 import type { ScheduleBlock, ScheduleConfig } from '@/modules/schedule/components/ScheduleWizard'
@@ -126,16 +125,30 @@ export function ScheduleFinalTable({
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            <Button variant="outline" size="sm" onClick={onConfigureAssignments} className="h-10 gap-2 rounded-xl bg-card px-4">
-              <Settings2 className="size-4" />
-              Asignar clases
-            </Button>
-            <Button variant="outline" size="sm" onClick={onEditStructure} className="h-10 gap-2 rounded-xl bg-card px-4">
-              <Pencil className="size-4" />
-              Editar estructura
-            </Button>
-          </div>
+          <details className="group/actions relative shrink-0">
+            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl border border-border bg-card px-4 text-xs font-extrabold text-foreground shadow-sm transition hover:bg-muted/40 [&::-webkit-details-marker]:hidden">
+              Acciones
+              <ChevronDown className="size-4 text-muted-foreground transition-transform group-open/actions:rotate-180" />
+            </summary>
+            <div className="absolute right-0 top-full z-30 mt-2 w-52 overflow-hidden rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+              <button
+                type="button"
+                onClick={onConfigureAssignments}
+                className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left text-xs font-bold text-foreground transition hover:bg-muted"
+              >
+                <Settings2 className="size-4 text-primary" />
+                Asignar clases
+              </button>
+              <button
+                type="button"
+                onClick={onEditStructure}
+                className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left text-xs font-bold text-foreground transition hover:bg-muted"
+              >
+                <Pencil className="size-4 text-primary" />
+                Editar estructura
+              </button>
+            </div>
+          </details>
         </div>
       </section>
 
@@ -260,14 +273,13 @@ function ScheduleFinalCell({ content }: { content: CellContent }) {
 
   return (
     <div
-      className="relative flex h-full min-h-16 flex-col justify-center overflow-hidden rounded-xl border px-3 py-2 shadow-[0_8px_20px_-20px_rgba(47,53,66,0.35)]"
-      style={{ backgroundColor: palette.soft, borderColor: `${palette.color}38` }}
+      className="flex h-full min-h-16 flex-col justify-center rounded-xl px-3 py-2 shadow-[0_8px_20px_-20px_rgba(47,53,66,0.28)]"
+      style={{ backgroundColor: palette.soft }}
     >
-      <span className="absolute inset-y-2 left-0 w-1 rounded-r-full" style={{ backgroundColor: palette.color }} />
-      <p className="pl-1 text-xs font-extrabold leading-tight" style={{ color: palette.color }}>
+      <p className="text-xs font-extrabold leading-tight" style={{ color: palette.color }}>
         {content.entry.subjectName}
       </p>
-      <p className="mt-1 pl-1 text-[10px] font-semibold text-muted-foreground">
+      <p className="mt-1 text-[10px] font-semibold text-muted-foreground">
         {content.entry.gradeName} {content.entry.sectionName} · {content.entry.academicLevelName}
       </p>
     </div>
