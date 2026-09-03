@@ -106,7 +106,7 @@ export function PageHero({
         <div className="flex min-w-0 items-start gap-3.5">
           {icon ? <SemanticIcon icon={icon} tone={tone} /> : null}
           <div className="min-w-0">
-            {eyebrow ? <div className="mb-1 text-[10px] font-extrabold uppercase tracking-[0.18em] text-secondary">{eyebrow}</div> : null}
+            {eyebrow ? <div className="mb-1 text-[10px] font-extrabold uppercase tracking-[0.18em] text-accent">{eyebrow}</div> : null}
             <h1 className="break-words text-2xl font-extrabold tracking-tight text-foreground">{title}</h1>
             {description ? <p className="mt-1 max-w-3xl text-sm leading-5 text-muted-foreground">{description}</p> : null}
             {children ? <div className="mt-3">{children}</div> : null}
