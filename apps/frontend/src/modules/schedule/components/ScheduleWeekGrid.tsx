@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button'
 import type { ScheduleEntry } from '@/modules/schedule/types'
 import { formatTime, getDurationHours } from '@/modules/schedule/utils/scheduleGrid'
 import type { ScheduleBlock, ScheduleConfig } from '@/modules/schedule/components/ScheduleWizard'
+import { getSubjectPalette } from '@/utils/subjectPalette'
 
 type AssignedEntry = {
   scheduleEntryId: string
@@ -240,14 +241,21 @@ export function ScheduleWeekGrid({
                       const entryKey = getCellKey(day.dayOfWeek, block)
                       const assigned = entriesByCell.get(entryKey)
                       const pedagogical = pedagogicalBlocksByCell.get(entryKey)
+                      const assignedPalette = assigned ? getSubjectPalette(assigned.subjectName) : null
 
                       return (
                         <div key={block.id} className="relative">
-                          {assigned ? (
-                            <div className="group relative flex min-h-[86px] flex-col justify-between overflow-hidden rounded-xl border border-primary/15 bg-card px-3 py-2.5 shadow-[0_8px_20px_-20px_rgba(47,53,66,0.35)]">
-                              <span className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-primary" />
+                          {assigned && assignedPalette ? (
+                            <div
+                              className="group relative flex min-h-[86px] flex-col justify-between overflow-hidden rounded-xl border px-3 py-2.5 shadow-[0_8px_20px_-20px_rgba(47,53,66,0.35)]"
+                              style={{ backgroundColor: assignedPalette.soft, borderColor: `${assignedPalette.color}38` }}
+                            >
+                              <span className="absolute inset-y-2 left-0 w-1 rounded-r-full" style={{ backgroundColor: assignedPalette.color }} />
                               <div className="flex items-start justify-between gap-2 pl-1">
-                                <span className="line-clamp-3 text-[12px] font-extrabold leading-[1.2] text-foreground">
+                                <span
+                                  className="line-clamp-3 text-[12px] font-extrabold leading-[1.2]"
+                                  style={{ color: assignedPalette.color }}
+                                >
                                   {assigned.subjectName}
                                 </span>
                                 <button
@@ -256,7 +264,7 @@ export function ScheduleWeekGrid({
                                     e.stopPropagation()
                                     onRemove(assigned.scheduleEntryId)
                                   }}
-                                  className="shrink-0 rounded-lg p-1 text-muted-foreground opacity-0 transition hover:bg-muted group-hover:opacity-100 focus-visible:opacity-100"
+                                  className="shrink-0 rounded-lg p-1 text-muted-foreground opacity-0 transition hover:bg-white/60 group-hover:opacity-100 focus-visible:opacity-100"
                                   aria-label="Quitar asignatura"
                                 >
                                   <X className="size-3.5" />
@@ -336,25 +344,28 @@ export function ScheduleWeekGrid({
                                     No hay cursos disponibles. Crea cursos primero.
                                   </div>
                                 ) : (
-                                  sectionSubjects.map((ss) => (
-                                    <button
-                                      key={ss.id}
-                                      type="button"
-                                      className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition hover:bg-primary/[0.035]"
-                                      onClick={() => {
-                                        onAssign(day.dayOfWeek, block, ss.id, ss.sectionId)
-                                        setOpenDropdown(null)
-                                      }}
-                                    >
-                                      <span className="size-2.5 shrink-0 rounded-full bg-primary" />
-                                      <div className="min-w-0">
-                                        <span className="block text-xs font-extrabold text-foreground">{ss.subjectName}</span>
-                                        <span className="block truncate text-[10px] text-muted-foreground">
-                                          {ss.gradeName} {ss.sectionName} · {ss.academicLevelName} · {ss.teacherName}
-                                        </span>
-                                      </div>
-                                    </button>
-                                  ))
+                                  sectionSubjects.map((ss) => {
+                                    const palette = getSubjectPalette(ss.subjectName)
+                                    return (
+                                      <button
+                                        key={ss.id}
+                                        type="button"
+                                        className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition hover:bg-primary/[0.035]"
+                                        onClick={() => {
+                                          onAssign(day.dayOfWeek, block, ss.id, ss.sectionId)
+                                          setOpenDropdown(null)
+                                        }}
+                                      >
+                                        <span className="size-2.5 shrink-0 rounded-full" style={{ backgroundColor: palette.color }} />
+                                        <div className="min-w-0">
+                                          <span className="block text-xs font-extrabold text-foreground">{ss.subjectName}</span>
+                                          <span className="block truncate text-[10px] text-muted-foreground">
+                                            {ss.gradeName} {ss.sectionName} · {ss.academicLevelName} · {ss.teacherName}
+                                          </span>
+                                        </div>
+                                      </button>
+                                    )
+                                  })
                                 )}
                               </div>
                             </div>
