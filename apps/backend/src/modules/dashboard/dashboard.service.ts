@@ -7,6 +7,7 @@ import { UpdateTaskDto } from './dto/update-task.dto'
 const MANAGEMENT_ROLES = new Set(['admin', 'director', 'coordinator'])
 const TASK_ROLES = new Set([...MANAGEMENT_ROLES, 'teacher'])
 const DAY_LABELS = ['LUN', 'MAR', 'MIE', 'JUE', 'VIE']
+const DASHBOARD_TIME_ZONE = 'America/Santo_Domingo'
 
 export type DashboardView = 'management' | 'teacher' | 'student' | 'guardian' | 'viewer'
 
@@ -38,6 +39,26 @@ export function calculateAttendanceRate(records: AttendanceRecord[]) {
   if (considered.length === 0) return null
   const attended = considered.filter((record) => record.status === 'PRESENT' || record.status === 'LATE').length
   return Math.round((attended / considered.length) * 100)
+}
+
+export function getDashboardClock(now: Date) {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat('en-CA', {
+      timeZone: DASHBOARD_TIME_ZONE,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hourCycle: 'h23',
+    }).formatToParts(now).map(({ type, value }) => [type, value]),
+  )
+  const calendarDate = new Date(Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day)))
+  return {
+    calendarDate,
+    dayOfWeek: calendarDate.getUTCDay(),
+    currentMinutes: Number(parts.hour) * 60 + Number(parts.minute),
+  }
 }
 
 export function buildTeacherAnalytics(records: TeacherGradeRecord[]) {
@@ -93,7 +114,7 @@ export class DashboardService {
       view,
       context: {
         firstName: appUser?.fullName?.trim().split(/\s+/)[0] || 'usuario',
-        formattedDate: new Intl.DateTimeFormat('es-DO', { weekday: 'long', day: 'numeric', month: 'long' }).format(now),
+        formattedDate: new Intl.DateTimeFormat('es-DO', { timeZone: DASHBOARD_TIME_ZONE, weekday: 'long', day: 'numeric', month: 'long' }).format(now),
         schoolYearName: schoolYear?.name ?? 'Sin año activo',
         periodName: period?.name ?? 'Sin período activo',
       },
@@ -126,6 +147,7 @@ export class DashboardService {
   }
 
   private async getAcademicContext(schoolId: string, now: Date) {
+    const { calendarDate } = getDashboardClock(now)
     const periods = await prisma.academicPeriod.findMany({
       where: { schoolId, status: 'ACTIVE', schoolYear: { isCurrent: true, status: 'ACTIVE' } },
       select: { id: true, name: true, sequence: true, startDate: true, endDate: true, schoolYear: { select: { id: true, name: true } } },
@@ -135,7 +157,7 @@ export class DashboardService {
     if (periods.length) {
       return {
         schoolYear: periods[0].schoolYear,
-        period: periods.find((item) => item.startDate <= now && item.endDate >= now) ?? periods[0],
+        period: periods.find((item) => item.startDate <= calendarDate && item.endDate >= calendarDate) ?? periods[0],
       }
     }
     const schoolYear = await prisma.schoolYear.findFirst({
@@ -218,7 +240,7 @@ export class DashboardService {
 
   private async getAgenda(schoolId: string, schoolYearId: string | null, periodId: string | null, scope: ViewerScope, now: Date) {
     if (!schoolYearId || (scope.view === 'teacher' && !scope.teacherId) || ((scope.view === 'student' || scope.view === 'guardian') && scope.sectionIds.length === 0)) return []
-    const dayOfWeek = now.getDay()
+    const { dayOfWeek, currentMinutes } = getDashboardClock(now)
     const entries = await prisma.scheduleEntry.findMany({
       where: {
         schoolId, schoolYearId, dayOfWeek, status: 'ACTIVE',
@@ -231,7 +253,6 @@ export class DashboardService {
     const sections = [...new Set(entries.map((entry) => entry.sectionId))]
     const counts = sections.length ? await prisma.enrollment.groupBy({ by: ['sectionId'], where: { schoolId, schoolYearId, sectionId: { in: sections }, status: 'ACTIVE' }, _count: { _all: true } }) : []
     const countBySection = new Map(counts.map((item) => [item.sectionId, item._count._all]))
-    const currentMinutes = now.getHours() * 60 + now.getMinutes()
     return entries.map((entry) => {
       const start = entry.timeSlot.startTime.getUTCHours() * 60 + entry.timeSlot.startTime.getUTCMinutes()
       const end = entry.timeSlot.endTime.getUTCHours() * 60 + entry.timeSlot.endTime.getUTCMinutes()
@@ -257,7 +278,8 @@ export class DashboardService {
   }
 
   private async getWeeklyAttendance(user: AuthenticatedUser, scope: ViewerScope, now: Date) {
-    const weekStart = startOfWeek(now)
+    const { calendarDate: today } = getDashboardClock(now)
+    const weekStart = startOfWeek(today)
     const previousStart = addDays(weekStart, -7)
     const range = { gte: previousStart, lt: addDays(weekStart, 5) }
     const restricted = scope.view === 'student' || scope.view === 'guardian'
@@ -283,7 +305,7 @@ export class DashboardService {
       days: DAY_LABELS.map((label, index) => {
         const date = addDays(weekStart, index)
         const dayRecords = currentRecords.filter((record) => sameDate(record.attendanceDate, date))
-        return { label, value: calculateAttendanceRate(dayRecords), isToday: sameDate(date, now) }
+        return { label, value: calculateAttendanceRate(dayRecords), isToday: sameDate(date, today) }
       }),
     }
   }
@@ -372,20 +394,20 @@ export class DashboardService {
 
 function startOfWeek(date: Date) {
   const result = new Date(date)
-  const day = result.getDay() || 7
-  result.setDate(result.getDate() - day + 1)
-  result.setHours(0, 0, 0, 0)
+  const day = result.getUTCDay() || 7
+  result.setUTCDate(result.getUTCDate() - day + 1)
+  result.setUTCHours(0, 0, 0, 0)
   return result
 }
 
 function addDays(date: Date, amount: number) {
   const result = new Date(date)
-  result.setDate(result.getDate() + amount)
+  result.setUTCDate(result.getUTCDate() + amount)
   return result
 }
 
 function sameDate(left: Date, right: Date) {
-  return left.getFullYear() === right.getFullYear() && left.getMonth() === right.getMonth() && left.getDate() === right.getDate()
+  return left.getUTCFullYear() === right.getUTCFullYear() && left.getUTCMonth() === right.getUTCMonth() && left.getUTCDate() === right.getUTCDate()
 }
 
 function relativeTime(date: Date, now: Date) {
