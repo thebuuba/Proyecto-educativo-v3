@@ -4,9 +4,9 @@
 }
 
 /*
- * Reglas de compatibilidad para módulos o subcomponentes que aún conservan
- * clases de color heredadas. Las pantallas migradas directamente ya no
- * dependen de este archivo para su composición principal.
+ * Reglas de compatibilidad por módulo para subcomponentes que aún conservan
+ * clases históricas. Las pantallas migradas directamente ya no dependen de
+ * selectores globales para su composición principal.
  */
 
 /* -------------------------------------------------------------------------- */
@@ -103,87 +103,20 @@ main[data-module='planificaciones'] form > section.rounded-xl > div:first-child 
 }
 
 /* -------------------------------------------------------------------------- */
-/* Evaluación / Calificaciones                                                */
-/* -------------------------------------------------------------------------- */
-
-/* C1 = azul */
-main[data-module='calificaciones'] :where(.bg-blue-50, .bg-blue-50\/70, .bg-blue-100) {
-  background: color-mix(in srgb, var(--primary) 14%, var(--card)) !important;
-}
-main[data-module='calificaciones'] :where(.bg-blue-500, .bg-blue-600, .bg-blue-700) {
-  background: var(--primary) !important;
-}
-main[data-module='calificaciones'] :where(.text-blue-700, .text-blue-800, .text-blue-950) {
-  color: var(--primary-variant) !important;
-}
-main[data-module='calificaciones'] :where(.border-blue-200, .border-blue-300) {
-  border-color: color-mix(in srgb, var(--primary) 34%, var(--card)) !important;
-}
-
-/* C2 = verde */
-main[data-module='calificaciones'] :where(.bg-emerald-50, .bg-emerald-50\/70, .bg-emerald-100) {
-  background: color-mix(in srgb, var(--success) 16%, var(--card)) !important;
-}
-main[data-module='calificaciones'] :where(.bg-emerald-500, .bg-emerald-600, .bg-emerald-700) {
-  background: var(--success) !important;
-}
-main[data-module='calificaciones'] :where(.text-emerald-700, .text-emerald-800, .text-emerald-950) {
-  color: color-mix(in srgb, var(--success) 58%, var(--foreground)) !important;
-}
-main[data-module='calificaciones'] :where(.border-emerald-200, .border-emerald-300) {
-  border-color: color-mix(in srgb, var(--success) 36%, var(--card)) !important;
-}
-
-/* C3 = amarillo */
-main[data-module='calificaciones'] :where(.bg-amber-50, .bg-amber-50\/70, .bg-amber-100) {
-  background: color-mix(in srgb, var(--warning) 25%, var(--card)) !important;
-}
-main[data-module='calificaciones'] :where(.bg-amber-500, .bg-amber-600) {
-  background: var(--warning) !important;
-}
-main[data-module='calificaciones'] :where(.text-amber-700, .text-amber-800, .text-amber-950) {
-  color: var(--foreground) !important;
-}
-main[data-module='calificaciones'] :where(.border-amber-200, .border-amber-300) {
-  border-color: color-mix(in srgb, var(--warning) 48%, var(--card)) !important;
-}
-
-/* C4 = coral. El violeta heredado se traduce al cuarto color oficial. */
-main[data-module='calificaciones'] :where(.bg-violet-50, .bg-violet-50\/70, .bg-violet-100) {
-  background: color-mix(in srgb, var(--destructive) 15%, var(--card)) !important;
-}
-main[data-module='calificaciones'] :where(.bg-violet-500, .bg-violet-600, .bg-violet-700) {
-  background: var(--destructive) !important;
-}
-main[data-module='calificaciones'] :where(.text-violet-700, .text-violet-800, .text-violet-950) {
-  color: color-mix(in srgb, var(--destructive) 62%, var(--foreground)) !important;
-}
-main[data-module='calificaciones'] :where(.border-violet-200, .border-violet-300) {
-  border-color: color-mix(in srgb, var(--destructive) 34%, var(--card)) !important;
-}
-
-main[data-module='calificaciones'] :where(.bg-blue-600, .bg-emerald-600, .bg-violet-600).text-white {
-  color: var(--foreground) !important;
-}
-
-/* -------------------------------------------------------------------------- */
-/* Consistencia de tablas y controles en módulos académicos                   */
+/* Consistencia de tablas académicas todavía no migradas                      */
 /* -------------------------------------------------------------------------- */
 
 main[data-module='asistencia'] table,
-main[data-module='calificaciones'] table,
 main[data-module='estudiantes'] table {
   background: var(--card);
 }
 
 main[data-module='asistencia'] thead,
-main[data-module='calificaciones'] thead,
 main[data-module='estudiantes'] thead {
   color: var(--muted-foreground);
 }
 
 main[data-module='asistencia'] tbody tr:hover,
-main[data-module='calificaciones'] tbody tr:hover,
 main[data-module='estudiantes'] tbody tr:hover {
   background: color-mix(in srgb, var(--primary) 5%, var(--card));
 }
