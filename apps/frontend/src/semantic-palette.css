@@ -125,3 +125,24 @@
   --class-accent: #B8C6FF;
   --class-muted: #C7D0E2;
 }
+
+/* Las decoraciones heredadas también consumen los nuevos tokens. */
+.dashboard-paper-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    color-mix(in srgb, var(--primary) 7%, transparent) 28px
+  );
+}
+
+.dot-grid {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--foreground) 14%, transparent) 1px,
+    transparent 1px
+  );
+}
+
+.dashboard-warm-shadow {
+  box-shadow: 0 16px 40px -28px rgb(23 32 51 / 24%);
+}
