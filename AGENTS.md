@@ -26,9 +26,10 @@
 - Keep primary surfaces white. Do not paint large cards or page headers with saturated brand/status colors.
 - Use at most one strong primary action per visual region. Put infrequent actions in `Acciones`/ellipsis menus.
 - Subject colors may use stable variants derived only from the official AulaBase palette; subject color is identity, not status.
+- Team colors are user-facing identity metadata only. They may appear in small accents such as an icon, avatar, dot or thin identifier, but never define success, warning, error, navigation, a primary CTA, or a large surface.
 - Never create or restore a global legacy-color bridge. Temporary compatibility must be scoped inside the affected module.
-- Cursos may temporarily use `modules/courses/courses-semantic-compat.css` only under `main[data-module='cursos']`.
-- Planificación may temporarily use `modules/planning/planning-design.css` only under `main[data-module='planificaciones']`.
+- Cursos may temporarily use `modules/courses/courses-semantic-compat.css` only under `main[data-module='cursos']`, and its scope must shrink as `CoursesPage`/`CourseTeamsPanel` are decomposed.
+- Planificación is already migrated to semantic tokens and must not regain a compatibility stylesheet.
 - Auth shared access styles belong in `modules/auth/auth-design.css`.
 - Evaluación may use `modules/grading/grading-design.css` only inside `grading-workspace` while `GradingBook` is decomposed; do not reuse those mappings elsewhere.
 - `module-semantic-layout.css` must stay transversal; do not add module-specific palettes or identity overrides to it.
