@@ -1,16 +1,18 @@
 import { Type } from 'class-transformer'
 import {
   IsArray,
+  IsInt,
   IsOptional,
   IsString,
+  Min,
   MinLength,
   ValidateNested,
 } from 'class-validator'
 
 export class CreateCourseStudentDto {
+  @IsOptional()
   @IsString()
-  @MinLength(1)
-  studentCode!: string
+  studentCode?: string
 
   @IsString()
   @MinLength(1)
@@ -72,4 +74,16 @@ export class TransferCourseStudentDto {
   @IsString()
   @MinLength(1)
   targetCourseId!: string
+}
+
+export class UpdateCourseStudentListNumberDto {
+  @IsInt()
+  @Min(1)
+  listNumber!: number
+}
+
+export class ReorderCourseStudentsDto {
+  @IsArray()
+  @IsString({ each: true })
+  studentIds!: string[]
 }

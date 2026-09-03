@@ -25,7 +25,6 @@ const routeIconBackgrounds: Record<string, string> = {
   '/asistencia': 'bg-tertiary-container',
   '/calificaciones': 'bg-secondary-container',
   '/planificaciones': 'bg-warning-container',
-  '/matriz': 'bg-tertiary-container',
   '/reportes': 'bg-secondary-container',
   '/configuracion': 'bg-warning-container',
 }

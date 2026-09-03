@@ -365,6 +365,18 @@ describe('CoursesService team lifecycle', () => {
     expect(mocks.prisma.courseTeamMember.updateMany).not.toHaveBeenCalled()
   })
 
+  it('returns a clear conflict when a team name already exists', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ sectionId: 'section-1', schoolYearId: 'year-1' })
+    mocks.prisma.courseTeam.count.mockResolvedValue(1)
+    mocks.prisma.courseTeam.create.mockRejectedValue({ code: 'P2002' })
+
+    await expect(new CoursesService().createCourseTeam('school-1', 'user-1', 'subject-1', {
+      name: 'Equipo 1',
+      teamType: 'permanent',
+      members: [],
+    })).rejects.toThrow('Ya existe un equipo llamado "Equipo 1" en esta asignatura')
+  })
+
   it('blocks direct deletion when an active team has academic history', async () => {
     mocks.prisma.courseTeam.findFirst.mockResolvedValue({ id: 'team-1', name: 'Equipo Newton', status: 'ACTIVE', _count: { activityGroups: 1 } })
 

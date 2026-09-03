@@ -87,11 +87,11 @@ import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
-import { StudentsPage } from '@/modules/students/pages/StudentsPage'
 import { SectionForm } from '@/modules/courses/components/SectionForm'
 import { SubjectAssignmentForm } from '@/modules/courses/components/SubjectAssignmentForm'
 import { TeacherAssignmentForm } from '@/modules/courses/components/TeacherAssignmentForm'
 import { CourseTeamsPanel } from '@/modules/courses/components/CourseTeamsPanel'
+import { CourseStudentsPanel } from '@/modules/courses/components/CourseStudentsPanel'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import {
   CoursesAdvancedFiltersDrawer,
@@ -1097,7 +1097,7 @@ function CourseWorkspace({
   }
 
   if (workspaceView === 'students') {
-    return <StudentsPage initialCourseId={item.section.id} initialAction={studentAction} embedded onBack={() => { setStudentAction(undefined); setWorkspaceView('subjects'); onStudentsBack() }} />
+    return <CourseStudentsPanel courseId={item.section.id} courseName={`${item.grade.name} ${item.section.name}`} canEnroll={canEnroll} canManage={canManage} initialAction={studentAction} onBack={() => { setStudentAction(undefined); setWorkspaceView('subjects'); onStudentsBack() }} />
   }
 
   return (
@@ -2464,9 +2464,9 @@ function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnro
                 <tr><th className="w-12 px-3 py-3 text-center">#</th><th className="px-3 py-3">Estudiante</th><th className="px-3 py-3">Equipo</th><th className="px-3 py-3">Actividades</th><th className="px-3 py-3">Promedio</th><th className="px-3 py-3">Asistencia</th><th className="px-3 py-3">Estado</th></tr>
               </thead>
               <tbody className="divide-y divide-border">
-                {filteredRows.map((row) => (
+                {filteredRows.map((row, index) => (
                   <tr key={row.enrollmentId} tabIndex={0} role="button" onClick={() => setSelectedEnrollmentId(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') setSelectedEnrollmentId(row.enrollmentId) }} className={cn('cursor-pointer text-foreground outline-none transition hover:bg-primary/[0.035] focus:bg-primary/[0.05]', selectedEnrollmentId === row.enrollmentId && 'bg-primary/[0.055]')}>
-                    <td className="px-3 py-3 text-center font-bold text-muted-foreground">{row.listNumber}</td>
+                    <td className="px-3 py-3 text-center font-bold text-muted-foreground">{index + 1}</td>
                     <td className="px-3 py-3 font-bold">{row.lastName}, {row.firstName}</td>
                     <td className="px-3 py-3">{row.team ? <span className="font-semibold text-emerald-700">{row.team.name}</span> : <span className="text-muted-foreground">Sin equipo</span>}</td>
                     <td className="px-3 py-3"><span className="font-bold tabular-nums">{row.completed} / {activities.length}</span><div className="mt-1 h-1 w-20 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: activities.length ? `${Math.min(100, (row.completed / activities.length) * 100)}%` : '0%' }} /></div></td>

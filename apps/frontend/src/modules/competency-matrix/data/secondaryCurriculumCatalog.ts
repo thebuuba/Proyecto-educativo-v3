@@ -21,6 +21,38 @@ export type CurriculumSubject = {
   pages: Partial<Record<SecondaryGrade, CurriculumPageRange>>
 }
 
+export type CurriculumEducationLevel = 'primary' | 'secondary'
+
+export const curriculumEducationLevels: Array<{
+  id: CurriculumEducationLevel
+  label: string
+  available: boolean
+  cycles: Array<{
+    id: 'first' | 'second'
+    label: 'Primer ciclo' | 'Segundo ciclo'
+    grades: SecondaryGrade[]
+  }>
+}> = [
+  {
+    id: 'primary',
+    label: 'Primaria',
+    available: false,
+    cycles: [
+      { id: 'first', label: 'Primer ciclo', grades: [1, 2, 3] },
+      { id: 'second', label: 'Segundo ciclo', grades: [4, 5, 6] },
+    ],
+  },
+  {
+    id: 'secondary',
+    label: 'Secundaria',
+    available: true,
+    cycles: [
+      { id: 'first', label: 'Primer ciclo', grades: [1, 2, 3] },
+      { id: 'second', label: 'Segundo ciclo', grades: [4, 5, 6] },
+    ],
+  },
+]
+
 export const curriculumPdfPath = secondaryCurriculumSource.pdfPath
 
 export const secondaryGrades: Array<{
@@ -190,6 +222,11 @@ export function getCurriculumForGrade(grade: SecondaryGrade) {
 export function getCurriculumSelection(grade: SecondaryGrade, subjectId?: string | null) {
   const subjects = getCurriculumForGrade(grade)
   return subjects.find((item) => item.id === subjectId) ?? subjects[0]
+}
+
+export function getCurriculumCycle(level: CurriculumEducationLevel, cycleId?: string | null) {
+  const educationLevel = curriculumEducationLevels.find((item) => item.id === level)!
+  return educationLevel.cycles.find((item) => item.id === cycleId) ?? educationLevel.cycles[0]
 }
 
 export function secondaryGradeFromName(value: string): SecondaryGrade | null {

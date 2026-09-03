@@ -168,10 +168,12 @@ export type EnrollmentCourse = {
 export type CourseStudent = Student & {
   fullName: string
   enrollmentId: string | null
+  listNumber: number | null
+  canDeletePermanently?: boolean
 }
 
 export type CreateCourseStudentInput = {
-  studentCode: string
+  studentCode?: string
   fullName: string
   documentId?: string
   birthDate?: string

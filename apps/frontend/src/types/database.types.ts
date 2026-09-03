@@ -782,6 +782,7 @@ export type Database = {
           grade_id: string
           id: string
           is_repeating: boolean
+          list_number: number | null
           modality_id: string | null
           promotion_status: string | null
           school_id: string
@@ -803,6 +804,7 @@ export type Database = {
           grade_id: string
           id?: string
           is_repeating?: boolean
+          list_number?: number | null
           modality_id?: string | null
           promotion_status?: string | null
           school_id?: string
@@ -824,6 +826,7 @@ export type Database = {
           grade_id?: string
           id?: string
           is_repeating?: boolean
+          list_number?: number | null
           modality_id?: string | null
           promotion_status?: string | null
           school_id?: string

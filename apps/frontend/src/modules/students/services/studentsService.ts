@@ -132,8 +132,8 @@ export async function getEnrollmentCourses(): Promise<EnrollmentCourse[]> {
   })
 }
 
-export async function getStudentsByCourse(courseId: string): Promise<CourseStudent[]> {
-  return api.get<CourseStudent[]>(`/students/courses/${courseId}/students`)
+export async function getStudentsByCourse(courseId: string, status: 'active' | 'withdrawn' = 'active'): Promise<CourseStudent[]> {
+  return api.get<CourseStudent[]>(`/students/courses/${courseId}/students?status=${status}`)
 }
 
 export async function createStudentInCourse(
@@ -166,6 +166,26 @@ export async function withdrawStudentFromCourse(
   studentId: string,
 ): Promise<void> {
   await api.patch(`/students/courses/${courseId}/students/${studentId}/withdraw`, {}, {
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions, API_CACHE_TAGS.courseOptions],
+  })
+}
+
+export async function restoreStudentToCourse(courseId: string, studentId: string): Promise<void> {
+  await api.patch(`/students/courses/${courseId}/students/${studentId}/restore`, {}, {
+    invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions, API_CACHE_TAGS.courseOptions],
+  })
+}
+
+export async function updateCourseStudentListNumber(courseId: string, studentId: string, listNumber: number): Promise<void> {
+  await api.patch(`/students/courses/${courseId}/students/${studentId}/list-number`, { listNumber })
+}
+
+export async function reorderCourseStudents(courseId: string, studentIds: string[]): Promise<void> {
+  await api.patch(`/students/courses/${courseId}/students/reorder`, { studentIds })
+}
+
+export async function deleteCourseStudentPermanently(courseId: string, studentId: string): Promise<void> {
+  await api.delete(`/students/courses/${courseId}/students/${studentId}`, {
     invalidateCacheTags: [API_CACHE_TAGS.enrollmentOptions, API_CACHE_TAGS.courseOptions],
   })
 }

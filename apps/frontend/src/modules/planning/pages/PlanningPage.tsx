@@ -1,15 +1,17 @@
 import {
   AlertCircle,
+  BookOpenText,
   CalendarDays,
   FileText,
   Filter,
   Grid2X2,
   List,
+  LayoutTemplate,
   Plus,
   Search,
   Settings2,
 } from 'lucide-react'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { lazy, useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -25,6 +27,9 @@ import type { CreatePlanningEntryInput, PlanningEntryWithDetails } from '@/modul
 
 type ConfirmAction = 'delete' | 'archive'
 type ViewMode = 'grid' | 'list'
+type PlanningTab = 'planificaciones' | 'curriculo' | 'plantillas'
+
+const CompetencyMatrixPage = lazy(() => import('@/modules/competency-matrix/pages/CompetencyMatrixPage').then((module) => ({ default: module.CompetencyMatrixPage })))
 
 function sameDate(entryDate: string | null | undefined, filterDate: string) {
   if (!filterDate) return true
@@ -40,7 +45,40 @@ function normalize(value?: string | null) {
 }
 
 export function PlanningPage() {
-  const [searchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const requestedTab = searchParams.get('tab')
+  const activeTab: PlanningTab = requestedTab === 'curriculo' || requestedTab === 'plantillas'
+    ? requestedTab
+    : 'planificaciones'
+
+  function selectTab(tab: PlanningTab) {
+    const next = new URLSearchParams(searchParams)
+    next.set('tab', tab)
+    next.delete('action')
+    setSearchParams(next, { replace: true })
+  }
+
+  return (
+    <section className="mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
+      <header>
+        <h1 className="text-2xl font-bold tracking-tight text-foreground lg:text-[28px]">Planificación</h1>
+        <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">
+          Organiza tus planificaciones y consulta el currículo dominicano desde un mismo espacio.
+        </p>
+      </header>
+
+      <nav aria-label="Secciones de Planificación" className="grid grid-cols-1 gap-2 rounded-2xl bg-card p-2 shadow-sm sm:grid-cols-3">
+        <PlanningTabButton active={activeTab === 'planificaciones'} icon={<FileText className="size-4" />} label="Mis planificaciones" onClick={() => selectTab('planificaciones')} />
+        <PlanningTabButton active={activeTab === 'curriculo'} icon={<BookOpenText className="size-4" />} label="Currículo" onClick={() => selectTab('curriculo')} />
+        <PlanningTabButton active={activeTab === 'plantillas'} icon={<LayoutTemplate className="size-4" />} label="Plantillas" badge="Próximamente" onClick={() => selectTab('plantillas')} />
+      </nav>
+
+      {activeTab === 'curriculo' ? <CompetencyMatrixPage embedded /> : activeTab === 'plantillas' ? <PlanningPlaceholder /> : <PlanningEntriesPage searchParams={searchParams} />}
+    </section>
+  )
+}
+
+function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }) {
   const {
     schoolYearId,
     schoolName,
@@ -76,9 +114,11 @@ export function PlanningPage() {
   const [dateFilter, setDateFilter] = useState('')
   const [viewMode, setViewMode] = useState<ViewMode>('grid')
   const openedCurriculumRequest = useRef<string | null>(null)
-  const requestedCurriculumId = searchParams.get('malla')
-  const requestedGrade = searchParams.get('grado')
+  const requestedCurriculumId = searchParams.get('subjectId') ?? searchParams.get('malla')
+  const requestedGrade = searchParams.get('grade') ?? searchParams.get('grado')
   const requestedArea = searchParams.get('area')
+  const requestedCreate = searchParams.get('action') === 'nueva'
+    || (!searchParams.has('tab') && searchParams.has('malla'))
 
   useEffect(() => {
     if (activePeriodId && !periodFilter) setPeriodFilter(activePeriodId)
@@ -86,7 +126,7 @@ export function PlanningPage() {
 
   useEffect(() => {
     if (
-      loading || !requestedCurriculumId || !periods.length ||
+      loading || !requestedCreate || !requestedCurriculumId || !periods.length ||
       openedCurriculumRequest.current === requestedCurriculumId
     ) return
 
@@ -94,7 +134,7 @@ export function PlanningPage() {
     setEditingEntry(null)
     setFormError(null)
     setFormOpen(true)
-  }, [loading, periods.length, requestedCurriculumId])
+  }, [loading, periods.length, requestedCreate, requestedCurriculumId])
 
   const subjects = useMemo(
     () => Array.from(new Set(sectionSubjects.map((item) => item.subjectName))).sort(),
@@ -281,13 +321,11 @@ export function PlanningPage() {
   }
 
   return (
-    <section className="mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
+    <section className="w-full min-w-0 space-y-5">
       <header className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <h1 className="text-2xl font-bold tracking-tight text-foreground lg:text-[28px]">
-              Planificaciones
-            </h1>
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">Mis planificaciones</h2>
             {activePeriod ? (
               <span className="inline-flex h-7 items-center gap-1.5 rounded-full bg-accent/12 px-3 text-xs font-semibold text-accent">
                 <span className="size-1.5 rounded-full bg-accent" />
@@ -521,6 +559,35 @@ export function PlanningPage() {
         />
       ) : null}
     </section>
+  )
+}
+
+function PlanningTabButton({ active, icon, label, badge, onClick }: {
+  active: boolean
+  icon: React.ReactNode
+  label: string
+  badge?: string
+  onClick: () => void
+}) {
+  return (
+    <button
+      type="button"
+      aria-pressed={active}
+      onClick={onClick}
+      className={`flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 text-sm font-bold transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20 ${active ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
+    >
+      {icon}<span>{label}</span>{badge ? <span className={`rounded-full px-2 py-0.5 text-[10px] ${active ? 'bg-white/20 text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>{badge}</span> : null}
+    </button>
+  )
+}
+
+function PlanningPlaceholder() {
+  return (
+    <div className="flex min-h-72 flex-col items-center justify-center rounded-3xl border border-dashed border-border bg-card px-6 text-center shadow-sm">
+      <span className="flex size-14 items-center justify-center rounded-2xl bg-primary/10 text-primary"><LayoutTemplate className="size-6" /></span>
+      <h2 className="mt-4 text-lg font-black text-foreground">Plantillas</h2>
+      <p className="mt-2 text-sm text-muted-foreground">Este espacio estará disponible próximamente.</p>
+    </div>
   )
 }
 

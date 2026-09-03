@@ -5,7 +5,7 @@
  * materias y asignación de materias a secciones. Proporciona operaciones CRUD
  * y consultas de datos completos del curso.
  */
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, ConflictException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma, Prisma, RecordStatus } from '@aula/database'
 import {
   invalidateCourseOptions,
@@ -716,6 +716,11 @@ export class CoursesService {
 
       await this.syncTeamMembers(tx, team, dto.members)
       return team
+    }).catch((error: unknown) => {
+      if (typeof error === 'object' && error !== null && 'code' in error && error.code === 'P2002') {
+        throw new ConflictException(`Ya existe un equipo llamado "${dto.name.trim()}" en esta asignatura`)
+      }
+      throw error
     })
 
     const [team] = await this.getCourseTeams(schoolId, sectionSubjectId)

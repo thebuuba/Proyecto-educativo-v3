@@ -505,6 +505,7 @@ model Enrollment {
   schoolId        String           @map("school_id") @db.Uuid
   gradeId         String           @map("grade_id") @db.Uuid
   sectionId       String           @map("section_id") @db.Uuid
+  listNumber      Int?             @map("list_number")
   enrollmentDate  DateTime         @default(now()) @map("enrollment_date") @db.Date
   academicLevelId String?          @map("academic_level_id") @db.Uuid
   academicCycleId String?          @map("academic_cycle_id") @db.Uuid
