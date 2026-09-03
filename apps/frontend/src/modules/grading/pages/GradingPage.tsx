@@ -7,6 +7,7 @@ import { EmptyState } from '@/components/ui/EmptyState'
 import { FeedbackBanner, FilterBar, PageHero, StatusBadge } from '@/components/ui/SemanticUI'
 import { Select } from '@/components/ui/Select'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
+import '@/modules/grading/grading-design.css'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseTeam } from '@/modules/courses/types'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
@@ -94,7 +95,7 @@ export function GradingPage() {
                 aria-label="Curso y asignatura"
                 value={selectedSsId}
                 onChange={(event) => setSelectedSsId(event.target.value)}
-                className="h-11 w-full min-w-0 pl-10"
+                className="w-full min-w-0 pl-10"
               >
                 <option value="">{sectionSubjects.length > 0 ? 'Selecciona un curso' : 'No hay asignaciones'}</option>
                 {groupedSectionSubjects.map((group) => (
@@ -111,7 +112,7 @@ export function GradingPage() {
                 aria-label="Período de evaluación"
                 value={selectedPeriodId}
                 onChange={(event) => setSelectedPeriodId(event.target.value as typeof selectedPeriodId)}
-                className="h-11 w-full min-w-0 pl-10"
+                className="w-full min-w-0 pl-10"
               >
                 {competencyPeriods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}
               </Select>
@@ -141,34 +142,36 @@ export function GradingPage() {
           </div>
         </div>
       ) : (
-        <GradingBook
-          students={students}
-          teams={teams}
-          activities={activities}
-          records={gradeRecords}
-          recoveryScores={recoveryScores}
-          periodName={selectedPeriod.name}
-          periodShortName={selectedPeriod.shortName}
-          recoveryLabel={selectedPeriod.recoveryLabel}
-          courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
-          saving={saving}
-          cellSaveStates={cellSaveStates}
-          {...(isFinalView ? { initialView: 'final' as const } : {})}
-          initialActivityAction={requestedAction}
-          initialActivityBlockId={requestedBlockId}
-          initialActivityId={requestedActivityId}
-          initialActivityMode={requestedActivityMode}
-          originReturnLabel={originReturnLabel}
-          onReturnToOrigin={returnToOrigin}
-          onAddActivity={addActivity}
-          onUpdateActivity={updateActivity}
-          onDeleteActivity={deleteActivity}
-          onSaveScore={updateActivityScore}
-          onSaveRecovery={updateRecoveryScore}
-          loadFinalRecords={loadFinalRecords}
-          getActivitiesForPeriod={getActivitiesForPeriod}
-          onActivityWorkspaceChange={setHideFilters}
-        />
+        <div className="grading-workspace">
+          <GradingBook
+            students={students}
+            teams={teams}
+            activities={activities}
+            records={gradeRecords}
+            recoveryScores={recoveryScores}
+            periodName={selectedPeriod.name}
+            periodShortName={selectedPeriod.shortName}
+            recoveryLabel={selectedPeriod.recoveryLabel}
+            courseTitle={`${selectedSs?.gradeName ?? ''} ${selectedSs?.sectionName ?? ''} · ${selectedSs?.subjectName ?? ''}`}
+            saving={saving}
+            cellSaveStates={cellSaveStates}
+            {...(isFinalView ? { initialView: 'final' as const } : {})}
+            initialActivityAction={requestedAction}
+            initialActivityBlockId={requestedBlockId}
+            initialActivityId={requestedActivityId}
+            initialActivityMode={requestedActivityMode}
+            originReturnLabel={originReturnLabel}
+            onReturnToOrigin={returnToOrigin}
+            onAddActivity={addActivity}
+            onUpdateActivity={updateActivity}
+            onDeleteActivity={deleteActivity}
+            onSaveScore={updateActivityScore}
+            onSaveRecovery={updateRecoveryScore}
+            loadFinalRecords={loadFinalRecords}
+            getActivitiesForPeriod={getActivitiesForPeriod}
+            onActivityWorkspaceChange={setHideFilters}
+          />
+        </div>
       )}
     </section>
   )
