@@ -185,14 +185,16 @@ Usar `EmptyState`. Debe explicar qué falta y, cuando tenga sentido, ofrecer una
 
 ## Compatibilidad heredada
 
-La compatibilidad heredada debe ser cada vez más pequeña, nunca expandirse.
+No existe un puente global de colores heredados. Nunca crear uno nuevo.
 
-- `semantic-legacy-bridge.css` está limitado a subcomponentes heredados de **Cursos** y **Planificación**, además de compatibilidad de Auth. No ampliar su alcance a otros módulos.
-- `module-semantic-layout.css` contiene únicamente ajustes localizados de módulos todavía grandes; una pantalla nueva no debe depender de él.
-- Evaluación tiene su propia capa `modules/grading/grading-design.css` para traducir temporalmente los nombres históricos C1-C4 dentro de `grading-workspace`. Esas reglas no deben filtrarse a otras pantallas.
-- Todo componente nuevo debe usar directamente los tokens o componentes semánticos.
+- Cursos mantiene temporalmente `modules/courses/courses-semantic-compat.css`, limitado exclusivamente a `main[data-module='cursos']`.
+- Planificación mantiene temporalmente `modules/planning/planning-design.css`, limitado exclusivamente a `main[data-module='planificaciones']`.
+- Auth usa `modules/auth/auth-design.css` para los estilos compartidos de acceso.
+- Evaluación mantiene `modules/grading/grading-design.css` dentro de `grading-workspace` mientras `GradingBook` se descompone en componentes más pequeños.
+- `module-semantic-layout.css` solo puede contener utilidades o reglas realmente transversales; no debe alojar una identidad de módulo.
+- Todo componente nuevo debe usar directamente tokens o componentes semánticos.
 
-Cuando se migre un subcomponente heredado, retirar su regla de compatibilidad correspondiente en el mismo cambio cuando sea seguro hacerlo.
+Cuando se migre un subcomponente heredado, retirar su regla localizada de compatibilidad en el mismo cambio cuando sea seguro hacerlo. Una excepción temporal nunca debe filtrarse a otro módulo.
 
 ## Criterio final
 
