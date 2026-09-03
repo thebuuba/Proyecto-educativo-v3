@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { buildTeacherAnalytics, calculateAttendanceRate, DashboardService, resolveDashboardView } from './dashboard.service'
+import { buildTeacherAnalytics, calculateAttendanceRate, DashboardService, getDashboardClock, resolveDashboardView } from './dashboard.service'
 
 function deferred<T>() {
   let resolve!: (value: T | PromiseLike<T>) => void
@@ -134,6 +134,16 @@ describe('DashboardService', () => {
       { attendanceDate: date, status: 'EXCUSED' },
     ])).toBe(67)
     expect(resolveDashboardView(['student', 'admin'])).toBe('management')
+  })
+
+  it('uses the school clock instead of the server timezone', () => {
+    const clock = getDashboardClock(new Date('2026-09-03T02:49:00.000Z'))
+
+    expect(clock).toEqual({
+      calendarDate: new Date('2026-09-02T00:00:00.000Z'),
+      dayOfWeek: 3,
+      currentMinutes: 22 * 60 + 49,
+    })
   })
 
   it('groups teacher grades by period and subject', () => {

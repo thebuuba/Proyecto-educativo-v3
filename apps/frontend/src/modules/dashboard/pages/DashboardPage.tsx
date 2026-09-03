@@ -30,15 +30,6 @@ function getGreeting() {
   return 'Buenas noches'
 }
 
-/** Formatea la fecha actual en formato legible en español. */
-function formatTodayDate() {
-  return new Intl.DateTimeFormat('es-DO', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-  }).format(new Date())
-}
-
 /** Página principal del dashboard del docente. */
 export function DashboardPage() {
   const navigate = useNavigate()
@@ -109,7 +100,7 @@ export function DashboardPage() {
             <span className="text-accent">{data.context.firstName}</span>
           </h1>
           <span className="text-sm text-muted-foreground">
-            · {formatTodayDate()}
+            · {data.context.formattedDate}
           </span>
         </div>
 

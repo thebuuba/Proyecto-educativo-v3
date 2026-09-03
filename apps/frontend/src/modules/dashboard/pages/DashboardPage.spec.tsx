@@ -8,7 +8,7 @@ vi.mock('@/modules/dashboard/hooks/useDashboard', () => ({
   useDashboard: () => ({
     data: {
       view: 'teacher',
-      context: { firstName: 'Ada', formattedDate: '', schoolYearName: '2026-2027', periodName: 'P1' },
+      context: { firstName: 'Ada', formattedDate: 'miércoles, 2 de septiembre', schoolYearName: '2026-2027', periodName: 'P1' },
       nextClass: null,
       todayAgenda: [],
       weeklyAttendance: {
@@ -48,6 +48,7 @@ describe('DashboardPage', () => {
     render(<MemoryRouter><DashboardPage /></MemoryRouter>)
 
     expect(screen.getByText('Pulso semanal')).toBeInTheDocument()
+    expect(screen.getByText('· miércoles, 2 de septiembre')).toBeInTheDocument()
     expect(screen.getByRole('img', { name: 'Aún no hay registros de asistencia esta semana.' })).toBeInTheDocument()
     expect(screen.getByText('Aún no has registrado asistencia esta semana')).toBeInTheDocument()
     expect(screen.getByText('0 registros creados')).toBeInTheDocument()
