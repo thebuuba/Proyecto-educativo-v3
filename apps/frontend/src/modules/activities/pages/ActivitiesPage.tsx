@@ -6,10 +6,17 @@ import { Button } from '@/components/ui/Button'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
+import {
+  FeedbackBanner,
+  FilterBar,
+  PageHero,
+  ProgressIndicator,
+  StatusBadge,
+  type SemanticTone,
+} from '@/components/ui/SemanticUI'
 import { getActivityCenter } from '@/modules/grading/services/gradingService'
 import type { ActivityCenterWorkspace, GlobalActivity } from '@/modules/grading/types'
 import { competencyBlocks } from '@/modules/grading/utils/competencyGrades'
-import { cn } from '@/utils/cn'
 
 type ActivityState = 'pending' | 'partial' | 'graded'
 const emptyWorkspace: ActivityCenterWorkspace = { sectionSubjects: [], academicPeriods: [], activities: [] }
@@ -58,22 +65,21 @@ export function ActivitiesPage() {
   }), [workspace.activities])
 
   return <section className="w-full min-w-0 space-y-4 pb-8">
-    <header className="flex flex-col gap-4 rounded-3xl bg-card px-5 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-      <div className="flex min-w-0 items-center gap-3">
-        <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-primary/12 text-primary">
-          <CheckSquare className="size-5" />
-        </span>
-        <div className="min-w-0">
-          <h1 className="text-2xl font-extrabold tracking-tight text-foreground">Actividades</h1>
-          <p className="mt-0.5 text-sm text-muted-foreground">Gestiona, evalúa y consulta las actividades de tus cursos.</p>
-        </div>
+    <PageHero
+      title="Actividades"
+      description="Gestiona, evalúa y consulta las actividades de tus cursos desde un mismo lugar."
+      icon={CheckSquare}
+      tone="warning"
+      actions={<Button onClick={() => setCreating(true)}><Plus className="size-4" /> Crear actividad</Button>}
+    >
+      <div className="flex flex-wrap gap-2">
+        <StatusBadge tone="warning">{statusCounts.pending} pendientes</StatusBadge>
+        <StatusBadge tone="info">{statusCounts.partial} en evaluación</StatusBadge>
+        <StatusBadge tone="success">{statusCounts.graded} calificadas</StatusBadge>
       </div>
-      <Button className="h-11 shrink-0 px-5" onClick={() => setCreating(true)}>
-        <Plus className="size-4" /> Crear actividad
-      </Button>
-    </header>
+    </PageHero>
 
-    <section className="rounded-3xl bg-card p-3 shadow-sm sm:p-4">
+    <FilterBar>
       <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-[minmax(18rem,1.6fr)_repeat(4,minmax(9rem,1fr))]">
         <label className="relative self-end">
           <span className="sr-only">Buscar actividad</span>
@@ -96,23 +102,23 @@ export function ActivitiesPage() {
 
       <div className="mt-3 flex flex-col gap-3 border-t border-border/60 pt-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex gap-2 overflow-x-auto pb-0.5">
-          <StatusFilter active={status === 'all'} label="Todas" count={statusCounts.all} onClick={() => setStatus('all')} />
+          <StatusFilter active={status === 'all'} label="Todas" count={statusCounts.all} tone="neutral" onClick={() => setStatus('all')} />
           <StatusFilter active={status === 'pending'} label="Pendientes" count={statusCounts.pending} tone="warning" onClick={() => setStatus('pending')} />
-          <StatusFilter active={status === 'partial'} label="En evaluación" count={statusCounts.partial} tone="primary" onClick={() => setStatus('partial')} />
+          <StatusFilter active={status === 'partial'} label="En evaluación" count={statusCounts.partial} tone="info" onClick={() => setStatus('partial')} />
           <StatusFilter active={status === 'graded'} label="Calificadas" count={statusCounts.graded} tone="success" onClick={() => setStatus('graded')} />
         </div>
         {!loading ? <p className="shrink-0 text-xs font-semibold text-muted-foreground">{visible.length} de {workspace.activities.length} actividades</p> : null}
       </div>
-    </section>
+    </FilterBar>
 
     {error ? (
-      <div role="alert" className="rounded-2xl bg-destructive/10 p-4 text-sm font-semibold text-destructive">{error}</div>
+      <FeedbackBanner role="alert" tone="danger">{error}</FeedbackBanner>
     ) : loading ? (
       <div role="status" className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {Array.from({ length: 6 }, (_, index) => <div key={index} className="h-56 animate-pulse rounded-3xl bg-card/70" />)}
       </div>
     ) : !visible.length ? (
-      <EmptyState title="No hay actividades" description={workspace.activities.length ? 'Prueba con otros filtros.' : 'Crea la primera actividad para comenzar.'} />
+      <EmptyState title="No hay actividades" description={workspace.activities.length ? 'Prueba con otros filtros.' : 'Crea la primera actividad para comenzar.'} icon={CheckSquare} tone="warning" />
     ) : (
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {visible.map((activity) => <ActivityCard key={activity.id} activity={activity} />)}
@@ -128,27 +134,25 @@ function ActivityCard({ activity }: { activity: GlobalActivity }) {
   const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId)
   const primaryMode = state === 'graded' ? 'results' : 'evaluate'
   const primaryLabel = state === 'graded' ? 'Ver resultados' : 'Evaluar / calificar'
-  const progress = activity.studentCount > 0
-    ? Math.min(100, Math.round((activity.evaluatedCount / activity.studentCount) * 100))
-    : 0
+  const progress = activity.studentCount > 0 ? Math.min(100, Math.round((activity.evaluatedCount / activity.studentCount) * 100)) : 0
+  const tone = activityTone(state)
 
   return <article className="group flex min-h-[15rem] flex-col rounded-3xl bg-card p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md">
     <div className="flex items-start gap-3">
-      <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-primary/12 text-primary">
-        <CheckSquare className="size-5" />
-      </span>
       <div className="min-w-0 flex-1">
-        <h2 className="line-clamp-2 text-[15px] font-extrabold leading-snug text-foreground">{activity.name}</h2>
-        <p className="mt-1 text-xs font-extrabold text-primary">{activity.courseLabel}</p>
+        <div className="flex items-start justify-between gap-3">
+          <h2 className="line-clamp-2 text-[15px] font-extrabold leading-snug text-foreground">{activity.name}</h2>
+          <ActivityBadge state={state} />
+        </div>
+        <p className="mt-1 text-xs font-extrabold text-primary-variant">{activity.courseLabel}</p>
         <p className="mt-0.5 truncate text-xs text-muted-foreground">{activity.subjectName}</p>
       </div>
-      <ActivityBadge state={state} />
     </div>
 
     <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] font-semibold text-muted-foreground">
       <span className="rounded-full bg-muted/70 px-2.5 py-1 text-foreground">{activity.periodName.split('—')[0]?.trim()}</span>
       <span className="rounded-full bg-muted/70 px-2.5 py-1 text-foreground">{block?.shortName ?? 'Sin bloque'}</span>
-      <span className="ml-auto rounded-full bg-primary/10 px-2.5 py-1 font-extrabold text-primary">{activity.maxScore} pts</span>
+      <span className="ml-auto rounded-full bg-primary/10 px-2.5 py-1 font-extrabold text-foreground">{activity.maxScore} pts</span>
     </div>
 
     <div className="mt-4">
@@ -156,12 +160,7 @@ function ActivityCard({ activity }: { activity: GlobalActivity }) {
         <span className="font-semibold text-muted-foreground">{activity.evaluatedCount} de {activity.studentCount} evaluados</span>
         <span className="font-extrabold text-foreground">{progress}%</span>
       </div>
-      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-muted">
-        <div
-          className={cn('h-full rounded-full transition-[width]', state === 'graded' ? 'bg-success' : state === 'partial' ? 'bg-primary' : 'bg-warning')}
-          style={{ width: `${progress}%` }}
-        />
-      </div>
+      <ProgressIndicator value={progress} tone={tone} className="mt-2" />
     </div>
 
     <div className="mt-auto flex items-center gap-3 pt-5">
@@ -192,6 +191,7 @@ function CreateActivityDialog({ workspace, onClose }: { workspace: ActivityCente
   const courses = Array.from(new Map(workspace.sectionSubjects.map((item) => [item.sectionId ?? item.id, `${item.gradeName} ${item.sectionName}`])).entries())
   const subjects = workspace.sectionSubjects.filter((item) => item.sectionId === courseId)
   const ready = sectionSubjectId && academicPeriodId && competencyBlockId
+
   return <Modal title="Crear actividad" description="Selecciona el contexto académico; el formulario existente completará la actividad y su instrumento." onClose={onClose} className="max-w-xl" contentClassName="p-5">
     <div className="grid gap-4 sm:grid-cols-2">
       <Filter label="Curso" value={courseId} onChange={(value) => { setCourseId(value); setSectionSubjectId(''); setAcademicPeriodId('') }}><option value="">Selecciona un curso</option>{courses.map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Filter>
@@ -215,16 +215,9 @@ function Filter({ label, value, onChange, children }: { label: string; value: st
   </label>
 }
 
-function StatusFilter({ active, label, count, tone = 'neutral', onClick }: { active: boolean; label: string; count: number; tone?: 'neutral' | 'warning' | 'primary' | 'success'; onClick: () => void }) {
-  const toneClass = tone === 'warning'
-    ? 'bg-warning/16 text-foreground'
-    : tone === 'primary'
-      ? 'bg-primary/12 text-foreground'
-      : tone === 'success'
-        ? 'bg-success/14 text-foreground'
-        : 'bg-muted/70 text-foreground'
-  return <button type="button" onClick={onClick} className={cn('inline-flex h-8 shrink-0 items-center gap-1.5 rounded-full px-3 text-[11px] font-extrabold transition', active ? 'ring-2 ring-primary/35 ring-offset-1 ring-offset-card' : 'opacity-75 hover:opacity-100', toneClass)}>
-    {label}<span className="opacity-60">{count}</span>
+function StatusFilter({ active, label, count, tone, onClick }: { active: boolean; label: string; count: number; tone: SemanticTone; onClick: () => void }) {
+  return <button onClick={onClick} className={`whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-extrabold transition ${active ? 'border-primary/25 bg-primary/10 text-foreground' : 'border-border bg-card text-muted-foreground hover:bg-muted'}`}>
+    <span className="inline-flex items-center gap-1.5"><StatusBadge tone={tone} dot className="h-5 bg-transparent px-0">{label}</StatusBadge><span className="opacity-60">{count}</span></span>
   </button>
 }
 
@@ -232,12 +225,13 @@ function activityState(activity: GlobalActivity): ActivityState {
   return activity.evaluatedCount === 0 ? 'pending' : activity.studentCount > 0 && activity.evaluatedCount >= activity.studentCount ? 'graded' : 'partial'
 }
 
+function activityTone(state: ActivityState): SemanticTone {
+  return state === 'graded' ? 'success' : state === 'partial' ? 'info' : 'warning'
+}
+
 function ActivityBadge({ state }: { state: ActivityState }) {
   const label = state === 'graded' ? 'Calificada' : state === 'partial' ? 'En evaluación' : 'Pendiente'
-  return <span className={cn(
-    'shrink-0 rounded-full px-2.5 py-1 text-[10px] font-extrabold text-foreground',
-    state === 'graded' ? 'bg-success/16' : state === 'partial' ? 'bg-primary/12' : 'bg-warning/20',
-  )}>{label}</span>
+  return <StatusBadge tone={activityTone(state)}>{label}</StatusBadge>
 }
 
 function activityHref(activity: GlobalActivity, mode: 'view' | 'edit' | 'evaluate' | 'results') {
