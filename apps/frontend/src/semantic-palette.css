@@ -181,14 +181,19 @@
 }
 
 .dashboard-grid-widget-content {
+  background: var(--card);
   scrollbar-width: thin;
   scrollbar-color: color-mix(in srgb, var(--palette-text) 22%, transparent) transparent;
 }
 
 .dashboard-grid-widget-content > * {
   width: 100% !important;
-  height: 100% !important;
-  min-height: 100%;
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+
+.dashboard-grid-widget-content > * > * {
+  width: 100% !important;
   max-width: none !important;
   margin-left: 0 !important;
 }
