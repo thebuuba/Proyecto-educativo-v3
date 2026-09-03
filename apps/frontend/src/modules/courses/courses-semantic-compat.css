@@ -1,10 +1,16 @@
 /*
  * Compatibilidad localizada del módulo Cursos.
- * Solo existe mientras algunos subpaneles internos conservan clases Tailwind
- * históricas. Ninguna regla de este archivo debe utilizarse como patrón para
- * código nuevo.
+ * Solo cubre subpaneles heredados de CoursesPage/CourseTeamsPanel que todavía
+ * conservan nombres históricos de Tailwind. Ninguna regla de este archivo
+ * debe utilizarse como patrón para código nuevo.
+ *
+ * Los colores personalizados de equipos son identidad local y solo deben
+ * aparecer en detalles pequeños (icono, avatar, punto o acento), nunca como
+ * estado académico, CTA principal o superficie grande.
  */
 
+/* Información / navegación: cualquier azul, cyan, índigo o violeta heredado
+   se traduce a la familia azul oficial de AulaBase. */
 main[data-module='cursos'] :where(.bg-blue-50, .bg-cyan-50, .bg-sky-50, .bg-violet-50, .bg-indigo-50) {
   background-color: color-mix(in srgb, var(--primary) 13%, var(--card)) !important;
 }
@@ -13,14 +19,15 @@ main[data-module='cursos'] :where(.bg-blue-100, .bg-cyan-100, .bg-sky-100, .bg-v
   background-color: color-mix(in srgb, var(--primary) 20%, var(--card)) !important;
 }
 
-main[data-module='cursos'] :where(.text-blue-500, .text-blue-600, .text-blue-700, .text-blue-800, .text-cyan-500, .text-cyan-600, .text-cyan-700, .text-cyan-800, .text-sky-500, .text-sky-600, .text-sky-700, .text-violet-500, .text-violet-600, .text-violet-700, .text-violet-800, .text-indigo-500, .text-indigo-600, .text-indigo-700) {
+main[data-module='cursos'] :where(.text-blue-300, .text-blue-500, .text-blue-600, .text-blue-700, .text-blue-800, .text-cyan-500, .text-cyan-600, .text-cyan-700, .text-cyan-800, .text-sky-500, .text-sky-600, .text-sky-700, .text-violet-400, .text-violet-500, .text-violet-600, .text-violet-700, .text-violet-800, .text-indigo-500, .text-indigo-600, .text-indigo-700) {
   color: var(--primary-variant) !important;
 }
 
-main[data-module='cursos'] :where(.border-blue-200, .border-blue-300, .border-cyan-200, .border-cyan-300, .border-violet-200, .border-violet-300, .border-indigo-200) {
+main[data-module='cursos'] :where(.border-blue-100, .border-blue-200, .border-blue-300, .border-cyan-200, .border-cyan-300, .border-violet-200, .border-violet-300, .border-violet-400, .border-indigo-200) {
   border-color: color-mix(in srgb, var(--primary) 34%, var(--card)) !important;
 }
 
+/* Éxito / activo. */
 main[data-module='cursos'] :where(.bg-emerald-50, .bg-green-50, .bg-lime-50) {
   background-color: color-mix(in srgb, var(--success) 16%, var(--card)) !important;
 }
@@ -30,13 +37,14 @@ main[data-module='cursos'] :where(.bg-emerald-100, .bg-green-100, .bg-lime-100) 
 }
 
 main[data-module='cursos'] :where(.text-emerald-500, .text-emerald-600, .text-emerald-700, .text-emerald-800, .text-green-500, .text-green-600, .text-green-700, .text-green-800, .text-lime-600, .text-lime-700) {
-  color: color-mix(in srgb, var(--success) 62%, var(--foreground)) !important;
+  color: color-mix(in srgb, var(--success) 60%, var(--foreground)) !important;
 }
 
-main[data-module='cursos'] :where(.border-emerald-200, .border-emerald-300, .border-green-200, .border-green-300) {
+main[data-module='cursos'] :where(.border-emerald-200, .border-emerald-300, .border-emerald-400, .border-green-200, .border-green-300) {
   border-color: color-mix(in srgb, var(--success) 38%, var(--card)) !important;
 }
 
+/* Pendiente / preparación / atención. */
 main[data-module='cursos'] :where(.bg-amber-50, .bg-yellow-50, .bg-orange-50) {
   background-color: color-mix(in srgb, var(--warning) 24%, var(--card)) !important;
 }
@@ -45,7 +53,7 @@ main[data-module='cursos'] :where(.bg-amber-100, .bg-yellow-100) {
   background-color: color-mix(in srgb, var(--warning) 34%, var(--card)) !important;
 }
 
-main[data-module='cursos'] :where(.text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800, .text-yellow-600, .text-yellow-700, .text-orange-600, .text-orange-700) {
+main[data-module='cursos'] :where(.text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800, .text-yellow-600, .text-yellow-700, .text-orange-400, .text-orange-600, .text-orange-700) {
   color: color-mix(in srgb, var(--warning) 54%, var(--foreground)) !important;
 }
 
@@ -53,6 +61,7 @@ main[data-module='cursos'] :where(.border-amber-200, .border-amber-300, .border-
   border-color: color-mix(in srgb, var(--warning) 48%, var(--card)) !important;
 }
 
+/* Error / incidencia / destructivo. */
 main[data-module='cursos'] :where(.bg-red-50, .bg-rose-50) {
   background-color: color-mix(in srgb, var(--destructive) 14%, var(--card)) !important;
 }
@@ -69,13 +78,42 @@ main[data-module='cursos'] :where(.border-red-100, .border-red-200, .border-red-
   border-color: color-mix(in srgb, var(--destructive) 34%, var(--card)) !important;
 }
 
-main[data-module='cursos'] :where(h1, h2).text-primary,
-main[data-module='cursos'] :where(h1, h2).text-accent {
+/* Neutros históricos del workspace de Cursos/Equipos. */
+main[data-module='cursos'] :where(.bg-slate-50, .bg-gray-50, .bg-zinc-50) {
+  background-color: color-mix(in srgb, var(--palette-gray) 38%, var(--card)) !important;
+}
+
+main[data-module='cursos'] :where(.bg-slate-100, .bg-gray-100, .bg-zinc-100) {
+  background-color: color-mix(in srgb, var(--palette-gray) 58%, var(--card)) !important;
+}
+
+main[data-module='cursos'] :where(.border-slate-100, .border-slate-200, .border-slate-300, .border-gray-100, .border-gray-200, .border-zinc-200) {
+  border-color: var(--border) !important;
+}
+
+main[data-module='cursos'] :where(.text-slate-400, .text-slate-500, .text-gray-400, .text-gray-500) {
+  color: var(--muted-foreground) !important;
+}
+
+main[data-module='cursos'] :where(.text-slate-600, .text-slate-700, .text-slate-900, .text-slate-950, .text-gray-600, .text-gray-700, .text-gray-900) {
   color: var(--foreground) !important;
 }
 
-main[data-module='cursos'] :where(.bg-slate-50, .bg-gray-50, .bg-zinc-50) {
-  background-color: color-mix(in srgb, var(--palette-gray) 38%, var(--card)) !important;
+/* Gradientes decorativos antiguos del estado vacío de Equipos se reducen a
+   las mismas familias azul/verde/amarillo oficiales. */
+main[data-module='cursos'] :where(.from-blue-50, .from-blue-50\/90) {
+  --tw-gradient-from: color-mix(in srgb, var(--primary) 12%, var(--card)) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: color-mix(in srgb, var(--primary) 0%, transparent) var(--tw-gradient-to-position) !important;
+}
+
+main[data-module='cursos'] :where(.to-indigo-100, .to-indigo-50\/70) {
+  --tw-gradient-to: color-mix(in srgb, var(--primary) 20%, var(--card)) var(--tw-gradient-to-position) !important;
+}
+
+/* Los encabezados del módulo son siempre oscuros. */
+main[data-module='cursos'] :where(h1, h2).text-primary,
+main[data-module='cursos'] :where(h1, h2).text-accent {
+  color: var(--foreground) !important;
 }
 
 /* El nivel académico no crea una identidad cromática distinta. */
