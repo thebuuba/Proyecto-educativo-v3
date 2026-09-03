@@ -1,9 +1,11 @@
 /** Formulario modal para crear o editar una sección dentro de un grado. */
-import { CalendarDays, Info, Pencil, X } from 'lucide-react'
+import { CalendarDays, Info, UsersRound } from 'lucide-react'
 import { useMemo, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
+import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
+import { FeedbackBanner } from '@/components/ui/SemanticUI'
 import {
   defaultSectionOptions,
   normalizeAcademicText,
@@ -82,41 +84,23 @@ export function SectionForm({
   return (
     <Modal
       title={isEditing ? 'Editar sección' : 'Nueva sección'}
-      hideHeader
-      className="max-w-xl rounded-2xl"
+      description={isEditing ? `Actualiza la sección ${section?.name} de ${gradeName}.` : `Agrega una sección a ${gradeName}.`}
+      icon={UsersRound}
+      tone="info"
+      className="max-w-xl"
       onClose={onClose}
     >
       <form onSubmit={handleSubmit}>
-        <header className="flex items-start justify-between border-b border-border px-6 py-5">
-          <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-foreground">
-              {isEditing ? 'Editar sección' : 'Nueva sección'}
-            </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {isEditing ? `Actualiza la sección ${section?.name} de ${gradeName}.` : `Agrega una sección a ${gradeName}.`}
-            </p>
-          </div>
-          <button type="button" onClick={onClose} className="flex size-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" aria-label="Cerrar">
-            <X className="size-5" />
-          </button>
-        </header>
+        <div className="space-y-5 p-5 sm:p-6">
+          <FeedbackBanner tone="info" className="flex items-start gap-2.5">
+            <Info className="mt-0.5 size-4 shrink-0" />
+            <span>{isEditing ? 'Estás actualizando' : 'Estás creando una nueva sección para'} el <strong>{context}</strong>.</span>
+          </FeedbackBanner>
 
-        <div className="space-y-6 px-6 py-5">
-          <div className="flex items-start gap-3 rounded-xl border border-emerald-200 bg-emerald-50/80 p-4 text-sm leading-6 text-slate-700">
-            <Info className="mt-0.5 size-5 shrink-0 text-emerald-600" />
-            <p>
-              {isEditing ? 'Estás actualizando' : 'Estás creando una nueva sección para'} el <strong>{context}</strong>.
-            </p>
-          </div>
-
-          {error ? (
-            <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-sm font-medium text-destructive">
-              {error}
-            </div>
-          ) : null}
+          {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
 
           <fieldset>
-            <legend className="text-sm font-bold text-foreground">
+            <legend className="text-sm font-extrabold text-foreground">
               Sección <span className="text-destructive">*</span>
             </legend>
             <p className="mt-1 text-xs text-muted-foreground">Selecciona la letra o escribe el nombre de la sección.</p>
@@ -130,10 +114,10 @@ export function SectionForm({
                     aria-pressed={selected}
                     onClick={() => chooseSection(option)}
                     className={cn(
-                      'h-12 rounded-xl border text-sm font-extrabold transition-all hover:border-violet-300 hover:bg-violet-50/50',
+                      'h-11 rounded-xl border text-sm font-extrabold transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20',
                       selected
-                        ? 'border-violet-500 bg-violet-50 text-violet-700 ring-2 ring-violet-200'
-                        : 'border-border bg-card text-foreground',
+                        ? 'border-primary/30 bg-primary/12 text-primary-variant ring-1 ring-primary/15'
+                        : 'border-border bg-card text-foreground hover:border-primary/25 hover:bg-primary/8',
                     )}
                   >
                     {option}
@@ -145,42 +129,42 @@ export function SectionForm({
                 aria-pressed={customMode}
                 onClick={enableCustomName}
                 className={cn(
-                  'flex h-12 items-center justify-center gap-2 rounded-xl border text-sm font-extrabold transition-all hover:border-violet-300 hover:bg-violet-50/50',
+                  'flex h-11 items-center justify-center gap-2 rounded-xl border text-sm font-extrabold transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20',
                   customMode
-                    ? 'border-violet-500 bg-violet-50 text-violet-700 ring-2 ring-violet-200'
-                    : 'border-border bg-card text-foreground',
+                    ? 'border-primary/30 bg-primary/12 text-primary-variant ring-1 ring-primary/15'
+                    : 'border-border bg-card text-foreground hover:border-primary/25 hover:bg-primary/8',
                 )}
               >
-                Otro <Pencil className="size-4" />
+                Otro <span className="text-xs">✎</span>
               </button>
             </div>
             {customMode ? (
               <label className="mt-3 block text-xs font-bold text-muted-foreground">
                 Letra o nombre personalizado
-                <input
+                <Input
                   autoFocus
                   value={name}
                   maxLength={30}
                   onChange={(event) => setName(event.target.value)}
                   placeholder="Ejemplo: I, J o AA"
-                  className="mt-1.5 h-11 w-full rounded-xl border border-input bg-card px-3 text-sm font-semibold text-foreground outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-200"
+                  className="mt-1.5"
                 />
               </label>
             ) : null}
           </fieldset>
 
-          <label className="block text-sm font-bold text-foreground">
-            <span className="flex items-center gap-2"><CalendarDays className="size-4 text-muted-foreground" /> Año escolar</span>
-            <input readOnly value={schoolYearName || 'Sin año escolar activo'} className="mt-2 h-12 w-full cursor-default rounded-xl border border-input bg-muted/40 px-3 text-sm font-semibold text-foreground outline-none" />
-            <span className="mt-1.5 block text-xs font-normal text-muted-foreground">La nueva sección se creará en el año escolar activo.</span>
+          <label className="block text-sm font-extrabold text-foreground">
+            <span className="flex items-center gap-2"><CalendarDays className="size-4 text-primary" /> Año escolar</span>
+            <Input readOnly value={schoolYearName || 'Sin año escolar activo'} className="mt-2 cursor-default bg-muted/55" />
+            <span className="mt-1.5 block text-xs font-normal text-muted-foreground">La sección se guardará en el año escolar activo.</span>
           </label>
         </div>
 
-        <footer className="flex justify-end gap-3 border-t border-border bg-muted/20 px-6 py-4">
-          <Button variant="outline" type="button" className="h-11 min-w-28 rounded-xl" onClick={onClose}>
+        <footer className="flex justify-end gap-3 border-t border-border px-5 py-4 sm:px-6">
+          <Button variant="outline" type="button" onClick={onClose}>
             Cancelar
           </Button>
-          <Button type="submit" loading={submitting} disabled={!name.trim()} className="h-11 min-w-36 rounded-xl border-0 bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-md hover:from-violet-700 hover:to-indigo-700">
+          <Button type="submit" loading={submitting} disabled={!name.trim()}>
             {isEditing ? 'Guardar cambios' : 'Crear sección'}
           </Button>
         </footer>
