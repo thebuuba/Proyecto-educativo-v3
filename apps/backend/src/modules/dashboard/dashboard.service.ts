@@ -1,6 +1,4 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common'
-import { CACHE_MANAGER } from '@nestjs/cache-manager'
-import { Cache } from 'cache-manager'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { CreateTaskDto } from './dto/create-task.dto'
@@ -70,10 +68,6 @@ export function buildTeacherAnalytics(records: TeacherGradeRecord[]) {
 
 @Injectable()
 export class DashboardService {
-  constructor(@Inject(CACHE_MANAGER) private cache: Cache) {}
-
-  private statsCacheKey(schoolId: string) { return `dashboard:stats:${schoolId}` }
-
   async getOverview(user: AuthenticatedUser, now = new Date()) {
     const view = resolveDashboardView(user.roles)
     const scopeWithoutYear = view === 'teacher' || view === 'management' || view === 'viewer'
@@ -150,8 +144,6 @@ export class DashboardService {
   }
 
   async getStats(schoolId: string) {
-    const cached = await this.cache.get<any>(this.statsCacheKey(schoolId))
-    if (cached !== undefined) return cached
     const [studentCount, teacherCount, activeEnrollments, gradeCount, sectionCount, sectionSubjectCount, scheduleEntryCount, attendanceDailyCount, attendanceClassCount, planningCount] = await Promise.all([
       prisma.student.count({ where: { schoolId, status: 'ACTIVE' } }),
       prisma.teacher.count({ where: { schoolId, status: 'ACTIVE' } }),
@@ -164,9 +156,7 @@ export class DashboardService {
       prisma.attendanceClass.count({ where: { schoolId } }),
       prisma.planningEntry.count({ where: { schoolId, status: 'ACTIVE' } }),
     ])
-    const result = { studentCount, teacherCount, activeEnrollments, courseCount: Math.max(gradeCount, sectionCount, sectionSubjectCount), scheduleEntryCount, attendanceCount: attendanceDailyCount + attendanceClassCount, planningCount }
-    await this.cache.set(this.statsCacheKey(schoolId), result, 30_000)
-    return result
+    return { studentCount, teacherCount, activeEnrollments, courseCount: Math.max(gradeCount, sectionCount, sectionSubjectCount), scheduleEntryCount, attendanceCount: attendanceDailyCount + attendanceClassCount, planningCount }
   }
 
   async getTasks(user: AuthenticatedUser) {

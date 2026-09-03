@@ -1,10 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { buildTeacherAnalytics, calculateAttendanceRate, DashboardService, resolveDashboardView } from './dashboard.service'
 
-function mockCache() {
-  return { get: vi.fn(), set: vi.fn(), del: vi.fn() }
-}
-
 function deferred<T>() {
   let resolve!: (value: T | PromiseLike<T>) => void
   const promise = new Promise<T>((resolvePromise) => {
@@ -47,7 +43,6 @@ describe('DashboardService', () => {
   })
 
   it('starts every stats count before waiting for any result', async () => {
-    const cache = mockCache()
     const countMocks = [
       mocks.prisma.student.count,
       mocks.prisma.teacher.count,
@@ -63,7 +58,7 @@ describe('DashboardService', () => {
     const gates = countMocks.map(() => deferred<number>())
     countMocks.forEach((count, index) => count.mockReturnValue(gates[index].promise))
 
-    const resultPromise = new DashboardService(cache).getStats('school-1')
+    const resultPromise = new DashboardService().getStats('school-1')
     await Promise.resolve()
 
     countMocks.forEach((count) => expect(count).toHaveBeenCalledTimes(1))
@@ -79,15 +74,13 @@ describe('DashboardService', () => {
       attendanceCount: 17,
       planningCount: 10,
     })
-    expect(cache.set).toHaveBeenCalledWith('dashboard:stats:school-1', result, 30_000)
   })
 
   it('creates a task and delegates to prisma', async () => {
-    const cache = mockCache()
     const data = { title: 'Revisar asistencia', status: 'pending', priority: 'high' }
     mocks.prisma.dashboardTask.create.mockResolvedValue({ id: 'task-1', ...data })
 
-    const result = await new DashboardService(cache).createTask(teacher, data)
+    const result = await new DashboardService().createTask(teacher, data)
 
     expect(mocks.prisma.dashboardTask.create).toHaveBeenCalledWith({
       data: { schoolId: 'school-1', title: 'Revisar asistencia', status: 'pending', priority: 'high', createdBy: 'user-1', dueDate: null, assignedTo: 'user-1' },
@@ -96,11 +89,10 @@ describe('DashboardService', () => {
   })
 
   it('updates a task and delegates to prisma', async () => {
-    const cache = mockCache()
     mocks.prisma.dashboardTask.findFirst.mockResolvedValue({ id: 'task-1', schoolId: 'school-1' })
     mocks.prisma.dashboardTask.update.mockResolvedValue({ id: 'task-1', status: 'completed' })
 
-    const result = await new DashboardService(cache).updateTask(teacher, 'task-1', { status: 'completed' })
+    const result = await new DashboardService().updateTask(teacher, 'task-1', { status: 'completed' })
 
     expect(mocks.prisma.dashboardTask.findFirst).toHaveBeenCalledWith({
       where: { id: 'task-1', schoolId: 'school-1', OR: [{ assignedTo: 'user-1' }, { createdBy: 'user-1' }] },
@@ -117,14 +109,14 @@ describe('DashboardService', () => {
     mocks.prisma.dashboardTask.findFirst.mockResolvedValue(null)
 
     await expect(
-      new DashboardService(mockCache()).updateTask(teacher, 'task-x', { title: 'Nope' }),
+      new DashboardService().updateTask(teacher, 'task-x', { title: 'Nope' }),
     ).rejects.toThrow('Task not found')
   })
 
   it('returns only pending tasks owned or created by the user', async () => {
     mocks.prisma.dashboardTask.findMany.mockResolvedValue([])
 
-    await new DashboardService(mockCache()).getTasks(teacher)
+    await new DashboardService().getTasks(teacher)
 
     expect(mocks.prisma.dashboardTask.findMany).toHaveBeenCalledWith({
       where: { schoolId: 'school-1', status: 'pending', OR: [{ assignedTo: 'user-1' }, { createdBy: 'user-1' }] },
