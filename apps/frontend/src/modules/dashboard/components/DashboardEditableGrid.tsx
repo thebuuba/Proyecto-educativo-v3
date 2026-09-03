@@ -1,6 +1,6 @@
 import { Check, GripVertical, LayoutDashboard, MoveDiagonal2, RotateCcw } from 'lucide-react'
 import type { PointerEvent as ReactPointerEvent, ReactNode } from 'react'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export type DashboardWidgetLayout = {
   x: number
@@ -149,8 +149,6 @@ function readStoredLayout(storageKey: string) {
 export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditableGridProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const widgetsRef = useRef(widgets)
-  widgetsRef.current = widgets
-
   const [containerWidth, setContainerWidth] = useState(0)
   const [editing, setEditing] = useState(false)
   const [interaction, setInteraction] = useState<Interaction | null>(null)
@@ -158,8 +156,12 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
     reconcileLayout(widgets, readStoredLayout(storageKey)),
   )
 
-  const widgetSignature = useMemo(() => widgets.map((widget) => widget.id).join('|'), [widgets])
+  const widgetSignature = widgets.map((widget) => widget.id).join('|')
   const isDesktop = containerWidth >= DESKTOP_MIN_WIDTH
+
+  useEffect(() => {
+    widgetsRef.current = widgets
+  }, [widgets])
 
   useEffect(() => {
     const node = containerRef.current
