@@ -120,7 +120,7 @@ body:has(#courses-summary-title) div.grid:has(> article.group) {
 body:has(#courses-summary-title) article.group {
   min-width: 0;
   overflow: visible;
-  border: 1px solid color-mix(in srgb, var(--palette-gray) 74%, var(--palette-white));
+  border: 1px solid transparent;
   border-radius: 22px !important;
   box-shadow: 0 14px 34px -30px color-mix(in srgb, var(--palette-text) 30%, transparent) !important;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease !important;
@@ -129,7 +129,7 @@ body:has(#courses-summary-title) article.group {
 @media (hover: hover) and (pointer: fine) {
   body:has(#courses-summary-title) article.group:hover {
     transform: translateY(-2px) !important;
-    border-color: color-mix(in srgb, var(--palette-blue) 30%, var(--palette-gray));
+    border-color: transparent;
     box-shadow: 0 20px 42px -30px color-mix(in srgb, var(--palette-text) 34%, transparent) !important;
   }
 }
