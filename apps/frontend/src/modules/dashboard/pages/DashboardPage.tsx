@@ -118,14 +118,14 @@ export function DashboardPage() {
               onCountdownEnd={refetch}
             />
           ),
-          layout: { x: 9, y: 0, w: 3, h: 5, minW: 3, minH: 4, maxW: 5, maxH: 7 },
+          layout: { x: 9, y: 0, w: 3, h: 5, minW: 3, minH: 5, maxW: 5, maxH: 7 },
         },
         ...(hasAgenda
           ? [{
               id: 'agenda',
               label: 'Agenda de hoy',
               content: <TodayAgenda items={data.todayAgenda} />,
-              layout: { x: 0, y: 3, w: 5, h: 10, minW: 4, minH: 6, maxW: 8, maxH: 14 },
+              layout: { x: 0, y: 3, w: 5, h: 10, minW: 4, minH: 8, maxW: 8, maxH: 14 },
             } satisfies DashboardGridWidget]
           : []),
         ...(hasWeeklyAttendance
@@ -133,7 +133,7 @@ export function DashboardPage() {
               id: 'attendance',
               label: 'Pulso semanal',
               content: <WeeklyAttendanceCard attendance={data.weeklyAttendance} />,
-              layout: { x: 5, y: 3, w: 4, h: 3, minW: 3, minH: 3, maxW: 7, maxH: 6 },
+              layout: { x: 5, y: 3, w: 4, h: 4, minW: 3, minH: 4, maxW: 7, maxH: 7 },
             } satisfies DashboardGridWidget]
           : []),
         {
@@ -147,26 +147,26 @@ export function DashboardPage() {
               onCompleteTask={completeTask}
             />
           ),
-          layout: { x: 5, y: 6, w: 4, h: 3, minW: 3, minH: 3, maxW: 7, maxH: 7 },
+          layout: { x: 5, y: 7, w: 4, h: 3, minW: 3, minH: 3, maxW: 7, maxH: 8 },
         },
         {
           id: 'recent',
           label: 'Actividad reciente',
           content: <RecentActivity items={data.recentActivity} />,
-          layout: { x: 9, y: 5, w: 3, h: 4, minW: 3, minH: 3, maxW: 7, maxH: 8 },
+          layout: { x: 9, y: 5, w: 3, h: 5, minW: 3, minH: 5, maxW: 7, maxH: 9 },
         },
         {
           id: 'journal',
           label: 'Bitácora docente',
           content: <JournalSummaryCard summary={journalSummary} />,
-          layout: { x: 5, y: 9, w: 7, h: 4, minW: 4, minH: 3, maxW: 12, maxH: 8 },
+          layout: { x: 5, y: 10, w: 7, h: 4, minW: 4, minH: 4, maxW: 12, maxH: 9 },
         },
         ...(data.smartSuggestion
           ? [{
               id: 'suggestion',
               label: 'Sugerencia inteligente',
               content: <SmartSuggestion suggestion={data.smartSuggestion} />,
-              layout: { x: 0, y: 13, w: 12, h: 2, minW: 5, minH: 2, maxW: 12, maxH: 4 },
+              layout: { x: 0, y: 14, w: 12, h: 2, minW: 5, minH: 2, maxW: 12, maxH: 4 },
             } satisfies DashboardGridWidget]
           : []),
       ]
@@ -216,7 +216,7 @@ export function DashboardPage() {
       {data.view === 'management' ? (
         <DashboardEditableGrid
           widgets={managementWidgets}
-          storageKey="aulabase:dashboard-layout:management:v1"
+          storageKey="aulabase:dashboard-layout:management:v2"
         />
       ) : (
         <>
