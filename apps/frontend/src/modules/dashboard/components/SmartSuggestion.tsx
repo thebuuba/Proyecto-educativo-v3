@@ -21,7 +21,7 @@ export function SmartSuggestion({ suggestion }: SmartSuggestionProps) {
   }
 
   return (
-    <div className="flex flex-col items-start gap-4 rounded-2xl border border-dashed border-accent/80 bg-muted/50 p-5 lg:flex-row lg:items-center lg:p-6">
+    <div className="flex flex-col items-start gap-4 rounded-2xl border border-dashed border-border bg-muted/50 p-5 lg:flex-row lg:items-center lg:p-6">
       <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">
         <CalendarDays className="size-5" strokeWidth={2.4} />
       </span>
