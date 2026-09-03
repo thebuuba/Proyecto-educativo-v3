@@ -1,6 +1,6 @@
 import { Check, GripVertical, LayoutDashboard, MoveDiagonal2, RotateCcw } from 'lucide-react'
 import type { PointerEvent as ReactPointerEvent, ReactNode } from 'react'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 export type DashboardWidgetLayout = {
   x: number
@@ -40,8 +40,9 @@ type Interaction = {
 }
 
 const COLS = 12
-const ROW_HEIGHT = 28
-const GAP = 16
+const ROW_HEIGHT = 8
+const ROW_GAP = 8
+const COL_GAP = 16
 const DESKTOP_MIN_WIDTH = 1024
 
 function overlaps(a: LayoutItem, b: LayoutItem) {
@@ -57,7 +58,7 @@ function clampItem(item: LayoutItem): LayoutItem {
   const minW = item.minW ?? 1
   const minH = item.minH ?? 1
   const maxW = Math.min(COLS, item.maxW ?? COLS)
-  const maxH = item.maxH ?? 40
+  const maxH = item.maxH ?? 80
   const w = Math.max(minW, Math.min(maxW, item.w))
   const h = Math.max(minH, Math.min(maxH, item.h))
   const x = Math.max(0, Math.min(COLS - w, item.x))
@@ -77,11 +78,13 @@ function compactLayout(items: LayoutItem[], pinnedId?: string) {
     let next = clampItem(item)
     let guard = 0
 
-    while (placed.some((other) => overlaps(next, other)) && guard < 100) {
+    while (placed.some((other) => overlaps(next, other)) && guard < 200) {
       guard += 1
       const colliders = placed.filter((other) => overlaps(next, other))
-      const nextY = Math.max(...colliders.map((other) => other.y + other.h))
-      next = { ...next, y: nextY }
+      next = {
+        ...next,
+        y: Math.max(...colliders.map((other) => other.y + other.h)),
+      }
     }
 
     while (next.y > 0) {
@@ -103,7 +106,7 @@ function resolveCollisions(items: LayoutItem[], activeId: string, candidate: Lay
   const queue = [activeId]
   let guard = 0
 
-  while (queue.length && guard < 100) {
+  while (queue.length && guard < 200) {
     guard += 1
     const sourceId = queue.shift()
     if (!sourceId) break
@@ -159,7 +162,7 @@ function readStoredLayout(storageKey: string) {
 }
 
 function rowsForHeight(height: number) {
-  return Math.max(1, Math.ceil((height + GAP) / (ROW_HEIGHT + GAP)))
+  return Math.max(1, Math.ceil((height + ROW_GAP) / (ROW_HEIGHT + ROW_GAP)))
 }
 
 export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditableGridProps) {
@@ -198,7 +201,7 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
     setLayout((current) => reconcileLayout(widgetsRef.current, current))
   }, [widgetSignature])
 
-  useLayoutEffect(() => {
+  const fitContent = useCallback(() => {
     if (!isDesktop || interaction) return
 
     setLayout((current) => {
@@ -207,9 +210,9 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
         const node = measureRefs.current.get(item.id)
         if (!node) return item
 
-        const naturalHeight = Math.max(node.scrollHeight, node.getBoundingClientRect().height)
+        const naturalHeight = Math.ceil(node.scrollHeight)
         const requiredRows = rowsForHeight(naturalHeight)
-        const maxH = item.maxH ?? 40
+        const maxH = item.maxH ?? 80
         const contentRows = Math.min(maxH, Math.max(item.minH ?? 1, requiredRows))
         const nextH = item.manualH ? Math.max(item.h, contentRows) : contentRows
 
@@ -220,7 +223,20 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
 
       return changed ? compactLayout(fitted) : current
     })
-  }, [containerWidth, interaction, isDesktop, widgetSignature])
+  }, [interaction, isDesktop])
+
+  useLayoutEffect(() => {
+    fitContent()
+  }, [containerWidth, fitContent, widgetSignature])
+
+  useEffect(() => {
+    if (!isDesktop || interaction || typeof ResizeObserver === 'undefined') return undefined
+
+    const observer = new ResizeObserver(() => fitContent())
+    measureRefs.current.forEach((node) => observer.observe(node))
+
+    return () => observer.disconnect()
+  }, [fitContent, interaction, isDesktop, widgetSignature])
 
   useEffect(() => {
     if (typeof window === 'undefined') return undefined
@@ -234,10 +250,10 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
   useEffect(() => {
     if (!interaction || !isDesktop) return undefined
 
-    const availableWidth = containerWidth - GAP * (COLS - 1)
+    const availableWidth = containerWidth - COL_GAP * (COLS - 1)
     const colWidth = availableWidth / COLS
-    const horizontalUnit = colWidth + GAP
-    const verticalUnit = ROW_HEIGHT + GAP
+    const horizontalUnit = colWidth + COL_GAP
+    const verticalUnit = ROW_HEIGHT + ROW_GAP
 
     const handleMove = (event: PointerEvent) => {
       const deltaX = event.clientX - interaction.startClientX
@@ -348,7 +364,8 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
               display: 'grid',
               gridTemplateColumns: `repeat(${COLS}, minmax(0, 1fr))`,
               gridAutoRows: `${ROW_HEIGHT}px`,
-              gap: `${GAP}px`,
+              columnGap: `${COL_GAP}px`,
+              rowGap: `${ROW_GAP}px`,
             }}
           >
             {widgets.map((widget) => {
@@ -360,6 +377,7 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
                   key={widget.id}
                   className="dashboard-grid-widget relative min-h-0 min-w-0"
                   data-interacting={isActive ? 'true' : 'false'}
+                  data-manual-height={item.manualH ? 'true' : 'false'}
                   style={{
                     gridColumn: `${item.x + 1} / span ${item.w}`,
                     gridRow: `${item.y + 1} / span ${item.h}`,
