@@ -1,3 +1,12 @@
+import {
+  BarChart3,
+  CheckCircle2,
+  ClipboardList,
+  RotateCcw,
+  UsersRound,
+} from 'lucide-react'
+
+import { MetricTile, SectionHeader } from '@/components/ui/SemanticUI'
 import type {
   GradeRecordRow,
   GradingActivity,
@@ -8,6 +17,7 @@ import {
   competencyBlocks,
   formatGrade,
 } from '@/modules/grading/utils/competencyGrades'
+
 type GradeSummaryProps = {
   students: StudentGradeRow[]
   activities: GradingActivity[]
@@ -36,37 +46,65 @@ export function GradeSummary({
     ? gradedTotals.reduce((sum, value) => sum + value, 0) / gradedTotals.length
     : null
   const recoveryCount = totals.filter((value) => value > 0 && value < 70).length
+  const approvedCount = totals.filter((value) => value >= 70).length
 
   const items = [
-    { label: 'Estudiantes', value: students.length, helper: 'matriculados' },
-    { label: 'Actividades', value: activities.length, helper: 'creadas' },
-    { label: 'Promedio', value: formatGrade(average), helper: 'por bloque' },
-    { label: 'Aprobados', value: totals.filter((value) => value >= 70).length, helper: 'bloques' },
-    { label: 'Recuperación', value: recoveryCount, helper: 'bloques' },
+    {
+      label: 'Estudiantes',
+      value: students.length,
+      helper: 'matriculados',
+      tone: 'info' as const,
+      icon: UsersRound,
+    },
+    {
+      label: 'Actividades',
+      value: activities.length,
+      helper: 'creadas',
+      tone: 'info' as const,
+      icon: ClipboardList,
+    },
+    {
+      label: 'Promedio',
+      value: formatGrade(average),
+      helper: 'por bloque',
+      tone: 'info' as const,
+      icon: BarChart3,
+    },
+    {
+      label: 'Aprobados',
+      value: approvedCount,
+      helper: 'bloques',
+      tone: 'success' as const,
+      icon: CheckCircle2,
+    },
+    {
+      label: 'Recuperación',
+      value: recoveryCount,
+      helper: 'bloques',
+      tone: recoveryCount > 0 ? 'warning' as const : 'neutral' as const,
+      icon: RotateCcw,
+    },
   ]
 
   return (
-    <aside className="rounded-lg border border-border bg-card p-4 shadow-sm">
-      <p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">
-        Resumen del curso
-      </p>
-      <div className="mt-4 space-y-3">
-      {items.map((item) => (
-        <div key={item.label} className="flex items-center justify-between gap-3 border-b border-border pb-3 last:border-b-0 last:pb-0">
-          <div>
-            <p className="text-xs font-bold uppercase text-muted-foreground">
-              {item.label}
-            </p>
-            <p className="text-xs text-muted-foreground">{item.helper}</p>
-          </div>
-          {loading ? (
-            <div className="h-6 w-10 animate-pulse rounded bg-muted" />
-          ) : (
-            <p className="text-xl font-bold text-primary">{item.value}</p>
-          )}
-        </div>
-      ))}
+    <section className="space-y-3">
+      <SectionHeader
+        title="Resumen del curso"
+        description="Vista rápida del estado de la evaluación en el período seleccionado."
+      />
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+        {items.map((item) => (
+          <MetricTile
+            key={item.label}
+            label={item.label}
+            value={loading ? <span className="inline-block h-6 w-10 animate-pulse rounded-lg bg-muted" /> : item.value}
+            helper={item.helper}
+            tone={item.tone}
+            icon={item.icon}
+            className="rounded-2xl p-3.5 shadow-sm"
+          />
+        ))}
       </div>
-    </aside>
+    </section>
   )
 }
