@@ -17,7 +17,7 @@ type AcademicAlertsProps = {
 /** Panel de alertas académicas del dashboard. */
 export function AcademicAlerts({ alerts }: AcademicAlertsProps) {
   return (
-    <Card className="p-5">
+    <Card className="border-0 p-5">
       <div className="flex items-center justify-between gap-3">
         <div>
           <CardTitle>Alertas académicas</CardTitle>

@@ -49,7 +49,7 @@ export function Modal({ title, description, children, onClose, className, conten
         aria-modal="true"
         aria-label={title}
         className={cn(
-          'flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-popover text-popover-foreground shadow-xl',
+          'flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-3xl border-0 bg-popover text-popover-foreground shadow-xl',
           className,
         )}
       >

@@ -33,7 +33,7 @@ export function PageShell({ title, description, children, actions }: PageShellPr
       <PageHeader title={title} description={description} actions={actions} />
 
       {children ?? (
-        <div className="rounded-lg border border-dashed border-border bg-card p-6">
+        <div className="rounded-3xl bg-card p-6 shadow-sm">
           <EmptyState
             title="Página lista"
             description="El módulo está preparado para construir la experiencia."

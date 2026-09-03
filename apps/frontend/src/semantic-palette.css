@@ -11,6 +11,11 @@
   --palette-gray: #E3E3E3;
   --palette-white: #FFFFFF;
   --palette-text: #2F3542;
+  --page-background: color-mix(
+    in srgb,
+    var(--palette-blue) 8%,
+    color-mix(in srgb, var(--palette-gray) 18%, var(--palette-white))
+  );
 
   /* Alias heredados para que los módulos existentes consuman la nueva paleta. */
   --palette-surface: var(--palette-white);
@@ -33,7 +38,7 @@
   --palette-orange: var(--palette-coral);
 
   /* Superficies: fondo muy claro, tarjetas blancas y texto oscuro. */
-  --background: color-mix(in srgb, var(--palette-gray) 58%, var(--palette-white));
+  --background: var(--page-background);
   --on-background: var(--palette-text);
   --surface: var(--palette-white);
   --on-surface: var(--palette-text);
@@ -109,8 +114,8 @@
   --warning-light: color-mix(in srgb, var(--palette-gold) 24%, var(--palette-white));
   --bg-auth-outer: color-mix(in srgb, var(--palette-blue) 12%, var(--palette-white));
   --bg-left-panel: var(--palette-white);
-  --bg-right-panel: color-mix(in srgb, var(--palette-gray) 58%, var(--palette-white));
-  --bg-page: color-mix(in srgb, var(--palette-gray) 58%, var(--palette-white));
+  --bg-right-panel: var(--page-background);
+  --bg-page: var(--page-background);
   --bg-surface: var(--palette-white);
   --bg-alt: color-mix(in srgb, var(--palette-gray) 68%, var(--palette-white));
   --text-heading: var(--palette-text);
@@ -120,10 +125,10 @@
   --text-placeholder: color-mix(in srgb, var(--palette-text) 58%, var(--palette-white));
 
   /* Panel de clase: el azul lo hace visible sin introducir otra familia cromática. */
-  --class-panel: var(--palette-blue);
+  --class-panel: var(--palette-white);
   --class-foreground: var(--palette-text);
   --class-accent: var(--palette-gold);
-  --class-muted: color-mix(in srgb, var(--palette-text) 72%, var(--palette-blue));
+  --class-muted: color-mix(in srgb, var(--palette-text) 72%, var(--palette-white));
 }
 
 .dashboard-paper-lines {
@@ -144,4 +149,20 @@
 
 .dashboard-warm-shadow {
   box-shadow: 0 16px 40px -28px color-mix(in srgb, var(--palette-text) 22%, transparent);
+}
+
+/* Las tarjetas del contenido autenticado comparten el lenguaje del inicio.
+   Los bordes se reservan para controles, tablas y estados interactivos. */
+.content-density-compact :where(section, article).bg-card,
+.content-density-compact :where(div).bg-card.shadow-sm,
+.content-density-compact :where(div).bg-card.border-dashed,
+.content-density-compact :where(section, article).bg-white,
+.content-density-compact :where(div).bg-white.shadow-sm {
+  border-color: transparent;
+  border-radius: 1.5rem;
+  box-shadow: 0 16px 40px -28px color-mix(in srgb, var(--palette-text) 22%, transparent);
+}
+
+.content-density-compact :where(input:not([type='checkbox'], [type='radio']), select, textarea) {
+  border-radius: 0.75rem;
 }

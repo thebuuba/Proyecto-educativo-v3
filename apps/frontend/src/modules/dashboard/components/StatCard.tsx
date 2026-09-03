@@ -25,7 +25,7 @@ export function StatCard({
   icon: Icon,
 }: DashboardStat) {
   return (
-    <Card className="p-5">
+    <Card className="border-0 p-5">
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-sm font-medium text-muted-foreground">{label}</p>

@@ -8,7 +8,7 @@ import type { HTMLAttributes, ReactNode } from 'react'
 import { cn } from '@/utils/cn'
 
 /**
- * Contenedor de tarjeta con bordes redondeados y sombra.
+ * Contenedor de tarjeta con el lenguaje visual del panel de inicio.
  *
  * @param props.children - Contenido de la tarjeta.
  */
@@ -20,7 +20,7 @@ export function Card({
   return (
     <section
       className={cn(
-        'rounded-2xl border border-border bg-card text-card-foreground shadow-sm',
+        'dashboard-warm-shadow rounded-3xl border-0 bg-card text-card-foreground',
         className,
       )}
       {...props}

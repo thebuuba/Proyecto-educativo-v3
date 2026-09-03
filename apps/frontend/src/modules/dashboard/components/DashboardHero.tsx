@@ -11,6 +11,7 @@ import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
 
 const DASHBOARD_TIME_ZONE = 'America/Santo_Domingo'
 const DAY_SECONDS = 24 * 60 * 60
+const COUNTDOWN_THRESHOLD_SECONDS = 30 * 60
 const RING_CIRCUMFERENCE = 2 * Math.PI * 45
 
 const dashboardClockFormatter = new Intl.DateTimeFormat('en-GB', {
@@ -64,17 +65,19 @@ function formatCountdown(totalSeconds: number) {
 
 function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: number }) {
   const isCurrent = item.status === 'current'
+  const showCountdown = isCurrent || seconds <= COUNTDOWN_THRESHOLD_SECONDS
   const durationSeconds = Math.max(1, item.durationMinutes * 60)
   const progress = isCurrent
     ? Math.max(0, Math.min(100, (seconds / durationSeconds) * 100))
     : Math.max(0, Math.min(100, 100 - (seconds / (90 * 60)) * 100))
-  const ringLength = (progress / 100) * RING_CIRCUMFERENCE
-  const label = isCurrent ? 'Termina' : 'Empieza'
+  const ringLength = showCountdown ? (progress / 100) * RING_CIRCUMFERENCE : 0
+  const label = isCurrent ? 'Termina' : showCountdown ? 'Empieza' : 'Hora'
+  const value = showCountdown ? formatCountdown(seconds) : item.startTime.slice(0, 5)
 
   return (
     <div
-      className="relative flex size-[88px] shrink-0 items-center justify-center sm:size-24"
-      aria-label={`${label} en ${formatCountdown(seconds)}`}
+      className="relative flex size-[72px] shrink-0 items-center justify-center sm:size-20"
+      aria-label={showCountdown ? `${label} en ${formatCountdown(seconds)}` : `Clase a las ${value}`}
     >
       <svg className="absolute inset-0 size-full -rotate-90" viewBox="0 0 120 120" aria-hidden="true">
         <circle
@@ -82,9 +85,9 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
           cy="60"
           r="45"
           fill="none"
-          stroke="var(--palette-white)"
+          stroke="var(--class-muted)"
           strokeOpacity="0.58"
-          strokeWidth="8"
+          strokeWidth="11"
         />
         <circle
           cx="60"
@@ -94,16 +97,16 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
           stroke="var(--class-accent)"
           strokeDasharray={`${ringLength} ${RING_CIRCUMFERENCE}`}
           strokeLinecap="round"
-          strokeWidth="8"
+          strokeWidth="11"
           className="transition-[stroke-dasharray] duration-1000 ease-linear"
         />
       </svg>
       <div className="text-center leading-none text-[var(--class-foreground)]">
-        <p className="text-[8px] font-bold uppercase tracking-[0.16em] sm:text-[9px]">
+        <p className="text-[8px] font-bold uppercase tracking-[0.12em] sm:text-[9px]">
           {label}
         </p>
-        <p className="mt-1 text-xl font-extrabold tabular-nums sm:text-2xl">
-          {formatCountdown(seconds)}
+        <p className="mt-1 text-lg font-extrabold tabular-nums sm:text-xl">
+          {value}
         </p>
       </div>
     </div>
@@ -149,7 +152,7 @@ export function DashboardHero({
   if (!nextClass) {
     return (
       <section
-        className="ml-auto w-full max-w-[520px] rounded-3xl border border-border px-5 py-5 text-[var(--class-foreground)] shadow-sm"
+        className="ml-auto w-full max-w-[420px] rounded-3xl px-3.5 py-3.5 text-[var(--class-foreground)] shadow-sm sm:px-4 sm:py-4"
         style={{ backgroundColor: 'var(--class-panel)' }}
       >
         <p className="text-[10px] font-bold uppercase tracking-[0.22em]">Sin clase programada</p>
@@ -163,10 +166,10 @@ export function DashboardHero({
 
   return (
     <section
-      className="relative ml-auto w-full max-w-[520px] overflow-hidden rounded-3xl border border-border p-5 pr-[7.5rem] text-[var(--class-foreground)] shadow-sm sm:p-6 sm:pr-[8.5rem]"
+      className="relative ml-auto w-full max-w-[420px] overflow-hidden rounded-3xl p-3.5 pr-[5.75rem] text-[var(--class-foreground)] shadow-sm sm:p-4 sm:pr-[6.75rem]"
       style={{ backgroundColor: 'var(--class-panel)' }}
     >
-      <div className="absolute right-4 top-4 z-10 sm:right-5 sm:top-5">
+      <div className="absolute right-2.5 top-2.5 z-10 sm:right-3 sm:top-3">
         <CountdownBadge item={nextClass} seconds={countdownSeconds} />
       </div>
 
@@ -178,14 +181,14 @@ export function DashboardHero({
           </span>
         </div>
 
-        <h2 className="mt-3 line-clamp-2 text-xl font-extrabold leading-tight tracking-tight sm:text-2xl">
+        <h2 className="mt-2 line-clamp-2 text-lg font-extrabold leading-tight tracking-tight sm:text-xl">
           {nextClass.subjectName}
         </h2>
         <p className="mt-1 text-sm font-semibold text-[var(--class-muted)]">
           {nextClass.gradeName} {nextClass.sectionName}
         </p>
 
-        <div className="mt-4 grid gap-2 text-xs text-[var(--class-muted)]">
+        <div className="mt-2.5 grid gap-1 text-xs text-[var(--class-muted)]">
           <span className="inline-flex items-center gap-2">
             <Clock3 className="size-3.5 shrink-0 text-[var(--class-foreground)]" />
             {nextClass.startTime.slice(0, 5)}–{nextClass.endTime.slice(0, 5)}
@@ -201,10 +204,10 @@ export function DashboardHero({
         </div>
 
         {canManageClass ? (
-          <div className="mt-5 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-2">
             <Button
               variant="secondary"
-              className="h-10 rounded-xl bg-[var(--palette-white)] px-4 text-sm text-[var(--palette-text)] hover:bg-[var(--palette-gray)]"
+              className="h-9 rounded-xl bg-[var(--palette-blue)] px-3 text-xs text-[var(--palette-white)] hover:bg-[var(--primary-hover)]"
               onClick={() => onStartClass(nextClass)}
             >
               <Play className="size-4 fill-current" />
@@ -212,7 +215,7 @@ export function DashboardHero({
             </Button>
             <Button
               variant="outline"
-              className="h-10 rounded-xl border-[var(--palette-text)] bg-transparent px-4 text-sm text-[var(--palette-text)] hover:bg-[var(--palette-white)]"
+              className="h-9 rounded-xl border-[var(--palette-blue)]/50 bg-transparent px-3 text-xs text-[var(--palette-blue)] hover:bg-[var(--palette-blue-light)]"
               onClick={() => onViewPlanning(nextClass)}
             >
               Planificación

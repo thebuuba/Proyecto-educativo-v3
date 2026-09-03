@@ -131,21 +131,26 @@ export function DashboardPage() {
         </div>
       )}
 
-      <div className="dashboard-enter" style={{ animationDuration: '520ms' }}>
-        <DashboardHero
-          nextClass={data.nextClass}
-          onStartClass={handleStartClass}
-          onViewPlanning={handleViewPlanning}
-          canManageClass={canManageOperations}
-          onCountdownEnd={refetch}
-        />
-      </div>
-
-      {data.view === 'management' ? (
-        <div className="dashboard-enter" style={{ animationDelay: '60ms', animationDuration: '460ms' }}>
-          <InitialSetupChecklist progress={data.setupProgress} />
+      <div className={data.view === 'management' ? 'grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-stretch' : undefined}>
+        <div
+          className={data.view === 'management' ? 'dashboard-enter lg:col-start-2 lg:row-start-1' : 'dashboard-enter'}
+          style={{ animationDuration: '520ms' }}
+        >
+          <DashboardHero
+            nextClass={data.nextClass}
+            onStartClass={handleStartClass}
+            onViewPlanning={handleViewPlanning}
+            canManageClass={canManageOperations}
+            onCountdownEnd={refetch}
+          />
         </div>
-      ) : null}
+
+        {data.view === 'management' ? (
+          <div className="dashboard-enter lg:col-start-1 lg:row-start-1" style={{ animationDelay: '60ms', animationDuration: '460ms' }}>
+            <InitialSetupChecklist progress={data.setupProgress} />
+          </div>
+        ) : null}
+      </div>
 
       {data.view === 'teacher' && data.teacherAnalytics ? (
         <section className="grid gap-6 lg:grid-cols-2" aria-label="Resumen académico del docente">

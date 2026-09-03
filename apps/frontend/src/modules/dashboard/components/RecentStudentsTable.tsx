@@ -30,7 +30,7 @@ const statusTones: Record<string, 'accent' | 'success' | 'warning'> = {
 /** Tabla de estudiantes recientes del dashboard. */
 export function RecentStudentsTable({ students }: RecentStudentsTableProps) {
   return (
-    <Card>
+    <Card className="border-0">
       <CardHeader>
         <CardTitle>Estudiantes recientes</CardTitle>
         <CardDescription>Movimientos académicos actualizados</CardDescription>
