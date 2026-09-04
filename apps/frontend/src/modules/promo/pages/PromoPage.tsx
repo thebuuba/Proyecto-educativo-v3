@@ -17,10 +17,7 @@ import { type ComponentType, type ReactNode, useEffect, useRef, useState } from 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
 
-const primary = 'var(--primary)'
-const primaryInk = 'var(--foreground)'
 const primaryLight = 'color-mix(in srgb, var(--primary) 14%, var(--card))'
-const primaryBorder = 'color-mix(in srgb, var(--primary) 34%, var(--card))'
 
 const features = [
   { icon: SquareCheckBig, title: 'Asistencia digital', desc: 'Registra la asistencia de tus grupos en segundos, desde cualquier dispositivo. Genera reportes automáticos al instante.', tone: 'success' },

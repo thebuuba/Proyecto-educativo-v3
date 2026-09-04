@@ -1,4 +1,4 @@
-import { CheckCircle, Eye, EyeOff } from 'lucide-react'
+import { Eye, EyeOff } from 'lucide-react'
 import type { FormEvent, ReactNode } from 'react'
 import { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
