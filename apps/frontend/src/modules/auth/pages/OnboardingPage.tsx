@@ -1,19 +1,17 @@
-import {
-  Sparkles,
-} from 'lucide-react'
+import { Check, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 
+import { FLOATING_ICONS } from '@/components/auth/AuthIcons'
 import { SchoolSearchInput } from '@/modules/auth/components/SchoolSearchInput'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
-import { FLOATING_ICONS } from '@/components/auth/AuthIcons'
 
 const DRAFT_KEY = 'aulabase:onboarding-draft'
 const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
 const totalSteps = 2
-const inputClass = 'mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/15'
-const labelClass = 'text-sm font-semibold text-gray-700'
+const inputClass = 'auth-input mt-2'
+const labelClass = 'text-sm font-semibold text-foreground'
 const optionRowClass = 'grid gap-3 py-4 md:grid-cols-[150px_1fr] md:items-start'
 const optionListClass = 'flex flex-wrap gap-2'
 
@@ -72,7 +70,6 @@ function detectSchoolYear(date = new Date()) {
 
 function createSchoolYear(startYear: number) {
   const endYear = startYear + 1
-
   return {
     schoolYearName: `${startYear}-${endYear}`,
     schoolStartDate: toIsoDate(startYear, 7, 1),
@@ -100,7 +97,6 @@ function getSchoolYearByName(name?: string) {
 
 function createInitialDraft(fullName = ''): OnboardingDraft {
   const schoolYear = detectSchoolYear()
-
   return {
     fullName,
     schoolName: '',
@@ -113,15 +109,10 @@ function createInitialDraft(fullName = ''): OnboardingDraft {
 
 function loadDraft(fallbackFullName = ''): OnboardingDraft {
   const initialDraft = createInitialDraft(fallbackFullName)
-
   try {
     const rawDraft = localStorage.getItem(DRAFT_KEY)
     if (!rawDraft) return initialDraft
-    const parsed = JSON.parse(rawDraft) as Partial<OnboardingDraft> & {
-      level?: string
-      schoolYearName?: string
-    }
-
+    const parsed = JSON.parse(rawDraft) as Partial<OnboardingDraft> & { level?: string; schoolYearName?: string }
     return {
       ...initialDraft,
       ...parsed,
@@ -166,47 +157,34 @@ function toOnboardingInput(draft: OnboardingDraft): CompleteOnboardingInput {
 
 function validateStep(step: number, draft: OnboardingDraft): StepErrors {
   const errors: StepErrors = {}
-
   if (step === 0) {
     if (!draft.fullName.trim()) errors.fullName = 'Escribe el nombre del docente.'
-    if (!draft.schoolYearName.trim()) errors.schoolYearName = 'Selecciona el ano escolar.'
+    if (!draft.schoolYearName.trim()) errors.schoolYearName = 'Selecciona el año escolar.'
     if (!draft.schoolName.trim()) errors.schoolName = 'Escribe el centro educativo.'
   }
-
   if (step === 1) {
     if (!draft.levels.length) errors.levels = 'Selecciona al menos un nivel.'
     if (!draft.shifts.length) errors.shifts = 'Selecciona al menos una tanda.'
     if (!draft.modalities.length) errors.modalities = 'Selecciona al menos una modalidad.'
   }
-
   return errors
 }
 
 function FieldError({ message }: { message?: string }) {
-  return message ? <p className="mt-1 text-xs font-medium text-red-600">{message}</p> : null
+  return message ? <p className="mt-1 text-xs font-semibold text-foreground"><span className="mr-1 inline-block size-1.5 rounded-full bg-destructive" />{message}</p> : null
 }
 
-function ChoiceButton({
-  active,
-  children,
-  onClick,
-}: {
-  active: boolean
-  children: string
-  onClick: () => void
-}) {
+function ChoiceButton({ active, children, onClick }: { active: boolean; children: string; onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className={[
-        'rounded-lg border px-3 py-2 text-sm font-semibold transition',
-        active
-          ? 'border-primary bg-primary/10 text-foreground'
-          : 'border-gray-200 bg-white text-gray-700 hover:border-primary/40 hover:bg-primary/5',
-      ].join(' ')}
+      className={`rounded-xl border px-3 py-2 text-sm font-semibold transition ${active ? 'border-primary/35 bg-primary/12 text-foreground' : 'border-border bg-card text-muted-foreground hover:bg-muted'}`}
     >
-      {children}
+      <span className="inline-flex items-center gap-1.5">
+        {active ? <Check className="size-3.5" /> : null}
+        {children}
+      </span>
     </button>
   )
 }
@@ -215,14 +193,7 @@ export function OnboardingPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const resetMode = searchParams.get('reset') === '1'
-  const {
-    appUser,
-    completeOnboarding,
-    isAuthenticated,
-    loading,
-    profileRequired,
-    onboardingComplete,
-  } = useAuth()
+  const { appUser, completeOnboarding, isAuthenticated, loading, profileRequired, onboardingComplete } = useAuth()
   const [step, setStep] = useState(0)
   const knownFullName = appUser?.fullName || localStorage.getItem(REGISTRATION_NAME_KEY)?.trim() || ''
   const [draft, setDraft] = useState(() => loadDraft(knownFullName))
@@ -247,30 +218,19 @@ export function OnboardingPage() {
 
   useEffect(() => {
     if (!showWelcome) return
-    const timeout = window.setTimeout(() => {
-      navigate('/inicio', { replace: true })
-    }, 1800)
+    const timeout = window.setTimeout(() => navigate('/inicio', { replace: true }), 1800)
     return () => window.clearTimeout(timeout)
   }, [navigate, showWelcome])
 
-  if (!showWelcome && !resetMode && !loading && isAuthenticated && onboardingComplete) {
-    return <Navigate to="/inicio" replace />
-  }
-
-  if (!loading && !isAuthenticated && !profileRequired) {
-    return <Navigate to="/registro" replace />
-  }
+  if (!showWelcome && !resetMode && !loading && isAuthenticated && onboardingComplete) return <Navigate to="/inicio" replace />
+  if (!loading && !isAuthenticated && !profileRequired) return <Navigate to="/registro" replace />
 
   if (loading) {
     return (
-      <main className="page-enter grid min-h-screen place-items-center bg-background px-4 text-center text-gray-900">
+      <main className="page-enter grid min-h-screen place-items-center bg-background px-4 text-center text-foreground">
         <div>
-          <div
-            className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-primary-foreground shadow-md shadow-primary/25"
-          >
-            AB
-          </div>
-          <p className="text-sm font-semibold text-gray-500">Preparando tu entrada...</p>
+          <BrandMark />
+          <p className="mt-3 text-sm font-semibold text-muted-foreground">Preparando tu entrada...</p>
         </div>
       </main>
     )
@@ -287,9 +247,7 @@ export function OnboardingPage() {
   function toggleListValue(key: 'levels' | 'shifts' | 'modalities', value: string) {
     setDraft((current) => {
       const values = current[key]
-      const nextValues = values.includes(value)
-        ? values.filter((item) => item !== value)
-        : [...values, value]
+      const nextValues = values.includes(value) ? values.filter((item) => item !== value) : [...values, value]
       return { ...current, [key]: nextValues }
     })
   }
@@ -309,13 +267,12 @@ export function OnboardingPage() {
     setStep((current) => Math.max(current - 1, 0))
   }
 
-  function preventEnter(e: React.KeyboardEvent) {
-    if (e.key === 'Enter') e.preventDefault()
+  function preventEnter(event: React.KeyboardEvent) {
+    if (event.key === 'Enter') event.preventDefault()
   }
 
   async function handleSubmit() {
     setSubmitError('')
-
     for (let stepIndex = 0; stepIndex < totalSteps; stepIndex += 1) {
       const nextErrors = validateStep(stepIndex, draft)
       if (Object.keys(nextErrors).length) {
@@ -331,8 +288,8 @@ export function OnboardingPage() {
       localStorage.removeItem(DRAFT_KEY)
       localStorage.removeItem(REGISTRATION_NAME_KEY)
       setShowWelcome(true)
-    } catch (err) {
-      setSubmitError(err instanceof Error ? err.message : 'No se pudo completar la configuracion.')
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'No se pudo completar la configuración.')
     } finally {
       setSubmitting(false)
     }
@@ -350,17 +307,9 @@ export function OnboardingPage() {
             </div>
           )}
           <div>
-            <label className={labelClass}>Ano escolar</label>
-            <select
-              className={inputClass}
-              value={draft.schoolYearName}
-              onChange={(event) => updateSchoolYear(event.target.value)}
-            >
-              {schoolYearOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
+            <label className={labelClass}>Año escolar</label>
+            <select className={inputClass} value={draft.schoolYearName} onChange={(event) => updateSchoolYear(event.target.value)}>
+              {schoolYearOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
             </select>
             <FieldError message={errors.schoolYearName} />
           </div>
@@ -372,9 +321,7 @@ export function OnboardingPage() {
               onSelect={(school) => updateDraft({
                 schoolName: school.name,
                 levels: school.niveles.length ? school.niveles : draft.levels,
-                shifts: getAllowedShifts(school.tandas).length
-                  ? getAllowedShifts(school.tandas)
-                  : draft.shifts,
+                shifts: getAllowedShifts(school.tandas).length ? getAllowedShifts(school.tandas) : draft.shifts,
                 modalities: school.modalidades.length ? school.modalidades : draft.modalities,
               })}
               placeholder="Busca tu centro educativo"
@@ -387,174 +334,96 @@ export function OnboardingPage() {
 
     if (step === 1) {
       return (
-        <div className="divide-y divide-gray-100">
-          <div className={optionRowClass}>
-            <h3 className={labelClass}>Nivel</h3>
-            <div>
-              <div className={optionListClass}>
-                {levelOptions.map((option) => (
-                  <ChoiceButton key={option.value} active={draft.levels.includes(option.value)} onClick={() => toggleListValue('levels', option.value)}>
-                    {option.label}
-                  </ChoiceButton>
-                ))}
-              </div>
-              <FieldError message={errors.levels} />
-            </div>
-          </div>
-          <div className={optionRowClass}>
-            <h3 className={labelClass}>Tanda</h3>
-            <div>
-              <div className={optionListClass}>
-                {shiftOptions.map((option) => (
-                  <ChoiceButton key={option.value} active={draft.shifts.includes(option.value)} onClick={() => toggleListValue('shifts', option.value)}>
-                    {option.label}
-                  </ChoiceButton>
-                ))}
-              </div>
-              <FieldError message={errors.shifts} />
-            </div>
-          </div>
-          <div className={optionRowClass}>
-            <h3 className={labelClass}>Modalidad</h3>
-            <div>
-              <div className={optionListClass}>
-                {modalityOptions.map((option) => (
-                  <ChoiceButton key={option.value} active={draft.modalities.includes(option.value)} onClick={() => toggleListValue('modalities', option.value)}>
-                    {option.label}
-                  </ChoiceButton>
-                ))}
-              </div>
-              <FieldError message={errors.modalities} />
-            </div>
-          </div>
+        <div className="divide-y divide-border">
+          <OptionGroup label="Nivel" error={errors.levels}>{levelOptions.map((option) => <ChoiceButton key={option.value} active={draft.levels.includes(option.value)} onClick={() => toggleListValue('levels', option.value)}>{option.label}</ChoiceButton>)}</OptionGroup>
+          <OptionGroup label="Tanda" error={errors.shifts}>{shiftOptions.map((option) => <ChoiceButton key={option.value} active={draft.shifts.includes(option.value)} onClick={() => toggleListValue('shifts', option.value)}>{option.label}</ChoiceButton>)}</OptionGroup>
+          <OptionGroup label="Modalidad" error={errors.modalities}>{modalityOptions.map((option) => <ChoiceButton key={option.value} active={draft.modalities.includes(option.value)} onClick={() => toggleListValue('modalities', option.value)}>{option.label}</ChoiceButton>)}</OptionGroup>
         </div>
       )
     }
-
     return null
   }
 
-  const stepTitles = [
-    'Datos del docente y centro',
-    'Nivel, tanda y modalidad',
-  ]
+  const stepTitles = ['Datos del docente y centro', 'Nivel, tanda y modalidad']
 
   if (showWelcome) {
     return (
-      <main className="page-enter relative grid min-h-screen place-items-center overflow-hidden bg-background px-4 text-gray-900">
-        <div className="pointer-events-none absolute inset-0">
-          {FLOATING_ICONS.map((item, i) => (
-            <item.Icon
-              key={i}
-              style={{
-                position: 'absolute',
-                top: item.top,
-                left: item.left,
-                width: item.size,
-                height: item.size,
-                color: 'var(--primary)',
-                opacity: 0.08,
-                transform: `translate(-50%, -50%) rotate(${item.rotate}deg)`,
-              }}
-              strokeWidth={1.5}
-            />
-          ))}
-        </div>
-
+      <main className="page-enter relative grid min-h-screen place-items-center overflow-hidden bg-background px-4 text-foreground">
+        <AuthBackdrop opacity={0.07} />
         <div className="relative z-10 flex max-w-md flex-col items-center text-center">
           <div className="relative mb-6">
-            <div className="absolute inset-0 animate-ping rounded-full bg-primary/20" />
-            <div className="relative flex size-20 items-center justify-center rounded-3xl bg-primary text-primary-foreground shadow-xl shadow-primary/25">
+            <div className="absolute inset-0 animate-ping rounded-3xl bg-success/20" />
+            <div className="relative flex size-20 items-center justify-center rounded-3xl bg-success/24 text-foreground shadow-lg">
               <Sparkles className="size-9 animate-pulse" strokeWidth={2.2} />
+              <span className="absolute -right-1 -top-1 size-4 rounded-full bg-warning" />
             </div>
           </div>
-          <h1 className="animate-bounce text-4xl font-black tracking-tight text-gray-900">Bienvenido</h1>
-          <p className="mt-3 text-base font-medium text-gray-500">Tu perfil esta listo. Entrando a Aula Base...</p>
+          <h1 className="text-4xl font-black tracking-tight text-foreground">Bienvenido</h1>
+          <p className="mt-3 text-base font-medium text-muted-foreground">Tu perfil está listo. Entrando a Aula Base...</p>
         </div>
       </main>
     )
   }
 
   return (
-    <main className="page-enter relative min-h-screen overflow-hidden bg-background px-4 py-10 text-gray-900">
-      <div className="pointer-events-none absolute inset-0">
-        {FLOATING_ICONS.map((item, i) => (
-          <item.Icon
-            key={i}
-            style={{
-              position: 'absolute',
-              top: item.top,
-              left: item.left,
-              width: item.size,
-              height: item.size,
-              color: 'var(--primary)',
-              opacity: 0.06,
-              transform: `translate(-50%, -50%) rotate(${item.rotate}deg)`,
-            }}
-            strokeWidth={1.5}
-          />
-        ))}
-        <div
-          className="absolute rounded-full blur-3xl"
-          style={{
-            top: '-10%',
-            right: '-10%',
-            width: 500,
-            height: 500,
-            background: 'radial-gradient(circle, rgba(74,162,227,0.12) 0%, transparent 70%)',
-          }}
-        />
-        <div
-          className="absolute rounded-full blur-3xl"
-          style={{
-            bottom: '-15%',
-            left: '-10%',
-            width: 500,
-            height: 500,
-            background: 'radial-gradient(circle, rgba(74,162,227,0.08) 0%, transparent 70%)',
-          }}
-        />
-      </div>
-
+    <main className="page-enter relative min-h-screen overflow-hidden bg-background px-4 py-10 text-foreground">
+      <AuthBackdrop />
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-3xl flex-col justify-center">
-        <div className="mb-8 flex flex-col items-center">
-          <div
-            className="mb-4 flex size-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-primary-foreground shadow-md shadow-primary/25"
-          >
-            AB
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">Aula Base</h1>
-          <p className="mt-1 text-sm text-gray-500">Configurando tu entrada al sistema</p>
+        <div className="mb-6 flex flex-col items-center">
+          <BrandMark />
+          <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-foreground">Aula Base</h1>
+          <p className="mt-1 text-sm text-muted-foreground">Configurando tu espacio docente</p>
         </div>
 
-        <form onSubmit={(event) => event.preventDefault()} className="w-full rounded-2xl border border-gray-100 bg-white/95 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.10)] md:p-6">
-          <div>
-            <h2 className="text-xl font-bold text-gray-900">{stepTitles[step]}</h2>
-          </div>
-          {submitError ? (
-            <div className="mt-4 rounded-lg border border-red-100 bg-red-50 px-4 py-3 text-sm font-semibold text-red-600">
-              {submitError}
+        <form onSubmit={(event) => event.preventDefault()} className="dashboard-warm-shadow w-full rounded-3xl bg-card p-5 md:p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-secondary">Configuración inicial</p>
+              <h2 className="mt-1 text-xl font-extrabold text-foreground">{stepTitles[step]}</h2>
             </div>
-          ) : null}
-          <div className="mt-5 max-h-[58vh] overflow-y-auto pr-1">
-            {renderStep()}
+            <StepProgress step={step} />
           </div>
-          <div className="mt-6 flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
-            <button type="button" onClick={goBack} disabled={step === 0 || submitting} className="rounded-xl px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50 disabled:opacity-40">
-              Atras
-            </button>
+
+          {submitError ? <div className="mt-4 rounded-2xl border border-destructive/25 bg-destructive/14 px-4 py-3 text-sm font-semibold text-foreground">{submitError}</div> : null}
+
+          <div className="mt-5 max-h-[58vh] overflow-y-auto pr-1">{renderStep()}</div>
+
+          <div className="mt-6 flex items-center justify-between gap-3 border-t border-border pt-4">
+            <button type="button" onClick={goBack} disabled={step === 0 || submitting} className="rounded-xl px-4 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted disabled:opacity-40">Atrás</button>
             {step < totalSteps - 1 ? (
-              <button type="button" onClick={goNext} className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-100 hover:bg-primary-hover active:scale-[0.94] active:shadow-none">
-                Siguiente
-              </button>
+              <button type="button" onClick={goNext} className="rounded-xl bg-primary px-5 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.985]">Siguiente</button>
             ) : (
-              <button type="button" onClick={() => void handleSubmit()} disabled={submitting} className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-100 hover:bg-primary-hover active:scale-[0.94] active:shadow-none disabled:opacity-60">
-                {submitting ? 'Guardando...' : 'Entrar a AulaBase'}
-              </button>
+              <button type="button" onClick={() => void handleSubmit()} disabled={submitting} className="rounded-xl bg-primary px-5 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.985] disabled:opacity-60">{submitting ? 'Guardando...' : 'Entrar a AulaBase'}</button>
             )}
           </div>
         </form>
       </div>
     </main>
   )
+}
+
+function OptionGroup({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
+  return <div className={optionRowClass}><h3 className={labelClass}>{label}</h3><div><div className={optionListClass}>{children}</div><FieldError message={error} /></div></div>
+}
+
+function StepProgress({ step }: { step: number }) {
+  return <div className="flex items-center gap-2" aria-label={`Paso ${step + 1} de ${totalSteps}`}>
+    {Array.from({ length: totalSteps }, (_, index) => {
+      const completed = index < step
+      const active = index === step
+      return <span key={index} className={`flex size-8 items-center justify-center rounded-full text-xs font-extrabold ${completed ? 'bg-success/24 text-foreground' : active ? 'bg-primary/16 text-foreground' : 'bg-muted text-muted-foreground'}`}>{completed ? <Check className="size-4" /> : index + 1}</span>
+    })}
+  </div>
+}
+
+function BrandMark() {
+  return <div className="relative mx-auto flex size-14 items-center justify-center rounded-2xl bg-primary/16 text-lg font-extrabold text-foreground"><span>AB</span><span className="absolute -right-1 -top-1 size-3 rounded-full bg-warning" /></div>
+}
+
+function AuthBackdrop({ opacity = 0.055 }: { opacity?: number }) {
+  return <div className="pointer-events-none absolute inset-0">
+    {FLOATING_ICONS.map((item, index) => <item.Icon key={index} style={{ position: 'absolute', top: item.top, left: item.left, width: item.size, height: item.size, color: 'var(--primary)', opacity, transform: `translate(-50%, -50%) rotate(${item.rotate}deg)` }} strokeWidth={1.5} />)}
+    <div className="absolute -right-32 -top-32 size-[30rem] rounded-full blur-3xl" style={{ background: 'radial-gradient(circle, color-mix(in srgb, var(--primary) 18%, transparent) 0%, transparent 70%)' }} />
+    <div className="absolute -bottom-36 -left-32 size-[30rem] rounded-full blur-3xl" style={{ background: 'radial-gradient(circle, color-mix(in srgb, var(--warning) 16%, transparent) 0%, transparent 70%)' }} />
+  </div>
 }

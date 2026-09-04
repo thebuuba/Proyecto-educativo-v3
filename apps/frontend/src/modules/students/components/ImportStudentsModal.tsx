@@ -1,18 +1,18 @@
 /**
- * Componente ImportStudentsModal - Importacion de estudiantes por pegado.
+ * Componente ImportStudentsModal - Importación de estudiantes por pegado.
  */
 
-import { AlertCircle, CheckCircle2, ClipboardList } from 'lucide-react'
+import { CheckCircle2, ClipboardList, Upload } from 'lucide-react'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Modal } from '@/components/ui/Modal'
+import { FeedbackBanner, MetricTile, SemanticIcon, StatusBadge } from '@/components/ui/SemanticUI'
 import type {
   CourseImportPreview,
   ImportCourseStudentRow,
 } from '@/modules/students/types'
 import { parsePastedStudents } from '@/modules/students/utils/pasteImport'
-import { cn } from '@/utils/cn'
 
 type ImportResult = {
   imported: number
@@ -89,13 +89,20 @@ export function ImportStudentsModal({
 
   if (result) {
     return (
-      <Modal title="Importación completada" onClose={onClose}>
-        <div className="space-y-4 p-5">
-          <div className="rounded-lg border border-success/20 bg-success/12 p-4">
-            <p className="flex items-center gap-2 text-sm font-semibold text-success">
-              <CheckCircle2 className="size-4" />
-              {result.imported} estudiante{result.imported === 1 ? '' : 's'} importado{result.imported === 1 ? '' : 's'}
-            </p>
+      <Modal
+        title="Importación completada"
+        description="La matrícula fue procesada y los registros válidos ya están disponibles."
+        onClose={onClose}
+      >
+        <div className="space-y-5 p-5">
+          <div className="flex items-center gap-3 rounded-2xl bg-success/12 p-4">
+            <SemanticIcon icon={CheckCircle2} tone="success" className="size-10 rounded-xl" iconClassName="size-4" />
+            <div>
+              <p className="text-sm font-extrabold text-foreground">
+                {result.imported} estudiante{result.imported === 1 ? '' : 's'} importado{result.imported === 1 ? '' : 's'}
+              </p>
+              <p className="mt-0.5 text-xs text-muted-foreground">Los registros correctos se añadieron a la matrícula activa.</p>
+            </div>
           </div>
 
           {result.errors.length > 0 ? (
@@ -105,7 +112,7 @@ export function ImportStudentsModal({
             />
           ) : null}
 
-          <div className="flex justify-end">
+          <div className="flex justify-end border-t border-border pt-4">
             <Button onClick={onClose}>Cerrar</Button>
           </div>
         </div>
@@ -120,14 +127,17 @@ export function ImportStudentsModal({
       onClose={onClose}
     >
       <div className="space-y-5 p-5">
-        {errorMessage ? (
-          <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
-            <AlertCircle className="mt-0.5 size-4 shrink-0" />
-            <p>{errorMessage}</p>
+        <div className="flex items-center gap-3 rounded-2xl bg-success/10 px-4 py-3">
+          <SemanticIcon icon={Upload} tone="success" className="size-10 rounded-xl" iconClassName="size-4" />
+          <div className="min-w-0">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted-foreground">Carga rápida</p>
+            <p className="mt-0.5 text-sm font-bold text-foreground">Revisa primero; importa después</p>
           </div>
-        ) : null}
+        </div>
 
-        <label className="block text-sm font-medium text-muted-foreground">
+        {errorMessage ? <FeedbackBanner role="alert" tone="danger">{errorMessage}</FeedbackBanner> : null}
+
+        <label className="block text-sm font-semibold text-foreground">
           Lista de estudiantes
           <textarea
             value={text}
@@ -136,12 +146,15 @@ export function ImportStudentsModal({
               setPreview(null)
             }}
             aria-label="Lista de estudiantes"
-            className="mt-2 min-h-44 w-full resize-y rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/20"
+            className="mt-2 min-h-44 w-full resize-y rounded-xl border border-input bg-card px-3 py-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/20"
             placeholder={'A001 - Ana Cruz\nA002, Luis Pérez\nMaría Solano'}
           />
+          <span className="mt-2 block text-xs font-normal text-muted-foreground">
+            Cada estudiante debe ir en una línea independiente.
+          </span>
         </label>
 
-        <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+        <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
           <Button variant="outline" onClick={onClose} disabled={isPreviewing || isSubmitting}>
             Cancelar
           </Button>
@@ -152,14 +165,24 @@ export function ImportStudentsModal({
 
         {preview ? (
           <div className="space-y-4 border-t border-border pt-5">
-            <div className="grid gap-3 sm:grid-cols-4">
-              <PreviewStat label="Detectados" value={preview.detectedStudents} />
-              <PreviewStat label="Códigos" value={preview.detectedCodes} />
-              <PreviewStat label="Duplicados" value={preview.duplicates} />
-              <PreviewStat label="Errores" value={preview.errors} tone={preview.errors > 0 ? 'error' : 'default'} />
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              <MetricTile icon={ClipboardList} label="Detectados" value={preview.detectedStudents} tone="success" />
+              <MetricTile label="Con código" value={preview.detectedCodes} tone="info" />
+              <MetricTile label="Duplicados" value={preview.duplicates} tone={preview.duplicates > 0 ? 'warning' : 'neutral'} />
+              <MetricTile label="Errores" value={preview.errors} tone={preview.errors > 0 ? 'danger' : 'neutral'} />
             </div>
 
-            <div className="overflow-x-auto rounded-lg border border-border">
+            {hasBlockingPreviewIssues ? (
+              <FeedbackBanner tone="warning">
+                Corrige los duplicados o errores antes de confirmar la importación.
+              </FeedbackBanner>
+            ) : (
+              <FeedbackBanner tone="success">
+                La vista previa está lista para importar.
+              </FeedbackBanner>
+            )}
+
+            <div className="overflow-x-auto rounded-2xl border border-border">
               <table className="w-full min-w-[620px] text-left text-sm">
                 <thead className="bg-muted/60 text-xs font-bold uppercase text-muted-foreground">
                   <tr>
@@ -169,26 +192,26 @@ export function ImportStudentsModal({
                     <th className="px-4 py-3">Estado</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-border">
-                  {preview.rows.slice(0, MAX_PREVIEW).map((row) => (
-                    <tr key={row.rowNumber} className="bg-card">
-                      <td className="px-4 py-3 text-xs text-muted-foreground">{row.rowNumber}</td>
-                      <td className="px-4 py-3 text-muted-foreground">{row.studentCode || '-'}</td>
-                      <td className="px-4 py-3 font-medium text-foreground">{row.fullName || '-'}</td>
-                      <td className="px-4 py-3">
-                        {row.errors.length > 0 || row.duplicate ? (
-                          <span className="text-xs font-semibold text-destructive">
-                            {[row.duplicate ? 'Duplicado' : '', ...row.errors].filter(Boolean).join(', ')}
-                          </span>
-                        ) : (
-                          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-success">
-                            <CheckCircle2 className="size-3.5" />
-                            Listo
-                          </span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
+                <tbody className="divide-y divide-border bg-card">
+                  {preview.rows.slice(0, MAX_PREVIEW).map((row) => {
+                    const invalid = row.errors.length > 0 || row.duplicate
+                    return (
+                      <tr key={row.rowNumber}>
+                        <td className="px-4 py-3 text-xs text-muted-foreground">{row.rowNumber}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{row.studentCode || '-'}</td>
+                        <td className="px-4 py-3 font-medium text-foreground">{row.fullName || '-'}</td>
+                        <td className="px-4 py-3">
+                          {invalid ? (
+                            <StatusBadge tone={row.duplicate ? 'warning' : 'danger'}>
+                              {[row.duplicate ? 'Duplicado' : '', ...row.errors].filter(Boolean).join(', ')}
+                            </StatusBadge>
+                          ) : (
+                            <StatusBadge tone="success">Listo</StatusBadge>
+                          )}
+                        </td>
+                      </tr>
+                    )
+                  })}
                   {preview.rows.length > MAX_PREVIEW ? (
                     <tr>
                       <td colSpan={4} className="px-4 py-3 text-center text-sm text-muted-foreground">
@@ -200,7 +223,7 @@ export function ImportStudentsModal({
               </table>
             </div>
 
-            <div className="flex justify-end">
+            <div className="flex justify-end border-t border-border pt-4">
               <Button
                 onClick={handleImport}
                 loading={isSubmitting}
@@ -217,32 +240,13 @@ export function ImportStudentsModal({
   )
 }
 
-function PreviewStat({
-  label,
-  value,
-  tone = 'default',
-}: {
-  label: string
-  value: number
-  tone?: 'default' | 'error'
-}) {
-  return (
-    <div className="rounded-lg border border-border bg-muted/40 p-3">
-      <p className="text-xs font-bold uppercase text-muted-foreground">{label}</p>
-      <p className={cn('mt-1 text-xl font-bold text-primary', tone === 'error' && 'text-destructive')}>
-        {value}
-      </p>
-    </div>
-  )
-}
-
 function ErrorList({ title, errors }: { title: string; errors: string[] }) {
   return (
-    <div className="rounded-lg border border-destructive/20 bg-destructive/12 p-4">
-      <p className="mb-2 text-sm font-semibold text-destructive">{title}</p>
+    <FeedbackBanner tone="danger">
+      <p className="mb-2 font-extrabold">{title}</p>
       <ul className="space-y-1">
         {errors.slice(0, 5).map((error) => (
-          <li key={error} className="text-xs text-destructive">
+          <li key={error} className="text-xs">
             {error}
           </li>
         ))}
@@ -252,6 +256,6 @@ function ErrorList({ title, errors }: { title: string; errors: string[] }) {
           </li>
         ) : null}
       </ul>
-    </div>
+    </FeedbackBanner>
   )
 }

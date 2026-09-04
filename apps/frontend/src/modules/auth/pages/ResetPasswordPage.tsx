@@ -1,6 +1,8 @@
+import { KeyRound } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link } from 'react-router-dom'
+
 import { supabase } from '@/modules/auth/services/supabaseClient'
 
 export function ResetPasswordPage() {
@@ -58,20 +60,32 @@ export function ResetPasswordPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#FAFBFC] px-4">
-      <section className="w-full max-w-sm rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
-        <h1 className="text-2xl font-bold text-gray-900">Restablecer contraseña</h1>
-        <p className="mt-2 text-sm text-gray-500">Elige una contraseña nueva para tu cuenta.</p>
-        {error ? <p role="alert" className="mt-4 text-sm text-red-600">{error}</p> : null}
-        {message ? <p role="status" className="mt-4 text-sm text-emerald-700">{message}</p> : null}
+    <main className="auth-screen relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 py-10">
+      <div className="pointer-events-none absolute -right-32 -top-32 size-[30rem] rounded-full blur-3xl" style={{ background: 'radial-gradient(circle, color-mix(in srgb, var(--primary) 18%, transparent) 0%, transparent 70%)' }} />
+      <div className="pointer-events-none absolute -bottom-36 -left-32 size-[30rem] rounded-full blur-3xl" style={{ background: 'radial-gradient(circle, color-mix(in srgb, var(--warning) 16%, transparent) 0%, transparent 70%)' }} />
+
+      <section className="dashboard-warm-shadow relative z-10 w-full max-w-sm rounded-3xl bg-card p-6 sm:p-8">
+        <div className="flex flex-col items-center text-center">
+          <div className="relative flex size-14 items-center justify-center rounded-2xl bg-warning/24 text-foreground">
+            <KeyRound className="size-6" />
+            <span className="absolute -right-1 -top-1 size-3 rounded-full bg-primary" />
+          </div>
+          <h1 className="mt-4 text-2xl font-extrabold text-foreground">Restablecer contraseña</h1>
+          <p className="mt-1 text-sm text-muted-foreground">Elige una contraseña nueva para tu cuenta.</p>
+        </div>
+
+        {error ? <div role="alert" className="mt-5 rounded-2xl border border-destructive/25 bg-destructive/14 px-4 py-3 text-sm font-semibold text-foreground">{error}</div> : null}
+        {message ? <div role="status" className="mt-5 rounded-2xl border border-success/30 bg-success/16 px-4 py-3 text-sm font-semibold text-foreground">{message}</div> : null}
+
         <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
-          <input className="w-full rounded-xl border border-gray-200 px-4 py-3" type="password" required value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Nueva contraseña" autoComplete="new-password" />
-          <input className="w-full rounded-xl border border-gray-200 px-4 py-3" type="password" required value={confirmation} onChange={(event) => setConfirmation(event.target.value)} placeholder="Confirmar contraseña" autoComplete="new-password" />
-          <button className="w-full rounded-xl bg-primary px-4 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary-hover disabled:opacity-60" disabled={submitting || !sessionReady} type="submit">
+          <input className="auth-input" type="password" required value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Nueva contraseña" autoComplete="new-password" />
+          <input className="auth-input" type="password" required value={confirmation} onChange={(event) => setConfirmation(event.target.value)} placeholder="Confirmar contraseña" autoComplete="new-password" />
+          <button className="w-full rounded-xl bg-primary px-4 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover disabled:opacity-60" disabled={submitting || !sessionReady} type="submit">
             {submitting ? 'Guardando…' : 'Guardar contraseña'}
           </button>
         </form>
-        <Link className="mt-5 block text-center text-sm font-medium text-foreground decoration-primary hover:underline" to="/login">Volver al inicio de sesión</Link>
+
+        <Link className="mt-5 block text-center text-sm font-semibold text-foreground decoration-primary hover:underline" to="/login">Volver al inicio de sesión</Link>
       </section>
     </main>
   )

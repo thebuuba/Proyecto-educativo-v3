@@ -12,4 +12,25 @@
 - Write all commit messages in Spanish.
 - Prefer small PRs: one feature/fix per branch.
 - Do not add dependencies unless the standard library or existing packages cannot solve the task.
-- Para ahorrar tokens, delega tareas acotadas de anÃ¡lisis, implementaciÃ³n o revisiÃ³n al agente `deepseek-worker` de OpenCode cuando estÃ© disponible; revisa siempre su resultado antes de confirmar cambios.
+- Para ahorrar tokens, delega tareas acotadas de análisis, implementación o revisión al agente `deepseek-worker` de OpenCode cuando esté disponible; revisa siempre su resultado antes de confirmar cambios.
+
+## Frontend Design System
+
+- Before creating or redesigning frontend UI, read `apps/frontend/DESIGN_SYSTEM.md`.
+- AulaBase uses only the official palette defined in `apps/frontend/src/semantic-palette.css`: blue, green, coral, yellow, gray, white, and dark text.
+- Color is semantic, not decorative: blue=information/action, green=success/completed, yellow=warning/pending/preparation, coral=danger/incident, gray=neutral/inactive.
+- Prefer shared components from `apps/frontend/src/components/ui/SemanticUI.tsx` (`PageHero`, `SemanticIcon`, `StatusBadge`, `MetricTile`, `FilterBar`, `SectionHeader`, `ProgressIndicator`, `FeedbackBanner`).
+- Prefer existing shared `Button`, `Card`, `EmptyState`, `Input`, `Select`, `Textarea`, `Modal`, and `ConfirmDialog` components over page-local variants.
+- Do not introduce new Tailwind identity colors such as violet, cyan, emerald, amber, rose, or arbitrary hex/RGB values in business modules. Use semantic tokens instead.
+- Page titles must use the dark foreground color. Module identity should come from semantic icons, badges, progress, and small soft surfaces.
+- Keep primary surfaces white. Do not paint large cards or page headers with saturated brand/status colors.
+- Use at most one strong primary action per visual region. Put infrequent actions in `Acciones`/ellipsis menus.
+- Subject colors may use stable variants derived only from the official AulaBase palette; subject color is identity, not status.
+- Team colors are user-facing identity metadata only. They may appear in small accents such as an icon, avatar, dot or thin identifier, but never define success, warning, error, navigation, a primary CTA, or a large surface.
+- Never create or restore a global legacy-color bridge. Temporary compatibility must be scoped inside the affected module.
+- Cursos may temporarily use `modules/courses/courses-semantic-compat.css` only under `main[data-module='cursos']`, and its scope must shrink as `CoursesPage`/`CourseTeamsPanel` are decomposed.
+- Planificación is already migrated to semantic tokens and must not regain a compatibility stylesheet.
+- Auth shared access styles belong in `modules/auth/auth-design.css`.
+- Evaluación may use `modules/grading/grading-design.css` only inside `grading-workspace` while `GradingBook` is decomposed; do not reuse those mappings elsewhere.
+- `module-semantic-layout.css` must stay transversal; do not add module-specific palettes or identity overrides to it.
+- New or migrated code must consume semantic tokens/components directly and should remove obsolete compatibility rules when safe.

@@ -1,6 +1,7 @@
 /**
  * Diálogo de confirmación con acciones de aceptar y cancelar.
  */
+import { CircleHelp, TriangleAlert } from 'lucide-react'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
@@ -27,14 +28,6 @@ type ConfirmDialogProps = {
 /**
  * Diálogo modal de confirmación con botones personalizables y
  * estado de carga mientras se ejecuta onConfirm.
- *
- * @param props.title - Título del diálogo.
- * @param props.description - Mensaje de confirmación.
- * @param props.confirmLabel - Etiqueta del botón confirmar.
- * @param props.cancelLabel - Etiqueta del botón cancelar.
- * @param props.destructive - Modo destructivo.
- * @param props.onConfirm - Callback de confirmación.
- * @param props.onClose - Callback de cierre.
  */
 export function ConfirmDialog({
   title,
@@ -57,8 +50,15 @@ export function ConfirmDialog({
   }
 
   return (
-    <Modal title={title} description={description} onClose={onClose}>
-      <div className="flex justify-end gap-3 p-5">
+    <Modal
+      title={title}
+      description={description}
+      icon={destructive ? TriangleAlert : CircleHelp}
+      tone={destructive ? 'danger' : 'info'}
+      className="max-w-lg"
+      onClose={onClose}
+    >
+      <div className="flex justify-end gap-3 p-5 sm:px-6">
         <Button variant="outline" onClick={onClose} disabled={loading}>
           {cancelLabel}
         </Button>

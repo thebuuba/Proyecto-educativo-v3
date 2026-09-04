@@ -1,0 +1,33 @@
+/* Utilidad explícita para el tono de navegación derivado del azul principal. */
+.text-primary-variant {
+  color: var(--primary-variant);
+}
+
+/*
+ * Reglas compartidas que todavía aportan consistencia transversal.
+ * Las excepciones visuales específicas viven ahora dentro de cada módulo.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Consistencia de tablas académicas                                          */
+/* -------------------------------------------------------------------------- */
+
+main[data-module='asistencia'] table,
+main[data-module='estudiantes'] table {
+  background: var(--card);
+}
+
+main[data-module='asistencia'] thead,
+main[data-module='estudiantes'] thead {
+  color: var(--muted-foreground);
+}
+
+main[data-module='asistencia'] tbody tr:hover,
+main[data-module='estudiantes'] tbody tr:hover {
+  background: color-mix(in srgb, var(--primary) 5%, var(--card));
+}
+
+/* Los menús secundarios no deben competir con la acción primaria. */
+main[data-module] :where(button, a).bg-card.border.border-border {
+  box-shadow: none;
+}

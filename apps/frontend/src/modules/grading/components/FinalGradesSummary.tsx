@@ -1,5 +1,7 @@
+import { GraduationCap } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
+import { EmptyState } from '@/components/ui/EmptyState'
 import type {
   GradeRecordRow,
   GradingActivity,
@@ -15,6 +17,7 @@ import {
   getRecoveryScores,
   type CompetencyPeriodId,
 } from '@/modules/grading/utils/competencyGrades'
+import { cn } from '@/utils/cn'
 
 type FinalGradesSummaryProps = {
   students: StudentGradeRow[]
@@ -48,26 +51,32 @@ export function FinalGradesSummary({
 
   if (loading) {
     return (
-      <div className="flex min-h-[220px] items-center justify-center text-sm font-medium text-muted-foreground">
-        Calculando resumen final...
+      <div className="grid min-h-[220px] place-items-center rounded-3xl bg-card shadow-sm">
+        <div className="text-center">
+          <span className="mx-auto block h-8 w-28 animate-pulse rounded-xl bg-muted" />
+          <p className="mt-3 text-sm font-medium text-muted-foreground">Calculando resumen final...</p>
+        </div>
       </div>
     )
   }
 
   if (students.length === 0) {
     return (
-      <div className="flex min-h-[220px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-sm text-muted-foreground">
-        Este curso todavía no tiene estudiantes matriculados.
-      </div>
+      <EmptyState
+        icon={GraduationCap}
+        tone="neutral"
+        title="Todavía no hay estudiantes"
+        description="Este curso necesita estudiantes matriculados antes de calcular las calificaciones finales."
+      />
     )
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+    <div className="overflow-hidden rounded-3xl bg-card shadow-sm">
       <div className="overflow-x-auto">
         <table className="min-w-full border-separate border-spacing-0 text-sm">
           <thead>
-            <tr className="bg-muted/50">
+            <tr className="bg-muted/55">
               <th className="sticky left-0 z-20 w-14 border-b border-r border-border bg-muted px-3 py-3 text-center text-xs font-bold uppercase text-muted-foreground">
                 #
               </th>
@@ -114,12 +123,12 @@ export function FinalGradesSummary({
                     {student.lastName}, {student.firstName}
                   </td>
                   {blockAverages.map((value, index) => (
-                    <td key={competencyBlocks[index].id} className="border-b border-r border-border px-3 py-2 text-center font-bold text-primary">
-                      {formatGrade(value)}
+                    <td key={competencyBlocks[index].id} className="border-b border-r border-border px-3 py-2 text-center">
+                      <GradeValue value={value} />
                     </td>
                   ))}
-                  <td className="border-b border-border px-3 py-2 text-center text-lg font-bold text-primary">
-                    {formatGrade(final)}
+                  <td className="border-b border-border px-3 py-2 text-center">
+                    <GradeValue value={final} final />
                   </td>
                 </tr>
               )
@@ -131,3 +140,22 @@ export function FinalGradesSummary({
   )
 }
 
+function GradeValue({ value, final = false }: { value: number | null; final?: boolean }) {
+  const hasScore = value !== null && value > 0
+  const approved = hasScore && value >= 70
+  const recovery = hasScore && value < 70
+
+  return (
+    <span
+      className={cn(
+        'inline-flex min-w-12 items-center justify-center rounded-xl px-2 py-1.5 font-extrabold tabular-nums',
+        final ? 'text-base' : 'text-sm',
+        approved && 'bg-success/16 text-foreground',
+        recovery && 'bg-warning/25 text-warning-foreground',
+        !hasScore && 'bg-muted/70 text-muted-foreground',
+      )}
+    >
+      {formatGrade(value)}
+    </span>
+  )
+}

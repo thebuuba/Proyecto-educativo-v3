@@ -2,7 +2,7 @@ import { CalendarDays } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { PageShell } from '@/components/ui/PageShell'
+import { FeedbackBanner, PageHero, StatusBadge } from '@/components/ui/SemanticUI'
 import { ScheduleFinalTable } from '@/modules/schedule/components/ScheduleFinalTable'
 import { ScheduleWeekGrid } from '@/modules/schedule/components/ScheduleWeekGrid'
 import {
@@ -342,87 +342,89 @@ export function SchedulePage() {
       : `${entries.length} clases organizadas de lunes a viernes.`
 
   return (
-    <PageShell title="" description="">
-      <div className="w-full min-w-0 space-y-5 pb-10">
-        <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex min-w-0 items-center gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-              <CalendarDays className="size-5" />
-            </span>
-            <div className="min-w-0">
-              <h1 className="text-2xl font-extrabold tracking-tight text-foreground">Horario docente</h1>
-              <p className="mt-0.5 text-sm text-muted-foreground">{description}</p>
-            </div>
-          </div>
-          {assignmentMode && !showWizard ? (
-            <Button variant="outline" className="h-10 rounded-xl bg-card px-4" onClick={() => setAssignmentMode(false)}>
+    <section className="w-full min-w-0 space-y-5 pb-10">
+      <PageHero
+        title="Horario docente"
+        description={description}
+        icon={CalendarDays}
+        tone="info"
+        eyebrow="Semana académica"
+        actions={
+          assignmentMode && !showWizard ? (
+            <Button variant="outline" className="h-10" onClick={() => setAssignmentMode(false)}>
               Ver horario final
             </Button>
-          ) : null}
-        </header>
+          ) : null
+        }
+      >
+        <div className="flex flex-wrap gap-2">
+          <StatusBadge tone="info">{entries.length} clases</StatusBadge>
+          <StatusBadge tone="neutral">{days.length} días</StatusBadge>
+          {config ? <StatusBadge tone="neutral">{gridBlocks.length} períodos</StatusBadge> : null}
+          {assignmentMode ? <StatusBadge tone="warning">Asignando clases</StatusBadge> : null}
+          {showWizard ? <StatusBadge tone="warning">Editando estructura</StatusBadge> : null}
+        </div>
+      </PageHero>
 
-        {error || saveError ? (
-          <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-sm text-destructive">
-            {error || saveError}
-          </div>
-        ) : null}
+      {error || saveError ? (
+        <FeedbackBanner tone="danger">{error || saveError}</FeedbackBanner>
+      ) : null}
 
-        {loading ? (
-          <div className="flex items-center justify-center rounded-3xl border border-border/70 bg-card py-32 text-sm text-muted-foreground shadow-sm">
-            Cargando horario...
-          </div>
-        ) : null}
+      {loading ? (
+        <div className="dashboard-warm-shadow flex items-center justify-center rounded-3xl bg-card py-32 text-sm text-muted-foreground">
+          Cargando horario...
+        </div>
+      ) : null}
 
-        {!loading && !hasStructure ? (
-          <div className="mx-auto max-w-3xl">
-            <ScheduleWizard
-              submitting={saving}
-              error={saveError}
-              onComplete={handleWizardComplete}
-            />
-          </div>
-        ) : null}
-
-        {!loading && showFinalSchedule && config ? (
-          <ScheduleFinalTable
-            config={config}
-            blocks={gridBlocks}
-            entries={entries}
-            pedagogicalBlocks={visiblePedagogicalBlocks}
-            activeDays={days}
-            onEditStructure={() => setShowWizard(true)}
-            onConfigureAssignments={() => setAssignmentMode(true)}
+      {!loading && !hasStructure ? (
+        <div className="mx-auto max-w-3xl">
+          <ScheduleWizard
+            submitting={saving}
+            error={saveError}
+            onComplete={handleWizardComplete}
           />
-        ) : null}
+        </div>
+      ) : null}
 
-        {!loading && showAssignmentGrid && config ? (
-          <ScheduleWeekGrid
-            config={config}
-            blocks={gridBlocks}
-            entries={entries}
-            pedagogicalBlocks={visiblePedagogicalBlocks}
-            sectionSubjects={sectionSubjects}
-            activeDays={days}
-            onEdit={() => setShowWizard(true)}
-            onAssign={handleAssign}
-            onRemove={handleRemove}
-            onMarkPedagogical={markPedagogicalBlock}
-            onRemovePedagogical={removePedagogicalBlock}
+      {!loading && showFinalSchedule && config ? (
+        <ScheduleFinalTable
+          config={config}
+          blocks={gridBlocks}
+          entries={entries}
+          pedagogicalBlocks={visiblePedagogicalBlocks}
+          activeDays={days}
+          onEditStructure={() => setShowWizard(true)}
+          onConfigureAssignments={() => setAssignmentMode(true)}
+        />
+      ) : null}
+
+      {!loading && showAssignmentGrid && config ? (
+        <ScheduleWeekGrid
+          config={config}
+          blocks={gridBlocks}
+          entries={entries}
+          pedagogicalBlocks={visiblePedagogicalBlocks}
+          sectionSubjects={sectionSubjects}
+          activeDays={days}
+          onEdit={() => setShowWizard(true)}
+          onAssign={handleAssign}
+          onRemove={handleRemove}
+          onMarkPedagogical={markPedagogicalBlock}
+          onRemovePedagogical={removePedagogicalBlock}
+        />
+      ) : null}
+
+      {!loading && showWizard && config ? (
+        <div className="mx-auto max-w-3xl">
+          <ScheduleWizard
+            initialConfig={config}
+            submitting={saving}
+            error={saveError}
+            onComplete={handleWizardComplete}
+            onCancel={() => setShowWizard(false)}
           />
-        ) : null}
-
-        {!loading && showWizard && config ? (
-          <div className="mx-auto max-w-3xl">
-            <ScheduleWizard
-              initialConfig={config}
-              submitting={saving}
-              error={saveError}
-              onComplete={handleWizardComplete}
-              onCancel={() => setShowWizard(false)}
-            />
-          </div>
-        ) : null}
-      </div>
-    </PageShell>
+        </div>
+      ) : null}
+    </section>
   )
 }

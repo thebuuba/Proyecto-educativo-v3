@@ -11,7 +11,6 @@ import { cn } from '@/utils/cn'
 /**
  * Estructura de layout que combina Sidebar, Header y el contenido
  * renderizado por las rutas anidadas (Outlet).
- * Controla el estado de apertura/cierre de la barra lateral.
  */
 export function AppLayout() {
   const location = useLocation()
@@ -20,6 +19,7 @@ export function AppLayout() {
     () => localStorage.getItem('aulabase:sidebar-expanded') === 'true',
   )
   const isGradingPage = location.pathname.startsWith('/calificaciones')
+  const activeModule = location.pathname.split('/').filter(Boolean)[0] ?? 'inicio'
 
   useEffect(() => {
     localStorage.setItem('aulabase:sidebar-expanded', String(isSidebarExpanded))
@@ -42,6 +42,8 @@ export function AppLayout() {
           <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
 
           <main
+            data-module={activeModule}
+            data-route={location.pathname}
             className={cn(
               'content-density-compact min-w-0 px-4 sm:px-6 lg:px-10',
               isGradingPage ? 'py-3 lg:py-3' : 'py-5 lg:py-8',

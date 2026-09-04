@@ -1,31 +1,36 @@
 /**
  * Estado vacío para cuando no hay datos que mostrar.
  */
-import type { ReactNode } from 'react'
+import { Inbox } from 'lucide-react'
+import type { ComponentType, ReactNode } from 'react'
 
-/** Propiedades del componente EmptyState. */
+import { SemanticIcon, type SemanticTone } from '@/components/ui/SemanticUI'
+
+/** Propiedades del estado vacío. */
 type EmptyStateProps = {
-  /** Título del estado vacío. */
   title: string
-  /** Descripción explicativa. */
   description: string
-  /** Acción opcional (ej. botón para crear un recurso). */
   action?: ReactNode
+  icon?: ComponentType<{ className?: string }>
+  tone?: SemanticTone
+  compact?: boolean
 }
 
-/**
- * Mensaje de contenido vacío con título, descripción y acción opcional.
- *
- * @param props.title - Título informativo.
- * @param props.description - Descripción del estado.
- * @param props.action - Acción sugerida.
- */
-export function EmptyState({ title, description, action }: EmptyStateProps) {
+/** Estado vacío estándar para módulos de AulaBase. */
+export function EmptyState({
+  title,
+  description,
+  action,
+  icon = Inbox,
+  tone = 'neutral',
+  compact = false,
+}: EmptyStateProps) {
   return (
-    <div className="dashboard-warm-shadow flex min-h-[280px] items-center justify-center rounded-3xl bg-card px-4 text-center">
+    <div className={`dashboard-warm-shadow flex items-center justify-center rounded-3xl bg-card px-5 text-center ${compact ? 'min-h-44 py-7' : 'min-h-[260px] py-10'}`}>
       <div className="max-w-md">
-        <h3 className="text-sm font-semibold text-foreground">{title}</h3>
-        <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+        <SemanticIcon icon={icon} tone={tone} className="mx-auto" />
+        <h3 className="mt-4 text-base font-extrabold text-foreground">{title}</h3>
+        <p className="mt-1 text-sm leading-5 text-muted-foreground">{description}</p>
         {action ? <div className="mt-4 flex justify-center">{action}</div> : null}
       </div>
     </div>

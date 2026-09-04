@@ -14,6 +14,14 @@ import { useEffect, useRef, useState, type ComponentType } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
+import {
+  FeedbackBanner,
+  MetricTile,
+  PageHero,
+  SectionHeader,
+  SemanticIcon,
+  type SemanticTone,
+} from '@/components/ui/SemanticUI'
 import { Select } from '@/components/ui/Select'
 import { BarChart } from '@/modules/dashboard/components/BarChart'
 import { LineChart } from '@/modules/dashboard/components/LineChart'
@@ -32,13 +40,13 @@ const reports: Array<{
   title: string
   description: string
   icon: ComponentType<{ className?: string }>
-  tone: string
+  tone: SemanticTone
 }> = [
-  { kind: 'boletin', title: 'Boletín por estudiante', description: 'Calificaciones, asignaturas y períodos para cada expediente.', icon: FileText, tone: 'bg-blue-50 text-blue-700' },
-  { kind: 'registro-grado', title: 'Registro de grado', description: 'Matrícula organizada por grado, sección y año escolar.', icon: ClipboardList, tone: 'bg-violet-50 text-violet-700' },
-  { kind: 'asistencia', title: 'Asistencia', description: 'Registros diarios y por clase con estados y observaciones.', icon: CalendarCheck2, tone: 'bg-emerald-50 text-emerald-700' },
-  { kind: 'rendimiento', title: 'Rendimiento académico', description: 'Resultados por actividad, materia, período y estudiante.', icon: ChartNoAxesColumnIncreasing, tone: 'bg-amber-50 text-amber-700' },
-  { kind: 'promocion', title: 'Promoción y condición final', description: 'Decisiones finales y casos que todavía requieren revisión.', icon: GraduationCap, tone: 'bg-cyan-50 text-cyan-700' },
+  { kind: 'boletin', title: 'Boletín por estudiante', description: 'Calificaciones, asignaturas y períodos para cada expediente.', icon: FileText, tone: 'info' },
+  { kind: 'registro-grado', title: 'Registro de grado', description: 'Matrícula organizada por grado, sección y año escolar.', icon: ClipboardList, tone: 'warning' },
+  { kind: 'asistencia', title: 'Asistencia', description: 'Registros diarios y por clase con estados y observaciones.', icon: CalendarCheck2, tone: 'success' },
+  { kind: 'rendimiento', title: 'Rendimiento académico', description: 'Resultados por actividad, materia, período y estudiante.', icon: ChartNoAxesColumnIncreasing, tone: 'info' },
+  { kind: 'promocion', title: 'Promoción y condición final', description: 'Decisiones finales y casos que todavía requieren revisión.', icon: GraduationCap, tone: 'success' },
 ]
 
 export function ReportsPage() {
@@ -126,58 +134,63 @@ export function ReportsPage() {
   const promotedPercent = promotionTotal ? (summary!.promotion.promoted / promotionTotal) * 100 : 0
   const pendingPercent = promotionTotal ? (summary!.promotion.pending / promotionTotal) * 100 : 0
 
-  return (
-    <section className="w-full min-w-0 space-y-6">
-      <header className="flex flex-col items-end gap-4 sm:flex-row sm:items-end sm:justify-end">
-        <div ref={actionsRef} className="relative">
-          <Button aria-expanded={actionsOpen} aria-controls="report-export-actions" aria-haspopup="dialog" onClick={() => setActionsOpen((open) => !open)}>
-            <Download className="size-4" /> Acciones <ChevronDown className={`size-4 transition-transform ${actionsOpen ? 'rotate-180' : ''}`} />
+  const actions = (
+    <div ref={actionsRef} className="relative">
+      <Button aria-expanded={actionsOpen} aria-controls="report-export-actions" aria-haspopup="dialog" onClick={() => setActionsOpen((open) => !open)}>
+        <Download className="size-4" /> Acciones <ChevronDown className={`size-4 transition-transform ${actionsOpen ? 'rotate-180' : ''}`} />
+      </Button>
+      {actionsOpen ? (
+        <div id="report-export-actions" role="dialog" aria-label="Exportar reportes" className="absolute right-0 z-20 mt-2 w-[min(22rem,calc(100vw-2rem))] rounded-2xl border border-border bg-card p-4 text-foreground shadow-xl">
+          <p className="text-sm font-extrabold">Exportar reportes</p>
+          <p className="mt-1 text-xs text-muted-foreground">Selecciona el contenido y el formato de salida.</p>
+          <label className="mt-4 block text-xs font-bold text-muted-foreground">
+            Reporte
+            <Select value={exportKind} onChange={(event) => setExportKind(event.target.value as ExportReportKind)} className="mt-1.5 h-10">
+              <option value="todos">Todos los reportes</option>
+              {reports.map((report) => <option key={report.kind} value={report.kind}>{report.title}</option>)}
+            </Select>
+          </label>
+          <label className="mt-3 block text-xs font-bold text-muted-foreground">
+            Formato
+            <Select value={exportFormat} onChange={(event) => setExportFormat(event.target.value as ExportFormat)} className="mt-1.5 h-10">
+              <option value="xls">Excel (.xls)</option>
+              <option value="csv">Datos (.csv)</option>
+              <option value="pdf">Imprimir / PDF</option>
+            </Select>
+          </label>
+          <Button className="mt-4 w-full" loading={loadingKey === `${exportKind}:${exportFormat}`} disabled={loadingKey !== null} onClick={() => void handleExport(exportKind, exportFormat)}>
+            <Download className="size-4" /> Exportar
           </Button>
-          {actionsOpen ? (
-            <div id="report-export-actions" role="dialog" aria-label="Exportar reportes" className="absolute left-0 z-20 mt-2 w-[min(22rem,calc(100vw-2rem))] rounded-2xl border border-border bg-card p-4 text-foreground shadow-xl sm:left-auto sm:right-0">
-              <p className="text-sm font-extrabold">Exportar reportes</p>
-              <p className="mt-1 text-xs text-muted-foreground">Selecciona el contenido y el formato de salida.</p>
-              <label className="mt-4 block text-xs font-bold text-muted-foreground">
-                Reporte
-                <Select value={exportKind} onChange={(event) => setExportKind(event.target.value as ExportReportKind)} className="mt-1.5 h-10">
-                  <option value="todos">Todos los reportes</option>
-                  {reports.map((report) => <option key={report.kind} value={report.kind}>{report.title}</option>)}
-                </Select>
-              </label>
-              <label className="mt-3 block text-xs font-bold text-muted-foreground">
-                Formato
-                <Select value={exportFormat} onChange={(event) => setExportFormat(event.target.value as ExportFormat)} className="mt-1.5 h-10">
-                  <option value="xls">Excel (.xls)</option>
-                  <option value="csv">Datos (.csv)</option>
-                  <option value="pdf">Imprimir / PDF</option>
-                </Select>
-              </label>
-              <Button className="mt-4 w-full" loading={loadingKey === `${exportKind}:${exportFormat}`} disabled={loadingKey !== null} onClick={() => void handleExport(exportKind, exportFormat)}>
-                <Download className="size-4" /> Exportar
-              </Button>
-            </div>
-          ) : null}
         </div>
-      </header>
+      ) : null}
+    </div>
+  )
 
-      <div aria-live="polite">
-        {error ? <div role="alert" className="rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-sm font-medium text-destructive">{error}</div> : null}
-        {message ? <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm font-medium text-emerald-800">{message}</div> : null}
-      </div>
-
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div>
-          <h2 className="text-xl font-extrabold text-foreground">Resumen ejecutivo</h2>
-          <p className="text-sm text-muted-foreground">{summary?.schoolYearName ?? 'Año escolar actual'}</p>
+  return (
+    <section className="w-full min-w-0 space-y-5">
+      <PageHero
+        title="Reportes"
+        description="Analiza el estado académico del centro y exporta los documentos que necesites."
+        icon={ChartNoAxesColumnIncreasing}
+        tone="info"
+        actions={actions}
+      >
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+          <span>{summary?.schoolYearName ?? 'Año escolar actual'}</span>
+          {summary ? <span>Actualizado {new Intl.DateTimeFormat('es-DO', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(summary.generatedAt))}</span> : null}
         </div>
-        {summary ? <p className="text-xs font-semibold text-muted-foreground">Actualizado {new Intl.DateTimeFormat('es-DO', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(summary.generatedAt))}</p> : null}
-      </div>
+      </PageHero>
+
+      {error ? <FeedbackBanner role="alert" tone="danger">{error}</FeedbackBanner> : null}
+      {message ? <FeedbackBanner tone="success">{message}</FeedbackBanner> : null}
+
+      <SectionHeader title="Resumen ejecutivo" description="Indicadores principales del período académico actual." />
 
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        <MetricCard icon={Users} label="Estudiantes activos" value={summary?.totals.students ?? null} loading={summaryLoading} />
-        <MetricCard icon={CalendarCheck2} label="Asistencia acumulada" value={percent(summary?.totals.attendanceRate)} loading={summaryLoading} />
-        <MetricCard icon={TrendingUp} label="Promedio académico" value={percent(summary?.totals.academicAverage)} loading={summaryLoading} />
-        <MetricCard icon={GraduationCap} label="Promoción confirmada" value={summary?.totals.promoted ?? null} loading={summaryLoading} />
+        <MetricTile icon={Users} label="Estudiantes activos" value={summaryLoading ? '…' : (summary?.totals.students ?? '—')} tone="info" />
+        <MetricTile icon={CalendarCheck2} label="Asistencia acumulada" value={summaryLoading ? '…' : (percent(summary?.totals.attendanceRate) ?? '—')} tone="success" />
+        <MetricTile icon={TrendingUp} label="Promedio académico" value={summaryLoading ? '…' : (percent(summary?.totals.academicAverage) ?? '—')} tone="info" />
+        <MetricTile icon={GraduationCap} label="Promoción confirmada" value={summaryLoading ? '…' : (summary?.totals.promoted ?? '—')} tone="success" />
       </div>
 
       <div className="grid gap-4 xl:grid-cols-12">
@@ -191,7 +204,7 @@ export function ReportsPage() {
         </Card>
         <Card className="xl:col-span-3">
           <CardHeader><CardTitle>Condición final</CardTitle><CardDescription>Estado de las decisiones de promoción.</CardDescription></CardHeader>
-          <CardContent className="flex h-64 flex-col items-center justify-center">
+          <CardContent className="flex min-h-64 flex-col items-center justify-center">
             {promotionTotal ? (
               <>
                 <div role="img" aria-label={`${summary!.promotion.promoted} promovidos, ${summary!.promotion.pending} pendientes y ${summary!.promotion.retained} no promovidos`} className="relative size-36 rounded-full" style={{ background: `conic-gradient(var(--success) 0 ${promotedPercent}%, var(--warning) ${promotedPercent}% ${promotedPercent + pendingPercent}%, var(--destructive) ${promotedPercent + pendingPercent}% 100%)` }}>
@@ -208,17 +221,14 @@ export function ReportsPage() {
         </Card>
       </div>
 
-      <div>
-        <h2 className="text-xl font-extrabold text-foreground">Biblioteca de reportes</h2>
-        <p className="mt-1 text-sm text-muted-foreground">Descarga un documento específico en el formato que necesites.</p>
-      </div>
+      <SectionHeader title="Biblioteca de reportes" description="Cada documento conserva la misma semántica visual del sistema." />
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {reports.map((report) => {
           const Icon = report.icon
           return (
-            <Card key={report.kind} className="flex min-h-44 flex-col overflow-hidden transition-shadow hover:shadow-md">
+            <Card key={report.kind} className="flex min-h-44 flex-col transition-shadow hover:shadow-md">
               <CardHeader className="flex-1 border-b-0">
-                <div className={`mb-4 flex size-11 items-center justify-center rounded-2xl ${report.tone}`}><Icon className="size-5" /></div>
+                <SemanticIcon icon={Icon} tone={report.tone} className="mb-4" />
                 <CardTitle>{report.title}</CardTitle>
                 <CardDescription className="leading-5">{report.description}</CardDescription>
               </CardHeader>
@@ -228,10 +238,6 @@ export function ReportsPage() {
       </div>
     </section>
   )
-}
-
-function MetricCard({ icon: Icon, label, value, loading }: { icon: ComponentType<{ className?: string }>; label: string; value: string | number | null; loading: boolean }) {
-  return <Card><CardContent className="flex items-center gap-4 p-4"><div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary"><Icon className="size-5" /></div><div className="min-w-0"><p className="truncate text-xs font-bold uppercase tracking-wide text-muted-foreground">{label}</p>{loading ? <div className="mt-2 h-7 w-20 animate-pulse rounded bg-muted motion-reduce:animate-none" /> : <p className="mt-1 text-2xl font-extrabold text-foreground">{value ?? '—'}</p>}</div></CardContent></Card>
 }
 
 function Legend({ color, label, value }: { color: string; label: string; value: number }) {

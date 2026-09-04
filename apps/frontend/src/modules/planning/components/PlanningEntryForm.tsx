@@ -540,20 +540,20 @@ export function PlanningEntryForm({
             <button type="button" className="font-medium text-primary hover:underline" onClick={onClose}>Planificaciones</button>
             <span>›</span><span>{initial?.entry.id ? 'Editar planificación' : 'Nueva planificación'}</span>
           </div>
-          <h1 className="mt-3 text-3xl font-black text-primary">{initial?.entry.id ? 'Editar planificación' : 'Crear planificación'}</h1>
+          <h1 className="mt-3 text-3xl font-black text-foreground">{initial?.entry.id ? 'Editar planificación' : 'Crear planificación'}</h1>
           <p className="mt-1 text-sm text-muted-foreground">Completa las tres partes de la planificación docente.</p>
         </div>
         <Button type="button" variant="outline" onClick={onClose}><ArrowLeft className="size-4" />Volver</Button>
       </header>
 
-      <nav className="grid overflow-hidden rounded-xl border border-border bg-card shadow-sm md:grid-cols-3" aria-label="Pasos de la planificación">
+      <nav className="grid overflow-hidden rounded-3xl bg-card shadow-sm md:grid-cols-3" aria-label="Pasos de la planificación">
         {steps.map((item) => {
           const Icon = item.icon
           const active = step === item.number
           const complete = step > item.number
           return (
-            <button key={item.number} type="button" className={cn('flex items-center gap-3 border-b border-border px-4 py-4 text-left transition last:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20 md:border-b-0 md:border-r md:last:border-r-0', active && 'bg-primary text-primary-foreground', !active && 'hover:bg-muted/50')} onClick={() => setStep(item.number)} aria-current={active ? 'step' : undefined}>
-              <span className={cn('grid size-10 shrink-0 place-items-center rounded-full border font-black', active ? 'border-primary-foreground/30 bg-primary-foreground/15' : complete ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-border bg-muted text-muted-foreground')}>
+            <button key={item.number} type="button" className={cn('flex items-center gap-3 border-b border-border px-4 py-4 text-left transition last:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20 md:border-b-0 md:border-r md:last:border-r-0', active && 'bg-warning/30 text-foreground', !active && 'hover:bg-muted/50')} onClick={() => setStep(item.number)} aria-current={active ? 'step' : undefined}>
+              <span className={cn('grid size-10 shrink-0 place-items-center rounded-full border font-black', active ? 'border-warning/60 bg-warning text-warning-foreground' : complete ? 'border-success/35 bg-success/16 text-foreground' : 'border-border bg-muted text-muted-foreground')}>
                 {complete ? <Check className="size-5" /> : <Icon className="size-5" />}
               </span>
               <span className="min-w-0"><span className="block text-xs font-bold opacity-75">Parte {item.number}</span><span className="block truncate font-black">{item.title}</span><span className="hidden truncate text-xs opacity-75 sm:block">{item.description}</span></span>
@@ -564,8 +564,8 @@ export function PlanningEntryForm({
 
       {validationError || error ? <div className="flex gap-3 rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive"><AlertCircle className="mt-0.5 size-4 shrink-0" /><p>{validationError || error}</p></div> : null}
 
-      <section className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
-        <div className="border-b border-border px-5 py-4"><p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">Parte {step} de 3</p><h2 className="mt-1 text-xl font-black text-foreground">{steps[step - 1]?.title}</h2></div>
+      <section className="overflow-hidden rounded-3xl bg-card shadow-sm">
+        <div className="border-b border-border px-5 py-4"><p className="inline-flex rounded-full bg-warning/25 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-foreground">Parte {step} de 3</p><h2 className="mt-2 text-xl font-black text-foreground">{steps[step - 1]?.title}</h2></div>
 
         {step === 1 ? <div className="grid gap-5 p-5 md:grid-cols-2">
           <Field label="Centro educativo"><Input value={schoolNameValue} onChange={(event) => setSchoolNameValue(event.target.value)} placeholder="Nombre del centro educativo" /></Field>
@@ -632,8 +632,8 @@ export function PlanningEntryForm({
             <ReviewItem label="Fecha" value={plannedDate || 'Sin fecha'} />
             <ReviewItem label="Duración" value={duration ? planningType === 'DAILY' ? `${duration} minutos` : `${durationDays} días · ${duration} minutos` : 'Sin duración'} />
           </div>
-          <div className="rounded-xl border border-border bg-primary-light/70 p-4"><p className="font-black text-primary">Desarrolla la secuencia didáctica</p><p className="mt-1 text-sm text-primary/80">Puedes completarla manualmente o usar la IA como borrador editable.</p></div>
-          {alignmentWarning ? <div className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950"><p className="font-extrabold">Revisa la coherencia del tema</p><p className="mt-1 leading-6">{alignmentWarning}</p><label className="mt-3 flex cursor-pointer items-start gap-2 font-bold"><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={alignmentConfirmed} onChange={(event) => setAlignmentConfirmed(event.target.checked)} /><span>Confirmo que este tema corresponde a la asignatura seleccionada.</span></label></div> : null}
+          <div className="rounded-xl bg-warning/20 p-4"><p className="font-black text-foreground">Desarrolla la secuencia didáctica</p><p className="mt-1 text-sm text-muted-foreground">Puedes completarla manualmente o usar la IA como borrador editable.</p></div>
+          {alignmentWarning ? <div className="rounded-xl border border-warning/45 bg-warning/20 p-4 text-sm text-foreground"><p className="font-extrabold">Revisa la coherencia del tema</p><p className="mt-1 leading-6">{alignmentWarning}</p><label className="mt-3 flex cursor-pointer items-start gap-2 font-bold"><input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={alignmentConfirmed} onChange={(event) => setAlignmentConfirmed(event.target.checked)} /><span>Confirmo que este tema corresponde a la asignatura seleccionada.</span></label></div> : null}
           <Field label="Situación de aprendizaje"><Textarea rows={4} value={learningSituation} onChange={(event) => setLearningSituation(event.target.value)} placeholder="Contexto, reto o problema que dará sentido a lo que aprenderán los estudiantes." /></Field>
           {planningType === 'DAILY' ? <div className="grid gap-4 lg:grid-cols-3"><MomentField title="Inicio" hint="Motivación, saberes previos y propósito" value={inicio} onChange={setInicio} /><MomentField title="Desarrollo" hint="Actividad principal y construcción del aprendizaje" value={desarrollo} onChange={setDesarrollo} /><MomentField title="Cierre" hint="Síntesis, reflexión y retroalimentación" value={cierre} onChange={setCierre} /></div> : <div className="grid gap-4">{days.map((day, index) => <PlanningDayField key={day.day} day={day} date={plannedDate ? addWeekdays(plannedDate, index) : ''} onChange={(field, value) => setDays((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, [field]: value } : item))} />)}</div>}
           {planningType === 'DAILY' ? <Field label="Metacognición"><Textarea rows={3} value={metacognition} onChange={(event) => setMetacognition(event.target.value)} placeholder="Ej.: ¿Qué aprendí?, ¿cómo lo aprendí? y ¿dónde puedo aplicarlo?" /></Field> : null}
@@ -643,7 +643,7 @@ export function PlanningEntryForm({
         </div> : null}
       </section>
 
-      <footer className="flex flex-col-reverse gap-3 rounded-xl border border-border bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+      <footer className="flex flex-col-reverse gap-3 rounded-3xl bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
         <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><ArrowLeft className="size-4" />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 && !initial?.entry.id ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
         <div className="grid gap-2 sm:flex">{step === 3 ? <Button type="button" variant="outline" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Completar con IA</Button> : null}{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
       </footer>
@@ -660,7 +660,7 @@ function ReviewItem({ label, value }: { label: string; value: string }) {
 }
 
 function MomentField({ title, hint, value, onChange }: { title: string; hint: string; value: string; onChange: (value: string) => void }) {
-  return <div className="overflow-hidden rounded-xl border border-border bg-card"><div className="border-b border-border bg-primary/5 px-4 py-3"><h3 className="font-black text-primary">{title}</h3><p className="mt-0.5 text-xs text-muted-foreground">{hint}</p></div><Textarea className="min-h-48 resize-y rounded-none border-0 shadow-none focus:ring-0" value={value} onChange={(event) => onChange(event.target.value)} placeholder={`Describe las actividades de ${title.toLowerCase()}...`} /></div>
+  return <div className="overflow-hidden rounded-2xl border border-border bg-card"><div className="border-b border-border bg-warning/18 px-4 py-3"><h3 className="font-black text-foreground">{title}</h3><p className="mt-0.5 text-xs text-muted-foreground">{hint}</p></div><Textarea className="min-h-48 resize-y rounded-none border-0 shadow-none focus:ring-0" value={value} onChange={(event) => onChange(event.target.value)} placeholder={`Describe las actividades de ${title.toLowerCase()}...`} /></div>
 }
 
 function PlanningDayField({ day, date, onChange }: {
@@ -668,5 +668,5 @@ function PlanningDayField({ day, date, onChange }: {
   date: string
   onChange: (field: 'inicio' | 'desarrollo' | 'cierre' | 'evidence' | 'evaluationMethod' | 'evaluationInstruments' | 'metacognition' | 'resources', value: string) => void
 }) {
-  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-center justify-between gap-3 border-b border-border bg-primary/[0.045] px-4 py-3"><h3 className="font-extrabold text-primary">Día {day.day}</h3><span className="text-xs font-bold text-muted-foreground">{date || 'Fecha pendiente'}</span></header><div className="grid gap-4 p-4 lg:grid-cols-3"><Field label="Inicio" required><Textarea rows={4} value={day.inicio} onChange={(event) => onChange('inicio', event.target.value)} /></Field><Field label="Desarrollo" required><Textarea rows={4} value={day.desarrollo} onChange={(event) => onChange('desarrollo', event.target.value)} /></Field><Field label="Cierre" required><Textarea rows={4} value={day.cierre} onChange={(event) => onChange('cierre', event.target.value)} /></Field><Field label="Evidencia" required><Textarea rows={3} value={day.evidence} onChange={(event) => onChange('evidence', event.target.value)} /></Field><Field label="Técnica de evaluación" required><Textarea rows={3} value={day.evaluationMethod} onChange={(event) => onChange('evaluationMethod', event.target.value)} /></Field><Field label="Instrumento"><Textarea rows={3} value={day.evaluationInstruments ?? ''} onChange={(event) => onChange('evaluationInstruments', event.target.value)} /></Field><Field label="Metacognición"><Textarea rows={3} value={day.metacognition ?? ''} onChange={(event) => onChange('metacognition', event.target.value)} placeholder="Preguntas de reflexión" /></Field><div className="lg:col-span-2"><Field label="Recursos"><Textarea rows={3} value={day.resources ?? ''} onChange={(event) => onChange('resources', event.target.value)} /></Field></div></div></section>
+  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-center justify-between gap-3 border-b border-border bg-warning/18 px-4 py-3"><h3 className="font-extrabold text-foreground">Día {day.day}</h3><span className="text-xs font-bold text-muted-foreground">{date || 'Fecha pendiente'}</span></header><div className="grid gap-4 p-4 lg:grid-cols-3"><Field label="Inicio" required><Textarea rows={4} value={day.inicio} onChange={(event) => onChange('inicio', event.target.value)} /></Field><Field label="Desarrollo" required><Textarea rows={4} value={day.desarrollo} onChange={(event) => onChange('desarrollo', event.target.value)} /></Field><Field label="Cierre" required><Textarea rows={4} value={day.cierre} onChange={(event) => onChange('cierre', event.target.value)} /></Field><Field label="Evidencia" required><Textarea rows={3} value={day.evidence} onChange={(event) => onChange('evidence', event.target.value)} /></Field><Field label="Técnica de evaluación" required><Textarea rows={3} value={day.evaluationMethod} onChange={(event) => onChange('evaluationMethod', event.target.value)} /></Field><Field label="Instrumento"><Textarea rows={3} value={day.evaluationInstruments ?? ''} onChange={(event) => onChange('evaluationInstruments', event.target.value)} /></Field><Field label="Metacognición"><Textarea rows={3} value={day.metacognition ?? ''} onChange={(event) => onChange('metacognition', event.target.value)} placeholder="Preguntas de reflexión" /></Field><div className="lg:col-span-2"><Field label="Recursos"><Textarea rows={3} value={day.resources ?? ''} onChange={(event) => onChange('resources', event.target.value)} /></Field></div></div></section>
 }

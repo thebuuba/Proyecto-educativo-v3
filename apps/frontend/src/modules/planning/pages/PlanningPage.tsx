@@ -11,12 +11,21 @@ import {
   Search,
   Settings2,
 } from 'lucide-react'
-import { lazy, useEffect, useMemo, useRef, useState } from 'react'
+import { lazy, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Input'
+import {
+  FeedbackBanner,
+  FilterBar,
+  MetricTile,
+  PageHero,
+  SectionHeader,
+  SemanticIcon,
+  StatusBadge,
+} from '@/components/ui/SemanticUI'
 import { Select } from '@/components/ui/Select'
 import { PeriodManager } from '@/modules/planning/components/PeriodManager'
 import { PlanningDocumentView } from '@/modules/planning/components/PlanningDocumentView'
@@ -29,7 +38,11 @@ type ConfirmAction = 'delete' | 'archive'
 type ViewMode = 'grid' | 'list'
 type PlanningTab = 'planificaciones' | 'curriculo' | 'plantillas'
 
-const CompetencyMatrixPage = lazy(() => import('@/modules/competency-matrix/pages/CompetencyMatrixPage').then((module) => ({ default: module.CompetencyMatrixPage })))
+const CompetencyMatrixPage = lazy(() =>
+  import('@/modules/competency-matrix/pages/CompetencyMatrixPage').then((module) => ({
+    default: module.CompetencyMatrixPage,
+  })),
+)
 
 function sameDate(entryDate: string | null | undefined, filterDate: string) {
   if (!filterDate) return true
@@ -47,9 +60,10 @@ function normalize(value?: string | null) {
 export function PlanningPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const requestedTab = searchParams.get('tab')
-  const activeTab: PlanningTab = requestedTab === 'curriculo' || requestedTab === 'plantillas'
-    ? requestedTab
-    : 'planificaciones'
+  const activeTab: PlanningTab =
+    requestedTab === 'curriculo' || requestedTab === 'plantillas'
+      ? requestedTab
+      : 'planificaciones'
 
   function selectTab(tab: PlanningTab) {
     const next = new URLSearchParams(searchParams)
@@ -60,20 +74,46 @@ export function PlanningPage() {
 
   return (
     <section className="mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
-      <header>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground lg:text-[28px]">Planificación</h1>
-        <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">
-          Organiza tus planificaciones y consulta el currículo dominicano desde un mismo espacio.
-        </p>
-      </header>
+      <PageHero
+        title="Planificación"
+        description="Organiza tus planificaciones y consulta el currículo dominicano desde un mismo espacio."
+        icon={CalendarDays}
+        tone="warning"
+        eyebrow="Trabajo pedagógico"
+      />
 
-      <nav aria-label="Secciones de Planificación" className="grid grid-cols-1 gap-2 rounded-2xl bg-card p-2 shadow-sm sm:grid-cols-3">
-        <PlanningTabButton active={activeTab === 'planificaciones'} icon={<FileText className="size-4" />} label="Mis planificaciones" onClick={() => selectTab('planificaciones')} />
-        <PlanningTabButton active={activeTab === 'curriculo'} icon={<BookOpenText className="size-4" />} label="Currículo" onClick={() => selectTab('curriculo')} />
-        <PlanningTabButton active={activeTab === 'plantillas'} icon={<LayoutTemplate className="size-4" />} label="Plantillas" badge="Próximamente" onClick={() => selectTab('plantillas')} />
+      <nav
+        aria-label="Secciones de Planificación"
+        className="dashboard-warm-shadow grid grid-cols-1 gap-2 rounded-3xl bg-card p-2 sm:grid-cols-3"
+      >
+        <PlanningTabButton
+          active={activeTab === 'planificaciones'}
+          icon={<FileText className="size-4" />}
+          label="Mis planificaciones"
+          onClick={() => selectTab('planificaciones')}
+        />
+        <PlanningTabButton
+          active={activeTab === 'curriculo'}
+          icon={<BookOpenText className="size-4" />}
+          label="Currículo"
+          onClick={() => selectTab('curriculo')}
+        />
+        <PlanningTabButton
+          active={activeTab === 'plantillas'}
+          icon={<LayoutTemplate className="size-4" />}
+          label="Plantillas"
+          badge="Próximamente"
+          onClick={() => selectTab('plantillas')}
+        />
       </nav>
 
-      {activeTab === 'curriculo' ? <CompetencyMatrixPage embedded /> : activeTab === 'plantillas' ? <PlanningPlaceholder /> : <PlanningEntriesPage searchParams={searchParams} />}
+      {activeTab === 'curriculo' ? (
+        <CompetencyMatrixPage embedded />
+      ) : activeTab === 'plantillas' ? (
+        <PlanningPlaceholder />
+      ) : (
+        <PlanningEntriesPage searchParams={searchParams} />
+      )}
     </section>
   )
 }
@@ -117,8 +157,9 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
   const requestedCurriculumId = searchParams.get('subjectId') ?? searchParams.get('malla')
   const requestedGrade = searchParams.get('grade') ?? searchParams.get('grado')
   const requestedArea = searchParams.get('area')
-  const requestedCreate = searchParams.get('action') === 'nueva'
-    || (!searchParams.has('tab') && searchParams.has('malla'))
+  const requestedCreate =
+    searchParams.get('action') === 'nueva' ||
+    (!searchParams.has('tab') && searchParams.has('malla'))
 
   useEffect(() => {
     if (activePeriodId && !periodFilter) setPeriodFilter(activePeriodId)
@@ -126,9 +167,14 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
 
   useEffect(() => {
     if (
-      loading || !requestedCreate || !requestedCurriculumId || !periods.length ||
+      loading ||
+      !requestedCreate ||
+      !requestedCurriculumId ||
+      !periods.length ||
       openedCurriculumRequest.current === requestedCurriculumId
-    ) return
+    ) {
+      return
+    }
 
     openedCurriculumRequest.current = requestedCurriculumId
     setEditingEntry(null)
@@ -188,16 +234,13 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
     setFormError(null)
 
     try {
-      if (editingEntry) {
-        await editEntry(editingEntry.id, input)
-      } else {
-        await addEntry(input)
-      }
+      if (editingEntry) await editEntry(editingEntry.id, input)
+      else await addEntry(input)
       setPeriodFilter(input.academicPeriodId)
       setActivePeriodId(input.academicPeriodId)
       closeForm()
-    } catch (error) {
-      setFormError(error instanceof Error ? error.message : 'No se pudo guardar.')
+    } catch (submitError) {
+      setFormError(submitError instanceof Error ? submitError.message : 'No se pudo guardar.')
     } finally {
       setIsSubmitting(false)
     }
@@ -206,8 +249,8 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
   async function handleDuplicate(entry: PlanningEntryWithDetails) {
     try {
       await duplicateEntry(entry.id)
-    } catch (error) {
-      console.error('Error al duplicar planificacion:', error)
+    } catch (duplicateError) {
+      console.error('Error al duplicar planificacion:', duplicateError)
     }
   }
 
@@ -225,13 +268,10 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
     if (!confirmTarget) return
 
     try {
-      if (confirmAction === 'archive') {
-        await archiveEntry(confirmTarget.id)
-      } else {
-        await removeEntry(confirmTarget.id)
-      }
-    } catch (error) {
-      console.error('Error al procesar planificacion:', error)
+      if (confirmAction === 'archive') await archiveEntry(confirmTarget.id)
+      else await removeEntry(confirmTarget.id)
+    } catch (confirmError) {
+      console.error('Error al procesar planificacion:', confirmError)
     } finally {
       setConfirmTarget(null)
     }
@@ -293,10 +333,11 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
                 }
           }
           competencies={competencies}
-          curriculumReference={!editingEntry && requestedCurriculumId && requestedGrade ? {
-            grade: requestedGrade,
-            subjectId: requestedCurriculumId,
-          } : undefined}
+          curriculumReference={
+            !editingEntry && requestedCurriculumId && requestedGrade
+              ? { grade: requestedGrade, subjectId: requestedCurriculumId }
+              : undefined
+          }
           submitting={isSubmitting}
           error={formError}
           onSubmit={handleSubmit}
@@ -322,58 +363,36 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
 
   return (
     <section className="w-full min-w-0 space-y-5">
-      <header className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div className="min-w-0">
-          <div className="flex flex-wrap items-center gap-2">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">Mis planificaciones</h2>
-            {activePeriod ? (
-              <span className="inline-flex h-7 items-center gap-1.5 rounded-full bg-accent/12 px-3 text-xs font-semibold text-accent">
-                <span className="size-1.5 rounded-full bg-accent" />
-                {activePeriod.name} · activo
-              </span>
-            ) : null}
-          </div>
-          <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">
-            Organiza, consulta y exporta tu planificación curricular por competencias.
-          </p>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          <Button variant="outline" onClick={() => setPeriodManagerOpen(true)}>
-            <Settings2 className="size-4" />
-            Períodos
-          </Button>
-          <Button variant="primary" onClick={openCreateForm} disabled={!periods.length}>
-            <Plus className="size-4" />
-            Nueva planificación
-          </Button>
-        </div>
-      </header>
+      <SectionHeader
+        title="Mis planificaciones"
+        description="Organiza, consulta y exporta tu planificación curricular por competencias."
+        meta={
+          activePeriod ? (
+            <StatusBadge tone="warning">{activePeriod.name} · activo</StatusBadge>
+          ) : null
+        }
+        actions={
+          <>
+            <Button variant="outline" onClick={() => setPeriodManagerOpen(true)}>
+              <Settings2 className="size-4" /> Períodos
+            </Button>
+            <Button variant="primary" onClick={openCreateForm} disabled={!periods.length}>
+              <Plus className="size-4" /> Nueva planificación
+            </Button>
+          </>
+        }
+      />
 
       <div className="grid gap-3 sm:grid-cols-3">
-        <PlanningMetric
-          icon={<FileText className="size-5" />}
-          label="Planificaciones"
-          value={entries.length}
-        />
-        <PlanningMetric
-          icon={<Filter className="size-5" />}
-          label="Resultados visibles"
-          value={filteredEntries.length}
-        />
-        <PlanningMetric
-          icon={<CalendarDays className="size-5" />}
-          label="Archivadas"
-          value={archivedEntries}
-        />
+        <MetricTile icon={FileText} label="Planificaciones" value={entries.length} tone="warning" />
+        <MetricTile icon={Filter} label="Resultados visibles" value={filteredEntries.length} tone="success" />
+        <MetricTile icon={CalendarDays} label="Archivadas" value={archivedEntries} tone="neutral" />
       </div>
 
-      <div className="rounded-3xl bg-card shadow-sm">
-        <div className="flex items-center justify-between gap-3 border-b border-border px-5 py-4">
+      <FilterBar className="p-0">
+        <div className="flex items-center justify-between gap-3 border-b border-border/65 px-5 py-4">
           <div className="flex items-center gap-3">
-            <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary">
-              <Filter className="size-4" />
-            </span>
+            <SemanticIcon icon={Filter} tone="warning" className="size-9 rounded-xl" iconClassName="size-4" />
             <div>
               <h2 className="text-sm font-bold text-foreground">Filtrar planificaciones</h2>
               <p className="text-xs text-muted-foreground">
@@ -420,10 +439,7 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
             <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
               Asignatura
             </span>
-            <Select
-              value={subjectFilter}
-              onChange={(event) => setSubjectFilter(event.target.value)}
-            >
+            <Select value={subjectFilter} onChange={(event) => setSubjectFilter(event.target.value)}>
               <option value="">Todas las asignaturas</option>
               {subjects.map((subject) => (
                 <option key={subject} value={subject}>
@@ -464,28 +480,32 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
             />
           </label>
         </div>
-      </div>
+      </FilterBar>
 
       {error ? (
-        <div className="mb-4 flex gap-3 rounded-lg border border-destructive/20 bg-destructive/12 p-3 text-sm text-destructive">
+        <FeedbackBanner tone="danger" className="flex gap-3">
           <AlertCircle className="mt-0.5 size-4 shrink-0" />
           <p>{error}</p>
-        </div>
+        </FeedbackBanner>
       ) : null}
 
       {loading ? (
-        <div className="flex min-h-[200px] items-center justify-center text-sm font-medium text-muted-foreground">
+        <div className="dashboard-warm-shadow flex min-h-[200px] items-center justify-center rounded-3xl bg-card text-sm font-medium text-muted-foreground">
           Cargando planificaciones...
         </div>
       ) : filteredEntries.length > 0 ? (
         <div className="space-y-3">
           <div className="flex justify-start">
-            <div className="inline-flex rounded-xl border border-border bg-card p-1 shadow-sm" aria-label="Vista de planificaciones">
+            <div className="inline-flex rounded-xl bg-card p-1 shadow-sm" aria-label="Vista de planificaciones">
               <button
                 type="button"
                 aria-label="Ver en cuadros"
                 aria-pressed={viewMode === 'grid'}
-                className={`flex size-9 items-center justify-center rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
+                className={`flex size-9 items-center justify-center rounded-lg transition-colors ${
+                  viewMode === 'grid'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                }`}
                 onClick={() => setViewMode('grid')}
               >
                 <Grid2X2 className="size-4" />
@@ -494,13 +514,18 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
                 type="button"
                 aria-label="Ver como lista"
                 aria-pressed={viewMode === 'list'}
-                className={`flex size-9 items-center justify-center rounded-lg transition-colors ${viewMode === 'list' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
+                className={`flex size-9 items-center justify-center rounded-lg transition-colors ${
+                  viewMode === 'list'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                }`}
                 onClick={() => setViewMode('list')}
               >
                 <List className="size-4" />
               </button>
             </div>
           </div>
+
           <div className={viewMode === 'grid' ? 'grid gap-5 lg:grid-cols-2 xl:grid-cols-3' : 'grid gap-3'}>
             {filteredEntries.map((entry) => (
               <PlanningEntryCard
@@ -517,16 +542,13 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
           </div>
         </div>
       ) : (
-        <div className="flex min-h-[260px] flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card p-6 text-center">
-          <span className="flex size-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-            <FileText className="size-6" />
-          </span>
+        <div className="dashboard-warm-shadow flex min-h-[260px] flex-col items-center justify-center rounded-3xl bg-card p-6 text-center">
+          <SemanticIcon icon={FileText} tone="warning" className="size-14" iconClassName="size-6" />
           <p className="mt-4 text-sm font-semibold text-foreground">
             No hay planificaciones que coincidan con los filtros actuales.
           </p>
           <Button variant="outline" className="mt-4" onClick={openCreateForm}>
-            <Plus className="size-4" />
-            Crear planificación
+            <Plus className="size-4" /> Crear planificación
           </Button>
         </div>
       )}
@@ -562,9 +584,15 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
   )
 }
 
-function PlanningTabButton({ active, icon, label, badge, onClick }: {
+function PlanningTabButton({
+  active,
+  icon,
+  label,
+  badge,
+  onClick,
+}: {
   active: boolean
-  icon: React.ReactNode
+  icon: ReactNode
   label: string
   badge?: string
   onClick: () => void
@@ -574,43 +602,35 @@ function PlanningTabButton({ active, icon, label, badge, onClick }: {
       type="button"
       aria-pressed={active}
       onClick={onClick}
-      className={`flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 text-sm font-bold transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20 ${active ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
+      className={`flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 text-sm font-bold transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20 ${
+        active
+          ? 'bg-warning/30 text-foreground'
+          : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+      }`}
     >
-      {icon}<span>{label}</span>{badge ? <span className={`rounded-full px-2 py-0.5 text-[10px] ${active ? 'bg-white/20 text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>{badge}</span> : null}
+      {icon}
+      <span>{label}</span>
+      {badge ? (
+        <span
+          className={`rounded-full px-2 py-0.5 text-[10px] ${
+            active ? 'bg-card/70 text-foreground' : 'bg-muted text-muted-foreground'
+          }`}
+        >
+          {badge}
+        </span>
+      ) : null}
     </button>
   )
 }
 
 function PlanningPlaceholder() {
   return (
-    <div className="flex min-h-72 flex-col items-center justify-center rounded-3xl border border-dashed border-border bg-card px-6 text-center shadow-sm">
-      <span className="flex size-14 items-center justify-center rounded-2xl bg-primary/10 text-primary"><LayoutTemplate className="size-6" /></span>
+    <div className="dashboard-warm-shadow flex min-h-72 flex-col items-center justify-center rounded-3xl bg-card px-6 text-center">
+      <SemanticIcon icon={LayoutTemplate} tone="warning" className="size-14" iconClassName="size-6" />
       <h2 className="mt-4 text-lg font-black text-foreground">Plantillas</h2>
-      <p className="mt-2 text-sm text-muted-foreground">Este espacio estará disponible próximamente.</p>
-    </div>
-  )
-}
-
-function PlanningMetric({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode
-  label: string
-  value: number
-}) {
-  return (
-    <div className="flex items-center gap-4 rounded-2xl bg-card px-5 py-4 shadow-sm">
-      <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-        {icon}
-      </span>
-      <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
-          {label}
-        </p>
-        <p className="mt-0.5 text-2xl font-black tabular-nums text-primary">{value}</p>
-      </div>
+      <p className="mt-2 text-sm text-muted-foreground">
+        Este espacio estará disponible próximamente.
+      </p>
     </div>
   )
 }

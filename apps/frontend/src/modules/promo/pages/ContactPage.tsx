@@ -8,43 +8,36 @@ import { PromoLayout } from '@/modules/promo/components/PromoLayout'
 export function ContactPage() {
   const [sent, setSent] = useState(false)
 
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault()
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault()
     setSent(true)
   }
 
   return (
     <PromoLayout>
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-8 lg:px-14">
-        <h1 className="mb-2 text-center text-[clamp(2rem,6vw,2.5rem)] font-extrabold leading-tight text-[#0D1117]">
-          Contáctanos
-        </h1>
-        <p className="mb-12 text-center text-[15px] text-[#6B7280]">
-          Estamos aquí para ayudarte. Escríbenos y te responderemos a la brevedad.
-        </p>
+        <div className="mb-12 text-center">
+          <span className="mb-4 inline-flex rounded-full bg-warning/22 px-3 py-1.5 text-[11px] font-extrabold text-foreground">Estamos para ayudarte</span>
+          <h1 className="text-[clamp(2rem,6vw,2.5rem)] font-extrabold leading-tight text-foreground">Contáctanos</h1>
+          <p className="mt-2 text-[15px] text-muted-foreground">Escríbenos y te responderemos a la brevedad.</p>
+        </div>
 
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-6">
             {[
-              { icon: Mail, label: 'Correo', value: 'hola@aulabase.com', href: 'mailto:hola@aulabase.com' },
-              { icon: Phone, label: 'Teléfono', value: '+1 (809) 555-0123', href: 'tel:+18095550123' },
-              { icon: MapPin, label: 'Ubicación', value: 'Santo Domingo, República Dominicana' },
-              { icon: MessageSquare, label: 'Soporte', value: 'Soporte prioritario en plan Pro', href: '/registro' },
+              { icon: Mail, label: 'Correo', value: 'hola@aulabase.com', href: 'mailto:hola@aulabase.com', tone: 'info' },
+              { icon: Phone, label: 'Teléfono', value: '+1 (809) 555-0123', href: 'tel:+18095550123', tone: 'success' },
+              { icon: MapPin, label: 'Ubicación', value: 'Santo Domingo, República Dominicana', tone: 'warning' },
+              { icon: MessageSquare, label: 'Soporte', value: 'Soporte prioritario en plan Pro', href: '/registro', tone: 'danger' },
             ].map((item) => {
               const Icon = item.icon
               const Wrapper = item.href ? 'a' : 'div'
               return (
                 <div key={item.label} className="flex items-start gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <Icon size={18} />
-                  </div>
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl text-foreground" style={{ background: toneBackground(item.tone) }}><Icon size={18} /></div>
                   <div>
-                    <p className="text-sm font-semibold text-[#111827]">{item.label}</p>
-                    <Wrapper
-                      {...(item.href ? { href: item.href, className: 'text-sm text-[#6B7280] transition hover:text-primary', ...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {}) } : { className: 'text-sm text-[#6B7280]' })}
-                    >
-                      {item.value}
-                    </Wrapper>
+                    <p className="text-sm font-semibold text-foreground">{item.label}</p>
+                    <Wrapper {...(item.href ? { href: item.href, className: 'text-sm text-muted-foreground transition hover:text-foreground' } : { className: 'text-sm text-muted-foreground' })}>{item.value}</Wrapper>
                   </div>
                 </div>
               )
@@ -52,51 +45,32 @@ export function ContactPage() {
           </div>
 
           {sent ? (
-            <div className="flex flex-col items-center justify-center rounded-2xl border border-[#E5E7EB] bg-white p-10 text-center">
-              <div className="mb-4 flex size-14 items-center justify-center rounded-full bg-success/10 text-success">
-                <Send size={24} />
-              </div>
-              <h3 className="mb-1 text-lg font-bold text-[#111827]">Mensaje enviado</h3>
-              <p className="text-sm text-[#6B7280]">Gracias por escribirnos. Te responderemos en menos de 24 horas.</p>
+            <div className="dashboard-warm-shadow flex flex-col items-center justify-center rounded-3xl bg-card p-10 text-center">
+              <div className="mb-4 flex size-14 items-center justify-center rounded-2xl bg-success/18 text-foreground"><Send size={24} /></div>
+              <h3 className="mb-1 text-lg font-bold text-foreground">Mensaje enviado</h3>
+              <p className="text-sm text-muted-foreground">Gracias por escribirnos. Te responderemos en menos de 24 horas.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
-              <div>
-                <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-[#374151]">Nombre completo</label>
-                <input
-                  id="name"
-                  required
-                  className="w-full rounded-xl border border-[#D1D5DB] px-4 py-2.5 text-sm text-[#111827] outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
-                  placeholder="Tu nombre"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-[#374151]">Correo electrónico</label>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  className="w-full rounded-xl border border-[#D1D5DB] px-4 py-2.5 text-sm text-[#111827] outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
-                  placeholder="correo@ejemplo.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-[#374151]">Mensaje</label>
-                <textarea
-                  id="message"
-                  required
-                  rows={4}
-                  className="w-full resize-y rounded-xl border border-[#D1D5DB] px-4 py-2.5 text-sm text-[#111827] outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
-                  placeholder="¿En qué podemos ayudarte?"
-                />
-              </div>
-              <Button type="submit" variant="primary" className="w-full">
-                Enviar mensaje <Send size={14} />
-              </Button>
+            <form onSubmit={handleSubmit} className="dashboard-warm-shadow space-y-4 rounded-3xl bg-card p-6 sm:p-8">
+              <Field label="Nombre completo"><input id="name" required className="auth-input" placeholder="Tu nombre" /></Field>
+              <Field label="Correo electrónico"><input id="email" type="email" required className="auth-input" placeholder="correo@ejemplo.com" /></Field>
+              <Field label="Mensaje"><textarea id="message" required rows={4} className="auth-input resize-y" placeholder="¿En qué podemos ayudarte?" /></Field>
+              <Button type="submit" variant="primary" className="w-full">Enviar mensaje <Send size={14} /></Button>
             </form>
           )}
         </div>
       </div>
     </PromoLayout>
   )
+}
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return <label className="block"><span className="mb-1.5 block text-sm font-semibold text-foreground">{label}</span>{children}</label>
+}
+
+function toneBackground(tone: string) {
+  if (tone === 'success') return 'color-mix(in srgb, var(--success) 18%, var(--card))'
+  if (tone === 'warning') return 'color-mix(in srgb, var(--warning) 24%, var(--card))'
+  if (tone === 'danger') return 'color-mix(in srgb, var(--destructive) 16%, var(--card))'
+  return 'color-mix(in srgb, var(--primary) 14%, var(--card))'
 }

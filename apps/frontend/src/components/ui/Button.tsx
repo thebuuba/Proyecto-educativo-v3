@@ -8,7 +8,7 @@ import type { ButtonHTMLAttributes } from 'react'
 import { cn } from '@/utils/cn'
 
 /** Variantes visuales del botón. */
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'outline' | 'destructive'
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'outline' | 'success' | 'warning' | 'destructive'
 /** Tamaños disponibles del botón. */
 type ButtonSize = 'sm' | 'md' | 'icon'
 
@@ -16,7 +16,7 @@ type ButtonSize = 'sm' | 'md' | 'icon'
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   /** Variante visual del botón. */
   variant?: ButtonVariant
-  /** Tamaño del botón. */
+  /** Tamaño disponible. */
   size?: ButtonSize
   /** Si es true, muestra un spinner y deshabilita el botón. */
   loading?: boolean
@@ -24,20 +24,24 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary-hover focus-visible:ring-ring',
+    'bg-primary text-primary-foreground shadow-sm hover:bg-primary-hover hover:shadow-md focus-visible:ring-ring',
   secondary:
-    'bg-card text-foreground shadow-sm hover:bg-muted focus-visible:ring-ring',
+    'bg-card text-foreground hover:bg-muted focus-visible:ring-ring',
   ghost:
     'text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:ring-ring',
   outline:
-    'border border-border bg-card text-foreground shadow-sm hover:bg-muted focus-visible:ring-ring',
+    'border border-border bg-card text-foreground hover:bg-muted focus-visible:ring-ring',
+  success:
+    'bg-success text-success-foreground shadow-sm hover:brightness-95 focus-visible:ring-success',
+  warning:
+    'bg-warning text-warning-foreground shadow-sm hover:brightness-95 focus-visible:ring-warning',
   destructive:
     'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive-hover focus-visible:ring-destructive',
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
   sm: 'h-9 gap-2 rounded-xl px-3 text-sm',
-  md: 'h-12 gap-2 rounded-xl px-7 text-sm',
+  md: 'h-11 gap-2 rounded-xl px-5 text-sm',
   icon: 'size-10 rounded-xl p-0',
 }
 
@@ -50,23 +54,25 @@ export function Button({
   variant = 'primary',
   size = 'md',
   type = 'button',
-  loading,
+  loading = false,
+  disabled = false,
   children,
   ...props
 }: ButtonProps) {
   return (
     <button
+      {...props}
       type={type}
       className={cn(
-        'inline-flex shrink-0 items-center justify-center font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-75 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-4 active:scale-[0.985] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-60',
+        'inline-flex shrink-0 items-center justify-center font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform,filter] duration-150 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-4 active:scale-[0.985] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-60',
         variantClasses[variant],
         sizeClasses[size],
         className,
       )}
-      disabled={props.disabled || loading}
-      {...props}
+      disabled={disabled || loading}
+      aria-busy={loading || undefined}
     >
-      {loading && <LoaderCircle className="animate-spin motion-reduce:animate-none" />}
+      {loading ? <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" /> : null}
       {children}
     </button>
   )

@@ -16,17 +16,21 @@ type SidebarProps = {
   onToggleExpanded: () => void
 }
 
+/*
+ * La navegación siempre se selecciona en azul. Estos fondos solo dan una
+ * identidad semántica suave al icono de cada módulo.
+ */
 const routeIconBackgrounds: Record<string, string> = {
-  '/inicio': 'bg-primary-container',
-  '/estudiantes': 'bg-secondary-container',
-  '/actividades': 'bg-violet-100',
-  '/cursos': 'bg-warning-container',
-  '/horario': 'bg-primary-container',
-  '/asistencia': 'bg-tertiary-container',
-  '/calificaciones': 'bg-secondary-container',
-  '/planificaciones': 'bg-warning-container',
-  '/reportes': 'bg-secondary-container',
-  '/configuracion': 'bg-warning-container',
+  '/inicio': 'bg-primary/14',
+  '/cursos': 'bg-primary/14',
+  '/horario': 'bg-primary/14',
+  '/calificaciones': 'bg-primary/14',
+  '/asistencia': 'bg-success/18',
+  '/actividades': 'bg-warning/28',
+  '/planificaciones': 'bg-warning/28',
+  '/bitacora': 'bg-destructive/16',
+  '/reportes': 'bg-success/18',
+  '/configuracion': 'bg-muted',
 }
 
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
@@ -37,7 +41,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
     <>
       <div
         className={cn(
-          'sidebar-overlay fixed inset-0 z-30 bg-primary/45 backdrop-blur-sm lg:hidden',
+          'sidebar-overlay fixed inset-0 z-30 bg-primary/35 backdrop-blur-sm lg:hidden',
           isOpen ? 'opacity-100' : 'pointer-events-none opacity-0',
         )}
         aria-hidden="true"
@@ -66,7 +70,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             onClick={onClose}
             title="Aula Base"
           >
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sidebar-primary text-sidebar-primary-foreground shadow-lg shadow-sidebar-primary/30">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sidebar-primary text-sidebar-primary-foreground shadow-lg shadow-sidebar-primary/20">
               <GraduationCap className="size-5" strokeWidth={2.4} />
             </span>
             <span className="sidebar-label min-w-0">
@@ -96,7 +100,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
         )}>
           {visibleRoutes.map((item) => {
             const Icon = item.icon
-            const iconBackground = routeIconBackgrounds[item.path] ?? 'bg-primary-container'
+            const iconBackground = routeIconBackgrounds[item.path] ?? 'bg-primary/14'
 
             return (
               <NavLink
@@ -166,7 +170,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             type="button"
             onClick={() => void logout()}
             className={cn(
-              'flex w-full items-center gap-3 rounded-lg py-2 text-sm font-bold text-sidebar-primary transition-colors hover:bg-sidebar-accent',
+              'flex w-full items-center gap-3 rounded-lg py-2 text-sm font-bold text-destructive transition-colors hover:bg-destructive/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/25',
               isExpanded ? 'justify-start px-3' : 'justify-start px-3 lg:justify-center lg:gap-0',
             )}
             title="Cerrar sesión"

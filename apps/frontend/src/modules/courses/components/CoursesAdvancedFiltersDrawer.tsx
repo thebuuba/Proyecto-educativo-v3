@@ -1,6 +1,10 @@
 import { Archive, RotateCcw, Search, UsersRound, UserRoundX, X } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 
+import { Button } from '@/components/ui/Button'
+import { Input } from '@/components/ui/Input'
+import { Select } from '@/components/ui/Select'
+
 export type CourseAdvancedFilters = {
   level: string
   cycle: string
@@ -88,18 +92,18 @@ export function CoursesAdvancedFiltersDrawer({
   const patch = (values: Partial<CourseAdvancedFilters>) => onChange({ ...filters, ...values })
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/25 backdrop-blur-[1px] motion-safe:animate-[fadeIn_200ms_ease-out]" onMouseDown={(event) => { if (event.target === event.currentTarget && !dirty) onClose() }}>
-      <aside id="course-advanced-filters" ref={panelRef} role="dialog" aria-modal="true" aria-labelledby="course-advanced-filters-title" className="ml-auto flex h-full w-full max-w-[31rem] flex-col border-l border-slate-200 bg-white shadow-2xl motion-safe:animate-[slideInRight_250ms_ease-out]">
-        <div className="h-1 shrink-0 bg-gradient-to-r from-[#25579d] via-[#356fd0] to-[#6940dc]" />
-        <header className="flex shrink-0 items-start justify-between border-b border-slate-200 px-6 py-5">
+    <div className="fixed inset-0 z-50 bg-foreground/20 backdrop-blur-[1px] motion-safe:animate-[fadeIn_200ms_ease-out]" onMouseDown={(event) => { if (event.target === event.currentTarget && !dirty) onClose() }}>
+      <aside id="course-advanced-filters" ref={panelRef} role="dialog" aria-modal="true" aria-labelledby="course-advanced-filters-title" className="ml-auto flex h-full w-full max-w-[31rem] flex-col border-l border-border bg-card shadow-2xl motion-safe:animate-[slideInRight_250ms_ease-out]">
+        <div className="h-1 shrink-0 bg-primary" />
+        <header className="flex shrink-0 items-start justify-between border-b border-border px-6 py-5">
           <div>
             <div className="flex items-center gap-2">
-              <h2 ref={titleRef} tabIndex={-1} id="course-advanced-filters-title" className="text-xl font-extrabold text-slate-950 outline-none">Filtros avanzados</h2>
-              {activeCount ? <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-extrabold text-primary">{activeCount}</span> : null}
+              <h2 ref={titleRef} tabIndex={-1} id="course-advanced-filters-title" className="text-xl font-extrabold text-foreground outline-none">Filtros avanzados</h2>
+              {activeCount ? <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-extrabold text-primary-variant">{activeCount}</span> : null}
             </div>
-            <p className="mt-1 text-sm leading-5 text-slate-500">Encuentra exactamente los cursos que necesitas.</p>
+            <p className="mt-1 text-sm leading-5 text-muted-foreground">Encuentra exactamente los cursos que necesitas.</p>
           </div>
-          <button type="button" onClick={onClose} className="flex size-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-900" aria-label="Cerrar filtros avanzados"><X className="size-5" /></button>
+          <Button type="button" variant="ghost" size="icon" onClick={onClose} aria-label="Cerrar filtros avanzados"><X className="size-5" /></Button>
         </header>
 
         <div className="min-h-0 flex-1 overflow-y-auto px-6 py-2">
@@ -115,13 +119,13 @@ export function CoursesAdvancedFiltersDrawer({
           <FilterSection title="Asignatura">
             <label className="relative block">
               <span className="sr-only">Buscar asignatura</span>
-              <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
-              <input value={subjectQuery} onChange={(event) => setSubjectQuery(event.target.value)} placeholder="Buscar asignatura…" className="h-10 w-full rounded-xl border border-slate-200 pl-9 pr-3 text-sm outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/10" />
+              <Search className="pointer-events-none absolute left-3 top-1/2 z-10 size-4 -translate-y-1/2 text-muted-foreground" />
+              <Input value={subjectQuery} onChange={(event) => setSubjectQuery(event.target.value)} placeholder="Buscar asignatura…" className="pl-9" />
             </label>
-            <select aria-label="Asignatura" value={filters.subject} onChange={(event) => patch({ subject: event.target.value, grade: 'all', section: 'all' })} className="mt-2 h-10 w-full rounded-xl border border-slate-200 bg-white px-3 text-sm font-semibold outline-none focus:border-primary/50">
+            <Select aria-label="Asignatura" value={filters.subject} onChange={(event) => patch({ subject: event.target.value, grade: 'all', section: 'all' })} className="mt-2">
               <option value="all">Todas las asignaturas</option>
               {visibleSubjects.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
-            </select>
+            </Select>
           </FilterSection>
 
           <FilterSection title="Estado">
@@ -144,11 +148,11 @@ export function CoursesAdvancedFiltersDrawer({
           </FilterSection>
         </div>
 
-        <footer className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-t border-slate-200 bg-white px-6 py-4">
-          <button type="button" onClick={onReset} className="inline-flex h-10 items-center gap-2 rounded-xl px-2 text-xs font-extrabold text-primary hover:bg-primary/5"><RotateCcw className="size-4" /> Restablecer filtros</button>
+        <footer className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-t border-border bg-card px-6 py-4">
+          <Button type="button" variant="ghost" size="sm" onClick={onReset}><RotateCcw className="size-4" /> Restablecer filtros</Button>
           <div className="flex gap-2">
-            <button type="button" onClick={onClose} className="h-10 rounded-xl border border-slate-200 bg-white px-4 text-sm font-bold text-slate-700 hover:bg-slate-50">Cancelar</button>
-            <button type="button" onClick={onApply} className="h-10 rounded-xl bg-gradient-to-r from-[#285aa4] to-[#6132df] px-5 text-sm font-extrabold text-white shadow-md">Aplicar · {resultCount} cursos</button>
+            <Button type="button" variant="outline" onClick={onClose}>Cancelar</Button>
+            <Button type="button" onClick={onApply}>Aplicar · {resultCount} cursos</Button>
           </div>
         </footer>
       </aside>
@@ -157,7 +161,7 @@ export function CoursesAdvancedFiltersDrawer({
 }
 
 function FilterSection({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="border-b border-slate-100 py-5 last:border-0"><h3 className="mb-3 text-xs font-extrabold uppercase tracking-[0.08em] text-slate-700">{title}</h3>{children}</section>
+  return <section className="border-b border-border py-5 last:border-0"><h3 className="mb-3 text-xs font-extrabold uppercase tracking-[0.08em] text-foreground">{title}</h3>{children}</section>
 }
 
 function countAdvancedFilters(filters: CourseAdvancedFilters) {
@@ -169,7 +173,7 @@ function countAdvancedFilters(filters: CourseAdvancedFilters) {
 
 function LabeledSelect({ label, value, options, onChange, includeAll = true }: { label: string; value: string; options: Option[]; onChange: (value: string) => void; includeAll?: boolean }) {
   const groupedOptions = groupOptions(options)
-  return <label className="text-xs font-bold text-slate-600">{label}<select value={value} onChange={(event) => onChange(event.target.value)} className="mt-1.5 h-10 w-full rounded-xl border border-slate-200 bg-white px-3 text-sm font-semibold outline-none focus:border-primary/50">{includeAll ? <option value="all">Todos</option> : null}{groupedOptions.length ? groupedOptions.map((group) => <optgroup key={group.label} label={group.label}>{group.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</optgroup>) : options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</select></label>
+  return <label className="text-xs font-bold text-muted-foreground">{label}<Select value={value} onChange={(event) => onChange(event.target.value)} className="mt-1.5">{includeAll ? <option value="all">Todos</option> : null}{groupedOptions.length ? groupedOptions.map((group) => <optgroup key={group.label} label={group.label}>{group.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</optgroup>) : options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</Select></label>
 }
 
 function groupOptions(options: Option[]) {
@@ -183,7 +187,7 @@ function groupOptions(options: Option[]) {
 }
 
 function StateChoice({ icon, label, checked, onChange }: { icon: ReactNode; label: string; checked: boolean; onChange: () => void }) {
-  return <label className="flex min-h-10 cursor-pointer items-center gap-3 rounded-xl px-2 text-xs font-semibold text-slate-600 transition hover:bg-slate-50"><input type="checkbox" checked={checked} onChange={onChange} className="size-4 accent-primary" /><span className="flex-1">{label}</span><span className="text-slate-400">{icon}</span></label>
+  return <label className="flex min-h-10 cursor-pointer items-center gap-3 rounded-xl px-2 text-xs font-semibold text-muted-foreground transition hover:bg-muted/60 hover:text-foreground"><input type="checkbox" checked={checked} onChange={onChange} className="size-4 accent-primary" /><span className="flex-1">{label}</span><span className="text-muted-foreground">{icon}</span></label>
 }
 
 function normalize(value: string) {
