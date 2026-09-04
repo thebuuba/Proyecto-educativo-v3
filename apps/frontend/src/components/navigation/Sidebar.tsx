@@ -170,7 +170,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             type="button"
             onClick={() => void logout()}
             className={cn(
-              'flex w-full items-center gap-3 rounded-lg py-2 text-sm font-bold text-destructive transition-colors hover:bg-destructive/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/25',
+              'flex w-full items-center gap-3 rounded-lg py-2 text-sm font-bold text-[var(--destructive-hover)] transition-colors hover:bg-destructive/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/25',
               isExpanded ? 'justify-start px-3' : 'justify-start px-3 lg:justify-center lg:gap-0',
             )}
             title="Cerrar sesión"
