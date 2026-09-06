@@ -527,7 +527,7 @@ export function GroupedSubjectActivitiesPage() {
                                         openActivity(activity.id)
                                       }
                                     }}
-                                    className="cursor-pointer outline-none transition hover:bg-primary/[0.025] focus-visible:bg-primary/[0.04] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
+                                    className="relative z-0 cursor-pointer outline-none transition-[transform,box-shadow,background-color] duration-200 ease-out hover:z-10 hover:-translate-y-1 hover:bg-primary/[0.025] hover:shadow-lg focus-visible:z-10 focus-visible:-translate-y-0.5 focus-visible:bg-primary/[0.04] focus-visible:shadow-md focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary motion-reduce:transform-none motion-reduce:transition-none"
                                   >
                                     <td className="px-4 py-3"><span className="block max-w-64 font-extrabold text-foreground">{activity.name}</span></td>
                                     <td className="px-4 py-3 text-xs font-bold">{period?.name?.split('—')[0]?.trim() ?? 'Actual'}</td>
