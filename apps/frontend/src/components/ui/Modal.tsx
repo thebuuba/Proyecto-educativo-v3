@@ -77,7 +77,7 @@ export function Modal({
                     {eyebrow}
                   </div>
                 ) : null}
-                <h3 className="text-base font-extrabold text-foreground">{title}</h3>
+                <h3 className="[overflow-wrap:anywhere] text-base font-extrabold text-foreground">{title}</h3>
                 {description ? (
                   <p className="mt-1 max-w-xl text-sm leading-5 text-muted-foreground">{description}</p>
                 ) : null}
