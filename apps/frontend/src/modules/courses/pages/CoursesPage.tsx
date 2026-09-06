@@ -2,6 +2,7 @@ import { useSearchParams } from 'react-router-dom'
 
 import { CoursesPage as CoursesPageBase } from './CoursesPageBase'
 import { GroupedSubjectActivitiesPage } from './GroupedSubjectActivitiesPage'
+import { SubjectAttendancePage } from './SubjectAttendancePage'
 
 export {
   ActivityBlockPickerDialog,
@@ -13,10 +14,10 @@ export {
 
 export function CoursesPage() {
   const [searchParams] = useSearchParams()
-  const isSubjectActivities =
-    searchParams.get('tab') === 'actividades'
-    && Boolean(searchParams.get('courseId'))
-    && Boolean(searchParams.get('subjectId'))
+  const hasSubjectContext = Boolean(searchParams.get('courseId')) && Boolean(searchParams.get('subjectId'))
+  const tab = searchParams.get('tab')
 
-  return isSubjectActivities ? <GroupedSubjectActivitiesPage /> : <CoursesPageBase />
+  if (hasSubjectContext && tab === 'actividades') return <GroupedSubjectActivitiesPage />
+  if (hasSubjectContext && tab === 'asistencia') return <SubjectAttendancePage />
+  return <CoursesPageBase />
 }
