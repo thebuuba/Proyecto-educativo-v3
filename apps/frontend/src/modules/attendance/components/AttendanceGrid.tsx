@@ -26,6 +26,7 @@ const markStyles: Record<Exclude<MonthlyAttendanceMark, null>, string> = {
   A: 'bg-destructive text-destructive-foreground shadow-sm',
   E: 'bg-warning text-warning-foreground shadow-sm',
   T: 'bg-violet-100 text-violet-700 shadow-sm',
+  R: 'bg-violet-100 text-violet-700 shadow-sm',
 }
 
 function formatShortDate(value: string) {
@@ -119,7 +120,7 @@ export function AttendanceGrid({
                   </td>
                 ) : workedDays.map((workedDay) => {
                   const cell = row.cells[workedDay.date]
-                  const mark = cell?.mark ?? null
+                  const mark = cell?.mark === 'R' ? 'T' : cell?.mark ?? null
                   return (
                     <td key={workedDay.date} className="border-b border-border/60 px-1 py-2.5 text-center">
                       <button
