@@ -20,13 +20,13 @@ export const schoolYearMonths = [
   { value: '05', label: 'Mayo' },
 ]
 
-export const markCycle: MonthlyAttendanceMark[] = [null, 'P', 'A', 'E', 'R']
+export const markCycle: MonthlyAttendanceMark[] = [null, 'P', 'A', 'E', 'T']
 
 export const markLabels: Record<Exclude<MonthlyAttendanceMark, null>, string> = {
   P: 'Presente',
   A: 'Ausente',
   E: 'Excusa',
-  R: 'Retardo',
+  T: 'Tardanza',
 }
 
 export function getInitialSchoolMonth() {
@@ -68,8 +68,8 @@ export function statusToMark(status: AttendanceStatus | null, notes?: string | n
   const normalizedStatus = typeof status === 'string' ? status.toLowerCase() : status
   if (normalizedStatus === 'present') return 'P'
   if (normalizedStatus === 'absent') return 'A'
-  if (normalizedStatus === 'late') return 'R'
-  if (normalizedStatus === 'excused') return notes === 'retired' ? 'R' : 'E'
+  if (normalizedStatus === 'late') return 'T'
+  if (normalizedStatus === 'excused') return notes === 'retired' ? 'T' : 'E'
   return null
 }
 
@@ -77,7 +77,7 @@ export function markToStatus(mark: MonthlyAttendanceMark): AttendanceStatus | nu
   if (mark === 'P') return 'present'
   if (mark === 'A') return 'absent'
   if (mark === 'E') return 'excused'
-  if (mark === 'R') return 'late'
+  if (mark === 'T') return 'late'
   return null
 }
 
@@ -97,6 +97,18 @@ export function sortStudentsForRoster(students: StudentAttendanceRow[]) {
   })
 }
 
+export function attendancePercentageFromMarks(marks: MonthlyAttendanceMark[]) {
+  const recordedMarks = marks.filter((mark): mark is Exclude<MonthlyAttendanceMark, null> => Boolean(mark))
+  if (!recordedMarks.length) return null
+
+  const absences = recordedMarks.filter((mark) => mark === 'A').length
+  const tardanzas = recordedMarks.filter((mark) => mark === 'T').length
+  const equivalentAbsences = absences + Math.floor(tardanzas / 3)
+  const attendedClasses = Math.max(0, recordedMarks.length - equivalentAbsences)
+
+  return (attendedClasses / recordedMarks.length) * 100
+}
+
 export function buildMonthlyRows(input: {
   students: StudentAttendanceRow[]
   workedDays: Array<{ date: string }>
@@ -110,6 +122,7 @@ export function buildMonthlyRows(input: {
 
   return sortStudentsForRoster(input.students).map<MonthlyStudentAttendanceRow>((student, index) => {
     const cells: Record<string, MonthlyAttendanceCell> = {}
+    const recordedMarks: MonthlyAttendanceMark[] = []
     let presentTotal = 0
 
     input.workedDays.forEach((day) => {
@@ -119,7 +132,8 @@ export function buildMonthlyRows(input: {
         mark: null,
       }
       cells[day.date] = cell
-      if (cell.mark === 'P') presentTotal += 1
+      if (recordedDates.has(day.date) && cell.mark) recordedMarks.push(cell.mark)
+      if (cell.mark === 'P' || cell.mark === 'E') presentTotal += 1
     })
 
     return {
@@ -127,9 +141,7 @@ export function buildMonthlyRows(input: {
       listNumber: student.listNumber ?? index + 1,
       cells,
       presentTotal,
-      attendancePercentage: recordedDates.size > 0
-        ? (presentTotal / recordedDates.size) * 100
-        : null,
+      attendancePercentage: attendancePercentageFromMarks(recordedMarks),
     }
   })
 }
@@ -138,9 +150,13 @@ export function computeMonthlyStats(rows: MonthlyStudentAttendanceRow[], workedD
   let absences = 0
   let excuses = 0
   let attendanceSum = 0
+  let rowsWithAttendance = 0
 
   rows.forEach((row) => {
-    attendanceSum += row.attendancePercentage ?? 0
+    if (row.attendancePercentage !== null) {
+      attendanceSum += row.attendancePercentage
+      rowsWithAttendance += 1
+    }
     Object.values(row.cells).forEach((cell) => {
       if (cell.mark === 'A') absences += 1
       if (cell.mark === 'E') excuses += 1
@@ -150,7 +166,7 @@ export function computeMonthlyStats(rows: MonthlyStudentAttendanceRow[], workedD
   return {
     totalStudents: rows.length,
     workedDays,
-    averageAttendance: rows.length > 0 ? attendanceSum / rows.length : null,
+    averageAttendance: rowsWithAttendance > 0 ? attendanceSum / rowsWithAttendance : null,
     absences,
     excuses,
   }
