@@ -17,7 +17,11 @@ export type StudentAttendanceRow = {
   attendanceId: string | null
 }
 
-export type MonthlyAttendanceMark = 'P' | 'A' | 'E' | 'T' | 'R' | null
+/**
+ * Las marcas nuevas usan P/A/E/T. Se mantiene compatibilidad tipada con marcas
+ * históricas (como R) mientras los registros existentes se normalizan a T al leerlos.
+ */
+export type MonthlyAttendanceMark = 'P' | 'A' | 'E' | 'T' | (string & {}) | null
 
 export type MonthlyAttendanceCell = {
   attendanceId: string | null
