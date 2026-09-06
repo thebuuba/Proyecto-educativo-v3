@@ -27,6 +27,7 @@ export const markLabels: Record<Exclude<MonthlyAttendanceMark, null>, string> = 
   A: 'Ausente',
   E: 'Excusa',
   T: 'Tardanza',
+  R: 'Tardanza',
 }
 
 export function getInitialSchoolMonth() {
@@ -77,12 +78,13 @@ export function markToStatus(mark: MonthlyAttendanceMark): AttendanceStatus | nu
   if (mark === 'P') return 'present'
   if (mark === 'A') return 'absent'
   if (mark === 'E') return 'excused'
-  if (mark === 'T') return 'late'
+  if (mark === 'T' || mark === 'R') return 'late'
   return null
 }
 
 export function getNextMark(current: MonthlyAttendanceMark) {
-  const index = markCycle.indexOf(current)
+  const normalizedCurrent = current === 'R' ? 'T' : current
+  const index = markCycle.indexOf(normalizedCurrent)
   return markCycle[(index + 1) % markCycle.length]
 }
 
@@ -102,7 +104,7 @@ export function attendancePercentageFromMarks(marks: MonthlyAttendanceMark[]) {
   if (!recordedMarks.length) return null
 
   const absences = recordedMarks.filter((mark) => mark === 'A').length
-  const tardanzas = recordedMarks.filter((mark) => mark === 'T').length
+  const tardanzas = recordedMarks.filter((mark) => mark === 'T' || mark === 'R').length
   const equivalentAbsences = absences + Math.floor(tardanzas / 3)
   const attendedClasses = Math.max(0, recordedMarks.length - equivalentAbsences)
 
