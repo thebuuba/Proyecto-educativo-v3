@@ -32,6 +32,7 @@ import {
 } from '@/components/ui/SemanticUI'
 import { getAttendanceCourses, getStudentsBySection } from '@/modules/attendance/services/attendanceService'
 import type { StudentAttendanceRow } from '@/modules/attendance/types'
+import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import {
   archiveJournalEntry,
   completeJournalFollowUp,
@@ -504,9 +505,18 @@ export function JournalForm({
     followUpStatus: entry?.followUpStatus ?? 'none',
   })
   const [students, setStudents] = useState<StudentAttendanceRow[]>([])
+  const [teamContext, setTeamContext] = useState<{ name: string; teammateIds: string[] } | null>(null)
+  const [teamLoading, setTeamLoading] = useState(false)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
   const sectionCourses = courses.filter((course) => course.sectionId === form.sectionId)
+  const contextualStudentMode = !entry && Boolean(initialStudentId)
+  const primaryStudent = contextualStudentMode
+    ? students.find((student) => student.studentId === initialStudentId) ?? null
+    : null
+  const teammates = contextualStudentMode && teamContext
+    ? students.filter((student) => teamContext.teammateIds.includes(student.studentId))
+    : []
 
   useEffect(() => {
     const course = courses.find((item) => item.sectionId === form.sectionId)
@@ -516,8 +526,51 @@ export function JournalForm({
     }
 
     setForm((current) => ({ ...current, schoolYearId: course.schoolYearId }))
-    void getStudentsBySection(course.sectionId, course.schoolYearId).then(setStudents)
-  }, [form.sectionId, courses])
+    void getStudentsBySection(course.sectionId, course.schoolYearId).then((rows) => {
+      setStudents(rows)
+      if (contextualStudentMode && rows.some((student) => student.studentId === initialStudentId)) {
+        setForm((current) => current.studentIds.includes(initialStudentId)
+          ? current
+          : { ...current, studentIds: [...current.studentIds, initialStudentId] })
+      }
+    })
+  }, [form.sectionId, courses, contextualStudentMode, initialStudentId])
+
+  useEffect(() => {
+    if (!contextualStudentMode || !form.sectionSubjectId) {
+      setTeamContext(null)
+      setTeamLoading(false)
+      return
+    }
+
+    let active = true
+    setTeamLoading(true)
+    setTeamContext(null)
+    void getCourseTeams(form.sectionSubjectId)
+      .then((teams) => {
+        if (!active) return
+        const team = teams.find((candidate) =>
+          candidate.members.some((member) =>
+            member.enrollment.student.id === initialStudentId
+            && member.status !== 'INACTIVE',
+          ),
+        )
+        setTeamContext(team ? {
+          name: team.name,
+          teammateIds: team.members
+            .filter((member) => member.enrollment.student.id !== initialStudentId && member.status !== 'INACTIVE')
+            .map((member) => member.enrollment.student.id),
+        } : null)
+      })
+      .catch(() => {
+        if (active) setTeamContext(null)
+      })
+      .finally(() => {
+        if (active) setTeamLoading(false)
+      })
+
+    return () => { active = false }
+  }, [contextualStudentMode, form.sectionSubjectId, initialStudentId])
 
   const submit = async (event: FormEvent) => {
     event.preventDefault()
@@ -604,7 +657,7 @@ export function JournalForm({
                   ...form,
                   sectionId: event.target.value || undefined,
                   sectionSubjectId: undefined,
-                  studentIds: [],
+                  studentIds: contextualStudentMode ? [initialStudentId] : [],
                 })
               }
             >
@@ -621,7 +674,11 @@ export function JournalForm({
               className="field"
               value={form.sectionSubjectId ?? ''}
               onChange={(event) =>
-                setForm({ ...form, sectionSubjectId: event.target.value || undefined })
+                setForm({
+                  ...form,
+                  sectionSubjectId: event.target.value || undefined,
+                  studentIds: contextualStudentMode ? [initialStudentId] : form.studentIds,
+                })
               }
             >
               <option value="">Sin asignatura</option>
@@ -634,7 +691,53 @@ export function JournalForm({
           </Field>
         </div>
 
-        {students.length > 0 ? (
+        {contextualStudentMode ? (
+          <div className="grid gap-3">
+            {primaryStudent ? (
+              <Field label="Estudiante">
+                <div className="flex items-center gap-2 rounded-xl border border-border bg-muted/35 px-3 py-2.5 text-sm font-semibold text-foreground">
+                  <input type="checkbox" checked readOnly disabled />
+                  <span>{primaryStudent.firstName} {primaryStudent.lastName}</span>
+                  <span className="ml-auto text-[10px] font-bold uppercase tracking-wide text-muted-foreground">Principal</span>
+                </div>
+              </Field>
+            ) : null}
+
+            {teamLoading ? (
+              <p className="rounded-xl bg-muted/50 px-3 py-3 text-xs text-muted-foreground">Buscando compañeros del equipo…</p>
+            ) : teamContext ? (
+              <Field label="Agregar también a compañeros del equipo">
+                <div className="rounded-xl border border-border p-2">
+                  <p className="mb-1 px-2 py-1 text-[11px] font-bold text-muted-foreground">Equipo: <span className="text-foreground">{teamContext.name}</span></p>
+                  {teammates.length ? teammates.map((student) => (
+                    <label
+                      key={student.studentId}
+                      className="flex items-center gap-2 rounded-lg px-2 py-2 text-sm hover:bg-muted"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={form.studentIds.includes(student.studentId)}
+                        onChange={(event) =>
+                          setForm({
+                            ...form,
+                            studentIds: event.target.checked
+                              ? [...new Set([...form.studentIds, student.studentId])]
+                              : form.studentIds.filter((id) => id !== student.studentId),
+                          })
+                        }
+                      />
+                      {student.firstName} {student.lastName}
+                    </label>
+                  )) : (
+                    <p className="px-2 py-2 text-xs text-muted-foreground">No hay otros integrantes activos en este equipo.</p>
+                  )}
+                </div>
+              </Field>
+            ) : (
+              <p className="rounded-xl bg-muted/50 px-3 py-3 text-xs text-muted-foreground">Este estudiante no pertenece a ningún equipo en esta asignatura.</p>
+            )}
+          </div>
+        ) : students.length > 0 ? (
           <Field label="Estudiantes relacionados">
             <div className="max-h-40 overflow-y-auto rounded-xl border border-border p-2">
               {students.map((student) => (
