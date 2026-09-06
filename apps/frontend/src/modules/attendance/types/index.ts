@@ -17,7 +17,7 @@ export type StudentAttendanceRow = {
   attendanceId: string | null
 }
 
-export type MonthlyAttendanceMark = 'P' | 'A' | 'E' | 'T' | null
+export type MonthlyAttendanceMark = 'P' | 'A' | 'E' | 'T' | 'R' | null
 
 export type MonthlyAttendanceCell = {
   attendanceId: string | null
