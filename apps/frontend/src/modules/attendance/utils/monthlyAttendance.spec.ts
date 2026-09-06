@@ -2,9 +2,12 @@ import { describe, expect, it } from 'vitest'
 
 import type { MonthlyAttendanceCell, StudentAttendanceRow } from '@/modules/attendance/types'
 import {
+  attendancePercentageFromMarks,
   buildMonthlyRows,
   computeMonthlyStats,
   getWorkedDaysForMonth,
+  markToStatus,
+  statusToMark,
 } from './monthlyAttendance'
 
 const student: StudentAttendanceRow = {
@@ -79,5 +82,21 @@ describe('monthlyAttendance', () => {
     expect(rows[0].attendancePercentage).toBe(100)
     expect(stats.workedDays).toBe(1)
     expect(stats.averageAttendance).toBe(100)
+  })
+
+  it('uses T for tardanza while preserving the late backend status', () => {
+    expect(statusToMark('late')).toBe('T')
+    expect(markToStatus('T')).toBe('late')
+    expect(markToStatus('R')).toBe('late')
+  })
+
+  it('does not penalize excused attendance in the percentage', () => {
+    expect(attendancePercentageFromMarks(['P', 'E', 'P', 'E'])).toBe(100)
+  })
+
+  it('converts every three tardanzas into one equivalent absence', () => {
+    expect(attendancePercentageFromMarks(['P', 'T', 'T'])).toBe(100)
+    expect(attendancePercentageFromMarks(['P', 'P', 'T', 'T', 'T'])).toBe(80)
+    expect(attendancePercentageFromMarks(['P', 'A', 'T', 'T', 'T'])).toBe(40)
   })
 })
