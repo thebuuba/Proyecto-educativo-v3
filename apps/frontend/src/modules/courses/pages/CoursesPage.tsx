@@ -3,7 +3,13 @@ import { useSearchParams } from 'react-router-dom'
 import { CoursesPage as CoursesPageBase } from './CoursesPageBase'
 import { GroupedSubjectActivitiesPage } from './GroupedSubjectActivitiesPage'
 
-export * from './CoursesPageBase'
+export {
+  ActivityBlockPickerDialog,
+  CourseSubjectCard,
+  EstudiantesTab,
+  SubjectActivitiesTab,
+  SubjectAppearanceDialog,
+} from './CoursesPageBase'
 
 export function CoursesPage() {
   const [searchParams] = useSearchParams()
