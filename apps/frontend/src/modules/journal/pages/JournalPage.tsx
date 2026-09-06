@@ -60,6 +60,8 @@ const typeInfo: Record<JournalEntryType, JournalTypeInfo> = {
   course_observation: { label: 'Observación de curso', tone: 'success', icon: ClipboardList },
 }
 
+export const journalEntryTypeLabel = (type: JournalEntryType) => typeInfo[type].label
+
 export function JournalPage() {
   const [params, setParams] = useSearchParams()
   const [entries, setEntries] = useState<JournalEntry[]>([])
@@ -458,7 +460,9 @@ function JournalCard({
   )
 }
 
-function JournalForm({
+export type JournalCourseOption = Pick<EnrollmentCourse, 'id' | 'sectionId' | 'schoolYearId' | 'gradeName' | 'sectionName' | 'subjectName'>
+
+export function JournalForm({
   entry,
   courses,
   initialSectionId,
@@ -469,7 +473,7 @@ function JournalForm({
   onSaved,
 }: {
   entry: JournalEntry | null
-  courses: EnrollmentCourse[]
+  courses: JournalCourseOption[]
   initialSectionId: string
   initialSubjectId: string
   initialType?: JournalEntryType
@@ -659,6 +663,7 @@ function JournalForm({
 
         <Field label="Etiquetas (separadas por coma)">
           <Input
+            placeholder="Ej.: participación, conducta, seguimiento"
             value={form.tags.join(', ')}
             onChange={(event) =>
               setForm({
@@ -667,6 +672,7 @@ function JournalForm({
               })
             }
           />
+          <span className="font-normal leading-5 text-muted-foreground">Opcional. Escribe palabras clave separadas por comas para organizar y encontrar esta anotación después.</span>
         </Field>
 
         <label className="flex items-center gap-2 text-sm font-bold">
@@ -824,7 +830,7 @@ function JournalEmpty({ title, action }: { title: string; action?: () => void })
   )
 }
 
-function uniqueSections(courses: EnrollmentCourse[]) {
+function uniqueSections(courses: JournalCourseOption[]) {
   return Array.from(
     new Map(
       courses.map((course) => [

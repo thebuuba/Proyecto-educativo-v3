@@ -88,7 +88,7 @@ export function Modal({
             </Button>
           </div>
         ) : null}
-        <div className={cn('overflow-y-auto', contentClassName)}>
+        <div className={cn('min-w-0 overflow-x-clip overflow-y-auto', contentClassName)}>
           {children}
         </div>
       </div>

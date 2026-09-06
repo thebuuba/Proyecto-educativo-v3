@@ -106,6 +106,9 @@ import {
   type CompactGradeRow,
 } from '@/modules/grading/utils/competencyGrades'
 import { getPlanningEntries } from '@/modules/planning/services/planningService'
+import { JournalForm, journalEntryTypeLabel, type JournalCourseOption } from '@/modules/journal/pages/JournalPage'
+import { deleteJournalEntry, getJournalEntries } from '@/modules/journal/services/journalService'
+import type { JournalEntry } from '@/modules/journal/types'
 import { getScheduleEntries } from '@/modules/schedule/services/scheduleService'
 import { useCourses } from '@/modules/courses/hooks/useCourses'
 import type {
@@ -1823,6 +1826,14 @@ function SubjectDetailView({
           activities={overview.activities}
           gradeRecords={overview.gradeRecords}
           teams={overview.teams}
+          journalCourse={item.assignment && schoolYearId ? {
+            id: item.assignment.id,
+            sectionId: item.section.id,
+            schoolYearId,
+            gradeName: item.grade.name,
+            sectionName: item.section.name,
+            subjectName: item.subjectName,
+          } : null}
         />
       ) : activeTab === 'equipos' ? (
         <CourseTeamsPanel
@@ -2155,7 +2166,7 @@ function PlanningDisabledPanel({ onActivities }: { onActivities: () => void }) {
   return <section className="flex min-h-72 items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><div className="max-w-lg"><span className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-muted text-muted-foreground"><ClipboardList className="size-6" /></span><div className="mt-4 flex items-center justify-center gap-2"><h2 className="text-xl font-extrabold">Planificaciones</h2><span className="rounded-full bg-slate-100 px-2 py-1 text-[9px] font-black uppercase tracking-wide text-slate-500">Próximamente</span></div><p className="mt-3 text-sm leading-6 text-muted-foreground">Este módulo estará disponible próximamente. Mientras tanto, puedes crear y gestionar tus actividades desde el apartado Actividades.</p><Button className="mt-5" onClick={onActivities}>Ir a Actividades</Button></div></section>
 }
 
-function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnroll, gradingStudents, activities, gradeRecords, teams }: {
+export function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnroll, gradingStudents, activities, gradeRecords, teams, journalCourse }: {
   students: StudentAttendanceRow[]
   loading: boolean
   error: string | null
@@ -2166,10 +2177,46 @@ function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnro
   activities: GradingActivity[]
   gradeRecords: GradeRecordRow[]
   teams: CourseTeam[]
+  journalCourse: JournalCourseOption | null
 }) {
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState<'all' | 'team' | 'no-team' | 'pending'>('all')
   const [selectedEnrollmentId, setSelectedEnrollmentId] = useState<string | null>(null)
+  const [journalStudentId, setJournalStudentId] = useState<string | null>(null)
+  const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([])
+  const [journalLoading, setJournalLoading] = useState(false)
+  const [journalError, setJournalError] = useState('')
+  const [viewingJournal, setViewingJournal] = useState<JournalEntry | null>(null)
+  const [editingJournal, setEditingJournal] = useState<JournalEntry | null>(null)
+  const [deletingJournal, setDeletingJournal] = useState<JournalEntry | null>(null)
+  const detailRef = useRef<HTMLDivElement>(null)
+  const toggleStudent = (enrollmentId: string) => setSelectedEnrollmentId((current) => current === enrollmentId ? null : enrollmentId)
+  const refreshJournal = useCallback(async () => {
+    setJournalLoading(true)
+    try {
+      setJournalEntries(await getJournalEntries())
+      setJournalError('')
+    } catch (cause) {
+      setJournalError(cause instanceof Error ? cause.message : 'No se pudieron cargar las observaciones.')
+    } finally {
+      setJournalLoading(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!selectedEnrollmentId) return
+    const frame = window.requestAnimationFrame(() => {
+      detailRef.current?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'nearest',
+      })
+    })
+    return () => window.cancelAnimationFrame(frame)
+  }, [selectedEnrollmentId])
+
+  useEffect(() => {
+    if (selectedEnrollmentId) void refreshJournal()
+  }, [refreshJournal, selectedEnrollmentId])
 
   if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando estudiantes...</div>
   if (error) return <ErrorState message={error} />
@@ -2257,6 +2304,11 @@ function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnro
     return matchesSearch && matchesFilter
   })
   const selected = rows.find((row) => row.enrollmentId === selectedEnrollmentId) ?? null
+  const selectedJournalEntries = selected ? journalEntries.filter((entry) =>
+    entry.status === 'ACTIVE'
+    && entry.sectionSubjectId === courseId
+    && entry.students.some(({ student }) => student.id === selected.studentId),
+  ) : []
   const pendingActivities = activities.filter((activity) => rows.some((row) => !scoreForActivity(row.records, row.enrollmentId, activity.id))).length
   const evaluatedRows = rows.filter((row) => row.average !== null)
   const courseAverage = evaluatedRows.length
@@ -2298,14 +2350,14 @@ function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnro
 
       <div className={cn('mt-4 grid gap-4', selected && 'xl:grid-cols-[minmax(0,1fr)_21rem]')}>
         <div className="min-w-0 overflow-hidden rounded-xl border border-border">
-          <div className="max-h-[30rem] overflow-auto">
-            <table className="w-full min-w-[760px] text-left text-xs">
+          <div className="max-h-[30rem] overflow-x-auto overflow-y-auto md:overflow-x-hidden">
+            <table className="w-full min-w-[720px] text-left text-xs md:min-w-0 md:table-fixed">
               <thead className="sticky top-0 z-10 border-b border-border bg-muted text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
                 <tr><th className="w-12 px-3 py-3 text-center">#</th><th className="px-3 py-3">Estudiante</th><th className="px-3 py-3">Equipo</th><th className="px-3 py-3">Actividades</th><th className="px-3 py-3">Promedio</th><th className="px-3 py-3">Asistencia</th><th className="px-3 py-3">Estado</th></tr>
               </thead>
               <tbody className="divide-y divide-border">
                 {filteredRows.map((row, index) => (
-                  <tr key={row.enrollmentId} tabIndex={0} role="button" onClick={() => setSelectedEnrollmentId(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') setSelectedEnrollmentId(row.enrollmentId) }} className={cn('cursor-pointer text-foreground outline-none transition hover:bg-primary/[0.035] focus:bg-primary/[0.05]', selectedEnrollmentId === row.enrollmentId && 'bg-primary/[0.055]')}>
+                  <tr key={row.enrollmentId} tabIndex={0} role="button" aria-expanded={selectedEnrollmentId === row.enrollmentId} aria-controls="subject-student-detail" onClick={() => toggleStudent(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleStudent(row.enrollmentId) } }} className={cn('cursor-pointer text-foreground outline-none transition hover:bg-primary/[0.035] focus:bg-primary/[0.05]', selectedEnrollmentId === row.enrollmentId && 'bg-primary/[0.055]')}>
                     <td className="px-3 py-3 text-center font-bold text-muted-foreground">{index + 1}</td>
                     <td className="px-3 py-3 font-bold">{row.lastName}, {row.firstName}</td>
                     <td className="px-3 py-3">{row.team ? <span className="font-semibold text-emerald-700">{row.team.name}</span> : <span className="text-muted-foreground">Sin equipo</span>}</td>
@@ -2322,10 +2374,27 @@ function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnro
           <p className="border-t border-border px-3 py-2 text-[11px] text-muted-foreground">Mostrando {filteredRows.length} de {rows.length} estudiantes</p>
         </div>
 
-        {selected ? <StudentDetailPanel student={selected} activities={activities} journalHref={`/bitacora?${new URLSearchParams({ action: 'create', type: 'student_observation', sectionId, ...(courseId ? { sectionSubjectId: courseId } : {}), studentId: selected.studentId }).toString()}`} onClose={() => setSelectedEnrollmentId(null)} /> : null}
+        {selected ? <div ref={detailRef} id="subject-student-detail"><StudentDetailPanel student={selected} activities={activities} journalEntries={selectedJournalEntries} journalLoading={journalLoading} journalError={journalError} onRetryJournal={() => void refreshJournal()} onViewJournal={setViewingJournal} onJournal={() => setJournalStudentId(selected.studentId)} onClose={() => setSelectedEnrollmentId(null)} /></div> : null}
       </div>
 
       <div className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-primary/[0.035] px-4 py-3 text-xs text-muted-foreground"><Sparkles className="size-4 text-primary" /><span><strong className="text-foreground">Consejo rápido:</strong> haz clic en cualquier estudiante para ver su progreso detallado.</span></div>
+
+      {journalStudentId && journalCourse ? <JournalForm
+        entry={null}
+        courses={[journalCourse]}
+        initialSectionId={sectionId}
+        initialSubjectId={courseId ?? ''}
+        initialType="student_observation"
+        initialStudentId={journalStudentId}
+        onClose={() => setJournalStudentId(null)}
+        onSaved={async () => { setJournalStudentId(null); await refreshJournal() }}
+      /> : null}
+
+      {viewingJournal ? <StudentJournalDetailModal entry={viewingJournal} onClose={() => setViewingJournal(null)} onEdit={() => { setEditingJournal(viewingJournal); setViewingJournal(null) }} onDelete={() => { setDeletingJournal(viewingJournal); setViewingJournal(null) }} /> : null}
+
+      {editingJournal && journalCourse ? <JournalForm entry={editingJournal} courses={[journalCourse]} initialSectionId={sectionId} initialSubjectId={courseId ?? ''} initialStudentId="" onClose={() => setEditingJournal(null)} onSaved={async () => { setEditingJournal(null); await refreshJournal() }} /> : null}
+
+      {deletingJournal ? <ConfirmDialog title="Eliminar observación permanentemente" description="Esta observación se borrará de la bitácora y no podrá recuperarse." confirmLabel="Eliminar permanentemente" destructive onClose={() => setDeletingJournal(null)} onConfirm={async () => { await deleteJournalEntry(deletingJournal.id); setDeletingJournal(null); await refreshJournal() }} /> : null}
     </section>
   )
 }
@@ -2338,10 +2407,15 @@ function StudentStatusBadge({ status }: { status: 'Al día' | 'En progreso' | 'S
   return <span className={cn('inline-flex rounded-full px-2 py-1 text-[10px] font-bold', status === 'Al día' ? 'bg-emerald-50 text-emerald-700' : status === 'En progreso' ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600')}>{status}</span>
 }
 
-function StudentDetailPanel({ student, activities, journalHref, onClose }: {
+function StudentDetailPanel({ student, activities, journalEntries, journalLoading, journalError, onRetryJournal, onViewJournal, onJournal, onClose }: {
   student: StudentAttendanceRow & { team: CourseTeam | null; records: GradeRecordRow[]; completed: number; average: number | null; progressStatus: 'Al día' | 'En progreso' | 'Sin actividad' }
   activities: GradingActivity[]
-  journalHref: string
+  journalEntries: JournalEntry[]
+  journalLoading: boolean
+  journalError: string
+  onRetryJournal: () => void
+  onViewJournal: (entry: JournalEntry) => void
+  onJournal: () => void
   onClose: () => void
 }) {
   const blockAverages = competencyBlocks.map((block) => {
@@ -2363,9 +2437,31 @@ function StudentDetailPanel({ student, activities, journalHref, onClose }: {
           return <details key={activity.id} className="group rounded-lg border border-border bg-card"><summary className="cursor-pointer list-none p-2.5"><div className="flex items-center justify-between gap-2"><span className="min-w-0 truncate text-xs font-bold text-foreground">{activity.name}</span><span className={cn('shrink-0 text-[10px] font-bold', record ? 'text-primary' : 'text-muted-foreground')}>{record ? `${record.score}/${record.maxScore}` : 'Pendiente'}</span></div><p className="mt-1 text-[10px] text-muted-foreground">{block?.shortName ?? 'Sin bloque'}</p></summary><div className="border-t border-border px-2.5 py-2 text-[11px] text-muted-foreground">{record ? `Resultado: ${Math.round((record.score / record.maxScore) * 100)}%. ${record.status ?? 'Calificada'}.` : 'Esta actividad todavía no ha sido completada o calificada.'}</div></details>
         }) : <p className="rounded-lg bg-muted px-3 py-5 text-center text-xs text-muted-foreground">No hay actividades creadas.</p>}
       </div>
-      <Link to={journalHref} className="mt-4 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl border border-border text-xs font-extrabold text-primary hover:bg-primary/[0.04]"><BookMarked className="size-4" /> Agregar observación a bitácora</Link>
+      <div className="mt-5 border-t border-border pt-4">
+        <div className="flex items-center justify-between gap-2"><h4 className="text-xs font-extrabold text-foreground">Observaciones de bitácora</h4>{journalEntries.length ? <span className="rounded-full bg-primary/10 px-2 py-1 text-[10px] font-extrabold text-primary">{journalEntries.length}</span> : null}</div>
+        {journalLoading ? <p className="mt-2 rounded-lg bg-muted/60 px-3 py-3 text-xs text-muted-foreground">Cargando observaciones…</p> : journalError ? <div className="mt-2 rounded-lg border border-destructive/25 bg-destructive/10 p-3"><p className="text-xs text-destructive">{journalError}</p><button type="button" onClick={onRetryJournal} className="mt-2 text-xs font-extrabold text-destructive underline-offset-2 hover:underline">Volver a intentar</button></div> : journalEntries.length ? <div className="mt-2 max-h-52 space-y-2 overflow-y-auto pr-1">{journalEntries.map((entry) => <button key={entry.id} type="button" onClick={() => onViewJournal(entry)} aria-label={`Ver observación ${entry.title || journalEntryTypeLabel(entry.entryType)}`} className="group w-full rounded-xl border border-border bg-card p-3 text-left transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-sm motion-reduce:transform-none"><div className="flex items-start gap-2"><span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary"><BookMarked className="size-4" aria-hidden="true" /></span><span className="min-w-0 flex-1"><strong className="block truncate text-xs text-foreground">{entry.title || journalEntryTypeLabel(entry.entryType)}</strong><span className="mt-1 line-clamp-2 block text-[11px] leading-4 text-muted-foreground">{entry.content}</span><span className="mt-2 block text-[10px] font-semibold text-primary">{formatJournalDate(entry.occurredAt)}</span></span><ChevronRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true" /></div></button>)}</div> : <p className="mt-2 rounded-lg bg-muted/50 px-3 py-3 text-xs leading-5 text-muted-foreground">Todavía no hay observaciones para este estudiante en la asignatura.</p>}
+      </div>
+      <button type="button" onClick={onJournal} className="mt-3 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl border border-border text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><BookMarked className="size-4" aria-hidden="true" /> {journalEntries.length ? 'Agregar otra observación' : 'Agregar observación a bitácora'}</button>
     </aside>
   )
+}
+
+function StudentJournalDetailModal({ entry, onClose, onEdit, onDelete }: { entry: JournalEntry; onClose: () => void; onEdit: () => void; onDelete: () => void }) {
+  return <Modal title={entry.title || journalEntryTypeLabel(entry.entryType)} description="Detalle de la observación registrada" icon={BookMarked} tone="info" className="max-w-2xl" onClose={onClose}>
+    <article className="p-5 sm:p-6">
+      <div className="flex flex-wrap gap-2 text-[11px] font-bold"><span className="rounded-full bg-primary/10 px-3 py-1.5 text-primary">{journalEntryTypeLabel(entry.entryType)}</span>{entry.requiresFollowUp ? <span className="rounded-full bg-warning/25 px-3 py-1.5 text-foreground">Requiere seguimiento</span> : null}</div>
+      <dl className="mt-5 grid gap-3 rounded-2xl bg-muted/45 p-4 text-xs sm:grid-cols-2"><div><dt className="font-bold uppercase tracking-wide text-muted-foreground">Fecha</dt><dd className="mt-1 font-semibold text-foreground">{formatJournalDate(entry.occurredAt, true)}</dd></div><div><dt className="font-bold uppercase tracking-wide text-muted-foreground">Contexto</dt><dd className="mt-1 font-semibold text-foreground">{entry.section ? `${entry.section.grade.name} ${entry.section.name}` : 'Sin curso'}{entry.sectionSubject ? ` · ${entry.sectionSubject.subject.name}` : ''}</dd></div></dl>
+      <div className="mt-5"><h4 className="text-xs font-extrabold uppercase tracking-wide text-muted-foreground">Observación</h4><p className="mt-2 whitespace-pre-wrap rounded-2xl border border-border bg-card p-4 text-sm leading-6 text-foreground">{entry.content}</p></div>
+      {entry.tags.length ? <div className="mt-4 flex flex-wrap gap-2">{entry.tags.map((tag) => <span key={tag} className="rounded-full bg-muted px-3 py-1.5 text-xs font-semibold text-muted-foreground">#{tag}</span>)}</div> : null}
+      <footer className="mt-6 flex flex-col-reverse gap-2 border-t border-border pt-4 sm:flex-row sm:items-center"><Button variant="destructive" onClick={onDelete}><Trash2 className="size-4" aria-hidden="true" /> Eliminar</Button><div className="flex flex-1 justify-end gap-2"><Button variant="outline" onClick={onClose}>Cerrar</Button><Button onClick={onEdit}><Edit3 className="size-4" aria-hidden="true" /> Editar observación</Button></div></footer>
+    </article>
+  </Modal>
+}
+
+function formatJournalDate(value: string, includeTime = false) {
+  return new Date(value).toLocaleString('es', includeTime
+    ? { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' }
+    : { day: 'numeric', month: 'short', year: 'numeric' })
 }
 
 function DetailMetric({ value, label }: { value: string; label: string }) {
