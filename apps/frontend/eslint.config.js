@@ -23,4 +23,10 @@ export default defineConfig([
       'react-hooks/set-state-in-effect': 'off',
     },
   },
+  {
+    files: ['src/modules/journal/pages/JournalPage.tsx'],
+    rules: {
+      'react-refresh/only-export-components': ['error', { allowExportNames: ['journalEntryTypeLabel'] }],
+    },
+  },
 ])
