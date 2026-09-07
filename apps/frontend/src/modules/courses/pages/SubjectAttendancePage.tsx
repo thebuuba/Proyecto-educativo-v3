@@ -1,5 +1,5 @@
 import { CalendarCheck2, CalendarDays, CheckCircle2, UserRound, X } from 'lucide-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -34,6 +34,7 @@ type Props = {
 
 export function SubjectAttendancePanel({ sectionSubjectId, students, loading = false, error = null, courseId, courseLabel, subjectName, schoolYearName }: Props) {
   const roster = useMemo(() => sortStudentsForRoster(students), [students])
+  const attendanceEditorRef = useRef<HTMLElement | null>(null)
   const [history, setHistory] = useState<ClassAttendanceHistoryRecord[]>([])
   const [periodId, setPeriodId] = useState<string | null>(null)
   const [fetching, setFetching] = useState(true)
@@ -68,6 +69,19 @@ export function SubjectAttendancePanel({ sectionSubjectId, students, loading = f
     document.addEventListener('keydown', onKeyDown)
     return () => document.removeEventListener('keydown', onKeyDown)
   }, [selectedStudentId])
+
+  useEffect(() => {
+    if (!editing) return
+    const frame = window.requestAnimationFrame(() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      attendanceEditorRef.current?.scrollIntoView({
+        behavior: reduceMotion ? 'auto' : 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      })
+    })
+    return () => window.cancelAnimationFrame(frame)
+  }, [editing])
 
   const date = editing ? selectedDate : todayKey()
   const monthLabel = new Date(date + 'T12:00:00').toLocaleDateString('es-DO', { month: 'long', year: 'numeric' })
@@ -172,7 +186,7 @@ export function SubjectAttendancePanel({ sectionSubjectId, students, loading = f
         })}</div>
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2"><p className="text-[11px] leading-5 text-muted-foreground">Puedes abrir cualquiera para revisar o corregir lo que guardaste ese día.</p><Link to={buildSubjectAttendanceHref(sectionSubjectId, courseId)} className="inline-flex min-h-10 items-center text-sm font-bold text-primary-variant">Ver historial completo →</Link></div>
       </section> : !editing && !error && !failure ? <EmptyState title="Todavía no hay registros de asistencia" description="Pulsa Pasar lista para registrar la primera asistencia de esta asignatura." /> : null}
-      {editing ? <section className="min-w-0 overflow-hidden rounded-3xl bg-card shadow-sm" aria-label="Pasar asistencia">
+      {editing ? <section ref={attendanceEditorRef} className="min-w-0 scroll-mt-5 overflow-hidden rounded-3xl bg-card shadow-sm sm:scroll-mt-6" aria-label="Pasar asistencia">
         <header className="space-y-3 border-b border-border p-4">
           <div className="flex items-start justify-between gap-3"><div><h3 className="text-base font-extrabold text-foreground">Pasar asistencia</h3><p className="mt-1 text-sm font-semibold text-foreground">{formatDate(selectedDate)}</p></div>
             <Button variant="outline" disabled={saving} onClick={() => dirty ? setPending('close') : closeEditor()}><X className="size-4" aria-hidden="true" /> Cerrar</Button>
