@@ -59,7 +59,8 @@ export function GradingPage() {
 
   const isFinalView = selectedPeriodId === 'final'
   const groupedSectionSubjects = groupSectionSubjects(sectionSubjects)
-  const [hideFilters, setHideFilters] = useState(false)
+  const opensActivityWorkspaceDirectly = Boolean(requestedAction || requestedActivityId)
+  const [hideFilters, setHideFilters] = useState(opensActivityWorkspaceDirectly)
   const [teams, setTeams] = useState<CourseTeam[]>([])
 
   useEffect(() => {
