@@ -76,25 +76,30 @@ export function GradingPage() {
   }, [selectedSsId])
 
   function goToSavedActivity(activity: GradingActivity, mode: 'created' | 'updated') {
-    if (!returnsToSubject || !returnCourseId || !returnSubjectId) return
-    navigate(`/cursos?${new URLSearchParams({
-      courseId: returnCourseId,
-      subjectId: returnSubjectId,
-      tab: returnTab || 'actividades',
-      activitySaved: activity.id,
-      activitySavedMode: mode,
-    }).toString()}`)
+    if (returnsToSubject && returnCourseId && returnSubjectId) {
+      navigate(`/cursos?${new URLSearchParams({
+        courseId: returnCourseId,
+        subjectId: returnSubjectId,
+        tab: returnTab || 'actividades',
+        activitySaved: activity.id,
+        activitySavedMode: mode,
+      }).toString()}`)
+      return
+    }
+    if (returnsToActivities) {
+      navigate(`/actividades?${new URLSearchParams({ activitySaved: activity.id, activitySavedMode: mode }).toString()}`)
+    }
   }
 
   async function handleAddActivity(activity: Omit<GradingActivity, 'id'>) {
     const created = await addActivity(activity)
-    if (returnsToSubject) goToSavedActivity(created, 'created')
+    if (returnsToSubject || returnsToActivities) goToSavedActivity(created, 'created')
     return created
   }
 
   async function handleUpdateActivity(activity: GradingActivity) {
     const updated = await updateActivity(activity)
-    if (returnsToSubject) goToSavedActivity(updated, 'updated')
+    if (returnsToSubject || returnsToActivities) goToSavedActivity(updated, 'updated')
     return updated
   }
 
