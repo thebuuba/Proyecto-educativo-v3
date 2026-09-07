@@ -93,9 +93,9 @@ import { CourseTeamsPanel } from '@/modules/courses/components/CourseTeamsPanel'
 import { CourseStudentsPanel } from '@/modules/courses/components/CourseStudentsPanel'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseAdvancedFilters } from '@/modules/courses/components/CoursesAdvancedFiltersDrawer'
-import { getClassAttendanceHistory, getCurrentAcademicPeriodId, getStudentsBySection, upsertAttendance, type ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
-import type { MonthlyAttendanceMark, StudentAttendanceRow } from '@/modules/attendance/types'
-import { markToStatus, sortStudentsForRoster, statusToMark } from '@/modules/attendance/utils/monthlyAttendance'
+import { getStudentsBySection } from '@/modules/attendance/services/attendanceService'
+import type { StudentAttendanceRow } from '@/modules/attendance/types'
+import { SubjectAttendancePanel } from './SubjectAttendancePage'
 import { getAcademicPeriods, getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { activityRubricConfiguration } from '@/modules/grading/components/GradingBook'
@@ -1664,7 +1664,7 @@ function SubjectDetailView({
     const next = new URLSearchParams(teamSearchParams)
     if (nextTab !== 'equipos') next.delete('teamId')
     if (nextTab !== 'actividades') next.delete('activityId')
-    if (nextTab === 'actividades' || nextTab === 'planificaciones') next.set('tab', nextTab)
+    if (nextTab === 'actividades' || nextTab === 'planificaciones' || nextTab === 'asistencia') next.set('tab', nextTab)
     else next.delete('tab')
     setTeamSearchParams(next, { replace: true })
   }
@@ -1862,7 +1862,7 @@ function SubjectDetailView({
           onActivityChange={changeActivityRoute}
         />
       ) : activeTab === 'asistencia' ? (
-        <AsistenciaTab sectionSubjectId={item.assignment?.id ?? null} students={students} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} schoolYearName={schoolYearName} />
+        <SubjectAttendancePanel key={item.assignment?.id} sectionSubjectId={item.assignment?.id ?? null} students={students} loading={studentsLoading} error={studentsError} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} schoolYearName={schoolYearName} />
       ) : activeTab === 'calificaciones' ? (
         <CalificacionesTab sectionSubjectId={item.assignment?.id ?? null} schoolYearId={schoolYearId} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} />
       ) : activeTab === 'planificaciones' ? (
@@ -2478,84 +2478,6 @@ function EmptyStep({ number, text }: { number: string; text: string }) {
   )
 }
 
-function AsistenciaTab({ sectionSubjectId, students, courseId, courseLabel, subjectName, schoolYearName }: { sectionSubjectId: string | null; students: StudentAttendanceRow[]; courseId: string; courseLabel: string; subjectName: string; schoolYearName: string }) {
-  const [history, setHistory] = useState<ClassAttendanceHistoryRecord[]>([])
-  const [academicPeriodId, setAcademicPeriodId] = useState<string | null>(null)
-  const [selectedDate, setSelectedDate] = useState(todayKey)
-  const [marks, setMarks] = useState<Record<string, MonthlyAttendanceMark>>({})
-  const [editing, setEditing] = useState(false)
-  const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [saving, setSaving] = useState(false)
-  const [saved, setSaved] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const roster = useMemo(() => sortStudentsForRoster(students), [students])
-
-  const load = useCallback(async () => {
-    if (!sectionSubjectId) return
-    setLoading(true)
-    setError(null)
-    try {
-      const [records, periodId] = await Promise.all([getClassAttendanceHistory(sectionSubjectId), getCurrentAcademicPeriodId()])
-      setHistory(records)
-      setAcademicPeriodId(periodId)
-    } catch (caught) {
-      setError(caught instanceof Error ? caught.message : 'No se pudo cargar la asistencia.')
-    } finally {
-      setLoading(false)
-    }
-  }, [sectionSubjectId])
-
-  useEffect(() => { void load() }, [load])
-
-  const sessions = useMemo(() => summarizeAttendanceSessions(history, roster.length), [history, roster.length])
-  const todaySession = sessions.find((session) => session.date === todayKey()) ?? null
-  const periodAttendance = history.length ? Math.round((history.filter((record) => statusToMark(record.status, record.notes) === 'P').length / history.length) * 100) : null
-  const currentCounts = countAttendanceMarks(Object.values(marks))
-  const openSession = (date: string) => {
-    const records = history.filter((record) => record.attendanceDate.slice(0, 10) === date)
-    setSelectedDate(date)
-    setMarks(Object.fromEntries(roster.map((student) => {
-      const record = records.find((item) => item.enrollmentId === student.enrollmentId)
-      return [student.enrollmentId, record ? statusToMark(record.status, record.notes) : records.length ? null : 'P']
-    })))
-    setSaved(false)
-    setEditing(true)
-  }
-
-  if (!sectionSubjectId) return <EmptyState title="Sin asignatura" description="Este curso no tiene una asignatura asignada." />
-  if (loading) return <div className="flex min-h-64 items-center justify-center text-sm font-semibold text-muted-foreground">Cargando asistencia…</div>
-  if (error) return <ErrorState message={error} />
-
-  const todayStats = todaySession?.counts
-  return <section className="space-y-4" aria-labelledby="subject-attendance-title">
-    <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><div><h2 id="subject-attendance-title" className="text-xl font-extrabold">Asistencia</h2><p className="mt-1 text-sm text-muted-foreground">Registra y consulta la asistencia de esta asignatura.</p><p className="mt-1 text-xs font-semibold text-muted-foreground">{courseLabel} · {subjectName} · Año escolar {schoolYearName}</p></div><Button className="h-12 px-6" onClick={() => openSession(todayKey())}><CalendarCheck2 className="size-5" /> {todaySession ? 'Abrir asistencia de hoy' : 'Pasar lista'}</Button></header>
-
-    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-      <AttendanceMetric label="Presentes hoy" value={todayStats ? String(todayStats.P) : '—'} tone="emerald" />
-      <AttendanceMetric label="Ausentes hoy" value={todayStats ? String(todayStats.A) : '—'} tone="red" />
-      <AttendanceMetric label="Retardos hoy" value={todayStats ? String(todayStats.R) : '—'} tone="amber" />
-      <AttendanceMetric label="Asistencia hoy" value={todaySession ? `${todaySession.percentage}%` : 'Sin registrar'} tone="violet" />
-      <AttendanceMetric label="Promedio del período" value={periodAttendance === null ? '—' : `${periodAttendance}%`} tone="blue" />
-    </div>
-
-    {!sessions.length && !editing ? <div className="flex min-h-64 flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><span className="flex size-14 items-center justify-center rounded-2xl bg-primary/8 text-primary"><CalendarCheck2 className="size-6" /></span><h3 className="mt-4 text-lg font-extrabold">Todavía no hay registros de asistencia</h3><p className="mt-2 max-w-lg text-sm text-muted-foreground">Registra la primera asistencia de esta asignatura para comenzar a llevar el seguimiento.</p><Button className="mt-5" onClick={() => openSession(todayKey())}><CheckCircle2 className="size-4" /> Pasar primera lista</Button></div> : <div className={cn('grid gap-4', editing ? 'xl:grid-cols-[22rem_minmax(0,1fr)]' : '')}>
-      {sessions.length ? <section className="rounded-2xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center justify-between gap-3"><h3 className="text-sm font-extrabold">Asistencias recientes</h3><Link to={buildSubjectAttendanceHref(sectionSubjectId, courseId)} className="text-xs font-extrabold text-primary">Ver historial completo →</Link></div><div className="mt-3 space-y-2">{sessions.slice(0, 5).map((session) => <button key={session.date} type="button" onClick={() => openSession(session.date)} className={cn('flex w-full items-center gap-3 rounded-xl border p-3 text-left transition hover:border-primary/30 hover:bg-primary/[0.02]', selectedDate === session.date && editing ? 'border-primary/30 bg-primary/[0.03]' : 'border-border')}><CalendarDays className="size-4 shrink-0 text-primary" /><span className="min-w-0 flex-1"><strong className="block text-xs">{formatAttendanceDate(session.date)}</strong><span className="mt-1 block text-[10px] text-muted-foreground">{session.counts.P} P · {session.counts.A} A · {session.counts.E} E · {session.counts.R} R</span></span><strong className="text-sm text-primary">{session.percentage}%</strong></button>)}</div><p className="mt-4 rounded-xl bg-blue-50 px-3 py-2 text-[10px] leading-4 text-blue-700">Los porcentajes se calculan con las clases registradas en esta asignatura.</p></section> : null}
-      {editing ? <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex flex-col gap-3 border-b border-border p-4 lg:flex-row lg:items-center"><div className="min-w-0 flex-1"><h3 className="text-base font-extrabold">Pasar asistencia</h3><p className="mt-1 text-xs text-muted-foreground">{courseLabel} · {subjectName} · {formatAttendanceDate(selectedDate)}</p></div><input type="date" aria-label="Fecha de asistencia" value={selectedDate} onChange={(event) => openSession(event.target.value)} className="h-10 rounded-xl border border-border px-3 text-sm font-bold" /><Button variant="outline" className="h-10" onClick={() => setMarks(Object.fromEntries(roster.map((student) => [student.enrollmentId, 'P'])))}>Todos presentes</Button><Button variant="outline" className="h-10" onClick={() => setMarks(Object.fromEntries(roster.map((student) => [student.enrollmentId, null])))}>Limpiar</Button><Button disabled={saving || !academicPeriodId || Object.values(marks).some((mark) => !mark)} className="h-10" onClick={async () => { if (!academicPeriodId) return; setSaving(true); setError(null); try { await Promise.all(roster.map((student) => { const mark = marks[student.enrollmentId]; const status = markToStatus(mark); if (!status) return Promise.resolve(); return upsertAttendance({ type: 'class', enrollmentId: student.enrollmentId, academicPeriodId, sectionSubjectId, attendanceDate: selectedDate, status }) })); await load(); setSaved(true) } catch (caught) { setError(caught instanceof Error ? caught.message : 'No se pudo guardar la asistencia.') } finally { setSaving(false) } }}><CheckCircle2 className="size-4" /> {saving ? 'Guardando…' : 'Guardar asistencia'}</Button></header><div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-muted/20 px-4 py-3"><AttendanceLegend /><p className="text-xs font-bold text-muted-foreground">{roster.length} estudiantes · {currentCounts.P} P · {currentCounts.A} A · {currentCounts.E} E · {currentCounts.R} R · {roster.length ? Math.round((currentCounts.P / roster.length) * 100) : 0}%</p></div>{saved ? <p role="status" className="border-b border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-bold text-emerald-700">Asistencia guardada correctamente.</p> : null}<div className="divide-y divide-border">{roster.map((student, index) => { const mark = marks[student.enrollmentId] ?? null; return <div key={student.enrollmentId} className="grid grid-cols-[2.5rem_minmax(0,1fr)_14rem] items-center gap-3 px-4 py-3 max-sm:grid-cols-[2rem_minmax(0,1fr)]"><span className="text-xs font-bold text-muted-foreground">{String(student.listNumber ?? index + 1).padStart(2, '0')}</span><button type="button" onClick={() => setSelectedStudentId(student.enrollmentId)} className="truncate text-left text-sm font-bold hover:text-primary">{student.firstName} {student.lastName}</button><div className="grid grid-cols-4 gap-2 max-sm:col-span-2">{(['P', 'A', 'E', 'R'] as const).map((value) => <button key={value} type="button" aria-label={`${value} ${student.firstName} ${student.lastName}`} aria-pressed={mark === value} onClick={() => setMarks((current) => ({ ...current, [student.enrollmentId]: value }))} className={cn('h-10 rounded-lg border text-sm font-extrabold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', attendanceMarkClass(value, mark === value))}>{value}</button>)}</div></div> })}</div></section> : null}
-    </div>}
-    {selectedStudentId ? <AttendanceStudentSummary enrollmentId={selectedStudentId} students={roster} history={history} onClose={() => setSelectedStudentId(null)} /> : null}
-  </section>
-}
-
-type AttendanceCounts = Record<'P' | 'A' | 'E' | 'R', number>
-function countAttendanceMarks(marks: MonthlyAttendanceMark[]): AttendanceCounts { return marks.reduce<AttendanceCounts>((counts, mark) => { if (mark) counts[mark] += 1; return counts }, { P: 0, A: 0, E: 0, R: 0 }) }
-function summarizeAttendanceSessions(records: ClassAttendanceHistoryRecord[], totalStudents: number) { const grouped = new Map<string, MonthlyAttendanceMark[]>(); records.forEach((record) => { const date = record.attendanceDate.slice(0, 10); grouped.set(date, [...(grouped.get(date) ?? []), statusToMark(record.status, record.notes)]) }); return [...grouped].map(([date, marks]) => { const counts = countAttendanceMarks(marks); return { date, counts, percentage: totalStudents ? Math.round((counts.P / totalStudents) * 100) : 0 } }).sort((left, right) => right.date.localeCompare(left.date)) }
-function todayKey() { const today = new Date(); return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}` }
-function formatAttendanceDate(value: string) { const date = new Date(`${value}T12:00:00`); return date.toLocaleDateString('es-DO', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }) }
-function attendanceMarkClass(mark: Exclude<MonthlyAttendanceMark, null>, active: boolean) { if (!active) return 'border-border text-muted-foreground hover:bg-muted'; return mark === 'P' ? 'border-emerald-300 bg-emerald-50 text-emerald-700' : mark === 'A' ? 'border-red-300 bg-red-50 text-red-700' : mark === 'E' ? 'border-amber-300 bg-amber-50 text-amber-700' : 'border-violet-300 bg-violet-50 text-violet-700' }
-function AttendanceLegend() { return <div className="flex flex-wrap gap-3">{([['P', 'Presente'], ['A', 'Ausente'], ['E', 'Excusa'], ['R', 'Retardo']] as const).map(([mark, label]) => <span key={mark} className="flex items-center gap-1.5 text-[10px] font-bold text-muted-foreground"><strong className={cn('grid size-6 place-items-center rounded-md border', attendanceMarkClass(mark, true))}>{mark}</strong>{label}</span>)}</div> }
-function AttendanceMetric({ label, value, tone }: { label: string; value: string; tone: 'emerald' | 'red' | 'amber' | 'violet' | 'blue' }) { const tones = { emerald: 'bg-emerald-50 text-emerald-700', red: 'bg-red-50 text-red-700', amber: 'bg-amber-50 text-amber-700', violet: 'bg-violet-50 text-violet-700', blue: 'bg-blue-50 text-blue-700' }; return <div className="rounded-2xl border border-border bg-card p-4 shadow-sm"><span className={cn('inline-flex rounded-lg px-2 py-1 text-[10px] font-extrabold', tones[tone])}>{label}</span><strong className="mt-3 block text-2xl leading-none">{value}</strong></div> }
-function AttendanceStudentSummary({ enrollmentId, students, history, onClose }: { enrollmentId: string; students: StudentAttendanceRow[]; history: ClassAttendanceHistoryRecord[]; onClose: () => void }) { const student = students.find((item) => item.enrollmentId === enrollmentId); if (!student) return null; const records = history.filter((record) => record.enrollmentId === enrollmentId); const marks = records.map((record) => statusToMark(record.status, record.notes)); const counts = countAttendanceMarks(marks); const percentage = records.length ? Math.round((counts.P / records.length) * 100) : null; return <section className="rounded-2xl border border-primary/20 bg-card p-4 shadow-sm"><div className="flex items-start justify-between gap-3"><div><h3 className="font-extrabold">{student.firstName} {student.lastName}</h3><p className="mt-1 text-xs text-muted-foreground">Asistencia en esta asignatura · {percentage === null ? 'Sin registros' : `${percentage}%`}</p></div><button type="button" onClick={onClose} aria-label="Cerrar resumen del estudiante" className="grid size-10 place-items-center rounded-xl hover:bg-muted"><X className="size-4" /></button></div><div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4"><AttendanceMetric label="Presentes" value={String(counts.P)} tone="emerald" /><AttendanceMetric label="Ausencias" value={String(counts.A)} tone="red" /><AttendanceMetric label="Excusas" value={String(counts.E)} tone="amber" /><AttendanceMetric label="Retardos" value={String(counts.R)} tone="violet" /></div><div className="mt-4 flex flex-wrap gap-2">{records.slice(0, 5).map((record) => <span key={record.id} className="rounded-lg bg-muted/40 px-3 py-2 text-xs"><strong>{formatAttendanceDate(record.attendanceDate.slice(0, 10))}</strong> · {statusToMark(record.status, record.notes)}</span>)}</div></section> }
 
 function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLabel, subjectName }: { sectionSubjectId: string | null; schoolYearId: string | null; courseId: string; courseLabel: string; subjectName: string }) {
   const [periods, setPeriods] = useState<Array<{ id: string; name: string }>>([])

@@ -97,6 +97,7 @@ describe('monthlyAttendance', () => {
   it('converts every three tardanzas into one equivalent absence', () => {
     expect(attendancePercentageFromMarks(['P', 'T', 'T'])).toBe(100)
     expect(attendancePercentageFromMarks(['P', 'P', 'T', 'T', 'T'])).toBe(80)
-    expect(attendancePercentageFromMarks(['P', 'A', 'T', 'T', 'T'])).toBe(40)
+    expect(attendancePercentageFromMarks(['P', 'A', 'T', 'T', 'T'])).toBe(60)
+    expect(attendancePercentageFromMarks(['T', 'T', 'T', 'T', 'T', 'T'])).toBeCloseTo(100 * 4 / 6)
   })
 })
