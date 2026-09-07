@@ -1,0 +1,17 @@
+/* Hace inequívoca la acción de calificar en la tabla de actividades sin alterar la navegación. */
+a[aria-label^='Evaluar '] > svg {
+  display: none;
+}
+
+a[aria-label^='Evaluar ']::before {
+  content: 'A+';
+  display: inline-grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  border-radius: 0.45rem;
+  font-size: 0.65rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
