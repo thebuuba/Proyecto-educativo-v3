@@ -5,6 +5,7 @@ import './subject-activities-actions.css'
 import { CoursesPage as CoursesPageBase } from './CoursesPageBase'
 import { GroupedSubjectActivitiesPage } from './GroupedSubjectActivitiesPage'
 import { SubjectGradesPage } from './SubjectGradesPage'
+import { SubjectSchedulePage } from './SubjectSchedulePage'
 
 export {
   ActivityBlockPickerDialog,
@@ -48,5 +49,6 @@ export function CoursesPage() {
 
   if (hasSubjectContext && tab === 'actividades') return <GroupedSubjectActivitiesPage />
   if (hasSubjectContext && tab === 'calificaciones') return <SubjectGradesPage />
+  if (hasSubjectContext && tab === 'horario') return <SubjectSchedulePage />
   return <CoursesPageBase />
 }
