@@ -1,6 +1,6 @@
-import { BarChart3, CheckSquare, Edit3, Eye, GraduationCap, Plus, Search } from 'lucide-react'
+import { BarChart3, CheckSquare, ClipboardCheck, Edit3, Eye, GraduationCap, Plus, Search } from 'lucide-react'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { EmptyState } from '@/components/ui/EmptyState'
@@ -17,6 +17,9 @@ const emptyWorkspace: ActivityCenterWorkspace = { sectionSubjects: [], academicP
 
 export function ActivitiesPage() {
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const savedActivityId = searchParams.get('activitySaved')
+  const savedMode = searchParams.get('activitySavedMode') === 'updated' ? 'updated' : 'created'
   const [workspace, setWorkspace] = useState(emptyWorkspace)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -40,6 +43,7 @@ export function ActivitiesPage() {
 
   const courses = useMemo(() => Array.from(new Map(workspace.sectionSubjects.map((item) => [item.sectionId ?? item.id, { id: item.sectionId ?? item.id, label: `${item.gradeName} ${item.sectionName}` }])).values()), [workspace.sectionSubjects])
   const subjects = workspace.sectionSubjects.filter((item) => courseId === 'all' || item.sectionId === courseId)
+  const savedActivity = workspace.activities.find((activity) => activity.id === savedActivityId) ?? null
   const visible = workspace.activities.filter((activity) => {
     const text = `${activity.name} ${activity.courseLabel} ${activity.subjectName}`.toLocaleLowerCase('es')
     return (!query.trim() || text.includes(query.trim().toLocaleLowerCase('es')))
@@ -50,6 +54,13 @@ export function ActivitiesPage() {
       && (status === 'all' || activityState(activity) === status)
   })
   const statusCounts = useMemo(() => ({ all: workspace.activities.length, pending: workspace.activities.filter((activity) => activityState(activity) === 'pending').length, partial: workspace.activities.filter((activity) => activityState(activity) === 'partial').length, graded: workspace.activities.filter((activity) => activityState(activity) === 'graded').length }), [workspace.activities])
+
+  const clearSavedState = () => {
+    const next = new URLSearchParams(searchParams)
+    next.delete('activitySaved')
+    next.delete('activitySavedMode')
+    setSearchParams(next)
+  }
 
   return <section className="w-full min-w-0 space-y-4 pb-8">
     <PageHero title="Actividades" description="Gestiona, evalúa y consulta las actividades de tus cursos desde un mismo lugar." icon={CheckSquare} tone="warning" actions={<Button onClick={() => setCreating(true)}><Plus className="size-4" /> Crear actividad</Button>}>
@@ -71,6 +82,7 @@ export function ActivitiesPage() {
 
     {creating ? <CreateActivityDialog workspace={workspace} onClose={() => setCreating(false)} /> : null}
     {selectedActivity ? <ActivityInfoModal activity={selectedActivity} onClose={() => setSelectedActivity(null)} onEdit={() => { const activity = selectedActivity; setSelectedActivity(null); navigate(activityHref(activity, 'edit')) }} onEvaluate={() => { const activity = selectedActivity; setSelectedActivity(null); navigate(activityHref(activity, 'evaluate')) }} /> : null}
+    {savedActivityId && !loading ? <ActivitySavedModal activity={savedActivity} mode={savedMode} onClose={clearSavedState} onView={() => { if (!savedActivity) return; clearSavedState(); setSelectedActivity(savedActivity) }} onEvaluate={() => { if (!savedActivity) return; navigate(activityHref(savedActivity, 'evaluate')) }} /> : null}
   </section>
 }
 
@@ -88,6 +100,10 @@ function ActivityCard({ activity, onView }: { activity: GlobalActivity; onView: 
     <div className="mt-4"><div className="flex items-center justify-between gap-3 text-xs"><span className="font-semibold text-muted-foreground">{activity.evaluatedCount} de {activity.studentCount} evaluados</span><span className="font-extrabold text-foreground">{progress}%</span></div><ProgressIndicator value={progress} tone={tone} className="mt-2" /></div>
     <div className="mt-auto flex items-center gap-3 pt-5"><button type="button" onClick={(event) => { event.stopPropagation(); onView() }} className="inline-flex h-9 items-center gap-1.5 text-xs font-extrabold text-muted-foreground transition hover:text-foreground"><Eye className="size-4" /> Ver</button>{state === 'pending' ? <Link onClick={(event) => event.stopPropagation()} to={activityHref(activity, 'edit')} aria-label={`Editar ${activity.name}`} className="inline-flex h-9 items-center gap-1.5 text-xs font-extrabold text-muted-foreground transition hover:text-foreground"><Edit3 className="size-4" /> Editar</Link> : null}<Link onClick={(event) => event.stopPropagation()} to={activityHref(activity, primaryMode)} className="ml-auto inline-flex h-10 items-center gap-2 rounded-xl bg-primary px-3.5 text-xs font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover">{state === 'graded' ? <BarChart3 className="size-4" /> : <GraduationCap className="size-4" />}{primaryLabel}</Link></div>
   </article>
+}
+
+function ActivitySavedModal({ activity, mode, onClose, onView, onEvaluate }: { activity: GlobalActivity | null; mode: 'created' | 'updated'; onClose: () => void; onView: () => void; onEvaluate: () => void }) {
+  return <Modal title={mode === 'updated' ? 'Actividad actualizada' : 'Actividad creada'} description={mode === 'updated' ? 'Los cambios se guardaron correctamente y ya se reflejan en AulaBase.' : 'La actividad se guardó correctamente y ya está disponible en todos los espacios vinculados.'} icon={ClipboardCheck} tone="success" onClose={onClose} className="max-w-xl"><div className="p-5 sm:p-6"><section className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-4"><p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-emerald-700">Guardado correctamente</p><h3 className="mt-1 text-lg font-black text-foreground">{activity?.name ?? 'Actividad'}</h3><p className="mt-1 text-xs leading-5 text-muted-foreground">Puedes volver a Actividades, abrir el mismo visor de detalle o comenzar a calificarla.</p></section><div className="mt-5 grid gap-2 sm:grid-cols-3"><Button variant="outline" onClick={onClose}>Volver</Button><Button variant="outline" disabled={!activity} onClick={onView}><Eye className="size-4" /> Ver actividad</Button><Button disabled={!activity} onClick={onEvaluate}><ClipboardCheck className="size-4" /> Calificar</Button></div></div></Modal>
 }
 
 function CreateActivityDialog({ workspace, onClose }: { workspace: ActivityCenterWorkspace; onClose: () => void }) {
