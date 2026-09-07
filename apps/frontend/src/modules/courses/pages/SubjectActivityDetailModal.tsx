@@ -72,7 +72,6 @@ function ActivityPreviewModal({ activity, workspace, onClose, onEdit, onEvaluate
   onEvaluate: () => void
 }) {
   const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId)
-  const period = workspace.academicPeriods.find((item) => item.id === workspace.selectedAcademicPeriodId) ?? workspace.academicPeriods[0]
   const graded = workspace.students.filter((student) => Boolean(scoreForActivity(workspace.gradeRecords, student.enrollmentId, activity.id))).length
   const configuration = useMemo(() => activityRubricConfiguration(activity), [activity])
   const description = plainText(activity.description)
@@ -137,7 +136,7 @@ function ActivityPreviewModal({ activity, workspace, onClose, onEdit, onEvaluate
             <div className="overflow-x-auto p-4">
               <table className="w-full min-w-[44rem] text-sm">
                 <thead><tr className="text-left text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground"><th className="rounded-l-xl bg-muted/55 px-4 py-3">Criterio</th>{configuration.levels.map((level) => <th key={level.label} className="bg-muted/55 px-4 py-3 text-center">{level.label}</th>)}<th className="rounded-r-xl bg-muted/55 px-4 py-3 text-right">Valor</th></tr></thead>
-                <tbody className="divide-y divide-border">{configuration.criteria.map((criterion) => <tr key={criterion.title}><td className="px-4 py-4 font-bold text-foreground">{criterion.title}</td>{configuration.levels.map((level) => <td key={level.label} className="px-4 py-4 text-center text-xs text-muted-foreground">{level.points ?? '—'} pts</td>)}<td className="px-4 py-4 text-right font-extrabold text-primary">{criterion.maximum} pts</td></tr>)}</tbody>
+                <tbody className="divide-y divide-border">{configuration.criteria.map((criterion) => <tr key={criterion.title}><td className="px-4 py-4 font-bold text-foreground">{criterion.title}</td>{configuration.levels.map((level) => <td key={level.label} className="px-4 py-4 text-center text-xs text-muted-foreground">Nivel</td>)}<td className="px-4 py-4 text-right font-extrabold text-primary">{criterion.maximum} pts</td></tr>)}</tbody>
               </table>
             </div>
           ) : <p className="p-6 text-sm text-muted-foreground">Esta actividad no tiene criterios de instrumento configurados todavía.</p>}
