@@ -137,9 +137,17 @@ export function SubjectGradesPage() {
   if (error && !workspace.periods.length) return <ErrorState message={error} />
 
   const tabs = [
-    ['resumen', 'Resumen', LayoutDashboard], ['estudiantes', 'Estudiantes', UsersRound], ['equipos', 'Equipos', UsersRound],
-    ['actividades', 'Actividades', ClipboardList], ['asistencia', 'Asistencia', CalendarDays], ['calificaciones', 'Calificaciones', GraduationCap],
-    ['horario', 'Horario', CalendarDays], ['recursos', 'Recursos', Library], ['reportes', 'Reportes', LayoutDashboard], ['configuracion', 'Configuración', SlidersHorizontal],
+    { id: 'resumen', label: 'Resumen', Icon: LayoutDashboard },
+    { id: 'estudiantes', label: 'Estudiantes', Icon: UsersRound },
+    { id: 'equipos', label: 'Equipos', Icon: UsersRound },
+    { id: 'actividades', label: 'Actividades', Icon: ClipboardList },
+    { id: 'asistencia', label: 'Asistencia', Icon: CalendarDays },
+    { id: 'calificaciones', label: 'Calificaciones', Icon: GraduationCap },
+    { id: 'horario', label: 'Horario', Icon: CalendarDays },
+    { id: 'recursos', label: 'Recursos', Icon: Library },
+    { id: 'reportes', label: 'Reportes', Icon: LayoutDashboard },
+    { id: 'configuracion', label: 'Configuración', Icon: SlidersHorizontal },
+    { id: 'planificaciones', label: 'Planificaciones', Icon: ClipboardList, muted: true, badge: 'Próximamente' },
   ] as const
 
   return <div className="space-y-3">
@@ -151,8 +159,14 @@ export function SubjectGradesPage() {
       </div>
     </header>
 
-    <nav className="grid w-full grid-cols-2 gap-1 rounded-2xl bg-card p-1.5 shadow-sm sm:grid-cols-3 md:grid-cols-5" aria-label="Secciones de la asignatura">
-      {tabs.map(([id, label, Icon]) => <button key={id} type="button" onClick={() => setTab(id)} aria-current={id === 'calificaciones' ? 'page' : undefined} className={cn('relative flex h-10 items-center justify-center gap-2 rounded-xl px-2 text-sm font-bold text-muted-foreground transition hover:bg-primary/5 hover:text-primary', id === 'calificaciones' && 'bg-primary/[0.055] text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-full after:bg-primary')}><Icon className="size-4" />{label}</button>)}
+    <nav className="grid w-full grid-cols-2 gap-1 rounded-2xl bg-card p-1.5 shadow-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6" aria-label="Secciones de la asignatura">
+      {tabs.map((tab) => {
+        const active = tab.id === 'calificaciones'
+        const muted = 'muted' in tab && tab.muted
+        const badge = 'badge' in tab ? tab.badge : undefined
+        const Icon = tab.Icon
+        return <button key={tab.id} type="button" onClick={() => setTab(tab.id)} aria-current={active ? 'page' : undefined} className={cn('relative flex h-10 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-2 text-sm font-bold text-muted-foreground transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:bg-primary/5 hover:text-primary', active && 'bg-primary/[0.055] text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-t-full after:bg-primary', muted && !active && 'bg-muted/40 text-muted-foreground/70 hover:bg-muted/60 hover:text-muted-foreground')}><Icon className="size-4" />{tab.label}{badge ? <span className="hidden rounded-full bg-slate-100 px-1.5 py-0.5 text-[8px] font-black uppercase tracking-wide text-slate-500 2xl:inline">{badge}</span> : null}</button>
+      })}
     </nav>
 
     <section className="overflow-hidden rounded-3xl bg-card shadow-sm">
