@@ -3,7 +3,6 @@ import { useSearchParams } from 'react-router-dom'
 import './subject-activities-actions.css'
 import { CoursesPage as CoursesPageBase } from './CoursesPageBase'
 import { GroupedSubjectActivitiesPage } from './GroupedSubjectActivitiesPage'
-import { SubjectAttendancePage } from './SubjectAttendancePage'
 
 export {
   ActivityBlockPickerDialog,
@@ -21,6 +20,5 @@ export function CoursesPage() {
   const tab = searchParams.get('tab')
 
   if (hasSubjectContext && tab === 'actividades') return <GroupedSubjectActivitiesPage />
-  if (hasSubjectContext && tab === 'asistencia') return <SubjectAttendancePage />
   return <CoursesPageBase />
 }
