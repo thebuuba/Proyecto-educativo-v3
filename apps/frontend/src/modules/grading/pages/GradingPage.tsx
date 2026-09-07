@@ -7,6 +7,7 @@ import { FeedbackBanner, FilterBar, PageHero, StatusBadge } from '@/components/u
 import { Select } from '@/components/ui/Select'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseTeam } from '@/modules/courses/types'
+import { ActivityInfoModal } from '@/modules/grading/components/ActivityInfoModal'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import '@/modules/grading/grading-design.css'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
@@ -62,6 +63,7 @@ export function GradingPage() {
   const requestedActivity = requestedActivityId ? activities.find((activity) => activity.id === requestedActivityId) : undefined
   const editBlockId = requestedActivityMode === 'edit' && requestedActivity ? requestedActivity.competencyBlockId as CompetencyBlockId : undefined
   const directActivityWorkspace = Boolean(requestedAction || requestedActivityId)
+  const showRequestedViewer = requestedActivityMode === 'view' && Boolean(requestedActivity)
   const [hideFilters, setHideFilters] = useState(directActivityWorkspace)
   const [teams, setTeams] = useState<CourseTeam[]>([])
 
@@ -89,6 +91,14 @@ export function GradingPage() {
     if (returnsToActivities) {
       navigate(`/actividades?${new URLSearchParams({ activitySaved: activity.id, activitySavedMode: mode }).toString()}`)
     }
+  }
+
+  function navigateActivityMode(mode: 'edit' | 'evaluate') {
+    if (!requestedActivityId) return
+    const next = new URLSearchParams(searchParams)
+    next.set('activityId', requestedActivityId)
+    next.set('activityMode', mode)
+    navigate(`/calificaciones?${next.toString()}`)
   }
 
   async function handleAddActivity(activity: Omit<GradingActivity, 'id'>) {
@@ -156,7 +166,7 @@ export function GradingPage() {
             {...(isFinalView ? { initialView: 'final' as const } : {})}
             initialActivityAction={requestedAction ?? (requestedActivityMode === 'edit' && requestedActivity ? 'create' : undefined)}
             initialActivityBlockId={requestedBlockId ?? editBlockId}
-            initialActivityId={requestedActivityId}
+            initialActivityId={requestedActivityMode === 'view' ? undefined : requestedActivityId}
             initialActivityMode={requestedActivityMode}
             originReturnLabel={originReturnLabel}
             onReturnToOrigin={returnToOrigin}
@@ -169,6 +179,7 @@ export function GradingPage() {
             getActivitiesForPeriod={getActivitiesForPeriod}
             onActivityWorkspaceChange={setHideFilters}
           />
+          {showRequestedViewer && requestedActivity ? <ActivityInfoModal activity={requestedActivity} onClose={() => { if (returnToOrigin) returnToOrigin(); else navigate('/calificaciones') }} onEdit={() => navigateActivityMode('edit')} onEvaluate={() => navigateActivityMode('evaluate')} /> : null}
         </div>
       )}
     </section>
