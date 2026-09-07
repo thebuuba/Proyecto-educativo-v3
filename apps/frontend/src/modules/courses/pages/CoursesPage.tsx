@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom'
 
+import './subject-activities-actions.css'
 import { CoursesPage as CoursesPageBase } from './CoursesPageBase'
 import { GroupedSubjectActivitiesPage } from './GroupedSubjectActivitiesPage'
 import { SubjectActivityDetailModal } from './SubjectActivityDetailModal'
