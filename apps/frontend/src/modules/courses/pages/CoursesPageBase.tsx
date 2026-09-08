@@ -109,7 +109,6 @@ import { getPlanningEntries } from '@/modules/planning/services/planningService'
 import { JournalForm, journalEntryTypeLabel, type JournalCourseOption } from '@/modules/journal/pages/JournalPage'
 import { deleteJournalEntry, getJournalEntries } from '@/modules/journal/services/journalService'
 import type { JournalEntry } from '@/modules/journal/types'
-import { getScheduleEntries } from '@/modules/schedule/services/scheduleService'
 import { useCourses } from '@/modules/courses/hooks/useCourses'
 import type {
   CreateSubjectInput,
@@ -1664,7 +1663,7 @@ function SubjectDetailView({
     const next = new URLSearchParams(teamSearchParams)
     if (nextTab !== 'equipos') next.delete('teamId')
     if (nextTab !== 'actividades') next.delete('activityId')
-    if (nextTab === 'actividades' || nextTab === 'planificaciones' || nextTab === 'asistencia') next.set('tab', nextTab)
+    if (nextTab === 'actividades' || nextTab === 'planificaciones' || nextTab === 'asistencia' || nextTab === 'horario') next.set('tab', nextTab)
     else next.delete('tab')
     setTeamSearchParams(next, { replace: true })
   }
@@ -1867,8 +1866,6 @@ function SubjectDetailView({
         <CalificacionesTab sectionSubjectId={item.assignment?.id ?? null} schoolYearId={schoolYearId} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} />
       ) : activeTab === 'planificaciones' ? (
         <PlanningDisabledPanel onActivities={() => selectSubjectTab('actividades')} />
-      ) : activeTab === 'horario' ? (
-        <HorarioTab sectionId={item.section.id} sectionSubjectId={item.assignment?.id ?? null} />
       ) : activeTab === 'recursos' ? (
         <SubjectModulePanel icon={<Library className="size-6" />} title="Recursos" description="Los recursos se organizan dentro de actividades y planificaciones para mantenerlos vinculados al trabajo académico." href={`/calificaciones?sectionSubjectId=${encodeURIComponent(item.assignment?.id ?? '')}`} action="Gestionar recursos" />
       ) : activeTab === 'reportes' ? (
@@ -2689,52 +2686,6 @@ function GradeValue({ value, emphasized = false }: { value: number | null; empha
 function GradeStatus({ status }: { status: CompactGradeRow['status'] }) {
   const styles = status === 'Calificado' ? 'bg-emerald-50 text-emerald-700' : status === 'En proceso' ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600'
   return <span className={cn('inline-flex rounded-full px-3 py-1 text-[11px] font-extrabold', styles)}>{status}</span>
-}
-
-function HorarioTab({ sectionId, sectionSubjectId }: { sectionId: string; sectionSubjectId: string | null }) {
-  const [schedule, setSchedule] = useState<Array<{ dayOfWeek: number; subjectName: string; startTime: string; endTime: string; room: string | null }>>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  const dayLabels = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
-
-  useEffect(() => {
-    getScheduleEntries({ sectionId, ...(sectionSubjectId ? { sectionSubjectId } : {}) })
-      .then((data) => setSchedule(data))
-      .catch((e) => setError(e instanceof Error ? e.message : 'Error al cargar horario'))
-      .finally(() => setLoading(false))
-  }, [sectionId, sectionSubjectId])
-
-  if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando horario...</div>
-  if (error) return <ErrorState message={error} />
-  if (!schedule.length) return <EmptyState title="Sin horario" description="No hay horario registrado para esta seccion." />
-
-  const sorted = [...schedule].sort((a, b) => a.dayOfWeek - b.dayOfWeek || a.startTime.localeCompare(b.startTime))
-
-  return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-      <table className="w-full text-left text-sm">
-        <thead className="border-b border-border bg-muted text-xs font-bold uppercase tracking-wide text-muted-foreground">
-          <tr>
-            <th className="px-5 py-3">Dia</th>
-            <th className="px-5 py-3">Hora</th>
-            <th className="px-5 py-3">Asignatura</th>
-            <th className="px-5 py-3">Aula</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-border">
-          {sorted.map((e, i) => (
-            <tr key={i} className="text-foreground">
-              <td className="px-5 py-3 font-bold">{dayLabels[e.dayOfWeek - 1] ?? `Dia ${e.dayOfWeek}`}</td>
-              <td className="px-5 py-3 text-muted-foreground">{e.startTime} - {e.endTime}</td>
-              <td className="px-5 py-3">{e.subjectName}</td>
-              <td className="px-5 py-3 text-muted-foreground">{e.room ?? '—'}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  )
 }
 
 const CourseCard = memo(function CourseCard({

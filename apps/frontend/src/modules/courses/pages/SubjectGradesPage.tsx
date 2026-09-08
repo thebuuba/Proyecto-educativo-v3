@@ -2,7 +2,6 @@ import {
   ArrowLeft,
   BookOpen,
   CalendarDays,
-  CheckCircle2,
   ChevronRight,
   ClipboardList,
   Eye,
