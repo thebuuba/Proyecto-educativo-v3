@@ -8,6 +8,7 @@ import {
   Library,
   MapPin,
   Pencil,
+  Play,
   SlidersHorizontal,
   UsersRound,
   ClipboardList,
@@ -22,6 +23,7 @@ import { ErrorState } from '@/components/ui/ErrorState'
 import { getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import { getScheduleEntries } from '@/modules/schedule/services/scheduleService'
 import type { ScheduleEntry } from '@/modules/schedule/types'
+import { COUNTDOWN_THRESHOLD_SECONDS, formatCountdown, getClassClock, getScheduledClassDate, getScheduledClassState, timeToSeconds } from '@/modules/schedule/utils/classTime'
 import { cn } from '@/utils/cn'
 
 type SubjectMeta = {
@@ -29,10 +31,12 @@ type SubjectMeta = {
   sectionName: string
   subjectName: string
   schoolYearName: string
+  studentCount: number
 }
 
-const emptyMeta: SubjectMeta = { gradeName: '', sectionName: '', subjectName: 'Asignatura', schoolYearName: '' }
+const emptyMeta: SubjectMeta = { gradeName: '', sectionName: '', subjectName: 'Asignatura', schoolYearName: '', studentCount: 0 }
 const dayLabels = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
+const scheduleDateFormatter = new Intl.DateTimeFormat('es-DO', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' })
 
 function minutesBetween(start: string, end: string) {
   const [sh, sm] = start.split(':').map(Number)
@@ -51,6 +55,7 @@ export function SubjectSchedulePage() {
   const [schedule, setSchedule] = useState<ScheduleEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [now, setNow] = useState(() => new Date())
 
   useEffect(() => {
     if (!subjectId) return
@@ -69,6 +74,7 @@ export function SubjectSchedulePage() {
           sectionName: selected?.sectionName ?? '',
           subjectName: selected?.subjectName ?? entries[0]?.subjectName ?? 'Asignatura',
           schoolYearName: selected?.schoolYearName ?? '',
+          studentCount: workspace.students.length,
         })
         setSchedule(entries)
       })
@@ -77,26 +83,23 @@ export function SubjectSchedulePage() {
     return () => { active = false }
   }, [subjectId])
 
+  useEffect(() => {
+    if (!schedule.length) return
+    const interval = window.setInterval(() => setNow(new Date()), 1000)
+    return () => window.clearInterval(interval)
+  }, [schedule.length])
+
   const sorted = useMemo(() => [...schedule].sort((a, b) => a.dayOfWeek - b.dayOfWeek || a.startTime.localeCompare(b.startTime)), [schedule])
   const grouped = useMemo(() => [1, 2, 3, 4, 5]
     .map((day) => ({ day, entries: sorted.filter((entry) => entry.dayOfWeek === day) }))
     .filter((group) => group.entries.length), [sorted])
   const weeklyMinutes = useMemo(() => sorted.reduce((total, entry) => total + minutesBetween(entry.startTime, entry.endTime), 0), [sorted])
-  const today = new Date().getDay()
+  const temporalClass = useMemo(() => getScheduledClassState(sorted, now), [now, sorted])
+  const today = getClassClock(now).dayOfWeek
   const todayEntries = sorted.filter((entry) => entry.dayOfWeek === today)
-  const nextClass = useMemo(() => {
-    if (!sorted.length) return null
-    const now = new Date()
-    const nowMinutes = now.getHours() * 60 + now.getMinutes()
-    const upcomingToday = sorted.find((entry) => entry.dayOfWeek === today && Number(entry.endTime.slice(0, 2)) * 60 + Number(entry.endTime.slice(3, 5)) >= nowMinutes)
-    if (upcomingToday) return { entry: upcomingToday, offset: 0 }
-    for (let offset = 1; offset <= 7; offset += 1) {
-      const day = (today + offset) % 7
-      const entry = sorted.find((item) => item.dayOfWeek === day)
-      if (entry) return { entry, offset }
-    }
-    return null
-  }, [sorted, today])
+  const summaryClass = useMemo(() => temporalClass?.state === 'current'
+    ? getScheduledClassState(sorted, new Date(now.getTime() + (temporalClass.seconds + 1) * 1000))
+    : temporalClass, [now, sorted, temporalClass])
 
   const setTab = (tab: string) => {
     const next = new URLSearchParams(searchParams)
@@ -147,10 +150,18 @@ export function SubjectSchedulePage() {
       </div>
 
       {!sorted.length ? <div className="p-5"><EmptyState title="Esta asignatura todavía no tiene clases programadas." description="El horario se configurará desde el módulo principal de Horario." /></div> : <>
+        <div className="p-5 pb-0">
+          <SubjectClassStatusCard
+            temporalClass={temporalClass}
+            meta={meta}
+            now={now}
+            onStart={() => setTab('asistencia')}
+          />
+        </div>
         <div className="grid gap-3 p-5 md:grid-cols-3">
           <SummaryCard icon={<CalendarDays className="size-5" aria-hidden="true" />} label="Clases por semana" value={`${sorted.length}`} helper="clases programadas" />
           <SummaryCard icon={<Clock3 className="size-5" aria-hidden="true" />} label="Tiempo semanal" value={`${weeklyMinutes} min`} helper="de clases" />
-          <SummaryCard icon={<CalendarDays className="size-5" aria-hidden="true" />} label="Próxima clase" value={nextClass ? dayLabels[nextClass.entry.dayOfWeek] : '—'} helper={nextClass ? `${formatTime(nextClass.entry.startTime)} – ${formatTime(nextClass.entry.endTime)}` : 'Sin clases programadas'} emphasis />
+          <SummaryCard icon={<CalendarDays className="size-5" aria-hidden="true" />} label="Próxima clase" value={summaryClass ? dayLabels[summaryClass.entry.dayOfWeek] : '—'} helper={summaryClass ? `${formatTime(summaryClass.entry.startTime)} – ${formatTime(summaryClass.entry.endTime)}` : 'Sin clases programadas'} emphasis />
         </div>
 
         <div className="border-t border-border px-5 py-5">
@@ -168,10 +179,51 @@ export function SubjectSchedulePage() {
             })}</div>
           </section>)}</div>
         </div>
-
-        {nextClass ? <div className="border-t border-border bg-muted/[0.18] px-5 py-5"><div className="flex flex-col gap-3 rounded-2xl border border-primary/15 bg-primary/[0.035] p-4 sm:flex-row sm:items-center sm:justify-between"><div className="flex items-center gap-3"><span className="grid size-11 place-items-center rounded-xl bg-primary text-primary-foreground"><CalendarDays className="size-5" /></span><div><p className="text-[10px] font-black uppercase tracking-[0.15em] text-primary">Próxima clase</p><p className="mt-1 font-extrabold">{nextClass.offset === 0 ? 'Hoy' : dayLabels[nextClass.entry.dayOfWeek]}, {formatTime(nextClass.entry.startTime)} – {formatTime(nextClass.entry.endTime)}</p><p className="mt-0.5 text-xs text-muted-foreground">{meta.subjectName}{nextClass.entry.room ? ` · ${nextClass.entry.room}` : ''}</p></div></div><span className="text-xs font-bold text-muted-foreground">{minutesBetween(nextClass.entry.startTime, nextClass.entry.endTime)} minutos</span></div></div> : null}
       </>}
     </section>
+  </div>
+}
+
+function SubjectClassStatusCard({ temporalClass, meta, now, onStart }: {
+  temporalClass: ReturnType<typeof getScheduledClassState>
+  meta: SubjectMeta
+  now: Date
+  onStart: () => void
+}) {
+  if (!temporalClass) return <section className="rounded-2xl border border-border bg-muted/20 px-4 py-3"><p className="text-xs font-black uppercase tracking-[0.14em] text-muted-foreground">Sin clases próximas</p><p className="mt-1 text-sm text-muted-foreground">No hay más clases programadas para esta asignatura en los próximos días.</p></section>
+
+  const { entry, state, seconds, dayOffset } = temporalClass
+  const countdown = state === 'current' || state === 'soon'
+  const current = state === 'current'
+  const date = scheduleDateFormatter.format(getScheduledClassDate(dayOffset, now))
+  const durationSeconds = Math.max(1, timeToSeconds(entry.endTime) - timeToSeconds(entry.startTime))
+  const progress = current ? (seconds / durationSeconds) * 100 : 100 - (seconds / COUNTDOWN_THRESHOLD_SECONDS) * 100
+
+  return <section className={cn('rounded-2xl border p-4 shadow-sm', current ? 'border-success/30 bg-success/10' : state === 'soon' ? 'border-warning/40 bg-warning/15' : 'border-border bg-card')} aria-labelledby="subject-class-status">
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+      {countdown ? <CountdownRing current={current} seconds={seconds} progress={progress} /> : <span className="grid size-[72px] shrink-0 place-items-center rounded-2xl bg-warning/20 text-warning-foreground"><CalendarDays className="size-7" aria-hidden="true" /></span>}
+      <div className="min-w-0 flex-1">
+        <p className={cn('text-[10px] font-black uppercase tracking-[0.18em]', current ? 'text-success-foreground' : state === 'soon' ? 'text-warning-foreground' : 'text-muted-foreground')}>{current ? 'Clase en curso' : 'Próxima clase'}</p>
+        {!countdown ? <p className="mt-1 text-sm font-bold capitalize text-foreground">{date}</p> : null}
+        <h3 id="subject-class-status" className="mt-1 break-words text-lg font-extrabold leading-tight text-foreground">{meta.subjectName}</h3>
+        <p className="mt-1 text-sm font-semibold text-muted-foreground">{meta.gradeName} {meta.sectionName}</p>
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5"><Clock3 className="size-3.5" aria-hidden="true" />{formatTime(entry.startTime)} – {formatTime(entry.endTime)}</span>
+          <span className="inline-flex items-center gap-1.5"><MapPin className="size-3.5" aria-hidden="true" />{entry.room || 'Aula sin asignar'}</span>
+          <span className="inline-flex items-center gap-1.5"><UsersRound className="size-3.5" aria-hidden="true" />{meta.studentCount} estudiantes</span>
+        </div>
+      </div>
+      <Button className="w-full shrink-0 sm:w-auto" onClick={onStart}><Play className="size-4 fill-current" aria-hidden="true" /> Iniciar clase</Button>
+    </div>
+  </section>
+}
+
+function CountdownRing({ current, seconds, progress }: { current: boolean; seconds: number; progress: number }) {
+  const circumference = 2 * Math.PI * 28
+  const length = Math.max(0, Math.min(100, progress)) / 100 * circumference
+  return <div className="relative grid size-[72px] shrink-0 place-items-center" role="timer" aria-live="off" aria-label={`${current ? 'Termina' : 'Empieza'} en ${formatCountdown(seconds)}`}>
+    <svg className="absolute inset-0 size-full -rotate-90" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="28" fill="none" stroke="var(--border)" strokeWidth="7" /><circle cx="36" cy="36" r="28" fill="none" stroke={current ? 'var(--success)' : 'var(--warning)'} strokeDasharray={`${length} ${circumference}`} strokeLinecap="round" strokeWidth="7" className="transition-[stroke-dasharray] duration-1000 ease-linear motion-reduce:transition-none" /></svg>
+    <span className="text-center"><span className="block text-[8px] font-black uppercase tracking-wider text-muted-foreground">{current ? 'Termina en' : 'Empieza en'}</span><strong className="mt-1 block text-base tabular-nums text-foreground">{formatCountdown(seconds)}</strong></span>
   </div>
 }
 

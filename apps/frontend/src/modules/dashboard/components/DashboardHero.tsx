@@ -8,19 +8,9 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
+import { COUNTDOWN_THRESHOLD_SECONDS, formatCountdown, formatHumanCountdown, getClassCountdownSeconds } from '@/modules/schedule/utils/classTime'
 
-const DASHBOARD_TIME_ZONE = 'America/Santo_Domingo'
-const DAY_SECONDS = 24 * 60 * 60
-const COUNTDOWN_THRESHOLD_SECONDS = 60 * 60
 const RING_CIRCUMFERENCE = 2 * Math.PI * 45
-
-const dashboardClockFormatter = new Intl.DateTimeFormat('en-GB', {
-  timeZone: DASHBOARD_TIME_ZONE,
-  hour: '2-digit',
-  minute: '2-digit',
-  second: '2-digit',
-  hourCycle: 'h23',
-})
 
 type DashboardHeroProps = {
   nextClass: DashboardClass | null
@@ -30,49 +20,8 @@ type DashboardHeroProps = {
   onCountdownEnd?: () => void
 }
 
-function timeToSeconds(value: string) {
-  const [hours = 0, minutes = 0, seconds = 0] = value.split(':').map(Number)
-  return hours * 3600 + minutes * 60 + seconds
-}
-
-function getDashboardClockSeconds(now = new Date()) {
-  const parts = Object.fromEntries(
-    dashboardClockFormatter.formatToParts(now).map(({ type, value }) => [type, value]),
-  )
-
-  return Number(parts.hour) * 3600 + Number(parts.minute) * 60 + Number(parts.second)
-}
-
 function getCountdownSeconds(item: DashboardClass, now = new Date()) {
-  if (item.status === 'completed') return 0
-
-  const currentSeconds = getDashboardClockSeconds(now)
-  const targetSeconds = timeToSeconds(item.status === 'current' ? item.endTime : item.startTime)
-  let difference = targetSeconds - currentSeconds
-
-  if (difference < 0 && targetSeconds < 3 * 60 * 60 && currentSeconds > 21 * 60 * 60) {
-    difference += DAY_SECONDS
-  }
-
-  return Math.max(0, difference)
-}
-
-function formatCountdown(totalSeconds: number) {
-  const minutes = Math.floor(totalSeconds / 60)
-  const seconds = totalSeconds % 60
-  return `${minutes}:${String(seconds).padStart(2, '0')}`
-}
-
-function formatHumanCountdown(totalSeconds: number) {
-  if (totalSeconds < 60) return 'menos de 1 min'
-
-  const totalMinutes = Math.ceil(totalSeconds / 60)
-  const hours = Math.floor(totalMinutes / 60)
-  const minutes = totalMinutes % 60
-
-  if (hours <= 0) return `${totalMinutes} min`
-  if (minutes === 0) return `${hours} h`
-  return `${hours} h ${minutes} min`
+  return getClassCountdownSeconds(item.status, item.startTime, item.endTime, now)
 }
 
 function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: number }) {

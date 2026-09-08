@@ -27,7 +27,7 @@ describe('horario dentro de una asignatura', () => {
   beforeEach(() => {
     vi.useFakeTimers({ toFake: ['Date'] })
     vi.setSystemTime(new Date(2026, 8, 7, 9, 0))
-    mocks.getGradingWorkspace.mockResolvedValue({ sectionSubjects: [{ id: 'assignment-1', gradeName: '2.º', sectionName: 'A', subjectName: 'Ciencias de la Vida', schoolYearName: '2026-2027' }] })
+    mocks.getGradingWorkspace.mockResolvedValue({ students: Array.from({ length: 25 }), sectionSubjects: [{ id: 'assignment-1', gradeName: '2.º', sectionName: 'A', subjectName: 'Ciencias de la Vida', schoolYearName: '2026-2027' }] })
   })
 
   afterEach(() => vi.useRealTimers())
@@ -45,6 +45,8 @@ describe('horario dentro de una asignatura', () => {
     expect(screen.getByText('120 min')).toBeInTheDocument()
     expect(screen.getAllByText('Sin asignar')).toHaveLength(2)
     expect(screen.queryByRole('table')).not.toBeInTheDocument()
+    expect(screen.getByText('25 estudiantes')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Iniciar clase' })).toBeInTheDocument()
 
     const tuesday = screen.getByRole('heading', { name: 'Martes' })
     const thursday = screen.getByRole('heading', { name: 'Jueves' })
