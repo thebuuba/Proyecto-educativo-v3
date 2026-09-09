@@ -1038,6 +1038,25 @@ export type Database = {
           },
         ]
       }
+      evaluation_activity_resources: {
+        Row: { created_at: string; evaluation_activity_id: string; subject_resource_id: string }
+        Insert: { created_at?: string; evaluation_activity_id: string; subject_resource_id: string }
+        Update: { created_at?: string; evaluation_activity_id?: string; subject_resource_id?: string }
+        Relationships: [
+          { foreignKeyName: "evaluation_activity_resources_evaluation_activity_id_fkey"; columns: ["evaluation_activity_id"]; isOneToOne: false; referencedRelation: "evaluation_activities"; referencedColumns: ["id"] },
+          { foreignKeyName: "evaluation_activity_resources_subject_resource_id_fkey"; columns: ["subject_resource_id"]; isOneToOne: false; referencedRelation: "subject_resources"; referencedColumns: ["id"] },
+        ]
+      }
+      subject_resources: {
+        Row: { category: string; created_at: string; created_by: string | null; description: string; external_url: string | null; id: string; kind: string; mime_type: string | null; object_path: string | null; original_name: string | null; school_id: string; section_subject_id: string; size_bytes: number; status: Database["public"]["Enums"]["record_status"]; title: string; updated_at: string }
+        Insert: { category?: string; created_at?: string; created_by?: string | null; description?: string; external_url?: string | null; id?: string; kind: string; mime_type?: string | null; object_path?: string | null; original_name?: string | null; school_id: string; section_subject_id: string; size_bytes?: number; status?: Database["public"]["Enums"]["record_status"]; title: string; updated_at?: string }
+        Update: { category?: string; created_at?: string; created_by?: string | null; description?: string; external_url?: string | null; id?: string; kind?: string; mime_type?: string | null; object_path?: string | null; original_name?: string | null; school_id?: string; section_subject_id?: string; size_bytes?: number; status?: Database["public"]["Enums"]["record_status"]; title?: string; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "subject_resources_created_by_fkey"; columns: ["created_by"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "subject_resources_school_id_fkey"; columns: ["school_id"]; isOneToOne: false; referencedRelation: "schools"; referencedColumns: ["id"] },
+          { foreignKeyName: "subject_resources_section_subject_id_fkey"; columns: ["section_subject_id"]; isOneToOne: false; referencedRelation: "section_subjects"; referencedColumns: ["id"] },
+        ]
+      }
       evaluation_activity_evidences: {
         Row: {
           activity_id: string

@@ -75,6 +75,7 @@ import {
   Wrench,
   X,
 } from 'lucide-react'
+import { SubjectResourcesPanel } from '../components/SubjectResourcesPanel'
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
@@ -1663,7 +1664,7 @@ function SubjectDetailView({
     const next = new URLSearchParams(teamSearchParams)
     if (nextTab !== 'equipos') next.delete('teamId')
     if (nextTab !== 'actividades') next.delete('activityId')
-    if (nextTab === 'actividades' || nextTab === 'planificaciones' || nextTab === 'asistencia' || nextTab === 'horario') next.set('tab', nextTab)
+    if (nextTab === 'actividades' || nextTab === 'planificaciones' || nextTab === 'asistencia' || nextTab === 'horario' || nextTab === 'recursos') next.set('tab', nextTab)
     else next.delete('tab')
     setTeamSearchParams(next, { replace: true })
   }
@@ -1867,7 +1868,7 @@ function SubjectDetailView({
       ) : activeTab === 'planificaciones' ? (
         <PlanningDisabledPanel onActivities={() => selectSubjectTab('actividades')} />
       ) : activeTab === 'recursos' ? (
-        <SubjectModulePanel icon={<Library className="size-6" />} title="Recursos" description="Los recursos se organizan dentro de actividades y planificaciones para mantenerlos vinculados al trabajo académico." href={`/calificaciones?sectionSubjectId=${encodeURIComponent(item.assignment?.id ?? '')}`} action="Gestionar recursos" />
+        <SubjectResourcesPanel sectionSubjectId={item.assignment?.id ?? null} courseLabel={courseLabel} subjectName={item.subjectName} />
       ) : activeTab === 'reportes' ? (
         <SubjectModulePanel icon={<ChartColumn className="size-6" />} title="Reportes" description="Genera reportes de calificaciones, asistencia y progreso de esta asignatura." href="/reportes" action="Abrir reportes" />
       ) : (

@@ -104,6 +104,7 @@ model School {
   drEvaluationRules     DrEvaluationRule[]
   teacherJournalEntries TeacherJournalEntry[]
   teacherJournalStudents TeacherJournalStudent[]
+  subjectResources       SubjectResource[]
 
   @@index([name])
   @@index([district])
@@ -184,6 +185,7 @@ model AppUser {
   assignedDashboardTasks        DashboardTask[]        @relation("DashboardAssignee")
   createdDashboardTasks         DashboardTask[]        @relation("DashboardCreator")
   teacherJournalEntries         TeacherJournalEntry[]
+  subjectResources              SubjectResource[]
 
   @@map("app_users")
 }
@@ -490,6 +492,7 @@ model SectionSubject {
   scheduleEntries      ScheduleEntry[]
   planningEntries      PlanningEntry[]
   teacherJournalEntries TeacherJournalEntry[]
+  subjectResources       SubjectResource[]
 
   @@unique([schoolYearId, sectionId, subjectId])
   @@unique([id, schoolYearId, sectionId])
@@ -666,11 +669,49 @@ model EvaluationActivity {
   gradesRecords  GradesRecord[]
   evidences      EvaluationActivityEvidence[]
   groups         EvaluationActivityGroup[]
+  linkedResources EvaluationActivityResource[]
 
   @@index([schoolId, sectionSubjectId, academicPeriodId])
   @@index([planningEntryId])
   @@index([competencyBlockId])
   @@map("evaluation_activities")
+}
+
+model SubjectResource {
+  id               String       @id @default(uuid()) @db.Uuid
+  schoolId         String       @map("school_id") @db.Uuid
+  sectionSubjectId String       @map("section_subject_id") @db.Uuid
+  createdBy        String?      @map("created_by") @db.Uuid
+  kind             String
+  title            String
+  description      String       @default("")
+  originalName     String?      @map("original_name")
+  objectPath       String?      @unique @map("object_path")
+  externalUrl      String?      @map("external_url")
+  mimeType         String?      @map("mime_type")
+  sizeBytes        BigInt       @default(0) @map("size_bytes")
+  category         String       @default("OTRO")
+  status           RecordStatus @default(ACTIVE)
+  createdAt        DateTime     @default(now()) @map("created_at")
+  updatedAt        DateTime     @updatedAt @map("updated_at")
+
+  school           School       @relation(fields: [schoolId], references: [id])
+  sectionSubject   SectionSubject @relation(fields: [sectionSubjectId], references: [id])
+  creator          AppUser?     @relation(fields: [createdBy], references: [id])
+  activities       EvaluationActivityResource[]
+
+  @@index([sectionSubjectId, status, createdAt])
+  @@map("subject_resources")
+}
+
+model EvaluationActivityResource {
+  evaluationActivityId String @map("evaluation_activity_id") @db.Uuid
+  subjectResourceId    String @map("subject_resource_id") @db.Uuid
+  createdAt            DateTime @default(now()) @map("created_at")
+  evaluationActivity   EvaluationActivity @relation(fields: [evaluationActivityId], references: [id])
+  subjectResource      SubjectResource @relation(fields: [subjectResourceId], references: [id])
+  @@id([evaluationActivityId, subjectResourceId])
+  @@map("evaluation_activity_resources")
 }
 
 model EvaluationInstrument {
