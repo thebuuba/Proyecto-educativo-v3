@@ -73,8 +73,8 @@ export function SubjectAttendancePanel({ sectionSubjectId, students, loading = f
   useEffect(() => {
     if (!editing) return
     const frame = window.requestAnimationFrame(() => {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      attendanceEditorRef.current?.scrollIntoView({
+      const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+      attendanceEditorRef.current?.scrollIntoView?.({
         behavior: reduceMotion ? 'auto' : 'smooth',
         block: 'start',
         inline: 'nearest',
@@ -202,7 +202,7 @@ export function SubjectAttendancePanel({ sectionSubjectId, students, loading = f
         <div className="space-y-2 border-b border-border px-4 py-3"><div className="flex flex-wrap gap-3">{(Object.keys(markLabels) as Mark[]).map((mark) => <span key={mark} className="inline-flex items-center gap-1.5 text-xs text-muted-foreground"><strong className={cn('grid size-6 place-items-center rounded-md border', markStyles[mark])}>{mark}</strong>{markLabels[mark]}</span>)}</div><p className="text-xs text-muted-foreground">{roster.length} estudiantes · {currentCounts.P} P · {currentCounts.A} A · {currentCounts.E} E · {currentCounts.T} T</p></div>
         {saved ? <FeedbackBanner tone="success">Asistencia guardada correctamente.</FeedbackBanner> : null}
         <div className="divide-y divide-border">{roster.map((student, index) => <div key={student.enrollmentId} className="grid grid-cols-[2rem_minmax(0,1fr)] items-center gap-3 px-4 py-3 sm:grid-cols-[2rem_minmax(0,1fr)_13rem]">
-          <span className="text-xs font-bold text-muted-foreground">{String(student.listNumber ?? index + 1).padStart(2, '0')}</span><button type="button" className="group flex min-h-11 items-center gap-2 text-left text-sm font-semibold text-foreground [overflow-wrap:anywhere] hover:text-primary-variant" onClick={() => setSelectedStudentId(student.enrollmentId)}><span className="min-w-0 flex-1">{student.firstName} {student.lastName}</span><span className="hidden text-[10px] font-bold text-muted-foreground transition group-hover:text-primary sm:inline">Ver detalle</span></button>
+          <span className="text-xs font-bold text-muted-foreground">{String(student.listNumber ?? index + 1).padStart(2, '0')}</span><button type="button" aria-label={`${student.firstName} ${student.lastName}`} className="group flex min-h-11 items-center gap-2 text-left text-sm font-semibold text-foreground [overflow-wrap:anywhere] hover:text-primary-variant" onClick={() => setSelectedStudentId(student.enrollmentId)}><span className="min-w-0 flex-1">{student.firstName} {student.lastName}</span><span aria-hidden="true" className="hidden text-[10px] font-bold text-muted-foreground transition group-hover:text-primary sm:inline">Ver detalle</span></button>
           <div className="col-span-2 grid grid-cols-4 gap-2 sm:col-span-1">{(Object.keys(markLabels) as Mark[]).map((mark) => <button type="button" key={mark} aria-label={markLabels[mark] + ' ' + student.firstName + ' ' + student.lastName} aria-pressed={marks[student.enrollmentId] === mark} disabled={saving} onClick={() => { setSaved(false); setMarks((current) => ({ ...current, [student.enrollmentId]: mark })) }} className={cn('min-h-11 rounded-xl border text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-50', marks[student.enrollmentId] === mark ? markStyles[mark] : 'border-border text-muted-foreground hover:bg-muted')}>{mark}</button>)}</div>
         </div>)}</div>
       </section> : null}
@@ -224,7 +224,7 @@ function StudentAttendanceDrawer({ student, monthLabel, records, percentage, onC
       <header className="border-b border-border bg-card px-5 py-5">
         <div className="flex items-start gap-3">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary"><UserRound className="size-5" /></span>
-          <div className="min-w-0 flex-1"><p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted-foreground">Detalle de asistencia</p><h3 className="mt-1 text-lg font-black text-foreground">{student.firstName} {student.lastName}</h3><p className="mt-1 text-xs capitalize text-muted-foreground">{monthLabel}</p></div>
+          <div className="min-w-0 flex-1"><p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted-foreground">Detalle de asistencia</p><h3 className="mt-1 text-lg font-black text-foreground">{student.firstName} {student.lastName}</h3><p className="mt-1 text-xs text-muted-foreground">Resumen del mes seleccionado</p></div>
           <button type="button" onClick={onClose} aria-label="Cerrar detalle" className="grid size-10 shrink-0 place-items-center rounded-xl border border-border text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><X className="size-4" /></button>
         </div>
       </header>
