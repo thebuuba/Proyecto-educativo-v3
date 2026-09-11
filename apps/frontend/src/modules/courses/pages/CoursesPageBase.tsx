@@ -76,6 +76,7 @@ import {
   X,
 } from 'lucide-react'
 import { SubjectResourcesPanel } from '../components/SubjectResourcesPanel'
+import { SubjectReportsPanel } from '@/modules/reports/components/SubjectReportsPanel'
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
@@ -1664,7 +1665,7 @@ function SubjectDetailView({
     const next = new URLSearchParams(teamSearchParams)
     if (nextTab !== 'equipos') next.delete('teamId')
     if (nextTab !== 'actividades') next.delete('activityId')
-    if (nextTab === 'actividades' || nextTab === 'planificaciones' || nextTab === 'asistencia' || nextTab === 'horario' || nextTab === 'recursos') next.set('tab', nextTab)
+    if (nextTab === 'actividades' || nextTab === 'planificaciones' || nextTab === 'asistencia' || nextTab === 'horario' || nextTab === 'recursos' || nextTab === 'reportes') next.set('tab', nextTab)
     else next.delete('tab')
     setTeamSearchParams(next, { replace: true })
   }
@@ -1870,7 +1871,16 @@ function SubjectDetailView({
       ) : activeTab === 'recursos' ? (
         <SubjectResourcesPanel sectionSubjectId={item.assignment?.id ?? null} courseLabel={courseLabel} subjectName={item.subjectName} />
       ) : activeTab === 'reportes' ? (
-        <SubjectModulePanel icon={<ChartColumn className="size-6" />} title="Reportes" description="Genera reportes de calificaciones, asistencia y progreso de esta asignatura." href="/reportes" action="Abrir reportes" />
+        <SubjectReportsPanel
+          sectionSubjectId={item.assignment?.id ?? null}
+          courseLabel={courseLabel}
+          subjectName={item.subjectName}
+          initialStudents={overview.gradingStudents}
+          initialActivities={overview.activities}
+          initialRecords={overview.gradeRecords}
+          periods={overview.academicPeriods}
+          initialPeriodId={overview.selectedAcademicPeriodId}
+        />
       ) : (
         <SubjectModulePanel icon={<SlidersHorizontal className="size-6" />} title="Configuración de la asignatura" description="La apariencia y el estado de la asignatura se administran desde el menú de su tarjeta en el curso." action="Volver a asignaturas" onAction={onBack} />
       )}

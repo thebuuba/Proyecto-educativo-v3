@@ -18,6 +18,8 @@ export type AcademicPeriodOpt = {
   name: string
   sequence: number
   schoolYearId?: string
+  startDate?: string
+  endDate?: string
 }
 
 export type StudentGradeRow = {
