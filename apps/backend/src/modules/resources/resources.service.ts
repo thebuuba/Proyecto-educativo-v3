@@ -43,7 +43,7 @@ export class ResourcesService {
     await this.subject(user, sectionSubjectId)
     const status = filters.status === 'archived' ? 'ARCHIVED' : 'ACTIVE'
     const rows = await resources.findMany({ where: { schoolId: user.schoolId, sectionSubjectId, status, ...(filters.kind && filters.kind !== 'ALL' ? { kind: filters.kind } : {}), ...(filters.q ? { OR: [{ title: { contains: filters.q, mode: 'insensitive' } }, { description: { contains: filters.q, mode: 'insensitive' } }] } : {}) }, include: { _count: { select: { activities: true } } }, orderBy: { createdAt: 'desc' }, take: 100 })
-    const usage = await resources.aggregate({ where: { schoolId: user.schoolId, sectionSubjectId, status: 'ACTIVE' }, _sum: { sizeBytes: true } })
+    const usage = await resources.aggregate({ where: { schoolId: user.schoolId, sectionSubjectId, status: { in: ['ACTIVE', 'ARCHIVED'] } }, _sum: { sizeBytes: true } })
     return { items: rows.map(mapResource), usageBytes: Number(usage._sum.sizeBytes ?? 0), limitBytes: SUBJECT_STORAGE_LIMIT_BYTES }
   }
   async createLink(user: AuthenticatedUser, body: any) {
@@ -55,7 +55,7 @@ export class ResourcesService {
     await this.subject(user, body.sectionSubjectId)
     if (!file || !file.buffer) throw new BadRequestException('Selecciona un archivo')
     if (file.size > RESOURCE_UPLOAD_LIMIT_BYTES || !ALLOWED.has(file.mimetype)) throw new BadRequestException('Tipo de archivo no permitido o superior a 25 MB')
-    const usage = await resources.aggregate({ where: { schoolId: user.schoolId, sectionSubjectId: body.sectionSubjectId, status: 'ACTIVE' }, _sum: { sizeBytes: true } })
+    const usage = await resources.aggregate({ where: { schoolId: user.schoolId, sectionSubjectId: body.sectionSubjectId, status: { in: ['ACTIVE', 'ARCHIVED'] } }, _sum: { sizeBytes: true } })
     if (Number(usage._sum.sizeBytes ?? 0) + file.size > SUBJECT_STORAGE_LIMIT_BYTES) throw new ConflictException('Esta asignatura alcanzó su límite de almacenamiento de 500 MB')
     const extension = file.originalname.includes('.') ? `.${file.originalname.split('.').pop()!.replace(/[^a-zA-Z0-9]/g, '').slice(0, 8)}` : ''
     const path = `${user.schoolId}/${body.sectionSubjectId}/${randomUUID()}${extension}`

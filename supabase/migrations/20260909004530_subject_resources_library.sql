@@ -15,8 +15,8 @@ create table public.subject_resources (
   status public.record_status not null default 'active',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
-  check ((kind = 'LINK' and external_url is not null and object_path is null) or
-         (kind <> 'LINK' and object_path is not null and external_url is null))
+  check ((kind in ('LINK', 'EVIDENCE') and external_url is not null and object_path is null) or
+         (kind in ('FILE', 'EVIDENCE') and object_path is not null and external_url is null))
 );
 
 create index subject_resources_subject_status_idx on public.subject_resources(section_subject_id, status, created_at desc);

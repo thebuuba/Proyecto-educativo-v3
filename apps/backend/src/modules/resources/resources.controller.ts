@@ -2,12 +2,15 @@ import { Body, Controller, Delete, Get, Param, Patch, Post, Query, Res, Uploaded
 import { FileInterceptor } from '@nestjs/platform-express'
 import { Response } from 'express'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
+import { Roles } from '../../common/decorators/roles.decorator'
+import { RolesGuard } from '../../common/guards/roles.guard'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { JwtAuthGuard } from '../auth/strategies/jwt-auth.guard'
 import { ResourcesService } from './resources.service'
 
 @Controller('resources')
-@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard, RolesGuard)
+@Roles('admin', 'director', 'coordinator', 'teacher')
 export class ResourcesController {
   constructor(private readonly resources: ResourcesService) {}
 
