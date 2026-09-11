@@ -25,8 +25,11 @@ export function getAuthBootstrap(): Promise<AuthBootstrap> {
 
 /** Inicia sesión con correo y contraseña. */
 export async function login(credentials: LoginCredentials): Promise<LoginResponse> {
-  // El backend autentica con Supabase y devuelve la sesión de Aula Base.
-  return api.post<LoginResponse>('/auth/login', credentials)
+  const { data, error } = await supabase.auth.signInWithPassword(credentials)
+  if (error) throw new Error(error.message)
+  const token = data.session?.access_token
+  if (!token) throw new Error('No se pudo crear la sesión.')
+  return createAulaSession(token)
 }
 
 /** Registra una nueva institución con los datos del administrador. */
@@ -72,13 +75,15 @@ export async function exchangeOAuthCode(code: string): Promise<string> {
 
 /** Crea sesión Aula Base desde token Supabase. */
 export async function createAulaSession(supabaseAccessToken: string): Promise<LoginResponse> {
-  return api.post<LoginResponse>('/auth/session', undefined, {
+  const session = await api.post<LoginResponse>('/auth/session', undefined, {
     headers: {
       Authorization: `Bearer ${supabaseAccessToken}`,
       'X-Remember-Session': String(isRememberSessionEnabled()),
     },
     clearResponseCache: true,
   })
+  const bootstrap = await getAuthBootstrap()
+  return { ...session, ...bootstrap }
 }
 
 /** Completa el onboarding académico inicial. */
