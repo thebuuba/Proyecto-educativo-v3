@@ -6,7 +6,6 @@ vi.mock('@supabase/supabase-js', () => ({
 
 import {
   authSessionStorage,
-  setRememberSession,
 } from '@/modules/auth/services/supabaseClient'
 
 describe('Supabase session storage', () => {
@@ -15,16 +14,16 @@ describe('Supabase session storage', () => {
     sessionStorage.clear()
   })
 
-  it('keeps remembered sessions across browser restarts and other sessions per tab', () => {
-    setRememberSession(true)
+  it('keeps sessions across browser restarts and migrates old tab sessions', () => {
     authSessionStorage.setItem('supabase-token', 'persistent')
     expect(localStorage.getItem('supabase-token')).toBe('persistent')
     expect(sessionStorage.getItem('supabase-token')).toBeNull()
 
-    setRememberSession(false)
-    authSessionStorage.setItem('supabase-token', 'tab-only')
-    expect(sessionStorage.getItem('supabase-token')).toBe('tab-only')
-    expect(localStorage.getItem('supabase-token')).toBeNull()
+    localStorage.removeItem('supabase-token')
+    sessionStorage.setItem('supabase-token', 'old-tab-session')
+    expect(authSessionStorage.getItem('supabase-token')).toBe('old-tab-session')
+    expect(localStorage.getItem('supabase-token')).toBe('old-tab-session')
+    expect(sessionStorage.getItem('supabase-token')).toBeNull()
 
     authSessionStorage.removeItem('supabase-token')
     expect(sessionStorage.getItem('supabase-token')).toBeNull()
