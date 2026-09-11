@@ -26,6 +26,9 @@ export async function getCourseData(): Promise<CourseData> {
   return api.get<CourseData>('/courses/course-data', {
     cacheTtlMs: API_CACHE_TTL.sessionList,
     cacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.schoolYears],
+    // La vista reúne varias métricas académicas en una sola respuesta. En desarrollo
+    // local o después de un arranque en frío puede superar el timeout GET genérico.
+    timeoutMs: 30_000,
   })
 }
 

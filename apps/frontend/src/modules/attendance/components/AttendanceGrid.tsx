@@ -25,7 +25,8 @@ const markStyles: Record<Exclude<MonthlyAttendanceMark, null>, string> = {
   P: 'bg-success text-success-foreground shadow-sm',
   A: 'bg-destructive text-destructive-foreground shadow-sm',
   E: 'bg-warning text-warning-foreground shadow-sm',
-  R: 'bg-muted-foreground text-background shadow-sm',
+  T: 'bg-violet-100 text-violet-700 shadow-sm',
+  R: 'bg-violet-100 text-violet-700 shadow-sm',
 }
 
 function formatShortDate(value: string) {
@@ -82,7 +83,7 @@ export function AttendanceGrid({
                 Fechas de clase
               </th>
               <th rowSpan={2} className="sticky right-14 z-30 w-14 border-b border-l border-border/70 bg-card px-2 py-3 text-center text-[10px] font-extrabold uppercase text-muted-foreground">
-                P
+                P/E
               </th>
               <th rowSpan={2} className="sticky right-0 z-30 w-16 border-b border-l border-border/70 bg-card px-2 py-3 text-center text-[10px] font-extrabold uppercase text-muted-foreground">
                 %
@@ -119,7 +120,7 @@ export function AttendanceGrid({
                   </td>
                 ) : workedDays.map((workedDay) => {
                   const cell = row.cells[workedDay.date]
-                  const mark = cell?.mark ?? null
+                  const mark = cell?.mark === 'R' ? 'T' : cell?.mark ?? null
                   return (
                     <td key={workedDay.date} className="border-b border-border/60 px-1 py-2.5 text-center">
                       <button
@@ -157,7 +158,7 @@ function AttendanceLegend() {
     { mark: 'P', label: 'Presente' },
     { mark: 'A', label: 'Ausente' },
     { mark: 'E', label: 'Excusa' },
-    { mark: 'R', label: 'Retirado' },
+    { mark: 'T', label: 'Tardanza' },
     { mark: null, label: 'Sin registro' },
   ]
 

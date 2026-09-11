@@ -32,6 +32,7 @@ import {
 } from '@/components/ui/SemanticUI'
 import { getAttendanceCourses, getStudentsBySection } from '@/modules/attendance/services/attendanceService'
 import type { StudentAttendanceRow } from '@/modules/attendance/types'
+import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import {
   archiveJournalEntry,
   completeJournalFollowUp,
@@ -60,6 +61,8 @@ const typeInfo: Record<JournalEntryType, JournalTypeInfo> = {
   course_observation: { label: 'Observación de curso', tone: 'success', icon: ClipboardList },
 }
 
+export const journalEntryTypeLabel = (type: JournalEntryType) => typeInfo[type].label
+
 export function JournalPage() {
   const [params, setParams] = useSearchParams()
   const [entries, setEntries] = useState<JournalEntry[]>([])
@@ -71,6 +74,7 @@ export function JournalPage() {
   const [type, setType] = useState<'all' | JournalEntryType>('all')
   const [sectionId, setSectionId] = useState(params.get('sectionId') ?? '')
   const [subjectId, setSubjectId] = useState(params.get('sectionSubjectId') ?? '')
+  const studentId = params.get('studentId') ?? ''
   const [followUp, setFollowUp] = useState<'all' | 'pending' | 'completed'>('all')
   const [showArchived, setShowArchived] = useState(false)
   const [editing, setEditing] = useState<JournalEntry | 'new' | null>(
@@ -107,6 +111,7 @@ export function JournalPage() {
         if (type !== 'all' && entry.entryType !== type) return false
         if (sectionId && entry.sectionId !== sectionId) return false
         if (subjectId && entry.sectionSubjectId !== subjectId) return false
+        if (studentId && !entry.students.some(({ student }) => student.id === studentId)) return false
         if (followUp !== 'all' && entry.followUpStatus !== followUp) return false
 
         return (
@@ -118,8 +123,12 @@ export function JournalPage() {
             .includes(debounced)
         )
       }),
-    [debounced, entries, followUp, sectionId, showArchived, subjectId, type],
+    [debounced, entries, followUp, sectionId, showArchived, studentId, subjectId, type],
   )
+
+  const contextualStudent = studentId
+    ? entries.flatMap((entry) => entry.students).find(({ student }) => student.id === studentId)?.student
+    : null
 
   const grouped = useMemo(
     () =>
@@ -164,6 +173,11 @@ export function JournalPage() {
     setFollowUp('all')
     setType('all')
     setShowArchived(false)
+    const next = new URLSearchParams(params)
+    next.delete('sectionId')
+    next.delete('sectionSubjectId')
+    next.delete('studentId')
+    setParams(next, { replace: true })
   }
 
   return (
@@ -197,6 +211,8 @@ export function JournalPage() {
           </Button>
         </div>
       </FilterBar>
+
+      {studentId ? <FeedbackBanner tone="info" className="flex flex-wrap items-center justify-between gap-3"><span className="text-foreground">Vista filtrada para <strong>{contextualStudent ? `${contextualStudent.firstName} ${contextualStudent.lastName}` : 'el estudiante seleccionado'}</strong>, su curso y esta asignatura.</span><button type="button" onClick={clearFilters} className="min-h-9 rounded-lg px-3 font-extrabold text-foreground underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15">Ver toda la bitácora</button></FeedbackBanner> : null}
 
       <div className="flex gap-2 overflow-x-auto pb-1">
         <QuickFilter
@@ -274,7 +290,7 @@ export function JournalPage() {
                   <h2 className="mb-3 text-xs font-black uppercase tracking-wider text-muted-foreground">
                     {formatGroupDate(date)}
                   </h2>
-                  <div className="space-y-3">
+                  <div className="grid gap-3 lg:grid-cols-2">
                     {items.map((entry) => (
                       <JournalCard
                         key={entry.id}
@@ -380,14 +396,14 @@ function JournalCard({
   const Icon = info.icon
 
   return (
-    <article className="dashboard-warm-shadow rounded-3xl bg-card p-4 sm:p-5">
+    <article className="dashboard-warm-shadow h-full min-w-0 rounded-3xl bg-card p-4">
       <div className="flex gap-3">
         <SemanticIcon icon={Icon} tone={info.tone} />
         <div className="min-w-0 flex-1">
           <div className="flex items-start gap-2">
             <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-2">
-                <h3 className="font-extrabold text-foreground">{entry.title || info.label}</h3>
+                <h3 className="line-clamp-1 [overflow-wrap:anywhere] font-extrabold text-foreground" title={entry.title || info.label}>{entry.title || info.label}</h3>
                 {entry.followUpStatus === 'pending' ? (
                   <StatusBadge tone="warning">Requiere seguimiento</StatusBadge>
                 ) : null}
@@ -395,7 +411,7 @@ function JournalCard({
                   <StatusBadge tone="neutral">Archivada</StatusBadge>
                 ) : null}
               </div>
-              <p className="mt-1 text-xs font-bold text-primary-variant">
+              <p className="mt-1 line-clamp-1 [overflow-wrap:anywhere] text-xs font-bold text-primary-variant">
                 {entry.section ? `${entry.section.grade.name} ${entry.section.name}` : 'Sin curso'}
                 {entry.sectionSubject ? ` · ${entry.sectionSubject.subject.name}` : ''}
                 {entry.students.length
@@ -414,11 +430,11 @@ function JournalCard({
             </button>
           </div>
 
-          <p className="mt-3 whitespace-pre-wrap text-sm leading-6 text-muted-foreground">
+          <p className="mt-2 line-clamp-2 min-h-10 whitespace-pre-wrap [overflow-wrap:anywhere] text-xs leading-5 text-muted-foreground">
             {entry.content}
           </p>
 
-          <footer className="mt-4 flex flex-wrap items-center gap-2 border-t border-border/65 pt-3 text-[11px] text-muted-foreground">
+          <footer className="mt-3 flex flex-wrap items-center gap-2 border-t border-border/65 pt-2 text-[11px] text-muted-foreground">
             <span>
               <CalendarDays className="mr-1 inline size-3" />
               {new Date(entry.occurredAt).toLocaleTimeString('es', {
@@ -426,12 +442,13 @@ function JournalCard({
                 minute: '2-digit',
               })}
             </span>
-            {entry.tags.map((tag) => (
-              <span key={tag} className="rounded-full bg-muted px-2 py-1">
+            {entry.tags.slice(0, 1).map((tag) => (
+              <span key={tag} className="max-w-full [overflow-wrap:anywhere] rounded-full bg-muted px-2 py-1">
                 <Tag className="mr-1 inline size-3" />
                 {tag}
               </span>
             ))}
+            {entry.tags.length > 1 ? <span className="rounded-full bg-muted px-2 py-1 font-bold">+{entry.tags.length - 1}</span> : null}
             {entry.followUpStatus === 'pending' ? (
               <button onClick={onComplete} className="ml-auto font-bold text-foreground">
                 <Check className="mr-1 inline size-3 text-success" />
@@ -458,7 +475,9 @@ function JournalCard({
   )
 }
 
-function JournalForm({
+export type JournalCourseOption = Pick<EnrollmentCourse, 'id' | 'sectionId' | 'schoolYearId' | 'gradeName' | 'sectionName' | 'subjectName'>
+
+export function JournalForm({
   entry,
   courses,
   initialSectionId,
@@ -469,7 +488,7 @@ function JournalForm({
   onSaved,
 }: {
   entry: JournalEntry | null
-  courses: EnrollmentCourse[]
+  courses: JournalCourseOption[]
   initialSectionId: string
   initialSubjectId: string
   initialType?: JournalEntryType
@@ -500,9 +519,18 @@ function JournalForm({
     followUpStatus: entry?.followUpStatus ?? 'none',
   })
   const [students, setStudents] = useState<StudentAttendanceRow[]>([])
+  const [teamContext, setTeamContext] = useState<{ name: string; teammateIds: string[] } | null>(null)
+  const [teamLoading, setTeamLoading] = useState(false)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
   const sectionCourses = courses.filter((course) => course.sectionId === form.sectionId)
+  const contextualStudentMode = !entry && Boolean(initialStudentId)
+  const primaryStudent = contextualStudentMode
+    ? students.find((student) => student.studentId === initialStudentId) ?? null
+    : null
+  const teammates = contextualStudentMode && teamContext
+    ? students.filter((student) => teamContext.teammateIds.includes(student.studentId))
+    : []
 
   useEffect(() => {
     const course = courses.find((item) => item.sectionId === form.sectionId)
@@ -512,8 +540,51 @@ function JournalForm({
     }
 
     setForm((current) => ({ ...current, schoolYearId: course.schoolYearId }))
-    void getStudentsBySection(course.sectionId, course.schoolYearId).then(setStudents)
-  }, [form.sectionId, courses])
+    void getStudentsBySection(course.sectionId, course.schoolYearId).then((rows) => {
+      setStudents(rows)
+      if (contextualStudentMode && rows.some((student) => student.studentId === initialStudentId)) {
+        setForm((current) => current.studentIds.includes(initialStudentId)
+          ? current
+          : { ...current, studentIds: [...current.studentIds, initialStudentId] })
+      }
+    })
+  }, [form.sectionId, courses, contextualStudentMode, initialStudentId])
+
+  useEffect(() => {
+    if (!contextualStudentMode || !form.sectionSubjectId) {
+      setTeamContext(null)
+      setTeamLoading(false)
+      return
+    }
+
+    let active = true
+    setTeamLoading(true)
+    setTeamContext(null)
+    void getCourseTeams(form.sectionSubjectId)
+      .then((teams) => {
+        if (!active) return
+        const team = teams.find((candidate) =>
+          candidate.members.some((member) =>
+            member.enrollment.student.id === initialStudentId
+            && member.status !== 'INACTIVE',
+          ),
+        )
+        setTeamContext(team ? {
+          name: team.name,
+          teammateIds: team.members
+            .filter((member) => member.enrollment.student.id !== initialStudentId && member.status !== 'INACTIVE')
+            .map((member) => member.enrollment.student.id),
+        } : null)
+      })
+      .catch(() => {
+        if (active) setTeamContext(null)
+      })
+      .finally(() => {
+        if (active) setTeamLoading(false)
+      })
+
+    return () => { active = false }
+  }, [contextualStudentMode, form.sectionSubjectId, initialStudentId])
 
   const submit = async (event: FormEvent) => {
     event.preventDefault()
@@ -600,7 +671,7 @@ function JournalForm({
                   ...form,
                   sectionId: event.target.value || undefined,
                   sectionSubjectId: undefined,
-                  studentIds: [],
+                  studentIds: contextualStudentMode ? [initialStudentId] : [],
                 })
               }
             >
@@ -617,7 +688,11 @@ function JournalForm({
               className="field"
               value={form.sectionSubjectId ?? ''}
               onChange={(event) =>
-                setForm({ ...form, sectionSubjectId: event.target.value || undefined })
+                setForm({
+                  ...form,
+                  sectionSubjectId: event.target.value || undefined,
+                  studentIds: contextualStudentMode ? [initialStudentId] : form.studentIds,
+                })
               }
             >
               <option value="">Sin asignatura</option>
@@ -630,7 +705,53 @@ function JournalForm({
           </Field>
         </div>
 
-        {students.length > 0 ? (
+        {contextualStudentMode ? (
+          <div className="grid gap-3">
+            {primaryStudent ? (
+              <Field label="Estudiante">
+                <div className="flex items-center gap-2 rounded-xl border border-border bg-muted/35 px-3 py-2.5 text-sm font-semibold text-foreground">
+                  <input type="checkbox" checked readOnly disabled />
+                  <span>{primaryStudent.firstName} {primaryStudent.lastName}</span>
+                  <span className="ml-auto text-[10px] font-bold uppercase tracking-wide text-muted-foreground">Principal</span>
+                </div>
+              </Field>
+            ) : null}
+
+            {teamLoading ? (
+              <p className="rounded-xl bg-muted/50 px-3 py-3 text-xs text-muted-foreground">Buscando compañeros del equipo…</p>
+            ) : teamContext ? (
+              <Field label="Agregar también a compañeros del equipo">
+                <div className="rounded-xl border border-border p-2">
+                  <p className="mb-1 px-2 py-1 text-[11px] font-bold text-muted-foreground">Equipo: <span className="text-foreground">{teamContext.name}</span></p>
+                  {teammates.length ? teammates.map((student) => (
+                    <label
+                      key={student.studentId}
+                      className="flex items-center gap-2 rounded-lg px-2 py-2 text-sm hover:bg-muted"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={form.studentIds.includes(student.studentId)}
+                        onChange={(event) =>
+                          setForm({
+                            ...form,
+                            studentIds: event.target.checked
+                              ? [...new Set([...form.studentIds, student.studentId])]
+                              : form.studentIds.filter((id) => id !== student.studentId),
+                          })
+                        }
+                      />
+                      {student.firstName} {student.lastName}
+                    </label>
+                  )) : (
+                    <p className="px-2 py-2 text-xs text-muted-foreground">No hay otros integrantes activos en este equipo.</p>
+                  )}
+                </div>
+              </Field>
+            ) : (
+              <p className="rounded-xl bg-muted/50 px-3 py-3 text-xs text-muted-foreground">Este estudiante no pertenece a ningún equipo en esta asignatura.</p>
+            )}
+          </div>
+        ) : students.length > 0 ? (
           <Field label="Estudiantes relacionados">
             <div className="max-h-40 overflow-y-auto rounded-xl border border-border p-2">
               {students.map((student) => (
@@ -659,6 +780,7 @@ function JournalForm({
 
         <Field label="Etiquetas (separadas por coma)">
           <Input
+            placeholder="Ej.: participación, conducta, seguimiento"
             value={form.tags.join(', ')}
             onChange={(event) =>
               setForm({
@@ -667,6 +789,7 @@ function JournalForm({
               })
             }
           />
+          <span className="font-normal leading-5 text-muted-foreground">Opcional. Escribe palabras clave separadas por comas para organizar y encontrar esta anotación después.</span>
         </Field>
 
         <label className="flex items-center gap-2 text-sm font-bold">
@@ -824,7 +947,7 @@ function JournalEmpty({ title, action }: { title: string; action?: () => void })
   )
 }
 
-function uniqueSections(courses: EnrollmentCourse[]) {
+function uniqueSections(courses: JournalCourseOption[]) {
   return Array.from(
     new Map(
       courses.map((course) => [

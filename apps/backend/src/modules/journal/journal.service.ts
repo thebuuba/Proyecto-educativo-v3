@@ -36,16 +36,16 @@ export class JournalService {
   async update(schoolId: string, userId: string, id: string, dto: SaveJournalEntryDto) {
     await this.owned(schoolId, userId, id)
     await this.validateContext(schoolId, dto)
-    return prisma.$transaction(async (tx) => {
-      await tx.teacherJournalStudent.deleteMany({ where: { entryId: id } })
-      return tx.teacherJournalEntry.update({
-        where: { id },
-        data: {
-          ...this.entryData(dto),
-          students: { create: (dto.studentIds ?? []).map((studentId) => ({ schoolId, studentId })) },
+    return prisma.teacherJournalEntry.update({
+      where: { id },
+      data: {
+        ...this.entryData(dto),
+        students: {
+          deleteMany: {},
+          create: (dto.studentIds ?? []).map((studentId) => ({ schoolId, studentId })),
         },
-        include: entryInclude,
-      })
+      },
+      include: entryInclude,
     })
   }
 
@@ -60,8 +60,7 @@ export class JournalService {
   }
 
   async remove(schoolId: string, userId: string, id: string) {
-    const entry = await this.owned(schoolId, userId, id)
-    if (entry.status !== 'ARCHIVED') throw new BadRequestException('Archiva la anotación antes de eliminarla')
+    await this.owned(schoolId, userId, id)
     await prisma.teacherJournalEntry.delete({ where: { id } })
     return { id }
   }
