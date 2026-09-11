@@ -5,7 +5,7 @@ import {
   Children,
   cloneElement,
   isValidElement,
-  useRef,
+  useState,
   type OptionHTMLAttributes,
   type ReactElement,
   type ReactNode,
@@ -32,21 +32,17 @@ export function Select({
 }: SelectHTMLAttributes<HTMLSelectElement>) {
   const ariaLabel = String(props['aria-label'] ?? '').trim().toLocaleLowerCase('es')
   const isAcademicPeriodSelect = ariaLabel === 'período' || ariaLabel === 'periodo'
-  const currentPeriodNumberRef = useRef<number | null>(null)
-
   const options = Children.toArray(children).filter(
     (child): child is ReactElement<OptionHTMLAttributes<HTMLOptionElement>> =>
       isValidElement<OptionHTMLAttributes<HTMLOptionElement>>(child) && child.type === 'option',
   )
 
-  if (isAcademicPeriodSelect && currentPeriodNumberRef.current === null) {
+  const [currentPeriodNumber] = useState<number | null>(() => {
+    if (!isAcademicPeriodSelect) return null
     const selectedValue = value ?? defaultValue
     const selectedOption = options.find((option) => String(option.props.value ?? '') === String(selectedValue ?? ''))
-    const detectedPeriod = selectedOption ? periodNumberFromLabel(selectedOption.props.children) : null
-    if (detectedPeriod !== null) currentPeriodNumberRef.current = detectedPeriod
-  }
-
-  const currentPeriodNumber = currentPeriodNumberRef.current
+    return selectedOption ? periodNumberFromLabel(selectedOption.props.children) : null
+  })
   const guardedChildren = isAcademicPeriodSelect && currentPeriodNumber !== null
     ? Children.map(children, (child) => {
         if (!isValidElement<OptionHTMLAttributes<HTMLOptionElement>>(child) || child.type !== 'option') return child

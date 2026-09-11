@@ -94,7 +94,7 @@ export function GroupedSubjectActivitiesPage() {
   const [collapsedBlocks, setCollapsedBlocks] = useState<Set<string>>(() => new Set())
   const [blockPickerOpen, setBlockPickerOpen] = useState(false)
 
-  const context = useMemo(() => {
+  const context = (() => {
     for (const grade of grades) {
       const section = grade.sections.find((item) => item.id === courseId)
       if (!section) continue
@@ -103,7 +103,7 @@ export function GroupedSubjectActivitiesPage() {
       return { grade, section, assignment }
     }
     return null
-  }, [courseId, grades, subjectId])
+  })()
 
   useEffect(() => {
     if (!subjectId) {
