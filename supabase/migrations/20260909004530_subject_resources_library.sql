@@ -12,7 +12,7 @@ create table public.subject_resources (
   mime_type text,
   size_bytes bigint not null default 0 check (size_bytes >= 0),
   category text not null default 'OTRO',
-  status public.record_status not null default 'ACTIVE',
+  status public.record_status not null default 'active',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
   check ((kind = 'LINK' and external_url is not null and object_path is null) or
