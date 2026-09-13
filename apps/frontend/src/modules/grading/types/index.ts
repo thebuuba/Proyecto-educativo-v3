@@ -124,8 +124,6 @@ export type SaveGradeInput = {
   enrollmentId: string
   sectionSubjectId: string
   academicPeriodId: string
-  sectionId: string
-  schoolYearId: string
   score: number
   maxScore: number
   weight: number
