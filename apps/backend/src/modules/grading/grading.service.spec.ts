@@ -3,6 +3,7 @@ import { __test__clearGradingCache, GradingService } from './grading.service'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
+    $queryRaw: vi.fn(),
     academicPeriod: {
       findMany: vi.fn(),
       findFirst: vi.fn(),
@@ -17,13 +18,20 @@ const mocks = vi.hoisted(() => ({
     },
     enrollment: {
       findMany: vi.fn(),
+      findFirst: vi.fn(),
     },
     gradesRecord: {
       findMany: vi.fn(),
+      findFirst: vi.fn(),
+      create: vi.fn(),
+      update: vi.fn(),
+      count: vi.fn(),
     },
     evaluationActivity: {
       findMany: vi.fn(),
+      findFirst: vi.fn(),
       create: vi.fn(),
+      update: vi.fn(),
     },
     courseTeam: { findMany: vi.fn() },
   },
@@ -75,6 +83,84 @@ describe('GradingService instrument evidence', () => {
         completedAt: '2026-09-01T12:00:00.000Z',
       },
     })).rejects.toThrow('no es valido')
+  })
+})
+
+describe('GradingService activity grade persistence', () => {
+  beforeEach(() => vi.clearAllMocks())
+
+  function mockValidContext(maxScore = 20) {
+    mocks.prisma.enrollment.findMany.mockResolvedValue([])
+    mocks.prisma.enrollment.findFirst.mockResolvedValue({
+      id: 'enrollment-1',
+      sectionId: 'section-1',
+      schoolYearId: 'year-1',
+    })
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({
+      id: 'ss-1',
+      sectionId: 'section-1',
+      schoolYearId: 'year-1',
+    })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1', schoolYearId: 'year-1' })
+    mocks.prisma.evaluationActivity.findFirst.mockResolvedValue({
+      id: 'activity-1',
+      schoolId: 'school-1',
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      maxScore,
+      status: 'ACTIVE',
+    })
+  }
+
+  it('rechaza una nota superior al máximo almacenado de la actividad', async () => {
+    mockValidContext(20)
+
+    await expect(new GradingService().saveGrade('school-1', {
+      enrollmentId: 'enrollment-1',
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      evaluationActivityId: 'activity-1',
+      score: 21,
+    })).rejects.toThrow('no puede superar 20')
+    expect(mocks.prisma.$queryRaw).not.toHaveBeenCalled()
+  })
+
+  it('impide eliminar una actividad que ya tiene calificaciones', async () => {
+    mocks.prisma.evaluationActivity.findFirst.mockResolvedValue({ id: 'activity-1' })
+    mocks.prisma.gradesRecord.count.mockResolvedValue(2)
+
+    await expect(new GradingService().deleteActivity('school-1', 'activity-1')).rejects.toThrow(
+      'tiene calificaciones registradas',
+    )
+    expect(mocks.prisma.evaluationActivity.update).not.toHaveBeenCalled()
+  })
+
+  it('acepta cero como nota real y usa el guardado idempotente de la actividad', async () => {
+    mockValidContext(20)
+    mocks.prisma.$queryRaw.mockResolvedValue([{
+      id: 'grade-1',
+      enrollmentId: 'enrollment-1',
+      score: 0,
+      maxScore: 20,
+      weight: 1,
+      assessmentName: 'Diagnóstico inicial',
+      status: 'DRAFT',
+      evaluationActivityId: 'activity-1',
+      instrumentResult: null,
+    }])
+
+    const saved = await new GradingService().saveGrade('school-1', {
+      enrollmentId: 'enrollment-1',
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      evaluationActivityId: 'activity-1',
+      assessmentName: 'Diagnóstico inicial',
+      score: 0,
+    })
+
+    expect(saved.score).toBe(0)
+    expect(saved.maxScore).toBe(20)
+    expect(mocks.prisma.$queryRaw).toHaveBeenCalledOnce()
   })
 })
 
@@ -202,6 +288,7 @@ describe('GradingService optimized workspaces', () => {
       {
         id: 'enrollment-1',
         studentId: 'student-1',
+        listNumber: 1,
         student: { studentCode: '001', firstName: 'Ana', lastName: 'Pérez' },
       },
     ])

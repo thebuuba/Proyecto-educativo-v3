@@ -132,7 +132,7 @@ export type SaveGradeInput = {
   assessmentName: string
   evaluationActivityId?: string | null
   gradeId?: string | null
-  instrumentResult?: EvaluatedInstrumentResult
+  instrumentResult?: EvaluatedInstrumentResult | null
 }
 
 export type GradingWorkspace = {

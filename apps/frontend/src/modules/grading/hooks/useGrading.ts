@@ -330,12 +330,13 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
   }, [])
 
   const updateActivityScore = useCallback(
-    async (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => {
+    async (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => {
       if (!gradingContext || !academicPeriodId) return
       const score = value.trim() === '' ? null : Number(value)
       const existing = gradeRecords.find((record) => activityRecordMatches(record, enrollmentId, activity.id))
       const cellKey = activityGradeCellKey(enrollmentId, activity.id)
-      if (!instrumentResult && !scoreNeedsPersistence(existing?.score, score)) return
+      if (instrumentResult === undefined && !scoreNeedsPersistence(existing?.score, score)) return
+      if (instrumentResult === null && !existing?.instrumentResult && !scoreNeedsPersistence(existing?.score, score)) return
       if (score !== null) {
         const validationError = validateScore(score, activity.maxScore)
         if (validationError) {
@@ -377,7 +378,7 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
         assessmentName: activityRecordName(activity),
         status: existing?.status ?? 'draft',
         evaluationActivityId: activity.id,
-        instrumentResult: instrumentResult ?? existing?.instrumentResult ?? null,
+        instrumentResult: instrumentResult === undefined ? existing?.instrumentResult ?? null : instrumentResult,
       }
       setGradeRecords((current) => existing
         ? current.map((record) => record.id === existing.id ? optimistic : record)

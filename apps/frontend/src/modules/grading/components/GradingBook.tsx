@@ -143,6 +143,7 @@ import {
   getRecoveryScores,
   plainActivityText,
   scoreForActivity,
+  scoreNeedsPersistence,
   sumActivityMaxScore,
   type CompetencyBlockId,
   type CompetencyPeriodId,
@@ -171,7 +172,7 @@ type GradingBookProps = {
   onAddActivity: (activity: Omit<GradingActivity, 'id'>) => Promise<GradingActivity>
   onUpdateActivity: (activity: GradingActivity) => Promise<GradingActivity>
   onDeleteActivity: (activityId: string) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => void
   onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => void
   loadFinalRecords: () => Promise<Map<CompetencyPeriodId, GradeRecordRow[]>>
   getActivitiesForPeriod: (periodId: CompetencyPeriodId) => GradingActivity[]
@@ -349,6 +350,7 @@ export function GradingBook({
   periodShortName,
   courseTitle,
   saving,
+  cellSaveStates,
   initialView = 'blocks',
   initialActivityAction,
   initialActivityBlockId,
@@ -388,9 +390,17 @@ export function GradingBook({
   const [annualError, setAnnualError] = useState<string | null>(null)
   const [annualRetryKey, setAnnualRetryKey] = useState(0)
   const [activitySaveCompletion, setActivitySaveCompletion] = useState<ActivitySaveCompletion | null>(null)
+  const hasPendingCellSaves = Object.values(cellSaveStates).some((state) => state === 'saving')
   const handledInitialLaunch = useRef(initialLaunchKey)
   const handledInitialEdit = useRef<string | null>(null)
   const previousInitialView = useRef(initialView)
+
+  useEffect(() => {
+    if (!hasPendingCellSaves) return
+    const warnBeforeUnload = (event: BeforeUnloadEvent) => event.preventDefault()
+    window.addEventListener('beforeunload', warnBeforeUnload)
+    return () => window.removeEventListener('beforeunload', warnBeforeUnload)
+  }, [hasPendingCellSaves])
 
   useEffect(() => {
     if (previousInitialView.current === initialView) return
@@ -467,7 +477,10 @@ export function GradingBook({
       const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
       const expected = config.expectedBlockTotal
       const maxScore = sumActivityMaxScore(blockActivities, block.id)
-      const studentScores = students.map((student) => {
+      const studentScores = students.flatMap((student) => {
+        const hasRecordedScore = blockActivities.some((activity) => scoreForActivity(records, student.enrollmentId, activity.id))
+        const recovery = recoveryScores[block.id]?.[student.enrollmentId] ?? null
+        if (!hasRecordedScore && recovery === null) return []
         const total = blockTotal({
           records,
           activities: blockActivities,
@@ -475,12 +488,10 @@ export function GradingBook({
           blockId: block.id,
           config,
         })
-        const recovery = recoveryScores[block.id]?.[student.enrollmentId] ?? null
-        return effectivePeriodScore(total, recovery, config)
+        return [effectivePeriodScore(total, recovery, config)]
       })
-      const gradedScores = studentScores.filter((value) => value > 0)
-      const average = gradedScores.length > 0
-        ? gradedScores.reduce((sum, value) => sum + value, 0) / gradedScores.length
+      const average = studentScores.length > 0
+        ? studentScores.reduce((sum, value) => sum + value, 0) / studentScores.length
         : null
       const hasRecovery = Object.values(recoveryScores[block.id] ?? {}).some((value) => typeof value === 'number')
       const status = blockActivities.length === 0
@@ -937,8 +948,11 @@ export function GradingBook({
         ) : selectedActivity ? (
           <ActivityDetailView
             activity={selectedActivity}
+            cellSaveStates={cellSaveStates}
+            courseTitle={courseTitle}
             initialTab={detailView.type === 'activity' ? detailView.initialTab : undefined}
             onBack={() => {
+              if (hasPendingCellSaves) return
               if (initialActivityId && onReturnToOrigin) {
                 onReturnToOrigin()
                 return
@@ -948,6 +962,7 @@ export function GradingBook({
             onEditActivity={editActivity}
             onSaveScore={onSaveScore}
             records={records}
+            periodName={periodName}
             saving={saving}
             students={students}
           />
@@ -1852,21 +1867,23 @@ function BlockGradeView({
 
 }
 
-function CellSaveIndicator({ state }: { state?: GradeCellSaveState }) {
+function CellSaveIndicator({ state, evaluated }: { state?: GradeCellSaveState; evaluated?: boolean }) {
   const label = state === 'saving'
     ? 'Guardando...'
     : state === 'saved'
       ? 'Guardado'
       : state === 'error'
-        ? 'Error al guardar'
-        : ''
+        ? 'Error al guardar · Reintenta'
+        : evaluated
+          ? 'Guardado'
+          : 'Sin evaluar'
 
   return (
     <span
       aria-live="polite"
       className={cn(
         'h-3 text-[10px] font-bold leading-3',
-        state === 'error' ? 'text-destructive' : state === 'saved' ? 'text-emerald-700' : 'text-muted-foreground',
+        state === 'error' ? 'text-destructive' : state === 'saved' || evaluated ? 'text-success' : 'text-muted-foreground',
       )}
     >
       {label}
@@ -1971,20 +1988,26 @@ function ReadOnlyInstrumentContent({ type, fields, maxScore, accent }: { type?: 
 
 function ActivityDetailView({
   activity,
+  cellSaveStates,
+  courseTitle,
   initialTab = 'evaluation',
   onBack,
   onEditActivity,
   onSaveScore,
   records,
+  periodName,
   saving,
   students,
 }: {
   activity: GradingActivity
+  cellSaveStates: Record<string, GradeCellSaveState>
+  courseTitle: string
   initialTab?: ActivityDetailTab
   onBack: () => void
   onEditActivity: (activity: GradingActivity) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => void
   records: GradeRecordRow[]
+  periodName: string
   saving: boolean
   students: StudentGradeRow[]
 }) {
@@ -2036,15 +2059,17 @@ function ActivityDetailView({
               <ClipboardList className="size-6" />
             </span>
             <div>
-              <h2 className="text-2xl font-black text-primary">{activity.name || 'Actividad sin nombre'}</h2>
+              <h2 className="text-2xl font-black text-foreground">{activity.name || 'Actividad sin nombre'}</h2>
               <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{activityDescriptionText(activity.description || '') || 'Evaluación de presentación y dominio del tema'}</p>
+              <p className="mt-2 text-xs font-bold text-muted-foreground">{courseTitle} · {periodName} · {block.shortName}</p>
             </div>
           </div>
           <Badge tone={activityEvaluationStatusTone(activityStatus)}>{activityStatus}</Badge>
         </div>
 
-        <div className="mt-5 grid gap-4 border-t border-border pt-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-5 grid gap-4 border-t border-border pt-4 sm:grid-cols-3 lg:grid-cols-5">
           <InfoItem label="Valor" value={`${activity.maxScore} pts`} />
+          <InfoItem label="Estudiantes" value={String(students.length)} />
           <InfoItem label="Instrumento" value={instrumentTitle(activity.instrumentType || '')} />
           <InfoItem label="Fecha" value={formatActivityDate(activity.date)} />
           <InfoItem label="Momento" value={activityMomentTitle(activity.planningMoment)} />
@@ -2068,7 +2093,18 @@ function ActivityDetailView({
       </div>
 
       {tab === 'evaluation' ? (
-        <ActivityEvaluationPanel
+        <div className="space-y-4">
+          <QuickActivityGradePanel
+            activity={activity}
+            cellSaveStates={cellSaveStates}
+            onSaveScore={onSaveScore}
+            records={records}
+            students={students}
+          />
+          {activity.instrumentType ? <details className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+            <summary className="cursor-pointer font-black text-primary">Evaluar con {instrumentTitle(activity.instrumentType).toLocaleLowerCase('es')}</summary>
+            <div className="mt-4">
+              <ActivityEvaluationPanel
           activity={activity}
           currentRecord={currentRecord}
           levelRows={levelRows}
@@ -2083,7 +2119,10 @@ function ActivityDetailView({
           students={students}
           totalRubricScore={totalRubricScore}
           setTab={setTab}
-        />
+              />
+            </div>
+          </details> : null}
+        </div>
       ) : null}
 
       {tab === 'results' ? (
@@ -2124,6 +2163,83 @@ function ActivityDetailView({
   )
 }
 
+function QuickActivityGradePanel({
+  activity,
+  cellSaveStates,
+  onSaveScore,
+  records,
+  students,
+}: {
+  activity: GradingActivity
+  cellSaveStates: Record<string, GradeCellSaveState>
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => void
+  records: GradeRecordRow[]
+  students: StudentGradeRow[]
+}) {
+  const evaluated = students.filter((student) => scoreForActivity(records, student.enrollmentId, activity.id)).length
+  const average = averageActivityScore(records, students, activity)
+
+  return (
+    <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm" aria-labelledby="quick-grade-title">
+      <header className="flex flex-col gap-3 border-b border-border p-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h3 id="quick-grade-title" className="font-black text-foreground">Entrada rápida de notas</h3>
+          <p className="mt-1 text-xs text-muted-foreground">Escribe una nota y pulsa Enter para avanzar. Deja el campo vacío para marcar Sin evaluar.</p>
+        </div>
+        <div className="flex flex-wrap gap-2 text-xs font-bold">
+          <Badge tone="success">{evaluated} evaluados</Badge>
+          <Badge tone="warning">{students.length - evaluated} pendientes</Badge>
+          <Badge tone="default">Promedio {formatGrade(average)}</Badge>
+        </div>
+      </header>
+
+      <div className="hidden grid-cols-[3.5rem_minmax(0,1fr)_8rem_8rem] gap-3 border-b border-border bg-muted/35 px-4 py-2 text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground sm:grid">
+        <span>N.º</span><span>Estudiante</span><span className="text-center">Nota</span><span>Estado</span>
+      </div>
+      <ol className="divide-y divide-border">
+        {students.map((student, index) => {
+          const record = scoreForActivity(records, student.enrollmentId, activity.id)
+          const saveState = cellSaveStates[activityGradeCellKey(student.enrollmentId, activity.id)]
+          const studentName = `${student.firstName} ${student.lastName}`
+          return (
+            <li key={student.enrollmentId} className="grid grid-cols-[2.75rem_minmax(0,1fr)_6.75rem] items-center gap-2 px-3 py-3 sm:grid-cols-[3.5rem_minmax(0,1fr)_8rem_8rem] sm:gap-3 sm:px-4">
+              <span className="font-black tabular-nums text-muted-foreground">{String(student.listNumber ?? index + 1).padStart(2, '0')}</span>
+              <span className="min-w-0 font-bold text-foreground"><span className="block truncate">{studentName}</span><span className="mt-0.5 block text-[10px] font-semibold text-muted-foreground sm:hidden">{record ? 'Evaluado' : 'Sin evaluar'}</span></span>
+              <label className="relative">
+                <span className="sr-only">Nota de {studentName}, máximo {activity.maxScore}</span>
+                <Input
+                  aria-invalid={saveState === 'error' || undefined}
+                  className="grade-cell h-11 pr-8 text-center font-black tabular-nums"
+                  defaultValue={record?.score ?? ''}
+                  disabled={saveState === 'saving'}
+                  inputMode="decimal"
+                  max={activity.maxScore}
+                  min={0}
+                  onBlur={(event) => {
+                    const value = event.target.value
+                    const score = value.trim() === '' ? null : Number(value)
+                    if (!scoreNeedsPersistence(record?.score, score)) return
+                    onSaveScore(student.enrollmentId, activity, value, null)
+                  }}
+                  onFocus={(event) => event.currentTarget.select()}
+                  onKeyDown={focusNextGradeCell}
+                  placeholder="—"
+                  step="0.01"
+                  type="number"
+                />
+                <span aria-hidden="true" className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-bold text-muted-foreground">/{activity.maxScore}</span>
+              </label>
+              <span className="col-span-3 min-h-3 sm:col-span-1">
+                <CellSaveIndicator evaluated={Boolean(record)} state={saveState} />
+              </span>
+            </li>
+          )
+        })}
+      </ol>
+    </section>
+  )
+}
+
 function ActivityEvaluationPanel({
   activity,
   currentRecord,
@@ -2145,7 +2261,7 @@ function ActivityEvaluationPanel({
   levelRows: Array<{ criterion: { title: string; description: string; maximum: number }; levelIndex: number | null; points: number | null }>
   levelLabels: Array<{ label: string; points: number }>
   instrumentComplete: boolean
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => void
   onSelectLevel: (criterionIndex: number, levelIndex: number) => void
   saving: boolean
   selectedStudent: StudentGradeRow | null
@@ -2390,7 +2506,7 @@ export function LegacyActivityDetailView({
   config: GradeCalculationConfig
   onBack: () => void
   onEditActivity: (activity: GradingActivity) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => void
   records: GradeRecordRow[]
   cellSaveStates: Record<string, GradeCellSaveState>
   saving: boolean
@@ -6873,7 +6989,10 @@ function averageBlockForPeriod(input: {
     .filter((activity) => activity.competencyBlockId === input.blockId)
   if (activities.length === 0) return null
   const recoveryScores = getRecoveryScores(records)
-  const scores = input.students.map((student) => {
+  const scores = input.students.flatMap((student) => {
+    const hasRecordedScore = activities.some((activity) => scoreForActivity(records, student.enrollmentId, activity.id))
+    const recovery = recoveryScores[input.blockId]?.[student.enrollmentId] ?? null
+    if (!hasRecordedScore && recovery === null) return []
     const total = blockTotal({
       records,
       activities,
@@ -6881,9 +7000,8 @@ function averageBlockForPeriod(input: {
       blockId: input.blockId,
       config: input.config,
     })
-    const recovery = recoveryScores[input.blockId]?.[student.enrollmentId] ?? null
-    return effectivePeriodScore(total, recovery, input.config)
-  }).filter((value) => value > 0)
+    return [effectivePeriodScore(total, recovery, input.config)]
+  })
   return averageNumbers(scores)
 }
 

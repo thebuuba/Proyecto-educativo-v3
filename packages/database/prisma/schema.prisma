@@ -629,6 +629,7 @@ model GradesRecord {
   @@index([schoolId, sectionSubjectId, academicPeriodId])
   @@index([evaluationActivityId])
   @@index([enrollmentId, academicPeriodId])
+  @@unique([enrollmentId, evaluationActivityId], map: "grades_records_enrollment_activity_key")
   @@map("grades_records")
 }
 

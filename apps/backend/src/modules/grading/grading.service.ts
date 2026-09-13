@@ -5,7 +5,7 @@
  * de los estudiantes en las distintas materias y períodos académicos.
  */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
-import { prisma } from '@aula/database'
+import { Prisma, prisma } from '@aula/database'
 import { academicPeriodDate, defaultAcademicPeriods } from '../../common/academic-period-defaults'
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SaveGradeDto } from './dto/save-grade.dto'
@@ -58,8 +58,8 @@ function mapGradeRecord(grade: any) {
   }
 }
 
-function validateInstrumentResult(result: Record<string, unknown> | undefined, score: number) {
-  if (result === undefined) return
+function validateInstrumentResult(result: Record<string, unknown> | null | undefined, score: number) {
+  if (result === undefined || result === null) return
 
   const { instrumentType, selections, criterionScores, completedAt } = result
   const validSelections = Array.isArray(selections)
@@ -89,9 +89,19 @@ function mapStudentEnrollment(enrollment: any) {
     enrollmentId: enrollment.id,
     studentId: enrollment.studentId,
     studentCode: enrollment.student.studentCode ?? '',
+    listNumber: enrollment.listNumber ?? null,
     firstName: enrollment.student.firstName ?? '',
     lastName: enrollment.student.lastName ?? '',
   }
+}
+
+function sortStudentsByListNumber<T extends { listNumber?: number | null; firstName: string; lastName: string }>(students: T[]) {
+  return students.sort((first, second) => {
+    const listOrder = (first.listNumber ?? Number.MAX_SAFE_INTEGER) - (second.listNumber ?? Number.MAX_SAFE_INTEGER)
+    if (listOrder !== 0) return listOrder
+    const lastName = first.lastName.localeCompare(second.lastName, 'es')
+    return lastName !== 0 ? lastName : first.firstName.localeCompare(second.firstName, 'es')
+  })
 }
 
 function evaluationInstrumentName(type: string) {
@@ -117,6 +127,15 @@ async function assertEvaluationActivityScope(
   if (activity.sectionSubjectId !== sectionSubjectId || activity.academicPeriodId !== academicPeriodId) {
     throw new BadRequestException('Evaluation activity does not match grading context')
   }
+  return activity
+}
+
+function assertScoreWithinActivity(score: number, activity: { maxScore: unknown }) {
+  const maxScore = Number(activity.maxScore)
+  if (score > maxScore) {
+    throw new BadRequestException(`La calificacion no puede superar ${maxScore}`)
+  }
+  return maxScore
 }
 
 async function assertPlanningEntryScope(
@@ -327,6 +346,7 @@ export class GradingService {
         select: {
           id: true,
           studentId: true,
+          listNumber: true,
           student: {
             select: { studentCode: true, firstName: true, lastName: true },
           },
@@ -347,14 +367,7 @@ export class GradingService {
       }),
     ])
 
-    const students = enrollments
-      .map(mapStudentEnrollment)
-      .sort((first, second) => {
-        const lastName = first.lastName.localeCompare(second.lastName, 'es')
-        if (lastName !== 0) return lastName
-        return first.firstName.localeCompare(second.firstName, 'es')
-      })
-      .map((student, index) => ({ ...student, listNumber: index + 1 }))
+    const students = sortStudentsByListNumber(enrollments.map(mapStudentEnrollment))
 
     return {
       context: {
@@ -488,14 +501,7 @@ export class GradingService {
       sectionId: ss.sectionId,
       schoolYearId: ss.schoolYearId,
       gradeRecords: grades.map(mapGradeRecord),
-      students: enrollments
-        .map(mapStudentEnrollment)
-        .sort((first, second) => {
-          const lastName = first.lastName.localeCompare(second.lastName, 'es')
-          if (lastName !== 0) return lastName
-          return first.firstName.localeCompare(second.firstName, 'es')
-        })
-        .map((student, index) => ({ ...student, listNumber: index + 1 })),
+      students: sortStudentsByListNumber(enrollments.map(mapStudentEnrollment)),
     }
   }
 
@@ -516,23 +522,29 @@ export class GradingService {
     if (dto.gradeId) {
       const grade = await prisma.gradesRecord.findFirst({ where: { id: dto.gradeId, schoolId } })
       if (!grade) throw new NotFoundException('Grade record not found')
-      if (dto.evaluationActivityId) {
-        await assertEvaluationActivityScope(
+      const evaluationActivityId = dto.evaluationActivityId ?? grade.evaluationActivityId
+      const activity = evaluationActivityId
+        ? await assertEvaluationActivityScope(
           schoolId,
-          dto.evaluationActivityId,
+          evaluationActivityId,
           grade.sectionSubjectId,
           grade.academicPeriodId,
         )
-      }
+        : null
+      const activityMaxScore = activity ? assertScoreWithinActivity(dto.score, activity) : dto.maxScore
       const updated = await prisma.gradesRecord.update({
         where: { id: dto.gradeId },
         data: {
           score: dto.score,
-          maxScore: dto.maxScore,
+          maxScore: activityMaxScore,
           weight: dto.weight,
           assessmentName: dto.assessmentName,
           evaluationActivityId: dto.evaluationActivityId === undefined ? undefined : dto.evaluationActivityId,
-          instrumentResult: dto.instrumentResult === undefined ? undefined : dto.instrumentResult as any,
+          instrumentResult: dto.instrumentResult === undefined
+            ? undefined
+            : dto.instrumentResult === null
+              ? Prisma.DbNull
+              : dto.instrumentResult as any,
         },
       })
       return mapGradeRecord(updated)
@@ -551,17 +563,17 @@ export class GradingService {
     if (academicPeriod.schoolYearId !== sectionSubject.schoolYearId) {
       throw new BadRequestException('Academic period does not match section subject school year')
     }
-    if (dto.evaluationActivityId) {
-      await assertEvaluationActivityScope(
+    const activity = dto.evaluationActivityId
+      ? await assertEvaluationActivityScope(
         schoolId,
         dto.evaluationActivityId,
         dto.sectionSubjectId!,
         dto.academicPeriodId!,
       )
-    }
+      : null
+    const activityMaxScore = activity ? assertScoreWithinActivity(dto.score, activity) : dto.maxScore
 
-    const created = await prisma.gradesRecord.create({
-      data: {
+    const data = {
         enrollmentId: dto.enrollmentId!,
         sectionSubjectId: dto.sectionSubjectId!,
         academicPeriodId: dto.academicPeriodId!,
@@ -569,14 +581,45 @@ export class GradingService {
         schoolYearId: enrollment.schoolYearId,
         schoolId,
         score: dto.score,
-        maxScore: dto.maxScore,
+        maxScore: activityMaxScore,
         weight: dto.weight ?? 1,
         assessmentName: dto.assessmentName ?? '',
         evaluationActivityId: dto.evaluationActivityId ?? undefined,
         instrumentResult: dto.instrumentResult as any,
-      },
-    })
-    return mapGradeRecord(created)
+    }
+    const saved = dto.evaluationActivityId
+      ? (await prisma.$queryRaw<any[]>`
+          insert into public.grades_records (
+            enrollment_id, section_subject_id, academic_period_id, section_id,
+            school_year_id, school_id, score, max_score, weight, assessment_name,
+            evaluation_activity_id, instrument_result
+          ) values (
+            ${dto.enrollmentId!}::uuid, ${dto.sectionSubjectId!}::uuid,
+            ${dto.academicPeriodId!}::uuid, ${enrollment.sectionId}::uuid,
+            ${enrollment.schoolYearId}::uuid, ${schoolId}::uuid, ${dto.score},
+            ${activityMaxScore}, ${dto.weight ?? 1}, ${dto.assessmentName ?? ''},
+            ${dto.evaluationActivityId}::uuid, ${JSON.stringify(dto.instrumentResult ?? null)}::jsonb
+          )
+          on conflict (enrollment_id, evaluation_activity_id) do update set
+            score = excluded.score,
+            max_score = excluded.max_score,
+            weight = excluded.weight,
+            assessment_name = excluded.assessment_name,
+            instrument_result = excluded.instrument_result,
+            updated_at = now()
+          returning
+            id,
+            enrollment_id as "enrollmentId",
+            score,
+            max_score as "maxScore",
+            weight,
+            assessment_name as "assessmentName",
+            status,
+            evaluation_activity_id as "evaluationActivityId",
+            instrument_result as "instrumentResult"
+        `)[0]
+      : await prisma.gradesRecord.create({ data })
+    return mapGradeRecord(saved)
   }
 
   async getActivities(
@@ -657,6 +700,9 @@ export class GradingService {
   }
 
   async saveActivity(schoolId: string, userId: string, dto: SaveEvaluationActivityDto) {
+    if (!dto.name.trim()) throw new BadRequestException('El nombre de la actividad es obligatorio')
+    if (!Number.isFinite(dto.maxScore) || dto.maxScore <= 0) throw new BadRequestException('El valor de la actividad debe ser mayor que cero')
+    if (!['b1', 'b2', 'b3', 'b4'].includes(dto.competencyBlockId)) throw new BadRequestException('El bloque de competencias no es valido')
     const [sectionSubject, academicPeriod] = await Promise.all([
       prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } }),
       prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
@@ -852,6 +898,10 @@ export class GradingService {
   async deleteActivity(schoolId: string, id: string) {
     const activity = await prisma.evaluationActivity.findFirst({ where: { id, schoolId } })
     if (!activity) throw new NotFoundException('Evaluation activity not found')
+    const gradeCount = await prisma.gradesRecord.count({ where: { schoolId, evaluationActivityId: id } })
+    if (gradeCount > 0) {
+      throw new BadRequestException('Esta actividad tiene calificaciones registradas y no se puede eliminar')
+    }
     return prisma.evaluationActivity.update({
       where: { id },
       data: { status: 'INACTIVE' },

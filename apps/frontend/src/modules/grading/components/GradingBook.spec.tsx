@@ -17,6 +17,12 @@ const students: StudentGradeRow[] = [
   },
 ]
 
+const gradingStudents: StudentGradeRow[] = [
+  students[0],
+  { enrollmentId: 'enrollment-2', studentId: 'student-2', studentCode: 'EST-002', listNumber: 2, firstName: 'Luis', lastName: 'Gómez' },
+  { enrollmentId: 'enrollment-3', studentId: 'student-3', studentCode: 'EST-003', listNumber: 3, firstName: 'María', lastName: 'Santos' },
+]
+
 const activities: GradingActivity[] = [
   {
     id: 'activity-1',
@@ -236,6 +242,53 @@ describe('GradingBook', () => {
     await user.click(screen.getByRole('button', { name: 'Detalles' }))
     expect(screen.getAllByText('Propósito: argumentar con evidencia.')).toHaveLength(2)
     expect(screen.queryByText(/\*\*Propósito/)).not.toBeInTheDocument()
+  })
+
+  it('permite calificar una lista completa con Enter, cero y vacío sin solicitudes duplicadas', async () => {
+    const user = userEvent.setup()
+    const onSaveScore = vi.fn()
+    renderBook({
+      students: gradingStudents,
+      initialActivityId: 'activity-1',
+      initialActivityMode: 'evaluate',
+      onSaveScore,
+      records: [
+        { id: 'grade-1', enrollmentId: 'enrollment-1', score: 18, maxScore: 25, weight: 1, assessmentName: 'Actividad', status: 'draft', evaluationActivityId: 'activity-1' },
+        { id: 'grade-2', enrollmentId: 'enrollment-2', score: 15, maxScore: 25, weight: 1, assessmentName: 'Actividad', status: 'draft', evaluationActivityId: 'activity-1' },
+      ],
+    })
+
+    const ana = screen.getByRole('spinbutton', { name: /Nota de Ana Pérez/ })
+    const luis = screen.getByRole('spinbutton', { name: /Nota de Luis Gómez/ })
+    const maria = screen.getByRole('spinbutton', { name: /Nota de María Santos/ })
+    expect(screen.getByText('2 evaluados')).toBeInTheDocument()
+    expect(screen.getByText('1 pendientes')).toBeInTheDocument()
+    expect(screen.getByText('Promedio 16.5')).toBeInTheDocument()
+
+    await user.clear(ana)
+    await user.type(ana, '16{Enter}')
+    expect(luis).toHaveFocus()
+    expect(onSaveScore).toHaveBeenCalledWith('enrollment-1', activities[0], '16', null)
+
+    await user.clear(luis)
+    await user.tab()
+    expect(onSaveScore).toHaveBeenCalledWith('enrollment-2', activities[0], '', null)
+
+    await user.type(maria, '0')
+    await user.tab()
+    expect(onSaveScore).toHaveBeenCalledWith('enrollment-3', activities[0], '0', null)
+    expect(onSaveScore).toHaveBeenCalledTimes(3)
+  })
+
+  it('muestra un error local de guardado con opción clara de reintento', () => {
+    renderBook({
+      initialActivityId: 'activity-1',
+      initialActivityMode: 'evaluate',
+      cellSaveStates: { 'enrollment-1:activity:activity-1': 'error' },
+    })
+
+    expect(screen.getByText('Error al guardar · Reintenta')).toBeInTheDocument()
+    expect(screen.getByRole('spinbutton', { name: /Nota de Ana Pérez/ })).toHaveAttribute('aria-invalid', 'true')
   })
 
   it('muestra un error anual recuperable y permite reintentar', async () => {
