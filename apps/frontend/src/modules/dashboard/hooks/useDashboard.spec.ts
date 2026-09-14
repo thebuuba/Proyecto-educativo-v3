@@ -163,6 +163,24 @@ describe('useDashboard cache', () => {
     second.unmount()
   })
 
+  it('keeps the last valid dashboard visible when a refresh fails', async () => {
+    const dashboard = makeDashboard('Ada')
+    mocks.getDashboardData
+      .mockResolvedValueOnce(dashboard)
+      .mockRejectedValueOnce(new Error('Error 503'))
+
+    const hook = renderHook(() => useDashboard())
+    await waitFor(() => expect(hook.result.current.data).toEqual(dashboard))
+
+    await act(async () => {
+      await hook.result.current.refetch()
+    })
+
+    expect(hook.result.current.data).toEqual(dashboard)
+    expect(hook.result.current.error).toBe('Error 503')
+    hook.unmount()
+  })
+
   it('does not reuse cache across users or schools', async () => {
     let resolveSecond!: (data: DashboardData) => void
     mocks.getDashboardData
