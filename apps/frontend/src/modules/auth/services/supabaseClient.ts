@@ -1,25 +1,19 @@
 import { createClient } from '@supabase/supabase-js'
 
-const REMEMBER_SESSION_KEY = 'aulabase:remember-session'
-
 export function isRememberSessionEnabled() {
-  return localStorage.getItem(REMEMBER_SESSION_KEY) === 'true'
-}
-
-export function setRememberSession(enabled: boolean) {
-  if (enabled) localStorage.setItem(REMEMBER_SESSION_KEY, 'true')
-  else localStorage.removeItem(REMEMBER_SESSION_KEY)
+  return true
 }
 
 export const authSessionStorage = {
   getItem(key: string) {
-    return (isRememberSessionEnabled() ? localStorage : sessionStorage).getItem(key)
+    const value = localStorage.getItem(key) ?? sessionStorage.getItem(key)
+    if (value && !localStorage.getItem(key)) localStorage.setItem(key, value)
+    sessionStorage.removeItem(key)
+    return value
   },
   setItem(key: string, value: string) {
-    const selected = isRememberSessionEnabled() ? localStorage : sessionStorage
-    const discarded = selected === localStorage ? sessionStorage : localStorage
-    selected.setItem(key, value)
-    discarded.removeItem(key)
+    localStorage.setItem(key, value)
+    sessionStorage.removeItem(key)
   },
   removeItem(key: string) {
     localStorage.removeItem(key)
