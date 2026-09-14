@@ -376,7 +376,7 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
             <Button variant="outline" onClick={() => setPeriodManagerOpen(true)}>
               <Settings2 className="size-4" /> Períodos
             </Button>
-            <Button variant="primary" onClick={openCreateForm} disabled={!periods.length}>
+            <Button data-tour="create-planning" variant="primary" onClick={openCreateForm} disabled={!periods.length}>
               <Plus className="size-4" /> Nueva planificación
             </Button>
           </>

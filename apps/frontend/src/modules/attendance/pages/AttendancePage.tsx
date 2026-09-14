@@ -69,7 +69,7 @@ export function AttendancePage() {
         </div>
       </PageHero>
 
-      <FilterBar className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem_auto] lg:items-end">
+      <FilterBar data-tour="record-attendance" className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem_auto] lg:items-end">
         <label className="grid min-w-0 gap-1.5">
           <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-muted-foreground">Curso</span>
           <Select value={selectedCourseId} onChange={(event) => setSelectedCourseId(event.target.value)} className="h-11 w-full">

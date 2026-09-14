@@ -6,6 +6,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 
 import { Header } from '@/components/navigation/Header'
 import { Sidebar } from '@/components/navigation/Sidebar'
+import { GuidedSetupTour } from '@/modules/dashboard/components/GuidedSetupTour'
 import { cn } from '@/utils/cn'
 
 /**
@@ -27,6 +28,7 @@ export function AppLayout() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <GuidedSetupTour />
       <div className="flex min-h-screen min-w-0">
         <Sidebar
           isOpen={isSidebarOpen}

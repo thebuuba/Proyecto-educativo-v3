@@ -56,7 +56,7 @@ export function Modal({
   useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
 
   return (
-    <div className={cn('fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6 backdrop-blur-[2px]', overlayClassName)}>
+    <div className={cn('fixed inset-0 z-50 flex items-center justify-center bg-slate-950/35 px-4 py-6 backdrop-blur-[2px]', overlayClassName)}>
       <div
         ref={dialogRef}
         role="dialog"

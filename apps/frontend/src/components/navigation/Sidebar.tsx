@@ -105,6 +105,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             return (
               <NavLink
                 key={item.path}
+                data-tour={item.path === '/cursos' ? 'nav-courses' : item.path === '/horario' ? 'nav-schedule' : item.path === '/asistencia' ? 'nav-attendance' : item.path === '/planificaciones' ? 'nav-planning' : undefined}
                 to={item.path}
                 end={item.path === '/inicio'}
                 onClick={onClose}
