@@ -7,7 +7,6 @@ import { FacebookIcon, FLOATING_ICONS, GoogleIcon } from '@/components/auth/Auth
 import { AuthTransitionLink } from '@/modules/auth/components/AuthTransitionLink'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { requestPasswordReset } from '@/modules/auth/services/authService'
-import { isRememberSessionEnabled, setRememberSession } from '@/modules/auth/services/supabaseClient'
 
 type LocationState = {
   from?: { pathname?: string }
@@ -20,7 +19,6 @@ export function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  const [rememberMe, setRememberMe] = useState(isRememberSessionEnabled)
   const [errorMessage, setErrorMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [forgotPasswordSent, setForgotPasswordSent] = useState(false)
@@ -126,20 +124,7 @@ export function LoginPage() {
             </div>
           </AuthField>
 
-          <div className="flex items-center justify-between gap-3 pt-1">
-            <label className="flex cursor-pointer items-center gap-2">
-              <input
-                type="checkbox"
-                checked={rememberMe}
-                onChange={(event) => {
-                  const checked = event.target.checked
-                  setRememberMe(checked)
-                  setRememberSession(checked)
-                }}
-                className="size-4 cursor-pointer accent-primary"
-              />
-              <span className="text-sm text-muted-foreground">Recordarme</span>
-            </label>
+          <div className="flex justify-end pt-1">
             <button type="button" onClick={handleForgotPassword} className="text-sm font-semibold text-foreground decoration-primary hover:underline">
               ¿Olvidaste tu contraseña?
             </button>
