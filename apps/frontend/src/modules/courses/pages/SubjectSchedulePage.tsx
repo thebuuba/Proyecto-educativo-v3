@@ -219,11 +219,11 @@ function SubjectClassStatusCard({ temporalClass, meta, now, onStart }: {
 }
 
 function CountdownRing({ current, seconds, progress }: { current: boolean; seconds: number; progress: number }) {
-  const circumference = 2 * Math.PI * 28
+  const circumference = 2 * Math.PI * 31
   const length = Math.max(0, Math.min(100, progress)) / 100 * circumference
-  return <div className="relative grid size-[72px] shrink-0 place-items-center" role="timer" aria-live="off" aria-label={`${current ? 'Termina' : 'Empieza'} en ${formatCountdown(seconds)}`}>
-    <svg className="absolute inset-0 size-full -rotate-90" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="28" fill="none" stroke="var(--border)" strokeWidth="7" /><circle cx="36" cy="36" r="28" fill="none" stroke={current ? 'var(--success)' : 'var(--warning)'} strokeDasharray={`${length} ${circumference}`} strokeLinecap="round" strokeWidth="7" className="transition-[stroke-dasharray] duration-1000 ease-linear motion-reduce:transition-none" /></svg>
-    <span className="text-center"><span className="block text-[8px] font-black uppercase tracking-wider text-muted-foreground">{current ? 'Termina en' : 'Empieza en'}</span><strong className="mt-1 block text-base tabular-nums text-foreground">{formatCountdown(seconds)}</strong></span>
+  return <div className="relative grid size-20 shrink-0 place-items-center sm:size-[88px]" role="timer" aria-live="off" aria-label={`${current ? 'Termina' : 'Empieza'} en ${formatCountdown(seconds)}`}>
+    <svg className="absolute inset-0 size-full -rotate-90" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="31" fill="none" stroke="var(--border)" strokeWidth="7" /><circle cx="40" cy="40" r="31" fill="none" stroke={current ? 'var(--success)' : 'var(--warning)'} strokeDasharray={`${length} ${circumference}`} strokeLinecap="round" strokeWidth="7" className="transition-[stroke-dasharray] duration-1000 ease-linear motion-reduce:transition-none" /></svg>
+    <span className="text-center"><span className="block whitespace-nowrap text-[8px] font-black uppercase tracking-[0.04em] text-muted-foreground">{current ? 'Termina' : 'Empieza'}</span><strong className="mt-1 block text-base tabular-nums text-foreground">{formatCountdown(seconds)}</strong></span>
   </div>
 }
 

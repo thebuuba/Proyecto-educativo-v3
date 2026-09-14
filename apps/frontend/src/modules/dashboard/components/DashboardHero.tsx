@@ -40,7 +40,8 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
 
   return (
     <div
-      className="relative flex size-[72px] shrink-0 items-center justify-center sm:size-20"
+      className="relative flex size-20 shrink-0 items-center justify-center sm:size-[88px]"
+      role="timer"
       aria-label={showCountdown ? `${label} en ${formatCountdown(seconds)}` : `Clase a las ${value}`}
     >
       <svg className="absolute inset-0 size-full -rotate-90" viewBox="0 0 120 120" aria-hidden="true">
@@ -65,7 +66,7 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
         />
       </svg>
       <div className="text-center leading-none text-[var(--class-foreground)]">
-        <p className="text-[8px] font-bold uppercase tracking-[0.12em] sm:text-[9px]">
+        <p data-countdown-label className="whitespace-nowrap text-[8px] font-bold uppercase tracking-[0.06em] sm:text-[9px]">
           {label}
         </p>
         <p className="mt-1 text-lg font-extrabold tabular-nums sm:text-xl">
@@ -133,7 +134,7 @@ export function DashboardHero({
 
   return (
     <section
-      className="relative ml-auto w-full max-w-[420px] overflow-hidden rounded-3xl p-3.5 pr-[5.75rem] text-[var(--class-foreground)] shadow-sm sm:p-4 sm:pr-[6.75rem]"
+      className="relative ml-auto w-full max-w-[420px] overflow-hidden rounded-3xl p-3.5 pr-[6.25rem] text-[var(--class-foreground)] shadow-sm sm:p-4 sm:pr-[7.25rem]"
       style={{ backgroundColor: 'var(--class-panel)' }}
     >
       <div className="absolute right-2.5 top-2.5 z-10 sm:right-3 sm:top-3">
