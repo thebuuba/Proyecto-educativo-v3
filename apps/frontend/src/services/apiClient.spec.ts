@@ -65,6 +65,35 @@ describe('api client session transport', () => {
     await rejection
   })
 
+  it('retries a transient 503 once for safe GET requests', async () => {
+    vi.mocked(fetch)
+      .mockResolvedValueOnce({
+        ok: false,
+        status: 503,
+        json: vi.fn().mockResolvedValue({ error: 'Service temporarily unavailable' }),
+      } as unknown as Response)
+      .mockResolvedValueOnce({
+        ok: true,
+        status: 200,
+        json: vi.fn().mockResolvedValue({ data: { recovered: true } }),
+      } as unknown as Response)
+
+    await expect(api.get('/dashboard/overview')).resolves.toEqual({ recovered: true })
+    expect(fetch).toHaveBeenCalledTimes(2)
+  })
+
+  it('does not retry state-changing requests after a 503', async () => {
+    vi.mocked(fetch).mockResolvedValue({
+      ok: false,
+      status: 503,
+      json: vi.fn().mockResolvedValue({ error: 'Service temporarily unavailable' }),
+    } as unknown as Response)
+
+    await expect(api.post('/dashboard/tasks', { title: 'No duplicar' }))
+      .rejects.toMatchObject({ status: 503 })
+    expect(fetch).toHaveBeenCalledTimes(1)
+  })
+
   it('reuses an opt-in GET response while its TTL is valid', async () => {
     vi.mocked(fetch).mockResolvedValue({
       ok: true,

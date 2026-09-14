@@ -82,7 +82,6 @@ export function useDashboard() {
       }).catch(() => undefined)
     } catch (error) {
       if (activeScopeRef.current !== requestedScope) return
-      setData(null)
       setDataScope(requestedScope)
       setError(
         error instanceof Error

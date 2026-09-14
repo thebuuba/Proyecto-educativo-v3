@@ -2,6 +2,7 @@ import { handleAsNodeRequest } from 'cloudflare:node'
 import { env } from 'cloudflare:workers'
 import { runWithPrismaClient } from './packages/database/dist/index.js'
 import { createApplication } from './apps/backend/dist/bootstrap.js'
+import { initializeWithRetry } from './cloudflare/workerInitialization'
 
 let initialization: Promise<void> | undefined
 
@@ -29,7 +30,7 @@ export default {
   async fetch(request: Request) {
     const workerEnv = env as unknown as WorkerEnv
     try {
-      await (initialization ??= initialize(workerEnv))
+      await (initialization ??= initializeWithRetry(() => initialize(workerEnv)))
     } catch (error) {
       initialization = undefined
       console.error('Worker initialization failed', error)

@@ -8,6 +8,7 @@
 // HttpOnly de terceros. Vite reenvía /api solo durante el desarrollo local.
 const API_URL = '/api/v1'
 const GET_TIMEOUT_MS = 15_000
+const TRANSIENT_GET_STATUSES = new Set([502, 503, 504])
 
 export const AUTH_UNAUTHORIZED_EVENT = 'aulabase:unauthorized'
 
@@ -211,15 +212,19 @@ export const api = {
       }, timeoutMs)
 
       try {
-        const response = await fetch(url, {
+        const requestInit = {
           ...fetchOptions,
           signal: controller.signal,
-          credentials: 'include',
+          credentials: 'include' as const,
           headers: {
             'Content-Type': 'application/json',
             ...fetchOptions.headers,
           },
-        })
+        }
+        let response = await fetch(url, requestInit)
+        if (TRANSIENT_GET_STATUSES.has(response.status)) {
+          response = await fetch(url, requestInit)
+        }
         const value = await handleResponse<T>(response, path)
         if (
           canShare &&
