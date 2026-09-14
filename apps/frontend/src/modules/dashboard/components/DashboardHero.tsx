@@ -68,7 +68,7 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
         <p className="text-[8px] font-bold uppercase tracking-[0.12em] sm:text-[9px]">
           {label}
         </p>
-        <p className="mt-1 text-lg font-extrabold tabular-nums sm:text-xl">
+        <p className="mt-1 text-base font-extrabold tabular-nums sm:text-lg">
           {value}
         </p>
       </div>

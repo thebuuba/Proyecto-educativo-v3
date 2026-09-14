@@ -61,6 +61,18 @@ export function getDashboardClock(now: Date) {
   }
 }
 
+export function formatRecentActivityTitle(value: string) {
+  if (value.startsWith('ABV2:recovery:')) return 'Recuperación'
+  if (!value.startsWith('ABV2:activity:')) return value
+  const encodedName = value.split(':')[4]
+  if (!encodedName) return 'Actividad evaluada'
+  try {
+    return decodeURIComponent(encodedName)
+  } catch {
+    return encodedName
+  }
+}
+
 export function buildTeacherAnalytics(records: TeacherGradeRecord[]) {
   const normalized = records.flatMap((record) => {
     const score = Number(record.score)
@@ -333,7 +345,7 @@ export class DashboardService {
     ])
     return [
       ...attendance.map((item) => ({ id: `attendance-${item.id}`, title: 'Asistencia registrada', description: item.sectionSubject.subject.name, occurredAt: item.updatedAt, kind: 'attendance', path: restricted ? '/calificaciones' : '/asistencia' })),
-      ...grades.map((item) => ({ id: `grade-${item.id}`, title: item.assessmentName, description: item.sectionSubject.subject.name, occurredAt: item.updatedAt, kind: 'grade', path: `/calificaciones?sectionSubjectId=${item.sectionSubjectId}&periodId=${item.academicPeriodId}` })),
+      ...grades.map((item) => ({ id: `grade-${item.id}`, title: formatRecentActivityTitle(item.assessmentName), description: item.sectionSubject.subject.name, occurredAt: item.updatedAt, kind: 'grade', path: `/calificaciones?sectionSubjectId=${item.sectionSubjectId}&periodId=${item.academicPeriodId}` })),
       ...planning.map((item) => ({ id: `planning-${item.id}`, title: item.title, description: item.sectionSubject.subject.name, occurredAt: item.updatedAt, kind: 'planning', path: `/planificaciones?sectionSubjectId=${item.sectionSubjectId}&periodId=${item.academicPeriodId}` })),
       ...reports.map((item) => ({ id: `report-${item.id}`, title: item.title, description: 'Reporte generado', occurredAt: item.updatedAt, kind: 'report', path: '/reportes' })),
     ].sort((a, b) => b.occurredAt.getTime() - a.occurredAt.getTime()).slice(0, 6).map((item) => ({ ...item, occurredAt: item.occurredAt.toISOString(), relativeTime: relativeTime(item.occurredAt, now) }))

@@ -51,7 +51,7 @@ export function RecentActivity({ items }: RecentActivityProps) {
                     <Icon className="size-[18px]" strokeWidth={2} />
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                    <p className="line-clamp-2 break-words text-sm font-semibold text-foreground">{item.title}</p>
                     <p className="truncate text-xs text-muted-foreground">{item.description}</p>
                   </div>
                   <span className="mt-1 shrink-0 text-[11px] text-muted-foreground">{item.relativeTime}</span>

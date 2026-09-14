@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { buildTeacherAnalytics, calculateAttendanceRate, DashboardService, getDashboardClock, resolveDashboardView } from './dashboard.service'
+import { buildTeacherAnalytics, calculateAttendanceRate, DashboardService, formatRecentActivityTitle, getDashboardClock, resolveDashboardView } from './dashboard.service'
 
 function deferred<T>() {
   let resolve!: (value: T | PromiseLike<T>) => void
@@ -144,6 +144,11 @@ describe('DashboardService', () => {
       dayOfWeek: 3,
       currentMinutes: 22 * 60 + 49,
     })
+  })
+
+  it('shows the activity name instead of its internal grading identifier', () => {
+    expect(formatRecentActivityTitle('ABV2:activity:b1:activity-1:Exposici%C3%B3n%20sobre%20el%20tema')).toBe('Exposición sobre el tema')
+    expect(formatRecentActivityTitle('ABV2:recovery:b1:period-1')).toBe('Recuperación')
   })
 
   it('groups teacher grades by period and subject', () => {
