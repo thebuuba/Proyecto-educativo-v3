@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { StrictMode, type ComponentProps } from 'react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
@@ -30,7 +30,6 @@ const activities: GradingActivity[] = [
     competencyBlockId: 'b1',
     maxScore: 25,
     description: '**Propósito:** argumentar con evidencia.',
-    instrumentType: 'Rúbrica',
   },
 ]
 
@@ -49,7 +48,7 @@ function renderBook(overrides: Partial<ComponentProps<typeof GradingBook>> = {},
     onAddActivity: vi.fn().mockResolvedValue(undefined),
     onUpdateActivity: vi.fn().mockResolvedValue(undefined),
     onDeleteActivity: vi.fn().mockResolvedValue(undefined),
-    onSaveScore: vi.fn().mockResolvedValue(undefined),
+    onSaveScore: vi.fn().mockResolvedValue(true),
     onSaveRecovery: vi.fn().mockResolvedValue(undefined),
     loadFinalRecords: vi.fn().mockResolvedValue(new Map()),
     getActivitiesForPeriod: vi.fn().mockReturnValue([]),
@@ -117,18 +116,14 @@ describe('GradingBook', () => {
     expect(onCreateAnother).toHaveBeenCalledOnce()
   })
 
-  it('abre el selector de bloque y mantiene accesibles los borradores', async () => {
-    const user = userEvent.setup()
+  it('abre el selector de bloque sin mostrar borradores dentro de Evaluación', () => {
     renderBook({ initialActivityAction: 'create' })
 
     expect(screen.getByRole('heading', { name: 'Actividades' })).toBeInTheDocument()
     expect(screen.getByText('Elige el bloque de competencias para tu nueva actividad.')).toBeInTheDocument()
     expect(screen.getAllByRole('button', { name: 'Crear actividad' })).toHaveLength(4)
-    expect(screen.getByText('Sin borradores pendientes')).toBeInTheDocument()
-
-    await user.click(screen.getByRole('button', { name: 'Borradores' }))
-    expect(screen.getByRole('heading', { name: 'Borradores de actividades' })).toBeInTheDocument()
-    expect(screen.getByText('Aún no tienes borradores')).toBeInTheDocument()
+    expect(screen.queryByText(/borradores pendientes/i)).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Borradores' })).not.toBeInTheDocument()
     expect(screen.queryByPlaceholderText('Buscar borradores...')).not.toBeInTheDocument()
   })
 
@@ -141,8 +136,7 @@ describe('GradingBook', () => {
     expect(screen.queryByText('Elige el bloque de competencias para tu nueva actividad.')).not.toBeInTheDocument()
   })
 
-  it('usa un único filtro de bloque para los borradores', async () => {
-    const user = userEvent.setup()
+  it('no expone borradores guardados dentro del hub de Evaluación', () => {
     const baseDraft = {
       maxScore: '',
       date: '',
@@ -165,12 +159,7 @@ describe('GradingBook', () => {
     }))
     renderBook({ initialActivityAction: 'create' })
 
-    await screen.findByText('Borradores pendientes')
-    await user.click(screen.getByRole('button', { name: 'Borradores' }))
-
-    expect(screen.getAllByRole('combobox')).toHaveLength(3)
-    await user.click(screen.getByRole('button', { name: /Bloque 1/ }))
-    expect(screen.getByText('Borrador comunicativo')).toBeInTheDocument()
+    expect(screen.queryByText('Borrador comunicativo')).not.toBeInTheDocument()
     expect(screen.queryByText('Borrador lógico')).not.toBeInTheDocument()
   })
 
@@ -205,6 +194,9 @@ describe('GradingBook', () => {
     await user.click(periodTab)
     expect(periodTab).toHaveAttribute('aria-current', 'page')
     expect(screen.getByText('Pendiente de calificar')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'P1' })).toBeInTheDocument()
+    expect(screen.getByRole('columnheader', { name: 'C1' })).toBeInTheDocument()
+    expect(screen.getByRole('columnheader', { name: 'C4' })).toBeInTheDocument()
 
     await user.click(annualTab)
     expect(await screen.findByRole('heading', { name: 'Registro anual de competencias' })).toBeInTheDocument()
@@ -218,10 +210,10 @@ describe('GradingBook', () => {
 
     await user.click(screen.getByRole('button', { name: /Abrir bloque 1:/ }))
 
-    const matrixTab = screen.getByRole('tab', { name: 'Matriz de calificaciones' })
+    const matrixTab = screen.getByRole('tab', { name: 'Calificaciones' })
     const activitiesTab = screen.getByRole('tab', { name: 'Actividades' })
     const studentsTab = screen.getByRole('tab', { name: 'Estudiantes' })
-    const statsTab = screen.getByRole('tab', { name: 'Estadísticas del bloque' })
+    const statsTab = screen.getByRole('tab', { name: 'Análisis' })
     expect(matrixTab).toHaveAttribute('aria-selected', 'true')
 
     await user.click(activitiesTab)
@@ -233,7 +225,7 @@ describe('GradingBook', () => {
     expect(screen.getByRole('heading', { name: 'Estudiantes del bloque' })).toBeInTheDocument()
 
     await user.click(statsTab)
-    expect(screen.getByRole('heading', { name: 'Estadísticas del bloque' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Análisis del bloque' })).toBeInTheDocument()
 
     await user.click(activitiesTab)
     await user.click(screen.getByRole('button', { name: 'Calificar' }))
@@ -242,6 +234,29 @@ describe('GradingBook', () => {
     await user.click(screen.getByRole('button', { name: 'Detalles' }))
     expect(screen.getAllByText('Propósito: argumentar con evidencia.')).toHaveLength(2)
     expect(screen.queryByText(/\*\*Propósito/)).not.toBeInTheDocument()
+  })
+
+  it('restaura el borrador solicitado desde Actividades', async () => {
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({
+      b1: [{ draftId: 'draft-requested', competencyBlockId: 'b1', name: 'Exposición pendiente', maxScore: '25', date: '', description: '', studentRole: '', teacherRole: '', instrumentType: '', evaluationTechnique: '', instrumentCompleted: false, instrumentFields: {}, resources: [], planningMoment: '', observations: '', activityType: '', teamIds: [] }],
+    }))
+
+    renderBook({ initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'draft-requested' })
+
+    expect(await screen.findByDisplayValue('Exposición pendiente')).toBeInTheDocument()
+  })
+
+  it('reutiliza el modal de actividad con una acción visible para calificar', async () => {
+    const user = userEvent.setup()
+    renderBook()
+
+    await user.click(screen.getByRole('button', { name: /Abrir bloque 1:/ }))
+    await user.click(screen.getByRole('tab', { name: 'Actividades' }))
+    await user.click(screen.getByRole('button', { name: /Ver información de Debate del ecosistema/ }))
+
+    const dialog = screen.getByRole('dialog', { name: 'Detalle de la actividad' })
+    expect(dialog).toBeInTheDocument()
+    expect(within(dialog).getByRole('button', { name: 'Calificar' })).toBeVisible()
   })
 
   it('permite calificar una lista completa con Enter, cero y vacío sin solicitudes duplicadas', async () => {
@@ -289,6 +304,41 @@ describe('GradingBook', () => {
 
     expect(screen.getByText('Error al guardar · Reintenta')).toBeInTheDocument()
     expect(screen.getByRole('spinbutton', { name: /Nota de Ana Pérez/ })).toHaveAttribute('aria-invalid', 'true')
+  })
+
+  it('abre directamente el instrumento, persiste la observación y avanza al guardar', async () => {
+    const user = userEvent.setup()
+    const onSaveScore = vi.fn().mockResolvedValue(true)
+    const rubricActivity: GradingActivity = {
+      ...activities[0],
+      instrumentType: 'rubrica',
+      instrumentCriteria: {
+        'rubrica:meta:criteriaCount': '1',
+        'rubrica:meta:levelCount': '2',
+        'rubrica:criterion:0': 'Explica el sistema solar',
+        'rubrica:descriptor:0:2': 'Explica con precisión y evidencia.',
+        'rubrica:descriptor:0:1': 'Explica parcialmente.',
+        'rubrica:points:0': '25',
+        'rubrica:level-name:2': 'Excelente',
+        'rubrica:level-name:1': 'En proceso',
+        'rubrica:level-points:2': '5',
+        'rubrica:level-points:1': '2',
+      },
+    }
+    renderBook({ activities: [rubricActivity], students: gradingStudents, initialActivityId: rubricActivity.id, initialActivityMode: 'evaluate', onSaveScore })
+
+    expect(screen.queryByText('Entrada rápida de notas')).not.toBeInTheDocument()
+    expect(screen.getByText(/Explica el sistema solar/)).toBeInTheDocument()
+    expect(screen.getAllByText('Explica con precisión y evidencia.').length).toBeGreaterThan(0)
+    expect(screen.getByText('Explica parcialmente.')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Explica el sistema solar: Excelente' }))
+    await user.type(screen.getByRole('textbox', { name: 'Observación (opcional)' }), 'Buen dominio del tema')
+    await user.click(screen.getByRole('button', { name: 'Guardar y siguiente →' }))
+
+    await waitFor(() => expect(onSaveScore).toHaveBeenCalledWith('enrollment-1', rubricActivity, '25', expect.objectContaining({ observation: 'Buen dominio del tema' })))
+    expect(screen.getByRole('combobox')).toHaveValue('1')
+    expect(screen.getByRole('button', { name: 'Guardar y siguiente →' })).toBeInTheDocument()
+    expect(screen.queryByText('Guardando…')).not.toBeInTheDocument()
   })
 
   it('muestra un error anual recuperable y permite reintentar', async () => {

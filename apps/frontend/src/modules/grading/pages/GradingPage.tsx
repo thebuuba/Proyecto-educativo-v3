@@ -21,6 +21,7 @@ export function GradingPage() {
   const requestedAcademicPeriodId = searchParams.get('academicPeriodId') ?? undefined
   const requestedAction = searchParams.get('action') === 'create-activity' ? 'create' : undefined
   const requestedBlockId = getRequestedCompetencyBlockId(searchParams)
+  const requestedDraftId = searchParams.get('activityDraftId') ?? undefined
   const requestedActivityId = searchParams.get('activityId') ?? undefined
   const requestedActivityMode = searchParams.get('activityMode') === 'edit' ? 'edit' : searchParams.get('activityMode') === 'evaluate' ? 'evaluate' : searchParams.get('activityMode') === 'results' ? 'results' : 'view'
   const returnCourseId = searchParams.get('returnCourseId')
@@ -166,6 +167,7 @@ export function GradingPage() {
             {...(isFinalView ? { initialView: 'final' as const } : {})}
             initialActivityAction={requestedAction ?? (requestedActivityMode === 'edit' && requestedActivity ? 'create' : undefined)}
             initialActivityBlockId={requestedBlockId ?? editBlockId}
+            initialActivityDraftId={requestedDraftId}
             initialActivityId={requestedActivityMode === 'view' ? undefined : requestedActivityId}
             initialActivityMode={requestedActivityMode}
             originReturnLabel={originReturnLabel}

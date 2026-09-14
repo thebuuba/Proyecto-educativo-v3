@@ -30,6 +30,7 @@ import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
+import { ActivityDraftsPanel } from '@/modules/activities/components/ActivityDraftsPanel'
 import { useCourses } from '@/modules/courses/hooks/useCourses'
 import { ActivityInfoModal } from '@/modules/grading/components/ActivityInfoModal'
 import { getGradingWorkspace } from '@/modules/grading/services/gradingService'
@@ -245,6 +246,11 @@ export function GroupedSubjectActivitiesPage() {
         {tabs.map((tab) => { const Icon = tab.icon; const active = tab.id === 'actividades'; return <button key={tab.id} type="button" onClick={() => setSubjectTab(tab.id)} aria-current={active ? 'page' : undefined} className={cn('relative flex h-10 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-2 text-sm font-bold text-muted-foreground transition hover:bg-primary/5 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', active && 'bg-primary/[0.055] text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-t-full after:bg-primary', tab.badge && !active && 'bg-muted/40 text-muted-foreground/70')}><Icon className="size-4" />{tab.label}{tab.badge ? <span className="hidden rounded-full bg-muted px-1.5 py-0.5 text-[8px] font-black uppercase tracking-wide text-muted-foreground 2xl:inline">{tab.badge}</span> : null}</button> })}
       </nav>
 
+      <ActivityDraftsPanel
+        filter={(draft) => draft.courseTitle === `${courseLabel} · ${subjectName}`}
+        resolveHref={(draft) => period ? buildCreateHref(subjectId, courseId, draft.blockId, draft.draft.draftId) : null}
+      />
+
       {workspaceLoading ? <div className="flex min-h-[24rem] items-center justify-center rounded-2xl border border-border bg-card text-sm font-semibold text-muted-foreground">Cargando actividades…</div> : workspaceError ? <ErrorState message={workspaceError} /> : (
         <section className="space-y-4" aria-labelledby="subject-activities-title">
           <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><div><h2 id="subject-activities-title" className="text-xl font-extrabold tracking-tight">Actividades</h2><p className="mt-1 text-sm text-muted-foreground">Gestiona las actividades de esta asignatura organizadas por bloque de competencias.</p><p className="mt-1 text-xs font-semibold text-muted-foreground">{courseLabel} · {subjectName} · {period?.name ?? 'Período actual'}</p></div><Button className="h-11 px-5" onClick={createActivity}><Plus className="size-4" /> Crear actividad</Button></header>
@@ -276,6 +282,6 @@ function ActivityStatusBadge({ status }: { status: SubjectActivityStatus }) {
 }
 
 function activityInstrumentLabel(value?: string) { return ({ rubrica: 'Rúbrica', 'lista-cotejo': 'Lista de cotejo', escala: 'Escala estimativa', 'lista-ponderada': 'Lista ponderada' } as Record<string, string>)[value ?? ''] ?? value ?? 'Sin instrumento' }
-function buildCreateHref(assignmentId: string, courseId: string, competencyBlockId: string) { return `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, action: 'create-activity', competencyBlockId, origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
+function buildCreateHref(assignmentId: string, courseId: string, competencyBlockId: string, activityDraftId?: string) { return `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, action: 'create-activity', competencyBlockId, ...(activityDraftId ? { activityDraftId } : {}), origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
 function buildActivityHref(assignmentId: string, courseId: string, activityId: string, mode: 'edit' | 'evaluate') { return `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, activityId, activityMode: mode, origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
 function formatShortDate(value?: string | null) { if (!value) return 'Sin fecha'; const date = new Date(value); if (Number.isNaN(date.getTime())) return value; return date.toLocaleDateString('es-DO', { day: 'numeric', month: 'long', year: 'numeric' }) }

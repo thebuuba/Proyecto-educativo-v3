@@ -48,6 +48,7 @@ export type EvaluatedInstrumentResult = {
   selections: number[]
   criterionScores: number[]
   completedAt: string
+  observation?: string
 }
 
 export type GradingActivity = {

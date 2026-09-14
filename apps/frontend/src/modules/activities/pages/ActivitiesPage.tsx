@@ -8,6 +8,8 @@ import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
 import { FeedbackBanner, FilterBar, PageHero, ProgressIndicator, StatusBadge, type SemanticTone } from '@/components/ui/SemanticUI'
 import { ActivityInfoModal } from '@/modules/grading/components/ActivityInfoModal'
+import { ActivityDraftsPanel } from '@/modules/activities/components/ActivityDraftsPanel'
+import type { StoredActivityDraftSummary } from '@/modules/activities/utils/activityDraftStorage'
 import { getActivityCenter } from '@/modules/grading/services/gradingService'
 import type { ActivityCenterWorkspace, GlobalActivity } from '@/modules/grading/types'
 import { competencyBlocks } from '@/modules/grading/utils/competencyGrades'
@@ -62,10 +64,19 @@ export function ActivitiesPage() {
     setSearchParams(next)
   }
 
+  const draftHref = (draft: StoredActivityDraftSummary) => {
+    const sectionSubject = workspace.sectionSubjects.find((item) => `${item.gradeName} ${item.sectionName} · ${item.subjectName}` === draft.courseTitle)
+    const period = workspace.academicPeriods.find((item) => (!sectionSubject?.schoolYearId || item.schoolYearId === sectionSubject.schoolYearId) && item.name.split('—')[0]?.trim() === draft.periodShortName)
+    if (!sectionSubject || !period) return null
+    return `/calificaciones?${new URLSearchParams({ sectionSubjectId: sectionSubject.id, academicPeriodId: period.id, action: 'create-activity', competencyBlockId: draft.blockId, ...(draft.draft.draftId ? { activityDraftId: draft.draft.draftId } : {}), origin: 'activities' }).toString()}`
+  }
+
   return <section className="w-full min-w-0 space-y-4 pb-8">
     <PageHero title="Actividades" description="Gestiona, evalúa y consulta las actividades de tus cursos desde un mismo lugar." icon={CheckSquare} tone="warning" actions={<Button onClick={() => setCreating(true)}><Plus className="size-4" /> Crear actividad</Button>}>
       <div className="flex flex-wrap gap-2"><StatusBadge tone="warning">{statusCounts.pending} pendientes</StatusBadge><StatusBadge tone="info">{statusCounts.partial} en evaluación</StatusBadge><StatusBadge tone="success">{statusCounts.graded} calificadas</StatusBadge></div>
     </PageHero>
+
+    <ActivityDraftsPanel resolveHref={draftHref} />
 
     <FilterBar>
       <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-[minmax(18rem,1.6fr)_repeat(4,minmax(9rem,1fr))]">
