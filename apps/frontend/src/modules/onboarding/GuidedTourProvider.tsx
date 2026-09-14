@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { driver, type Driver } from 'driver.js'
 import 'driver.js/dist/driver.css'
@@ -7,15 +7,7 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { SETUP_TOUR_START_EVENT, type SetupTourStep } from '@/modules/dashboard/setupTour'
 import { getToursForRoles, type TourDefinition } from './tourCatalog'
 import { listTourProgress, saveTourProgress, type TourProgress } from './onboardingService'
-
-type GuidedToursValue = {
-  availableTours: TourDefinition[]
-  progress: Record<string, TourProgress>
-  startTour: (tour: TourDefinition, step?: number) => void
-  replayTour: (tour: TourDefinition) => void
-}
-
-const GuidedToursContext = createContext<GuidedToursValue | null>(null)
+import { GuidedToursContext } from './guidedTourContext'
 const emptySetup = { courseCount: 0, studentCount: 0, activeEnrollments: 0, scheduleEntryCount: 0, attendanceCount: 0, planningCount: 0 }
 
 export function GuidedTourProvider({ children }: { children: ReactNode }) {
@@ -32,7 +24,7 @@ export function GuidedTourProvider({ children }: { children: ReactNode }) {
       if (!cancelled) setProgress(Object.fromEntries(items.map((item) => [item.tourKey, item])))
     }).catch(() => undefined)
     return () => { cancelled = true }
-  }, [appUser?.id])
+  }, [appUser])
 
   const persist = useCallback((tour: TourDefinition, status: TourProgress['status'], lastStep: number) => {
     const value = { tourKey: tour.key, version: tour.version, status, lastStep }
@@ -100,10 +92,4 @@ export function GuidedTourProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo(() => ({ availableTours, progress, startTour, replayTour: (tour: TourDefinition) => startTour(tour, 0) }), [availableTours, progress, startTour])
   return <GuidedToursContext.Provider value={value}>{children}</GuidedToursContext.Provider>
-}
-
-export function useGuidedTours() {
-  const value = useContext(GuidedToursContext)
-  if (!value) throw new Error('useGuidedTours must be used inside GuidedTourProvider')
-  return value
 }
