@@ -1,0 +1,74 @@
+name: Deploy Staging
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-staging
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    environment:
+      name: Staging
+      url: ${{ vars.APP_URL }}
+    env:
+      APP_URL: ${{ vars.APP_URL }}
+      STAGING_HYPERDRIVE_READY: ${{ vars.STAGING_HYPERDRIVE_READY }}
+      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+      VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 11.1.2
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+          cache: pnpm
+
+      - name: Validar configuración de staging
+        run: |
+          for name in APP_URL VITE_SUPABASE_URL VITE_SUPABASE_ANON_KEY CLOUDFLARE_ACCOUNT_ID CLOUDFLARE_API_TOKEN SUPABASE_DB_URL; do
+            if [[ -z "${!name}" ]]; then
+              echo "Falta configurar $name en el GitHub Environment Staging" >&2
+              exit 1
+            fi
+          done
+          if [[ "$STAGING_HYPERDRIVE_READY" != "true" ]]; then
+            echo "Hyperdrive de staging todavía no fue verificado contra Supabase Development" >&2
+            exit 1
+          fi
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm db:generate
+      - run: pnpm build
+      - run: pnpm exec wrangler deploy --dry-run --env=staging
+
+      - name: Verificar migraciones de staging
+        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --dry-run
+
+      - name: Aplicar migraciones de staging
+        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --yes
+
+      - name: Verificar secretos del Worker de staging
+        run: |
+          secrets=$(pnpm exec wrangler secret list --env=staging)
+          for name in JWT_SECRET OPENAI_API_KEY SUPABASE_ANON_KEY SUPABASE_SERVICE_ROLE_KEY SUPABASE_URL; do
+            jq -e --arg name "$name" 'any(.[]; .name == $name)' <<< "$secrets" >/dev/null || {
+              echo "Falta el secreto $name en el Worker de staging" >&2
+              exit 1
+            }
+          done
+
+      - run: pnpm exec wrangler deploy --env=staging
+      - run: pnpm cloudflare:smoke "$APP_URL"
