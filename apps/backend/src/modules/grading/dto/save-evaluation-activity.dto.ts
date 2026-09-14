@@ -1,4 +1,4 @@
-import { IsArray, IsDateString, IsNumber, IsObject, IsOptional, IsString, IsUUID, MaxLength, Min } from 'class-validator'
+import { IsArray, IsDateString, IsIn, IsNotEmpty, IsNumber, IsObject, IsOptional, IsString, IsUUID, MaxLength, Min } from 'class-validator'
 
 export class SaveEvaluationActivityDto {
   @IsOptional()
@@ -24,14 +24,16 @@ export class SaveEvaluationActivityDto {
   instrumentId?: string | null
 
   @IsString()
+  @IsIn(['b1', 'b2', 'b3', 'b4'])
   competencyBlockId!: string
 
   @IsString()
+  @IsNotEmpty()
   @MaxLength(200)
   name!: string
 
   @IsNumber()
-  @Min(0)
+  @Min(0.01)
   maxScore!: number
 
   @IsOptional()

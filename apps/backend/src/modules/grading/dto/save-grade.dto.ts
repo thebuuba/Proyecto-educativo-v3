@@ -43,5 +43,5 @@ export class SaveGradeDto {
 
   @IsOptional()
   @IsObject()
-  instrumentResult?: Record<string, unknown>
+  instrumentResult?: Record<string, unknown> | null
 }

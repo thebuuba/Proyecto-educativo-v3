@@ -48,6 +48,7 @@ export type EvaluatedInstrumentResult = {
   selections: number[]
   criterionScores: number[]
   completedAt: string
+  observation?: string
 }
 
 export type GradingActivity = {
@@ -124,15 +125,13 @@ export type SaveGradeInput = {
   enrollmentId: string
   sectionSubjectId: string
   academicPeriodId: string
-  sectionId: string
-  schoolYearId: string
   score: number
   maxScore: number
   weight: number
   assessmentName: string
   evaluationActivityId?: string | null
   gradeId?: string | null
-  instrumentResult?: EvaluatedInstrumentResult
+  instrumentResult?: EvaluatedInstrumentResult | null
 }
 
 export type GradingWorkspace = {

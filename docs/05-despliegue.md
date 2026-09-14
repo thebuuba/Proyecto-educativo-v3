@@ -16,16 +16,14 @@ Render y Vercel ya no forman parte de la configuración del repositorio.
 
 ## Desarrollo y verificación local
 
-El desarrollo diario usa **Supabase local**. La única base remota es la de producción. Inicia los contenedores, copia el archivo de ejemplo y usa la clave `Publishable` en `SUPABASE_ANON_KEY`/`VITE_SUPABASE_ANON_KEY` y la clave `Secret` en `SUPABASE_SERVICE_ROLE_KEY`:
+El desarrollo diario usa el Worker local conectado al proyecto remoto **AulaBase Development** (`eolgunypmtgrsyrjzcld`). Sus credenciales viven solo en `.dev.vars.local`, ignorado por Git:
 
 ```bash
 pnpm install
-pnpm supabase:local
-cp .dev.vars.example .dev.vars.local
 pnpm cloudflare:dev
 ```
 
-`cloudflare:dev` compila frontend y backend, sirve todo en `http://localhost:8787` y conecta Prisma, Auth y Storage a Supabase local. El archivo `.dev.vars.local` está ignorado por Git. Detén los contenedores al terminar con `pnpm supabase:stop`.
+`cloudflare:dev` compila frontend y backend, sirve todo en `http://localhost:8787` y conecta Prisma, Auth y Storage exclusivamente a Development. Supabase local permanece disponible para validar migraciones destructivas o reconstrucciones desde cero.
 
 Prisma crea su cliente dentro de cada petición del Worker. No lo conviertas de nuevo en un pool global: Cloudflare limpia las conexiones por invocación y Hyperdrive mantiene el pool compartido junto a PostgreSQL.
 
@@ -133,10 +131,26 @@ Configura cada proyecto en Supabase Auth:
 
 ## Despliegue
 
-El flujo activo tiene solo dos destinos:
+El flujo activo tiene tres destinos aislados:
 
-- Desarrollo local: `http://localhost:8787` con la base configurada localmente.
+- Desarrollo local: `http://localhost:8787` con Supabase Development `eolgunypmtgrsyrjzcld`.
+- Staging: `https://aula-base-staging.prroyectoeducativo00.workers.dev` con el mismo Supabase Development.
 - Producción: `https://aula-base.prroyectoeducativo00.workers.dev` con Supabase `vqrptqffeezqacwtmlqq` en North Virginia (`us-east-1`).
+
+`Deploy Staging` se ejecuta manualmente desde GitHub Actions después de revisar la rama que se quiere probar. Solo los pushes a `main` que superan CI ejecutan `Deploy Cloudflare` contra producción.
+
+Antes del primer despliegue de staging, su Hyperdrive debe apuntar al rol `app_backend` de Development:
+
+```bash
+pnpm exec wrangler hyperdrive update d3e9516823d94f17814f3bfde2eb3b72 \
+  --connection-string "$SUPABASE_DEVELOPMENT_APP_BACKEND_DIRECT_URL" \
+  --caching-disabled \
+  --sslmode require
+```
+
+Este comando requiere un token temporal con `Hyperdrive Write`. Revoca ese permiso después de verificar la conexión.
+
+Cuando la verificación termine, crea la variable `STAGING_HYPERDRIVE_READY=true` en el Environment **Staging** de GitHub. El workflow se detiene de forma segura mientras esta variable no exista.
 
 Un push a `main` ejecuta CI. Si todas las pruebas terminan correctamente, el workflow `Deploy Cloudflare` aplica las migraciones y despliega frontend y backend juntos al Worker de producción. También puede ejecutarse manualmente. El Environment **Production** acepta únicamente ramas protegidas, pero no requiere una segunda aprobación después del CI.
 

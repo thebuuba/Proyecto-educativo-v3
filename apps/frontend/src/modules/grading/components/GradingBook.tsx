@@ -119,6 +119,7 @@ import { Modal } from '@/components/ui/Modal'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import { ActivityDescriptionEditor as StructuredActivityDescriptionEditor } from '@/modules/grading/components/ActivityDescriptionEditor'
+import { ActivityInfoModal } from '@/modules/grading/components/ActivityInfoModal'
 import type { CourseTeam } from '@/modules/courses/types'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
 import type {
@@ -132,6 +133,7 @@ import type {
 } from '@/modules/grading/types'
 import {
   activityGradeCellKey,
+  buildCompactGradeRows,
   blockTotal,
   competencyBlocks,
   competencyPeriods,
@@ -143,6 +145,7 @@ import {
   getRecoveryScores,
   plainActivityText,
   scoreForActivity,
+  scoreNeedsPersistence,
   sumActivityMaxScore,
   type CompetencyBlockId,
   type CompetencyPeriodId,
@@ -164,6 +167,7 @@ type GradingBookProps = {
   initialView?: MainView
   initialActivityAction?: 'create'
   initialActivityBlockId?: CompetencyBlockId
+  initialActivityDraftId?: string
   initialActivityId?: string
   initialActivityMode?: 'view' | 'edit' | 'evaluate' | 'results'
   originReturnLabel?: string
@@ -171,7 +175,7 @@ type GradingBookProps = {
   onAddActivity: (activity: Omit<GradingActivity, 'id'>) => Promise<GradingActivity>
   onUpdateActivity: (activity: GradingActivity) => Promise<GradingActivity>
   onDeleteActivity: (activityId: string) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => Promise<boolean>
   onSaveRecovery: (enrollmentId: string, blockId: string, value: string) => void
   loadFinalRecords: () => Promise<Map<CompetencyPeriodId, GradeRecordRow[]>>
   getActivitiesForPeriod: (periodId: CompetencyPeriodId) => GradingActivity[]
@@ -243,19 +247,19 @@ const blockAccents = [
     text: 'text-amber-700',
   },
   {
-    card: 'border-violet-200 bg-violet-50/70',
-    cardBorder: '#ddd6fe',
-    cardTint: '#f5f3ff',
-    panel: 'bg-violet-50 text-violet-950',
-    dot: 'bg-violet-500',
-    badge: 'bg-violet-100 text-violet-700 ring-violet-200',
-    progress: 'bg-violet-600',
-    progressColor: '#7c3aed',
-    gradient: 'linear-gradient(90deg, #a78bfa 0%, #7c3aed 55%, #6d28d9 100%)',
-    button: 'bg-violet-600 text-white hover:bg-violet-700',
-    border: 'border-violet-200',
-    ring: 'focus-visible:ring-violet-500',
-    text: 'text-violet-700',
+    card: 'border-destructive/30 bg-destructive/10',
+    cardBorder: 'var(--destructive)',
+    cardTint: 'color-mix(in srgb, var(--destructive) 10%, white)',
+    panel: 'bg-destructive/10 text-foreground',
+    dot: 'bg-destructive',
+    badge: 'bg-destructive/10 text-foreground ring-destructive/30',
+    progress: 'bg-destructive',
+    progressColor: 'var(--destructive)',
+    gradient: 'var(--destructive)',
+    button: 'bg-destructive text-destructive-foreground hover:bg-destructive-hover',
+    border: 'border-destructive/30',
+    ring: 'focus-visible:ring-destructive',
+    text: 'text-foreground',
   },
 ]
 
@@ -349,9 +353,11 @@ export function GradingBook({
   periodShortName,
   courseTitle,
   saving,
+  cellSaveStates,
   initialView = 'blocks',
   initialActivityAction,
   initialActivityBlockId,
+  initialActivityDraftId,
   initialActivityId,
   initialActivityMode = 'view',
   originReturnLabel,
@@ -388,9 +394,17 @@ export function GradingBook({
   const [annualError, setAnnualError] = useState<string | null>(null)
   const [annualRetryKey, setAnnualRetryKey] = useState(0)
   const [activitySaveCompletion, setActivitySaveCompletion] = useState<ActivitySaveCompletion | null>(null)
+  const hasPendingCellSaves = Object.values(cellSaveStates).some((state) => state === 'saving')
   const handledInitialLaunch = useRef(initialLaunchKey)
   const handledInitialEdit = useRef<string | null>(null)
   const previousInitialView = useRef(initialView)
+
+  useEffect(() => {
+    if (!hasPendingCellSaves) return
+    const warnBeforeUnload = (event: BeforeUnloadEvent) => event.preventDefault()
+    window.addEventListener('beforeunload', warnBeforeUnload)
+    return () => window.removeEventListener('beforeunload', warnBeforeUnload)
+  }, [hasPendingCellSaves])
 
   useEffect(() => {
     if (previousInitialView.current === initialView) return
@@ -467,7 +481,10 @@ export function GradingBook({
       const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
       const expected = config.expectedBlockTotal
       const maxScore = sumActivityMaxScore(blockActivities, block.id)
-      const studentScores = students.map((student) => {
+      const studentScores = students.flatMap((student) => {
+        const hasRecordedScore = blockActivities.some((activity) => scoreForActivity(records, student.enrollmentId, activity.id))
+        const recovery = recoveryScores[block.id]?.[student.enrollmentId] ?? null
+        if (!hasRecordedScore && recovery === null) return []
         const total = blockTotal({
           records,
           activities: blockActivities,
@@ -475,14 +492,15 @@ export function GradingBook({
           blockId: block.id,
           config,
         })
-        const recovery = recoveryScores[block.id]?.[student.enrollmentId] ?? null
-        return effectivePeriodScore(total, recovery, config)
+        return [effectivePeriodScore(total, recovery, config)]
       })
-      const gradedScores = studentScores.filter((value) => value > 0)
-      const average = gradedScores.length > 0
-        ? gradedScores.reduce((sum, value) => sum + value, 0) / gradedScores.length
+      const average = studentScores.length > 0
+        ? studentScores.reduce((sum, value) => sum + value, 0) / studentScores.length
         : null
       const hasRecovery = Object.values(recoveryScores[block.id] ?? {}).some((value) => typeof value === 'number')
+      const totalGradeCells = students.length * blockActivities.length
+      const gradedCells = students.reduce((total, student) => total + blockActivities.filter((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).length, 0)
+      const gradingProgress = totalGradeCells > 0 ? Math.round(gradedCells / totalGradeCells * 100) : 0
       const status = blockActivities.length === 0
         ? 'Sin actividades'
         : average === null
@@ -500,6 +518,7 @@ export function GradingBook({
         expected,
         maxScore,
         average,
+        gradingProgress,
         status,
       }
     }),
@@ -549,12 +568,17 @@ export function GradingBook({
     setDraftsReadyKey(null)
     try {
       const stored = window.localStorage.getItem(draftStorageKey)
-      setActivityDrafts(stored ? normalizeStoredActivityDrafts(JSON.parse(stored)) : {})
+      const restored = stored ? normalizeStoredActivityDrafts(JSON.parse(stored)) : {}
+      setActivityDrafts(restored)
+      if (initialActivityBlockId && initialActivityDraftId) {
+        const requestedDraft = restored[initialActivityBlockId]?.find((draft) => draft.draftId === initialActivityDraftId)
+        if (requestedDraft) setActivityDraft(requestedDraft)
+      }
     } catch {
       setActivityDrafts({})
     }
     setDraftsReadyKey(draftStorageKey)
-  }, [draftStorageKey])
+  }, [draftStorageKey, initialActivityBlockId, initialActivityDraftId])
 
   useEffect(() => {
     if (draftsReadyKey !== draftStorageKey) return
@@ -937,8 +961,11 @@ export function GradingBook({
         ) : selectedActivity ? (
           <ActivityDetailView
             activity={selectedActivity}
+            cellSaveStates={cellSaveStates}
+            courseTitle={courseTitle}
             initialTab={detailView.type === 'activity' ? detailView.initialTab : undefined}
             onBack={() => {
+              if (hasPendingCellSaves) return
               if (initialActivityId && onReturnToOrigin) {
                 onReturnToOrigin()
                 return
@@ -948,6 +975,7 @@ export function GradingBook({
             onEditActivity={editActivity}
             onSaveScore={onSaveScore}
             records={records}
+            periodName={periodName}
             saving={saving}
             students={students}
           />
@@ -964,7 +992,15 @@ export function GradingBook({
           onViewDrafts={(blockId) => setDetailView({ type: 'activity-drafts', initialBlock: blockId, returnTo: { type: 'blocks' } })}
         />
       ) : mainView === 'period' ? (
-        <PeriodSummaryView blockSummaries={blockSummaries} recoveryScores={recoveryScores} />
+        <PeriodSummaryView
+          blockSummaries={blockSummaries}
+          config={config}
+          courseTitle={courseTitle}
+          periodShortName={periodShortName}
+          records={records}
+          recoveryScores={recoveryScores}
+          students={students}
+        />
       ) : mainView === 'annual' ? (
         annualError ? (
           <AnnualLoadError message={annualError} onRetry={() => setAnnualRetryKey((value) => value + 1)} />
@@ -995,7 +1031,20 @@ export function GradingBook({
         <CalculationConfigModal config={config} onChange={setConfig} onClose={() => setShowConfig(false)} />
       ) : null}
       {infoActivity ? (
-        <ActivityInfoModal activity={infoActivity} onClose={() => setInfoActivity(null)} />
+        <ActivityInfoModal
+          activity={infoActivity}
+          onClose={() => setInfoActivity(null)}
+          onEdit={() => {
+            const activity = infoActivity
+            setInfoActivity(null)
+            editActivity(activity)
+          }}
+          onEvaluate={() => {
+            const activity = infoActivity
+            setInfoActivity(null)
+            setDetailView({ type: 'activity', activityId: activity.id, initialTab: 'evaluation' })
+          }}
+        />
       ) : null}
       {activitySaveCompletion ? (
         <ActivitySavedDialog
@@ -1030,7 +1079,7 @@ export function GradingBook({
             if (activitySaveCompletion.kind === 'created') {
               setDetailView({ type: 'activity', activityId: activitySaveCompletion.activity.id, initialTab: 'details' })
             } else {
-              setDetailView({ type: 'activity-drafts', initialBlock: activitySaveCompletion.blockId, returnTo: { type: 'activity-hub' } })
+              setDetailView(null)
             }
           }}
         />
@@ -1184,10 +1233,8 @@ function BlockMetric({
 function BlockMatrixView({
   blockSummaries,
   config,
-  draftMetas,
   onOpenBlock,
   onOpenActivity,
-  onViewDrafts,
   records,
   students,
 }: {
@@ -1213,7 +1260,6 @@ function BlockMatrixView({
       <div className="grid gap-4 md:grid-cols-2">
         {blockSummaries.map((summary) => {
           const accent = blockAccents[summary.index]
-          const draftCount = draftMetas.filter((meta) => meta.blockId === summary.block.id).length
           const progress = summary.average === null
             ? 0
             : Math.max(0, Math.min(100, (summary.average / summary.expected) * 100))
@@ -1231,7 +1277,7 @@ function BlockMatrixView({
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
                     <p className={cn('text-xs font-bold', accent.text)}>Bloque {summary.index + 1}</p>
-                    <h3 className="mt-1.5 text-pretty text-base font-extrabold leading-6 text-primary sm:text-lg">
+                    <h3 className="mt-1.5 text-pretty text-base font-extrabold leading-6 text-foreground sm:text-lg">
                       {blockShortNames[summary.block.id]}
                     </h3>
                   </div>
@@ -1273,18 +1319,6 @@ function BlockMatrixView({
                   <Badge tone={statusTone(summary.status)}>{summary.status}</Badge>
                 </div>
               </button>
-              {draftCount > 0 ? (
-                <div className="px-5 pb-5">
-                  <button
-                    type="button"
-                    className="inline-flex w-full items-center justify-between rounded-xl bg-red-50 px-3 py-2 text-xs font-bold text-red-700 transition hover:bg-red-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-                    onClick={() => onViewDrafts(summary.block.id)}
-                  >
-                    <span>{draftCount} borrador{draftCount === 1 ? '' : 'es'}</span>
-                    <ArrowRight className="size-4" />
-                  </button>
-                </div>
-              ) : null}
             </article>
           )
         })}
@@ -1383,7 +1417,6 @@ function BlockGradeView({
   activities,
   config,
   courseTitle,
-  draftMetas,
   initialTab = 'matrix',
   onBack,
   onCreateActivity,
@@ -1391,7 +1424,6 @@ function BlockGradeView({
   onEditActivity,
   onOpenConfig,
   onOpenActivity,
-  onViewDrafts,
   records,
   students,
 }: {
@@ -1418,7 +1450,8 @@ function BlockGradeView({
   const studentTotals = students.map((student) => {
     return blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
   })
-  const average = averageNumbers(studentTotals.filter((value) => value > 0))
+  const evaluatedStudentTotals = students.flatMap((student, index) => activities.some((activity) => scoreForActivity(records, student.enrollmentId, activity.id)) ? [studentTotals[index]] : [])
+  const average = averageNumbers(evaluatedStudentTotals)
   const pendingActivities = activities.filter((activity) =>
     students.some((student) => !scoreForActivity(records, student.enrollmentId, activity.id)),
   ).length
@@ -1431,9 +1464,8 @@ function BlockGradeView({
         : 'En recuperación'
 
   const completedStudents = studentTotals.filter((value) => value >= config.passingScore).length
-  const riskStudents = activities.length === 0 ? 0 : studentTotals.filter((value) => value < config.passingScore).length
+  const riskStudents = evaluatedStudentTotals.filter((value) => value < config.passingScore).length
   const plannedTotal = sumActivityMaxScore(activities, blockId)
-  const blockDraftCount = draftMetas.filter((meta) => meta.blockId === blockId).length
   const activitySummaries = activities.map((activity) => {
     const scored = students.filter((student) => scoreForActivity(records, student.enrollmentId, activity.id)).length
     const averageScore = averageActivityScore(records, students, activity)
@@ -1451,10 +1483,10 @@ function BlockGradeView({
     .filter((item) => item.averageScore !== null)
     .sort((a, b) => (a.averageScore ?? 0) - (b.averageScore ?? 0))[0]
   const tabs = [
-    { id: 'matrix', label: 'Matriz de calificaciones' },
+    { id: 'matrix', label: 'Calificaciones' },
     { id: 'activities', label: 'Actividades' },
     { id: 'students', label: 'Estudiantes' },
-    { id: 'stats', label: 'Estadísticas del bloque' },
+    { id: 'stats', label: 'Análisis' },
   ] as const
 
   return (
@@ -1470,7 +1502,7 @@ function BlockGradeView({
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <Badge tone="default" className="h-8 rounded-lg uppercase">Bloque {blockIndex + 1}</Badge>
-          <h2 className="mt-3 text-3xl font-black leading-tight text-primary">{blockShortNames[block.id]}</h2>
+          <h2 className="mt-3 text-3xl font-black leading-tight text-foreground">{blockShortNames[block.id]}</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">{block.name}</p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -1576,7 +1608,8 @@ function BlockGradeView({
             <tbody>
               {students.map((student, index) => {
                 const total = blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
-                const status = activities.length === 0 ? 'Sin calificacion' : total >= config.passingScore ? 'Aprobado' : 'En recuperacion'
+                const hasResult = activities.some((activity) => scoreForActivity(records, student.enrollmentId, activity.id))
+                const status = !hasResult ? 'Sin calificar' : total >= config.passingScore ? 'Aprobado' : 'En recuperación'
                 return (
                   <tr key={student.enrollmentId} className="group hover:bg-muted/20">
                     <td className="sticky left-0 z-20 border-b border-r border-border bg-card px-3 py-3 text-center text-muted-foreground group-hover:bg-muted/20">
@@ -1590,13 +1623,13 @@ function BlockGradeView({
                       return (
                         <td key={activity.id} className="border-b border-r border-border px-4 py-2 text-center">
                           <div className="inline-flex min-h-9 items-center gap-1 rounded-md px-3 text-sm font-bold text-primary">
-                            <span>{record ? formatGrade(record.score) : '-'}</span>
+                            <span>{record ? formatGrade(record.score) : '—'}</span>
                             <span className="text-xs font-medium text-muted-foreground">/ {activity.maxScore}</span>
                           </div>
                         </td>
                       )
                     })}
-                    <td className="border-b border-r border-border px-4 py-3 text-center text-lg font-black text-primary">{formatGrade(total)}</td>
+                    <td className="border-b border-r border-border px-4 py-3 text-center text-lg font-black text-primary">{hasResult ? formatGrade(total) : '—'}</td>
                     <td className="border-b border-r border-border px-4 py-3 text-center"><Badge tone={statusTone(status)}>{status}</Badge></td>
                   </tr>
                 )
@@ -1636,12 +1669,6 @@ function BlockGradeView({
                 <p className="mt-1 text-sm text-muted-foreground">Administra, evalúa y da seguimiento a las actividades de este bloque.</p>
               </div>
               <div className="flex flex-wrap gap-2">
-                {blockDraftCount > 0 ? (
-                  <Button variant="outline" onClick={() => onViewDrafts(blockId)}>
-                    <FileText className="size-4" />
-                    Borradores ({blockDraftCount})
-                  </Button>
-                ) : null}
                 <Button onClick={onCreateActivity}>
                   <Plus className="size-4" />
                   Crear actividad
@@ -1799,12 +1826,12 @@ function BlockGradeView({
                 const total = blockTotal({ records, activities, enrollmentId: student.enrollmentId, blockId, config })
                 const completed = activities.filter((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).length
                 const pending = Math.max(activities.length - completed, 0)
-                const status = activities.length === 0 ? 'Sin calificacion' : total >= config.passingScore ? 'Aprobado' : 'En recuperacion'
+                const status = completed === 0 ? 'Sin calificar' : total >= config.passingScore ? 'Aprobado' : 'En recuperación'
                 return (
                   <tr key={student.enrollmentId} className="border-t border-border hover:bg-muted/20">
                     <td className="px-4 py-3 text-center text-muted-foreground">{student.listNumber ?? index + 1}</td>
                     <td className="px-4 py-3 font-bold text-foreground">{student.lastName}, {student.firstName}</td>
-                    <td className="px-4 py-3 text-center text-lg font-black text-primary">{formatGrade(total)} / {config.expectedBlockTotal}</td>
+                    <td className="px-4 py-3 text-center text-lg font-black text-primary">{completed > 0 ? `${formatGrade(total)} / ${config.expectedBlockTotal}` : '—'}</td>
                     <td className="px-4 py-3 text-center font-bold">{completed}/{activities.length}</td>
                     <td className="px-4 py-3 text-center font-bold">{pending}</td>
                     <td className="px-4 py-3 text-center"><Badge tone={statusTone(status)}>{status}</Badge></td>
@@ -1820,7 +1847,7 @@ function BlockGradeView({
       {activeTab === 'stats' ? (
         <div className="max-h-[calc(100vh-24rem)] overflow-y-auto p-4">
         <section className="space-y-3">
-          <h3 className="font-black text-primary">Estadísticas del bloque</h3>
+          <h3 className="font-black text-foreground">Análisis del bloque</h3>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             <BlockMetric icon={<TrendingUp className="size-5" />} label="Promedio" value={formatGrade(average)} helper={`/ ${config.expectedBlockTotal}`} tone="success" />
             <BlockMetric icon={<CheckCircle2 className="size-5" />} label="Aprobados" value={completedStudents} helper={`${students.length} estudiantes`} tone="default" />
@@ -1852,21 +1879,23 @@ function BlockGradeView({
 
 }
 
-function CellSaveIndicator({ state }: { state?: GradeCellSaveState }) {
+function CellSaveIndicator({ state, evaluated }: { state?: GradeCellSaveState; evaluated?: boolean }) {
   const label = state === 'saving'
     ? 'Guardando...'
     : state === 'saved'
       ? 'Guardado'
       : state === 'error'
-        ? 'Error al guardar'
-        : ''
+        ? 'Error al guardar · Reintenta'
+        : evaluated
+          ? 'Guardado'
+          : 'Sin evaluar'
 
   return (
     <span
       aria-live="polite"
       className={cn(
         'h-3 text-[10px] font-bold leading-3',
-        state === 'error' ? 'text-destructive' : state === 'saved' ? 'text-emerald-700' : 'text-muted-foreground',
+        state === 'error' ? 'text-destructive' : state === 'saved' || evaluated ? 'text-success' : 'text-muted-foreground',
       )}
     >
       {label}
@@ -1874,7 +1903,7 @@ function CellSaveIndicator({ state }: { state?: GradeCellSaveState }) {
   )
 }
 
-function ActivityInfoModal({ activity, onClose }: { activity: GradingActivity; onClose: () => void }) {
+export function LegacyInlineActivityInfoModal({ activity, onClose }: { activity: GradingActivity; onClose: () => void }) {
   const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId) ?? competencyBlocks[0]
   const accent = getBlockAccent(block.id)
   const resources = activity.resources ?? []
@@ -1971,20 +2000,26 @@ function ReadOnlyInstrumentContent({ type, fields, maxScore, accent }: { type?: 
 
 function ActivityDetailView({
   activity,
+  cellSaveStates,
+  courseTitle,
   initialTab = 'evaluation',
   onBack,
   onEditActivity,
   onSaveScore,
   records,
+  periodName,
   saving,
   students,
 }: {
   activity: GradingActivity
+  cellSaveStates: Record<string, GradeCellSaveState>
+  courseTitle: string
   initialTab?: ActivityDetailTab
   onBack: () => void
   onEditActivity: (activity: GradingActivity) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => Promise<boolean>
   records: GradeRecordRow[]
+  periodName: string
   saving: boolean
   students: StudentGradeRow[]
 }) {
@@ -1998,11 +2033,13 @@ function ActivityDetailView({
   const currentRecord = selectedStudent ? scoreForActivity(records, selectedStudent.enrollmentId, activity.id) : null
   const rubricConfiguration = activityRubricConfiguration(activity)
   const [levelSelections, setLevelSelections] = useState<Array<number | null>>([])
+  const [observation, setObservation] = useState('')
   useEffect(() => {
     const saved = currentRecord?.instrumentResult?.selections
     setLevelSelections(saved?.length === rubricConfiguration.criteria.length
       ? saved.map((value) => Number.isInteger(value) && value >= 0 && value < rubricConfiguration.levels.length ? value : null)
       : rubricConfiguration.criteria.map(() => null))
+    setObservation(currentRecord?.instrumentResult?.observation ?? '')
   }, [activity.id, currentRecord?.id, selectedStudent?.enrollmentId])
   const levelRows = rubricConfiguration.criteria.map((criterion, index) => {
     const levelIndex = levelSelections[index] ?? null
@@ -2036,15 +2073,17 @@ function ActivityDetailView({
               <ClipboardList className="size-6" />
             </span>
             <div>
-              <h2 className="text-2xl font-black text-primary">{activity.name || 'Actividad sin nombre'}</h2>
+              <h2 className="text-2xl font-black text-foreground">{activity.name || 'Actividad sin nombre'}</h2>
               <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{activityDescriptionText(activity.description || '') || 'Evaluación de presentación y dominio del tema'}</p>
+              <p className="mt-2 text-xs font-bold text-muted-foreground">{courseTitle} · {periodName} · {block.shortName}</p>
             </div>
           </div>
           <Badge tone={activityEvaluationStatusTone(activityStatus)}>{activityStatus}</Badge>
         </div>
 
-        <div className="mt-5 grid gap-4 border-t border-border pt-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-5 grid gap-4 border-t border-border pt-4 sm:grid-cols-3 lg:grid-cols-5">
           <InfoItem label="Valor" value={`${activity.maxScore} pts`} />
+          <InfoItem label="Estudiantes" value={String(students.length)} />
           <InfoItem label="Instrumento" value={instrumentTitle(activity.instrumentType || '')} />
           <InfoItem label="Fecha" value={formatActivityDate(activity.date)} />
           <InfoItem label="Momento" value={activityMomentTitle(activity.planningMoment)} />
@@ -2068,22 +2107,37 @@ function ActivityDetailView({
       </div>
 
       {tab === 'evaluation' ? (
-        <ActivityEvaluationPanel
-          activity={activity}
-          currentRecord={currentRecord}
-          levelRows={levelRows}
-          levelLabels={rubricConfiguration.levels}
-          instrumentComplete={instrumentComplete}
-          onSaveScore={onSaveScore}
-          onSelectLevel={(criterionIndex, levelIndex) => setLevelSelections((current) => rubricConfiguration.criteria.map((_, index) => index === criterionIndex ? levelIndex : current[index] ?? null))}
-          saving={saving}
-          selectedStudent={selectedStudent}
-          setStudentIndex={setStudentIndex}
-          studentIndex={studentIndex}
-          students={students}
-          totalRubricScore={totalRubricScore}
-          setTab={setTab}
-        />
+        activity.instrumentType ? (
+          <ActivityEvaluationPanel
+            activity={activity}
+            blockName={block.shortName}
+            courseTitle={courseTitle}
+            currentRecord={currentRecord}
+            levelRows={levelRows}
+            levelLabels={rubricConfiguration.levels}
+            instrumentComplete={instrumentComplete}
+            observation={observation}
+            onChangeObservation={setObservation}
+            onSaveScore={onSaveScore}
+            onSelectLevel={(criterionIndex, levelIndex) => setLevelSelections((current) => rubricConfiguration.criteria.map((_, index) => index === criterionIndex ? levelIndex : current[index] ?? null))}
+            periodName={periodName}
+            saving={saving}
+            selectedStudent={selectedStudent}
+            setStudentIndex={setStudentIndex}
+            setTab={setTab}
+            studentIndex={studentIndex}
+            students={students}
+            totalRubricScore={totalRubricScore}
+          />
+        ) : (
+          <QuickActivityGradePanel
+            activity={activity}
+            cellSaveStates={cellSaveStates}
+            onSaveScore={onSaveScore}
+            records={records}
+            students={students}
+          />
+        )
       ) : null}
 
       {tab === 'results' ? (
@@ -2092,6 +2146,7 @@ function ActivityDetailView({
           average={average}
           distribution={distribution}
           evaluatedCount={evaluatedCount}
+          onEvaluate={(index) => { setStudentIndex(index); setTab('evaluation') }}
           records={records}
           students={students}
         />
@@ -2124,14 +2179,96 @@ function ActivityDetailView({
   )
 }
 
+function QuickActivityGradePanel({
+  activity,
+  cellSaveStates,
+  onSaveScore,
+  records,
+  students,
+}: {
+  activity: GradingActivity
+  cellSaveStates: Record<string, GradeCellSaveState>
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => Promise<boolean>
+  records: GradeRecordRow[]
+  students: StudentGradeRow[]
+}) {
+  const evaluated = students.filter((student) => scoreForActivity(records, student.enrollmentId, activity.id)).length
+  const average = averageActivityScore(records, students, activity)
+
+  return (
+    <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm" aria-labelledby="quick-grade-title">
+      <header className="flex flex-col gap-3 border-b border-border p-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h3 id="quick-grade-title" className="font-black text-foreground">Entrada rápida de notas</h3>
+          <p className="mt-1 text-xs text-muted-foreground">Fallback para actividades antiguas sin instrumento. Escribe una nota y pulsa Enter para avanzar.</p>
+        </div>
+        <div className="flex flex-wrap gap-2 text-xs font-bold">
+          <Badge tone="success">{evaluated} evaluados</Badge>
+          <Badge tone="warning">{students.length - evaluated} pendientes</Badge>
+          <Badge tone="default">Promedio {formatGrade(average)}</Badge>
+        </div>
+      </header>
+
+      <div className="hidden grid-cols-[3.5rem_minmax(0,1fr)_8rem_8rem] gap-3 border-b border-border bg-muted/35 px-4 py-2 text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground sm:grid">
+        <span>N.º</span><span>Estudiante</span><span className="text-center">Nota</span><span>Estado</span>
+      </div>
+      <ol className="divide-y divide-border">
+        {students.map((student, index) => {
+          const record = scoreForActivity(records, student.enrollmentId, activity.id)
+          const saveState = cellSaveStates[activityGradeCellKey(student.enrollmentId, activity.id)]
+          const studentName = `${student.firstName} ${student.lastName}`
+          return (
+            <li key={student.enrollmentId} className="grid grid-cols-[2.75rem_minmax(0,1fr)_6.75rem] items-center gap-2 px-3 py-3 sm:grid-cols-[3.5rem_minmax(0,1fr)_8rem_8rem] sm:gap-3 sm:px-4">
+              <span className="font-black tabular-nums text-muted-foreground">{String(student.listNumber ?? index + 1).padStart(2, '0')}</span>
+              <span className="min-w-0 font-bold text-foreground"><span className="block truncate">{studentName}</span><span className="mt-0.5 block text-[10px] font-semibold text-muted-foreground sm:hidden">{record ? 'Evaluado' : 'Sin evaluar'}</span></span>
+              <label className="relative">
+                <span className="sr-only">Nota de {studentName}, máximo {activity.maxScore}</span>
+                <Input
+                  aria-invalid={saveState === 'error' || undefined}
+                  className="grade-cell h-11 pr-8 text-center font-black tabular-nums"
+                  defaultValue={record?.score ?? ''}
+                  disabled={saveState === 'saving'}
+                  inputMode="decimal"
+                  max={activity.maxScore}
+                  min={0}
+                  onBlur={(event) => {
+                    const value = event.target.value
+                    const score = value.trim() === '' ? null : Number(value)
+                    if (!scoreNeedsPersistence(record?.score, score)) return
+                    onSaveScore(student.enrollmentId, activity, value, null)
+                  }}
+                  onFocus={(event) => event.currentTarget.select()}
+                  onKeyDown={focusNextGradeCell}
+                  placeholder="—"
+                  step="0.01"
+                  type="number"
+                />
+                <span aria-hidden="true" className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-bold text-muted-foreground">/{activity.maxScore}</span>
+              </label>
+              <span className="col-span-3 min-h-3 sm:col-span-1">
+                <CellSaveIndicator evaluated={Boolean(record)} state={saveState} />
+              </span>
+            </li>
+          )
+        })}
+      </ol>
+    </section>
+  )
+}
+
 function ActivityEvaluationPanel({
   activity,
+  blockName,
+  courseTitle,
   currentRecord,
   levelRows,
   levelLabels,
   instrumentComplete,
+  observation,
+  onChangeObservation,
   onSaveScore,
   onSelectLevel,
+  periodName,
   saving,
   selectedStudent,
   setStudentIndex,
@@ -2141,12 +2278,17 @@ function ActivityEvaluationPanel({
   totalRubricScore,
 }: {
   activity: GradingActivity
+  blockName: string
+  courseTitle: string
   currentRecord: GradeRecordRow | null
-  levelRows: Array<{ criterion: { title: string; description: string; maximum: number }; levelIndex: number | null; points: number | null }>
+  levelRows: Array<{ criterion: { title: string; description: string; maximum: number; descriptors?: string[] }; levelIndex: number | null; points: number | null }>
   levelLabels: Array<{ label: string; points: number }>
   instrumentComplete: boolean
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
+  observation: string
+  onChangeObservation: (value: string) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => Promise<boolean>
   onSelectLevel: (criterionIndex: number, levelIndex: number) => void
+  periodName: string
   saving: boolean
   selectedStudent: StudentGradeRow | null
   setStudentIndex: Dispatch<SetStateAction<number>>
@@ -2155,22 +2297,31 @@ function ActivityEvaluationPanel({
   students: StudentGradeRow[]
   totalRubricScore: number | null
 }) {
-  const saveCurrentScore = () => {
-    if (!selectedStudent || totalRubricScore === null) return
-    onSaveScore(selectedStudent.enrollmentId, activity, String(totalRubricScore), {
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
+  const workspaceRef = useRef<HTMLElement>(null)
+
+  useEffect(() => setSaveStatus('idle'), [selectedStudent?.enrollmentId])
+
+  const saveCurrentScore = async () => {
+    if (!selectedStudent || totalRubricScore === null) return false
+    setSaveStatus('saving')
+    const saved = await onSaveScore(selectedStudent.enrollmentId, activity, String(totalRubricScore), {
       instrumentType: activity.instrumentType ?? '',
       selections: levelRows.map((row) => row.levelIndex!),
       criterionScores: levelRows.map((row) => row.points!),
       completedAt: new Date().toISOString(),
+      observation: observation.trim() || undefined,
     })
+    setSaveStatus(saved ? 'saved' : 'error')
+    return saved
   }
 
   return (
-    <section className="space-y-4">
-      <div className="grid grid-cols-[1fr_minmax(12rem,18rem)_1fr] items-center gap-3">
-        <Button variant="outline" disabled={studentIndex <= 0} onClick={() => setStudentIndex((current) => Math.max(0, current - 1))}>
+    <section ref={workspaceRef} className="space-y-4">
+      <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 sm:gap-3">
+        <Button aria-label="Estudiante anterior" variant="outline" disabled={studentIndex <= 0 || saveStatus === 'saving'} onClick={() => setStudentIndex((current) => Math.max(0, current - 1))}>
           <ArrowLeft className="size-4" />
-          Anterior
+          <span className="hidden sm:inline">Anterior</span>
         </Button>
         <Select value={String(studentIndex)} onChange={(event) => setStudentIndex(Number(event.target.value))} className="h-12 text-center font-black">
           {students.map((student, index) => (
@@ -2179,16 +2330,32 @@ function ActivityEvaluationPanel({
             </option>
           ))}
         </Select>
-        <Button className="justify-self-end" variant="outline" disabled={studentIndex >= students.length - 1} onClick={() => setStudentIndex((current) => Math.min(students.length - 1, current + 1))}>
-          Siguiente
+        <Button aria-label="Estudiante siguiente" className="justify-self-end" variant="outline" disabled={studentIndex >= students.length - 1 || saveStatus === 'saving'} onClick={() => setStudentIndex((current) => Math.min(students.length - 1, current + 1))}>
+          <span className="hidden sm:inline">Siguiente</span>
           <ArrowRight className="size-4" />
         </Button>
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(17rem,35%)_minmax(0,65%)]">
+        <aside className="space-y-4 rounded-2xl border border-border bg-card p-4 shadow-sm lg:sticky lg:top-4">
+          <div className="flex items-center gap-3">
+            <span className="grid size-12 place-items-center rounded-full bg-primary/10 text-lg font-black text-primary">{studentInitials(selectedStudent)}</span>
+            <div className="min-w-0"><h3 className="truncate font-black text-foreground">{selectedStudent ? `${selectedStudent.firstName} ${selectedStudent.lastName}` : 'Sin estudiante'}</h3><p className="text-xs text-muted-foreground">N.º {selectedStudent?.listNumber ?? studentIndex + 1} · {studentIndex + 1} de {students.length}</p></div>
+          </div>
+          <dl className="grid gap-3 border-t border-border pt-4 text-sm">
+            <InfoItem label="Actividad" value={activity.name} />
+            <InfoItem label="Curso / asignatura" value={courseTitle} />
+            <InfoItem label="Período y bloque" value={`${periodName} · ${blockName}`} />
+            <InfoItem label="Valor" value={`${activity.maxScore} puntos`} />
+            <InfoItem label="Fecha" value={formatActivityDate(activity.date)} />
+          </dl>
+          <div className="border-t border-border pt-4 text-sm leading-6 text-muted-foreground"><ActivityDescriptionContent value={activity.description} fallback="Sin descripción." /></div>
+        </aside>
+
+      <div className="min-w-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
         <div className="flex flex-col gap-3 border-b border-border p-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <span className="grid size-12 place-items-center rounded-full bg-blue-100 text-lg font-black text-primary">
+            <span className="grid size-12 place-items-center rounded-full bg-primary/10 text-lg font-black text-primary">
               {studentInitials(selectedStudent)}
             </span>
             <div>
@@ -2235,9 +2402,12 @@ function ActivityEvaluationPanel({
                   {levelLabels.map((level, levelIndex) => (
                     <td key={level.label} className="border-r border-border px-4 py-4 text-center">
                       <button type="button" aria-label={`${row.criterion.title}: ${level.label}`} aria-pressed={row.levelIndex === levelIndex} onClick={() => onSelectLevel(criterionIndex, levelIndex)} className={cn(
-                        'inline-flex size-11 items-center justify-center rounded-full border-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                        row.levelIndex === levelIndex ? 'border-primary bg-primary shadow-[inset_0_0_0_4px_white]' : 'border-border bg-card',
-                      )} />
+                        'inline-flex min-h-24 w-full min-w-28 flex-col items-center justify-center gap-1 rounded-xl border-2 px-2 py-3 text-xs transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                        row.levelIndex === levelIndex ? 'border-primary bg-primary/10 text-primary' : 'border-border bg-card text-muted-foreground hover:border-primary/50',
+                      )}>
+                        <span className="font-black">{level.label} · {formatGrade(level.points)}</span>
+                        {row.criterion.descriptors?.[levelIndex] ? <span className="leading-4">{row.criterion.descriptors[levelIndex]}</span> : null}
+                      </button>
                     </td>
                   ))}
                   <td className="px-4 py-4 text-center">
@@ -2253,13 +2423,13 @@ function ActivityEvaluationPanel({
 
         <div className="border-t border-border p-4">
           <label className="text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Observación (opcional)</label>
-          <Textarea className="mt-2 min-h-24" placeholder="Escribe una observación sobre el desempeño del estudiante..." />
+          <Textarea aria-label="Observación (opcional)" value={observation} onChange={(event) => onChangeObservation(event.target.value)} className="mt-2 min-h-20" placeholder="Escribe una observación sobre el desempeño del estudiante..." />
         </div>
 
         <div className="flex flex-col gap-3 border-t border-border p-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700">
-            <CheckCircle2 className="size-4" />
-            Guardado automáticamente
+          <p role="status" className={cn('inline-flex items-center gap-2 text-xs font-bold', saveStatus === 'error' ? 'text-destructive' : saveStatus === 'saved' ? 'text-success' : 'text-muted-foreground')}>
+            {saveStatus === 'saved' ? <CheckCircle2 className="size-4" /> : null}
+            {saveStatus === 'saving' ? 'Guardando…' : saveStatus === 'saved' ? 'Guardado ✓' : saveStatus === 'error' ? 'No se pudo guardar. Intenta de nuevo.' : 'Los cambios se guardan al confirmar.'}
           </p>
           <div className="flex items-center gap-4">
             <p className="text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Puntaje total</p>
@@ -2267,21 +2437,24 @@ function ActivityEvaluationPanel({
           </div>
         </div>
       </div>
+      </div>
 
-      <div className="flex justify-end gap-2">
-        <Button disabled={saving || !instrumentComplete} onClick={() => {
-          saveCurrentScore()
-          setStudentIndex((current) => Math.min(students.length - 1, current + 1))
-        }}>
-          Guardar y siguiente
-        </Button>
-        <Button disabled={saving || !instrumentComplete} variant="outline" onClick={() => {
-          saveCurrentScore()
-          setTab('results')
+      <footer className="sticky bottom-2 z-30 flex flex-col-reverse gap-2 rounded-2xl border border-border bg-card/95 p-3 shadow-lg backdrop-blur sm:flex-row sm:items-center sm:justify-end">
+        <Button disabled={saving || saveStatus === 'saving' || !instrumentComplete} variant="outline" onClick={async () => {
+          if (await saveCurrentScore()) setTab('results')
         }}>
           Guardar y salir
         </Button>
-      </div>
+        <Button disabled={saving || saveStatus === 'saving' || !instrumentComplete} onClick={async () => {
+          if (!await saveCurrentScore()) return
+          setStudentIndex((current) => Math.min(students.length - 1, current + 1))
+          window.requestAnimationFrame(() => {
+            if (typeof workspaceRef.current?.scrollIntoView === 'function') workspaceRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          })
+        }}>
+          {saveStatus === 'saving' ? 'Guardando…' : saveStatus === 'saved' ? 'Guardado ✓' : 'Guardar y siguiente →'}
+        </Button>
+      </footer>
     </section>
   )
 }
@@ -2291,6 +2464,7 @@ function ActivityResultsPanel({
   average,
   distribution,
   evaluatedCount,
+  onEvaluate,
   records,
   students,
 }: {
@@ -2298,11 +2472,17 @@ function ActivityResultsPanel({
   average: number | null
   distribution: Array<{ color: string; count: number; label: string; percent: number }>
   evaluatedCount: number
+  onEvaluate: (studentIndex: number) => void
   records: GradeRecordRow[]
   students: StudentGradeRow[]
 }) {
   return (
     <section className="space-y-4">
+      <header className="rounded-2xl bg-card p-4 shadow-sm">
+        <p className="text-xs font-bold text-primary">Resultados de la actividad</p>
+        <h3 className="mt-1 text-xl font-black text-foreground">{activity.name}</h3>
+        <p className="mt-1 text-sm text-muted-foreground">{activity.maxScore} pts · {evaluatedCount}/{students.length} evaluados · Promedio {formatGrade(average)}</p>
+      </header>
       <div className="grid gap-3 md:grid-cols-3">
         <BlockMetric icon={<Users className="size-5" />} label="Evaluados" value={`${evaluatedCount} / ${students.length}`} helper="" tone="default" />
         <BlockMetric icon={<ClipboardList className="size-5" />} label="Promedio general" value={`${formatGrade(average)} / ${activity.maxScore}`} helper="" tone="success" />
@@ -2348,6 +2528,7 @@ function ActivityResultsPanel({
                 <th className="px-4 py-3">Porcentaje</th>
                 <th className="px-4 py-3">Nivel</th>
                 <th className="px-4 py-3">Estado</th>
+                <th className="px-4 py-3 text-right">Acción</th>
               </tr>
             </thead>
             <tbody>
@@ -2360,10 +2541,11 @@ function ActivityResultsPanel({
                   <tr key={student.enrollmentId} className="border-t border-border">
                     <td className="px-4 py-3 text-muted-foreground">{student.listNumber ?? index + 1}</td>
                     <td className="px-4 py-3 font-bold text-foreground">{student.firstName} {student.lastName}</td>
-                    <td className="px-4 py-3 font-bold text-primary">{score !== null ? `${formatGrade(score)} / ${activity.maxScore}` : '-'}</td>
-                    <td className="px-4 py-3 font-bold">{percent !== null ? `${percent}%` : '-'}</td>
+                    <td className="px-4 py-3 font-bold text-primary">{score !== null ? `${formatGrade(score)} / ${activity.maxScore}` : '—'}</td>
+                    <td className="px-4 py-3 font-bold">{percent !== null ? `${percent}%` : '—'}</td>
                     <td className="px-4 py-3"><span className={cn('font-bold', gradeLevelTextColor(level))}>{level}</span></td>
                     <td className="px-4 py-3"><span className={score !== null ? 'font-bold text-emerald-700' : 'font-bold text-muted-foreground'}>{score !== null ? 'Evaluado' : 'Pendiente'}</span></td>
+                    <td className="px-4 py-3 text-right"><Button size="sm" variant="outline" onClick={() => onEvaluate(index)}>{score !== null ? 'Editar evaluación' : 'Calificar'}</Button></td>
                   </tr>
                 )
               })}
@@ -2390,7 +2572,7 @@ export function LegacyActivityDetailView({
   config: GradeCalculationConfig
   onBack: () => void
   onEditActivity: (activity: GradingActivity) => void
-  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => void
+  onSaveScore: (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => Promise<boolean>
   records: GradeRecordRow[]
   cellSaveStates: Record<string, GradeCellSaveState>
   saving: boolean
@@ -2521,33 +2703,64 @@ export function LegacyActivityDetailView({
 
 function PeriodSummaryView({
   blockSummaries,
+  config,
+  courseTitle,
+  periodShortName,
+  records,
   recoveryScores,
+  students,
 }: {
   blockSummaries: Array<{
     block: (typeof competencyBlocks)[number]
     index: number
+    activities: GradingActivity[]
     average: number | null
+    gradingProgress: number
     expected: number
     status: string
   }>
+  config: GradeCalculationConfig
+  courseTitle: string
+  periodShortName: string
+  records: GradeRecordRow[]
   recoveryScores: RecoveryScores
+  students: StudentGradeRow[]
 }) {
+  const activities = blockSummaries.flatMap((summary) => summary.activities)
+  const rows = buildCompactGradeRows(students, activities, records)
+  const evaluatedCells = students.reduce((total, student) => total + activities.filter((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).length, 0)
+  const coverage = students.length && activities.length ? Math.round(evaluatedCells / (students.length * activities.length) * 100) : 0
+  const groupAverage = averageNumbers(rows.map((row) => row.average).filter((value): value is number => value !== null))
+  const studentsWithResults = rows.filter((row) => row.average !== null).length
+  const followUp = rows.filter((row) => row.average !== null && row.average < config.passingScore).length
+
   return (
-    <section>
-      <div className="grid gap-4 md:grid-cols-2">
+    <section className="space-y-4">
+      <header className="rounded-2xl bg-card p-5 shadow-sm">
+        <p className="text-xs font-bold text-primary">Vista del período</p>
+        <h2 className="mt-1 text-2xl font-black text-foreground">{periodShortName}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{courseTitle} · Desempeño del grupo en las cuatro competencias.</p>
+      </header>
+
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <BlockMetric icon={<TrendingUp className="size-5" />} label="Promedio general" value={formatGrade(groupAverage)} helper="del período" tone="success" />
+        <BlockMetric icon={<Users className="size-5" />} label="Con resultados" value={`${studentsWithResults}/${students.length}`} helper="estudiantes" tone="default" />
+        <BlockMetric icon={<CheckCircle2 className="size-5" />} label="Evaluación completada" value={`${coverage}%`} helper="de registros" tone="accent" />
+        <BlockMetric icon={<Hourglass className="size-5" />} label="Requieren seguimiento" value={followUp} helper="estudiantes" tone="warning" />
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
         {blockSummaries.map((summary) => {
           const accent = blockAccents[summary.index]
           const hasRecovery = Object.values(recoveryScores[summary.block.id] ?? {}).some((value) => typeof value === 'number')
-          const progress = summary.average === null
-            ? 0
-            : Math.max(0, Math.min(100, (summary.average / summary.expected) * 100))
+          const progress = summary.gradingProgress
           return (
             <article
               key={summary.block.id}
-              className="rounded-2xl bg-card p-5 shadow-sm"
+              className="rounded-2xl bg-card p-4 shadow-sm"
             >
               <p className={cn('text-xs font-bold', accent.text)}>
-                {summary.block.shortName}
+                C{summary.index + 1}
               </p>
               <h3 className="mt-1.5 text-pretty text-base font-extrabold leading-6 text-primary sm:text-lg">
                 {blockShortNames[summary.block.id]}
@@ -2575,9 +2788,10 @@ function PeriodSummaryView({
                     </p>
                     <span className="text-xs text-muted-foreground">Promedio</span>
                   </div>
-                  <div className="mt-3 h-2 overflow-hidden rounded-full bg-border" aria-label={`${formatGrade(summary.average)} de ${summary.expected} puntos`}>
-                    <span className={cn('block h-full rounded-full', accent.progress)} style={{ width: `${progress}%` }} />
-                  </div>
+                    <div className="mt-3 h-2 overflow-hidden rounded-full bg-border" aria-label={`${progress}% de calificaciones registradas`}>
+                      <span className={cn('block h-full rounded-full', accent.progress)} style={{ width: `${progress}%` }} />
+                    </div>
+                    <p className="mt-1 text-right text-xs text-muted-foreground">{progress}% calificado</p>
                 </div>
               )}
 
@@ -2588,6 +2802,13 @@ function PeriodSummaryView({
             </article>
           )
         })}
+      </div>
+
+      <div className="max-h-[65vh] overflow-auto rounded-2xl border border-border bg-card shadow-sm">
+        <table className="min-w-[48rem] w-full border-separate border-spacing-0 text-sm">
+          <thead><tr className="bg-muted/60 text-xs uppercase tracking-wide text-muted-foreground"><th className="sticky left-0 top-0 z-30 w-14 border-b border-r border-border bg-muted px-3 py-3">N.º</th><th className="sticky left-14 top-0 z-30 min-w-56 border-b border-r border-border bg-muted px-4 py-3 text-left">Estudiante</th>{competencyBlocks.map((block, index) => <th key={block.id} className="sticky top-0 z-20 border-b border-r border-border bg-muted px-4 py-3">C{index + 1}</th>)}<th className="sticky top-0 z-20 border-b border-border bg-primary-light px-4 py-3 text-primary">{periodShortName}</th></tr></thead>
+          <tbody>{rows.map((row) => <tr key={row.enrollmentId} className="group hover:bg-muted/20"><td className="sticky left-0 z-10 border-b border-r border-border bg-card px-3 py-3 text-center text-muted-foreground group-hover:bg-muted/20">{row.listNumber}</td><td className="sticky left-14 z-10 border-b border-r border-border bg-card px-4 py-3 font-bold text-foreground group-hover:bg-muted/20">{row.lastName}, {row.firstName}</td>{competencyBlocks.map((block) => <td key={block.id} className="border-b border-r border-border px-4 py-3 text-center font-bold">{formatGrade(row.blockAverages[block.id])}</td>)}<td className="border-b border-border bg-primary/[0.035] px-4 py-3 text-center font-black text-primary">{formatGrade(row.average)}</td></tr>)}</tbody>
+        </table>
       </div>
     </section>
   )
@@ -2759,9 +2980,29 @@ function AnnualResultView(props: {
   const generalAverage = values.length > 0 ? values.reduce((sum, value) => sum + value, 0) / values.length : null
   const final = finalSubjectScore(blockAverages, props.config)
   const state = final === null ? 'Pendiente' : final >= props.config.passingScore ? 'Aprobado' : final >= 60 ? 'En recuperación' : 'Reprobado'
+  const periods = competencyPeriods.filter((period) => period.id !== 'final')
+  const studentResults = props.students.map((student, index) => {
+    const periodScores = periods.map((period) => finalSubjectScore(competencyBlocks.map((block) => getStudentPeriodBlockScore({ blockId: block.id, config: props.config, getActivitiesForPeriod: props.getActivitiesForPeriod, periodId: period.id as CompetencyPeriodId, recordsByPeriod: props.recordsByPeriod, student }).effective), props.config))
+    const annualBlocks = competencyBlocks.map((block) => finalBlockAverage(periods.map((period) => getStudentPeriodBlockScore({ blockId: block.id, config: props.config, getActivitiesForPeriod: props.getActivitiesForPeriod, periodId: period.id as CompetencyPeriodId, recordsByPeriod: props.recordsByPeriod, student }).effective), props.config))
+    return { student, listNumber: student.listNumber ?? index + 1, periodScores, annual: finalSubjectScore(annualBlocks, props.config) }
+  })
+  const completeStudents = studentResults.filter((result) => result.periodScores.every((score) => score !== null)).length
+  const pendingStudents = studentResults.length - completeStudents
+  const reviewStudents = studentResults.filter((result) => result.annual !== null && result.annual < props.config.passingScore).length
+  const groupFinalAverage = averageNumbers(studentResults.map((result) => result.annual).filter((value): value is number => value !== null))
 
   return (
     <section className="space-y-4">
+      <header className="rounded-2xl bg-card p-5 shadow-sm"><p className="text-xs font-bold text-primary">Resumen final</p><h2 className="mt-1 text-2xl font-black text-foreground">Resultado anual de la asignatura</h2><p className="mt-1 text-sm text-muted-foreground">Los períodos futuros o sin evaluar permanecen como —.</p></header>
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <BlockMetric icon={<TrendingUp className="size-5" />} label="Promedio del grupo" value={formatGrade(groupFinalAverage)} helper="resultado anual" tone="success" />
+        <BlockMetric icon={<CheckCircle2 className="size-5" />} label="Resultado completo" value={completeStudents} helper={`${props.students.length} estudiantes`} tone="default" />
+        <BlockMetric icon={<Hourglass className="size-5" />} label="Pendientes" value={pendingStudents} helper="con períodos faltantes" tone="warning" />
+        <BlockMetric icon={<AlertCircle className="size-5" />} label="Requieren revisión" value={reviewStudents} helper="bajo el mínimo" tone="warning" />
+      </div>
+
+      <div className="max-h-[65vh] overflow-auto rounded-2xl border border-border bg-card shadow-sm"><table className="min-w-[52rem] w-full border-separate border-spacing-0 text-sm"><thead><tr className="bg-muted/60 text-xs uppercase tracking-wide text-muted-foreground"><th className="sticky left-0 top-0 z-30 w-14 border-b border-r border-border bg-muted px-3 py-3">N.º</th><th className="sticky left-14 top-0 z-30 min-w-56 border-b border-r border-border bg-muted px-4 py-3 text-left">Estudiante</th>{periods.map((period) => <th key={period.id} className="sticky top-0 z-20 border-b border-r border-border bg-muted px-4 py-3">{period.shortName}</th>)}<th className="sticky top-0 z-20 border-b border-r border-border bg-primary-light px-4 py-3 text-primary">Promedio anual</th><th className="sticky top-0 z-20 border-b border-border bg-muted px-4 py-3">Condición</th></tr></thead><tbody>{studentResults.map((result) => { const condition = result.annual === null ? 'Pendiente' : result.annual >= props.config.passingScore ? 'Aprobado' : 'Revisión'; return <tr key={result.student.enrollmentId} className="group hover:bg-muted/20"><td className="sticky left-0 z-10 border-b border-r border-border bg-card px-3 py-3 text-center text-muted-foreground group-hover:bg-muted/20">{result.listNumber}</td><td className="sticky left-14 z-10 border-b border-r border-border bg-card px-4 py-3 font-bold text-foreground group-hover:bg-muted/20">{result.student.lastName}, {result.student.firstName}</td>{result.periodScores.map((score, index) => <td key={periods[index].id} className="border-b border-r border-border px-4 py-3 text-center font-bold">{formatGrade(score)}</td>)}<td className="border-b border-r border-border bg-primary/[0.035] px-4 py-3 text-center font-black text-primary">{formatGrade(result.annual)}</td><td className="border-b border-border px-4 py-3 text-center"><Badge tone={condition === 'Aprobado' ? 'success' : condition === 'Pendiente' ? 'muted' : 'warning'}>{condition}</Badge></td></tr> })}</tbody></table></div>
+
       <div className="grid gap-4 md:grid-cols-2">
         {competencyBlocks.map((block, index) => {
           const accent = blockAccents[index]
@@ -3026,14 +3267,9 @@ function ActivityManager({
 function ActivitiesHubView({
   activities,
   courseTitle,
-  draftMetas,
   onBack,
-  onDeleteDraft,
-  onOpenDraft,
   onSelectBlock,
-  onViewDrafts,
   periodName,
-  periodShortName,
 }: {
   activities: GradingActivity[]
   courseTitle: string
@@ -3046,11 +3282,6 @@ function ActivitiesHubView({
   periodName: string
   periodShortName: string
 }) {
-  const recentDrafts = [...draftMetas]
-    .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
-    .slice(0, 5)
-  const blocksWithDrafts = new Set(draftMetas.map((meta) => meta.blockId)).size
-
   return (
     <section className="space-y-5">
       <header className="flex flex-col gap-3 rounded-2xl bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
@@ -3070,10 +3301,6 @@ function ActivitiesHubView({
           </div>
         </div>
         <div className="flex items-center gap-1 self-start">
-          <Button variant="outline" className="h-10 px-3" onClick={() => onViewDrafts()}>
-            <FileText className="size-4" />
-            Borradores
-          </Button>
           <Button variant="ghost" className="h-10 px-3" onClick={onBack}>
             <ArrowLeft className="size-4" />
             Volver
@@ -3088,21 +3315,10 @@ function ActivitiesHubView({
             activities={activities.filter((activity) => activity.competencyBlockId === block.id)}
             accent={blockAccents[index]}
             block={block}
-            draftCount={draftMetas.filter((meta) => meta.blockId === block.id).length}
             onSelectBlock={() => onSelectBlock(block.id)}
           />
         ))}
       </div>
-      <DraftCenter
-        blocksWithDrafts={blocksWithDrafts}
-        courseTitle={courseTitle}
-        draftMetas={recentDrafts}
-        onDeleteDraft={onDeleteDraft}
-        periodShortName={periodShortName}
-        totalDrafts={draftMetas.length}
-        onOpenDraft={onOpenDraft}
-        onViewDrafts={onViewDrafts}
-      />
     </section>
   )
 }
@@ -3111,13 +3327,11 @@ function ActivityBlockHubCard({
   accent,
   activities,
   block,
-  draftCount,
   onSelectBlock,
 }: {
   accent: (typeof blockAccents)[number]
   activities: GradingActivity[]
   block: (typeof competencyBlocks)[number]
-  draftCount: number
   onSelectBlock: () => void
 }) {
   const plannedPoints = activities.reduce((sum, activity) => sum + activity.maxScore, 0)
@@ -3138,12 +3352,6 @@ function ActivityBlockHubCard({
         <span><strong className="font-extrabold text-foreground tabular-nums">{activities.length}</strong> {activities.length === 1 ? 'actividad' : 'actividades'}</span>
         <span className="text-border" aria-hidden="true">•</span>
         <span><strong className="font-extrabold text-foreground tabular-nums">{plannedPoints}</strong> pts planificados</span>
-        {draftCount > 0 ? (
-          <>
-            <span className="text-border" aria-hidden="true">•</span>
-            <span className={cn('font-bold', accent.text)}>{draftCount} {draftCount === 1 ? 'borrador' : 'borradores'}</span>
-          </>
-        ) : null}
       </div>
 
       <button
@@ -3158,7 +3366,7 @@ function ActivityBlockHubCard({
   )
 }
 
-function DraftCenter({
+export function DraftCenter({
   blocksWithDrafts,
   courseTitle,
   draftMetas,
@@ -6689,7 +6897,7 @@ function activityInstrumentDot(instrumentType?: string) {
   if (instrumentType === 'lista-cotejo') return 'bg-emerald-400'
   if (instrumentType === 'escala') return 'bg-amber-400'
   if (instrumentType === 'lista-ponderada') return 'bg-blue-500'
-  return 'bg-violet-400'
+  return 'bg-primary'
 }
 
 function activityInstrumentTitle(instrumentType?: string) {
@@ -6700,7 +6908,7 @@ function activityIconTone(instrumentType?: string) {
   if (instrumentType === 'lista-cotejo') return 'bg-emerald-100 text-emerald-700'
   if (instrumentType === 'escala') return 'bg-amber-100 text-amber-700'
   if (instrumentType === 'lista-ponderada') return 'bg-blue-100 text-blue-700'
-  return 'bg-violet-100 text-violet-700'
+  return 'bg-primary/10 text-primary'
 }
 
 function formatActivityDate(value?: string) {
@@ -6790,6 +6998,7 @@ export function activityRubricConfiguration(activity: GradingActivity) {
   const criteria = Array.from({ length: criteriaCount }, (_, index) => ({
     title: fields[instrumentFieldKey('rubrica', 'criterion', index)] || `Criterio ${index + 1}`,
     description: fields[instrumentFieldKey('rubrica', 'descriptor', index, levelCount)] || 'Criterio configurado en el instrumento de la actividad.',
+    descriptors: Array.from({ length: levelCount }, (_, levelIndex) => fields[instrumentFieldKey('rubrica', 'descriptor', index, levelCount - levelIndex)] || ''),
     maximum: Number(fields[instrumentFieldKey('rubrica', 'points', index)] || distributeScore(activity.maxScore, criteriaCount)[index] || 0),
   }))
   const levels = Array.from({ length: levelCount }, (_, index) => {
@@ -6873,7 +7082,10 @@ function averageBlockForPeriod(input: {
     .filter((activity) => activity.competencyBlockId === input.blockId)
   if (activities.length === 0) return null
   const recoveryScores = getRecoveryScores(records)
-  const scores = input.students.map((student) => {
+  const scores = input.students.flatMap((student) => {
+    const hasRecordedScore = activities.some((activity) => scoreForActivity(records, student.enrollmentId, activity.id))
+    const recovery = recoveryScores[input.blockId]?.[student.enrollmentId] ?? null
+    if (!hasRecordedScore && recovery === null) return []
     const total = blockTotal({
       records,
       activities,
@@ -6881,9 +7093,8 @@ function averageBlockForPeriod(input: {
       blockId: input.blockId,
       config: input.config,
     })
-    const recovery = recoveryScores[input.blockId]?.[student.enrollmentId] ?? null
-    return effectivePeriodScore(total, recovery, input.config)
-  }).filter((value) => value > 0)
+    return [effectivePeriodScore(total, recovery, input.config)]
+  })
   return averageNumbers(scores)
 }
 

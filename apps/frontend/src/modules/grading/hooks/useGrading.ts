@@ -330,18 +330,19 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
   }, [])
 
   const updateActivityScore = useCallback(
-    async (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult) => {
-      if (!gradingContext || !academicPeriodId) return
+    async (enrollmentId: string, activity: GradingActivity, value: string, instrumentResult?: EvaluatedInstrumentResult | null) => {
+      if (!gradingContext || !academicPeriodId) return false
       const score = value.trim() === '' ? null : Number(value)
       const existing = gradeRecords.find((record) => activityRecordMatches(record, enrollmentId, activity.id))
       const cellKey = activityGradeCellKey(enrollmentId, activity.id)
-      if (!instrumentResult && !scoreNeedsPersistence(existing?.score, score)) return
+      if (instrumentResult === undefined && !scoreNeedsPersistence(existing?.score, score)) return true
+      if (instrumentResult === null && !existing?.instrumentResult && !scoreNeedsPersistence(existing?.score, score)) return true
       if (score !== null) {
         const validationError = validateScore(score, activity.maxScore)
         if (validationError) {
           setError(validationError)
           setCellSaveState(cellKey, 'error')
-          return
+          return false
         }
       }
 
@@ -354,6 +355,7 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
           await deleteGrade(existing.id)
           invalidateAnnualCache(sectionSubjectAtSave)
           setCellSaveState(cellKey, 'saved')
+          return true
         } catch (deleteError) {
           if (activeSectionSubjectRef.current === sectionSubjectAtSave) {
             setGradeRecords((current) => current.some((record) => record.id === existing.id)
@@ -362,11 +364,11 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
           }
           setError(deleteError instanceof Error ? deleteError.message : 'No se pudo borrar la calificación.')
           setCellSaveState(cellKey, 'error')
+          return false
         }
-        return
       }
 
-      if (score === null) return
+      if (score === null) return true
       const optimisticId = existing?.id ?? `optimistic:${cellKey}`
       const optimistic: GradeRecordRow = {
         id: optimisticId,
@@ -377,7 +379,7 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
         assessmentName: activityRecordName(activity),
         status: existing?.status ?? 'draft',
         evaluationActivityId: activity.id,
-        instrumentResult: instrumentResult ?? existing?.instrumentResult ?? null,
+        instrumentResult: instrumentResult === undefined ? existing?.instrumentResult ?? null : instrumentResult,
       }
       setGradeRecords((current) => existing
         ? current.map((record) => record.id === existing.id ? optimistic : record)
@@ -387,8 +389,6 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
           enrollmentId,
           sectionSubjectId: selectedSsId,
           academicPeriodId,
-          sectionId: gradingContext.sectionId,
-          schoolYearId: gradingContext.schoolYearId,
           score,
           maxScore: activity.maxScore,
           weight: 1,
@@ -402,6 +402,7 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
         }
         invalidateAnnualCache(sectionSubjectAtSave)
         setCellSaveState(cellKey, 'saved')
+        return true
       } catch (saveError) {
         if (activeSectionSubjectRef.current === sectionSubjectAtSave) {
           setGradeRecords((current) => existing
@@ -410,6 +411,7 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
         }
         setError(saveError instanceof Error ? saveError.message : 'No se pudo guardar la calificación.')
         setCellSaveState(cellKey, 'error')
+        return false
       }
     },
     [academicPeriodId, gradeRecords, gradingContext, invalidateAnnualCache, selectedSsId, setCellSaveState],
@@ -475,8 +477,6 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
           enrollmentId,
           sectionSubjectId: selectedSsId,
           academicPeriodId,
-          sectionId: gradingContext.sectionId,
-          schoolYearId: gradingContext.schoolYearId,
           score,
           maxScore: 100,
           weight: 1,

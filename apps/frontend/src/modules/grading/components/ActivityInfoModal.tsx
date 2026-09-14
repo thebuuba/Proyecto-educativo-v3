@@ -8,6 +8,7 @@ import {
   Files,
   Laptop,
   Monitor,
+  Play,
   Presentation,
   Target,
   Tags,
@@ -37,7 +38,7 @@ const blockAccents: Accent[] = [
   { card: 'border-blue-200 bg-blue-50/70', panel: 'bg-blue-50 text-blue-950', badge: 'bg-blue-100 text-blue-700 ring-blue-200', progressColor: '#2563eb', gradient: 'linear-gradient(90deg, #60a5fa 0%, #2563eb 55%, #1d4ed8 100%)', border: 'border-blue-200', text: 'text-blue-700' },
   { card: 'border-emerald-200 bg-emerald-50/70', panel: 'bg-emerald-50 text-emerald-950', badge: 'bg-emerald-100 text-emerald-700 ring-emerald-200', progressColor: '#059669', gradient: 'linear-gradient(90deg, #34d399 0%, #059669 55%, #047857 100%)', border: 'border-emerald-200', text: 'text-emerald-700' },
   { card: 'border-amber-200 bg-amber-50/70', panel: 'bg-amber-50 text-amber-950', badge: 'bg-amber-100 text-amber-700 ring-amber-200', progressColor: '#f59e0b', gradient: 'linear-gradient(90deg, #fcd34d 0%, #f59e0b 55%, #d97706 100%)', border: 'border-amber-200', text: 'text-amber-700' },
-  { card: 'border-violet-200 bg-violet-50/70', panel: 'bg-violet-50 text-violet-950', badge: 'bg-violet-100 text-violet-700 ring-violet-200', progressColor: '#7c3aed', gradient: 'linear-gradient(90deg, #a78bfa 0%, #7c3aed 55%, #6d28d9 100%)', border: 'border-violet-200', text: 'text-violet-700' },
+  { card: 'border-destructive/30 bg-destructive/10', panel: 'bg-destructive/10 text-foreground', badge: 'bg-destructive/10 text-foreground ring-destructive/30', progressColor: 'var(--destructive)', gradient: 'var(--destructive)', border: 'border-destructive/30', text: 'text-foreground' },
 ]
 
 const blockShortNames: Record<string, string> = {
@@ -111,7 +112,7 @@ export function ActivityInfoModal({ activity, onClose, onEdit, onEvaluate }: {
           <div className="max-h-[24rem] overflow-auto p-4"><ReadOnlyInstrument type={activity.instrumentType} fields={activity.instrumentCriteria ?? {}} maxScore={activity.maxScore} accent={accent} /></div>
         </section>
 
-        {onEdit || onEvaluate ? <footer className="flex flex-col-reverse gap-2 border-t border-border pt-4 sm:flex-row sm:justify-end"><Button variant="outline" onClick={onClose}>Cerrar</Button>{onEdit ? <Button variant="outline" onClick={onEdit}>Editar actividad</Button> : null}{onEvaluate ? <Button onClick={onEvaluate}><ClipboardList className="size-4" /> Calificar actividad</Button> : null}</footer> : null}
+        {onEdit || onEvaluate ? <footer className="flex flex-col-reverse gap-2 border-t border-border pt-4 sm:flex-row sm:justify-end"><Button variant="outline" onClick={onClose}>Cerrar</Button>{onEdit ? <Button variant="outline" onClick={onEdit}>Editar actividad</Button> : null}{onEvaluate ? <Button onClick={onEvaluate}><Play className="size-4" /> Calificar</Button> : null}</footer> : null}
       </div>
     </Modal>
   )
