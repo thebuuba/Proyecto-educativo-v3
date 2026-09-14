@@ -50,6 +50,15 @@ enum ReportStatus {
   @@map("report_status")
 }
 
+enum OnboardingTourStatus {
+  NOT_STARTED @map("not_started")
+  IN_PROGRESS @map("in_progress")
+  COMPLETED   @map("completed")
+  SKIPPED     @map("skipped")
+
+  @@map("onboarding_tour_status")
+}
+
 model School {
   id                     String       @id @default(uuid()) @db.Uuid
   name                   String
@@ -105,6 +114,7 @@ model School {
   teacherJournalEntries TeacherJournalEntry[]
   teacherJournalStudents TeacherJournalStudent[]
   subjectResources       SubjectResource[]
+  onboardingTourProgress OnboardingTourProgress[]
 
   @@index([name])
   @@index([district])
@@ -186,8 +196,28 @@ model AppUser {
   createdDashboardTasks         DashboardTask[]        @relation("DashboardCreator")
   teacherJournalEntries         TeacherJournalEntry[]
   subjectResources              SubjectResource[]
+  onboardingTourProgress        OnboardingTourProgress[]
 
   @@map("app_users")
+}
+
+model OnboardingTourProgress {
+  id        String               @id @default(uuid()) @db.Uuid
+  userId    String               @map("user_id") @db.Uuid
+  schoolId  String               @map("school_id") @db.Uuid
+  tourKey   String               @map("tour_key")
+  version   Int                  @default(1)
+  status    OnboardingTourStatus @default(NOT_STARTED)
+  lastStep  Int                  @default(0) @map("last_step")
+  createdAt DateTime             @default(now()) @map("created_at")
+  updatedAt DateTime             @updatedAt @map("updated_at")
+
+  user   AppUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  school School  @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, schoolId, tourKey])
+  @@index([schoolId, userId])
+  @@map("onboarding_tour_progress")
 }
 
 model UserRole {

@@ -8,6 +8,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import { TourCenter } from '@/modules/onboarding/TourCenter'
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type { UserRole } from '@/types/domain'
@@ -40,6 +41,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
   const location = useLocation()
   const [periodName, setPeriodName] = useState<string | null>(null)
   const [profileOpen, setProfileOpen] = useState(false)
+  const [tourCenterOpen, setTourCenterOpen] = useState(false)
   const profileRef = useRef<HTMLDivElement>(null)
   const searchRef = useRef<HTMLInputElement>(null)
 
@@ -194,8 +196,10 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
           <button
             type="button"
+            data-tour="help-center"
             className="hidden size-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-muted sm:flex"
             aria-label="Ayuda"
+            onClick={() => setTourCenterOpen(true)}
           >
             <CircleHelp className="size-5" />
           </button>
@@ -263,6 +267,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
           </div>
         </div>
       </div>
+      {tourCenterOpen ? <TourCenter onClose={() => setTourCenterOpen(false)} /> : null}
     </header>
   )
 }

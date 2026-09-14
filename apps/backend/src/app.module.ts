@@ -24,6 +24,7 @@ import { SubjectsModule } from './modules/subjects/subjects.module'
 import { SchoolsModule } from './modules/schools/schools.module'
 import { JournalModule } from './modules/journal/journal.module'
 import { ResourcesModule } from './modules/resources/resources.module'
+import { OnboardingModule } from './modules/onboarding/onboarding.module'
 import { backendEnvFilePaths } from './config/env-file-paths'
 
 /**
@@ -53,6 +54,7 @@ import { backendEnvFilePaths } from './config/env-file-paths'
     SchoolsModule,
     JournalModule,
     ResourcesModule,
+    OnboardingModule,
   ],
   providers: [
     { provide: APP_GUARD, useClass: ThrottlerGuard },
