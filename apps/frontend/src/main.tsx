@@ -18,16 +18,16 @@ import { AuthProvider } from '@/modules/auth/context/AuthProvider'
 import { ErrorBoundary } from '@/components/ui/ErrorFallback'
 
 /** Renderiza la aplicación en el elemento raíz del DOM. */
-void clearDevServiceWorker().finally(() => {
-  createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-      <BrowserRouter>
-        <AuthProvider>
-          <ErrorBoundary>
-            <App />
-          </ErrorBoundary>
-        </AuthProvider>
-      </BrowserRouter>
-    </StrictMode>,
-  )
-})
+void clearDevServiceWorker()
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
+      </AuthProvider>
+    </BrowserRouter>
+  </StrictMode>,
+)

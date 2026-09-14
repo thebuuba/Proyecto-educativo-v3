@@ -1,5 +1,6 @@
 export async function clearDevServiceWorker() {
-  if (!import.meta.env.DEV || !('serviceWorker' in navigator)) return
+  const isLocalHost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname)
+  if ((!import.meta.env.DEV && !isLocalHost) || !('serviceWorker' in navigator)) return
 
   try {
     const registrations = await navigator.serviceWorker.getRegistrations()

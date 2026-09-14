@@ -520,7 +520,7 @@ export function CoursesPage() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:justify-between">
           {canManage ? (
             <div className="order-2 flex shrink-0 items-start justify-end">
-              <details className="group relative">
+              <details data-tour="create-course" className="group relative">
                 <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 [&::-webkit-details-marker]:hidden">
                   Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
                 </summary>
@@ -536,7 +536,7 @@ export function CoursesPage() {
             </div>
           ) : null}
 
-          <section aria-labelledby="courses-summary-title" className="order-1 flex h-10 min-w-0 flex-1 items-center overflow-hidden rounded-xl bg-card px-3 shadow-sm sm:px-4 [&_p]:hidden">
+          <section data-tour="manage-students" aria-labelledby="courses-summary-title" className="order-1 flex h-10 min-w-0 flex-1 items-center overflow-hidden rounded-xl bg-card px-3 shadow-sm sm:px-4 [&_p]:hidden">
             <div className="flex min-w-0 items-center gap-2.5">
               <div className="min-w-0">
                 <div className="flex items-center gap-3">

@@ -5,6 +5,7 @@
 
 import { RefreshCw } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 import { ErrorState } from '@/components/ui'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
@@ -16,7 +17,6 @@ import {
 } from '@/modules/dashboard/components/DashboardEditableGrid'
 import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
 import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
-import { InitialSetupChecklist } from '@/modules/dashboard/components/InitialSetupChecklist'
 import { JournalSummaryCard } from '@/modules/dashboard/components/JournalSummaryCard'
 import { LineChart } from '@/modules/dashboard/components/LineChart'
 import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
@@ -24,6 +24,7 @@ import { SmartSuggestion } from '@/modules/dashboard/components/SmartSuggestion'
 import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
 import { WeeklyAttendanceCard } from '@/modules/dashboard/components/WeeklyAttendanceCard'
 import { useDashboard } from '@/modules/dashboard/hooks/useDashboard'
+import { getNextSetupTourStep, startSetupTour } from '@/modules/dashboard/setupTour'
 import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
 
 /** Retorna un saludo según la hora del día. */
@@ -46,6 +47,15 @@ export function DashboardPage() {
     completeTask,
     refetch,
   } = useDashboard()
+
+  const nextSetupTourStep = data?.view === 'management' ? getNextSetupTourStep(data.setupProgress) : null
+
+  useEffect(() => {
+    if (nextSetupTourStep && typeof window !== 'undefined' && window.localStorage.getItem('aulabase:interactive-setup-tour-seen:v1') !== 'true') {
+      window.localStorage.setItem('aulabase:interactive-setup-tour-seen:v1', 'true')
+      window.setTimeout(() => startSetupTour(nextSetupTourStep), 500)
+    }
+  }, [nextSetupTourStep?.id])
 
   const handleStartClass = (item: DashboardClass) => {
     const params = new URLSearchParams({
@@ -101,12 +111,6 @@ export function DashboardPage() {
   const managementWidgets: DashboardGridWidget[] = data.view === 'management'
     ? [
         {
-          id: 'setup',
-          label: 'Preparación inicial',
-          content: <InitialSetupChecklist progress={data.setupProgress} />,
-          layout: { x: 0, y: 0, w: 9, h: 10, minW: 5, minH: 4, maxW: 12 },
-        },
-        {
           id: 'next-class',
           label: 'Próxima clase',
           content: (
@@ -118,14 +122,14 @@ export function DashboardPage() {
               onCountdownEnd={refetch}
             />
           ),
-          layout: { x: 9, y: 0, w: 3, h: 19, minW: 3, minH: 8, maxW: 5 },
+          layout: { x: 0, y: 10, w: 6, h: 16, minW: 4, minH: 8, maxW: 8 },
         },
         ...(hasAgenda
           ? [{
               id: 'agenda',
               label: 'Agenda de hoy',
               content: <TodayAgenda items={data.todayAgenda} />,
-              layout: { x: 0, y: 10, w: 5, h: 27, minW: 4, minH: 10, maxW: 8 },
+              layout: { x: 6, y: 10, w: 6, h: 16, minW: 4, minH: 10, maxW: 8 },
             } satisfies DashboardGridWidget]
           : []),
         ...(hasWeeklyAttendance
@@ -133,7 +137,7 @@ export function DashboardPage() {
               id: 'attendance',
               label: 'Pulso semanal',
               content: <WeeklyAttendanceCard attendance={data.weeklyAttendance} />,
-              layout: { x: 5, y: 10, w: 4, h: 13, minW: 3, minH: 7, maxW: 7 },
+              layout: { x: 0, y: 26, w: 6, h: 13, minW: 3, minH: 7, maxW: 7 },
             } satisfies DashboardGridWidget]
           : []),
         {
@@ -147,26 +151,26 @@ export function DashboardPage() {
               onCompleteTask={completeTask}
             />
           ),
-          layout: { x: 5, y: 23, w: 4, h: 10, minW: 3, minH: 6, maxW: 7 },
+          layout: { x: 6, y: 26, w: 6, h: 13, minW: 3, minH: 6, maxW: 7 },
         },
         {
           id: 'recent',
           label: 'Actividad reciente',
           content: <RecentActivity items={data.recentActivity} />,
-          layout: { x: 9, y: 19, w: 3, h: 19, minW: 3, minH: 8, maxW: 7 },
+          layout: { x: 0, y: 39, w: 6, h: 15, minW: 3, minH: 8, maxW: 7 },
         },
         {
           id: 'journal',
           label: 'Bitácora docente',
           content: <JournalSummaryCard summary={journalSummary} />,
-          layout: { x: 5, y: 33, w: 7, h: 13, minW: 4, minH: 7, maxW: 12 },
+          layout: { x: 6, y: 39, w: 6, h: 15, minW: 4, minH: 7, maxW: 12 },
         },
         ...(data.smartSuggestion
           ? [{
               id: 'suggestion',
               label: 'Sugerencia inteligente',
               content: <SmartSuggestion suggestion={data.smartSuggestion} />,
-              layout: { x: 0, y: 46, w: 12, h: 8, minW: 5, minH: 4, maxW: 12 },
+              layout: { x: 0, y: 54, w: 12, h: 8, minW: 5, minH: 4, maxW: 12 },
             } satisfies DashboardGridWidget]
           : []),
       ]
@@ -187,6 +191,7 @@ export function DashboardPage() {
         </div>
 
         <div className="flex items-center gap-2 text-xs">
+          {nextSetupTourStep ? <button type="button" onClick={() => startSetupTour(nextSetupTourStep)} className="inline-flex h-7 items-center rounded-full border border-primary/20 bg-primary/5 px-3 font-semibold text-primary transition-colors hover:bg-primary/10">Guía inicial</button> : null}
           <button
             type="button"
             onClick={() => void refetch()}
@@ -216,7 +221,7 @@ export function DashboardPage() {
       {data.view === 'management' ? (
         <DashboardEditableGrid
           widgets={managementWidgets}
-          storageKey="aulabase:dashboard-layout:management:v4"
+          storageKey="aulabase:dashboard-layout:management:v5"
         />
       ) : (
         <>

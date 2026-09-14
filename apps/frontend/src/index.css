@@ -643,3 +643,54 @@ a {
     transform: none;
   }
 }
+.driver-popover.aulabase-setup-tour {
+  box-sizing: border-box;
+  min-width: 280px;
+  width: min(340px, calc(100vw - 32px));
+  max-width: 340px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--card);
+  color: var(--card-foreground);
+  box-shadow: 0 24px 70px rgb(15 23 42 / 24%);
+  padding: 18px;
+}
+
+.aulabase-setup-tour .driver-popover-title {
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.aulabase-setup-tour .driver-popover-description,
+.aulabase-setup-tour .driver-popover-progress-text {
+  color: var(--muted-foreground);
+  font-family: inherit;
+  line-height: 1.55;
+}
+
+.aulabase-setup-tour .driver-popover-next-btn,
+.aulabase-setup-tour .driver-popover-done-btn {
+  border: 0;
+  border-radius: 10px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-family: inherit;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.aulabase-setup-tour .driver-popover-prev-btn {
+  border-color: var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--foreground);
+  font-family: inherit;
+  text-shadow: none;
+}
+
+.aulabase-setup-tour .driver-popover-close-btn {
+  color: var(--muted-foreground);
+}

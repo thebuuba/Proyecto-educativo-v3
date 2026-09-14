@@ -70,7 +70,7 @@ jobs:
       - name: Verificar secretos del Worker
         run: |
           secrets=$(pnpm exec wrangler secret list --env="")
-          for name in JWT_SECRET OPENAI_API_KEY SUPABASE_ANON_KEY SUPABASE_SERVICE_ROLE_KEY SUPABASE_URL; do
+          for name in JWT_SECRET DEEPSEEK_API_KEY SUPABASE_ANON_KEY SUPABASE_SERVICE_ROLE_KEY SUPABASE_URL; do
             jq -e --arg name "$name" 'any(.[]; .name == $name)' <<< "$secrets" >/dev/null || {
               echo "Falta el secreto $name en Cloudflare" >&2
               exit 1

@@ -342,7 +342,7 @@ export function SchedulePage() {
       : `${entries.length} clases organizadas de lunes a viernes.`
 
   return (
-    <section className="w-full min-w-0 space-y-5 pb-10">
+    <section data-tour="create-schedule" className="w-full min-w-0 space-y-5 pb-10">
       <PageHero
         title="Horario docente"
         description={description}
