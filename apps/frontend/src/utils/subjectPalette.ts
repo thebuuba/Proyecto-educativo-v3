@@ -5,66 +5,124 @@ export type SubjectPalette = {
 }
 
 /*
- * Paleta inspirada en el calendario de referencia: tonos pastel fríos y cálidos,
- * suficientemente distintos entre sí pero con el mismo nivel visual. La asignación
- * se hace siempre a partir del nombre normalizado de la materia, por lo que una
- * asignatura conserva el mismo color en Cursos, Horario y cualquier otra vista que
- * use getSubjectPalette.
+ * Paleta académica basada en la asociación de colores usada tradicionalmente
+ * para organizar las materias escolares en República Dominicana.
+ *
+ * El color se resuelve siempre a partir del nombre normalizado de la asignatura,
+ * por lo que una misma materia conserva su identidad visual en Cursos, Horario
+ * y cualquier otra vista que use getSubjectPalette.
+ *
+ * Para la interfaz se usan versiones pastel como fondo, manteniendo un tono
+ * principal reconocible y suficiente contraste para el texto.
  */
 const subjectPalettes = {
-  sky: { color: '#4A9CB1', soft: '#C4ECF7', foreground: '#20383E' },
-  periwinkle: { color: '#627FA8', soft: '#D7E5F5', foreground: '#263444' },
-  lavender: { color: '#7465A7', soft: '#D7CDF3', foreground: '#312C45' },
-  pink: { color: '#A65B8E', soft: '#F9D9F3', foreground: '#432D3E' },
-  peach: { color: '#A87547', soft: '#F8E2CB', foreground: '#443327' },
-  sage: { color: '#67847C', soft: '#C5DAD5', foreground: '#293A35' },
-  mint: { color: '#56877E', soft: '#D8EEE9', foreground: '#273B36' },
-  butter: { color: '#947C43', soft: '#F5E7B9', foreground: '#403823' },
-  coral: { color: '#9B685B', soft: '#F4D8CF', foreground: '#402F2A' },
-  aqua: { color: '#4D8790', soft: '#CFEAEC', foreground: '#26393D' },
-  lilac: { color: '#89679A', soft: '#E7D8EF', foreground: '#3B2E42' },
-  sand: { color: '#92775F', soft: '#EEDFD1', foreground: '#3F342B' },
+  spanishBlue: { color: '#3579C9', soft: '#DCEBFA', foreground: '#203B5B' },
+  mathRed: { color: '#D95A67', soft: '#F7DADD', foreground: '#542B32' },
+  socialGreen: { color: '#4D9B67', soft: '#DCEEDF', foreground: '#294634' },
+  scienceYellow: { color: '#C79A24', soft: '#FFF0B8', foreground: '#4B4020' },
+  religionViolet: { color: '#7C63BC', soft: '#E7DFF5', foreground: '#3D3454' },
+  englishOrange: { color: '#DF843D', soft: '#F8DFC8', foreground: '#573821' },
+  frenchLightBlue: { color: '#6AA6CE', soft: '#DDECF6', foreground: '#2D4658' },
+  artisticPink: { color: '#D45B98', soft: '#F6D8E7', foreground: '#552B40' },
+  physicalGray: { color: '#7D8794', soft: '#E7E9EC', foreground: '#343B43' },
+  technologyGray: { color: '#66717D', soft: '#E1E5E8', foreground: '#30363C' },
+
+  /* Materias complementarias que no forman parte del código tradicional. */
+  humanPink: { color: '#B8638D', soft: '#F1DCE7', foreground: '#4B3040' },
+  orientationTeal: { color: '#5B8F8A', soft: '#DCECE9', foreground: '#2D4542' },
+  electiveLavender: { color: '#8571AF', soft: '#E7E0F1', foreground: '#40374F' },
 } satisfies Record<string, SubjectPalette>
 
 /*
- * Reglas explícitas para las materias más comunes. Las más específicas deben ir
- * primero para evitar que nombres como “Ciencias de la Naturaleza: Química” caigan
- * en la regla genérica de Ciencias Naturales.
+ * Las reglas más específicas van primero. Esto evita que, por ejemplo,
+ * “Ciencias de la Naturaleza: Química” reciba otro color distinto al amarillo
+ * tradicional reservado para Ciencias de la Naturaleza.
  */
 const subjectColorRules: Array<{ terms: string[]; palette: SubjectPalette }> = [
-  { terms: ['sexualidad humana'], palette: subjectPalettes.pink },
-  { terms: ['humanidades y lenguas modernas'], palette: subjectPalettes.lavender },
-  { terms: ['ciencias fisicas'], palette: subjectPalettes.sky },
-  { terms: ['ciencias de la tierra y del universo', 'tierra y del universo', 'astronomia', 'geologia'], palette: subjectPalettes.peach },
-  { terms: ['ciencias de la vida'], palette: subjectPalettes.sage },
-  { terms: ['biologia', 'ecologia'], palette: subjectPalettes.mint },
-  { terms: ['quimica'], palette: subjectPalettes.lavender },
-  { terms: ['fisica'], palette: subjectPalettes.periwinkle },
-  { terms: ['matematica', 'algebra', 'geometria', 'estadistica'], palette: subjectPalettes.peach },
-  { terms: ['lengua espanola', 'literatura', 'comunicacion'], palette: subjectPalettes.pink },
-  { terms: ['ingles', 'frances', 'idioma', 'lenguas modernas'], palette: subjectPalettes.lavender },
-  { terms: ['ciencias sociales', 'historia', 'geografia', 'civica'], palette: subjectPalettes.butter },
-  { terms: ['educacion artistica', 'arte', 'musica', 'teatro'], palette: subjectPalettes.coral },
-  { terms: ['tecnologia', 'informatica', 'computacion', 'programacion'], palette: subjectPalettes.aqua },
-  { terms: ['educacion fisica', 'deporte'], palette: subjectPalettes.sage },
-  { terms: ['formacion integral', 'etica', 'religion'], palette: subjectPalettes.sand },
-  { terms: ['orientacion', 'tutoria'], palette: subjectPalettes.lilac },
-  { terms: ['ciencias naturales', 'ciencias de la naturaleza'], palette: subjectPalettes.sky },
+  /* Francés se diferencia de Inglés con azul claro. */
+  { terms: ['frances'], palette: subjectPalettes.frenchLightBlue },
+
+  /* Idiomas extranjeros: naranja. */
+  { terms: ['ingles', 'idioma extranjero', 'lenguas modernas', 'humanidades y lenguas modernas'], palette: subjectPalettes.englishOrange },
+
+  /* Lengua Española: azul. */
+  { terms: ['lengua espanola', 'lengua y literatura', 'literatura', 'comunicacion'], palette: subjectPalettes.spanishBlue },
+
+  /* Matemática: rojo. */
+  { terms: ['matematica', 'algebra', 'geometria', 'estadistica', 'calculo', 'trigonometria'], palette: subjectPalettes.mathRed },
+
+  /* Ciencias Sociales: verde. */
+  { terms: ['ciencias sociales', 'historia', 'geografia', 'civica', 'ciudadania'], palette: subjectPalettes.socialGreen },
+
+  /*
+   * Ciencias de la Naturaleza: amarillo. Incluye sus áreas de Secundaria
+   * para que Física, Química, Biología, Ciencias de la Vida y Ciencias de la
+   * Tierra y del Universo mantengan la misma identidad curricular.
+   */
+  {
+    terms: [
+      'ciencias naturales',
+      'ciencias de la naturaleza',
+      'ciencias fisicas',
+      'fisica',
+      'quimica',
+      'biologia',
+      'ecologia',
+      'ciencias de la vida',
+      'ciencias de la tierra',
+      'tierra y del universo',
+      'astronomia',
+      'geologia',
+    ],
+    palette: subjectPalettes.scienceYellow,
+  },
+
+  /* Formación Integral, Humana y Religiosa: violeta. */
+  {
+    terms: [
+      'formacion integral humana y religiosa',
+      'formacion integral',
+      'fih',
+      'fihr',
+      'religion',
+      'educacion religiosa',
+      'etica',
+    ],
+    palette: subjectPalettes.religionViolet,
+  },
+
+  /* Educación Artística: rosado/fucsia. */
+  { terms: ['educacion artistica', 'artistica', 'arte', 'musica', 'teatro', 'artes visuales'], palette: subjectPalettes.artisticPink },
+
+  /* Educación Física: gris. */
+  { terms: ['educacion fisica', 'deporte', 'actividad fisica'], palette: subjectPalettes.physicalGray },
+
+  /* Informática / Computación: gris plateado. */
+  { terms: ['informatica', 'computacion', 'tecnologia', 'programacion', 'robotica'], palette: subjectPalettes.technologyGray },
+
+  /* Materias complementarias que aparecen actualmente en AulaBase. */
+  { terms: ['sexualidad humana'], palette: subjectPalettes.humanPink },
+  { terms: ['orientacion', 'tutoria'], palette: subjectPalettes.orientationTeal },
 ]
 
+/*
+ * Para materias no contempladas explícitamente se mantiene una asignación
+ * determinística: el mismo nombre recibe siempre el mismo color.
+ */
 const fallbackPalettes: SubjectPalette[] = [
-  subjectPalettes.sky,
-  subjectPalettes.peach,
-  subjectPalettes.pink,
-  subjectPalettes.lavender,
-  subjectPalettes.sage,
-  subjectPalettes.periwinkle,
-  subjectPalettes.mint,
-  subjectPalettes.butter,
-  subjectPalettes.coral,
-  subjectPalettes.aqua,
-  subjectPalettes.lilac,
-  subjectPalettes.sand,
+  subjectPalettes.spanishBlue,
+  subjectPalettes.mathRed,
+  subjectPalettes.socialGreen,
+  subjectPalettes.scienceYellow,
+  subjectPalettes.religionViolet,
+  subjectPalettes.englishOrange,
+  subjectPalettes.frenchLightBlue,
+  subjectPalettes.artisticPink,
+  subjectPalettes.physicalGray,
+  subjectPalettes.technologyGray,
+  subjectPalettes.humanPink,
+  subjectPalettes.orientationTeal,
+  subjectPalettes.electiveLavender,
 ]
 
 function normalizeSubjectName(value: string) {
