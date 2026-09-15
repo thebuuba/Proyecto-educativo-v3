@@ -1,7 +1,7 @@
 /**
  * Barra lateral de navegación con enlaces a módulos y cierre de sesión.
  */
-import { ChevronLeft, ChevronRight, GraduationCap, LogOut, X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, LogOut, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -41,41 +41,53 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
       >
         <div
           className={cn(
-            'sidebar-header flex h-[84px] shrink-0 items-center border-b border-border/60',
-            isExpanded
-              ? 'justify-between px-5'
-              : 'justify-between px-5 lg:justify-center lg:px-3',
+            'sidebar-header relative shrink-0 border-b border-border/60',
+            isExpanded ? 'h-[118px] px-5 pt-4' : 'h-[84px] px-3 pt-4',
           )}
         >
-          <NavLink
-            to="/inicio"
-            className={cn('flex min-w-0 items-center gap-3', !isExpanded && 'lg:gap-0')}
-            onClick={onClose}
-            title="Aula Base"
-          >
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-[13px] bg-foreground text-white shadow-sm">
-              <GraduationCap className="size-5" strokeWidth={2} />
-            </span>
+          {isExpanded ? (
+            <div className="mb-5 flex items-center gap-1.5">
+              <span className="size-2 rounded-full bg-rose-400" aria-hidden="true" />
+              <span className="size-2 rounded-full bg-amber-400" aria-hidden="true" />
+              <span className="size-2 rounded-full bg-emerald-400" aria-hidden="true" />
+            </div>
+          ) : null}
 
-            <span className="sidebar-label min-w-0">
-              <span className="block text-[15px] font-extrabold tracking-[-0.025em] text-foreground">
-                Aula Base
+          <div className={cn('flex items-center', isExpanded ? 'justify-between' : 'justify-center')}>
+            <NavLink
+              to="/inicio"
+              className={cn('flex min-w-0 items-center gap-3', !isExpanded && 'lg:gap-0')}
+              onClick={onClose}
+              title="Aula Base"
+            >
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-slate-900 shadow-sm">
+                <span className="flex items-center gap-1" aria-hidden="true">
+                  <span className="block h-[18px] w-[5px] -skew-x-[26deg] rounded-[2px] bg-white" />
+                  <span className="block h-[18px] w-[5px] -skew-x-[26deg] rounded-[2px] bg-white/80" />
+                  <span className="block h-[18px] w-[5px] -skew-x-[26deg] rounded-[2px] bg-white/60" />
+                </span>
               </span>
-              <span className="mt-0.5 block text-[11px] font-medium text-muted-foreground">
-                Sistema docente
-              </span>
-            </span>
-          </NavLink>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground lg:hidden"
-            aria-label="Cerrar navegación"
-            onClick={onClose}
-          >
-            <X className="size-5" />
-          </Button>
+              <span className="sidebar-label min-w-0">
+                <span className="block text-[15px] font-extrabold uppercase tracking-[0.045em] text-slate-900">
+                  Aula Base
+                </span>
+                <span className="mt-0.5 block text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">
+                  Sistema docente
+                </span>
+              </span>
+            </NavLink>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground lg:hidden"
+              aria-label="Cerrar navegación"
+              onClick={onClose}
+            >
+              <X className="size-5" />
+            </Button>
+          </div>
         </div>
 
         <button
