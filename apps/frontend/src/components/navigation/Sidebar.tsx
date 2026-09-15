@@ -134,11 +134,11 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                         className={cn(
                           'sidebar-nav-icon flex size-7 shrink-0 items-center justify-center rounded-md transition-[color,background-color,transform] duration-150',
                           isActive
-                            ? 'text-primary'
-                            : 'text-foreground/52 group-hover/nav:text-primary/85',
+                            ? 'text-foreground'
+                            : 'text-foreground group-hover/nav:text-foreground',
                         )}
                       >
-                        <Icon className="size-[17px] shrink-0" strokeWidth={1.9} />
+                        <Icon className="size-[17px] shrink-0" />
                       </span>
 
                       <span className="sidebar-label truncate">{item.label}</span>
