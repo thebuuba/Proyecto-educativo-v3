@@ -41,18 +41,10 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
       >
         <div
           className={cn(
-            'sidebar-header relative shrink-0 border-b border-border/60',
-            isExpanded ? 'h-[118px] px-5 pt-4' : 'h-[84px] px-3 pt-4',
+            'sidebar-header relative flex shrink-0 items-center',
+            isExpanded ? 'h-[84px] px-5' : 'h-[84px] px-3',
           )}
         >
-          {isExpanded ? (
-            <div className="mb-5 flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-rose-400" aria-hidden="true" />
-              <span className="size-2 rounded-full bg-amber-400" aria-hidden="true" />
-              <span className="size-2 rounded-full bg-emerald-400" aria-hidden="true" />
-            </div>
-          ) : null}
-
           <div className={cn('flex items-center', isExpanded ? 'justify-between' : 'justify-center')}>
             <NavLink
               to="/inicio"
@@ -60,13 +52,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
               onClick={onClose}
               title="Aula Base"
             >
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-slate-900 shadow-sm">
-                <span className="flex items-center gap-1" aria-hidden="true">
-                  <span className="block h-[18px] w-[5px] -skew-x-[26deg] rounded-[2px] bg-white" />
-                  <span className="block h-[18px] w-[5px] -skew-x-[26deg] rounded-[2px] bg-white/80" />
-                  <span className="block h-[18px] w-[5px] -skew-x-[26deg] rounded-[2px] bg-white/60" />
-                </span>
-              </span>
+              <img src="/favicon.svg" alt="" className="size-11 shrink-0 rounded-[13px] shadow-sm" />
 
               <span className="sidebar-label min-w-0">
                 <span className="block text-[15px] font-extrabold uppercase tracking-[0.045em] text-slate-900">
