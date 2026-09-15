@@ -170,22 +170,6 @@ body:has(#courses-summary-title) .space-y-5 {
 }
 
 /* El ciclo se lee como subtítulo, no como otro bloque principal. */
-body:has(#courses-summary-title) .space-y-5 > div {
-  position: relative;
-  padding-left: 0.85rem;
-}
-
-body:has(#courses-summary-title) .space-y-5 > div::before {
-  content: '';
-  position: absolute;
-  top: 0.15rem;
-  bottom: 0;
-  left: 0;
-  width: 2px;
-  border-radius: 99px;
-  background: color-mix(in srgb, var(--primary) 18%, transparent);
-}
-
 body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 {
   width: fit-content;
   margin-bottom: 0.65rem !important;
@@ -442,10 +426,6 @@ body:has(#courses-summary-title) article.group > div:last-child [role='menu'] {
 
   body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] [aria-label='Resumen de cursos'] {
     gap: 0.2rem 0.58rem;
-  }
-
-  body:has(#courses-summary-title) .space-y-5 > div {
-    padding-left: 0.65rem;
   }
 
   body:has(#courses-summary-title) article.group,

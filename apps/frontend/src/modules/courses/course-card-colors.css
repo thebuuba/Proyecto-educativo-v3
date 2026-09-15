@@ -169,20 +169,6 @@ body:has(#courses-summary-title) .space-y-8 > section > div:first-child > h2 {
 }
 
 /* El ciclo mantiene una guía vertical más visible y una cabecera propia. */
-body:has(#courses-summary-title) .space-y-5 > div {
-  position: relative;
-  padding-left: 1rem !important;
-}
-
-body:has(#courses-summary-title) .space-y-5 > div::before {
-  width: 3px !important;
-  background: color-mix(in srgb, var(--primary) 42%, transparent) !important;
-}
-
-body:has(#courses-summary-title) .space-y-5 > div:nth-child(even)::before {
-  background: color-mix(in srgb, var(--primary) 25%, var(--muted-foreground) 18%) !important;
-}
-
 body:has(#courses-summary-title) .space-y-5 > div + div {
   margin-top: 0.6rem;
   padding-top: 1.05rem;
