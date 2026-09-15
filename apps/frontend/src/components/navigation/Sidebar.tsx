@@ -122,7 +122,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                         : 'px-3 lg:mx-auto lg:size-11 lg:min-h-11 lg:justify-center lg:gap-0 lg:p-0',
                       'focus-visible:ring-2 focus-visible:ring-primary/20',
                       isActive
-                        ? 'bg-primary/10 text-foreground shadow-[inset_3px_0_0_var(--primary)]'
+                        ? 'bg-primary/10 text-foreground'
                         : 'text-foreground hover:bg-muted/70',
                     )
                   }
