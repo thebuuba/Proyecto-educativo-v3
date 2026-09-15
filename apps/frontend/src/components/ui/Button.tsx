@@ -64,7 +64,7 @@ export function Button({
       {...props}
       type={type}
       className={cn(
-        'inline-flex shrink-0 items-center justify-center font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform,filter] duration-150 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-4 active:scale-[0.985] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-60',
+        'inline-flex shrink-0 items-center justify-center font-bold transition-[color,background-color,border-color,box-shadow,opacity] duration-150 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-4 disabled:cursor-not-allowed disabled:opacity-60',
         variantClasses[variant],
         sizeClasses[size],
         className,

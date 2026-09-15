@@ -276,7 +276,7 @@ export function CourseTeamsPanel({
             <article
               key={team.id}
               onClick={() => openTeam(team)}
-              className="relative cursor-pointer overflow-visible rounded-2xl border border-border bg-card shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg"
+              className="relative cursor-pointer overflow-visible rounded-2xl border border-border bg-card shadow-sm transition-shadow duration-200 hover:shadow-lg"
             >
               <div className="absolute inset-x-0 top-0 h-1 rounded-t-2xl" style={{ backgroundColor: team.color }} />
               <div className="p-4 pt-5">
@@ -510,7 +510,7 @@ function EmptyTeamsState({ canManage, onCreate, onOpenGuide }: { canManage: bool
       <div className="relative mx-auto flex size-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-50 to-indigo-100 text-primary shadow-inner"><UsersRound className="size-10" /><span className="absolute -left-5 top-3 size-2 rounded-full border-2 border-emerald-400 bg-white" /><span className="absolute -right-5 top-5 size-2 rotate-45 border-2 border-violet-400 bg-white" /><span className="absolute -right-8 -top-1 text-sm font-black text-orange-400">△</span><span className="absolute -left-8 -top-1 text-sm text-blue-300">✦</span></div>
       <h3 className="mt-5 text-lg font-extrabold tracking-tight">Aún no tienes equipos creados</h3>
       <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Crea tu primer equipo y comienza a organizar a tus estudiantes<br className="hidden sm:block" /> para proyectos, actividades y evaluaciones colaborativas.</p>
-      {canManage ? <button type="button" onClick={onCreate} className="mt-5 inline-flex h-11 items-center gap-2 rounded-xl bg-primary px-5 text-sm font-extrabold text-primary-foreground shadow-md shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary-hover"><UserRoundPlus className="size-4" /> Crear primer equipo</button> : null}
+      {canManage ? <button type="button" onClick={onCreate} className="mt-5 inline-flex h-11 items-center gap-2 rounded-xl bg-primary px-5 text-sm font-extrabold text-primary-foreground shadow-md shadow-primary/20 transition-colors hover:bg-primary-hover"><UserRoundPlus className="size-4" /> Crear primer equipo</button> : null}
     </div>
 
     <div className="relative mx-auto mt-8 grid max-w-6xl gap-3 md:grid-cols-3">
@@ -525,7 +525,7 @@ function EmptyTeamsState({ canManage, onCreate, onOpenGuide }: { canManage: bool
 
 function EmptyBenefit({ icon, tone, title, text }: { icon: ReactNode; tone: 'emerald' | 'violet' | 'orange'; title: string; text: string }) {
   const tones = { emerald: 'bg-emerald-50 text-emerald-600', violet: 'bg-violet-50 text-violet-600', orange: 'bg-orange-50 text-orange-600' }
-  return <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className={cn('flex size-10 shrink-0 items-center justify-center rounded-xl', tones[tone])}>{icon}</span><span><strong className="block text-xs font-extrabold">{title}</strong><span className="mt-1 block text-[10px] leading-4 text-muted-foreground">{text}</span></span></div>
+  return <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 text-left shadow-sm transition-shadow hover:shadow-md"><span className={cn('flex size-10 shrink-0 items-center justify-center rounded-xl', tones[tone])}>{icon}</span><span><strong className="block text-xs font-extrabold">{title}</strong><span className="mt-1 block text-[10px] leading-4 text-muted-foreground">{text}</span></span></div>
 }
 
 function TeamQuickGuide({ onClose }: { onClose: () => void }) {
@@ -699,7 +699,7 @@ function TeamEditorScreen({ team, teams, students, activities, initialEnrollment
 
   return (
     <section className="space-y-5 pb-2">
-      <button type="button" onClick={onClose} className="inline-flex items-center gap-2 text-sm font-extrabold text-primary transition hover:-translate-x-0.5"><ArrowLeft className="size-4" /> Volver a equipos</button>
+      <button type="button" onClick={onClose} className="inline-flex items-center gap-2 text-sm font-extrabold text-primary"><ArrowLeft className="size-4" /> Volver a equipos</button>
       <header><h2 className="text-2xl font-extrabold tracking-tight">{team ? 'Editar equipo' : 'Crear equipo'}</h2><p className="mt-1 text-sm text-muted-foreground">Configura los detalles del equipo y selecciona a los estudiantes que lo integrarán.</p></header>
 
       <div className="grid items-start gap-4 xl:grid-cols-[1.08fr_0.92fr]">
@@ -761,7 +761,7 @@ function TeamIcon({ name, className }: { name: string; className?: string }) {
 }
 
 function QuickAction({ icon, title, detail, onClick, disabled = false }: { icon: ReactNode; title: string; detail: string; onClick?: () => void; disabled?: boolean }) {
-  return <button type="button" onClick={onClick} disabled={disabled} className="group flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/50 p-3 text-left transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:bg-white hover:shadow-md disabled:cursor-not-allowed disabled:border-dashed disabled:bg-slate-50/40 disabled:opacity-55 disabled:hover:translate-y-0 disabled:hover:shadow-none"><span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground group-disabled:bg-slate-100 group-disabled:text-slate-400">{icon}</span><span className="min-w-0"><span className="block truncate text-xs font-extrabold">{title}</span><span className="block truncate text-[10px] text-muted-foreground">{detail}</span></span></button>
+  return <button type="button" onClick={onClick} disabled={disabled} className="group flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/50 p-3 text-left transition-[background-color,border-color,box-shadow] hover:border-primary/25 hover:bg-white hover:shadow-md disabled:cursor-not-allowed disabled:border-dashed disabled:bg-slate-50/40 disabled:opacity-55 disabled:hover:shadow-none"><span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground group-disabled:bg-slate-100 group-disabled:text-slate-400">{icon}</span><span className="min-w-0"><span className="block truncate text-xs font-extrabold">{title}</span><span className="block truncate text-[10px] text-muted-foreground">{detail}</span></span></button>
 }
 
 function PanelMessage({ text, destructive = false }: { text: string; destructive?: boolean }) {

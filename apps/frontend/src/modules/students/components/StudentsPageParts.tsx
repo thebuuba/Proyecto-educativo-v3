@@ -19,7 +19,7 @@ export function CourseCard({ course, onSelect }: { course: EnrollmentCourse; onS
   return (
     <button
       type="button"
-      className="dashboard-warm-shadow group grid min-h-40 w-full gap-5 rounded-3xl bg-card p-5 text-left transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25 sm:grid-cols-[auto_minmax(0,1fr)] xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:items-center"
+      className="dashboard-warm-shadow group grid min-h-40 w-full gap-5 rounded-3xl bg-card p-5 text-left transition-shadow duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25 sm:grid-cols-[auto_minmax(0,1fr)] xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:items-center"
       onClick={onSelect}
     >
       <SemanticIcon

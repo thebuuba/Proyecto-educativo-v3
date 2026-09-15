@@ -95,7 +95,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
 
         <Link
           to="/asistencia"
-          className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground transition-[background-color,transform] duration-200 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25 active:translate-y-px"
+          className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground transition-colors duration-200 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25"
         >
           Registrar asistencia
           <ArrowRight className="size-4" aria-hidden="true" />

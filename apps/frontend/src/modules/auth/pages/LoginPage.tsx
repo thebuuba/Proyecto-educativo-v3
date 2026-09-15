@@ -130,7 +130,7 @@ export function LoginPage() {
             </button>
           </div>
 
-          <button type="submit" disabled={isSubmitting} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.985] disabled:cursor-not-allowed disabled:opacity-60">
+          <button type="submit" disabled={isSubmitting} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-60">
             {isSubmitting ? 'Ingresando...' : 'Iniciar sesión'}
           </button>
         </form>
@@ -182,5 +182,5 @@ function SuccessMessage({ children }: { children: ReactNode }) {
 }
 
 function ProviderButton({ children, onClick }: { children: ReactNode; onClick: () => void }) {
-  return <button type="button" onClick={onClick} className="flex items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted active:scale-[0.985]">{children}</button>
+  return <button type="button" onClick={onClick} className="flex items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted">{children}</button>
 }

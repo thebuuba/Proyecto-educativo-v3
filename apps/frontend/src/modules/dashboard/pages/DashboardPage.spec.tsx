@@ -47,6 +47,8 @@ describe('DashboardPage', () => {
   it('shows the weekly attendance chart before the first record is created', () => {
     render(<MemoryRouter><DashboardPage /></MemoryRouter>)
 
+    expect(screen.getByText('Tu agenda de hoy')).toBeInTheDocument()
+    expect(screen.getByText('No hay clases programadas para hoy.')).toBeInTheDocument()
     expect(screen.getByText('Pulso semanal')).toBeInTheDocument()
     expect(screen.getByText('· miércoles, 2 de septiembre')).toBeInTheDocument()
     expect(screen.getByRole('img', { name: 'Aún no hay registros de asistencia esta semana.' })).toBeInTheDocument()

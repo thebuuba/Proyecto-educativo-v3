@@ -118,7 +118,7 @@ export function Input({ className, ...props }: InputHTMLAttributes<HTMLInputElem
         aria-pressed={active}
         onClick={() => toggleCategory(label)}
         className={cn(
-          'inline-flex h-8 items-center gap-1.5 rounded-lg border bg-card px-2.5 text-xs font-semibold transition-[background-color,border-color,box-shadow,transform] hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25',
+          'inline-flex h-8 items-center gap-1.5 rounded-lg border bg-card px-2.5 text-xs font-semibold transition-[background-color,border-color,box-shadow] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25',
           tone,
           active && 'bg-muted shadow-sm ring-1 ring-current/15',
         )}

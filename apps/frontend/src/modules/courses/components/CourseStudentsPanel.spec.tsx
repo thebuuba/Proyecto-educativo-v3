@@ -138,7 +138,7 @@ describe('CourseStudentsPanel', () => {
 
     const table = await screen.findByRole('table')
     const row = within(table).getByText('01').closest('tr')!
-    expect(row).toHaveClass('cursor-pointer', 'hover:-translate-y-0.5', 'motion-reduce:transform-none')
+    expect(row).toHaveClass('cursor-pointer', 'hover:bg-primary/[0.035]', 'hover:shadow-sm')
     await user.click(within(table).getByText('01'))
 
     const details = within(screen.getByRole('dialog'))

@@ -1151,7 +1151,7 @@ function ViewButton({
       type="button"
       aria-current={active ? 'page' : undefined}
       className={cn(
-        'relative z-10 inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-xl px-2 text-sm font-bold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.985]',
+        'relative z-10 inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-xl px-2 text-sm font-bold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
         active ? 'text-primary-foreground' : 'text-muted-foreground hover:text-foreground',
       )}
       onClick={onClick}
@@ -3356,7 +3356,7 @@ function ActivityBlockHubCard({
 
       <button
         type="button"
-        className="mt-4 inline-flex h-9 w-fit items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.985]"
+        className="mt-4 inline-flex h-9 w-fit items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         onClick={onSelectBlock}
       >
         <Plus className="size-4" />
@@ -5098,9 +5098,7 @@ function RubricLevelSettingsDrawer({
       pointerEvents: 'none',
       position: 'fixed',
       top: `${bounds.top}px`,
-      transform: 'scale(1.015)',
-      transformOrigin: 'center',
-      transition: 'box-shadow 160ms ease, transform 160ms ease',
+      transition: 'box-shadow 160ms ease',
       width: `${bounds.width}px`,
       willChange: 'top',
       zIndex: '9999',
@@ -5594,7 +5592,7 @@ function ScaleSettingsDrawer({
     setDragPreviewHeight(bounds.height)
     preview.removeAttribute('data-scale-level-card')
     preview.querySelectorAll<HTMLElement>('button, input').forEach((element) => { element.tabIndex = -1 })
-    Object.assign(preview.style, { background: '#ffffff', borderColor: accent.progressColor, boxShadow: '0 22px 50px rgba(15, 23, 42, 0.25)', left: `${bounds.left}px`, margin: '0', opacity: '1', pointerEvents: 'none', position: 'fixed', top: `${bounds.top}px`, transform: 'scale(1.012)', width: `${bounds.width}px`, zIndex: '9999' })
+    Object.assign(preview.style, { background: '#ffffff', borderColor: accent.progressColor, boxShadow: '0 22px 50px rgba(15, 23, 42, 0.25)', left: `${bounds.left}px`, margin: '0', opacity: '1', pointerEvents: 'none', position: 'fixed', top: `${bounds.top}px`, width: `${bounds.width}px`, zIndex: '9999' })
     document.body.appendChild(preview)
     dragPreviewRef.current = preview
     const sourceIndex = levelDrafts.findIndex((item) => item.id === level.id)

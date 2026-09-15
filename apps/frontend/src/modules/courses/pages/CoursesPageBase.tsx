@@ -1109,7 +1109,7 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
       aria-label={`Entrar a la asignatura ${assignment.subjectName}`}
       onClick={() => onOpen('resumen')}
       onKeyDown={openAssignmentFromKeyboard}
-      className="group relative flex min-h-[18rem] cursor-pointer flex-col rounded-2xl bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
+      className="group relative flex min-h-[18rem] cursor-pointer flex-col rounded-2xl bg-card p-4 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-center gap-3">
@@ -1944,7 +1944,7 @@ export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, 
                 data-competency-block-id={block.id}
                 to={href}
                 onClick={onClose}
-                className={cn('group flex min-h-40 flex-col rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg', visual.border)}
+                className={cn('group flex min-h-40 flex-col rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition-shadow duration-200 hover:shadow-lg', visual.border)}
               >
                 <div className="flex items-start justify-between gap-3">
                   <span className={cn('flex size-12 items-center justify-center rounded-xl', visual.iconTone)}>{visual.icon}</span>
@@ -2024,7 +2024,7 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
         </DashboardPanel>
         <DashboardPanel title="Reportes rápidos">
           <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4">
-            {['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report, index) => <Link key={report} to="/reportes" className="rounded-xl border border-slate-200 bg-white p-3 text-center transition duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_24px_-14px_rgba(74,162,227,0.45)] active:translate-y-0"><span className={cn('mx-auto flex size-8 items-center justify-center rounded-lg', index % 2 ? 'bg-emerald-50 text-emerald-600' : 'bg-violet-50 text-violet-600')}><FileText className="size-4" /></span><span className="mt-2 block text-[11px] font-extrabold leading-4">Reporte de {report.toLowerCase()}</span><span className="mt-2 block text-[10px] font-bold text-primary">Generar PDF</span></Link>)}
+            {['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report, index) => <Link key={report} to="/reportes" className="rounded-xl border border-slate-200 bg-white p-3 text-center transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_12px_24px_-14px_rgba(74,162,227,0.45)]"><span className={cn('mx-auto flex size-8 items-center justify-center rounded-lg', index % 2 ? 'bg-emerald-50 text-emerald-600' : 'bg-violet-50 text-violet-600')}><FileText className="size-4" /></span><span className="mt-2 block text-[11px] font-extrabold leading-4">Reporte de {report.toLowerCase()}</span><span className="mt-2 block text-[10px] font-bold text-primary">Generar PDF</span></Link>)}
           </div>
         </DashboardPanel>
       </div>
@@ -2043,7 +2043,7 @@ function ActivityPreview({ activity }: { activity: { name: string; date?: string
 
 function AcademicSummaryCard({ icon, value, label, detail, tone, onClick }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'violet' | 'orange' | 'blue' | 'emerald'; onClick: () => void }) {
   const tones = { violet: 'bg-violet-50 text-violet-600', orange: 'bg-orange-50 text-orange-600', blue: 'bg-blue-50 text-blue-600', emerald: 'bg-emerald-50 text-emerald-600' }
-  return <button type="button" onClick={onClick} aria-label={`Ir a ${label}`} className="w-full rounded-xl border border-slate-200 bg-white p-3 text-left transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><span className="flex items-center gap-2.5"><span className={cn('flex size-9 items-center justify-center rounded-lg', tones[tone])}>{icon}</span><span><strong className="block text-xl leading-none">{value}</strong><span className="mt-1 block text-xs font-bold leading-tight text-slate-700">{label}</span></span></span><span className="mt-3 block border-t border-slate-100 pt-2.5 text-xs leading-4 text-muted-foreground">{detail}</span></button>
+  return <button type="button" onClick={onClick} aria-label={`Ir a ${label}`} className="w-full rounded-xl border border-slate-200 bg-white p-3 text-left transition-[border-color,box-shadow] hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><span className="flex items-center gap-2.5"><span className={cn('flex size-9 items-center justify-center rounded-lg', tones[tone])}>{icon}</span><span><strong className="block text-xl leading-none">{value}</strong><span className="mt-1 block text-xs font-bold leading-tight text-slate-700">{label}</span></span></span><span className="mt-3 block border-t border-slate-100 pt-2.5 text-xs leading-4 text-muted-foreground">{detail}</span></button>
 }
 
 function NoticeRow({ tone, title, detail, action, onAction }: { tone: 'amber' | 'blue'; title: string; detail: string; action?: string; onAction?: () => void }) {
@@ -2248,14 +2248,14 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   to={`/estudiantes?courseId=${encodeURIComponent(courseId)}&action=new`}
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.98]"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary-hover"
                 >
                   <Plus className="size-4" />
                   Matricular estudiante
                 </Link>
                 <Link
                   to={`/estudiantes?courseId=${encodeURIComponent(courseId)}&action=import`}
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 text-sm font-bold text-foreground transition hover:bg-muted active:scale-[0.98]"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 text-sm font-bold text-foreground transition-colors hover:bg-muted"
                 >
                   <ClipboardList className="size-4" />
                   Importar listado
@@ -2448,7 +2448,7 @@ function StudentDetailPanel({ student, activities, journalEntries, journalLoadin
       </div>
       <div className="mt-5 border-t border-border pt-4">
         <div className="flex items-center justify-between gap-2"><h4 className="text-xs font-extrabold text-foreground">Observaciones de bitácora</h4>{journalEntries.length ? <span className="rounded-full bg-primary/10 px-2 py-1 text-[10px] font-extrabold text-primary">{journalEntries.length}</span> : null}</div>
-        {journalLoading ? <p className="mt-2 rounded-lg bg-muted/60 px-3 py-3 text-xs text-muted-foreground">Cargando observaciones…</p> : journalError ? <div className="mt-2 rounded-lg border border-destructive/25 bg-destructive/10 p-3"><p className="text-xs text-destructive">{journalError}</p><button type="button" onClick={onRetryJournal} className="mt-2 text-xs font-extrabold text-destructive underline-offset-2 hover:underline">Volver a intentar</button></div> : journalEntries.length ? <div className="mt-2 space-y-2">{journalEntries.slice(0, 2).map((entry) => <button key={entry.id} type="button" onClick={() => onViewJournal(entry)} aria-label={`Ver observación ${entry.title || journalEntryTypeLabel(entry.entryType)}`} className="group w-full rounded-xl border border-border bg-card p-3 text-left transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-sm motion-reduce:transform-none"><div className="flex items-start gap-2"><span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary"><BookMarked className="size-4" aria-hidden="true" /></span><span className="min-w-0 flex-1"><strong className="block truncate text-xs text-foreground">{entry.title || journalEntryTypeLabel(entry.entryType)}</strong><span className="mt-1 line-clamp-2 block text-[11px] leading-4 text-muted-foreground">{entry.content}</span><span className="mt-2 block text-[10px] font-semibold text-primary">{formatJournalDate(entry.occurredAt)}</span></span><ChevronRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true" /></div></button>)}{journalEntries.length > 2 ? <Link to={journalHref} className="flex min-h-10 w-full items-center justify-center gap-2 rounded-xl text-xs font-extrabold text-primary transition hover:bg-primary/[0.04] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15"><BookOpen className="size-4" aria-hidden="true" /> Ver las {journalEntries.length} observaciones en Bitácora</Link> : null}</div> : <p className="mt-2 rounded-lg bg-muted/50 px-3 py-3 text-xs leading-5 text-muted-foreground">Todavía no hay observaciones para este estudiante en la asignatura.</p>}
+        {journalLoading ? <p className="mt-2 rounded-lg bg-muted/60 px-3 py-3 text-xs text-muted-foreground">Cargando observaciones…</p> : journalError ? <div className="mt-2 rounded-lg border border-destructive/25 bg-destructive/10 p-3"><p className="text-xs text-destructive">{journalError}</p><button type="button" onClick={onRetryJournal} className="mt-2 text-xs font-extrabold text-destructive underline-offset-2 hover:underline">Volver a intentar</button></div> : journalEntries.length ? <div className="mt-2 space-y-2">{journalEntries.slice(0, 2).map((entry) => <button key={entry.id} type="button" onClick={() => onViewJournal(entry)} aria-label={`Ver observación ${entry.title || journalEntryTypeLabel(entry.entryType)}`} className="group w-full rounded-xl border border-border bg-card p-3 text-left transition-[border-color,box-shadow] hover:border-primary/25 hover:shadow-sm"><div className="flex items-start gap-2"><span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary"><BookMarked className="size-4" aria-hidden="true" /></span><span className="min-w-0 flex-1"><strong className="block truncate text-xs text-foreground">{entry.title || journalEntryTypeLabel(entry.entryType)}</strong><span className="mt-1 line-clamp-2 block text-[11px] leading-4 text-muted-foreground">{entry.content}</span><span className="mt-2 block text-[10px] font-semibold text-primary">{formatJournalDate(entry.occurredAt)}</span></span><ChevronRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true" /></div></button>)}{journalEntries.length > 2 ? <Link to={journalHref} className="flex min-h-10 w-full items-center justify-center gap-2 rounded-xl text-xs font-extrabold text-primary transition hover:bg-primary/[0.04] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15"><BookOpen className="size-4" aria-hidden="true" /> Ver las {journalEntries.length} observaciones en Bitácora</Link> : null}</div> : <p className="mt-2 rounded-lg bg-muted/50 px-3 py-3 text-xs leading-5 text-muted-foreground">Todavía no hay observaciones para este estudiante en la asignatura.</p>}
       </div>
       <button type="button" onClick={onJournal} className="mt-3 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl border border-border text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><BookMarked className="size-4" aria-hidden="true" /> {journalEntries.length ? 'Agregar otra observación' : 'Agregar observación a bitácora'}</button>
     </aside>
@@ -2740,7 +2740,7 @@ const CourseCard = memo(function CourseCard({
 
   return (
     <article
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+      className="group relative flex flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-shadow duration-200 hover:shadow-md"
     >
       <div
         className="flex flex-1 cursor-pointer flex-col p-4"
@@ -2827,7 +2827,7 @@ function FooterAction({
   return (
     <button
       type="button"
-      className="inline-flex h-8 items-center justify-center gap-1.5 rounded-lg px-2 text-[11px] font-bold text-muted-foreground transition-all duration-150 hover:scale-[1.02] hover:bg-secondary hover:text-primary"
+      className="inline-flex h-8 items-center justify-center gap-1.5 rounded-lg px-2 text-[11px] font-bold text-muted-foreground transition-colors duration-150 hover:bg-secondary hover:text-primary"
       aria-label={label}
       title={tooltip}
       onClick={(event) => {

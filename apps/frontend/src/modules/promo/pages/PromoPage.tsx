@@ -158,7 +158,7 @@ export function PromoPage() {
               Gestiona asistencia, calificaciones, grupos y agenda desde una sola plataforma diseñada para docentes modernos.
             </p>
             <div className="fu fu4 flex flex-wrap items-center gap-4">
-              <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-7 py-4 text-[15px] font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary-hover active:scale-[0.985] sm:w-auto">
+              <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-7 py-4 text-[15px] font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-colors hover:bg-primary-hover sm:w-auto">
                 Empezar gratis <ArrowRight size={16} />
               </Link>
               <Link to="/login" className="flex w-full items-center justify-center gap-2 rounded-2xl border border-border bg-card px-7 py-4 text-[15px] font-semibold text-foreground transition hover:bg-muted sm:w-auto">
@@ -236,7 +236,7 @@ export function PromoPage() {
               const Icon = feature.icon
               return (
                 <RevealSection key={feature.title} delay={index * 100}>
-                  <div className="group rounded-3xl bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="group rounded-3xl bg-card p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg">
                     <div className="mb-4 flex size-11 items-center justify-center rounded-2xl text-foreground transition-all duration-300 group-hover:scale-110" style={{ background: toneBackground(feature.tone) }}><Icon size={22} /></div>
                     <h3 className="mb-2 text-base font-bold text-foreground">{feature.title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">{feature.desc}</p>
@@ -259,7 +259,7 @@ export function PromoPage() {
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
               {plans.map((plan, index) => (
                 <RevealSection key={plan.name} delay={index * 100}>
-                  <div className={`relative rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 ${plan.highlight ? 'bg-primary text-primary-foreground shadow-xl shadow-primary/20' : 'bg-card text-foreground shadow-sm'}`}>
+                  <div className={`relative rounded-3xl p-7 transition-shadow duration-300 hover:shadow-lg ${plan.highlight ? 'bg-primary text-primary-foreground shadow-xl shadow-primary/20' : 'bg-card text-foreground shadow-sm'}`}>
                     {plan.highlight ? <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-success px-4 py-1 text-[10px] font-extrabold text-success-foreground">Más popular</div> : null}
                     <p className="mb-1 text-lg font-extrabold">{plan.name}</p>
                     <p className="mb-4 text-[11px] opacity-70">{plan.desc}</p>
@@ -272,7 +272,7 @@ export function PromoPage() {
                         </div>
                       ))}
                     </div>
-                    <Link to="/registro" className={`flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold transition-all hover:scale-[1.02] ${plan.highlight ? 'bg-card text-foreground' : 'bg-primary text-primary-foreground'}`}>
+                    <Link to="/registro" className={`flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold transition-colors ${plan.highlight ? 'bg-card text-foreground' : 'bg-primary text-primary-foreground'}`}>
                       {plan.cta} <ArrowRight size={14} />
                     </Link>
                   </div>
@@ -289,7 +289,7 @@ export function PromoPage() {
             <h2 className="mb-4 text-[clamp(2.125rem,8vw,2.625rem)] font-extrabold leading-tight">Empieza hoy.<br />Tu aula te espera.</h2>
             <p className="mb-8 text-[16px] leading-relaxed opacity-75">Únete a más de 12,000 docentes que ya gestionan su trabajo con Aula Base. Gratis para siempre en el plan básico.</p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-card px-8 py-4 text-[15px] font-bold text-foreground transition-all hover:scale-[1.02] sm:w-auto">Crear cuenta gratis <ArrowRight size={16} /></Link>
+              <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-card px-8 py-4 text-[15px] font-bold text-foreground transition-colors sm:w-auto">Crear cuenta gratis <ArrowRight size={16} /></Link>
               <Link to="/login" className="w-full rounded-2xl border border-foreground/30 px-8 py-4 text-[15px] font-semibold text-foreground transition hover:bg-card/25 sm:w-auto">Iniciar sesión</Link>
             </div>
           </div>
