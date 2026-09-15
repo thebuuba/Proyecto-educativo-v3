@@ -82,7 +82,7 @@ export function CourseStudentsPanel({ courseId, courseName, canEnroll, canManage
     setNotice(message)
   }
 
-  return <div className="space-y-5">
+  return <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-5">
     <button type="button" onClick={onBack} className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-lg px-2 text-sm font-extrabold text-primary hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20">
       <BackIcon /> Volver al curso
     </button>

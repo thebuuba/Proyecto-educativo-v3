@@ -979,7 +979,7 @@ function CourseWorkspace({
   }
 
   return (
-    <div className="space-y-5">
+    <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-5">
       <div className="flex items-center justify-between gap-3">
         <button type="button" onClick={onBack} aria-label="Volver a mis cursos" title="Volver a mis cursos" className="inline-flex size-11 items-center justify-center rounded-xl transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15">
           <BackIcon className="size-7" />
@@ -1754,7 +1754,7 @@ function SubjectDetailView({
   ]
 
   return (
-    <div className="space-y-3">
+    <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-3">
       <header className="w-full overflow-visible rounded-2xl bg-card shadow-sm">
         <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
           <div className="flex min-w-0 flex-1 items-center gap-3">

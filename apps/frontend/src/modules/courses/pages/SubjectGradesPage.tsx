@@ -149,7 +149,7 @@ export function SubjectGradesPage() {
     { id: 'planificaciones', label: 'Planificaciones', Icon: ClipboardList, muted: true, badge: 'Próximamente' },
   ] as const
 
-  return <div className="space-y-3">
+  return <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-3">
     <header className="rounded-2xl bg-card shadow-sm">
       <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
         <button type="button" onClick={back} className="flex h-10 shrink-0 items-center gap-1.5 rounded-xl border border-border bg-card px-3 text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><BackIcon /> Volver</button>

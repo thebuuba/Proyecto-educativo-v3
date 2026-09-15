@@ -47,6 +47,7 @@ describe('horario dentro de una asignatura', () => {
     expect(screen.queryByRole('table')).not.toBeInTheDocument()
     expect(screen.getByText('25 estudiantes')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Iniciar clase' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Horario semanal' }).closest('.course-workspace-shell')).toHaveClass('course-workspace-shell')
 
     const tuesday = screen.getByRole('heading', { name: 'Martes' })
     const thursday = screen.getByRole('heading', { name: 'Jueves' })
