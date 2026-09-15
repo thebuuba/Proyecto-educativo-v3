@@ -16,23 +16,6 @@ type SidebarProps = {
   onToggleExpanded: () => void
 }
 
-/*
- * La navegación siempre se selecciona en azul. Estos fondos solo dan una
- * identidad semántica suave al icono de cada módulo.
- */
-const routeIconBackgrounds: Record<string, string> = {
-  '/inicio': 'bg-primary/14',
-  '/cursos': 'bg-primary/14',
-  '/horario': 'bg-primary/14',
-  '/calificaciones': 'bg-primary/14',
-  '/asistencia': 'bg-success/18',
-  '/actividades': 'bg-warning/28',
-  '/planificaciones': 'bg-warning/28',
-  '/bitacora': 'bg-destructive/16',
-  '/reportes': 'bg-success/18',
-  '/configuracion': 'bg-muted',
-}
-
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
   const { hasRole, logout } = useAuth()
   const visibleRoutes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
@@ -41,7 +24,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
     <>
       <div
         className={cn(
-          'sidebar-overlay fixed inset-0 z-30 bg-primary/35 backdrop-blur-sm lg:hidden',
+          'sidebar-overlay fixed inset-0 z-30 bg-black/25 backdrop-blur-[2px] lg:hidden',
           isOpen ? 'opacity-100' : 'pointer-events-none opacity-0',
         )}
         aria-hidden="true"
@@ -51,17 +34,17 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
       <aside
         data-sidebar-expanded={isExpanded}
         className={cn(
-          'sidebar-shell group fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground lg:translate-x-0',
+          'sidebar-shell group fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col border-r border-sidebar-border/80 bg-sidebar text-sidebar-foreground shadow-sm lg:translate-x-0',
           isExpanded ? 'lg:w-[260px]' : 'lg:w-[88px]',
           isOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
         <div
           className={cn(
-            'sidebar-header flex h-[74px] shrink-0 items-center border-b border-sidebar-border',
+            'sidebar-header flex h-[72px] shrink-0 items-center border-b border-sidebar-border/70',
             isExpanded
-              ? 'justify-between px-6'
-              : 'justify-between px-6 lg:justify-center lg:px-4',
+              ? 'justify-between px-5'
+              : 'justify-between px-5 lg:justify-center lg:px-3',
           )}
         >
           <NavLink
@@ -70,14 +53,14 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             onClick={onClose}
             title="Aula Base"
           >
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sidebar-primary text-sidebar-primary-foreground shadow-lg shadow-sidebar-primary/20">
-              <GraduationCap className="size-5" strokeWidth={2.4} />
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm ring-1 ring-primary/20">
+              <GraduationCap className="size-5" strokeWidth={2.1} />
             </span>
             <span className="sidebar-label min-w-0">
-              <span className="block text-base font-bold text-sidebar-foreground">
+              <span className="block text-[15px] font-extrabold tracking-[-0.02em] text-sidebar-foreground">
                 Aula Base
               </span>
-              <span className="block text-xs text-sidebar-foreground/55">
+              <span className="mt-0.5 block text-[11px] font-medium text-sidebar-foreground/50">
                 Sistema docente
               </span>
             </span>
@@ -86,7 +69,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           <Button
             variant="ghost"
             size="icon"
-            className="text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground lg:hidden"
+            className="rounded-lg text-sidebar-foreground/60 hover:bg-muted hover:text-sidebar-foreground lg:hidden"
             aria-label="Cerrar navegación"
             onClick={onClose}
           >
@@ -94,68 +77,95 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           </Button>
         </div>
 
-        <nav className={cn(
-          'flex-1 space-y-1 overflow-y-auto px-3 py-5',
-          !isExpanded && 'lg:overflow-visible',
-        )}>
-          {visibleRoutes.map((item) => {
-            const Icon = item.icon
-            const iconBackground = routeIconBackgrounds[item.path] ?? 'bg-primary/14'
+        <nav
+          className={cn(
+            'flex-1 overflow-y-auto px-3 py-4',
+            !isExpanded && 'lg:overflow-visible',
+          )}
+        >
+          <div className="space-y-1">
+            {visibleRoutes.map((item) => {
+              const Icon = item.icon
+              const isSettings = item.path === '/configuracion'
 
-            return (
-              <NavLink
-                key={item.path}
-                data-tour={item.path === '/cursos' ? 'nav-courses' : item.path === '/horario' ? 'nav-schedule' : item.path === '/asistencia' ? 'nav-attendance' : item.path === '/planificaciones' ? 'nav-planning' : undefined}
-                to={item.path}
-                end={item.path === '/inicio'}
-                onClick={onClose}
-                onMouseEnter={() => routePrefetchers[item.path]?.()}
-                onFocus={() => routePrefetchers[item.path]?.()}
-                title={isExpanded ? item.label : undefined}
-                className={({ isActive }) =>
-                  cn(
-                    'sidebar-nav-item group/nav relative flex min-h-11 items-center gap-3 rounded-xl text-sm font-semibold',
-                    isExpanded
-                      ? 'px-4'
-                      : 'px-4 lg:justify-center lg:gap-0 lg:px-3',
-                    isActive
-                      ? 'bg-sidebar-primary/10 text-sidebar-primary ring-1 ring-sidebar-primary/15'
-                      : 'text-sidebar-foreground/75 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
-                  )
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    <span
-                      className={cn(
-                        'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg text-sidebar-foreground/85',
-                        iconBackground,
-                        isActive && 'text-sidebar-foreground shadow-sm ring-1 ring-sidebar-primary/20',
-                      )}
-                    >
-                      <Icon className="size-4.5 shrink-0" />
-                    </span>
-                    <span className="sidebar-label truncate">{item.label}</span>
-                    {!isExpanded ? (
+              const link = (
+                <NavLink
+                  key={item.path}
+                  data-tour={item.path === '/cursos' ? 'nav-courses' : item.path === '/horario' ? 'nav-schedule' : item.path === '/asistencia' ? 'nav-attendance' : item.path === '/planificaciones' ? 'nav-planning' : undefined}
+                  to={item.path}
+                  end={item.path === '/inicio'}
+                  onClick={onClose}
+                  onMouseEnter={() => routePrefetchers[item.path]?.()}
+                  onFocus={() => routePrefetchers[item.path]?.()}
+                  title={isExpanded ? item.label : undefined}
+                  className={({ isActive }) =>
+                    cn(
+                      'sidebar-nav-item group/nav relative flex min-h-11 items-center gap-3 rounded-xl text-[13px] font-semibold outline-none',
+                      isExpanded
+                        ? 'px-3'
+                        : 'px-3 lg:mx-auto lg:size-11 lg:min-h-11 lg:justify-center lg:gap-0 lg:p-0',
+                      'focus-visible:ring-2 focus-visible:ring-primary/25',
+                      isActive
+                        ? 'bg-primary/[0.09] text-primary'
+                        : 'text-sidebar-foreground/65 hover:bg-muted/75 hover:text-sidebar-foreground',
+                    )
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
                       <span
                         aria-hidden="true"
-                        className="sidebar-tooltip pointer-events-none absolute left-[calc(100%+0.75rem)] top-1/2 z-50 hidden -translate-y-1/2 translate-x-1 whitespace-nowrap rounded-lg bg-foreground px-3 py-2 text-xs font-bold text-background opacity-0 shadow-xl before:absolute before:-left-1 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rotate-45 before:bg-foreground group-focus-visible/nav:translate-x-0 group-focus-visible/nav:opacity-100 lg:block"
+                        className={cn(
+                          'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg transition-colors',
+                          isActive
+                            ? 'bg-primary text-primary-foreground shadow-sm'
+                            : 'bg-transparent text-sidebar-foreground/60 group-hover/nav:text-sidebar-foreground',
+                        )}
                       >
-                        {item.label}
+                        <Icon className="size-[18px] shrink-0" strokeWidth={1.9} />
                       </span>
-                    ) : null}
-                  </>
-                )}
-              </NavLink>
-            )
-          })}
+
+                      <span className="sidebar-label truncate">{item.label}</span>
+
+                      {isActive && isExpanded ? (
+                        <span
+                          aria-hidden="true"
+                          className="ml-auto size-1.5 shrink-0 rounded-full bg-primary"
+                        />
+                      ) : null}
+
+                      {!isExpanded ? (
+                        <span
+                          aria-hidden="true"
+                          className="sidebar-tooltip pointer-events-none absolute left-[calc(100%+0.7rem)] top-1/2 z-50 hidden -translate-y-1/2 translate-x-1 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1.5 text-[11px] font-semibold text-background opacity-0 shadow-lg before:absolute before:-left-1 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rotate-45 before:bg-foreground group-focus-visible/nav:translate-x-0 group-focus-visible/nav:opacity-100 lg:block"
+                        >
+                          {item.label}
+                        </span>
+                      ) : null}
+                    </>
+                  )}
+                </NavLink>
+              )
+
+              return isSettings ? (
+                <div key={item.path} className="mt-3 border-t border-sidebar-border/70 pt-3">
+                  {link}
+                </div>
+              ) : link
+            })}
+          </div>
         </nav>
 
-        <div className={cn('space-y-1 border-t border-sidebar-border py-4', isExpanded ? 'px-4' : 'px-4 lg:px-3')}>
+        <div
+          className={cn(
+            'space-y-1 border-t border-sidebar-border/70 py-3',
+            isExpanded ? 'px-3' : 'px-3',
+          )}
+        >
           <button
             type="button"
             className={cn(
-              'hidden min-h-10 w-full items-center gap-3 rounded-lg text-sm font-bold text-sidebar-foreground/65 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:flex',
+              'hidden min-h-10 w-full items-center gap-3 rounded-lg text-[12px] font-semibold text-sidebar-foreground/55 transition-colors hover:bg-muted/75 hover:text-sidebar-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 lg:flex',
               isExpanded ? 'justify-start px-3' : 'justify-center gap-0 px-2',
             )}
             aria-label={isExpanded ? 'Colapsar navegación' : 'Expandir navegación'}
@@ -163,7 +173,11 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             aria-expanded={isExpanded}
             onClick={onToggleExpanded}
           >
-            {isExpanded ? <ChevronsLeft className="size-5 shrink-0" /> : <ChevronsRight className="size-5 shrink-0" />}
+            {isExpanded ? (
+              <ChevronsLeft className="size-[18px] shrink-0" strokeWidth={1.9} />
+            ) : (
+              <ChevronsRight className="size-[18px] shrink-0" strokeWidth={1.9} />
+            )}
             <span className="sidebar-label">Contraer menú</span>
           </button>
 
@@ -171,13 +185,14 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             type="button"
             onClick={() => void logout()}
             className={cn(
-              'flex w-full items-center gap-3 rounded-lg py-2 text-sm font-bold transition-colors hover:bg-[#D64545]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D64545]/25',
-              isExpanded ? 'justify-start px-3' : 'justify-start px-3 lg:justify-center lg:gap-0',
+              'flex min-h-10 w-full items-center gap-3 rounded-lg text-[12px] font-semibold text-destructive/80 transition-colors hover:bg-destructive/[0.07] hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/20',
+              isExpanded
+                ? 'justify-start px-3'
+                : 'justify-start px-3 lg:justify-center lg:gap-0 lg:px-2',
             )}
-            style={{ color: '#D64545' }}
             title="Cerrar sesión"
           >
-            <LogOut className="size-5 shrink-0" />
+            <LogOut className="size-[18px] shrink-0" strokeWidth={1.9} />
             <span className="sidebar-label">Cerrar sesión</span>
           </button>
         </div>
