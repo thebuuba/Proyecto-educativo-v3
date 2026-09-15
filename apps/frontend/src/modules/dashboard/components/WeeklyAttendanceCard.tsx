@@ -22,8 +22,8 @@ type ChartPoint = {
   index: number
 }
 
-const CHART_BASELINE = 140
-const CHART_TOP = 32
+const CHART_BASELINE = 150
+const CHART_TOP = 18
 
 function getSegments(attendance: WeeklyAttendance): ChartPoint[][] {
   const segments: ChartPoint[][] = []
@@ -38,7 +38,7 @@ function getSegments(attendance: WeeklyAttendance): ChartPoint[][] {
 
     const value = Math.max(0, Math.min(100, day.value))
     current.push({
-      x: 60 + index * 200,
+      x: 32 + index * 214,
       y: CHART_BASELINE - (value / 100) * (CHART_BASELINE - CHART_TOP),
       value,
       index,
@@ -73,7 +73,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
     return (
       <section className="dashboard-warm-shadow flex min-h-32 flex-col gap-5 rounded-[1.375rem] bg-card p-5 text-card-foreground sm:flex-row sm:items-center sm:px-6">
         <span
-          className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-success/16 text-foreground"
+          className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary"
           role="img"
           aria-label="Aún no hay registros de asistencia esta semana."
         >
@@ -81,7 +81,7 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
         </span>
 
         <div className="min-w-0 flex-1">
-          <p className="text-xs font-semibold text-accent">Pulso semanal</p>
+          <p className="text-xs font-semibold text-primary">Asistencia semanal</p>
           <h3 className="mt-1 text-lg font-extrabold tracking-tight text-foreground">
             Aún no has registrado asistencia esta semana
           </h3>
@@ -110,13 +110,13 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
 
   return (
     <section className="dashboard-warm-shadow overflow-hidden rounded-3xl bg-card p-5 text-card-foreground sm:p-6">
-      <div className="grid gap-4 sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:items-center">
+      <div className="grid gap-5 sm:grid-cols-[9.5rem_minmax(0,1fr)] sm:items-center">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex size-8 items-center justify-center rounded-xl bg-success/16 text-foreground">
+            <span className="flex size-8 items-center justify-center rounded-xl bg-primary/10 text-primary">
               <CalendarCheck2 className="size-4" aria-hidden="true" />
             </span>
-            <p className="text-xs font-semibold text-accent">Pulso semanal</p>
+            <p className="text-xs font-semibold text-primary">Asistencia semanal</p>
           </div>
 
           <div className="mt-4 flex items-end gap-2">
@@ -135,33 +135,19 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
           )}
         </div>
 
-        <div className="min-w-0 rounded-2xl bg-muted px-3 pb-3 pt-2">
+        <div className="min-w-0 overflow-hidden rounded-2xl bg-card px-1 pb-1 pt-1">
           <svg
-            viewBox="0 0 920 170"
+            viewBox="0 0 920 178"
             className="h-auto w-full overflow-visible"
             role="img"
             aria-label={`Asistencia semanal promedio de ${attendance.average ?? 0} por ciento.`}
           >
             <defs>
               <linearGradient id="attendance-area-gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="var(--success)" stopOpacity="0.24" />
-                <stop offset="100%" stopColor="var(--success)" stopOpacity="0.01" />
+                <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.18" />
+                <stop offset="100%" stopColor="var(--primary)" stopOpacity="0.035" />
               </linearGradient>
             </defs>
-
-            {[CHART_TOP, 86, CHART_BASELINE].map((y) => (
-              <line
-                key={y}
-                x1="60"
-                x2="860"
-                y1={y}
-                y2={y}
-                stroke="var(--border)"
-                strokeWidth="1"
-                strokeDasharray="3 7"
-                aria-hidden="true"
-              />
-            ))}
 
             {segments.map((segment, segmentIndex) => {
               const linePath = getLinePath(segment)
@@ -169,15 +155,19 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
               return (
                 <g key={`${segment[0].index}-${segmentIndex}`}>
                   {areaPath && (
-                    <path className="attendance-chart-area" d={areaPath} fill="url(#attendance-area-gradient)" />
+                    <path
+                      className="weekly-attendance-area"
+                      d={areaPath}
+                      fill="url(#attendance-area-gradient)"
+                    />
                   )}
                   {segment.length > 1 && (
                     <path
-                      className="attendance-chart-line"
+                      className="weekly-attendance-line"
                       d={linePath}
                       fill="none"
-                      stroke="var(--success)"
-                      strokeWidth="3.5"
+                      stroke="var(--primary)"
+                      strokeWidth="2.75"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       pathLength="1"
@@ -190,29 +180,24 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
             {points.map((point) => (
               <g
                 key={point.index}
-                className="attendance-chart-point"
-                style={{ '--point-delay': `${180 + point.index * 55}ms` } as CSSProperties}
+                className="weekly-attendance-point"
+                style={{ '--point-delay': `${220 + point.index * 65}ms` } as CSSProperties}
               >
-                <circle
-                  cx={point.x}
-                  cy={point.y}
-                  r="6"
-                  fill="var(--card)"
-                  stroke="var(--success)"
-                  strokeWidth="3"
-                />
+                <circle cx={point.x} cy={point.y} r="4.2" fill="var(--primary)" />
                 <title>{`${attendance.days[point.index].label}: ${point.value}%`}</title>
               </g>
             ))}
           </svg>
 
-          <div className="grid grid-cols-5 gap-1 px-1">
+          <div className="grid grid-cols-5 gap-1 px-1 pb-1">
             {attendance.days.map((day) => (
               <div key={day.label} className="min-w-0 text-center">
-                <p className="truncate text-[10px] font-bold text-primary tabular-nums">
-                  {day.value === null ? '—' : `${day.value}%`}
-                </p>
-                <p className={cn('mt-1 text-[9px] font-semibold tracking-wide', day.isToday ? 'text-accent' : 'text-muted-foreground')}>
+                <p
+                  className={cn(
+                    'text-xs font-medium tracking-wide',
+                    day.isToday ? 'text-primary' : 'text-muted-foreground',
+                  )}
+                >
                   {day.label}
                 </p>
               </div>
@@ -231,6 +216,61 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
           <ArrowRight className="size-3 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
         </Link>
       </div>
+
+      <style>
+        {`
+          .weekly-attendance-line {
+            stroke-dasharray: 1;
+            stroke-dashoffset: 1;
+            animation: weekly-attendance-draw 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          }
+
+          .weekly-attendance-area {
+            opacity: 0;
+            transform: translateY(8px);
+            transform-origin: center bottom;
+            animation: weekly-attendance-fill 650ms ease-out 120ms forwards;
+          }
+
+          .weekly-attendance-point {
+            opacity: 0;
+            transform: translateY(5px) scale(0.85);
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: weekly-attendance-point 360ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: var(--point-delay);
+          }
+
+          @keyframes weekly-attendance-draw {
+            to { stroke-dashoffset: 0; }
+          }
+
+          @keyframes weekly-attendance-fill {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes weekly-attendance-point {
+            to {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .weekly-attendance-line,
+            .weekly-attendance-area,
+            .weekly-attendance-point {
+              animation: none !important;
+              opacity: 1 !important;
+              transform: none !important;
+              stroke-dashoffset: 0 !important;
+            }
+          }
+        `}
+      </style>
     </section>
   )
 }
