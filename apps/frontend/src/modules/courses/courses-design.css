@@ -201,13 +201,14 @@ body:has(#courses-summary-title) div.grid:has(> article.group) {
 
 @media (min-width: 768px) {
   body:has(#courses-summary-title) div.grid:has(> article.group) {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 300px)) !important;
+    justify-content: start;
   }
 }
 
 @media (min-width: 1280px) {
   body:has(#courses-summary-title) div.grid:has(> article.group) {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 300px)) !important;
   }
 }
 
