@@ -969,8 +969,8 @@ function CourseWorkspace({
         <ArrowLeft className="size-4" /> Volver a mis cursos
       </button>
 
-      <header className="rounded-3xl bg-card p-5 shadow-sm">
-        <div className="flex flex-col justify-between gap-5 xl:flex-row xl:items-center">
+      <header className="rounded-3xl border border-border/70 bg-card p-4 shadow-sm sm:p-5">
+        <div className="flex flex-col justify-between gap-4 xl:flex-row xl:items-center">
           <div className="flex min-w-0 items-center gap-4">
             <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold text-primary-foreground shadow-md" style={{ backgroundColor: levelStyle.color }}>
               {getCourseCompactLabel(item.grade.name, item.section.name)}
@@ -983,7 +983,7 @@ function CourseWorkspace({
               <p className="mt-2 truncate text-xs font-semibold text-muted-foreground">{cleanLevelName(item.levelName)} · {item.cycleName}{schoolYearName ? ` · Año escolar ${schoolYearName}` : ''}</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 xl:min-w-[31rem]">
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 xl:min-w-[29rem]">
             <CourseHeaderMetric icon={<UsersRound className="size-5" />} value={item.section.studentCount ?? 0} label="Estudiantes" tone="emerald" />
             <CourseHeaderMetric icon={<BookOpen className="size-5" />} value={item.assignments.length} label="Asignaturas" tone="violet" />
             <CourseHeaderMetric icon={<Archive className="size-5" />} value={archivedAssignments.length} label="Archivadas" tone="orange" />
