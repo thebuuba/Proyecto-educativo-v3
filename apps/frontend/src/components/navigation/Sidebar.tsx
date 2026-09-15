@@ -133,7 +133,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                             : 'text-foreground/70 group-hover/nav:bg-card group-hover/nav:text-foreground',
                         )}
                       >
-                        <Icon className="size-[17px] shrink-0" />
+                        <Icon className="size-[19px] shrink-0" />
                       </span>
 
                       <span className="sidebar-label truncate">{item.label}</span>
@@ -167,7 +167,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             className="sidebar-footer-action flex min-h-10 w-full items-center gap-0 rounded-lg text-[12px] font-semibold text-destructive/80 hover:bg-destructive/[0.055] hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/20"
             title="Cerrar sesión"
           >
-            <LogOut className="size-[17px] shrink-0" strokeWidth={1.9} />
+            <LogOut className="size-[19px] shrink-0" strokeWidth={1.9} />
             <span className="sidebar-label">Cerrar sesión</span>
           </button>
         </div>
