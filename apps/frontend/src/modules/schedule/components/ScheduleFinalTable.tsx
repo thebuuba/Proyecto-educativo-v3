@@ -165,50 +165,52 @@ export function ScheduleFinalTable({
       <section className="overflow-hidden rounded-[28px] bg-card shadow-[0_18px_45px_-34px_rgba(15,23,42,0.38)]">
         <div className="overflow-x-auto">
           <div className="min-w-[940px] bg-[#fbfbfc] p-2.5 sm:p-3">
-            <div
-              className="grid grid-cols-[5.75rem_repeat(var(--day-count),minmax(0,1fr))] gap-2"
-              style={{ '--day-count': activeDays.length } as CSSProperties}
-            >
-              <div className="flex min-h-[66px] flex-col items-center justify-center px-2 text-center">
-                <span className="text-[9px] font-bold uppercase tracking-[0.14em] text-muted-foreground">Hora</span>
-                <span className="mt-1 text-[10px] font-semibold text-muted-foreground/70">
-                  {SHIFT_LABELS[config.shift] ?? config.shift}
-                </span>
+            <div className="rounded-[20px] bg-[#eceef1] p-1.5">
+              <div
+                className="grid grid-cols-[5.75rem_repeat(var(--day-count),minmax(0,1fr))] gap-2"
+                style={{ '--day-count': activeDays.length } as CSSProperties}
+              >
+                <div className="flex min-h-[66px] flex-col items-center justify-center rounded-[16px] bg-[#e5e7ea] px-2 text-center">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.14em] text-slate-600">Hora</span>
+                  <span className="mt-1 text-[10px] font-semibold text-slate-500">
+                    {SHIFT_LABELS[config.shift] ?? config.shift}
+                  </span>
+                </div>
+
+                {activeDays.map((day) => {
+                  const isToday = day.dayOfWeek === today
+                  const date = getWeekDate(day.dayOfWeek)
+
+                  return (
+                    <div
+                      key={day.dayOfWeek}
+                      className={cn(
+                        'relative flex min-h-[66px] flex-col items-center justify-center rounded-[16px] border px-3 text-center transition-[background-color,border-color,box-shadow] duration-200',
+                        isToday
+                          ? 'border-slate-300/80 bg-[#dde5e7] shadow-[0_8px_20px_-18px_rgba(15,23,42,0.25)]'
+                          : 'border-white/70 bg-[#f4f5f6]',
+                      )}
+                    >
+                      <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500">
+                        {day.name}
+                      </p>
+                      <p className="mt-1 text-[22px] font-extrabold leading-none tabular-nums text-slate-900">
+                        {date.getDate()}
+                      </p>
+                      {isToday ? (
+                        <span
+                          className="absolute bottom-1.5 size-1.5 rounded-full bg-primary/45"
+                          aria-label="Hoy"
+                          title="Hoy"
+                        />
+                      ) : null}
+                    </div>
+                  )
+                })}
               </div>
-
-              {activeDays.map((day) => {
-                const isToday = day.dayOfWeek === today
-                const date = getWeekDate(day.dayOfWeek)
-
-                return (
-                  <div
-                    key={day.dayOfWeek}
-                    className={cn(
-                      'relative flex min-h-[66px] flex-col items-center justify-center rounded-[18px] border px-3 text-center transition-[background-color,border-color,box-shadow] duration-200',
-                      isToday
-                        ? 'border-primary/10 bg-[#edf7f6] shadow-[0_8px_20px_-18px_rgba(35,106,150,0.28)]'
-                        : 'border-transparent bg-white/95',
-                    )}
-                  >
-                    <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                      {day.name}
-                    </p>
-                    <p className="mt-1 text-[22px] font-extrabold leading-none tabular-nums text-foreground">
-                      {date.getDate()}
-                    </p>
-                    {isToday ? (
-                      <span
-                        className="absolute bottom-1.5 size-1.5 rounded-full bg-primary/55"
-                        aria-label="Hoy"
-                        title="Hoy"
-                      />
-                    ) : null}
-                  </div>
-                )
-              })}
             </div>
 
-            <div className="mt-2 overflow-hidden rounded-2xl bg-white">
+            <div className="mt-2.5 overflow-hidden rounded-2xl bg-white">
               {blocks.map((block, index) => {
                 const isBreak = block.type === 'break'
 
