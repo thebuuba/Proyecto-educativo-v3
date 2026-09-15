@@ -1,5 +1,4 @@
 import {
-  ArrowLeft,
   BookMarked,
   BookOpen,
   Brain,
@@ -26,6 +25,7 @@ import { useEffect, useMemo, useState, type ComponentType } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
 import { Input } from '@/components/ui/Input'
@@ -234,7 +234,7 @@ export function GroupedSubjectActivitiesPage() {
       <header className="w-full overflow-visible rounded-2xl bg-card shadow-sm">
         <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
           <div className="flex min-w-0 flex-1 items-center gap-3">
-            <button type="button" onClick={backToSubjects} className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-border bg-card px-2.5 text-xs font-extrabold text-primary transition hover:border-primary/25 hover:bg-primary/[0.04]"><ArrowLeft className="size-4" /><span className="hidden sm:inline">Volver</span></button>
+            <button type="button" onClick={backToSubjects} className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-border bg-card px-2.5 text-xs font-extrabold text-primary transition hover:border-primary/25 hover:bg-primary/[0.04]"><BackIcon /><span className="hidden sm:inline">Volver</span></button>
             <span className="flex size-12 shrink-0 items-center justify-center rounded-xl text-white shadow-sm" style={{ backgroundColor: subjectPalette.color }}><BookOpen className="size-6" /></span>
             <div className="min-w-0"><div className="flex min-w-0 flex-nowrap items-center gap-2 overflow-hidden"><h1 className="truncate text-base font-extrabold leading-tight text-foreground">{courseLabel} – {subjectName}</h1><span className="shrink-0 rounded-full bg-success/10 px-2 py-0.5 text-[10px] font-extrabold text-success">Activa</span></div><p className="mt-1.5 flex min-w-0 flex-nowrap items-center gap-x-1.5 overflow-hidden whitespace-nowrap text-[11px] font-semibold text-muted-foreground">{levelName ? <span>{levelName.replace(/^nivel\s+/i, '')}</span> : null}{cycleName ? <><span>·</span><span>{cycleName}</span></> : null}<span>·</span><span>Sección {context.section.name}</span>{currentSchoolYear?.name ? <><span>·</span><span className="truncate">Año escolar {currentSchoolYear.name}</span></> : null}</p></div>
           </div>

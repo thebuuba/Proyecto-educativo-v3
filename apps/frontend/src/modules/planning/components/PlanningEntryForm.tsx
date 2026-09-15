@@ -1,6 +1,5 @@
 import {
   AlertCircle,
-  ArrowLeft,
   ArrowRight,
   BookOpen,
   Check,
@@ -16,6 +15,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { addWeekdays } from '@aula/shared'
 
 import { Button } from '@/components/ui/Button'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
@@ -543,7 +543,7 @@ export function PlanningEntryForm({
           <h1 className="mt-3 text-3xl font-black text-foreground">{initial?.entry.id ? 'Editar planificación' : 'Crear planificación'}</h1>
           <p className="mt-1 text-sm text-muted-foreground">Completa las tres partes de la planificación docente.</p>
         </div>
-        <Button type="button" variant="outline" onClick={onClose}><ArrowLeft className="size-4" />Volver</Button>
+        <Button type="button" variant="outline" onClick={onClose}><BackIcon />Volver</Button>
       </header>
 
       <nav className="grid overflow-hidden rounded-3xl bg-card shadow-sm md:grid-cols-3" aria-label="Pasos de la planificación">
@@ -644,7 +644,7 @@ export function PlanningEntryForm({
       </section>
 
       <footer className="flex flex-col-reverse gap-3 rounded-3xl bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-        <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><ArrowLeft className="size-4" />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 && !initial?.entry.id ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
+        <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><BackIcon />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 && !initial?.entry.id ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
         <div className="grid gap-2 sm:flex">{step === 3 ? <Button type="button" variant="outline" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Completar con IA</Button> : null}{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
       </footer>
     </form>

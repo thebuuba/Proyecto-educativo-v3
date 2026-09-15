@@ -1,5 +1,4 @@
 import {
-  ArrowLeft,
   BookOpen,
   CalendarDays,
   ChevronRight,
@@ -16,6 +15,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Badge } from '@/components/ui/Badge'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { Button } from '@/components/ui/Button'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
@@ -152,7 +152,7 @@ export function SubjectGradesPage() {
   return <div className="space-y-3">
     <header className="rounded-2xl bg-card shadow-sm">
       <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
-        <button type="button" onClick={back} className="flex h-10 shrink-0 items-center gap-1.5 rounded-xl border border-border bg-card px-3 text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><ArrowLeft className="size-4" /> Volver</button>
+        <button type="button" onClick={back} className="flex h-10 shrink-0 items-center gap-1.5 rounded-xl border border-border bg-card px-3 text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><BackIcon /> Volver</button>
         <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-sm"><BookOpen className="size-6" /></span>
         <div className="min-w-0 flex-1"><div className="flex items-center gap-2"><h1 className="truncate text-base font-extrabold">{workspace.gradeName} {workspace.sectionName} – {workspace.subjectName}</h1><Badge tone="success">Activa</Badge></div><p className="mt-1 text-[11px] font-semibold text-muted-foreground">{workspace.schoolYearName ? `Año escolar ${workspace.schoolYearName}` : 'Asignatura activa'}</p></div>
       </div>
@@ -228,7 +228,7 @@ function StudentActivityDetail({ activity, record, accent, onBack, onInstrument 
   const description = cleanDescription(activity.description)
   return <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
     <div className="h-1.5" style={{ background: accent.gradient }} />
-    <header className="flex items-start gap-3 border-b border-border px-5 py-4"><button type="button" onClick={onBack} aria-label="Volver a actividades" className="grid size-10 shrink-0 place-items-center rounded-xl border border-border text-primary transition hover:bg-muted"><ArrowLeft className="size-4" /></button><div className="min-w-0 flex-1"><p className={cn('text-[10px] font-black uppercase tracking-[0.14em]', accent.text)}>Detalle de la actividad</p><h3 className="mt-1 text-lg font-black">{activity.name}</h3><p className="mt-1 text-xs text-muted-foreground">{block.shortName} · {block.name}</p></div><Badge tone={record ? 'success' : 'muted'}>{record ? 'Evaluada' : 'Pendiente'}</Badge></header>
+    <header className="flex items-start gap-3 border-b border-border px-5 py-4"><button type="button" onClick={onBack} aria-label="Volver a actividades" className="grid size-10 shrink-0 place-items-center rounded-xl border border-border text-primary transition hover:bg-muted"><BackIcon /></button><div className="min-w-0 flex-1"><p className={cn('text-[10px] font-black uppercase tracking-[0.14em]', accent.text)}>Detalle de la actividad</p><h3 className="mt-1 text-lg font-black">{activity.name}</h3><p className="mt-1 text-xs text-muted-foreground">{block.shortName} · {block.name}</p></div><Badge tone={record ? 'success' : 'muted'}>{record ? 'Evaluada' : 'Pendiente'}</Badge></header>
     <div className="grid gap-4 p-5 lg:grid-cols-[minmax(0,1fr)_20rem]">
       <section className="overflow-hidden rounded-2xl border border-border bg-card"><div className="border-b border-border bg-muted/20 px-4 py-3"><p className="text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">Descripción</p></div><div className="p-4"><p className="whitespace-pre-line text-sm leading-7 text-foreground">{description || 'Sin descripción registrada.'}</p>{activity.resources?.length ? <div className="mt-5"><p className="text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground">Recursos</p><div className="mt-2 flex flex-wrap gap-2">{activity.resources.map((resource) => <span key={resource} className="rounded-lg border border-border bg-muted/20 px-2.5 py-1.5 text-xs font-bold">{resource}</span>)}</div></div> : null}</div></section>
       <aside className="space-y-3"><div className="grid grid-cols-2 gap-2"><MiniStat label="Valor" value={`${activity.maxScore} pts`} /><MiniStat label="Obtenido" value={record ? `${record.score} pts` : '—'} /><MiniStat label="Fecha" value={formatDate(activity.date)} /><MiniStat label="Modalidad" value={activity.activityType === 'group' ? 'Grupal' : 'Individual'} /></div><div className={cn('rounded-2xl border p-4', accent.soft, accent.border)}><p className="text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground">Instrumento</p><p className={cn('mt-1 text-sm font-black', accent.text)}>{instrumentLabel(activity.instrumentType)}</p><p className="mt-2 text-xs leading-5 text-muted-foreground">Puedes consultar el instrumento aunque la actividad todavía no haya sido evaluada.</p><Button className="mt-4 w-full" variant="outline" disabled={!activity.instrumentType || !activity.instrumentCriteria || Object.keys(activity.instrumentCriteria).length === 0} onClick={onInstrument}><Eye className="size-4" /> Ver instrumento</Button></div></aside>

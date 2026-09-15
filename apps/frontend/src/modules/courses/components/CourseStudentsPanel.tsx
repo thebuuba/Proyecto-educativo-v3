@@ -1,7 +1,8 @@
-import { ArrowDown, ArrowLeft, ArrowUp, CheckCircle2, MoreHorizontal, Plus, RotateCcw, Search, Trash2, TriangleAlert, UserMinus, UsersRound } from 'lucide-react'
+import { ArrowDown, ArrowUp, CheckCircle2, MoreHorizontal, Plus, RotateCcw, Search, Trash2, TriangleAlert, UserMinus, UsersRound } from 'lucide-react'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
@@ -83,7 +84,7 @@ export function CourseStudentsPanel({ courseId, courseName, canEnroll, canManage
 
   return <div className="space-y-5">
     <button type="button" onClick={onBack} className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-lg px-2 text-sm font-extrabold text-primary hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20">
-      <ArrowLeft className="size-4" aria-hidden="true" /> Volver al curso
+      <BackIcon /> Volver al curso
     </button>
 
     <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm md:min-h-[35rem]">

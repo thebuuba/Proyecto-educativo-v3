@@ -5,7 +5,6 @@
   AlignRight,
   AudioLines,
   ArrowDown,
-  ArrowLeft,
   ArrowRight,
   ArrowUp,
   AlertCircle,
@@ -112,6 +111,7 @@ import { Fragment, useEffect, useMemo, useRef, useState, type Dispatch, type Key
 import { createPortal } from 'react-dom'
 
 import { Badge } from '@/components/ui/Badge'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Input'
@@ -1126,7 +1126,7 @@ export function ActivitySavedDialog({ completion, returnLabel, onClose, onCreate
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {created && onGrade ? <Button className="h-12 justify-center" onClick={onGrade}><GraduationCap className="size-5" /> Calificar ahora</Button> : null}
-          <Button variant="outline" className="h-12 justify-center" onClick={onReturn}><ArrowLeft className="size-5" /> {returnLabel}</Button>
+          <Button variant="outline" className="h-12 justify-center" onClick={onReturn}><BackIcon /> {returnLabel}</Button>
           <Button variant="outline" className="h-12 justify-center" onClick={onView}><Eye className="size-5" /> {created ? 'Ver actividad' : 'Ver borradores'}</Button>
           <Button variant="ghost" className="h-12 justify-center text-primary" onClick={onCreateAnother}><Plus className="size-5" /> Crear otra actividad</Button>
         </div>
@@ -1507,7 +1507,7 @@ function BlockGradeView({
         </div>
         <div className="flex flex-wrap gap-2">
           <Button variant="outline" onClick={onBack}>
-            <ArrowLeft className="size-4" />
+            <BackIcon />
             Volver
           </Button>
           <Button variant="outline" onClick={() => window.print()}>
@@ -2320,7 +2320,7 @@ function ActivityEvaluationPanel({
     <section ref={workspaceRef} className="space-y-4">
       <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 sm:gap-3">
         <Button aria-label="Estudiante anterior" variant="outline" disabled={studentIndex <= 0 || saveStatus === 'saving'} onClick={() => setStudentIndex((current) => Math.max(0, current - 1))}>
-          <ArrowLeft className="size-4" />
+          <BackIcon />
           <span className="hidden sm:inline">Anterior</span>
         </Button>
         <Select value={String(studentIndex)} onChange={(event) => setStudentIndex(Number(event.target.value))} className="h-12 text-center font-black">
@@ -2586,7 +2586,7 @@ export function LegacyActivityDetailView({
     <div className="space-y-4">
       <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
         <button className="mb-3 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline" onClick={onBack}>
-          <ArrowLeft className="size-4" />
+          <BackIcon />
           Volver al bloque
         </button>
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
@@ -3302,7 +3302,7 @@ function ActivitiesHubView({
         </div>
         <div className="flex items-center gap-1 self-start">
           <Button variant="ghost" className="h-10 px-3" onClick={onBack}>
-            <ArrowLeft className="size-4" />
+            <BackIcon />
             Volver
           </Button>
         </div>
@@ -3558,7 +3558,7 @@ function ActivityDraftsView({
             Nueva actividad
           </Button>
           <Button variant="ghost" className="h-10 px-3" onClick={onBack}>
-            <ArrowLeft className="size-4" />
+            <BackIcon />
             Volver
           </Button>
         </div>
@@ -4262,7 +4262,7 @@ export function LegacyActivityCreationView({
           </p>
         </div>
         <Button variant="outline" onClick={onBack}>
-          <ArrowLeft className="size-4" />
+          <BackIcon />
           Volver
         </Button>
       </div>

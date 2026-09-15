@@ -1,5 +1,4 @@
 import {
-  ArrowLeft,
   BookOpen,
   CalendarDays,
   Clock3,
@@ -17,6 +16,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 
 import { Badge } from '@/components/ui/Badge'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { Button } from '@/components/ui/Button'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
@@ -133,7 +133,7 @@ export function SubjectSchedulePage() {
   return <div className="space-y-3">
     <header className="rounded-2xl bg-card shadow-sm">
       <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
-        <button type="button" onClick={back} className="flex h-10 shrink-0 items-center gap-1.5 rounded-xl border border-border bg-card px-3 text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><ArrowLeft className="size-4" /> Volver</button>
+        <button type="button" onClick={back} className="flex h-10 shrink-0 items-center gap-1.5 rounded-xl border border-border bg-card px-3 text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><BackIcon /> Volver</button>
         <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-sm"><BookOpen className="size-6" /></span>
         <div className="min-w-0 flex-1"><div className="flex items-center gap-2"><h1 className="truncate text-base font-extrabold">{meta.gradeName} {meta.sectionName} – {meta.subjectName}</h1><Badge tone="success">Activa</Badge></div><p className="mt-1 text-[11px] font-semibold text-muted-foreground">{meta.schoolYearName ? `Año escolar ${meta.schoolYearName}` : 'Asignatura activa'}</p></div>
       </div>

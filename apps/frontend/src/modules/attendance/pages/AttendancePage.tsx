@@ -1,8 +1,9 @@
-import { ArrowLeft, CalendarCheck, RefreshCw } from 'lucide-react'
+import { CalendarCheck, RefreshCw } from 'lucide-react'
 import { useEffect, useMemo } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { FeedbackBanner, FilterBar, PageHero, StatusBadge } from '@/components/ui/SemanticUI'
 import { Select } from '@/components/ui/Select'
@@ -60,7 +61,7 @@ export function AttendancePage() {
         icon={CalendarCheck}
         tone="success"
         actions={returnsToSubject ? (
-          <Button variant="outline" onClick={returnToSubject}><ArrowLeft className="size-4" /> Volver a la asignatura</Button>
+          <Button variant="outline" onClick={returnToSubject}><BackIcon /> Volver a la asignatura</Button>
         ) : undefined}
       >
         <div className="flex flex-wrap items-center gap-2">
