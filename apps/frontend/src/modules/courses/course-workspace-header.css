@@ -1,0 +1,174 @@
+/* Cabecera del espacio interno de un curso.
+   Se limita al workspace que tiene el botón directo de regreso a Mis cursos. */
+
+main .space-y-5:has(> button > .lucide-arrow-left):has(> header) {
+  row-gap: 1rem;
+}
+
+/* Regreso más discreto: funciona como navegación, no como acción principal. */
+main .space-y-5:has(> button > .lucide-arrow-left) > button:first-child {
+  width: fit-content;
+  min-height: 2rem;
+  gap: 0.4rem !important;
+  padding: 0 0.2rem;
+  color: color-mix(in srgb, var(--primary) 86%, var(--foreground));
+  font-size: 0.76rem !important;
+  font-weight: 800 !important;
+}
+
+/* Tarjeta de identidad del curso. */
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type {
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 24px !important;
+  padding: 1rem 1.1rem !important;
+  background:
+    linear-gradient(110deg, color-mix(in srgb, var(--primary) 4%, white) 0%, white 42%, white 100%) !important;
+  box-shadow: 0 16px 40px -34px rgb(15 23 42 / 34%) !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div {
+  gap: 1rem !important;
+}
+
+/* Identidad: avatar, nombre y contexto. */
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:first-child {
+  gap: 0.85rem !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type span[style] {
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+  border-radius: 15px !important;
+  box-shadow: none !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type h1 {
+  font-size: 1.38rem !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type h1 + span {
+  padding: 0.25rem 0.55rem !important;
+  background: color-mix(in srgb, #65b95d 12%, white) !important;
+  color: #43843e !important;
+  font-size: 0.56rem !important;
+  letter-spacing: 0.05em !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type p {
+  margin-top: 0.42rem !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+}
+
+/* Las tres métricas funcionan como un resumen compacto, no como tarjetas independientes. */
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:last-child {
+  gap: 0.5rem !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:last-child > div {
+  min-height: 3.65rem;
+  gap: 0.65rem !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  padding: 0.62rem 0.72rem !important;
+  background: #f7f8fa !important;
+  box-shadow: none !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:last-child > div > span:first-child {
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:last-child strong {
+  font-size: 1rem !important;
+  line-height: 1 !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:last-child strong + span {
+  margin-top: 0.3rem !important;
+  font-size: 0.55rem !important;
+}
+
+/* Franja de estudiantes: más baja y visualmente secundaria. */
+main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type {
+  min-height: 4.5rem;
+  gap: 0.8rem !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+  padding: 0.8rem 1rem !important;
+  background: color-mix(in srgb, white 96%, var(--primary)) !important;
+  box-shadow: 0 12px 32px -32px rgb(15 23 42 / 30%) !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type > div:first-child {
+  gap: 0.7rem !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type > div:first-child > span:first-child {
+  width: 2.45rem !important;
+  height: 2.45rem !important;
+  border-radius: 11px !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type h2 {
+  font-size: 0.82rem !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type p {
+  margin-top: 0.2rem !important;
+  font-size: 0.66rem !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type .flex.flex-wrap.gap-2 {
+  gap: 0.45rem !important;
+}
+
+main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type button {
+  height: 2.45rem !important;
+  min-height: 2.45rem !important;
+  border-radius: 11px !important;
+  padding-inline: 0.9rem !important;
+  font-size: 0.72rem !important;
+}
+
+@media (min-width: 1280px) {
+  main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:last-child {
+    min-width: 25rem !important;
+    max-width: 27rem;
+  }
+}
+
+@media (max-width: 767px) {
+  main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type {
+    border-radius: 20px !important;
+    padding: 0.9rem !important;
+  }
+
+  main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:last-child {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:last-child > div {
+    min-height: 3.3rem;
+    padding: 0.5rem !important;
+  }
+
+  main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:last-child > div > span:first-child {
+    display: none !important;
+  }
+
+  main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type {
+    align-items: stretch !important;
+  }
+
+  main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type > div:last-child {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+  }
+}
