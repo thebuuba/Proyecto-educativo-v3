@@ -991,10 +991,6 @@ function CourseWorkspace({
           <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><UsersRound className="size-5" /></span>
           <div className="min-w-0"><h2 className="text-sm font-extrabold">Estudiantes del curso</h2><p className="mt-1 text-xs text-muted-foreground">{item.section.studentCount ?? 0} estudiantes comparten todas las asignaturas de {item.grade.name} {item.section.name}.</p></div>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <Button type="button" variant="outline" className="h-11" onClick={() => { setStudentAction(undefined); setWorkspaceView('students') }}><UsersRound className="size-4" /> Ver estudiantes</Button>
-          {canEnroll ? <Button type="button" className="h-11" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }}><Plus className="size-4" /> Agregar estudiantes</Button> : null}
-        </div>
       </section>
 
       <section>
@@ -1007,6 +1003,8 @@ function CourseWorkspace({
             </div>
           </div>
           <div className="flex flex-wrap gap-2">
+            <Button type="button" variant="outline" className="h-10 rounded-xl px-4" onClick={() => { setStudentAction(undefined); setWorkspaceView('students') }}><UsersRound className="size-4" /> Ver estudiantes</Button>
+            {canEnroll ? <Button type="button" className="h-10 rounded-xl px-4" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }}><Plus className="size-4" /> Agregar estudiantes</Button> : null}
             {canManage ? (
               <Button type="button" variant="outline" onClick={() => setWorkspaceView(workspaceView === 'archived' ? 'subjects' : 'archived')} className="h-10 rounded-xl px-4">
                 {workspaceView === 'archived' ? <><BookOpen className="size-4" /> Ver activas</> : <><Archive className="size-4" /> Archivadas</>}
