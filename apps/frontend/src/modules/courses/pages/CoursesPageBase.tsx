@@ -965,8 +965,8 @@ function CourseWorkspace({
 
   return (
     <div className="space-y-5">
-      <button type="button" onClick={onBack} className="inline-flex items-center gap-2 text-sm font-extrabold text-primary transition hover:opacity-75">
-        <ArrowLeft className="size-4" /> Volver a mis cursos
+      <button type="button" onClick={onBack} aria-label="Volver a mis cursos" title="Volver a mis cursos" className="inline-flex size-11 items-center justify-center rounded-xl transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15">
+        <img src="/flecha-izquierda.png" alt="" className="size-7" />
       </button>
 
       <header className="rounded-3xl border border-border/70 bg-card p-4 shadow-sm sm:p-5">
@@ -1002,19 +1002,18 @@ function CourseWorkspace({
               <p className="mt-0.5 text-xs text-muted-foreground">{workspaceView === 'subjects' ? 'Selecciona una asignatura para acceder a su espacio académico.' : 'Restaura una asignatura o elimina definitivamente su historial académico.'}</p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            <Button type="button" variant="outline" className="h-10 rounded-xl px-4" onClick={() => { setStudentAction(undefined); setWorkspaceView('students') }}><UsersRound className="size-4" /> Ver estudiantes</Button>
-            {canEnroll ? <Button type="button" className="h-10 rounded-xl px-4" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }}><Plus className="size-4" /> Agregar estudiantes</Button> : null}
-            {canManage ? (
-              <Button type="button" variant="outline" onClick={() => setWorkspaceView(workspaceView === 'archived' ? 'subjects' : 'archived')} className="h-10 rounded-xl px-4">
-                {workspaceView === 'archived' ? <><BookOpen className="size-4" /> Ver activas</> : <><Archive className="size-4" /> Archivadas</>}
-              </Button>
-            ) : null}
-            {canManage && workspaceView === 'subjects' ? (
-              <Button type="button" onClick={() => onAssignSubject(item.grade, item.section.id)} className="h-10 rounded-xl bg-primary px-5 text-primary-foreground shadow-md">
-                <Plus className="size-4" /> Agregar asignatura
-              </Button>
-            ) : null}
+          <div className="relative">
+            <details className="group">
+              <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 [&::-webkit-details-marker]:hidden">
+                Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="absolute right-0 z-30 mt-2 w-60 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+                <button type="button" onClick={() => { setStudentAction(undefined); setWorkspaceView('students') }} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted"><UsersRound className="size-4 text-primary" /> Ver estudiantes</button>
+                {canEnroll ? <button type="button" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar estudiantes</button> : null}
+                {canManage ? <button type="button" onClick={() => setWorkspaceView(workspaceView === 'archived' ? 'subjects' : 'archived')} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted">{workspaceView === 'archived' ? <><BookOpen className="size-4 text-primary" /> Ver activas</> : <><Archive className="size-4 text-primary" /> Archivadas</>}</button> : null}
+                {canManage && workspaceView === 'subjects' ? <button type="button" onClick={() => onAssignSubject(item.grade, item.section.id)} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar asignatura</button> : null}
+              </div>
+            </details>
           </div>
         </div>
 
