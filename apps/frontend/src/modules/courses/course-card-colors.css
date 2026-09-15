@@ -155,7 +155,7 @@ body:has(#courses-summary-title) .space-y-8 > section + section {
 }
 
 body:has(#courses-summary-title) .space-y-8 > section > div:first-child {
-  width: fit-content;
+  width: min(100%, 1200px);
   min-height: 42px;
   margin-bottom: 1rem !important;
   padding: 0.4rem 0.72rem 0.4rem 0.45rem;

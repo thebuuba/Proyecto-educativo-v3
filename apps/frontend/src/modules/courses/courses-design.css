@@ -133,8 +133,10 @@ body:has(#courses-summary-title) .space-y-8 > section {
 }
 
 body:has(#courses-summary-title) .space-y-8 > section > div:first-child {
+  width: min(100%, 1200px) !important;
   margin: 0 0 0.9rem !important;
   gap: 0.55rem !important;
+  padding: 0.45rem 0.72rem 0.45rem 0.45rem !important;
 }
 
 body:has(#courses-summary-title) .space-y-8 > section > div:first-child > span:first-child {
