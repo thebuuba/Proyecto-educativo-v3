@@ -41,14 +41,14 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
       >
         <div
           className={cn(
-            'sidebar-header relative flex shrink-0 items-center',
-            isExpanded ? 'h-[84px] px-5' : 'h-[84px] px-3',
+            'sidebar-header relative flex h-[84px] shrink-0 items-center',
+            isExpanded ? 'px-5' : 'px-3',
           )}
         >
-          <div className={cn('flex items-center', isExpanded ? 'justify-between' : 'justify-center')}>
+          <div className="sidebar-brand-row flex w-full items-center justify-between">
             <NavLink
               to="/inicio"
-              className={cn('flex min-w-0 items-center gap-3', !isExpanded && 'lg:gap-0')}
+              className="sidebar-brand-link flex min-w-0 items-center"
               onClick={onClose}
               title="Aula Base"
             >
@@ -114,10 +114,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                   title={isExpanded ? item.label : undefined}
                   className={({ isActive }) =>
                     cn(
-                      'sidebar-nav-item group/nav relative flex min-h-[44px] items-center gap-3 rounded-xl text-sm font-semibold leading-5 outline-none',
-                      isExpanded
-                        ? 'px-3'
-                        : 'px-3 lg:mx-auto lg:size-11 lg:min-h-11 lg:justify-center lg:gap-0 lg:p-0',
+                      'sidebar-nav-item group/nav relative flex min-h-[44px] w-full items-center gap-0 rounded-xl text-sm font-semibold leading-5 outline-none',
                       'focus-visible:ring-2 focus-visible:ring-primary/20',
                       isActive
                         ? 'bg-primary/10 text-foreground'
@@ -163,27 +160,92 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           </div>
         </nav>
 
-        <div
-          className={cn(
-            'border-t border-border/60 py-3',
-            isExpanded ? 'px-3' : 'px-3',
-          )}
-        >
+        <div className="border-t border-border/60 px-3 py-3">
           <button
             type="button"
             onClick={() => void logout()}
-            className={cn(
-              'flex min-h-10 w-full items-center gap-3 rounded-lg text-[12px] font-semibold text-destructive/80 transition-colors hover:bg-destructive/[0.055] hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/20',
-              isExpanded
-                ? 'justify-start px-3'
-                : 'justify-start px-3 lg:justify-center lg:gap-0 lg:px-2',
-            )}
+            className="sidebar-footer-action flex min-h-10 w-full items-center gap-0 rounded-lg text-[12px] font-semibold text-destructive/80 hover:bg-destructive/[0.055] hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/20"
             title="Cerrar sesión"
           >
             <LogOut className="size-[17px] shrink-0" strokeWidth={1.9} />
             <span className="sidebar-label">Cerrar sesión</span>
           </button>
         </div>
+
+        <style>{`
+          @media (min-width: 1024px) {
+            .sidebar-shell .sidebar-brand-link {
+              width: 100%;
+              padding-left: 0;
+              transition: padding-left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+            }
+
+            .sidebar-shell[data-sidebar-expanded='false'] .sidebar-brand-link {
+              padding-left: 10px;
+            }
+
+            .sidebar-shell .sidebar-nav-item {
+              padding-left: 12px;
+              padding-right: 12px;
+              transition:
+                padding-left 200ms cubic-bezier(0.77, 0, 0.175, 1),
+                padding-right 200ms cubic-bezier(0.77, 0, 0.175, 1),
+                box-shadow 180ms ease,
+                background-color 180ms ease,
+                color 180ms ease;
+            }
+
+            .sidebar-shell[data-sidebar-expanded='false'] .sidebar-nav-item {
+              padding-left: 16px;
+              padding-right: 16px;
+            }
+
+            .sidebar-shell .sidebar-footer-action {
+              padding-left: 12px;
+              padding-right: 12px;
+              transition:
+                padding-left 200ms cubic-bezier(0.77, 0, 0.175, 1),
+                padding-right 200ms cubic-bezier(0.77, 0, 0.175, 1),
+                background-color 180ms ease,
+                color 180ms ease;
+            }
+
+            .sidebar-shell[data-sidebar-expanded='false'] .sidebar-footer-action {
+              padding-left: 23.5px;
+              padding-right: 23.5px;
+            }
+
+            .sidebar-shell .sidebar-label {
+              margin-left: 12px;
+              transform: translateX(0);
+              transition:
+                max-width 200ms cubic-bezier(0.77, 0, 0.175, 1),
+                opacity 140ms cubic-bezier(0.4, 0, 1, 1),
+                margin-left 200ms cubic-bezier(0.77, 0, 0.175, 1),
+                transform 180ms cubic-bezier(0.4, 0, 1, 1);
+            }
+
+            .sidebar-shell[data-sidebar-expanded='true'] .sidebar-label {
+              transition-delay: 0ms, 55ms, 0ms, 0ms;
+            }
+
+            .sidebar-shell[data-sidebar-expanded='false'] .sidebar-label {
+              margin-left: 0;
+              opacity: 0;
+              transform: translateX(-4px);
+              transition-delay: 0ms;
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .sidebar-shell .sidebar-brand-link,
+            .sidebar-shell .sidebar-nav-item,
+            .sidebar-shell .sidebar-footer-action,
+            .sidebar-shell .sidebar-label {
+              transition-duration: 1ms !important;
+            }
+          }
+        `}</style>
       </aside>
     </>
   )
