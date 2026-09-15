@@ -516,7 +516,7 @@ a {
   }
 
   .sidebar-nav-item:hover .sidebar-nav-icon {
-    transform: translateY(-1px) scale(1.05);
+    transform: translateY(-1px);
   }
 
   .sidebar-nav-item:hover .sidebar-tooltip {

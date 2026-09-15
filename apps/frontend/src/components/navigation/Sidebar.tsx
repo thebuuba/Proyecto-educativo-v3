@@ -116,14 +116,14 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                   title={isExpanded ? item.label : undefined}
                   className={({ isActive }) =>
                     cn(
-                      'sidebar-nav-item group/nav relative flex min-h-[42px] items-center gap-3 rounded-[10px] text-[13px] font-semibold outline-none',
+                      'sidebar-nav-item group/nav relative flex min-h-[44px] items-center gap-3 rounded-xl text-sm font-semibold leading-5 outline-none',
                       isExpanded
                         ? 'px-3'
                         : 'px-3 lg:mx-auto lg:size-11 lg:min-h-11 lg:justify-center lg:gap-0 lg:p-0',
                       'focus-visible:ring-2 focus-visible:ring-primary/20',
                       isActive
-                        ? 'bg-primary/[0.075] text-foreground shadow-[inset_0_0_0_1px_rgb(35_106_150_/_0.035)]'
-                        : 'text-foreground/72 hover:bg-primary/[0.04] hover:text-foreground',
+                        ? 'bg-primary/10 text-foreground shadow-[inset_3px_0_0_var(--primary)]'
+                        : 'text-foreground hover:bg-muted/70',
                     )
                   }
                 >
@@ -132,10 +132,10 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                       <span
                         aria-hidden="true"
                         className={cn(
-                          'sidebar-nav-icon flex size-7 shrink-0 items-center justify-center rounded-md transition-[color,background-color,transform] duration-150',
+                          'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg transition-[color,background-color,transform] duration-150',
                           isActive
-                            ? 'text-foreground'
-                            : 'text-foreground group-hover/nav:text-foreground',
+                            ? 'bg-primary/12 text-primary'
+                            : 'text-foreground/70 group-hover/nav:bg-card group-hover/nav:text-foreground',
                         )}
                       >
                         <Icon className="size-[17px] shrink-0" />
