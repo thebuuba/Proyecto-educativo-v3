@@ -1,0 +1,147 @@
+/*
+ * Paleta determinística para los identificadores de curso (1A, 2A, 3A...).
+ * La lógica rota colores por posición del curso y desplaza la paleta entre
+ * ciclos y niveles para evitar que todas las tarjetas se vean iguales.
+ * No usa valores aleatorios: el mismo orden académico conserva los colores.
+ */
+
+body:has(#courses-summary-title) article.group {
+  --course-chip-bg: #5bc0e6;
+  --course-chip-ink: #07364a;
+}
+
+/* Nivel impar · ciclo impar */
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 1) {
+  --course-chip-bg: #5bc0e6;
+  --course-chip-ink: #07364a;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 2) {
+  --course-chip-bg: #9b92e8;
+  --course-chip-ink: #29255a;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 3) {
+  --course-chip-bg: #72c992;
+  --course-chip-ink: #123c27;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 4) {
+  --course-chip-bg: #e9b85f;
+  --course-chip-ink: #513604;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 5) {
+  --course-chip-bg: #e49aaf;
+  --course-chip-ink: #552130;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n) {
+  --course-chip-bg: #67c6bd;
+  --course-chip-ink: #123d39;
+}
+
+/* Nivel impar · ciclo par: empieza desde los tonos cálidos para que 4.º, 5.º y 6.º no repitan 1.º, 2.º y 3.º. */
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 1) {
+  --course-chip-bg: #e9b85f;
+  --course-chip-ink: #513604;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 2) {
+  --course-chip-bg: #e49aaf;
+  --course-chip-ink: #552130;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 3) {
+  --course-chip-bg: #67c6bd;
+  --course-chip-ink: #123d39;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 4) {
+  --course-chip-bg: #5bc0e6;
+  --course-chip-ink: #07364a;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 5) {
+  --course-chip-bg: #9b92e8;
+  --course-chip-ink: #29255a;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n) {
+  --course-chip-bg: #72c992;
+  --course-chip-ink: #123c27;
+}
+
+/* Segundo nivel académico: otra rotación para que Primaria y Secundaria tampoco queden calcadas. */
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 1) {
+  --course-chip-bg: #e49aaf;
+  --course-chip-ink: #552130;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 2) {
+  --course-chip-bg: #67c6bd;
+  --course-chip-ink: #123d39;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 3) {
+  --course-chip-bg: #5bc0e6;
+  --course-chip-ink: #07364a;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 4) {
+  --course-chip-bg: #9b92e8;
+  --course-chip-ink: #29255a;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 5) {
+  --course-chip-bg: #72c992;
+  --course-chip-ink: #123c27;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n) {
+  --course-chip-bg: #e9b85f;
+  --course-chip-ink: #513604;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 1) {
+  --course-chip-bg: #9b92e8;
+  --course-chip-ink: #29255a;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 2) {
+  --course-chip-bg: #72c992;
+  --course-chip-ink: #123c27;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 3) {
+  --course-chip-bg: #e9b85f;
+  --course-chip-ink: #513604;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 4) {
+  --course-chip-bg: #e49aaf;
+  --course-chip-ink: #552130;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 5) {
+  --course-chip-bg: #67c6bd;
+  --course-chip-ink: #123d39;
+}
+
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n) {
+  --course-chip-bg: #5bc0e6;
+  --course-chip-ink: #07364a;
+}
+
+/* Sobrescribe el azul único del diseño base solo en el cuadrito identificador. */
+body:has(#courses-summary-title) .space-y-8 article.group > div[role='button'] > div:first-child span[style] {
+  background: var(--course-chip-bg) !important;
+  color: var(--course-chip-ink) !important;
+}
+
+/* El borde acompaña muy sutilmente al color cuando se pasa el cursor. */
+@media (hover: hover) and (pointer: fine) {
+  body:has(#courses-summary-title) .space-y-8 article.group:hover {
+    border-color: color-mix(in srgb, var(--course-chip-bg) 46%, var(--border)) !important;
+  }
+}
