@@ -166,10 +166,10 @@ export function ScheduleFinalTable({
         <div className="overflow-x-auto">
           <div className="min-w-[940px] bg-[#fbfbfc] p-2.5 sm:p-3">
             <div
-              className="grid grid-cols-[5.75rem_repeat(var(--day-count),minmax(0,1fr))] gap-1.5"
+              className="grid grid-cols-[5.75rem_repeat(var(--day-count),minmax(0,1fr))] gap-2"
               style={{ '--day-count': activeDays.length } as CSSProperties}
             >
-              <div className="flex min-h-[72px] flex-col items-center justify-center rounded-2xl px-2 text-center">
+              <div className="flex min-h-[66px] flex-col items-center justify-center px-2 text-center">
                 <span className="text-[9px] font-bold uppercase tracking-[0.14em] text-muted-foreground">Hora</span>
                 <span className="mt-1 text-[10px] font-semibold text-muted-foreground/70">
                   {SHIFT_LABELS[config.shift] ?? config.shift}
@@ -184,27 +184,31 @@ export function ScheduleFinalTable({
                   <div
                     key={day.dayOfWeek}
                     className={cn(
-                      'relative flex min-h-[72px] flex-col items-center justify-center rounded-2xl px-3 text-center transition-colors',
-                      isToday ? 'bg-primary/[0.075]' : 'bg-white',
+                      'relative flex min-h-[66px] flex-col items-center justify-center rounded-[18px] border px-3 text-center transition-[background-color,border-color,box-shadow] duration-200',
+                      isToday
+                        ? 'border-primary/10 bg-[#edf7f6] shadow-[0_8px_20px_-18px_rgba(35,106,150,0.28)]'
+                        : 'border-transparent bg-white/95',
                     )}
                   >
-                    <p className={cn('text-[9px] font-bold uppercase tracking-[0.12em]', isToday ? 'text-primary' : 'text-muted-foreground')}>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
                       {day.name}
                     </p>
-                    <p className={cn('mt-0.5 text-2xl font-extrabold leading-none tabular-nums', isToday ? 'text-primary' : 'text-foreground')}>
+                    <p className="mt-1 text-[22px] font-extrabold leading-none tabular-nums text-foreground">
                       {date.getDate()}
                     </p>
                     {isToday ? (
-                      <span className="absolute bottom-1.5 rounded-full bg-primary px-2 py-0.5 text-[8px] font-extrabold uppercase tracking-wide text-primary-foreground">
-                        Hoy
-                      </span>
+                      <span
+                        className="absolute bottom-1.5 size-1.5 rounded-full bg-primary/55"
+                        aria-label="Hoy"
+                        title="Hoy"
+                      />
                     ) : null}
                   </div>
                 )
               })}
             </div>
 
-            <div className="mt-1.5 overflow-hidden rounded-2xl bg-white">
+            <div className="mt-2 overflow-hidden rounded-2xl bg-white">
               {blocks.map((block, index) => {
                 const isBreak = block.type === 'break'
 
