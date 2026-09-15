@@ -228,7 +228,7 @@ export function ScheduleFinalTable({
 
                     {isBreak ? (
                       <div
-                        className="col-[2/-1] m-1.5 flex min-h-[74px] items-center justify-center gap-2 rounded-xl px-4 py-2 text-center"
+                        className="col-[2/-1] m-1.5 flex min-h-[74px] items-center justify-center gap-2 rounded-[14px] px-4 py-2 text-center"
                         style={{ backgroundColor: 'color-mix(in srgb, var(--palette-yellow) 20%, var(--palette-white))' }}
                       >
                         <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-foreground">
@@ -293,12 +293,12 @@ function ScheduleFinalCell({
   end: string
 }) {
   if (content.kind === 'empty') {
-    return <div className="h-full min-h-[78px] rounded-xl transition-colors hover:bg-muted/20" />
+    return <div className="h-full min-h-[78px] rounded-[14px] transition-colors hover:bg-muted/20" />
   }
 
   if (content.kind === 'pedagogical') {
     return (
-      <div className="flex h-full min-h-[78px] flex-col justify-between rounded-xl bg-slate-100 px-3 py-2.5 text-foreground">
+      <div className="flex h-full min-h-[78px] flex-col justify-between rounded-[14px] bg-slate-100 px-3.5 py-3 text-foreground">
         <div>
           <p className="text-[11px] font-extrabold leading-tight">{content.block.label}</p>
           <p className="mt-1 text-[9px] font-medium text-muted-foreground">Trabajo no lectivo</p>
@@ -314,18 +314,18 @@ function ScheduleFinalCell({
 
   return (
     <div
-      className="group flex h-full min-h-[78px] flex-col justify-between rounded-xl px-3 py-2.5 transition-transform duration-200 hover:-translate-y-0.5"
-      style={{ backgroundColor: palette.soft }}
+      className="flex h-full min-h-[78px] flex-col justify-between rounded-[14px] px-3.5 py-3 shadow-[0_8px_18px_-16px_rgba(35,35,45,0.28)]"
+      style={{ backgroundColor: palette.soft, color: palette.foreground }}
     >
       <div>
-        <p className="line-clamp-2 text-[11px] font-extrabold leading-[1.2]" style={{ color: palette.color }}>
+        <p className="line-clamp-2 text-[11px] font-extrabold leading-[1.22]">
           {content.entry.subjectName}
         </p>
-        <p className="mt-1 text-[9px] font-semibold text-muted-foreground">
+        <p className="mt-1 text-[9px] font-semibold opacity-70">
           {content.entry.gradeName} {content.entry.sectionName} · {content.entry.academicLevelName}
         </p>
       </div>
-      <p className="mt-2 text-[9px] font-semibold tabular-nums text-muted-foreground/75">
+      <p className="mt-2 text-[9px] font-semibold tabular-nums opacity-55">
         {formatTime(start)}–{formatTime(end)}
       </p>
     </div>
