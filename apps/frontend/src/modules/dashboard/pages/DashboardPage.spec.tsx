@@ -18,7 +18,7 @@ vi.mock('@/modules/dashboard/hooks/useDashboard', () => ({
         days: ['LUN', 'MAR', 'MIE', 'JUE', 'VIE'].map((label) => ({ label, value: null, isToday: false })),
       },
       tasks: [],
-      recentActivity: [],
+      recentActivity: [{ id: 'activity-1', kind: 'planning', title: 'Actividad de prueba', description: 'Descripción', relativeTime: 'Hace 1 d', path: '/reportes' }],
       smartSuggestion: null,
       setupProgress: {
         courseCount: 1,
@@ -49,6 +49,7 @@ describe('DashboardPage', () => {
 
     expect(screen.getByText('Tu agenda de hoy')).toBeInTheDocument()
     expect(screen.getByText('No hay clases programadas para hoy.')).toBeInTheDocument()
+    expect(screen.getByText('Actividad de prueba').closest('.dashboard-enter')).toBeNull()
     expect(screen.getByText('Pulso semanal')).toBeInTheDocument()
     expect(screen.getByText('· miércoles, 2 de septiembre')).toBeInTheDocument()
     expect(screen.getByRole('img', { name: 'Aún no hay registros de asistencia esta semana.' })).toBeInTheDocument()

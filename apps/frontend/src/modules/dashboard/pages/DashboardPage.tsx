@@ -279,9 +279,7 @@ export function DashboardPage() {
                 ) : null}
 
                 {canManageOperations ? (
-                  <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
-                    <RecentActivity items={data.recentActivity} />
-                  </div>
+                  <RecentActivity items={data.recentActivity} />
                 ) : null}
 
                 {canManageOperations ? (
