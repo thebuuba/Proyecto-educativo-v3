@@ -983,11 +983,6 @@ function CourseWorkspace({
               <p className="mt-2 truncate text-xs font-semibold text-muted-foreground">{cleanLevelName(item.levelName)} · {item.cycleName}{schoolYearName ? ` · Año escolar ${schoolYearName}` : ''}</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 xl:min-w-[29rem]">
-            <CourseHeaderMetric icon={<UsersRound className="size-5" />} value={item.section.studentCount ?? 0} label="Estudiantes" tone="emerald" />
-            <CourseHeaderMetric icon={<BookOpen className="size-5" />} value={item.assignments.length} label="Asignaturas" tone="violet" />
-            <CourseHeaderMetric icon={<Archive className="size-5" />} value={archivedAssignments.length} label="Archivadas" tone="orange" />
-          </div>
         </div>
       </header>
 
@@ -1081,15 +1076,6 @@ function CourseWorkspace({
       ) : null}
     </div>
   )
-}
-
-function CourseHeaderMetric({ icon, value, label, tone }: { icon: ReactNode; value: number; label: string; tone: 'emerald' | 'violet' | 'orange' }) {
-  const tones = {
-    emerald: 'bg-emerald-50 text-emerald-600 ring-emerald-100',
-    violet: 'bg-violet-50 text-violet-600 ring-violet-100',
-    orange: 'bg-orange-50 text-orange-600 ring-orange-100',
-  }
-  return <div className="flex min-w-0 items-center gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 shadow-sm"><span className={cn('flex size-10 shrink-0 items-center justify-center rounded-xl ring-1', tones[tone])}>{icon}</span><span className="min-w-0"><strong className="block text-xl leading-none text-foreground tabular-nums">{value}</strong><span className="mt-1 block truncate text-[10px] font-semibold text-muted-foreground">{label}</span></span></div>
 }
 
 export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen, onCustomize, onArchive, onDelete }: { assignment: SectionSubjectAssignment; studentCount: number; canManage: boolean; onOpen: (tab: string) => void; onCustomize: () => void; onArchive: () => void; onDelete: () => void }) {
@@ -2961,7 +2947,7 @@ function getAppearanceIcon(value: string) {
 
 function getAssignmentPalette(assignment: SectionSubjectAssignment): SubjectPalette {
   if (!assignment.appearanceColor) return getSubjectColor(assignment.subjectName)
-  return { color: assignment.appearanceColor, soft: `${assignment.appearanceColor}14` }
+  return { color: assignment.appearanceColor, soft: `${assignment.appearanceColor}14`, foreground: 'var(--foreground)' }
 }
 
 function startOfToday() {
