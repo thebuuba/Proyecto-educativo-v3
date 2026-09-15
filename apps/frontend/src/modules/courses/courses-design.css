@@ -197,18 +197,18 @@ body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > span {
 body:has(#courses-summary-title) div.grid:has(> article.group) {
   grid-template-columns: minmax(0, 1fr) !important;
   gap: 0.85rem !important;
+  width: min(100%, 1200px);
 }
 
 @media (min-width: 768px) {
   body:has(#courses-summary-title) div.grid:has(> article.group) {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 300px)) !important;
-    justify-content: start;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
   }
 }
 
 @media (min-width: 1280px) {
   body:has(#courses-summary-title) div.grid:has(> article.group) {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 300px)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
   }
 }
 
