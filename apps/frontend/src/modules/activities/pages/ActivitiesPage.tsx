@@ -12,7 +12,7 @@ import { ActivityDraftsPanel } from '@/modules/activities/components/ActivityDra
 import type { StoredActivityDraftSummary } from '@/modules/activities/utils/activityDraftStorage'
 import { getActivityCenter } from '@/modules/grading/services/gradingService'
 import type { ActivityCenterWorkspace, GlobalActivity } from '@/modules/grading/types'
-import { competencyBlocks } from '@/modules/grading/utils/competencyGrades'
+import { activityAppliesToBlock, activityCompetencyWeights, competencyBlocks } from '@/modules/grading/utils/competencyGrades'
 
 type ActivityState = 'pending' | 'partial' | 'graded'
 const emptyWorkspace: ActivityCenterWorkspace = { sectionSubjects: [], academicPeriods: [], activities: [] }
@@ -52,7 +52,7 @@ export function ActivitiesPage() {
       && (courseId === 'all' || activity.courseId === courseId)
       && (subjectId === 'all' || activity.sectionSubjectId === subjectId)
       && (periodId === 'all' || activity.academicPeriodId === periodId)
-      && (blockId === 'all' || activity.competencyBlockId === blockId)
+      && (blockId === 'all' || activityAppliesToBlock(activity, blockId))
       && (status === 'all' || activityState(activity) === status)
   })
   const statusCounts = useMemo(() => ({ all: workspace.activities.length, pending: workspace.activities.filter((activity) => activityState(activity) === 'pending').length, partial: workspace.activities.filter((activity) => activityState(activity) === 'partial').length, graded: workspace.activities.filter((activity) => activityState(activity) === 'graded').length }), [workspace.activities])
@@ -99,7 +99,8 @@ export function ActivitiesPage() {
 
 function ActivityCard({ activity, onView }: { activity: GlobalActivity; onView: () => void }) {
   const state = activityState(activity)
-  const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId)
+  const competencyWeights = activityCompetencyWeights(activity)
+  const blockLabel = competencyBlocks.filter((item) => competencyWeights[item.id]).map((item) => item.shortName).join(', ')
   const primaryMode = state === 'graded' ? 'results' : 'evaluate'
   const primaryLabel = state === 'graded' ? 'Ver resultados' : 'Evaluar / calificar'
   const progress = activity.studentCount > 0 ? Math.min(100, Math.round((activity.evaluatedCount / activity.studentCount) * 100)) : 0
@@ -107,7 +108,7 @@ function ActivityCard({ activity, onView }: { activity: GlobalActivity; onView: 
 
   return <article className="group flex min-h-[15rem] cursor-pointer flex-col rounded-3xl bg-card p-5 shadow-sm transition-shadow duration-200 hover:shadow-md" onClick={onView}>
     <div className="flex items-start gap-3"><div className="min-w-0 flex-1"><div className="flex items-start justify-between gap-3"><h2 className="line-clamp-2 text-[15px] font-extrabold leading-snug text-foreground">{activity.name}</h2><ActivityBadge state={state} /></div><p className="mt-1 text-xs font-extrabold text-primary-variant">{activity.courseLabel}</p><p className="mt-0.5 truncate text-xs text-muted-foreground">{activity.subjectName}</p></div></div>
-    <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] font-semibold text-muted-foreground"><span className="rounded-full bg-muted/70 px-2.5 py-1 text-foreground">{activity.periodName.split('—')[0]?.trim()}</span><span className="rounded-full bg-muted/70 px-2.5 py-1 text-foreground">{block?.shortName ?? 'Sin bloque'}</span><span className="ml-auto rounded-full bg-primary/10 px-2.5 py-1 font-extrabold text-foreground">{activity.maxScore} pts</span></div>
+    <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] font-semibold text-muted-foreground"><span className="rounded-full bg-muted/70 px-2.5 py-1 text-foreground">{activity.periodName.split('—')[0]?.trim()}</span><span className="rounded-full bg-muted/70 px-2.5 py-1 text-foreground">{blockLabel || 'Sin bloque'}</span><span className="ml-auto rounded-full bg-primary/10 px-2.5 py-1 font-extrabold text-foreground">{activity.maxScore} pts</span></div>
     <div className="mt-4"><div className="flex items-center justify-between gap-3 text-xs"><span className="font-semibold text-muted-foreground">{activity.evaluatedCount} de {activity.studentCount} evaluados</span><span className="font-extrabold text-foreground">{progress}%</span></div><ProgressIndicator value={progress} tone={tone} className="mt-2" /></div>
     <div className="mt-auto flex items-center gap-3 pt-5"><button type="button" onClick={(event) => { event.stopPropagation(); onView() }} className="inline-flex h-9 items-center gap-1.5 text-xs font-extrabold text-muted-foreground transition hover:text-foreground"><Eye className="size-4" /> Ver</button>{state === 'pending' ? <Link onClick={(event) => event.stopPropagation()} to={activityHref(activity, 'edit')} aria-label={`Editar ${activity.name}`} className="inline-flex h-9 items-center gap-1.5 text-xs font-extrabold text-muted-foreground transition hover:text-foreground"><Edit3 className="size-4" /> Editar</Link> : null}<Link onClick={(event) => event.stopPropagation()} to={activityHref(activity, primaryMode)} className="ml-auto inline-flex h-10 items-center gap-2 rounded-xl bg-primary px-3.5 text-xs font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover">{state === 'graded' ? <BarChart3 className="size-4" /> : <GraduationCap className="size-4" />}{primaryLabel}</Link></div>
   </article>

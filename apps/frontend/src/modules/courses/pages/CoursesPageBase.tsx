@@ -103,6 +103,7 @@ import { getAcademicPeriods, getGradingWorkspace } from '@/modules/grading/servi
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { activityRubricConfiguration } from '@/modules/grading/components/GradingBook'
 import {
+  activityAppliesToBlock,
   buildCompactGradeRows,
   competencyBlocks,
   scoreForActivity,
@@ -2416,7 +2417,7 @@ function StudentDetailPanel({ student, activities, journalEntries, journalLoadin
   onClose: () => void
 }) {
   const blockAverages = competencyBlocks.map((block) => {
-    const activityIds = new Set(activities.filter((activity) => activity.competencyBlockId === block.id).map((activity) => activity.id))
+    const activityIds = new Set(activities.filter((activity) => activityAppliesToBlock(activity, block.id)).map((activity) => activity.id))
     const records = [...activityIds].map((activityId) => scoreForActivity(student.records, student.enrollmentId, activityId)).filter((record): record is GradeRecordRow => Boolean(record && record.maxScore > 0))
     return { ...block, average: records.length ? Math.round(records.reduce((sum, record) => sum + (record.score / record.maxScore) * 100, 0) / records.length) : null }
   })
@@ -2631,7 +2632,7 @@ function StudentGradesDrawer({ student, students, row, activities, records, cour
   useEffect(() => { setActivityId(null); setShowInstrument(false) }, [student?.enrollmentId])
   if (!student || !row) return null
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
-  const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+  const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
   const selectedActivity = activities.find((activity) => activity.id === activityId) ?? null
   const selectedRecord = selectedActivity ? scoreForActivity(records, student.enrollmentId, selectedActivity.id) : null
 

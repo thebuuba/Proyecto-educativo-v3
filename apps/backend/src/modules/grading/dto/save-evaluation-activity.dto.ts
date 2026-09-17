@@ -27,6 +27,10 @@ export class SaveEvaluationActivityDto {
   @IsIn(['b1', 'b2', 'b3', 'b4'])
   competencyBlockId!: string
 
+  @IsOptional()
+  @IsObject()
+  competencyBlockWeights?: Record<string, number>
+
   @IsString()
   @IsNotEmpty()
   @MaxLength(200)

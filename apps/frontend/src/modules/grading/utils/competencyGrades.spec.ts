@@ -2,7 +2,9 @@ import { describe, expect, it } from 'vitest'
 
 import type { GradeRecordRow, GradingActivity } from '@/modules/grading/types'
 import {
+  activityAppliesToBlock,
   activityRecordName,
+  activityWeightForBlock,
   blockTotal,
   buildCompactGradeRows,
   defaultGradeCalculationConfig,
@@ -82,6 +84,18 @@ describe('cálculos del libro de calificaciones', () => {
   it('promedia competencias y redondea la calificación final', () => {
     expect(finalBlockAverage([80, 90, null, 70])).toBe(80)
     expect(finalSubjectScore([80, 90, 85, 75])).toBe(83)
+  })
+})
+
+describe('multi-block grading', () => {
+  it('applies one grade equally or proportionally across blocks', () => {
+    const shared = { ...activity, competencyBlockWeights: { b1: 1, b2: 1 } }
+    const weighted = { ...activity, competencyBlockWeights: { b1: 0.7, b2: 0.3 } }
+
+    expect(activityAppliesToBlock(shared, 'b2')).toBe(true)
+    expect(activityWeightForBlock(shared, 'b2')).toBe(1)
+    expect(blockTotal({ activities: [weighted], blockId: 'b1', enrollmentId: 'enrollment-1', records: [grade()] })).toBeCloseTo(22.4)
+    expect(blockTotal({ activities: [weighted], blockId: 'b2', enrollmentId: 'enrollment-1', records: [grade()] })).toBeCloseTo(9.6)
   })
 })
 

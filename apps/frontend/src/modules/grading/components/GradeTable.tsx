@@ -15,6 +15,7 @@ import type {
   StudentGradeRow,
 } from '@/modules/grading/types'
 import {
+  activityAppliesToBlock,
   blockStatus,
   blockTotal,
   competencyBlocks,
@@ -181,7 +182,7 @@ export function GradeTable({
                   Estudiante
                 </th>
                 {competencyBlocks.map((block, index) => {
-                  const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+                  const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
                   return (
                     <th
                       key={block.id}
@@ -198,7 +199,7 @@ export function GradeTable({
               </tr>
               <tr>
                 {competencyBlocks.map((block) => {
-                  const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+                  const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
                   return (
                     <FragmentHeader
                       key={block.id}
@@ -220,7 +221,7 @@ export function GradeTable({
                     {student.lastName}, {student.firstName}
                   </td>
                   {competencyBlocks.map((block) => {
-                    const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+                    const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
                     const total = blockTotal({
                       records,
                       activities: blockActivities,
@@ -255,7 +256,7 @@ export function GradeTable({
                   Máximo por bloque
                 </td>
                 {competencyBlocks.map((block) => {
-                  const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+                  const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
                   const max = sumActivityMaxScore(blockActivities, block.id)
                   return (
                     <td
