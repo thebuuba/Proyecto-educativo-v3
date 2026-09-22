@@ -20,6 +20,9 @@ function mapEvaluationActivity(activity: any) {
     id: activity.id,
     name: activity.name,
     competencyBlockId: activity.competencyBlockId,
+    competencyBlockWeights: activity.competencyBlockWeights && typeof activity.competencyBlockWeights === 'object'
+      ? activity.competencyBlockWeights
+      : { [activity.competencyBlockId]: 1 },
     maxScore: Number(activity.maxScore),
     date: activity.activityDate ? activity.activityDate.toISOString().slice(0, 10) : undefined,
     description: activity.description || undefined,
@@ -42,6 +45,26 @@ function mapEvaluationActivity(activity: any) {
     planningMoment: activity.planningMoment ?? '',
     source: activity.source,
   }
+}
+
+const competencyBlockIds = ['b1', 'b2', 'b3', 'b4'] as const
+
+function validateCompetencyBlockWeights(primaryBlockId: string, input?: Record<string, number>) {
+  const weights = input ?? { [primaryBlockId]: 1 }
+  const entries = Object.entries(weights)
+  const validEntries = entries.length > 0
+    && entries.every(([blockId, weight]) => competencyBlockIds.includes(blockId as typeof competencyBlockIds[number])
+      && typeof weight === 'number' && Number.isFinite(weight) && weight > 0 && weight <= 1)
+  if (!validEntries || !(primaryBlockId in weights)) {
+    throw new BadRequestException('La distribucion por competencias no es valida')
+  }
+
+  const sameGrade = entries.every(([, weight]) => weight === 1)
+  const total = entries.reduce((sum, [, weight]) => sum + weight, 0)
+  if (!sameGrade && Math.abs(total - 1) > 0.001) {
+    throw new BadRequestException('La ponderacion de competencias debe sumar 100%')
+  }
+  return weights
 }
 
 function mapGradeRecord(grade: any) {
@@ -702,7 +725,8 @@ export class GradingService {
   async saveActivity(schoolId: string, userId: string, dto: SaveEvaluationActivityDto) {
     if (!dto.name.trim()) throw new BadRequestException('El nombre de la actividad es obligatorio')
     if (!Number.isFinite(dto.maxScore) || dto.maxScore <= 0) throw new BadRequestException('El valor de la actividad debe ser mayor que cero')
-    if (!['b1', 'b2', 'b3', 'b4'].includes(dto.competencyBlockId)) throw new BadRequestException('El bloque de competencias no es valido')
+    if (!competencyBlockIds.includes(dto.competencyBlockId as typeof competencyBlockIds[number])) throw new BadRequestException('El bloque de competencias no es valido')
+    const competencyBlockWeights = validateCompetencyBlockWeights(dto.competencyBlockId, dto.competencyBlockWeights)
     const [sectionSubject, academicPeriod] = await Promise.all([
       prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } }),
       prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
@@ -774,6 +798,7 @@ export class GradingService {
       planningEntryId: dto.planningEntryId || null,
       instrumentId,
       competencyBlockId: dto.competencyBlockId,
+      competencyBlockWeights,
       planningMoment: dto.planningMoment || null,
       name: dto.name.trim(),
       description: dto.description?.trim() ?? '',

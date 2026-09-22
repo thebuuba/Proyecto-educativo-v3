@@ -32,12 +32,19 @@ const env = {
   ...process.env,
   CLOUDFLARE_HYPERDRIVE_LOCAL_CONNECTION_STRING_HYPERDRIVE: process.env.DATABASE_URL,
 }
-const build = spawnSync('pnpm', ['build'], { env, stdio: 'inherit' })
+const pnpmEntry = process.env.npm_execpath
+if (!pnpmEntry) {
+  throw new Error('Ejecuta este script mediante pnpm cloudflare:dev')
+}
+
+function runPnpm(args) {
+  return spawnSync(process.execPath, [pnpmEntry, ...args], { env, stdio: 'inherit' })
+}
+
+const build = runPnpm(['build'])
+if (build.error) throw build.error
 if (build.status !== 0) process.exit(build.status ?? 1)
 
-const dev = spawnSync(
-  'pnpm',
-  ['exec', 'wrangler', 'dev', '--local', '--env-file', '.dev.vars.local'],
-  { env, stdio: 'inherit' },
-)
+const dev = runPnpm(['exec', 'wrangler', 'dev', '--local', '--env-file', '.dev.vars.local'])
+if (dev.error) throw dev.error
 process.exit(dev.status ?? 1)

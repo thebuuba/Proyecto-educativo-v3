@@ -24,6 +24,7 @@ import { Select } from '@/components/ui/Select'
 import { getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import {
+  activityAppliesToBlock,
   buildCompactGradeRows,
   competencyBlocks,
   scoreForActivity,
@@ -205,7 +206,7 @@ function StudentGradesDrawer({ student, row, students, activities, records, peri
 }) {
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
   const accent = blockAccents[competencyBlocks.findIndex((item) => item.id === block.id)] ?? blockAccents[0]
-  const blockActivities = activities.filter((item) => item.competencyBlockId === block.id)
+  const blockActivities = activities.filter((item) => activityAppliesToBlock(item, block.id))
 
   return <Modal title="Detalle de calificaciones" onClose={onClose} hideHeader overlayClassName="items-stretch justify-end p-0 bg-slate-950/35" className="h-full max-h-none max-w-[54rem] rounded-none border-y-0 border-r-0" contentClassName="p-0">
     <div className="flex min-h-full flex-col bg-slate-50/70">

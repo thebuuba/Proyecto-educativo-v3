@@ -35,7 +35,7 @@ import { useCourses } from '@/modules/courses/hooks/useCourses'
 import { ActivityInfoModal } from '@/modules/grading/components/ActivityInfoModal'
 import { getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
-import { competencyBlocks, scoreForActivity } from '@/modules/grading/utils/competencyGrades'
+import { activityAppliesToBlock, competencyBlocks, scoreForActivity } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 import { getSubjectPalette } from '@/utils/subjectPalette'
 
@@ -152,8 +152,8 @@ export function GroupedSubjectActivitiesPage() {
   const groups = competencyBlocks.map((block, index) => ({
     block,
     visual: blockVisuals[index] ?? blockVisuals[0],
-    allActivities: workspace.activities.filter((activity) => activity.competencyBlockId === block.id),
-    visibleActivities: filteredActivities.filter((activity) => activity.competencyBlockId === block.id),
+    allActivities: workspace.activities.filter((activity) => activityAppliesToBlock(activity, block.id)),
+    visibleActivities: filteredActivities.filter((activity) => activityAppliesToBlock(activity, block.id)),
   }))
   const visibleGroups = groups.filter(({ block, visibleActivities }) => (blockFilter === 'all' || blockFilter === block.id) && visibleActivities.length > 0)
 

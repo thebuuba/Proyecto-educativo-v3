@@ -910,6 +910,7 @@ export type Database = {
           activity_date: string | null
           activity_type: string
           competency_block_id: string
+          competency_block_weights: Json
           created_at: string
           created_by: string | null
           description: string
@@ -937,6 +938,7 @@ export type Database = {
           activity_date?: string | null
           activity_type?: string
           competency_block_id: string
+          competency_block_weights?: Json
           created_at?: string
           created_by?: string | null
           description?: string
@@ -964,6 +966,7 @@ export type Database = {
           activity_date?: string | null
           activity_type?: string
           competency_block_id?: string
+          competency_block_weights?: Json
           created_at?: string
           created_by?: string | null
           description?: string

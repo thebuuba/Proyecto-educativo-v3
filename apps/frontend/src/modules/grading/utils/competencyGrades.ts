@@ -82,10 +82,24 @@ export function getRecoveryInfoFromRecordName(value: string) {
   return { blockId: parts[2], periodId: parts[3] }
 }
 
+export function activityCompetencyWeights(activity: GradingActivity) {
+  const entries = Object.entries(activity.competencyBlockWeights ?? {})
+    .filter(([blockId, weight]) => competencyBlocks.some((block) => block.id === blockId) && Number.isFinite(weight) && weight > 0)
+  return entries.length > 0 ? Object.fromEntries(entries) : { [activity.competencyBlockId]: 1 }
+}
+
+export function activityWeightForBlock(activity: GradingActivity, blockId: string) {
+  return activityCompetencyWeights(activity)[blockId] ?? 0
+}
+
+export function activityAppliesToBlock(activity: GradingActivity, blockId: string) {
+  return activityWeightForBlock(activity, blockId) > 0
+}
+
 export function sumActivityMaxScore(activities: GradingActivity[], blockId: string) {
   return activities
-    .filter((activity) => activity.competencyBlockId === blockId)
-    .reduce((total, activity) => total + activity.maxScore, 0)
+    .filter((activity) => activityAppliesToBlock(activity, blockId))
+    .reduce((total, activity) => total + activity.maxScore * activityWeightForBlock(activity, blockId), 0)
 }
 
 export function scoreForActivity(records: GradeRecordRow[], enrollmentId: string, activityId: string) {
@@ -107,16 +121,17 @@ export function buildCompactGradeRows(
     let scoredActivities = 0
 
     competencyBlocks.forEach((block) => {
-      const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+      const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
       let blockEarned = 0
       let blockPossible = 0
       blockActivities.forEach((activity) => {
         const record = scoreForActivity(records, student.enrollmentId, activity.id)
         if (!record) return
-        blockEarned += record.score
-        blockPossible += record.maxScore || activity.maxScore
-        earned += record.score
-        possible += record.maxScore || activity.maxScore
+        const weight = activityWeightForBlock(activity, block.id)
+        blockEarned += record.score * weight
+        blockPossible += (record.maxScore || activity.maxScore) * weight
+        earned += record.score * weight
+        possible += (record.maxScore || activity.maxScore) * weight
         scoredActivities += 1
       })
       blockAverages[block.id] = blockPossible > 0 ? Math.round((blockEarned / blockPossible) * 100) : null
@@ -156,11 +171,11 @@ export function blockTotal(input: {
   config?: GradeCalculationConfig
 }) {
   const activities = input.activities
-    .filter((activity) => activity.competencyBlockId === input.blockId)
+    .filter((activity) => activityAppliesToBlock(activity, input.blockId))
   if (activities.length === 0) return 0
   const total = activities.reduce((sum, activity) => {
       const record = scoreForActivity(input.records, input.enrollmentId, activity.id)
-      return sum + (record?.score ?? 0)
+      return sum + (record?.score ?? 0) * activityWeightForBlock(activity, input.blockId)
     }, 0)
   const config = input.config ?? defaultGradeCalculationConfig
   if (config.blockMethod === 'average') return total / activities.length
