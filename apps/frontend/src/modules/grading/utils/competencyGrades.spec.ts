@@ -97,6 +97,23 @@ describe('multi-block grading', () => {
     expect(blockTotal({ activities: [weighted], blockId: 'b1', enrollmentId: 'enrollment-1', records: [grade()] })).toBeCloseTo(22.4)
     expect(blockTotal({ activities: [weighted], blockId: 'b2', enrollmentId: 'enrollment-1', records: [grade()] })).toBeCloseTo(9.6)
   })
+
+  it('counts a shared graded activity once and keeps an ungraded activity pending', () => {
+    const shared = { ...activity, maxScore: 100, competencyBlockWeights: { b1: 1, b2: 1 } }
+    const pending = { ...activity, id: 'activity-2', maxScore: 100 }
+    const student = { enrollmentId: 'enrollment-1', studentId: 'student-1', studentCode: '1', firstName: 'Ana', lastName: 'Pérez' }
+    const rows = buildCompactGradeRows([student], [shared, shared, pending], [grade({ score: 100, maxScore: 100 })])
+
+    expect(rows[0].average).toBe(100)
+    expect(rows[0].status).toBe('En proceso')
+
+    const completed = buildCompactGradeRows([student], [shared, shared, pending], [
+      grade({ score: 100, maxScore: 100 }),
+      grade({ id: 'grade-2', evaluationActivityId: pending.id, assessmentName: activityRecordName(pending), score: 0, maxScore: 100 }),
+    ])
+    expect(completed[0].average).toBe(67)
+    expect(completed[0].status).toBe('Calificado')
+  })
 })
 
 describe('persistencia y presentación de celdas', () => {

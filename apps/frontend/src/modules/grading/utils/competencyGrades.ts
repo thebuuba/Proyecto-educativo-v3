@@ -114,14 +114,15 @@ export function buildCompactGradeRows(
   activities: GradingActivity[],
   records: GradeRecordRow[],
 ): CompactGradeRow[] {
+  const uniqueActivities = [...new Map(activities.map((activity) => [activity.id, activity])).values()]
   return students.map((student, index) => {
     const blockAverages: Record<string, number | null> = {}
     let earned = 0
     let possible = 0
-    let scoredActivities = 0
+    const scoredActivities = new Set<string>()
 
     competencyBlocks.forEach((block) => {
-      const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
+      const blockActivities = uniqueActivities.filter((activity) => activityAppliesToBlock(activity, block.id))
       let blockEarned = 0
       let blockPossible = 0
       blockActivities.forEach((activity) => {
@@ -132,7 +133,7 @@ export function buildCompactGradeRows(
         blockPossible += (record.maxScore || activity.maxScore) * weight
         earned += record.score * weight
         possible += (record.maxScore || activity.maxScore) * weight
-        scoredActivities += 1
+        scoredActivities.add(activity.id)
       })
       blockAverages[block.id] = blockPossible > 0 ? Math.round((blockEarned / blockPossible) * 100) : null
     })
@@ -144,7 +145,7 @@ export function buildCompactGradeRows(
       lastName: student.lastName,
       blockAverages,
       average: possible > 0 ? Math.round((earned / possible) * 100) : null,
-      status: scoredActivities === 0 ? 'Sin evaluar' : scoredActivities < activities.length ? 'En proceso' : 'Calificado',
+      status: scoredActivities.size === 0 ? 'Sin evaluar' : scoredActivities.size < uniqueActivities.length ? 'En proceso' : 'Calificado',
     }
   })
 }

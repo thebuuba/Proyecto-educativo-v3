@@ -980,7 +980,7 @@ function CourseWorkspace({
   }
 
   return (
-    <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-5">
+    <div className="course-workspace-shell course-overview-workspace w-full min-w-0 max-w-full overflow-x-clip space-y-5">
       <div className="flex items-center justify-between gap-3">
         <button type="button" onClick={onBack} aria-label="Volver a mis cursos" title="Volver a mis cursos" className="inline-flex size-11 items-center justify-center rounded-xl transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15">
           <BackIcon className="size-7" />

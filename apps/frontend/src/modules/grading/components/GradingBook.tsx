@@ -2734,7 +2734,7 @@ function PeriodSummaryView({
   recoveryScores: RecoveryScores
   students: StudentGradeRow[]
 }) {
-  const activities = blockSummaries.flatMap((summary) => summary.activities)
+  const activities = [...new Map(blockSummaries.flatMap((summary) => summary.activities).map((activity) => [activity.id, activity])).values()]
   const rows = buildCompactGradeRows(students, activities, records)
   const evaluatedCells = students.reduce((total, student) => total + activities.filter((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).length, 0)
   const coverage = students.length && activities.length ? Math.round(evaluatedCells / (students.length * activities.length) * 100) : 0
@@ -3342,7 +3342,7 @@ function ActivityBlockHubCard({
   block: (typeof competencyBlocks)[number]
   onSelectBlock: () => void
 }) {
-  const plannedPoints = activities.reduce((sum, activity) => sum + activity.maxScore, 0)
+  const plannedPoints = sumActivityMaxScore(activities, block.id)
 
   return (
     <article className="flex flex-col rounded-2xl bg-card p-4 shadow-sm sm:p-5">
@@ -3359,7 +3359,7 @@ function ActivityBlockHubCard({
       <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
         <span><strong className="font-extrabold text-foreground tabular-nums">{activities.length}</strong> {activities.length === 1 ? 'actividad' : 'actividades'}</span>
         <span className="text-border" aria-hidden="true">•</span>
-        <span><strong className="font-extrabold text-foreground tabular-nums">{plannedPoints}</strong> pts planificados</span>
+        <span><strong className="font-extrabold text-foreground tabular-nums">{formatGrade(plannedPoints)}</strong> pts planificados</span>
       </div>
 
       <button

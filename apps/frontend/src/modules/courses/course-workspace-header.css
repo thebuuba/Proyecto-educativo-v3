@@ -1,7 +1,7 @@
 /* Organización superior del espacio interno de un curso.
    Toma la jerarquía del panel "Mis cursos" sin copiar su diseño literal. */
 
-main .space-y-5:has(> button > .lucide-arrow-left):has(> header:first-of-type) {
+main .course-overview-workspace {
   row-gap: 0.9rem;
 }
 
@@ -9,7 +9,7 @@ main .space-y-5:has(> button > .lucide-arrow-left):has(> header:first-of-type) {
 /* Volver                                                                      */
 /* -------------------------------------------------------------------------- */
 
-main .space-y-5:has(> button > .lucide-arrow-left) > button:first-child {
+main .course-overview-workspace > div:first-child > button:first-child {
   display: inline-flex !important;
   width: fit-content;
   min-height: 2.35rem;
@@ -21,18 +21,18 @@ main .space-y-5:has(> button > .lucide-arrow-left) > button:first-child {
   border-radius: 11px;
   background: var(--card);
   color: color-mix(in srgb, var(--primary) 88%, var(--foreground));
-  box-shadow: 0 8px 22px -20px rgb(15 23 42 / 45%);
+  box-shadow: 0 8px 22px -20px color-mix(in srgb, var(--foreground) 45%, transparent);
   font-size: 0.72rem !important;
   font-weight: 800 !important;
   transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > button:first-child:hover {
+main .course-overview-workspace > div:first-child > button:first-child:hover {
   border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
   background: color-mix(in srgb, var(--primary) 4%, var(--card));
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > button:first-child:active {
+main .course-overview-workspace > div:first-child > button:first-child:active {
   transform: translateY(1px);
 }
 
@@ -41,7 +41,7 @@ main .space-y-5:has(> button > .lucide-arrow-left) > button:first-child:active {
 /* -------------------------------------------------------------------------- */
 
 /* Ya no parece una tarjeta gigante: funciona como encabezado de página. */
-main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type {
+main .course-overview-workspace > header:first-of-type {
   overflow: visible;
   min-height: 4.5rem;
   border: 0 !important;
@@ -51,40 +51,40 @@ main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type {
   box-shadow: none !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div {
+main .course-overview-workspace > header:first-of-type > div {
   min-height: 4rem;
   align-items: center !important;
   gap: 1rem !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type > div > div:first-child {
+main .course-overview-workspace > header:first-of-type > div > div:first-child {
   gap: 0.8rem !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type span[style] {
+main .course-overview-workspace > header:first-of-type span[style] {
   width: 3.15rem !important;
   height: 3.15rem !important;
   border-radius: 14px !important;
-  box-shadow: 0 9px 20px -17px rgb(15 23 42 / 55%) !important;
+  box-shadow: 0 9px 20px -17px color-mix(in srgb, var(--foreground) 55%, transparent) !important;
   font-size: 1rem !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type h1 {
+main .course-overview-workspace > header:first-of-type h1 {
   font-size: 1.42rem !important;
   line-height: 1.08 !important;
   letter-spacing: -0.035em !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type h1 + span {
+main .course-overview-workspace > header:first-of-type h1 + span {
   padding: 0.2rem 0.48rem !important;
   border-radius: 999px !important;
-  background: color-mix(in srgb, #65b95d 12%, white) !important;
-  color: #43843e !important;
+  background: color-mix(in srgb, var(--success) 12%, white) !important;
+  color: var(--foreground) !important;
   font-size: 0.54rem !important;
   letter-spacing: 0.045em !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type p {
+main .course-overview-workspace > header:first-of-type p {
   margin-top: 0.35rem !important;
   color: var(--muted-foreground) !important;
   font-size: 0.67rem !important;
@@ -96,7 +96,7 @@ main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type p {
 /* -------------------------------------------------------------------------- */
 
 /* Equivale a la franja-resumen de "Mis cursos": compacta y secundaria. */
-main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type {
+main .course-overview-workspace > section:first-of-type {
   min-height: 4rem;
   align-items: center !important;
   gap: 0.75rem !important;
@@ -104,25 +104,25 @@ main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type {
   border-radius: 14px !important;
   padding: 0.68rem 0.85rem !important;
   background: var(--card) !important;
-  box-shadow: 0 8px 24px -24px rgb(15 23 42 / 42%) !important;
+  box-shadow: 0 8px 24px -24px color-mix(in srgb, var(--foreground) 42%, transparent) !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type > div:first-child {
+main .course-overview-workspace > section:first-of-type > div:first-child {
   gap: 0.65rem !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type > div:first-child > span:first-child {
+main .course-overview-workspace > section:first-of-type > div:first-child > span:first-child {
   width: 2.15rem !important;
   height: 2.15rem !important;
   border-radius: 10px !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type h2 {
+main .course-overview-workspace > section:first-of-type h2 {
   font-size: 0.78rem !important;
   line-height: 1.15;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type p {
+main .course-overview-workspace > section:first-of-type p {
   margin-top: 0.16rem !important;
   font-size: 0.64rem !important;
   line-height: 1.35;
@@ -134,7 +134,7 @@ main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type p {
 
 /* La cabecera de Asignaturas pasa a ser una barra de control, como en el panel
    principal: contexto a la izquierda, acciones a la derecha. */
-main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child {
+main .course-overview-workspace > section:nth-of-type(2) > div:first-child {
   min-height: 4.15rem;
   align-items: center !important;
   gap: 0.8rem !important;
@@ -142,36 +142,36 @@ main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > di
   border-radius: 14px;
   padding: 0.68rem 0.75rem 0.68rem 0.85rem;
   background: var(--card);
-  box-shadow: 0 8px 24px -24px rgb(15 23 42 / 42%);
+  box-shadow: 0 8px 24px -24px color-mix(in srgb, var(--foreground) 42%, transparent);
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child > div:first-child {
+main .course-overview-workspace > section:nth-of-type(2) > div:first-child > div:first-child {
   align-items: center !important;
   gap: 0.65rem !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child > div:first-child > span:first-child {
+main .course-overview-workspace > section:nth-of-type(2) > div:first-child > div:first-child > span:first-child {
   width: 2.15rem !important;
   height: 2.15rem !important;
   border-radius: 10px !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) h2 {
+main .course-overview-workspace > section:nth-of-type(2) h2 {
   font-size: 0.98rem !important;
   line-height: 1.15;
   letter-spacing: -0.015em;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) h2 + p {
+main .course-overview-workspace > section:nth-of-type(2) h2 + p {
   margin-top: 0.15rem !important;
   font-size: 0.63rem !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child > div:last-child {
+main .course-overview-workspace > section:nth-of-type(2) > div:first-child > div:last-child {
   gap: 0.42rem !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child button {
+main .course-overview-workspace > section:nth-of-type(2) > div:first-child button {
   height: 2.3rem !important;
   min-height: 2.3rem !important;
   border-radius: 10px !important;
@@ -180,7 +180,7 @@ main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > di
   font-size: 0.7rem !important;
 }
 
-main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:nth-child(2) {
+main .course-overview-workspace > section:nth-of-type(2) > div:nth-child(2) {
   margin-top: 0.95rem !important;
 }
 
@@ -189,55 +189,55 @@ main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > di
 /* -------------------------------------------------------------------------- */
 
 @media (max-width: 900px) {
-  main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child {
+  main .course-overview-workspace > section:nth-of-type(2) > div:first-child {
     align-items: flex-start !important;
   }
 
-  main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child > div:last-child {
+  main .course-overview-workspace > section:nth-of-type(2) > div:first-child > div:last-child {
     width: 100%;
   }
 }
 
 @media (max-width: 640px) {
-  main .space-y-5:has(> button > .lucide-arrow-left):has(> header:first-of-type) {
+  main .course-overview-workspace {
     row-gap: 0.75rem;
   }
 
-  main .space-y-5:has(> button > .lucide-arrow-left) > button:first-child {
+  main .course-overview-workspace > div:first-child > button:first-child {
     min-height: 2.2rem;
     padding-inline: 0.68rem !important;
   }
 
-  main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type {
+  main .course-overview-workspace > header:first-of-type {
     min-height: 4rem;
     padding-inline: 0.05rem !important;
   }
 
-  main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type span[style] {
+  main .course-overview-workspace > header:first-of-type span[style] {
     width: 2.8rem !important;
     height: 2.8rem !important;
     border-radius: 12px !important;
   }
 
-  main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type h1 {
+  main .course-overview-workspace > header:first-of-type h1 {
     font-size: 1.15rem !important;
   }
 
-  main .space-y-5:has(> button > .lucide-arrow-left) > header:first-of-type p {
+  main .course-overview-workspace > header:first-of-type p {
     white-space: normal !important;
   }
 
-  main .space-y-5:has(> button > .lucide-arrow-left) > section:first-of-type,
-  main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child {
+  main .course-overview-workspace > section:first-of-type,
+  main .course-overview-workspace > section:nth-of-type(2) > div:first-child {
     border-radius: 12px !important;
   }
 
-  main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child > div:last-child {
+  main .course-overview-workspace > section:nth-of-type(2) > div:first-child > div:last-child {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  main .space-y-5:has(> button > .lucide-arrow-left) > section:nth-of-type(2) > div:first-child > div:last-child button {
+  main .course-overview-workspace > section:nth-of-type(2) > div:first-child > div:last-child button {
     width: 100%;
     justify-content: center;
   }

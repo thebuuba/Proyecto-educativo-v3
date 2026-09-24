@@ -200,6 +200,9 @@ export function WeeklyAttendanceCard({ attendance }: WeeklyAttendanceCardProps) 
                 >
                   {day.label}
                 </p>
+                <p className="text-xs font-semibold tabular-nums text-foreground">
+                  {day.value === null ? '—' : `${day.value}%`}
+                </p>
               </div>
             ))}
           </div>
