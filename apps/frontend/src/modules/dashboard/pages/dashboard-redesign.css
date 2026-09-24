@@ -124,7 +124,7 @@
 
 .home-shortcut-list {
   display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
   gap: 12px;
   margin-top: 16px;
 }
@@ -146,7 +146,7 @@
   width: 64px;
   height: 64px;
   place-items: center;
-  border-radius: 16px;
+  border-radius: 24px;
   background: var(--card);
   color: white;
   box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 6%, transparent);
@@ -160,7 +160,7 @@
   width: 36px;
   height: 36px;
   place-items: center;
-  border-radius: 12px;
+  border-radius: 50%;
   background: var(--palette-sky);
 }
 
@@ -203,6 +203,7 @@
   display: none;
 }
 .home-shortcut-add .home-shortcut-icon {
+  border-radius: 50%;
   border: 2px dashed color-mix(in srgb, var(--muted-foreground) 28%, var(--background));
   background: transparent;
   color: var(--muted-foreground);
