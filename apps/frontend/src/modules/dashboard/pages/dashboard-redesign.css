@@ -42,7 +42,7 @@
 
 .home-class-card {
   padding: 20px;
-  background: color-mix(in srgb, var(--primary) 53%, var(--foreground));
+  background: var(--primary);
   color: white;
   box-shadow: 0 10px 25px color-mix(in srgb, var(--primary) 16%, transparent);
 }
@@ -52,7 +52,7 @@
   width: 40px;
   height: 40px;
   place-items: center;
-  border-radius: 50%;
+  border-radius: 12px;
   background: white;
   color: var(--primary);
 }
@@ -78,7 +78,6 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid var(--border);
   background: var(--card);
   box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 5%, transparent);
 }
@@ -88,14 +87,14 @@
   width: 40px;
   height: 40px;
   place-items: center;
-  border-radius: 50%;
-  background: var(--warning-container);
-  color: var(--foreground);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--palette-orange) 15%, white);
+  color: var(--palette-orange);
 }
 
-.home-metric-card:last-child .home-metric-icon {
-  background: var(--secondary-container);
-  color: var(--secondary);
+.home-metric-icon.home-tone-violet {
+  background: color-mix(in srgb, var(--palette-violet) 15%, white);
+  color: var(--palette-violet);
 }
 
 .home-progress-ring {
@@ -124,9 +123,9 @@
 }
 
 .home-shortcut-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 12px;
   margin-top: 16px;
 }
 
@@ -144,43 +143,51 @@
 
 .home-shortcut-icon {
   display: grid;
-  width: 65px;
-  height: 65px;
+  width: 64px;
+  height: 64px;
   place-items: center;
-  border: 1px solid var(--border);
-  border-radius: 23px;
+  border-radius: 16px;
   background: var(--card);
-  color: var(--primary);
+  color: white;
   box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 6%, transparent);
   transition:
     transform 150ms ease,
     border-color 150ms ease;
 }
 
+.home-shortcut-icon-inner {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--palette-sky);
+}
+
 .home-shortcut:hover .home-shortcut-icon {
   transform: translateY(-2px);
   border-color: var(--primary);
 }
-.home-shortcut-horario .home-shortcut-icon {
-  color: var(--secondary);
+.home-shortcut-horario .home-shortcut-icon-inner {
+  background: var(--palette-violet);
 }
-.home-shortcut-asistencia .home-shortcut-icon {
-  color: var(--success);
+.home-shortcut-asistencia .home-shortcut-icon-inner {
+  background: var(--palette-green);
 }
-.home-shortcut-calificaciones .home-shortcut-icon {
-  color: var(--primary);
+.home-shortcut-calificaciones .home-shortcut-icon-inner {
+  background: var(--palette-teal);
 }
-.home-shortcut-actividades .home-shortcut-icon {
-  color: var(--warning);
+.home-shortcut-actividades .home-shortcut-icon-inner {
+  background: var(--palette-gold);
 }
-.home-shortcut-planificaciones .home-shortcut-icon {
-  color: var(--destructive);
+.home-shortcut-planificaciones .home-shortcut-icon-inner {
+  background: var(--palette-orange);
 }
-.home-shortcut-bitacora .home-shortcut-icon {
-  color: var(--destructive);
+.home-shortcut-bitacora .home-shortcut-icon-inner {
+  background: var(--palette-rose);
 }
-.home-shortcut-reportes .home-shortcut-icon {
-  color: var(--foreground);
+.home-shortcut-reportes .home-shortcut-icon-inner {
+  background: var(--palette-slate);
 }
 
 .home-shortcut-add summary {
@@ -232,7 +239,7 @@
 
 .home-recent-grid {
   display: grid;
-  grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr) minmax(0, 0.65fr) 75px;
+  grid-template-columns: minmax(0, 1fr) 180px 110px 90px;
   align-items: center;
   gap: 12px;
 }
@@ -271,8 +278,8 @@
   height: 32px;
   flex: none;
   place-items: center;
-  border-radius: 50%;
-  background: var(--warning);
+  border-radius: 10px;
+  background: var(--palette-gold);
   color: white;
 }
 
@@ -280,7 +287,7 @@
   background: var(--success);
 }
 .home-recent-grade {
-  background: var(--secondary);
+  background: var(--palette-violet);
 }
 .home-recent-report {
   background: var(--primary);
@@ -288,7 +295,7 @@
 
 .home-bottom-grid {
   display: grid;
-  grid-template-columns: minmax(0, 2.5fr) minmax(270px, 1fr);
+  grid-template-columns: minmax(0, 1fr) 320px;
   gap: 16px;
   margin-top: 30px;
 }
@@ -299,21 +306,40 @@
 
 .home-bottom-card {
   display: flex;
-  min-height: 260px;
+  min-height: 306px;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid var(--border);
   border-radius: 24px;
   background: var(--card);
   box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 5%, transparent);
 }
 
+.home-journal-icon {
+  background: color-mix(in srgb, var(--palette-rose) 15%, white);
+  color: var(--palette-rose);
+}
+
+.home-pulse-alert {
+  background: color-mix(in srgb, var(--palette-orange) 9%, white);
+}
+
+.home-pulse-icon {
+  background: var(--palette-orange);
+}
+
+.home-pulse-alert p:first-child {
+  color: #c2410c;
+}
+
+.home-pulse-alert p:last-child {
+  color: #ea580c;
+}
+
 .home-agenda {
   position: sticky;
   top: 90px;
-  min-height: 620px;
+  min-height: 800px;
   padding: 24px;
-  border: 1px solid var(--border);
   border-radius: 24px;
   background: var(--card);
   box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 5%, transparent);
@@ -382,7 +408,7 @@
   background: var(--muted);
 }
 .home-agenda-class.is-current {
-  background: color-mix(in srgb, var(--primary) 53%, var(--foreground));
+  background: var(--primary);
   color: white;
   box-shadow: 0 5px 9px color-mix(in srgb, var(--primary) 15%, transparent);
 }
@@ -414,9 +440,7 @@
     gap: 12px;
   }
   .home-shortcut-list {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 16px 24px;
+    gap: 16px 8px;
   }
 }
 
@@ -449,6 +473,9 @@
   .home-bottom-grid {
     grid-template-columns: 1fr;
   }
+  .home-shortcut-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
   .home-recent-grid {
     grid-template-columns: minmax(0, 1fr) 75px;
   }
@@ -459,6 +486,9 @@
 }
 
 @media (max-width: 540px) {
+  .home-shortcut-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .home-top-cards,
   .home-agenda-list {
     grid-template-columns: 1fr;

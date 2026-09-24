@@ -1,4 +1,4 @@
-import { ChevronsLeft, ChevronsRight, GraduationCap, LogOut, Settings2, X } from 'lucide-react'
+import { ChevronsLeft, ChevronsRight, GraduationCap, LogOut, Settings, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
@@ -48,6 +48,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
       <NavLink
         key={item.path}
         to={item.path}
+        data-nav-path={item.path}
         end={item.path === '/inicio'}
         data-tour={
           item.path === '/cursos'
@@ -94,12 +95,12 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
       <aside
         data-sidebar-expanded={isExpanded}
         className={cn(
-          'sidebar-shell fixed inset-y-0 left-0 z-40 flex w-[255px] flex-col border-r border-border bg-card lg:translate-x-0',
+          'sidebar-shell fixed inset-y-0 left-0 z-40 flex w-[256px] flex-col border-r border-border bg-card lg:translate-x-0',
           !isExpanded && 'lg:w-[76px]',
           isOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className="sidebar-header flex h-[73px] shrink-0 items-center gap-3 px-5">
+        <div className="sidebar-header flex h-20 shrink-0 items-center gap-3 px-5">
           <NavLink
             to="/inicio"
             onClick={onClose}
@@ -110,9 +111,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
               <GraduationCap size={21} aria-hidden="true" />
             </span>
             <span className="sidebar-copy min-w-0 leading-tight">
-              <strong className="block text-[18px] font-extrabold text-foreground">
-                Aula Base
-              </strong>
+              <strong className="block text-[18px] font-semibold text-foreground">Aula Base</strong>
               <small className="block text-[11px] text-muted-foreground">Sistema docente</small>
             </span>
           </NavLink>
@@ -153,7 +152,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             className={({ isActive }) => cn('sidebar-link', isActive && 'is-active')}
           >
             <span className="sidebar-link-icon">
-              <Settings2 size={18} strokeWidth={1.8} />
+              <Settings size={18} strokeWidth={1.8} />
             </span>
             <span className="sidebar-copy sidebar-link-title">Ajustes</span>
           </NavLink>

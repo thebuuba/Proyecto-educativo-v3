@@ -1,32 +1,32 @@
 :root {
   /*
-   * Paleta oficial de AulaBase.
-   * Los cinco colores de marca se complementan únicamente con blanco y un
-   * neutral oscuro para texto. Los tonos suaves se derivan con color-mix.
+   * Paleta de la referencia de Inicio de AulaBase.
+   * Azul para acciones, tonos de módulo para iconos y neutros suaves para superficies.
    */
-  --palette-blue: #3CB7E2;
-  --palette-green: #66D64F;
-  --palette-coral: #F6886F;
-  --palette-gold: #F9C46B;
-  --palette-gray: #E3E3E3;
-  --palette-white: #FFFFFF;
-  --palette-text: #2F3542;
-  --page-background: color-mix(
-    in srgb,
-    var(--palette-blue) 8%,
-    color-mix(in srgb, var(--palette-gray) 18%, var(--palette-white))
-  );
+  --palette-blue: hsl(207 85% 55%);
+  --palette-green: #10b981;
+  --palette-coral: hsl(4 80% 60%);
+  --palette-gold: #fbbf24;
+  --palette-violet: #8b5cf6;
+  --palette-teal: #14b8a6;
+  --palette-rose: #f43f5e;
+  --palette-orange: #f97316;
+  --palette-slate: #64748b;
+  --palette-gray: hsl(214 32% 91%);
+  --palette-white: #ffffff;
+  --palette-text: hsl(220 30% 18%);
+  --page-background: hsl(213 45% 96%);
 
   /* Alias heredados para que los módulos existentes consuman la nueva paleta. */
   --palette-surface: var(--palette-white);
   --palette-ink: var(--palette-text);
-  --palette-text-muted: color-mix(in srgb, var(--palette-text) 68%, var(--palette-white));
-  --palette-sky: var(--palette-blue);
+  --palette-text-muted: hsl(218 14% 52%);
+  --palette-sky: #0ea5e9;
   --palette-blue-light: color-mix(in srgb, var(--palette-blue) 16%, var(--palette-white));
-  --palette-plum: var(--palette-coral);
-  --palette-purple-light: color-mix(in srgb, var(--palette-coral) 20%, var(--palette-white));
-  --palette-lavender: color-mix(in srgb, var(--palette-coral) 16%, var(--palette-white));
-  --palette-lavender-light: color-mix(in srgb, var(--palette-coral) 12%, var(--palette-white));
+  --palette-plum: var(--palette-violet);
+  --palette-purple-light: color-mix(in srgb, var(--palette-violet) 20%, var(--palette-white));
+  --palette-lavender: color-mix(in srgb, var(--palette-violet) 16%, var(--palette-white));
+  --palette-lavender-light: color-mix(in srgb, var(--palette-violet) 12%, var(--palette-white));
   --palette-lilac-light: color-mix(in srgb, var(--palette-gray) 55%, var(--palette-white));
   --palette-olive: var(--palette-green);
   --palette-lime: var(--palette-green);
@@ -35,29 +35,28 @@
   --palette-yellow: var(--palette-gold);
   --palette-yellow-soft: var(--palette-gold);
   --palette-yellow-cream: color-mix(in srgb, var(--palette-gold) 24%, var(--palette-white));
-  --palette-orange: var(--palette-coral);
 
   /* Superficies: fondo muy claro, tarjetas blancas y texto oscuro. */
   --background: var(--page-background);
   --on-background: var(--palette-text);
   --surface: var(--palette-white);
   --on-surface: var(--palette-text);
-  --surface-variant: color-mix(in srgb, var(--palette-gray) 72%, var(--palette-white));
-  --on-surface-variant: color-mix(in srgb, var(--palette-text) 72%, var(--palette-white));
+  --surface-variant: hsl(214 35% 95%);
+  --on-surface-variant: var(--palette-text-muted);
 
   /* Azul: identidad, navegación, enlaces y acciones principales. */
   --primary: var(--palette-blue);
   --primary-variant: color-mix(in srgb, var(--palette-blue) 82%, var(--palette-text));
-  --on-primary: var(--palette-text);
-  --primary-container: color-mix(in srgb, var(--palette-blue) 16%, var(--palette-white));
+  --on-primary: var(--palette-white);
+  --primary-container: hsl(207 90% 95%);
   --on-primary-container: var(--palette-text);
 
-  /* Coral: acento secundario y llamadas de atención no críticas. */
-  --secondary: var(--palette-coral);
-  --secondary-variant: color-mix(in srgb, var(--palette-coral) 82%, var(--palette-text));
-  --on-secondary: var(--palette-text);
-  --secondary-container: color-mix(in srgb, var(--palette-coral) 16%, var(--palette-white));
-  --on-secondary-container: var(--palette-text);
+  /* Superficie secundaria azul suave de la referencia. Los tonos de módulo tienen tokens propios. */
+  --secondary: hsl(210 60% 96%);
+  --secondary-variant: hsl(210 50% 91%);
+  --on-secondary: hsl(207 70% 38%);
+  --secondary-container: hsl(210 60% 96%);
+  --on-secondary-container: hsl(207 70% 38%);
 
   /* Verde: éxito, completado, aprobado y sincronizado. */
   --tertiary: var(--palette-green);
@@ -73,7 +72,7 @@
 
   /* Coral también representa error/destructivo; la forma e iconografía diferencian el estado. */
   --destructive: var(--palette-coral);
-  --destructive-foreground: var(--palette-text);
+  --destructive-foreground: var(--palette-white);
   --destructive-hover: color-mix(in srgb, var(--palette-coral) 78%, var(--palette-text));
   --danger-light: color-mix(in srgb, var(--palette-coral) 16%, var(--palette-white));
 
@@ -83,26 +82,26 @@
   --card-foreground: var(--palette-text);
   --popover: var(--palette-white);
   --popover-foreground: var(--palette-text);
-  --primary-foreground: var(--palette-text);
-  --secondary-foreground: var(--palette-text);
-  --muted: color-mix(in srgb, var(--palette-gray) 66%, var(--palette-white));
-  --muted-foreground: color-mix(in srgb, var(--palette-text) 70%, var(--palette-white));
-  --accent: var(--palette-coral);
-  --accent-foreground: var(--palette-text);
+  --primary-foreground: var(--palette-white);
+  --secondary-foreground: hsl(207 70% 38%);
+  --muted: hsl(214 35% 95%);
+  --muted-foreground: var(--palette-text-muted);
+  --accent: hsl(207 90% 95%);
+  --accent-foreground: hsl(207 80% 42%);
   --success: var(--palette-green);
-  --success-foreground: var(--palette-text);
+  --success-foreground: var(--palette-white);
   --border: var(--palette-gray);
   --input: var(--palette-gray);
   --ring: var(--palette-blue);
-  --accent-hover: color-mix(in srgb, var(--palette-coral) 82%, var(--palette-text));
+  --accent-hover: color-mix(in srgb, var(--palette-blue) 18%, var(--palette-white));
   --primary-hover: color-mix(in srgb, var(--palette-blue) 82%, var(--palette-text));
 
   /* Navegación: blanca y tranquila; azul solo para selección y acción. */
   --sidebar: var(--palette-white);
   --sidebar-foreground: var(--palette-text);
   --sidebar-primary: var(--palette-blue);
-  --sidebar-primary-foreground: var(--palette-text);
-  --sidebar-accent: color-mix(in srgb, var(--palette-blue) 14%, var(--palette-white));
+  --sidebar-primary-foreground: var(--palette-white);
+  --sidebar-accent: var(--primary-container);
   --sidebar-accent-foreground: var(--palette-text);
   --sidebar-border: var(--palette-gray);
   --sidebar-ring: var(--palette-blue);

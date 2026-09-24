@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
 
 @theme {
   --color-background: var(--background);
@@ -66,108 +66,22 @@
   --color-brand-purple-light: var(--palette-purple-light);
   --color-brand-lilac-light: var(--palette-lilac-light);
   --color-brand-orange: var(--palette-orange);
-  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:
+    'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 :root {
-  /* Paleta definitiva de AulaBase. Los componentes consumen los tokens
-     semánticos de abajo y no necesitan conocer valores hexadecimales. */
-  --palette-white: #FFFFFF;
-  --palette-surface: #F8F8F6;
-  --palette-ink: #252321;
-  --palette-text-muted: #68635F;
-  --palette-yellow-cream: #FFF3C4;
-  --palette-yellow-soft: #FFE58A;
-  --palette-yellow: #FFD34E;
-  --palette-olive: #A7B638;
-  --palette-lime: #CDD944;
-  --palette-green-cream: #F1F3C4;
-  --palette-green-pale: #E4E98F;
-  --palette-lavender-light: #F6E6FA;
-  --palette-lavender: #E9C8F2;
-  --palette-purple-light: #DC8CEC;
-  --palette-lilac-light: #F8EBFB;
-  --palette-blue: #236A96;
-  --palette-sky: #25A8D8;
-  --palette-blue-light: #DDF1FA;
-  --palette-plum: #7B3F8C;
-  --palette-orange: #F27032;
-
-  --background: var(--palette-surface);
-  --on-background: var(--palette-ink);
-  --surface: var(--palette-white);
-  --on-surface: var(--palette-ink);
-  --surface-variant: var(--palette-surface);
-  --on-surface-variant: var(--palette-text-muted);
-  --primary: var(--palette-blue);
-  --primary-variant: #1F5D84;
-  --on-primary: var(--palette-white);
-  --primary-container: var(--palette-blue-light);
-  --on-primary-container: var(--palette-ink);
-  --secondary: var(--palette-plum);
-  --secondary-variant: #633372;
-  --on-secondary: var(--palette-white);
-  --secondary-container: var(--palette-lavender-light);
-  --on-secondary-container: var(--palette-ink);
-  --tertiary: var(--palette-olive);
-  --on-tertiary: var(--palette-ink);
-  --tertiary-container: var(--palette-green-cream);
-  --on-tertiary-container: var(--palette-ink);
-  --warning-container: var(--palette-yellow-cream);
-  --on-warning-container: var(--palette-ink);
-  --foreground: var(--on-background);
-  --card: var(--surface);
-  --card-foreground: var(--on-surface);
-  --popover: var(--surface);
-  --popover-foreground: var(--on-surface);
-  --primary-foreground: var(--on-primary);
-  --secondary-foreground: var(--on-secondary-container);
-  --muted: var(--surface-variant);
-  --muted-foreground: var(--on-surface-variant);
-  --accent: var(--secondary);
-  --accent-foreground: var(--on-secondary);
-  --destructive: #b42318;
-  --destructive-foreground: #ffffff;
-  --success: var(--tertiary);
-  --success-foreground: var(--on-tertiary);
-  --warning: var(--palette-yellow);
-  --warning-foreground: var(--palette-ink);
-  --border: #E2DED8;
-  --input: #D2CDC6;
-  --ring: var(--palette-blue);
-  --accent-hover: var(--secondary-variant);
-  --primary-hover: var(--primary-variant);
-  --destructive-hover: #921c14;
-  --sidebar: var(--palette-white);
-  --sidebar-foreground: var(--palette-ink);
-  --sidebar-primary: var(--palette-blue);
-  --sidebar-primary-foreground: var(--palette-white);
-  --sidebar-accent: var(--palette-blue-light);
-  --sidebar-accent-foreground: var(--palette-ink);
-  --sidebar-border: #E2DED8;
-  --sidebar-ring: var(--palette-blue);
-  --primary-light: var(--palette-blue-light);
-  --primary-border: var(--palette-sky);
-  --success-light: var(--palette-green-cream);
-  --warning-light: var(--palette-yellow-cream);
-  --danger-light: #fde8e5;
   --social-fb: #1877f2;
-  --bg-auth-outer: var(--palette-blue-light);
-  --bg-left-panel: var(--palette-white);
-  --bg-right-panel: var(--palette-surface);
-  --bg-page: var(--palette-surface);
-  --bg-surface: var(--palette-white);
-  --bg-alt: var(--palette-surface);
-  --text-heading: var(--palette-ink);
-  --text-body: var(--palette-ink);
-  --text-muted: var(--palette-text-muted);
-  --text-faint: var(--palette-text-muted);
-  --text-placeholder: #7B746E;
 
   color: var(--foreground);
   background: var(--background);
   font-family:
-    "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    'Poppins',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
     sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -281,14 +195,31 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes attentionConflictPulse {
-  0%, 100% { border-color: var(--warning); box-shadow: none; }
-  16%, 50%, 84% { border-color: var(--destructive); box-shadow: 0 0 0 3px color-mix(in srgb, var(--destructive) 24%, transparent); }
-  33%, 67% { border-color: var(--warning); box-shadow: none; }
+  0%,
+  100% {
+    border-color: var(--warning);
+    box-shadow: none;
+  }
+  16%,
+  50%,
+  84% {
+    border-color: var(--destructive);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--destructive) 24%, transparent);
+  }
+  33%,
+  67% {
+    border-color: var(--warning);
+    box-shadow: none;
+  }
 }
 
 .attention-conflict-pulse {
@@ -304,24 +235,46 @@ body {
 }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(2rem); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .fu {
   animation: fadeUp 0.5s ease both;
 }
 
-.fu1 { animation-delay: 0.05s; }
-.fu2 { animation-delay: 0.12s; }
-.fu3 { animation-delay: 0.19s; }
-.fu4 { animation-delay: 0.26s; }
-.fu5 { animation-delay: 0.33s; }
-.fu6 { animation-delay: 0.39s; }
+.fu1 {
+  animation-delay: 0.05s;
+}
+.fu2 {
+  animation-delay: 0.12s;
+}
+.fu3 {
+  animation-delay: 0.19s;
+}
+.fu4 {
+  animation-delay: 0.26s;
+}
+.fu5 {
+  animation-delay: 0.33s;
+}
+.fu6 {
+  animation-delay: 0.39s;
+}
 
 @keyframes pageIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .page-enter {
@@ -356,28 +309,48 @@ body {
 }
 
 @keyframes authPanelOutForward {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes authPanelInForward {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes authPanelOutBack {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes authPanelInBack {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes authScreenFade {
-  from { opacity: 0.72; }
-  to { opacity: 1; }
+  from {
+    opacity: 0.72;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

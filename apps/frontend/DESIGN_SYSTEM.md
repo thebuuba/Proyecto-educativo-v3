@@ -4,15 +4,18 @@ Este documento define la identidad visual de la aplicación. Toda pantalla nueva
 
 ## Paleta oficial
 
-AulaBase usa únicamente estas familias de color dentro de la interfaz del producto:
+AulaBase usa los valores de la referencia de Inicio, definidos en `src/semantic-palette.css`:
 
-- Azul `#3CB7E2`: identidad, navegación, selección, información y acción principal.
-- Verde `#66D64F`: éxito, completado, aprobado, presente y progreso positivo.
-- Coral `#F6886F`: error, incidencia, acción destructiva y acento humano puntual.
-- Amarillo `#F9C46B`: pendiente, próximo, preparación, recordatorio y atención.
-- Gris `#E3E3E3`: estructura, controles secundarios, vacío e inactividad.
+- Azul `hsl(207 85% 55%)`: identidad, navegación, selección, información y acción principal.
+- Verde `#10b981`: éxito, completado y asistencia.
+- Coral `hsl(4 80% 60%)`: error, incidencia y acción destructiva.
+- Amarillo `#fbbf24`: pendiente y actividades.
+- Violeta, turquesa, naranja, rosa y pizarra: identidad puntual de los módulos en iconos y accesos rápidos.
+- Gris `hsl(214 32% 91%)`: estructura, controles secundarios, vacío e inactividad.
 - Blanco `#FFFFFF`: tarjetas, menús, modales y superficies principales.
-- Texto `#2F3542`: títulos y contenido principal.
+- Texto `hsl(220 30% 18%)`: títulos y contenido principal.
+
+La fuente de la interfaz es **Poppins**. El fondo general es `hsl(213 45% 96%)`.
 
 Los tonos suaves deben derivarse mediante tokens CSS o `color-mix`; no se deben introducir nuevas familias cromáticas.
 
@@ -20,13 +23,13 @@ Los tonos suaves deben derivarse mediante tokens CSS o `color-mix`; no se deben 
 
 El color comunica significado, no decoración.
 
-| Intención | Tone | Uso |
-| --- | --- | --- |
-| Información / acción | `info` | navegación, selección, CTA, edición |
-| Correcto / completado | `success` | aprobado, presente, finalizado, sincronizado |
-| Atención / pendiente | `warning` | próximo, pendiente, preparación, recordatorio |
-| Error / incidencia | `danger` | error, ausencia crítica, conflicto, eliminación |
-| Secundario / vacío | `neutral` | archivado, deshabilitado, sin datos, estructura |
+| Intención             | Tone      | Uso                                             |
+| --------------------- | --------- | ----------------------------------------------- |
+| Información / acción  | `info`    | navegación, selección, CTA, edición             |
+| Correcto / completado | `success` | aprobado, presente, finalizado, sincronizado    |
+| Atención / pendiente  | `warning` | próximo, pendiente, preparación, recordatorio   |
+| Error / incidencia    | `danger`  | error, ausencia crítica, conflicto, eliminación |
+| Secundario / vacío    | `neutral` | archivado, deshabilitado, sin datos, estructura |
 
 ## Componentes base
 
@@ -113,7 +116,7 @@ Los bloques C1-C4 son identidad académica dentro de Evaluación; los estados de
 
 ### Asignaturas
 
-Una asignatura puede recibir una variante estable derivada únicamente de las cuatro familias oficiales para facilitar identificación visual. La misma materia debe conservar el mismo color en Horario y en contextos donde identificar materias rápidamente aporte valor.
+Una asignatura puede recibir una variante estable derivada de la paleta oficial para facilitar identificación visual. La misma materia debe conservar el mismo color en Horario y en contextos donde identificar materias rápidamente aporte valor.
 
 El color de una asignatura es identidad, no estado. No reutilizarlo para indicar error, éxito o pendiente.
 
@@ -140,9 +143,9 @@ Esas funciones siempre usan los tokens semánticos oficiales.
 
 ## Prohibido
 
-No introducir colores Tailwind directos de identidad en módulos de negocio:
+No introducir colores Tailwind directos fuera de la paleta de referencia en módulos de negocio. Los acentos violeta, turquesa, naranja, rosa y pizarra se consumen mediante tokens, no con valores repetidos en cada pantalla:
 
-```tsx
+```text
 bg-violet-50
 text-violet-700
 bg-cyan-50
@@ -157,7 +160,7 @@ Tampoco introducir hex/RGB nuevos para estados del sistema.
 
 Usar en su lugar tokens y tonos semánticos:
 
-```tsx
+```text
 bg-primary/12
 bg-success/16
 bg-warning/25

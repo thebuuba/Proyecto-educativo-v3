@@ -86,9 +86,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
         }
 
         const today = getDateKey(new Date())
-        const current = periods.find(
-          (p) => p.startDate <= today && p.endDate >= today
-        )
+        const current = periods.find((p) => p.startDate <= today && p.endDate >= today)
 
         if (!ignore) {
           setPeriodName(current?.name ?? null)
@@ -112,10 +110,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
     }
 
     function handlePointerDown(event: PointerEvent) {
-      if (
-        profileRef.current &&
-        !profileRef.current.contains(event.target as Node)
-      ) {
+      if (profileRef.current && !profileRef.current.contains(event.target as Node)) {
         setProfileOpen(false)
       }
     }
@@ -137,7 +132,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-20 bg-background/95 backdrop-blur">
-      <div className="flex h-[76px] items-center gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="flex h-[88px] items-center gap-4 px-4 sm:px-6 lg:px-8">
         <Button
           variant="ghost"
           size="icon"
@@ -150,25 +145,42 @@ export function Header({ onOpenSidebar }: HeaderProps) {
 
         {isGradingPage || isCoursesPage ? (
           <label
-              htmlFor="global-header-search"
-              className="hidden h-11 min-w-[22rem] max-w-[680px] flex-1 items-center gap-3 rounded-xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
-            >
-              <Search className="size-4 shrink-0" />
-              <input
-                ref={searchRef}
-                id="global-header-search"
-                type="search"
-                placeholder={isCoursesPage ? 'Buscar por asignatura, grado, sección, ciclo o nivel...' : 'Buscar estudiantes, cursos, actividades...'}
-                className="min-w-0 flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
-                aria-label={isCoursesPage ? 'Buscar cursos' : 'Buscar estudiantes, cursos, actividades'}
-                onChange={isCoursesPage ? (event) => window.dispatchEvent(new CustomEvent('courses:search', { detail: event.target.value })) : undefined}
-              />
-              {isCoursesPage ? <kbd className="rounded-md border border-border bg-muted/50 px-2 py-1 text-[10px] font-bold text-muted-foreground">Ctrl + K</kbd> : null}
-            </label>
+            htmlFor="global-header-search"
+            className="hidden h-11 min-w-[22rem] max-w-[680px] flex-1 items-center gap-3 rounded-xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
+          >
+            <Search className="size-4 shrink-0" />
+            <input
+              ref={searchRef}
+              id="global-header-search"
+              type="search"
+              placeholder={
+                isCoursesPage
+                  ? 'Buscar por asignatura, grado, sección, ciclo o nivel...'
+                  : 'Buscar estudiantes, cursos, actividades...'
+              }
+              className="min-w-0 flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
+              aria-label={
+                isCoursesPage ? 'Buscar cursos' : 'Buscar estudiantes, cursos, actividades'
+              }
+              onChange={
+                isCoursesPage
+                  ? (event) =>
+                      window.dispatchEvent(
+                        new CustomEvent('courses:search', { detail: event.target.value }),
+                      )
+                  : undefined
+              }
+            />
+            {isCoursesPage ? (
+              <kbd className="rounded-md border border-border bg-muted/50 px-2 py-1 text-[10px] font-bold text-muted-foreground">
+                Ctrl + K
+              </kbd>
+            ) : null}
+          </label>
         ) : (
           <label
             htmlFor="global-header-search"
-            className="hidden h-11 w-[min(450px,45vw)] items-center gap-3 rounded-full border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
+            className="hidden h-11 w-[min(450px,45vw)] items-center gap-3 rounded-2xl bg-card px-4 text-muted-foreground shadow-sm md:flex"
           >
             <Search className="size-4 shrink-0" />
             <input
@@ -213,16 +225,24 @@ export function Header({ onOpenSidebar }: HeaderProps) {
               onClick={() => setProfileOpen((current) => !current)}
             >
               <span className="hidden max-w-44 min-w-0 text-right sm:block lg:max-w-56">
-                <span className="block truncate text-sm font-bold leading-5 text-foreground">
+                <span className="block truncate text-sm font-semibold leading-5 text-foreground">
                   Hola, {displayName.split(/\s+/)[0]}
                 </span>
-                <span className="mt-0.5 block truncate text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                <span className="mt-0.5 block truncate text-[11px] font-normal uppercase tracking-wide text-muted-foreground">
                   {profileMeta}
                 </span>
               </span>
 
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
-                {initials}
+              <span className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-primary text-sm font-bold text-primary-foreground ring-2 ring-card">
+                {appUser?.avatarUrl ? (
+                  <img
+                    src={appUser.avatarUrl}
+                    alt={displayName}
+                    className="size-full object-cover"
+                  />
+                ) : (
+                  initials
+                )}
               </span>
             </button>
 

@@ -1,4 +1,4 @@
-import { Clock3, FlaskConical, MapPin, Play, UsersRound } from 'lucide-react'
+import { Clock, FlaskConical, MapPin, Play, Users } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
 import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
@@ -33,7 +33,7 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
 
   return (
     <div
-      className="relative flex size-20 shrink-0 items-center justify-center sm:size-[88px]"
+      className="relative flex size-16 shrink-0 items-center justify-center"
       role="timer"
       aria-label={
         showCountdown ? `${label} en ${formatCountdown(seconds)}` : `Clase a las ${value}`
@@ -72,7 +72,7 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
         >
           {label}
         </p>
-        <p className="mt-1 text-lg font-extrabold tabular-nums sm:text-xl">{value}</p>
+        <p className="mt-1 text-lg font-semibold tabular-nums sm:text-xl">{value}</p>
       </div>
     </div>
   )
@@ -123,7 +123,7 @@ export function DashboardHero({
         <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.18em]">
           Sin clase programada
         </p>
-        <h2 className="mt-2 text-xl font-extrabold">Agenda libre</h2>
+        <h2 className="mt-2 text-xl font-semibold">Agenda libre</h2>
         <p className="mt-2 text-sm">No tienes otra clase programada para hoy.</p>
       </section>
     )
@@ -140,17 +140,17 @@ export function DashboardHero({
         <span className="home-class-icon">
           <FlaskConical size={21} aria-hidden="true" />
         </span>
-        <p className="mt-8 text-[10px] font-extrabold uppercase tracking-[0.17em]">
+        <p className="mt-8 text-[10px] font-semibold uppercase tracking-[0.17em]">
           <span className="mr-2 inline-block size-1.5 rounded-full bg-white align-middle" />
           {nextClass.status === 'current' ? 'Clase en curso' : 'Próxima clase'} ·{' '}
           {nextClass.gradeName} {nextClass.sectionName}
         </p>
-        <h2 className="mt-1 line-clamp-2 text-[15px] font-extrabold leading-snug">
+        <h2 className="mt-1 line-clamp-2 text-[15px] font-semibold leading-snug">
           {nextClass.subjectName}
         </h2>
         <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-medium">
           <span className="inline-flex items-center gap-1">
-            <Clock3 size={12} />
+            <Clock size={12} />
             {nextClass.startTime.slice(0, 5)} – {nextClass.endTime.slice(0, 5)}
           </span>
           <span className="inline-flex items-center gap-1">
@@ -158,14 +158,14 @@ export function DashboardHero({
             {nextClass.room ?? 'Aula sin asignar'}
           </span>
           <span className="inline-flex items-center gap-1">
-            <UsersRound size={12} />
+            <Users size={12} />
             {nextClass.studentCount} est.
           </span>
         </div>
         {canManageClass ? (
           <button
             type="button"
-            className="mt-4 inline-flex min-h-9 items-center gap-2 rounded-full bg-white px-4 text-xs font-bold text-primary shadow-sm hover:bg-primary-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="mt-4 inline-flex min-h-9 items-center gap-2 rounded-xl bg-white px-4 text-xs font-semibold text-primary shadow-sm hover:bg-primary-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             onClick={() => onStartClass(nextClass)}
           >
             <Play size={13} fill="currentColor" aria-hidden="true" />

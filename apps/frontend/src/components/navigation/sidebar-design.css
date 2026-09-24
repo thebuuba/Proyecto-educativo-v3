@@ -38,19 +38,19 @@
   height: 36px;
   flex: none;
   place-items: center;
-  border-radius: 50%;
+  border-radius: 12px;
   background: var(--primary-container);
   color: var(--primary);
 }
 
-.sidebar-link-featured:nth-child(2) .sidebar-link-icon {
-  background: var(--secondary-container);
-  color: var(--secondary);
+.sidebar-link-featured[data-nav-path='/cursos'] .sidebar-link-icon {
+  background: color-mix(in srgb, var(--palette-violet) 16%, white);
+  color: var(--palette-violet);
 }
 
-.sidebar-link-featured:nth-child(3) .sidebar-link-icon {
-  background: var(--tertiary-container);
-  color: var(--foreground);
+.sidebar-link-featured[data-nav-path='/horario'] .sidebar-link-icon {
+  background: color-mix(in srgb, var(--palette-teal) 16%, white);
+  color: var(--palette-teal);
 }
 
 .sidebar-link-icon {

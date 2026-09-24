@@ -35,7 +35,7 @@ describe('DashboardHero countdown', () => {
     const timer = screen.getByRole('timer')
     const label = screen.getByText('Termina', { selector: '[data-countdown-label]' })
 
-    expect(timer).toHaveClass('size-20', 'sm:size-[88px]')
+    expect(timer).toHaveClass('size-16')
     expect(label).toHaveClass('whitespace-nowrap', 'tracking-[0.06em]')
   })
 })
