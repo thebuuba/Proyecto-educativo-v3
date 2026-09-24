@@ -135,9 +135,9 @@
   min-width: 65px;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   color: var(--muted-foreground);
-  font-size: 11px;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -196,14 +196,14 @@
   list-style: none;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
 }
 
 .home-shortcut-add summary::-webkit-details-marker {
   display: none;
 }
 .home-shortcut-add .home-shortcut-icon {
-  border-style: dashed;
+  border: 2px dashed color-mix(in srgb, var(--muted-foreground) 28%, var(--background));
   background: transparent;
   color: var(--muted-foreground);
   box-shadow: none;
