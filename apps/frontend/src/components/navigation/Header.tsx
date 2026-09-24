@@ -136,8 +136,8 @@ export function Header({ onOpenSidebar }: HeaderProps) {
   }, [profileOpen])
 
   return (
-    <header className="sticky top-0 z-20 border-b border-border bg-card/85 backdrop-blur">
-      <div className="flex h-[74px] items-center gap-4 px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-20 bg-background/95 backdrop-blur">
+      <div className="flex h-[76px] items-center gap-4 px-4 sm:px-6 lg:px-8">
         <Button
           variant="ghost"
           size="icon"
@@ -168,7 +168,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
         ) : (
           <label
             htmlFor="global-header-search"
-            className="hidden h-11 min-w-0 flex-1 items-center gap-3 rounded-2xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
+            className="hidden h-11 w-[min(450px,45vw)] items-center gap-3 rounded-full border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
           >
             <Search className="size-4 shrink-0" />
             <input
@@ -182,7 +182,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
           </label>
         )}
 
-        <div className="ml-auto flex items-center gap-4">
+        <div className="ml-auto flex items-center gap-3">
           {!isPlanningPage ? (
             <button
               type="button"
@@ -190,7 +190,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
               aria-label="Notificaciones"
             >
               <Bell className="size-5" />
-              <span className="absolute right-1.5 top-1.5 size-2.5 rounded-full bg-accent ring-2 ring-card" />
+              <span className="absolute right-1.5 top-1.5 size-2.5 rounded-full bg-warning ring-2 ring-card" />
             </button>
           ) : null}
 
@@ -204,8 +204,6 @@ export function Header({ onOpenSidebar }: HeaderProps) {
             <CircleHelp className="size-5" />
           </button>
 
-          <span className="hidden h-10 w-px bg-border md:block" aria-hidden="true" />
-
           <div ref={profileRef} className="relative">
             <button
               type="button"
@@ -216,7 +214,7 @@ export function Header({ onOpenSidebar }: HeaderProps) {
             >
               <span className="hidden max-w-44 min-w-0 text-right sm:block lg:max-w-56">
                 <span className="block truncate text-sm font-bold leading-5 text-foreground">
-                  {displayName}
+                  Hola, {displayName.split(/\s+/)[0]}
                 </span>
                 <span className="mt-0.5 block truncate text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
                   {profileMeta}

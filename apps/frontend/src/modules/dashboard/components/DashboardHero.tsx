@@ -1,14 +1,12 @@
-/**
- * Componente DashboardHero — Muestra la clase activa o la siguiente clase
- * del docente en una tarjeta compacta con contador en vivo.
- */
-
-import { ArrowRight, Clock3, MapPin, Play, UsersRound } from 'lucide-react'
+import { Clock3, FlaskConical, MapPin, Play, UsersRound } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
-import { Button } from '@/components/ui/Button'
 import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
-import { COUNTDOWN_THRESHOLD_SECONDS, formatCountdown, formatHumanCountdown, getClassCountdownSeconds } from '@/modules/schedule/utils/classTime'
+import {
+  COUNTDOWN_THRESHOLD_SECONDS,
+  formatCountdown,
+  getClassCountdownSeconds,
+} from '@/modules/schedule/utils/classTime'
 
 const RING_CIRCUMFERENCE = 2 * Math.PI * 45
 
@@ -18,10 +16,6 @@ type DashboardHeroProps = {
   onViewPlanning: (item: DashboardClass) => void
   canManageClass?: boolean
   onCountdownEnd?: () => void
-}
-
-function getCountdownSeconds(item: DashboardClass, now = new Date()) {
-  return getClassCountdownSeconds(item.status, item.startTime, item.endTime, now)
 }
 
 function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: number }) {
@@ -36,42 +30,49 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
     : RING_CIRCUMFERENCE * 0.035
   const label = isCurrent ? 'Termina' : showCountdown ? 'Empieza' : 'Hora'
   const value = showCountdown ? formatCountdown(seconds) : item.startTime.slice(0, 5)
-  const accent = isCurrent ? 'var(--palette-green)' : 'var(--palette-gold)'
 
   return (
     <div
       className="relative flex size-20 shrink-0 items-center justify-center sm:size-[88px]"
       role="timer"
-      aria-label={showCountdown ? `${label} en ${formatCountdown(seconds)}` : `Clase a las ${value}`}
+      aria-label={
+        showCountdown ? `${label} en ${formatCountdown(seconds)}` : `Clase a las ${value}`
+      }
     >
-      <svg className="absolute inset-0 size-full -rotate-90" viewBox="0 0 120 120" aria-hidden="true">
+      <svg
+        className="absolute inset-0 size-full -rotate-90"
+        viewBox="0 0 120 120"
+        aria-hidden="true"
+      >
         <circle
           cx="60"
           cy="60"
           r="45"
           fill="none"
-          stroke="var(--palette-gray)"
-          strokeWidth="11"
+          stroke="white"
+          strokeOpacity="0.28"
+          strokeWidth="8"
         />
         <circle
           cx="60"
           cy="60"
           r="45"
           fill="none"
-          stroke={accent}
+          stroke="white"
           strokeDasharray={`${ringLength} ${RING_CIRCUMFERENCE}`}
           strokeLinecap="round"
-          strokeWidth="11"
+          strokeWidth="8"
           className="transition-[stroke-dasharray] duration-1000 ease-linear"
         />
       </svg>
-      <div className="text-center leading-none text-[var(--class-foreground)]">
-        <p data-countdown-label className="whitespace-nowrap text-[8px] font-bold uppercase tracking-[0.06em] sm:text-[9px]">
+      <div className="text-center leading-none text-white">
+        <p
+          data-countdown-label
+          className="whitespace-nowrap text-[8px] font-bold uppercase tracking-[0.06em] sm:text-[9px]"
+        >
           {label}
         </p>
-        <p className="mt-1 text-lg font-extrabold tabular-nums sm:text-xl">
-          {value}
-        </p>
+        <p className="mt-1 text-lg font-extrabold tabular-nums sm:text-xl">{value}</p>
       </div>
     </div>
   )
@@ -80,126 +81,96 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
 export function DashboardHero({
   nextClass,
   onStartClass,
-  onViewPlanning,
   canManageClass = true,
   onCountdownEnd,
 }: DashboardHeroProps) {
   const [countdownSeconds, setCountdownSeconds] = useState(() =>
-    nextClass ? getCountdownSeconds(nextClass) : 0,
+    nextClass
+      ? getClassCountdownSeconds(nextClass.status, nextClass.startTime, nextClass.endTime)
+      : 0,
   )
   const countdownEndNotified = useRef(false)
 
   useEffect(() => {
     countdownEndNotified.current = false
-
     if (!nextClass) {
       setCountdownSeconds(0)
       return undefined
     }
-
     const updateCountdown = () => {
-      const nextSeconds = getCountdownSeconds(nextClass)
-      setCountdownSeconds(nextSeconds)
-
-      if (nextSeconds === 0 && !countdownEndNotified.current) {
+      const seconds = getClassCountdownSeconds(
+        nextClass.status,
+        nextClass.startTime,
+        nextClass.endTime,
+      )
+      setCountdownSeconds(seconds)
+      if (seconds === 0 && !countdownEndNotified.current) {
         countdownEndNotified.current = true
         onCountdownEnd?.()
       }
     }
-
     updateCountdown()
     const interval = window.setInterval(updateCountdown, 1000)
-
     return () => window.clearInterval(interval)
   }, [nextClass, onCountdownEnd])
 
   if (!nextClass) {
     return (
-      <section
-        className="ml-auto w-full max-w-[420px] rounded-3xl px-3.5 py-3.5 text-[var(--class-foreground)] shadow-sm sm:px-4 sm:py-4"
-        style={{ backgroundColor: 'var(--class-panel)' }}
-      >
-        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-accent">Sin clase programada</p>
-        <h2 className="mt-2 text-xl font-bold">Agenda libre</h2>
-        <p className="mt-1 text-sm text-[var(--class-muted)]">No tienes otra clase programada para hoy.</p>
+      <section className="home-class-card">
+        <span className="home-class-icon">
+          <FlaskConical size={21} aria-hidden="true" />
+        </span>
+        <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.18em]">
+          Sin clase programada
+        </p>
+        <h2 className="mt-2 text-xl font-extrabold">Agenda libre</h2>
+        <p className="mt-2 text-sm">No tienes otra clase programada para hoy.</p>
       </section>
     )
   }
 
-  const isCurrent = nextClass.status === 'current'
-  const temporalMessage = isCurrent
-    ? `Termina en ${formatHumanCountdown(countdownSeconds)}`
-    : `Faltan ${formatHumanCountdown(countdownSeconds)}`
-  const stateColor = isCurrent ? 'var(--palette-green)' : 'var(--palette-gold)'
-
   return (
-    <section
-      className="relative ml-auto w-full max-w-[420px] overflow-hidden rounded-3xl p-3.5 pr-[6.25rem] text-[var(--class-foreground)] shadow-sm sm:p-4 sm:pr-[7.25rem]"
-      style={{ backgroundColor: 'var(--class-panel)' }}
-    >
-      <div className="absolute right-2.5 top-2.5 z-10 sm:right-3 sm:top-3">
+    <section className="home-class-card relative overflow-hidden">
+      <span className="home-class-decoration home-class-decoration-one" aria-hidden="true" />
+      <span className="home-class-decoration home-class-decoration-two" aria-hidden="true" />
+      <div className="absolute right-4 top-4 z-10">
         <CountdownBadge item={nextClass} seconds={countdownSeconds} />
       </div>
-
-      <div className="relative min-w-0">
-        <div className="inline-flex items-center gap-2">
-          <span className="size-1.5 animate-pulse rounded-full" style={{ backgroundColor: stateColor }} />
-          <span className="text-[10px] font-bold uppercase tracking-[0.22em]">
-            {isCurrent ? 'Clase en curso' : 'Próxima clase'}
-          </span>
-        </div>
-
-        <h2 className="mt-2 line-clamp-2 text-lg font-extrabold leading-tight tracking-tight sm:text-xl">
+      <div className="relative z-10 min-w-0">
+        <span className="home-class-icon">
+          <FlaskConical size={21} aria-hidden="true" />
+        </span>
+        <p className="mt-8 text-[10px] font-extrabold uppercase tracking-[0.17em]">
+          <span className="mr-2 inline-block size-1.5 rounded-full bg-white align-middle" />
+          {nextClass.status === 'current' ? 'Clase en curso' : 'Próxima clase'} ·{' '}
+          {nextClass.gradeName} {nextClass.sectionName}
+        </p>
+        <h2 className="mt-1 line-clamp-2 text-[15px] font-extrabold leading-snug">
           {nextClass.subjectName}
         </h2>
-
-        <div className="mt-1 flex flex-wrap items-center gap-2">
-          <p className="text-sm font-semibold text-[var(--class-muted)]">
-            {nextClass.gradeName} {nextClass.sectionName}
-          </p>
-          <span
-            className="inline-flex rounded-full px-2 py-0.5 text-[10px] font-bold text-foreground"
-            style={{ backgroundColor: `color-mix(in srgb, ${stateColor} 24%, var(--palette-white))` }}
-            aria-live="polite"
-          >
-            {temporalMessage}
+        <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-medium">
+          <span className="inline-flex items-center gap-1">
+            <Clock3 size={12} />
+            {nextClass.startTime.slice(0, 5)} – {nextClass.endTime.slice(0, 5)}
           </span>
-        </div>
-
-        <div className="mt-2.5 grid gap-1 text-xs text-[var(--class-muted)]">
-          <span className="inline-flex items-center gap-2">
-            <Clock3 className="size-3.5 shrink-0 text-[var(--class-foreground)]" />
-            {nextClass.startTime.slice(0, 5)}–{nextClass.endTime.slice(0, 5)}
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <MapPin className="size-3.5 shrink-0 text-[var(--class-foreground)]" />
+          <span className="inline-flex items-center gap-1">
+            <MapPin size={12} />
             {nextClass.room ?? 'Aula sin asignar'}
           </span>
-          <span className="inline-flex items-center gap-2">
-            <UsersRound className="size-3.5 shrink-0 text-[var(--class-foreground)]" />
-            {nextClass.studentCount} estudiantes
+          <span className="inline-flex items-center gap-1">
+            <UsersRound size={12} />
+            {nextClass.studentCount} est.
           </span>
         </div>
-
         {canManageClass ? (
-          <div className="mt-3 flex flex-wrap gap-2">
-            <Button
-              variant="secondary"
-              className="h-9 rounded-xl bg-[var(--palette-blue)] px-3 text-xs text-[var(--palette-text)] hover:bg-[var(--primary-hover)]"
-              onClick={() => onStartClass(nextClass)}
-            >
-              <Play className="size-4 fill-current" />
-              Iniciar clase
-            </Button>
-            <Button
-              variant="outline"
-              className="h-9 rounded-xl border-[var(--palette-blue)]/50 bg-transparent px-3 text-xs text-[var(--palette-blue)] hover:bg-[var(--palette-blue-light)]"
-              onClick={() => onViewPlanning(nextClass)}
-            >
-              Planificación
-              <ArrowRight className="size-4" />
-            </Button>
-          </div>
+          <button
+            type="button"
+            className="mt-4 inline-flex min-h-9 items-center gap-2 rounded-full bg-white px-4 text-xs font-bold text-primary shadow-sm hover:bg-primary-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            onClick={() => onStartClass(nextClass)}
+          >
+            <Play size={13} fill="currentColor" aria-hidden="true" />
+            Iniciar clase
+          </button>
         ) : null}
       </div>
     </section>

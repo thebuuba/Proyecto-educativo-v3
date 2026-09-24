@@ -17,7 +17,7 @@ export function AppLayout() {
   const location = useLocation()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(
-    () => localStorage.getItem('aulabase:sidebar-expanded') === 'true',
+    () => localStorage.getItem('aulabase:sidebar-expanded') !== 'false',
   )
   const isGradingPage = location.pathname.startsWith('/calificaciones')
   const activeModule = location.pathname.split('/').filter(Boolean)[0] ?? 'inicio'
@@ -39,7 +39,7 @@ export function AppLayout() {
 
         <div className={cn(
           'sidebar-workspace min-w-0 flex-1',
-          isSidebarExpanded ? 'lg:pl-[260px]' : 'lg:pl-[88px]',
+          isSidebarExpanded ? 'lg:pl-[255px]' : 'lg:pl-[76px]',
         )}>
           <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
 
@@ -47,7 +47,7 @@ export function AppLayout() {
             data-module={activeModule}
             data-route={location.pathname}
             className={cn(
-              'content-density-compact min-w-0 px-4 sm:px-6 lg:px-10',
+              'content-density-compact min-w-0 px-4 sm:px-6 lg:px-8',
               isGradingPage ? 'py-3 lg:py-3' : 'py-5 lg:py-8',
             )}
           >

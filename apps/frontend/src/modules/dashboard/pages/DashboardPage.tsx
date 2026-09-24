@@ -1,301 +1,616 @@
-/**
- * Página principal del Dashboard — Muestra el resumen del día con la agenda,
- * asistencia semanal, tareas pendientes, actividad reciente y sugerencias.
- */
-
-import { RefreshCw } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import {
+  ArrowRight,
+  BellRing,
+  BookMarked,
+  CalendarCheck2,
+  CheckSquare2,
+  ChevronRight,
+  Clock3,
+  GraduationCap,
+  Plus,
+  RefreshCw,
+  UsersRound,
+} from 'lucide-react'
+import { useEffect, useMemo, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { ErrorState } from '@/components/ui'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
-import { BarChart } from '@/modules/dashboard/components/BarChart'
-import { ChartPanel } from '@/modules/dashboard/components/ChartPanel'
-import {
-  DashboardEditableGrid,
-  type DashboardGridWidget,
-} from '@/modules/dashboard/components/DashboardEditableGrid'
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { DashboardHero } from '@/modules/dashboard/components/DashboardHero'
-import { DashboardTasks } from '@/modules/dashboard/components/DashboardTasks'
-import { JournalSummaryCard } from '@/modules/dashboard/components/JournalSummaryCard'
-import { LineChart } from '@/modules/dashboard/components/LineChart'
-import { RecentActivity } from '@/modules/dashboard/components/RecentActivity'
-import { SmartSuggestion } from '@/modules/dashboard/components/SmartSuggestion'
-import { TodayAgenda } from '@/modules/dashboard/components/TodayAgenda'
-import { WeeklyAttendanceCard } from '@/modules/dashboard/components/WeeklyAttendanceCard'
 import { useDashboard } from '@/modules/dashboard/hooks/useDashboard'
 import { getNextSetupTourStep, startSetupTour } from '@/modules/dashboard/setupTour'
-import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
+import type {
+  DashboardClass,
+  DashboardData,
+  RecentActivityItem,
+} from '@/modules/dashboard/types/dashboard'
+import { navigationRoutes } from '@/routes/appRoutes'
+import './dashboard-redesign.css'
 
-/** Retorna un saludo según la hora del día. */
-function getGreeting() {
-  const hour = new Date().getHours()
-  if (hour < 12) return 'Buenos días'
-  if (hour < 18) return 'Buenas tardes'
-  return 'Buenas noches'
+const quickPaths = [
+  '/cursos',
+  '/horario',
+  '/asistencia',
+  '/calificaciones',
+  '/actividades',
+  '/planificaciones',
+  '/bitacora',
+  '/reportes',
+]
+const activityLabels: Record<RecentActivityItem['kind'], string> = {
+  grade: 'Evaluación',
+  attendance: 'Asistencia',
+  planning: 'Actividad',
+  report: 'Reporte',
+}
+const activityIcons = {
+  grade: GraduationCap,
+  attendance: CalendarCheck2,
+  planning: CheckSquare2,
+  report: BookMarked,
+}
+const journalLabels: Record<string, string> = {
+  quick_note: 'Nota rápida',
+  student_observation: 'Observación de estudiante',
+  incident: 'Incidente',
+  class_observation: 'Observación de clase',
+  pedagogical_idea: 'Idea pedagógica',
+  course_observation: 'Observación de curso',
 }
 
-/** Página principal del dashboard del docente. */
+function getGreeting() {
+  const hour = new Date().getHours()
+  return hour < 12 ? 'Buenos días' : hour < 18 ? 'Buenas tardes' : 'Buenas noches'
+}
+
+function ProgressRing({ value, label }: { value: number | null; label: string }) {
+  const percent = value === null ? 0 : Math.max(0, Math.min(100, value))
+  return (
+    <span
+      className="home-progress-ring"
+      role="img"
+      aria-label={`${label}: ${value === null ? 'sin datos' : `${percent}%`}`}
+      style={{ background: `conic-gradient(var(--primary) ${percent}%, var(--border) 0)` }}
+    >
+      <span>{value === null ? '—' : `${percent}%`}</span>
+    </span>
+  )
+}
+
+function MetricCard({
+  icon: Icon,
+  title,
+  detail,
+  value,
+  path,
+}: {
+  icon: typeof CalendarCheck2
+  title: string
+  detail: string
+  value: number | null
+  path?: string
+}) {
+  return (
+    <article className="home-metric-card">
+      <div className="flex items-start justify-between">
+        <span className="home-metric-icon">
+          <Icon size={19} strokeWidth={1.8} aria-hidden="true" />
+        </span>
+        <ProgressRing value={value} label={title} />
+      </div>
+      <div className="mt-4">
+        <h2 className="text-[14px] font-extrabold text-foreground">{title}</h2>
+        <p className="mt-0.5 text-xs text-muted-foreground">{detail}</p>
+      </div>
+      {path ? (
+        <Link
+          to={path}
+          className="mt-auto inline-flex items-center gap-1 pt-4 text-xs font-bold text-primary hover:underline"
+        >
+          Ver detalle <ArrowRight size={14} aria-hidden="true" />
+        </Link>
+      ) : null}
+    </article>
+  )
+}
+
+function Agenda({
+  data,
+  onStartClass,
+  completeTask,
+  addTask,
+  actionLoading,
+}: {
+  data: DashboardData
+  onStartClass?: (item: DashboardClass) => void
+  completeTask: (id: string) => Promise<void>
+  addTask: (input: { title: string }) => Promise<void>
+  actionLoading: boolean
+}) {
+  const [tab, setTab] = useState<'today' | 'pending'>('today')
+  const [taskTitle, setTaskTitle] = useState('')
+  return (
+    <aside className="home-agenda" aria-label="Tu agenda">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h2 className="text-xl font-extrabold tracking-tight text-foreground">Tu agenda</h2>
+          <p className="text-xs text-muted-foreground">
+            {data.todayAgenda.length} clases programadas
+          </p>
+        </div>
+        <Link
+          to="/horario"
+          className="grid size-8 place-items-center rounded-full bg-muted text-muted-foreground hover:text-primary"
+          aria-label="Ver semana"
+        >
+          <ChevronRight size={17} />
+        </Link>
+      </div>
+      <div className="mt-4 flex gap-2" role="tablist" aria-label="Vista de agenda">
+        <button
+          role="tab"
+          aria-selected={tab === 'today'}
+          type="button"
+          onClick={() => setTab('today')}
+          className={tab === 'today' ? 'home-agenda-tab is-active' : 'home-agenda-tab'}
+        >
+          Hoy
+        </button>
+        <button
+          role="tab"
+          aria-selected={tab === 'pending'}
+          type="button"
+          onClick={() => setTab('pending')}
+          className={tab === 'pending' ? 'home-agenda-tab is-active' : 'home-agenda-tab'}
+        >
+          Pendientes ({data.tasks.length})
+        </button>
+      </div>
+      {tab === 'today' ? (
+        data.todayAgenda.length ? (
+          <ol className="home-agenda-list mt-5">
+            {data.todayAgenda.map((item) => (
+              <li key={item.id} className="home-agenda-entry">
+                <div className="home-agenda-time">
+                  {item.startTime.slice(0, 5)}
+                  {item.status === 'current' ? <span> · Ahora</span> : null}
+                </div>
+                <div
+                  className={
+                    item.status === 'current' ? 'home-agenda-class is-current' : 'home-agenda-class'
+                  }
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className={item.status === 'completed' ? 'line-through' : ''}>
+                      {item.subjectName}
+                    </h3>
+                    <span className="home-agenda-grade">
+                      {item.gradeName} {item.sectionName}
+                    </span>
+                  </div>
+                  <p className="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-[10px]">
+                    <span className="inline-flex items-center gap-1">
+                      <Clock3 size={11} />
+                      {item.durationMinutes} min
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <UsersRound size={11} />
+                      {item.studentCount} est.
+                    </span>
+                    <span>{item.room ?? 'Aula sin asignar'}</span>
+                  </p>
+                  {item.status === 'current' && onStartClass ? (
+                    <button
+                      type="button"
+                      onClick={() => onStartClass(item)}
+                      className="absolute inset-0"
+                      aria-label={`Iniciar clase de ${item.subjectName}`}
+                    />
+                  ) : null}
+                </div>
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p className="mt-8 rounded-2xl bg-muted p-5 text-sm text-muted-foreground">
+            No hay clases programadas para hoy.
+          </p>
+        )
+      ) : (
+        <div className="mt-5 space-y-3">
+          {data.tasks.length ? (
+            data.tasks.map((task) => (
+              <label
+                key={task.id}
+                className="flex cursor-pointer items-start gap-3 rounded-xl bg-muted/60 p-3 text-sm"
+              >
+                <input
+                  type="checkbox"
+                  disabled={actionLoading}
+                  onChange={() => void completeTask(task.id)}
+                  className="mt-1 accent-primary"
+                />
+                <span>
+                  {task.title}
+                  {task.dueDate ? (
+                    <small className="mt-1 block text-muted-foreground">{task.dueDate}</small>
+                  ) : null}
+                </span>
+              </label>
+            ))
+          ) : (
+            <p className="rounded-xl bg-muted p-4 text-sm text-muted-foreground">
+              No tienes pendientes abiertos.
+            </p>
+          )}
+          <form
+            onSubmit={(event) => {
+              event.preventDefault()
+              if (!taskTitle.trim()) return
+              void addTask({ title: taskTitle.trim() })
+              setTaskTitle('')
+            }}
+            className="flex gap-2"
+          >
+            <input
+              value={taskTitle}
+              onChange={(event) => setTaskTitle(event.target.value)}
+              placeholder="Nueva tarea"
+              aria-label="Nueva tarea"
+              className="min-w-0 flex-1 rounded-xl border border-border bg-card px-3 py-2 text-sm outline-none focus:border-primary"
+            />
+            <button
+              type="submit"
+              disabled={actionLoading || !taskTitle.trim()}
+              aria-label="Agregar tarea"
+              className="grid size-10 place-items-center rounded-xl bg-primary text-white disabled:opacity-50"
+            >
+              <Plus size={17} />
+            </button>
+          </form>
+        </div>
+      )}
+    </aside>
+  )
+}
+
+function RecentTable({ items, showAll }: { items: RecentActivityItem[]; showAll: boolean }) {
+  return (
+    <section className="home-recent">
+      <div className="mb-4 flex items-center justify-between">
+        <h2 className="text-[17px] font-extrabold text-foreground">Actividad reciente</h2>
+        {showAll ? (
+          <Link to="/reportes" className="text-sm font-semibold text-primary hover:underline">
+            Ver todo
+          </Link>
+        ) : null}
+      </div>
+      <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+        <div className="home-recent-grid home-recent-head">
+          <span>Nombre</span>
+          <span>Curso</span>
+          <span>Tipo</span>
+          <span>Fecha</span>
+        </div>
+        {items.length ? (
+          <ul className="px-2 pb-2">
+            {items.map((item) => {
+              const Icon = activityIcons[item.kind]
+              return (
+                <li key={item.id}>
+                  <Link to={item.path} className="home-recent-grid home-recent-row">
+                    <span className="flex min-w-0 items-center gap-3">
+                      <span className={`home-recent-icon home-recent-${item.kind}`}>
+                        <Icon size={16} aria-hidden="true" />
+                      </span>
+                      <strong className="truncate font-semibold">{item.title}</strong>
+                    </span>
+                    <span className="truncate text-muted-foreground">{item.description}</span>
+                    <span className="text-muted-foreground">{activityLabels[item.kind]}</span>
+                    <span className="text-right text-muted-foreground">{item.relativeTime}</span>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        ) : (
+          <p className="p-6 text-sm text-muted-foreground">
+            No hay actividad reciente para mostrar.
+          </p>
+        )}
+      </div>
+    </section>
+  )
+}
+
+function JournalCard({ data }: { data: DashboardData }) {
+  const summary = data.journalSummary
+  return (
+    <section className="home-bottom-card">
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <span className="grid size-10 place-items-center rounded-full bg-destructive/12 text-destructive">
+            <BookMarked size={19} />
+          </span>
+          <div>
+            <h2 className="text-sm font-extrabold">Bitácora docente</h2>
+            <p className="text-xs text-muted-foreground">
+              {summary?.activeCount ?? 0} anotaciones · {summary?.pendingCount ?? 0} seguimientos
+              pendientes
+            </p>
+          </div>
+        </div>
+        <Link
+          to="/bitacora?action=create"
+          className="inline-flex min-h-9 items-center gap-1 rounded-full bg-primary px-3 text-xs font-bold text-white"
+        >
+          <Plus size={14} />
+          Nueva
+        </Link>
+      </div>
+      {summary?.recentEntries.length ? (
+        <ul className="mt-4">
+          {summary.recentEntries.slice(0, 3).map((entry) => (
+            <li key={entry.id} className="border-b border-border py-2 last:border-0">
+              <Link to="/bitacora" className="flex items-start justify-between gap-3 text-xs">
+                <span className="min-w-0">
+                  <strong className="block truncate text-[13px] text-foreground">
+                    {entry.title || journalLabels[entry.entryType] || 'Anotación'}
+                  </strong>
+                  <small className="text-muted-foreground">
+                    {journalLabels[entry.entryType] || 'Bitácora docente'}
+                  </small>
+                </span>
+                <span className="shrink-0 text-muted-foreground">{entry.relativeTime}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-5 text-sm text-muted-foreground">Aún no tienes anotaciones.</p>
+      )}
+      <Link
+        to="/bitacora"
+        className="mt-auto inline-flex items-center gap-1 pt-4 text-xs font-semibold text-primary hover:underline"
+      >
+        Abrir bitácora <ArrowRight size={14} />
+      </Link>
+    </section>
+  )
+}
+
+function PulseCard({ data }: { data: DashboardData }) {
+  const total = data.weeklyAttendance.days.length
+  const recorded = data.weeklyAttendance.days.filter((day) => day.value !== null).length
+  const percent = total ? Math.round((recorded / total) * 100) : 0
+  return (
+    <section className="home-bottom-card">
+      <div className="flex items-center justify-between">
+        <h2 className="inline-flex items-center gap-2 text-sm font-extrabold">
+          <BellRing size={17} className="text-primary" />
+          Pulso semanal <span className="text-primary">{percent}%</span>
+        </h2>
+      </div>
+      <div className="mt-5 flex items-center gap-3 rounded-2xl bg-warning-container p-3">
+        <span className="grid size-9 shrink-0 place-items-center rounded-full bg-warning text-foreground">
+          <CalendarCheck2 size={17} />
+        </span>
+        <div>
+          <p className="text-sm font-bold">
+            {recorded ? 'Asistencia en progreso' : 'Aún no has registrado asistencia'}
+          </p>
+          <p className="text-xs text-muted-foreground">
+            {recorded} de {total} días de esta semana
+          </p>
+        </div>
+      </div>
+      <p className="mt-4 text-xs text-muted-foreground">
+        {data.smartSuggestion?.title ?? 'Revisa tus clases y registra la asistencia.'}
+      </p>
+      <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-muted">
+        <div className="h-full rounded-full bg-primary" style={{ width: `${percent}%` }} />
+      </div>
+      <Link
+        to={data.smartSuggestion?.path ?? '/asistencia'}
+        className="mt-auto inline-flex min-h-9 items-center justify-center gap-2 rounded-full bg-primary px-3 pt-0 text-xs font-bold text-white shadow-sm hover:bg-primary-hover"
+      >
+        {data.smartSuggestion?.actionLabel ?? 'Registrar asistencia'} <ArrowRight size={14} />
+      </Link>
+    </section>
+  )
+}
+
 export function DashboardPage() {
   const navigate = useNavigate()
-  const {
-    data,
-    error,
-    loading,
-    actionLoading,
-    addTask,
-    completeTask,
-    refetch,
-  } = useDashboard()
-
-  const nextSetupTourStep = data?.view === 'management' ? getNextSetupTourStep(data.setupProgress) : null
+  const { hasRole } = useAuth()
+  const { data, error, loading, actionLoading, addTask, completeTask, refetch } = useDashboard()
+  const [addedPaths, setAddedPaths] = useState<string[]>(() => {
+    try {
+      return JSON.parse(localStorage.getItem('aulabase:home-shortcuts') || '[]') as string[]
+    } catch {
+      return []
+    }
+  })
+  const nextSetupTourStep = useMemo(
+    () => (data?.view === 'management' ? getNextSetupTourStep(data.setupProgress) : null),
+    [data],
+  )
 
   useEffect(() => {
-    if (nextSetupTourStep && typeof window !== 'undefined' && window.localStorage.getItem('aulabase:interactive-setup-tour-seen:v1') !== 'true') {
+    if (
+      nextSetupTourStep &&
+      window.localStorage.getItem('aulabase:interactive-setup-tour-seen:v1') !== 'true'
+    ) {
       window.localStorage.setItem('aulabase:interactive-setup-tour-seen:v1', 'true')
       window.setTimeout(() => startSetupTour(nextSetupTourStep), 500)
     }
-  }, [nextSetupTourStep?.id])
+  }, [nextSetupTourStep])
 
   const handleStartClass = (item: DashboardClass) => {
-    const params = new URLSearchParams({
-      sectionId: item.sectionId,
-    })
-
-    if (item.academicPeriodId) {
-      params.set('periodId', item.academicPeriodId)
-    }
-
+    const params = new URLSearchParams({ sectionId: item.sectionId })
+    if (item.academicPeriodId) params.set('periodId', item.academicPeriodId)
     navigate(`/asistencia?${params.toString()}`)
   }
 
-  const handleViewPlanning = (item: DashboardClass) => {
-    const params = new URLSearchParams({
-      sectionSubjectId: item.sectionSubjectId,
-    })
+  if (loading && !data) return <PageSkeleton />
+  if (!data) return <ErrorState message={error ?? 'No se pudieron cargar los datos de inicio.'} />
 
-    if (item.academicPeriodId) {
-      params.set('periodId', item.academicPeriodId)
-    }
-
-    navigate(`/planificaciones?${params.toString()}`)
+  const canManage = data.view === 'management' || data.view === 'teacher'
+  const canAccess = (path: string) => {
+    const route = navigationRoutes.find((item) => item.path === path)
+    return Boolean(route && hasRole(route.allowedRoles))
   }
-
-  if (loading && !data) {
-    return (
-      <div className="w-full min-w-0">
-        <PageSkeleton />
-      </div>
-    )
-  }
-
-  if (!data) {
-    return (
-      <div className="w-full min-w-0">
-        <ErrorState message={error ?? 'No se pudieron cargar los datos de inicio.'} />
-      </div>
-    )
-  }
-
-  const hasWeeklyAttendance = data.weeklyAttendance.days.length > 0
-  const canManageOperations = data.view === 'management' || data.view === 'teacher'
-  const hasTasks = canManageOperations
-  const hasOperationalBlocks = hasWeeklyAttendance || hasTasks || canManageOperations
-  const journalSummary = data.journalSummary ?? {
-    activeCount: 0,
-    pendingCount: 0,
-    recentEntries: [],
-  }
-
-  const managementWidgets: DashboardGridWidget[] = data.view === 'management'
-    ? [
-        {
-          id: 'next-class',
-          label: 'Próxima clase',
-          content: (
-            <DashboardHero
-              nextClass={data.nextClass}
-              onStartClass={handleStartClass}
-              onViewPlanning={handleViewPlanning}
-              canManageClass={canManageOperations}
-              onCountdownEnd={refetch}
-            />
-          ),
-          layout: { x: 0, y: 10, w: 6, h: 16, minW: 4, minH: 8, maxW: 8 },
-        },
-        {
-          id: 'agenda',
-          label: 'Agenda de hoy',
-          content: <TodayAgenda items={data.todayAgenda} />,
-          layout: { x: 6, y: 10, w: 6, h: 16, minW: 4, minH: 10, maxW: 8 },
-        },
-        ...(hasWeeklyAttendance
-          ? [{
-              id: 'attendance',
-              label: 'Pulso semanal',
-              content: <WeeklyAttendanceCard attendance={data.weeklyAttendance} />,
-              layout: { x: 0, y: 26, w: 6, h: 13, minW: 3, minH: 7, maxW: 7 },
-            } satisfies DashboardGridWidget]
-          : []),
-        {
-          id: 'tasks',
-          label: 'Pendientes',
-          content: (
-            <DashboardTasks
-              tasks={data.tasks}
-              loading={actionLoading}
-              onAddTask={addTask}
-              onCompleteTask={completeTask}
-            />
-          ),
-          layout: { x: 6, y: 26, w: 6, h: 13, minW: 3, minH: 6, maxW: 7 },
-        },
-        {
-          id: 'recent',
-          label: 'Actividad reciente',
-          content: <RecentActivity items={data.recentActivity} />,
-          layout: { x: 0, y: 39, w: 6, h: 15, minW: 3, minH: 8, maxW: 7 },
-        },
-        {
-          id: 'journal',
-          label: 'Bitácora docente',
-          content: <JournalSummaryCard summary={journalSummary} />,
-          layout: { x: 6, y: 39, w: 6, h: 15, minW: 4, minH: 7, maxW: 12 },
-        },
-        ...(data.smartSuggestion
-          ? [{
-              id: 'suggestion',
-              label: 'Sugerencia inteligente',
-              content: <SmartSuggestion suggestion={data.smartSuggestion} />,
-              layout: { x: 0, y: 54, w: 12, h: 8, minW: 5, minH: 4, maxW: 12 },
-            } satisfies DashboardGridWidget]
-          : []),
-      ]
-    : []
+  const shortcuts = navigationRoutes.filter(
+    (route) =>
+      (quickPaths.includes(route.path) || addedPaths.includes(route.path)) &&
+      hasRole(route.allowedRoles),
+  )
+  const availableShortcuts = navigationRoutes.filter(
+    (route) =>
+      !quickPaths.includes(route.path) &&
+      !addedPaths.includes(route.path) &&
+      route.path !== '/inicio' &&
+      hasRole(route.allowedRoles),
+  )
+  const attendanceTotal = data.weeklyAttendance.days.length
+  const attendanceRecorded = data.weeklyAttendance.days.filter((day) => day.value !== null).length
+  const attendancePercent = attendanceTotal
+    ? Math.round((attendanceRecorded / attendanceTotal) * 100)
+    : 0
+  const evaluationPercent = data.teacherAnalytics?.average ?? null
 
   return (
-    <div className="w-full min-w-0 space-y-6">
-      <header className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-wrap items-baseline gap-3">
-          <h1 className="text-2xl font-bold tracking-tight text-foreground lg:text-[28px]">
-            {getGreeting()},
-            {' '}
-            <span className="text-accent">{data.context.firstName}</span>
+    <div className="home-dashboard">
+      <div className="home-heading">
+        <div>
+          <h1 className="text-[27px] font-extrabold tracking-tight text-foreground">
+            {getGreeting()}, <span className="text-primary">{data.context.firstName}</span>
           </h1>
-          <span className="text-sm text-muted-foreground">
-            · {data.context.formattedDate}
-          </span>
+          <p className="text-sm text-muted-foreground">{data.context.formattedDate}</p>
         </div>
-
-        <div className="flex items-center gap-2 text-xs">
-          {nextSetupTourStep ? <button type="button" onClick={() => startSetupTour(nextSetupTourStep)} className="inline-flex h-7 items-center rounded-full border border-primary/20 bg-primary/5 px-3 font-semibold text-primary transition-colors hover:bg-primary/10">Guía inicial</button> : null}
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={() => void refetch()}
             disabled={loading}
-            className="inline-flex size-7 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground disabled:opacity-50"
             aria-label="Actualizar inicio"
-            title="Actualizar inicio"
+            className="grid size-9 place-items-center rounded-full border border-border bg-card text-muted-foreground"
           >
-            <RefreshCw className={`size-3.5 ${loading ? 'animate-spin' : ''}`} />
+            <RefreshCw size={15} className={loading ? 'animate-spin' : ''} />
           </button>
-          <span className="inline-flex h-7 items-center rounded-full border border-border bg-card px-3 font-semibold text-muted-foreground">
+          <span className="rounded-full border border-border bg-card px-3 py-2 text-xs font-semibold">
             {data.context.schoolYearName}
           </span>
-          <span className="inline-flex h-7 items-center gap-1.5 rounded-full bg-accent/12 px-3 font-semibold text-accent">
-            <span className="size-1.5 animate-pulse rounded-full bg-accent" />
-            {data.context.periodName} · activo
+          <span className="rounded-full bg-primary-container px-3 py-2 text-xs font-semibold text-primary">
+            ● &nbsp;{data.context.periodName} · activo
           </span>
+          {nextSetupTourStep ? (
+            <button
+              type="button"
+              onClick={() => startSetupTour(nextSetupTourStep)}
+              className="rounded-full bg-card px-3 py-2 text-xs font-semibold text-primary"
+            >
+              Guía inicial
+            </button>
+          ) : null}
         </div>
-      </header>
-
-      {error && (
-        <div className="rounded-xl border border-destructive/25 bg-destructive/10 p-4 text-sm font-medium text-destructive">
+      </div>
+      {error ? (
+        <p role="alert" className="rounded-xl bg-destructive/10 p-3 text-sm text-destructive">
           {error}
-        </div>
-      )}
-
-      {data.view === 'management' ? (
-        <DashboardEditableGrid
-          widgets={managementWidgets}
-          storageKey="aulabase:dashboard-layout:management:v5"
-        />
-      ) : (
-        <>
-          <div className="dashboard-enter" style={{ animationDuration: '520ms' }}>
+        </p>
+      ) : null}
+      <div className="home-layout">
+        <div className="home-main-column">
+          <div className="home-top-cards">
             <DashboardHero
               nextClass={data.nextClass}
               onStartClass={handleStartClass}
-              onViewPlanning={handleViewPlanning}
-              canManageClass={canManageOperations}
+              onViewPlanning={() => navigate('/planificaciones')}
+              canManageClass={canAccess('/asistencia')}
               onCountdownEnd={refetch}
             />
+            <MetricCard
+              icon={CalendarCheck2}
+              title="Asistencia semanal"
+              detail={`${attendanceRecorded} / ${attendanceTotal} días con registros`}
+              value={attendancePercent}
+              path={canAccess('/asistencia') ? '/asistencia' : undefined}
+            />
+            <MetricCard
+              icon={GraduationCap}
+              title="Evaluaciones"
+              detail={`${data.teacherAnalytics?.gradedRecords ?? 0} calificaciones · promedio`}
+              value={evaluationPercent}
+              path={canAccess('/calificaciones') ? '/calificaciones' : undefined}
+            />
           </div>
-
-          {data.view === 'teacher' && data.teacherAnalytics ? (
-            <section className="grid gap-6 lg:grid-cols-2" aria-label="Resumen académico del docente">
-              <ChartPanel
-                title="Rendimiento por período"
-                description={`${data.teacherAnalytics.gradedRecords} calificaciones publicadas`}
-                value={data.teacherAnalytics.average === null ? '—' : `${data.teacherAnalytics.average}%`}
-              >
-                <LineChart data={data.teacherAnalytics.performanceByPeriod} />
-              </ChartPanel>
-              <ChartPanel
-                title="Promedio por asignatura"
-                description="Resultados de tus cursos en el año escolar actual"
-                value={data.teacherAnalytics.performanceBySubject.length ? `${data.teacherAnalytics.performanceBySubject.length} asignaturas` : '—'}
-              >
-                <BarChart data={data.teacherAnalytics.performanceBySubject} />
-              </ChartPanel>
-            </section>
-          ) : null}
-
-          {hasOperationalBlocks ? (
-            <div className="grid gap-6 lg:grid-cols-12 lg:items-start">
-              <div className="dashboard-enter lg:col-span-5 lg:self-start" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
-                <TodayAgenda items={data.todayAgenda} />
-              </div>
-
-              <div className="space-y-6 lg:col-span-7">
-                {hasWeeklyAttendance || hasTasks ? (
-                  <div className="grid gap-6 md:grid-cols-2 md:items-start">
-                    {hasWeeklyAttendance ? (
-                      <div className="dashboard-enter" style={{ animationDelay: '140ms', animationDuration: '380ms' }}>
-                        <WeeklyAttendanceCard attendance={data.weeklyAttendance} />
-                      </div>
-                    ) : null}
-                    {hasTasks ? (
-                      <div className="dashboard-enter" style={{ animationDelay: '180ms', animationDuration: '340ms' }}>
-                        <DashboardTasks
-                          tasks={data.tasks}
-                          loading={actionLoading}
-                          onAddTask={addTask}
-                          onCompleteTask={completeTask}
-                        />
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null}
-
-                {canManageOperations ? (
-                  <RecentActivity items={data.recentActivity} />
-                ) : null}
-
-                {canManageOperations ? (
-                  <div className="dashboard-enter" style={{ animationDelay: '230ms', animationDuration: '300ms' }}>
-                    <JournalSummaryCard summary={journalSummary} />
-                  </div>
-                ) : null}
-              </div>
+          <section className="home-shortcuts">
+            <h2 className="text-[17px] font-extrabold text-foreground">Acceso rápido</h2>
+            <div className="home-shortcut-list">
+              {shortcuts.map((item) => {
+                const Icon = item.icon
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`home-shortcut home-shortcut-${item.path.slice(1)}`}
+                    title={item.label}
+                  >
+                    <span className="home-shortcut-icon">
+                      <Icon className="size-5" aria-hidden="true" />
+                    </span>
+                    <span>{item.label}</span>
+                  </Link>
+                )
+              })}
+              <details className="home-shortcut home-shortcut-add">
+                <summary>
+                  <span className="home-shortcut-icon">
+                    <Plus size={20} aria-hidden="true" />
+                  </span>
+                  <span>Agregar</span>
+                </summary>
+                <div className="home-shortcut-menu">
+                  {availableShortcuts.length ? (
+                    availableShortcuts.map((item) => (
+                      <button
+                        key={item.path}
+                        type="button"
+                        onClick={(event) => {
+                          const next = [...addedPaths, item.path]
+                          setAddedPaths(next)
+                          localStorage.setItem('aulabase:home-shortcuts', JSON.stringify(next))
+                          event.currentTarget.closest('details')?.removeAttribute('open')
+                        }}
+                      >
+                        {item.label}
+                      </button>
+                    ))
+                  ) : (
+                    <p>Todos los accesos están visibles.</p>
+                  )}
+                </div>
+              </details>
+            </div>
+          </section>
+          <RecentTable items={data.recentActivity} showAll={canAccess('/reportes')} />
+          {canManage ? (
+            <div className="home-bottom-grid">
+              {canAccess('/bitacora') ? <JournalCard data={data} /> : null}
+              {canAccess('/asistencia') ? <PulseCard data={data} /> : null}
             </div>
           ) : null}
-
-          <div className="dashboard-enter" style={{ animationDelay: '240ms', animationDuration: '280ms' }}>
-            <SmartSuggestion suggestion={data.smartSuggestion} />
-          </div>
-        </>
-      )}
+        </div>
+        <Agenda
+          data={data}
+          onStartClass={canAccess('/asistencia') ? handleStartClass : undefined}
+          completeTask={completeTask}
+          addTask={addTask}
+          actionLoading={actionLoading}
+        />
+      </div>
     </div>
   )
 }

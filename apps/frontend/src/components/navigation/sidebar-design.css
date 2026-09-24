@@ -1,0 +1,112 @@
+.sidebar-shell {
+  box-shadow: 1px 0 0 var(--border);
+}
+
+.sidebar-link {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 18px;
+  padding: 0 12px;
+  text-align: left;
+  color: var(--muted-foreground);
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.sidebar-link:hover,
+.sidebar-link.is-active {
+  background: var(--sidebar-accent);
+  color: var(--primary);
+}
+
+.sidebar-shell :is(a, button):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.sidebar-link-featured {
+  min-height: 56px;
+  color: var(--foreground);
+}
+
+.sidebar-link-featured .sidebar-link-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary-container);
+  color: var(--primary);
+}
+
+.sidebar-link-featured:nth-child(2) .sidebar-link-icon {
+  background: var(--secondary-container);
+  color: var(--secondary);
+}
+
+.sidebar-link-featured:nth-child(3) .sidebar-link-icon {
+  background: var(--tertiary-container);
+  color: var(--foreground);
+}
+
+.sidebar-link-icon {
+  display: grid;
+  width: 20px;
+  flex: none;
+  place-items: center;
+}
+
+.sidebar-link-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.sidebar-link-description {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.1;
+}
+
+.sidebar-shell[data-sidebar-expanded='false'] .sidebar-copy {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .sidebar-shell .sidebar-copy {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar-shell[data-sidebar-expanded='false'] .sidebar-header {
+    padding-inline: 18px;
+  }
+
+  .sidebar-shell[data-sidebar-expanded='false'] .sidebar-header > button {
+    position: absolute;
+    top: 80px;
+    left: 22px;
+  }
+
+  .sidebar-shell[data-sidebar-expanded='false'] nav,
+  .sidebar-shell[data-sidebar-expanded='false'] > div:last-child {
+    padding-inline: 12px;
+  }
+
+  .sidebar-shell[data-sidebar-expanded='false'] .sidebar-link {
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .sidebar-shell[data-sidebar-expanded='false'] nav {
+    padding-top: 54px;
+  }
+}
