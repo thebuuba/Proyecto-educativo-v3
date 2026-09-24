@@ -28,34 +28,40 @@ export function AppLayout() {
 
   return (
     <GuidedTourProvider>
-    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
-      <div className="flex min-h-screen min-w-0">
-        <Sidebar
-          isOpen={isSidebarOpen}
-          isExpanded={isSidebarExpanded}
-          onClose={() => setIsSidebarOpen(false)}
-          onToggleExpanded={() => setIsSidebarExpanded((current) => !current)}
-        />
+      <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+        <div className="flex min-h-screen min-w-0">
+          <Sidebar
+            isOpen={isSidebarOpen}
+            isExpanded={isSidebarExpanded}
+            onClose={() => setIsSidebarOpen(false)}
+            onToggleExpanded={() => setIsSidebarExpanded((current) => !current)}
+          />
 
-        <div className={cn(
-          'sidebar-workspace min-w-0 flex-1',
-          isSidebarExpanded ? 'lg:pl-[255px]' : 'lg:pl-[76px]',
-        )}>
-          <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
-
-          <main
-            data-module={activeModule}
-            data-route={location.pathname}
+          <div
             className={cn(
-              'content-density-compact min-w-0 px-4 sm:px-6 lg:px-8',
-              isGradingPage ? 'py-3 lg:py-3' : 'py-5 lg:py-8',
+              'sidebar-workspace min-w-0 flex-1',
+              isSidebarExpanded ? 'lg:pl-[256px]' : 'lg:pl-[76px]',
             )}
           >
-            <Outlet />
-          </main>
+            <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
+
+            <main
+              data-module={activeModule}
+              data-route={location.pathname}
+              className={cn(
+                'content-density-compact min-w-0 px-4 sm:px-6 lg:px-8',
+                isGradingPage
+                  ? 'py-3 lg:py-3'
+                  : activeModule === 'inicio'
+                    ? 'pb-8 pt-0'
+                    : 'py-5 lg:py-8',
+              )}
+            >
+              <Outlet />
+            </main>
+          </div>
         </div>
       </div>
-    </div>
     </GuidedTourProvider>
   )
 }

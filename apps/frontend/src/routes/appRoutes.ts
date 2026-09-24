@@ -5,15 +5,15 @@ import {
   BookOpen,
   CalendarCheck,
   CalendarClock,
-  CheckSquare,
-  ChartNoAxesCombined,
+  ClipboardCheck,
+  ChartColumn,
   GraduationCap,
   LayoutDashboard,
-  LibraryBig,
+  Library,
   NotebookPen,
   BookMarked,
-  Settings,
-  UsersRound,
+  School,
+  Users,
 } from 'lucide-react'
 import { createElement, lazy } from 'react'
 import type { ComponentType } from 'react'
@@ -33,16 +33,28 @@ function lazyPage(importFn: () => Promise<Record<string, unknown>>, exportName: 
 }
 
 const GradingPage = lazyPage(() => import('@/modules/grading/pages/GradingPage'), 'GradingPage')
-const DashboardPage = lazyPage(() => import('@/modules/dashboard/pages/DashboardPage'), 'DashboardPage')
-const AttendancePage = lazyPage(() => import('@/modules/attendance/pages/AttendancePage'), 'AttendancePage')
+const DashboardPage = lazyPage(
+  () => import('@/modules/dashboard/pages/DashboardPage'),
+  'DashboardPage',
+)
+const AttendancePage = lazyPage(
+  () => import('@/modules/attendance/pages/AttendancePage'),
+  'AttendancePage',
+)
 const CoursesPage = lazyPage(() => import('@/modules/courses/pages/CoursesPage'), 'CoursesPage')
 const ReportsPage = lazyPage(() => import('@/modules/reports/pages/ReportsPage'), 'ReportsPage')
 const PlanningPage = lazyPage(() => import('@/modules/planning/pages/PlanningPage'), 'PlanningPage')
 const ProfilePage = lazyPage(() => import('@/modules/profile/pages/ProfilePage'), 'ProfilePage')
 const SchedulePage = lazyPage(() => import('@/modules/schedule/pages/SchedulePage'), 'SchedulePage')
-const SchoolAdministrationPage = lazyPage(() => import('@/modules/school-administration/pages/SchoolAdministrationPage'), 'SchoolAdministrationPage')
+const SchoolAdministrationPage = lazyPage(
+  () => import('@/modules/school-administration/pages/SchoolAdministrationPage'),
+  'SchoolAdministrationPage',
+)
 const StudentsPage = lazyPage(() => import('@/modules/students/pages/StudentsPage'), 'StudentsPage')
-const ActivitiesPage = lazyPage(() => import('@/modules/activities/pages/ActivitiesPage'), 'ActivitiesPage')
+const ActivitiesPage = lazyPage(
+  () => import('@/modules/activities/pages/ActivitiesPage'),
+  'ActivitiesPage',
+)
 const SubjectsPage = lazyPage(() => import('@/modules/subjects/pages/SubjectsPage'), 'SubjectsPage')
 const JournalPage = lazyPage(() => import('@/modules/journal/pages/JournalPage'), 'JournalPage')
 
@@ -99,14 +111,14 @@ export const appRoutes: AppRoute[] = [
   {
     path: '/cursos',
     label: 'Cursos',
-    icon: LibraryBig,
+    icon: Library,
     component: CoursesPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
   {
     path: '/estudiantes',
     label: 'Estudiantes',
-    icon: UsersRound,
+    icon: Users,
     component: StudentsPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
@@ -142,7 +154,7 @@ export const appRoutes: AppRoute[] = [
   {
     path: '/actividades',
     label: 'Actividades',
-    icon: CheckSquare,
+    icon: ClipboardCheck,
     component: ActivitiesPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
@@ -171,21 +183,21 @@ export const appRoutes: AppRoute[] = [
   {
     path: '/reportes',
     label: 'Reportes',
-    icon: ChartNoAxesCombined,
+    icon: ChartColumn,
     component: ReportsPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
   {
     path: '/configuracion',
     label: 'Administración escolar',
-    icon: Settings,
+    icon: School,
     component: SchoolAdministrationPage,
     allowedRoles: ['admin'],
   },
   {
     path: '/perfil',
     label: 'Perfil',
-    icon: UsersRound,
+    icon: Users,
     component: ProfilePage,
     allowedRoles: allRoles,
     showInSidebar: false,
@@ -198,39 +210,68 @@ function prefetch(loaders: Array<() => Promise<unknown>>) {
 
 /** Precarga el chunk y la carga inicial cacheable al anticipar una navegación. */
 export const routePrefetchers: Record<string, () => void> = {
-  '/inicio': () => prefetch([
-    () => import('@/modules/dashboard/pages/DashboardPage'),
-    () => import('@/modules/dashboard/services/dashboardService').then(({ getDashboardData }) => getDashboardData(null)),
-  ]),
-  '/cursos': () => prefetch([
-    () => import('@/modules/courses/pages/CoursesPage'),
-    () => import('@/modules/courses/services/coursesService').then(({ getCourseData }) => getCourseData()),
-  ]),
+  '/inicio': () =>
+    prefetch([
+      () => import('@/modules/dashboard/pages/DashboardPage'),
+      () =>
+        import('@/modules/dashboard/services/dashboardService').then(({ getDashboardData }) =>
+          getDashboardData(null),
+        ),
+    ]),
+  '/cursos': () =>
+    prefetch([
+      () => import('@/modules/courses/pages/CoursesPage'),
+      () =>
+        import('@/modules/courses/services/coursesService').then(({ getCourseData }) =>
+          getCourseData(),
+        ),
+    ]),
   '/estudiantes': () => void import('@/modules/students/pages/StudentsPage'),
-  '/actividades': () => prefetch([
-    () => import('@/modules/activities/pages/ActivitiesPage'),
-    () => import('@/modules/grading/services/gradingService').then(({ getActivityCenter }) => getActivityCenter()),
-  ]),
-  '/horario': () => prefetch([
-    () => import('@/modules/schedule/pages/SchedulePage'),
-    () => import('@/modules/schedule/services/scheduleService').then(({ getScheduleWorkspace }) => getScheduleWorkspace()),
-  ]),
-  '/asistencia': () => prefetch([
-    () => import('@/modules/attendance/pages/AttendancePage'),
-    () => import('@/modules/attendance/services/attendanceService').then(({ getAttendanceWorkspace }) => getAttendanceWorkspace()),
-  ]),
+  '/actividades': () =>
+    prefetch([
+      () => import('@/modules/activities/pages/ActivitiesPage'),
+      () =>
+        import('@/modules/grading/services/gradingService').then(({ getActivityCenter }) =>
+          getActivityCenter(),
+        ),
+    ]),
+  '/horario': () =>
+    prefetch([
+      () => import('@/modules/schedule/pages/SchedulePage'),
+      () =>
+        import('@/modules/schedule/services/scheduleService').then(({ getScheduleWorkspace }) =>
+          getScheduleWorkspace(),
+        ),
+    ]),
+  '/asistencia': () =>
+    prefetch([
+      () => import('@/modules/attendance/pages/AttendancePage'),
+      () =>
+        import('@/modules/attendance/services/attendanceService').then(
+          ({ getAttendanceWorkspace }) => getAttendanceWorkspace(),
+        ),
+    ]),
   '/calificaciones': () => void import('@/modules/grading/pages/GradingPage'),
-  '/planificaciones': () => prefetch([
-    () => import('@/modules/planning/pages/PlanningPage'),
-    () => import('@/modules/planning/services/planningService').then(({ getPlanningWorkspace }) => getPlanningWorkspace()),
-  ]),
+  '/planificaciones': () =>
+    prefetch([
+      () => import('@/modules/planning/pages/PlanningPage'),
+      () =>
+        import('@/modules/planning/services/planningService').then(({ getPlanningWorkspace }) =>
+          getPlanningWorkspace(),
+        ),
+    ]),
   '/matriz': () => void import('@/modules/planning/pages/PlanningPage'),
   '/reportes': () => void import('@/modules/reports/pages/ReportsPage'),
-  '/bitacora': () => prefetch([
-    () => import('@/modules/journal/pages/JournalPage'),
-    () => import('@/modules/journal/services/journalService').then(({ getJournalEntries }) => getJournalEntries()),
-  ]),
-  '/configuracion': () => void import('@/modules/school-administration/pages/SchoolAdministrationPage'),
+  '/bitacora': () =>
+    prefetch([
+      () => import('@/modules/journal/pages/JournalPage'),
+      () =>
+        import('@/modules/journal/services/journalService').then(({ getJournalEntries }) =>
+          getJournalEntries(),
+        ),
+    ]),
+  '/configuracion': () =>
+    void import('@/modules/school-administration/pages/SchoolAdministrationPage'),
 }
 
 /** Rutas filtradas para mostrar en la barra de navegación lateral. */

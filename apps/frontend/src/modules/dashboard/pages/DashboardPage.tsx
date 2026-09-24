@@ -1,15 +1,16 @@
 import {
   ArrowRight,
-  BellRing,
   BookMarked,
-  CalendarCheck2,
-  CheckSquare2,
+  CalendarCheck,
   ChevronRight,
-  Clock3,
+  ClipboardCheck,
+  Clock,
   GraduationCap,
   Plus,
   RefreshCw,
-  UsersRound,
+  Sparkles,
+  Users,
+  X,
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
@@ -46,8 +47,8 @@ const activityLabels: Record<RecentActivityItem['kind'], string> = {
 }
 const activityIcons = {
   grade: GraduationCap,
-  attendance: CalendarCheck2,
-  planning: CheckSquare2,
+  attendance: CalendarCheck,
+  planning: ClipboardCheck,
   report: BookMarked,
 }
 const journalLabels: Record<string, string> = {
@@ -64,14 +65,22 @@ function getGreeting() {
   return hour < 12 ? 'Buenos días' : hour < 18 ? 'Buenas tardes' : 'Buenas noches'
 }
 
-function ProgressRing({ value, label }: { value: number | null; label: string }) {
+function ProgressRing({
+  value,
+  label,
+  tone,
+}: {
+  value: number | null
+  label: string
+  tone: 'orange' | 'violet'
+}) {
   const percent = value === null ? 0 : Math.max(0, Math.min(100, value))
   return (
     <span
       className="home-progress-ring"
       role="img"
       aria-label={`${label}: ${value === null ? 'sin datos' : `${percent}%`}`}
-      style={{ background: `conic-gradient(var(--primary) ${percent}%, var(--border) 0)` }}
+      style={{ background: `conic-gradient(var(--palette-${tone}) ${percent}%, var(--border) 0)` }}
     >
       <span>{value === null ? '—' : `${percent}%`}</span>
     </span>
@@ -84,23 +93,25 @@ function MetricCard({
   detail,
   value,
   path,
+  tone,
 }: {
-  icon: typeof CalendarCheck2
+  icon: typeof CalendarCheck
   title: string
   detail: string
   value: number | null
   path?: string
+  tone: 'orange' | 'violet'
 }) {
   return (
     <article className="home-metric-card">
       <div className="flex items-start justify-between">
-        <span className="home-metric-icon">
+        <span className={`home-metric-icon home-tone-${tone}`}>
           <Icon size={19} strokeWidth={1.8} aria-hidden="true" />
         </span>
-        <ProgressRing value={value} label={title} />
+        <ProgressRing value={value} label={title} tone={tone} />
       </div>
       <div className="mt-4">
-        <h2 className="text-[14px] font-extrabold text-foreground">{title}</h2>
+        <h2 className="text-[14px] font-semibold text-foreground">{title}</h2>
         <p className="mt-0.5 text-xs text-muted-foreground">{detail}</p>
       </div>
       {path ? (
@@ -134,14 +145,14 @@ function Agenda({
     <aside className="home-agenda" aria-label="Tu agenda">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h2 className="text-xl font-extrabold tracking-tight text-foreground">Tu agenda</h2>
+          <h2 className="text-xl font-semibold tracking-tight text-foreground">Tu agenda</h2>
           <p className="text-xs text-muted-foreground">
             {data.todayAgenda.length} clases programadas
           </p>
         </div>
         <Link
           to="/horario"
-          className="grid size-8 place-items-center rounded-full bg-muted text-muted-foreground hover:text-primary"
+          className="grid size-8 place-items-center rounded-lg bg-muted text-muted-foreground hover:text-primary"
           aria-label="Ver semana"
         >
           <ChevronRight size={17} />
@@ -191,11 +202,11 @@ function Agenda({
                   </div>
                   <p className="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-[10px]">
                     <span className="inline-flex items-center gap-1">
-                      <Clock3 size={11} />
+                      <Clock size={11} />
                       {item.durationMinutes} min
                     </span>
                     <span className="inline-flex items-center gap-1">
-                      <UsersRound size={11} />
+                      <Users size={11} />
                       {item.studentCount} est.
                     </span>
                     <span>{item.room ?? 'Aula sin asignar'}</span>
@@ -279,7 +290,7 @@ function RecentTable({ items, showAll }: { items: RecentActivityItem[]; showAll:
   return (
     <section className="home-recent">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-[17px] font-extrabold text-foreground">Actividad reciente</h2>
+        <h2 className="text-[17px] font-semibold text-foreground">Actividad reciente</h2>
         {showAll ? (
           <Link to="/reportes" className="text-sm font-semibold text-primary hover:underline">
             Ver todo
@@ -330,11 +341,11 @@ function JournalCard({ data }: { data: DashboardData }) {
     <section className="home-bottom-card">
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-full bg-destructive/12 text-destructive">
+          <span className="home-journal-icon grid size-10 place-items-center rounded-xl">
             <BookMarked size={19} />
           </span>
           <div>
-            <h2 className="text-sm font-extrabold">Bitácora docente</h2>
+            <h2 className="text-sm font-semibold">Bitácora docente</h2>
             <p className="text-xs text-muted-foreground">
               {summary?.activeCount ?? 0} anotaciones · {summary?.pendingCount ?? 0} seguimientos
               pendientes
@@ -343,7 +354,7 @@ function JournalCard({ data }: { data: DashboardData }) {
         </div>
         <Link
           to="/bitacora?action=create"
-          className="inline-flex min-h-9 items-center gap-1 rounded-full bg-primary px-3 text-xs font-bold text-white"
+          className="inline-flex min-h-9 items-center gap-1 rounded-xl bg-primary px-3 text-xs font-semibold text-white"
         >
           <Plus size={14} />
           Nueva
@@ -381,20 +392,30 @@ function JournalCard({ data }: { data: DashboardData }) {
 }
 
 function PulseCard({ data }: { data: DashboardData }) {
+  const [dismissed, setDismissed] = useState(false)
   const total = data.weeklyAttendance.days.length
   const recorded = data.weeklyAttendance.days.filter((day) => day.value !== null).length
   const percent = total ? Math.round((recorded / total) * 100) : 0
+  if (dismissed) return null
   return (
     <section className="home-bottom-card">
       <div className="flex items-center justify-between">
-        <h2 className="inline-flex items-center gap-2 text-sm font-extrabold">
-          <BellRing size={17} className="text-primary" />
+        <h2 className="inline-flex items-center gap-2 text-sm font-semibold">
+          <Sparkles size={17} className="text-primary" />
           Pulso semanal <span className="text-primary">{percent}%</span>
         </h2>
+        <button
+          type="button"
+          onClick={() => setDismissed(true)}
+          aria-label="Descartar pulso semanal"
+          className="grid size-7 place-items-center rounded-lg bg-muted text-muted-foreground"
+        >
+          <X size={14} />
+        </button>
       </div>
-      <div className="mt-5 flex items-center gap-3 rounded-2xl bg-warning-container p-3">
-        <span className="grid size-9 shrink-0 place-items-center rounded-full bg-warning text-foreground">
-          <CalendarCheck2 size={17} />
+      <div className="home-pulse-alert mt-5 flex items-center gap-3 rounded-2xl p-3">
+        <span className="home-pulse-icon grid size-9 shrink-0 place-items-center rounded-xl text-white">
+          <CalendarCheck size={17} />
         </span>
         <div>
           <p className="text-sm font-bold">
@@ -405,15 +426,20 @@ function PulseCard({ data }: { data: DashboardData }) {
           </p>
         </div>
       </div>
-      <p className="mt-4 text-xs text-muted-foreground">
-        {data.smartSuggestion?.title ?? 'Revisa tus clases y registra la asistencia.'}
-      </p>
-      <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-muted">
-        <div className="h-full rounded-full bg-primary" style={{ width: `${percent}%` }} />
+      <div className="mt-3 flex items-center gap-3 px-1">
+        <p className="flex-1 text-xs text-muted-foreground">
+          {data.smartSuggestion?.title ?? 'Revisa tus clases y registra la asistencia.'}
+        </p>
+        <div className="h-1.5 w-16 overflow-hidden rounded-full bg-muted">
+          <div
+            className="h-full rounded-full bg-primary"
+            style={{ width: `${Math.max(percent, 6)}%` }}
+          />
+        </div>
       </div>
       <Link
         to={data.smartSuggestion?.path ?? '/asistencia'}
-        className="mt-auto inline-flex min-h-9 items-center justify-center gap-2 rounded-full bg-primary px-3 pt-0 text-xs font-bold text-white shadow-sm hover:bg-primary-hover"
+        className="mt-auto inline-flex min-h-9 items-center justify-center gap-2 rounded-xl bg-primary px-3 pt-0 text-xs font-semibold text-white shadow-sm hover:bg-primary-hover"
       >
         {data.smartSuggestion?.actionLabel ?? 'Registrar asistencia'} <ArrowRight size={14} />
       </Link>
@@ -482,40 +508,6 @@ export function DashboardPage() {
 
   return (
     <div className="home-dashboard">
-      <div className="home-heading">
-        <div>
-          <h1 className="text-[27px] font-extrabold tracking-tight text-foreground">
-            {getGreeting()}, <span className="text-primary">{data.context.firstName}</span>
-          </h1>
-          <p className="text-sm text-muted-foreground">{data.context.formattedDate}</p>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            onClick={() => void refetch()}
-            disabled={loading}
-            aria-label="Actualizar inicio"
-            className="grid size-9 place-items-center rounded-full border border-border bg-card text-muted-foreground"
-          >
-            <RefreshCw size={15} className={loading ? 'animate-spin' : ''} />
-          </button>
-          <span className="rounded-full border border-border bg-card px-3 py-2 text-xs font-semibold">
-            {data.context.schoolYearName}
-          </span>
-          <span className="rounded-full bg-primary-container px-3 py-2 text-xs font-semibold text-primary">
-            ● &nbsp;{data.context.periodName} · activo
-          </span>
-          {nextSetupTourStep ? (
-            <button
-              type="button"
-              onClick={() => startSetupTour(nextSetupTourStep)}
-              className="rounded-full bg-card px-3 py-2 text-xs font-semibold text-primary"
-            >
-              Guía inicial
-            </button>
-          ) : null}
-        </div>
-      </div>
       {error ? (
         <p role="alert" className="rounded-xl bg-destructive/10 p-3 text-sm text-destructive">
           {error}
@@ -523,6 +515,41 @@ export function DashboardPage() {
       ) : null}
       <div className="home-layout">
         <div className="home-main-column">
+          <div className="home-heading">
+            <div>
+              <h1 className="text-[27px] font-semibold tracking-tight text-foreground">
+                {getGreeting()}, <span className="text-primary">{data.context.firstName}</span>
+              </h1>
+              <p className="text-sm text-muted-foreground">{data.context.formattedDate}</p>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => void refetch()}
+                disabled={loading}
+                aria-label="Actualizar inicio"
+                className="grid size-9 place-items-center rounded-full border border-border bg-card text-muted-foreground"
+              >
+                <RefreshCw size={15} className={loading ? 'animate-spin' : ''} />
+              </button>
+              <span className="rounded-full border border-border bg-card px-3 py-2 text-xs font-semibold">
+                {data.context.schoolYearName}
+              </span>
+              <span className="rounded-full bg-primary-container px-3 py-2 text-xs font-semibold text-primary">
+                ● &nbsp;{data.context.periodName} · activo
+              </span>
+              {nextSetupTourStep ? (
+                <button
+                  type="button"
+                  onClick={() => startSetupTour(nextSetupTourStep)}
+                  className="rounded-full bg-card px-3 py-2 text-xs font-semibold text-primary"
+                >
+                  Guía inicial
+                </button>
+              ) : null}
+            </div>
+          </div>
+
           <div className="home-top-cards">
             <DashboardHero
               nextClass={data.nextClass}
@@ -532,10 +559,11 @@ export function DashboardPage() {
               onCountdownEnd={refetch}
             />
             <MetricCard
-              icon={CalendarCheck2}
+              icon={CalendarCheck}
               title="Asistencia semanal"
               detail={`${attendanceRecorded} / ${attendanceTotal} días con registros`}
               value={attendancePercent}
+              tone="orange"
               path={canAccess('/asistencia') ? '/asistencia' : undefined}
             />
             <MetricCard
@@ -543,11 +571,12 @@ export function DashboardPage() {
               title="Evaluaciones"
               detail={`${data.teacherAnalytics?.gradedRecords ?? 0} calificaciones · promedio`}
               value={evaluationPercent}
+              tone="violet"
               path={canAccess('/calificaciones') ? '/calificaciones' : undefined}
             />
           </div>
           <section className="home-shortcuts">
-            <h2 className="text-[17px] font-extrabold text-foreground">Acceso rápido</h2>
+            <h2 className="text-[17px] font-semibold text-foreground">Acceso rápido</h2>
             <div className="home-shortcut-list">
               {shortcuts.map((item) => {
                 const Icon = item.icon
@@ -559,7 +588,9 @@ export function DashboardPage() {
                     title={item.label}
                   >
                     <span className="home-shortcut-icon">
-                      <Icon className="size-5" aria-hidden="true" />
+                      <span className="home-shortcut-icon-inner">
+                        <Icon className="size-[18px]" aria-hidden="true" />
+                      </span>
                     </span>
                     <span>{item.label}</span>
                   </Link>

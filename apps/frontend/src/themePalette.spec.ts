@@ -25,18 +25,21 @@ describe('paleta visual de AulaBase', () => {
 
     expect(baseImport).toBeGreaterThanOrEqual(0)
     expect(semanticImport).toBeGreaterThan(baseImport)
+    expect(readSource('./index.css')).toContain('family=Poppins')
   })
 
-  it('declara la paleta aprobada, blanco y texto neutral', () => {
+  it('declara los acentos de la referencia visual', () => {
     const css = readSource('./semantic-palette.css').toUpperCase()
     const approvedColors = [
-      '#3CB7E2',
-      '#66D64F',
-      '#F6886F',
-      '#F9C46B',
-      '#E3E3E3',
+      '#0EA5E9',
+      '#10B981',
+      '#14B8A6',
+      '#64748B',
+      '#8B5CF6',
+      '#F43F5E',
+      '#F97316',
+      '#FBBF24',
       '#FFFFFF',
-      '#2F3542',
     ]
     const declaredHexColors = [...new Set(css.match(/#[0-9A-F]{6}/g) ?? [])].sort()
 
@@ -46,17 +49,18 @@ describe('paleta visual de AulaBase', () => {
   it('asigna cada color a un rol semántico estable', () => {
     const css = readSource('./semantic-palette.css').toUpperCase()
 
-    expect(css).toContain('--PALETTE-BLUE: #3CB7E2;')
-    expect(css).toContain('--PALETTE-GREEN: #66D64F;')
-    expect(css).toContain('--PALETTE-CORAL: #F6886F;')
-    expect(css).toContain('--PALETTE-GOLD: #F9C46B;')
-    expect(css).toContain('--PALETTE-GRAY: #E3E3E3;')
+    expect(css).toContain('--PALETTE-BLUE: HSL(207 85% 55%);')
+    expect(css).toContain('--PALETTE-GREEN: #10B981;')
+    expect(css).toContain('--PALETTE-CORAL: HSL(4 80% 60%);')
+    expect(css).toContain('--PALETTE-GOLD: #FBBF24;')
+    expect(css).toContain('--PALETTE-GRAY: HSL(214 32% 91%);')
     expect(css).toContain('--PALETTE-WHITE: #FFFFFF;')
-    expect(css).toContain('--PALETTE-TEXT: #2F3542;')
+    expect(css).toContain('--PALETTE-TEXT: HSL(220 30% 18%);')
+    expect(css).toContain('--PAGE-BACKGROUND: HSL(213 45% 96%);')
 
     expect(css).toContain('--PRIMARY: VAR(--PALETTE-BLUE);')
     expect(css).toContain('--TERTIARY: VAR(--PALETTE-GREEN);')
-    expect(css).toContain('--SECONDARY: VAR(--PALETTE-CORAL);')
+    expect(css).toContain('--SECONDARY: HSL(210 60% 96%);')
     expect(css).toContain('--DESTRUCTIVE: VAR(--PALETTE-CORAL);')
     expect(css).toContain('--WARNING: VAR(--PALETTE-GOLD);')
     expect(css).toContain('--CARD: VAR(--PALETTE-WHITE);')
@@ -73,14 +77,10 @@ describe('paleta visual de AulaBase', () => {
     expect(css).toContain('--BG-SURFACE: VAR(--PALETTE-WHITE);')
   })
 
-  it('usa texto oscuro legible sobre todos los colores principales', () => {
-    const text = '#2F3542'
+  it('usa texto oscuro legible sobre las superficies principales', () => {
+    const text = '#20293C'
 
-    expect(contrastRatio('#3CB7E2', text)).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#66D64F', text)).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#F6886F', text)).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#F9C46B', text)).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#E3E3E3', text)).toBeGreaterThanOrEqual(4.5)
-    expect(contrastRatio('#FFFFFF', text)).toBeGreaterThanOrEqual(4.5)
+    expect(contrastRatio('#F1F5FA', text)).toBeGreaterThanOrEqual(7)
+    expect(contrastRatio('#FFFFFF', text)).toBeGreaterThanOrEqual(7)
   })
 })
