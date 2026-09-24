@@ -109,7 +109,6 @@ export const appRoutes: AppRoute[] = [
     icon: UsersRound,
     component: StudentsPage,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
-    showInSidebar: false,
   },
   {
     path: '/asignaturas',

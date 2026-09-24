@@ -1,13 +1,10 @@
-/**
- * Barra lateral de navegación con enlaces a módulos y cierre de sesión.
- */
-import { ChevronLeft, ChevronRight, LogOut, X } from 'lucide-react'
+import { ChevronsLeft, ChevronsRight, GraduationCap, LogOut, Settings2, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
-import { Button } from '@/components/ui/Button'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { navigationRoutes, routePrefetchers } from '@/routes/appRoutes'
 import { cn } from '@/utils/cn'
+import './sidebar-design.css'
 
 type SidebarProps = {
   isOpen: boolean
@@ -16,236 +13,162 @@ type SidebarProps = {
   onToggleExpanded: () => void
 }
 
+const primaryPaths = ['/inicio', '/cursos', '/horario']
+const secondaryPaths = [
+  '/asistencia',
+  '/calificaciones',
+  '/actividades',
+  '/planificaciones',
+  '/bitacora',
+  '/reportes',
+  '/estudiantes',
+]
+const footerPaths = ['/configuracion']
+
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
   const { hasRole, logout } = useAuth()
-  const visibleRoutes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
+  const routes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
+  const primary = routes.filter((item) => primaryPaths.includes(item.path))
+  const secondary = routes
+    .filter((item) => secondaryPaths.includes(item.path))
+    .sort((a, b) => secondaryPaths.indexOf(a.path) - secondaryPaths.indexOf(b.path))
+  const footer = routes.filter((item) => footerPaths.includes(item.path))
+
+  const renderLink = (item: (typeof routes)[number], featured = false) => {
+    const Icon = item.icon
+    const description =
+      item.path === '/inicio'
+        ? 'Resumen del día'
+        : item.path === '/cursos'
+          ? 'Tus grupos activos'
+          : item.path === '/horario'
+            ? 'Clases de hoy'
+            : null
+    return (
+      <NavLink
+        key={item.path}
+        to={item.path}
+        end={item.path === '/inicio'}
+        data-tour={
+          item.path === '/cursos'
+            ? 'nav-courses'
+            : item.path === '/horario'
+              ? 'nav-schedule'
+              : item.path === '/asistencia'
+                ? 'nav-attendance'
+                : item.path === '/planificaciones'
+                  ? 'nav-planning'
+                  : undefined
+        }
+        onClick={onClose}
+        onMouseEnter={() => routePrefetchers[item.path]?.()}
+        onFocus={() => routePrefetchers[item.path]?.()}
+        title={item.label}
+        className={({ isActive }) =>
+          cn('sidebar-link', featured && 'sidebar-link-featured', isActive && 'is-active')
+        }
+      >
+        <span className="sidebar-link-icon">
+          <Icon className="size-[18px]" aria-hidden="true" />
+        </span>
+        <span className="sidebar-copy">
+          <span className="sidebar-link-title">{item.label}</span>
+          {featured && description ? (
+            <span className="sidebar-link-description">{description}</span>
+          ) : null}
+        </span>
+      </NavLink>
+    )
+  }
 
   return (
     <>
       <div
         className={cn(
-          'sidebar-overlay fixed inset-0 z-30 bg-black/20 backdrop-blur-[2px] lg:hidden',
+          'sidebar-overlay fixed inset-0 z-30 bg-foreground/20 lg:hidden',
           isOpen ? 'opacity-100' : 'pointer-events-none opacity-0',
         )}
         aria-hidden="true"
         onClick={onClose}
       />
-
       <aside
         data-sidebar-expanded={isExpanded}
         className={cn(
-          'sidebar-shell group fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col border-r border-border/70 bg-white text-foreground shadow-[4px_0_28px_-26px_rgb(15_23_42_/_0.42)] lg:translate-x-0',
-          isExpanded ? 'lg:w-[260px]' : 'lg:w-[88px]',
+          'sidebar-shell fixed inset-y-0 left-0 z-40 flex w-[255px] flex-col border-r border-border bg-card lg:translate-x-0',
+          !isExpanded && 'lg:w-[76px]',
           isOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div
-          className={cn(
-            'sidebar-header relative flex h-[84px] shrink-0 items-center',
-            isExpanded ? 'px-5' : 'px-3',
-          )}
-        >
-          <div className="sidebar-brand-row flex w-full items-center justify-between">
-            <NavLink
-              to="/inicio"
-              className="sidebar-brand-link flex min-w-0 items-center"
-              onClick={onClose}
-              title="Aula Base"
-            >
-              <img src="/favicon.svg" alt="" className="size-11 shrink-0 rounded-[13px] shadow-sm" />
-
-              <span className="sidebar-label min-w-0">
-                <span className="block text-[15px] font-extrabold uppercase tracking-[0.045em] text-slate-900">
-                  Aula Base
-                </span>
-                <span className="mt-0.5 block text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">
-                  Sistema docente
-                </span>
-              </span>
-            </NavLink>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground lg:hidden"
-              aria-label="Cerrar navegación"
-              onClick={onClose}
-            >
-              <X className="size-5" />
-            </Button>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          className="absolute -right-3 top-[102px] z-50 hidden size-7 items-center justify-center rounded-full border border-border bg-white text-muted-foreground shadow-md transition-[color,transform,box-shadow] hover:text-primary hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 lg:flex"
-          aria-label={isExpanded ? 'Colapsar navegación' : 'Expandir navegación'}
-          title={isExpanded ? 'Colapsar navegación' : 'Expandir navegación'}
-          aria-expanded={isExpanded}
-          onClick={onToggleExpanded}
-        >
-          {isExpanded ? (
-            <ChevronLeft className="size-4" strokeWidth={2.2} />
-          ) : (
-            <ChevronRight className="size-4" strokeWidth={2.2} />
-          )}
-        </button>
-
-        <nav
-          className={cn(
-            'flex-1 overflow-y-auto px-3 py-4',
-            !isExpanded && 'lg:overflow-visible',
-          )}
-        >
-          <div className="space-y-1.5">
-            {visibleRoutes.map((item) => {
-              const Icon = item.icon
-              const isSettings = item.path === '/configuracion'
-
-              const link = (
-                <NavLink
-                  key={item.path}
-                  data-tour={item.path === '/cursos' ? 'nav-courses' : item.path === '/horario' ? 'nav-schedule' : item.path === '/asistencia' ? 'nav-attendance' : item.path === '/planificaciones' ? 'nav-planning' : undefined}
-                  to={item.path}
-                  end={item.path === '/inicio'}
-                  onClick={onClose}
-                  onMouseEnter={() => routePrefetchers[item.path]?.()}
-                  onFocus={() => routePrefetchers[item.path]?.()}
-                  title={isExpanded ? item.label : undefined}
-                  className={({ isActive }) =>
-                    cn(
-                      'sidebar-nav-item group/nav relative flex min-h-[44px] w-full items-center gap-0 rounded-xl text-sm font-semibold leading-5 outline-none',
-                      'focus-visible:ring-2 focus-visible:ring-primary/20',
-                      isActive
-                        ? 'bg-primary/10 text-foreground'
-                        : 'text-foreground hover:bg-muted/70',
-                    )
-                  }
-                >
-                  {({ isActive }) => (
-                    <>
-                      <span
-                        aria-hidden="true"
-                        className={cn(
-                          'sidebar-nav-icon flex size-8 shrink-0 items-center justify-center rounded-lg transition-[color,background-color,transform] duration-150',
-                          isActive
-                            ? 'bg-primary/12 text-primary'
-                            : 'text-foreground/70 group-hover/nav:bg-card group-hover/nav:text-foreground',
-                        )}
-                      >
-                        <Icon className="size-[19px] shrink-0" />
-                      </span>
-
-                      <span className="sidebar-label truncate">{item.label}</span>
-
-                      {!isExpanded ? (
-                        <span
-                          aria-hidden="true"
-                          className="sidebar-tooltip pointer-events-none absolute left-[calc(100%+0.7rem)] top-1/2 z-50 hidden -translate-y-1/2 translate-x-1 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1.5 text-[11px] font-semibold text-white opacity-0 shadow-lg before:absolute before:-left-1 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rotate-45 before:bg-foreground group-focus-visible/nav:translate-x-0 group-focus-visible/nav:opacity-100 lg:block"
-                        >
-                          {item.label}
-                        </span>
-                      ) : null}
-                    </>
-                  )}
-                </NavLink>
-              )
-
-              return isSettings ? (
-                <div key={item.path} className="mt-4 border-t border-border/60 pt-4">
-                  {link}
-                </div>
-              ) : link
-            })}
-          </div>
-        </nav>
-
-        <div className="border-t border-border/60 px-3 py-3">
+        <div className="sidebar-header flex h-[73px] shrink-0 items-center gap-3 px-5">
+          <NavLink
+            to="/inicio"
+            onClick={onClose}
+            className="flex min-w-0 flex-1 items-center gap-3"
+            aria-label="Aula Base, inicio"
+          >
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-sm">
+              <GraduationCap size={21} aria-hidden="true" />
+            </span>
+            <span className="sidebar-copy min-w-0 leading-tight">
+              <strong className="block text-[18px] font-extrabold text-foreground">
+                Aula Base
+              </strong>
+              <small className="block text-[11px] text-muted-foreground">Sistema docente</small>
+            </span>
+          </NavLink>
           <button
             type="button"
-            onClick={() => void logout()}
-            className="sidebar-footer-action flex min-h-10 w-full items-center gap-0 rounded-lg text-[12px] font-semibold text-destructive/80 hover:bg-destructive/[0.055] hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/20"
-            title="Cerrar sesión"
+            onClick={onToggleExpanded}
+            className="hidden size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:flex"
+            aria-label={isExpanded ? 'Contraer menú' : 'Expandir menú'}
+            aria-expanded={isExpanded}
           >
-            <LogOut className="size-[19px] shrink-0" strokeWidth={1.9} />
-            <span className="sidebar-label">Cerrar sesión</span>
+            {isExpanded ? <ChevronsLeft size={16} /> : <ChevronsRight size={16} />}
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            className="flex size-9 shrink-0 items-center justify-center rounded-full text-muted-foreground lg:hidden"
+            aria-label="Cerrar navegación"
+          >
+            <X size={19} />
           </button>
         </div>
 
-        <style>{`
-          @media (min-width: 1024px) {
-            .sidebar-shell .sidebar-brand-link {
-              width: 100%;
-              padding-left: 0;
-              transition: padding-left 200ms cubic-bezier(0.77, 0, 0.175, 1);
-            }
+        <nav className="min-h-0 flex-1 overflow-y-auto px-4 py-2" aria-label="Navegación principal">
+          <div className="space-y-1.5">{primary.map((item) => renderLink(item, true))}</div>
+          {secondary.length ? (
+            <div className="mt-5 space-y-0.5 border-t border-border pt-4">
+              {secondary.map((item) => renderLink(item))}
+            </div>
+          ) : null}
+        </nav>
 
-            .sidebar-shell[data-sidebar-expanded='false'] .sidebar-brand-link {
-              padding-left: 10px;
-            }
-
-            .sidebar-shell .sidebar-nav-item {
-              padding-left: 12px;
-              padding-right: 12px;
-              transition:
-                padding-left 200ms cubic-bezier(0.77, 0, 0.175, 1),
-                padding-right 200ms cubic-bezier(0.77, 0, 0.175, 1),
-                box-shadow 180ms ease,
-                background-color 180ms ease,
-                color 180ms ease;
-            }
-
-            .sidebar-shell[data-sidebar-expanded='false'] .sidebar-nav-item {
-              padding-left: 16px;
-              padding-right: 16px;
-            }
-
-            .sidebar-shell .sidebar-footer-action {
-              padding-left: 12px;
-              padding-right: 12px;
-              transition:
-                padding-left 200ms cubic-bezier(0.77, 0, 0.175, 1),
-                padding-right 200ms cubic-bezier(0.77, 0, 0.175, 1),
-                background-color 180ms ease,
-                color 180ms ease;
-            }
-
-            .sidebar-shell[data-sidebar-expanded='false'] .sidebar-footer-action {
-              padding-left: 23.5px;
-              padding-right: 23.5px;
-            }
-
-            .sidebar-shell .sidebar-label {
-              margin-left: 12px;
-              transform: translateX(0);
-              transition:
-                max-width 200ms cubic-bezier(0.77, 0, 0.175, 1),
-                opacity 140ms cubic-bezier(0.4, 0, 1, 1),
-                margin-left 200ms cubic-bezier(0.77, 0, 0.175, 1),
-                transform 180ms cubic-bezier(0.4, 0, 1, 1);
-            }
-
-            .sidebar-shell[data-sidebar-expanded='true'] .sidebar-label {
-              transition-delay: 0ms, 55ms, 0ms, 0ms;
-            }
-
-            .sidebar-shell[data-sidebar-expanded='false'] .sidebar-label {
-              margin-left: 0;
-              opacity: 0;
-              transform: translateX(-4px);
-              transition-delay: 0ms;
-            }
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            .sidebar-shell .sidebar-brand-link,
-            .sidebar-shell .sidebar-nav-item,
-            .sidebar-shell .sidebar-footer-action,
-            .sidebar-shell .sidebar-label {
-              transition-duration: 1ms !important;
-            }
-          }
-        `}</style>
+        <div className="space-y-0.5 border-t border-border px-4 py-3">
+          {footer.map((item) => renderLink(item))}
+          <NavLink
+            to="/perfil"
+            onClick={onClose}
+            title="Ajustes"
+            className={({ isActive }) => cn('sidebar-link', isActive && 'is-active')}
+          >
+            <span className="sidebar-link-icon">
+              <Settings2 size={18} strokeWidth={1.8} />
+            </span>
+            <span className="sidebar-copy sidebar-link-title">Ajustes</span>
+          </NavLink>
+          <button
+            type="button"
+            onClick={() => void logout()}
+            title="Cerrar sesión"
+            className="sidebar-link w-full text-destructive"
+          >
+            <span className="sidebar-link-icon">
+              <LogOut size={18} strokeWidth={1.8} />
+            </span>
+            <span className="sidebar-copy sidebar-link-title">Cerrar sesión</span>
+          </button>
+        </div>
       </aside>
     </>
   )
