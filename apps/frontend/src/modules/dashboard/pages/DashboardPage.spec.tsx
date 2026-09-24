@@ -50,7 +50,7 @@ describe('DashboardPage', () => {
     expect(screen.getByText('Tu agenda de hoy')).toBeInTheDocument()
     expect(screen.getByText('No hay clases programadas para hoy.')).toBeInTheDocument()
     expect(screen.getByText('Actividad de prueba').closest('.dashboard-enter')).toBeNull()
-    expect(screen.getByText('Pulso semanal')).toBeInTheDocument()
+    expect(screen.getByText('Asistencia semanal')).toBeInTheDocument()
     expect(screen.getByText('· miércoles, 2 de septiembre')).toBeInTheDocument()
     expect(screen.getByRole('img', { name: 'Aún no hay registros de asistencia esta semana.' })).toBeInTheDocument()
     expect(screen.getByText('Aún no has registrado asistencia esta semana')).toBeInTheDocument()
