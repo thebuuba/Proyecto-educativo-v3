@@ -672,6 +672,7 @@ model EvaluationActivity {
   planningEntryId      String?      @map("planning_entry_id") @db.Uuid
   instrumentId         String?      @map("instrument_id") @db.Uuid
   competencyBlockId    String       @map("competency_block_id")
+  competencyBlockWeights Json       @default("{}") @map("competency_block_weights")
   planningMoment       String?      @map("planning_moment")
   name                 String
   description          String       @default("")

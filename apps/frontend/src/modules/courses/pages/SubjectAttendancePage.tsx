@@ -179,7 +179,7 @@ export function SubjectAttendancePanel({ sectionSubjectId, students, loading = f
         <div className={cn('mt-3 grid gap-2', !editing && 'sm:grid-cols-2 xl:grid-cols-5')}>{sessionDates.slice(0, 5).map((day) => {
           const values = history.filter((record) => record.attendanceDate.startsWith(day)).map((record) => statusToMark(record.status, record.notes))
           const counts = countMarks(values)
-          return <button type="button" key={day} disabled={saving} onClick={() => requestOpen(day)} className="rounded-xl border border-border p-3 text-left transition duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-50">
+          return <button type="button" key={day} disabled={saving} onClick={() => requestOpen(day)} className="rounded-xl border border-border p-3 text-left transition-[background-color,border-color,box-shadow] duration-200 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-50">
             <span className="flex items-center gap-2 text-sm font-bold text-foreground"><CalendarDays className="size-4 shrink-0 text-primary" aria-hidden="true" />{formatDate(day)}</span>
             <span className="mt-2 block text-xs text-muted-foreground">{counts.P} P · {counts.A} A · {counts.E} E · {counts.T} T</span><span className="mt-2 block text-xs text-muted-foreground">{values.length} registros · {dailyPercentage(values)}% de asistencia</span>
           </button>

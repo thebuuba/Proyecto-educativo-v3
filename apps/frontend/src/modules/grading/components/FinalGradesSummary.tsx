@@ -8,6 +8,7 @@ import type {
   StudentGradeRow,
 } from '@/modules/grading/types'
 import {
+  activityAppliesToBlock,
   blockTotal,
   competencyBlocks,
   competencyPeriods,
@@ -101,7 +102,7 @@ export function FinalGradesSummary({
                   .map((period) => {
                     const records = recordsByPeriod.get(period.id as CompetencyPeriodId) ?? []
                     const activities = getActivitiesForPeriod(period.id as CompetencyPeriodId)
-                      .filter((activity) => activity.competencyBlockId === block.id)
+                      .filter((activity) => activityAppliesToBlock(activity, block.id))
                     const total = blockTotal({
                       records,
                       activities,

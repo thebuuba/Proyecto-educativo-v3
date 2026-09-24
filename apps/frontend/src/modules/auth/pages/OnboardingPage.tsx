@@ -391,9 +391,9 @@ export function OnboardingPage() {
           <div className="mt-6 flex items-center justify-between gap-3 border-t border-border pt-4">
             <button type="button" onClick={goBack} disabled={step === 0 || submitting} className="rounded-xl px-4 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted disabled:opacity-40">Atrás</button>
             {step < totalSteps - 1 ? (
-              <button type="button" onClick={goNext} className="rounded-xl bg-primary px-5 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.985]">Siguiente</button>
+              <button type="button" onClick={goNext} className="rounded-xl bg-primary px-5 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover">Siguiente</button>
             ) : (
-              <button type="button" onClick={() => void handleSubmit()} disabled={submitting} className="rounded-xl bg-primary px-5 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.985] disabled:opacity-60">{submitting ? 'Guardando...' : 'Entrar a AulaBase'}</button>
+              <button type="button" onClick={() => void handleSubmit()} disabled={submitting} className="rounded-xl bg-primary px-5 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover disabled:opacity-60">{submitting ? 'Guardando...' : 'Entrar a AulaBase'}</button>
             )}
           </div>
         </form>

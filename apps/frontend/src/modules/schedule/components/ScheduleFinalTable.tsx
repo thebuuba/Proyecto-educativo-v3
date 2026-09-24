@@ -52,6 +52,16 @@ function formatDuration(hours: number) {
   return `${wholeHours} h ${minutes} min`
 }
 
+function getWeekDate(dayOfWeek: number) {
+  const now = new Date()
+  const currentDay = now.getDay()
+  const mondayOffset = currentDay === 0 ? -6 : 1 - currentDay
+  const date = new Date(now)
+  date.setHours(12, 0, 0, 0)
+  date.setDate(now.getDate() + mondayOffset + (dayOfWeek - 1))
+  return date
+}
+
 export function ScheduleFinalTable({
   config,
   blocks,
@@ -97,7 +107,7 @@ export function ScheduleFinalTable({
 
   return (
     <div className="space-y-4">
-      <section className="rounded-3xl border border-border/70 bg-card p-4 shadow-sm sm:p-5">
+      <section className="rounded-[26px] bg-card px-4 py-4 shadow-sm sm:px-5">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2">
@@ -126,7 +136,7 @@ export function ScheduleFinalTable({
           </div>
 
           <details className="group/actions relative shrink-0">
-            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl border border-border bg-card px-4 text-xs font-extrabold text-foreground shadow-sm transition hover:bg-muted/40 [&::-webkit-details-marker]:hidden">
+            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl border border-border/80 bg-card px-4 text-xs font-extrabold text-foreground transition hover:bg-muted/40 [&::-webkit-details-marker]:hidden">
               Acciones
               <ChevronDown className="size-4 text-muted-foreground transition-transform group-open/actions:rotate-180" />
             </summary>
@@ -152,87 +162,115 @@ export function ScheduleFinalTable({
         </div>
       </section>
 
-      <section className="overflow-hidden rounded-3xl border border-border/70 bg-card shadow-sm">
-        <div
-          className="grid grid-cols-[6.75rem_repeat(var(--day-count),minmax(0,1fr))] border-b border-border/70 bg-card"
-          style={{ '--day-count': activeDays.length } as CSSProperties}
-        >
-          <div className="flex items-center justify-center border-r border-border/70 px-3 py-3 text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted-foreground">
-            Hora
-          </div>
-          {activeDays.map((day) => {
-            const isToday = day.dayOfWeek === today
-            return (
+      <section className="overflow-hidden rounded-[28px] bg-card shadow-[0_18px_45px_-34px_rgba(15,23,42,0.38)]">
+        <div className="overflow-x-auto">
+          <div className="min-w-[940px] bg-[#fbfbfc] p-2.5 sm:p-3">
+            <div className="rounded-[20px] bg-[#eceef1] p-1.5">
               <div
-                key={day.dayOfWeek}
-                className={cn(
-                  'relative border-r border-border/70 px-3 py-3 text-center last:border-r-0',
-                  isToday && 'bg-primary/[0.045]',
-                )}
-              >
-                {isToday ? <span className="absolute inset-x-8 top-0 h-0.5 rounded-b-full bg-primary" /> : null}
-                <p className={cn('text-xs font-extrabold uppercase tracking-[0.12em] text-foreground', isToday && 'text-primary')}>
-                  {day.name}
-                </p>
-                {isToday ? <p className="mt-0.5 text-[9px] font-bold text-primary">Hoy</p> : null}
-              </div>
-            )
-          })}
-        </div>
-
-        <div className="divide-y divide-border/60">
-          {blocks.map((block, index) => {
-            const isBreak = block.type === 'break'
-
-            return (
-              <div
-                key={block.id}
-                className="grid grid-cols-[6.75rem_repeat(var(--day-count),minmax(0,1fr))]"
+                className="grid grid-cols-[5.75rem_repeat(var(--day-count),minmax(0,1fr))] gap-2"
                 style={{ '--day-count': activeDays.length } as CSSProperties}
               >
-                <div
-                  className={cn(
-                    'flex flex-col items-center justify-center border-r border-border/70 px-2 py-3 text-center',
-                    isBreak ? 'bg-warning/10' : 'bg-muted/20',
-                  )}
-                >
-                  <span className="text-[10px] font-extrabold text-muted-foreground">P{index + 1}</span>
-                  <span className="mt-0.5 text-xs font-extrabold tabular-nums text-foreground">{formatTime(block.start)}</span>
-                  <span className="text-[10px] tabular-nums text-muted-foreground">{formatTime(block.end)}</span>
+                <div className="flex min-h-[66px] flex-col items-center justify-center rounded-[16px] bg-[#e5e7ea] px-2 text-center">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.14em] text-slate-600">Hora</span>
+                  <span className="mt-1 text-[10px] font-semibold text-slate-500">
+                    {SHIFT_LABELS[config.shift] ?? config.shift}
+                  </span>
                 </div>
 
-                {isBreak ? (
-                  <div
-                    className="col-[2/-1] flex min-h-14 items-center justify-center gap-2 px-4 py-2 text-center"
-                    style={{ backgroundColor: 'color-mix(in srgb, var(--palette-yellow) 22%, var(--palette-white))' }}
-                  >
-                    <span className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-foreground">
-                      {block.label}
-                    </span>
-                    <span className="text-[10px] font-semibold text-muted-foreground">
-                      {formatTime(block.start)}–{formatTime(block.end)}
-                    </span>
-                  </div>
-                ) : (
-                  activeDays.map((day) => {
-                    const content = getCellContent(day.dayOfWeek, block)
-                    const isToday = day.dayOfWeek === today
-                    return (
-                      <div
-                        key={day.dayOfWeek}
-                        className={cn(
-                          'min-h-[76px] border-r border-border/60 p-1.5 last:border-r-0',
-                          isToday && 'bg-primary/[0.018]',
-                        )}
-                      >
-                        <ScheduleFinalCell content={content} />
-                      </div>
-                    )
-                  })
-                )}
+                {activeDays.map((day) => {
+                  const isToday = day.dayOfWeek === today
+                  const date = getWeekDate(day.dayOfWeek)
+
+                  return (
+                    <div
+                      key={day.dayOfWeek}
+                      className={cn(
+                        'relative flex min-h-[66px] flex-col items-center justify-center rounded-[16px] border px-3 text-center transition-[background-color,border-color,box-shadow] duration-200',
+                        isToday
+                          ? 'border-slate-300/80 bg-[#dde5e7] shadow-[0_8px_20px_-18px_rgba(15,23,42,0.25)]'
+                          : 'border-white/70 bg-[#f4f5f6]',
+                      )}
+                    >
+                      <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500">
+                        {day.name}
+                      </p>
+                      <p className="mt-1 text-[22px] font-extrabold leading-none tabular-nums text-slate-900">
+                        {date.getDate()}
+                      </p>
+                      {isToday ? (
+                        <span
+                          className="absolute bottom-1.5 size-1.5 rounded-full bg-primary/45"
+                          aria-label="Hoy"
+                          title="Hoy"
+                        />
+                      ) : null}
+                    </div>
+                  )
+                })}
               </div>
-            )
-          })}
+            </div>
+
+            <div className="mt-2.5 overflow-hidden rounded-2xl bg-white">
+              {blocks.map((block, index) => {
+                const isBreak = block.type === 'break'
+
+                return (
+                  <div
+                    key={block.id}
+                    className={cn(
+                      'grid grid-cols-[5.75rem_repeat(var(--day-count),minmax(0,1fr))]',
+                      index > 0 && 'border-t border-slate-100',
+                    )}
+                    style={{ '--day-count': activeDays.length } as CSSProperties}
+                  >
+                    <div className="flex min-h-[92px] flex-col items-center justify-start border-r border-slate-100 px-2 pt-3 text-center">
+                      <span className="text-[10px] font-bold tabular-nums text-muted-foreground">
+                        {formatTime(block.start)}
+                      </span>
+                      <span className="mt-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/55">
+                        {isBreak ? 'Receso' : `P${index + 1}`}
+                      </span>
+                    </div>
+
+                    {isBreak ? (
+                      <div
+                        className="col-[2/-1] m-1.5 flex min-h-[74px] items-center justify-center gap-2 rounded-[14px] px-4 py-2 text-center"
+                        style={{ backgroundColor: 'color-mix(in srgb, var(--palette-yellow) 20%, var(--palette-white))' }}
+                      >
+                        <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-foreground">
+                          {block.label}
+                        </span>
+                        <span className="text-[9px] font-semibold text-muted-foreground">
+                          {formatTime(block.start)}–{formatTime(block.end)}
+                        </span>
+                      </div>
+                    ) : (
+                      activeDays.map((day) => {
+                        const content = getCellContent(day.dayOfWeek, block)
+                        const isToday = day.dayOfWeek === today
+
+                        return (
+                          <div
+                            key={day.dayOfWeek}
+                            className={cn(
+                              'min-h-[92px] border-r border-slate-100 p-1.5 last:border-r-0',
+                              isToday && 'bg-primary/[0.012]',
+                            )}
+                          >
+                            <ScheduleFinalCell
+                              content={content}
+                              start={block.start}
+                              end={block.end}
+                            />
+                          </div>
+                        )
+                      })
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -251,20 +289,29 @@ export function ScheduleFinalTable({
   )
 }
 
-function ScheduleFinalCell({ content }: { content: CellContent }) {
+function ScheduleFinalCell({
+  content,
+  start,
+  end,
+}: {
+  content: CellContent
+  start: string
+  end: string
+}) {
   if (content.kind === 'empty') {
-    return (
-      <div className="flex h-full min-h-16 items-center justify-center rounded-xl border border-dashed border-border/70 bg-muted/10 text-[10px] font-semibold text-muted-foreground/70">
-        Libre
-      </div>
-    )
+    return <div className="h-full min-h-[78px] rounded-[14px] transition-colors hover:bg-muted/20" />
   }
 
   if (content.kind === 'pedagogical') {
     return (
-      <div className="flex h-full min-h-16 flex-col justify-center rounded-xl border border-border/70 bg-muted/30 px-3 py-2 text-foreground">
-        <p className="text-xs font-extrabold leading-tight">{content.block.label}</p>
-        <p className="mt-1 text-[10px] font-medium text-muted-foreground">Trabajo no lectivo</p>
+      <div className="flex h-full min-h-[78px] flex-col justify-between rounded-[14px] bg-slate-100 px-3.5 py-3 text-foreground">
+        <div>
+          <p className="text-[11px] font-extrabold leading-tight">{content.block.label}</p>
+          <p className="mt-1 text-[9px] font-medium text-muted-foreground">Trabajo no lectivo</p>
+        </div>
+        <p className="mt-2 text-[9px] font-semibold tabular-nums text-muted-foreground/80">
+          {formatTime(start)}–{formatTime(end)}
+        </p>
       </div>
     )
   }
@@ -273,14 +320,19 @@ function ScheduleFinalCell({ content }: { content: CellContent }) {
 
   return (
     <div
-      className="flex h-full min-h-16 flex-col justify-center rounded-xl px-3 py-2 shadow-[0_8px_20px_-20px_rgba(47,53,66,0.28)]"
-      style={{ backgroundColor: palette.soft }}
+      className="flex h-full min-h-[78px] flex-col justify-between rounded-[14px] px-3.5 py-3 shadow-[0_8px_18px_-16px_rgba(35,35,45,0.28)]"
+      style={{ backgroundColor: palette.soft, color: palette.foreground }}
     >
-      <p className="text-xs font-extrabold leading-tight" style={{ color: palette.color }}>
-        {content.entry.subjectName}
-      </p>
-      <p className="mt-1 text-[10px] font-semibold text-muted-foreground">
-        {content.entry.gradeName} {content.entry.sectionName} · {content.entry.academicLevelName}
+      <div>
+        <p className="line-clamp-2 text-[11px] font-extrabold leading-[1.22]">
+          {content.entry.subjectName}
+        </p>
+        <p className="mt-1 text-[9px] font-semibold opacity-70">
+          {content.entry.gradeName} {content.entry.sectionName} · {content.entry.academicLevelName}
+        </p>
+      </div>
+      <p className="mt-2 text-[9px] font-semibold tabular-nums opacity-55">
+        {formatTime(start)}–{formatTime(end)}
       </p>
     </div>
   )

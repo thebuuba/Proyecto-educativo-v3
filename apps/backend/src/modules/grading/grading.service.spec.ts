@@ -40,6 +40,18 @@ const mocks = vi.hoisted(() => ({
 describe('GradingService activity teams', () => {
   beforeEach(() => vi.clearAllMocks())
 
+  it('rejects competency weights that do not add up to 100 percent', async () => {
+    await expect(new GradingService().saveActivity('school-1', 'user-1', {
+      sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1',
+      competencyBlockId: 'b1',
+      competencyBlockWeights: { b1: 0.7, b2: 0.2 },
+      name: 'Proyecto interdisciplinario',
+      maxScore: 20,
+    })).rejects.toThrow('100%')
+    expect(mocks.prisma.sectionSubject.findFirst).not.toHaveBeenCalled()
+  })
+
   it('rejects teams from outside the selected subject', async () => {
     mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1', schoolYearId: 'year-1' })
     mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1', schoolYearId: 'year-1' })

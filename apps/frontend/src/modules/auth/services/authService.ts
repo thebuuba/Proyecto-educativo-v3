@@ -32,6 +32,18 @@ export async function login(credentials: LoginCredentials): Promise<LoginRespons
   return createAulaSession(token)
 }
 
+/** Envía un enlace de acceso de un solo uso a una cuenta existente. */
+export async function requestMagicLink(email: string): Promise<void> {
+  const { error } = await supabase.auth.signInWithOtp({
+    email,
+    options: {
+      emailRedirectTo: getOAuthCallbackUrl(window.location.origin),
+      shouldCreateUser: false,
+    },
+  })
+  if (error) throw new Error(error.message)
+}
+
 /** Registra una nueva institución con los datos del administrador. */
 export async function register(credentials: RegisterCredentials): Promise<void> {
   const { data, error } = await supabase.auth.signUp({

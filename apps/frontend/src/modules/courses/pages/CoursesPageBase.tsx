@@ -81,6 +81,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
@@ -102,6 +103,7 @@ import { getAcademicPeriods, getGradingWorkspace } from '@/modules/grading/servi
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { activityRubricConfiguration } from '@/modules/grading/components/GradingBook'
 import {
+  activityAppliesToBlock,
   buildCompactGradeRows,
   competencyBlocks,
   scoreForActivity,
@@ -945,6 +947,20 @@ function CourseWorkspace({
     setSubjectInitialTab('resumen')
   }, [item.section.id, schoolYearId])
 
+  const courseActions = (
+    <details className="group relative">
+      <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 [&::-webkit-details-marker]:hidden">
+        Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
+      </summary>
+      <div className="absolute right-0 z-30 mt-2 w-60 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+        <button type="button" onClick={() => { setStudentAction(undefined); setWorkspaceView('students') }} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted"><UsersRound className="size-4 text-primary" /> Ver estudiantes</button>
+        {canEnroll ? <button type="button" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar estudiantes</button> : null}
+        {canManage ? <button type="button" onClick={() => setWorkspaceView(workspaceView === 'archived' ? 'subjects' : 'archived')} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted">{workspaceView === 'archived' ? <><BookOpen className="size-4 text-primary" /> Ver activas</> : <><Archive className="size-4 text-primary" /> Archivadas</>}</button> : null}
+        {canManage && workspaceView === 'subjects' ? <button type="button" onClick={() => onAssignSubject(item.grade, item.section.id)} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar asignatura</button> : null}
+      </div>
+    </details>
+  )
+
   if (selectedAssignment) {
     return (
       <SubjectDetailView
@@ -964,13 +980,16 @@ function CourseWorkspace({
   }
 
   return (
-    <div className="space-y-5">
-      <button type="button" onClick={onBack} className="inline-flex items-center gap-2 text-sm font-extrabold text-primary transition hover:opacity-75">
-        <ArrowLeft className="size-4" /> Volver a mis cursos
-      </button>
+    <div className="course-workspace-shell course-overview-workspace w-full min-w-0 max-w-full overflow-x-clip space-y-5">
+      <div className="flex items-center justify-between gap-3">
+        <button type="button" onClick={onBack} aria-label="Volver a mis cursos" title="Volver a mis cursos" className="inline-flex size-11 items-center justify-center rounded-xl transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15">
+          <BackIcon className="size-7" />
+        </button>
+        {courseActions}
+      </div>
 
-      <header className="rounded-3xl bg-card p-5 shadow-sm">
-        <div className="flex flex-col justify-between gap-5 xl:flex-row xl:items-center">
+      <header className="rounded-3xl border border-border/70 bg-card p-4 shadow-sm sm:p-5">
+        <div className="flex flex-col justify-between gap-4 xl:flex-row xl:items-center">
           <div className="flex min-w-0 items-center gap-4">
             <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold text-primary-foreground shadow-md" style={{ backgroundColor: levelStyle.color }}>
               {getCourseCompactLabel(item.grade.name, item.section.name)}
@@ -983,11 +1002,6 @@ function CourseWorkspace({
               <p className="mt-2 truncate text-xs font-semibold text-muted-foreground">{cleanLevelName(item.levelName)} · {item.cycleName}{schoolYearName ? ` · Año escolar ${schoolYearName}` : ''}</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 xl:min-w-[31rem]">
-            <CourseHeaderMetric icon={<UsersRound className="size-5" />} value={item.section.studentCount ?? 0} label="Estudiantes" tone="emerald" />
-            <CourseHeaderMetric icon={<BookOpen className="size-5" />} value={item.assignments.length} label="Asignaturas" tone="violet" />
-            <CourseHeaderMetric icon={<Archive className="size-5" />} value={archivedAssignments.length} label="Archivadas" tone="orange" />
-          </div>
         </div>
       </header>
 
@@ -995,10 +1009,6 @@ function CourseWorkspace({
         <div className="flex min-w-0 items-center gap-3">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><UsersRound className="size-5" /></span>
           <div className="min-w-0"><h2 className="text-sm font-extrabold">Estudiantes del curso</h2><p className="mt-1 text-xs text-muted-foreground">{item.section.studentCount ?? 0} estudiantes comparten todas las asignaturas de {item.grade.name} {item.section.name}.</p></div>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Button type="button" variant="outline" className="h-11" onClick={() => { setStudentAction(undefined); setWorkspaceView('students') }}><UsersRound className="size-4" /> Ver estudiantes</Button>
-          {canEnroll ? <Button type="button" className="h-11" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }}><Plus className="size-4" /> Agregar estudiantes</Button> : null}
         </div>
       </section>
 
@@ -1010,18 +1020,6 @@ function CourseWorkspace({
               <h2 className="text-lg font-extrabold text-foreground">{workspaceView === 'subjects' ? 'Asignaturas' : 'Asignaturas archivadas'}</h2>
               <p className="mt-0.5 text-xs text-muted-foreground">{workspaceView === 'subjects' ? 'Selecciona una asignatura para acceder a su espacio académico.' : 'Restaura una asignatura o elimina definitivamente su historial académico.'}</p>
             </div>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {canManage ? (
-              <Button type="button" variant="outline" onClick={() => setWorkspaceView(workspaceView === 'archived' ? 'subjects' : 'archived')} className="h-10 rounded-xl px-4">
-                {workspaceView === 'archived' ? <><BookOpen className="size-4" /> Ver activas</> : <><Archive className="size-4" /> Archivadas</>}
-              </Button>
-            ) : null}
-            {canManage && workspaceView === 'subjects' ? (
-              <Button type="button" onClick={() => onAssignSubject(item.grade, item.section.id)} className="h-10 rounded-xl bg-primary px-5 text-primary-foreground shadow-md">
-                <Plus className="size-4" /> Agregar asignatura
-              </Button>
-            ) : null}
           </div>
         </div>
 
@@ -1083,15 +1081,6 @@ function CourseWorkspace({
   )
 }
 
-function CourseHeaderMetric({ icon, value, label, tone }: { icon: ReactNode; value: number; label: string; tone: 'emerald' | 'violet' | 'orange' }) {
-  const tones = {
-    emerald: 'bg-emerald-50 text-emerald-600 ring-emerald-100',
-    violet: 'bg-violet-50 text-violet-600 ring-violet-100',
-    orange: 'bg-orange-50 text-orange-600 ring-orange-100',
-  }
-  return <div className="flex min-w-0 items-center gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 shadow-sm"><span className={cn('flex size-10 shrink-0 items-center justify-center rounded-xl ring-1', tones[tone])}>{icon}</span><span className="min-w-0"><strong className="block text-xl leading-none text-foreground tabular-nums">{value}</strong><span className="mt-1 block truncate text-[10px] font-semibold text-muted-foreground">{label}</span></span></div>
-}
-
 export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen, onCustomize, onArchive, onDelete }: { assignment: SectionSubjectAssignment; studentCount: number; canManage: boolean; onOpen: (tab: string) => void; onCustomize: () => void; onArchive: () => void; onDelete: () => void }) {
   const palette = getAssignmentPalette(assignment)
   const average = assignment.averageScore === null ? null : Math.max(0, Math.min(100, assignment.averageScore))
@@ -1109,7 +1098,7 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
       aria-label={`Entrar a la asignatura ${assignment.subjectName}`}
       onClick={() => onOpen('resumen')}
       onKeyDown={openAssignmentFromKeyboard}
-      className="group relative flex min-h-[18rem] cursor-pointer flex-col rounded-2xl bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
+      className="group relative flex min-h-[18rem] cursor-pointer flex-col rounded-2xl bg-card p-4 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-center gap-3">
@@ -1766,11 +1755,11 @@ function SubjectDetailView({
   ]
 
   return (
-    <div className="space-y-3">
+    <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-3">
       <header className="w-full overflow-visible rounded-2xl bg-card shadow-sm">
         <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
           <div className="flex min-w-0 flex-1 items-center gap-3">
-            <button type="button" className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-xs font-extrabold text-primary transition hover:border-primary/25 hover:bg-primary/[0.04]" onClick={onBack} aria-label={backLabel} title={backLabel}><ArrowLeft className="size-4" /><span className="hidden sm:inline">Volver</span></button>
+            <button type="button" className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-xs font-extrabold text-primary transition hover:border-primary/25 hover:bg-primary/[0.04]" onClick={onBack} aria-label={backLabel} title={backLabel}><BackIcon /><span className="hidden sm:inline">Volver</span></button>
             <div className="flex size-12 shrink-0 items-center justify-center rounded-xl text-white shadow-sm [&>svg]:size-6" style={{ backgroundColor: palette.color }}>{getSubjectIcon(item.subjectName, item.assignment?.appearanceIcon)}</div>
             <div className="min-w-0">
               <div className="flex min-w-0 flex-nowrap items-center gap-2 overflow-hidden">
@@ -1944,7 +1933,7 @@ export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, 
                 data-competency-block-id={block.id}
                 to={href}
                 onClick={onClose}
-                className={cn('group flex min-h-40 flex-col rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg', visual.border)}
+                className={cn('group flex min-h-40 flex-col rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition-shadow duration-200 hover:shadow-lg', visual.border)}
               >
                 <div className="flex items-start justify-between gap-3">
                   <span className={cn('flex size-12 items-center justify-center rounded-xl', visual.iconTone)}>{visual.icon}</span>
@@ -2024,7 +2013,7 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
         </DashboardPanel>
         <DashboardPanel title="Reportes rápidos">
           <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4">
-            {['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report, index) => <Link key={report} to="/reportes" className="rounded-xl border border-slate-200 bg-white p-3 text-center transition duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_24px_-14px_rgba(74,162,227,0.45)] active:translate-y-0"><span className={cn('mx-auto flex size-8 items-center justify-center rounded-lg', index % 2 ? 'bg-emerald-50 text-emerald-600' : 'bg-violet-50 text-violet-600')}><FileText className="size-4" /></span><span className="mt-2 block text-[11px] font-extrabold leading-4">Reporte de {report.toLowerCase()}</span><span className="mt-2 block text-[10px] font-bold text-primary">Generar PDF</span></Link>)}
+            {['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report, index) => <Link key={report} to="/reportes" className="rounded-xl border border-slate-200 bg-white p-3 text-center transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_12px_24px_-14px_rgba(74,162,227,0.45)]"><span className={cn('mx-auto flex size-8 items-center justify-center rounded-lg', index % 2 ? 'bg-emerald-50 text-emerald-600' : 'bg-violet-50 text-violet-600')}><FileText className="size-4" /></span><span className="mt-2 block text-[11px] font-extrabold leading-4">Reporte de {report.toLowerCase()}</span><span className="mt-2 block text-[10px] font-bold text-primary">Generar PDF</span></Link>)}
           </div>
         </DashboardPanel>
       </div>
@@ -2043,7 +2032,7 @@ function ActivityPreview({ activity }: { activity: { name: string; date?: string
 
 function AcademicSummaryCard({ icon, value, label, detail, tone, onClick }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'violet' | 'orange' | 'blue' | 'emerald'; onClick: () => void }) {
   const tones = { violet: 'bg-violet-50 text-violet-600', orange: 'bg-orange-50 text-orange-600', blue: 'bg-blue-50 text-blue-600', emerald: 'bg-emerald-50 text-emerald-600' }
-  return <button type="button" onClick={onClick} aria-label={`Ir a ${label}`} className="w-full rounded-xl border border-slate-200 bg-white p-3 text-left transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><span className="flex items-center gap-2.5"><span className={cn('flex size-9 items-center justify-center rounded-lg', tones[tone])}>{icon}</span><span><strong className="block text-xl leading-none">{value}</strong><span className="mt-1 block text-xs font-bold leading-tight text-slate-700">{label}</span></span></span><span className="mt-3 block border-t border-slate-100 pt-2.5 text-xs leading-4 text-muted-foreground">{detail}</span></button>
+  return <button type="button" onClick={onClick} aria-label={`Ir a ${label}`} className="w-full rounded-xl border border-slate-200 bg-white p-3 text-left transition-[border-color,box-shadow] hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><span className="flex items-center gap-2.5"><span className={cn('flex size-9 items-center justify-center rounded-lg', tones[tone])}>{icon}</span><span><strong className="block text-xl leading-none">{value}</strong><span className="mt-1 block text-xs font-bold leading-tight text-slate-700">{label}</span></span></span><span className="mt-3 block border-t border-slate-100 pt-2.5 text-xs leading-4 text-muted-foreground">{detail}</span></button>
 }
 
 function NoticeRow({ tone, title, detail, action, onAction }: { tone: 'amber' | 'blue'; title: string; detail: string; action?: string; onAction?: () => void }) {
@@ -2158,7 +2147,7 @@ function SubjectActivityDetail({ activity, records, students, teams, assignmentI
   const status: SubjectActivityStatus = graded === 0 ? 'pending' : graded >= students.length && students.length > 0 ? 'graded' : 'partial'
   const selectedTeams = teams.filter((team) => activity.teamIds?.includes(team.id))
   const tabs = [['info', 'Información'], ['instrument', 'Instrumento'], ['participants', 'Estudiantes / Equipos'], ['evaluation', 'Evaluación'], ['history', 'Historial']] as const
-  return <section className="space-y-4"><header className="rounded-2xl border border-border bg-card p-4 shadow-sm"><button type="button" onClick={onBack} className="inline-flex h-10 items-center gap-2 rounded-xl border border-border px-3 text-xs font-extrabold text-primary hover:bg-primary/[0.04]"><ArrowLeft className="size-4" /> Volver a actividades</button><div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-start"><span className="flex size-12 items-center justify-center rounded-xl bg-violet-50 text-violet-600"><FlaskConical className="size-5" /></span><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-2"><h2 className="text-xl font-extrabold">{activity.name}</h2><span className="rounded-full bg-primary/8 px-2 py-1 text-[10px] font-extrabold text-primary">{periodName.split('—')[0]?.trim()}</span><ActivityStatusBadge status={status} /></div><p className="mt-2 text-xs font-semibold text-muted-foreground">{activity.activityType === 'group' ? 'Grupal' : 'Individual'} · {activity.maxScore} puntos · {activityInstrumentLabel(activity.instrumentType)} · {formatShortDate(activity.date)}</p></div><Link to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'edit')} className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-border px-4 text-xs font-extrabold hover:bg-muted"><Edit3 className="size-4" /> Editar actividad</Link></div><nav className="mt-4 flex gap-1 overflow-x-auto border-t border-border pt-2" aria-label="Secciones de la actividad">{tabs.map(([id, label]) => <button key={id} type="button" aria-current={tab === id ? 'page' : undefined} onClick={() => setTab(id)} className={cn('h-10 whitespace-nowrap rounded-lg px-3 text-xs font-extrabold', tab === id ? 'bg-primary/8 text-primary' : 'text-muted-foreground hover:bg-muted')}>{label}</button>)}</nav></header>
+  return <section className="space-y-4"><header className="rounded-2xl border border-border bg-card p-4 shadow-sm"><button type="button" onClick={onBack} className="inline-flex h-10 items-center gap-2 rounded-xl border border-border px-3 text-xs font-extrabold text-primary hover:bg-primary/[0.04]"><BackIcon /> Volver a actividades</button><div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-start"><span className="flex size-12 items-center justify-center rounded-xl bg-violet-50 text-violet-600"><FlaskConical className="size-5" /></span><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-2"><h2 className="text-xl font-extrabold">{activity.name}</h2><span className="rounded-full bg-primary/8 px-2 py-1 text-[10px] font-extrabold text-primary">{periodName.split('—')[0]?.trim()}</span><ActivityStatusBadge status={status} /></div><p className="mt-2 text-xs font-semibold text-muted-foreground">{activity.activityType === 'group' ? 'Grupal' : 'Individual'} · {activity.maxScore} puntos · {activityInstrumentLabel(activity.instrumentType)} · {formatShortDate(activity.date)}</p></div><Link to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'edit')} className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-border px-4 text-xs font-extrabold hover:bg-muted"><Edit3 className="size-4" /> Editar actividad</Link></div><nav className="mt-4 flex gap-1 overflow-x-auto border-t border-border pt-2" aria-label="Secciones de la actividad">{tabs.map(([id, label]) => <button key={id} type="button" aria-current={tab === id ? 'page' : undefined} onClick={() => setTab(id)} className={cn('h-10 whitespace-nowrap rounded-lg px-3 text-xs font-extrabold', tab === id ? 'bg-primary/8 text-primary' : 'text-muted-foreground hover:bg-muted')}>{label}</button>)}</nav></header>
     {tab === 'info' ? <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]"><section className="rounded-2xl border border-border bg-card p-5 shadow-sm"><h3 className="text-sm font-extrabold">Descripción</h3><p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-muted-foreground">{activity.description || 'Sin descripción.'}</p>{activity.resources?.length ? <><h3 className="mt-5 text-sm font-extrabold">Recursos</h3><div className="mt-2 flex flex-wrap gap-2">{activity.resources.map((resource) => <span key={resource} className="rounded-lg border border-border px-3 py-2 text-xs font-bold">{resource}</span>)}</div></> : null}</section><section className="rounded-2xl border border-border bg-card p-5 shadow-sm"><h3 className="text-sm font-extrabold">Detalles</h3><dl className="mt-4 space-y-3 text-xs"><ActivityDefinition label="Período" value={periodName} /><ActivityDefinition label="Bloque" value={block?.shortName ?? 'Sin bloque'} /><ActivityDefinition label="Fecha" value={formatShortDate(activity.date)} /><ActivityDefinition label="Valor" value={`${activity.maxScore} puntos`} /><ActivityDefinition label="Modalidad" value={activity.activityType === 'group' ? 'Grupal' : 'Individual'} /><ActivityDefinition label="Estado" value={activityStatusLabel(status)} /></dl></section></div> : tab === 'instrument' ? <SubjectActivityPanel title="Instrumento"><p className="text-sm text-muted-foreground">{activityInstrumentLabel(activity.instrumentType)}</p>{activity.instrumentCriteria && Object.keys(activity.instrumentCriteria).length ? <dl className="mt-4 grid gap-3 sm:grid-cols-2">{Object.entries(activity.instrumentCriteria).map(([key, value]) => <div key={key} className="rounded-xl bg-muted/30 p-3"><dt className="text-[10px] font-extrabold uppercase text-muted-foreground">{key}</dt><dd className="mt-1 text-sm">{value}</dd></div>)}</dl> : null}</SubjectActivityPanel> : tab === 'participants' ? <SubjectActivityPanel title={activity.activityType === 'group' ? 'Equipos asignados' : 'Estudiantes asignados'}>{activity.activityType === 'group' ? selectedTeams.length ? <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{selectedTeams.map((team) => <div key={team.id} className="rounded-xl border border-border p-4"><strong>{team.name}</strong><p className="mt-1 text-xs text-muted-foreground">{team.members.length} integrantes</p></div>)}</div> : <p className="text-sm text-muted-foreground">No hay equipos vinculados.</p> : <p className="text-sm text-muted-foreground">{students.length} estudiantes de la asignatura.</p>}</SubjectActivityPanel> : tab === 'evaluation' ? <SubjectActivityPanel title="Evaluación de la actividad"><p className="text-sm text-muted-foreground">{graded} de {students.length} estudiantes calificados.</p><Link to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'evaluate')} className="mt-4 inline-flex h-11 items-center gap-2 rounded-xl bg-primary px-5 text-sm font-extrabold text-primary-foreground"><ChartColumn className="size-4" /> Ir a evaluar / calificar</Link></SubjectActivityPanel> : <SubjectActivityPanel title="Historial"><p className="text-sm text-muted-foreground">La actividad está programada para {formatShortDate(activity.date)}. Los cambios de evaluación se conservan en su matriz específica.</p></SubjectActivityPanel>}
   </section>
 }
@@ -2248,14 +2237,14 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   to={`/estudiantes?courseId=${encodeURIComponent(courseId)}&action=new`}
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.98]"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary-hover"
                 >
                   <Plus className="size-4" />
                   Matricular estudiante
                 </Link>
                 <Link
                   to={`/estudiantes?courseId=${encodeURIComponent(courseId)}&action=import`}
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 text-sm font-bold text-foreground transition hover:bg-muted active:scale-[0.98]"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 text-sm font-bold text-foreground transition-colors hover:bg-muted"
                 >
                   <ClipboardList className="size-4" />
                   Importar listado
@@ -2428,7 +2417,7 @@ function StudentDetailPanel({ student, activities, journalEntries, journalLoadin
   onClose: () => void
 }) {
   const blockAverages = competencyBlocks.map((block) => {
-    const activityIds = new Set(activities.filter((activity) => activity.competencyBlockId === block.id).map((activity) => activity.id))
+    const activityIds = new Set(activities.filter((activity) => activityAppliesToBlock(activity, block.id)).map((activity) => activity.id))
     const records = [...activityIds].map((activityId) => scoreForActivity(student.records, student.enrollmentId, activityId)).filter((record): record is GradeRecordRow => Boolean(record && record.maxScore > 0))
     return { ...block, average: records.length ? Math.round(records.reduce((sum, record) => sum + (record.score / record.maxScore) * 100, 0) / records.length) : null }
   })
@@ -2448,7 +2437,7 @@ function StudentDetailPanel({ student, activities, journalEntries, journalLoadin
       </div>
       <div className="mt-5 border-t border-border pt-4">
         <div className="flex items-center justify-between gap-2"><h4 className="text-xs font-extrabold text-foreground">Observaciones de bitácora</h4>{journalEntries.length ? <span className="rounded-full bg-primary/10 px-2 py-1 text-[10px] font-extrabold text-primary">{journalEntries.length}</span> : null}</div>
-        {journalLoading ? <p className="mt-2 rounded-lg bg-muted/60 px-3 py-3 text-xs text-muted-foreground">Cargando observaciones…</p> : journalError ? <div className="mt-2 rounded-lg border border-destructive/25 bg-destructive/10 p-3"><p className="text-xs text-destructive">{journalError}</p><button type="button" onClick={onRetryJournal} className="mt-2 text-xs font-extrabold text-destructive underline-offset-2 hover:underline">Volver a intentar</button></div> : journalEntries.length ? <div className="mt-2 space-y-2">{journalEntries.slice(0, 2).map((entry) => <button key={entry.id} type="button" onClick={() => onViewJournal(entry)} aria-label={`Ver observación ${entry.title || journalEntryTypeLabel(entry.entryType)}`} className="group w-full rounded-xl border border-border bg-card p-3 text-left transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-sm motion-reduce:transform-none"><div className="flex items-start gap-2"><span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary"><BookMarked className="size-4" aria-hidden="true" /></span><span className="min-w-0 flex-1"><strong className="block truncate text-xs text-foreground">{entry.title || journalEntryTypeLabel(entry.entryType)}</strong><span className="mt-1 line-clamp-2 block text-[11px] leading-4 text-muted-foreground">{entry.content}</span><span className="mt-2 block text-[10px] font-semibold text-primary">{formatJournalDate(entry.occurredAt)}</span></span><ChevronRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true" /></div></button>)}{journalEntries.length > 2 ? <Link to={journalHref} className="flex min-h-10 w-full items-center justify-center gap-2 rounded-xl text-xs font-extrabold text-primary transition hover:bg-primary/[0.04] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15"><BookOpen className="size-4" aria-hidden="true" /> Ver las {journalEntries.length} observaciones en Bitácora</Link> : null}</div> : <p className="mt-2 rounded-lg bg-muted/50 px-3 py-3 text-xs leading-5 text-muted-foreground">Todavía no hay observaciones para este estudiante en la asignatura.</p>}
+        {journalLoading ? <p className="mt-2 rounded-lg bg-muted/60 px-3 py-3 text-xs text-muted-foreground">Cargando observaciones…</p> : journalError ? <div className="mt-2 rounded-lg border border-destructive/25 bg-destructive/10 p-3"><p className="text-xs text-destructive">{journalError}</p><button type="button" onClick={onRetryJournal} className="mt-2 text-xs font-extrabold text-destructive underline-offset-2 hover:underline">Volver a intentar</button></div> : journalEntries.length ? <div className="mt-2 space-y-2">{journalEntries.slice(0, 2).map((entry) => <button key={entry.id} type="button" onClick={() => onViewJournal(entry)} aria-label={`Ver observación ${entry.title || journalEntryTypeLabel(entry.entryType)}`} className="group w-full rounded-xl border border-border bg-card p-3 text-left transition-[border-color,box-shadow] hover:border-primary/25 hover:shadow-sm"><div className="flex items-start gap-2"><span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary"><BookMarked className="size-4" aria-hidden="true" /></span><span className="min-w-0 flex-1"><strong className="block truncate text-xs text-foreground">{entry.title || journalEntryTypeLabel(entry.entryType)}</strong><span className="mt-1 line-clamp-2 block text-[11px] leading-4 text-muted-foreground">{entry.content}</span><span className="mt-2 block text-[10px] font-semibold text-primary">{formatJournalDate(entry.occurredAt)}</span></span><ChevronRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true" /></div></button>)}{journalEntries.length > 2 ? <Link to={journalHref} className="flex min-h-10 w-full items-center justify-center gap-2 rounded-xl text-xs font-extrabold text-primary transition hover:bg-primary/[0.04] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15"><BookOpen className="size-4" aria-hidden="true" /> Ver las {journalEntries.length} observaciones en Bitácora</Link> : null}</div> : <p className="mt-2 rounded-lg bg-muted/50 px-3 py-3 text-xs leading-5 text-muted-foreground">Todavía no hay observaciones para este estudiante en la asignatura.</p>}
       </div>
       <button type="button" onClick={onJournal} className="mt-3 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl border border-border text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><BookMarked className="size-4" aria-hidden="true" /> {journalEntries.length ? 'Agregar otra observación' : 'Agregar observación a bitácora'}</button>
     </aside>
@@ -2643,7 +2632,7 @@ function StudentGradesDrawer({ student, students, row, activities, records, cour
   useEffect(() => { setActivityId(null); setShowInstrument(false) }, [student?.enrollmentId])
   if (!student || !row) return null
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
-  const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+  const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
   const selectedActivity = activities.find((activity) => activity.id === activityId) ?? null
   const selectedRecord = selectedActivity ? scoreForActivity(records, student.enrollmentId, selectedActivity.id) : null
 
@@ -2668,14 +2657,14 @@ function GradeSummaryTile({ label, value, emphasized }: { label: string; value: 
 function StudentActivityDetail({ activity, record, studentName, showInstrument, onInstrument, onBack }: { activity: GradingActivity; record: GradeRecordRow | null; studentName: string; showInstrument: boolean; onInstrument: () => void; onBack: () => void }) {
   const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId) ?? competencyBlocks[0]
   if (showInstrument) return <EvaluatedInstrument activity={activity} record={record} studentName={studentName} onBack={onBack} />
-  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-start gap-3 border-b border-border p-4"><button type="button" onClick={onBack} aria-label="Volver a las actividades" className="grid size-11 shrink-0 place-items-center rounded-xl border border-border text-primary hover:bg-muted"><ArrowLeft className="size-4" /></button><div className="min-w-0 flex-1"><p className="text-[10px] font-black uppercase tracking-wider text-primary">Detalle de la actividad</p><h3 className="mt-1 text-lg font-extrabold">{activity.name}</h3><p className="mt-1 text-xs text-muted-foreground">{block.shortName} · {block.name}</p></div><ActivityStatusBadge status={record ? 'graded' : 'pending'} /></header><div className="grid gap-4 p-4 lg:grid-cols-[minmax(0,1fr)_18rem]"><div><h4 className="text-xs font-extrabold uppercase text-muted-foreground">Descripción</h4><p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-foreground">{activity.description || 'Sin descripción registrada.'}</p></div><dl className="space-y-3 rounded-xl bg-muted/25 p-4 text-xs"><ActivityDefinition label="Fecha" value={formatShortDate(activity.date)} /><ActivityDefinition label="Valor total" value={`${activity.maxScore} puntos`} /><ActivityDefinition label="Obtenido" value={record ? `${record.score} puntos` : 'Sin evaluar'} /><ActivityDefinition label="Estado" value={activityGradeState(record, activity)} /><ActivityDefinition label="Instrumento" value={activityInstrumentLabel(activity.instrumentType)} /></dl></div><footer className="flex justify-end border-t border-border p-4"><Button variant="outline" disabled={!record || !activity.instrumentType} onClick={onInstrument}><ClipboardList className="size-4" /> Ver instrumento evaluado</Button></footer></section>
+  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-start gap-3 border-b border-border p-4"><button type="button" onClick={onBack} aria-label="Volver a las actividades" className="grid size-11 shrink-0 place-items-center rounded-xl border border-border text-primary hover:bg-muted"><BackIcon /></button><div className="min-w-0 flex-1"><p className="text-[10px] font-black uppercase tracking-wider text-primary">Detalle de la actividad</p><h3 className="mt-1 text-lg font-extrabold">{activity.name}</h3><p className="mt-1 text-xs text-muted-foreground">{block.shortName} · {block.name}</p></div><ActivityStatusBadge status={record ? 'graded' : 'pending'} /></header><div className="grid gap-4 p-4 lg:grid-cols-[minmax(0,1fr)_18rem]"><div><h4 className="text-xs font-extrabold uppercase text-muted-foreground">Descripción</h4><p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-foreground">{activity.description || 'Sin descripción registrada.'}</p></div><dl className="space-y-3 rounded-xl bg-muted/25 p-4 text-xs"><ActivityDefinition label="Fecha" value={formatShortDate(activity.date)} /><ActivityDefinition label="Valor total" value={`${activity.maxScore} puntos`} /><ActivityDefinition label="Obtenido" value={record ? `${record.score} puntos` : 'Sin evaluar'} /><ActivityDefinition label="Estado" value={activityGradeState(record, activity)} /><ActivityDefinition label="Instrumento" value={activityInstrumentLabel(activity.instrumentType)} /></dl></div><footer className="flex justify-end border-t border-border p-4"><Button variant="outline" disabled={!record || !activity.instrumentType} onClick={onInstrument}><ClipboardList className="size-4" /> Ver instrumento evaluado</Button></footer></section>
 }
 
 function EvaluatedInstrument({ activity, record, studentName, onBack }: { activity: GradingActivity; record: GradeRecordRow | null; studentName: string; onBack: () => void }) {
   const configuration = activityRubricConfiguration(activity)
   const result = record?.instrumentResult
   const complete = Boolean(result && result.selections.length === configuration.criteria.length)
-  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-start gap-3 border-b border-border p-4"><button type="button" onClick={onBack} aria-label="Volver al detalle de la actividad" className="grid size-11 shrink-0 place-items-center rounded-xl border border-border text-primary hover:bg-muted"><ArrowLeft className="size-4" /></button><div className="min-w-0 flex-1"><p className="text-[10px] font-black uppercase tracking-wider text-primary">Instrumento evaluado</p><h3 className="mt-1 text-lg font-extrabold">{activityInstrumentLabel(activity.instrumentType)}</h3><p className="mt-1 text-xs text-muted-foreground">{activity.name} · {studentName}</p></div><span className={cn('rounded-full px-3 py-1 text-[10px] font-extrabold', complete ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-800')}>{complete ? 'Evaluado' : 'Sin desglose'}</span></header>{!record ? <p className="m-4 rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">Pendiente de evaluación.</p> : !result ? <div className="m-4 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900"><strong className="block">No existe evidencia por criterio para esta calificación histórica.</strong>El sistema conserva el total real de {record.score} / {record.maxScore}, pero no inventará niveles ni selecciones que no fueron registrados.</div> : <div className="p-4"><div className="overflow-x-auto"><table className="w-full min-w-[36rem] text-sm"><thead className="bg-muted/30 text-[10px] font-black uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3 text-left">Criterio</th><th className="px-4 py-3 text-left">Nivel seleccionado</th><th className="px-4 py-3 text-right">Puntuación</th></tr></thead><tbody className="divide-y divide-border">{configuration.criteria.map((criterion, index) => { const selection = result.selections[index]; const level = Number.isInteger(selection) ? configuration.levels[selection] : null; const points = result.criterionScores[index]; return <tr key={`${criterion.title}-${index}`}><td className="px-4 py-4"><strong>{criterion.title}</strong><span className="mt-1 block text-xs text-muted-foreground">Máximo: {criterion.maximum} pts</span></td><td className="px-4 py-4"><span className={cn('inline-flex rounded-full px-3 py-1 text-xs font-bold', level ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600')}>{level?.label ?? 'Sin seleccionar'}</span></td><td className="px-4 py-4 text-right font-extrabold text-primary">{Number.isFinite(points) ? `${points} / ${criterion.maximum}` : '—'}</td></tr> })}</tbody></table></div><div className="mt-4 flex items-center justify-between rounded-xl bg-primary/[0.045] px-4 py-3"><strong>Total</strong><strong className="text-xl text-primary">{record.score} / {record.maxScore}</strong></div></div>}</section>
+  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-start gap-3 border-b border-border p-4"><button type="button" onClick={onBack} aria-label="Volver al detalle de la actividad" className="grid size-11 shrink-0 place-items-center rounded-xl border border-border text-primary hover:bg-muted"><BackIcon /></button><div className="min-w-0 flex-1"><p className="text-[10px] font-black uppercase tracking-wider text-primary">Instrumento evaluado</p><h3 className="mt-1 text-lg font-extrabold">{activityInstrumentLabel(activity.instrumentType)}</h3><p className="mt-1 text-xs text-muted-foreground">{activity.name} · {studentName}</p></div><span className={cn('rounded-full px-3 py-1 text-[10px] font-extrabold', complete ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-800')}>{complete ? 'Evaluado' : 'Sin desglose'}</span></header>{!record ? <p className="m-4 rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">Pendiente de evaluación.</p> : !result ? <div className="m-4 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900"><strong className="block">No existe evidencia por criterio para esta calificación histórica.</strong>El sistema conserva el total real de {record.score} / {record.maxScore}, pero no inventará niveles ni selecciones que no fueron registrados.</div> : <div className="p-4"><div className="overflow-x-auto"><table className="w-full min-w-[36rem] text-sm"><thead className="bg-muted/30 text-[10px] font-black uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3 text-left">Criterio</th><th className="px-4 py-3 text-left">Nivel seleccionado</th><th className="px-4 py-3 text-right">Puntuación</th></tr></thead><tbody className="divide-y divide-border">{configuration.criteria.map((criterion, index) => { const selection = result.selections[index]; const level = Number.isInteger(selection) ? configuration.levels[selection] : null; const points = result.criterionScores[index]; return <tr key={`${criterion.title}-${index}`}><td className="px-4 py-4"><strong>{criterion.title}</strong><span className="mt-1 block text-xs text-muted-foreground">Máximo: {criterion.maximum} pts</span></td><td className="px-4 py-4"><span className={cn('inline-flex rounded-full px-3 py-1 text-xs font-bold', level ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600')}>{level?.label ?? 'Sin seleccionar'}</span></td><td className="px-4 py-4 text-right font-extrabold text-primary">{Number.isFinite(points) ? `${points} / ${criterion.maximum}` : '—'}</td></tr> })}</tbody></table></div><div className="mt-4 flex items-center justify-between rounded-xl bg-primary/[0.045] px-4 py-3"><strong>Total</strong><strong className="text-xl text-primary">{record.score} / {record.maxScore}</strong></div></div>}</section>
 }
 
 function activityGradeState(record: GradeRecordRow | null, activity: GradingActivity) { if (!record) return 'Pendiente de evaluación'; const expected = activityRubricConfiguration(activity).criteria.length; if (record.instrumentResult && record.instrumentResult.selections.length < expected) return 'Parcialmente evaluada'; return 'Evaluada' }
@@ -2740,7 +2729,7 @@ const CourseCard = memo(function CourseCard({
 
   return (
     <article
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+      className="group relative flex flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-shadow duration-200 hover:shadow-md"
     >
       <div
         className="flex flex-1 cursor-pointer flex-col p-4"
@@ -2827,7 +2816,7 @@ function FooterAction({
   return (
     <button
       type="button"
-      className="inline-flex h-8 items-center justify-center gap-1.5 rounded-lg px-2 text-[11px] font-bold text-muted-foreground transition-all duration-150 hover:scale-[1.02] hover:bg-secondary hover:text-primary"
+      className="inline-flex h-8 items-center justify-center gap-1.5 rounded-lg px-2 text-[11px] font-bold text-muted-foreground transition-colors duration-150 hover:bg-secondary hover:text-primary"
       aria-label={label}
       title={tooltip}
       onClick={(event) => {
@@ -2961,7 +2950,7 @@ function getAppearanceIcon(value: string) {
 
 function getAssignmentPalette(assignment: SectionSubjectAssignment): SubjectPalette {
   if (!assignment.appearanceColor) return getSubjectColor(assignment.subjectName)
-  return { color: assignment.appearanceColor, soft: `${assignment.appearanceColor}14` }
+  return { color: assignment.appearanceColor, soft: `${assignment.appearanceColor}14`, foreground: 'var(--foreground)' }
 }
 
 function startOfToday() {

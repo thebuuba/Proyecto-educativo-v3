@@ -127,13 +127,20 @@ describe('GradingBook', () => {
     expect(screen.queryByPlaceholderText('Buscar borradores...')).not.toBeInTheDocument()
   })
 
-  it('abre directamente el creador cuando el acceso ya incluye un bloque', () => {
+  it('abre el creador y permite sumar otros bloques de competencias', async () => {
+    const user = userEvent.setup()
     const { container } = renderBook({ initialActivityAction: 'create', initialActivityBlockId: 'b3' }, { strict: true })
 
     expect(screen.getByRole('heading', { name: 'Crear actividad' })).toBeInTheDocument()
     expect(container.querySelector('[data-competency-block-id="b3"]')).toBeInTheDocument()
-    expect(screen.getAllByText('Ética y Ciudadana y Desarrollo Personal y Espiritual')).toHaveLength(2)
+    expect(screen.getAllByText('Ética y Ciudadana y Desarrollo Personal y Espiritual')).toHaveLength(3)
     expect(screen.queryByText('Elige el bloque de competencias para tu nueva actividad.')).not.toBeInTheDocument()
+
+    const primaryBlock = screen.getByRole('checkbox', { name: /Bloque 3/i })
+    expect(primaryBlock).toBeChecked()
+    expect(primaryBlock).toBeDisabled()
+    await user.click(screen.getByRole('checkbox', { name: /Bloque 2/i }))
+    expect(screen.getByText('¿Cómo se distribuye la calificación?')).toBeInTheDocument()
   })
 
   it('no expone borradores guardados dentro del hub de Evaluación', () => {

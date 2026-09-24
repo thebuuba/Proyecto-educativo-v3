@@ -55,6 +55,7 @@ export type GradingActivity = {
   id: string
   name: string
   competencyBlockId: string
+  competencyBlockWeights?: Record<string, number>
   maxScore: number
   date?: string
   description?: string

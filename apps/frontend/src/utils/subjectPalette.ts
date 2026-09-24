@@ -1,20 +1,23 @@
-export type SubjectPalette = { color: string; soft: string }
+export type SubjectPalette = {
+  color: string
+  soft: string
+  foreground: string
+}
 
 /*
- * Colores de asignaturas derivados únicamente de las cuatro familias cromáticas
- * de AulaBase. Las variantes oscuras son mezclas de esos colores con el neutral
- * de texto oficial, por lo que ninguna materia introduce una familia ajena al
- * lenguaje visual del sistema.
+ * Paleta original de AulaBase para asignaturas.
+ * Mantiene las cuatro familias cromáticas que se usaban antes del rediseño
+ * del calendario: azul, verde, coral y dorado, con variantes oscuras.
  */
 const subjectPalettes = {
-  blue: { color: '#3CB7E2', soft: '#3CB7E226' },
-  blueDark: { color: '#3890B2', soft: '#3CB7E220' },
-  green: { color: '#66D64F', soft: '#66D64F26' },
-  greenDark: { color: '#56A64B', soft: '#66D64F20' },
-  coral: { color: '#F6886F', soft: '#F6886F26' },
-  coralDark: { color: '#BA6F62', soft: '#F6886F20' },
-  gold: { color: '#F9C46B', soft: '#F9C46B30' },
-  goldDark: { color: '#BC995F', soft: '#F9C46B28' },
+  blue: { color: '#3CB7E2', soft: '#3CB7E226', foreground: '#1F4B5A' },
+  blueDark: { color: '#3890B2', soft: '#3CB7E220', foreground: '#23424E' },
+  green: { color: '#66D64F', soft: '#66D64F26', foreground: '#315A28' },
+  greenDark: { color: '#56A64B', soft: '#66D64F20', foreground: '#304F2B' },
+  coral: { color: '#F6886F', soft: '#F6886F26', foreground: '#65382F' },
+  coralDark: { color: '#BA6F62', soft: '#F6886F20', foreground: '#563A34' },
+  gold: { color: '#F9C46B', soft: '#F9C46B30', foreground: '#674F27' },
+  goldDark: { color: '#BC995F', soft: '#F9C46B28', foreground: '#55452D' },
 } satisfies Record<string, SubjectPalette>
 
 const subjectColorRules: Array<{ terms: string[]; palette: SubjectPalette }> = [

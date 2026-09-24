@@ -6,7 +6,7 @@ import { Navigate, useLocation } from 'react-router-dom'
 import { FacebookIcon, FLOATING_ICONS, GoogleIcon } from '@/components/auth/AuthIcons'
 import { AuthTransitionLink } from '@/modules/auth/components/AuthTransitionLink'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
-import { requestPasswordReset } from '@/modules/auth/services/authService'
+import { requestMagicLink, requestPasswordReset } from '@/modules/auth/services/authService'
 
 type LocationState = {
   from?: { pathname?: string }
@@ -22,6 +22,7 @@ export function LoginPage() {
   const [errorMessage, setErrorMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [forgotPasswordSent, setForgotPasswordSent] = useState(false)
+  const [magicLinkSent, setMagicLinkSent] = useState(false)
   const fromState = location.state as LocationState | null
   const from = fromState?.from?.pathname && fromState.from.pathname !== '/login' && fromState.from.pathname !== '/'
     ? fromState.from.pathname
@@ -62,6 +63,24 @@ export function LoginPage() {
     }
   }
 
+  async function handleMagicLink() {
+    if (!email.trim()) {
+      setErrorMessage('Ingresa tu correo electrónico primero.')
+      return
+    }
+    setErrorMessage('')
+    setMagicLinkSent(false)
+    setIsSubmitting(true)
+    try {
+      await requestMagicLink(email.trim())
+      setMagicLinkSent(true)
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : 'No se pudo enviar el enlace de acceso.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <main className="auth-screen page-enter relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 py-10">
       <AuthBackdrop />
@@ -77,7 +96,7 @@ export function LoginPage() {
         </div>
 
         {errorMessage || authError ? (
-          <div className="mb-5 flex items-center gap-2.5 rounded-2xl border border-destructive/25 bg-destructive/14 px-4 py-3 text-foreground">
+          <div role="alert" className="mb-5 flex items-center gap-2.5 rounded-2xl border border-destructive/25 bg-destructive/14 px-4 py-3 text-foreground">
             <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-destructive/24 text-xs font-extrabold">!</span>
             <span className="text-sm font-medium">{errorMessage || authError}</span>
           </div>
@@ -91,10 +110,15 @@ export function LoginPage() {
           <SuccessMessage>Te enviamos un correo para restablecer tu contraseña.</SuccessMessage>
         ) : null}
 
+        {magicLinkSent && !errorMessage ? (
+          <SuccessMessage>Te enviamos un enlace de acceso de un solo uso.</SuccessMessage>
+        ) : null}
+
         <form className="space-y-4" onSubmit={handleSubmit}>
           <AuthField label="Correo electrónico">
             <input
               type="email"
+              autoComplete="email"
               placeholder="docente@escuela.edu"
               required
               value={email}
@@ -107,6 +131,7 @@ export function LoginPage() {
             <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'}
+                autoComplete="current-password"
                 placeholder="••••••••"
                 required
                 value={password}
@@ -130,8 +155,12 @@ export function LoginPage() {
             </button>
           </div>
 
-          <button type="submit" disabled={isSubmitting} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.985] disabled:cursor-not-allowed disabled:opacity-60">
-            {isSubmitting ? 'Ingresando...' : 'Iniciar sesión'}
+          <button type="submit" disabled={isSubmitting} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-60">
+            {isSubmitting ? 'Procesando...' : 'Iniciar sesión'}
+          </button>
+
+          <button type="button" disabled={isSubmitting} onClick={handleMagicLink} className="flex w-full items-center justify-center rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted disabled:cursor-not-allowed disabled:opacity-60">
+            Enviarme un enlace de acceso
           </button>
         </form>
 
@@ -178,9 +207,9 @@ function AuthField({ label, children }: { label: string; children: ReactNode }) 
 }
 
 function SuccessMessage({ children }: { children: ReactNode }) {
-  return <div className="mb-5 flex items-center gap-2.5 rounded-2xl border border-success/30 bg-success/16 px-4 py-3 text-foreground"><CheckCircle className="size-4 shrink-0" /><span className="text-sm font-medium">{children}</span></div>
+  return <div role="status" aria-live="polite" className="mb-5 flex items-center gap-2.5 rounded-2xl border border-success/30 bg-success/16 px-4 py-3 text-foreground"><CheckCircle className="size-4 shrink-0" /><span className="text-sm font-medium">{children}</span></div>
 }
 
 function ProviderButton({ children, onClick }: { children: ReactNode; onClick: () => void }) {
-  return <button type="button" onClick={onClick} className="flex items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted active:scale-[0.985]">{children}</button>
+  return <button type="button" onClick={onClick} className="flex items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted">{children}</button>
 }

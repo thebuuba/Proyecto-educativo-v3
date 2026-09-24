@@ -5,7 +5,6 @@
   AlignRight,
   AudioLines,
   ArrowDown,
-  ArrowLeft,
   ArrowRight,
   ArrowUp,
   AlertCircle,
@@ -112,6 +111,7 @@ import { Fragment, useEffect, useMemo, useRef, useState, type Dispatch, type Key
 import { createPortal } from 'react-dom'
 
 import { Badge } from '@/components/ui/Badge'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Input'
@@ -132,6 +132,8 @@ import type {
   StudentGradeRow,
 } from '@/modules/grading/types'
 import {
+  activityAppliesToBlock,
+  activityCompetencyWeights,
   activityGradeCellKey,
   buildCompactGradeRows,
   blockTotal,
@@ -281,6 +283,7 @@ type ActivityDraft = {
   name: string
   maxScore: string
   competencyBlockId: string
+  competencyBlockWeights: Record<string, number>
   date: string
   description: string
   studentRole: string
@@ -299,6 +302,7 @@ type ActivityDraft = {
 
 type ActivityDraftsByBlock = Partial<Record<CompetencyBlockId, ActivityDraft[]>>
 type ActivityCompletionTarget =
+  | 'competencyBlocks'
   | 'name'
   | 'maxScore'
   | 'date'
@@ -328,6 +332,7 @@ const emptyActivityDraft: ActivityDraft = {
   name: '',
   maxScore: '',
   competencyBlockId: competencyBlocks[0].id,
+  competencyBlockWeights: { [competencyBlocks[0].id]: 1 },
   date: '',
   description: '',
   studentRole: '',
@@ -437,6 +442,7 @@ export function GradingBook({
       name: activity.name,
       maxScore: String(activity.maxScore),
       competencyBlockId: activity.competencyBlockId,
+      competencyBlockWeights: activityCompetencyWeights(activity),
       date: activity.date ?? '',
       description: activity.description ?? '',
       studentRole: activity.studentRole ?? '',
@@ -478,7 +484,7 @@ export function GradingBook({
 
   const blockSummaries = useMemo(
     () => competencyBlocks.map((block, index) => {
-      const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+      const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
       const expected = config.expectedBlockTotal
       const maxScore = sumActivityMaxScore(blockActivities, block.id)
       const studentScores = students.flatMap((student) => {
@@ -712,6 +718,7 @@ export function GradingBook({
       name: activityDraft.name.trim(),
       maxScore,
       competencyBlockId: activityDraft.competencyBlockId,
+      competencyBlockWeights: activityDraft.competencyBlockWeights,
       date: activityDraft.date || undefined,
       description: activityDraft.description.trim() || undefined,
       studentRole: activityDraft.studentRole.trim() || undefined,
@@ -747,6 +754,7 @@ export function GradingBook({
       name: activity.name,
       maxScore: String(activity.maxScore),
       competencyBlockId: activity.competencyBlockId,
+      competencyBlockWeights: activityCompetencyWeights(activity),
       date: activity.date ?? '',
       description: activity.description ?? '',
       studentRole: activity.studentRole ?? '',
@@ -889,7 +897,7 @@ export function GradingBook({
         detailView.type === 'block' && selectedBlock ? (
           <BlockGradeView
             blockId={selectedBlock.id}
-            activities={activities.filter((activity) => activity.competencyBlockId === selectedBlock.id)}
+            activities={activities.filter((activity) => activityAppliesToBlock(activity, selectedBlock.id))}
             config={config}
             courseTitle={courseTitle}
             draftMetas={draftMetas}
@@ -938,13 +946,13 @@ export function GradingBook({
             activityDraft={activityDraft}
             teams={teams}
             hasDraft={Boolean(activityDraft.draftId && isMeaningfulActivityDraft(activityDraft)) && !editingActivityId}
-            activities={activities.filter((activity) => activity.competencyBlockId === selectedCreateBlock.id)}
+            activities={activities.filter((activity) => activityAppliesToBlock(activity, selectedCreateBlock.id))}
             block={selectedCreateBlock}
             editingActivityId={editingActivityId}
             onBack={goBackFromActivityCreator}
             onCancelEdit={() => {
               setEditingActivityId(null)
-              setActivityDraft({ ...emptyActivityDraft, competencyBlockId: selectedCreateBlock.id })
+              setActivityDraft(newActivityDraft(selectedCreateBlock.id))
             }}
             onChangeDraft={updateActivityDraft}
             onDeleteActivity={onDeleteActivity}
@@ -1126,7 +1134,7 @@ export function ActivitySavedDialog({ completion, returnLabel, onClose, onCreate
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {created && onGrade ? <Button className="h-12 justify-center" onClick={onGrade}><GraduationCap className="size-5" /> Calificar ahora</Button> : null}
-          <Button variant="outline" className="h-12 justify-center" onClick={onReturn}><ArrowLeft className="size-5" /> {returnLabel}</Button>
+          <Button variant="outline" className="h-12 justify-center" onClick={onReturn}><BackIcon /> {returnLabel}</Button>
           <Button variant="outline" className="h-12 justify-center" onClick={onView}><Eye className="size-5" /> {created ? 'Ver actividad' : 'Ver borradores'}</Button>
           <Button variant="ghost" className="h-12 justify-center text-primary" onClick={onCreateAnother}><Plus className="size-5" /> Crear otra actividad</Button>
         </div>
@@ -1151,7 +1159,7 @@ function ViewButton({
       type="button"
       aria-current={active ? 'page' : undefined}
       className={cn(
-        'relative z-10 inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-xl px-2 text-sm font-bold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.985]',
+        'relative z-10 inline-flex h-10 min-w-0 items-center justify-center gap-2 rounded-xl px-2 text-sm font-bold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
         active ? 'text-primary-foreground' : 'text-muted-foreground hover:text-foreground',
       )}
       onClick={onClick}
@@ -1507,7 +1515,7 @@ function BlockGradeView({
         </div>
         <div className="flex flex-wrap gap-2">
           <Button variant="outline" onClick={onBack}>
-            <ArrowLeft className="size-4" />
+            <BackIcon />
             Volver
           </Button>
           <Button variant="outline" onClick={() => window.print()}>
@@ -2320,7 +2328,7 @@ function ActivityEvaluationPanel({
     <section ref={workspaceRef} className="space-y-4">
       <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 sm:gap-3">
         <Button aria-label="Estudiante anterior" variant="outline" disabled={studentIndex <= 0 || saveStatus === 'saving'} onClick={() => setStudentIndex((current) => Math.max(0, current - 1))}>
-          <ArrowLeft className="size-4" />
+          <BackIcon />
           <span className="hidden sm:inline">Anterior</span>
         </Button>
         <Select value={String(studentIndex)} onChange={(event) => setStudentIndex(Number(event.target.value))} className="h-12 text-center font-black">
@@ -2586,7 +2594,7 @@ export function LegacyActivityDetailView({
     <div className="space-y-4">
       <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
         <button className="mb-3 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline" onClick={onBack}>
-          <ArrowLeft className="size-4" />
+          <BackIcon />
           Volver al bloque
         </button>
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
@@ -2726,7 +2734,7 @@ function PeriodSummaryView({
   recoveryScores: RecoveryScores
   students: StudentGradeRow[]
 }) {
-  const activities = blockSummaries.flatMap((summary) => summary.activities)
+  const activities = [...new Map(blockSummaries.flatMap((summary) => summary.activities).map((activity) => [activity.id, activity])).values()]
   const rows = buildCompactGradeRows(students, activities, records)
   const evaluatedCells = students.reduce((total, student) => total + activities.filter((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).length, 0)
   const coverage = students.length && activities.length ? Math.round(evaluatedCells / (students.length * activities.length) * 100) : 0
@@ -3139,7 +3147,7 @@ function ActivityManager({
   return (
     <div className="grid gap-2">
       {showCompetencySelect ? (
-        <Select value={activityDraft.competencyBlockId} onChange={(event) => onChangeDraft({ ...activityDraft, competencyBlockId: event.target.value })}>
+        <Select value={activityDraft.competencyBlockId} onChange={(event) => onChangeDraft({ ...activityDraft, competencyBlockId: event.target.value, competencyBlockWeights: { [event.target.value]: 1 } })}>
           {competencyBlocks.map((block) => (
             <option key={block.id} value={block.id}>{block.shortName} · {block.name}</option>
           ))}
@@ -3249,7 +3257,7 @@ function ActivityManager({
           <div key={activity.id} className="flex flex-col gap-3 border-b border-border px-4 py-3 text-sm last:border-b-0 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-bold text-primary">{activity.name}</p>
-              <p className="text-xs text-muted-foreground">{activity.maxScore} pts · {blockShortNames[activity.competencyBlockId] ?? 'Bloque'} · {activity.activityType === 'group' ? 'Grupal' : 'Individual'} · {activity.instrumentType || 'Sin instrumento'}</p>
+              <p className="text-xs text-muted-foreground">{activity.maxScore} pts · {competencyBlocks.filter((block) => activityAppliesToBlock(activity, block.id)).map((block) => block.shortName).join(', ')} · {activity.activityType === 'group' ? 'Grupal' : 'Individual'} · {activity.instrumentType || 'Sin instrumento'}</p>
             </div>
             <div className="flex gap-2">
               <Button variant="ghost" size="sm" onClick={() => onEditActivity(activity)}>Editar</Button>
@@ -3302,7 +3310,7 @@ function ActivitiesHubView({
         </div>
         <div className="flex items-center gap-1 self-start">
           <Button variant="ghost" className="h-10 px-3" onClick={onBack}>
-            <ArrowLeft className="size-4" />
+            <BackIcon />
             Volver
           </Button>
         </div>
@@ -3312,7 +3320,7 @@ function ActivitiesHubView({
         {competencyBlocks.map((block, index) => (
           <ActivityBlockHubCard
             key={block.id}
-            activities={activities.filter((activity) => activity.competencyBlockId === block.id)}
+            activities={activities.filter((activity) => activityAppliesToBlock(activity, block.id))}
             accent={blockAccents[index]}
             block={block}
             onSelectBlock={() => onSelectBlock(block.id)}
@@ -3334,7 +3342,7 @@ function ActivityBlockHubCard({
   block: (typeof competencyBlocks)[number]
   onSelectBlock: () => void
 }) {
-  const plannedPoints = activities.reduce((sum, activity) => sum + activity.maxScore, 0)
+  const plannedPoints = sumActivityMaxScore(activities, block.id)
 
   return (
     <article className="flex flex-col rounded-2xl bg-card p-4 shadow-sm sm:p-5">
@@ -3351,12 +3359,12 @@ function ActivityBlockHubCard({
       <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
         <span><strong className="font-extrabold text-foreground tabular-nums">{activities.length}</strong> {activities.length === 1 ? 'actividad' : 'actividades'}</span>
         <span className="text-border" aria-hidden="true">•</span>
-        <span><strong className="font-extrabold text-foreground tabular-nums">{plannedPoints}</strong> pts planificados</span>
+        <span><strong className="font-extrabold text-foreground tabular-nums">{formatGrade(plannedPoints)}</strong> pts planificados</span>
       </div>
 
       <button
         type="button"
-        className="mt-4 inline-flex h-9 w-fit items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.985]"
+        className="mt-4 inline-flex h-9 w-fit items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         onClick={onSelectBlock}
       >
         <Plus className="size-4" />
@@ -3558,7 +3566,7 @@ function ActivityDraftsView({
             Nueva actividad
           </Button>
           <Button variant="ghost" className="h-10 px-3" onClick={onBack}>
-            <ArrowLeft className="size-4" />
+            <BackIcon />
             Volver
           </Button>
         </div>
@@ -3944,6 +3952,81 @@ const evaluationTechniqueOptions = [
   ['prueba-escrita', 'Prueba escrita'], ['autoevaluacion', 'Autoevaluación'], ['coevaluacion', 'Coevaluación'], ['heteroevaluacion', 'Heteroevaluación'],
 ] as const
 
+function CompetencyDistributionField({ activityDraft, highlight, onChangeDraft }: {
+  activityDraft: ActivityDraft
+  highlight?: string
+  onChangeDraft: (draft: ActivityDraft) => void
+}) {
+  const weights = activityDraft.competencyBlockWeights
+  const selectedBlocks = competencyBlocks.filter((block) => (weights[block.id] ?? 0) > 0)
+  const weighted = selectedBlocks.some((block) => weights[block.id] !== 1)
+  const total = selectedBlocks.reduce((sum, block) => sum + weights[block.id], 0)
+
+  function changeWeights(next: Record<string, number>) {
+    onChangeDraft({ ...activityDraft, competencyBlockWeights: next })
+  }
+
+  function toggleBlock(blockId: string, checked: boolean) {
+    const next = { ...weights }
+    if (checked) next[blockId] = weighted ? 0 : 1
+    else delete next[blockId]
+    if (weighted) {
+      const ids = Object.keys(next)
+      const equalWeight = 1 / ids.length
+      ids.forEach((id) => { next[id] = equalWeight })
+    }
+    changeWeights(next)
+  }
+
+  function setMode(mode: 'same' | 'weighted') {
+    const ids = selectedBlocks.map((block) => block.id)
+    const value = mode === 'same' ? 1 : 1 / ids.length
+    changeWeights(Object.fromEntries(ids.map((id) => [id, value])))
+  }
+
+  return (
+    <div className={cn('space-y-3', highlight)}>
+      <div>
+        <p className="text-sm font-bold text-foreground">Selecciona uno o varios bloques</p>
+        <p className="mt-1 text-xs text-muted-foreground">El bloque desde el que abriste la actividad se mantiene como principal.</p>
+      </div>
+      <div className="grid gap-2 sm:grid-cols-2">
+        {competencyBlocks.map((block) => {
+          const selected = (weights[block.id] ?? 0) > 0
+          const primary = block.id === activityDraft.competencyBlockId
+          return (
+            <label key={block.id} className={cn('flex min-h-14 items-start gap-3 rounded-xl border p-3 transition', selected ? 'border-primary/40 bg-primary/8' : 'border-border bg-card hover:border-primary/30')}>
+              <input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={selected} disabled={primary} onChange={(event) => toggleBlock(block.id, event.target.checked)} />
+              <span className="min-w-0"><strong className="block text-sm text-foreground">{block.shortName}</strong><span className="line-clamp-2 text-xs text-muted-foreground">{block.name}</span>{primary ? <span className="mt-1 block text-[10px] font-bold text-primary">Principal</span> : null}</span>
+            </label>
+          )
+        })}
+      </div>
+
+      {selectedBlocks.length > 1 ? (
+        <div className="rounded-xl border border-border bg-muted/20 p-3">
+          <p className="text-sm font-bold text-foreground">¿Cómo se distribuye la calificación?</p>
+          <div className="mt-2 grid gap-2 sm:grid-cols-2">
+            <button type="button" aria-pressed={!weighted} onClick={() => setMode('same')} className={cn('min-h-11 rounded-xl border px-3 text-left text-sm transition', !weighted ? 'border-primary bg-primary/10 text-foreground' : 'border-border bg-card text-muted-foreground hover:border-primary/30')}><strong className="block">Misma calificación</strong><span className="text-xs">La nota completa cuenta en cada bloque.</span></button>
+            <button type="button" aria-pressed={weighted} onClick={() => setMode('weighted')} className={cn('min-h-11 rounded-xl border px-3 text-left text-sm transition', weighted ? 'border-primary bg-primary/10 text-foreground' : 'border-border bg-card text-muted-foreground hover:border-primary/30')}><strong className="block">Ponderar por bloque</strong><span className="text-xs">Distribuye el 100 % entre las competencias.</span></button>
+          </div>
+          {weighted ? (
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              {selectedBlocks.map((block) => (
+                <label key={block.id} className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-border bg-card px-3 text-xs font-bold text-foreground">
+                  <span>{block.shortName}</span>
+                  <span className="flex items-center gap-1"><Input aria-label={`Peso de ${block.shortName}`} className="h-9 w-20 text-right" type="number" min={1} max={100} step={1} value={Math.round(weights[block.id] * 1000) / 10} onChange={(event) => changeWeights({ ...weights, [block.id]: Number(event.target.value) / 100 })} /><span>%</span></span>
+                </label>
+              ))}
+              <p className={cn('sm:col-span-2 text-right text-xs font-bold', Math.abs(total - 1) < 0.001 ? 'text-success' : 'text-destructive')}>Total: {Math.round(total * 1000) / 10} %</p>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft }: {
   activityDraft: ActivityDraft
   teams: CourseTeam[]
@@ -3961,21 +4044,25 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
         </div>
       </CreationFormSection>
 
-      <CreationFormSection icon={<CalendarDays className="size-4" />} number={2} title="Planificación" accent={accent}>
+      <CreationFormSection icon={<Blocks className="size-4" />} number={2} title="Competencias evaluadas" accent={accent}>
+        <CompetencyDistributionField activityDraft={activityDraft} highlight={highlight('competencyBlocks')} onChangeDraft={onChangeDraft} />
+      </CreationFormSection>
+
+      <CreationFormSection icon={<CalendarDays className="size-4" />} number={3} title="Planificación" accent={accent}>
         <div className="grid gap-4 lg:grid-cols-[16rem_minmax(0,1fr)]">
           <label className={cn('space-y-1.5 text-sm font-bold', highlight('date'))}>Fecha de realización <span className="text-destructive">*</span><Input className="h-11" type="date" value={activityDraft.date} onChange={(event) => onChangeDraft({ ...activityDraft, date: event.target.value })} /></label>
           <div className={cn('space-y-1.5', highlight('planningMoment'))}><p className="text-sm font-bold">Momento de la clase <span className="text-destructive">*</span></p><div className="grid grid-cols-3 gap-2">{([{ id: 'inicio', icon: <Play className="size-4 text-emerald-500" /> }, { id: 'desarrollo', icon: <CircleDot className="size-4 text-blue-600" /> }, { id: 'cierre', icon: <Flag className="size-4 text-violet-500" /> }] as const).map((moment) => <button key={moment.id} type="button" className={cn('flex h-11 items-center justify-center gap-2 rounded-lg border text-sm font-black capitalize transition', activityDraft.planningMoment === moment.id ? cn(accent.card, accent.text, 'shadow-sm') : 'border-border bg-card text-muted-foreground hover:border-primary')} onClick={() => onChangeDraft({ ...activityDraft, planningMoment: moment.id })}>{moment.icon}{moment.id}</button>)}</div></div>
         </div>
       </CreationFormSection>
 
-      <CreationFormSection icon={<Target className="size-4" />} number={3} title="Evaluación" accent={accent}>
+      <CreationFormSection icon={<Target className="size-4" />} number={4} title="Evaluación" accent={accent}>
         <div className="grid gap-3 md:grid-cols-2">
           <label className={cn('space-y-1.5 text-sm font-bold', highlight('evaluationTechnique'))}>Técnica de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })}><option value="" disabled>Seleccionar técnica</option>{evaluationTechniqueOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</Select></label>
           <label className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Instrumento de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}><option value="" disabled>Seleccionar instrumento</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
         </div>
       </CreationFormSection>
 
-      <CreationFormSection icon={<Users className="size-4" />} number={4} title="Modalidad" accent={accent}>
+      <CreationFormSection icon={<Users className="size-4" />} number={5} title="Modalidad" accent={accent}>
         <div className={cn('grid gap-3 sm:grid-cols-2', highlight('activityType'))}>
           {([{ id: 'individual', title: 'Individual', detail: 'Cada estudiante realiza la actividad de forma individual.' }, { id: 'group', title: 'Grupal', detail: 'La actividad se realiza en grupos de estudiantes.' }] as const).map((option) => (
             <button key={option.id} type="button" className={cn('relative flex min-h-24 items-center gap-4 rounded-xl border p-4 text-left transition', activityDraft.activityType === option.id ? cn(accent.card, accent.text, 'shadow-sm') : 'border-border bg-card hover:border-primary/50')} onClick={() => onChangeDraft({ ...activityDraft, activityType: option.id })}>
@@ -3987,11 +4074,11 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
         {activityDraft.activityType === 'group' ? <div className="mt-4 rounded-xl border border-border bg-muted/20 p-4"><div className="flex flex-wrap items-center justify-between gap-2"><div><p className="text-sm font-black">Equipos de esta asignatura</p><p className="mt-1 text-xs text-muted-foreground">Reutiliza los equipos existentes sin volver a organizar estudiantes.</p></div><span className="text-xs font-bold text-primary">{(activityDraft.teamIds ?? []).length} seleccionados</span></div>{teams.length ? <div className="mt-3 grid gap-2 sm:grid-cols-2">{teams.map((team) => { const selected = (activityDraft.teamIds ?? []).includes(team.id); return <label key={team.id} className={cn('flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border px-3 transition', selected ? cn(accent.card, accent.text) : 'border-border bg-card hover:border-primary/40')}><input type="checkbox" checked={selected} onChange={() => onChangeDraft({ ...activityDraft, teamIds: selected ? (activityDraft.teamIds ?? []).filter((id) => id !== team.id) : [...(activityDraft.teamIds ?? []), team.id] })} className="size-4 rounded accent-primary" /><span className="grid size-8 place-items-center rounded-full text-xs font-black text-white" style={{ backgroundColor: team.color }}>{team.name.charAt(0)}</span><span className="min-w-0 flex-1"><span className="block truncate text-sm font-black">{team.name}</span><span className="block text-[10px] text-muted-foreground">{team.members.length} integrantes · {team.teamType === 'permanent' ? 'Permanente' : 'Temporal'}</span></span></label>})}</div> : <p className="mt-3 rounded-xl border border-dashed border-border p-4 text-center text-xs text-muted-foreground">No hay equipos activos en esta asignatura. Créelos desde la pestaña Equipos.</p>}</div> : null}
       </CreationFormSection>
 
-      <CreationFormSection icon={<Box className="size-4" />} number={5} title="Recursos y materiales" optional accent={accent}>
+      <CreationFormSection icon={<Box className="size-4" />} number={6} title="Recursos y materiales" optional accent={accent}>
         <ResourcePicker resources={activityDraft.resources} onChange={(resources) => onChangeDraft({ ...activityDraft, resources })} />
       </CreationFormSection>
 
-      <CreationFormSection icon={<FileText className="size-4" />} number={6} title="Descripción de la actividad" accent={accent}>
+      <CreationFormSection icon={<FileText className="size-4" />} number={7} title="Descripción de la actividad" accent={accent}>
         <div className={highlight('description')}><StructuredActivityDescriptionEditor value={activityDraft.description} onChange={(description) => onChangeDraft({ ...activityDraft, description })} /></div>
       </CreationFormSection>
     </div>
@@ -4076,6 +4163,8 @@ function ActivityReview({ activityDraft, issues }: { activityDraft: ActivityDraf
   const ready = issues.length === 0
   const instrumentType = activityDraft.instrumentType
   const instrumentFields = activityDraft.instrumentFields
+  const reviewCompetencies = competencyBlocks.filter((block) => (activityDraft.competencyBlockWeights[block.id] ?? 0) > 0)
+  const reviewUsesWeights = reviewCompetencies.some((block) => activityDraft.competencyBlockWeights[block.id] !== 1)
   const criteriaCount = instrumentType
     ? Number(instrumentFields[`${instrumentType}:meta:criteriaCount`]) || inferInstrumentCount(instrumentFields, instrumentType, 'criterion', 0)
     : 0
@@ -4125,6 +4214,10 @@ function ActivityReview({ activityDraft, issues }: { activityDraft: ActivityDraf
             {summaryItems.slice(4).map((item) => <div key={item.label} className="flex min-w-0 items-center gap-3 border-b border-border px-3 py-3 sm:border-b-0 sm:border-r last:border-r-0"><span className="grid size-8 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-inset ring-blue-100">{item.icon}</span><div className="min-w-0"><dt className="truncate text-[9px] font-bold text-muted-foreground">{item.label}</dt><dd className="truncate text-xs font-black text-foreground" title={item.value}>{item.value}</dd></div></div>)}
           </div>
         </dl>
+      </section>
+
+      <section className="rounded-xl border border-border bg-card px-4 py-3 shadow-sm">
+        <div className="flex items-start gap-3"><span className="grid size-8 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary"><Blocks className="size-4" /></span><div className="min-w-0 flex-1"><h4 className="text-xs font-black text-foreground">Competencias evaluadas</h4><p className="text-[10px] text-muted-foreground">{reviewUsesWeights ? 'Calificación ponderada entre bloques.' : 'La misma calificación se aplica a cada bloque.'}</p><div className="mt-2 flex flex-wrap gap-1.5">{reviewCompetencies.map((block) => <span key={block.id} className="rounded-full border border-primary/20 bg-primary/8 px-2.5 py-1 text-[10px] font-bold text-foreground">{block.shortName}{reviewUsesWeights ? ` · ${Math.round(activityDraft.competencyBlockWeights[block.id] * 1000) / 10} %` : ''}</span>)}</div></div></div>
       </section>
 
       <section className={cn('rounded-xl border border-l-2 bg-card px-4 py-3 shadow-sm', accent.border)}>
@@ -4262,7 +4355,7 @@ export function LegacyActivityCreationView({
           </p>
         </div>
         <Button variant="outline" onClick={onBack}>
-          <ArrowLeft className="size-4" />
+          <BackIcon />
           Volver
         </Button>
       </div>
@@ -5098,9 +5191,7 @@ function RubricLevelSettingsDrawer({
       pointerEvents: 'none',
       position: 'fixed',
       top: `${bounds.top}px`,
-      transform: 'scale(1.015)',
-      transformOrigin: 'center',
-      transition: 'box-shadow 160ms ease, transform 160ms ease',
+      transition: 'box-shadow 160ms ease',
       width: `${bounds.width}px`,
       willChange: 'top',
       zIndex: '9999',
@@ -5594,7 +5685,7 @@ function ScaleSettingsDrawer({
     setDragPreviewHeight(bounds.height)
     preview.removeAttribute('data-scale-level-card')
     preview.querySelectorAll<HTMLElement>('button, input').forEach((element) => { element.tabIndex = -1 })
-    Object.assign(preview.style, { background: '#ffffff', borderColor: accent.progressColor, boxShadow: '0 22px 50px rgba(15, 23, 42, 0.25)', left: `${bounds.left}px`, margin: '0', opacity: '1', pointerEvents: 'none', position: 'fixed', top: `${bounds.top}px`, transform: 'scale(1.012)', width: `${bounds.width}px`, zIndex: '9999' })
+    Object.assign(preview.style, { background: '#ffffff', borderColor: accent.progressColor, boxShadow: '0 22px 50px rgba(15, 23, 42, 0.25)', left: `${bounds.left}px`, margin: '0', opacity: '1', pointerEvents: 'none', position: 'fixed', top: `${bounds.top}px`, width: `${bounds.width}px`, zIndex: '9999' })
     document.body.appendChild(preview)
     dragPreviewRef.current = preview
     const sourceIndex = levelDrafts.findIndex((item) => item.id === level.id)
@@ -7079,7 +7170,7 @@ function averageBlockForPeriod(input: {
 }) {
   const records = input.recordsByPeriod.get(input.periodId) ?? []
   const activities = input.getActivitiesForPeriod(input.periodId)
-    .filter((activity) => activity.competencyBlockId === input.blockId)
+    .filter((activity) => activityAppliesToBlock(activity, input.blockId))
   if (activities.length === 0) return null
   const recoveryScores = getRecoveryScores(records)
   const scores = input.students.flatMap((student) => {
@@ -7108,7 +7199,7 @@ function getStudentPeriodBlockScore(input: {
 }) {
   const records = input.recordsByPeriod.get(input.periodId) ?? []
   const activities = input.getActivitiesForPeriod(input.periodId)
-    .filter((activity) => activity.competencyBlockId === input.blockId)
+    .filter((activity) => activityAppliesToBlock(activity, input.blockId))
   if (activities.length === 0) {
     return { period: null, recovery: null, effective: null }
   }
@@ -7313,7 +7404,7 @@ function buildActivityDraftMetas(drafts: ActivityDraftsByBlock): ActivityDraftMe
 function buildActivityDraftMeta(draft: ActivityDraft, blockId: CompetencyBlockId): ActivityDraftMeta {
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
   const pendingIssues = validateActivityCompletion(draft)
-  const requiredFields = 8
+  const requiredFields = 9
   const untouchedDraft = !isMeaningfulActivityDraft(draft)
   const completed = Math.max(0, requiredFields - pendingIssues.length)
 
@@ -7464,6 +7555,13 @@ function isInstrumentComplete(input: {
 function validateActivityCompletion(draft: ActivityDraft): ActivityCompletionIssue[] {
   const issues: ActivityCompletionIssue[] = []
   const maxScore = Number(draft.maxScore)
+  const rawCompetencyWeights = Object.values(draft.competencyBlockWeights)
+  const competencyWeights = rawCompetencyWeights.filter((weight) => Number.isFinite(weight) && weight > 0 && weight <= 1)
+  const weightedCompetencies = competencyWeights.some((weight) => weight !== 1)
+
+  if (competencyWeights.length === 0 || competencyWeights.length !== rawCompetencyWeights.length || !(draft.competencyBlockId in draft.competencyBlockWeights) || (weightedCompetencies && Math.abs(competencyWeights.reduce((sum, weight) => sum + weight, 0) - 1) > 0.001)) {
+    issues.push({ detail: 'Selecciona al menos un bloque y, si ponderas, distribuye exactamente el 100 %.', tab: 'activity', target: 'competencyBlocks', title: 'Competencias evaluadas' })
+  }
 
   if (!draft.name.trim()) {
     issues.push({ detail: 'Escribe un nombre claro para identificar la actividad.', tab: 'activity', target: 'name', title: 'Nombre de la actividad' })
@@ -7522,6 +7620,7 @@ function newActivityDraft(blockId: CompetencyBlockId): ActivityDraft {
     ...emptyActivityDraft,
     draftId: createDraftId(),
     competencyBlockId: blockId,
+    competencyBlockWeights: { [blockId]: 1 },
     updatedAt: new Date().toISOString(),
   }
 }
@@ -7542,6 +7641,9 @@ function normalizeStoredActivityDrafts(value: unknown): ActivityDraftsByBlock {
         ...draft,
         draftId: typeof draft.draftId === 'string' ? draft.draftId : createDraftId(),
         competencyBlockId: block.id,
+        competencyBlockWeights: draft.competencyBlockWeights && typeof draft.competencyBlockWeights === 'object'
+          ? draft.competencyBlockWeights
+          : { [block.id]: 1 },
         instrumentCompleted: Boolean(draft.instrumentCompleted),
         instrumentFields: draft.instrumentFields && typeof draft.instrumentFields === 'object' && !Array.isArray(draft.instrumentFields)
           ? draft.instrumentFields as Record<string, string>

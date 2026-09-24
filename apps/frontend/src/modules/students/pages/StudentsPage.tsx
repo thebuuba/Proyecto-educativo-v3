@@ -4,7 +4,6 @@
 
 import {
   Archive,
-  ArrowLeft,
   BookOpen,
   CalendarRange,
   Download,
@@ -17,6 +16,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { EmptyState } from '@/components/ui/EmptyState'
 import {
@@ -469,7 +469,7 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
             className="inline-flex w-fit items-center gap-2 rounded-lg text-sm font-bold text-muted-foreground transition-colors hover:text-primary-variant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             onClick={() => embedded ? onBack?.() : selectCourse('')}
           >
-            <ArrowLeft className="size-4" />
+            <BackIcon />
             {embedded ? 'Volver al curso' : 'Volver a cursos disponibles'}
           </button>
 

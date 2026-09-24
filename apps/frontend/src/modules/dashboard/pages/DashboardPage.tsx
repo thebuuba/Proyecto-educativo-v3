@@ -97,11 +97,10 @@ export function DashboardPage() {
     )
   }
 
-  const hasAgenda = data.todayAgenda.length > 0
   const hasWeeklyAttendance = data.weeklyAttendance.days.length > 0
   const canManageOperations = data.view === 'management' || data.view === 'teacher'
   const hasTasks = canManageOperations
-  const hasOperationalBlocks = hasAgenda || hasWeeklyAttendance || hasTasks || canManageOperations
+  const hasOperationalBlocks = hasWeeklyAttendance || hasTasks || canManageOperations
   const journalSummary = data.journalSummary ?? {
     activeCount: 0,
     pendingCount: 0,
@@ -124,14 +123,12 @@ export function DashboardPage() {
           ),
           layout: { x: 0, y: 10, w: 6, h: 16, minW: 4, minH: 8, maxW: 8 },
         },
-        ...(hasAgenda
-          ? [{
-              id: 'agenda',
-              label: 'Agenda de hoy',
-              content: <TodayAgenda items={data.todayAgenda} />,
-              layout: { x: 6, y: 10, w: 6, h: 16, minW: 4, minH: 10, maxW: 8 },
-            } satisfies DashboardGridWidget]
-          : []),
+        {
+          id: 'agenda',
+          label: 'Agenda de hoy',
+          content: <TodayAgenda items={data.todayAgenda} />,
+          layout: { x: 6, y: 10, w: 6, h: 16, minW: 4, minH: 10, maxW: 8 },
+        },
         ...(hasWeeklyAttendance
           ? [{
               id: 'attendance',
@@ -256,13 +253,11 @@ export function DashboardPage() {
 
           {hasOperationalBlocks ? (
             <div className="grid gap-6 lg:grid-cols-12 lg:items-start">
-              {hasAgenda ? (
-                <div className="dashboard-enter lg:col-span-5 lg:self-start" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
-                  <TodayAgenda items={data.todayAgenda} />
-                </div>
-              ) : null}
+              <div className="dashboard-enter lg:col-span-5 lg:self-start" style={{ animationDelay: '80ms', animationDuration: '440ms' }}>
+                <TodayAgenda items={data.todayAgenda} />
+              </div>
 
-              <div className={[hasAgenda ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-6'].join(' ')}>
+              <div className="space-y-6 lg:col-span-7">
                 {hasWeeklyAttendance || hasTasks ? (
                   <div className="grid gap-6 md:grid-cols-2 md:items-start">
                     {hasWeeklyAttendance ? (
@@ -284,9 +279,7 @@ export function DashboardPage() {
                 ) : null}
 
                 {canManageOperations ? (
-                  <div className="dashboard-enter" style={{ animationDelay: '220ms', animationDuration: '300ms' }}>
-                    <RecentActivity items={data.recentActivity} />
-                  </div>
+                  <RecentActivity items={data.recentActivity} />
                 ) : null}
 
                 {canManageOperations ? (

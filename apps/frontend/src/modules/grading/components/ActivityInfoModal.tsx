@@ -21,7 +21,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { Modal } from '@/components/ui/Modal'
 import type { GradingActivity } from '@/modules/grading/types'
-import { competencyBlocks, plainActivityText } from '@/modules/grading/utils/competencyGrades'
+import { activityCompetencyWeights, competencyBlocks, plainActivityText } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 
 type Accent = {
@@ -64,6 +64,9 @@ export function ActivityInfoModal({ activity, onClose, onEdit, onEvaluate }: {
   onEvaluate?: () => void
 }) {
   const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId) ?? competencyBlocks[0]
+  const competencyWeights = activityCompetencyWeights(activity)
+  const activityBlocks = competencyBlocks.filter((item) => (competencyWeights[item.id] ?? 0) > 0)
+  const weightedCompetencies = activityBlocks.some((item) => competencyWeights[item.id] !== 1)
   const accent = getBlockAccent(block.id)
   const resources = activity.resources ?? []
   const activityDetails = [
@@ -88,7 +91,7 @@ export function ActivityInfoModal({ activity, onClose, onEdit, onEvaluate }: {
 
       <div className="space-y-4 bg-muted/10 p-5">
         <section className={cn('relative overflow-hidden rounded-xl border p-4 shadow-sm', accent.card, accent.border)}>
-          <div className="relative z-10 flex flex-wrap items-start justify-between gap-3"><div><h4 className={cn('text-xl font-black', accent.text)}>{activity.name || 'Actividad sin nombre'}</h4><p className="mt-1 text-sm text-muted-foreground">{blockShortNames[block.id] ?? block.name}</p></div><Badge className={cn(accent.badge)}>{block.shortName}</Badge></div>
+          <div className="relative z-10 flex flex-wrap items-start justify-between gap-3"><div><h4 className={cn('text-xl font-black', accent.text)}>{activity.name || 'Actividad sin nombre'}</h4><p className="mt-1 text-sm text-muted-foreground">{activityBlocks.length > 1 ? `${activityBlocks.length} bloques de competencias` : blockShortNames[block.id] ?? block.name}</p></div><div className="flex flex-wrap justify-end gap-1.5">{activityBlocks.map((item) => <Badge key={item.id} className={cn(accent.badge)}>{item.shortName}{weightedCompetencies ? ` · ${Math.round(competencyWeights[item.id] * 1000) / 10} %` : ''}</Badge>)}</div></div>
           <span className="absolute -right-7 -top-12 size-36 rounded-full bg-white/25" />
         </section>
 

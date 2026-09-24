@@ -1,5 +1,4 @@
 import {
-  ArrowLeft,
   BookOpen,
   CalendarDays,
   Clock3,
@@ -17,6 +16,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 
 import { Badge } from '@/components/ui/Badge'
+import { BackIcon } from '@/components/ui/BackIcon'
 import { Button } from '@/components/ui/Button'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
@@ -130,10 +130,10 @@ export function SubjectSchedulePage() {
   if (loading) return <div className="flex min-h-[28rem] items-center justify-center text-sm font-semibold text-muted-foreground">Cargando horario…</div>
   if (error) return <ErrorState message={error} />
 
-  return <div className="space-y-3">
+  return <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-3">
     <header className="rounded-2xl bg-card shadow-sm">
       <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
-        <button type="button" onClick={back} className="flex h-10 shrink-0 items-center gap-1.5 rounded-xl border border-border bg-card px-3 text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><ArrowLeft className="size-4" /> Volver</button>
+        <button type="button" onClick={back} className="flex h-10 shrink-0 items-center gap-1.5 rounded-xl border border-border bg-card px-3 text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><BackIcon /> Volver</button>
         <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-sm"><BookOpen className="size-6" /></span>
         <div className="min-w-0 flex-1"><div className="flex items-center gap-2"><h1 className="truncate text-base font-extrabold">{meta.gradeName} {meta.sectionName} – {meta.subjectName}</h1><Badge tone="success">Activa</Badge></div><p className="mt-1 text-[11px] font-semibold text-muted-foreground">{meta.schoolYearName ? `Año escolar ${meta.schoolYearName}` : 'Asignatura activa'}</p></div>
       </div>
@@ -171,7 +171,7 @@ export function SubjectSchedulePage() {
             <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{group.entries.map((entry) => {
               const isToday = entry.dayOfWeek === today
               const duration = minutesBetween(entry.startTime, entry.endTime)
-              return <article key={entry.id} className={cn('relative overflow-hidden rounded-2xl border bg-card p-4 shadow-sm transition-[transform,box-shadow,border-color] duration-200 motion-reduce:transform-none motion-reduce:transition-none hover:-translate-y-0.5 hover:shadow-md', isToday ? 'border-primary/30 ring-1 ring-primary/10' : 'border-border')}>
+              return <article key={entry.id} className={cn('relative overflow-hidden rounded-2xl border bg-card p-4 shadow-sm transition-[box-shadow,border-color] duration-200 motion-reduce:transition-none hover:shadow-md', isToday ? 'border-primary/30 ring-1 ring-primary/10' : 'border-border')}>
                 <div className={cn('absolute inset-x-0 top-0 h-1', isToday ? 'bg-primary' : 'bg-primary/20')} />
                 <div className="flex items-start justify-between gap-3"><div className="min-w-0"><div className="flex items-center gap-2">{isToday ? <span className="rounded-full bg-primary/8 px-2 py-0.5 text-[9px] font-black uppercase text-primary">Hoy</span> : null}</div><p className="mt-2 text-xl font-black tracking-tight text-foreground">{formatTime(entry.startTime)} – {formatTime(entry.endTime)}</p><p className="mt-1 text-xs font-semibold text-muted-foreground">{duration} min</p></div><span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/[0.07] text-primary"><Clock3 className="size-5" aria-hidden="true" /></span></div>
                 <div className="mt-4 border-t border-border pt-3"><p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">Aula</p><p className="mt-1 inline-flex min-w-0 items-center gap-1.5 text-sm font-semibold text-foreground"><MapPin className="size-3.5 shrink-0 text-primary" aria-hidden="true" /><span className="break-words">{entry.room || 'Sin asignar'}</span></p></div>

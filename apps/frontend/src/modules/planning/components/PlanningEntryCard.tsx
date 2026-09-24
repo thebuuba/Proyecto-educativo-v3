@@ -50,7 +50,7 @@ export function PlanningEntryCard({
   return (
     <article
       className={cn(
-        'dashboard-warm-shadow flex h-full w-full flex-col overflow-hidden rounded-3xl bg-card text-left transition-transform duration-200 hover:-translate-y-0.5',
+        'dashboard-warm-shadow flex h-full w-full flex-col overflow-hidden rounded-3xl bg-card text-left',
         viewMode === 'list' && 'md:rounded-2xl',
       )}
     >

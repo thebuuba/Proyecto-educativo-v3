@@ -128,7 +128,7 @@ export function AttendanceGrid({
                         disabled={saving}
                         title={`${formatShortDate(workedDay.date)} · ${mark ? markLabels[mark] : 'Sin registrar'}`}
                         className={cn(
-                          'mx-auto flex size-9 items-center justify-center rounded-xl text-xs font-extrabold transition hover:-translate-y-0.5 hover:ring-2 hover:ring-ring/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60',
+                          'mx-auto flex size-9 items-center justify-center rounded-xl text-xs font-extrabold transition hover:ring-2 hover:ring-ring/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60',
                           mark ? markStyles[mark] : 'bg-muted/80 text-muted-foreground hover:bg-muted',
                         )}
                         onClick={() => onToggle(row.enrollmentId, workedDay.date, mark)}

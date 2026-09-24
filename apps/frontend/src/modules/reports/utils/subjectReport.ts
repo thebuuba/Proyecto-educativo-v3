@@ -1,6 +1,6 @@
 import type { ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
 import type { GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
-import { buildCompactGradeRows, competencyBlocks, scoreForActivity } from '@/modules/grading/utils/competencyGrades'
+import { activityAppliesToBlock, buildCompactGradeRows, competencyBlocks, scoreForActivity } from '@/modules/grading/utils/competencyGrades'
 
 export type SubjectReportActivity = GradingActivity & {
   evaluated: number
@@ -61,7 +61,7 @@ export function buildSubjectReport(input: {
     { label: 'Sin evaluar', count: rows.filter((row) => row.average === null).length },
   ]
   const blocks = competencyBlocks.map((block) => {
-    const blockActivities = activities.filter((activity) => activity.competencyBlockId === block.id)
+    const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
     const values = rows.map((row) => row.blockAverages[block.id]).filter((value): value is number => value !== null)
     const evaluated = blockActivities.reduce((sum, activity) => sum + activity.evaluated, 0)
     const possible = blockActivities.length * input.students.length
