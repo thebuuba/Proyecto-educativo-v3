@@ -12,6 +12,7 @@ const DASHBOARD_TIME_ZONE = 'America/Santo_Domingo'
 export type DashboardView = 'management' | 'teacher' | 'student' | 'guardian' | 'viewer'
 
 type AttendanceRecord = { attendanceDate: Date; status: string }
+type ActivePeriod = { id: string; name: string; startDate: Date; endDate: Date; schoolYear: { id: string; name: string } }
 type TeacherGradeRecord = {
   score: unknown
   maxScore: unknown
@@ -120,6 +121,14 @@ export class DashboardService {
       this.getWeeklyAttendance(user, scope, now),
       this.getTasks(user),
     ])
+    const [periodClosing, todayAttendance, attention, planningSummary, calendar, communications] = await Promise.all([
+      this.getPeriodClosing(user.schoolId, period, scope, now),
+      this.getTodayAttendance(user.schoolId, agenda, scope, now),
+      this.getAttention(user, schoolYear?.id ?? null, period?.id ?? null, scope, now),
+      this.getPlanningSummary(user.schoolId, period?.id ?? null, scope),
+      this.getCalendar(user.schoolId, schoolYear?.id ?? null, now),
+      this.getCommunications(user, scope, now),
+    ])
 
     const nextClass = agenda.find((item) => item.status !== 'completed') ?? null
     return {
@@ -133,6 +142,12 @@ export class DashboardService {
       nextClass,
       todayAgenda: agenda,
       weeklyAttendance,
+      periodClosing,
+      todayAttendance,
+      attention,
+      planningSummary,
+      calendar,
+      communications,
       tasks,
       recentActivity: [],
       smartSuggestion: this.getSuggestion(view, setupProgress, nextClass),
@@ -289,6 +304,119 @@ export class DashboardService {
     }).sort((a, b) => a.startTime.localeCompare(b.startTime)).slice(0, 8)
   }
 
+  private async getPeriodClosing(schoolId: string, period: ActivePeriod | null, scope: ViewerScope, now: Date) {
+    if (!period || (scope.view !== 'teacher' && scope.view !== 'management') || (scope.view === 'teacher' && !scope.teacherId)) return null
+    const subjects = await prisma.sectionSubject.findMany({
+      where: { schoolId, schoolYearId: period.schoolYear.id, status: 'ACTIVE', ...(scope.teacherId ? { teacherId: scope.teacherId } : {}) },
+      select: { id: true, sectionId: true, subject: { select: { name: true } }, grade: { select: { name: true, sequence: true } }, section: { select: { name: true } } },
+    })
+    const ordered = subjects.sort((a, b) => (a.grade.sequence ?? 0) - (b.grade.sequence ?? 0) || a.section.name.localeCompare(b.section.name) || a.subject.name.localeCompare(b.subject.name))
+    const visible = ordered.filter((item, index) => ordered.findIndex((candidate) => candidate.sectionId === item.sectionId) === index).slice(0, 4)
+    if (visible.length < 4) visible.push(...ordered.filter((item) => !visible.includes(item)).slice(0, 4 - visible.length))
+    const sectionIds = [...new Set(visible.map((item) => item.sectionId))]
+    const subjectIds = visible.map((item) => item.id)
+    const [enrollments, grades] = subjectIds.length ? await Promise.all([
+      prisma.enrollment.findMany({ where: { schoolId, schoolYearId: period.schoolYear.id, sectionId: { in: sectionIds }, status: 'ACTIVE' }, select: { id: true, sectionId: true } }),
+      prisma.gradesRecord.findMany({ where: { schoolId, academicPeriodId: period.id, sectionSubjectId: { in: subjectIds }, status: 'PUBLISHED' }, select: { sectionSubjectId: true, enrollmentId: true } }),
+    ]) : [[], []]
+    const enrollmentsBySection = new Map(sectionIds.map((id) => [id, new Set(enrollments.filter((item) => item.sectionId === id).map((item) => item.id))]))
+    const courses = visible.map((item) => {
+      const enrolled = enrollmentsBySection.get(item.sectionId) ?? new Set<string>()
+      const graded = new Set(grades.filter((record) => record.sectionSubjectId === item.id && enrolled.has(record.enrollmentId)).map((record) => record.enrollmentId)).size
+      return { id: item.id, label: `${item.grade.name} ${item.section.name}`, subject: item.subject.name.split(': ').at(-1) ?? item.subject.name, graded, total: enrolled.size }
+    })
+    const graded = courses.reduce((sum, item) => sum + item.graded, 0)
+    const total = courses.reduce((sum, item) => sum + item.total, 0)
+    const { calendarDate } = getDashboardClock(now)
+    const month = new Intl.DateTimeFormat('es-DO', { month: 'long', timeZone: 'UTC' })
+    const range = `${month.format(period.startDate)} – ${month.format(period.endDate)}`
+    return {
+      name: period.name.match(/^P\d+/)?.[0] ?? period.name,
+      daysRemaining: Math.max(0, Math.ceil((period.endDate.getTime() - calendarDate.getTime()) / 86_400_000)),
+      rangeLabel: `${range.charAt(0).toUpperCase()}${range.slice(1)} · hasta el ${new Intl.DateTimeFormat('es-DO', { day: 'numeric', month: 'long', timeZone: 'UTC' }).format(period.endDate)}`,
+      percentage: total ? Math.round((graded / total) * 100) : null,
+      courses,
+    }
+  }
+
+  private async getTodayAttendance(schoolId: string, agenda: Array<{ sectionSubjectId: string }>, scope: ViewerScope, now: Date) {
+    if ((scope.view !== 'teacher' && scope.view !== 'management') || !agenda.length) return { recordedClasses: 0, totalClasses: 0, present: 0, absent: 0, excused: 0, late: 0 }
+    const records = await prisma.attendanceClass.findMany({
+      where: { schoolId, attendanceDate: getDashboardClock(now).calendarDate, sectionSubjectId: { in: [...new Set(agenda.map((item) => item.sectionSubjectId))] } },
+      select: { sectionSubjectId: true, status: true },
+    })
+    const recorded = new Set(records.map((item) => item.sectionSubjectId))
+    return {
+      recordedClasses: agenda.filter((item) => recorded.has(item.sectionSubjectId)).length,
+      totalClasses: agenda.length,
+      present: records.filter((item) => item.status === 'PRESENT').length,
+      absent: records.filter((item) => item.status === 'ABSENT').length,
+      excused: records.filter((item) => item.status === 'EXCUSED').length,
+      late: records.filter((item) => item.status === 'LATE').length,
+    }
+  }
+
+  private async getAttention(user: AuthenticatedUser, schoolYearId: string | null, periodId: string | null, scope: ViewerScope, now: Date) {
+    if (!schoolYearId || !periodId || (scope.view !== 'teacher' && scope.view !== 'management')) return []
+    if (scope.view === 'teacher' && !scope.teacherId) return []
+    const sections = scope.teacherId ? await prisma.sectionSubject.findMany({ where: { schoolId: user.schoolId, schoolYearId, teacherId: scope.teacherId, status: 'ACTIVE' }, select: { sectionId: true } }) : null
+    const sectionIds = sections ? [...new Set(sections.map((item) => item.sectionId))] : null
+    if (sectionIds && !sectionIds.length) return []
+    // ponytail: 500 matrículas cubren el panel; usar agregaciones SQL si el centro supera ese volumen.
+    const enrollments = await prisma.enrollment.findMany({
+      where: { schoolId: user.schoolId, schoolYearId, status: 'ACTIVE', ...(sectionIds ? { sectionId: { in: sectionIds } } : {}) },
+      select: { id: true, studentId: true, student: { select: { firstName: true, lastName: true } }, grade: { select: { name: true } }, section: { select: { name: true } } },
+      take: 500,
+    })
+    if (!enrollments.length) return []
+    const enrollmentIds = enrollments.map((item) => item.id)
+    const studentIds = enrollments.map((item) => item.studentId)
+    const since = addDays(getDashboardClock(now).calendarDate, -30)
+    const [grades, attendance, journalLinks] = await Promise.all([
+      prisma.gradesRecord.findMany({ where: { schoolId: user.schoolId, academicPeriodId: periodId, enrollmentId: { in: enrollmentIds }, status: 'PUBLISHED', ...(scope.teacherId ? { sectionSubject: { teacherId: scope.teacherId } } : {}) }, select: { enrollmentId: true, score: true, maxScore: true } }),
+      prisma.attendanceClass.findMany({ where: { schoolId: user.schoolId, enrollmentId: { in: enrollmentIds }, attendanceDate: { gte: since }, ...(scope.teacherId ? { sectionSubject: { teacherId: scope.teacherId } } : {}) }, select: { enrollmentId: true, status: true } }),
+      prisma.teacherJournalStudent.findMany({ where: { schoolId: user.schoolId, studentId: { in: studentIds }, entry: { createdById: user.id, status: 'ACTIVE', occurredAt: { gte: since }, entryType: { in: ['incident', 'student_observation'] } } }, select: { studentId: true } }),
+    ])
+    return enrollments.flatMap((item) => {
+      const marks = grades.filter((grade) => grade.enrollmentId === item.id && Number(grade.maxScore) > 0)
+      const average = marks.length ? Math.round(marks.reduce((sum, grade) => sum + Number(grade.score) / Number(grade.maxScore) * 100, 0) / marks.length) : null
+      const attendances = attendance.filter((record) => record.enrollmentId === item.id)
+      const attendanceRate = calculateAttendanceRate(attendances.map((record) => ({ attendanceDate: now, status: record.status })))
+      const observations = journalLinks.filter((link) => link.studentId === item.studentId).length
+      const reasons = [attendanceRate !== null && attendanceRate < 80 ? 'Asistencia' : null, average !== null && average < 70 ? 'Promedio' : null, observations >= 2 ? 'Conducta' : null].filter((reason): reason is string => Boolean(reason))
+      if (!reasons.length) return []
+      return [{ id: item.studentId, name: `${item.student.firstName} ${item.student.lastName}`, grade: `${item.grade.name} ${item.section.name}`, average, attendance: attendanceRate, reasons, note: observations >= 2 ? `${observations} anotaciones recientes` : average !== null && average < 70 ? 'Promedio bajo el mínimo de aprobación' : 'Asistencia por debajo del 80%' }]
+    }).sort((a, b) => (a.average ?? 100) - (b.average ?? 100) || (a.attendance ?? 100) - (b.attendance ?? 100)).slice(0, 4)
+  }
+
+  private async getPlanningSummary(schoolId: string, periodId: string | null, scope: ViewerScope) {
+    if (!periodId || (scope.view !== 'teacher' && scope.view !== 'management') || (scope.view === 'teacher' && !scope.teacherId)) return { count: 0, entries: [] }
+    const where = { schoolId, academicPeriodId: periodId, status: 'ACTIVE' as const, ...(scope.teacherId ? { sectionSubject: { teacherId: scope.teacherId } } : {}) }
+    const [count, entries] = await Promise.all([
+      prisma.planningEntry.count({ where }),
+      prisma.planningEntry.findMany({ where, select: { id: true, title: true, plannedDate: true, sectionSubjectId: true, sectionSubject: { select: { subject: { select: { name: true } }, section: { select: { name: true, grade: { select: { name: true } } } } } } }, orderBy: { updatedAt: 'desc' }, take: 4 }),
+    ])
+    return { count, entries: entries.map((entry) => ({ id: entry.id, title: entry.title, plannedDate: entry.plannedDate?.toISOString() ?? null, sectionSubjectId: entry.sectionSubjectId, subject: entry.sectionSubject.subject.name.split(': ').at(-1) ?? entry.sectionSubject.subject.name, grade: `${entry.sectionSubject.section.grade.name} ${entry.sectionSubject.section.name}` })) }
+  }
+
+  private async getCalendar(schoolId: string, schoolYearId: string | null, now: Date) {
+    if (!schoolYearId) return { source: 'school', events: [] }
+    const today = getDashboardClock(now).calendarDate
+    const [year, periods] = await Promise.all([
+      prisma.schoolYear.findFirst({ where: { id: schoolYearId, schoolId }, select: { endDate: true, calendarSource: true } }),
+      prisma.academicPeriod.findMany({ where: { schoolId, schoolYearId, status: 'ACTIVE', endDate: { gte: today } }, select: { id: true, name: true, endDate: true }, orderBy: { endDate: 'asc' }, take: 4 }),
+    ])
+    const events = periods.map((item) => ({ id: item.id, date: item.endDate.toISOString(), title: `Cierre de ${item.name}`, kind: 'Período' }))
+    if (year?.endDate && year.endDate >= today && !events.some((item) => item.date === year.endDate.toISOString())) events.push({ id: 'school-year-end', date: year.endDate.toISOString(), title: 'Fin del año escolar', kind: 'Escolar' })
+    return { source: year?.calendarSource ?? 'school', events: events.slice(0, 4) }
+  }
+
+  private async getCommunications(user: AuthenticatedUser, scope: ViewerScope, now: Date) {
+    if (scope.view !== 'teacher' && scope.view !== 'management') return []
+    const items = await prisma.guardianNotification.findMany({ where: { schoolId: user.schoolId, createdBy: user.id, status: 'sent' }, select: { id: true, subject: true, status: true, createdAt: true, student: { select: { firstName: true, lastName: true } } }, orderBy: { createdAt: 'desc' }, take: 3 })
+    return items.map((item) => ({ id: item.id, subject: item.subject, status: item.status, student: `${item.student.firstName} ${item.student.lastName}`, relativeTime: relativeTime(item.createdAt, now) }))
+  }
+
   private async getWeeklyAttendance(user: AuthenticatedUser, scope: ViewerScope, now: Date) {
     const { calendarDate: today } = getDashboardClock(now)
     const weekStart = startOfWeek(today)
@@ -378,7 +506,7 @@ export class DashboardService {
       prisma.teacherJournalEntry.count({ where: { ...where, followUpStatus: 'pending' } }),
       prisma.teacherJournalEntry.findMany({
         where,
-        select: { id: true, title: true, entryType: true, occurredAt: true },
+        select: { id: true, title: true, entryType: true, occurredAt: true, students: { select: { student: { select: { firstName: true, lastName: true } } }, take: 1 } },
         orderBy: [{ occurredAt: 'desc' }, { createdAt: 'desc' }],
         take: 3,
       }),
@@ -387,7 +515,10 @@ export class DashboardService {
       activeCount,
       pendingCount,
       recentEntries: recentEntries.map((entry) => ({
-        ...entry,
+        id: entry.id,
+        title: entry.title,
+        entryType: entry.entryType,
+        relatedStudent: entry.students[0] ? `${entry.students[0].student.firstName} ${entry.students[0].student.lastName}` : null,
         occurredAt: entry.occurredAt.toISOString(),
         relativeTime: relativeTime(entry.occurredAt, now),
       })),

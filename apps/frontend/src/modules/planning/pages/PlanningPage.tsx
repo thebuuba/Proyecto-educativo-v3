@@ -169,14 +169,13 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
     if (
       loading ||
       !requestedCreate ||
-      !requestedCurriculumId ||
       !periods.length ||
-      openedCurriculumRequest.current === requestedCurriculumId
+      openedCurriculumRequest.current === (requestedCurriculumId ?? 'new')
     ) {
       return
     }
 
-    openedCurriculumRequest.current = requestedCurriculumId
+    openedCurriculumRequest.current = requestedCurriculumId ?? 'new'
     setEditingEntry(null)
     setFormError(null)
     setFormOpen(true)

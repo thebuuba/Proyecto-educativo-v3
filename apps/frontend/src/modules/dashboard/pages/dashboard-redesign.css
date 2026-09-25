@@ -24,6 +24,10 @@
   align-items: start;
 }
 
+.home-layout:has(> :only-child) {
+  grid-template-columns: 1fr;
+}
+
 .home-main-column {
   min-width: 0;
 }
@@ -35,8 +39,10 @@
 }
 
 .home-class-card,
-.home-metric-card {
-  min-height: 233px;
+.home-metric-card,
+.home-period-card,
+.home-today-card {
+  min-height: 280px;
   border-radius: 24px;
 }
 
@@ -82,6 +88,82 @@
   box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 5%, transparent);
 }
 
+.home-period-card,
+.home-today-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--card);
+  box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+
+.home-widget-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.home-period-ring {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.home-period-ring > span {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--foreground);
+}
+
+.home-period-ring strong { font-size: 14px; font-weight: 600; line-height: 1.2; }
+.home-period-ring small { color: var(--muted-foreground); font-size: 8px; }
+
+.home-today-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.home-today-status {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  border-radius: 999px;
+  background: var(--muted);
+  padding: 8px 10px;
+  font-size: 11px;
+}
+
+.home-today-status strong { font-size: 13px; font-weight: 600; }
+.home-today-status > span:last-child { overflow: hidden; color: var(--muted-foreground); text-overflow: ellipsis; white-space: nowrap; }
+.home-today-dot { width: 7px; height: 7px; flex: none; border-radius: 50%; background: var(--success); }
+.home-today-absent { background: var(--destructive); }
+.home-today-excused { background: var(--primary); }
+.home-today-late { background: var(--warning); }
+
+.home-widget-menu summary::-webkit-details-marker { display: none; }
+
 .home-metric-icon {
   display: grid;
   width: 40px;
@@ -117,125 +199,60 @@
   font-weight: 600;
 }
 
-.home-shortcuts,
+.home-recommendations,
 .home-recent {
   margin-top: 32px;
 }
 
-.home-shortcut-list {
+.home-recommendation-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
   margin-top: 16px;
 }
 
-.home-shortcut {
-  position: relative;
+.home-recommendation {
   display: flex;
-  min-width: 65px;
-  flex-direction: column;
+  min-width: 0;
+  min-height: 64px;
   align-items: center;
-  gap: 8px;
-  color: var(--muted-foreground);
-  font-size: 12px;
-  text-align: center;
-}
-
-.home-shortcut-icon {
-  display: grid;
-  width: 64px;
-  height: 64px;
-  place-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
   border-radius: 24px;
   background: var(--card);
-  color: white;
   box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 6%, transparent);
-  transition:
-    transform 150ms ease,
-    border-color 150ms ease;
+  transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.home-shortcut-icon-inner {
+.home-recommendation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px color-mix(in srgb, var(--foreground) 10%, transparent),
+    0 2px 4px -2px color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+.home-recommendation-icon {
   display: grid;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  flex: none;
   place-items: center;
   border-radius: 50%;
-  background: var(--palette-sky);
+  background: var(--success);
+  color: white;
 }
 
-.home-shortcut:hover .home-shortcut-icon {
-  transform: translateY(-2px);
-  border-color: var(--primary);
-}
-.home-shortcut-horario .home-shortcut-icon-inner {
+.home-recommendation-grading {
   background: var(--palette-violet);
 }
-.home-shortcut-asistencia .home-shortcut-icon-inner {
-  background: var(--palette-green);
-}
-.home-shortcut-calificaciones .home-shortcut-icon-inner {
-  background: var(--palette-teal);
-}
-.home-shortcut-actividades .home-shortcut-icon-inner {
-  background: var(--palette-gold);
-}
-.home-shortcut-planificaciones .home-shortcut-icon-inner {
+.home-recommendation-planning {
   background: var(--palette-orange);
 }
-.home-shortcut-bitacora .home-shortcut-icon-inner {
+.home-recommendation-journal {
   background: var(--palette-rose);
 }
-.home-shortcut-reportes .home-shortcut-icon-inner {
-  background: var(--palette-slate);
-}
-
-.home-shortcut-add summary {
-  display: flex;
-  cursor: pointer;
-  list-style: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.home-shortcut-add summary::-webkit-details-marker {
-  display: none;
-}
-.home-shortcut-add .home-shortcut-icon {
-  border-radius: 50%;
-  border: 2px dashed color-mix(in srgb, var(--muted-foreground) 28%, var(--background));
-  background: transparent;
-  color: var(--muted-foreground);
-  box-shadow: none;
-}
-
-.home-shortcut-menu {
-  position: absolute;
-  z-index: 10;
-  top: 68px;
-  right: 0;
-  width: 190px;
-  padding: 6px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--card);
-  box-shadow: 0 14px 30px color-mix(in srgb, var(--foreground) 10%, transparent);
-  text-align: left;
-}
-
-.home-shortcut-menu button,
-.home-shortcut-menu p {
-  display: block;
-  width: 100%;
-  border-radius: 8px;
-  padding: 8px;
-  text-align: left;
-  font-size: 12px;
-}
-.home-shortcut-menu button:hover {
-  background: var(--primary-container);
-  color: var(--primary);
+.home-recommendation-family {
+  background: var(--palette-sky);
 }
 
 .home-recent-grid {
@@ -302,17 +319,20 @@
   background: var(--primary);
 }
 
+.home-insights-grid,
 .home-bottom-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-top: 30px;
 }
 
+.home-insights-grid:has(> :only-child),
 .home-bottom-grid:has(> :only-child) {
   grid-template-columns: 1fr;
 }
 
+.home-feature-card,
 .home-bottom-card {
   display: flex;
   min-height: 306px;
@@ -322,6 +342,32 @@
   background: var(--card);
   box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 5%, transparent);
 }
+
+.home-feature-card { min-height: 340px; padding: 20px; border-radius: 24px; background: var(--card); box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 5%, transparent); display: flex; flex-direction: column; }
+.home-feature-icon { display: grid; width: 40px; height: 40px; flex: none; place-items: center; border-radius: 50%; }
+.home-attention-icon { background: var(--warning-light); color: var(--warning); }
+.home-competencies-icon { background: var(--primary-container); color: var(--primary); }
+.home-planning-icon { background: var(--warning-light); color: var(--warning); }
+.home-attention-filter { min-height: 27px; padding: 4px 12px; border-radius: 999px; background: var(--muted); color: var(--muted-foreground); font-size: 11px; font-weight: 500; }
+.home-attention-filter.is-active { background: var(--foreground); color: var(--card); }
+.home-attention-row { display: flex; min-height: 55px; align-items: center; gap: 10px; padding: 5px 6px; border-radius: 16px; }
+.home-attention-row:hover { background: var(--muted); }
+.home-student-avatar { display: grid; width: 36px; height: 36px; flex: none; place-items: center; border-radius: 50%; background: var(--muted); color: var(--foreground); font-size: 11px; font-weight: 600; }
+.home-reason { border-radius: 999px; padding: 2px 6px; font-size: 9px; font-weight: 600; }
+.home-reason-asistencia { background: var(--warning-light); color: var(--warning); }
+.home-reason-promedio { background: color-mix(in srgb, var(--destructive) 16%, white); color: var(--destructive); }
+.home-reason-conducta { background: var(--warning-light); color: var(--warning); }
+.home-planning-grade { display: grid; min-width: 38px; height: 38px; place-items: center; border-radius: 50%; background: var(--muted); color: var(--foreground); font-size: 10px; font-weight: 600; }
+
+.home-sidebar { display: flex; min-width: 0; flex-direction: column; gap: 16px; }
+.home-side-card { min-width: 0; padding: 20px; border-radius: 24px; background: var(--card); box-shadow: 0 2px 2px color-mix(in srgb, var(--foreground) 5%, transparent); }
+.home-calendar-date { display: flex; width: 44px; height: 44px; flex: none; flex-direction: column; align-items: center; justify-content: center; border-radius: 50%; background: var(--warning); color: white; line-height: 1.1; }
+.home-calendar-date strong { font-size: 13px; font-weight: 600; }
+.home-calendar-date small { font-size: 9px; font-weight: 600; }
+.home-calendar-date-1 { background: var(--primary); }
+.home-calendar-date-2 { background: var(--destructive); }
+.home-calendar-date-3 { background: var(--success); }
+.home-calendar-note { margin-top: 16px; border: 1px dashed var(--primary-light); border-radius: 18px; background: var(--primary-container); padding: 12px; color: var(--primary); font-size: 11px; line-height: 1.5; }
 
 .home-journal-icon {
   background: color-mix(in srgb, var(--palette-rose) 15%, white);
@@ -345,9 +391,7 @@
 }
 
 .home-agenda {
-  position: sticky;
-  top: 90px;
-  min-height: 800px;
+  min-height: 0;
   padding: 24px;
   border-radius: 24px;
   background: var(--card);
@@ -448,8 +492,8 @@
   .home-top-cards {
     gap: 12px;
   }
-  .home-shortcut-list {
-    gap: 16px 8px;
+  .home-recommendation-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -479,11 +523,12 @@
   .home-class-card {
     grid-column: 1 / -1;
   }
+  .home-insights-grid,
   .home-bottom-grid {
     grid-template-columns: 1fr;
   }
-  .home-shortcut-list {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+  .home-recommendation-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .home-recent-grid {
     grid-template-columns: minmax(0, 1fr) 75px;
@@ -495,8 +540,8 @@
 }
 
 @media (max-width: 540px) {
-  .home-shortcut-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .home-recommendation-list {
+    grid-template-columns: 1fr;
   }
   .home-top-cards,
   .home-agenda-list {
@@ -505,9 +550,9 @@
   .home-class-card {
     grid-column: auto;
   }
-  .home-metric-card {
-    min-height: 190px;
-  }
+  .home-metric-card,
+  .home-period-card,
+  .home-today-card { min-height: 250px; }
   .home-agenda {
     padding: 18px;
   }

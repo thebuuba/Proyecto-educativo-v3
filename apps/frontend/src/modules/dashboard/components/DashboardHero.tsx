@@ -121,7 +121,7 @@ export function DashboardHero({
 
   if (!nextClass) {
     return (
-      <section className="home-class-card">
+      <section className="home-class-card" data-home-widget="class">
         <span className="home-class-icon">
           <FlaskConical size={21} aria-hidden="true" />
         </span>
@@ -135,7 +135,7 @@ export function DashboardHero({
   }
 
   return (
-    <section className="home-class-card relative overflow-hidden">
+    <section className="home-class-card relative overflow-hidden" data-home-widget="class">
       <span className="home-class-decoration home-class-decoration-one" aria-hidden="true" />
       <span className="home-class-decoration home-class-decoration-two" aria-hidden="true" />
       <div className="absolute right-4 top-4 z-10">
