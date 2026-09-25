@@ -162,7 +162,7 @@ describe('ScheduleService parallel queries', () => {
   })
 
   it('loads all entry label catalogs in parallel', async () => {
-    const sectionSubjects = deferred<Array<{ id: string; subjectId: string; teacherId: string }>>()
+    const sectionSubjects = deferred<Array<{ id: string; subjectId: string; teacherId: string; appearanceColor: string }>>()
     const subjects = deferred<Array<{ id: string; name: string }>>()
     const teachers = deferred<Array<{ id: string; firstName: string; lastName: string }>>()
     const sections = deferred<Array<{ id: string; gradeId: string; name: string }>>()
@@ -195,7 +195,7 @@ describe('ScheduleService parallel queries', () => {
     expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(1)
     expect(mocks.prisma.timeSlot.findMany).toHaveBeenCalledTimes(1)
 
-    sectionSubjects.resolve([{ id: 'ss-1', subjectId: 'subject-1', teacherId: 'teacher-1' }])
+    sectionSubjects.resolve([{ id: 'ss-1', subjectId: 'subject-1', teacherId: 'teacher-1', appearanceColor: '#8B5CF6' }])
     subjects.resolve([{ id: 'subject-1', name: 'Matemática' }])
     teachers.resolve([{ id: 'teacher-1', firstName: 'Ana', lastName: 'Pérez' }])
     sections.resolve([{ id: 'section-1', gradeId: 'grade-1', name: 'A' }])
@@ -211,6 +211,7 @@ describe('ScheduleService parallel queries', () => {
       expect.objectContaining({
         id: 'entry-1',
         subjectName: 'Matemática',
+        appearanceColor: '#8B5CF6',
         teacherName: 'Ana Pérez',
         gradeName: '1.º',
         academicLevelName: 'Secundario',

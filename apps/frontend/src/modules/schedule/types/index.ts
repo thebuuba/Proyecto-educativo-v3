@@ -38,6 +38,7 @@ export type ScheduleEntry = {
   room: string | null
   status: string
   subjectName: string
+  appearanceColor?: string | null
   teacherName: string
   gradeName: string
   academicLevelName: string

@@ -4,71 +4,52 @@ export type SubjectPalette = {
   foreground: string
 }
 
-/*
- * Paleta original de AulaBase para asignaturas.
- * Mantiene las cuatro familias cromáticas que se usaban antes del rediseño
- * del calendario: azul, verde, coral y dorado, con variantes oscuras.
- */
-const subjectPalettes = {
-  blue: { color: '#3CB7E2', soft: '#3CB7E226', foreground: '#1F4B5A' },
-  blueDark: { color: '#3890B2', soft: '#3CB7E220', foreground: '#23424E' },
-  green: { color: '#66D64F', soft: '#66D64F26', foreground: '#315A28' },
-  greenDark: { color: '#56A64B', soft: '#66D64F20', foreground: '#304F2B' },
-  coral: { color: '#F6886F', soft: '#F6886F26', foreground: '#65382F' },
-  coralDark: { color: '#BA6F62', soft: '#F6886F20', foreground: '#563A34' },
-  gold: { color: '#F9C46B', soft: '#F9C46B30', foreground: '#674F27' },
-  goldDark: { color: '#BC995F', soft: '#F9C46B28', foreground: '#55452D' },
-} satisfies Record<string, SubjectPalette>
+// Bases de semantic-palette.css y una variante verde, en hex para el selector de color.
+const colors = {
+  blue: '#2B96EE',
+  green: '#10B981',
+  coral: '#EB5247',
+  gold: '#FBBF24',
+  violet: '#8B5CF6',
+  teal: '#14B8A6',
+  orange: '#F97316',
+  rose: '#F43F5E',
+  slate: '#64748B',
+  greenDeep: '#0E9F70',
+} as const
 
-const subjectColorRules: Array<{ terms: string[]; palette: SubjectPalette }> = [
-  { terms: ['educacion fisica', 'deporte'], palette: subjectPalettes.coral },
-  { terms: ['ciencias de la vida', 'biologia', 'ecologia'], palette: subjectPalettes.green },
-  { terms: ['ciencias de la tierra', 'tierra y del universo', 'geologia', 'astronomia'], palette: subjectPalettes.greenDark },
-  { terms: ['quimica'], palette: subjectPalettes.blueDark },
-  { terms: ['ciencias fisicas', 'fisica'], palette: subjectPalettes.blue },
-  { terms: ['ciencias naturales', 'ciencias de la naturaleza'], palette: subjectPalettes.green },
-  { terms: ['matematica', 'algebra', 'geometria'], palette: subjectPalettes.coralDark },
-  { terms: ['lengua espanola', 'literatura', 'comunicacion'], palette: subjectPalettes.coral },
-  { terms: ['ingles', 'frances', 'idioma', 'lenguas modernas'], palette: subjectPalettes.blue },
-  { terms: ['ciencias sociales', 'historia', 'geografia', 'civica'], palette: subjectPalettes.goldDark },
-  { terms: ['educacion artistica', 'arte', 'musica'], palette: subjectPalettes.coral },
-  { terms: ['tecnologia', 'informatica', 'computacion'], palette: subjectPalettes.blueDark },
-  { terms: ['formacion integral', 'etica', 'religion'], palette: subjectPalettes.gold },
-  { terms: ['orientacion', 'tutoria'], palette: subjectPalettes.goldDark },
-]
-
-const fallbackPalettes: SubjectPalette[] = [
-  subjectPalettes.blue,
-  subjectPalettes.green,
-  subjectPalettes.coral,
-  subjectPalettes.gold,
-  subjectPalettes.blueDark,
-  subjectPalettes.greenDark,
-  subjectPalettes.coralDark,
-  subjectPalettes.goldDark,
+const rules: Array<{ terms: string[]; color: string }> = [
+  { terms: ['optativa: ciencias y tecnologia'], color: colors.slate },
+  { terms: ['optativa: matematica y tecnologia'], color: colors.violet },
+  { terms: ['optativa: humanidades y lenguas'], color: colors.blue },
+  { terms: ['biologia', 'ciencias de la vida', 'ecologia'], color: colors.green },
+  { terms: ['ciencias de la tierra', 'tierra y del universo', 'geologia', 'astronomia'], color: colors.greenDeep },
+  { terms: ['ciencias naturales', 'ciencias de la naturaleza'], color: colors.green },
+  { terms: ['matematica', 'algebra', 'geometria'], color: colors.violet },
+  { terms: ['lengua espanola', 'literatura', 'comunicacion'], color: colors.orange },
+  { terms: ['ingles'], color: colors.blue },
+  { terms: ['frances'], color: colors.teal },
+  { terms: ['idioma', 'lenguas modernas'], color: colors.blue },
+  { terms: ['ciencias sociales', 'historia', 'geografia', 'civica'], color: colors.gold },
+  { terms: ['educacion artistica', 'arte', 'musica'], color: colors.rose },
+  { terms: ['educacion fisica', 'deporte'], color: colors.orange },
+  { terms: ['formacion integral', 'etica', 'religion'], color: colors.gold },
+  { terms: ['quimica', 'ciencias fisicas', 'fisica'], color: colors.blue },
+  { terms: ['tecnologia', 'informatica', 'computacion'], color: colors.violet },
 ]
 
 function normalizeSubjectName(value: string) {
-  return value
-    .trim()
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
+  return value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
-function stableSubjectPalette(subjectName: string) {
-  const normalized = normalizeSubjectName(subjectName) || 'asignatura'
-  let hash = 0
-
-  for (let index = 0; index < normalized.length; index += 1) {
-    hash = (hash * 31 + normalized.charCodeAt(index)) >>> 0
-  }
-
-  return fallbackPalettes[hash % fallbackPalettes.length]
-}
-
-export function getSubjectPalette(subjectName: string) {
+export function getSubjectPalette(subjectName: string, appearanceColor?: string | null): SubjectPalette {
   const normalized = normalizeSubjectName(subjectName)
-  const match = subjectColorRules.find(({ terms }) => terms.some((term) => normalized.includes(term)))
-  return match?.palette ?? stableSubjectPalette(subjectName)
+  const match = rules.find(({ terms }) => terms.some((term) => normalized.includes(term)))
+  let hash = 0
+  for (const character of normalized || 'asignatura') hash = (hash * 31 + character.charCodeAt(0)) >>> 0
+  const fallbackColors = Object.values(colors)
+  const color = appearanceColor && /^#[0-9a-f]{6}$/i.test(appearanceColor)
+    ? appearanceColor
+    : match?.color ?? fallbackColors[hash % fallbackColors.length]
+  return { color, soft: `color-mix(in srgb, ${color} 15%, white)`, foreground: 'var(--foreground)' }
 }

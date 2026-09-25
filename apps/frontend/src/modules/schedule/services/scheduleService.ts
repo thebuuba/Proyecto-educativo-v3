@@ -122,7 +122,7 @@ export async function getSubjects(): Promise<SubjectOption[]> {
 }
 
 /** Obtiene las asignaturas asignadas a una sección con su docente */
-export async function getSectionSubjects(sectionId: string): Promise<Array<{ id: string; subjectName: string; teacherName: string }>> {
+export async function getSectionSubjects(sectionId: string): Promise<Array<{ id: string; subjectName: string; appearanceColor: string | null; teacherName: string }>> {
   return api.get(`/schedule/section-subjects?sectionId=${sectionId}`, {
     cacheTtlMs: API_CACHE_TTL.options,
     cacheTags: [API_CACHE_TAGS.courseOptions],

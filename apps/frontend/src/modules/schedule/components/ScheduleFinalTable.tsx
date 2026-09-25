@@ -316,7 +316,7 @@ function ScheduleFinalCell({
     )
   }
 
-  const palette = getSubjectPalette(content.entry.subjectName)
+  const palette = getSubjectPalette(content.entry.subjectName, content.entry.appearanceColor)
 
   return (
     <div

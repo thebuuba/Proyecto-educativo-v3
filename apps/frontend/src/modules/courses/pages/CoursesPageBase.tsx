@@ -3,6 +3,7 @@ import {
   Archive,
   ArchiveRestore,
   ArrowLeft,
+  ArrowRight,
   Atom,
   Baby,
   Binary,
@@ -941,16 +942,16 @@ function CourseWorkspace({
         <aside className="space-y-4">
           <CourseStudentsSidebar courseId={item.section.id} courseName={`${item.grade.name} ${item.section.name}`} onView={() => { setStudentAction(undefined); setWorkspaceView('students') }} onAdd={() => { setStudentAction('new'); setWorkspaceView('students') }} canEnroll={canEnroll} />
           <section className="rounded-3xl border border-border bg-card p-5 shadow-sm">
-            <h2 className="text-sm font-extrabold">Acciones rápidas</h2>
-            <div className="mt-3 space-y-1">
+            <h2 className="text-sm font-semibold text-foreground">Acciones rápidas</h2>
+            <div className="mt-4 space-y-1">
               {([
                 [CalendarCheck2, 'Pasar asistencia', 'Registro del día', 'asistencia'],
-                [ClipboardList, 'Nueva actividad', 'Para el curso', 'actividades'],
+                [ClipboardList, 'Nueva actividad', 'Para todo el curso', 'actividades'],
                 [ChartColumn, 'Reporte del curso', 'Calificaciones y asistencia', 'reportes'],
               ] as const).map(([Icon, label, description, tab]) => (
                 <button key={label} type="button" onClick={() => tab === 'reportes' ? navigate('/reportes') : item.assignments[0] && openAssignment(item.assignments[0], tab)} className="flex min-h-12 w-full items-center gap-3 rounded-xl px-2 text-left hover:bg-muted">
-                  <span className="grid size-9 place-items-center rounded-full bg-primary/10 text-primary"><Icon className="size-4" /></span>
-                  <span className="min-w-0 flex-1"><strong className="block text-xs">{label}</strong><span className="text-[10px] text-muted-foreground">{description}</span></span><ChevronRight className="size-4 text-muted-foreground" />
+                  <span className={cn('grid size-9 shrink-0 place-items-center rounded-full text-white', tab === 'asistencia' ? 'bg-success' : tab === 'actividades' ? 'bg-warning' : '')} style={tab === 'reportes' ? { backgroundColor: 'var(--palette-violet)' } : undefined}><Icon className="size-4" /></span>
+                  <span className="min-w-0 flex-1"><strong className="block text-sm font-medium text-foreground">{label}</strong><span className="block text-[11px] text-muted-foreground">{description}</span></span><ChevronRight className="size-4 text-muted-foreground" />
                 </button>
               ))}
             </div>
@@ -975,11 +976,11 @@ function CourseStudentsSidebar({ courseId, courseName, canEnroll, onView, onAdd 
   }, [courseId])
 
   return <section className="rounded-3xl border border-border bg-card p-5 shadow-sm">
-    <div className="flex items-center gap-3"><span className="grid size-10 place-items-center rounded-full bg-success/15 text-success"><UsersRound className="size-5" /></span><div><h2 className="text-sm font-extrabold">Estudiantes</h2><p className="text-[11px] text-muted-foreground">{students.length} comparten todas las asignaturas de {courseName}</p></div></div>
-    <div className="mt-4 flex items-center rounded-full bg-muted p-1 text-xs"><span className="flex-1 rounded-full bg-card px-3 py-1 text-center shadow-sm">Todos <strong>{students.length}</strong></span><span className="flex-1 px-3 py-1 text-center text-muted-foreground">Atención —</span></div>
-    <div className="mt-3 space-y-1">{loading ? <p className="py-6 text-center text-xs text-muted-foreground">Cargando estudiantes...</p> : students.slice(0, 5).map((student) => <button key={student.id} type="button" onClick={onView} className="flex min-h-12 w-full items-center gap-3 rounded-xl px-1.5 text-left hover:bg-muted"><span className="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-[11px] font-bold text-primary">{student.firstName[0]}{student.lastName[0]}</span><span className="min-w-0 flex-1 truncate text-xs font-semibold">{student.fullName}</span><span className="text-xs text-muted-foreground">—</span></button>)}</div>
+    <div className="flex items-center gap-3"><span className="grid size-10 shrink-0 place-items-center rounded-full bg-success/15 text-success"><UsersRound className="size-5" /></span><div className="min-w-0"><h2 className="text-base font-semibold text-foreground">Estudiantes</h2><p className="text-xs leading-4 text-muted-foreground">{students.length} comparten todas las asignaturas de {courseName}</p></div></div>
+    <div className="mt-4 flex h-9 items-center rounded-full bg-muted/70 p-1 text-xs"><span className="flex-1 rounded-full bg-card px-3 py-1 text-center font-medium text-foreground shadow-sm">Todos <strong className="ml-1 rounded bg-primary/10 px-1 text-[10px] font-semibold text-primary">{students.length}</strong></span><span className="flex-1 px-3 py-1 text-center font-medium text-muted-foreground">Atención <span className="ml-1 rounded bg-card px-1 text-[10px]">—</span></span></div>
+    <div className="mt-3 space-y-1">{loading ? <p className="py-6 text-center text-xs text-muted-foreground">Cargando estudiantes...</p> : students.slice(0, 5).map((student, index) => <button key={student.id} type="button" onClick={onView} className="flex min-h-14 w-full items-center gap-3 rounded-xl px-1.5 py-1 text-left hover:bg-muted"><span className={cn('grid size-9 shrink-0 place-items-center rounded-full text-[11px] font-semibold', index % 3 === 0 ? 'bg-primary/10 text-primary' : index % 3 === 1 ? 'bg-success/15 text-success' : 'bg-warning/20 text-warning-foreground')}>{student.firstName[0]}{student.lastName[0]}</span><span className="min-w-0 flex-1"><strong className="block truncate text-sm font-medium text-foreground">{student.fullName}</strong><span className="mt-1 flex items-center gap-2 text-[10px] text-muted-foreground"><span className="h-1 w-14 rounded-full bg-muted" />Sin registro</span></span><span className="shrink-0 text-right"><strong className="block text-sm font-semibold text-foreground">—</strong><span className="block text-[10px] text-muted-foreground">prom.</span></span></button>)}</div>
     {!loading && !students.length ? <p className="py-5 text-center text-xs text-muted-foreground">Todavía no hay estudiantes.</p> : null}
-    <div className="mt-4 flex gap-2 border-t border-border pt-4">{canEnroll ? <button type="button" onClick={onAdd} className="min-h-9 flex-1 rounded-full bg-muted px-3 text-xs font-semibold hover:bg-primary/10">Agregar</button> : null}<button type="button" onClick={onView} className="min-h-9 flex-1 rounded-full bg-primary/10 px-3 text-xs font-semibold text-primary hover:bg-primary/15">Ver todos →</button></div>
+    <div className="mt-4 flex gap-2 border-t border-border pt-4">{canEnroll ? <button type="button" onClick={onAdd} className="min-h-9 flex-1 rounded-full bg-muted/70 px-3 text-xs font-medium text-foreground hover:bg-muted"><Plus className="mr-1 inline size-3.5 text-muted-foreground" />Agregar</button> : null}<button type="button" onClick={onView} className="min-h-9 flex-1 rounded-full bg-primary/10 px-3 text-xs font-medium text-primary hover:bg-primary/15">Ver todos <ArrowRight className="ml-1 inline size-3.5" /></button></div>
   </section>
 }
 const subjectCategories = [
@@ -994,25 +995,13 @@ const subjectCategories = [
 
 function getSubjectCategory(name: string) {
   const normalized = normalizeText(name)
+  if (normalized.includes('optativa')) return 'Optativa'
   return subjectCategories.find((category) => category.terms.some((term) => normalized.includes(term)))?.name ?? 'Otras'
-}
-
-function getCategoryColor(category: string) {
-  const colors: Record<string, string> = {
-    Ciencias: 'var(--palette-green)',
-    'Ciencias exactas': 'var(--palette-violet)',
-    Lenguas: 'var(--palette-orange)',
-    Humanidades: 'var(--palette-gold)',
-    Artes: 'var(--palette-coral)',
-    Salud: 'var(--palette-orange)',
-    Optativa: 'var(--palette-slate)',
-  }
-  return colors[category] ?? 'var(--primary)'
 }
 
 export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen, onCustomize, onArchive, onDelete }: { assignment: SectionSubjectAssignment; studentCount: number; canManage: boolean; onOpen: (tab: string) => void; onCustomize: () => void; onArchive: () => void; onDelete: () => void }) {
   const category = getSubjectCategory(assignment.subjectName)
-  const color = assignment.appearanceColor ?? getCategoryColor(category)
+  const color = getAssignmentPalette(assignment).color
   const average = assignment.averageScore === null ? null : Math.max(0, Math.min(100, assignment.averageScore))
   const teacher = assignment.teacherName ?? 'Sin docente asignado'
   const initials = teacher.split(/\s+/).slice(0, 2).map((part) => part[0]).join('').toLocaleUpperCase('es')
@@ -1639,59 +1628,64 @@ function SubjectDetailView({
     { id: 'planificaciones', label: 'Planificaciones', icon: <ClipboardList className="size-4" />, muted: true, badge: 'Próximamente' },
   ]
   const subjectActions = [
-    { label: 'Nueva actividad', icon: <Plus className="size-4" />, onSelect: () => setActivityBlockPickerOpen(true) },
-    { label: 'Agregar a bitácora', icon: <BookMarked className="size-4" />, onSelect: () => {
-      const journalParams = new URLSearchParams({ action: 'create', sectionId: item.section.id })
-      if (item.assignment?.id) journalParams.set('sectionSubjectId', item.assignment.id)
-      navigate(`/bitacora?${journalParams}`)
-    } },
-    { label: 'Organizar equipos', icon: <UsersRound className="size-4" />, onSelect: () => selectSubjectTab('equipos') },
-    { label: 'Registrar asistencia', icon: <CalendarCheck2 className="size-4" />, onSelect: () => {
-      if (item.assignment) navigate(buildSubjectAttendanceHref(item.assignment.id, item.id))
-    } },
-    { label: 'Gestionar calificaciones', icon: <GraduationCap className="size-4" />, onSelect: () => selectSubjectTab('calificaciones') },
-    { label: 'Gestionar actividades', icon: <CheckSquare className="size-4" />, onSelect: () => selectSubjectTab('actividades') },
-    { label: 'Recursos', icon: <Library className="size-4" />, onSelect: () => selectSubjectTab('recursos') },
-    { label: 'Reportes', icon: <ChartColumn className="size-4" />, onSelect: () => selectSubjectTab('reportes') },
-    { label: 'Configuración', icon: <SlidersHorizontal className="size-4" />, onSelect: () => selectSubjectTab('configuracion') },
+    { title: 'Crear', items: [
+      { label: 'Nueva actividad', shortcut: 'N', icon: <Plus className="size-4" />, onSelect: () => setActivityBlockPickerOpen(true) },
+      { label: 'Agregar a bitácora', shortcut: 'B', icon: <BookMarked className="size-4" />, onSelect: () => {
+        const journalParams = new URLSearchParams({ action: 'create', sectionId: item.section.id })
+        if (item.assignment?.id) journalParams.set('sectionSubjectId', item.assignment.id)
+        navigate(`/bitacora?${journalParams}`)
+      } },
+    ] },
+    { title: 'Clase', items: [
+      { label: 'Registrar asistencia', shortcut: 'A', icon: <CalendarCheck2 className="size-4" />, onSelect: () => {
+        if (item.assignment) navigate(buildSubjectAttendanceHref(item.assignment.id, item.id))
+      } },
+      { label: 'Organizar equipos', icon: <UsersRound className="size-4" />, onSelect: () => selectSubjectTab('equipos') },
+      { label: 'Gestionar calificaciones', icon: <GraduationCap className="size-4" />, onSelect: () => selectSubjectTab('calificaciones') },
+    ] },
+    { title: 'Curso', items: [
+      { label: 'Recursos', icon: <Library className="size-4" />, onSelect: () => selectSubjectTab('recursos') },
+      { label: 'Reportes', icon: <ChartColumn className="size-4" />, onSelect: () => selectSubjectTab('reportes') },
+      { label: 'Configuración', icon: <SlidersHorizontal className="size-4" />, onSelect: () => selectSubjectTab('configuracion') },
+    ] },
   ]
 
   return (
-    <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-3">
-      <header className="w-full overflow-visible rounded-2xl bg-card shadow-sm">
-        <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
-          <div className="flex min-w-0 flex-1 items-center gap-3">
-            <button type="button" className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-xs font-extrabold text-primary transition hover:border-primary/25 hover:bg-primary/[0.04]" onClick={onBack} aria-label={backLabel} title={backLabel}><BackIcon /><span className="hidden sm:inline">Volver</span></button>
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl text-white shadow-sm [&>svg]:size-6" style={{ backgroundColor: palette.color }}>{getSubjectIcon(item.subjectName, item.assignment?.appearanceIcon)}</div>
-            <div className="min-w-0">
-              <div className="flex min-w-0 flex-nowrap items-center gap-2 overflow-hidden">
-                <h1 className="truncate text-base font-extrabold leading-tight text-foreground">{courseLabel} – {item.subjectName}</h1>
-                <span className="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-extrabold text-emerald-700">Activa</span>
-              </div>
-              <p className="mt-1.5 flex min-w-0 flex-nowrap items-center gap-x-1.5 overflow-hidden whitespace-nowrap text-[11px] font-semibold text-muted-foreground"><span>{cleanLevelName(item.levelName)}</span><span>·</span><span>{item.cycleName}</span><span>·</span><span>Sección {item.section.name}</span>{schoolYearName ? <><span>·</span><span className="truncate">Año escolar {schoolYearName}</span></> : null}</p>
-            </div>
-          </div>
-
-          <details className="group relative shrink-0">
-            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary-hover [&::-webkit-details-marker]:hidden">
-              Acciones <ChevronDown className="size-4 transition group-open:rotate-180" />
-            </summary>
-            <div className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-border bg-card p-2 shadow-xl">
-              {subjectActions.map((action) => (
-                <button key={action.label} type="button" className="flex h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-semibold text-foreground transition hover:bg-muted" onClick={(event) => { action.onSelect(); event.currentTarget.closest('details')?.removeAttribute('open') }}>
-                  <span className="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">{action.icon}</span>
-                  {action.label}
-                </button>
-              ))}
+    <div className="course-workspace-shell subject-workspace w-full min-w-0 max-w-full space-y-3">
+      <header className="subject-workspace-header flex flex-wrap items-center gap-4 rounded-3xl border border-border bg-card px-5 py-5 shadow-sm lg:min-h-[124px] lg:flex-nowrap lg:px-6">
+        <button type="button" className="grid size-11 shrink-0 place-items-center rounded-full border border-border text-primary shadow-sm hover:bg-primary/5" onClick={onBack} aria-label={backLabel} title={backLabel}><BackIcon /></button>
+        <span className="hidden h-12 w-px bg-border sm:block" />
+        <span className="grid size-14 shrink-0 place-items-center rounded-2xl text-white shadow-sm [&>svg]:size-7" style={{ backgroundColor: palette.color }}>{getSubjectIcon(item.subjectName, item.assignment?.appearanceIcon)}</span>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-2"><span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold text-primary">{courseLabel}</span><span className="rounded-full bg-success/10 px-2.5 py-0.5 text-[11px] font-semibold text-success">● Activa</span></div>
+          <h1 className="mt-1 line-clamp-2 text-lg font-semibold tracking-tight text-foreground">{item.subjectName}</h1>
+          <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-muted-foreground"><span>{cleanLevelName(item.levelName)} · {item.cycleName} · Sección {item.section.name}</span>{schoolYearName ? <span className="inline-flex items-center gap-1"><CalendarDays className="size-3.5" />{schoolYearName}</span> : null}<span className="inline-flex items-center gap-1"><UsersRound className="size-3.5" />{students.length || item.section.studentCount || 0} estudiantes</span><span className="inline-flex items-center gap-1"><UsersRound className="size-3.5" />{item.assignment?.teamCount ?? 0} equipos</span></p>
+        </div>
+        <div className="ml-auto flex shrink-0 items-center gap-2">
+          <button type="button" onClick={() => selectSubjectTab('asistencia')} className="inline-flex h-10 items-center gap-2 rounded-full border border-border bg-card px-4 text-xs font-semibold text-foreground shadow-sm hover:bg-muted"><CalendarCheck2 className="size-4 text-success" /> Asistencia</button>
+          <details className="group relative" onKeyDown={(event) => {
+            if (!event.currentTarget.open || !['n', 'b', 'a'].includes(event.key.toLowerCase())) return
+            const action = subjectActions.flatMap((section) => section.items).find((item) => 'shortcut' in item && item.shortcut?.toLowerCase() === event.key.toLowerCase())
+            if (!action) return
+            event.preventDefault()
+            action.onSelect()
+            event.currentTarget.removeAttribute('open')
+          }}>
+            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-full bg-primary px-4 text-xs font-semibold text-primary-foreground shadow-sm transition hover:bg-primary-hover [&::-webkit-details-marker]:hidden">Acciones <ChevronDown className="size-4 transition group-open:rotate-180" /></summary>
+            <div className="absolute right-0 top-12 z-50 w-64 overflow-hidden rounded-3xl border border-border bg-card p-1 shadow-xl">
+              {subjectActions.map((section) => <section key={section.title} className="border-b border-border px-1 py-2 last:border-b-0">
+                <p className="px-3 pb-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">{section.title}</p>
+                {section.items.map((action) => <button key={action.label} type="button" aria-label={action.label} className="flex h-12 w-full items-center gap-3 rounded-xl px-2 text-left text-sm font-medium text-foreground hover:bg-muted" onClick={(event) => { action.onSelect(); event.currentTarget.closest('details')?.removeAttribute('open') }}><span className="grid size-8 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">{action.icon}</span><span className="min-w-0 flex-1 whitespace-nowrap">{action.label}</span>{'shortcut' in action ? <span className="text-xs text-muted-foreground">{action.shortcut}</span> : null}</button>)}
+              </section>)}
             </div>
           </details>
         </div>
-
       </header>
 
-        <nav className="grid w-full grid-cols-2 gap-1 rounded-2xl bg-card p-1.5 shadow-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6" aria-label="Secciones de la asignatura">
-          {subjectTabs.map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} muted={'muted' in tab && tab.muted} badge={'badge' in tab ? tab.badge : undefined} onClick={() => selectSubjectTab(tab.id)} />)}
-        </nav>
+      <nav className="subject-workspace-tabs flex min-w-0 items-center gap-1 overflow-x-auto rounded-full border border-border bg-card px-3 py-1.5 shadow-sm" aria-label="Secciones de la asignatura">
+        {subjectTabs.slice(0, 7).map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} count={tab.id === 'estudiantes' ? students.length || item.section.studentCount || 0 : tab.id === 'equipos' ? item.assignment?.teamCount ?? 0 : tab.id === 'actividades' ? activityCount : undefined} onClick={() => selectSubjectTab(tab.id)} />)}
+        <details className="group relative ml-auto shrink-0"><summary className="flex h-10 cursor-pointer list-none items-center gap-2 px-4 text-sm font-medium text-muted-foreground [&::-webkit-details-marker]:hidden">··· Más <ChevronDown className="size-3.5" /></summary><div className="absolute right-0 top-11 z-40 w-52 rounded-2xl border border-border bg-card p-2 shadow-xl">{subjectTabs.slice(7).map((tab) => <button key={tab.id} type="button" onClick={(event) => { selectSubjectTab(tab.id); event.currentTarget.closest('details')?.removeAttribute('open') }} className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-xs text-foreground hover:bg-muted">{tab.icon}{tab.label}</button>)}</div></details>
+      </nav>
 
       {activeTab === 'resumen' ? (
         <SubjectOverviewDashboard
@@ -1873,72 +1867,49 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
   const recentActivity = [...datedActivities].sort((a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime())[0] ?? activities[0]
   const evaluatedActivityIds = new Set(gradeRecords.map((record) => record.evaluationActivityId).filter(Boolean))
   const pendingActivities = Math.max(activityCount - evaluatedActivityIds.size, 0)
-  const latestPlanning = [...plannings].sort((a, b) => new Date(b.plannedDate ?? 0).getTime() - new Date(a.plannedDate ?? 0).getTime())[0]
-
-  return (
-    <div className="space-y-4">
-      <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
-        <DashboardPanel title="Próximas actividades" action="Ver todas" onAction={() => onNavigate('actividades')}>
-          <div className="space-y-2 p-3">
-            {upcomingActivities.length ? upcomingActivities.map((activity) => <ActivityPreview key={activity.id} activity={activity} />) : <CompactEmpty icon={<CalendarClock className="size-5" />} text="No hay actividades próximas." />}
-            <button type="button" onClick={() => onNavigate('actividades')} className="flex w-full items-center justify-center gap-2 border-t border-slate-100 pt-3 text-xs font-extrabold text-primary"><CalendarDays className="size-3.5" /> Ver calendario completo</button>
-          </div>
-        </DashboardPanel>
-
-        <div className="space-y-4">
-          <DashboardPanel title="Última actividad" action="Ver todas" onAction={() => onNavigate('actividades')}>
-            <div className="p-3">{recentActivity ? <div className="flex items-center gap-3 rounded-xl bg-slate-50 p-3"><span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><Leaf className="size-5" /></span><div className="min-w-0 flex-1"><p className="truncate text-xs font-extrabold">{recentActivity.name}</p><p className="mt-1 text-[10px] text-muted-foreground">{recentActivity.date ? `Programada para ${formatShortDate(recentActivity.date)}` : 'Actividad registrada'}</p><p className="mt-1 text-[10px] text-muted-foreground">{students} estudiantes matriculados</p></div>{averageScore !== null ? <strong className="rounded-lg bg-emerald-50 px-2 py-1 text-sm text-emerald-700">{averageScore}%</strong> : null}</div> : <CompactEmpty icon={<CheckSquare className="size-5" />} text="Todavía no hay actividades." />}</div>
-          </DashboardPanel>
-          <DashboardPanel title="Última asistencia" action="Ver historial" onAction={() => onNavigate('asistencia')}>
-            <div className="p-3"><div className="flex items-center gap-3 rounded-xl bg-slate-50 p-3"><span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><CalendarCheck2 className="size-5" /></span><div className="min-w-0 flex-1"><p className="text-xs font-bold">{lastAttendanceDate ? `Registrada el ${formatShortDate(lastAttendanceDate)}` : 'Sin asistencia registrada'}</p><p className="mt-1 text-[10px] text-muted-foreground">Asistencia promedio</p></div>{attendancePercent !== null ? <strong className="rounded-lg bg-emerald-50 px-2 py-1 text-sm text-emerald-700">{attendancePercent}%</strong> : null}</div></div>
-          </DashboardPanel>
-          {latestPlanning ? <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-4 shadow-sm"><div className="flex gap-3"><span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-emerald-200 bg-white text-emerald-700"><FileText className="size-5" /></span><div className="min-w-0"><p className="text-[11px] font-extrabold text-emerald-700">Continuar donde quedaste</p><p className="mt-1 truncate text-xs font-bold">{latestPlanning.title}</p><p className="mt-1 text-[10px] text-muted-foreground">Última planificación editada</p></div></div><button type="button" onClick={() => onNavigate('planificaciones')} className="mt-3 flex h-9 w-full items-center justify-center gap-2 rounded-lg bg-emerald-100/70 text-[11px] font-extrabold text-emerald-800">Continuar edición <ArrowLeft className="size-3.5 rotate-180" /></button></div> : null}
-        </div>
-      </div>
-
-      <DashboardPanel title="Resumen académico">
-        <div className="grid gap-2 p-3 sm:grid-cols-2 xl:grid-cols-5">
-          <AcademicSummaryCard icon={<ClipboardList className="size-4" />} value={activityCount} label="Actividades creadas" detail={`${evaluatedActivityIds.size} evaluadas · ${pendingActivities} pendientes`} tone="violet" onClick={() => onNavigate('actividades')} />
-          <AcademicSummaryCard icon={<FileText className="size-4" />} value={plannings.length} label="Planificaciones creadas" detail={`${plannings.filter((entry) => entry.plannedDate).length} programadas`} tone="orange" onClick={() => onNavigate('planificaciones')} />
-          <AcademicSummaryCard icon={<UsersRound className="size-4" />} value={teams} label="Equipos creados" detail={`${students} estudiantes`} tone="blue" onClick={() => onNavigate('equipos')} />
-          <AcademicSummaryCard icon={<CalendarCheck2 className="size-4" />} value={attendancePercent === null ? '—' : `${attendancePercent}%`} label="Asistencia promedio" detail="Período actual" tone="emerald" onClick={() => onNavigate('asistencia')} />
-          <AcademicSummaryCard icon={<ChartColumn className="size-4" />} value={averageScore === null ? '—' : `${averageScore}%`} label="Promedio general" detail={`${gradeRecords.length} registros`} tone="orange" onClick={() => onNavigate('calificaciones')} />
-        </div>
-      </DashboardPanel>
-
-      <div className="grid gap-4 xl:grid-cols-[1.2fr_1fr]">
-        <DashboardPanel title="Avisos importantes">
-          <div className="space-y-2 p-3">
-            {!activities.some((activity) => activity.instrumentId) ? <NoticeRow tone="amber" title="No hay instrumentos de evaluación creados" detail="Crea instrumentos para evaluar las actividades." action="Crear instrumento" onAction={() => onNavigate('calificaciones')} /> : null}
-            {pendingActivities > 0 ? <NoticeRow tone="blue" title="Revisa las actividades pendientes de evaluar" detail={`Tienes ${pendingActivities} actividades pendientes de evaluación.`} action="Ver actividades" onAction={() => onNavigate('actividades')} /> : <NoticeRow tone="blue" title="Todo está al día" detail="No tienes actividades pendientes de evaluación." />}
-          </div>
-        </DashboardPanel>
-        <DashboardPanel title="Reportes rápidos">
-          <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4">
-            {['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report, index) => <Link key={report} to="/reportes" className="rounded-xl border border-slate-200 bg-white p-3 text-center transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_12px_24px_-14px_rgba(74,162,227,0.45)]"><span className={cn('mx-auto flex size-8 items-center justify-center rounded-lg', index % 2 ? 'bg-emerald-50 text-emerald-600' : 'bg-violet-50 text-violet-600')}><FileText className="size-4" /></span><span className="mt-2 block text-[11px] font-extrabold leading-4">Reporte de {report.toLowerCase()}</span><span className="mt-2 block text-[10px] font-bold text-primary">Generar PDF</span></Link>)}
-          </div>
-        </DashboardPanel>
-      </div>
+  return <div className="subject-summary space-y-5">
+    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+      <AcademicSummaryCard icon={<ClipboardList className="size-4" />} value={activityCount} label="Actividades" detail={`${evaluatedActivityIds.size} evaluadas · ${pendingActivities} pendientes`} tone="blue" onClick={() => onNavigate('actividades')} />
+      <AcademicSummaryCard icon={<FileText className="size-4" />} value={plannings.length} label="Planificaciones" detail={`${plannings.filter((entry) => entry.plannedDate).length} programadas`} tone="orange" onClick={() => onNavigate('planificaciones')} />
+      <AcademicSummaryCard icon={<UsersRound className="size-4" />} value={teams} label="Equipos" detail={`${students} estudiantes`} tone="violet" onClick={() => onNavigate('equipos')} />
+      <AcademicSummaryCard icon={<CalendarCheck2 className="size-4" />} value={attendancePercent === null ? '—' : `${attendancePercent}%`} label="Asistencia" detail="Período actual" tone="emerald" onClick={() => onNavigate('asistencia')} />
+      <AcademicSummaryCard icon={<ChartColumn className="size-4" />} value={averageScore === null ? '—' : `${averageScore}%`} label="Promedio general" detail={`${gradeRecords.length} registros`} tone="orange" onClick={() => onNavigate('calificaciones')} />
     </div>
-  )
+    <div className="grid gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(18rem,1fr)]">
+      <DashboardPanel title="Próximas actividades" subtitle={upcomingActivities.length ? `${upcomingActivities.length} por entregar próximamente` : 'Sin entregas próximas'} action="Ver todas →" onAction={() => onNavigate('actividades')}>
+        <div className="px-5 py-3">{upcomingActivities.length ? upcomingActivities.map((activity) => <ActivityPreview key={activity.id} activity={activity} />) : <CompactEmpty icon={<CalendarClock className="size-5" />} text="No hay actividades próximas." />}</div>
+        <button type="button" onClick={() => onNavigate('actividades')} className="flex w-full items-center justify-center gap-2 border-t border-border py-3 text-xs font-semibold text-primary"><CalendarDays className="size-4" /> Ver calendario completo</button>
+      </DashboardPanel>
+      <DashboardPanel title="Requiere tu atención" badge={!activities.some((activity) => activity.instrumentId) || !plannings.length ? Number(!activities.some((activity) => activity.instrumentId)) + Number(!plannings.length) : undefined}>
+        <div className="space-y-3 px-5 pb-5">{!activities.some((activity) => activity.instrumentId) ? <NoticeRow tone="amber" title="Faltan instrumentos de evaluación" detail="Crea una rúbrica o lista de cotejo para calificar las actividades." action="Crear instrumento" onAction={() => onNavigate('calificaciones')} /> : null}{!plannings.length ? <NoticeRow tone="blue" title="Sin planificación programada" detail="Programa tus unidades para organizar el período." action="Planificar" onAction={() => onNavigate('planificaciones')} /> : null}{activities.some((activity) => activity.instrumentId) && plannings.length ? <NoticeRow tone="blue" title="Todo está al día" detail="No hay avisos pendientes." /> : null}</div>
+      </DashboardPanel>
+      <DashboardPanel title="Actividad reciente" subtitle="Lo último que pasó en esta asignatura" action="Ver historial →" onAction={() => onNavigate('actividades')}>
+        <div className="px-5 pb-5">{recentActivity ? <div className="flex items-center gap-3 rounded-xl bg-muted/45 p-4"><span className="grid size-10 place-items-center rounded-full bg-primary/10 text-primary"><CheckSquare className="size-5" /></span><div className="min-w-0"><p className="truncate text-sm font-semibold">{recentActivity.name}</p><p className="text-xs text-muted-foreground">{recentActivity.date ? `Programada para ${formatShortDate(recentActivity.date)}` : 'Actividad registrada'}</p></div></div> : lastAttendanceDate ? <div className="flex items-center gap-3 rounded-xl bg-muted/45 p-4"><span className="grid size-10 place-items-center rounded-full bg-success/10 text-success"><CalendarCheck2 className="size-5" /></span><div><p className="text-sm font-semibold">Asistencia registrada</p><p className="text-xs text-muted-foreground">{formatShortDate(lastAttendanceDate)}</p></div></div> : <CompactEmpty icon={<CheckSquare className="size-5" />} text="Todavía no hay actividad reciente." />}</div>
+      </DashboardPanel>
+      <DashboardPanel title="Última asistencia" subtitle={lastAttendanceDate ? `Registrada el ${formatShortDate(lastAttendanceDate)}` : 'Sin asistencia registrada'} action="Historial →" onAction={() => onNavigate('asistencia')}>
+        <div className="flex items-center gap-5 px-5 pb-5"><span className={cn('grid size-20 shrink-0 place-items-center rounded-full border-[6px] text-lg font-semibold text-foreground', attendancePercent === null ? 'border-muted' : 'border-success')}>{attendancePercent === null ? '—' : `${attendancePercent}%`}</span><div><p className="text-sm font-semibold text-foreground">{students} estudiantes</p><p className="text-xs text-muted-foreground">en la asignatura</p></div></div>
+      </DashboardPanel>
+      <div className="xl:col-start-2"><DashboardPanel title="Reportes rápidos" subtitle="Descarga los datos de la asignatura"><div className="grid gap-2 px-5 pb-5">{['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report) => <Link key={report} to="/reportes" className="flex items-center justify-between rounded-xl bg-muted/45 px-3 py-2 text-xs font-medium hover:bg-primary/5">Reporte de {report.toLowerCase()} <span className="text-primary">PDF</span></Link>)}</div></DashboardPanel></div>
+    </div>
+  </div>
 }
 
-function DashboardPanel({ title, action, onAction, children }: { title: string; action?: string; onAction?: () => void; children: ReactNode }) {
-  return <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_10px_28px_-25px_rgba(15,45,90,0.8)]"><header className="flex min-h-12 items-center justify-between border-b border-slate-100 px-4 py-2"><h2 className="text-sm font-extrabold text-foreground">{title}</h2>{action ? <button type="button" onClick={onAction} className="text-[11px] font-extrabold text-primary hover:underline">{action}</button> : null}</header>{children}</section>
+function DashboardPanel({ title, subtitle, badge, action, onAction, children }: { title: string; subtitle?: string; badge?: number; action?: string; onAction?: () => void; children: ReactNode }) {
+  return <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm"><header className="flex min-h-16 items-start justify-between gap-3 px-5 pb-3 pt-5"><div><h2 className="text-base font-semibold text-foreground">{title}</h2>{subtitle ? <p className="mt-0.5 text-xs text-muted-foreground">{subtitle}</p> : null}</div>{action ? <button type="button" onClick={onAction} className="shrink-0 text-xs font-semibold text-primary hover:underline">{action}</button> : badge ? <span className="rounded-full bg-warning/20 px-2 text-xs font-semibold text-foreground">{badge}</span> : null}</header>{children}</section>
 }
 
 function ActivityPreview({ activity }: { activity: { name: string; date?: string; activityType?: 'individual' | 'group' } }) {
   const date = activity.date ? new Date(activity.date) : null
-  return <div className="flex items-center gap-3 rounded-xl border border-slate-100 p-2.5"><span className="flex size-10 shrink-0 flex-col items-center justify-center rounded-lg border border-emerald-200 text-emerald-700"><strong className="text-sm leading-none">{date ? date.getDate() : '—'}</strong><span className="mt-0.5 text-[9px] font-extrabold uppercase">{date ? date.toLocaleDateString('es-DO', { month: 'short' }).replace('.', '') : 'S/F'}</span></span><span className="min-w-0 flex-1"><span className="block truncate text-[11px] font-extrabold">{activity.name}</span><span className="mt-1 block text-[10px] text-muted-foreground">{activity.activityType === 'group' ? 'Trabajo en equipos' : 'Actividad individual'}</span></span><span className="rounded-full bg-amber-50 px-2 py-1 text-[10px] font-bold text-amber-700">Pendiente</span></div>
+  return <div className="flex min-h-20 items-center gap-3 border-b border-border py-3 last:border-b-0"><span className="flex size-11 shrink-0 flex-col items-center justify-center rounded-full bg-muted text-foreground"><strong className="text-sm leading-none">{date ? date.getDate() : '—'}</strong><span className="mt-0.5 text-[9px] font-semibold uppercase">{date ? date.toLocaleDateString('es-DO', { month: 'short' }).replace('.', '') : 'S/F'}</span></span><span className="min-w-0 flex-1"><span className="block truncate text-sm font-semibold">{activity.name}</span><span className="mt-1 block text-xs text-muted-foreground">{activity.activityType === 'group' ? 'Proyecto en equipo' : 'Actividad individual'} · {activity.date ? formatShortDate(activity.date) : 'Sin fecha'}</span></span><span className="text-[11px] text-muted-foreground">{date ? 'Próxima' : 'Pendiente'}</span></div>
 }
 
 function AcademicSummaryCard({ icon, value, label, detail, tone, onClick }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'violet' | 'orange' | 'blue' | 'emerald'; onClick: () => void }) {
-  const tones = { violet: 'bg-violet-50 text-violet-600', orange: 'bg-orange-50 text-orange-600', blue: 'bg-blue-50 text-blue-600', emerald: 'bg-emerald-50 text-emerald-600' }
-  return <button type="button" onClick={onClick} aria-label={`Ir a ${label}`} className="w-full rounded-xl border border-slate-200 bg-white p-3 text-left transition-[border-color,box-shadow] hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><span className="flex items-center gap-2.5"><span className={cn('flex size-9 items-center justify-center rounded-lg', tones[tone])}>{icon}</span><span><strong className="block text-xl leading-none">{value}</strong><span className="mt-1 block text-xs font-bold leading-tight text-slate-700">{label}</span></span></span><span className="mt-3 block border-t border-slate-100 pt-2.5 text-xs leading-4 text-muted-foreground">{detail}</span></button>
+  const tones = { violet: 'bg-primary/10 text-primary', orange: 'bg-warning/20 text-foreground', blue: 'bg-primary/10 text-primary', emerald: 'bg-success/12 text-success' }
+  return <button type="button" onClick={onClick} aria-label={`Ir a ${label}`} className="flex min-h-32 w-full flex-col rounded-3xl border border-border bg-card p-4 text-left shadow-sm transition hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><span className="flex w-full items-start justify-between"><span className={cn('grid size-9 place-items-center rounded-full', tones[tone])}>{icon}</span><strong className="text-2xl font-semibold leading-none text-foreground">{value}</strong></span><span className="mt-auto block text-sm font-semibold text-foreground">{label}</span><span className="block text-[11px] text-muted-foreground">{detail}</span><span className="mt-3 h-1 w-full rounded-full bg-muted"><span className={cn('block h-full rounded-full', tone === 'emerald' ? 'bg-success' : 'bg-primary')} style={{ width: typeof value === 'string' && value.endsWith('%') ? value : '0%' }} /></span></button>
 }
 
 function NoticeRow({ tone, title, detail, action, onAction }: { tone: 'amber' | 'blue'; title: string; detail: string; action?: string; onAction?: () => void }) {
-  return <div className={cn('flex items-center gap-3 rounded-xl border px-3 py-2.5', tone === 'amber' ? 'border-amber-200 bg-amber-50/60' : 'border-blue-200 bg-blue-50/60')}><AlertCircle className={cn('size-4 shrink-0', tone === 'amber' ? 'text-amber-600' : 'text-blue-600')} /><div className="min-w-0 flex-1"><p className="text-[11px] font-extrabold">{title}</p><p className="mt-1 text-[10px] text-muted-foreground">{detail}</p></div>{action ? <button type="button" onClick={onAction} className="shrink-0 rounded-lg border border-current/15 bg-white px-3 py-1.5 text-[10px] font-extrabold text-primary">{action}</button> : null}</div>
+  return <div className={cn('flex gap-3 rounded-2xl border px-4 py-3', tone === 'amber' ? 'border-warning/30 bg-warning/10' : 'border-primary/20 bg-primary/5')}><AlertCircle className={cn('mt-0.5 size-4 shrink-0', tone === 'amber' ? 'text-warning' : 'text-primary')} /><div className="min-w-0 flex-1"><p className="text-sm font-semibold">{title}</p><p className="mt-0.5 text-xs leading-5 text-muted-foreground">{detail}</p>{action ? <button type="button" onClick={onAction} className="mt-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold text-primary shadow-sm">{action}</button> : null}</div></div>
 }
 
 function CompactEmpty({ icon, text }: { icon: ReactNode; text: string }) {
@@ -1969,13 +1940,13 @@ const defaultAdvancedFilters: CourseAdvancedFilters = {
   sortBy: 'current',
 }
 
-function DetailTab({ active, icon, label, muted, badge, onClick }: { active?: boolean; icon: ReactNode; label: string; muted?: boolean; badge?: string; onClick?: () => void }) {
+function DetailTab({ active, icon, label, muted, badge, count, onClick }: { active?: boolean; icon: ReactNode; label: string; muted?: boolean; badge?: string; count?: number; onClick?: () => void }) {
   return (
     <button
       type="button"
       className={cn(
-        'relative flex h-10 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-2 text-sm font-bold text-muted-foreground transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:bg-primary/5 hover:text-primary',
-        active && 'bg-primary/[0.055] text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-t-full after:bg-primary',
+        'relative flex h-10 min-w-0 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-3 text-sm font-medium text-muted-foreground transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:bg-primary/5 hover:text-primary',
+        active && 'text-primary',
         muted && !active && 'bg-muted/40 text-muted-foreground/70 hover:bg-muted/60 hover:text-muted-foreground',
       )}
       aria-current={active ? 'page' : undefined}
@@ -1983,6 +1954,7 @@ function DetailTab({ active, icon, label, muted, badge, onClick }: { active?: bo
     >
       {icon}
       {label}
+      {count !== undefined ? <span className="grid min-w-5 place-items-center rounded-full bg-muted px-1 text-[10px] font-semibold text-muted-foreground">{count}</span> : null}
       {badge ? <span className="hidden rounded-full bg-slate-100 px-1.5 py-0.5 text-[8px] font-black uppercase tracking-wide text-slate-500 2xl:inline">{badge}</span> : null}
     </button>
   )
@@ -2208,14 +2180,21 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
     && entry.sectionSubjectId === courseId
     && entry.students.some(({ student }) => student.id === selected.studentId),
   ) : []
-  const pendingActivities = activities.filter((activity) => rows.some((row) => !scoreForActivity(row.records, row.enrollmentId, activity.id))).length
+  const studentsWithPendingActivities = activities.length ? rows.filter((row) => row.completed < activities.length).length : 0
   const evaluatedRows = rows.filter((row) => row.average !== null)
   const courseAverage = evaluatedRows.length
     ? Math.round(evaluatedRows.reduce((sum, row) => sum + (row.average ?? 0), 0) / evaluatedRows.length)
     : null
 
   return (
-    <section className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+    <div className="subject-students-tab space-y-4">
+    <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <StudentMetric icon={<UsersRound className="size-4" />} value={rows.length} label="Estudiantes matriculados" tone="bg-primary/10 text-primary" />
+      <StudentMetric icon={<UsersRound className="size-4" />} value={teams.length} label="Equipos" tone="bg-success/10 text-success" />
+      <StudentMetric icon={<ClipboardList className="size-4" />} value={studentsWithPendingActivities} label="Con actividades pendientes" tone="bg-primary/10 text-primary" />
+      <StudentMetric icon={<ChartColumn className="size-4" />} value={courseAverage === null ? '—' : courseAverage} label="Promedio del curso" tone="bg-warning/20 text-foreground" />
+    </div>
+    <section className="rounded-3xl border border-border bg-card p-4 shadow-sm sm:p-5">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h2 className="text-lg font-extrabold text-foreground">Estudiantes de la asignatura</h2>
@@ -2224,18 +2203,11 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
         <button type="button" disabled title="Próximamente" className="inline-flex h-9 cursor-not-allowed items-center gap-2 rounded-lg border border-border px-3 text-xs font-bold text-muted-foreground opacity-70"><FileText className="size-4" /> Exportar</button>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-4">
-        <StudentMetric icon={<UsersRound className="size-4" />} value={rows.length} label="Estudiantes matriculados" tone="bg-blue-50 text-blue-700" />
-        <StudentMetric icon={<UsersRound className="size-4" />} value={teams.length} label="Equipos" tone="bg-emerald-50 text-emerald-700" />
-        <StudentMetric icon={<ClipboardList className="size-4" />} value={pendingActivities} label="Actividades pendientes" tone="bg-violet-50 text-violet-700" />
-        <StudentMetric icon={<ChartColumn className="size-4" />} value={courseAverage === null ? '—' : `${courseAverage}%`} label="Promedio del curso" tone="bg-orange-50 text-orange-700" />
-      </div>
-
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        <label className="relative min-w-52 flex-1 sm:max-w-xs">
+        <label className="relative min-w-52 flex-1">
           <span className="sr-only">Buscar estudiante</span>
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-          <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar estudiante..." className="h-9 w-full rounded-lg border border-border bg-background pl-9 pr-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10" />
+          <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar estudiante..." className="h-10 w-full rounded-full border-0 bg-muted/70 pl-9 pr-3 text-sm outline-none transition focus:ring-2 focus:ring-primary/20" />
         </label>
         {([
           ['all', 'Todos'],
@@ -2243,13 +2215,13 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
           ['no-team', 'Sin equipo'],
           ['pending', 'Con pendientes'],
         ] as const).map(([value, label]) => (
-          <button key={value} type="button" onClick={() => setFilter(value)} className={cn('h-8 rounded-full border px-3 text-xs font-bold transition', filter === value ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-primary')}>{label}</button>
+          <button key={value} type="button" onClick={() => setFilter(value)} className={cn('h-8 rounded-full px-3 text-xs font-medium transition', filter === value ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:text-primary')}>{label}</button>
         ))}
       </div>
 
       <div className={cn('mt-4 grid gap-4', selected && 'xl:grid-cols-[minmax(0,1fr)_21rem]')}>
-        <div className="min-w-0 overflow-hidden rounded-xl border border-border">
-          <div className="max-h-[30rem] overflow-x-auto overflow-y-auto md:overflow-x-hidden">
+        <div className="min-w-0 overflow-hidden rounded-3xl border border-border">
+          <div className="overflow-x-auto md:overflow-x-hidden">
             <table className="w-full min-w-[720px] text-left text-xs md:min-w-0 md:table-fixed">
               <thead className="sticky top-0 z-10 border-b border-border bg-muted text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
                 <tr><th className="w-12 px-3 py-3 text-center">#</th><th className="px-3 py-3">Estudiante</th><th className="px-3 py-3">Equipo</th><th className="px-3 py-3">Actividades</th><th className="px-3 py-3">Promedio</th><th className="px-3 py-3">Asistencia</th><th className="px-3 py-3">Estado</th></tr>
@@ -2258,7 +2230,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
                 {filteredRows.map((row, index) => (
                   <tr key={row.enrollmentId} tabIndex={0} role="button" aria-expanded={selectedEnrollmentId === row.enrollmentId} aria-controls="subject-student-detail" onClick={() => toggleStudent(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleStudent(row.enrollmentId) } }} className={cn('cursor-pointer text-foreground outline-none transition hover:bg-primary/[0.035] focus:bg-primary/[0.05]', selectedEnrollmentId === row.enrollmentId && 'bg-primary/[0.055]')}>
                     <td className="px-3 py-3 text-center font-bold text-muted-foreground">{index + 1}</td>
-                    <td className="px-3 py-3 font-bold">{row.lastName}, {row.firstName}</td>
+                    <td className="px-3 py-3 font-semibold">{row.lastName}, {row.firstName}</td>
                     <td className="px-3 py-3">{row.team ? <span className="font-semibold text-emerald-700">{row.team.name}</span> : <span className="text-muted-foreground">Sin equipo</span>}</td>
                     <td className="px-3 py-3"><span className="font-bold tabular-nums">{row.completed} / {activities.length}</span><div className="mt-1 h-1 w-20 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: activities.length ? `${Math.min(100, (row.completed / activities.length) * 100)}%` : '0%' }} /></div></td>
                     <td className="px-3 py-3 font-bold tabular-nums">{row.average === null ? '—' : `${row.average}%`}</td>
@@ -2295,11 +2267,12 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
 
       {deletingJournal ? <ConfirmDialog title="Eliminar observación permanentemente" description="Esta observación se borrará de la bitácora y no podrá recuperarse." confirmLabel="Eliminar permanentemente" destructive onClose={() => setDeletingJournal(null)} onConfirm={async () => { await deleteJournalEntry(deletingJournal.id); setDeletingJournal(null); await refreshJournal() }} /> : null}
     </section>
+    </div>
   )
 }
 
 function StudentMetric({ icon, value, label, tone }: { icon: ReactNode; value: string | number; label: string; tone: string }) {
-  return <div className="flex min-h-16 items-center gap-3 rounded-xl border border-border px-3 py-2.5"><span className={cn('flex size-9 shrink-0 items-center justify-center rounded-lg', tone)}>{icon}</span><span><strong className="block text-lg leading-none tabular-nums text-foreground">{value}</strong><span className="mt-1 block text-[10px] font-semibold text-muted-foreground">{label}</span></span></div>
+  return <div className="flex min-h-20 items-center gap-3 rounded-3xl border border-border bg-card px-4 py-3 shadow-sm"><span className={cn('grid size-10 shrink-0 place-items-center rounded-full', tone)}>{icon}</span><span><strong className="block text-lg font-semibold leading-none tabular-nums text-foreground">{value}</strong><span className="mt-1 block text-[11px] text-muted-foreground">{label}</span></span></div>
 }
 
 function StudentStatusBadge({ status }: { status: 'Al día' | 'En progreso' | 'Sin actividad' }) {
@@ -2755,6 +2728,7 @@ function getSubjectIcon(subjectName: string, appearanceIcon?: string | null) {
   if (appearanceIcon) return getAppearanceIcon(appearanceIcon)
   const normalized = normalizeText(subjectName)
   if (normalized.includes('matemat') || normalized.includes('algebra') || normalized.includes('geometr')) return <Calculator className="size-5" />
+  if (normalized.includes('ciencias de la naturaleza')) return <Leaf className="size-5" />
   if (normalized.includes('biolog') || normalized.includes('genet')) return <Dna className="size-5" />
   if (normalized.includes('quim')) return <FlaskConical className="size-5" />
   if (normalized.includes('fisic') && !normalized.includes('educacion fisica')) return <Atom className="size-5" />
@@ -2820,8 +2794,7 @@ function getAppearanceIcon(value: string) {
 }
 
 function getAssignmentPalette(assignment: SectionSubjectAssignment): SubjectPalette {
-  if (!assignment.appearanceColor) return getSubjectColor(assignment.subjectName)
-  return { color: assignment.appearanceColor, soft: `${assignment.appearanceColor}14`, foreground: 'var(--foreground)' }
+  return getSubjectColor(assignment.subjectName, assignment.appearanceColor)
 }
 
 function startOfToday() {

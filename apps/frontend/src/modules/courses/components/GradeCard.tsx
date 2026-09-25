@@ -104,7 +104,7 @@ export function GradeCard({
                   {section.assignments.length > 0 ? (
                     <div className="flex flex-wrap gap-2">
                       {section.assignments.map((assignment) => {
-                        const palette = getSubjectPalette(assignment.subjectName)
+                        const palette = getSubjectPalette(assignment.subjectName, assignment.appearanceColor)
                         return (
                           <span
                             key={assignment.id}

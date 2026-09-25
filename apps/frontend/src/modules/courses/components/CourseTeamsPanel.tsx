@@ -226,9 +226,9 @@ export function CourseTeamsPanel({
   }
 
   return (
-    <section className="space-y-4">
+    <section className="subject-teams-tab space-y-4">
       {!loading && (teams.length > 0 || archivedTeams.length > 0) ? <>
-      <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <header className="flex flex-col gap-3 rounded-3xl border border-border bg-card p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0"><h2 className="text-xl font-extrabold tracking-tight">{showArchived ? 'Equipos archivados' : 'Equipos de trabajo'}</h2><p className="mt-0.5 text-xs text-muted-foreground">{showArchived ? `${archivedTeams.length} archivados` : `${permanentTeams} permanentes · ${temporaryTeams} temporales`}</p></div>
         <div className="flex flex-wrap gap-2">
           <button type="button" aria-pressed={showArchived} onClick={() => { setShowArchived((current) => !current); setFilter('all'); setQuery('') }} className={cn('inline-flex h-10 items-center justify-center gap-2 rounded-xl border px-4 text-sm font-extrabold transition', showArchived ? 'border-primary bg-primary/8 text-primary' : 'border-border bg-card hover:border-primary/40')}><Archive className="size-4" /> {showArchived ? 'Volver a activos' : `Archivados (${archivedTeams.length})`}</button>
@@ -236,7 +236,7 @@ export function CourseTeamsPanel({
         </div>
       </header>
 
-      {!showArchived ? <div className="rounded-xl border border-border/80 bg-card p-2.5 shadow-[0_4px_16px_rgba(15,23,42,0.05)]">
+      {!showArchived ? <div className="subject-teams-filters rounded-3xl border border-border bg-card p-4 shadow-sm">
         <div className="flex flex-col gap-3 xl:flex-row xl:items-center">
           <div className="relative min-w-0 xl:w-[25rem]">
             <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
@@ -272,15 +272,14 @@ export function CourseTeamsPanel({
       {error ? <PanelMessage text={error} destructive /> : loading ? (
         <PanelMessage text="Cargando equipos…" />
       ) : filtered.length ? (
-        <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {filtered.map((team) => (
             <article
               key={team.id}
               onClick={() => openTeam(team)}
-              className="relative cursor-pointer overflow-visible rounded-2xl border border-border bg-card shadow-sm transition-shadow duration-200 hover:shadow-lg"
+              className="subject-team-card relative cursor-pointer overflow-visible rounded-3xl border border-border bg-card shadow-sm transition-shadow duration-200 hover:shadow-md"
             >
-              <div className="absolute inset-x-0 top-0 h-1 rounded-t-2xl" style={{ backgroundColor: team.color }} />
-              <div className="p-4 pt-5">
+              <div className="p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex min-w-0 items-center gap-3">
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-xl" style={{ backgroundColor: `${team.color}18`, color: team.color }}>
@@ -324,7 +323,7 @@ export function CourseTeamsPanel({
       )}
 
       {!loading && !error && teams.length > 0 && !showArchived ? (
-        <div className="grid gap-4 xl:grid-cols-[1fr_1.15fr]">
+        <div className="grid gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(18rem,1fr)]">
           <div className="rounded-2xl border border-slate-200 bg-card p-5 shadow-sm">
             <div className="flex items-center justify-between gap-3"><div className="flex items-center gap-3"><span className="flex size-9 items-center justify-center rounded-xl bg-orange-50 text-orange-600"><GraduationCap className="size-4" /></span><div><h3 className="text-sm font-extrabold">Estudiantes sin equipo</h3><p className="text-[10px] text-muted-foreground">Pendientes de asignación permanente</p></div></div><span className="flex min-w-8 items-center justify-center rounded-full bg-orange-50 px-2.5 py-1 text-xs font-extrabold text-orange-600">{unassignedStudents.length}</span></div>
             {unassignedStudents.length ? <div className="mt-4 flex flex-wrap gap-2.5 border-t border-slate-100 pt-4">{unassignedStudents.slice(0, 8).map((student) => <button type="button" key={student.enrollmentId} onClick={() => setAssigningStudent(student)} className="inline-flex min-h-10 items-center gap-2 rounded-full border border-slate-100 bg-slate-50/80 py-1.5 pl-1.5 pr-3 text-xs font-bold transition hover:border-primary/20 hover:bg-primary/[0.03]"><span className="flex size-7 items-center justify-center rounded-full bg-white text-[10px] font-extrabold text-primary shadow-sm">{student.firstName.charAt(0)}{student.lastName.charAt(0)}</span>{student.firstName} {student.lastName}</button>)}{unassignedStudents.length > 8 ? <span className="self-center text-xs font-bold text-primary">+{unassignedStudents.length - 8} más</span> : null}</div> : <p className="mt-4 border-t border-slate-100 pt-4 text-sm text-muted-foreground">Todos los estudiantes pertenecen a un equipo permanente.</p>}

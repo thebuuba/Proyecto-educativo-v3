@@ -35,6 +35,7 @@ type SectionSubjectOption = {
   sectionId: string
   label: string
   subjectName: string
+  appearanceColor: string | null
   gradeName: string
   academicLevelName: string
   sectionName: string
@@ -44,6 +45,7 @@ type SectionSubjectOption = {
 type ApiSectionSubject = {
   id: string
   subjectName: string
+  appearanceColor: string | null
   teacherName: string
 }
 
@@ -187,6 +189,7 @@ export function SchedulePage() {
             sectionId: section.id,
             label: `${section.academicLevelName} · ${section.gradeName} ${section.name} - ${s.subjectName}`,
             subjectName: s.subjectName,
+            appearanceColor: s.appearanceColor,
             gradeName: section.gradeName,
             academicLevelName: section.academicLevelName,
             sectionName: section.name,

@@ -1,0 +1,59 @@
+main[data-module='cursos'] .subject-workspace-header,
+main[data-module='cursos'] .subject-workspace-tabs,
+main[data-module='cursos'] .subject-summary > div > section,
+main[data-module='cursos'] .subject-students-tab > section,
+main[data-module='cursos'] .subject-students-tab > div > div,
+main[data-module='cursos'] .subject-teams-tab > header,
+main[data-module='cursos'] .subject-teams-filters,
+main[data-module='cursos'] .subject-team-card {
+  border-color: var(--border);
+  box-shadow: 0 2px 3px -1px color-mix(in srgb, var(--foreground) 11%, transparent);
+}
+
+@media (min-width: 1280px) {
+  main[data-module='cursos'] .subject-workspace-tabs {
+    overflow: visible;
+  }
+}
+
+main[data-module='cursos'] .subject-students-tab table {
+  font-size: 0.8125rem;
+}
+
+main[data-module='cursos'] .subject-students-tab thead {
+  background: var(--muted);
+}
+
+main[data-module='cursos'] .subject-students-tab tbody tr {
+  height: 3.5rem;
+}
+
+main[data-module='cursos'] .subject-teams-filters > div > div:first-child {
+  flex: 1 1 22rem;
+  width: auto;
+}
+
+main[data-module='cursos'] .subject-teams-filters input {
+  height: 2.5rem;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--muted);
+}
+
+main[data-module='cursos'] .subject-teams-filters > div > div:nth-child(2) {
+  flex: 0 1 auto;
+  border-radius: 9999px;
+  background: transparent;
+}
+
+main[data-module='cursos'] .subject-teams-filters > div > div:nth-child(2) button {
+  border-radius: 9999px;
+}
+
+main[data-module='cursos'] .subject-team-card > div:first-child {
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+main[data-module='cursos'] .subject-team-card > button:last-child {
+  border-radius: 0 0 1.5rem 1.5rem;
+}
