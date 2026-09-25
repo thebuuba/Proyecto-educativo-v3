@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
-import '../course-card-colors.css'
-import '../course-workspace-header.css'
+import '../courses-overview.css'
 import './subject-activities-actions.css'
 import { CoursesPage as CoursesPageBase } from './CoursesPageBase'
 import { GroupedSubjectActivitiesPage } from './GroupedSubjectActivitiesPage'

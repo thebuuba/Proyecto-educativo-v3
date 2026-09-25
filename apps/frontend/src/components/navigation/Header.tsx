@@ -50,7 +50,6 @@ export function Header({ onOpenSidebar }: HeaderProps) {
   const roleLabel = roles[0]?.key ? roleLabels[roles[0].key] : 'USUARIO'
   const profileMeta = periodName ? `${roleLabel} · ${periodName.toUpperCase()}` : roleLabel
   const isPlanningPage = location.pathname.startsWith('/planificaciones')
-  const isGradingPage = location.pathname.startsWith('/calificaciones')
   const isCoursesPage = location.pathname === '/cursos'
 
   useEffect(() => {
@@ -143,57 +142,24 @@ export function Header({ onOpenSidebar }: HeaderProps) {
           <Menu className="size-5" />
         </Button>
 
-        {isGradingPage || isCoursesPage ? (
-          <label
-            htmlFor="global-header-search"
-            className="hidden h-11 min-w-[22rem] max-w-[680px] flex-1 items-center gap-3 rounded-xl border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
-          >
-            <Search className="size-4 shrink-0" />
-            <input
-              ref={searchRef}
-              id="global-header-search"
-              type="search"
-              placeholder={
-                isCoursesPage
-                  ? 'Buscar por asignatura, grado, sección, ciclo o nivel...'
-                  : 'Buscar estudiantes, cursos, actividades...'
-              }
-              className="min-w-0 flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
-              aria-label={
-                isCoursesPage ? 'Buscar cursos' : 'Buscar estudiantes, cursos, actividades'
-              }
-              onChange={
-                isCoursesPage
-                  ? (event) =>
-                      window.dispatchEvent(
-                        new CustomEvent('courses:search', { detail: event.target.value }),
-                      )
-                  : undefined
-              }
-            />
-            {isCoursesPage ? (
-              <kbd className="rounded-md border border-border bg-muted/50 px-2 py-1 text-[10px] font-bold text-muted-foreground">
-                Ctrl + K
-              </kbd>
-            ) : null}
-          </label>
-        ) : (
-          <label
-            htmlFor="global-header-search"
-            className="hidden h-11 w-[min(450px,45vw)] items-center gap-3 rounded-2xl bg-card px-4 text-muted-foreground shadow-sm md:flex"
-          >
-            <Search className="size-4 shrink-0" />
-            <input
-              ref={searchRef}
-              id="global-header-search"
-              type="search"
-              placeholder="Buscar estudiantes, cursos, actividades..."
-              className="min-w-0 flex-1 bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
-              aria-label="Buscar estudiantes, cursos, actividades"
-            />
-          </label>
-        )}
-
+        <label
+          htmlFor="global-header-search"
+          className="hidden h-11 w-[min(450px,45vw)] items-center gap-3 rounded-full border border-border bg-card px-4 text-muted-foreground shadow-sm md:flex"
+        >
+          <Search className="size-4 shrink-0" />
+          <input
+            key={location.pathname}
+            ref={searchRef}
+            id="global-header-search"
+            type="search"
+            placeholder="Buscar estudiantes, cursos, actividades..."
+            className="min-w-0 flex-1 bg-transparent text-sm font-normal text-foreground outline-none placeholder:text-muted-foreground"
+            aria-label="Buscar estudiantes, cursos, actividades"
+            onChange={isCoursesPage
+              ? (event) => window.dispatchEvent(new CustomEvent('courses:search', { detail: event.target.value }))
+              : undefined}
+          />
+        </label>
         <div className="ml-auto flex items-center gap-3">
           {!isPlanningPage ? (
             <button

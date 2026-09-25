@@ -1,0 +1,25 @@
+main[data-module='cursos'] .course-list-card {
+  border-color: var(--border);
+  box-shadow:
+    0 2px 3px -1px color-mix(in srgb, var(--foreground) 11%, transparent),
+    0 1px 2px -1px color-mix(in srgb, var(--foreground) 8%, transparent);
+  transition: box-shadow 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  main[data-module='cursos'] .course-list-card:hover {
+    box-shadow: 0 7px 16px -7px color-mix(in srgb, var(--foreground) 20%, transparent);
+  }
+}
+
+main[data-module='cursos'] .course-subject-card {
+  border-color: var(--border);
+  box-shadow: 0 2px 3px -1px color-mix(in srgb, var(--foreground) 11%, transparent);
+  transition: box-shadow 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  main[data-module='cursos'] .course-subject-card:hover {
+    box-shadow: 0 7px 16px -7px color-mix(in srgb, var(--foreground) 20%, transparent);
+  }
+}
