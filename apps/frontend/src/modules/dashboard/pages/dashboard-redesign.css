@@ -246,10 +246,11 @@
 }
 
 .home-recent-head {
-  padding: 12px 24px;
+  min-height: 44px;
+  padding: 0 24px;
   border-bottom: 1px solid var(--border);
   color: var(--muted-foreground);
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .home-recent-head span:last-child {
@@ -257,11 +258,11 @@
 }
 
 .home-recent-row {
-  min-height: 54px;
+  min-height: 56px;
   padding: 5px 16px;
   border-radius: 24px;
   color: var(--foreground);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .home-recent-row:hover,
@@ -273,13 +274,17 @@
   color: var(--primary);
 }
 
+.home-recent li:first-child .home-recent-row > span:not(:first-child) {
+  color: var(--primary);
+}
+
 .home-recent-icon {
   display: grid;
   width: 32px;
   height: 32px;
   flex: none;
   place-items: center;
-  border-radius: 10px;
+  border-radius: 50%;
   background: var(--palette-gold);
   color: white;
 }
@@ -289,6 +294,9 @@
 }
 .home-recent-grade {
   background: var(--palette-violet);
+}
+.home-recent-activity {
+  background: var(--palette-gold);
 }
 .home-recent-report {
   background: var(--primary);

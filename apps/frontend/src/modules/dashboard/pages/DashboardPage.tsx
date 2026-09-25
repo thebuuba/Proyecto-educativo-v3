@@ -42,12 +42,14 @@ const quickPaths = [
 const activityLabels: Record<RecentActivityItem['kind'], string> = {
   grade: 'Evaluación',
   attendance: 'Asistencia',
+  activity: 'Actividad',
   planning: 'Actividad',
   report: 'Reporte',
 }
 const activityIcons = {
   grade: GraduationCap,
   attendance: CalendarCheck,
+  activity: ClipboardCheck,
   planning: ClipboardCheck,
   report: BookMarked,
 }
@@ -290,9 +292,9 @@ function RecentTable({ items, showAll }: { items: RecentActivityItem[]; showAll:
   return (
     <section className="home-recent">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-[17px] font-semibold text-foreground">Actividad reciente</h2>
+        <h2 className="text-lg font-semibold text-foreground">Actividad reciente</h2>
         {showAll ? (
-          <Link to="/reportes" className="text-sm font-semibold text-primary hover:underline">
+          <Link to="/reportes" className="text-sm font-medium text-primary hover:underline">
             Ver todo
           </Link>
         ) : null}
@@ -305,7 +307,7 @@ function RecentTable({ items, showAll }: { items: RecentActivityItem[]; showAll:
           <span>Fecha</span>
         </div>
         {items.length ? (
-          <ul className="px-2 pb-2">
+          <ul className="px-2 py-2">
             {items.map((item) => {
               const Icon = activityIcons[item.kind]
               return (

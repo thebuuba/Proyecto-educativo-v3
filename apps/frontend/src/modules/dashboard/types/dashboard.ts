@@ -107,7 +107,7 @@ export type RecentActivityItem = {
   /** Descripción relativa del tiempo transcurrido. */
   relativeTime: string
   /** Tipo de actividad. */
-  kind: 'grade' | 'attendance' | 'planning' | 'report'
+  kind: 'grade' | 'attendance' | 'activity' | 'planning' | 'report'
   /** Ruta relacionada con la actividad. */
   path: string
 }

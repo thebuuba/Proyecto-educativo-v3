@@ -325,18 +325,20 @@ export class DashboardService {
   private async getRecentActivity(user: AuthenticatedUser, scope: ViewerScope, now: Date) {
     if (scope.view === 'viewer') return []
     const restricted = scope.view === 'student' || scope.view === 'guardian'
+    const courseLabel = (item: { sectionSubject: { subject: { name: string }; section: { name: string; grade: { name: string } } } }) =>
+      `${item.sectionSubject.subject.name.split(': ').at(-1)} · ${item.sectionSubject.section.grade.name} ${item.sectionSubject.section.name}`
     const [attendance, grades, planning, reports] = await Promise.all([
       prisma.attendanceClass.findMany({
         where: { schoolId: user.schoolId, ...(restricted ? { enrollmentId: { in: scope.enrollmentIds } } : {}), ...(scope.view === 'teacher' ? { recordedBy: user.id } : {}) },
-        include: { sectionSubject: { include: { subject: true } } }, orderBy: { updatedAt: 'desc' }, take: 3,
+        include: { sectionSubject: { include: { subject: true, section: { include: { grade: true } } } } }, orderBy: { updatedAt: 'desc' }, take: 3,
       }),
       prisma.gradesRecord.findMany({
         where: { schoolId: user.schoolId, ...(restricted ? { enrollmentId: { in: scope.enrollmentIds } } : {}), ...(scope.view === 'teacher' ? { recordedBy: user.id } : {}) },
-        include: { sectionSubject: { include: { subject: true } } }, orderBy: { updatedAt: 'desc' }, take: 3,
+        include: { sectionSubject: { include: { subject: true, section: { include: { grade: true } } } } }, orderBy: { updatedAt: 'desc' }, take: 3,
       }),
       prisma.planningEntry.findMany({
         where: { schoolId: user.schoolId, ...(restricted ? { id: { in: [] } } : {}), ...(scope.view === 'teacher' ? (scope.teacherId ? { sectionSubject: { teacherId: scope.teacherId } } : { id: { in: [] } }) : {}) },
-        include: { sectionSubject: { include: { subject: true } } }, orderBy: { updatedAt: 'desc' }, take: 3,
+        include: { sectionSubject: { include: { subject: true, section: { include: { grade: true } } } } }, orderBy: { updatedAt: 'desc' }, take: 3,
       }),
       prisma.report.findMany({
         where: { schoolId: user.schoolId, ...(restricted ? { studentId: { in: scope.studentIds } } : {}), ...(scope.view === 'teacher' ? { generatedBy: user.id } : {}) },
@@ -344,9 +346,9 @@ export class DashboardService {
       }),
     ])
     return [
-      ...attendance.map((item) => ({ id: `attendance-${item.id}`, title: 'Asistencia registrada', description: item.sectionSubject.subject.name, occurredAt: item.updatedAt, kind: 'attendance', path: restricted ? '/calificaciones' : '/asistencia' })),
-      ...grades.map((item) => ({ id: `grade-${item.id}`, title: formatRecentActivityTitle(item.assessmentName), description: item.sectionSubject.subject.name, occurredAt: item.updatedAt, kind: 'grade', path: `/calificaciones?sectionSubjectId=${item.sectionSubjectId}&periodId=${item.academicPeriodId}` })),
-      ...planning.map((item) => ({ id: `planning-${item.id}`, title: item.title, description: item.sectionSubject.subject.name, occurredAt: item.updatedAt, kind: 'planning', path: `/planificaciones?sectionSubjectId=${item.sectionSubjectId}&periodId=${item.academicPeriodId}` })),
+      ...attendance.map((item) => ({ id: `attendance-${item.id}`, title: 'Asistencia registrada', description: courseLabel(item), occurredAt: item.updatedAt, kind: 'attendance', path: restricted ? '/calificaciones' : '/asistencia' })),
+      ...grades.map((item) => ({ id: `grade-${item.id}`, title: formatRecentActivityTitle(item.assessmentName), description: courseLabel(item), occurredAt: item.updatedAt, kind: item.assessmentName.startsWith('ABV2:activity:') ? 'activity' : 'grade', path: `/calificaciones?sectionSubjectId=${item.sectionSubjectId}&periodId=${item.academicPeriodId}` })),
+      ...planning.map((item) => ({ id: `planning-${item.id}`, title: item.title, description: courseLabel(item), occurredAt: item.updatedAt, kind: 'planning', path: `/planificaciones?sectionSubjectId=${item.sectionSubjectId}&periodId=${item.academicPeriodId}` })),
       ...reports.map((item) => ({ id: `report-${item.id}`, title: item.title, description: 'Reporte generado', occurredAt: item.updatedAt, kind: 'report', path: '/reportes' })),
     ].sort((a, b) => b.occurredAt.getTime() - a.occurredAt.getTime()).slice(0, 6).map((item) => ({ ...item, occurredAt: item.occurredAt.toISOString(), relativeTime: relativeTime(item.occurredAt, now) }))
   }
