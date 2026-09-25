@@ -17,6 +17,8 @@ AulaBase usa los valores de la referencia de Inicio, definidos en `src/semantic-
 
 La fuente de la interfaz es **Poppins**. El fondo general es `hsl(213 45% 96%)`.
 
+La tipografía usa pesos 400 para texto normal, 500 para navegación y controles secundarios, y 600 para títulos, cifras, botones principales y etiquetas. No se usan pesos superiores a 600. Los títulos principales llevan `tracking-tight`; las etiquetas cortas en mayúsculas usan 10 px, peso 600 y espaciado entre letras de `0.14em` a `0.18em`.
+
 Los tonos suaves deben derivarse mediante tokens CSS o `color-mix`; no se deben introducir nuevas familias cromáticas.
 
 ## Semántica obligatoria

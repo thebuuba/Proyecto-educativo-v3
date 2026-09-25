@@ -114,7 +114,7 @@
   background: var(--card);
   color: var(--foreground);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .home-shortcuts,
@@ -352,7 +352,7 @@
   padding: 5px 12px;
   color: var(--muted-foreground);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .home-agenda-tab.is-active {
   background: var(--primary-container);
@@ -396,7 +396,7 @@
   margin-bottom: 8px;
   color: var(--muted-foreground);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
 }
 .home-agenda-entry:has(.is-current) .home-agenda-time {
   color: var(--primary);
@@ -416,7 +416,7 @@
 .home-agenda-class h3 {
   min-width: 0;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.35;
 }
 .home-agenda-grade {
@@ -426,7 +426,7 @@
   padding: 3px 6px;
   color: var(--muted-foreground);
   font-size: 10px;
-  font-weight: 800;
+  font-weight: 600;
 }
 .home-agenda-class.is-current .home-agenda-grade {
   background: color-mix(in srgb, white 20%, transparent);
