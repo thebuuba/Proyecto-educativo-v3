@@ -26,7 +26,14 @@ export function getAuthBootstrap(): Promise<AuthBootstrap> {
 /** Inicia sesión con correo y contraseña. */
 export async function login(credentials: LoginCredentials): Promise<LoginResponse> {
   const { data, error } = await supabase.auth.signInWithPassword(credentials)
-  if (error) throw new Error(error.message)
+  if (error) {
+    if (/failed to fetch/i.test(error.message)) {
+      return api.post<LoginResponse>('/auth/login', credentials, {
+        clearResponseCache: true,
+      })
+    }
+    throw new Error(error.message)
+  }
   const token = data.session?.access_token
   if (!token) throw new Error('No se pudo crear la sesión.')
   return createAulaSession(token)
