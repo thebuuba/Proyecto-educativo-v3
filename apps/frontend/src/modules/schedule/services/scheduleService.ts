@@ -12,6 +12,8 @@ import type {
   ScheduleCalendarEntry,
   ScheduleEntry,
   ScheduleFilters,
+  ScheduleJourney,
+  SaveScheduleStructureInput,
   ScheduleSummary,
   SectionOption,
   SubjectOption,
@@ -25,10 +27,24 @@ import type { SchoolYearSummary } from '@/services/schoolYearService'
 export type ScheduleWorkspace = {
   currentSchoolYear: SchoolYearSummary | null
   timeSlots: TimeSlot[]
+  journeys?: ScheduleJourney[]
   entries: ScheduleEntry[]
   sections: SectionOption[]
   teachers: TeacherOption[]
   subjects: SubjectOption[]
+}
+
+export async function saveScheduleStructure(input: SaveScheduleStructureInput): Promise<{ saved: true }> {
+  return api.post('/schedule/structure', input, {
+    invalidateCacheTags: [API_CACHE_TAGS.schedule, API_CACHE_TAGS.timeSlots],
+  })
+}
+
+export async function getScheduleJourneys(): Promise<ScheduleJourney[]> {
+  return api.get('/schedule/journeys', {
+    cacheTtlMs: API_CACHE_TTL.catalog,
+    cacheTags: [API_CACHE_TAGS.timeSlots],
+  })
 }
 
 export function getScheduleWorkspace(): Promise<ScheduleWorkspace> {

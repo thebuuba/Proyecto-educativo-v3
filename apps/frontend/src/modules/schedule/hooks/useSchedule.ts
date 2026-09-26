@@ -24,6 +24,7 @@ import type {
   CreateTimeSlotInput,
   ScheduleEntry,
   ScheduleFilters,
+  ScheduleJourney,
   SectionOption,
   SubjectOption,
   TeacherOption,
@@ -40,6 +41,7 @@ type ScheduleCacheData = {
   teachers: TeacherOption[]
   subjects: SubjectOption[]
   schoolYearId: string | null
+  journeys: ScheduleJourney[]
 }
 
 const scheduleCache = createScopedTtlCache<ScheduleCacheData>(60_000)
@@ -51,6 +53,7 @@ export function useSchedule() {
   const cached = scheduleCache.read(cacheScope)
   const [timeSlots, setTimeSlots] = useState<TimeSlot[]>(cached?.timeSlots ?? [])
   const [entries, setEntries] = useState<ScheduleEntry[]>(cached?.entries ?? [])
+  const [journeys, setJourneys] = useState<ScheduleJourney[]>(cached?.journeys ?? [])
   const [loading, setLoading] = useState(!cached)
   const [error, setError] = useState<string | null>(null)
   const [filters, setFilters] = useState<ScheduleFilters>({})
@@ -128,6 +131,7 @@ export function useSchedule() {
       setTeachers(tchrs)
       setSubjects(subjs)
       setEntries(entryData)
+      setJourneys(workspace.journeys ?? [])
       scheduleCache.write(cacheScope, {
         timeSlots: slots,
         entries: entryData,
@@ -135,6 +139,7 @@ export function useSchedule() {
         teachers: tchrs,
         subjects: subjs,
         schoolYearId: yearId,
+        journeys: workspace.journeys ?? [],
       })
     } catch (error) {
       setError(
@@ -152,6 +157,7 @@ export function useSchedule() {
     if (freshCache) {
       setTimeSlots(freshCache.timeSlots)
       setEntries(freshCache.entries)
+      setJourneys(freshCache.journeys ?? [])
       setSections(freshCache.sections)
       setTeachers(freshCache.teachers)
       setSubjects(freshCache.subjects)
@@ -252,6 +258,7 @@ export function useSchedule() {
 
   return {
     timeSlots,
+    journeys,
     entries,
     sections,
     teachers,
