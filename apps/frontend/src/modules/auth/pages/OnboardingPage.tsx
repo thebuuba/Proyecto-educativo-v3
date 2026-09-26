@@ -10,7 +10,7 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { supabase } from '@/modules/auth/services/supabaseClient'
 import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
 
-const DRAFT_KEY = 'aulabase:onboarding-draft-v2'
+const DRAFT_KEY = 'aulabase:onboarding-draft-v3'
 const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
 const totalSteps = 3
 
