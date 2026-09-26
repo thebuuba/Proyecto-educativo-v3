@@ -43,12 +43,6 @@ let oauthCallbackPromise: Promise<'authenticated' | 'profile-required'> | null =
 
 const ONBOARDING_CACHE_KEY = 'aulabase:onboarding-complete'
 
-function getCachedOnboardingStatus(): boolean | null {
-  const cached = localStorage.getItem(ONBOARDING_CACHE_KEY)
-  if (cached === null) return null
-  return cached === 'true'
-}
-
 function setCachedOnboardingStatus(complete: boolean) {
   if (complete) localStorage.setItem(ONBOARDING_CACHE_KEY, 'true')
   else localStorage.removeItem(ONBOARDING_CACHE_KEY)
@@ -92,10 +86,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
   /** Aplica los datos de una sesión (login o registro) al estado global. */
   const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
     const onboardingComplete = checkOnboarding
-      ? (getCachedOnboardingStatus() ?? await getOnboardingStatus().then((status) => {
+      ? await getOnboardingStatus().then((status) => {
           setCachedOnboardingStatus(status.complete)
           return status.complete
-        }).catch(() => null))
+        }).catch(() => null)
       : null
     setState({
       user: response.user,
@@ -155,7 +149,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const user: AuthUser = { id: appUser.id, email: appUser.email }
       const roles = bootstrap.roles
       const permissions = bootstrap.permissions
-      const onboardingStatus = getCachedOnboardingStatus() ?? bootstrap.onboardingComplete
+      const onboardingStatus = bootstrap.onboardingComplete
       setCachedOnboardingStatus(onboardingStatus)
 
       setState({

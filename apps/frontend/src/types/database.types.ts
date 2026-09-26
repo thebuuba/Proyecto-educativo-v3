@@ -1537,6 +1537,9 @@ export type Database = {
           full_name: string
           id: string
           phone: string | null
+          preferred_levels: string[]
+          preferred_modalities: string[]
+          preferred_shifts: string[]
           school_id: string
           status: Database["public"]["Enums"]["record_status"]
           updated_at: string
@@ -1550,6 +1553,9 @@ export type Database = {
           full_name: string
           id?: string
           phone?: string | null
+          preferred_levels?: string[]
+          preferred_modalities?: string[]
+          preferred_shifts?: string[]
           school_id?: string
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string
@@ -1563,6 +1569,9 @@ export type Database = {
           full_name?: string
           id?: string
           phone?: string | null
+          preferred_levels?: string[]
+          preferred_modalities?: string[]
+          preferred_shifts?: string[]
           school_id?: string
           status?: Database["public"]["Enums"]["record_status"]
           updated_at?: string

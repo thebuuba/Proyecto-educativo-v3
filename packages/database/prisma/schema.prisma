@@ -356,6 +356,9 @@ model Teacher {
   email        String?
   hireDate     DateTime?    @map("hire_date") @db.Date
   address      String?
+  preferredLevels     String[]     @default([]) @map("preferred_levels")
+  preferredShifts     String[]     @default([]) @map("preferred_shifts")
+  preferredModalities String[]     @default([]) @map("preferred_modalities")
   status       RecordStatus @default(ACTIVE)
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")

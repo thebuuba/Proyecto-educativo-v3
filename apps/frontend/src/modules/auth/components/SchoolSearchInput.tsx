@@ -1,17 +1,24 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { Building2, LocateFixed, MapPin, Search } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+
+import { Button } from '@/components/ui/Button'
 import { api } from '@/services/apiClient'
-import { shouldSearchSchoolQuery } from '@/modules/auth/utils/schoolSearch'
 
 export type SchoolResult = {
   id: string
   name: string
   slug: string
   sector: string
-  district?: string
+  centerCode?: string | null
+  district?: string | null
   niveles: string[]
   tandas: string[]
   modalidades: string[]
+  distance?: number | null
+  schoolYearName?: string | null
+  schoolYearStartDate?: string | null
+  schoolYearEndDate?: string | null
 }
 
 type Props = {
@@ -22,182 +29,224 @@ type Props = {
   placeholder?: string
 }
 
+type LocationState = 'idle' | 'loading' | 'available' | 'unavailable'
+
+function formatDistance(distance?: number | null) {
+  if (distance == null || !Number.isFinite(Number(distance))) return null
+  const value = Number(distance)
+  return value < 10 ? `${value.toFixed(1)} km` : `${Math.round(value)} km`
+}
+
 export function SchoolSearchInput({ value, onChange, onSelect, error, placeholder }: Props) {
-  const [query, setQuery] = useState(value)
   const [results, setResults] = useState<SchoolResult[]>([])
-  const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [searchError, setSearchError] = useState(false)
+  const [searched, setSearched] = useState(false)
+  const [open, setOpen] = useState(false)
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
-  const [dropdownTop, setDropdownTop] = useState(0)
-  const [dropdownLeft, setDropdownLeft] = useState(0)
-  const [dropdownWidth, setDropdownWidth] = useState(0)
-  const [dropdownMaxHeight, setDropdownMaxHeight] = useState(320)
+  const [locationState, setLocationState] = useState<LocationState>('idle')
+  const [location, setLocation] = useState<{ lat: number; lng: number } | null>(null)
+  const [dropdown, setDropdown] = useState({ top: 0, left: 0, width: 0, maxHeight: 320 })
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
-  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
-  const locationRef = useRef<{ lat: number; lng: number } | null>(null)
-  const locationFetchedRef = useRef(false)
-  const selectedQueryRef = useRef<string | null>(value || null)
+  const requestRef = useRef(0)
+  const selectedQueryRef = useRef<string | null>(null)
+
+  function positionDropdown() {
+    if (!inputRef.current) return
+    const rect = inputRef.current.getBoundingClientRect()
+    setDropdown({
+      top: rect.bottom + 6,
+      left: rect.left,
+      width: rect.width,
+      maxHeight: Math.min(420, Math.max(180, window.innerHeight - rect.bottom - 16)),
+    })
+  }
 
   useEffect(() => {
-    if (locationFetchedRef.current) return
-    locationFetchedRef.current = true
-    fetch('//ip-api.com/json/')
-      .then(r => r.json())
-      .then(d => { if (d.lat && d.lon) locationRef.current = { lat: d.lat, lng: d.lon } })
-      .catch(() => {})
-  }, [])
-
-  const search = useCallback(async (term: string) => {
-    if (!shouldSearchSchoolQuery(term, selectedQueryRef.current)) {
+    const term = value.trim()
+    if (term && term === selectedQueryRef.current) return
+    if (term.length < 2) {
       setResults([])
       setOpen(false)
+      setSearched(false)
+      setSearchError(false)
       return
     }
-    setLoading(true)
-    try {
-      let url = `/schools?q=${encodeURIComponent(term)}&limit=50`
-      const loc = locationRef.current
-      if (loc) url += `&lat=${loc.lat}&lng=${loc.lng}`
-      const data = await api.get<SchoolResult[]>(url)
-      if (inputRef.current) {
-        const rect = inputRef.current.getBoundingClientRect()
-        const spaceBelow = window.innerHeight - rect.bottom - 8
-        setDropdownTop(rect.bottom + 4)
-        setDropdownLeft(rect.left)
-        setDropdownWidth(rect.width)
-        setDropdownMaxHeight(Math.min(420, Math.max(160, spaceBelow)))
+
+    const requestId = ++requestRef.current
+    const timeout = window.setTimeout(async () => {
+      setLoading(true)
+      setSearchError(false)
+      try {
+        let url = `/schools?q=${encodeURIComponent(term)}&limit=50`
+        if (location) url += `&lat=${location.lat}&lng=${location.lng}`
+        const data = await api.get<SchoolResult[]>(url)
+        if (requestRef.current !== requestId) return
+        setResults(data)
+        setSearched(true)
+        setOpen(true)
+        setHighlightedIndex(-1)
+        positionDropdown()
+      } catch {
+        if (requestRef.current !== requestId) return
+        setResults([])
+        setSearched(true)
+        setSearchError(true)
+        setOpen(true)
+        positionDropdown()
+      } finally {
+        if (requestRef.current === requestId) setLoading(false)
       }
-      setResults(data)
-      setOpen(data.length > 0)
-      setHighlightedIndex(-1)
-    } catch {
-      setResults([])
-      setOpen(false)
-    } finally {
-      setLoading(false)
+    }, 300)
+
+    return () => window.clearTimeout(timeout)
+  }, [location, value])
+
+  useEffect(() => {
+    function closeOnOutsideClick(event: MouseEvent) {
+      if (inputRef.current && !inputRef.current.parentElement?.contains(event.target as Node) && !listRef.current?.contains(event.target as Node)) setOpen(false)
     }
+    document.addEventListener('mousedown', closeOnOutsideClick)
+    return () => document.removeEventListener('mousedown', closeOnOutsideClick)
   }, [])
 
   useEffect(() => {
-    if (timerRef.current) clearTimeout(timerRef.current)
-    timerRef.current = setTimeout(() => search(query), 300)
-    return () => { if (timerRef.current) clearTimeout(timerRef.current) }
-  }, [query, search])
-
-  function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
-    const val = e.target.value
-    selectedQueryRef.current = null
-    setQuery(val)
-    onChange(val)
-    if (!val) setOpen(false)
-  }
-
-  function select(school: SchoolResult) {
-    selectedQueryRef.current = school.name
-    setQuery(school.name)
-    onChange(school.name)
-    onSelect(school)
-    setResults([])
-    setOpen(false)
-  }
-
-  function handleKeyDown(e: React.KeyboardEvent) {
-    if (e.key === 'Enter') {
-      e.preventDefault()
-      if (open && highlightedIndex >= 0) select(results[highlightedIndex])
-      return
-    }
-
-    if (!open || results.length === 0) return
-
-    if (e.key === 'ArrowDown') {
-      e.preventDefault()
-      setHighlightedIndex((prev) => Math.min(prev + 1, results.length - 1))
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault()
-      setHighlightedIndex((prev) => Math.max(prev - 1, 0))
-    } else if (e.key === 'Escape') {
-      setOpen(false)
-    }
-  }
-
-  useEffect(() => {
-    if (!open || highlightedIndex < 0 || !listRef.current) return
-    const item = listRef.current.children[highlightedIndex] as HTMLElement | undefined
-    item?.scrollIntoView({ block: 'nearest' })
+    if (!open || highlightedIndex < 0) return
+    listRef.current?.children[highlightedIndex]?.scrollIntoView({ block: 'nearest' })
   }, [highlightedIndex, open])
 
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (inputRef.current && !inputRef.current.parentElement?.contains(e.target as Node)) {
-        setOpen(false)
-      }
+  function selectSchool(school: SchoolResult) {
+    requestRef.current += 1
+    selectedQueryRef.current = school.name
+    onChange(school.name)
+    onSelect(school)
+    setOpen(false)
+    setResults([])
+    setSearched(false)
+  }
+
+  function requestLocation() {
+    if (!navigator.geolocation) {
+      setLocationState('unavailable')
+      return
     }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+    setLocationState('loading')
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        setLocation({ lat: coords.latitude, lng: coords.longitude })
+        setLocationState('available')
+      },
+      () => setLocationState('unavailable'),
+      { enableHighAccuracy: false, maximumAge: 10 * 60 * 1000, timeout: 8000 },
+    )
+  }
+
+  function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'ArrowDown' && results.length) {
+      event.preventDefault()
+      setOpen(true)
+      setHighlightedIndex((current) => Math.min(current + 1, results.length - 1))
+    } else if (event.key === 'ArrowUp' && results.length) {
+      event.preventDefault()
+      setHighlightedIndex((current) => Math.max(current - 1, 0))
+    } else if (event.key === 'Enter' && open && highlightedIndex >= 0) {
+      event.preventDefault()
+      selectSchool(results[highlightedIndex])
+    } else if (event.key === 'Escape') {
+      setOpen(false)
+    }
+  }
+
+  const status = loading
+    ? 'Buscando centros…'
+    : searchError
+      ? 'Hubo un problema al buscar. Intenta nuevamente.'
+      : searched && !results.length
+        ? 'No encontramos tu centro. Prueba con menos palabras o busca sin ubicación.'
+        : 'Escribe el nombre de tu centro.'
 
   return (
-    <div className="relative">
-      <input
-        ref={inputRef}
-        type="text"
-        placeholder={placeholder ?? 'Busca tu centro educativo'}
-        required
-        autoComplete="off"
-        value={query}
-        onChange={handleInput}
-        onKeyDown={handleKeyDown}
-        onFocus={() => { if (results.length > 0) setOpen(true) }}
-        className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/15"
-      />
+    <div>
+      <div className="relative">
+        <Search className="pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+        <input
+          ref={inputRef}
+          id="school-search"
+          type="search"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-expanded={open}
+          aria-controls="school-search-results"
+          aria-activedescendant={highlightedIndex >= 0 ? `school-result-${results[highlightedIndex]?.id}` : undefined}
+          aria-invalid={Boolean(error)}
+          value={value}
+          placeholder={placeholder ?? 'Busca tu centro educativo'}
+          autoComplete="off"
+          className="auth-input h-12 pl-11 pr-12"
+          onChange={(event) => { selectedQueryRef.current = null; onChange(event.target.value) }}
+          onFocus={() => { if (searched) { positionDropdown(); setOpen(true) } }}
+          onKeyDown={handleKeyDown}
+        />
+        {locationState === 'available' ? <LocateFixed className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-success" aria-hidden="true" /> : null}
+      </div>
 
-      {open && results.length > 0 && createPortal(
+      <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground" aria-live="polite">
+        <span>{status}</span>
+        {locationState !== 'available' ? (
+          <Button variant="ghost" size="sm" className="h-8 px-2 text-xs" loading={locationState === 'loading'} onClick={requestLocation}>
+            <LocateFixed className="size-3.5" /> Usar mi ubicación
+          </Button>
+        ) : <button type="button" className="inline-flex items-center gap-1.5 font-semibold text-foreground hover:underline" onClick={() => { setLocation(null); setLocationState('idle') }}><LocateFixed className="size-3.5 text-success" />Cercanía activada · buscar sin ubicación</button>}
+      </div>
+      {locationState === 'unavailable' ? <p className="mt-1 text-xs text-muted-foreground">La búsqueda seguirá funcionando sin tu ubicación.</p> : null}
+      {error ? <p className="mt-1 text-xs font-semibold text-foreground"><span className="mr-1 inline-block size-1.5 rounded-full bg-destructive" />{error}</p> : null}
+
+      {open && searched && createPortal(
         <ul
           ref={listRef}
-          style={{
-            position: 'fixed',
-            top: dropdownTop,
-            left: dropdownLeft,
-            width: dropdownWidth,
-            maxHeight: dropdownMaxHeight,
-            overflowY: 'auto',
-          }}
-          className="z-[9999] rounded-xl border border-gray-200 bg-white py-1 shadow-lg"
+          id="school-search-results"
+          role="listbox"
+          aria-label="Centros educativos encontrados"
+          style={{ position: 'fixed', top: dropdown.top, left: dropdown.left, width: dropdown.width, maxHeight: dropdown.maxHeight }}
+          className="z-[9999] overflow-y-auto rounded-2xl border border-border bg-card p-1.5 shadow-xl"
         >
-          {results.map((school, index) => (
-            <li
-              key={school.id}
-              onMouseEnter={() => setHighlightedIndex(index)}
-              onMouseDown={() => select(school)}
-              className={`flex cursor-pointer items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
-                index === highlightedIndex ? 'bg-primary/10 text-foreground' : 'text-gray-700'
-              }`}
-            >
-              <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-xs font-bold text-gray-500">
-                {school.name.charAt(0).toUpperCase()}
-              </div>
-              <div className="min-w-0">
-                <p className="truncate font-medium">{school.name}</p>
-                <p className="truncate text-xs text-gray-400">
-                  {school.sector === 'public' ? 'Pública' : 'Privada'}
-                  {school.district ? ` · ${school.district}` : ''}
-                </p>
-              </div>
+          {results.map((school, index) => {
+            const distance = formatDistance(school.distance)
+            return (
+              <li
+                id={`school-result-${school.id}`}
+                key={school.id}
+                role="option"
+                aria-selected={index === highlightedIndex}
+                onMouseEnter={() => setHighlightedIndex(index)}
+                onMouseDown={(event) => { event.preventDefault(); selectSchool(school) }}
+                className={`cursor-pointer rounded-xl px-3 py-3 transition ${index === highlightedIndex ? 'bg-primary/10' : 'hover:bg-muted/60'}`}
+              >
+                <div className="flex items-start gap-3">
+                  <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary/12 text-primary"><Building2 className="size-4" /></span>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-bold text-foreground">{school.name}</p>
+                    <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
+                      {school.district ? <span className="inline-flex items-center gap-1"><MapPin className="size-3" />{school.district}</span> : null}
+                      {school.centerCode ? <span>Código {school.centerCode}</span> : null}
+                      {distance ? <span className="font-semibold text-foreground">{distance}</span> : null}
+                    </div>
+                    <p className="mt-1 text-[11px] text-muted-foreground">{school.sector === 'public' ? 'Centro público' : 'Centro privado'}</p>
+                  </div>
+                </div>
+              </li>
+            )
+          })}
+          {!results.length ? (
+            <li className="px-4 py-5 text-center text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">No encontramos tu centro.</p>
+              <p className="mt-1">Cambia las palabras o desactiva la ubicación e intenta otra vez.</p>
             </li>
-          ))}
+          ) : null}
         </ul>,
         document.body,
       )}
-
-      {loading && (
-        <div className="absolute right-3 top-1/2 -translate-y-1/2">
-          <div className="size-4 animate-spin rounded-full border-2 border-gray-300 border-t-primary" />
-        </div>
-      )}
-
-      {error ? <p className="mt-1 text-xs font-medium text-red-600">{error}</p> : null}
     </div>
   )
 }
