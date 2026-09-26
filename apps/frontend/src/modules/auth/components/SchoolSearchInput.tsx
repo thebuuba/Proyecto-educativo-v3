@@ -1,9 +1,9 @@
 import { Building2, LocateFixed, MapPin, Search } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
 
 import { Button } from '@/components/ui/Button'
 import { api } from '@/services/apiClient'
+import { CreateSchoolDialog } from './CreateSchoolDialog'
 
 export type SchoolResult = {
   id: string
@@ -68,7 +68,8 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
   const [locationState, setLocationState] = useState<LocationState>('idle')
   const [location, setLocation] = useState<{ lat: number; lng: number } | null>(null)
-  const [dropdown, setDropdown] = useState({ top: 0, left: 0, width: 0, maxHeight: 320 })
+  const [locationDismissed, setLocationDismissed] = useState(false)
+  const [creatingSchool, setCreatingSchool] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
   const requestRef = useRef(0)
@@ -91,37 +92,23 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
   }, [])
 
   useEffect(() => {
-    requestLocation()
-  }, [requestLocation])
-
-  function positionDropdown() {
-    if (!inputRef.current) return
-    const rect = inputRef.current.getBoundingClientRect()
-    setDropdown({
-      top: rect.bottom + 6,
-      left: rect.left,
-      width: rect.width,
-      maxHeight: Math.min(420, Math.max(180, window.innerHeight - rect.bottom - 16)),
-    })
-  }
-
-  useEffect(() => {
     const term = value.trim()
+    const requestId = ++requestRef.current
     if (term && term === selectedQueryRef.current) return
-    if (term.length < 2) {
+    if (term.length < 2 && !location) {
       setResults([])
       setOpen(false)
       setSearched(false)
       setSearchError(false)
+      setLoading(false)
       return
     }
 
-    const requestId = ++requestRef.current
     const timeout = window.setTimeout(async () => {
       setLoading(true)
       setSearchError(false)
       try {
-        let url = `/schools?q=${encodeURIComponent(term)}&limit=50`
+        let url = `/schools?q=${encodeURIComponent(term.length >= 2 ? term : '')}&limit=50`
         if (location) url += `&lat=${location.lat}&lng=${location.lng}`
         const data = await api.get<SchoolResult[]>(url)
         if (requestRef.current !== requestId) return
@@ -129,14 +116,12 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
         setSearched(true)
         setOpen(true)
         setHighlightedIndex(-1)
-        positionDropdown()
       } catch {
         if (requestRef.current !== requestId) return
         setResults([])
         setSearched(true)
         setSearchError(true)
         setOpen(true)
-        positionDropdown()
       } finally {
         if (requestRef.current === requestId) setLoading(false)
       }
@@ -190,7 +175,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
       ? 'Hubo un problema al buscar. Intenta nuevamente.'
       : searched && !results.length
         ? 'No encontramos tu centro. Prueba con menos palabras o busca sin ubicación.'
-        : 'Escribe el nombre de tu centro.'
+        : location && value.trim().length < 2 ? 'Centros ordenados por cercanía. Selecciona el tuyo o escribe su nombre.' : 'Escribe el nombre de tu centro.'
 
   return (
     <div>
@@ -207,35 +192,34 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
           aria-activedescendant={highlightedIndex >= 0 ? `school-result-${results[highlightedIndex]?.id}` : undefined}
           aria-invalid={Boolean(error)}
           value={value}
-          placeholder={placeholder ?? 'Busca tu centro educativo'}
+          placeholder={placeholder ?? 'Busca tu centro por nombre'}
           autoComplete="off"
           className="auth-input auth-input-leading-icon h-12"
           onChange={(event) => { selectedQueryRef.current = null; onChange(event.target.value) }}
-          onFocus={() => { if (searched) { positionDropdown(); setOpen(true) } }}
+          onFocus={() => { if (searched) setOpen(true) }}
           onKeyDown={handleKeyDown}
         />
         {locationState === 'available' ? <LocateFixed className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-success" aria-hidden="true" /> : null}
       </div>
 
-      <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground" aria-live="polite">
-        <span>{status}</span>
-        {locationState !== 'available' ? (
-          <Button variant="ghost" size="sm" className="h-8 px-2 text-xs" loading={locationState === 'loading'} onClick={requestLocation}>
-            <LocateFixed className="size-3.5" /> Usar mi ubicación
-          </Button>
-        ) : <button type="button" className="inline-flex items-center gap-1.5 font-semibold text-foreground hover:underline" onClick={() => { setLocation(null); setLocationState('idle') }}><LocateFixed className="size-3.5 text-success" />Cercanía activada · buscar sin ubicación</button>}
-      </div>
+      {!locationDismissed && locationState !== 'available' && <div className="setup-location-prompt">
+        <span className="setup-location-icon"><LocateFixed size={16} /></span>
+        <p><strong>Opcional:</strong> usa tu ubicación para ver centros cercanos. Puedes continuar sin compartirla.</p>
+        <Button variant="ghost" size="sm" onClick={() => setLocationDismissed(true)} disabled={locationState === 'loading'}>Ahora no</Button>
+        <Button variant="outline" size="sm" loading={locationState === 'loading'} onClick={requestLocation}>Usar mi ubicación</Button>
+      </div>}
+      {locationState === 'available' && <button type="button" className="setup-location-active" onClick={() => { setLocation(null); setLocationState('idle'); setLocationDismissed(false) }}><LocateFixed size={15} />Cercanía activada · buscar sin ubicación</button>}
+      <p className="setup-search-status" aria-live="polite">{value.trim().length < 2 && !location ? 'Escribe al menos 2 letras o usa tu ubicación. Debes seleccionar el centro de la lista de resultados.' : status}</p>
       {locationState === 'unavailable' ? <p className="mt-1 text-xs text-muted-foreground">La búsqueda seguirá funcionando sin tu ubicación.</p> : null}
       {error ? <p className="mt-1 text-xs font-semibold text-foreground"><span className="mr-1 inline-block size-1.5 rounded-full bg-destructive" />{error}</p> : null}
 
-      {open && searched && createPortal(
+      {open && searched && (
         <ul
           ref={listRef}
           id="school-search-results"
           role="listbox"
           aria-label="Centros educativos encontrados"
-          style={{ position: 'fixed', top: dropdown.top, left: dropdown.left, width: dropdown.width, maxHeight: dropdown.maxHeight }}
-          className="z-[9999] overflow-y-auto rounded-2xl border border-border bg-card p-1.5 shadow-xl"
+          className="setup-school-results"
         >
           {results.map((school, index) => {
             const distance = formatDistance(school.distance)
@@ -275,9 +259,13 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
               <p className="mt-1">Cambia las palabras o busca sin ubicación e intenta otra vez.</p>
             </li>
           ) : null}
-        </ul>,
-        document.body,
+        </ul>
       )}
+      {searched && !loading && !searchError && value.trim().length >= 2 && <div className="setup-add-school">
+        <div><strong>¿No encuentras tu centro?</strong><p>Revisa los resultados. Si no aparece, puedes agregarlo al directorio.</p></div>
+        <Button variant="outline" size="sm" onClick={() => { setOpen(false); setCreatingSchool(true) }}>Agregar centro</Button>
+      </div>}
+      {creatingSchool && <CreateSchoolDialog initialName={value.trim()} onClose={() => setCreatingSchool(false)} onSelect={school => { setCreatingSchool(false); selectSchool(school) }} />}
     </div>
   )
 }

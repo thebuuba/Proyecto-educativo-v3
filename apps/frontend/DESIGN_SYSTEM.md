@@ -2,6 +2,8 @@
 
 Este documento define la identidad visual de la aplicación. Toda pantalla nueva o modificada debe seguir estas reglas.
 
+La pantalla de **Inicio** es la referencia visual original y la fuente de verdad para las adaptaciones graduales de los módulos. Sus proporciones, tipografía, tarjetas y controles deben guiar los cambios; los rediseños ya aprobados se recuperan conservando la lógica funcional vigente.
+
 ## Paleta oficial
 
 AulaBase usa los valores de la referencia de Inicio, definidos en `src/semantic-palette.css`:

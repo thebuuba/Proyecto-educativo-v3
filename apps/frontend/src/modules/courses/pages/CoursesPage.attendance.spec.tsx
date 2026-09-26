@@ -18,6 +18,10 @@ const mocks = vi.hoisted(() => ({
 
 vi.mock('@/modules/auth/hooks/useAuth', () => ({ useAuth: () => ({ hasRole: () => true }) }))
 vi.mock('@/modules/courses/hooks/useCourses', () => ({ useCourses: mocks.useCourses }))
+vi.mock('@/modules/students/services/studentsService', async (importOriginal) => ({
+  ...await importOriginal<typeof import('@/modules/students/services/studentsService')>(),
+  getStudentsByCourse: vi.fn().mockResolvedValue([]),
+}))
 vi.mock('@/modules/attendance/services/attendanceService', async (importOriginal) => ({
   ...await importOriginal<typeof import('@/modules/attendance/services/attendanceService')>(),
   getStudentsBySection: mocks.getStudentsBySection,
@@ -93,6 +97,24 @@ describe('asistencia desde la asignatura en Cursos', () => {
   })
 
   afterEach(() => vi.useRealTimers())
+
+  it('conserva filtros y navegación entre cursos, asignaturas activas y archivadas', async () => {
+    const user = userEvent.setup()
+    render(<MemoryRouter initialEntries={['/cursos']}><CoursesPage /></MemoryRouter>)
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Ciclo' }), 'Primer Ciclo')
+    await user.click(screen.getByRole('button', { name: 'Entrar al curso' }))
+    expect(screen.getByRole('heading', { name: 'Estudiantes' })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Lenguas' }))
+    expect(screen.getByText('No hay asignaturas para este filtro.')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Todas' }))
+    expect(screen.getByRole('link', { name: /Entrar a la asignatura Ciencias/ })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /Archivadas/ }))
+    expect(screen.getByText('No hay asignaturas archivadas')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Mis cursos' }))
+    expect(screen.getByRole('combobox', { name: 'Ciclo' })).toHaveValue('Primer Ciclo')
+    await user.click(screen.getByRole('checkbox', { name: 'Mostrar archivados' }))
+    expect(screen.getByRole('checkbox', { name: 'Mostrar archivados' })).toBeChecked()
+  })
 
   it('abre el panel actualizado desde la pestaña habitual y guarda T como tardanza en esa asignatura', async () => {
     const user = userEvent.setup()

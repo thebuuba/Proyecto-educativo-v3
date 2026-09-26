@@ -18,11 +18,7 @@ import { RegisterDto } from './dto/register.dto'
 import { LoginDto } from './dto/login.dto'
 import { CompleteOnboardingDto } from './dto/complete-onboarding.dto'
 
-type SupabaseAuthUser = {
-  id: string
-  email?: string
-  app_metadata?: { provider?: string }
-}
+import { getSupabaseUserFromToken, type SupabaseAuthUser } from './supabase-user'
 
 type AppUserWithSession = NonNullable<Awaited<ReturnType<typeof prisma.appUser.findUnique>>>
 
@@ -162,24 +158,6 @@ async function signInSupabaseUser(dto: LoginDto): Promise<SupabaseAuthUser> {
   if (!body.user?.id) throw new UnauthorizedException('Invalid credentials')
 
   return body.user
-}
-
-async function getSupabaseUserFromToken(token: string): Promise<SupabaseAuthUser> {
-  const { url, authKey } = getSupabaseConfig()
-  const response = await fetch(`${url}/auth/v1/user`, {
-    headers: {
-      apikey: authKey,
-      Authorization: `Bearer ${token}`,
-    },
-  })
-
-  if (!response.ok) {
-    throw new UnauthorizedException('Invalid Supabase session')
-  }
-
-  const body = await response.json() as SupabaseAuthUser
-  if (!body.id) throw new UnauthorizedException('Invalid Supabase session')
-  return body
 }
 
 async function requestSupabasePasswordReset(email: string) {

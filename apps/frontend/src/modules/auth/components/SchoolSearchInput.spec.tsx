@@ -6,6 +6,7 @@ import { formatSchoolLocation, SchoolSearchInput, type SchoolResult } from './Sc
 
 const get = vi.hoisted(() => vi.fn())
 vi.mock('@/services/apiClient', () => ({ api: { get } }))
+vi.mock('@/modules/auth/services/supabaseClient', () => ({ supabase: { auth: { getSession: vi.fn() } } }))
 
 const schools = [
   { id: 'school-1', name: 'Centro Duarte', slug: 'duarte-1', sector: 'public', district: 'Distrito 11-01', centerCode: '01234', niveles: ['secondary'], tandas: ['morning'], modalidades: ['regular'], distance: 2.4 },
@@ -65,15 +66,31 @@ describe('SchoolSearchInput', () => {
     expect(get).toHaveBeenCalledWith(expect.not.stringContaining('lat='))
   })
 
-  it('requests location automatically and sends it as a proximity signal', async () => {
+  it('requests location only after opting in and sends it as a proximity signal', async () => {
+    const getCurrentPosition = vi.fn((success: PositionCallback) => success({ coords: { latitude: 19.22, longitude: -70.53 } } as GeolocationPosition))
     Object.defineProperty(navigator, 'geolocation', {
       configurable: true,
-      value: { getCurrentPosition: (success: PositionCallback) => success({ coords: { latitude: 19.22, longitude: -70.53 } } as GeolocationPosition) },
+      value: { getCurrentPosition },
     })
     render(<Harness />)
+    expect(getCurrentPosition).not.toHaveBeenCalled()
+    fireEvent.click(screen.getByRole('button', { name: /usar mi ubicación/i }))
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Eugenio Maria de Hostos' } })
     await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
     expect(get).toHaveBeenCalledWith(expect.stringContaining('lat=19.22&lng=-70.53'))
+  })
+
+  it('loads nearby centers without typing and clears them when location is removed', async () => {
+    Object.defineProperty(navigator, 'geolocation', { configurable: true, value: {
+      getCurrentPosition: (success: PositionCallback) => success({ coords: { latitude: 19.22, longitude: -70.53 } } as GeolocationPosition),
+    } })
+    render(<Harness />)
+    fireEvent.click(screen.getByRole('button', { name: /usar mi ubicación/i }))
+    await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
+    expect(get).toHaveBeenCalledWith('/schools?q=&limit=50&lat=19.22&lng=-70.53')
+    expect(screen.getAllByRole('option')).toHaveLength(2)
+    fireEvent.click(screen.getByRole('button', { name: /buscar sin ubicación/i }))
+    expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
   })
 
   it('announces empty and error states', async () => {
@@ -82,9 +99,14 @@ describe('SchoolSearchInput', () => {
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Inexistente' } })
     await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
     expect(screen.getAllByText(/no encontramos tu centro/i).length).toBeGreaterThan(0)
+    fireEvent.click(screen.getByRole('button', { name: 'Agregar centro' }))
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+    expect(screen.getByLabelText('Nombre del centro')).toHaveValue('Inexistente')
+    fireEvent.click(screen.getByRole('button', { name: 'Cancelar' }))
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Otro centro' } })
     await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
     expect(screen.getByText(/hubo un problema al buscar/i)).toBeInTheDocument()
     expect(screen.getByRole('alert')).toHaveTextContent(/no pudimos buscar centros/i)
+    expect(screen.queryByRole('button', { name: 'Agregar centro' })).not.toBeInTheDocument()
   })
 })

@@ -13,6 +13,7 @@ import type {
   OnboardingStatus,
   Permission,
   RegisterCredentials,
+  RegistrationResult,
   Role,
 } from '@/modules/auth/types/auth'
 import { isRememberSessionEnabled, supabase } from '@/modules/auth/services/supabaseClient'
@@ -52,11 +53,12 @@ export async function requestMagicLink(email: string): Promise<void> {
 }
 
 /** Registra una nueva institución con los datos del administrador. */
-export async function register(credentials: RegisterCredentials): Promise<void> {
+export async function register(credentials: RegisterCredentials): Promise<RegistrationResult> {
   const { data, error } = await supabase.auth.signUp({
     email: credentials.email,
     password: credentials.password,
     options: {
+      emailRedirectTo: getOAuthCallbackUrl(window.location.origin),
       data: {
         full_name: credentials.fullName,
       },
@@ -69,11 +71,7 @@ export async function register(credentials: RegisterCredentials): Promise<void> 
   localStorage.removeItem('aulabase:onboarding-draft-v3')
   localStorage.setItem('aulabase:registration-name', credentials.fullName)
 
-  const token = data.session?.access_token
-  if (!token) {
-    throw new Error('Revisa tu correo para confirmar la cuenta antes de continuar.')
-  }
-
+  return data.session?.access_token ? 'ready' : 'confirmation-required'
 }
 
 /** Inicia OAuth con un proveedor social. */

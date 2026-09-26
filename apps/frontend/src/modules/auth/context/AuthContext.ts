@@ -11,6 +11,7 @@ import type {
   CompleteOnboardingInput,
   LoginCredentials,
   RegisterCredentials,
+  RegistrationResult,
 } from '@/modules/auth/types/auth'
 import type { UserRole } from '@/types/domain'
 
@@ -22,8 +23,8 @@ export type AuthContextValue = AuthState & {
   schoolId: string | null
   /** Inicia sesión con credenciales de correo y contraseña. */
   login: (credentials: LoginCredentials) => Promise<void>
-  /** Registra una nueva institución. */
-  register: (credentials: RegisterCredentials) => Promise<void>
+  /** Crea la cuenta personal y comunica si debe confirmar su correo. */
+  register: (credentials: RegisterCredentials) => Promise<RegistrationResult>
   /** Inicia sesión social con Supabase. */
   loginWithProvider: (provider: 'google' | 'facebook') => Promise<void>
   /** Procesa el callback OAuth. */

@@ -1,18 +1,36 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-const { get, post, signInWithPassword } = vi.hoisted(() => ({
+const { get, post, signInWithPassword, signUp } = vi.hoisted(() => ({
   get: vi.fn(),
   post: vi.fn(),
   signInWithPassword: vi.fn(),
+  signUp: vi.fn(),
 }))
 
 vi.mock('@/services/apiClient', () => ({ api: { get, post } }))
 vi.mock('@/modules/auth/services/supabaseClient', () => ({
   isRememberSessionEnabled: () => true,
-  supabase: { auth: { signInWithPassword } },
+  supabase: { auth: { signInWithPassword, signUp } },
 }))
 
-import { login } from '@/modules/auth/services/authService'
+import { login, register } from '@/modules/auth/services/authService'
+
+describe('registration confirmation', () => {
+  beforeEach(() => { vi.clearAllMocks(); localStorage.clear() })
+
+  it('returns confirmation-required without treating a created account as an error', async () => {
+    signUp.mockResolvedValue({ data: { session: null }, error: null })
+    await expect(register({ fullName: 'Ana Pérez', email: 'ana@example.com', password: 'Clave1234' })).resolves.toBe('confirmation-required')
+    expect(signUp).toHaveBeenCalledWith(expect.objectContaining({ options: expect.objectContaining({ emailRedirectTo: expect.stringContaining('/auth/callback') }) }))
+    expect(localStorage.getItem('aulabase:registration-name')).toBe('Ana Pérez')
+    expect(post).not.toHaveBeenCalled()
+  })
+
+  it('continues to setup only when signUp supplies a session', async () => {
+    signUp.mockResolvedValue({ data: { session: { access_token: 'test-session' } }, error: null })
+    await expect(register({ fullName: 'Ana', email: 'ana@example.com', password: 'Clave1234' })).resolves.toBe('ready')
+  })
+})
 
 describe('persistent login', () => {
   beforeEach(() => vi.clearAllMocks())

@@ -242,7 +242,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const register = useCallback(
     async (credentials: RegisterCredentials) => {
-      await registerService(credentials)
+      const result = await registerService(credentials)
+      if (result === 'confirmation-required') return result
       const { data } = await supabase.auth.getSession()
       setState((current) => ({
         ...current,
@@ -252,6 +253,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         onboardingComplete: false,
         authError: null,
       }))
+      return result
     },
     [],
   )

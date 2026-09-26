@@ -3,6 +3,7 @@ import {
   Archive,
   ArchiveRestore,
   ArrowLeft,
+  ArrowRight,
   Atom,
   Baby,
   Binary,
@@ -86,6 +87,7 @@ import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
 import { Input } from '@/components/ui/Input'
+import { Select } from '@/components/ui/Select'
 import { Modal } from '@/components/ui/Modal'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
@@ -131,6 +133,9 @@ import {
   matchesSectionFilter,
 } from '@/modules/courses/utils/courseFilterOptions'
 import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
+import { ProgressIndicator, StatusBadge } from '@/components/ui/SemanticUI'
+import { getStudentsByCourse } from '@/modules/students/services/studentsService'
+import type { CourseStudent } from '@/modules/students/types'
 import { cn } from '@/utils/cn'
 import { getSubjectPalette as getSubjectColor, type SubjectPalette } from '@/utils/subjectPalette'
 
@@ -147,11 +152,11 @@ type CourseCardItem = {
 }
 
 const levelStyles: Record<string, { color: string; soft: string }> = {
-  'Primaria': { color: '#4AA2E3', soft: 'rgb(74 162 227 / 0.12)' },
-  'Secundaria': { color: '#6f3cc3', soft: 'hsl(262 52% 47% / 0.08)' },
+  'Primaria': { color: 'var(--primary)', soft: 'var(--primary-container)' },
+  'Secundaria': { color: 'var(--primary)', soft: 'var(--primary-container)' },
 }
 
-const defaultLevelStyle = { color: '#4AA2E3', soft: 'rgb(74 162 227 / 0.12)' }
+const defaultLevelStyle = { color: 'var(--primary)', soft: 'var(--primary-container)' }
 
 function getLevelStyle(levelName: string) {
   const normalized = normalizeText(levelName)
@@ -236,7 +241,8 @@ export function CoursesPage() {
   const [levelFilter, setLevelFilter] = useState('all')
   const [cycleFilter, setCycleFilter] = useState('all')
   const [subjectFilter, setSubjectFilter] = useState('all')
-  const advancedFilters = defaultAdvancedFilters
+  const [showArchived, setShowArchived] = useState(false)
+  const advancedFilters = useMemo(() => ({ ...defaultAdvancedFilters, showArchived }), [showArchived])
   const [selectedCourseId, setSelectedCourseId] = useState<string | null>(() => searchParams.get('courseId'))
 
   useEffect(() => {
@@ -447,7 +453,7 @@ export function CoursesPage() {
     level: levelFilter,
     cycle: cycleFilter,
     subject: subjectFilter,
-  }), [cycleFilter, levelFilter, subjectFilter])
+  }), [advancedFilters, cycleFilter, levelFilter, subjectFilter])
   const filteredCourseCards = useMemo(
     () => applyCourseFilters(courseCards, appliedCourseFilters, debouncedSearch),
     [appliedCourseFilters, courseCards, debouncedSearch],
@@ -505,6 +511,7 @@ export function CoursesPage() {
           schoolYearId={currentSchoolYear?.id ?? null}
           canEnroll={canEnroll}
           canManage={canManage}
+          onEditSection={handleEditSection}
           onAssignSubject={handleOpenAssignSubject}
           onArchiveSubject={handleDeleteAssignment}
           onDeleteEmptySubject={handleDeleteEmptyAssignment}
@@ -517,187 +524,53 @@ export function CoursesPage() {
         />
       ) : (
         <>
-          <h1 className="sr-only">Mis cursos</h1>
-
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:justify-between">
-          {canManage ? (
-            <div className="order-2 flex shrink-0 items-start justify-end">
-              <details data-tour="create-course" className="group relative">
-                <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 [&::-webkit-details-marker]:hidden">
-                  Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
-                </summary>
-                <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
-                  <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted">
-                    <Plus className="size-4 text-primary" /> Nueva sección
-                  </button>
-                  <button type="button" onClick={openCreateAssignmentFlow} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted">
-                    <Plus className="size-4 text-primary" /> Nuevo curso
-                  </button>
+          <section data-tour="manage-students" aria-labelledby="courses-summary-title" className="relative rounded-3xl border border-border bg-card p-5 text-foreground shadow-sm sm:p-6">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex min-w-0 items-center gap-4">
+                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Library className="size-5" /></span>
+                <div className="min-w-0">
+                  <h1 id="courses-summary-title" className="text-2xl font-extrabold tracking-tight">Mis cursos</h1>
+                  <p className="text-sm text-muted-foreground">Año escolar {currentSchoolYear?.name ?? 'sin configurar'}</p>
                 </div>
-              </details>
-            </div>
-          ) : null}
-
-          <section data-tour="manage-students" aria-labelledby="courses-summary-title" className="order-1 flex h-10 min-w-0 flex-1 items-center overflow-hidden rounded-xl bg-card px-3 shadow-sm sm:px-4 [&_p]:hidden">
-            <div className="flex min-w-0 items-center gap-2.5">
-              <div className="min-w-0">
-                <div className="flex items-center gap-3">
-                  <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary"><Library className="size-4" /></span>
-                  <div className="min-w-0">
-                    <h2 id="courses-summary-title" className="text-xl font-black tracking-tight text-foreground sm:text-2xl">Mis cursos</h2>
-                    <p className="mt-0.5 text-xs text-muted-foreground">Año escolar {currentSchoolYear?.name ?? 'sin configurar'}</p>
+              </div>
+              {canManage ? (
+                <details data-tour="create-course" className="group relative shrink-0">
+                  <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-card/50 [&::-webkit-details-marker]:hidden">
+                    Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+                    <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nueva sección</button>
+                    <button type="button" onClick={openCreateAssignmentFlow} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nuevo curso</button>
                   </div>
-                </div>
-                <div className="hidden" aria-label="Resumen de cursos">
-                  <span><strong className="font-bold text-foreground tabular-nums">{activeCourseCards.length}</strong> cursos</span>
-                  <span className="text-border" aria-hidden="true">•</span>
-                  <span><strong className="font-bold text-foreground tabular-nums">{totalStudents}</strong> estudiantes</span>
-                  <span className="text-border" aria-hidden="true">•</span>
-                  <span><strong className="font-bold text-foreground tabular-nums">{totalAssignments}</strong> asignaturas</span>
-                  <span className="text-border" aria-hidden="true">•</span>
-                  <span><strong className="font-bold text-foreground tabular-nums">{totalTeams}</strong> equipos</span>
-                </div>
-              </div>
-            </div>
-          </section>
-          </div>
-
-          <header className="hidden">
-            <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <span className="flex h-5 w-5 items-center justify-center rounded-md bg-primary">
-                  <Sparkles className="h-3 w-3 text-primary-foreground" />
-                </span>
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary">
-                  AulaBase
-                </p>
-              </div>
-              <h1 className="mt-2.5 text-3xl font-extrabold tracking-tight text-foreground">
-                Mis cursos
-              </h1>
-              <p className="mt-1.5 text-sm text-muted-foreground">
-                <span className="font-bold text-foreground">{activeCourseCards.length} cursos</span>
-                {' · '}
-                <span className="font-bold text-foreground">{totalStudents} estudiantes</span>
-                {currentSchoolYear ? (
-                  <> · Año escolar {currentSchoolYear.name}</>
-                ) : null}
-              </p>
-            </div>
-
-            {canManage ? (
-              <Button variant="primary" className="h-10 px-4" onClick={openCreateAssignmentFlow}>
-                <Plus className="h-4 w-4" />
-                Nuevo curso
-              </Button>
-            ) : null}
-          </header>
-
-          <div className="hidden">
-            <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
-              <div className="relative flex-1">
-                <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                <input
-                  className="h-10 w-full rounded-xl border border-border bg-card pl-10 text-sm shadow-sm outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
-                  placeholder="Buscar por grado, seccion o asignatura..."
-                  value={searchQuery}
-                  onChange={(event) => setSearchQuery(event.target.value)}
-                />
-              </div>
-
-              <div className="flex items-center gap-1 rounded-xl bg-muted p-1">
-                {['all', ...levelFilters].map((level) => (
-                  <button
-                    key={level}
-                    type="button"
-                    className={cn(
-                      'rounded-lg px-3.5 py-1.5 text-xs font-bold transition-colors',
-                      levelFilter === level
-                        ? 'bg-card text-primary shadow-sm'
-                        : 'text-muted-foreground hover:text-foreground',
-                    )}
-                    onClick={() => setLevelFilter(level)}
-                  >
-                    {level === 'all' ? 'Todos' : level}
-                  </button>
-                ))}
-              </div>
-
-              <div className="flex items-center gap-1 rounded-xl bg-muted p-1">
-                {['all', ...cycleFilters.map((option) => option.value)].map((cycle) => (
-                  <button
-                    key={cycle}
-                    type="button"
-                    className={cn(
-                      'rounded-lg px-3.5 py-1.5 text-xs font-bold transition-colors',
-                      cycleFilter === cycle
-                        ? 'bg-card text-primary shadow-sm'
-                        : 'text-muted-foreground hover:text-foreground',
-                    )}
-                    onClick={() => setCycleFilter(cycle)}
-                  >
-                    {cycle === 'all' ? 'Ambos ciclos' : cycle}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                className={cn(
-                  'rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors',
-                  subjectFilter === 'all'
-                    ? 'border-primary bg-primary text-primary-foreground'
-                    : 'border-border bg-card text-muted-foreground hover:text-foreground',
-                )}
-                onClick={() => setSubjectFilter('all')}
-              >
-                Todas
-              </button>
-              {subjectFilters.map((subjectName) => {
-                const active = subjectFilter === subjectName
-                const palette = getSubjectColor(subjectName)
-                return (
-                  <button
-                    key={subjectName}
-                    type="button"
-                    className="flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors"
-                    style={active ? {
-                      borderColor: palette.color,
-                      backgroundColor: palette.color,
-                      color: 'white',
-                    } : {
-                      borderColor: 'var(--border)',
-                      backgroundColor: 'var(--card)',
-                      color: 'var(--muted-foreground)',
-                    }}
-                    onClick={() => setSubjectFilter(active ? 'all' : subjectName)}
-                  >
-                    <span
-                      className="h-1.5 w-1.5 rounded-full"
-                      style={{ backgroundColor: active ? 'white' : palette.color }}
-                    />
-                    {subjectName}
-                  </button>
-                )
-              })}
-              {levelFilter !== 'all' || cycleFilter !== 'all' || subjectFilter !== 'all' || searchQuery ? (
-                <button
-                  type="button"
-                  className="ml-1 inline-flex items-center gap-1 text-xs font-bold text-muted-foreground transition-colors hover:text-destructive"
-                  onClick={() => {
-                    setSearchQuery('')
-                    setLevelFilter('all')
-                    setCycleFilter('all')
-                    setSubjectFilter('all')
-                  }}
-                >
-                  <X className="h-3.5 w-3.5" />
-                  Limpiar
-                </button>
+                </details>
               ) : null}
             </div>
+            <div className="mt-5 grid grid-cols-2 gap-2 xl:grid-cols-4" aria-label="Resumen de cursos">
+              {([
+                [Library, activeCourseCards.length, 'Cursos'],
+                [UsersRound, totalStudents, 'Estudiantes'],
+                [BookOpen, totalAssignments, 'Asignaturas'],
+                [UsersRound, totalTeams, 'Equipos'],
+              ] as const).map(([Icon, value, label]) => (
+                <div key={label} className="flex items-center gap-3 rounded-2xl bg-primary/8 px-3 py-2.5">
+                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-primary/8"><Icon className="size-4" /></span>
+                  <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-muted-foreground">{label}</span></div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <div className="space-y-3 rounded-3xl border border-border bg-card p-4 shadow-sm">
+            <div className="flex flex-wrap items-center gap-2" aria-label="Filtrar por nivel">
+              {['all', ...levelFilters].map((level) => <button key={level} type="button" aria-pressed={levelFilter === level} onClick={() => { setLevelFilter(level); setCycleFilter('all'); setSubjectFilter('all') }} className={cn('min-h-10 rounded-full px-4 text-sm font-semibold transition', levelFilter === level ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:text-foreground')}>{level === 'all' ? 'Todos' : cleanLevelName(level)}</button>)}
+              <label className="ml-auto inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm text-muted-foreground"><input type="checkbox" checked={showArchived} onChange={(event) => setShowArchived(event.target.checked)} className="size-4 accent-primary" />Mostrar archivados</label>
+            </div>
+            <div className="grid gap-3 md:grid-cols-3">
+              <label className="relative"><span className="sr-only">Buscar cursos</span><Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" /><Input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Buscar grado, sección o asignatura..." className="pl-9" /></label>
+              <label><span className="sr-only">Ciclo</span><Select value={cycleFilter} onChange={(event) => { setCycleFilter(event.target.value); setSubjectFilter('all') }}><option value="all">Todos los ciclos</option>{cycleFilters.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</Select></label>
+              <label><span className="sr-only">Asignatura</span><Select value={subjectFilter} onChange={(event) => setSubjectFilter(event.target.value)}><option value="all">Todas las asignaturas</option>{subjectFilters.map((name) => <option key={name} value={name}>{name}</option>)}</Select></label>
+            </div>
+            {levelFilter !== 'all' || cycleFilter !== 'all' || subjectFilter !== 'all' || searchQuery ? <button type="button" onClick={() => { setSearchQuery(''); setLevelFilter('all'); setCycleFilter('all'); setSubjectFilter('all') }} className="inline-flex min-h-10 items-center gap-2 text-sm text-primary"><X className="size-4" />Limpiar filtros</button> : null}
           </div>
 
           {!loading && !error && !currentSchoolYear ? (
@@ -738,27 +611,26 @@ export function CoursesPage() {
               Cargando cursos y secciones...
             </div>
           ) : filteredCourseCards.length > 0 ? (
-            <div className="space-y-8">
+            <div className="space-y-9">
               {groupedCourses.map((group) => (
                 <section key={group.key}>
-                  <div className="mb-4 mt-2 flex items-center gap-3">
-                    <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary"><BookOpen className="size-4" /></span>
-                    <h2 className="text-base font-black text-foreground">Nivel {cleanLevelName(group.levelName)}</h2>
-                    <span className="rounded-full px-2.5 py-1 text-[11px] font-extrabold tabular-nums" style={{ color: getLevelStyle(group.levelName).color, backgroundColor: getLevelStyle(group.levelName).soft }}>
+                  <div className="mb-5 flex items-center gap-3">
+                    <span className="flex size-9 items-center justify-center rounded-full bg-primary/8 text-primary"><BookOpen className="size-4" /></span>
+                    <h2 className="text-lg font-extrabold text-foreground">Nivel {cleanLevelName(group.levelName)}</h2>
+                    <span className="rounded-full bg-primary/8 px-2.5 py-1 text-[11px] font-bold tabular-nums text-primary">
                       {group.items.length} cursos
                     </span>
-                    <div className="h-px flex-1" style={{ background: `linear-gradient(90deg, ${getLevelStyle(group.levelName).color}55, transparent)` }} />
                   </div>
 
-                  <div className="space-y-5">
+                  <div className="space-y-6">
                     {groupCoursesByCycle(group.items).map((cycle) => (
                       <div key={cycle.name}>
-                        <div className="mb-3 flex items-center gap-2">
-                          <h3 className="text-xs font-extrabold text-foreground">{cycle.name}</h3>
-                          <span className="rounded-full bg-primary/8 px-2 py-0.5 text-[10px] font-bold text-primary">{cycle.items.length} cursos</span>
-                          <div className="h-px flex-1 bg-border/70" />
+                        <div className="mb-3 flex items-center gap-3">
+                          <h3 className="text-sm font-semibold text-muted-foreground">{cycle.name}</h3>
+                          <span className="text-xs text-muted-foreground">· {cycle.items.length} cursos</span>
+                          <div className="h-px flex-1 bg-border" />
                         </div>
-                        <div className={cn('grid min-w-0 grid-cols-1 gap-4', cycle.items.length > 1 && 'md:grid-cols-2', cycle.items.length > 2 && 'xl:grid-cols-3 2xl:grid-cols-4')}>
+                        <div className="grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                           {cycle.items.map((item) => (
                             <CourseCard
                               key={item.id}
@@ -901,6 +773,7 @@ function CourseWorkspace({
   canEnroll,
   canManage,
   onAssignSubject,
+  onEditSection,
   onArchiveSubject,
   onDeleteEmptySubject,
   onRestoreSubject,
@@ -917,6 +790,7 @@ function CourseWorkspace({
   canEnroll: boolean
   canManage: boolean
   onAssignSubject: (grade: GradeWithSections, sectionId: string) => void
+  onEditSection: (grade: GradeWithSections, sectionId: string) => void
   onArchiveSubject: (assignment: SectionSubjectAssignment) => void
   onDeleteEmptySubject: (assignment: SectionSubjectAssignment, studentCount: number) => void
   onRestoreSubject: (assignment: SectionSubjectAssignment) => void | Promise<void>
@@ -932,7 +806,6 @@ function CourseWorkspace({
   const [studentAction, setStudentAction] = useState<'new' | 'import' | undefined>()
   const [appearanceTarget, setAppearanceTarget] = useState<SectionSubjectAssignment | null>(null)
   const selectedAssignment = item.assignments.find((assignment) => assignment.id === selectedAssignmentId) ?? null
-  const levelStyle = getLevelStyle(item.levelName)
   const archivedAssignments = item.section.assignments.filter((assignment) => assignment.status === 'inactive')
 
   useEffect(() => {
@@ -947,20 +820,25 @@ function CourseWorkspace({
     setSubjectInitialTab('resumen')
   }, [item.section.id, schoolYearId])
 
-  const courseActions = (
-    <details className="group relative">
-      <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 [&::-webkit-details-marker]:hidden">
-        Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
-      </summary>
-      <div className="absolute right-0 z-30 mt-2 w-60 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
-        <button type="button" onClick={() => { setStudentAction(undefined); setWorkspaceView('students') }} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted"><UsersRound className="size-4 text-primary" /> Ver estudiantes</button>
-        {canEnroll ? <button type="button" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar estudiantes</button> : null}
-        {canManage ? <button type="button" onClick={() => setWorkspaceView(workspaceView === 'archived' ? 'subjects' : 'archived')} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted">{workspaceView === 'archived' ? <><BookOpen className="size-4 text-primary" /> Ver activas</> : <><Archive className="size-4 text-primary" /> Archivadas</>}</button> : null}
-        {canManage && workspaceView === 'subjects' ? <button type="button" onClick={() => onAssignSubject(item.grade, item.section.id)} className="flex min-h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-bold transition hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar asignatura</button> : null}
-      </div>
-    </details>
+  const [subjectCategory, setSubjectCategory] = useState('Todas')
+  const [subjectSearch, setSubjectSearch] = useState('')
+  const navigate = useNavigate()
+  const courseAverages = item.assignments.map((assignment) => assignment.averageScore).filter((score): score is number => typeof score === 'number' && Number.isFinite(score))
+  const courseAverage = courseAverages.length ? Math.round(courseAverages.reduce((sum, score) => sum + score, 0) / courseAverages.length) : null
+  const visibleAssignments = item.assignments.filter((assignment) =>
+    (subjectCategory === 'Todas' || getSubjectCategory(assignment.subjectName) === subjectCategory)
+    && normalizeText(assignment.subjectName).includes(normalizeText(subjectSearch)),
+  )
+  const visibleArchivedAssignments = archivedAssignments.filter((assignment) =>
+    (subjectCategory === 'Todas' || getSubjectCategory(assignment.subjectName) === subjectCategory)
+    && normalizeText(assignment.subjectName).includes(normalizeText(subjectSearch)),
   )
 
+  function openAssignment(assignment: SectionSubjectAssignment, tab = 'resumen') {
+    setSubjectInitialTab(tab)
+    setSelectedAssignmentId(assignment.id)
+    onAssignmentChange(assignment.id)
+  }
   if (selectedAssignment) {
     return (
       <SubjectDetailView
@@ -980,107 +858,140 @@ function CourseWorkspace({
   }
 
   return (
-    <div className="course-workspace-shell course-overview-workspace w-full min-w-0 max-w-full overflow-x-clip space-y-5">
-      <div className="flex items-center justify-between gap-3">
-        <button type="button" onClick={onBack} aria-label="Volver a mis cursos" title="Volver a mis cursos" className="inline-flex size-11 items-center justify-center rounded-xl transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15">
-          <BackIcon className="size-7" />
-        </button>
-        {courseActions}
-      </div>
+    <div className="course-workspace-shell course-overview-workspace w-full min-w-0 space-y-5">
+      <button type="button" onClick={onBack} className="inline-flex min-h-10 items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary">
+        <ArrowLeft className="size-4" /> Mis cursos
+      </button>
 
-      <header className="rounded-3xl border border-border/70 bg-card p-4 shadow-sm sm:p-5">
-        <div className="flex flex-col justify-between gap-4 xl:flex-row xl:items-center">
-          <div className="flex min-w-0 items-center gap-4">
-            <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold text-primary-foreground shadow-md" style={{ backgroundColor: levelStyle.color }}>
-              {getCourseCompactLabel(item.grade.name, item.section.name)}
-            </span>
+      <header className="rounded-3xl border border-border bg-card p-5 text-foreground shadow-sm sm:p-6">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex min-w-0 items-center gap-5">
+            <span className="grid size-20 shrink-0 place-items-center rounded-3xl bg-primary/10 text-2xl font-extrabold text-primary shadow-sm">{getCourseCompactLabel(item.grade.name, item.section.name)}</span>
             <div className="min-w-0">
-              <div className="flex flex-wrap items-center gap-2">
-                <h1 className="text-2xl font-extrabold tracking-tight text-foreground">{item.grade.name} {item.section.name}</h1>
-                <span className={cn('rounded-full px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide', item.archived ? 'bg-slate-100 text-slate-600' : 'bg-emerald-50 text-emerald-700')}>{item.archived ? 'Archivado' : 'Activo'}</span>
-              </div>
-              <p className="mt-2 truncate text-xs font-semibold text-muted-foreground">{cleanLevelName(item.levelName)} · {item.cycleName}{schoolYearName ? ` · Año escolar ${schoolYearName}` : ''}</p>
+              <div className="flex items-center gap-3"><h1 className="text-3xl font-extrabold">{item.grade.name} {item.section.name}</h1><StatusBadge tone={item.archived ? 'neutral' : 'success'}>{item.archived ? 'Archivado' : 'Activo'}</StatusBadge></div>
+              <p className="mt-1 text-sm text-muted-foreground">{cleanLevelName(item.levelName)} · {item.cycleName}{schoolYearName ? ` · Año escolar ${schoolYearName}` : ''}</p>
             </div>
           </div>
+          <div className="flex flex-wrap gap-2">
+            {canManage ? <button type="button" onClick={() => onEditSection(item.grade, item.section.id)} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-primary/8 px-4 text-sm font-semibold hover:bg-primary/15"><Edit3 className="size-4" /> Editar</button> : null}
+            {canEnroll ? <button type="button" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-primary/90"><Plus className="size-4" /> Agregar estudiantes</button> : null}
+          </div>
+        </div>
+        <div className="mt-6 grid grid-cols-2 gap-2 xl:grid-cols-4">
+          {([
+            [UsersRound, item.section.studentCount ?? 0, 'Estudiantes', ''],
+            [BookOpen, item.assignments.length, 'Asignaturas', archivedAssignments.length ? ` · ${archivedAssignments.length} archivada${archivedAssignments.length === 1 ? '' : 's'}` : ''],
+            [CalendarCheck2, '—', 'Asistencia', ''],
+            [ChartColumn, courseAverage ?? '—', 'Promedio', ''],
+          ] as const).map(([Icon, value, label, detail]) => (
+            <div key={label} className="flex min-w-0 items-center gap-3 rounded-2xl bg-primary/8 px-3 py-3">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary/8"><Icon className="size-4" /></span>
+              <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-muted-foreground">{label}{detail}</span></div>
+            </div>
+          ))}
         </div>
       </header>
 
-      <section className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex min-w-0 items-center gap-3">
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><UsersRound className="size-5" /></span>
-          <div className="min-w-0"><h2 className="text-sm font-extrabold">Estudiantes del curso</h2><p className="mt-1 text-xs text-muted-foreground">{item.section.studentCount ?? 0} estudiantes comparten todas las asignaturas de {item.grade.name} {item.section.name}.</p></div>
-        </div>
-      </section>
-
-      <section>
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-start gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-primary"><BookOpen className="size-5" /></span>
-            <div>
-              <h2 className="text-lg font-extrabold text-foreground">{workspaceView === 'subjects' ? 'Asignaturas' : 'Asignaturas archivadas'}</h2>
-              <p className="mt-0.5 text-xs text-muted-foreground">{workspaceView === 'subjects' ? 'Selecciona una asignatura para acceder a su espacio académico.' : 'Restaura una asignatura o elimina definitivamente su historial académico.'}</p>
+      <div className="grid min-w-0 gap-6 xl:grid-cols-[minmax(0,1fr)_20rem]">
+        <div className="min-w-0 space-y-5">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div className="flex items-start gap-3">
+              <span className="grid size-9 place-items-center rounded-xl bg-primary/8 text-primary"><BookOpen className="size-5" /></span>
+              <div><h2 className="text-lg font-extrabold text-foreground">Asignaturas</h2><p className="text-xs text-muted-foreground">Selecciona una asignatura para entrar a su espacio académico.</p></div>
             </div>
-          </div>
-        </div>
-
-        {workspaceView === 'archived' ? (
-          archivedAssignments.length ? (
-            <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-              {archivedAssignments.map((assignment) => (
-                <ArchivedSubjectCard
-                  key={assignment.id}
-                  assignment={assignment}
-                  onRestore={() => void onRestoreSubject(assignment)}
-                  onDelete={() => onDeleteArchivedSubject(assignment)}
-                />
+            <div className="inline-flex items-center rounded-full border border-border bg-card p-1 shadow-sm">
+              {([['subjects', 'Activas', item.assignments.length], ['archived', 'Archivadas', archivedAssignments.length]] as const).filter(([view]) => canManage || view !== 'archived').map(([view, label, count]) => (
+                <button key={view} type="button" aria-pressed={workspaceView === view} onClick={() => setWorkspaceView(view)} className={cn('min-h-8 rounded-full px-3 text-xs font-semibold', workspaceView === view ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted')}>{label} <span className="ml-1 rounded-full bg-card/20 px-1.5">{count}</span></button>
               ))}
             </div>
-          ) : (
-            <div className="mt-5 rounded-2xl border border-dashed border-border bg-card px-6 py-14 text-center">
-              <span className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-muted text-muted-foreground"><Archive className="size-7" /></span>
-              <h3 className="mt-4 font-extrabold">No hay asignaturas archivadas</h3>
-              <p className="mt-1 text-sm text-muted-foreground">Las asignaturas que archives aparecerán aquí.</p>
-            </div>
-          )
-        ) : (
-          <div className="mt-5 grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-            {item.assignments.map((assignment) => (
-              <CourseSubjectCard
-                key={assignment.id}
-                assignment={assignment}
-                studentCount={item.section.studentCount ?? 0}
-                canManage={canManage}
-                onOpen={(tab) => { setSubjectInitialTab(tab); setSelectedAssignmentId(assignment.id); onAssignmentChange(assignment.id) }}
-                onArchive={() => onArchiveSubject(assignment)}
-                onCustomize={() => setAppearanceTarget(assignment)}
-                onDelete={() => onDeleteEmptySubject(assignment, item.section.studentCount ?? 0)}
-              />
-            ))}
-            {canManage ? (
-              <button type="button" onClick={() => onAssignSubject(item.grade, item.section.id)} className="group flex min-h-44 flex-col items-center justify-center rounded-2xl border border-dashed border-primary/25 bg-white/55 px-6 py-8 text-center transition hover:border-primary/45 hover:bg-primary/[0.03] sm:col-span-2 xl:col-span-1 2xl:col-span-2">
-                <span className="flex size-10 items-center justify-center rounded-full bg-primary/8 text-primary transition group-hover:scale-105"><Plus className="size-5" /></span>
-                <span className="mt-4 text-sm font-extrabold text-foreground">Agregar asignatura al curso</span>
-                <span className="mt-1 text-xs text-muted-foreground">Añade una nueva asignatura para comenzar a organizar el contenido.</span>
-              </button>
-            ) : null}
-            {!item.assignments.length && !canManage ? (
-              <div className="rounded-2xl border border-dashed border-border bg-card px-6 py-16 text-center text-sm text-muted-foreground sm:col-span-2 xl:col-span-3 2xl:col-span-4">Este curso todavía no tiene asignaturas.</div>
-            ) : null}
           </div>
-        )}
-      </section>
 
-      {appearanceTarget ? (
-        <SubjectAppearanceDialog
-          assignment={appearanceTarget}
-          onSave={(input) => onCustomizeSubject(appearanceTarget.id, input)}
-          onClose={() => setAppearanceTarget(null)}
-        />
-      ) : null}
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex flex-wrap gap-1.5">
+              {['Todas', 'Ciencias', 'Ciencias exactas', 'Lenguas', 'Humanidades', 'Artes', 'Salud', 'Optativa', 'Otras'].map((category) => (
+                <button key={category} type="button" aria-pressed={subjectCategory === category} onClick={() => setSubjectCategory(category)} className={cn('min-h-8 rounded-full border px-3 text-xs font-medium shadow-sm', subjectCategory === category ? 'border-foreground bg-foreground text-card' : 'border-border bg-card text-muted-foreground hover:text-foreground')}>{category}</button>
+              ))}
+            </div>
+            <label className="relative block w-full sm:w-60">
+              <span className="sr-only">Buscar asignatura</span><Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+              <input value={subjectSearch} onChange={(event) => setSubjectSearch(event.target.value)} placeholder="Buscar asignatura..." className="h-10 w-full border border-border bg-card pl-9 pr-3 text-sm shadow-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" style={{ borderRadius: '9999px' }} />
+            </label>
+          </div>
+
+          {workspaceView === 'archived' ? (
+            visibleArchivedAssignments.length ? (
+              <div className="grid gap-4 sm:grid-cols-2 2xl:grid-cols-3">
+                {visibleArchivedAssignments.map((assignment) => <ArchivedSubjectCard key={assignment.id} assignment={assignment} onRestore={() => void onRestoreSubject(assignment)} onDelete={() => onDeleteArchivedSubject(assignment)} />)}
+              </div>
+            ) : <EmptyState title={archivedAssignments.length ? 'No hay asignaturas para este filtro' : 'No hay asignaturas archivadas'} description={archivedAssignments.length ? 'Prueba con otra categoría o búsqueda.' : 'Las asignaturas que archives aparecerán aquí.'} />
+          ) : (
+            <div className="grid items-stretch gap-4 sm:grid-cols-2 2xl:grid-cols-3">
+              {visibleAssignments.map((assignment) => (
+                <CourseSubjectCard key={assignment.id} assignment={assignment} studentCount={item.section.studentCount ?? 0} canManage={canManage}
+                  onOpen={(tab) => openAssignment(assignment, tab)}
+                  onArchive={() => onArchiveSubject(assignment)}
+                  onCustomize={() => setAppearanceTarget(assignment)}
+                  onDelete={() => onDeleteEmptySubject(assignment, item.section.studentCount ?? 0)}
+                />
+              ))}
+              {canManage && subjectCategory === 'Todas' && !subjectSearch ? (
+                <button type="button" onClick={() => onAssignSubject(item.grade, item.section.id)} className="flex min-h-60 flex-col items-center justify-center rounded-3xl border-2 border-dashed border-primary/20 p-6 text-center hover:border-primary/40 hover:bg-primary/[0.03]">
+                  <span className="grid size-12 place-items-center rounded-full bg-primary text-primary-foreground"><Plus className="size-5" /></span>
+                  <strong className="mt-3 text-sm text-foreground">Agregar asignatura</strong>
+                  <span className="mt-1 max-w-48 text-xs text-muted-foreground">Añade una nueva asignatura para organizar su contenido.</span>
+                </button>
+              ) : null}
+              {!visibleAssignments.length ? <div className="rounded-3xl border border-dashed border-border bg-card p-10 text-center text-sm text-muted-foreground">No hay asignaturas para este filtro.</div> : null}
+            </div>
+          )}
+        </div>
+
+        <aside className="space-y-4">
+          <CourseStudentsSidebar courseId={item.section.id} courseName={`${item.grade.name} ${item.section.name}`} onView={() => { setStudentAction(undefined); setWorkspaceView('students') }} onAdd={() => { setStudentAction('new'); setWorkspaceView('students') }} canEnroll={canEnroll} />
+          <section className="rounded-3xl border border-border bg-card p-5 shadow-sm">
+            <h2 className="text-sm font-semibold text-foreground">Acciones rápidas</h2>
+            <div className="mt-4 space-y-1">
+              {([
+                [CalendarCheck2, 'Pasar asistencia', 'Selecciona una asignatura', 'asistencia'],
+                [ClipboardList, 'Actividades', 'Selecciona una asignatura', 'actividades'],
+                [ChartColumn, 'Reporte del curso', 'Calificaciones y asistencia', 'reportes'],
+              ] as const).map(([Icon, label, description, tab]) => (
+                <button key={label} type="button" onClick={() => navigate(tab === 'reportes' ? '/reportes' : tab === 'asistencia' ? '/asistencia' : '/actividades')} className="flex min-h-12 w-full items-center gap-3 rounded-xl px-2 text-left hover:bg-muted">
+                  <span className={cn('grid size-9 shrink-0 place-items-center rounded-full text-white', tab === 'asistencia' ? 'bg-success' : tab === 'actividades' ? 'bg-warning text-warning-foreground' : 'bg-primary')}><Icon className="size-4" /></span>
+                  <span className="min-w-0 flex-1"><strong className="block text-sm font-medium text-foreground">{label}</strong><span className="block text-[11px] text-muted-foreground">{description}</span></span><ChevronRight className="size-4 text-muted-foreground" />
+                </button>
+              ))}
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      {appearanceTarget ? <SubjectAppearanceDialog assignment={appearanceTarget} onSave={(input) => onCustomizeSubject(appearanceTarget.id, input)} onClose={() => setAppearanceTarget(null)} /> : null}
     </div>
   )
 }
 
+function CourseStudentsSidebar({ courseId, courseName, canEnroll, onView, onAdd }: { courseId: string; courseName: string; canEnroll: boolean; onView: () => void; onAdd: () => void }) {
+  const [students, setStudents] = useState<CourseStudent[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    let active = true
+    setLoading(true)
+    setError(false)
+    getStudentsByCourse(courseId).then((rows) => { if (active) setStudents(rows) }).catch(() => { if (active) { setStudents([]); setError(true) } }).finally(() => { if (active) setLoading(false) })
+    return () => { active = false }
+  }, [courseId])
+
+  return <section className="rounded-3xl border border-border bg-card p-5 shadow-sm">
+    <div className="flex items-center gap-3"><span className="grid size-10 shrink-0 place-items-center rounded-full bg-success/15 text-success"><UsersRound className="size-5" /></span><div className="min-w-0"><h2 className="text-base font-semibold text-foreground">Estudiantes</h2><p className="text-xs leading-4 text-muted-foreground">{loading || error ? '—' : students.length} comparten todas las asignaturas de {courseName}</p></div></div>
+    <div className="mt-3 space-y-1">{loading ? <p className="py-6 text-center text-xs text-muted-foreground">Cargando estudiantes...</p> : students.slice(0, 5).map((student, index) => <button key={student.id} type="button" onClick={onView} className="flex min-h-14 w-full items-center gap-3 rounded-xl px-1.5 py-1 text-left hover:bg-muted"><span className={cn('grid size-9 shrink-0 place-items-center rounded-full text-[11px] font-semibold', index % 3 === 0 ? 'bg-primary/10 text-primary' : index % 3 === 1 ? 'bg-success/15 text-success' : 'bg-warning/20 text-warning-foreground')}>{student.firstName[0]}{student.lastName[0]}</span><span className="min-w-0 flex-1"><strong className="block truncate text-sm font-medium text-foreground">{student.fullName}</strong></span><ChevronRight className="size-4 shrink-0 text-muted-foreground" /></button>)}</div>
+    {error ? <p role="alert" className="py-5 text-sm text-destructive">No se pudo cargar la lista. Abre «Ver todos» para intentarlo de nuevo.</p> : null}
+    {!loading && !error && !students.length ? <p className="py-5 text-center text-xs text-muted-foreground">Todavía no hay estudiantes.</p> : null}
+    <div className="mt-4 flex gap-2 border-t border-border pt-4">{canEnroll ? <button type="button" onClick={onAdd} className="min-h-9 flex-1 rounded-full bg-muted/70 px-3 text-xs font-medium text-foreground hover:bg-muted"><Plus className="mr-1 inline size-3.5 text-muted-foreground" />Agregar</button> : null}<button type="button" onClick={onView} className="min-h-9 flex-1 rounded-full bg-primary/10 px-3 text-xs font-medium text-primary hover:bg-primary/15">Ver todos <ArrowRight className="ml-1 inline size-3.5" /></button></div>
+  </section>
+}
 const subjectCategories = [
   { name: 'Ciencias exactas', terms: ['matematica', 'algebra', 'geometria'] },
   { name: 'Salud', terms: ['educacion fisica', 'deporte', 'salud'] },
@@ -1726,59 +1637,65 @@ function SubjectDetailView({
     { id: 'planificaciones', label: 'Planificaciones', icon: <ClipboardList className="size-4" />, muted: true, badge: 'Próximamente' },
   ]
   const subjectActions = [
-    { label: 'Nueva actividad', icon: <Plus className="size-4" />, onSelect: () => setActivityBlockPickerOpen(true) },
-    { label: 'Agregar a bitácora', icon: <BookMarked className="size-4" />, onSelect: () => {
-      const journalParams = new URLSearchParams({ action: 'create', sectionId: item.section.id })
-      if (item.assignment?.id) journalParams.set('sectionSubjectId', item.assignment.id)
-      navigate(`/bitacora?${journalParams}`)
-    } },
-    { label: 'Organizar equipos', icon: <UsersRound className="size-4" />, onSelect: () => selectSubjectTab('equipos') },
-    { label: 'Registrar asistencia', icon: <CalendarCheck2 className="size-4" />, onSelect: () => {
-      if (item.assignment) navigate(buildSubjectAttendanceHref(item.assignment.id, item.id))
-    } },
-    { label: 'Gestionar calificaciones', icon: <GraduationCap className="size-4" />, onSelect: () => selectSubjectTab('calificaciones') },
-    { label: 'Gestionar actividades', icon: <CheckSquare className="size-4" />, onSelect: () => selectSubjectTab('actividades') },
-    { label: 'Recursos', icon: <Library className="size-4" />, onSelect: () => selectSubjectTab('recursos') },
-    { label: 'Reportes', icon: <ChartColumn className="size-4" />, onSelect: () => selectSubjectTab('reportes') },
-    { label: 'Configuración', icon: <SlidersHorizontal className="size-4" />, onSelect: () => selectSubjectTab('configuracion') },
+    { title: 'Crear', items: [
+      { label: 'Nueva actividad', shortcut: 'N', icon: <Plus className="size-4" />, onSelect: () => setActivityBlockPickerOpen(true) },
+      { label: 'Agregar a bitácora', shortcut: 'B', icon: <BookMarked className="size-4" />, onSelect: () => {
+        const journalParams = new URLSearchParams({ action: 'create', sectionId: item.section.id })
+        if (item.assignment?.id) journalParams.set('sectionSubjectId', item.assignment.id)
+        navigate(`/bitacora?${journalParams}`)
+      } },
+    ] },
+    { title: 'Clase', items: [
+      { label: 'Registrar asistencia', shortcut: 'A', icon: <CalendarCheck2 className="size-4" />, onSelect: () => {
+        if (item.assignment) navigate(buildSubjectAttendanceHref(item.assignment.id, item.id))
+      } },
+      { label: 'Organizar equipos', icon: <UsersRound className="size-4" />, onSelect: () => selectSubjectTab('equipos') },
+      { label: 'Gestionar calificaciones', icon: <GraduationCap className="size-4" />, onSelect: () => selectSubjectTab('calificaciones') },
+    ] },
+    { title: 'Curso', items: [
+      { label: 'Gestionar actividades', icon: <CheckSquare className="size-4" />, onSelect: () => selectSubjectTab('actividades') },
+      { label: 'Recursos', icon: <Library className="size-4" />, onSelect: () => selectSubjectTab('recursos') },
+      { label: 'Reportes', icon: <ChartColumn className="size-4" />, onSelect: () => selectSubjectTab('reportes') },
+      { label: 'Configuración', icon: <SlidersHorizontal className="size-4" />, onSelect: () => selectSubjectTab('configuracion') },
+    ] },
   ]
 
   return (
-    <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-3">
-      <header className="w-full overflow-visible rounded-2xl bg-card shadow-sm">
-        <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
-          <div className="flex min-w-0 flex-1 items-center gap-3">
-            <button type="button" className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-xs font-extrabold text-primary transition hover:border-primary/25 hover:bg-primary/[0.04]" onClick={onBack} aria-label={backLabel} title={backLabel}><BackIcon /><span className="hidden sm:inline">Volver</span></button>
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl text-white shadow-sm [&>svg]:size-6" style={{ backgroundColor: palette.color }}>{getSubjectIcon(item.subjectName, item.assignment?.appearanceIcon)}</div>
-            <div className="min-w-0">
-              <div className="flex min-w-0 flex-nowrap items-center gap-2 overflow-hidden">
-                <h1 className="truncate text-base font-extrabold leading-tight text-foreground">{courseLabel} – {item.subjectName}</h1>
-                <span className="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-extrabold text-emerald-700">Activa</span>
-              </div>
-              <p className="mt-1.5 flex min-w-0 flex-nowrap items-center gap-x-1.5 overflow-hidden whitespace-nowrap text-[11px] font-semibold text-muted-foreground"><span>{cleanLevelName(item.levelName)}</span><span>·</span><span>{item.cycleName}</span><span>·</span><span>Sección {item.section.name}</span>{schoolYearName ? <><span>·</span><span className="truncate">Año escolar {schoolYearName}</span></> : null}</p>
-            </div>
-          </div>
-
-          <details className="group relative shrink-0">
-            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary-hover [&::-webkit-details-marker]:hidden">
-              Acciones <ChevronDown className="size-4 transition group-open:rotate-180" />
-            </summary>
-            <div className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-border bg-card p-2 shadow-xl">
-              {subjectActions.map((action) => (
-                <button key={action.label} type="button" className="flex h-10 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-semibold text-foreground transition hover:bg-muted" onClick={(event) => { action.onSelect(); event.currentTarget.closest('details')?.removeAttribute('open') }}>
-                  <span className="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">{action.icon}</span>
-                  {action.label}
-                </button>
-              ))}
+    <div className="course-workspace-shell subject-workspace w-full min-w-0 max-w-full space-y-3">
+      <header className="subject-workspace-header flex flex-wrap items-center gap-4 rounded-3xl border border-border bg-card px-5 py-5 shadow-sm lg:min-h-[124px] lg:flex-nowrap lg:px-6">
+        <button type="button" className="grid size-11 shrink-0 place-items-center rounded-full border border-border text-primary shadow-sm hover:bg-primary/5" onClick={onBack} aria-label={backLabel} title={backLabel}><BackIcon /></button>
+        <span className="hidden h-12 w-px bg-border sm:block" />
+        <span className="grid size-14 shrink-0 place-items-center rounded-2xl text-white shadow-sm [&>svg]:size-7" style={{ backgroundColor: palette.color }}>{getSubjectIcon(item.subjectName, item.assignment?.appearanceIcon)}</span>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-2"><span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold text-primary">{courseLabel}</span><span className="rounded-full bg-success/10 px-2.5 py-0.5 text-[11px] font-semibold text-success">● Activa</span></div>
+          <h1 aria-label={`${courseLabel} – ${item.subjectName}`} className="mt-1 line-clamp-2 text-lg font-semibold tracking-tight text-foreground">{item.subjectName}</h1>
+          <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-muted-foreground"><span>{cleanLevelName(item.levelName)} · {item.cycleName} · Sección {item.section.name}</span>{schoolYearName ? <span className="inline-flex items-center gap-1"><CalendarDays className="size-3.5" />{schoolYearName}</span> : null}<span className="inline-flex items-center gap-1"><UsersRound className="size-3.5" />{students.length || item.section.studentCount || 0} estudiantes</span><span className="inline-flex items-center gap-1"><UsersRound className="size-3.5" />{item.assignment?.teamCount ?? 0} equipos</span></p>
+        </div>
+        <div className="ml-auto flex shrink-0 items-center gap-2">
+          <button type="button" aria-label="Abrir asistencia de la asignatura" onClick={() => selectSubjectTab('asistencia')} className="inline-flex h-10 items-center gap-2 rounded-full border border-border bg-card px-4 text-xs font-semibold text-foreground shadow-sm hover:bg-muted"><CalendarCheck2 className="size-4 text-success" /> Asistencia</button>
+          <details className="group relative" onKeyDown={(event) => {
+            if (!event.currentTarget.open || !['n', 'b', 'a'].includes(event.key.toLowerCase())) return
+            const action = subjectActions.flatMap((section) => section.items).find((item) => 'shortcut' in item && item.shortcut?.toLowerCase() === event.key.toLowerCase())
+            if (!action) return
+            event.preventDefault()
+            action.onSelect()
+            event.currentTarget.removeAttribute('open')
+          }}>
+            <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-full bg-primary px-4 text-xs font-semibold text-primary-foreground shadow-sm transition hover:bg-primary-hover [&::-webkit-details-marker]:hidden">Acciones <ChevronDown className="size-4 transition group-open:rotate-180" /></summary>
+            <div className="absolute right-0 top-12 z-50 w-64 overflow-hidden rounded-3xl border border-border bg-card p-1 shadow-xl">
+              {subjectActions.map((section) => <section key={section.title} className="border-b border-border px-1 py-2 last:border-b-0">
+                <p className="px-3 pb-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">{section.title}</p>
+                {section.items.map((action) => <button key={action.label} type="button" aria-label={action.label} className="flex h-12 w-full items-center gap-3 rounded-xl px-2 text-left text-sm font-medium text-foreground hover:bg-muted" onClick={(event) => { action.onSelect(); event.currentTarget.closest('details')?.removeAttribute('open') }}><span className="grid size-8 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">{action.icon}</span><span className="min-w-0 flex-1 whitespace-nowrap">{action.label}</span>{'shortcut' in action ? <span className="text-xs text-muted-foreground">{action.shortcut}</span> : null}</button>)}
+              </section>)}
             </div>
           </details>
         </div>
-
       </header>
 
-        <nav className="grid w-full grid-cols-2 gap-1 rounded-2xl bg-card p-1.5 shadow-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6" aria-label="Secciones de la asignatura">
-          {subjectTabs.map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} muted={'muted' in tab && tab.muted} badge={'badge' in tab ? tab.badge : undefined} onClick={() => selectSubjectTab(tab.id)} />)}
-        </nav>
+      <nav className="subject-workspace-tabs flex min-w-0 flex-wrap items-center gap-1 rounded-3xl border border-border bg-card px-3 py-1.5 shadow-sm" aria-label="Secciones de la asignatura">
+        {subjectTabs.slice(0, 7).map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} count={tab.id === 'estudiantes' ? students.length || item.section.studentCount || 0 : tab.id === 'equipos' ? item.assignment?.teamCount ?? 0 : tab.id === 'actividades' ? activityCount : undefined} onClick={() => selectSubjectTab(tab.id)} />)}
+        <details className="group relative ml-auto shrink-0"><summary className="flex h-10 cursor-pointer list-none items-center gap-2 px-4 text-sm font-medium text-muted-foreground [&::-webkit-details-marker]:hidden">··· Más <ChevronDown className="size-3.5" /></summary><div className="absolute right-0 top-11 z-40 w-52 rounded-2xl border border-border bg-card p-2 shadow-xl">{subjectTabs.slice(7).map((tab) => <button key={tab.id} type="button" onClick={(event) => { selectSubjectTab(tab.id); event.currentTarget.closest('details')?.removeAttribute('open') }} aria-current={activeTab === tab.id ? 'page' : undefined} className="flex min-h-11 w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-xs text-foreground hover:bg-muted">{tab.icon}{tab.label}{'badge' in tab ? <span className="ml-auto text-[9px] text-muted-foreground">{tab.badge}</span> : null}</button>)}</div></details>
+      </nav>
 
       {activeTab === 'resumen' ? (
         <SubjectOverviewDashboard
@@ -1960,72 +1877,49 @@ function SubjectOverviewDashboard({ students, teams, activities, activityCount, 
   const recentActivity = [...datedActivities].sort((a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime())[0] ?? activities[0]
   const evaluatedActivityIds = new Set(gradeRecords.map((record) => record.evaluationActivityId).filter(Boolean))
   const pendingActivities = Math.max(activityCount - evaluatedActivityIds.size, 0)
-  const latestPlanning = [...plannings].sort((a, b) => new Date(b.plannedDate ?? 0).getTime() - new Date(a.plannedDate ?? 0).getTime())[0]
-
-  return (
-    <div className="space-y-4">
-      <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
-        <DashboardPanel title="Próximas actividades" action="Ver todas" onAction={() => onNavigate('actividades')}>
-          <div className="space-y-2 p-3">
-            {upcomingActivities.length ? upcomingActivities.map((activity) => <ActivityPreview key={activity.id} activity={activity} />) : <CompactEmpty icon={<CalendarClock className="size-5" />} text="No hay actividades próximas." />}
-            <button type="button" onClick={() => onNavigate('actividades')} className="flex w-full items-center justify-center gap-2 border-t border-slate-100 pt-3 text-xs font-extrabold text-primary"><CalendarDays className="size-3.5" /> Ver calendario completo</button>
-          </div>
-        </DashboardPanel>
-
-        <div className="space-y-4">
-          <DashboardPanel title="Última actividad" action="Ver todas" onAction={() => onNavigate('actividades')}>
-            <div className="p-3">{recentActivity ? <div className="flex items-center gap-3 rounded-xl bg-slate-50 p-3"><span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><Leaf className="size-5" /></span><div className="min-w-0 flex-1"><p className="truncate text-xs font-extrabold">{recentActivity.name}</p><p className="mt-1 text-[10px] text-muted-foreground">{recentActivity.date ? `Programada para ${formatShortDate(recentActivity.date)}` : 'Actividad registrada'}</p><p className="mt-1 text-[10px] text-muted-foreground">{students} estudiantes matriculados</p></div>{averageScore !== null ? <strong className="rounded-lg bg-emerald-50 px-2 py-1 text-sm text-emerald-700">{averageScore}%</strong> : null}</div> : <CompactEmpty icon={<CheckSquare className="size-5" />} text="Todavía no hay actividades." />}</div>
-          </DashboardPanel>
-          <DashboardPanel title="Última asistencia" action="Ver historial" onAction={() => onNavigate('asistencia')}>
-            <div className="p-3"><div className="flex items-center gap-3 rounded-xl bg-slate-50 p-3"><span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><CalendarCheck2 className="size-5" /></span><div className="min-w-0 flex-1"><p className="text-xs font-bold">{lastAttendanceDate ? `Registrada el ${formatShortDate(lastAttendanceDate)}` : 'Sin asistencia registrada'}</p><p className="mt-1 text-[10px] text-muted-foreground">Asistencia promedio</p></div>{attendancePercent !== null ? <strong className="rounded-lg bg-emerald-50 px-2 py-1 text-sm text-emerald-700">{attendancePercent}%</strong> : null}</div></div>
-          </DashboardPanel>
-          {latestPlanning ? <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-4 shadow-sm"><div className="flex gap-3"><span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-emerald-200 bg-white text-emerald-700"><FileText className="size-5" /></span><div className="min-w-0"><p className="text-[11px] font-extrabold text-emerald-700">Continuar donde quedaste</p><p className="mt-1 truncate text-xs font-bold">{latestPlanning.title}</p><p className="mt-1 text-[10px] text-muted-foreground">Última planificación editada</p></div></div><button type="button" onClick={() => onNavigate('planificaciones')} className="mt-3 flex h-9 w-full items-center justify-center gap-2 rounded-lg bg-emerald-100/70 text-[11px] font-extrabold text-emerald-800">Continuar edición <ArrowLeft className="size-3.5 rotate-180" /></button></div> : null}
-        </div>
-      </div>
-
-      <DashboardPanel title="Resumen académico">
-        <div className="grid gap-2 p-3 sm:grid-cols-2 xl:grid-cols-5">
-          <AcademicSummaryCard icon={<ClipboardList className="size-4" />} value={activityCount} label="Actividades creadas" detail={`${evaluatedActivityIds.size} evaluadas · ${pendingActivities} pendientes`} tone="violet" onClick={() => onNavigate('actividades')} />
-          <AcademicSummaryCard icon={<FileText className="size-4" />} value={plannings.length} label="Planificaciones creadas" detail={`${plannings.filter((entry) => entry.plannedDate).length} programadas`} tone="orange" onClick={() => onNavigate('planificaciones')} />
-          <AcademicSummaryCard icon={<UsersRound className="size-4" />} value={teams} label="Equipos creados" detail={`${students} estudiantes`} tone="blue" onClick={() => onNavigate('equipos')} />
-          <AcademicSummaryCard icon={<CalendarCheck2 className="size-4" />} value={attendancePercent === null ? '—' : `${attendancePercent}%`} label="Asistencia promedio" detail="Período actual" tone="emerald" onClick={() => onNavigate('asistencia')} />
-          <AcademicSummaryCard icon={<ChartColumn className="size-4" />} value={averageScore === null ? '—' : `${averageScore}%`} label="Promedio general" detail={`${gradeRecords.length} registros`} tone="orange" onClick={() => onNavigate('calificaciones')} />
-        </div>
-      </DashboardPanel>
-
-      <div className="grid gap-4 xl:grid-cols-[1.2fr_1fr]">
-        <DashboardPanel title="Avisos importantes">
-          <div className="space-y-2 p-3">
-            {!activities.some((activity) => activity.instrumentId) ? <NoticeRow tone="amber" title="No hay instrumentos de evaluación creados" detail="Crea instrumentos para evaluar las actividades." action="Crear instrumento" onAction={() => onNavigate('calificaciones')} /> : null}
-            {pendingActivities > 0 ? <NoticeRow tone="blue" title="Revisa las actividades pendientes de evaluar" detail={`Tienes ${pendingActivities} actividades pendientes de evaluación.`} action="Ver actividades" onAction={() => onNavigate('actividades')} /> : <NoticeRow tone="blue" title="Todo está al día" detail="No tienes actividades pendientes de evaluación." />}
-          </div>
-        </DashboardPanel>
-        <DashboardPanel title="Reportes rápidos">
-          <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4">
-            {['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report, index) => <Link key={report} to="/reportes" className="rounded-xl border border-slate-200 bg-white p-3 text-center transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_12px_24px_-14px_rgba(74,162,227,0.45)]"><span className={cn('mx-auto flex size-8 items-center justify-center rounded-lg', index % 2 ? 'bg-emerald-50 text-emerald-600' : 'bg-violet-50 text-violet-600')}><FileText className="size-4" /></span><span className="mt-2 block text-[11px] font-extrabold leading-4">Reporte de {report.toLowerCase()}</span><span className="mt-2 block text-[10px] font-bold text-primary">Generar PDF</span></Link>)}
-          </div>
-        </DashboardPanel>
-      </div>
+  return <div className="subject-summary space-y-5">
+    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+      <AcademicSummaryCard icon={<ClipboardList className="size-4" />} value={activityCount} label="Actividades" detail={`${evaluatedActivityIds.size} evaluadas · ${pendingActivities} pendientes`} tone="blue" onClick={() => onNavigate('actividades')} />
+      <AcademicSummaryCard icon={<FileText className="size-4" />} value={plannings.length} label="Planificaciones" detail={`${plannings.filter((entry) => entry.plannedDate).length} programadas`} tone="orange" onClick={() => onNavigate('planificaciones')} />
+      <AcademicSummaryCard icon={<UsersRound className="size-4" />} value={teams} label="Equipos" detail={`${students} estudiantes`} tone="violet" onClick={() => onNavigate('equipos')} />
+      <AcademicSummaryCard icon={<CalendarCheck2 className="size-4" />} value={attendancePercent === null ? '—' : `${attendancePercent}%`} label="Asistencia" detail="Período actual" tone="emerald" onClick={() => onNavigate('asistencia')} />
+      <AcademicSummaryCard icon={<ChartColumn className="size-4" />} value={averageScore === null ? '—' : `${averageScore}%`} label="Promedio general" detail={`${gradeRecords.length} registros`} tone="orange" onClick={() => onNavigate('calificaciones')} />
     </div>
-  )
+    <div className="grid gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(18rem,1fr)]">
+      <DashboardPanel title="Próximas actividades" subtitle={upcomingActivities.length ? `${upcomingActivities.length} por entregar próximamente` : 'Sin entregas próximas'} action="Ver todas →" onAction={() => onNavigate('actividades')}>
+        <div className="px-5 py-3">{upcomingActivities.length ? upcomingActivities.map((activity) => <ActivityPreview key={activity.id} activity={activity} />) : <CompactEmpty icon={<CalendarClock className="size-5" />} text="No hay actividades próximas." />}</div>
+        <button type="button" onClick={() => onNavigate('actividades')} className="flex w-full items-center justify-center gap-2 border-t border-border py-3 text-xs font-semibold text-primary"><CalendarDays className="size-4" /> Ver calendario completo</button>
+      </DashboardPanel>
+      <DashboardPanel title="Requiere tu atención" badge={!activities.some((activity) => activity.instrumentId) || !plannings.length ? Number(!activities.some((activity) => activity.instrumentId)) + Number(!plannings.length) : undefined}>
+        <div className="space-y-3 px-5 pb-5">{!activities.some((activity) => activity.instrumentId) ? <NoticeRow tone="amber" title="Faltan instrumentos de evaluación" detail="Crea una rúbrica o lista de cotejo para calificar las actividades." action="Crear instrumento" onAction={() => onNavigate('calificaciones')} /> : null}{!plannings.length ? <NoticeRow tone="blue" title="Sin planificación programada" detail="Programa tus unidades para organizar el período." action="Planificar" onAction={() => onNavigate('planificaciones')} /> : null}{activities.some((activity) => activity.instrumentId) && plannings.length ? <NoticeRow tone="blue" title="Todo está al día" detail="No hay avisos pendientes." /> : null}</div>
+      </DashboardPanel>
+      <DashboardPanel title="Actividad reciente" subtitle="Lo último que pasó en esta asignatura" action="Ver historial →" onAction={() => onNavigate('actividades')}>
+        <div className="px-5 pb-5">{recentActivity ? <div className="flex items-center gap-3 rounded-xl bg-muted/45 p-4"><span className="grid size-10 place-items-center rounded-full bg-primary/10 text-primary"><CheckSquare className="size-5" /></span><div className="min-w-0"><p className="truncate text-sm font-semibold">{recentActivity.name}</p><p className="text-xs text-muted-foreground">{recentActivity.date ? `Programada para ${formatShortDate(recentActivity.date)}` : 'Actividad registrada'}</p></div></div> : lastAttendanceDate ? <div className="flex items-center gap-3 rounded-xl bg-muted/45 p-4"><span className="grid size-10 place-items-center rounded-full bg-success/10 text-success"><CalendarCheck2 className="size-5" /></span><div><p className="text-sm font-semibold">Asistencia registrada</p><p className="text-xs text-muted-foreground">{formatShortDate(lastAttendanceDate)}</p></div></div> : <CompactEmpty icon={<CheckSquare className="size-5" />} text="Todavía no hay actividad reciente." />}</div>
+      </DashboardPanel>
+      <DashboardPanel title="Última asistencia" subtitle={lastAttendanceDate ? `Registrada el ${formatShortDate(lastAttendanceDate)}` : 'Sin asistencia registrada'} action="Historial →" onAction={() => onNavigate('asistencia')}>
+        <div className="flex items-center gap-5 px-5 pb-5"><span className={cn('grid size-20 shrink-0 place-items-center rounded-full border-[6px] text-lg font-semibold text-foreground', attendancePercent === null ? 'border-muted' : 'border-success')}>{attendancePercent === null ? '—' : `${attendancePercent}%`}</span><div><p className="text-sm font-semibold text-foreground">{students} estudiantes</p><p className="text-xs text-muted-foreground">en la asignatura</p></div></div>
+      </DashboardPanel>
+      <div className="xl:col-start-2"><DashboardPanel title="Reportes rápidos" subtitle="Descarga los datos de la asignatura"><div className="grid gap-2 px-5 pb-5">{['Calificaciones', 'Asistencia', 'Actividades', 'Resumen académico'].map((report) => <Link key={report} to="/reportes" className="flex items-center justify-between rounded-xl bg-muted/45 px-3 py-2 text-xs font-medium hover:bg-primary/5">Reporte de {report.toLowerCase()} <span className="text-primary">PDF</span></Link>)}</div></DashboardPanel></div>
+    </div>
+  </div>
 }
 
-function DashboardPanel({ title, action, onAction, children }: { title: string; action?: string; onAction?: () => void; children: ReactNode }) {
-  return <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_10px_28px_-25px_rgba(15,45,90,0.8)]"><header className="flex min-h-12 items-center justify-between border-b border-slate-100 px-4 py-2"><h2 className="text-sm font-extrabold text-foreground">{title}</h2>{action ? <button type="button" onClick={onAction} className="text-[11px] font-extrabold text-primary hover:underline">{action}</button> : null}</header>{children}</section>
+function DashboardPanel({ title, subtitle, badge, action, onAction, children }: { title: string; subtitle?: string; badge?: number; action?: string; onAction?: () => void; children: ReactNode }) {
+  return <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm"><header className="flex min-h-16 items-start justify-between gap-3 px-5 pb-3 pt-5"><div><h2 className="text-base font-semibold text-foreground">{title}</h2>{subtitle ? <p className="mt-0.5 text-xs text-muted-foreground">{subtitle}</p> : null}</div>{action ? <button type="button" onClick={onAction} className="shrink-0 text-xs font-semibold text-primary hover:underline">{action}</button> : badge ? <span className="rounded-full bg-warning/20 px-2 text-xs font-semibold text-foreground">{badge}</span> : null}</header>{children}</section>
 }
 
 function ActivityPreview({ activity }: { activity: { name: string; date?: string; activityType?: 'individual' | 'group' } }) {
   const date = activity.date ? new Date(activity.date) : null
-  return <div className="flex items-center gap-3 rounded-xl border border-slate-100 p-2.5"><span className="flex size-10 shrink-0 flex-col items-center justify-center rounded-lg border border-emerald-200 text-emerald-700"><strong className="text-sm leading-none">{date ? date.getDate() : '—'}</strong><span className="mt-0.5 text-[9px] font-extrabold uppercase">{date ? date.toLocaleDateString('es-DO', { month: 'short' }).replace('.', '') : 'S/F'}</span></span><span className="min-w-0 flex-1"><span className="block truncate text-[11px] font-extrabold">{activity.name}</span><span className="mt-1 block text-[10px] text-muted-foreground">{activity.activityType === 'group' ? 'Trabajo en equipos' : 'Actividad individual'}</span></span><span className="rounded-full bg-amber-50 px-2 py-1 text-[10px] font-bold text-amber-700">Pendiente</span></div>
+  return <div className="flex min-h-20 items-center gap-3 border-b border-border py-3 last:border-b-0"><span className="flex size-11 shrink-0 flex-col items-center justify-center rounded-full bg-muted text-foreground"><strong className="text-sm leading-none">{date ? date.getDate() : '—'}</strong><span className="mt-0.5 text-[9px] font-semibold uppercase">{date ? date.toLocaleDateString('es-DO', { month: 'short' }).replace('.', '') : 'S/F'}</span></span><span className="min-w-0 flex-1"><span className="block truncate text-sm font-semibold">{activity.name}</span><span className="mt-1 block text-xs text-muted-foreground">{activity.activityType === 'group' ? 'Proyecto en equipo' : 'Actividad individual'} · {activity.date ? formatShortDate(activity.date) : 'Sin fecha'}</span></span><span className="text-[11px] text-muted-foreground">{date ? 'Próxima' : 'Pendiente'}</span></div>
 }
 
 function AcademicSummaryCard({ icon, value, label, detail, tone, onClick }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'violet' | 'orange' | 'blue' | 'emerald'; onClick: () => void }) {
-  const tones = { violet: 'bg-violet-50 text-violet-600', orange: 'bg-orange-50 text-orange-600', blue: 'bg-blue-50 text-blue-600', emerald: 'bg-emerald-50 text-emerald-600' }
-  return <button type="button" onClick={onClick} aria-label={`Ir a ${label}`} className="w-full rounded-xl border border-slate-200 bg-white p-3 text-left transition-[border-color,box-shadow] hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><span className="flex items-center gap-2.5"><span className={cn('flex size-9 items-center justify-center rounded-lg', tones[tone])}>{icon}</span><span><strong className="block text-xl leading-none">{value}</strong><span className="mt-1 block text-xs font-bold leading-tight text-slate-700">{label}</span></span></span><span className="mt-3 block border-t border-slate-100 pt-2.5 text-xs leading-4 text-muted-foreground">{detail}</span></button>
+  const tones = { violet: 'bg-primary/10 text-primary', orange: 'bg-warning/20 text-foreground', blue: 'bg-primary/10 text-primary', emerald: 'bg-success/12 text-success' }
+  return <button type="button" onClick={onClick} aria-label={`Ir a ${label}`} className="flex min-h-32 w-full flex-col rounded-3xl border border-border bg-card p-4 text-left shadow-sm transition hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><span className="flex w-full items-start justify-between"><span className={cn('grid size-9 place-items-center rounded-full', tones[tone])}>{icon}</span><strong className="text-2xl font-semibold leading-none text-foreground">{value}</strong></span><span className="mt-auto block text-sm font-semibold text-foreground">{label}</span><span className="block text-[11px] text-muted-foreground">{detail}</span><span className="mt-3 h-1 w-full rounded-full bg-muted"><span className={cn('block h-full rounded-full', tone === 'emerald' ? 'bg-success' : 'bg-primary')} style={{ width: typeof value === 'string' && value.endsWith('%') ? value : '0%' }} /></span></button>
 }
 
 function NoticeRow({ tone, title, detail, action, onAction }: { tone: 'amber' | 'blue'; title: string; detail: string; action?: string; onAction?: () => void }) {
-  return <div className={cn('flex items-center gap-3 rounded-xl border px-3 py-2.5', tone === 'amber' ? 'border-amber-200 bg-amber-50/60' : 'border-blue-200 bg-blue-50/60')}><AlertCircle className={cn('size-4 shrink-0', tone === 'amber' ? 'text-amber-600' : 'text-blue-600')} /><div className="min-w-0 flex-1"><p className="text-[11px] font-extrabold">{title}</p><p className="mt-1 text-[10px] text-muted-foreground">{detail}</p></div>{action ? <button type="button" onClick={onAction} className="shrink-0 rounded-lg border border-current/15 bg-white px-3 py-1.5 text-[10px] font-extrabold text-primary">{action}</button> : null}</div>
+  return <div className={cn('flex gap-3 rounded-2xl border px-4 py-3', tone === 'amber' ? 'border-warning/30 bg-warning/10' : 'border-primary/20 bg-primary/5')}><AlertCircle className={cn('mt-0.5 size-4 shrink-0', tone === 'amber' ? 'text-warning' : 'text-primary')} /><div className="min-w-0 flex-1"><p className="text-sm font-semibold">{title}</p><p className="mt-0.5 text-xs leading-5 text-muted-foreground">{detail}</p>{action ? <button type="button" onClick={onAction} className="mt-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold text-primary shadow-sm">{action}</button> : null}</div></div>
 }
 
 function CompactEmpty({ icon, text }: { icon: ReactNode; text: string }) {
@@ -2056,20 +1950,22 @@ const defaultAdvancedFilters: CourseAdvancedFilters = {
   sortBy: 'current',
 }
 
-function DetailTab({ active, icon, label, muted, badge, onClick }: { active?: boolean; icon: ReactNode; label: string; muted?: boolean; badge?: string; onClick?: () => void }) {
+function DetailTab({ active, icon, label, muted, badge, count, onClick }: { active?: boolean; icon: ReactNode; label: string; muted?: boolean; badge?: string; count?: number; onClick?: () => void }) {
   return (
     <button
       type="button"
       className={cn(
-        'relative flex h-10 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-2 text-sm font-bold text-muted-foreground transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:bg-primary/5 hover:text-primary',
-        active && 'bg-primary/[0.055] text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-t-full after:bg-primary',
+        'relative flex h-10 min-w-0 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-3 text-sm font-medium text-muted-foreground transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:bg-primary/5 hover:text-primary',
+        active && 'bg-primary/10 text-primary',
         muted && !active && 'bg-muted/40 text-muted-foreground/70 hover:bg-muted/60 hover:text-muted-foreground',
       )}
+      aria-label={label}
       aria-current={active ? 'page' : undefined}
       onClick={onClick}
     >
       {icon}
       {label}
+      {count !== undefined ? <span className="grid min-w-5 place-items-center rounded-full bg-muted px-1 text-[10px] font-semibold text-muted-foreground">{count}</span> : null}
       {badge ? <span className="hidden rounded-full bg-slate-100 px-1.5 py-0.5 text-[8px] font-black uppercase tracking-wide text-slate-500 2xl:inline">{badge}</span> : null}
     </button>
   )
@@ -2714,14 +2610,14 @@ const CourseCard = memo(function CourseCard({
       document.removeEventListener('keydown', closeOnEscape)
     }
   }, [menuOpen])
-  const gradeNumber = item.grade.name.replace('.º', '')
+  const gradeNumber = item.grade.name.replace('.º', '').replace('º', '')
 
   return (
     <article
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-shadow duration-200 hover:shadow-md"
+      className="course-list-card group relative flex min-w-0 flex-col rounded-3xl border bg-card p-5"
     >
       <div
-        className="flex flex-1 cursor-pointer flex-col p-4"
+        className="flex flex-1 cursor-pointer flex-col"
         role="button"
         tabIndex={0}
         onClick={() => onOpen(item.id)}
@@ -2735,7 +2631,7 @@ const CourseCard = memo(function CourseCard({
         <div className="flex items-start justify-between gap-3">
           <div className="flex min-w-0 items-center gap-3">
             <span
-              className="flex size-11 shrink-0 items-center justify-center rounded-xl text-sm font-black text-primary-foreground"
+              className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-extrabold text-primary-foreground shadow-sm"
               style={{ backgroundColor: levelStyle.color }}
             >
               {gradeNumber}
@@ -2745,39 +2641,36 @@ const CourseCard = memo(function CourseCard({
               <h3 className="truncate text-base font-black tracking-tight text-foreground">
                 {item.grade.name} {item.section.name}
               </h3>
-              <p className="mt-0.5 truncate text-xs font-medium text-muted-foreground">
+              <p className="mt-0.5 truncate text-xs text-muted-foreground">
                 {item.cycleName} · {cleanLevelName(item.levelName)}
               </p>
             </div>
           </div>
 
           <div className="shrink-0">
-            <span className={cn('inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide', item.archived ? 'bg-muted text-muted-foreground' : 'bg-emerald-50 text-emerald-700')}>
-              <span className={cn('size-1.5 rounded-full', item.archived ? 'bg-slate-400' : 'bg-emerald-500')} aria-hidden="true" /> {item.archived ? 'Archivado' : 'Activo'}
-            </span>
+            <StatusBadge tone={item.archived ? 'neutral' : 'success'} className="h-6 uppercase">{item.archived ? 'Archivado' : 'Activo'}</StatusBadge>
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-3 divide-x divide-border rounded-xl bg-muted/40 py-2.5 text-center">
-          <span><strong className="block text-sm font-black text-foreground tabular-nums">{item.section.studentCount ?? 0}</strong><span className="text-[10px] text-muted-foreground">estudiantes</span></span>
-          <span><strong className="block text-sm font-black text-foreground tabular-nums">{item.assignments.length}</strong><span className="text-[10px] text-muted-foreground">asignaturas</span></span>
-          <span><strong className="block text-sm font-black text-foreground tabular-nums">{teamCount}</strong><span className="text-[10px] text-muted-foreground">equipos</span></span>
+        <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+          {([[UsersRound, item.section.studentCount ?? 0, 'estudiantes'], [BookOpen, item.assignments.length, 'asignaturas'], [UsersRound, teamCount, 'equipos']] as const).map(([Icon, value, label]) => (
+            <span key={label} className="flex min-w-0 flex-col items-center rounded-3xl bg-muted/70 px-1 py-2.5"><Icon className="size-3.5 text-muted-foreground" /><strong className="mt-0.5 text-sm font-extrabold leading-4 tabular-nums text-foreground">{value}</strong><span className="text-[10px] text-muted-foreground">{label}</span></span>
+          ))}
         </div>
+        <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground"><span>Asistencia promedio</span><span aria-label="Asistencia sin datos">—</span></div>
+        <ProgressIndicator value={0} tone="neutral" className="mt-1.5 h-1.5" />
       </div>
 
-      <div className="flex items-center justify-between gap-2 border-t border-border px-3 py-2">
-        <div className="flex min-w-0 items-center gap-1">
-          {canManage ? (
-            <FooterAction label="Sección" tooltip="Agregar nueva sección" onClick={() => onAddSection(item.grade)}><Plus className="h-3.5 w-3.5" /></FooterAction>
-          ) : null}
-        </div>
+      <div className="mt-5 flex items-center gap-2">
+        <button type="button" onClick={() => onOpen(item.id)} className="flex min-h-10 flex-1 items-center justify-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-semibold text-primary transition hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">Entrar al curso <ChevronRight className="size-4" /></button>
         {canManage ? (
           <div className="relative" ref={menuRef}>
-            <button type="button" title="Más acciones" className="inline-flex size-8 items-center justify-center rounded-lg text-muted-foreground transition hover:bg-muted hover:text-foreground" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
+            <button type="button" title="Más acciones" className="inline-flex size-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition hover:bg-primary/10 hover:text-primary" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
               <MoreHorizontal className="size-4" />
             </button>
             {menuOpen ? (
               <div role="menu" className="absolute bottom-10 right-0 z-20 w-52 origin-bottom-right overflow-hidden rounded-xl border border-border bg-card p-1.5 shadow-xl motion-safe:animate-[fadeIn_140ms_ease-out]">
+                <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onAddSection(item.grade) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><Plus className="size-4" /> Nueva sección</button>
                 <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onEditSection(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><CheckSquare className="size-4" /> Editar sección</button>
                 <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onAssignSubject(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><BookOpen className="size-4" /> Asignar asignatura</button>
                 <div className="my-1 border-t border-border" />
@@ -2790,34 +2683,6 @@ const CourseCard = memo(function CourseCard({
     </article>
   )
 })
-
-function FooterAction({
-  label,
-  tooltip,
-  onClick,
-  children,
-}: {
-  label: string
-  tooltip: string
-  onClick: () => void
-  children: ReactNode
-}) {
-  return (
-    <button
-      type="button"
-      className="inline-flex h-8 items-center justify-center gap-1.5 rounded-lg px-2 text-[11px] font-bold text-muted-foreground transition-colors duration-150 hover:bg-secondary hover:text-primary"
-      aria-label={label}
-      title={tooltip}
-      onClick={(event) => {
-        event.stopPropagation()
-        onClick()
-      }}
-    >
-      {children}
-      <span>{label}</span>
-    </button>
-  )
-}
 
 function buildCourseCards(grades: GradeWithSections[]): CourseCardItem[] {
   return grades.flatMap((grade) =>
@@ -2866,7 +2731,7 @@ function formatRelativeAttendance(value: string | null) {
 }
 
 function getCourseCompactLabel(gradeName: string, sectionName: string) {
-  return `${gradeName} ${sectionName}`.trim()
+  return `${gradeName.match(/\d+/)?.[0] ?? gradeName}${sectionName}`.trim()
 }
 
 function getSubjectIcon(subjectName: string, appearanceIcon?: string | null) {
