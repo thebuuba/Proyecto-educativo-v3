@@ -1,0 +1,6 @@
+main[data-module='cursos'] .subject-workspace-header,
+main[data-module='cursos'] .subject-workspace-tabs,
+main[data-module='cursos'] .subject-summary > div > section {
+  border-color: var(--border);
+  box-shadow: 0 2px 3px -1px color-mix(in srgb, var(--foreground) 11%, transparent);
+}

@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, CalendarDays, Check, ChevronDown, ChevronLeft, Clock3, GraduationCap, LogOut, Pencil, School, Sparkles, UserRound, UsersRound } from 'lucide-react'
+import { ArrowRight, Building2, CalendarDays, Check, ClipboardCheck, ChevronDown, ChevronLeft, Clock3, GraduationCap, Layers, LogOut, Pencil, School, Sparkles, UserRound, UsersRound } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 
@@ -214,11 +214,11 @@ export function OnboardingPage() {
       <header className="setup-header">
         <div className="setup-header-inner">
           <div className="setup-brand"><span><GraduationCap size={21} /></span><div><strong>Aula Base</strong><small>Configuración inicial</small></div></div>
-          <OnboardingStepper step={step} />
           <button type="button" className="setup-exit" disabled={submitting} onClick={() => { setSubmitting(true); void logout().then(() => navigate('/login', { replace: true })).catch(() => { setSubmitError('No se pudo cerrar la sesión. Intenta nuevamente.'); setSubmitting(false) }) }}><LogOut size={14} />Salir</button>
         </div>
       </header>
       <div className="setup-content">
+        <OnboardingStepper step={step} />
         <section>
           <div>
             {step === 0 ? <CenterStep draft={draft} errors={errors} editingName={editingName} setEditingName={setEditingName} showHistorical={showHistorical} setShowHistorical={setShowHistorical} update={update} changeSchoolQuery={changeSchoolQuery} selectSchool={selectSchool} /> : null}
@@ -315,9 +315,10 @@ function ConfirmationStep({ draft, school }: { draft: OnboardingDraft; school: S
 function OnboardingStepper({ step }: { step: number }) {
   const labels = ['Centro', 'Contexto', 'Confirmación']
   const descriptions = ['Centro y año escolar', 'Niveles, tandas y oferta', 'Revisa y entra']
+  const icons = [Building2, Layers, ClipboardCheck]
   return <div className="setup-stepper" aria-label={`Paso ${step + 1} de ${totalSteps}`}>
     <ol aria-label="Progreso de la configuración">
-      {labels.map((label, index) => <li key={label} aria-current={index === step ? 'step' : undefined} className={index < step ? 'is-complete' : index === step ? 'is-current' : ''}><span className="setup-step-number">{index < step ? <Check size={15} /> : index + 1}</span><div><strong>{label}</strong><small>{descriptions[index]}</small></div></li>)}
+      {labels.map((label, index) => { const Icon = icons[index]; return <li key={label} aria-current={index === step ? 'step' : undefined} className={index < step ? 'is-complete' : index === step ? 'is-current' : ''}><div className="setup-step-item"><span className="setup-step-number">{index < step ? <Check size={18} /> : <Icon size={18} />}</span><div><span className="setup-step-label">PASO {index + 1}</span><strong>{label}</strong><small>{descriptions[index]}</small></div></div></li> })}
     </ol>
   </div>
 }

@@ -263,24 +263,28 @@
 .setup-shell::before, .setup-shell::after { position: absolute; z-index: -1; content: ''; width: 420px; height: 420px; border-radius: 50%; background: color-mix(in srgb, var(--primary) 5%, transparent); pointer-events: none; }
 .setup-shell::before { right: -160px; top: -150px; }
 .setup-shell::after { left: -120px; bottom: -180px; }
-.setup-header { background: color-mix(in srgb, var(--card) 80%, transparent); border-bottom: 1px solid var(--border); }
-.setup-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; max-width: 1152px; min-height: 72px; margin-inline: auto; padding: 16px 24px; }
+.setup-header { background: transparent; }
+.setup-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 88px; padding: 24px 40px; }
 .setup-brand { display: flex; align-items: center; gap: 12px; flex: none; }
 .setup-brand > span { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); }
 .setup-brand strong { display: block; font-size: 14px; font-weight: 600; }
 .setup-brand small { display: block; font-size: 11px; color: var(--muted-foreground); }
 .setup-exit { display: flex; align-items: center; gap: 7px; padding: 10px 0; color: var(--muted-foreground); font-size: 12px; }
-.setup-stepper { flex: 1; max-width: 608px; }
+.setup-stepper { width: 100%; margin-bottom: 32px; padding: 8px; border-radius: 28px; background: var(--card); box-shadow: 0 2px 5px color-mix(in srgb, var(--foreground) 4%, transparent); }
 .setup-stepper ol { display: flex; align-items: center; list-style: none; padding: 0; margin: 0; }
-.setup-stepper li { display: flex; align-items: center; gap: 10px; flex: 1; color: var(--muted-foreground); }
-.setup-stepper li:not(:last-child)::after { content: ''; height: 1px; background: var(--border); flex: 1; margin-inline: 4px 12px; }
-.setup-step-number { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--muted); font-size: 12px; font-weight: 600; }
-.setup-stepper strong { display: block; font-size: 12px; font-weight: 500; }
-.setup-stepper small { display: block; font-size: 10px; white-space: nowrap; }
+.setup-stepper li { display: flex; align-items: center; flex: 1; min-width: 0; color: var(--muted-foreground); }
+.setup-stepper li:not(:last-child)::after { content: ''; height: 3px; background: var(--muted); flex: 1; min-width: 12px; margin-inline: 8px; }
+.setup-step-item { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 22px; }
+.setup-step-number { display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--muted); }
+.setup-step-label { display: block; font-size: 10px; line-height: 12px; font-weight: 600; letter-spacing: .04em; }
+.setup-stepper strong { display: block; font-size: 14px; line-height: 17px; font-weight: 500; }
+.setup-stepper small { display: block; font-size: 10px; line-height: 14px; white-space: nowrap; }
+.setup-stepper .is-current .setup-step-item { background: var(--primary-light); }
+.setup-stepper .is-current .setup-step-label { color: var(--primary); }
 .setup-stepper .is-current strong { color: var(--foreground); }
-.setup-stepper .is-current .setup-step-number { background: var(--primary); color: var(--primary-foreground); box-shadow: 0 0 0 4px var(--primary-light); }
+.setup-stepper .is-current .setup-step-number { background: var(--primary); color: var(--primary-foreground); }
 .setup-stepper .is-complete .setup-step-number { background: var(--success); color: var(--success-foreground); }
-.setup-content { position: relative; width: min(100% - 32px, 720px); margin-inline: auto; padding-top: 40px; }
+.setup-content { position: relative; width: min(100% - 32px, 720px); margin-inline: auto; padding-top: 16px; }
 .setup-heading { margin-bottom: 24px; }
 .setup-heading h1 { font-size: 28px; line-height: 35px; font-weight: 600; }
 .setup-heading p { margin-top: 4px; font-size: 13px; line-height: 20px; color: var(--muted-foreground); }
@@ -345,18 +349,19 @@
 .setup-shell :is(button, a):focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
 @media (max-width: 1023px) {
   .registration-shell .login-main { padding: 100px 16px 80px; }
-  .setup-header-inner { flex-wrap: wrap; gap: 20px; }
-  .setup-stepper { order: 3; flex-basis: 100%; max-width: none; }
 }
 @media (max-width: 600px) {
   .register-card { padding: 24px; }
-  .setup-content { padding-top: 28px; }
+  .setup-header-inner { min-height: 76px; padding: 18px 20px; }
+  .setup-content { padding-top: 12px; }
   .setup-card { padding: 20px; }
   .setup-personal-grid { grid-template-columns: 1fr; }
   .setup-personal-card { min-height: 108px; }
-  .setup-stepper li { gap: 8px; }
+  .setup-stepper { padding: 6px; border-radius: 22px; margin-bottom: 24px; }
+  .setup-step-item { flex: 1; flex-direction: column; gap: 6px; padding: 10px 4px; text-align: center; border-radius: 16px; }
+  .setup-step-number { width: 32px; height: 32px; }
   .setup-stepper small { display: none; }
-  .setup-stepper li:not(:last-child)::after { margin-inline: 0 8px; }
+  .setup-stepper li:not(:last-child)::after { min-width: 6px; margin-inline: 3px; }
   .setup-stepper strong { font-size: 11px; }
   .setup-location-prompt { flex-wrap: wrap; }
   .setup-location-prompt p { flex-basis: calc(100% - 50px); }
