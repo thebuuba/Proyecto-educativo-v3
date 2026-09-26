@@ -31,6 +31,12 @@ export class SchoolsService {
         '[^a-z0-9]+', ' ', 'g'
       )
     `
+    const searchableName = Prisma.sql`
+      REGEXP_REPLACE(
+        TRANSLATE(LOWER(COALESCE(s.name, '')), 'áéíóúüñ', 'aeiouun'),
+        '[^a-z0-9]+', ' ', 'g'
+      )
+    `
     const tokenMatches = tokens.map((token) => Prisma.sql`${searchableText} LIKE ${`%${token}%`}`)
     const tokenScore = Prisma.join(tokenMatches.map((match) => Prisma.sql`CASE WHEN ${match} THEN 1 ELSE 0 END`), ' + ')
     const hasLocation = lat != null && lng != null
@@ -51,7 +57,10 @@ export class SchoolsService {
         sy.name AS "schoolYearName",
         sy.start_date AS "schoolYearStartDate",
         sy.end_date AS "schoolYearEndDate",
-        (extensions.similarity(${searchableText}, ${normalizedQuery}) + ((${tokenScore})::float / ${tokens.length})) AS "textScore"
+        (
+          CASE WHEN ${searchableName} LIKE ${`%${normalizedQuery}%`} THEN 2 ELSE 0 END
+          + ((${tokenScore})::float / ${tokens.length})
+        ) AS "textScore"
       FROM schools s
       LEFT JOIN LATERAL (
         SELECT name, start_date, end_date
@@ -61,10 +70,7 @@ export class SchoolsService {
         LIMIT 1
       ) sy ON true
       WHERE s.status = 'active'
-        AND (
-          ${Prisma.join(tokenMatches, ' OR ')}
-          OR extensions.similarity(${searchableText}, ${normalizedQuery}) >= 0.18
-        )
+        AND (${Prisma.join(tokenMatches, ' OR ')})
       ORDER BY "textScore" DESC, distance ASC NULLS LAST, s.name ASC, s.id ASC
       LIMIT ${limit}
     `)
