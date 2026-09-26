@@ -1,5 +1,5 @@
 import { Building2, LocateFixed, MapPin, Search } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { Button } from '@/components/ui/Button'
@@ -73,6 +73,26 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
   const requestRef = useRef(0)
   const selectedQueryRef = useRef<string | null>(null)
 
+  const requestLocation = useCallback(() => {
+    if (!navigator.geolocation) {
+      setLocationState('unavailable')
+      return
+    }
+    setLocationState('loading')
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        setLocation({ lat: coords.latitude, lng: coords.longitude })
+        setLocationState('available')
+      },
+      () => setLocationState('unavailable'),
+      { enableHighAccuracy: false, maximumAge: 10 * 60 * 1000, timeout: 8000 },
+    )
+  }, [])
+
+  useEffect(() => {
+    requestLocation()
+  }, [requestLocation])
+
   function positionDropdown() {
     if (!inputRef.current) return
     const rect = inputRef.current.getBoundingClientRect()
@@ -145,22 +165,6 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
     setOpen(false)
     setResults([])
     setSearched(false)
-  }
-
-  function requestLocation() {
-    if (!navigator.geolocation) {
-      setLocationState('unavailable')
-      return
-    }
-    setLocationState('loading')
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) => {
-        setLocation({ lat: coords.latitude, lng: coords.longitude })
-        setLocationState('available')
-      },
-      () => setLocationState('unavailable'),
-      { enableHighAccuracy: false, maximumAge: 10 * 60 * 1000, timeout: 8000 },
-    )
   }
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {

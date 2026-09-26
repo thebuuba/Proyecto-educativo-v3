@@ -31,6 +31,7 @@ describe('SchoolSearchInput', () => {
   beforeEach(() => {
     vi.useFakeTimers()
     get.mockReset().mockResolvedValue(schools)
+    Object.defineProperty(navigator, 'geolocation', { configurable: true, value: undefined })
   })
   afterEach(() => vi.useRealTimers())
 
@@ -62,6 +63,17 @@ describe('SchoolSearchInput', () => {
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Catolico' } })
     await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
     expect(get).toHaveBeenCalledWith(expect.not.stringContaining('lat='))
+  })
+
+  it('requests location automatically and sends it as a proximity signal', async () => {
+    Object.defineProperty(navigator, 'geolocation', {
+      configurable: true,
+      value: { getCurrentPosition: (success: PositionCallback) => success({ coords: { latitude: 19.22, longitude: -70.53 } } as GeolocationPosition) },
+    })
+    render(<Harness />)
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Eugenio Maria de Hostos' } })
+    await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
+    expect(get).toHaveBeenCalledWith(expect.stringContaining('lat=19.22&lng=-70.53'))
   })
 
   it('announces empty and error states', async () => {
