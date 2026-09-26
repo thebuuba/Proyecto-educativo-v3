@@ -63,5 +63,6 @@ describe('SchoolSearchInput', () => {
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Otro centro' } })
     await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
     expect(screen.getByText(/hubo un problema al buscar/i)).toBeInTheDocument()
+    expect(screen.getByRole('alert')).toHaveTextContent(/no pudimos buscar centros/i)
   })
 })

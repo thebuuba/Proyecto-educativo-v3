@@ -238,10 +238,15 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
               </li>
             )
           })}
-          {!results.length ? (
+          {searchError ? (
+            <li role="alert" className="px-4 py-5 text-center text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">No pudimos buscar centros en este momento.</p>
+              <p className="mt-1">Comprueba la conexión del servicio e intenta nuevamente.</p>
+            </li>
+          ) : !results.length ? (
             <li className="px-4 py-5 text-center text-sm text-muted-foreground">
               <p className="font-semibold text-foreground">No encontramos tu centro.</p>
-              <p className="mt-1">Cambia las palabras o desactiva la ubicación e intenta otra vez.</p>
+              <p className="mt-1">Cambia las palabras o busca sin ubicación e intenta otra vez.</p>
             </li>
           ) : null}
         </ul>,
