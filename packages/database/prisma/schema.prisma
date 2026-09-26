@@ -110,6 +110,7 @@ model School {
   pedagogicalRecoveries PedagogicalRecovery[]
   reports               Report[]
   timeSlots             TimeSlot[]
+  scheduleJourneys      ScheduleJourney[]
   scheduleEntries       ScheduleEntry[]
   planningEntries       PlanningEntry[]
   dashboardTasks        DashboardTask[]
@@ -940,10 +941,11 @@ model Report {
   @@map("reports")
 }
 
-model TimeSlot {
+model ScheduleJourney {
   id        String       @id @default(uuid()) @db.Uuid
   schoolId  String       @map("school_id") @db.Uuid
   name      String
+  kind      String       @default("CUSTOM")
   startTime DateTime     @map("start_time") @db.Time
   endTime   DateTime     @map("end_time") @db.Time
   sequence  Int
@@ -951,10 +953,33 @@ model TimeSlot {
   createdAt DateTime     @default(now()) @map("created_at")
   updatedAt DateTime     @updatedAt @map("updated_at")
 
+  school    School       @relation(fields: [schoolId], references: [id])
+  timeSlots TimeSlot[]
+
+  @@index([schoolId, sequence])
+  @@map("schedule_journeys")
+}
+
+model TimeSlot {
+  id        String       @id @default(uuid()) @db.Uuid
+  schoolId  String       @map("school_id") @db.Uuid
+  name      String
+  startTime DateTime     @map("start_time") @db.Time
+  endTime   DateTime     @map("end_time") @db.Time
+  sequence  Int
+  dayOfWeek Int?         @map("day_of_week")
+  blockType String       @default("CLASS") @map("block_type")
+  journeyId String?      @map("journey_id") @db.Uuid
+  status    RecordStatus @default(ACTIVE)
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+
   school          School          @relation(fields: [schoolId], references: [id])
+  journey         ScheduleJourney? @relation(fields: [journeyId], references: [id])
   scheduleEntries ScheduleEntry[]
 
-  @@unique([schoolId, sequence])
+  @@index([schoolId, dayOfWeek, sequence])
+  @@index([journeyId])
   @@map("time_slots")
 }
 

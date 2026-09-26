@@ -12,6 +12,7 @@ import { CreateTimeSlotDto } from './dto/create-time-slot.dto'
 import { UpdateTimeSlotDto } from './dto/update-time-slot.dto'
 import { CreateScheduleEntryDto } from './dto/create-schedule-entry.dto'
 import { UpdateScheduleEntryDto } from './dto/update-schedule-entry.dto'
+import { SaveScheduleStructureDto } from './dto/save-schedule-structure.dto'
 
 export function __test__clearScheduleCache() {
   optionCache.clear()
@@ -29,6 +30,11 @@ function formatTime(value: Date | string) {
   return String(value).slice(0, 5)
 }
 
+function toMinutes(value: string) {
+  const [hours, minutes] = value.slice(0, 5).split(':').map(Number)
+  return hours * 60 + minutes
+}
+
 @Injectable()
 export class ScheduleService {
   /** Agrupa todos los datos requeridos al abrir el horario. */
@@ -38,14 +44,15 @@ export class ScheduleService {
       orderBy: { startDate: 'desc' },
     })
     const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
-    const [timeSlots, sections, teachers, subjects, entries] = await Promise.all([
+    const [journeys, timeSlots, sections, teachers, subjects, entries] = await Promise.all([
+      this.getJourneys(schoolId),
       this.getTimeSlots(schoolId),
       this.getSections(schoolId),
       this.getTeachers(schoolId),
       this.getSubjects(schoolId),
       this.findEntries(schoolId, undefined, undefined, currentSchoolYear?.id),
     ])
-    return { currentSchoolYear, timeSlots, sections, teachers, subjects, entries }
+    return { currentSchoolYear, journeys, timeSlots, sections, teachers, subjects, entries }
   }
 
   /** Obtiene todas las entradas de horario aplicando filtros opcionales */
@@ -138,6 +145,86 @@ export class ScheduleService {
     )
   }
 
+  async getJourneys(schoolId: string) {
+    const journeys = await prisma.scheduleJourney.findMany({
+      where: { schoolId, status: 'ACTIVE' },
+      orderBy: { sequence: 'asc' },
+    })
+    return journeys.map((journey) => ({
+      ...journey,
+      status: journey.status.toLowerCase(),
+      startTime: formatTime(journey.startTime),
+      endTime: formatTime(journey.endTime),
+    }))
+  }
+
+  async saveStructure(schoolId: string, dto: SaveScheduleStructureDto) {
+    this.validateStructure(dto)
+    await prisma.$transaction(async (tx) => {
+      const existingJourneys = await tx.scheduleJourney.findMany({ where: { schoolId } })
+      const journeyByKey = new Map<string, string>()
+      for (const journey of dto.journeys) {
+        const data = { name: journey.name.trim(), kind: journey.kind, startTime: toTime(journey.startTime), endTime: toTime(journey.endTime), sequence: journey.sequence, status: 'ACTIVE' as const }
+        if (journey.id && existingJourneys.some((item) => item.id === journey.id)) {
+          const saved = await tx.scheduleJourney.update({ where: { id: journey.id }, data })
+          journeyByKey.set(journey.id, saved.id)
+        } else {
+          const saved = await tx.scheduleJourney.create({ data: { schoolId, ...data } })
+          journeyByKey.set(journey.id ?? `journey-${journey.sequence}`, saved.id)
+        }
+      }
+      const incomingJourneyIds = new Set(journeyByKey.values())
+      for (const journey of existingJourneys.filter((item) => !incomingJourneyIds.has(item.id))) {
+        const used = await tx.scheduleEntry.findFirst({ where: { schoolId, timeSlot: { journeyId: journey.id } } })
+        if (used) throw new BadRequestException('No puedes eliminar una jornada que todavía tiene clases asignadas.')
+        await tx.timeSlot.deleteMany({ where: { schoolId, journeyId: journey.id } })
+        await tx.scheduleJourney.delete({ where: { id: journey.id } })
+      }
+      const existingSlots = await tx.timeSlot.findMany({ where: { schoolId } })
+      const keptSlotIds = new Set<string>()
+      for (const block of dto.blocks) {
+        const journeyId = journeyByKey.get(block.journeyKey)
+        if (!journeyId) throw new BadRequestException('La jornada de un bloque no existe.')
+        const data = { name: block.name.trim(), startTime: toTime(block.startTime), endTime: toTime(block.endTime), sequence: block.sequence, dayOfWeek: block.dayOfWeek, blockType: block.blockType, journeyId, status: 'ACTIVE' as const }
+        if (block.id && existingSlots.some((item) => item.id === block.id)) {
+          const saved = await tx.timeSlot.update({ where: { id: block.id }, data })
+          keptSlotIds.add(saved.id)
+        } else {
+          const saved = await tx.timeSlot.create({ data: { schoolId, ...data } })
+          keptSlotIds.add(saved.id)
+        }
+      }
+      for (const slot of existingSlots.filter((item) => item.dayOfWeek !== null && !keptSlotIds.has(item.id))) {
+        const assigned = await tx.scheduleEntry.findFirst({ where: { schoolId, timeSlotId: slot.id } })
+        if (assigned) throw new BadRequestException(`El bloque ${slot.name} tiene una clase asignada. Muévela antes de eliminarlo.`)
+        await tx.timeSlot.delete({ where: { id: slot.id } })
+      }
+      for (const slot of existingSlots.filter((item) => item.dayOfWeek === null)) {
+        const assigned = await tx.scheduleEntry.findFirst({ where: { schoolId, timeSlotId: slot.id } })
+        if (!assigned) await tx.timeSlot.delete({ where: { id: slot.id } })
+      }
+    })
+    optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId))
+    return { saved: true }
+  }
+
+  private validateStructure(dto: SaveScheduleStructureDto) {
+    const journeyKeys = new Set(dto.journeys.map((item) => item.id ?? `journey-${item.sequence}`))
+    for (const journey of dto.journeys) {
+      if (toMinutes(journey.endTime) <= toMinutes(journey.startTime)) throw new BadRequestException(`La jornada ${journey.name} debe terminar después de iniciar.`)
+    }
+    for (const block of dto.blocks) {
+      if (!journeyKeys.has(block.journeyKey)) throw new BadRequestException('Un bloque apunta a una jornada inexistente.')
+      if (toMinutes(block.endTime) <= toMinutes(block.startTime)) throw new BadRequestException(`El bloque ${block.name} debe terminar después de iniciar.`)
+    }
+    for (const day of new Set(dto.blocks.map((item) => item.dayOfWeek))) {
+      const blocks = dto.blocks.filter((item) => item.dayOfWeek === day).sort((a, b) => toMinutes(a.startTime) - toMinutes(b.startTime))
+      for (let index = 1; index < blocks.length; index += 1) {
+        if (toMinutes(blocks[index].startTime) < toMinutes(blocks[index - 1].endTime)) throw new BadRequestException(`Hay bloques solapados el día ${day}.`)
+      }
+    }
+  }
+
   /** Crea una nueva franja horaria */
   async createTimeSlot(schoolId: string, dto: CreateTimeSlotDto) {
     const timeSlot = await prisma.timeSlot.create({
@@ -147,6 +234,9 @@ export class ScheduleService {
         startTime: toTime(dto.startTime),
         endTime: toTime(dto.endTime),
         sequence: dto.sequence ?? 0,
+        dayOfWeek: dto.dayOfWeek ?? null,
+        blockType: dto.blockType ?? 'CLASS',
+        journeyId: dto.journeyId ?? null,
       },
     })
     optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId))
@@ -165,6 +255,9 @@ export class ScheduleService {
         ...(dto.startTime && { startTime: toTime(dto.startTime) }),
         ...(dto.endTime && { endTime: toTime(dto.endTime) }),
         ...(dto.sequence !== undefined && { sequence: dto.sequence }),
+        ...(dto.dayOfWeek !== undefined && { dayOfWeek: dto.dayOfWeek }),
+        ...(dto.blockType !== undefined && { blockType: dto.blockType }),
+        ...(dto.journeyId !== undefined && { journeyId: dto.journeyId }),
       },
     })
     optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId))
@@ -205,6 +298,8 @@ export class ScheduleService {
     if (!section) throw new NotFoundException('Section not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!timeSlot) throw new NotFoundException('Time slot not found')
+    if (timeSlot.blockType !== 'CLASS') throw new BadRequestException('Solo puedes asignar clases a períodos lectivos.')
+    if (timeSlot.dayOfWeek !== null && timeSlot.dayOfWeek !== dto.dayOfWeek) throw new BadRequestException('El período seleccionado pertenece a otro día.')
     if (dto.academicPeriodId && !academicPeriod) throw new NotFoundException('Academic period not found')
     await this.assertEntrySlotAvailable(schoolId, {
       schoolYearId: dto.schoolYearId,
@@ -239,9 +334,12 @@ export class ScheduleService {
       })
       if (!sectionSubject) throw new NotFoundException('Section subject not found')
     }
-    if (dto.timeSlotId) {
-      const timeSlot = await prisma.timeSlot.findFirst({ where: { id: dto.timeSlotId, schoolId } })
+    if (dto.timeSlotId || dto.dayOfWeek !== undefined) {
+      const timeSlot = await prisma.timeSlot.findFirst({ where: { id: dto.timeSlotId ?? entry.timeSlotId, schoolId } })
       if (!timeSlot) throw new NotFoundException('Time slot not found')
+      if (timeSlot.blockType !== 'CLASS') throw new BadRequestException('Solo puedes mover clases a períodos lectivos.')
+      const targetDay = dto.dayOfWeek ?? entry.dayOfWeek
+      if (timeSlot.dayOfWeek !== null && timeSlot.dayOfWeek !== targetDay) throw new BadRequestException('El período seleccionado pertenece a otro día.')
     }
     await this.assertEntrySlotAvailable(
       schoolId,
@@ -314,12 +412,18 @@ export class ScheduleService {
     ignoreEntryId?: string,
   ) {
     const idFilter = ignoreEntryId ? { not: ignoreEntryId } : undefined
+    const targetSlot = await prisma.timeSlot.findFirst({ where: { id: input.timeSlotId, schoolId } })
+    if (!targetSlot) throw new NotFoundException('Time slot not found')
+    const overlappingSlotIds = (await prisma.timeSlot.findMany({
+      where: { schoolId, blockType: 'CLASS', startTime: { lt: targetSlot.endTime }, endTime: { gt: targetSlot.startTime }, OR: [{ dayOfWeek: input.dayOfWeek }, { dayOfWeek: null }] },
+      select: { id: true },
+    })).map((slot) => slot.id)
     const sameSectionCell = await prisma.scheduleEntry.findFirst({
       where: {
         schoolId,
         schoolYearId: input.schoolYearId,
         sectionId: input.sectionId,
-        timeSlotId: input.timeSlotId,
+        timeSlotId: { in: overlappingSlotIds },
         dayOfWeek: input.dayOfWeek,
         ...(idFilter && { id: idFilter }),
       },
@@ -342,7 +446,7 @@ export class ScheduleService {
       where: {
         schoolId,
         schoolYearId: input.schoolYearId,
-        timeSlotId: input.timeSlotId,
+        timeSlotId: { in: overlappingSlotIds },
         dayOfWeek: input.dayOfWeek,
         sectionSubjectId: { in: teacherSectionSubjects.map((item) => item.id) },
         ...(idFilter && { id: idFilter }),

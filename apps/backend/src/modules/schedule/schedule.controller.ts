@@ -16,6 +16,7 @@ import { CreateTimeSlotDto } from './dto/create-time-slot.dto'
 import { UpdateTimeSlotDto } from './dto/update-time-slot.dto'
 import { CreateScheduleEntryDto } from './dto/create-schedule-entry.dto'
 import { UpdateScheduleEntryDto } from './dto/update-schedule-entry.dto'
+import { SaveScheduleStructureDto } from './dto/save-schedule-structure.dto'
 
 @Controller('schedule')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -70,6 +71,17 @@ export class ScheduleController {
     return this.scheduleService.getTimeSlots(user.schoolId)
   }
 
+  @Get('journeys')
+  getJourneys(@CurrentUser() user: AuthenticatedUser) {
+    return this.scheduleService.getJourneys(user.schoolId)
+  }
+
+  @Post('structure')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  saveStructure(@CurrentUser() user: AuthenticatedUser, @Body() dto: SaveScheduleStructureDto) {
+    return this.scheduleService.saveStructure(user.schoolId, dto)
+  }
+
   /** Crea una nueva franja horaria (solo admin, director, coordinador) */
   @Post('time-slots')
   @Roles('admin', 'director', 'coordinator')
@@ -111,14 +123,14 @@ export class ScheduleController {
 
   /** Crea una nueva entrada de horario (solo admin, director, coordinador) */
   @Post('entries')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   createEntry(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateScheduleEntryDto) {
     return this.scheduleService.createEntry(user.schoolId, dto)
   }
 
   /** Actualiza una entrada de horario existente (solo admin, director, coordinador) */
   @Patch('entries/:id')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   updateEntry(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
@@ -129,7 +141,7 @@ export class ScheduleController {
 
   /** Elimina una entrada de horario (solo admin, director, coordinador) */
   @Delete('entries/:id')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   deleteEntry(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
     return this.scheduleService.deleteEntry(user.schoolId, id)
   }

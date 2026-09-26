@@ -2661,11 +2661,12 @@ export type Database = {
           },
         ]
       }
-      time_slots: {
+      schedule_journeys: {
         Row: {
           created_at: string
           end_time: string
           id: string
+          kind: string
           name: string
           school_id: string
           sequence: number
@@ -2677,6 +2678,7 @@ export type Database = {
           created_at?: string
           end_time: string
           id?: string
+          kind?: string
           name: string
           school_id?: string
           sequence: number
@@ -2688,6 +2690,7 @@ export type Database = {
           created_at?: string
           end_time?: string
           id?: string
+          kind?: string
           name?: string
           school_id?: string
           sequence?: number
@@ -2696,6 +2699,66 @@ export type Database = {
           updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "schedule_journeys_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      time_slots: {
+        Row: {
+          block_type: string
+          created_at: string
+          day_of_week: number | null
+          end_time: string
+          id: string
+          journey_id: string | null
+          name: string
+          school_id: string
+          sequence: number
+          start_time: string
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          block_type?: string
+          created_at?: string
+          day_of_week?: number | null
+          end_time: string
+          id?: string
+          journey_id?: string | null
+          name: string
+          school_id?: string
+          sequence: number
+          start_time: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          block_type?: string
+          created_at?: string
+          day_of_week?: number | null
+          end_time?: string
+          id?: string
+          journey_id?: string | null
+          name?: string
+          school_id?: string
+          sequence?: number
+          start_time?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "time_slots_journey_id_fkey"
+            columns: ["journey_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_journeys"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "time_slots_school_id_fkey"
             columns: ["school_id"]
