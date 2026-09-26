@@ -67,6 +67,10 @@ model School {
   sector                 String       @default("private")
   centerCode             String?      @map("center_code")
   district               String?      @map("district")
+  regionalCode           String?      @map("regional_code")
+  regionalName           String?      @map("regional_name")
+  districtCode           String?      @map("district_code")
+  districtName           String?      @map("district_name")
   lat                    Float?       @map("lat")
   lng                    Float?       @map("lng")
   niveles                String[]     @default([])
@@ -118,6 +122,8 @@ model School {
 
   @@index([name])
   @@index([district])
+  @@index([regionalCode])
+  @@index([districtCode])
   @@map("schools")
 }
 
@@ -386,6 +392,9 @@ model Teacher {
   email        String?
   hireDate     DateTime?    @map("hire_date") @db.Date
   address      String?
+  preferredLevels     String[]     @default([]) @map("preferred_levels")
+  preferredShifts     String[]     @default([]) @map("preferred_shifts")
+  preferredModalities String[]     @default([]) @map("preferred_modalities")
   status       RecordStatus @default(ACTIVE)
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")

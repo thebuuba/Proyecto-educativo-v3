@@ -3,6 +3,9 @@ import { Type } from 'class-transformer'
 
 class OnboardingSchoolDto {
   @IsString()
+  id!: string
+
+  @IsString()
   name!: string
 
   @IsOptional()
@@ -17,6 +20,20 @@ class OnboardingSchoolDto {
   @IsArray()
   @IsString({ each: true })
   enabledSubsystems?: string[]
+}
+
+class OnboardingTeacherContextDto {
+  @IsArray()
+  @IsString({ each: true })
+  levels!: string[]
+
+  @IsArray()
+  @IsString({ each: true })
+  shifts!: string[]
+
+  @IsArray()
+  @IsString({ each: true })
+  modalities!: string[]
 }
 
 class OnboardingSchoolYearDto {
@@ -47,6 +64,10 @@ export class CompleteOnboardingDto {
   @ValidateNested()
   @Type(() => OnboardingSchoolYearDto)
   schoolYear!: OnboardingSchoolYearDto
+
+  @ValidateNested()
+  @Type(() => OnboardingTeacherContextDto)
+  teacherContext!: OnboardingTeacherContextDto
 
   @IsOptional()
   @IsArray()

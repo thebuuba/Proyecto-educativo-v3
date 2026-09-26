@@ -63,6 +63,10 @@ export async function register(credentials: RegisterCredentials): Promise<void> 
     },
   })
   if (error) throw new Error(error.message)
+  // Una identidad nueva nunca debe heredar el centro ni el contexto académico
+  // que otra cuenta dejó guardados en este navegador.
+  localStorage.removeItem('aulabase:onboarding-draft-v2')
+  localStorage.removeItem('aulabase:onboarding-draft-v3')
   localStorage.setItem('aulabase:registration-name', credentials.fullName)
 
   const token = data.session?.access_token

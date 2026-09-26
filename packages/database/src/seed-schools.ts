@@ -39,8 +39,33 @@ async function downloadCsv(): Promise<void> {
   await pump()
 }
 
-async function parseSchools(): Promise<Map<string, { sector: string; district: string }>> {
-  const schools = new Map<string, { sector: string; district: string }>()
+type SchoolCsvRow = {
+  name: string
+  sector: string
+  centerCode: string | null
+  regionalCode: string | null
+  regionalName: string | null
+  district: string
+  districtCode: string | null
+  districtName: string | null
+  lat: number | null
+  lng: number | null
+}
+
+function splitCodeAndName(value: string) {
+  const match = value.trim().match(/^(\d+)\s*-\s*(.+)$/)
+  return match ? { code: match[1], name: match[2].trim() } : { code: null, name: value.trim() || null }
+}
+
+function parseCoordinate(value: string | undefined) {
+  const normalized = value?.trim()
+  if (!normalized) return null
+  const coordinate = Number(normalized)
+  return Number.isFinite(coordinate) ? coordinate : null
+}
+
+async function parseSchools(): Promise<SchoolCsvRow[]> {
+  const schools = new Map<string, SchoolCsvRow>()
   const fileStream = createReadStream(CSV_PATH, { encoding: 'latin1' })
   const rl = createInterface({ input: fileStream })
   let isFirst = true
@@ -49,17 +74,31 @@ async function parseSchools(): Promise<Map<string, { sector: string; district: s
     if (isFirst) { isFirst = false; continue }
     const cols = line.split(';')
     if (cols.length < 5) continue
-    const rawName = cols[2]?.trim() ?? ''
+    const rawCenter = cols[2]?.trim() ?? ''
     const sector = cols[3]?.trim() ?? ''
     const district = cols[1]?.trim() ?? ''
-    const name = rawName.replace(/^["\s]*\d+\s*-\s*/, '').replace(/^["\s]+|["\s]+$/g, '').trim()
+    const regional = cols[0]?.trim() ?? ''
+    const center = splitCodeAndName(rawCenter.replace(/^["\s]+|["\s]+$/g, ''))
+    const regionalParts = splitCodeAndName(regional)
+    const districtParts = splitCodeAndName(district)
+    const name = center.name ?? ''
     if (!name) continue
-    if (!schools.has(name)) {
-      schools.set(name, { sector: normalizeSector(sector), district })
-    }
+    const key = center.code ?? `${name}:${district}`
+    schools.set(key, {
+      name,
+      sector: normalizeSector(sector),
+      centerCode: center.code,
+      regionalCode: regionalParts.code,
+      regionalName: regionalParts.name,
+      district,
+      districtCode: districtParts.code,
+      districtName: districtParts.name,
+      lat: parseCoordinate(cols[5]),
+      lng: parseCoordinate(cols[6]),
+    })
   }
 
-  return schools
+  return [...schools.values()]
 }
 
 async function seedSchools() {
@@ -70,18 +109,19 @@ async function seedSchools() {
 
   console.log('Parsing CSV...')
   const schools = await parseSchools()
-  console.log(`Found ${schools.size} unique schools`)
+  console.log(`Found ${schools.length} unique schools`)
 
-  const rows: Array<{ name: string; slug: string; sector: string; district: string }> = []
+  const rows: Array<SchoolCsvRow & { slug: string }> = []
   const slugCounts = new Map<string, number>()
 
-  for (const [name, info] of schools) {
+  for (const school of schools) {
+    const { name } = school
     let slug = createSlug(name)
     if (!slug) slug = 'escuela'
     const count = slugCounts.get(slug) ?? 0
     slugCounts.set(slug, count + 1)
     if (count > 0) slug = `${slug}-${count}`
-    rows.push({ name, slug, sector: info.sector, district: info.district })
+    rows.push({ ...school, slug })
   }
 
   console.log('Inserting schools in bulk...')
@@ -91,14 +131,18 @@ async function seedSchools() {
   for (let i = 0; i < rows.length; i += BATCH) {
     const batch = rows.slice(i, i + BATCH)
     const placeholders = batch
-      .map((_, idx) => `($${idx * 4 + 1}, $${idx * 4 + 2}, $${idx * 4 + 3}, $${idx * 4 + 4})`)
+      .map((_, idx) => `($${idx * 11 + 1}, $${idx * 11 + 2}, $${idx * 11 + 3}, $${idx * 11 + 4}, $${idx * 11 + 5}, $${idx * 11 + 6}, $${idx * 11 + 7}, $${idx * 11 + 8}, $${idx * 11 + 9}, $${idx * 11 + 10}, $${idx * 11 + 11})`)
       .join(', ')
-    const params = batch.flatMap((r) => [r.name, r.slug, r.sector, r.district])
+    const params = batch.flatMap((r) => [r.name, r.slug, r.sector, r.centerCode, r.district, r.regionalCode, r.regionalName, r.districtCode, r.districtName, r.lat, r.lng])
 
     await prisma.$executeRawUnsafe(`
-      INSERT INTO schools (name, slug, sector, district)
+      INSERT INTO schools (name, slug, sector, center_code, district, regional_code, regional_name, district_code, district_name, lat, lng)
       VALUES ${placeholders}
-      ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, sector = EXCLUDED.sector, district = EXCLUDED.district
+      ON CONFLICT (slug) DO UPDATE SET
+        name = EXCLUDED.name, sector = EXCLUDED.sector, center_code = EXCLUDED.center_code,
+        district = EXCLUDED.district, regional_code = EXCLUDED.regional_code,
+        regional_name = EXCLUDED.regional_name, district_code = EXCLUDED.district_code,
+        district_name = EXCLUDED.district_name, lat = EXCLUDED.lat, lng = EXCLUDED.lng
     `, ...params)
 
     total += batch.length
