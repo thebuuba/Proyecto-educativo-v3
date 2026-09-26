@@ -26,7 +26,7 @@ vi.mock('@/modules/auth/hooks/useAuth', () => ({
 }))
 vi.mock('@/modules/auth/services/supabaseClient', () => ({ supabase: { auth: { getUser: vi.fn().mockResolvedValue({ data: { user: null } }) } } }))
 vi.mock('@/modules/auth/components/SchoolSearchInput', () => ({
-  SchoolSearchInput: ({ onSelect, error }: { onSelect: (school: SchoolResult) => void; error?: string }) => <div><button type="button" onClick={() => onSelect(school)}>Seleccionar centro de prueba</button>{error ? <p>{error}</p> : null}</div>,
+  SchoolSearchInput: ({ value, onSelect, error }: { value: string; onSelect: (school: SchoolResult) => void; error?: string }) => <div><span data-testid="school-query">{value}</span><button type="button" onClick={() => onSelect(school)}>Seleccionar centro de prueba</button>{error ? <p>{error}</p> : null}</div>,
   formatSchoolLocation: (value: SchoolResult) => [value.district].filter(Boolean),
 }))
 
@@ -53,6 +53,12 @@ describe('OnboardingPage', () => {
     renderPage()
     expect(screen.getByText('Alexauris Diaz Diaz')).toBeInTheDocument()
     expect(screen.queryByPlaceholderText('Tu nombre completo')).not.toBeInTheDocument()
+  })
+
+  it('never restores a center from a previous browser draft', () => {
+    localStorage.setItem('aulabase:onboarding-draft-v3', JSON.stringify({ schoolQuery: 'Centro anterior', selectedSchool: school }))
+    renderPage()
+    expect(screen.getByTestId('school-query')).toBeEmptyDOMElement()
   })
 
   it('resolves the current school year dynamically and exposes no future year in the normal flow', () => {

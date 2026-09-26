@@ -10,7 +10,6 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { supabase } from '@/modules/auth/services/supabaseClient'
 import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
 
-const DRAFT_KEY = 'aulabase:onboarding-draft-v3'
 const REGISTRATION_NAME_KEY = 'aulabase:registration-name'
 const totalSteps = 3
 
@@ -76,16 +75,6 @@ function createInitialDraft(fullName = ''): OnboardingDraft {
   return { fullName, schoolQuery: '', selectedSchool: null, schoolYear: resolveCurrentSchoolYear(), levels: [], shifts: [], modalities: [], correctingOffer: false }
 }
 
-function loadDraft(fullName = ''): OnboardingDraft {
-  const initial = createInitialDraft(fullName)
-  try {
-    const parsed = JSON.parse(localStorage.getItem(DRAFT_KEY) ?? '{}') as Partial<OnboardingDraft>
-    return { ...initial, ...parsed, fullName: parsed.fullName?.trim() || fullName, schoolYear: { ...initial.schoolYear, ...parsed.schoolYear } }
-  } catch {
-    return initial
-  }
-}
-
 function optionLabel(options: Array<{ value: string; label: string }>, value: string) {
   return options.find((option) => option.value === value)?.label ?? value
 }
@@ -116,7 +105,7 @@ export function OnboardingPage() {
   const resetMode = searchParams.get('reset') === '1'
   const { appUser, completeOnboarding, isAuthenticated, loading, profileRequired, onboardingComplete } = useAuth()
   const registrationName = localStorage.getItem(REGISTRATION_NAME_KEY)?.trim() || ''
-  const [draft, setDraft] = useState(() => loadDraft(appUser?.fullName || registrationName))
+  const [draft, setDraft] = useState(() => createInitialDraft(appUser?.fullName || registrationName))
   const [step, setStep] = useState(0)
   const [errors, setErrors] = useState<StepErrors>({})
   const [editingName, setEditingName] = useState(!draft.fullName)
@@ -132,8 +121,6 @@ export function OnboardingPage() {
       if (metadataName) setDraft((current) => ({ ...current, fullName: metadataName }))
     })
   }, [draft.fullName])
-
-  useEffect(() => { localStorage.setItem(DRAFT_KEY, JSON.stringify(draft)) }, [draft])
 
   useEffect(() => {
     if (!resetMode) return
@@ -209,7 +196,6 @@ export function OnboardingPage() {
     setSubmitError('')
     try {
       await completeOnboarding(input)
-      localStorage.removeItem(DRAFT_KEY)
       localStorage.removeItem(REGISTRATION_NAME_KEY)
       setShowWelcome(true)
     } catch (error) {
