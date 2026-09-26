@@ -58,6 +58,10 @@ model School {
   sector                 String       @default("private")
   centerCode             String?      @map("center_code")
   district               String?      @map("district")
+  regionalCode           String?      @map("regional_code")
+  regionalName           String?      @map("regional_name")
+  districtCode           String?      @map("district_code")
+  districtName           String?      @map("district_name")
   lat                    Float?       @map("lat")
   lng                    Float?       @map("lng")
   niveles                String[]     @default([])
@@ -108,6 +112,8 @@ model School {
 
   @@index([name])
   @@index([district])
+  @@index([regionalCode])
+  @@index([districtCode])
   @@map("schools")
 }
 

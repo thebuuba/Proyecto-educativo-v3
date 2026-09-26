@@ -2143,6 +2143,8 @@ export type Database = {
           center_code: string | null
           created_at: string
           district: string | null
+          district_code: string | null
+          district_name: string | null
           enabled_subsystems: string[]
           id: string
           lat: number | null
@@ -2153,6 +2155,8 @@ export type Database = {
           niveles: string[] | null
           official_exports_enabled: boolean
           primary_modality: string
+          regional_code: string | null
+          regional_name: string | null
           school_shift: string
           sector: string
           slug: string
@@ -2164,6 +2168,8 @@ export type Database = {
           center_code?: string | null
           created_at?: string
           district?: string | null
+          district_code?: string | null
+          district_name?: string | null
           enabled_subsystems?: string[]
           id?: string
           lat?: number | null
@@ -2174,6 +2180,8 @@ export type Database = {
           niveles?: string[] | null
           official_exports_enabled?: boolean
           primary_modality?: string
+          regional_code?: string | null
+          regional_name?: string | null
           school_shift?: string
           sector?: string
           slug: string
@@ -2185,6 +2193,8 @@ export type Database = {
           center_code?: string | null
           created_at?: string
           district?: string | null
+          district_code?: string | null
+          district_name?: string | null
           enabled_subsystems?: string[]
           id?: string
           lat?: number | null
@@ -2195,6 +2205,8 @@ export type Database = {
           niveles?: string[] | null
           official_exports_enabled?: boolean
           primary_modality?: string
+          regional_code?: string | null
+          regional_name?: string | null
           school_shift?: string
           sector?: string
           slug?: string

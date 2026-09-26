@@ -12,6 +12,10 @@ export type SchoolResult = {
   sector: string
   centerCode?: string | null
   district?: string | null
+  regionalCode?: string | null
+  regionalName?: string | null
+  districtCode?: string | null
+  districtName?: string | null
   niveles: string[]
   tandas: string[]
   modalidades: string[]
@@ -35,6 +39,23 @@ function formatDistance(distance?: number | null) {
   if (distance == null || !Number.isFinite(Number(distance))) return null
   const value = Number(distance)
   return value < 10 ? `${value.toFixed(1)} km` : `${Math.round(value)} km`
+}
+
+export function formatSchoolLocation(school: SchoolResult) {
+  const formatPlaceName = (value: string) => value
+    .toLocaleLowerCase('es-DO')
+    .split(' ')
+    .map((word, index) => index > 0 && ['de', 'del', 'la', 'las', 'los', 'y'].includes(word)
+      ? word
+      : word.replace(/(^|-)\p{L}/gu, (letter) => letter.toLocaleUpperCase('es-DO')))
+    .join(' ')
+  const regional = school.regionalCode && school.regionalName
+    ? `Regional ${school.regionalCode} – ${formatPlaceName(school.regionalName)}`
+    : school.regionalName ? formatPlaceName(school.regionalName) : null
+  const district = school.districtCode && school.districtName
+    ? `Distrito ${school.districtCode} – ${formatPlaceName(school.districtName)}`
+    : school.districtName ? formatPlaceName(school.districtName) : school.district
+  return [regional, district].filter((value): value is string => Boolean(value))
 }
 
 export function SchoolSearchInput({ value, onChange, onSelect, error, placeholder }: Props) {
@@ -228,7 +249,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
                   <div className="min-w-0 flex-1">
                     <p className="font-bold text-foreground">{school.name}</p>
                     <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
-                      {school.district ? <span className="inline-flex items-center gap-1"><MapPin className="size-3" />{school.district}</span> : null}
+                      {formatSchoolLocation(school).map((location, locationIndex) => <span key={location} className="inline-flex items-center gap-1">{locationIndex === 0 ? <MapPin className="size-3" /> : null}{location}</span>)}
                       {school.centerCode ? <span>Código {school.centerCode}</span> : null}
                       {distance ? <span className="font-semibold text-foreground">{distance}</span> : null}
                     </div>

@@ -2,7 +2,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react'
 import { useState } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { SchoolSearchInput, type SchoolResult } from './SchoolSearchInput'
+import { formatSchoolLocation, SchoolSearchInput, type SchoolResult } from './SchoolSearchInput'
 
 const get = vi.hoisted(() => vi.fn())
 vi.mock('@/services/apiClient', () => ({ api: { get } }))
@@ -18,6 +18,16 @@ function Harness({ onSelect = vi.fn() }: { onSelect?: (school: SchoolResult) => 
 }
 
 describe('SchoolSearchInput', () => {
+  it('formats regional and district with their codes and names', () => {
+    expect(formatSchoolLocation({
+      ...schools[0],
+      regionalCode: '06',
+      regionalName: 'LA VEGA',
+      districtCode: '0607',
+      districtName: 'GASPAR HERNANDEZ',
+    })).toEqual(['Regional 06 – La Vega', 'Distrito 0607 – Gaspar Hernandez'])
+  })
+
   beforeEach(() => {
     vi.useFakeTimers()
     get.mockReset().mockResolvedValue(schools)

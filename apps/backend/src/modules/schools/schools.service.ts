@@ -52,6 +52,8 @@ export class SchoolsService {
     return prisma.$queryRaw<any[]>(Prisma.sql`
       SELECT
         s.id, s.name, s.slug, s.sector, s.center_code AS "centerCode", s.district,
+        s.regional_code AS "regionalCode", s.regional_name AS "regionalName",
+        s.district_code AS "districtCode", s.district_name AS "districtName",
         s.niveles, s.tandas, s.modalidades, s.lat, s.lng,
         ${distance} AS distance,
         sy.name AS "schoolYearName",

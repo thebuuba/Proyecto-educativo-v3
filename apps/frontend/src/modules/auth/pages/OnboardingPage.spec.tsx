@@ -27,6 +27,7 @@ vi.mock('@/modules/auth/hooks/useAuth', () => ({
 vi.mock('@/modules/auth/services/supabaseClient', () => ({ supabase: { auth: { getUser: vi.fn().mockResolvedValue({ data: { user: null } }) } } }))
 vi.mock('@/modules/auth/components/SchoolSearchInput', () => ({
   SchoolSearchInput: ({ onSelect, error }: { onSelect: (school: SchoolResult) => void; error?: string }) => <div><button type="button" onClick={() => onSelect(school)}>Seleccionar centro de prueba</button>{error ? <p>{error}</p> : null}</div>,
+  formatSchoolLocation: (value: SchoolResult) => [value.district].filter(Boolean),
 }))
 
 function renderPage() {
