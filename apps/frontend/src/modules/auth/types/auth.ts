@@ -79,6 +79,8 @@ export type RegisterCredentials = LoginCredentials & {
   fullName: string
 }
 
+export type RegistrationResult = 'ready' | 'confirmation-required'
+
 /** Respuesta del servidor tras un inicio de sesión exitoso. */
 export type LoginResponse = {
   user: AuthUser

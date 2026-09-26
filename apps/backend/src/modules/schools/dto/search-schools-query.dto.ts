@@ -1,11 +1,11 @@
-import { IsOptional, IsString, MinLength, MaxLength, IsInt, Min, Max, IsNumber } from 'class-validator'
+import { IsOptional, IsString, MaxLength, IsInt, Min, Max, IsNumber } from 'class-validator'
 import { Type } from 'class-transformer'
 
 export class SearchSchoolsQueryDto {
+  @IsOptional()
   @IsString()
-  @MinLength(1)
   @MaxLength(200)
-  q!: string
+  q?: string
 
   @IsOptional()
   @Type(() => Number)

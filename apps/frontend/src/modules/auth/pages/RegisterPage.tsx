@@ -1,173 +1,114 @@
-import { Eye, EyeOff } from 'lucide-react'
-import type { FormEvent, ReactNode } from 'react'
-import { useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
-
-import { FacebookIcon, FLOATING_ICONS, GoogleIcon } from '@/components/auth/AuthIcons'
-import { AuthTransitionLink } from '@/modules/auth/components/AuthTransitionLink'
+import { ArrowRight, Check, Circle, Eye, EyeOff, LockKeyhole, Mail, UserRound } from 'lucide-react'
+import { useState, type FormEvent, type InputHTMLAttributes } from 'react'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { FacebookIcon, GoogleIcon } from '@/components/auth/AuthIcons'
+import { Button } from '@/components/ui/Button'
+import { RegistrationLayout } from '@/modules/auth/components/RegistrationLayout'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { isValidPassword } from '@/modules/auth/utils/password'
 
-function getRegisterErrorMessage(error: unknown) {
-  if (!(error instanceof Error)) return 'No se pudo crear la cuenta. Intenta nuevamente.'
-  if (error.message.toLowerCase().includes('already registered')) return 'Este correo ya está registrado'
-  if (error.message.toLowerCase().includes('password should contain')) return 'La contraseña debe incluir una mayúscula, una minúscula y un número.'
-  return error.message
-}
-
 export function RegisterPage() {
-  const { loginWithProvider, register } = useAuth()
+  const { loginWithProvider, register, isAuthenticated, onboardingComplete, profileRequired } = useAuth()
+  const navigate = useNavigate()
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [terms, setTerms] = useState(false)
-  const [showPassword, setShowPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
   const [errorMessage, setErrorMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [registered, setRegistered] = useState(false)
-  const passwordsMatch = Boolean(password && confirmPassword && password === confirmPassword)
+  const [providerLoading, setProviderLoading] = useState(false)
+  const busy = isSubmitting || providerLoading
+  const passwordRules = [
+    { label: '8 caracteres o más', valid: password.length >= 8 },
+    { label: 'Una mayúscula', valid: /[A-Z]/.test(password) },
+    { label: 'Una minúscula', valid: /[a-z]/.test(password) },
+    { label: 'Un número', valid: /[0-9]/.test(password) },
+  ]
 
-  if (registered) return <Navigate to="/onboarding" replace />
+  if (isAuthenticated && onboardingComplete) return <Navigate to="/inicio" replace />
+  if (profileRequired || (isAuthenticated && onboardingComplete === false)) return <Navigate to="/onboarding" replace />
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (busy) return
+    const nextErrors: Record<string, string> = {}
+    if (!fullName.trim()) nextErrors.fullName = 'Escribe tu nombre completo.'
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) nextErrors.email = 'Escribe un correo electrónico válido.'
+    if (!isValidPassword(password)) nextErrors.password = 'Tu contraseña debe cumplir los cuatro requisitos.'
+    if (!confirmPassword || password !== confirmPassword) nextErrors.confirmPassword = 'Las contraseñas no coinciden.'
+    if (!terms) nextErrors.terms = 'Acepta los términos y el aviso de privacidad para continuar.'
+    setErrors(nextErrors)
     setErrorMessage('')
-    const trimmedFullName = fullName.trim()
-    const trimmedEmail = email.trim()
-
-    if (!trimmedFullName || !trimmedEmail || !password || !confirmPassword) {
-      setErrorMessage('Todos los campos son obligatorios.')
-      return
-    }
-    if (password !== confirmPassword) {
-      setErrorMessage('Las contraseñas no coinciden.')
-      return
-    }
-    if (!isValidPassword(password)) {
-      setErrorMessage('La contraseña debe tener al menos 8 caracteres e incluir una mayúscula, una minúscula y un número.')
-      return
-    }
-    if (!terms) {
-      setErrorMessage('Debes aceptar los términos para crear la cuenta.')
-      return
-    }
-
+    if (Object.keys(nextErrors).length) return
     setIsSubmitting(true)
     try {
-      await register({ email: trimmedEmail, password, fullName: trimmedFullName })
-      setRegistered(true)
+      const result = await register({ email: email.trim(), password, fullName: fullName.trim() })
+      if (result === 'confirmation-required') {
+        sessionStorage.setItem('aulabase:confirmation-email', email.trim())
+        navigate('/registro/confirma-correo', { replace: true })
+      } else {
+        sessionStorage.removeItem('aulabase:confirmation-email')
+        navigate('/onboarding', { replace: true })
+      }
     } catch (error) {
-      setErrorMessage(getRegisterErrorMessage(error))
-    } finally {
-      setIsSubmitting(false)
-    }
+      const message = error instanceof Error ? error.message : 'No se pudo crear la cuenta. Intenta nuevamente.'
+      setErrorMessage(/already registered/i.test(message) ? 'Este correo ya está registrado. Inicia sesión.' : message)
+    } finally { setIsSubmitting(false) }
   }
 
-  return (
-    <main className="auth-screen page-enter relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 py-10">
-      <AuthBackdrop />
+  async function handleProvider(provider: 'google' | 'facebook') {
+    if (busy) return
+    setProviderLoading(true)
+    setErrorMessage('')
+    try { await loginWithProvider(provider) }
+    catch (error) { setErrorMessage(error instanceof Error ? error.message : 'No se pudo continuar con el proveedor.'); setProviderLoading(false) }
+  }
 
-      <div className="auth-panel dashboard-warm-shadow relative z-10 w-full max-w-sm rounded-3xl bg-card p-6 sm:p-8">
-        <div className="mb-7 flex flex-col items-center">
-          <div className="relative mb-4 flex size-14 items-center justify-center rounded-2xl bg-primary/16 text-lg font-extrabold text-foreground">
-            AB
-            <span className="absolute -right-1 -top-1 size-3 rounded-full bg-warning" />
-          </div>
-          <h1 className="text-2xl font-extrabold tracking-tight text-foreground">Crea tu cuenta</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Empieza a organizar tu trabajo docente</p>
+  return <RegistrationLayout>
+    <h1>Crea tu <span>cuenta</span></h1>
+    <p className="login-subtitle">Empieza a organizar tu trabajo docente.</p>
+    <div className="login-social">
+      <button type="button" disabled={busy} onClick={() => void handleProvider('google')}><GoogleIcon />Google</button>
+      <button type="button" disabled={busy} onClick={() => void handleProvider('facebook')}><FacebookIcon />Facebook</button>
+    </div>
+    <div className="login-divider"><span>O REGÍSTRATE CON TU CORREO</span></div>
+    {errorMessage && <p role="alert" className="login-feedback login-error">{errorMessage}</p>}
+    <form className="register-form" noValidate onSubmit={handleSubmit}>
+      <RegisterField id="register-name" label="Nombre completo" icon={UserRound} autoComplete="name" placeholder="Ej.: María Altagracia Pérez" value={fullName} onChange={event => setFullName(event.target.value)} error={errors.fullName} disabled={busy} />
+      <RegisterField id="register-email" label="Correo electrónico" icon={Mail} type="email" autoComplete="email" placeholder="nombre@centro.edu.do" value={email} onChange={event => setEmail(event.target.value)} error={errors.email} disabled={busy} />
+      <div>
+        <RegisterField id="register-password" label="Contraseña" icon={LockKeyhole} type="password" autoComplete="new-password" placeholder="Crea una contraseña" value={password} onChange={event => setPassword(event.target.value)} error={errors.password} disabled={busy} describedBy="password-requirements" />
+        <div id="password-requirements" className="register-password-rules">
+          <div className="register-strength" aria-hidden="true">{passwordRules.map((rule, index) => <span key={rule.label} className={index < passwordRules.filter(item => item.valid).length ? 'is-valid' : ''} />)}</div>
+          <ul>{passwordRules.map(rule => <li key={rule.label} className={rule.valid ? 'is-valid' : ''}>{rule.valid ? <Check size={13} /> : <Circle size={13} />}<span>{rule.label}</span><span className="sr-only">{rule.valid ? ': cumplido' : ': pendiente'}</span></li>)}</ul>
         </div>
-
-        {errorMessage ? (
-          <div className="mb-5 flex items-center gap-2.5 rounded-2xl border border-destructive/25 bg-destructive/14 px-4 py-3 text-foreground">
-            <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-destructive/24 text-xs font-extrabold">!</span>
-            <span className="text-sm font-medium">{errorMessage}</span>
-          </div>
-        ) : null}
-
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <AuthField label="Nombre completo"><input type="text" placeholder="Ana García" required value={fullName} onChange={(event) => setFullName(event.target.value)} className="auth-input" /></AuthField>
-          <AuthField label="Correo electrónico"><input type="email" placeholder="docente@escuela.edu" required value={email} onChange={(event) => setEmail(event.target.value)} className="auth-input" /></AuthField>
-
-          <AuthField label="Contraseña">
-            <div className="relative">
-              <input type={showPassword ? 'text' : 'password'} placeholder="Mínimo 8 caracteres" required minLength={8} value={password} onChange={(event) => setPassword(event.target.value)} className="auth-input pr-11" />
-              <PasswordToggle show={showPassword} onClick={() => setShowPassword(!showPassword)} />
-            </div>
-            <p className="mt-1.5 text-xs text-muted-foreground">Usa al menos 8 caracteres, una mayúscula, una minúscula y un número.</p>
-          </AuthField>
-
-          <AuthField label="Confirmar contraseña">
-            <div className="relative">
-              <input
-                type={showConfirmPassword ? 'text' : 'password'}
-                placeholder="Repite tu contraseña"
-                required
-                value={confirmPassword}
-                onChange={(event) => setConfirmPassword(event.target.value)}
-                className={`auth-input pr-11 ${confirmPassword ? (passwordsMatch ? 'border-success/60' : 'border-destructive/60') : ''}`}
-              />
-              <PasswordToggle show={showConfirmPassword} onClick={() => setShowConfirmPassword(!showConfirmPassword)} />
-            </div>
-            {confirmPassword ? (
-              <div className={`mt-1.5 flex items-center gap-1.5 text-xs font-semibold ${passwordsMatch ? 'text-foreground' : 'text-foreground'}`}>
-                <span className={`size-2 rounded-full ${passwordsMatch ? 'bg-success' : 'bg-destructive'}`} />
-                {passwordsMatch ? 'Las contraseñas coinciden' : 'Las contraseñas no coinciden'}
-              </div>
-            ) : null}
-          </AuthField>
-
-          <label className="flex cursor-pointer items-start gap-2 pt-1">
-            <input
-              type="checkbox"
-              checked={terms}
-              onChange={(event) => {
-                setTerms(event.target.checked)
-                if (errorMessage === 'Debes aceptar los términos para crear la cuenta.') setErrorMessage('')
-              }}
-              className="mt-0.5 size-4 shrink-0 cursor-pointer accent-primary"
-            />
-            <span className="text-sm leading-snug text-muted-foreground">
-              Acepto los <Link to="/terminos" target="_blank" rel="noopener noreferrer" className="font-extrabold text-foreground decoration-primary hover:underline">términos y condiciones</Link> y el <Link to="/privacidad" target="_blank" rel="noopener noreferrer" className="font-extrabold text-foreground decoration-primary hover:underline">aviso de privacidad</Link>.
-            </span>
-          </label>
-
-          <button type="submit" disabled={isSubmitting} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-60">
-            {isSubmitting ? 'Creando cuenta...' : 'Crear cuenta'}
-          </button>
-        </form>
-
-        <div className="my-5 flex items-center gap-3"><div className="h-px flex-1 bg-border" /><span className="text-xs text-muted-foreground">o regístrate con</span><div className="h-px flex-1 bg-border" /></div>
-
-        <div className="grid grid-cols-2 gap-3">
-          <ProviderButton onClick={() => loginWithProvider('google').catch((error: unknown) => setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Google.'))}><GoogleIcon /> Google</ProviderButton>
-          <ProviderButton onClick={() => loginWithProvider('facebook').catch((error: unknown) => setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con Facebook.'))}><FacebookIcon /> Facebook</ProviderButton>
-        </div>
-
-        <p className="mt-6 text-center text-sm text-muted-foreground">¿Ya tienes cuenta? <AuthTransitionLink to="/login" direction="back" className="font-extrabold text-foreground decoration-primary hover:underline">Iniciar sesión</AuthTransitionLink></p>
-        <p className="mt-8 text-center text-xs text-muted-foreground/70">© {new Date().getFullYear()} Aula Base</p>
       </div>
-    </main>
-  )
+      <RegisterField id="register-confirm" label="Confirmar contraseña" icon={LockKeyhole} type="password" autoComplete="new-password" placeholder="Repite la contraseña" value={confirmPassword} onChange={event => setConfirmPassword(event.target.value)} error={errors.confirmPassword || (confirmPassword && password !== confirmPassword ? 'Las contraseñas no coinciden.' : '')} disabled={busy} />
+      {confirmPassword && password === confirmPassword && <p className="register-match"><Check size={14} />Las contraseñas coinciden</p>}
+      <div>
+        <div className="register-terms">
+          <input id="register-terms" type="checkbox" checked={terms} disabled={busy} aria-invalid={Boolean(errors.terms)} aria-describedby={errors.terms ? 'terms-error' : undefined} onChange={event => setTerms(event.target.checked)} />
+          <label htmlFor="register-terms">Acepto los <Link target="_blank" rel="noopener noreferrer" to="/terminos">Términos y condiciones</Link> y el <Link target="_blank" rel="noopener noreferrer" to="/privacidad">Aviso de privacidad</Link> de Aula Base.</label>
+        </div>
+        {errors.terms && <p id="terms-error" className="register-field-error">{errors.terms}</p>}
+      </div>
+      <Button type="submit" className="register-submit" loading={isSubmitting} disabled={busy}>{isSubmitting ? 'Creando cuenta…' : 'Crear cuenta'}<ArrowRight size={16} /></Button>
+    </form>
+    <p className="login-signup">¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link></p>
+  </RegistrationLayout>
 }
 
-function AuthBackdrop() {
-  return <div className="pointer-events-none absolute inset-0">
-    {FLOATING_ICONS.map((item, index) => <item.Icon key={index} style={{ position: 'absolute', top: item.top, left: item.left, width: item.size, height: item.size, color: 'var(--primary)', opacity: 0.055, transform: `translate(-50%, -50%) rotate(${item.rotate}deg)` }} strokeWidth={1.5} />)}
-    <div className="absolute -right-32 -top-32 size-[30rem] rounded-full blur-3xl" style={{ background: 'radial-gradient(circle, color-mix(in srgb, var(--primary) 18%, transparent) 0%, transparent 70%)' }} />
-    <div className="absolute -bottom-36 -left-32 size-[30rem] rounded-full blur-3xl" style={{ background: 'radial-gradient(circle, color-mix(in srgb, var(--warning) 16%, transparent) 0%, transparent 70%)' }} />
+function RegisterField({ label, icon: Icon, error, describedBy, ...input }: InputHTMLAttributes<HTMLInputElement> & { id: string; label: string; icon: typeof Mail; error?: string; describedBy?: string }) {
+  const [visible, setVisible] = useState(false)
+  const password = input.type === 'password'
+  return <div className="register-field">
+    <label className="login-label" htmlFor={input.id}>{label}</label>
+    <div className="register-input-wrap"><Icon size={16} aria-hidden="true" />
+      <input {...input} required type={password && visible ? 'text' : input.type} className="auth-input" aria-invalid={Boolean(error)} aria-describedby={[describedBy, error ? `${input.id}-error` : ''].filter(Boolean).join(' ') || undefined} />
+      {password && <button type="button" disabled={input.disabled} aria-label={`${visible ? 'Ocultar' : 'Mostrar'} ${label.toLowerCase()}`} aria-pressed={visible} onClick={() => setVisible(!visible)}>{visible ? <EyeOff size={16} /> : <Eye size={16} />}</button>}
+    </div>
+    {error && <p id={`${input.id}-error`} className="register-field-error">{error}</p>}
   </div>
-}
-
-function AuthField({ label, children }: { label: string; children: ReactNode }) {
-  return <label className="block"><span className="mb-1.5 block text-sm font-semibold text-foreground">{label}</span>{children}</label>
-}
-
-function PasswordToggle({ show, onClick }: { show: boolean; onClick: () => void }) {
-  return <button type="button" onClick={onClick} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-foreground" aria-label={show ? 'Ocultar contraseña' : 'Mostrar contraseña'}>{show ? <EyeOff className="size-4" /> : <Eye className="size-4" />}</button>
-}
-
-function ProviderButton({ children, onClick }: { children: ReactNode; onClick: () => void }) {
-  return <button type="button" onClick={onClick} className="flex items-center justify-center gap-2.5 rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted">{children}</button>
 }

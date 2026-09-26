@@ -21,6 +21,7 @@ const LoginPage = lazyPage(() => import('@/modules/auth/pages/LoginPage'), 'Logi
 const AuthCallbackPage = lazyPage(() => import('@/modules/auth/pages/AuthCallbackPage'), 'AuthCallbackPage')
 const OnboardingPage = lazyPage(() => import('@/modules/auth/pages/OnboardingPage'), 'OnboardingPage')
 const RegisterPage = lazyPage(() => import('@/modules/auth/pages/RegisterPage'), 'RegisterPage')
+const ConfirmEmailPage = lazyPage(() => import('@/modules/auth/pages/ConfirmEmailPage'), 'ConfirmEmailPage')
 const UnauthorizedPage = lazyPage(() => import('@/modules/auth/pages/UnauthorizedPage'), 'UnauthorizedPage')
 const PromoPage = lazyPage(() => import('@/modules/promo/pages/PromoPage'), 'PromoPage')
 const PrivacyPage = lazyPage(() => import('@/modules/promo/pages/PrivacyPage'), 'PrivacyPage')
@@ -57,6 +58,8 @@ function App() {
         <Route path="/terminos" element={<TermsPage />} />
         <Route path="/contacto" element={<ContactPage />} />
         <Route path="/registro" element={<RegisterPage />} />
+        <Route path="/registro/confirma-correo" element={<ConfirmEmailPage />} />
+        <Route path="/configuracion/centro" element={<OnboardingPage />} />
         <Route path="/sin-acceso" element={<UnauthorizedPage />} />
         <Route element={<AppLayout />}>
           {appRoutes.map((route) => {
