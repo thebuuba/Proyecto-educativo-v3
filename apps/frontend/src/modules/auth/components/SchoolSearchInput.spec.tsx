@@ -62,7 +62,7 @@ describe('SchoolSearchInput', () => {
     expect(screen.getByText(/seguirá funcionando sin tu ubicación/i)).toBeInTheDocument()
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Catolico' } })
     await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
-    expect(get).toHaveBeenCalledWith(expect.not.stringContaining('lat='))
+    expect(get).toHaveBeenCalledWith(expect.not.stringContaining('lat='), expect.any(Object))
   })
 
   it('requests location automatically and sends it as a proximity signal', async () => {
@@ -73,7 +73,28 @@ describe('SchoolSearchInput', () => {
     render(<Harness />)
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Eugenio Maria de Hostos' } })
     await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
-    expect(get).toHaveBeenCalledWith(expect.stringContaining('lat=19.22&lng=-70.53'))
+    expect(get).toHaveBeenCalledWith(expect.stringContaining('lat=19.22&lng=-70.53'), expect.any(Object))
+  })
+
+  it('does not let an older response replace the latest search', async () => {
+    let resolveOld!: (value: SchoolResult[]) => void
+    let resolveLatest!: (value: SchoolResult[]) => void
+    get
+      .mockImplementationOnce(() => new Promise<SchoolResult[]>((resolve) => { resolveOld = resolve }))
+      .mockImplementationOnce(() => new Promise<SchoolResult[]>((resolve) => { resolveLatest = resolve }))
+    render(<Harness />)
+
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'EUGE' } })
+    await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Eugenio Maria' } })
+    await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
+
+    await act(async () => resolveLatest([{ ...schools[0], id: 'latest', name: 'Eugenio Maria de Hostos' }]))
+    await act(async () => resolveOld([{ ...schools[0], id: 'old', name: 'Eugenio Santos' }]))
+
+    expect(screen.getByText('Eugenio Maria de Hostos')).toBeInTheDocument()
+    expect(screen.queryByText('Eugenio Santos')).not.toBeInTheDocument()
+    expect(get.mock.calls[0][1]).toEqual(expect.objectContaining({ signal: expect.any(AbortSignal) }))
   })
 
   it('announces empty and error states', async () => {

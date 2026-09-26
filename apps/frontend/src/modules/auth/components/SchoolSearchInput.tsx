@@ -107,6 +107,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
 
   useEffect(() => {
     const term = value.trim()
+    const requestId = ++requestRef.current
     if (term && term === selectedQueryRef.current) return
     if (term.length < 2) {
       setResults([])
@@ -116,14 +117,14 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
       return
     }
 
-    const requestId = ++requestRef.current
+    const controller = new AbortController()
     const timeout = window.setTimeout(async () => {
       setLoading(true)
       setSearchError(false)
       try {
         let url = `/schools?q=${encodeURIComponent(term)}&limit=50`
         if (location) url += `&lat=${location.lat}&lng=${location.lng}`
-        const data = await api.get<SchoolResult[]>(url)
+        const data = await api.get<SchoolResult[]>(url, { signal: controller.signal })
         if (requestRef.current !== requestId) return
         setResults(data)
         setSearched(true)
@@ -142,7 +143,10 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
       }
     }, 300)
 
-    return () => window.clearTimeout(timeout)
+    return () => {
+      window.clearTimeout(timeout)
+      controller.abort()
+    }
   }, [location, value])
 
   useEffect(() => {

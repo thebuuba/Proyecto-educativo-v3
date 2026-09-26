@@ -7,13 +7,39 @@ vi.mock('@aula/database', async (importOriginal) => ({
   prisma: { $queryRaw: queryRaw },
 }))
 
-import { normalizeSchoolSearchQuery, SchoolsService } from './schools.service'
+import {
+  meaningfulSchoolSearchTokens,
+  normalizeSchoolSearchQuery,
+  schoolSearchCombinedScore,
+  SchoolsService,
+} from './schools.service'
 
 describe('SchoolsService', () => {
   beforeEach(() => queryRaw.mockReset())
 
   it('normalizes accents, case, punctuation, and repeated spaces', () => {
     expect(normalizeSchoolSearchQuery('  COLEGIO Católico,  Cardenal  Beras ')).toBe('colegio catolico cardenal beras')
+  })
+
+  it('treats institutional and connector words as low-weight search terms', () => {
+    expect(meaningfulSchoolSearchTokens(normalizeSchoolSearchQuery('Centro Educativo Eugenio María de Hostos')))
+      .toEqual(['eugenio', 'maria', 'hostos'])
+  })
+
+  it('ranks equivalent name matches by distance without letting a weak match win', () => {
+    const query = 'Eugenio Maria de Hostos'
+    const near = schoolSearchCombinedScore('Colegio Eugenio María de Hostos', query, 3)
+    const far = schoolSearchCombinedScore('Colegio Eugenio María de Hostos', query, 90)
+    const weak = schoolSearchCombinedScore('Eugenio Santos', query, 1)
+
+    expect(near).toBeGreaterThan(far)
+    expect(near).toBeGreaterThan(weak)
+  })
+
+  it('handles prefix searches without accents or case differences', () => {
+    expect(schoolSearchCombinedScore('Eugenio María de Hostos', 'EUGE', 3)).toBeGreaterThan(0)
+    expect(schoolSearchCombinedScore('Eugenio María de Hostos', 'euge', 3))
+      .toBe(schoolSearchCombinedScore('EUGENIO MARIA DE HOSTOS', 'EUGE', 3))
   })
 
   it('keeps centers with the same name as separate results by id', async () => {
@@ -51,5 +77,16 @@ describe('SchoolsService', () => {
     const result = await new SchoolsService().search('Centro Duarte', 50, 19.5, -70.7)
     expect(result).toEqual(rows)
     expect(result).toHaveLength(2)
+  })
+
+  it('applies the final limit only after textual and geographic ranking', async () => {
+    queryRaw.mockResolvedValue([])
+    await new SchoolsService().search('EUGE', 10, 19.22, -70.53)
+
+    const query = queryRaw.mock.calls[0][0]
+    const sql = query.strings.join('?').replace(/\s+/g, ' ')
+    expect(sql).toContain('WITH candidates AS')
+    expect(sql).toContain('ranked AS')
+    expect(sql.lastIndexOf('LIMIT')).toBeGreaterThan(sql.indexOf('ORDER BY ("textScore"'))
   })
 })
