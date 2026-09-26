@@ -6,7 +6,7 @@ create table public.schedule_journeys (
   start_time time not null,
   end_time time not null,
   sequence integer not null check (sequence > 0),
-  status public.record_status not null default 'ACTIVE',
+  status public.record_status not null default 'active',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
   constraint schedule_journeys_valid_range check (start_time < end_time)

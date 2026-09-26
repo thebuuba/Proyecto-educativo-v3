@@ -44,3 +44,10 @@
 - `SubjectSchedulePage` filtra por `sectionSubjectId` y calcula estado temporal.
 - El resumen semanal y las vistas de horario dependen de las franjas y asignaciones.
 
+## Segunda revisión
+
+- El `404 Cannot POST /api/v1/schedule/structure` no provenía de una ruta incorrecta: el frontend y el controller coincidían, pero el proceso local `dist/main.js` era anterior a la incorporación del endpoint.
+- La migración flexible tampoco estaba aplicada en la base enlazada. Su primer intento reveló un valor por defecto del enum con mayúsculas; se corrigió a `active` antes de aplicarla correctamente.
+- La primera persistencia real expuso que insertar decenas de bloques secuencialmente agotaba el timeout de la transacción. El guardado ahora usa `createMany`, actualizaciones agrupadas y eliminación masiva segura.
+- La UI configura una única estructura base por jornada y solo materializa los bloques por día al guardar. Las excepciones se muestran únicamente cuando el usuario decide personalizar un día.
+

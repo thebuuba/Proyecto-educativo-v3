@@ -7,6 +7,7 @@
  */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import type { Prisma } from '@aula/database'
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { CreateTimeSlotDto } from './dto/create-time-slot.dto'
 import { UpdateTimeSlotDto } from './dto/update-time-slot.dto'
@@ -181,29 +182,34 @@ export class ScheduleService {
         await tx.scheduleJourney.delete({ where: { id: journey.id } })
       }
       const existingSlots = await tx.timeSlot.findMany({ where: { schoolId } })
+      const existingSlotIds = new Set(existingSlots.map((slot) => slot.id))
       const keptSlotIds = new Set<string>()
+      const newSlots: Prisma.TimeSlotCreateManyInput[] = []
+      const slotUpdates: Array<{ id: string; data: Prisma.TimeSlotUpdateInput }> = []
       for (const block of dto.blocks) {
         const journeyId = journeyByKey.get(block.journeyKey)
         if (!journeyId) throw new BadRequestException('La jornada de un bloque no existe.')
         const data = { name: block.name.trim(), startTime: toTime(block.startTime), endTime: toTime(block.endTime), sequence: block.sequence, dayOfWeek: block.dayOfWeek, blockType: block.blockType, journeyId, status: 'ACTIVE' as const }
-        if (block.id && existingSlots.some((item) => item.id === block.id)) {
-          const saved = await tx.timeSlot.update({ where: { id: block.id }, data })
-          keptSlotIds.add(saved.id)
+        if (block.id && existingSlotIds.has(block.id)) {
+          keptSlotIds.add(block.id)
+          slotUpdates.push({ id: block.id, data })
         } else {
-          const saved = await tx.timeSlot.create({ data: { schoolId, ...data } })
-          keptSlotIds.add(saved.id)
+          newSlots.push({ schoolId, ...data })
         }
       }
-      for (const slot of existingSlots.filter((item) => item.dayOfWeek !== null && !keptSlotIds.has(item.id))) {
-        const assigned = await tx.scheduleEntry.findFirst({ where: { schoolId, timeSlotId: slot.id } })
-        if (assigned) throw new BadRequestException(`El bloque ${slot.name} tiene una clase asignada. Muévela antes de eliminarlo.`)
-        await tx.timeSlot.delete({ where: { id: slot.id } })
+      await Promise.all(slotUpdates.map(({ id, data }) => tx.timeSlot.update({ where: { id }, data })))
+      if (newSlots.length) await tx.timeSlot.createMany({ data: newSlots })
+
+      const obsoleteSlots = existingSlots.filter((slot) => !keptSlotIds.has(slot.id))
+      if (obsoleteSlots.length) {
+        const assigned = await tx.scheduleEntry.findFirst({ where: { schoolId, timeSlotId: { in: obsoleteSlots.map((slot) => slot.id) } } })
+        if (assigned) {
+          const slot = obsoleteSlots.find((item) => item.id === assigned.timeSlotId)
+          throw new BadRequestException(`El bloque ${slot?.name ?? 'seleccionado'} tiene una clase asignada. Muévela antes de eliminarlo.`)
+        }
+        await tx.timeSlot.deleteMany({ where: { schoolId, id: { in: obsoleteSlots.map((slot) => slot.id) } } })
       }
-      for (const slot of existingSlots.filter((item) => item.dayOfWeek === null)) {
-        const assigned = await tx.scheduleEntry.findFirst({ where: { schoolId, timeSlotId: slot.id } })
-        if (!assigned) await tx.timeSlot.delete({ where: { id: slot.id } })
-      }
-    })
+    }, { timeout: 30_000 })
     optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId))
     return { saved: true }
   }
