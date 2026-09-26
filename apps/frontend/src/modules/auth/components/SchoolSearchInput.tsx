@@ -183,7 +183,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
           value={value}
           placeholder={placeholder ?? 'Busca tu centro educativo'}
           autoComplete="off"
-          className="auth-input h-12 pl-11 pr-12"
+          className="auth-input auth-input-leading-icon h-12"
           onChange={(event) => { selectedQueryRef.current = null; onChange(event.target.value) }}
           onFocus={() => { if (searched) { positionDropdown(); setOpen(true) } }}
           onKeyDown={handleKeyDown}

@@ -24,6 +24,11 @@
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 16%, transparent);
 }
 
+.auth-input.auth-input-leading-icon {
+  padding-left: 2.75rem;
+  padding-right: 3rem;
+}
+
 .auth-screen :where(.bg-red-50) {
   background-color: color-mix(in srgb, var(--destructive) 14%, var(--card)) !important;
 }
