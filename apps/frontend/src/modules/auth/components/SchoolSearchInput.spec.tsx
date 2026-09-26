@@ -47,6 +47,18 @@ describe('SchoolSearchInput', () => {
     expect(screen.getByText('Código 05678')).toBeInTheDocument()
   })
 
+  it('searches from the first letter without losing the option to add a missing center', async () => {
+    render(<Harness />)
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'C' } })
+    await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
+    expect(get).toHaveBeenCalledWith('/schools?q=C&limit=50')
+    expect(screen.getAllByRole('option')).toHaveLength(2)
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'Centro inexistente' } })
+    get.mockResolvedValueOnce([])
+    await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
+    expect(screen.getByRole('button', { name: 'Agregar centro' })).toBeInTheDocument()
+  })
+
   it('preserves the unique id when a result is selected', async () => {
     const onSelect = vi.fn()
     render(<Harness onSelect={onSelect} />)

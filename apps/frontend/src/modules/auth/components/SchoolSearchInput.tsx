@@ -95,7 +95,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
     const term = value.trim()
     const requestId = ++requestRef.current
     if (term && term === selectedQueryRef.current) return
-    if (term.length < 2 && !location) {
+    if (!term && !location) {
       setResults([])
       setOpen(false)
       setSearched(false)
@@ -108,7 +108,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
       setLoading(true)
       setSearchError(false)
       try {
-        let url = `/schools?q=${encodeURIComponent(term.length >= 2 ? term : '')}&limit=50`
+        let url = `/schools?q=${encodeURIComponent(term)}&limit=50`
         if (location) url += `&lat=${location.lat}&lng=${location.lng}`
         const data = await api.get<SchoolResult[]>(url)
         if (requestRef.current !== requestId) return
@@ -175,7 +175,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
       ? 'Hubo un problema al buscar. Intenta nuevamente.'
       : searched && !results.length
         ? 'No encontramos tu centro. Prueba con menos palabras o busca sin ubicación.'
-        : location && value.trim().length < 2 ? 'Centros ordenados por cercanía. Selecciona el tuyo o escribe su nombre.' : 'Escribe el nombre de tu centro.'
+        : location && !value.trim() ? 'Centros ordenados por cercanía. Selecciona el tuyo o escribe su nombre.' : 'Escribe el nombre de tu centro.'
 
   return (
     <div>
@@ -209,7 +209,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
         <Button variant="outline" size="sm" loading={locationState === 'loading'} onClick={requestLocation}>Usar mi ubicación</Button>
       </div>}
       {locationState === 'available' && <button type="button" className="setup-location-active" onClick={() => { setLocation(null); setLocationState('idle'); setLocationDismissed(false) }}><LocateFixed size={15} />Cercanía activada · buscar sin ubicación</button>}
-      <p className="setup-search-status" aria-live="polite">{value.trim().length < 2 && !location ? 'Escribe al menos 2 letras o usa tu ubicación. Debes seleccionar el centro de la lista de resultados.' : status}</p>
+      <p className="setup-search-status" aria-live="polite">{!value.trim() && !location ? 'Escribe el nombre de tu centro o usa tu ubicación. Debes seleccionar el centro de la lista de resultados.' : status}</p>
       {locationState === 'unavailable' ? <p className="mt-1 text-xs text-muted-foreground">La búsqueda seguirá funcionando sin tu ubicación.</p> : null}
       {error ? <p className="mt-1 text-xs font-semibold text-foreground"><span className="mr-1 inline-block size-1.5 rounded-full bg-destructive" />{error}</p> : null}
 
