@@ -47,11 +47,21 @@ export async function getScheduleJourneys(): Promise<ScheduleJourney[]> {
   })
 }
 
-export function getScheduleWorkspace(): Promise<ScheduleWorkspace> {
-  return api.get<ScheduleWorkspace>('/schedule/workspace', {
+function normalizeTimeSlot(slot: TimeSlot): TimeSlot {
+  return {
+    ...slot,
+    dayOfWeek: slot.dayOfWeek ?? null,
+    blockType: slot.blockType ?? 'CLASS',
+    journeyId: slot.journeyId ?? null,
+  }
+}
+
+export async function getScheduleWorkspace(): Promise<ScheduleWorkspace> {
+  const workspace = await api.get<ScheduleWorkspace>('/schedule/workspace', {
     cacheTtlMs: API_CACHE_TTL.sessionList,
     cacheTags: [API_CACHE_TAGS.schedule, API_CACHE_TAGS.schoolYears, API_CACHE_TAGS.timeSlots, API_CACHE_TAGS.courseOptions],
   })
+  return { ...workspace, journeys: workspace.journeys ?? [], timeSlots: workspace.timeSlots.map(normalizeTimeSlot) }
 }
 
 const dayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']
@@ -59,10 +69,11 @@ const toneByIndex: ScheduleCalendarEntry['tone'][] = ['accent', 'primary', 'succ
 
 /** Obtiene todos los bloques horarios definidos */
 export async function getTimeSlots(): Promise<TimeSlot[]> {
-  return api.get<TimeSlot[]>('/schedule/time-slots', {
+  const slots = await api.get<TimeSlot[]>('/schedule/time-slots', {
     cacheTtlMs: API_CACHE_TTL.catalog,
     cacheTags: [API_CACHE_TAGS.timeSlots],
   })
+  return slots.map(normalizeTimeSlot)
 }
 
 /** Crea un nuevo bloque horario */

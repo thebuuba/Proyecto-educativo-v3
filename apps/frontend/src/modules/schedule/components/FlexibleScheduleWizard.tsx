@@ -27,7 +27,7 @@ type Props = {
 function temporaryId() { return crypto.randomUUID() }
 
 export function FlexibleScheduleWizard({ initialJourneys = [], initialSlots = [], submitting, error, onComplete, onCancel }: Props) {
-  const inferredDays = [...new Set(initialSlots.map((slot) => slot.dayOfWeek).filter((day): day is number => day !== null))]
+  const inferredDays = [...new Set(initialSlots.map((slot) => slot.dayOfWeek).filter((day): day is number => typeof day === 'number' && day >= 1 && day <= 7))]
   const [step, setStep] = useState(0)
   const [days, setDays] = useState<number[]>(inferredDays.length ? inferredDays : [1, 2, 3, 4, 5])
   const [journeys, setJourneys] = useState<ScheduleStructureJourneyInput[]>(initialJourneys)
