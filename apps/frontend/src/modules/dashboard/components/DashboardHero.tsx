@@ -45,6 +45,7 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
         aria-hidden="true"
       >
         <circle
+          data-countdown-progress
           cx="60"
           cy="60"
           r="45"
@@ -62,7 +63,6 @@ function CountdownBadge({ item, seconds }: { item: DashboardClass; seconds: numb
           strokeDasharray={`${ringLength} ${RING_CIRCUMFERENCE}`}
           strokeLinecap="round"
           strokeWidth="8"
-          className="transition-[stroke-dasharray] duration-1000 ease-linear"
         />
       </svg>
       <div className="text-center leading-none text-white">
@@ -90,6 +90,11 @@ export function DashboardHero({
       : 0,
   )
   const countdownEndNotified = useRef(false)
+  const onCountdownEndRef = useRef(onCountdownEnd)
+
+  useEffect(() => {
+    onCountdownEndRef.current = onCountdownEnd
+  }, [onCountdownEnd])
 
   useEffect(() => {
     countdownEndNotified.current = false
@@ -103,20 +108,20 @@ export function DashboardHero({
         nextClass.startTime,
         nextClass.endTime,
       )
-      setCountdownSeconds(seconds)
+      setCountdownSeconds((current) => current === seconds ? current : seconds)
       if (seconds === 0 && !countdownEndNotified.current) {
         countdownEndNotified.current = true
-        onCountdownEnd?.()
+        onCountdownEndRef.current?.()
       }
     }
     updateCountdown()
     const interval = window.setInterval(updateCountdown, 1000)
     return () => window.clearInterval(interval)
-  }, [nextClass, onCountdownEnd])
+  }, [nextClass])
 
   if (!nextClass) {
     return (
-      <section className="home-class-card">
+      <section className="home-class-card" data-home-widget="class">
         <span className="home-class-icon">
           <FlaskConical size={21} aria-hidden="true" />
         </span>
@@ -130,7 +135,7 @@ export function DashboardHero({
   }
 
   return (
-    <section className="home-class-card relative overflow-hidden">
+    <section className="home-class-card relative overflow-hidden" data-home-widget="class">
       <span className="home-class-decoration home-class-decoration-one" aria-hidden="true" />
       <span className="home-class-decoration home-class-decoration-two" aria-hidden="true" />
       <div className="absolute right-4 top-4 z-10">

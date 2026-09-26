@@ -128,7 +128,7 @@ describe('menú administrativo de una asignatura activa', () => {
     const { onOpen } = renderCard(false)
     const card = screen.getByRole('link', { name: 'Entrar a la asignatura Matemática' })
 
-    await user.click(screen.getByText('Docente'))
+    await user.click(screen.getByRole('heading', { name: 'Matemática' }))
     expect(onOpen).toHaveBeenLastCalledWith('resumen')
 
     card.focus()

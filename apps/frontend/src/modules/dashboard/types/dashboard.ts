@@ -77,6 +77,51 @@ export type WeeklyAttendance = {
   days: WeeklyAttendanceDay[]
 }
 
+export type PeriodClosing = {
+  name: string
+  daysRemaining: number
+  rangeLabel: string
+  percentage: number | null
+  courses: Array<{ id: string; label: string; subject: string; graded: number; total: number }>
+} | null
+
+export type TodayAttendance = {
+  recordedClasses: number
+  totalClasses: number
+  present: number
+  absent: number
+  excused: number
+  late: number
+}
+
+export type AttentionStudent = {
+  id: string
+  name: string
+  grade: string
+  average: number | null
+  attendance: number | null
+  reasons: string[]
+  note: string
+}
+
+export type PlanningSummary = {
+  count: number
+  entries: Array<{ id: string; title: string; plannedDate: string | null; sectionSubjectId: string; subject: string; grade: string }>
+}
+
+export type SchoolCalendar = {
+  source: string
+  events: Array<{ id: string; date: string; title: string; kind: string }>
+}
+
+export type FamilyCommunication = {
+  id: string
+  subject: string
+  status: string
+  student: string
+  relativeTime: string
+}
+
 /** Prioridad de una tarea del dashboard. */
 export type DashboardTaskPriority = 'low' | 'normal' | 'high'
 /** Estado de una tarea del dashboard. */
@@ -107,7 +152,7 @@ export type RecentActivityItem = {
   /** Descripción relativa del tiempo transcurrido. */
   relativeTime: string
   /** Tipo de actividad. */
-  kind: 'grade' | 'attendance' | 'planning' | 'report'
+  kind: 'grade' | 'attendance' | 'activity' | 'planning' | 'report'
   /** Ruta relacionada con la actividad. */
   path: string
 }
@@ -136,6 +181,12 @@ export type DashboardData = {
   nextClass: DashboardClass | null
   todayAgenda: TodayAgendaItem[]
   weeklyAttendance: WeeklyAttendance
+  periodClosing: PeriodClosing
+  todayAttendance: TodayAttendance
+  attention: AttentionStudent[]
+  planningSummary: PlanningSummary
+  calendar: SchoolCalendar
+  communications: FamilyCommunication[]
   tasks: DashboardTask[]
   recentActivity: RecentActivityItem[]
   smartSuggestion: SmartSuggestion
@@ -185,6 +236,7 @@ export type DashboardJournalSummary = {
     id: string
     title: string | null
     entryType: string
+    relatedStudent: string | null
     occurredAt: string
     relativeTime: string
   }>

@@ -43,6 +43,17 @@ let oauthCallbackPromise: Promise<'authenticated' | 'profile-required'> | null =
 
 const ONBOARDING_CACHE_KEY = 'aulabase:onboarding-complete'
 
+function rememberAccount(appUser: LoginResponse['appUser'], roles: Role[]) {
+  try {
+    localStorage.setItem('aulabase:last-account', JSON.stringify({
+      email: appUser.email,
+      fullName: appUser.fullName,
+      avatarUrl: appUser.avatarUrl,
+      role: roles[0]?.name,
+    }))
+  } catch { /* El inicio de sesión funciona aunque el navegador bloquee el almacenamiento. */ }
+}
+
 function setCachedOnboardingStatus(complete: boolean) {
   if (complete) localStorage.setItem(ONBOARDING_CACHE_KEY, 'true')
   else localStorage.removeItem(ONBOARDING_CACHE_KEY)
@@ -85,6 +96,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   /** Aplica los datos de una sesión (login o registro) al estado global. */
   const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
+    rememberAccount(response.appUser, response.roles)
     const onboardingComplete = checkOnboarding
       ? await getOnboardingStatus().then((status) => {
           setCachedOnboardingStatus(status.complete)
@@ -148,6 +160,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       const user: AuthUser = { id: appUser.id, email: appUser.email }
       const roles = bootstrap.roles
+      rememberAccount(appUser, roles)
       const permissions = bootstrap.permissions
       const onboardingStatus = bootstrap.onboardingComplete
       setCachedOnboardingStatus(onboardingStatus)

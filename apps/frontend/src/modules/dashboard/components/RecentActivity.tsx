@@ -17,6 +17,7 @@ type RecentActivityProps = {
 const icons = {
   attendance: CalendarCheck,
   grade: ClipboardCheck,
+  activity: ClipboardCheck,
   planning: NotebookPen,
   report: FileText,
 }

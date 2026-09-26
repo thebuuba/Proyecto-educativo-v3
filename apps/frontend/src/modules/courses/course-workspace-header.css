@@ -23,7 +23,7 @@ main .course-overview-workspace > div:first-child > button:first-child {
   color: color-mix(in srgb, var(--primary) 88%, var(--foreground));
   box-shadow: 0 8px 22px -20px color-mix(in srgb, var(--foreground) 45%, transparent);
   font-size: 0.72rem !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 

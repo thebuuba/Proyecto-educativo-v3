@@ -149,7 +149,7 @@ body:has(#courses-summary-title) .space-y-8 > section > div:first-child > span:f
 
 body:has(#courses-summary-title) .space-y-8 > section > div:first-child > h2 {
   font-size: 0.98rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 
@@ -181,7 +181,7 @@ body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 {
 body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > h3 {
   color: var(--foreground);
   font-size: 0.72rem;
-  font-weight: 750;
+  font-weight: 600;
 }
 
 body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > span {
@@ -196,20 +196,20 @@ body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > span {
 /* Grid                                                                        */
 /* -------------------------------------------------------------------------- */
 
-body:has(#courses-summary-title) div.grid:has(> article.group) {
+body:has(#courses-summary-title) div.grid:has(> article.group > div[role='button']) {
   grid-template-columns: minmax(0, 1fr) !important;
   gap: 0.85rem !important;
   width: min(100%, 1200px);
 }
 
 @media (min-width: 768px) {
-  body:has(#courses-summary-title) div.grid:has(> article.group) {
+  body:has(#courses-summary-title) div.grid:has(> article.group > div[role='button']) {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
   }
 }
 
 @media (min-width: 1280px) {
-  body:has(#courses-summary-title) div.grid:has(> article.group) {
+  body:has(#courses-summary-title) div.grid:has(> article.group > div[role='button']) {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
   }
 }
@@ -218,7 +218,7 @@ body:has(#courses-summary-title) div.grid:has(> article.group) {
 /* Tarjeta de curso                                                            */
 /* -------------------------------------------------------------------------- */
 
-body:has(#courses-summary-title) article.group {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) {
   position: relative;
   min-width: 0;
   min-height: 138px;
@@ -231,7 +231,7 @@ body:has(#courses-summary-title) article.group {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  body:has(#courses-summary-title) article.group:hover {
+  body:has(#courses-summary-title) article.group:has(> div[role='button']):hover {
     transform: translateY(-2px) !important;
     border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
     box-shadow: var(--courses-shadow-hover) !important;
@@ -239,25 +239,25 @@ body:has(#courses-summary-title) article.group {
 }
 
 /* Toda la tarjeta sigue siendo clicable; el CTA queda como pista visual. */
-body:has(#courses-summary-title) article.group > div[role='button'] {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] {
   position: relative;
   min-height: 138px;
   padding: 0.95rem 3.3rem 2.8rem 1rem !important;
 }
 
 /* Cabecera de tarjeta. */
-body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div:first-child {
   display: grid !important;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center !important;
   gap: 0.7rem !important;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child > div:first-child {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div:first-child > div:first-child {
   display: contents !important;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] > div:first-child span[style] {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div:first-child span[style] {
   width: 2.55rem !important;
   height: 2.55rem !important;
   border-radius: 11px !important;
@@ -266,13 +266,13 @@ body:has(#courses-summary-title) article.group > div[role='button'] > div:first-
   box-shadow: none !important;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] h3 {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] h3 {
   font-size: 0.95rem;
   line-height: 1.12;
   letter-spacing: -0.015em;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] p {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] p {
   margin-top: 0.22rem !important;
   color: var(--muted-foreground) !important;
   font-size: 0.65rem !important;
@@ -280,12 +280,12 @@ body:has(#courses-summary-title) article.group > div[role='button'] p {
 }
 
 /* El estado Activo repetido no aporta; archivados conservan su señal visual. */
-body:has(#courses-summary-title) article.group span.bg-emerald-50 {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) span.bg-emerald-50 {
   display: none !important;
 }
 
 /* Métricas sin tres cajas anidadas: números fuertes, etiquetas discretas. */
-body:has(#courses-summary-title) article.group > div[role='button'] > div.grid {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div.grid {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 0 !important;
@@ -296,7 +296,7 @@ body:has(#courses-summary-title) article.group > div[role='button'] > div.grid {
   background: transparent !important;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div.grid > span {
   display: flex !important;
   min-width: 0;
   flex-direction: column;
@@ -310,22 +310,22 @@ body:has(#courses-summary-title) article.group > div[role='button'] > div.grid >
   white-space: normal;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span:first-child {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div.grid > span:first-child {
   padding-left: 0 !important;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span + span {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div.grid > span + span {
   border-left: 1px solid var(--courses-soft-border) !important;
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] > div.grid strong {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div.grid strong {
   display: block !important;
   font-size: 0.82rem;
   line-height: 1;
   color: var(--foreground);
 }
 
-body:has(#courses-summary-title) article.group > div[role='button'] > div.grid span span {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div.grid span span {
   display: block !important;
   min-width: 0;
   overflow: hidden;
@@ -336,7 +336,7 @@ body:has(#courses-summary-title) article.group > div[role='button'] > div.grid s
 }
 
 /* CTA compacto: deja de parecer una barra decorativa. */
-body:has(#courses-summary-title) article.group > div[role='button']::after {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button']::after {
   content: 'Abrir curso  →';
   position: absolute;
   left: 1rem;
@@ -350,20 +350,20 @@ body:has(#courses-summary-title) article.group > div[role='button']::after {
   background: transparent;
   color: var(--primary);
   font-size: 0.66rem;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1;
   transition: color 160ms ease, transform 160ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  body:has(#courses-summary-title) article.group:hover > div[role='button']::after {
+  body:has(#courses-summary-title) article.group:has(> div[role='button']):hover > div[role='button']::after {
     color: var(--primary-hover);
     transform: translateX(2px);
   }
 }
 
 /* Menú contextual en la esquina superior, donde el usuario lo espera. */
-body:has(#courses-summary-title) article.group > div:last-child {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div:last-child {
   position: absolute;
   z-index: 5;
   top: 0.78rem;
@@ -375,15 +375,15 @@ body:has(#courses-summary-title) article.group > div:last-child {
   background: transparent;
 }
 
-body:has(#courses-summary-title) article.group > div:last-child > div:first-child {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div:last-child > div:first-child {
   display: none !important;
 }
 
-body:has(#courses-summary-title) article.group > div:last-child button {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div:last-child button {
   min-height: 30px;
 }
 
-body:has(#courses-summary-title) article.group > div:last-child button[aria-label='Más acciones'] {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div:last-child button[aria-label='Más acciones'] {
   width: 30px;
   height: 30px;
   border: 0;
@@ -392,12 +392,12 @@ body:has(#courses-summary-title) article.group > div:last-child button[aria-labe
   color: var(--muted-foreground);
 }
 
-body:has(#courses-summary-title) article.group > div:last-child button[aria-label='Más acciones']:hover {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div:last-child button[aria-label='Más acciones']:hover {
   background: var(--courses-muted-surface);
   color: var(--foreground);
 }
 
-body:has(#courses-summary-title) article.group > div:last-child [role='menu'] {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) > div:last-child [role='menu'] {
   border-color: var(--courses-soft-border) !important;
   border-radius: 14px !important;
   box-shadow: var(--courses-shadow-hover) !important;
@@ -406,6 +406,19 @@ body:has(#courses-summary-title) article.group > div:last-child [role='menu'] {
 /* -------------------------------------------------------------------------- */
 /* Responsive                                                                  */
 /* -------------------------------------------------------------------------- */
+
+main[data-module='cursos'] .course-subject-card {
+  border-color: var(--border);
+  box-shadow: 0 2px 3px -1px color-mix(in srgb, var(--foreground) 11%, transparent);
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  main[data-module='cursos'] .course-subject-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px -7px color-mix(in srgb, var(--foreground) 20%, transparent);
+  }
+}
 
 @media (max-width: 640px) {
   body:has(#courses-summary-title) section[aria-labelledby='courses-summary-title'] {
@@ -431,20 +444,20 @@ body:has(#courses-summary-title) article.group > div:last-child [role='menu'] {
     gap: 0.2rem 0.58rem;
   }
 
-  body:has(#courses-summary-title) article.group,
-  body:has(#courses-summary-title) article.group > div[role='button'] {
+  body:has(#courses-summary-title) article.group:has(> div[role='button']),
+  body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] {
     min-height: 144px;
   }
 
-  body:has(#courses-summary-title) article.group > div[role='button'] {
+  body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] {
     padding-right: 3rem !important;
   }
 
-  body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span {
+  body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div.grid > span {
     padding: 0 0.5rem !important;
   }
 
-  body:has(#courses-summary-title) article.group > div[role='button'] > div.grid > span:first-child {
+  body:has(#courses-summary-title) article.group:has(> div[role='button']) > div[role='button'] > div.grid > span:first-child {
     padding-left: 0 !important;
   }
 }
