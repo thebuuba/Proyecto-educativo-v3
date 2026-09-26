@@ -1081,9 +1081,28 @@ function CourseWorkspace({
   )
 }
 
+const subjectCategories = [
+  { name: 'Ciencias exactas', terms: ['matematica', 'algebra', 'geometria'] },
+  { name: 'Salud', terms: ['educacion fisica', 'deporte', 'salud'] },
+  { name: 'Ciencias', terms: ['ciencias de la naturaleza', 'biologia', 'quimica', 'fisica'] },
+  { name: 'Lenguas', terms: ['lengua', 'idioma', 'ingles', 'frances'] },
+  { name: 'Humanidades', terms: ['sociales', 'historia', 'formacion integral', 'religiosa'] },
+  { name: 'Artes', terms: ['artistica', 'arte', 'musica'] },
+  { name: 'Optativa', terms: ['optativa'] },
+]
+
+function getSubjectCategory(name: string) {
+  const normalized = normalizeText(name)
+  if (normalized.includes('optativa')) return 'Optativa'
+  return subjectCategories.find((category) => category.terms.some((term) => normalized.includes(term)))?.name ?? 'Otras'
+}
+
 export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen, onCustomize, onArchive, onDelete }: { assignment: SectionSubjectAssignment; studentCount: number; canManage: boolean; onOpen: (tab: string) => void; onCustomize: () => void; onArchive: () => void; onDelete: () => void }) {
-  const palette = getAssignmentPalette(assignment)
+  const category = getSubjectCategory(assignment.subjectName)
+  const color = getAssignmentPalette(assignment).color
   const average = assignment.averageScore === null ? null : Math.max(0, Math.min(100, assignment.averageScore))
+  const teacher = assignment.teacherName ?? 'Sin docente asignado'
+  const initials = teacher.split(/\s+/).slice(0, 2).map((part) => part[0]).join('').toLocaleUpperCase('es')
 
   function openAssignmentFromKeyboard(event: React.KeyboardEvent<HTMLElement>) {
     if (event.target !== event.currentTarget || (event.key !== 'Enter' && event.key !== ' ')) return
@@ -1092,56 +1111,30 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
   }
 
   return (
-    <article
-      role="link"
-      tabIndex={0}
-      aria-label={`Entrar a la asignatura ${assignment.subjectName}`}
-      onClick={() => onOpen('resumen')}
-      onKeyDown={openAssignmentFromKeyboard}
-      className="group relative flex min-h-[18rem] cursor-pointer flex-col rounded-2xl bg-card p-4 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
-    >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex min-w-0 items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl text-white shadow-sm" style={{ backgroundColor: palette.color }}>{getSubjectIcon(assignment.subjectName, assignment.appearanceIcon)}</span>
-          <h3 className="line-clamp-2 text-sm font-extrabold leading-5 text-foreground">{assignment.subjectName}</h3>
-        </div>
-        <div className="flex shrink-0 items-center gap-1">
-          <span className="rounded-full bg-emerald-50 px-2 py-1 text-[9px] font-extrabold uppercase tracking-wide text-emerald-700">Activo</span>
-          {canManage ? (
-            <AssignmentActionsMenu
-              label={assignment.subjectName}
-              items={[
-                { label: 'Personalizar apariencia', icon: <Paintbrush className="size-4" />, tone: 'primary', onSelect: onCustomize },
-                { label: 'Archivar asignatura', icon: <Archive className="size-4" />, tone: 'archive', onSelect: onArchive },
-                ...(assignment.canDelete ? [{ label: 'Eliminar asignatura', icon: <Trash2 className="size-4" />, tone: 'danger' as const, onSelect: onDelete }] : []),
-              ]}
-            />
-          ) : null}
-        </div>
+    <article role="link" tabIndex={0} aria-label={`Entrar a la asignatura ${assignment.subjectName}`}
+      onClick={() => onOpen('resumen')} onKeyDown={openAssignmentFromKeyboard}
+      className="course-subject-card group relative flex min-h-[17rem] cursor-pointer flex-col rounded-3xl border bg-card p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40">
+      <div className="flex items-start gap-3">
+        <span className="grid size-11 shrink-0 place-items-center rounded-full text-card shadow-sm [&>svg]:size-5" style={{ backgroundColor: color }}>{getSubjectIcon(assignment.subjectName, assignment.appearanceIcon)}</span>
+        <div className="min-w-0 flex-1"><p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">{category}</p><h3 className="mt-0.5 line-clamp-2 text-sm font-extrabold leading-5 text-foreground">{assignment.subjectName}</h3></div>
+        {canManage ? <AssignmentActionsMenu label={assignment.subjectName} items={[
+          { label: 'Personalizar apariencia', icon: <Paintbrush className="size-4" />, tone: 'primary', onSelect: onCustomize },
+          { label: 'Archivar asignatura', icon: <Archive className="size-4" />, tone: 'archive', onSelect: onArchive },
+          ...(assignment.canDelete ? [{ label: 'Eliminar asignatura', icon: <Trash2 className="size-4" />, tone: 'danger' as const, onSelect: onDelete }] : []),
+        ]} /> : null}
       </div>
-
-      <div className="mt-4 border-b border-slate-100 pb-3">
-        <span className="text-[10px] font-semibold text-muted-foreground">Docente</span>
-        <p className="mt-0.5 truncate text-xs font-bold text-primary">{assignment.teacherName ?? 'Sin docente asignado'}</p>
+      <div className="mt-5 flex min-w-0 items-center gap-2 text-xs text-muted-foreground"><span className="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-[9px] font-bold text-primary">{initials}</span><span className="truncate">{teacher}</span></div>
+      <div className="mt-4 grid grid-cols-3 divide-x divide-border rounded-3xl bg-muted/70 py-2.5 text-center">
+        {([[UsersRound, studentCount, 'Estudiantes'], [ClipboardList, assignment.activityCount ?? 0, 'Actividades'], [UsersRound, assignment.teamCount ?? 0, 'Equipos']] as const).map(([Icon, value, label]) => <span key={label} className="flex flex-col items-center px-1"><span className="flex items-center gap-1 text-xs text-foreground"><Icon className="size-3.5 text-muted-foreground" /><strong>{value}</strong></span><small className="mt-0.5 text-[10px] text-muted-foreground">{label}</small></span>)}
       </div>
-
-      <div className="grid grid-cols-2 gap-x-4 gap-y-4 py-4 text-[10px]">
-        <SubjectMetric icon={<UsersRound className="size-4" />} value={studentCount} label="Estudiantes" tone="text-emerald-600" />
-        <SubjectMetric icon={<UsersRound className="size-4" />} value={assignment.teamCount ?? 0} label="Equipos" tone="text-orange-600" />
-        <SubjectMetric icon={<CalendarCheck2 className="size-4" />} value={assignment.activityCount ?? 0} label="Actividades" tone="text-violet-600" />
-        <SubjectMetric icon={<CalendarDays className="size-4" />} value={formatRelativeAttendance(assignment.lastAttendanceDate)} label="Última asistencia" tone="text-blue-600" />
+      <div className="mt-auto flex items-center gap-3 pt-4">
+        <span className="grid size-11 shrink-0 place-items-center rounded-full p-1 text-xs font-bold text-foreground" style={{ background: `conic-gradient(${color} ${average ?? 0}%, var(--muted) 0)` }}><span className="grid size-full place-items-center rounded-full bg-card">{average === null ? '—' : Math.round(average)}</span></span>
+        <span className="min-w-0 flex-1"><strong className="block text-xs text-foreground">{average === null ? 'Sin calificaciones' : average >= 85 ? 'Excelente' : average >= 70 ? 'En progreso' : 'Requiere atención'}</strong><span className="text-[11px] text-muted-foreground">{assignment.lastAttendanceDate ? `Asistencia: ${formatRelativeAttendance(assignment.lastAttendanceDate)}` : 'Sin registro de asistencia'}</span></span>
+        <button type="button" onClick={(event) => { event.stopPropagation(); onOpen('resumen') }} aria-label={`Abrir ${assignment.subjectName}`} className="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary hover:bg-primary/15"><ChevronRight className="size-4" /></button>
       </div>
-
-      <div className="mt-auto flex items-center gap-2 rounded-xl px-3 py-2.5" style={{ backgroundColor: palette.soft }}>
-        <span className="flex size-7 items-center justify-center rounded-full p-1" style={{ background: `conic-gradient(${palette.color} ${average ?? 0}%, #dbe4ee 0)` }}><span className="size-full rounded-full bg-white" /></span>
-        <strong className="text-base text-foreground">{average === null ? '—' : `${Math.round(average)}%`}</strong>
-        <span className="text-[9px] font-semibold text-muted-foreground">Promedio general</span>
-      </div>
-
     </article>
   )
 }
-
 function ArchivedSubjectCard({ assignment, onRestore, onDelete }: { assignment: SectionSubjectAssignment; onRestore: () => void; onDelete: () => void }) {
   const palette = getAssignmentPalette(assignment)
   return (
@@ -1598,10 +1591,6 @@ function EmptySubjectDeleteDialog({ subjectName, studentCount, onConfirm, onClos
       </div>
     </Modal>
   )
-}
-
-function SubjectMetric({ icon, value, label, tone }: { icon: ReactNode; value: string | number; label: string; tone: string }) {
-  return <div className="flex items-start gap-2"><span className={cn('mt-0.5', tone)}>{icon}</span><span><strong className="block text-sm leading-none text-foreground tabular-nums">{value}</strong><span className="mt-1 block text-[9px] text-muted-foreground">{label}</span></span></div>
 }
 
 function SubjectDetailView({

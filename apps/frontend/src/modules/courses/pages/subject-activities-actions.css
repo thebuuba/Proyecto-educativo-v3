@@ -11,7 +11,7 @@ a[aria-label^='Evaluar ']::before {
   place-items: center;
   border-radius: 0.45rem;
   font-size: 0.65rem;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: -0.03em;
 }

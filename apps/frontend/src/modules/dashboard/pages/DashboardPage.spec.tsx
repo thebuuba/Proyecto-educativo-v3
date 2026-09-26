@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
@@ -31,6 +31,12 @@ vi.mock('@/modules/dashboard/hooks/useDashboard', () => ({
           isToday: false,
         })),
       },
+      periodClosing: null,
+      todayAttendance: { recordedClasses: 0, totalClasses: 0, present: 0, absent: 0, excused: 0, late: 0 },
+      attention: [],
+      planningSummary: { count: 0, entries: [] },
+      calendar: { source: 'school', events: [] },
+      communications: [],
       tasks: [],
       recentActivity: [
         {
@@ -67,7 +73,10 @@ vi.mock('@/modules/dashboard/hooks/useDashboard', () => ({
 }))
 
 describe('DashboardPage', () => {
-  beforeEach(() => localStorage.removeItem('aulabase:home-shortcuts'))
+  beforeEach(() => {
+    localStorage.removeItem('aulabase:home-shortcuts')
+    localStorage.removeItem('aulabase:home-widgets:v2:local')
+  })
 
   it('shows the redesigned dashboard with live data and empty states', () => {
     render(
@@ -79,9 +88,10 @@ describe('DashboardPage', () => {
     expect(screen.getByText('Tu agenda')).toBeInTheDocument()
     expect(screen.getByText('No hay clases programadas para hoy.')).toBeInTheDocument()
     expect(screen.getByText('Actividad de prueba')).toBeInTheDocument()
-    expect(screen.getByText('Asistencia semanal')).toBeInTheDocument()
+    expect(screen.getByText('Cierre de período')).toBeInTheDocument()
+    expect(screen.getByText('Asistencia de hoy')).toBeInTheDocument()
     expect(screen.getByText('miércoles, 2 de septiembre')).toBeInTheDocument()
-    expect(screen.getByText('Aún no has registrado asistencia')).toBeInTheDocument()
+    expect(screen.getByText('¿Qué quieres hacer?')).toBeInTheDocument()
     expect(screen.getByText('Bitácora docente')).toBeInTheDocument()
     expect(screen.getByText('2 anotaciones · 1 seguimientos pendientes')).toBeInTheDocument()
   })
@@ -97,7 +107,13 @@ describe('DashboardPage', () => {
     await user.click(screen.getByRole('tab', { name: 'Pendientes (0)' }))
     expect(screen.getByText('No tienes pendientes abiertos.')).toBeInTheDocument()
 
-    await user.click(screen.getByText('Agregar'))
+    await user.click(screen.getByLabelText('Opciones de Inicio'))
+    await user.click(screen.getByRole('button', { name: 'Editar widgets' }))
+    const shortcutOption = screen.getByText('Acceso rápido').parentElement?.parentElement
+    expect(shortcutOption).toBeTruthy()
+    await user.click(within(shortcutOption!).getByRole('button', { name: 'Agregar' }))
+    await user.click(screen.getByRole('button', { name: 'Cerrar' }))
+    await user.click(screen.getByText('Agregar', { selector: 'summary' }))
     await user.click(screen.getByRole('button', { name: 'Estudiantes' }))
     expect(screen.getByRole('link', { name: 'Estudiantes' })).toHaveAttribute(
       'href',

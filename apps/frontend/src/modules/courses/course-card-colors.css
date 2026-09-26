@@ -5,136 +5,136 @@
  * No usa valores aleatorios: el mismo orden académico conserva los colores.
  */
 
-body:has(#courses-summary-title) article.group {
+body:has(#courses-summary-title) article.group:has(> div[role='button']) {
   --course-chip-bg: var(--palette-blue);
   --course-chip-ink: var(--palette-text);
 }
 
 /* Nivel impar · ciclo impar */
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 1) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 1) {
   --course-chip-bg: var(--palette-blue);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 2) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 2) {
   --course-chip-bg: var(--palette-coral);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 3) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 3) {
   --course-chip-bg: var(--palette-green);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 4) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 4) {
   --course-chip-bg: var(--palette-gold);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 5) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 5) {
   --course-chip-bg: color-mix(in srgb, var(--palette-coral) 68%, var(--palette-white));
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n) {
   --course-chip-bg: color-mix(in srgb, var(--palette-blue) 68%, var(--palette-white));
   --course-chip-ink: var(--palette-text);
 }
 
 /* Nivel impar · ciclo par: empieza desde los tonos cálidos para que 4.º, 5.º y 6.º no repitan 1.º, 2.º y 3.º. */
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 1) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 1) {
   --course-chip-bg: var(--palette-gold);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 2) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 2) {
   --course-chip-bg: color-mix(in srgb, var(--palette-coral) 68%, var(--palette-white));
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 3) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 3) {
   --course-chip-bg: color-mix(in srgb, var(--palette-blue) 68%, var(--palette-white));
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 4) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 4) {
   --course-chip-bg: var(--palette-blue);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 5) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 5) {
   --course-chip-bg: var(--palette-coral);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:nth-child(6n) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(odd) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n) {
   --course-chip-bg: var(--palette-green);
   --course-chip-ink: var(--palette-text);
 }
 
 /* Segundo nivel académico: otra rotación para que Primaria y Secundaria tampoco queden calcadas. */
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 1) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 1) {
   --course-chip-bg: color-mix(in srgb, var(--palette-coral) 68%, var(--palette-white));
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 2) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 2) {
   --course-chip-bg: color-mix(in srgb, var(--palette-blue) 68%, var(--palette-white));
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 3) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 3) {
   --course-chip-bg: var(--palette-blue);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 4) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 4) {
   --course-chip-bg: var(--palette-coral);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n + 5) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n + 5) {
   --course-chip-bg: var(--palette-green);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:nth-child(6n) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(odd) article.group:has(> div[role='button']):nth-child(6n) {
   --course-chip-bg: var(--palette-gold);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 1) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 1) {
   --course-chip-bg: var(--palette-coral);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 2) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 2) {
   --course-chip-bg: var(--palette-green);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 3) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 3) {
   --course-chip-bg: var(--palette-gold);
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 4) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 4) {
   --course-chip-bg: color-mix(in srgb, var(--palette-coral) 68%, var(--palette-white));
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n + 5) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n + 5) {
   --course-chip-bg: color-mix(in srgb, var(--palette-blue) 68%, var(--palette-white));
   --course-chip-ink: var(--palette-text);
 }
 
-body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:nth-child(6n) {
+body:has(#courses-summary-title) .space-y-8 > section:nth-of-type(even) .space-y-5 > div:nth-child(even) article.group:has(> div[role='button']):nth-child(6n) {
   --course-chip-bg: var(--palette-blue);
   --course-chip-ink: var(--palette-text);
 }
 
 /* Sobrescribe el azul único del diseño base solo en el cuadrito identificador. */
-body:has(#courses-summary-title) .space-y-8 article.group > div[role='button'] > div:first-child span[style] {
+body:has(#courses-summary-title) .space-y-8 article.group:has(> div[role='button']) > div[role='button'] > div:first-child span[style] {
   background: var(--course-chip-bg) !important;
   color: var(--course-chip-ink) !important;
 }
@@ -182,27 +182,27 @@ body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 {
 
 body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > h3 {
   font-size: 0.76rem !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   letter-spacing: -0.01em;
 }
 
 body:has(#courses-summary-title) .space-y-5 > div > div.mb-3 > span {
   font-size: 0.64rem !important;
-  font-weight: 650 !important;
+  font-weight: 600 !important;
 }
 
 /* -------------------------------------------------------------------------- */
 /* Tarjetas sin borde                                                         */
 /* -------------------------------------------------------------------------- */
 
-body:has(#courses-summary-title) .space-y-8 article.group {
+body:has(#courses-summary-title) .space-y-8 article.group:has(> div[role='button']) {
   border: 0 !important;
   box-shadow: 0 12px 30px -29px color-mix(in srgb, var(--foreground) 42%, transparent) !important;
   transition: box-shadow 160ms ease, transform 160ms ease !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  body:has(#courses-summary-title) .space-y-8 article.group:hover {
+  body:has(#courses-summary-title) .space-y-8 article.group:has(> div[role='button']):hover {
     border: 0 !important;
     border-color: transparent !important;
     transform: translateY(-2px) !important;
