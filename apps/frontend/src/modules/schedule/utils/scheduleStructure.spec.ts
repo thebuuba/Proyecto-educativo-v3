@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { generateJourneyBlocks, summarizeBlocks, validateScheduleStructure } from './scheduleStructure'
+import { generateJourneyBlocks, generateTemplateBlocks, insertTemplateBreak, materializeJourneyDraft, summarizeBlocks, validateScheduleStructure } from './scheduleStructure'
 
 const journey = (id: string, startTime: string, endTime: string, kind = 'CUSTOM') => ({ id, name: id, kind: kind as 'CUSTOM', startTime, endTime, sequence: 1 })
 const block = (journeyKey: string, dayOfWeek: number, startTime: string, endTime: string, blockType = 'CLASS') => ({ name: blockType, journeyKey, dayOfWeek, startTime, endTime, blockType: blockType as 'CLASS', sequence: 1 })
@@ -82,5 +82,40 @@ describe('schedule structure', () => {
       block('extended', 1, '08:45', '09:15', 'BREAK'),
       block('extended', 1, '09:15', '10:00', 'FREE'),
     ])).toEqual({ total: 120, class: 45, pause: 30, free: 45 })
+  })
+
+  it('genera una sola estructura base sin repetirla por día', () => {
+    const template = generateTemplateBlocks('07:30', 40, 6)
+    expect(template).toHaveLength(6)
+    expect(template.map((item) => item.startTime)).toEqual(['07:30', '08:10', '08:50', '09:30', '10:10', '10:50'])
+  })
+
+  it('inserta recreo y mueve los períodos posteriores', () => {
+    const template = generateTemplateBlocks('07:30', 40, 4)
+    const result = insertTemplateBreak(template, 2, 30)
+    expect(result[3]).toMatchObject({ blockType: 'BREAK', startTime: '09:30', endTime: '10:00' })
+    expect(result[4]).toMatchObject({ startTime: '10:00', endTime: '10:40' })
+  })
+
+  it('materializa la plantilla únicamente en los días aplicados', () => {
+    const template = generateTemplateBlocks('07:30', 40, 2)
+    const result = materializeJourneyDraft('morning', { durationMinutes: 40, periodCount: 2, appliedDays: [2, 4], baseBlocks: template, dayOverrides: {} })
+    expect(result).toHaveLength(4)
+    expect([...new Set(result.map((item) => item.dayOfWeek))]).toEqual([2, 4])
+  })
+
+  it('personaliza un día sin cambiar la estructura de los demás', () => {
+    const template = generateTemplateBlocks('07:30', 40, 2)
+    const friday = template.map((item) => ({ ...item }))
+    friday[1] = { ...friday[1], endTime: '08:40' }
+    const result = materializeJourneyDraft('morning', { durationMinutes: 40, periodCount: 2, appliedDays: [1, 5], baseBlocks: template, dayOverrides: { 5: friday } })
+    expect(result.find((item) => item.dayOfWeek === 1 && item.sequence === 2)?.endTime).toBe('08:50')
+    expect(result.find((item) => item.dayOfWeek === 5 && item.sequence === 2)?.endTime).toBe('08:40')
+  })
+
+  it('conserva los identificadores existentes al actualizar', () => {
+    const template = generateTemplateBlocks('07:30', 40, 1)
+    const result = materializeJourneyDraft('morning', { durationMinutes: 40, periodCount: 1, appliedDays: [1], baseBlocks: template, dayOverrides: {} }, [{ id: 'slot-1', journeyId: 'morning', dayOfWeek: 1, sequence: 1 }])
+    expect(result[0].id).toBe('slot-1')
   })
 })

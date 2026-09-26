@@ -21,6 +21,7 @@ export function SchedulePage() {
   const [saveError, setSaveError] = useState<string | null>(null)
   const [selectedDay, setSelectedDay] = useState(1)
   const [subjects, setSubjects] = useState<SubjectOption[]>([])
+  const [wizardSummary, setWizardSummary] = useState<{ days: number; journeys: number; periods: number; lectiveMinutes: number } | null>(null)
 
   const configuredDays = useMemo(() => {
     const values = [...new Set(timeSlots.map((slot) => slot.dayOfWeek).filter((day): day is number => typeof day === 'number' && day >= 1 && day <= 7))].sort()
@@ -46,7 +47,7 @@ export function SchedulePage() {
       await refetchAll()
       setEditing(false)
       setAssigning(true)
-    } catch (cause) { setSaveError(cause instanceof Error ? cause.message : 'No se pudo guardar la estructura.') }
+    } catch (cause) { console.error('No se pudo guardar la estructura del horario:', cause); setSaveError('No pudimos guardar la estructura del horario.') }
     finally { setSaving(false) }
   }
 
@@ -66,13 +67,17 @@ export function SchedulePage() {
   const hasStructure = timeSlots.length > 0
   const lectiveMinutes = entries.reduce((sum, entry) => sum + duration(entry.startTime, entry.endTime), 0)
 
+  const configuring = !hasStructure || editing
+  const visibleSummary = configuring && wizardSummary ? wizardSummary : { days: configuredDays.length, journeys: journeys.length || (hasStructure ? 1 : 0), periods: timeSlots.filter((slot) => (slot.blockType ?? 'CLASS') === 'CLASS').length, lectiveMinutes }
+
   return <section data-tour="create-schedule" className="w-full min-w-0 space-y-5 pb-10">
     <PageHero title="Horario docente" description={hasStructure ? 'Tu jornada, períodos y clases en una vista flexible.' : 'Configura tus días, jornadas, períodos y clases.'} icon={CalendarDays} tone="info" eyebrow="Semana académica" actions={hasStructure && !editing ? <div className="flex gap-2"><Button variant="outline" onClick={() => setAssigning((value) => !value)}>{assigning ? 'Finalizar asignación' : 'Asignar clases'}</Button><Button onClick={() => setEditing(true)}><Pencil className="size-4" />Editar estructura</Button></div> : null}>
-      <div className="flex flex-wrap gap-2"><StatusBadge tone="info">{entries.length} clases</StatusBadge><StatusBadge tone="neutral">{configuredDays.length} días</StatusBadge><StatusBadge tone="neutral">{journeys.length || (hasStructure ? 1 : 0)} jornadas</StatusBadge><StatusBadge tone="success">{Math.floor(lectiveMinutes / 60)} h {lectiveMinutes % 60} min lectivos</StatusBadge></div>
+      <div className="flex flex-wrap gap-2"><StatusBadge tone="info">{entries.length} clases</StatusBadge><StatusBadge tone="neutral">{visibleSummary.days} días</StatusBadge><StatusBadge tone="neutral">{visibleSummary.journeys} jornadas</StatusBadge><StatusBadge tone="success">{Math.floor(visibleSummary.lectiveMinutes / 60)} h {visibleSummary.lectiveMinutes % 60} min lectivos</StatusBadge></div>
     </PageHero>
-    {error || saveError ? <FeedbackBanner tone="danger">{error || saveError}</FeedbackBanner> : null}
+    {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
+    {saveError && !configuring ? <FeedbackBanner tone="danger">{saveError}</FeedbackBanner> : null}
     {loading ? <div className="rounded-3xl bg-card py-28 text-center text-sm text-muted-foreground shadow-sm">Cargando horario…</div> : null}
-    {!loading && (!hasStructure || editing) ? <FlexibleScheduleWizard initialJourneys={journeys} initialSlots={timeSlots} submitting={saving} error={saveError} onComplete={handleStructure} onCancel={hasStructure ? () => setEditing(false) : undefined} /> : null}
+    {!loading && configuring ? <FlexibleScheduleWizard initialJourneys={journeys} initialSlots={timeSlots} submitting={saving} error={saveError} onComplete={handleStructure} onSummaryChange={setWizardSummary} onCancel={hasStructure ? () => setEditing(false) : undefined} /> : null}
     {!loading && hasStructure && !editing ? <WeeklySchedule journeys={journeys} slots={timeSlots} entries={entries} days={configuredDays} selectedDay={selectedDay} onSelectDay={setSelectedDay} assigning={assigning} subjects={subjects} onAssign={assign} onRemove={remove} /> : null}
   </section>
 }
