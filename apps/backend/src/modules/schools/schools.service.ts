@@ -21,7 +21,7 @@ export function meaningfulSchoolSearchTokens(query: string) {
   const tokens = query
     .split(' ')
     .filter((token) => token.length > 1 && !INSTITUTION_WORDS.has(token) && !SEARCH_STOP_WORDS.has(token))
-  return tokens.length ? tokens : query.split(' ').filter((token) => token.length > 1)
+  return tokens.length ? tokens : query.split(' ').filter((token) => token.length > 0)
 }
 
 export function schoolSearchCombinedScore(name: string, query: string, distance?: number | null) {

@@ -109,7 +109,7 @@ export function SchoolSearchInput({ value, onChange, onSelect, error, placeholde
     const term = value.trim()
     const requestId = ++requestRef.current
     if (term && term === selectedQueryRef.current) return
-    if (term.length < 2) {
+    if (term.length < 1) {
       setResults([])
       setOpen(false)
       setSearched(false)

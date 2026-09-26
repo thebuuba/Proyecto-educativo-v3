@@ -46,6 +46,20 @@ describe('SchoolSearchInput', () => {
     expect(screen.getByText('Código 05678')).toBeInTheDocument()
   })
 
+  it('starts searching from the first typed character', async () => {
+    render(<Harness />)
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'C' } })
+    expect(get).not.toHaveBeenCalled()
+
+    await act(async () => { vi.advanceTimersByTime(300); await Promise.resolve() })
+
+    expect(get).toHaveBeenCalledWith(
+      expect.stringContaining('/schools?q=C&limit=50'),
+      expect.any(Object),
+    )
+    expect(screen.getAllByText('Centro Duarte')).toHaveLength(2)
+  })
+
   it('preserves the unique id when a result is selected', async () => {
     const onSelect = vi.fn()
     render(<Harness onSelect={onSelect} />)

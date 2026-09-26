@@ -42,6 +42,14 @@ describe('SchoolsService', () => {
       .toBe(schoolSearchCombinedScore('EUGENIO MARIA DE HOSTOS', 'EUGE', 3))
   })
 
+  it('searches from the first typed character', async () => {
+    queryRaw.mockResolvedValue([{ id: 'school-1', name: 'Centro Duarte' }])
+
+    await expect(new SchoolsService().search('C')).resolves.toHaveLength(1)
+    expect(meaningfulSchoolSearchTokens('c')).toEqual(['c'])
+    expect(queryRaw).toHaveBeenCalledOnce()
+  })
+
   it('keeps centers with the same name as separate results by id', async () => {
     const rows = [
       { id: 'school-sosua', name: 'Centro Duarte', district: 'Sosúa' },
