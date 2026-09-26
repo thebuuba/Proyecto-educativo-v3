@@ -91,6 +91,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   /** Aplica los datos de una sesión (login o registro) al estado global. */
   const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
+    localStorage.setItem('aulabase:last-account', JSON.stringify({
+      email: response.appUser.email,
+      fullName: response.appUser.fullName,
+      avatarUrl: response.appUser.avatarUrl,
+      role: response.roles[0]?.name,
+    }))
     const onboardingComplete = checkOnboarding
       ? (getCachedOnboardingStatus() ?? await getOnboardingStatus().then((status) => {
           setCachedOnboardingStatus(status.complete)
@@ -151,6 +157,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
         clearAuthState()
         return
       }
+      localStorage.setItem('aulabase:last-account', JSON.stringify({
+        email: appUser.email,
+        fullName: appUser.fullName,
+        avatarUrl: appUser.avatarUrl,
+        role: bootstrap.roles[0]?.name,
+      }))
 
       const user: AuthUser = { id: appUser.id, email: appUser.email }
       const roles = bootstrap.roles
