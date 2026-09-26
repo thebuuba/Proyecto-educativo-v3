@@ -108,10 +108,16 @@ export type CompleteOnboardingInput = {
   fullName: string
   email?: string
   school: {
+    id: string
     name: string
     primaryModality?: string
     schoolShift?: string
     enabledSubsystems?: string[]
+  }
+  teacherContext: {
+    levels: string[]
+    shifts: string[]
+    modalities: string[]
   }
   schoolYear: {
     name: string

@@ -230,11 +230,6 @@ function inferSchoolYearDates(name: string, startDate?: string, endDate?: string
   }
 }
 
-function normalizeSchoolShift(value?: string) {
-  const shift = value?.split(',')[0]?.trim()
-  return shift || 'extended'
-}
-
 @Injectable()
 export class AuthService {
   constructor(private jwtService: JwtService) {}
@@ -422,26 +417,29 @@ export class AuthService {
     }
 
 
-    const slug = await getAvailableSchoolSlug(dto.school.name)
+    const selectedSchool = await prisma.school.findFirst({
+      where: { id: dto.school.id, status: 'ACTIVE' },
+    })
+    if (!selectedSchool) throw new BadRequestException('Selecciona un centro educativo válido.')
+
+    const allowedLevels = new Set(['primary', 'secondary'])
+    const allowedShifts = new Set(['morning', 'afternoon', 'night', 'extended'])
+    const allowedModalities = new Set(['regular', 'adultos', 'other'])
+    const invalidContext =
+      !dto.teacherContext.levels.length ||
+      !dto.teacherContext.shifts.length ||
+      dto.teacherContext.levels.some((value) => !allowedLevels.has(value)) ||
+      dto.teacherContext.shifts.some((value) => !allowedShifts.has(value)) ||
+      dto.teacherContext.modalities.some((value) => !allowedModalities.has(value))
+    if (invalidContext) throw new BadRequestException('El contexto docente no coincide con la oferta del centro.')
+
     const { firstName, lastName } = splitFullName(dto.fullName, 'Docente')
     const { user, roles } = await prisma.$transaction(
       async (tx) => {
-        const school = await tx.school.create({
-          data: {
-            name: dto.school.name,
-            slug,
-            primaryModality: dto.school.primaryModality ?? 'general',
-            schoolShift: normalizeSchoolShift(dto.school.schoolShift),
-            enabledSubsystems: dto.school.enabledSubsystems?.length
-              ? dto.school.enabledSubsystems
-              : ['regular'],
-          },
-        })
-
-        const adminRole = await tx.role.upsert({
-          where: { key: 'admin' },
+        const teacherRole = await tx.role.upsert({
+          where: { key: 'teacher' },
           update: {},
-          create: { key: 'admin', name: 'Administrador' },
+          create: { key: 'teacher', name: 'Docente' },
         })
 
         const user = await tx.appUser.create({
@@ -449,7 +447,7 @@ export class AuthService {
             authUserId: authUser.id,
             email,
             fullName: dto.fullName,
-            schoolId: school.id,
+            schoolId: selectedSchool.id,
             provider: authUser.app_metadata?.provider,
           },
         })
@@ -457,26 +455,36 @@ export class AuthService {
         await tx.userRole.create({
           data: {
             userId: user.id,
-            roleId: adminRole.id,
-            schoolId: school.id,
+            roleId: teacherRole.id,
+            schoolId: selectedSchool.id,
           },
         })
 
         const _teacher = await tx.teacher.create({
           data: {
             userId: user.id,
-            schoolId: school.id,
+            schoolId: selectedSchool.id,
             employeeCode: `DOC-${Date.now()}`,
             firstName,
             lastName,
             email,
             hireDate: startDate,
+            preferredLevels: dto.teacherContext.levels,
+            preferredShifts: dto.teacherContext.shifts,
+            preferredModalities: dto.teacherContext.modalities,
           },
         })
 
-        await tx.schoolYear.create({
-          data: {
-            schoolId: school.id,
+        await tx.schoolYear.updateMany({
+          where: { schoolId: selectedSchool.id, name: { not: dto.schoolYear.name }, isCurrent: true },
+          data: { isCurrent: false },
+        })
+
+        await tx.schoolYear.upsert({
+          where: { schoolId_name: { schoolId: selectedSchool.id, name: dto.schoolYear.name } },
+          update: { isCurrent: true, status: 'ACTIVE' },
+          create: {
+            schoolId: selectedSchool.id,
             name: dto.schoolYear.name,
             startDate,
             endDate,
@@ -484,7 +492,7 @@ export class AuthService {
           },
         })
 
-        return { user, roles: [adminRole] }
+        return { user, roles: [teacherRole] }
       },
       { timeout: 20_000 },
     )

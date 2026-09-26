@@ -30,4 +30,24 @@ describe('persistent login', () => {
     }))
     expect(session.permissions).toEqual([{ key: 'courses.read' }])
   })
+
+  it('uses the backend login when the browser cannot reach Supabase directly', async () => {
+    const backendSession = {
+      user: { id: 'user-1', email: 'teacher@example.com' },
+      appUser: { id: 'user-1' },
+      roles: [],
+      permissions: [],
+    }
+    signInWithPassword.mockResolvedValue({
+      data: { session: null },
+      error: { message: 'Failed to fetch' },
+    })
+    post.mockResolvedValue(backendSession)
+
+    await expect(login({ email: 'teacher@example.com', password: 'secret' })).resolves.toEqual(backendSession)
+    expect(post).toHaveBeenCalledWith('/auth/login', {
+      email: 'teacher@example.com',
+      password: 'secret',
+    }, { clearResponseCache: true })
+  })
 })

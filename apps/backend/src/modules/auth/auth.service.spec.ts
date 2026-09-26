@@ -23,6 +23,7 @@ const mocks = vi.hoisted(() => ({
     },
     school: {
       findUnique: vi.fn(),
+      findFirst: vi.fn(),
     },
     schoolYear: {
       findFirst: vi.fn(),
@@ -78,6 +79,7 @@ describe('AuthService.register', () => {
     mocks.prisma.rolePermission.findMany.mockResolvedValue([])
     mocks.prisma.permission.findMany.mockResolvedValue([])
     mocks.prisma.school.findUnique.mockResolvedValue(null)
+    mocks.prisma.school.findFirst.mockResolvedValue(null)
     mocks.prisma.schoolYear.findFirst.mockResolvedValue(null)
     mocks.prisma.academicPeriod.findFirst.mockResolvedValue(null)
     jwtService.sign.mockReturnValue('signed-token')
@@ -460,14 +462,21 @@ describe('AuthService.register', () => {
       createdAt,
       updatedAt,
     }
-    const adminRole = { id: 'role-admin', key: 'admin', name: 'Administrador' }
+    const teacherRole = { id: 'role-teacher', key: 'teacher', name: 'Docente' }
+    mocks.prisma.school.findFirst.mockResolvedValue({
+      id: 'school-1',
+      name: registerDto.schoolName,
+      niveles: ['primary', 'secondary'],
+      tandas: ['morning', 'afternoon'],
+      modalidades: ['regular'],
+      status: 'ACTIVE',
+    })
     const tx = {
-      school: { create: vi.fn().mockResolvedValue({ id: 'school-1' }) },
-      role: { upsert: vi.fn().mockResolvedValue(adminRole) },
+      role: { upsert: vi.fn().mockResolvedValue(teacherRole) },
       appUser: { create: vi.fn().mockResolvedValue(user) },
       userRole: { create: vi.fn() },
       teacher: { create: vi.fn().mockResolvedValue({ id: 'teacher-1' }) },
-      schoolYear: { create: vi.fn().mockResolvedValue({ id: 'year-1' }) },
+      schoolYear: { updateMany: vi.fn(), upsert: vi.fn().mockResolvedValue({ id: 'year-1' }) },
       academicPeriod: { create: vi.fn() },
       grade: { create: vi.fn().mockResolvedValue({ id: 'grade-1' }) },
       section: { create: vi.fn().mockResolvedValue({ id: 'section-1' }) },
@@ -479,6 +488,7 @@ describe('AuthService.register', () => {
     const result = await createService().completeOnboarding('supabase-token', {
       fullName: registerDto.fullName,
       school: {
+        id: 'school-1',
         name: registerDto.schoolName,
         primaryModality: 'general',
         schoolShift: 'morning,afternoon',
@@ -487,6 +497,11 @@ describe('AuthService.register', () => {
       schoolYear: {
         name: '2026-2027',
       },
+      teacherContext: {
+        levels: ['secondary'],
+        shifts: ['morning'],
+        modalities: ['regular'],
+      },
     } as never)
 
     expect(tx.teacher.create).toHaveBeenCalledWith({
@@ -494,12 +509,19 @@ describe('AuthService.register', () => {
         userId: user.id,
         schoolId: 'school-1',
         email: registerDto.email,
+        preferredLevels: ['secondary'],
+        preferredShifts: ['morning'],
+        preferredModalities: ['regular'],
       }),
     })
-    expect(tx.school.create).toHaveBeenCalledWith({
-      data: expect.objectContaining({
-        schoolShift: 'morning',
-      }),
+    expect(mocks.prisma.school.findFirst).toHaveBeenCalledWith({ where: { id: 'school-1', status: 'ACTIVE' } })
+    expect(tx.role.upsert).toHaveBeenCalledWith({
+      where: { key: 'teacher' },
+      update: {},
+      create: { key: 'teacher', name: 'Docente' },
+    })
+    expect(tx.userRole.create).toHaveBeenCalledWith({
+      data: { userId: user.id, roleId: teacherRole.id, schoolId: 'school-1' },
     })
     expect(tx.academicPeriod.create).not.toHaveBeenCalled()
     expect(tx.grade.create).not.toHaveBeenCalled()
