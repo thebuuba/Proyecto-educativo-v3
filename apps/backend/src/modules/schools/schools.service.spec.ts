@@ -8,13 +8,25 @@ vi.mock('@aula/database', async (importOriginal) => ({
   prisma: { $queryRaw: queryRaw, $transaction: transaction },
 }))
 
-import { normalizeSchoolSearchQuery, SchoolsService } from './schools.service'
+import { meaningfulSchoolSearchTokens, normalizeSchoolSearchQuery, SchoolsService } from './schools.service'
 
 describe('SchoolsService', () => {
   beforeEach(() => queryRaw.mockReset())
 
   it('normalizes accents, case, punctuation, and repeated spaces', () => {
     expect(normalizeSchoolSearchQuery('  COLEGIO Católico,  Cardenal  Beras ')).toBe('colegio catolico cardenal beras')
+  })
+
+  it('ranks meaningful name tokens while accepting a single typed character', async () => {
+    expect(meaningfulSchoolSearchTokens(normalizeSchoolSearchQuery('Centro Educativo Eugenio María de Hostos')))
+      .toEqual(['eugenio', 'maria', 'hostos'])
+    expect(meaningfulSchoolSearchTokens('c')).toEqual(['c'])
+    queryRaw.mockResolvedValue([{ id: 'school-1', name: 'Centro Duarte' }])
+    await expect(new SchoolsService().search('C')).resolves.toHaveLength(1)
+    const sql = queryRaw.mock.calls[0][0].sql as string
+    expect(sql).toContain('WITH candidates AS')
+    expect(sql).toContain('ranked AS')
+    expect(sql.lastIndexOf('LIMIT')).toBeGreaterThan(sql.indexOf('ORDER BY ("textScore"'))
   })
 
   it('keeps centers with the same name as separate results by id', async () => {
