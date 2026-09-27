@@ -26,11 +26,15 @@ import type {
 } from '@/modules/schedule/types'
 import {
   blockTypeLabels,
+  formatScheduleDuration,
+  formatScheduleRange,
+  formatScheduleTime,
   generateTemplateBlocks,
   insertTemplateBreak,
   materializeJourneyDraft,
   minutesFromScheduleTime,
   scheduleDays,
+  scheduleTimeFromMinutes,
   summarizeBlocks,
   templateFromDay,
   type JourneyStructureDraft,
@@ -150,7 +154,7 @@ export function FlexibleScheduleWizard({
   )
   const [confirm, setConfirm] = useState<{
     journeyId: string
-    action: 'clear' | 'regenerate' | 'delete-global'
+    action: 'clear' | 'regenerate' | 'generate-overflow' | 'delete-global'
     sequence?: number
   } | null>(null)
   const [cellEditor, setCellEditor] = useState<CellEditorDraft | null>(null)
@@ -230,6 +234,19 @@ export function FlexibleScheduleWizard({
       ),
       dayOverrides: {},
     })
+  }
+  function requestGenerate(id: string) {
+    const journey = journeys.find((item) => item.id === id)!
+    const draft = drafts[id]
+    const available =
+      minutesFromScheduleTime(journey.endTime) - minutesFromScheduleTime(journey.startTime)
+    const required = draft.durationMinutes * draft.periodCount
+    if (required > available) {
+      setConfirm({ journeyId: id, action: 'generate-overflow' })
+      return
+    }
+    if (draft.baseBlocks.length) setConfirm({ journeyId: id, action: 'regenerate' })
+    else generate(id)
   }
   function addPeriod(id: string) {
     const journey = journeys.find((item) => item.id === id)!
@@ -371,7 +388,7 @@ export function FlexibleScheduleWizard({
           block.sequence === cellEditor.sequence ? { ...cellEditor.block, key: block.key } : block,
         )
       const baseBlocks = update(draft.baseBlocks)
-      const errors = validateBlocks(journey, baseBlocks)
+      const errors = validateEditedBlock(journey, baseBlocks, cellEditor.sequence)
       if (errors.length) {
         setCellEditor({ ...cellEditor, error: errors[0] })
         return
@@ -389,7 +406,7 @@ export function FlexibleScheduleWizard({
     const blocks = effectiveBlocks(cellEditor.journeyId, day).map((block) =>
       block.sequence === cellEditor.sequence ? cellEditor.block : block,
     )
-    const errors = validateBlocks(journey, blocks)
+    const errors = validateEditedBlock(journey, blocks, cellEditor.sequence)
     if (errors.length) {
       setCellEditor({ ...cellEditor, error: errors[0] })
       return
@@ -431,6 +448,17 @@ export function FlexibleScheduleWizard({
           ? materialized.some((block) => block.blockType === 'CLASS') &&
             structureErrors.length === 0
           : structureErrors.length === 0
+  const confirmJourney = confirm
+    ? journeys.find((journey) => journey.id === confirm.journeyId)
+    : null
+  const confirmDraft = confirm ? drafts[confirm.journeyId] : null
+  const generationRequired = confirmDraft
+    ? confirmDraft.durationMinutes * confirmDraft.periodCount
+    : 0
+  const generationAvailable = confirmJourney
+    ? minutesFromScheduleTime(confirmJourney.endTime) -
+      minutesFromScheduleTime(confirmJourney.startTime)
+    : 0
   function next() {
     if (step < 3) setStep((value) => value + 1)
     else onComplete({ journeys, blocks: materialized })
@@ -499,11 +527,7 @@ export function FlexibleScheduleWizard({
                 draft={drafts[journey.id]}
                 selectedDays={days}
                 onDraft={updateDraft}
-                onGenerate={(id) =>
-                  drafts[id].baseBlocks.length
-                    ? setConfirm({ journeyId: id, action: 'regenerate' })
-                    : generate(id)
-                }
+                onGenerate={requestGenerate}
                 onAddClass={addPeriod}
                 onAddBreak={openBreakEditor}
                 onClear={(id) => setConfirm({ journeyId: id, action: 'clear' })}
@@ -517,7 +541,12 @@ export function FlexibleScheduleWizard({
               />
             ))}
             {structureErrors.length ? (
-              <FeedbackBanner tone="danger">
+              <FeedbackBanner tone="warning">
+                <p className="font-bold">
+                  Hay {structureErrors.length}{' '}
+                  {structureErrors.length === 1 ? 'elemento' : 'elementos'} por revisar. Puedes
+                  corregirlos uno a uno; será necesario resolverlos antes de continuar.
+                </p>
                 <ul className="list-disc pl-5">
                   {structureErrors.map((message) => (
                     <li key={message}>{message}</li>
@@ -579,23 +608,29 @@ export function FlexibleScheduleWizard({
               ? 'Limpiar jornada'
               : confirm.action === 'delete-global'
                 ? 'Eliminar de todos los días'
-                : 'Regenerar jornada'
+                : confirm.action === 'generate-overflow'
+                  ? 'Esta estructura supera la duración de la jornada'
+                  : 'Regenerar jornada'
           }
           description={
             confirm.action === 'clear'
               ? 'Se eliminarán todas las clases, recreos, pausas, almuerzos, horas pedagógicas y ajustes de esta jornada.'
               : confirm.action === 'delete-global'
                 ? 'Se eliminará este bloque de todos los días de esta jornada.'
-                : 'Se reemplazará la estructura actual de esta jornada, incluidos recreos y ajustes manuales.'
+                : confirm.action === 'generate-overflow'
+                  ? `${confirmDraft?.periodCount ?? 0} clases de ${confirmDraft?.durationMinutes ?? 0} minutos necesitan ${formatScheduleDuration(generationRequired)}, pero esta jornada dispone de ${formatScheduleDuration(generationAvailable)}. Con esa duración caben aproximadamente ${Math.max(0, Math.floor(generationAvailable / (confirmDraft?.durationMinutes || 1)))} clases. Puedes generar de todos modos y ajustar cada duración después.${confirmDraft?.baseBlocks.length ? ' Se reemplazarán las clases, recreos y ajustes manuales actuales.' : ''}`
+                  : 'Se reemplazarán las clases, recreos y ajustes manuales actuales de esta jornada.'
           }
           confirmLabel={
             confirm.action === 'clear'
               ? 'Limpiar jornada'
               : confirm.action === 'delete-global'
                 ? 'Eliminar'
-                : 'Regenerar'
+                : confirm.action === 'generate-overflow'
+                  ? 'Generar y ajustar'
+                  : 'Regenerar'
           }
-          destructive={confirm.action !== 'regenerate'}
+          destructive={confirm.action === 'clear' || confirm.action === 'delete-global'}
           onConfirm={confirmAction}
           onClose={() => setConfirm(null)}
         />
@@ -622,16 +657,22 @@ export function FlexibleScheduleWizard({
               <Field label="Tipo">
                 <Select
                   value={cellEditor.block.blockType}
-                  onChange={(event) =>
+                  onChange={(event) => {
+                    const blockType = event.target.value as ScheduleBlockType
                     setCellEditor({
                       ...cellEditor,
                       error: null,
                       block: {
                         ...cellEditor.block,
-                        blockType: event.target.value as ScheduleBlockType,
+                        blockType,
+                        name: defaultBlockName(
+                          blockType,
+                          cellEditor.sequence,
+                          drafts[cellEditor.journeyId].baseBlocks,
+                        ),
                       },
                     })
-                  }
+                  }}
                 >
                   {Object.entries(blockTypeLabels).map(([value, label]) => (
                     <option key={value} value={value}>
@@ -653,27 +694,25 @@ export function FlexibleScheduleWizard({
                 />
               </Field>
               <Field label="Inicio">
-                <Input
-                  type="time"
+                <ScheduleTimeInput
                   value={cellEditor.block.startTime}
-                  onChange={(event) =>
+                  onChange={(value) =>
                     setCellEditor({
                       ...cellEditor,
                       error: null,
-                      block: { ...cellEditor.block, startTime: event.target.value },
+                      block: { ...cellEditor.block, startTime: value },
                     })
                   }
                 />
               </Field>
               <Field label="Fin">
-                <Input
-                  type="time"
+                <ScheduleTimeInput
                   value={cellEditor.block.endTime}
-                  onChange={(event) =>
+                  onChange={(value) =>
                     setCellEditor({
                       ...cellEditor,
                       error: null,
-                      block: { ...cellEditor.block, endTime: event.target.value },
+                      block: { ...cellEditor.block, endTime: value },
                     })
                   }
                 />
@@ -863,17 +902,15 @@ function JourneysStep({
             </div>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <Field label="Inicio">
-                <Input
-                  type="time"
+                <ScheduleTimeInput
                   value={journey.startTime}
-                  onChange={(event) => updateJourney(journey.id, { startTime: event.target.value })}
+                  onChange={(value) => updateJourney(journey.id, { startTime: value })}
                 />
               </Field>
               <Field label="Fin">
-                <Input
-                  type="time"
+                <ScheduleTimeInput
                   value={journey.endTime}
-                  onChange={(event) => updateJourney(journey.id, { endTime: event.target.value })}
+                  onChange={(value) => updateJourney(journey.id, { endTime: value })}
                 />
               </Field>
             </div>
@@ -913,6 +950,22 @@ function JourneyPeriods({
   onDeleteGlobal: (id: string, sequence: number) => void
   onRestoreDay: (id: string, day: number) => void
 }) {
+  const availableMinutes =
+    minutesFromScheduleTime(journey.endTime) - minutesFromScheduleTime(journey.startTime)
+  const requiredMinutes = draft.durationMinutes * draft.periodCount
+  const generatedClasses = draft.baseBlocks.filter((block) => block.blockType === 'CLASS')
+  const lectiveMinutes = generatedClasses.reduce(
+    (total, block) =>
+      total + minutesFromScheduleTime(block.endTime) - minutesFromScheduleTime(block.startTime),
+    0,
+  )
+  const breakMinutes = draft.baseBlocks
+    .filter((block) => block.blockType === 'BREAK')
+    .reduce(
+      (total, block) =>
+        total + minutesFromScheduleTime(block.endTime) - minutesFromScheduleTime(block.startTime),
+      0,
+    )
   useEffect(() => {
     if (
       draft.appliedDays.length !== selectedDays.length ||
@@ -925,8 +978,14 @@ function JourneyPeriods({
       <div>
         <h4 className="font-black uppercase tracking-wide">{journey.name}</h4>
         <p className="text-xs text-muted-foreground">
-          {journey.startTime} – {journey.endTime}
+          {formatScheduleRange(journey.startTime, journey.endTime)}
         </p>
+        {draft.baseBlocks.length ? (
+          <p className="mt-1 text-xs font-semibold text-muted-foreground">
+            {generatedClasses.length} clases · {formatScheduleDuration(lectiveMinutes)} lectivos
+            {breakMinutes ? ` · ${formatScheduleDuration(breakMinutes)} recreo` : ''}
+          </p>
+        ) : null}
       </div>
       <div className="grid gap-3 rounded-2xl bg-muted/30 p-4 sm:grid-cols-[13rem_10rem_auto]">
         <Field label="Duración base de cada clase">
@@ -961,6 +1020,15 @@ function JourneyPeriods({
           </Button>
         </div>
       </div>
+      {!draft.baseBlocks.length && requiredMinutes > availableMinutes ? (
+        <FeedbackBanner tone="warning">
+          {draft.periodCount} clases de {draft.durationMinutes} minutos necesitan{' '}
+          {formatScheduleDuration(requiredMinutes)}, pero esta jornada dispone de{' '}
+          {formatScheduleDuration(availableMinutes)}. Con esta duración caben aproximadamente{' '}
+          {Math.max(0, Math.floor(availableMinutes / draft.durationMinutes))} clases. Puedes reducir
+          la cantidad o generar y ajustar las duraciones después.
+        </FeedbackBanner>
+      ) : null}
       {draft.baseBlocks.length ? (
         <>
           <div className="flex flex-wrap gap-2">
@@ -1098,7 +1166,7 @@ function WeeklyPeriodGrid({
       >
         <p className="pr-6 text-xs font-extrabold text-foreground">{block.name}</p>
         <p className="mt-1 text-[10px] tabular-nums text-muted-foreground">
-          {block.startTime}–{block.endTime}
+          {formatScheduleRange(block.startTime, block.endTime)}
         </p>
         {adjusted(day, block) ? (
           <span className="mt-1 inline-block text-[9px] font-bold text-primary">● Ajustado</span>
@@ -1256,7 +1324,7 @@ function WeeklyPeriodGrid({
             {rows.map((row) => (
               <tr key={row}>
                 <td className="align-top px-2 text-[10px] tabular-nums text-muted-foreground">
-                  <span>{row.replace('|', '–')}</span>
+                  <span>{formatScheduleRange(...(row.split('|') as [string, string]))}</span>
                   {rowMenu(row)}
                 </td>
                 {days.map((day) => (
@@ -1276,18 +1344,21 @@ function WeeklyPeriodGrid({
 function validateBlocks(
   journey: ScheduleStructureJourneyInput,
   blocks: ScheduleTemplateBlock[],
-  label = 'horario personalizado',
+  label = 'estructura de la jornada',
 ) {
   const errors: string[] = []
   const ordered = [...blocks].sort((a, b) => a.startTime.localeCompare(b.startTime))
   ordered.forEach((block) => {
     if (minutesFromScheduleTime(block.endTime) <= minutesFromScheduleTime(block.startTime))
-      errors.push(`${journey.name} · ${label}: ${block.name} debe terminar después de iniciar.`)
-    if (
-      minutesFromScheduleTime(block.startTime) < minutesFromScheduleTime(journey.startTime) ||
-      minutesFromScheduleTime(block.endTime) > minutesFromScheduleTime(journey.endTime)
-    )
-      errors.push(`${journey.name} · ${label}: ${block.name} queda fuera de la jornada.`)
+      errors.push(`${journey.name} · ${block.name}: la hora final debe ser posterior al inicio.`)
+    if (minutesFromScheduleTime(block.startTime) < minutesFromScheduleTime(journey.startTime))
+      errors.push(
+        `${journey.name} · ${block.name}: empieza antes del inicio de la jornada (${formatScheduleTime(journey.startTime)}).`,
+      )
+    if (minutesFromScheduleTime(block.endTime) > minutesFromScheduleTime(journey.endTime))
+      errors.push(
+        `${journey.name} · ${block.name}: termina después del final de la jornada (${formatScheduleTime(journey.endTime)}).`,
+      )
   })
   for (let index = 1; index < ordered.length; index += 1)
     if (
@@ -1295,6 +1366,35 @@ function validateBlocks(
       minutesFromScheduleTime(ordered[index - 1].endTime)
     )
       errors.push(`${journey.name} · ${label}: hay bloques solapados.`)
+  return errors
+}
+function validateEditedBlock(
+  journey: ScheduleStructureJourneyInput,
+  blocks: ScheduleTemplateBlock[],
+  sequence: number,
+) {
+  const block = blocks.find((item) => item.sequence === sequence)
+  if (!block) return ['No pudimos encontrar el bloque que intentas editar.']
+  const errors: string[] = []
+  const start = minutesFromScheduleTime(block.startTime)
+  const end = minutesFromScheduleTime(block.endTime)
+  if (end <= start) errors.push(`${block.name} debe terminar después de iniciar.`)
+  if (
+    start < minutesFromScheduleTime(journey.startTime) ||
+    end > minutesFromScheduleTime(journey.endTime)
+  )
+    errors.push(
+      `${block.name} debe quedar entre ${formatScheduleTime(journey.startTime)} y ${formatScheduleTime(journey.endTime)}.`,
+    )
+  if (
+    blocks.some(
+      (other) =>
+        other.sequence !== sequence &&
+        start < minutesFromScheduleTime(other.endTime) &&
+        end > minutesFromScheduleTime(other.startTime),
+    )
+  )
+    errors.push(`${block.name} se solapa con otro bloque.`)
   return errors
 }
 function validateTemplate(journey: ScheduleStructureJourneyInput, draft?: JourneyStructureDraft) {
@@ -1325,6 +1425,91 @@ function normalizeClassName(block: ScheduleTemplateBlock) {
   return block.blockType === 'CLASS'
     ? { ...block, name: block.name.replace(/^Período\s+/i, 'Clase ') }
     : block
+}
+function defaultBlockName(
+  blockType: ScheduleBlockType,
+  sequence: number,
+  blocks: ScheduleTemplateBlock[],
+) {
+  if (blockType !== 'CLASS') return blockTypeLabels[blockType]
+  const classPosition = blocks.filter(
+    (block) => block.blockType === 'CLASS' && block.sequence <= sequence,
+  ).length
+  return `Clase ${Math.max(1, classPosition)}`
+}
+
+function parseScheduleTime(value: string) {
+  const normalized = value.trim().toLowerCase().replace(/\s+/g, ' ')
+  const match = normalized.match(/^(\d{1,2}):(\d{2})(?:\s*([ap])\.?\s*m\.?)?$/)
+  if (!match) return null
+  let hours = Number(match[1])
+  const minutes = Number(match[2])
+  const period = match[3]
+  if (minutes > 59 || (period && (hours < 1 || hours > 12)) || (!period && hours > 23)) return null
+  if (period === 'p' && hours < 12) hours += 12
+  if (period === 'a' && hours === 12) hours = 0
+  return scheduleTimeFromMinutes(hours * 60 + minutes)
+}
+
+function ScheduleTimeInput({
+  value,
+  onChange,
+}: {
+  value: string
+  onChange: (value: string) => void
+}) {
+  const [draft, setDraft] = useState(() => formatScheduleTime(value))
+  useEffect(() => setDraft(formatScheduleTime(value)), [value])
+  const commit = (nextDraft: string) => {
+    const parsed = parseScheduleTime(nextDraft)
+    if (parsed) onChange(parsed)
+    setDraft(parsed ? formatScheduleTime(parsed) : formatScheduleTime(value))
+  }
+  const adjust = (minutes: number) => {
+    const next = scheduleTimeFromMinutes(
+      Math.min(23 * 60 + 59, Math.max(0, minutesFromScheduleTime(value) + minutes)),
+    )
+    onChange(next)
+    setDraft(formatScheduleTime(next))
+  }
+  return (
+    <div className="flex items-center gap-1">
+      <Input
+        type="text"
+        inputMode="numeric"
+        value={draft}
+        placeholder="1:35 p. m."
+        onChange={(event) => {
+          const nextDraft = event.target.value
+          setDraft(nextDraft)
+          const parsed = parseScheduleTime(nextDraft)
+          if (parsed) onChange(parsed)
+        }}
+        onBlur={() => commit(draft)}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') commit(draft)
+        }}
+      />
+      <Button
+        type="button"
+        size="sm"
+        variant="outline"
+        aria-label="Restar 5 minutos"
+        onClick={() => adjust(-5)}
+      >
+        −5
+      </Button>
+      <Button
+        type="button"
+        size="sm"
+        variant="outline"
+        aria-label="Sumar 5 minutos"
+        onClick={() => adjust(5)}
+      >
+        +5
+      </Button>
+    </div>
+  )
 }
 function withoutIdentity(block: ScheduleTemplateBlock) {
   return {

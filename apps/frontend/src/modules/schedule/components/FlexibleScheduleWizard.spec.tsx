@@ -114,7 +114,7 @@ describe('cuadrícula semanal de clases', () => {
     fireEvent.change(screen.getByLabelText('Fin'), { target: { value: '08:40' } })
     await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
     expect(screen.getAllByText('● Ajustado').length).toBeGreaterThan(0)
-    expect(screen.getAllByText('08:10–08:40').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('8:10–8:40 a. m.').length).toBeGreaterThan(0)
   })
 
   it('edita una clase en toda la jornada sin crear excepciones', async () => {
@@ -159,7 +159,7 @@ describe('cuadrícula semanal de clases', () => {
     )
     await renderSchedule(personalized)
     expect(screen.getAllByText('● Ajustado').length).toBeGreaterThan(0)
-    expect(screen.getAllByText('08:10–08:40').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('8:10–8:40 a. m.').length).toBeGreaterThan(0)
   })
 
   it('mantiene independientes las configuraciones Matutina y Vespertina', async () => {
@@ -207,5 +207,107 @@ describe('cuadrícula semanal de clases', () => {
     )
     expect(within(morningSection).getAllByText('Recreo').length).toBeGreaterThan(0)
     expect(within(afternoonSection).queryByText('Recreo')).not.toBeInTheDocument()
+  })
+
+  it('avisa cuando seis clases no caben y permite generar para ajustar', async () => {
+    const afternoon = {
+      ...journey,
+      id: 'afternoon',
+      name: 'Vespertina',
+      kind: 'AFTERNOON' as const,
+      startTime: '13:00',
+      endTime: '16:00',
+    }
+    const user = userEvent.setup()
+    render(
+      <FlexibleScheduleWizard
+        initialJourneys={[afternoon]}
+        initialSlots={[]}
+        submitting={false}
+        error={null}
+        onComplete={vi.fn()}
+      />,
+    )
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    fireEvent.change(screen.getAllByRole('spinbutton')[0], {
+      target: { value: '35' },
+    })
+    expect(screen.getByText(/6 clases de 35 minutos necesitan 3 h 30 min/i)).toBeInTheDocument()
+    expect(screen.getByText('1:00–4:00 p. m.')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Generar estructura' }))
+    expect(
+      screen.getByRole('heading', { name: 'Esta estructura supera la duración de la jornada' }),
+    ).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Generar y ajustar' }))
+    expect(screen.getAllByText('Clase 6').length).toBeGreaterThan(0)
+    expect(
+      screen.getByText(/Clase 6: termina después del final de la jornada \(4:00 p\. m\.\)/i),
+    ).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Continuar' })).toBeDisabled()
+  })
+
+  it('permite corregir una clase aunque otra siga fuera de jornada', async () => {
+    const afternoon = {
+      ...journey,
+      id: 'afternoon',
+      name: 'Vespertina',
+      kind: 'AFTERNOON' as const,
+      startTime: '13:00',
+      endTime: '16:00',
+    }
+    const afternoonBase = Array.from({ length: 6 }, (_, index) => ({
+      name: `Clase ${index + 1}`,
+      startTime:
+        `${13 + Math.floor((index * 35) / 60)}`.padStart(2, '0') +
+        `:${String((index * 35) % 60).padStart(2, '0')}`,
+      endTime:
+        `${13 + Math.floor(((index + 1) * 35) / 60)}`.padStart(2, '0') +
+        `:${String(((index + 1) * 35) % 60).padStart(2, '0')}`,
+      sequence: index + 1,
+      blockType: 'CLASS' as const,
+    }))
+    const afternoonSlots: TimeSlot[] = [1, 5].flatMap((dayOfWeek) =>
+      afternoonBase.map((block) => ({
+        ...block,
+        id: `${dayOfWeek}-${block.sequence}`,
+        status: 'active',
+        dayOfWeek,
+        journeyId: afternoon.id,
+      })),
+    )
+    const user = userEvent.setup()
+    render(
+      <FlexibleScheduleWizard
+        initialJourneys={[afternoon]}
+        initialSlots={afternoonSlots}
+        submitting={false}
+        error={null}
+        onComplete={vi.fn()}
+      />,
+    )
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    await user.click(screen.getByLabelText('Acciones globales para Clase 2'))
+    await user.click(screen.getByRole('menuitem', { name: 'Editar en toda la jornada' }))
+    fireEvent.change(screen.getByLabelText('Fin'), { target: { value: '2:05 p. m.' } })
+    await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(screen.getByText(/Clase 6: termina después/i)).toBeInTheDocument()
+    expect(screen.getAllByText('1:35–2:05 p. m.').length).toBeGreaterThan(0)
+  })
+
+  it('sincroniza Tipo con Nombre y Backspace conserva el foco', async () => {
+    const { user } = await renderSchedule()
+    const actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: 'Editar solo este día' }))
+    await user.selectOptions(screen.getByLabelText('Tipo'), 'FREE')
+    const name = screen.getByLabelText('Nombre')
+    expect(name).toHaveValue('Hora pedagógica')
+    fireEvent.change(name, { target: { value: 'Planificación docente' } })
+    name.focus()
+    await user.keyboard('{Backspace}')
+    expect(name).toHaveFocus()
+    expect(name).toHaveValue('Planificación docent')
   })
 })

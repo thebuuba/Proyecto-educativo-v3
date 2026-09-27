@@ -50,6 +50,29 @@ export function scheduleTimeFromMinutes(value: number) {
   return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`
 }
 
+export function formatScheduleTime(value: string) {
+  const [hours, minutes] = value.slice(0, 5).split(':').map(Number)
+  if (!Number.isInteger(hours) || !Number.isInteger(minutes)) return value
+  const period = hours < 12 ? 'a. m.' : 'p. m.'
+  return `${hours % 12 || 12}:${String(minutes).padStart(2, '0')} ${period}`
+}
+
+export function formatScheduleRange(startTime: string, endTime: string) {
+  const start = formatScheduleTime(startTime)
+  const end = formatScheduleTime(endTime)
+  const startPeriod = start.endsWith('a. m.') ? 'a. m.' : 'p. m.'
+  const endPeriod = end.endsWith('a. m.') ? 'a. m.' : 'p. m.'
+  return startPeriod === endPeriod
+    ? `${start.replace(` ${startPeriod}`, '')}–${end}`
+    : `${start}–${end}`
+}
+
+export function formatScheduleDuration(minutes: number) {
+  const hours = Math.floor(minutes / 60)
+  const remainder = minutes % 60
+  return [hours ? `${hours} h` : '', remainder ? `${remainder} min` : ''].filter(Boolean).join(' ')
+}
+
 export function blockDuration(block: Pick<ScheduleStructureBlockInput, 'startTime' | 'endTime'>) {
   return minutesFromScheduleTime(block.endTime) - minutesFromScheduleTime(block.startTime)
 }
