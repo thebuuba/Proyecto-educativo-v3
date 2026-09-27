@@ -6,6 +6,8 @@
  * @description Envoltorio genérico de respuesta API.
  * @template T - Tipo de los datos contenidos en la respuesta.
  */
+export * from './instrument-recommendation'
+
 export interface ApiResponse<T> {
   success: boolean
   data?: T

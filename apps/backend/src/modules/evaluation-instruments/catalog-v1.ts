@@ -1,0 +1,109 @@
+import type { EvidenceType, InstrumentType } from '@aula/shared'
+
+export interface ActivityTypeEntry { id: string; family: string; evidence: EvidenceType[]; triggers: string[] }
+export interface CriterionTemplate {
+  id: string; title: string; observable: string; simple: string; area: string
+  families: string[]; evidence: EvidenceType[]; purpose: string; bands: string[]
+  keywords: string[]; weight: number; attitude?: boolean; requires?: string[]
+}
+export interface RecommendationRule { id: string; families: string[]; instrument: InstrumentType; priority: number; band?: string; maxScore?: number; evidence?: EvidenceType[] }
+const activity = (id: string, family: string, evidence: EvidenceType[], triggers: string[]): ActivityTypeEntry => ({ id, family, evidence, triggers })
+const criterion = (id: string, title: string, observable: string, simple: string, area: string, keywords: string[], extras: Partial<CriterionTemplate> = {}): CriterionTemplate => ({
+  id, title, observable, simple, area, keywords, families: [], evidence: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT'],
+  purpose: 'Valorar evidencia observable de la actividad', bands: ['PRIMARY_FIRST', 'PRIMARY_SECOND', 'SECONDARY'], weight: 3, ...extras,
+})
+
+/** Authored evaluative templates, NOT literal MINERD curriculum. Immutable seed release. */
+export const evaluationCatalogV1 = {
+  version: 'evaluation-2026.1',
+  evidenceTypes: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT', 'ATTITUDE'] as EvidenceType[],
+  activityTypes: [
+    activity('EXPOSITION', 'ORAL', ['PERFORMANCE', 'KNOWLEDGE'], ['exposicion', 'exponer']),
+    activity('ORAL_PRESENTATION', 'ORAL', ['PERFORMANCE', 'KNOWLEDGE'], ['presentacion oral']),
+    activity('DEBATE', 'ORAL', ['PERFORMANCE', 'KNOWLEDGE'], ['debate']),
+    activity('EXPERIMENT', 'SCIENTIFIC', ['PERFORMANCE', 'PRODUCT', 'KNOWLEDGE'], ['experimento', 'experimentacion']),
+    activity('LAB_PRACTICE', 'SCIENTIFIC', ['PERFORMANCE', 'PRODUCT', 'KNOWLEDGE'], ['laboratorio']),
+    activity('WRITTEN_PRODUCTION', 'WRITTEN', ['PRODUCT', 'KNOWLEDGE'], ['produccion escrita', 'poema', 'cuento', 'escribir']),
+    activity('ESSAY', 'WRITTEN', ['PRODUCT', 'KNOWLEDGE'], ['ensayo']),
+    activity('REPORT', 'WRITTEN', ['PRODUCT', 'KNOWLEDGE'], ['informe']),
+    activity('RESEARCH', 'PROJECT_BASED', ['PRODUCT', 'KNOWLEDGE'], ['investigacion']),
+    activity('PROJECT', 'PROJECT_BASED', ['PRODUCT', 'PERFORMANCE', 'KNOWLEDGE'], ['proyecto']),
+    activity('PROBLEM_SOLVING', 'MATHEMATICAL', ['PERFORMANCE', 'KNOWLEDGE'], ['resolucion de problemas', 'resolver problemas']),
+    activity('EXERCISE_SET', 'MATHEMATICAL', ['PRODUCT', 'KNOWLEDGE'], ['ejercicios']),
+    activity('CONCEPT_MAP', 'WRITTEN', ['PRODUCT', 'KNOWLEDGE'], ['mapa conceptual']),
+    activity('PORTFOLIO', 'OBSERVATIONAL', ['PRODUCT'], ['portafolio', 'cuaderno']),
+    activity('ARTISTIC_PRODUCTION', 'ARTISTIC', ['PRODUCT', 'PERFORMANCE'], ['produccion artistica', 'pintura', 'dibujo', 'escultura']),
+    activity('PERFORMANCE', 'ARTISTIC', ['PERFORMANCE'], ['dramatizacion', 'representacion escenica']),
+    activity('MOTOR_SPORTS_PRACTICE', 'MOTOR', ['PERFORMANCE'], ['deporte', 'motriz', 'deportiva']),
+    activity('OBSERVATION', 'OBSERVATIONAL', ['PERFORMANCE', 'KNOWLEDGE'], ['observacion', 'clasificacion']),
+    activity('QUIZ_TEST', 'WRITTEN', ['KNOWLEDGE'], ['cuestionario', 'prueba', 'examen']),
+    activity('OTHER', 'PRACTICAL', ['PERFORMANCE'], []),
+  ],
+  criterionTemplates: [
+    criterion('organization', 'Organización', 'Organiza las ideas en una secuencia comprensible.', 'Presenta sus ideas en orden.', '*', ['organizacion', 'secuencia', 'ideas'], { families: ['ORAL', 'WRITTEN', 'PROJECT_BASED'], weight: 2 }),
+    criterion('communication', 'Comunicación', 'Comunica las ideas de forma clara y adecuada al destinatario.', 'Expresa sus ideas con claridad.', '*', ['comunica', 'explica', 'oral'], { families: ['ORAL'], weight: 2 }),
+    criterion('instructions', 'Seguimiento de instrucciones', 'Realiza los pasos y entrega la evidencia solicitada.', 'Sigue los pasos indicados.', '*', ['instrucciones', 'pasos'], { weight: 1 }),
+    criterion('science-content', 'Dominio del contenido', 'Explica los conceptos y sus relaciones usando el contenido trabajado.', 'Reconoce y describe las características trabajadas.', 'science', ['conceptos', 'caracteristicas', 'clasificacion', 'explica'], { weight: 5 }),
+    criterion('science-accuracy', 'Precisión científica', 'Usa los términos científicos con precisión.', 'Usa las palabras científicas trabajadas.', 'science', ['cientifico', 'identifica', 'describe'], { weight: 4 }),
+    criterion('science-procedure', 'Procedimiento', 'Aplica y explica los pasos del procedimiento científico.', 'Realiza los pasos de la actividad.', 'science', ['procedimiento', 'experimento', 'indagacion'], { families: ['SCIENTIFIC', 'OBSERVATIONAL', 'PRACTICAL'], weight: 5 }),
+    criterion('science-data', 'Registro de datos', 'Registra observaciones y datos de forma ordenada y verificable.', 'Anota lo que observa.', 'science', ['datos', 'registro', 'observacion'], { families: ['SCIENTIFIC', 'OBSERVATIONAL'], weight: 4 }),
+    criterion('science-interpretation', 'Interpretación de resultados', 'Interpreta los resultados a partir de los datos obtenidos.', 'Explica lo que encontró.', 'science', ['interpreta', 'resultados', 'analisis'], { families: ['SCIENTIFIC', 'OBSERVATIONAL'] }),
+    criterion('science-conclusion', 'Conclusiones', 'Formula conclusiones sustentadas en los resultados registrados.', 'Dice qué aprendió de sus observaciones.', 'science', ['conclusiones', 'evidencia'], { families: ['SCIENTIFIC'] }),
+    criterion('science-safety', 'Seguridad', 'Aplica las normas de seguridad pertinentes al procedimiento y los materiales.', 'Usa los materiales con cuidado según las instrucciones.', 'science', ['seguridad', 'proteccion'], { families: ['SCIENTIFIC'], requires: ['laboratorio', 'seguridad', 'reactivos', 'calor', 'sustancias'], weight: 3 }),
+    criterion('math-comprehension', 'Comprensión del problema', 'Identifica datos, condiciones y la pregunta del problema.', 'Señala los datos y qué debe encontrar.', 'math', ['problema', 'datos'], { weight: 4 }),
+    criterion('math-procedure', 'Procedimiento matemático', 'Selecciona y aplica un procedimiento adecuado al problema.', 'Muestra los pasos que usa.', 'math', ['procedimiento', 'operaciones'], { weight: 5 }),
+    criterion('math-reasoning', 'Razonamiento y justificación', 'Justifica la estrategia y relaciona los pasos con los datos.', 'Explica cómo llegó a su respuesta.', 'math', ['razonamiento', 'justifica', 'estrategia'], { weight: 5 }),
+    criterion('math-accuracy', 'Exactitud', 'Realiza los cálculos y usa las unidades con precisión.', 'Comprueba sus cálculos.', 'math', ['calcula', 'calculo', 'exactitud'], { weight: 4 }),
+    criterion('math-interpretation', 'Interpretación', 'Interpreta y comprueba la respuesta en el contexto del problema.', 'Dice qué significa su respuesta.', 'math', ['interpreta', 'solucion', 'resultado'], { weight: 4 }),
+    criterion('language-content', 'Contenido y adecuación', 'Desarrolla contenido pertinente al propósito y al género solicitado.', 'Escribe ideas relacionadas con el tema.', 'language', ['contenido', 'adecuacion', 'proposito'], { weight: 5 }),
+    criterion('language-structure', 'Estructura', 'Organiza el texto según las convenciones del género trabajado.', 'Ordena las partes de su texto.', 'language', ['estructura', 'texto', 'genero'], { weight: 4 }),
+    criterion('language-coherence', 'Coherencia y cohesión', 'Relaciona las ideas con una progresión coherente y conectores adecuados.', 'Une sus ideas de forma comprensible.', 'language', ['coherencia', 'cohesion', 'conectores'], { weight: 4 }),
+    criterion('language-argument', 'Argumentación', 'Sustenta sus ideas con razones y evidencias pertinentes.', 'Da razones para sus ideas.', 'language', ['argumentacion', 'argumentos', 'evidencias'], { requires: ['ensayo', 'debate', 'argumento', 'opinion'] }),
+    criterion('language-correctness', 'Vocabulario y corrección', 'Usa vocabulario apropiado y revisa la corrección lingüística.', 'Revisa las palabras y la escritura.', 'language', ['vocabulario', 'ortografia', 'correccion'] ),
+    criterion('language-expression', 'Recursos expresivos', 'Usa recursos del género literario para expresar su intención.', 'Usa palabras que expresan sus ideas y sentimientos.', 'language', ['poema', 'literario', 'expresion'], { requires: ['poema', 'cuento', 'literario', 'romantico'], weight: 4 }),
+    criterion('social-sources', 'Fuentes y evidencias', 'Selecciona y contrasta fuentes pertinentes para sustentar sus afirmaciones.', 'Indica de dónde obtuvo la información.', 'social', ['fuentes', 'evidencias'], { weight: 5 }),
+    criterion('social-context', 'Contexto', 'Sitúa hechos y procesos en su contexto histórico y geográfico.', 'Ubica los hechos en tiempo y lugar.', 'social', ['contexto', 'historico', 'geografico'], { weight: 4 }),
+    criterion('social-causes', 'Causas y consecuencias', 'Explica relaciones entre causas y consecuencias con evidencia.', 'Relaciona lo que ocurrió con sus causas.', 'social', ['causas', 'consecuencias']),
+    criterion('social-argument', 'Argumentación social', 'Defiende una interpretación usando razones y fuentes.', 'Explica sus ideas con información.', 'social', ['argumentacion', 'fuentes']),
+    criterion('social-interpretation', 'Interpretación social', 'Interpreta información considerando perspectivas y contexto.', 'Explica la información trabajada.', 'social', ['interpreta', 'perspectivas']),
+    criterion('art-technique', 'Técnica', 'Aplica la técnica artística trabajada con control.', 'Usa la técnica practicada.', 'art', ['tecnica', 'artistica'], { weight: 5 }),
+    criterion('art-creativity', 'Creatividad', 'Propone decisiones expresivas propias dentro de la consigna.', 'Aporta ideas propias a su creación.', 'art', ['creatividad', 'creacion'], { weight: 4 }),
+    criterion('art-composition', 'Composición', 'Organiza los elementos de la producción de acuerdo con su intención.', 'Organiza las partes de su creación.', 'art', ['composicion', 'elementos'], { weight: 4 }),
+    criterion('art-intention', 'Intención expresiva', 'Comunica una intención a través de sus decisiones artísticas.', 'Expresa una idea o emoción en su creación.', 'art', ['expresion', 'intencion']),
+    criterion('art-materials', 'Uso de materiales', 'Selecciona y utiliza materiales adecuados a la técnica y al propósito.', 'Usa los materiales según la técnica.', 'art', ['materiales', 'recursos'], { requires: ['materiales', 'pintura', 'dibujo', 'escultura', 'produccion'] }),
+    criterion('motor-technique', 'Ejecución técnica', 'Ejecuta los movimientos de la práctica con control técnico.', 'Realiza los movimientos practicados.', 'motor', ['ejecucion', 'movimiento'], { weight: 5 }),
+    criterion('motor-coordination', 'Coordinación', 'Coordina movimientos y ajusta el equilibrio a la situación.', 'Coordina sus movimientos.', 'motor', ['coordinacion', 'equilibrio'], { weight: 4 }),
+    criterion('motor-rules', 'Aplicación de reglas', 'Aplica las reglas de la práctica durante su ejecución.', 'Sigue las reglas del juego.', 'motor', ['reglas', 'juego']),
+    criterion('motor-performance', 'Desempeño motriz', 'Adapta su ejecución a las condiciones de la tarea motriz.', 'Completa la tarea motriz propuesta.', 'motor', ['motriz', 'desempeno']),
+    criterion('motor-cooperation', 'Cooperación', 'Coordina acciones con sus compañeros para la tarea compartida.', 'Colabora en las acciones del equipo.', 'motor', ['cooperacion', 'equipo'], { attitude: true, requires: ['cooperacion', 'equipo', 'cooperativo'], evidence: ['ATTITUDE', 'PERFORMANCE'] }),
+    criterion('fihr-comprehension', 'Comprensión', 'Explica los conceptos y situaciones trabajados.', 'Describe lo que comprendió.', 'fihr', ['comprension', 'conceptos'], { weight: 5 }),
+    criterion('fihr-reflection', 'Reflexión', 'Reflexiona sobre el sentido de las situaciones y sus implicaciones.', 'Expresa lo que piensa de la situación.', 'fihr', ['reflexion', 'sentido'], { weight: 4 }),
+    criterion('fihr-argument', 'Argumentación', 'Expresa una posición sustentada en razones.', 'Da razones para su opinión.', 'fihr', ['argumentacion', 'razones']),
+    criterion('fihr-application', 'Aplicación a situaciones', 'Relaciona lo aprendido con situaciones concretas.', 'Da un ejemplo de lo aprendido.', 'fihr', ['situaciones', 'aplicacion']),
+    criterion('fihr-values', 'Convivencia y valores', 'Propone y demuestra acciones de convivencia pertinentes a la situación.', 'Muestra la acción de convivencia trabajada.', 'fihr', ['convivencia', 'valores'], { attitude: true, requires: ['convivencia', 'valores', 'solidaridad'], evidence: ['ATTITUDE', 'PERFORMANCE'] }),
+  ],
+  descriptorPatterns: {
+    scales: {
+      4: ['Destacado', 'Logrado', 'En proceso', 'Inicial'],
+      5: ['Excelente', 'Muy bueno', 'Bueno', 'En proceso', 'Inicial'],
+    },
+    regular: ['Lo realiza con precisión, autonomía y consistencia.', 'Lo realiza adecuadamente, con detalles menores por mejorar.', 'Lo realiza en lo esencial, con algunas imprecisiones.', 'Lo realiza parcialmente y requiere apoyo frecuente.', 'Aún no lo evidencia; necesita acompañamiento paso a paso.'],
+    simple: ['Lo muestra por sí mismo y explica cómo lo hizo.', 'Lo muestra por sí mismo, con un recordatorio ocasional.', 'Lo muestra con algunos recordatorios.', 'Lo muestra en parte con ayuda.', 'Necesita ayuda paso a paso para mostrarlo.'],
+  },
+  instrumentTemplates: [
+    { id: 'rubrica' as InstrumentType, label: 'Rúbrica', descriptors: true },
+    { id: 'lista-cotejo' as InstrumentType, label: 'Lista de cotejo', descriptors: false },
+    { id: 'escala' as InstrumentType, label: 'Escala estimativa', descriptors: true },
+    { id: 'lista-ponderada' as InstrumentType, label: 'Lista ponderada', descriptors: false },
+  ],
+  recommendationRules: [
+    { id: 'early-simple', families: ['OBSERVATIONAL', 'PRACTICAL', 'SCIENTIFIC'], instrument: 'lista-cotejo', priority: 100, band: 'PRIMARY_FIRST', maxScore: 10 },
+    { id: 'oral-written-art-project', families: ['ORAL', 'WRITTEN', 'ARTISTIC', 'PROJECT_BASED'], instrument: 'rubrica', priority: 60 },
+    { id: 'scientific-performance', families: ['SCIENTIFIC'], instrument: 'rubrica', priority: 60, evidence: ['PERFORMANCE', 'PRODUCT'] },
+    { id: 'math-process', families: ['MATHEMATICAL'], instrument: 'lista-ponderada', priority: 60 },
+    { id: 'motor-performance', families: ['MOTOR'], instrument: 'escala', priority: 60 },
+    { id: 'observation', families: ['OBSERVATIONAL'], instrument: 'lista-cotejo', priority: 60 },
+    { id: 'default', families: [], instrument: 'lista-cotejo', priority: 0 },
+  ] as RecommendationRule[],
+}
+export type EvaluationCatalog = typeof evaluationCatalogV1

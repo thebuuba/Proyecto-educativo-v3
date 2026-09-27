@@ -1,0 +1,3772 @@
+{
+  "generatedAt": "2026-09-27T22:35:10.378Z",
+  "database": "127.0.0.1:54332",
+  "results": [
+    {
+      "case": "A",
+      "input": {
+        "sectionSubjectId": "[temporary fixture removed]",
+        "activityTitle": "Clasificación de animales según sus características",
+        "maxScore": 10,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "37843eac-3f65-55ab-8a7e-e4fd95715380"
+      },
+      "scope": {
+        "id": "1d802c7d-8260-55f6-8156-6678fa4e0a25",
+        "level": "PRIMARY",
+        "grade": 2,
+        "cycle": 1,
+        "area": "Ciencias de la Naturaleza",
+        "subject": "Ciencias de la Naturaleza",
+        "exit": null
+      },
+      "recommendation": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.1",
+        "instrumentType": "lista-cotejo",
+        "confidence": "HIGH",
+        "activityType": "OBSERVATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+        "curriculumScopeId": "1d802c7d-8260-55f6-8156-6678fa4e0a25",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "8d199b97-a186-5049-8ad2-07decf6b2c83",
+            "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+            "scopeId": "1d802c7d-8260-55f6-8156-6678fa4e0a25",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Identifica en los seres vivos de su entorno y el ser humano, órganos internos de los sistemas con modelo o simulación:\ndigestivo, circulatorio y respiratorio; y algunas de sus funciones, relacionándolos con los de las plantas y los animales;\nnutrientes que contienen los alimentos para el desarrollo, crecimiento y obtención de energía, así como ecosistemas\nde acuerdo con sus características, identificando las especies que los habitan y algunos mecanismos de supervivencia",
+            "sources": [
+              {
+                "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                "pdfPage": 168,
+                "printedPage": "167"
+              }
+            ]
+          },
+          {
+            "elementId": "e8a63e5a-5ad2-5a9d-9cea-96ab24ac2e27",
+            "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+            "scopeId": "1d802c7d-8260-55f6-8156-6678fa4e0a25",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Ejecuta experimentos guiados en colaboración, observando, describiendo, utilizando herramientas o equipos\nsiguiendo características observables de planta o animal como nutrientes para el desarrollo, crecimiento y obtención\nde energía; cambios de estado, mezclas, elementos de máquinas, así como también de objetos en movimiento,\nfenómenos naturales, huertos o ecosistemas.",
+            "sources": [
+              {
+                "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                "pdfPage": 168,
+                "printedPage": "167"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.1:1d802c7d-8260-55f6-8156-6678fa4e0a25:science-content",
+            "templateId": "science-content",
+            "title": "Dominio del contenido",
+            "description": "Reconoce y describe las características trabajadas.",
+            "maxScore": 3.57,
+            "maxScoreUnits": 357,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:1d802c7d-8260-55f6-8156-6678fa4e0a25:science-procedure",
+            "templateId": "science-procedure",
+            "title": "Procedimiento",
+            "description": "Realiza los pasos de la actividad.",
+            "maxScore": 3.57,
+            "maxScoreUnits": 357,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:1d802c7d-8260-55f6-8156-6678fa4e0a25:science-accuracy",
+            "templateId": "science-accuracy",
+            "title": "Precisión científica",
+            "description": "Usa las palabras científicas trabajadas.",
+            "maxScore": 2.86,
+            "maxScoreUnits": 286,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 10,
+        "totalScoreUnits": 1000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=PRIMARY_FIRST",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "early-simple",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "8d199b97-a186-5049-8ad2-07decf6b2c83",
+              "score": 116,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e8a63e5a-5ad2-5a9d-9cea-96ab24ac2e27",
+              "score": 116,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6f069dfd-8b97-5396-93b4-5e28adc998d0",
+              "score": 68,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "725a5c4b-a386-53d9-981b-6d7649c057b6",
+              "score": 68,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "4077d983-a891-5faa-9e3a-960d950cd36f",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "48a4c9e2-5a16-5a2d-ba90-485f5b92fab1",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1a43672f-a30d-57f0-848b-5cd4529202f9",
+              "score": 65,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "3fbd4329-bbce-5922-afa4-cc9fbd91fe82",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4834905d-2f51-51c7-a6e1-860f0b509eb0",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4677ddc-6c9a-53ea-83b1-602909b319b6",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2f810055-5efe-5d07-88cf-74b200d86fa7",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "602af6f2-4b41-58fd-940c-875c4c0def4e",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1c09f95-2d48-50f4-a8bd-632334815c21",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f058ba49-67a5-5fd7-b2ac-bfead64a1f0c",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "case": "B",
+      "input": {
+        "sectionSubjectId": "[temporary fixture removed]",
+        "activityTitle": "Exposición sobre el sistema circulatorio",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "37843eac-3f65-55ab-8a7e-e4fd95715380"
+      },
+      "scope": {
+        "id": "f514ddf8-5fc0-5e85-a3d9-7ab344fea577",
+        "level": "PRIMARY",
+        "grade": 5,
+        "cycle": 2,
+        "area": "Ciencias de la Naturaleza",
+        "subject": "Ciencias de la Naturaleza",
+        "exit": null
+      },
+      "recommendation": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.1",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "EXPOSITION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+        "curriculumScopeId": "f514ddf8-5fc0-5e85-a3d9-7ab344fea577",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.1:f514ddf8-5fc0-5e85-a3d9-7ab344fea577:communication",
+            "templateId": "communication",
+            "title": "Comunicación",
+            "description": "Comunica las ideas de forma clara y adecuada al destinatario.",
+            "maxScore": 2.86,
+            "maxScoreUnits": 286,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica las ideas de forma clara y adecuada al destinatario. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica las ideas de forma clara y adecuada al destinatario. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 191
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica las ideas de forma clara y adecuada al destinatario. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 95
+              },
+              {
+                "levelId": "L1",
+                "text": "Comunica las ideas de forma clara y adecuada al destinatario. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:f514ddf8-5fc0-5e85-a3d9-7ab344fea577:organization",
+            "templateId": "organization",
+            "title": "Organización",
+            "description": "Organiza las ideas en una secuencia comprensible.",
+            "maxScore": 2.86,
+            "maxScoreUnits": 286,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza las ideas en una secuencia comprensible. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza las ideas en una secuencia comprensible. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 191
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza las ideas en una secuencia comprensible. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 95
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza las ideas en una secuencia comprensible. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:f514ddf8-5fc0-5e85-a3d9-7ab344fea577:science-content",
+            "templateId": "science-content",
+            "title": "Dominio del contenido",
+            "description": "Explica los conceptos y sus relaciones usando el contenido trabajado.",
+            "maxScore": 7.14,
+            "maxScoreUnits": 714,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 714
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 476
+              },
+              {
+                "levelId": "L2",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 238
+              },
+              {
+                "levelId": "L1",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:f514ddf8-5fc0-5e85-a3d9-7ab344fea577:science-accuracy",
+            "templateId": "science-accuracy",
+            "title": "Precisión científica",
+            "description": "Usa los términos científicos con precisión.",
+            "maxScore": 5.71,
+            "maxScoreUnits": 571,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa los términos científicos con precisión. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa los términos científicos con precisión. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa los términos científicos con precisión. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 190
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa los términos científicos con precisión. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:f514ddf8-5fc0-5e85-a3d9-7ab344fea577:instructions",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 1.43,
+            "maxScoreUnits": 143,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 143
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 95
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 48
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=PRIMARY_SECOND",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "45913701-dd19-58b9-9370-4b48edf1c487",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87fb2b01-6768-5ef7-8c40-b91a5392303a",
+              "score": 65,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "55e70b53-e758-5aa2-ac79-76ea93e37333",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e3cb4884-785c-50cf-b03d-529e03408ef2",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0e1e3620-45d6-5547-af87-afd14aeef9a6",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ffe065b-970a-5f39-9c9c-279511dc1e03",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "400f9803-ba44-5ea7-bc44-1f4c22670b0a",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8566bfd1-8e4c-575c-9a98-18193587229f",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "case": "C",
+      "input": {
+        "sectionSubjectId": "[temporary fixture removed]",
+        "activityTitle": "Resolución de problemas con fracciones",
+        "description": "Mostrar procedimiento, razonamiento, exactitud e interpretación de la respuesta.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "37843eac-3f65-55ab-8a7e-e4fd95715380"
+      },
+      "scope": {
+        "id": "8f8716f3-df19-585e-a5ac-0ae6c05ccac3",
+        "level": "PRIMARY",
+        "grade": 5,
+        "cycle": 2,
+        "area": "Matemática",
+        "subject": "Matemática",
+        "exit": null
+      },
+      "recommendation": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.1",
+        "instrumentType": "lista-ponderada",
+        "confidence": "HIGH",
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+        "curriculumScopeId": "8f8716f3-df19-585e-a5ac-0ae6c05ccac3",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "177e6145-2624-5151-9ff2-c9f16d906a2c",
+            "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+            "scopeId": "8f8716f3-df19-585e-a5ac-0ae6c05ccac3",
+            "type": "PROCEDURE",
+            "text": "- Resolución de problemas que implique la simplificación y\nampliación de fracciones.",
+            "sources": [
+              {
+                "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                "pdfPage": 271,
+                "printedPage": "270"
+              }
+            ]
+          },
+          {
+            "elementId": "56c77d95-ae4d-5f42-bdc4-e790e3ed165a",
+            "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+            "scopeId": "8f8716f3-df19-585e-a5ac-0ae6c05ccac3",
+            "type": "PROCEDURE",
+            "text": "- Resolución de problemas de la comunidad que requieran\nla utilización de números naturales y fracciones aplicados a\nbienes y servicios.",
+            "sources": [
+              {
+                "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                "pdfPage": 271,
+                "printedPage": "270"
+              }
+            ]
+          },
+          {
+            "elementId": "ca0dda52-d820-5dd5-a3da-aae1675b01b6",
+            "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+            "scopeId": "8f8716f3-df19-585e-a5ac-0ae6c05ccac3",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Utiliza modelos para explorar las operaciones con fracciones y decimales, y construye el significado de las operaciones\ndiscutiendo y resolviendo una amplia variedad de situaciones de problema incluidos aquellos relativos al tanto por ciento.",
+            "sources": [
+              {
+                "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                "pdfPage": 273,
+                "printedPage": "272"
+              }
+            ]
+          },
+          {
+            "elementId": "066f629c-781f-5b2a-b239-04234feeeb30",
+            "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+            "scopeId": "8f8716f3-df19-585e-a5ac-0ae6c05ccac3",
+            "type": "CONCEPT",
+            "text": "- Comparación y orden con\nfracciones.",
+            "sources": [
+              {
+                "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                "pdfPage": 271,
+                "printedPage": "270"
+              }
+            ]
+          },
+          {
+            "elementId": "2b8ea1fa-6663-58eb-aeb0-cd9297e09ae1",
+            "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+            "scopeId": "8f8716f3-df19-585e-a5ac-0ae6c05ccac3",
+            "type": "CONCEPT",
+            "text": "- Operaciones de suma, resta,\nmultiplicación y división con\nfracciones.",
+            "sources": [
+              {
+                "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                "pdfPage": 272,
+                "printedPage": "271"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.1:8f8716f3-df19-585e-a5ac-0ae6c05ccac3:math-procedure",
+            "templateId": "math-procedure",
+            "title": "Procedimiento matemático",
+            "description": "Selecciona y aplica un procedimiento adecuado al problema. Contenido de referencia: «- Operaciones de suma, resta,\nmultiplicación y división con\nfracciones.».",
+            "maxScore": 4.54,
+            "maxScoreUnits": 454,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "2b8ea1fa-6663-58eb-aeb0-cd9297e09ae1",
+                "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+                "scopeId": "8f8716f3-df19-585e-a5ac-0ae6c05ccac3",
+                "type": "CONCEPT",
+                "text": "- Operaciones de suma, resta,\nmultiplicación y división con\nfracciones.",
+                "sources": [
+                  {
+                    "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                    "pdfPage": 272,
+                    "printedPage": "271"
+                  }
+                ]
+              }
+            ],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:8f8716f3-df19-585e-a5ac-0ae6c05ccac3:math-comprehension",
+            "templateId": "math-comprehension",
+            "title": "Comprensión del problema",
+            "description": "Identifica datos, condiciones y la pregunta del problema. Contenido de referencia: «- Comparación y orden con\nfracciones.».",
+            "maxScore": 3.64,
+            "maxScoreUnits": 364,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "066f629c-781f-5b2a-b239-04234feeeb30",
+                "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+                "scopeId": "8f8716f3-df19-585e-a5ac-0ae6c05ccac3",
+                "type": "CONCEPT",
+                "text": "- Comparación y orden con\nfracciones.",
+                "sources": [
+                  {
+                    "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                    "pdfPage": 271,
+                    "printedPage": "270"
+                  }
+                ]
+              }
+            ],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:8f8716f3-df19-585e-a5ac-0ae6c05ccac3:math-reasoning",
+            "templateId": "math-reasoning",
+            "title": "Razonamiento y justificación",
+            "description": "Justifica la estrategia y relaciona los pasos con los datos.",
+            "maxScore": 4.54,
+            "maxScoreUnits": 454,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:8f8716f3-df19-585e-a5ac-0ae6c05ccac3:math-accuracy",
+            "templateId": "math-accuracy",
+            "title": "Exactitud",
+            "description": "Realiza los cálculos y usa las unidades con precisión.",
+            "maxScore": 3.64,
+            "maxScoreUnits": 364,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:8f8716f3-df19-585e-a5ac-0ae6c05ccac3:math-interpretation",
+            "templateId": "math-interpretation",
+            "title": "Interpretación",
+            "description": "Interpreta y comprueba la respuesta en el contexto del problema.",
+            "maxScore": 3.64,
+            "maxScoreUnits": 364,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=PRIMARY_SECOND",
+            "discipline=math",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "math-process",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "177e6145-2624-5151-9ff2-c9f16d906a2c",
+              "score": 118,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "56c77d95-ae4d-5f42-bdc4-e790e3ed165a",
+              "score": 118,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "ca0dda52-d820-5dd5-a3da-aae1675b01b6",
+              "score": 116,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "20637fb7-da30-5064-9773-668464121bea",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3f0969fd-035d-5dd1-b9a1-8bdcf1a94e57",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "066f629c-781f-5b2a-b239-04234feeeb30",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2b8ea1fa-6663-58eb-aeb0-cd9297e09ae1",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "68dba6a9-4c3c-5410-bbf8-ba0d73f9047c",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c3011d28-9e54-52b1-843a-fc867bb781b8",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c92267c0-e3af-5b71-9198-2f11cc7f6b1c",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cfdcd31a-c645-57ca-801a-5276ae753aaa",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "case": "D",
+      "input": {
+        "sectionSubjectId": "[temporary fixture removed]",
+        "activityTitle": "Práctica de laboratorio sobre reacciones químicas",
+        "description": "Aplicar seguridad, registrar datos, interpretar resultados y formular conclusiones.",
+        "maxScore": 30,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+      },
+      "scope": {
+        "id": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+        "level": "SECONDARY",
+        "grade": 5,
+        "cycle": 2,
+        "area": "Ciencias de la Naturaleza",
+        "subject": "Ciencias de la Naturaleza",
+        "exit": null
+      },
+      "recommendation": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.1",
+        "instrumentType": "rubrica",
+        "confidence": "HIGH",
+        "activityType": "LAB_PRACTICE",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "344d1f84-74de-5404-9ce3-29978b65992f",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+            "type": "PROCEDURE",
+            "text": "• Ecuación de estado de gases ideales y reales (P1 hasta P5).\nReacciones Químicas",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 317,
+                "printedPage": "316"
+              }
+            ]
+          },
+          {
+            "elementId": "4e4d8ea6-8b4a-5433-bfd1-80908926d2e7",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+            "type": "PROCEDURE",
+            "text": "• Estequiometría de la reacción: Balanceo de reacciones químicas.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 317,
+                "printedPage": "316"
+              }
+            ]
+          },
+          {
+            "elementId": "3c3050c4-8794-5b41-8b60-db05b833c01f",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+            "type": "CONCEPT",
+            "text": "• Reacciones químicas Estequiometría\nde una reacción",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 317,
+                "printedPage": "316"
+              }
+            ]
+          },
+          {
+            "elementId": "3c5eee5c-d634-5212-b327-e2254ca07144",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+            "type": "CONCEPT",
+            "text": "Reacciones Químicas",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 317,
+                "printedPage": "316"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.1:259be83a-7b0a-5eb0-9d42-f4976fde6041:science-data",
+            "templateId": "science-data",
+            "title": "Registro de datos",
+            "description": "Registra observaciones y datos de forma ordenada y verificable.",
+            "maxScore": 5.22,
+            "maxScoreUnits": 522,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Registra observaciones y datos de forma ordenada y verificable. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 522
+              },
+              {
+                "levelId": "L3",
+                "text": "Registra observaciones y datos de forma ordenada y verificable. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 348
+              },
+              {
+                "levelId": "L2",
+                "text": "Registra observaciones y datos de forma ordenada y verificable. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 174
+              },
+              {
+                "levelId": "L1",
+                "text": "Registra observaciones y datos de forma ordenada y verificable. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:259be83a-7b0a-5eb0-9d42-f4976fde6041:science-procedure",
+            "templateId": "science-procedure",
+            "title": "Procedimiento",
+            "description": "Aplica y explica los pasos del procedimiento científico.",
+            "maxScore": 6.52,
+            "maxScoreUnits": 652,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Aplica y explica los pasos del procedimiento científico. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 652
+              },
+              {
+                "levelId": "L3",
+                "text": "Aplica y explica los pasos del procedimiento científico. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 435
+              },
+              {
+                "levelId": "L2",
+                "text": "Aplica y explica los pasos del procedimiento científico. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L1",
+                "text": "Aplica y explica los pasos del procedimiento científico. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:259be83a-7b0a-5eb0-9d42-f4976fde6041:science-conclusion",
+            "templateId": "science-conclusion",
+            "title": "Conclusiones",
+            "description": "Formula conclusiones sustentadas en los resultados registrados.",
+            "maxScore": 3.92,
+            "maxScoreUnits": 392,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula conclusiones sustentadas en los resultados registrados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L3",
+                "text": "Formula conclusiones sustentadas en los resultados registrados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 261
+              },
+              {
+                "levelId": "L2",
+                "text": "Formula conclusiones sustentadas en los resultados registrados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 131
+              },
+              {
+                "levelId": "L1",
+                "text": "Formula conclusiones sustentadas en los resultados registrados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:259be83a-7b0a-5eb0-9d42-f4976fde6041:science-interpretation",
+            "templateId": "science-interpretation",
+            "title": "Interpretación de resultados",
+            "description": "Interpreta los resultados a partir de los datos obtenidos.",
+            "maxScore": 3.91,
+            "maxScoreUnits": 391,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Interpreta los resultados a partir de los datos obtenidos. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 391
+              },
+              {
+                "levelId": "L3",
+                "text": "Interpreta los resultados a partir de los datos obtenidos. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 261
+              },
+              {
+                "levelId": "L2",
+                "text": "Interpreta los resultados a partir de los datos obtenidos. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 130
+              },
+              {
+                "levelId": "L1",
+                "text": "Interpreta los resultados a partir de los datos obtenidos. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:259be83a-7b0a-5eb0-9d42-f4976fde6041:science-safety",
+            "templateId": "science-safety",
+            "title": "Seguridad",
+            "description": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales.",
+            "maxScore": 3.91,
+            "maxScoreUnits": 391,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 391
+              },
+              {
+                "levelId": "L3",
+                "text": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 261
+              },
+              {
+                "levelId": "L2",
+                "text": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 130
+              },
+              {
+                "levelId": "L1",
+                "text": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:259be83a-7b0a-5eb0-9d42-f4976fde6041:science-content",
+            "templateId": "science-content",
+            "title": "Dominio del contenido",
+            "description": "Explica los conceptos y sus relaciones usando el contenido trabajado. Contenido de referencia: «• Reacciones químicas Estequiometría\nde una reacción».",
+            "maxScore": 6.52,
+            "maxScoreUnits": 652,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "3c3050c4-8794-5b41-8b60-db05b833c01f",
+                "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+                "scopeId": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+                "type": "CONCEPT",
+                "text": "• Reacciones químicas Estequiometría\nde una reacción",
+                "sources": [
+                  {
+                    "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                    "pdfPage": 317,
+                    "printedPage": "316"
+                  }
+                ]
+              }
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Lo realiza con precisión, autonomía y consistencia. Referente: «• Reacciones químicas Estequiometría\nde una reacción».",
+                "scoreUnits": 652
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Lo realiza adecuadamente, con detalles menores por mejorar. Referente: «• Reacciones químicas Estequiometría\nde una reacción».",
+                "scoreUnits": 435
+              },
+              {
+                "levelId": "L2",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Lo realiza parcialmente y requiere apoyo frecuente. Referente: «• Reacciones químicas Estequiometría\nde una reacción».",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L1",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso. Referente: «• Reacciones químicas Estequiometría\nde una reacción».",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 30,
+        "totalScoreUnits": 3000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "scientific-performance",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "344d1f84-74de-5404-9ce3-29978b65992f",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4e4d8ea6-8b4a-5433-bfd1-80908926d2e7",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f9d27ede-1cec-5168-8a24-8dfbd8ce1a5b",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3c3050c4-8794-5b41-8b60-db05b833c01f",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3c5eee5c-d634-5212-b327-e2254ca07144",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "168f423c-f452-51c1-8bfe-1adae860db25",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "29ce2f88-08ab-5988-a82f-850a4f202a66",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2c1170d1-5e16-5a46-8038-432485b594c2",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "34d80ffe-f4eb-5717-abb7-08fd5d6e99d4",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3e493095-8d43-5c2e-8710-4403cc3075cb",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "41a276dc-1dfe-5559-8c87-89d4721a3f9f",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7d69709e-ecf7-59d8-b49a-73fdc33cc19d",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "83a97b36-ce56-5c67-b830-92aea68d8236",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8518c782-baf7-561a-a1b1-73eca1543e39",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94d2dd52-c135-5ad6-a3b2-4a87e12c3a3f",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9bb38389-7328-5e7d-9489-bd3d02ac900d",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ac1020d9-1cf0-5916-bb23-21258879ad39",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bc77f790-3fd8-59c2-bc92-f2e37dd7aa2c",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e37af2ad-c9ba-5796-a9eb-8a22e9e98d14",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0a6dda31-7a3c-5007-a47e-03dc16d4abea",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0adadd1b-71ba-5540-a996-9f70a6498256",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0e27a492-00f0-5b87-b065-d8b791095f7b",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0ff0f7ee-3d16-58e5-a5f5-cc01a1aec816",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1dd11ad0-cdba-56e6-8b28-c9b784d9e9d7",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "case": "E",
+      "input": {
+        "sectionSubjectId": "[temporary fixture removed]",
+        "activityTitle": "Ensayo argumentativo sobre la lectura",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+      },
+      "scope": {
+        "id": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "level": "SECONDARY",
+        "grade": 4,
+        "cycle": 2,
+        "area": "Lengua Española",
+        "subject": "Lengua Española",
+        "exit": null
+      },
+      "recommendation": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.1",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ESSAY",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.1:49f16425-4d1d-5798-9af5-c69ba22b8020:language-content",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 351
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 175
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:49f16425-4d1d-5798-9af5-c69ba22b8020:language-coherence",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:49f16425-4d1d-5798-9af5-c69ba22b8020:language-structure",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:49f16425-4d1d-5798-9af5-c69ba22b8020:language-argument",
+            "templateId": "language-argument",
+            "title": "Argumentación",
+            "description": "Sustenta sus ideas con razones y evidencias pertinentes.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:49f16425-4d1d-5798-9af5-c69ba22b8020:language-correctness",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "74bcf637-8787-53e1-84a9-bda9b15ca48f",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c1577ced-d6ec-5524-89eb-0eb77a7c2348",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+              "score": 45,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4916a1b4-95aa-58bc-a4fc-adb047c1a4c8",
+              "score": 45,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "557700fd-aeaf-5213-b043-5736ac81676e",
+              "score": 45,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "85108d6e-be88-5553-8199-f4615990802b",
+              "score": 45,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a6f1db3c-2793-5b68-b1d3-0f4ff9987e17",
+              "score": 45,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bad7924a-5b3b-52f4-ab66-6b29e93ecdf9",
+              "score": 45,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cc98136c-1b10-558d-9f7e-7a1ef86a8a66",
+              "score": 45,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d5e64e84-bdb0-5b1e-967f-0f8f24401e54",
+              "score": 45,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "df6f8fd3-112d-51ec-a49f-2a3ef8730691",
+              "score": 45,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ee3254c-b3b7-5d22-b72a-22a2337f4db5",
+              "score": 43,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e36fcf54-4a05-59ce-a5e1-0174c5b4e8c3",
+              "score": 43,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "case": "F",
+      "input": {
+        "sectionSubjectId": "[temporary fixture removed]",
+        "activityTitle": "Producción artística: pintura",
+        "description": "Composición y uso de materiales para expresar una intención.",
+        "maxScore": 15,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "37843eac-3f65-55ab-8a7e-e4fd95715380"
+      },
+      "scope": {
+        "id": "d271006b-fb9d-5bf7-88f7-eba7e9b0fdea",
+        "level": "PRIMARY",
+        "grade": 5,
+        "cycle": 2,
+        "area": "Educación Artística",
+        "subject": "Educación Artística",
+        "exit": null
+      },
+      "recommendation": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.1",
+        "instrumentType": "rubrica",
+        "confidence": "HIGH",
+        "activityType": "ARTISTIC_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+        "curriculumScopeId": "d271006b-fb9d-5bf7-88f7-eba7e9b0fdea",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "6eec324c-2f25-5bb5-9ad5-1d157023fe9a",
+            "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+            "scopeId": "d271006b-fb9d-5bf7-88f7-eba7e9b0fdea",
+            "type": "PROCEDURE",
+            "text": "- Aplicación de técnicas artísticas usando\nmateriales del entorno para la realización de\nobjetos artesanales: cajas, cubos, portarretratos\nen cartón, complementándolos con fibras\nvegetales, plásticos, pintura decorativa y papel.",
+            "sources": [
+              {
+                "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                "pdfPage": 398,
+                "printedPage": "397"
+              }
+            ]
+          },
+          {
+            "elementId": "fd5a4364-c96e-5829-b233-1f185d63e28c",
+            "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+            "scopeId": "d271006b-fb9d-5bf7-88f7-eba7e9b0fdea",
+            "type": "PROCEDURE",
+            "text": "- Aplicación de técnicas y procedimientos para la\ncreación plástica individual (pintura, escultura\ny otros tipos de representaciones), utilizando\nmateriales de su entorno.",
+            "sources": [
+              {
+                "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                "pdfPage": 396,
+                "printedPage": "395"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.1:d271006b-fb9d-5bf7-88f7-eba7e9b0fdea:art-technique",
+            "templateId": "art-technique",
+            "title": "Técnica",
+            "description": "Aplica la técnica artística trabajada con control. Contenido de referencia: «- Aplicación de técnicas artísticas usando\nmateriales del entorno para la realización de\nobjetos artesanales: cajas, cubos, portarretratos\nen cartón, complementándolos con fibras\nvegetales, plásticos, pintura decorativa y papel.».",
+            "maxScore": 3.94,
+            "maxScoreUnits": 394,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "6eec324c-2f25-5bb5-9ad5-1d157023fe9a",
+                "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+                "scopeId": "d271006b-fb9d-5bf7-88f7-eba7e9b0fdea",
+                "type": "PROCEDURE",
+                "text": "- Aplicación de técnicas artísticas usando\nmateriales del entorno para la realización de\nobjetos artesanales: cajas, cubos, portarretratos\nen cartón, complementándolos con fibras\nvegetales, plásticos, pintura decorativa y papel.",
+                "sources": [
+                  {
+                    "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                    "pdfPage": 398,
+                    "printedPage": "397"
+                  }
+                ]
+              }
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Aplica la técnica artística trabajada con control. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 394
+              },
+              {
+                "levelId": "L3",
+                "text": "Aplica la técnica artística trabajada con control. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 263
+              },
+              {
+                "levelId": "L2",
+                "text": "Aplica la técnica artística trabajada con control. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 131
+              },
+              {
+                "levelId": "L1",
+                "text": "Aplica la técnica artística trabajada con control. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:d271006b-fb9d-5bf7-88f7-eba7e9b0fdea:art-materials",
+            "templateId": "art-materials",
+            "title": "Uso de materiales",
+            "description": "Selecciona y utiliza materiales adecuados a la técnica y al propósito. Contenido de referencia: «- Aplicación de técnicas artísticas usando\nmateriales del entorno para la realización de\nobjetos artesanales: cajas, cubos, portarretratos\nen cartón, complementándolos con fibras\nvegetales, plásticos, pintura decorativa y papel.».",
+            "maxScore": 2.37,
+            "maxScoreUnits": 237,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "6eec324c-2f25-5bb5-9ad5-1d157023fe9a",
+                "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+                "scopeId": "d271006b-fb9d-5bf7-88f7-eba7e9b0fdea",
+                "type": "PROCEDURE",
+                "text": "- Aplicación de técnicas artísticas usando\nmateriales del entorno para la realización de\nobjetos artesanales: cajas, cubos, portarretratos\nen cartón, complementándolos con fibras\nvegetales, plásticos, pintura decorativa y papel.",
+                "sources": [
+                  {
+                    "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                    "pdfPage": 398,
+                    "printedPage": "397"
+                  }
+                ]
+              }
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona y utiliza materiales adecuados a la técnica y al propósito. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 237
+              },
+              {
+                "levelId": "L3",
+                "text": "Selecciona y utiliza materiales adecuados a la técnica y al propósito. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L2",
+                "text": "Selecciona y utiliza materiales adecuados a la técnica y al propósito. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 79
+              },
+              {
+                "levelId": "L1",
+                "text": "Selecciona y utiliza materiales adecuados a la técnica y al propósito. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:d271006b-fb9d-5bf7-88f7-eba7e9b0fdea:art-composition",
+            "templateId": "art-composition",
+            "title": "Composición",
+            "description": "Organiza los elementos de la producción de acuerdo con su intención.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza los elementos de la producción de acuerdo con su intención. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza los elementos de la producción de acuerdo con su intención. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza los elementos de la producción de acuerdo con su intención. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza los elementos de la producción de acuerdo con su intención. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:d271006b-fb9d-5bf7-88f7-eba7e9b0fdea:art-creativity",
+            "templateId": "art-creativity",
+            "title": "Creatividad",
+            "description": "Propone decisiones expresivas propias dentro de la consigna. Contenido de referencia: «- Aplicación de técnicas y procedimientos para la\ncreación plástica individual (pintura, escultura\ny otros tipos de representaciones), utilizando\nmateriales de su entorno.».",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "fd5a4364-c96e-5829-b233-1f185d63e28c",
+                "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+                "scopeId": "d271006b-fb9d-5bf7-88f7-eba7e9b0fdea",
+                "type": "PROCEDURE",
+                "text": "- Aplicación de técnicas y procedimientos para la\ncreación plástica individual (pintura, escultura\ny otros tipos de representaciones), utilizando\nmateriales de su entorno.",
+                "sources": [
+                  {
+                    "documentId": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+                    "pdfPage": 396,
+                    "printedPage": "395"
+                  }
+                ]
+              }
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Propone decisiones expresivas propias dentro de la consigna. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Propone decisiones expresivas propias dentro de la consigna. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone decisiones expresivas propias dentro de la consigna. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "Propone decisiones expresivas propias dentro de la consigna. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:d271006b-fb9d-5bf7-88f7-eba7e9b0fdea:art-intention",
+            "templateId": "art-intention",
+            "title": "Intención expresiva",
+            "description": "Comunica una intención a través de sus decisiones artísticas.",
+            "maxScore": 2.37,
+            "maxScoreUnits": 237,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica una intención a través de sus decisiones artísticas. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 237
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica una intención a través de sus decisiones artísticas. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica una intención a través de sus decisiones artísticas. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 79
+              },
+              {
+                "levelId": "L1",
+                "text": "Comunica una intención a través de sus decisiones artísticas. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 15,
+        "totalScoreUnits": 1500,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=PRIMARY_SECOND",
+            "discipline=art",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "6eec324c-2f25-5bb5-9ad5-1d157023fe9a",
+              "score": 120,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "fd5a4364-c96e-5829-b233-1f185d63e28c",
+              "score": 120,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=1/1",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "case": "G",
+      "input": {
+        "sectionSubjectId": "[temporary fixture removed]",
+        "activityTitle": "Producción de poema romántico",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+      },
+      "scope": {
+        "id": "d619d96a-6e30-5201-8264-3bc09502e53e",
+        "level": "SECONDARY",
+        "grade": 4,
+        "cycle": 2,
+        "area": "Lengua Española",
+        "subject": "Apreciación y Producción Literarias",
+        "exit": "Humanidades y Lenguas Modernas"
+      },
+      "recommendation": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.1",
+        "instrumentType": "rubrica",
+        "confidence": "HIGH",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "d619d96a-6e30-5201-8264-3bc09502e53e",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "59f8fa38-16ce-535a-9df5-6027c038984c",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "d619d96a-6e30-5201-8264-3bc09502e53e",
+            "type": "PROCEDURE",
+            "text": "• Establecimiento de la intención comunicativa de\nla poesía romántica que va a producir por escrito;\nselección del tema, personaje, hecho o situación\nque enfocará en la elaboración de la poesía\nromántica; uso de algunos de los diferentes tipos\nde estrofas en el poema romántico que escribe:\nel romance, la octava real, la octavilla, la silva\ny la sextina; paráfrasis del sentido global de la\npoesía románla rima asonante y consonante y de\nversos octosílabos, endecasílabos, heptasílabos y\nalejandrinos para escribir el poema; vocabulario\napropiado a su intención comunicativa y a\nlos sentimientos que se quieren evocar con\nla poesía romántica; recursos literarios que\ndemanda la poesía romántica según el tema, los\nsentimientos, la creatividad y el ritmo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 428,
+                "printedPage": "427"
+              }
+            ]
+          },
+          {
+            "elementId": "01cdcde0-ba26-547f-8a51-7ef923f51890",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "d619d96a-6e30-5201-8264-3bc09502e53e",
+            "type": "PROCEDURE",
+            "text": "• Selección de poesías románticas de autores\nrepresentativos de este tipo de poema;\nverbalización de las figuras literarias, la rima, el\nritmo y los versos de la poesía romántica, usando\nla entonación y el lenguaje gestual acordes\na la intención comunicativa, el tema y a los\nsentimientos que se quieren expresar.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 428,
+                "printedPage": "427"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.1:d619d96a-6e30-5201-8264-3bc09502e53e:language-expression",
+            "templateId": "language-expression",
+            "title": "Recursos expresivos",
+            "description": "Usa recursos del género literario para expresar su intención.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa recursos del género literario para expresar su intención. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa recursos del género literario para expresar su intención. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa recursos del género literario para expresar su intención. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa recursos del género literario para expresar su intención. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:d619d96a-6e30-5201-8264-3bc09502e53e:language-content",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:d619d96a-6e30-5201-8264-3bc09502e53e:language-coherence",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:d619d96a-6e30-5201-8264-3bc09502e53e:language-correctness",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3,
+            "maxScoreUnits": 300,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 300
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 100
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:d619d96a-6e30-5201-8264-3bc09502e53e:language-structure",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "59f8fa38-16ce-535a-9df5-6027c038984c",
+              "score": 118,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "01cdcde0-ba26-547f-8a51-7ef923f51890",
+              "score": 115,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "dfb1b2b2-60a1-5754-bf07-bba6c2244505",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e7628c42-a987-5e1f-964c-4f6ebdd48e5c",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "23c42a8f-5112-59eb-ab9a-187d3676605f",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cecde79-bfe4-5ec7-be4f-1a709b8cdcc4",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3e179522-217a-5e0d-adfc-6ff6fcd88479",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "495ec7ab-8395-50a7-a9db-482a354b9ff7",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "81188c6f-8e77-5fbc-a33c-8a72c14086e2",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "96043175-af78-5ab9-816f-f1aad09b9f1a",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9e421d39-c92b-5a76-92d4-2ec3d674e4fe",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "03e51df1-c36e-564f-8c15-8bd3f008b4d2",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c73c6a1e-4889-5a45-89c6-d2a848c16072",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f73b5b5c-4039-531c-b432-545d721d831d",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "case": "H",
+      "input": {
+        "sectionSubjectId": "[temporary fixture removed]",
+        "activityTitle": "Resolución de problemas de interés compuesto",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+      },
+      "scope": {
+        "id": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+        "level": "SECONDARY",
+        "grade": 4,
+        "cycle": 2,
+        "area": "Matemática",
+        "subject": "Matemática Financiera y Tecnología",
+        "exit": "Matemática y Tecnología"
+      },
+      "recommendation": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.1",
+        "instrumentType": "lista-ponderada",
+        "confidence": "HIGH",
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "9aff2842-7b19-5e33-ac3c-b182656321c8",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+            "type": "PROCEDURE",
+            "text": "• Resolución de problemas que impliquen la\naplicación de interés compuesto.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 491,
+                "printedPage": "490"
+              }
+            ]
+          },
+          {
+            "elementId": "d1b750ef-c6e6-55b1-bb9f-f465266c722d",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+            "type": "PROCEDURE",
+            "text": "• Argumentación de resultados obtenidos en la\nresolución de problemas que impliquen interés\ncompuesto e interés sobre saldo insoluto.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 491,
+                "printedPage": "490"
+              }
+            ]
+          },
+          {
+            "elementId": "1f5b7e00-511a-57f7-921c-c3feeb3c22b9",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Calculo de interés compuesto sobre saldo insoluto en situaciones de la vida cotidiana.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 493,
+                "printedPage": "492"
+              }
+            ]
+          },
+          {
+            "elementId": "a6bc7ff0-8802-5b93-9bca-f9616ffa7a79",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Resuelve problemas de interés compuesto que impliquen préstamos y tarjetas de crédito y los comprueba a través de\nsoftware apropiado.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 493,
+                "printedPage": "492"
+              }
+            ]
+          },
+          {
+            "elementId": "03b86d8a-c3b3-5915-ad1e-fb223f8707e6",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+            "type": "CONCEPT",
+            "text": "• Progresiones que faciliten entender\nlas fórmulas del interés compuesto.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 491,
+                "printedPage": "490"
+              }
+            ]
+          },
+          {
+            "elementId": "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+            "type": "CONCEPT",
+            "text": "• Interés Compuesto",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 491,
+                "printedPage": "490"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.1:834bd0b4-6611-5ff2-b31d-11d663152e0f:math-comprehension",
+            "templateId": "math-comprehension",
+            "title": "Comprensión del problema",
+            "description": "Identifica datos, condiciones y la pregunta del problema. Contenido de referencia: «• Progresiones que faciliten entender\nlas fórmulas del interés compuesto.».",
+            "maxScore": 3.64,
+            "maxScoreUnits": 364,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "03b86d8a-c3b3-5915-ad1e-fb223f8707e6",
+                "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+                "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+                "type": "CONCEPT",
+                "text": "• Progresiones que faciliten entender\nlas fórmulas del interés compuesto.",
+                "sources": [
+                  {
+                    "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                    "pdfPage": 491,
+                    "printedPage": "490"
+                  }
+                ]
+              }
+            ],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:834bd0b4-6611-5ff2-b31d-11d663152e0f:math-accuracy",
+            "templateId": "math-accuracy",
+            "title": "Exactitud",
+            "description": "Realiza los cálculos y usa las unidades con precisión. Contenido de referencia: «• Calculo de interés compuesto sobre saldo insoluto en situaciones de la vida cotidiana.».",
+            "maxScore": 3.64,
+            "maxScoreUnits": 364,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "1f5b7e00-511a-57f7-921c-c3feeb3c22b9",
+                "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+                "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+                "type": "ACHIEVEMENT_INDICATOR",
+                "text": "• Calculo de interés compuesto sobre saldo insoluto en situaciones de la vida cotidiana.",
+                "sources": [
+                  {
+                    "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                    "pdfPage": 493,
+                    "printedPage": "492"
+                  }
+                ]
+              }
+            ],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:834bd0b4-6611-5ff2-b31d-11d663152e0f:math-interpretation",
+            "templateId": "math-interpretation",
+            "title": "Interpretación",
+            "description": "Interpreta y comprueba la respuesta en el contexto del problema. Contenido de referencia: «• Argumentación de resultados obtenidos en la\nresolución de problemas que impliquen interés\ncompuesto e interés sobre saldo insoluto.».",
+            "maxScore": 3.64,
+            "maxScoreUnits": 364,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "d1b750ef-c6e6-55b1-bb9f-f465266c722d",
+                "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+                "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+                "type": "PROCEDURE",
+                "text": "• Argumentación de resultados obtenidos en la\nresolución de problemas que impliquen interés\ncompuesto e interés sobre saldo insoluto.",
+                "sources": [
+                  {
+                    "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                    "pdfPage": 491,
+                    "printedPage": "490"
+                  }
+                ]
+              }
+            ],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:834bd0b4-6611-5ff2-b31d-11d663152e0f:math-procedure",
+            "templateId": "math-procedure",
+            "title": "Procedimiento matemático",
+            "description": "Selecciona y aplica un procedimiento adecuado al problema.",
+            "maxScore": 4.54,
+            "maxScoreUnits": 454,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.1:834bd0b4-6611-5ff2-b31d-11d663152e0f:math-reasoning",
+            "templateId": "math-reasoning",
+            "title": "Razonamiento y justificación",
+            "description": "Justifica la estrategia y relaciona los pasos con los datos.",
+            "maxScore": 4.54,
+            "maxScoreUnits": 454,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=math",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "math-process",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "9aff2842-7b19-5e33-ac3c-b182656321c8",
+              "score": 118,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "d1b750ef-c6e6-55b1-bb9f-f465266c722d",
+              "score": 118,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "ff658d99-6359-5cc4-9629-c289dea53268",
+              "score": 118,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "1f5b7e00-511a-57f7-921c-c3feeb3c22b9",
+              "score": 116,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a6bc7ff0-8802-5b93-9bca-f9616ffa7a79",
+              "score": 116,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55ca3a5a-172d-5ba2-8cf1-4816e4ceea6a",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "03b86d8a-c3b3-5915-ad1e-fb223f8707e6",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f759f757-3cc4-533e-90ad-b1954c92582e",
+              "score": 68,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "2c05acbc-93b3-54a2-8036-65cd4afda0a3",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6112fad5-8a6e-5579-accb-bdc342324c03",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e9018f8b-2657-5f51-bd87-4ef40733419f",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "edf8399a-1e62-5e36-a83b-7a56d29e7392",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0645bab0-78c4-59bc-b53d-ad76eace1ab9",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a863d5c-1034-5f71-b7f7-2d43df084c17",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "907b9b3c-a05f-5291-85bd-937c88cf770a",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "case": "I",
+      "input": {
+        "sectionSubjectId": "[temporary fixture removed]",
+        "activityTitle": "Experimento sobre reacciones químicas",
+        "description": "Registro de datos y conclusiones siguiendo normas de seguridad.",
+        "maxScore": 25,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+      },
+      "scope": {
+        "id": "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+        "level": "SECONDARY",
+        "grade": 5,
+        "cycle": 2,
+        "area": "Ciencias de la Naturaleza",
+        "subject": "Química y Computación",
+        "exit": "Ciencias y Tecnología"
+      },
+      "recommendation": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.1",
+        "instrumentType": "rubrica",
+        "confidence": "HIGH",
+        "activityType": "EXPERIMENT",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "e93ef938-8f0c-5566-9051-0c970d095b2b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+            "type": "PROCEDURE",
+            "text": "• Simulación de reacciones químicas y posibles\nmecanismos de reacción identificado.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 508,
+                "printedPage": "507"
+              }
+            ]
+          },
+          {
+            "elementId": "60129d55-7d36-502d-99b1-6c6d2ab2b1f9",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+            "type": "CONCEPT",
+            "text": "• Simulación de reacciones químicas y mecanismos de\nreacción.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 507,
+                "printedPage": "506"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.1:f39c0cd4-85d9-5aeb-a1d2-74763bf455a9:science-data",
+            "templateId": "science-data",
+            "title": "Registro de datos",
+            "description": "Registra observaciones y datos de forma ordenada y verificable.",
+            "maxScore": 4.35,
+            "maxScoreUnits": 435,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Registra observaciones y datos de forma ordenada y verificable. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 435
+              },
+              {
+                "levelId": "L3",
+                "text": "Registra observaciones y datos de forma ordenada y verificable. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 290
+              },
+              {
+                "levelId": "L2",
+                "text": "Registra observaciones y datos de forma ordenada y verificable. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L1",
+                "text": "Registra observaciones y datos de forma ordenada y verificable. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:f39c0cd4-85d9-5aeb-a1d2-74763bf455a9:science-procedure",
+            "templateId": "science-procedure",
+            "title": "Procedimiento",
+            "description": "Aplica y explica los pasos del procedimiento científico.",
+            "maxScore": 5.44,
+            "maxScoreUnits": 544,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Aplica y explica los pasos del procedimiento científico. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 544
+              },
+              {
+                "levelId": "L3",
+                "text": "Aplica y explica los pasos del procedimiento científico. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 363
+              },
+              {
+                "levelId": "L2",
+                "text": "Aplica y explica los pasos del procedimiento científico. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 181
+              },
+              {
+                "levelId": "L1",
+                "text": "Aplica y explica los pasos del procedimiento científico. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:f39c0cd4-85d9-5aeb-a1d2-74763bf455a9:science-conclusion",
+            "templateId": "science-conclusion",
+            "title": "Conclusiones",
+            "description": "Formula conclusiones sustentadas en los resultados registrados.",
+            "maxScore": 3.26,
+            "maxScoreUnits": 326,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula conclusiones sustentadas en los resultados registrados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 326
+              },
+              {
+                "levelId": "L3",
+                "text": "Formula conclusiones sustentadas en los resultados registrados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L2",
+                "text": "Formula conclusiones sustentadas en los resultados registrados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 109
+              },
+              {
+                "levelId": "L1",
+                "text": "Formula conclusiones sustentadas en los resultados registrados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:f39c0cd4-85d9-5aeb-a1d2-74763bf455a9:science-safety",
+            "templateId": "science-safety",
+            "title": "Seguridad",
+            "description": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales.",
+            "maxScore": 3.26,
+            "maxScoreUnits": 326,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 326
+              },
+              {
+                "levelId": "L3",
+                "text": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L2",
+                "text": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 109
+              },
+              {
+                "levelId": "L1",
+                "text": "Aplica las normas de seguridad pertinentes al procedimiento y los materiales. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:f39c0cd4-85d9-5aeb-a1d2-74763bf455a9:science-interpretation",
+            "templateId": "science-interpretation",
+            "title": "Interpretación de resultados",
+            "description": "Interpreta los resultados a partir de los datos obtenidos.",
+            "maxScore": 3.26,
+            "maxScoreUnits": 326,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Interpreta los resultados a partir de los datos obtenidos. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 326
+              },
+              {
+                "levelId": "L3",
+                "text": "Interpreta los resultados a partir de los datos obtenidos. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L2",
+                "text": "Interpreta los resultados a partir de los datos obtenidos. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 109
+              },
+              {
+                "levelId": "L1",
+                "text": "Interpreta los resultados a partir de los datos obtenidos. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.1:f39c0cd4-85d9-5aeb-a1d2-74763bf455a9:science-content",
+            "templateId": "science-content",
+            "title": "Dominio del contenido",
+            "description": "Explica los conceptos y sus relaciones usando el contenido trabajado. Contenido de referencia: «• Simulación de reacciones químicas y mecanismos de\nreacción.».",
+            "maxScore": 5.43,
+            "maxScoreUnits": 543,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [
+              {
+                "elementId": "60129d55-7d36-502d-99b1-6c6d2ab2b1f9",
+                "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+                "scopeId": "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+                "type": "CONCEPT",
+                "text": "• Simulación de reacciones químicas y mecanismos de\nreacción.",
+                "sources": [
+                  {
+                    "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                    "pdfPage": 507,
+                    "printedPage": "506"
+                  }
+                ]
+              }
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Lo realiza con precisión, autonomía y consistencia. Referente: «• Simulación de reacciones químicas y mecanismos de\nreacción.».",
+                "scoreUnits": 543
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Lo realiza adecuadamente, con detalles menores por mejorar. Referente: «• Simulación de reacciones químicas y mecanismos de\nreacción.».",
+                "scoreUnits": 362
+              },
+              {
+                "levelId": "L2",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Lo realiza parcialmente y requiere apoyo frecuente. Referente: «• Simulación de reacciones químicas y mecanismos de\nreacción.».",
+                "scoreUnits": 181
+              },
+              {
+                "levelId": "L1",
+                "text": "Explica los conceptos y sus relaciones usando el contenido trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso. Referente: «• Simulación de reacciones químicas y mecanismos de\nreacción.».",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 25,
+        "totalScoreUnits": 2500,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "scientific-performance",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "e93ef938-8f0c-5566-9051-0c970d095b2b",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "60129d55-7d36-502d-99b1-6c6d2ab2b1f9",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "160190d0-4885-55f0-b670-78ecf3193476",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "35ac8c88-d5d4-5eb1-b93c-e04cfe4c5f8f",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5b4d8c19-73a5-5317-a0fc-22acab320553",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5e1c79ca-16c2-5d65-a1e3-b24ad00bd4cd",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6ba3d852-89af-5670-af17-71f55f2c0ddb",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "89277fd0-8355-5af7-bbc6-c61cac9f12f2",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ab8273ae-9d1a-5533-9e70-651209c719df",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ac2e116a-1830-5ec4-8e61-fb58697c969a",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b26a1bf9-ee05-5cf4-9e48-1fdb4e79d349",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b7073c09-8996-5369-9230-2d49ee94811e",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f39a8a38-75bb-501d-b218-79de8fd5d9da",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "af0e3543-11a4-5930-b670-6b25e2b5ee51",
+              "score": 64,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0a578b73-9d30-5f8c-a6fa-6014db4e2d10",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1c58bf22-45d5-556e-aac6-d1a167fb22ef",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "24955880-26d3-5563-a40c-691404aacd88",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3ff1bfcb-64c3-5b1e-9fd7-6a2a44a358cc",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4e5eb4cf-3e31-5381-a899-6bfc865edc6a",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "50e59388-4fee-5811-ad59-a2af82411097",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5a67119f-60e9-50e7-bc91-24c184b12c7b",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6983ad3b-5341-51d0-91f0-8ed9240ce01c",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "71f9e83b-7150-5757-8438-c44022a2ba10",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7705f83d-e423-5647-99ee-2c139e55c1b4",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ],
+  "checks": {
+    "seedIdempotence": "PASS",
+    "versions": [
+      {
+        "id": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+        "code": "MINERD_PRIMARIA_2023",
+        "status": "DRAFT"
+      },
+      {
+        "id": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "code": "MINERD_SECUNDARIA_2023",
+        "status": "DRAFT"
+      }
+    ],
+    "mappingIdempotence": "PASS",
+    "mappingCount": 9,
+    "schoolTeacherScopeIsolation": "PASS",
+    "httpContract": "PASS (real controller/DTO/service/PostgreSQL; local authentication stub)",
+    "ambiguousEvenWithOldMappingThenConfiguredExit": "PASS",
+    "lowConfidence": "PASS",
+    "noHistoricalWrites": "PASS",
+    "rlsAndBackendPrivileges": "PASS"
+  },
+  "cleanup": true
+}

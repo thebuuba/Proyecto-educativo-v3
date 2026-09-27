@@ -23,7 +23,7 @@ function loadEnvironment() {
 
 export async function createApplication(): Promise<INestApplication> {
   loadEnvironment()
-  const { AppModule } = await import('./app.module')
+  const { AppModule } = await import('./app.module.js')
   const app = await NestFactory.create(AppModule)
 
   app.setGlobalPrefix('api/v1')

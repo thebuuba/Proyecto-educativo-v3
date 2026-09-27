@@ -83,6 +83,8 @@ export type Database = {
   public: {
     Tables: {
       curriculum_versions: CurriculumTable<CurriculumVersionRow, 'code' | 'level' | 'edition_year'>
+      evaluation_catalog_releases: CurriculumTable<{ version: string; payload: Json; created_at: string }, 'version' | 'payload'>
+      section_curriculum_contexts: CurriculumTable<{ section_subject_id: string; optative_exit_name: string; created_at: string }, 'section_subject_id' | 'optative_exit_name'>
       curriculum_documents: CurriculumTable<CurriculumDocumentRow, 'version_id' | 'title' | 'original_filename' | 'sha256' | 'page_count'>
       curriculum_scopes: CurriculumTable<CurriculumScopeRow, 'version_id' | 'stable_key'>
       curriculum_elements: CurriculumTable<CurriculumElementRow, 'id' | 'version_id' | 'scope_id' | 'stable_key' | 'element_type' | 'original_text' | 'normalized_text' | 'source_order'>

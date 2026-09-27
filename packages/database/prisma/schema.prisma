@@ -520,6 +520,23 @@ model CurriculumSubjectMapping {
   @@map("curriculum_subject_mappings")
 }
 
+model EvaluationCatalogRelease {
+  version   String   @id
+  payload   Json
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  @@map("evaluation_catalog_releases")
+}
+
+model SectionCurriculumContext {
+  sectionSubjectId String @id @map("section_subject_id") @db.Uuid
+  optativeExitName String @map("optative_exit_name")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+  sectionSubject SectionSubject @relation(fields: [sectionSubjectId], references: [id], onDelete: Cascade)
+
+  @@map("section_curriculum_contexts")
+}
+
 model Teacher {
   id           String       @id @default(uuid()) @db.Uuid
   userId       String?      @unique @map("user_id") @db.Uuid
@@ -647,6 +664,7 @@ model GuardianNotification {
 }
 
 model SectionSubject {
+  curriculumContext SectionCurriculumContext?
   id           String       @id @default(uuid()) @db.Uuid
   schoolYearId String       @map("school_year_id") @db.Uuid
   schoolId     String       @map("school_id") @db.Uuid

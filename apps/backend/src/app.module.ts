@@ -26,6 +26,7 @@ import { JournalModule } from './modules/journal/journal.module'
 import { ResourcesModule } from './modules/resources/resources.module'
 import { OnboardingModule } from './modules/onboarding/onboarding.module'
 import { backendEnvFilePaths } from './config/env-file-paths'
+import { EvaluationInstrumentsModule } from './modules/evaluation-instruments/evaluation-instruments.module'
 
 /**
  * Configuración del módulo raíz.
@@ -55,6 +56,7 @@ import { backendEnvFilePaths } from './config/env-file-paths'
     JournalModule,
     ResourcesModule,
     OnboardingModule,
+    EvaluationInstrumentsModule,
   ],
   providers: [
     { provide: APP_GUARD, useClass: ThrottlerGuard },
