@@ -14,6 +14,7 @@ import {
   deleteScheduleEntry as deleteScheduleEntryRecord,
   deleteTimeSlot as deleteTimeSlotRecord,
   getScheduleEntries,
+  getScheduleJourneys,
   getScheduleWorkspace,
   getTimeSlots,
   updateScheduleEntry as updateScheduleEntryRecord,
@@ -109,6 +110,11 @@ export function useSchedule() {
     }
   }, [])
 
+  const refetchJourneys = useCallback(async () => {
+    const data = await getScheduleJourneys()
+    setJourneys(data)
+  }, [])
+
   /** Carga los datos iniciales: año escolar, bloques, secciones, docentes, asignaturas */
   const loadInitialData = useCallback(async () => {
     setLoading(true)
@@ -172,9 +178,8 @@ export function useSchedule() {
   /** Recarga todos los datos (bloques y entradas) */
   const refetchAll = useCallback(async () => {
     scheduleCache.clear(cacheScope)
-    await refetchTimeSlots()
-    await refetchEntries()
-  }, [cacheScope, refetchTimeSlots, refetchEntries])
+    await Promise.all([refetchTimeSlots(), refetchEntries(), refetchJourneys()])
+  }, [cacheScope, refetchTimeSlots, refetchEntries, refetchJourneys])
 
   /** Crea un nuevo bloque horario y refresca la lista */
   const createTimeSlot = useCallback(

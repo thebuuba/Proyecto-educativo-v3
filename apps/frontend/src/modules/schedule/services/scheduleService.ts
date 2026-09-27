@@ -5,7 +5,7 @@
  * de horario, y datos auxiliares (secciones, docentes, materias).
  */
 
-import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
+import { api, ApiError, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type {
   CreateScheduleEntryInput,
   CreateTimeSlotInput,
@@ -34,8 +34,50 @@ export type ScheduleWorkspace = {
   subjects: SubjectOption[]
 }
 
+export function scheduleSaveErrorMessage(cause: unknown) {
+  if (cause instanceof ApiError) {
+    if (cause.status === 400 || cause.status === 422)
+      return 'No pudimos guardar el horario porque hay información que necesita revisión.'
+    if (cause.status === 401)
+      return 'Tu sesión venció. Inicia sesión nuevamente antes de guardar el horario.'
+    if (cause.status === 403)
+      return 'No tienes permiso para guardar la estructura de este horario.'
+    return 'No pudimos guardar el horario en este momento. Inténtalo nuevamente.'
+  }
+  if (cause instanceof TypeError)
+    return 'No pudimos conectar con el servidor. Revisa tu conexión y vuelve a intentarlo.'
+  return 'No pudimos guardar el horario en este momento. Inténtalo nuevamente.'
+}
+
+export function serializeScheduleStructure(
+  input: SaveScheduleStructureInput,
+): SaveScheduleStructureInput {
+  return {
+    journeys: input.journeys.map(({ id, name, kind, startTime, endTime, sequence }) => ({
+      id,
+      name,
+      kind,
+      startTime,
+      endTime,
+      sequence,
+    })),
+    blocks: input.blocks.map(
+      ({ id, name, startTime, endTime, sequence, dayOfWeek, blockType, journeyKey }) => ({
+        id,
+        name,
+        startTime,
+        endTime,
+        sequence,
+        dayOfWeek,
+        blockType,
+        journeyKey,
+      }),
+    ),
+  }
+}
+
 export async function saveScheduleStructure(input: SaveScheduleStructureInput): Promise<{ saved: true }> {
-  return api.post('/schedule/structure', input, {
+  return api.post('/schedule/structure', serializeScheduleStructure(input), {
     invalidateCacheTags: [API_CACHE_TAGS.schedule, API_CACHE_TAGS.timeSlots],
   })
 }

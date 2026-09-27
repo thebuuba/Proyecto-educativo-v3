@@ -115,7 +115,16 @@ export function FlexibleScheduleWizard({
   ]
   const [step, setStep] = useState(0)
   const [days, setDays] = useState<number[]>(inferredDays.length ? inferredDays : [1, 2, 3, 4, 5])
-  const [journeys, setJourneys] = useState<ScheduleStructureJourneyInput[]>(initialJourneys)
+  const [journeys, setJourneys] = useState<ScheduleStructureJourneyInput[]>(() =>
+    initialJourneys.map(({ id, name, kind, startTime, endTime, sequence }) => ({
+      id,
+      name,
+      kind,
+      startTime,
+      endTime,
+      sequence,
+    })),
+  )
   const [drafts, setDrafts] = useState<Record<string, JourneyStructureDraft>>(() =>
     Object.fromEntries(
       initialJourneys.map((journey) => {
@@ -546,7 +555,14 @@ export function FlexibleScheduleWizard({
       <div className="space-y-6 p-5 sm:p-7">
         {error ? (
           <FeedbackBanner tone="danger">
-            No pudimos guardar la estructura del horario. Revisa tu conexión y vuelve a intentarlo.
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <span>{error}</span>
+              {step === 3 ? (
+                <Button type="button" size="sm" variant="outline" onClick={next}>
+                  Reintentar
+                </Button>
+              ) : null}
+            </div>
           </FeedbackBanner>
         ) : null}
         {step === 0 ? <DaysStep days={days} toggleDay={toggleDay} /> : null}
@@ -1298,8 +1314,8 @@ function WeeklyPeriodGrid({
                   type="button"
                   className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"
                   onClick={() => {
-                    setOpenMenu(null)
                     onEdit(journey.id, day, block)
+                    setOpenMenu(null)
                   }}
                 >
                   Editar solo este día
@@ -1375,8 +1391,8 @@ function WeeklyPeriodGrid({
                 type="button"
                 className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"
                 onClick={() => {
-                  setOpenMenu(null)
                   onEditGlobal(journey.id, block)
+                    setOpenMenu(null)
                 }}
               >
                 {block.blockType === 'BREAK' ? 'Mover recreo' : 'Editar en toda la jornada'}
@@ -1663,6 +1679,7 @@ function AnchoredSchedulePopover({
       role={role}
       aria-label={label}
       data-placement={position.placement}
+      onPointerDown={(event) => event.stopPropagation()}
       className="fixed z-[60] overflow-y-auto overscroll-contain rounded-2xl border border-border bg-card shadow-xl"
       style={{
         left: position.left,

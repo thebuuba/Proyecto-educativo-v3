@@ -9,6 +9,7 @@ import { useSchedule } from '@/modules/schedule/hooks/useSchedule'
 import {
   getSectionSubjects,
   saveScheduleStructure,
+  scheduleSaveErrorMessage,
 } from '@/modules/schedule/services/scheduleService'
 import type {
   CreateScheduleEntryInput,
@@ -24,6 +25,7 @@ import {
   scheduleDays,
 } from '@/modules/schedule/utils/scheduleStructure'
 import { cn } from '@/utils/cn'
+import { ApiError } from '@/services/apiClient'
 
 type SubjectOption = { id: string; sectionId: string; label: string }
 
@@ -95,8 +97,11 @@ export function SchedulePage() {
       setEditing(false)
       setAssigning(true)
     } catch (cause) {
-      console.error('No se pudo guardar la estructura del horario:', cause)
-      setSaveError('No pudimos guardar la estructura del horario.')
+      console.error('POST /api/v1/schedule/structure falló:', {
+        status: cause instanceof ApiError ? cause.status : 'network-or-unknown',
+        message: cause instanceof Error ? cause.message : String(cause),
+      })
+      setSaveError(scheduleSaveErrorMessage(cause))
     } finally {
       setSaving(false)
     }

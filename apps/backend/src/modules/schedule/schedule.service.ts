@@ -190,9 +190,17 @@ export class ScheduleService {
         const journeyId = journeyByKey.get(block.journeyKey)
         if (!journeyId) throw new BadRequestException('La jornada de un bloque no existe.')
         const data = { name: block.name.trim(), startTime: toTime(block.startTime), endTime: toTime(block.endTime), sequence: block.sequence, dayOfWeek: block.dayOfWeek, blockType: block.blockType, journeyId, status: 'ACTIVE' as const }
-        if (block.id && existingSlotIds.has(block.id)) {
-          keptSlotIds.add(block.id)
-          slotUpdates.push({ id: block.id, data })
+        const reusableSlot = block.id && existingSlotIds.has(block.id)
+          ? existingSlots.find((slot) => slot.id === block.id)
+          : existingSlots.find((slot) =>
+              !keptSlotIds.has(slot.id) &&
+              slot.journeyId === journeyId &&
+              slot.dayOfWeek === block.dayOfWeek &&
+              slot.sequence === block.sequence,
+            )
+        if (reusableSlot) {
+          keptSlotIds.add(reusableSlot.id)
+          slotUpdates.push({ id: reusableSlot.id, data })
         } else {
           newSlots.push({ schoolId, ...data })
         }
