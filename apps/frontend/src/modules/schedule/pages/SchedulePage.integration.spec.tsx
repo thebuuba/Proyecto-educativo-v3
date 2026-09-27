@@ -115,4 +115,23 @@ describe('guardado desde SchedulePage', () => {
 
     mocks.timeSlots.pop()
   })
+
+  it('explica el error de validación y lleva el foco a la jornada afectada', async () => {
+    mocks.saveScheduleStructure.mockRejectedValueOnce(
+      new ApiError(400, 'La jornada Matutina debe terminar después de iniciar.'),
+    )
+    const user = userEvent.setup()
+    render(<SchedulePage />)
+
+    await user.click(screen.getByRole('button', { name: 'Editar estructura' }))
+    await user.click(screen.getByRole('button', { name: 'Continuar' }))
+    await user.click(screen.getByRole('button', { name: 'Continuar' }))
+    await user.click(screen.getByRole('button', { name: 'Continuar' }))
+    await user.click(screen.getByRole('button', { name: 'Guardar y asignar clases' }))
+
+    expect(await screen.findByText(/Revisa: La jornada Matutina debe terminar/i)).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Ir al error' }))
+    expect(screen.getByText('¿En qué jornadas trabajas?')).toBeInTheDocument()
+    await waitFor(() => expect(document.activeElement).toHaveAttribute('data-schedule-review', 'Matutina'))
+  })
 })

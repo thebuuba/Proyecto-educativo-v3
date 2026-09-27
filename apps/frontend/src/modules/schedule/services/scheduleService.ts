@@ -36,8 +36,12 @@ export type ScheduleWorkspace = {
 
 export function scheduleSaveErrorMessage(cause: unknown) {
   if (cause instanceof ApiError) {
-    if (cause.status === 400 || cause.status === 422)
-      return 'No pudimos guardar el horario porque hay información que necesita revisión.'
+    if (cause.status === 400 || cause.status === 422) {
+      const detail = cause.message.trim()
+      return detail
+        ? `No pudimos guardar el horario porque hay información que necesita revisión. Revisa: ${detail}`
+        : 'No pudimos guardar el horario porque hay información que necesita revisión.'
+    }
     if (cause.status === 401)
       return 'Tu sesión venció. Inicia sesión nuevamente antes de guardar el horario.'
     if (cause.status === 403)

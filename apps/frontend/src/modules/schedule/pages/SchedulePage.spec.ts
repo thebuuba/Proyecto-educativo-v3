@@ -7,6 +7,9 @@ describe('mensajes de guardado del horario', () => {
     expect(scheduleSaveErrorMessage(new ApiError(400, 'status no permitido'))).toMatch(
       /información que necesita revisión/i,
     )
+    expect(scheduleSaveErrorMessage(new ApiError(400, 'El bloque Clase 2 está fuera de su jornada.'))).toContain(
+      'Revisa: El bloque Clase 2 está fuera de su jornada.',
+    )
     expect(scheduleSaveErrorMessage(new ApiError(500, 'error interno'))).toMatch(
       /en este momento/i,
     )

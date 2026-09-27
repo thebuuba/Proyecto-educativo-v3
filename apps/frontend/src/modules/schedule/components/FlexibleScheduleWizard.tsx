@@ -258,6 +258,24 @@ export function FlexibleScheduleWizard({
       current.includes(day) ? current.filter((item) => item !== day) : [...current, day].sort(),
     )
   }
+  function goToSaveError() {
+    if (!error) return
+    const normalizedError = normalizeSearchText(error)
+    const journey = journeys.find((item) => normalizedError.includes(normalizeSearchText(item.name)))
+    const targetStep = /jornada.+(terminar|iniciar|solapa)/i.test(error) ? 1 : 2
+    setStep(targetStep)
+    window.setTimeout(() => {
+      const candidates = Array.from(document.querySelectorAll<HTMLElement>('[data-schedule-review]'))
+      const target = candidates.find((element) => {
+        const label = element.dataset.scheduleReview
+        return label ? normalizedError.includes(normalizeSearchText(label)) : false
+      }) ?? (journey
+        ? candidates.find((element) => element.dataset.scheduleReview === journey.name)
+        : undefined) ?? candidates[0]
+      target?.scrollIntoView?.({ behavior: 'smooth', block: 'center' })
+      target?.focus({ preventScroll: true })
+    }, 0)
+  }
   function addJourney(preset: (typeof presets)[number]) {
     if (preset.kind !== 'CUSTOM' && journeys.some((journey) => journey.kind === preset.kind)) return
     const id = newJourneyId()
@@ -604,10 +622,12 @@ export function FlexibleScheduleWizard({
           <FeedbackBanner tone="danger">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span>{error}</span>
-              {step === 3 ? (
-                <Button type="button" size="sm" variant="outline" onClick={next}>
-                  Reintentar
+              {error.includes('información que necesita revisión') ? (
+                <Button type="button" size="sm" variant="outline" onClick={goToSaveError}>
+                  Ir al error
                 </Button>
+              ) : step === 3 ? (
+                <Button type="button" size="sm" variant="outline" onClick={next}>Reintentar</Button>
               ) : null}
             </div>
           </FeedbackBanner>
@@ -1026,7 +1046,12 @@ function JourneysStep({
       </div>
       <div className="space-y-3">
         {journeys.map((journey) => (
-          <article key={journey.id} className="rounded-2xl border border-border p-4">
+          <article
+            key={journey.id}
+            data-schedule-review={journey.name}
+            tabIndex={-1}
+            className="rounded-2xl border border-border p-4 focus:outline-none focus:ring-2 focus:ring-destructive/40"
+          >
             <div className="flex items-start justify-between gap-3">
               <div>
                 {journey.kind === 'CUSTOM' ? (
@@ -1145,7 +1170,11 @@ function JourneyPeriods({
       onDraft(journey.id, { appliedDays: [...selectedDays] })
   }, [draft.appliedDays, journey.id, onDraft, selectedDays])
   return (
-    <section className="space-y-4 rounded-2xl border border-border p-4 sm:p-5">
+    <section
+      data-schedule-review={journey.name}
+      tabIndex={-1}
+      className="space-y-4 rounded-2xl border border-border p-4 focus:outline-none focus:ring-2 focus:ring-destructive/40 sm:p-5"
+    >
       <div>
         <h4 className="font-black uppercase tracking-wide">{journey.name}</h4>
         <p className="text-xs text-muted-foreground">
@@ -1348,8 +1377,10 @@ function WeeklyPeriodGrid({
     const menuKey = `cell-${day}-${block.key}`
     return (
       <div
+        data-schedule-review={block.name}
+        tabIndex={-1}
         className={cn(
-          'relative min-h-16 rounded-xl border p-2 text-left',
+          'relative min-h-16 rounded-xl border p-2 text-left focus:outline-none focus:ring-2 focus:ring-destructive/40',
           block.blockType === 'BREAK' ? 'border-warning/30 bg-warning/15' : 'border-border bg-card',
         )}
       >
@@ -2128,6 +2159,9 @@ function validateJourneyRanges(journeys: ScheduleStructureJourneyInput[]) {
       errors.push(`${previous.name} y ${journey.name}: las jornadas se solapan.`)
   })
   return errors
+}
+function normalizeSearchText(value: string) {
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 }
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
