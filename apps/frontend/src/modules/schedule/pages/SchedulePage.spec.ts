@@ -20,4 +20,16 @@ describe('mensajes de guardado del horario', () => {
       /conectar con el servidor/i,
     )
   })
+
+  it('traduce la incompatibilidad de un servidor anterior sin mostrar campos técnicos', () => {
+    const message = scheduleSaveErrorMessage(
+      new ApiError(
+        400,
+        'blocks.65.property blockSource should not exist,blocks.65.property sourceKey should not exist,blocks.65.blockType must be one of the following values: CLASS, BREAK, LUNCH, PAUSE, FREE',
+      ),
+    )
+    expect(message).toMatch(/servicio que los guarda todavía no está actualizado/i)
+    expect(message).toMatch(/cambios permanecen en pantalla/i)
+    expect(message).not.toMatch(/blocks\.65|blockSource|sourceKey/)
+  })
 })

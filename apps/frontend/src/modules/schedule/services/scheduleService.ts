@@ -38,6 +38,8 @@ export function scheduleSaveErrorMessage(cause: unknown) {
   if (cause instanceof ApiError) {
     if (cause.status === 400 || cause.status === 422) {
       const detail = cause.message.trim()
+      if (isOutdatedScheduleServer(detail))
+        return 'El horario incluye espacios entre jornadas, pero el servicio que los guarda todavía no está actualizado. Reinicia o actualiza el servidor de AulaBase y vuelve a intentarlo. Tus cambios permanecen en pantalla.'
       return detail
         ? `No pudimos guardar el horario porque hay información que necesita revisión. Revisa: ${detail}`
         : 'No pudimos guardar el horario porque hay información que necesita revisión.'
@@ -51,6 +53,13 @@ export function scheduleSaveErrorMessage(cause: unknown) {
   if (cause instanceof TypeError)
     return 'No pudimos conectar con el servidor. Revisa tu conexión y vuelve a intentarlo.'
   return 'No pudimos guardar el horario en este momento. Inténtalo nuevamente.'
+}
+
+function isOutdatedScheduleServer(detail: string) {
+  return (
+    /property (blockSource|sourceKey) should not exist/i.test(detail) ||
+    (/blockType must be one of the following values/i.test(detail) && !detail.includes('GAP'))
+  )
 }
 
 export function serializeScheduleStructure(
