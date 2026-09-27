@@ -32,7 +32,20 @@ const SHIFT_TIMES: Record<string, { start: string; end: string }> = {
   custom: { start: '08:00', end: '12:30' },
 }
 
-const ORDINALS = ['1.º', '2.º', '3.º', '4.º', '5.º', '6.º', '7.º', '8.º', '9.º', '10.º', '11.º', '12.º']
+const ORDINALS = [
+  '1.º',
+  '2.º',
+  '3.º',
+  '4.º',
+  '5.º',
+  '6.º',
+  '7.º',
+  '8.º',
+  '9.º',
+  '10.º',
+  '11.º',
+  '12.º',
+]
 
 const STEPS = [
   { label: 'Días', icon: Check },
@@ -79,7 +92,9 @@ function normalizeBlocks(blocks: ScheduleBlock[]) {
     .map((block, index) => ({
       ...block,
       id: block.id || `custom-${index}`,
-      label: block.label.trim() || (block.type === 'break' ? 'Receso' : ORDINALS[index] ?? `${index + 1}.º período`),
+      label:
+        block.label.trim() ||
+        (block.type === 'break' ? 'Receso' : (ORDINALS[index] ?? `${index + 1}.º período`)),
       start: toTimeString(toMinutes(block.start)),
       end: toTimeString(toMinutes(block.end)),
     }))
@@ -250,12 +265,16 @@ export function ScheduleWizard({
     const currentBlocks = config.customBlocks?.length ? config.customBlocks : blocks
     updateConfig({
       structureMode: 'custom',
-      customBlocks: currentBlocks.map((block) => (block.id === id ? { ...block, ...patch } : block)),
+      customBlocks: currentBlocks.map((block) =>
+        block.id === id ? { ...block, ...patch } : block,
+      ),
     })
   }
 
   function addCustomBlock(type: ScheduleBlock['type']) {
-    const currentBlocks = normalizeBlocks(config.customBlocks?.length ? config.customBlocks : blocks)
+    const currentBlocks = normalizeBlocks(
+      config.customBlocks?.length ? config.customBlocks : blocks,
+    )
     const previous = currentBlocks.at(-1)
     const start = previous?.end ?? config.startTime
     const end = toTimeString(toMinutes(start) + (type === 'break' ? 20 : config.blockDuration))
@@ -265,7 +284,10 @@ export function ScheduleWizard({
         ...currentBlocks,
         {
           id: crypto.randomUUID(),
-          label: type === 'break' ? 'Receso' : `${currentBlocks.filter((b) => b.type === 'class').length + 1}.º`,
+          label:
+            type === 'break'
+              ? 'Receso'
+              : `${currentBlocks.filter((b) => b.type === 'class').length + 1}.º`,
           type,
           start,
           end,
@@ -294,10 +316,7 @@ export function ScheduleWizard({
       if (config.structureMode === 'custom') {
         return blocks.some((block) => block.type === 'class')
       }
-      return (
-        config.blockDuration >= 5 &&
-        config.startTime < config.endTime
-      )
+      return config.blockDuration >= 5 && config.startTime < config.endTime
     }
     if (step === 2) return true
     if (step === 3) return blocks.length > 0
@@ -356,10 +375,7 @@ export function ScheduleWizard({
               </button>
               {i < STEPS.length - 1 ? (
                 <div
-                  className={cn(
-                    'mx-4 h-px w-12 sm:w-20',
-                    i < step ? 'bg-primary/40' : 'bg-border',
-                  )}
+                  className={cn('mx-4 h-px w-12 sm:w-20', i < step ? 'bg-primary/40' : 'bg-border')}
                 />
               ) : null}
             </div>
@@ -378,9 +394,7 @@ export function ScheduleWizard({
         {step === 0 ? (
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-bold text-foreground">
-                ¿Qué días impartes clases?
-              </h3>
+              <h3 className="text-xl font-bold text-foreground">¿Qué días impartes clases?</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Selecciona los días de la semana en que trabajas.
               </p>
@@ -400,7 +414,7 @@ export function ScheduleWizard({
                         : 'border-border bg-card text-muted-foreground hover:border-muted-foreground/30',
                     )}
                   >
-                      <span className="text-lg font-bold">{day.label}</span>
+                    <span className="text-lg font-bold">{day.label}</span>
                     <span className="text-xs font-medium">{day.name}</span>
                     {selected ? (
                       <span className="mt-1 flex size-5 items-center justify-center rounded-full bg-primary text-[10px] text-primary-foreground">
@@ -418,11 +432,10 @@ export function ScheduleWizard({
         {step === 1 ? (
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-bold text-foreground">
-                Define tu jornada
-              </h3>
+              <h3 className="text-xl font-bold text-foreground">Define tu jornada</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Usa períodos iguales o personaliza cada bloque cuando tus tandas tengan duraciones mixtas.
+                Usa períodos iguales o personaliza cada bloque cuando tus tandas tengan duraciones
+                mixtas.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -432,7 +445,7 @@ export function ScheduleWizard({
                 size="sm"
                 onClick={() => updateConfig({ structureMode: 'uniform', customBlocks: [] })}
               >
-                Períodos iguales
+                Clases iguales
               </Button>
               <Button
                 type="button"
@@ -448,10 +461,7 @@ export function ScheduleWizard({
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Tanda">
-                <Select
-                  value={config.shift}
-                  onChange={(e) => handleShiftChange(e.target.value)}
-                >
+                <Select value={config.shift} onChange={(e) => handleShiftChange(e.target.value)}>
                   {SHIFT_OPTIONS.map((opt) => (
                     <option key={opt.value} value={opt.value}>
                       {opt.label}
@@ -518,11 +528,21 @@ export function ScheduleWizard({
                     </p>
                   </div>
                   <div className="flex gap-2">
-                    <Button type="button" variant="outline" size="sm" onClick={() => addCustomBlock('class')}>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => addCustomBlock('class')}
+                    >
                       <Plus className="size-4" />
                       Clase
                     </Button>
-                    <Button type="button" variant="outline" size="sm" onClick={() => addCustomBlock('break')}>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => addCustomBlock('break')}
+                    >
                       <Coffee className="size-4" />
                       Receso
                     </Button>
@@ -542,7 +562,9 @@ export function ScheduleWizard({
                       <Select
                         value={block.type}
                         onChange={(event) =>
-                          updateCustomBlock(block.id, { type: event.target.value as ScheduleBlock['type'] })
+                          updateCustomBlock(block.id, {
+                            type: event.target.value as ScheduleBlock['type'],
+                          })
                         }
                       >
                         <option value="class">Clase</option>
@@ -550,18 +572,24 @@ export function ScheduleWizard({
                       </Select>
                       <Input
                         value={block.label}
-                        onChange={(event) => updateCustomBlock(block.id, { label: event.target.value })}
-                        placeholder={block.type === 'break' ? 'Receso' : 'Período'}
+                        onChange={(event) =>
+                          updateCustomBlock(block.id, { label: event.target.value })
+                        }
+                        placeholder={block.type === 'break' ? 'Receso' : 'Clase'}
                       />
                       <Input
                         type="time"
                         value={block.start}
-                        onChange={(event) => updateCustomBlock(block.id, { start: event.target.value })}
+                        onChange={(event) =>
+                          updateCustomBlock(block.id, { start: event.target.value })
+                        }
                       />
                       <Input
                         type="time"
                         value={block.end}
-                        onChange={(event) => updateCustomBlock(block.id, { end: event.target.value })}
+                        onChange={(event) =>
+                          updateCustomBlock(block.id, { end: event.target.value })
+                        }
                       />
                       <Button
                         type="button"
@@ -584,16 +612,15 @@ export function ScheduleWizard({
         {step === 2 ? (
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-bold text-foreground">
-                Recreos y recesos
-              </h3>
+              <h3 className="text-xl font-bold text-foreground">Recreos y recesos</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Agrega las pausas de tu jornada. Puedes omitir este paso.
               </p>
             </div>
             {config.structureMode === 'custom' ? (
               <div className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-800">
-                Estás usando una estructura personalizada. Los recreos, almuerzo y cambios de tanda se editan como filas dentro del paso Horas.
+                Estás usando una estructura personalizada. Los recreos, almuerzo y cambios de tanda
+                se editan como filas dentro del paso Horas.
               </div>
             ) : config.breaks.length === 0 ? (
               <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border py-10">
@@ -663,9 +690,7 @@ export function ScheduleWizard({
         {step === 3 ? (
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-bold text-foreground">
-                Todo listo
-              </h3>
+              <h3 className="text-xl font-bold text-foreground">Todo listo</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Revisa la estructura de tu semana antes de crearla.
               </p>
@@ -682,7 +707,10 @@ export function ScheduleWizard({
                 {config.startTime} – {config.endTime}
               </Badge>
               <Badge tone="accent" className="rounded-full px-3 py-1">
-                {classCount} períodos · {config.structureMode === 'custom' ? 'duración variable' : `${config.blockDuration} min`}
+                {classCount} períodos ·{' '}
+                {config.structureMode === 'custom'
+                  ? 'duración variable'
+                  : `${config.blockDuration} min`}
               </Badge>
             </div>
 

@@ -4,61 +4,110 @@ import { describe, expect, it, vi } from 'vitest'
 import { FlexibleScheduleWizard } from './FlexibleScheduleWizard'
 import type { SaveScheduleStructureInput, TimeSlot } from '@/modules/schedule/types'
 
-const journey = { id: 'morning', name: 'Matutina', kind: 'MORNING' as const, startTime: '07:30', endTime: '12:00', sequence: 1 }
+const journey = {
+  id: 'morning',
+  name: 'Matutina',
+  kind: 'MORNING' as const,
+  startTime: '07:30',
+  endTime: '12:00',
+  sequence: 1,
+}
 const base = [
-  { name: 'Período 1', startTime: '07:30', endTime: '08:10', sequence: 1, blockType: 'CLASS' as const },
-  { name: 'Período 2', startTime: '08:10', endTime: '08:50', sequence: 2, blockType: 'CLASS' as const },
+  {
+    name: 'Período 1',
+    startTime: '07:30',
+    endTime: '08:10',
+    sequence: 1,
+    blockType: 'CLASS' as const,
+  },
+  {
+    name: 'Período 2',
+    startTime: '08:10',
+    endTime: '08:50',
+    sequence: 2,
+    blockType: 'CLASS' as const,
+  },
 ]
-const slots: TimeSlot[] = [1, 5].flatMap((dayOfWeek) => base.map((block) => ({ ...block, id: `${dayOfWeek}-${block.sequence}`, status: 'active', dayOfWeek, journeyId: journey.id })))
+const slots: TimeSlot[] = [1, 5].flatMap((dayOfWeek) =>
+  base.map((block) => ({
+    ...block,
+    id: `${dayOfWeek}-${block.sequence}`,
+    status: 'active',
+    dayOfWeek,
+    journeyId: journey.id,
+  })),
+)
 
-async function renderPeriods(initialSlots = slots) {
+async function renderSchedule(initialSlots = slots) {
   const user = userEvent.setup()
   const onComplete = vi.fn<(input: SaveScheduleStructureInput) => void>()
-  render(<FlexibleScheduleWizard initialJourneys={[journey]} initialSlots={initialSlots} submitting={false} error={null} onComplete={onComplete} />)
+  render(
+    <FlexibleScheduleWizard
+      initialJourneys={[journey]}
+      initialSlots={initialSlots}
+      submitting={false}
+      error={null}
+      onComplete={onComplete}
+    />,
+  )
   await user.click(screen.getByRole('button', { name: /continuar/i }))
   await user.click(screen.getByRole('button', { name: /continuar/i }))
   return { user, onComplete }
 }
 
-async function openFridayPeriod2(user: ReturnType<typeof userEvent.setup>) {
-  const summary = screen.getByLabelText('Acciones de Período 2 en Viernes')
-  await user.click(summary)
-  return summary.parentElement as HTMLElement
+async function openFridayClass2(user: ReturnType<typeof userEvent.setup>) {
+  const trigger = screen.getByLabelText('Acciones para Clase 2 del viernes')
+  await user.click(trigger)
+  return trigger.parentElement as HTMLElement
 }
 
-describe('cuadrícula semanal de períodos', () => {
-  it('muestra el horario semanal sin exponer aplicar ni personalizar', async () => {
-    await renderPeriods()
-    expect(screen.getAllByText('Lun').length).toBeGreaterThan(0)
-    expect(screen.getAllByText('Vie').length).toBeGreaterThan(0)
-    expect(screen.getAllByText('Período 1').length).toBeGreaterThanOrEqual(3)
-    expect(screen.queryByText('Aplicar esta estructura a')).not.toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: 'Personalizar' })).not.toBeInTheDocument()
+describe('cuadrícula semanal de clases', () => {
+  it('normaliza el lenguaje anterior y muestra Clase, Hora pedagógica y Pausa', async () => {
+    const { user } = await renderSchedule()
+    expect(screen.getAllByText('Clase 1').length).toBeGreaterThanOrEqual(3)
+    expect(screen.queryByText('Período 1')).not.toBeInTheDocument()
+    const actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: 'Editar solo este día' }))
+    await user.selectOptions(screen.getByLabelText('Tipo'), 'FREE')
+    expect(screen.getByRole('option', { name: 'Hora pedagógica' })).toBeInTheDocument()
+    expect(screen.getByRole('option', { name: 'Pausa' })).toBeInTheDocument()
   })
 
-  it('añade un período y un recreo a todos los días de la jornada', async () => {
-    const { user } = await renderPeriods()
-    await user.click(screen.getByRole('button', { name: 'Añadir período' }))
-    expect(screen.getAllByText('Período 3').length).toBeGreaterThanOrEqual(3)
+  it('añade una clase globalmente y configura el recreo antes de insertarlo', async () => {
+    const { user } = await renderSchedule()
+    await user.click(screen.getByRole('button', { name: 'Añadir clase' }))
+    expect(screen.getAllByText('Clase 3').length).toBeGreaterThanOrEqual(3)
     await user.click(screen.getByRole('button', { name: 'Añadir recreo' }))
+    expect(screen.getByRole('heading', { name: 'Añadir recreo' })).toBeInTheDocument()
+    expect(screen.queryAllByText('Recreo')).toHaveLength(0)
+    await user.click(
+      within(screen.getByRole('dialog')).getByRole('button', { name: 'Añadir recreo' }),
+    )
     expect(screen.getAllByText('Recreo').length).toBeGreaterThanOrEqual(3)
   })
 
-  it('elimina un período solo del viernes y permite restaurar el horario habitual', async () => {
-    const { user } = await renderPeriods()
-    const actions = await openFridayPeriod2(user)
-    await user.click(within(actions).getByRole('button', { name: 'Eliminar de este día' }))
+  it('elimina una clase solo del viernes y permite restaurar ese día', async () => {
+    const { user } = await renderSchedule()
+    const actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: 'Eliminar solo este día' }))
     expect(screen.getAllByText('● Ajustado').length).toBeGreaterThan(0)
-    expect(screen.getAllByText('Período 2').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('● Ajustado')[0].parentElement).toHaveTextContent('—')
     await user.click(screen.getByRole('button', { name: 'Restaurar' }))
     expect(screen.queryByText('● Ajustado')).not.toBeInTheDocument()
   })
 
-  it('edita una celda directamente y valida horarios inválidos', async () => {
-    const { user } = await renderPeriods()
-    const actions = await openFridayPeriod2(user)
-    await user.click(within(actions).getByRole('button', { name: 'Editar' }))
-    expect(screen.getByRole('heading', { name: 'Viernes · Editar bloque' })).toBeInTheDocument()
+  it('no crea un ajuste cuando se guarda una edición sin cambios', async () => {
+    const { user } = await renderSchedule()
+    const actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: 'Editar solo este día' }))
+    await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
+    expect(screen.queryByText('● Ajustado')).not.toBeInTheDocument()
+  })
+
+  it('edita una celda, valida el horario y marca solo la excepción', async () => {
+    const { user } = await renderSchedule()
+    const actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: 'Editar solo este día' }))
     fireEvent.change(screen.getByLabelText('Fin'), { target: { value: '07:00' } })
     await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
     expect(screen.getByRole('alert')).toHaveTextContent('debe terminar después de iniciar')
@@ -68,26 +117,94 @@ describe('cuadrícula semanal de períodos', () => {
     expect(screen.getAllByText('08:10–08:40').length).toBeGreaterThan(0)
   })
 
+  it('edita una clase en toda la jornada sin crear excepciones', async () => {
+    const { user } = await renderSchedule()
+    await user.click(screen.getByLabelText('Acciones globales para Clase 1'))
+    await user.click(screen.getByRole('menuitem', { name: 'Editar en toda la jornada' }))
+    fireEvent.change(screen.getByLabelText('Nombre'), { target: { value: 'Clase inicial' } })
+    await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
+    expect(screen.getAllByText('Clase inicial').length).toBeGreaterThanOrEqual(3)
+    expect(screen.queryByText('● Ajustado')).not.toBeInTheDocument()
+  })
+
+  it('cierra los menús al abrir otro, hacer clic fuera o pulsar Escape', async () => {
+    const { user } = await renderSchedule()
+    await user.click(screen.getByLabelText('Acciones para Clase 2 del viernes'))
+    expect(screen.getByRole('menu')).toBeInTheDocument()
+    await user.click(screen.getByLabelText('Acciones globales para Clase 1'))
+    expect(screen.getAllByRole('menu')).toHaveLength(1)
+    fireEvent.pointerDown(document.body)
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument()
+    await user.click(screen.getByLabelText('Acciones globales para Clase 1'))
+    fireEvent.keyDown(document, { key: 'Escape' })
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument()
+  })
+
+  it('confirma antes de regenerar, limpiar o eliminar globalmente', async () => {
+    const { user } = await renderSchedule()
+    await user.click(screen.getByRole('button', { name: 'Regenerar jornada' }))
+    expect(screen.getByRole('heading', { name: 'Regenerar jornada' })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Cancelar' }))
+    await user.click(screen.getByRole('button', { name: 'Limpiar jornada' }))
+    expect(screen.getByRole('heading', { name: 'Limpiar jornada' })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Cancelar' }))
+    await user.click(screen.getByLabelText('Acciones globales para Clase 1'))
+    await user.click(screen.getByRole('menuitem', { name: 'Eliminar de todos los días' }))
+    expect(screen.getByRole('heading', { name: 'Eliminar de todos los días' })).toBeInTheDocument()
+  })
+
   it('reconstruye al recargar las diferencias guardadas por día', async () => {
-    const personalized = slots.map((slot) => slot.dayOfWeek === 5 && slot.sequence === 2 ? { ...slot, endTime: '08:40' } : slot)
-    await renderPeriods(personalized)
+    const personalized = slots.map((slot) =>
+      slot.dayOfWeek === 5 && slot.sequence === 2 ? { ...slot, endTime: '08:40' } : slot,
+    )
+    await renderSchedule(personalized)
     expect(screen.getAllByText('● Ajustado').length).toBeGreaterThan(0)
     expect(screen.getAllByText('08:10–08:40').length).toBeGreaterThan(0)
   })
 
   it('mantiene independientes las configuraciones Matutina y Vespertina', async () => {
-    const afternoon = { id: 'afternoon', name: 'Vespertina', kind: 'AFTERNOON' as const, startTime: '13:00', endTime: '16:00', sequence: 2 }
-    const afternoonSlots: TimeSlot[] = [1, 5].flatMap((dayOfWeek) => base.map((block) => ({ ...block, id: `a-${dayOfWeek}-${block.sequence}`, startTime: block.sequence === 1 ? '13:00' : '13:35', endTime: block.sequence === 1 ? '13:35' : '14:10', status: 'active', dayOfWeek, journeyId: afternoon.id })))
+    const afternoon = {
+      id: 'afternoon',
+      name: 'Vespertina',
+      kind: 'AFTERNOON' as const,
+      startTime: '13:00',
+      endTime: '16:00',
+      sequence: 2,
+    }
+    const afternoonSlots: TimeSlot[] = [1, 5].flatMap((dayOfWeek) =>
+      base.map((block) => ({
+        ...block,
+        id: `a-${dayOfWeek}-${block.sequence}`,
+        startTime: block.sequence === 1 ? '13:00' : '13:35',
+        endTime: block.sequence === 1 ? '13:35' : '14:10',
+        status: 'active',
+        dayOfWeek,
+        journeyId: afternoon.id,
+      })),
+    )
     const user = userEvent.setup()
-    render(<FlexibleScheduleWizard initialJourneys={[journey, afternoon]} initialSlots={[...slots, ...afternoonSlots]} submitting={false} error={null} onComplete={vi.fn()} />)
+    render(
+      <FlexibleScheduleWizard
+        initialJourneys={[journey, afternoon]}
+        initialSlots={[...slots, ...afternoonSlots]}
+        submitting={false}
+        error={null}
+        onComplete={vi.fn()}
+      />,
+    )
     await user.click(screen.getByRole('button', { name: /continuar/i }))
     await user.click(screen.getByRole('button', { name: /continuar/i }))
     const morningSection = screen.getByText('Matutina').closest('section')!
     const afternoonSection = screen.getByText('Vespertina').closest('section')!
-    fireEvent.change(within(afternoonSection).getAllByRole('spinbutton')[0], { target: { value: '35' } })
+    fireEvent.change(within(afternoonSection).getAllByRole('spinbutton')[0], {
+      target: { value: '35' },
+    })
     expect(within(morningSection).getAllByRole('spinbutton')[0]).toHaveValue(40)
     expect(within(afternoonSection).getAllByRole('spinbutton')[0]).toHaveValue(35)
     await user.click(within(morningSection).getByRole('button', { name: 'Añadir recreo' }))
+    await user.click(
+      within(screen.getByRole('dialog')).getByRole('button', { name: 'Añadir recreo' }),
+    )
     expect(within(morningSection).getAllByText('Recreo').length).toBeGreaterThan(0)
     expect(within(afternoonSection).queryByText('Recreo')).not.toBeInTheDocument()
   })
