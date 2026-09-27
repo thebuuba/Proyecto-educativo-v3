@@ -58,7 +58,7 @@ async function renderSchedule(initialSlots = slots) {
 async function openFridayClass2(user: ReturnType<typeof userEvent.setup>) {
   const trigger = screen.getByLabelText('Acciones para Clase 2 del viernes')
   await user.click(trigger)
-  return trigger.parentElement as HTMLElement
+  return screen.getByRole('menu')
 }
 
 async function setEditorTime(
@@ -103,6 +103,8 @@ describe('cuadrícula semanal de clases', () => {
     fireEvent.change(count, { target: { value: '' } })
     expect(duration).toHaveValue(null)
     expect(count).toHaveValue(null)
+    expect(screen.queryByRole('button', { name: /Regenerar con 0 min/i })).not.toBeInTheDocument()
+    expect(screen.queryByText(/aplicar 0 min/i)).not.toBeInTheDocument()
     fireEvent.blur(duration)
     expect(screen.getByText('Ingresa una duración válida.')).toBeInTheDocument()
 
@@ -127,6 +129,57 @@ describe('cuadrícula semanal de clases', () => {
     expect(within(picker).getByRole('button', { name: 'Subir hora' })).toBeInTheDocument()
     expect(within(picker).getByRole('button', { name: 'Bajar minutos' })).toBeInTheDocument()
     expect(picker).not.toHaveTextContent(/segundos/i)
+  })
+
+  it('cierra el selector fuera, con Escape y al abrir otro selector', async () => {
+    const { user } = await renderSchedule()
+    const actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: /Editar solo este/ }))
+    const start = screen.getByRole('button', { name: 'Inicio' })
+    const end = screen.getByRole('button', { name: 'Fin' })
+
+    await user.click(start)
+    fireEvent.pointerDown(document.body)
+    expect(screen.queryByRole('dialog', { name: 'Seleccionar hora' })).not.toBeInTheDocument()
+
+    await user.click(start)
+    fireEvent.keyDown(document, { key: 'Escape' })
+    expect(screen.queryByRole('dialog', { name: 'Seleccionar hora' })).not.toBeInTheDocument()
+    expect(start).toHaveFocus()
+
+    await user.click(start)
+    await user.click(end)
+    expect(screen.getAllByRole('dialog', { name: 'Seleccionar hora' })).toHaveLength(1)
+    expect(start).toHaveAttribute('aria-expanded', 'false')
+    expect(end).toHaveAttribute('aria-expanded', 'true')
+  })
+
+  it('hace flip hacia arriba y limita el selector al espacio visible', async () => {
+    const { user } = await renderSchedule()
+    const actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: /Editar solo este/ }))
+    const trigger = screen.getByRole('button', { name: 'Fin' })
+    vi.spyOn(trigger, 'getBoundingClientRect').mockReturnValue({
+      bottom: 590,
+      height: 40,
+      left: 80,
+      right: 280,
+      top: 550,
+      width: 200,
+      x: 80,
+      y: 550,
+      toJSON: () => ({}),
+    })
+    vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockReturnValue(260)
+    vi.stubGlobal('innerHeight', 600)
+
+    await user.click(trigger)
+    const picker = screen.getByRole('dialog', { name: 'Seleccionar hora' })
+    expect(picker).toHaveAttribute('data-placement', 'top')
+    expect(Number.parseInt(picker.style.top, 10)).toBeGreaterThanOrEqual(8)
+    expect(Number.parseInt(picker.style.maxHeight, 10)).toBeLessThanOrEqual(534)
+    vi.unstubAllGlobals()
+    vi.restoreAllMocks()
   })
 
   it('elimina una clase solo del viernes y permite restaurar ese día', async () => {
@@ -214,6 +267,31 @@ describe('cuadrícula semanal de clases', () => {
     await user.click(screen.getByLabelText('Acciones globales para Clase 1'))
     fireEvent.keyDown(document, { key: 'Escape' })
     expect(screen.queryByRole('menu')).not.toBeInTheDocument()
+  })
+
+  it('hace flip del menú contextual cerca del borde inferior', async () => {
+    const { user } = await renderSchedule()
+    const trigger = screen.getByLabelText('Acciones para Clase 2 del viernes')
+    vi.spyOn(trigger, 'getBoundingClientRect').mockReturnValue({
+      bottom: 596,
+      height: 28,
+      left: 300,
+      right: 328,
+      top: 568,
+      width: 28,
+      x: 300,
+      y: 568,
+      toJSON: () => ({}),
+    })
+    vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockReturnValue(150)
+    vi.stubGlobal('innerHeight', 600)
+
+    await user.click(trigger)
+    const menu = screen.getByRole('menu')
+    expect(menu).toHaveAttribute('data-placement', 'top')
+    expect(Number.parseInt(menu.style.top, 10)).toBeGreaterThanOrEqual(8)
+    vi.unstubAllGlobals()
+    vi.restoreAllMocks()
   })
 
   it('confirma antes de regenerar, limpiar o eliminar globalmente', async () => {

@@ -12,7 +12,8 @@ import {
   RotateCcw,
   Trash2,
 } from 'lucide-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Input'
@@ -72,6 +73,7 @@ type BreakDraft = {
   name: string
   existingSequence?: number
 }
+type OpenScheduleMenu = { key: string; anchor: HTMLElement }
 type Props = {
   initialJourneys?: ScheduleStructureJourneyInput[]
   initialSlots?: TimeSlot[]
@@ -1021,8 +1023,10 @@ function JourneyPeriods({
   const availableMinutes =
     minutesFromScheduleTime(journey.endTime) - minutesFromScheduleTime(journey.startTime)
   const requiredMinutes = durationMinutes * periodCount
+  const generationValuesValid = durationMinutes >= 5 && periodCount >= 1
   const pendingGenerationChanges = Boolean(
     draft.baseBlocks.length &&
+    generationValuesValid &&
     (draft.generatedDurationMinutes !== durationMinutes ||
       draft.generatedPeriodCount !== periodCount),
   )
@@ -1209,27 +1213,13 @@ function WeeklyPeriodGrid({
   onRestore: (id: string, day: number) => void
 }) {
   const [mobileDay, setMobileDay] = useState(days[0] ?? 1)
-  const [openMenu, setOpenMenu] = useState<string | null>(null)
+  const [openMenu, setOpenMenu] = useState<OpenScheduleMenu | null>(null)
   const blocksFor = (day: number) => draft.dayOverrides[day] ?? draft.baseBlocks
   const rows = [
     ...new Set(
       days.flatMap((day) => blocksFor(day).map((block) => `${block.startTime}|${block.endTime}`)),
     ),
   ].sort()
-  useEffect(() => {
-    const outside = (event: PointerEvent) => {
-      if (!(event.target as Element | null)?.closest('[data-schedule-menu]')) setOpenMenu(null)
-    }
-    const escape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpenMenu(null)
-    }
-    document.addEventListener('pointerdown', outside)
-    document.addEventListener('keydown', escape)
-    return () => {
-      document.removeEventListener('pointerdown', outside)
-      document.removeEventListener('keydown', escape)
-    }
-  }, [])
   const adjusted = (day: number, block: ScheduleTemplateBlock) => {
     const base = draft.baseBlocks.find((item) => item.sequence === block.sequence)
     return Boolean(draft.dayOverrides[day] && (!base || !sameBlock(base, block)))
@@ -1281,53 +1271,65 @@ function WeeklyPeriodGrid({
             type="button"
             aria-label={`Acciones para ${block.name} del ${scheduleDays.find((item) => item.dayOfWeek === day)?.name.toLowerCase()}`}
             aria-haspopup="menu"
-            aria-expanded={openMenu === menuKey}
-            onClick={() => setOpenMenu((current) => (current === menuKey ? null : menuKey))}
+            aria-expanded={openMenu?.key === menuKey}
+            onClick={(event) => {
+              const anchor = event.currentTarget
+              setOpenMenu((current) =>
+                current?.key === menuKey ? null : { key: menuKey, anchor },
+              )
+            }}
             className="grid size-7 place-items-center rounded-lg text-muted-foreground hover:bg-muted"
           >
             <MoreVertical className="size-4" />
           </button>
-          {openMenu === menuKey ? (
-            <div
+          {openMenu?.key === menuKey ? (
+            <AnchoredSchedulePopover
+              anchor={openMenu.anchor}
+              onClose={(restoreFocus) => {
+                setOpenMenu(null)
+                if (restoreFocus) openMenu.anchor.focus({ preventScroll: true })
+              }}
               role="menu"
-              className="absolute right-0 z-20 mt-1 w-52 rounded-xl border border-border bg-card p-1 shadow-xl"
+              width={208}
             >
-              <button
-                role="menuitem"
-                type="button"
-                className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"
-                onClick={() => {
-                  setOpenMenu(null)
-                  onEdit(journey.id, day, block)
-                }}
-              >
-                Editar solo este día
-              </button>
-              {adjusted(day, block) ? (
+              <div className="p-1">
                 <button
                   role="menuitem"
                   type="button"
                   className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"
                   onClick={() => {
                     setOpenMenu(null)
-                    onRestore(journey.id, day)
+                    onEdit(journey.id, day, block)
                   }}
                 >
-                  Restaurar horario habitual
+                  Editar solo este día
                 </button>
-              ) : null}
-              <button
-                role="menuitem"
-                type="button"
-                className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold text-destructive hover:bg-destructive/10"
-                onClick={() => {
-                  setOpenMenu(null)
-                  onDelete(journey.id, day, block.sequence)
-                }}
-              >
-                Eliminar solo este día
-              </button>
-            </div>
+                {adjusted(day, block) ? (
+                  <button
+                    role="menuitem"
+                    type="button"
+                    className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"
+                    onClick={() => {
+                      setOpenMenu(null)
+                      onRestore(journey.id, day)
+                    }}
+                  >
+                    Restaurar horario habitual
+                  </button>
+                ) : null}
+                <button
+                  role="menuitem"
+                  type="button"
+                  className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold text-destructive hover:bg-destructive/10"
+                  onClick={() => {
+                    setOpenMenu(null)
+                    onDelete(journey.id, day, block.sequence)
+                  }}
+                >
+                  Eliminar solo este día
+                </button>
+              </div>
+            </AnchoredSchedulePopover>
           ) : null}
         </div>
       </div>
@@ -1346,40 +1348,52 @@ function WeeklyPeriodGrid({
           type="button"
           aria-label={`Acciones globales para ${block.name}`}
           aria-haspopup="menu"
-          aria-expanded={openMenu === menuKey}
-          onClick={() => setOpenMenu((current) => (current === menuKey ? null : menuKey))}
+          aria-expanded={openMenu?.key === menuKey}
+          onClick={(event) => {
+            const anchor = event.currentTarget
+            setOpenMenu((current) =>
+              current?.key === menuKey ? null : { key: menuKey, anchor },
+            )
+          }}
           className="grid size-7 place-items-center rounded-lg text-muted-foreground hover:bg-muted"
         >
           <MoreVertical className="size-4" />
         </button>
-        {openMenu === menuKey ? (
-          <div
+        {openMenu?.key === menuKey ? (
+          <AnchoredSchedulePopover
+            anchor={openMenu.anchor}
+            onClose={(restoreFocus) => {
+              setOpenMenu(null)
+              if (restoreFocus) openMenu.anchor.focus({ preventScroll: true })
+            }}
             role="menu"
-            className="absolute left-0 z-30 mt-1 w-56 rounded-xl border border-border bg-card p-1 shadow-xl"
+            width={224}
           >
-            <button
-              role="menuitem"
-              type="button"
-              className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"
-              onClick={() => {
-                setOpenMenu(null)
-                onEditGlobal(journey.id, block)
-              }}
-            >
-              {block.blockType === 'BREAK' ? 'Mover recreo' : 'Editar en toda la jornada'}
-            </button>
-            <button
-              role="menuitem"
-              type="button"
-              className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold text-destructive hover:bg-destructive/10"
-              onClick={() => {
-                setOpenMenu(null)
-                onDeleteGlobal(journey.id, block.sequence)
-              }}
-            >
-              Eliminar de todos los días
-            </button>
-          </div>
+            <div className="p-1">
+              <button
+                role="menuitem"
+                type="button"
+                className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"
+                onClick={() => {
+                  setOpenMenu(null)
+                  onEditGlobal(journey.id, block)
+                }}
+              >
+                {block.blockType === 'BREAK' ? 'Mover recreo' : 'Editar en toda la jornada'}
+              </button>
+              <button
+                role="menuitem"
+                type="button"
+                className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold text-destructive hover:bg-destructive/10"
+                onClick={() => {
+                  setOpenMenu(null)
+                  onDeleteGlobal(journey.id, block.sequence)
+                }}
+              >
+                Eliminar de todos los días
+              </button>
+            </div>
+          </AnchoredSchedulePopover>
         ) : null}
       </div>
     )
@@ -1564,6 +1578,105 @@ function parseScheduleTime(value: string, referenceValue?: string) {
   return scheduleTimeFromMinutes(hours * 60 + minutes)
 }
 
+function AnchoredSchedulePopover({
+  anchor,
+  children,
+  label,
+  onClose,
+  role = 'dialog',
+  width,
+}: {
+  anchor: HTMLElement
+  children: ReactNode
+  label?: string
+  onClose: (restoreFocus?: boolean) => void
+  role?: 'dialog' | 'menu'
+  width: number
+}) {
+  const popupRef = useRef<HTMLDivElement>(null)
+  const [position, setPosition] = useState({
+    left: 8,
+    maxHeight: 0,
+    placement: 'bottom' as 'bottom' | 'top',
+    top: 8,
+  })
+
+  useLayoutEffect(() => {
+    const viewportPadding = 8
+    const gap = 8
+    const updatePosition = () => {
+      const popup = popupRef.current
+      if (!popup || !anchor.isConnected) return
+      const anchorRect = anchor.getBoundingClientRect()
+      const popupHeight = popup.scrollHeight || popup.getBoundingClientRect().height
+      const availableBelow = Math.max(0, window.innerHeight - anchorRect.bottom - gap - viewportPadding)
+      const availableAbove = Math.max(0, anchorRect.top - gap - viewportPadding)
+      const placement =
+        popupHeight <= availableBelow || availableBelow >= availableAbove ? 'bottom' : 'top'
+      const maxHeight = placement === 'bottom' ? availableBelow : availableAbove
+      const visibleHeight = Math.min(popupHeight, maxHeight)
+      const desiredTop =
+        placement === 'bottom' ? anchorRect.bottom + gap : anchorRect.top - gap - visibleHeight
+      setPosition({
+        left: Math.min(
+          Math.max(viewportPadding, anchorRect.left),
+          Math.max(viewportPadding, window.innerWidth - width - viewportPadding),
+        ),
+        maxHeight,
+        placement,
+        top: Math.min(
+          Math.max(viewportPadding, desiredTop),
+          Math.max(viewportPadding, window.innerHeight - visibleHeight - viewportPadding),
+        ),
+      })
+    }
+    updatePosition()
+    window.addEventListener('resize', updatePosition)
+    window.addEventListener('scroll', updatePosition, true)
+    return () => {
+      window.removeEventListener('resize', updatePosition)
+      window.removeEventListener('scroll', updatePosition, true)
+    }
+  }, [anchor, width])
+
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target as Node
+      if (!anchor.contains(target) && !popupRef.current?.contains(target)) onClose()
+    }
+    const handleKeyDown = (event: globalThis.KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      event.preventDefault()
+      onClose(true)
+    }
+    document.addEventListener('pointerdown', handlePointerDown)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [anchor, onClose])
+
+  return createPortal(
+    <div
+      ref={popupRef}
+      role={role}
+      aria-label={label}
+      data-placement={position.placement}
+      className="fixed z-[60] overflow-y-auto overscroll-contain rounded-2xl border border-border bg-card shadow-xl"
+      style={{
+        left: position.left,
+        maxHeight: position.maxHeight || undefined,
+        top: position.top,
+        width: Math.min(width, window.innerWidth - 16),
+      }}
+    >
+      {children}
+    </div>,
+    document.body,
+  )
+}
+
 function ScheduleTimeInput({
   value,
   onChange,
@@ -1573,7 +1686,8 @@ function ScheduleTimeInput({
   onChange: (value: string) => void
   ariaLabel: string
 }) {
-  const [open, setOpen] = useState(false)
+  const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null)
+  const open = Boolean(anchor)
   const [draft, setDraft] = useState(() => formatScheduleTime(value))
   useEffect(() => setDraft(formatScheduleTime(value)), [value])
   const commit = (nextDraft: string) => {
@@ -1609,35 +1723,46 @@ function ScheduleTimeInput({
         aria-haspopup="dialog"
         aria-expanded={open}
         className="h-11 w-full rounded-xl border border-input bg-card px-4 text-left text-sm font-semibold text-foreground outline-none hover:bg-muted/30 focus:border-ring focus:ring-4 focus:ring-ring/15"
-        onClick={() => setOpen((current) => !current)}
+        onClick={(event) => {
+          const trigger = event.currentTarget
+          setAnchor((current) => (current ? null : trigger))
+        }}
       >
         {formatScheduleTime(value)}
       </button>
-      {open ? (
-        <div
-          role="dialog"
-          aria-label="Seleccionar hora"
-          className="absolute left-0 z-40 mt-2 w-72 rounded-2xl border border-border bg-card p-3 shadow-xl"
+      {anchor ? (
+        <AnchoredSchedulePopover
+          anchor={anchor}
+          label="Seleccionar hora"
+          onClose={(restoreFocus) => {
+            setAnchor(null)
+            if (restoreFocus) anchor.focus({ preventScroll: true })
+          }}
+          width={288}
         >
-          <Input
-            aria-label="Escribir hora"
-            type="text"
-            inputMode="numeric"
-            value={draft}
-            placeholder="2:05 p. m."
-            onChange={(event) => {
-              const nextDraft = event.target.value
-              setDraft(nextDraft)
-              const parsed = parseScheduleTime(nextDraft, value)
-              if (parsed) onChange(parsed)
-            }}
-            onBlur={() => commit(draft)}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter') commit(draft)
-              if (event.key === 'Escape') setOpen(false)
-            }}
-          />
-          <div className="mt-3 grid grid-cols-[1fr_1fr_5rem] gap-2 text-center">
+          <div className="p-3">
+            <Input
+              aria-label="Escribir hora"
+              type="text"
+              inputMode="numeric"
+              value={draft}
+              placeholder="2:05 p. m."
+              onChange={(event) => {
+                const nextDraft = event.target.value
+                setDraft(nextDraft)
+                const parsed = parseScheduleTime(nextDraft, value)
+                if (parsed) onChange(parsed)
+              }}
+              onBlur={() => commit(draft)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  commit(draft)
+                  setAnchor(null)
+                  anchor.focus({ preventScroll: true })
+                }
+              }}
+            />
+            <div className="mt-3 grid grid-cols-[1fr_1fr_5rem] gap-2 text-center">
             <TimePartControl
               label="Hora"
               value={hour12}
@@ -1664,11 +1789,21 @@ function ScheduleTimeInput({
                 <option value="PM">p. m.</option>
               </Select>
             </label>
+            </div>
+            <Button
+              type="button"
+              size="sm"
+              className="mt-3 w-full"
+              onClick={() => {
+                commit(draft)
+                setAnchor(null)
+                anchor.focus({ preventScroll: true })
+              }}
+            >
+              Listo
+            </Button>
           </div>
-          <Button type="button" size="sm" className="mt-3 w-full" onClick={() => setOpen(false)}>
-            Listo
-          </Button>
-        </div>
+        </AnchoredSchedulePopover>
       ) : null}
     </div>
   )
