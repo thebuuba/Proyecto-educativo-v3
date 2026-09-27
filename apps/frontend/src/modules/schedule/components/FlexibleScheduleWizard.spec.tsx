@@ -63,7 +63,7 @@ async function openFridayClass2(user: ReturnType<typeof userEvent.setup>) {
 
 async function setEditorTime(
   user: ReturnType<typeof userEvent.setup>,
-  label: 'Inicio' | 'Fin',
+  label: 'Inicio' | 'Fin' | 'Inicio del bloque' | 'Fin del bloque',
   value: string,
 ) {
   await user.click(screen.getByRole('button', { name: label }))
@@ -100,6 +100,47 @@ describe('cuadrícula semanal de clases', () => {
       within(screen.getByRole('dialog')).getByRole('button', { name: 'Añadir recreo' }),
     )
     expect(screen.getAllByText('Recreo').length).toBeGreaterThanOrEqual(3)
+  })
+
+  it('añade almuerzo global, reajusta las clases y permite moverlo con horario exacto', async () => {
+    const { user, onComplete } = await renderSchedule()
+    await user.click(screen.getByRole('button', { name: 'Añadir almuerzo' }))
+    const dialog = screen.getByRole('dialog', { name: 'Añadir almuerzo' })
+    expect(within(dialog).getByLabelText('Nombre')).toHaveValue('Almuerzo')
+    expect(screen.queryByLabelText('Acciones globales para Almuerzo')).not.toBeInTheDocument()
+    await user.selectOptions(within(dialog).getByLabelText('Después de'), '1')
+    fireEvent.change(within(dialog).getByLabelText('Duración (minutos)'), { target: { value: '80' } })
+    await user.click(within(dialog).getByRole('button', { name: 'Añadir almuerzo' }))
+
+    expect(screen.getAllByText('Almuerzo').length).toBeGreaterThanOrEqual(3)
+    expect(screen.getAllByText('8:10–9:30 a. m.').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('9:30–10:10 a. m.').length).toBeGreaterThan(0)
+
+    await user.click(screen.getByLabelText('Acciones globales para Almuerzo'))
+    await user.click(screen.getByRole('menuitem', { name: 'Mover almuerzo' }))
+    await user.selectOptions(screen.getByLabelText('Forma de definirlo'), 'time')
+    await setEditorTime(user, 'Inicio del bloque', '08:20')
+    await setEditorTime(user, 'Fin del bloque', '09:40')
+    await user.click(screen.getByRole('button', { name: 'Mover almuerzo' }))
+    expect(screen.getAllByText('8:20–9:40 a. m.').length).toBeGreaterThan(0)
+
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    await user.click(screen.getByRole('button', { name: 'Guardar y asignar clases' }))
+    const blocks = onComplete.mock.calls[0][0].blocks
+    expect(blocks.filter((block) => block.blockType === 'LUNCH')).toHaveLength(2)
+    expect(blocks.filter((block) => block.blockType === 'CLASS')).toHaveLength(4)
+  })
+
+  it('elimina el almuerzo de toda la jornada y cierra la secuencia automáticamente', async () => {
+    const { user } = await renderSchedule()
+    await user.click(screen.getByRole('button', { name: 'Añadir almuerzo' }))
+    await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: 'Añadir almuerzo' }))
+    await user.click(screen.getByLabelText('Acciones globales para Almuerzo'))
+    await user.click(screen.getByRole('menuitem', { name: 'Eliminar de todos los días' }))
+    expect(screen.getByText(/Se eliminará este almuerzo de todos los días/i)).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Eliminar' }))
+    expect(screen.queryByLabelText('Acciones globales para Almuerzo')).not.toBeInTheDocument()
+    expect(screen.getAllByText('8:10–8:50 a. m.').length).toBeGreaterThan(0)
   })
 
   it('permite vaciar los valores de generación y no altera la cuadrícula hasta regenerar', async () => {

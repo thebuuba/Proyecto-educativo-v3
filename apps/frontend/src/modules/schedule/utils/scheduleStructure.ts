@@ -159,17 +159,21 @@ export function generateTemplateBlocks(
   })
 }
 
-export function insertTemplateBreak(
+export function insertTemplateNonLectiveBlock(
   blocks: ScheduleTemplateBlock[],
   afterIndex: number,
   durationMinutes: number,
   name = 'Recreo',
+  blockType: Extract<ScheduleBlockType, 'BREAK' | 'LUNCH'> = 'BREAK',
   moveFollowing = true,
+  explicitStartTime?: string,
 ) {
   const ordered = [...blocks].sort((a, b) => a.sequence - b.sequence)
   const previous = ordered[Math.max(0, Math.min(afterIndex, ordered.length - 1))]
   if (!previous) return ordered
-  const start = minutesFromScheduleTime(previous.endTime)
+  const start = explicitStartTime
+    ? minutesFromScheduleTime(explicitStartTime)
+    : minutesFromScheduleTime(previous.endTime)
   const end = start + durationMinutes
   const next = [...ordered]
   next.splice(afterIndex + 1, 0, {
@@ -178,10 +182,27 @@ export function insertTemplateBreak(
     startTime: scheduleTimeFromMinutes(start),
     endTime: scheduleTimeFromMinutes(end),
     sequence: afterIndex + 2,
-    blockType: 'BREAK',
+    blockType,
   })
   const sequenced = next.map((block, index) => ({ ...block, sequence: index + 1 }))
   return moveFollowing ? reflowTemplateBlocks(sequenced, afterIndex + 2) : sequenced
+}
+
+export function insertTemplateBreak(
+  blocks: ScheduleTemplateBlock[],
+  afterIndex: number,
+  durationMinutes: number,
+  name = 'Recreo',
+  moveFollowing = true,
+) {
+  return insertTemplateNonLectiveBlock(
+    blocks,
+    afterIndex,
+    durationMinutes,
+    name,
+    'BREAK',
+    moveFollowing,
+  )
 }
 
 export function reflowTemplateBlocks(blocks: ScheduleTemplateBlock[], afterSequence: number) {

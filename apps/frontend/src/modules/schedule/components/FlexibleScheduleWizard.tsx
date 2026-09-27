@@ -11,6 +11,7 @@ import {
   Plus,
   RotateCcw,
   Trash2,
+  Utensils,
 } from 'lucide-react'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
@@ -34,7 +35,7 @@ import {
   formatScheduleRange,
   formatScheduleTime,
   generateTemplateBlocks,
-  insertTemplateBreak,
+  insertTemplateNonLectiveBlock,
   INTER_SHIFT_CONFIGURABLE_GAP_MINUTES,
   materializeJourneyDraft,
   minutesFromScheduleTime,
@@ -69,11 +70,15 @@ type CellEditorDraft = {
   error: string | null
   adjustFollowing: boolean
 }
-type BreakDraft = {
+type NonLectiveDraft = {
   journeyId: string
   afterSequence: number
   durationMinutes: number
   name: string
+  blockType: Extract<ScheduleBlockType, 'BREAK' | 'LUNCH'>
+  mode: 'sequence' | 'time'
+  startTime: string
+  endTime: string
   existingSequence?: number
 }
 type OpenScheduleMenu = { key: string; anchor: HTMLElement }
@@ -186,7 +191,7 @@ export function FlexibleScheduleWizard({
     sequence?: number
   } | null>(null)
   const [cellEditor, setCellEditor] = useState<CellEditorDraft | null>(null)
-  const [breakEditor, setBreakEditor] = useState<BreakDraft | null>(null)
+  const [nonLectiveEditor, setNonLectiveEditor] = useState<NonLectiveDraft | null>(null)
   const initialGapConfiguration = useMemo(() => {
     const global: Record<string, ScheduleBlockType> = {}
     const overrides: Record<string, ScheduleBlockType> = {}
@@ -366,60 +371,77 @@ export function FlexibleScheduleWizard({
       ),
     })
   }
-  function openBreakEditor(id: string, block?: ScheduleTemplateBlock) {
+  function openNonLectiveEditor(
+    id: string,
+    blockType: Extract<ScheduleBlockType, 'BREAK' | 'LUNCH'>,
+    block?: ScheduleTemplateBlock,
+  ) {
     const draft = drafts[id]
     const classesBefore = block
       ? draft.baseBlocks.filter(
           (item) => item.blockType === 'CLASS' && item.sequence < block.sequence,
         ).length
       : 0
-    setBreakEditor({
+    const afterSequence = block
+      ? Math.max(1, classesBefore)
+      : Math.min(3, draft.baseBlocks.filter((item) => item.blockType === 'CLASS').length)
+    const targetClass = draft.baseBlocks.filter((item) => item.blockType === 'CLASS')[Math.max(0, afterSequence - 1)]
+    const durationMinutes = block
+      ? minutesFromScheduleTime(block.endTime) - minutesFromScheduleTime(block.startTime)
+      : blockType === 'LUNCH' ? 60 : 30
+    const startTime = block?.startTime ?? targetClass?.endTime ?? drafts[id].baseBlocks.at(-1)?.endTime ?? '12:00'
+    setNonLectiveEditor({
       journeyId: id,
-      afterSequence: block
-        ? Math.max(1, classesBefore)
-        : Math.min(3, draft.baseBlocks.filter((item) => item.blockType === 'CLASS').length),
-      durationMinutes: block
-        ? minutesFromScheduleTime(block.endTime) - minutesFromScheduleTime(block.startTime)
-        : 30,
-      name: block?.name ?? 'Recreo',
+      afterSequence,
+      durationMinutes,
+      name: block?.name ?? blockTypeLabels[blockType],
+      blockType,
+      mode: 'sequence',
+      startTime,
+      endTime: block?.endTime ?? scheduleTimeFromMinutes(minutesFromScheduleTime(startTime) + durationMinutes),
       existingSequence: block?.sequence,
     })
   }
-  function saveBreakEditor() {
-    if (!breakEditor) return
-    const draft = drafts[breakEditor.journeyId]
+  function saveNonLectiveEditor() {
+    if (!nonLectiveEditor) return
+    const draft = drafts[nonLectiveEditor.journeyId]
     const change = (blocks: ScheduleTemplateBlock[]) => {
-      const removed = breakEditor.existingSequence
+      const removed = nonLectiveEditor.existingSequence
         ? blocks
-            .filter((block) => block.sequence !== breakEditor.existingSequence)
+            .filter((block) => block.sequence !== nonLectiveEditor.existingSequence)
             .map((block, index) => ({ ...block, sequence: index + 1 }))
         : blocks
       const without =
-        breakEditor.existingSequence && breakEditor.existingSequence > 1
-          ? reflowTemplateBlocks(removed, breakEditor.existingSequence - 1)
+        nonLectiveEditor.existingSequence && nonLectiveEditor.existingSequence > 1
+          ? reflowTemplateBlocks(removed, nonLectiveEditor.existingSequence - 1)
           : removed
-      const targetClass = without.filter((block) => block.blockType === 'CLASS')[
-        Math.max(0, breakEditor.afterSequence - 1)
-      ]
+      const targetClass = nonLectiveEditor.mode === 'time'
+        ? [...without].reverse().find((block) => minutesFromScheduleTime(block.endTime) <= minutesFromScheduleTime(nonLectiveEditor.startTime))
+        : without.filter((block) => block.blockType === 'CLASS')[Math.max(0, nonLectiveEditor.afterSequence - 1)]
       const afterIndex = Math.max(
         0,
         without.findIndex((block) => block === targetClass),
       )
-      return insertTemplateBreak(
+      const duration = nonLectiveEditor.mode === 'time'
+        ? minutesFromScheduleTime(nonLectiveEditor.endTime) - minutesFromScheduleTime(nonLectiveEditor.startTime)
+        : nonLectiveEditor.durationMinutes
+      return insertTemplateNonLectiveBlock(
         without,
         afterIndex,
-        breakEditor.durationMinutes,
-        breakEditor.name,
+        Math.max(5, duration),
+        nonLectiveEditor.name,
+        nonLectiveEditor.blockType,
         true,
+        nonLectiveEditor.mode === 'time' ? nonLectiveEditor.startTime : undefined,
       )
     }
-    updateDraft(breakEditor.journeyId, {
+    updateDraft(nonLectiveEditor.journeyId, {
       baseBlocks: change(draft.baseBlocks),
       dayOverrides: Object.fromEntries(
         Object.entries(draft.dayOverrides).map(([day, blocks]) => [day, change(blocks)]),
       ),
     })
-    setBreakEditor(null)
+    setNonLectiveEditor(null)
   }
   function openCellEditor(id: string, day: number, block: ScheduleTemplateBlock) {
     setCellEditor({
@@ -434,10 +456,6 @@ export function FlexibleScheduleWizard({
     })
   }
   function openGlobalEditor(id: string, block: ScheduleTemplateBlock) {
-    if (block.blockType === 'BREAK') {
-      openBreakEditor(id, block)
-      return
-    }
     setCellEditor({
       journeyId: id,
       scope: 'global',
@@ -523,10 +541,12 @@ export function FlexibleScheduleWizard({
   }
   function deleteGlobal(id: string, sequence: number) {
     const draft = drafts[id]
-    const remove = (blocks: ScheduleTemplateBlock[]) =>
-      blocks
+    const remove = (blocks: ScheduleTemplateBlock[]) => {
+      const removed = blocks
         .filter((block) => block.sequence !== sequence)
         .map((block, index) => ({ ...block, sequence: index + 1 }))
+      return sequence > 1 ? reflowTemplateBlocks(removed, sequence - 1) : removed
+    }
     updateDraft(id, {
       baseBlocks: remove(draft.baseBlocks),
       dayOverrides: Object.fromEntries(
@@ -570,6 +590,9 @@ export function FlexibleScheduleWizard({
     ? journeys.find((journey) => journey.id === confirm.journeyId)
     : null
   const confirmDraft = confirm ? drafts[confirm.journeyId] : null
+  const confirmBlock = confirm?.sequence
+    ? confirmDraft?.baseBlocks.find((block) => block.sequence === confirm.sequence)
+    : undefined
   const generationRequired = confirmDraft
     ? Number(confirmDraft.durationMinutes) * Number(confirmDraft.periodCount)
     : 0
@@ -665,10 +688,14 @@ export function FlexibleScheduleWizard({
                     onDraft={updateDraft}
                     onGenerate={requestGenerate}
                     onAddClass={addPeriod}
-                    onAddBreak={openBreakEditor}
+                    onAddBreak={(id) => openNonLectiveEditor(id, 'BREAK')}
+                    onAddLunch={(id) => openNonLectiveEditor(id, 'LUNCH')}
                     onClear={(id) => setConfirm({ journeyId: id, action: 'clear' })}
                     onEditCell={openCellEditor}
                     onEditGlobal={openGlobalEditor}
+                    onMoveGlobal={(id, block) =>
+                      openNonLectiveEditor(id, block.blockType as 'BREAK' | 'LUNCH', block)
+                    }
                     onDeleteCell={deleteCell}
                     onDeleteGlobal={(id, sequence) =>
                       setConfirm({ journeyId: id, sequence, action: 'delete-global' })
@@ -774,7 +801,7 @@ export function FlexibleScheduleWizard({
             confirm.action === 'clear'
               ? 'Se eliminarán todas las clases, recreos, pausas, almuerzos, horas pedagógicas y ajustes de esta jornada.'
               : confirm.action === 'delete-global'
-                ? 'Se eliminará este bloque de todos los días de esta jornada.'
+                ? `Se eliminará ${confirmBlock?.blockType === 'LUNCH' ? 'este almuerzo' : 'este bloque'} de todos los días de esta jornada y se reajustarán los bloques posteriores.`
                 : confirm.action === 'generate-overflow'
                   ? `${confirmDraft?.periodCount ?? 0} clases de ${confirmDraft?.durationMinutes ?? 0} minutos necesitan ${formatScheduleDuration(generationRequired)}, pero esta jornada dispone de ${formatScheduleDuration(generationAvailable)}. Con esa duración caben aproximadamente ${Math.max(0, Math.floor(generationAvailable / (confirmDraft?.durationMinutes || 1)))} clases. Puedes generar de todos modos y ajustar cada duración después.${confirmDraft?.baseBlocks.length ? ' Se reemplazarán las clases, recreos y ajustes manuales actuales.' : ''}`
                   : 'Se reemplazarán las clases, recreos y ajustes manuales actuales de esta jornada.'
@@ -913,57 +940,104 @@ export function FlexibleScheduleWizard({
           </div>
         </Modal>
       ) : null}
-      {breakEditor ? (
+      {nonLectiveEditor ? (
         <Modal
-          title={breakEditor.existingSequence ? 'Mover recreo' : 'Añadir recreo'}
+          title={`${nonLectiveEditor.existingSequence ? 'Mover' : 'Añadir'} ${blockTypeLabels[nonLectiveEditor.blockType].toLowerCase()}`}
           description="Se aplicará a todos los días de esta jornada."
-          icon={Coffee}
+          icon={nonLectiveEditor.blockType === 'LUNCH' ? Utensils : Coffee}
           tone="warning"
           className="max-w-lg"
-          onClose={() => setBreakEditor(null)}
+          onClose={() => setNonLectiveEditor(null)}
         >
           <div className="space-y-4 p-5">
-            <Field label="Después de">
+            <Field label="Forma de definirlo">
               <Select
-                value={breakEditor.afterSequence}
+                value={nonLectiveEditor.mode}
                 onChange={(event) =>
-                  setBreakEditor({ ...breakEditor, afterSequence: Number(event.target.value) })
+                  setNonLectiveEditor({ ...nonLectiveEditor, mode: event.target.value as 'sequence' | 'time' })
                 }
               >
-                {drafts[breakEditor.journeyId].baseBlocks
+                <option value="sequence">Después de una clase + duración</option>
+                <option value="time">Horario exacto</option>
+              </Select>
+            </Field>
+            {nonLectiveEditor.mode === 'sequence' ? (
+              <>
+                <Field label="Después de">
+                  <Select
+                    value={nonLectiveEditor.afterSequence}
+                    onChange={(event) => {
+                      const afterSequence = Number(event.target.value)
+                      const target = drafts[nonLectiveEditor.journeyId].baseBlocks
+                        .filter((block) => block.blockType === 'CLASS')[afterSequence - 1]
+                      const startTime = target?.endTime ?? nonLectiveEditor.startTime
+                      setNonLectiveEditor({
+                        ...nonLectiveEditor,
+                        afterSequence,
+                        startTime,
+                        endTime: scheduleTimeFromMinutes(
+                          minutesFromScheduleTime(startTime) + nonLectiveEditor.durationMinutes,
+                        ),
+                      })
+                    }}
+                  >
+                    {drafts[nonLectiveEditor.journeyId].baseBlocks
                   .filter((block) => block.blockType === 'CLASS')
                   .map((block, index) => (
                     <option key={block.sequence} value={index + 1}>
                       {block.name}
                     </option>
                   ))}
-              </Select>
-            </Field>
-            <Field label="Duración (minutos)">
-              <Input
-                type="number"
-                min={5}
-                value={breakEditor.durationMinutes}
-                onChange={(event) =>
-                  setBreakEditor({
-                    ...breakEditor,
-                    durationMinutes: Math.max(5, Number(event.target.value)),
-                  })
-                }
-              />
-            </Field>
+                  </Select>
+                </Field>
+                <Field label="Duración (minutos)">
+                  <Input
+                    type="number"
+                    min={5}
+                    value={nonLectiveEditor.durationMinutes}
+                    onChange={(event) => {
+                      const durationMinutes = Math.max(5, Number(event.target.value))
+                      setNonLectiveEditor({
+                        ...nonLectiveEditor,
+                        durationMinutes,
+                        endTime: scheduleTimeFromMinutes(
+                          minutesFromScheduleTime(nonLectiveEditor.startTime) + durationMinutes,
+                        ),
+                      })
+                    }}
+                  />
+                </Field>
+              </>
+            ) : (
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Field label="Inicio">
+                  <ScheduleTimeInput
+                    ariaLabel="Inicio del bloque"
+                    value={nonLectiveEditor.startTime}
+                    onChange={(startTime) => setNonLectiveEditor({ ...nonLectiveEditor, startTime })}
+                  />
+                </Field>
+                <Field label="Fin">
+                  <ScheduleTimeInput
+                    ariaLabel="Fin del bloque"
+                    value={nonLectiveEditor.endTime}
+                    onChange={(endTime) => setNonLectiveEditor({ ...nonLectiveEditor, endTime })}
+                  />
+                </Field>
+              </div>
+            )}
             <Field label="Nombre">
               <Input
-                value={breakEditor.name}
-                onChange={(event) => setBreakEditor({ ...breakEditor, name: event.target.value })}
+                value={nonLectiveEditor.name}
+                onChange={(event) => setNonLectiveEditor({ ...nonLectiveEditor, name: event.target.value })}
               />
             </Field>
             <div className="flex justify-end gap-2">
-              <Button type="button" variant="ghost" onClick={() => setBreakEditor(null)}>
+              <Button type="button" variant="ghost" onClick={() => setNonLectiveEditor(null)}>
                 Cancelar
               </Button>
-              <Button type="button" onClick={saveBreakEditor}>
-                {breakEditor.existingSequence ? 'Mover recreo' : 'Añadir recreo'}
+              <Button type="button" onClick={saveNonLectiveEditor}>
+                {nonLectiveEditor.existingSequence ? 'Mover' : 'Añadir'} {blockTypeLabels[nonLectiveEditor.blockType].toLowerCase()}
               </Button>
             </div>
           </div>
@@ -1115,9 +1189,11 @@ function JourneyPeriods({
   onGenerate,
   onAddClass,
   onAddBreak,
+  onAddLunch,
   onClear,
   onEditCell,
   onEditGlobal,
+  onMoveGlobal,
   onDeleteCell,
   onDeleteGlobal,
   onRestoreDay,
@@ -1129,9 +1205,11 @@ function JourneyPeriods({
   onGenerate: (id: string) => void
   onAddClass: (id: string) => void
   onAddBreak: (id: string) => void
+  onAddLunch: (id: string) => void
   onClear: (id: string) => void
   onEditCell: (id: string, day: number, block: ScheduleTemplateBlock) => void
   onEditGlobal: (id: string, block: ScheduleTemplateBlock) => void
+  onMoveGlobal: (id: string, block: ScheduleTemplateBlock) => void
   onDeleteCell: (id: string, day: number, sequence: number) => void
   onDeleteGlobal: (id: string, sequence: number) => void
   onRestoreDay: (id: string, day: number) => void
@@ -1285,6 +1363,15 @@ function JourneyPeriods({
             <Button
               type="button"
               size="sm"
+              variant="outline"
+              onClick={() => onAddLunch(journey.id)}
+            >
+              <Utensils className="size-4" />
+              Añadir almuerzo
+            </Button>
+            <Button
+              type="button"
+              size="sm"
               variant="ghost"
               className="text-destructive hover:bg-destructive/10"
               onClick={() => onClear(journey.id)}
@@ -1299,6 +1386,7 @@ function JourneyPeriods({
             days={selectedDays}
             onEdit={onEditCell}
             onEditGlobal={onEditGlobal}
+            onMoveGlobal={onMoveGlobal}
             onDelete={onDeleteCell}
             onDeleteGlobal={onDeleteGlobal}
             onRestore={onRestoreDay}
@@ -1322,6 +1410,7 @@ function WeeklyPeriodGrid({
   days,
   onEdit,
   onEditGlobal,
+  onMoveGlobal,
   onDelete,
   onDeleteGlobal,
   onRestore,
@@ -1331,6 +1420,7 @@ function WeeklyPeriodGrid({
   days: number[]
   onEdit: (id: string, day: number, block: ScheduleTemplateBlock) => void
   onEditGlobal: (id: string, block: ScheduleTemplateBlock) => void
+  onMoveGlobal: (id: string, block: ScheduleTemplateBlock) => void
   onDelete: (id: string, day: number, sequence: number) => void
   onDeleteGlobal: (id: string, sequence: number) => void
   onRestore: (id: string, day: number) => void
@@ -1501,11 +1591,24 @@ function WeeklyPeriodGrid({
                 className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"
                 onClick={() => {
                   onEditGlobal(journey.id, block)
-                    setOpenMenu(null)
+                  setOpenMenu(null)
                 }}
               >
-                {block.blockType === 'BREAK' ? 'Mover recreo' : 'Editar en toda la jornada'}
+                Editar en toda la jornada
               </button>
+              {block.blockType === 'BREAK' || block.blockType === 'LUNCH' ? (
+                <button
+                  role="menuitem"
+                  type="button"
+                  className="w-full rounded-lg px-3 py-2 text-left text-xs font-bold hover:bg-muted"
+                  onClick={() => {
+                    onMoveGlobal(journey.id, block)
+                    setOpenMenu(null)
+                  }}
+                >
+                  {block.blockType === 'LUNCH' ? 'Mover almuerzo' : 'Mover recreo'}
+                </button>
+              ) : null}
               <button
                 role="menuitem"
                 type="button"
