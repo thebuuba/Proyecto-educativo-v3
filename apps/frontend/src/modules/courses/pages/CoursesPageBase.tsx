@@ -98,9 +98,12 @@ import { CourseTeamsPanel } from '@/modules/courses/components/CourseTeamsPanel'
 import { CourseStudentsPanel } from '@/modules/courses/components/CourseStudentsPanel'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseAdvancedFilters } from '@/modules/courses/components/CoursesAdvancedFiltersDrawer'
-import { getStudentsBySection } from '@/modules/attendance/services/attendanceService'
+import { getClassAttendanceHistory, getStudentsBySection, type ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
 import type { StudentAttendanceRow } from '@/modules/attendance/types'
+import { attendancePercentageFromMarks, statusToMark } from '@/modules/attendance/utils/monthlyAttendance'
 import { SubjectAttendancePanel } from './SubjectAttendancePage'
+import { SubjectSchedulePage } from './SubjectSchedulePage'
+import { SubjectTabHeader, SubjectStat, StudentAvatar, exportStudentCsv } from '../components/SubjectTabUI'
 import { getAcademicPeriods, getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { activityRubricConfiguration } from '@/modules/grading/components/GradingBook'
@@ -1554,8 +1557,7 @@ function SubjectDetailView({
     const next = new URLSearchParams(teamSearchParams)
     if (nextTab !== 'equipos') next.delete('teamId')
     if (nextTab !== 'actividades') next.delete('activityId')
-    if (nextTab === 'actividades' || nextTab === 'planificaciones' || nextTab === 'asistencia' || nextTab === 'horario' || nextTab === 'recursos' || nextTab === 'reportes') next.set('tab', nextTab)
-    else next.delete('tab')
+    next.set('tab', nextTab)
     setTeamSearchParams(next, { replace: true })
   }
 
@@ -1694,7 +1696,7 @@ function SubjectDetailView({
 
       <nav className="subject-workspace-tabs flex min-w-0 flex-wrap items-center gap-1 rounded-3xl border border-border bg-card px-3 py-1.5 shadow-sm" aria-label="Secciones de la asignatura">
         {subjectTabs.slice(0, 7).map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} count={tab.id === 'estudiantes' ? students.length || item.section.studentCount || 0 : tab.id === 'equipos' ? item.assignment?.teamCount ?? 0 : tab.id === 'actividades' ? activityCount : undefined} onClick={() => selectSubjectTab(tab.id)} />)}
-        <details className="group relative ml-auto shrink-0"><summary className="flex h-10 cursor-pointer list-none items-center gap-2 px-4 text-sm font-medium text-muted-foreground [&::-webkit-details-marker]:hidden">··· Más <ChevronDown className="size-3.5" /></summary><div className="absolute right-0 top-11 z-40 w-52 rounded-2xl border border-border bg-card p-2 shadow-xl">{subjectTabs.slice(7).map((tab) => <button key={tab.id} type="button" onClick={(event) => { selectSubjectTab(tab.id); event.currentTarget.closest('details')?.removeAttribute('open') }} aria-current={activeTab === tab.id ? 'page' : undefined} className="flex min-h-11 w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-xs text-foreground hover:bg-muted">{tab.icon}{tab.label}{'badge' in tab ? <span className="ml-auto text-[9px] text-muted-foreground">{tab.badge}</span> : null}</button>)}</div></details>
+        <details className="group relative ml-auto shrink-0"><summary className="flex h-10 cursor-pointer list-none items-center gap-2 px-4 text-sm font-medium text-muted-foreground [&::-webkit-details-marker]:hidden">{subjectTabs.slice(7).find(tab => tab.id === activeTab)?.label ?? '··· Más'} <ChevronDown className="size-3.5" /></summary><div className="absolute right-0 top-11 z-40 w-52 rounded-2xl border border-border bg-card p-2 shadow-xl">{subjectTabs.slice(7).map(tab => <button key={tab.id} type="button" disabled={tab.id === 'planificaciones'} onClick={event => { selectSubjectTab(tab.id); event.currentTarget.closest('details')?.removeAttribute('open') }} aria-current={activeTab === tab.id ? 'page' : undefined} className="flex min-h-11 w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-xs text-foreground hover:bg-muted disabled:opacity-50">{tab.icon}{tab.label}{'badge' in tab ? <span className="ml-auto text-[9px] text-muted-foreground">PRONTO</span> : null}</button>)}</div></details>
       </nav>
 
       {activeTab === 'resumen' ? (
@@ -1761,6 +1763,8 @@ function SubjectDetailView({
         <SubjectAttendancePanel key={item.assignment?.id} sectionSubjectId={item.assignment?.id ?? null} students={students} loading={studentsLoading} error={studentsError} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} schoolYearName={schoolYearName} />
       ) : activeTab === 'calificaciones' ? (
         <CalificacionesTab sectionSubjectId={item.assignment?.id ?? null} schoolYearId={schoolYearId} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} />
+      ) : activeTab === 'horario' ? (
+        <SubjectSchedulePage embedded />
       ) : activeTab === 'planificaciones' ? (
         <PlanningDisabledPanel onActivities={() => selectSubjectTab('actividades')} />
       ) : activeTab === 'recursos' ? (
@@ -2011,17 +2015,13 @@ export function SubjectActivitiesTab({ activities, activityId, academicPeriods, 
   if (selected) return <SubjectActivityDetail activity={selected} records={records} students={students} teams={teams} assignmentId={assignmentId} courseId={courseId} periodName={period?.name ?? 'Período actual'} onBack={() => onActivityChange(null)} />
 
   return <section className="space-y-4" aria-labelledby="subject-activities-title">
-    <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <div><h2 id="subject-activities-title" className="text-xl font-extrabold tracking-tight">Actividades</h2><p className="mt-1 text-sm text-muted-foreground">Gestiona las actividades de esta asignatura.</p><p className="mt-1 text-xs font-semibold text-muted-foreground">{courseLabel} · {subjectName} · {period?.name ?? 'Período actual'}</p></div>
-      <Button className="h-11 px-5" onClick={onCreate}><Plus className="size-4" /> Crear actividad</Button>
-    </header>
-    <div className="grid gap-2 rounded-2xl border border-border bg-card p-3 shadow-sm lg:grid-cols-[minmax(0,12rem)_minmax(0,12rem)_minmax(14rem,1fr)_minmax(0,12rem)]">
-      <label className="grid min-w-0 gap-1 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground">Período<select disabled title={period?.name ?? 'Período actual'} className="h-10 w-full min-w-0 truncate rounded-xl border border-border bg-muted/30 px-3 text-sm font-bold text-foreground"><option>{period?.name ?? 'Período actual'}</option></select></label>
-      <label className="grid min-w-0 gap-1 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground">Estado<select value={status} onChange={(event) => setStatus(event.target.value as typeof status)} className="h-10 w-full min-w-0 rounded-xl border border-border bg-card px-3 text-sm font-bold text-foreground"><option value="all">Todas</option><option value="pending">Pendientes</option><option value="partial">Parcialmente calificadas</option><option value="graded">Calificadas</option></select></label>
-      <label className="relative self-end"><Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" /><Input aria-label="Buscar actividad" value={query} onChange={(event) => setQuery(event.target.value)} className="h-10 pl-9" placeholder="Buscar actividad..." /></label>
-      <label className="grid min-w-0 gap-1 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground">Ordenar<select value={sort} onChange={(event) => setSort(event.target.value as typeof sort)} className="h-10 w-full min-w-0 rounded-xl border border-border bg-card px-3 text-sm font-bold text-foreground"><option value="recent">Más recientes</option><option value="oldest">Más antiguas</option><option value="name">Nombre A-Z</option></select></label>
+    <SubjectTabHeader title="Actividades" description="Encuentra, crea y da seguimiento a las actividades evaluables." context={<>{courseLabel} · {subjectName}<span className="subject-context-period">{period?.name ?? 'Período actual'} · período actual</span></>} actions={<Button onClick={onCreate}><Plus className="size-4" /> Crear actividad</Button>} />
+    <div className="subject-toolbar">
+      <div className="subject-filter-chips">{([['all', 'Todas'], ['pending', 'Pendientes'], ['partial', 'Parcialmente calificadas'], ['graded', 'Calificadas']] as const).map(([value, label]) => <button key={value} type="button" aria-pressed={status === value} onClick={() => setStatus(value)}>{label}<span>{value === 'all' ? activities.length : activities.filter(activity => activityMeta(activity).state === value).length}</span></button>)}</div>
+      <label className="subject-search"><Search /><input aria-label="Buscar actividad" placeholder="Buscar por nombre o descripción..." value={query} onChange={event => setQuery(event.target.value)} /></label>
+      <select aria-label="Ordenar actividades" value={sort} onChange={event => setSort(event.target.value as typeof sort)}><option value="recent">Ordenar por fecha</option><option value="oldest">Más antiguas</option><option value="name">Nombre A-Z</option></select>
     </div>
-    {!activities.length ? <div className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><span className="flex size-14 items-center justify-center rounded-2xl bg-primary/8 text-primary"><CheckSquare className="size-6" /></span><h3 className="mt-4 text-lg font-extrabold">Aún no hay actividades</h3><p className="mt-2 max-w-md text-sm text-muted-foreground">Crea la primera actividad de esta asignatura para comenzar a evaluarla.</p><Button className="mt-5" onClick={onCreate}><Plus className="size-4" /> Crear primera actividad</Button></div> : !visible.length ? <EmptyState title="Sin coincidencias" description="Prueba con otro texto o estado." /> : <div className="overflow-x-auto rounded-2xl border border-border bg-card shadow-sm"><table className="min-w-[70rem] w-full text-left text-sm"><thead className="bg-muted/40 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3">Actividad</th><th className="px-4 py-3">Bloque</th><th className="px-4 py-3">Período</th><th className="px-4 py-3">Fecha</th><th className="px-4 py-3">Valor</th><th className="px-4 py-3">Instrumento</th><th className="px-4 py-3">Modalidad</th><th className="px-4 py-3">Estado</th><th className="px-4 py-3">Progreso</th><th className="px-4 py-3 text-right">Acciones</th></tr></thead><tbody className="divide-y divide-border">{visible.map((activity) => { const meta = activityMeta(activity); const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId); return <tr key={activity.id} tabIndex={0} aria-label={`Abrir actividad ${activity.name}`} onClick={() => onActivityChange(activity.id)} onKeyDown={(event) => { if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onActivityChange(activity.id) } }} className="cursor-pointer outline-none transition hover:bg-primary/[0.035] focus-visible:bg-primary/[0.05] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"><td className="px-4 py-3"><span className="max-w-52 text-left font-extrabold text-foreground">{activity.name}</span></td><td className="px-4 py-3 text-xs"><strong className="block">{block?.shortName ?? 'Bloque'}</strong><span className="line-clamp-1 max-w-40 text-[10px] text-muted-foreground">{block?.name}</span></td><td className="px-4 py-3 text-xs font-bold">{period?.name?.split('—')[0]?.trim() ?? 'Actual'}</td><td className="px-4 py-3 text-xs text-muted-foreground">{formatShortDate(activity.date)}</td><td className="px-4 py-3 text-xs font-bold">{activity.maxScore} pts</td><td className="px-4 py-3 text-xs text-muted-foreground">{activityInstrumentLabel(activity.instrumentType)}</td><td className="px-4 py-3 text-xs">{activity.activityType === 'group' ? 'Grupal' : 'Individual'}</td><td className="px-4 py-3"><ActivityStatusBadge status={meta.state} /></td><td className="px-4 py-3"><div className="min-w-24"><span className="text-[10px] font-bold text-muted-foreground">{meta.graded} / {students.length}</span><div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: `${students.length ? (meta.graded / students.length) * 100 : 0}%` }} /></div></div></td><td className="px-4 py-3"><div className="flex justify-end gap-1"><button type="button" onClick={(event) => { event.stopPropagation(); onActivityChange(activity.id) }} aria-label={`Ver ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-primary hover:bg-primary/8"><Eye className="size-4" /></button><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'edit')} aria-label={`Editar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><Edit3 className="size-4" /></Link><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'evaluate')} aria-label={`Evaluar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><ChartColumn className="size-4" /></Link></div></td></tr> })}</tbody></table><footer className="border-t border-border px-4 py-3 text-xs text-muted-foreground">Mostrando {visible.length} de {activities.length} actividades</footer></div>}
+    {!activities.length ? <div className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><span className="flex size-14 items-center justify-center rounded-2xl bg-primary/8 text-primary"><CheckSquare className="size-6" /></span><h3 className="mt-4 text-lg font-extrabold">Aún no hay actividades</h3><p className="mt-2 max-w-md text-sm text-muted-foreground">Crea la primera actividad de esta asignatura para comenzar a evaluarla.</p><Button className="mt-5" onClick={onCreate}><Plus className="size-4" /> Crear primera actividad</Button></div> : !visible.length ? <EmptyState title="Sin coincidencias" description="Prueba con otro texto o estado." /> : <div className="subject-table-panel overflow-x-auto"><table className="subject-data-table min-w-[70rem] w-full text-left text-sm"><thead className="bg-muted/40 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3">Actividad</th><th className="px-4 py-3">Bloque</th><th className="px-4 py-3">Período</th><th className="px-4 py-3">Fecha</th><th className="px-4 py-3">Valor</th><th className="px-4 py-3">Instrumento</th><th className="px-4 py-3">Modalidad</th><th className="px-4 py-3">Estado</th><th className="px-4 py-3">Calificados</th><th className="px-4 py-3 text-right">Acciones</th></tr></thead><tbody className="divide-y divide-border">{visible.map((activity) => { const meta = activityMeta(activity); const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId); return <tr key={activity.id} tabIndex={0} aria-label={`Abrir actividad ${activity.name}`} onClick={() => onActivityChange(activity.id)} onKeyDown={(event) => { if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onActivityChange(activity.id) } }} className="cursor-pointer outline-none transition hover:bg-primary/[0.035] focus-visible:bg-primary/[0.05] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"><td className="px-4 py-3"><span className="block max-w-72 truncate text-left font-semibold text-foreground">{activity.name}</span><span className="block max-w-72 truncate text-xs text-muted-foreground">{activity.description}</span></td><td className="px-4 py-3 text-xs"><strong className="block">{block?.shortName ?? 'Bloque'}</strong></td><td className="px-4 py-3 text-xs font-bold">{period?.name?.split('—')[0]?.trim() ?? 'Actual'}</td><td className="px-4 py-3 text-xs text-muted-foreground">{formatShortDate(activity.date)}</td><td className="px-4 py-3 text-xs font-bold">{activity.maxScore} pts</td><td className="px-4 py-3 text-xs text-muted-foreground">{activityInstrumentLabel(activity.instrumentType)}</td><td className="px-4 py-3 text-xs">{activity.activityType === 'group' ? 'Grupal' : 'Individual'}</td><td className="px-4 py-3"><ActivityStatusBadge status={meta.state} /></td><td className="px-4 py-3"><div className="min-w-24"><span className="text-[10px] font-bold text-muted-foreground">{meta.graded} / {students.length}</span><div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: `${students.length ? (meta.graded / students.length) * 100 : 0}%` }} /></div></div></td><td className="px-4 py-3"><details className="subject-row-menu" onClick={event => event.stopPropagation()}><summary aria-label={`Acciones de ${activity.name}`}>···</summary><div><button type="button" onClick={(event) => { event.stopPropagation(); onActivityChange(activity.id) }} aria-label={`Ver ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-primary hover:bg-primary/8"><Eye className="size-4" /> Ver detalle</button><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'edit')} aria-label={`Editar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><Edit3 className="size-4" /> Editar</Link><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'evaluate')} aria-label={`Evaluar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><ChartColumn className="size-4" /> Calificar</Link></div></details></td></tr> })}</tbody></table><footer className="border-t border-border px-4 py-3 text-xs text-muted-foreground">Mostrando {visible.length} de {activities.length} actividades</footer></div>}
   </section>
 }
 
@@ -2039,7 +2039,7 @@ function SubjectActivityDetail({ activity, records, students, teams, assignmentI
 
 function SubjectActivityPanel({ title, children }: { title: string; children: ReactNode }) { return <section className="rounded-2xl border border-border bg-card p-5 shadow-sm"><h3 className="mb-4 text-sm font-extrabold">{title}</h3>{children}</section> }
 function ActivityDefinition({ label, value }: { label: string; value: string }) { return <div className="flex items-start justify-between gap-3"><dt className="font-bold">{label}</dt><dd className="max-w-44 text-right leading-5 text-muted-foreground">{value}</dd></div> }
-function ActivityStatusBadge({ status }: { status: SubjectActivityStatus }) { const styles = status === 'graded' ? 'bg-emerald-50 text-emerald-700' : status === 'partial' ? 'bg-amber-50 text-amber-700' : 'bg-slate-100 text-slate-600'; return <span className={cn('inline-flex whitespace-nowrap rounded-full px-2.5 py-1 text-[10px] font-extrabold', styles)}>{activityStatusLabel(status)}</span> }
+function ActivityStatusBadge({ status }: { status: SubjectActivityStatus }) { const styles = status === 'graded' ? 'bg-success/10 text-success' : status === 'partial' ? 'bg-primary/10 text-primary' : 'bg-warning/15 text-warning-foreground'; return <span className={cn('inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1 text-[10px] font-semibold', styles)}><span aria-hidden="true">●</span>{activityStatusLabel(status)}</span> }
 function activityStatusLabel(status: SubjectActivityStatus) { return status === 'graded' ? 'Calificada' : status === 'partial' ? 'Parcialmente calificada' : 'Pendiente' }
 function activityInstrumentLabel(value?: string) { return ({ rubrica: 'Rúbrica', 'lista-cotejo': 'Lista de cotejo', escala: 'Escala estimativa', 'lista-ponderada': 'Lista ponderada' } as Record<string, string>)[value ?? ''] ?? value ?? 'Sin instrumento' }
 function buildActivityGradingHref(assignmentId: string, courseId: string, activityId: string | undefined, mode: 'edit' | 'evaluate') { return `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, activityId: activityId ?? '', activityMode: mode, origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
@@ -2071,6 +2071,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
   const [viewingJournal, setViewingJournal] = useState<JournalEntry | null>(null)
   const [editingJournal, setEditingJournal] = useState<JournalEntry | null>(null)
   const [deletingJournal, setDeletingJournal] = useState<JournalEntry | null>(null)
+  const [attendanceHistory, setAttendanceHistory] = useState<ClassAttendanceHistoryRecord[]>([])
   const detailRef = useRef<HTMLDivElement>(null)
   const toggleStudent = (enrollmentId: string) => setSelectedEnrollmentId((current) => current === enrollmentId ? null : enrollmentId)
   const refreshJournal = useCallback(async () => {
@@ -2099,6 +2100,20 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
   useEffect(() => {
     if (selectedEnrollmentId) void refreshJournal()
   }, [refreshJournal, selectedEnrollmentId])
+
+  useEffect(() => {
+    if (!courseId || !students.length) {
+      setAttendanceHistory([])
+      return
+    }
+    let active = true
+    getClassAttendanceHistory(courseId).then((records) => {
+      if (active) setAttendanceHistory(records)
+    }).catch(() => {
+      if (active) setAttendanceHistory([])
+    })
+    return () => { active = false }
+  }, [courseId, students.length])
 
   if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando estudiantes...</div>
   if (error) return <ErrorState message={error} />
@@ -2161,11 +2176,16 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
     const possible = activityRecords.reduce((sum, record) => sum + record.maxScore, 0)
     const average = possible > 0 ? Math.round((earned / possible) * 100) : null
     const completed = activityRecords.length
-    const progressStatus: 'Al día' | 'En progreso' | 'Sin actividad' = activities.length > 0 && completed >= activities.length
-      ? 'Al día'
-      : completed > 0
-        ? 'En progreso'
-        : 'Sin actividad'
+    const attendance = attendancePercentageFromMarks(attendanceHistory
+      .filter((record) => record.enrollmentId === student.enrollmentId)
+      .map((record) => statusToMark(record.status, record.notes)))
+    const progressStatus: StudentProgressStatus = (average !== null && average < 70) || (attendance !== null && attendance < 70)
+      ? 'En riesgo'
+      : activities.length > 0 && completed < activities.length
+        ? 'Con pendientes'
+        : completed > 0
+          ? 'Al día'
+          : 'Sin actividad'
     return {
       ...student,
       listNumber: gradingStudent?.listNumber ?? student.listNumber ?? index + 1,
@@ -2173,6 +2193,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
       records,
       completed,
       average,
+      attendance,
       progressStatus,
     }
   })
@@ -2191,31 +2212,31 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
     && entry.sectionSubjectId === courseId
     && entry.students.some(({ student }) => student.id === selected.studentId),
   ) : []
-  const pendingActivities = activities.filter((activity) => rows.some((row) => !scoreForActivity(row.records, row.enrollmentId, activity.id))).length
+  const pendingActivities = rows.filter(row => row.completed < activities.length).length
   const evaluatedRows = rows.filter((row) => row.average !== null)
   const courseAverage = evaluatedRows.length
     ? Math.round(evaluatedRows.reduce((sum, row) => sum + (row.average ?? 0), 0) / evaluatedRows.length)
     : null
 
   return (
-    <section className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+    <section className="subject-students space-y-4">
+      <div className="subject-stat-grid">
+        <SubjectStat icon={UsersRound} value={rows.length} label="Estudiantes matriculados" />
+        <SubjectStat icon={UsersRound} value={teams.length} label="Equipos" tone="success" />
+        <SubjectStat icon={ClipboardList} value={pendingActivities} label="Con actividades pendientes" />
+        <SubjectStat icon={ChartColumn} value={courseAverage ?? '—'} label="Promedio del curso" tone="warning" />
+      </div>
+      <div className="subject-table-panel">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h2 className="text-lg font-extrabold text-foreground">Estudiantes de la asignatura</h2>
           <p className="mt-0.5 text-xs text-muted-foreground">Consulta el progreso general y abre el detalle de cada estudiante.</p>
         </div>
-        <button type="button" disabled title="Próximamente" className="inline-flex h-9 cursor-not-allowed items-center gap-2 rounded-lg border border-border px-3 text-xs font-bold text-muted-foreground opacity-70"><FileText className="size-4" /> Exportar</button>
+        <Button variant="outline" size="sm" onClick={() => exportStudentCsv([['#', 'Estudiante', 'Equipo', 'Actividades', 'Promedio', 'Asistencia', 'Estado'], ...filteredRows.map(row => [row.listNumber, `${row.lastName}, ${row.firstName}`, row.team?.name ?? 'Sin equipo', `${row.completed}/${activities.length}`, row.average ?? '', row.attendance === null ? '' : `${row.attendance}%`, row.progressStatus])])}><FileText className="size-4" /> Exportar</Button>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-4">
-        <StudentMetric icon={<UsersRound className="size-4" />} value={rows.length} label="Estudiantes matriculados" tone="bg-blue-50 text-blue-700" />
-        <StudentMetric icon={<UsersRound className="size-4" />} value={teams.length} label="Equipos" tone="bg-emerald-50 text-emerald-700" />
-        <StudentMetric icon={<ClipboardList className="size-4" />} value={pendingActivities} label="Actividades pendientes" tone="bg-violet-50 text-violet-700" />
-        <StudentMetric icon={<ChartColumn className="size-4" />} value={courseAverage === null ? '—' : `${courseAverage}%`} label="Promedio del curso" tone="bg-orange-50 text-orange-700" />
-      </div>
-
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <label className="relative min-w-52 flex-1 sm:max-w-xs">
+      <div className="subject-students-filters mt-4 flex flex-wrap items-center gap-2">
+        <label className="relative min-w-52 flex-1">
           <span className="sr-only">Buscar estudiante</span>
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar estudiante..." className="h-9 w-full rounded-lg border border-border bg-background pl-9 pr-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10" />
@@ -2230,10 +2251,10 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
         ))}
       </div>
 
-      <div className={cn('mt-4 grid gap-4', selected && 'xl:grid-cols-[minmax(0,1fr)_21rem]')}>
+      <div className="mt-4">
         <div className="min-w-0 overflow-hidden rounded-xl border border-border">
-          <div className="max-h-[30rem] overflow-x-auto overflow-y-auto md:overflow-x-hidden">
-            <table className="w-full min-w-[720px] text-left text-xs md:min-w-0 md:table-fixed">
+          <div className="overflow-x-auto">
+            <table className="subject-data-table w-full min-w-[720px] text-left text-xs">
               <thead className="sticky top-0 z-10 border-b border-border bg-muted text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
                 <tr><th className="w-12 px-3 py-3 text-center">#</th><th className="px-3 py-3">Estudiante</th><th className="px-3 py-3">Equipo</th><th className="px-3 py-3">Actividades</th><th className="px-3 py-3">Promedio</th><th className="px-3 py-3">Asistencia</th><th className="px-3 py-3">Estado</th></tr>
               </thead>
@@ -2241,11 +2262,11 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
                 {filteredRows.map((row, index) => (
                   <tr key={row.enrollmentId} tabIndex={0} role="button" aria-expanded={selectedEnrollmentId === row.enrollmentId} aria-controls="subject-student-detail" onClick={() => toggleStudent(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleStudent(row.enrollmentId) } }} className={cn('cursor-pointer text-foreground outline-none transition hover:bg-primary/[0.035] focus:bg-primary/[0.05]', selectedEnrollmentId === row.enrollmentId && 'bg-primary/[0.055]')}>
                     <td className="px-3 py-3 text-center font-bold text-muted-foreground">{index + 1}</td>
-                    <td className="px-3 py-3 font-bold">{row.lastName}, {row.firstName}</td>
-                    <td className="px-3 py-3">{row.team ? <span className="font-semibold text-emerald-700">{row.team.name}</span> : <span className="text-muted-foreground">Sin equipo</span>}</td>
+                    <td className="px-3 py-3 font-bold"><span className="inline-flex items-center gap-3"><StudentAvatar firstName={row.firstName} lastName={row.lastName} />{row.lastName}, {row.firstName}</span></td>
+                    <td className="px-3 py-3">{row.team ? <span className="font-semibold text-primary">{row.team.name}</span> : <span className="text-muted-foreground">Sin equipo</span>}</td>
                     <td className="px-3 py-3"><span className="font-bold tabular-nums">{row.completed} / {activities.length}</span><div className="mt-1 h-1 w-20 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: activities.length ? `${Math.min(100, (row.completed / activities.length) * 100)}%` : '0%' }} /></div></td>
-                    <td className="px-3 py-3 font-bold tabular-nums">{row.average === null ? '—' : `${row.average}%`}</td>
-                    <td className="px-3 py-3 text-muted-foreground">—</td>
+                    <td className="px-3 py-3 font-bold tabular-nums">{row.average ?? '—'}</td>
+                    <td className="px-3 py-3 text-muted-foreground">{row.attendance === null ? '—' : `${row.attendance}%`}</td>
                     <td className="px-3 py-3"><StudentStatusBadge status={row.progressStatus} /></td>
                   </tr>
                 ))}
@@ -2256,7 +2277,8 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
           <p className="border-t border-border px-3 py-2 text-[11px] text-muted-foreground">Mostrando {filteredRows.length} de {rows.length} estudiantes</p>
         </div>
 
-        {selected ? <div ref={detailRef} id="subject-student-detail"><StudentDetailPanel student={selected} activities={activities} journalEntries={selectedJournalEntries} journalLoading={journalLoading} journalError={journalError} onRetryJournal={() => void refreshJournal()} onViewJournal={setViewingJournal} onJournal={() => setJournalStudentId(selected.studentId)} journalHref={`/bitacora?${new URLSearchParams({ sectionId, sectionSubjectId: courseId ?? '', studentId: selected.studentId }).toString()}`} onClose={() => setSelectedEnrollmentId(null)} /></div> : null}
+        {selected ? <div className="fixed inset-0 z-40 flex justify-end bg-foreground/25"><button type="button" className="absolute inset-0 cursor-default" aria-label="Cerrar detalle del estudiante" onClick={() => setSelectedEnrollmentId(null)} /><div ref={detailRef} id="subject-student-detail" className="relative h-full w-full max-w-xl overflow-y-auto bg-card shadow-xl"><StudentDetailPanel student={selected} activities={activities} journalEntries={selectedJournalEntries} journalLoading={journalLoading} journalError={journalError} onRetryJournal={() => void refreshJournal()} onViewJournal={setViewingJournal} onJournal={() => setJournalStudentId(selected.studentId)} journalHref={`/bitacora?${new URLSearchParams({ sectionId, sectionSubjectId: courseId ?? '', studentId: selected.studentId }).toString()}`} onClose={() => setSelectedEnrollmentId(null)} /></div></div> : null}
+      </div>
       </div>
 
       <div className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-primary/[0.035] px-4 py-3 text-xs text-muted-foreground"><Sparkles className="size-4 text-primary" /><span><strong className="text-foreground">Consejo rápido:</strong> haz clic en cualquier estudiante para ver su progreso detallado.</span></div>
@@ -2281,16 +2303,15 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
   )
 }
 
-function StudentMetric({ icon, value, label, tone }: { icon: ReactNode; value: string | number; label: string; tone: string }) {
-  return <div className="flex min-h-16 items-center gap-3 rounded-xl border border-border px-3 py-2.5"><span className={cn('flex size-9 shrink-0 items-center justify-center rounded-lg', tone)}>{icon}</span><span><strong className="block text-lg leading-none tabular-nums text-foreground">{value}</strong><span className="mt-1 block text-[10px] font-semibold text-muted-foreground">{label}</span></span></div>
-}
 
-function StudentStatusBadge({ status }: { status: 'Al día' | 'En progreso' | 'Sin actividad' }) {
-  return <span className={cn('inline-flex rounded-full px-2 py-1 text-[10px] font-bold', status === 'Al día' ? 'bg-emerald-50 text-emerald-700' : status === 'En progreso' ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600')}>{status}</span>
+type StudentProgressStatus = 'Al día' | 'Con pendientes' | 'En riesgo' | 'Sin actividad'
+
+function StudentStatusBadge({ status }: { status: StudentProgressStatus }) {
+  return <span className={cn('inline-flex rounded-full px-2 py-1 text-[10px] font-bold', status === 'Al día' ? 'bg-success/10 text-success' : status === 'Con pendientes' ? 'bg-warning/15 text-warning-foreground' : status === 'En riesgo' ? 'bg-destructive/10 text-destructive' : 'bg-muted text-muted-foreground')}>{status}</span>
 }
 
 function StudentDetailPanel({ student, activities, journalEntries, journalLoading, journalError, onRetryJournal, onViewJournal, onJournal, journalHref, onClose }: {
-  student: StudentAttendanceRow & { team: CourseTeam | null; records: GradeRecordRow[]; completed: number; average: number | null; progressStatus: 'Al día' | 'En progreso' | 'Sin actividad' }
+  student: StudentAttendanceRow & { team: CourseTeam | null; records: GradeRecordRow[]; completed: number; average: number | null; attendance: number | null; progressStatus: StudentProgressStatus }
   activities: GradingActivity[]
   journalEntries: JournalEntry[]
   journalLoading: boolean
@@ -2309,7 +2330,7 @@ function StudentDetailPanel({ student, activities, journalEntries, journalLoadin
   return (
     <aside className="rounded-xl border border-border bg-background p-4 shadow-sm" aria-label={`Detalle de ${student.firstName} ${student.lastName}`}>
       <div className="flex items-start justify-between gap-3"><div><h3 className="font-extrabold text-foreground">{student.firstName} {student.lastName}</h3><p className="mt-1 text-xs text-muted-foreground">{student.team?.name ?? 'Sin equipo'}</p></div><button type="button" onClick={onClose} className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground" aria-label="Cerrar detalle"><X className="size-4" /></button></div>
-      <div className="mt-4 grid grid-cols-3 gap-2"><DetailMetric value={`${student.completed}/${activities.length}`} label="Actividades" /><DetailMetric value={student.average === null ? '—' : `${student.average}%`} label="Promedio" /><DetailMetric value="—" label="Asistencia" /></div>
+      <div className="mt-4 grid grid-cols-3 gap-2"><DetailMetric value={`${student.completed}/${activities.length}`} label="Actividades" /><DetailMetric value={student.average === null ? '—' : `${student.average}%`} label="Promedio" /><DetailMetric value={student.attendance === null ? '—' : `${student.attendance}%`} label="Asistencia" /></div>
       <h4 className="mt-5 text-xs font-extrabold text-foreground">Promedio por bloque</h4>
       <div className="mt-2 grid grid-cols-2 gap-2">{blockAverages.map((block) => <div key={block.id} title={block.name} className="rounded-lg border border-border p-2 text-center"><strong className="block text-sm text-primary">{block.average === null ? '—' : `${block.average}%`}</strong><span className="mt-0.5 block text-[10px] text-muted-foreground">{block.shortName}</span></div>)}</div>
       <div className="mt-5 flex items-center justify-between"><h4 className="text-xs font-extrabold text-foreground">Actividades</h4><span className="text-[10px] text-muted-foreground">{activities.length} en total</span></div>
@@ -2414,40 +2435,13 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
 
   return (
     <div className="space-y-4">
-      <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div className="flex flex-col gap-4 border-b border-slate-100 px-5 py-4 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <h2 className="text-lg font-extrabold text-foreground">Libro de calificaciones</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Consulta el progreso del período y entra al espacio completo para evaluar.</p>
-          </div>
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-          {periods.length > 0 ? (
-            <label className="flex h-11 items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3">
-              <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground">Período</span>
-          <select
-            className="min-w-56 bg-transparent text-sm font-bold text-foreground outline-none"
-            value={selectedPeriod}
-            onChange={(e) => setSelectedPeriod(e.target.value)}
-          >
-            {periods.map((p) => (
-              <option key={p.id} value={p.id}>{p.name}</option>
-            ))}
-          </select>
-            </label>
-          ) : null}
-            <Link to={fullBookHref} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover">
-              <GraduationCap className="size-4" /> Abrir libro completo
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid gap-px bg-slate-100 sm:grid-cols-2 xl:grid-cols-4">
-          <CompactGradeMetric icon={<ClipboardList className="size-5" />} value={evaluatedActivities} label="Actividades evaluadas" detail={`${Math.max(activities.length - evaluatedActivities, 0)} pendientes`} tone="violet" />
-          <CompactGradeMetric icon={<GraduationCap className="size-5" />} value={activities.length} label="Actividades creadas" detail="En este período" tone="blue" />
-          <CompactGradeMetric icon={<ChartColumn className="size-5" />} value={courseAverage === null ? '—' : `${courseAverage}%`} label="Promedio del curso" detail={courseAverage === null ? 'Sin evaluar' : 'Período seleccionado'} tone="emerald" />
-          <CompactGradeMetric icon={<UsersRound className="size-5" />} value={rows.filter((row) => row.average === null).length} label="Sin calificar" detail={`${students.length} estudiantes`} tone="orange" />
-        </div>
-      </section>
+      <SubjectTabHeader title="Libro de calificaciones" description="Consulta el progreso del grupo. La evaluación detallada se hace en el libro completo." context={`${courseLabel} · ${subjectName}`} actions={<><select aria-label="Período" value={selectedPeriod} onChange={event => setSelectedPeriod(event.target.value)}>{periods.map(period => <option key={period.id} value={period.id}>{period.name}</option>)}</select><Link to={fullBookHref} className="subject-primary-link"><BookOpen className="size-4" /> Abrir libro completo</Link></>} />
+      <div className="subject-stat-grid">
+        <SubjectStat icon={ClipboardList} tone="success" value={evaluatedActivities} label="Actividades evaluadas" />
+        <SubjectStat icon={GraduationCap} value={activities.length} label="Actividades creadas" />
+        <SubjectStat icon={ChartColumn} value={courseAverage ?? '—'} label="Promedio del curso" />
+        <SubjectStat icon={UsersRound} tone="warning" value={rows.filter(row => row.average === null).length} label="Estudiantes sin calificar" />
+      </div>
 
       {loading ? (
         <div className="flex min-h-[260px] items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-semibold text-muted-foreground">Cargando calificaciones...</div>
@@ -2463,19 +2457,15 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
           </Link>
         </div>
       ) : (
-        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-            <div><h3 className="text-sm font-extrabold">Progreso por estudiante</h3><p className="mt-1 text-xs text-muted-foreground">Promedios calculados a partir de las actividades registradas.</p></div>
-            <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{students.length} estudiantes</span>
-          </div>
+        <div className="subject-table-panel">
           <div className="overflow-x-auto">
-          <table className="w-full min-w-[68rem] text-left text-sm">
+          <table className="subject-data-table w-full min-w-[58rem] text-left text-sm">
             <thead className="border-b border-border bg-slate-50 text-[11px] font-extrabold uppercase tracking-wide text-muted-foreground">
               <tr>
                 <th className="w-16 px-5 py-3 text-center">#</th>
                 <th className="min-w-64 px-5 py-3">Estudiante</th>
                 {competencyBlocks.map((block) => <th key={block.id} title={block.name} className="w-28 px-3 py-3 text-center">{block.shortName}</th>)}
-                <th className="w-28 px-3 py-3 text-center">Período</th>
+                <th className="w-28 px-3 py-3 text-center">Promedio {periods.find(item => item.id === selectedPeriod)?.name.split('—')[0]}</th>
                 <th className="w-36 px-5 py-3">Estado</th>
               </tr>
             </thead>
@@ -2483,7 +2473,7 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
               {rows.map((row) => (
                 <tr key={row.enrollmentId} role="button" tabIndex={0} aria-label={`Abrir detalle de calificaciones de ${row.firstName} ${row.lastName}`} onClick={() => setSelectedEnrollmentId(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedEnrollmentId(row.enrollmentId) } }} className="cursor-pointer text-foreground transition hover:bg-primary/[0.035] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
                   <td className="px-5 py-4 text-center font-bold text-muted-foreground">{row.listNumber}</td>
-                  <td className="px-5 py-4 font-bold">{row.lastName}, {row.firstName}</td>
+                  <td className="px-5 py-4 font-bold"><span className="inline-flex items-center gap-3"><StudentAvatar firstName={row.firstName} lastName={row.lastName} />{row.lastName}, {row.firstName}</span></td>
                   {competencyBlocks.map((block) => <td key={block.id} className="px-3 py-4 text-center"><GradeValue value={row.blockAverages[block.id]} /></td>)}
                   <td className="px-3 py-4 text-center"><GradeValue value={row.average} emphasized /></td>
                   <td className="px-5 py-4"><GradeStatus status={row.status} /></td>
@@ -2558,10 +2548,6 @@ function buildSubjectGradingHref(sectionSubjectId: string, returnCourseId: strin
   return `/calificaciones?${new URLSearchParams({ sectionSubjectId, origin: 'subject', returnCourseId, returnSubjectId: sectionSubjectId }).toString()}`
 }
 
-function CompactGradeMetric({ icon, value, label, detail, tone }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'violet' | 'blue' | 'emerald' | 'orange' }) {
-  const tones = { violet: 'bg-violet-50 text-violet-600', blue: 'bg-blue-50 text-blue-600', emerald: 'bg-emerald-50 text-emerald-600', orange: 'bg-orange-50 text-orange-600' }
-  return <div className="flex items-center gap-3 bg-white px-5 py-4"><span className={cn('flex size-11 shrink-0 items-center justify-center rounded-xl', tones[tone])}>{icon}</span><span><strong className="block text-2xl leading-none">{value}</strong><span className="mt-1.5 block text-xs font-extrabold">{label}</span><span className="mt-0.5 block text-[10px] text-muted-foreground">{detail}</span></span></div>
-}
 
 function GradeValue({ value, emphasized = false }: { value: number | null; emphasized?: boolean }) {
   if (value === null) return <span className="font-bold text-slate-400">—</span>

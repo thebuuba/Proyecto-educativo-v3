@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { MemoryRouter } from 'react-router-dom'
 
 import type { ScheduleEntry } from '@/modules/schedule/types'
-import { CoursesPage } from './CoursesPage'
+import { SubjectSchedulePage } from './SubjectSchedulePage'
 
 const mocks = vi.hoisted(() => ({
   getGradingWorkspace: vi.fn(),
@@ -20,7 +20,7 @@ const entry = (id: string, dayOfWeek: number, startTime: string, endTime: string
 })
 
 function renderPage() {
-  return render(<MemoryRouter initialEntries={['/cursos?courseId=section-1&subjectId=assignment-1&tab=horario']}><CoursesPage /></MemoryRouter>)
+  return render(<MemoryRouter initialEntries={['/cursos?courseId=section-1&subjectId=assignment-1&tab=horario']}><SubjectSchedulePage embedded /></MemoryRouter>)
 }
 
 describe('horario dentro de una asignatura', () => {
@@ -41,9 +41,9 @@ describe('horario dentro de una asignatura', () => {
     renderPage()
 
     expect(await screen.findByRole('heading', { name: 'Horario semanal' })).toBeInTheDocument()
-    expect(screen.getByText('3', { selector: 'p' })).toBeInTheDocument()
-    expect(screen.getByText('120 min')).toBeInTheDocument()
-    expect(screen.getAllByText('Sin asignar')).toHaveLength(2)
+    expect(screen.getByText('3', { selector: 'strong' })).toBeInTheDocument()
+    expect(screen.getByText('2 h 0 min')).toBeInTheDocument()
+    expect(screen.getAllByText('Aula sin asignar')).toHaveLength(3)
     expect(screen.queryByRole('table')).not.toBeInTheDocument()
     expect(screen.getByText('25 estudiantes')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Iniciar clase' })).toBeInTheDocument()

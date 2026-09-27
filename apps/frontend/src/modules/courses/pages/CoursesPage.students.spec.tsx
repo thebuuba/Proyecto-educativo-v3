@@ -106,8 +106,8 @@ describe('estudiantes de una asignatura', () => {
     renderStudentsTab()
 
     const scrollArea = screen.getByRole('table').parentElement!
-    expect(scrollArea).toHaveClass('md:overflow-x-hidden')
-    expect(screen.getByRole('table')).toHaveClass('md:min-w-0', 'md:table-fixed')
+    expect(scrollArea).toHaveClass('overflow-x-auto')
+    expect(screen.getByRole('table')).toHaveClass('w-full', 'min-w-[720px]')
 
     await user.click(screen.getByText('Pérez, Ana'))
     await waitFor(() => expect(Element.prototype.scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth', block: 'nearest' }))

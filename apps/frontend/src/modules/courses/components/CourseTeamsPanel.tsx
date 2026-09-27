@@ -226,9 +226,9 @@ export function CourseTeamsPanel({
   }
 
   return (
-    <section className="space-y-4">
+    <section className="subject-teams space-y-4">
       {!loading && (teams.length > 0 || archivedTeams.length > 0) ? <>
-      <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <header className="subject-tab-header">
         <div className="min-w-0"><h2 className="text-xl font-extrabold tracking-tight">{showArchived ? 'Equipos archivados' : 'Equipos de trabajo'}</h2><p className="mt-0.5 text-xs text-muted-foreground">{showArchived ? `${archivedTeams.length} archivados` : `${permanentTeams} permanentes · ${temporaryTeams} temporales`}</p></div>
         <div className="flex flex-wrap gap-2">
           <button type="button" aria-pressed={showArchived} onClick={() => { setShowArchived((current) => !current); setFilter('all'); setQuery('') }} className={cn('inline-flex h-10 items-center justify-center gap-2 rounded-xl border px-4 text-sm font-extrabold transition', showArchived ? 'border-primary bg-primary/8 text-primary' : 'border-border bg-card hover:border-primary/40')}><Archive className="size-4" /> {showArchived ? 'Volver a activos' : `Archivados (${archivedTeams.length})`}</button>
@@ -238,7 +238,7 @@ export function CourseTeamsPanel({
 
       {!showArchived ? <div className="rounded-xl border border-border/80 bg-card p-2.5 shadow-[0_4px_16px_rgba(15,23,42,0.05)]">
         <div className="flex flex-col gap-3 xl:flex-row xl:items-center">
-          <div className="relative min-w-0 xl:w-[25rem]">
+          <div className="relative min-w-0 flex-1">
             <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
             <input
               value={query}
@@ -272,7 +272,7 @@ export function CourseTeamsPanel({
       {error ? <PanelMessage text={error} destructive /> : loading ? (
         <PanelMessage text="Cargando equipos…" />
       ) : filtered.length ? (
-        <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-4">
+        <div className="subject-team-grid grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {filtered.map((team) => (
             <article
               key={team.id}

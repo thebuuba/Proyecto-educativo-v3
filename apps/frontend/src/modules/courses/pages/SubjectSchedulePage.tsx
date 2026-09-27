@@ -25,6 +25,7 @@ import { getScheduleEntries } from '@/modules/schedule/services/scheduleService'
 import type { ScheduleEntry } from '@/modules/schedule/types'
 import { COUNTDOWN_THRESHOLD_SECONDS, formatCountdown, getClassClock, getScheduledClassDate, getScheduledClassState, timeToSeconds } from '@/modules/schedule/utils/classTime'
 import { cn } from '@/utils/cn'
+import { SubjectTabHeader, SubjectStat } from '../components/SubjectTabUI'
 
 type SubjectMeta = {
   gradeName: string
@@ -33,7 +34,6 @@ type SubjectMeta = {
   schoolYearName: string
   studentCount: number
 }
-
 const emptyMeta: SubjectMeta = { gradeName: '', sectionName: '', subjectName: 'Asignatura', schoolYearName: '', studentCount: 0 }
 const dayLabels = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
 const scheduleDateFormatter = new Intl.DateTimeFormat('es-DO', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' })
@@ -48,7 +48,7 @@ function formatTime(value: string) {
   return value.slice(0, 5)
 }
 
-export function SubjectSchedulePage() {
+export function SubjectSchedulePage({ embedded = false }: { embedded?: boolean }) {
   const [searchParams, setSearchParams] = useSearchParams()
   const subjectId = searchParams.get('subjectId') ?? ''
   const [meta, setMeta] = useState<SubjectMeta>(emptyMeta)
@@ -92,11 +92,10 @@ export function SubjectSchedulePage() {
   const sorted = useMemo(() => [...schedule].sort((a, b) => a.dayOfWeek - b.dayOfWeek || a.startTime.localeCompare(b.startTime)), [schedule])
   const grouped = useMemo(() => [1, 2, 3, 4, 5]
     .map((day) => ({ day, entries: sorted.filter((entry) => entry.dayOfWeek === day) }))
-    .filter((group) => group.entries.length), [sorted])
+, [sorted])
   const weeklyMinutes = useMemo(() => sorted.reduce((total, entry) => total + minutesBetween(entry.startTime, entry.endTime), 0), [sorted])
   const temporalClass = useMemo(() => getScheduledClassState(sorted, now), [now, sorted])
   const today = getClassClock(now).dayOfWeek
-  const todayEntries = sorted.filter((entry) => entry.dayOfWeek === today)
   const summaryClass = useMemo(() => temporalClass?.state === 'current'
     ? getScheduledClassState(sorted, new Date(now.getTime() + (temporalClass.seconds + 1) * 1000))
     : temporalClass, [now, sorted, temporalClass])
@@ -131,7 +130,7 @@ export function SubjectSchedulePage() {
   if (error) return <ErrorState message={error} />
 
   return <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-3">
-    <header className="rounded-2xl bg-card shadow-sm">
+    {!embedded && <><header className="rounded-2xl bg-card shadow-sm">
       <div className="flex min-h-[76px] items-center gap-3 px-4 py-3 sm:px-5">
         <button type="button" onClick={back} className="flex h-10 shrink-0 items-center gap-1.5 rounded-xl border border-border bg-card px-3 text-xs font-extrabold text-primary transition hover:bg-primary/[0.04]"><BackIcon /> Volver</button>
         <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-sm"><BookOpen className="size-6" /></span>
@@ -141,16 +140,12 @@ export function SubjectSchedulePage() {
 
     <nav className="grid w-full grid-cols-2 gap-1 rounded-2xl bg-card p-1.5 shadow-sm sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6" aria-label="Secciones de la asignatura">
       {tabs.map((tab) => { const active = tab.id === 'horario'; const muted = 'muted' in tab && tab.muted; const badge = 'badge' in tab ? tab.badge : undefined; const Icon = tab.Icon; return <button key={tab.id} type="button" onClick={() => setTab(tab.id)} aria-current={active ? 'page' : undefined} className={cn('relative flex h-10 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-2 text-sm font-bold text-muted-foreground transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:bg-primary/5 hover:text-primary', active && 'bg-primary/[0.055] text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:rounded-t-full after:bg-primary', muted && !active && 'bg-muted/40 text-muted-foreground/70 hover:bg-muted/60 hover:text-muted-foreground')}><Icon className="size-4" aria-hidden="true" />{tab.label}{badge ? <span className="hidden rounded-full bg-muted px-1.5 py-0.5 text-[8px] font-black uppercase tracking-wide text-muted-foreground 2xl:inline">{badge}</span> : null}</button> })}
-    </nav>
+    </nav></>}
 
-    <section className="overflow-hidden rounded-3xl bg-card shadow-sm">
-      <div className="flex flex-col gap-4 border-b border-border px-5 py-5 lg:flex-row lg:items-center lg:justify-between">
-        <div><p className="text-[10px] font-black uppercase tracking-[0.16em] text-primary">Horario de la asignatura</p><h2 className="mt-1 text-xl font-extrabold text-foreground">Horario semanal</h2><p className="mt-1 text-sm text-muted-foreground">Consulta cuándo se imparte esta asignatura durante la semana.</p></div>
-        <Link to="/horario"><Button variant="outline"><Pencil className="size-4" aria-hidden="true" /> Editar horario</Button></Link>
-      </div>
-
+    <section className="subject-schedule space-y-4">
+      <SubjectTabHeader title="Horario semanal" description="Cuándo se imparte esta materia durante la semana." context={`${meta.gradeName} ${meta.sectionName} · ${meta.subjectName}`} actions={<Link to="/horario"><Button variant="outline"><Pencil className="size-4" /> Editar horario</Button></Link>} />
       {!sorted.length ? <div className="p-5"><EmptyState title="Esta asignatura todavía no tiene clases programadas." description="El horario se configurará desde el módulo principal de Horario." /></div> : <>
-        <div className="p-5 pb-0">
+        <div>
           <SubjectClassStatusCard
             temporalClass={temporalClass}
             meta={meta}
@@ -158,27 +153,15 @@ export function SubjectSchedulePage() {
             onStart={() => setTab('asistencia')}
           />
         </div>
-        <div className="grid gap-3 p-5 md:grid-cols-3">
-          <SummaryCard icon={<CalendarDays className="size-5" aria-hidden="true" />} label="Clases por semana" value={`${sorted.length}`} helper="clases programadas" />
-          <SummaryCard icon={<Clock3 className="size-5" aria-hidden="true" />} label="Tiempo semanal" value={`${weeklyMinutes} min`} helper="de clases" />
-          <SummaryCard icon={<CalendarDays className="size-5" aria-hidden="true" />} label="Próxima clase" value={summaryClass ? dayLabels[summaryClass.entry.dayOfWeek] : '—'} helper={summaryClass ? `${formatTime(summaryClass.entry.startTime)} – ${formatTime(summaryClass.entry.endTime)}` : 'Sin clases programadas'} emphasis />
+        <div className="subject-stat-grid subject-stat-grid-three">
+          <SubjectStat icon={CalendarDays} label="Clases por semana" value={sorted.length} />
+          <SubjectStat icon={Clock3} tone="warning" label="Tiempo semanal" value={`${Math.floor(weeklyMinutes / 60)} h ${weeklyMinutes % 60} min`} />
+          <SubjectStat icon={Play} tone="success" label="Próxima clase" value={summaryClass ? `${dayLabels[summaryClass.entry.dayOfWeek].slice(0, 3)} ${formatTime(summaryClass.entry.startTime)}` : '—'} />
         </div>
-
-        <div className="border-t border-border px-5 py-5">
-          <div className="mb-4 flex items-end justify-between gap-3"><div><h3 className="text-sm font-extrabold">Semana de clases</h3><p className="mt-1 text-xs text-muted-foreground">Cada tarjeta representa un encuentro habitual de esta asignatura.</p></div>{todayEntries.length ? <span className="rounded-full bg-primary/8 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wide text-primary">{todayEntries.length === 1 ? 'Clase hoy' : `${todayEntries.length} clases hoy`}</span> : null}</div>
-          <div className="space-y-5">{grouped.map((group) => <section key={group.day} aria-labelledby={`schedule-day-${group.day}`}>
-            <h4 id={`schedule-day-${group.day}`} className="mb-2 text-xs font-black uppercase tracking-[0.14em] text-foreground">{dayLabels[group.day]}</h4>
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{group.entries.map((entry) => {
-              const isToday = entry.dayOfWeek === today
-              const duration = minutesBetween(entry.startTime, entry.endTime)
-              return <article key={entry.id} className={cn('relative overflow-hidden rounded-2xl border bg-card p-4 shadow-sm transition-[box-shadow,border-color] duration-200 motion-reduce:transition-none hover:shadow-md', isToday ? 'border-primary/30 ring-1 ring-primary/10' : 'border-border')}>
-                <div className={cn('absolute inset-x-0 top-0 h-1', isToday ? 'bg-primary' : 'bg-primary/20')} />
-                <div className="flex items-start justify-between gap-3"><div className="min-w-0"><div className="flex items-center gap-2">{isToday ? <span className="rounded-full bg-primary/8 px-2 py-0.5 text-[9px] font-black uppercase text-primary">Hoy</span> : null}</div><p className="mt-2 text-xl font-black tracking-tight text-foreground">{formatTime(entry.startTime)} – {formatTime(entry.endTime)}</p><p className="mt-1 text-xs font-semibold text-muted-foreground">{duration} min</p></div><span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/[0.07] text-primary"><Clock3 className="size-5" aria-hidden="true" /></span></div>
-                <div className="mt-4 border-t border-border pt-3"><p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">Aula</p><p className="mt-1 inline-flex min-w-0 items-center gap-1.5 text-sm font-semibold text-foreground"><MapPin className="size-3.5 shrink-0 text-primary" aria-hidden="true" /><span className="break-words">{entry.room || 'Sin asignar'}</span></p></div>
-              </article>
-            })}</div>
-          </section>)}</div>
-        </div>
+        <div className="subject-week-grid">{grouped.map(group => <section key={group.day} className={cn('subject-week-day', group.day === today && 'is-today')} aria-labelledby={`schedule-day-${group.day}`}>
+          <header><h3 id={`schedule-day-${group.day}`}>{dayLabels[group.day]}</h3><span>{group.day === today ? 'Hoy' : group.entries.length ? `${group.entries.length} ${group.entries.length === 1 ? 'clase' : 'clases'}` : ''}</span></header>
+          {group.entries.length ? group.entries.map(entry => <article key={entry.id}><strong>{formatTime(entry.startTime)} – {formatTime(entry.endTime)}</strong><p><Clock3 />{minutesBetween(entry.startTime, entry.endTime)} min</p><p><MapPin />{entry.room || 'Aula sin asignar'}</p></article>) : <div className="subject-week-empty">Sin clase</div>}
+        </section>)}</div>
       </>}
     </section>
   </div>
@@ -225,8 +208,4 @@ function CountdownRing({ current, seconds, progress }: { current: boolean; secon
     <svg className="absolute inset-0 size-full -rotate-90" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="31" fill="none" stroke="var(--border)" strokeWidth="7" /><circle cx="40" cy="40" r="31" fill="none" stroke={current ? 'var(--success)' : 'var(--warning)'} strokeDasharray={`${length} ${circumference}`} strokeLinecap="round" strokeWidth="7" className="transition-[stroke-dasharray] duration-1000 ease-linear motion-reduce:transition-none" /></svg>
     <span className="text-center"><span className="block whitespace-nowrap text-[8px] font-black uppercase tracking-[0.04em] text-muted-foreground">{current ? 'Termina' : 'Empieza'}</span><strong className="mt-1 block text-base tabular-nums text-foreground">{formatCountdown(seconds)}</strong></span>
   </div>
-}
-
-function SummaryCard({ icon, label, value, helper, emphasis = false }: { icon: React.ReactNode; label: string; value: string; helper: string; emphasis?: boolean }) {
-  return <div className={cn('rounded-2xl border p-4', emphasis ? 'border-primary/20 bg-primary/[0.035]' : 'border-border bg-card')}><div className="flex items-start justify-between gap-3"><div><p className="text-[10px] font-black uppercase tracking-[0.13em] text-muted-foreground">{label}</p><p className={cn('mt-1 text-2xl font-black tracking-tight', emphasis && 'text-primary')}>{value}</p><p className="mt-1 text-xs text-muted-foreground">{helper}</p></div><span className="grid size-10 place-items-center rounded-xl bg-primary/[0.07] text-primary">{icon}</span></div></div>
 }

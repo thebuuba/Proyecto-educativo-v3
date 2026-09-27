@@ -12,6 +12,7 @@ import { getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { getClassAttendanceHistory, type ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
 import { buildSubjectReport } from '@/modules/reports/utils/subjectReport'
+import { SubjectTabHeader, SubjectStat } from '@/modules/courses/components/SubjectTabUI'
 
 type SectionKey = 'summary' | 'performance' | 'blocks' | 'activities' | 'attendance' | 'followup'
 
@@ -80,22 +81,16 @@ export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName
   if (!sectionSubjectId) return <EmptyState title="Asignatura no disponible" description="No se encontró la asignatura necesaria para generar este reporte." />
 
   return (
-    <section className="space-y-4" aria-busy={loading}>
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div><h2 className="text-2xl font-extrabold text-foreground">Reportes</h2><p className="mt-1 text-sm text-muted-foreground">Analiza el rendimiento, la asistencia y el progreso de esta asignatura.</p></div>
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <label className="min-w-64 text-xs font-bold text-muted-foreground">Período académico<Select aria-label="Período" className="mt-1" value={periodId ?? ''} disabled={loading || !periodId} onChange={(event) => void changePeriod(event.target.value)}>{periods.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}</Select></label>
-          <Button className="self-end" onClick={() => setExportOpen(true)} disabled={loading}><Download className="size-4" aria-hidden="true" /> Exportar reporte</Button>
-        </div>
-      </div>
+    <section className="subject-reports space-y-4" aria-busy={loading}>
+      <SubjectTabHeader title="Reportes" description="Rendimiento y asistencia de la materia durante un período." context={`${courseLabel} · ${subjectName}`} actions={<><Select aria-label="Período" value={periodId ?? ''} disabled={loading || !periodId} onChange={event => void changePeriod(event.target.value)}>{periods.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</Select><Button onClick={() => setExportOpen(true)} disabled={loading}><Download className="size-4" /> Exportar reporte</Button></>} />
       {error ? <ErrorState message={error} /> : null}
 
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-        <MetricTile icon={UsersRound} label="Estudiantes" value={students.length} helper="Matrícula activa" />
-        <MetricTile icon={GraduationCap} tone="success" label="Promedio del período" value={report.average === null ? 'Sin datos' : `${report.average}%`} helper={`${report.rows.filter((row) => row.average !== null).length} con calificaciones`} />
-        <MetricTile icon={CalendarCheck2} tone="info" label="Asistencia" value={report.groupAttendance === null ? 'Sin datos' : `${report.groupAttendance}%`} helper={report.attendance.length ? `${new Set(report.attendance.map((item) => item.attendanceDate.slice(0, 10))).size} clases registradas` : 'No hay pases de lista'} />
-        <MetricTile icon={Check} tone="success" label="Puntos evaluados" value={`${report.evaluatedPoints}/${report.totalPoints}`} helper="Actividades con calificación" />
-        <MetricTile icon={ClipboardList} tone="warning" label="Pendientes" value={report.activities.reduce((sum, item) => sum + item.pending, 0)} helper="Calificaciones por registrar" />
+      <div className="subject-stat-grid subject-stat-grid-five">
+        <SubjectStat icon={UsersRound} label="Estudiantes" value={students.length} />
+        <SubjectStat icon={GraduationCap} label="Promedio del período" value={report.average ?? '—'} />
+        <SubjectStat icon={CalendarCheck2} tone="success" label="Asistencia" value={report.groupAttendance === null ? '—' : `${report.groupAttendance}%`} />
+        <SubjectStat icon={Check} tone="success" label="Puntos evaluados" value={`${report.evaluatedPoints}/${report.totalPoints}`} />
+        <SubjectStat icon={ClipboardList} tone="warning" label="Calificaciones pendientes" value={report.activities.reduce((sum, item) => sum + item.pending, 0)} />
       </div>
 
       <div className="grid gap-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(20rem,.65fr)]">
@@ -114,9 +109,9 @@ export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName
         </article>
       </div>
 
-      <article className="rounded-3xl bg-card p-5 shadow-sm">
+      <div className="subject-report-middle"><article className="rounded-3xl bg-card p-5 shadow-sm">
         <SectionHeader title="Desempeño por bloques" description="Resultados calculados solo con actividades calificadas en cada competencia." />
-        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">{report.blocks.map((block) => <div key={block.id} className="rounded-2xl border border-border p-4"><div className="flex items-start justify-between gap-2"><div className="min-w-0"><p className="text-xs font-extrabold text-primary">{block.shortName}</p><p className="mt-1 text-sm font-bold leading-5 text-foreground">{block.name}</p></div><strong className="text-xl tabular-nums">{block.average === null ? '—' : block.average}</strong></div><p className="mt-3 text-xs text-muted-foreground">{block.activities} actividades · {block.evaluated}/{block.possible} calificaciones</p><ProgressIndicator className="mt-2" value={block.completion ?? 0} /></div>)}</div>
+        <div className="subject-report-blocks mt-4 grid gap-3">{report.blocks.map((block) => <div key={block.id} className="rounded-2xl border border-border p-4"><div className="flex items-start justify-between gap-2"><div className="min-w-0"><p className="text-xs font-extrabold text-primary">{block.shortName}</p><p className="mt-1 text-sm font-bold leading-5 text-foreground">{block.name}</p></div><strong className="text-xl tabular-nums">{block.average === null ? '—' : block.average}</strong></div><p className="mt-3 text-xs text-muted-foreground">{block.activities} actividades · {block.evaluated}/{block.possible} calificaciones</p><ProgressIndicator className="mt-2" value={block.completion ?? 0} /></div>)}</div>
       </article>
 
       <article className="rounded-3xl bg-card p-5 shadow-sm">
@@ -124,7 +119,7 @@ export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName
         <div className="mt-4">{report.activities.filter((item) => item.average !== null).length < 2 ? <EmptyState title="Historial insuficiente" description="Se necesitan al menos dos actividades calificadas para mostrar una evolución." /> : <EvolutionChart activities={report.activities} />}</div>
       </article>
 
-      <div className="grid gap-4 xl:grid-cols-[minmax(0,1.3fr)_minmax(20rem,.7fr)]">
+      </div><div className="subject-report-bottom grid gap-4">
         <article className="overflow-hidden rounded-3xl bg-card shadow-sm"><div className="p-5"><SectionHeader title="Rendimiento por actividad" description="Selecciona una actividad para consultar todos sus detalles." /></div>{!activities.length ? <EmptyState title="Sin actividades en este período" description="Cuando existan actividades aparecerán aquí." /> : <div className="overflow-x-auto"><table className="w-full min-w-[42rem] text-left text-sm"><thead className="bg-muted/45 text-[10px] uppercase tracking-wider text-muted-foreground"><tr><th className="px-5 py-3">Actividad</th><th className="px-4 py-3">Bloque</th><th className="px-4 py-3 text-center">Promedio</th><th className="px-4 py-3 text-center">Evaluados</th><th className="px-5 py-3 text-center">Pendientes</th></tr></thead><tbody>{report.activities.map((activity) => <tr key={activity.id} tabIndex={0} role="button" className="cursor-pointer border-t border-border transition-colors hover:bg-muted/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring" onClick={() => setSelectedActivity(activity)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedActivity(activity) } }}><td className="px-5 py-4 font-bold text-foreground">{activity.name}</td><td className="px-4 py-4 text-muted-foreground">{report.blocks.find((block) => block.id === activity.competencyBlockId)?.shortName ?? 'Sin bloque'}</td><td className="px-4 py-4 text-center font-bold tabular-nums">{activity.average === null ? '—' : `${activity.average}%`}</td><td className="px-4 py-4 text-center tabular-nums">{activity.evaluated}/{students.length}</td><td className="px-5 py-4 text-center"><StatusBadge tone={activity.pending ? 'warning' : 'success'}>{activity.pending}</StatusBadge></td></tr>)}</tbody></table></div>}</article>
 
         <article className="rounded-3xl bg-card p-5 shadow-sm"><SectionHeader title="Seguimiento recomendado" description="Criterios transparentes, sin inferir causas." />{!report.followUp.length ? <EmptyState title="Sin alertas de seguimiento" description="No se detectaron criterios pendientes con los datos disponibles." /> : <div className="mt-4 space-y-2">{report.followUp.map((student) => <button key={student.enrollmentId} type="button" className="flex w-full items-start gap-3 rounded-2xl border border-border p-3 text-left transition hover:border-warning/60 hover:bg-warning/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" onClick={() => setSelectedStudent(student.enrollmentId)}><span className="grid size-9 shrink-0 place-items-center rounded-xl bg-warning/25 text-warning-foreground"><TriangleAlert className="size-4" aria-hidden="true" /></span><span className="min-w-0"><strong className="block text-sm text-foreground">{student.firstName} {student.lastName}</strong><span className="mt-1 block text-xs leading-5 text-muted-foreground">{student.reasons.join(' · ')}</span></span></button>)}</div>}</article>
@@ -139,8 +134,7 @@ export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName
 
 function EvolutionChart({ activities }: { activities: ReturnType<typeof buildSubjectReport>['activities'] }) {
   const points = activities.filter((item) => item.average !== null)
-  const coords = points.map((item, index) => ({ item, x: points.length === 1 ? 50 : 6 + (index / (points.length - 1)) * 88, y: 92 - ((item.average ?? 0) * .8) }))
-  return <div className="overflow-x-auto"><div className="min-w-[36rem]"><svg viewBox="0 0 100 100" className="h-56 w-full" role="img" aria-label="Evolución del promedio del grupo por actividad"><path d={`M ${coords.map((point) => `${point.x} ${point.y}`).join(' L ')}`} fill="none" stroke="currentColor" strokeWidth="1.8" className="text-primary" />{coords.map(({ item, x, y }) => <g key={item.id}><circle cx={x} cy={y} r="2.2" className="fill-primary" /><text x={x} y="98" textAnchor="middle" fontSize="3" className="fill-muted-foreground">{item.name.slice(0, 14)}</text><text x={x} y={y - 4} textAnchor="middle" fontSize="3.2" className="fill-foreground">{item.average}%</text></g>)}</svg></div></div>
+  return <div className="subject-evolution">{points.map(item => <div key={item.id} title={item.name}><strong>{item.average}</strong><span style={{height: `${Math.max(item.average ?? 0, 2)}%`}} /><small>{item.date ? new Date(item.date).toLocaleDateString('es', { day: '2-digit', month: 'short' }) : item.name}</small></div>)}</div>
 }
 
 function StudentReportModal({ student, row, report, onClose }: { student: StudentGradeRow; row: ReturnType<typeof buildSubjectReport>['rows'][number]; report: ReturnType<typeof buildSubjectReport>; onClose: () => void }) {
