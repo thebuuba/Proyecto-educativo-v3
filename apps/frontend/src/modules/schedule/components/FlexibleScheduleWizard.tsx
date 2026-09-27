@@ -1,7 +1,9 @@
 import {
   Check,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   Clock3,
   Coffee,
   MoreVertical,
@@ -33,6 +35,7 @@ import {
   insertTemplateBreak,
   materializeJourneyDraft,
   minutesFromScheduleTime,
+  reflowTemplateBlocks,
   scheduleDays,
   scheduleTimeFromMinutes,
   summarizeBlocks,
@@ -60,6 +63,7 @@ type CellEditorDraft = {
   original: ScheduleTemplateBlock
   block: ScheduleTemplateBlock
   error: string | null
+  adjustFollowing: boolean
 }
 type BreakDraft = {
   journeyId: string
@@ -145,6 +149,16 @@ export function FlexibleScheduleWizard({
           {
             ...emptyDraft(appliedDays),
             periodCount: baseBlocks.filter((block) => block.blockType === 'CLASS').length || 6,
+            generatedPeriodCount:
+              baseBlocks.filter((block) => block.blockType === 'CLASS').length || undefined,
+            generatedDurationMinutes: baseBlocks.find((block) => block.blockType === 'CLASS')
+              ? minutesFromScheduleTime(
+                  baseBlocks.find((block) => block.blockType === 'CLASS')!.endTime,
+                ) -
+                minutesFromScheduleTime(
+                  baseBlocks.find((block) => block.blockType === 'CLASS')!.startTime,
+                )
+              : undefined,
             baseBlocks,
             dayOverrides,
           },
@@ -226,6 +240,7 @@ export function FlexibleScheduleWizard({
   function generate(id: string) {
     const journey = journeys.find((item) => item.id === id)!
     const draft = drafts[id]
+    if (draft.durationMinutes === '' || draft.periodCount === '') return
     updateDraft(id, {
       baseBlocks: generateTemplateBlocks(
         journey.startTime,
@@ -233,11 +248,14 @@ export function FlexibleScheduleWizard({
         draft.periodCount,
       ),
       dayOverrides: {},
+      generatedDurationMinutes: draft.durationMinutes,
+      generatedPeriodCount: draft.periodCount,
     })
   }
   function requestGenerate(id: string) {
     const journey = journeys.find((item) => item.id === id)!
     const draft = drafts[id]
+    if (draft.durationMinutes === '' || draft.periodCount === '') return
     const available =
       minutesFromScheduleTime(journey.endTime) - minutesFromScheduleTime(journey.startTime)
     const required = draft.durationMinutes * draft.periodCount
@@ -251,6 +269,7 @@ export function FlexibleScheduleWizard({
   function addPeriod(id: string) {
     const journey = journeys.find((item) => item.id === id)!
     const draft = drafts[id]
+    if (draft.durationMinutes === '') return
     const last = draft.baseBlocks.at(-1)
     const generated = generateTemplateBlocks(
       last?.endTime ?? journey.startTime,
@@ -295,11 +314,15 @@ export function FlexibleScheduleWizard({
     if (!breakEditor) return
     const draft = drafts[breakEditor.journeyId]
     const change = (blocks: ScheduleTemplateBlock[]) => {
-      const without = breakEditor.existingSequence
+      const removed = breakEditor.existingSequence
         ? blocks
             .filter((block) => block.sequence !== breakEditor.existingSequence)
             .map((block, index) => ({ ...block, sequence: index + 1 }))
         : blocks
+      const without =
+        breakEditor.existingSequence && breakEditor.existingSequence > 1
+          ? reflowTemplateBlocks(removed, breakEditor.existingSequence - 1)
+          : removed
       const targetClass = without.filter((block) => block.blockType === 'CLASS')[
         Math.max(0, breakEditor.afterSequence - 1)
       ]
@@ -332,6 +355,7 @@ export function FlexibleScheduleWizard({
       original: { ...block },
       block: { ...block },
       error: null,
+      adjustFollowing: true,
     })
   }
   function openGlobalEditor(id: string, block: ScheduleTemplateBlock) {
@@ -346,6 +370,7 @@ export function FlexibleScheduleWizard({
       original: { ...block },
       block: { ...block },
       error: null,
+      adjustFollowing: true,
     })
   }
   function effectiveBlocks(id: string, day: number) {
@@ -383,10 +408,14 @@ export function FlexibleScheduleWizard({
     const journey = journeys.find((item) => item.id === cellEditor.journeyId)!
     const draft = drafts[cellEditor.journeyId]
     if (cellEditor.scope === 'global') {
-      const update = (blocks: ScheduleTemplateBlock[]) =>
-        blocks.map((block) =>
+      const update = (blocks: ScheduleTemplateBlock[]) => {
+        const edited = blocks.map((block) =>
           block.sequence === cellEditor.sequence ? { ...cellEditor.block, key: block.key } : block,
         )
+        return cellEditor.adjustFollowing
+          ? reflowTemplateBlocks(edited, cellEditor.sequence)
+          : edited
+      }
       const baseBlocks = update(draft.baseBlocks)
       const errors = validateEditedBlock(journey, baseBlocks, cellEditor.sequence)
       if (errors.length) {
@@ -403,9 +432,12 @@ export function FlexibleScheduleWizard({
       return
     }
     const day = cellEditor.dayOfWeek!
-    const blocks = effectiveBlocks(cellEditor.journeyId, day).map((block) =>
+    const edited = effectiveBlocks(cellEditor.journeyId, day).map((block) =>
       block.sequence === cellEditor.sequence ? cellEditor.block : block,
     )
+    const blocks = cellEditor.adjustFollowing
+      ? reflowTemplateBlocks(edited, cellEditor.sequence)
+      : edited
     const errors = validateEditedBlock(journey, blocks, cellEditor.sequence)
     if (errors.length) {
       setCellEditor({ ...cellEditor, error: errors[0] })
@@ -439,6 +471,15 @@ export function FlexibleScheduleWizard({
   const structureErrors = journeys.flatMap((journey) =>
     validateTemplate(journey, drafts[journey.id]),
   )
+  const generationInputsValid = journeys.every((journey) => {
+    const draft = drafts[journey.id]
+    return (
+      typeof draft?.durationMinutes === 'number' &&
+      draft.durationMinutes >= 5 &&
+      typeof draft?.periodCount === 'number' &&
+      draft.periodCount >= 1
+    )
+  })
   const canContinue =
     step === 0
       ? days.length > 0
@@ -446,14 +487,15 @@ export function FlexibleScheduleWizard({
         ? journeys.length > 0
         : step === 2
           ? materialized.some((block) => block.blockType === 'CLASS') &&
-            structureErrors.length === 0
+            structureErrors.length === 0 &&
+            generationInputsValid
           : structureErrors.length === 0
   const confirmJourney = confirm
     ? journeys.find((journey) => journey.id === confirm.journeyId)
     : null
   const confirmDraft = confirm ? drafts[confirm.journeyId] : null
   const generationRequired = confirmDraft
-    ? confirmDraft.durationMinutes * confirmDraft.periodCount
+    ? Number(confirmDraft.durationMinutes) * Number(confirmDraft.periodCount)
     : 0
   const generationAvailable = confirmJourney
     ? minutesFromScheduleTime(confirmJourney.endTime) -
@@ -695,6 +737,7 @@ export function FlexibleScheduleWizard({
               </Field>
               <Field label="Inicio">
                 <ScheduleTimeInput
+                  ariaLabel="Inicio"
                   value={cellEditor.block.startTime}
                   onChange={(value) =>
                     setCellEditor({
@@ -707,6 +750,7 @@ export function FlexibleScheduleWizard({
               </Field>
               <Field label="Fin">
                 <ScheduleTimeInput
+                  ariaLabel="Fin"
                   value={cellEditor.block.endTime}
                   onChange={(value) =>
                     setCellEditor({
@@ -718,6 +762,25 @@ export function FlexibleScheduleWizard({
                 />
               </Field>
             </div>
+            <label className="flex items-start gap-3 rounded-xl border border-border bg-muted/20 p-3">
+              <input
+                type="checkbox"
+                checked={cellEditor.adjustFollowing}
+                onChange={(event) =>
+                  setCellEditor({ ...cellEditor, adjustFollowing: event.target.checked })
+                }
+                className="mt-0.5 size-4 accent-primary"
+              />
+              <span>
+                <span className="block text-xs font-bold text-foreground">
+                  Reajustar automáticamente los bloques siguientes
+                  {cellEditor.scope === 'day' ? ' de este día' : ''}
+                </span>
+                <span className="mt-0.5 block text-xs text-muted-foreground">
+                  Las clases y descansos posteriores se moverán para mantener la continuidad.
+                </span>
+              </span>
+            </label>
             {cellEditor.error ? (
               <p role="alert" className="text-xs font-semibold text-destructive">
                 {cellEditor.error}
@@ -903,12 +966,14 @@ function JourneysStep({
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <Field label="Inicio">
                 <ScheduleTimeInput
+                  ariaLabel="Inicio"
                   value={journey.startTime}
                   onChange={(value) => updateJourney(journey.id, { startTime: value })}
                 />
               </Field>
               <Field label="Fin">
                 <ScheduleTimeInput
+                  ariaLabel="Fin"
                   value={journey.endTime}
                   onChange={(value) => updateJourney(journey.id, { endTime: value })}
                 />
@@ -950,9 +1015,17 @@ function JourneyPeriods({
   onDeleteGlobal: (id: string, sequence: number) => void
   onRestoreDay: (id: string, day: number) => void
 }) {
+  const [generationTouched, setGenerationTouched] = useState({ duration: false, count: false })
+  const durationMinutes = typeof draft.durationMinutes === 'number' ? draft.durationMinutes : 0
+  const periodCount = typeof draft.periodCount === 'number' ? draft.periodCount : 0
   const availableMinutes =
     minutesFromScheduleTime(journey.endTime) - minutesFromScheduleTime(journey.startTime)
-  const requiredMinutes = draft.durationMinutes * draft.periodCount
+  const requiredMinutes = durationMinutes * periodCount
+  const pendingGenerationChanges = Boolean(
+    draft.baseBlocks.length &&
+    (draft.generatedDurationMinutes !== durationMinutes ||
+      draft.generatedPeriodCount !== periodCount),
+  )
   const generatedClasses = draft.baseBlocks.filter((block) => block.blockType === 'CLASS')
   const lectiveMinutes = generatedClasses.reduce(
     (total, block) =>
@@ -995,8 +1068,11 @@ function JourneyPeriods({
               min={5}
               value={draft.durationMinutes}
               onChange={(event) =>
-                onDraft(journey.id, { durationMinutes: Math.max(5, Number(event.target.value)) })
+                onDraft(journey.id, {
+                  durationMinutes: event.target.value === '' ? '' : Number(event.target.value),
+                })
               }
+              onBlur={() => setGenerationTouched((current) => ({ ...current, duration: true }))}
             />
             <span className="pointer-events-none absolute right-3 top-3 text-xs text-muted-foreground">
               minutos
@@ -1009,24 +1085,53 @@ function JourneyPeriods({
             min={1}
             value={draft.periodCount}
             onChange={(event) =>
-              onDraft(journey.id, { periodCount: Math.max(1, Number(event.target.value)) })
+              onDraft(journey.id, {
+                periodCount: event.target.value === '' ? '' : Number(event.target.value),
+              })
             }
+            onBlur={() => setGenerationTouched((current) => ({ ...current, count: true }))}
           />
         </Field>
         <div className="flex items-end">
-          <Button type="button" onClick={() => onGenerate(journey.id)}>
+          <Button
+            type="button"
+            disabled={durationMinutes < 5 || periodCount < 1}
+            onClick={() => onGenerate(journey.id)}
+          >
             <RotateCcw className="size-4" />
-            {draft.baseBlocks.length ? 'Regenerar jornada' : 'Generar estructura'}
+            {pendingGenerationChanges
+              ? `Regenerar con ${durationMinutes} min`
+              : draft.baseBlocks.length
+                ? 'Regenerar jornada'
+                : 'Generar estructura'}
           </Button>
         </div>
       </div>
-      {!draft.baseBlocks.length && requiredMinutes > availableMinutes ? (
+      {(generationTouched.duration && (draft.durationMinutes === '' || durationMinutes < 5)) ||
+      (generationTouched.count && (draft.periodCount === '' || periodCount < 1)) ? (
         <FeedbackBanner tone="warning">
-          {draft.periodCount} clases de {draft.durationMinutes} minutos necesitan{' '}
+          {generationTouched.duration && (draft.durationMinutes === '' || durationMinutes < 5)
+            ? 'Ingresa una duración válida.'
+            : 'Ingresa un número de clases válido.'}
+        </FeedbackBanner>
+      ) : null}
+      {pendingGenerationChanges ? (
+        <FeedbackBanner tone="warning">
+          Cambios sin aplicar. La estructura actual fue generada con{' '}
+          {draft.generatedDurationMinutes} min y {draft.generatedPeriodCount} clases. Usa “Regenerar
+          jornada” para aplicar {durationMinutes} min y {periodCount} clases.
+        </FeedbackBanner>
+      ) : null}
+      {!draft.baseBlocks.length &&
+      durationMinutes >= 5 &&
+      periodCount >= 1 &&
+      requiredMinutes > availableMinutes ? (
+        <FeedbackBanner tone="warning">
+          {periodCount} clases de {durationMinutes} minutos necesitan{' '}
           {formatScheduleDuration(requiredMinutes)}, pero esta jornada dispone de{' '}
           {formatScheduleDuration(availableMinutes)}. Con esta duración caben aproximadamente{' '}
-          {Math.max(0, Math.floor(availableMinutes / draft.durationMinutes))} clases. Puedes reducir
-          la cantidad o generar y ajustar las duraciones después.
+          {Math.max(0, Math.floor(availableMinutes / durationMinutes))} clases. Puedes reducir la
+          cantidad o generar y ajustar las duraciones después.
         </FeedbackBanner>
       ) : null}
       {draft.baseBlocks.length ? (
@@ -1438,7 +1543,7 @@ function defaultBlockName(
   return `Clase ${Math.max(1, classPosition)}`
 }
 
-function parseScheduleTime(value: string) {
+function parseScheduleTime(value: string, referenceValue?: string) {
   const normalized = value.trim().toLowerCase().replace(/\s+/g, ' ')
   const match = normalized.match(/^(\d{1,2}):(\d{2})(?:\s*([ap])\.?\s*m\.?)?$/)
   if (!match) return null
@@ -1448,20 +1553,31 @@ function parseScheduleTime(value: string) {
   if (minutes > 59 || (period && (hours < 1 || hours > 12)) || (!period && hours > 23)) return null
   if (period === 'p' && hours < 12) hours += 12
   if (period === 'a' && hours === 12) hours = 0
+  if (
+    !period &&
+    hours >= 1 &&
+    hours <= 12 &&
+    referenceValue &&
+    minutesFromScheduleTime(referenceValue) >= 12 * 60
+  )
+    hours = hours === 12 ? 12 : hours + 12
   return scheduleTimeFromMinutes(hours * 60 + minutes)
 }
 
 function ScheduleTimeInput({
   value,
   onChange,
+  ariaLabel,
 }: {
   value: string
   onChange: (value: string) => void
+  ariaLabel: string
 }) {
+  const [open, setOpen] = useState(false)
   const [draft, setDraft] = useState(() => formatScheduleTime(value))
   useEffect(() => setDraft(formatScheduleTime(value)), [value])
   const commit = (nextDraft: string) => {
-    const parsed = parseScheduleTime(nextDraft)
+    const parsed = parseScheduleTime(nextDraft, value)
     if (parsed) onChange(parsed)
     setDraft(parsed ? formatScheduleTime(parsed) : formatScheduleTime(value))
   }
@@ -1472,42 +1588,137 @@ function ScheduleTimeInput({
     onChange(next)
     setDraft(formatScheduleTime(next))
   }
+  const totalMinutes = minutesFromScheduleTime(value)
+  const hour24 = Math.floor(totalMinutes / 60)
+  const minute = totalMinutes % 60
+  const hour12 = hour24 % 12 || 12
+  const period = hour24 < 12 ? 'AM' : 'PM'
+  const updateParts = (nextHour: number, nextMinute: number, nextPeriod: 'AM' | 'PM') => {
+    const boundedHour = Math.min(12, Math.max(1, nextHour))
+    const boundedMinute = Math.min(59, Math.max(0, nextMinute))
+    const nextHour24 = (boundedHour % 12) + (nextPeriod === 'PM' ? 12 : 0)
+    const next = scheduleTimeFromMinutes(nextHour24 * 60 + boundedMinute)
+    onChange(next)
+    setDraft(formatScheduleTime(next))
+  }
   return (
-    <div className="flex items-center gap-1">
+    <div className="relative">
+      <button
+        type="button"
+        aria-label={ariaLabel}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        className="h-11 w-full rounded-xl border border-input bg-card px-4 text-left text-sm font-semibold text-foreground outline-none hover:bg-muted/30 focus:border-ring focus:ring-4 focus:ring-ring/15"
+        onClick={() => setOpen((current) => !current)}
+      >
+        {formatScheduleTime(value)}
+      </button>
+      {open ? (
+        <div
+          role="dialog"
+          aria-label="Seleccionar hora"
+          className="absolute left-0 z-40 mt-2 w-72 rounded-2xl border border-border bg-card p-3 shadow-xl"
+        >
+          <Input
+            aria-label="Escribir hora"
+            type="text"
+            inputMode="numeric"
+            value={draft}
+            placeholder="2:05 p. m."
+            onChange={(event) => {
+              const nextDraft = event.target.value
+              setDraft(nextDraft)
+              const parsed = parseScheduleTime(nextDraft, value)
+              if (parsed) onChange(parsed)
+            }}
+            onBlur={() => commit(draft)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') commit(draft)
+              if (event.key === 'Escape') setOpen(false)
+            }}
+          />
+          <div className="mt-3 grid grid-cols-[1fr_1fr_5rem] gap-2 text-center">
+            <TimePartControl
+              label="Hora"
+              value={hour12}
+              onIncrease={() => adjust(60)}
+              onDecrease={() => adjust(-60)}
+              onInput={(next) => updateParts(next, minute, period)}
+            />
+            <TimePartControl
+              label="Minutos"
+              value={minute}
+              pad
+              onIncrease={() => adjust(5)}
+              onDecrease={() => adjust(-5)}
+              onInput={(next) => updateParts(hour12, next, period)}
+            />
+            <label className="space-y-2 text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
+              Período
+              <Select
+                aria-label="Período"
+                value={period}
+                onChange={(event) => updateParts(hour12, minute, event.target.value as 'AM' | 'PM')}
+              >
+                <option value="AM">a. m.</option>
+                <option value="PM">p. m.</option>
+              </Select>
+            </label>
+          </div>
+          <Button type="button" size="sm" className="mt-3 w-full" onClick={() => setOpen(false)}>
+            Listo
+          </Button>
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
+function TimePartControl({
+  label,
+  value,
+  pad = false,
+  onIncrease,
+  onDecrease,
+  onInput,
+}: {
+  label: string
+  value: number
+  pad?: boolean
+  onIncrease: () => void
+  onDecrease: () => void
+  onInput: (value: number) => void
+}) {
+  return (
+    <div className="space-y-1">
+      <span className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
+        {label}
+      </span>
+      <button
+        type="button"
+        aria-label={`Subir ${label.toLowerCase()}`}
+        className="grid h-7 w-full place-items-center rounded-lg text-primary hover:bg-primary/10"
+        onClick={onIncrease}
+      >
+        <ChevronUp className="size-4" />
+      </button>
       <Input
-        type="text"
-        inputMode="numeric"
-        value={draft}
-        placeholder="1:35 p. m."
-        onChange={(event) => {
-          const nextDraft = event.target.value
-          setDraft(nextDraft)
-          const parsed = parseScheduleTime(nextDraft)
-          if (parsed) onChange(parsed)
-        }}
-        onBlur={() => commit(draft)}
-        onKeyDown={(event) => {
-          if (event.key === 'Enter') commit(draft)
-        }}
+        aria-label={label}
+        type="number"
+        min={label === 'Hora' ? 1 : 0}
+        max={label === 'Hora' ? 12 : 59}
+        value={pad ? String(value).padStart(2, '0') : value}
+        onChange={(event) => onInput(Number(event.target.value))}
+        className="px-2 text-center"
       />
-      <Button
+      <button
         type="button"
-        size="sm"
-        variant="outline"
-        aria-label="Restar 5 minutos"
-        onClick={() => adjust(-5)}
+        aria-label={`Bajar ${label.toLowerCase()}`}
+        className="grid h-7 w-full place-items-center rounded-lg text-primary hover:bg-primary/10"
+        onClick={onDecrease}
       >
-        −5
-      </Button>
-      <Button
-        type="button"
-        size="sm"
-        variant="outline"
-        aria-label="Sumar 5 minutos"
-        onClick={() => adjust(5)}
-      >
-        +5
-      </Button>
+        <ChevronDown className="size-4" />
+      </button>
     </div>
   )
 }

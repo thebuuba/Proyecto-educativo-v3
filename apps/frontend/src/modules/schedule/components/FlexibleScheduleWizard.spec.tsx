@@ -61,6 +61,16 @@ async function openFridayClass2(user: ReturnType<typeof userEvent.setup>) {
   return trigger.parentElement as HTMLElement
 }
 
+async function setEditorTime(
+  user: ReturnType<typeof userEvent.setup>,
+  label: 'Inicio' | 'Fin',
+  value: string,
+) {
+  await user.click(screen.getByRole('button', { name: label }))
+  fireEvent.change(screen.getByLabelText('Escribir hora'), { target: { value } })
+  await user.click(screen.getByRole('button', { name: 'Listo' }))
+}
+
 describe('cuadrícula semanal de clases', () => {
   it('normaliza el lenguaje anterior y muestra Clase, Hora pedagógica y Pausa', async () => {
     const { user } = await renderSchedule()
@@ -86,6 +96,39 @@ describe('cuadrícula semanal de clases', () => {
     expect(screen.getAllByText('Recreo').length).toBeGreaterThanOrEqual(3)
   })
 
+  it('permite vaciar los valores de generación y no altera la cuadrícula hasta regenerar', async () => {
+    const { user } = await renderSchedule()
+    const [duration, count] = screen.getAllByRole('spinbutton')
+    fireEvent.change(duration, { target: { value: '' } })
+    fireEvent.change(count, { target: { value: '' } })
+    expect(duration).toHaveValue(null)
+    expect(count).toHaveValue(null)
+    fireEvent.blur(duration)
+    expect(screen.getByText('Ingresa una duración válida.')).toBeInTheDocument()
+
+    fireEvent.change(duration, { target: { value: '35' } })
+    fireEvent.change(count, { target: { value: '5' } })
+    expect(screen.getAllByText('7:30–8:10 a. m.').length).toBeGreaterThan(0)
+    expect(screen.getByText(/Cambios sin aplicar/i)).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Regenerar con 35 min' }))
+    await user.click(screen.getByRole('button', { name: 'Regenerar' }))
+    expect(screen.getAllByText('7:30–8:05 a. m.').length).toBeGreaterThan(0)
+    expect(screen.queryByText(/Cambios sin aplicar/i)).not.toBeInTheDocument()
+  })
+
+  it('abre un selector sin segundos con hora, minutos y flechas visibles', async () => {
+    const { user } = await renderSchedule()
+    const actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: 'Editar solo este día' }))
+    await user.click(screen.getByRole('button', { name: 'Fin' }))
+    const picker = screen.getByRole('dialog', { name: 'Seleccionar hora' })
+    expect(within(picker).getByLabelText('Hora')).toBeInTheDocument()
+    expect(within(picker).getByLabelText('Minutos')).toBeInTheDocument()
+    expect(within(picker).getByRole('button', { name: 'Subir hora' })).toBeInTheDocument()
+    expect(within(picker).getByRole('button', { name: 'Bajar minutos' })).toBeInTheDocument()
+    expect(picker).not.toHaveTextContent(/segundos/i)
+  })
+
   it('elimina una clase solo del viernes y permite restaurar ese día', async () => {
     const { user } = await renderSchedule()
     const actions = await openFridayClass2(user)
@@ -108,10 +151,10 @@ describe('cuadrícula semanal de clases', () => {
     const { user } = await renderSchedule()
     const actions = await openFridayClass2(user)
     await user.click(within(actions).getByRole('menuitem', { name: 'Editar solo este día' }))
-    fireEvent.change(screen.getByLabelText('Fin'), { target: { value: '07:00' } })
+    await setEditorTime(user, 'Fin', '7:00 a. m.')
     await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
     expect(screen.getByRole('alert')).toHaveTextContent('debe terminar después de iniciar')
-    fireEvent.change(screen.getByLabelText('Fin'), { target: { value: '08:40' } })
+    await setEditorTime(user, 'Fin', '8:40 a. m.')
     await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
     expect(screen.getAllByText('● Ajustado').length).toBeGreaterThan(0)
     expect(screen.getAllByText('8:10–8:40 a. m.').length).toBeGreaterThan(0)
@@ -125,6 +168,39 @@ describe('cuadrícula semanal de clases', () => {
     await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
     expect(screen.getAllByText('Clase inicial').length).toBeGreaterThanOrEqual(3)
     expect(screen.queryByText('● Ajustado')).not.toBeInTheDocument()
+  })
+
+  it('reajusta solo el día editado y permite desactivar la continuidad', async () => {
+    const third = {
+      name: 'Clase 3',
+      startTime: '08:50',
+      endTime: '09:30',
+      sequence: 3,
+      blockType: 'CLASS' as const,
+    }
+    const threeClassSlots: TimeSlot[] = [1, 5].flatMap((dayOfWeek) =>
+      [...base, third].map((block) => ({
+        ...block,
+        id: `${dayOfWeek}-${block.sequence}`,
+        status: 'active',
+        dayOfWeek,
+        journeyId: journey.id,
+      })),
+    )
+    const { user } = await renderSchedule(threeClassSlots)
+    let actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: 'Editar solo este día' }))
+    await setEditorTime(user, 'Fin', '8:40')
+    await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
+    expect(screen.getAllByText('8:40–9:20 a. m.').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('8:50–9:30 a. m.').length).toBeGreaterThan(0)
+
+    actions = await openFridayClass2(user)
+    await user.click(within(actions).getByRole('menuitem', { name: 'Editar solo este día' }))
+    await user.click(screen.getByRole('checkbox', { name: /Reajustar automáticamente/i }))
+    await setEditorTime(user, 'Fin', '8:35')
+    await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
+    expect(screen.getAllByText('8:40–9:20 a. m.').length).toBeGreaterThan(0)
   })
 
   it('cierra los menús al abrir otro, hacer clic fuera o pulsar Escape', async () => {
@@ -290,11 +366,64 @@ describe('cuadrícula semanal de clases', () => {
     await user.click(screen.getByRole('button', { name: /continuar/i }))
     await user.click(screen.getByLabelText('Acciones globales para Clase 2'))
     await user.click(screen.getByRole('menuitem', { name: 'Editar en toda la jornada' }))
-    fireEvent.change(screen.getByLabelText('Fin'), { target: { value: '2:05 p. m.' } })
+    await setEditorTime(user, 'Fin', '2:05')
     await user.click(screen.getByRole('button', { name: 'Guardar cambios' }))
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
     expect(screen.getByText(/Clase 6: termina después/i)).toBeInTheDocument()
     expect(screen.getAllByText('1:35–2:05 p. m.').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('2:05–2:40 p. m.').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('2:40–3:15 p. m.').length).toBeGreaterThan(0)
+  })
+
+  it('inserta el recreo desde el final actual de Clase 3 y encadena lo posterior', async () => {
+    const afternoon = {
+      ...journey,
+      id: 'afternoon',
+      name: 'Vespertina',
+      kind: 'AFTERNOON' as const,
+      startTime: '13:00',
+      endTime: '16:00',
+    }
+    const current = [
+      ['Clase 1', '13:00', '13:35'],
+      ['Clase 2', '13:35', '14:05'],
+      ['Clase 3', '14:05', '14:30'],
+      ['Clase 4', '14:30', '15:00'],
+      ['Clase 5', '15:00', '15:30'],
+    ] as const
+    const currentSlots: TimeSlot[] = [1, 5].flatMap((dayOfWeek) =>
+      current.map(([name, startTime, endTime], index) => ({
+        id: `${dayOfWeek}-${index}`,
+        name,
+        startTime,
+        endTime,
+        sequence: index + 1,
+        blockType: 'CLASS',
+        status: 'active',
+        dayOfWeek,
+        journeyId: afternoon.id,
+      })),
+    )
+    const user = userEvent.setup()
+    render(
+      <FlexibleScheduleWizard
+        initialJourneys={[afternoon]}
+        initialSlots={currentSlots}
+        submitting={false}
+        error={null}
+        onComplete={vi.fn()}
+      />,
+    )
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    await user.click(screen.getByRole('button', { name: 'Añadir recreo' }))
+    await user.click(
+      within(screen.getByRole('dialog')).getByRole('button', { name: 'Añadir recreo' }),
+    )
+    expect(screen.getAllByText('2:30–3:00 p. m.').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('3:00–3:30 p. m.').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('3:30–4:00 p. m.').length).toBeGreaterThan(0)
+    expect(screen.queryByText('2:45–3:15 p. m.')).not.toBeInTheDocument()
   })
 
   it('sincroniza Tipo con Nombre y Backspace conserva el foco', async () => {

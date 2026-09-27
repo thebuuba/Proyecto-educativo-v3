@@ -32,8 +32,10 @@ export type ScheduleTemplateBlock = {
 }
 
 export type JourneyStructureDraft = {
-  durationMinutes: number
-  periodCount: number
+  durationMinutes: number | ''
+  periodCount: number | ''
+  generatedDurationMinutes?: number
+  generatedPeriodCount?: number
   appliedDays: number[]
   baseBlocks: ScheduleTemplateBlock[]
   dayOverrides: Record<number, ScheduleTemplateBlock[]>
@@ -137,16 +139,7 @@ export function insertTemplateBreak(
   if (!previous) return ordered
   const start = minutesFromScheduleTime(previous.endTime)
   const end = start + durationMinutes
-  const next = ordered.map((block, index) => {
-    if (!moveFollowing || index <= afterIndex) return block
-    return {
-      ...block,
-      startTime: scheduleTimeFromMinutes(
-        minutesFromScheduleTime(block.startTime) + durationMinutes,
-      ),
-      endTime: scheduleTimeFromMinutes(minutesFromScheduleTime(block.endTime) + durationMinutes),
-    }
-  })
+  const next = [...ordered]
   next.splice(afterIndex + 1, 0, {
     key: crypto.randomUUID(),
     name,
@@ -155,7 +148,29 @@ export function insertTemplateBreak(
     sequence: afterIndex + 2,
     blockType: 'BREAK',
   })
-  return next.map((block, index) => ({ ...block, sequence: index + 1 }))
+  const sequenced = next.map((block, index) => ({ ...block, sequence: index + 1 }))
+  return moveFollowing ? reflowTemplateBlocks(sequenced, afterIndex + 2) : sequenced
+}
+
+export function reflowTemplateBlocks(blocks: ScheduleTemplateBlock[], afterSequence: number) {
+  const ordered = [...blocks].sort((a, b) => a.sequence - b.sequence)
+  const startIndex = ordered.findIndex((block) => block.sequence === afterSequence)
+  if (startIndex < 0) return ordered
+  let cursor = minutesFromScheduleTime(ordered[startIndex].endTime)
+  return ordered.map((block, index) => {
+    if (index <= startIndex) return block
+    const duration = Math.max(
+      0,
+      minutesFromScheduleTime(block.endTime) - minutesFromScheduleTime(block.startTime),
+    )
+    const shifted = {
+      ...block,
+      startTime: scheduleTimeFromMinutes(cursor),
+      endTime: scheduleTimeFromMinutes(cursor + duration),
+    }
+    cursor += duration
+    return shifted
+  })
 }
 
 export function materializeJourneyDraft(

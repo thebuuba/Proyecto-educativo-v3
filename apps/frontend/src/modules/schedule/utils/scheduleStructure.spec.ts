@@ -6,6 +6,7 @@ import {
   generateTemplateBlocks,
   insertTemplateBreak,
   materializeJourneyDraft,
+  reflowTemplateBlocks,
   summarizeBlocks,
   validateScheduleStructure,
 } from './scheduleStructure'
@@ -203,6 +204,21 @@ describe('schedule structure', () => {
     const result = insertTemplateBreak(template, 2, 30)
     expect(result[3]).toMatchObject({ blockType: 'BREAK', startTime: '09:30', endTime: '10:00' })
     expect(result[4]).toMatchObject({ startTime: '10:00', endTime: '10:40' })
+  })
+
+  it('reajusta desde los horarios actuales y conserva las duraciones posteriores', () => {
+    const template = generateTemplateBlocks('13:00', 35, 5)
+    template[1] = { ...template[1], endTime: '14:05' }
+    const afterClass2 = reflowTemplateBlocks(template, 2)
+    expect(afterClass2[2]).toMatchObject({ startTime: '14:05', endTime: '14:40' })
+    expect(afterClass2[4]).toMatchObject({ startTime: '15:15', endTime: '15:50' })
+
+    afterClass2[2] = { ...afterClass2[2], endTime: '14:30' }
+    const afterClass3 = reflowTemplateBlocks(afterClass2, 3)
+    const withBreak = insertTemplateBreak(afterClass3, 2, 30)
+    expect(withBreak[3]).toMatchObject({ blockType: 'BREAK', startTime: '14:30', endTime: '15:00' })
+    expect(withBreak[4]).toMatchObject({ name: 'Clase 4', startTime: '15:00', endTime: '15:35' })
+    expect(withBreak[5]).toMatchObject({ name: 'Clase 5', startTime: '15:35', endTime: '16:10' })
   })
 
   it('materializa la plantilla únicamente en los días aplicados', () => {
