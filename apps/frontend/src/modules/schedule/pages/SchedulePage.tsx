@@ -472,12 +472,15 @@ function ScheduleCell({
 }) {
   const blockType = slot.blockType ?? 'CLASS'
   const nonLective = blockType !== 'CLASS'
+  const interJourneyGap = slot.blockSource === 'INTER_JOURNEY_GAP'
   return (
     <article
       className={cn(
         'min-h-20 rounded-2xl border p-3',
-        nonLective
-          ? 'border-warning/30 bg-warning/10'
+        interJourneyGap
+          ? 'border-primary/20 bg-primary/5'
+          : nonLective
+            ? 'border-warning/30 bg-warning/10'
           : entry
             ? 'border-primary/25 bg-primary/5'
             : 'border-border bg-card',
@@ -497,7 +500,9 @@ function ScheduleCell({
               {entry.gradeName} {entry.sectionName}
             </p>
           ) : nonLective ? (
-            <p className="text-xs text-warning-foreground">{blockTypeLabels[blockType]}</p>
+            <p className={cn('text-xs', interJourneyGap ? 'text-primary' : 'text-warning-foreground')}>
+              {blockTypeLabels[blockType]}
+            </p>
           ) : (
             <p className="text-xs text-muted-foreground">
               Disponible{journey ? ` · ${journey.name}` : ''}
@@ -505,7 +510,7 @@ function ScheduleCell({
           )}
         </div>
         {nonLective ? (
-          <Coffee className="size-4 text-warning-foreground" />
+          <Coffee className={cn('size-4', interJourneyGap ? 'text-primary' : 'text-warning-foreground')} />
         ) : (
           <Clock3 className="size-4 text-primary" />
         )}

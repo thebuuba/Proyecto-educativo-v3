@@ -562,18 +562,23 @@ describe('cuadrícula semanal de clases', () => {
     await user.click(screen.getByRole('button', { name: /continuar/i }))
     await user.click(screen.getByRole('button', { name: /continuar/i }))
     expect(screen.getByText('Espacio entre jornadas')).toBeInTheDocument()
-    expect(screen.getByText(/12:00–1:00 p. m. · Sin actividad asignada/)).toBeInTheDocument()
+    expect(screen.getByText('12:00–1:00 p. m.')).toBeInTheDocument()
     const gapSelect = screen.getByLabelText('Definir espacio 12:00–1:00 p. m.')
+    expect(gapSelect).toHaveValue('GAP')
     await user.selectOptions(gapSelect, 'PAUSE')
     expect(screen.getAllByText('Pausa').length).toBeGreaterThan(0)
     await user.selectOptions(gapSelect, 'FREE')
     expect(screen.getAllByText('Hora pedagógica').length).toBeGreaterThan(0)
     await user.selectOptions(gapSelect, 'GAP')
-    expect(screen.getByText(/Sin actividad asignada/)).toBeInTheDocument()
+    expect(screen.getAllByText(/Sin asignar/).length).toBeGreaterThan(0)
     await user.selectOptions(gapSelect, 'LUNCH')
     expect(screen.getAllByText('Almuerzo').length).toBeGreaterThan(0)
     await user.click(screen.getByText('Personalizar por día'))
+    await user.click(screen.getAllByRole('button', { name: 'Cambiar' }).at(-1)!)
     await user.selectOptions(screen.getByLabelText('Definir espacio del Viernes'), 'PAUSE')
+    await user.selectOptions(gapSelect, 'FREE')
+    expect(screen.getByLabelText('Definir espacio del Viernes')).toHaveValue('PAUSE')
+    await user.selectOptions(gapSelect, 'LUNCH')
     await user.click(screen.getByRole('button', { name: /continuar/i }))
     expect(screen.getByText('6')).toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: 'Guardar y asignar clases' }))
@@ -582,5 +587,45 @@ describe('cuadrícula semanal de clases', () => {
     expect(payload.blocks.find((item: { blockSource?: string; dayOfWeek: number }) => item.blockSource === 'INTER_JOURNEY_GAP' && item.dayOfWeek === 1).blockType).toBe('LUNCH')
     expect(payload.blocks.find((item: { blockSource?: string; dayOfWeek: number }) => item.blockSource === 'INTER_JOURNEY_GAP' && item.dayOfWeek === 5).blockType).toBe('PAUSE')
     expect(payload.blocks.filter((item: { blockType: string }) => item.blockType === 'CLASS')).toHaveLength(6)
+  })
+
+  it('intercala el gap cronológicamente y simplifica los intervalos mayores de dos horas', async () => {
+    const afternoon = {
+      id: 'afternoon', name: 'Vespertina', kind: 'AFTERNOON' as const,
+      startTime: '13:00', endTime: '16:00', sequence: 2,
+    }
+    const user = userEvent.setup()
+    const { unmount } = render(
+      <FlexibleScheduleWizard
+        initialJourneys={[afternoon, journey]}
+        initialSlots={slots}
+        submitting={false}
+        error={null}
+        onComplete={vi.fn()}
+      />,
+    )
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    const morningTitle = screen.getByText('Matutina')
+    const gap = screen.getByLabelText('Espacio entre jornadas 12:00–1:00 p. m.')
+    const afternoonTitle = screen.getByText('Vespertina')
+    expect(morningTitle.compareDocumentPosition(gap) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(gap.compareDocumentPosition(afternoonTitle) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+
+    unmount()
+    render(
+      <FlexibleScheduleWizard
+        initialJourneys={[journey, { ...afternoon, name: 'Nocturna', startTime: '18:00', endTime: '21:00' }]}
+        initialSlots={slots}
+        submitting={false}
+        error={null}
+        onComplete={vi.fn()}
+      />,
+    )
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    expect(screen.getByLabelText('Intervalo entre jornadas 12:00–6:00 p. m.')).toBeInTheDocument()
+    expect(screen.queryByLabelText('Definir espacio 12:00–6:00 p. m.')).not.toBeInTheDocument()
+    expect(screen.getByText('6 h')).toBeInTheDocument()
   })
 })

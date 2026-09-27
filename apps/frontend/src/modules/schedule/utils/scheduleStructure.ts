@@ -23,12 +23,15 @@ export const blockTypeLabels: Record<ScheduleBlockType, string> = {
   GAP: 'Espacio entre jornadas',
 }
 
+export const INTER_SHIFT_CONFIGURABLE_GAP_MINUTES = 120
+
 export type InterJourneyGap = {
   key: string
   previousJourneyId: string
   nextJourneyId: string
   startTime: string
   endTime: string
+  durationMinutes: number
 }
 
 export function detectInterJourneyGaps(
@@ -46,6 +49,7 @@ export function detectInterJourneyGaps(
       nextJourneyId: next.id,
       startTime: journey.endTime,
       endTime: next.startTime,
+      durationMinutes: minutesFromScheduleTime(next.startTime) - minutesFromScheduleTime(journey.endTime),
     }]
   })
 }

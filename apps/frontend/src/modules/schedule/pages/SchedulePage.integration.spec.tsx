@@ -65,6 +65,7 @@ afterEach(() => vi.restoreAllMocks())
 describe('guardado desde SchedulePage', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    mocks.timeSlots.splice(1)
     mocks.refetchAll.mockResolvedValue(undefined)
     vi.spyOn(console, 'error').mockImplementation(() => undefined)
   })
@@ -89,5 +90,29 @@ describe('guardado desde SchedulePage', () => {
     expect(mocks.refetchAll).toHaveBeenCalledTimes(1)
     expect(await screen.findAllByLabelText('Asignar clase a Clase 1')).not.toHaveLength(0)
     expect(mocks.saveScheduleStructure.mock.calls[0][0].journeys[0]).not.toHaveProperty('status')
+  })
+
+  it('muestra la clasificación del espacio derivado y nunca ofrece asignarle una clase', async () => {
+    mocks.timeSlots.push({
+      id: '44444444-4444-4444-8444-444444444444',
+      name: 'Almuerzo',
+      startTime: '12:00',
+      endTime: '13:00',
+      sequence: 10_000,
+      status: 'active',
+      dayOfWeek: 1,
+      blockType: 'LUNCH',
+      blockSource: 'INTER_JOURNEY_GAP',
+      sourceKey: 'morning:afternoon',
+      journeyId: '11111111-1111-4111-8111-111111111111',
+    } as never)
+
+    const user = userEvent.setup()
+    render(<SchedulePage />)
+    expect(screen.getAllByText('Almuerzo').length).toBeGreaterThan(0)
+    await user.click(screen.getByRole('button', { name: 'Asignar clases' }))
+    expect(screen.queryByLabelText('Asignar clase a Almuerzo')).not.toBeInTheDocument()
+
+    mocks.timeSlots.pop()
   })
 })

@@ -35,6 +35,7 @@ import {
   formatScheduleTime,
   generateTemplateBlocks,
   insertTemplateBreak,
+  INTER_SHIFT_CONFIGURABLE_GAP_MINUTES,
   materializeJourneyDraft,
   minutesFromScheduleTime,
   reflowTemplateBlocks,
@@ -43,6 +44,7 @@ import {
   summarizeBlocks,
   templateFromDay,
   type JourneyStructureDraft,
+  type InterJourneyGap,
   type ScheduleTemplateBlock,
 } from '@/modules/schedule/utils/scheduleStructure'
 import { cn } from '@/utils/cn'
@@ -188,20 +190,28 @@ export function FlexibleScheduleWizard({
   const initialGapConfiguration = useMemo(() => {
     const global: Record<string, ScheduleBlockType> = {}
     const overrides: Record<string, ScheduleBlockType> = {}
-    initialSlots
-      .filter((slot) => slot.blockSource === 'INTER_JOURNEY_GAP' && slot.sourceKey)
-      .forEach((slot) => {
-        const sourceKey = slot.sourceKey!
-        global[sourceKey] ??= slot.blockType
-        if (slot.blockType !== global[sourceKey] && slot.dayOfWeek)
+    const gapSlots = initialSlots.filter((slot) => slot.blockSource === 'INTER_JOURNEY_GAP' && slot.sourceKey)
+    for (const sourceKey of new Set(gapSlots.map((slot) => slot.sourceKey!))) {
+      const slots = gapSlots.filter((slot) => slot.sourceKey === sourceKey)
+      const counts = new Map<ScheduleBlockType, number>()
+      slots.forEach((slot) => counts.set(slot.blockType, (counts.get(slot.blockType) ?? 0) + 1))
+      const commonType = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'GAP'
+      global[sourceKey] = commonType
+      slots.forEach((slot) => {
+        if (slot.blockType !== commonType && slot.dayOfWeek)
           overrides[`${sourceKey}:${slot.dayOfWeek}`] = slot.blockType
       })
+    }
     return { global, overrides }
   }, [initialSlots])
   const [gapTypes, setGapTypes] = useState<Record<string, ScheduleBlockType>>(initialGapConfiguration.global)
   const [gapDayTypes, setGapDayTypes] = useState<Record<string, ScheduleBlockType>>(initialGapConfiguration.overrides)
 
   const journeyGaps = useMemo(() => detectInterJourneyGaps(journeys), [journeys])
+  const orderedJourneys = useMemo(
+    () => [...journeys].sort((a, b) => minutesFromScheduleTime(a.startTime) - minutesFromScheduleTime(b.startTime)),
+    [journeys],
+  )
 
   const materialized = useMemo(() => {
     const journeyBlocks = journeys.flatMap((journey) =>
@@ -518,6 +528,7 @@ export function FlexibleScheduleWizard({
   const structureErrors = journeys.flatMap((journey) =>
     validateTemplate(journey, drafts[journey.id]),
   )
+  const journeyErrors = validateJourneyRanges(journeys)
   const generationInputsValid = journeys.every((journey) => {
     const draft = drafts[journey.id]
     return (
@@ -531,7 +542,7 @@ export function FlexibleScheduleWizard({
     step === 0
       ? days.length > 0
       : step === 1
-        ? journeys.length > 0
+        ? journeys.length > 0 && journeyErrors.length === 0
         : step === 2
           ? materialized.some((block) => block.blockType === 'CLASS') &&
             structureErrors.length === 0 &&
@@ -603,12 +614,19 @@ export function FlexibleScheduleWizard({
         ) : null}
         {step === 0 ? <DaysStep days={days} toggleDay={toggleDay} /> : null}
         {step === 1 ? (
-          <JourneysStep
-            journeys={journeys}
-            addJourney={addJourney}
-            updateJourney={updateJourney}
-            removeJourney={removeJourney}
-          />
+          <>
+            <JourneysStep
+              journeys={journeys}
+              addJourney={addJourney}
+              updateJourney={updateJourney}
+              removeJourney={removeJourney}
+            />
+            {journeyErrors.length ? (
+              <FeedbackBanner tone="warning">
+                {journeyErrors.map((message) => <p key={message}>{message}</p>)}
+              </FeedbackBanner>
+            ) : null}
+          </>
         ) : null}
         {step === 2 ? (
           <>
@@ -616,85 +634,48 @@ export function FlexibleScheduleWizard({
               title="¿Cómo se distribuye el tiempo?"
               description="Genera la estructura habitual de cada jornada y ajusta cualquier día directamente en el horario."
             />
-            {journeys.map((journey) => (
-              <JourneyPeriods
-                key={journey.id}
-                journey={journey}
-                draft={drafts[journey.id]}
-                selectedDays={days}
-                onDraft={updateDraft}
-                onGenerate={requestGenerate}
-                onAddClass={addPeriod}
-                onAddBreak={openBreakEditor}
-                onClear={(id) => setConfirm({ journeyId: id, action: 'clear' })}
-                onEditCell={openCellEditor}
-                onEditGlobal={openGlobalEditor}
-                onDeleteCell={deleteCell}
-                onDeleteGlobal={(id, sequence) =>
-                  setConfirm({ journeyId: id, sequence, action: 'delete-global' })
-                }
-                onRestoreDay={restoreDay}
-              />
-            ))}
-            {journeyGaps.map((gap) => {
-              const blockType = gapTypes[gap.key] ?? 'GAP'
+            {orderedJourneys.map((journey) => {
+              const followingGap = journeyGaps.find((gap) => gap.previousJourneyId === journey.id)
               return (
-                <section key={gap.key} className="rounded-2xl border border-dashed border-border bg-muted/20 p-4">
-                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <p className="text-sm font-extrabold text-foreground">
-                        {blockType === 'GAP' ? 'Espacio entre jornadas' : blockTypeLabels[blockType]}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        {formatScheduleRange(gap.startTime, gap.endTime)} · {blockType === 'GAP' ? 'Sin actividad asignada' : 'Bloque no lectivo'}
-                      </p>
-                    </div>
-                    <Select
-                      aria-label={`Definir espacio ${formatScheduleRange(gap.startTime, gap.endTime)}`}
-                      className="sm:w-56"
-                      value={blockType}
-                      onChange={(event) =>
-                        setGapTypes((current) => ({
-                          ...current,
-                          [gap.key]: event.target.value as ScheduleBlockType,
-                        }))
+                <div key={journey.id} className="space-y-6">
+                  <JourneyPeriods
+                    journey={journey}
+                    draft={drafts[journey.id]}
+                    selectedDays={days}
+                    onDraft={updateDraft}
+                    onGenerate={requestGenerate}
+                    onAddClass={addPeriod}
+                    onAddBreak={openBreakEditor}
+                    onClear={(id) => setConfirm({ journeyId: id, action: 'clear' })}
+                    onEditCell={openCellEditor}
+                    onEditGlobal={openGlobalEditor}
+                    onDeleteCell={deleteCell}
+                    onDeleteGlobal={(id, sequence) =>
+                      setConfirm({ journeyId: id, sequence, action: 'delete-global' })
+                    }
+                    onRestoreDay={restoreDay}
+                  />
+                  {followingGap ? (
+                    <InterJourneyGapCard
+                      gap={followingGap}
+                      days={days}
+                      globalType={gapTypes[followingGap.key] ?? 'GAP'}
+                      dayTypes={gapDayTypes}
+                      onGlobalType={(blockType) =>
+                        setGapTypes((current) => ({ ...current, [followingGap.key]: blockType }))
                       }
-                    >
-                      <option value="GAP">Dejar sin asignar</option>
-                      <option value="LUNCH">Almuerzo</option>
-                      <option value="PAUSE">Pausa</option>
-                      <option value="FREE">Hora pedagógica</option>
-                    </Select>
-                  </div>
-                  <details className="mt-3 text-xs text-muted-foreground">
-                    <summary className="cursor-pointer font-bold text-primary">Personalizar por día</summary>
-                    <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                      {days.map((day) => (
-                        <label key={day} className="space-y-1 font-bold">
-                          {scheduleDays.find((item) => item.dayOfWeek === day)?.name}
-                          <Select
-                            aria-label={`Definir espacio del ${scheduleDays.find((item) => item.dayOfWeek === day)?.name}`}
-                            value={gapDayTypes[`${gap.key}:${day}`] ?? blockType}
-                            onChange={(event) => {
-                              const value = event.target.value as ScheduleBlockType
-                              setGapDayTypes((current) => {
-                                const next = { ...current }
-                                if (value === blockType) delete next[`${gap.key}:${day}`]
-                                else next[`${gap.key}:${day}`] = value
-                                return next
-                              })
-                            }}
-                          >
-                            <option value="GAP">Sin asignar</option>
-                            <option value="LUNCH">Almuerzo</option>
-                            <option value="PAUSE">Pausa</option>
-                            <option value="FREE">Hora pedagógica</option>
-                          </Select>
-                        </label>
-                      ))}
-                    </div>
-                  </details>
-                </section>
+                      onDayType={(day, blockType) =>
+                        setGapDayTypes((current) => {
+                          const next = { ...current }
+                          const key = `${followingGap.key}:${day}`
+                          if (blockType === undefined) delete next[key]
+                          else next[key] = blockType
+                          return next
+                        })
+                      }
+                    />
+                  ) : null}
+                </div>
               )
             })}
             {structureErrors.length ? (
@@ -1987,6 +1968,166 @@ function Heading({ title, description }: { title: string; description: string })
       <p className="mt-1 text-sm text-muted-foreground">{description}</p>
     </div>
   )
+}
+
+const gapTypeOptions: Array<{ value: ScheduleBlockType; label: string }> = [
+  { value: 'LUNCH', label: 'Almuerzo' },
+  { value: 'PAUSE', label: 'Pausa' },
+  { value: 'BREAK', label: 'Recreo' },
+  { value: 'FREE', label: 'Hora pedagógica' },
+  { value: 'GAP', label: 'Sin asignar' },
+]
+
+function InterJourneyGapCard({
+  gap,
+  days,
+  globalType,
+  dayTypes,
+  onGlobalType,
+  onDayType,
+}: {
+  gap: InterJourneyGap
+  days: number[]
+  globalType: ScheduleBlockType
+  dayTypes: Record<string, ScheduleBlockType>
+  onGlobalType: (blockType: ScheduleBlockType) => void
+  onDayType: (day: number, blockType?: ScheduleBlockType) => void
+}) {
+  const [editingDays, setEditingDays] = useState<number[]>([])
+  const orderedDays = scheduleDays.filter((day) => days.includes(day.dayOfWeek))
+  const range = formatScheduleRange(gap.startTime, gap.endTime)
+
+  if (gap.durationMinutes > INTER_SHIFT_CONFIGURABLE_GAP_MINUTES) {
+    return (
+      <section
+        aria-label={`Intervalo entre jornadas ${range}`}
+        className="rounded-2xl border border-border bg-primary/5 px-4 py-3"
+      >
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <p className="text-sm font-extrabold text-foreground">Intervalo entre jornadas</p>
+            <p className="text-xs text-muted-foreground">{range}</p>
+          </div>
+          <span className="rounded-full bg-muted px-3 py-1 text-xs font-bold text-muted-foreground">
+            {formatScheduleDuration(gap.durationMinutes)}
+          </span>
+        </div>
+      </section>
+    )
+  }
+
+  const summaries = gapTypeOptions.flatMap(({ value, label }) => {
+    const matching = orderedDays.filter(
+      ({ dayOfWeek }) => (dayTypes[`${gap.key}:${dayOfWeek}`] ?? globalType) === value,
+    )
+    if (!matching.length) return []
+    return [`${label} · ${formatDayGroup(matching.map((day) => day.name))}`]
+  })
+
+  return (
+    <section
+      aria-label={`Espacio entre jornadas ${range}`}
+      className="rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-5"
+    >
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-xs font-bold text-primary">{range}</p>
+          <p className="mt-1 text-sm font-extrabold text-foreground">Espacio entre jornadas</p>
+          <p className="mt-1 text-xs text-muted-foreground">¿Qué haces normalmente durante este tiempo?</p>
+        </div>
+        <Select
+          aria-label={`Definir espacio ${range}`}
+          className="sm:w-56"
+          value={globalType}
+          onChange={(event) => onGlobalType(event.target.value as ScheduleBlockType)}
+        >
+          {gapTypeOptions.map((option) => (
+            <option key={option.value} value={option.value}>{option.label}</option>
+          ))}
+        </Select>
+      </div>
+      <p className="mt-3 text-xs text-muted-foreground">Se aplicará a los días de esta jornada.</p>
+      <div className="mt-3 space-y-1 text-xs font-bold text-foreground">
+        {summaries.map((summary) => <p key={summary}>{summary}</p>)}
+      </div>
+      <details className="mt-3 text-xs text-muted-foreground">
+        <summary className="cursor-pointer font-bold text-primary">Personalizar por día</summary>
+        <p className="mt-1">Úsalo solo si algún día es diferente.</p>
+        <div className="mt-3 divide-y divide-border rounded-xl border border-border bg-card px-3">
+          {orderedDays.map((day) => {
+            const override = dayTypes[`${gap.key}:${day.dayOfWeek}`]
+            const editing = editingDays.includes(day.dayOfWeek) || override !== undefined
+            return (
+              <div key={day.dayOfWeek} className="flex flex-col gap-2 py-3 sm:flex-row sm:items-center">
+                <span className="font-bold text-foreground sm:w-28">{day.name}</span>
+                {!editing ? (
+                  <>
+                    <span className="flex-1">Igual que el general</span>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => setEditingDays((current) => [...current, day.dayOfWeek])}
+                    >
+                      Cambiar
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Select
+                      aria-label={`Definir espacio del ${day.name}`}
+                      className="flex-1"
+                      value={override ?? globalType}
+                      onChange={(event) => onDayType(day.dayOfWeek, event.target.value as ScheduleBlockType)}
+                    >
+                      {gapTypeOptions.map((option) => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                      ))}
+                    </Select>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => {
+                        onDayType(day.dayOfWeek)
+                        setEditingDays((current) => current.filter((value) => value !== day.dayOfWeek))
+                      }}
+                    >
+                      Usar valor general
+                    </Button>
+                  </>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </details>
+    </section>
+  )
+}
+
+function formatDayGroup(names: string[]) {
+  if (names.length === 1) return names[0]
+  if (names.length === 5 && names[0] === 'Lunes' && names[4] === 'Viernes') return 'Lunes a viernes'
+  const positions = names.map((name) => scheduleDays.findIndex((day) => day.name === name))
+  if (names.length > 2 && positions.every((position, index) => index === 0 || position === positions[index - 1] + 1))
+    return `${names[0]} a ${names[names.length - 1]}`
+  return names.join(' y ')
+}
+
+function validateJourneyRanges(journeys: ScheduleStructureJourneyInput[]) {
+  const errors: string[] = []
+  const ordered = [...journeys].sort(
+    (a, b) => minutesFromScheduleTime(a.startTime) - minutesFromScheduleTime(b.startTime),
+  )
+  ordered.forEach((journey, index) => {
+    if (minutesFromScheduleTime(journey.endTime) <= minutesFromScheduleTime(journey.startTime))
+      errors.push(`${journey.name}: la hora de fin debe ser posterior al inicio.`)
+    const previous = ordered[index - 1]
+    if (previous && minutesFromScheduleTime(journey.startTime) < minutesFromScheduleTime(previous.endTime))
+      errors.push(`${previous.name} y ${journey.name}: las jornadas se solapan.`)
+  })
+  return errors
 }
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
