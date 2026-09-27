@@ -1,0 +1,5 @@
+# Keep curriculum provenance hashes stable on Windows and Unix checkouts.
+scripts/curriculum/** text eol=lf
+data/curriculum/** text eol=lf
+packages/database/src/import-curriculum.ts text eol=lf
+supabase/migrations/20260927202613_curricular_catalog.sql text eol=lf

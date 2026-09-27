@@ -373,10 +373,151 @@ model Subject {
 
   school          School           @relation(fields: [schoolId], references: [id])
   sectionSubjects SectionSubject[]
+  curriculumMappings CurriculumSubjectMapping[]
 
   @@unique([schoolId, code])
   @@index([schoolId, status])
   @@map("subjects")
+}
+
+model CurriculumVersion {
+  id             String    @id @default(uuid()) @db.Uuid
+  code           String    @unique
+  level          String
+  editionYear    Int       @map("edition_year")
+  status         String    @default("DRAFT")
+  importMetadata Json      @default("{}") @map("import_metadata")
+  validatedAt    DateTime? @map("validated_at")
+  publishedAt    DateTime? @map("published_at")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @default(now()) @map("updated_at")
+
+  documents CurriculumDocument[]
+  scopes    CurriculumScope[]
+  elements  CurriculumElement[]
+  relations CurriculumElementRelation[]
+  spans     CurriculumSourceSpan[]
+
+  @@map("curriculum_versions")
+}
+
+model CurriculumDocument {
+  id               String   @id @default(uuid()) @db.Uuid
+  versionId        String   @map("version_id") @db.Uuid
+  title            String
+  originalFilename String   @map("original_filename")
+  sha256           String
+  pageCount        Int      @map("page_count")
+  issuingBody      String   @default("MINERD") @map("issuing_body")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  version CurriculumVersion       @relation(fields: [versionId], references: [id])
+  spans   CurriculumSourceSpan[]
+
+  @@unique([versionId, sha256])
+  @@unique([id, versionId])
+  @@map("curriculum_documents")
+}
+
+model CurriculumScope {
+  id               String   @id @default(uuid()) @db.Uuid
+  versionId        String   @map("version_id") @db.Uuid
+  stableKey        String   @map("stable_key")
+  cycle            Int?
+  grade            Int?
+  areaName         String?  @map("area_name")
+  areaSearch       String?  @map("area_search")
+  subjectName      String?  @map("subject_name")
+  subjectSearch    String?  @map("subject_search")
+  modalityName     String?  @map("modality_name")
+  optativeExitName String?  @map("optative_exit_name")
+  assignmentSourcePdfPage Int? @map("assignment_source_pdf_page")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  version  CurriculumVersion          @relation(fields: [versionId], references: [id])
+  elements CurriculumElement[]
+  mappings CurriculumSubjectMapping[]
+
+  @@unique([versionId, stableKey])
+  @@unique([id, versionId])
+  @@index([versionId, cycle, grade, areaSearch, subjectSearch], map: "curriculum_scopes_context_idx")
+  @@index([versionId, optativeExitName, grade], map: "curriculum_scopes_optative_idx")
+  @@map("curriculum_scopes")
+}
+
+model CurriculumElement {
+  id             String   @id @db.Uuid
+  versionId      String   @map("version_id") @db.Uuid
+  scopeId        String   @map("scope_id") @db.Uuid
+  stableKey      String   @map("stable_key")
+  elementType    String   @map("element_type")
+  originalText   String   @map("original_text")
+  normalizedText String   @map("normalized_text")
+  reviewStatus   String   @default("PENDING") @map("review_status")
+  sourceOrder    Int      @map("source_order")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  version       CurriculumVersion           @relation(fields: [versionId], references: [id])
+  scope         CurriculumScope             @relation(fields: [scopeId, versionId], references: [id, versionId])
+  outgoing      CurriculumElementRelation[] @relation("CurriculumRelationFrom")
+  incoming      CurriculumElementRelation[] @relation("CurriculumRelationTo")
+  sourceSpans   CurriculumSourceSpan[]
+
+  @@unique([versionId, stableKey])
+  @@unique([id, versionId])
+  @@index([scopeId, elementType, sourceOrder], map: "curriculum_elements_context_idx")
+  @@map("curriculum_elements")
+}
+
+model CurriculumElementRelation {
+  id            String   @id @default(uuid()) @db.Uuid
+  versionId     String   @map("version_id") @db.Uuid
+  fromElementId String   @map("from_element_id") @db.Uuid
+  toElementId   String   @map("to_element_id") @db.Uuid
+  relationType  String   @map("relation_type")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  version     CurriculumVersion @relation(fields: [versionId], references: [id])
+  fromElement CurriculumElement @relation("CurriculumRelationFrom", fields: [fromElementId, versionId], references: [id, versionId])
+  toElement   CurriculumElement @relation("CurriculumRelationTo", fields: [toElementId, versionId], references: [id, versionId])
+
+  @@unique([fromElementId, toElementId, relationType])
+  @@map("curriculum_element_relations")
+}
+
+model CurriculumSourceSpan {
+  id           String   @id @default(uuid()) @db.Uuid
+  versionId    String   @map("version_id") @db.Uuid
+  elementId    String   @map("element_id") @db.Uuid
+  documentId   String   @map("document_id") @db.Uuid
+  pdfPage      Int      @map("pdf_page")
+  printedPage  String?  @map("printed_page")
+  sectionName  String?  @map("section_name")
+  boundingBox  Json?    @map("bounding_box")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  version  CurriculumVersion  @relation(fields: [versionId], references: [id])
+  element  CurriculumElement  @relation(fields: [elementId, versionId], references: [id, versionId])
+  document CurriculumDocument @relation(fields: [documentId, versionId], references: [id, versionId])
+
+  @@unique([elementId, documentId, pdfPage])
+  @@index([documentId, pdfPage], map: "curriculum_source_spans_page_idx")
+  @@map("curriculum_source_spans")
+}
+
+model CurriculumSubjectMapping {
+  id            String   @id @default(uuid()) @db.Uuid
+  scopeId       String   @map("scope_id") @db.Uuid
+  subjectId     String   @map("subject_id") @db.Uuid
+  mappingStatus String   @default("REVIEWED") @map("mapping_status")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  scope   CurriculumScope @relation(fields: [scopeId], references: [id], onDelete: Cascade)
+  subject Subject         @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@unique([scopeId, subjectId])
+  @@index([subjectId], map: "curriculum_subject_mappings_subject_idx")
+  @@map("curriculum_subject_mappings")
 }
 
 model Teacher {

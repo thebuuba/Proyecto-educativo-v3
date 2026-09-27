@@ -6,6 +6,49 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
+type CurriculumTable<Row, Required extends keyof Row> = {
+  Row: Row
+  Insert: Pick<Row, Required> & Partial<Omit<Row, Required>>
+  Update: Partial<Row>
+  Relationships: Array<{
+    foreignKeyName: string
+    columns: string[]
+    isOneToOne: boolean
+    referencedRelation: string
+    referencedColumns: string[]
+  }>
+}
+
+type CurriculumVersionRow = {
+  id: string; code: string; level: string; edition_year: number; status: string
+  import_metadata: Json; validated_at: string | null; published_at: string | null
+  created_at: string; updated_at: string
+}
+type CurriculumDocumentRow = {
+  id: string; version_id: string; title: string; original_filename: string; sha256: string
+  page_count: number; issuing_body: string; created_at: string
+}
+type CurriculumScopeRow = {
+  id: string; version_id: string; stable_key: string; cycle: number | null; grade: number | null
+  area_name: string | null; area_search: string | null; subject_name: string | null; subject_search: string | null
+  modality_name: string | null; optative_exit_name: string | null; assignment_source_pdf_page: number | null; created_at: string
+}
+type CurriculumElementRow = {
+  id: string; version_id: string; scope_id: string; stable_key: string; element_type: string
+  original_text: string; normalized_text: string; review_status: string; source_order: number; created_at: string
+}
+type CurriculumRelationRow = {
+  id: string; version_id: string; from_element_id: string; to_element_id: string
+  relation_type: string; created_at: string
+}
+type CurriculumSourceSpanRow = {
+  id: string; version_id: string; element_id: string; document_id: string; pdf_page: number
+  printed_page: string | null; section_name: string | null; bounding_box: Json | null; created_at: string
+}
+type CurriculumSubjectMappingRow = {
+  id: string; scope_id: string; subject_id: string; mapping_status: string; created_at: string
+}
+
 export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
@@ -39,6 +82,13 @@ export type Database = {
   }
   public: {
     Tables: {
+      curriculum_versions: CurriculumTable<CurriculumVersionRow, 'code' | 'level' | 'edition_year'>
+      curriculum_documents: CurriculumTable<CurriculumDocumentRow, 'version_id' | 'title' | 'original_filename' | 'sha256' | 'page_count'>
+      curriculum_scopes: CurriculumTable<CurriculumScopeRow, 'version_id' | 'stable_key'>
+      curriculum_elements: CurriculumTable<CurriculumElementRow, 'id' | 'version_id' | 'scope_id' | 'stable_key' | 'element_type' | 'original_text' | 'normalized_text' | 'source_order'>
+      curriculum_element_relations: CurriculumTable<CurriculumRelationRow, 'version_id' | 'from_element_id' | 'to_element_id' | 'relation_type'>
+      curriculum_source_spans: CurriculumTable<CurriculumSourceSpanRow, 'version_id' | 'element_id' | 'document_id' | 'pdf_page'>
+      curriculum_subject_mappings: CurriculumTable<CurriculumSubjectMappingRow, 'scope_id' | 'subject_id'>
       academic_periods: {
         Row: {
           created_at: string

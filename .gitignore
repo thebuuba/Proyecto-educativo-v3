@@ -50,3 +50,6 @@ supabase/.temp/
 supabase/.branches/
 .wrangler/
 .vercel
+
+# Renders locales reproducibles del QA curricular (no son fuentes canónicas)
+/tmp/pdfs/
