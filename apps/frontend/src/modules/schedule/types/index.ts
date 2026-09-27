@@ -16,9 +16,12 @@ export type TimeSlot = {
   dayOfWeek: number | null
   blockType: ScheduleBlockType
   journeyId: string | null
+  blockSource?: ScheduleBlockSource
+  sourceKey?: string | null
 }
 
-export type ScheduleBlockType = 'CLASS' | 'BREAK' | 'LUNCH' | 'PAUSE' | 'FREE'
+export type ScheduleBlockType = 'CLASS' | 'BREAK' | 'LUNCH' | 'PAUSE' | 'FREE' | 'GAP'
+export type ScheduleBlockSource = 'MANUAL' | 'INTER_JOURNEY_GAP'
 
 export type ScheduleJourneyKind = 'MORNING' | 'AFTERNOON' | 'NIGHT' | 'EXTENDED' | 'CUSTOM'
 
@@ -43,6 +46,8 @@ export type ScheduleStructureBlockInput = {
   dayOfWeek: number
   blockType: ScheduleBlockType
   journeyKey: string
+  blockSource?: ScheduleBlockSource
+  sourceKey?: string
 }
 
 export type SaveScheduleStructureInput = {

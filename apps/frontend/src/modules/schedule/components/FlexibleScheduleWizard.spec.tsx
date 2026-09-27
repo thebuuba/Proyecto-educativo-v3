@@ -524,4 +524,63 @@ describe('cuadrícula semanal de clases', () => {
     expect(name).toHaveFocus()
     expect(name).toHaveValue('Planificación docent')
   })
+
+  it('detecta, clasifica y materializa un espacio entre jornadas sin contarlo como clase', async () => {
+    const afternoon = {
+      id: 'afternoon',
+      name: 'Vespertina',
+      kind: 'AFTERNOON' as const,
+      startTime: '13:00',
+      endTime: '16:00',
+      sequence: 2,
+    }
+    const initialSlots: TimeSlot[] = [
+      ...slots,
+      ...[1, 5].map((dayOfWeek) => ({
+        id: `afternoon-${dayOfWeek}`,
+        name: 'Clase 1',
+        startTime: '13:00',
+        endTime: '13:35',
+        sequence: 1,
+        status: 'active',
+        dayOfWeek,
+        blockType: 'CLASS' as const,
+        journeyId: afternoon.id,
+      })),
+    ]
+    const user = userEvent.setup()
+    const onComplete = vi.fn()
+    render(
+      <FlexibleScheduleWizard
+        initialJourneys={[journey, afternoon]}
+        initialSlots={initialSlots}
+        submitting={false}
+        error={null}
+        onComplete={onComplete}
+      />,
+    )
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    expect(screen.getByText('Espacio entre jornadas')).toBeInTheDocument()
+    expect(screen.getByText(/12:00–1:00 p. m. · Sin actividad asignada/)).toBeInTheDocument()
+    const gapSelect = screen.getByLabelText('Definir espacio 12:00–1:00 p. m.')
+    await user.selectOptions(gapSelect, 'PAUSE')
+    expect(screen.getAllByText('Pausa').length).toBeGreaterThan(0)
+    await user.selectOptions(gapSelect, 'FREE')
+    expect(screen.getAllByText('Hora pedagógica').length).toBeGreaterThan(0)
+    await user.selectOptions(gapSelect, 'GAP')
+    expect(screen.getByText(/Sin actividad asignada/)).toBeInTheDocument()
+    await user.selectOptions(gapSelect, 'LUNCH')
+    expect(screen.getAllByText('Almuerzo').length).toBeGreaterThan(0)
+    await user.click(screen.getByText('Personalizar por día'))
+    await user.selectOptions(screen.getByLabelText('Definir espacio del Viernes'), 'PAUSE')
+    await user.click(screen.getByRole('button', { name: /continuar/i }))
+    expect(screen.getByText('6')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Guardar y asignar clases' }))
+    const payload = onComplete.mock.calls[0][0]
+    expect(payload.blocks.filter((item: { blockSource?: string }) => item.blockSource === 'INTER_JOURNEY_GAP')).toHaveLength(2)
+    expect(payload.blocks.find((item: { blockSource?: string; dayOfWeek: number }) => item.blockSource === 'INTER_JOURNEY_GAP' && item.dayOfWeek === 1).blockType).toBe('LUNCH')
+    expect(payload.blocks.find((item: { blockSource?: string; dayOfWeek: number }) => item.blockSource === 'INTER_JOURNEY_GAP' && item.dayOfWeek === 5).blockType).toBe('PAUSE')
+    expect(payload.blocks.filter((item: { blockType: string }) => item.blockType === 'CLASS')).toHaveLength(6)
+  })
 })

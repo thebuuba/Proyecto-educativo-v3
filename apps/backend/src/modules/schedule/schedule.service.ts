@@ -189,14 +189,18 @@ export class ScheduleService {
       for (const block of dto.blocks) {
         const journeyId = journeyByKey.get(block.journeyKey)
         if (!journeyId) throw new BadRequestException('La jornada de un bloque no existe.')
-        const data = { name: block.name.trim(), startTime: toTime(block.startTime), endTime: toTime(block.endTime), sequence: block.sequence, dayOfWeek: block.dayOfWeek, blockType: block.blockType, journeyId, status: 'ACTIVE' as const }
+        const data = { name: block.name.trim(), startTime: toTime(block.startTime), endTime: toTime(block.endTime), sequence: block.sequence, dayOfWeek: block.dayOfWeek, blockType: block.blockType, blockSource: block.blockSource ?? 'MANUAL', sourceKey: block.sourceKey ?? null, journeyId, status: 'ACTIVE' as const }
         const reusableSlot = block.id && existingSlotIds.has(block.id)
           ? existingSlots.find((slot) => slot.id === block.id)
           : existingSlots.find((slot) =>
               !keptSlotIds.has(slot.id) &&
-              slot.journeyId === journeyId &&
-              slot.dayOfWeek === block.dayOfWeek &&
-              slot.sequence === block.sequence,
+              (block.blockSource === 'INTER_JOURNEY_GAP'
+                ? slot.blockSource === 'INTER_JOURNEY_GAP' &&
+                  slot.sourceKey === block.sourceKey &&
+                  slot.dayOfWeek === block.dayOfWeek
+                : slot.journeyId === journeyId &&
+                  slot.dayOfWeek === block.dayOfWeek &&
+                  slot.sequence === block.sequence),
             )
         if (reusableSlot) {
           keptSlotIds.add(reusableSlot.id)
@@ -224,12 +228,28 @@ export class ScheduleService {
 
   private validateStructure(dto: SaveScheduleStructureDto) {
     const journeyKeys = new Set(dto.journeys.map((item) => item.id ?? `journey-${item.sequence}`))
+    const orderedJourneys = [...dto.journeys].sort((a, b) => toMinutes(a.startTime) - toMinutes(b.startTime))
+    const validGapKeys = new Map<string, { journeyKey: string; startTime: string; endTime: string }>(
+      orderedJourneys.slice(0, -1).flatMap((journey, index) => {
+        const next = orderedJourneys[index + 1]
+        if (toMinutes(next.startTime) <= toMinutes(journey.endTime)) return []
+        const journeyKey = journey.id ?? `journey-${journey.sequence}`
+        const nextKey = next.id ?? `journey-${next.sequence}`
+        return [[`${journeyKey}:${nextKey}`, { journeyKey, startTime: journey.endTime, endTime: next.startTime }] as const]
+      }),
+    )
     for (const journey of dto.journeys) {
       if (toMinutes(journey.endTime) <= toMinutes(journey.startTime)) throw new BadRequestException(`La jornada ${journey.name} debe terminar después de iniciar.`)
     }
     for (const block of dto.blocks) {
       if (!journeyKeys.has(block.journeyKey)) throw new BadRequestException('Un bloque apunta a una jornada inexistente.')
       if (toMinutes(block.endTime) <= toMinutes(block.startTime)) throw new BadRequestException(`El bloque ${block.name} debe terminar después de iniciar.`)
+      if (block.blockSource === 'INTER_JOURNEY_GAP') {
+        const gap = block.sourceKey ? validGapKeys.get(block.sourceKey) : undefined
+        if (!gap || gap.journeyKey !== block.journeyKey || gap.startTime !== block.startTime || gap.endTime !== block.endTime)
+          throw new BadRequestException('El espacio entre jornadas ya no coincide con las horas configuradas.')
+        if (block.blockType === 'CLASS') throw new BadRequestException('Un espacio entre jornadas no puede convertirse en clase.')
+      }
     }
     for (const day of new Set(dto.blocks.map((item) => item.dayOfWeek))) {
       const blocks = dto.blocks.filter((item) => item.dayOfWeek === day).sort((a, b) => toMinutes(a.startTime) - toMinutes(b.startTime))

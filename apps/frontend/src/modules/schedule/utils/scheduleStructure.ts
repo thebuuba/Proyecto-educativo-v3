@@ -20,6 +20,34 @@ export const blockTypeLabels: Record<ScheduleBlockType, string> = {
   LUNCH: 'Almuerzo',
   PAUSE: 'Pausa',
   FREE: 'Hora pedagógica',
+  GAP: 'Espacio entre jornadas',
+}
+
+export type InterJourneyGap = {
+  key: string
+  previousJourneyId: string
+  nextJourneyId: string
+  startTime: string
+  endTime: string
+}
+
+export function detectInterJourneyGaps(
+  journeys: ScheduleStructureJourneyInput[],
+): InterJourneyGap[] {
+  const ordered = [...journeys].sort(
+    (a, b) => minutesFromScheduleTime(a.startTime) - minutesFromScheduleTime(b.startTime),
+  )
+  return ordered.slice(0, -1).flatMap((journey, index) => {
+    const next = ordered[index + 1]
+    if (minutesFromScheduleTime(next.startTime) <= minutesFromScheduleTime(journey.endTime)) return []
+    return [{
+      key: `${journey.id}:${next.id}`,
+      previousJourneyId: journey.id,
+      nextJourneyId: next.id,
+      startTime: journey.endTime,
+      endTime: next.startTime,
+    }]
+  })
 }
 
 export type ScheduleTemplateBlock = {
@@ -246,8 +274,9 @@ export function validateScheduleStructure(
     const journey = journeys.find((item) => item.id === block.journeyKey)
     if (!journey) errors.push(`${block.name}: selecciona una jornada válida.`)
     else if (
-      minutesFromScheduleTime(block.startTime) < minutesFromScheduleTime(journey.startTime) ||
-      minutesFromScheduleTime(block.endTime) > minutesFromScheduleTime(journey.endTime)
+      block.blockSource !== 'INTER_JOURNEY_GAP' &&
+      (minutesFromScheduleTime(block.startTime) < minutesFromScheduleTime(journey.startTime) ||
+        minutesFromScheduleTime(block.endTime) > minutesFromScheduleTime(journey.endTime))
     )
       errors.push(`${block.name}: queda fuera de ${journey.name}.`)
   })

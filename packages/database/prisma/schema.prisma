@@ -969,6 +969,8 @@ model TimeSlot {
   sequence  Int
   dayOfWeek Int?         @map("day_of_week")
   blockType String       @default("CLASS") @map("block_type")
+  blockSource String     @default("MANUAL") @map("block_source")
+  sourceKey   String?    @map("source_key")
   journeyId String?      @map("journey_id") @db.Uuid
   status    RecordStatus @default(ACTIVE)
   createdAt DateTime     @default(now()) @map("created_at")
@@ -980,6 +982,7 @@ model TimeSlot {
 
   @@index([schoolId, dayOfWeek, sequence])
   @@index([journeyId])
+  @@index([schoolId, blockSource, sourceKey, dayOfWeek])
   @@map("time_slots")
 }
 

@@ -62,7 +62,7 @@ export function serializeScheduleStructure(
       sequence,
     })),
     blocks: input.blocks.map(
-      ({ id, name, startTime, endTime, sequence, dayOfWeek, blockType, journeyKey }) => ({
+      ({ id, name, startTime, endTime, sequence, dayOfWeek, blockType, journeyKey, blockSource, sourceKey }) => ({
         id,
         name,
         startTime,
@@ -71,6 +71,8 @@ export function serializeScheduleStructure(
         dayOfWeek,
         blockType,
         journeyKey,
+        blockSource,
+        sourceKey,
       }),
     ),
   }

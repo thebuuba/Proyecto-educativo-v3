@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
   formatScheduleRange,
+  detectInterJourneyGaps,
   formatScheduleTime,
   generateJourneyBlocks,
   generateTemplateBlocks,
@@ -36,6 +37,24 @@ const block = (
 })
 
 describe('schedule structure', () => {
+  it('detecta espacios dinámicos entre múltiples jornadas, pero no contigüidad ni solapamiento', () => {
+    expect(detectInterJourneyGaps([
+      journey('morning', '07:30', '12:00'),
+      { ...journey('afternoon', '13:00', '16:00'), sequence: 2 },
+      { ...journey('night', '18:00', '21:00'), sequence: 3 },
+    ])).toMatchObject([
+      { startTime: '12:00', endTime: '13:00' },
+      { startTime: '16:00', endTime: '18:00' },
+    ])
+    expect(detectInterJourneyGaps([
+      journey('morning', '07:30', '12:00'),
+      { ...journey('afternoon', '12:00', '16:00'), sequence: 2 },
+    ])).toEqual([])
+    expect(detectInterJourneyGaps([
+      journey('morning', '07:30', '13:00'),
+      { ...journey('afternoon', '12:30', '16:00'), sequence: 2 },
+    ])).toEqual([])
+  })
   it('presenta horas en formato docente sin cambiar el formato interno', () => {
     expect(formatScheduleTime('13:00')).toBe('1:00 p. m.')
     expect(formatScheduleTime('16:00')).toBe('4:00 p. m.')

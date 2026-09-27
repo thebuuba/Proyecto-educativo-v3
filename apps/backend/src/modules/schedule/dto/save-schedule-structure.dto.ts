@@ -48,11 +48,20 @@ export class ScheduleBlockInputDto {
   @Max(7)
   dayOfWeek!: number
 
-  @IsIn(['CLASS', 'BREAK', 'LUNCH', 'PAUSE', 'FREE'])
+  @IsIn(['CLASS', 'BREAK', 'LUNCH', 'PAUSE', 'FREE', 'GAP'])
   blockType!: string
 
   @IsString()
   journeyKey!: string
+
+  @IsOptional()
+  @IsIn(['MANUAL', 'INTER_JOURNEY_GAP'])
+  blockSource?: string
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(160)
+  sourceKey?: string
 }
 
 export class SaveScheduleStructureDto {

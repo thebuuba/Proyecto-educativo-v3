@@ -2710,12 +2710,14 @@ export type Database = {
       }
       time_slots: {
         Row: {
+          block_source: string
           block_type: string
           created_at: string
           day_of_week: number | null
           end_time: string
           id: string
           journey_id: string | null
+          source_key: string | null
           name: string
           school_id: string
           sequence: number
@@ -2724,12 +2726,14 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          block_source?: string
           block_type?: string
           created_at?: string
           day_of_week?: number | null
           end_time: string
           id?: string
           journey_id?: string | null
+          source_key?: string | null
           name: string
           school_id?: string
           sequence: number
@@ -2738,12 +2742,14 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          block_source?: string
           block_type?: string
           created_at?: string
           day_of_week?: number | null
           end_time?: string
           id?: string
           journey_id?: string | null
+          source_key?: string | null
           name?: string
           school_id?: string
           sequence?: number

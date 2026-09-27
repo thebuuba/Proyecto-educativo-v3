@@ -29,6 +29,7 @@ import type {
 } from '@/modules/schedule/types'
 import {
   blockTypeLabels,
+  detectInterJourneyGaps,
   formatScheduleDuration,
   formatScheduleRange,
   formatScheduleTime,
@@ -184,16 +185,51 @@ export function FlexibleScheduleWizard({
   } | null>(null)
   const [cellEditor, setCellEditor] = useState<CellEditorDraft | null>(null)
   const [breakEditor, setBreakEditor] = useState<BreakDraft | null>(null)
+  const initialGapConfiguration = useMemo(() => {
+    const global: Record<string, ScheduleBlockType> = {}
+    const overrides: Record<string, ScheduleBlockType> = {}
+    initialSlots
+      .filter((slot) => slot.blockSource === 'INTER_JOURNEY_GAP' && slot.sourceKey)
+      .forEach((slot) => {
+        const sourceKey = slot.sourceKey!
+        global[sourceKey] ??= slot.blockType
+        if (slot.blockType !== global[sourceKey] && slot.dayOfWeek)
+          overrides[`${sourceKey}:${slot.dayOfWeek}`] = slot.blockType
+      })
+    return { global, overrides }
+  }, [initialSlots])
+  const [gapTypes, setGapTypes] = useState<Record<string, ScheduleBlockType>>(initialGapConfiguration.global)
+  const [gapDayTypes, setGapDayTypes] = useState<Record<string, ScheduleBlockType>>(initialGapConfiguration.overrides)
 
-  const materialized = useMemo(
-    () =>
-      journeys.flatMap((journey) =>
+  const journeyGaps = useMemo(() => detectInterJourneyGaps(journeys), [journeys])
+
+  const materialized = useMemo(() => {
+    const journeyBlocks = journeys.flatMap((journey) =>
         drafts[journey.id]
           ? materializeJourneyDraft(journey.id, drafts[journey.id], initialSlots)
           : [],
-      ),
-    [drafts, initialSlots, journeys],
-  )
+      )
+    const gapBlocks = journeyGaps.flatMap((gap, gapIndex) =>
+      days.map((dayOfWeek) => {
+        const blockType = gapDayTypes[`${gap.key}:${dayOfWeek}`] ?? gapTypes[gap.key] ?? 'GAP'
+        return {
+          id: initialSlots.find(
+            (slot) => slot.blockSource === 'INTER_JOURNEY_GAP' && slot.sourceKey === gap.key && slot.dayOfWeek === dayOfWeek,
+          )?.id,
+          name: blockType === 'GAP' ? 'Espacio entre jornadas' : blockTypeLabels[blockType],
+          startTime: gap.startTime,
+          endTime: gap.endTime,
+          sequence: 10_000 + gapIndex,
+          dayOfWeek,
+          blockType,
+          journeyKey: gap.previousJourneyId,
+          blockSource: 'INTER_JOURNEY_GAP' as const,
+          sourceKey: gap.key,
+        }
+      }),
+    )
+    return [...journeyBlocks, ...gapBlocks]
+  }, [days, drafts, gapDayTypes, gapTypes, initialSlots, journeyGaps, journeys])
   const summary = useMemo<WizardSummary>(
     () => ({
       days: days.length,
@@ -600,6 +636,67 @@ export function FlexibleScheduleWizard({
                 onRestoreDay={restoreDay}
               />
             ))}
+            {journeyGaps.map((gap) => {
+              const blockType = gapTypes[gap.key] ?? 'GAP'
+              return (
+                <section key={gap.key} className="rounded-2xl border border-dashed border-border bg-muted/20 p-4">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-sm font-extrabold text-foreground">
+                        {blockType === 'GAP' ? 'Espacio entre jornadas' : blockTypeLabels[blockType]}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {formatScheduleRange(gap.startTime, gap.endTime)} · {blockType === 'GAP' ? 'Sin actividad asignada' : 'Bloque no lectivo'}
+                      </p>
+                    </div>
+                    <Select
+                      aria-label={`Definir espacio ${formatScheduleRange(gap.startTime, gap.endTime)}`}
+                      className="sm:w-56"
+                      value={blockType}
+                      onChange={(event) =>
+                        setGapTypes((current) => ({
+                          ...current,
+                          [gap.key]: event.target.value as ScheduleBlockType,
+                        }))
+                      }
+                    >
+                      <option value="GAP">Dejar sin asignar</option>
+                      <option value="LUNCH">Almuerzo</option>
+                      <option value="PAUSE">Pausa</option>
+                      <option value="FREE">Hora pedagógica</option>
+                    </Select>
+                  </div>
+                  <details className="mt-3 text-xs text-muted-foreground">
+                    <summary className="cursor-pointer font-bold text-primary">Personalizar por día</summary>
+                    <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                      {days.map((day) => (
+                        <label key={day} className="space-y-1 font-bold">
+                          {scheduleDays.find((item) => item.dayOfWeek === day)?.name}
+                          <Select
+                            aria-label={`Definir espacio del ${scheduleDays.find((item) => item.dayOfWeek === day)?.name}`}
+                            value={gapDayTypes[`${gap.key}:${day}`] ?? blockType}
+                            onChange={(event) => {
+                              const value = event.target.value as ScheduleBlockType
+                              setGapDayTypes((current) => {
+                                const next = { ...current }
+                                if (value === blockType) delete next[`${gap.key}:${day}`]
+                                else next[`${gap.key}:${day}`] = value
+                                return next
+                              })
+                            }}
+                          >
+                            <option value="GAP">Sin asignar</option>
+                            <option value="LUNCH">Almuerzo</option>
+                            <option value="PAUSE">Pausa</option>
+                            <option value="FREE">Hora pedagógica</option>
+                          </Select>
+                        </label>
+                      ))}
+                    </div>
+                  </details>
+                </section>
+              )
+            })}
             {structureErrors.length ? (
               <FeedbackBanner tone="warning">
                 <p className="font-bold">
