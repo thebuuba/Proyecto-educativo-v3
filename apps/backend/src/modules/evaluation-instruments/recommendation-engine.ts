@@ -40,12 +40,15 @@ export function topicTerms(title: string, description = '') {
   return fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
 }
 export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogV1) {
-  const text = normalize(`${title} ${description}`)
-  const words = tokens(text)
-  const matched = (trigger: string) => text.includes(trigger) || tokens(trigger).every(part => words.some(word => similarToken(word, part)))
-  return catalog.activityTypes.filter(a => a.triggers.some(matched))
-    .sort((a, b) => Math.max(...b.triggers.filter(matched).map(t => t.length)) - Math.max(...a.triggers.filter(matched).map(t => t.length)))[0]
-    ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
+  const find = (value: string) => {
+    const text = normalize(value)
+    const words = tokens(text)
+    const matched = (trigger: string) => text.includes(trigger) || tokens(trigger).every(part => words.some(word => similarToken(word, part)))
+    return catalog.activityTypes.filter(a => a.triggers.some(matched))
+      .sort((a, b) => Math.max(...b.triggers.filter(matched).map(t => t.length)) - Math.max(...a.triggers.filter(matched).map(t => t.length)))[0]
+  }
+  // The title names the evidence; a description can mention another activity as context.
+  return find(title) ?? find(description) ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
 }
 export function rankCurriculum(title: string, description: string, activityType: string, competencyBlock: string | undefined,
   scope: ScopeCandidate | null, elements: RankedElement[], catalog: EvaluationCatalog = evaluationCatalogV1) {
@@ -99,13 +102,34 @@ function learningDimensions(description: string, topic: string) {
   if (processes) dimensions.push({ title: `Identificación de ${processes[1]}`, observable: `Identifica ${processes[1]}` })
   const explain = text.match(/explicar(?:[áa]n)?\s+con\s+sus\s+propias\s+palabras\s+([^.;]+)/iu)
   if (explain) dimensions.push({ title: `Explicación de ${explain[1]}`, observable: `Explica con sus propias palabras ${explain[1]}` })
+  // These grammatical cues come from the teacher's text, not from an inferred syllabus.
+  // A broader clause may contain several cues ("qué son..., cómo se forman..., sus partes...").
+  const formationCue = text.match(/c[oó]mo\s+se\s+([\p{L}]+)(?:\s+((?:el|la|los|las)\s+[\p{L}]+))?/iu)
+  if (formationCue && !dimensions.some(item => normalize(item.observable).includes(normalize(`como se ${formationCue[1]}`)))) {
+    const subject = formationCue[2] ?? topic
+    dimensions.push({ title: `Comprensión de cómo se ${formationCue[1]} ${subject}`, observable: `Explica cómo se ${formationCue[1]} ${subject}` })
+  }
+  if (/\b(?:sus|las|los)\s+(?:principales\s+)?partes\b/iu.test(text) && !dimensions.some(item => /partes/iu.test(item.title))) {
+    dimensions.push({ title: `Identificación de las partes de ${topic}`, observable: `Identifica las partes principales de ${topic}` })
+  }
+  const types = text.match(/\b(?:diferentes\s+)?tipos\s+de\s+([\p{L}]+(?:\s+de\s+[\p{L}]+)?)/iu)
+  if (types && !dimensions.some(item => normalize(item.title).includes(normalize(types[1])))) {
+    dimensions.push({ title: `Distinción de tipos de ${types[1]}`, observable: `Distingue los tipos de ${types[1]} descritos en la actividad` })
+  }
+  if (/\briesgos?\b/iu.test(text) && !dimensions.some(item => /riesgos?/iu.test(item.title))) {
+    dimensions.push({ title: `Análisis de riesgos de ${topic}`, observable: `Explica los riesgos de ${topic} indicados en la actividad` })
+  }
   return dimensions.slice(0, 2).map(item => ({ title: item.title.replace(/\s+/g, ' ').trim(), observable: `${item.observable.replace(/\s+/g, ' ').trim().replace(/[.!?]+$/, '')}.` }))
 }
 
-function contextualDescriptors(observable: string, indexes: number[]) {
+function contextualDescriptors(observable: string, indexes: number[], title: string, templateId: string) {
   const action = observable.trim().replace(/[.!?]+$/, '')
-  const precise = /precisi[oó]n|cient[ií]fic/.test(normalize(action))
-  return indexes.map(index => `${action}${index === 0 ? precise ? ' de manera correcta, constante y autónoma.' : ' con claridad, precisión y autonomía.' : index === 1 ? ' de forma adecuada, con detalles menores por mejorar.' : index === 2 ? ' en lo esencial, aunque con algunas imprecisiones.' : index === 3 ? ' parcialmente y con apoyo frecuente.' : ' con dificultad y necesita acompañamiento.'}`)
+  const content = ['science-content', 'math-comprehension', 'language-content', 'social-context'].includes(templateId)
+  return indexes.map(index => index === 0 ? `${action}; ${content ? 'abarca todos los aspectos indicados y establece relaciones correctas' : 'mantiene el desempeño durante toda la actividad de forma autónoma'}.`
+    : index === 1 ? `${action}; cubre los aspectos principales sin errores relevantes.`
+      : index === 2 ? `${action}, aunque omite algún aspecto o presenta imprecisiones.`
+        : index === 3 ? `${action} solo en parte; necesita apoyo para completar la evidencia.`
+          : `No aporta evidencia suficiente para valorar ${title.toLocaleLowerCase('es-DO')}.`)
 }
 
 export function recommend(input: RecommendationInput, context: AcademicContext | null, scope: ScopeCandidate | null,
@@ -172,15 +196,15 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     const observable = band === 'PRIMARY_FIRST' ? criterion.simple : criterion.observable
     const dimension = criterion.id === 'science-content' ? dimensions[candidates.slice(0, index).filter(candidate => candidate.template.id === 'science-content').length]
       ?? (topic !== input.activityTitle ? { title: `Comprensión de ${topic}`, observable: `Explica las ideas principales de ${topic}.` } : undefined) : undefined
-    const contextual = dimension?.observable ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? `Utiliza imágenes o recursos visuales para apoyar la explicación de ${topic}.` : null) ?? (criterion.id === 'science-accuracy' && /vocabulario cientifico/.test(text) ? `Emplea vocabulario científico adecuado al explicar ${topic}.` : null) ?? (criterion.id === 'organization' && activity.family === 'ORAL' ? `Organiza y comunica las ideas sobre ${topic} en una secuencia comprensible.` : null) ?? (topic && topic !== input.activityTitle && ['science-accuracy', 'organization', 'communication', 'math-comprehension', 'math-procedure', 'math-reasoning', 'math-accuracy', 'math-interpretation', 'language-content', 'language-structure', 'language-coherence'].includes(criterion.id)
+    const contextual = dimension?.observable ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? `Utiliza imágenes o recursos visuales para apoyar la explicación de ${topic}.` : null) ?? (criterion.id === 'science-accuracy' && /vocabulario cientifico/.test(text) ? `Emplea vocabulario científico adecuado al explicar ${topic}.` : null) ?? (criterion.id === 'organization' && activity.family === 'ORAL' ? `Organiza y comunica las ideas sobre ${topic} en una secuencia comprensible.` : null) ?? (criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) && topic !== input.activityTitle ? `Organiza las ideas y evidencias sobre ${topic} en una secuencia comprensible.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-intention' ? `Expresa ${topic} mediante decisiones visuales reconocibles.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-composition' && /pintura/.test(text) ? `Organiza los elementos de la pintura para comunicar ${topic}.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-context' ? `Ubica ${topic} en tiempo, lugar y contexto.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Explica causas y consecuencias de ${topic} con evidencia.` : null) ?? (topic && topic !== input.activityTitle && ['science-accuracy', 'organization', 'communication', 'math-comprehension', 'math-procedure', 'math-reasoning', 'math-accuracy', 'math-interpretation', 'language-content', 'language-structure', 'language-coherence'].includes(criterion.id)
       ? `${observable.replace(/[.!?]+$/, '')} ${area === 'language' ? `en la producción de ${topic}` : `al abordar ${topic}`}.` : null)
     const description = contextual ?? (literal ? literal.element.text : content ? `${observable} Relacionado con ${content.element.text}.` : observable)
     const sourceType = contextual || content ? 'CONTEXTUALIZED' : literal ? 'CURRICULUM_DERIVED' : 'ACTIVITY_TEMPLATE'
-    const sourceReferences = reference ? selectedRefs.filter(r => r.elementId === reference.elementId) : []
+    const sourceReferences = !contextual && reference ? selectedRefs.filter(r => r.elementId === reference.elementId) : []
     const patterns = band === 'PRIMARY_FIRST' ? catalog.descriptorPatterns.simple : catalog.descriptorPatterns.regular
     const patternIndexes = levelCount === 4 ? [0, 1, 3, 4] : [0, 1, 2, 3, 4]
-    const title = dimension?.title ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? 'Uso de recursos de apoyo' : topic && topic !== input.activityTitle && criterion.id === 'science-accuracy' ? `Precisión científica sobre ${topic}` : criterion.id === 'organization' && activity.family === 'ORAL' ? 'Organización y comunicación de la exposición' : area === 'language' && criterion.id === 'language-structure' && /cuento/.test(text) ? 'Estructura narrativa del cuento' : criterion.title)
-    const texts = contextual ? contextualDescriptors(description, patternIndexes) : patternIndexes.map(i => `${observable} ${patterns[i]}`)
+    const title = dimension?.title ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? 'Uso de recursos de apoyo' : topic && topic !== input.activityTitle && criterion.id === 'science-accuracy' ? `Precisión científica sobre ${topic}` : criterion.id === 'organization' && activity.family === 'ORAL' ? 'Organización y comunicación de la exposición' : criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) ? `Organización de la evidencia sobre ${topic}` : criterion.id === 'art-intention' && topic !== input.activityTitle ? `Intención expresiva sobre ${topic}` : criterion.id === 'art-composition' && /pintura/.test(text) ? 'Composición de la pintura' : criterion.id === 'social-context' && topic !== input.activityTitle ? `Contexto de ${topic}` : criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Causas y consecuencias de ${topic}` : area === 'language' && criterion.id === 'language-structure' && /cuento/.test(text) ? 'Estructura narrativa del cuento' : criterion.title)
+    const texts = contextual ? contextualDescriptors(description, patternIndexes, title, criterion.id) : patternIndexes.map(i => `${observable} ${patterns[i]}`)
     return { id: `proposal:${catalog.version}:${scope?.id ?? 'fallback'}:${criterion.id}:${index}`, templateId: criterion.id,
       title, description, maxScore: scores[index] / 100, maxScoreUnits: scores[index], sourceType, sourceReferences,
       descriptors: levels.map((level, i) => ({ levelId: level.id, text: texts[i], scoreUnits: Math.round(scores[index] * level.proportion) })) }

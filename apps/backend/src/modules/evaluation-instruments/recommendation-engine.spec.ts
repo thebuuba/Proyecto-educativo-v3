@@ -99,6 +99,23 @@ describe('Recomendador con currículo literal completo', () => {
     expect(typo.confidence).toBe('LOW')
     expect(typo.selectedCurriculumElements).toEqual([])
   })
+  it('prioriza la evidencia nombrada en el título frente a menciones de la descripción', () => {
+    expect(detectActivityType('Informe científico sobre reacciones químicas', 'Describir los datos del experimento').id).toBe('REPORT')
+    expect(detectActivityType('Investigación sobre terremotos', 'Preparar una exposición final').id).toBe('RESEARCH')
+    expect(detectActivityType('Actividad', 'Resolver problemas con fracciones').id).toBe('PROBLEM_SOLVING')
+  })
+  it('reconoce familias representativas y erratas acotadas sin reinterpretar otros títulos', () => {
+    const examples = [
+      ['Exposición oral', 'EXPOSITION'], ['Debate del tema', 'DEBATE'], ['Experimento de densidad', 'EXPERIMENT'],
+      ['Práctica de laboratorio', 'LAB_PRACTICE'], ['Ensayo literario', 'ESSAY'], ['Informe científico', 'REPORT'],
+      ['Investigación histórica', 'RESEARCH'], ['Proyecto escolar', 'PROJECT'],
+      ['Resolución de problemas', 'PROBLEM_SOLVING'], ['Producción escrita', 'WRITTEN_PRODUCTION'],
+      ['Pintura cultural', 'ARTISTIC_PRODUCTION'], ['Observación de plantas', 'OBSERVATION'],
+      ['Cuestionario de lectura', 'QUIZ_TEST'], ['Actividad sin marcador pedagógico', 'OTHER'],
+      ['Deabte sobre ciudadanía', 'DEBATE'], ['Experimeto de densidad', 'EXPERIMENT'],
+    ] as const
+    for (const [title, expected] of examples) expect(detectActivityType(title, '').id, title).toBe(expected)
+  })
   it('solo selecciona referencias explícitas del scope vigente; conserva la elección de instrumento', () => {
     const { context, resolution } = run(cases[2])
     const within = elements.find(element => element.scopeId === resolution.scope!.id)!
@@ -142,6 +159,34 @@ describe('Recomendador con currículo literal completo', () => {
     expect(result.criteria.every(criterion => criterion.sourceType !== 'CURRICULUM_DERIVED' && criterion.sourceReferences.length === 0)).toBe(true)
     expect(result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)).toBe(2000)
     expect(result.criteria.every(criterion => criterion.maxScoreUnits % 100 === 0)).toBe(true)
+  })
+  it('extrae aspectos concretos de una descripción de volcanes sin fuente curricular falsa', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'NAT-TU', subjectName: 'Ciencias de la Tierra y el Universo', optativeExitName: null, modalityCode: 'academic' }
+    const description = 'Los estudiantes realizarán una exposición individual en la que explicarán qué son los volcanes, cómo se forman, cuáles son sus principales partes, los diferentes tipos de erupciones y los riesgos que representan para las poblaciones cercanas. Podrán utilizar imágenes, esquemas o modelos como apoyo.'
+    const result = recommend({ activityTitle: 'Exposición sobre los volcanes', description, maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.criteria.map(criterion => criterion.title)).toEqual(expect.arrayContaining([expect.stringMatching(/forman los volcanes/), expect.stringMatching(/partes de los volcanes/), expect.stringMatching(/Precisión científica/)]))
+    expect(result.criteria.filter(criterion => criterion.templateId === 'science-content')).toHaveLength(2)
+    expect(result.criteria.every(criterion => criterion.sourceType !== 'CURRICULUM_DERIVED' && criterion.sourceReferences.length === 0)).toBe(true)
+    expect(result.criteria.every(criterion => criterion.descriptors.every(descriptor => descriptor.text.length <= 240))).toBe(true)
+  })
+  it('contextualiza intención artística y contexto social sin mezclar ámbitos', () => {
+    const art = run({ ...cases[5], activityTitle: 'Pintura sobre identidad cultural', description: 'Crear una pintura con símbolos de identidad cultural y explicar la composición.' }).result
+    expect(art.criteria.some(criterion => /identidad cultural/.test(criterion.description))).toBe(true)
+    expect(art.criteria.some(criterion => /Composición de la pintura/.test(criterion.title))).toBe(true)
+    const socialContext: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'SOC', subjectName: 'Ciencias Sociales', optativeExitName: null, modalityCode: 'academic' }
+    const social = recommend({ activityTitle: 'Investigación sobre migraciones', description: 'Comparar causas y consecuencias de las migraciones con fuentes.', maxScore: 20, participationMode: 'INDIVIDUAL' }, socialContext, null, [], 'UNMAPPED', null)
+    expect(social.criteria.some(criterion => /migraciones/.test(criterion.description))).toBe(true)
+    expect(social.criteria.every(criterion => !criterion.sourceReferences.length)).toBe(true)
+  })
+  it('no adjunta una fuente temática a una frase tomada del docente', () => {
+    const { context, resolution } = run(cases[1])
+    const within = elements.find(element => element.scopeId === resolution.scope!.id)!
+    const result = recommend({ activityTitle: 'Exposición sobre el sistema respiratorio',
+      description: 'Explicarán cómo se forman los órganos y describirán sus partes principales.',
+      maxScore: 20, participationMode: 'INDIVIDUAL', selectedCurriculumElementIds: [within.elementId] },
+    context, resolution.scope, elements, resolution.status, 'DRAFT')
+    expect(result.selectedCurriculumElements).toHaveLength(1)
+    expect(result.criteria.filter(criterion => criterion.templateId === 'science-content').every(criterion => criterion.sourceType === 'CONTEXTUALIZED' && criterion.sourceReferences.length === 0)).toBe(true)
   })
   it('el tema de materia no hereda volcán y conserva observación y registro', () => {
     const fixture = { ...cases[1], activityTitle: 'Cambios de estado de la materia', description: 'Los estudiantes observarán situaciones cotidianas en las que la materia cambia de estado, como el derretimiento del hielo o la evaporación del agua. Luego identificarán si ocurre fusión, evaporación, condensación o solidificación, registrarán sus observaciones en una tabla y explicarán con sus propias palabras qué provoca cada cambio.' }

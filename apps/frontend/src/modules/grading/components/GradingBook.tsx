@@ -3875,16 +3875,20 @@ function ActivityCreationView(props: {
   function validatePreparation() {
     const missing: Array<{ target: ActivityCompletionTarget; message: string }> = [
       { target: 'name', message: 'Escribe el nombre de la actividad para preparar el instrumento.' },
-      { target: 'maxScore', message: 'Indica el valor de la actividad para preparar el instrumento.' },
+      { target: 'maxScore', message: 'Indica el valor de la actividad para preparar el instrumento (mayor que cero, máximo 10 000 y hasta dos decimales).' },
       { target: 'activityType', message: 'Selecciona la modalidad de la actividad para preparar el instrumento.' },
+      { target: 'competencyBlocks', message: 'Revisa los bloques de competencias y completa el 100 % de la ponderación antes de preparar el instrumento.' },
     ]
-    const issue = missing.find(item => item.target === 'name' ? !activityDraft.name.trim() : item.target === 'maxScore' ? !Number.isFinite(Number(activityDraft.maxScore)) || Number(activityDraft.maxScore) <= 0 : !activityDraft.activityType)
+    const issue = missing.find(item => item.target === 'name' ? !activityDraft.name.trim()
+      : item.target === 'maxScore' ? !Number.isFinite(Number(activityDraft.maxScore)) || Number(activityDraft.maxScore) <= 0 || Number(activityDraft.maxScore) > 10000 || Math.abs(Math.round(Number(activityDraft.maxScore) * 100) / 100 - Number(activityDraft.maxScore)) > 1e-9
+        : item.target === 'activityType' ? !activityDraft.activityType
+          : validateActivityCompletion(activityDraft).some(problem => problem.target === 'competencyBlocks'))
     if (!issue) { setRequiredFieldError(''); return true }
     setStage('activity')
     setRequiredFieldError(issue.message)
     showHighlight(issue.target)
     window.setTimeout(() => {
-      const field = document.querySelector<HTMLElement>(`[data-activity-required="${issue.target}"] input, [data-activity-required="${issue.target}"] button`)
+      const field = document.querySelector<HTMLElement>(`[data-activity-required="${issue.target}"] input:not(:disabled), [data-activity-required="${issue.target}"] button`)
       field?.scrollIntoView?.({ block: 'center', behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
       field?.focus()
     }, 0)
@@ -4184,7 +4188,7 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
       </CreationFormSection>
 
       <CreationFormSection icon={<Blocks className="size-4" />} number={2} title="Competencias evaluadas" accent={accent}>
-        <CompetencyDistributionField activityDraft={activityDraft} highlight={highlight('competencyBlocks')} onChangeDraft={onChangeDraft} />
+        <div data-activity-required="competencyBlocks"><CompetencyDistributionField activityDraft={activityDraft} highlight={highlight('competencyBlocks')} onChangeDraft={onChangeDraft} /></div>
       </CreationFormSection>
 
       <CreationFormSection icon={<CalendarDays className="size-4" />} number={3} title="Planificación" accent={accent}>
@@ -4204,7 +4208,7 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
       </CreationFormSection>
 
       <CreationFormSection icon={<Users className="size-4" />} number={5} title="Modalidad" accent={accent}>
-        <div className={cn('grid gap-3 sm:grid-cols-2', highlight('activityType'))}>
+        <div data-activity-required="activityType" className={cn('grid gap-3 sm:grid-cols-2', highlight('activityType'))}>
           {([{ id: 'individual', title: 'Individual', detail: 'Cada estudiante realiza la actividad de forma individual.' }, { id: 'group', title: 'Grupal', detail: 'La actividad se realiza en grupos de estudiantes.' }] as const).map((option) => (
             <button key={option.id} type="button" className={cn('relative flex min-h-24 items-center gap-4 rounded-xl border p-4 text-left transition', activityDraft.activityType === option.id ? cn(accent.card, accent.text, 'shadow-sm') : 'border-border bg-card hover:border-primary/50')} onClick={() => onChangeDraft({ ...activityDraft, activityType: option.id })}>
               <span className={cn('grid size-11 shrink-0 place-items-center rounded-full', activityDraft.activityType === option.id ? cn(accent.progress, 'text-white') : 'bg-muted text-muted-foreground')}><Users className="size-5" /></span><span><span className="block font-black">{option.title}</span><span className="mt-1 block text-xs leading-5 text-muted-foreground">{option.detail}</span></span>{activityDraft.activityType === option.id ? <CheckCircle2 className="absolute right-3 top-3 size-5" /> : null}
