@@ -481,29 +481,35 @@ export class CoursesService {
     if (!subject) throw new NotFoundException('Subject not found')
     if (dto.teacherId && !teacher) throw new NotFoundException('Teacher not found')
 
-    const assignment = await prisma.sectionSubject.upsert({
-      where: {
-        schoolYearId_sectionId_subjectId: {
-          schoolYearId: resolvedSchoolYear.id,
+    const key = {
+      schoolYearId: resolvedSchoolYear.id,
+      sectionId: dto.sectionId,
+      subjectId: dto.subjectId,
+    }
+    const existing = await prisma.sectionSubject.findUnique({ where: { schoolYearId_sectionId_subjectId: key } })
+    if (existing) {
+      throw new ConflictException(existing.status === RecordStatus.INACTIVE
+        ? 'Esta asignatura ya está archivada en la sección. Restáurala antes de volver a asignarla.'
+        : 'Esta asignatura ya está asignada a la sección.')
+    }
+    let assignment
+    try {
+      assignment = await prisma.sectionSubject.create({
+        data: {
           sectionId: dto.sectionId,
           subjectId: dto.subjectId,
+          teacherId: teacher?.id ?? null,
+          gradeId: dto.gradeId,
+          schoolYearId: resolvedSchoolYear.id,
+          schoolId,
         },
-      },
-      create: {
-        sectionId: dto.sectionId,
-        subjectId: dto.subjectId,
-        teacherId: teacher?.id ?? null,
-        gradeId: dto.gradeId,
-        schoolYearId: resolvedSchoolYear.id,
-        schoolId,
-      },
-      update: {
-        teacherId: teacher?.id ?? null,
-        gradeId: dto.gradeId,
-        schoolId,
-        status: RecordStatus.ACTIVE,
-      },
-    })
+      })
+    } catch (error) {
+      if (error && typeof error === 'object' && 'code' in error && error.code === 'P2002') {
+        throw new ConflictException('Esta asignatura ya está asignada o archivada en la sección.')
+      }
+      throw error
+    }
     invalidateSchoolCache(schoolId)
     return assignment
   }
@@ -565,32 +571,33 @@ export class CoursesService {
 
   /** Elimina definitivamente una asignatura archivada y todo su historial académico asociado. */
   async permanentlyDeleteSectionSubject(schoolId: string, id: string, confirmation?: string) {
-    const assignment = await prisma.sectionSubject.findFirst({
-      where: { id, schoolId },
-      include: {
-        subject: { select: { name: true } },
-        _count: {
-          select: {
-            attendanceClasses: true,
-            gradesRecords: true,
-            evaluationActivities: true,
-            courseTeams: true,
-            scheduleEntries: true,
-            planningEntries: true,
-          },
-        },
-      },
-    })
-    if (!assignment) throw new NotFoundException('Asignatura archivada no encontrada')
-    const relatedDataCount = Object.values(assignment._count).reduce((total, count) => total + count, 0)
-    if (assignment.status === RecordStatus.ACTIVE && relatedDataCount > 0) {
-      throw new BadRequestException('Esta asignatura contiene información y solo puede archivarse')
-    }
-    if (assignment.status === RecordStatus.INACTIVE && relatedDataCount > 0 && confirmation !== assignment.subject.name) {
-      throw new BadRequestException('Escribe el nombre exacto de la asignatura para confirmar la eliminación')
+    if (confirmation !== 'ELIMINAR') {
+      throw new BadRequestException('Escribe ELIMINAR para confirmar la eliminación permanente')
     }
 
     await prisma.$transaction(async (tx) => {
+      const assignment = await tx.sectionSubject.findFirst({ where: { id, schoolId }, select: { status: true } })
+      if (!assignment) throw new NotFoundException('Asignatura archivada no encontrada')
+      if (assignment.status !== RecordStatus.INACTIVE) {
+        throw new BadRequestException('Solo se pueden eliminar permanentemente asignaturas archivadas')
+      }
+      // Los objetos en Storage no participan en la transacción de Postgres.
+      // Bloquear evita dejar archivos huérfanos si el borrado de la BD se revierte.
+      const uploadedResources = await tx.subjectResource.count({
+        where: { schoolId, sectionSubjectId: id, objectPath: { not: null } },
+      })
+      if (uploadedResources) {
+        throw new ConflictException('Esta asignatura tiene archivos adjuntos. Restaúrala y elimina esos archivos antes de borrarla definitivamente.')
+      }
+      const externalResourceLinks = await tx.evaluationActivityResource.count({
+        where: {
+          subjectResource: { schoolId, sectionSubjectId: id },
+          evaluationActivity: { sectionSubjectId: { not: id } },
+        },
+      })
+      if (externalResourceLinks) {
+        throw new ConflictException('Hay recursos vinculados a actividades de otra asignatura. Desvincúlalos antes de eliminarla.')
+      }
       const activities = await tx.evaluationActivity.findMany({
         where: { schoolId, sectionSubjectId: id },
         select: { id: true },
@@ -621,6 +628,8 @@ export class CoursesService {
       }
       await tx.gradesRecord.deleteMany({ where: { schoolId, sectionSubjectId: id } })
       await tx.evaluationActivity.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.subjectResource.deleteMany({ where: { schoolId, sectionSubjectId: id } })
+      await tx.teacherJournalEntry.deleteMany({ where: { schoolId, sectionSubjectId: id } })
       await tx.attendanceClass.deleteMany({ where: { schoolId, sectionSubjectId: id } })
       await tx.scheduleEntry.deleteMany({ where: { schoolId, sectionSubjectId: id } })
       await tx.planningEntry.deleteMany({ where: { schoolId, sectionSubjectId: id } })
@@ -633,7 +642,13 @@ export class CoursesService {
         await tx.courseTeamMember.deleteMany({ where: { teamId: { in: teamIds } } })
         await tx.courseTeam.deleteMany({ where: { id: { in: teamIds } } })
       }
-      await tx.sectionSubject.delete({ where: { id } })
+      const deleted = await tx.sectionSubject.deleteMany({ where: { id, schoolId, status: RecordStatus.INACTIVE } })
+      if (deleted.count !== 1) throw new ConflictException('La asignatura cambió de estado. Actualiza la página e inténtalo de nuevo.')
+    }).catch((error: unknown) => {
+      if (error && typeof error === 'object' && 'code' in error && error.code === 'P2003') {
+        throw new ConflictException('La asignatura tiene información vinculada que impide eliminarla de forma segura. Revisa sus relaciones e inténtalo de nuevo.')
+      }
+      throw error
     })
 
     invalidateSchoolCache(schoolId)

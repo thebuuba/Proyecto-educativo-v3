@@ -1,11 +1,13 @@
-import { renderHook, waitFor } from '@testing-library/react'
+import { act, renderHook, waitFor } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { useCourses } from './useCourses'
+import type { CourseData } from '@/modules/courses/types'
 
 const mocks = vi.hoisted(() => ({
   appUser: { id: 'user-0', schoolId: 'school-0' },
   getCourseData: vi.fn(),
+  deleteSectionSubjectPermanently: vi.fn(),
 }))
 
 vi.mock('@/modules/auth/hooks/useAuth', () => ({
@@ -21,6 +23,7 @@ vi.mock('@/modules/courses/services/coursesService', () => ({
   deactivateSection: vi.fn(),
   deactivateSectionSubject: vi.fn(),
   getCourseData: mocks.getCourseData,
+  deleteSectionSubjectPermanently: mocks.deleteSectionSubjectPermanently,
   updateGrade: vi.fn(),
   updateSection: vi.fn(),
 }))
@@ -47,6 +50,7 @@ describe('useCourses cache', () => {
     userSequence += 1
     mocks.appUser = { id: `user-${userSequence}`, schoolId: 'school-1' }
     mocks.getCourseData.mockReset()
+    mocks.deleteSectionSubjectPermanently.mockReset()
   })
 
   it('reuses course data on remount while its TTL is fresh', async () => {
@@ -88,5 +92,31 @@ describe('useCourses cache', () => {
 
     expect(mocks.getCourseData).toHaveBeenCalledTimes(2)
     second.unmount()
+  })
+
+  it('removes a deleted archived assignment without a manual reload', async () => {
+    const archivedCourse = { ...makeCourseData(), grades: [{ id: 'grade-1', sections: [{ id: 'section-1', assignments: [{ id: 'archived-1' }] }] }] } as unknown as CourseData
+    mocks.getCourseData.mockResolvedValueOnce(archivedCourse).mockResolvedValueOnce(makeCourseData())
+    mocks.deleteSectionSubjectPermanently.mockResolvedValue(undefined)
+    const hook = renderHook(() => useCourses())
+    await waitFor(() => expect(hook.result.current.grades).toHaveLength(1))
+    await act(async () => {
+      await hook.result.current.permanentlyDeleteSubjectAssignment('archived-1', 'ELIMINAR')
+    })
+    expect(hook.result.current.grades).toEqual([])
+    expect(mocks.deleteSectionSubjectPermanently).toHaveBeenCalledWith('archived-1', 'ELIMINAR')
+    expect(mocks.getCourseData).toHaveBeenCalledTimes(2)
+    hook.unmount()
+  })
+
+  it('keeps the archived assignment visible when the API rejects deletion', async () => {
+    const archivedCourse = { ...makeCourseData(), grades: [{ id: 'grade-1', sections: [{ id: 'section-1', assignments: [{ id: 'archived-1' }] }] }] } as unknown as CourseData
+    mocks.getCourseData.mockResolvedValue(archivedCourse)
+    mocks.deleteSectionSubjectPermanently.mockRejectedValue(new Error('Sin permiso'))
+    const hook = renderHook(() => useCourses())
+    await waitFor(() => expect(hook.result.current.grades).toHaveLength(1))
+    await expect(hook.result.current.permanentlyDeleteSubjectAssignment('archived-1', 'ELIMINAR')).rejects.toThrow('Sin permiso')
+    expect(hook.result.current.grades[0].sections[0].assignments).toHaveLength(1)
+    hook.unmount()
   })
 })

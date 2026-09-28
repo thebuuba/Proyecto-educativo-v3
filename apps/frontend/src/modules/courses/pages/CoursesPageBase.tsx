@@ -76,6 +76,7 @@ import {
   Wrench,
   X,
 } from 'lucide-react'
+import { ApiError } from '@/services/apiClient'
 import { SubjectResourcesPanel } from '../components/SubjectResourcesPanel'
 import { calendarDate } from '../data/calendarDate'
 import { SubjectReportsPanel } from '@/modules/reports/components/SubjectReportsPanel'
@@ -199,7 +200,7 @@ export function CoursesPage() {
     permanentlyDeleteSubjectAssignment,
   } = useCourses()
 
-  const canManage = hasRole(['admin', 'coordinator'])
+  const canManage = hasRole(['admin', 'director', 'coordinator'])
   const canEnroll = hasRole(['admin', 'director', 'coordinator', 'teacher'])
 
   const [assignmentFlowOpen, setAssignmentFlowOpen] = useState(false)
@@ -220,13 +221,12 @@ export function CoursesPage() {
   const [assignmentSubmitting, setAssignmentSubmitting] = useState(false)
 
   const [deleteTarget, setDeleteTarget] = useState<{
-    kind: 'grade' | 'section' | 'assignment' | 'empty-assignment' | 'permanent-assignment'
+    kind: 'grade' | 'section' | 'assignment' | 'permanent-assignment'
     id: string
     label: string
-    relatedDataCount?: number
-    studentCount?: number
   } | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
+  const [actionSuccess, setActionSuccess] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [debouncedSearch, setDebouncedSearch] = useState('')
 
@@ -373,10 +373,15 @@ export function CoursesPage() {
         await removeSubjectAssignment(deleteTarget.id)
       } else {
         await permanentlyDeleteSubjectAssignment(deleteTarget.id, confirmation)
+        setActionSuccess(`La asignatura «${deleteTarget.label}» se eliminó permanentemente.`)
       }
       setActionError(null)
       setDeleteTarget(null)
     } catch (error) {
+      if (deleteTarget.kind === 'permanent-assignment') {
+        if (error instanceof ApiError && (error.status === 404 || error.status === 409)) await refetch(false)
+        throw error
+      }
       setActionError(
         error instanceof Error
           ? error.message
@@ -384,7 +389,7 @@ export function CoursesPage() {
       )
       setDeleteTarget(null)
     }
-  }, [deleteTarget, permanentlyDeleteSubjectAssignment, removeGrade, removeSection, removeSubjectAssignment])
+  }, [deleteTarget, permanentlyDeleteSubjectAssignment, refetch, removeGrade, removeSection, removeSubjectAssignment])
 
   const handleCreateSubject = useCallback(
     async (input: CreateSubjectInput): Promise<Subject> => {
@@ -436,10 +441,10 @@ export function CoursesPage() {
   }, [currentSchoolYear])
   const handleDeleteAssignment = useCallback((assignment: SectionSubjectAssignment) =>
     setDeleteTarget({ kind: 'assignment', id: assignment.id, label: assignment.subjectName }), [])
-  const handleDeleteEmptyAssignment = useCallback((assignment: SectionSubjectAssignment, studentCount: number) =>
-    setDeleteTarget({ kind: 'empty-assignment', id: assignment.id, label: assignment.subjectName, studentCount }), [])
-  const handleDeleteArchivedAssignment = useCallback((assignment: SectionSubjectAssignment) =>
-    setDeleteTarget({ kind: 'permanent-assignment', id: assignment.id, label: assignment.subjectName, relatedDataCount: assignment.relatedDataCount }), [])
+  const handleDeleteArchivedAssignment = useCallback((assignment: SectionSubjectAssignment) => {
+    setActionSuccess(null)
+    setDeleteTarget({ kind: 'permanent-assignment', id: assignment.id, label: assignment.subjectName })
+  }, [])
   const handleRestoreAssignment = useCallback(async (assignment: SectionSubjectAssignment) => {
     try {
       await restoreSubjectAssignment(assignment.id)
@@ -518,7 +523,6 @@ export function CoursesPage() {
           onEditSection={handleEditSection}
           onAssignSubject={handleOpenAssignSubject}
           onArchiveSubject={handleDeleteAssignment}
-          onDeleteEmptySubject={handleDeleteEmptyAssignment}
           onRestoreSubject={handleRestoreAssignment}
           onDeleteArchivedSubject={handleDeleteArchivedAssignment}
           onCustomizeSubject={customizeSubjectAssignment}
@@ -529,7 +533,7 @@ export function CoursesPage() {
       ) : (
         <>
           <section data-tour="manage-students" aria-labelledby="courses-summary-title" className="relative rounded-3xl border border-border bg-card p-5 text-foreground shadow-sm sm:p-6">
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex flex-wrap items-start justify-between gap-4">
               <div className="flex min-w-0 items-center gap-4">
                 <span className="grid size-12 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Library className="size-5" /></span>
                 <div className="min-w-0">
@@ -538,15 +542,19 @@ export function CoursesPage() {
                 </div>
               </div>
               {canManage ? (
-                <details data-tour="create-course" className="group relative shrink-0">
-                  <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-card/50 [&::-webkit-details-marker]:hidden">
-                    Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
-                  </summary>
-                  <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
-                    <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nueva sección</button>
-                    <button type="button" onClick={openCreateAssignmentFlow} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nuevo curso</button>
-                  </div>
-                </details>
+                <div className="flex flex-wrap items-center gap-2">
+                  <Button data-tour="create-course" onClick={openCreateAssignmentFlow}>
+                    <Plus className="size-4" /> Agregar curso
+                  </Button>
+                  <details className="group relative shrink-0">
+                    <summary className="flex h-11 cursor-pointer list-none items-center gap-2 rounded-xl border border-border bg-card px-4 text-sm font-bold text-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+                      Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
+                    </summary>
+                    <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+                      <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nueva sección</button>
+                    </div>
+                  </details>
+                </div>
               ) : null}
             </div>
             <div className="mt-5 grid grid-cols-2 gap-2 xl:grid-cols-4" aria-label="Resumen de cursos">
@@ -603,6 +611,7 @@ export function CoursesPage() {
               <p>{actionError}</p>
             </div>
           ) : null}
+          {actionSuccess ? <div role="status" className="rounded-lg border border-success/20 bg-success/10 p-3 text-sm text-success">{actionSuccess}</div> : null}
 
           {error ? (
             <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
@@ -724,20 +733,13 @@ export function CoursesPage() {
         />
       ) : null}
 
-      {deleteTarget?.kind === 'empty-assignment' ? (
-        <EmptySubjectDeleteDialog
-          subjectName={deleteTarget.label}
-          studentCount={deleteTarget.studentCount ?? 0}
-          onConfirm={() => handleDeleteConfirm()}
-          onClose={() => setDeleteTarget(null)}
-        />
-      ) : deleteTarget?.kind === 'assignment' ? (
+      {deleteTarget?.kind === 'assignment' ? (
         <ArchiveSubjectDialog
           subjectName={deleteTarget.label}
           onConfirm={() => handleDeleteConfirm()}
           onClose={() => setDeleteTarget(null)}
         />
-      ) : deleteTarget?.kind === 'permanent-assignment' && (deleteTarget.relatedDataCount ?? 0) > 0 ? (
+      ) : deleteTarget?.kind === 'permanent-assignment' ? (
         <PermanentSubjectDeleteDialog
           subjectName={deleteTarget.label}
           onConfirm={(confirmation) => handleDeleteConfirm(confirmation)}
@@ -759,7 +761,7 @@ export function CoursesPage() {
                 ? `Inactivar la seccion "${deleteTarget.label}"? Se conservara el historial relacionado.`
                 : `¿Eliminar definitivamente "${deleteTarget.label}"? Esta acción no se puede deshacer.`
           }
-          confirmLabel={deleteTarget.kind === 'permanent-assignment' ? 'Eliminar definitivamente' : 'Inactivar'}
+          confirmLabel="Inactivar"
           destructive
           onConfirm={handleDeleteConfirm}
           onClose={() => setDeleteTarget(null)}
@@ -779,7 +781,6 @@ function CourseWorkspace({
   onAssignSubject,
   onEditSection,
   onArchiveSubject,
-  onDeleteEmptySubject,
   onRestoreSubject,
   onDeleteArchivedSubject,
   onCustomizeSubject,
@@ -796,7 +797,6 @@ function CourseWorkspace({
   onAssignSubject: (grade: GradeWithSections, sectionId: string) => void
   onEditSection: (grade: GradeWithSections, sectionId: string) => void
   onArchiveSubject: (assignment: SectionSubjectAssignment) => void
-  onDeleteEmptySubject: (assignment: SectionSubjectAssignment, studentCount: number) => void
   onRestoreSubject: (assignment: SectionSubjectAssignment) => void | Promise<void>
   onDeleteArchivedSubject: (assignment: SectionSubjectAssignment) => void
   onCustomizeSubject: (id: string, input: { color: string | null; icon: string | null }) => void | Promise<void>
@@ -925,7 +925,7 @@ function CourseWorkspace({
           {workspaceView === 'archived' ? (
             visibleArchivedAssignments.length ? (
               <div className="grid gap-4 sm:grid-cols-2 2xl:grid-cols-3">
-                {visibleArchivedAssignments.map((assignment) => <ArchivedSubjectCard key={assignment.id} assignment={assignment} onRestore={() => void onRestoreSubject(assignment)} onDelete={() => onDeleteArchivedSubject(assignment)} />)}
+                {visibleArchivedAssignments.map((assignment) => <ArchivedSubjectCard key={assignment.id} assignment={assignment} canManage={canManage} onRestore={() => void onRestoreSubject(assignment)} onDelete={() => onDeleteArchivedSubject(assignment)} />)}
               </div>
             ) : <EmptyState title={archivedAssignments.length ? 'No hay asignaturas para este filtro' : 'No hay asignaturas archivadas'} description={archivedAssignments.length ? 'Prueba con otra categoría o búsqueda.' : 'Las asignaturas que archives aparecerán aquí.'} />
           ) : (
@@ -935,7 +935,6 @@ function CourseWorkspace({
                   onOpen={(tab) => openAssignment(assignment, tab)}
                   onArchive={() => onArchiveSubject(assignment)}
                   onCustomize={() => setAppearanceTarget(assignment)}
-                  onDelete={() => onDeleteEmptySubject(assignment, item.section.studentCount ?? 0)}
                 />
               ))}
               {canManage && subjectCategory === 'Todas' && !subjectSearch ? (
@@ -1012,7 +1011,7 @@ function getSubjectCategory(name: string) {
   return subjectCategories.find((category) => category.terms.some((term) => normalized.includes(term)))?.name ?? 'Otras'
 }
 
-export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen, onCustomize, onArchive, onDelete }: { assignment: SectionSubjectAssignment; studentCount: number; canManage: boolean; onOpen: (tab: string) => void; onCustomize: () => void; onArchive: () => void; onDelete: () => void }) {
+export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen, onCustomize, onArchive }: { assignment: SectionSubjectAssignment; studentCount: number; canManage: boolean; onOpen: (tab: string) => void; onCustomize: () => void; onArchive: () => void }) {
   const category = getSubjectCategory(assignment.subjectName)
   const color = getAssignmentPalette(assignment).color
   const average = assignment.averageScore === null ? null : Math.max(0, Math.min(100, assignment.averageScore))
@@ -1035,7 +1034,6 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
         {canManage ? <AssignmentActionsMenu label={assignment.subjectName} items={[
           { label: 'Personalizar apariencia', icon: <Paintbrush className="size-4" />, tone: 'primary', onSelect: onCustomize },
           { label: 'Archivar asignatura', icon: <Archive className="size-4" />, tone: 'archive', onSelect: onArchive },
-          ...(assignment.canDelete ? [{ label: 'Eliminar asignatura', icon: <Trash2 className="size-4" />, tone: 'danger' as const, onSelect: onDelete }] : []),
         ]} /> : null}
       </div>
       <div className="mt-5 flex min-w-0 items-center gap-2 text-xs text-muted-foreground"><span className="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-[9px] font-bold text-primary">{initials}</span><span className="truncate">{teacher}</span></div>
@@ -1050,7 +1048,7 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
     </article>
   )
 }
-function ArchivedSubjectCard({ assignment, onRestore, onDelete }: { assignment: SectionSubjectAssignment; onRestore: () => void; onDelete: () => void }) {
+export function ArchivedSubjectCard({ assignment, canManage, onRestore, onDelete }: { assignment: SectionSubjectAssignment; canManage: boolean; onRestore: () => void; onDelete: () => void }) {
   const palette = getAssignmentPalette(assignment)
   return (
     <article className="relative overflow-visible rounded-2xl bg-card shadow-sm">
@@ -1059,13 +1057,13 @@ function ArchivedSubjectCard({ assignment, onRestore, onDelete }: { assignment: 
           <span className="flex size-11 items-center justify-center rounded-xl text-white opacity-80" style={{ backgroundColor: palette.color }}>{getSubjectIcon(assignment.subjectName, assignment.appearanceIcon)}</span>
           <div className="flex items-center gap-1">
             <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold uppercase text-slate-600">Archivada</span>
-            <AssignmentActionsMenu
+            {canManage ? <AssignmentActionsMenu
               label={assignment.subjectName}
               items={[
                 { label: 'Restaurar asignatura', icon: <ArchiveRestore className="size-4" />, tone: 'primary', onSelect: onRestore },
                 { label: 'Eliminar permanentemente', icon: <Trash2 className="size-4" />, tone: 'danger', onSelect: onDelete },
               ]}
-            />
+            /> : null}
           </div>
         </div>
         <h3 className="mt-4 text-base font-extrabold text-foreground">{assignment.subjectName}</h3>
@@ -1429,11 +1427,11 @@ function ArchiveSubjectDialog({ subjectName, onConfirm, onClose }: { subjectName
   )
 }
 
-function PermanentSubjectDeleteDialog({ subjectName, onConfirm, onClose }: { subjectName: string; onConfirm: (confirmation: string) => void | Promise<void>; onClose: () => void }) {
+export function PermanentSubjectDeleteDialog({ subjectName, onConfirm, onClose }: { subjectName: string; onConfirm: (confirmation: string) => void | Promise<void>; onClose: () => void }) {
   const [confirmation, setConfirmation] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const matches = confirmation === subjectName
+  const matches = confirmation === 'ELIMINAR'
 
   async function confirm() {
     if (!matches) return
@@ -1449,60 +1447,17 @@ function PermanentSubjectDeleteDialog({ subjectName, onConfirm, onClose }: { sub
   }
 
   return (
-    <Modal title="Eliminar asignatura permanentemente" description="Esta acción no se puede deshacer." onClose={onClose} className="max-w-lg">
+    <Modal title="Eliminar asignatura permanentemente" description="Esta acción no se puede deshacer." onClose={() => { if (!loading) onClose() }} className="max-w-lg">
       <div className="space-y-4 p-5">
-        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
-          Se eliminarán permanentemente la asignatura y toda su información asociada: actividades, instrumentos, calificaciones, asistencias, planificaciones, horarios y equipos.
+        <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive">
+          Esta asignatura ya está archivada. Restaurarla conservaría su información; eliminarla la destruirá.
+          <br /><br />
+          Se eliminará permanentemente «{subjectName}» y su información asociada: actividades, calificaciones, asistencias, planificaciones, bitácoras, recursos, horarios y equipos. Esta acción no se puede deshacer.
         </div>
-        <label className="block text-sm font-bold text-foreground">Escribe <span className="text-destructive">{subjectName}</span> para confirmar.</label>
+        <label className="block text-sm font-bold text-foreground">Escribe <span className="text-destructive">ELIMINAR</span> para confirmar.</label>
         <Input autoFocus value={confirmation} onChange={(event) => setConfirmation(event.target.value)} disabled={loading} />
         {error ? <p role="alert" className="text-sm font-semibold text-destructive">{error}</p> : null}
-        <div className="flex justify-end gap-2 border-t border-slate-100 pt-4"><Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches} loading={loading}>Eliminar permanentemente</Button></div>
-      </div>
-    </Modal>
-  )
-}
-
-function EmptySubjectDeleteDialog({ subjectName, studentCount, onConfirm, onClose }: { subjectName: string; studentCount: number; onConfirm: () => void | Promise<void>; onClose: () => void }) {
-  const [loading, setLoading] = useState(false)
-
-  async function confirm() {
-    setLoading(true)
-    try {
-      await onConfirm()
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  return (
-    <Modal title="Eliminar asignatura" description="Revisa esta acción antes de continuar." onClose={onClose} className="max-w-lg">
-      <div className="p-5">
-        <div className="flex gap-3 rounded-2xl border border-red-200 bg-red-50/80 p-4">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-red-100 text-destructive"><Trash2 className="size-5" /></span>
-          <div className="min-w-0">
-            <p className="text-sm font-extrabold text-red-900">Esta asignatura se eliminará permanentemente</p>
-            <p className="mt-1 break-words text-sm font-semibold leading-5 text-red-800">{subjectName}</p>
-          </div>
-        </div>
-
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-slate-600"><Trash2 className="size-4 text-destructive" /> Se eliminará</div>
-            <p className="mt-2 text-sm leading-5 text-slate-700">La asignatura vacía y su apariencia personalizada.</p>
-          </div>
-          <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 p-4">
-            <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-emerald-700"><CheckCircle2 className="size-4" /> Se conservará</div>
-            <p className="mt-2 text-sm leading-5 text-emerald-900">{studentCount > 0 ? `${studentCount} estudiantes y sus matrículas en el curso.` : 'La matrícula y toda la información general del curso.'}</p>
-          </div>
-        </div>
-
-        <p className="mt-4 text-xs leading-5 text-muted-foreground">Esta asignatura no contiene actividades, calificaciones, asistencias, equipos, horarios ni planificaciones. La eliminación no se puede deshacer.</p>
-
-        <div className="mt-5 flex flex-col-reverse gap-2 border-t border-slate-100 pt-4 sm:flex-row sm:justify-end">
-          <Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button>
-          <Button type="button" variant="destructive" onClick={() => void confirm()} loading={loading}><Trash2 className="size-4" /> Eliminar asignatura</Button>
-        </div>
+        <div className="flex justify-end gap-2 border-t border-border pt-4"><Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches || loading} loading={loading}>Eliminar permanentemente</Button></div>
       </div>
     </Modal>
   )

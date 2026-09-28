@@ -239,10 +239,10 @@ export function useCourses() {
 
       const duplicateAssignment = section.assignments?.some((assignment) => {
         const sameSubject = assignment.subjectId === subjectId
-        return sameSubject && assignment.status === 'active'
+        return sameSubject
       })
       if (duplicateAssignment) {
-        throw new Error('Esta asignatura ya está asignada a la sección seleccionada.')
+        throw new Error('Esta asignatura ya está asignada o archivada en la sección seleccionada. Si está archivada, restáurala.')
       }
 
       await assignSubjectToSection({
@@ -295,9 +295,17 @@ export function useCourses() {
   const permanentlyDeleteSubjectAssignment = useCallback(
     async (id: string, confirmation?: string) => {
       await deleteSectionSubjectPermanently(id, confirmation)
+      coursesCache.clear(cacheScope)
+      setGrades((current) => current.map((grade) => ({
+        ...grade,
+        sections: grade.sections.map((section) => ({
+          ...section,
+          assignments: section.assignments?.filter((assignment) => assignment.id !== id),
+        })),
+      })))
       await refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   return {
