@@ -4,13 +4,21 @@ import { RolesGuard } from '../../common/guards/roles.guard'
 import { Roles } from '../../common/decorators/roles.decorator'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
-import { RecommendInstrumentDto } from './recommend-instrument.dto'
+import { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
 import { EvaluationInstrumentsService } from './evaluation-instruments.service'
 
 @Controller('evaluation-instruments')
 @UseGuards(JwtAuthGuard, RolesGuard)
 export class EvaluationInstrumentsController {
   constructor(private readonly service: EvaluationInstrumentsService) {}
+
+  @Post('interpret')
+  @HttpCode(200)
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  interpret(@CurrentUser() user: AuthenticatedUser,
+    @Body(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true, transform: true })) input: InterpretActivityDto) {
+    return this.service.interpret(user, input)
+  }
 
   @Post('recommend')
   @HttpCode(200)

@@ -31,6 +31,7 @@ import {
   type CompactGradeRow,
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
+import { calendarDate } from '../data/calendarDate'
 
 type Workspace = {
   students: StudentGradeRow[]
@@ -277,7 +278,7 @@ function GradeTile({ label, value, emphasized }: { label: string; value: number 
 function MiniStat({ label, value }: { label: string; value: string }) { return <div className="rounded-xl border border-border bg-card p-3"><p className="text-[9px] font-black uppercase tracking-[0.1em] text-muted-foreground">{label}</p><p className="mt-1 text-sm font-black">{value}</p></div> }
 function GradeStateBadge({ state }: { state: CompactGradeRow['status'] }) { return <Badge tone={state === 'Calificado' ? 'success' : state === 'En proceso' ? 'warning' : 'muted'}>{state}</Badge> }
 function cleanDescription(value?: string) { if (!value) return ''; return value.replace(/<br\s*\/?\s*>/gi, '\n').replace(/<\/p>/gi, '\n').replace(/<\/h[1-6]>/gi, '\n').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\n{3,}/g, '\n\n').trim() }
-function formatDate(value?: string) { if (!value) return 'Sin fecha'; const date = new Date(value); return Number.isNaN(date.getTime()) ? value : date.toLocaleDateString('es-DO', { day: 'numeric', month: 'short', year: 'numeric' }) }
+function formatDate(value?: string) { if (!value) return 'Sin fecha'; const date = calendarDate(value); return Number.isNaN(date.getTime()) ? value : date.toLocaleDateString('es-DO', { day: 'numeric', month: 'short', year: 'numeric' }) }
 function instrumentLabel(value?: string) { return ({ rubrica: 'Rúbrica de evaluación', 'lista-cotejo': 'Lista de cotejo', escala: 'Escala estimativa', 'lista-ponderada': 'Lista ponderada' } as Record<string, string>)[value ?? ''] ?? value ?? 'Sin instrumento' }
 function fieldKey(type: string, field: string, index?: number, level?: number) { return [type, field, index, level].filter((value) => value !== undefined).join(':') }
 function inferLevels(fields: Record<string, string>, type: string) { const found = Object.keys(fields).filter((key) => key.startsWith(`${type}:level-name:`)).map((key) => Number(key.split(':').pop())).filter(Number.isFinite); return found.length ? Math.max(...found) : 0 }

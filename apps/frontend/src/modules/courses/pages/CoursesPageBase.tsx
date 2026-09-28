@@ -77,6 +77,7 @@ import {
   X,
 } from 'lucide-react'
 import { SubjectResourcesPanel } from '../components/SubjectResourcesPanel'
+import { calendarDate } from '../data/calendarDate'
 import { SubjectReportsPanel } from '@/modules/reports/components/SubjectReportsPanel'
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
@@ -1913,7 +1914,7 @@ function DashboardPanel({ title, subtitle, badge, action, onAction, children }: 
 }
 
 function ActivityPreview({ activity }: { activity: { name: string; date?: string; activityType?: 'individual' | 'group' } }) {
-  const date = activity.date ? new Date(activity.date) : null
+  const date = activity.date ? calendarDate(activity.date) : null
   return <div className="flex min-h-20 items-center gap-3 border-b border-border py-3 last:border-b-0"><span className="flex size-11 shrink-0 flex-col items-center justify-center rounded-full bg-muted text-foreground"><strong className="text-sm leading-none">{date ? date.getDate() : '—'}</strong><span className="mt-0.5 text-[9px] font-semibold uppercase">{date ? date.toLocaleDateString('es-DO', { month: 'short' }).replace('.', '') : 'S/F'}</span></span><span className="min-w-0 flex-1"><span className="block truncate text-sm font-semibold">{activity.name}</span><span className="mt-1 block text-xs text-muted-foreground">{activity.activityType === 'group' ? 'Proyecto en equipo' : 'Actividad individual'} · {activity.date ? formatShortDate(activity.date) : 'Sin fecha'}</span></span><span className="text-[11px] text-muted-foreground">{date ? 'Próxima' : 'Pendiente'}</span></div>
 }
 
@@ -1937,7 +1938,7 @@ function SubjectModulePanel({ icon, title, description, href, action, onAction }
 
 function formatShortDate(value?: string | null) {
   if (!value) return 'Sin fecha'
-  const date = new Date(value)
+  const date = calendarDate(value)
   if (Number.isNaN(date.getTime())) return value
   return date.toLocaleDateString('es-DO', { day: 'numeric', month: 'long', year: 'numeric' })
 }

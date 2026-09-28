@@ -5,14 +5,66 @@ import { type AcademicContext, type ScopeCandidate, discipline, normalize } from
 export interface RecommendationInput {
   activityTitle: string; description?: string; participationMode: 'INDIVIDUAL' | 'GROUP'
   pedagogicalActivityType?: string; maxScore: number; competencyBlock?: string; levelCount?: 4 | 5
+  preferredInstrumentType?: 'rubrica' | 'lista-cotejo' | 'escala' | 'lista-ponderada'
+  selectedCurriculumElementIds?: string[]
 }
 export interface RankedElement extends CurriculumReference { normalizedText: string }
 const stopWords = new Set('a al algo ante bajo con contra cual cuando de del desde durante e el ella en entre es esa ese esta este hay hasta la las le les lo los mas mi muy o para pero por que quien se segun ser si sin sobre su sus un una unos unas y'.split(' '))
 // Conservative plural stems; no semantic synonym guessing or cross-scope retrieval.
 export const tokens = (text: string) => [...new Set(normalize(text).split(' ').filter(t => t.length > 2 && !stopWords.has(t)).map(t => t.length > 5 ? t.replace(/(?:es|s)$/, '').replace(/[oa]$/, '') : t))]
-const overlap = (query: string[], text: string) => { const values = new Set(tokens(text)); return query.filter(t => values.has(t)).length }
+/** Bounded Damerau-Levenshtein. Two-token prefix gate blocks unrelated words. */
+function editDistance(left: string, right: string, limit: number) {
+  if (Math.abs(left.length - right.length) > limit) return limit + 1
+  const matrix = Array.from({ length: left.length + 1 }, () => new Array<number>(right.length + 1).fill(0))
+  for (let i = 0; i <= left.length; i++) matrix[i][0] = i
+  for (let j = 0; j <= right.length; j++) matrix[0][j] = j
+  for (let i = 1; i <= left.length; i++) for (let j = 1; j <= right.length; j++) {
+    matrix[i][j] = Math.min(matrix[i - 1][j] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j - 1] + (left[i - 1] === right[j - 1] ? 0 : 1))
+    if (i > 1 && j > 1 && left[i - 1] === right[j - 2] && left[i - 2] === right[j - 1]) matrix[i][j] = Math.min(matrix[i][j], matrix[i - 2][j - 2] + 1)
+  }
+  return matrix[left.length][right.length]
+}
+export function similarToken(query: string, candidate: string) {
+  if (query === candidate) return true
+  if (query.length < 5 || candidate.length < 5 || query.slice(0, 2) !== candidate.slice(0, 2)) return false
+  const limit = Math.min(query.length, candidate.length) >= 8 ? 2 : 1
+  return editDistance(query, candidate, limit) <= limit
+}
+const overlap = (query: string[], text: string) => { const values = tokens(text); return query.filter(t => values.some(candidate => similarToken(t, candidate))).length }
 const typeWeights: Record<string, number> = { SPECIFIC_COMPETENCY: 12, EVALUATION_CRITERION: 14, ACHIEVEMENT_INDICATOR: 16, CONCEPT: 10, PROCEDURE: 12, ATTITUDE_VALUE: 3 }
 const blockTerms: Record<string, string> = { b1: 'comunica comunicacion oral escrita', b2: 'pensamiento razonamiento problemas creativo critico', b3: 'etica ciudadana personal espiritual', b4: 'cientifica tecnologica ambiental salud' }
+const boilerplate = tokens('actividad exposición presentación oral experimento experimentación práctica laboratorio producción escrita resolución problemas ejercicios artística observación clasificación estudiantes estudiante realizar mediante sobre tema')
+export function topicTerms(title: string, description = '') {
+  const fromTitle = tokens(title).filter(t => !boilerplate.includes(t) && !/^\d+$/.test(t))
+  const fromDescription = tokens(description).filter(t => !boilerplate.includes(t) && !/^\d+$/.test(t))
+  return fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
+}
+export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogV1) {
+  const text = normalize(`${title} ${description}`)
+  const words = tokens(text)
+  const matched = (trigger: string) => text.includes(trigger) || tokens(trigger).every(part => words.some(word => similarToken(word, part)))
+  return catalog.activityTypes.filter(a => a.triggers.some(matched))
+    .sort((a, b) => Math.max(...b.triggers.filter(matched).map(t => t.length)) - Math.max(...a.triggers.filter(matched).map(t => t.length)))[0]
+    ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
+}
+export function rankCurriculum(title: string, description: string, activityType: string, competencyBlock: string | undefined,
+  scope: ScopeCandidate | null, elements: RankedElement[], catalog: EvaluationCatalog = evaluationCatalogV1) {
+  const activity = catalog.activityTypes.find(a => a.id === activityType) ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
+  const topic = topicTerms(title, description)
+  const detail = tokens(description)
+  const attitudeRelevant = /convivencia|cooperaci|valores|respeto|solidaridad|seguridad/.test(normalize(`${title} ${description}`))
+  return elements.filter(e => scope && e.scopeId === scope.id && e.versionId === scope.versionId && e.type in typeWeights && (e.type !== 'ATTITUDE_VALUE' || attitudeRelevant))
+    .map(element => {
+      const matches = overlap(topic, element.normalizedText)
+      const topicCoverage = topic.length ? matches / topic.length : 0
+      const block = ['SPECIFIC_COMPETENCY', 'EVALUATION_CRITERION', 'ACHIEVEMENT_INDICATOR'].includes(element.type)
+        ? overlap(tokens(blockTerms[competencyBlock ?? ''] ?? ''), element.normalizedText) : 0
+      const procedure = element.type === 'PROCEDURE' ? overlap(tokens(activity.triggers.join(' ')), element.normalizedText) : 0
+      const detailMatches = overlap(detail, element.normalizedText)
+      return { element, score: matches ? Math.round(100 * topicCoverage + typeWeights[element.type] + Math.min(block, 3) * 2 + Math.min(procedure, 2) * 3 + Math.min(detailMatches, 4) * 2) : 0,
+        topicCoverage, reasons: [`topicTokens=${matches}/${topic.length}`, `typeWeight=${typeWeights[element.type]}`, `blockMatches=${block}`, `procedureMatches=${procedure}`] }
+    }).filter(r => r.score > 0).sort((a, b) => b.score - a.score || a.element.elementId.localeCompare(b.element.elementId))
+}
 
 /** Integer hundredths are the scoring authority; numeric fields are display conveniences. */
 export function distributeScore(maxScore: number, weights: number[]) {
@@ -31,32 +83,21 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const text = normalize(`${input.activityTitle} ${input.description ?? ''}`)
   const explicit = input.pedagogicalActivityType ? catalog.activityTypes.find(a => a.id === input.pedagogicalActivityType) : undefined
   if (input.pedagogicalActivityType && !explicit) throw new Error('Tipo pedagógico desconocido.')
-  const detected = catalog.activityTypes.filter(a => a.triggers.some(t => text.includes(t)))
-    .sort((a, b) => Math.max(...b.triggers.filter(t => text.includes(t)).map(t => t.length)) - Math.max(...a.triggers.filter(t => text.includes(t)).map(t => t.length)))[0]
-  const activity = explicit ?? detected ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
+  const detected = detectActivityType(input.activityTitle, input.description ?? '', catalog)
+  const activity = explicit ?? detected
   const band = context?.level === 'PRIMARY' ? context.cycle === 1 ? 'PRIMARY_FIRST' : 'PRIMARY_SECOND' : 'SECONDARY'
   const area = discipline(scope, context)
-  // Keep content/genre words (poema, ensayo, pintura). Strip only pedagogical boilerplate.
-  const boilerplate = tokens('exposición presentación oral experimento experimentación práctica laboratorio producción escrita resolución problemas ejercicios artística observación clasificación')
-  const topic = tokens(input.activityTitle).filter(t => !boilerplate.includes(t))
-  const detail = tokens(input.description ?? '')
   const attitudeRelevant = /convivencia|cooperaci|valores|respeto|solidaridad|seguridad/.test(text)
-  // Defense in depth: even accidentally supplied foreign elements are discarded before scoring.
-  const eligible = elements.filter(e => scope && e.scopeId === scope.id && e.versionId === scope.versionId && e.type in typeWeights && (e.type !== 'ATTITUDE_VALUE' || attitudeRelevant))
-  const ranking = eligible.map(element => {
-    const matches = overlap(topic, element.normalizedText)
-    const topicCoverage = topic.length ? matches / topic.length : 0
-    const block = ['SPECIFIC_COMPETENCY', 'EVALUATION_CRITERION', 'ACHIEVEMENT_INDICATOR'].includes(element.type)
-      ? overlap(tokens(blockTerms[input.competencyBlock ?? ''] ?? ''), element.normalizedText) : 0
-    const procedure = element.type === 'PROCEDURE' ? overlap(tokens(activity.triggers.join(' ')), element.normalizedText) : 0
-    const detailMatches = overlap(detail, element.normalizedText)
-    return { element, score: matches ? Math.round(100 * topicCoverage + typeWeights[element.type] + Math.min(block, 3) * 2 + Math.min(procedure, 2) * 3 + Math.min(detailMatches, 4) * 2) : 0,
-      topicCoverage, reasons: [`topicTokens=${matches}/${topic.length}`, `typeWeight=${typeWeights[element.type]}`, `blockMatches=${block}`, `procedureMatches=${procedure}`] }
-  }).filter(r => r.score > 0).sort((a, b) => b.score - a.score || a.element.elementId.localeCompare(b.element.elementId))
+  // Keep content/genre words (poema, ensayo, pintura). Strip only pedagogical boilerplate.
+  const ranking = rankCurriculum(input.activityTitle, input.description ?? '', activity.id, input.competencyBlock, scope, elements, catalog)
+  const explicitIds = input.selectedCurriculumElementIds
+  const manuallySelected = explicitIds?.map(id => elements.find(e => e.elementId === id && e.scopeId === scope?.id && e.versionId === scope?.versionId)).filter((e): e is RankedElement => Boolean(e)) ?? []
+  if (explicitIds && manuallySelected.length !== explicitIds.length) throw new Error('Elemento curricular ajeno al ámbito.')
   const topCoverage = ranking[0]?.topicCoverage ?? 0
-  const confidence = !scope || topCoverage < 0.6 ? 'LOW' : topCoverage >= 0.85 ? 'HIGH' : 'MEDIUM'
+  const confidence = explicitIds?.length ? 'HIGH' : !scope || topCoverage < 0.6 ? 'LOW' : topCoverage >= 0.85 ? 'HIGH' : 'MEDIUM'
   // Diverse evidence candidates, bounded independently of criterion count.
-  const selected = confidence === 'LOW' ? [] : ranking.filter(r => r.topicCoverage >= 0.6).filter((r, i, all) => all.slice(0, i).filter(p => p.element.type === r.element.type).length < 2).slice(0, 12)
+  const selected = explicitIds ? manuallySelected.map(element => ({ element, topicCoverage: 1, score: 100, reasons: ['teacher-selection'] }))
+    : confidence === 'LOW' ? [] : ranking.filter(r => r.topicCoverage >= 0.6).filter((r, i, all) => all.slice(0, i).filter(p => p.element.type === r.element.type).length < 2).slice(0, 12)
   const selectedRefs = selected.map(({ element: { normalizedText: _text, ...reference } }) => reference)
   const count = band === 'PRIMARY_FIRST' ? (input.maxScore <= 10 ? 3 : 4) : band === 'PRIMARY_SECOND' ? 5 : activity.family === 'SCIENTIFIC' ? 6 : 5
   const candidates = catalog.criterionTemplates.filter(t => (t.area === area || t.area === '*') && t.bands.includes(band)
@@ -73,7 +114,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     && (!r.maxScore || input.maxScore <= r.maxScore) && (!r.evidence || r.evidence.every(e => activity.evidence.includes(e))))
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
   const levelCount = input.levelCount ?? 4
-  const template = catalog.instrumentTemplates.find(t => t.id === rule.instrument)!
+  const chosenInstrument = input.preferredInstrumentType ?? rule.instrument
+  const template = catalog.instrumentTemplates.find(t => t.id === chosenInstrument)!
   const levels = template.descriptors ? catalog.descriptorPatterns.scales[levelCount].map((label, index) => ({ id: `L${levelCount - index}`, label, proportion: (levelCount - index - 1) / (levelCount - 1) })) : []
   const criteria: RecommendationCriterion[] = candidates.map(({ template: criterion }, index) => {
     const relevant = selected.filter(r => overlap(tokens(criterion.keywords.join(' ')), r.element.normalizedText) > 0)
@@ -93,12 +135,12 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       title: criterion.title, description, maxScore: scores[index] / 100, maxScoreUnits: scores[index], sourceType, sourceReferences,
       descriptors: levels.map((level, i) => ({ levelId: level.id, text: `${observable} ${patterns[patternIndexes[i]]}${content?.element.type === 'CONCEPT' ? ` Referente: «${content.element.text}».` : ''}`, scoreUnits: Math.round(scores[index] * level.proportion) })) }
   })
-  return { kind: 'RECOMMENDATION', catalogVersion: catalog.version, instrumentType: rule.instrument, confidence,
+  return { kind: 'RECOMMENDATION', catalogVersion: catalog.version, instrumentType: chosenInstrument, confidence,
     activityType: activity.id, evidenceTypes: [...new Set([...activity.evidence, ...criteria.filter(c => catalog.criterionTemplates.find(t => t.id === c.templateId)?.attitude).map(() => 'ATTITUDE' as const)])],
     participationMode: input.participationMode, curriculumVersionId: scope?.versionId ?? null, curriculumScopeId: scope?.id ?? null,
     selectedCurriculumElements: selectedRefs, criteria, levels, totalScore: input.maxScore, totalScoreUnits: scores.reduce((a, b) => a + b, 0), scoreUnit: 0.01,
     internalTrace: { mappingStatus, reasons: [`band=${band}`, `discipline=${area}`, 'No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.'],
-      ruleId: rule.id, activityTypeOrigin: explicit ? 'EXPLICIT' : detected ? 'DETECTED' : 'DEFAULT',
+      ruleId: input.preferredInstrumentType ? `${rule.id}:TEACHER_OVERRIDE` : rule.id, activityTypeOrigin: explicit ? 'EXPLICIT' : detected.id !== 'OTHER' ? 'DETECTED' : 'DEFAULT',
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
 }

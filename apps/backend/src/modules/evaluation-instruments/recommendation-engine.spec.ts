@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { academicContext, resolveScope, type AcademicContext, type ScopeCandidate } from './curriculum-context'
-import { recommend, distributeScore, type RankedElement } from './recommendation-engine'
+import { recommend, distributeScore, detectActivityType, similarToken, rankCurriculum, type RankedElement } from './recommendation-engine'
 
 const root = resolve(process.cwd(), '../..')
 const cases = JSON.parse(readFileSync(resolve(root, 'data/evaluation-instruments/cases-v1.json'), 'utf8')) as { case: string; level: 'PRIMARY' | 'SECONDARY'; grade: number; code: string; subject: string; exit?: string; activityTitle: string; description?: string; maxScore: number; expectedInstrument: string }[]
@@ -89,6 +89,41 @@ describe('Recomendador con currículo literal completo', () => {
     expect(run(cases[1], { pedagogicalActivityType: 'OBSERVATION' }).result.activityType).toBe('OBSERVATION')
     expect(run(cases[1], { levelCount: 5 }).result.levels.map(l => l.label)).toEqual(evaluationCatalogV1.descriptorPatterns.scales[5])
     expect(() => run(cases[1], { pedagogicalActivityType: 'INVALID' })).toThrow()
+  })
+  it('tolera erratas acotadas sin modificar el título original', () => {
+    for (const [left, right] of [['sitema', 'sistema'], ['respiracoin', 'respiracion'], ['ecositema', 'ecosistema'], ['fraciones', 'fracciones'], ['experimeto', 'experimento']]) expect(similarToken(left, right)).toBe(true)
+    expect(similarToken('sitema', 'poema')).toBe(false)
+    expect(detectActivityType('Experimeto de laboratorio', '').id).toBe('EXPERIMENT')
+    expect(detectActivityType('Experimeto sobre plantas', '').id).toBe('EXPERIMENT')
+    const typo = run(cases[1], { activityTitle: 'Exposición sobre el sitema circulatorio' }).result
+    expect(typo.confidence).toBe('LOW')
+    expect(typo.selectedCurriculumElements).toEqual([])
+  })
+  it('solo selecciona referencias explícitas del scope vigente; conserva la elección de instrumento', () => {
+    const { context, resolution } = run(cases[2])
+    const within = elements.find(element => element.scopeId === resolution.scope!.id)!
+    const result = recommend({ activityTitle: 'Actividad', maxScore: 18.75, participationMode: 'GROUP',
+      selectedCurriculumElementIds: [within.elementId], preferredInstrumentType: 'escala' }, context, resolution.scope, elements, resolution.status, 'DRAFT')
+    expect(result.instrumentType).toBe('escala')
+    expect(result.participationMode).toBe('GROUP')
+    expect(result.selectedCurriculumElements.map(element => element.elementId)).toEqual([within.elementId])
+    expect(result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)).toBe(1875)
+    const foreign = elements.find(element => element.scopeId !== resolution.scope!.id)!
+    expect(() => recommend({ activityTitle: 'Actividad', maxScore: 20, participationMode: 'INDIVIDUAL',
+      selectedCurriculumElementIds: [foreign.elementId] }, context, resolution.scope, elements, resolution.status, 'DRAFT')).toThrow()
+    expect(rankCurriculum('fraciones', '', 'EXERCISE_SET', undefined, resolution.scope, elements).every(item => item.element.scopeId === resolution.scope!.id)).toBe(true)
+  })
+  it('combina título y descripción; una descripción específica rescata un título genérico sin cruzar scope', () => {
+    const fixture = cases[2]
+    const { resolution } = run(fixture)
+    const local: RankedElement = { elementId: 'local', scopeId: resolution.scope!.id, versionId: resolution.scope!.versionId,
+      type: 'CONCEPT', text: 'Fracciones equivalentes', normalizedText: 'fracciones equivalentes', sources: [] }
+    const foreign = { ...local, elementId: 'foreign', scopeId: 'otro-scope' }
+    const ranked = rankCurriculum('Actividad', 'Resolver fraciones equivalentes', 'PROBLEM_SOLVING', undefined, resolution.scope, [foreign, local])
+    expect(ranked.map(item => item.element.elementId)).toEqual(['local'])
+    expect(ranked[0].topicCoverage).toBeGreaterThan(0)
+    const unrelated = rankCurriculum('Actividad', 'Tema desconocido', 'PROBLEM_SOLVING', undefined, resolution.scope, [foreign, local])
+    expect(unrelated).toEqual([])
   })
   it('reparto entero exacto para 10.000 combinaciones', () => {
     for (let units = 1; units <= 10000; units++) expect(distributeScore(units / 100, [5, 5, 4, 3, 3]).reduce((a, b) => a + b, 0)).toBe(units)

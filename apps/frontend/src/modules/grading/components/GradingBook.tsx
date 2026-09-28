@@ -153,8 +153,11 @@ import {
   type CompetencyPeriodId,
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
+import type { InstrumentRecommendation } from '@aula/shared'
+import { alignRecommendationWithFields, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/grading/services/instrumentPreparation'
 
 type GradingBookProps = {
+  sectionSubjectId?: string
   students: StudentGradeRow[]
   teams?: CourseTeam[]
   activities: GradingActivity[]
@@ -293,6 +296,11 @@ type ActivityDraft = {
   evaluationTechnique: string
   instrumentCompleted: boolean
   instrumentFields: Record<string, string>
+  pedagogicalActivityType?: string
+  selectedCurriculumElementIds?: string[]
+  preparedRecommendation?: InstrumentRecommendation
+  preparedFingerprint?: string
+  preparedManuallyEdited?: boolean
   resources: string[]
   planningMoment: string
   observations: string
@@ -341,6 +349,7 @@ const emptyActivityDraft: ActivityDraft = {
   evaluationTechnique: '',
   instrumentCompleted: false,
   instrumentFields: {},
+  pedagogicalActivityType: '',
   resources: [],
   planningMoment: '',
   observations: '',
@@ -349,6 +358,7 @@ const emptyActivityDraft: ActivityDraft = {
 }
 
 export function GradingBook({
+  sectionSubjectId,
   students,
   teams = [],
   activities,
@@ -714,6 +724,12 @@ export function GradingBook({
     const maxScore = Number(activityDraft.maxScore)
     if (validateActivityCompletion(activityDraft).length > 0 || Number.isNaN(maxScore) || maxScore <= 0) return
     const activityType = activityDraft.activityType as Exclude<ActivityDraft['activityType'], ''>
+    const currentFingerprint = preparationFingerprint(activityDraft)
+    if (activityDraft.preparedRecommendation && activityDraft.preparedFingerprint !== currentFingerprint) return
+    const preparedSnapshot = activityDraft.preparedRecommendation
+      ? alignRecommendationWithFields(activityDraft.preparedRecommendation, activityDraft.instrumentFields, maxScore)
+      : undefined
+    if (activityDraft.preparedRecommendation && !preparedSnapshot) return
     const activity = {
       name: activityDraft.name.trim(),
       maxScore,
@@ -726,6 +742,8 @@ export function GradingBook({
       instrumentType: activityDraft.instrumentType || undefined,
       instrumentId: activityDraft.instrumentId,
       instrumentCriteria: activityDraft.instrumentFields,
+      pedagogicalActivityType: preparedSnapshot?.activityType ?? activityDraft.pedagogicalActivityType,
+      instrumentSnapshot: preparedSnapshot ?? undefined,
       evaluationTechnique: activityDraft.evaluationTechnique.trim() || undefined,
       planningMoment: activityDraft.planningMoment as GradingActivity['planningMoment'],
       observations: activityDraft.observations.trim() || undefined,
@@ -764,6 +782,9 @@ export function GradingBook({
       evaluationTechnique: activity.evaluationTechnique ?? '',
       instrumentCompleted: Boolean(activity.instrumentType),
       instrumentFields: activity.instrumentCriteria ?? {},
+      pedagogicalActivityType: activity.pedagogicalActivityType ?? '',
+      preparedRecommendation: activity.instrumentSnapshot,
+      preparedFingerprint: undefined,
       resources: activity.resources ?? [],
       planningMoment: activity.planningMoment ?? '',
       observations: activity.observations ?? '',
@@ -775,6 +796,18 @@ export function GradingBook({
   }
 
   function duplicateActivity(activity: GradingActivity) {
+    if (activity.instrumentSnapshotId) {
+      const blockId = activity.competencyBlockId as CompetencyBlockId
+      setEditingActivityId(null)
+      setActivityDraft({ ...newActivityDraft(blockId), name: `${activity.name} copia`, maxScore: String(activity.maxScore),
+        description: activity.description ?? '', date: activity.date ?? '', activityType: activity.activityType ?? 'individual',
+        pedagogicalActivityType: activity.pedagogicalActivityType ?? '', instrumentType: activity.instrumentType ?? '',
+        competencyBlockWeights: activityCompetencyWeights(activity), evaluationTechnique: activity.evaluationTechnique ?? '',
+        planningMoment: activity.planningMoment ?? '', resources: activity.resources ?? [], teamIds: activity.teamIds ?? [] })
+      setActivityCreateReturnView(detailView ?? { type: 'activity-hub' })
+      setDetailView({ type: 'activity-create', blockId })
+      return
+    }
     const { id: _id, instrumentId: _instrumentId, ...copy } = activity
     onAddActivity({
       ...copy,
@@ -943,6 +976,7 @@ export function GradingBook({
           />
         ) : detailView.type === 'activity-create' && selectedCreateBlock ? (
           <ActivityCreationView
+            sectionSubjectId={sectionSubjectId}
             activityDraft={activityDraft}
             teams={teams}
             hasDraft={Boolean(activityDraft.draftId && isMeaningfulActivityDraft(activityDraft)) && !editingActivityId}
@@ -3757,6 +3791,7 @@ function DraftFilterChip({
 type ActivityCreationStage = 'activity' | 'instrument' | 'review'
 
 function ActivityCreationView(props: {
+  sectionSubjectId?: string
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   hasDraft: boolean
@@ -3773,14 +3808,61 @@ function ActivityCreationView(props: {
   onSaveDraft: () => void
   saving: boolean
 }) {
-  const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving, teams } = props
+  const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving, teams, sectionSubjectId } = props
   const [stage, setStage] = useState<ActivityCreationStage>('activity')
+  const [interpretation, setInterpretation] = useState<ActivityInterpretation | null>(null)
+  const [interpretationBusy, setInterpretationBusy] = useState(false)
+  const [preparing, setPreparing] = useState(false)
+  const [preparationError, setPreparationError] = useState('')
+  const [showAdvancedInstrument, setShowAdvancedInstrument] = useState(false)
   const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
   const { clearHighlight, highlightTarget, showHighlight } = useTransientActivityHighlight()
   const accent = getBlockAccent(block.id)
   const progressMeta = buildActivityDraftMeta(activityDraft, block.id)
   const dataIssues = progressMeta.pendingIssues.filter((issue) => issue.tab === 'activity')
   const instrumentLabel = activityDraft.instrumentType ? instrumentTitle(activityDraft.instrumentType) : 'Instrumento de evaluación'
+  const fingerprint = preparationFingerprint(activityDraft)
+  const stale = Boolean(activityDraft.preparedRecommendation && activityDraft.preparedFingerprint !== fingerprint)
+  const savedSnapshot = Boolean(editingActivityId && activityDraft.preparedRecommendation)
+
+  useEffect(() => {
+    if (!sectionSubjectId || !activityDraft.name.trim() || editingActivityId) { setInterpretation(null); return }
+    const abort = new AbortController()
+    const timer = window.setTimeout(() => {
+      setInterpretationBusy(true)
+      interpretActivity({ sectionSubjectId, activityTitle: activityDraft.name, description: activityDescriptionText(activityDraft.description),
+        pedagogicalActivityType: activityDraft.pedagogicalActivityType || undefined, competencyBlock: block.id }, abort.signal)
+        .then(value => { if (!abort.signal.aborted) setInterpretation(value) })
+        .catch(() => { if (!abort.signal.aborted) setInterpretation(null) })
+        .finally(() => { if (!abort.signal.aborted) setInterpretationBusy(false) })
+    }, 450)
+    return () => { window.clearTimeout(timer); abort.abort() }
+  }, [sectionSubjectId, activityDraft.name, activityDraft.description, activityDraft.pedagogicalActivityType, block.id, editingActivityId])
+
+  async function prepare() {
+    if (!sectionSubjectId || !activityDraft.name.trim() || !Number(activityDraft.maxScore) || !activityDraft.activityType) {
+      setStage('activity'); setPreparationError('Completa el nombre, la modalidad y el valor en puntos.'); return
+    }
+    setPreparing(true); setPreparationError('')
+    try {
+      const proposal = await prepareInstrument({ sectionSubjectId, activityTitle: activityDraft.name,
+        description: activityDescriptionText(activityDraft.description),
+        participationMode: activityDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
+        pedagogicalActivityType: activityDraft.pedagogicalActivityType || undefined,
+        maxScore: Number(activityDraft.maxScore), competencyBlock: block.id,
+        curriculumVersionId: interpretation?.curriculumVersionId ?? undefined,
+        preferredInstrumentType: activityDraft.instrumentType || undefined,
+        selectedCurriculumElementIds: activityDraft.selectedCurriculumElementIds?.length ? activityDraft.selectedCurriculumElementIds : undefined })
+      const next = { ...activityDraft, instrumentType: proposal.instrumentType, pedagogicalActivityType: proposal.activityType,
+        instrumentFields: recommendationToFields(proposal, activityDraft.name), instrumentCompleted: true,
+        preparedRecommendation: proposal, preparedManuallyEdited: false }
+      onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
+      setStage('instrument'); setShowAdvancedInstrument(false)
+    } catch (error) {
+      setPreparationError(error instanceof Error ? error.message : 'No se pudo preparar el instrumento. Puedes completarlo manualmente.')
+      setStage('instrument')
+    } finally { setPreparing(false) }
+  }
 
   function handleDraftChange(draft: ActivityDraft) {
     const changedInstrument = draft.instrumentType !== activityDraft.instrumentType
@@ -3790,6 +3872,8 @@ function ActivityCreationView(props: {
       instrumentCompleted: changedInstrument ? false : draft.instrumentCompleted,
       instrumentFields: changedInstrument ? {} : draft.instrumentFields,
       instrumentId: changedInstrument ? undefined : draft.instrumentId,
+      preparedRecommendation: changedInstrument ? undefined : draft.preparedRecommendation,
+      preparedFingerprint: changedInstrument ? undefined : draft.preparedFingerprint,
     })
   }
 
@@ -3818,8 +3902,13 @@ function ActivityCreationView(props: {
 
   function continueFlow() {
     if (stage === 'activity') {
-      setStage('instrument')
+      if (editingActivityId || !sectionSubjectId) setStage('instrument')
+      else if (!activityDraft.preparedRecommendation || stale) {
+        if (stale && activityDraft.preparedManuallyEdited) { setStage('instrument'); setPreparationError('Cambiaste la actividad después de editar el instrumento. Confirma la regeneración para continuar.'); return }
+        void prepare()
+      } else setStage('instrument')
     } else if (stage === 'instrument') {
+      if (stale) { setPreparationError('El instrumento necesita actualizarse antes de guardar.'); return }
       setStage('review')
     } else {
       saveActivity()
@@ -3886,15 +3975,22 @@ function ActivityCreationView(props: {
           </nav>
 
           {stage === 'activity' ? (
-            <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} />
+            <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} interpretation={interpretation} interpretationBusy={interpretationBusy} />
           ) : null}
+          {savedSnapshot ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">Este instrumento ya tiene una versión guardada. Para cambiar su estructura, duplica la actividad y prepara uno nuevo.</div> : null}
 
           {stage === 'instrument' ? (
             <div className="space-y-3">
               <div className={cn('rounded-xl border px-4 py-3', accent.card)}>
-                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Instrumento seleccionado: {instrumentLabel}</p>
-                <p className="mt-1 text-sm text-muted-foreground">Configura los criterios y niveles que utilizarás para evaluar esta actividad.</p>
+                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{activityDraft.preparedRecommendation ? 'Instrumento preparado' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{activityDraft.preparedRecommendation ? 'Revisa los criterios. Puedes ajustar cada uno o abrir la configuración avanzada.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
               </div>
+              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground">{preparationError} <Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => void prepare()} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button></div> : null}
+              {!activityDraft.preparedRecommendation && !activityDraft.instrumentType ? <label className="block text-sm font-semibold text-foreground">Si prefieres continuar manualmente, selecciona el instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => handleDraftChange({ ...activityDraft, instrumentType: event.target.value })}><option value="">Seleccionar</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label> : null}
+              {stale && !preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">La actividad cambió. Actualiza el instrumento antes de guardar. {activityDraft.preparedManuallyEdited ? 'Se reemplazarán tus cambios manuales solo si lo confirmas.' : null} <Button type="button" size="sm" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar</Button></div> : null}
+              {activityDraft.preparedRecommendation && !stale ? <div className="rounded-xl border border-border bg-card p-4"><p className="text-sm font-semibold text-foreground">{activityDraft.preparedRecommendation.criteria.length} criterios · {activityDraft.maxScore} puntos</p><div className="mt-3 space-y-2">{activityDraft.preparedRecommendation.criteria.map((criterion, index) => <div key={criterion.id} className="rounded-lg border border-border p-3"><label className="text-xs font-medium text-muted-foreground">Criterio {index + 1}<Input className="mt-1" value={activityDraft.instrumentFields[`${activityDraft.instrumentType}:criterion:${index}`] ?? criterion.title} onChange={event => handleDraftChange({ ...activityDraft, preparedManuallyEdited: true, instrumentFields: { ...activityDraft.instrumentFields, [`${activityDraft.instrumentType}:criterion:${index}`]: event.target.value } })} /></label><label className="mt-2 block text-xs font-medium text-muted-foreground">Qué se observará<Textarea className="mt-1" value={activityDraft.instrumentFields[`${activityDraft.instrumentType}:description:${index}`] ?? criterion.description} onChange={event => handleDraftChange({ ...activityDraft, preparedManuallyEdited: true, instrumentFields: { ...activityDraft.instrumentFields, [`${activityDraft.instrumentType}:description:${index}`]: event.target.value, ...(activityDraft.instrumentType === 'lista-ponderada' ? { [`lista-ponderada:indicator:${index}`]: event.target.value } : {}) } })} /></label><p className="mt-1 text-xs font-medium text-foreground">{criterion.maxScore} puntos</p></div>)}</div></div> : null}
+              {activityDraft.preparedRecommendation ? <Button type="button" variant="outline" onClick={() => setShowAdvancedInstrument(value => !value)}>{showAdvancedInstrument ? 'Ocultar configuración avanzada' : 'Configuración avanzada'}</Button> : null}
+              {(!activityDraft.preparedRecommendation || showAdvancedInstrument) ?
               <InstrumentPreview
                 key={activityDraft.instrumentType}
                 accent={accent}
@@ -3906,8 +4002,8 @@ function ActivityCreationView(props: {
                 instrumentType={activityDraft.instrumentType}
                 maxScore={Number(activityDraft.maxScore) || 0}
                 onCompletedChange={(instrumentCompleted) => handleDraftChange({ ...activityDraft, instrumentCompleted })}
-                onFieldsChange={(instrumentFields) => handleDraftChange({ ...activityDraft, instrumentFields })}
-              />
+                onFieldsChange={(instrumentFields) => handleDraftChange({ ...activityDraft, preparedManuallyEdited: true, instrumentFields })}
+              /> : null}
             </div>
           ) : null}
 
@@ -3919,7 +4015,7 @@ function ActivityCreationView(props: {
 
         <ActivityProgressCard
           cancelHint={editingActivityId ? 'Los cambios no guardados de esta edición se descartarán.' : 'Tu trabajo se conserva automáticamente como borrador.'}
-          continueDisabled={stage === 'review' && saving}
+          continueDisabled={savedSnapshot || preparing || (stage === 'review' && saving) || (stage !== 'activity' && stale)}
           continueLabel={continueLabel}
           meta={progressMeta}
           onCancel={onBack}
@@ -4027,12 +4123,22 @@ function CompetencyDistributionField({ activityDraft, highlight, onChangeDraft }
   )
 }
 
-function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft }: {
+const pedagogicalActivityLabels: Record<string, string> = {
+  EXPOSITION: 'Exposición', ORAL_PRESENTATION: 'Presentación oral', DEBATE: 'Debate', EXPERIMENT: 'Experimento',
+  LAB_PRACTICE: 'Práctica de laboratorio', WRITTEN_PRODUCTION: 'Producción escrita', ESSAY: 'Ensayo', REPORT: 'Informe',
+  RESEARCH: 'Investigación', PROJECT: 'Proyecto', PROBLEM_SOLVING: 'Resolución de problemas', EXERCISE_SET: 'Ejercicios',
+  CONCEPT_MAP: 'Mapa conceptual', PORTFOLIO: 'Portafolio', ARTISTIC_PRODUCTION: 'Producción artística',
+  PERFORMANCE: 'Representación', MOTOR_SPORTS_PRACTICE: 'Práctica motriz', OBSERVATION: 'Observación', QUIZ_TEST: 'Prueba', OTHER: 'Otra actividad',
+}
+
+function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, interpretation, interpretationBusy }: {
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
   highlightTarget: ActivityCompletionTarget | null
   onChangeDraft: (draft: ActivityDraft) => void
+  interpretation: ActivityInterpretation | null
+  interpretationBusy: boolean
 }) {
   const highlight = (target: ActivityCompletionTarget) => highlightTarget === target ? transientHighlightClass : ''
   return (
@@ -4058,8 +4164,10 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
       <CreationFormSection icon={<Target className="size-4" />} number={4} title="Evaluación" accent={accent}>
         <div className="grid gap-3 md:grid-cols-2">
           <label className={cn('space-y-1.5 text-sm font-bold', highlight('evaluationTechnique'))}>Técnica de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })}><option value="" disabled>Seleccionar técnica</option>{evaluationTechniqueOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</Select></label>
-          <label className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Instrumento de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}><option value="" disabled>Seleccionar instrumento</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
+          <label className="space-y-1.5 text-sm font-bold">Tipo de actividad<Select className="h-11" value={activityDraft.pedagogicalActivityType ?? ''} onChange={(event) => onChangeDraft({ ...activityDraft, pedagogicalActivityType: event.target.value })}><option value="">{interpretation?.suggestedActivityType && interpretation.suggestedActivityType !== 'OTHER' ? `Sugerido: ${pedagogicalActivityLabels[interpretation.suggestedActivityType]}` : 'Detectar a partir de la descripción'}</option>{Object.entries(pedagogicalActivityLabels).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Select></label>
+          <label className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Instrumento de evaluación <span className="text-xs font-normal text-muted-foreground">(opcional)</span><Select className="h-11" value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}><option value="">Dejar que AulaBase elija</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
         </div>
+        {activityDraft.name.trim() ? <div className="mt-3 rounded-lg border border-border bg-muted/20 p-3 text-xs text-muted-foreground" aria-live="polite">{interpretationBusy ? 'AulaBase está revisando la actividad…' : interpretation?.message ?? 'AulaBase preparará un instrumento cuando continúes.'}{interpretation?.curriculumCandidates.length ? <div className="mt-2 space-y-1"><p className="font-semibold text-foreground">Posibles contenidos para revisar:</p>{interpretation.curriculumCandidates.slice(0, 3).map(candidate => <label key={candidate.elementId} className="flex items-start gap-2"><input type="checkbox" className="mt-0.5" checked={activityDraft.selectedCurriculumElementIds?.includes(candidate.elementId) ?? false} onChange={event => onChangeDraft({ ...activityDraft, selectedCurriculumElementIds: event.target.checked ? [...(activityDraft.selectedCurriculumElementIds ?? []), candidate.elementId] : (activityDraft.selectedCurriculumElementIds ?? []).filter(id => id !== candidate.elementId) })} /><span>{candidate.text}</span></label>)}</div> : null}</div> : null}
       </CreationFormSection>
 
       <CreationFormSection icon={<Users className="size-4" />} number={5} title="Modalidad" accent={accent}>
@@ -4200,12 +4308,14 @@ function ActivityReview({ activityDraft, issues }: { activityDraft: ActivityDraf
     { icon: <Clock3 className="size-4" />, label: 'Momento de la clase', value: activityDraft.planningMoment ? activityMomentTitle(activityDraft.planningMoment) : 'Sin definir' },
     { icon: <Tags className="size-4" />, label: 'Técnica de evaluación', value: formatActivityTechnique(activityDraft.evaluationTechnique) },
     { icon: <ClipboardList className="size-4" />, label: 'Instrumento de evaluación', value: instrumentTitle(instrumentType) },
+    { icon: <BookOpen className="size-4" />, label: 'Tipo de actividad', value: pedagogicalActivityLabels[activityDraft.pedagogicalActivityType ?? ''] ?? 'Sin clasificar' },
     { icon: <Users className="size-4" />, label: 'Modalidad de la actividad', value: activityDraft.activityType === 'group' ? 'Grupal' : activityDraft.activityType === 'individual' ? 'Individual' : 'Sin definir' },
   ]
   return (
     <div className="space-y-3">
       <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-3"><div><h3 className={cn('font-black', accent.text)}>Revisión final</h3><p className="mt-0.5 text-xs text-muted-foreground">Verifica que toda la información esté correcta antes de guardar la actividad.</p></div><Badge tone={ready ? 'success' : 'warning'}>{ready ? 'Lista para guardar' : `${issues.length} pendiente${issues.length === 1 ? '' : 's'}`}</Badge></div>
+        {activityDraft.preparedRecommendation ? <p className="mt-2 text-xs text-muted-foreground">{activityDraft.preparedRecommendation.criteria.length} criterios preparados · {activityDraft.maxScore} puntos · {activityDraft.selectedCurriculumElementIds?.length ? 'Contenidos seleccionados por ti' : activityDraft.preparedRecommendation.confidence === 'LOW' ? 'Basado en la actividad, sin atribución curricular' : 'Referentes sugeridos para revisión'}</p> : null}
         <dl className="mt-3 overflow-hidden rounded-xl border border-border bg-card">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4">
             {summaryItems.slice(0, 4).map((item) => <div key={item.label} className="flex min-w-0 items-center gap-3 border-b border-border px-3 py-3 sm:border-r lg:border-b-0 last:border-r-0"><span className="grid size-8 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-inset ring-blue-100">{item.icon}</span><div className="min-w-0"><dt className="truncate text-[9px] font-bold text-muted-foreground">{item.label}</dt><dd className="truncate text-xs font-black text-foreground" title={item.value}>{item.value}</dd></div></div>)}
@@ -4628,14 +4738,14 @@ function InstrumentPreview({
       const automaticPoints = distributeScore(maxScore, rubricCriteria)
       for (let index = 0; index < rubricCriteria; index += 1) {
         const pointsKey = instrumentFieldKey('rubrica', 'points', index)
-        next[pointsKey] = String(automaticPoints[index])
+        if (next['rubrica:meta:prepared'] !== 'true') next[pointsKey] = String(automaticPoints[index])
       }
       for (let index = 0; index < rubricLevels; index += 1) {
         const score = rubricLevels - index
         const nameKey = instrumentFieldKey('rubrica', 'level-name', score)
         if (!next[nameKey]) next[nameKey] = rubricDefaultLevelNames(rubricLevels)[index]
         const levelPointsKey = instrumentFieldKey('rubrica', 'level-points', score)
-        if (next['rubrica:meta:customLevelPoints'] !== 'true' || !next[levelPointsKey]) next[levelPointsKey] = String(defaultRubricLevelPoints(automaticPoints[0] || maxScore, rubricLevels)[index])
+        if ((!next[levelPointsKey] || next['rubrica:meta:customLevelPoints'] !== 'true') && next['rubrica:meta:prepared'] !== 'true') next[levelPointsKey] = String(defaultRubricLevelPoints(automaticPoints[0] || maxScore, rubricLevels)[index])
       }
     }
     if (instrumentType === 'escala') {
@@ -4643,7 +4753,7 @@ function InstrumentPreview({
       next['escala:meta:levelCount'] = String(scaleLevels)
       distributeScore(maxScore, scaleCriteria).forEach((points, index) => {
         const key = instrumentFieldKey('escala', 'points', index)
-        next[key] = String(points)
+        if (next['escala:meta:prepared'] !== 'true') next[key] = String(points)
       })
       const scaleDefaults = scaleTemplateLevels(next['escala:meta:template'] || 'frecuencia')
       for (let index = 0; index < scaleLevels; index += 1) {

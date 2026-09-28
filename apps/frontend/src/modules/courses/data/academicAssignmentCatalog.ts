@@ -284,11 +284,9 @@ export function findCatalogItem<T extends { id: string; name: string; code?: str
 
 export function attachExistingSubjectIds(options: SubjectOption[], subjects: Subject[]): SubjectOption[] {
   return options.map((option) => {
-    const existing = subjects.find((subject) => {
-      const sameName = normalizeAcademicText(subject.name) === normalizeAcademicText(option.name)
-      const sameCode = normalizeAcademicText(subject.code) === normalizeAcademicText(option.code)
-      return sameName || sameCode
-    })
+    // Homonymous optatives must never be bound to a subject from another exit.
+    const existing = subjects.find((subject) => normalizeAcademicText(subject.code) === normalizeAcademicText(option.code)
+      || (!option.code.startsWith('OPT-') && !subject.code.startsWith('OPT-') && normalizeAcademicText(subject.name) === normalizeAcademicText(option.name)))
     return existing ? { ...option, id: existing.id } : option
   })
 }

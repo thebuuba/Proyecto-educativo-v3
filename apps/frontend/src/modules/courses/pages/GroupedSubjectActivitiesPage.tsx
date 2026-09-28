@@ -40,6 +40,7 @@ import { cn } from '@/utils/cn'
 import { getSubjectPalette } from '@/utils/subjectPalette'
 
 import { ActivityBlockPickerDialog } from './CoursesPageBase'
+import { calendarDate } from '../data/calendarDate'
 
 type SubjectActivityStatus = 'pending' | 'partial' | 'graded'
 type BlockFilter = 'all' | string
@@ -284,4 +285,4 @@ function ActivityStatusBadge({ status }: { status: SubjectActivityStatus }) {
 function activityInstrumentLabel(value?: string) { return ({ rubrica: 'Rúbrica', 'lista-cotejo': 'Lista de cotejo', escala: 'Escala estimativa', 'lista-ponderada': 'Lista ponderada' } as Record<string, string>)[value ?? ''] ?? value ?? 'Sin instrumento' }
 function buildCreateHref(assignmentId: string, courseId: string, competencyBlockId: string, activityDraftId?: string) { return `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, action: 'create-activity', competencyBlockId, ...(activityDraftId ? { activityDraftId } : {}), origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
 function buildActivityHref(assignmentId: string, courseId: string, activityId: string, mode: 'edit' | 'evaluate') { return `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, activityId, activityMode: mode, origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
-function formatShortDate(value?: string | null) { if (!value) return 'Sin fecha'; const date = new Date(value); if (Number.isNaN(date.getTime())) return value; return date.toLocaleDateString('es-DO', { day: 'numeric', month: 'long', year: 'numeric' }) }
+function formatShortDate(value?: string | null) { if (!value) return 'Sin fecha'; const date = calendarDate(value); if (Number.isNaN(date.getTime())) return value; return date.toLocaleDateString('es-DO', { day: 'numeric', month: 'long', year: 'numeric' }) }

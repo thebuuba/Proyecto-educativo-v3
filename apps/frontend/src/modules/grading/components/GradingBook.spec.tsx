@@ -5,6 +5,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import type { GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { ActivitySavedDialog, GradingBook, activityRubricConfiguration } from './GradingBook'
+import { api } from '@/services/apiClient'
+import type { InstrumentRecommendation } from '@aula/shared'
 
 const students: StudentGradeRow[] = [
   {
@@ -141,6 +143,52 @@ describe('GradingBook', () => {
     expect(primaryBlock).toBeDisabled()
     await user.click(screen.getByRole('checkbox', { name: /Bloque 2/i }))
     expect(screen.getByText('¿Cómo se distribuye la calificación?')).toBeInTheDocument()
+  })
+
+  it('prepara un instrumento resumido dentro del creador existente', async () => {
+    const proposal: InstrumentRecommendation = { kind: 'RECOMMENDATION', catalogVersion: 'evaluation-2026.1',
+      instrumentType: 'rubrica', confidence: 'LOW', activityType: 'EXPOSITION', evidenceTypes: ['PERFORMANCE'],
+      participationMode: 'INDIVIDUAL', curriculumVersionId: null, curriculumScopeId: null, selectedCurriculumElements: [],
+      criteria: [{ id: 'c1', title: 'Comunicación', description: 'Explica con claridad.', maxScore: 20, maxScoreUnits: 2000,
+        sourceType: 'ACTIVITY_TEMPLATE', sourceReferences: [], templateId: 'communication',
+        descriptors: [{ levelId: 'L4', text: 'Explica con mucha claridad.', scoreUnits: 2000 }, { levelId: 'L3', text: 'Explica con claridad.', scoreUnits: 1333 },
+          { levelId: 'L2', text: 'Explica parcialmente.', scoreUnits: 667 }, { levelId: 'L1', text: 'Requiere ayuda.', scoreUnits: 0 }] }],
+      levels: [{ id: 'L4', label: 'Excelente', proportion: 1 }, { id: 'L3', label: 'Bien', proportion: 2 / 3 },
+        { id: 'L2', label: 'En proceso', proportion: 1 / 3 }, { id: 'L1', label: 'Inicio', proportion: 0 }],
+      totalScore: 20, totalScoreUnits: 2000, scoreUnit: 0.01,
+      internalTrace: { mappingStatus: 'NO_PUBLISHED_VERSION', reasons: [], ruleId: 'x', activityTypeOrigin: 'DETECTED', ranking: [],
+        curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] } }
+    const post = vi.spyOn(api, 'post').mockImplementation(async path => path.includes('/interpret') ? {
+      suggestedActivityType: 'EXPOSITION', activityType: 'EXPOSITION', activityTypes: ['EXPOSITION'], curriculumVersionId: null,
+      curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: 'Sin referente literal.',
+    } as never : proposal as never)
+    const user = userEvent.setup()
+    renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Exposición sobre el sistema respiratorio')
+    await user.type(screen.getByPlaceholderText('20'), '20')
+    await user.click(screen.getByRole('button', { name: /Individual/ }))
+    await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
+    await waitFor(() => expect(screen.getByText(/Instrumento preparado:/)).toBeInTheDocument())
+    expect(screen.getByText('1 criterios · 20 puntos')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Configuración avanzada' })).toBeInTheDocument()
+    expect(screen.queryByText('Construye tu rúbrica')).not.toBeInTheDocument()
+    expect(post).toHaveBeenCalledWith('/evaluation-instruments/recommend', expect.objectContaining({ activityTitle: 'Exposición sobre el sistema respiratorio', maxScore: 20 }))
+    post.mockRestore()
+  })
+
+  it('mantiene disponible el constructor manual si falla la recomendación', async () => {
+    const post = vi.spyOn(api, 'post').mockRejectedValue(new Error('Sin conexión de prueba'))
+    const user = userEvent.setup()
+    renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Exposición de prueba')
+    await user.type(screen.getByPlaceholderText('20'), '20')
+    await user.click(screen.getByRole('button', { name: /Individual/ }))
+    await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
+    await waitFor(() => expect(screen.getByText('Sin conexión de prueba')).toBeInTheDocument())
+    expect(screen.getByText(/Si prefieres continuar manualmente/)).toBeInTheDocument()
+    await user.selectOptions(screen.getByLabelText(/Si prefieres continuar manualmente/), 'lista-cotejo')
+    expect(screen.getByText(/Construye el instrumento que utilizarás/)).toBeInTheDocument()
+    post.mockRestore()
   })
 
   it('no expone borradores guardados dentro del hub de Evaluación', () => {

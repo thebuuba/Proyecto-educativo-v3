@@ -80,6 +80,27 @@ describe('API service security and version policy', () => {
     expect(result.internalTrace.mappingStatus).toBe('CONFLICT')
     expect(result.selectedCurriculumElements).toEqual([])
   })
+  it('interpreta sin crear instrumento ni inventar una coincidencia curricular', async () => {
+    const result = await new EvaluationInstrumentsService().interpret(user, { sectionSubjectId: input.sectionSubjectId,
+      activityTitle: 'Exposición sobre el sistema respiratorio', curriculumVersionId: input.curriculumVersionId })
+    expect(result.suggestedActivityType).toBe('EXPOSITION')
+    expect(result.curriculumMatch).toBe('NONE')
+    expect(result.curriculumCandidates).toEqual([])
+    expect(mocks.sectionSubject.findFirst).toHaveBeenCalledTimes(1)
+  })
+  it('la interpretación local puede usar DRAFT; recommend sin versión sigue limitado a PUBLISHED', async () => {
+    mocks.curriculumVersion.findFirst.mockImplementation(async ({ where }) => where.status === 'DRAFT'
+      ? { id: input.curriculumVersionId, level: 'PRIMARY', status: 'DRAFT' } : null)
+    const interpretation = await new EvaluationInstrumentsService().interpret(user, { sectionSubjectId: input.sectionSubjectId,
+      activityTitle: 'Actividad de ciencias' })
+    expect(interpretation.curriculumVersionId).toBe(input.curriculumVersionId)
+    const recommendation = await new EvaluationInstrumentsService().recommend(user, { ...input, curriculumVersionId: undefined })
+    expect(recommendation.curriculumVersionId).toBeNull()
+  })
+  it('rechaza una selección explícita fuera del contexto autorizado', async () => {
+    await expect(new EvaluationInstrumentsService().recommend(user, { ...input,
+      selectedCurriculumElementIds: ['f514ddf8-5fc0-5e85-a3d9-7ab344fea577'] })).rejects.toThrow('ajeno al ámbito')
+  })
   it('catálogo ausente o alterado no se usa silenciosamente', async () => {
     mocks.evaluationCatalogRelease.findUnique.mockResolvedValue(null)
     await expect(new EvaluationInstrumentsService().recommend(user, input)).rejects.toThrow('Falta instalar')

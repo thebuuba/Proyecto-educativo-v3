@@ -102,6 +102,8 @@ model School {
   gradesRecords         GradesRecord[]
   evaluationActivities  EvaluationActivity[]
   evaluationInstruments EvaluationInstrument[]
+  instrumentSnapshots EvaluationInstrumentSnapshot[]
+  teacherInstrumentPreferences TeacherInstrumentPreference[]
   activityEvidences     EvaluationActivityEvidence[]
   activityGroups        EvaluationActivityGroup[]
   activityGroupMembers  EvaluationActivityGroupMember[]
@@ -204,6 +206,7 @@ model AppUser {
   teacherJournalEntries         TeacherJournalEntry[]
   subjectResources              SubjectResource[]
   onboardingTourProgress        OnboardingTourProgress[]
+  teacherInstrumentPreferences  TeacherInstrumentPreference[]
 
   @@map("app_users")
 }
@@ -397,6 +400,7 @@ model CurriculumVersion {
   elements  CurriculumElement[]
   relations CurriculumElementRelation[]
   spans     CurriculumSourceSpan[]
+  instrumentSnapshots EvaluationInstrumentSnapshot[]
 
   @@map("curriculum_versions")
 }
@@ -437,6 +441,8 @@ model CurriculumScope {
   version  CurriculumVersion          @relation(fields: [versionId], references: [id])
   elements CurriculumElement[]
   mappings CurriculumSubjectMapping[]
+  instrumentSnapshots EvaluationInstrumentSnapshot[]
+  teacherInstrumentPreferences TeacherInstrumentPreference[]
 
   @@unique([versionId, stableKey])
   @@unique([id, versionId])
@@ -462,6 +468,7 @@ model CurriculumElement {
   outgoing      CurriculumElementRelation[] @relation("CurriculumRelationFrom")
   incoming      CurriculumElementRelation[] @relation("CurriculumRelationTo")
   sourceSpans   CurriculumSourceSpan[]
+  snapshotSources EvaluationSnapshotSource[]
 
   @@unique([versionId, stableKey])
   @@unique([id, versionId])
@@ -806,6 +813,7 @@ model GradesRecord {
   academicPeriodId     String            @map("academic_period_id") @db.Uuid
   evaluationActivityId String?           @map("evaluation_activity_id") @db.Uuid
   instrumentResult     Json?             @map("instrument_result")
+  instrumentSnapshotId String?           @map("instrument_snapshot_id") @db.Uuid
   assessmentName       String            @map("assessment_name")
   score                Decimal           @db.Decimal(8, 2)
   maxScore             Decimal           @default(100) @map("max_score") @db.Decimal(8, 2)
@@ -822,11 +830,13 @@ model GradesRecord {
   sectionSubject      SectionSubject       @relation(fields: [sectionSubjectId], references: [id])
   academicPeriod      AcademicPeriod       @relation(fields: [academicPeriodId], references: [id])
   evaluationActivity  EvaluationActivity?  @relation(fields: [evaluationActivityId], references: [id])
+  instrumentSnapshot  EvaluationInstrumentSnapshot? @relation(fields: [instrumentSnapshotId], references: [id])
   recorder            AppUser?             @relation(fields: [recordedBy], references: [id])
   pedagogicalRecovery PedagogicalRecovery?
 
   @@index([schoolId, sectionSubjectId, academicPeriodId])
   @@index([evaluationActivityId])
+  @@index([instrumentSnapshotId])
   @@index([enrollmentId, academicPeriodId])
   @@unique([enrollmentId, evaluationActivityId], map: "grades_records_enrollment_activity_key")
   @@map("grades_records")
@@ -840,6 +850,8 @@ model EvaluationActivity {
   academicPeriodId     String       @map("academic_period_id") @db.Uuid
   planningEntryId      String?      @map("planning_entry_id") @db.Uuid
   instrumentId         String?      @map("instrument_id") @db.Uuid
+  instrumentSnapshotId String?      @unique @map("instrument_snapshot_id") @db.Uuid
+  pedagogicalActivityType String?   @map("pedagogical_activity_type")
   competencyBlockId    String       @map("competency_block_id")
   competencyBlockWeights Json       @default("{}") @map("competency_block_weights")
   planningMoment       String?      @map("planning_moment")
@@ -866,6 +878,7 @@ model EvaluationActivity {
   academicPeriod AcademicPeriod               @relation(fields: [academicPeriodId], references: [id])
   planningEntry  PlanningEntry?               @relation(fields: [planningEntryId], references: [id])
   instrument     EvaluationInstrument?        @relation(fields: [instrumentId], references: [id])
+  instrumentSnapshot EvaluationInstrumentSnapshot? @relation(fields: [instrumentSnapshotId], references: [id])
   creator        AppUser?                     @relation(fields: [createdBy], references: [id])
   gradesRecords  GradesRecord[]
   evidences      EvaluationActivityEvidence[]
@@ -930,9 +943,70 @@ model EvaluationInstrument {
 
   school     School               @relation(fields: [schoolId], references: [id])
   activities EvaluationActivity[]
+  snapshot EvaluationInstrumentSnapshot?
+  teacherPreferences TeacherInstrumentPreference[]
 
   @@index([schoolId, type])
   @@map("evaluation_instruments")
+}
+
+model EvaluationInstrumentSnapshot {
+  id String @id @default(uuid()) @db.Uuid
+  schoolId String @map("school_id") @db.Uuid
+  instrumentId String @unique @map("instrument_id") @db.Uuid
+  versionNo Int @default(1) @map("version_no")
+  payload Json
+  curriculumVersionId String? @map("curriculum_version_id") @db.Uuid
+  curriculumScopeId String? @map("curriculum_scope_id") @db.Uuid
+  catalogVersion String @map("catalog_version")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  school School @relation(fields: [schoolId], references: [id])
+  instrument EvaluationInstrument @relation(fields: [instrumentId], references: [id])
+  curriculumVersion CurriculumVersion? @relation(fields: [curriculumVersionId], references: [id])
+  curriculumScope CurriculumScope? @relation(fields: [curriculumScopeId, curriculumVersionId], references: [id, versionId])
+  activities EvaluationActivity[]
+  gradesRecords GradesRecord[]
+  sources EvaluationSnapshotSource[]
+
+  @@index([schoolId, createdAt])
+  @@index([curriculumScopeId, curriculumVersionId])
+  @@map("evaluation_instrument_snapshots")
+}
+
+model EvaluationSnapshotSource {
+  snapshotId String @map("snapshot_id") @db.Uuid
+  elementId String @map("element_id") @db.Uuid
+  versionId String @map("version_id") @db.Uuid
+
+  snapshot EvaluationInstrumentSnapshot @relation(fields: [snapshotId], references: [id])
+  element CurriculumElement @relation(fields: [elementId, versionId], references: [id, versionId])
+
+  @@id([snapshotId, elementId])
+  @@index([elementId, versionId])
+  @@map("evaluation_snapshot_sources")
+}
+
+model TeacherInstrumentPreference {
+  id String @id @default(uuid()) @db.Uuid
+  schoolId String @map("school_id") @db.Uuid
+  teacherId String @map("teacher_id") @db.Uuid
+  curriculumScopeId String? @map("curriculum_scope_id") @db.Uuid
+  activityType String @map("activity_type")
+  instrumentType String @map("instrument_type")
+  criterionTemplateIds Json @default("[]") @map("criterion_template_ids")
+  useCount Int @default(1) @map("use_count")
+  acceptedInstrumentId String @map("accepted_instrument_id") @db.Uuid
+  lastUsedAt DateTime @default(now()) @map("last_used_at")
+
+  school School @relation(fields: [schoolId], references: [id])
+  teacher AppUser @relation(fields: [teacherId], references: [id])
+  curriculumScope CurriculumScope? @relation(fields: [curriculumScopeId], references: [id])
+  acceptedInstrument EvaluationInstrument @relation(fields: [acceptedInstrumentId], references: [id])
+
+  @@unique([schoolId, teacherId, curriculumScopeId, activityType, instrumentType])
+  @@index([schoolId, teacherId, lastUsedAt(sort: Desc)])
+  @@map("teacher_instrument_preferences")
 }
 
 model EvaluationActivityEvidence {

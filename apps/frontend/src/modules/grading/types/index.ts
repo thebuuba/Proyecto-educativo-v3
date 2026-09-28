@@ -1,4 +1,5 @@
 import type { GradeRecordStatus } from '@/types/domain'
+import type { InstrumentRecommendation } from '@aula/shared'
 
 export type SectionSubjectOption = {
   id: string
@@ -40,6 +41,7 @@ export type GradeRecordRow = {
   assessmentName: string
   status: GradeRecordStatus | null
   evaluationActivityId?: string | null
+  instrumentSnapshotId?: string | null
   instrumentResult?: EvaluatedInstrumentResult | null
 }
 
@@ -49,6 +51,9 @@ export type EvaluatedInstrumentResult = {
   criterionScores: number[]
   completedAt: string
   observation?: string
+  instrumentSnapshotId?: string
+  snapshotVersion?: number
+  criterionSnapshots?: Array<{ id: string; title: string; description: string; maxScoreUnits: number; selectedDescriptor: { text: string; scoreUnits: number } | null; scoreUnits: number }>
 }
 
 export type GradingActivity = {
@@ -63,6 +68,9 @@ export type GradingActivity = {
   teacherRole?: string
   instrumentType?: string
   instrumentId?: string
+  instrumentSnapshotId?: string
+  instrumentSnapshot?: InstrumentRecommendation
+  pedagogicalActivityType?: string
   instrumentCriteria?: Record<string, string>
   evaluationTechnique?: string
   observations?: string

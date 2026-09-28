@@ -128,7 +128,7 @@ export class GradingController {
   @Post('activities')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   saveActivity(@CurrentUser() user: AuthenticatedUser, @Body() dto: SaveEvaluationActivityDto) {
-    return this.gradingService.saveActivity(user.schoolId, user.id, dto)
+    return this.gradingService.saveActivity(user.schoolId, user.id, dto, user.roles)
   }
 
   @Post('activities/:id/link-planning')

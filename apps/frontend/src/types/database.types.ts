@@ -958,6 +958,8 @@ export type Database = {
       }
       evaluation_activities: {
         Row: {
+          pedagogical_activity_type: string | null
+          instrument_snapshot_id: string | null
           academic_period_id: string
           activity_date: string | null
           activity_type: string
@@ -986,6 +988,8 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          pedagogical_activity_type?: string | null
+          instrument_snapshot_id?: string | null
           academic_period_id: string
           activity_date?: string | null
           activity_type?: string
@@ -1014,6 +1018,8 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          pedagogical_activity_type?: string | null
+          instrument_snapshot_id?: string | null
           academic_period_id?: string
           activity_date?: string | null
           activity_type?: string
@@ -1063,6 +1069,7 @@ export type Database = {
             referencedRelation: "evaluation_instruments"
             referencedColumns: ["id"]
           },
+          { foreignKeyName: "evaluation_activities_instrument_snapshot_id_fkey"; columns: ["instrument_snapshot_id"]; isOneToOne: true; referencedRelation: "evaluation_instrument_snapshots"; referencedColumns: ["id"] },
           {
             foreignKeyName: "evaluation_activities_planning_entry_id_fkey"
             columns: ["planning_entry_id"]
@@ -1338,6 +1345,26 @@ export type Database = {
           },
         ]
       }
+      evaluation_instrument_snapshots: {
+        Row: { id: string; school_id: string; instrument_id: string; version_no: number; payload: Json; curriculum_version_id: string | null; curriculum_scope_id: string | null; catalog_version: string; created_at: string }
+        Insert: { id?: string; school_id: string; instrument_id: string; version_no?: number; payload: Json; curriculum_version_id?: string | null; curriculum_scope_id?: string | null; catalog_version: string; created_at?: string }
+        Update: { id?: string; school_id?: string; instrument_id?: string; version_no?: number; payload?: Json; curriculum_version_id?: string | null; curriculum_scope_id?: string | null; catalog_version?: string; created_at?: string }
+        Relationships: [
+          { foreignKeyName: "evaluation_instrument_snapshots_school_id_fkey"; columns: ["school_id"]; isOneToOne: false; referencedRelation: "schools"; referencedColumns: ["id"] },
+          { foreignKeyName: "evaluation_instrument_snapshots_instrument_id_fkey"; columns: ["instrument_id"]; isOneToOne: true; referencedRelation: "evaluation_instruments"; referencedColumns: ["id"] },
+          { foreignKeyName: "evaluation_instrument_snapshots_curriculum_version_id_fkey"; columns: ["curriculum_version_id"]; isOneToOne: false; referencedRelation: "curriculum_versions"; referencedColumns: ["id"] },
+          { foreignKeyName: "snapshot_scope_version_fk"; columns: ["curriculum_scope_id", "curriculum_version_id"]; isOneToOne: false; referencedRelation: "curriculum_scopes"; referencedColumns: ["id", "version_id"] },
+        ]
+      }
+      evaluation_snapshot_sources: {
+        Row: { snapshot_id: string; element_id: string; version_id: string }
+        Insert: { snapshot_id: string; element_id: string; version_id: string }
+        Update: { snapshot_id?: string; element_id?: string; version_id?: string }
+        Relationships: [
+          { foreignKeyName: "evaluation_snapshot_sources_snapshot_id_fkey"; columns: ["snapshot_id"]; isOneToOne: false; referencedRelation: "evaluation_instrument_snapshots"; referencedColumns: ["id"] },
+          { foreignKeyName: "snapshot_source_element_fk"; columns: ["element_id", "version_id"]; isOneToOne: false; referencedRelation: "curriculum_elements"; referencedColumns: ["id", "version_id"] },
+        ]
+      }
       grades: {
         Row: {
           academic_cycle_id: string | null
@@ -1411,6 +1438,7 @@ export type Database = {
       }
       grades_records: {
         Row: {
+          instrument_snapshot_id: string | null
           academic_period_id: string
           assessment_name: string
           created_at: string
@@ -1430,6 +1458,7 @@ export type Database = {
           weight: number
         }
         Insert: {
+          instrument_snapshot_id?: string | null
           academic_period_id: string
           assessment_name: string
           created_at?: string
@@ -1449,6 +1478,7 @@ export type Database = {
           weight?: number
         }
         Update: {
+          instrument_snapshot_id?: string | null
           academic_period_id?: string
           assessment_name?: string
           created_at?: string
@@ -1489,6 +1519,7 @@ export type Database = {
             referencedRelation: "evaluation_activities"
             referencedColumns: ["id"]
           },
+          { foreignKeyName: "grades_records_instrument_snapshot_id_fkey"; columns: ["instrument_snapshot_id"]; isOneToOne: false; referencedRelation: "evaluation_instrument_snapshots"; referencedColumns: ["id"] },
           {
             foreignKeyName: "grades_records_period_fk"
             columns: ["academic_period_id", "school_year_id"]
@@ -2570,6 +2601,17 @@ export type Database = {
             referencedRelation: "schools"
             referencedColumns: ["id"]
           },
+        ]
+      }
+      teacher_instrument_preferences: {
+        Row: { id: string; school_id: string; teacher_id: string; curriculum_scope_id: string | null; activity_type: string; instrument_type: string; criterion_template_ids: Json; use_count: number; accepted_instrument_id: string; last_used_at: string }
+        Insert: { id?: string; school_id: string; teacher_id: string; curriculum_scope_id?: string | null; activity_type: string; instrument_type: string; criterion_template_ids?: Json; use_count?: number; accepted_instrument_id: string; last_used_at?: string }
+        Update: { id?: string; school_id?: string; teacher_id?: string; curriculum_scope_id?: string | null; activity_type?: string; instrument_type?: string; criterion_template_ids?: Json; use_count?: number; accepted_instrument_id?: string; last_used_at?: string }
+        Relationships: [
+          { foreignKeyName: "teacher_instrument_preferences_school_id_fkey"; columns: ["school_id"]; isOneToOne: false; referencedRelation: "schools"; referencedColumns: ["id"] },
+          { foreignKeyName: "teacher_instrument_preferences_teacher_id_fkey"; columns: ["teacher_id"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "teacher_instrument_preferences_curriculum_scope_id_fkey"; columns: ["curriculum_scope_id"]; isOneToOne: false; referencedRelation: "curriculum_scopes"; referencedColumns: ["id"] },
+          { foreignKeyName: "teacher_instrument_preferences_accepted_instrument_id_fkey"; columns: ["accepted_instrument_id"]; isOneToOne: false; referencedRelation: "evaluation_instruments"; referencedColumns: ["id"] },
         ]
       }
       teacher_journal_entries: {

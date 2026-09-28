@@ -1,9 +1,11 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { __test__clearGradingCache, GradingService } from './grading.service'
+import { recommend } from '../evaluation-instruments/recommendation-engine'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
     $queryRaw: vi.fn(),
+    $transaction: vi.fn(),
     academicPeriod: {
       findMany: vi.fn(),
       findFirst: vi.fn(),
@@ -33,6 +35,11 @@ const mocks = vi.hoisted(() => ({
       create: vi.fn(),
       update: vi.fn(),
     },
+    evaluationInstrument: { create: vi.fn() },
+    evaluationInstrumentSnapshot: { create: vi.fn(), findUnique: vi.fn() },
+    evaluationSnapshotSource: { createMany: vi.fn() },
+    teacherInstrumentPreference: { upsert: vi.fn() },
+    teacher: { findFirst: vi.fn() },
     courseTeam: { findMany: vi.fn() },
   },
 }))
@@ -68,6 +75,61 @@ describe('GradingService activity teams', () => {
     })).rejects.toThrow('asignatura')
     expect(mocks.prisma.evaluationActivity.create).not.toHaveBeenCalled()
   })
+
+  it('guarda el instrumento preparado dentro de una sola transacción y revierte si falla el snapshot', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1', schoolYearId: 'year-1', gradeId: 'grade-1', subjectId: 'subject-1', teacherId: null })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1', schoolYearId: 'year-1' })
+    mocks.prisma.teacher.findFirst.mockResolvedValue(null)
+    const proposal = recommend({ activityTitle: 'Exposición sobre un tema', participationMode: 'INDIVIDUAL', maxScore: 20 }, null, null, [], 'NO_PUBLISHED_VERSION', null)
+    mocks.prisma.$transaction.mockImplementation(async (callback: (tx: typeof mocks.prisma) => Promise<unknown>) => callback(mocks.prisma))
+    mocks.prisma.evaluationInstrument.create.mockResolvedValue({ id: 'instrument-1' })
+    mocks.prisma.evaluationInstrumentSnapshot.create.mockRejectedValue(new Error('snapshot write failed'))
+    const instrumentCriteria: Record<string, string> = { [`${proposal.instrumentType}:meta:criteriaCount`]: String(proposal.criteria.length) }
+    proposal.criteria.forEach((criterion, index) => {
+      instrumentCriteria[`${proposal.instrumentType}:criterion:${index}`] = criterion.title
+      instrumentCriteria[`${proposal.instrumentType}:points:${index}`] = String(criterion.maxScore)
+      criterion.descriptors.forEach((descriptor, levelIndex) => {
+        instrumentCriteria[`rubrica:descriptor:${index}:${proposal.levels.length - levelIndex}`] = descriptor.text
+      })
+    })
+    const dto = { sectionSubjectId: 'ss-1', academicPeriodId: 'period-1', competencyBlockId: 'b1',
+      name: 'Exposición sobre un tema', maxScore: 20, activityType: 'individual' as const,
+      instrumentType: proposal.instrumentType, pedagogicalActivityType: proposal.activityType,
+      instrumentCriteria, instrumentSnapshot: proposal }
+    await expect(new GradingService().saveActivity('school-1', 'user-1', dto)).rejects.toThrow('snapshot write failed')
+    expect(mocks.prisma.$transaction).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.evaluationInstrument.create).toHaveBeenCalledTimes(1)
+    expect(mocks.prisma.evaluationActivity.create).not.toHaveBeenCalled()
+  })
+
+  it('no permite al docente guardar un instrumento preparado en otra asignatura', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1', schoolYearId: 'year-1', teacherId: 'teacher-other' })
+    mocks.prisma.teacher.findFirst.mockResolvedValue(null)
+    await expect(new GradingService().saveActivity('school-1', 'user-1', { sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1', competencyBlockId: 'b1', name: 'Actividad', maxScore: 20,
+      instrumentSnapshot: {} as never }, ['teacher'])).rejects.toThrow('Asignatura no disponible')
+    expect(mocks.prisma.evaluationInstrument.create).not.toHaveBeenCalled()
+  })
+
+  it('bloquea cambios estructurales después de guardar una versión', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1', schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1', schoolYearId: 'year-1' })
+    mocks.prisma.evaluationActivity.findFirst.mockResolvedValue({ id: 'activity-1', instrumentSnapshotId: 'snapshot-1' })
+    mocks.prisma.gradesRecord.count.mockResolvedValue(0)
+    await expect(new GradingService().saveActivity('school-1', 'user-1', { id: 'activity-1', sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1', competencyBlockId: 'b1', name: 'Cambio', maxScore: 20 })).rejects.toThrow('versionado')
+    expect(mocks.prisma.evaluationInstrument.create).not.toHaveBeenCalled()
+  })
+
+  it('bloquea cambios estructurales de actividades legacy tras iniciar calificaciones', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1', schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1', schoolYearId: 'year-1' })
+    mocks.prisma.evaluationActivity.findFirst.mockResolvedValue({ id: 'activity-legacy', instrumentSnapshotId: null })
+    mocks.prisma.gradesRecord.count.mockResolvedValue(1)
+    await expect(new GradingService().saveActivity('school-1', 'user-1', { id: 'activity-legacy', sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1', competencyBlockId: 'b1', name: 'Cambio', maxScore: 20 })).rejects.toThrow('ya tiene calificaciones')
+    expect(mocks.prisma.evaluationActivity.update).not.toHaveBeenCalled()
+  })
 })
 
 describe('GradingService instrument evidence', () => {
@@ -95,6 +157,27 @@ describe('GradingService instrument evidence', () => {
         completedAt: '2026-09-01T12:00:00.000Z',
       },
     })).rejects.toThrow('no es valido')
+  })
+
+  it('vincula cada resultado a la versión y conserva el texto histórico por criterio', async () => {
+    mocks.prisma.gradesRecord.findFirst.mockResolvedValue({ id: 'grade-1', schoolId: 'school-1',
+      sectionSubjectId: 'ss-1', academicPeriodId: 'period-1', evaluationActivityId: 'activity-1' })
+    mocks.prisma.evaluationActivity.findFirst.mockResolvedValue({ id: 'activity-1', sectionSubjectId: 'ss-1',
+      academicPeriodId: 'period-1', maxScore: 20, instrumentSnapshotId: 'snapshot-1' })
+    mocks.prisma.evaluationInstrumentSnapshot.findUnique.mockResolvedValue({ id: 'snapshot-1', versionNo: 1,
+      payload: { criteria: [{ id: 'c1', title: 'Procedimiento', description: 'Sigue los pasos', maxScoreUnits: 1200,
+        descriptors: [{ text: 'Lo logra', scoreUnits: 1200 }, { text: 'En proceso', scoreUnits: 600 }] },
+      { id: 'c2', title: 'Comunicación', description: 'Explica datos', maxScoreUnits: 800,
+        descriptors: [{ text: 'Lo logra', scoreUnits: 800 }, { text: 'En proceso', scoreUnits: 400 }] }] } })
+    mocks.prisma.gradesRecord.update.mockImplementation(async ({ data }) => ({ id: 'grade-1', enrollmentId: 'enrollment-1',
+      score: data.score, maxScore: data.maxScore, weight: 1, assessmentName: 'Actividad', status: 'DRAFT',
+      evaluationActivityId: 'activity-1', ...data }))
+    const saved = await new GradingService().saveGrade('school-1', { gradeId: 'grade-1', score: 15,
+      instrumentResult: { instrumentType: 'rubrica', selections: [0, 1], criterionScores: [10, 5],
+        completedAt: '2026-09-27T12:00:00.000Z' } })
+    expect(saved.instrumentSnapshotId).toBe('snapshot-1')
+    expect(saved.instrumentResult.criterionSnapshots[0].title).toBe('Procedimiento')
+    expect(saved.instrumentResult.criterionSnapshots[1].selectedDescriptor.text).toBe('En proceso')
   })
 })
 

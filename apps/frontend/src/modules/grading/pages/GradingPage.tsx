@@ -153,6 +153,7 @@ export function GradingPage() {
       ) : (
         <div className="grading-workspace">
           <GradingBook
+            sectionSubjectId={selectedSsId}
             students={students}
             teams={teams}
             activities={activities}
