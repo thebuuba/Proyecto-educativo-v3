@@ -3816,6 +3816,7 @@ function ActivityCreationView(props: {
   const [interpretationBusy, setInterpretationBusy] = useState(false)
   const [preparing, setPreparing] = useState(false)
   const [preparationError, setPreparationError] = useState('')
+  const [requiredFieldError, setRequiredFieldError] = useState('')
   const [showAdvancedInstrument, setShowAdvancedInstrument] = useState(false)
   const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
   const { clearHighlight, highlightTarget, showHighlight } = useTransientActivityHighlight()
@@ -3841,15 +3842,13 @@ function ActivityCreationView(props: {
     return () => { window.clearTimeout(timer); abort.abort() }
   }, [sectionSubjectId, activityDraft.name, activityDraft.description, activityDraft.pedagogicalActivityType, activityDraft.autoDetectedPedagogicalActivityType, block.id, editingActivityId])
 
-  async function prepare() {
+  async function prepare(preferredType?: string) {
     if (!sectionSubjectId) {
       setPreparationError('No se pudo identificar la asignatura. Vuelve a seleccionarla e inténtalo de nuevo.')
-      setStage('instrument')
+      setStage('instrument'); setShowAdvancedInstrument(false)
       return
     }
-    if (!activityDraft.name.trim() || !Number(activityDraft.maxScore) || !activityDraft.activityType) {
-      setStage('activity'); setPreparationError('Completa el nombre, la modalidad y el valor en puntos.'); return
-    }
+    if (!validatePreparation()) return
     setPreparing(true); setPreparationError(''); setStage('instrument')
     try {
       const proposal = await prepareInstrument({ sectionSubjectId, activityTitle: activityDraft.name,
@@ -3858,10 +3857,10 @@ function ActivityCreationView(props: {
         pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined,
         maxScore: Number(activityDraft.maxScore), competencyBlock: block.id,
         curriculumVersionId: interpretation?.curriculumVersionId ?? undefined,
-        preferredInstrumentType: activityDraft.autoSelectedInstrumentType ? undefined : activityDraft.instrumentType || undefined,
+        preferredInstrumentType: preferredType ?? (activityDraft.autoSelectedInstrumentType ? undefined : activityDraft.instrumentType || undefined),
         selectedCurriculumElementIds: activityDraft.selectedCurriculumElementIds?.length ? activityDraft.selectedCurriculumElementIds : undefined })
       const next = { ...activityDraft, instrumentType: proposal.instrumentType, pedagogicalActivityType: proposal.activityType,
-        autoSelectedInstrumentType: activityDraft.autoSelectedInstrumentType || !activityDraft.instrumentType,
+        autoSelectedInstrumentType: preferredType ? false : activityDraft.autoSelectedInstrumentType || !activityDraft.instrumentType,
         autoDetectedPedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType || !activityDraft.pedagogicalActivityType,
         instrumentFields: recommendationToFields(proposal, activityDraft.name), instrumentCompleted: true,
         preparedRecommendation: proposal, preparedManuallyEdited: false }
@@ -3871,6 +3870,25 @@ function ActivityCreationView(props: {
       setPreparationError(error instanceof Error ? error.message : 'No se pudo preparar el instrumento. Puedes completarlo manualmente.')
       setStage('instrument')
     } finally { setPreparing(false) }
+  }
+
+  function validatePreparation() {
+    const missing: Array<{ target: ActivityCompletionTarget; message: string }> = [
+      { target: 'name', message: 'Escribe el nombre de la actividad para preparar el instrumento.' },
+      { target: 'maxScore', message: 'Indica el valor de la actividad para preparar el instrumento.' },
+      { target: 'activityType', message: 'Selecciona la modalidad de la actividad para preparar el instrumento.' },
+    ]
+    const issue = missing.find(item => item.target === 'name' ? !activityDraft.name.trim() : item.target === 'maxScore' ? !Number.isFinite(Number(activityDraft.maxScore)) || Number(activityDraft.maxScore) <= 0 : !activityDraft.activityType)
+    if (!issue) { setRequiredFieldError(''); return true }
+    setStage('activity')
+    setRequiredFieldError(issue.message)
+    showHighlight(issue.target)
+    window.setTimeout(() => {
+      const field = document.querySelector<HTMLElement>(`[data-activity-required="${issue.target}"] input, [data-activity-required="${issue.target}"] button`)
+      field?.scrollIntoView?.({ block: 'center', behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+      field?.focus()
+    }, 0)
+    return false
   }
 
   function handleDraftChange(draft: ActivityDraft) {
@@ -3914,6 +3932,7 @@ function ActivityCreationView(props: {
 
   function continueFlow() {
     if (stage === 'activity') {
+      if (!validatePreparation()) return
       if (editingActivityId) setStage('instrument')
       else if (!activityDraft.preparedRecommendation || stale) {
         if (stale && activityDraft.preparedManuallyEdited) { setStage('instrument'); setPreparationError('Cambiaste la actividad después de editar el instrumento. Confirma la regeneración para continuar.'); return }
@@ -3975,7 +3994,7 @@ function ActivityCreationView(props: {
                 key={item.id}
                 type="button"
                 className={cn('relative flex min-h-14 items-center justify-center gap-2 border-r border-border px-3 text-sm font-black transition last:border-r-0 hover:bg-muted/30', stage === item.id ? cn(accent.panel, accent.text) : 'text-muted-foreground')}
-                onClick={() => { if (item.id === 'instrument' && stage === 'activity') continueFlow(); else setStage(item.id); clearHighlight() }}
+                onClick={() => { if (item.id === 'instrument' && stage === 'activity') continueFlow(); else setStage(item.id); if (item.id !== 'instrument') clearHighlight() }}
               >
                 <span className={cn('grid size-6 shrink-0 place-items-center rounded-full text-xs', item.complete ? 'bg-emerald-500 text-white' : stage === item.id ? cn(accent.progress, 'text-white') : 'bg-muted text-muted-foreground')}>
                   {item.complete ? '✓' : index + 1}
@@ -3987,7 +4006,7 @@ function ActivityCreationView(props: {
           </nav>
 
           {stage === 'activity' ? (
-            <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} interpretation={interpretation} interpretationBusy={interpretationBusy} />
+            <>{requiredFieldError ? <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">{requiredFieldError}</div> : null}<ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} interpretation={interpretation} interpretationBusy={interpretationBusy} requiredFieldError={requiredFieldError} /></>
           ) : null}
           {savedSnapshot ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">Este instrumento ya tiene una versión guardada. Para cambiar su estructura, duplica la actividad y prepara uno nuevo.</div> : null}
 
@@ -3995,15 +4014,15 @@ function ActivityCreationView(props: {
             <div className="space-y-3">
               <div className={cn('rounded-xl border px-4 py-3', accent.card)}>
                 <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? 'Instrumento preparado' : preparationError ? 'No pudimos preparar el instrumento automáticamente' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? 'Revisa los criterios. Puedes ajustar cada uno o abrir la configuración avanzada.' : preparationError ? 'Puedes intentar de nuevo o crear el instrumento manualmente.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? `${activityDraft.preparedRecommendation.criteria.length} criterios · ${activityDraft.preparedRecommendation.levels.length || 'sin'} niveles · ${activityDraft.maxScore} puntos. Revisa y edita el instrumento aquí.` : preparationError ? 'Puedes intentar de nuevo o crear el instrumento manualmente.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
               </div>
               {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground">{preparationError} <Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => void prepare()} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button>{!activityDraft.instrumentType ? <Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => { handleDraftChange({ ...activityDraft, instrumentType: 'rubrica' }); setPreparationError('') }}>Crear manualmente</Button> : null}</div> : null}
               {activityDraft.preparedRecommendation?.confidence === 'LOW' && !stale ? <p className="text-xs text-muted-foreground">Preparado según el tipo de actividad y la asignatura, sin atribución curricular.</p> : null}
+              {activityDraft.preparedRecommendation && !savedSnapshot ? <div className="flex flex-wrap items-end gap-3"><label className="text-xs font-semibold text-foreground">Cambiar instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => void prepare(event.target.value)} disabled={preparing}><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label><Button type="button" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar instrumento</Button></div> : null}
+              {activityDraft.preparedRecommendation ? <Button type="button" variant="outline" aria-expanded={showAdvancedInstrument} onClick={() => setShowAdvancedInstrument(value => !value)}>{showAdvancedInstrument ? 'Ocultar configuración avanzada' : 'Configuración avanzada'}</Button> : null}
               {!activityDraft.preparedRecommendation && !activityDraft.instrumentType ? <label className="block text-sm font-semibold text-foreground">Si prefieres continuar manualmente, selecciona el instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => handleDraftChange({ ...activityDraft, instrumentType: event.target.value })}><option value="">Seleccionar</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label> : null}
               {stale && !preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">La actividad cambió. Actualiza el instrumento antes de guardar. {activityDraft.preparedManuallyEdited ? 'Se reemplazarán tus cambios manuales solo si lo confirmas.' : null} <Button type="button" size="sm" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar</Button></div> : null}
-              {activityDraft.preparedRecommendation && !stale ? <div className="rounded-xl border border-border bg-card p-4"><p className="text-sm font-semibold text-foreground">{activityDraft.preparedRecommendation.criteria.length} criterios · {activityDraft.maxScore} puntos</p><div className="mt-3 space-y-2">{activityDraft.preparedRecommendation.criteria.map((criterion, index) => <div key={criterion.id} className="rounded-lg border border-border p-3"><label className="text-xs font-medium text-muted-foreground">Criterio {index + 1}<Input className="mt-1" value={activityDraft.instrumentFields[`${activityDraft.instrumentType}:criterion:${index}`] ?? criterion.title} onChange={event => handleDraftChange({ ...activityDraft, preparedManuallyEdited: true, instrumentFields: { ...activityDraft.instrumentFields, [`${activityDraft.instrumentType}:criterion:${index}`]: event.target.value } })} /></label><label className="mt-2 block text-xs font-medium text-muted-foreground">Qué se observará<Textarea className="mt-1" value={activityDraft.instrumentFields[`${activityDraft.instrumentType}:description:${index}`] ?? criterion.description} onChange={event => handleDraftChange({ ...activityDraft, preparedManuallyEdited: true, instrumentFields: { ...activityDraft.instrumentFields, [`${activityDraft.instrumentType}:description:${index}`]: event.target.value, ...(activityDraft.instrumentType === 'lista-ponderada' ? { [`lista-ponderada:indicator:${index}`]: event.target.value } : {}) } })} /></label><p className="mt-1 text-xs font-medium text-foreground">{criterion.maxScore} puntos</p></div>)}</div></div> : null}
-              {activityDraft.preparedRecommendation ? <Button type="button" variant="outline" onClick={() => setShowAdvancedInstrument(value => !value)}>{showAdvancedInstrument ? 'Ocultar configuración avanzada' : 'Configuración avanzada'}</Button> : null}
-              {!preparing && (!activityDraft.preparedRecommendation || showAdvancedInstrument) ?
+              {!preparing ? <div className={cn(activityDraft.preparedRecommendation && !showAdvancedInstrument ? 'prepared-instrument-basic' : '')}>
               <InstrumentPreview
                 key={activityDraft.instrumentType}
                 accent={accent}
@@ -4016,7 +4035,7 @@ function ActivityCreationView(props: {
                 maxScore={Number(activityDraft.maxScore) || 0}
                 onCompletedChange={(instrumentCompleted) => handleDraftChange({ ...activityDraft, instrumentCompleted })}
                 onFieldsChange={(instrumentFields) => handleDraftChange({ ...activityDraft, preparedManuallyEdited: true, instrumentFields })}
-              /> : null}
+              /></div> : null}
             </div>
           ) : null}
 
@@ -4144,7 +4163,7 @@ const pedagogicalActivityLabels: Record<string, string> = {
   PERFORMANCE: 'Representación', MOTOR_SPORTS_PRACTICE: 'Práctica motriz', OBSERVATION: 'Observación', QUIZ_TEST: 'Prueba', OTHER: 'Otra actividad',
 }
 
-function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, interpretation, interpretationBusy }: {
+function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, interpretation, interpretationBusy, requiredFieldError }: {
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
@@ -4152,14 +4171,15 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
   onChangeDraft: (draft: ActivityDraft) => void
   interpretation: ActivityInterpretation | null
   interpretationBusy: boolean
+  requiredFieldError: string
 }) {
   const highlight = (target: ActivityCompletionTarget) => highlightTarget === target ? transientHighlightClass : ''
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
       <CreationFormSection icon={<FileText className="size-4" />} number={1} title="Información general" accent={accent}>
         <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_11rem]">
-          <label className={cn('space-y-1.5 text-sm font-bold', highlight('name'))}>Nombre de la actividad <span className="text-destructive">*</span><Input className="h-11" value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Ej: Exposición oral sobre el cambio climático" /></label>
-          <label className={cn('space-y-1.5 text-sm font-bold', highlight('maxScore'))}>Valor en puntos <span className="text-destructive">*</span><div className="relative"><Input className="h-11 pr-12 font-black" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-muted-foreground">pts</span></div></label>
+          <label data-activity-required="name" className={cn('space-y-1.5 text-sm font-bold', highlight('name'))}>Nombre de la actividad <span className="text-destructive">*</span><Input className="h-11" value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Ej: Exposición oral sobre el cambio climático" /></label>
+          <label data-activity-required="maxScore" className={cn('space-y-1.5 text-sm font-bold', highlight('maxScore'))}>Valor en puntos <span className="text-destructive">*</span><div className="relative"><Input aria-invalid={requiredFieldError.startsWith('Indica el valor')} className="h-11 pr-12 font-black" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-muted-foreground">pts</span></div>{requiredFieldError.startsWith('Indica el valor') ? <span className="text-xs text-destructive">{requiredFieldError}</span> : null}</label>
         </div>
       </CreationFormSection>
 
@@ -5603,9 +5623,9 @@ function RubricInstrument({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <p className={cn('font-black', accent.text)}>Criterios y niveles de desempeño</p>
-          <p className="text-xs text-muted-foreground">La puntuación se redistribuye automáticamente para sumar {maxScore} puntos.</p>
+          <p className="text-xs text-muted-foreground">Ajusta los puntos en la matriz; el total debe sumar {maxScore}.</p>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="instrument-structure-controls flex flex-wrap items-center gap-2">
           {typographyControls}
           <Button type="button" size="sm" variant="outline" onClick={openLevelEditor}><Settings className="size-4" />Configurar niveles</Button>
           <Button type="button" size="sm" className={accent.button} onClick={() => resizeCriteria(Math.min(12, criteriaCount + 1))} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button>
@@ -5636,7 +5656,7 @@ function RubricInstrument({
       ) : null}
       {pendingDraftLevelDelete ? <ConfirmDialog title="¿Eliminar este nivel?" description="Este nivel contiene descriptores. Si lo eliminas, también se eliminará esa información al aplicar los cambios." confirmLabel="Eliminar nivel" destructive onClose={() => setPendingDraftLevelDelete(null)} onConfirm={() => { removeLevelDraftById(pendingDraftLevelDelete); setPendingDraftLevelDelete(null) }} /> : null}
 
-      <InstrumentTable>
+      <InstrumentTable className="rubric-editor-table">
         <thead className="sticky top-0 z-20 bg-slate-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
             <th className="sticky left-0 z-30 w-[24%] border border-border bg-slate-50 px-2 py-2">Criterios de evaluación</th>
@@ -5651,17 +5671,17 @@ function RubricInstrument({
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
             <tr key={index} className={cn('transition-colors motion-safe:duration-200', highlightedRow === index ? accent.panel : '')}>
-              <td className="sticky left-0 z-10 border border-border bg-card p-1.5"><div className="flex items-start gap-1"><span className={cn('mt-1 grid size-6 shrink-0 place-items-center rounded-full text-[10px] font-black text-white', accent.progress)}>{index + 1}</span><InstrumentTextarea dataInstrumentRow={`rubrica-${index}`} placeholder="Criterio de evaluación" value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)} /></div></td>
-              {levels.map((level) => <td key={level.score} className="border border-border p-1.5"><InstrumentTextarea value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)} /></td>)}
-              <td className="border border-border px-2 py-3 text-center"><span className={cn('inline-flex min-w-14 items-center justify-center rounded-lg px-2 py-2 font-black', accent.panel, accent.text)}>{criterionPoints[index]} pts</span></td>
-              <td className="border border-border text-center"><InstrumentRowMenu canMoveDown={index < criteriaCount - 1} canMoveUp={index > 0} onDelete={() => requestRemoveCriterion(index)} onDuplicate={() => duplicateCriterion(index)} onMoveDown={() => moveCriterion(index, index + 1)} onMoveUp={() => moveCriterion(index, index - 1)} /></td>
+              <td data-label="Criterio" className="sticky left-0 z-10 border border-border bg-card p-1.5"><div className="flex items-start gap-1"><span className={cn('mt-1 grid size-6 shrink-0 place-items-center rounded-full text-[10px] font-black text-white', accent.progress)}>{index + 1}</span><InstrumentTextarea ariaLabel={`Criterio ${index + 1}`} dataInstrumentRow={`rubrica-${index}`} placeholder="Criterio de evaluación" value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)} /></div></td>
+              {levels.map((level) => <td data-label={level.name} key={level.score} className="border border-border p-1.5"><InstrumentTextarea ariaLabel={`${level.name} del criterio ${index + 1}`} value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)} /></td>)}
+              <td data-label="Puntos" className="border border-border px-2 py-3 text-center"><Input aria-label={`Puntos del criterio ${index + 1}`} className="mx-auto h-9 w-20 text-center font-black" type="number" min="0" step="0.5" value={fields[instrumentFieldKey('rubrica', 'points', index)] ?? ''} onChange={event => onFieldChange(instrumentFieldKey('rubrica', 'points', index), event.target.value)} /></td>
+              <td data-label="Acciones" className="border border-border text-center"><InstrumentRowMenu canMoveDown={index < criteriaCount - 1} canMoveUp={index > 0} onDelete={() => requestRemoveCriterion(index)} onDuplicate={() => duplicateCriterion(index)} onMoveDown={() => moveCriterion(index, index + 1)} onMoveUp={() => moveCriterion(index, index - 1)} /></td>
             </tr>
           ))}
         </tbody>
       </InstrumentTable>
 
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-xs text-muted-foreground">Los valores por criterio son automáticos y siempre conservan el total.</p>
+        <p className="text-xs text-muted-foreground">Puedes editar los puntos de cada criterio. Revisa que sumen el valor de la actividad.</p>
         <div className="text-right"><p className={cn('text-sm font-black', scoreMatches ? 'text-emerald-600' : 'text-destructive')}>Puntuación máxima total: {total} / {maxScore} pts</p>{!scoreMatches ? <p className="mt-1 text-xs text-destructive">La puntuación no coincide con el valor de la actividad.</p> : null}</div>
       </div>
       {pendingCriterionDelete !== null ? <ConfirmDialog title="¿Eliminar este criterio?" description={`Se eliminará “${fields[instrumentFieldKey('rubrica', 'criterion', pendingCriterionDelete)] || `Criterio ${pendingCriterionDelete + 1}`}” junto con sus ${levelCount} descriptores asociados. Esta acción no se puede deshacer.`} confirmLabel="Eliminar criterio" destructive onClose={() => setPendingCriterionDelete(null)} onConfirm={() => { removeCriterion(pendingCriterionDelete); setPendingCriterionDelete(null) }} /> : null}
@@ -5955,7 +5975,7 @@ function ScaleInstrument({
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Indicadores y niveles de la escala</p><p className="text-xs text-muted-foreground">Evalúa el grado, frecuencia o nivel de desempeño alcanzado en cada indicador.</p></div><div className="flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar escala</Button><Button type="button" size="sm" className={accent.button} onClick={addIndicator} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar indicador</Button></div></div>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Indicadores y niveles de la escala</p><p className="text-xs text-muted-foreground">Evalúa el grado, frecuencia o nivel de desempeño alcanzado en cada indicador.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar escala</Button><Button type="button" size="sm" className={accent.button} onClick={addIndicator} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar indicador</Button></div></div>
       {configuring ? <ScaleSettingsDrawer accent={accent} criteriaCount={criteriaCount} fields={fields} indicatorPoints={indicatorPoints} levelDrafts={levelDrafts} maxScore={maxScore} noApply={noApply} onAddLevel={() => { setTemplate('personalizada'); setLevelDrafts((current) => [...current, { id: `new-${Date.now()}`, name: `Nivel ${current.length + 1}`, points: Math.max(0, current.length ? current[current.length - 1].points - 1 : 1) }]) }} onApply={applyConfiguration} onClose={() => setConfiguring(false)} onIndicatorPointsChange={setIndicatorPoints} onLevelsChange={(value) => { setTemplate('personalizada'); setLevelDrafts(value) }} onNoApplyChange={setNoApply} onPointModeChange={setPointMode} onTemplateSelect={selectScaleTemplate} pointMode={pointMode} template={template} /> : null}
       <InstrumentTable>
         <thead className="sticky top-0 z-20 text-[10px] font-bold uppercase">
@@ -6077,7 +6097,7 @@ function ChecklistInstrument({
   }
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black',accent.text)}>Criterios de cumplimiento</p><p className="text-xs text-muted-foreground">Verifica el cumplimiento de criterios específicos.</p></div><div className="flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 20}><Plus className="size-4" />Agregar criterio</Button></div></div>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black',accent.text)}>Criterios de cumplimiento</p><p className="text-xs text-muted-foreground">Verifica el cumplimiento de criterios específicos.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 20}><Plus className="size-4" />Agregar criterio</Button></div></div>
       {configuring ? (
         <InstrumentSettingsDrawer
           accent={accent}
@@ -6397,7 +6417,7 @@ function WeightedListInstrument({
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Criterios y ponderaciones</p><p className="text-xs text-muted-foreground">Define los criterios, sus indicadores y el peso de cada uno dentro de la actividad.</p></div><div className="flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={() => setConfiguring(true)}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button></div></div>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Criterios y ponderaciones</p><p className="text-xs text-muted-foreground">Define los criterios, sus indicadores y el peso de cada uno dentro de la actividad.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={() => setConfiguring(true)}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button></div></div>
       {configuring ? <WeightedListSettingsDrawer accent={accent} criteriaCount={criteriaCount} decimals={decimals} fields={fields} labels={labels} maxScore={maxScore} onApply={applyConfiguration} onClose={() => setConfiguring(false)} partial={hasPartial} partialValue={partialValue} /> : null}
       <InstrumentTable>
         <thead className="sticky top-0 z-20 text-[10px] font-bold uppercase text-slate-700">
@@ -6500,7 +6520,7 @@ function InstrumentRowMenu({ canMoveDown, canMoveUp, onDelete, onDuplicate, onMo
   }
 
   const popup = open ? <div ref={popupRef} role="menu" className="fixed z-[100] w-44 overflow-hidden rounded-lg border border-border bg-popover p-1 text-left shadow-xl" style={{ top: menuPosition.top, right: menuPosition.right }}><button type="button" role="menuitem" className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted" onClick={() => runAction(onDuplicate)}><Copy className="size-3.5" />Duplicar</button><button type="button" role="menuitem" disabled={!canMoveUp} className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted disabled:opacity-40" onClick={() => runAction(onMoveUp)}><ArrowUp className="size-3.5" />Mover arriba</button><button type="button" role="menuitem" disabled={!canMoveDown} className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted disabled:opacity-40" onClick={() => runAction(onMoveDown)}><ArrowDown className="size-3.5" />Mover abajo</button><div className="my-1 h-px bg-border"/><button type="button" role="menuitem" className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold text-destructive hover:bg-red-50" onClick={() => runAction(onDelete)}><Trash2 className="size-3.5" />Eliminar</button></div> : null
-  return <div className="mx-auto w-fit"><button ref={buttonRef} type="button" aria-label="Acciones de la fila" aria-haspopup="menu" aria-expanded={open} className={cn('grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary', open ? 'bg-muted text-foreground' : '')} onClick={toggleMenu}><EllipsisVertical className="size-4" /></button>{popup ? createPortal(popup, document.body) : null}</div>
+  return <div className="instrument-row-actions mx-auto w-fit"><button ref={buttonRef} type="button" aria-label="Acciones de la fila" aria-haspopup="menu" aria-expanded={open} className={cn('grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary', open ? 'bg-muted text-foreground' : '')} onClick={toggleMenu}><EllipsisVertical className="size-4" /></button>{popup ? createPortal(popup, document.body) : null}</div>
 }
 
 function focusNewInstrumentRow(type: string, index: number, setHighlightedRow: Dispatch<SetStateAction<number | null>>) {
@@ -6598,9 +6618,9 @@ function InstrumentCheckPlaceholder({ tone = 'default' }: { tone?: 'default' | '
   )
 }
 
-function InstrumentTable({ children }: { children: ReactNode }) {
+function InstrumentTable({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div className="overflow-auto rounded-xl border border-border bg-slate-50/60 p-1 shadow-sm">
+    <div className={cn('overflow-auto rounded-xl border border-border bg-card p-1 shadow-sm', className)}>
       <table className="min-w-[42rem] w-full border-separate border-spacing-1 text-left text-xs [&_td]:rounded-lg [&_th]:rounded-lg">
         {children}
       </table>
@@ -6628,12 +6648,14 @@ function InstrumentInput({
 }
 
 function InstrumentTextarea({
+  ariaLabel,
   className = '',
   dataInstrumentRow,
   onChange,
   placeholder = '',
   value,
 }: {
+  ariaLabel?: string
   className?: string
   dataInstrumentRow?: string
   onChange?: (value: string) => void
@@ -6642,8 +6664,9 @@ function InstrumentTextarea({
 }) {
   return (
     <textarea
+      aria-label={ariaLabel}
       data-instrument-row={dataInstrumentRow}
-      className={cn('h-14 w-full resize-none rounded-md border border-input bg-card px-2 py-1.5 text-xs leading-5 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20', className)}
+      className={cn('h-24 w-full min-h-20 max-h-44 resize-y overflow-y-auto rounded-md border border-input bg-card px-2 py-1.5 text-xs leading-5 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20', className)}
       value={value}
       onChange={(event) => onChange?.(event.target.value)}
       placeholder={placeholder}

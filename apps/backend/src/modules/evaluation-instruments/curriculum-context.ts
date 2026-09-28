@@ -80,7 +80,7 @@ export function resolveScope(context: AcademicContext, scopes: ScopeCandidate[],
 }
 export function discipline(scope: ScopeCandidate | null, context: AcademicContext | null) {
   const name = normalize(scope?.areaName ?? context?.subjectName ?? '')
-  if (/naturaleza|quimica|biologia|fisica y computacion/.test(name)) return 'science'
+  if (/ciencias|naturaleza|tierra|universo|quimica|biologia|fisica y computacion/.test(name)) return 'science'
   if (/matematica|estadistica|calculo/.test(name)) return 'math'
   if (/lengua|literaria|ingles|frances|textos/.test(name)) return 'language'
   if (/social|geografia|ciudadania|filosofia/.test(name)) return 'social'

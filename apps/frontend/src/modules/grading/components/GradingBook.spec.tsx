@@ -145,7 +145,7 @@ describe('GradingBook', () => {
     expect(screen.getByText('¿Cómo se distribuye la calificación?')).toBeInTheDocument()
   })
 
-  it('prepara un instrumento resumido dentro del creador existente', async () => {
+  it('abre directamente la matriz preparada y permite editar sus celdas', async () => {
     const proposal: InstrumentRecommendation = { kind: 'RECOMMENDATION', catalogVersion: 'evaluation-2026.1',
       instrumentType: 'rubrica', confidence: 'LOW', activityType: 'OTHER', evidenceTypes: ['PERFORMANCE'],
       participationMode: 'INDIVIDUAL', curriculumVersionId: null, curriculumScopeId: null, selectedCurriculumElements: [],
@@ -169,15 +169,30 @@ describe('GradingBook', () => {
     await user.click(screen.getByRole('button', { name: /Individual/ }))
     await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
     await waitFor(() => expect(screen.getByText(/Instrumento preparado:/)).toBeInTheDocument())
-    expect(screen.getByText('1 criterios · 20 puntos')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Configuración avanzada' })).toBeInTheDocument()
-    expect(screen.queryByText('Construye tu rúbrica')).not.toBeInTheDocument()
+    expect(screen.getByText(/1 criterios · 4 niveles · 20 puntos/)).toBeInTheDocument()
+    expect(screen.getByRole('table')).toBeInTheDocument()
+    expect(document.querySelector('.prepared-instrument-basic .rubric-editor-table')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Configuración avanzada' }))
+    expect(document.querySelector('.prepared-instrument-basic')).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Ocultar configuración avanzada' }))
+    expect(screen.getByRole('textbox', { name: 'Excelente del criterio 1' })).toHaveValue('Explica con mucha claridad.')
+    expect(screen.getByRole('spinbutton', { name: 'Puntos del criterio 1' })).toHaveValue(20)
     expect(screen.getByText(/Preparado según el tipo de actividad y la asignatura/)).toBeInTheDocument()
+    await user.clear(screen.getByRole('textbox', { name: 'Criterio 1' }))
+    await user.type(screen.getByRole('textbox', { name: 'Criterio 1' }), 'Comprensión del tema')
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Comprensión del tema')
+    await user.clear(screen.getByRole('textbox', { name: 'Excelente del criterio 1' }))
+    await user.type(screen.getByRole('textbox', { name: 'Excelente del criterio 1' }), 'Explica el tema con precisión.')
+    await user.click(screen.getByRole('button', { name: 'Continuar a revisión' }))
+    await user.click(screen.getByRole('button', { name: 'Ver rúbrica completo' }))
+    expect(screen.getByText('Explica el tema con precisión.')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Cerrar vista previa' }))
     expect(post).toHaveBeenCalledWith('/evaluation-instruments/recommend', expect.objectContaining({ activityTitle: 'Actividad 1', maxScore: 20, preferredInstrumentType: undefined, pedagogicalActivityType: undefined }))
     await user.click(screen.getByRole('button', { name: /Datos de la actividad/ }))
     await user.clear(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'))
     await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Exposición sobre el sistema respiratorio')
     await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
+    await user.click(screen.getByRole('button', { name: 'Regenerar con los nuevos datos' }))
     await waitFor(() => expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(2))
     expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')[1][1]).toEqual(expect.objectContaining({
       activityTitle: 'Exposición sobre el sistema respiratorio', pedagogicalActivityType: undefined, preferredInstrumentType: undefined,
@@ -201,6 +216,23 @@ describe('GradingBook', () => {
     await user.selectOptions(screen.getByLabelText(/Si prefieres continuar manualmente/), 'lista-cotejo')
     expect(screen.getByText(/Construye el instrumento que utilizarás/)).toBeInTheDocument()
     post.mockRestore()
+  })
+
+  it.each(['Continuar al instrumento', 'tab'])('muestra y enfoca el valor faltante desde %s', async (action) => {
+    const user = userEvent.setup()
+    const scroll = vi.fn()
+    const prior = Element.prototype.scrollIntoView
+    Element.prototype.scrollIntoView = scroll
+    try {
+      renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+      await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Actividad de prueba')
+      await user.click(action === 'tab' ? screen.getByRole('button', { name: /Instrumento de evaluación/ }) : screen.getByRole('button', { name: 'Continuar al instrumento' }))
+      expect(screen.getByRole('alert')).toHaveTextContent('Indica el valor de la actividad para preparar el instrumento.')
+      const value = screen.getByRole('spinbutton', { name: /Valor en puntos/ })
+      await waitFor(() => expect(value).toHaveFocus())
+      expect(value).toHaveAttribute('aria-invalid', 'true')
+      expect(scroll).toHaveBeenCalled()
+    } finally { Element.prototype.scrollIntoView = prior }
   })
 
   it('explica la falta de asignatura en vez de dejar Instrumento vacío', async () => {

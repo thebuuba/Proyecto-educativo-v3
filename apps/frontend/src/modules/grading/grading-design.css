@@ -104,3 +104,24 @@
 .grading-workspace details [class*='text-blue-700'] {
   color: var(--foreground) !important;
 }
+
+.grading-workspace .rubric-editor-table table { min-width: 86rem; }
+.grading-workspace .rubric-editor-table th:first-child { min-width: 13rem; }
+.grading-workspace .rubric-editor-table th:not(:first-child):not(:nth-last-child(-n+2)) { min-width: 16rem; }
+.grading-workspace .rubric-editor-table textarea { height: 6.5rem; max-height: 11rem; overflow-y: auto; resize: vertical; }
+.grading-workspace .prepared-instrument-basic .instrument-structure-controls { display: none; }
+.grading-workspace .prepared-instrument-basic .instrument-row-actions,
+.grading-workspace .prepared-instrument-basic .rubric-editor-table thead button { display: none; }
+.grading-workspace .prepared-instrument-basic .rubric-editor-table th:last-child,
+.grading-workspace .prepared-instrument-basic .rubric-editor-table td:last-child { display: none; }
+
+@media (max-width: 767px) {
+  .grading-workspace .rubric-editor-table { overflow: visible; border: 0; padding: 0; box-shadow: none; }
+  .grading-workspace .rubric-editor-table table { display: block; min-width: 0; border-spacing: 0; }
+  .grading-workspace .rubric-editor-table thead { display: none; }
+  .grading-workspace .rubric-editor-table tbody { display: grid; gap: 1rem; }
+  .grading-workspace .rubric-editor-table tbody tr { display: grid; gap: .4rem; padding: .75rem; border: 1px solid var(--border); border-radius: .75rem; background: var(--card); }
+  .grading-workspace .rubric-editor-table tbody td { display: block; position: static; width: auto; border: 0; padding: .25rem; text-align: left; }
+  .grading-workspace .rubric-editor-table tbody td::before { content: attr(data-label); display: block; margin-bottom: .25rem; color: var(--muted-foreground); font-size: .7rem; font-weight: 700; }
+  .grading-workspace .rubric-editor-table textarea { height: 5.5rem; }
+}

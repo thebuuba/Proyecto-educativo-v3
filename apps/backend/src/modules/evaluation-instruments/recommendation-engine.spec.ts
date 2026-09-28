@@ -32,7 +32,7 @@ describe('Recomendador con currículo literal completo', () => {
       expect(elements.find(e => e.elementId === reference.elementId)?.text).toBe(reference.text)
     }
     for (const criterion of result.criteria) {
-      expect(criterion.sourceType === 'ACTIVITY_TEMPLATE').toBe(criterion.sourceReferences.length === 0)
+      if (criterion.sourceType === 'ACTIVITY_TEMPLATE') expect(criterion.sourceReferences).toEqual([])
       if (criterion.sourceType === 'CURRICULUM_DERIVED') expect(criterion.description).toBe(criterion.sourceReferences[0].text)
     }
   })
@@ -81,7 +81,7 @@ describe('Recomendador con currículo literal completo', () => {
   it('fallback sin referencias inventadas; participación grupal no agrega actitudes', () => {
     const { result } = run(cases[1], { activityTitle: 'Exposición sobre zzzqqq', participationMode: 'GROUP' })
     expect(result.confidence).toBe('LOW'); expect(result.selectedCurriculumElements).toEqual([])
-    expect(result.criteria.every(c => c.sourceType === 'ACTIVITY_TEMPLATE' && !c.sourceReferences.length)).toBe(true)
+    expect(result.criteria.every(c => c.sourceType !== 'CURRICULUM_DERIVED' && !c.sourceReferences.length)).toBe(true)
     expect(result.evidenceTypes).not.toContain('ATTITUDE')
   })
   it('tolera tildes/caso/plurales, selección explícita y escalas configurables', () => {
@@ -127,7 +127,40 @@ describe('Recomendador con currículo literal completo', () => {
   })
   it('reparto entero exacto para 10.000 combinaciones', () => {
     for (let units = 1; units <= 10000; units++) expect(distributeScore(units / 100, [5, 5, 4, 3, 3]).reduce((a, b) => a + b, 0)).toBe(units)
+    expect(distributeScore(20, [5, 4, 4, 4, 3])).toEqual([500, 400, 400, 400, 300])
+    expect(distributeScore(18.5, [5, 4, 4, 4, 3]).every(units => units % 50 === 0)).toBe(true)
+    expect(distributeScore(5, [5, 4, 4, 4, 3]).every(units => units > 0)).toBe(true)
     for (const value of [NaN, Infinity, -1, 0, 1.001]) expect(() => distributeScore(value, [1, 2])).toThrow()
+  })
+  it('contextualiza una exposición de volcanes sin atribuir currículo no verificado', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'NAT-TIE', subjectName: 'Ciencias de la Tierra y el Universo', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'Exposición sobre los volcanes', description: 'Los estudiantes realizarán una exposición sobre los volcanes en la que explicarán cómo se forman, identificarán sus partes principales y describirán sus características. Utilizarán imágenes o recursos visuales para apoyar sus explicaciones y emplearán vocabulario científico adecuado.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.instrumentType).toBe('rubrica')
+    expect(result.criteria).toHaveLength(5)
+    expect(result.criteria.map(criterion => criterion.title)).toEqual(expect.arrayContaining([expect.stringMatching(/forman los volcanes/), expect.stringMatching(/partes principales/), expect.stringMatching(/Precisión científica/), expect.stringMatching(/recursos de apoyo/)]))
+    expect(result.criteria[0].descriptors[0].text).toMatch(/cómo se forman los volcanes/)
+    expect(result.criteria.every(criterion => criterion.sourceType !== 'CURRICULUM_DERIVED' && criterion.sourceReferences.length === 0)).toBe(true)
+    expect(result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)).toBe(2000)
+    expect(result.criteria.every(criterion => criterion.maxScoreUnits % 100 === 0)).toBe(true)
+  })
+  it('el tema de materia no hereda volcán y conserva observación y registro', () => {
+    const fixture = { ...cases[1], activityTitle: 'Cambios de estado de la materia', description: 'Los estudiantes observarán situaciones cotidianas en las que la materia cambia de estado, como el derretimiento del hielo o la evaporación del agua. Luego identificarán si ocurre fusión, evaporación, condensación o solidificación, registrarán sus observaciones en una tabla y explicarán con sus propias palabras qué provoca cada cambio.' }
+    const result = run(fixture).result
+    expect(JSON.stringify(result.criteria).toLowerCase()).not.toContain('volcán')
+    expect(JSON.stringify(result.criteria).toLowerCase()).toContain('fusión')
+    expect(result.activityType).toBe('OBSERVATION')
+    expect(result.criteria.map(criterion => criterion.templateId)).toContain('science-data')
+    expect(result.criteria.filter(criterion => criterion.templateId === 'science-content')).toHaveLength(2)
+    expect(result.criteria.some(criterion => criterion.title.includes('Explicación de qué provoca cada cambio'))).toBe(true)
+  })
+  it('distingue problemas con fracciones y producción de un cuento', () => {
+    const math = run(cases[2]).result
+    expect(math.criteria.map(criterion => criterion.templateId)).toEqual(expect.arrayContaining(['math-procedure', 'math-reasoning', 'math-accuracy']))
+    expect(math.criteria.some(criterion => criterion.description.includes('fracciones'))).toBe(true)
+    const story = run({ ...cases[4], activityTitle: 'Producción de un cuento corto', description: 'Escribir un cuento corto con desarrollo coherente y vocabulario adecuado.' }).result
+    expect(story.criteria.map(criterion => criterion.title)).toContain('Estructura narrativa del cuento')
+    expect(story.criteria.some(criterion => criterion.description.includes('cuento corto'))).toBe(true)
+    expect(JSON.stringify(story.criteria)).not.toMatch(/volcan|científic/)
   })
   it('catálogo global: IDs únicos, tipos existentes y referencias coherentes', () => {
     for (const entries of [evaluationCatalogV1.activityTypes, evaluationCatalogV1.criterionTemplates, evaluationCatalogV1.recommendationRules]) expect(new Set(entries.map(e => e.id)).size).toBe(entries.length)
