@@ -11,7 +11,8 @@ export class RecommendInstrumentDto {
   @IsOptional() @IsIn(['b1', 'b2', 'b3', 'b4']) competencyBlock?: string
   @IsOptional() @IsIn([4, 5]) levelCount?: 4 | 5
   @IsOptional() @IsIn(['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']) preferredInstrumentType?: 'rubrica' | 'lista-cotejo' | 'escala' | 'lista-ponderada'
-  @IsOptional() @IsArray() @ArrayMaxSize(12) @IsUUID('4', { each: true }) selectedCurriculumElementIds?: string[]
+  // Imported curriculum elements use deterministic UUID v5 identifiers.
+  @IsOptional() @IsArray() @ArrayMaxSize(12) @IsUUID('all', { each: true }) selectedCurriculumElementIds?: string[]
   /** Explicit DRAFT selection permitted for development; omission selects PUBLISHED only. */
   @IsOptional() @IsUUID() curriculumVersionId?: string
   @IsOptional() @IsUUID() curriculumScopeId?: string

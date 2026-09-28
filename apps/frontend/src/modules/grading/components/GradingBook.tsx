@@ -297,6 +297,8 @@ type ActivityDraft = {
   instrumentCompleted: boolean
   instrumentFields: Record<string, string>
   pedagogicalActivityType?: string
+  autoDetectedPedagogicalActivityType?: boolean
+  autoSelectedInstrumentType?: boolean
   selectedCurriculumElementIds?: string[]
   preparedRecommendation?: InstrumentRecommendation
   preparedFingerprint?: string
@@ -3831,29 +3833,36 @@ function ActivityCreationView(props: {
     const timer = window.setTimeout(() => {
       setInterpretationBusy(true)
       interpretActivity({ sectionSubjectId, activityTitle: activityDraft.name, description: activityDescriptionText(activityDraft.description),
-        pedagogicalActivityType: activityDraft.pedagogicalActivityType || undefined, competencyBlock: block.id }, abort.signal)
+        pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined, competencyBlock: block.id }, abort.signal)
         .then(value => { if (!abort.signal.aborted) setInterpretation(value) })
         .catch(() => { if (!abort.signal.aborted) setInterpretation(null) })
         .finally(() => { if (!abort.signal.aborted) setInterpretationBusy(false) })
     }, 450)
     return () => { window.clearTimeout(timer); abort.abort() }
-  }, [sectionSubjectId, activityDraft.name, activityDraft.description, activityDraft.pedagogicalActivityType, block.id, editingActivityId])
+  }, [sectionSubjectId, activityDraft.name, activityDraft.description, activityDraft.pedagogicalActivityType, activityDraft.autoDetectedPedagogicalActivityType, block.id, editingActivityId])
 
   async function prepare() {
-    if (!sectionSubjectId || !activityDraft.name.trim() || !Number(activityDraft.maxScore) || !activityDraft.activityType) {
+    if (!sectionSubjectId) {
+      setPreparationError('No se pudo identificar la asignatura. Vuelve a seleccionarla e inténtalo de nuevo.')
+      setStage('instrument')
+      return
+    }
+    if (!activityDraft.name.trim() || !Number(activityDraft.maxScore) || !activityDraft.activityType) {
       setStage('activity'); setPreparationError('Completa el nombre, la modalidad y el valor en puntos.'); return
     }
-    setPreparing(true); setPreparationError('')
+    setPreparing(true); setPreparationError(''); setStage('instrument')
     try {
       const proposal = await prepareInstrument({ sectionSubjectId, activityTitle: activityDraft.name,
         description: activityDescriptionText(activityDraft.description),
         participationMode: activityDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
-        pedagogicalActivityType: activityDraft.pedagogicalActivityType || undefined,
+        pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined,
         maxScore: Number(activityDraft.maxScore), competencyBlock: block.id,
         curriculumVersionId: interpretation?.curriculumVersionId ?? undefined,
-        preferredInstrumentType: activityDraft.instrumentType || undefined,
+        preferredInstrumentType: activityDraft.autoSelectedInstrumentType ? undefined : activityDraft.instrumentType || undefined,
         selectedCurriculumElementIds: activityDraft.selectedCurriculumElementIds?.length ? activityDraft.selectedCurriculumElementIds : undefined })
       const next = { ...activityDraft, instrumentType: proposal.instrumentType, pedagogicalActivityType: proposal.activityType,
+        autoSelectedInstrumentType: activityDraft.autoSelectedInstrumentType || !activityDraft.instrumentType,
+        autoDetectedPedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType || !activityDraft.pedagogicalActivityType,
         instrumentFields: recommendationToFields(proposal, activityDraft.name), instrumentCompleted: true,
         preparedRecommendation: proposal, preparedManuallyEdited: false }
       onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
@@ -3866,8 +3875,11 @@ function ActivityCreationView(props: {
 
   function handleDraftChange(draft: ActivityDraft) {
     const changedInstrument = draft.instrumentType !== activityDraft.instrumentType
+    const changedPedagogicalType = draft.pedagogicalActivityType !== activityDraft.pedagogicalActivityType
     onChangeDraft({
       ...draft,
+      autoSelectedInstrumentType: changedInstrument ? false : draft.autoSelectedInstrumentType,
+      autoDetectedPedagogicalActivityType: changedPedagogicalType ? false : draft.autoDetectedPedagogicalActivityType,
       competencyBlockId: block.id,
       instrumentCompleted: changedInstrument ? false : draft.instrumentCompleted,
       instrumentFields: changedInstrument ? {} : draft.instrumentFields,
@@ -3902,7 +3914,7 @@ function ActivityCreationView(props: {
 
   function continueFlow() {
     if (stage === 'activity') {
-      if (editingActivityId || !sectionSubjectId) setStage('instrument')
+      if (editingActivityId) setStage('instrument')
       else if (!activityDraft.preparedRecommendation || stale) {
         if (stale && activityDraft.preparedManuallyEdited) { setStage('instrument'); setPreparationError('Cambiaste la actividad después de editar el instrumento. Confirma la regeneración para continuar.'); return }
         void prepare()
@@ -3963,7 +3975,7 @@ function ActivityCreationView(props: {
                 key={item.id}
                 type="button"
                 className={cn('relative flex min-h-14 items-center justify-center gap-2 border-r border-border px-3 text-sm font-black transition last:border-r-0 hover:bg-muted/30', stage === item.id ? cn(accent.panel, accent.text) : 'text-muted-foreground')}
-                onClick={() => { setStage(item.id); clearHighlight() }}
+                onClick={() => { if (item.id === 'instrument' && stage === 'activity') continueFlow(); else setStage(item.id); clearHighlight() }}
               >
                 <span className={cn('grid size-6 shrink-0 place-items-center rounded-full text-xs', item.complete ? 'bg-emerald-500 text-white' : stage === item.id ? cn(accent.progress, 'text-white') : 'bg-muted text-muted-foreground')}>
                   {item.complete ? '✓' : index + 1}
@@ -3982,15 +3994,16 @@ function ActivityCreationView(props: {
           {stage === 'instrument' ? (
             <div className="space-y-3">
               <div className={cn('rounded-xl border px-4 py-3', accent.card)}>
-                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{activityDraft.preparedRecommendation ? 'Instrumento preparado' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{activityDraft.preparedRecommendation ? 'Revisa los criterios. Puedes ajustar cada uno o abrir la configuración avanzada.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
+                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? 'Instrumento preparado' : preparationError ? 'No pudimos preparar el instrumento automáticamente' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? 'Revisa los criterios. Puedes ajustar cada uno o abrir la configuración avanzada.' : preparationError ? 'Puedes intentar de nuevo o crear el instrumento manualmente.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
               </div>
-              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground">{preparationError} <Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => void prepare()} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button></div> : null}
+              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground">{preparationError} <Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => void prepare()} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button>{!activityDraft.instrumentType ? <Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => { handleDraftChange({ ...activityDraft, instrumentType: 'rubrica' }); setPreparationError('') }}>Crear manualmente</Button> : null}</div> : null}
+              {activityDraft.preparedRecommendation?.confidence === 'LOW' && !stale ? <p className="text-xs text-muted-foreground">Preparado según el tipo de actividad y la asignatura, sin atribución curricular.</p> : null}
               {!activityDraft.preparedRecommendation && !activityDraft.instrumentType ? <label className="block text-sm font-semibold text-foreground">Si prefieres continuar manualmente, selecciona el instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => handleDraftChange({ ...activityDraft, instrumentType: event.target.value })}><option value="">Seleccionar</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label> : null}
               {stale && !preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">La actividad cambió. Actualiza el instrumento antes de guardar. {activityDraft.preparedManuallyEdited ? 'Se reemplazarán tus cambios manuales solo si lo confirmas.' : null} <Button type="button" size="sm" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar</Button></div> : null}
               {activityDraft.preparedRecommendation && !stale ? <div className="rounded-xl border border-border bg-card p-4"><p className="text-sm font-semibold text-foreground">{activityDraft.preparedRecommendation.criteria.length} criterios · {activityDraft.maxScore} puntos</p><div className="mt-3 space-y-2">{activityDraft.preparedRecommendation.criteria.map((criterion, index) => <div key={criterion.id} className="rounded-lg border border-border p-3"><label className="text-xs font-medium text-muted-foreground">Criterio {index + 1}<Input className="mt-1" value={activityDraft.instrumentFields[`${activityDraft.instrumentType}:criterion:${index}`] ?? criterion.title} onChange={event => handleDraftChange({ ...activityDraft, preparedManuallyEdited: true, instrumentFields: { ...activityDraft.instrumentFields, [`${activityDraft.instrumentType}:criterion:${index}`]: event.target.value } })} /></label><label className="mt-2 block text-xs font-medium text-muted-foreground">Qué se observará<Textarea className="mt-1" value={activityDraft.instrumentFields[`${activityDraft.instrumentType}:description:${index}`] ?? criterion.description} onChange={event => handleDraftChange({ ...activityDraft, preparedManuallyEdited: true, instrumentFields: { ...activityDraft.instrumentFields, [`${activityDraft.instrumentType}:description:${index}`]: event.target.value, ...(activityDraft.instrumentType === 'lista-ponderada' ? { [`lista-ponderada:indicator:${index}`]: event.target.value } : {}) } })} /></label><p className="mt-1 text-xs font-medium text-foreground">{criterion.maxScore} puntos</p></div>)}</div></div> : null}
               {activityDraft.preparedRecommendation ? <Button type="button" variant="outline" onClick={() => setShowAdvancedInstrument(value => !value)}>{showAdvancedInstrument ? 'Ocultar configuración avanzada' : 'Configuración avanzada'}</Button> : null}
-              {(!activityDraft.preparedRecommendation || showAdvancedInstrument) ?
+              {!preparing && (!activityDraft.preparedRecommendation || showAdvancedInstrument) ?
               <InstrumentPreview
                 key={activityDraft.instrumentType}
                 accent={accent}
@@ -4164,8 +4177,8 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
       <CreationFormSection icon={<Target className="size-4" />} number={4} title="Evaluación" accent={accent}>
         <div className="grid gap-3 md:grid-cols-2">
           <label className={cn('space-y-1.5 text-sm font-bold', highlight('evaluationTechnique'))}>Técnica de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })}><option value="" disabled>Seleccionar técnica</option>{evaluationTechniqueOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</Select></label>
-          <label className="space-y-1.5 text-sm font-bold">Tipo de actividad<Select className="h-11" value={activityDraft.pedagogicalActivityType ?? ''} onChange={(event) => onChangeDraft({ ...activityDraft, pedagogicalActivityType: event.target.value })}><option value="">{interpretation?.suggestedActivityType && interpretation.suggestedActivityType !== 'OTHER' ? `Sugerido: ${pedagogicalActivityLabels[interpretation.suggestedActivityType]}` : 'Detectar a partir de la descripción'}</option>{Object.entries(pedagogicalActivityLabels).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Select></label>
-          <label className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Instrumento de evaluación <span className="text-xs font-normal text-muted-foreground">(opcional)</span><Select className="h-11" value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}><option value="">Dejar que AulaBase elija</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
+          <label className="space-y-1.5 text-sm font-bold">Tipo de actividad<Select className="h-11" value={activityDraft.autoDetectedPedagogicalActivityType ? '' : activityDraft.pedagogicalActivityType ?? ''} onChange={(event) => onChangeDraft({ ...activityDraft, pedagogicalActivityType: event.target.value, autoDetectedPedagogicalActivityType: false })}><option value="">{interpretation?.suggestedActivityType && interpretation.suggestedActivityType !== 'OTHER' ? `Sugerido: ${pedagogicalActivityLabels[interpretation.suggestedActivityType]}` : 'Detectar a partir de la descripción'}</option>{Object.entries(pedagogicalActivityLabels).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Select></label>
+          <label className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Instrumento de evaluación <span className="text-xs font-normal text-muted-foreground">(opcional)</span><Select className="h-11" value={activityDraft.autoSelectedInstrumentType ? '' : activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value, autoSelectedInstrumentType: false })}><option value="">Dejar que AulaBase elija</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
         </div>
         {activityDraft.name.trim() ? <div className="mt-3 rounded-lg border border-border bg-muted/20 p-3 text-xs text-muted-foreground" aria-live="polite">{interpretationBusy ? 'AulaBase está revisando la actividad…' : interpretation?.message ?? 'AulaBase preparará un instrumento cuando continúes.'}{interpretation?.curriculumCandidates.length ? <div className="mt-2 space-y-1"><p className="font-semibold text-foreground">Posibles contenidos para revisar:</p>{interpretation.curriculumCandidates.slice(0, 3).map(candidate => <label key={candidate.elementId} className="flex items-start gap-2"><input type="checkbox" className="mt-0.5" checked={activityDraft.selectedCurriculumElementIds?.includes(candidate.elementId) ?? false} onChange={event => onChangeDraft({ ...activityDraft, selectedCurriculumElementIds: event.target.checked ? [...(activityDraft.selectedCurriculumElementIds ?? []), candidate.elementId] : (activityDraft.selectedCurriculumElementIds ?? []).filter(id => id !== candidate.elementId) })} /><span>{candidate.text}</span></label>)}</div> : null}</div> : null}
       </CreationFormSection>

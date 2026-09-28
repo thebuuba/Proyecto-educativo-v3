@@ -147,7 +147,7 @@ describe('GradingBook', () => {
 
   it('prepara un instrumento resumido dentro del creador existente', async () => {
     const proposal: InstrumentRecommendation = { kind: 'RECOMMENDATION', catalogVersion: 'evaluation-2026.1',
-      instrumentType: 'rubrica', confidence: 'LOW', activityType: 'EXPOSITION', evidenceTypes: ['PERFORMANCE'],
+      instrumentType: 'rubrica', confidence: 'LOW', activityType: 'OTHER', evidenceTypes: ['PERFORMANCE'],
       participationMode: 'INDIVIDUAL', curriculumVersionId: null, curriculumScopeId: null, selectedCurriculumElements: [],
       criteria: [{ id: 'c1', title: 'Comunicación', description: 'Explica con claridad.', maxScore: 20, maxScoreUnits: 2000,
         sourceType: 'ACTIVITY_TEMPLATE', sourceReferences: [], templateId: 'communication',
@@ -159,12 +159,12 @@ describe('GradingBook', () => {
       internalTrace: { mappingStatus: 'NO_PUBLISHED_VERSION', reasons: [], ruleId: 'x', activityTypeOrigin: 'DETECTED', ranking: [],
         curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] } }
     const post = vi.spyOn(api, 'post').mockImplementation(async path => path.includes('/interpret') ? {
-      suggestedActivityType: 'EXPOSITION', activityType: 'EXPOSITION', activityTypes: ['EXPOSITION'], curriculumVersionId: null,
+      suggestedActivityType: 'OTHER', activityType: 'OTHER', activityTypes: ['OTHER'], curriculumVersionId: null,
       curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: 'Sin referente literal.',
     } as never : proposal as never)
     const user = userEvent.setup()
     renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
-    await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Exposición sobre el sistema respiratorio')
+    await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Actividad 1')
     await user.type(screen.getByPlaceholderText('20'), '20')
     await user.click(screen.getByRole('button', { name: /Individual/ }))
     await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
@@ -172,7 +172,16 @@ describe('GradingBook', () => {
     expect(screen.getByText('1 criterios · 20 puntos')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Configuración avanzada' })).toBeInTheDocument()
     expect(screen.queryByText('Construye tu rúbrica')).not.toBeInTheDocument()
-    expect(post).toHaveBeenCalledWith('/evaluation-instruments/recommend', expect.objectContaining({ activityTitle: 'Exposición sobre el sistema respiratorio', maxScore: 20 }))
+    expect(screen.getByText(/Preparado según el tipo de actividad y la asignatura/)).toBeInTheDocument()
+    expect(post).toHaveBeenCalledWith('/evaluation-instruments/recommend', expect.objectContaining({ activityTitle: 'Actividad 1', maxScore: 20, preferredInstrumentType: undefined, pedagogicalActivityType: undefined }))
+    await user.click(screen.getByRole('button', { name: /Datos de la actividad/ }))
+    await user.clear(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'))
+    await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Exposición sobre el sistema respiratorio')
+    await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
+    await waitFor(() => expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(2))
+    expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')[1][1]).toEqual(expect.objectContaining({
+      activityTitle: 'Exposición sobre el sistema respiratorio', pedagogicalActivityType: undefined, preferredInstrumentType: undefined,
+    }))
     post.mockRestore()
   })
 
@@ -185,10 +194,24 @@ describe('GradingBook', () => {
     await user.click(screen.getByRole('button', { name: /Individual/ }))
     await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
     await waitFor(() => expect(screen.getByText('Sin conexión de prueba')).toBeInTheDocument())
+    expect(screen.getByText(/No pudimos preparar el instrumento automáticamente/)).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Intentar de nuevo' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Crear manualmente' })).toBeInTheDocument()
     expect(screen.getByText(/Si prefieres continuar manualmente/)).toBeInTheDocument()
     await user.selectOptions(screen.getByLabelText(/Si prefieres continuar manualmente/), 'lista-cotejo')
     expect(screen.getByText(/Construye el instrumento que utilizarás/)).toBeInTheDocument()
     post.mockRestore()
+  })
+
+  it('explica la falta de asignatura en vez de dejar Instrumento vacío', async () => {
+    const user = userEvent.setup()
+    renderBook({ initialActivityAction: 'create', initialActivityBlockId: 'b4' })
+    await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Actividad 1')
+    await user.type(screen.getByPlaceholderText('20'), '20')
+    await user.click(screen.getByRole('button', { name: /Individual/ }))
+    await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
+    expect(screen.getByText(/No se pudo identificar la asignatura/)).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Crear manualmente' })).toBeInTheDocument()
   })
 
   it('no expone borradores guardados dentro del hub de Evaluación', () => {

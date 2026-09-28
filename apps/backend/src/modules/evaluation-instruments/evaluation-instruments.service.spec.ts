@@ -115,6 +115,8 @@ describe('API service security and version policy', () => {
   })
   it('valida DTO: contexto inyectado, límites, puntuaciones y tipos', async () => {
     expect(await validate(plainToInstance(RecommendInstrumentDto, input))).toEqual([])
+    expect(await validate(plainToInstance(RecommendInstrumentDto, { ...input,
+      selectedCurriculumElementIds: ['a62cbe26-6954-54f5-ba4b-ea8ba3b13bb9'] }))).toEqual([])
     for (const invalid of [{ maxScore: -1 }, { maxScore: 20.001 }, { maxScore: Infinity }, { participationMode: 'Individual' }, { pedagogicalActivityType: 'FAKE' }, { levelCount: 6 }, { curriculumScopeId: 'not-uuid' }, { activityTitle: '' }]) {
       expect((await validate(plainToInstance(RecommendInstrumentDto, { ...input, ...invalid }))).length).toBeGreaterThan(0)
     }
