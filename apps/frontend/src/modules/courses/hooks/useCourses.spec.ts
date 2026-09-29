@@ -8,6 +8,10 @@ const mocks = vi.hoisted(() => ({
   appUser: { id: 'user-0', schoolId: 'school-0' },
   getCourseData: vi.fn(),
   deleteSectionSubjectPermanently: vi.fn(),
+  createGrade: vi.fn(),
+  createSection: vi.fn(),
+  createSubject: vi.fn(),
+  assignSubjectToSection: vi.fn(),
 }))
 
 vi.mock('@/modules/auth/hooks/useAuth', () => ({
@@ -15,10 +19,10 @@ vi.mock('@/modules/auth/hooks/useAuth', () => ({
 }))
 
 vi.mock('@/modules/courses/services/coursesService', () => ({
-  assignSubjectToSection: vi.fn(),
-  createGrade: vi.fn(),
-  createSection: vi.fn(),
-  createSubject: vi.fn(),
+  assignSubjectToSection: mocks.assignSubjectToSection,
+  createGrade: mocks.createGrade,
+  createSection: mocks.createSection,
+  createSubject: mocks.createSubject,
   deactivateGrade: vi.fn(),
   deactivateSection: vi.fn(),
   deactivateSectionSubject: vi.fn(),
@@ -51,6 +55,10 @@ describe('useCourses cache', () => {
     mocks.appUser = { id: `user-${userSequence}`, schoolId: 'school-1' }
     mocks.getCourseData.mockReset()
     mocks.deleteSectionSubjectPermanently.mockReset()
+    mocks.createGrade.mockReset()
+    mocks.createSection.mockReset()
+    mocks.createSubject.mockReset()
+    mocks.assignSubjectToSection.mockReset()
   })
 
   it('reuses course data on remount while its TTL is fresh', async () => {
@@ -117,6 +125,29 @@ describe('useCourses cache', () => {
     await waitFor(() => expect(hook.result.current.grades).toHaveLength(1))
     await expect(hook.result.current.permanentlyDeleteSubjectAssignment('archived-1', 'ELIMINAR')).rejects.toThrow('Sin permiso')
     expect(hook.result.current.grades[0].sections[0].assignments).toHaveLength(1)
+    hook.unmount()
+  })
+
+  it('no confunde con archivado un grado nuevo cuyo endpoint devuelve ACTIVE', async () => {
+    mocks.getCourseData.mockResolvedValue(makeCourseData())
+    mocks.createGrade.mockResolvedValue({
+      id: 'grade-4', name: '4.º', status: 'ACTIVE', academicLevelId: 'primary', academicCycleId: 'primary-second',
+    })
+    mocks.createSection.mockResolvedValue({ id: 'section-a', gradeId: 'grade-4', name: 'A', assignments: [] })
+    mocks.createSubject.mockResolvedValue({ id: 'subject-custom' })
+    const hook = renderHook(() => useCourses())
+    await waitFor(() => expect(hook.result.current.loading).toBe(false))
+
+    await act(async () => {
+      await hook.result.current.createTeacherAssignment({
+        academicLevelId: 'primary', academicLevelName: 'Primario', academicCycleId: 'primary-second',
+        academicCycleName: 'Segundo ciclo', gradeName: '4.º', gradeSequence: 4, sectionName: 'A',
+        subjectCode: 'CUSTOM-sexualidad-humana', subjectName: 'Sexualidad Humana',
+      })
+    })
+
+    expect(mocks.createSection).toHaveBeenCalledWith({ gradeId: 'grade-4', name: 'A' })
+    expect(mocks.assignSubjectToSection).toHaveBeenCalledWith(expect.objectContaining({ gradeId: 'grade-4', sectionId: 'section-a' }))
     hook.unmount()
   })
 })

@@ -20,7 +20,7 @@ export type TimeSlot = {
   sourceKey?: string | null
 }
 
-export type ScheduleBlockType = 'CLASS' | 'BREAK' | 'LUNCH' | 'PAUSE' | 'FREE' | 'GAP'
+export type ScheduleBlockType = 'CLASS' | 'BREAK' | 'BREAKFAST' | 'LUNCH' | 'PAUSE' | 'FREE' | 'GAP'
 export type ScheduleBlockSource = 'MANUAL' | 'INTER_JOURNEY_GAP'
 
 export type ScheduleJourneyKind = 'MORNING' | 'AFTERNOON' | 'NIGHT' | 'EXTENDED' | 'CUSTOM'
@@ -88,6 +88,16 @@ export type ScheduleEntry = {
   timeSlotName: string
   startTime: string
   endTime: string
+}
+
+export type ScheduleIntegrityIssue = {
+  code: 'GRADE_ARCHIVED' | 'SECTION_ARCHIVED' | 'SUBJECT_ASSIGNMENT_ARCHIVED' | 'SUBJECT_ARCHIVED'
+  entryIds: string[]
+  affectedClasses: number
+  gradeName: string
+  sectionName: string
+  subjectName: string
+  message: string
 }
 
 /** Entrada del horario adaptada para visualización en calendario */

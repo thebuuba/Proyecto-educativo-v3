@@ -78,7 +78,7 @@ describe('useSchedule initial load', () => {
     hook.unmount()
   })
 
-  it('reuses the complete snapshot on remount while its TTL is fresh', async () => {
+  it('shows the cached snapshot immediately and revalidates changes on remount', async () => {
     mocks.getScheduleWorkspace.mockResolvedValue({
       currentSchoolYear: { id: 'year-1', name: '2026-2027', isCurrent: true },
       timeSlots: [], sections: [], teachers: [], subjects: [], entries: [],
@@ -90,7 +90,7 @@ describe('useSchedule initial load', () => {
 
     const second = renderHook(() => useSchedule())
     expect(second.result.current.loading).toBe(false)
-    expect(mocks.getScheduleWorkspace).toHaveBeenCalledTimes(1)
+    await waitFor(() => expect(mocks.getScheduleWorkspace).toHaveBeenCalledTimes(2))
     second.unmount()
   })
 })

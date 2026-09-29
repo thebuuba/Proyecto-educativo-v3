@@ -87,6 +87,17 @@ export class CoursesController {
     return this.coursesService.deleteGrade(user.schoolId, id)
   }
 
+  /** Elimina definitivamente un grado archivado y toda su informacion academica. */
+  @Delete('grades/:id/permanent')
+  @Roles('admin', 'director', 'coordinator')
+  permanentlyDeleteGrade(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Query('confirmation') confirmation?: string,
+  ) {
+    return this.coursesService.permanentlyDeleteGrade(user.schoolId, id, confirmation)
+  }
+
   /** Obtiene las secciones activas de un grado */
   @Get('grades/:gradeId/sections')
   findSectionsByGrade(@CurrentUser() user: AuthenticatedUser, @Param('gradeId') gradeId: string) {

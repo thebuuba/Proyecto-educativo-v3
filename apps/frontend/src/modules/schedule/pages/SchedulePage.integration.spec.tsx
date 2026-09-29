@@ -1,11 +1,13 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { ApiError } from '@/services/apiClient'
 
 const mocks = vi.hoisted(() => ({
   saveScheduleStructure: vi.fn(),
+  deleteScheduleStructure: vi.fn(),
   refetchAll: vi.fn(),
+  updateTimeSlot: vi.fn(),
   journeys: [
     {
       id: '11111111-1111-4111-8111-111111111111',
@@ -40,6 +42,7 @@ vi.mock('@/modules/schedule/services/scheduleService', async (importOriginal) =>
     ...actual,
     getSectionSubjects: vi.fn().mockResolvedValue([]),
     saveScheduleStructure: mocks.saveScheduleStructure,
+    deleteScheduleStructure: mocks.deleteScheduleStructure,
   }
 })
 
@@ -54,6 +57,7 @@ vi.mock('@/modules/schedule/hooks/useSchedule', () => ({
     error: null,
     createEntry: vi.fn(),
     removeEntry: vi.fn(),
+    updateTimeSlot: mocks.updateTimeSlot,
     refetchAll: mocks.refetchAll,
   }),
 }))
@@ -67,6 +71,10 @@ describe('guardado desde SchedulePage', () => {
     vi.clearAllMocks()
     mocks.timeSlots.splice(1)
     mocks.refetchAll.mockResolvedValue(undefined)
+    mocks.updateTimeSlot.mockResolvedValue(undefined)
+    mocks.deleteScheduleStructure.mockResolvedValue({
+      deleted: { assignments: 1, blocks: 1, journeys: 1 },
+    })
     vi.spyOn(console, 'error').mockImplementation(() => undefined)
   })
 
@@ -133,5 +141,42 @@ describe('guardado desde SchedulePage', () => {
     await user.click(screen.getByRole('button', { name: 'Ir al error' }))
     expect(screen.getByText('¿En qué jornadas trabajas?')).toBeInTheDocument()
     await waitFor(() => expect(document.activeElement).toHaveAttribute('data-schedule-review', 'Matutina'))
+  })
+
+  it('permite convertir una hora disponible en desayuno u otro bloque no lectivo', async () => {
+    const user = userEvent.setup()
+    render(<SchedulePage />)
+
+    await user.click(screen.getByRole('button', { name: 'Asignar clases' }))
+    const selector = screen.getAllByLabelText('Asignar clase a Clase 1')[0]
+    expect(within(selector).getByRole('option', { name: 'Hora pedagógica' })).toBeInTheDocument()
+    expect(within(selector).getByRole('option', { name: 'Receso' })).toBeInTheDocument()
+    expect(within(selector).getByRole('option', { name: 'Recreo' })).toBeInTheDocument()
+    expect(within(selector).getByRole('option', { name: 'Desayuno' })).toBeInTheDocument()
+    expect(within(selector).getByRole('option', { name: 'Almuerzo' })).toBeInTheDocument()
+
+    await user.selectOptions(selector, 'block:BREAKFAST:Desayuno')
+
+    await waitFor(() => expect(mocks.updateTimeSlot).toHaveBeenCalledWith(
+      '22222222-2222-4222-8222-222222222222',
+      { name: 'Desayuno', blockType: 'BREAKFAST' },
+    ))
+    expect(mocks.refetchAll).toHaveBeenCalledTimes(1)
+  })
+
+  it('advierte y elimina las asignaciones junto con la estructura al comenzar de nuevo', async () => {
+    const user = userEvent.setup()
+    render(<SchedulePage />)
+
+    await user.click(screen.getByRole('button', { name: 'Crear horario nuevo' }))
+
+    expect(screen.getByRole('heading', { name: 'Eliminar horario actual' })).toBeInTheDocument()
+    expect(screen.getByText(/también se eliminarán todas las clases asignadas/i)).toBeInTheDocument()
+    expect(screen.getByText(/Los cursos, las asignaturas y los docentes no serán eliminados/i)).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Eliminar horario y asignaciones' }))
+
+    await waitFor(() => expect(mocks.deleteScheduleStructure).toHaveBeenCalledTimes(1))
+    expect(mocks.refetchAll).toHaveBeenCalledTimes(1)
   })
 })

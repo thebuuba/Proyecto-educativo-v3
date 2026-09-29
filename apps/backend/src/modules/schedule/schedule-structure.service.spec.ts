@@ -7,8 +7,9 @@ const mocks = vi.hoisted(() => {
       update: vi.fn(),
       create: vi.fn(),
       delete: vi.fn(),
+      deleteMany: vi.fn(),
     },
-    scheduleEntry: { findFirst: vi.fn() },
+    scheduleEntry: { findFirst: vi.fn(), deleteMany: vi.fn() },
     timeSlot: {
       findMany: vi.fn(),
       update: vi.fn(),
@@ -82,5 +83,26 @@ describe('ScheduleService.saveStructure', () => {
     )
     expect(mocks.tx.timeSlot.createMany).not.toHaveBeenCalled()
     expect(mocks.tx.timeSlot.deleteMany).not.toHaveBeenCalled()
+  })
+
+  it('elimina primero las asignaciones y después la estructura completa', async () => {
+    mocks.tx.scheduleEntry.deleteMany.mockResolvedValue({ count: 4 })
+    mocks.tx.timeSlot.deleteMany.mockResolvedValue({ count: 6 })
+    mocks.tx.scheduleJourney.deleteMany.mockResolvedValue({ count: 1 })
+
+    const service = new ScheduleService()
+    await expect(service.deleteStructure(schoolId)).resolves.toEqual({
+      deleted: { assignments: 4, blocks: 6, journeys: 1 },
+    })
+
+    expect(mocks.tx.scheduleEntry.deleteMany).toHaveBeenCalledWith({ where: { schoolId } })
+    expect(mocks.tx.timeSlot.deleteMany).toHaveBeenCalledWith({ where: { schoolId } })
+    expect(mocks.tx.scheduleJourney.deleteMany).toHaveBeenCalledWith({ where: { schoolId } })
+    expect(mocks.tx.scheduleEntry.deleteMany.mock.invocationCallOrder[0]).toBeLessThan(
+      mocks.tx.timeSlot.deleteMany.mock.invocationCallOrder[0],
+    )
+    expect(mocks.tx.timeSlot.deleteMany.mock.invocationCallOrder[0]).toBeLessThan(
+      mocks.tx.scheduleJourney.deleteMany.mock.invocationCallOrder[0],
+    )
   })
 })

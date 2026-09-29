@@ -17,6 +17,7 @@ export const scheduleDays = [
 export const blockTypeLabels: Record<ScheduleBlockType, string> = {
   CLASS: 'Clase',
   BREAK: 'Recreo',
+  BREAKFAST: 'Desayuno',
   LUNCH: 'Almuerzo',
   PAUSE: 'Pausa',
   FREE: 'Hora pedagógica',

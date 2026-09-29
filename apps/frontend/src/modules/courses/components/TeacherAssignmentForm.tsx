@@ -12,7 +12,6 @@ import {
   defaultAcademicStructure,
   defaultSectionOptions,
   findCatalogItem,
-  getExtracurricularSubjectOptions,
   normalizeAcademicText,
 } from '@/modules/courses/data/academicAssignmentCatalog'
 import type { CourseCatalogs, TeacherAssignmentInput } from '@/modules/courses/types'
@@ -23,6 +22,7 @@ type TeacherAssignmentFormProps = {
   error: string | null
   onSubmit: (input: TeacherAssignmentInput) => Promise<void>
   onClose: () => void
+  onOpenArchived?: () => void
 }
 
 export function TeacherAssignmentForm({
@@ -31,6 +31,7 @@ export function TeacherAssignmentForm({
   error,
   onSubmit,
   onClose,
+  onOpenArchived,
 }: TeacherAssignmentFormProps) {
   const [levelCode, setLevelCode] = useState(defaultAcademicStructure[0]?.code ?? '')
   const selectedLevel = defaultAcademicStructure.find((level) => level.code === levelCode) ?? defaultAcademicStructure[0]
@@ -44,14 +45,13 @@ export function TeacherAssignmentForm({
     (selectedCycle?.grades.find((g) => g.code === gradeCode) ?? selectedCycle?.grades?.[0])?.subjects ?? [],
     catalogs.subjects,
   )
-  const extracurricularSubjectOptions = getExtracurricularSubjectOptions(catalogs.subjects)
-  const subjectOptions = [...curricularSubjectOptions, ...extracurricularSubjectOptions]
+  const subjectOptions = curricularSubjectOptions
   const [subjectKey, setSubjectKey] = useState('')
   const [newSubjectName, setNewSubjectName] = useState('')
   const selectedSubject = subjectOptions.find((subject) => subject.key === subjectKey)
   const [isCreatingExtracurricular, setIsCreatingExtracurricular] = useState(false)
   const normalizedNewSubjectName = normalizeAcademicText(newSubjectName)
-  const subjectNameExists = Boolean(normalizedNewSubjectName) && catalogs.subjects.some(
+  const matchesCurricularSubject = Boolean(normalizedNewSubjectName) && curricularSubjectOptions.some(
     (subject) => normalizeAcademicText(subject.name) === normalizedNewSubjectName,
   )
 
@@ -86,7 +86,7 @@ export function TeacherAssignmentForm({
     event.preventDefault()
     if (!selectedLevel || !selectedCycle || !selectedGrade || !sectionName) return
     if (!isCreatingExtracurricular && !selectedSubject) return
-    if (isCreatingExtracurricular && (!newSubjectName.trim() || subjectNameExists)) return
+    if (isCreatingExtracurricular && (!newSubjectName.trim() || matchesCurricularSubject)) return
     const existingSubject = selectedSubject
 
     const academicLevel = findCatalogItem(catalogs.levels, selectedLevel.matchNames)
@@ -128,7 +128,7 @@ export function TeacherAssignmentForm({
     selectedCycle &&
     selectedGrade &&
     sectionName &&
-    (isCreatingExtracurricular ? newSubjectName.trim() && !subjectNameExists : selectedSubject),
+    (isCreatingExtracurricular ? newSubjectName.trim() && !matchesCurricularSubject : selectedSubject),
   )
 
   return (
@@ -140,7 +140,16 @@ export function TeacherAssignmentForm({
       onClose={onClose}
     >
       <form onSubmit={handleSubmit} className="space-y-4 p-5 sm:p-6">
-        {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
+        {error ? (
+          <FeedbackBanner tone="danger">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <span>{error}</span>
+              {error.includes('Grados archivados') && onOpenArchived ? (
+                <Button type="button" variant="outline" size="sm" onClick={onOpenArchived}>Ir a grados archivados</Button>
+              ) : null}
+            </div>
+          </FeedbackBanner>
+        ) : null}
 
         <label className="block space-y-2">
           <span className="text-sm font-extrabold text-foreground">Nivel educativo</span>
@@ -193,7 +202,6 @@ export function TeacherAssignmentForm({
               <>
                 <option value="">Selecciona una asignatura</option>
                 {curricularSubjectOptions.map((subject) => <option key={subject.key} value={subject.key}>{subject.name}</option>)}
-                {extracurricularSubjectOptions.map((subject) => <option key={subject.key} value={subject.key}>{subject.name}</option>)}
               </>
             ) : <option value="">Sin asignaturas disponibles</option>}
           </Select>
@@ -230,8 +238,8 @@ export function TeacherAssignmentForm({
                 required
               />
             </label>
-            {subjectNameExists ? (
-              <FeedbackBanner tone="warning">Esta asignatura ya existe. Selecciónala en la lista para reutilizarla.</FeedbackBanner>
+            {matchesCurricularSubject ? (
+              <FeedbackBanner tone="warning">Esta asignatura forma parte del currículo de este grado. Selecciónala en la lista superior.</FeedbackBanner>
             ) : null}
             <Button
               type="button"

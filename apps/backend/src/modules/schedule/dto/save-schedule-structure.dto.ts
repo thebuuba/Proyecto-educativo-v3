@@ -48,7 +48,7 @@ export class ScheduleBlockInputDto {
   @Max(7)
   dayOfWeek!: number
 
-  @IsIn(['CLASS', 'BREAK', 'LUNCH', 'PAUSE', 'FREE', 'GAP'])
+  @IsIn(['CLASS', 'BREAK', 'BREAKFAST', 'LUNCH', 'PAUSE', 'FREE', 'GAP'])
   blockType!: string
 
   @IsString()

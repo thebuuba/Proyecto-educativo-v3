@@ -45,15 +45,101 @@ export class ScheduleService {
       orderBy: { startDate: 'desc' },
     })
     const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
-    const [journeys, timeSlots, sections, teachers, subjects, entries] = await Promise.all([
+    const [journeys, timeSlots, sections, teachers, subjects, entries, integrityIssues] = await Promise.all([
       this.getJourneys(schoolId),
       this.getTimeSlots(schoolId),
       this.getSections(schoolId),
       this.getTeachers(schoolId),
       this.getSubjects(schoolId),
       this.findEntries(schoolId, undefined, undefined, currentSchoolYear?.id),
+      currentSchoolYear
+        ? this.getIntegrityIssues(schoolId, currentSchoolYear.id)
+        : Promise.resolve([]),
     ])
-    return { currentSchoolYear, journeys, timeSlots, sections, teachers, subjects, entries }
+    return { currentSchoolYear, journeys, timeSlots, sections, teachers, subjects, entries, integrityIssues }
+  }
+
+  /** Detecta clases cuyo curso o asignatura fue archivado después de crear el horario. */
+  async getIntegrityIssues(schoolId: string, schoolYearId: string) {
+    const entries = await prisma.scheduleEntry.findMany({
+      where: { schoolId, schoolYearId, status: 'ACTIVE' },
+      select: {
+        id: true,
+        sectionSubjectId: true,
+        section: {
+          select: {
+            id: true,
+            name: true,
+            status: true,
+            grade: { select: { id: true, name: true, status: true } },
+          },
+        },
+        sectionSubject: {
+          select: {
+            status: true,
+            subject: { select: { id: true, name: true, status: true } },
+          },
+        },
+      },
+    })
+
+    type IntegrityCode =
+      | 'GRADE_ARCHIVED'
+      | 'SECTION_ARCHIVED'
+      | 'SUBJECT_ASSIGNMENT_ARCHIVED'
+      | 'SUBJECT_ARCHIVED'
+    type IntegrityIssue = {
+      code: IntegrityCode
+      entryIds: string[]
+      affectedClasses: number
+      gradeName: string
+      sectionName: string
+      subjectName: string
+      message: string
+    }
+    const grouped = new Map<string, IntegrityIssue>()
+
+    for (const entry of entries) {
+      let code: IntegrityCode | null = null
+      let message = ''
+      const gradeName = entry.section.grade.name
+      const sectionName = entry.section.name
+      const subjectName = entry.sectionSubject.subject.name
+
+      if (entry.section.grade.status !== 'ACTIVE') {
+        code = 'GRADE_ARCHIVED'
+        message = `El grado ${gradeName} está archivado.`
+      } else if (entry.section.status !== 'ACTIVE') {
+        code = 'SECTION_ARCHIVED'
+        message = `La sección ${gradeName} ${sectionName} está archivada.`
+      } else if (entry.sectionSubject.status !== 'ACTIVE') {
+        code = 'SUBJECT_ASSIGNMENT_ARCHIVED'
+        message = `${subjectName} ya no está asignada a ${gradeName} ${sectionName}.`
+      } else if (entry.sectionSubject.subject.status !== 'ACTIVE') {
+        code = 'SUBJECT_ARCHIVED'
+        message = `La asignatura ${subjectName} está archivada.`
+      }
+      if (!code) continue
+
+      const key = `${code}:${entry.sectionSubjectId}:${entry.section.id}`
+      const existing = grouped.get(key)
+      if (existing) {
+        existing.entryIds.push(entry.id)
+        existing.affectedClasses += 1
+      } else {
+        grouped.set(key, {
+          code,
+          entryIds: [entry.id],
+          affectedClasses: 1,
+          gradeName,
+          sectionName,
+          subjectName,
+          message,
+        })
+      }
+    }
+
+    return [...grouped.values()]
   }
 
   /** Obtiene todas las entradas de horario aplicando filtros opcionales */
@@ -224,6 +310,23 @@ export class ScheduleService {
     }, { timeout: 30_000 })
     optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId))
     return { saved: true }
+  }
+
+  async deleteStructure(schoolId: string) {
+    const deleted = await prisma.$transaction(async (tx) => {
+      const assignments = await tx.scheduleEntry.deleteMany({ where: { schoolId } })
+      const blocks = await tx.timeSlot.deleteMany({ where: { schoolId } })
+      const journeys = await tx.scheduleJourney.deleteMany({ where: { schoolId } })
+
+      return {
+        assignments: assignments.count,
+        blocks: blocks.count,
+        journeys: journeys.count,
+      }
+    })
+
+    optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId))
+    return { deleted }
   }
 
   private validateStructure(dto: SaveScheduleStructureDto) {

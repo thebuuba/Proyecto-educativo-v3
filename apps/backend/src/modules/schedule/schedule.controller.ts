@@ -82,6 +82,12 @@ export class ScheduleController {
     return this.scheduleService.saveStructure(user.schoolId, dto)
   }
 
+  @Delete('structure')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
+  deleteStructure(@CurrentUser() user: AuthenticatedUser) {
+    return this.scheduleService.deleteStructure(user.schoolId)
+  }
+
   /** Crea una nueva franja horaria (solo admin, director, coordinador) */
   @Post('time-slots')
   @Roles('admin', 'director', 'coordinator')
@@ -91,7 +97,7 @@ export class ScheduleController {
 
   /** Actualiza una franja horaria existente (solo admin, director, coordinador) */
   @Patch('time-slots/:id')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   updateTimeSlot(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,

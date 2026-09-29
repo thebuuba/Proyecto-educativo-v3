@@ -56,7 +56,6 @@ import {
   Pipette,
   Plane,
   Plus,
-  Power,
   Presentation,
   Puzzle,
   RotateCcw,
@@ -188,6 +187,7 @@ export function CoursesPage() {
     error,
     refetch,
     removeGrade,
+    permanentlyDeleteGrade,
     addSection,
     editSection,
     removeSection,
@@ -221,12 +221,13 @@ export function CoursesPage() {
   const [assignmentSubmitting, setAssignmentSubmitting] = useState(false)
 
   const [deleteTarget, setDeleteTarget] = useState<{
-    kind: 'grade' | 'section' | 'assignment' | 'permanent-assignment'
+    kind: 'grade' | 'permanent-grade' | 'section' | 'assignment' | 'permanent-assignment'
     id: string
     label: string
   } | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
   const [actionSuccess, setActionSuccess] = useState<string | null>(null)
+  const [actionSuccessVisible, setActionSuccessVisible] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [debouncedSearch, setDebouncedSearch] = useState('')
 
@@ -234,6 +235,21 @@ export function CoursesPage() {
     const timer = setTimeout(() => setDebouncedSearch(searchQuery), 300)
     return () => clearTimeout(timer)
   }, [searchQuery])
+
+  useEffect(() => {
+    if (!actionSuccess) {
+      setActionSuccessVisible(false)
+      return
+    }
+
+    setActionSuccessVisible(true)
+    const fadeTimer = window.setTimeout(() => setActionSuccessVisible(false), 4000)
+    const removeTimer = window.setTimeout(() => setActionSuccess(null), 4400)
+    return () => {
+      window.clearTimeout(fadeTimer)
+      window.clearTimeout(removeTimer)
+    }
+  }, [actionSuccess])
 
   useEffect(() => {
     const syncHeaderSearch = (event: Event) => {
@@ -245,7 +261,7 @@ export function CoursesPage() {
   const [levelFilter, setLevelFilter] = useState('all')
   const [cycleFilter, setCycleFilter] = useState('all')
   const [subjectFilter, setSubjectFilter] = useState('all')
-  const [showArchived, setShowArchived] = useState(false)
+  const showArchived = searchParams.get('view') === 'archived'
   const advancedFilters = useMemo(() => ({ ...defaultAdvancedFilters, showArchived }), [showArchived])
   const [selectedCourseId, setSelectedCourseId] = useState<string | null>(() => searchParams.get('courseId'))
 
@@ -261,6 +277,19 @@ export function CoursesPage() {
     else next.delete('subjectId')
     setSearchParams(next)
     setSelectedCourseId(courseId)
+  }, [searchParams, setSearchParams])
+
+  const setArchivedView = useCallback((archived: boolean) => {
+    const next = new URLSearchParams(searchParams)
+    if (archived) next.set('view', 'archived')
+    else next.delete('view')
+    next.delete('courseId')
+    next.delete('subjectId')
+    setSearchParams(next)
+    setSearchQuery('')
+    setLevelFilter('all')
+    setCycleFilter('all')
+    setSubjectFilter('all')
   }, [searchParams, setSearchParams])
 
   function openCreateAssignmentFlow() {
@@ -367,6 +396,10 @@ export function CoursesPage() {
     try {
       if (deleteTarget.kind === 'grade') {
         await removeGrade(deleteTarget.id)
+        setActionSuccess(`El grado «${deleteTarget.label}» fue archivado. Toda su información permanece guardada.`)
+      } else if (deleteTarget.kind === 'permanent-grade') {
+        await permanentlyDeleteGrade(deleteTarget.id, confirmation)
+        setActionSuccess(`El grado «${deleteTarget.label}» se eliminó permanentemente.`)
       } else if (deleteTarget.kind === 'section') {
         await removeSection(deleteTarget.id)
       } else if (deleteTarget.kind === 'assignment') {
@@ -378,7 +411,7 @@ export function CoursesPage() {
       setActionError(null)
       setDeleteTarget(null)
     } catch (error) {
-      if (deleteTarget.kind === 'permanent-assignment') {
+      if (deleteTarget.kind === 'permanent-assignment' || deleteTarget.kind === 'permanent-grade') {
         if (error instanceof ApiError && (error.status === 404 || error.status === 409)) await refetch(false)
         throw error
       }
@@ -389,7 +422,7 @@ export function CoursesPage() {
       )
       setDeleteTarget(null)
     }
-  }, [deleteTarget, permanentlyDeleteSubjectAssignment, refetch, removeGrade, removeSection, removeSubjectAssignment])
+  }, [deleteTarget, permanentlyDeleteGrade, permanentlyDeleteSubjectAssignment, refetch, removeGrade, removeSection, removeSubjectAssignment])
 
   const handleCreateSubject = useCallback(
     async (input: CreateSubjectInput): Promise<Subject> => {
@@ -430,8 +463,12 @@ export function CoursesPage() {
   const handleOpen = useCallback((id: string) => setCourseWorkspace(id), [setCourseWorkspace])
   const handleAddSection = useCallback((grade: GradeWithSections) => openCreateSection(grade), [])
   const handleEditSection = useCallback((grade: GradeWithSections, sectionId: string) => openEditSection(grade, sectionId), [])
-  const handleDeleteSection = useCallback((section: Section) =>
-    setDeleteTarget({ kind: 'section', id: section.id, label: section.name }), [])
+  const handleArchiveGrade = useCallback((grade: GradeWithSections) =>
+    setDeleteTarget({ kind: 'grade', id: grade.id, label: grade.name }), [])
+  const handleDeleteArchivedGrade = useCallback((grade: GradeWithSections) => {
+    setActionSuccess(null)
+    setDeleteTarget({ kind: 'permanent-grade', id: grade.id, label: grade.name })
+  }, [])
   const handleOpenAssignSubject = useCallback((grade: GradeWithSections, sectionId: string) => {
     if (!currentSchoolYear) {
       setActionError('Activa un ano escolar antes de asignar asignaturas.')
@@ -456,7 +493,12 @@ export function CoursesPage() {
 
   const courseCards = useMemo(() => buildCourseCards(grades), [grades])
   const activeCourseCards = useMemo(() => courseCards.filter((item) => !item.archived), [courseCards])
-  const filterOptionCourseCards = advancedFilters.showArchived ? courseCards : activeCourseCards
+  const archivedCourseCards = useMemo(
+    () => buildArchivedGradeCards(grades),
+    [grades],
+  )
+  const visibleCourseCards = showArchived ? archivedCourseCards : activeCourseCards
+  const filterOptionCourseCards = visibleCourseCards
   const appliedCourseFilters = useMemo<CourseAdvancedFilters>(() => ({
     ...advancedFilters,
     level: levelFilter,
@@ -464,8 +506,8 @@ export function CoursesPage() {
     subject: subjectFilter,
   }), [advancedFilters, cycleFilter, levelFilter, subjectFilter])
   const filteredCourseCards = useMemo(
-    () => applyCourseFilters(courseCards, appliedCourseFilters, debouncedSearch),
-    [appliedCourseFilters, courseCards, debouncedSearch],
+    () => applyCourseFilters(visibleCourseCards, appliedCourseFilters, debouncedSearch),
+    [appliedCourseFilters, debouncedSearch, visibleCourseCards],
   )
   const levelFilters = useMemo(() => uniqueValues(filterOptionCourseCards.map((item) => item.levelName)), [filterOptionCourseCards])
   const cycleFilterItems = useMemo(
@@ -537,11 +579,11 @@ export function CoursesPage() {
               <div className="flex min-w-0 items-center gap-4">
                 <span className="grid size-12 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Library className="size-5" /></span>
                 <div className="min-w-0">
-                  <h1 id="courses-summary-title" className="text-2xl font-extrabold tracking-tight">Mis cursos</h1>
-                  <p className="text-sm text-muted-foreground">Año escolar {currentSchoolYear?.name ?? 'sin configurar'}</p>
+                  <h1 id="courses-summary-title" className="text-2xl font-extrabold tracking-tight">{showArchived ? 'Grados archivados' : 'Mis cursos'}</h1>
+                  <p className="text-sm text-muted-foreground">{showArchived ? 'Estos grados están en pausa y conservan toda su información.' : `Año escolar ${currentSchoolYear?.name ?? 'sin configurar'}`}</p>
                 </div>
               </div>
-              {canManage ? (
+              {canManage && !showArchived ? (
                 <div className="flex flex-wrap items-center gap-2">
                   <Button data-tour="create-course" onClick={openCreateAssignmentFlow}>
                     <Plus className="size-4" /> Agregar curso
@@ -556,6 +598,7 @@ export function CoursesPage() {
                   </details>
                 </div>
               ) : null}
+              {showArchived ? <Button variant="outline" onClick={() => setArchivedView(false)}><ArrowLeft className="size-4" /> Volver a cursos</Button> : null}
             </div>
             <div className="mt-5 grid grid-cols-2 gap-2 xl:grid-cols-4" aria-label="Resumen de cursos">
               {([
@@ -575,7 +618,7 @@ export function CoursesPage() {
           <div className="space-y-3 rounded-3xl border border-border bg-card p-4 shadow-sm">
             <div className="flex flex-wrap items-center gap-2" aria-label="Filtrar por nivel">
               {['all', ...levelFilters].map((level) => <button key={level} type="button" aria-pressed={levelFilter === level} onClick={() => { setLevelFilter(level); setCycleFilter('all'); setSubjectFilter('all') }} className={cn('min-h-10 rounded-full px-4 text-sm font-semibold transition', levelFilter === level ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:text-foreground')}>{level === 'all' ? 'Todos' : cleanLevelName(level)}</button>)}
-              <label className="ml-auto inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm text-muted-foreground"><input type="checkbox" checked={showArchived} onChange={(event) => setShowArchived(event.target.checked)} className="size-4 accent-primary" />Mostrar archivados</label>
+              {!showArchived ? <Button className="ml-auto" variant="outline" onClick={() => setArchivedView(true)}><Archive className="size-4" /> Mostrar archivadas ({new Set(archivedCourseCards.map((item) => item.grade.id)).size})</Button> : null}
             </div>
             <div className="grid gap-3 md:grid-cols-3">
               <label className="relative"><span className="sr-only">Buscar cursos</span><Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" /><Input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Buscar grado, sección o asignatura..." className="pl-9" /></label>
@@ -611,7 +654,7 @@ export function CoursesPage() {
               <p>{actionError}</p>
             </div>
           ) : null}
-          {actionSuccess ? <div role="status" className="rounded-lg border border-success/20 bg-success/10 p-3 text-sm text-success">{actionSuccess}</div> : null}
+          {actionSuccess ? <div role="status" className={cn('rounded-lg border border-success/20 bg-success/10 p-3 text-sm text-success transition-all duration-300', actionSuccessVisible ? 'translate-y-0 opacity-100' : '-translate-y-1 opacity-0')}>{actionSuccess}</div> : null}
 
           {error ? (
             <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
@@ -652,7 +695,8 @@ export function CoursesPage() {
                               onOpen={handleOpen}
                               onAddSection={handleAddSection}
                               onEditSection={handleEditSection}
-                              onDeleteSection={handleDeleteSection}
+                              onArchiveGrade={handleArchiveGrade}
+                              onDeleteArchivedGrade={handleDeleteArchivedGrade}
                               onAssignSubject={handleOpenAssignSubject}
                             />
                           ))}
@@ -663,14 +707,14 @@ export function CoursesPage() {
                 </section>
               ))}
             </div>
-          ) : courseCards.length > 0 ? (
+          ) : visibleCourseCards.length > 0 || courseCards.length > 0 ? (
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card py-20 text-center">
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-muted">
                 <SearchX className="h-5 w-5 text-muted-foreground" />
               </span>
-              <p className="mt-4 text-sm font-bold text-foreground">No se encontraron cursos</p>
+              <p className="mt-4 text-sm font-bold text-foreground">{showArchived ? 'No hay grados archivados' : 'No se encontraron cursos'}</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Prueba ajustando los filtros o el termino de busqueda.
+                {showArchived ? 'Los grados que inactives aparecerán en esta pantalla.' : 'Prueba ajustando los filtros o el término de búsqueda.'}
               </p>
             </div>
           ) : (
@@ -701,6 +745,10 @@ export function CoursesPage() {
           error={assignmentFlowError}
           onSubmit={handleCreateTeacherAssignment}
           onClose={closeAssignmentFlow}
+          onOpenArchived={() => {
+            closeAssignmentFlow()
+            setArchivedView(true)
+          }}
         />
       ) : null}
 
@@ -745,18 +793,24 @@ export function CoursesPage() {
           onConfirm={(confirmation) => handleDeleteConfirm(confirmation)}
           onClose={() => setDeleteTarget(null)}
         />
+      ) : deleteTarget?.kind === 'permanent-grade' ? (
+        <PermanentGradeDeleteDialog
+          gradeName={deleteTarget.label}
+          onConfirm={(confirmation) => handleDeleteConfirm(confirmation)}
+          onClose={() => setDeleteTarget(null)}
+        />
       ) : deleteTarget ? (
         <ConfirmDialog
           title={
             deleteTarget.kind === 'grade'
-              ? 'Inactivar curso'
+              ? 'Inactivar grado'
               : deleteTarget.kind === 'section'
                 ? 'Inactivar seccion'
               : 'Eliminar asignatura definitivamente'
           }
           description={
             deleteTarget.kind === 'grade'
-              ? `Inactivar el curso "${deleteTarget.label}"? Se conservara el historial relacionado.`
+              ? `¿Inactivar el grado "${deleteTarget.label}"? El grado quedará en pausa y se conservarán sus estudiantes, asignaturas, actividades, calificaciones y demás información. Podrás verlo en Grados archivados.`
               : deleteTarget.kind === 'section'
                 ? `Inactivar la seccion "${deleteTarget.label}"? Se conservara el historial relacionado.`
                 : `¿Eliminar definitivamente "${deleteTarget.label}"? Esta acción no se puede deshacer.`
@@ -1458,6 +1512,40 @@ export function PermanentSubjectDeleteDialog({ subjectName, onConfirm, onClose }
         <Input autoFocus value={confirmation} onChange={(event) => setConfirmation(event.target.value)} disabled={loading} />
         {error ? <p role="alert" className="text-sm font-semibold text-destructive">{error}</p> : null}
         <div className="flex justify-end gap-2 border-t border-border pt-4"><Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches || loading} loading={loading}>Eliminar permanentemente</Button></div>
+      </div>
+    </Modal>
+  )
+}
+
+export function PermanentGradeDeleteDialog({ gradeName, onConfirm, onClose }: { gradeName: string; onConfirm: (confirmation: string) => void | Promise<void>; onClose: () => void }) {
+  const [confirmation, setConfirmation] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const matches = confirmation === 'CONFIRMAR'
+
+  async function confirm() {
+    if (!matches) return
+    setLoading(true)
+    setError(null)
+    try {
+      await onConfirm(confirmation)
+    } catch (confirmError) {
+      setError(confirmError instanceof Error ? confirmError.message : 'No se pudo eliminar el grado.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <Modal title="Eliminar grado definitivamente" description="Esta acción no se puede deshacer." onClose={() => { if (!loading) onClose() }} className="max-w-lg">
+      <div className="space-y-4 p-5">
+        <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive">
+          Se eliminará permanentemente «{gradeName}», junto con sus secciones, matrículas, asignaturas asignadas, actividades, calificaciones, asistencias, planificaciones, equipos y horarios. Los perfiles generales de estudiantes y docentes no se eliminarán.
+        </div>
+        <label className="block text-sm font-bold text-foreground">Escribe <span className="text-destructive">CONFIRMAR</span> para continuar.</label>
+        <Input autoFocus value={confirmation} onChange={(event) => setConfirmation(event.target.value)} disabled={loading} />
+        {error ? <p role="alert" className="text-sm font-semibold text-destructive">{error}</p> : null}
+        <div className="flex justify-end gap-2 border-t border-border pt-4"><Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches || loading} loading={loading}><Trash2 className="size-4" /> Eliminar grado</Button></div>
       </div>
     </Modal>
   )
@@ -2521,7 +2609,8 @@ const CourseCard = memo(function CourseCard({
   onOpen,
   onAddSection,
   onEditSection,
-  onDeleteSection,
+  onArchiveGrade,
+  onDeleteArchivedGrade,
   onAssignSubject,
 }: {
   item: CourseCardItem
@@ -2529,11 +2618,13 @@ const CourseCard = memo(function CourseCard({
   onOpen: (id: string) => void
   onAddSection: (grade: GradeWithSections) => void
   onEditSection: (grade: GradeWithSections, sectionId: string) => void
-  onDeleteSection: (section: Section) => void
+  onArchiveGrade: (grade: GradeWithSections) => void
+  onDeleteArchivedGrade: (grade: GradeWithSections) => void
   onAssignSubject: (grade: GradeWithSections, sectionId: string) => void
 }) {
   const levelStyle = getLevelStyle(item.levelName)
   const teamCount = item.section.teamCount ?? 0
+  const archivedGrade = isGradeArchived(item.grade)
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
 
@@ -2553,18 +2644,21 @@ const CourseCard = memo(function CourseCard({
     }
   }, [menuOpen])
   const gradeNumber = item.grade.name.replace('.º', '').replace('º', '')
+  const cardMetrics = archivedGrade
+    ? ([[UsersRound, item.section.studentCount ?? 0, 'estudiantes'], [LayoutDashboard, item.grade.sections.length, 'secciones'], [BookOpen, item.assignments.length, 'asignaciones']] as const)
+    : ([[UsersRound, item.section.studentCount ?? 0, 'estudiantes'], [BookOpen, item.assignments.length, 'asignaturas'], [UsersRound, teamCount, 'equipos']] as const)
 
   return (
     <article
       className="course-list-card group relative flex min-w-0 flex-col rounded-3xl border bg-card p-5"
     >
       <div
-        className="flex flex-1 cursor-pointer flex-col"
-        role="button"
-        tabIndex={0}
-        onClick={() => onOpen(item.id)}
+        className={cn('flex flex-1 flex-col', !archivedGrade && 'cursor-pointer')}
+        role={archivedGrade ? undefined : 'button'}
+        tabIndex={archivedGrade ? undefined : 0}
+        onClick={archivedGrade ? undefined : () => onOpen(item.id)}
         onKeyDown={(event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
+          if (!archivedGrade && (event.key === 'Enter' || event.key === ' ')) {
             event.preventDefault()
             onOpen(item.id)
           }
@@ -2577,14 +2671,14 @@ const CourseCard = memo(function CourseCard({
               style={{ backgroundColor: levelStyle.color }}
             >
               {gradeNumber}
-              <span className="ml-px text-xs font-bold opacity-80">{item.section.name}</span>
+              {!archivedGrade ? <span className="ml-px text-xs font-bold opacity-80">{item.section.name}</span> : null}
             </span>
             <div className="min-w-0">
               <h3 className="truncate text-base font-black tracking-tight text-foreground">
-                {item.grade.name} {item.section.name}
+                {item.grade.name}{!archivedGrade ? ` ${item.section.name}` : ''}
               </h3>
               <p className="mt-0.5 truncate text-xs text-muted-foreground">
-                {item.cycleName} · {cleanLevelName(item.levelName)}
+                {archivedGrade ? `${item.grade.sections.length} ${item.grade.sections.length === 1 ? 'sección' : 'secciones'} · ` : ''}{item.cycleName} · {cleanLevelName(item.levelName)}
               </p>
             </div>
           </div>
@@ -2595,7 +2689,7 @@ const CourseCard = memo(function CourseCard({
         </div>
 
         <div className="mt-4 grid grid-cols-3 gap-2 text-center">
-          {([[UsersRound, item.section.studentCount ?? 0, 'estudiantes'], [BookOpen, item.assignments.length, 'asignaturas'], [UsersRound, teamCount, 'equipos']] as const).map(([Icon, value, label]) => (
+          {cardMetrics.map(([Icon, value, label]) => (
             <span key={label} className="flex min-w-0 flex-col items-center rounded-3xl bg-muted/70 px-1 py-2.5"><Icon className="size-3.5 text-muted-foreground" /><strong className="mt-0.5 text-sm font-extrabold leading-4 tabular-nums text-foreground">{value}</strong><span className="text-[10px] text-muted-foreground">{label}</span></span>
           ))}
         </div>
@@ -2604,8 +2698,10 @@ const CourseCard = memo(function CourseCard({
       </div>
 
       <div className="mt-5 flex items-center gap-2">
-        <button type="button" onClick={() => onOpen(item.id)} className="flex min-h-10 flex-1 items-center justify-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-semibold text-primary transition hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">Entrar al curso <ChevronRight className="size-4" /></button>
-        {canManage ? (
+        {archivedGrade && canManage ? (
+          <Button type="button" variant="destructive" className="flex-1 rounded-full" onClick={() => onDeleteArchivedGrade(item.grade)}><Trash2 className="size-4" /> Eliminar grado</Button>
+        ) : <button type="button" onClick={() => onOpen(item.id)} className="flex min-h-10 flex-1 items-center justify-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-semibold text-primary transition hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">Entrar al curso <ChevronRight className="size-4" /></button>}
+        {canManage && !archivedGrade ? (
           <div className="relative" ref={menuRef}>
             <button type="button" title="Más acciones" className="inline-flex size-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition hover:bg-primary/10 hover:text-primary" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
               <MoreHorizontal className="size-4" />
@@ -2616,7 +2712,7 @@ const CourseCard = memo(function CourseCard({
                 <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onEditSection(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><CheckSquare className="size-4" /> Editar sección</button>
                 <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onAssignSubject(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><BookOpen className="size-4" /> Asignar asignatura</button>
                 <div className="my-1 border-t border-border" />
-                <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onDeleteSection(item.section) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><Power className="size-4" /> Inactivar sección</button>
+                <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onArchiveGrade(item.grade) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold text-destructive transition-colors hover:bg-destructive/10"><Archive className="size-4" /> Inactivar grado</button>
               </div>
             ) : null}
           </div>
@@ -2646,6 +2742,47 @@ function buildCourseCards(grades: GradeWithSections[]): CourseCardItem[] {
       }
     }),
   )
+}
+
+function buildArchivedGradeCards(grades: GradeWithSections[]) {
+  return grades.filter(isGradeArchived).map((grade) => {
+    const assignments = grade.sections.flatMap((section) =>
+      section.assignments.filter((assignment) => assignment.status === 'active'),
+    )
+    const firstSection = grade.sections[0]
+    const section: Section = firstSection ?? {
+      id: `archived-grade-${grade.id}`,
+      gradeId: grade.id,
+      name: '',
+      capacity: null,
+      studentCount: 0,
+      teamCount: 0,
+      status: 'inactive',
+      createdAt: grade.createdAt,
+      updatedAt: grade.updatedAt,
+      assignments: [],
+    }
+    return {
+      id: `archived-grade-${grade.id}`,
+      grade,
+      section: {
+        ...section,
+        studentCount: grade.sections.reduce((total, item) => total + toSafeCount(item.studentCount), 0),
+        teamCount: grade.sections.reduce((total, item) => total + toSafeCount(item.teamCount), 0),
+      },
+      assignments,
+      assignment: null,
+      subjectName: '',
+      levelName: grade.academicLevelName ?? grade.level ?? 'Sin nivel definido',
+      cycleName: grade.academicCycleName ?? 'Sin ciclo',
+      archived: true,
+    }
+  })
+}
+
+function isGradeArchived(grade: GradeWithSections) {
+  return grade.status !== 'active'
+    || (grade.sections.length > 0 && grade.sections.every((section) => section.status !== 'active'))
 }
 
 function cleanLevelName(value: string) {

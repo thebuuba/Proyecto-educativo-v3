@@ -13,6 +13,7 @@ import type {
   ScheduleEntry,
   ScheduleFilters,
   ScheduleJourney,
+  ScheduleIntegrityIssue,
   SaveScheduleStructureInput,
   ScheduleSummary,
   SectionOption,
@@ -32,6 +33,7 @@ export type ScheduleWorkspace = {
   sections: SectionOption[]
   teachers: TeacherOption[]
   subjects: SubjectOption[]
+  integrityIssues?: ScheduleIntegrityIssue[]
 }
 
 export function scheduleSaveErrorMessage(cause: unknown) {
@@ -97,6 +99,14 @@ export async function saveScheduleStructure(input: SaveScheduleStructureInput): 
   })
 }
 
+export async function deleteScheduleStructure(): Promise<{
+  deleted: { assignments: number; blocks: number; journeys: number }
+}> {
+  return api.delete('/schedule/structure', {
+    invalidateCacheTags: [API_CACHE_TAGS.schedule, API_CACHE_TAGS.timeSlots],
+  })
+}
+
 export async function getScheduleJourneys(): Promise<ScheduleJourney[]> {
   return api.get('/schedule/journeys', {
     cacheTtlMs: API_CACHE_TTL.catalog,
@@ -118,7 +128,12 @@ export async function getScheduleWorkspace(): Promise<ScheduleWorkspace> {
     cacheTtlMs: API_CACHE_TTL.sessionList,
     cacheTags: [API_CACHE_TAGS.schedule, API_CACHE_TAGS.schoolYears, API_CACHE_TAGS.timeSlots, API_CACHE_TAGS.courseOptions],
   })
-  return { ...workspace, journeys: workspace.journeys ?? [], timeSlots: workspace.timeSlots.map(normalizeTimeSlot) }
+  return {
+    ...workspace,
+    journeys: workspace.journeys ?? [],
+    integrityIssues: workspace.integrityIssues ?? [],
+    timeSlots: workspace.timeSlots.map(normalizeTimeSlot),
+  }
 }
 
 const dayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']

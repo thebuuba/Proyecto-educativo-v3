@@ -1,12 +1,14 @@
 import { CalendarDays, Clock3, Coffee, Pencil, Trash2 } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Button } from '@/components/ui/Button'
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Select } from '@/components/ui/Select'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { FeedbackBanner, PageHero, StatusBadge } from '@/components/ui/SemanticUI'
 import { FlexibleScheduleWizard } from '@/modules/schedule/components/FlexibleScheduleWizard'
 import { useSchedule } from '@/modules/schedule/hooks/useSchedule'
 import {
+  deleteScheduleStructure,
   getSectionSubjects,
   saveScheduleStructure,
   scheduleSaveErrorMessage,
@@ -15,6 +17,7 @@ import type {
   CreateScheduleEntryInput,
   SaveScheduleStructureInput,
   ScheduleEntry,
+  ScheduleBlockType,
   ScheduleJourney,
   TimeSlot,
 } from '@/modules/schedule/types'
@@ -34,17 +37,20 @@ export function SchedulePage() {
     journeys,
     timeSlots,
     entries,
+    integrityIssues = [],
     sections,
     schoolYearId,
     loading,
     error,
     createEntry,
     removeEntry,
+    updateTimeSlot,
     refetchAll,
   } = useSchedule()
   const [editing, setEditing] = useState(false)
   const [assigning, setAssigning] = useState(false)
   const [saving, setSaving] = useState(false)
+  const [confirmReset, setConfirmReset] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
   const [selectedDay, setSelectedDay] = useState(1)
   const [subjects, setSubjects] = useState<SubjectOption[]>([])
@@ -107,6 +113,23 @@ export function SchedulePage() {
     }
   }
 
+  async function resetSchedule() {
+    setSaveError(null)
+    try {
+      await deleteScheduleStructure()
+      await refetchAll()
+      setAssigning(false)
+      setEditing(false)
+      setConfirmReset(false)
+    } catch (cause) {
+      setSaveError(
+        cause instanceof Error
+          ? cause.message
+          : 'No pudimos eliminar el horario actual. Inténtalo nuevamente.',
+      )
+    }
+  }
+
   async function assign(slot: TimeSlot, subjectId: string) {
     const subject = subjects.find((item) => item.id === subjectId)
     if (!subject || !schoolYearId || (slot.blockType ?? 'CLASS') !== 'CLASS') return
@@ -125,6 +148,18 @@ export function SchedulePage() {
     }
   }
 
+  async function changeBlockType(slot: TimeSlot, value: string) {
+    const option = specialBlockOptions.find((item) => item.value === value)
+    if (!option) return
+    setSaveError(null)
+    try {
+      await updateTimeSlot(slot.id, { name: option.name, blockType: option.blockType })
+      await refetchAll()
+    } catch (cause) {
+      setSaveError(cause instanceof Error ? cause.message : 'No se pudo cambiar el tipo de bloque.')
+    }
+  }
+
   async function remove(entry: ScheduleEntry) {
     try {
       await removeEntry(entry.id)
@@ -135,6 +170,11 @@ export function SchedulePage() {
   }
 
   const hasStructure = timeSlots.length > 0
+  const affectedEntryIds = useMemo(
+    () => new Set(integrityIssues.flatMap((issue) => issue.entryIds)),
+    [integrityIssues],
+  )
+  const affectedClasses = affectedEntryIds.size
   const lectiveMinutes = entries.reduce(
     (sum, entry) => sum + duration(entry.startTime, entry.endTime),
     0,
@@ -165,7 +205,15 @@ export function SchedulePage() {
         eyebrow="Semana académica"
         actions={
           hasStructure && !editing ? (
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant="outline"
+                className="text-destructive"
+                onClick={() => setConfirmReset(true)}
+              >
+                <Trash2 className="size-4" />
+                Crear horario nuevo
+              </Button>
               <Button variant="outline" onClick={() => setAssigning((value) => !value)}>
                 {assigning ? 'Finalizar asignación' : 'Asignar clases'}
               </Button>
@@ -187,6 +235,28 @@ export function SchedulePage() {
           </StatusBadge>
         </div>
       </PageHero>
+      {integrityIssues.length ? (
+        <FeedbackBanner tone="warning">
+          <div className="space-y-2">
+            <strong className="block">El horario necesita revisión</strong>
+            <p>
+              Se detectaron cambios en cursos o asignaturas que afectan {affectedClasses}{' '}
+              {affectedClasses === 1 ? 'clase asignada' : 'clases asignadas'}.
+            </p>
+            <ul className="list-disc space-y-1 pl-5">
+              {integrityIssues.map((issue) => (
+                <li key={`${issue.code}-${issue.entryIds.join('-')}`}>
+                  {issue.message} Afecta {issue.affectedClasses}{' '}
+                  {issue.affectedClasses === 1 ? 'bloque' : 'bloques'}.
+                </li>
+              ))}
+            </ul>
+            <Button type="button" size="sm" variant="outline" onClick={() => setAssigning(true)}>
+              Revisar bloques marcados
+            </Button>
+          </div>
+        </FeedbackBanner>
+      ) : null}
       {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
       {saveError && !configuring ? (
         <FeedbackBanner tone="danger">{saveError}</FeedbackBanner>
@@ -212,13 +282,25 @@ export function SchedulePage() {
           journeys={journeys}
           slots={timeSlots}
           entries={entries}
+          affectedEntryIds={affectedEntryIds}
           days={configuredDays}
           selectedDay={selectedDay}
           onSelectDay={setSelectedDay}
           assigning={assigning}
           subjects={subjects}
           onAssign={assign}
+          onChangeBlockType={changeBlockType}
           onRemove={remove}
+        />
+      ) : null}
+      {confirmReset ? (
+        <ConfirmDialog
+          title="Eliminar horario actual"
+          description="Al eliminar la estructura actual, también se eliminarán todas las clases asignadas en este horario. Los cursos, las asignaturas y los docentes no serán eliminados. Después podrás crear una nueva estructura y volver a asignar las clases."
+          confirmLabel="Eliminar horario y asignaciones"
+          destructive
+          onConfirm={resetSchedule}
+          onClose={() => setConfirmReset(false)}
         />
       ) : null}
     </section>
@@ -229,23 +311,27 @@ function WeeklySchedule({
   journeys,
   slots,
   entries,
+  affectedEntryIds,
   days,
   selectedDay,
   onSelectDay,
   assigning,
   subjects,
   onAssign,
+  onChangeBlockType,
   onRemove,
 }: {
   journeys: ScheduleJourney[]
   slots: TimeSlot[]
   entries: ScheduleEntry[]
+  affectedEntryIds: Set<string>
   days: number[]
   selectedDay: number
   onSelectDay: (day: number) => void
   assigning: boolean
   subjects: SubjectOption[]
   onAssign: (slot: TimeSlot, subjectId: string) => void
+  onChangeBlockType: (slot: TimeSlot, value: string) => void
   onRemove: (entry: ScheduleEntry) => void
 }) {
   return (
@@ -292,10 +378,12 @@ function WeeklySchedule({
             journeys={journeys}
             slots={slots}
             entries={entries}
+            affectedEntryIds={affectedEntryIds}
             days={days}
             assigning={assigning}
             subjects={subjects}
             onAssign={onAssign}
+            onChangeBlockType={onChangeBlockType}
             onRemove={onRemove}
           />
         </div>
@@ -305,9 +393,11 @@ function WeeklySchedule({
             journeys={journeys}
             slots={slots}
             entries={entries}
+            affectedEntryIds={affectedEntryIds}
             assigning={assigning}
             subjects={subjects}
             onAssign={onAssign}
+            onChangeBlockType={onChangeBlockType}
             onRemove={onRemove}
           />
         </div>
@@ -320,10 +410,12 @@ function DesktopRows({
   journeys,
   slots,
   entries,
+  affectedEntryIds,
   days,
   assigning,
   subjects,
   onAssign,
+  onChangeBlockType,
   onRemove,
 }: Omit<Parameters<typeof WeeklySchedule>[0], 'selectedDay' | 'onSelectDay'>) {
   const times = [
@@ -354,10 +446,14 @@ function DesktopRows({
                       entry={entries.find(
                         (item) => item.dayOfWeek === day && item.timeSlotId === slot.id,
                       )}
+                      affected={Boolean(entries.find(
+                        (item) => item.dayOfWeek === day && item.timeSlotId === slot.id && affectedEntryIds.has(item.id),
+                      ))}
                       journey={journeys.find((item) => item.id === slot.journeyId)}
                       assigning={assigning}
                       subjects={subjects}
                       onAssign={onAssign}
+                      onChangeBlockType={onChangeBlockType}
                       onRemove={onRemove}
                     />
                   ) : (
@@ -381,18 +477,22 @@ function DayColumn({
   journeys,
   slots,
   entries,
+  affectedEntryIds,
   assigning,
   subjects,
   onAssign,
+  onChangeBlockType,
   onRemove,
 }: {
   day: number
   journeys: ScheduleJourney[]
   slots: TimeSlot[]
   entries: ScheduleEntry[]
+  affectedEntryIds: Set<string>
   assigning: boolean
   subjects: SubjectOption[]
   onAssign: (slot: TimeSlot, subjectId: string) => void
+  onChangeBlockType: (slot: TimeSlot, value: string) => void
   onRemove: (entry: ScheduleEntry) => void
 }) {
   const daySlots = slots
@@ -426,10 +526,14 @@ function DayColumn({
                     entry={entries.find(
                       (entry) => entry.dayOfWeek === day && entry.timeSlotId === slot.id,
                     )}
+                    affected={Boolean(entries.find(
+                      (entry) => entry.dayOfWeek === day && entry.timeSlotId === slot.id && affectedEntryIds.has(entry.id),
+                    ))}
                     journey={journey}
                     assigning={assigning}
                     subjects={subjects}
                     onAssign={onAssign}
+                    onChangeBlockType={onChangeBlockType}
                     onRemove={onRemove}
                   />
                 ))}
@@ -443,9 +547,13 @@ function DayColumn({
               entry={entries.find(
                 (entry) => entry.dayOfWeek === day && entry.timeSlotId === slot.id,
               )}
+              affected={Boolean(entries.find(
+                (entry) => entry.dayOfWeek === day && entry.timeSlotId === slot.id && affectedEntryIds.has(entry.id),
+              ))}
               assigning={assigning}
               subjects={subjects}
               onAssign={onAssign}
+              onChangeBlockType={onChangeBlockType}
               onRemove={onRemove}
             />
           ))}
@@ -456,18 +564,22 @@ function DayColumn({
 function ScheduleCell({
   slot,
   entry,
+  affected = false,
   journey,
   assigning,
   subjects,
   onAssign,
+  onChangeBlockType,
   onRemove,
 }: {
   slot: TimeSlot
   entry?: ScheduleEntry
+  affected?: boolean
   journey?: ScheduleJourney
   assigning: boolean
   subjects: SubjectOption[]
   onAssign: (slot: TimeSlot, subjectId: string) => void
+  onChangeBlockType: (slot: TimeSlot, value: string) => void
   onRemove: (entry: ScheduleEntry) => void
 }) {
   const blockType = slot.blockType ?? 'CLASS'
@@ -477,7 +589,9 @@ function ScheduleCell({
     <article
       className={cn(
         'min-h-20 rounded-2xl border p-3',
-        interJourneyGap
+        affected
+          ? 'border-warning bg-warning/10'
+          : interJourneyGap
           ? 'border-primary/20 bg-primary/5'
           : nonLective
             ? 'border-warning/30 bg-warning/10'
@@ -496,9 +610,14 @@ function ScheduleCell({
             {entry ? entry.subjectName : slot.name}
           </p>
           {entry ? (
-            <p className="text-xs text-muted-foreground">
-              {entry.gradeName} {entry.sectionName}
-            </p>
+            <>
+              <p className="text-xs text-muted-foreground">
+                {entry.gradeName} {entry.sectionName}
+              </p>
+              {affected ? (
+                <StatusBadge tone="warning" className="mt-2">Requiere revisión</StatusBadge>
+              ) : null}
+            </>
           ) : nonLective ? (
             <p className={cn('text-xs', interJourneyGap ? 'text-primary' : 'text-warning-foreground')}>
               {blockTypeLabels[blockType]}
@@ -533,15 +652,24 @@ function ScheduleCell({
               aria-label={`Asignar clase a ${slot.name}`}
               defaultValue=""
               onChange={(event) => {
-                if (event.target.value) onAssign(slot, event.target.value)
+                const value = event.target.value
+                if (value.startsWith('block:')) onChangeBlockType(slot, value)
+                else if (value) onAssign(slot, value)
               }}
             >
-              <option value="">+ Asignar clase</option>
-              {subjects.map((subject) => (
-                <option key={subject.id} value={subject.id}>
-                  {subject.label}
-                </option>
-              ))}
+              <option value="">+ Asignar contenido</option>
+              <optgroup label="Tipo de bloque">
+                {specialBlockOptions.map((option) => (
+                  <option key={option.value} value={option.value}>{option.name}</option>
+                ))}
+              </optgroup>
+              <optgroup label="Asignaturas">
+                {subjects.map((subject) => (
+                  <option key={subject.id} value={subject.id}>
+                    {subject.label}
+                  </option>
+                ))}
+              </optgroup>
             </Select>
           )}
         </div>
@@ -549,6 +677,15 @@ function ScheduleCell({
     </article>
   )
 }
+
+const specialBlockOptions: Array<{ value: string; name: string; blockType: ScheduleBlockType }> = [
+  { value: 'block:FREE:Hora pedagógica', name: 'Hora pedagógica', blockType: 'FREE' },
+  { value: 'block:PAUSE:Receso', name: 'Receso', blockType: 'PAUSE' },
+  { value: 'block:BREAK:Recreo', name: 'Recreo', blockType: 'BREAK' },
+  { value: 'block:BREAKFAST:Desayuno', name: 'Desayuno', blockType: 'BREAKFAST' },
+  { value: 'block:LUNCH:Almuerzo', name: 'Almuerzo', blockType: 'LUNCH' },
+  { value: 'block:PAUSE:Pausa', name: 'Pausa', blockType: 'PAUSE' },
+]
 
 function duration(start: string, end: string) {
   const [sh, sm] = start.slice(0, 5).split(':').map(Number)

@@ -53,6 +53,14 @@ export async function deactivateGrade(id: string): Promise<void> {
   })
 }
 
+/** Elimina definitivamente un grado previamente archivado. */
+export async function deleteGradePermanently(id: string, confirmation?: string): Promise<void> {
+  const query = confirmation ? `?confirmation=${encodeURIComponent(confirmation)}` : ''
+  await api.delete(`/courses/grades/${id}/permanent${query}`, {
+    invalidateCacheTags: [API_CACHE_TAGS.courseOptions, API_CACHE_TAGS.enrollmentOptions],
+  })
+}
+
 /** Crea una nueva sección dentro de un grado */
 export async function createSection(input: CreateSectionInput): Promise<Section> {
   return api.post<Section>('/courses/sections', input, {

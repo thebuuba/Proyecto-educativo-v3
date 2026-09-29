@@ -220,3 +220,51 @@ describe('ScheduleService parallel queries', () => {
     ])
   })
 })
+
+describe('ScheduleService integrity issues', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+    __test__clearScheduleCache()
+  })
+
+  it('groups schedule blocks affected by an archived subject assignment', async () => {
+    mocks.prisma.scheduleEntry.findMany.mockResolvedValue([
+      {
+        id: 'entry-1',
+        sectionSubjectId: 'assignment-1',
+        section: {
+          id: 'section-1', name: 'A', status: 'ACTIVE',
+          grade: { id: 'grade-1', name: '4.º', status: 'ACTIVE' },
+        },
+        sectionSubject: {
+          status: 'INACTIVE',
+          subject: { id: 'subject-1', name: 'Matemática', status: 'ACTIVE' },
+        },
+      },
+      {
+        id: 'entry-2',
+        sectionSubjectId: 'assignment-1',
+        section: {
+          id: 'section-1', name: 'A', status: 'ACTIVE',
+          grade: { id: 'grade-1', name: '4.º', status: 'ACTIVE' },
+        },
+        sectionSubject: {
+          status: 'INACTIVE',
+          subject: { id: 'subject-1', name: 'Matemática', status: 'ACTIVE' },
+        },
+      },
+    ])
+
+    await expect(new ScheduleService().getIntegrityIssues('school-1', 'year-1')).resolves.toEqual([
+      {
+        code: 'SUBJECT_ASSIGNMENT_ARCHIVED',
+        entryIds: ['entry-1', 'entry-2'],
+        affectedClasses: 2,
+        gradeName: '4.º',
+        sectionName: 'A',
+        subjectName: 'Matemática',
+        message: 'Matemática ya no está asignada a 4.º A.',
+      },
+    ])
+  })
+})

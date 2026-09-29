@@ -353,6 +353,104 @@ export class CoursesService {
     return updated
   }
 
+  /** Elimina definitivamente un grado archivado y sus datos academicos dependientes. */
+  async permanentlyDeleteGrade(schoolId: string, id: string, confirmation?: string) {
+    if (confirmation !== 'CONFIRMAR') {
+      throw new BadRequestException('Escribe CONFIRMAR para confirmar la eliminacion permanente')
+    }
+
+    await prisma.$transaction(async (tx) => {
+      const grade = await tx.grade.findFirst({ where: { id, schoolId }, select: { status: true } })
+      if (!grade) throw new NotFoundException('Grado archivado no encontrado')
+      const sections = await tx.section.findMany({ where: { gradeId: id, schoolId }, select: { id: true } })
+      const activeSectionCount = await tx.section.count({ where: { gradeId: id, schoolId, status: RecordStatus.ACTIVE } })
+      const isLegacyArchivedGrade = grade.status === RecordStatus.ACTIVE && sections.length > 0 && activeSectionCount === 0
+      if (grade.status !== RecordStatus.INACTIVE && !isLegacyArchivedGrade) {
+        throw new BadRequestException('Solo se pueden eliminar permanentemente grados archivados')
+      }
+      const sectionIds = sections.map((section) => section.id)
+      const assignments = await tx.sectionSubject.findMany({ where: { gradeId: id, schoolId }, select: { id: true } })
+      const assignmentIds = assignments.map((assignment) => assignment.id)
+      const enrollments = await tx.enrollment.findMany({ where: { gradeId: id, schoolId }, select: { id: true } })
+      const enrollmentIds = enrollments.map((enrollment) => enrollment.id)
+      const resources = assignmentIds.length
+        ? await tx.subjectResource.findMany({ where: { schoolId, sectionSubjectId: { in: assignmentIds } }, select: { id: true, objectPath: true } })
+        : []
+      if (resources.some((resource) => resource.objectPath)) {
+        throw new ConflictException('Este grado tiene archivos adjuntos. Elimina esos archivos antes de borrar el grado definitivamente.')
+      }
+      const resourceIds = resources.map((resource) => resource.id)
+      const activities = assignmentIds.length
+        ? await tx.evaluationActivity.findMany({ where: { schoolId, sectionSubjectId: { in: assignmentIds } }, select: { id: true } })
+        : []
+      const activityIds = activities.map((activity) => activity.id)
+      if (resourceIds.length) {
+        const externalLinks = await tx.evaluationActivityResource.count({
+          where: { subjectResourceId: { in: resourceIds }, evaluationActivityId: { notIn: activityIds } },
+        })
+        if (externalLinks) throw new ConflictException('Hay recursos del grado vinculados a actividades externas. Desvinculalos antes de eliminarlo.')
+      }
+      const groups = activityIds.length
+        ? await tx.evaluationActivityGroup.findMany({ where: { activityId: { in: activityIds } }, select: { id: true } })
+        : []
+      const groupIds = groups.map((group) => group.id)
+      const gradeRecords = assignmentIds.length
+        ? await tx.gradesRecord.findMany({ where: { schoolId, sectionSubjectId: { in: assignmentIds } }, select: { id: true } })
+        : []
+      const gradeRecordIds = gradeRecords.map((record) => record.id)
+      const teams = sectionIds.length
+        ? await tx.courseTeam.findMany({ where: { schoolId, sectionId: { in: sectionIds } }, select: { id: true } })
+        : []
+      const teamIds = teams.map((team) => team.id)
+
+      if (resourceIds.length || activityIds.length) {
+        await tx.evaluationActivityResource.deleteMany({ where: { OR: [
+          ...(resourceIds.length ? [{ subjectResourceId: { in: resourceIds } }] : []),
+          ...(activityIds.length ? [{ evaluationActivityId: { in: activityIds } }] : []),
+        ] } })
+      }
+      if (groupIds.length || enrollmentIds.length) await tx.evaluationActivityGroupMember.deleteMany({ where: { OR: [
+        ...(groupIds.length ? [{ groupId: { in: groupIds } }] : []),
+        ...(enrollmentIds.length ? [{ enrollmentId: { in: enrollmentIds } }] : []),
+      ] } })
+      if (groupIds.length) await tx.evaluationActivityGroup.deleteMany({ where: { id: { in: groupIds } } })
+      if (activityIds.length) await tx.evaluationActivityEvidence.deleteMany({ where: { activityId: { in: activityIds } } })
+      if (gradeRecordIds.length) await tx.pedagogicalRecovery.deleteMany({ where: { gradeRecordId: { in: gradeRecordIds } } })
+      if (assignmentIds.length) {
+        await tx.gradesRecord.deleteMany({ where: { schoolId, sectionSubjectId: { in: assignmentIds } } })
+        await tx.evaluationActivity.deleteMany({ where: { schoolId, sectionSubjectId: { in: assignmentIds } } })
+        await tx.subjectResource.deleteMany({ where: { schoolId, sectionSubjectId: { in: assignmentIds } } })
+        await tx.planningEntry.deleteMany({ where: { schoolId, sectionSubjectId: { in: assignmentIds } } })
+      }
+      if (sectionIds.length) {
+        await tx.teacherJournalEntry.deleteMany({ where: { schoolId, sectionId: { in: sectionIds } } })
+        await tx.attendanceClass.deleteMany({ where: { schoolId, sectionId: { in: sectionIds } } })
+        await tx.attendanceDaily.deleteMany({ where: { schoolId, sectionId: { in: sectionIds } } })
+        await tx.scheduleEntry.deleteMany({ where: { schoolId, sectionId: { in: sectionIds } } })
+      }
+      if (teamIds.length || enrollmentIds.length) await tx.courseTeamMember.deleteMany({ where: { OR: [
+        ...(teamIds.length ? [{ teamId: { in: teamIds } }] : []),
+        ...(enrollmentIds.length ? [{ enrollmentId: { in: enrollmentIds } }] : []),
+      ] } })
+      if (teamIds.length) await tx.courseTeam.deleteMany({ where: { id: { in: teamIds } } })
+      await tx.sectionSubject.deleteMany({ where: { gradeId: id, schoolId } })
+      await tx.enrollment.deleteMany({ where: { gradeId: id, schoolId } })
+      await tx.section.deleteMany({ where: { gradeId: id, schoolId } })
+      const deleted = await tx.grade.deleteMany({
+        where: { id, schoolId, ...(isLegacyArchivedGrade ? {} : { status: RecordStatus.INACTIVE }) },
+      })
+      if (deleted.count !== 1) throw new ConflictException('El grado cambio de estado. Actualiza la pagina e intentalo de nuevo.')
+    }).catch((error: unknown) => {
+      if (error && typeof error === 'object' && 'code' in error && error.code === 'P2003') {
+        throw new ConflictException('El grado tiene informacion vinculada que impide eliminarlo de forma segura.')
+      }
+      throw error
+    })
+
+    invalidateSchoolCache(schoolId)
+    return { deleted: true }
+  }
+
   /** Obtiene las secciones activas de un grado */
   findSectionsByGrade(schoolId: string, gradeId: string) {
     return withCache(`sections:${schoolId}:${gradeId}`, () =>

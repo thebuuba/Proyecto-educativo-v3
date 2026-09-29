@@ -26,7 +26,7 @@ export class UpdateTimeSlotDto {
   dayOfWeek?: number | null
 
   @IsOptional()
-  @IsIn(['CLASS', 'BREAK', 'LUNCH', 'PAUSE', 'FREE'])
+  @IsIn(['CLASS', 'BREAK', 'BREAKFAST', 'LUNCH', 'PAUSE', 'FREE'])
   blockType?: string
 
   @IsOptional()
