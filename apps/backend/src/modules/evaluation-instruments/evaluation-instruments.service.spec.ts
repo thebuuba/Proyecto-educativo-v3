@@ -107,11 +107,20 @@ describe('API service security and version policy', () => {
     mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: {} })
     await expect(new EvaluationInstrumentsService().recommend(user, input)).rejects.toThrow('difiere del seed')
   })
+  it('convierte una tabla de catálogo ausente en 503 explícito', async () => {
+    mocks.evaluationCatalogRelease.findUnique.mockRejectedValue(Object.assign(new Error('relation does not exist'), { code: 'P2021' }))
+    await expect(new EvaluationInstrumentsService().recommend(user, input)).rejects.toMatchObject({ status: 503 })
+  })
   it('seed idempotente; no sobrescribe release diferente', async () => {
     expect(await seedEvaluationCatalog(mocks as never)).toBe('UNCHANGED')
     expect(mocks.evaluationCatalogRelease.create).not.toHaveBeenCalled()
     mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: {} })
     await expect(seedEvaluationCatalog(mocks as never)).rejects.toThrow('versión nueva')
+  })
+  it('tolera dos instaladores concurrentes sólo si el contenido coincide', async () => {
+    mocks.evaluationCatalogRelease.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce({ payload: evaluationCatalogV1 })
+    mocks.evaluationCatalogRelease.create.mockRejectedValue(Object.assign(new Error('unique'), { code: 'P2002' }))
+    await expect(seedEvaluationCatalog(mocks as never)).resolves.toBe('UNCHANGED')
   })
   it('valida DTO: contexto inyectado, límites, puntuaciones y tipos', async () => {
     expect(await validate(plainToInstance(RecommendInstrumentDto, input))).toEqual([])

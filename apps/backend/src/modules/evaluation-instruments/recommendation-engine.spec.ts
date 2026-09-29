@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { academicContext, resolveScope, type AcademicContext, type ScopeCandidate } from './curriculum-context'
-import { recommend, distributeScore, detectActivityType, similarToken, rankCurriculum, type RankedElement } from './recommendation-engine'
+import { recommend, distributeScore, detectActivityType, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
 
 const root = resolve(process.cwd(), '../..')
 const cases = JSON.parse(readFileSync(resolve(root, 'data/evaluation-instruments/cases-v1.json'), 'utf8')) as { case: string; level: 'PRIMARY' | 'SECONDARY'; grade: number; code: string; subject: string; exit?: string; activityTitle: string; description?: string; maxScore: number; expectedInstrument: string }[]
@@ -158,6 +158,33 @@ describe('Recomendador con currículo literal completo', () => {
     expect(result.criteria.some(criterion => /biodiversidad/i.test(`${criterion.title} ${criterion.description}`))).toBe(true)
     expect(result.criteria.every(criterion => criterion.descriptors.length === 4 && criterion.descriptors.every(descriptor => descriptor.text.trim()))).toBe(true)
     expect(result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)).toBe(2000)
+    expect(result.confidence).toBe('LOW')
+    expect(result.selectedCurriculumElements).toEqual([])
+  })
+  it.each([
+    ['Exposición sobre la biodiversidad', 'Ciencias de la Naturaleza', 'NAT', 'EXPOSITION', 'rubrica', /biodiversidad/i],
+    ['Experimento sobre densidad', 'Ciencias de la Naturaleza', 'NAT', 'EXPERIMENT', 'rubrica', /densidad/i],
+    ['Resolución de problemas con fracciones', 'Matemática', 'MAT', 'PROBLEM_SOLVING', 'lista-ponderada', /fracciones/i],
+    ['Producción de un cuento corto', 'Lengua Española', 'LEN', 'WRITTEN_PRODUCTION', 'rubrica', /cuento corto/i],
+    ['Pintura sobre identidad cultural', 'Educación Artística', 'ART', 'ARTISTIC_PRODUCTION', 'rubrica', /identidad cultural/i],
+    ['Investigación sobre las migraciones', 'Ciencias Sociales', 'SOC', 'RESEARCH', 'rubrica', /migraciones/i],
+  ])('genera contenido disciplinar válido para %s', (activityTitle, subjectName, subjectCode, activityType, instrumentType, topic) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 2, subjectCode, subjectName, optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle, description: '', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe(activityType)
+    expect(result.instrumentType).toBe(instrumentType)
+    expect(result.criteria.length).toBeGreaterThanOrEqual(4)
+    expect(JSON.stringify(result.criteria)).toMatch(topic)
+    expect(result.criteria.every(item => item.title.trim() && item.description.trim())).toBe(true)
+    expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(2000)
+    expect(result.selectedCurriculumElements).toEqual([])
+  })
+  it('rechaza internamente recomendaciones incompletas antes de responder', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 2, subjectCode: 'NAT', subjectName: 'Ciencias de la Naturaleza', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'Exposición sobre biodiversidad', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    const broken = structuredClone(result)
+    broken.criteria[0].descriptors[0].text = ''
+    expect(() => assertValidRecommendation(broken)).toThrow('descriptor')
   })
   it('contextualiza una exposición de volcanes sin atribuir currículo no verificado', () => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'NAT-TIE', subjectName: 'Ciencias de la Tierra y el Universo', optativeExitName: null, modalityCode: 'academic' }

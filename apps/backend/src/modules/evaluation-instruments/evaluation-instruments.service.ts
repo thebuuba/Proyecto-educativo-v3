@@ -1,4 +1,4 @@
-import { BadRequestException, ForbiddenException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
+import { BadRequestException, ForbiddenException, HttpException, Injectable, Logger, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { evaluationCatalogV1 } from './catalog-v1'
@@ -9,6 +9,7 @@ import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-i
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
 @Injectable()
 export class EvaluationInstrumentsService {
+  private readonly logger = new Logger(EvaluationInstrumentsService.name)
   async interpret(user: AuthenticatedUser, input: InterpretActivityDto) {
     const resolved = await this.resolve(user, input, true)
     const detected = detectActivityType(input.activityTitle, input.description ?? '')
@@ -27,12 +28,24 @@ export class EvaluationInstrumentsService {
   }
 
   async recommend(user: AuthenticatedUser, input: RecommendInstrumentDto) {
-    const { context, resolution, rows, version } = await this.resolve(user, input)
-    if (input.selectedCurriculumElementIds?.some(id => !rows.some(row => row.elementId === id))) throw new BadRequestException('Elemento curricular ajeno al ámbito autorizado.')
-    const result = recommend(input, context, resolution.scope, rows, resolution.status, version?.status ?? null)
-    result.internalTrace.reasons.push(resolution.reason)
-    result.curriculumVersionId = version?.id ?? null
-    return result
+    try {
+      const { context, resolution, rows, version } = await this.resolve(user, input)
+      if (input.selectedCurriculumElementIds?.some(id => !rows.some(row => row.elementId === id))) throw new BadRequestException('Elemento curricular ajeno al ámbito autorizado.')
+      const result = recommend(input, context, resolution.scope, rows, resolution.status, version?.status ?? null)
+      result.internalTrace.reasons.push(resolution.reason)
+      result.curriculumVersionId = version?.id ?? null
+      return result
+    } catch (error) {
+      const details = { route: 'POST /evaluation-instruments/recommend', sectionSubjectId: input.sectionSubjectId,
+        catalogVersion: evaluationCatalogV1.version, curriculumVersionId: input.curriculumVersionId ?? null,
+        curriculumScopeId: input.curriculumScopeId ?? null, activityType: input.pedagogicalActivityType ?? null,
+        instrumentType: input.preferredInstrumentType ?? null,
+        errorClass: error instanceof Error ? error.constructor.name : typeof error,
+        errorMessage: error instanceof Error ? error.message : String(error) }
+      if (error instanceof HttpException) this.logger.warn(JSON.stringify(details))
+      else this.logger.error(JSON.stringify(details), error instanceof Error ? error.stack : undefined)
+      throw error
+    }
   }
 
   private async resolve(user: AuthenticatedUser, input: InterpretActivityDto & { curriculumScopeId?: string }, developmentDraft = false) {
@@ -48,7 +61,14 @@ export class EvaluationInstrumentsService {
     if ([assignment.grade, assignment.subject, assignment.section, assignment.schoolYear].some(row => row.schoolId !== user.schoolId || row.status !== 'ACTIVE')
       || assignment.section.gradeId !== assignment.gradeId) throw new ForbiddenException('Contexto académico inconsistente.')
     const context = academicContext(assignment.grade, assignment.subject, assignment.curriculumContext?.optativeExitName ?? null)
-    const release = await prisma.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogV1.version } })
+    let release
+    try {
+      release = await prisma.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogV1.version } })
+    } catch (error) {
+      const code = typeof error === 'object' && error && 'code' in error ? String(error.code) : ''
+      if (code === 'P2021' || code === 'P2022') throw new ServiceUnavailableException('El catálogo evaluativo no está instalado. Aplica las migraciones y el paso de instalación del catálogo.')
+      throw error
+    }
     if (!release) throw new ServiceUnavailableException('Falta instalar el catálogo evaluativo versionado.')
     // Load the DB release only if its canonical content equals the reviewed, typed seed.
     if (canonicalJson(release.payload) !== canonicalJson(evaluationCatalogV1)) throw new ServiceUnavailableException('El catálogo difiere del seed revisado.')
