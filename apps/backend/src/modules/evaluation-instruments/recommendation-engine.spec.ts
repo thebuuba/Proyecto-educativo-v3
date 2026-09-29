@@ -149,6 +149,16 @@ describe('Recomendador con currículo literal completo', () => {
     expect(distributeScore(5, [5, 4, 4, 4, 3]).every(units => units > 0)).toBe(true)
     for (const value of [NaN, Infinity, -1, 0, 1.001]) expect(() => distributeScore(value, [1, 2])).toThrow()
   })
+  it('prepara una rúbrica contextualizada para una exposición de biodiversidad aun con descripción mínima', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'NAT-BIO', subjectName: 'Ciencias de la Naturaleza', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'Exposición sobre la biodiversidad', description: '', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.instrumentType).toBe('rubrica')
+    expect(result.criteria.length).toBeGreaterThanOrEqual(4)
+    expect(result.criteria.every(criterion => criterion.title.trim() && criterion.description.trim())).toBe(true)
+    expect(result.criteria.some(criterion => /biodiversidad/i.test(`${criterion.title} ${criterion.description}`))).toBe(true)
+    expect(result.criteria.every(criterion => criterion.descriptors.length === 4 && criterion.descriptors.every(descriptor => descriptor.text.trim()))).toBe(true)
+    expect(result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)).toBe(2000)
+  })
   it('contextualiza una exposición de volcanes sin atribuir currículo no verificado', () => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'NAT-TIE', subjectName: 'Ciencias de la Tierra y el Universo', optativeExitName: null, modalityCode: 'academic' }
     const result = recommend({ activityTitle: 'Exposición sobre los volcanes', description: 'Los estudiantes realizarán una exposición sobre los volcanes en la que explicarán cómo se forman, identificarán sus partes principales y describirán sus características. Utilizarán imágenes o recursos visuales para apoyar sus explicaciones y emplearán vocabulario científico adecuado.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)

@@ -10,6 +10,7 @@ import helmet from 'helmet'
 import { AuditLogInterceptor } from './common/interceptors/audit-log.interceptor'
 import { isAllowedOrigin } from './config/cors-origins'
 import { backendEnvFilePaths } from './config/env-file-paths'
+import { seedEvaluationCatalog } from './modules/evaluation-instruments/catalog-operations'
 
 function loadEnvironment() {
   for (const envFilePath of backendEnvFilePaths) {
@@ -25,6 +26,11 @@ export async function createApplication(): Promise<INestApplication> {
   loadEnvironment()
   const { AppModule } = await import('./app.module.js')
   const app = await NestFactory.create(AppModule)
+
+  // The evaluative catalog is a versioned immutable release. Ensure the reviewed
+  // release exists before serving requests so recommendation never reaches the
+  // editor with an empty instrument because production was deployed without a seed step.
+  await seedEvaluationCatalog(prisma)
 
   app.setGlobalPrefix('api/v1')
   app.use(helmet({
