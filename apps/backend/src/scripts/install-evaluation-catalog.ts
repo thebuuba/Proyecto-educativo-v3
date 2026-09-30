@@ -1,13 +1,11 @@
 import { prisma } from '@aula/database'
 import { seedEvaluationCatalog } from '../modules/evaluation-instruments/catalog-operations'
+import { assertEvaluationCatalogTarget } from '../modules/evaluation-instruments/catalog-target'
 
 function assertExpectedProject() {
   const expected = process.argv.find((argument) => argument.startsWith('--expected-project-ref='))?.split('=')[1]
   if (!expected) throw new Error('Falta --expected-project-ref. La instalación requiere identificar explícitamente el entorno de destino.')
-  const supabaseUrl = new URL(process.env.SUPABASE_URL ?? 'http://missing')
-  if (supabaseUrl.hostname !== `${expected}.supabase.co`) {
-    throw new Error(`El destino configurado no corresponde al proyecto esperado ${expected}; no se realizaron cambios.`)
-  }
+  assertEvaluationCatalogTarget(expected)
 }
 
 async function install() {

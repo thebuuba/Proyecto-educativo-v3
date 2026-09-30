@@ -31,7 +31,7 @@ describe('adaptación del instrumento preparado', () => {
     expect(fields[`${type}:criterion-id:0`]).toBe('one')
     expect(fields[`${type}:criterion:0`]).toBe(type === 'rubrica' ? 'Procedimiento' : 'Realiza los pasos.')
     if (type === 'rubrica') expect(fields['rubrica:descriptor:0:4']).toBe('Realiza todos los pasos.')
-    if (type === 'rubrica') expect([4, 3, 2, 1].map(level => Number(fields[`rubrica:level-points:${level}`]))).toEqual([1, 2 / 3, 1 / 3, 0])
+    if (type === 'rubrica') expect([4, 3, 2, 1].map(level => Number(fields[`rubrica:level-points:${level}`]))).toEqual([100, 66.67, 33.33, 0])
     if (type === 'escala') expect(fields['escala:descriptor:0:4']).toBe('Realiza todos los pasos.')
     if (type === 'lista-ponderada') expect(Number(fields['lista-ponderada:weight:0']) + Number(fields['lista-ponderada:weight:1'])).toBe(100)
     const aligned = alignRecommendationWithFields(original, fields, 10.25)
@@ -76,5 +76,32 @@ describe('adaptación del instrumento preparado', () => {
     const withVisuals = buildEditableInstrumentTemplate({ activityTitle: 'Exposición sobre las células', participationMode: 'INDIVIDUAL', maxScore: 17.35 }, true)
     expect(withVisuals.criteria.at(-1)?.title).toBe('Uso de recursos visuales')
     expect(withVisuals.totalScoreUnits).toBe(1735)
+  })
+  it('mantiene el debate científico, la calificación individual y criterios propios del debate', () => {
+    const template = buildEditableInstrumentTemplate({
+      activityTitle: 'Debate sobre las células eucariotas',
+      description: 'Los estudiantes se dividirán en dos equipos para debatir sobre la célula eucariota animal y vegetal',
+      participationMode: 'INDIVIDUAL', organizationMode: 'GROUP', evaluationTechnique: 'debate', maxScore: 20,
+    })
+    expect(template.activityType).toBe('DEBATE')
+    expect(template.participationMode).toBe('INDIVIDUAL')
+    expect(template.instrumentType).toBe('rubrica')
+    expect(template.criteria.map(criterion => criterion.title)).toEqual([
+      'Comparación científica entre células eucariotas animales y vegetales', 'Argumentación con razones y evidencias',
+      'Respuesta a los argumentos del otro equipo', 'Claridad de las intervenciones', 'Escucha y respeto de los turnos', 'Aporte individual',
+    ])
+    expect(template.criteria.some(criterion => /exposición/i.test(criterion.title))).toBe(false)
+    expect(template.criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0)).toBe(2000)
+  })
+  it.each([
+    ['Trabajo escrito sobre biodiversidad', 'escala', 'WRITTEN_PRODUCTION'],
+    ['Informe de laboratorio sobre densidad', 'rubrica', 'REPORT'],
+    ['Mapa conceptual de los seres vivos', 'rubrica', 'CONCEPT_MAP'],
+  ])('respeta el producto y el instrumento para %s', (activityTitle, preferredInstrumentType, expectedType) => {
+    const template = buildEditableInstrumentTemplate({ activityTitle, participationMode: 'INDIVIDUAL', maxScore: 13.75, preferredInstrumentType })
+    expect(template.activityType).toBe(expectedType)
+    expect(template.instrumentType).toBe(preferredInstrumentType)
+    expect(template.totalScoreUnits).toBe(1375)
+    expect(template.criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0)).toBe(1375)
   })
 })

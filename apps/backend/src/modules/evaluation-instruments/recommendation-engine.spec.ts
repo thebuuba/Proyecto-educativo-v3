@@ -67,6 +67,22 @@ describe('Recomendador con currículo literal completo', () => {
     expect(result.selectedCurriculumElements).toEqual([])
     expect(result.criteria.some(criterion => criterion.templateId === 'oral-resources')).toBe(false)
   })
+  it('prepara el debate de células con actuaciones observables y sin convertirlo en exposición', () => {
+    const context: AcademicContext = { level: 'SECONDARY', grade: 2, cycle: 1, subjectCode: 'NAT', subjectName: 'Ciencias Naturales', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'Debate sobre las células eucariotas',
+      description: 'Los estudiantes se dividirán en dos equipos para debatir sobre la célula eucariota animal y vegetal',
+      evaluationTechnique: 'debate', organizationMode: 'GROUP', participationMode: 'INDIVIDUAL', maxScore: 20, competencyBlock: 'b1' },
+    context, null, [], 'NO_SCOPE', null)
+    expect(result.activityType).toBe('DEBATE')
+    expect(result.participationMode).toBe('INDIVIDUAL')
+    expect(result.criteria.map(criterion => criterion.title)).toEqual([
+      'Comparación científica entre células eucariotas animales y vegetales', 'Argumentación con razones y evidencias',
+      'Respuesta a los argumentos del otro equipo', 'Claridad de las intervenciones', 'Escucha y respeto de los turnos', 'Aporte individual',
+    ])
+    expect(result.criteria.some(criterion => /organización de la exposición/i.test(criterion.title))).toBe(false)
+    expect(result.criteria.every(criterion => criterion.descriptors.every(descriptor => descriptor.text.trim().length > 20))).toBe(true)
+    expect(result.totalScoreUnits).toBe(2000)
+  })
   it('C/D/E/F/G: dimensiones disciplinares pertinentes', () => {
     const expected = { C: ['math-procedure', 'math-reasoning', 'math-accuracy', 'math-interpretation'], D: ['science-procedure', 'science-safety', 'science-data', 'science-interpretation', 'science-conclusion'], E: ['language-content', 'language-structure', 'language-coherence', 'language-argument', 'language-correctness'], F: ['art-technique', 'art-creativity', 'art-composition', 'art-materials'], G: ['language-expression', 'language-structure'] }
     for (const [key, ids] of Object.entries(expected)) expect(run(cases.find(c => c.case === key)!).result.criteria.map(c => c.templateId)).toEqual(expect.arrayContaining(ids))

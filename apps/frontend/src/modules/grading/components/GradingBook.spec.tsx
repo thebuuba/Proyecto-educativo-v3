@@ -216,7 +216,7 @@ describe('GradingBook', () => {
     expect(screen.getByRole('button', { name: 'Intentar de nuevo' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Usar plantilla editable' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Crear desde cero' })).toBeInTheDocument()
-    expect(screen.queryByText(/Construye el instrumento que utilizarás/)).not.toBeInTheDocument()
+    expect(screen.getByText(/Construye el instrumento que utilizarás/)).toBeInTheDocument()
     expect(screen.queryByText(/Si prefieres continuar manualmente/)).not.toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: 'Usar plantilla editable' }))
     expect(screen.getByText('Propuesta inicial para revisión docente')).toBeInTheDocument()

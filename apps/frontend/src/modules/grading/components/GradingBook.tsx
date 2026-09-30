@@ -2058,7 +2058,7 @@ function ReadOnlyInstrumentContent({ type, fields, maxScore, accent }: { type?: 
     const levelCount = Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, 4)
     const levels = Array.from({ length: levelCount }, (_, index) => levelCount - index)
     return (
-      <div className="space-y-2"><InstrumentTable><thead><tr><th className="border border-border bg-slate-50 px-3 py-2">Criterios</th>{levels.map((level, index) => { const visual = rubricLevelVisual(index, levels.length); return <th key={level} className="border px-3 py-2 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block font-black">{fields[instrumentFieldKey(type, 'level-name', level)] || `Nivel ${level}`}</span><span className="text-[10px] font-bold opacity-80">{fields[instrumentFieldKey(type, 'level-points', level)] || level} pts</span></th> })}<th className="border border-border bg-slate-50 px-3 py-2 text-center">Valor</th></tr></thead><tbody>
+      <div className="space-y-2"><InstrumentTable><thead><tr><th className="border border-border bg-slate-50 px-3 py-2">Criterios</th>{levels.map((level, index) => { const visual = rubricLevelVisual(index, levels.length); return <th key={level} className="border px-3 py-2 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block font-black">{fields[instrumentFieldKey(type, 'level-name', level)] || `Nivel ${level}`}</span><span className="text-[10px] font-bold opacity-80">{instrumentLevelValueLabel(fields, type, level)}</span></th> })}<th className="border border-border bg-slate-50 px-3 py-2 text-center">Valor</th></tr></thead><tbody>
         {indexes.map((index) => <tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type, 'criterion', index)]}</td>{levels.map((level) => <td key={level} className="border border-border px-3 py-3 leading-5 text-muted-foreground">{fields[instrumentFieldKey(type, 'descriptor', index, level)] || '—'}</td>)}<td className="border border-border px-3 py-3 text-center font-bold">{fields[instrumentFieldKey(type, 'points', index)] || '—'} pts</td></tr>)}
       </tbody></InstrumentTable><p className="text-right text-xs font-black text-primary">Puntuación máxima: {maxScore} pts</p></div>
     )
@@ -2073,7 +2073,7 @@ function ReadOnlyInstrumentContent({ type, fields, maxScore, accent }: { type?: 
     const levels = Array.from({length:levelCount},(_,index)=>levelCount-index)
     const hasNoApply = fields['escala:meta:noApply'] === 'true'
     const previewAccent = accent ?? blockAccents[0]
-    return <div className="space-y-3"><InstrumentTable><thead><tr><th className={cn('border px-3 py-3',previewAccent.card,previewAccent.border,previewAccent.text)}>Indicadores</th>{levels.map((level,index)=>{const visual=scaleLevelVisual(previewAccent,index,levels.length);return <th key={level} className="border px-3 py-3 text-center" style={{backgroundColor:visual.background,borderColor:visual.border,color:visual.foreground}}><span className="block font-black">{fields[instrumentFieldKey(type,'level-name',level)]||`Nivel ${level}`}</span><span className="text-[10px] font-medium opacity-75">{fields[instrumentFieldKey(type,'level-points',level)]||level} pts</span></th>})}{hasNoApply?<th className="border border-slate-300 bg-slate-100 px-3 py-3 text-center text-slate-600">No aplica<span className="block text-[10px]">N/A</span></th>:null}<th className={cn('border px-3 py-3 text-center',previewAccent.card,previewAccent.border,previewAccent.text)}>Máximo</th></tr></thead><tbody>{indexes.map((index)=><tr key={index}><td className="border border-border bg-card px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)]||`Indicador ${index+1}`}</td>{levels.map((level,levelIndex)=>{const visual=scaleLevelVisual(previewAccent,levelIndex,levels.length);return <td key={level} className="border bg-card text-center" style={{borderColor:visual.border}}><span className="mx-auto block size-4 rounded-full border-2 bg-card" style={{borderColor:visual.border}}/></td>})}{hasNoApply?<td className="border border-slate-200 bg-slate-50 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-slate-300 bg-card"/></td>:null}<td className={cn('border px-3 py-3 text-center font-black',previewAccent.card,previewAccent.border,previewAccent.text)}>{fields[instrumentFieldKey(type,'points',index)]||0} pts</td></tr>)}</tbody></InstrumentTable><p className={cn('text-right text-sm font-black',previewAccent.text)}>Puntuación máxima: {maxScore} pts</p></div>
+    return <div className="space-y-3"><InstrumentTable><thead><tr><th className={cn('border px-3 py-3',previewAccent.card,previewAccent.border,previewAccent.text)}>Indicadores</th>{levels.map((level,index)=>{const visual=scaleLevelVisual(previewAccent,index,levels.length);return <th key={level} className="border px-3 py-3 text-center" style={{backgroundColor:visual.background,borderColor:visual.border,color:visual.foreground}}><span className="block font-black">{fields[instrumentFieldKey(type,'level-name',level)]||`Nivel ${level}`}</span><span className="text-[10px] font-medium opacity-75">{instrumentLevelValueLabel(fields, type, level)}</span></th>})}{hasNoApply?<th className="border border-slate-300 bg-slate-100 px-3 py-3 text-center text-slate-600">No aplica<span className="block text-[10px]">N/A</span></th>:null}<th className={cn('border px-3 py-3 text-center',previewAccent.card,previewAccent.border,previewAccent.text)}>Máximo</th></tr></thead><tbody>{indexes.map((index)=><tr key={index}><td className="border border-border bg-card px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)]||`Indicador ${index+1}`}</td>{levels.map((level,levelIndex)=>{const visual=scaleLevelVisual(previewAccent,levelIndex,levels.length);return <td key={level} className="border bg-card text-center" style={{borderColor:visual.border}}><span className="mx-auto block size-4 rounded-full border-2 bg-card" style={{borderColor:visual.border}}/></td>})}{hasNoApply?<td className="border border-slate-200 bg-slate-50 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-slate-300 bg-card"/></td>:null}<td className={cn('border px-3 py-3 text-center font-black',previewAccent.card,previewAccent.border,previewAccent.text)}>{fields[instrumentFieldKey(type,'points',index)]||0} pts</td></tr>)}</tbody></InstrumentTable><p className={cn('text-right text-sm font-black',previewAccent.text)}>Puntuación máxima: {maxScore} pts</p></div>
   }
   const hasPartial = fields['lista-ponderada:meta:partial'] !== 'false'
   const weightedLabels = { yes: fields['lista-ponderada:meta:yesLabel'] || 'Sí', partial: fields['lista-ponderada:meta:partialLabel'] || 'Parcial', no: fields['lista-ponderada:meta:noLabel'] || 'No' }
@@ -3879,8 +3879,17 @@ function ActivityCreationView(props: {
     const timer = window.setTimeout(() => {
       setInterpretationBusy(true)
       interpretActivity({ sectionSubjectId, activityTitle: activityDraft.name, description: activityDescriptionText(activityDraft.description),
-        pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined, competencyBlock: block.id }, abort.signal)
-        .then(value => { if (!abort.signal.aborted) setInterpretation(value) })
+        pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined,
+        competencyBlock: block.id, evaluationTechnique: activityDraft.evaluationTechnique || undefined,
+        evidenceInstructions: activityDraft.studentRole || undefined, resources: activityDraft.resources,
+        evaluationPriorities: activityDraft.observations ? [activityDraft.observations] : undefined,
+        organizationMode: activityDraft.teamIds.length || /equipos?|grupos?/i.test(activityDescriptionText(activityDraft.description)) ? 'GROUP' : 'INDIVIDUAL',
+        participationMode: activityDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL', planningMoment: activityDraft.planningMoment || undefined }, abort.signal)
+        .then(value => {
+          if (abort.signal.aborted) return
+          setInterpretation(value)
+          if (!activityDraft.evaluationTechnique && value.suggestedEvaluationTechnique) onChangeDraft({ ...activityDraft, evaluationTechnique: value.suggestedEvaluationTechnique })
+        })
         .catch(() => { if (!abort.signal.aborted) setInterpretation(null) })
         .finally(() => { if (!abort.signal.aborted) setInterpretationBusy(false) })
     }, 450)
@@ -3903,7 +3912,11 @@ function ActivityCreationView(props: {
         maxScore: Number(activityDraft.maxScore), competencyBlock: block.id,
         curriculumVersionId: interpretation?.curriculumVersionId ?? undefined,
         preferredInstrumentType: preferredType ?? (activityDraft.autoSelectedInstrumentType ? undefined : activityDraft.instrumentType || undefined),
-        selectedCurriculumElementIds: activityDraft.selectedCurriculumElementIds?.length ? activityDraft.selectedCurriculumElementIds : undefined })
+        selectedCurriculumElementIds: activityDraft.selectedCurriculumElementIds?.length ? activityDraft.selectedCurriculumElementIds : undefined,
+        evaluationTechnique: activityDraft.evaluationTechnique || undefined, evidenceInstructions: activityDraft.studentRole || undefined,
+        resources: activityDraft.resources, evaluationPriorities: activityDraft.observations ? [activityDraft.observations] : undefined,
+        organizationMode: activityDraft.teamIds.length || /equipos?|grupos?/i.test(activityDescriptionText(activityDraft.description)) ? 'GROUP' : 'INDIVIDUAL',
+        planningMoment: activityDraft.planningMoment || undefined })
       const next = { ...activityDraft, instrumentType: proposal.instrumentType, pedagogicalActivityType: proposal.activityType,
         autoSelectedInstrumentType: preferredType ? false : activityDraft.autoSelectedInstrumentType || !activityDraft.instrumentType,
         autoDetectedPedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType || !activityDraft.pedagogicalActivityType,
@@ -3914,22 +3927,30 @@ function ActivityCreationView(props: {
     } catch (error) {
       setPreparationError(error instanceof Error ? error.message : 'No se pudo preparar el instrumento. Puedes completarlo manualmente.')
       setStage('instrument')
+      if (!activityDraft.preparedManuallyEdited) applyEditableTemplate(false, true)
     } finally { setPreparing(false) }
   }
 
-  function applyEditableTemplate(includeVisualResources = false) {
+  function applyEditableTemplate(includeVisualResources = false, preserveError = false) {
     const proposal = buildEditableInstrumentTemplate({
       activityTitle: activityDraft.name,
       description: activityDescriptionText(activityDraft.description),
       participationMode: activityDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
       maxScore: Number(activityDraft.maxScore),
+      pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || interpretation?.activityType,
+      evaluationTechnique: activityDraft.evaluationTechnique || interpretation?.suggestedEvaluationTechnique || undefined,
+      preferredInstrumentType: activityDraft.autoSelectedInstrumentType ? undefined : activityDraft.instrumentType || undefined,
+      evidenceInstructions: activityDraft.studentRole || undefined, resources: activityDraft.resources,
+      evaluationPriorities: activityDraft.observations ? [activityDraft.observations] : undefined,
+      organizationMode: activityDraft.teamIds.length || /equipos?|grupos?/i.test(activityDescriptionText(activityDraft.description)) ? 'GROUP' : 'INDIVIDUAL',
+      planningMoment: activityDraft.planningMoment || undefined,
     }, includeVisualResources)
     const next = { ...activityDraft, instrumentType: proposal.instrumentType, pedagogicalActivityType: proposal.activityType,
       autoSelectedInstrumentType: true, autoDetectedPedagogicalActivityType: true,
       instrumentFields: recommendationToFields(proposal, activityDraft.name), instrumentCompleted: true,
       preparedRecommendation: proposal, preparedManuallyEdited: false }
     onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
-    setPreparationError('')
+    if (!preserveError) setPreparationError('')
     setStage('instrument')
     setShowAdvancedInstrument(false)
   }
@@ -4103,8 +4124,8 @@ function ActivityCreationView(props: {
           {stage === 'instrument' ? (
             <div className="space-y-3">
               <div className={cn('rounded-xl border px-4 py-3', accent.card)}>
-                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? 'Instrumento preparado' : preparationError ? 'No pudimos preparar el instrumento automáticamente' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? `${activityDraft.preparedRecommendation.criteria.length} criterios · ${activityDraft.preparedRecommendation.levels.length || 'sin'} niveles · ${activityDraft.maxScore} puntos. Revisa y edita el instrumento aquí.` : preparationError ? 'Puedes intentar de nuevo, usar una plantilla editable o crear el instrumento desde cero.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
+                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{preparing ? 'Preparando instrumento…' : preparationError ? 'No pudimos preparar el instrumento automáticamente' : activityDraft.preparedRecommendation ? 'Instrumento preparado' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{preparing ? 'Preparando instrumento…' : preparationError ? 'Cargamos una propuesta editable pertinente. Puedes revisarla, reintentar la generación o crear desde cero.' : activityDraft.preparedRecommendation ? `${activityDraft.preparedRecommendation.criteria.length} criterios · ${activityDraft.preparedRecommendation.levels.length || 'sin'} niveles · ${activityDraft.maxScore} puntos. Revisa y edita el instrumento aquí.` : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
               </div>
               {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground"><p>{preparationError}</p><p className="mt-1 text-xs text-muted-foreground">La plantilla es una propuesta inicial para revisión docente y no implica validación curricular.</p><div className="mt-3 flex flex-wrap gap-2"><Button type="button" size="sm" variant="outline" onClick={() => requestInstrumentReplacement({ kind: 'prepare' })} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button><Button type="button" size="sm" onClick={() => requestInstrumentReplacement({ kind: 'template', includeVisualResources: false })}>Usar plantilla editable</Button><Button type="button" size="sm" variant="ghost" onClick={createInstrumentFromScratch}>Crear desde cero</Button></div></div> : null}
               {activityDraft.preparedRecommendation?.internalTrace.mappingStatus === 'EDITABLE_TEMPLATE' ? <div className="rounded-xl border border-primary/30 bg-primary/5 p-3 text-sm"><p className="font-bold">Propuesta inicial para revisión docente</p><p className="mt-1 text-xs text-muted-foreground">Se preparó localmente sin atribución ni validación curricular. Revisa y edita criterios, descriptores y puntuaciones antes de guardar.</p>{!activityDraft.preparedRecommendation.criteria.some(criterion => criterion.templateId === 'optional-visual-resources') ? <Button type="button" size="sm" variant="outline" className="mt-2" onClick={() => requestInstrumentReplacement({ kind: 'template', includeVisualResources: true })}>Añadir criterio opcional de recursos visuales</Button> : null}</div> : null}
@@ -7750,6 +7771,11 @@ function ProgressBar({
 
 function instrumentFieldKey(instrumentType: string, field: string, ...parts: Array<number | string>) {
   return [instrumentType, field, ...parts].join(':')
+}
+
+function instrumentLevelValueLabel(fields: Record<string, string>, instrumentType: string, level: number | string) {
+  const value = fields[instrumentFieldKey(instrumentType, 'level-points', level)] || String(level)
+  return fields[`${instrumentType}:meta:levelValueMode`] === 'percentage' ? `${formatInstrumentNumber(Number(value))} % del criterio` : `${value} pts`
 }
 
 function hasInstrumentField(fields: Record<string, string>, key: string) {
