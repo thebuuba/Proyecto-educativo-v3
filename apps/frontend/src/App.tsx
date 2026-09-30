@@ -18,16 +18,41 @@ const lazyPage = (importFn: () => Promise<Record<string, unknown>>, exportName: 
   lazy(() => importFn().then((m) => ({ default: m[exportName] as import('react').ComponentType })))
 
 const LoginPage = lazyPage(() => import('@/modules/auth/pages/LoginPage'), 'LoginPage')
-const AuthCallbackPage = lazyPage(() => import('@/modules/auth/pages/AuthCallbackPage'), 'AuthCallbackPage')
-const OnboardingPage = lazyPage(() => import('@/modules/auth/pages/OnboardingPage'), 'OnboardingPage')
+const AuthCallbackPage = lazyPage(
+  () => import('@/modules/auth/pages/AuthCallbackPage'),
+  'AuthCallbackPage',
+)
+const OnboardingPage = lazyPage(
+  () => import('@/modules/auth/pages/OnboardingPage'),
+  'OnboardingPage',
+)
 const RegisterPage = lazyPage(() => import('@/modules/auth/pages/RegisterPage'), 'RegisterPage')
-const ConfirmEmailPage = lazyPage(() => import('@/modules/auth/pages/ConfirmEmailPage'), 'ConfirmEmailPage')
-const UnauthorizedPage = lazyPage(() => import('@/modules/auth/pages/UnauthorizedPage'), 'UnauthorizedPage')
+const ConfirmEmailPage = lazyPage(
+  () => import('@/modules/auth/pages/ConfirmEmailPage'),
+  'ConfirmEmailPage',
+)
+const UnauthorizedPage = lazyPage(
+  () => import('@/modules/auth/pages/UnauthorizedPage'),
+  'UnauthorizedPage',
+)
 const PromoPage = lazyPage(() => import('@/modules/promo/pages/PromoPage'), 'PromoPage')
 const PrivacyPage = lazyPage(() => import('@/modules/promo/pages/PrivacyPage'), 'PrivacyPage')
 const TermsPage = lazyPage(() => import('@/modules/promo/pages/TermsPage'), 'TermsPage')
 const ContactPage = lazyPage(() => import('@/modules/promo/pages/ContactPage'), 'ContactPage')
-const ResetPasswordPage = lazyPage(() => import('@/modules/auth/pages/ResetPasswordPage'), 'ResetPasswordPage')
+const PricingPage = lazyPage(() => import('@/modules/promo/pages/PricingPage'), 'PricingPage')
+const CheckoutPage = lazyPage(() => import('@/modules/promo/pages/CheckoutPage'), 'CheckoutPage')
+const PaymentStatusPage = lazyPage(
+  () => import('@/modules/promo/pages/CheckoutPage'),
+  'PaymentStatusPage',
+)
+const SubscriptionPage = lazyPage(
+  () => import('@/modules/promo/pages/CheckoutPage'),
+  'SubscriptionPage',
+)
+const ResetPasswordPage = lazyPage(
+  () => import('@/modules/auth/pages/ResetPasswordPage'),
+  'ResetPasswordPage',
+)
 
 /** Componente de carga mostrado durante la carga diferida de módulos. */
 const routeFallback = <PageSkeleton />
@@ -49,6 +74,7 @@ function App() {
     <Suspense fallback={routeFallback}>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/iniciar-sesion" element={<Navigate to="/login" replace />} />
         <Route path="/auth/callback" element={<AuthCallbackPage />} />
         <Route path="/restablecer-contrasena" element={<ResetPasswordPage />} />
         <Route path="/onboarding" element={<OnboardingPage />} />
@@ -57,6 +83,10 @@ function App() {
         <Route path="/privacidad" element={<PrivacyPage />} />
         <Route path="/terminos" element={<TermsPage />} />
         <Route path="/contacto" element={<ContactPage />} />
+        <Route path="/precios" element={<PricingPage />} />
+        <Route path="/contratar" element={<CheckoutPage />} />
+        <Route path="/contratar/estado/:estado" element={<PaymentStatusPage />} />
+        <Route path="/cuenta/suscripcion" element={<SubscriptionPage />} />
         <Route path="/registro" element={<RegisterPage />} />
         <Route path="/registro/confirma-correo" element={<ConfirmEmailPage />} />
         <Route path="/configuracion/centro" element={<OnboardingPage />} />

@@ -1,67 +1,165 @@
-import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import type { ReactNode } from 'react'
+﻿import { ArrowRight, GraduationCap, Menu } from 'lucide-react'
+import { useEffect, useState, type ReactNode } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
-const navLinks = [
-  { label: 'Características', href: '/#caracteristicas' },
-  { label: 'Precios', href: '/#precios' },
-  { label: 'Testimonios', href: '/#testimonios' },
+const nav = [
+  { label: 'Inicio', to: '/' },
+  { label: 'Módulos', to: '/#modulos' },
+  { label: 'Para centros', to: '/#centros' },
+  { label: 'Precios', to: '/precios' },
+  { label: 'Contacto', to: '/contacto' },
 ]
 
-export function Logo({ small = false }: { small?: boolean }) {
+export function PromoLayout({ children }: { children: ReactNode }) {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
+  useEffect(() => {
+    if (location.hash) {
+      requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView())
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [location.pathname, location.hash])
   return (
-    <div className="flex items-center gap-3">
-      <div className={`relative ${small ? 'flex size-7 items-center justify-center rounded-lg' : 'flex size-8 items-center justify-center rounded-xl'} bg-primary/16 text-foreground shadow-sm`}>
-        <span className={small ? 'text-[10px] font-extrabold' : 'text-[11px] font-extrabold'}>AB</span>
-        <span className="absolute -right-0.5 -top-0.5 size-2 rounded-full bg-warning" />
-      </div>
-      <div>
-        <p className="text-sm font-extrabold leading-none text-foreground">Aula Base</p>
-        {!small ? <p className="mt-0.5 text-[10px] text-muted-foreground">Sistema docente</p> : null}
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur-md">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-[72px] lg:px-8">
+          <Link to="/" className="flex items-center gap-2.5" aria-label="Aula Base, inicio">
+            <span className="grid size-9 place-items-center rounded-xl bg-primary text-primary-foreground">
+              <GraduationCap size={21} />
+            </span>
+            <span className="text-lg font-semibold tracking-tight">Aula Base</span>
+          </Link>
+          <nav aria-label="Principal" className="hidden items-center gap-1 lg:flex">
+            {nav.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.to === '/'}
+                className={({ isActive }) =>
+                  `rounded-full px-3.5 py-2 text-sm font-medium hover:bg-muted ${isActive && !item.to.includes('#') ? 'bg-accent text-accent-foreground' : 'text-muted-foreground'}`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+          <div className="hidden items-center gap-2 sm:flex">
+            <Link
+              to="/login"
+              className="rounded-full px-4 py-2.5 text-sm font-medium hover:bg-muted"
+            >
+              Iniciar sesión
+            </Link>
+            <Link
+              to="/registro"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary-hover"
+            >
+              Crear cuenta <ArrowRight size={16} />
+            </Link>
+          </div>
+          <button
+            type="button"
+            className="grid size-11 place-items-center rounded-xl border border-border lg:hidden"
+            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <Menu size={22} />
+          </button>
+        </div>
+        {menuOpen && (
+          <nav aria-label="Móvil" className="border-t border-border bg-card px-4 py-3 lg:hidden">
+            {nav.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setMenuOpen(false)}
+                className="block rounded-xl px-4 py-3 text-sm font-medium hover:bg-muted"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              to="/login"
+              onClick={() => setMenuOpen(false)}
+              className="block rounded-xl px-4 py-3 text-sm"
+            >
+              Iniciar sesión
+            </Link>
+            <Link
+              to="/registro"
+              onClick={() => setMenuOpen(false)}
+              className="block rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
+            >
+              Crear cuenta
+            </Link>
+          </nav>
+        )}
+      </header>
+      <main>{children}</main>
+      <footer className="border-t border-border bg-card">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.3fr_2fr] lg:px-8 lg:py-16">
+          <div>
+            <Link to="/" className="flex items-center gap-2 font-semibold">
+              <GraduationCap className="text-primary" />
+              Aula Base
+            </Link>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              Plataforma web para organizar el trabajo académico de docentes y centros educativos de
+              República Dominicana.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+            <FooterColumn
+              title="Producto"
+              links={[
+                ['Módulos', '/#modulos'],
+                ['Para docentes', '/#docentes'],
+                ['Para centros', '/#centros'],
+                ['Precios', '/precios'],
+              ]}
+            />
+            <FooterColumn
+              title="Cuenta"
+              links={[
+                ['Crear cuenta', '/registro'],
+                ['Iniciar sesión', '/login'],
+              ]}
+            />
+            <FooterColumn
+              title="Legal y ayuda"
+              links={[
+                ['Términos y condiciones', '/terminos'],
+                ['Política de privacidad', '/privacidad'],
+                ['Contacto', '/contacto'],
+                ['Preguntas frecuentes', '/#preguntas'],
+              ]}
+            />
+          </div>
+        </div>
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-3 border-t border-border px-4 py-6 text-xs text-muted-foreground sm:px-6 lg:px-8">
+          <p>© {new Date().getFullYear()} Aula Base</p>
+          <p>Hecho para la comunidad educativa dominicana.</p>
+        </div>
+      </footer>
     </div>
   )
 }
 
-export function PromoLayout({ children }: { children: ReactNode }) {
+function FooterColumn({ title, links }: { title: string; links: [string, string][] }) {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
-      <nav className="sticky top-0 z-50 border-b border-border bg-card/90 backdrop-blur-xl">
-        <div className="flex h-16 w-full items-center justify-between gap-3 px-4 sm:px-8 lg:px-14 2xl:px-20">
-          <Link to="/"><Logo /></Link>
-
-          <div className="hidden items-center gap-7 md:flex">
-            {navLinks.map((item) => (
-              <a key={item.label} href={item.href} className="text-sm font-medium text-muted-foreground transition hover:text-foreground">
-                {item.label}
-              </a>
-            ))}
-          </div>
-
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-            <Link to="/login" className="rounded-xl px-3 py-2 text-sm font-semibold text-foreground transition hover:bg-muted sm:px-4">
-              Iniciar sesión
+    <nav aria-label={title}>
+      <h2 className="text-sm font-semibold">{title}</h2>
+      <ul className="mt-4 space-y-2.5">
+        {links.map(([label, to]) => (
+          <li key={to}>
+            <Link className="text-sm text-muted-foreground hover:text-primary" to={to}>
+              {label}
             </Link>
-            <Link to="/registro" className="hidden items-center gap-1.5 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground shadow-sm transition-all hover:bg-primary-hover sm:flex">
-              Empezar gratis <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      <main>{children}</main>
-
-      <footer className="border-t border-border bg-card py-8">
-        <div className="flex w-full flex-col gap-5 px-4 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-14 2xl:px-20">
-          <Logo small />
-          <p className="text-xs text-muted-foreground">© 2026 Aula Base. Todos los derechos reservados.</p>
-          <div className="flex flex-wrap gap-5">
-            <Link to="/privacidad" className="text-xs font-medium text-muted-foreground transition hover:text-foreground">Privacidad</Link>
-            <Link to="/terminos" className="text-xs font-medium text-muted-foreground transition hover:text-foreground">Términos</Link>
-            <Link to="/contacto" className="text-xs font-medium text-muted-foreground transition hover:text-foreground">Contacto</Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 }
