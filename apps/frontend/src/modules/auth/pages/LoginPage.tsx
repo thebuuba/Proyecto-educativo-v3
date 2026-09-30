@@ -7,12 +7,27 @@ import { requestPasswordReset } from '@/modules/auth/services/authService'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
 
 type LocationState = { from?: { pathname?: string }; registered?: boolean }
+type RememberedAccount = { email: string; fullName: string }
+
+function getRememberedAccount(): RememberedAccount | null {
+  try {
+    const account = JSON.parse(
+      localStorage.getItem('aulabase:last-account') ?? 'null',
+    ) as Partial<RememberedAccount> | null
+    return account?.email && account.fullName
+      ? { email: account.email, fullName: account.fullName }
+      : null
+  } catch {
+    return null
+  }
+}
 
 export function LoginPage() {
   const { authError, isAuthenticated, loading, login, loginWithProvider, profileRequired } =
     useAuth()
   const location = useLocation()
-  const [email, setEmail] = useState('')
+  const [rememberedAccount, setRememberedAccount] = useState(getRememberedAccount)
+  const [email, setEmail] = useState(() => rememberedAccount?.email ?? '')
   const [password, setPassword] = useState('')
   const [visible, setVisible] = useState(false)
   const [error, setError] = useState('')
@@ -100,8 +115,33 @@ export function LoginPage() {
                 autoComplete="email"
                 required
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                  if (rememberedAccount && e.target.value !== rememberedAccount.email) {
+                    setRememberedAccount(null)
+                  }
+                }}
               />
+              {rememberedAccount && (
+                <span className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+                  <span>
+                    Cuenta recordada:{' '}
+                    <strong className="font-medium text-foreground">
+                      {rememberedAccount.fullName}
+                    </strong>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEmail('')
+                      setRememberedAccount(null)
+                    }}
+                    className="ml-auto font-medium text-primary hover:underline"
+                  >
+                    Usar otra cuenta
+                  </button>
+                </span>
+              )}
             </label>
             <div>
               <div className="flex items-center justify-between">
