@@ -2,7 +2,7 @@ import { IsArray, IsDateString, IsIn, IsNotEmpty, IsNumber, IsObject, IsOptional
 import type { InstrumentRecommendation } from '@aula/shared'
 import { evaluationCatalogV1 } from '../../evaluation-instruments/catalog-v1'
 
-export class SaveEvaluationActivityDto {
+export class SaveActivityDto {
   @IsOptional()
   @IsString()
   id?: string

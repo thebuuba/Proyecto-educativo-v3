@@ -13,6 +13,7 @@ import { UsersModule } from './modules/users/users.module'
 import { StudentsModule } from './modules/students/students.module'
 import { AttendanceModule } from './modules/attendance/attendance.module'
 import { GradingModule } from './modules/grading/grading.module'
+import { ActivitiesModule } from './modules/activities/activities.module'
 import { ScheduleModule } from './modules/schedule/schedule.module'
 import { PlanningModule } from './modules/planning/planning.module'
 import { CoursesModule } from './modules/courses/courses.module'
@@ -44,6 +45,7 @@ import { EvaluationInstrumentsModule } from './modules/evaluation-instruments/ev
     StudentsModule,
     AttendanceModule,
     GradingModule,
+    ActivitiesModule,
     ScheduleModule,
     PlanningModule,
     CoursesModule,

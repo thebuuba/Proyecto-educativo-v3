@@ -119,7 +119,7 @@ import { Modal } from '@/components/ui/Modal'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import { ActivityDescriptionEditor as StructuredActivityDescriptionEditor } from '@/modules/grading/components/ActivityDescriptionEditor'
-import { ActivityInfoModal } from '@/modules/grading/components/ActivityInfoModal'
+import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
 import type { CourseTeam } from '@/modules/courses/types'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
 import type {
@@ -154,7 +154,7 @@ import {
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 import type { InstrumentRecommendation } from '@aula/shared'
-import { alignRecommendationWithFields, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/grading/services/instrumentPreparation'
+import { alignRecommendationWithFields, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 
 type GradingBookProps = {
   sectionSubjectId?: string
@@ -185,6 +185,9 @@ type GradingBookProps = {
   loadFinalRecords: () => Promise<Map<CompetencyPeriodId, GradeRecordRow[]>>
   getActivitiesForPeriod: (periodId: CompetencyPeriodId) => GradingActivity[]
   onActivityWorkspaceChange?: (active: boolean) => void
+  onGradeCreatedActivity?: (activity: GradingActivity) => void
+  onViewCreatedActivity?: (activity: GradingActivity) => void
+  onCreateActivityRequested?: (blockId?: CompetencyBlockId) => void
 }
 
 type MainView = 'blocks' | 'period' | 'annual' | 'final'
@@ -386,6 +389,9 @@ export function GradingBook({
   loadFinalRecords,
   getActivitiesForPeriod,
   onActivityWorkspaceChange,
+  onGradeCreatedActivity,
+  onViewCreatedActivity,
+  onCreateActivityRequested,
 }: GradingBookProps) {
   const initialLaunchKey = initialActivityAction === 'create'
     ? `create:${initialActivityBlockId ?? 'select-block'}`
@@ -857,7 +863,7 @@ export function GradingBook({
     setDetailView(null)
   }
 
-  if (students.length === 0) {
+  if (students.length === 0 && !initialActivityAction) {
     return (
       <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-center text-sm text-muted-foreground">
         Este curso todavía no tiene estudiantes matriculados.
@@ -919,7 +925,7 @@ export function GradingBook({
               ) : null}
             </div>
 
-            <Button className="h-10 shrink-0 px-4" onClick={openActivityHub}>
+            <Button className="h-10 shrink-0 px-4" onClick={() => onCreateActivityRequested ? onCreateActivityRequested() : openActivityHub()}>
               <Plus className="size-4" />
               <span className="hidden sm:inline">Agregar actividad</span>
               <span className="sm:hidden">Agregar</span>
@@ -938,7 +944,7 @@ export function GradingBook({
             draftMetas={draftMetas}
             initialTab={detailView.initialTab}
             onBack={() => setDetailView(null)}
-            onCreateActivity={() => openActivityCreator(selectedBlock.id)}
+            onCreateActivity={() => onCreateActivityRequested ? onCreateActivityRequested(selectedBlock.id) : openActivityCreator(selectedBlock.id)}
             onDeleteActivity={onDeleteActivity}
             onEditActivity={editActivity}
             onOpenConfig={() => setShowConfig(true)}
@@ -959,7 +965,7 @@ export function GradingBook({
             onBack={() => setDetailView(null)}
             onDeleteDraft={discardActivityDraft}
             onOpenDraft={openActivityDraft}
-            onSelectBlock={openActivityCreator}
+            onSelectBlock={(blockId) => onCreateActivityRequested ? onCreateActivityRequested(blockId) : openActivityCreator(blockId)}
             onViewDrafts={(blockId) => setDetailView({ type: 'activity-drafts', initialBlock: blockId, returnTo: { type: 'activity-hub' } })}
             periodShortName={periodShortName}
             periodName={periodName}
@@ -970,7 +976,7 @@ export function GradingBook({
             draftMetas={draftMetas}
             initialBlock={detailView.initialBlock}
             onBack={() => goBackFromDrafts(detailView.returnTo)}
-            onCreateActivity={() => openActivityCreator(competencyBlocks[0].id)}
+            onCreateActivity={() => onCreateActivityRequested ? onCreateActivityRequested(competencyBlocks[0].id) : openActivityCreator(competencyBlocks[0].id)}
             onDeleteDraft={discardActivityDraft}
             onOpenDraft={openActivityDraft}
             periodName={periodName}
@@ -1105,6 +1111,10 @@ export function GradingBook({
             openActivityHub()
           }}
           onGrade={activitySaveCompletion.kind === 'created' ? () => {
+            if (onGradeCreatedActivity) {
+              onGradeCreatedActivity(activitySaveCompletion.activity)
+              return
+            }
             setActivitySaveCompletion(null)
             setDetailView({ type: 'activity', activityId: activitySaveCompletion.activity.id, initialTab: 'evaluation' })
           } : undefined}
@@ -1119,6 +1129,10 @@ export function GradingBook({
               : { type: 'activity-hub' })
           }}
           onView={() => {
+            if (activitySaveCompletion.kind === 'created' && onViewCreatedActivity) {
+              onViewCreatedActivity(activitySaveCompletion.activity)
+              return
+            }
             setActivitySaveCompletion(null)
             if (activitySaveCompletion.kind === 'created') {
               setDetailView({ type: 'activity', activityId: activitySaveCompletion.activity.id, initialTab: 'details' })

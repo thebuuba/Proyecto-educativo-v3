@@ -20,7 +20,7 @@ import type { ReactNode } from 'react'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { Modal } from '@/components/ui/Modal'
-import type { GradingActivity } from '@/modules/grading/types'
+import type { Activity } from '@/modules/activities/types'
 import { activityCompetencyWeights, competencyBlocks, plainActivityText } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 
@@ -58,7 +58,7 @@ const rubricLevelPalette = [
 ]
 
 export function ActivityInfoModal({ activity, onClose, onEdit, onEvaluate }: {
-  activity: GradingActivity
+  activity: Activity
   onClose: () => void
   onEdit?: () => void
   onEvaluate?: () => void

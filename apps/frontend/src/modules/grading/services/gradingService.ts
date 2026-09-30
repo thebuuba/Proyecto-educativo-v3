@@ -8,20 +8,14 @@
 import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type {
   AcademicPeriodOpt,
-  ActivityCenterWorkspace,
   AnnualGradingPeriod,
   GradeRecordRow,
   GradeSummaryStats,
-  GradingActivity,
   GradingWorkspace,
   SaveGradeInput,
   SectionSubjectOption,
   StudentGradeRow,
 } from '@/modules/grading/types'
-
-export async function getActivityCenter(): Promise<ActivityCenterWorkspace> {
-  return api.get<ActivityCenterWorkspace>('/grading/activity-center')
-}
 
 export async function getGradingWorkspace(input?: {
   sectionSubjectId?: string
@@ -33,7 +27,9 @@ export async function getGradingWorkspace(input?: {
   if (input?.academicPeriodId) params.set('academicPeriodId', input.academicPeriodId)
   if (input?.includeOptions === false) params.set('includeOptions', 'false')
   const query = params.size > 0 ? `?${params.toString()}` : ''
-  return api.get<GradingWorkspace>(`/grading/workspace${query}`)
+  // Este workspace agrega opciones, matrículas, notas, actividades e instrumentos.
+  // Un Worker/Hyperdrive en arranque en frío puede superar el timeout GET genérico.
+  return api.get<GradingWorkspace>(`/grading/workspace${query}`, { timeoutMs: 30_000 })
 }
 
 export async function getAnnualGradingWorkspace(
@@ -76,30 +72,6 @@ export async function getGradeRecords(
   return api.get<GradeRecordRow[]>(
     `/grading?sectionSubjectId=${sectionSubjectId}&academicPeriodId=${academicPeriodId}`,
   )
-}
-
-export async function getEvaluationActivities(
-  sectionSubjectId: string,
-  academicPeriodId: string,
-): Promise<GradingActivity[]> {
-  return api.get<GradingActivity[]>(
-    `/grading/activities?sectionSubjectId=${sectionSubjectId}&academicPeriodId=${academicPeriodId}`,
-  )
-}
-
-export async function saveEvaluationActivity(
-  input: Omit<GradingActivity, 'id'> & {
-    id?: string
-    sectionSubjectId: string
-    academicPeriodId: string
-    schoolYearId?: string
-  },
-): Promise<GradingActivity> {
-  return api.post<GradingActivity>('/grading/activities', input)
-}
-
-export async function deleteEvaluationActivity(activityId: string): Promise<void> {
-  await api.delete(`/grading/activities/${activityId}`)
 }
 
 /** Guarda o actualiza una calificación en la base de datos */

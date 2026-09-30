@@ -55,6 +55,10 @@ const ActivitiesPage = lazyPage(
   () => import('@/modules/activities/pages/ActivitiesPage'),
   'ActivitiesPage',
 )
+const ActivityCreatorPage = lazyPage(
+  () => import('@/modules/activities/pages/ActivityCreatorPage'),
+  'ActivityCreatorPage',
+)
 const SubjectsPage = lazyPage(() => import('@/modules/subjects/pages/SubjectsPage'), 'SubjectsPage')
 const JournalPage = lazyPage(() => import('@/modules/journal/pages/JournalPage'), 'JournalPage')
 
@@ -152,6 +156,14 @@ export const appRoutes: AppRoute[] = [
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher', 'student', 'guardian'],
   },
   {
+    path: '/actividades/crear',
+    label: 'Crear actividad',
+    icon: ClipboardCheck,
+    component: ActivityCreatorPage,
+    allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+    showInSidebar: false,
+  },
+  {
     path: '/actividades',
     label: 'Actividades',
     icon: ClipboardCheck,
@@ -231,7 +243,7 @@ export const routePrefetchers: Record<string, () => void> = {
     prefetch([
       () => import('@/modules/activities/pages/ActivitiesPage'),
       () =>
-        import('@/modules/grading/services/gradingService').then(({ getActivityCenter }) =>
+        import('@/modules/activities/services/activitiesService').then(({ getActivityCenter }) =>
           getActivityCenter(),
         ),
     ]),

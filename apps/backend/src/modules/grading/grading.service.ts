@@ -9,7 +9,7 @@ import { Prisma, prisma } from '@aula/database'
 import { academicPeriodDate, defaultAcademicPeriods } from '../../common/academic-period-defaults'
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SaveGradeDto } from './dto/save-grade.dto'
-import { SaveEvaluationActivityDto } from './dto/save-evaluation-activity.dto'
+import { SaveActivityDto } from '../activities/dto/save-activity.dto'
 import { evaluationCatalogV1 } from '../evaluation-instruments/catalog-v1'
 import { academicContext, resolveScope } from '../evaluation-instruments/curriculum-context'
 
@@ -754,7 +754,7 @@ export class GradingService {
     }
   }
 
-  async saveActivity(schoolId: string, userId: string, dto: SaveEvaluationActivityDto, roles: string[] = []) {
+  async saveActivity(schoolId: string, userId: string, dto: SaveActivityDto, roles: string[] = []) {
     if (!dto.name.trim()) throw new BadRequestException('El nombre de la actividad es obligatorio')
     if (!Number.isFinite(dto.maxScore) || dto.maxScore <= 0) throw new BadRequestException('El valor de la actividad debe ser mayor que cero')
     if (!competencyBlockIds.includes(dto.competencyBlockId as typeof competencyBlockIds[number])) throw new BadRequestException('El bloque de competencias no es valido')
@@ -893,7 +893,7 @@ export class GradingService {
   }
 
   private async savePreparedActivity(
-    schoolId: string, userId: string, dto: SaveEvaluationActivityDto,
+    schoolId: string, userId: string, dto: SaveActivityDto,
     sectionSubject: { id: string; gradeId: string; subjectId: string; teacherId: string | null },
     schoolYearId: string, competencyBlockWeights: Record<string, number>,
     teams: Array<{ id: string; name: string; members: Array<{ enrollmentId: string }> }>,

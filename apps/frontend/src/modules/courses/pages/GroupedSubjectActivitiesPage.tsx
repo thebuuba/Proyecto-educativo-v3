@@ -32,7 +32,7 @@ import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
 import { ActivityDraftsPanel } from '@/modules/activities/components/ActivityDraftsPanel'
 import { useCourses } from '@/modules/courses/hooks/useCourses'
-import { ActivityInfoModal } from '@/modules/grading/components/ActivityInfoModal'
+import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
 import { getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { activityAppliesToBlock, competencyBlocks, scoreForActivity } from '@/modules/grading/utils/competencyGrades'
@@ -283,6 +283,6 @@ function ActivityStatusBadge({ status }: { status: SubjectActivityStatus }) {
 }
 
 function activityInstrumentLabel(value?: string) { return ({ rubrica: 'Rúbrica', 'lista-cotejo': 'Lista de cotejo', escala: 'Escala estimativa', 'lista-ponderada': 'Lista ponderada' } as Record<string, string>)[value ?? ''] ?? value ?? 'Sin instrumento' }
-function buildCreateHref(assignmentId: string, courseId: string, competencyBlockId: string, activityDraftId?: string) { return `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, action: 'create-activity', competencyBlockId, ...(activityDraftId ? { activityDraftId } : {}), origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
-function buildActivityHref(assignmentId: string, courseId: string, activityId: string, mode: 'edit' | 'evaluate') { return `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, activityId, activityMode: mode, origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
+function buildCreateHref(assignmentId: string, courseId: string, competencyBlockId: string, activityDraftId?: string) { return `/actividades/crear?${new URLSearchParams({ sectionSubjectId: assignmentId, competencyBlockId, ...(activityDraftId ? { activityDraftId } : {}), returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
+function buildActivityHref(assignmentId: string, courseId: string, activityId: string, mode: 'edit' | 'evaluate') { return mode === 'edit' ? `/actividades/crear?${new URLSearchParams({ sectionSubjectId: assignmentId, activityId, returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` : `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, activityId, activityMode: mode, origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
 function formatShortDate(value?: string | null) { if (!value) return 'Sin fecha'; const date = calendarDate(value); if (Number.isNaN(date.getTime())) return value; return date.toLocaleDateString('es-DO', { day: 'numeric', month: 'long', year: 'numeric' }) }

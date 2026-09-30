@@ -1776,6 +1776,7 @@ function SubjectDetailView({
             sectionName: item.section.name,
             subjectName: item.subjectName,
           } : null}
+          onCreateActivity={item.assignment ? () => setActivityBlockPickerOpen(true) : undefined}
         />
       ) : activeTab === 'equipos' ? (
         <CourseTeamsPanel
@@ -1834,6 +1835,7 @@ function SubjectDetailView({
           courseId={item.id}
           courseName={courseLabel}
           subjectName={item.subjectName}
+          returnTab={activeTab === 'estudiantes' ? 'estudiantes' : 'actividades'}
           onClose={() => setActivityBlockPickerOpen(false)}
         />
       ) : null}
@@ -1841,11 +1843,12 @@ function SubjectDetailView({
   )
 }
 
-export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, subjectName, onClose }: {
+export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, subjectName, returnTab = 'actividades', onClose }: {
   assignmentId: string
   courseId: string
   courseName: string
   subjectName: string
+  returnTab?: 'actividades' | 'estudiantes'
   onClose: () => void
 }) {
   const visuals = [
@@ -1872,14 +1875,12 @@ export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, 
         <div className="grid gap-3 md:grid-cols-2">
           {competencyBlocks.map((block, index) => {
             const visual = visuals[index]
-            const href = `/calificaciones?${new URLSearchParams({
+            const href = `/actividades/crear?${new URLSearchParams({
               sectionSubjectId: assignmentId,
-              action: 'create-activity',
               competencyBlockId: block.id,
-              origin: 'subject',
               returnCourseId: courseId,
               returnSubjectId: assignmentId,
-              returnTab: 'actividades',
+              returnTab,
             }).toString()}`
             return (
               <Link
@@ -2092,7 +2093,7 @@ function PlanningDisabledPanel({ onActivities }: { onActivities: () => void }) {
   return <section className="flex min-h-72 items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><div className="max-w-lg"><span className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-muted text-muted-foreground"><ClipboardList className="size-6" /></span><div className="mt-4 flex items-center justify-center gap-2"><h2 className="text-xl font-extrabold">Planificaciones</h2><span className="rounded-full bg-slate-100 px-2 py-1 text-[9px] font-black uppercase tracking-wide text-slate-500">Próximamente</span></div><p className="mt-3 text-sm leading-6 text-muted-foreground">Este módulo estará disponible próximamente. Mientras tanto, puedes crear y gestionar tus actividades desde el apartado Actividades.</p><Button className="mt-5" onClick={onActivities}>Ir a Actividades</Button></div></section>
 }
 
-export function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnroll, gradingStudents, activities, gradeRecords, teams, journalCourse }: {
+export function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnroll, gradingStudents, activities, gradeRecords, teams, journalCourse, onCreateActivity }: {
   students: StudentAttendanceRow[]
   loading: boolean
   error: string | null
@@ -2104,6 +2105,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
   gradeRecords: GradeRecordRow[]
   teams: CourseTeam[]
   journalCourse: JournalCourseOption | null
+  onCreateActivity?: () => void
 }) {
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState<'all' | 'team' | 'no-team' | 'pending'>('all')
@@ -2276,7 +2278,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
           <h2 className="text-lg font-extrabold text-foreground">Estudiantes de la asignatura</h2>
           <p className="mt-0.5 text-xs text-muted-foreground">Consulta el progreso general y abre el detalle de cada estudiante.</p>
         </div>
-        <Button variant="outline" size="sm" onClick={() => exportStudentCsv([['#', 'Estudiante', 'Equipo', 'Actividades', 'Promedio', 'Asistencia', 'Estado'], ...filteredRows.map(row => [row.listNumber, `${row.lastName}, ${row.firstName}`, row.team?.name ?? 'Sin equipo', `${row.completed}/${activities.length}`, row.average ?? '', row.attendance === null ? '' : `${row.attendance}%`, row.progressStatus])])}><FileText className="size-4" /> Exportar</Button>
+        <div className="flex flex-wrap gap-2">{onCreateActivity ? <Button size="sm" onClick={onCreateActivity}><Plus className="size-4" /> Crear actividad</Button> : null}<Button variant="outline" size="sm" onClick={() => exportStudentCsv([['#', 'Estudiante', 'Equipo', 'Actividades', 'Promedio', 'Asistencia', 'Estado'], ...filteredRows.map(row => [row.listNumber, `${row.lastName}, ${row.firstName}`, row.team?.name ?? 'Sin equipo', `${row.completed}/${activities.length}`, row.average ?? '', row.attendance === null ? '' : `${row.attendance}%`, row.progressStatus])])}><FileText className="size-4" /> Exportar</Button></div>
       </div>
 
       <div className="subject-students-filters mt-4 flex flex-wrap items-center gap-2">
@@ -2475,7 +2477,7 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
     ? Math.round(studentsWithGrades.reduce((sum, row) => sum + (row.average ?? 0), 0) / studentsWithGrades.length)
     : null
   const fullBookHref = buildSubjectGradingHref(sectionSubjectId, courseId)
-  const createActivityHref = `${fullBookHref}&action=create-activity`
+  const createActivityHref = `/actividades/crear?${new URLSearchParams({ sectionSubjectId, returnCourseId: courseId, returnSubjectId: sectionSubjectId, returnTab: 'calificaciones' }).toString()}`
 
   return (
     <div className="space-y-4">

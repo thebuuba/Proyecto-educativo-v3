@@ -11,6 +11,7 @@ import { GradingService } from './grading.service'
 @Module({
   controllers: [GradingController],
   providers: [GradingService],
+  exports: [GradingService],
 })
 /**
  * Módulo raíz del módulo de calificaciones académicas.

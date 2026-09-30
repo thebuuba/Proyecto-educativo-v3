@@ -115,7 +115,7 @@ describe('menú administrativo de una asignatura activa', () => {
     expect(links[1]).toHaveClass('hover:border-emerald-300')
     expect(links[3]).toHaveClass('hover:border-violet-300')
     const destination = new URL(links[0].getAttribute('href')!, 'http://localhost')
-    expect(destination.pathname).toBe('/calificaciones')
+    expect(destination.pathname).toBe('/actividades/crear')
     expect(destination.searchParams.get('sectionSubjectId')).toBe('assignment-1')
     expect(destination.searchParams.get('competencyBlockId')).toBe('b1')
     expect(destination.searchParams.get('returnCourseId')).toBe('course-1')
