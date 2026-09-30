@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { ChevronsLeft, ChevronsRight, GraduationCap, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
@@ -53,6 +55,16 @@ function SidebarIcon({ name }: { name: string }) {
 
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
   const { hasRole, logout } = useAuth()
+  const [tooltip, setTooltip] = useState<{ label: string; top: number } | null>(null)
+  const hideTooltip = () => setTooltip(null)
+  const showTooltip = (element: HTMLElement, label: string) => {
+    if (isExpanded || !window.matchMedia('(min-width: 1024px)').matches) return
+    const bounds = element.getBoundingClientRect()
+    setTooltip({
+      label,
+      top: Math.max(24, Math.min(bounds.top + bounds.height / 2, window.innerHeight - 24)),
+    })
+  }
   const routes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
   const primary = routes.filter((item) => primaryPaths.includes(item.path))
   const secondary = routes
@@ -86,10 +98,21 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                   ? 'nav-planning'
                   : undefined
         }
-        onClick={onClose}
-        onMouseEnter={() => routePrefetchers[item.path]?.()}
-        onFocus={() => routePrefetchers[item.path]?.()}
-        title={item.label}
+        onClick={() => {
+          hideTooltip()
+          onClose()
+        }}
+        onMouseEnter={(event) => {
+          routePrefetchers[item.path]?.()
+          showTooltip(event.currentTarget, item.label)
+        }}
+        onMouseLeave={hideTooltip}
+        onFocus={(event) => {
+          routePrefetchers[item.path]?.()
+          showTooltip(event.currentTarget, item.label)
+        }}
+        onBlur={hideTooltip}
+        aria-label={item.label}
         className={({ isActive }) =>
           cn('sidebar-link', featured && 'sidebar-link-featured', isActive && 'is-active')
         }
@@ -142,7 +165,10 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           </NavLink>
           <button
             type="button"
-            onClick={onToggleExpanded}
+            onClick={() => {
+              hideTooltip()
+              onToggleExpanded()
+            }}
             className="hidden size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:flex"
             aria-label={isExpanded ? 'Contraer menú' : 'Expandir menú'}
             aria-expanded={isExpanded}
@@ -172,8 +198,15 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           {footer.map((item) => renderLink(item))}
           <NavLink
             to="/perfil"
-            onClick={onClose}
-            title="Ajustes"
+            onClick={() => {
+              hideTooltip()
+              onClose()
+            }}
+            onMouseEnter={(event) => showTooltip(event.currentTarget, 'Ajustes')}
+            onMouseLeave={hideTooltip}
+            onFocus={(event) => showTooltip(event.currentTarget, 'Ajustes')}
+            onBlur={hideTooltip}
+            aria-label="Ajustes"
             className={({ isActive }) => cn('sidebar-link', isActive && 'is-active')}
           >
             <span className="sidebar-link-icon">
@@ -183,8 +216,15 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           </NavLink>
           <button
             type="button"
-            onClick={() => void logout()}
-            title="Cerrar sesión"
+            onClick={() => {
+              hideTooltip()
+              void logout()
+            }}
+            onMouseEnter={(event) => showTooltip(event.currentTarget, 'Cerrar sesión')}
+            onMouseLeave={hideTooltip}
+            onFocus={(event) => showTooltip(event.currentTarget, 'Cerrar sesión')}
+            onBlur={hideTooltip}
+            aria-label="Cerrar sesión"
             className="sidebar-link w-full text-destructive"
           >
             <span className="sidebar-link-icon">
@@ -194,6 +234,14 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           </button>
         </div>
       </aside>
+      {!isExpanded && tooltip
+        ? createPortal(
+            <div className="sidebar-tooltip" role="tooltip" style={{ top: tooltip.top }}>
+              {tooltip.label}
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   )
 }

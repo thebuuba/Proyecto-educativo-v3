@@ -91,11 +91,32 @@
   line-height: 1.1;
 }
 
+.sidebar-tooltip {
+  position: fixed;
+  z-index: 60;
+  left: 84px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--foreground) 12%, transparent);
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 .sidebar-shell[data-sidebar-expanded='false'] .sidebar-copy {
   display: none;
 }
 
 @media (max-width: 1023px) {
+  .sidebar-tooltip {
+    display: none;
+  }
+
   .sidebar-shell .sidebar-copy {
     display: block !important;
   }
