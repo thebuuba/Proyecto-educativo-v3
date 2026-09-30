@@ -60,6 +60,16 @@
   place-items: center;
 }
 
+.sidebar-svg-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
 .sidebar-link-title {
   display: block;
   font-size: 13px;

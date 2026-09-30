@@ -1,4 +1,4 @@
-import { ChevronsLeft, ChevronsRight, GraduationCap, LogOut, Settings, X } from 'lucide-react'
+import { ChevronsLeft, ChevronsRight, GraduationCap, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
@@ -25,6 +25,32 @@ const secondaryPaths = [
 ]
 const footerPaths = ['/configuracion']
 
+const sidebarIcons: Record<string, string> = {
+  '/inicio': 'inicio',
+  '/cursos': 'cursos',
+  '/horario': 'horario',
+  '/asistencia': 'asistencia',
+  '/calificaciones': 'calificaciones',
+  '/actividades': 'actividades',
+  '/planificaciones': 'planificaciones',
+  '/bitacora': 'bitacora',
+  '/reportes': 'reportes',
+  '/estudiantes': 'estudiantes',
+  '/configuracion': 'configuracion',
+}
+
+function SidebarIcon({ name }: { name: string }) {
+  const url = `url("${import.meta.env.BASE_URL}icons/sidebar/${name}.svg")`
+
+  return (
+    <span
+      className="sidebar-svg-icon"
+      style={{ maskImage: url, WebkitMaskImage: url }}
+      aria-hidden="true"
+    />
+  )
+}
+
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
   const { hasRole, logout } = useAuth()
   const routes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
@@ -35,7 +61,6 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
   const footer = routes.filter((item) => footerPaths.includes(item.path))
 
   const renderLink = (item: (typeof routes)[number], featured = false) => {
-    const Icon = item.icon
     const description =
       item.path === '/inicio'
         ? 'Resumen del día'
@@ -70,7 +95,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
         }
       >
         <span className="sidebar-link-icon">
-          <Icon className="size-[18px]" aria-hidden="true" />
+          <SidebarIcon name={sidebarIcons[item.path]} />
         </span>
         <span className="sidebar-copy">
           <span className="sidebar-link-title">{item.label}</span>
@@ -152,7 +177,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             className={({ isActive }) => cn('sidebar-link', isActive && 'is-active')}
           >
             <span className="sidebar-link-icon">
-              <Settings size={18} strokeWidth={1.8} />
+              <SidebarIcon name="ajustes" />
             </span>
             <span className="sidebar-copy sidebar-link-title">Ajustes</span>
           </NavLink>
@@ -163,7 +188,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
             className="sidebar-link w-full text-destructive"
           >
             <span className="sidebar-link-icon">
-              <LogOut size={18} strokeWidth={1.8} />
+              <SidebarIcon name="salir" />
             </span>
             <span className="sidebar-copy sidebar-link-title">Cerrar sesión</span>
           </button>
