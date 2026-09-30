@@ -4,7 +4,7 @@ SVG descargados de [Icon-Icons, paquete Iconos tabler](https://icon-icons.com/es
 
 | Archivo | Página del icono |
 | --- | --- |
-| `inicio.svg` | https://icon-icons.com/es/icono/tablero-de-instrumentos/151409 |
+| `inicio.svg` | https://icon-icons.com/es/icono/hogar/151298 |
 | `cursos.svg` | https://icon-icons.com/es/icono/libro/151563 |
 | `horario.svg` | https://icon-icons.com/es/icono/calendario/151492 |
 | `asistencia.svg` | https://icon-icons.com/es/icono/portapapeles/151450 |
