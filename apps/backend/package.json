@@ -9,6 +9,7 @@
     "start:prod": "node dist/main",
     "lint": "eslint .",
     "test": "vitest run --config vitest.config.ts",
+    "catalog:diagnose": "node dist/scripts/diagnose-evaluation-catalog.js",
     "catalog:install": "node dist/scripts/install-evaluation-catalog.js"
   },
   "dependencies": {

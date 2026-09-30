@@ -1,5 +1,5 @@
 import { ArrayMaxSize, IsArray, IsIn, IsNumber, IsOptional, IsString, IsUUID, Max, MaxLength, Min, MinLength } from 'class-validator'
-import { evaluationCatalogV1 } from './catalog-v1'
+import { evaluationCatalogV2 as evaluationCatalogV1 } from './catalog-v2'
 
 export class RecommendInstrumentDto {
   @IsUUID() sectionSubjectId!: string

@@ -1,6 +1,6 @@
 import { IsArray, IsDateString, IsIn, IsNotEmpty, IsNumber, IsObject, IsOptional, IsString, IsUUID, Max, MaxLength, Min } from 'class-validator'
 import type { InstrumentRecommendation } from '@aula/shared'
-import { evaluationCatalogV1 } from '../../evaluation-instruments/catalog-v1'
+import { evaluationCatalogV2 as evaluationCatalogV1 } from '../../evaluation-instruments/catalog-v2'
 
 export class SaveActivityDto {
   @IsOptional()

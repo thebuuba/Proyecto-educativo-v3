@@ -11,7 +11,7 @@ import { academicPeriodDate, defaultAcademicPeriods } from '../../common/academi
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SaveGradeDto } from './dto/save-grade.dto'
 import { SaveActivityDto } from '../activities/dto/save-activity.dto'
-import { evaluationCatalogV1 } from '../evaluation-instruments/catalog-v1'
+import { evaluationCatalogV2 as evaluationCatalogV1 } from '../evaluation-instruments/catalog-v2'
 import { academicContext, resolveScope } from '../evaluation-instruments/curriculum-context'
 
 export function __test__clearGradingCache() {
@@ -167,7 +167,7 @@ async function assertEvaluationActivityScope(
 async function snapshotGradeResult(snapshotId: string | null, result: Record<string, unknown> | null | undefined) {
   if (!snapshotId || result == null) return result
   const snapshot = await prisma.evaluationInstrumentSnapshot.findUnique({ where: { id: snapshotId } })
-  const payload = snapshot?.payload as unknown as { criteria?: Array<{ id: string; title: string; description: string; maxScoreUnits: number; descriptors: Array<{ text: string; scoreUnits: number }> }> }
+  const payload = snapshot?.payload as unknown as { catalogVersion?: string; criteria?: Array<{ id: string; title: string; description: string; maxScoreUnits: number; descriptors: Array<{ text: string; scoreUnits: number }> }> }
   const criteria = payload?.criteria ?? []
   const scores = result.criterionScores as number[]
   const selections = result.selections as number[]
@@ -175,6 +175,11 @@ async function snapshotGradeResult(snapshotId: string | null, result: Record<str
     criteria.some((criterion, index) => Math.round(scores[index] * 100) > criterion.maxScoreUnits ||
       selections[index] >= (criterion.descriptors?.length || (result.instrumentType === 'lista-cotejo' ? 3 : 4)))) {
     throw new BadRequestException('El resultado no corresponde a la versión del instrumento guardada.')
+  }
+  const authoritative = snapshot?.catalogVersion === evaluationCatalogV1.version || payload.catalogVersion === evaluationCatalogV1.version
+  if (authoritative && (result.instrumentType === 'rubrica' || result.instrumentType === 'escala') &&
+    criteria.some((criterion, index) => criterion.descriptors?.[selections[index]]?.scoreUnits !== Math.round(scores[index] * 100))) {
+    throw new BadRequestException('La puntuación no corresponde al nivel seleccionado en el instrumento guardado.')
   }
   return { ...result, instrumentSnapshotId: snapshotId, snapshotVersion: snapshot!.versionNo,
     criterionSnapshots: criteria.map((criterion, index) => ({ id: criterion.id, title: criterion.title,

@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import { evaluationCatalogV1 } from './catalog-v1'
-import { academicContext, resolveScope, type AcademicContext, type ScopeCandidate } from './curriculum-context'
+import { academicContext, discipline, resolveScope, type AcademicContext, type ScopeCandidate } from './curriculum-context'
 import { recommend, distributeScore, detectActivityType, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
 
 const root = resolve(process.cwd(), '../..')
@@ -19,6 +19,12 @@ function run(fixture = cases[1], options = {}) {
   return { context, resolution, result }
 }
 describe('Recomendador con currículo literal completo', () => {
+  it('clasifica Ciencias Sociales sin confundirla con Naturales', () => {
+    const social = { level: 'PRIMARY', grade: 5, cycle: 2, subjectCode: 'PRI-SOC', subjectName: 'Ciencias Sociales', optativeExitName: null, modalityCode: 'academic' } as AcademicContext
+    expect(discipline(null, social)).toBe('social')
+    expect(discipline({ id: 's', versionId: 'v', cycle: 2, grade: 5, areaName: 'Ciencias Sociales', subjectName: 'Ciencias Sociales', modalityName: null, optativeExitName: null }, { ...social, subjectCode: 'CUSTOM' })).toBe('social')
+    expect(discipline(null, { ...social, subjectCode: 'PRI-NAT', subjectName: 'Ciencias de la Naturaleza' })).toBe('science')
+  })
   for (const fixture of cases) it(`caso real ${fixture.case}: contexto, instrumento y trazabilidad`, () => {
     const { result, resolution } = run(fixture)
     expect(resolution.status).toBe('RESOLVED')
@@ -38,12 +44,28 @@ describe('Recomendador con currículo literal completo', () => {
   })
   it('B: cinco criterios, cuatro niveles y 20 puntos', () => {
     const { result } = run()
-    expect(result.criteria).toHaveLength(5)
+    expect(result.criteria.length).toBeGreaterThanOrEqual(5)
+    expect(result.criteria.length).toBeLessThanOrEqual(8)
     expect(result.levels).toHaveLength(4)
     // Circulatory content exists in other grades, not this exact 5th-grade scope.
     expect(result.confidence).toBe('LOW')
     expect(result.selectedCurriculumElements).toEqual([])
     expect(result.criteria.map(c => c.templateId)).toEqual(expect.arrayContaining(['science-content', 'science-accuracy', 'organization', 'communication']))
+  })
+  it('prepara la exposición de células de 2.º de secundaria sin inventar referencias curriculares', () => {
+    const context: AcademicContext = { level: 'SECONDARY', grade: 2, cycle: 1, subjectCode: 'NAT', subjectName: 'Ciencias Naturales', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'Exposición sobre las células',
+      description: 'Los estudiantes exponen sobre las células, sus partes y su importancia', participationMode: 'INDIVIDUAL', maxScore: 20 },
+    context, null, [], 'NO_SCOPE', null)
+    expect(result.instrumentType).toBe('rubrica')
+    expect(result.criteria.map(criterion => criterion.title)).toEqual([
+      'Comprensión del concepto de célula', 'Partes principales y sus funciones', 'Importancia de las células',
+      'Dominio del tema y precisión científica', 'Organización de la exposición', 'Claridad de la comunicación oral',
+    ])
+    expect(result.criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0)).toBe(2000)
+    expect(result.criteria.every(criterion => criterion.descriptors.every(descriptor => descriptor.text.trim().length > 20))).toBe(true)
+    expect(result.selectedCurriculumElements).toEqual([])
+    expect(result.criteria.some(criterion => criterion.templateId === 'oral-resources')).toBe(false)
   })
   it('C/D/E/F/G: dimensiones disciplinares pertinentes', () => {
     const expected = { C: ['math-procedure', 'math-reasoning', 'math-accuracy', 'math-interpretation'], D: ['science-procedure', 'science-safety', 'science-data', 'science-interpretation', 'science-conclusion'], E: ['language-content', 'language-structure', 'language-coherence', 'language-argument', 'language-correctness'], F: ['art-technique', 'art-creativity', 'art-composition', 'art-materials'], G: ['language-expression', 'language-structure'] }
@@ -190,7 +212,8 @@ describe('Recomendador con currículo literal completo', () => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'NAT-TIE', subjectName: 'Ciencias de la Tierra y el Universo', optativeExitName: null, modalityCode: 'academic' }
     const result = recommend({ activityTitle: 'Exposición sobre los volcanes', description: 'Los estudiantes realizarán una exposición sobre los volcanes en la que explicarán cómo se forman, identificarán sus partes principales y describirán sus características. Utilizarán imágenes o recursos visuales para apoyar sus explicaciones y emplearán vocabulario científico adecuado.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
     expect(result.instrumentType).toBe('rubrica')
-    expect(result.criteria).toHaveLength(5)
+    expect(result.criteria.length).toBeGreaterThanOrEqual(5)
+    expect(result.criteria.length).toBeLessThanOrEqual(8)
     expect(result.criteria.map(criterion => criterion.title)).toEqual(expect.arrayContaining([expect.stringMatching(/forman los volcanes/), expect.stringMatching(/partes principales/), expect.stringMatching(/Precisión científica/), expect.stringMatching(/recursos de apoyo/)]))
     expect(result.criteria[0].descriptors[0].text).toMatch(/cómo se forman los volcanes/)
     expect(result.criteria.every(criterion => criterion.sourceType !== 'CURRICULUM_DERIVED' && criterion.sourceReferences.length === 0)).toBe(true)

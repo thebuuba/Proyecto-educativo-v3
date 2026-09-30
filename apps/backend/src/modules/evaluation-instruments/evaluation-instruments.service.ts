@@ -1,7 +1,7 @@
 import { BadRequestException, ForbiddenException, HttpException, Injectable, Logger, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
-import { evaluationCatalogV1 } from './catalog-v1'
+import { evaluationCatalogV2 as evaluationCatalogV1 } from './catalog-v2'
 import { academicContext, resolveScope } from './curriculum-context'
 import { detectActivityType, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'

@@ -1,7 +1,21 @@
 import type { PrismaClient, Prisma } from '@aula/database'
-import { evaluationCatalogV1 } from './catalog-v1'
+import { evaluationCatalogV2 as evaluationCatalogV1 } from './catalog-v2'
 import { academicContext, resolveScope } from './curriculum-context'
 import { canonicalJson } from './evaluation-instruments.service'
+
+export type EvaluationCatalogStatus = 'MISSING' | 'COMPATIBLE' | 'CONFLICT'
+
+export async function diagnoseEvaluationCatalog(db: PrismaClient): Promise<{ version: string; status: EvaluationCatalogStatus }> {
+  const existing = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogV1.version } })
+  return {
+    version: evaluationCatalogV1.version,
+    status: !existing
+      ? 'MISSING'
+      : canonicalJson(existing.payload) === canonicalJson(evaluationCatalogV1)
+        ? 'COMPATIBLE'
+        : 'CONFLICT',
+  }
+}
 
 export async function seedEvaluationCatalog(db: PrismaClient) {
   const existing = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogV1.version } })

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { EmptyState } from '@/components/ui/EmptyState'
@@ -27,6 +27,7 @@ export function ActivityCreator() {
   const [workspace, setWorkspace] = useState(emptyWorkspace)
   const [workspaceError, setWorkspaceError] = useState<string | null>(null)
   const [teams, setTeams] = useState<CourseTeam[]>([])
+  const saveInFlight = useRef<Promise<Activity> | null>(null)
 
   useEffect(() => {
     let active = true
@@ -65,29 +66,50 @@ export function ActivityCreator() {
 
   async function persist(activity: Omit<Activity, 'id'> | Activity) {
     if (!academicPeriodId || !sectionSubjectId) throw new Error('Falta el contexto académico de la actividad.')
-    return domain.saveActivity({
+    if (saveInFlight.current) return saveInFlight.current
+    const request = domain.saveActivity({
       ...activity,
       ...(activityId || 'id' in activity ? { id: 'id' in activity ? activity.id : activityId } : {}),
       sectionSubjectId,
       academicPeriodId,
       schoolYearId: sectionSubject?.schoolYearId,
     })
+    saveInFlight.current = request
+    try {
+      return await request
+    } finally {
+      if (saveInFlight.current === request) saveInFlight.current = null
+    }
   }
 
   function gradeActivity(activity: Activity) {
-    navigate(`/calificaciones?${new URLSearchParams({ sectionSubjectId, academicPeriodId, activityId: activity.id, activityMode: 'evaluate' }).toString()}`)
+    const params = new URLSearchParams({ sectionSubjectId, academicPeriodId, activityId: activity.id, activityMode: 'evaluate' })
+    params.set('returnTo', origin.returnTo)
+    const returnCourseId = searchParams.get('returnCourseId')
+    const returnSubjectId = searchParams.get('returnSubjectId')
+    const returnTab = searchParams.get('returnTab')
+    if (origin.kind.startsWith('subject-') && returnCourseId && returnSubjectId) {
+      params.set('origin', 'subject')
+      params.set('returnCourseId', returnCourseId)
+      params.set('returnSubjectId', returnSubjectId)
+      params.set('returnTab', returnTab || 'actividades')
+    } else if (origin.kind === 'activities') {
+      params.set('origin', 'activities')
+    }
+    navigate(`/calificaciones?${params.toString()}`)
   }
 
   function viewActivity(activity: Activity) {
     navigate(`/actividades?${new URLSearchParams({ activitySaved: activity.id, activitySavedMode: activityId ? 'updated' : 'created' }).toString()}`)
   }
 
-  if (workspaceError || domain.error) return <FeedbackBanner tone="danger">{workspaceError ?? domain.error}</FeedbackBanner>
+  if (workspaceError) return <FeedbackBanner tone="danger">{workspaceError}</FeedbackBanner>
   if (!sectionSubjectId) return <EmptyState title="Falta la asignatura" description="Vuelve al contexto anterior y selecciona una asignatura antes de crear la actividad." />
   if (!academicPeriod) return <div role="status" className="min-h-64 animate-pulse rounded-3xl bg-card/70" />
 
   return (
-    <section className="activities-creator-workspace w-full">
+    <section className="activities-creator-workspace w-full space-y-3">
+      {domain.error ? <FeedbackBanner tone="danger">{domain.error}</FeedbackBanner> : null}
       <GradingBook
         evaluationProfile={sectionSubject?.evaluationProfile}
         sectionSubjectId={sectionSubjectId}

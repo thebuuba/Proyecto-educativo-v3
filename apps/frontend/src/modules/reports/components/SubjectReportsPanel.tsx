@@ -13,13 +13,15 @@ import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRo
 import { getClassAttendanceHistory, type ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
 import { buildSubjectReport } from '@/modules/reports/utils/subjectReport'
 import { SubjectTabHeader, SubjectStat } from '@/modules/courses/components/SubjectTabUI'
+import type { EvaluationProfile } from '@aula/shared'
 
 type SectionKey = 'summary' | 'performance' | 'blocks' | 'activities' | 'attendance' | 'followup'
 
-export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName, initialStudents, initialActivities, initialRecords, periods, initialPeriodId }: {
+export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName, evaluationProfile, initialStudents, initialActivities, initialRecords, periods, initialPeriodId }: {
   sectionSubjectId: string | null
   courseLabel: string
   subjectName: string
+  evaluationProfile?: EvaluationProfile
   initialStudents: StudentGradeRow[]
   initialActivities: GradingActivity[]
   initialRecords: GradeRecordRow[]
@@ -70,7 +72,7 @@ export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName
   }
 
   const period = periods.find((item) => item.id === periodId) ?? null
-  const report = useMemo(() => buildSubjectReport({ students, activities, records, attendance, periodStart: period?.startDate, periodEnd: period?.endDate }), [activities, attendance, period?.endDate, period?.startDate, records, students])
+  const report = useMemo(() => buildSubjectReport({ students, activities, records, attendance, evaluationProfile, periodStart: period?.startDate, periodEnd: period?.endDate }), [activities, attendance, evaluationProfile, period?.endDate, period?.startDate, records, students])
   const selectedRow = report.rows.find((row) => row.enrollmentId === selectedStudent) ?? null
   const selectedStudentData = students.find((student) => student.enrollmentId === selectedStudent) ?? null
   const evaluatedPairs = report.activities.reduce((sum, item) => sum + item.evaluated, 0)

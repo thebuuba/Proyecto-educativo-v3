@@ -13,7 +13,7 @@
     "db:migrate": "pnpm --filter @aula/database migrate",
     "db:seed": "pnpm --filter @aula/database seed",
     "db:studio": "pnpm --filter @aula/database studio",
-    "cloudflare:dev": "node scripts/cloudflare-local.mjs",
+    "cloudflare:dev": "pnpm catalog:prepare:development && node scripts/cloudflare-local.mjs",
     "cloudflare:build": "pnpm build && wrangler deploy --dry-run --env=\"\"",
     "cloudflare:deploy:staging": "pnpm build && wrangler deploy --env=staging",
     "cloudflare:deploy:production": "pnpm build && wrangler deploy --env=\"\"",
@@ -22,7 +22,9 @@
     "cloudflare:types": "wrangler types",
     "supabase:local": "supabase start -x edge-runtime,logflare,vector",
     "supabase:stop": "supabase stop",
-    "supabase:keepalive": "node scripts/supabase-keepalive.mjs"
+    "supabase:keepalive": "node scripts/supabase-keepalive.mjs",
+    "catalog:diagnose:development": "pnpm --filter backend build && pnpm --filter @aula/database exec dotenv -e ../../.dev.vars.local -- node ../../apps/backend/dist/scripts/diagnose-evaluation-catalog.js",
+    "catalog:prepare:development": "pnpm --filter backend build && pnpm --filter @aula/database exec dotenv -e ../../.dev.vars.local -- node ../../apps/backend/dist/scripts/install-evaluation-catalog.js --expected-project-ref=eolgunypmtgrsyrjzcld"
   },
   "devDependencies": {
     "pdfjs-dist": "^6.1.200",

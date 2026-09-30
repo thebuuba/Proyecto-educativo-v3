@@ -26,12 +26,16 @@ export function GradingPage() {
   const returnCourseId = searchParams.get('returnCourseId')
   const returnSubjectId = searchParams.get('returnSubjectId')
   const returnTab = searchParams.get('returnTab')
+  const requestedReturnTo = searchParams.get('returnTo')
+  const explicitReturnTo = requestedReturnTo?.startsWith('/') && !requestedReturnTo.startsWith('//') ? requestedReturnTo : null
   const returnsToSubject = searchParams.get('origin') === 'subject' && Boolean(returnCourseId && returnSubjectId)
   const returnsToActivities = searchParams.get('origin') === 'activities'
-  const returnToOrigin = returnsToSubject
+  const returnToOrigin = explicitReturnTo
+    ? () => navigate(explicitReturnTo)
+    : returnsToSubject
     ? () => navigate(`/cursos?${new URLSearchParams({ courseId: returnCourseId!, subjectId: returnSubjectId!, ...(returnTab ? { tab: returnTab } : {}) }).toString()}`)
     : returnsToActivities ? () => navigate('/actividades') : undefined
-  const originReturnLabel = returnsToSubject ? 'Volver a la asignatura' : returnsToActivities ? 'Volver a actividades' : undefined
+  const originReturnLabel = returnsToSubject ? 'Volver a la asignatura' : returnsToActivities || explicitReturnTo ? 'Volver a actividades' : undefined
 
   const {
     sectionSubjects,

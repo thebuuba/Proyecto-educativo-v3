@@ -51,6 +51,17 @@ El desarrollo diario usa el Worker local contra el proyecto remoto **AulaBase De
 pnpm cloudflare:dev
 ```
 
+Antes de iniciar por primera vez tras actualizar el código, prepara exclusivamente el catálogo evaluativo versionado (no ejecuta el seed general ni publica catálogos curriculares):
+
+```bash
+pnpm catalog:diagnose:development
+pnpm catalog:prepare:development
+```
+
+El segundo comando exige que `.dev.vars.local` identifique el proyecto **AulaBase Development** y se detiene sin cambios ante otro proyecto. Es idempotente: crea la versión ausente, conserva una copia idéntica y rechaza un conflicto de contenido que debe resolverse con una versión nueva.
+
+Antes de ejecutarlo, comprueba que `SUPABASE_URL` y `DATABASE_URL` de `.dev.vars.local` pertenezcan a Development y que el proyecto esté activo. `pnpm exec supabase projects list` permite verificar el proyecto enlazado sin mostrar contraseñas. No reutilices credenciales de producción ni relajes esta comprobación.
+
 La aplicación completa queda en `http://localhost:8787`: React sirve la interfaz y NestJS responde bajo `/api/v1`. Supabase local sigue disponible para reconstruir y validar migraciones desde cero:
 
 ```bash

@@ -79,11 +79,19 @@ export function resolveScope(context: AcademicContext, scopes: ScopeCandidate[],
   return { status: 'RESOLVED', scope, candidates: [scope.id], reason: reviewedScopeIds.includes(scope.id) ? 'REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT' : key.source }
 }
 export function discipline(scope: ScopeCandidate | null, context: AcademicContext | null) {
+  const code = context?.subjectCode.toUpperCase().replace(/^PRI-/, '') ?? ''
+  if (/^(SOC|OPT-HCS-SOC)/.test(code)) return 'social'
+  if (/^(NAT|NAT-|OPT-CT)/.test(code)) return 'science'
+  if (/^(MAT|OPT-MT)/.test(code)) return 'math'
+  if (/^(LEN|ING|FRA|OPT-HLM|OPT-HCS-LEN)/.test(code)) return 'language'
+  if (code === 'ART') return 'art'
+  if (code === 'EFI') return 'motor'
+  if (code === 'FHR') return 'fihr'
   const name = normalize(scope?.areaName ?? context?.subjectName ?? '')
-  if (/ciencias|naturaleza|tierra|universo|quimica|biologia|fisica y computacion/.test(name)) return 'science'
+  if (/social|geografia|ciudadania|filosofia/.test(name)) return 'social'
+  if (/ciencias naturales|naturaleza|tierra|universo|quimica|biologia|fisica y computacion/.test(name)) return 'science'
   if (/matematica|estadistica|calculo/.test(name)) return 'math'
   if (/lengua|literaria|ingles|frances|textos/.test(name)) return 'language'
-  if (/social|geografia|ciudadania|filosofia/.test(name)) return 'social'
   if (/artistica/.test(name)) return 'art'
   if (/educacion fisica/.test(name)) return 'motor'
   if (/humana|religiosa/.test(name)) return 'fihr'

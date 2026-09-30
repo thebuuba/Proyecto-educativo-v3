@@ -154,7 +154,7 @@ import {
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 import { secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
-import { alignRecommendationWithFields, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
+import { alignRecommendationWithFields, buildEditableInstrumentTemplate, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 
 type GradingBookProps = {
   evaluationProfile?: EvaluationProfile
@@ -426,6 +426,7 @@ export function GradingBook({
   const [annualError, setAnnualError] = useState<string | null>(null)
   const [annualRetryKey, setAnnualRetryKey] = useState(0)
   const [activitySaveCompletion, setActivitySaveCompletion] = useState<ActivitySaveCompletion | null>(null)
+  const activitySaveInFlight = useRef(false)
   const hasPendingCellSaves = Object.values(cellSaveStates).some((state) => state === 'saving')
   const handledInitialLaunch = useRef(initialLaunchKey)
   const handledInitialEdit = useRef<string | null>(null)
@@ -666,6 +667,10 @@ export function GradingBook({
   }
 
   function goBackFromActivityCreator() {
+    if (initialActivityAction === 'create' && onReturnToOrigin) {
+      onReturnToOrigin()
+      return
+    }
     setEditingActivityId(null)
     setActivityDraft(emptyActivityDraft)
     setDetailView(activityCreateReturnView)
@@ -738,6 +743,7 @@ export function GradingBook({
   }
 
   async function saveActivityDraft() {
+    if (activitySaveInFlight.current || saving) return
     const maxScore = Number(activityDraft.maxScore)
     if (validateActivityCompletion(activityDraft).length > 0 || Number.isNaN(maxScore) || maxScore <= 0) return
     const activityType = activityDraft.activityType as Exclude<ActivityDraft['activityType'], ''>
@@ -769,6 +775,7 @@ export function GradingBook({
       teamIds: activityType === 'group' ? activityDraft.teamIds : [],
     }
 
+    activitySaveInFlight.current = true
     try {
       const updated = Boolean(editingActivityId)
       const saved = editingActivityId
@@ -780,6 +787,8 @@ export function GradingBook({
       setActivitySaveCompletion({ kind: 'created', activity: saved, updated })
     } catch {
       // useGrading exposes the persistence error without abandoning the editor.
+    } finally {
+      activitySaveInFlight.current = false
     }
   }
 
@@ -1110,6 +1119,10 @@ export function GradingBook({
           completion={activitySaveCompletion}
           returnLabel={originReturnLabel ?? (activitySaveCompletion.kind === 'created' ? 'Volver al bloque' : 'Salir a actividades')}
           onClose={() => {
+            if (activitySaveCompletion.kind === 'created' && onReturnToOrigin) {
+              onReturnToOrigin()
+              return
+            }
             setActivitySaveCompletion(null)
             if (activitySaveCompletion.kind === 'created') {
               setDetailView({ type: 'block', blockId: activitySaveCompletion.activity.competencyBlockId as CompetencyBlockId, initialTab: 'activities' })
@@ -1183,7 +1196,7 @@ export function ActivitySavedDialog({ completion, returnLabel, onClose, onCreate
               <p className="mt-1 text-sm text-muted-foreground">{created ? 'La actividad y su instrumento ya están disponibles en Evaluación.' : 'Tu progreso se conservó y podrás completar la actividad más adelante.'}</p>
             </div>
           </div>
-          <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
+          {!created ? <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button> : null}
         </div>
 
         <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
@@ -1192,10 +1205,14 @@ export function ActivitySavedDialog({ completion, returnLabel, onClose, onCreate
         </div>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          {created && onGrade ? <Button className="h-12 justify-center" onClick={onGrade}><GraduationCap className="size-5" /> Calificar ahora</Button> : null}
-          <Button variant="outline" className="h-12 justify-center" onClick={onReturn}><BackIcon /> {returnLabel}</Button>
-          <Button variant="outline" className="h-12 justify-center" onClick={onView}><Eye className="size-5" /> {created ? 'Ver actividad' : 'Ver borradores'}</Button>
-          <Button variant="ghost" className="h-12 justify-center text-primary" onClick={onCreateAnother}><Plus className="size-5" /> Crear otra actividad</Button>
+          {created ? <>
+            {onGrade ? <Button className="h-12 justify-center" onClick={onGrade}><GraduationCap className="size-5" /> Calificar actividad</Button> : null}
+            <Button variant="outline" className="h-12 justify-center" onClick={onReturn}><BackIcon /> Volver a actividades</Button>
+          </> : <>
+            <Button variant="outline" className="h-12 justify-center" onClick={onReturn}><BackIcon /> {returnLabel}</Button>
+            <Button variant="outline" className="h-12 justify-center" onClick={onView}><Eye className="size-5" /> Ver borradores</Button>
+            <Button variant="ghost" className="h-12 justify-center text-primary" onClick={onCreateAnother}><Plus className="size-5" /> Crear otra actividad</Button>
+          </>}
         </div>
       </div>
     </Modal>
@@ -2112,7 +2129,10 @@ function ActivityDetailView({
     const levelIndex = levelSelections[index] ?? null
     const highestLevel = rubricConfiguration.levels[0]?.points || 1
     const selectedLevel = levelIndex === null ? null : rubricConfiguration.levels[levelIndex]?.points ?? 0
-    return { criterion, levelIndex, points: selectedLevel === null ? null : Number((criterion.maximum * selectedLevel / highestLevel).toFixed(2)) }
+    const snapshotUnits = levelIndex === null ? null : activity.instrumentSnapshot?.criteria[index]?.descriptors[levelIndex]?.scoreUnits
+    const points = snapshotUnits != null ? snapshotUnits / 100
+      : selectedLevel === null ? null : Number((criterion.maximum * selectedLevel / highestLevel).toFixed(2))
+    return { criterion, levelIndex, points }
   })
   const instrumentComplete = levelRows.length > 0 && levelRows.every((row) => row.levelIndex !== null)
   const totalRubricScore = instrumentComplete ? Math.min(activity.maxScore, Number(levelRows.reduce((sum, row) => sum + (row.points ?? 0), 0).toFixed(2))) : null
@@ -3842,6 +3862,8 @@ function ActivityCreationView(props: {
   const [requiredFieldError, setRequiredFieldError] = useState('')
   const [showAdvancedInstrument, setShowAdvancedInstrument] = useState(false)
   const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
+  const [confirmCancel, setConfirmCancel] = useState(false)
+  const [pendingInstrumentReplacement, setPendingInstrumentReplacement] = useState<{ kind: 'prepare'; preferredType?: string } | { kind: 'template'; includeVisualResources: boolean } | null>(null)
   const { clearHighlight, highlightTarget, showHighlight } = useTransientActivityHighlight()
   const accent = getBlockAccent(block.id)
   const progressMeta = buildActivityDraftMeta(activityDraft, block.id)
@@ -3893,6 +3915,39 @@ function ActivityCreationView(props: {
       setPreparationError(error instanceof Error ? error.message : 'No se pudo preparar el instrumento. Puedes completarlo manualmente.')
       setStage('instrument')
     } finally { setPreparing(false) }
+  }
+
+  function applyEditableTemplate(includeVisualResources = false) {
+    const proposal = buildEditableInstrumentTemplate({
+      activityTitle: activityDraft.name,
+      description: activityDescriptionText(activityDraft.description),
+      participationMode: activityDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
+      maxScore: Number(activityDraft.maxScore),
+    }, includeVisualResources)
+    const next = { ...activityDraft, instrumentType: proposal.instrumentType, pedagogicalActivityType: proposal.activityType,
+      autoSelectedInstrumentType: true, autoDetectedPedagogicalActivityType: true,
+      instrumentFields: recommendationToFields(proposal, activityDraft.name), instrumentCompleted: true,
+      preparedRecommendation: proposal, preparedManuallyEdited: false }
+    onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
+    setPreparationError('')
+    setStage('instrument')
+    setShowAdvancedInstrument(false)
+  }
+
+  function requestInstrumentReplacement(replacement: NonNullable<typeof pendingInstrumentReplacement>) {
+    if (activityDraft.preparedManuallyEdited) {
+      setPendingInstrumentReplacement(replacement)
+      return
+    }
+    if (replacement.kind === 'prepare') void prepare(replacement.preferredType)
+    else applyEditableTemplate(replacement.includeVisualResources)
+  }
+
+  function createInstrumentFromScratch() {
+    onChangeDraft({ ...activityDraft, instrumentType: 'rubrica', instrumentFields: {}, instrumentCompleted: false,
+      preparedRecommendation: undefined, preparedFingerprint: undefined, preparedManuallyEdited: false, autoSelectedInstrumentType: false })
+    setPreparationError('')
+    setShowAdvancedInstrument(true)
   }
 
   function validatePreparation() {
@@ -3949,6 +4004,14 @@ function ActivityCreationView(props: {
       return
     }
     onSaveActivity()
+  }
+
+  function cancelCreation() {
+    if (editingActivityId) {
+      setConfirmCancel(true)
+      return
+    }
+    onBack()
   }
 
   const stages: Array<{ id: ActivityCreationStage; label: string; complete: boolean }> = [
@@ -4041,14 +4104,15 @@ function ActivityCreationView(props: {
             <div className="space-y-3">
               <div className={cn('rounded-xl border px-4 py-3', accent.card)}>
                 <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? 'Instrumento preparado' : preparationError ? 'No pudimos preparar el instrumento automáticamente' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? `${activityDraft.preparedRecommendation.criteria.length} criterios · ${activityDraft.preparedRecommendation.levels.length || 'sin'} niveles · ${activityDraft.maxScore} puntos. Revisa y edita el instrumento aquí.` : preparationError ? 'Puedes intentar de nuevo o crear el instrumento manualmente.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? `${activityDraft.preparedRecommendation.criteria.length} criterios · ${activityDraft.preparedRecommendation.levels.length || 'sin'} niveles · ${activityDraft.maxScore} puntos. Revisa y edita el instrumento aquí.` : preparationError ? 'Puedes intentar de nuevo, usar una plantilla editable o crear el instrumento desde cero.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
               </div>
-              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground">{preparationError} <Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => void prepare()} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button><Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => setPreparationError('')}>Crear manualmente</Button></div> : null}
+              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground"><p>{preparationError}</p><p className="mt-1 text-xs text-muted-foreground">La plantilla es una propuesta inicial para revisión docente y no implica validación curricular.</p><div className="mt-3 flex flex-wrap gap-2"><Button type="button" size="sm" variant="outline" onClick={() => requestInstrumentReplacement({ kind: 'prepare' })} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button><Button type="button" size="sm" onClick={() => requestInstrumentReplacement({ kind: 'template', includeVisualResources: false })}>Usar plantilla editable</Button><Button type="button" size="sm" variant="ghost" onClick={createInstrumentFromScratch}>Crear desde cero</Button></div></div> : null}
+              {activityDraft.preparedRecommendation?.internalTrace.mappingStatus === 'EDITABLE_TEMPLATE' ? <div className="rounded-xl border border-primary/30 bg-primary/5 p-3 text-sm"><p className="font-bold">Propuesta inicial para revisión docente</p><p className="mt-1 text-xs text-muted-foreground">Se preparó localmente sin atribución ni validación curricular. Revisa y edita criterios, descriptores y puntuaciones antes de guardar.</p>{!activityDraft.preparedRecommendation.criteria.some(criterion => criterion.templateId === 'optional-visual-resources') ? <Button type="button" size="sm" variant="outline" className="mt-2" onClick={() => requestInstrumentReplacement({ kind: 'template', includeVisualResources: true })}>Añadir criterio opcional de recursos visuales</Button> : null}</div> : null}
               {activityDraft.preparedRecommendation?.confidence === 'LOW' && !stale ? <p className="text-xs text-muted-foreground">Preparado según el tipo de actividad y la asignatura, sin atribución curricular.</p> : null}
-              {activityDraft.preparedRecommendation && !savedSnapshot ? <div className="flex flex-wrap items-end gap-3"><label className="text-xs font-semibold text-foreground">Cambiar instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => void prepare(event.target.value)} disabled={preparing}><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label><Button type="button" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar instrumento</Button></div> : null}
+              {activityDraft.preparedRecommendation && !savedSnapshot ? <div className="flex flex-wrap items-end gap-3"><label className="text-xs font-semibold text-foreground">Cambiar instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => requestInstrumentReplacement({ kind: 'prepare', preferredType: event.target.value })} disabled={preparing}><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label><Button type="button" variant="outline" onClick={() => requestInstrumentReplacement({ kind: 'prepare' })} disabled={preparing}>Regenerar instrumento</Button></div> : null}
               {activityDraft.preparedRecommendation ? <Button type="button" variant="outline" aria-expanded={showAdvancedInstrument} onClick={() => setShowAdvancedInstrument(value => !value)}>{showAdvancedInstrument ? 'Ocultar configuración avanzada' : 'Configuración avanzada'}</Button> : null}
               {!preparationError && !activityDraft.preparedRecommendation && !activityDraft.instrumentType ? <label className="block text-sm font-semibold text-foreground">Si prefieres continuar manualmente, selecciona el instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => handleDraftChange({ ...activityDraft, instrumentType: event.target.value })}><option value="">Seleccionar</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label> : null}
-              {stale && !preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">La actividad cambió. Actualiza el instrumento antes de guardar. {activityDraft.preparedManuallyEdited ? 'Se reemplazarán tus cambios manuales solo si lo confirmas.' : null} <Button type="button" size="sm" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar</Button></div> : null}
+              {stale && !preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">La actividad cambió. Actualiza el instrumento antes de guardar. {activityDraft.preparedManuallyEdited ? 'Se reemplazarán tus cambios manuales solo si lo confirmas.' : null} <Button type="button" size="sm" variant="outline" onClick={() => requestInstrumentReplacement({ kind: 'prepare' })} disabled={preparing}>Regenerar</Button></div> : null}
               {!preparing && (!preparationError || activityDraft.preparedRecommendation) ? <div className={cn(activityDraft.preparedRecommendation && !showAdvancedInstrument ? 'prepared-instrument-basic' : '')}>
               <InstrumentPreview
                 key={activityDraft.instrumentType}
@@ -4077,7 +4141,7 @@ function ActivityCreationView(props: {
           continueDisabled={savedSnapshot || preparing || (stage === 'review' && saving) || (stage !== 'activity' && stale)}
           continueLabel={continueLabel}
           meta={progressMeta}
-          onCancel={onBack}
+          onCancel={cancelCreation}
           onContinue={continueFlow}
           onSelectIssue={goToIssue}
         />
@@ -4091,6 +4155,33 @@ function ActivityCreationView(props: {
           onDelete={onBack}
           onSelectIssue={goToIssue}
           onSaveDraft={() => { setCompletionIssues([]); onSaveDraft() }}
+        />
+      ) : null}
+      {confirmCancel ? (
+        <ConfirmDialog
+          title="¿Descartar los cambios?"
+          description="Los cambios sin guardar de esta actividad se perderán."
+          confirmLabel="Descartar y salir"
+          cancelLabel="Seguir editando"
+          destructive
+          onClose={() => setConfirmCancel(false)}
+          onConfirm={onBack}
+        />
+      ) : null}
+      {pendingInstrumentReplacement ? (
+        <ConfirmDialog
+          title="¿Reemplazar el instrumento editado?"
+          description="La nueva propuesta reemplazará los cambios manuales realizados en criterios y descriptores."
+          confirmLabel="Reemplazar instrumento"
+          cancelLabel="Conservar mis cambios"
+          destructive
+          onClose={() => setPendingInstrumentReplacement(null)}
+          onConfirm={() => {
+            const replacement = pendingInstrumentReplacement
+            setPendingInstrumentReplacement(null)
+            if (replacement.kind === 'prepare') void prepare(replacement.preferredType)
+            else applyEditableTemplate(replacement.includeVisualResources)
+          }}
         />
       ) : null}
     </section>
@@ -6562,15 +6653,24 @@ function focusNewInstrumentRow(type: string, index: number, setHighlightedRow: D
 
 function shiftInstrumentRows(fields: Record<string, string>, type: string, removedIndex: number, count: number, fieldNames: string[]) {
   const next = { ...fields }
-  for (let index = removedIndex; index < count - 1; index += 1) fieldNames.forEach((field) => { next[instrumentFieldKey(type, field, index)] = next[instrumentFieldKey(type, field, index + 1)] || '' })
-  fieldNames.forEach((field) => { delete next[instrumentFieldKey(type, field, count - 1)] })
+  const names = [...new Set([...fieldNames, 'criterion-id', 'description', 'indicator'])]
+  for (let index = removedIndex; index < count - 1; index += 1) names.forEach((field) => { next[instrumentFieldKey(type, field, index)] = next[instrumentFieldKey(type, field, index + 1)] || '' })
+  names.forEach((field) => { delete next[instrumentFieldKey(type, field, count - 1)] })
+  const descriptorKeys = Object.keys(fields).filter((key) => key.startsWith(`${type}:descriptor:`))
+  for (let index = removedIndex; index < count - 1; index += 1) descriptorKeys.filter((key) => key.startsWith(`${type}:descriptor:${index + 1}:`)).forEach((source) => {
+    next[source.replace(`:descriptor:${index + 1}:`, `:descriptor:${index}:`)] = fields[source]
+  })
+  descriptorKeys.filter((key) => key.startsWith(`${type}:descriptor:${count - 1}:`)).forEach((key) => delete next[key])
   return next
 }
 
 function swapInstrumentRows(fields: Record<string, string>, type: string, from: number, to: number, fieldNames: string[]) {
   if (to < 0) return fields
   const next = { ...fields }
-  fieldNames.forEach((field) => { const fromKey=instrumentFieldKey(type,field,from); const toKey=instrumentFieldKey(type,field,to); const value=next[fromKey]||''; next[fromKey]=next[toKey]||''; next[toKey]=value })
+  const names = [...new Set([...fieldNames, 'criterion-id', 'description', 'indicator'])]
+  names.forEach((field) => { const fromKey=instrumentFieldKey(type,field,from); const toKey=instrumentFieldKey(type,field,to); const value=next[fromKey]||''; next[fromKey]=next[toKey]||''; next[toKey]=value })
+  const suffixes = [...new Set(Object.keys(fields).filter((key) => key.startsWith(`${type}:descriptor:${from}:`) || key.startsWith(`${type}:descriptor:${to}:`)).map((key) => key.split(':').slice(3).join(':')))]
+  suffixes.forEach((suffix) => { const fromKey = `${type}:descriptor:${from}:${suffix}`; const toKey = `${type}:descriptor:${to}:${suffix}`; const value = next[fromKey] || ''; next[fromKey] = next[toKey] || ''; next[toKey] = value })
   return next
 }
 

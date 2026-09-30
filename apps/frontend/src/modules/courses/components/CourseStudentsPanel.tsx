@@ -55,8 +55,8 @@ export function CourseStudentsPanel({ courseId, courseName, canEnroll, canManage
         getStudentsByCourse(courseId),
         getStudentsByCourse(courseId, 'withdrawn'),
       ])
-      setStudents(activeRows)
-      setWithdrawn(withdrawnRows)
+      setStudents(sortCourseStudents(activeRows))
+      setWithdrawn(sortCourseStudents(withdrawnRows))
     } catch (caught) {
       setError(messageFrom(caught, 'No se pudieron cargar los estudiantes.'))
     } finally {
@@ -111,7 +111,7 @@ export function CourseStudentsPanel({ courseId, courseName, canEnroll, canManage
       {loading ? <p className="p-10 text-center text-sm text-muted-foreground">Cargando estudiantes...</p> : visible.length ? <StudentList rows={visible.map((student) => ({ ...student, canDeletePermanently: canManage && student.canDeletePermanently }))} view={view} canManage={canEnroll} onView={setViewing} onEdit={setEditing} onWithdraw={setWithdrawing} onRestore={(student) => void restoreStudentToCourse(courseId, student.id).then(() => refreshWith(`${student.fullName} volvió al curso.`)).catch((caught) => setError(messageFrom(caught, 'No se pudo restaurar.')))} onDelete={setDeleting} /> : <EmptyStudents courseName={courseName} view={view} canManage={canEnroll} hasQuery={Boolean(query)} onAdd={() => setAddTab('single')} />}
     </section>
 
-    {addTab ? <AddStudentsModal courseId={courseId} initialTab={addTab} onClose={() => setAddTab(null)} onStudentCreated={(student) => setStudents((current) => current.some(({ id }) => id === student.id) ? current : [...current, student])} onSaved={(message) => { setAddTab(null); void refreshWith(message) }} /> : null}
+    {addTab ? <AddStudentsModal courseId={courseId} initialTab={addTab} onClose={() => setAddTab(null)} onStudentCreated={(student) => setStudents((current) => current.some(({ id }) => id === student.id) ? current : sortCourseStudents([...current, student]))} onSaved={(message) => { setAddTab(null); void refreshWith(message) }} /> : null}
     {viewing ? <StudentDetailsModal student={viewing} courseName={courseName} view={view} canEdit={canEnroll && view === 'active'} onClose={() => setViewing(null)} onEdit={() => { setViewing(null); setEditing(viewing) }} /> : null}
     {editing ? <EditStudentModal student={editing} students={students} courseId={courseId} onClose={() => setEditing(null)} onSaved={() => { setEditing(null); void refreshWith('Cambios guardados.') }} /> : null}
     {reordering ? <ReorderModal students={students} courseId={courseId} onClose={() => setReordering(false)} onSaved={() => { setReordering(false); void refreshWith('Lista reordenada y numerada.') }} /> : null}
@@ -283,6 +283,7 @@ function EmptyStudents({ courseName, view, canManage, hasQuery, onAdd }: { cours
 function Field({ label, children }: { label: string; children: ReactNode }) { return <label className="block text-sm font-semibold text-foreground">{label}<span className="mt-2 block">{children}</span></label> }
 function StudentDetail({ label, value, featured = false }: { label: string; value: string; featured?: boolean }) { return <div className={cn('min-w-0 rounded-xl border border-border/70 bg-muted/35 p-3', featured && 'border-primary/10 bg-card/90')}><dt className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">{label}</dt><dd className={cn('mt-1 break-words font-semibold text-foreground', featured && 'text-base font-extrabold')}>{value}</dd></div> }
 function visibleCode(code: string) { return /^TEMP-/i.test(code) || !code ? 'Sin matrícula' : code }
+function sortCourseStudents(students: CourseStudent[]) { return [...students].sort((first, second) => (first.listNumber ?? Number.MAX_SAFE_INTEGER) - (second.listNumber ?? Number.MAX_SAFE_INTEGER) || first.lastName.localeCompare(second.lastName, 'es') || first.firstName.localeCompare(second.firstName, 'es')) }
 function visibleGender(gender: string | null) { return gender === 'female' ? 'Femenino' : gender === 'male' ? 'Masculino' : 'No especificado' }
 function visibleDate(value: string) { const date = new Date(value); return value && !Number.isNaN(date.getTime()) ? new Intl.DateTimeFormat('es-BO', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(date) : 'No registrada' }
 function studentInitials(student: CourseStudent) { return `${student.firstName[0] ?? ''}${student.lastName[0] ?? ''}`.toLocaleUpperCase('es') }

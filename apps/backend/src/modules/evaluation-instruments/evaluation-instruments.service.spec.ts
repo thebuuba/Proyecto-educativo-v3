@@ -4,8 +4,8 @@ import { validate } from 'class-validator'
 import { plainToInstance } from 'class-transformer'
 import { EvaluationInstrumentsService } from './evaluation-instruments.service'
 import { RecommendInstrumentDto } from './recommend-instrument.dto'
-import { evaluationCatalogV1 } from './catalog-v1'
-import { seedEvaluationCatalog } from './catalog-operations'
+import { evaluationCatalogV2 as evaluationCatalogV1 } from './catalog-v2'
+import { diagnoseEvaluationCatalog, seedEvaluationCatalog } from './catalog-operations'
 
 const mocks = vi.hoisted(() => ({
   sectionSubject: { findFirst: vi.fn() }, evaluationCatalogRelease: { findUnique: vi.fn(), create: vi.fn() },
@@ -116,6 +116,15 @@ describe('API service security and version policy', () => {
     expect(mocks.evaluationCatalogRelease.create).not.toHaveBeenCalled()
     mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: {} })
     await expect(seedEvaluationCatalog(mocks as never)).rejects.toThrow('versión nueva')
+  })
+  it('diagnostica catálogo ausente, compatible o conflictivo sin modificarlo', async () => {
+    mocks.evaluationCatalogRelease.findUnique.mockResolvedValue(null)
+    await expect(diagnoseEvaluationCatalog(mocks as never)).resolves.toEqual({ version: 'evaluation-2026.2', status: 'MISSING' })
+    mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: evaluationCatalogV1 })
+    await expect(diagnoseEvaluationCatalog(mocks as never)).resolves.toEqual({ version: 'evaluation-2026.2', status: 'COMPATIBLE' })
+    mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: { ...evaluationCatalogV1, activityTypes: [] } })
+    await expect(diagnoseEvaluationCatalog(mocks as never)).resolves.toEqual({ version: 'evaluation-2026.2', status: 'CONFLICT' })
+    expect(mocks.evaluationCatalogRelease.create).not.toHaveBeenCalled()
   })
   it('tolera dos instaladores concurrentes sólo si el contenido coincide', async () => {
     mocks.evaluationCatalogRelease.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce({ payload: evaluationCatalogV1 })

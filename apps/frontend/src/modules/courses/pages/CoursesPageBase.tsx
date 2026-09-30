@@ -142,6 +142,7 @@ import { getStudentsByCourse } from '@/modules/students/services/studentsService
 import type { CourseStudent } from '@/modules/students/types'
 import { cn } from '@/utils/cn'
 import { getSubjectPalette as getSubjectColor, type SubjectPalette } from '@/utils/subjectPalette'
+import { resolveEvaluationProfile, type EvaluationProfile } from '@aula/shared'
 
 type CourseCardItem = {
   id: string
@@ -1589,6 +1590,7 @@ function SubjectDetailView({
     selectedAcademicPeriodId: string | null
   }>({ gradingStudents: [], activities: [], gradeRecords: [], teams: [], plannings: [], academicPeriods: [], selectedAcademicPeriodId: null })
   const [activityBlockPickerOpen, setActivityBlockPickerOpen] = useState(false)
+  const evaluationProfile = resolveEvaluationProfile(item.grade.academicLevelCode)
 
   useEffect(() => {
     if (teamId) setActiveTab('equipos')
@@ -1758,6 +1760,7 @@ function SubjectDetailView({
         />
       ) : activeTab === 'estudiantes' ? (
         <EstudiantesTab
+          evaluationProfile={evaluationProfile}
           students={students}
           loading={studentsLoading}
           error={studentsError}
@@ -1807,7 +1810,7 @@ function SubjectDetailView({
       ) : activeTab === 'asistencia' ? (
         <SubjectAttendancePanel key={item.assignment?.id} sectionSubjectId={item.assignment?.id ?? null} students={students} loading={studentsLoading} error={studentsError} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} schoolYearName={schoolYearName} />
       ) : activeTab === 'calificaciones' ? (
-        <CalificacionesTab sectionSubjectId={item.assignment?.id ?? null} schoolYearId={schoolYearId} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} />
+        <CalificacionesTab evaluationProfile={evaluationProfile} sectionSubjectId={item.assignment?.id ?? null} schoolYearId={schoolYearId} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} />
       ) : activeTab === 'horario' ? (
         <SubjectSchedulePage embedded />
       ) : activeTab === 'planificaciones' ? (
@@ -1816,6 +1819,7 @@ function SubjectDetailView({
         <SubjectResourcesPanel sectionSubjectId={item.assignment?.id ?? null} courseLabel={courseLabel} subjectName={item.subjectName} />
       ) : activeTab === 'reportes' ? (
         <SubjectReportsPanel
+          evaluationProfile={evaluationProfile}
           sectionSubjectId={item.assignment?.id ?? null}
           courseLabel={courseLabel}
           subjectName={item.subjectName}
@@ -1831,6 +1835,7 @@ function SubjectDetailView({
 
       {activityBlockPickerOpen && item.assignment ? (
         <ActivityBlockPickerDialog
+          evaluationProfile={evaluationProfile}
           assignmentId={item.assignment.id}
           courseId={item.id}
           courseName={courseLabel}
@@ -1843,11 +1848,12 @@ function SubjectDetailView({
   )
 }
 
-export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, subjectName, returnTab = 'actividades', onClose }: {
+export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, subjectName, evaluationProfile, returnTab = 'actividades', onClose }: {
   assignmentId: string
   courseId: string
   courseName: string
   subjectName: string
+  evaluationProfile?: EvaluationProfile
   returnTab?: 'actividades' | 'estudiantes'
   onClose: () => void
 }) {
@@ -1873,7 +1879,7 @@ export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, 
         </div>
 
         <div className="grid gap-3 md:grid-cols-2">
-          {competencyBlocks.map((block, index) => {
+          {(evaluationProfile?.blocks ?? competencyBlocks).map((block, index) => {
             const visual = visuals[index]
             const href = `/actividades/crear?${new URLSearchParams({
               sectionSubjectId: assignmentId,
@@ -2093,7 +2099,8 @@ function PlanningDisabledPanel({ onActivities }: { onActivities: () => void }) {
   return <section className="flex min-h-72 items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><div className="max-w-lg"><span className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-muted text-muted-foreground"><ClipboardList className="size-6" /></span><div className="mt-4 flex items-center justify-center gap-2"><h2 className="text-xl font-extrabold">Planificaciones</h2><span className="rounded-full bg-slate-100 px-2 py-1 text-[9px] font-black uppercase tracking-wide text-slate-500">Próximamente</span></div><p className="mt-3 text-sm leading-6 text-muted-foreground">Este módulo estará disponible próximamente. Mientras tanto, puedes crear y gestionar tus actividades desde el apartado Actividades.</p><Button className="mt-5" onClick={onActivities}>Ir a Actividades</Button></div></section>
 }
 
-export function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnroll, gradingStudents, activities, gradeRecords, teams, journalCourse, onCreateActivity }: {
+export function EstudiantesTab({ evaluationProfile, students, loading, error, courseId, sectionId, canEnroll, gradingStudents, activities, gradeRecords, teams, journalCourse, onCreateActivity }: {
+  evaluationProfile?: EvaluationProfile
   students: StudentAttendanceRow[]
   loading: boolean
   error: string | null
@@ -2242,7 +2249,9 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
       attendance,
       progressStatus,
     }
-  })
+  }).sort((first, second) => (first.listNumber ?? Number.MAX_SAFE_INTEGER) - (second.listNumber ?? Number.MAX_SAFE_INTEGER)
+    || first.lastName.localeCompare(second.lastName, 'es')
+    || first.firstName.localeCompare(second.firstName, 'es'))
   const normalizedSearch = search.trim().toLocaleLowerCase('es')
   const filteredRows = rows.filter((row) => {
     const matchesSearch = !normalizedSearch || `${row.firstName} ${row.lastName}`.toLocaleLowerCase('es').includes(normalizedSearch)
@@ -2305,9 +2314,9 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
                 <tr><th className="w-12 px-3 py-3 text-center">#</th><th className="px-3 py-3">Estudiante</th><th className="px-3 py-3">Equipo</th><th className="px-3 py-3">Actividades</th><th className="px-3 py-3">Promedio</th><th className="px-3 py-3">Asistencia</th><th className="px-3 py-3">Estado</th></tr>
               </thead>
               <tbody className="divide-y divide-border">
-                {filteredRows.map((row, index) => (
+                {filteredRows.map((row) => (
                   <tr key={row.enrollmentId} tabIndex={0} role="button" aria-expanded={selectedEnrollmentId === row.enrollmentId} aria-controls="subject-student-detail" onClick={() => toggleStudent(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleStudent(row.enrollmentId) } }} className={cn('cursor-pointer text-foreground outline-none transition hover:bg-primary/[0.035] focus:bg-primary/[0.05]', selectedEnrollmentId === row.enrollmentId && 'bg-primary/[0.055]')}>
-                    <td className="px-3 py-3 text-center font-bold text-muted-foreground">{index + 1}</td>
+                    <td className="px-3 py-3 text-center font-bold text-muted-foreground">{row.listNumber ?? '—'}</td>
                     <td className="px-3 py-3 font-bold"><span className="inline-flex items-center gap-3"><StudentAvatar firstName={row.firstName} lastName={row.lastName} />{row.lastName}, {row.firstName}</span></td>
                     <td className="px-3 py-3">{row.team ? <span className="font-semibold text-primary">{row.team.name}</span> : <span className="text-muted-foreground">Sin equipo</span>}</td>
                     <td className="px-3 py-3"><span className="font-bold tabular-nums">{row.completed} / {activities.length}</span><div className="mt-1 h-1 w-20 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: activities.length ? `${Math.min(100, (row.completed / activities.length) * 100)}%` : '0%' }} /></div></td>
@@ -2323,7 +2332,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
           <p className="border-t border-border px-3 py-2 text-[11px] text-muted-foreground">Mostrando {filteredRows.length} de {rows.length} estudiantes</p>
         </div>
 
-        {selected ? <div className="fixed inset-0 z-40 flex justify-end bg-foreground/25"><button type="button" className="absolute inset-0 cursor-default" aria-label="Cerrar detalle del estudiante" onClick={() => setSelectedEnrollmentId(null)} /><div ref={detailRef} id="subject-student-detail" className="relative h-full w-full max-w-xl overflow-y-auto bg-card shadow-xl"><StudentDetailPanel student={selected} activities={activities} journalEntries={selectedJournalEntries} journalLoading={journalLoading} journalError={journalError} onRetryJournal={() => void refreshJournal()} onViewJournal={setViewingJournal} onJournal={() => setJournalStudentId(selected.studentId)} journalHref={`/bitacora?${new URLSearchParams({ sectionId, sectionSubjectId: courseId ?? '', studentId: selected.studentId }).toString()}`} onClose={() => setSelectedEnrollmentId(null)} /></div></div> : null}
+        {selected ? <div className="fixed inset-0 z-40 flex justify-end bg-foreground/25"><button type="button" className="absolute inset-0 cursor-default" aria-label="Cerrar detalle del estudiante" onClick={() => setSelectedEnrollmentId(null)} /><div ref={detailRef} id="subject-student-detail" className="relative h-full w-full max-w-xl overflow-y-auto bg-card shadow-xl"><StudentDetailPanel evaluationProfile={evaluationProfile} student={selected} activities={activities} journalEntries={selectedJournalEntries} journalLoading={journalLoading} journalError={journalError} onRetryJournal={() => void refreshJournal()} onViewJournal={setViewingJournal} onJournal={() => setJournalStudentId(selected.studentId)} journalHref={`/bitacora?${new URLSearchParams({ sectionId, sectionSubjectId: courseId ?? '', studentId: selected.studentId }).toString()}`} onClose={() => setSelectedEnrollmentId(null)} /></div></div> : null}
       </div>
       </div>
 
@@ -2356,7 +2365,8 @@ function StudentStatusBadge({ status }: { status: StudentProgressStatus }) {
   return <span className={cn('inline-flex rounded-full px-2 py-1 text-[10px] font-bold', status === 'Al día' ? 'bg-success/10 text-success' : status === 'Con pendientes' ? 'bg-warning/15 text-warning-foreground' : status === 'En riesgo' ? 'bg-destructive/10 text-destructive' : 'bg-muted text-muted-foreground')}>{status}</span>
 }
 
-function StudentDetailPanel({ student, activities, journalEntries, journalLoading, journalError, onRetryJournal, onViewJournal, onJournal, journalHref, onClose }: {
+function StudentDetailPanel({ evaluationProfile, student, activities, journalEntries, journalLoading, journalError, onRetryJournal, onViewJournal, onJournal, journalHref, onClose }: {
+  evaluationProfile?: EvaluationProfile
   student: StudentAttendanceRow & { team: CourseTeam | null; records: GradeRecordRow[]; completed: number; average: number | null; attendance: number | null; progressStatus: StudentProgressStatus }
   activities: GradingActivity[]
   journalEntries: JournalEntry[]
@@ -2368,8 +2378,9 @@ function StudentDetailPanel({ student, activities, journalEntries, journalLoadin
   journalHref: string
   onClose: () => void
 }) {
-  const blockAverages = competencyBlocks.map((block) => {
-    const activityIds = new Set(activities.filter((activity) => activityAppliesToBlock(activity, block.id)).map((activity) => activity.id))
+  const blocks = evaluationProfile?.blocks ?? competencyBlocks
+  const blockAverages = blocks.map((block) => {
+    const activityIds = new Set(activities.filter((activity) => activityAppliesToBlock(activity, block.id, evaluationProfile)).map((activity) => activity.id))
     const records = [...activityIds].map((activityId) => scoreForActivity(student.records, student.enrollmentId, activityId)).filter((record): record is GradeRecordRow => Boolean(record && record.maxScore > 0))
     return { ...block, average: records.length ? Math.round(records.reduce((sum, record) => sum + (record.score / record.maxScore) * 100, 0) / records.length) : null }
   })
@@ -2383,7 +2394,7 @@ function StudentDetailPanel({ student, activities, journalEntries, journalLoadin
       <div className="mt-2 max-h-64 space-y-2 overflow-auto pr-1">
         {activities.length ? activities.map((activity) => {
           const record = scoreForActivity(student.records, student.enrollmentId, activity.id)
-          const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId)
+          const block = blocks.find((item) => item.id === activity.competencyBlockId)
           return <details key={activity.id} className="group rounded-lg border border-border bg-card"><summary className="cursor-pointer list-none p-2.5"><div className="flex items-center justify-between gap-2"><span className="min-w-0 truncate text-xs font-bold text-foreground">{activity.name}</span><span className={cn('shrink-0 text-[10px] font-bold', record ? 'text-primary' : 'text-muted-foreground')}>{record ? `${record.score}/${record.maxScore}` : 'Pendiente'}</span></div><p className="mt-1 text-[10px] text-muted-foreground">{block?.shortName ?? 'Sin bloque'}</p></summary><div className="border-t border-border px-2.5 py-2 text-[11px] text-muted-foreground">{record ? `Resultado: ${Math.round((record.score / record.maxScore) * 100)}%. ${record.status ?? 'Calificada'}.` : 'Esta actividad todavía no ha sido completada o calificada.'}</div></details>
         }) : <p className="rounded-lg bg-muted px-3 py-5 text-center text-xs text-muted-foreground">No hay actividades creadas.</p>}
       </div>
@@ -2428,7 +2439,7 @@ function EmptyStep({ number, text }: { number: string; text: string }) {
 }
 
 
-function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLabel, subjectName }: { sectionSubjectId: string | null; schoolYearId: string | null; courseId: string; courseLabel: string; subjectName: string }) {
+function CalificacionesTab({ evaluationProfile, sectionSubjectId, schoolYearId, courseId, courseLabel, subjectName }: { evaluationProfile: EvaluationProfile; sectionSubjectId: string | null; schoolYearId: string | null; courseId: string; courseLabel: string; subjectName: string }) {
   const [periods, setPeriods] = useState<Array<{ id: string; name: string }>>([])
   const [selectedPeriod, setSelectedPeriod] = useState<string>('')
   const [students, setStudents] = useState<StudentGradeRow[]>([])
@@ -2470,7 +2481,8 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
   if (!sectionSubjectId) return <EmptyState title="Sin asignatura" description="Este curso no tiene una asignatura asignada." />
   if (error && !periods.length) return <ErrorState message={error} />
 
-  const rows = buildCompactGradeRows(students, activities, gradeRecords)
+  const blocks = evaluationProfile.blocks
+  const rows = buildCompactGradeRows(students, activities, gradeRecords, evaluationProfile)
   const evaluatedActivities = activities.filter((activity) => gradeRecords.some((record) => scoreForActivity([record], record.enrollmentId, activity.id))).length
   const studentsWithGrades = rows.filter((row) => row.average !== null)
   const courseAverage = studentsWithGrades.length
@@ -2510,7 +2522,7 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
               <tr>
                 <th className="w-16 px-5 py-3 text-center">#</th>
                 <th className="min-w-64 px-5 py-3">Estudiante</th>
-                {competencyBlocks.map((block) => <th key={block.id} title={block.name} className="w-28 px-3 py-3 text-center">{block.shortName}</th>)}
+                {blocks.map((block) => <th key={block.id} title={block.name} className="w-28 px-3 py-3 text-center">{block.shortName}</th>)}
                 <th className="w-28 px-3 py-3 text-center">Promedio {periods.find(item => item.id === selectedPeriod)?.name.split('—')[0]}</th>
                 <th className="w-36 px-5 py-3">Estado</th>
               </tr>
@@ -2520,7 +2532,7 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
                 <tr key={row.enrollmentId} role="button" tabIndex={0} aria-label={`Abrir detalle de calificaciones de ${row.firstName} ${row.lastName}`} onClick={() => setSelectedEnrollmentId(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedEnrollmentId(row.enrollmentId) } }} className="cursor-pointer text-foreground transition hover:bg-primary/[0.035] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
                   <td className="px-5 py-4 text-center font-bold text-muted-foreground">{row.listNumber}</td>
                   <td className="px-5 py-4 font-bold"><span className="inline-flex items-center gap-3"><StudentAvatar firstName={row.firstName} lastName={row.lastName} />{row.lastName}, {row.firstName}</span></td>
-                  {competencyBlocks.map((block) => <td key={block.id} className="px-3 py-4 text-center"><GradeValue value={row.blockAverages[block.id]} /></td>)}
+                  {blocks.map((block) => <td key={block.id} className="px-3 py-4 text-center"><GradeValue value={row.blockAverages[block.id]} /></td>)}
                   <td className="px-3 py-4 text-center"><GradeValue value={row.average} emphasized /></td>
                   <td className="px-5 py-4"><GradeStatus status={row.status} /></td>
                 </tr>
@@ -2530,12 +2542,13 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
           </div>
         </div>
       )}
-      {selectedEnrollmentId ? <StudentGradesDrawer student={students.find((item) => item.enrollmentId === selectedEnrollmentId) ?? null} students={students} row={rows.find((item) => item.enrollmentId === selectedEnrollmentId) ?? null} activities={activities} records={gradeRecords} courseLabel={courseLabel} subjectName={subjectName} periodName={periods.find((item) => item.id === selectedPeriod)?.name ?? 'Período actual'} onStudentChange={setSelectedEnrollmentId} onClose={() => setSelectedEnrollmentId(null)} /> : null}
+      {selectedEnrollmentId ? <StudentGradesDrawer evaluationProfile={evaluationProfile} student={students.find((item) => item.enrollmentId === selectedEnrollmentId) ?? null} students={students} row={rows.find((item) => item.enrollmentId === selectedEnrollmentId) ?? null} activities={activities} records={gradeRecords} courseLabel={courseLabel} subjectName={subjectName} periodName={periods.find((item) => item.id === selectedPeriod)?.name ?? 'Período actual'} onStudentChange={setSelectedEnrollmentId} onClose={() => setSelectedEnrollmentId(null)} /> : null}
     </div>
   )
 }
 
-function StudentGradesDrawer({ student, students, row, activities, records, courseLabel, subjectName, periodName, onStudentChange, onClose }: {
+function StudentGradesDrawer({ evaluationProfile, student, students, row, activities, records, courseLabel, subjectName, periodName, onStudentChange, onClose }: {
+  evaluationProfile: EvaluationProfile
   student: StudentGradeRow | null
   students: StudentGradeRow[]
   row: CompactGradeRow | null
@@ -2547,13 +2560,14 @@ function StudentGradesDrawer({ student, students, row, activities, records, cour
   onStudentChange: (enrollmentId: string) => void
   onClose: () => void
 }) {
-  const [blockId, setBlockId] = useState<(typeof competencyBlocks)[number]['id']>(competencyBlocks[0].id)
+  const blocks = evaluationProfile.blocks
+  const [blockId, setBlockId] = useState<string>(blocks[0].id)
   const [activityId, setActivityId] = useState<string | null>(null)
   const [showInstrument, setShowInstrument] = useState(false)
   useEffect(() => { setActivityId(null); setShowInstrument(false) }, [student?.enrollmentId])
   if (!student || !row) return null
-  const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
-  const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
+  const block = blocks.find((item) => item.id === blockId) ?? blocks[0]
+  const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id, evaluationProfile))
   const selectedActivity = activities.find((activity) => activity.id === activityId) ?? null
   const selectedRecord = selectedActivity ? scoreForActivity(records, student.enrollmentId, selectedActivity.id) : null
 
@@ -2563,10 +2577,10 @@ function StudentGradesDrawer({ student, students, row, activities, records, cour
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start"><span className="grid size-12 shrink-0 place-items-center rounded-full bg-blue-100 font-black text-primary">{student.firstName.charAt(0)}{student.lastName.charAt(0)}</span><div className="min-w-0 flex-1"><h3 className="font-extrabold">{student.lastName}, {student.firstName}</h3><p className="mt-1 text-xs text-muted-foreground">N.º de lista: {String(student.listNumber ?? row.listNumber).padStart(2, '0')}{student.studentCode ? ` · Matrícula: ${student.studentCode}` : ''}</p><p className="mt-1 text-xs text-muted-foreground">Curso: {courseLabel} · Asignatura: {subjectName}</p><p className="mt-1 text-xs font-bold text-primary">Período: {periodName}</p></div><label className="grid min-w-56 gap-1 text-[10px] font-extrabold uppercase text-muted-foreground">Cambiar estudiante<select aria-label="Cambiar estudiante" value={student.enrollmentId} onChange={(event) => onStudentChange(event.target.value)} className="h-11 rounded-xl border border-border bg-card px-3 text-xs font-bold text-foreground">{students.map((item) => <option key={item.enrollmentId} value={item.enrollmentId}>{item.lastName}, {item.firstName}</option>)}</select></label></div>
       </section>
 
-      <section className="rounded-2xl border border-border bg-card p-4 shadow-sm"><div className="grid grid-cols-2 gap-2 sm:grid-cols-5">{competencyBlocks.map((item) => <GradeSummaryTile key={item.id} label={item.shortName} value={row.blockAverages[item.id]} />)}<GradeSummaryTile label="Promedio" value={row.average} emphasized /></div></section>
+      <section className="rounded-2xl border border-border bg-card p-4 shadow-sm"><div className="grid grid-cols-2 gap-2 sm:grid-cols-5">{blocks.map((item) => <GradeSummaryTile key={item.id} label={item.shortName} value={row.blockAverages[item.id]} />)}<GradeSummaryTile label="Promedio" value={row.average} emphasized /></div></section>
 
       {selectedActivity ? <StudentActivityDetail activity={selectedActivity} record={selectedRecord} studentName={`${student.firstName} ${student.lastName}`} showInstrument={showInstrument} onInstrument={() => setShowInstrument(true)} onBack={() => { if (showInstrument) setShowInstrument(false); else setActivityId(null) }} /> : <>
-        <nav className="grid grid-cols-2 gap-2 rounded-2xl border border-border bg-card p-2 shadow-sm sm:grid-cols-4" aria-label="Bloques de competencia">{competencyBlocks.map((item) => <button key={item.id} type="button" aria-pressed={block.id === item.id} onClick={() => setBlockId(item.id)} className={cn('h-11 rounded-xl px-3 text-xs font-extrabold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', block.id === item.id ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:bg-muted hover:text-foreground')}>{item.shortName}</button>)}</nav>
+        <nav className="grid grid-cols-2 gap-2 rounded-2xl border border-border bg-card p-2 shadow-sm sm:grid-cols-4" aria-label="Bloques de competencia">{blocks.map((item) => <button key={item.id} type="button" aria-pressed={block.id === item.id} onClick={() => setBlockId(item.id)} className={cn('h-11 rounded-xl px-3 text-xs font-extrabold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', block.id === item.id ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:bg-muted hover:text-foreground')}>{item.shortName}</button>)}</nav>
         <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="border-b border-border bg-primary/[0.025] p-4"><p className="text-[10px] font-black uppercase tracking-wider text-primary">{block.shortName}</p><h3 className="mt-1 font-extrabold">{block.name}</h3><p className="mt-2 text-sm font-bold text-muted-foreground">Calificación del bloque: <strong className="text-primary">{row.blockAverages[block.id] === null ? 'Sin evaluar' : `${row.blockAverages[block.id]} / 100`}</strong></p></header><div className="p-4"><h4 className="mb-3 text-[10px] font-black uppercase tracking-wider text-muted-foreground">Actividades</h4>{blockActivities.length ? <div className="space-y-2">{blockActivities.map((activity) => { const record = scoreForActivity(records, student.enrollmentId, activity.id); return <button key={activity.id} type="button" onClick={() => setActivityId(activity.id)} className="flex min-h-16 w-full items-center gap-3 rounded-xl border border-border px-4 py-3 text-left transition hover:border-primary/30 hover:bg-primary/[0.025] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><span className="grid size-10 shrink-0 place-items-center rounded-xl bg-violet-50 text-violet-600"><ClipboardList className="size-4" /></span><span className="min-w-0 flex-1"><strong className="block truncate text-sm">{activity.name}</strong><span className="mt-1 block text-xs text-muted-foreground">{record ? `${record.score} / ${record.maxScore}` : `— / ${activity.maxScore}`} · {activityGradeState(record, activity)}</span></span><ChevronRight className="size-4 shrink-0 text-muted-foreground" /></button> })}</div> : <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">Aún no hay actividades registradas en este bloque.</p>}</div></section>
       </>}
     </div>

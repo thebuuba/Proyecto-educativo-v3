@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { InstrumentRecommendation } from '@aula/shared'
-import { alignRecommendationWithFields, preparationFingerprint, recommendationToFields } from './instrumentPreparation'
+import { alignRecommendationWithFields, buildEditableInstrumentTemplate, preparationFingerprint, recommendationToFields } from './instrumentPreparation'
 
 function proposal(type: InstrumentRecommendation['instrumentType']): InstrumentRecommendation {
   return {
@@ -28,9 +28,11 @@ describe('adaptación del instrumento preparado', () => {
     const original = proposal(type)
     const fields = recommendationToFields(original, 'Mi experimento')
     expect(fields[`${type}:meta:criteriaCount`]).toBe('2')
-    expect(fields[`${type}:criterion:0`]).toBe('Procedimiento')
+    expect(fields[`${type}:criterion-id:0`]).toBe('one')
+    expect(fields[`${type}:criterion:0`]).toBe(type === 'rubrica' ? 'Procedimiento' : 'Realiza los pasos.')
     if (type === 'rubrica') expect(fields['rubrica:descriptor:0:4']).toBe('Realiza todos los pasos.')
-    if (type === 'rubrica') expect([4, 3, 2, 1].map(level => Number(fields[`rubrica:level-points:${level}`]))).toEqual([3, 2, 1, 0])
+    if (type === 'rubrica') expect([4, 3, 2, 1].map(level => Number(fields[`rubrica:level-points:${level}`]))).toEqual([1, 2 / 3, 1 / 3, 0])
+    if (type === 'escala') expect(fields['escala:descriptor:0:4']).toBe('Realiza todos los pasos.')
     if (type === 'lista-ponderada') expect(Number(fields['lista-ponderada:weight:0']) + Number(fields['lista-ponderada:weight:1'])).toBe(100)
     const aligned = alignRecommendationWithFields(original, fields, 10.25)
     expect(aligned?.totalScoreUnits).toBe(1025)
@@ -59,5 +61,20 @@ describe('adaptación del instrumento preparado', () => {
     const input = { name: 'Experimeto', description: 'Descripción', maxScore: '10.25', activityType: 'individual', instrumentType: 'rubrica' }
     expect(preparationFingerprint(input)).not.toBe(preparationFingerprint({ ...input, name: 'Experimento' }))
     expect(input.name).toBe('Experimeto')
+  })
+  it('crea una plantilla editable específica para la exposición de células y conserva el puntaje', () => {
+    const template = buildEditableInstrumentTemplate({ activityTitle: 'Exposición sobre las células',
+      description: 'Los estudiantes exponen sobre las células, sus partes y su importancia', participationMode: 'INDIVIDUAL', maxScore: 17.35 })
+    expect(template.internalTrace.mappingStatus).toBe('EDITABLE_TEMPLATE')
+    expect(template.criteria.map(criterion => criterion.title)).toEqual([
+      'Comprensión del concepto de célula', 'Partes principales y sus funciones', 'Importancia de las células',
+      'Dominio del tema y precisión científica', 'Organización de la exposición', 'Claridad de la comunicación oral',
+    ])
+    expect(template.criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0)).toBe(1735)
+    expect(template.selectedCurriculumElements).toEqual([])
+    expect(template.criteria.some(criterion => criterion.templateId === 'optional-visual-resources')).toBe(false)
+    const withVisuals = buildEditableInstrumentTemplate({ activityTitle: 'Exposición sobre las células', participationMode: 'INDIVIDUAL', maxScore: 17.35 }, true)
+    expect(withVisuals.criteria.at(-1)?.title).toBe('Uso de recursos visuales')
+    expect(withVisuals.totalScoreUnits).toBe(1735)
   })
 })

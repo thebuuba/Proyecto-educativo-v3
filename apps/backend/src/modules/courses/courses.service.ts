@@ -185,6 +185,7 @@ export class CoursesService {
         ...grade,
         status: status(grade.status),
         academicLevelName: grade.academicLevelId ? levelById.get(grade.academicLevelId)?.name ?? null : null,
+        academicLevelCode: grade.academicLevelId ? levelById.get(grade.academicLevelId)?.code ?? null : null,
         academicCycleName: grade.academicCycleId ? cycleById.get(grade.academicCycleId)?.name ?? null : null,
         defaultModalityName: grade.defaultModalityId ? modalityById.get(grade.defaultModalityId)?.name ?? null : null,
         sections: sections
