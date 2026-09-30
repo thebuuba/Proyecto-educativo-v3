@@ -7,7 +7,12 @@ import { requestPasswordReset } from '@/modules/auth/services/authService'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
 
 type LocationState = { from?: { pathname?: string }; registered?: boolean }
-type RememberedAccount = { email: string; fullName: string }
+type RememberedAccount = {
+  email: string
+  fullName: string
+  avatarUrl?: string | null
+  role?: string
+}
 
 function getRememberedAccount(): RememberedAccount | null {
   try {
@@ -15,7 +20,12 @@ function getRememberedAccount(): RememberedAccount | null {
       localStorage.getItem('aulabase:last-account') ?? 'null',
     ) as Partial<RememberedAccount> | null
     return account?.email && account.fullName
-      ? { email: account.email, fullName: account.fullName }
+      ? {
+          email: account.email,
+          fullName: account.fullName,
+          avatarUrl: account.avatarUrl,
+          role: account.role,
+        }
       : null
   } catch {
     return null
@@ -27,6 +37,7 @@ export function LoginPage() {
     useAuth()
   const location = useLocation()
   const [rememberedAccount, setRememberedAccount] = useState(getRememberedAccount)
+  const [rememberedAccountSelected, setRememberedAccountSelected] = useState(false)
   const [email, setEmail] = useState(() => rememberedAccount?.email ?? '')
   const [password, setPassword] = useState('')
   const [visible, setVisible] = useState(false)
@@ -106,85 +117,108 @@ export function LoginPage() {
               {feedback || 'Cuenta creada. Ya puedes iniciar sesión.'}
             </p>
           )}
-          <form className="mt-8 space-y-5" onSubmit={submit}>
-            <label className="block text-sm font-medium">
-              Correo electrónico
-              <input
-                className="auth-input mt-2"
-                type="email"
-                autoComplete="email"
-                required
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                  if (rememberedAccount && e.target.value !== rememberedAccount.email) {
-                    setRememberedAccount(null)
-                  }
+          {rememberedAccount && !rememberedAccountSelected ? (
+            <div className="mt-8">
+              <p className="login-remembered-label">Continúa donde lo dejaste</p>
+              <button
+                type="button"
+                className="login-account"
+                onClick={() => setRememberedAccountSelected(true)}
+              >
+                <RememberedAvatar account={rememberedAccount} />
+                <span className="login-account-copy">
+                  <strong>
+                    Continuar como {rememberedAccount.fullName.trim().split(/\s+/)[0]}
+                  </strong>
+                  <small>{rememberedAccount.email}</small>
+                  {rememberedAccount.role && <em>{rememberedAccount.role}</em>}
+                </span>
+                <span className="login-account-arrow" aria-hidden="true">
+                  →
+                </span>
+              </button>
+              <button
+                type="button"
+                className="login-text-button login-other-account"
+                onClick={() => {
+                  setEmail('')
+                  setPassword('')
+                  setRememberedAccount(null)
                 }}
-              />
-              {rememberedAccount && (
-                <span className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+              >
+                Usar otra cuenta
+              </button>
+            </div>
+          ) : (
+            <form className="mt-8 space-y-5" onSubmit={submit}>
+              {rememberedAccount && rememberedAccountSelected ? (
+                <div className="login-chosen-account">
+                  <RememberedAvatar account={rememberedAccount} />
                   <span>
-                    Cuenta recordada:{' '}
-                    <strong className="font-medium text-foreground">
-                      {rememberedAccount.fullName}
-                    </strong>
+                    <strong>{rememberedAccount.fullName}</strong>
+                    <small>{rememberedAccount.email}</small>
                   </span>
+                  <button type="button" onClick={() => setRememberedAccountSelected(false)}>
+                    Cambiar
+                  </button>
+                </div>
+              ) : (
+                <label className="block text-sm font-medium">
+                  Correo electrónico
+                  <input
+                    className="auth-input mt-2"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </label>
+              )}
+              <div>
+                <div className="flex items-center justify-between">
+                  <label htmlFor="login-password" className="text-sm font-medium">
+                    Contraseña
+                  </label>
                   <button
                     type="button"
-                    onClick={() => {
-                      setEmail('')
-                      setRememberedAccount(null)
-                    }}
-                    className="ml-auto font-medium text-primary hover:underline"
+                    disabled={busy}
+                    onClick={() => void resetPassword()}
+                    className="text-xs font-medium text-primary hover:underline"
                   >
-                    Usar otra cuenta
+                    ¿La olvidaste?
                   </button>
-                </span>
-              )}
-            </label>
-            <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="login-password" className="text-sm font-medium">
-                  Contraseña
-                </label>
-                <button
-                  type="button"
-                  disabled={busy}
-                  onClick={() => void resetPassword()}
-                  className="text-xs font-medium text-primary hover:underline"
-                >
-                  ¿La olvidaste?
-                </button>
+                </div>
+                <div className="relative mt-2">
+                  <input
+                    id="login-password"
+                    className="auth-input pr-12"
+                    type={visible ? 'text' : 'password'}
+                    autoComplete="current-password"
+                    autoFocus={Boolean(rememberedAccount && rememberedAccountSelected)}
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <button
+                    type="button"
+                    aria-label={visible ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+                    onClick={() => setVisible(!visible)}
+                    className="absolute inset-y-0 right-0 grid w-12 place-items-center text-muted-foreground"
+                  >
+                    {visible ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
+                </div>
               </div>
-              <div className="relative mt-2">
-                <input
-                  id="login-password"
-                  className="auth-input pr-12"
-                  type={visible ? 'text' : 'password'}
-                  autoComplete="current-password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <button
-                  type="button"
-                  aria-label={visible ? 'Ocultar contraseña' : 'Mostrar contraseña'}
-                  onClick={() => setVisible(!visible)}
-                  className="absolute inset-y-0 right-0 grid w-12 place-items-center text-muted-foreground"
-                >
-                  {visible ? <EyeOff size={18} /> : <Eye size={18} />}
-                </button>
-              </div>
-            </div>
-            <button
-              type="submit"
-              disabled={busy}
-              className="min-h-12 w-full rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-60"
-            >
-              {busy ? 'Entrando…' : 'Entrar'}
-            </button>
-          </form>
+              <button
+                type="submit"
+                disabled={busy}
+                className="min-h-12 w-full rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-60"
+              >
+                {busy ? 'Entrando…' : 'Entrar'}
+              </button>
+            </form>
+          )}
           <div className="my-7 flex items-center gap-4 text-xs text-muted-foreground">
             <span className="h-px flex-1 bg-border" />O continúa con
             <span className="h-px flex-1 bg-border" />
@@ -216,5 +250,20 @@ export function LoginPage() {
         </section>
       </div>
     </PromoLayout>
+  )
+}
+
+function RememberedAvatar({ account }: { account: RememberedAccount }) {
+  const initials = account.fullName
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase()
+
+  return account.avatarUrl ? (
+    <img className="login-avatar" src={account.avatarUrl} alt="" />
+  ) : (
+    <span className="login-avatar login-avatar-fallback">{initials}</span>
   )
 }
