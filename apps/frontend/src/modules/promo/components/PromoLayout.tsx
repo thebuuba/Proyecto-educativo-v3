@@ -52,7 +52,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
   return (
     <div className="promo-motion min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-[72px] lg:px-8">
+        <div className="flex h-16 w-full items-center justify-between gap-4 px-4 sm:px-6 lg:h-[72px] lg:px-[4vw]">
           <Link to="/" className="flex items-center gap-2.5" aria-label="Aula Base, inicio">
             <span className="grid size-9 place-items-center rounded-xl bg-primary text-primary-foreground">
               <GraduationCap size={21} />
@@ -128,7 +128,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
       </header>
       <main ref={mainRef}>{children}</main>
       <footer className="border-t border-border bg-card">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.3fr_2fr] lg:px-8 lg:py-16">
+        <div className="grid w-full gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.3fr_2fr] lg:px-[4vw] lg:py-16">
           <div>
             <Link to="/" className="flex items-center gap-2 font-semibold">
               <GraduationCap className="text-primary" />
@@ -167,7 +167,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
             />
           </div>
         </div>
-        <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-3 border-t border-border px-4 py-6 text-xs text-muted-foreground sm:px-6 lg:px-8">
+        <div className="flex w-full flex-wrap justify-between gap-3 border-t border-border px-4 py-6 text-xs text-muted-foreground sm:px-6 lg:px-[4vw]">
           <p>© {new Date().getFullYear()} Aula Base</p>
           <p>Hecho para la comunidad educativa dominicana.</p>
         </div>

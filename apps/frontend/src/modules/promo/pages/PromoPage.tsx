@@ -1,11 +1,4 @@
-import {
-  ArrowRight,
-  BookOpen,
-  CalendarCheck,
-  Check,
-  CheckCircle2,
-  MessageCircle,
-} from 'lucide-react'
+import { ArrowRight, Check, CheckCircle2, MessageCircle } from 'lucide-react'
 import { Link, Navigate } from 'react-router-dom'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
@@ -40,9 +33,8 @@ export function PromoPage() {
   return (
     <PromoLayout>
       <section className="overflow-hidden">
-        <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-20">
-          <HeroSides />
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="grid w-full items-center gap-10 px-4 pb-16 pt-10 sm:px-6 sm:pt-16 lg:px-[4vw] lg:pb-24 lg:pt-20 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
+          <div className="mx-auto max-w-3xl text-center xl:mx-0 xl:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm">
               <span className="size-1.5 rounded-full bg-success" />
               Para docentes y centros de República Dominicana
@@ -51,12 +43,12 @@ export function PromoPage() {
               Tu trabajo académico, <span className="text-primary">organizado</span> en un solo
               lugar
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg xl:mx-0">
               Aula Base reúne cursos, asistencia, evaluaciones, calificaciones, planificación y
               bitácora para que registres la información una vez y consultes el progreso de tus
               estudiantes cuando lo necesites.
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row xl:justify-start">
               <Link
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary-hover"
                 to="/registro"
@@ -76,7 +68,7 @@ export function PromoPage() {
                 Inicia sesión
               </Link>
             </p>
-            <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+            <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground xl:justify-start">
               {[
                 'Por escuela y año escolar',
                 'Pensado para el aula dominicana',
@@ -89,11 +81,11 @@ export function PromoPage() {
               ))}
             </ul>
           </div>
-          <ProductDemo className="mx-auto mt-12 max-w-5xl lg:mt-16" />
+          <ProductDemo className="min-w-0 w-full" />
         </div>
       </section>
       <section id="modulos" className="scroll-mt-24 py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-[4vw]">
           <Heading
             eyebrow="Módulos"
             title="Lo que necesitas para el día a día del centro"
@@ -115,7 +107,7 @@ export function PromoPage() {
         </div>
       </section>
       <section className="bg-card py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-[4vw]">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <Heading
               eyebrow="Cómo empezar"
@@ -145,7 +137,7 @@ export function PromoPage() {
         </div>
       </section>
       <section className="py-16 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div className="grid w-full gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-[4vw]">
           <Audience
             id="docentes"
             eyebrow="Para docentes"
@@ -181,8 +173,8 @@ export function PromoPage() {
           </div>
         </div>
       </section>
-      <section className="px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-24">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-8 rounded-[32px] bg-primary px-6 py-12 text-primary-foreground sm:px-12 lg:py-16">
+      <section className="px-4 pb-16 pt-16 sm:px-6 lg:px-[4vw] lg:pb-24">
+        <div className="flex w-full flex-wrap items-center justify-between gap-8 rounded-[32px] bg-primary px-6 py-12 text-primary-foreground sm:px-12 lg:py-16">
           <div className="max-w-xl">
             <h2 className="text-2xl font-semibold sm:text-3xl">
               Empieza a organizar tu año escolar
@@ -262,50 +254,5 @@ function Audience({
         {cta} <ArrowRight className="ml-2 size-4" />
       </Link>
     </article>
-  )
-}
-
-function HeroSides() {
-  return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden 2xl:block">
-      <div className="absolute left-0 top-20 size-64 rounded-full bg-primary/8 blur-3xl" />
-      <div className="absolute right-0 top-44 size-64 rounded-full bg-success/8 blur-3xl" />
-      <div className="absolute left-2 top-40 w-52 -rotate-3 rounded-3xl border border-border/70 bg-card/95 p-4 shadow-lg shadow-primary/8">
-        <span className="flex items-center gap-2 text-sm font-semibold">
-          <span className="grid size-9 place-items-center rounded-xl bg-success/15 text-success">
-            <CalendarCheck size={19} />
-          </span>
-          Asistencia
-        </span>
-        <div className="mt-4 space-y-2.5">
-          {[0, 1, 2].map((item) => (
-            <span key={item} className="flex items-center gap-2">
-              <span className="size-6 rounded-full bg-muted" />
-              <span className="h-2 flex-1 rounded-full bg-muted" />
-              <Check className="size-4 text-success" />
-            </span>
-          ))}
-        </div>
-      </div>
-      <div className="absolute right-2 top-56 w-52 rotate-3 rounded-3xl border border-border/70 bg-card/95 p-4 shadow-lg shadow-primary/8">
-        <span className="flex items-center gap-2 text-sm font-semibold">
-          <span className="grid size-9 place-items-center rounded-xl bg-warning/25 text-foreground">
-            <BookOpen size={19} />
-          </span>
-          Planificación
-        </span>
-        <div className="mt-4 space-y-3">
-          <span className="block h-2 w-full rounded-full bg-muted" />
-          <span className="block h-2 w-4/5 rounded-full bg-primary/20" />
-          <span className="block h-2 w-3/5 rounded-full bg-muted" />
-        </div>
-      </div>
-      <span className="absolute left-12 top-[28rem] -rotate-3 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-muted-foreground shadow-sm">
-        Evaluaciones por período
-      </span>
-      <span className="absolute right-10 top-[31rem] rotate-3 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-muted-foreground shadow-sm">
-        Reportes a tu alcance
-      </span>
-    </div>
   )
 }

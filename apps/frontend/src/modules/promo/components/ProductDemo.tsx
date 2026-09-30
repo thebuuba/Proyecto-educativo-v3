@@ -138,7 +138,7 @@ export function ProductDemo({ className }: ProductDemoProps) {
               </p>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3">
               {/* Clase en curso */}
               <div className="relative overflow-hidden rounded-2xl bg-primary p-3.5 text-white shadow-lg">
                 <div className="absolute -bottom-8 -right-6 h-24 w-24 rounded-full bg-white/10" />
@@ -194,7 +194,7 @@ export function ProductDemo({ className }: ProductDemoProps) {
               </div>
 
               {/* Asistencia */}
-              <div className="hidden rounded-2xl bg-card p-3.5 shadow-sm xl:block">
+              <div className="hidden rounded-2xl bg-card p-3.5 shadow-sm 2xl:block">
                 <div className="flex items-center gap-2">
                   <span className="grid h-7 w-7 place-items-center rounded-full bg-success/15 text-success">
                     <CalendarCheckIcon className="h-3.5 w-3.5" />
