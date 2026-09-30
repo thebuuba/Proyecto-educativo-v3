@@ -1,4 +1,11 @@
-﻿import { ArrowRight, Check, CheckCircle2, MessageCircle } from 'lucide-react'
+import {
+  ArrowRight,
+  BookOpen,
+  CalendarCheck,
+  Check,
+  CheckCircle2,
+  MessageCircle,
+} from 'lucide-react'
 import { Link, Navigate } from 'react-router-dom'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
@@ -33,7 +40,8 @@ export function PromoPage() {
   return (
     <PromoLayout>
       <section className="overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-20">
+        <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-20">
+          <HeroSides />
           <div className="mx-auto max-w-3xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm">
               <span className="size-1.5 rounded-full bg-success" />
@@ -254,5 +262,50 @@ function Audience({
         {cta} <ArrowRight className="ml-2 size-4" />
       </Link>
     </article>
+  )
+}
+
+function HeroSides() {
+  return (
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden 2xl:block">
+      <div className="absolute left-0 top-20 size-64 rounded-full bg-primary/8 blur-3xl" />
+      <div className="absolute right-0 top-44 size-64 rounded-full bg-success/8 blur-3xl" />
+      <div className="absolute left-2 top-40 w-52 -rotate-3 rounded-3xl border border-border/70 bg-card/95 p-4 shadow-lg shadow-primary/8">
+        <span className="flex items-center gap-2 text-sm font-semibold">
+          <span className="grid size-9 place-items-center rounded-xl bg-success/15 text-success">
+            <CalendarCheck size={19} />
+          </span>
+          Asistencia
+        </span>
+        <div className="mt-4 space-y-2.5">
+          {[0, 1, 2].map((item) => (
+            <span key={item} className="flex items-center gap-2">
+              <span className="size-6 rounded-full bg-muted" />
+              <span className="h-2 flex-1 rounded-full bg-muted" />
+              <Check className="size-4 text-success" />
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="absolute right-2 top-56 w-52 rotate-3 rounded-3xl border border-border/70 bg-card/95 p-4 shadow-lg shadow-primary/8">
+        <span className="flex items-center gap-2 text-sm font-semibold">
+          <span className="grid size-9 place-items-center rounded-xl bg-warning/25 text-foreground">
+            <BookOpen size={19} />
+          </span>
+          Planificación
+        </span>
+        <div className="mt-4 space-y-3">
+          <span className="block h-2 w-full rounded-full bg-muted" />
+          <span className="block h-2 w-4/5 rounded-full bg-primary/20" />
+          <span className="block h-2 w-3/5 rounded-full bg-muted" />
+        </div>
+      </div>
+      <span className="absolute left-12 top-[28rem] -rotate-3 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-muted-foreground shadow-sm">
+        Evaluaciones por período
+      </span>
+      <span className="absolute right-10 top-[31rem] rotate-3 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-muted-foreground shadow-sm">
+        Reportes a tu alcance
+      </span>
+    </div>
   )
 }
