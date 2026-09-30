@@ -1,5 +1,6 @@
 import type { GradeRecordStatus } from '@/types/domain'
 import type { Activity, SectionSubjectOption } from '@/modules/activities/types'
+import type { EvaluationProfile } from '@aula/shared'
 
 export type { ActivityCenterWorkspace, GlobalActivity, SectionSubjectOption } from '@/modules/activities/types'
 
@@ -97,6 +98,7 @@ export type GradingWorkspace = {
   context: {
     sectionId: string
     schoolYearId: string
+    evaluationProfile?: EvaluationProfile
   } | null
   students: StudentGradeRow[]
   gradeRecords: GradeRecordRow[]

@@ -7,6 +7,7 @@
  * @template T - Tipo de los datos contenidos en la respuesta.
  */
 export type * from './instrument-recommendation'
+export * from './evaluation-profile'
 
 export interface ApiResponse<T> {
   success: boolean

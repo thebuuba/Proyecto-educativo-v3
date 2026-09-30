@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { primaryEvaluationProfile, resolveEvaluationProfile, secondaryEvaluationProfile } from '@aula/shared'
 
 import type { GradeRecordRow, GradingActivity } from '@/modules/grading/types'
 import {
@@ -11,6 +12,8 @@ import {
   effectivePeriodScore,
   finalBlockAverage,
   finalSubjectScore,
+  officialPeriodBlockScore,
+  provisionalBlockAverage,
   plainActivityText,
   scoreForActivity,
   scoreNeedsPersistence,
@@ -75,15 +78,24 @@ describe('cálculos del libro de calificaciones', () => {
       grade({ id: 'grade-2', enrollmentId: 'enrollment-2', score: 0, maxScore: 20 }),
     ])
 
-    expect(rows.map((row) => row.average)).toEqual([90, 0, null])
+    expect(rows.map((row) => row.average)).toEqual([18, 0, null])
     expect(sortStudentsForGrades(rows.map((row) => ({ ...row, studentId: row.enrollmentId, studentCode: '' }))).map((row) => row.enrollmentId)).toEqual([
       'enrollment-2', 'enrollment-1', 'enrollment-3',
     ])
   })
 
   it('promedia competencias y redondea la calificación final', () => {
-    expect(finalBlockAverage([80, 90, null, 70])).toBe(80)
+    expect(finalBlockAverage([80, 90, null, 70])).toBeNull()
+    expect(provisionalBlockAverage([80, 90, null, null])).toBe(85)
     expect(finalSubjectScore([80, 90, 85, 75])).toBe(83)
+  })
+
+  it('resuelve perfiles oficiales y aplica las reglas de redondeo', () => {
+    expect(resolveEvaluationProfile('primario').blocks.map((block) => block.id)).toEqual(['b1', 'b2', 'b3'])
+    expect(resolveEvaluationProfile('secundario').blocks).toHaveLength(4)
+    expect(officialPeriodBlockScore(90.5)).toBe(91)
+    expect(finalBlockAverage([88.75, 88.75, 88.75, 88.75])).toBe(88.75)
+    expect(finalSubjectScore([87.5, 87.5, 87.5])).toBe(88)
   })
 })
 
@@ -111,8 +123,21 @@ describe('multi-block grading', () => {
       grade({ score: 100, maxScore: 100 }),
       grade({ id: 'grade-2', evaluationActivityId: pending.id, assessmentName: activityRecordName(pending), score: 0, maxScore: 100 }),
     ])
-    expect(completed[0].average).toBe(67)
+    expect(completed[0].average).toBe(100)
     expect(completed[0].status).toBe('Calificado')
+  })
+
+  it('mantiene 20 puntos acumulados cuando sólo se corrigió 20/20 de 100 planificados', () => {
+    const pending = { ...activity, id: 'activity-2', maxScore: 80 }
+    const student = { enrollmentId: 'enrollment-1', studentId: 'student-1', studentCode: '1', firstName: 'Ana', lastName: 'Pérez' }
+    const rows = buildCompactGradeRows([student], [{ ...activity, maxScore: 20 }, pending], [grade({ score: 20, maxScore: 20 })], primaryEvaluationProfile)
+    expect(rows[0]).toMatchObject({ average: 20, status: 'En proceso' })
+  })
+
+  it('limita pesos y cálculos a los bloques del perfil activo', () => {
+    const shared = { ...activity, competencyBlockWeights: { b1: 1, b2: 1, b3: 1, b4: 1 } }
+    expect(activityAppliesToBlock(shared, 'b4', primaryEvaluationProfile)).toBe(false)
+    expect(activityAppliesToBlock(shared, 'b4', secondaryEvaluationProfile)).toBe(true)
   })
 })
 

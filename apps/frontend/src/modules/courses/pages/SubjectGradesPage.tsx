@@ -32,6 +32,7 @@ import {
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 import { calendarDate } from '../data/calendarDate'
+import type { EvaluationProfile } from '@aula/shared'
 
 type Workspace = {
   students: StudentGradeRow[]
@@ -43,6 +44,7 @@ type Workspace = {
   sectionName: string
   subjectName: string
   schoolYearName: string
+  evaluationProfile?: EvaluationProfile
 }
 
 const emptyWorkspace: Workspace = {
@@ -89,6 +91,7 @@ export function SubjectGradesPage() {
           sectionName: selected?.sectionName ?? '',
           subjectName: selected?.subjectName ?? 'Asignatura',
           schoolYearName: selected?.schoolYearName ?? '',
+          evaluationProfile: selected?.evaluationProfile,
         })
       })
       .catch((cause) => { if (active) setError(cause instanceof Error ? cause.message : 'No se pudieron cargar las calificaciones.') })
@@ -110,7 +113,8 @@ export function SubjectGradesPage() {
     } finally { setLoading(false) }
   }
 
-  const rows = useMemo(() => buildCompactGradeRows(workspace.students, workspace.activities, workspace.records), [workspace.activities, workspace.records, workspace.students])
+  const blocks = workspace.evaluationProfile?.blocks ?? competencyBlocks
+  const rows = useMemo(() => buildCompactGradeRows(workspace.students, workspace.activities, workspace.records, workspace.evaluationProfile), [workspace.activities, workspace.evaluationProfile, workspace.records, workspace.students])
   const evaluatedActivities = workspace.activities.filter((activity) => workspace.records.some((record) => Boolean(scoreForActivity([record], record.enrollmentId, activity.id)))).length
   const courseAverageRows = rows.filter((row) => row.average !== null)
   const courseAverage = courseAverageRows.length ? Math.round(courseAverageRows.reduce((sum, row) => sum + (row.average ?? 0), 0) / courseAverageRows.length) : null
@@ -177,10 +181,11 @@ export function SubjectGradesPage() {
       </div>
       {error ? <div className="px-5 pt-4"><ErrorState message={error} /></div> : null}
       <div className="grid gap-3 p-5 sm:grid-cols-2 xl:grid-cols-4"><Metric label="Actividades evaluadas" value={`${evaluatedActivities}`} helper={`${workspace.activities.length} creadas`} /><Metric label="Actividades creadas" value={`${workspace.activities.length}`} helper={periodName} /><Metric label="Promedio del curso" value={courseAverage === null ? '—' : `${courseAverage}`} helper="Escala de 100" /><Metric label="Sin calificar" value={`${withoutGrades}`} helper="Estudiantes" /></div>
-      {!rows.length ? <div className="p-5"><EmptyState compact title="Sin estudiantes" description="Aún no hay estudiantes disponibles para este período." /></div> : <div className="overflow-x-auto border-t border-border"><table className="min-w-[58rem] w-full text-sm"><thead className="bg-muted/30 text-[10px] uppercase tracking-[0.12em] text-muted-foreground"><tr><th className="px-5 py-3 text-left">#</th><th className="px-5 py-3 text-left">Estudiante</th>{competencyBlocks.map((block) => <th key={block.id} className="px-4 py-3 text-center">{block.shortName}</th>)}<th className="px-4 py-3 text-center">Promedio</th><th className="px-5 py-3 text-right">Estado</th></tr></thead><tbody className="divide-y divide-border">{rows.map((row) => <tr key={row.enrollmentId} tabIndex={0} onClick={() => { setSelectedStudentId(row.enrollmentId); setSelectedBlockId('b1'); setSelectedActivityId(null) }} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedStudentId(row.enrollmentId); setSelectedBlockId('b1'); setSelectedActivityId(null) } }} className="cursor-pointer transition hover:bg-primary/[0.03] focus-visible:bg-primary/[0.05]"><td className="px-5 py-4 font-bold text-muted-foreground">{row.listNumber}</td><td className="px-5 py-4"><strong>{row.lastName}, {row.firstName}</strong></td>{competencyBlocks.map((block) => <td key={block.id} className="px-4 py-4 text-center font-extrabold">{row.blockAverages[block.id] ?? '—'}</td>)}<td className="px-4 py-4 text-center text-base font-black text-primary">{row.average ?? '—'}</td><td className="px-5 py-4 text-right"><GradeStateBadge state={row.status} /></td></tr>)}</tbody></table></div>}
+      {!rows.length ? <div className="p-5"><EmptyState compact title="Sin estudiantes" description="Aún no hay estudiantes disponibles para este período." /></div> : <div className="overflow-x-auto border-t border-border"><table className="min-w-[58rem] w-full text-sm"><thead className="bg-muted/30 text-[10px] uppercase tracking-[0.12em] text-muted-foreground"><tr><th className="px-5 py-3 text-left">#</th><th className="px-5 py-3 text-left">Estudiante</th>{blocks.map((block) => <th key={block.id} className="px-4 py-3 text-center">{block.shortName}</th>)}<th className="px-4 py-3 text-center">Promedio</th><th className="px-5 py-3 text-right">Estado</th></tr></thead><tbody className="divide-y divide-border">{rows.map((row) => <tr key={row.enrollmentId} tabIndex={0} onClick={() => { setSelectedStudentId(row.enrollmentId); setSelectedBlockId('b1'); setSelectedActivityId(null) }} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedStudentId(row.enrollmentId); setSelectedBlockId('b1'); setSelectedActivityId(null) } }} className="cursor-pointer transition hover:bg-primary/[0.03] focus-visible:bg-primary/[0.05]"><td className="px-5 py-4 font-bold text-muted-foreground">{row.listNumber}</td><td className="px-5 py-4"><strong>{row.lastName}, {row.firstName}</strong></td>{blocks.map((block) => <td key={block.id} className="px-4 py-4 text-center font-extrabold">{row.blockAverages[block.id] ?? '—'}</td>)}<td className="px-4 py-4 text-center text-base font-black text-primary">{row.average ?? '—'}</td><td className="px-5 py-4 text-right"><GradeStateBadge state={row.status} /></td></tr>)}</tbody></table></div>}
     </section>
 
     {selectedStudent && selectedRow ? <StudentGradesDrawer
+      blocks={blocks}
       student={selectedStudent}
       row={selectedRow}
       students={workspace.students}
@@ -202,11 +207,12 @@ export function SubjectGradesPage() {
   </div>
 }
 
-function StudentGradesDrawer({ student, row, students, activities, records, periodName, courseLabel, subjectName, blockId, activity, record, onBlockChange, onActivityChange, onStudentChange, onInstrument, onClose }: {
+function StudentGradesDrawer({ blocks, student, row, students, activities, records, periodName, courseLabel, subjectName, blockId, activity, record, onBlockChange, onActivityChange, onStudentChange, onInstrument, onClose }: {
+  blocks: EvaluationProfile['blocks']
   student: StudentGradeRow; row: CompactGradeRow; students: StudentGradeRow[]; activities: GradingActivity[]; records: GradeRecordRow[]; periodName: string; courseLabel: string; subjectName: string; blockId: string; activity: GradingActivity | null; record: GradeRecordRow | null; onBlockChange: (id: string) => void; onActivityChange: (id: string | null) => void; onStudentChange: (id: string) => void; onInstrument: (activity: GradingActivity) => void; onClose: () => void
 }) {
-  const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
-  const accent = blockAccents[competencyBlocks.findIndex((item) => item.id === block.id)] ?? blockAccents[0]
+  const block = blocks.find((item) => item.id === blockId) ?? blocks[0]
+  const accent = blockAccents[blocks.findIndex((item) => item.id === block.id)] ?? blockAccents[0]
   const blockActivities = activities.filter((item) => activityAppliesToBlock(item, block.id))
 
   return <Modal title="Detalle de calificaciones" onClose={onClose} hideHeader overlayClassName="items-stretch justify-end p-0 bg-slate-950/35" className="h-full max-h-none max-w-[54rem] rounded-none border-y-0 border-r-0" contentClassName="p-0">
@@ -215,9 +221,9 @@ function StudentGradesDrawer({ student, row, students, activities, records, peri
       <header className="flex shrink-0 items-start justify-between gap-4 border-b border-border bg-card px-5 py-4"><div><p className="text-[10px] font-black uppercase tracking-[0.16em] text-primary">Seguimiento del estudiante</p><h2 className="mt-1 text-lg font-black">Detalle de calificaciones</h2><p className="mt-1 text-xs text-muted-foreground">Consulta cómo se construyen sus notas por bloque y actividad.</p></div><Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button></header>
       <div className="space-y-4 p-5">
         <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm"><div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center"><span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-primary/10 text-lg font-black text-primary">{student.firstName[0]}{student.lastName[0]}</span><div className="min-w-0 flex-1"><h3 className="text-base font-black">{student.lastName}, {student.firstName}</h3><p className="mt-1 text-xs text-muted-foreground">N.º de lista: {String(student.listNumber ?? row.listNumber).padStart(2, '0')}{student.studentCode ? ` · Matrícula: ${student.studentCode}` : ''}</p><p className="mt-1 text-xs text-muted-foreground">{courseLabel} · {subjectName}</p><p className="mt-1 text-xs font-bold text-primary">{periodName}</p></div><label className="grid min-w-60 gap-1 text-[9px] font-black uppercase tracking-wide text-muted-foreground">Cambiar estudiante<Select value={student.enrollmentId} onChange={(event) => onStudentChange(event.target.value)}>{students.map((item) => <option key={item.enrollmentId} value={item.enrollmentId}>{item.lastName}, {item.firstName}</option>)}</Select></label></div></section>
-        <section className="rounded-3xl border border-border bg-card p-4 shadow-sm"><div className="grid grid-cols-2 gap-2 sm:grid-cols-5">{competencyBlocks.map((item) => <GradeTile key={item.id} label={item.shortName} value={row.blockAverages[item.id]} />)}<GradeTile label="Promedio" value={row.average} emphasized /></div></section>
+        <section className="rounded-3xl border border-border bg-card p-4 shadow-sm"><div className={cn('grid grid-cols-2 gap-2', blocks.length === 3 ? 'sm:grid-cols-4' : 'sm:grid-cols-5')}>{blocks.map((item) => <GradeTile key={item.id} label={item.shortName} value={row.blockAverages[item.id]} />)}<GradeTile label="Promedio" value={row.average} emphasized /></div></section>
         {activity ? <StudentActivityDetail activity={activity} record={record} accent={accent} onBack={() => onActivityChange(null)} onInstrument={() => onInstrument(activity)} /> : <>
-          <nav className="grid grid-cols-2 gap-2 rounded-2xl border border-border bg-card p-2 shadow-sm sm:grid-cols-4" aria-label="Bloques">{competencyBlocks.map((item, index) => { const selected = item.id === block.id; const visual = blockAccents[index]; return <button key={item.id} type="button" onClick={() => onBlockChange(item.id)} className={cn('h-11 rounded-xl border px-3 text-xs font-extrabold transition', selected ? cn(visual.soft, visual.border, visual.text, 'shadow-sm') : 'border-transparent text-muted-foreground hover:bg-muted')}>{item.shortName}</button> })}</nav>
+          <nav className={cn('grid grid-cols-2 gap-2 rounded-2xl border border-border bg-card p-2 shadow-sm', blocks.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-4')} aria-label="Bloques">{blocks.map((item, index) => { const selected = item.id === block.id; const visual = blockAccents[index]; return <button key={item.id} type="button" onClick={() => onBlockChange(item.id)} className={cn('h-11 rounded-xl border px-3 text-xs font-extrabold transition', selected ? cn(visual.soft, visual.border, visual.text, 'shadow-sm') : 'border-transparent text-muted-foreground hover:bg-muted')}>{item.shortName}</button> })}</nav>
           <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm"><div className={cn('border-b p-5', accent.soft, accent.border)}><p className={cn('text-[10px] font-black uppercase tracking-[0.14em]', accent.text)}>{block.shortName}</p><h3 className="mt-1 text-base font-black">{block.name}</h3><p className="mt-2 text-sm font-semibold text-muted-foreground">Calificación del bloque: <strong className={accent.text}>{row.blockAverages[block.id] === null ? 'Sin evaluar' : `${row.blockAverages[block.id]} / 100`}</strong></p></div><div className="p-4"><p className="mb-3 text-[10px] font-black uppercase tracking-[0.12em] text-muted-foreground">Actividades del bloque</p>{blockActivities.length ? <div className="space-y-2">{blockActivities.map((item) => { const itemRecord = scoreForActivity(records, student.enrollmentId, item.id); return <button key={item.id} type="button" onClick={() => onActivityChange(item.id)} className="group flex min-h-16 w-full items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 text-left transition-[border-color,box-shadow] duration-200 hover:border-primary/25 hover:shadow-md"><span className={cn('grid size-10 shrink-0 place-items-center rounded-xl', accent.soft, accent.text)}><ClipboardList className="size-4" /></span><span className="min-w-0 flex-1"><strong className="block truncate text-sm">{item.name}</strong><span className="mt-1 block text-xs text-muted-foreground">{itemRecord ? `${itemRecord.score} / ${itemRecord.maxScore} · Evaluada` : `— / ${item.maxScore} · Pendiente de evaluación`}</span></span><ChevronRight className="size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-primary" /></button> })}</div> : <p className="rounded-2xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">Aún no hay actividades registradas en este bloque.</p>}</div></section>
         </>}
       </div>

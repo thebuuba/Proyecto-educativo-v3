@@ -6,6 +6,7 @@
  */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { Prisma, prisma } from '@aula/database'
+import { isBlockInEvaluationProfile, resolveEvaluationProfile, type EvaluationProfile } from '@aula/shared'
 import { academicPeriodDate, defaultAcademicPeriods } from '../../common/academic-period-defaults'
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SaveGradeDto } from './dto/save-grade.dto'
@@ -17,7 +18,7 @@ export function __test__clearGradingCache() {
   optionCache.clear()
 }
 
-function mapEvaluationActivity(activity: any) {
+function mapEvaluationActivity(activity: any, profile?: EvaluationProfile) {
   return {
     id: activity.id,
     name: activity.name,
@@ -49,16 +50,20 @@ function mapEvaluationActivity(activity: any) {
     planningId: activity.planningEntryId ?? undefined,
     planningMoment: activity.planningMoment ?? '',
     source: activity.source,
+    ...(profile ? {
+      profileCompatibility: isBlockInEvaluationProfile(profile, activity.competencyBlockId)
+        && Object.keys(activity.competencyBlockWeights ?? {}).every((blockId) => isBlockInEvaluationProfile(profile, blockId))
+        ? 'compatible'
+        : 'legacy-review-required',
+    } : {}),
   }
 }
 
-const competencyBlockIds = ['b1', 'b2', 'b3', 'b4'] as const
-
-function validateCompetencyBlockWeights(primaryBlockId: string, input?: Record<string, number>) {
+function validateCompetencyBlockWeights(profile: EvaluationProfile, primaryBlockId: string, input?: Record<string, number>) {
   const weights = input ?? { [primaryBlockId]: 1 }
   const entries = Object.entries(weights)
   const validEntries = entries.length > 0
-    && entries.every(([blockId, weight]) => competencyBlockIds.includes(blockId as typeof competencyBlockIds[number])
+    && entries.every(([blockId, weight]) => isBlockInEvaluationProfile(profile, blockId)
       && typeof weight === 'number' && Number.isFinite(weight) && weight > 0 && weight <= 1)
   if (!validEntries || !(primaryBlockId in weights)) {
     throw new BadRequestException('La distribucion por competencias no es valida')
@@ -262,7 +267,7 @@ export class GradingService {
             name: true,
             sequence: true,
             level: true,
-            academicLevel: { select: { name: true, sequence: true } },
+            academicLevel: { select: { id: true, code: true, name: true, sequence: true } },
           },
         },
         schoolYear: { select: { name: true } },
@@ -278,6 +283,9 @@ export class GradingService {
         gradeSequence: item.grade.sequence,
         academicLevelName: item.grade.academicLevel?.name ?? item.grade.level ?? '',
         academicLevelSequence: item.grade.academicLevel?.sequence ?? null,
+        academicLevelId: item.grade.academicLevel?.id ?? null,
+        academicLevelCode: item.grade.academicLevel?.code ?? null,
+        evaluationProfile: resolveEvaluationProfile(item.grade.academicLevel?.code),
         sectionId: item.sectionId,
         schoolYearId: item.schoolYearId,
         schoolYearName: item.schoolYear.name,
@@ -355,7 +363,7 @@ export class GradingService {
     const [sectionSubject, academicPeriod] = await Promise.all([
       prisma.sectionSubject.findFirst({
         where: { id: sectionSubjectId, schoolId, status: 'ACTIVE' },
-        select: { id: true, sectionId: true, schoolYearId: true },
+        select: { id: true, sectionId: true, schoolYearId: true, grade: { select: { academicLevel: { select: { code: true } } } } },
       }),
       prisma.academicPeriod.findFirst({
         where: { id: academicPeriodId, schoolId, status: 'ACTIVE' },
@@ -379,7 +387,7 @@ export class GradingService {
 
   private async getWorkspaceData(
     schoolId: string,
-    sectionSubject: { id: string; sectionId: string; schoolYearId: string },
+    sectionSubject: { id: string; sectionId: string; schoolYearId: string; evaluationProfile?: EvaluationProfile; grade?: { academicLevel?: { code?: string | null } | null } },
     academicPeriodId: string,
   ) {
     const [enrollments, grades, activities] = await Promise.all([
@@ -416,14 +424,16 @@ export class GradingService {
 
     const students = sortStudentsByListNumber(enrollments.map(mapStudentEnrollment))
 
+    const evaluationProfile = sectionSubject.evaluationProfile ?? resolveEvaluationProfile(sectionSubject.grade?.academicLevel?.code)
     return {
       context: {
         sectionId: sectionSubject.sectionId,
         schoolYearId: sectionSubject.schoolYearId,
+        evaluationProfile,
       },
       students,
       gradeRecords: grades.map(mapGradeRecord),
-      activities: activities.map(mapEvaluationActivity),
+      activities: activities.map((activity) => mapEvaluationActivity(activity, evaluationProfile)),
     }
   }
 
@@ -466,7 +476,7 @@ export class GradingService {
         .map(mapGradeRecord),
       activities: activities
         .filter((activity) => activity.academicPeriodId === period.id)
-        .map(mapEvaluationActivity),
+        .map((activity) => mapEvaluationActivity(activity)),
     }))
   }
 
@@ -691,7 +701,7 @@ export class GradingService {
       orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
     })
 
-    return activities.map(mapEvaluationActivity)
+    return activities.map((activity) => mapEvaluationActivity(activity))
   }
 
   async getActivityCenter(schoolId: string, appUserId?: string, roles: string[] = []) {
@@ -716,7 +726,7 @@ export class GradingService {
               id: true,
               sectionId: true,
               schoolYearId: true,
-              grade: { select: { name: true } },
+              grade: { select: { name: true, academicLevel: { select: { code: true } } } },
               section: { select: { name: true } },
               subject: { select: { name: true } },
             },
@@ -741,7 +751,7 @@ export class GradingService {
       sectionSubjects,
       academicPeriods,
       activities: activities.map((activity) => ({
-        ...mapEvaluationActivity(activity),
+        ...mapEvaluationActivity(activity, resolveEvaluationProfile(activity.sectionSubject.grade.academicLevel?.code)),
         sectionSubjectId: activity.sectionSubjectId,
         academicPeriodId: activity.academicPeriodId,
         courseId: activity.sectionSubject.sectionId,
@@ -757,13 +767,21 @@ export class GradingService {
   async saveActivity(schoolId: string, userId: string, dto: SaveActivityDto, roles: string[] = []) {
     if (!dto.name.trim()) throw new BadRequestException('El nombre de la actividad es obligatorio')
     if (!Number.isFinite(dto.maxScore) || dto.maxScore <= 0) throw new BadRequestException('El valor de la actividad debe ser mayor que cero')
-    if (!competencyBlockIds.includes(dto.competencyBlockId as typeof competencyBlockIds[number])) throw new BadRequestException('El bloque de competencias no es valido')
-    const competencyBlockWeights = validateCompetencyBlockWeights(dto.competencyBlockId, dto.competencyBlockWeights)
+    // Validate the payload shape before doing I/O; the resolved level narrows it below.
+    validateCompetencyBlockWeights(resolveEvaluationProfile('secundario'), dto.competencyBlockId, dto.competencyBlockWeights)
     const [sectionSubject, academicPeriod] = await Promise.all([
-      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } }),
+      prisma.sectionSubject.findFirst({
+        where: { id: dto.sectionSubjectId, schoolId },
+        include: { grade: { include: { academicLevel: true } } },
+      }),
       prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
     ])
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
+    const evaluationProfile = resolveEvaluationProfile(sectionSubject.grade?.academicLevel?.code)
+    if (!isBlockInEvaluationProfile(evaluationProfile, dto.competencyBlockId)) {
+      throw new BadRequestException('El bloque de competencias no es valido para el nivel academico')
+    }
+    const competencyBlockWeights = validateCompetencyBlockWeights(evaluationProfile, dto.competencyBlockId, dto.competencyBlockWeights)
     if (dto.instrumentSnapshot && roles.includes('teacher') && !roles.some(role => ['admin', 'director', 'coordinator'].includes(role))) {
       const assigned = await prisma.teacher.findFirst({ where: { id: sectionSubject.teacherId ?? '', userId, schoolId, status: 'ACTIVE' } })
       if (!assigned) throw new NotFoundException('Asignatura no disponible para este docente.')

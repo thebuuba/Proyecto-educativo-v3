@@ -155,6 +155,7 @@ export function GradingPage() {
       ) : (
         <div className="grading-workspace">
           <GradingBook
+            evaluationProfile={selectedSs?.evaluationProfile}
             sectionSubjectId={selectedSsId}
             students={students}
             teams={teams}

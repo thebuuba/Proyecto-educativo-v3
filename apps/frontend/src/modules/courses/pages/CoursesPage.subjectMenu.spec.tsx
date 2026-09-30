@@ -79,9 +79,9 @@ describe('menú administrativo de una asignatura activa', () => {
       evaluationActivityId: 'activity-1',
     }
     expect(buildCompactGradeRows([student], [activity], [record])[0]).toMatchObject({
-      average: 80,
+      average: 16,
       status: 'Calificado',
-      blockAverages: { b1: 80 },
+      blockAverages: { b1: 16 },
     })
   })
 

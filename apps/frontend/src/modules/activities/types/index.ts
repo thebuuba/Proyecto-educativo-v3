@@ -1,4 +1,4 @@
-import type { InstrumentRecommendation } from '@aula/shared'
+import type { EvaluationProfile, InstrumentRecommendation } from '@aula/shared'
 
 export type SectionSubjectOption = {
   id: string
@@ -8,6 +8,9 @@ export type SectionSubjectOption = {
   gradeSequence?: number | null
   academicLevelName?: string
   academicLevelSequence?: number | null
+  academicLevelId?: string | null
+  academicLevelCode?: string | null
+  evaluationProfile?: EvaluationProfile
   sectionId?: string
   schoolYearId?: string
   schoolYearName?: string
@@ -49,6 +52,7 @@ export type Activity = {
   planningId?: string
   planningMoment?: 'inicio' | 'desarrollo' | 'cierre' | ''
   source?: 'grading' | 'planning'
+  profileCompatibility?: 'compatible' | 'legacy-review-required'
 }
 
 export type GlobalActivity = Activity & {

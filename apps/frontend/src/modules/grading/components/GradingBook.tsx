@@ -137,7 +137,7 @@ import {
   activityGradeCellKey,
   buildCompactGradeRows,
   blockTotal,
-  competencyBlocks,
+  competencyBlocks as secondaryCompetencyBlocks,
   competencyPeriods,
   defaultGradeCalculationConfig,
   effectivePeriodScore,
@@ -153,10 +153,11 @@ import {
   type CompetencyPeriodId,
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
-import type { InstrumentRecommendation } from '@aula/shared'
+import { secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { alignRecommendationWithFields, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 
 type GradingBookProps = {
+  evaluationProfile?: EvaluationProfile
   sectionSubjectId?: string
   students: StudentGradeRow[]
   teams?: CourseTeam[]
@@ -189,6 +190,11 @@ type GradingBookProps = {
   onViewCreatedActivity?: (activity: GradingActivity) => void
   onCreateActivityRequested?: (blockId?: CompetencyBlockId) => void
 }
+
+// The workspace owns one active profile. Keeping the alias here lets the existing
+// decomposed views consume one catalogue while they are progressively extracted.
+let competencyBlocks: EvaluationProfile['blocks'] = secondaryCompetencyBlocks
+let activeEvaluationProfile: EvaluationProfile = secondaryEvaluationProfile
 
 type MainView = 'blocks' | 'period' | 'annual' | 'final'
 type ActivityDetailTab = 'evaluation' | 'results' | 'details'
@@ -363,6 +369,7 @@ const emptyActivityDraft: ActivityDraft = {
 }
 
 export function GradingBook({
+  evaluationProfile,
   sectionSubjectId,
   students,
   teams = [],
@@ -393,6 +400,8 @@ export function GradingBook({
   onViewCreatedActivity,
   onCreateActivityRequested,
 }: GradingBookProps) {
+  activeEvaluationProfile = evaluationProfile ?? secondaryEvaluationProfile
+  competencyBlocks = activeEvaluationProfile.blocks
   const initialLaunchKey = initialActivityAction === 'create'
     ? `create:${initialActivityBlockId ?? 'select-block'}`
     : null
@@ -2785,7 +2794,7 @@ function PeriodSummaryView({
   students: StudentGradeRow[]
 }) {
   const activities = [...new Map(blockSummaries.flatMap((summary) => summary.activities).map((activity) => [activity.id, activity])).values()]
-  const rows = buildCompactGradeRows(students, activities, records)
+  const rows = buildCompactGradeRows(students, activities, records, activeEvaluationProfile)
   const evaluatedCells = students.reduce((total, student) => total + activities.filter((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).length, 0)
   const coverage = students.length && activities.length ? Math.round(evaluatedCells / (students.length * activities.length) * 100) : 0
   const groupAverage = averageNumbers(rows.map((row) => row.average).filter((value): value is number => value !== null))

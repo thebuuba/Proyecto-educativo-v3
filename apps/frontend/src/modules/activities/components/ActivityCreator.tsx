@@ -89,6 +89,7 @@ export function ActivityCreator() {
   return (
     <section className="activities-creator-workspace w-full">
       <GradingBook
+        evaluationProfile={sectionSubject?.evaluationProfile}
         sectionSubjectId={sectionSubjectId}
         students={[]}
         teams={teams}

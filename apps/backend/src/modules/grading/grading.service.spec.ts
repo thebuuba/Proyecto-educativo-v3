@@ -76,6 +76,18 @@ describe('GradingService activity teams', () => {
     expect(mocks.prisma.evaluationActivity.create).not.toHaveBeenCalled()
   })
 
+  it('rechaza b4 y sus ponderaciones para una asignatura de Primaria', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({
+      id: 'ss-1', schoolYearId: 'year-1', grade: { academicLevel: { code: 'primario' } },
+    })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1', schoolYearId: 'year-1' })
+    await expect(new GradingService().saveActivity('school-1', 'user-1', {
+      sectionSubjectId: 'ss-1', academicPeriodId: 'period-1', competencyBlockId: 'b4',
+      competencyBlockWeights: { b4: 1 }, name: 'Actividad antigua', maxScore: 20,
+    })).rejects.toThrow('nivel academico')
+    expect(mocks.prisma.evaluationActivity.create).not.toHaveBeenCalled()
+  })
+
   it('guarda el instrumento preparado dentro de una sola transacción y revierte si falla el snapshot', async () => {
     mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1', schoolYearId: 'year-1', gradeId: 'grade-1', subjectId: 'subject-1', teacherId: null })
     mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1', schoolYearId: 'year-1' })

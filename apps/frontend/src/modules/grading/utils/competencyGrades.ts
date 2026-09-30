@@ -5,6 +5,11 @@ import type {
   RecoveryScores,
   StudentGradeRow,
 } from '@/modules/grading/types'
+import {
+  secondaryEvaluationProfile,
+  type CompetencyBlockId,
+  type EvaluationProfile,
+} from '@aula/shared'
 
 export const passingScore = 70
 
@@ -28,27 +33,11 @@ export const competencyPeriods = [
   { id: 'final', name: 'Resumen final', shortName: 'Resumen final', recoveryLabel: '' },
 ] as const
 
-export const competencyBlocks = [
-  { id: 'b1', shortName: 'Bloque 1', name: 'Competencia Comunicativa' },
-  {
-    id: 'b2',
-    shortName: 'Bloque 2',
-    name: 'Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas',
-  },
-  {
-    id: 'b3',
-    shortName: 'Bloque 3',
-    name: 'Ética y Ciudadana y Desarrollo Personal y Espiritual',
-  },
-  {
-    id: 'b4',
-    shortName: 'Bloque 4',
-    name: 'Científica y Tecnológica y Ambiental y de la Salud',
-  },
-] as const
+/** @deprecated Use the blocks from the selected evaluation profile. */
+export const competencyBlocks = secondaryEvaluationProfile.blocks
 
 export type CompetencyPeriodId = (typeof competencyPeriods)[number]['id']
-export type CompetencyBlockId = (typeof competencyBlocks)[number]['id']
+export type { CompetencyBlockId, EvaluationProfile }
 
 export type CompactGradeRow = {
   enrollmentId: string
@@ -82,24 +71,24 @@ export function getRecoveryInfoFromRecordName(value: string) {
   return { blockId: parts[2], periodId: parts[3] }
 }
 
-export function activityCompetencyWeights(activity: GradingActivity) {
+export function activityCompetencyWeights(activity: GradingActivity, profile: EvaluationProfile = secondaryEvaluationProfile) {
   const entries = Object.entries(activity.competencyBlockWeights ?? {})
-    .filter(([blockId, weight]) => competencyBlocks.some((block) => block.id === blockId) && Number.isFinite(weight) && weight > 0)
+    .filter(([blockId, weight]) => profile.blocks.some((block) => block.id === blockId) && Number.isFinite(weight) && weight > 0)
   return entries.length > 0 ? Object.fromEntries(entries) : { [activity.competencyBlockId]: 1 }
 }
 
-export function activityWeightForBlock(activity: GradingActivity, blockId: string) {
-  return activityCompetencyWeights(activity)[blockId] ?? 0
+export function activityWeightForBlock(activity: GradingActivity, blockId: string, profile: EvaluationProfile = secondaryEvaluationProfile) {
+  return activityCompetencyWeights(activity, profile)[blockId] ?? 0
 }
 
-export function activityAppliesToBlock(activity: GradingActivity, blockId: string) {
-  return activityWeightForBlock(activity, blockId) > 0
+export function activityAppliesToBlock(activity: GradingActivity, blockId: string, profile: EvaluationProfile = secondaryEvaluationProfile) {
+  return activityWeightForBlock(activity, blockId, profile) > 0
 }
 
-export function sumActivityMaxScore(activities: GradingActivity[], blockId: string) {
+export function sumActivityMaxScore(activities: GradingActivity[], blockId: string, profile: EvaluationProfile = secondaryEvaluationProfile) {
   return activities
-    .filter((activity) => activityAppliesToBlock(activity, blockId))
-    .reduce((total, activity) => total + activity.maxScore * activityWeightForBlock(activity, blockId), 0)
+    .filter((activity) => activityAppliesToBlock(activity, blockId, profile))
+    .reduce((total, activity) => total + activity.maxScore * activityWeightForBlock(activity, blockId, profile), 0)
 }
 
 export function scoreForActivity(records: GradeRecordRow[], enrollmentId: string, activityId: string) {
@@ -113,29 +102,29 @@ export function buildCompactGradeRows(
   students: StudentGradeRow[],
   activities: GradingActivity[],
   records: GradeRecordRow[],
+  profile: EvaluationProfile = secondaryEvaluationProfile,
 ): CompactGradeRow[] {
   const uniqueActivities = [...new Map(activities.map((activity) => [activity.id, activity])).values()]
   return students.map((student, index) => {
     const blockAverages: Record<string, number | null> = {}
-    let earned = 0
-    let possible = 0
+    let blockTotalSum = 0
+    let scoredBlockCount = 0
     const scoredActivities = new Set<string>()
 
-    competencyBlocks.forEach((block) => {
-      const blockActivities = uniqueActivities.filter((activity) => activityAppliesToBlock(activity, block.id))
+    profile.blocks.forEach((block) => {
+      const blockActivities = uniqueActivities.filter((activity) => activityAppliesToBlock(activity, block.id, profile))
       let blockEarned = 0
-      let blockPossible = 0
+      let hasScore = false
       blockActivities.forEach((activity) => {
         const record = scoreForActivity(records, student.enrollmentId, activity.id)
         if (!record) return
-        const weight = activityWeightForBlock(activity, block.id)
+        const weight = activityWeightForBlock(activity, block.id, profile)
         blockEarned += record.score * weight
-        blockPossible += (record.maxScore || activity.maxScore) * weight
-        earned += record.score * weight
-        possible += (record.maxScore || activity.maxScore) * weight
+        hasScore = true
         scoredActivities.add(activity.id)
       })
-      blockAverages[block.id] = blockPossible > 0 ? Math.round((blockEarned / blockPossible) * 100) : null
+      blockAverages[block.id] = hasScore ? Math.round(blockEarned) : null
+      if (hasScore) { blockTotalSum += blockEarned; scoredBlockCount += 1 }
     })
 
     return {
@@ -144,7 +133,7 @@ export function buildCompactGradeRows(
       firstName: student.firstName,
       lastName: student.lastName,
       blockAverages,
-      average: possible > 0 ? Math.round((earned / possible) * 100) : null,
+      average: scoredBlockCount > 0 ? Math.round(blockTotalSum / scoredBlockCount) : null,
       status: scoredActivities.size === 0 ? 'Sin evaluar' : scoredActivities.size < uniqueActivities.length ? 'En proceso' : 'Calificado',
     }
   })
@@ -170,18 +159,20 @@ export function blockTotal(input: {
   enrollmentId: string
   blockId: string
   config?: GradeCalculationConfig
+  profile?: EvaluationProfile
 }) {
+  const profile = input.profile ?? secondaryEvaluationProfile
   const activities = input.activities
-    .filter((activity) => activityAppliesToBlock(activity, input.blockId))
+    .filter((activity) => activityAppliesToBlock(activity, input.blockId, profile))
   if (activities.length === 0) return 0
   const total = activities.reduce((sum, activity) => {
       const record = scoreForActivity(input.records, input.enrollmentId, activity.id)
-      return sum + (record?.score ?? 0) * activityWeightForBlock(activity, input.blockId)
+      return sum + (record?.score ?? 0) * activityWeightForBlock(activity, input.blockId, profile)
     }, 0)
   const config = input.config ?? defaultGradeCalculationConfig
   if (config.blockMethod === 'average') return total / activities.length
   if (config.blockMethod === 'weighted') {
-    const max = sumActivityMaxScore(activities, input.blockId)
+    const max = sumActivityMaxScore(activities, input.blockId, profile)
     return max > 0 ? (total / max) * config.expectedBlockTotal : 0
   }
   return total
@@ -202,11 +193,16 @@ export function effectivePeriodScore(
   return recovery
 }
 
-export function finalBlockAverage(scores: Array<number | null | undefined>, config = defaultGradeCalculationConfig) {
+export function provisionalBlockAverage(scores: Array<number | null | undefined>, config = defaultGradeCalculationConfig) {
   const values = scores.filter((value): value is number => typeof value === 'number')
   if (values.length === 0) return null
   const average = values.reduce((total, value) => total + value, 0) / values.length
-  return Number(average.toFixed(config.pcDecimals))
+  return Number(average.toFixed(config.annualDecimals))
+}
+
+export function finalBlockAverage(scores: Array<number | null | undefined>, config = defaultGradeCalculationConfig, requiredPeriodCount = 4) {
+  if (scores.length < requiredPeriodCount || scores.slice(0, requiredPeriodCount).some((value) => typeof value !== 'number')) return null
+  return provisionalBlockAverage(scores.slice(0, requiredPeriodCount), config)
 }
 
 export function applyFinalRounding(value: number, config = defaultGradeCalculationConfig) {
@@ -217,10 +213,12 @@ export function applyFinalRounding(value: number, config = defaultGradeCalculati
 }
 
 export function finalSubjectScore(blockAverages: Array<number | null>, config = defaultGradeCalculationConfig) {
-  const values = blockAverages.filter((value): value is number => value !== null)
-  if (values.length === 0) return null
+  if (blockAverages.length === 0 || blockAverages.some((value) => value === null)) return null
+  const values = blockAverages as number[]
   return applyFinalRounding(values.reduce((total, value) => total + value, 0) / values.length, config)
 }
+
+export function officialPeriodBlockScore(value: number) { return Math.round(value) }
 
 export function formatGrade(value: number | null | undefined) {
   if (value === null || value === undefined) return '—'

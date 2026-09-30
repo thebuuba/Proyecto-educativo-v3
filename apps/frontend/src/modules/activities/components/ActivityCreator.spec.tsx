@@ -5,7 +5,7 @@ import { ActivityCreator } from './ActivityCreator'
 
 vi.mock('@/modules/activities/services/activitiesService', () => ({
   getActivityCenter: vi.fn().mockResolvedValue({
-    sectionSubjects: [{ id: 'ss-1', schoolYearId: 'year-1', gradeName: '2.º', sectionName: 'A', subjectName: 'Ciencias' }],
+    sectionSubjects: [{ id: 'ss-1', schoolYearId: 'year-1', gradeName: '2.º', sectionName: 'A', subjectName: 'Ciencias', academicLevelCode: 'primario', evaluationProfile: { id: 'primary-official', academicLevelCode: 'primario', expectedBlockTotal: 100, requiredPeriodCount: 4, blocks: [{ id: 'b1' }, { id: 'b2' }, { id: 'b3' }] } }],
     academicPeriods: [{ id: 'period-1', schoolYearId: 'year-1', name: 'P1', sequence: 1 }],
     activities: [],
   }),
@@ -17,8 +17,9 @@ vi.mock('@/modules/activities/services/activitiesService', () => ({
 vi.mock('@/modules/courses/services/coursesService', () => ({ getCourseTeams: vi.fn().mockResolvedValue([]) }))
 
 vi.mock('@/modules/grading/components/GradingBook', () => ({
-  GradingBook: (props: { initialActivityAction?: string; originReturnLabel?: string; onReturnToOrigin: () => void }) => <div>
+  GradingBook: (props: { initialActivityAction?: string; originReturnLabel?: string; onReturnToOrigin: () => void; evaluationProfile?: { blocks: Array<{ id: string }> } }) => <div>
     <span>{props.initialActivityAction}</span>
+    <span data-testid="profile-blocks">{props.evaluationProfile?.blocks.map((block) => block.id).join(',')}</span>
     <button onClick={props.onReturnToOrigin}>{props.originReturnLabel}</button>
   </div>,
 }))
@@ -34,6 +35,8 @@ describe('ActivityCreator', () => {
     </MemoryRouter>)
 
     expect(await screen.findByText('create')).toBeInTheDocument()
+    expect(screen.getByTestId('profile-blocks')).toHaveTextContent('b1,b2,b3')
+    expect(screen.getByTestId('profile-blocks')).not.toHaveTextContent('b4')
     expect(screen.getByTestId('location')).toHaveTextContent('/actividades/crear')
     expect(screen.getByTestId('location')).not.toHaveTextContent('/calificaciones')
     fireEvent.click(screen.getByRole('button', { name: 'Volver a Estudiantes' }))

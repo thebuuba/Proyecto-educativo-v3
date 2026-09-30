@@ -1,6 +1,7 @@
 import type { ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
 import type { GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { activityAppliesToBlock, buildCompactGradeRows, competencyBlocks, scoreForActivity } from '@/modules/grading/utils/competencyGrades'
+import type { EvaluationProfile } from '@aula/shared'
 
 export type SubjectReportActivity = GradingActivity & {
   evaluated: number
@@ -22,8 +23,10 @@ export function buildSubjectReport(input: {
   attendance: ClassAttendanceHistoryRecord[]
   periodStart?: string
   periodEnd?: string
+  evaluationProfile?: EvaluationProfile
 }) {
-  const rows = buildCompactGradeRows(input.students, input.activities, input.records)
+  const blocksForProfile = input.evaluationProfile?.blocks ?? competencyBlocks
+  const rows = buildCompactGradeRows(input.students, input.activities, input.records, input.evaluationProfile)
   const evaluatedRows = rows.filter((row) => row.average !== null)
   const average = evaluatedRows.length
     ? Math.round(evaluatedRows.reduce((sum, row) => sum + (row.average ?? 0), 0) / evaluatedRows.length)
@@ -60,8 +63,8 @@ export function buildSubjectReport(input: {
     { label: 'Menos de 70', count: rows.filter((row) => row.average !== null && row.average < 70).length },
     { label: 'Sin evaluar', count: rows.filter((row) => row.average === null).length },
   ]
-  const blocks = competencyBlocks.map((block) => {
-    const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id))
+  const blocks = blocksForProfile.map((block) => {
+    const blockActivities = activities.filter((activity) => activityAppliesToBlock(activity, block.id, input.evaluationProfile))
     const values = rows.map((row) => row.blockAverages[block.id]).filter((value): value is number => value !== null)
     const evaluated = blockActivities.reduce((sum, activity) => sum + activity.evaluated, 0)
     const possible = blockActivities.length * input.students.length
