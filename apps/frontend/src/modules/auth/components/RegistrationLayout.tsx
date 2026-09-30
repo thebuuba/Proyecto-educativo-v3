@@ -41,7 +41,7 @@ export function RegistrationLayout({
         </section>
         <aside
           aria-labelledby="flujo-title"
-          className="order-first rounded-[28px] bg-primary p-6 text-primary-foreground shadow-lg sm:p-8 lg:order-none"
+          className="rounded-[28px] bg-primary p-6 text-primary-foreground shadow-lg sm:p-8"
         >
           <div className="flex items-center gap-3">
             <GraduationCap className="size-7" />
