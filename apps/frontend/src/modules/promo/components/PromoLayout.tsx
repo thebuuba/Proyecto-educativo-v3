@@ -1,6 +1,7 @@
 ﻿import { ArrowRight, GraduationCap, Menu } from 'lucide-react'
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import '@/modules/promo/promo-motion.css'
 
 const nav = [
   { label: 'Inicio', to: '/' },
@@ -13,6 +14,34 @@ const nav = [
 export function PromoLayout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const mainRef = useRef<HTMLElement>(null)
+  useLayoutEffect(() => {
+    const main = mainRef.current
+    if (
+      !main ||
+      !('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    )
+      return
+    const sections = Array.from(main.children).filter(
+      (child): child is HTMLElement => child instanceof HTMLElement,
+    )
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue
+          entry.target.removeAttribute('data-promo-pending')
+          observer.unobserve(entry.target)
+        }
+      },
+      { threshold: 0.08, rootMargin: '0px 0px 40px 0px' },
+    )
+    sections.forEach((section) => {
+      section.setAttribute('data-promo-pending', '')
+      observer.observe(section)
+    })
+    return () => observer.disconnect()
+  }, [location.pathname])
   useEffect(() => {
     if (location.hash) {
       requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView())
@@ -21,7 +50,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
     }
   }, [location.pathname, location.hash])
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="promo-motion min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-[72px] lg:px-8">
           <Link to="/" className="flex items-center gap-2.5" aria-label="Aula Base, inicio">
@@ -97,7 +126,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
           </nav>
         )}
       </header>
-      <main>{children}</main>
+      <main ref={mainRef}>{children}</main>
       <footer className="border-t border-border bg-card">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.3fr_2fr] lg:px-8 lg:py-16">
           <div>
