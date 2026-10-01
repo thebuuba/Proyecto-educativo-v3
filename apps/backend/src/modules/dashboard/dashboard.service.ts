@@ -102,6 +102,29 @@ export function buildTeacherAnalytics(records: TeacherGradeRecord[]) {
 
 @Injectable()
 export class DashboardService {
+  async getSidebarSummary(user: AuthenticatedUser, now = new Date()) {
+    const view = resolveDashboardView(user.roles)
+    const { schoolYear, period } = await this.getAcademicContext(user.schoolId, now)
+    if (!schoolYear) return { activeGroups: 0, classesToday: 0 }
+    const scope = await this.getViewerScope(user, view, schoolYear.id)
+    if ((view === 'teacher' && !scope.teacherId) || ((view === 'student' || view === 'guardian') && !scope.sectionIds.length)) {
+      return { activeGroups: 0, classesToday: 0 }
+    }
+    const sectionScope = view === 'student' || view === 'guardian' ? { sectionId: { in: scope.sectionIds } } : {}
+    const [groups, classesToday] = await Promise.all([
+      prisma.sectionSubject.findMany({
+        where: { schoolId: user.schoolId, schoolYearId: schoolYear.id, status: 'ACTIVE', section: { status: 'ACTIVE', grade: { status: 'ACTIVE' } }, ...sectionScope, ...(scope.teacherId ? { teacherId: scope.teacherId } : {}) },
+        select: { sectionId: true },
+        distinct: ['sectionId'],
+      }),
+      prisma.scheduleEntry.count({
+        where: { schoolId: user.schoolId, schoolYearId: schoolYear.id, status: 'ACTIVE', section: { status: 'ACTIVE', grade: { status: 'ACTIVE' } }, sectionSubject: { status: 'ACTIVE', ...(scope.teacherId ? { teacherId: scope.teacherId } : {}) }, dayOfWeek: getDashboardClock(now).dayOfWeek,
+          ...(period ? { OR: [{ academicPeriodId: period.id }, { academicPeriodId: null }] } : {}), ...sectionScope },
+      }),
+    ])
+    return { activeGroups: groups.length, classesToday }
+  }
+
   async getOverview(user: AuthenticatedUser, now = new Date()) {
     const view = resolveDashboardView(user.roles)
     const scopeWithoutYear = view === 'teacher' || view === 'management' || view === 'viewer'

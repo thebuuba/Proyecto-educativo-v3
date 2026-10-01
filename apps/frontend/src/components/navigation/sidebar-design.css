@@ -4,7 +4,7 @@
 
 .sidebar-link {
   display: flex;
-  min-height: 44px;
+  min-height: 56px;
   align-items: center;
   gap: 10px;
   border-radius: 18px;
@@ -38,7 +38,7 @@
   height: 36px;
   flex: none;
   place-items: center;
-  border-radius: 12px;
+  border-radius: 50%;
   background: var(--muted);
 }
 
@@ -74,13 +74,9 @@
 
 .sidebar-link-title {
   display: block;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 1.2;
-}
-
-.sidebar-link[data-nav-path='/inicio'] .sidebar-link-title {
-  font-weight: 400;
 }
 
 .sidebar-link-description {
