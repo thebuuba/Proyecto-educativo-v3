@@ -18,10 +18,10 @@ function renderPage() {
 }
 
 function fillForm() {
-  fireEvent.change(screen.getByLabelText('Nombre completo'), { target: { value: 'Ana Pérez' } })
+  fireEvent.change(screen.getByLabelText('Nombre'), { target: { value: 'Ana' } })
+  fireEvent.change(screen.getByLabelText('Apellidos'), { target: { value: 'Pérez' } })
   fireEvent.change(screen.getByLabelText('Correo electrónico'), { target: { value: 'ana@example.com' } })
   fireEvent.change(screen.getByLabelText('Contraseña', { exact: true }), { target: { value: 'Clave1234' } })
-  fireEvent.change(screen.getByLabelText('Confirmar contraseña'), { target: { value: 'Clave1234' } })
   fireEvent.click(screen.getByRole('checkbox', { name: /Acepto los/ }))
 }
 
@@ -32,8 +32,8 @@ describe('RegisterPage', () => {
     renderPage()
     fireEvent.click(screen.getByRole('button', { name: 'Crear cuenta' }))
     expect(register).not.toHaveBeenCalled()
-    expect(screen.getByText(/Acepta los términos/)).toBeInTheDocument()
-    expect(screen.getByLabelText('Nombre completo')).toHaveAttribute('aria-invalid', 'true')
+    expect(screen.getByText(/Acepta los Términos/)).toBeInTheDocument()
+    expect(screen.getByLabelText('Nombre')).toHaveAttribute('aria-invalid', 'true')
   })
 
   it('opens confirmation with the actual email and no simulated verification', async () => {
@@ -41,6 +41,7 @@ describe('RegisterPage', () => {
     renderPage(); fillForm()
     fireEvent.click(screen.getByRole('button', { name: 'Crear cuenta' }))
     expect(await screen.findByRole('heading', { name: 'Revisa tu correo' })).toBeInTheDocument()
+    expect(register).toHaveBeenCalledWith({ email: 'ana@example.com', password: 'Clave1234', fullName: 'Ana Pérez' })
     expect(screen.getByText('ana@example.com')).toBeInTheDocument()
     expect(screen.queryByText(/Simular/)).not.toBeInTheDocument()
   })
