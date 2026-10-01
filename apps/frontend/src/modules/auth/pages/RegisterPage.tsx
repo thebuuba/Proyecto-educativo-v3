@@ -1,13 +1,14 @@
 ﻿import { ArrowRight, Check, Eye, EyeOff } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { FacebookIcon, GoogleIcon } from '@/components/auth/AuthIcons'
 import { Button } from '@/components/ui/Button'
 import { RegistrationLayout } from '@/modules/auth/components/RegistrationLayout'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { isValidPassword } from '@/modules/auth/utils/password'
 
 export function RegisterPage() {
-  const { register, isAuthenticated, onboardingComplete, profileRequired } = useAuth()
+  const { register, loginWithProvider, isAuthenticated, onboardingComplete, profileRequired } = useAuth()
   const navigate = useNavigate()
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -59,6 +60,17 @@ export function RegisterPage() {
           : message,
       )
     } finally {
+      setSubmitting(false)
+    }
+  }
+
+  async function provider(name: 'google' | 'facebook') {
+    setSubmitting(true)
+    setServerError('')
+    try {
+      await loginWithProvider(name)
+    } catch (error) {
+      setServerError(error instanceof Error ? error.message : 'No se pudo continuar con este proveedor.')
       setSubmitting(false)
     }
   }
@@ -173,10 +185,32 @@ export function RegisterPage() {
             </p>
           )}
         </div>
-        <Button type="submit" className="w-full" loading={submitting} disabled={submitting}>
+        <Button type="submit" className="w-full rounded-full!" loading={submitting} disabled={submitting}>
           Crear cuenta <ArrowRight size={17} />
         </Button>
       </form>
+      <div className="my-7 flex items-center gap-4 text-xs text-muted-foreground">
+        <span className="h-px flex-1 bg-border" />O continúa con
+        <span className="h-px flex-1 bg-border" />
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <button
+          type="button"
+          disabled={submitting}
+          onClick={() => void provider('google')}
+          className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-border text-sm font-medium disabled:opacity-60"
+        >
+          <GoogleIcon /> Google
+        </button>
+        <button
+          type="button"
+          disabled={submitting}
+          onClick={() => void provider('facebook')}
+          className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-border text-sm font-medium disabled:opacity-60"
+        >
+          <FacebookIcon /> Facebook
+        </button>
+      </div>
       <p className="mt-6 flex items-center gap-2 text-xs text-muted-foreground">
         <Check className="size-4 text-success" /> El centro y los cursos se configuran después del
         registro.

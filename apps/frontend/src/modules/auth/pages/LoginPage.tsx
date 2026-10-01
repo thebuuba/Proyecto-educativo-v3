@@ -228,7 +228,7 @@ export function LoginPage() {
               type="button"
               disabled={busy}
               onClick={() => void provider('google')}
-              className="flex min-h-12 items-center justify-center gap-2 rounded-xl border border-border text-sm font-medium"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-border text-sm font-medium"
             >
               <GoogleIcon /> Google
             </button>
@@ -236,7 +236,7 @@ export function LoginPage() {
               type="button"
               disabled={busy}
               onClick={() => void provider('facebook')}
-              className="flex min-h-12 items-center justify-center gap-2 rounded-xl border border-border text-sm font-medium"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-border text-sm font-medium"
             >
               <FacebookIcon /> Facebook
             </button>
