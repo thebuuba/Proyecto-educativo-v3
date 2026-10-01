@@ -2868,6 +2868,45 @@ export type Database = {
           },
         ]
       }
+      trusted_auth_devices: {
+        Row: {
+          id: string
+          user_id: string
+          token_hash: string
+          browser_signature: string
+          network_hash: string | null
+          verified_at: string
+          last_seen_at: string
+          revoked_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          token_hash: string
+          browser_signature: string
+          network_hash?: string | null
+          verified_at?: string
+          last_seen_at?: string
+          revoked_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          token_hash?: string
+          browser_signature?: string
+          network_hash?: string | null
+          verified_at?: string
+          last_seen_at?: string
+          revoked_at?: string | null
+        }
+        Relationships: [{
+          foreignKeyName: "trusted_auth_devices_user_id_fkey"
+          columns: ["user_id"]
+          isOneToOne: false
+          referencedRelation: "app_users"
+          referencedColumns: ["id"]
+        }]
+      }
       user_roles: {
         Row: {
           created_at: string

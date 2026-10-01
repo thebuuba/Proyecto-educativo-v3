@@ -3,7 +3,7 @@
  * registro, cierre de sesión y obtención de perfil, roles y permisos.
  */
 
-import { api } from '@/services/apiClient'
+import { api, ApiError } from '@/services/apiClient'
 import type {
   AuthUser,
   AuthBootstrap,
@@ -16,7 +16,7 @@ import type {
   RegistrationResult,
   Role,
 } from '@/modules/auth/types/auth'
-import { isRememberSessionEnabled, supabase } from '@/modules/auth/services/supabaseClient'
+import { clearPersistedSupabaseSession, isRememberSessionEnabled, supabase } from '@/modules/auth/services/supabaseClient'
 import { getOAuthCallbackUrl } from '@/utils/oauthCallback'
 
 /** Restaura perfil, roles, permisos y onboarding en un solo viaje. */
@@ -29,9 +29,20 @@ export async function login(credentials: LoginCredentials): Promise<LoginRespons
   const { data, error } = await supabase.auth.signInWithPassword(credentials)
   if (error) {
     if (/failed to fetch/i.test(error.message)) {
-      return api.post<LoginResponse>('/auth/login', credentials, {
+      const response = await api.post<LoginResponse & { verificationRequired?: 'email' | 'totp'; supabaseSession?: { accessToken: string; refreshToken: string } }>('/auth/login', credentials, {
         clearResponseCache: true,
       })
+      if (response.supabaseSession) {
+        const restored = await supabase.auth.setSession({
+          access_token: response.supabaseSession.accessToken,
+          refresh_token: response.supabaseSession.refreshToken,
+        }).catch(() => null)
+        if (response.verificationRequired && (!restored || restored.error)) {
+          throw new Error('No se pudo conservar la sesión para verificarla. Reintenta cuando tengas conexión.')
+        }
+      }
+      if (response.verificationRequired) throw new ApiError(409, 'VERIFICATION_REQUIRED', response.verificationRequired)
+      return response
     }
     throw new Error(error.message)
   }
@@ -131,7 +142,13 @@ export async function requestPasswordReset(email: string): Promise<void> {
 /** Cierra la sesión del backend y de Supabase. */
 export async function logout(): Promise<void> {
   await api.post('/auth/logout', undefined, { clearResponseCache: true })
-  await supabase.auth.signOut().catch(() => undefined)
+  try {
+    await supabase.auth.signOut({ scope: 'local' })
+  } catch {
+    // La cookie de AulaBase ya fue eliminada; limpiar el token local evita restaurarla.
+  } finally {
+    clearPersistedSupabaseSession()
+  }
 }
 
 /** Obtiene el perfil del usuario autenticado. */

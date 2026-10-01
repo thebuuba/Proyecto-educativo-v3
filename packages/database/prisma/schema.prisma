@@ -207,8 +207,25 @@ model AppUser {
   subjectResources              SubjectResource[]
   onboardingTourProgress        OnboardingTourProgress[]
   teacherInstrumentPreferences  TeacherInstrumentPreference[]
+  trustedAuthDevices            TrustedAuthDevice[]
 
   @@map("app_users")
+}
+
+model TrustedAuthDevice {
+  id               String    @id @default(uuid()) @db.Uuid
+  userId           String    @map("user_id") @db.Uuid
+  tokenHash        String    @unique @map("token_hash")
+  browserSignature String    @map("browser_signature")
+  networkHash      String?   @map("network_hash")
+  verifiedAt       DateTime  @default(now()) @map("verified_at")
+  lastSeenAt       DateTime  @default(now()) @map("last_seen_at")
+  revokedAt        DateTime? @map("revoked_at")
+
+  user AppUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("trusted_auth_devices")
 }
 
 model OnboardingTourProgress {

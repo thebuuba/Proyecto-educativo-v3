@@ -31,11 +31,15 @@ export class AllExceptionsFilter implements ExceptionFilter {
 
     let status = HttpStatus.INTERNAL_SERVER_ERROR
     let message = 'Internal server error'
+    let verificationMethod: string | undefined
 
     if (exception instanceof HttpException) {
       status = exception.getStatus()
       const res = exception.getResponse()
       message = typeof res === 'string' ? res : (res as { message?: string }).message ?? message
+      if (message === 'VERIFICATION_REQUIRED' && typeof res === 'object') {
+        verificationMethod = (res as { method?: string }).method
+      }
     } else {
       const error = exception instanceof Error ? exception : new Error(String(exception))
       const request = ctx.getRequest<Request>()
@@ -46,6 +50,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
       success: false,
       error: message,
       statusCode: status,
+      ...(verificationMethod ? { method: verificationMethod } : {}),
     })
   }
 }

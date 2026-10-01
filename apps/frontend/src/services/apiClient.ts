@@ -34,10 +34,12 @@ export const API_CACHE_TAGS = {
 export class ApiError extends Error {
   /** Código de estado HTTP del error. */
   status: number
-  constructor(status: number, message: string) {
+  method?: string
+  constructor(status: number, message: string, method?: string) {
     super(message)
     this.name = 'ApiError'
     this.status = status
+    this.method = method
   }
 }
 
@@ -156,7 +158,7 @@ function clearResponseCache() {
 async function handleResponse<T>(res: Response, path: string): Promise<T> {
   if (!res.ok) {
     const body = await res.json().catch(() => ({}))
-    const error = new ApiError(res.status, body.error || body.message || `Error ${res.status}`)
+    const error = new ApiError(res.status, body.error || body.message || `Error ${res.status}`, body.method)
     if (res.status === 401) {
       clearResponseCache()
       if (!path.startsWith('/auth/')) window.dispatchEvent(new Event(AUTH_UNAUTHORIZED_EVENT))

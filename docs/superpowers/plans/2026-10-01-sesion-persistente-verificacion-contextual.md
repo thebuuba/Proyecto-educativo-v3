@@ -23,7 +23,7 @@
 - `apps/frontend/src/modules/auth/context/AuthProvider.tsx`, `services/authService.ts`, `pages/LoginPage.tsx`, `pages/AuthCallbackPage.tsx`, `types/auth.ts`, `context/AuthContext.ts`: restauración, cuenta recordada, reto y callback.
 - `apps/backend/src/modules/auth/auth.controller.ts`, `auth.service.ts`, `supabase-user.ts`, `session-cookie.ts`, nuevo `device-trust.ts`: evaluación de riesgo y emisión de cookies.
 - `supabase/migrations/<nuevo>_trusted_auth_devices.sql`, `packages/database/prisma/schema.prisma`, `apps/frontend/src/types/database.types.ts`: almacenamiento del dispositivo confiable.
-- Contrato HTTP: `POST /auth/session` y el login alternativo devuelven `409` con `VERIFICATION_REQUIRED` y `method: 'email' | 'totp'` sin cookie de AulaBase. Un token Supabase validado con método `magiclink`/`otp` reciente o `aal2` tras TOTP permite completar la sesión. La respuesta normal conserva su forma actual.
+- Contrato HTTP: `POST /auth/session` devuelve `409` con `VERIFICATION_REQUIRED` y `method: 'email' | 'totp'` sin cookie de AulaBase. El login alternativo devuelve una sesión provisional de Supabase y `verificationRequired` sin cookie, para que el navegador pueda continuar el reto. Un token Supabase validado con método `magiclink`/`otp` reciente o `aal2` tras TOTP permite completar la sesión. La respuesta normal conserva su forma actual.
 
 ## Focos de revisión
 
@@ -70,3 +70,14 @@
 - [ ] Revisar migración, privilegios, RLS, atributos de cookies, rutas alternativas, códigos de error y protección contra bucles de renovación.
 - [ ] Ejecutar `pnpm --filter backend test`, `pnpm --filter backend build`, `pnpm --filter frontend build`, `pnpm cloudflare:build` y registrar resultados.
 - [ ] Comprobar `git diff --check` y estado limpio; corregir los fallos antes de declarar terminado.
+
+## Activación pendiente
+
+La implementación queda desactivada por `AUTH_DEVICE_TRUST_ENABLED=false` hasta aplicar `supabase/migrations/20261001141052_trusted_auth_devices.sql` al proyecto Supabase real. La CLI local no está vinculada a un proyecto y Docker no está disponible; `cloudflare:build` es solo una simulación de despliegue. Después de aplicar la migración, configurar `AUTH_DEVICE_TRUST_ENABLED=true` en el backend y desplegar código y configuración juntos. Verificar inicio desde dos navegadores antes de anunciar la función como activa.
+
+## Verificación local (2026-10-01)
+
+- `pnpm --filter backend test`: 222 pruebas correctas.
+- Pruebas dirigidas de frontend: 11 correctas.
+- `pnpm --filter backend build`, `pnpm --filter frontend build`, `pnpm cloudflare:build`: correctos.
+- Esquema Prisma validado; la migración remota y la prueba real en dos navegadores quedan para la activación.

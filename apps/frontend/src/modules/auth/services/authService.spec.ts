@@ -1,19 +1,26 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-const { get, post, signInWithPassword, signUp } = vi.hoisted(() => ({
+const { get, post, signInWithPassword, signUp, signOut, setSession, clearPersistedSupabaseSession } = vi.hoisted(() => ({
   get: vi.fn(),
   post: vi.fn(),
   signInWithPassword: vi.fn(),
   signUp: vi.fn(),
+  signOut: vi.fn(),
+  setSession: vi.fn(),
+  clearPersistedSupabaseSession: vi.fn(),
 }))
 
-vi.mock('@/services/apiClient', () => ({ api: { get, post } }))
+vi.mock('@/services/apiClient', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@/services/apiClient')>()),
+  api: { get, post },
+}))
 vi.mock('@/modules/auth/services/supabaseClient', () => ({
   isRememberSessionEnabled: () => true,
-  supabase: { auth: { signInWithPassword, signUp } },
+  clearPersistedSupabaseSession,
+  supabase: { auth: { signInWithPassword, signUp, signOut, setSession } },
 }))
 
-import { login, register } from '@/modules/auth/services/authService'
+import { login, logout, register } from '@/modules/auth/services/authService'
 
 describe('registration confirmation', () => {
   beforeEach(() => { vi.clearAllMocks(); localStorage.clear() })
@@ -33,7 +40,7 @@ describe('registration confirmation', () => {
 })
 
 describe('persistent login', () => {
-  beforeEach(() => vi.clearAllMocks())
+  beforeEach(() => { vi.clearAllMocks(); setSession.mockResolvedValue({ error: null }) })
 
   it('keeps the renewable Supabase session and creates the AulaBase cookie', async () => {
     signInWithPassword.mockResolvedValue({ data: { session: { access_token: 'supabase-token' } }, error: null })
@@ -67,5 +74,21 @@ describe('persistent login', () => {
       email: 'teacher@example.com',
       password: 'secret',
     }, { clearResponseCache: true })
+  })
+})
+
+describe('logout', () => {
+  it('borra el token renovable local incluso si Supabase falla', async () => {
+    post.mockResolvedValue({ success: true })
+    signOut.mockRejectedValue(new Error('sin conexión'))
+    await expect(logout()).resolves.toBeUndefined()
+    expect(clearPersistedSupabaseSession).toHaveBeenCalled()
+  })
+
+  it('mantiene la sesión provisional sin crear acceso AulaBase si el backend pide verificación', async () => {
+    signInWithPassword.mockResolvedValue({ data: { session: null }, error: { message: 'Failed to fetch' } })
+    post.mockResolvedValue({ verificationRequired: 'email', supabaseSession: { accessToken: 'token', refreshToken: 'refresh' } })
+    await expect(login({ email: 'ada@escuela.edu', password: 'secret' })).rejects.toMatchObject({ status: 409, method: 'email' })
+    expect(setSession).toHaveBeenCalledWith({ access_token: 'token', refresh_token: 'refresh' })
   })
 })
