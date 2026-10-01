@@ -166,7 +166,7 @@ function MetricCard({
 function PeriodClosingCard({ data }: { data: DashboardData['periodClosing'] }) {
   return (
     <article className="home-period-card" data-home-widget="period">
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex items-center justify-between gap-3">
         <div className="min-w-0">
           <p className="home-widget-eyebrow"><Flag size={12} aria-hidden="true" /> Cierre de período</p>
           <h2 className="mt-1 text-base font-semibold text-foreground">
@@ -299,22 +299,22 @@ function Agenda({
   const [taskTitle, setTaskTitle] = useState('')
   return (
     <aside className="home-agenda" aria-label="Tu agenda" data-home-widget="agenda">
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex items-center justify-between gap-3">
         <div>
-          <h2 className="text-xl font-semibold tracking-tight text-foreground">Tu agenda</h2>
+          <h2 className="text-xl font-semibold text-foreground">Tu agenda</h2>
           <p className="text-xs text-muted-foreground">
             {data.todayAgenda.length} clases programadas
           </p>
         </div>
         <Link
           to="/horario"
-          className="grid size-8 place-items-center rounded-lg bg-muted text-muted-foreground hover:text-primary"
+          className="grid size-8 place-items-center rounded-lg bg-muted text-muted-foreground hover:text-foreground"
           aria-label="Ver semana"
         >
-          <ChevronRight size={17} />
+          <ChevronRight size={16} />
         </Link>
       </div>
-      <div className="mt-4 flex gap-2" role="tablist" aria-label="Vista de agenda">
+      <div className="mt-4 flex gap-1" role="tablist" aria-label="Vista de agenda">
         <button
           role="tab"
           aria-selected={tab === 'today'}
@@ -336,36 +336,36 @@ function Agenda({
       </div>
       {tab === 'today' ? (
         data.todayAgenda.length ? (
-          <ol className="home-agenda-list mt-5">
+          <ol className="home-agenda-list mt-6">
             {data.todayAgenda.map((item) => (
               <li key={item.id} className="home-agenda-entry">
                 <div className="home-agenda-time">
                   {item.startTime.slice(0, 5)}
-                  {item.status === 'current' ? <span> · Ahora</span> : null}
+                  {item.status === 'current' ? <span className="ml-2 text-xs font-medium">· Ahora</span> : null}
                 </div>
                 <div
                   className={
-                    item.status === 'current' ? 'home-agenda-class is-current' : 'home-agenda-class'
+                    `home-agenda-class${item.status === 'current' ? ' is-current' : item.status === 'completed' ? ' is-completed' : ''}`
                   }
                 >
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className={item.status === 'completed' ? 'line-through' : ''}>
+                    <h3>
                       {item.subjectName}
                     </h3>
                     <span className="home-agenda-grade">
                       {item.gradeName} {item.sectionName}
                     </span>
                   </div>
-                  <p className="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-[10px]">
+                  <p className="home-agenda-meta mt-1.5 flex gap-3 text-[11px]">
                     <span className="inline-flex items-center gap-1">
-                      <Clock size={11} />
+                      <Clock size={12} />
                       {item.durationMinutes} min
                     </span>
                     <span className="inline-flex items-center gap-1">
-                      <Users size={11} />
+                      <Users size={12} />
                       {item.studentCount} est.
                     </span>
-                    <span>{item.room ?? 'Aula sin asignar'}</span>
+                    <span className="truncate">{item.room ?? 'Aula sin asignar'}</span>
                   </p>
                   {item.status === 'current' && onStartClass ? (
                     <button

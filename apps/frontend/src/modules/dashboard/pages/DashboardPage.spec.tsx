@@ -4,6 +4,9 @@ import { MemoryRouter } from 'react-router-dom'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { DashboardPage } from './DashboardPage'
+import type { TodayAgendaItem } from '../types/dashboard'
+
+const agendaMock = vi.hoisted(() => ({ items: [] as TodayAgendaItem[] }))
 
 vi.mock('@/modules/auth/hooks/useAuth', () => ({
   useAuth: () => ({ hasRole: () => true }),
@@ -20,7 +23,7 @@ vi.mock('@/modules/dashboard/hooks/useDashboard', () => ({
         periodName: 'P1',
       },
       nextClass: null,
-      todayAgenda: [],
+      todayAgenda: agendaMock.items,
       weeklyAttendance: {
         average: null,
         trendPercent: null,
@@ -74,8 +77,31 @@ vi.mock('@/modules/dashboard/hooks/useDashboard', () => ({
 
 describe('DashboardPage', () => {
   beforeEach(() => {
+    agendaMock.items.length = 0
     localStorage.removeItem('aulabase:home-shortcuts')
     localStorage.removeItem('aulabase:home-widgets:v2:local')
+  })
+
+  it('distinguishes completed, current, and upcoming classes with real agenda data', () => {
+    const base = {
+      subjectName: 'Ciencias de la Naturaleza', gradeName: '2.º', sectionName: 'A',
+      startTime: '10:00', endTime: '10:40', durationMinutes: 40, room: null,
+      studentCount: 25, dayOfWeek: 4, sectionId: 'section-1', sectionSubjectId: 'subject-1',
+      academicPeriodId: null, startsInMinutes: null,
+    }
+    agendaMock.items.push(
+      { ...base, id: 'past', subjectName: 'Biología', status: 'completed' },
+      { ...base, id: 'now', subjectName: 'Física', status: 'current' },
+      { ...base, id: 'later', subjectName: 'Química', status: 'upcoming' },
+    )
+
+    render(<MemoryRouter><DashboardPage /></MemoryRouter>)
+
+    expect(screen.getByText('3 clases programadas')).toBeInTheDocument()
+    expect(screen.getByText('Biología').closest('.home-agenda-class')).toHaveClass('is-completed')
+    expect(screen.getByText('Física').closest('.home-agenda-class')).toHaveClass('is-current')
+    expect(screen.getByText('Química').closest('.home-agenda-class')).not.toHaveClass('is-current', 'is-completed')
+    expect(screen.getByText(/Ahora/)).toBeInTheDocument()
   })
 
   it('shows the redesigned dashboard with live data and empty states', () => {
