@@ -11,3 +11,11 @@ additional_redirect_urls = [
 
 [auth.email]
 enable_confirmations = false
+
+[auth.email.template.confirmation]
+subject = "Confirma tu correo en Aula Base"
+content_path = "./supabase/templates/confirmation.html"
+
+[auth.email.template.magic_link]
+subject = "Verifica tu acceso a Aula Base"
+content_path = "./supabase/templates/magic_link.html"

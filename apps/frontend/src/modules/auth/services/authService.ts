@@ -91,6 +91,7 @@ export async function loginWithProvider(provider: 'google' | 'facebook'): Promis
     provider,
     options: {
       redirectTo: getOAuthCallbackUrl(window.location.origin),
+      ...(provider === 'google' ? { queryParams: { prompt: 'select_account' } } : {}),
     },
   })
   if (error) throw new Error(error.message)
