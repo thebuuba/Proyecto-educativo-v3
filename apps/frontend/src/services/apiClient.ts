@@ -8,6 +8,7 @@
 // HttpOnly de terceros. Vite reenvía /api solo durante el desarrollo local.
 const API_URL = '/api/v1'
 const GET_TIMEOUT_MS = 15_000
+const MAX_GET_ATTEMPTS = 8
 const TRANSIENT_GET_STATUSES = new Set([502, 503, 504])
 
 export const AUTH_UNAUTHORIZED_EVENT = 'aulabase:unauthorized'
@@ -224,7 +225,9 @@ export const api = {
           },
         }
         let response = await fetch(url, requestInit)
-        if (TRANSIENT_GET_STATUSES.has(response.status)) {
+        for (let attempt = 1; attempt < MAX_GET_ATTEMPTS && TRANSIENT_GET_STATUSES.has(response.status); attempt += 1) {
+          await new Promise((resolve) => window.setTimeout(resolve, 200))
+          if (controller.signal.aborted) throw new DOMException('Aborted', 'AbortError')
           response = await fetch(url, requestInit)
         }
         const value = await handleResponse<T>(response, path)
