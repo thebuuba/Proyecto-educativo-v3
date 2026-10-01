@@ -76,6 +76,7 @@ import {
   X,
 } from 'lucide-react'
 import { ApiError } from '@/services/apiClient'
+import type { EvaluationProfile } from '@aula/shared'
 import { SubjectResourcesPanel } from '../components/SubjectResourcesPanel'
 import { calendarDate } from '../data/calendarDate'
 import { SubjectReportsPanel } from '@/modules/reports/components/SubjectReportsPanel'
@@ -1588,6 +1589,7 @@ function SubjectDetailView({
     plannings: Array<{ id: string; title: string; plannedDate: string | null }>
     academicPeriods: AcademicPeriodOpt[]
     selectedAcademicPeriodId: string | null
+    evaluationProfile?: EvaluationProfile
   }>({ gradingStudents: [], activities: [], gradeRecords: [], teams: [], plannings: [], academicPeriods: [], selectedAcademicPeriodId: null })
   const [activityBlockPickerOpen, setActivityBlockPickerOpen] = useState(false)
 
@@ -1655,6 +1657,7 @@ function SubjectDetailView({
         plannings: planningResult.status === 'fulfilled' ? planningResult.value.map((entry) => ({ id: entry.id, title: entry.title, plannedDate: entry.plannedDate })) : [],
         academicPeriods: gradingResult.status === 'fulfilled' ? gradingResult.value.academicPeriods : [],
         selectedAcademicPeriodId: gradingResult.status === 'fulfilled' ? gradingResult.value.selectedAcademicPeriodId : null,
+        evaluationProfile: gradingResult.status === 'fulfilled' ? gradingResult.value.context?.evaluationProfile : undefined,
       })
     })
     return () => { active = false }
@@ -1825,6 +1828,7 @@ function SubjectDetailView({
           initialRecords={overview.gradeRecords}
           periods={overview.academicPeriods}
           initialPeriodId={overview.selectedAcademicPeriodId}
+          initialEvaluationProfile={overview.evaluationProfile}
         />
       ) : (
         <SubjectModulePanel icon={<SlidersHorizontal className="size-6" />} title="Configuración de la asignatura" description="La apariencia y el estado de la asignatura se administran desde el menú de su tarjeta en el curso." action="Volver a asignaturas" onAction={onBack} />

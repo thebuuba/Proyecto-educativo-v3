@@ -11,7 +11,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 
-export type Tone = 'brand' | 'success' | 'warning' | 'incident' | 'violet'
+export type Tone = 'brand' | 'success' | 'warning' | 'incident'
 
 export interface ModuleItem {
   id: string
@@ -35,7 +35,7 @@ export const modules: ModuleItem[] = [
     title: 'Horario',
     description: 'Tu semana de clases a la vista, con aula, curso y cantidad de estudiantes.',
     icon: Clock3Icon,
-    tone: 'violet',
+    tone: 'brand',
   },
   {
     id: 'asistencia',
@@ -73,7 +73,7 @@ export const modules: ModuleItem[] = [
     description:
       'Consulta el progreso de cada estudiante y de cada curso a partir de lo que registras.',
     icon: BarChart3Icon,
-    tone: 'violet',
+    tone: 'brand',
   },
   {
     id: 'administracion',
@@ -145,11 +145,3 @@ export const faqs: FaqItem[] = [
     a: 'Puedes configurar el año escolar y sus períodos para que coincidan con el calendario de tu centro.',
   },
 ]
-
-export const toneClasses: Record<Tone, { soft: string; solid: string; text: string }> = {
-  brand: { soft: 'bg-brand-soft', solid: 'bg-brand', text: 'text-primary' },
-  success: { soft: 'bg-success-soft', solid: 'bg-success', text: 'text-success' },
-  warning: { soft: 'bg-warning-soft', solid: 'bg-warning', text: 'text-warning-foreground' },
-  incident: { soft: 'bg-incident-soft', solid: 'bg-incident', text: 'text-incident-foreground' },
-  violet: { soft: 'bg-violet-soft', solid: 'bg-violet', text: 'text-violet' },
-}

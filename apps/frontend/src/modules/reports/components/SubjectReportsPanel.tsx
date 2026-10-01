@@ -13,10 +13,11 @@ import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRo
 import { getClassAttendanceHistory, type ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
 import { buildSubjectReport } from '@/modules/reports/utils/subjectReport'
 import { SubjectTabHeader, SubjectStat } from '@/modules/courses/components/SubjectTabUI'
+import type { EvaluationProfile } from '@aula/shared'
 
 type SectionKey = 'summary' | 'performance' | 'blocks' | 'activities' | 'attendance' | 'followup'
 
-export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName, initialStudents, initialActivities, initialRecords, periods, initialPeriodId }: {
+export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName, initialStudents, initialActivities, initialRecords, periods, initialPeriodId, initialEvaluationProfile }: {
   sectionSubjectId: string | null
   courseLabel: string
   subjectName: string
@@ -25,11 +26,13 @@ export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName
   initialRecords: GradeRecordRow[]
   periods: AcademicPeriodOpt[]
   initialPeriodId: string | null
+  initialEvaluationProfile?: EvaluationProfile
 }) {
   const [periodId, setPeriodId] = useState(initialPeriodId)
   const [students, setStudents] = useState(initialStudents)
   const [activities, setActivities] = useState(initialActivities)
   const [records, setRecords] = useState(initialRecords)
+  const [evaluationProfile, setEvaluationProfile] = useState(initialEvaluationProfile)
   const [attendance, setAttendance] = useState<ClassAttendanceHistoryRecord[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -43,7 +46,8 @@ export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName
     setStudents(initialStudents)
     setActivities(initialActivities)
     setRecords(initialRecords)
-  }, [initialActivities, initialPeriodId, initialRecords, initialStudents])
+    setEvaluationProfile(initialEvaluationProfile)
+  }, [initialActivities, initialEvaluationProfile, initialPeriodId, initialRecords, initialStudents])
 
   useEffect(() => {
     if (!sectionSubjectId) return
@@ -63,6 +67,7 @@ export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName
       setStudents(data.students)
       setActivities(data.activities)
       setRecords(data.gradeRecords)
+      setEvaluationProfile(data.context?.evaluationProfile)
       setPeriodId(data.selectedAcademicPeriodId)
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'No se pudo cargar el período seleccionado.')
@@ -70,7 +75,7 @@ export function SubjectReportsPanel({ sectionSubjectId, courseLabel, subjectName
   }
 
   const period = periods.find((item) => item.id === periodId) ?? null
-  const report = useMemo(() => buildSubjectReport({ students, activities, records, attendance, periodStart: period?.startDate, periodEnd: period?.endDate }), [activities, attendance, period?.endDate, period?.startDate, records, students])
+  const report = useMemo(() => buildSubjectReport({ students, activities, records, attendance, evaluationProfile, periodStart: period?.startDate, periodEnd: period?.endDate }), [activities, attendance, evaluationProfile, period?.endDate, period?.startDate, records, students])
   const selectedRow = report.rows.find((row) => row.enrollmentId === selectedStudent) ?? null
   const selectedStudentData = students.find((student) => student.enrollmentId === selectedStudent) ?? null
   const evaluatedPairs = report.activities.reduce((sum, item) => sum + item.evaluated, 0)

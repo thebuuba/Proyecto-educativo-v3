@@ -21,7 +21,6 @@ const centerBenefits = [
 ]
 const tones: Record<string, string> = {
   brand: 'bg-primary/12 text-primary',
-  violet: 'bg-primary/12 text-primary',
   success: 'bg-success/15 text-success',
   warning: 'bg-warning/25 text-foreground',
   incident: 'bg-destructive/12 text-destructive',

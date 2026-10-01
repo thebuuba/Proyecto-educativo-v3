@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { attendancePercentage, buildSubjectReport } from './subjectReport'
+import { primaryEvaluationProfile } from '@aula/shared'
 
 const students = [
   { enrollmentId: 'e1', studentId: 's1', studentCode: '01', listNumber: 1, firstName: 'Ana', lastName: 'Pérez' },
@@ -56,6 +57,14 @@ describe('subject report calculations', () => {
     expect(report.groupAttendance).toBeNull()
     expect(report.totalPoints).toBe(0)
     expect(report.followUp).toHaveLength(0)
+  })
+
+  it('uses the primary evaluation blocks for primary reports', () => {
+    const report = buildSubjectReport({
+      students, activities: [], records: [], attendance: [],
+      evaluationProfile: primaryEvaluationProfile,
+    })
+    expect(report.blocks.map((block) => block.id)).toEqual(primaryEvaluationProfile.blocks.map((block) => block.id))
   })
 
   it('filters attendance to the selected academic period', () => {
