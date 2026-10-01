@@ -6,11 +6,11 @@
   display: flex;
   min-height: 56px;
   align-items: center;
-  gap: 10px;
-  border-radius: 18px;
+  gap: 12px;
+  border-radius: 16px;
   padding: 0 12px;
   text-align: left;
-  color: var(--muted-foreground);
+  color: var(--foreground);
   transition:
     background-color 160ms ease,
     color 160ms ease;
@@ -27,11 +27,6 @@
   outline-offset: 2px;
 }
 
-.sidebar-link-featured {
-  min-height: 56px;
-  color: var(--foreground);
-}
-
 .sidebar-link-icon {
   display: grid;
   width: 36px;
@@ -45,6 +40,10 @@
 .sidebar-link:hover .sidebar-link-icon,
 .sidebar-link.is-active .sidebar-link-icon {
   background: var(--primary-container);
+}
+
+.sidebar-link.is-active .sidebar-link-icon {
+  background: transparent;
 }
 
 .sidebar-link-featured .sidebar-link-icon {
@@ -135,7 +134,7 @@
 
   .sidebar-shell[data-sidebar-expanded='false'] .sidebar-header > button {
     position: absolute;
-    top: 80px;
+    top: 72px;
     left: 22px;
   }
 

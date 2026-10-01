@@ -159,7 +159,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           isOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className="sidebar-header flex h-20 shrink-0 items-center gap-3 px-5">
+        <div className="sidebar-header flex h-[72px] shrink-0 items-center gap-3 px-5">
           <NavLink
             to="/inicio"
             onClick={onClose}
@@ -196,16 +196,16 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           </button>
         </div>
 
-        <nav className="min-h-0 flex-1 overflow-y-auto px-4 py-2" aria-label="Navegación principal">
-          <div className="space-y-1.5">{primary.map((item) => renderLink(item, true))}</div>
+        <nav className="min-h-0 flex-1 overflow-y-auto px-4 py-1" aria-label="Navegación principal">
+          <div className="space-y-0.5">{primary.map((item) => renderLink(item, true))}</div>
           {secondary.length ? (
-            <div className="mt-5 space-y-1.5 border-t border-border pt-4">
+            <div className="mt-3 space-y-0.5 border-t border-border pt-3">
               {secondary.map((item) => renderLink(item))}
             </div>
           ) : null}
         </nav>
 
-        <div className="space-y-1.5 border-t border-border px-4 py-3">
+        <div className="space-y-0.5 border-t border-border px-4 py-2">
           {footer.map((item) => renderLink(item))}
           <NavLink
             to="/perfil"
