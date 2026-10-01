@@ -24,6 +24,7 @@
   },
   "vars": {
     "FRONTEND_URL": "https://aula-base.prroyectoeducativo00.workers.dev",
+    "AUTH_DEVICE_TRUST_ENABLED": "true",
   },
   "env": {
     "staging": {
