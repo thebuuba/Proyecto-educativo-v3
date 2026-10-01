@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import { evaluationCatalogV1 } from './catalog-v1'
-import { academicContext, resolveScope, type AcademicContext, type ScopeCandidate } from './curriculum-context'
+import { academicContext, resolveScope, type AcademicContext } from './curriculum-context'
 import { recommend, distributeScore, detectActivityType, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
 
 const root = resolve(process.cwd(), '../..')

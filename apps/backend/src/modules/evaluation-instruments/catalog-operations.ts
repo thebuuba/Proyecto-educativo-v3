@@ -16,7 +16,7 @@ export async function seedEvaluationCatalog(db: PrismaClient) {
     const code = typeof error === 'object' && error && 'code' in error ? String(error.code) : ''
     if (code !== 'P2002') throw error
     const concurrent = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogV1.version } })
-    if (!concurrent || canonicalJson(concurrent.payload) !== canonicalJson(evaluationCatalogV1)) throw new Error('El release concurrente tiene contenido diferente; crear una versión nueva.')
+    if (!concurrent || canonicalJson(concurrent.payload) !== canonicalJson(evaluationCatalogV1)) throw new Error('El release concurrente tiene contenido diferente; crear una versión nueva.', { cause: error })
     return 'UNCHANGED'
   }
 }
