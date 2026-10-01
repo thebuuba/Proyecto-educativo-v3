@@ -1,115 +1,353 @@
-import { LoginBrandPanel } from '@/modules/auth/components/LoginBrandPanel'
-import { ArrowLeft, ArrowRight, CheckCircle, Eye, EyeOff, GraduationCap, KeyRound, LockKeyhole, Mail, ShieldCheck } from 'lucide-react'
-import type { FormEvent } from 'react'
-import { useState } from 'react'
-import { Navigate, useLocation } from 'react-router-dom'
+﻿import { Eye, EyeOff, GraduationCap } from 'lucide-react'
+import { useEffect, useState, type FormEvent } from 'react'
+import { Link, Navigate, useLocation } from 'react-router-dom'
 import { FacebookIcon, GoogleIcon } from '@/components/auth/AuthIcons'
-import { AuthTransitionLink } from '@/modules/auth/components/AuthTransitionLink'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
-import { requestMagicLink, requestPasswordReset } from '@/modules/auth/services/authService'
+import { createAulaSession, requestMagicLink, requestPasswordReset } from '@/modules/auth/services/authService'
+import { supabase } from '@/modules/auth/services/supabaseClient'
+import { ApiError } from '@/services/apiClient'
+import { PromoLayout } from '@/modules/promo/components/PromoLayout'
 
 type LocationState = { from?: { pathname?: string }; registered?: boolean }
-type Account = { email: string; fullName: string; avatarUrl?: string | null; role?: string }
-type Step = 'remembered' | 'email' | 'password' | 'link'
-const accountKey = 'aulabase:last-account'
-
-function rememberedAccount(): Account | null {
-  try {
-    const account = JSON.parse(localStorage.getItem(accountKey) ?? 'null') as Account | null
-    return account?.email && account?.fullName ? account : null
-  } catch { return null }
+type RememberedAccount = {
+  email: string
+  fullName?: string
+  avatarUrl?: string | null
+  role?: string
 }
-function greeting() {
-  const hour = new Date().getHours()
-  return hour < 12 ? 'Buenos días' : hour < 18 ? 'Buenas tardes' : 'Buenas noches'
+
+function getRememberedAccount(): RememberedAccount | null {
+  try {
+    const account = JSON.parse(
+      localStorage.getItem('aulabase:last-account') ?? 'null',
+    ) as Partial<RememberedAccount> | null
+    return typeof account?.email === 'string' && account.email.trim()
+      ? {
+          email: account.email,
+          fullName: typeof account.fullName === 'string' && account.fullName.trim() ? account.fullName : account.email,
+          avatarUrl: account.avatarUrl,
+          role: account.role,
+        }
+      : null
+  } catch {
+    return null
+  }
 }
 
 export function LoginPage() {
-  const { authError, isAuthenticated, loading, login, loginWithProvider, profileRequired } = useAuth()
+  const { authError, isAuthenticated, loading, login, loginWithProvider, profileRequired, refreshAuth } =
+    useAuth()
   const location = useLocation()
-  const [remembered] = useState(rememberedAccount)
-  const [step, setStep] = useState<Step>(remembered ? 'remembered' : 'email')
-  const [email, setEmail] = useState(remembered?.email ?? '')
+  const [rememberedAccount, setRememberedAccount] = useState(getRememberedAccount)
+  const [rememberedAccountSelected, setRememberedAccountSelected] = useState(false)
+  const [email, setEmail] = useState(() => rememberedAccount?.email ?? '')
   const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [forgotPasswordSent, setForgotPasswordSent] = useState(false)
+  const [visible, setVisible] = useState(false)
+  const [error, setError] = useState('')
+  const [feedback, setFeedback] = useState('')
+  const [busy, setBusy] = useState(false)
+  const [verificationMethod, setVerificationMethod] = useState<'email' | 'totp' | null>(null)
+  const [totpCode, setTotpCode] = useState('')
+  const requestedMethod = new URLSearchParams(location.search).get('verify')
+  const activeVerification = verificationMethod
+    ?? (requestedMethod === 'totp' ? 'totp' : requestedMethod === 'email' ? 'email' : null)
+    ?? (authError?.startsWith('VERIFICATION_REQUIRED:') ? authError.endsWith(':totp') ? 'totp' : 'email' : null)
+
+  useEffect(() => {
+    if (!activeVerification || email) return
+    void supabase.auth.getUser().then(({ data }) => {
+      if (data.user?.email) setEmail(data.user.email)
+    }).catch(() => undefined)
+  }, [activeVerification, email])
   const fromState = location.state as LocationState | null
-  const from = fromState?.from?.pathname && !['/login', '/'].includes(fromState.from.pathname) ? fromState.from.pathname : '/inicio'
+  const from =
+    fromState?.from?.pathname && !['/login', '/'].includes(fromState.from.pathname)
+      ? fromState.from.pathname
+      : '/inicio'
   if (!loading && isAuthenticated) return <Navigate to={from} replace />
   if (!loading && profileRequired) return <Navigate to="/onboarding" replace />
 
-  function chooseEmail(event: FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setErrorMessage('')
-    if (email.trim()) setStep('password')
+    setError('')
+    setBusy(true)
+    try {
+      await login({ email: email.trim(), password })
+    } catch (err) {
+      if (err instanceof ApiError && err.message === 'VERIFICATION_REQUIRED') {
+        setVerificationMethod(err.method === 'totp' ? 'totp' : 'email')
+        return
+      }
+      setError(
+        err instanceof Error ? err.message : 'No se pudo iniciar sesión. Revisa tus credenciales.',
+      )
+    } finally {
+      setBusy(false)
+    }
   }
-  async function handleLogin(event: FormEvent<HTMLFormElement>) {
+  async function resetPassword() {
+    if (!email.trim()) {
+      setError('Escribe tu correo para restablecer la contraseña.')
+      return
+    }
+    setBusy(true)
+    setError('')
+    try {
+      await requestPasswordReset(email.trim())
+      setFeedback('Te enviamos un correo para restablecer tu contraseña.')
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'No se pudo enviar el correo.')
+    } finally {
+      setBusy(false)
+    }
+  }
+  async function magicLink() {
+    const accountEmail = email.trim()
+    if (!accountEmail) {
+      setError('Escribe tu correo para recibir el enlace de acceso.')
+      return
+    }
+    setBusy(true)
+    setError('')
+    try {
+      await requestMagicLink(accountEmail)
+      setFeedback('Enviamos un enlace de acceso a tu correo.')
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'No se pudo enviar el enlace.')
+    } finally {
+      setBusy(false)
+    }
+  }
+  async function provider(name: 'google' | 'facebook') {
+    setBusy(true)
+    setError('')
+    try {
+      await loginWithProvider(name)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'No se pudo iniciar sesión.')
+      setBusy(false)
+    }
+  }
+  async function verifyTotp(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setErrorMessage('')
-    setIsSubmitting(true)
-    try { await login({ email: email.trim(), password }) }
-    catch (error) { setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar sesión. Revisa tus credenciales.') }
-    finally { setIsSubmitting(false) }
-  }
-  async function handleForgotPassword() {
-    setErrorMessage('')
-    setIsSubmitting(true)
-    try { await requestPasswordReset(email.trim()); setForgotPasswordSent(true) }
-    catch (error) { setErrorMessage(error instanceof Error ? error.message : 'No se pudo enviar el correo.') }
-    finally { setIsSubmitting(false) }
-  }
-  async function handleMagicLink() {
-    setErrorMessage('')
-    setIsSubmitting(true)
-    try { await requestMagicLink(email.trim()); setStep('link') }
-    catch (error) { setErrorMessage(error instanceof Error ? error.message : 'No se pudo enviar el enlace de acceso.') }
-    finally { setIsSubmitting(false) }
-  }
-  async function handleProvider(provider: 'google' | 'facebook') {
-    setErrorMessage('')
-    try { await loginWithProvider(provider) }
-    catch (error) { setErrorMessage(error instanceof Error ? error.message : 'No se pudo iniciar con ' + provider + '.') }
+    setBusy(true)
+    setError('')
+    try {
+      const { data: factors, error: factorsError } = await supabase.auth.mfa.listFactors()
+      if (factorsError) throw factorsError
+      const factor = factors.totp[0]
+      if (!factor) throw new Error('No encontramos un autenticador configurado.')
+      const { error: verifyError } = await supabase.auth.mfa.challengeAndVerify({ factorId: factor.id, code: totpCode.trim() })
+      if (verifyError) throw verifyError
+      const { data } = await supabase.auth.getSession()
+      if (!data.session?.access_token) throw new Error('Tu sesión expiró. Inicia sesión nuevamente.')
+      await createAulaSession(data.session.access_token)
+      await refreshAuth()
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'No se pudo verificar el código.')
+    } finally {
+      setBusy(false)
+    }
   }
 
-  return <main className="login-shell page-enter">
-    <LoginBrandPanel />
-    <section className="login-main">
-      <div className="login-mobile-brand"><span><GraduationCap size={20} /></span>Aula Base</div>
-      <AuthTransitionLink to="/contacto" direction="forward" className="login-help">¿Necesitas ayuda?</AuthTransitionLink>
-      <div className="login-card">
-        {step === 'remembered' && <>
-          <h1>{greeting()},<br /><span>bienvenido</span></h1><p className="login-subtitle">Entra a Aula Base para gestionar tus clases.</p>
-          <div className="login-remembered-label">Continúa donde lo dejaste</div>
-          <button className="login-account" type="button" onClick={() => { setEmail(remembered?.email ?? ''); setStep('password') }}><Avatar account={remembered} /><span className="login-account-copy"><strong>Continuar como {remembered?.fullName.split(' ')[0]}</strong><small>{remembered?.email}</small><em>{remembered?.role ?? 'Docente'}</em></span><span className="login-account-arrow"><ArrowRight size={16} /></span></button>
-          <button className="login-text-button login-other-account" type="button" onClick={() => { setEmail(''); setStep('email') }}>Usar otra cuenta</button>
-        </>}
-        {step === 'email' && <>
-          <h1>{greeting()},<br /><span>bienvenido</span></h1><p className="login-subtitle">Entra a Aula Base para gestionar tus clases.</p>
-          <div className="login-social"><button type="button" onClick={() => void handleProvider('google')}><GoogleIcon />Google</button><button type="button" onClick={() => void handleProvider('facebook')}><FacebookIcon />Facebook</button></div>
-          <div className="login-divider"><span>O CON TU CORREO</span></div>
-          <form onSubmit={chooseEmail}><label className="login-label" htmlFor="login-email">Correo electrónico</label><div className="login-email-wrap"><Mail size={16} /><input id="login-email" className="auth-input" type="email" autoComplete="email" placeholder="hombre@centro.edu.do" required value={email} onChange={event => { setEmail(event.target.value); setErrorMessage('') }} /></div><button className="login-primary" type="submit">Continuar <ArrowRight size={17} /></button></form>
-        </>}
-        {step === 'password' && <>
-          <button className="login-back" type="button" onClick={() => { setStep(remembered && email === remembered.email ? 'remembered' : 'email'); setErrorMessage('') }}><ArrowLeft size={16} /> Atrás</button>
-          <h1>Escribe tu contraseña</h1><p className="login-subtitle">Estás a un paso de entrar a tu panel.</p>
-          <div className="login-chosen-account"><Avatar account={remembered?.email === email ? remembered : null} /><span><strong>{remembered?.email === email ? remembered.fullName : email}</strong><small>{email}</small></span><button type="button" onClick={() => setStep('email')}>Cambiar</button></div>
-          <form onSubmit={handleLogin}><div className="login-field-heading"><label className="login-label" htmlFor="login-password">Contraseña</label><button type="button" onClick={() => void handleForgotPassword()}>¿La olvidaste?</button></div><div className="login-password-wrap"><LockKeyhole size={16} aria-hidden="true" /><input id="login-password" className="auth-input" type={showPassword ? 'text' : 'password'} autoComplete="current-password" placeholder="••••••••" required value={password} onChange={event => { setPassword(event.target.value); setErrorMessage('') }} /><button type="button" onClick={() => setShowPassword(!showPassword)} aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}>{showPassword ? <EyeOff size={17} /> : <Eye size={17} />}</button></div><button className="login-primary" type="submit" disabled={isSubmitting}>{isSubmitting ? 'Entrando...' : 'Entrar'} <ArrowRight size={17} /></button></form>
-          <button className="login-text-button login-magic" type="button" onClick={() => void handleMagicLink()} disabled={isSubmitting}><KeyRound size={16} aria-hidden="true" />Entrar con un enlace al correo</button>
-        </>}
-        {step === 'link' && <><button className="login-back" type="button" onClick={() => setStep('password')}><ArrowLeft size={16} /> Atrás</button><h1>Revisa tu<br /><span>correo</span></h1><p className="login-subtitle">Enviamos un enlace de acceso a <strong>{email}</strong>.</p><div className="login-link-message"><CheckCircle size={20} /> Abre el enlace en tu correo para continuar de forma segura.</div><button className="login-text-button login-magic" type="button" onClick={() => void handleMagicLink()} disabled={isSubmitting}>Reenviar enlace</button></>}
-        {(errorMessage || authError) && <div role="alert" className="login-feedback login-error">{errorMessage || authError}</div>}
-        {fromState?.registered && !errorMessage && <div role="status" className="login-feedback">Cuenta creada. Ya puedes iniciar sesión.</div>}
-        {forgotPasswordSent && !errorMessage && <div role="status" className="login-feedback">Te enviamos un correo para restablecer tu contraseña.</div>}
-        <p className="login-signup">¿Aún no tienes cuenta? <AuthTransitionLink to="/registro" direction="forward">Regístrate</AuthTransitionLink></p>
+  return (
+    <PromoLayout>
+      <div className="mx-auto max-w-xl px-4 py-8 sm:px-6 sm:py-14">
+        <section className="rounded-[28px] bg-card p-6 shadow-sm sm:p-10">
+          <div className="mb-8 grid size-11 place-items-center rounded-xl bg-primary text-primary-foreground">
+            <GraduationCap size={25} />
+          </div>
+          <h1 className="text-[26px] font-semibold tracking-tight sm:text-3xl">Inicia sesión</h1>
+          <p className="mt-2 text-[15px] text-muted-foreground">
+            Entra a Aula Base para continuar con tu trabajo académico.
+          </p>
+          {(error || (authError && !authError.startsWith('VERIFICATION_REQUIRED:'))) && (
+            <p
+              role="alert"
+              className="mt-6 rounded-2xl bg-destructive/12 p-4 text-sm text-destructive"
+            >
+              {error || authError}
+            </p>
+          )}
+          {(feedback || fromState?.registered) && (
+            <p role="status" className="mt-6 rounded-2xl bg-success/12 p-4 text-sm">
+              {feedback || 'Cuenta creada. Ya puedes iniciar sesión.'}
+            </p>
+          )}
+          {activeVerification ? (
+            <div className="mt-8 space-y-4">
+              <h2 className="text-lg font-semibold">Verifica que eres tú</h2>
+              <p className="text-sm text-muted-foreground">
+                {activeVerification === 'totp'
+                  ? 'Escribe el código de tu aplicación de autenticación.'
+                  : 'Te enviaremos un enlace para confirmar el acceso desde este navegador.'}
+              </p>
+              {activeVerification === 'totp' ? (
+                <form onSubmit={(event) => void verifyTotp(event)} className="space-y-4">
+                  <label className="block text-sm font-medium">Código de verificación
+                    <input className="auth-input mt-2" inputMode="numeric" autoComplete="one-time-code" value={totpCode} onChange={(event) => setTotpCode(event.target.value)} required />
+                  </label>
+                  <button type="submit" disabled={busy} className="min-h-12 w-full rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-60">Verificar</button>
+                </form>
+              ) : (
+                <>
+                  <label className="block text-sm font-medium">Correo electrónico
+                    <input className="auth-input mt-2" type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
+                  </label>
+                  <button type="button" disabled={busy} onClick={() => void magicLink()} className="min-h-12 w-full rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-60">Enviar enlace de verificación</button>
+                </>
+              )}
+            </div>
+          ) : rememberedAccount && !rememberedAccountSelected ? (
+            <div className="mt-8">
+              <p className="login-remembered-label">Continúa donde lo dejaste</p>
+              <button
+                type="button"
+                className="login-account"
+                onClick={() => setRememberedAccountSelected(true)}
+              >
+                <RememberedAvatar account={rememberedAccount} />
+                <span className="login-account-copy">
+                  <strong>
+                    Continuar como {(rememberedAccount.fullName || rememberedAccount.email).trim().split(/\s+/)[0]}
+                  </strong>
+                  <small>{rememberedAccount.email}</small>
+                  {rememberedAccount.role && <em>{rememberedAccount.role}</em>}
+                </span>
+                <span className="login-account-arrow" aria-hidden="true">
+                  →
+                </span>
+              </button>
+              <button
+                type="button"
+                className="login-text-button login-other-account"
+                onClick={() => {
+                  setEmail('')
+                  setPassword('')
+                  setRememberedAccount(null)
+                }}
+              >
+                Usar otra cuenta
+              </button>
+            </div>
+          ) : (
+            <form className="mt-8 space-y-5" onSubmit={submit}>
+              {rememberedAccount && rememberedAccountSelected ? (
+                <div className="login-chosen-account">
+                  <RememberedAvatar account={rememberedAccount} />
+                  <span>
+                    <strong>{rememberedAccount.fullName}</strong>
+                    <small>{rememberedAccount.email}</small>
+                  </span>
+                  <button type="button" onClick={() => setRememberedAccountSelected(false)}>
+                    Cambiar
+                  </button>
+                </div>
+              ) : (
+                <label className="block text-sm font-medium">
+                  Correo electrónico
+                  <input
+                    className="auth-input mt-2"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </label>
+              )}
+              <div>
+                <div className="flex items-center justify-between">
+                  <label htmlFor="login-password" className="text-sm font-medium">
+                    Contraseña
+                  </label>
+                  <button
+                    type="button"
+                    disabled={busy}
+                    onClick={() => void resetPassword()}
+                    className="text-xs font-medium text-primary hover:underline"
+                  >
+                    ¿La olvidaste?
+                  </button>
+                </div>
+                <div className="relative mt-2">
+                  <input
+                    id="login-password"
+                    className="auth-input pr-12"
+                    type={visible ? 'text' : 'password'}
+                    autoComplete="current-password"
+                    autoFocus={Boolean(rememberedAccount && rememberedAccountSelected)}
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <button
+                    type="button"
+                    aria-label={visible ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+                    onClick={() => setVisible(!visible)}
+                    className="absolute inset-y-0 right-0 grid w-12 place-items-center text-muted-foreground"
+                  >
+                    {visible ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
+                </div>
+              </div>
+              <button
+                type="submit"
+                disabled={busy}
+                className="min-h-12 w-full rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-60"
+              >
+                {busy ? 'Entrando…' : 'Entrar'}
+              </button>
+              <button type="button" disabled={busy} onClick={() => void magicLink()} className="login-text-button w-full text-center">
+                Entrar con un enlace al correo
+              </button>
+            </form>
+          )}
+          <div className="my-7 flex items-center gap-4 text-xs text-muted-foreground">
+            <span className="h-px flex-1 bg-border" />O continúa con
+            <span className="h-px flex-1 bg-border" />
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => void provider('google')}
+              className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-border text-sm font-medium"
+            >
+              <GoogleIcon /> Google
+            </button>
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => void provider('facebook')}
+              className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-border text-sm font-medium"
+            >
+              <FacebookIcon /> Facebook
+            </button>
+          </div>
+          <p className="mt-8 text-center text-sm text-muted-foreground">
+            ¿Aún no tienes cuenta?{' '}
+            <Link to="/registro" className="font-medium text-primary hover:underline">
+              Crea una cuenta
+            </Link>
+          </p>
+        </section>
       </div>
-      <footer className="login-legal"><span><ShieldCheck size={13} /> Conexión segura</span><AuthTransitionLink to="/terminos" direction="forward">Términos</AuthTransitionLink><AuthTransitionLink to="/privacidad" direction="forward">Privacidad</AuthTransitionLink></footer>
-    </section>
-  </main>
+    </PromoLayout>
+  )
 }
 
-function Avatar({ account }: { account: Account | null }) {
-  const initials = account?.fullName.split(' ').slice(0, 2).map(part => part[0]).join('').toUpperCase() || '@'
-  return account?.avatarUrl ? <img className="login-avatar" src={account.avatarUrl} alt="" /> : <span className="login-avatar login-avatar-fallback">{initials}</span>
+function RememberedAvatar({ account }: { account: RememberedAccount }) {
+  const initials = (account.fullName || account.email)
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase()
+
+  return account.avatarUrl ? (
+    <img className="login-avatar" src={account.avatarUrl} alt="" />
+  ) : (
+    <span className="login-avatar login-avatar-fallback">{initials}</span>
+  )
 }

@@ -13,6 +13,46 @@ export type TimeSlot = {
   endTime: string
   sequence: number
   status: string
+  dayOfWeek: number | null
+  blockType: ScheduleBlockType
+  journeyId: string | null
+  blockSource?: ScheduleBlockSource
+  sourceKey?: string | null
+}
+
+export type ScheduleBlockType = 'CLASS' | 'BREAK' | 'BREAKFAST' | 'LUNCH' | 'PAUSE' | 'FREE' | 'GAP'
+export type ScheduleBlockSource = 'MANUAL' | 'INTER_JOURNEY_GAP'
+
+export type ScheduleJourneyKind = 'MORNING' | 'AFTERNOON' | 'NIGHT' | 'EXTENDED' | 'CUSTOM'
+
+export type ScheduleJourney = {
+  id: string
+  name: string
+  kind: ScheduleJourneyKind
+  startTime: string
+  endTime: string
+  sequence: number
+  status: string
+}
+
+export type ScheduleStructureJourneyInput = Omit<ScheduleJourney, 'status'>
+
+export type ScheduleStructureBlockInput = {
+  id?: string
+  name: string
+  startTime: string
+  endTime: string
+  sequence: number
+  dayOfWeek: number
+  blockType: ScheduleBlockType
+  journeyKey: string
+  blockSource?: ScheduleBlockSource
+  sourceKey?: string
+}
+
+export type SaveScheduleStructureInput = {
+  journeys: ScheduleStructureJourneyInput[]
+  blocks: ScheduleStructureBlockInput[]
 }
 
 /** Datos para crear un nuevo bloque horario */
@@ -21,6 +61,9 @@ export type CreateTimeSlotInput = {
   startTime: string
   endTime: string
   sequence: number
+  dayOfWeek?: number | null
+  blockType?: ScheduleBlockType
+  journeyId?: string | null
 }
 
 /** Datos para actualizar un bloque horario (todos los campos opcionales) */
@@ -45,6 +88,16 @@ export type ScheduleEntry = {
   timeSlotName: string
   startTime: string
   endTime: string
+}
+
+export type ScheduleIntegrityIssue = {
+  code: 'GRADE_ARCHIVED' | 'SECTION_ARCHIVED' | 'SUBJECT_ASSIGNMENT_ARCHIVED' | 'SUBJECT_ARCHIVED'
+  entryIds: string[]
+  affectedClasses: number
+  gradeName: string
+  sectionName: string
+  subjectName: string
+  message: string
 }
 
 /** Entrada del horario adaptada para visualización en calendario */

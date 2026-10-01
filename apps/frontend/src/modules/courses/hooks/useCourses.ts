@@ -14,6 +14,7 @@ import {
   createSection,
   createSubject,
   deactivateGrade,
+  deleteGradePermanently,
   deactivateSection,
   deactivateSectionSubject,
   deleteSectionSubjectPermanently,
@@ -141,6 +142,16 @@ export function useCourses() {
     [cacheScope, refetch],
   )
 
+  const permanentlyDeleteGrade = useCallback(
+    async (id: string, confirmation?: string) => {
+      await deleteGradePermanently(id, confirmation)
+      coursesCache.clear(cacheScope)
+      setGrades((current) => current.filter((grade) => grade.id !== id))
+      await refetch(false)
+    },
+    [cacheScope, refetch],
+  )
+
   const addSection = useCallback(
     async (input: CreateSectionInput) => {
       await createSection(input)
@@ -206,7 +217,19 @@ export function useCourses() {
           sequence: input.gradeSequence,
         })
         coursesCache.clear(cacheScope)
-        grade = { ...createdGrade, sections: [] } as GradeWithSections
+        grade = {
+          ...createdGrade,
+          status: createdGrade.status.toLowerCase() as GradeWithSections['status'],
+          sections: [],
+        }
+      }
+
+      const normalizedGradeStatus = grade.status.toLowerCase()
+      const legacyArchivedGrade = normalizedGradeStatus === 'active'
+        && grade.sections.length > 0
+        && grade.sections.every((item) => item.status !== 'active')
+      if (normalizedGradeStatus !== 'active' || legacyArchivedGrade) {
+        throw new Error('Este grado ya existe y está archivado. Ve a Grados archivados para eliminarlo definitivamente antes de crearlo de nuevo.')
       }
 
       let section = grade.sections.find((item) => item.name.toLowerCase() === input.sectionName.toLowerCase())
@@ -239,10 +262,10 @@ export function useCourses() {
 
       const duplicateAssignment = section.assignments?.some((assignment) => {
         const sameSubject = assignment.subjectId === subjectId
-        return sameSubject && assignment.status === 'active'
+        return sameSubject
       })
       if (duplicateAssignment) {
-        throw new Error('Esta asignatura ya está asignada a la sección seleccionada.')
+        throw new Error('Esta asignatura ya está asignada o archivada en la sección seleccionada. Si está archivada, restáurala.')
       }
 
       await assignSubjectToSection({
@@ -295,9 +318,17 @@ export function useCourses() {
   const permanentlyDeleteSubjectAssignment = useCallback(
     async (id: string, confirmation?: string) => {
       await deleteSectionSubjectPermanently(id, confirmation)
+      coursesCache.clear(cacheScope)
+      setGrades((current) => current.map((grade) => ({
+        ...grade,
+        sections: grade.sections.map((section) => ({
+          ...section,
+          assignments: section.assignments?.filter((assignment) => assignment.id !== id),
+        })),
+      })))
       await refetch(false)
     },
-    [refetch],
+    [cacheScope, refetch],
   )
 
   return {
@@ -310,6 +341,7 @@ export function useCourses() {
     addGrade,
     editGrade,
     removeGrade,
+    permanentlyDeleteGrade,
     addSection,
     editSection,
     removeSection,

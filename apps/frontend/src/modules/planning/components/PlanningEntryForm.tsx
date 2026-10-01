@@ -20,7 +20,7 @@ import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
-import { getEvaluationActivities } from '@/modules/grading/services/gradingService'
+import { getActivities } from '@/modules/activities/services/activitiesService'
 import {
   findCurriculumSubject,
   secondaryGradeFromCourse,
@@ -346,7 +346,7 @@ export function PlanningEntryForm({
       setAvailableActivities([])
       return
     }
-    getEvaluationActivities(sectionSubjectId, academicPeriodId)
+    getActivities({ sectionSubjectId, academicPeriodId })
       .then((items) => { if (!ignore) setAvailableActivities(items) })
       .catch(() => { if (!ignore) setAvailableActivities([]) })
     return () => { ignore = true }

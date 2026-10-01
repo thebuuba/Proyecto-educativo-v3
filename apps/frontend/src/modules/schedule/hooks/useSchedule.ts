@@ -24,6 +24,8 @@ import type {
   CreateTimeSlotInput,
   ScheduleEntry,
   ScheduleFilters,
+  ScheduleJourney,
+  ScheduleIntegrityIssue,
   SectionOption,
   SubjectOption,
   TeacherOption,
@@ -40,6 +42,8 @@ type ScheduleCacheData = {
   teachers: TeacherOption[]
   subjects: SubjectOption[]
   schoolYearId: string | null
+  journeys: ScheduleJourney[]
+  integrityIssues: ScheduleIntegrityIssue[]
 }
 
 const scheduleCache = createScopedTtlCache<ScheduleCacheData>(60_000)
@@ -51,6 +55,8 @@ export function useSchedule() {
   const cached = scheduleCache.read(cacheScope)
   const [timeSlots, setTimeSlots] = useState<TimeSlot[]>(cached?.timeSlots ?? [])
   const [entries, setEntries] = useState<ScheduleEntry[]>(cached?.entries ?? [])
+  const [journeys, setJourneys] = useState<ScheduleJourney[]>(cached?.journeys ?? [])
+  const [integrityIssues, setIntegrityIssues] = useState<ScheduleIntegrityIssue[]>(cached?.integrityIssues ?? [])
   const [loading, setLoading] = useState(!cached)
   const [error, setError] = useState<string | null>(null)
   const [filters, setFilters] = useState<ScheduleFilters>({})
@@ -107,8 +113,8 @@ export function useSchedule() {
   }, [])
 
   /** Carga los datos iniciales: año escolar, bloques, secciones, docentes, asignaturas */
-  const loadInitialData = useCallback(async () => {
-    setLoading(true)
+  const loadInitialData = useCallback(async (showLoading = true) => {
+    if (showLoading) setLoading(true)
     setError(null)
 
     try {
@@ -128,6 +134,8 @@ export function useSchedule() {
       setTeachers(tchrs)
       setSubjects(subjs)
       setEntries(entryData)
+      setJourneys(workspace.journeys ?? [])
+      setIntegrityIssues(workspace.integrityIssues ?? [])
       scheduleCache.write(cacheScope, {
         timeSlots: slots,
         entries: entryData,
@@ -135,6 +143,8 @@ export function useSchedule() {
         teachers: tchrs,
         subjects: subjs,
         schoolYearId: yearId,
+        journeys: workspace.journeys ?? [],
+        integrityIssues: workspace.integrityIssues ?? [],
       })
     } catch (error) {
       setError(
@@ -143,7 +153,7 @@ export function useSchedule() {
           : 'No se pudieron cargar los datos del horario.',
       )
     } finally {
-      setLoading(false)
+      if (showLoading) setLoading(false)
     }
   }, [cacheScope])
 
@@ -152,12 +162,15 @@ export function useSchedule() {
     if (freshCache) {
       setTimeSlots(freshCache.timeSlots)
       setEntries(freshCache.entries)
+      setJourneys(freshCache.journeys ?? [])
+      setIntegrityIssues(freshCache.integrityIssues ?? [])
       setSections(freshCache.sections)
       setTeachers(freshCache.teachers)
       setSubjects(freshCache.subjects)
       setSchoolYearId(freshCache.schoolYearId)
       setError(null)
       setLoading(false)
+      void loadInitialData(false)
       return
     }
     void loadInitialData()
@@ -166,9 +179,8 @@ export function useSchedule() {
   /** Recarga todos los datos (bloques y entradas) */
   const refetchAll = useCallback(async () => {
     scheduleCache.clear(cacheScope)
-    await refetchTimeSlots()
-    await refetchEntries()
-  }, [cacheScope, refetchTimeSlots, refetchEntries])
+    await loadInitialData(false)
+  }, [cacheScope, loadInitialData])
 
   /** Crea un nuevo bloque horario y refresca la lista */
   const createTimeSlot = useCallback(
@@ -252,6 +264,8 @@ export function useSchedule() {
 
   return {
     timeSlots,
+    journeys,
+    integrityIssues,
     entries,
     sections,
     teachers,

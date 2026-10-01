@@ -1,0 +1,338 @@
+import type {
+  ScheduleBlockType,
+  ScheduleStructureBlockInput,
+  ScheduleStructureJourneyInput,
+} from '@/modules/schedule/types'
+
+export const scheduleDays = [
+  { dayOfWeek: 1, short: 'Lun', name: 'Lunes' },
+  { dayOfWeek: 2, short: 'Mar', name: 'Martes' },
+  { dayOfWeek: 3, short: 'Mié', name: 'Miércoles' },
+  { dayOfWeek: 4, short: 'Jue', name: 'Jueves' },
+  { dayOfWeek: 5, short: 'Vie', name: 'Viernes' },
+  { dayOfWeek: 6, short: 'Sáb', name: 'Sábado' },
+  { dayOfWeek: 7, short: 'Dom', name: 'Domingo' },
+] as const
+
+export const blockTypeLabels: Record<ScheduleBlockType, string> = {
+  CLASS: 'Clase',
+  BREAK: 'Recreo',
+  BREAKFAST: 'Desayuno',
+  LUNCH: 'Almuerzo',
+  PAUSE: 'Pausa',
+  FREE: 'Hora pedagógica',
+  GAP: 'Espacio entre jornadas',
+}
+
+export const INTER_SHIFT_CONFIGURABLE_GAP_MINUTES = 120
+
+export type InterJourneyGap = {
+  key: string
+  previousJourneyId: string
+  nextJourneyId: string
+  startTime: string
+  endTime: string
+  durationMinutes: number
+}
+
+export function detectInterJourneyGaps(
+  journeys: ScheduleStructureJourneyInput[],
+): InterJourneyGap[] {
+  const ordered = [...journeys].sort(
+    (a, b) => minutesFromScheduleTime(a.startTime) - minutesFromScheduleTime(b.startTime),
+  )
+  return ordered.slice(0, -1).flatMap((journey, index) => {
+    const next = ordered[index + 1]
+    if (minutesFromScheduleTime(next.startTime) <= minutesFromScheduleTime(journey.endTime)) return []
+    return [{
+      key: `${journey.id}:${next.id}`,
+      previousJourneyId: journey.id,
+      nextJourneyId: next.id,
+      startTime: journey.endTime,
+      endTime: next.startTime,
+      durationMinutes: minutesFromScheduleTime(next.startTime) - minutesFromScheduleTime(journey.endTime),
+    }]
+  })
+}
+
+export type ScheduleTemplateBlock = {
+  key: string
+  name: string
+  startTime: string
+  endTime: string
+  sequence: number
+  blockType: ScheduleBlockType
+}
+
+export type JourneyStructureDraft = {
+  durationMinutes: number | ''
+  periodCount: number | ''
+  generatedDurationMinutes?: number
+  generatedPeriodCount?: number
+  appliedDays: number[]
+  baseBlocks: ScheduleTemplateBlock[]
+  dayOverrides: Record<number, ScheduleTemplateBlock[]>
+}
+
+export function minutesFromScheduleTime(value: string) {
+  const [hours, minutes] = value.slice(0, 5).split(':').map(Number)
+  return hours * 60 + minutes
+}
+
+export function scheduleTimeFromMinutes(value: number) {
+  const hours = Math.floor(value / 60)
+  const minutes = value % 60
+  return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`
+}
+
+export function formatScheduleTime(value: string) {
+  const [hours, minutes] = value.slice(0, 5).split(':').map(Number)
+  if (!Number.isInteger(hours) || !Number.isInteger(minutes)) return value
+  const period = hours < 12 ? 'a. m.' : 'p. m.'
+  return `${hours % 12 || 12}:${String(minutes).padStart(2, '0')} ${period}`
+}
+
+export function formatScheduleRange(startTime: string, endTime: string) {
+  const start = formatScheduleTime(startTime)
+  const end = formatScheduleTime(endTime)
+  const startPeriod = start.endsWith('a. m.') ? 'a. m.' : 'p. m.'
+  const endPeriod = end.endsWith('a. m.') ? 'a. m.' : 'p. m.'
+  return startPeriod === endPeriod
+    ? `${start.replace(` ${startPeriod}`, '')}–${end}`
+    : `${start}–${end}`
+}
+
+export function formatScheduleDuration(minutes: number) {
+  const hours = Math.floor(minutes / 60)
+  const remainder = minutes % 60
+  return [hours ? `${hours} h` : '', remainder ? `${remainder} min` : ''].filter(Boolean).join(' ')
+}
+
+export function blockDuration(block: Pick<ScheduleStructureBlockInput, 'startTime' | 'endTime'>) {
+  return minutesFromScheduleTime(block.endTime) - minutesFromScheduleTime(block.startTime)
+}
+
+export function generateJourneyBlocks(input: {
+  journeyKey: string
+  startTime: string
+  durationMinutes: number
+  periodCount: number
+  days: number[]
+}) {
+  const blocks: ScheduleStructureBlockInput[] = []
+  for (const dayOfWeek of input.days) {
+    let cursor = minutesFromScheduleTime(input.startTime)
+    for (let index = 0; index < input.periodCount; index += 1) {
+      const end = cursor + input.durationMinutes
+      blocks.push({
+        name: `Clase ${index + 1}`,
+        startTime: scheduleTimeFromMinutes(cursor),
+        endTime: scheduleTimeFromMinutes(end),
+        sequence: index + 1,
+        dayOfWeek,
+        blockType: 'CLASS',
+        journeyKey: input.journeyKey,
+      })
+      cursor = end
+    }
+  }
+  return blocks
+}
+
+export function generateTemplateBlocks(
+  startTime: string,
+  durationMinutes: number,
+  periodCount: number,
+): ScheduleTemplateBlock[] {
+  let cursor = minutesFromScheduleTime(startTime)
+  return Array.from({ length: periodCount }, (_, index) => {
+    const end = cursor + durationMinutes
+    const block = {
+      key: crypto.randomUUID(),
+      name: `Clase ${index + 1}`,
+      startTime: scheduleTimeFromMinutes(cursor),
+      endTime: scheduleTimeFromMinutes(end),
+      sequence: index + 1,
+      blockType: 'CLASS' as const,
+    }
+    cursor = end
+    return block
+  })
+}
+
+export function insertTemplateNonLectiveBlock(
+  blocks: ScheduleTemplateBlock[],
+  afterIndex: number,
+  durationMinutes: number,
+  name = 'Recreo',
+  blockType: Extract<ScheduleBlockType, 'BREAK' | 'LUNCH'> = 'BREAK',
+  moveFollowing = true,
+  explicitStartTime?: string,
+) {
+  const ordered = [...blocks].sort((a, b) => a.sequence - b.sequence)
+  const previous = ordered[Math.max(0, Math.min(afterIndex, ordered.length - 1))]
+  if (!previous) return ordered
+  const start = explicitStartTime
+    ? minutesFromScheduleTime(explicitStartTime)
+    : minutesFromScheduleTime(previous.endTime)
+  const end = start + durationMinutes
+  const next = [...ordered]
+  next.splice(afterIndex + 1, 0, {
+    key: crypto.randomUUID(),
+    name,
+    startTime: scheduleTimeFromMinutes(start),
+    endTime: scheduleTimeFromMinutes(end),
+    sequence: afterIndex + 2,
+    blockType,
+  })
+  const sequenced = next.map((block, index) => ({ ...block, sequence: index + 1 }))
+  return moveFollowing ? reflowTemplateBlocks(sequenced, afterIndex + 2) : sequenced
+}
+
+export function insertTemplateBreak(
+  blocks: ScheduleTemplateBlock[],
+  afterIndex: number,
+  durationMinutes: number,
+  name = 'Recreo',
+  moveFollowing = true,
+) {
+  return insertTemplateNonLectiveBlock(
+    blocks,
+    afterIndex,
+    durationMinutes,
+    name,
+    'BREAK',
+    moveFollowing,
+  )
+}
+
+export function reflowTemplateBlocks(blocks: ScheduleTemplateBlock[], afterSequence: number) {
+  const ordered = [...blocks].sort((a, b) => a.sequence - b.sequence)
+  const startIndex = ordered.findIndex((block) => block.sequence === afterSequence)
+  if (startIndex < 0) return ordered
+  let cursor = minutesFromScheduleTime(ordered[startIndex].endTime)
+  return ordered.map((block, index) => {
+    if (index <= startIndex) return block
+    const duration = Math.max(
+      0,
+      minutesFromScheduleTime(block.endTime) - minutesFromScheduleTime(block.startTime),
+    )
+    const shifted = {
+      ...block,
+      startTime: scheduleTimeFromMinutes(cursor),
+      endTime: scheduleTimeFromMinutes(cursor + duration),
+    }
+    cursor += duration
+    return shifted
+  })
+}
+
+export function materializeJourneyDraft(
+  journeyKey: string,
+  draft: JourneyStructureDraft,
+  existingSlots: Array<{
+    id: string
+    journeyId: string | null
+    dayOfWeek: number | null
+    sequence: number
+  }> = [],
+) {
+  return draft.appliedDays.flatMap((dayOfWeek) => {
+    const template = draft.dayOverrides[dayOfWeek] ?? draft.baseBlocks
+    return template.map((block, index) => ({
+      id: existingSlots.find(
+        (slot) =>
+          slot.journeyId === journeyKey &&
+          slot.dayOfWeek === dayOfWeek &&
+          slot.sequence === index + 1,
+      )?.id,
+      name: block.name,
+      startTime: block.startTime,
+      endTime: block.endTime,
+      sequence: index + 1,
+      dayOfWeek,
+      blockType: block.blockType,
+      journeyKey,
+    }))
+  })
+}
+
+export function templateFromDay(
+  journeyKey: string,
+  dayOfWeek: number,
+  slots: Array<{
+    id: string
+    name: string
+    startTime: string
+    endTime: string
+    sequence: number
+    dayOfWeek: number | null
+    blockType?: ScheduleBlockType
+    journeyId: string | null
+  }>,
+): ScheduleTemplateBlock[] {
+  return slots
+    .filter((slot) => slot.journeyId === journeyKey && slot.dayOfWeek === dayOfWeek)
+    .sort((a, b) => a.sequence - b.sequence)
+    .map((slot) => ({
+      key: slot.id,
+      name: slot.name,
+      startTime: slot.startTime.slice(0, 5),
+      endTime: slot.endTime.slice(0, 5),
+      sequence: slot.sequence,
+      blockType: slot.blockType ?? 'CLASS',
+    }))
+}
+
+export function validateScheduleStructure(
+  journeys: ScheduleStructureJourneyInput[],
+  blocks: ScheduleStructureBlockInput[],
+) {
+  const errors: string[] = []
+  if (!journeys.length) errors.push('Añade al menos una jornada.')
+  journeys.forEach((journey) => {
+    if (minutesFromScheduleTime(journey.endTime) <= minutesFromScheduleTime(journey.startTime))
+      errors.push(`${journey.name}: la hora final debe ser posterior al inicio.`)
+  })
+  blocks.forEach((block) => {
+    if (blockDuration(block) <= 0)
+      errors.push(`${block.name}: la hora final debe ser posterior al inicio.`)
+    const journey = journeys.find((item) => item.id === block.journeyKey)
+    if (!journey) errors.push(`${block.name}: selecciona una jornada válida.`)
+    else if (
+      block.blockSource !== 'INTER_JOURNEY_GAP' &&
+      (minutesFromScheduleTime(block.startTime) < minutesFromScheduleTime(journey.startTime) ||
+        minutesFromScheduleTime(block.endTime) > minutesFromScheduleTime(journey.endTime))
+    )
+      errors.push(`${block.name}: queda fuera de ${journey.name}.`)
+  })
+  for (const day of new Set(blocks.map((block) => block.dayOfWeek))) {
+    const dayBlocks = blocks
+      .filter((block) => block.dayOfWeek === day)
+      .sort((a, b) => minutesFromScheduleTime(a.startTime) - minutesFromScheduleTime(b.startTime))
+    for (let index = 1; index < dayBlocks.length; index += 1) {
+      if (
+        minutesFromScheduleTime(dayBlocks[index].startTime) <
+        minutesFromScheduleTime(dayBlocks[index - 1].endTime)
+      )
+        errors.push(
+          `${scheduleDays.find((item) => item.dayOfWeek === day)?.name}: hay bloques solapados.`,
+        )
+    }
+  }
+  return [...new Set(errors)]
+}
+
+export function summarizeBlocks(blocks: ScheduleStructureBlockInput[]) {
+  return blocks.reduce(
+    (summary, block) => {
+      const duration = Math.max(0, blockDuration(block))
+      summary.total += duration
+      if (block.blockType === 'CLASS') summary.class += duration
+      else if (block.blockType === 'FREE') summary.free += duration
+      else summary.pause += duration
+      return summary
+    },
+    { total: 0, class: 0, pause: 0, free: 0 },
+  )
+}

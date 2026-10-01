@@ -20,7 +20,7 @@ import type { ReactNode } from 'react'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { Modal } from '@/components/ui/Modal'
-import type { GradingActivity } from '@/modules/grading/types'
+import type { Activity } from '@/modules/activities/types'
 import { activityCompetencyWeights, competencyBlocks, plainActivityText } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 
@@ -58,7 +58,7 @@ const rubricLevelPalette = [
 ]
 
 export function ActivityInfoModal({ activity, onClose, onEdit, onEvaluate }: {
-  activity: GradingActivity
+  activity: Activity
   onClose: () => void
   onEdit?: () => void
   onEvaluate?: () => void
@@ -90,6 +90,7 @@ export function ActivityInfoModal({ activity, onClose, onEdit, onEvaluate }: {
       </header>
 
       <div className="space-y-4 bg-muted/10 p-5">
+        {activity.profileCompatibility === 'legacy-review-required' ? <div role="alert" className="rounded-xl border border-warning/35 bg-warning/10 px-4 py-3 text-sm font-semibold text-foreground">Estructura anterior: esta actividad usa un bloque que no pertenece al perfil oficial actual y requiere revisión. Sus calificaciones históricas se conservan.</div> : null}
         <section className={cn('relative overflow-hidden rounded-xl border p-4 shadow-sm', accent.card, accent.border)}>
           <div className="relative z-10 flex flex-wrap items-start justify-between gap-3"><div><h4 className={cn('text-xl font-black', accent.text)}>{activity.name || 'Actividad sin nombre'}</h4><p className="mt-1 text-sm text-muted-foreground">{activityBlocks.length > 1 ? `${activityBlocks.length} bloques de competencias` : blockShortNames[block.id] ?? block.name}</p></div><div className="flex flex-wrap justify-end gap-1.5">{activityBlocks.map((item) => <Badge key={item.id} className={cn(accent.badge)}>{item.shortName}{weightedCompetencies ? ` · ${Math.round(competencyWeights[item.id] * 1000) / 10} %` : ''}</Badge>)}</div></div>
           <span className="absolute -right-7 -top-12 size-36 rounded-full bg-white/25" />

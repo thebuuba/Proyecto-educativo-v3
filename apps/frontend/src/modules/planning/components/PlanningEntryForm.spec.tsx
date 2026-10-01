@@ -5,15 +5,15 @@ import { PlanningEntryForm } from './PlanningEntryForm'
 
 const mocks = vi.hoisted(() => ({
   generatePlanningEntry: vi.fn(),
-  getEvaluationActivities: vi.fn().mockResolvedValue([]),
+  getActivities: vi.fn().mockResolvedValue([]),
 }))
 
 vi.mock('@/modules/auth/hooks/useAuth', () => ({
   useAuth: () => ({ appUser: { fullName: 'Docente de prueba' } }),
 }))
 
-vi.mock('@/modules/grading/services/gradingService', () => ({
-  getEvaluationActivities: mocks.getEvaluationActivities,
+vi.mock('@/modules/activities/services/activitiesService', () => ({
+  getActivities: mocks.getActivities,
 }))
 
 vi.mock('@/modules/planning/services/planningService', () => ({

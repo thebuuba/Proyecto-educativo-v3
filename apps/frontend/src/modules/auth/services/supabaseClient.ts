@@ -28,6 +28,12 @@ if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Supabase frontend env is not configured.')
 }
 
+const authStorageKey = `sb-${new URL(supabaseUrl).hostname.split('.')[0]}-auth-token`
+
+export function clearPersistedSupabaseSession() {
+  authSessionStorage.removeItem(authStorageKey)
+}
+
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     flowType: 'pkce',

@@ -8,8 +8,9 @@ import {
   ArgumentsHost,
   HttpException,
   HttpStatus,
+  Logger,
 } from '@nestjs/common'
-import { Response } from 'express'
+import { Request, Response } from 'express'
 
 /**
  * Filtro que atrapa todas las excepciones no controladas y las transforma
@@ -17,6 +18,7 @@ import { Response } from 'express'
  */
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
+  private readonly logger = new Logger(AllExceptionsFilter.name)
   /**
    * Maneja la excepción y envía la respuesta formateada al cliente.
    *
@@ -29,17 +31,26 @@ export class AllExceptionsFilter implements ExceptionFilter {
 
     let status = HttpStatus.INTERNAL_SERVER_ERROR
     let message = 'Internal server error'
+    let verificationMethod: string | undefined
 
     if (exception instanceof HttpException) {
       status = exception.getStatus()
       const res = exception.getResponse()
       message = typeof res === 'string' ? res : (res as { message?: string }).message ?? message
+      if (message === 'VERIFICATION_REQUIRED' && typeof res === 'object') {
+        verificationMethod = (res as { method?: string }).method
+      }
+    } else {
+      const error = exception instanceof Error ? exception : new Error(String(exception))
+      const request = ctx.getRequest<Request>()
+      this.logger.error(`${request.method} ${request.originalUrl}: ${error.constructor.name}: ${error.message}`, error.stack)
     }
 
     response.status(status).json({
       success: false,
       error: message,
       statusCode: status,
+      ...(verificationMethod ? { method: verificationMethod } : {}),
     })
   }
 }

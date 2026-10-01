@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-09-27T22:03:53.781Z",
+  "extractorSha256": "cb8600d08ad07401abc2643a99f73fe2b0ee7121a4a129694ea2caa4aa7f5e6c",
+  "extractorFiles": {
+    "check-local-db.mjs": "4be0566e7fb4599f300cb3be1360aec39a669ab5f7adb69ca3a69a65d23def97",
+    "curriculum.test.mjs": "921e2d6e5ce01d0a6f33925ef90ea9da105bf0dbffc8b5e782fb1dfa8b89ca11",
+    "extract.mjs": "7cd08ab10ec3b2428f8d744e8421e2d82752db54876b6b3e0e3cbb992ac9e9ae",
+    "inspect-pages.mjs": "6af6948d728832d9b6b54f1ac1eb9325fdd7ae699b3e385437b321325f7c05a5",
+    "layout.mjs": "334be7628612770a97dfb1c01bd277df709e151dc472c9471a6754efa95ce868",
+    "malla.mjs": "17db9348470ac71eaed9275f1b29d55d0dd676318b03957783191c46b7098843",
+    "pdf-page.mjs": "a896ad9bdc5f188a3499bae8882219340ff89333dcdaa00278f416cc5ee9602d",
+    "primary.mjs": "98d5c95a635b7f476989891afff8b31df2a6dded1233a7caa079f705ed08ad6b",
+    "query.mjs": "7b38b40de937cbf950889891d9976229a729bb738b2c890559a2b18a7a229231",
+    "regression.test.mjs": "81630a6f4d69fc9d02edbb26431d178719623aab892f03885972bf57977fbf03",
+    "secondary.mjs": "4c5dde88a98b8c2f03020787dc1a65148ed276a7238506dd31f3054f043b0756",
+    "source-anomalies.mjs": "5a1438a2edf8c5519d212e37c91471687b1960db931a144a066e49db91792852",
+    "survey.mjs": "d1d109a19c7aa49fff3cdee04433709af1621080342f8a1335103ba00fe6e5b1",
+    "validate.mjs": "f90551adbb5be8d34581c198cc2149601689abdc8f99aa9d92f7f59b3a1f8fc6",
+    "verify-artifacts.mjs": "8f853351ef723a31392e8d786f0a1f390ff8294c06947ed96edd6d20b734870f"
+  },
+  "node": "v24.19.0",
+  "document": {
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "sourceAnomalies": [
+    {
+      "level": "SECONDARY",
+      "pages": [
+        401
+      ],
+      "patch": {
+        "cycle": 1,
+        "grade": 3,
+        "areaName": "Formación Integral Humana y Religiosa"
+      },
+      "literal": "Nivel Secundario – Segundo Ciclo; 3er. Grado",
+      "evidence": [
+        398,
+        400,
+        401,
+        402,
+        405
+      ],
+      "reason": "FIHR grade 3 is in first cycle; page 401 explicitly says 3er. Grado, within the first-cycle FIHR sequence before second-cycle chapter."
+    }
+  ],
+  "artifacts": {
+    "secondary-2023.jsonl": "9cdfc8d51bc44918d41c611ed650bff583f6139532b130e7b9a75855247b4da3",
+    "secondary-2023.coverage.json": "67da24d182b446d415c42c5dfe42b50195338fb7b2c34c0ae989192b04010c03",
+    "secondary-2023.matrix.csv": "cca0fa16c925d69553c506bb5ef64464e032f262e752a0da1d27d2f088a73ea1",
+    "secondary-2023.pending.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "secondary-2023.samples.json": "1fba634e78cac7f4b475d4018d75003790c2803e6fbfadba35dd691cd4716b8c",
+    "secondary-2023.pages.json": "d042eafeb461c0e22056ac98ff9388fb837b69736dda6b5d2e87d819666b3528"
+  }
+}

@@ -136,7 +136,7 @@ async function deleteSupabaseAuthUser(id: string) {
   })
 }
 
-async function signInSupabaseUser(dto: LoginDto): Promise<SupabaseAuthUser> {
+async function signInSupabaseUser(dto: LoginDto): Promise<{ user: SupabaseAuthUser; accessToken: string; refreshToken: string }> {
   const { url, authKey } = getSupabaseConfig()
   const response = await fetch(`${url}/auth/v1/token?grant_type=password`, {
     method: 'POST',
@@ -154,10 +154,10 @@ async function signInSupabaseUser(dto: LoginDto): Promise<SupabaseAuthUser> {
     throw new UnauthorizedException('Invalid credentials')
   }
 
-  const body = await response.json() as { user?: SupabaseAuthUser }
+  const body = await response.json() as { user?: SupabaseAuthUser; access_token?: string; refresh_token?: string }
   if (!body.user?.id) throw new UnauthorizedException('Invalid credentials')
 
-  return body.user
+  return { user: body.user, accessToken: body.access_token ?? '', refreshToken: body.refresh_token ?? '' }
 }
 
 async function requestSupabasePasswordReset(email: string) {
@@ -313,7 +313,7 @@ export class AuthService {
   async login(dto: LoginDto) {
     assertAuthEnvironment()
 
-    const authUser = await signInSupabaseUser(dto)
+    const { user: authUser } = await signInSupabaseUser(dto)
     const user = await findAppUserForAuthUser(authUser)
     if (!user || user.status !== 'ACTIVE') {
       throw new UnauthorizedException(
@@ -350,6 +350,17 @@ export class AuthService {
     )
 
     return this.buildSession(user, roles, uniquePermissions)
+  }
+
+  /** Variante de login usada por el endpoint alternativo; conserva los tokens renovables. */
+  async loginWithToken(dto: LoginDto) {
+    const { accessToken, refreshToken } = await signInSupabaseUser(dto)
+    if (!accessToken || !refreshToken) throw new UnauthorizedException('Invalid credentials')
+    return {
+      session: await this.createSessionFromSupabaseToken(accessToken),
+      accessToken,
+      refreshToken,
+    }
   }
 
   async createSessionFromSupabaseToken(supabaseAccessToken: string) {

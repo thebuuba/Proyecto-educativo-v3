@@ -3,20 +3,32 @@ import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { __test__clearCoursesCache, CoursesService } from './courses.service'
 import { GradingService } from '../grading/grading.service'
 import { ScheduleService } from '../schedule/schedule.service'
+import { Reflector } from '@nestjs/core'
+import type { ExecutionContext } from '@nestjs/common'
+import { RolesGuard } from '../../common/guards/roles.guard'
+import { CoursesController } from './courses.controller'
 
 const mocks = vi.hoisted(() => ({
   prisma: {
     grade: { findMany: vi.fn(), findFirst: vi.fn(), create: vi.fn(), update: vi.fn(), upsert: vi.fn() },
     section: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
-    sectionSubject: { findMany: vi.fn(), findFirst: vi.fn(), update: vi.fn(), upsert: vi.fn() },
+    sectionSubject: { findMany: vi.fn(), findFirst: vi.fn(), findUnique: vi.fn(), create: vi.fn(), update: vi.fn(), upsert: vi.fn(), deleteMany: vi.fn() },
     enrollment: { groupBy: vi.fn() },
-    courseTeam: { groupBy: vi.fn(), findFirst: vi.fn(), findMany: vi.fn(), update: vi.fn(), delete: vi.fn(), count: vi.fn(), create: vi.fn() },
+    courseTeam: { groupBy: vi.fn(), findFirst: vi.fn(), findMany: vi.fn(), update: vi.fn(), delete: vi.fn(), deleteMany: vi.fn(), count: vi.fn(), create: vi.fn() },
     courseTeamMember: { updateMany: vi.fn(), deleteMany: vi.fn(), upsert: vi.fn() },
-    evaluationActivity: { groupBy: vi.fn() },
-    attendanceClass: { findMany: vi.fn() },
-    gradesRecord: { groupBy: vi.fn() },
-    planningEntry: { findMany: vi.fn() },
-    subject: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn() },
+    evaluationActivity: { groupBy: vi.fn(), findMany: vi.fn(), deleteMany: vi.fn() },
+    evaluationActivityGroup: { findMany: vi.fn(), deleteMany: vi.fn() },
+    evaluationActivityGroupMember: { deleteMany: vi.fn() },
+    evaluationActivityEvidence: { deleteMany: vi.fn() },
+    pedagogicalRecovery: { deleteMany: vi.fn() },
+    attendanceClass: { findMany: vi.fn(), deleteMany: vi.fn() },
+    gradesRecord: { groupBy: vi.fn(), findMany: vi.fn(), deleteMany: vi.fn() },
+    planningEntry: { findMany: vi.fn(), deleteMany: vi.fn() },
+    scheduleEntry: { deleteMany: vi.fn() },
+    subjectResource: { count: vi.fn(), deleteMany: vi.fn() },
+    teacherJournalEntry: { deleteMany: vi.fn() },
+    evaluationActivityResource: { count: vi.fn() },
+    subject: { findMany: vi.fn(), findFirst: vi.fn(), upsert: vi.fn(), deleteMany: vi.fn() },
     drAcademicLevel: { findMany: vi.fn() },
     drAcademicCycle: { findMany: vi.fn() },
     drModality: { findMany: vi.fn() },
@@ -37,6 +49,13 @@ vi.mock('@aula/database', () => ({
 describe('CoursesService.getCourseData', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    mocks.prisma.$transaction.mockImplementation(async (callback: (tx: typeof mocks.prisma) => Promise<unknown>) => callback(mocks.prisma))
+    mocks.prisma.subjectResource.count.mockResolvedValue(0)
+    mocks.prisma.evaluationActivityResource.count.mockResolvedValue(0)
+    mocks.prisma.evaluationActivity.findMany.mockResolvedValue([])
+    mocks.prisma.gradesRecord.findMany.mockResolvedValue([])
+    mocks.prisma.courseTeam.findMany.mockResolvedValue([])
+    mocks.prisma.sectionSubject.deleteMany.mockResolvedValue({ count: 1 })
     __test__clearCoursesCache()
     mocks.prisma.grade.findMany.mockResolvedValue([
       {
@@ -202,46 +221,90 @@ describe('CoursesService.getCourseData', () => {
     expect(result).toMatchObject({ appearanceColor: '#0E9F6E', appearanceIcon: 'leaf' })
   })
 
-  it('blocks permanent deletion of an active assignment with any related data', async () => {
+  it('blocks permanent deletion of an active assignment even without related data', async () => {
     mocks.prisma.sectionSubject.findFirst.mockResolvedValue({
       id: 'ss-1',
       schoolId: 'school-1',
       status: 'ACTIVE',
       subject: { name: 'Matemática' },
-      _count: {
-        attendanceClasses: 0,
-        gradesRecords: 0,
-        evaluationActivities: 0,
-        courseTeams: 0,
-        scheduleEntries: 1,
-        planningEntries: 0,
-      },
     })
 
     await expect(
-      new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-1'),
-    ).rejects.toThrow('Esta asignatura contiene información y solo puede archivarse')
+      new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-1', 'ELIMINAR'),
+    ).rejects.toThrow('Solo se pueden eliminar permanentemente asignaturas archivadas')
+    expect(mocks.prisma.sectionSubject.deleteMany).not.toHaveBeenCalled()
   })
 
-  it('requires the exact subject name before deleting an archived assignment with data', async () => {
+  it('requires ELIMINAR before deleting an archived assignment, even without data', async () => {
     mocks.prisma.sectionSubject.findFirst.mockResolvedValue({
       id: 'ss-archived',
       schoolId: 'school-1',
       status: 'INACTIVE',
       subject: { name: 'Ciencias de la Naturaleza' },
-      _count: {
-        attendanceClasses: 1,
-        gradesRecords: 0,
-        evaluationActivities: 0,
-        courseTeams: 0,
-        scheduleEntries: 0,
-        planningEntries: 0,
-      },
     })
 
     await expect(
       new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-archived', 'Ciencias'),
-    ).rejects.toThrow('Escribe el nombre exacto de la asignatura para confirmar la eliminación')
+    ).rejects.toThrow('Escribe ELIMINAR')
+    expect(mocks.prisma.$transaction).not.toHaveBeenCalled()
+  })
+
+  it('deletes an archived assignment and its dependent records in one transaction', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-archived', status: 'INACTIVE' })
+    mocks.prisma.evaluationActivity.findMany.mockResolvedValue([{ id: 'activity-1' }])
+    mocks.prisma.evaluationActivityGroup.findMany.mockResolvedValue([{ id: 'group-1' }])
+    mocks.prisma.gradesRecord.findMany.mockResolvedValue([{ id: 'record-1' }])
+    mocks.prisma.courseTeam.findMany.mockResolvedValue([{ id: 'team-1' }])
+
+    await expect(new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-archived', 'ELIMINAR'))
+      .resolves.toEqual({ deleted: true })
+    expect(mocks.prisma.evaluationActivityGroupMember.deleteMany).toHaveBeenCalled()
+    expect(mocks.prisma.evaluationActivityEvidence.deleteMany).toHaveBeenCalled()
+    expect(mocks.prisma.pedagogicalRecovery.deleteMany).toHaveBeenCalled()
+    expect(mocks.prisma.subjectResource.deleteMany).toHaveBeenCalledWith({ where: { schoolId: 'school-1', sectionSubjectId: 'ss-archived' } })
+    expect(mocks.prisma.teacherJournalEntry.deleteMany).toHaveBeenCalledWith({ where: { schoolId: 'school-1', sectionSubjectId: 'ss-archived' } })
+    expect(mocks.prisma.attendanceClass.deleteMany).toHaveBeenCalled()
+    expect(mocks.prisma.scheduleEntry.deleteMany).toHaveBeenCalled()
+    expect(mocks.prisma.planningEntry.deleteMany).toHaveBeenCalled()
+    expect(mocks.prisma.courseTeamMember.deleteMany).toHaveBeenCalled()
+    expect(mocks.prisma.sectionSubject.deleteMany).toHaveBeenCalledWith({ where: { id: 'ss-archived', schoolId: 'school-1', status: 'INACTIVE' } })
+    expect(mocks.prisma.subject.deleteMany).not.toHaveBeenCalled()
+  })
+
+  it('blocks cross-school deletion and uploaded resources', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValueOnce(null).mockResolvedValueOnce({ status: 'INACTIVE' })
+    await expect(new CoursesService().permanentlyDeleteSectionSubject('other-school', 'ss-archived', 'ELIMINAR'))
+      .rejects.toThrow('Asignatura archivada no encontrada')
+    expect(mocks.prisma.sectionSubject.findFirst).toHaveBeenCalledWith({ where: { id: 'ss-archived', schoolId: 'other-school' }, select: { status: true } })
+    mocks.prisma.subjectResource.count.mockResolvedValueOnce(1)
+    await expect(new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-archived', 'ELIMINAR'))
+      .rejects.toThrow('archivos adjuntos')
+    expect(mocks.prisma.sectionSubject.deleteMany).not.toHaveBeenCalled()
+  })
+
+  it('does not delete the assignment when a dependent deletion fails', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ status: 'INACTIVE' })
+    mocks.prisma.gradesRecord.deleteMany.mockRejectedValueOnce(new Error('Database unavailable'))
+    await expect(new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-archived', 'ELIMINAR'))
+      .rejects.toThrow('Database unavailable')
+    expect(mocks.prisma.sectionSubject.deleteMany).not.toHaveBeenCalled()
+    expect(mocks.prisma.$transaction).toHaveBeenCalledOnce()
+  })
+
+  it('blocks resources linked to an activity from another assignment', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ status: 'INACTIVE' })
+    mocks.prisma.evaluationActivityResource.count.mockResolvedValueOnce(1)
+    await expect(new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-archived', 'ELIMINAR'))
+      .rejects.toThrow('otra asignatura')
+    expect(mocks.prisma.sectionSubject.deleteMany).not.toHaveBeenCalled()
+  })
+
+  it('reports an unexpected foreign-key dependency without removing the assignment', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ status: 'INACTIVE' })
+    mocks.prisma.subjectResource.deleteMany.mockRejectedValueOnce({ code: 'P2003' })
+    await expect(new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-archived', 'ELIMINAR'))
+      .rejects.toThrow('información vinculada')
+    expect(mocks.prisma.sectionSubject.deleteMany).not.toHaveBeenCalled()
   })
 
   it('reloads course data on sequential requests', async () => {
@@ -264,7 +327,8 @@ describe('CoursesService.getCourseData', () => {
     mocks.prisma.section.findFirst.mockResolvedValue({ id: 'section-1', schoolId: 'school-1', gradeId: 'grade-1' })
     mocks.prisma.subject.findFirst.mockResolvedValue({ id: 'subject-1', schoolId: 'school-1' })
     mocks.prisma.teacher.findFirst.mockResolvedValue({ id: 'teacher-owner', userId: 'user-1', schoolId: 'school-1' })
-    mocks.prisma.sectionSubject.upsert.mockResolvedValue({ id: 'ss-1', teacherId: 'teacher-owner' })
+    mocks.prisma.sectionSubject.findUnique.mockResolvedValue(null)
+    mocks.prisma.sectionSubject.create.mockResolvedValue({ id: 'ss-1', teacherId: 'teacher-owner' })
 
     await new CoursesService().assignSubject('school-1', {
       schoolYearId: 'year-1',
@@ -276,10 +340,36 @@ describe('CoursesService.getCourseData', () => {
     expect(mocks.prisma.teacher.findFirst).toHaveBeenCalledWith({
       where: { userId: 'user-1', schoolId: 'school-1', status: 'ACTIVE' },
     })
-    expect(mocks.prisma.sectionSubject.upsert).toHaveBeenCalledWith(expect.objectContaining({
-      create: expect.objectContaining({ teacherId: 'teacher-owner' }),
-      update: expect.objectContaining({ teacherId: 'teacher-owner' }),
+    expect(mocks.prisma.sectionSubject.create).toHaveBeenCalledWith(expect.objectContaining({
+      data: expect.objectContaining({ teacherId: 'teacher-owner' }),
     }))
+  })
+
+  it('does not silently reactivate a duplicate archived assignment', async () => {
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1', schoolId: 'school-1' })
+    mocks.prisma.grade.findFirst.mockResolvedValue({ id: 'grade-1' })
+    mocks.prisma.section.findFirst.mockResolvedValue({ id: 'section-1' })
+    mocks.prisma.subject.findFirst.mockResolvedValue({ id: 'subject-1' })
+    mocks.prisma.sectionSubject.findUnique.mockResolvedValue({ id: 'archived-1', status: 'INACTIVE' })
+    await expect(new CoursesService().assignSubject('school-1', {
+      schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1', subjectId: 'subject-1',
+    })).rejects.toThrow('Restáurala')
+    expect(mocks.prisma.sectionSubject.create).not.toHaveBeenCalled()
+  })
+
+  it('allows assigning the same catalog subject after its archived assignment was deleted', async () => {
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ status: 'INACTIVE' })
+    await new CoursesService().permanentlyDeleteSectionSubject('school-1', 'ss-archived', 'ELIMINAR')
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1', schoolId: 'school-1' })
+    mocks.prisma.grade.findFirst.mockResolvedValue({ id: 'grade-1' })
+    mocks.prisma.section.findFirst.mockResolvedValue({ id: 'section-1' })
+    mocks.prisma.subject.findFirst.mockResolvedValue({ id: 'subject-1' })
+    mocks.prisma.sectionSubject.findUnique.mockResolvedValue(null)
+    mocks.prisma.sectionSubject.create.mockResolvedValue({ id: 'new-assignment' })
+    await expect(new CoursesService().assignSubject('school-1', {
+      schoolYearId: 'year-1', gradeId: 'grade-1', sectionId: 'section-1', subjectId: 'subject-1',
+    })).resolves.toMatchObject({ id: 'new-assignment' })
+    expect(mocks.prisma.subject.deleteMany).not.toHaveBeenCalled()
   })
 
   it('invalidates grading and schedule options after a course mutation', async () => {
@@ -346,6 +436,18 @@ describe('CoursesService.getCourseData', () => {
       expect(loader).toHaveBeenCalledTimes(2)
     }
     expect(mocks.prisma.grade.findMany).toHaveBeenCalledTimes(2)
+  })
+})
+
+describe('autorización del borrado permanente', () => {
+  it('deniega el endpoint a un docente sin rol administrativo', () => {
+    const handler = CoursesController.prototype.permanentlyDeleteSectionSubject
+    const context = {
+      getHandler: () => handler,
+      getClass: () => CoursesController,
+      switchToHttp: () => ({ getRequest: () => ({ user: { roles: ['teacher'] } }) }),
+    } as unknown as ExecutionContext
+    expect(new RolesGuard(new Reflector()).canActivate(context)).toBe(false)
   })
 })
 

@@ -12,6 +12,7 @@ import type { MonthlyAttendanceMark, StudentAttendanceRow } from '@/modules/atte
 import { attendancePercentageFromMarks, markToStatus, sortStudentsForRoster, statusToMark } from '@/modules/attendance/utils/monthlyAttendance'
 import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
 import { cn } from '@/utils/cn'
+import { SubjectTabHeader, SubjectStat } from '../components/SubjectTabUI'
 
 type Mark = 'P' | 'A' | 'E' | 'T'
 const markLabels: Record<Mark, string> = { P: 'Presente', A: 'Ausente', E: 'Excusa', T: 'Tardanza' }
@@ -158,12 +159,7 @@ export function SubjectAttendancePanel({ sectionSubjectId, students, loading = f
   if (loading || fetching) return <p className="py-12 text-center text-sm text-muted-foreground">Cargando asistencia…</p>
 
   return <section className="space-y-4" aria-labelledby="subject-attendance-title">
-    <header className="flex flex-wrap items-end justify-between gap-4">
-      <div><h2 id="subject-attendance-title" className="text-xl font-extrabold text-foreground">Asistencia</h2><p className="mt-1 text-sm text-muted-foreground">{courseLabel} · {subjectName} · Año escolar {schoolYearName}</p>
-        <p className="mt-4 text-xs font-semibold text-muted-foreground">Mes del registro</p><p className="mt-1 text-3xl font-black capitalize text-foreground sm:text-4xl">{monthLabel}</p>
-      </div>
-      {!editing ? <Button disabled={Boolean(error || failure) || !roster.length} onClick={() => requestOpen(todayKey())}><CalendarCheck2 className="size-4" aria-hidden="true" /> Pasar lista</Button> : null}
-    </header>
+    <SubjectTabHeader title="Asistencia" description="Pasa lista en segundos y corrige registros anteriores." context={<><span className="capitalize">{monthLabel}</span><span>{courseLabel} · {subjectName}</span><span className="sr-only">{schoolYearName}</span></>} actions={!editing ? <Button disabled={Boolean(error || failure) || !roster.length} onClick={() => requestOpen(todayKey())}><CalendarCheck2 className="size-4" /> Pasar lista</Button> : null} />
     {error || failure ? <FeedbackBanner tone="danger">{error || failure}</FeedbackBanner> : null}
     {!periodId ? <FeedbackBanner tone="warning">No hay un período académico disponible para guardar asistencia.</FeedbackBanner> : null}
     <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
@@ -175,16 +171,16 @@ export function SubjectAttendancePanel({ sectionSubjectId, students, loading = f
     </div>
     <div className={cn('grid items-start gap-4', editing && sessionDates.length > 0 && 'xl:grid-cols-[18rem_minmax(0,1fr)]')}>
       {sessionDates.length ? <section className="min-w-0 rounded-3xl bg-card p-4 shadow-sm" aria-label="Últimas listas guardadas">
-        <h3 className="text-sm font-extrabold text-foreground">Últimas listas guardadas</h3><p className="mt-1 text-xs leading-5 text-muted-foreground">Son las últimas fechas en las que pasaste lista y la guardaste. Aquí aparecen hasta cinco, ordenadas de la más reciente a la más antigua.</p>
-        <div className={cn('mt-3 grid gap-2', !editing && 'sm:grid-cols-2 xl:grid-cols-5')}>{sessionDates.slice(0, 5).map((day) => {
+        <div className="flex items-start justify-between gap-3"><div><h3 className="text-base font-semibold text-foreground">Últimas listas guardadas</h3><p className="mt-1 text-xs text-muted-foreground">Abre una fecha para revisarla o corregirla.</p></div><Link to={buildSubjectAttendanceHref(sectionSubjectId, courseId)} className="text-xs font-medium text-primary">Historial completo</Link></div>
+        <div className="subject-attendance-history mt-4 grid gap-2">{sessionDates.slice(0, 5).map((day) => {
           const values = history.filter((record) => record.attendanceDate.startsWith(day)).map((record) => statusToMark(record.status, record.notes))
           const counts = countMarks(values)
-          return <button type="button" key={day} disabled={saving} onClick={() => requestOpen(day)} className="rounded-xl border border-border p-3 text-left transition-[background-color,border-color,box-shadow] duration-200 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-50">
-            <span className="flex items-center gap-2 text-sm font-bold text-foreground"><CalendarDays className="size-4 shrink-0 text-primary" aria-hidden="true" />{formatDate(day)}</span>
-            <span className="mt-2 block text-xs text-muted-foreground">{counts.P} P · {counts.A} A · {counts.E} E · {counts.T} T</span><span className="mt-2 block text-xs text-muted-foreground">{values.length} registros · {dailyPercentage(values)}% de asistencia</span>
+          return <button type="button" key={day} disabled={saving} onClick={() => requestOpen(day)} className="subject-attendance-row">
+            <span className="subject-date-disc"><strong>{new Date(day + 'T12:00:00').getDate()}</strong><small>{new Date(day + 'T12:00:00').toLocaleDateString('es', { month: 'short' })}</small></span>
+            <span className="flex-1"><strong className="block capitalize">{new Date(day + 'T12:00:00').toLocaleDateString('es', { weekday: 'long' })}{day === todayKey() ? <small className="ml-2 text-primary">Hoy</small> : null}</strong><span className="text-xs text-muted-foreground">{dailyPercentage(values)}% de asistencia</span><span className="sr-only">{formatDate(day)}</span></span>
+            <span className="flex flex-wrap gap-2">{(['P', 'A', 'E', 'T'] as const).map(mark => <span key={mark} className={cn('rounded-full px-3 py-1 text-xs', counts[mark] ? markStyles[mark] : 'bg-muted text-muted-foreground')}>{mark} {counts[mark]}</span>)}</span><span aria-hidden="true">›</span>
           </button>
         })}</div>
-        <div className="mt-3 flex flex-wrap items-center justify-between gap-2"><p className="text-[11px] leading-5 text-muted-foreground">Puedes abrir cualquiera para revisar o corregir lo que guardaste ese día.</p><Link to={buildSubjectAttendanceHref(sectionSubjectId, courseId)} className="inline-flex min-h-10 items-center text-sm font-bold text-primary-variant">Ver historial completo →</Link></div>
       </section> : !editing && !error && !failure ? <EmptyState title="Todavía no hay registros de asistencia" description="Pulsa Pasar lista para registrar la primera asistencia de esta asignatura." /> : null}
       {editing ? <section ref={attendanceEditorRef} className="min-w-0 scroll-mt-5 overflow-hidden rounded-3xl bg-card shadow-sm sm:scroll-mt-6" aria-label="Pasar asistencia">
         <header className="space-y-3 border-b border-border p-4">
@@ -254,8 +250,9 @@ function StudentAttendanceDrawer({ student, monthLabel, records, percentage, onC
 }
 
 function AttendanceMetric({ label, value, tone = 'info' }: { label: string; value: string; tone?: SemanticTone }) {
-  return <div className="rounded-3xl bg-card p-4 shadow-sm"><StatusBadge tone={tone} dot={false}>{label}</StatusBadge><strong className="mt-3 block text-2xl text-foreground">{value}</strong></div>
+  return <SubjectStat icon={tone === 'success' ? UserRound : CalendarCheck2} label={label} value={value} tone={tone} />
 }
+
 function countMarks(marks: MonthlyAttendanceMark[]) {
   return marks.reduce((counts, mark) => {
     if (mark === 'T' || mark === 'R') counts.T++

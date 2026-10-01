@@ -56,7 +56,6 @@ import {
   Pipette,
   Plane,
   Plus,
-  Power,
   Presentation,
   Puzzle,
   RotateCcw,
@@ -76,7 +75,10 @@ import {
   Wrench,
   X,
 } from 'lucide-react'
+import { ApiError } from '@/services/apiClient'
+import type { EvaluationProfile } from '@aula/shared'
 import { SubjectResourcesPanel } from '../components/SubjectResourcesPanel'
+import { calendarDate } from '../data/calendarDate'
 import { SubjectReportsPanel } from '@/modules/reports/components/SubjectReportsPanel'
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
@@ -98,9 +100,13 @@ import { CourseTeamsPanel } from '@/modules/courses/components/CourseTeamsPanel'
 import { CourseStudentsPanel } from '@/modules/courses/components/CourseStudentsPanel'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseAdvancedFilters } from '@/modules/courses/components/CoursesAdvancedFiltersDrawer'
-import { getStudentsBySection } from '@/modules/attendance/services/attendanceService'
+import { getClassAttendanceHistory, getStudentsBySection, type ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
 import type { StudentAttendanceRow } from '@/modules/attendance/types'
+import { attendancePercentageFromMarks, statusToMark } from '@/modules/attendance/utils/monthlyAttendance'
 import { SubjectAttendancePanel } from './SubjectAttendancePage'
+import { SubjectSchedulePage } from './SubjectSchedulePage'
+import { SubjectTabHeader, SubjectStat, StudentAvatar } from '../components/SubjectTabUI'
+import { exportStudentCsv } from '../components/exportStudentCsv'
 import { getAcademicPeriods, getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { activityRubricConfiguration } from '@/modules/grading/components/GradingBook'
@@ -183,6 +189,7 @@ export function CoursesPage() {
     error,
     refetch,
     removeGrade,
+    permanentlyDeleteGrade,
     addSection,
     editSection,
     removeSection,
@@ -195,7 +202,7 @@ export function CoursesPage() {
     permanentlyDeleteSubjectAssignment,
   } = useCourses()
 
-  const canManage = hasRole(['admin', 'coordinator'])
+  const canManage = hasRole(['admin', 'director', 'coordinator'])
   const canEnroll = hasRole(['admin', 'director', 'coordinator', 'teacher'])
 
   const [assignmentFlowOpen, setAssignmentFlowOpen] = useState(false)
@@ -216,13 +223,13 @@ export function CoursesPage() {
   const [assignmentSubmitting, setAssignmentSubmitting] = useState(false)
 
   const [deleteTarget, setDeleteTarget] = useState<{
-    kind: 'grade' | 'section' | 'assignment' | 'empty-assignment' | 'permanent-assignment'
+    kind: 'grade' | 'permanent-grade' | 'section' | 'assignment' | 'permanent-assignment'
     id: string
     label: string
-    relatedDataCount?: number
-    studentCount?: number
   } | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
+  const [actionSuccess, setActionSuccess] = useState<string | null>(null)
+  const [actionSuccessVisible, setActionSuccessVisible] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [debouncedSearch, setDebouncedSearch] = useState('')
 
@@ -230,6 +237,21 @@ export function CoursesPage() {
     const timer = setTimeout(() => setDebouncedSearch(searchQuery), 300)
     return () => clearTimeout(timer)
   }, [searchQuery])
+
+  useEffect(() => {
+    if (!actionSuccess) {
+      setActionSuccessVisible(false)
+      return
+    }
+
+    setActionSuccessVisible(true)
+    const fadeTimer = window.setTimeout(() => setActionSuccessVisible(false), 4000)
+    const removeTimer = window.setTimeout(() => setActionSuccess(null), 4400)
+    return () => {
+      window.clearTimeout(fadeTimer)
+      window.clearTimeout(removeTimer)
+    }
+  }, [actionSuccess])
 
   useEffect(() => {
     const syncHeaderSearch = (event: Event) => {
@@ -241,7 +263,7 @@ export function CoursesPage() {
   const [levelFilter, setLevelFilter] = useState('all')
   const [cycleFilter, setCycleFilter] = useState('all')
   const [subjectFilter, setSubjectFilter] = useState('all')
-  const [showArchived, setShowArchived] = useState(false)
+  const showArchived = searchParams.get('view') === 'archived'
   const advancedFilters = useMemo(() => ({ ...defaultAdvancedFilters, showArchived }), [showArchived])
   const [selectedCourseId, setSelectedCourseId] = useState<string | null>(() => searchParams.get('courseId'))
 
@@ -257,6 +279,19 @@ export function CoursesPage() {
     else next.delete('subjectId')
     setSearchParams(next)
     setSelectedCourseId(courseId)
+  }, [searchParams, setSearchParams])
+
+  const setArchivedView = useCallback((archived: boolean) => {
+    const next = new URLSearchParams(searchParams)
+    if (archived) next.set('view', 'archived')
+    else next.delete('view')
+    next.delete('courseId')
+    next.delete('subjectId')
+    setSearchParams(next)
+    setSearchQuery('')
+    setLevelFilter('all')
+    setCycleFilter('all')
+    setSubjectFilter('all')
   }, [searchParams, setSearchParams])
 
   function openCreateAssignmentFlow() {
@@ -363,16 +398,25 @@ export function CoursesPage() {
     try {
       if (deleteTarget.kind === 'grade') {
         await removeGrade(deleteTarget.id)
+        setActionSuccess(`El grado «${deleteTarget.label}» fue archivado. Toda su información permanece guardada.`)
+      } else if (deleteTarget.kind === 'permanent-grade') {
+        await permanentlyDeleteGrade(deleteTarget.id, confirmation)
+        setActionSuccess(`El grado «${deleteTarget.label}» se eliminó permanentemente.`)
       } else if (deleteTarget.kind === 'section') {
         await removeSection(deleteTarget.id)
       } else if (deleteTarget.kind === 'assignment') {
         await removeSubjectAssignment(deleteTarget.id)
       } else {
         await permanentlyDeleteSubjectAssignment(deleteTarget.id, confirmation)
+        setActionSuccess(`La asignatura «${deleteTarget.label}» se eliminó permanentemente.`)
       }
       setActionError(null)
       setDeleteTarget(null)
     } catch (error) {
+      if (deleteTarget.kind === 'permanent-assignment' || deleteTarget.kind === 'permanent-grade') {
+        if (error instanceof ApiError && (error.status === 404 || error.status === 409)) await refetch(false)
+        throw error
+      }
       setActionError(
         error instanceof Error
           ? error.message
@@ -380,7 +424,7 @@ export function CoursesPage() {
       )
       setDeleteTarget(null)
     }
-  }, [deleteTarget, permanentlyDeleteSubjectAssignment, removeGrade, removeSection, removeSubjectAssignment])
+  }, [deleteTarget, permanentlyDeleteGrade, permanentlyDeleteSubjectAssignment, refetch, removeGrade, removeSection, removeSubjectAssignment])
 
   const handleCreateSubject = useCallback(
     async (input: CreateSubjectInput): Promise<Subject> => {
@@ -421,8 +465,12 @@ export function CoursesPage() {
   const handleOpen = useCallback((id: string) => setCourseWorkspace(id), [setCourseWorkspace])
   const handleAddSection = useCallback((grade: GradeWithSections) => openCreateSection(grade), [])
   const handleEditSection = useCallback((grade: GradeWithSections, sectionId: string) => openEditSection(grade, sectionId), [])
-  const handleDeleteSection = useCallback((section: Section) =>
-    setDeleteTarget({ kind: 'section', id: section.id, label: section.name }), [])
+  const handleArchiveGrade = useCallback((grade: GradeWithSections) =>
+    setDeleteTarget({ kind: 'grade', id: grade.id, label: grade.name }), [])
+  const handleDeleteArchivedGrade = useCallback((grade: GradeWithSections) => {
+    setActionSuccess(null)
+    setDeleteTarget({ kind: 'permanent-grade', id: grade.id, label: grade.name })
+  }, [])
   const handleOpenAssignSubject = useCallback((grade: GradeWithSections, sectionId: string) => {
     if (!currentSchoolYear) {
       setActionError('Activa un ano escolar antes de asignar asignaturas.')
@@ -432,10 +480,10 @@ export function CoursesPage() {
   }, [currentSchoolYear])
   const handleDeleteAssignment = useCallback((assignment: SectionSubjectAssignment) =>
     setDeleteTarget({ kind: 'assignment', id: assignment.id, label: assignment.subjectName }), [])
-  const handleDeleteEmptyAssignment = useCallback((assignment: SectionSubjectAssignment, studentCount: number) =>
-    setDeleteTarget({ kind: 'empty-assignment', id: assignment.id, label: assignment.subjectName, studentCount }), [])
-  const handleDeleteArchivedAssignment = useCallback((assignment: SectionSubjectAssignment) =>
-    setDeleteTarget({ kind: 'permanent-assignment', id: assignment.id, label: assignment.subjectName, relatedDataCount: assignment.relatedDataCount }), [])
+  const handleDeleteArchivedAssignment = useCallback((assignment: SectionSubjectAssignment) => {
+    setActionSuccess(null)
+    setDeleteTarget({ kind: 'permanent-assignment', id: assignment.id, label: assignment.subjectName })
+  }, [])
   const handleRestoreAssignment = useCallback(async (assignment: SectionSubjectAssignment) => {
     try {
       await restoreSubjectAssignment(assignment.id)
@@ -447,7 +495,12 @@ export function CoursesPage() {
 
   const courseCards = useMemo(() => buildCourseCards(grades), [grades])
   const activeCourseCards = useMemo(() => courseCards.filter((item) => !item.archived), [courseCards])
-  const filterOptionCourseCards = advancedFilters.showArchived ? courseCards : activeCourseCards
+  const archivedCourseCards = useMemo(
+    () => buildArchivedGradeCards(grades),
+    [grades],
+  )
+  const visibleCourseCards = showArchived ? archivedCourseCards : activeCourseCards
+  const filterOptionCourseCards = visibleCourseCards
   const appliedCourseFilters = useMemo<CourseAdvancedFilters>(() => ({
     ...advancedFilters,
     level: levelFilter,
@@ -455,8 +508,8 @@ export function CoursesPage() {
     subject: subjectFilter,
   }), [advancedFilters, cycleFilter, levelFilter, subjectFilter])
   const filteredCourseCards = useMemo(
-    () => applyCourseFilters(courseCards, appliedCourseFilters, debouncedSearch),
-    [appliedCourseFilters, courseCards, debouncedSearch],
+    () => applyCourseFilters(visibleCourseCards, appliedCourseFilters, debouncedSearch),
+    [appliedCourseFilters, debouncedSearch, visibleCourseCards],
   )
   const levelFilters = useMemo(() => uniqueValues(filterOptionCourseCards.map((item) => item.levelName)), [filterOptionCourseCards])
   const cycleFilterItems = useMemo(
@@ -514,7 +567,6 @@ export function CoursesPage() {
           onEditSection={handleEditSection}
           onAssignSubject={handleOpenAssignSubject}
           onArchiveSubject={handleDeleteAssignment}
-          onDeleteEmptySubject={handleDeleteEmptyAssignment}
           onRestoreSubject={handleRestoreAssignment}
           onDeleteArchivedSubject={handleDeleteArchivedAssignment}
           onCustomizeSubject={customizeSubjectAssignment}
@@ -525,25 +577,30 @@ export function CoursesPage() {
       ) : (
         <>
           <section data-tour="manage-students" aria-labelledby="courses-summary-title" className="relative rounded-3xl border border-border bg-card p-5 text-foreground shadow-sm sm:p-6">
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex flex-wrap items-start justify-between gap-4">
               <div className="flex min-w-0 items-center gap-4">
                 <span className="grid size-12 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Library className="size-5" /></span>
                 <div className="min-w-0">
-                  <h1 id="courses-summary-title" className="text-2xl font-extrabold tracking-tight">Mis cursos</h1>
-                  <p className="text-sm text-muted-foreground">Año escolar {currentSchoolYear?.name ?? 'sin configurar'}</p>
+                  <h1 id="courses-summary-title" className="text-2xl font-extrabold tracking-tight">{showArchived ? 'Grados archivados' : 'Mis cursos'}</h1>
+                  <p className="text-sm text-muted-foreground">{showArchived ? 'Estos grados están en pausa y conservan toda su información.' : `Año escolar ${currentSchoolYear?.name ?? 'sin configurar'}`}</p>
                 </div>
               </div>
-              {canManage ? (
-                <details data-tour="create-course" className="group relative shrink-0">
-                  <summary className="flex h-10 cursor-pointer list-none items-center gap-2 rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-card/50 [&::-webkit-details-marker]:hidden">
-                    Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
-                  </summary>
-                  <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
-                    <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nueva sección</button>
-                    <button type="button" onClick={openCreateAssignmentFlow} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nuevo curso</button>
-                  </div>
-                </details>
+              {canManage && !showArchived ? (
+                <div className="flex flex-wrap items-center gap-2">
+                  <Button data-tour="create-course" onClick={openCreateAssignmentFlow}>
+                    <Plus className="size-4" /> Agregar curso
+                  </Button>
+                  <details className="group relative shrink-0">
+                    <summary className="flex h-11 cursor-pointer list-none items-center gap-2 rounded-xl border border-border bg-card px-4 text-sm font-bold text-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+                      Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
+                    </summary>
+                    <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+                      <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nueva sección</button>
+                    </div>
+                  </details>
+                </div>
               ) : null}
+              {showArchived ? <Button variant="outline" onClick={() => setArchivedView(false)}><ArrowLeft className="size-4" /> Volver a cursos</Button> : null}
             </div>
             <div className="mt-5 grid grid-cols-2 gap-2 xl:grid-cols-4" aria-label="Resumen de cursos">
               {([
@@ -563,7 +620,7 @@ export function CoursesPage() {
           <div className="space-y-3 rounded-3xl border border-border bg-card p-4 shadow-sm">
             <div className="flex flex-wrap items-center gap-2" aria-label="Filtrar por nivel">
               {['all', ...levelFilters].map((level) => <button key={level} type="button" aria-pressed={levelFilter === level} onClick={() => { setLevelFilter(level); setCycleFilter('all'); setSubjectFilter('all') }} className={cn('min-h-10 rounded-full px-4 text-sm font-semibold transition', levelFilter === level ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:text-foreground')}>{level === 'all' ? 'Todos' : cleanLevelName(level)}</button>)}
-              <label className="ml-auto inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm text-muted-foreground"><input type="checkbox" checked={showArchived} onChange={(event) => setShowArchived(event.target.checked)} className="size-4 accent-primary" />Mostrar archivados</label>
+              {!showArchived ? <Button className="ml-auto" variant="outline" onClick={() => setArchivedView(true)}><Archive className="size-4" /> Mostrar archivadas ({new Set(archivedCourseCards.map((item) => item.grade.id)).size})</Button> : null}
             </div>
             <div className="grid gap-3 md:grid-cols-3">
               <label className="relative"><span className="sr-only">Buscar cursos</span><Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" /><Input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Buscar grado, sección o asignatura..." className="pl-9" /></label>
@@ -599,6 +656,7 @@ export function CoursesPage() {
               <p>{actionError}</p>
             </div>
           ) : null}
+          {actionSuccess ? <div role="status" className={cn('rounded-lg border border-success/20 bg-success/10 p-3 text-sm text-success transition-all duration-300', actionSuccessVisible ? 'translate-y-0 opacity-100' : '-translate-y-1 opacity-0')}>{actionSuccess}</div> : null}
 
           {error ? (
             <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
@@ -639,7 +697,8 @@ export function CoursesPage() {
                               onOpen={handleOpen}
                               onAddSection={handleAddSection}
                               onEditSection={handleEditSection}
-                              onDeleteSection={handleDeleteSection}
+                              onArchiveGrade={handleArchiveGrade}
+                              onDeleteArchivedGrade={handleDeleteArchivedGrade}
                               onAssignSubject={handleOpenAssignSubject}
                             />
                           ))}
@@ -650,14 +709,14 @@ export function CoursesPage() {
                 </section>
               ))}
             </div>
-          ) : courseCards.length > 0 ? (
+          ) : visibleCourseCards.length > 0 || courseCards.length > 0 ? (
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card py-20 text-center">
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-muted">
                 <SearchX className="h-5 w-5 text-muted-foreground" />
               </span>
-              <p className="mt-4 text-sm font-bold text-foreground">No se encontraron cursos</p>
+              <p className="mt-4 text-sm font-bold text-foreground">{showArchived ? 'No hay grados archivados' : 'No se encontraron cursos'}</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Prueba ajustando los filtros o el termino de busqueda.
+                {showArchived ? 'Los grados que inactives aparecerán en esta pantalla.' : 'Prueba ajustando los filtros o el término de búsqueda.'}
               </p>
             </div>
           ) : (
@@ -688,6 +747,10 @@ export function CoursesPage() {
           error={assignmentFlowError}
           onSubmit={handleCreateTeacherAssignment}
           onClose={closeAssignmentFlow}
+          onOpenArchived={() => {
+            closeAssignmentFlow()
+            setArchivedView(true)
+          }}
         />
       ) : null}
 
@@ -720,22 +783,21 @@ export function CoursesPage() {
         />
       ) : null}
 
-      {deleteTarget?.kind === 'empty-assignment' ? (
-        <EmptySubjectDeleteDialog
-          subjectName={deleteTarget.label}
-          studentCount={deleteTarget.studentCount ?? 0}
-          onConfirm={() => handleDeleteConfirm()}
-          onClose={() => setDeleteTarget(null)}
-        />
-      ) : deleteTarget?.kind === 'assignment' ? (
+      {deleteTarget?.kind === 'assignment' ? (
         <ArchiveSubjectDialog
           subjectName={deleteTarget.label}
           onConfirm={() => handleDeleteConfirm()}
           onClose={() => setDeleteTarget(null)}
         />
-      ) : deleteTarget?.kind === 'permanent-assignment' && (deleteTarget.relatedDataCount ?? 0) > 0 ? (
+      ) : deleteTarget?.kind === 'permanent-assignment' ? (
         <PermanentSubjectDeleteDialog
           subjectName={deleteTarget.label}
+          onConfirm={(confirmation) => handleDeleteConfirm(confirmation)}
+          onClose={() => setDeleteTarget(null)}
+        />
+      ) : deleteTarget?.kind === 'permanent-grade' ? (
+        <PermanentGradeDeleteDialog
+          gradeName={deleteTarget.label}
           onConfirm={(confirmation) => handleDeleteConfirm(confirmation)}
           onClose={() => setDeleteTarget(null)}
         />
@@ -743,19 +805,19 @@ export function CoursesPage() {
         <ConfirmDialog
           title={
             deleteTarget.kind === 'grade'
-              ? 'Inactivar curso'
+              ? 'Inactivar grado'
               : deleteTarget.kind === 'section'
                 ? 'Inactivar seccion'
               : 'Eliminar asignatura definitivamente'
           }
           description={
             deleteTarget.kind === 'grade'
-              ? `Inactivar el curso "${deleteTarget.label}"? Se conservara el historial relacionado.`
+              ? `¿Inactivar el grado "${deleteTarget.label}"? El grado quedará en pausa y se conservarán sus estudiantes, asignaturas, actividades, calificaciones y demás información. Podrás verlo en Grados archivados.`
               : deleteTarget.kind === 'section'
                 ? `Inactivar la seccion "${deleteTarget.label}"? Se conservara el historial relacionado.`
                 : `¿Eliminar definitivamente "${deleteTarget.label}"? Esta acción no se puede deshacer.`
           }
-          confirmLabel={deleteTarget.kind === 'permanent-assignment' ? 'Eliminar definitivamente' : 'Inactivar'}
+          confirmLabel="Inactivar"
           destructive
           onConfirm={handleDeleteConfirm}
           onClose={() => setDeleteTarget(null)}
@@ -775,7 +837,6 @@ function CourseWorkspace({
   onAssignSubject,
   onEditSection,
   onArchiveSubject,
-  onDeleteEmptySubject,
   onRestoreSubject,
   onDeleteArchivedSubject,
   onCustomizeSubject,
@@ -792,7 +853,6 @@ function CourseWorkspace({
   onAssignSubject: (grade: GradeWithSections, sectionId: string) => void
   onEditSection: (grade: GradeWithSections, sectionId: string) => void
   onArchiveSubject: (assignment: SectionSubjectAssignment) => void
-  onDeleteEmptySubject: (assignment: SectionSubjectAssignment, studentCount: number) => void
   onRestoreSubject: (assignment: SectionSubjectAssignment) => void | Promise<void>
   onDeleteArchivedSubject: (assignment: SectionSubjectAssignment) => void
   onCustomizeSubject: (id: string, input: { color: string | null; icon: string | null }) => void | Promise<void>
@@ -921,7 +981,7 @@ function CourseWorkspace({
           {workspaceView === 'archived' ? (
             visibleArchivedAssignments.length ? (
               <div className="grid gap-4 sm:grid-cols-2 2xl:grid-cols-3">
-                {visibleArchivedAssignments.map((assignment) => <ArchivedSubjectCard key={assignment.id} assignment={assignment} onRestore={() => void onRestoreSubject(assignment)} onDelete={() => onDeleteArchivedSubject(assignment)} />)}
+                {visibleArchivedAssignments.map((assignment) => <ArchivedSubjectCard key={assignment.id} assignment={assignment} canManage={canManage} onRestore={() => void onRestoreSubject(assignment)} onDelete={() => onDeleteArchivedSubject(assignment)} />)}
               </div>
             ) : <EmptyState title={archivedAssignments.length ? 'No hay asignaturas para este filtro' : 'No hay asignaturas archivadas'} description={archivedAssignments.length ? 'Prueba con otra categoría o búsqueda.' : 'Las asignaturas que archives aparecerán aquí.'} />
           ) : (
@@ -931,7 +991,6 @@ function CourseWorkspace({
                   onOpen={(tab) => openAssignment(assignment, tab)}
                   onArchive={() => onArchiveSubject(assignment)}
                   onCustomize={() => setAppearanceTarget(assignment)}
-                  onDelete={() => onDeleteEmptySubject(assignment, item.section.studentCount ?? 0)}
                 />
               ))}
               {canManage && subjectCategory === 'Todas' && !subjectSearch ? (
@@ -1008,7 +1067,7 @@ function getSubjectCategory(name: string) {
   return subjectCategories.find((category) => category.terms.some((term) => normalized.includes(term)))?.name ?? 'Otras'
 }
 
-export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen, onCustomize, onArchive, onDelete }: { assignment: SectionSubjectAssignment; studentCount: number; canManage: boolean; onOpen: (tab: string) => void; onCustomize: () => void; onArchive: () => void; onDelete: () => void }) {
+export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen, onCustomize, onArchive }: { assignment: SectionSubjectAssignment; studentCount: number; canManage: boolean; onOpen: (tab: string) => void; onCustomize: () => void; onArchive: () => void }) {
   const category = getSubjectCategory(assignment.subjectName)
   const color = getAssignmentPalette(assignment).color
   const average = assignment.averageScore === null ? null : Math.max(0, Math.min(100, assignment.averageScore))
@@ -1031,7 +1090,6 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
         {canManage ? <AssignmentActionsMenu label={assignment.subjectName} items={[
           { label: 'Personalizar apariencia', icon: <Paintbrush className="size-4" />, tone: 'primary', onSelect: onCustomize },
           { label: 'Archivar asignatura', icon: <Archive className="size-4" />, tone: 'archive', onSelect: onArchive },
-          ...(assignment.canDelete ? [{ label: 'Eliminar asignatura', icon: <Trash2 className="size-4" />, tone: 'danger' as const, onSelect: onDelete }] : []),
         ]} /> : null}
       </div>
       <div className="mt-5 flex min-w-0 items-center gap-2 text-xs text-muted-foreground"><span className="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-[9px] font-bold text-primary">{initials}</span><span className="truncate">{teacher}</span></div>
@@ -1046,7 +1104,7 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
     </article>
   )
 }
-function ArchivedSubjectCard({ assignment, onRestore, onDelete }: { assignment: SectionSubjectAssignment; onRestore: () => void; onDelete: () => void }) {
+export function ArchivedSubjectCard({ assignment, canManage, onRestore, onDelete }: { assignment: SectionSubjectAssignment; canManage: boolean; onRestore: () => void; onDelete: () => void }) {
   const palette = getAssignmentPalette(assignment)
   return (
     <article className="relative overflow-visible rounded-2xl bg-card shadow-sm">
@@ -1055,13 +1113,13 @@ function ArchivedSubjectCard({ assignment, onRestore, onDelete }: { assignment: 
           <span className="flex size-11 items-center justify-center rounded-xl text-white opacity-80" style={{ backgroundColor: palette.color }}>{getSubjectIcon(assignment.subjectName, assignment.appearanceIcon)}</span>
           <div className="flex items-center gap-1">
             <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold uppercase text-slate-600">Archivada</span>
-            <AssignmentActionsMenu
+            {canManage ? <AssignmentActionsMenu
               label={assignment.subjectName}
               items={[
                 { label: 'Restaurar asignatura', icon: <ArchiveRestore className="size-4" />, tone: 'primary', onSelect: onRestore },
                 { label: 'Eliminar permanentemente', icon: <Trash2 className="size-4" />, tone: 'danger', onSelect: onDelete },
               ]}
-            />
+            /> : null}
           </div>
         </div>
         <h3 className="mt-4 text-base font-extrabold text-foreground">{assignment.subjectName}</h3>
@@ -1425,11 +1483,11 @@ function ArchiveSubjectDialog({ subjectName, onConfirm, onClose }: { subjectName
   )
 }
 
-function PermanentSubjectDeleteDialog({ subjectName, onConfirm, onClose }: { subjectName: string; onConfirm: (confirmation: string) => void | Promise<void>; onClose: () => void }) {
+export function PermanentSubjectDeleteDialog({ subjectName, onConfirm, onClose }: { subjectName: string; onConfirm: (confirmation: string) => void | Promise<void>; onClose: () => void }) {
   const [confirmation, setConfirmation] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const matches = confirmation === subjectName
+  const matches = confirmation === 'ELIMINAR'
 
   async function confirm() {
     if (!matches) return
@@ -1445,60 +1503,51 @@ function PermanentSubjectDeleteDialog({ subjectName, onConfirm, onClose }: { sub
   }
 
   return (
-    <Modal title="Eliminar asignatura permanentemente" description="Esta acción no se puede deshacer." onClose={onClose} className="max-w-lg">
+    <Modal title="Eliminar asignatura permanentemente" description="Esta acción no se puede deshacer." onClose={() => { if (!loading) onClose() }} className="max-w-lg">
       <div className="space-y-4 p-5">
-        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
-          Se eliminarán permanentemente la asignatura y toda su información asociada: actividades, instrumentos, calificaciones, asistencias, planificaciones, horarios y equipos.
+        <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive">
+          Esta asignatura ya está archivada. Restaurarla conservaría su información; eliminarla la destruirá.
+          <br /><br />
+          Se eliminará permanentemente «{subjectName}» y su información asociada: actividades, calificaciones, asistencias, planificaciones, bitácoras, recursos, horarios y equipos. Esta acción no se puede deshacer.
         </div>
-        <label className="block text-sm font-bold text-foreground">Escribe <span className="text-destructive">{subjectName}</span> para confirmar.</label>
+        <label className="block text-sm font-bold text-foreground">Escribe <span className="text-destructive">ELIMINAR</span> para confirmar.</label>
         <Input autoFocus value={confirmation} onChange={(event) => setConfirmation(event.target.value)} disabled={loading} />
         {error ? <p role="alert" className="text-sm font-semibold text-destructive">{error}</p> : null}
-        <div className="flex justify-end gap-2 border-t border-slate-100 pt-4"><Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches} loading={loading}>Eliminar permanentemente</Button></div>
+        <div className="flex justify-end gap-2 border-t border-border pt-4"><Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches || loading} loading={loading}>Eliminar permanentemente</Button></div>
       </div>
     </Modal>
   )
 }
 
-function EmptySubjectDeleteDialog({ subjectName, studentCount, onConfirm, onClose }: { subjectName: string; studentCount: number; onConfirm: () => void | Promise<void>; onClose: () => void }) {
+export function PermanentGradeDeleteDialog({ gradeName, onConfirm, onClose }: { gradeName: string; onConfirm: (confirmation: string) => void | Promise<void>; onClose: () => void }) {
+  const [confirmation, setConfirmation] = useState('')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const matches = confirmation === 'CONFIRMAR'
 
   async function confirm() {
+    if (!matches) return
     setLoading(true)
+    setError(null)
     try {
-      await onConfirm()
+      await onConfirm(confirmation)
+    } catch (confirmError) {
+      setError(confirmError instanceof Error ? confirmError.message : 'No se pudo eliminar el grado.')
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <Modal title="Eliminar asignatura" description="Revisa esta acción antes de continuar." onClose={onClose} className="max-w-lg">
-      <div className="p-5">
-        <div className="flex gap-3 rounded-2xl border border-red-200 bg-red-50/80 p-4">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-red-100 text-destructive"><Trash2 className="size-5" /></span>
-          <div className="min-w-0">
-            <p className="text-sm font-extrabold text-red-900">Esta asignatura se eliminará permanentemente</p>
-            <p className="mt-1 break-words text-sm font-semibold leading-5 text-red-800">{subjectName}</p>
-          </div>
+    <Modal title="Eliminar grado definitivamente" description="Esta acción no se puede deshacer." onClose={() => { if (!loading) onClose() }} className="max-w-lg">
+      <div className="space-y-4 p-5">
+        <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive">
+          Se eliminará permanentemente «{gradeName}», junto con sus secciones, matrículas, asignaturas asignadas, actividades, calificaciones, asistencias, planificaciones, equipos y horarios. Los perfiles generales de estudiantes y docentes no se eliminarán.
         </div>
-
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-slate-600"><Trash2 className="size-4 text-destructive" /> Se eliminará</div>
-            <p className="mt-2 text-sm leading-5 text-slate-700">La asignatura vacía y su apariencia personalizada.</p>
-          </div>
-          <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 p-4">
-            <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-emerald-700"><CheckCircle2 className="size-4" /> Se conservará</div>
-            <p className="mt-2 text-sm leading-5 text-emerald-900">{studentCount > 0 ? `${studentCount} estudiantes y sus matrículas en el curso.` : 'La matrícula y toda la información general del curso.'}</p>
-          </div>
-        </div>
-
-        <p className="mt-4 text-xs leading-5 text-muted-foreground">Esta asignatura no contiene actividades, calificaciones, asistencias, equipos, horarios ni planificaciones. La eliminación no se puede deshacer.</p>
-
-        <div className="mt-5 flex flex-col-reverse gap-2 border-t border-slate-100 pt-4 sm:flex-row sm:justify-end">
-          <Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button>
-          <Button type="button" variant="destructive" onClick={() => void confirm()} loading={loading}><Trash2 className="size-4" /> Eliminar asignatura</Button>
-        </div>
+        <label className="block text-sm font-bold text-foreground">Escribe <span className="text-destructive">CONFIRMAR</span> para continuar.</label>
+        <Input autoFocus value={confirmation} onChange={(event) => setConfirmation(event.target.value)} disabled={loading} />
+        {error ? <p role="alert" className="text-sm font-semibold text-destructive">{error}</p> : null}
+        <div className="flex justify-end gap-2 border-t border-border pt-4"><Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches || loading} loading={loading}><Trash2 className="size-4" /> Eliminar grado</Button></div>
       </div>
     </Modal>
   )
@@ -1540,6 +1589,7 @@ function SubjectDetailView({
     plannings: Array<{ id: string; title: string; plannedDate: string | null }>
     academicPeriods: AcademicPeriodOpt[]
     selectedAcademicPeriodId: string | null
+    evaluationProfile?: EvaluationProfile
   }>({ gradingStudents: [], activities: [], gradeRecords: [], teams: [], plannings: [], academicPeriods: [], selectedAcademicPeriodId: null })
   const [activityBlockPickerOpen, setActivityBlockPickerOpen] = useState(false)
 
@@ -1554,8 +1604,7 @@ function SubjectDetailView({
     const next = new URLSearchParams(teamSearchParams)
     if (nextTab !== 'equipos') next.delete('teamId')
     if (nextTab !== 'actividades') next.delete('activityId')
-    if (nextTab === 'actividades' || nextTab === 'planificaciones' || nextTab === 'asistencia' || nextTab === 'horario' || nextTab === 'recursos' || nextTab === 'reportes') next.set('tab', nextTab)
-    else next.delete('tab')
+    next.set('tab', nextTab)
     setTeamSearchParams(next, { replace: true })
   }
 
@@ -1608,6 +1657,7 @@ function SubjectDetailView({
         plannings: planningResult.status === 'fulfilled' ? planningResult.value.map((entry) => ({ id: entry.id, title: entry.title, plannedDate: entry.plannedDate })) : [],
         academicPeriods: gradingResult.status === 'fulfilled' ? gradingResult.value.academicPeriods : [],
         selectedAcademicPeriodId: gradingResult.status === 'fulfilled' ? gradingResult.value.selectedAcademicPeriodId : null,
+        evaluationProfile: gradingResult.status === 'fulfilled' ? gradingResult.value.context?.evaluationProfile : undefined,
       })
     })
     return () => { active = false }
@@ -1694,7 +1744,7 @@ function SubjectDetailView({
 
       <nav className="subject-workspace-tabs flex min-w-0 flex-wrap items-center gap-1 rounded-3xl border border-border bg-card px-3 py-1.5 shadow-sm" aria-label="Secciones de la asignatura">
         {subjectTabs.slice(0, 7).map((tab) => <DetailTab key={tab.id} active={activeTab === tab.id} icon={tab.icon} label={tab.label} count={tab.id === 'estudiantes' ? students.length || item.section.studentCount || 0 : tab.id === 'equipos' ? item.assignment?.teamCount ?? 0 : tab.id === 'actividades' ? activityCount : undefined} onClick={() => selectSubjectTab(tab.id)} />)}
-        <details className="group relative ml-auto shrink-0"><summary className="flex h-10 cursor-pointer list-none items-center gap-2 px-4 text-sm font-medium text-muted-foreground [&::-webkit-details-marker]:hidden">··· Más <ChevronDown className="size-3.5" /></summary><div className="absolute right-0 top-11 z-40 w-52 rounded-2xl border border-border bg-card p-2 shadow-xl">{subjectTabs.slice(7).map((tab) => <button key={tab.id} type="button" onClick={(event) => { selectSubjectTab(tab.id); event.currentTarget.closest('details')?.removeAttribute('open') }} aria-current={activeTab === tab.id ? 'page' : undefined} className="flex min-h-11 w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-xs text-foreground hover:bg-muted">{tab.icon}{tab.label}{'badge' in tab ? <span className="ml-auto text-[9px] text-muted-foreground">{tab.badge}</span> : null}</button>)}</div></details>
+        <details className="group relative ml-auto shrink-0"><summary className="flex h-10 cursor-pointer list-none items-center gap-2 px-4 text-sm font-medium text-muted-foreground [&::-webkit-details-marker]:hidden">{subjectTabs.slice(7).find(tab => tab.id === activeTab)?.label ?? '··· Más'} <ChevronDown className="size-3.5" /></summary><div className="absolute right-0 top-11 z-40 w-52 rounded-2xl border border-border bg-card p-2 shadow-xl">{subjectTabs.slice(7).map(tab => <button key={tab.id} type="button" disabled={tab.id === 'planificaciones'} onClick={event => { selectSubjectTab(tab.id); event.currentTarget.closest('details')?.removeAttribute('open') }} aria-current={activeTab === tab.id ? 'page' : undefined} className="flex min-h-11 w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-xs text-foreground hover:bg-muted disabled:opacity-50">{tab.icon}{tab.label}{'badge' in tab ? <span className="ml-auto text-[9px] text-muted-foreground">PRONTO</span> : null}</button>)}</div></details>
       </nav>
 
       {activeTab === 'resumen' ? (
@@ -1730,6 +1780,7 @@ function SubjectDetailView({
             sectionName: item.section.name,
             subjectName: item.subjectName,
           } : null}
+          onCreateActivity={item.assignment ? () => setActivityBlockPickerOpen(true) : undefined}
         />
       ) : activeTab === 'equipos' ? (
         <CourseTeamsPanel
@@ -1761,6 +1812,8 @@ function SubjectDetailView({
         <SubjectAttendancePanel key={item.assignment?.id} sectionSubjectId={item.assignment?.id ?? null} students={students} loading={studentsLoading} error={studentsError} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} schoolYearName={schoolYearName} />
       ) : activeTab === 'calificaciones' ? (
         <CalificacionesTab sectionSubjectId={item.assignment?.id ?? null} schoolYearId={schoolYearId} courseId={item.id} courseLabel={courseLabel} subjectName={item.subjectName} />
+      ) : activeTab === 'horario' ? (
+        <SubjectSchedulePage embedded />
       ) : activeTab === 'planificaciones' ? (
         <PlanningDisabledPanel onActivities={() => selectSubjectTab('actividades')} />
       ) : activeTab === 'recursos' ? (
@@ -1775,6 +1828,7 @@ function SubjectDetailView({
           initialRecords={overview.gradeRecords}
           periods={overview.academicPeriods}
           initialPeriodId={overview.selectedAcademicPeriodId}
+          initialEvaluationProfile={overview.evaluationProfile}
         />
       ) : (
         <SubjectModulePanel icon={<SlidersHorizontal className="size-6" />} title="Configuración de la asignatura" description="La apariencia y el estado de la asignatura se administran desde el menú de su tarjeta en el curso." action="Volver a asignaturas" onAction={onBack} />
@@ -1786,6 +1840,7 @@ function SubjectDetailView({
           courseId={item.id}
           courseName={courseLabel}
           subjectName={item.subjectName}
+          returnTab={activeTab === 'estudiantes' ? 'estudiantes' : 'actividades'}
           onClose={() => setActivityBlockPickerOpen(false)}
         />
       ) : null}
@@ -1793,11 +1848,12 @@ function SubjectDetailView({
   )
 }
 
-export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, subjectName, onClose }: {
+export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, subjectName, returnTab = 'actividades', onClose }: {
   assignmentId: string
   courseId: string
   courseName: string
   subjectName: string
+  returnTab?: 'actividades' | 'estudiantes'
   onClose: () => void
 }) {
   const visuals = [
@@ -1824,14 +1880,12 @@ export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, 
         <div className="grid gap-3 md:grid-cols-2">
           {competencyBlocks.map((block, index) => {
             const visual = visuals[index]
-            const href = `/calificaciones?${new URLSearchParams({
+            const href = `/actividades/crear?${new URLSearchParams({
               sectionSubjectId: assignmentId,
-              action: 'create-activity',
               competencyBlockId: block.id,
-              origin: 'subject',
               returnCourseId: courseId,
               returnSubjectId: assignmentId,
-              returnTab: 'actividades',
+              returnTab,
             }).toString()}`
             return (
               <Link
@@ -1909,7 +1963,7 @@ function DashboardPanel({ title, subtitle, badge, action, onAction, children }: 
 }
 
 function ActivityPreview({ activity }: { activity: { name: string; date?: string; activityType?: 'individual' | 'group' } }) {
-  const date = activity.date ? new Date(activity.date) : null
+  const date = activity.date ? calendarDate(activity.date) : null
   return <div className="flex min-h-20 items-center gap-3 border-b border-border py-3 last:border-b-0"><span className="flex size-11 shrink-0 flex-col items-center justify-center rounded-full bg-muted text-foreground"><strong className="text-sm leading-none">{date ? date.getDate() : '—'}</strong><span className="mt-0.5 text-[9px] font-semibold uppercase">{date ? date.toLocaleDateString('es-DO', { month: 'short' }).replace('.', '') : 'S/F'}</span></span><span className="min-w-0 flex-1"><span className="block truncate text-sm font-semibold">{activity.name}</span><span className="mt-1 block text-xs text-muted-foreground">{activity.activityType === 'group' ? 'Proyecto en equipo' : 'Actividad individual'} · {activity.date ? formatShortDate(activity.date) : 'Sin fecha'}</span></span><span className="text-[11px] text-muted-foreground">{date ? 'Próxima' : 'Pendiente'}</span></div>
 }
 
@@ -1933,7 +1987,7 @@ function SubjectModulePanel({ icon, title, description, href, action, onAction }
 
 function formatShortDate(value?: string | null) {
   if (!value) return 'Sin fecha'
-  const date = new Date(value)
+  const date = calendarDate(value)
   if (Number.isNaN(date.getTime())) return value
   return date.toLocaleDateString('es-DO', { day: 'numeric', month: 'long', year: 'numeric' })
 }
@@ -2011,17 +2065,13 @@ export function SubjectActivitiesTab({ activities, activityId, academicPeriods, 
   if (selected) return <SubjectActivityDetail activity={selected} records={records} students={students} teams={teams} assignmentId={assignmentId} courseId={courseId} periodName={period?.name ?? 'Período actual'} onBack={() => onActivityChange(null)} />
 
   return <section className="space-y-4" aria-labelledby="subject-activities-title">
-    <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <div><h2 id="subject-activities-title" className="text-xl font-extrabold tracking-tight">Actividades</h2><p className="mt-1 text-sm text-muted-foreground">Gestiona las actividades de esta asignatura.</p><p className="mt-1 text-xs font-semibold text-muted-foreground">{courseLabel} · {subjectName} · {period?.name ?? 'Período actual'}</p></div>
-      <Button className="h-11 px-5" onClick={onCreate}><Plus className="size-4" /> Crear actividad</Button>
-    </header>
-    <div className="grid gap-2 rounded-2xl border border-border bg-card p-3 shadow-sm lg:grid-cols-[minmax(0,12rem)_minmax(0,12rem)_minmax(14rem,1fr)_minmax(0,12rem)]">
-      <label className="grid min-w-0 gap-1 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground">Período<select disabled title={period?.name ?? 'Período actual'} className="h-10 w-full min-w-0 truncate rounded-xl border border-border bg-muted/30 px-3 text-sm font-bold text-foreground"><option>{period?.name ?? 'Período actual'}</option></select></label>
-      <label className="grid min-w-0 gap-1 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground">Estado<select value={status} onChange={(event) => setStatus(event.target.value as typeof status)} className="h-10 w-full min-w-0 rounded-xl border border-border bg-card px-3 text-sm font-bold text-foreground"><option value="all">Todas</option><option value="pending">Pendientes</option><option value="partial">Parcialmente calificadas</option><option value="graded">Calificadas</option></select></label>
-      <label className="relative self-end"><Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" /><Input aria-label="Buscar actividad" value={query} onChange={(event) => setQuery(event.target.value)} className="h-10 pl-9" placeholder="Buscar actividad..." /></label>
-      <label className="grid min-w-0 gap-1 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground">Ordenar<select value={sort} onChange={(event) => setSort(event.target.value as typeof sort)} className="h-10 w-full min-w-0 rounded-xl border border-border bg-card px-3 text-sm font-bold text-foreground"><option value="recent">Más recientes</option><option value="oldest">Más antiguas</option><option value="name">Nombre A-Z</option></select></label>
+    <SubjectTabHeader title="Actividades" description="Encuentra, crea y da seguimiento a las actividades evaluables." context={<>{courseLabel} · {subjectName}<span className="subject-context-period">{period?.name ?? 'Período actual'} · período actual</span></>} actions={<Button onClick={onCreate}><Plus className="size-4" /> Crear actividad</Button>} />
+    <div className="subject-toolbar">
+      <div className="subject-filter-chips">{([['all', 'Todas'], ['pending', 'Pendientes'], ['partial', 'Parcialmente calificadas'], ['graded', 'Calificadas']] as const).map(([value, label]) => <button key={value} type="button" aria-pressed={status === value} onClick={() => setStatus(value)}>{label}<span>{value === 'all' ? activities.length : activities.filter(activity => activityMeta(activity).state === value).length}</span></button>)}</div>
+      <label className="subject-search"><Search /><input aria-label="Buscar actividad" placeholder="Buscar por nombre o descripción..." value={query} onChange={event => setQuery(event.target.value)} /></label>
+      <select aria-label="Ordenar actividades" value={sort} onChange={event => setSort(event.target.value as typeof sort)}><option value="recent">Ordenar por fecha</option><option value="oldest">Más antiguas</option><option value="name">Nombre A-Z</option></select>
     </div>
-    {!activities.length ? <div className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><span className="flex size-14 items-center justify-center rounded-2xl bg-primary/8 text-primary"><CheckSquare className="size-6" /></span><h3 className="mt-4 text-lg font-extrabold">Aún no hay actividades</h3><p className="mt-2 max-w-md text-sm text-muted-foreground">Crea la primera actividad de esta asignatura para comenzar a evaluarla.</p><Button className="mt-5" onClick={onCreate}><Plus className="size-4" /> Crear primera actividad</Button></div> : !visible.length ? <EmptyState title="Sin coincidencias" description="Prueba con otro texto o estado." /> : <div className="overflow-x-auto rounded-2xl border border-border bg-card shadow-sm"><table className="min-w-[70rem] w-full text-left text-sm"><thead className="bg-muted/40 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3">Actividad</th><th className="px-4 py-3">Bloque</th><th className="px-4 py-3">Período</th><th className="px-4 py-3">Fecha</th><th className="px-4 py-3">Valor</th><th className="px-4 py-3">Instrumento</th><th className="px-4 py-3">Modalidad</th><th className="px-4 py-3">Estado</th><th className="px-4 py-3">Progreso</th><th className="px-4 py-3 text-right">Acciones</th></tr></thead><tbody className="divide-y divide-border">{visible.map((activity) => { const meta = activityMeta(activity); const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId); return <tr key={activity.id} tabIndex={0} aria-label={`Abrir actividad ${activity.name}`} onClick={() => onActivityChange(activity.id)} onKeyDown={(event) => { if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onActivityChange(activity.id) } }} className="cursor-pointer outline-none transition hover:bg-primary/[0.035] focus-visible:bg-primary/[0.05] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"><td className="px-4 py-3"><span className="max-w-52 text-left font-extrabold text-foreground">{activity.name}</span></td><td className="px-4 py-3 text-xs"><strong className="block">{block?.shortName ?? 'Bloque'}</strong><span className="line-clamp-1 max-w-40 text-[10px] text-muted-foreground">{block?.name}</span></td><td className="px-4 py-3 text-xs font-bold">{period?.name?.split('—')[0]?.trim() ?? 'Actual'}</td><td className="px-4 py-3 text-xs text-muted-foreground">{formatShortDate(activity.date)}</td><td className="px-4 py-3 text-xs font-bold">{activity.maxScore} pts</td><td className="px-4 py-3 text-xs text-muted-foreground">{activityInstrumentLabel(activity.instrumentType)}</td><td className="px-4 py-3 text-xs">{activity.activityType === 'group' ? 'Grupal' : 'Individual'}</td><td className="px-4 py-3"><ActivityStatusBadge status={meta.state} /></td><td className="px-4 py-3"><div className="min-w-24"><span className="text-[10px] font-bold text-muted-foreground">{meta.graded} / {students.length}</span><div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: `${students.length ? (meta.graded / students.length) * 100 : 0}%` }} /></div></div></td><td className="px-4 py-3"><div className="flex justify-end gap-1"><button type="button" onClick={(event) => { event.stopPropagation(); onActivityChange(activity.id) }} aria-label={`Ver ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-primary hover:bg-primary/8"><Eye className="size-4" /></button><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'edit')} aria-label={`Editar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><Edit3 className="size-4" /></Link><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'evaluate')} aria-label={`Evaluar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><ChartColumn className="size-4" /></Link></div></td></tr> })}</tbody></table><footer className="border-t border-border px-4 py-3 text-xs text-muted-foreground">Mostrando {visible.length} de {activities.length} actividades</footer></div>}
+    {!activities.length ? <div className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><span className="flex size-14 items-center justify-center rounded-2xl bg-primary/8 text-primary"><CheckSquare className="size-6" /></span><h3 className="mt-4 text-lg font-extrabold">Aún no hay actividades</h3><p className="mt-2 max-w-md text-sm text-muted-foreground">Crea la primera actividad de esta asignatura para comenzar a evaluarla.</p><Button className="mt-5" onClick={onCreate}><Plus className="size-4" /> Crear primera actividad</Button></div> : !visible.length ? <EmptyState title="Sin coincidencias" description="Prueba con otro texto o estado." /> : <div className="subject-table-panel overflow-x-auto"><table className="subject-data-table min-w-[70rem] w-full text-left text-sm"><thead className="bg-muted/40 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3">Actividad</th><th className="px-4 py-3">Bloque</th><th className="px-4 py-3">Período</th><th className="px-4 py-3">Fecha</th><th className="px-4 py-3">Valor</th><th className="px-4 py-3">Instrumento</th><th className="px-4 py-3">Modalidad</th><th className="px-4 py-3">Estado</th><th className="px-4 py-3">Calificados</th><th className="px-4 py-3 text-right">Acciones</th></tr></thead><tbody className="divide-y divide-border">{visible.map((activity) => { const meta = activityMeta(activity); const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId); return <tr key={activity.id} tabIndex={0} aria-label={`Abrir actividad ${activity.name}`} onClick={() => onActivityChange(activity.id)} onKeyDown={(event) => { if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onActivityChange(activity.id) } }} className="cursor-pointer outline-none transition hover:bg-primary/[0.035] focus-visible:bg-primary/[0.05] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"><td className="px-4 py-3"><span className="block max-w-72 truncate text-left font-semibold text-foreground">{activity.name}</span><span className="block max-w-72 truncate text-xs text-muted-foreground">{activity.description}</span></td><td className="px-4 py-3 text-xs"><strong className="block">{block?.shortName ?? 'Bloque'}</strong></td><td className="px-4 py-3 text-xs font-bold">{period?.name?.split('—')[0]?.trim() ?? 'Actual'}</td><td className="px-4 py-3 text-xs text-muted-foreground">{formatShortDate(activity.date)}</td><td className="px-4 py-3 text-xs font-bold">{activity.maxScore} pts</td><td className="px-4 py-3 text-xs text-muted-foreground">{activityInstrumentLabel(activity.instrumentType)}</td><td className="px-4 py-3 text-xs">{activity.activityType === 'group' ? 'Grupal' : 'Individual'}</td><td className="px-4 py-3"><ActivityStatusBadge status={meta.state} /></td><td className="px-4 py-3"><div className="min-w-24"><span className="text-[10px] font-bold text-muted-foreground">{meta.graded} / {students.length}</span><div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: `${students.length ? (meta.graded / students.length) * 100 : 0}%` }} /></div></div></td><td className="px-4 py-3"><details className="subject-row-menu" onClick={event => event.stopPropagation()}><summary aria-label={`Acciones de ${activity.name}`}>···</summary><div><button type="button" onClick={(event) => { event.stopPropagation(); onActivityChange(activity.id) }} aria-label={`Ver ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-primary hover:bg-primary/8"><Eye className="size-4" /> Ver detalle</button><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'edit')} aria-label={`Editar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><Edit3 className="size-4" /> Editar</Link><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'evaluate')} aria-label={`Evaluar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><ChartColumn className="size-4" /> Calificar</Link></div></details></td></tr> })}</tbody></table><footer className="border-t border-border px-4 py-3 text-xs text-muted-foreground">Mostrando {visible.length} de {activities.length} actividades</footer></div>}
   </section>
 }
 
@@ -2039,7 +2089,7 @@ function SubjectActivityDetail({ activity, records, students, teams, assignmentI
 
 function SubjectActivityPanel({ title, children }: { title: string; children: ReactNode }) { return <section className="rounded-2xl border border-border bg-card p-5 shadow-sm"><h3 className="mb-4 text-sm font-extrabold">{title}</h3>{children}</section> }
 function ActivityDefinition({ label, value }: { label: string; value: string }) { return <div className="flex items-start justify-between gap-3"><dt className="font-bold">{label}</dt><dd className="max-w-44 text-right leading-5 text-muted-foreground">{value}</dd></div> }
-function ActivityStatusBadge({ status }: { status: SubjectActivityStatus }) { const styles = status === 'graded' ? 'bg-emerald-50 text-emerald-700' : status === 'partial' ? 'bg-amber-50 text-amber-700' : 'bg-slate-100 text-slate-600'; return <span className={cn('inline-flex whitespace-nowrap rounded-full px-2.5 py-1 text-[10px] font-extrabold', styles)}>{activityStatusLabel(status)}</span> }
+function ActivityStatusBadge({ status }: { status: SubjectActivityStatus }) { const styles = status === 'graded' ? 'bg-success/10 text-success' : status === 'partial' ? 'bg-primary/10 text-primary' : 'bg-warning/15 text-warning-foreground'; return <span className={cn('inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1 text-[10px] font-semibold', styles)}><span aria-hidden="true">●</span>{activityStatusLabel(status)}</span> }
 function activityStatusLabel(status: SubjectActivityStatus) { return status === 'graded' ? 'Calificada' : status === 'partial' ? 'Parcialmente calificada' : 'Pendiente' }
 function activityInstrumentLabel(value?: string) { return ({ rubrica: 'Rúbrica', 'lista-cotejo': 'Lista de cotejo', escala: 'Escala estimativa', 'lista-ponderada': 'Lista ponderada' } as Record<string, string>)[value ?? ''] ?? value ?? 'Sin instrumento' }
 function buildActivityGradingHref(assignmentId: string, courseId: string, activityId: string | undefined, mode: 'edit' | 'evaluate') { return `/calificaciones?${new URLSearchParams({ sectionSubjectId: assignmentId, activityId: activityId ?? '', activityMode: mode, origin: 'subject', returnCourseId: courseId, returnSubjectId: assignmentId, returnTab: 'actividades' }).toString()}` }
@@ -2048,7 +2098,7 @@ function PlanningDisabledPanel({ onActivities }: { onActivities: () => void }) {
   return <section className="flex min-h-72 items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><div className="max-w-lg"><span className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-muted text-muted-foreground"><ClipboardList className="size-6" /></span><div className="mt-4 flex items-center justify-center gap-2"><h2 className="text-xl font-extrabold">Planificaciones</h2><span className="rounded-full bg-slate-100 px-2 py-1 text-[9px] font-black uppercase tracking-wide text-slate-500">Próximamente</span></div><p className="mt-3 text-sm leading-6 text-muted-foreground">Este módulo estará disponible próximamente. Mientras tanto, puedes crear y gestionar tus actividades desde el apartado Actividades.</p><Button className="mt-5" onClick={onActivities}>Ir a Actividades</Button></div></section>
 }
 
-export function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnroll, gradingStudents, activities, gradeRecords, teams, journalCourse }: {
+export function EstudiantesTab({ students, loading, error, courseId, sectionId, canEnroll, gradingStudents, activities, gradeRecords, teams, journalCourse, onCreateActivity }: {
   students: StudentAttendanceRow[]
   loading: boolean
   error: string | null
@@ -2060,6 +2110,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
   gradeRecords: GradeRecordRow[]
   teams: CourseTeam[]
   journalCourse: JournalCourseOption | null
+  onCreateActivity?: () => void
 }) {
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState<'all' | 'team' | 'no-team' | 'pending'>('all')
@@ -2071,6 +2122,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
   const [viewingJournal, setViewingJournal] = useState<JournalEntry | null>(null)
   const [editingJournal, setEditingJournal] = useState<JournalEntry | null>(null)
   const [deletingJournal, setDeletingJournal] = useState<JournalEntry | null>(null)
+  const [attendanceHistory, setAttendanceHistory] = useState<ClassAttendanceHistoryRecord[]>([])
   const detailRef = useRef<HTMLDivElement>(null)
   const toggleStudent = (enrollmentId: string) => setSelectedEnrollmentId((current) => current === enrollmentId ? null : enrollmentId)
   const refreshJournal = useCallback(async () => {
@@ -2099,6 +2151,20 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
   useEffect(() => {
     if (selectedEnrollmentId) void refreshJournal()
   }, [refreshJournal, selectedEnrollmentId])
+
+  useEffect(() => {
+    if (!courseId || !students.length) {
+      setAttendanceHistory([])
+      return
+    }
+    let active = true
+    getClassAttendanceHistory(courseId).then((records) => {
+      if (active) setAttendanceHistory(records)
+    }).catch(() => {
+      if (active) setAttendanceHistory([])
+    })
+    return () => { active = false }
+  }, [courseId, students.length])
 
   if (loading) return <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">Cargando estudiantes...</div>
   if (error) return <ErrorState message={error} />
@@ -2161,11 +2227,16 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
     const possible = activityRecords.reduce((sum, record) => sum + record.maxScore, 0)
     const average = possible > 0 ? Math.round((earned / possible) * 100) : null
     const completed = activityRecords.length
-    const progressStatus: 'Al día' | 'En progreso' | 'Sin actividad' = activities.length > 0 && completed >= activities.length
-      ? 'Al día'
-      : completed > 0
-        ? 'En progreso'
-        : 'Sin actividad'
+    const attendance = attendancePercentageFromMarks(attendanceHistory
+      .filter((record) => record.enrollmentId === student.enrollmentId)
+      .map((record) => statusToMark(record.status, record.notes)))
+    const progressStatus: StudentProgressStatus = (average !== null && average < 70) || (attendance !== null && attendance < 70)
+      ? 'En riesgo'
+      : activities.length > 0 && completed < activities.length
+        ? 'Con pendientes'
+        : completed > 0
+          ? 'Al día'
+          : 'Sin actividad'
     return {
       ...student,
       listNumber: gradingStudent?.listNumber ?? student.listNumber ?? index + 1,
@@ -2173,6 +2244,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
       records,
       completed,
       average,
+      attendance,
       progressStatus,
     }
   })
@@ -2191,31 +2263,31 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
     && entry.sectionSubjectId === courseId
     && entry.students.some(({ student }) => student.id === selected.studentId),
   ) : []
-  const pendingActivities = activities.filter((activity) => rows.some((row) => !scoreForActivity(row.records, row.enrollmentId, activity.id))).length
+  const pendingActivities = rows.filter(row => row.completed < activities.length).length
   const evaluatedRows = rows.filter((row) => row.average !== null)
   const courseAverage = evaluatedRows.length
     ? Math.round(evaluatedRows.reduce((sum, row) => sum + (row.average ?? 0), 0) / evaluatedRows.length)
     : null
 
   return (
-    <section className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+    <section className="subject-students space-y-4">
+      <div className="subject-stat-grid">
+        <SubjectStat icon={UsersRound} value={rows.length} label="Estudiantes matriculados" />
+        <SubjectStat icon={UsersRound} value={teams.length} label="Equipos" tone="success" />
+        <SubjectStat icon={ClipboardList} value={pendingActivities} label="Con actividades pendientes" />
+        <SubjectStat icon={ChartColumn} value={courseAverage ?? '—'} label="Promedio del curso" tone="warning" />
+      </div>
+      <div className="subject-table-panel">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h2 className="text-lg font-extrabold text-foreground">Estudiantes de la asignatura</h2>
           <p className="mt-0.5 text-xs text-muted-foreground">Consulta el progreso general y abre el detalle de cada estudiante.</p>
         </div>
-        <button type="button" disabled title="Próximamente" className="inline-flex h-9 cursor-not-allowed items-center gap-2 rounded-lg border border-border px-3 text-xs font-bold text-muted-foreground opacity-70"><FileText className="size-4" /> Exportar</button>
+        <div className="flex flex-wrap gap-2">{onCreateActivity ? <Button size="sm" onClick={onCreateActivity}><Plus className="size-4" /> Crear actividad</Button> : null}<Button variant="outline" size="sm" onClick={() => exportStudentCsv([['#', 'Estudiante', 'Equipo', 'Actividades', 'Promedio', 'Asistencia', 'Estado'], ...filteredRows.map(row => [row.listNumber, `${row.lastName}, ${row.firstName}`, row.team?.name ?? 'Sin equipo', `${row.completed}/${activities.length}`, row.average ?? '', row.attendance === null ? '' : `${row.attendance}%`, row.progressStatus])])}><FileText className="size-4" /> Exportar</Button></div>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-4">
-        <StudentMetric icon={<UsersRound className="size-4" />} value={rows.length} label="Estudiantes matriculados" tone="bg-blue-50 text-blue-700" />
-        <StudentMetric icon={<UsersRound className="size-4" />} value={teams.length} label="Equipos" tone="bg-emerald-50 text-emerald-700" />
-        <StudentMetric icon={<ClipboardList className="size-4" />} value={pendingActivities} label="Actividades pendientes" tone="bg-violet-50 text-violet-700" />
-        <StudentMetric icon={<ChartColumn className="size-4" />} value={courseAverage === null ? '—' : `${courseAverage}%`} label="Promedio del curso" tone="bg-orange-50 text-orange-700" />
-      </div>
-
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <label className="relative min-w-52 flex-1 sm:max-w-xs">
+      <div className="subject-students-filters mt-4 flex flex-wrap items-center gap-2">
+        <label className="relative min-w-52 flex-1">
           <span className="sr-only">Buscar estudiante</span>
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar estudiante..." className="h-9 w-full rounded-lg border border-border bg-background pl-9 pr-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10" />
@@ -2230,10 +2302,10 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
         ))}
       </div>
 
-      <div className={cn('mt-4 grid gap-4', selected && 'xl:grid-cols-[minmax(0,1fr)_21rem]')}>
+      <div className="mt-4">
         <div className="min-w-0 overflow-hidden rounded-xl border border-border">
-          <div className="max-h-[30rem] overflow-x-auto overflow-y-auto md:overflow-x-hidden">
-            <table className="w-full min-w-[720px] text-left text-xs md:min-w-0 md:table-fixed">
+          <div className="overflow-x-auto">
+            <table className="subject-data-table w-full min-w-[720px] text-left text-xs">
               <thead className="sticky top-0 z-10 border-b border-border bg-muted text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
                 <tr><th className="w-12 px-3 py-3 text-center">#</th><th className="px-3 py-3">Estudiante</th><th className="px-3 py-3">Equipo</th><th className="px-3 py-3">Actividades</th><th className="px-3 py-3">Promedio</th><th className="px-3 py-3">Asistencia</th><th className="px-3 py-3">Estado</th></tr>
               </thead>
@@ -2241,11 +2313,11 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
                 {filteredRows.map((row, index) => (
                   <tr key={row.enrollmentId} tabIndex={0} role="button" aria-expanded={selectedEnrollmentId === row.enrollmentId} aria-controls="subject-student-detail" onClick={() => toggleStudent(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleStudent(row.enrollmentId) } }} className={cn('cursor-pointer text-foreground outline-none transition hover:bg-primary/[0.035] focus:bg-primary/[0.05]', selectedEnrollmentId === row.enrollmentId && 'bg-primary/[0.055]')}>
                     <td className="px-3 py-3 text-center font-bold text-muted-foreground">{index + 1}</td>
-                    <td className="px-3 py-3 font-bold">{row.lastName}, {row.firstName}</td>
-                    <td className="px-3 py-3">{row.team ? <span className="font-semibold text-emerald-700">{row.team.name}</span> : <span className="text-muted-foreground">Sin equipo</span>}</td>
+                    <td className="px-3 py-3 font-bold"><span className="inline-flex items-center gap-3"><StudentAvatar firstName={row.firstName} lastName={row.lastName} />{row.lastName}, {row.firstName}</span></td>
+                    <td className="px-3 py-3">{row.team ? <span className="font-semibold text-primary">{row.team.name}</span> : <span className="text-muted-foreground">Sin equipo</span>}</td>
                     <td className="px-3 py-3"><span className="font-bold tabular-nums">{row.completed} / {activities.length}</span><div className="mt-1 h-1 w-20 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: activities.length ? `${Math.min(100, (row.completed / activities.length) * 100)}%` : '0%' }} /></div></td>
-                    <td className="px-3 py-3 font-bold tabular-nums">{row.average === null ? '—' : `${row.average}%`}</td>
-                    <td className="px-3 py-3 text-muted-foreground">—</td>
+                    <td className="px-3 py-3 font-bold tabular-nums">{row.average ?? '—'}</td>
+                    <td className="px-3 py-3 text-muted-foreground">{row.attendance === null ? '—' : `${row.attendance}%`}</td>
                     <td className="px-3 py-3"><StudentStatusBadge status={row.progressStatus} /></td>
                   </tr>
                 ))}
@@ -2256,7 +2328,8 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
           <p className="border-t border-border px-3 py-2 text-[11px] text-muted-foreground">Mostrando {filteredRows.length} de {rows.length} estudiantes</p>
         </div>
 
-        {selected ? <div ref={detailRef} id="subject-student-detail"><StudentDetailPanel student={selected} activities={activities} journalEntries={selectedJournalEntries} journalLoading={journalLoading} journalError={journalError} onRetryJournal={() => void refreshJournal()} onViewJournal={setViewingJournal} onJournal={() => setJournalStudentId(selected.studentId)} journalHref={`/bitacora?${new URLSearchParams({ sectionId, sectionSubjectId: courseId ?? '', studentId: selected.studentId }).toString()}`} onClose={() => setSelectedEnrollmentId(null)} /></div> : null}
+        {selected ? <div className="fixed inset-0 z-40 flex justify-end bg-foreground/25"><button type="button" className="absolute inset-0 cursor-default" aria-label="Cerrar detalle del estudiante" onClick={() => setSelectedEnrollmentId(null)} /><div ref={detailRef} id="subject-student-detail" className="relative h-full w-full max-w-xl overflow-y-auto bg-card shadow-xl"><StudentDetailPanel student={selected} activities={activities} journalEntries={selectedJournalEntries} journalLoading={journalLoading} journalError={journalError} onRetryJournal={() => void refreshJournal()} onViewJournal={setViewingJournal} onJournal={() => setJournalStudentId(selected.studentId)} journalHref={`/bitacora?${new URLSearchParams({ sectionId, sectionSubjectId: courseId ?? '', studentId: selected.studentId }).toString()}`} onClose={() => setSelectedEnrollmentId(null)} /></div></div> : null}
+      </div>
       </div>
 
       <div className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-primary/[0.035] px-4 py-3 text-xs text-muted-foreground"><Sparkles className="size-4 text-primary" /><span><strong className="text-foreground">Consejo rápido:</strong> haz clic en cualquier estudiante para ver su progreso detallado.</span></div>
@@ -2281,16 +2354,15 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
   )
 }
 
-function StudentMetric({ icon, value, label, tone }: { icon: ReactNode; value: string | number; label: string; tone: string }) {
-  return <div className="flex min-h-16 items-center gap-3 rounded-xl border border-border px-3 py-2.5"><span className={cn('flex size-9 shrink-0 items-center justify-center rounded-lg', tone)}>{icon}</span><span><strong className="block text-lg leading-none tabular-nums text-foreground">{value}</strong><span className="mt-1 block text-[10px] font-semibold text-muted-foreground">{label}</span></span></div>
-}
 
-function StudentStatusBadge({ status }: { status: 'Al día' | 'En progreso' | 'Sin actividad' }) {
-  return <span className={cn('inline-flex rounded-full px-2 py-1 text-[10px] font-bold', status === 'Al día' ? 'bg-emerald-50 text-emerald-700' : status === 'En progreso' ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600')}>{status}</span>
+type StudentProgressStatus = 'Al día' | 'Con pendientes' | 'En riesgo' | 'Sin actividad'
+
+function StudentStatusBadge({ status }: { status: StudentProgressStatus }) {
+  return <span className={cn('inline-flex rounded-full px-2 py-1 text-[10px] font-bold', status === 'Al día' ? 'bg-success/10 text-success' : status === 'Con pendientes' ? 'bg-warning/15 text-warning-foreground' : status === 'En riesgo' ? 'bg-destructive/10 text-destructive' : 'bg-muted text-muted-foreground')}>{status}</span>
 }
 
 function StudentDetailPanel({ student, activities, journalEntries, journalLoading, journalError, onRetryJournal, onViewJournal, onJournal, journalHref, onClose }: {
-  student: StudentAttendanceRow & { team: CourseTeam | null; records: GradeRecordRow[]; completed: number; average: number | null; progressStatus: 'Al día' | 'En progreso' | 'Sin actividad' }
+  student: StudentAttendanceRow & { team: CourseTeam | null; records: GradeRecordRow[]; completed: number; average: number | null; attendance: number | null; progressStatus: StudentProgressStatus }
   activities: GradingActivity[]
   journalEntries: JournalEntry[]
   journalLoading: boolean
@@ -2309,7 +2381,7 @@ function StudentDetailPanel({ student, activities, journalEntries, journalLoadin
   return (
     <aside className="rounded-xl border border-border bg-background p-4 shadow-sm" aria-label={`Detalle de ${student.firstName} ${student.lastName}`}>
       <div className="flex items-start justify-between gap-3"><div><h3 className="font-extrabold text-foreground">{student.firstName} {student.lastName}</h3><p className="mt-1 text-xs text-muted-foreground">{student.team?.name ?? 'Sin equipo'}</p></div><button type="button" onClick={onClose} className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground" aria-label="Cerrar detalle"><X className="size-4" /></button></div>
-      <div className="mt-4 grid grid-cols-3 gap-2"><DetailMetric value={`${student.completed}/${activities.length}`} label="Actividades" /><DetailMetric value={student.average === null ? '—' : `${student.average}%`} label="Promedio" /><DetailMetric value="—" label="Asistencia" /></div>
+      <div className="mt-4 grid grid-cols-3 gap-2"><DetailMetric value={`${student.completed}/${activities.length}`} label="Actividades" /><DetailMetric value={student.average === null ? '—' : `${student.average}%`} label="Promedio" /><DetailMetric value={student.attendance === null ? '—' : `${student.attendance}%`} label="Asistencia" /></div>
       <h4 className="mt-5 text-xs font-extrabold text-foreground">Promedio por bloque</h4>
       <div className="mt-2 grid grid-cols-2 gap-2">{blockAverages.map((block) => <div key={block.id} title={block.name} className="rounded-lg border border-border p-2 text-center"><strong className="block text-sm text-primary">{block.average === null ? '—' : `${block.average}%`}</strong><span className="mt-0.5 block text-[10px] text-muted-foreground">{block.shortName}</span></div>)}</div>
       <div className="mt-5 flex items-center justify-between"><h4 className="text-xs font-extrabold text-foreground">Actividades</h4><span className="text-[10px] text-muted-foreground">{activities.length} en total</span></div>
@@ -2410,44 +2482,17 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
     ? Math.round(studentsWithGrades.reduce((sum, row) => sum + (row.average ?? 0), 0) / studentsWithGrades.length)
     : null
   const fullBookHref = buildSubjectGradingHref(sectionSubjectId, courseId)
-  const createActivityHref = `${fullBookHref}&action=create-activity`
+  const createActivityHref = `/actividades/crear?${new URLSearchParams({ sectionSubjectId, returnCourseId: courseId, returnSubjectId: sectionSubjectId, returnTab: 'calificaciones' }).toString()}`
 
   return (
     <div className="space-y-4">
-      <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div className="flex flex-col gap-4 border-b border-slate-100 px-5 py-4 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <h2 className="text-lg font-extrabold text-foreground">Libro de calificaciones</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Consulta el progreso del período y entra al espacio completo para evaluar.</p>
-          </div>
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-          {periods.length > 0 ? (
-            <label className="flex h-11 items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3">
-              <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground">Período</span>
-          <select
-            className="min-w-56 bg-transparent text-sm font-bold text-foreground outline-none"
-            value={selectedPeriod}
-            onChange={(e) => setSelectedPeriod(e.target.value)}
-          >
-            {periods.map((p) => (
-              <option key={p.id} value={p.id}>{p.name}</option>
-            ))}
-          </select>
-            </label>
-          ) : null}
-            <Link to={fullBookHref} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-extrabold text-primary-foreground shadow-sm transition hover:bg-primary-hover">
-              <GraduationCap className="size-4" /> Abrir libro completo
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid gap-px bg-slate-100 sm:grid-cols-2 xl:grid-cols-4">
-          <CompactGradeMetric icon={<ClipboardList className="size-5" />} value={evaluatedActivities} label="Actividades evaluadas" detail={`${Math.max(activities.length - evaluatedActivities, 0)} pendientes`} tone="violet" />
-          <CompactGradeMetric icon={<GraduationCap className="size-5" />} value={activities.length} label="Actividades creadas" detail="En este período" tone="blue" />
-          <CompactGradeMetric icon={<ChartColumn className="size-5" />} value={courseAverage === null ? '—' : `${courseAverage}%`} label="Promedio del curso" detail={courseAverage === null ? 'Sin evaluar' : 'Período seleccionado'} tone="emerald" />
-          <CompactGradeMetric icon={<UsersRound className="size-5" />} value={rows.filter((row) => row.average === null).length} label="Sin calificar" detail={`${students.length} estudiantes`} tone="orange" />
-        </div>
-      </section>
+      <SubjectTabHeader title="Libro de calificaciones" description="Consulta el progreso del grupo. La evaluación detallada se hace en el libro completo." context={`${courseLabel} · ${subjectName}`} actions={<><select aria-label="Período" value={selectedPeriod} onChange={event => setSelectedPeriod(event.target.value)}>{periods.map(period => <option key={period.id} value={period.id}>{period.name}</option>)}</select><Link to={fullBookHref} className="subject-primary-link"><BookOpen className="size-4" /> Abrir libro completo</Link></>} />
+      <div className="subject-stat-grid">
+        <SubjectStat icon={ClipboardList} tone="success" value={evaluatedActivities} label="Actividades evaluadas" />
+        <SubjectStat icon={GraduationCap} value={activities.length} label="Actividades creadas" />
+        <SubjectStat icon={ChartColumn} value={courseAverage ?? '—'} label="Promedio del curso" />
+        <SubjectStat icon={UsersRound} tone="warning" value={rows.filter(row => row.average === null).length} label="Estudiantes sin calificar" />
+      </div>
 
       {loading ? (
         <div className="flex min-h-[260px] items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-semibold text-muted-foreground">Cargando calificaciones...</div>
@@ -2463,19 +2508,15 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
           </Link>
         </div>
       ) : (
-        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-            <div><h3 className="text-sm font-extrabold">Progreso por estudiante</h3><p className="mt-1 text-xs text-muted-foreground">Promedios calculados a partir de las actividades registradas.</p></div>
-            <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{students.length} estudiantes</span>
-          </div>
+        <div className="subject-table-panel">
           <div className="overflow-x-auto">
-          <table className="w-full min-w-[68rem] text-left text-sm">
+          <table className="subject-data-table w-full min-w-[58rem] text-left text-sm">
             <thead className="border-b border-border bg-slate-50 text-[11px] font-extrabold uppercase tracking-wide text-muted-foreground">
               <tr>
                 <th className="w-16 px-5 py-3 text-center">#</th>
                 <th className="min-w-64 px-5 py-3">Estudiante</th>
                 {competencyBlocks.map((block) => <th key={block.id} title={block.name} className="w-28 px-3 py-3 text-center">{block.shortName}</th>)}
-                <th className="w-28 px-3 py-3 text-center">Período</th>
+                <th className="w-28 px-3 py-3 text-center">Promedio {periods.find(item => item.id === selectedPeriod)?.name.split('—')[0]}</th>
                 <th className="w-36 px-5 py-3">Estado</th>
               </tr>
             </thead>
@@ -2483,7 +2524,7 @@ function CalificacionesTab({ sectionSubjectId, schoolYearId, courseId, courseLab
               {rows.map((row) => (
                 <tr key={row.enrollmentId} role="button" tabIndex={0} aria-label={`Abrir detalle de calificaciones de ${row.firstName} ${row.lastName}`} onClick={() => setSelectedEnrollmentId(row.enrollmentId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedEnrollmentId(row.enrollmentId) } }} className="cursor-pointer text-foreground transition hover:bg-primary/[0.035] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring">
                   <td className="px-5 py-4 text-center font-bold text-muted-foreground">{row.listNumber}</td>
-                  <td className="px-5 py-4 font-bold">{row.lastName}, {row.firstName}</td>
+                  <td className="px-5 py-4 font-bold"><span className="inline-flex items-center gap-3"><StudentAvatar firstName={row.firstName} lastName={row.lastName} />{row.lastName}, {row.firstName}</span></td>
                   {competencyBlocks.map((block) => <td key={block.id} className="px-3 py-4 text-center"><GradeValue value={row.blockAverages[block.id]} /></td>)}
                   <td className="px-3 py-4 text-center"><GradeValue value={row.average} emphasized /></td>
                   <td className="px-5 py-4"><GradeStatus status={row.status} /></td>
@@ -2558,10 +2599,6 @@ function buildSubjectGradingHref(sectionSubjectId: string, returnCourseId: strin
   return `/calificaciones?${new URLSearchParams({ sectionSubjectId, origin: 'subject', returnCourseId, returnSubjectId: sectionSubjectId }).toString()}`
 }
 
-function CompactGradeMetric({ icon, value, label, detail, tone }: { icon: ReactNode; value: string | number; label: string; detail: string; tone: 'violet' | 'blue' | 'emerald' | 'orange' }) {
-  const tones = { violet: 'bg-violet-50 text-violet-600', blue: 'bg-blue-50 text-blue-600', emerald: 'bg-emerald-50 text-emerald-600', orange: 'bg-orange-50 text-orange-600' }
-  return <div className="flex items-center gap-3 bg-white px-5 py-4"><span className={cn('flex size-11 shrink-0 items-center justify-center rounded-xl', tones[tone])}>{icon}</span><span><strong className="block text-2xl leading-none">{value}</strong><span className="mt-1.5 block text-xs font-extrabold">{label}</span><span className="mt-0.5 block text-[10px] text-muted-foreground">{detail}</span></span></div>
-}
 
 function GradeValue({ value, emphasized = false }: { value: number | null; emphasized?: boolean }) {
   if (value === null) return <span className="font-bold text-slate-400">—</span>
@@ -2579,7 +2616,8 @@ const CourseCard = memo(function CourseCard({
   onOpen,
   onAddSection,
   onEditSection,
-  onDeleteSection,
+  onArchiveGrade,
+  onDeleteArchivedGrade,
   onAssignSubject,
 }: {
   item: CourseCardItem
@@ -2587,11 +2625,13 @@ const CourseCard = memo(function CourseCard({
   onOpen: (id: string) => void
   onAddSection: (grade: GradeWithSections) => void
   onEditSection: (grade: GradeWithSections, sectionId: string) => void
-  onDeleteSection: (section: Section) => void
+  onArchiveGrade: (grade: GradeWithSections) => void
+  onDeleteArchivedGrade: (grade: GradeWithSections) => void
   onAssignSubject: (grade: GradeWithSections, sectionId: string) => void
 }) {
   const levelStyle = getLevelStyle(item.levelName)
   const teamCount = item.section.teamCount ?? 0
+  const archivedGrade = isGradeArchived(item.grade)
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
 
@@ -2611,18 +2651,21 @@ const CourseCard = memo(function CourseCard({
     }
   }, [menuOpen])
   const gradeNumber = item.grade.name.replace('.º', '').replace('º', '')
+  const cardMetrics = archivedGrade
+    ? ([[UsersRound, item.section.studentCount ?? 0, 'estudiantes'], [LayoutDashboard, item.grade.sections.length, 'secciones'], [BookOpen, item.assignments.length, 'asignaciones']] as const)
+    : ([[UsersRound, item.section.studentCount ?? 0, 'estudiantes'], [BookOpen, item.assignments.length, 'asignaturas'], [UsersRound, teamCount, 'equipos']] as const)
 
   return (
     <article
       className="course-list-card group relative flex min-w-0 flex-col rounded-3xl border bg-card p-5"
     >
       <div
-        className="flex flex-1 cursor-pointer flex-col"
-        role="button"
-        tabIndex={0}
-        onClick={() => onOpen(item.id)}
+        className={cn('flex flex-1 flex-col', !archivedGrade && 'cursor-pointer')}
+        role={archivedGrade ? undefined : 'button'}
+        tabIndex={archivedGrade ? undefined : 0}
+        onClick={archivedGrade ? undefined : () => onOpen(item.id)}
         onKeyDown={(event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
+          if (!archivedGrade && (event.key === 'Enter' || event.key === ' ')) {
             event.preventDefault()
             onOpen(item.id)
           }
@@ -2635,14 +2678,14 @@ const CourseCard = memo(function CourseCard({
               style={{ backgroundColor: levelStyle.color }}
             >
               {gradeNumber}
-              <span className="ml-px text-xs font-bold opacity-80">{item.section.name}</span>
+              {!archivedGrade ? <span className="ml-px text-xs font-bold opacity-80">{item.section.name}</span> : null}
             </span>
             <div className="min-w-0">
               <h3 className="truncate text-base font-black tracking-tight text-foreground">
-                {item.grade.name} {item.section.name}
+                {item.grade.name}{!archivedGrade ? ` ${item.section.name}` : ''}
               </h3>
               <p className="mt-0.5 truncate text-xs text-muted-foreground">
-                {item.cycleName} · {cleanLevelName(item.levelName)}
+                {archivedGrade ? `${item.grade.sections.length} ${item.grade.sections.length === 1 ? 'sección' : 'secciones'} · ` : ''}{item.cycleName} · {cleanLevelName(item.levelName)}
               </p>
             </div>
           </div>
@@ -2653,7 +2696,7 @@ const CourseCard = memo(function CourseCard({
         </div>
 
         <div className="mt-4 grid grid-cols-3 gap-2 text-center">
-          {([[UsersRound, item.section.studentCount ?? 0, 'estudiantes'], [BookOpen, item.assignments.length, 'asignaturas'], [UsersRound, teamCount, 'equipos']] as const).map(([Icon, value, label]) => (
+          {cardMetrics.map(([Icon, value, label]) => (
             <span key={label} className="flex min-w-0 flex-col items-center rounded-3xl bg-muted/70 px-1 py-2.5"><Icon className="size-3.5 text-muted-foreground" /><strong className="mt-0.5 text-sm font-extrabold leading-4 tabular-nums text-foreground">{value}</strong><span className="text-[10px] text-muted-foreground">{label}</span></span>
           ))}
         </div>
@@ -2662,8 +2705,10 @@ const CourseCard = memo(function CourseCard({
       </div>
 
       <div className="mt-5 flex items-center gap-2">
-        <button type="button" onClick={() => onOpen(item.id)} className="flex min-h-10 flex-1 items-center justify-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-semibold text-primary transition hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">Entrar al curso <ChevronRight className="size-4" /></button>
-        {canManage ? (
+        {archivedGrade && canManage ? (
+          <Button type="button" variant="destructive" className="flex-1 rounded-full" onClick={() => onDeleteArchivedGrade(item.grade)}><Trash2 className="size-4" /> Eliminar grado</Button>
+        ) : <button type="button" onClick={() => onOpen(item.id)} className="flex min-h-10 flex-1 items-center justify-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-semibold text-primary transition hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">Entrar al curso <ChevronRight className="size-4" /></button>}
+        {canManage && !archivedGrade ? (
           <div className="relative" ref={menuRef}>
             <button type="button" title="Más acciones" className="inline-flex size-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition hover:bg-primary/10 hover:text-primary" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
               <MoreHorizontal className="size-4" />
@@ -2674,7 +2719,7 @@ const CourseCard = memo(function CourseCard({
                 <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onEditSection(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><CheckSquare className="size-4" /> Editar sección</button>
                 <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onAssignSubject(item.grade, item.section.id) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><BookOpen className="size-4" /> Asignar asignatura</button>
                 <div className="my-1 border-t border-border" />
-                <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onDeleteSection(item.section) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold transition-colors hover:bg-muted"><Power className="size-4" /> Inactivar sección</button>
+                <button role="menuitem" type="button" onClick={() => { setMenuOpen(false); onArchiveGrade(item.grade) }} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold text-destructive transition-colors hover:bg-destructive/10"><Archive className="size-4" /> Inactivar grado</button>
               </div>
             ) : null}
           </div>
@@ -2704,6 +2749,47 @@ function buildCourseCards(grades: GradeWithSections[]): CourseCardItem[] {
       }
     }),
   )
+}
+
+function buildArchivedGradeCards(grades: GradeWithSections[]) {
+  return grades.filter(isGradeArchived).map((grade) => {
+    const assignments = grade.sections.flatMap((section) =>
+      section.assignments.filter((assignment) => assignment.status === 'active'),
+    )
+    const firstSection = grade.sections[0]
+    const section: Section = firstSection ?? {
+      id: `archived-grade-${grade.id}`,
+      gradeId: grade.id,
+      name: '',
+      capacity: null,
+      studentCount: 0,
+      teamCount: 0,
+      status: 'inactive',
+      createdAt: grade.createdAt,
+      updatedAt: grade.updatedAt,
+      assignments: [],
+    }
+    return {
+      id: `archived-grade-${grade.id}`,
+      grade,
+      section: {
+        ...section,
+        studentCount: grade.sections.reduce((total, item) => total + toSafeCount(item.studentCount), 0),
+        teamCount: grade.sections.reduce((total, item) => total + toSafeCount(item.teamCount), 0),
+      },
+      assignments,
+      assignment: null,
+      subjectName: '',
+      levelName: grade.academicLevelName ?? grade.level ?? 'Sin nivel definido',
+      cycleName: grade.academicCycleName ?? 'Sin ciclo',
+      archived: true,
+    }
+  })
+}
+
+function isGradeArchived(grade: GradeWithSections) {
+  return grade.status !== 'active'
+    || (grade.sections.length > 0 && grade.sections.every((section) => section.status !== 'active'))
 }
 
 function cleanLevelName(value: string) {

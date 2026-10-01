@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom'
 import type { SectionSubjectAssignment } from '@/modules/courses/types'
 import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
 import { buildCompactGradeRows } from '@/modules/grading/utils/competencyGrades'
-import { ActivityBlockPickerDialog, CourseSubjectCard, SubjectAppearanceDialog } from './CoursesPage'
+import { ActivityBlockPickerDialog, ArchivedSubjectCard, CourseSubjectCard, PermanentSubjectDeleteDialog, SubjectAppearanceDialog } from './CoursesPage'
 
 function assignment(canDelete: boolean): SectionSubjectAssignment {
   return {
@@ -45,7 +45,6 @@ function renderCard(canDelete: boolean) {
       onOpen={onOpen}
       onCustomize={onCustomize}
       onArchive={onArchive}
-      onDelete={onDelete}
     />,
   )
   return { onOpen, onCustomize, onArchive, onDelete }
@@ -80,9 +79,9 @@ describe('menú administrativo de una asignatura activa', () => {
       evaluationActivityId: 'activity-1',
     }
     expect(buildCompactGradeRows([student], [activity], [record])[0]).toMatchObject({
-      average: 80,
+      average: 16,
       status: 'Calificado',
-      blockAverages: { b1: 80 },
+      blockAverages: { b1: 16 },
     })
   })
 
@@ -116,7 +115,7 @@ describe('menú administrativo de una asignatura activa', () => {
     expect(links[1]).toHaveClass('hover:border-emerald-300')
     expect(links[3]).toHaveClass('hover:border-violet-300')
     const destination = new URL(links[0].getAttribute('href')!, 'http://localhost')
-    expect(destination.pathname).toBe('/calificaciones')
+    expect(destination.pathname).toBe('/actividades/crear')
     expect(destination.searchParams.get('sectionSubjectId')).toBe('assignment-1')
     expect(destination.searchParams.get('competencyBlockId')).toBe('b1')
     expect(destination.searchParams.get('returnCourseId')).toBe('course-1')
@@ -161,7 +160,7 @@ describe('menú administrativo de una asignatura activa', () => {
     expect(screen.queryByText('Eliminar asignatura')).not.toBeInTheDocument()
   })
 
-  it('agrega eliminar únicamente cuando el backend la marca como vacía y cierra con Escape', async () => {
+  it('no permite eliminar una asignatura activa aunque esté vacía y cierra con Escape', async () => {
     const user = userEvent.setup()
     renderCard(true)
     const trigger = screen.getByRole('button', { name: 'Más opciones de Matemática' })
@@ -170,12 +169,42 @@ describe('menú administrativo de una asignatura activa', () => {
     expect(screen.getAllByRole('menuitem').map((item) => item.textContent)).toEqual([
       'Personalizar apariencia',
       'Archivar asignatura',
-      'Eliminar asignatura',
     ])
 
     await user.keyboard('{Escape}')
     expect(screen.queryByRole('menu')).not.toBeInTheDocument()
     expect(trigger).toHaveFocus()
+  })
+})
+
+describe('eliminación de asignatura archivada', () => {
+  it('ofrece restaurar y eliminar solo a quienes pueden administrar, sin borrar al abrir el menú', async () => {
+    const user = userEvent.setup()
+    const onDelete = vi.fn()
+    const archived = { ...assignment(false), status: 'inactive' as const }
+    const { rerender } = render(<ArchivedSubjectCard assignment={archived} canManage onRestore={vi.fn()} onDelete={onDelete} />)
+    await user.click(screen.getByRole('button', { name: 'Más opciones de Matemática' }))
+    expect(screen.getByRole('menuitem', { name: 'Restaurar asignatura' })).toBeInTheDocument()
+    expect(screen.getByRole('menuitem', { name: 'Eliminar permanentemente' })).toBeInTheDocument()
+    expect(onDelete).not.toHaveBeenCalled()
+    rerender(<ArchivedSubjectCard assignment={archived} canManage={false} onRestore={vi.fn()} onDelete={onDelete} />)
+    expect(screen.queryByRole('button', { name: 'Más opciones de Matemática' })).not.toBeInTheDocument()
+  })
+
+  it('requiere escribir exactamente ELIMINAR y nunca confirma al abrir el modal', async () => {
+    const user = userEvent.setup()
+    const onConfirm = vi.fn()
+    render(<PermanentSubjectDeleteDialog subjectName="Matemática" onConfirm={onConfirm} onClose={vi.fn()} />)
+    const button = screen.getByRole('button', { name: 'Eliminar permanentemente' })
+    expect(button).toBeDisabled()
+    await user.type(screen.getByRole('textbox'), 'eliminar{Enter}')
+    expect(button).toBeDisabled()
+    expect(onConfirm).not.toHaveBeenCalled()
+    await user.clear(screen.getByRole('textbox'))
+    await user.type(screen.getByRole('textbox'), 'ELIMINAR')
+    expect(button).toBeEnabled()
+    await user.click(button)
+    expect(onConfirm).toHaveBeenCalledWith('ELIMINAR')
   })
 })
 

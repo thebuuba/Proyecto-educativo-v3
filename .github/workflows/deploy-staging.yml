@@ -60,6 +60,11 @@ jobs:
       - name: Aplicar migraciones de staging
         run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --yes
 
+      - name: Instalar catálogo evaluativo versionado
+        env:
+          DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: pnpm --filter backend catalog:install
+
       - name: Verificar secretos del Worker de staging
         run: |
           secrets=$(pnpm exec wrangler secret list --env=staging)

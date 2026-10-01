@@ -12,9 +12,12 @@ import {
   UseGuards,
   Headers,
   UnauthorizedException,
+  ForbiddenException,
+  ConflictException,
   Res,
+  Req,
 } from '@nestjs/common'
-import type { Response } from 'express'
+import type { Request, Response } from 'express'
 import { Throttle } from '@nestjs/throttler'
 import { AuthService } from './auth.service'
 import { LoginDto } from './dto/login.dto'
@@ -25,6 +28,9 @@ import { JwtAuthGuard } from './strategies/jwt-auth.guard'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
 import { AuthenticatedUser } from './types/authenticated-user'
 import { clearSessionCookie, setSessionCookie } from './session-cookie'
+import { isDeviceTrustEnabled, requireRecentOnboardingProof, requireTrustedDevice } from './device-trust'
+import { getSupabaseUserFromToken } from './supabase-user'
+import { prisma } from '@aula/database'
 
 type AuthSession = Awaited<ReturnType<AuthService['login']>>
 
@@ -41,6 +47,7 @@ export class AuthController {
   @Throttle({ default: { limit: 3, ttl: 60000 } })
   @Post('register')
   async register(@Body() dto: RegisterDto, @Res({ passthrough: true }) response: Response) {
+    if (isDeviceTrustEnabled()) throw new ForbiddenException('Usa el registro web con confirmación de correo.')
     return respondWithSession(response, await this.authService.register(dto))
   }
 
@@ -49,13 +56,16 @@ export class AuthController {
   async createSession(
     @Headers('authorization') authHeader: string,
     @Headers('x-remember-session') rememberSession: string | undefined,
+    @Req() request: Request,
     @Res({ passthrough: true }) response: Response,
   ) {
     const token = authHeader?.replace(/^Bearer\s+/i, '')
     if (!token) throw new UnauthorizedException('Missing Authorization header')
+    const session = await this.authService.createSessionFromSupabaseToken(token)
+    if (isDeviceTrustEnabled()) await requireTrustedDevice(request, response, session.appUser.id, session.appUser.authUserId, token)
     return respondWithSession(
       response,
-      await this.authService.createSessionFromSupabaseToken(token),
+      session,
       rememberSession === 'true',
     )
   }
@@ -64,11 +74,20 @@ export class AuthController {
   async completeOnboarding(
     @Headers('authorization') authHeader: string,
     @Body() dto: CompleteOnboardingDto,
+    @Req() request: Request,
     @Res({ passthrough: true }) response: Response,
   ) {
     const token = authHeader?.replace(/^Bearer\s+/i, '')
     if (!token) throw new UnauthorizedException('Missing Authorization header')
-    return respondWithSession(response, await this.authService.completeOnboarding(token, dto))
+    if (isDeviceTrustEnabled()) {
+      const authUser = await getSupabaseUserFromToken(token)
+      const existing = await prisma.appUser.findUnique({ where: { authUserId: authUser.id }, select: { id: true } })
+      if (existing) await requireTrustedDevice(request, response, existing.id, authUser.id, token)
+      else requireRecentOnboardingProof(token, authUser.id)
+    }
+    const session = await this.authService.completeOnboarding(token, dto)
+    if (isDeviceTrustEnabled()) await requireTrustedDevice(request, response, session.appUser.id, session.appUser.authUserId, token)
+    return respondWithSession(response, session)
   }
 
   @Get('onboarding/status')
@@ -79,8 +98,22 @@ export class AuthController {
 
   @Throttle({ default: { limit: 10, ttl: 60000 } })
   @Post('login')
-  async login(@Body() dto: LoginDto, @Res({ passthrough: true }) response: Response) {
-    return respondWithSession(response, await this.authService.login(dto))
+  async login(@Body() dto: LoginDto, @Req() request: Request, @Res({ passthrough: true }) response: Response) {
+    const { session, accessToken, refreshToken } = await this.authService.loginWithToken(dto)
+    if (isDeviceTrustEnabled()) {
+      try {
+        await requireTrustedDevice(request, response, session.appUser.id, session.appUser.authUserId, accessToken)
+      } catch (error) {
+        if (error instanceof ConflictException) {
+          const details = error.getResponse() as { code?: string; method?: string }
+          if (details.code === 'VERIFICATION_REQUIRED') {
+            return { verificationRequired: details.method, supabaseSession: { accessToken, refreshToken } }
+          }
+        }
+        throw error
+      }
+    }
+    return { ...respondWithSession(response, session, true), supabaseSession: { accessToken, refreshToken } }
   }
 
   @Post('logout')

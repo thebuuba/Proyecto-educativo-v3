@@ -1,0 +1,87 @@
+/* Movimiento de la web pública. Los elementos siguen visibles sin JavaScript. */
+@media (prefers-reduced-motion: no-preference) {
+  .promo-motion [data-promo-pending] {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  .promo-motion main > * {
+    transition:
+      opacity 420ms ease-out,
+      transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .promo-motion main a.rounded-full,
+  .promo-motion main button.rounded-full,
+  .promo-motion header a.rounded-full {
+    transition:
+      background-color 180ms ease,
+      color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  .promo-motion main a.rounded-full:hover,
+  .promo-motion main button.rounded-full:hover,
+  .promo-motion header a.rounded-full:hover {
+    transform: translateY(-2px);
+  }
+
+  .promo-motion main a.rounded-full:active,
+  .promo-motion main button.rounded-full:active,
+  .promo-motion header a.rounded-full:active {
+    transform: translateY(0);
+  }
+
+  .promo-motion main li.rounded-3xl,
+  .promo-motion main article:has(> a.rounded-full) {
+    transition:
+      box-shadow 220ms ease,
+      transform 220ms ease;
+  }
+
+  .promo-motion main li.rounded-3xl:hover,
+  .promo-motion main article:has(> a.rounded-full):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px -24px color-mix(in srgb, var(--foreground) 35%, transparent);
+  }
+
+  .promo-motion nav[aria-label='Móvil'] {
+    animation: promo-menu-enter 180ms ease-out both;
+  }
+
+  .promo-motion details[open] > p {
+    animation: promo-faq-enter 220ms ease-out both;
+  }
+}
+
+@keyframes promo-menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes promo-faq-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-motion *,
+  .promo-motion *::before,
+  .promo-motion *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

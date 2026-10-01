@@ -1,6 +1,8 @@
-import { IsArray, IsDateString, IsIn, IsNotEmpty, IsNumber, IsObject, IsOptional, IsString, IsUUID, MaxLength, Min } from 'class-validator'
+import { IsArray, IsDateString, IsIn, IsNotEmpty, IsNumber, IsObject, IsOptional, IsString, IsUUID, Max, MaxLength, Min } from 'class-validator'
+import type { InstrumentRecommendation } from '@aula/shared'
+import { evaluationCatalogV1 } from '../../evaluation-instruments/catalog-v1'
 
-export class SaveEvaluationActivityDto {
+export class SaveActivityDto {
   @IsOptional()
   @IsString()
   id?: string
@@ -36,8 +38,9 @@ export class SaveEvaluationActivityDto {
   @MaxLength(200)
   name!: string
 
-  @IsNumber()
+  @IsNumber({ maxDecimalPlaces: 2, allowNaN: false, allowInfinity: false })
   @Min(0.01)
+  @Max(10000)
   maxScore!: number
 
   @IsOptional()
@@ -63,6 +66,14 @@ export class SaveEvaluationActivityDto {
   @IsOptional()
   @IsObject()
   instrumentCriteria?: Record<string, string>
+
+  @IsOptional()
+  @IsIn(evaluationCatalogV1.activityTypes.map(({ id }) => id))
+  pedagogicalActivityType?: string
+
+  @IsOptional()
+  @IsObject()
+  instrumentSnapshot?: InstrumentRecommendation
 
   @IsOptional()
   @IsString()

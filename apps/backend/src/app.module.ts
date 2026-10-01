@@ -13,6 +13,7 @@ import { UsersModule } from './modules/users/users.module'
 import { StudentsModule } from './modules/students/students.module'
 import { AttendanceModule } from './modules/attendance/attendance.module'
 import { GradingModule } from './modules/grading/grading.module'
+import { ActivitiesModule } from './modules/activities/activities.module'
 import { ScheduleModule } from './modules/schedule/schedule.module'
 import { PlanningModule } from './modules/planning/planning.module'
 import { CoursesModule } from './modules/courses/courses.module'
@@ -26,6 +27,7 @@ import { JournalModule } from './modules/journal/journal.module'
 import { ResourcesModule } from './modules/resources/resources.module'
 import { OnboardingModule } from './modules/onboarding/onboarding.module'
 import { backendEnvFilePaths } from './config/env-file-paths'
+import { EvaluationInstrumentsModule } from './modules/evaluation-instruments/evaluation-instruments.module'
 
 /**
  * Configuración del módulo raíz.
@@ -43,6 +45,7 @@ import { backendEnvFilePaths } from './config/env-file-paths'
     StudentsModule,
     AttendanceModule,
     GradingModule,
+    ActivitiesModule,
     ScheduleModule,
     PlanningModule,
     CoursesModule,
@@ -55,6 +58,7 @@ import { backendEnvFilePaths } from './config/env-file-paths'
     JournalModule,
     ResourcesModule,
     OnboardingModule,
+    EvaluationInstrumentsModule,
   ],
   providers: [
     { provide: APP_GUARD, useClass: ThrottlerGuard },

@@ -119,7 +119,7 @@ import { Modal } from '@/components/ui/Modal'
 import { Select } from '@/components/ui/Select'
 import { Textarea } from '@/components/ui/Textarea'
 import { ActivityDescriptionEditor as StructuredActivityDescriptionEditor } from '@/modules/grading/components/ActivityDescriptionEditor'
-import { ActivityInfoModal } from '@/modules/grading/components/ActivityInfoModal'
+import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
 import type { CourseTeam } from '@/modules/courses/types'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
 import type {
@@ -137,7 +137,7 @@ import {
   activityGradeCellKey,
   buildCompactGradeRows,
   blockTotal,
-  competencyBlocks,
+  competencyBlocks as secondaryCompetencyBlocks,
   competencyPeriods,
   defaultGradeCalculationConfig,
   effectivePeriodScore,
@@ -153,8 +153,12 @@ import {
   type CompetencyPeriodId,
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
+import { secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
+import { alignRecommendationWithFields, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 
 type GradingBookProps = {
+  evaluationProfile?: EvaluationProfile
+  sectionSubjectId?: string
   students: StudentGradeRow[]
   teams?: CourseTeam[]
   activities: GradingActivity[]
@@ -182,7 +186,15 @@ type GradingBookProps = {
   loadFinalRecords: () => Promise<Map<CompetencyPeriodId, GradeRecordRow[]>>
   getActivitiesForPeriod: (periodId: CompetencyPeriodId) => GradingActivity[]
   onActivityWorkspaceChange?: (active: boolean) => void
+  onGradeCreatedActivity?: (activity: GradingActivity) => void
+  onViewCreatedActivity?: (activity: GradingActivity) => void
+  onCreateActivityRequested?: (blockId?: CompetencyBlockId) => void
 }
+
+// The workspace owns one active profile. Keeping the alias here lets the existing
+// decomposed views consume one catalogue while they are progressively extracted.
+let competencyBlocks: EvaluationProfile['blocks'] = secondaryCompetencyBlocks
+let activeEvaluationProfile: EvaluationProfile = secondaryEvaluationProfile
 
 type MainView = 'blocks' | 'period' | 'annual' | 'final'
 type ActivityDetailTab = 'evaluation' | 'results' | 'details'
@@ -293,6 +305,13 @@ type ActivityDraft = {
   evaluationTechnique: string
   instrumentCompleted: boolean
   instrumentFields: Record<string, string>
+  pedagogicalActivityType?: string
+  autoDetectedPedagogicalActivityType?: boolean
+  autoSelectedInstrumentType?: boolean
+  selectedCurriculumElementIds?: string[]
+  preparedRecommendation?: InstrumentRecommendation
+  preparedFingerprint?: string
+  preparedManuallyEdited?: boolean
   resources: string[]
   planningMoment: string
   observations: string
@@ -341,6 +360,7 @@ const emptyActivityDraft: ActivityDraft = {
   evaluationTechnique: '',
   instrumentCompleted: false,
   instrumentFields: {},
+  pedagogicalActivityType: '',
   resources: [],
   planningMoment: '',
   observations: '',
@@ -349,6 +369,8 @@ const emptyActivityDraft: ActivityDraft = {
 }
 
 export function GradingBook({
+  evaluationProfile,
+  sectionSubjectId,
   students,
   teams = [],
   activities,
@@ -374,7 +396,12 @@ export function GradingBook({
   loadFinalRecords,
   getActivitiesForPeriod,
   onActivityWorkspaceChange,
+  onGradeCreatedActivity,
+  onViewCreatedActivity,
+  onCreateActivityRequested,
 }: GradingBookProps) {
+  activeEvaluationProfile = evaluationProfile ?? secondaryEvaluationProfile
+  competencyBlocks = activeEvaluationProfile.blocks
   const initialLaunchKey = initialActivityAction === 'create'
     ? `create:${initialActivityBlockId ?? 'select-block'}`
     : null
@@ -714,6 +741,12 @@ export function GradingBook({
     const maxScore = Number(activityDraft.maxScore)
     if (validateActivityCompletion(activityDraft).length > 0 || Number.isNaN(maxScore) || maxScore <= 0) return
     const activityType = activityDraft.activityType as Exclude<ActivityDraft['activityType'], ''>
+    const currentFingerprint = preparationFingerprint(activityDraft)
+    if (activityDraft.preparedRecommendation && activityDraft.preparedFingerprint !== currentFingerprint) return
+    const preparedSnapshot = activityDraft.preparedRecommendation
+      ? alignRecommendationWithFields(activityDraft.preparedRecommendation, activityDraft.instrumentFields, maxScore)
+      : undefined
+    if (activityDraft.preparedRecommendation && !preparedSnapshot) return
     const activity = {
       name: activityDraft.name.trim(),
       maxScore,
@@ -726,6 +759,8 @@ export function GradingBook({
       instrumentType: activityDraft.instrumentType || undefined,
       instrumentId: activityDraft.instrumentId,
       instrumentCriteria: activityDraft.instrumentFields,
+      pedagogicalActivityType: preparedSnapshot?.activityType ?? activityDraft.pedagogicalActivityType,
+      instrumentSnapshot: preparedSnapshot ?? undefined,
       evaluationTechnique: activityDraft.evaluationTechnique.trim() || undefined,
       planningMoment: activityDraft.planningMoment as GradingActivity['planningMoment'],
       observations: activityDraft.observations.trim() || undefined,
@@ -764,6 +799,9 @@ export function GradingBook({
       evaluationTechnique: activity.evaluationTechnique ?? '',
       instrumentCompleted: Boolean(activity.instrumentType),
       instrumentFields: activity.instrumentCriteria ?? {},
+      pedagogicalActivityType: activity.pedagogicalActivityType ?? '',
+      preparedRecommendation: activity.instrumentSnapshot,
+      preparedFingerprint: undefined,
       resources: activity.resources ?? [],
       planningMoment: activity.planningMoment ?? '',
       observations: activity.observations ?? '',
@@ -775,6 +813,18 @@ export function GradingBook({
   }
 
   function duplicateActivity(activity: GradingActivity) {
+    if (activity.instrumentSnapshotId) {
+      const blockId = activity.competencyBlockId as CompetencyBlockId
+      setEditingActivityId(null)
+      setActivityDraft({ ...newActivityDraft(blockId), name: `${activity.name} copia`, maxScore: String(activity.maxScore),
+        description: activity.description ?? '', date: activity.date ?? '', activityType: activity.activityType ?? 'individual',
+        pedagogicalActivityType: activity.pedagogicalActivityType ?? '', instrumentType: activity.instrumentType ?? '',
+        competencyBlockWeights: activityCompetencyWeights(activity), evaluationTechnique: activity.evaluationTechnique ?? '',
+        planningMoment: activity.planningMoment ?? '', resources: activity.resources ?? [], teamIds: activity.teamIds ?? [] })
+      setActivityCreateReturnView(detailView ?? { type: 'activity-hub' })
+      setDetailView({ type: 'activity-create', blockId })
+      return
+    }
     const { id: _id, instrumentId: _instrumentId, ...copy } = activity
     onAddActivity({
       ...copy,
@@ -822,7 +872,7 @@ export function GradingBook({
     setDetailView(null)
   }
 
-  if (students.length === 0) {
+  if (students.length === 0 && !initialActivityAction) {
     return (
       <div className="flex min-h-[280px] items-center justify-center rounded-lg border border-dashed border-border bg-card p-6 text-center text-sm text-muted-foreground">
         Este curso todavía no tiene estudiantes matriculados.
@@ -884,7 +934,7 @@ export function GradingBook({
               ) : null}
             </div>
 
-            <Button className="h-10 shrink-0 px-4" onClick={openActivityHub}>
+            <Button className="h-10 shrink-0 px-4" onClick={() => onCreateActivityRequested ? onCreateActivityRequested() : openActivityHub()}>
               <Plus className="size-4" />
               <span className="hidden sm:inline">Agregar actividad</span>
               <span className="sm:hidden">Agregar</span>
@@ -903,7 +953,7 @@ export function GradingBook({
             draftMetas={draftMetas}
             initialTab={detailView.initialTab}
             onBack={() => setDetailView(null)}
-            onCreateActivity={() => openActivityCreator(selectedBlock.id)}
+            onCreateActivity={() => onCreateActivityRequested ? onCreateActivityRequested(selectedBlock.id) : openActivityCreator(selectedBlock.id)}
             onDeleteActivity={onDeleteActivity}
             onEditActivity={editActivity}
             onOpenConfig={() => setShowConfig(true)}
@@ -924,7 +974,7 @@ export function GradingBook({
             onBack={() => setDetailView(null)}
             onDeleteDraft={discardActivityDraft}
             onOpenDraft={openActivityDraft}
-            onSelectBlock={openActivityCreator}
+            onSelectBlock={(blockId) => onCreateActivityRequested ? onCreateActivityRequested(blockId) : openActivityCreator(blockId)}
             onViewDrafts={(blockId) => setDetailView({ type: 'activity-drafts', initialBlock: blockId, returnTo: { type: 'activity-hub' } })}
             periodShortName={periodShortName}
             periodName={periodName}
@@ -935,7 +985,7 @@ export function GradingBook({
             draftMetas={draftMetas}
             initialBlock={detailView.initialBlock}
             onBack={() => goBackFromDrafts(detailView.returnTo)}
-            onCreateActivity={() => openActivityCreator(competencyBlocks[0].id)}
+            onCreateActivity={() => onCreateActivityRequested ? onCreateActivityRequested(competencyBlocks[0].id) : openActivityCreator(competencyBlocks[0].id)}
             onDeleteDraft={discardActivityDraft}
             onOpenDraft={openActivityDraft}
             periodName={periodName}
@@ -943,6 +993,7 @@ export function GradingBook({
           />
         ) : detailView.type === 'activity-create' && selectedCreateBlock ? (
           <ActivityCreationView
+            sectionSubjectId={sectionSubjectId}
             activityDraft={activityDraft}
             teams={teams}
             hasDraft={Boolean(activityDraft.draftId && isMeaningfulActivityDraft(activityDraft)) && !editingActivityId}
@@ -1069,6 +1120,10 @@ export function GradingBook({
             openActivityHub()
           }}
           onGrade={activitySaveCompletion.kind === 'created' ? () => {
+            if (onGradeCreatedActivity) {
+              onGradeCreatedActivity(activitySaveCompletion.activity)
+              return
+            }
             setActivitySaveCompletion(null)
             setDetailView({ type: 'activity', activityId: activitySaveCompletion.activity.id, initialTab: 'evaluation' })
           } : undefined}
@@ -1083,6 +1138,10 @@ export function GradingBook({
               : { type: 'activity-hub' })
           }}
           onView={() => {
+            if (activitySaveCompletion.kind === 'created' && onViewCreatedActivity) {
+              onViewCreatedActivity(activitySaveCompletion.activity)
+              return
+            }
             setActivitySaveCompletion(null)
             if (activitySaveCompletion.kind === 'created') {
               setDetailView({ type: 'activity', activityId: activitySaveCompletion.activity.id, initialTab: 'details' })
@@ -2735,7 +2794,7 @@ function PeriodSummaryView({
   students: StudentGradeRow[]
 }) {
   const activities = [...new Map(blockSummaries.flatMap((summary) => summary.activities).map((activity) => [activity.id, activity])).values()]
-  const rows = buildCompactGradeRows(students, activities, records)
+  const rows = buildCompactGradeRows(students, activities, records, activeEvaluationProfile)
   const evaluatedCells = students.reduce((total, student) => total + activities.filter((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).length, 0)
   const coverage = students.length && activities.length ? Math.round(evaluatedCells / (students.length * activities.length) * 100) : 0
   const groupAverage = averageNumbers(rows.map((row) => row.average).filter((value): value is number => value !== null))
@@ -3757,6 +3816,7 @@ function DraftFilterChip({
 type ActivityCreationStage = 'activity' | 'instrument' | 'review'
 
 function ActivityCreationView(props: {
+  sectionSubjectId?: string
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   hasDraft: boolean
@@ -3773,23 +3833,104 @@ function ActivityCreationView(props: {
   onSaveDraft: () => void
   saving: boolean
 }) {
-  const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving, teams } = props
+  const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving, teams, sectionSubjectId } = props
   const [stage, setStage] = useState<ActivityCreationStage>('activity')
+  const [interpretation, setInterpretation] = useState<ActivityInterpretation | null>(null)
+  const [interpretationBusy, setInterpretationBusy] = useState(false)
+  const [preparing, setPreparing] = useState(false)
+  const [preparationError, setPreparationError] = useState('')
+  const [requiredFieldError, setRequiredFieldError] = useState('')
+  const [showAdvancedInstrument, setShowAdvancedInstrument] = useState(false)
   const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
   const { clearHighlight, highlightTarget, showHighlight } = useTransientActivityHighlight()
   const accent = getBlockAccent(block.id)
   const progressMeta = buildActivityDraftMeta(activityDraft, block.id)
   const dataIssues = progressMeta.pendingIssues.filter((issue) => issue.tab === 'activity')
   const instrumentLabel = activityDraft.instrumentType ? instrumentTitle(activityDraft.instrumentType) : 'Instrumento de evaluación'
+  const fingerprint = preparationFingerprint(activityDraft)
+  const stale = Boolean(activityDraft.preparedRecommendation && activityDraft.preparedFingerprint !== fingerprint)
+  const savedSnapshot = Boolean(editingActivityId && activityDraft.preparedRecommendation)
+
+  useEffect(() => {
+    if (!sectionSubjectId || !activityDraft.name.trim() || editingActivityId) { setInterpretation(null); return }
+    const abort = new AbortController()
+    const timer = window.setTimeout(() => {
+      setInterpretationBusy(true)
+      interpretActivity({ sectionSubjectId, activityTitle: activityDraft.name, description: activityDescriptionText(activityDraft.description),
+        pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined, competencyBlock: block.id }, abort.signal)
+        .then(value => { if (!abort.signal.aborted) setInterpretation(value) })
+        .catch(() => { if (!abort.signal.aborted) setInterpretation(null) })
+        .finally(() => { if (!abort.signal.aborted) setInterpretationBusy(false) })
+    }, 450)
+    return () => { window.clearTimeout(timer); abort.abort() }
+  }, [sectionSubjectId, activityDraft.name, activityDraft.description, activityDraft.pedagogicalActivityType, activityDraft.autoDetectedPedagogicalActivityType, block.id, editingActivityId])
+
+  async function prepare(preferredType?: string) {
+    if (!sectionSubjectId) {
+      setPreparationError('No se pudo identificar la asignatura. Vuelve a seleccionarla e inténtalo de nuevo.')
+      setStage('instrument'); setShowAdvancedInstrument(false)
+      return
+    }
+    if (!validatePreparation()) return
+    setPreparing(true); setPreparationError(''); setStage('instrument')
+    try {
+      const proposal = await prepareInstrument({ sectionSubjectId, activityTitle: activityDraft.name,
+        description: activityDescriptionText(activityDraft.description),
+        participationMode: activityDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
+        pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined,
+        maxScore: Number(activityDraft.maxScore), competencyBlock: block.id,
+        curriculumVersionId: interpretation?.curriculumVersionId ?? undefined,
+        preferredInstrumentType: preferredType ?? (activityDraft.autoSelectedInstrumentType ? undefined : activityDraft.instrumentType || undefined),
+        selectedCurriculumElementIds: activityDraft.selectedCurriculumElementIds?.length ? activityDraft.selectedCurriculumElementIds : undefined })
+      const next = { ...activityDraft, instrumentType: proposal.instrumentType, pedagogicalActivityType: proposal.activityType,
+        autoSelectedInstrumentType: preferredType ? false : activityDraft.autoSelectedInstrumentType || !activityDraft.instrumentType,
+        autoDetectedPedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType || !activityDraft.pedagogicalActivityType,
+        instrumentFields: recommendationToFields(proposal, activityDraft.name), instrumentCompleted: true,
+        preparedRecommendation: proposal, preparedManuallyEdited: false }
+      onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
+      setStage('instrument'); setShowAdvancedInstrument(false)
+    } catch (error) {
+      setPreparationError(error instanceof Error ? error.message : 'No se pudo preparar el instrumento. Puedes completarlo manualmente.')
+      setStage('instrument')
+    } finally { setPreparing(false) }
+  }
+
+  function validatePreparation() {
+    const missing: Array<{ target: ActivityCompletionTarget; message: string }> = [
+      { target: 'name', message: 'Escribe el nombre de la actividad para preparar el instrumento.' },
+      { target: 'maxScore', message: 'Indica el valor de la actividad para preparar el instrumento (mayor que cero, máximo 10 000 y hasta dos decimales).' },
+      { target: 'activityType', message: 'Selecciona la modalidad de la actividad para preparar el instrumento.' },
+      { target: 'competencyBlocks', message: 'Revisa los bloques de competencias y completa el 100 % de la ponderación antes de preparar el instrumento.' },
+    ]
+    const issue = missing.find(item => item.target === 'name' ? !activityDraft.name.trim()
+      : item.target === 'maxScore' ? !Number.isFinite(Number(activityDraft.maxScore)) || Number(activityDraft.maxScore) <= 0 || Number(activityDraft.maxScore) > 10000 || Math.abs(Math.round(Number(activityDraft.maxScore) * 100) / 100 - Number(activityDraft.maxScore)) > 1e-9
+        : item.target === 'activityType' ? !activityDraft.activityType
+          : validateActivityCompletion(activityDraft).some(problem => problem.target === 'competencyBlocks'))
+    if (!issue) { setRequiredFieldError(''); return true }
+    setStage('activity')
+    setRequiredFieldError(issue.message)
+    showHighlight(issue.target)
+    window.setTimeout(() => {
+      const field = document.querySelector<HTMLElement>(`[data-activity-required="${issue.target}"] input:not(:disabled), [data-activity-required="${issue.target}"] button`)
+      field?.scrollIntoView?.({ block: 'center', behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+      field?.focus()
+    }, 0)
+    return false
+  }
 
   function handleDraftChange(draft: ActivityDraft) {
     const changedInstrument = draft.instrumentType !== activityDraft.instrumentType
+    const changedPedagogicalType = draft.pedagogicalActivityType !== activityDraft.pedagogicalActivityType
     onChangeDraft({
       ...draft,
+      autoSelectedInstrumentType: changedInstrument ? false : draft.autoSelectedInstrumentType,
+      autoDetectedPedagogicalActivityType: changedPedagogicalType ? false : draft.autoDetectedPedagogicalActivityType,
       competencyBlockId: block.id,
       instrumentCompleted: changedInstrument ? false : draft.instrumentCompleted,
       instrumentFields: changedInstrument ? {} : draft.instrumentFields,
       instrumentId: changedInstrument ? undefined : draft.instrumentId,
+      preparedRecommendation: changedInstrument ? undefined : draft.preparedRecommendation,
+      preparedFingerprint: changedInstrument ? undefined : draft.preparedFingerprint,
     })
   }
 
@@ -3818,8 +3959,14 @@ function ActivityCreationView(props: {
 
   function continueFlow() {
     if (stage === 'activity') {
-      setStage('instrument')
+      if (!validatePreparation()) return
+      if (editingActivityId) setStage('instrument')
+      else if (!activityDraft.preparedRecommendation || stale) {
+        if (stale && activityDraft.preparedManuallyEdited) { setStage('instrument'); setPreparationError('Cambiaste la actividad después de editar el instrumento. Confirma la regeneración para continuar.'); return }
+        void prepare()
+      } else setStage('instrument')
     } else if (stage === 'instrument') {
+      if (stale) { setPreparationError('El instrumento necesita actualizarse antes de guardar.'); return }
       setStage('review')
     } else {
       saveActivity()
@@ -3874,7 +4021,7 @@ function ActivityCreationView(props: {
                 key={item.id}
                 type="button"
                 className={cn('relative flex min-h-14 items-center justify-center gap-2 border-r border-border px-3 text-sm font-black transition last:border-r-0 hover:bg-muted/30', stage === item.id ? cn(accent.panel, accent.text) : 'text-muted-foreground')}
-                onClick={() => { setStage(item.id); clearHighlight() }}
+                onClick={() => { if (item.id === 'instrument' && stage === 'activity') continueFlow(); else setStage(item.id); if (item.id !== 'instrument') clearHighlight() }}
               >
                 <span className={cn('grid size-6 shrink-0 place-items-center rounded-full text-xs', item.complete ? 'bg-emerald-500 text-white' : stage === item.id ? cn(accent.progress, 'text-white') : 'bg-muted text-muted-foreground')}>
                   {item.complete ? '✓' : index + 1}
@@ -3886,15 +4033,23 @@ function ActivityCreationView(props: {
           </nav>
 
           {stage === 'activity' ? (
-            <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} />
+            <>{requiredFieldError ? <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">{requiredFieldError}</div> : null}<ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} interpretation={interpretation} interpretationBusy={interpretationBusy} requiredFieldError={requiredFieldError} /></>
           ) : null}
+          {savedSnapshot ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">Este instrumento ya tiene una versión guardada. Para cambiar su estructura, duplica la actividad y prepara uno nuevo.</div> : null}
 
           {stage === 'instrument' ? (
             <div className="space-y-3">
               <div className={cn('rounded-xl border px-4 py-3', accent.card)}>
-                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Instrumento seleccionado: {instrumentLabel}</p>
-                <p className="mt-1 text-sm text-muted-foreground">Configura los criterios y niveles que utilizarás para evaluar esta actividad.</p>
+                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? 'Instrumento preparado' : preparationError ? 'No pudimos preparar el instrumento automáticamente' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? `${activityDraft.preparedRecommendation.criteria.length} criterios · ${activityDraft.preparedRecommendation.levels.length || 'sin'} niveles · ${activityDraft.maxScore} puntos. Revisa y edita el instrumento aquí.` : preparationError ? 'Puedes intentar de nuevo o crear el instrumento manualmente.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
               </div>
+              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground">{preparationError} <Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => void prepare()} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button><Button type="button" size="sm" variant="outline" className="ml-2" onClick={() => setPreparationError('')}>Crear manualmente</Button></div> : null}
+              {activityDraft.preparedRecommendation?.confidence === 'LOW' && !stale ? <p className="text-xs text-muted-foreground">Preparado según el tipo de actividad y la asignatura, sin atribución curricular.</p> : null}
+              {activityDraft.preparedRecommendation && !savedSnapshot ? <div className="flex flex-wrap items-end gap-3"><label className="text-xs font-semibold text-foreground">Cambiar instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => void prepare(event.target.value)} disabled={preparing}><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label><Button type="button" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar instrumento</Button></div> : null}
+              {activityDraft.preparedRecommendation ? <Button type="button" variant="outline" aria-expanded={showAdvancedInstrument} onClick={() => setShowAdvancedInstrument(value => !value)}>{showAdvancedInstrument ? 'Ocultar configuración avanzada' : 'Configuración avanzada'}</Button> : null}
+              {!preparationError && !activityDraft.preparedRecommendation && !activityDraft.instrumentType ? <label className="block text-sm font-semibold text-foreground">Si prefieres continuar manualmente, selecciona el instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => handleDraftChange({ ...activityDraft, instrumentType: event.target.value })}><option value="">Seleccionar</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label> : null}
+              {stale && !preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">La actividad cambió. Actualiza el instrumento antes de guardar. {activityDraft.preparedManuallyEdited ? 'Se reemplazarán tus cambios manuales solo si lo confirmas.' : null} <Button type="button" size="sm" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar</Button></div> : null}
+              {!preparing && (!preparationError || activityDraft.preparedRecommendation) ? <div className={cn(activityDraft.preparedRecommendation && !showAdvancedInstrument ? 'prepared-instrument-basic' : '')}>
               <InstrumentPreview
                 key={activityDraft.instrumentType}
                 accent={accent}
@@ -3906,8 +4061,8 @@ function ActivityCreationView(props: {
                 instrumentType={activityDraft.instrumentType}
                 maxScore={Number(activityDraft.maxScore) || 0}
                 onCompletedChange={(instrumentCompleted) => handleDraftChange({ ...activityDraft, instrumentCompleted })}
-                onFieldsChange={(instrumentFields) => handleDraftChange({ ...activityDraft, instrumentFields })}
-              />
+                onFieldsChange={(instrumentFields) => handleDraftChange({ ...activityDraft, preparedManuallyEdited: true, instrumentFields })}
+              /></div> : null}
             </div>
           ) : null}
 
@@ -3919,7 +4074,7 @@ function ActivityCreationView(props: {
 
         <ActivityProgressCard
           cancelHint={editingActivityId ? 'Los cambios no guardados de esta edición se descartarán.' : 'Tu trabajo se conserva automáticamente como borrador.'}
-          continueDisabled={stage === 'review' && saving}
+          continueDisabled={savedSnapshot || preparing || (stage === 'review' && saving) || (stage !== 'activity' && stale)}
           continueLabel={continueLabel}
           meta={progressMeta}
           onCancel={onBack}
@@ -4027,25 +4182,36 @@ function CompetencyDistributionField({ activityDraft, highlight, onChangeDraft }
   )
 }
 
-function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft }: {
+const pedagogicalActivityLabels: Record<string, string> = {
+  EXPOSITION: 'Exposición', ORAL_PRESENTATION: 'Presentación oral', DEBATE: 'Debate', EXPERIMENT: 'Experimento',
+  LAB_PRACTICE: 'Práctica de laboratorio', WRITTEN_PRODUCTION: 'Producción escrita', ESSAY: 'Ensayo', REPORT: 'Informe',
+  RESEARCH: 'Investigación', PROJECT: 'Proyecto', PROBLEM_SOLVING: 'Resolución de problemas', EXERCISE_SET: 'Ejercicios',
+  CONCEPT_MAP: 'Mapa conceptual', PORTFOLIO: 'Portafolio', ARTISTIC_PRODUCTION: 'Producción artística',
+  PERFORMANCE: 'Representación', MOTOR_SPORTS_PRACTICE: 'Práctica motriz', OBSERVATION: 'Observación', QUIZ_TEST: 'Prueba', OTHER: 'Otra actividad',
+}
+
+function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, interpretation, interpretationBusy, requiredFieldError }: {
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
   highlightTarget: ActivityCompletionTarget | null
   onChangeDraft: (draft: ActivityDraft) => void
+  interpretation: ActivityInterpretation | null
+  interpretationBusy: boolean
+  requiredFieldError: string
 }) {
   const highlight = (target: ActivityCompletionTarget) => highlightTarget === target ? transientHighlightClass : ''
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
       <CreationFormSection icon={<FileText className="size-4" />} number={1} title="Información general" accent={accent}>
         <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_11rem]">
-          <label className={cn('space-y-1.5 text-sm font-bold', highlight('name'))}>Nombre de la actividad <span className="text-destructive">*</span><Input className="h-11" value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Ej: Exposición oral sobre el cambio climático" /></label>
-          <label className={cn('space-y-1.5 text-sm font-bold', highlight('maxScore'))}>Valor en puntos <span className="text-destructive">*</span><div className="relative"><Input className="h-11 pr-12 font-black" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-muted-foreground">pts</span></div></label>
+          <label data-activity-required="name" className={cn('space-y-1.5 text-sm font-bold', highlight('name'))}>Nombre de la actividad <span className="text-destructive">*</span><Input className="h-11" value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Ej: Exposición oral sobre el cambio climático" /></label>
+          <label data-activity-required="maxScore" className={cn('space-y-1.5 text-sm font-bold', highlight('maxScore'))}>Valor en puntos <span className="text-destructive">*</span><div className="relative"><Input aria-invalid={requiredFieldError.startsWith('Indica el valor')} className="h-11 pr-12 font-black" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-muted-foreground">pts</span></div>{requiredFieldError.startsWith('Indica el valor') ? <span className="text-xs text-destructive">{requiredFieldError}</span> : null}</label>
         </div>
       </CreationFormSection>
 
       <CreationFormSection icon={<Blocks className="size-4" />} number={2} title="Competencias evaluadas" accent={accent}>
-        <CompetencyDistributionField activityDraft={activityDraft} highlight={highlight('competencyBlocks')} onChangeDraft={onChangeDraft} />
+        <div data-activity-required="competencyBlocks"><CompetencyDistributionField activityDraft={activityDraft} highlight={highlight('competencyBlocks')} onChangeDraft={onChangeDraft} /></div>
       </CreationFormSection>
 
       <CreationFormSection icon={<CalendarDays className="size-4" />} number={3} title="Planificación" accent={accent}>
@@ -4058,12 +4224,14 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
       <CreationFormSection icon={<Target className="size-4" />} number={4} title="Evaluación" accent={accent}>
         <div className="grid gap-3 md:grid-cols-2">
           <label className={cn('space-y-1.5 text-sm font-bold', highlight('evaluationTechnique'))}>Técnica de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })}><option value="" disabled>Seleccionar técnica</option>{evaluationTechniqueOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</Select></label>
-          <label className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Instrumento de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value })}><option value="" disabled>Seleccionar instrumento</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
+          <label className="space-y-1.5 text-sm font-bold">Tipo de actividad<Select className="h-11" value={activityDraft.autoDetectedPedagogicalActivityType ? '' : activityDraft.pedagogicalActivityType ?? ''} onChange={(event) => onChangeDraft({ ...activityDraft, pedagogicalActivityType: event.target.value, autoDetectedPedagogicalActivityType: false })}><option value="">{interpretation?.suggestedActivityType && interpretation.suggestedActivityType !== 'OTHER' ? `Sugerido: ${pedagogicalActivityLabels[interpretation.suggestedActivityType]}` : 'Detectar a partir de la descripción'}</option>{Object.entries(pedagogicalActivityLabels).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Select></label>
+          <label className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Instrumento de evaluación <span className="text-xs font-normal text-muted-foreground">(opcional)</span><Select className="h-11" value={activityDraft.autoSelectedInstrumentType ? '' : activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value, autoSelectedInstrumentType: false })}><option value="">Dejar que AulaBase elija</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
         </div>
+        {activityDraft.name.trim() ? <div className="mt-3 rounded-lg border border-border bg-muted/20 p-3 text-xs text-muted-foreground" aria-live="polite">{interpretationBusy ? 'AulaBase está revisando la actividad…' : interpretation?.message ?? 'AulaBase preparará un instrumento cuando continúes.'}{interpretation?.curriculumCandidates.length ? <div className="mt-2 space-y-1"><p className="font-semibold text-foreground">Posibles contenidos para revisar:</p>{interpretation.curriculumCandidates.slice(0, 3).map(candidate => <label key={candidate.elementId} className="flex items-start gap-2"><input type="checkbox" className="mt-0.5" checked={activityDraft.selectedCurriculumElementIds?.includes(candidate.elementId) ?? false} onChange={event => onChangeDraft({ ...activityDraft, selectedCurriculumElementIds: event.target.checked ? [...(activityDraft.selectedCurriculumElementIds ?? []), candidate.elementId] : (activityDraft.selectedCurriculumElementIds ?? []).filter(id => id !== candidate.elementId) })} /><span>{candidate.text}</span></label>)}</div> : null}</div> : null}
       </CreationFormSection>
 
       <CreationFormSection icon={<Users className="size-4" />} number={5} title="Modalidad" accent={accent}>
-        <div className={cn('grid gap-3 sm:grid-cols-2', highlight('activityType'))}>
+        <div data-activity-required="activityType" className={cn('grid gap-3 sm:grid-cols-2', highlight('activityType'))}>
           {([{ id: 'individual', title: 'Individual', detail: 'Cada estudiante realiza la actividad de forma individual.' }, { id: 'group', title: 'Grupal', detail: 'La actividad se realiza en grupos de estudiantes.' }] as const).map((option) => (
             <button key={option.id} type="button" className={cn('relative flex min-h-24 items-center gap-4 rounded-xl border p-4 text-left transition', activityDraft.activityType === option.id ? cn(accent.card, accent.text, 'shadow-sm') : 'border-border bg-card hover:border-primary/50')} onClick={() => onChangeDraft({ ...activityDraft, activityType: option.id })}>
               <span className={cn('grid size-11 shrink-0 place-items-center rounded-full', activityDraft.activityType === option.id ? cn(accent.progress, 'text-white') : 'bg-muted text-muted-foreground')}><Users className="size-5" /></span><span><span className="block font-black">{option.title}</span><span className="mt-1 block text-xs leading-5 text-muted-foreground">{option.detail}</span></span>{activityDraft.activityType === option.id ? <CheckCircle2 className="absolute right-3 top-3 size-5" /> : null}
@@ -4200,12 +4368,14 @@ function ActivityReview({ activityDraft, issues }: { activityDraft: ActivityDraf
     { icon: <Clock3 className="size-4" />, label: 'Momento de la clase', value: activityDraft.planningMoment ? activityMomentTitle(activityDraft.planningMoment) : 'Sin definir' },
     { icon: <Tags className="size-4" />, label: 'Técnica de evaluación', value: formatActivityTechnique(activityDraft.evaluationTechnique) },
     { icon: <ClipboardList className="size-4" />, label: 'Instrumento de evaluación', value: instrumentTitle(instrumentType) },
+    { icon: <BookOpen className="size-4" />, label: 'Tipo de actividad', value: pedagogicalActivityLabels[activityDraft.pedagogicalActivityType ?? ''] ?? 'Sin clasificar' },
     { icon: <Users className="size-4" />, label: 'Modalidad de la actividad', value: activityDraft.activityType === 'group' ? 'Grupal' : activityDraft.activityType === 'individual' ? 'Individual' : 'Sin definir' },
   ]
   return (
     <div className="space-y-3">
       <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-3"><div><h3 className={cn('font-black', accent.text)}>Revisión final</h3><p className="mt-0.5 text-xs text-muted-foreground">Verifica que toda la información esté correcta antes de guardar la actividad.</p></div><Badge tone={ready ? 'success' : 'warning'}>{ready ? 'Lista para guardar' : `${issues.length} pendiente${issues.length === 1 ? '' : 's'}`}</Badge></div>
+        {activityDraft.preparedRecommendation ? <p className="mt-2 text-xs text-muted-foreground">{activityDraft.preparedRecommendation.criteria.length} criterios preparados · {activityDraft.maxScore} puntos · {activityDraft.selectedCurriculumElementIds?.length ? 'Contenidos seleccionados por ti' : activityDraft.preparedRecommendation.confidence === 'LOW' ? 'Basado en la actividad, sin atribución curricular' : 'Referentes sugeridos para revisión'}</p> : null}
         <dl className="mt-3 overflow-hidden rounded-xl border border-border bg-card">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4">
             {summaryItems.slice(0, 4).map((item) => <div key={item.label} className="flex min-w-0 items-center gap-3 border-b border-border px-3 py-3 sm:border-r lg:border-b-0 last:border-r-0"><span className="grid size-8 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-inset ring-blue-100">{item.icon}</span><div className="min-w-0"><dt className="truncate text-[9px] font-bold text-muted-foreground">{item.label}</dt><dd className="truncate text-xs font-black text-foreground" title={item.value}>{item.value}</dd></div></div>)}
@@ -4628,14 +4798,14 @@ function InstrumentPreview({
       const automaticPoints = distributeScore(maxScore, rubricCriteria)
       for (let index = 0; index < rubricCriteria; index += 1) {
         const pointsKey = instrumentFieldKey('rubrica', 'points', index)
-        next[pointsKey] = String(automaticPoints[index])
+        if (next['rubrica:meta:prepared'] !== 'true') next[pointsKey] = String(automaticPoints[index])
       }
       for (let index = 0; index < rubricLevels; index += 1) {
         const score = rubricLevels - index
         const nameKey = instrumentFieldKey('rubrica', 'level-name', score)
         if (!next[nameKey]) next[nameKey] = rubricDefaultLevelNames(rubricLevels)[index]
         const levelPointsKey = instrumentFieldKey('rubrica', 'level-points', score)
-        if (next['rubrica:meta:customLevelPoints'] !== 'true' || !next[levelPointsKey]) next[levelPointsKey] = String(defaultRubricLevelPoints(automaticPoints[0] || maxScore, rubricLevels)[index])
+        if ((!next[levelPointsKey] || next['rubrica:meta:customLevelPoints'] !== 'true') && next['rubrica:meta:prepared'] !== 'true') next[levelPointsKey] = String(defaultRubricLevelPoints(automaticPoints[0] || maxScore, rubricLevels)[index])
       }
     }
     if (instrumentType === 'escala') {
@@ -4643,7 +4813,7 @@ function InstrumentPreview({
       next['escala:meta:levelCount'] = String(scaleLevels)
       distributeScore(maxScore, scaleCriteria).forEach((points, index) => {
         const key = instrumentFieldKey('escala', 'points', index)
-        next[key] = String(points)
+        if (next['escala:meta:prepared'] !== 'true') next[key] = String(points)
       })
       const scaleDefaults = scaleTemplateLevels(next['escala:meta:template'] || 'frecuencia')
       for (let index = 0; index < scaleLevels; index += 1) {
@@ -5480,9 +5650,9 @@ function RubricInstrument({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <p className={cn('font-black', accent.text)}>Criterios y niveles de desempeño</p>
-          <p className="text-xs text-muted-foreground">La puntuación se redistribuye automáticamente para sumar {maxScore} puntos.</p>
+          <p className="text-xs text-muted-foreground">Ajusta los puntos en la matriz; el total debe sumar {maxScore}.</p>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="instrument-structure-controls flex flex-wrap items-center gap-2">
           {typographyControls}
           <Button type="button" size="sm" variant="outline" onClick={openLevelEditor}><Settings className="size-4" />Configurar niveles</Button>
           <Button type="button" size="sm" className={accent.button} onClick={() => resizeCriteria(Math.min(12, criteriaCount + 1))} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button>
@@ -5513,7 +5683,7 @@ function RubricInstrument({
       ) : null}
       {pendingDraftLevelDelete ? <ConfirmDialog title="¿Eliminar este nivel?" description="Este nivel contiene descriptores. Si lo eliminas, también se eliminará esa información al aplicar los cambios." confirmLabel="Eliminar nivel" destructive onClose={() => setPendingDraftLevelDelete(null)} onConfirm={() => { removeLevelDraftById(pendingDraftLevelDelete); setPendingDraftLevelDelete(null) }} /> : null}
 
-      <InstrumentTable>
+      <InstrumentTable className="rubric-editor-table">
         <thead className="sticky top-0 z-20 bg-slate-50 text-[10px] font-bold uppercase text-slate-700">
           <tr>
             <th className="sticky left-0 z-30 w-[24%] border border-border bg-slate-50 px-2 py-2">Criterios de evaluación</th>
@@ -5528,17 +5698,17 @@ function RubricInstrument({
         <tbody>
           {Array.from({ length: criteriaCount }, (_, index) => (
             <tr key={index} className={cn('transition-colors motion-safe:duration-200', highlightedRow === index ? accent.panel : '')}>
-              <td className="sticky left-0 z-10 border border-border bg-card p-1.5"><div className="flex items-start gap-1"><span className={cn('mt-1 grid size-6 shrink-0 place-items-center rounded-full text-[10px] font-black text-white', accent.progress)}>{index + 1}</span><InstrumentTextarea dataInstrumentRow={`rubrica-${index}`} placeholder="Criterio de evaluación" value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)} /></div></td>
-              {levels.map((level) => <td key={level.score} className="border border-border p-1.5"><InstrumentTextarea value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)} /></td>)}
-              <td className="border border-border px-2 py-3 text-center"><span className={cn('inline-flex min-w-14 items-center justify-center rounded-lg px-2 py-2 font-black', accent.panel, accent.text)}>{criterionPoints[index]} pts</span></td>
-              <td className="border border-border text-center"><InstrumentRowMenu canMoveDown={index < criteriaCount - 1} canMoveUp={index > 0} onDelete={() => requestRemoveCriterion(index)} onDuplicate={() => duplicateCriterion(index)} onMoveDown={() => moveCriterion(index, index + 1)} onMoveUp={() => moveCriterion(index, index - 1)} /></td>
+              <td data-label="Criterio" className="sticky left-0 z-10 border border-border bg-card p-1.5"><div className="flex items-start gap-1"><span className={cn('mt-1 grid size-6 shrink-0 place-items-center rounded-full text-[10px] font-black text-white', accent.progress)}>{index + 1}</span><InstrumentTextarea ariaLabel={`Criterio ${index + 1}`} dataInstrumentRow={`rubrica-${index}`} placeholder="Criterio de evaluación" value={fields[instrumentFieldKey('rubrica', 'criterion', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'criterion', index), value)} /></div></td>
+              {levels.map((level) => <td data-label={level.name} key={level.score} className="border border-border p-1.5"><InstrumentTextarea ariaLabel={`${level.name} del criterio ${index + 1}`} value={fields[instrumentFieldKey('rubrica', 'descriptor', index, level.score)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('rubrica', 'descriptor', index, level.score), value)} /></td>)}
+              <td data-label="Puntos" className="border border-border px-2 py-3 text-center"><Input aria-label={`Puntos del criterio ${index + 1}`} className="mx-auto h-9 w-20 text-center font-black" type="number" min="0" step="0.5" value={fields[instrumentFieldKey('rubrica', 'points', index)] ?? ''} onChange={event => onFieldChange(instrumentFieldKey('rubrica', 'points', index), event.target.value)} /></td>
+              <td data-label="Acciones" className="border border-border text-center"><InstrumentRowMenu canMoveDown={index < criteriaCount - 1} canMoveUp={index > 0} onDelete={() => requestRemoveCriterion(index)} onDuplicate={() => duplicateCriterion(index)} onMoveDown={() => moveCriterion(index, index + 1)} onMoveUp={() => moveCriterion(index, index - 1)} /></td>
             </tr>
           ))}
         </tbody>
       </InstrumentTable>
 
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-xs text-muted-foreground">Los valores por criterio son automáticos y siempre conservan el total.</p>
+        <p className="text-xs text-muted-foreground">Puedes editar los puntos de cada criterio. Revisa que sumen el valor de la actividad.</p>
         <div className="text-right"><p className={cn('text-sm font-black', scoreMatches ? 'text-emerald-600' : 'text-destructive')}>Puntuación máxima total: {total} / {maxScore} pts</p>{!scoreMatches ? <p className="mt-1 text-xs text-destructive">La puntuación no coincide con el valor de la actividad.</p> : null}</div>
       </div>
       {pendingCriterionDelete !== null ? <ConfirmDialog title="¿Eliminar este criterio?" description={`Se eliminará “${fields[instrumentFieldKey('rubrica', 'criterion', pendingCriterionDelete)] || `Criterio ${pendingCriterionDelete + 1}`}” junto con sus ${levelCount} descriptores asociados. Esta acción no se puede deshacer.`} confirmLabel="Eliminar criterio" destructive onClose={() => setPendingCriterionDelete(null)} onConfirm={() => { removeCriterion(pendingCriterionDelete); setPendingCriterionDelete(null) }} /> : null}
@@ -5832,7 +6002,7 @@ function ScaleInstrument({
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Indicadores y niveles de la escala</p><p className="text-xs text-muted-foreground">Evalúa el grado, frecuencia o nivel de desempeño alcanzado en cada indicador.</p></div><div className="flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar escala</Button><Button type="button" size="sm" className={accent.button} onClick={addIndicator} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar indicador</Button></div></div>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Indicadores y niveles de la escala</p><p className="text-xs text-muted-foreground">Evalúa el grado, frecuencia o nivel de desempeño alcanzado en cada indicador.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar escala</Button><Button type="button" size="sm" className={accent.button} onClick={addIndicator} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar indicador</Button></div></div>
       {configuring ? <ScaleSettingsDrawer accent={accent} criteriaCount={criteriaCount} fields={fields} indicatorPoints={indicatorPoints} levelDrafts={levelDrafts} maxScore={maxScore} noApply={noApply} onAddLevel={() => { setTemplate('personalizada'); setLevelDrafts((current) => [...current, { id: `new-${Date.now()}`, name: `Nivel ${current.length + 1}`, points: Math.max(0, current.length ? current[current.length - 1].points - 1 : 1) }]) }} onApply={applyConfiguration} onClose={() => setConfiguring(false)} onIndicatorPointsChange={setIndicatorPoints} onLevelsChange={(value) => { setTemplate('personalizada'); setLevelDrafts(value) }} onNoApplyChange={setNoApply} onPointModeChange={setPointMode} onTemplateSelect={selectScaleTemplate} pointMode={pointMode} template={template} /> : null}
       <InstrumentTable>
         <thead className="sticky top-0 z-20 text-[10px] font-bold uppercase">
@@ -5954,7 +6124,7 @@ function ChecklistInstrument({
   }
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black',accent.text)}>Criterios de cumplimiento</p><p className="text-xs text-muted-foreground">Verifica el cumplimiento de criterios específicos.</p></div><div className="flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 20}><Plus className="size-4" />Agregar criterio</Button></div></div>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black',accent.text)}>Criterios de cumplimiento</p><p className="text-xs text-muted-foreground">Verifica el cumplimiento de criterios específicos.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 20}><Plus className="size-4" />Agregar criterio</Button></div></div>
       {configuring ? (
         <InstrumentSettingsDrawer
           accent={accent}
@@ -6274,7 +6444,7 @@ function WeightedListInstrument({
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Criterios y ponderaciones</p><p className="text-xs text-muted-foreground">Define los criterios, sus indicadores y el peso de cada uno dentro de la actividad.</p></div><div className="flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={() => setConfiguring(true)}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button></div></div>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Criterios y ponderaciones</p><p className="text-xs text-muted-foreground">Define los criterios, sus indicadores y el peso de cada uno dentro de la actividad.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={() => setConfiguring(true)}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button></div></div>
       {configuring ? <WeightedListSettingsDrawer accent={accent} criteriaCount={criteriaCount} decimals={decimals} fields={fields} labels={labels} maxScore={maxScore} onApply={applyConfiguration} onClose={() => setConfiguring(false)} partial={hasPartial} partialValue={partialValue} /> : null}
       <InstrumentTable>
         <thead className="sticky top-0 z-20 text-[10px] font-bold uppercase text-slate-700">
@@ -6377,7 +6547,7 @@ function InstrumentRowMenu({ canMoveDown, canMoveUp, onDelete, onDuplicate, onMo
   }
 
   const popup = open ? <div ref={popupRef} role="menu" className="fixed z-[100] w-44 overflow-hidden rounded-lg border border-border bg-popover p-1 text-left shadow-xl" style={{ top: menuPosition.top, right: menuPosition.right }}><button type="button" role="menuitem" className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted" onClick={() => runAction(onDuplicate)}><Copy className="size-3.5" />Duplicar</button><button type="button" role="menuitem" disabled={!canMoveUp} className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted disabled:opacity-40" onClick={() => runAction(onMoveUp)}><ArrowUp className="size-3.5" />Mover arriba</button><button type="button" role="menuitem" disabled={!canMoveDown} className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted disabled:opacity-40" onClick={() => runAction(onMoveDown)}><ArrowDown className="size-3.5" />Mover abajo</button><div className="my-1 h-px bg-border"/><button type="button" role="menuitem" className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold text-destructive hover:bg-red-50" onClick={() => runAction(onDelete)}><Trash2 className="size-3.5" />Eliminar</button></div> : null
-  return <div className="mx-auto w-fit"><button ref={buttonRef} type="button" aria-label="Acciones de la fila" aria-haspopup="menu" aria-expanded={open} className={cn('grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary', open ? 'bg-muted text-foreground' : '')} onClick={toggleMenu}><EllipsisVertical className="size-4" /></button>{popup ? createPortal(popup, document.body) : null}</div>
+  return <div className="instrument-row-actions mx-auto w-fit"><button ref={buttonRef} type="button" aria-label="Acciones de la fila" aria-haspopup="menu" aria-expanded={open} className={cn('grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary', open ? 'bg-muted text-foreground' : '')} onClick={toggleMenu}><EllipsisVertical className="size-4" /></button>{popup ? createPortal(popup, document.body) : null}</div>
 }
 
 function focusNewInstrumentRow(type: string, index: number, setHighlightedRow: Dispatch<SetStateAction<number | null>>) {
@@ -6475,9 +6645,9 @@ function InstrumentCheckPlaceholder({ tone = 'default' }: { tone?: 'default' | '
   )
 }
 
-function InstrumentTable({ children }: { children: ReactNode }) {
+function InstrumentTable({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div className="overflow-auto rounded-xl border border-border bg-slate-50/60 p-1 shadow-sm">
+    <div className={cn('overflow-auto rounded-xl border border-border bg-card p-1 shadow-sm', className)}>
       <table className="min-w-[42rem] w-full border-separate border-spacing-1 text-left text-xs [&_td]:rounded-lg [&_th]:rounded-lg">
         {children}
       </table>
@@ -6505,12 +6675,14 @@ function InstrumentInput({
 }
 
 function InstrumentTextarea({
+  ariaLabel,
   className = '',
   dataInstrumentRow,
   onChange,
   placeholder = '',
   value,
 }: {
+  ariaLabel?: string
   className?: string
   dataInstrumentRow?: string
   onChange?: (value: string) => void
@@ -6519,8 +6691,9 @@ function InstrumentTextarea({
 }) {
   return (
     <textarea
+      aria-label={ariaLabel}
       data-instrument-row={dataInstrumentRow}
-      className={cn('h-14 w-full resize-none rounded-md border border-input bg-card px-2 py-1.5 text-xs leading-5 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20', className)}
+      className={cn('h-24 w-full min-h-20 max-h-44 resize-y overflow-y-auto rounded-md border border-input bg-card px-2 py-1.5 text-xs leading-5 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20', className)}
       value={value}
       onChange={(event) => onChange?.(event.target.value)}
       placeholder={placeholder}

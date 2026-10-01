@@ -6,6 +6,49 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
+type CurriculumTable<Row, Required extends keyof Row> = {
+  Row: Row
+  Insert: Pick<Row, Required> & Partial<Omit<Row, Required>>
+  Update: Partial<Row>
+  Relationships: Array<{
+    foreignKeyName: string
+    columns: string[]
+    isOneToOne: boolean
+    referencedRelation: string
+    referencedColumns: string[]
+  }>
+}
+
+type CurriculumVersionRow = {
+  id: string; code: string; level: string; edition_year: number; status: string
+  import_metadata: Json; validated_at: string | null; published_at: string | null
+  created_at: string; updated_at: string
+}
+type CurriculumDocumentRow = {
+  id: string; version_id: string; title: string; original_filename: string; sha256: string
+  page_count: number; issuing_body: string; created_at: string
+}
+type CurriculumScopeRow = {
+  id: string; version_id: string; stable_key: string; cycle: number | null; grade: number | null
+  area_name: string | null; area_search: string | null; subject_name: string | null; subject_search: string | null
+  modality_name: string | null; optative_exit_name: string | null; assignment_source_pdf_page: number | null; created_at: string
+}
+type CurriculumElementRow = {
+  id: string; version_id: string; scope_id: string; stable_key: string; element_type: string
+  original_text: string; normalized_text: string; review_status: string; source_order: number; created_at: string
+}
+type CurriculumRelationRow = {
+  id: string; version_id: string; from_element_id: string; to_element_id: string
+  relation_type: string; created_at: string
+}
+type CurriculumSourceSpanRow = {
+  id: string; version_id: string; element_id: string; document_id: string; pdf_page: number
+  printed_page: string | null; section_name: string | null; bounding_box: Json | null; created_at: string
+}
+type CurriculumSubjectMappingRow = {
+  id: string; scope_id: string; subject_id: string; mapping_status: string; created_at: string
+}
+
 export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
@@ -39,6 +82,15 @@ export type Database = {
   }
   public: {
     Tables: {
+      curriculum_versions: CurriculumTable<CurriculumVersionRow, 'code' | 'level' | 'edition_year'>
+      evaluation_catalog_releases: CurriculumTable<{ version: string; payload: Json; created_at: string }, 'version' | 'payload'>
+      section_curriculum_contexts: CurriculumTable<{ section_subject_id: string; optative_exit_name: string; created_at: string }, 'section_subject_id' | 'optative_exit_name'>
+      curriculum_documents: CurriculumTable<CurriculumDocumentRow, 'version_id' | 'title' | 'original_filename' | 'sha256' | 'page_count'>
+      curriculum_scopes: CurriculumTable<CurriculumScopeRow, 'version_id' | 'stable_key'>
+      curriculum_elements: CurriculumTable<CurriculumElementRow, 'id' | 'version_id' | 'scope_id' | 'stable_key' | 'element_type' | 'original_text' | 'normalized_text' | 'source_order'>
+      curriculum_element_relations: CurriculumTable<CurriculumRelationRow, 'version_id' | 'from_element_id' | 'to_element_id' | 'relation_type'>
+      curriculum_source_spans: CurriculumTable<CurriculumSourceSpanRow, 'version_id' | 'element_id' | 'document_id' | 'pdf_page'>
+      curriculum_subject_mappings: CurriculumTable<CurriculumSubjectMappingRow, 'scope_id' | 'subject_id'>
       academic_periods: {
         Row: {
           created_at: string
@@ -906,6 +958,8 @@ export type Database = {
       }
       evaluation_activities: {
         Row: {
+          pedagogical_activity_type: string | null
+          instrument_snapshot_id: string | null
           academic_period_id: string
           activity_date: string | null
           activity_type: string
@@ -934,6 +988,8 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          pedagogical_activity_type?: string | null
+          instrument_snapshot_id?: string | null
           academic_period_id: string
           activity_date?: string | null
           activity_type?: string
@@ -962,6 +1018,8 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          pedagogical_activity_type?: string | null
+          instrument_snapshot_id?: string | null
           academic_period_id?: string
           activity_date?: string | null
           activity_type?: string
@@ -1011,6 +1069,7 @@ export type Database = {
             referencedRelation: "evaluation_instruments"
             referencedColumns: ["id"]
           },
+          { foreignKeyName: "evaluation_activities_instrument_snapshot_id_fkey"; columns: ["instrument_snapshot_id"]; isOneToOne: true; referencedRelation: "evaluation_instrument_snapshots"; referencedColumns: ["id"] },
           {
             foreignKeyName: "evaluation_activities_planning_entry_id_fkey"
             columns: ["planning_entry_id"]
@@ -1286,6 +1345,26 @@ export type Database = {
           },
         ]
       }
+      evaluation_instrument_snapshots: {
+        Row: { id: string; school_id: string; instrument_id: string; version_no: number; payload: Json; curriculum_version_id: string | null; curriculum_scope_id: string | null; catalog_version: string; created_at: string }
+        Insert: { id?: string; school_id: string; instrument_id: string; version_no?: number; payload: Json; curriculum_version_id?: string | null; curriculum_scope_id?: string | null; catalog_version: string; created_at?: string }
+        Update: { id?: string; school_id?: string; instrument_id?: string; version_no?: number; payload?: Json; curriculum_version_id?: string | null; curriculum_scope_id?: string | null; catalog_version?: string; created_at?: string }
+        Relationships: [
+          { foreignKeyName: "evaluation_instrument_snapshots_school_id_fkey"; columns: ["school_id"]; isOneToOne: false; referencedRelation: "schools"; referencedColumns: ["id"] },
+          { foreignKeyName: "evaluation_instrument_snapshots_instrument_id_fkey"; columns: ["instrument_id"]; isOneToOne: true; referencedRelation: "evaluation_instruments"; referencedColumns: ["id"] },
+          { foreignKeyName: "evaluation_instrument_snapshots_curriculum_version_id_fkey"; columns: ["curriculum_version_id"]; isOneToOne: false; referencedRelation: "curriculum_versions"; referencedColumns: ["id"] },
+          { foreignKeyName: "snapshot_scope_version_fk"; columns: ["curriculum_scope_id", "curriculum_version_id"]; isOneToOne: false; referencedRelation: "curriculum_scopes"; referencedColumns: ["id", "version_id"] },
+        ]
+      }
+      evaluation_snapshot_sources: {
+        Row: { snapshot_id: string; element_id: string; version_id: string }
+        Insert: { snapshot_id: string; element_id: string; version_id: string }
+        Update: { snapshot_id?: string; element_id?: string; version_id?: string }
+        Relationships: [
+          { foreignKeyName: "evaluation_snapshot_sources_snapshot_id_fkey"; columns: ["snapshot_id"]; isOneToOne: false; referencedRelation: "evaluation_instrument_snapshots"; referencedColumns: ["id"] },
+          { foreignKeyName: "snapshot_source_element_fk"; columns: ["element_id", "version_id"]; isOneToOne: false; referencedRelation: "curriculum_elements"; referencedColumns: ["id", "version_id"] },
+        ]
+      }
       grades: {
         Row: {
           academic_cycle_id: string | null
@@ -1359,6 +1438,7 @@ export type Database = {
       }
       grades_records: {
         Row: {
+          instrument_snapshot_id: string | null
           academic_period_id: string
           assessment_name: string
           created_at: string
@@ -1378,6 +1458,7 @@ export type Database = {
           weight: number
         }
         Insert: {
+          instrument_snapshot_id?: string | null
           academic_period_id: string
           assessment_name: string
           created_at?: string
@@ -1397,6 +1478,7 @@ export type Database = {
           weight?: number
         }
         Update: {
+          instrument_snapshot_id?: string | null
           academic_period_id?: string
           assessment_name?: string
           created_at?: string
@@ -1437,6 +1519,7 @@ export type Database = {
             referencedRelation: "evaluation_activities"
             referencedColumns: ["id"]
           },
+          { foreignKeyName: "grades_records_instrument_snapshot_id_fkey"; columns: ["instrument_snapshot_id"]; isOneToOne: false; referencedRelation: "evaluation_instrument_snapshots"; referencedColumns: ["id"] },
           {
             foreignKeyName: "grades_records_period_fk"
             columns: ["academic_period_id", "school_year_id"]
@@ -2520,6 +2603,17 @@ export type Database = {
           },
         ]
       }
+      teacher_instrument_preferences: {
+        Row: { id: string; school_id: string; teacher_id: string; curriculum_scope_id: string | null; activity_type: string; instrument_type: string; criterion_template_ids: Json; use_count: number; accepted_instrument_id: string; last_used_at: string }
+        Insert: { id?: string; school_id: string; teacher_id: string; curriculum_scope_id?: string | null; activity_type: string; instrument_type: string; criterion_template_ids?: Json; use_count?: number; accepted_instrument_id: string; last_used_at?: string }
+        Update: { id?: string; school_id?: string; teacher_id?: string; curriculum_scope_id?: string | null; activity_type?: string; instrument_type?: string; criterion_template_ids?: Json; use_count?: number; accepted_instrument_id?: string; last_used_at?: string }
+        Relationships: [
+          { foreignKeyName: "teacher_instrument_preferences_school_id_fkey"; columns: ["school_id"]; isOneToOne: false; referencedRelation: "schools"; referencedColumns: ["id"] },
+          { foreignKeyName: "teacher_instrument_preferences_teacher_id_fkey"; columns: ["teacher_id"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "teacher_instrument_preferences_curriculum_scope_id_fkey"; columns: ["curriculum_scope_id"]; isOneToOne: false; referencedRelation: "curriculum_scopes"; referencedColumns: ["id"] },
+          { foreignKeyName: "teacher_instrument_preferences_accepted_instrument_id_fkey"; columns: ["accepted_instrument_id"]; isOneToOne: false; referencedRelation: "evaluation_instruments"; referencedColumns: ["id"] },
+        ]
+      }
       teacher_journal_entries: {
         Row: {
           academic_period_id: string | null
@@ -2661,11 +2755,12 @@ export type Database = {
           },
         ]
       }
-      time_slots: {
+      schedule_journeys: {
         Row: {
           created_at: string
           end_time: string
           id: string
+          kind: string
           name: string
           school_id: string
           sequence: number
@@ -2677,6 +2772,7 @@ export type Database = {
           created_at?: string
           end_time: string
           id?: string
+          kind?: string
           name: string
           school_id?: string
           sequence: number
@@ -2688,6 +2784,7 @@ export type Database = {
           created_at?: string
           end_time?: string
           id?: string
+          kind?: string
           name?: string
           school_id?: string
           sequence?: number
@@ -2697,6 +2794,72 @@ export type Database = {
         }
         Relationships: [
           {
+            foreignKeyName: "schedule_journeys_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      time_slots: {
+        Row: {
+          block_source: string
+          block_type: string
+          created_at: string
+          day_of_week: number | null
+          end_time: string
+          id: string
+          journey_id: string | null
+          source_key: string | null
+          name: string
+          school_id: string
+          sequence: number
+          start_time: string
+          status: Database["public"]["Enums"]["record_status"]
+          updated_at: string
+        }
+        Insert: {
+          block_source?: string
+          block_type?: string
+          created_at?: string
+          day_of_week?: number | null
+          end_time: string
+          id?: string
+          journey_id?: string | null
+          source_key?: string | null
+          name: string
+          school_id?: string
+          sequence: number
+          start_time: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Update: {
+          block_source?: string
+          block_type?: string
+          created_at?: string
+          day_of_week?: number | null
+          end_time?: string
+          id?: string
+          journey_id?: string | null
+          source_key?: string | null
+          name?: string
+          school_id?: string
+          sequence?: number
+          start_time?: string
+          status?: Database["public"]["Enums"]["record_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "time_slots_journey_id_fkey"
+            columns: ["journey_id"]
+            isOneToOne: false
+            referencedRelation: "schedule_journeys"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "time_slots_school_id_fkey"
             columns: ["school_id"]
             isOneToOne: false
@@ -2704,6 +2867,45 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      trusted_auth_devices: {
+        Row: {
+          id: string
+          user_id: string
+          token_hash: string
+          browser_signature: string
+          network_hash: string | null
+          verified_at: string
+          last_seen_at: string
+          revoked_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          token_hash: string
+          browser_signature: string
+          network_hash?: string | null
+          verified_at?: string
+          last_seen_at?: string
+          revoked_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          token_hash?: string
+          browser_signature?: string
+          network_hash?: string | null
+          verified_at?: string
+          last_seen_at?: string
+          revoked_at?: string | null
+        }
+        Relationships: [{
+          foreignKeyName: "trusted_auth_devices_user_id_fkey"
+          columns: ["user_id"]
+          isOneToOne: false
+          referencedRelation: "app_users"
+          referencedColumns: ["id"]
+        }]
       }
       user_roles: {
         Row: {

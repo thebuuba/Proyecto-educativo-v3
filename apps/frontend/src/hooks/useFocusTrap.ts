@@ -2,7 +2,7 @@
  * Hook que atrapa el foco del teclado dentro de un contenedor
  * y permite cerrar con la tecla Escape.
  */
-import { useEffect, type RefObject } from 'react'
+import { useEffect, useRef, type RefObject } from 'react'
 
 /** Opciones del hook useFocusTrap. */
 type UseFocusTrapOptions = {
@@ -24,6 +24,11 @@ type UseFocusTrapOptions = {
  * @param options.onEscape - Callback de tecla Escape.
  */
 export function useFocusTrap({ ref, active, onEscape }: UseFocusTrapOptions) {
+  const onEscapeRef = useRef(onEscape)
+  useEffect(() => {
+    onEscapeRef.current = onEscape
+  }, [onEscape])
+
   useEffect(() => {
     if (!active) return
 
@@ -41,7 +46,7 @@ export function useFocusTrap({ ref, active, onEscape }: UseFocusTrapOptions) {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
         e.stopPropagation()
-        onEscape?.()
+        onEscapeRef.current?.()
         return
       }
 
@@ -63,5 +68,5 @@ export function useFocusTrap({ ref, active, onEscape }: UseFocusTrapOptions) {
     return () => {
       el.removeEventListener('keydown', handleKeyDown)
     }
-  }, [ref, active, onEscape])
+  }, [ref, active])
 }

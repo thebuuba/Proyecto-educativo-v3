@@ -1,17 +1,8 @@
 import type { GradeRecordStatus } from '@/types/domain'
+import type { Activity, SectionSubjectOption } from '@/modules/activities/types'
+import type { EvaluationProfile } from '@aula/shared'
 
-export type SectionSubjectOption = {
-  id: string
-  subjectName: string
-  sectionName: string
-  gradeName: string
-  gradeSequence?: number | null
-  academicLevelName?: string
-  academicLevelSequence?: number | null
-  sectionId?: string
-  schoolYearId?: string
-  schoolYearName?: string
-}
+export type { ActivityCenterWorkspace, GlobalActivity, SectionSubjectOption } from '@/modules/activities/types'
 
 export type AcademicPeriodOpt = {
   id: string
@@ -40,6 +31,7 @@ export type GradeRecordRow = {
   assessmentName: string
   status: GradeRecordStatus | null
   evaluationActivityId?: string | null
+  instrumentSnapshotId?: string | null
   instrumentResult?: EvaluatedInstrumentResult | null
 }
 
@@ -49,50 +41,13 @@ export type EvaluatedInstrumentResult = {
   criterionScores: number[]
   completedAt: string
   observation?: string
+  instrumentSnapshotId?: string
+  snapshotVersion?: number
+  criterionSnapshots?: Array<{ id: string; title: string; description: string; maxScoreUnits: number; selectedDescriptor: { text: string; scoreUnits: number } | null; scoreUnits: number }>
 }
 
-export type GradingActivity = {
-  id: string
-  name: string
-  competencyBlockId: string
-  competencyBlockWeights?: Record<string, number>
-  maxScore: number
-  date?: string
-  description?: string
-  studentRole?: string
-  teacherRole?: string
-  instrumentType?: string
-  instrumentId?: string
-  instrumentCriteria?: Record<string, string>
-  evaluationTechnique?: string
-  observations?: string
-  resources?: string[]
-  evidenceInstructions?: string
-  futurePlanningLink?: string
-  futureInstrumentLink?: string
-  activityType?: 'individual' | 'group'
-  teamIds?: string[]
-  planningId?: string
-  planningMoment?: 'inicio' | 'desarrollo' | 'cierre' | ''
-  source?: 'grading' | 'planning'
-}
-
-export type GlobalActivity = GradingActivity & {
-  sectionSubjectId: string
-  academicPeriodId: string
-  courseId: string
-  courseLabel: string
-  subjectName: string
-  periodName: string
-  evaluatedCount: number
-  studentCount: number
-}
-
-export type ActivityCenterWorkspace = {
-  sectionSubjects: SectionSubjectOption[]
-  academicPeriods: AcademicPeriodOpt[]
-  activities: GlobalActivity[]
-}
+/** @deprecated Importa Activity desde modules/activities. */
+export type GradingActivity = Activity
 
 export type RecoveryScores = Record<string, Record<string, number | null>>
 
@@ -143,6 +98,7 @@ export type GradingWorkspace = {
   context: {
     sectionId: string
     schoolYearId: string
+    evaluationProfile?: EvaluationProfile
   } | null
   students: StudentGradeRow[]
   gradeRecords: GradeRecordRow[]

@@ -6,16 +6,19 @@
  */
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { Prisma, prisma } from '@aula/database'
+import { isBlockInEvaluationProfile, resolveEvaluationProfile, type EvaluationProfile } from '@aula/shared'
 import { academicPeriodDate, defaultAcademicPeriods } from '../../common/academic-period-defaults'
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SaveGradeDto } from './dto/save-grade.dto'
-import { SaveEvaluationActivityDto } from './dto/save-evaluation-activity.dto'
+import { SaveActivityDto } from '../activities/dto/save-activity.dto'
+import { evaluationCatalogV1 } from '../evaluation-instruments/catalog-v1'
+import { academicContext, resolveScope } from '../evaluation-instruments/curriculum-context'
 
 export function __test__clearGradingCache() {
   optionCache.clear()
 }
 
-function mapEvaluationActivity(activity: any) {
+function mapEvaluationActivity(activity: any, profile?: EvaluationProfile) {
   return {
     id: activity.id,
     name: activity.name,
@@ -30,6 +33,9 @@ function mapEvaluationActivity(activity: any) {
     teacherRole: activity.teacherRole || undefined,
     instrumentType: activity.instrument?.type || undefined,
     instrumentId: activity.instrumentId ?? undefined,
+    instrumentSnapshotId: activity.instrumentSnapshotId ?? undefined,
+    instrumentSnapshot: activity.instrumentSnapshot?.payload ?? undefined,
+    pedagogicalActivityType: activity.pedagogicalActivityType ?? undefined,
     instrumentCriteria: activity.instrument?.criteria && typeof activity.instrument.criteria === 'object'
       ? activity.instrument.criteria
       : {},
@@ -44,16 +50,20 @@ function mapEvaluationActivity(activity: any) {
     planningId: activity.planningEntryId ?? undefined,
     planningMoment: activity.planningMoment ?? '',
     source: activity.source,
+    ...(profile ? {
+      profileCompatibility: isBlockInEvaluationProfile(profile, activity.competencyBlockId)
+        && Object.keys(activity.competencyBlockWeights ?? {}).every((blockId) => isBlockInEvaluationProfile(profile, blockId))
+        ? 'compatible'
+        : 'legacy-review-required',
+    } : {}),
   }
 }
 
-const competencyBlockIds = ['b1', 'b2', 'b3', 'b4'] as const
-
-function validateCompetencyBlockWeights(primaryBlockId: string, input?: Record<string, number>) {
+function validateCompetencyBlockWeights(profile: EvaluationProfile, primaryBlockId: string, input?: Record<string, number>) {
   const weights = input ?? { [primaryBlockId]: 1 }
   const entries = Object.entries(weights)
   const validEntries = entries.length > 0
-    && entries.every(([blockId, weight]) => competencyBlockIds.includes(blockId as typeof competencyBlockIds[number])
+    && entries.every(([blockId, weight]) => isBlockInEvaluationProfile(profile, blockId)
       && typeof weight === 'number' && Number.isFinite(weight) && weight > 0 && weight <= 1)
   if (!validEntries || !(primaryBlockId in weights)) {
     throw new BadRequestException('La distribucion por competencias no es valida')
@@ -77,6 +87,7 @@ function mapGradeRecord(grade: any) {
     assessmentName: grade.assessmentName,
     status: grade.status.toLowerCase(),
     evaluationActivityId: grade.evaluationActivityId,
+    instrumentSnapshotId: grade.instrumentSnapshotId ?? null,
     instrumentResult: grade.instrumentResult ?? null,
   }
 }
@@ -151,6 +162,24 @@ async function assertEvaluationActivityScope(
     throw new BadRequestException('Evaluation activity does not match grading context')
   }
   return activity
+}
+
+async function snapshotGradeResult(snapshotId: string | null, result: Record<string, unknown> | null | undefined) {
+  if (!snapshotId || result == null) return result
+  const snapshot = await prisma.evaluationInstrumentSnapshot.findUnique({ where: { id: snapshotId } })
+  const payload = snapshot?.payload as unknown as { criteria?: Array<{ id: string; title: string; description: string; maxScoreUnits: number; descriptors: Array<{ text: string; scoreUnits: number }> }> }
+  const criteria = payload?.criteria ?? []
+  const scores = result.criterionScores as number[]
+  const selections = result.selections as number[]
+  if (!criteria.length || scores.length !== criteria.length || selections.length !== criteria.length ||
+    criteria.some((criterion, index) => Math.round(scores[index] * 100) > criterion.maxScoreUnits ||
+      selections[index] >= (criterion.descriptors?.length || (result.instrumentType === 'lista-cotejo' ? 3 : 4)))) {
+    throw new BadRequestException('El resultado no corresponde a la versión del instrumento guardada.')
+  }
+  return { ...result, instrumentSnapshotId: snapshotId, snapshotVersion: snapshot!.versionNo,
+    criterionSnapshots: criteria.map((criterion, index) => ({ id: criterion.id, title: criterion.title,
+      description: criterion.description, maxScoreUnits: criterion.maxScoreUnits,
+      selectedDescriptor: criterion.descriptors?.[selections[index]] ?? null, scoreUnits: Math.round(scores[index] * 100) })) }
 }
 
 function assertScoreWithinActivity(score: number, activity: { maxScore: unknown }) {
@@ -238,7 +267,7 @@ export class GradingService {
             name: true,
             sequence: true,
             level: true,
-            academicLevel: { select: { name: true, sequence: true } },
+            academicLevel: { select: { id: true, code: true, name: true, sequence: true } },
           },
         },
         schoolYear: { select: { name: true } },
@@ -254,6 +283,9 @@ export class GradingService {
         gradeSequence: item.grade.sequence,
         academicLevelName: item.grade.academicLevel?.name ?? item.grade.level ?? '',
         academicLevelSequence: item.grade.academicLevel?.sequence ?? null,
+        academicLevelId: item.grade.academicLevel?.id ?? null,
+        academicLevelCode: item.grade.academicLevel?.code ?? null,
+        evaluationProfile: resolveEvaluationProfile(item.grade.academicLevel?.code),
         sectionId: item.sectionId,
         schoolYearId: item.schoolYearId,
         schoolYearName: item.schoolYear.name,
@@ -331,7 +363,7 @@ export class GradingService {
     const [sectionSubject, academicPeriod] = await Promise.all([
       prisma.sectionSubject.findFirst({
         where: { id: sectionSubjectId, schoolId, status: 'ACTIVE' },
-        select: { id: true, sectionId: true, schoolYearId: true },
+        select: { id: true, sectionId: true, schoolYearId: true, grade: { select: { academicLevel: { select: { code: true } } } } },
       }),
       prisma.academicPeriod.findFirst({
         where: { id: academicPeriodId, schoolId, status: 'ACTIVE' },
@@ -355,7 +387,7 @@ export class GradingService {
 
   private async getWorkspaceData(
     schoolId: string,
-    sectionSubject: { id: string; sectionId: string; schoolYearId: string },
+    sectionSubject: { id: string; sectionId: string; schoolYearId: string; evaluationProfile?: EvaluationProfile; grade?: { academicLevel?: { code?: string | null } | null } },
     academicPeriodId: string,
   ) {
     const [enrollments, grades, activities] = await Promise.all([
@@ -385,21 +417,23 @@ export class GradingService {
           academicPeriodId,
           status: 'ACTIVE',
         },
-        include: { instrument: true },
+        include: { instrument: true, instrumentSnapshot: true },
         orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
       }),
     ])
 
     const students = sortStudentsByListNumber(enrollments.map(mapStudentEnrollment))
 
+    const evaluationProfile = sectionSubject.evaluationProfile ?? resolveEvaluationProfile(sectionSubject.grade?.academicLevel?.code)
     return {
       context: {
         sectionId: sectionSubject.sectionId,
         schoolYearId: sectionSubject.schoolYearId,
+        evaluationProfile,
       },
       students,
       gradeRecords: grades.map(mapGradeRecord),
-      activities: activities.map(mapEvaluationActivity),
+      activities: activities.map((activity) => mapEvaluationActivity(activity, evaluationProfile)),
     }
   }
 
@@ -428,7 +462,7 @@ export class GradingService {
           academicPeriodId: { in: periodIds },
           status: 'ACTIVE',
         },
-        include: { instrument: true },
+        include: { instrument: true, instrumentSnapshot: true },
         orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
       }),
     ])
@@ -442,7 +476,7 @@ export class GradingService {
         .map(mapGradeRecord),
       activities: activities
         .filter((activity) => activity.academicPeriodId === period.id)
-        .map(mapEvaluationActivity),
+        .map((activity) => mapEvaluationActivity(activity)),
     }))
   }
 
@@ -555,6 +589,7 @@ export class GradingService {
         )
         : null
       const activityMaxScore = activity ? assertScoreWithinActivity(dto.score, activity) : dto.maxScore
+      const result = await snapshotGradeResult(activity?.instrumentSnapshotId ?? null, dto.instrumentResult)
       const updated = await prisma.gradesRecord.update({
         where: { id: dto.gradeId },
         data: {
@@ -563,11 +598,12 @@ export class GradingService {
           weight: dto.weight,
           assessmentName: dto.assessmentName,
           evaluationActivityId: dto.evaluationActivityId === undefined ? undefined : dto.evaluationActivityId,
+          instrumentSnapshotId: activity?.instrumentSnapshotId ?? grade.instrumentSnapshotId,
           instrumentResult: dto.instrumentResult === undefined
             ? undefined
             : dto.instrumentResult === null
               ? Prisma.DbNull
-              : dto.instrumentResult as any,
+              : result as any,
         },
       })
       return mapGradeRecord(updated)
@@ -595,6 +631,7 @@ export class GradingService {
       )
       : null
     const activityMaxScore = activity ? assertScoreWithinActivity(dto.score, activity) : dto.maxScore
+    const result = await snapshotGradeResult(activity?.instrumentSnapshotId ?? null, dto.instrumentResult)
 
     const data = {
         enrollmentId: dto.enrollmentId!,
@@ -608,20 +645,22 @@ export class GradingService {
         weight: dto.weight ?? 1,
         assessmentName: dto.assessmentName ?? '',
         evaluationActivityId: dto.evaluationActivityId ?? undefined,
-        instrumentResult: dto.instrumentResult as any,
+        instrumentSnapshotId: activity?.instrumentSnapshotId ?? undefined,
+        instrumentResult: result as any,
     }
     const saved = dto.evaluationActivityId
       ? (await prisma.$queryRaw<any[]>`
           insert into public.grades_records (
             enrollment_id, section_subject_id, academic_period_id, section_id,
             school_year_id, school_id, score, max_score, weight, assessment_name,
-            evaluation_activity_id, instrument_result
+            evaluation_activity_id, instrument_result, instrument_snapshot_id
           ) values (
             ${dto.enrollmentId!}::uuid, ${dto.sectionSubjectId!}::uuid,
             ${dto.academicPeriodId!}::uuid, ${enrollment.sectionId}::uuid,
             ${enrollment.schoolYearId}::uuid, ${schoolId}::uuid, ${dto.score},
             ${activityMaxScore}, ${dto.weight ?? 1}, ${dto.assessmentName ?? ''},
-            ${dto.evaluationActivityId}::uuid, ${JSON.stringify(dto.instrumentResult ?? null)}::jsonb
+            ${dto.evaluationActivityId}::uuid, ${JSON.stringify(result ?? null)}::jsonb,
+            ${activity?.instrumentSnapshotId ?? null}::uuid
           )
           on conflict (enrollment_id, evaluation_activity_id) do update set
             score = excluded.score,
@@ -629,6 +668,7 @@ export class GradingService {
             weight = excluded.weight,
             assessment_name = excluded.assessment_name,
             instrument_result = excluded.instrument_result,
+            instrument_snapshot_id = excluded.instrument_snapshot_id,
             updated_at = now()
           returning
             id,
@@ -639,7 +679,8 @@ export class GradingService {
             assessment_name as "assessmentName",
             status,
             evaluation_activity_id as "evaluationActivityId",
-            instrument_result as "instrumentResult"
+            instrument_result as "instrumentResult",
+            instrument_snapshot_id as "instrumentSnapshotId"
         `)[0]
       : await prisma.gradesRecord.create({ data })
     return mapGradeRecord(saved)
@@ -656,11 +697,11 @@ export class GradingService {
 
     const activities = await prisma.evaluationActivity.findMany({
       where,
-      include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
+      include: { instrument: true, instrumentSnapshot: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
       orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
     })
 
-    return activities.map(mapEvaluationActivity)
+    return activities.map((activity) => mapEvaluationActivity(activity))
   }
 
   async getActivityCenter(schoolId: string, appUserId?: string, roles: string[] = []) {
@@ -678,13 +719,14 @@ export class GradingService {
         where: { schoolId, status: 'ACTIVE', sectionSubject: sectionSubjectScope },
         include: {
           instrument: true,
+          instrumentSnapshot: true,
           academicPeriod: { select: { name: true } },
           sectionSubject: {
             select: {
               id: true,
               sectionId: true,
               schoolYearId: true,
-              grade: { select: { name: true } },
+              grade: { select: { name: true, academicLevel: { select: { code: true } } } },
               section: { select: { name: true } },
               subject: { select: { name: true } },
             },
@@ -709,7 +751,7 @@ export class GradingService {
       sectionSubjects,
       academicPeriods,
       activities: activities.map((activity) => ({
-        ...mapEvaluationActivity(activity),
+        ...mapEvaluationActivity(activity, resolveEvaluationProfile(activity.sectionSubject.grade.academicLevel?.code)),
         sectionSubjectId: activity.sectionSubjectId,
         academicPeriodId: activity.academicPeriodId,
         courseId: activity.sectionSubject.sectionId,
@@ -722,16 +764,28 @@ export class GradingService {
     }
   }
 
-  async saveActivity(schoolId: string, userId: string, dto: SaveEvaluationActivityDto) {
+  async saveActivity(schoolId: string, userId: string, dto: SaveActivityDto, roles: string[] = []) {
     if (!dto.name.trim()) throw new BadRequestException('El nombre de la actividad es obligatorio')
     if (!Number.isFinite(dto.maxScore) || dto.maxScore <= 0) throw new BadRequestException('El valor de la actividad debe ser mayor que cero')
-    if (!competencyBlockIds.includes(dto.competencyBlockId as typeof competencyBlockIds[number])) throw new BadRequestException('El bloque de competencias no es valido')
-    const competencyBlockWeights = validateCompetencyBlockWeights(dto.competencyBlockId, dto.competencyBlockWeights)
+    // Validate the payload shape before doing I/O; the resolved level narrows it below.
+    validateCompetencyBlockWeights(resolveEvaluationProfile('secundario'), dto.competencyBlockId, dto.competencyBlockWeights)
     const [sectionSubject, academicPeriod] = await Promise.all([
-      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId, schoolId } }),
+      prisma.sectionSubject.findFirst({
+        where: { id: dto.sectionSubjectId, schoolId },
+        include: { grade: { include: { academicLevel: true } } },
+      }),
       prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
     ])
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
+    const evaluationProfile = resolveEvaluationProfile(sectionSubject.grade?.academicLevel?.code)
+    if (!isBlockInEvaluationProfile(evaluationProfile, dto.competencyBlockId)) {
+      throw new BadRequestException('El bloque de competencias no es valido para el nivel academico')
+    }
+    const competencyBlockWeights = validateCompetencyBlockWeights(evaluationProfile, dto.competencyBlockId, dto.competencyBlockWeights)
+    if (dto.instrumentSnapshot && roles.includes('teacher') && !roles.some(role => ['admin', 'director', 'coordinator'].includes(role))) {
+      const assigned = await prisma.teacher.findFirst({ where: { id: sectionSubject.teacherId ?? '', userId, schoolId, status: 'ACTIVE' } })
+      if (!assigned) throw new NotFoundException('Asignatura no disponible para este docente.')
+    }
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
     const schoolYearId = dto.schoolYearId ?? sectionSubject.schoolYearId
     if (schoolYearId !== sectionSubject.schoolYearId) {
@@ -757,6 +811,18 @@ export class GradingService {
       : []
     if (requestedTeams.length !== requestedTeamIds.length) {
       throw new BadRequestException('Uno o mas equipos no pertenecen a esta asignatura')
+    }
+    if (dto.id) {
+      const existing = await prisma.evaluationActivity.findFirst({ where: { id: dto.id, schoolId } })
+      if (!existing) throw new NotFoundException('Evaluation activity not found')
+      if (await prisma.gradesRecord.count({ where: { schoolId, evaluationActivityId: dto.id } })) {
+        throw new BadRequestException('La actividad ya tiene calificaciones; su estructura no puede modificarse.')
+      }
+      if (existing.instrumentSnapshotId) throw new BadRequestException('El instrumento versionado ya fue guardado; cree otra actividad para cambiar su estructura.')
+    }
+    if (dto.instrumentSnapshot) {
+      if (dto.id || dto.instrumentId) throw new BadRequestException('El instrumento preparado debe pertenecer a una actividad nueva.')
+      return this.savePreparedActivity(schoolId, userId, dto, sectionSubject, schoolYearId, competencyBlockWeights, requestedTeams)
     }
     let instrumentId = dto.instrumentId || null
     if (instrumentId) {
@@ -797,6 +863,7 @@ export class GradingService {
       academicPeriodId: dto.academicPeriodId,
       planningEntryId: dto.planningEntryId || null,
       instrumentId,
+      pedagogicalActivityType: dto.pedagogicalActivityType ?? null,
       competencyBlockId: dto.competencyBlockId,
       competencyBlockWeights,
       planningMoment: dto.planningMoment || null,
@@ -841,6 +908,109 @@ export class GradingService {
       include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
     })
     return mapEvaluationActivity(refreshed)
+  }
+
+  private async savePreparedActivity(
+    schoolId: string, userId: string, dto: SaveActivityDto,
+    sectionSubject: { id: string; gradeId: string; subjectId: string; teacherId: string | null },
+    schoolYearId: string, competencyBlockWeights: Record<string, number>,
+    teams: Array<{ id: string; name: string; members: Array<{ enrollmentId: string }> }>,
+  ) {
+    const proposal = dto.instrumentSnapshot!
+    const validTypes = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']
+    if (proposal.kind !== 'RECOMMENDATION' || proposal.catalogVersion !== evaluationCatalogV1.version ||
+      !validTypes.includes(proposal.instrumentType) || dto.instrumentType !== proposal.instrumentType ||
+      !Array.isArray(proposal.criteria) || !proposal.criteria.length || proposal.criteria.length > 12 ||
+      !Number.isInteger(proposal.totalScoreUnits) || proposal.totalScoreUnits !== Math.round(dto.maxScore * 100) ||
+      proposal.criteria.some(criterion => !criterion || typeof criterion.title !== 'string' || !criterion.title.trim() ||
+        typeof criterion.description !== 'string' || !Number.isInteger(criterion.maxScoreUnits) || criterion.maxScoreUnits <= 0 ||
+        !Array.isArray(criterion.descriptors) || !Array.isArray(criterion.sourceReferences) ||
+        !['CURRICULUM_DERIVED', 'CONTEXTUALIZED', 'ACTIVITY_TEMPLATE', 'TEACHER_REUSED'].includes(criterion.sourceType) ||
+        (criterion.sourceType === 'CURRICULUM_DERIVED' && !criterion.sourceReferences.some(ref => ref.text === criterion.description))) ||
+      proposal.criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0) !== proposal.totalScoreUnits ||
+      !dto.instrumentCriteria || !evaluationCatalogV1.activityTypes.some(type => type.id === proposal.activityType) ||
+      dto.pedagogicalActivityType !== proposal.activityType ||
+      proposal.participationMode !== (dto.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL')) {
+      throw new BadRequestException('El instrumento preparado no coincide con la actividad o sus puntos.')
+    }
+    const references = Array.isArray(proposal.selectedCurriculumElements) ? proposal.selectedCurriculumElements : []
+    if (!Array.isArray(proposal.selectedCurriculumElements) || new Set(references.map(ref => ref.elementId)).size !== references.length ||
+      proposal.criteria.some(criterion => criterion.sourceReferences.some(ref => !references.some(source => source.elementId === ref.elementId)))) {
+      throw new BadRequestException('Las fuentes seleccionadas no coinciden con los criterios.')
+    }
+    const fields = dto.instrumentCriteria!
+    if (Number(fields[`${proposal.instrumentType}:meta:criteriaCount`]) !== proposal.criteria.length ||
+      proposal.criteria.some((criterion, index) => fields[`${proposal.instrumentType}:criterion:${index}`]?.trim() !== criterion.title ||
+        (fields[`${proposal.instrumentType}:description:${index}`] != null && fields[`${proposal.instrumentType}:description:${index}`]?.trim() !== criterion.description) ||
+        (proposal.instrumentType !== 'lista-ponderada' && Math.round(Number(fields[`${proposal.instrumentType}:points:${index}`]) * 100) !== criterion.maxScoreUnits) ||
+        (proposal.instrumentType === 'rubrica' && criterion.descriptors.some((descriptor, levelIndex) =>
+          fields[`rubrica:descriptor:${index}:${proposal.levels.length - levelIndex}`]?.trim() !== descriptor.text)))) {
+      throw new BadRequestException('Los criterios del instrumento no coinciden con la versión preparada.')
+    }
+    if (references.length > 12 || references.some(ref => ref.scopeId !== proposal.curriculumScopeId || ref.versionId !== proposal.curriculumVersionId)) {
+      throw new BadRequestException('Referencias curriculares inconsistentes.')
+    }
+    if (proposal.curriculumScopeId || references.length) {
+      const scope = await prisma.curriculumScope.findFirst({ where: { id: proposal.curriculumScopeId ?? undefined, versionId: proposal.curriculumVersionId ?? undefined }, include: { version: true } })
+      const assignmentGrade = await prisma.grade.findUnique({ where: { id: sectionSubject.gradeId }, include: {
+        academicLevel: true, academicCycle: true, defaultModality: true } })
+      const subject = await prisma.subject.findUnique({ where: { id: sectionSubject.subjectId } })
+      const curriculumContext = await prisma.sectionCurriculumContext.findUnique({ where: { sectionSubjectId: sectionSubject.id } })
+      const context = assignmentGrade && subject ? academicContext(assignmentGrade, subject, curriculumContext?.optativeExitName ?? null) : null
+      const scopes = context && scope ? await prisma.curriculumScope.findMany({ where: { versionId: scope.versionId, grade: context.grade, cycle: context.cycle } }) : []
+      const mappings = context && scope ? await prisma.curriculumSubjectMapping.findMany({ where: { subjectId: sectionSubject.subjectId,
+        mappingStatus: 'REVIEWED', scope: { versionId: scope.versionId, grade: context.grade, cycle: context.cycle } } }) : []
+      const resolved = context ? resolveScope(context, scopes, mappings.map(mapping => mapping.scopeId)) : null
+      if (!scope || !context || resolved?.scope?.id !== scope.id || scope.version.level !== context.level || !['DRAFT', 'PUBLISHED'].includes(scope.version.status)) {
+        throw new BadRequestException('El ámbito curricular ya no está autorizado para esta asignatura.')
+      }
+      const elements = await prisma.curriculumElement.findMany({ where: { id: { in: references.map(ref => ref.elementId) }, scopeId: scope.id, versionId: scope.versionId }, include: { sourceSpans: true } })
+      if (elements.length !== references.length || references.some(ref => {
+        const element = elements.find(row => row.id === ref.elementId)
+        return !element || element.originalText !== ref.text || element.elementType !== ref.type ||
+          JSON.stringify(element.sourceSpans.map(span => [span.documentId, span.pdfPage, span.printedPage]).sort()) !== JSON.stringify(ref.sources.map(span => [span.documentId, span.pdfPage, span.printedPage]).sort())
+      })) throw new BadRequestException('Las referencias no coinciden con la fuente curricular.')
+    }
+    const teacher = await prisma.teacher.findFirst({ where: { id: sectionSubject.teacherId ?? '', userId, schoolId, status: 'ACTIVE' } })
+    // Administrative workflows may also create activities, but teacher preferences are private and only recorded for the assigned teacher.
+    return prisma.$transaction(async tx => {
+      const instrument = await tx.evaluationInstrument.create({ data: {
+        schoolId, name: evaluationInstrumentName(proposal.instrumentType), type: proposal.instrumentType,
+        criteria: dto.instrumentCriteria as Prisma.InputJsonValue, maxScore: dto.maxScore,
+      } })
+      const snapshot = await tx.evaluationInstrumentSnapshot.create({ data: {
+        schoolId, instrumentId: instrument.id, payload: proposal as unknown as Prisma.InputJsonValue,
+        catalogVersion: proposal.catalogVersion, curriculumVersionId: proposal.curriculumVersionId,
+        curriculumScopeId: proposal.curriculumScopeId,
+      } })
+      if (references.length) await tx.evaluationSnapshotSource.createMany({ data: references.map(ref => ({ snapshotId: snapshot.id, elementId: ref.elementId, versionId: ref.versionId })) })
+      const activity = await tx.evaluationActivity.create({ data: {
+        schoolId, schoolYearId, sectionSubjectId: dto.sectionSubjectId, academicPeriodId: dto.academicPeriodId,
+        planningEntryId: dto.planningEntryId || null, instrumentId: instrument.id, instrumentSnapshotId: snapshot.id,
+        pedagogicalActivityType: proposal.activityType, competencyBlockId: dto.competencyBlockId,
+        competencyBlockWeights, planningMoment: dto.planningMoment || null, name: dto.name.trim(),
+        description: dto.description?.trim() ?? '', activityType: dto.activityType ?? 'individual', maxScore: dto.maxScore,
+        activityDate: dto.date ? new Date(`${dto.date}T00:00:00.000Z`) : null,
+        evaluationTechnique: dto.evaluationTechnique?.trim() ?? '', studentRole: dto.studentRole?.trim() ?? '',
+        teacherRole: dto.teacherRole?.trim() ?? '', evidenceInstructions: dto.evidenceInstructions?.trim() ?? '',
+        observations: dto.observations?.trim() ?? '', resources: (dto.resources ?? []).map(resource => resource.trim()).filter(Boolean),
+        source: dto.source ?? (dto.planningEntryId ? 'planning' : 'grading'), createdBy: userId,
+      } })
+      for (const team of teams) {
+        const group = await tx.evaluationActivityGroup.create({ data: { activityId: activity.id, courseTeamId: team.id, schoolId, name: team.name } })
+        if (team.members.length) await tx.evaluationActivityGroupMember.createMany({ data: team.members.map(member => ({ groupId: group.id, schoolId, enrollmentId: member.enrollmentId })) })
+      }
+      if (teacher) {
+        const preference = await tx.teacherInstrumentPreference.findFirst({ where: { schoolId, teacherId: userId,
+          curriculumScopeId: proposal.curriculumScopeId, activityType: proposal.activityType, instrumentType: proposal.instrumentType } })
+        const data = { acceptedInstrumentId: instrument.id, criterionTemplateIds: proposal.criteria.map(criterion => criterion.templateId), lastUsedAt: new Date() }
+        if (preference) await tx.teacherInstrumentPreference.update({ where: { id: preference.id }, data: { ...data, useCount: { increment: 1 } } })
+        else await tx.teacherInstrumentPreference.create({ data: { schoolId, teacherId: userId, curriculumScopeId: proposal.curriculumScopeId,
+          activityType: proposal.activityType, instrumentType: proposal.instrumentType, ...data } })
+      }
+      const saved = await tx.evaluationActivity.findUnique({ where: { id: activity.id }, include: { instrument: true, instrumentSnapshot: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } } })
+      return mapEvaluationActivity(saved)
+    })
   }
 
   private async syncActivityTeams(

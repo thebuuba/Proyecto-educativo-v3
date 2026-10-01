@@ -3,25 +3,24 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { EmptyState } from '@/components/ui/EmptyState'
+import { Button } from '@/components/ui/Button'
 import { FeedbackBanner, FilterBar, PageHero, StatusBadge } from '@/components/ui/SemanticUI'
 import { Select } from '@/components/ui/Select'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseTeam } from '@/modules/courses/types'
-import { ActivityInfoModal } from '@/modules/grading/components/ActivityInfoModal'
+import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import '@/modules/grading/grading-design.css'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
 import type { GradingActivity, SectionSubjectOption } from '@/modules/grading/types'
-import { competencyPeriods, getRequestedCompetencyBlockId, type CompetencyBlockId } from '@/modules/grading/utils/competencyGrades'
+import { competencyPeriods, getRequestedCompetencyBlockId } from '@/modules/grading/utils/competencyGrades'
 
 export function GradingPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const requestedSectionSubjectId = searchParams.get('sectionSubjectId') ?? undefined
   const requestedAcademicPeriodId = searchParams.get('academicPeriodId') ?? undefined
-  const requestedAction = searchParams.get('action') === 'create-activity' ? 'create' : undefined
   const requestedBlockId = getRequestedCompetencyBlockId(searchParams)
-  const requestedDraftId = searchParams.get('activityDraftId') ?? undefined
   const requestedActivityId = searchParams.get('activityId') ?? undefined
   const requestedActivityMode = searchParams.get('activityMode') === 'edit' ? 'edit' : searchParams.get('activityMode') === 'evaluate' ? 'evaluate' : searchParams.get('activityMode') === 'results' ? 'results' : 'view'
   const returnCourseId = searchParams.get('returnCourseId')
@@ -57,13 +56,13 @@ export function GradingPage() {
     updateRecoveryScore,
     loadFinalRecords,
     getActivitiesForPeriod,
+    reload,
   } = useGrading({ initialSectionSubjectId: requestedSectionSubjectId, initialAcademicPeriodId: requestedAcademicPeriodId })
 
   const isFinalView = selectedPeriodId === 'final'
   const groupedSectionSubjects = groupSectionSubjects(sectionSubjects)
   const requestedActivity = requestedActivityId ? activities.find((activity) => activity.id === requestedActivityId) : undefined
-  const editBlockId = requestedActivityMode === 'edit' && requestedActivity ? requestedActivity.competencyBlockId as CompetencyBlockId : undefined
-  const directActivityWorkspace = Boolean(requestedAction || requestedActivityId)
+  const directActivityWorkspace = Boolean(requestedActivityId)
   const showRequestedViewer = requestedActivityMode === 'view' && Boolean(requestedActivity)
   const [hideFilters, setHideFilters] = useState(directActivityWorkspace)
   const [teams, setTeams] = useState<CourseTeam[]>([])
@@ -77,6 +76,11 @@ export function GradingPage() {
     void getCourseTeams(selectedSsId).then((result) => { if (active) setTeams(result) }).catch(() => { if (active) setTeams([]) })
     return () => { active = false }
   }, [selectedSsId])
+
+  useEffect(() => {
+    if (requestedActivityMode !== 'edit' || !requestedActivityId || !selectedSsId) return
+    navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, ...(requestedAcademicPeriodId ? { academicPeriodId: requestedAcademicPeriodId } : {}), activityId: requestedActivityId }).toString()}`, { replace: true })
+  }, [navigate, requestedAcademicPeriodId, requestedActivityId, requestedActivityMode, selectedSsId])
 
   function goToSavedActivity(activity: GradingActivity, mode: 'created' | 'updated') {
     if (returnsToSubject && returnCourseId && returnSubjectId) {
@@ -96,16 +100,14 @@ export function GradingPage() {
 
   function navigateActivityMode(mode: 'edit' | 'evaluate') {
     if (!requestedActivityId) return
+    if (mode === 'edit') {
+      navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, ...(requestedAcademicPeriodId ? { academicPeriodId: requestedAcademicPeriodId } : {}), activityId: requestedActivityId }).toString()}`)
+      return
+    }
     const next = new URLSearchParams(searchParams)
     next.set('activityId', requestedActivityId)
     next.set('activityMode', mode)
     navigate(`/calificaciones?${next.toString()}`)
-  }
-
-  async function handleAddActivity(activity: Omit<GradingActivity, 'id'>) {
-    const created = await addActivity(activity)
-    if (returnsToSubject || returnsToActivities) goToSavedActivity(created, 'created')
-    return created
   }
 
   async function handleUpdateActivity(activity: GradingActivity) {
@@ -144,7 +146,7 @@ export function GradingPage() {
         </>
       ) : null}
 
-      {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
+      {error ? <FeedbackBanner tone="danger"><span>{error}</span><Button size="sm" variant="outline" className="ml-3" onClick={() => void reload()}>Reintentar</Button></FeedbackBanner> : null}
 
       {!selectedSsId ? (
         <EmptyState title="Selecciona un curso" description="Elige el curso y la asignatura para gestionar actividades, calificaciones y recuperación." icon={GraduationCap} tone="warning" />
@@ -153,6 +155,8 @@ export function GradingPage() {
       ) : (
         <div className="grading-workspace">
           <GradingBook
+            evaluationProfile={selectedSs?.evaluationProfile}
+            sectionSubjectId={selectedSsId}
             students={students}
             teams={teams}
             activities={activities}
@@ -165,14 +169,12 @@ export function GradingPage() {
             saving={saving}
             cellSaveStates={cellSaveStates}
             {...(isFinalView ? { initialView: 'final' as const } : {})}
-            initialActivityAction={requestedAction ?? (requestedActivityMode === 'edit' && requestedActivity ? 'create' : undefined)}
-            initialActivityBlockId={requestedBlockId ?? editBlockId}
-            initialActivityDraftId={requestedDraftId}
+            initialActivityBlockId={requestedBlockId}
             initialActivityId={requestedActivityMode === 'view' ? undefined : requestedActivityId}
             initialActivityMode={requestedActivityMode}
             originReturnLabel={originReturnLabel}
             onReturnToOrigin={returnToOrigin}
-            onAddActivity={handleAddActivity}
+            onAddActivity={addActivity}
             onUpdateActivity={handleUpdateActivity}
             onDeleteActivity={deleteActivity}
             onSaveScore={updateActivityScore}
@@ -180,8 +182,9 @@ export function GradingPage() {
             loadFinalRecords={loadFinalRecords}
             getActivitiesForPeriod={getActivitiesForPeriod}
             onActivityWorkspaceChange={setHideFilters}
+            onCreateActivityRequested={(blockId) => navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, ...(requestedAcademicPeriodId ? { academicPeriodId: requestedAcademicPeriodId } : {}), ...(blockId ? { competencyBlockId: blockId } : {}) }).toString()}`)}
           />
-          {showRequestedViewer && requestedActivity ? <ActivityInfoModal activity={requestedActivity} onClose={() => { if (returnToOrigin) returnToOrigin(); else navigate('/calificaciones') }} onEdit={() => navigateActivityMode('edit')} onEvaluate={() => navigateActivityMode('evaluate')} /> : null}
+          {showRequestedViewer && requestedActivity ? <ActivityInfoModal activity={requestedActivity} onClose={() => { if (returnToOrigin) returnToOrigin(); else navigate('/calificaciones') }} onEdit={() => navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, academicPeriodId: requestedAcademicPeriodId ?? '', activityId: requestedActivity.id }).toString()}`)} onEvaluate={() => navigateActivityMode('evaluate')} /> : null}
         </div>
       )}
     </section>

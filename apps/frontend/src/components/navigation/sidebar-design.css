@@ -4,7 +4,7 @@
 
 .sidebar-link {
   display: flex;
-  min-height: 38px;
+  min-height: 44px;
   align-items: center;
   gap: 10px;
   border-radius: 18px;
@@ -32,13 +32,22 @@
   color: var(--foreground);
 }
 
-.sidebar-link-featured .sidebar-link-icon {
+.sidebar-link-icon {
   display: grid;
   width: 36px;
   height: 36px;
   flex: none;
   place-items: center;
   border-radius: 12px;
+  background: var(--muted);
+}
+
+.sidebar-link:hover .sidebar-link-icon,
+.sidebar-link.is-active .sidebar-link-icon {
+  background: var(--primary-container);
+}
+
+.sidebar-link-featured .sidebar-link-icon {
   background: var(--primary-container);
   color: var(--primary);
 }
@@ -53,11 +62,14 @@
   color: var(--palette-teal);
 }
 
-.sidebar-link-icon {
-  display: grid;
+.sidebar-svg-icon {
+  display: block;
   width: 20px;
-  flex: none;
-  place-items: center;
+  height: 20px;
+  background: currentColor;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 
 .sidebar-link-title {
@@ -65,6 +77,10 @@
   font-size: 13px;
   font-weight: 600;
   line-height: 1.2;
+}
+
+.sidebar-link[data-nav-path='/inicio'] .sidebar-link-title {
+  font-weight: 400;
 }
 
 .sidebar-link-description {
@@ -75,17 +91,48 @@
   line-height: 1.1;
 }
 
+.sidebar-tooltip {
+  position: fixed;
+  z-index: 60;
+  left: 84px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--foreground) 12%, transparent);
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 .sidebar-shell[data-sidebar-expanded='false'] .sidebar-copy {
   display: none;
 }
 
 @media (max-width: 1023px) {
+  .sidebar-tooltip {
+    display: none;
+  }
+
   .sidebar-shell .sidebar-copy {
     display: block !important;
   }
 }
 
 @media (min-width: 1024px) {
+  .sidebar-shell[data-sidebar-expanded='false'] .sidebar-link-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sidebar-shell[data-sidebar-expanded='false'] .sidebar-svg-icon {
+    width: 24px;
+    height: 24px;
+  }
+
   .sidebar-shell[data-sidebar-expanded='false'] .sidebar-header {
     padding-inline: 18px;
   }

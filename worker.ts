@@ -9,6 +9,7 @@ let initialization: Promise<void> | undefined
 type WorkerEnv = {
   HYPERDRIVE?: { connectionString: string }
   FRONTEND_URL?: string
+  AUTH_DEVICE_TRUST_ENABLED?: string
 }
 
 async function initialize(workerEnv: WorkerEnv) {
@@ -21,6 +22,7 @@ async function initialize(workerEnv: WorkerEnv) {
   if (workerEnv.FRONTEND_URL) {
     process.env.FRONTEND_URL = workerEnv.FRONTEND_URL
   }
+  process.env.AUTH_DEVICE_TRUST_ENABLED = workerEnv.AUTH_DEVICE_TRUST_ENABLED ?? 'false'
 
   const app = await createApplication()
   await app.listen(3000)

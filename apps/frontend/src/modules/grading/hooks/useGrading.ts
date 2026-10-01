@@ -2,12 +2,11 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import {
   deleteGrade,
-  deleteEvaluationActivity,
   getAnnualGradingWorkspace,
   getGradingWorkspace,
   saveGrade,
-  saveEvaluationActivity,
 } from '@/modules/grading/services/gradingService'
+import { deleteActivity as deleteActivityRequest, saveActivity as saveActivityRequest } from '@/modules/activities/services/activitiesService'
 import type {
   AcademicPeriodOpt,
   EvaluatedInstrumentResult,
@@ -259,7 +258,7 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
     setSaving(true)
     setError(null)
     try {
-      const created = await saveEvaluationActivity({
+      const created = await saveActivityRequest({
         ...activity,
         sectionSubjectId: selectedSsId,
         academicPeriodId,
@@ -285,7 +284,7 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
     setSaving(true)
     setError(null)
     try {
-      const saved = await saveEvaluationActivity({
+      const saved = await saveActivityRequest({
         ...activity,
         sectionSubjectId: selectedSsId,
         academicPeriodId,
@@ -310,7 +309,7 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
     setSaving(true)
     setError(null)
     try {
-      await deleteEvaluationActivity(activityId)
+      await deleteActivityRequest(activityId)
       setActivities((current) => {
         const updated = current.filter((item) => item.id !== activityId)
         setActivitiesByPeriod((byPeriod) => new Map(byPeriod).set(selectedPeriodId, updated))
@@ -531,5 +530,6 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
     refresh,
     loadFinalRecords,
     getActivitiesForPeriod,
+    reload: loadInitialData,
   }
 }

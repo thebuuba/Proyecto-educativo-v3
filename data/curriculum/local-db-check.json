@@ -1,0 +1,718 @@
+{
+  "generatedAt": "2026-09-27T21:58:28.148Z",
+  "target": {
+    "host": "127.0.0.1",
+    "port": "54332",
+    "database": "postgres"
+  },
+  "migrationSha256": "d4f9f31bdd7ba8726cc0ef8e71ded39e678684fcacc055f17bc791ab754d96bb",
+  "imports": [
+    {
+      "prefix": "primary-2023",
+      "before": {
+        "curriculum_versions": 2,
+        "curriculum_documents": 2,
+        "curriculum_scopes": 148,
+        "curriculum_elements": 17031,
+        "curriculum_element_relations": 639,
+        "curriculum_source_spans": 17031,
+        "curriculum_subject_mappings": 0
+      },
+      "first": "MINERD_PRIMARIA_2023: ya importado, sin cambios",
+      "once": {
+        "curriculum_versions": 2,
+        "curriculum_documents": 2,
+        "curriculum_scopes": 148,
+        "curriculum_elements": 17031,
+        "curriculum_element_relations": 639,
+        "curriculum_source_spans": 17031,
+        "curriculum_subject_mappings": 0
+      },
+      "second": "MINERD_PRIMARIA_2023: ya importado, sin cambios",
+      "twice": {
+        "curriculum_versions": 2,
+        "curriculum_documents": 2,
+        "curriculum_scopes": 148,
+        "curriculum_elements": 17031,
+        "curriculum_element_relations": 639,
+        "curriculum_source_spans": 17031,
+        "curriculum_subject_mappings": 0
+      },
+      "actual": {
+        "code": "MINERD_PRIMARIA_2023",
+        "status": "DRAFT",
+        "documents": 1,
+        "scopes": 59,
+        "elements": 6331,
+        "relations": 135,
+        "spans": 6331
+      },
+      "datasetSha256": "0ed2b74c5b679b8b908ec7e43adb4d42371b0ed63b95654b81d1ce6c6b5e2b24",
+      "changedHashRejected": true,
+      "temporary": "C:\\Users\\alexa\\AppData\\Local\\Temp\\aulabase-curriculum-check-CQgc8f"
+    },
+    {
+      "prefix": "secondary-2023",
+      "before": {
+        "curriculum_versions": 2,
+        "curriculum_documents": 2,
+        "curriculum_scopes": 148,
+        "curriculum_elements": 17031,
+        "curriculum_element_relations": 639,
+        "curriculum_source_spans": 17031,
+        "curriculum_subject_mappings": 0
+      },
+      "first": "MINERD_SECUNDARIA_2023: ya importado, sin cambios",
+      "once": {
+        "curriculum_versions": 2,
+        "curriculum_documents": 2,
+        "curriculum_scopes": 148,
+        "curriculum_elements": 17031,
+        "curriculum_element_relations": 639,
+        "curriculum_source_spans": 17031,
+        "curriculum_subject_mappings": 0
+      },
+      "second": "MINERD_SECUNDARIA_2023: ya importado, sin cambios",
+      "twice": {
+        "curriculum_versions": 2,
+        "curriculum_documents": 2,
+        "curriculum_scopes": 148,
+        "curriculum_elements": 17031,
+        "curriculum_element_relations": 639,
+        "curriculum_source_spans": 17031,
+        "curriculum_subject_mappings": 0
+      },
+      "actual": {
+        "code": "MINERD_SECUNDARIA_2023",
+        "status": "DRAFT",
+        "documents": 1,
+        "scopes": 89,
+        "elements": 10700,
+        "relations": 504,
+        "spans": 10700
+      },
+      "datasetSha256": "9cdfc8d51bc44918d41c611ed650bff583f6139532b130e7b9a75855247b4da3",
+      "changedHashRejected": true,
+      "temporary": "C:\\Users\\alexa\\AppData\\Local\\Temp\\aulabase-curriculum-check-SbAHwr"
+    }
+  ],
+  "queries": [
+    {
+      "context": [
+        "PRIMARY",
+        5,
+        "Ciencias de la Naturaleza",
+        null
+      ],
+      "result": [
+        {
+          "level": "PRIMARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Ciencias de la Naturaleza",
+          "optative_exit_name": null,
+          "element_type": "ACHIEVEMENT_INDICATOR",
+          "count": 9
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Ciencias de la Naturaleza",
+          "optative_exit_name": null,
+          "element_type": "ATTITUDE_VALUE",
+          "count": 33
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Ciencias de la Naturaleza",
+          "optative_exit_name": null,
+          "element_type": "CONCEPT",
+          "count": 45
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Ciencias de la Naturaleza",
+          "optative_exit_name": null,
+          "element_type": "EVALUATION_CRITERION",
+          "count": 8
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Ciencias de la Naturaleza",
+          "optative_exit_name": null,
+          "element_type": "FUNDAMENTAL_COMPETENCY",
+          "count": 3
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Ciencias de la Naturaleza",
+          "optative_exit_name": null,
+          "element_type": "PROCEDURE",
+          "count": 45
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Ciencias de la Naturaleza",
+          "optative_exit_name": null,
+          "element_type": "SPECIFIC_COMPETENCY",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "context": [
+        "PRIMARY",
+        1,
+        "Lengua Española",
+        null
+      ],
+      "result": [
+        {
+          "level": "PRIMARY",
+          "cycle": 1,
+          "grade": 1,
+          "area_name": "Lengua Española",
+          "subject_name": "Lengua Española",
+          "optative_exit_name": null,
+          "element_type": "ACHIEVEMENT_INDICATOR",
+          "count": 9
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 1,
+          "grade": 1,
+          "area_name": "Lengua Española",
+          "subject_name": "Lengua Española",
+          "optative_exit_name": null,
+          "element_type": "ATTITUDE_VALUE",
+          "count": 42
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 1,
+          "grade": 1,
+          "area_name": "Lengua Española",
+          "subject_name": "Lengua Española",
+          "optative_exit_name": null,
+          "element_type": "CONCEPT",
+          "count": 60
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 1,
+          "grade": 1,
+          "area_name": "Lengua Española",
+          "subject_name": "Lengua Española",
+          "optative_exit_name": null,
+          "element_type": "EVALUATION_CRITERION",
+          "count": 10
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 1,
+          "grade": 1,
+          "area_name": "Lengua Española",
+          "subject_name": "Lengua Española",
+          "optative_exit_name": null,
+          "element_type": "FUNDAMENTAL_COMPETENCY",
+          "count": 3
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 1,
+          "grade": 1,
+          "area_name": "Lengua Española",
+          "subject_name": "Lengua Española",
+          "optative_exit_name": null,
+          "element_type": "PROCEDURE",
+          "count": 235
+        },
+        {
+          "level": "PRIMARY",
+          "cycle": 1,
+          "grade": 1,
+          "area_name": "Lengua Española",
+          "subject_name": "Lengua Española",
+          "optative_exit_name": null,
+          "element_type": "SPECIFIC_COMPETENCY",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "context": [
+        "SECONDARY",
+        2,
+        "Matemática",
+        null
+      ],
+      "result": [
+        {
+          "level": "SECONDARY",
+          "cycle": 1,
+          "grade": 2,
+          "area_name": "Matemática",
+          "subject_name": "Matemática",
+          "optative_exit_name": null,
+          "element_type": "ACHIEVEMENT_INDICATOR",
+          "count": 21
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 1,
+          "grade": 2,
+          "area_name": "Matemática",
+          "subject_name": "Matemática",
+          "optative_exit_name": null,
+          "element_type": "ATTITUDE_VALUE",
+          "count": 9
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 1,
+          "grade": 2,
+          "area_name": "Matemática",
+          "subject_name": "Matemática",
+          "optative_exit_name": null,
+          "element_type": "CONCEPT",
+          "count": 10
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 1,
+          "grade": 2,
+          "area_name": "Matemática",
+          "subject_name": "Matemática",
+          "optative_exit_name": null,
+          "element_type": "FUNDAMENTAL_COMPETENCY",
+          "count": 7
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 1,
+          "grade": 2,
+          "area_name": "Matemática",
+          "subject_name": "Matemática",
+          "optative_exit_name": null,
+          "element_type": "PROCEDURE",
+          "count": 26
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 1,
+          "grade": 2,
+          "area_name": "Matemática",
+          "subject_name": "Matemática",
+          "optative_exit_name": null,
+          "element_type": "SPECIFIC_COMPETENCY",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "context": [
+        "SECONDARY",
+        4,
+        "Apreciación y Producción Literarias",
+        "Humanidades y Lenguas Modernas"
+      ],
+      "result": [
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Lenguas Modernas",
+          "element_type": "ACHIEVEMENT_INDICATOR",
+          "count": 21
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Lenguas Modernas",
+          "element_type": "ATTITUDE_VALUE",
+          "count": 13
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Lenguas Modernas",
+          "element_type": "CONCEPT",
+          "count": 39
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Lenguas Modernas",
+          "element_type": "FUNDAMENTAL_COMPETENCY",
+          "count": 7
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Lenguas Modernas",
+          "element_type": "PROCEDURE",
+          "count": 28
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Lenguas Modernas",
+          "element_type": "SPECIFIC_COMPETENCY",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "context": [
+        "SECONDARY",
+        4,
+        "Apreciación y Producción Literarias",
+        "Humanidades y Ciencias Sociales"
+      ],
+      "result": [
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Ciencias Sociales",
+          "element_type": "ACHIEVEMENT_INDICATOR",
+          "count": 21
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Ciencias Sociales",
+          "element_type": "ATTITUDE_VALUE",
+          "count": 10
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Ciencias Sociales",
+          "element_type": "CONCEPT",
+          "count": 28
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Ciencias Sociales",
+          "element_type": "FUNDAMENTAL_COMPETENCY",
+          "count": 7
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Ciencias Sociales",
+          "element_type": "PROCEDURE",
+          "count": 28
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 4,
+          "area_name": "Lengua Española",
+          "subject_name": "Apreciación y Producción Literarias",
+          "optative_exit_name": "Humanidades y Ciencias Sociales",
+          "element_type": "SPECIFIC_COMPETENCY",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "context": [
+        "SECONDARY",
+        5,
+        "Química y Computación",
+        "Ciencias y Tecnología"
+      ],
+      "result": [
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Química y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "ACHIEVEMENT_INDICATOR",
+          "count": 37
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Química y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "ATTITUDE_VALUE",
+          "count": 14
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Química y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "CONCEPT",
+          "count": 65
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Química y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "FUNDAMENTAL_COMPETENCY",
+          "count": 7
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Química y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "PROCEDURE",
+          "count": 58
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 5,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Química y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "SPECIFIC_COMPETENCY",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "context": [
+        "SECONDARY",
+        6,
+        "Física y Computación",
+        "Ciencias y Tecnología"
+      ],
+      "result": [
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 6,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Física y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "ACHIEVEMENT_INDICATOR",
+          "count": 36
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 6,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Física y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "ATTITUDE_VALUE",
+          "count": 9
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 6,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Física y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "CONCEPT",
+          "count": 135
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 6,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Física y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "FUNDAMENTAL_COMPETENCY",
+          "count": 7
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 6,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Física y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "PROCEDURE",
+          "count": 113
+        },
+        {
+          "level": "SECONDARY",
+          "cycle": 2,
+          "grade": 6,
+          "area_name": "Ciencias de la Naturaleza",
+          "subject_name": "Física y Computación",
+          "optative_exit_name": "Ciencias y Tecnología",
+          "element_type": "SPECIFIC_COMPETENCY",
+          "count": 7
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "check": "app_backend SELECT",
+      "passed": true
+    },
+    {
+      "check": "FK de ámbito inexistente",
+      "sqlstate": "23503"
+    },
+    {
+      "check": "DRAFT no puede publicarse directamente",
+      "sqlstate": "P0001"
+    },
+    {
+      "check": "Inmutabilidad de versión sintética (ROLLBACK)",
+      "sqlstate": "P0001"
+    },
+    {
+      "check": "Inmutabilidad de contenido sintético (ROLLBACK)",
+      "sqlstate": "P0001"
+    },
+    {
+      "check": "RLS anon: lectura 7 tablas; escritura versiones denegada",
+      "passed": true
+    },
+    {
+      "check": "RLS authenticated: lectura 7 tablas; escritura versiones denegada",
+      "passed": true
+    }
+  ],
+  "server": "PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 15.2.0, 64-bit",
+  "catalog": [
+    {
+      "relname": "curriculum_documents",
+      "relrowsecurity": true,
+      "backend_crud": true,
+      "policies": 1,
+      "foreign_keys": 1,
+      "indexes": 3,
+      "triggers": 1
+    },
+    {
+      "relname": "curriculum_element_relations",
+      "relrowsecurity": true,
+      "backend_crud": true,
+      "policies": 1,
+      "foreign_keys": 3,
+      "indexes": 2,
+      "triggers": 1
+    },
+    {
+      "relname": "curriculum_elements",
+      "relrowsecurity": true,
+      "backend_crud": true,
+      "policies": 1,
+      "foreign_keys": 2,
+      "indexes": 5,
+      "triggers": 1
+    },
+    {
+      "relname": "curriculum_scopes",
+      "relrowsecurity": true,
+      "backend_crud": true,
+      "policies": 1,
+      "foreign_keys": 1,
+      "indexes": 5,
+      "triggers": 1
+    },
+    {
+      "relname": "curriculum_source_spans",
+      "relrowsecurity": true,
+      "backend_crud": true,
+      "policies": 1,
+      "foreign_keys": 3,
+      "indexes": 3,
+      "triggers": 1
+    },
+    {
+      "relname": "curriculum_subject_mappings",
+      "relrowsecurity": true,
+      "backend_crud": true,
+      "policies": 1,
+      "foreign_keys": 2,
+      "indexes": 3,
+      "triggers": 0
+    },
+    {
+      "relname": "curriculum_versions",
+      "relrowsecurity": true,
+      "backend_crud": true,
+      "policies": 1,
+      "foreign_keys": 0,
+      "indexes": 2,
+      "triggers": 1
+    }
+  ],
+  "finalVersions": [
+    {
+      "code": "MINERD_PRIMARIA_2023",
+      "status": "DRAFT"
+    },
+    {
+      "code": "MINERD_SECUNDARIA_2023",
+      "status": "DRAFT"
+    }
+  ],
+  "passed": true
+}

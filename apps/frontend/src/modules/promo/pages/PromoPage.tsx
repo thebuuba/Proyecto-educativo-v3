@@ -1,314 +1,257 @@
-import {
-  ArrowRight,
-  Bell,
-  CalendarDays,
-  ChartNoAxesColumn,
-  Check,
-  ChevronRight,
-  GraduationCap,
-  Shield,
-  SquareCheckBig,
-  Star,
-  Users,
-} from 'lucide-react'
+import { ArrowRight, Check, CheckCircle2, MessageCircle } from 'lucide-react'
 import { Link, Navigate } from 'react-router-dom'
-import { type ComponentType, type ReactNode, useEffect, useRef, useState } from 'react'
-
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
+import { ProductDemo } from '@/modules/promo/components/ProductDemo'
+import { faqs, modules, steps } from '@/modules/promo/data/home-content'
 
-const primaryLight = 'color-mix(in srgb, var(--primary) 14%, var(--card))'
-
-const features = [
-  { icon: SquareCheckBig, title: 'Asistencia digital', desc: 'Registra la asistencia de tus grupos en segundos, desde cualquier dispositivo. Genera reportes automáticos al instante.', tone: 'success' },
-  { icon: Star, title: 'Calificaciones inteligentes', desc: 'Carga notas, define criterios de evaluación y genera boletas de calificaciones con un clic.', tone: 'info' },
-  { icon: CalendarDays, title: 'Agenda docente', desc: 'Organiza tu semana, programa exámenes, reuniones y entrega de tareas con recordatorios automáticos.', tone: 'warning' },
-  { icon: Users, title: 'Gestión de grupos', desc: 'Administra tus secciones, listas de estudiantes y comunícate con padres de familia fácilmente.', tone: 'info' },
-  { icon: ChartNoAxesColumn, title: 'Reportes y analíticos', desc: 'Visualiza el rendimiento académico de tus estudiantes con gráficas claras y exportables.', tone: 'success' },
-  { icon: Bell, title: 'Notificaciones', desc: 'Recibe alertas de estudiantes en riesgo, ausencias reiteradas y fechas importantes sin perder nada.', tone: 'warning' },
-] as const
-
-const stats = [
-  { value: 12400, label: 'Docentes activos', suffix: '+', icon: GraduationCap },
-  { value: 340, label: 'Instituciones', suffix: '+', icon: Shield },
-  { value: 98, label: 'Satisfacción docente', suffix: '%', icon: Star },
-  { value: 4200000, label: 'Asistencias registradas', suffix: '+', icon: SquareCheckBig, compact: true },
+const teacherBenefits = [
+  'Pasa lista por clase desde el celular o la computadora.',
+  'Registra calificaciones por actividad e instrumento de evaluación.',
+  'Prepara tus planificaciones y compártelas con coordinación.',
+  'Anota observaciones en la bitácora y dales seguimiento.',
+  'Consulta quién necesita apoyo según asistencia, promedio o conducta.',
 ]
-
-const plans = [
-  {
-    name: 'Gratuito', price: '$0', period: 'para siempre', desc: 'Ideal para docentes que están comenzando.',
-    features: ['Hasta 2 grupos', 'Asistencia digital', 'Hasta 60 estudiantes', 'Soporte por correo'],
-    cta: 'Empezar gratis', highlight: false,
-  },
-  {
-    name: 'Pro', price: '$12', period: '/ mes por docente', desc: 'Para docentes que quieren más potencia.',
-    features: ['Grupos ilimitados', 'Calificaciones + reportes', 'Agenda completa', 'Notificaciones automáticas', 'Soporte prioritario'],
-    cta: 'Comenzar prueba gratis', highlight: true,
-  },
-  {
-    name: 'Institución', price: 'Personalizado', period: 'contactar ventas', desc: 'Para colegios y redes educativas.',
-    features: ['Todo en Pro', 'Panel de administrador', 'Gestión de directivos', 'SSO / Active Directory', 'SLA garantizado'],
-    cta: 'Hablar con ventas', highlight: false,
-  },
+const centerBenefits = [
+  'Organiza el centro por año escolar y períodos.',
+  'Gestiona cursos, asignaturas, estudiantes y matrículas.',
+  'Revisa planificaciones y el avance de calificaciones por curso.',
+  'Asigna perfiles según el rol de cada persona.',
+  'Consulta reportes del centro con la información que registran los docentes.',
 ]
-
-function formatStat(value: number, compact?: boolean): string {
-  if (compact) return `${(value / 1000000).toFixed(1)}M`
-  return value.toLocaleString('es-DO')
-}
-
-function AnimatedStat({ value, label, suffix, icon: Icon, compact }: {
-  value: number
-  label: string
-  suffix: string
-  icon: ComponentType<{ size?: number; className?: string }>
-  compact?: boolean
-}) {
-  const [count, setCount] = useState(0)
-  const ref = useRef<HTMLDivElement>(null)
-  const counted = useRef(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !counted.current) {
-        counted.current = true
-        const duration = 1500
-        const steps = 30
-        const stepTime = duration / steps
-        const increment = value / steps
-        let current = 0
-        const timer = setInterval(() => {
-          current += increment
-          if (current >= value) {
-            setCount(value)
-            clearInterval(timer)
-          } else {
-            setCount(Math.floor(current))
-          }
-        }, stepTime)
-        obs.disconnect()
-      }
-    }, { threshold: 0.5 })
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [value])
-
-  return (
-    <div ref={ref} className="flex items-center gap-4">
-      <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary/14 text-foreground">
-        <Icon size={20} />
-      </div>
-      <div>
-        <p className="text-2xl font-extrabold leading-none text-foreground">{compact ? formatStat(count, true) : formatStat(count)}{suffix}</p>
-        <p className="mt-0.5 text-sm text-muted-foreground">{label}</p>
-      </div>
-    </div>
-  )
-}
-
-function useScrollReveal<T extends HTMLElement>(delay: number = 0) {
-  const ref = useRef<T>(null)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => setVisible(true), delay)
-        obs.disconnect()
-      }
-    }, { threshold: 0.1 })
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [delay])
-
-  return { ref, visible }
-}
-
-function RevealSection({ children, delay = 0, className = '' }: { children: ReactNode; delay?: number; className?: string }) {
-  const { ref, visible } = useScrollReveal<HTMLDivElement>(delay)
-  return <div ref={ref} className={`transition-all duration-700 ${visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'} ${className}`}>{children}</div>
+const tones: Record<string, string> = {
+  brand: 'bg-primary/12 text-primary',
+  success: 'bg-success/15 text-success',
+  warning: 'bg-warning/25 text-foreground',
+  incident: 'bg-destructive/12 text-destructive',
 }
 
 export function PromoPage() {
-  const { isAuthenticated, loading } = useAuth()
-
-  if (loading) return null
+  const { isAuthenticated } = useAuth()
   if (isAuthenticated) return <Navigate to="/inicio" replace />
-
   return (
     <PromoLayout>
-      <section className="relative flex overflow-hidden py-10 sm:py-12 lg:min-h-[calc(100vh-64px)] lg:items-start lg:py-16">
-        <div className="pointer-events-none absolute -right-40 -top-40 size-[500px] rounded-full bg-primary opacity-[0.04]" />
-        <div className="pointer-events-none absolute -bottom-32 -left-32 size-[400px] rounded-full bg-warning opacity-[0.06]" />
-
-        <div className="grid w-full grid-cols-1 items-start gap-10 px-4 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:px-14 2xl:px-20">
-          <div className="min-w-0">
-            <span className="fu fu1 mb-6 inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/12 px-3 py-1.5 text-[11px] font-bold text-foreground">
-              La plataforma #1 para docentes
-            </span>
-            <h1 className="fu fu2 mb-5 text-[clamp(2.5rem,10vw,3.25rem)] font-extrabold leading-[1.06] text-foreground">
-              Tu aula,<br /><span className="text-primary-variant">digitalizada</span><br />y organizada.
-            </h1>
-            <p className="fu fu3 mb-8 max-w-[440px] text-[clamp(1rem,3.6vw,1.0625rem)] leading-relaxed text-muted-foreground">
-              Gestiona asistencia, calificaciones, grupos y agenda desde una sola plataforma diseñada para docentes modernos.
+      <section className="overflow-hidden">
+        <div className="grid w-full items-center gap-10 px-4 pb-16 pt-10 sm:px-6 sm:pt-16 lg:px-[4vw] lg:pb-24 lg:pt-20 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
+          <div className="mx-auto max-w-3xl text-center xl:mx-0 xl:text-left">
+            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm">
+              <span className="size-1.5 rounded-full bg-success" />
+              Para docentes y centros de República Dominicana
             </p>
-            <div className="fu fu4 flex flex-wrap items-center gap-4">
-              <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-7 py-4 text-[15px] font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-colors hover:bg-primary-hover sm:w-auto">
-                Empezar gratis <ArrowRight size={16} />
+            <h1 className="mt-5 text-[32px] font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-[56px]">
+              Tu trabajo académico, <span className="text-primary">organizado</span> en un solo
+              lugar
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg xl:mx-0">
+              Aula Base reúne cursos, asistencia, evaluaciones, calificaciones, planificación y
+              bitácora para que registres la información una vez y consultes el progreso de tus
+              estudiantes cuando lo necesites.
+            </p>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row xl:justify-start">
+              <Link
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary-hover"
+                to="/registro"
+              >
+                Crear mi cuenta <ArrowRight size={18} />
               </Link>
-              <Link to="/login" className="flex w-full items-center justify-center gap-2 rounded-2xl border border-border bg-card px-7 py-4 text-[15px] font-semibold text-foreground transition hover:bg-muted sm:w-auto">
-                Ver demo <ChevronRight size={16} />
+              <Link
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-border bg-card px-6 font-semibold hover:bg-muted"
+                to="/contacto?motivo=centro"
+              >
+                <MessageCircle size={18} /> Hablar con el equipo
               </Link>
             </div>
-            <p className="fu fu5 mt-4 text-xs text-muted-foreground">Sin tarjeta de crédito · Gratis para siempre en plan básico</p>
-          </div>
-
-          <div className="fu fu4 relative min-w-0 pb-16 sm:pb-10">
-            <div className="overflow-hidden rounded-3xl border border-border shadow-2xl" style={{ boxShadow: '0 24px 64px color-mix(in srgb, var(--primary) 18%, transparent)' }}>
-              <div className="bg-background p-3 sm:p-5">
-                <div className="mb-4 flex items-center justify-between">
-                  <div><p className="text-xs font-bold text-muted-foreground">Buenos días</p><p className="text-base font-extrabold text-foreground">Prof. García</p></div>
-                  <div className="flex gap-2"><span className="size-3 rounded-full bg-destructive" /><span className="size-3 rounded-full bg-warning" /><span className="size-3 rounded-full bg-success" /></div>
-                </div>
-
-                <div className="mb-3 grid grid-cols-3 gap-2">
-                  {[
-                    { label: 'Asistencia', value: '94%', tone: 'success' },
-                    { label: 'Mis grupos', value: '6', tone: 'info' },
-                    { label: 'Pendientes', value: '3', tone: 'warning' },
-                  ].map((item) => (
-                    <div key={item.label} className="min-w-0 rounded-xl bg-card p-2.5 sm:p-3">
-                      <p className="mb-1 text-[10px] font-medium text-muted-foreground">{item.label}</p>
-                      <p className="text-[clamp(1.125rem,6vw,1.25rem)] font-extrabold" style={{ color: toneColor(item.tone) }}>{item.value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="rounded-xl bg-card p-3">
-                  <p className="mb-2.5 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Asistencia · 3.º B hoy</p>
-                  {[
-                    { name: 'Ana Rodríguez', status: 'Presente', tone: 'success' },
-                    { name: 'Carlos López', status: 'Ausente', tone: 'danger' },
-                    { name: 'María González', status: 'Presente', tone: 'success' },
-                    { name: 'Diego Martínez', status: 'Excusa', tone: 'warning' },
-                  ].map((student) => (
-                    <div key={student.name} className="flex items-center justify-between gap-2 border-b border-border/60 py-1.5 last:border-0">
-                      <div className="flex min-w-0 items-center gap-2">
-                        <div className="flex size-5 items-center justify-center rounded-full bg-primary text-[9px] font-bold text-primary-foreground">{student.name[0]}</div>
-                        <p className="truncate text-[11px] font-medium text-foreground">{student.name}</p>
-                      </div>
-                      <span className="shrink-0 rounded-full px-2 py-0.5 text-[9px] font-bold text-foreground" style={{ background: toneBackground(student.tone) }}>{student.status}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 left-3 flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-lg sm:-bottom-4 sm:-left-2 md:-left-4">
-              <div className="flex size-9 items-center justify-center rounded-xl bg-success/18 text-foreground"><SquareCheckBig size={18} /></div>
-              <div><p className="text-xs font-extrabold text-foreground">Asistencia guardada</p><p className="text-[10px] text-muted-foreground">3.º B · 28 alumnos</p></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="caracteristicas" className="border-y border-border bg-card py-10">
-        <div className="grid w-full grid-cols-1 gap-6 px-4 sm:grid-cols-2 sm:px-8 md:grid-cols-4 lg:px-14 2xl:px-20">
-          {stats.map((stat) => <AnimatedStat key={stat.label} {...stat} />)}
-        </div>
-      </section>
-
-      <RevealSection>
-        <section className="w-full px-4 py-16 sm:px-8 md:py-24 lg:px-14 2xl:px-20">
-          <div className="mb-10 text-center md:mb-14">
-            <span className="mb-4 inline-flex rounded-full border border-primary/30 bg-primary/12 px-3 py-1.5 text-[11px] font-bold text-foreground">Características</span>
-            <h2 className="mb-4 text-[clamp(2rem,8vw,2.375rem)] font-extrabold leading-tight text-foreground">Todo lo que un docente<br />necesita en un solo lugar</h2>
-            <p className="mx-auto max-w-[480px] text-base text-muted-foreground">Diseñado por educadores, para educadores. Cada función está pensada para ahorrar tiempo y mejorar el desempeño.</p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => {
-              const Icon = feature.icon
-              return (
-                <RevealSection key={feature.title} delay={index * 100}>
-                  <div className="group rounded-3xl bg-card p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg">
-                    <div className="mb-4 flex size-11 items-center justify-center rounded-2xl text-foreground transition-all duration-300 group-hover:scale-110" style={{ background: toneBackground(feature.tone) }}><Icon size={22} /></div>
-                    <h3 className="mb-2 text-base font-bold text-foreground">{feature.title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{feature.desc}</p>
-                  </div>
-                </RevealSection>
-              )
-            })}
-          </div>
-        </section>
-      </RevealSection>
-
-      <RevealSection>
-        <section id="precios" className="bg-background py-16 md:py-24">
-          <div className="w-full px-4 sm:px-8 lg:px-14 2xl:px-20">
-            <div className="mb-10 text-center md:mb-14">
-              <span className="mb-4 inline-flex rounded-full border border-warning/45 bg-warning/22 px-3 py-1.5 text-[11px] font-bold text-foreground">Precios</span>
-              <h2 className="mb-4 text-[clamp(2rem,8vw,2.375rem)] font-extrabold leading-tight text-foreground">Simple, transparente,<br />sin sorpresas.</h2>
-            </div>
-
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-              {plans.map((plan, index) => (
-                <RevealSection key={plan.name} delay={index * 100}>
-                  <div className={`relative rounded-3xl p-7 transition-shadow duration-300 hover:shadow-lg ${plan.highlight ? 'bg-primary text-primary-foreground shadow-xl shadow-primary/20' : 'bg-card text-foreground shadow-sm'}`}>
-                    {plan.highlight ? <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-success px-4 py-1 text-[10px] font-extrabold text-success-foreground">Más popular</div> : null}
-                    <p className="mb-1 text-lg font-extrabold">{plan.name}</p>
-                    <p className="mb-4 text-[11px] opacity-70">{plan.desc}</p>
-                    <div className="mb-6"><span className="text-[38px] font-extrabold leading-none">{plan.price}</span><span className="ml-1.5 text-[12px] opacity-60">{plan.period}</span></div>
-                    <div className="mb-7 space-y-2.5">
-                      {plan.features.map((feature) => (
-                        <div key={feature} className="flex items-center gap-2.5">
-                          <div className={`flex size-4 shrink-0 items-center justify-center rounded-full ${plan.highlight ? 'bg-card/45' : 'bg-success/18'}`}><Check size={9} strokeWidth={3} /></div>
-                          <p className="text-[13px] opacity-90">{feature}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <Link to="/registro" className={`flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold transition-colors ${plan.highlight ? 'bg-card text-foreground' : 'bg-primary text-primary-foreground'}`}>
-                      {plan.cta} <ArrowRight size={14} />
-                    </Link>
-                  </div>
-                </RevealSection>
+            <p className="mt-4 text-sm text-muted-foreground">
+              ¿Ya tienes cuenta?{' '}
+              <Link className="font-medium text-primary hover:underline" to="/login">
+                Inicia sesión
+              </Link>
+            </p>
+            <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground xl:justify-start">
+              {[
+                'Por escuela y año escolar',
+                'Pensado para el aula dominicana',
+                'Funciona en el navegador',
+              ].map((point) => (
+                <li className="flex items-center gap-1.5" key={point}>
+                  <Check className="size-4 text-success" />
+                  {point}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-        </section>
-      </RevealSection>
-
-      <RevealSection>
-        <section id="testimonios" className="bg-primary py-16 text-primary-foreground md:py-24">
-          <div className="mx-auto max-w-3xl px-4 text-center sm:px-8 lg:px-14 2xl:px-20">
-            <h2 className="mb-4 text-[clamp(2.125rem,8vw,2.625rem)] font-extrabold leading-tight">Empieza hoy.<br />Tu aula te espera.</h2>
-            <p className="mb-8 text-[16px] leading-relaxed opacity-75">Únete a más de 12,000 docentes que ya gestionan su trabajo con Aula Base. Gratis para siempre en el plan básico.</p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link to="/registro" className="flex w-full items-center justify-center gap-2 rounded-2xl bg-card px-8 py-4 text-[15px] font-bold text-foreground transition-colors sm:w-auto">Crear cuenta gratis <ArrowRight size={16} /></Link>
-              <Link to="/login" className="w-full rounded-2xl border border-foreground/30 px-8 py-4 text-[15px] font-semibold text-foreground transition hover:bg-card/25 sm:w-auto">Iniciar sesión</Link>
-            </div>
+          <ProductDemo className="min-w-0 w-full" />
+        </div>
+      </section>
+      <section id="modulos" className="scroll-mt-24 py-16 lg:py-24">
+        <div className="w-full px-4 sm:px-6 lg:px-[4vw]">
+          <Heading
+            eyebrow="Módulos"
+            title="Lo que necesitas para el día a día del centro"
+            description="Cada módulo se conecta con los demás: lo que registras en asistencia y calificaciones alimenta los reportes de cada estudiante y curso."
+          />
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {modules.map((m) => (
+              <li key={m.id} className="rounded-3xl border border-border/60 bg-card p-6 shadow-sm">
+                <span className={`grid size-11 place-items-center rounded-2xl ${tones[m.tone]}`}>
+                  <m.icon size={21} />
+                </span>
+                <h3 className="mt-4 font-semibold">{m.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                  {m.description}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="bg-card py-16 lg:py-24">
+        <div className="w-full px-4 sm:px-6 lg:px-[4vw]">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <Heading
+              eyebrow="Cómo empezar"
+              title="De tu registro a tu primera clase"
+              description="La configuración inicial te guía para dejar listo tu centro, el año escolar y tus cursos."
+            />
+            <Link
+              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
+              to="/registro"
+            >
+              Empezar ahora <ArrowRight className="ml-2 inline size-4" />
+            </Link>
           </div>
-        </section>
-      </RevealSection>
+          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step, i) => (
+              <li key={step.title} className="rounded-3xl bg-background p-6">
+                <span className="grid size-10 place-items-center rounded-full bg-primary font-semibold text-primary-foreground">
+                  {i + 1}
+                </span>
+                <h3 className="mt-4 font-semibold">{step.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                  {step.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+      <section className="py-16 lg:py-24">
+        <div className="grid w-full gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-[4vw]">
+          <Audience
+            id="docentes"
+            eyebrow="Para docentes"
+            title="Tu aula, al día y sin papeles sueltos"
+            benefits={teacherBenefits}
+            cta="Crear cuenta de docente"
+            to="/registro"
+          />
+          <Audience
+            id="centros"
+            eyebrow="Para centros educativos"
+            title="Una vista ordenada de todo el centro"
+            benefits={centerBenefits}
+            cta="Hablar con el equipo"
+            to="/contacto?motivo=centro"
+          />
+        </div>
+      </section>
+      <section id="preguntas" className="scroll-mt-24 bg-card py-16 lg:py-24">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Heading
+            eyebrow="Preguntas frecuentes"
+            title="Respuestas antes de empezar"
+            description="¿No encuentras lo que buscas? Escríbenos desde la página de contacto."
+          />
+          <div className="mt-8 rounded-3xl bg-background px-5 sm:px-7">
+            {faqs.map((f) => (
+              <details key={f.q} className="group border-b border-border last:border-b-0">
+                <summary className="cursor-pointer py-5 text-[15px] font-medium">{f.q}</summary>
+                <p className="pb-5 text-[15px] leading-relaxed text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="px-4 pb-16 pt-16 sm:px-6 lg:px-[4vw] lg:pb-24">
+        <div className="flex w-full flex-wrap items-center justify-between gap-8 rounded-[32px] bg-primary px-6 py-12 text-primary-foreground sm:px-12 lg:py-16">
+          <div className="max-w-xl">
+            <h2 className="text-2xl font-semibold sm:text-3xl">
+              Empieza a organizar tu año escolar
+            </h2>
+            <p className="mt-3 text-[15px]">
+              Crea tu cuenta, configura tu centro y tus cursos, y registra tu primera clase.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              className="rounded-full bg-card px-6 py-3 font-semibold text-primary"
+              to="/registro"
+            >
+              Crear mi cuenta <ArrowRight className="ml-2 inline size-4" />
+            </Link>
+            <Link
+              className="rounded-full border border-white/50 px-6 py-3 font-semibold text-primary-foreground"
+              to="/contacto"
+            >
+              Contactar
+            </Link>
+          </div>
+        </div>
+      </section>
     </PromoLayout>
   )
 }
 
-function toneColor(tone: string) {
-  if (tone === 'success') return 'color-mix(in srgb, var(--success) 62%, var(--foreground))'
-  if (tone === 'warning') return 'color-mix(in srgb, var(--warning) 56%, var(--foreground))'
-  if (tone === 'danger') return 'color-mix(in srgb, var(--destructive) 70%, var(--foreground))'
-  return 'var(--primary-variant)'
+function Heading({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string
+  title: string
+  description: string
+}) {
+  return (
+    <div className="max-w-2xl">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">{eyebrow}</p>
+      <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
+      <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{description}</p>
+    </div>
+  )
 }
-
-function toneBackground(tone: string) {
-  if (tone === 'success') return 'color-mix(in srgb, var(--success) 18%, var(--card))'
-  if (tone === 'warning') return 'color-mix(in srgb, var(--warning) 24%, var(--card))'
-  if (tone === 'danger') return 'color-mix(in srgb, var(--destructive) 16%, var(--card))'
-  return primaryLight
+function Audience({
+  id,
+  eyebrow,
+  title,
+  benefits,
+  cta,
+  to,
+}: {
+  id: string
+  eyebrow: string
+  title: string
+  benefits: string[]
+  cta: string
+  to: string
+}) {
+  return (
+    <article id={id} className="scroll-mt-24 rounded-[32px] bg-card p-6 shadow-sm sm:p-10">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">{eyebrow}</p>
+      <h2 className="mt-3 text-2xl font-semibold sm:text-3xl">{title}</h2>
+      <ul className="mt-6 space-y-3">
+        {benefits.map((b) => (
+          <li className="flex gap-3 text-[15px] leading-relaxed" key={b}>
+            <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-success" />
+            {b}
+          </li>
+        ))}
+      </ul>
+      <Link
+        className="mt-8 inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
+        to={to}
+      >
+        {cta} <ArrowRight className="ml-2 size-4" />
+      </Link>
+    </article>
+  )
 }

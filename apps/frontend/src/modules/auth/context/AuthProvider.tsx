@@ -5,7 +5,7 @@
  */
 
 import type { ReactNode } from 'react'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { AuthContext, type AuthContextValue } from '@/modules/auth/context/AuthContext'
 import {
@@ -40,6 +40,23 @@ type AuthProviderProps = {
 
 let oauthCallbackHrefInFlight: string | null = null
 let oauthCallbackPromise: Promise<'authenticated' | 'profile-required'> | null = null
+let aulaSessionInFlight: Promise<LoginResponse> | null = null
+let aulaSessionToken: string | null = null
+
+function createAulaSessionOnce(token: string): Promise<LoginResponse> {
+  if (aulaSessionInFlight && aulaSessionToken === token) return aulaSessionInFlight
+  const previous = aulaSessionInFlight
+  aulaSessionToken = token
+  aulaSessionInFlight = (previous ? previous.catch(() => undefined) : Promise.resolve())
+    .then(() => createAulaSession(token))
+  void aulaSessionInFlight.finally(() => {
+    if (aulaSessionToken === token) {
+      aulaSessionInFlight = null
+      aulaSessionToken = null
+    }
+  }).catch(() => undefined)
+  return aulaSessionInFlight
+}
 
 const ONBOARDING_CACHE_KEY = 'aulabase:onboarding-complete'
 
@@ -78,6 +95,8 @@ const initialState: AuthState = {
  */
 export function AuthProvider({ children }: AuthProviderProps) {
   const [state, setState] = useState<AuthState>(initialState)
+  const authEpoch = useRef(0)
+  const loggingOut = useRef(false)
 
   /** Limpia el estado de autenticación local. */
   const clearAuthState = useCallback((authError: string | null = null) => {
@@ -95,7 +114,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, [])
 
   /** Aplica los datos de una sesión (login o registro) al estado global. */
-  const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true) => {
+  const applySession = useCallback(async (response: LoginResponse, checkOnboarding = true, epoch = authEpoch.current) => {
+    if (epoch !== authEpoch.current) return
     rememberAccount(response.appUser, response.roles)
     const onboardingComplete = checkOnboarding
       ? await getOnboardingStatus().then((status) => {
@@ -103,6 +123,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
           return status.complete
         }).catch(() => null)
       : null
+    if (epoch !== authEpoch.current) return
     setState({
       user: response.user,
       supabaseAccessToken: null,
@@ -117,16 +138,26 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, [])
 
   const restoreFromSupabaseSession = useCallback(async () => {
-    const { data, error } = await supabase.auth.refreshSession()
+    if (loggingOut.current) return false
+    const epoch = authEpoch.current
+    const { data, error } = await supabase.auth.refreshSession().catch(() => ({ data: { session: null }, error: true }))
     if (error) return false
 
     const supabaseToken = data.session?.access_token ?? null
     if (!supabaseToken) return false
+    if (epoch !== authEpoch.current || loggingOut.current) return false
 
     try {
-      await applySession(await createAulaSession(supabaseToken))
+      const response = await createAulaSessionOnce(supabaseToken)
+      if (epoch !== authEpoch.current) return false
+      await applySession(response, true, epoch)
       return true
     } catch (error) {
+      if (error instanceof ApiError && error.message === 'VERIFICATION_REQUIRED') {
+        const method = error.method === 'totp' ? 'totp' : 'email'
+        clearAuthState(`VERIFICATION_REQUIRED:${method}`)
+        return method
+      }
       if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
         setState({
           user: null,
@@ -147,10 +178,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   /** Carga el estado de autenticación desde el servidor (perfil, roles, permisos). */
   const loadAuthState = useCallback(async () => {
+    const epoch = authEpoch.current
     setState((current) => ({ ...current, loading: true }))
 
     try {
       const bootstrap = await getAuthBootstrap()
+      if (epoch !== authEpoch.current) return
       const appUser = bootstrap?.appUser
 
       if (!appUser) {
@@ -177,6 +210,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         onboardingComplete: onboardingStatus ?? null,
       })
     } catch (error) {
+      if (epoch !== authEpoch.current) return
       console.error(error)
       if (!await restoreFromSupabaseSession()) {
         if (error instanceof ApiError && error.status === 401) {
@@ -209,18 +243,26 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   useEffect(() => {
     const { data } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === 'TOKEN_REFRESHED' && session?.access_token) {
-        void createAulaSession(session.access_token)
-          .then((response) => applySession(response, false))
+      if (event === 'TOKEN_REFRESHED' && session?.access_token && !loggingOut.current) {
+        const epoch = authEpoch.current
+        void createAulaSessionOnce(session.access_token)
+          .then((response) => applySession(response, false, epoch))
+          .catch((error) => {
+            if (epoch !== authEpoch.current) return
+            if (error instanceof ApiError && error.message === 'VERIFICATION_REQUIRED') {
+              clearAuthState(`VERIFICATION_REQUIRED:${error.method === 'totp' ? 'totp' : 'email'}`)
+            }
+          })
       }
     })
     return () => data.subscription.unsubscribe()
-  }, [applySession])
+  }, [applySession, clearAuthState])
 
   const login = useCallback(
     async (credentials: LoginCredentials) => {
+      const epoch = authEpoch.current
       try {
-        await applySession(await loginService(credentials))
+        await applySession(await loginService(credentials), true, epoch)
       } catch (error) {
         if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
           const { data } = await supabase.auth.getSession()
@@ -263,11 +305,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, [])
 
   const finishOAuthCallback = useCallback(async () => {
+    const epoch = authEpoch.current
     const href = window.location.href
     const code = new URL(href).searchParams.get('code')
 
     if (!code) {
-      if (await restoreFromSupabaseSession()) return 'authenticated'
+      const restored = await restoreFromSupabaseSession()
+      if (restored === true) return 'authenticated'
+      if (restored) throw new ApiError(409, 'VERIFICATION_REQUIRED', restored)
       throw new Error('No se pudo completar el inicio social.')
     }
 
@@ -278,7 +323,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const supabaseToken = await exchangeOAuthCode(code)
       window.history.replaceState({}, '', '/auth/callback')
       try {
-        await applySession(await createAulaSession(supabaseToken))
+        await applySession(await createAulaSessionOnce(supabaseToken), true, epoch)
         return 'authenticated'
       } catch (error) {
         if (error instanceof ApiError && error.message === 'PROFILE_REQUIRED') {
@@ -323,6 +368,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
       try {
         await applySession(await completeOnboardingService(supabaseToken, input))
       } catch (error) {
+        if (error instanceof ApiError && error.message === 'VERIFICATION_REQUIRED') {
+          window.location.assign(`/login?verify=${error.method === 'totp' ? 'totp' : 'email'}`)
+          return
+        }
         if (error instanceof ApiError && error.message === 'Invalid Supabase session') {
           throw new Error('Tu sesión expiró. Inicia sesión nuevamente.', { cause: error })
         }
@@ -333,8 +382,15 @@ export function AuthProvider({ children }: AuthProviderProps) {
   )
 
   const logout = useCallback(async () => {
-    await logoutService()
-    clearAuthState()
+    authEpoch.current += 1
+    loggingOut.current = true
+    try {
+      await aulaSessionInFlight?.catch(() => undefined)
+      await logoutService()
+      clearAuthState()
+    } finally {
+      loggingOut.current = false
+    }
   }, [clearAuthState])
 
   const value = useMemo<AuthContextValue>(() => {

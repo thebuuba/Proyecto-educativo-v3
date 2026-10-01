@@ -1,0 +1,130 @@
+{
+  "generatedAt": "2026-09-27T22:03:53.781Z",
+  "extractorSha256": "cb8600d08ad07401abc2643a99f73fe2b0ee7121a4a129694ea2caa4aa7f5e6c",
+  "extractorFiles": {
+    "check-local-db.mjs": "4be0566e7fb4599f300cb3be1360aec39a669ab5f7adb69ca3a69a65d23def97",
+    "curriculum.test.mjs": "921e2d6e5ce01d0a6f33925ef90ea9da105bf0dbffc8b5e782fb1dfa8b89ca11",
+    "extract.mjs": "7cd08ab10ec3b2428f8d744e8421e2d82752db54876b6b3e0e3cbb992ac9e9ae",
+    "inspect-pages.mjs": "6af6948d728832d9b6b54f1ac1eb9325fdd7ae699b3e385437b321325f7c05a5",
+    "layout.mjs": "334be7628612770a97dfb1c01bd277df709e151dc472c9471a6754efa95ce868",
+    "malla.mjs": "17db9348470ac71eaed9275f1b29d55d0dd676318b03957783191c46b7098843",
+    "pdf-page.mjs": "a896ad9bdc5f188a3499bae8882219340ff89333dcdaa00278f416cc5ee9602d",
+    "primary.mjs": "98d5c95a635b7f476989891afff8b31df2a6dded1233a7caa079f705ed08ad6b",
+    "query.mjs": "7b38b40de937cbf950889891d9976229a729bb738b2c890559a2b18a7a229231",
+    "regression.test.mjs": "81630a6f4d69fc9d02edbb26431d178719623aab892f03885972bf57977fbf03",
+    "secondary.mjs": "4c5dde88a98b8c2f03020787dc1a65148ed276a7238506dd31f3054f043b0756",
+    "source-anomalies.mjs": "5a1438a2edf8c5519d212e37c91471687b1960db931a144a066e49db91792852",
+    "survey.mjs": "d1d109a19c7aa49fff3cdee04433709af1621080342f8a1335103ba00fe6e5b1",
+    "validate.mjs": "f90551adbb5be8d34581c198cc2149601689abdc8f99aa9d92f7f59b3a1f8fc6",
+    "verify-artifacts.mjs": "8f853351ef723a31392e8d786f0a1f390ff8294c06947ed96edd6d20b734870f"
+  },
+  "node": "v24.19.0",
+  "document": {
+    "id": "7b786384-8042-5d3d-aa18-0e6751c3d376",
+    "versionId": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+    "title": "Adecuación Curricular del Nivel Primario",
+    "originalFilename": "lq58-adecuacion-curricular-primariapdf.pdf",
+    "sha256": "d4341fd5f387b16333cdeaaa5b8e34b3468722bf17ca6d1a589854b205a9e427",
+    "pageCount": 404,
+    "issuingBody": "MINERD"
+  },
+  "sourceAnomalies": [
+    {
+      "level": "PRIMARY",
+      "pages": [
+        207
+      ],
+      "patch": {
+        "grade": 3,
+        "cycle": 1
+      },
+      "literal": "2do. Grado",
+      "evidence": [
+        206,
+        207,
+        208
+      ],
+      "reason": "Continuation between the opening 3er. Grado table (206) and its 3er. Grado indicators (208); no new competencies on 207."
+    },
+    {
+      "level": "PRIMARY",
+      "pages": [
+        221,
+        222
+      ],
+      "patch": {
+        "areaName": "Educación Artística"
+      },
+      "literal": "Área de Educación Física",
+      "evidence": [
+        219,
+        220,
+        221,
+        222
+      ],
+      "reason": "Artística chapter: grade 2 ends on 220; grade 3 starts on 221 with artistic languages, clown, music, theatre; indicators on 222 are artistic."
+    },
+    {
+      "level": "PRIMARY",
+      "pages": [
+        319,
+        320
+      ],
+      "patch": {
+        "grade": 5,
+        "cycle": 2
+      },
+      "literal": "4to. Grado",
+      "evidence": [
+        318,
+        319,
+        320,
+        321,
+        322
+      ],
+      "reason": "Continuation of grade 5 opening on 318; indicators on 321 refer to the same fossils, nervous system, atoms and Earth topics; grade 6 starts on 322."
+    },
+    {
+      "level": "PRIMARY",
+      "pages": [
+        348
+      ],
+      "patch": {
+        "grade": 6,
+        "cycle": 2
+      },
+      "literal": "5to. Grado",
+      "evidence": [
+        347,
+        348,
+        349
+      ],
+      "reason": "Grade 6 starts on 347; vocabulary/discursive procedures continue on 348; indicators on 349 continue the past/future and health contexts."
+    },
+    {
+      "level": "PRIMARY",
+      "pages": [
+        363
+      ],
+      "patch": {
+        "grade": 6,
+        "cycle": 2
+      },
+      "literal": "5to. Grado",
+      "evidence": [
+        362,
+        363,
+        364
+      ],
+      "reason": "Grade 6 opening on 362; procedures continue on 363 and corresponding indicators on 364, including mate and rolling."
+    }
+  ],
+  "artifacts": {
+    "primary-2023.jsonl": "0ed2b74c5b679b8b908ec7e43adb4d42371b0ed63b95654b81d1ce6c6b5e2b24",
+    "primary-2023.coverage.json": "7803b8919c17290bc23de88a98536a3a7290b349ad7826d738ec027344789eb7",
+    "primary-2023.matrix.csv": "722925de5579e003851f23e33229e522a78fc4b28c21aa849d191c564243cfbe",
+    "primary-2023.pending.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "primary-2023.samples.json": "c19a91fa70124f288b06c5cc4d4dd7828a82d7d46ab87a208438f8be4d317d6b",
+    "primary-2023.pages.json": "99e07ac3c7127dc64ddd2c90e8ee027ae76d41aea4e7b13e271d6ba6dcc97cb0"
+  }
+}

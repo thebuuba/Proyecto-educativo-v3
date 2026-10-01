@@ -11,8 +11,13 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Select } from '@/components/ui/Select'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
-import { getSectionSubjects, getSections, getTimeSlots } from '@/modules/schedule/services/scheduleService'
+import {
+  getSectionSubjects,
+  getSections,
+  getTimeSlots,
+} from '@/modules/schedule/services/scheduleService'
 import type { CreateScheduleEntryInput, SectionOption, TimeSlot } from '@/modules/schedule/types'
+import { formatScheduleRange } from '@/modules/schedule/utils/scheduleStructure'
 
 const dayOptions = [
   { value: '1', label: 'Lunes' },
@@ -65,10 +70,7 @@ export function ScheduleEntryForm({
   useEffect(() => {
     async function loadDeps() {
       try {
-        const [sectionsData, slotsData] = await Promise.all([
-          getSections(),
-          getTimeSlots(),
-        ])
+        const [sectionsData, slotsData] = await Promise.all([getSections(), getTimeSlots()])
         const courseData = await Promise.all(
           sectionsData.map(async (section) => {
             const subjects = await getSectionSubjects(section.id)
@@ -93,7 +95,10 @@ export function ScheduleEntryForm({
   }, [])
 
   const selectedCourse = useMemo(
-    () => courseOptions.find((course) => `${course.sectionId}:${course.sectionSubjectId}` === courseKey),
+    () =>
+      courseOptions.find(
+        (course) => `${course.sectionId}:${course.sectionSubjectId}` === courseKey,
+      ),
     [courseKey, courseOptions],
   )
 
@@ -127,9 +132,7 @@ export function ScheduleEntryForm({
       >
         <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
           <div>
-            <h3 className="text-base font-semibold text-foreground">
-              Nueva clase
-            </h3>
+            <h3 className="text-base font-semibold text-foreground">Nueva clase</h3>
             <p className="mt-1 text-sm text-muted-foreground">
               Selecciona un curso existente para ocupar este bloque.
             </p>
@@ -157,10 +160,7 @@ export function ScheduleEntryForm({
           ) : (
             <>
               <Field label="Curso">
-                <Select
-                  value={courseKey}
-                  onChange={(event) => setCourseKey(event.target.value)}
-                >
+                <Select value={courseKey} onChange={(event) => setCourseKey(event.target.value)}>
                   <option value="">
                     {courseOptions.length > 0 ? 'Seleccionar curso' : 'No hay cursos disponibles'}
                   </option>
@@ -183,10 +183,7 @@ export function ScheduleEntryForm({
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Día">
-                  <Select
-                    value={dayOfWeek}
-                    onChange={(event) => setDayOfWeek(event.target.value)}
-                  >
+                  <Select value={dayOfWeek} onChange={(event) => setDayOfWeek(event.target.value)}>
                     <option value="">Seleccionar día</option>
                     {dayOptions.map((day) => (
                       <option key={day.value} value={day.value}>
@@ -204,7 +201,7 @@ export function ScheduleEntryForm({
                     <option value="">Seleccionar bloque</option>
                     {timeSlots.map((slot) => (
                       <option key={slot.id} value={slot.id}>
-                        {slot.name} ({slot.startTime} - {slot.endTime})
+                        {slot.name} ({formatScheduleRange(slot.startTime, slot.endTime)})
                       </option>
                     ))}
                   </Select>

@@ -16,6 +16,7 @@ import { CreateTimeSlotDto } from './dto/create-time-slot.dto'
 import { UpdateTimeSlotDto } from './dto/update-time-slot.dto'
 import { CreateScheduleEntryDto } from './dto/create-schedule-entry.dto'
 import { UpdateScheduleEntryDto } from './dto/update-schedule-entry.dto'
+import { SaveScheduleStructureDto } from './dto/save-schedule-structure.dto'
 
 @Controller('schedule')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -68,6 +69,23 @@ export class ScheduleController {
   @Get('time-slots')
   getTimeSlots(@CurrentUser() user: AuthenticatedUser) {
     return this.scheduleService.getTimeSlots(user.schoolId)
+  }
+
+  @Get('journeys')
+  getJourneys(@CurrentUser() user: AuthenticatedUser) {
+    return this.scheduleService.getJourneys(user.schoolId)
+  }
+
+  @Post('structure')
+  @Roles('admin', 'director', 'coordinator')
+  saveStructure(@CurrentUser() user: AuthenticatedUser, @Body() dto: SaveScheduleStructureDto) {
+    return this.scheduleService.saveStructure(user.schoolId, dto)
+  }
+
+  @Delete('structure')
+  @Roles('admin', 'director', 'coordinator')
+  deleteStructure(@CurrentUser() user: AuthenticatedUser) {
+    return this.scheduleService.deleteStructure(user.schoolId)
   }
 
   /** Crea una nueva franja horaria (solo admin, director, coordinador) */

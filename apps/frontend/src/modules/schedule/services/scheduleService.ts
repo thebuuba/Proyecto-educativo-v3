@@ -5,13 +5,16 @@
  * de horario, y datos auxiliares (secciones, docentes, materias).
  */
 
-import { api, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
+import { api, ApiError, API_CACHE_TAGS, API_CACHE_TTL } from '@/services/apiClient'
 import type {
   CreateScheduleEntryInput,
   CreateTimeSlotInput,
   ScheduleCalendarEntry,
   ScheduleEntry,
   ScheduleFilters,
+  ScheduleJourney,
+  ScheduleIntegrityIssue,
+  SaveScheduleStructureInput,
   ScheduleSummary,
   SectionOption,
   SubjectOption,
@@ -25,17 +28,112 @@ import type { SchoolYearSummary } from '@/services/schoolYearService'
 export type ScheduleWorkspace = {
   currentSchoolYear: SchoolYearSummary | null
   timeSlots: TimeSlot[]
+  journeys?: ScheduleJourney[]
   entries: ScheduleEntry[]
   sections: SectionOption[]
   teachers: TeacherOption[]
   subjects: SubjectOption[]
+  integrityIssues?: ScheduleIntegrityIssue[]
 }
 
-export function getScheduleWorkspace(): Promise<ScheduleWorkspace> {
-  return api.get<ScheduleWorkspace>('/schedule/workspace', {
+export function scheduleSaveErrorMessage(cause: unknown) {
+  if (cause instanceof ApiError) {
+    if (cause.status === 400 || cause.status === 422) {
+      const detail = cause.message.trim()
+      if (isOutdatedScheduleServer(detail))
+        return 'El horario incluye espacios entre jornadas, pero el servicio que los guarda todavía no está actualizado. Reinicia o actualiza el servidor de AulaBase y vuelve a intentarlo. Tus cambios permanecen en pantalla.'
+      return detail
+        ? `No pudimos guardar el horario porque hay información que necesita revisión. Revisa: ${detail}`
+        : 'No pudimos guardar el horario porque hay información que necesita revisión.'
+    }
+    if (cause.status === 401)
+      return 'Tu sesión venció. Inicia sesión nuevamente antes de guardar el horario.'
+    if (cause.status === 403)
+      return 'No tienes permiso para guardar la estructura de este horario.'
+    return 'No pudimos guardar el horario en este momento. Inténtalo nuevamente.'
+  }
+  if (cause instanceof TypeError)
+    return 'No pudimos conectar con el servidor. Revisa tu conexión y vuelve a intentarlo.'
+  return 'No pudimos guardar el horario en este momento. Inténtalo nuevamente.'
+}
+
+function isOutdatedScheduleServer(detail: string) {
+  return (
+    /property (blockSource|sourceKey) should not exist/i.test(detail) ||
+    (/blockType must be one of the following values/i.test(detail) && !detail.includes('GAP'))
+  )
+}
+
+export function serializeScheduleStructure(
+  input: SaveScheduleStructureInput,
+): SaveScheduleStructureInput {
+  return {
+    journeys: input.journeys.map(({ id, name, kind, startTime, endTime, sequence }) => ({
+      id,
+      name,
+      kind,
+      startTime,
+      endTime,
+      sequence,
+    })),
+    blocks: input.blocks.map(
+      ({ id, name, startTime, endTime, sequence, dayOfWeek, blockType, journeyKey, blockSource, sourceKey }) => ({
+        id,
+        name,
+        startTime,
+        endTime,
+        sequence,
+        dayOfWeek,
+        blockType,
+        journeyKey,
+        blockSource,
+        sourceKey,
+      }),
+    ),
+  }
+}
+
+export async function saveScheduleStructure(input: SaveScheduleStructureInput): Promise<{ saved: true }> {
+  return api.post('/schedule/structure', serializeScheduleStructure(input), {
+    invalidateCacheTags: [API_CACHE_TAGS.schedule, API_CACHE_TAGS.timeSlots],
+  })
+}
+
+export async function deleteScheduleStructure(): Promise<{
+  deleted: { assignments: number; blocks: number; journeys: number }
+}> {
+  return api.delete('/schedule/structure', {
+    invalidateCacheTags: [API_CACHE_TAGS.schedule, API_CACHE_TAGS.timeSlots],
+  })
+}
+
+export async function getScheduleJourneys(): Promise<ScheduleJourney[]> {
+  return api.get('/schedule/journeys', {
+    cacheTtlMs: API_CACHE_TTL.catalog,
+    cacheTags: [API_CACHE_TAGS.timeSlots],
+  })
+}
+
+function normalizeTimeSlot(slot: TimeSlot): TimeSlot {
+  return {
+    ...slot,
+    dayOfWeek: slot.dayOfWeek ?? null,
+    blockType: slot.blockType ?? 'CLASS',
+    journeyId: slot.journeyId ?? null,
+  }
+}
+
+export async function getScheduleWorkspace(): Promise<ScheduleWorkspace> {
+  const workspace = await api.get<ScheduleWorkspace>('/schedule/workspace', {
     cacheTtlMs: API_CACHE_TTL.sessionList,
     cacheTags: [API_CACHE_TAGS.schedule, API_CACHE_TAGS.schoolYears, API_CACHE_TAGS.timeSlots, API_CACHE_TAGS.courseOptions],
   })
+  return {
+    ...workspace,
+    journeys: workspace.journeys ?? [],
+    integrityIssues: workspace.integrityIssues ?? [],
+    timeSlots: workspace.timeSlots.map(normalizeTimeSlot),
+  }
 }
 
 const dayLabels = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE']
@@ -43,10 +141,11 @@ const toneByIndex: ScheduleCalendarEntry['tone'][] = ['accent', 'primary', 'succ
 
 /** Obtiene todos los bloques horarios definidos */
 export async function getTimeSlots(): Promise<TimeSlot[]> {
-  return api.get<TimeSlot[]>('/schedule/time-slots', {
+  const slots = await api.get<TimeSlot[]>('/schedule/time-slots', {
     cacheTtlMs: API_CACHE_TTL.catalog,
     cacheTags: [API_CACHE_TAGS.timeSlots],
   })
+  return slots.map(normalizeTimeSlot)
 }
 
 /** Crea un nuevo bloque horario */

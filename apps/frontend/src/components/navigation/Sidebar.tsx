@@ -1,4 +1,6 @@
-import { ChevronsLeft, ChevronsRight, GraduationCap, LogOut, Settings, X } from 'lucide-react'
+import { useState } from 'react'
+import { createPortal } from 'react-dom'
+import { ChevronsLeft, ChevronsRight, GraduationCap, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
@@ -25,8 +27,44 @@ const secondaryPaths = [
 ]
 const footerPaths = ['/configuracion']
 
+const sidebarIcons: Record<string, string> = {
+  '/inicio': 'inicio',
+  '/cursos': 'cursos',
+  '/horario': 'horario',
+  '/asistencia': 'asistencia',
+  '/calificaciones': 'calificaciones',
+  '/actividades': 'actividades',
+  '/planificaciones': 'planificaciones',
+  '/bitacora': 'bitacora',
+  '/reportes': 'reportes',
+  '/estudiantes': 'estudiantes',
+  '/configuracion': 'configuracion',
+}
+
+function SidebarIcon({ name }: { name: string }) {
+  const url = `url("${import.meta.env.BASE_URL}icons/sidebar/${name}.svg")`
+
+  return (
+    <span
+      className="sidebar-svg-icon"
+      style={{ maskImage: url, WebkitMaskImage: url }}
+      aria-hidden="true"
+    />
+  )
+}
+
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
   const { hasRole, logout } = useAuth()
+  const [tooltip, setTooltip] = useState<{ label: string; top: number } | null>(null)
+  const hideTooltip = () => setTooltip(null)
+  const showTooltip = (element: HTMLElement, label: string) => {
+    if (isExpanded || !window.matchMedia('(min-width: 1024px)').matches) return
+    const bounds = element.getBoundingClientRect()
+    setTooltip({
+      label,
+      top: Math.max(24, Math.min(bounds.top + bounds.height / 2, window.innerHeight - 24)),
+    })
+  }
   const routes = navigationRoutes.filter((item) => hasRole(item.allowedRoles))
   const primary = routes.filter((item) => primaryPaths.includes(item.path))
   const secondary = routes
@@ -35,7 +73,6 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
   const footer = routes.filter((item) => footerPaths.includes(item.path))
 
   const renderLink = (item: (typeof routes)[number], featured = false) => {
-    const Icon = item.icon
     const description =
       item.path === '/inicio'
         ? 'Resumen del día'
@@ -61,16 +98,27 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
                   ? 'nav-planning'
                   : undefined
         }
-        onClick={onClose}
-        onMouseEnter={() => routePrefetchers[item.path]?.()}
-        onFocus={() => routePrefetchers[item.path]?.()}
-        title={item.label}
+        onClick={() => {
+          hideTooltip()
+          onClose()
+        }}
+        onMouseEnter={(event) => {
+          routePrefetchers[item.path]?.()
+          showTooltip(event.currentTarget, item.label)
+        }}
+        onMouseLeave={hideTooltip}
+        onFocus={(event) => {
+          routePrefetchers[item.path]?.()
+          showTooltip(event.currentTarget, item.label)
+        }}
+        onBlur={hideTooltip}
+        aria-label={item.label}
         className={({ isActive }) =>
           cn('sidebar-link', featured && 'sidebar-link-featured', isActive && 'is-active')
         }
       >
         <span className="sidebar-link-icon">
-          <Icon className="size-[18px]" aria-hidden="true" />
+          <SidebarIcon name={sidebarIcons[item.path]} />
         </span>
         <span className="sidebar-copy">
           <span className="sidebar-link-title">{item.label}</span>
@@ -117,7 +165,10 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           </NavLink>
           <button
             type="button"
-            onClick={onToggleExpanded}
+            onClick={() => {
+              hideTooltip()
+              onToggleExpanded()
+            }}
             className="hidden size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:flex"
             aria-label={isExpanded ? 'Contraer menú' : 'Expandir menú'}
             aria-expanded={isExpanded}
@@ -147,28 +198,50 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           {footer.map((item) => renderLink(item))}
           <NavLink
             to="/perfil"
-            onClick={onClose}
-            title="Ajustes"
+            onClick={() => {
+              hideTooltip()
+              onClose()
+            }}
+            onMouseEnter={(event) => showTooltip(event.currentTarget, 'Ajustes')}
+            onMouseLeave={hideTooltip}
+            onFocus={(event) => showTooltip(event.currentTarget, 'Ajustes')}
+            onBlur={hideTooltip}
+            aria-label="Ajustes"
             className={({ isActive }) => cn('sidebar-link', isActive && 'is-active')}
           >
             <span className="sidebar-link-icon">
-              <Settings size={18} strokeWidth={1.8} />
+              <SidebarIcon name="ajustes" />
             </span>
             <span className="sidebar-copy sidebar-link-title">Ajustes</span>
           </NavLink>
           <button
             type="button"
-            onClick={() => void logout()}
-            title="Cerrar sesión"
+            onClick={() => {
+              hideTooltip()
+              void logout()
+            }}
+            onMouseEnter={(event) => showTooltip(event.currentTarget, 'Cerrar sesión')}
+            onMouseLeave={hideTooltip}
+            onFocus={(event) => showTooltip(event.currentTarget, 'Cerrar sesión')}
+            onBlur={hideTooltip}
+            aria-label="Cerrar sesión"
             className="sidebar-link w-full text-destructive"
           >
             <span className="sidebar-link-icon">
-              <LogOut size={18} strokeWidth={1.8} />
+              <SidebarIcon name="salir" />
             </span>
             <span className="sidebar-copy sidebar-link-title">Cerrar sesión</span>
           </button>
         </div>
       </aside>
+      {!isExpanded && tooltip
+        ? createPortal(
+            <div className="sidebar-tooltip" role="tooltip" style={{ top: tooltip.top }}>
+              {tooltip.label}
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   )
 }
