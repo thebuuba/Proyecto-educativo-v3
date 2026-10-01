@@ -23,6 +23,19 @@ const activeClass: DashboardClass = {
 }
 
 describe('DashboardHero countdown', () => {
+  it('uses the assigned subject color and changes it with the class', () => {
+    const { container, rerender } = render(
+      <DashboardHero nextClass={{ ...activeClass, appearanceColor: '#56A64B' }} onStartClass={vi.fn()} onViewPlanning={vi.fn()} />,
+    )
+    expect(container.querySelector('.home-class-card')).toHaveStyle({ '--home-class-subject-color': '#56A64B' })
+
+    rerender(<DashboardHero nextClass={{ ...activeClass, subjectName: 'Matemática', appearanceColor: '#BA6F62' }} onStartClass={vi.fn()} onViewPlanning={vi.fn()} />)
+    expect(container.querySelector('.home-class-card')).toHaveStyle({ '--home-class-subject-color': '#BA6F62' })
+
+    rerender(<DashboardHero nextClass={{ ...activeClass, subjectName: 'Ciencias de la Naturaleza: Ciencias de la Vida', appearanceColor: null }} onStartClass={vi.fn()} onViewPlanning={vi.fn()} />)
+    expect(container.querySelector('.home-class-card')).toHaveStyle({ '--home-class-subject-color': '#66D64F' })
+  })
+
   it('reserves enough room and keeps the compact label on one line', () => {
     render(
       <DashboardHero

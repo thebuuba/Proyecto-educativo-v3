@@ -1,7 +1,8 @@
 import { Clock, FlaskConical, MapPin, Play, Users } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 
 import type { DashboardClass } from '@/modules/dashboard/types/dashboard'
+import { getSubjectPalette } from '@/utils/subjectPalette'
 import {
   COUNTDOWN_THRESHOLD_SECONDS,
   formatCountdown,
@@ -135,7 +136,11 @@ export function DashboardHero({
   }
 
   return (
-    <section className="home-class-card relative overflow-hidden" data-home-widget="class">
+    <section
+      className="home-class-card relative overflow-hidden"
+      data-home-widget="class"
+      style={{ '--home-class-subject-color': nextClass.appearanceColor ?? getSubjectPalette(nextClass.subjectName).color } as CSSProperties}
+    >
       <span className="home-class-decoration home-class-decoration-one" aria-hidden="true" />
       <span className="home-class-decoration home-class-decoration-two" aria-hidden="true" />
       <div className="absolute right-4 top-4 z-10">
@@ -170,7 +175,7 @@ export function DashboardHero({
         {canManageClass ? (
           <button
             type="button"
-            className="mt-4 inline-flex min-h-9 items-center gap-2 rounded-xl bg-white px-4 text-xs font-semibold text-primary shadow-sm hover:bg-primary-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="home-class-action mt-4 inline-flex min-h-9 items-center gap-2 rounded-xl bg-white px-4 text-xs font-semibold shadow-sm hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             onClick={() => onStartClass(nextClass)}
           >
             <Play size={13} fill="currentColor" aria-hidden="true" />

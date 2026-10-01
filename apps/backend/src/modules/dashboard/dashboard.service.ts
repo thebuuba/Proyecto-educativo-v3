@@ -320,6 +320,7 @@ export class DashboardService {
         dayOfWeek: entry.dayOfWeek,
         sectionId: entry.sectionId,
         sectionSubjectId: entry.sectionSubjectId,
+        appearanceColor: entry.sectionSubject.appearanceColor,
         academicPeriodId: entry.academicPeriodId ?? periodId,
         startsInMinutes: status === 'completed' ? null : Math.max(0, start - currentMinutes),
         status,

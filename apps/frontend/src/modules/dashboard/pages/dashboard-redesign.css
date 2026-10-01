@@ -47,10 +47,11 @@
 }
 
 .home-class-card {
+  --home-class-color: color-mix(in srgb, var(--home-class-subject-color, var(--primary)) 32%, var(--foreground));
   padding: 20px;
-  background: var(--primary);
+  background: var(--home-class-color);
   color: white;
-  box-shadow: 0 10px 25px color-mix(in srgb, var(--primary) 16%, transparent);
+  box-shadow: 0 10px 25px color-mix(in srgb, var(--home-class-color) 16%, transparent);
 }
 
 .home-class-icon {
@@ -60,7 +61,11 @@
   place-items: center;
   border-radius: 12px;
   background: white;
-  color: var(--primary);
+  color: var(--home-class-color);
+}
+
+.home-class-action {
+  color: var(--home-class-color);
 }
 
 .home-class-decoration {
