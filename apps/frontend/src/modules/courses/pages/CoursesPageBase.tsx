@@ -157,17 +157,12 @@ type CourseCardItem = {
   archived: boolean
 }
 
-const levelStyles: Record<string, { color: string; soft: string }> = {
-  'Primaria': { color: 'var(--primary)', soft: 'var(--primary-container)' },
-  'Secundaria': { color: 'var(--primary)', soft: 'var(--primary-container)' },
-}
-
-const defaultLevelStyle = { color: 'var(--primary)', soft: 'var(--primary-container)' }
-
-function getLevelStyle(levelName: string) {
+function getLevelStyle(levelName: string, cycleName: string) {
   const normalized = normalizeText(levelName)
-  const match = Object.entries(levelStyles).find(([key]) => normalizeText(key) === normalized)
-  return match ? match[1] : defaultLevelStyle
+  const secondCycle = normalizeText(cycleName).includes('segundo ciclo')
+  if (normalized.includes('primari')) return { color: secondCycle ? 'var(--palette-gold)' : 'var(--palette-teal)', soft: 'var(--primary-container)' }
+  if (normalized.includes('secundari') && secondCycle) return { color: 'var(--palette-violet)', soft: 'var(--primary-container)' }
+  return { color: 'var(--primary)', soft: 'var(--primary-container)' }
 }
 
 function normalizeText(value: string) {
@@ -576,25 +571,23 @@ export function CoursesPage() {
         />
       ) : (
         <>
-          <section data-tour="manage-students" aria-labelledby="courses-summary-title" className="relative rounded-3xl border border-border bg-card p-5 text-foreground shadow-sm sm:p-6">
+          <section data-tour="manage-students" aria-labelledby="courses-summary-title" className="course-blue-hero relative overflow-hidden rounded-3xl p-5 shadow-sm sm:p-6">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div className="flex min-w-0 items-center gap-4">
-                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Library className="size-5" /></span>
+                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-card text-primary"><Library className="size-5" /></span>
                 <div className="min-w-0">
                   <h1 id="courses-summary-title" className="text-2xl font-extrabold tracking-tight">{showArchived ? 'Grados archivados' : 'Mis cursos'}</h1>
-                  <p className="text-sm text-muted-foreground">{showArchived ? 'Estos grados están en pausa y conservan toda su información.' : `Año escolar ${currentSchoolYear?.name ?? 'sin configurar'}`}</p>
+                  <p className="text-sm text-primary-foreground/80">{showArchived ? 'Estos grados están en pausa y conservan toda su información.' : `Año escolar ${currentSchoolYear?.name ?? 'sin configurar'}`}</p>
                 </div>
               </div>
               {canManage && !showArchived ? (
                 <div className="flex flex-wrap items-center gap-2">
-                  <Button data-tour="create-course" onClick={openCreateAssignmentFlow}>
-                    <Plus className="size-4" /> Agregar curso
-                  </Button>
                   <details className="group relative shrink-0">
-                    <summary className="flex h-11 cursor-pointer list-none items-center gap-2 rounded-xl border border-border bg-card px-4 text-sm font-bold text-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+                    <summary className="flex h-11 cursor-pointer list-none items-center gap-2 rounded-full bg-card px-4 text-sm font-bold text-primary transition hover:bg-primary-container focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
                       Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
                     </summary>
                     <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+                      <button data-tour="create-course" type="button" onClick={openCreateAssignmentFlow} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar curso</button>
                       <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nueva sección</button>
                     </div>
                   </details>
@@ -609,24 +602,24 @@ export function CoursesPage() {
                 [BookOpen, totalAssignments, 'Asignaturas'],
                 [UsersRound, totalTeams, 'Equipos'],
               ] as const).map(([Icon, value, label]) => (
-                <div key={label} className="flex items-center gap-3 rounded-2xl bg-primary/8 px-3 py-2.5">
-                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-primary/8"><Icon className="size-4" /></span>
-                  <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-muted-foreground">{label}</span></div>
+                <div key={label} className="flex items-center gap-3 rounded-2xl bg-card/15 px-3 py-2.5">
+                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-card/15"><Icon className="size-4" /></span>
+                  <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-primary-foreground/80">{label}</span></div>
                 </div>
               ))}
             </div>
           </section>
 
-          <div className="space-y-3 rounded-3xl border border-border bg-card p-4 shadow-sm">
-            <div className="flex flex-wrap items-center gap-2" aria-label="Filtrar por nivel">
-              {['all', ...levelFilters].map((level) => <button key={level} type="button" aria-pressed={levelFilter === level} onClick={() => { setLevelFilter(level); setCycleFilter('all'); setSubjectFilter('all') }} className={cn('min-h-10 rounded-full px-4 text-sm font-semibold transition', levelFilter === level ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:text-foreground')}>{level === 'all' ? 'Todos' : cleanLevelName(level)}</button>)}
-              {!showArchived ? <Button className="ml-auto" variant="outline" onClick={() => setArchivedView(true)}><Archive className="size-4" /> Mostrar archivadas ({new Set(archivedCourseCards.map((item) => item.grade.id)).size})</Button> : null}
+          <div className="course-list-filters flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-1 rounded-full bg-card p-1 shadow-sm" aria-label="Filtrar por nivel">
+              {['all', ...levelFilters.slice().sort((a, b) => Number(cleanLevelName(b) === 'Secundario') - Number(cleanLevelName(a) === 'Secundario'))].map((level) => <button key={level} type="button" aria-pressed={levelFilter === level} onClick={() => { setLevelFilter(level); setCycleFilter('all'); setSubjectFilter('all') }} className={cn('min-h-9 rounded-full px-4 text-sm font-semibold transition', levelFilter === level ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground')}>{level === 'all' ? 'Todos' : cleanLevelName(level)} <span className="ml-1 rounded-full bg-muted/60 px-1.5 text-xs">{level === 'all' ? visibleCourseCards.length : visibleCourseCards.filter((course) => course.levelName === level).length}</span></button>)}
             </div>
-            <div className="grid gap-3 md:grid-cols-3">
-              <label className="relative"><span className="sr-only">Buscar cursos</span><Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" /><Input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Buscar grado, sección o asignatura..." className="pl-9" /></label>
+            <label className="inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-full bg-card px-3 text-sm text-muted-foreground shadow-sm"><input type="checkbox" role="switch" checked={showArchived} onChange={(event) => setArchivedView(event.target.checked)} /> Mostrar archivados</label>
+            <label className="relative ml-auto block w-full sm:w-72"><span className="sr-only">Buscar cursos</span><Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" /><Input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Buscar curso..." className="rounded-full bg-card pl-9" /></label>
+            <details className="course-extra-filters relative text-sm text-muted-foreground"><summary className="grid size-10 cursor-pointer list-none place-items-center rounded-full bg-card shadow-sm [&::-webkit-details-marker]:hidden" aria-label="Filtros adicionales" title="Filtros adicionales"><SlidersHorizontal className="size-4" /></summary><div className="absolute right-0 top-11 z-20 grid w-72 gap-3 rounded-2xl border border-border bg-card p-3 shadow-xl">
               <label><span className="sr-only">Ciclo</span><Select value={cycleFilter} onChange={(event) => { setCycleFilter(event.target.value); setSubjectFilter('all') }}><option value="all">Todos los ciclos</option>{cycleFilters.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</Select></label>
               <label><span className="sr-only">Asignatura</span><Select value={subjectFilter} onChange={(event) => setSubjectFilter(event.target.value)}><option value="all">Todas las asignaturas</option>{subjectFilters.map((name) => <option key={name} value={name}>{name}</option>)}</Select></label>
-            </div>
+            </div></details>
             {levelFilter !== 'all' || cycleFilter !== 'all' || subjectFilter !== 'all' || searchQuery ? <button type="button" onClick={() => { setSearchQuery(''); setLevelFilter('all'); setCycleFilter('all'); setSubjectFilter('all') }} className="inline-flex min-h-10 items-center gap-2 text-sm text-primary"><X className="size-4" />Limpiar filtros</button> : null}
           </div>
 
@@ -670,7 +663,7 @@ export function CoursesPage() {
             </div>
           ) : filteredCourseCards.length > 0 ? (
             <div className="space-y-9">
-              {groupedCourses.map((group) => (
+              {groupedCourses.slice().sort((a, b) => Number(cleanLevelName(b.levelName) === 'Secundario') - Number(cleanLevelName(a.levelName) === 'Secundario')).map((group) => (
                 <section key={group.key}>
                   <div className="mb-5 flex items-center gap-3">
                     <span className="flex size-9 items-center justify-center rounded-full bg-primary/8 text-primary"><BookOpen className="size-4" /></span>
@@ -923,18 +916,18 @@ function CourseWorkspace({
         <ArrowLeft className="size-4" /> Mis cursos
       </button>
 
-      <header className="rounded-3xl border border-border bg-card p-5 text-foreground shadow-sm sm:p-6">
+      <header className="course-blue-hero rounded-3xl p-5 shadow-sm sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex min-w-0 items-center gap-5">
-            <span className="grid size-20 shrink-0 place-items-center rounded-3xl bg-primary/10 text-2xl font-extrabold text-primary shadow-sm">{getCourseCompactLabel(item.grade.name, item.section.name)}</span>
+            <span className="grid size-20 shrink-0 place-items-center rounded-3xl bg-card text-2xl font-extrabold text-primary shadow-sm">{getCourseCompactLabel(item.grade.name, item.section.name)}</span>
             <div className="min-w-0">
               <div className="flex items-center gap-3"><h1 className="text-3xl font-extrabold">{item.grade.name} {item.section.name}</h1><StatusBadge tone={item.archived ? 'neutral' : 'success'}>{item.archived ? 'Archivado' : 'Activo'}</StatusBadge></div>
-              <p className="mt-1 text-sm text-muted-foreground">{cleanLevelName(item.levelName)} · {item.cycleName}{schoolYearName ? ` · Año escolar ${schoolYearName}` : ''}</p>
+              <p className="mt-1 text-sm text-primary-foreground/80">{cleanLevelName(item.levelName)} · {item.cycleName}{schoolYearName ? ` · Año escolar ${schoolYearName}` : ''}</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-2">
-            {canManage ? <button type="button" onClick={() => onEditSection(item.grade, item.section.id)} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-primary/8 px-4 text-sm font-semibold hover:bg-primary/15"><Edit3 className="size-4" /> Editar</button> : null}
-            {canEnroll ? <button type="button" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-primary/90"><Plus className="size-4" /> Agregar estudiantes</button> : null}
+            {canManage ? <button type="button" onClick={() => onEditSection(item.grade, item.section.id)} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-card/15 px-4 text-sm font-semibold hover:bg-card/25"><Edit3 className="size-4" /> Editar</button> : null}
+            {canEnroll ? <button type="button" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-card px-4 text-sm font-semibold text-primary hover:bg-primary-container"><Plus className="size-4" /> Agregar estudiantes</button> : null}
           </div>
         </div>
         <div className="mt-6 grid grid-cols-2 gap-2 xl:grid-cols-4">
@@ -944,9 +937,9 @@ function CourseWorkspace({
             [CalendarCheck2, '—', 'Asistencia', ''],
             [ChartColumn, courseAverage ?? '—', 'Promedio', ''],
           ] as const).map(([Icon, value, label, detail]) => (
-            <div key={label} className="flex min-w-0 items-center gap-3 rounded-2xl bg-primary/8 px-3 py-3">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary/8"><Icon className="size-4" /></span>
-              <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-muted-foreground">{label}{detail}</span></div>
+            <div key={label} className="flex min-w-0 items-center gap-3 rounded-2xl bg-card/15 px-3 py-3">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-card/15"><Icon className="size-4" /></span>
+              <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-primary-foreground/80">{label}{detail}</span></div>
             </div>
           ))}
         </div>
@@ -2629,7 +2622,7 @@ const CourseCard = memo(function CourseCard({
   onDeleteArchivedGrade: (grade: GradeWithSections) => void
   onAssignSubject: (grade: GradeWithSections, sectionId: string) => void
 }) {
-  const levelStyle = getLevelStyle(item.levelName)
+  const levelStyle = getLevelStyle(item.levelName, item.cycleName)
   const teamCount = item.section.teamCount ?? 0
   const archivedGrade = isGradeArchived(item.grade)
   const [menuOpen, setMenuOpen] = useState(false)
