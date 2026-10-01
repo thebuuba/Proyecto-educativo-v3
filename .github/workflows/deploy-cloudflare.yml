@@ -5,6 +5,11 @@ on:
     workflows: [CI]
     types: [completed]
   workflow_dispatch:
+    inputs:
+      preflight_only:
+        description: Verificar migraciones sin desplegar
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -62,17 +67,20 @@ jobs:
         run: pnpm exec wrangler deploy --dry-run --env=""
 
       - name: Verificar migraciones pendientes
-        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --dry-run
+        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --skip-vault --dry-run
 
       - name: Aplicar migraciones
-        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --yes
+        if: ${{ !inputs.preflight_only }}
+        run: pnpm exec supabase db push --db-url "$SUPABASE_DB_URL" --include-all --skip-vault --yes
 
       - name: Instalar catálogo evaluativo versionado
+        if: ${{ !inputs.preflight_only }}
         env:
           DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: pnpm --filter backend catalog:install
 
       - name: Verificar secretos del Worker
+        if: ${{ !inputs.preflight_only }}
         run: |
           secrets=$(pnpm exec wrangler secret list --env="")
           for name in JWT_SECRET DEEPSEEK_API_KEY SUPABASE_ANON_KEY SUPABASE_SERVICE_ROLE_KEY SUPABASE_URL; do
@@ -83,7 +91,9 @@ jobs:
           done
 
       - name: Desplegar Worker
+        if: ${{ !inputs.preflight_only }}
         run: pnpm exec wrangler deploy --env=""
 
       - name: Smoke test
+        if: ${{ !inputs.preflight_only }}
         run: pnpm cloudflare:smoke "$APP_URL"
