@@ -246,7 +246,7 @@ describe('Recomendador con currículo literal completo', () => {
   })
   it('catálogo global: IDs únicos, tipos existentes y referencias coherentes', () => {
     for (const entries of [evaluationCatalogV1.activityTypes, evaluationCatalogV1.criterionTemplates, evaluationCatalogV1.recommendationRules]) expect(new Set(entries.map(e => e.id)).size).toBe(entries.length)
-    expect(evaluationCatalogV1.activityTypes).toHaveLength(36)
+    expect(evaluationCatalogV1.activityTypes).toHaveLength(46)
     for (const rule of evaluationCatalogV1.recommendationRules) expect(evaluationCatalogV1.instrumentTemplates.map(t => t.id)).toContain(rule.instrument)
   })
   it.each([
@@ -323,6 +323,42 @@ describe('Recomendador con currículo literal completo', () => {
       expect(result.activityType).toBe(activityType)
       expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
       expect(result.totalScoreUnits).toBe(1735)
+    }
+  })
+  it.each([
+    ['Creación detectivesca', 'Los estudiantes escribirán un cuento detectivesco con un objeto desaparecido, personajes sospechosos, pistas y un desenlace que explique lo ocurrido.', 'DETECTIVE_STORY_WRITING', 'Misterio, pistas y resolución'],
+    ['Análisis policial', 'Los estudiantes leerán un cuento policíaco e identificarán el narrador, los personajes, el ambiente y las pistas que permiten comprender el desenlace.', 'DETECTIVE_STORY_ANALYSIS', 'Narrador, personajes y ambiente'],
+    ['Narración detectivesca', 'Cada estudiante narrará oralmente un cuento detectivesco, manteniendo la secuencia de los hechos y utilizando la voz para diferenciar las intervenciones de los personajes.', 'DETECTIVE_STORY_NARRATION', 'Voces de narrador y personajes'],
+    ['Comparación detectivesca', 'Los estudiantes compararán dos cuentos detectivescos y explicarán diferencias en personajes, ambientes y resolución del misterio, usando ejemplos de ambos.', 'DETECTIVE_STORY_COMPARISON', 'Resolución del misterio'],
+  ])('prepara el cuento policíaco: %s', (activityTitle, description, activityType, criterionTitle) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const maxScore of [20, 17.35]) for (const preferredInstrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore, participationMode: 'INDIVIDUAL', preferredInstrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      expect(result.criteria.map(item => item.title)).toContain(criterionTitle)
+      expect(result.totalScoreUnits).toBe(Math.round(maxScore * 100))
+    }
+  })
+  it('conserva el informe de lectura como producto aunque trate un cuento detectivesco', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'Lectura detectivesca', description: 'Los estudiantes redactarán un informe de lectura sobre un cuento detectivesco.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe('READING_REPORT_WRITING')
+    expect(result.criteria.map(item => item.title)).toContain('Estructura del informe de lectura')
+  })
+  it.each([
+    ['Árbol de palabras', 'Los estudiantes escribirán un poema sobre la naturaleza y distribuirán sus versos formando la silueta de un árbol. Pueden utilizar verso libre.', 'CALLIGRAM_CREATION', 'Relación entre tema y figura'],
+    ['Interpretamos el caligrama', 'Los estudiantes analizarán un caligrama e interpretarán cómo la figura formada por sus palabras se relaciona con el mensaje y los sentimientos del poema.', 'CALLIGRAM_ANALYSIS', 'Relación entre texto y figura'],
+    ['Comparamos caligramas', 'Los estudiantes compararán dos caligramas y justificarán semejanzas y diferencias en sus mensajes y organización visual.', 'CALLIGRAM_COMPARISON', 'Comparación de figuras'],
+    ['Recitamos', 'Cada estudiante recitará un caligrama seleccionado, utilizando una entonación acorde con los sentimientos del poema.', 'CALLIGRAM_RECITATION', 'Entonación y expresión'],
+    ['Explicamos', 'Cada estudiante presentará su caligrama y explicará la relación entre el tema, las palabras elegidas y la figura.', 'CALLIGRAM_EXPLANATION', 'Tema, palabras y figura'],
+  ])('prepara el caligrama: %s', (activityTitle, description, activityType, criterionTitle) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const preferredInstrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore: 17.35, participationMode: 'INDIVIDUAL', preferredInstrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      expect(result.criteria.map(item => item.title)).toContain(criterionTitle)
+      expect(result.totalScoreUnits).toBe(1735)
+      if (activityType === 'CALLIGRAM_CREATION') expect(JSON.stringify(result.criteria)).toContain('sin exigir rima')
     }
   })
 })

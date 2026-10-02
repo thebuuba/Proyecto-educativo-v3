@@ -30,12 +30,69 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   const touristGuide = /gu[ií]a tur[ií]stica/.test(text)
   const poster = /afiche/.test(text)
   const readingReport = /informe de lectura/.test(text)
+  const detectiveStory = /cuento (?:polic[ií]aco|detectivesco)/.test(text) && !readingReport
+  const calligram = /caligrama/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text)
   const analyzing = /leer|analizar|identificar/.test(text)
   const oral = /noticiero|presentar|exponer/.test(text)
   const comparing = /comparar|comparaci[oó]n/.test(text)
   const graphicsRequested = /imagen|im[aá]genes|foto|mapa|gr[aá]fico|dibujo|collage|recurso visual/.test(text)
   const posterTopic = /agua/.test(text) ? 'el cuidado y ahorro del agua' : /convivencia escolar/.test(text) ? 'la convivencia escolar' : /entorno/.test(text) ? 'el cuidado del entorno' : 'el tema indicado'
-  const authored = readingReport && analyzing ? [
+  const reciting = /recitar|declamar/.test(text)
+  const authored = detectiveStory && analyzing ? [
+    ['Estructura y trama', 'Interpreta inicio, nudo y desenlace y explica cómo progresa el misterio.'],
+    ['Narrador, personajes y ambiente', 'Identifica y relaciona estos elementos en la historia.'],
+    ['Pistas y desenlace', 'Relaciona acciones y pistas con la comprensión del desenlace.'],
+    ['Recursos narrativos', 'Explica recursos lingüísticos o literarios presentes.'],
+    ['Evidencias del cuento', 'Justifica su interpretación con ejemplos del texto.'],
+  ] : detectiveStory && comparing ? [
+    ['Comparación de tramas', 'Compara los misterios y la organización de ambos cuentos.'],
+    ['Personajes y ambientes', 'Compara personajes y ambientes con ejemplos.'],
+    ['Resolución del misterio', 'Contrasta cómo las pistas conducen a cada desenlace.'],
+    ['Evidencias', 'Sustenta la comparación con ambos cuentos.'],
+    ['Conclusión', 'Formula una conclusión coherente.'],
+  ] : detectiveStory && oral ? [
+    ['Secuencia narrativa', 'Comunica inicio, nudo y desenlace en orden.'],
+    ['Desarrollo del misterio', 'Relaciona conflicto, acciones y resolución.'],
+    ['Voces y expresión', 'Usa tono, ritmo y volumen para diferenciar intervenciones.'],
+    ['Claridad oral', 'Narra o explica con vocabulario comprensible.'],
+    ['Dominio individual', 'Responde por su propio desempeño.'],
+  ] : detectiveStory ? [
+    ['Inicio, nudo y desenlace', 'Organiza las partes del cuento de forma relacionada.'],
+    ['Misterio, pistas y resolución', 'Relaciona las pistas con un desenlace coherente.'],
+    ['Personajes y ambiente', 'Caracteriza personajes y ambiente para la trama.'],
+    ['Narrador', 'Mantiene una perspectiva narrativa consistente.'],
+    ['Cohesión y revisión', 'Revisa conectores, claridad, puntuación y ortografía.'],
+  ] : calligram && analyzing ? [
+    ['Relación texto-figura', 'Interpreta cómo la figura formada por palabras se relaciona con el poema.'],
+    ['Intención y sentimientos', 'Explica el mensaje y los sentimientos expresados.'],
+    ['Recursos presentes', 'Analiza únicamente los recursos expresivos presentes.'],
+    ['Organización visual', 'Explica cómo disposición y tipografía aportan significado.'],
+    ['Evidencias', 'Justifica con versos y rasgos visuales concretos.'],
+  ] : calligram && comparing ? [
+    ['Mensajes', 'Compara temas, mensajes y sentimientos.'],
+    ['Figuras', 'Contrasta la relación entre palabras y figura.'],
+    ['Recursos expresivos', 'Compara vocabulario y recursos presentes.'],
+    ['Organización visual', 'Compara disposición y legibilidad.'],
+    ['Conclusión', 'Formula una conclusión sustentada.'],
+  ] : calligram && reciting ? [
+    ['Claridad', 'Recita con dicción y volumen comprensibles.'],
+    ['Entonación y expresión', 'Ajusta ritmo y pausas a los sentimientos del poema.'],
+    ['Comprensión', 'Comunica el sentido global durante la recitación.'],
+    ['Fluidez', 'Mantiene continuidad comprensible.'],
+    ['Desempeño individual', 'Sostiene personalmente la recitación.'],
+  ] : calligram && oral ? [
+    ['Tema, palabras y figura', 'Explica la relación entre los componentes de su caligrama.'],
+    ['Decisiones poéticas y visuales', 'Justifica vocabulario, recursos y disposición.'],
+    ['Ideas y sentimientos', 'Explica lo que buscó comunicar.'],
+    ['Claridad oral', 'Presenta sus decisiones con orden y dicción.'],
+    ['Dominio individual', 'Responde preguntas sobre su producto.'],
+  ] : calligram ? [
+    ['Tema y figura', 'Dispone los versos formando una figura relacionada con el tema.'],
+    ['Ideas y sentimientos', 'Comunica ideas o emociones coherentes.'],
+    ['Organización visual', 'Construye la figura sin impedir la lectura.'],
+    ['Recursos expresivos', /verso libre/.test(text) ? 'Usa recursos pertinentes en verso libre, sin exigir rima.' : 'Usa vocabulario y recursos pertinentes.'],
+    ['Revisión final', 'Revisa coherencia, relación texto-figura y ortografía.'],
+  ] : readingReport && analyzing ? [
     ['Función y propósito', 'Explica para qué se elaboró el informe de lectura y qué texto analiza.'],
     ['Estructura del informe', 'Identifica título, introducción, desarrollo y conclusión.'],
     ['Comprensión del resumen', 'Reconoce las ideas principales recuperadas sin confundirlas con el análisis.'],

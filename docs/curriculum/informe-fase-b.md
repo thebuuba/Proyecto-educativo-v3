@@ -56,7 +56,7 @@ La guía de Supabase influyó en los grants mínimos, RLS explícita y comprobac
 
 ## 4. Seeds
 
-Release vigente `evaluation-2026.6`, definido en `catalog-v1.ts`, cargado con `seedEvaluationCatalog`. Incluye las seis estructuras: activityTypes, evidenceTypes, criterionTemplates, descriptorPatterns, instrumentTemplates y recommendationRules. Las versiones anteriores se conservan sin alteraciones.
+Release vigente `evaluation-2026.7`, definido en `catalog-v1.ts`, cargado con `seedEvaluationCatalog`. Incluye las seis estructuras: activityTypes, evidenceTypes, criterionTemplates, descriptorPatterns, instrumentTemplates y recommendationRules. Las versiones anteriores se conservan sin alteraciones.
 
 Seed idempotente: repetir no agrega filas; si la versión existe con otro contenido se rechaza y se exige una nueva versión. El servicio verifica el payload JSONB contra el seed tipado revisado antes de usarlo. No se admite editar silenciosamente la versión activa desde la base de datos.
 
@@ -78,7 +78,7 @@ Los scripts no leen `.env` ni aceptan hosts remotos. No se añadieron dependenci
 
 ## 5. Tipos pedagógicos y familias
 
-36 tipos, incluidos los módulos deterministas de «La noticia», «La guía turística», «El informe de lectura» y «El afiche», además de los tipos generales existentes.
+46 tipos, incluidos los módulos deterministas de «La noticia», «La guía turística», «El informe de lectura», «El afiche», «El cuento policíaco y detectivesco» y «El caligrama», además de los tipos generales existentes.
 
 Familias: ORAL, WRITTEN, PRACTICAL, SCIENTIFIC, MATHEMATICAL, ARTISTIC, MOTOR, PROJECT_BASED y OBSERVATIONAL. Selección explícita tiene prioridad; detección por frases normalizadas, con preferencia por coincidencia más específica; si no hay coincidencia, OTHER. Es una sugerencia editable, no una clasificación irreversible.
 

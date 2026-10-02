@@ -15,7 +15,7 @@ const criterion = (id: string, title: string, observable: string, simple: string
 
 /** Authored evaluative templates, NOT literal MINERD curriculum. Immutable seed release. */
 export const evaluationCatalogV1 = {
-  version: 'evaluation-2026.6',
+  version: 'evaluation-2026.7',
   evidenceTypes: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT', 'ATTITUDE'] as EvidenceType[],
   activityTypes: [
     activity('EXPOSITION', 'ORAL', ['PERFORMANCE', 'KNOWLEDGE'], ['exposicion', 'exponer']),
@@ -37,6 +37,16 @@ export const evaluationCatalogV1 = {
     activity('READING_REPORT_ANALYSIS', 'OBSERVATIONAL', ['KNOWLEDGE', 'PRODUCT'], ['leer un informe de lectura', 'leeran un informe de lectura', 'analizar un informe de lectura', 'analizaran un informe de lectura', 'identificar la estructura de un informe de lectura']),
     activity('READING_REPORT_PRESENTATION', 'ORAL', ['PERFORMANCE', 'KNOWLEDGE'], ['presentar un informe de lectura', 'presentaran un informe de lectura', 'exponer un informe de lectura', 'presentacion oral del informe de lectura']),
     activity('READING_REPORT_COMPARISON', 'WRITTEN', ['KNOWLEDGE', 'PRODUCT'], ['comparar informes de lectura', 'compararan informes de lectura', 'comparacion de informes de lectura']),
+    activity('DETECTIVE_STORY_WRITING', 'WRITTEN', ['PRODUCT', 'KNOWLEDGE'], ['escribir un cuento detectivesco', 'escribiran un cuento detectivesco', 'escribir un cuento policiaco', 'crear un cuento detectivesco']),
+    activity('DETECTIVE_STORY_ANALYSIS', 'OBSERVATIONAL', ['KNOWLEDGE', 'PRODUCT'], ['leer un cuento policiaco', 'leeran un cuento policiaco', 'analizar un cuento detectivesco', 'identificar el narrador']),
+    activity('DETECTIVE_STORY_NARRATION', 'ORAL', ['PERFORMANCE', 'KNOWLEDGE'], ['narrar oralmente un cuento detectivesco', 'narrara oralmente un cuento detectivesco', 'contar oralmente un cuento policiaco']),
+    activity('DETECTIVE_STORY_COMPARISON', 'WRITTEN', ['KNOWLEDGE', 'PRODUCT'], ['comparar cuentos detectivescos', 'compararan dos cuentos detectivescos', 'comparacion de cuentos policiacos']),
+    activity('DETECTIVE_STORY_ANALYSIS_PRESENTATION', 'ORAL', ['PERFORMANCE', 'KNOWLEDGE'], ['exponer el analisis de un cuento detectivesco', 'presentar el analisis de un cuento policiaco']),
+    activity('CALLIGRAM_CREATION', 'ARTISTIC', ['PRODUCT', 'KNOWLEDGE'], ['crear un caligrama', 'escribir un caligrama', 'escribir un poema formando la silueta', 'distribuir los versos formando la silueta']),
+    activity('CALLIGRAM_ANALYSIS', 'OBSERVATIONAL', ['KNOWLEDGE', 'PRODUCT'], ['analizar un caligrama', 'analizaran un caligrama', 'leer un caligrama', 'interpretar un caligrama']),
+    activity('CALLIGRAM_COMPARISON', 'WRITTEN', ['KNOWLEDGE', 'PRODUCT'], ['comparar caligramas', 'compararan dos caligramas', 'comparacion de caligramas']),
+    activity('CALLIGRAM_RECITATION', 'ORAL', ['PERFORMANCE', 'KNOWLEDGE'], ['recitar un caligrama', 'recitara un caligrama', 'declamar un caligrama']),
+    activity('CALLIGRAM_EXPLANATION', 'ORAL', ['PERFORMANCE', 'KNOWLEDGE'], ['presentar su caligrama', 'explicar su caligrama', 'explicar la relacion entre el tema y la figura']),
     activity('EXPERIMENT', 'SCIENTIFIC', ['PERFORMANCE', 'PRODUCT', 'KNOWLEDGE'], ['experimento', 'experimentacion']),
     activity('LAB_PRACTICE', 'SCIENTIFIC', ['PERFORMANCE', 'PRODUCT', 'KNOWLEDGE'], ['laboratorio']),
     activity('WRITTEN_PRODUCTION', 'WRITTEN', ['PRODUCT', 'KNOWLEDGE'], ['produccion escrita', 'poema', 'cuento', 'escribir']),

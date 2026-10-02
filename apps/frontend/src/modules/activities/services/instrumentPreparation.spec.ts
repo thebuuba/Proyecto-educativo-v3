@@ -83,4 +83,15 @@ describe('adaptación del instrumento preparado', () => {
     expect(fallback.criteria.map(item => item.title)).toContain('Interpretación del mensaje')
     expect(JSON.stringify(fallback.criteria)).not.toMatch(/elabora|crear otro afiche/i)
   })
+  it('precarga el cuento detectivesco y conserva el informe como producto distinto', () => {
+    const story = editableFallbackRecommendation({ activityTitle: 'Misterio', description: 'Escribirán un cuento detectivesco con pistas y desenlace.', maxScore: 17.35, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL' })
+    expect(story.criteria.map(item => item.title)).toContain('Misterio, pistas y resolución')
+    const report = editableFallbackRecommendation({ activityTitle: 'Informe', description: 'Redactarán un informe de lectura sobre un cuento detectivesco.', maxScore: 20, instrumentType: 'lista-cotejo', participationMode: 'INDIVIDUAL' })
+    expect(report.criteria.map(item => item.title)).toContain('Estructura del informe')
+  })
+  it('precarga un caligrama en verso libre sin exigir rima', () => {
+    const fallback = editableFallbackRecommendation({ activityTitle: 'Árbol', description: 'Escribirán un poema y distribuirán sus versos formando la silueta de un árbol; pueden usar verso libre.', maxScore: 20, instrumentType: 'escala', participationMode: 'INDIVIDUAL' })
+    expect(fallback.criteria.map(item => item.title)).toContain('Tema y figura')
+    expect(JSON.stringify(fallback.criteria)).toContain('sin exigir rima')
+  })
 })
