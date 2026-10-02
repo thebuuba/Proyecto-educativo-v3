@@ -12,6 +12,7 @@ const MAX_GET_ATTEMPTS = 8
 const TRANSIENT_GET_STATUSES = new Set([502, 503, 504])
 
 export const AUTH_UNAUTHORIZED_EVENT = 'aulabase:unauthorized'
+export const API_CACHE_INVALIDATED_EVENT = 'aulabase:cache-invalidated'
 
 export const API_CACHE_TTL = {
   sessionList: 60_000,
@@ -141,6 +142,7 @@ function invalidateCacheTags(tags: readonly string[]) {
   pendingGets.forEach((entry, key) => {
     if (Array.from(entry.tags).some((tag) => invalidated.has(tag))) pendingGets.delete(key)
   })
+  window.dispatchEvent(new CustomEvent(API_CACHE_INVALIDATED_EVENT, { detail: tags }))
 }
 
 function clearResponseCache() {

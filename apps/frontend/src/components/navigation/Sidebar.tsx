@@ -4,6 +4,7 @@ import { ChevronsLeft, ChevronsRight, GraduationCap, X } from 'lucide-react'
 import { NavLink, useLocation } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import { API_CACHE_INVALIDATED_EVENT, API_CACHE_TAGS } from '@/services/apiClient'
 import { getSidebarSummary } from './sidebarSummaryService'
 import { navigationRoutes, routePrefetchers } from '@/routes/appRoutes'
 import { cn } from '@/utils/cn'
@@ -61,11 +62,20 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
   useEffect(() => {
     if (!appUser) return
     let current = true
-    void getSidebarSummary().then((result) => {
+    const refresh = () => void getSidebarSummary().then((result) => {
       if (current) setSummary(result)
     }).catch(() => undefined)
-    return () => { current = false }
-  }, [appUser?.id, pathname])
+    const onInvalidated = (event: Event) => {
+      const tags = (event as CustomEvent<readonly string[]>).detail
+      if (tags.includes(API_CACHE_TAGS.courseOptions) || tags.includes(API_CACHE_TAGS.schedule)) refresh()
+    }
+    refresh()
+    window.addEventListener(API_CACHE_INVALIDATED_EVENT, onInvalidated)
+    return () => {
+      current = false
+      window.removeEventListener(API_CACHE_INVALIDATED_EVENT, onInvalidated)
+    }
+  }, [appUser, pathname])
   const [tooltip, setTooltip] = useState<{ label: string; top: number } | null>(null)
   const hideTooltip = () => setTooltip(null)
   const showTooltip = (element: HTMLElement, label: string) => {

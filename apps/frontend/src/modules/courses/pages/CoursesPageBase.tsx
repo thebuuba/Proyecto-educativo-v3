@@ -160,8 +160,8 @@ type CourseCardItem = {
 function getLevelStyle(levelName: string, cycleName: string) {
   const normalized = normalizeText(levelName)
   const secondCycle = normalizeText(cycleName).includes('segundo ciclo')
-  if (normalized.includes('primari')) return { color: secondCycle ? 'var(--palette-gold)' : 'var(--palette-teal)', soft: 'var(--primary-container)' }
-  if (normalized.includes('secundari') && secondCycle) return { color: 'var(--palette-violet)', soft: 'var(--primary-container)' }
+  if (normalized.includes('primari')) return { color: secondCycle ? 'var(--palette-gold)' : 'var(--palette-green)', soft: 'var(--primary-container)' }
+  if (normalized.includes('secundari') && secondCycle) return { color: 'var(--palette-coral)', soft: 'var(--primary-container)' }
   return { color: 'var(--primary)', soft: 'var(--primary-container)' }
 }
 
@@ -583,11 +583,11 @@ export function CoursesPage() {
               {canManage && !showArchived ? (
                 <div className="flex flex-wrap items-center gap-2">
                   <details className="group relative shrink-0">
-                    <summary className="flex h-11 cursor-pointer list-none items-center gap-2 rounded-full bg-card px-4 text-sm font-bold text-primary transition hover:bg-primary-container focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+                    <summary data-tour="create-course" className="flex h-11 cursor-pointer list-none items-center gap-2 rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
                       Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
                     </summary>
                     <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
-                      <button data-tour="create-course" type="button" onClick={openCreateAssignmentFlow} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar curso</button>
+                      <button type="button" onClick={openCreateAssignmentFlow} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar curso</button>
                       <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nueva sección</button>
                     </div>
                   </details>
@@ -602,8 +602,8 @@ export function CoursesPage() {
                 [BookOpen, totalAssignments, 'Asignaturas'],
                 [UsersRound, totalTeams, 'Equipos'],
               ] as const).map(([Icon, value, label]) => (
-                <div key={label} className="flex items-center gap-3 rounded-2xl bg-card/15 px-3 py-2.5">
-                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-card/15"><Icon className="size-4" /></span>
+                <div key={label} className="flex items-center gap-3 rounded-2xl bg-primary/5 px-3 py-2.5">
+                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Icon className="size-4" /></span>
                   <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-primary-foreground/80">{label}</span></div>
                 </div>
               ))}
@@ -926,7 +926,7 @@ function CourseWorkspace({
             </div>
           </div>
           <div className="flex flex-wrap gap-2">
-            {canManage ? <button type="button" onClick={() => onEditSection(item.grade, item.section.id)} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-card/15 px-4 text-sm font-semibold hover:bg-card/25"><Edit3 className="size-4" /> Editar</button> : null}
+            {canManage ? <button type="button" onClick={() => onEditSection(item.grade, item.section.id)} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-semibold text-primary hover:bg-primary/15"><Edit3 className="size-4" /> Editar</button> : null}
             {canEnroll ? <button type="button" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-card px-4 text-sm font-semibold text-primary hover:bg-primary-container"><Plus className="size-4" /> Agregar estudiantes</button> : null}
           </div>
         </div>
@@ -937,8 +937,8 @@ function CourseWorkspace({
             [CalendarCheck2, '—', 'Asistencia', ''],
             [ChartColumn, courseAverage ?? '—', 'Promedio', ''],
           ] as const).map(([Icon, value, label, detail]) => (
-            <div key={label} className="flex min-w-0 items-center gap-3 rounded-2xl bg-card/15 px-3 py-3">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-card/15"><Icon className="size-4" /></span>
+            <div key={label} className="flex min-w-0 items-center gap-3 rounded-2xl bg-primary/5 px-3 py-3">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Icon className="size-4" /></span>
               <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-primary-foreground/80">{label}{detail}</span></div>
             </div>
           ))}

@@ -27,8 +27,8 @@ main[data-module='cursos'] .course-blue-hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: var(--card);
+  color: var(--foreground);
   box-shadow: 0 12px 24px -14px color-mix(in srgb, var(--foreground) 35%, transparent);
 }
 
@@ -40,7 +40,7 @@ main[data-module='cursos'] .course-blue-hero::after {
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--card) 9%, transparent);
+  background: color-mix(in srgb, var(--primary) 7%, transparent);
   pointer-events: none;
 }
 
@@ -50,7 +50,7 @@ main[data-module='cursos'] .course-blue-hero::after { left: 38%; bottom: -185px;
 main[data-module='cursos'] .course-blue-hero > * { position: relative; }
 
 main[data-module='cursos'] .course-blue-hero .text-primary-foreground\/80 {
-  color: color-mix(in srgb, var(--primary-foreground) 80%, transparent);
+  color: var(--muted-foreground);
 }
 
 main[data-module='cursos'] .course-list-filters input[role='switch'] {
