@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { ChevronsLeft, ChevronsRight, GraduationCap, X } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import { API_CACHE_INVALIDATED_EVENT, API_CACHE_TAGS } from '@/services/apiClient'
+import { getSidebarSummary } from './sidebarSummaryService'
 import { navigationRoutes, routePrefetchers } from '@/routes/appRoutes'
 import { cn } from '@/utils/cn'
 import './sidebar-design.css'
@@ -54,7 +56,26 @@ function SidebarIcon({ name }: { name: string }) {
 }
 
 export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: SidebarProps) {
-  const { hasRole, logout } = useAuth()
+  const { appUser, hasRole, logout } = useAuth()
+  const { pathname } = useLocation()
+  const [summary, setSummary] = useState<{ activeGroups: number; classesToday: number } | null>(null)
+  useEffect(() => {
+    if (!appUser) return
+    let current = true
+    const refresh = () => void getSidebarSummary().then((result) => {
+      if (current) setSummary(result)
+    }).catch(() => undefined)
+    const onInvalidated = (event: Event) => {
+      const tags = (event as CustomEvent<readonly string[]>).detail
+      if (tags.includes(API_CACHE_TAGS.courseOptions) || tags.includes(API_CACHE_TAGS.schedule)) refresh()
+    }
+    refresh()
+    window.addEventListener(API_CACHE_INVALIDATED_EVENT, onInvalidated)
+    return () => {
+      current = false
+      window.removeEventListener(API_CACHE_INVALIDATED_EVENT, onInvalidated)
+    }
+  }, [appUser, pathname])
   const [tooltip, setTooltip] = useState<{ label: string; top: number } | null>(null)
   const hideTooltip = () => setTooltip(null)
   const showTooltip = (element: HTMLElement, label: string) => {
@@ -77,9 +98,9 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
       item.path === '/inicio'
         ? 'Resumen del día'
         : item.path === '/cursos'
-          ? 'Tus grupos activos'
+          ? summary ? `${summary.activeGroups} ${summary.activeGroups === 1 ? 'grupo activo' : 'grupos activos'}` : 'Grupos activos'
           : item.path === '/horario'
-            ? 'Clases de hoy'
+            ? summary ? `${summary.classesToday} ${summary.classesToday === 1 ? 'clase hoy' : 'clases hoy'}` : 'Clases de hoy'
             : null
     return (
       <NavLink
@@ -148,7 +169,7 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           isOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className="sidebar-header flex h-20 shrink-0 items-center gap-3 px-5">
+        <div className="sidebar-header flex h-[72px] shrink-0 items-center gap-3 px-5">
           <NavLink
             to="/inicio"
             onClick={onClose}
@@ -185,16 +206,16 @@ export function Sidebar({ isOpen, isExpanded, onClose, onToggleExpanded }: Sideb
           </button>
         </div>
 
-        <nav className="min-h-0 flex-1 overflow-y-auto px-4 py-2" aria-label="Navegación principal">
-          <div className="space-y-1.5">{primary.map((item) => renderLink(item, true))}</div>
+        <nav className="min-h-0 flex-1 overflow-y-auto px-4 py-1" aria-label="Navegación principal">
+          <div className="space-y-0.5">{primary.map((item) => renderLink(item, true))}</div>
           {secondary.length ? (
-            <div className="mt-5 space-y-0.5 border-t border-border pt-4">
+            <div className="mt-3 space-y-0.5 border-t border-border pt-3">
               {secondary.map((item) => renderLink(item))}
             </div>
           ) : null}
         </nav>
 
-        <div className="space-y-0.5 border-t border-border px-4 py-3">
+        <div className="space-y-0.5 border-t border-border px-4 py-2">
           {footer.map((item) => renderLink(item))}
           <NavLink
             to="/perfil"

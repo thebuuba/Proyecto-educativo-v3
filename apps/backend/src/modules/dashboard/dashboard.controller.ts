@@ -25,6 +25,11 @@ export class DashboardController {
     return this.dashboardService.getOverview(user)
   }
 
+  @Get('sidebar-summary')
+  getSidebarSummary(@CurrentUser() user: AuthenticatedUser) {
+    return this.dashboardService.getSidebarSummary(user)
+  }
+
   /** Datos secundarios que no bloquean la primera pintura del inicio. */
   @Get('insights')
   getInsights(@CurrentUser() user: AuthenticatedUser) {

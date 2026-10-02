@@ -44,6 +44,7 @@ export type DashboardClass = {
   sectionId: string
   /** Identificador de la materia-sección. */
   sectionSubjectId: string
+  appearanceColor?: string | null
   /** Identificador del período académico (puede ser nulo). */
   academicPeriodId: string | null
   /** Minutos restantes para que inicie (puede ser nulo). */

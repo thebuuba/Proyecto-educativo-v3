@@ -41,6 +41,7 @@ export function LoginPage() {
   const [rememberedAccount, setRememberedAccount] = useState(getRememberedAccount)
   const [rememberedAccountSelected, setRememberedAccountSelected] = useState(false)
   const [email, setEmail] = useState(() => rememberedAccount?.email ?? '')
+  const [verificationEmail, setVerificationEmail] = useState('')
   const [password, setPassword] = useState('')
   const [visible, setVisible] = useState(false)
   const [error, setError] = useState('')
@@ -54,11 +55,11 @@ export function LoginPage() {
     ?? (authError?.startsWith('VERIFICATION_REQUIRED:') ? authError.endsWith(':totp') ? 'totp' : 'email' : null)
 
   useEffect(() => {
-    if (!activeVerification || email) return
+    if (!activeVerification || verificationMethod) return
     void supabase.auth.getUser().then(({ data }) => {
-      if (data.user?.email) setEmail(data.user.email)
+      if (data.user?.email) setVerificationEmail(data.user.email)
     }).catch(() => undefined)
-  }, [activeVerification, email])
+  }, [activeVerification, verificationMethod])
   const fromState = location.state as LocationState | null
   const from =
     fromState?.from?.pathname && !['/login', '/'].includes(fromState.from.pathname)
@@ -75,6 +76,7 @@ export function LoginPage() {
       await login({ email: email.trim(), password })
     } catch (err) {
       if (err instanceof ApiError && err.message === 'VERIFICATION_REQUIRED') {
+        setVerificationEmail(email.trim())
         setVerificationMethod(err.method === 'totp' ? 'totp' : 'email')
         return
       }
@@ -102,7 +104,7 @@ export function LoginPage() {
     }
   }
   async function magicLink() {
-    const accountEmail = email.trim()
+    const accountEmail = (activeVerification ? verificationEmail : email).trim()
     if (!accountEmail) {
       setError('Escribe tu correo para recibir el enlace de acceso.')
       return
@@ -192,9 +194,9 @@ export function LoginPage() {
               ) : (
                 <>
                   <label className="block text-sm font-medium">Correo electrónico
-                    <input className="auth-input mt-2" type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
+                    <input className="auth-input mt-2" type="email" value={verificationEmail} readOnly required />
                   </label>
-                  <button type="button" disabled={busy} onClick={() => void magicLink()} className="min-h-12 w-full rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-60">Enviar enlace de verificación</button>
+                  <button type="button" disabled={busy || !verificationEmail} onClick={() => void magicLink()} className="min-h-12 w-full rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-60">Enviar enlace de verificación</button>
                 </>
               )}
             </div>

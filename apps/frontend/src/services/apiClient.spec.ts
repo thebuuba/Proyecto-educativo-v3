@@ -82,6 +82,39 @@ describe('api client session transport', () => {
     expect(fetch).toHaveBeenCalledTimes(2)
   })
 
+  it('recovers a GET after several consecutive Cloudflare 503 responses', async () => {
+    vi.useFakeTimers()
+    vi.mocked(fetch)
+      .mockResolvedValueOnce({ ok: false, status: 503 } as Response)
+      .mockResolvedValueOnce({ ok: false, status: 503 } as Response)
+      .mockResolvedValueOnce({ ok: false, status: 503 } as Response)
+      .mockResolvedValueOnce({
+        ok: true,
+        status: 200,
+        json: vi.fn().mockResolvedValue({ data: { recovered: true } }),
+      } as unknown as Response)
+
+    const request = api.get('/dashboard/overview')
+    await vi.runAllTimersAsync()
+    await expect(request).resolves.toEqual({ recovered: true })
+    expect(fetch).toHaveBeenCalledTimes(4)
+  })
+
+  it('stops retrying a GET after a bounded number of 503 responses', async () => {
+    vi.useFakeTimers()
+    vi.mocked(fetch).mockResolvedValue({
+      ok: false,
+      status: 503,
+      json: vi.fn().mockResolvedValue({ error: 'Service temporarily unavailable' }),
+    } as unknown as Response)
+
+    const request = api.get('/dashboard/overview')
+    const rejection = expect(request).rejects.toMatchObject({ status: 503 })
+    await vi.runAllTimersAsync()
+    await rejection
+    expect(fetch).toHaveBeenCalledTimes(8)
+  })
+
   it('does not retry state-changing requests after a 503', async () => {
     vi.mocked(fetch).mockResolvedValue({
       ok: false,

@@ -23,3 +23,63 @@ main[data-module='cursos'] .course-subject-card {
     box-shadow: 0 7px 16px -7px color-mix(in srgb, var(--foreground) 20%, transparent);
   }
 }
+main[data-module='cursos'] .course-blue-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: 0 12px 24px -14px color-mix(in srgb, var(--foreground) 35%, transparent);
+}
+
+main[data-module='cursos'] .course-blue-hero::before,
+main[data-module='cursos'] .course-blue-hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--primary) 7%, transparent);
+  pointer-events: none;
+}
+
+main[data-module='cursos'] .course-blue-hero::before { right: -38px; top: -95px; }
+main[data-module='cursos'] .course-blue-hero::after { left: 38%; bottom: -185px; }
+
+main[data-module='cursos'] .course-blue-hero > * { position: relative; }
+
+main[data-module='cursos'] .course-blue-hero .text-primary-foreground\/80 {
+  color: var(--muted-foreground);
+}
+
+main[data-module='cursos'] .course-list-filters input[role='switch'] {
+  appearance: none;
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--muted);
+  position: relative;
+  cursor: pointer;
+}
+
+main[data-module='cursos'] .course-list-filters input[role='switch']::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--foreground) 18%, transparent);
+  transition: transform 160ms ease;
+}
+
+main[data-module='cursos'] .course-list-filters input[role='switch']:checked {
+  background: var(--primary);
+}
+
+main[data-module='cursos'] .course-list-filters input[role='switch']:checked::before {
+  transform: translateX(16px);
+}

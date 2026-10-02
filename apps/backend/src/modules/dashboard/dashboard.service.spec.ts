@@ -12,11 +12,11 @@ function deferred<T>() {
 const mocks = vi.hoisted(() => ({
   prisma: {
     student: { count: vi.fn() },
-    teacher: { count: vi.fn() },
+    teacher: { count: vi.fn(), findFirst: vi.fn() },
     enrollment: { count: vi.fn() },
     grade: { count: vi.fn() },
     section: { count: vi.fn() },
-    sectionSubject: { count: vi.fn() },
+    sectionSubject: { count: vi.fn(), findMany: vi.fn() },
     scheduleEntry: { count: vi.fn() },
     attendanceDaily: { count: vi.fn() },
     attendanceClass: { count: vi.fn() },
@@ -28,6 +28,8 @@ const mocks = vi.hoisted(() => ({
       update: vi.fn(),
     },
     appUser: { findFirst: vi.fn() },
+    academicPeriod: { findMany: vi.fn() },
+    schoolYear: { findFirst: vi.fn() },
   },
 }))
 
@@ -40,6 +42,25 @@ describe('DashboardService', () => {
 
   beforeEach(() => {
     vi.clearAllMocks()
+  })
+
+  it('counts only the active groups and today classes assigned to a teacher', async () => {
+    mocks.prisma.academicPeriod.findMany.mockResolvedValue([])
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1' })
+    mocks.prisma.teacher.findFirst.mockResolvedValue({ id: 'teacher-1' })
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([{ sectionId: 'section-1' }, { sectionId: 'section-2' }])
+    mocks.prisma.scheduleEntry.count.mockResolvedValue(3)
+
+    const result = await new DashboardService().getSidebarSummary(teacher, new Date('2026-10-01T15:00:00Z'))
+
+    expect(result).toEqual({ activeGroups: 2, classesToday: 3 })
+    expect(mocks.prisma.sectionSubject.findMany).toHaveBeenCalledWith(expect.objectContaining({
+      where: expect.objectContaining({ schoolYearId: 'year-1', teacherId: 'teacher-1', status: 'ACTIVE' }),
+      distinct: ['sectionId'],
+    }))
+    expect(mocks.prisma.scheduleEntry.count).toHaveBeenCalledWith({ where: expect.objectContaining({
+      schoolYearId: 'year-1', dayOfWeek: 4, sectionSubject: { teacherId: 'teacher-1', status: 'ACTIVE' }, status: 'ACTIVE',
+    }) })
   })
 
   it('starts every stats count before waiting for any result', async () => {

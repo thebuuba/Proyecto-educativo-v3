@@ -1,9 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-const { get, post, signInWithPassword, signUp, signOut, setSession, clearPersistedSupabaseSession } = vi.hoisted(() => ({
+const { get, post, signInWithPassword, signInWithOAuth, signUp, signOut, setSession, clearPersistedSupabaseSession } = vi.hoisted(() => ({
   get: vi.fn(),
   post: vi.fn(),
   signInWithPassword: vi.fn(),
+  signInWithOAuth: vi.fn(),
   signUp: vi.fn(),
   signOut: vi.fn(),
   setSession: vi.fn(),
@@ -17,10 +18,21 @@ vi.mock('@/services/apiClient', async (importOriginal) => ({
 vi.mock('@/modules/auth/services/supabaseClient', () => ({
   isRememberSessionEnabled: () => true,
   clearPersistedSupabaseSession,
-  supabase: { auth: { signInWithPassword, signUp, signOut, setSession } },
+  supabase: { auth: { signInWithPassword, signInWithOAuth, signUp, signOut, setSession } },
 }))
 
-import { login, logout, register } from '@/modules/auth/services/authService'
+import { login, loginWithProvider, logout, register } from '@/modules/auth/services/authService'
+
+describe('OAuth con varias cuentas', () => {
+  it('permite escoger la cuenta de Google en cada acceso', async () => {
+    signInWithOAuth.mockResolvedValue({ error: null })
+    await loginWithProvider('google')
+    expect(signInWithOAuth).toHaveBeenCalledWith(expect.objectContaining({
+      provider: 'google',
+      options: expect.objectContaining({ queryParams: { prompt: 'select_account' } }),
+    }))
+  })
+})
 
 describe('registration confirmation', () => {
   beforeEach(() => { vi.clearAllMocks(); localStorage.clear() })

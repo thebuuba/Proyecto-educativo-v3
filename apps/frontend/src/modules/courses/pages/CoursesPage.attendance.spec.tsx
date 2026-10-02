@@ -112,7 +112,7 @@ describe('asistencia desde la asignatura en Cursos', () => {
     expect(screen.getByText('No hay asignaturas archivadas')).toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: 'Mis cursos' }))
     expect(screen.getByRole('combobox', { name: 'Ciclo' })).toHaveValue('Primer Ciclo')
-    await user.click(screen.getByRole('button', { name: /Mostrar archivadas/ }))
+    await user.click(screen.getByRole('switch', { name: /Mostrar archivados/ }))
     expect(screen.getByRole('heading', { name: 'Grados archivados' })).toBeInTheDocument()
   })
 

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
@@ -69,6 +69,40 @@ describe('LoginPage', () => {
     await user.click(screen.getByRole('button', { name: 'Entrar' }))
     await user.click(await screen.findByRole('button', { name: 'Enviar enlace de verificación' }))
     expect(mocks.requestMagicLink).toHaveBeenCalledWith('ada@escuela.edu')
+  })
+
+  it('conserva el correo ingresado si la sesión anterior sigue en el navegador', async () => {
+    localStorage.setItem('aulabase:last-account', JSON.stringify({ email: 'anterior@escuela.edu' }))
+    mocks.getUser.mockResolvedValue({ data: { user: { email: 'anterior@escuela.edu' } } })
+    mocks.login.mockRejectedValue(new ApiError(409, 'VERIFICATION_REQUIRED', 'email'))
+    mocks.requestMagicLink.mockResolvedValue(undefined)
+    const user = userEvent.setup()
+
+    render(<MemoryRouter><LoginPage /></MemoryRouter>)
+    await user.click(screen.getByRole('button', { name: 'Usar otra cuenta' }))
+    await user.type(screen.getByLabelText('Correo electrónico'), 'nueva@escuela.edu')
+    await user.type(screen.getByLabelText('Contraseña'), 'clave-secreta')
+    await user.click(screen.getByRole('button', { name: 'Entrar' }))
+
+    const address = await screen.findByLabelText('Correo electrónico')
+    await waitFor(() => expect(address).toHaveValue('nueva@escuela.edu'))
+    await user.click(screen.getByRole('button', { name: 'Enviar enlace de verificación' }))
+    expect(mocks.requestMagicLink).toHaveBeenCalledWith('nueva@escuela.edu')
+  })
+
+  it('verifica la cuenta autenticada y no el correo recordado de otra cuenta', async () => {
+    localStorage.setItem('aulabase:last-account', JSON.stringify({ email: 'anterior@escuela.edu', fullName: 'Cuenta anterior' }))
+    mocks.getUser.mockResolvedValue({ data: { user: { email: 'nueva@escuela.edu' } } })
+    mocks.requestMagicLink.mockResolvedValue(undefined)
+    const user = userEvent.setup()
+
+    render(<MemoryRouter initialEntries={['/login?verify=email']}><LoginPage /></MemoryRouter>)
+
+    const address = await screen.findByLabelText('Correo electrónico')
+    await waitFor(() => expect(address).toHaveValue('nueva@escuela.edu'))
+    expect(address).toHaveAttribute('readonly')
+    await user.click(screen.getByRole('button', { name: 'Enviar enlace de verificación' }))
+    expect(mocks.requestMagicLink).toHaveBeenCalledWith('nueva@escuela.edu')
   })
 
   it('completa TOTP antes de reintentar la sesión', async () => {
