@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { InstrumentRecommendation } from '@aula/shared'
-import { alignRecommendationWithFields, preparationFingerprint, recommendationToFields } from './instrumentPreparation'
+import { alignRecommendationWithFields, editableFallbackRecommendation, preparationFingerprint, recommendationToFields } from './instrumentPreparation'
 
 function proposal(type: InstrumentRecommendation['instrumentType']): InstrumentRecommendation {
   return {
@@ -59,5 +59,28 @@ describe('adaptación del instrumento preparado', () => {
     const input = { name: 'Experimeto', description: 'Descripción', maxScore: '10.25', activityType: 'individual', instrumentType: 'rubrica' }
     expect(preparationFingerprint(input)).not.toBe(preparationFingerprint({ ...input, name: 'Experimento' }))
     expect(input.name).toBe('Experimeto')
+  })
+  it('ofrece una plantilla editable contextual de guía turística durante un fallo', () => {
+    const fallback = editableFallbackRecommendation({ activityTitle: 'Conoce mi comunidad', description: 'Crear una guía turística con portada, tres lugares, imágenes y cierre.', maxScore: 17.35, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL' })
+    expect(fallback.criteria.map(item => item.title)).toEqual(expect.arrayContaining(['Información de los lugares', 'Estructura de la guía']))
+    expect(fallback.totalScoreUnits).toBe(1735)
+    expect(JSON.stringify(fallback.criteria)).toContain('imágenes solicitadas')
+    expect(fallback.internalTrace.mappingStatus).toBe('FALLBACK')
+  })
+  it('la plantilla de análisis no exige producir una guía ni recursos ausentes', () => {
+    const fallback = editableFallbackRecommendation({ activityTitle: 'La guía turística', description: 'Leer una guía turística e identificar su estructura.', maxScore: 20, instrumentType: 'lista-cotejo', participationMode: 'INDIVIDUAL' })
+    expect(fallback.criteria.map(item => item.title)).toContain('Identificación de la estructura')
+    expect(JSON.stringify(fallback.criteria)).not.toMatch(/crear|elaborar|mapa/i)
+  })
+  it('precarga una plantilla contextual para un afiche cuando falla el servicio', () => {
+    const fallback = editableFallbackRecommendation({ activityTitle: 'Cuidemos el agua', description: 'Elaborarán un afiche con recomendaciones e imágenes para ahorrar agua.', maxScore: 17.35, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL' })
+    expect(fallback.criteria.map(item => item.title)).toContain('Mensaje sobre el cuidado y ahorro del agua')
+    expect(fallback.totalScoreUnits).toBe(1735)
+    expect(JSON.stringify(fallback.criteria)).toContain('imágenes solicitadas')
+  })
+  it('la plantilla de análisis de afiche interpreta sin exigir creación', () => {
+    const fallback = editableFallbackRecommendation({ activityTitle: 'Mensajes que convencen', description: 'Analizarán un afiche de prevención e identificarán su propósito y destinatarios.', maxScore: 20, instrumentType: 'lista-cotejo', participationMode: 'INDIVIDUAL' })
+    expect(fallback.criteria.map(item => item.title)).toContain('Interpretación del mensaje')
+    expect(JSON.stringify(fallback.criteria)).not.toMatch(/elabora|crear otro afiche/i)
   })
 })

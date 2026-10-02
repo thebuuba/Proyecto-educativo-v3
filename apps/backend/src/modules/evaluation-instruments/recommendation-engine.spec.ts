@@ -99,9 +99,9 @@ describe('Recomendador con currículo literal completo', () => {
     expect(typo.confidence).toBe('LOW')
     expect(typo.selectedCurriculumElements).toEqual([])
   })
-  it('prioriza la evidencia nombrada en el título frente a menciones de la descripción', () => {
+  it('prioriza la acción principal descrita y usa el título como apoyo', () => {
     expect(detectActivityType('Informe científico sobre reacciones químicas', 'Describir los datos del experimento').id).toBe('REPORT')
-    expect(detectActivityType('Investigación sobre terremotos', 'Preparar una exposición final').id).toBe('RESEARCH')
+    expect(detectActivityType('Investigación sobre terremotos', 'Investigar para presentar una exposición final').id).toBe('EXPOSITION')
     expect(detectActivityType('Actividad', 'Resolver problemas con fracciones').id).toBe('PROBLEM_SOLVING')
   })
   it('reconoce familias representativas y erratas acotadas sin reinterpretar otros títulos', () => {
@@ -246,7 +246,83 @@ describe('Recomendador con currículo literal completo', () => {
   })
   it('catálogo global: IDs únicos, tipos existentes y referencias coherentes', () => {
     for (const entries of [evaluationCatalogV1.activityTypes, evaluationCatalogV1.criterionTemplates, evaluationCatalogV1.recommendationRules]) expect(new Set(entries.map(e => e.id)).size).toBe(entries.length)
-    expect(evaluationCatalogV1.activityTypes).toHaveLength(20)
+    expect(evaluationCatalogV1.activityTypes).toHaveLength(36)
     for (const rule of evaluationCatalogV1.recommendationRules) expect(evaluationCatalogV1.instrumentTemplates.map(t => t.id)).toContain(rule.instrument)
+  })
+  it.each([
+    ['La noticia', 'Los estudiantes redactarán una noticia sobre un acontecimiento escolar, con titular, entrada y cuerpo', 'NEWS_WRITING', ['Información esencial de la noticia', 'Titular, entrada y cuerpo']],
+    ['La noticia', 'Los estudiantes leerán una noticia e identificarán sus partes y las interrogantes que responde', 'NEWS_ANALYSIS', ['Identificación de sus partes', 'Interrogantes fundamentales']],
+    ['Noticiero escolar', 'Los estudiantes presentarán en equipos noticias del centro; se calificará individualmente', 'NEWSCAST', ['Información periodística', 'Dominio individual de la noticia asignada']],
+  ])('prepara La noticia según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore: 17.5, participationMode: description.includes('equipos') ? 'GROUP' : 'INDIVIDUAL', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      expect(result.instrumentType).toBe(instrumentType)
+      expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(1750)
+      expect(result.criteria.every(item => item.sourceType === 'CONTEXTUALIZED' && item.sourceReferences.length === 0)).toBe(true)
+      if (instrumentType === 'rubrica' || instrumentType === 'escala') expect(result.criteria.every(item => item.descriptors.length === 4)).toBe(true)
+    }
+  })
+  it.each([
+    ['Conoce mi comunidad', 'Los estudiantes elaborarán una guía turística de su comunidad con portada, información de tres lugares, imágenes y cierre.', 'TOURIST_GUIDE_CREATION', ['Información de tres lugares solicitados', 'Estructura de la guía turística']],
+    ['La guía turística', 'Los estudiantes leerán una guía turística e identificarán su estructura y los recursos que utiliza para orientar al visitante.', 'TOURIST_GUIDE_ANALYSIS', ['Identificación de la estructura', 'Recursos para orientar al visitante']],
+    ['Lugares de mi comunidad', 'Los estudiantes presentarán oralmente dos lugares de interés utilizando una guía turística; se calificará individualmente.', 'TOURIST_GUIDE_PRESENTATION', ['Información de dos lugares solicitados', 'Claridad de la comunicación oral', 'Dominio individual']],
+    ['Dos destinos', 'Los estudiantes compararán dos guías turísticas y justificarán cuál orienta mejor al visitante.', 'TOURIST_GUIDE_COMPARISON', ['Comparación del contenido', 'Conclusión sustentada']],
+  ])('prepara La guía turística según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore: 17.35, participationMode: description.includes('individual') ? 'INDIVIDUAL' : 'GROUP', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      expect(result.instrumentType).toBe(instrumentType)
+      expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(1735)
+      expect(result.criteria.every(item => item.sourceType === 'CONTEXTUALIZED' && item.sourceReferences.length === 0)).toBe(true)
+      if (instrumentType === 'rubrica' || instrumentType === 'escala') expect(result.criteria.every(item => item.descriptors.length === 4)).toBe(true)
+    }
+  })
+  it('respeta el tipo explícito aunque el texto sugiera otra acción de guía turística', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'La guía turística', description: 'Leer y analizar una guía turística.', pedagogicalActivityType: 'TOURIST_GUIDE_CREATION', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe('TOURIST_GUIDE_CREATION')
+  })
+  it.each([
+    ['Cuidemos el agua', 'Los estudiantes elaborarán un afiche para motivar a la comunidad escolar a ahorrar agua, con un mensaje breve, recomendaciones e imágenes relacionadas.', 'POSTER_CREATION', ['Mensaje sobre el cuidado y ahorro del agua', 'Adecuación al público destinatario']],
+    ['Mensajes que convencen', 'Los estudiantes analizarán un afiche de prevención e identificarán su propósito, destinatarios y recursos utilizados para convencer.', 'POSTER_ANALYSIS', ['Propósito y destinatarios del afiche', 'Evidencias del afiche']],
+    ['Dos formas de comunicar', 'Los estudiantes compararán dos afiches sobre convivencia escolar y justificarán cuál comunica mejor su mensaje.', 'POSTER_COMPARISON', ['Comparación de mensajes y argumentos', 'Eficacia comunicativa']],
+    ['Nuestra campaña', 'Cada estudiante presentará su afiche sobre cuidado del entorno y explicará el mensaje, el público destinatario y la elección de sus elementos visuales.', 'POSTER_PRESENTATION', ['Mensaje sobre el cuidado del entorno', 'Claridad de la presentación oral']],
+  ])('prepara El afiche según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const maxScore of [20, 17.35]) for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore, participationMode: 'INDIVIDUAL', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      expect(result.instrumentType).toBe(instrumentType)
+      expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(Math.round(maxScore * 100))
+      if (activityType === 'POSTER_ANALYSIS') expect(JSON.stringify(result.criteria)).not.toMatch(/elabora|produce otro afiche/i)
+      if (activityTitle === 'Cuidemos el agua') expect(JSON.stringify(result.criteria)).not.toMatch(/fecha|lugar de realizaci[oó]n/i)
+      if (instrumentType === 'rubrica' || instrumentType === 'escala') expect(result.criteria.every(item => item.descriptors.length === 4)).toBe(true)
+    }
+  })
+  it('la selección explícita de actividad de afiche prevalece sobre la acción detectada', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'Mensajes', description: 'Analizarán un afiche de prevención.', pedagogicalActivityType: 'POSTER_CREATION', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe('POSTER_CREATION')
+    expect(result.criteria.map(item => item.title)).toContain('Organización, legibilidad y corrección')
+  })
+  it.each([
+    ['Informe sobre un cuento', 'Elaborarán un informe de lectura sobre un cuento e incluirán resumen y análisis de sus valores.', 'READING_REPORT_WRITING', ['Estructura del informe de lectura', 'Análisis sociocultural']],
+    ['Comprender un informe', 'Leerán un informe de lectura e identificarán su estructura, resumen y análisis.', 'READING_REPORT_ANALYSIS', ['Identificación de la estructura', 'Comprensión del resumen']],
+    ['Compartimos la lectura', 'Presentarán un informe de lectura sobre una leyenda y responderán preguntas individualmente.', 'READING_REPORT_PRESENTATION', ['Organización del informe oral', 'Claridad de la exposición']],
+    ['Dos interpretaciones', 'Compararán informes de lectura sobre una novela y justificarán sus diferencias.', 'READING_REPORT_COMPARISON', ['Comparación de interpretaciones', 'Conclusión comparativa']],
+  ])('prepara El informe de lectura según la acción: %s', (activityTitle, description, activityType, expectedTitles) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore: 17.35, participationMode: 'INDIVIDUAL', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      expect(result.totalScoreUnits).toBe(1735)
+    }
   })
 })

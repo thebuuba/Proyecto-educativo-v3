@@ -24,6 +24,128 @@ export function preparationFingerprint(input: { name: string; description: strin
   return JSON.stringify([input.name, input.description, input.maxScore, input.pedagogicalActivityType, input.activityType, input.instrumentType, input.selectedCurriculumElementIds ?? []])
 }
 
+export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP' }): InstrumentRecommendation {
+  const text = `${input.activityTitle} ${input.description ?? ''}`.toLocaleLowerCase('es-DO')
+  const news = /noticia|noticiero/.test(text)
+  const touristGuide = /gu[ií]a tur[ií]stica/.test(text)
+  const poster = /afiche/.test(text)
+  const readingReport = /informe de lectura/.test(text)
+  const analyzing = /leer|analizar|identificar/.test(text)
+  const oral = /noticiero|presentar|exponer/.test(text)
+  const comparing = /comparar|comparaci[oó]n/.test(text)
+  const graphicsRequested = /imagen|im[aá]genes|foto|mapa|gr[aá]fico|dibujo|collage|recurso visual/.test(text)
+  const posterTopic = /agua/.test(text) ? 'el cuidado y ahorro del agua' : /convivencia escolar/.test(text) ? 'la convivencia escolar' : /entorno/.test(text) ? 'el cuidado del entorno' : 'el tema indicado'
+  const authored = readingReport && analyzing ? [
+    ['Función y propósito', 'Explica para qué se elaboró el informe de lectura y qué texto analiza.'],
+    ['Estructura del informe', 'Identifica título, introducción, desarrollo y conclusión.'],
+    ['Comprensión del resumen', 'Reconoce las ideas principales recuperadas sin confundirlas con el análisis.'],
+    ['Interpretación del análisis', 'Explica las interpretaciones socioculturales presentadas.'],
+    ['Evidencias del informe', 'Justifica sus respuestas con información concreta del informe.'],
+  ] : readingReport && comparing ? [
+    ['Propósito y textos', 'Compara el propósito y los textos abordados en ambos informes.'],
+    ['Comparación de estructura', 'Contrasta título, introducción, desarrollo y conclusión.'],
+    ['Comparación de interpretaciones', 'Establece semejanzas y diferencias entre los análisis.'],
+    ['Uso de evidencias', 'Sustenta la comparación con ambos informes.'],
+    ['Conclusión', 'Formula una conclusión coherente con la comparación.'],
+  ] : readingReport && oral ? [
+    ['Síntesis del texto', 'Presenta las ideas principales del texto de forma fiel.'],
+    ['Análisis sociocultural', 'Explica su interpretación con ejemplos pertinentes.'],
+    ['Organización oral', 'Ordena introducción, desarrollo y conclusión.'],
+    ['Claridad de la exposición', 'Expone con dicción, volumen y ritmo comprensibles.'],
+    ['Dominio individual', 'Responde preguntas sobre el texto y el análisis.'],
+  ] : readingReport ? [
+    ['Resumen del texto', 'Resume las ideas principales sin alterar su sentido.'],
+    ['Análisis sociocultural', 'Analiza comportamientos, costumbres o valores con ejemplos.'],
+    ['Estructura del informe', 'Organiza título, introducción, desarrollo y conclusión.'],
+    ['Coherencia', 'Relaciona resumen y análisis con vocabulario y conectores adecuados.'],
+    ['Revisión final', 'Revisa organización, puntuación, ortografía y claridad.'],
+  ] : poster && analyzing ? [
+    ['Propósito y destinatarios', `Interpreta la intención del afiche sobre ${posterTopic} e identifica a quién se dirige.`],
+    ['Interpretación del mensaje', `Explica el mensaje principal sobre ${posterTopic}.`],
+    ['Recursos para convencer', 'Explica cómo las palabras, argumentos y recursos persuasivos buscan convencer.'],
+    ['Texto y elementos visuales', 'Analiza cómo los elementos visuales contribuyen al mensaje.'],
+    ['Evidencias del afiche', 'Justifica su interpretación con elementos concretos del afiche.'],
+  ] : poster && comparing ? [
+    ['Propósito y destinatarios', `Compara el propósito y el público de los afiches sobre ${posterTopic}.`],
+    ['Mensajes y argumentos', 'Establece semejanzas y diferencias entre mensajes y recursos persuasivos.'],
+    ['Recursos visuales', 'Contrasta la relación entre texto y elementos visuales.'],
+    ['Eficacia comunicativa', 'Valora cuál afiche comunica mejor su mensaje.'],
+    ['Justificación', 'Sustenta su valoración con evidencias de ambos afiches.'],
+  ] : poster && oral ? [
+    [`Mensaje sobre ${posterTopic}`, `Explica el mensaje de su afiche sobre ${posterTopic}.`],
+    ['Propósito y público', 'Explica a quién se dirige y cómo busca motivar o convencer.'],
+    ['Decisiones comunicativas', 'Justifica la elección de palabras y elementos visuales.'],
+    ['Presentación oral', 'Expone con orden, dicción, volumen y ritmo comprensibles.'],
+    ['Dominio individual', 'Responde preguntas sobre su propio afiche.'],
+  ] : poster ? [
+    [`Mensaje sobre ${posterTopic}`, `Comunica acciones o ideas pertinentes sobre ${posterTopic} mediante un mensaje breve y persuasivo.`],
+    ['Adecuación al público', 'Adapta el vocabulario, el tono y el llamado a la acción al público indicado.'],
+    ['Recursos persuasivos', 'Usa recomendaciones o argumentos pertinentes sin inventar datos.'],
+    ['Texto y elementos visuales', graphicsRequested ? 'Integra las imágenes solicitadas con el texto para reforzar el mensaje.' : 'Organiza el texto y los elementos visuales elegidos para reforzar el mensaje.'],
+    ['Organización y legibilidad', 'Presenta información clara, jerarquizada y con ortografía cuidada.'],
+  ] : touristGuide && analyzing ? [
+    ['Propósito y destinatario', 'Explica cómo la guía orienta e informa a sus posibles visitantes.'],
+    ['Identificación de la estructura', 'Identifica portada, información, imágenes y cierre, según estén presentes en la guía leída.'],
+    ['Recursos para orientar', 'Analiza el vocabulario y los recursos paratextuales disponibles usados para orientar al visitante.'],
+    ['Interpretación', 'Explica la información relevante sobre los lugares descritos.'],
+  ] : touristGuide && oral ? [
+    ['Información de los lugares', 'Presenta información pertinente y veraz sobre los lugares solicitados.'],
+    ['Orientación al visitante', 'Describe atractivos y cualidades con vocabulario adecuado al público.'],
+    ['Organización oral', 'Ordena la información de la guía en una secuencia clara.'],
+    ['Comunicación oral', 'Expone con dicción, volumen, ritmo y entonación comprensibles.'],
+    ['Dominio individual', 'Explica los lugares asignados desde su propio dominio del contenido.'],
+  ] : touristGuide && comparing ? [
+    ['Propósito y destinatario', 'Compara el propósito y el público de cada guía turística.'],
+    ['Comparación del contenido', 'Establece semejanzas y diferencias entre la información y los atractivos.'],
+    ['Comparación de la estructura', 'Contrasta la organización de las guías.'],
+    ['Comparación de recursos', 'Analiza el vocabulario y los recursos usados para orientar al visitante.'],
+    ['Conclusión sustentada', 'Formula una conclusión apoyada en evidencias de ambas guías.'],
+  ] : touristGuide ? [
+    ['Información de los lugares', 'Incluye información pertinente y veraz sobre los lugares solicitados.'],
+    ['Estructura de la guía', `Organiza la guía con portada, información y cierre${graphicsRequested ? ', e integra las imágenes solicitadas' : ''}.`],
+    ['Descripción y orientación', 'Describe los lugares con vocabulario atractivo y adecuado al público.'],
+    ['Organización y claridad', 'Distribuye la información en una secuencia comprensible.'],
+    ['Revisión final', 'Revisa claridad, puntuación, ortografía y presentación antes de publicar.'],
+  ] : news && analyzing ? [
+    ['Función de la noticia', 'Reconoce el propósito informativo y el hecho principal de la noticia.'],
+    ['Partes de la noticia', 'Identifica titular, entrada o copete y cuerpo en el texto analizado.'],
+    ['Interrogantes fundamentales', 'Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.'],
+    ['Interpretación de la información', 'Explica la información principal con evidencias de la noticia.'],
+  ] : news && oral ? [
+    ['Información periodística', 'Presenta hechos relevantes y distingue la información principal de los detalles.'],
+    ['Estructura de la noticia', 'Comunica un titular y desarrolla qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.'],
+    ['Organización del noticiero', 'Ordena las noticias y las intervenciones en una secuencia clara.'],
+    ['Comunicación oral', 'Presenta con dicción, ritmo, entonación y volumen comprensibles.'],
+    ['Dominio individual', 'Explica su noticia con seguridad dentro de la presentación del equipo.'],
+  ] : news ? [
+    ['Información esencial', 'Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.'],
+    ['Titular, entrada y cuerpo', 'Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo desarrollado.'],
+    ['Secuencia y cohesión', 'Ordena la información y usa conectores de orden y temporales.'],
+    ['Lenguaje periodístico', 'Emplea un registro formal y vocabulario preciso.'],
+    ['Revisión escrita', 'Revisa puntuación, ortografía y claridad antes de presentar la versión final.'],
+  ] : [
+    ['Dominio del contenido', `Explica con precisión el contenido trabajado en ${input.activityTitle}.`],
+    ['Desarrollo de la actividad', 'Realiza la tarea principal solicitada y presenta evidencia observable.'],
+    ['Organización', 'Organiza la información o el producto en una secuencia comprensible.'],
+    ['Comunicación', 'Comunica el resultado con claridad y vocabulario adecuado.'],
+  ]
+  const totalUnits = Math.round(input.maxScore * 100)
+  const base = Math.floor(totalUnits / authored.length)
+  const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
+    ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []
+  const criteria = authored.map(([title, description], index) => {
+    const maxScoreUnits = base + (index < totalUnits - base * authored.length ? 1 : 0)
+    return { id: `fallback:${index}`, templateId: 'editable-fallback', title, description, maxScore: maxScoreUnits / 100, maxScoreUnits,
+      sourceType: 'ACTIVITY_TEMPLATE' as const, sourceReferences: [], descriptors: levels.map(level => ({ levelId: level.id,
+        text: level.id === 'L4' ? `${description} Lo evidencia de forma completa, precisa y autónoma.` : level.id === 'L3' ? `${description} Lo evidencia en los aspectos principales.` : level.id === 'L2' ? `${description} Lo evidencia parcialmente o con imprecisiones.` : `${description} Requiere apoyo para aportar evidencia suficiente.`,
+        scoreUnits: Math.round(maxScoreUnits * level.proportion) })) }
+  })
+  return { kind: 'RECOMMENDATION', catalogVersion: 'editable-fallback-v1', instrumentType: input.instrumentType, confidence: 'LOW', activityType: 'OTHER', evidenceTypes: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT'], participationMode: input.participationMode,
+    curriculumVersionId: null, curriculumScopeId: null, selectedCurriculumElements: [], criteria, levels, totalScore: input.maxScore,
+    totalScoreUnits: criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0), scoreUnit: 0.01,
+    internalTrace: { mappingStatus: 'FALLBACK', reasons: ['Plantilla editable local basada en la actividad; requiere revisión docente.'], ruleId: 'editable-fallback', activityTypeOrigin: 'DEFAULT', ranking: [], curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] } }
+}
+
 /** Adapter into the existing four builders; no second instrument editor is created. */
 export function recommendationToFields(proposal: InstrumentRecommendation, activityName: string): Record<string, string> {
   const type = proposal.instrumentType

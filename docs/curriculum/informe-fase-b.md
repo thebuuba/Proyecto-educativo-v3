@@ -56,14 +56,19 @@ La guía de Supabase influyó en los grants mínimos, RLS explícita y comprobac
 
 ## 4. Seeds
 
-Release `evaluation-2026.1`, definido en `catalog-v1.ts`, cargado con `seedEvaluationCatalog`. Incluye las seis estructuras: activityTypes, evidenceTypes, criterionTemplates, descriptorPatterns, instrumentTemplates y recommendationRules.
+Release vigente `evaluation-2026.6`, definido en `catalog-v1.ts`, cargado con `seedEvaluationCatalog`. Incluye las seis estructuras: activityTypes, evidenceTypes, criterionTemplates, descriptorPatterns, instrumentTemplates y recommendationRules. Las versiones anteriores se conservan sin alteraciones.
 
 Seed idempotente: repetir no agrega filas; si la versión existe con otro contenido se rechaza y se exige una nueva versión. El servicio verifica el payload JSONB contra el seed tipado revisado antes de usarlo. No se admite editar silenciosamente la versión activa desde la base de datos.
 
 Ejecución local, después de compilar backend/database:
 
 ```powershell
+# Preparar Supabase local y compilar antes de instalar el release requerido por el código.
+pnpm supabase:local
+pnpm --filter backend build
 # DATABASE_URL debe estar definida explícitamente y apuntar a localhost:54332.
+node scripts/evaluation-instruments/catalog-local.mjs
+# Repetir debe devolver UNCHANGED; un payload distinto para la misma versión falla.
 node scripts/evaluation-instruments/catalog-local.mjs
 # Opcional: sincronizar solo una escuela y versiones explícitas.
 node scripts/evaluation-instruments/catalog-local.mjs <schoolId> <primaryVersionId> <secondaryVersionId>
@@ -73,7 +78,7 @@ Los scripts no leen `.env` ni aceptan hosts remotos. No se añadieron dependenci
 
 ## 5. Tipos pedagógicos y familias
 
-20 tipos: EXPOSITION, ORAL_PRESENTATION, DEBATE, EXPERIMENT, LAB_PRACTICE, WRITTEN_PRODUCTION, ESSAY, REPORT, RESEARCH, PROJECT, PROBLEM_SOLVING, EXERCISE_SET, CONCEPT_MAP, PORTFOLIO, ARTISTIC_PRODUCTION, PERFORMANCE, MOTOR_SPORTS_PRACTICE, OBSERVATION, QUIZ_TEST y OTHER.
+36 tipos, incluidos los módulos deterministas de «La noticia», «La guía turística», «El informe de lectura» y «El afiche», además de los tipos generales existentes.
 
 Familias: ORAL, WRITTEN, PRACTICAL, SCIENTIFIC, MATHEMATICAL, ARTISTIC, MOTOR, PROJECT_BASED y OBSERVATIONAL. Selección explícita tiene prioridad; detección por frases normalizadas, con preferencia por coincidencia más específica; si no hay coincidencia, OTHER. Es una sugerencia editable, no una clasificación irreversible.
 
