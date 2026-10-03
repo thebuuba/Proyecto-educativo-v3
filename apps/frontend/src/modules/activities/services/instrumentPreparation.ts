@@ -32,7 +32,11 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   const readingReport = /informe de lectura/.test(text)
   const detectiveStory = /cuento (?:polic[ií]aco|detectivesco)/.test(text) && !readingReport
   const calligram = /caligrama/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text)
-  const analyzing = /leer|analizar|identificar/.test(text)
+  const writingReport = readingReport && /(?:redact|escrib|elabor|produc|cre)[a-záéíóú]*\s+(?:(?:un|el|su)\s+)?informe de lectura/.test(text)
+  const analyzing = /leer|analizar|identificar/.test(text) && !writingReport
+  const reportAnalysis = /personajes/.test(text) ? ['Análisis de los personajes', 'Analiza las acciones y características de los personajes con ejemplos del texto.']
+    : /sociocultural|costumbres|comportamientos|valores/.test(text) ? ['Análisis sociocultural', 'Analiza comportamientos, costumbres o valores con ejemplos del texto.']
+    : ['Análisis del texto', 'Sustenta su interpretación del texto leído con ejemplos pertinentes.']
   const oral = /noticiero|presentar|exponer/.test(text)
   const comparing = /comparar|comparaci[oó]n/.test(text)
   const graphicsRequested = /imagen|im[aá]genes|foto|mapa|gr[aá]fico|dibujo|collage|recurso visual/.test(text)
@@ -106,14 +110,15 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
     ['Conclusión', 'Formula una conclusión coherente con la comparación.'],
   ] : readingReport && oral ? [
     ['Síntesis del texto', 'Presenta las ideas principales del texto de forma fiel.'],
-    ['Análisis sociocultural', 'Explica su interpretación con ejemplos pertinentes.'],
+    reportAnalysis,
     ['Organización oral', 'Ordena introducción, desarrollo y conclusión.'],
     ['Claridad de la exposición', 'Expone con dicción, volumen y ritmo comprensibles.'],
     ['Dominio individual', 'Responde preguntas sobre el texto y el análisis.'],
   ] : readingReport ? [
     ['Resumen del texto', 'Resume las ideas principales sin alterar su sentido.'],
-    ['Análisis sociocultural', 'Analiza comportamientos, costumbres o valores con ejemplos.'],
+    reportAnalysis,
     ['Estructura del informe', 'Organiza título, introducción, desarrollo y conclusión.'],
+    ...(/conclusi[oó]n/.test(text) ? [['Conclusión personal', 'Formula una conclusión personal relacionada con el resumen y el análisis del texto.']] : []),
     ['Coherencia', 'Relaciona resumen y análisis con vocabulario y conectores adecuados.'],
     ['Revisión final', 'Revisa organización, puntuación, ortografía y claridad.'],
   ] : poster && analyzing ? [
@@ -210,6 +215,7 @@ export function recommendationToFields(proposal: InstrumentRecommendation, activ
     [`${type}:title`]: `${type === 'rubrica' ? 'Rúbrica' : type === 'escala' ? 'Escala estimativa' : type === 'lista-cotejo' ? 'Lista de cotejo' : 'Lista ponderada'} para ${activityName}`,
     [`${type}:meta:criteriaCount`]: String(proposal.criteria.length),
     [`${type}:meta:prepared`]: 'true',
+    [`${type}:meta:catalogVersion`]: proposal.catalogVersion,
   }
   if (type === 'rubrica' || type === 'escala') {
     fields[`${type}:meta:levelCount`] = String(proposal.levels.length)
