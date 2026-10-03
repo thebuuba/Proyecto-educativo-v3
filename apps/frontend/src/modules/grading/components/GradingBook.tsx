@@ -153,6 +153,7 @@ import {
   type CompetencyPeriodId,
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
+import { ApiError } from '@/services/apiClient'
 import { secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { alignRecommendationWithFields, editableFallbackRecommendation, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 
@@ -760,7 +761,8 @@ export function GradingBook({
       instrumentId: activityDraft.instrumentId,
       instrumentCriteria: activityDraft.instrumentFields,
       pedagogicalActivityType: preparedSnapshot?.activityType ?? activityDraft.pedagogicalActivityType,
-      instrumentSnapshot: preparedSnapshot ?? undefined,
+      // Local templates use the editable-instrument path, not a reviewed catalog snapshot.
+      instrumentSnapshot: preparedSnapshot?.catalogVersion === 'editable-fallback-v1' ? undefined : preparedSnapshot ?? undefined,
       evaluationTechnique: activityDraft.evaluationTechnique.trim() || undefined,
       planningMoment: activityDraft.planningMoment as GradingActivity['planningMoment'],
       observations: activityDraft.observations.trim() || undefined,
@@ -3867,7 +3869,7 @@ function ActivityCreationView(props: {
     return () => { window.clearTimeout(timer); abort.abort() }
   }, [sectionSubjectId, activityDraft.name, activityDraft.description, activityDraft.pedagogicalActivityType, activityDraft.autoDetectedPedagogicalActivityType, block.id, editingActivityId])
 
-  async function prepare(preferredType?: string) {
+  async function prepare(preferredType?: string, replaceManual = false) {
     if (!sectionSubjectId) {
       setPreparationError('No se pudo identificar la asignatura. Vuelve a seleccionarla e inténtalo de nuevo.')
       setStage('instrument'); setShowAdvancedInstrument(false)
@@ -3894,10 +3896,15 @@ function ActivityCreationView(props: {
       setStage('instrument'); setShowAdvancedInstrument(false)
     } catch (error) {
       const requestedType = preferredType ?? (activityDraft.instrumentType || 'rubrica')
-      setFailedInstrumentType(requestedType)
-      if (requestedType !== activityDraft.instrumentType) onChangeDraft({ ...activityDraft, instrumentType: requestedType, instrumentCompleted: false })
-      setPreparationError(error instanceof Error ? error.message : 'No se pudo preparar el instrumento. Puedes completarlo manualmente.')
-      setStage('instrument')
+      if (!(error instanceof ApiError && error.status >= 400 && error.status < 500) && (!activityDraft.preparedManuallyEdited || replaceManual)) {
+        useEditableTemplate(requestedType)
+        setShowAdvancedInstrument(false)
+      } else {
+        setFailedInstrumentType(requestedType)
+        setPreparationError(error instanceof ApiError && error.status < 500
+          ? error.message : 'No se pudo actualizar el instrumento. Tus cambios se conservaron; puedes intentar de nuevo.')
+        setStage('instrument')
+      }
     } finally { setPreparing(false) }
   }
 
@@ -3907,15 +3914,24 @@ function ActivityCreationView(props: {
     void prepare(instrumentType)
   }
 
-  function useEditableTemplate() {
-    const instrumentType = (failedInstrumentType || activityDraft.instrumentType || 'rubrica') as InstrumentRecommendation['instrumentType']
+  function requestRegeneration(preferredType?: string) {
+    if (activityDraft.preparedManuallyEdited) {
+      setPendingInstrumentType(preferredType || activityDraft.instrumentType)
+      return
+    }
+    void prepare(preferredType)
+  }
+
+  function useEditableTemplate(preferredType?: string) {
+    const instrumentType = (preferredType || failedInstrumentType || activityDraft.instrumentType || 'rubrica') as InstrumentRecommendation['instrumentType']
     const proposal = editableFallbackRecommendation({ activityTitle: activityDraft.name, description: activityDescriptionText(activityDraft.description),
       maxScore: Number(activityDraft.maxScore), instrumentType, participationMode: activityDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL' })
     const next = { ...activityDraft, instrumentType, instrumentFields: recommendationToFields(proposal, activityDraft.name), instrumentCompleted: true,
       preparedRecommendation: proposal, preparedManuallyEdited: false, autoSelectedInstrumentType: false }
     onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
     setFailedInstrumentType('')
-    setPreparationError('Se cargó una plantilla editable basada en la actividad. Revísala antes de guardar; no representa una validación curricular.')
+    setPreparationError('')
+    setStage('instrument')
   }
 
   function createInstrumentFromScratch() {
@@ -4070,15 +4086,15 @@ function ActivityCreationView(props: {
           {stage === 'instrument' ? (
             <div className="space-y-3">
               <div className={cn('rounded-xl border px-4 py-3', accent.card)}>
-                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? 'Instrumento preparado' : preparationError ? 'No pudimos preparar el instrumento automáticamente' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
+                <p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? activityDraft.preparedRecommendation.catalogVersion === 'editable-fallback-v1' ? 'Instrumento editable' : 'Instrumento preparado' : preparationError ? 'No pudimos preparar el instrumento automáticamente' : 'Instrumento seleccionado'}: {instrumentLabel}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{preparing ? 'Preparando instrumento…' : activityDraft.preparedRecommendation ? `${activityDraft.preparedRecommendation.criteria.length} criterios · ${activityDraft.preparedRecommendation.levels.length || 'sin'} niveles · ${activityDraft.maxScore} puntos. Revisa y edita el instrumento aquí.` : preparationError ? 'Puedes intentar de nuevo o crear el instrumento manualmente.' : 'Configura los criterios y niveles que utilizarás para evaluar esta actividad.'}</p>
               </div>
-              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground"><p>{preparationError}</p><div className="mt-3 flex flex-wrap gap-2"><Button type="button" size="sm" variant="outline" onClick={() => void prepare(failedInstrumentType || undefined)} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button>{!activityDraft.preparedRecommendation || failedInstrumentType ? <><Button type="button" size="sm" variant="outline" onClick={useEditableTemplate}>Usar plantilla editable</Button><Button type="button" size="sm" variant="ghost" onClick={createInstrumentFromScratch}>Crear desde cero</Button></> : null}</div></div> : null}
-              {activityDraft.preparedRecommendation?.catalogVersion === 'editable-fallback-v1' && !stale ? <p className="text-xs text-muted-foreground">Propuesta inicial para revisión docente. No es una generación automática exitosa ni un instrumento validado curricularmente.</p> : null}
-              {activityDraft.preparedRecommendation && !savedSnapshot ? <div className="flex flex-wrap items-end gap-3"><label className="text-xs font-semibold text-foreground">Cambiar instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => requestInstrumentChange(event.target.value)} disabled={preparing}><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label><Button type="button" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar instrumento</Button></div> : null}
+              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground"><p>{preparationError}</p><div className="mt-3 flex flex-wrap gap-2"><Button type="button" size="sm" variant="outline" onClick={() => requestRegeneration(failedInstrumentType || undefined)} disabled={preparing}>{stale ? 'Regenerar con los nuevos datos' : 'Intentar de nuevo'}</Button>{!activityDraft.preparedRecommendation || failedInstrumentType ? <><Button type="button" size="sm" variant="outline" onClick={() => useEditableTemplate()}>Usar plantilla editable</Button><Button type="button" size="sm" variant="ghost" onClick={createInstrumentFromScratch}>Crear desde cero</Button></> : null}</div></div> : null}
+              {activityDraft.preparedRecommendation?.catalogVersion === 'editable-fallback-v1' && !stale ? <div className="flex flex-wrap gap-2"><Button type="button" size="sm" variant="outline" onClick={() => requestRegeneration()} disabled={preparing}>Intentar de nuevo</Button><Button type="button" size="sm" variant="ghost" onClick={createInstrumentFromScratch}>Crear desde cero</Button></div> : null}
+              {activityDraft.preparedRecommendation && !savedSnapshot ? <div className="flex flex-wrap items-end gap-3"><label className="text-xs font-semibold text-foreground">Cambiar instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => requestInstrumentChange(event.target.value)} disabled={preparing}><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label><Button type="button" variant="outline" onClick={() => requestRegeneration()} disabled={preparing}>Regenerar instrumento</Button></div> : null}
               {activityDraft.preparedRecommendation ? <Button type="button" variant="outline" aria-expanded={showAdvancedInstrument} onClick={() => setShowAdvancedInstrument(value => !value)}>{showAdvancedInstrument ? 'Ocultar configuración avanzada' : 'Configuración avanzada'}</Button> : null}
               {!preparationError && !activityDraft.preparedRecommendation && !activityDraft.instrumentType ? <label className="block text-sm font-semibold text-foreground">Si prefieres continuar manualmente, selecciona el instrumento<Select className="mt-1" value={activityDraft.instrumentType} onChange={event => handleDraftChange({ ...activityDraft, instrumentType: event.target.value })}><option value="">Seleccionar</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label> : null}
-              {stale && !preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">La actividad cambió. Actualiza el instrumento antes de guardar. {activityDraft.preparedManuallyEdited ? 'Se reemplazarán tus cambios manuales solo si lo confirmas.' : null} <Button type="button" size="sm" variant="outline" onClick={() => void prepare()} disabled={preparing}>Regenerar</Button></div> : null}
+              {stale && !preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">La actividad cambió. Actualiza el instrumento antes de guardar. {activityDraft.preparedManuallyEdited ? 'Se reemplazarán tus cambios manuales solo si lo confirmas.' : null} <Button type="button" size="sm" variant="outline" onClick={() => requestRegeneration()} disabled={preparing}>Regenerar</Button></div> : null}
               {!preparing && (!preparationError || activityDraft.preparedRecommendation) ? <div className={cn(activityDraft.preparedRecommendation && !showAdvancedInstrument ? 'prepared-instrument-basic' : '')}>
               <InstrumentPreview
                 key={activityDraft.instrumentType}
@@ -4123,7 +4139,7 @@ function ActivityCreationView(props: {
           onSaveDraft={() => { setCompletionIssues([]); onSaveDraft() }}
         />
       ) : null}
-      {pendingInstrumentType ? <ConfirmDialog title="¿Reemplazar el instrumento editado?" description="Cambiar el tipo volverá a preparar los criterios e indicadores. Tus cambios manuales actuales serán reemplazados." confirmLabel="Cambiar instrumento" cancelLabel="Conservar cambios" onClose={() => setPendingInstrumentType('')} onConfirm={async () => { const nextType = pendingInstrumentType; setPendingInstrumentType(''); await prepare(nextType) }} /> : null}
+      {pendingInstrumentType ? <ConfirmDialog title="¿Reemplazar el instrumento editado?" description="Volver a preparar el instrumento reemplazará tus criterios, indicadores y cambios manuales actuales." confirmLabel="Cambiar instrumento" cancelLabel="Conservar cambios" onClose={() => setPendingInstrumentType('')} onConfirm={async () => { const nextType = pendingInstrumentType; setPendingInstrumentType(''); await prepare(nextType === activityDraft.instrumentType && activityDraft.autoSelectedInstrumentType ? undefined : nextType, true) }} /> : null}
     </section>
   )
 }

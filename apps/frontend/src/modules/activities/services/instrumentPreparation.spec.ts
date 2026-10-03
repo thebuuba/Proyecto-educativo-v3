@@ -95,3 +95,18 @@ describe('adaptación del instrumento preparado', () => {
     expect(JSON.stringify(fallback.criteria)).toContain('sin exigir rima')
   })
 })
+
+
+describe('informe de lectura de la actividad real', () => {
+  it.each(['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const)('redactar después de leer prepara %s para producción escrita', instrumentType => {
+    const result = editableFallbackRecommendation({ activityTitle: 'Un cuento en pocas palabras',
+      description: 'Los estudiantes leerán un cuento y redactarán un informe de lectura con introducción, resumen de las ideas principales, análisis de los personajes y conclusión personal.',
+      maxScore: 20, instrumentType, participationMode: 'INDIVIDUAL' })
+    expect(result.criteria.map(item => item.title)).toContain('Resumen del texto')
+    expect(result.criteria.map(item => item.title)).toContain('Análisis de los personajes')
+    expect(result.criteria.map(item => item.title)).toContain('Conclusión personal')
+    expect(JSON.stringify(result.criteria)).not.toMatch(/sociocultural|dicción|volumen|informe que lee/)
+    expect(result.totalScoreUnits).toBe(2000)
+    expect(alignRecommendationWithFields(result, recommendationToFields(result, 'Un cuento en pocas palabras'), 20)?.totalScoreUnits).toBe(2000)
+  })
+})

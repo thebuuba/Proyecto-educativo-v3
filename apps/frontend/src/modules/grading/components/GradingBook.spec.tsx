@@ -5,8 +5,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import type { GradingActivity, StudentGradeRow } from '@/modules/grading/types'
 import { ActivitySavedDialog, GradingBook, activityRubricConfiguration } from './GradingBook'
-import { api } from '@/services/apiClient'
+import { api, ApiError } from '@/services/apiClient'
 import type { InstrumentRecommendation } from '@aula/shared'
+import { editableFallbackRecommendation, preparationFingerprint, recommendationToFields } from '@/modules/activities/services/instrumentPreparation'
 
 const students: StudentGradeRow[] = [
   {
@@ -194,6 +195,7 @@ describe('GradingBook', () => {
     await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Exposición sobre el sistema respiratorio')
     await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
     await user.click(screen.getByRole('button', { name: 'Regenerar con los nuevos datos' }))
+    await user.click(within(screen.getByRole('dialog', { name: '¿Reemplazar el instrumento editado?' })).getByRole('button', { name: 'Cambiar instrumento' }))
     await waitFor(() => expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(2))
     expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')[1][1]).toEqual(expect.objectContaining({
       activityTitle: 'Exposición sobre el sistema respiratorio', pedagogicalActivityType: undefined, preferredInstrumentType: undefined,
@@ -201,25 +203,69 @@ describe('GradingBook', () => {
     post.mockRestore()
   }, 20000)
 
-  it('mantiene disponible el constructor manual si falla la recomendación', async () => {
-    const post = vi.spyOn(api, 'post').mockRejectedValue(new Error('Sin conexión de prueba'))
+  it('abre automáticamente el instrumento editable cuando falta el catálogo del servicio', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Falta instalar el catálogo evaluativo versionado.'))
     const user = userEvent.setup()
     renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
-    await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Exposición de prueba')
+    await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Informe de lectura de un cuento')
     await user.type(screen.getByPlaceholderText('20'), '20')
     await user.click(screen.getByRole('button', { name: /Individual/ }))
     await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
-    await waitFor(() => expect(screen.getByText('Sin conexión de prueba')).toBeInTheDocument())
-    expect(screen.getByText(/No pudimos preparar el instrumento automáticamente/)).toBeInTheDocument()
+    expect(await screen.findByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Resumen del texto')
+    expect(screen.queryByText(/Falta instalar el catálogo/)).not.toBeInTheDocument()
+    expect(screen.queryByText(/No pudimos preparar/)).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Intentar de nuevo' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Usar plantilla editable' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Crear desde cero' })).toBeInTheDocument()
-    expect(screen.queryByText(/Construye el instrumento que utilizarás/)).not.toBeInTheDocument()
-    expect(screen.queryByText(/Si prefieres continuar manualmente/)).not.toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: 'Usar plantilla editable' }))
-    expect(screen.getByText(/Construye el instrumento que utilizarás/)).toBeInTheDocument()
-    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).not.toHaveValue('')
-    post.mockRestore()
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Cambiar instrumento' }), 'lista-cotejo')
+    await waitFor(() => expect(screen.getByDisplayValue('Resumen del texto')).toBeInTheDocument())
+    expect(screen.getByRole('combobox', { name: 'Cambiar instrumento' })).toHaveValue('lista-cotejo')
+    const editedCriterion = screen.getByDisplayValue('Resumen del texto')
+    await user.clear(editedCriterion)
+    await user.type(editedCriterion, 'Resumen ajustado por el docente')
+    await user.click(screen.getByRole('button', { name: 'Intentar de nuevo' }))
+    expect(screen.getByRole('dialog', { name: '¿Reemplazar el instrumento editado?' })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Conservar cambios' }))
+    expect(screen.getByDisplayValue('Resumen ajustado por el docente')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Crear desde cero' }))
+    expect(screen.queryByDisplayValue('Resumen del texto')).not.toBeInTheDocument()
+  })
+
+  it('guarda la plantilla local como instrumento editable sin un snapshot de catálogo inexistente', async () => {
+    const user = userEvent.setup()
+    const proposal = editableFallbackRecommendation({ activityTitle: 'Un cuento en pocas palabras', description: 'Redactarán un informe de lectura con resumen, análisis de personajes y conclusión personal.', maxScore: 17.35, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL' })
+    const draft = { draftId: 'fallback-draft', name: 'Un cuento en pocas palabras', maxScore: '17.35', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, date: '2026-10-02',
+      description: 'Redactarán un informe de lectura con resumen, análisis de personajes y conclusión personal.', studentRole: '', teacherRole: '', instrumentType: 'rubrica', evaluationTechnique: 'analisis-producciones', instrumentCompleted: true,
+      instrumentFields: recommendationToFields(proposal, 'Un cuento en pocas palabras'), preparedRecommendation: proposal, preparedManuallyEdited: false, pedagogicalActivityType: '', resources: [], planningMoment: 'development', observations: '', activityType: 'individual', teamIds: [] }
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] }))
+    const onAddActivity = vi.fn().mockImplementation(async activity => ({ ...activity, id: 'saved-fallback' }))
+    const view = renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'fallback-draft', onAddActivity })
+    expect(await screen.findByDisplayValue('Un cuento en pocas palabras')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
+    await user.click(screen.getByRole('button', { name: 'Continuar a revisión' }))
+    await user.click(screen.getByRole('button', { name: 'Guardar actividad' }))
+    await waitFor(() => expect(onAddActivity).toHaveBeenCalled())
+    const saved = onAddActivity.mock.calls[0][0]
+    expect(saved.instrumentSnapshot).toBeUndefined()
+    expect(saved.instrumentCriteria['rubrica:criterion:0']).toBe('Resumen del texto')
+    expect(saved.instrumentCriteria['rubrica:meta:catalogVersion']).toBe('editable-fallback-v1')
+    expect(saved.maxScore).toBe(17.35)
+    view.unmount()
+    renderBook({ activities: [{ ...saved, id: 'saved-fallback' }], initialActivityId: 'saved-fallback', initialActivityMode: 'edit' })
+    expect(await screen.findByDisplayValue('Un cuento en pocas palabras')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Resumen del texto')
+    expect(screen.getByRole('spinbutton', { name: 'Puntos del criterio 1' })).toHaveValue(2.9)
+  })
+
+  it('no sustituye un rechazo de autorización por una plantilla local', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(403, 'Rol no autorizado.'))
+    const user = userEvent.setup()
+    renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    await user.type(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), 'Informe de lectura')
+    await user.type(screen.getByPlaceholderText('20'), '20')
+    await user.click(screen.getByRole('button', { name: /Individual/ }))
+    await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
+    expect(await screen.findByText('Rol no autorizado.')).toBeInTheDocument()
+    expect(screen.queryByRole('textbox', { name: 'Criterio 1' })).not.toBeInTheDocument()
   })
 
   it.each(['Continuar al instrumento', 'tab'])('muestra y enfoca el valor faltante desde %s', async (action) => {
