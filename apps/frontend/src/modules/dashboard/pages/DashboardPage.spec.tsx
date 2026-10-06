@@ -139,11 +139,13 @@ describe('DashboardPage', () => {
     expect(shortcutOption).toBeTruthy()
     await user.click(within(shortcutOption!).getByRole('button', { name: 'Agregar' }))
     await user.click(screen.getByRole('button', { name: 'Cerrar' }))
+    expect(screen.queryByRole('link', { name: 'Estudiantes' })).not.toBeInTheDocument()
     await user.click(screen.getByText('Agregar', { selector: 'summary' }))
-    await user.click(screen.getByRole('button', { name: 'Estudiantes' }))
-    expect(screen.getByRole('link', { name: 'Estudiantes' })).toHaveAttribute(
+    expect(screen.queryByRole('button', { name: 'Estudiantes' })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Administración escolar' }))
+    expect(screen.getByRole('link', { name: 'Administración escolar' })).toHaveAttribute(
       'href',
-      '/estudiantes',
+      '/configuracion',
     )
   })
 })

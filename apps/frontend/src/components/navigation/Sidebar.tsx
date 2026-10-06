@@ -25,7 +25,6 @@ const secondaryPaths = [
   '/planificaciones',
   '/bitacora',
   '/reportes',
-  '/estudiantes',
 ]
 const footerPaths = ['/configuracion']
 
@@ -39,7 +38,6 @@ const sidebarIcons: Record<string, string> = {
   '/planificaciones': 'planificaciones',
   '/bitacora': 'bitacora',
   '/reportes': 'reportes',
-  '/estudiantes': 'estudiantes',
   '/configuracion': 'configuracion',
 }
 
