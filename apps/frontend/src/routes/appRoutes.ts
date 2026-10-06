@@ -50,7 +50,9 @@ const SchoolAdministrationPage = lazyPage(
   () => import('@/modules/school-administration/pages/SchoolAdministrationPage'),
   'SchoolAdministrationPage',
 )
-const StudentsPage = lazyPage(() => import('@/modules/students/pages/StudentsPage'), 'StudentsPage')
+function LegacyStudentsRedirect() {
+  return createElement(Navigate, { to: '/cursos', replace: true })
+}
 const ActivitiesPage = lazyPage(
   () => import('@/modules/activities/pages/ActivitiesPage'),
   'ActivitiesPage',
@@ -123,7 +125,8 @@ export const appRoutes: AppRoute[] = [
     path: '/estudiantes',
     label: 'Estudiantes',
     icon: Users,
-    component: StudentsPage,
+    component: LegacyStudentsRedirect,
+    showInSidebar: false,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
   },
   {
@@ -238,7 +241,6 @@ export const routePrefetchers: Record<string, () => void> = {
           getCourseData(),
         ),
     ]),
-  '/estudiantes': () => void import('@/modules/students/pages/StudentsPage'),
   '/actividades': () =>
     prefetch([
       () => import('@/modules/activities/pages/ActivitiesPage'),
