@@ -154,10 +154,11 @@ import {
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 import { ApiError } from '@/services/apiClient'
-import { secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
+import { detectFirstSecondaryLanguageActivity, secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { alignRecommendationWithFields, editableFallbackRecommendation, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 
 type GradingBookProps = {
+  firstSecondaryLanguage?: boolean
   evaluationProfile?: EvaluationProfile
   sectionSubjectId?: string
   students: StudentGradeRow[]
@@ -304,6 +305,7 @@ type ActivityDraft = {
   instrumentType: string
   instrumentId?: string
   evaluationTechnique: string
+  autoSelectedEvaluationTechnique?: boolean
   instrumentCompleted: boolean
   instrumentFields: Record<string, string>
   pedagogicalActivityType?: string
@@ -370,6 +372,7 @@ const emptyActivityDraft: ActivityDraft = {
 }
 
 export function GradingBook({
+  firstSecondaryLanguage = false,
   evaluationProfile,
   sectionSubjectId,
   students,
@@ -995,6 +998,7 @@ export function GradingBook({
           />
         ) : detailView.type === 'activity-create' && selectedCreateBlock ? (
           <ActivityCreationView
+            firstSecondaryLanguage={firstSecondaryLanguage}
             sectionSubjectId={sectionSubjectId}
             activityDraft={activityDraft}
             teams={teams}
@@ -3818,6 +3822,7 @@ function DraftFilterChip({
 type ActivityCreationStage = 'activity' | 'instrument' | 'review'
 
 function ActivityCreationView(props: {
+  firstSecondaryLanguage?: boolean
   sectionSubjectId?: string
   activityDraft: ActivityDraft
   teams: CourseTeam[]
@@ -3835,7 +3840,11 @@ function ActivityCreationView(props: {
   onSaveDraft: () => void
   saving: boolean
 }) {
-  const { activityDraft, block, editingActivityId, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving, teams, sectionSubjectId } = props
+  const { activityDraft, block, editingActivityId, firstSecondaryLanguage = false, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving, teams, sectionSubjectId } = props
+  const latestDraft = useRef(activityDraft)
+  latestDraft.current = activityDraft
+  const onChangeDraftRef = useRef(onChangeDraft)
+  onChangeDraftRef.current = onChangeDraft
   const [stage, setStage] = useState<ActivityCreationStage>('activity')
   const [interpretation, setInterpretation] = useState<ActivityInterpretation | null>(null)
   const [interpretationBusy, setInterpretationBusy] = useState(false)
@@ -3862,12 +3871,32 @@ function ActivityCreationView(props: {
       setInterpretationBusy(true)
       interpretActivity({ sectionSubjectId, activityTitle: activityDraft.name, description: activityDescriptionText(activityDraft.description),
         pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined, competencyBlock: block.id }, abort.signal)
-        .then(value => { if (!abort.signal.aborted) setInterpretation(value) })
+        .then(value => {
+          if (abort.signal.aborted) return
+          setInterpretation(value)
+          if (!firstSecondaryLanguage || !value.suggestedEvaluationTechnique || !value.suggestedInstrumentType) return
+          const current = latestDraft.current
+          if (current.name !== activityDraft.name || current.description !== activityDraft.description) return
+          const next = { ...current }
+          if (current.autoSelectedEvaluationTechnique || !current.evaluationTechnique) {
+            next.evaluationTechnique = value.suggestedEvaluationTechnique
+            next.autoSelectedEvaluationTechnique = true
+          }
+          if (current.autoDetectedPedagogicalActivityType || !current.pedagogicalActivityType) {
+            next.pedagogicalActivityType = value.suggestedActivityType
+            next.autoDetectedPedagogicalActivityType = true
+          }
+          if (!current.preparedRecommendation && (current.autoSelectedInstrumentType || !current.instrumentType)) {
+            next.instrumentType = value.suggestedInstrumentType
+            next.autoSelectedInstrumentType = true
+          }
+          if (next.evaluationTechnique !== current.evaluationTechnique || next.pedagogicalActivityType !== current.pedagogicalActivityType || next.instrumentType !== current.instrumentType) onChangeDraftRef.current(next)
+        })
         .catch(() => { if (!abort.signal.aborted) setInterpretation(null) })
         .finally(() => { if (!abort.signal.aborted) setInterpretationBusy(false) })
     }, 450)
     return () => { window.clearTimeout(timer); abort.abort() }
-  }, [sectionSubjectId, activityDraft.name, activityDraft.description, activityDraft.pedagogicalActivityType, activityDraft.autoDetectedPedagogicalActivityType, block.id, editingActivityId])
+  }, [sectionSubjectId, activityDraft.name, activityDraft.description, activityDraft.pedagogicalActivityType, activityDraft.autoDetectedPedagogicalActivityType, activityDraft.autoSelectedEvaluationTechnique, activityDraft.autoSelectedInstrumentType, block.id, editingActivityId, firstSecondaryLanguage])
 
   async function prepare(preferredType?: string, replaceManual = false) {
     if (!sectionSubjectId) {
@@ -3886,9 +3915,10 @@ function ActivityCreationView(props: {
         curriculumVersionId: interpretation?.curriculumVersionId ?? undefined,
         preferredInstrumentType: preferredType ?? (activityDraft.autoSelectedInstrumentType ? undefined : activityDraft.instrumentType || undefined),
         selectedCurriculumElementIds: activityDraft.selectedCurriculumElementIds?.length ? activityDraft.selectedCurriculumElementIds : undefined })
-      const next = { ...activityDraft, instrumentType: proposal.instrumentType, pedagogicalActivityType: proposal.activityType,
+      const next = { ...activityDraft, instrumentType: proposal.instrumentType,
+        pedagogicalActivityType: preferredType ? activityDraft.pedagogicalActivityType : proposal.activityType,
         autoSelectedInstrumentType: preferredType ? false : activityDraft.autoSelectedInstrumentType || !activityDraft.instrumentType,
-        autoDetectedPedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType || !activityDraft.pedagogicalActivityType,
+        autoDetectedPedagogicalActivityType: preferredType ? activityDraft.autoDetectedPedagogicalActivityType : activityDraft.autoDetectedPedagogicalActivityType || !activityDraft.pedagogicalActivityType,
         instrumentFields: recommendationToFields(proposal, activityDraft.name), instrumentCompleted: true,
         preparedRecommendation: proposal, preparedManuallyEdited: false }
       onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
@@ -3925,7 +3955,9 @@ function ActivityCreationView(props: {
   function useEditableTemplate(preferredType?: string) {
     const instrumentType = (preferredType || failedInstrumentType || activityDraft.instrumentType || 'rubrica') as InstrumentRecommendation['instrumentType']
     const proposal = editableFallbackRecommendation({ activityTitle: activityDraft.name, description: activityDescriptionText(activityDraft.description),
-      maxScore: Number(activityDraft.maxScore), instrumentType, participationMode: activityDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL' })
+      maxScore: Number(activityDraft.maxScore), instrumentType, participationMode: activityDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
+      activityType: firstSecondaryLanguage ? activityDraft.pedagogicalActivityType || detectFirstSecondaryLanguageActivity(activityDraft.name,
+        activityDescriptionText(activityDraft.description), { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) || undefined : undefined })
     const next = { ...activityDraft, instrumentType, instrumentFields: recommendationToFields(proposal, activityDraft.name), instrumentCompleted: true,
       preparedRecommendation: proposal, preparedManuallyEdited: false, autoSelectedInstrumentType: false }
     onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
@@ -3969,8 +4001,8 @@ function ActivityCreationView(props: {
     const changedPedagogicalType = draft.pedagogicalActivityType !== activityDraft.pedagogicalActivityType
     onChangeDraft({
       ...draft,
-      autoSelectedInstrumentType: changedInstrument ? false : draft.autoSelectedInstrumentType,
-      autoDetectedPedagogicalActivityType: changedPedagogicalType ? false : draft.autoDetectedPedagogicalActivityType,
+      autoSelectedInstrumentType: changedInstrument && !draft.autoSelectedInstrumentType ? false : draft.autoSelectedInstrumentType,
+      autoDetectedPedagogicalActivityType: changedPedagogicalType && !draft.autoDetectedPedagogicalActivityType ? false : draft.autoDetectedPedagogicalActivityType,
       competencyBlockId: block.id,
       instrumentCompleted: changedInstrument ? false : draft.instrumentCompleted,
       instrumentFields: changedInstrument ? {} : draft.instrumentFields,
@@ -4079,7 +4111,7 @@ function ActivityCreationView(props: {
           </nav>
 
           {stage === 'activity' ? (
-            <>{requiredFieldError ? <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">{requiredFieldError}</div> : null}<ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} interpretation={interpretation} interpretationBusy={interpretationBusy} requiredFieldError={requiredFieldError} /></>
+            <>{requiredFieldError ? <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">{requiredFieldError}</div> : null}<ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} onInstrumentTypeChange={requestInstrumentChange} interpretation={interpretation} interpretationBusy={interpretationBusy} requiredFieldError={requiredFieldError} firstSecondaryLanguage={firstSecondaryLanguage} /></>
           ) : null}
           {savedSnapshot ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">Este instrumento ya tiene una versión guardada. Para cambiar su estructura, duplica la actividad y prepara uno nuevo.</div> : null}
 
@@ -4230,6 +4262,12 @@ function CompetencyDistributionField({ activityDraft, highlight, onChangeDraft }
 }
 
 const pedagogicalActivityLabels: Record<string, string> = {
+  NEWSCAST: 'Noticiero', NEWS_ANALYSIS: 'Análisis de noticia', NEWS_COMPARISON: 'Comparación de noticias', NEWS_WRITING: 'Redacción de noticia',
+  TOURIST_GUIDE_CREATION: 'Elaboración de guía turística', TOURIST_GUIDE_ANALYSIS: 'Análisis de guía turística', TOURIST_GUIDE_PRESENTATION: 'Presentación de guía turística', TOURIST_GUIDE_COMPARISON: 'Comparación de guías turísticas',
+  READING_REPORT_WRITING: 'Elaboración de informe de lectura', READING_REPORT_ANALYSIS: 'Análisis de informe de lectura', READING_REPORT_PRESENTATION: 'Presentación de informe de lectura', READING_REPORT_COMPARISON: 'Comparación de informes de lectura',
+  POSTER_CREATION: 'Elaboración de afiche', POSTER_ANALYSIS: 'Análisis de afiche', POSTER_COMPARISON: 'Comparación de afiches', POSTER_PRESENTATION: 'Presentación de afiche',
+  DETECTIVE_STORY_WRITING: 'Escritura de cuento policíaco', DETECTIVE_STORY_ANALYSIS: 'Análisis de cuento policíaco', DETECTIVE_STORY_NARRATION: 'Narración de cuento policíaco', DETECTIVE_STORY_COMPARISON: 'Comparación de cuentos policíacos', DETECTIVE_STORY_ANALYSIS_PRESENTATION: 'Presentación del análisis del cuento',
+  CALLIGRAM_CREATION: 'Creación de caligrama', CALLIGRAM_ANALYSIS: 'Análisis de caligrama', CALLIGRAM_COMPARISON: 'Comparación de caligramas', CALLIGRAM_RECITATION: 'Recitación de caligrama', CALLIGRAM_EXPLANATION: 'Explicación de caligrama',
   EXPOSITION: 'Exposición', ORAL_PRESENTATION: 'Presentación oral', DEBATE: 'Debate', EXPERIMENT: 'Experimento',
   LAB_PRACTICE: 'Práctica de laboratorio', WRITTEN_PRODUCTION: 'Producción escrita', ESSAY: 'Ensayo', REPORT: 'Informe',
   RESEARCH: 'Investigación', PROJECT: 'Proyecto', PROBLEM_SOLVING: 'Resolución de problemas', EXERCISE_SET: 'Ejercicios',
@@ -4237,15 +4275,17 @@ const pedagogicalActivityLabels: Record<string, string> = {
   PERFORMANCE: 'Representación', MOTOR_SPORTS_PRACTICE: 'Práctica motriz', OBSERVATION: 'Observación', QUIZ_TEST: 'Prueba', OTHER: 'Otra actividad',
 }
 
-function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, interpretation, interpretationBusy, requiredFieldError }: {
+function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, onInstrumentTypeChange, interpretation, interpretationBusy, requiredFieldError, firstSecondaryLanguage }: {
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
   highlightTarget: ActivityCompletionTarget | null
   onChangeDraft: (draft: ActivityDraft) => void
+  onInstrumentTypeChange?: (instrumentType: string) => void
   interpretation: ActivityInterpretation | null
   interpretationBusy: boolean
   requiredFieldError: string
+  firstSecondaryLanguage?: boolean
 }) {
   const highlight = (target: ActivityCompletionTarget) => highlightTarget === target ? transientHighlightClass : ''
   return (
@@ -4270,11 +4310,11 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
 
       <CreationFormSection icon={<Target className="size-4" />} number={4} title="Evaluación" accent={accent}>
         <div className="grid gap-3 md:grid-cols-2">
-          <label className={cn('space-y-1.5 text-sm font-bold', highlight('evaluationTechnique'))}>Técnica de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value })}><option value="" disabled>Seleccionar técnica</option>{evaluationTechniqueOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</Select></label>
-          <label className="space-y-1.5 text-sm font-bold">Tipo de actividad<Select className="h-11" value={activityDraft.autoDetectedPedagogicalActivityType ? '' : activityDraft.pedagogicalActivityType ?? ''} onChange={(event) => onChangeDraft({ ...activityDraft, pedagogicalActivityType: event.target.value, autoDetectedPedagogicalActivityType: false })}><option value="">{interpretation?.suggestedActivityType && interpretation.suggestedActivityType !== 'OTHER' ? `Sugerido: ${pedagogicalActivityLabels[interpretation.suggestedActivityType]}` : 'Detectar a partir de la descripción'}</option>{Object.entries(pedagogicalActivityLabels).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Select></label>
-          <label className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Instrumento de evaluación <span className="text-xs font-normal text-muted-foreground">(opcional)</span><Select className="h-11" value={activityDraft.autoSelectedInstrumentType ? '' : activityDraft.instrumentType} onChange={(event) => onChangeDraft({ ...activityDraft, instrumentType: event.target.value, autoSelectedInstrumentType: false })}><option value="">Dejar que AulaBase elija</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
+          <label className={cn('space-y-1.5 text-sm font-bold', highlight('evaluationTechnique'))}>Técnica de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value, autoSelectedEvaluationTechnique: event.target.value === '' })}><option value="" disabled={!firstSecondaryLanguage}>Seleccionar técnica{firstSecondaryLanguage ? ' automáticamente' : ''}</option>{evaluationTechniqueOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</Select></label>
+          <label className="space-y-1.5 text-sm font-bold">Tipo de actividad<Select className="h-11" value={firstSecondaryLanguage ? activityDraft.pedagogicalActivityType ?? '' : activityDraft.autoDetectedPedagogicalActivityType ? '' : activityDraft.pedagogicalActivityType ?? ''} onChange={(event) => onChangeDraft({ ...activityDraft, pedagogicalActivityType: event.target.value, autoDetectedPedagogicalActivityType: event.target.value === '' })}><option value="">{firstSecondaryLanguage ? 'Detectar automáticamente' : interpretation?.suggestedActivityType && interpretation.suggestedActivityType !== 'OTHER' ? `Sugerido: ${pedagogicalActivityLabels[interpretation.suggestedActivityType]}` : 'Detectar a partir de la descripción'}</option>{Object.entries(pedagogicalActivityLabels).filter(([id]) => firstSecondaryLanguage || !/^(?:NEWS|TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(id)).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Select></label>
+          <label className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Instrumento de evaluación <span className="text-xs font-normal text-muted-foreground">(opcional)</span><Select className="h-11" value={firstSecondaryLanguage ? activityDraft.instrumentType : activityDraft.autoSelectedInstrumentType ? '' : activityDraft.instrumentType} onChange={(event) => { if (firstSecondaryLanguage && activityDraft.preparedRecommendation && event.target.value) onInstrumentTypeChange?.(event.target.value); else onChangeDraft({ ...activityDraft, instrumentType: event.target.value, autoSelectedInstrumentType: event.target.value === '' }) }}><option value="">Dejar que AulaBase elija</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
         </div>
-        {activityDraft.name.trim() ? <div className="mt-3 rounded-lg border border-border bg-muted/20 p-3 text-xs text-muted-foreground" aria-live="polite">{interpretationBusy ? 'AulaBase está revisando la actividad…' : interpretation?.message ?? 'AulaBase preparará un instrumento cuando continúes.'}{interpretation?.curriculumCandidates.length ? <div className="mt-2 space-y-1"><p className="font-semibold text-foreground">Posibles contenidos para revisar:</p>{interpretation.curriculumCandidates.slice(0, 3).map(candidate => <label key={candidate.elementId} className="flex items-start gap-2"><input type="checkbox" className="mt-0.5" checked={activityDraft.selectedCurriculumElementIds?.includes(candidate.elementId) ?? false} onChange={event => onChangeDraft({ ...activityDraft, selectedCurriculumElementIds: event.target.checked ? [...(activityDraft.selectedCurriculumElementIds ?? []), candidate.elementId] : (activityDraft.selectedCurriculumElementIds ?? []).filter(id => id !== candidate.elementId) })} /><span>{candidate.text}</span></label>)}</div> : null}</div> : null}
+        {!firstSecondaryLanguage && activityDraft.name.trim() ? <div className="mt-3 rounded-lg border border-border bg-muted/20 p-3 text-xs text-muted-foreground" aria-live="polite">{interpretationBusy ? 'AulaBase está revisando la actividad…' : interpretation?.message ?? 'AulaBase preparará un instrumento cuando continúes.'}{interpretation?.curriculumCandidates.length ? <div className="mt-2 space-y-1"><p className="font-semibold text-foreground">Posibles contenidos para revisar:</p>{interpretation.curriculumCandidates.slice(0, 3).map(candidate => <label key={candidate.elementId} className="flex items-start gap-2"><input type="checkbox" className="mt-0.5" checked={activityDraft.selectedCurriculumElementIds?.includes(candidate.elementId) ?? false} onChange={event => onChangeDraft({ ...activityDraft, selectedCurriculumElementIds: event.target.checked ? [...(activityDraft.selectedCurriculumElementIds ?? []), candidate.elementId] : (activityDraft.selectedCurriculumElementIds ?? []).filter(id => id !== candidate.elementId) })} /><span>{candidate.text}</span></label>)}</div> : null}</div> : null}
       </CreationFormSection>
 
       <CreationFormSection icon={<Users className="size-4" />} number={5} title="Modalidad" accent={accent}>

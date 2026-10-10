@@ -67,6 +67,16 @@ describe('adaptación del instrumento preparado', () => {
     expect(JSON.stringify(fallback.criteria)).toContain('imágenes solicitadas')
     expect(fallback.internalTrace.mappingStatus).toBe('FALLBACK')
   })
+  it('mantiene la comparación de informes en los cuatro formatos de recuperación', () => {
+    for (const maxScore of [20, 17.35]) for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const fallback = editableFallbackRecommendation({ activityTitle: 'Informe de lectura',
+        description: 'Compararán dos informes e identificarán diferencias en su estructura.',
+        activityType: 'READING_REPORT_COMPARISON', maxScore, instrumentType, participationMode: 'GROUP' })
+      expect(fallback.activityType).toBe('READING_REPORT_COMPARISON')
+      expect(fallback.criteria.map(item => item.title)).toContain('Comparación de estructura')
+      expect(fallback.totalScoreUnits).toBe(Math.round(maxScore * 100))
+    }
+  })
   it('la plantilla de análisis no exige producir una guía ni recursos ausentes', () => {
     const fallback = editableFallbackRecommendation({ activityTitle: 'La guía turística', description: 'Leer una guía turística e identificar su estructura.', maxScore: 20, instrumentType: 'lista-cotejo', participationMode: 'INDIVIDUAL' })
     expect(fallback.criteria.map(item => item.title)).toContain('Identificación de la estructura')

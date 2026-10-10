@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @fileoverview Tipos y utilidades compartidas entre frontend y backend.
  */
 
@@ -7,6 +7,38 @@
  * @template T - Tipo de los datos contenidos en la respuesta.
  */
 export type * from './instrument-recommendation'
+export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
+
+/** Deterministic classification shared by the service and its local editable fallback. */
+export function detectFirstSecondaryLanguageActivity(title: string, description: string, context: FirstSecondaryLanguageContext | null): string | null {
+  if (context?.level !== 'SECONDARY' || context.grade !== 1 || context.subjectCode.toUpperCase() !== 'LEN') return null
+  const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+  const titleText = normalize(title)
+  const task = normalize(description)
+  const both = `${titleText} ${task}`
+  const module = /informe(?:s)? de lectura/.test(both) ? 'READING_REPORT'
+    : /cuento(?:s)? (?:policiacos?|detectivescos?)/.test(both) ? 'DETECTIVE_STORY'
+      : /caligramas?|(?:versos|palabras).*formando (?:la )?silueta/.test(both) ? 'CALLIGRAM'
+        : /guias? turisticas?/.test(both) ? 'TOURIST_GUIDE'
+          : /afiches?/.test(both) ? 'POSTER'
+            : /noticias?|noticiero/.test(both) ? 'NEWS' : null
+  if (!module) return null
+  const action = (value: string) => {
+    const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon\w*)\b/.test(value)
+    const comparing = /\b(?:compar\w*|contrast\w*)\b/.test(value)
+    const presenting = /\b(?:present\w*|expon\w*|explic\w*)\b/.test(value)
+    const analyzing = /\b(?:analiz\w*|identific\w*|interpret\w*|leer\w*|leeran|lectura)\b/.test(value)
+    if (module === 'NEWS' && /\bnoticiero\b/.test(value)) return 'NEWSCAST'
+    if (module === 'DETECTIVE_STORY' && /\b(?:narrar\w*|narracion|narraran|contar|contaran)\b/.test(value)) return 'DETECTIVE_STORY_NARRATION'
+    if (module === 'CALLIGRAM' && /\b(?:recit\w*|declam\w*)\b/.test(value)) return 'CALLIGRAM_RECITATION'
+    if (comparing) return `${module}_COMPARISON`
+    if (writing) return module === 'NEWS' ? 'NEWS_WRITING' : `${module}_CREATION`.replace('READING_REPORT_CREATION', 'READING_REPORT_WRITING').replace('DETECTIVE_STORY_CREATION', 'DETECTIVE_STORY_WRITING')
+    if (presenting) return module === 'NEWS' ? 'NEWSCAST' : module === 'DETECTIVE_STORY' ? 'DETECTIVE_STORY_ANALYSIS_PRESENTATION' : module === 'CALLIGRAM' ? 'CALLIGRAM_EXPLANATION' : `${module}_PRESENTATION`
+    if (analyzing) return `${module}_ANALYSIS`
+    return null
+  }
+  return action(task) ?? action(titleText)
+}
 export const competencyBlockIds = ['b1', 'b2', 'b3', 'b4'] as const
 export type CompetencyBlockId = (typeof competencyBlockIds)[number]
 export type EvaluationProfileId = 'primary-official' | 'secondary-official'

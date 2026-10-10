@@ -89,6 +89,9 @@ export function ActivityCreator() {
   return (
     <section className="activities-creator-workspace w-full">
       <GradingBook
+        firstSecondaryLanguage={sectionSubject?.academicLevelCode === 'secundario'
+          && (sectionSubject.gradeSequence === 1 || sectionSubject.gradeSequence === 7)
+          && sectionSubject.subjectCode === 'LEN'}
         evaluationProfile={sectionSubject?.evaluationProfile}
         sectionSubjectId={sectionSubjectId}
         students={[]}

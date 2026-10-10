@@ -1,4 +1,5 @@
-import type { CurriculumReference, InstrumentRecommendation, RecommendationCriterion } from '@aula/shared'
+import { detectFirstSecondaryLanguageActivity, type CurriculumReference, type InstrumentRecommendation, type RecommendationCriterion } from '@aula/shared'
+export { detectFirstSecondaryLanguageActivity } from '@aula/shared'
 import { type EvaluationCatalog, evaluationCatalogV1 } from './catalog-v1'
 import { type AcademicContext, type ScopeCandidate, discipline, normalize } from './curriculum-context'
 
@@ -143,6 +144,19 @@ function contextualDescriptors(observable: string, indexes: number[], title: str
       : index === 2 ? `${action}, aunque omite algún aspecto o presenta imprecisiones.`
         : index === 3 ? `${action} solo en parte; necesita apoyo para completar la evidencia.`
           : `No aporta evidencia suficiente para valorar ${title.toLocaleLowerCase('es-DO')}.`)
+}
+
+export function firstSecondaryLanguageSelections(activityType: string) {
+  const activity = evaluationCatalogV1.activityTypes.find(entry => entry.id === activityType)
+  if (!activity) return null
+  const rule = evaluationCatalogV1.recommendationRules.filter(entry => (!entry.families.length || entry.families.includes(activity.family))
+    && (!entry.band || entry.band === 'SECONDARY') && (!entry.evidence || entry.evidence.every(evidence => activity.evidence.includes(evidence))))
+    .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
+  const technique = activityType.endsWith('_ANALYSIS') ? 'observacion-sistematica'
+    : activityType.endsWith('_COMPARISON') || activityType.endsWith('_WRITING') || activityType.endsWith('_CREATION')
+      ? 'analisis-producciones' : activityType === 'CALLIGRAM_RECITATION' || activityType === 'DETECTIVE_STORY_NARRATION'
+      ? 'presentacion' : 'exposicion'
+  return { suggestedEvaluationTechnique: technique, suggestedInstrumentType: rule.instrument }
 }
 
 type AuthoredCriterion = { templateId: string; title: string; observable: string; weight: number }
@@ -384,7 +398,9 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const text = normalize(`${input.activityTitle} ${input.description ?? ''}`)
   const explicit = input.pedagogicalActivityType ? catalog.activityTypes.find(a => a.id === input.pedagogicalActivityType) : undefined
   if (input.pedagogicalActivityType && !explicit) throw new Error('Tipo pedagógico desconocido.')
-  const detectedByCatalog = detectActivityType(input.activityTitle, input.description ?? '', catalog)
+  const scopedType = detectFirstSecondaryLanguageActivity(input.activityTitle, input.description ?? '', context)
+  const detectedByCatalog = catalog.activityTypes.find(entry => entry.id === scopedType)
+    ?? detectActivityType(input.activityTitle, input.description ?? '', catalog)
   const detected = detectedByCatalog.id === 'OTHER' && /observ(?:ar|an|aran|arán).*(?:registr|tabla)/.test(text)
     ? catalog.activityTypes.find(entry => entry.id === 'OBSERVATION')! : detectedByCatalog
   const activity = explicit ?? detected

@@ -1,4 +1,4 @@
-import { render, screen, waitFor, within } from '@testing-library/react'
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { StrictMode, type ComponentProps } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -66,6 +66,93 @@ describe('GradingBook', () => {
     window.localStorage.clear()
   })
   afterEach(() => { vi.restoreAllMocks() })
+
+  it('actualiza solo los tres campos automáticos y permite volver a automático', async () => {
+    const post = vi.spyOn(api, 'post').mockImplementation(async (path, body) => {
+      if (path !== '/evaluation-instruments/interpret') throw new Error('Ruta inesperada')
+      const analyzing = String((body as { activityTitle: string }).activityTitle).includes('Analizar')
+      return { suggestedActivityType: analyzing ? 'NEWS_ANALYSIS' : 'NEWS_WRITING',
+        suggestedEvaluationTechnique: analyzing ? 'observacion-sistematica' : 'analisis-producciones',
+        suggestedInstrumentType: analyzing ? 'lista-cotejo' : 'rubrica',
+        activityType: analyzing ? 'NEWS_ANALYSIS' : 'NEWS_WRITING', activityTypes: [], curriculumVersionId: null,
+        curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: 'Mensaje interno.' } as never
+    })
+    const user = userEvent.setup()
+    renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    const title = screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático')
+    const technique = screen.getByRole('combobox', { name: /Técnica de evaluación/ })
+    const activity = screen.getByRole('combobox', { name: 'Tipo de actividad' })
+    const instrument = screen.getByRole('combobox', { name: /Instrumento de evaluación/ })
+    fireEvent.change(title, { target: { value: 'Redactar una noticia' } })
+    await waitFor(() => expect(instrument).toHaveValue('rubrica'))
+    expect(technique).toHaveValue('analisis-producciones')
+    expect(activity).toHaveValue('NEWS_WRITING')
+    expect(screen.queryByText('Mensaje interno.')).not.toBeInTheDocument()
+    await user.selectOptions(technique, 'debate')
+    await user.selectOptions(activity, 'NEWSCAST')
+    await user.selectOptions(instrument, 'escala')
+    fireEvent.change(title, { target: { value: 'Analizar una noticia' } })
+    await waitFor(() => expect(post).toHaveBeenCalledWith('/evaluation-instruments/interpret', expect.objectContaining({ activityTitle: 'Analizar una noticia' }), expect.anything()))
+    expect(technique).toHaveValue('debate')
+    expect(activity).toHaveValue('NEWSCAST')
+    expect(instrument).toHaveValue('escala')
+    await user.selectOptions(technique, '')
+    await user.selectOptions(activity, '')
+    await user.selectOptions(instrument, '')
+    await waitFor(() => expect(instrument).toHaveValue('lista-cotejo'))
+    expect(technique).toHaveValue('observacion-sistematica')
+    expect(activity).toHaveValue('NEWS_ANALYSIS')
+  })
+
+  it('descarta una interpretación anterior cuando el título ya cambió', async () => {
+    let completeFirst!: (value: unknown) => void
+    const first = new Promise(resolve => { completeFirst = resolve })
+    const result = (analysis: boolean) => ({ suggestedActivityType: analysis ? 'NEWS_ANALYSIS' : 'NEWS_WRITING',
+      suggestedEvaluationTechnique: analysis ? 'observacion-sistematica' : 'analisis-producciones',
+      suggestedInstrumentType: analysis ? 'lista-cotejo' : 'rubrica', activityType: analysis ? 'NEWS_ANALYSIS' : 'NEWS_WRITING',
+      activityTypes: [], curriculumVersionId: null, curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' })
+    const post = vi.spyOn(api, 'post').mockImplementation((path, body) => {
+      if (path !== '/evaluation-instruments/interpret') throw new Error('Ruta inesperada')
+      return String((body as { activityTitle: string }).activityTitle).includes('Redactar') ? first as never : Promise.resolve(result(true)) as never
+    })
+    renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    const title = screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático')
+    const activity = screen.getByRole('combobox', { name: 'Tipo de actividad' })
+    fireEvent.change(title, { target: { value: 'Redactar una noticia' } })
+    await waitFor(() => expect(post).toHaveBeenCalledTimes(1))
+    fireEvent.change(title, { target: { value: 'Analizar una noticia' } })
+    await waitFor(() => expect(activity).toHaveValue('NEWS_ANALYSIS'))
+    await act(async () => { completeFirst(result(false)); await first })
+    expect(activity).toHaveValue('NEWS_ANALYSIS')
+    expect(screen.getByRole('combobox', { name: /Instrumento de evaluación/ })).toHaveValue('lista-cotejo')
+  })
+
+  it('cambia el formato sin redefinir la técnica ni la actividad', async () => {
+    const original = editableFallbackRecommendation({ activityTitle: 'Redactar una noticia', description: 'Redactarán una noticia escolar.',
+      activityType: 'NEWS_WRITING', maxScore: 17.35, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL' })
+    const draft = { draftId: 'format-draft', name: 'Redactar una noticia', maxScore: '17.35', competencyBlockId: 'b1',
+      competencyBlockWeights: { b1: 1 }, date: '2026-10-02', description: 'Redactarán una noticia escolar.', studentRole: '', teacherRole: '',
+      instrumentType: 'rubrica', evaluationTechnique: 'analisis-producciones', autoSelectedEvaluationTechnique: true,
+      pedagogicalActivityType: 'NEWS_WRITING', autoDetectedPedagogicalActivityType: true, autoSelectedInstrumentType: true,
+      instrumentCompleted: true, instrumentFields: recommendationToFields(original, 'Redactar una noticia'),
+      preparedRecommendation: original, preparedManuallyEdited: false, resources: [], planningMoment: 'desarrollo', observations: '',
+      activityType: 'individual', teamIds: [] }
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] }))
+    vi.spyOn(api, 'post').mockImplementation(async (path) => path === '/evaluation-instruments/interpret'
+      ? { suggestedActivityType: 'OTHER', activityType: 'OTHER', activityTypes: [], curriculumVersionId: null,
+        curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' } as never
+      : editableFallbackRecommendation({ activityTitle: draft.name, description: draft.description, activityType: 'NEWS_ANALYSIS',
+        maxScore: 17.35, instrumentType: 'lista-cotejo', participationMode: 'INDIVIDUAL' }) as never)
+    const user = userEvent.setup()
+    renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'format-draft' })
+    await user.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Cambiar instrumento' }), 'lista-cotejo')
+    await waitFor(() => expect(screen.getByRole('combobox', { name: 'Cambiar instrumento' })).toHaveValue('lista-cotejo'))
+    await user.click(screen.getByRole('button', { name: /Datos de la actividad/ }))
+    expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
+    expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING')
+  })
+
 
   it('usa los criterios reales de una lista de cotejo al evaluar', () => {
     const configuration = activityRubricConfiguration({

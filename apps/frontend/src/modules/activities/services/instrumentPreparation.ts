@@ -3,6 +3,8 @@ import { api } from '@/services/apiClient'
 
 export type ActivityInterpretation = {
   suggestedActivityType: string
+  suggestedEvaluationTechnique?: string
+  suggestedInstrumentType?: string
   activityType: string
   activityTypes: string[]
   curriculumVersionId: string | null
@@ -24,7 +26,7 @@ export function preparationFingerprint(input: { name: string; description: strin
   return JSON.stringify([input.name, input.description, input.maxScore, input.pedagogicalActivityType, input.activityType, input.instrumentType, input.selectedCurriculumElementIds ?? []])
 }
 
-export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP' }): InstrumentRecommendation {
+export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string }): InstrumentRecommendation {
   const text = `${input.activityTitle} ${input.description ?? ''}`.toLocaleLowerCase('es-DO')
   const news = /noticia|noticiero/.test(text)
   const touristGuide = /gu[ií]a tur[ií]stica/.test(text)
@@ -32,16 +34,16 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   const readingReport = /informe de lectura/.test(text)
   const detectiveStory = /cuento (?:polic[ií]aco|detectivesco)/.test(text) && !readingReport
   const calligram = /caligrama/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text)
-  const writingReport = readingReport && /(?:redact|escrib|elabor|produc|cre)[a-záéíóú]*\s+(?:(?:un|el|su)\s+)?informe de lectura/.test(text)
-  const analyzing = /leer|analizar|identificar/.test(text) && !writingReport
+  const writingReport = input.activityType ? input.activityType === 'READING_REPORT_WRITING' : readingReport && /(?:redact|escrib|elabor|produc|cre)[a-záéíóú]*\s+(?:(?:un|el|su)\s+)?informe de lectura/.test(text)
+  const analyzing = input.activityType ? input.activityType.endsWith('_ANALYSIS') : /leer|analizar|identificar/.test(text) && !writingReport
   const reportAnalysis = /personajes/.test(text) ? ['Análisis de los personajes', 'Analiza las acciones y características de los personajes con ejemplos del texto.']
     : /sociocultural|costumbres|comportamientos|valores/.test(text) ? ['Análisis sociocultural', 'Analiza comportamientos, costumbres o valores con ejemplos del texto.']
     : ['Análisis del texto', 'Sustenta su interpretación del texto leído con ejemplos pertinentes.']
-  const oral = /noticiero|presentar|exponer/.test(text)
-  const comparing = /comparar|comparaci[oó]n/.test(text)
+  const oral = input.activityType ? /(?:PRESENTATION|EXPLANATION|NARRATION|NEWSCAST)$/.test(input.activityType) : /noticiero|presentar|exponer/.test(text)
+  const comparing = input.activityType ? input.activityType.endsWith('_COMPARISON') : /comparar|comparaci[oó]n/.test(text)
   const graphicsRequested = /imagen|im[aá]genes|foto|mapa|gr[aá]fico|dibujo|collage|recurso visual/.test(text)
   const posterTopic = /agua/.test(text) ? 'el cuidado y ahorro del agua' : /convivencia escolar/.test(text) ? 'la convivencia escolar' : /entorno/.test(text) ? 'el cuidado del entorno' : 'el tema indicado'
-  const reciting = /recitar|declamar/.test(text)
+  const reciting = input.activityType ? input.activityType === 'CALLIGRAM_RECITATION' : /recitar|declamar/.test(text)
   const authored = detectiveStory && analyzing ? [
     ['Estructura y trama', 'Interpreta inicio, nudo y desenlace y explica cómo progresa el misterio.'],
     ['Narrador, personajes y ambiente', 'Identifica y relaciona estos elementos en la historia.'],
@@ -202,7 +204,7 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
         text: level.id === 'L4' ? `${description} Lo evidencia de forma completa, precisa y autónoma.` : level.id === 'L3' ? `${description} Lo evidencia en los aspectos principales.` : level.id === 'L2' ? `${description} Lo evidencia parcialmente o con imprecisiones.` : `${description} Requiere apoyo para aportar evidencia suficiente.`,
         scoreUnits: Math.round(maxScoreUnits * level.proportion) })) }
   })
-  return { kind: 'RECOMMENDATION', catalogVersion: 'editable-fallback-v1', instrumentType: input.instrumentType, confidence: 'LOW', activityType: 'OTHER', evidenceTypes: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT'], participationMode: input.participationMode,
+  return { kind: 'RECOMMENDATION', catalogVersion: 'editable-fallback-v1', instrumentType: input.instrumentType, confidence: 'LOW', activityType: input.activityType ?? 'OTHER', evidenceTypes: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT'], participationMode: input.participationMode,
     curriculumVersionId: null, curriculumScopeId: null, selectedCurriculumElements: [], criteria, levels, totalScore: input.maxScore,
     totalScoreUnits: criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0), scoreUnit: 0.01,
     internalTrace: { mappingStatus: 'FALLBACK', reasons: ['Plantilla editable local basada en la actividad; requiere revisión docente.'], ruleId: 'editable-fallback', activityTypeOrigin: 'DEFAULT', ranking: [], curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] } }

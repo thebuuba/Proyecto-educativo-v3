@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { academicContext, resolveScope, type AcademicContext } from './curriculum-context'
-import { recommend, distributeScore, detectActivityType, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
+import { recommend, distributeScore, detectActivityType, detectFirstSecondaryLanguageActivity, firstSecondaryLanguageSelections, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
 
 const root = resolve(process.cwd(), '../..')
 const cases = JSON.parse(readFileSync(resolve(root, 'data/evaluation-instruments/cases-v1.json'), 'utf8')) as { case: string; level: 'PRIMARY' | 'SECONDARY'; grade: number; code: string; subject: string; exit?: string; activityTitle: string; description?: string; maxScore: number; expectedInstrument: string }[]
@@ -12,6 +12,31 @@ const scopes = rows.filter(r => r.kind === 'scope')
 const elements: RankedElement[] = rows.filter(r => r.kind === 'element').map(r => ({ elementId: r.id, scopeId: scopes.find(s => s.stableKey === r.scopeKey).id,
   versionId: r.versionId, type: r.type, text: r.originalText, normalizedText: r.normalizedText,
   sources: [{ documentId: r.source.documentId, pdfPage: r.source.pdfPage, printedPage: r.source.printedPage }] }))
+
+describe('Selecciones automáticas de Lengua Española en 1.º de secundaria', () => {
+  const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+  it.each([
+    ['Redactar una noticia', '', 'NEWS_WRITING', 'analisis-producciones', 'rubrica'],
+    ['Actividad', 'Presentarán una guía turística de dos lugares de la comunidad.', 'TOURIST_GUIDE_PRESENTATION', 'exposicion', 'rubrica'],
+    ['Informe de lectura', 'Compararán dos informes e identificarán diferencias en su estructura.', 'READING_REPORT_COMPARISON', 'analisis-producciones', 'rubrica'],
+    ['El afiche', 'Analizarán un afiche e identificarán su propósito y destinatarios.', 'POSTER_ANALYSIS', 'observacion-sistematica', 'lista-cotejo'],
+    ['El cuento policíaco', 'Narrarán oralmente el cuento y explicarán sus pistas.', 'DETECTIVE_STORY_NARRATION', 'presentacion', 'rubrica'],
+    ['Crear un caligrama', '', 'CALLIGRAM_CREATION', 'analisis-producciones', 'rubrica'],
+    ['Actividad', 'Leerán un cuento y redactarán un informe de lectura.', 'READING_REPORT_WRITING', 'analisis-producciones', 'rubrica'],
+  ])('interpreta %s: %s', (title, description, expected, technique, instrument) => {
+    const type = detectFirstSecondaryLanguageActivity(title, description, context)
+    expect(type).toBe(expected)
+    expect(firstSecondaryLanguageSelections(type!)).toEqual({ suggestedEvaluationTechnique: technique, suggestedInstrumentType: instrument })
+    const result = recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe(expected)
+    expect(result.instrumentType).toBe(instrument)
+  })
+  it('excluye otras asignaturas y grados', () => {
+    expect(detectFirstSecondaryLanguageActivity('Crear un caligrama', '', { ...context, grade: 2 })).toBeNull()
+    expect(detectFirstSecondaryLanguageActivity('Crear un caligrama', '', { ...context, subjectCode: 'ING' })).toBeNull()
+    expect(detectFirstSecondaryLanguageActivity('Crear un caligrama', '', { ...context, level: 'PRIMARY' })).toBeNull()
+  })
+})
 function run(fixture = cases[1], options = {}) {
   const context: AcademicContext = { level: fixture.level, grade: fixture.grade, cycle: fixture.grade <= 3 ? 1 : 2, subjectCode: fixture.code, subjectName: fixture.subject, optativeExitName: fixture.exit ?? null, modalityCode: 'academic' }
   const resolution = resolveScope(context, scopes.filter(s => s.level === fixture.level))

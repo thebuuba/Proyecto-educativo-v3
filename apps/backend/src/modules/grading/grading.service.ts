@@ -260,7 +260,7 @@ export class GradingService {
         id: true,
         sectionId: true,
         schoolYearId: true,
-        subject: { select: { name: true } },
+        subject: { select: { name: true, code: true } },
         section: { select: { name: true } },
         grade: {
           select: {
@@ -278,6 +278,7 @@ export class GradingService {
       return {
         id: item.id,
         subjectName: item.subject.name,
+        subjectCode: item.subject.code,
         sectionName: item.section.name,
         gradeName: item.grade.name,
         gradeSequence: item.grade.sequence,

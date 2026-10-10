@@ -3,7 +3,7 @@ import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { academicContext, resolveScope } from './curriculum-context'
-import { detectActivityType, rankCurriculum, recommend } from './recommendation-engine'
+import { detectActivityType, detectFirstSecondaryLanguageActivity, firstSecondaryLanguageSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
 
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
@@ -12,7 +12,10 @@ export class EvaluationInstrumentsService {
   private readonly logger = new Logger(EvaluationInstrumentsService.name)
   async interpret(user: AuthenticatedUser, input: InterpretActivityDto) {
     const resolved = await this.resolve(user, input, true)
-    const detected = detectActivityType(input.activityTitle, input.description ?? '')
+    const scopedType = detectFirstSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
+    const detected = evaluationCatalogV1.activityTypes.find(entry => entry.id === scopedType)
+      ?? detectActivityType(input.activityTitle, input.description ?? '')
+    const selections = scopedType ? firstSecondaryLanguageSelections(scopedType) : null
     const type = input.pedagogicalActivityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
       resolved.resolution.scope, resolved.rows)
@@ -21,6 +24,7 @@ export class EvaluationInstrumentsService {
     }))
     const confident = Boolean(resolved.resolution.scope && ranked[0]?.topicCoverage >= 0.6)
     return { suggestedActivityType: detected.id, activityType: type, activityTypes: evaluationCatalogV1.activityTypes.map(({ id }) => id),
+      ...(selections ?? {}),
       curriculumVersionId: resolved.version?.id ?? null, curriculumScopeId: resolved.resolution.scope?.id ?? null,
       curriculumStatus: resolved.version?.status ?? null, curriculumCandidates: candidates,
       curriculumMatch: confident ? 'SUGGESTED' : 'NONE', requiresCurriculumConfirmation: true,

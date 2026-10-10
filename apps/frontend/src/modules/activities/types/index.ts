@@ -3,6 +3,7 @@ import type { EvaluationProfile, InstrumentRecommendation } from '@aula/shared'
 export type SectionSubjectOption = {
   id: string
   subjectName: string
+  subjectCode?: string
   sectionName: string
   gradeName: string
   gradeSequence?: number | null
