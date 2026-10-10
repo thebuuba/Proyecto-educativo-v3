@@ -71,7 +71,7 @@ const widgetOptions = [
   { id: 'evaluations', label: 'Evaluaciones', detail: 'Promedio de calificaciones', route: '/calificaciones' },
   { id: 'actions', label: '¿Qué quieres hacer?', detail: 'Acciones recomendadas' },
   { id: 'shortcuts', label: 'Acceso rápido', detail: 'Enlaces a los módulos del sistema' },
-  { id: 'attention', label: 'Requieren atención', detail: 'Estudiantes con alertas reales', route: '/estudiantes' },
+  { id: 'attention', label: 'Requieren atención', detail: 'Estudiantes con alertas reales', route: '/cursos' },
   { id: 'competencies', label: 'Competencias fundamentales', detail: 'Logro por competencia cuando haya datos', route: '/calificaciones' },
   { id: 'planning', label: 'Planificación', detail: 'Planes del período', route: '/planificaciones' },
   { id: 'recent', label: 'Actividad reciente', detail: 'Últimos movimientos' },
@@ -79,7 +79,7 @@ const widgetOptions = [
   { id: 'pulse', label: 'Pulso semanal', detail: 'Registro de asistencia', route: '/asistencia' },
   { id: 'agenda', label: 'Tu agenda', detail: 'Clases y tareas del día' },
   { id: 'calendar', label: 'Calendario escolar', detail: 'Fechas de períodos configurados' },
-  { id: 'communications', label: 'Avisos y familias', detail: 'Comunicaciones enviadas', route: '/estudiantes' },
+  { id: 'communications', label: 'Avisos y familias', detail: 'Comunicaciones enviadas', route: '/cursos' },
 ] as const
 type WidgetId = (typeof widgetOptions)[number]['id']
 const newWidgets: WidgetId[] = ['attention', 'competencies', 'planning', 'calendar', 'communications']
@@ -238,7 +238,7 @@ function AttentionCard({ students }: { students: DashboardData['attention'] }) {
       {['Todos', 'Asistencia', 'Promedio', 'Conducta'].map((item) => <button key={item} type="button" className={`home-attention-filter ${filter === item ? 'is-active' : ''}`} aria-pressed={filter === item} onClick={() => setFilter(item)}>{item}</button>)}
     </div>
     {visible.length ? <ul className="mt-3 space-y-1">{visible.map((student) => <li key={student.id}>
-      <Link to="/estudiantes" className="home-attention-row">
+      <Link to="/cursos" className="home-attention-row">
         <span className="home-student-avatar">{student.name.split(' ').slice(0, 2).map((part) => part[0]).join('')}</span>
         <span className="min-w-0 flex-1"><span className="flex flex-wrap items-center gap-1.5"><strong className="truncate text-sm font-medium text-foreground">{student.name}</strong><small className="text-[10px] text-muted-foreground">{student.grade}</small>{student.reasons.map((reason) => <small key={reason} className={`home-reason home-reason-${reason.toLowerCase()}`}>{reason}</small>)}</span><span className="block truncate text-[11px] text-muted-foreground">{student.note}</span></span>
         <span className="shrink-0 text-right"><strong className="block text-sm font-semibold text-foreground">{student.average ?? '—'}</strong><small className="text-[10px] text-muted-foreground">{student.attendance === null ? 'Sin asist.' : `${student.attendance}% asist.`}</small></span>
@@ -277,7 +277,7 @@ function CalendarCard({ data }: { data: DashboardData['calendar'] }) {
 function CommunicationsCard({ items }: { items: DashboardData['communications'] }) {
   const statusLabels: Record<string, string> = { sent: 'Enviado', draft: 'Borrador', failed: 'Fallido' }
   return <section className="home-side-card" data-home-widget="communications"><div className="flex items-center justify-between gap-2"><h2 className="flex items-center gap-2 text-sm font-semibold text-foreground"><Bell size={17} className="text-primary" aria-hidden="true" />Avisos y familias</h2><span className="rounded-full bg-primary-container px-2 py-1 text-[10px] font-semibold text-primary">{items.length} recientes</span></div>
-    {items.length ? <ul className="mt-4 space-y-3">{items.map((item) => <li key={item.id}><Link to="/estudiantes" className="flex gap-3"><span className="home-student-avatar shrink-0">{item.student.split(' ').slice(0, 2).map((part) => part[0]).join('')}</span><span className="min-w-0 flex-1"><span className="flex justify-between gap-2"><strong className="truncate text-xs font-semibold text-foreground">{item.student}</strong><small className="shrink-0 text-[10px] text-muted-foreground">{item.relativeTime}</small></span><small className="block text-[11px] text-muted-foreground">{item.subject}</small><small className="text-[10px] text-primary">{statusLabels[item.status] ?? item.status}</small></span></Link></li>)}</ul> : <p className="mt-5 text-xs text-muted-foreground">Aún no hay comunicaciones enviadas a familias.</p>}
+    {items.length ? <ul className="mt-4 space-y-3">{items.map((item) => <li key={item.id}><Link to="/cursos" className="flex gap-3"><span className="home-student-avatar shrink-0">{item.student.split(' ').slice(0, 2).map((part) => part[0]).join('')}</span><span className="min-w-0 flex-1"><span className="flex justify-between gap-2"><strong className="truncate text-xs font-semibold text-foreground">{item.student}</strong><small className="shrink-0 text-[10px] text-muted-foreground">{item.relativeTime}</small></span><small className="block text-[11px] text-muted-foreground">{item.subject}</small><small className="text-[10px] text-primary">{statusLabels[item.status] ?? item.status}</small></span></Link></li>)}</ul> : <p className="mt-5 text-xs text-muted-foreground">Aún no hay comunicaciones enviadas a familias.</p>}
     <p className="mt-4 border-t border-border pt-3 text-[11px] text-muted-foreground">Los avisos recibidos estarán disponibles cuando se habilite la bandeja.</p>
   </section>
 }
@@ -733,8 +733,8 @@ export function DashboardPage() {
     {
       label: 'Mensaje a familia',
       detail: 'Elige estudiante y tutor',
-      path: '/estudiantes',
-      route: '/estudiantes',
+      path: '/cursos',
+      route: '/cursos',
       icon: MessageCircle,
       tone: 'family',
     },

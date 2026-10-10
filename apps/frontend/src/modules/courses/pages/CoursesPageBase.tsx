@@ -272,6 +272,10 @@ export function CoursesPage() {
     else next.delete('courseId')
     if (courseId && subjectId) next.set('subjectId', subjectId)
     else next.delete('subjectId')
+    if (!courseId || subjectId) {
+      if (next.get('view') === 'students') next.delete('view')
+      next.delete('action')
+    }
     setSearchParams(next)
     setSelectedCourseId(courseId)
   }, [searchParams, setSearchParams])
@@ -555,6 +559,8 @@ export function CoursesPage() {
         <CourseWorkspace
           item={selectedCourse}
           initialAssignmentId={searchParams.get('subjectId')}
+          initialStudentView={searchParams.get('view') === 'students'}
+          initialStudentAction={searchParams.get('action') === 'new' ? 'new' : searchParams.get('action') === 'import' ? 'import' : undefined}
           schoolYearName={currentSchoolYear?.name ?? ''}
           schoolYearId={currentSchoolYear?.id ?? null}
           canEnroll={canEnroll}
@@ -566,7 +572,13 @@ export function CoursesPage() {
           onDeleteArchivedSubject={handleDeleteArchivedAssignment}
           onCustomizeSubject={customizeSubjectAssignment}
           onAssignmentChange={(assignmentId) => setCourseWorkspace(selectedCourse.id, assignmentId)}
-          onStudentsBack={() => void refetch(false)}
+          onStudentsBack={() => {
+            const next = new URLSearchParams(searchParams)
+            next.delete('view')
+            next.delete('action')
+            setSearchParams(next)
+            void refetch(false)
+          }}
           onBack={() => setCourseWorkspace(null)}
         />
       ) : (
@@ -823,6 +835,8 @@ export function CoursesPage() {
 function CourseWorkspace({
   item,
   initialAssignmentId,
+  initialStudentView,
+  initialStudentAction,
   schoolYearName,
   schoolYearId,
   canEnroll,
@@ -839,6 +853,8 @@ function CourseWorkspace({
 }: {
   item: CourseCardItem
   initialAssignmentId: string | null
+  initialStudentView: boolean
+  initialStudentAction?: 'new' | 'import'
   schoolYearName: string
   schoolYearId: string | null
   canEnroll: boolean
@@ -855,8 +871,8 @@ function CourseWorkspace({
 }) {
   const [selectedAssignmentId, setSelectedAssignmentId] = useState<string | null>(initialAssignmentId)
   const [subjectInitialTab, setSubjectInitialTab] = useState('resumen')
-  const [workspaceView, setWorkspaceView] = useState<'subjects' | 'archived' | 'students'>('subjects')
-  const [studentAction, setStudentAction] = useState<'new' | 'import' | undefined>()
+  const [workspaceView, setWorkspaceView] = useState<'subjects' | 'archived' | 'students'>(initialStudentView ? 'students' : 'subjects')
+  const [studentAction, setStudentAction] = useState<'new' | 'import' | undefined>(initialStudentAction)
   const [appearanceTarget, setAppearanceTarget] = useState<SectionSubjectAssignment | null>(null)
   const selectedAssignment = item.assignments.find((assignment) => assignment.id === selectedAssignmentId) ?? null
   const archivedAssignments = item.section.assignments.filter((assignment) => assignment.status === 'inactive')
@@ -869,9 +885,10 @@ function CourseWorkspace({
     )
   }, [initialAssignmentId, item.assignments, item.section.id])
   useEffect(() => {
-    setWorkspaceView('subjects')
+    setWorkspaceView(initialStudentView ? 'students' : 'subjects')
+    setStudentAction(initialStudentAction)
     setSubjectInitialTab('resumen')
-  }, [item.section.id, schoolYearId])
+  }, [item.section.id, schoolYearId, initialStudentView, initialStudentAction])
 
   const [subjectCategory, setSubjectCategory] = useState('Todas')
   const [subjectSearch, setSubjectSearch] = useState('')
@@ -2180,14 +2197,14 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
             {canEnroll && courseId ? (
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  to={`/estudiantes?courseId=${encodeURIComponent(courseId)}&action=new`}
+                  to={`/cursos?courseId=${encodeURIComponent(courseId)}&view=students&action=new`}
                   className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary-hover"
                 >
                   <Plus className="size-4" />
                   Matricular estudiante
                 </Link>
                 <Link
-                  to={`/estudiantes?courseId=${encodeURIComponent(courseId)}&action=import`}
+                  to={`/cursos?courseId=${encodeURIComponent(courseId)}&view=students&action=import`}
                   className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 text-sm font-bold text-foreground transition-colors hover:bg-muted"
                 >
                   <ClipboardList className="size-4" />

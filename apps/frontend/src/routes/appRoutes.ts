@@ -50,7 +50,6 @@ const SchoolAdministrationPage = lazyPage(
   () => import('@/modules/school-administration/pages/SchoolAdministrationPage'),
   'SchoolAdministrationPage',
 )
-const StudentsPage = lazyPage(() => import('@/modules/students/pages/StudentsPage'), 'StudentsPage')
 const ActivitiesPage = lazyPage(
   () => import('@/modules/activities/pages/ActivitiesPage'),
   'ActivitiesPage',
@@ -73,6 +72,21 @@ function LegacyCurriculumRedirect() {
   next.delete('grado')
   next.delete('malla')
   return createElement(Navigate, { to: `/planificaciones?${next.toString()}`, replace: true })
+}
+
+function LegacyStudentsRedirect() {
+  const { search } = useLocation()
+  const legacy = new URLSearchParams(search)
+  const next = new URLSearchParams()
+  const courseId = legacy.get('courseId')
+  const action = legacy.get('action')
+  if (courseId) {
+    next.set('courseId', courseId)
+    next.set('view', 'students')
+    if (action === 'new' || action === 'import') next.set('action', action)
+  }
+  const query = next.toString()
+  return createElement(Navigate, { to: `/cursos${query ? `?${query}` : ''}`, replace: true })
 }
 
 /** Definición de una ruta de la aplicación. */
@@ -123,8 +137,9 @@ export const appRoutes: AppRoute[] = [
     path: '/estudiantes',
     label: 'Estudiantes',
     icon: Users,
-    component: StudentsPage,
+    component: LegacyStudentsRedirect,
     allowedRoles: ['admin', 'director', 'coordinator', 'teacher'],
+    showInSidebar: false,
   },
   {
     path: '/asignaturas',
@@ -238,7 +253,6 @@ export const routePrefetchers: Record<string, () => void> = {
           getCourseData(),
         ),
     ]),
-  '/estudiantes': () => void import('@/modules/students/pages/StudentsPage'),
   '/actividades': () =>
     prefetch([
       () => import('@/modules/activities/pages/ActivitiesPage'),
