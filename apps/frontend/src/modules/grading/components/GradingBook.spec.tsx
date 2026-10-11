@@ -121,6 +121,98 @@ describe('GradingBook', () => {
     expect(instrument).toHaveValue('escala')
   })
 
+  it.each([
+    ['La noticia', 'Los estudiantes redactarán una noticia sobre una situación de su comunidad, con titular, entrada y cuerpo', 'NEWS_WRITING', 'analisis-producciones', 'rubrica', 'Información esencial'],
+    ['Lo que ocurre en el mundo', 'Leerán una noticia sobre inmigración, identificarán sus partes y explicarán el hecho con evidencias del texto', 'NEWS_ANALYSIS', 'observacion-sistematica', 'lista-cotejo', 'Función de la noticia'],
+    ['Dos versiones de un hecho', 'Compararán dos noticias sobre el mismo acontecimiento y justificarán sus semejanzas y diferencias', 'NEWS_COMPARISON', 'analisis-producciones', 'rubrica', 'Propósito y hecho'],
+    ['Nuestro noticiero', 'Presentarán oralmente una noticia sobre educación, explicando qué ocurrió, a quién, dónde, cuándo y cómo', 'NEWSCAST', 'exposicion', 'rubrica', 'Información periodística'],
+    ['Una noticia para debatir', 'Debatirán sobre el hecho presentado en una noticia, argumentando sus posturas con evidencias', 'DEBATE', 'debate', 'rubrica', 'Comprensión del hecho'],
+  ])('sugiere %s en 2.º y prepara una alternativa contextual cuando falla el servicio', async (title, description, expectedType, technique, instrument, criterion) => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    fireEvent.change(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), { target: { value: title } })
+    fireEvent.change(screen.getByRole('textbox', { name: 'Descripción de la actividad' }), { target: { value: description } })
+    await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue(expectedType))
+    expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue(technique)
+    expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue(instrument)
+    await waitFor(() => expect(((instrument === 'lista-cotejo' ? screen.getByPlaceholderText('1. Criterio')
+      : screen.getByRole('textbox', { name: 'Criterio 1' })) as HTMLTextAreaElement).value).toContain(criterion), { timeout: 8000 })
+  }, 12000)
+
+  it('cambia a escala manual en 2.º aunque falle la preparación remota y conserva el formato', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    fireEvent.change(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), { target: { value: 'La noticia' } })
+    const description = screen.getByRole('textbox', { name: 'Descripción de la actividad' })
+    fireEvent.change(description, { target: { value: 'Redactarán una noticia sobre educación con titular, entrada y cuerpo.' } })
+    const user = userEvent.setup()
+    const instrument = screen.getByRole('combobox', { name: 'Tipo de instrumento' })
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'), { timeout: 8000 })
+    await user.selectOptions(instrument, 'escala')
+    await waitFor(() => expect(instrument).toHaveValue('escala'))
+    await waitFor(() => expect(screen.getAllByPlaceholderText('Indicador')[0]).toHaveValue('Información esencial'))
+    fireEvent.change(description, { target: { value: 'Redactarán una noticia sobre salud con titular, entrada y cuerpo.' } })
+    await waitFor(() => expect(instrument).toHaveValue('escala'))
+    expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING')
+  }, 15000)
+
+  it('protege las tres elecciones manuales de 2.º al cambiar la descripción y reactiva la detección', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    fireEvent.change(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), { target: { value: 'La noticia' } })
+    const description = screen.getByRole('textbox', { name: 'Descripción de la actividad' })
+    fireEvent.change(description, { target: { value: 'Redactarán una noticia sobre educación.' } })
+    const activity = screen.getByRole('combobox', { name: 'Tipo de actividad' })
+    const technique = screen.getByRole('combobox', { name: /Técnica de evaluación/ })
+    const instrument = screen.getByRole('combobox', { name: 'Tipo de instrumento' })
+    await waitFor(() => expect(activity).toHaveValue('NEWS_WRITING'))
+    const user = userEvent.setup()
+    await user.selectOptions(activity, 'DEBATE')
+    await user.selectOptions(technique, 'debate')
+    await user.selectOptions(instrument, 'escala')
+    fireEvent.change(description, { target: { value: 'Leerán una noticia sobre educación y analizarán su estructura.' } })
+    await waitFor(() => expect(activity).toHaveValue('DEBATE'))
+    expect(technique).toHaveValue('debate')
+    expect(instrument).toHaveValue('escala')
+    await user.selectOptions(activity, '')
+    await user.selectOptions(technique, '')
+    await user.selectOptions(instrument, '')
+    await waitFor(() => expect(activity).toHaveValue('NEWS_ANALYSIS'))
+    expect(technique).toHaveValue('observacion-sistematica')
+    expect(instrument).toHaveValue('lista-cotejo')
+  }, 15000)
+
+  it('conserva tipo, técnica e instrumento de 2.º en resumen, guardado y reapertura', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    const title = 'La noticia'
+    const description = 'Redactarán una noticia sobre educación con titular, entrada y cuerpo.'
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+      draftId: 'second-news-draft', name: title, description, maxScore: '20', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 },
+      activityType: 'individual', teamIds: [], instrumentType: '', evaluationTechnique: '', instrumentFields: {}, instrumentCompleted: false,
+      resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '',
+    }] }))
+    const onAddActivity = vi.fn().mockImplementation(async activity => ({ ...activity, id: 'saved-news' }))
+    const view = renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create',
+      initialActivityBlockId: 'b1', initialActivityDraftId: 'second-news-draft', onAddActivity })
+    await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING'))
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'))
+    const user = userEvent.setup()
+    await user.click(screen.getByRole('button', { name: 'Guardar' }))
+    const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })
+    expect(within(summary).getByText('Redacción de noticia')).toBeInTheDocument()
+    expect(within(summary).getByText('Análisis de producciones')).toBeInTheDocument()
+    await user.click(within(summary).getByRole('button', { name: 'Confirmar y guardar' }))
+    await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
+    const saved = onAddActivity.mock.calls[0][0] as GradingActivity
+    expect(saved).toEqual(expect.objectContaining({ pedagogicalActivityType: 'NEWS_WRITING', evaluationTechnique: 'analisis-producciones', instrumentType: 'rubrica' }))
+    view.unmount()
+    renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', activities: [{ ...saved, id: 'saved-news' }],
+      initialActivityId: 'saved-news', initialActivityMode: 'edit' })
+    expect(await screen.findByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING')
+    expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
+    expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('rubrica')
+  }, 15000)
+
   it('muestra las tres recomendaciones del catálogo también fuera de Lengua Española de 1.º', async () => {
     vi.spyOn(api, 'post').mockImplementation(async path => {
       if (path !== '/evaluation-instruments/interpret') throw new Error('Ruta inesperada')

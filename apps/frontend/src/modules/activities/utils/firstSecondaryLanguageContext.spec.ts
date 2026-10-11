@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isFirstSecondaryLanguage } from './firstSecondaryLanguageContext'
+import { isFirstSecondaryLanguage, isSecondSecondaryLanguage } from './firstSecondaryLanguageContext'
 
 describe('contexto de Lengua Española de 1.º de secundaria', () => {
   const subject = { id: 'ss-1', academicLevelCode: 'secundario', gradeSequence: 1,
@@ -14,5 +14,12 @@ describe('contexto de Lengua Española de 1.º de secundaria', () => {
     expect(isFirstSecondaryLanguage({ ...subject, gradeSequence: 2, gradeName: '2.º' })).toBe(false)
     expect(isFirstSecondaryLanguage({ ...subject, academicLevelCode: 'primario' })).toBe(false)
     expect(isFirstSecondaryLanguage({ ...subject, subjectCode: 'MAT', subjectName: 'Matemática' })).toBe(false)
+  })
+  it('habilita solo La noticia en Lengua Española de 2.º', () => {
+    expect(isSecondSecondaryLanguage({ ...subject, gradeSequence: 2, gradeName: '2.º' })).toBe(true)
+    expect(isSecondSecondaryLanguage({ ...subject, gradeSequence: 8, gradeName: '2.º' })).toBe(true)
+    expect(isSecondSecondaryLanguage({ ...subject, gradeSequence: null, gradeName: 'Segundo', subjectCode: undefined })).toBe(true)
+    expect(isSecondSecondaryLanguage(subject)).toBe(false)
+    expect(isSecondSecondaryLanguage({ ...subject, gradeSequence: 2, subjectCode: 'MAT', subjectName: 'Matemática' })).toBe(false)
   })
 })

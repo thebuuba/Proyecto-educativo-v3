@@ -154,12 +154,13 @@ import {
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 import { ApiError } from '@/services/apiClient'
-import { detectFirstSecondaryLanguageActivity, firstSecondaryLanguageTechnique, secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
+import { detectSecondaryLanguageActivity, firstSecondaryLanguageTechnique, secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { alignRecommendationWithFields, editableFallbackRecommendation, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 import { activityDefaultSuggestions } from '@/modules/activities/utils/activityDefaultSuggestions'
 
 type GradingBookProps = {
   firstSecondaryLanguage?: boolean
+  secondSecondaryLanguage?: boolean
   evaluationProfile?: EvaluationProfile
   sectionSubjectId?: string
   students: StudentGradeRow[]
@@ -376,6 +377,7 @@ const emptyActivityDraft: ActivityDraft = {
 
 export function GradingBook({
   firstSecondaryLanguage = false,
+  secondSecondaryLanguage = false,
   evaluationProfile,
   sectionSubjectId,
   students,
@@ -1003,6 +1005,7 @@ export function GradingBook({
         ) : detailView.type === 'activity-create' && selectedCreateBlock ? (
           <ActivityCreationView
             firstSecondaryLanguage={firstSecondaryLanguage}
+            secondSecondaryLanguage={secondSecondaryLanguage}
             sectionSubjectId={sectionSubjectId}
             activityDraft={activityDraft}
             teams={teams}
@@ -3826,6 +3829,7 @@ function DraftFilterChip({
 
 function ActivityCreationView(props: {
   firstSecondaryLanguage?: boolean
+  secondSecondaryLanguage?: boolean
   sectionSubjectId?: string
   activityDraft: ActivityDraft
   teams: CourseTeam[]
@@ -3843,7 +3847,8 @@ function ActivityCreationView(props: {
   onSaveDraft: () => void
   saving: boolean
 }) {
-  const { activityDraft, block, editingActivityId, firstSecondaryLanguage = false, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving, teams, sectionSubjectId } = props
+  const { activityDraft, block, editingActivityId, firstSecondaryLanguage = false, secondSecondaryLanguage = false, hasDraft, onBack, onChangeDraft, onSaveActivity, onSaveDraft, saving, teams, sectionSubjectId } = props
+  const contextualLanguageGrade = firstSecondaryLanguage ? 1 : secondSecondaryLanguage ? 2 : null
   const latestDraft = useRef(activityDraft)
   latestDraft.current = activityDraft
   const manualSelections = useRef({
@@ -3884,8 +3889,8 @@ function ActivityCreationView(props: {
     if (!sectionSubjectId || !activityDraft.name.trim() || editingActivityId) { setInterpretation(null); return }
     const abort = new AbortController()
     const timer = window.setTimeout(() => {
-      const scopedType = firstSecondaryLanguage ? detectFirstSecondaryLanguageActivity(activityDraft.name,
-        activityDescriptionText(activityDraft.description), { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) : null
+      const scopedType = contextualLanguageGrade ? detectSecondaryLanguageActivity(activityDraft.name,
+        activityDescriptionText(activityDraft.description), { level: 'SECONDARY', grade: contextualLanguageGrade, subjectCode: 'LEN' }) : null
       const localDefaults = scopedType ? { activityType: scopedType, technique: firstSecondaryLanguageTechnique(scopedType),
         instrument: scopedType.endsWith('_ANALYSIS') ? 'lista-cotejo' : 'rubrica' }
         : activityDefaultSuggestions(activityDraft.name, activityDescriptionText(activityDraft.description))
@@ -3923,7 +3928,7 @@ function ActivityCreationView(props: {
             next.evaluationTechnique = suggestedTechnique
             next.autoSelectedEvaluationTechnique = true
           }
-          if (pedagogicalActivityLabels[suggestedType] && (firstSecondaryLanguage || !/^(?:NEWS|TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(suggestedType)) && !manualSelections.current.activity && (current.autoDetectedPedagogicalActivityType || !current.pedagogicalActivityType)) {
+          if (pedagogicalActivityLabels[suggestedType] && availablePedagogicalActivityType(suggestedType, firstSecondaryLanguage, secondSecondaryLanguage) && !manualSelections.current.activity && (current.autoDetectedPedagogicalActivityType || !current.pedagogicalActivityType)) {
             next.pedagogicalActivityType = suggestedType
             next.autoDetectedPedagogicalActivityType = true
           }
@@ -3936,7 +3941,7 @@ function ActivityCreationView(props: {
         .catch(() => { if (!abort.signal.aborted) setInterpretation(null) })
     }, 450)
     return () => { window.clearTimeout(timer); abort.abort() }
-  }, [sectionSubjectId, activityDraft.name, activityDraft.description, manualPedagogicalType, block.id, editingActivityId, firstSecondaryLanguage, autoDetectionRevision])
+  }, [sectionSubjectId, activityDraft.name, activityDraft.description, manualPedagogicalType, block.id, editingActivityId, firstSecondaryLanguage, secondSecondaryLanguage, autoDetectionRevision])
 
   async function prepare(preferredType?: string, replaceManual = false, forceAutomatic = false, newGeneration = false) {
     if (!sectionSubjectId) {
@@ -3964,7 +3969,7 @@ function ActivityCreationView(props: {
       const selectedProposal = newGeneration ? editableFallbackRecommendation({ activityTitle: current.name,
         description: activityDescriptionText(current.description), maxScore: preparationScore, instrumentType: proposal.instrumentType,
         participationMode: current.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL', activityType: current.pedagogicalActivityType,
-        variation: generation % 2 }) : proposal
+        variation: generation % 2, secondaryLanguageGrade: contextualLanguageGrade || undefined }) : proposal
       const next = { ...current, instrumentType: selectedProposal.instrumentType,
         pedagogicalActivityType: current.pedagogicalActivityType || proposal.activityType,
         autoSelectedInstrumentType: forceAutomatic ? true : preferredType ? false : current.autoSelectedInstrumentType || !current.instrumentType,
@@ -3977,7 +3982,7 @@ function ActivityCreationView(props: {
       if (preparationFingerprint(latestDraft.current) !== requestedFingerprint) return
       const requestedType = preferredType ?? (activityDraft.instrumentType || 'rubrica')
       if (!(error instanceof ApiError && error.status >= 400 && error.status < 500) && (!activityDraft.preparedManuallyEdited || replaceManual)) {
-        useEditableTemplate(requestedType, newGeneration)
+        useEditableTemplate(requestedType, newGeneration, Boolean(preferredType))
       } else {
         setFailedInstrumentType(requestedType)
         setPreparationError(error instanceof ApiError && error.status < 500
@@ -4015,7 +4020,7 @@ function ActivityCreationView(props: {
     void prepare(preferredType, false, false, true)
   }
 
-  function useEditableTemplate(preferredType?: string, newGeneration = false) {
+  function useEditableTemplate(preferredType?: string, newGeneration = false, manualInstrumentSelection = false) {
     const current = latestDraft.current
     const instrumentType = (preferredType || failedInstrumentType || current.instrumentType || 'rubrica') as InstrumentRecommendation['instrumentType']
     const generation = newGeneration ? (current.instrumentGeneration || 0) + 1 : current.instrumentGeneration || 0
@@ -4023,11 +4028,12 @@ function ActivityCreationView(props: {
     const proposal = editableFallbackRecommendation({ activityTitle: current.name, description: activityDescriptionText(current.description),
       maxScore: Number.isFinite(score) && score > 0 && score <= 10000 ? score : 20, instrumentType, variation: generation % 2,
       participationMode: current.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
-      activityType: firstSecondaryLanguage ? current.pedagogicalActivityType || detectFirstSecondaryLanguageActivity(current.name,
-        activityDescriptionText(current.description), { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) || undefined : undefined })
+      activityType: contextualLanguageGrade ? current.pedagogicalActivityType || detectSecondaryLanguageActivity(current.name,
+        activityDescriptionText(current.description), { level: 'SECONDARY', grade: contextualLanguageGrade, subjectCode: 'LEN' }) || undefined : undefined,
+      secondaryLanguageGrade: contextualLanguageGrade || undefined })
     const next = { ...current, instrumentType, instrumentFields: recommendationToFields(proposal, current.name), instrumentCompleted: true,
       preparedRecommendation: proposal, preparedManuallyEdited: false, manualInstrumentBlank: false, instrumentGeneration: generation,
-      autoSelectedInstrumentType: current.autoSelectedInstrumentType || !current.instrumentType }
+      autoSelectedInstrumentType: !manualInstrumentSelection && (current.autoSelectedInstrumentType || !current.instrumentType) }
     onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
     setFailedInstrumentType('')
     setPreparationError('')
@@ -4141,7 +4147,7 @@ function ActivityCreationView(props: {
           </div>
 
           {requiredFieldError ? <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">{requiredFieldError}</div> : null}
-          <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} onInstrumentTypeChange={requestInstrumentChange} interpretation={interpretation} requiredFieldError={requiredFieldError} firstSecondaryLanguage={firstSecondaryLanguage} />
+          <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} onInstrumentTypeChange={requestInstrumentChange} interpretation={interpretation} requiredFieldError={requiredFieldError} firstSecondaryLanguage={firstSecondaryLanguage} secondSecondaryLanguage={secondSecondaryLanguage} />
           {savedSnapshot ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">Este instrumento ya tiene una versión guardada. Para cambiar su estructura, duplica la actividad y prepara uno nuevo.</div> : null}
 
           <div data-activity-required="instrumentBody" className="space-y-3">
@@ -4311,8 +4317,13 @@ const pedagogicalActivityLabels: Record<string, string> = {
   CONCEPT_MAP: 'Mapa conceptual', PORTFOLIO: 'Portafolio', ARTISTIC_PRODUCTION: 'Producción artística',
   PERFORMANCE: 'Representación', MOTOR_SPORTS_PRACTICE: 'Práctica motriz', OBSERVATION: 'Observación', QUIZ_TEST: 'Prueba', OTHER: 'Otra actividad',
 }
+function availablePedagogicalActivityType(id: string, firstSecondaryLanguage: boolean, secondSecondaryLanguage: boolean) {
+  return firstSecondaryLanguage || (secondSecondaryLanguage
+    ? !/^(?:TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(id)
+    : !/^(?:NEWS|TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(id))
+}
 
-function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, onInstrumentTypeChange, interpretation, requiredFieldError, firstSecondaryLanguage }: {
+function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, onInstrumentTypeChange, interpretation, requiredFieldError, firstSecondaryLanguage, secondSecondaryLanguage }: {
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
@@ -4322,6 +4333,7 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
   interpretation: ActivityInterpretation | null
   requiredFieldError: string
   firstSecondaryLanguage?: boolean
+  secondSecondaryLanguage?: boolean
 }) {
   const highlight = (target: ActivityCompletionTarget) => highlightTarget === target ? transientHighlightClass : ''
   return (
@@ -4334,7 +4346,7 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
         <div className="space-y-4">
           <label data-activity-required="name" className={cn('space-y-1.5 text-sm font-bold', highlight('name'))}>Nombre de la actividad <span className="text-destructive">*</span><Input className="h-11" value={activityDraft.name} onChange={(event) => onChangeDraft({ ...activityDraft, name: event.target.value })} placeholder="Ej: Exposición oral sobre el cambio climático" /></label>
           <div data-activity-required="description" className={highlight('description')}><StructuredActivityDescriptionEditor value={activityDraft.description} onChange={(description) => onChangeDraft({ ...activityDraft, description })} /></div>
-          <label className="block space-y-1.5 text-sm font-bold">Tipo de actividad<Select className="h-11" value={activityDraft.pedagogicalActivityType ?? ''} onChange={(event) => onChangeDraft({ ...activityDraft, pedagogicalActivityType: event.target.value, autoDetectedPedagogicalActivityType: event.target.value === '' })}><option value="">Detectar automáticamente</option>{Object.entries(pedagogicalActivityLabels).filter(([id]) => firstSecondaryLanguage || !/^(?:NEWS|TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(id)).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Select></label>
+          <label className="block space-y-1.5 text-sm font-bold">Tipo de actividad<Select className="h-11" value={activityDraft.pedagogicalActivityType ?? ''} onChange={(event) => onChangeDraft({ ...activityDraft, pedagogicalActivityType: event.target.value, autoDetectedPedagogicalActivityType: event.target.value === '' })}><option value="">Detectar automáticamente</option>{Object.entries(pedagogicalActivityLabels).filter(([id]) => availablePedagogicalActivityType(id, Boolean(firstSecondaryLanguage), Boolean(secondSecondaryLanguage))).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Select></label>
         </div>
       </CreationFormSection>
 

@@ -119,6 +119,26 @@ describe('adaptación del instrumento preparado', () => {
 })
 
 
+describe('alternativa local de La noticia en 2.º de secundaria', () => {
+  it.each([
+    ['NEWS_WRITING', 'Redactarán una noticia sobre educación.', 'Información esencial'],
+    ['NEWS_ANALYSIS', 'Leerán y analizarán una noticia sobre inmigración.', 'Función de la noticia'],
+    ['NEWS_COMPARISON', 'Compararán dos noticias sobre un hecho.', 'Propósito y hecho de ambas noticias'],
+    ['NEWSCAST', 'Presentarán oralmente una noticia sobre educación.', 'Información periodística'],
+    ['DEBATE', 'Debatirán el hecho de una noticia con evidencias.', 'Comprensión del hecho noticioso'],
+    ['REPORT', 'Elaborarán un informe escrito sobre una noticia.', 'Propósito del informe sobre la noticia'],
+  ])('conserva %s contextualizado en cuatro formatos', (activityType, description, firstCriterion) => {
+    for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const proposal = editableFallbackRecommendation({ activityTitle: 'La noticia', description, activityType,
+        secondaryLanguageGrade: 2, maxScore: 17.35, instrumentType, participationMode: 'INDIVIDUAL' })
+      expect(proposal.criteria[0].title).toBe(firstCriterion)
+      expect(proposal.totalScoreUnits).toBe(1735)
+      expect(proposal.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(1735)
+      expect(proposal.instrumentType).toBe(instrumentType)
+    }
+  })
+})
+
 describe('informe de lectura de la actividad real', () => {
   it.each(['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const)('redactar después de leer prepara %s para producción escrita', instrumentType => {
     const result = editableFallbackRecommendation({ activityTitle: 'Un cuento en pocas palabras',

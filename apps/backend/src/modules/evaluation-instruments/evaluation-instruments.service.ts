@@ -3,7 +3,7 @@ import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { academicContext, resolveScope } from './curriculum-context'
-import { detectActivityType, detectFirstSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
+import { detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
 
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
@@ -12,7 +12,7 @@ export class EvaluationInstrumentsService {
   private readonly logger = new Logger(EvaluationInstrumentsService.name)
   async interpret(user: AuthenticatedUser, input: InterpretActivityDto) {
     const resolved = await this.resolve(user, input, true)
-    const scopedType = detectFirstSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
+    const scopedType = detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
     const detected = evaluationCatalogV1.activityTypes.find(entry => entry.id === scopedType)
       ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogV1, false)
     const selections = scopedType ? firstSecondaryLanguageSelections(scopedType) : suggestedSelections(detected.id, resolved.context)

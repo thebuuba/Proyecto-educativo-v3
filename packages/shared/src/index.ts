@@ -10,13 +10,14 @@ export type * from './instrument-recommendation'
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
 
 /** Deterministic classification shared by the service and its local editable fallback. */
-export function detectFirstSecondaryLanguageActivity(title: string, description: string, context: FirstSecondaryLanguageContext | null): string | null {
-  if (context?.level !== 'SECONDARY' || context.grade !== 1 || context.subjectCode.toUpperCase() !== 'LEN') return null
+export function detectSecondaryLanguageActivity(title: string, description: string, context: FirstSecondaryLanguageContext | null): string | null {
+  if (context?.level !== 'SECONDARY' || ![1, 2].includes(context.grade) || context.subjectCode.toUpperCase() !== 'LEN') return null
   const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
   const titleText = normalize(title)
   const task = normalize(description)
   const both = `${titleText} ${task}`
-  const module = /informe(?:s)? de lectura/.test(both) ? 'READING_REPORT'
+  const module = context.grade === 2 ? /noticias?|noticiero/.test(both) ? 'NEWS' : null
+    : /informe(?:s)? de lectura/.test(both) ? 'READING_REPORT'
     : /cuento(?:s)? (?:policiacos?|detectivescos?)/.test(both) ? 'DETECTIVE_STORY'
       : /caligramas?|(?:versos|palabras).*formando (?:la )?silueta/.test(both) ? 'CALLIGRAM'
         : /guias? turisticas?/.test(both) ? 'TOURIST_GUIDE'
@@ -24,6 +25,10 @@ export function detectFirstSecondaryLanguageActivity(title: string, description:
             : /noticias?|noticiero/.test(both) ? 'NEWS' : null
   if (!module) return null
   const action = (value: string) => {
+    if (context.grade === 2 && module === 'NEWS') {
+      if (/\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
+      if (/\b(?:debat\w*|debates?)\b/.test(value)) return 'DEBATE'
+    }
     const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon\w*)\b/.test(value)
     const comparing = /\b(?:compar\w*|contrast\w*)\b/.test(value)
     const presenting = /\b(?:present\w*|expon\w*|explic\w*)\b/.test(value)
@@ -33,14 +38,19 @@ export function detectFirstSecondaryLanguageActivity(title: string, description:
     if (module === 'CALLIGRAM' && /\b(?:recit\w*|declam\w*)\b/.test(value)) return 'CALLIGRAM_RECITATION'
     if (comparing) return `${module}_COMPARISON`
     if (writing) return module === 'NEWS' ? 'NEWS_WRITING' : `${module}_CREATION`.replace('READING_REPORT_CREATION', 'READING_REPORT_WRITING').replace('DETECTIVE_STORY_CREATION', 'DETECTIVE_STORY_WRITING')
+    if (context.grade === 2 && module === 'NEWS' && analyzing) return 'NEWS_ANALYSIS'
     if (presenting) return module === 'NEWS' ? 'NEWSCAST' : module === 'DETECTIVE_STORY' ? 'DETECTIVE_STORY_ANALYSIS_PRESENTATION' : module === 'CALLIGRAM' ? 'CALLIGRAM_EXPLANATION' : `${module}_PRESENTATION`
     if (analyzing) return `${module}_ANALYSIS`
     return null
   }
   return action(task) ?? action(titleText)
 }
+export function detectFirstSecondaryLanguageActivity(title: string, description: string, context: FirstSecondaryLanguageContext | null): string | null {
+  return context?.grade === 1 ? detectSecondaryLanguageActivity(title, description, context) : null
+}
 export function firstSecondaryLanguageTechnique(activityType: string): string {
-  return activityType.endsWith('_ANALYSIS') ? 'observacion-sistematica'
+  return activityType === 'DEBATE' ? 'debate' : activityType === 'REPORT' ? 'analisis-producciones'
+    : activityType.endsWith('_ANALYSIS') ? 'observacion-sistematica'
     : activityType.endsWith('_COMPARISON') || activityType.endsWith('_WRITING') || activityType.endsWith('_CREATION')
       ? 'analisis-producciones' : activityType === 'CALLIGRAM_RECITATION' || activityType === 'DETECTIVE_STORY_NARRATION'
         ? 'presentacion' : 'exposicion'

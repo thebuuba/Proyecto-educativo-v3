@@ -26,7 +26,7 @@ export function preparationFingerprint(input: { name: string; description: strin
   return JSON.stringify([input.name, input.description, input.maxScore, input.pedagogicalActivityType, input.activityType, input.instrumentType, input.selectedCurriculumElementIds ?? []])
 }
 
-export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number }): InstrumentRecommendation {
+export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: 1 | 2 }): InstrumentRecommendation {
   const text = `${input.activityTitle} ${input.description ?? ''}`.toLocaleLowerCase('es-DO')
   const news = /noticia|noticiero/.test(text)
   const touristGuide = /gu[ií]a tur[ií]stica/.test(text)
@@ -44,7 +44,19 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   const graphicsRequested = /imagen|im[aá]genes|foto|mapa|gr[aá]fico|dibujo|collage|recurso visual/.test(text)
   const posterTopic = /agua/.test(text) ? 'el cuidado y ahorro del agua' : /convivencia escolar/.test(text) ? 'la convivencia escolar' : /entorno/.test(text) ? 'el cuidado del entorno' : 'el tema indicado'
   const reciting = input.activityType ? input.activityType === 'CALLIGRAM_RECITATION' : /recitar|declamar/.test(text)
-  const authored = detectiveStory && analyzing ? [
+  const authored = news && input.secondaryLanguageGrade === 2 && input.activityType === 'REPORT' ? [
+    ['Propósito del informe sobre la noticia', 'Presenta el hecho de la noticia y explica el propósito de su informe.'],
+    ['Análisis de la información', 'Explica los datos principales y distingue la información de su interpretación.'],
+    ['Evidencias de la noticia', 'Apoya el análisis con datos o fragmentos verificables de la noticia.'],
+    ['Organización del informe', 'Organiza introducción, desarrollo y conclusión con claridad.'],
+    ['Revisión del informe', 'Revisa coherencia, puntuación y ortografía del informe.'],
+  ] : news && input.secondaryLanguageGrade === 2 && input.activityType === 'DEBATE' ? [
+    ['Comprensión del hecho noticioso', 'Explica el hecho debatido y distingue información de opiniones.'],
+    ['Argumentos sobre la noticia', 'Defiende su postura con razones relacionadas con el hecho.'],
+    ['Evidencias de la noticia', 'Apoya sus argumentos con datos verificables de la noticia.'],
+    ['Respuesta a otras posturas', 'Escucha y responde argumentos contrarios sin apartarse del tema.'],
+    ['Participación en el debate', 'Interviene con claridad y respeta los turnos.'],
+  ] : detectiveStory && analyzing ? [
     ['Estructura y trama', 'Interpreta inicio, nudo y desenlace y explica cómo progresa el misterio.'],
     ['Narrador, personajes y ambiente', 'Identifica y relaciona estos elementos en la historia.'],
     ['Pistas y desenlace', 'Relaciona acciones y pistas con la comprensión del desenlace.'],
@@ -175,6 +187,12 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
     ['Partes de la noticia', 'Identifica titular, entrada o copete y cuerpo en el texto analizado.'],
     ['Interrogantes fundamentales', 'Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.'],
     ['Interpretación de la información', 'Explica la información principal con evidencias de la noticia.'],
+  ] : news && comparing ? [
+    ['Propósito y hecho de ambas noticias', 'Identifica el hecho y el propósito informativo de cada noticia.'],
+    ['Semejanzas y diferencias', 'Compara los datos y enfoques de ambas noticias.'],
+    ['Estructura periodística', 'Contrasta el titular, la entrada y el cuerpo de los dos textos.'],
+    ['Evidencias de ambos textos', 'Sustenta la comparación con datos concretos de las dos noticias.'],
+    ['Conclusión comparativa', 'Formula una conclusión coherente con los hallazgos.'],
   ] : news && oral ? [
     ['Información periodística', 'Presenta hechos relevantes y distingue la información principal de los detalles.'],
     ['Estructura de la noticia', 'Comunica un titular y desarrolla qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.'],

@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { academicContext, resolveScope, type AcademicContext } from './curriculum-context'
-import { recommend, distributeScore, detectActivityType, detectFirstSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
+import { recommend, distributeScore, detectActivityType, detectFirstSecondaryLanguageActivity, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
 
 const root = resolve(process.cwd(), '../..')
 const cases = JSON.parse(readFileSync(resolve(root, 'data/evaluation-instruments/cases-v1.json'), 'utf8')) as { case: string; level: 'PRIMARY' | 'SECONDARY'; grade: number; code: string; subject: string; exit?: string; activityTitle: string; description?: string; maxScore: number; expectedInstrument: string }[]
@@ -57,6 +57,59 @@ describe('Recomendaciones generales fuera del alcance de 1.º de secundaria', ()
     expect(recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null).activityType).toBe('REPORT')
   })
 })
+describe('La noticia de Lengua Española en 2.º de secundaria', () => {
+  const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 2, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+  const cases = [
+    ['La noticia', 'Los estudiantes redactarán una noticia sobre una situación de su comunidad, con titular, entrada y cuerpo', 'NEWS_WRITING', 'analisis-producciones', 'rubrica', 'Titular, entrada y cuerpo'],
+    ['Lo que ocurre en el mundo', 'Leerán una noticia sobre inmigración, identificarán sus partes y explicarán el hecho con evidencias del texto', 'NEWS_ANALYSIS', 'observacion-sistematica', 'lista-cotejo', 'Interrogantes fundamentales'],
+    ['Dos versiones de un hecho', 'Compararán dos noticias sobre el mismo acontecimiento y justificarán sus semejanzas y diferencias', 'NEWS_COMPARISON', 'analisis-producciones', 'rubrica', 'Semejanzas y diferencias'],
+    ['Nuestro noticiero', 'Presentarán oralmente una noticia sobre educación, explicando qué ocurrió, a quién, dónde, cuándo y cómo', 'NEWSCAST', 'exposicion', 'rubrica', 'Interrogantes de la noticia'],
+    ['Una noticia para debatir', 'Debatirán sobre el hecho presentado en una noticia, argumentando sus posturas con evidencias', 'DEBATE', 'debate', 'rubrica', 'Argumentos sobre la noticia'],
+  ] as const
+  it.each(cases)('interpreta y prepara %s', (title, description, expectedType, expectedTechnique, expectedInstrument, expectedCriterion) => {
+    const detected = detectSecondaryLanguageActivity(title, description, context)
+    expect(detected).toBe(expectedType)
+    expect(firstSecondaryLanguageSelections(detected!)).toEqual({ suggestedEvaluationTechnique: expectedTechnique, suggestedInstrumentType: expectedInstrument })
+    for (const maxScore of [20, 17.35]) for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore, preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(expectedType)
+      expect(result.instrumentType).toBe(instrumentType)
+      expect(result.criteria.map(item => item.title)).toContain(expectedCriterion)
+      expect(result.totalScoreUnits).toBe(Math.round(maxScore * 100))
+      expect(result.internalTrace.reasons).toContain('module=lengua-secundaria-2-la-noticia')
+      if (instrumentType === 'rubrica' || instrumentType === 'escala') {
+        expect(result.criteria[0].descriptors).toHaveLength(4)
+        expect(new Set(result.criteria[0].descriptors.map(item => item.text)).size).toBe(4)
+      }
+    }
+  })
+  it('conserva un informe sobre la noticia como producto principal y respeta la elección explícita', () => {
+    const title = 'Informe sobre una noticia'
+    const description = 'Elaborarán un informe escrito sobre una noticia de educación con análisis y evidencias del texto.'
+    expect(detectSecondaryLanguageActivity(title, description, context)).toBe('REPORT')
+    const result = recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe('REPORT')
+    expect(result.criteria.map(item => item.title)).toContain('Organización del informe')
+    const manual = recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20, pedagogicalActivityType: 'ESSAY' }, context, null, [], 'UNMAPPED', null)
+    expect(manual.activityType).toBe('ESSAY')
+    expect(manual.criteria.map(item => item.title)).not.toContain('Organización del informe')
+  })
+  it('no impone imágenes, equipo ni gramática no solicitada', () => {
+    const base = { activityTitle: 'La noticia', description: 'Redactarán una noticia sobre su comunidad con titular, entrada y cuerpo.',
+      participationMode: 'INDIVIDUAL' as const, maxScore: 20 }
+    const result = recommend(base, context, null, [], 'UNMAPPED', null)
+    expect(JSON.stringify(result.criteria)).not.toMatch(/imágenes|fotografías|trabajo en equipo|pluscuamperfecto|subordinadas/i)
+    const requested = recommend({ ...base, description: `${base.description} Usarán oraciones coordinadas y subordinadas y el pretérito pluscuamperfecto.` },
+      context, null, [], 'UNMAPPED', null)
+    expect(requested.criteria.find(item => item.title === 'Precisión del lenguaje periodístico')?.description).toContain('formas gramaticales solicitadas')
+  })
+  it('mantiene el alcance de 1.º y excluye otros grados y materias', () => {
+    expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, grade: 1 })).toBeNull()
+    expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, grade: 3 })).toBeNull()
+    expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, subjectCode: 'SOC' })).toBeNull()
+  })
+})
+
 function run(fixture = cases[1], options = {}) {
   const context: AcademicContext = { level: fixture.level, grade: fixture.grade, cycle: fixture.grade <= 3 ? 1 : 2, subjectCode: fixture.code, subjectName: fixture.subject, optativeExitName: fixture.exit ?? null, modalityCode: 'academic' }
   const resolution = resolveScope(context, scopes.filter(s => s.level === fixture.level))
