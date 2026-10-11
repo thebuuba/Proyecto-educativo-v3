@@ -87,6 +87,162 @@ describe('GradingBook', () => {
     expect(screen.getByRole('checkbox', { name: /Bloque 2/i })).toBeChecked()
   })
 
+  it('prepara sin puntaje y redistribuye al confirmar 20, 30 y 17.35 sin regenerar el contenido', async () => {
+    const post = vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    const score = screen.getByRole('spinbutton', { name: /Valor en puntos/ })
+    expect(score).toHaveValue(null)
+    fireEvent.change(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), { target: { value: 'La noticia' } })
+    fireEvent.change(screen.getByRole('textbox', { name: 'Descripción de la actividad' }), {
+      target: { value: 'Los estudiantes redactarán una noticia sobre educación con titular, entrada y cuerpo.' },
+    })
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'), { timeout: 8000 })
+    expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING')
+    expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
+    expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('rubrica')
+    expect(screen.queryByText('Puntaje pendiente')).not.toBeInTheDocument()
+    await userEvent.setup().click(screen.getByRole('button', { name: 'Vista previa' }))
+    const preview = screen.getByRole('dialog', { name: /Vista previa de rúbrica/ })
+    expect(within(preview).queryByText(/\b(?:20|0) puntos\b/)).not.toBeInTheDocument()
+    expect(within(preview).getByText(/Puntuación máxima: — pts/)).toBeInTheDocument()
+    await userEvent.setup().click(within(preview).getByRole('button', { name: 'Cerrar vista previa' }))
+    const criterion = screen.getByRole('textbox', { name: 'Criterio 1' })
+    fireEvent.change(criterion, { target: { value: 'Información esencial editada' } })
+    const requestCount = post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend').length
+    for (const total of ['20', '30', '17.35']) {
+      fireEvent.change(score, { target: { value: total } })
+      fireEvent.blur(score)
+      await waitFor(() => expect(screen.getByText(`Puntuación máxima total: ${total} / ${total} pts`)).toBeInTheDocument())
+      expect(criterion).toHaveValue('Información esencial editada')
+    }
+    expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(requestCount)
+    fireEvent.change(score, { target: { value: '' } })
+    fireEvent.blur(score)
+    expect(criterion).toHaveValue('Información esencial editada')
+    expect(screen.queryByText('Puntaje pendiente')).not.toBeInTheDocument()
+    await userEvent.setup().click(screen.getByRole('button', { name: 'Guardar' }))
+    expect(screen.getByRole('dialog', { name: 'Actividad incompleta' })).toBeInTheDocument()
+  }, 15000)
+
+  it('recupera un borrador pendiente sin restaurar el total de una respuesta atrasada', async () => {
+    const proposal = editableFallbackRecommendation({ activityTitle: 'La noticia', description: 'Redactarán una noticia sobre educación.',
+      maxScore: 20, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL' })
+    let finish!: (value: unknown) => void
+    const delayed = new Promise(resolve => { finish = resolve })
+    vi.spyOn(api, 'post').mockImplementation(path => path === '/evaluation-instruments/recommend'
+      ? delayed as never : Promise.reject(new ApiError(503, 'Servicio no disponible')))
+    const view = renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    fireEvent.change(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), { target: { value: 'La noticia' } })
+    fireEvent.change(screen.getByRole('textbox', { name: 'Descripción de la actividad' }), { target: { value: 'Redactarán una noticia sobre educación.' } })
+    await waitFor(() => expect(api.post).toHaveBeenCalledWith('/evaluation-instruments/recommend', expect.anything()), { timeout: 8000 })
+    const score = screen.getByRole('spinbutton', { name: /Valor en puntos/ })
+    fireEvent.change(score, { target: { value: '20' } })
+    fireEvent.blur(score)
+    fireEvent.change(score, { target: { value: '' } })
+    fireEvent.blur(score)
+    await act(async () => { finish(proposal); await delayed })
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'))
+    expect(score).toHaveValue(null)
+    expect(screen.queryByText('Puntaje pendiente')).not.toBeInTheDocument()
+    const stored = JSON.parse(window.localStorage.getItem('grading-activity-drafts:1ro A · Lengua Española:P1') || '{}')
+    expect(stored.b1?.[0]).toEqual(expect.objectContaining({ maxScore: '' }))
+    expect(stored.b1?.[0]?.instrumentFields['rubrica:points:0']).toBe('')
+    expect(stored.b1?.[0]?.preparedRecommendation.totalScoreUnits).toBe(0)
+    const draftId = stored.b1[0].draftId as string
+    view.unmount()
+    renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: draftId })
+    expect(screen.getByRole('spinbutton', { name: /Valor en puntos/ })).toHaveValue(null)
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial')
+  }, 15000)
+
+  it('conserva los 20 puntos de un borrador anterior con la huella de preparación antigua', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    const proposal = editableFallbackRecommendation({ activityTitle: 'La noticia', description: 'Redactar una noticia.',
+      maxScore: 20, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL' })
+    const draft = { draftId: 'legacy-score', name: 'La noticia', description: 'Redactar una noticia.', maxScore: '20',
+      competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, activityType: 'individual', teamIds: [],
+      instrumentType: 'rubrica', evaluationTechnique: 'analisis-producciones', pedagogicalActivityType: 'NEWS_WRITING',
+      instrumentFields: recommendationToFields(proposal, 'La noticia'), instrumentCompleted: true, preparedRecommendation: proposal,
+      resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '' }
+    const oldFingerprint = JSON.stringify([draft.name, draft.description, draft.maxScore, draft.pedagogicalActivityType,
+      draft.activityType, draft.instrumentType, []])
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: oldFingerprint }] }))
+    renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create',
+      initialActivityBlockId: 'b1', initialActivityDraftId: 'legacy-score' })
+    expect(screen.getByRole('spinbutton', { name: /Valor en puntos/ })).toHaveValue(20)
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue(proposal.criteria[0].title)
+    expect(screen.queryByText(/La actividad cambió. Actualiza el instrumento/)).not.toBeInTheDocument()
+  })
+
+  it('guarda y reabre un instrumento editado después de cambiar el total a 30', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    const proposal = editableFallbackRecommendation({ activityTitle: 'La noticia', description: 'Redactar una noticia.',
+      maxScore: 20, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL' })
+    const draft = { draftId: 'rescore-save', name: 'La noticia', description: 'Redactar una noticia.', maxScore: '20',
+      competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, activityType: 'individual', teamIds: [],
+      instrumentType: 'rubrica', evaluationTechnique: 'analisis-producciones', pedagogicalActivityType: 'NEWS_WRITING',
+      instrumentFields: recommendationToFields(proposal, 'La noticia'), instrumentCompleted: true, preparedRecommendation: proposal,
+      resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '' }
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft,
+      preparedFingerprint: preparationFingerprint(draft) }] }))
+    const onAddActivity = vi.fn().mockImplementation(async activity => ({ ...activity, id: 'rescored' }))
+    const view = renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create',
+      initialActivityBlockId: 'b1', initialActivityDraftId: 'rescore-save', onAddActivity })
+    const criterion = screen.getByRole('textbox', { name: 'Criterio 1' })
+    fireEvent.change(criterion, { target: { value: 'Criterio editado por docente' } })
+    const score = screen.getByRole('spinbutton', { name: /Valor en puntos/ })
+    fireEvent.change(score, { target: { value: '30' } })
+    fireEvent.blur(score)
+    await waitFor(() => expect(screen.getByText('Puntuación máxima total: 30 / 30 pts')).toBeInTheDocument())
+    const user = userEvent.setup()
+    await user.click(screen.getByRole('button', { name: 'Guardar' }))
+    await user.click(within(screen.getByRole('dialog', { name: 'Resumen de la actividad' })).getByRole('button', { name: 'Confirmar y guardar' }))
+    await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
+    const saved = onAddActivity.mock.calls[0][0] as GradingActivity
+    expect(saved.maxScore).toBe(30)
+    expect(saved.instrumentCriteria?.['rubrica:criterion:0']).toBe('Criterio editado por docente')
+    expect(Array.from({ length: Number(saved.instrumentCriteria?.['rubrica:meta:criteriaCount']) }, (_, index) =>
+      Math.round(Number(saved.instrumentCriteria?.[`rubrica:points:${index}`]) * 100)).reduce((sum, value) => sum + value, 0)).toBe(3000)
+    view.unmount()
+    renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', activities: [{ ...saved, id: 'rescored' }],
+      initialActivityId: 'rescored', initialActivityMode: 'edit' })
+    expect(screen.getByRole('spinbutton', { name: /Valor en puntos/ })).toHaveValue(30)
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Criterio editado por docente')
+  }, 15000)
+
+  it('cambia entre los cuatro formatos con puntaje pendiente y con 17.35 puntos', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
+    fireEvent.change(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), { target: { value: 'La noticia' } })
+    fireEvent.change(screen.getByRole('textbox', { name: 'Descripción de la actividad' }), { target: { value: 'Redactarán una noticia sobre educación.' } })
+    const user = userEvent.setup()
+    const instrument = screen.getByRole('combobox', { name: 'Tipo de instrumento' })
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'), { timeout: 8000 })
+    const storedDraft = () => JSON.parse(window.localStorage.getItem('grading-activity-drafts:1ro A · Lengua Española:P1') || '{}').b1?.[0]
+    for (const type of ['lista-cotejo', 'escala', 'lista-ponderada', 'rubrica']) {
+      await user.selectOptions(instrument, type)
+      await waitFor(() => expect(storedDraft()?.instrumentFields[`${type}:meta:scorePending`]).toBe('true'))
+      expect(storedDraft()?.instrumentFields[`${type}:criterion:0`]).toBeTruthy()
+      expect(storedDraft()?.maxScore).toBe('')
+      await user.click(screen.getByRole('button', { name: 'Vista previa' }))
+      const preview = screen.getByRole('dialog', { name: /Vista previa de/ })
+      expect(within(preview).getByText(/Puntuación máxima: — pts/)).toBeInTheDocument()
+      await user.click(within(preview).getByRole('button', { name: 'Cerrar vista previa' }))
+    }
+    const score = screen.getByRole('spinbutton', { name: /Valor en puntos/ })
+    fireEvent.change(score, { target: { value: '17.35' } })
+    fireEvent.blur(score)
+    for (const type of ['lista-cotejo', 'escala', 'lista-ponderada', 'rubrica']) {
+      await user.selectOptions(instrument, type)
+      await waitFor(() => expect(storedDraft()?.instrumentFields[`${type}:meta:scorePending`]).toBe('false'))
+      const fields = storedDraft().instrumentFields as Record<string, string>
+      const count = Number(fields[`${type}:meta:criteriaCount`])
+      expect(Array.from({ length: count }, (_, index) => Math.round(Number(fields[`${type}:points:${index}`]) * 100))
+        .reduce((sum, value) => sum + value, 0)).toBe(1735)
+      expect(storedDraft()?.maxScore).toBe('17.35')
+    }
+  }, 20000)
+
   it('presenta tres bloques cuando el perfil es de primaria', () => {
     renderBook({ evaluationProfile: primaryEvaluationProfile, initialActivityAction: 'create', initialActivityBlockId: 'b1' })
     expect(screen.getAllByRole('checkbox', { name: /Bloque [1-4]/i })).toHaveLength(3)

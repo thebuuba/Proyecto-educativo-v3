@@ -156,6 +156,7 @@ import { cn } from '@/utils/cn'
 import { ApiError } from '@/services/apiClient'
 import { detectSecondaryLanguageActivity, firstSecondaryLanguageTechnique, secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { alignRecommendationWithFields, editableFallbackRecommendation, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
+import { rememberManualLevelWeights, rememberManualScoreWeights, scoreInstrumentFields, scoreRecommendation, validActivityScore } from '@/modules/activities/services/instrumentScoring'
 import { activityDefaultSuggestions } from '@/modules/activities/utils/activityDefaultSuggestions'
 
 type GradingBookProps = {
@@ -2044,6 +2045,8 @@ function ReadOnlyInstrument(props: { type?: string; fields: Record<string, strin
 }
 
 function ReadOnlyInstrumentContent({ type, fields, maxScore, accent }: { type?: string; fields: Record<string, string>; maxScore: number; accent?: (typeof blockAccents)[number] }) {
+  const scorePending = !type || fields[`${type}:meta:scorePending`] === 'true' || maxScore <= 0
+  const showScore = (value: string | number | undefined) => scorePending ? '—' : value === undefined || value === '' ? '—' : formatInstrumentNumber(Number(value))
   const entries = Object.entries(fields).filter(([, value]) => value.trim())
   const criterionEntries = type ? entries.filter(([key]) => key.startsWith(`${type}:criterion:`)) : []
   const indexes = [...new Set(criterionEntries.map(([key]) => Number(key.split(':')[2])).filter(Number.isFinite))].sort((a, b) => a - b)
@@ -2054,28 +2057,28 @@ function ReadOnlyInstrumentContent({ type, fields, maxScore, accent }: { type?: 
     const levelCount = Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, 4)
     const levels = Array.from({ length: levelCount }, (_, index) => levelCount - index)
     return (
-      <div className="space-y-2"><InstrumentTable><thead><tr><th className="border border-border bg-slate-50 px-3 py-2">Criterios</th>{levels.map((level, index) => { const visual = rubricLevelVisual(index, levels.length); return <th key={level} className="border px-3 py-2 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block font-black">{fields[instrumentFieldKey(type, 'level-name', level)] || `Nivel ${level}`}</span><span className="text-[10px] font-bold opacity-80">{fields[instrumentFieldKey(type, 'level-points', level)] || level} pts</span></th> })}<th className="border border-border bg-slate-50 px-3 py-2 text-center">Valor</th></tr></thead><tbody>
-        {indexes.map((index) => <tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type, 'criterion', index)]}</td>{levels.map((level) => <td key={level} className="border border-border px-3 py-3 leading-5 text-muted-foreground">{fields[instrumentFieldKey(type, 'descriptor', index, level)] || '—'}</td>)}<td className="border border-border px-3 py-3 text-center font-bold">{fields[instrumentFieldKey(type, 'points', index)] || '—'} pts</td></tr>)}
-      </tbody></InstrumentTable><p className="text-right text-xs font-black text-primary">Puntuación máxima: {maxScore} pts</p></div>
+      <div className="space-y-2"><InstrumentTable><thead><tr><th className="border border-border bg-slate-50 px-3 py-2">Criterios</th>{levels.map((level, index) => { const visual = rubricLevelVisual(index, levels.length); return <th key={level} className="border px-3 py-2 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block font-black">{fields[instrumentFieldKey(type, 'level-name', level)] || `Nivel ${level}`}</span><span className="text-[10px] font-bold opacity-80">{showScore(fields[instrumentFieldKey(type, 'level-points', level)])} pts</span></th> })}<th className="border border-border bg-slate-50 px-3 py-2 text-center">Valor</th></tr></thead><tbody>
+        {indexes.map((index) => <tr key={index}><td className="border border-border px-3 py-3 font-bold">{fields[instrumentFieldKey(type, 'criterion', index)]}</td>{levels.map((level) => <td key={level} className="border border-border px-3 py-3 leading-5 text-muted-foreground">{fields[instrumentFieldKey(type, 'descriptor', index, level)] || '—'}</td>)}<td className="border border-border px-3 py-3 text-center font-bold">{showScore(fields[instrumentFieldKey(type, 'points', index)])} pts</td></tr>)}
+      </tbody></InstrumentTable><p className="text-right text-xs font-black text-primary">Puntuación máxima: {showScore(maxScore)} pts</p></div>
     )
   }
   if (type === 'lista-cotejo') {
     const hasNoApply = fields['lista-cotejo:meta:noApply'] === 'true'
     const options = [{ label: fields['lista-cotejo:meta:yesLabel'] || 'Sí', tone: 'positive' as const }, { label: fields['lista-cotejo:meta:noLabel'] || 'No', tone: 'negative' as const }, ...(hasNoApply ? [{ label: fields['lista-cotejo:meta:naLabel'] || 'No aplica', tone: 'neutral' as const }] : [])]
-    return <div className="space-y-3"><InstrumentTable><thead><tr><th className={cn('border px-3 py-3', accent ? cn(accent.card, accent.border, accent.text) : 'border-blue-200 bg-blue-50 text-blue-700')}>Criterios</th>{options.map((option) => <th key={option.label} className={cn('border px-3 py-3 text-center', option.tone === 'positive' ? 'border-emerald-300 bg-emerald-100 text-emerald-800' : option.tone === 'negative' ? 'border-red-300 bg-red-100 text-red-700' : 'border-amber-300 bg-amber-100 text-amber-800')}>{option.label}</th>)}<th className={cn('border px-3 py-3 text-center', accent ? cn(accent.card, accent.border, accent.text) : 'border-blue-200 bg-blue-50 text-blue-700')}>Valor</th></tr></thead><tbody>{indexes.map((index) => <tr key={index}><td className="border border-border bg-card px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)] || `Criterio ${index+1}`}</td>{options.map((option) => <td key={option.label} className={cn('border text-center', option.tone === 'positive' ? 'border-emerald-200 bg-emerald-50/55' : option.tone === 'negative' ? 'border-red-200 bg-red-50/55' : 'border-amber-200 bg-amber-50/55')}><InstrumentCheckPlaceholder tone={option.tone} /></td>)}<td className={cn('border px-3 py-3 text-center font-black', accent ? cn(accent.card, accent.border, accent.text) : 'border-blue-200 bg-blue-50 text-blue-700')}>{fields[instrumentFieldKey(type,'points',index)] || 0} pts</td></tr>)}</tbody></InstrumentTable><p className={cn('text-right text-sm font-black', accent?.text || 'text-emerald-700')}>Puntuación máxima: {maxScore} pts</p></div>
+    return <div className="space-y-3"><InstrumentTable><thead><tr><th className={cn('border px-3 py-3', accent ? cn(accent.card, accent.border, accent.text) : 'border-blue-200 bg-blue-50 text-blue-700')}>Criterios</th>{options.map((option) => <th key={option.label} className={cn('border px-3 py-3 text-center', option.tone === 'positive' ? 'border-emerald-300 bg-emerald-100 text-emerald-800' : option.tone === 'negative' ? 'border-red-300 bg-red-100 text-red-700' : 'border-amber-300 bg-amber-100 text-amber-800')}>{option.label}</th>)}<th className={cn('border px-3 py-3 text-center', accent ? cn(accent.card, accent.border, accent.text) : 'border-blue-200 bg-blue-50 text-blue-700')}>Valor</th></tr></thead><tbody>{indexes.map((index) => <tr key={index}><td className="border border-border bg-card px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)] || `Criterio ${index+1}`}</td>{options.map((option) => <td key={option.label} className={cn('border text-center', option.tone === 'positive' ? 'border-emerald-200 bg-emerald-50/55' : option.tone === 'negative' ? 'border-red-200 bg-red-50/55' : 'border-amber-200 bg-amber-50/55')}><InstrumentCheckPlaceholder tone={option.tone} /></td>)}<td className={cn('border px-3 py-3 text-center font-black', accent ? cn(accent.card, accent.border, accent.text) : 'border-blue-200 bg-blue-50 text-blue-700')}>{showScore(fields[instrumentFieldKey(type,'points',index)])} pts</td></tr>)}</tbody></InstrumentTable><p className={cn('text-right text-sm font-black', accent?.text || 'text-emerald-700')}>Puntuación máxima: {showScore(maxScore)} pts</p></div>
   }
   if (type === 'escala') {
     const levelCount = Number(fields['escala:meta:levelCount']) || 4
     const levels = Array.from({length:levelCount},(_,index)=>levelCount-index)
     const hasNoApply = fields['escala:meta:noApply'] === 'true'
     const previewAccent = accent ?? blockAccents[0]
-    return <div className="space-y-3"><InstrumentTable><thead><tr><th className={cn('border px-3 py-3',previewAccent.card,previewAccent.border,previewAccent.text)}>Indicadores</th>{levels.map((level,index)=>{const visual=scaleLevelVisual(previewAccent,index,levels.length);return <th key={level} className="border px-3 py-3 text-center" style={{backgroundColor:visual.background,borderColor:visual.border,color:visual.foreground}}><span className="block font-black">{fields[instrumentFieldKey(type,'level-name',level)]||`Nivel ${level}`}</span><span className="text-[10px] font-medium opacity-75">{fields[instrumentFieldKey(type,'level-points',level)]||level} pts</span></th>})}{hasNoApply?<th className="border border-slate-300 bg-slate-100 px-3 py-3 text-center text-slate-600">No aplica<span className="block text-[10px]">N/A</span></th>:null}<th className={cn('border px-3 py-3 text-center',previewAccent.card,previewAccent.border,previewAccent.text)}>Máximo</th></tr></thead><tbody>{indexes.map((index)=><tr key={index}><td className="border border-border bg-card px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)]||`Indicador ${index+1}`}</td>{levels.map((level,levelIndex)=>{const visual=scaleLevelVisual(previewAccent,levelIndex,levels.length);return <td key={level} className="border bg-card text-center" style={{borderColor:visual.border}}><span className="mx-auto block size-4 rounded-full border-2 bg-card" style={{borderColor:visual.border}}/></td>})}{hasNoApply?<td className="border border-slate-200 bg-slate-50 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-slate-300 bg-card"/></td>:null}<td className={cn('border px-3 py-3 text-center font-black',previewAccent.card,previewAccent.border,previewAccent.text)}>{fields[instrumentFieldKey(type,'points',index)]||0} pts</td></tr>)}</tbody></InstrumentTable><p className={cn('text-right text-sm font-black',previewAccent.text)}>Puntuación máxima: {maxScore} pts</p></div>
+    return <div className="space-y-3"><InstrumentTable><thead><tr><th className={cn('border px-3 py-3',previewAccent.card,previewAccent.border,previewAccent.text)}>Indicadores</th>{levels.map((level,index)=>{const visual=scaleLevelVisual(previewAccent,index,levels.length);return <th key={level} className="border px-3 py-3 text-center" style={{backgroundColor:visual.background,borderColor:visual.border,color:visual.foreground}}><span className="block font-black">{fields[instrumentFieldKey(type,'level-name',level)]||`Nivel ${level}`}</span><span className="text-[10px] font-medium opacity-75">{showScore(fields[instrumentFieldKey(type,'level-points',level)])} pts</span></th>})}{hasNoApply?<th className="border border-slate-300 bg-slate-100 px-3 py-3 text-center text-slate-600">No aplica<span className="block text-[10px]">N/A</span></th>:null}<th className={cn('border px-3 py-3 text-center',previewAccent.card,previewAccent.border,previewAccent.text)}>Máximo</th></tr></thead><tbody>{indexes.map((index)=><tr key={index}><td className="border border-border bg-card px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)]||`Indicador ${index+1}`}</td>{levels.map((level,levelIndex)=>{const visual=scaleLevelVisual(previewAccent,levelIndex,levels.length);return <td key={level} className="border bg-card text-center" style={{borderColor:visual.border}}><span className="mx-auto block size-4 rounded-full border-2 bg-card" style={{borderColor:visual.border}}/></td>})}{hasNoApply?<td className="border border-slate-200 bg-slate-50 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-slate-300 bg-card"/></td>:null}<td className={cn('border px-3 py-3 text-center font-black',previewAccent.card,previewAccent.border,previewAccent.text)}>{showScore(fields[instrumentFieldKey(type,'points',index)])} pts</td></tr>)}</tbody></InstrumentTable><p className={cn('text-right text-sm font-black',previewAccent.text)}>Puntuación máxima: {showScore(maxScore)} pts</p></div>
   }
   const hasPartial = fields['lista-ponderada:meta:partial'] !== 'false'
   const weightedLabels = { yes: fields['lista-ponderada:meta:yesLabel'] || 'Sí', partial: fields['lista-ponderada:meta:partialLabel'] || 'Parcial', no: fields['lista-ponderada:meta:noLabel'] || 'No' }
   const totalWeight = indexes.reduce((sum,index)=>sum+Number(fields[instrumentFieldKey(type,'weight',index)]||0),0)
   const previewAccent = accent ?? blockAccents[0]
-  return <div className="space-y-3"><InstrumentTable><thead><tr><th className={cn('border px-3 py-2',previewAccent.card,previewAccent.border)}>Criterio</th><th className={cn('border px-3 py-2',previewAccent.card,previewAccent.border)}>Indicador observable</th><th className={cn('border px-3 py-2 text-center',previewAccent.card,previewAccent.border)}>Ponderación</th><th className={cn('border px-3 py-2 text-center',previewAccent.card,previewAccent.border)}>Valor máximo</th><th className="border border-emerald-200 bg-emerald-50 px-3 py-2 text-center text-emerald-700">{weightedLabels.yes}<span className="block text-[9px]">100 %</span></th>{hasPartial?<th className="border border-amber-200 bg-amber-50 px-3 py-2 text-center text-amber-700">{weightedLabels.partial}<span className="block text-[9px]">{fields['lista-ponderada:meta:partialValue']||50} %</span></th>:null}<th className="border border-red-200 bg-red-50 px-3 py-2 text-center text-red-700">{weightedLabels.no}<span className="block text-[9px]">0 %</span></th></tr></thead><tbody>{indexes.map((index)=>{const weight=Number(fields[instrumentFieldKey(type,'weight',index)]||0);return <tr key={index}><td className="border border-border bg-card px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)]||`Criterio ${index+1}`}</td><td className="border border-border bg-card px-3 py-3 text-muted-foreground">{fields[instrumentFieldKey(type,'indicator',index)]||'—'}</td><td className="border border-border bg-card px-3 py-3 text-center font-black">{formatInstrumentNumber(weight)} %</td><td className={cn('border px-3 py-3 text-center font-black',previewAccent.card,previewAccent.border,previewAccent.text)}>{formatInstrumentNumber(weight/100*maxScore)} pts</td><td className="border border-emerald-200 bg-emerald-50/40 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-emerald-500 bg-card"/></td>{hasPartial?<td className="border border-amber-200 bg-amber-50/40 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-amber-500 bg-card"/></td>:null}<td className="border border-red-200 bg-red-50/40 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-red-400 bg-card"/></td></tr>})}</tbody></InstrumentTable><div className={cn('flex justify-between rounded-xl border px-4 py-3 text-sm font-black',previewAccent.card,previewAccent.border)}><span className={Math.abs(totalWeight-100)<.001?'text-emerald-700':'text-destructive'}>Ponderación: {formatInstrumentNumber(totalWeight)}/100 %</span><span className={previewAccent.text}>Puntuación máxima: {formatInstrumentNumber(maxScore)} pts</span></div></div>
+  return <div className="space-y-3"><InstrumentTable><thead><tr><th className={cn('border px-3 py-2',previewAccent.card,previewAccent.border)}>Criterio</th><th className={cn('border px-3 py-2',previewAccent.card,previewAccent.border)}>Indicador observable</th><th className={cn('border px-3 py-2 text-center',previewAccent.card,previewAccent.border)}>Ponderación</th><th className={cn('border px-3 py-2 text-center',previewAccent.card,previewAccent.border)}>Valor máximo</th><th className="border border-emerald-200 bg-emerald-50 px-3 py-2 text-center text-emerald-700">{weightedLabels.yes}<span className="block text-[9px]">100 %</span></th>{hasPartial?<th className="border border-amber-200 bg-amber-50 px-3 py-2 text-center text-amber-700">{weightedLabels.partial}<span className="block text-[9px]">{fields['lista-ponderada:meta:partialValue']||50} %</span></th>:null}<th className="border border-red-200 bg-red-50 px-3 py-2 text-center text-red-700">{weightedLabels.no}<span className="block text-[9px]">0 %</span></th></tr></thead><tbody>{indexes.map((index)=>{const weight=Number(fields[instrumentFieldKey(type,'weight',index)]||0);return <tr key={index}><td className="border border-border bg-card px-3 py-3 font-bold">{fields[instrumentFieldKey(type,'criterion',index)]||`Criterio ${index+1}`}</td><td className="border border-border bg-card px-3 py-3 text-muted-foreground">{fields[instrumentFieldKey(type,'indicator',index)]||'—'}</td><td className="border border-border bg-card px-3 py-3 text-center font-black">{formatInstrumentNumber(weight)} %</td><td className={cn('border px-3 py-3 text-center font-black',previewAccent.card,previewAccent.border,previewAccent.text)}>{showScore(fields[instrumentFieldKey(type,'points',index)] ?? weight / 100 * maxScore)} pts</td><td className="border border-emerald-200 bg-emerald-50/40 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-emerald-500 bg-card"/></td>{hasPartial?<td className="border border-amber-200 bg-amber-50/40 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-amber-500 bg-card"/></td>:null}<td className="border border-red-200 bg-red-50/40 text-center"><span className="mx-auto block size-4 rounded-full border-2 border-red-400 bg-card"/></td></tr>})}</tbody></InstrumentTable><div className={cn('flex justify-between rounded-xl border px-4 py-3 text-sm font-black',previewAccent.card,previewAccent.border)}><span className={Math.abs(totalWeight-100)<.001?'text-emerald-700':'text-destructive'}>Ponderación: {formatInstrumentNumber(totalWeight)}/100 %</span><span className={previewAccent.text}>Puntuación máxima: {showScore(maxScore)} pts</span></div></div>
 }
 
 function ActivityDetailView({
@@ -3232,7 +3235,7 @@ function ActivityManager({
         </label>
         <label className={cn('grid gap-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground', fieldHighlight('maxScore'))}>
           Valor
-          <Input className="h-9" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" />
+          <Input className="h-9" type="number" min={1} value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} />
         </label>
       </div>
       <div className={cn('grid gap-2', compactLayout ? 'sm:grid-cols-2' : 'sm:grid-cols-3')}>
@@ -3851,6 +3854,8 @@ function ActivityCreationView(props: {
   const contextualLanguageGrade = firstSecondaryLanguage ? 1 : secondSecondaryLanguage ? 2 : null
   const latestDraft = useRef(activityDraft)
   latestDraft.current = activityDraft
+  const committedScore = useRef(validActivityScore(activityDraft.maxScore))
+  useEffect(() => { committedScore.current = validActivityScore(activityDraft.maxScore) }, [activityDraft.draftId, editingActivityId])
   const manualSelections = useRef({
     activity: Boolean(activityDraft.pedagogicalActivityType && !activityDraft.autoDetectedPedagogicalActivityType),
     technique: Boolean(activityDraft.evaluationTechnique && !activityDraft.autoSelectedEvaluationTechnique),
@@ -3950,8 +3955,9 @@ function ActivityCreationView(props: {
     }
     if (!validatePreparation()) return
     const requestedFingerprint = preparationFingerprint(activityDraft)
-    const score = Number(activityDraft.maxScore)
-    const preparationScore = Number.isFinite(score) && score > 0 && score <= 10000 ? score : 20
+    // The service currently requires a score for its internal calculation. Pending
+    // scores are removed from the proposal and fields before they enter the draft.
+    const preparationScore = committedScore.current ?? 20
     setPreparing(true); setPreparationError('')
     try {
       const proposal = await prepareInstrument({ sectionSubjectId, activityTitle: activityDraft.name,
@@ -3970,12 +3976,15 @@ function ActivityCreationView(props: {
         description: activityDescriptionText(current.description), maxScore: preparationScore, instrumentType: proposal.instrumentType,
         participationMode: current.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL', activityType: current.pedagogicalActivityType,
         variation: generation % 2, secondaryLanguageGrade: contextualLanguageGrade || undefined }) : proposal
+      const assignedScore = committedScore.current
+      const preparedFields = scoreInstrumentFields(recommendationToFields(selectedProposal, current.name), selectedProposal.instrumentType, assignedScore, selectedProposal)
+      const preparedProposal = scoreRecommendation(selectedProposal, preparedFields, assignedScore)
       const next = { ...current, instrumentType: selectedProposal.instrumentType,
         pedagogicalActivityType: current.pedagogicalActivityType || proposal.activityType,
         autoSelectedInstrumentType: forceAutomatic ? true : preferredType ? false : current.autoSelectedInstrumentType || !current.instrumentType,
         autoDetectedPedagogicalActivityType: preferredType ? current.autoDetectedPedagogicalActivityType : current.autoDetectedPedagogicalActivityType || !current.pedagogicalActivityType,
-        instrumentFields: recommendationToFields(selectedProposal, current.name), instrumentCompleted: true,
-        preparedRecommendation: selectedProposal, preparedManuallyEdited: false, manualInstrumentBlank: false, instrumentGeneration: generation }
+        instrumentFields: preparedFields, instrumentCompleted: true,
+        preparedRecommendation: preparedProposal, preparedManuallyEdited: false, manualInstrumentBlank: false, instrumentGeneration: generation }
       onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
       setFailedInstrumentType('')
     } catch (error) {
@@ -4024,15 +4033,16 @@ function ActivityCreationView(props: {
     const current = latestDraft.current
     const instrumentType = (preferredType || failedInstrumentType || current.instrumentType || 'rubrica') as InstrumentRecommendation['instrumentType']
     const generation = newGeneration ? (current.instrumentGeneration || 0) + 1 : current.instrumentGeneration || 0
-    const score = Number(current.maxScore)
+    const score = committedScore.current
     const proposal = editableFallbackRecommendation({ activityTitle: current.name, description: activityDescriptionText(current.description),
-      maxScore: Number.isFinite(score) && score > 0 && score <= 10000 ? score : 20, instrumentType, variation: generation % 2,
+      maxScore: score ?? 20, instrumentType, variation: generation % 2,
       participationMode: current.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
       activityType: contextualLanguageGrade ? current.pedagogicalActivityType || detectSecondaryLanguageActivity(current.name,
         activityDescriptionText(current.description), { level: 'SECONDARY', grade: contextualLanguageGrade, subjectCode: 'LEN' }) || undefined : undefined,
       secondaryLanguageGrade: contextualLanguageGrade || undefined })
-    const next = { ...current, instrumentType, instrumentFields: recommendationToFields(proposal, current.name), instrumentCompleted: true,
-      preparedRecommendation: proposal, preparedManuallyEdited: false, manualInstrumentBlank: false, instrumentGeneration: generation,
+    const preparedFields = scoreInstrumentFields(recommendationToFields(proposal, current.name), instrumentType, score, proposal)
+    const next = { ...current, instrumentType, instrumentFields: preparedFields, instrumentCompleted: true,
+      preparedRecommendation: scoreRecommendation(proposal, preparedFields, score), preparedManuallyEdited: false, manualInstrumentBlank: false, instrumentGeneration: generation,
       autoSelectedInstrumentType: !manualInstrumentSelection && (current.autoSelectedInstrumentType || !current.instrumentType) }
     onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
     setFailedInstrumentType('')
@@ -4082,6 +4092,17 @@ function ActivityCreationView(props: {
       preparedRecommendation: changedInstrument ? undefined : draft.preparedRecommendation,
       preparedFingerprint: changedInstrument ? undefined : draft.preparedFingerprint,
     })
+  }
+
+  function commitActivityScore(value: string) {
+    const score = validActivityScore(value)
+    if (value.trim() && score === null) return
+    committedScore.current = score
+    const current = latestDraft.current
+    const fields = scoreInstrumentFields(current.instrumentFields, current.instrumentType, score, current.preparedRecommendation)
+    onChangeDraft({ ...current, maxScore: value, instrumentFields: fields,
+      preparedRecommendation: current.preparedRecommendation
+        ? scoreRecommendation(current.preparedRecommendation, fields, score) : undefined })
   }
 
   function goToIssue(issue: ActivityCompletionIssue) {
@@ -4147,7 +4168,7 @@ function ActivityCreationView(props: {
           </div>
 
           {requiredFieldError ? <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">{requiredFieldError}</div> : null}
-          <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} onInstrumentTypeChange={requestInstrumentChange} interpretation={interpretation} requiredFieldError={requiredFieldError} firstSecondaryLanguage={firstSecondaryLanguage} secondSecondaryLanguage={secondSecondaryLanguage} />
+          <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} onScoreCommit={commitActivityScore} onInstrumentTypeChange={requestInstrumentChange} interpretation={interpretation} requiredFieldError={requiredFieldError} firstSecondaryLanguage={firstSecondaryLanguage} secondSecondaryLanguage={secondSecondaryLanguage} />
           {savedSnapshot ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">Este instrumento ya tiene una versión guardada. Para cambiar su estructura, duplica la actividad y prepara uno nuevo.</div> : null}
 
           <div data-activity-required="instrumentBody" className="space-y-3">
@@ -4165,10 +4186,18 @@ function ActivityCreationView(props: {
                 fields={activityDraft.instrumentFields}
                 highlight={highlightTarget === 'instrumentBody' || highlightTarget === 'instrumentType'}
                 instrumentType={activityDraft.instrumentType}
-                maxScore={Number(activityDraft.maxScore) || activityDraft.preparedRecommendation?.totalScore || 20}
+                maxScore={activityDraft.instrumentFields[`${activityDraft.instrumentType}:meta:scorePending`] === 'true' ? 0 : committedScore.current ?? 0}
                 skipDefaults={activityDraft.manualInstrumentBlank}
                 onCompletedChange={(instrumentCompleted) => handleDraftChange({ ...activityDraft, instrumentCompleted })}
-                onFieldsChange={(instrumentFields, automatic) => handleDraftChange({ ...activityDraft, preparedManuallyEdited: automatic ? activityDraft.preparedManuallyEdited : true, instrumentFields })}
+                onFieldsChange={(instrumentFields, automatic) => {
+                  const pointChanged = Object.keys(instrumentFields).some(key => key.startsWith(`${activityDraft.instrumentType}:points:`)
+                    && instrumentFields[key] !== activityDraft.instrumentFields[key])
+                  const levelChanged = Object.keys(instrumentFields).some(key => key.startsWith(`${activityDraft.instrumentType}:level-points:`)
+                    && instrumentFields[key] !== activityDraft.instrumentFields[key])
+                  const nextFields = !automatic && pointChanged ? rememberManualScoreWeights(instrumentFields, activityDraft.instrumentType) : instrumentFields
+                  const weightedFields = !automatic && levelChanged ? rememberManualLevelWeights(nextFields, activityDraft.instrumentType) : nextFields
+                  handleDraftChange({ ...activityDraft, preparedManuallyEdited: automatic ? activityDraft.preparedManuallyEdited : true, instrumentFields: weightedFields })
+                }}
               /></div> : null}
           </div>
 
@@ -4323,12 +4352,13 @@ function availablePedagogicalActivityType(id: string, firstSecondaryLanguage: bo
     : !/^(?:NEWS|TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(id))
 }
 
-function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, onInstrumentTypeChange, interpretation, requiredFieldError, firstSecondaryLanguage, secondSecondaryLanguage }: {
+function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, onScoreCommit, onInstrumentTypeChange, interpretation, requiredFieldError, firstSecondaryLanguage, secondSecondaryLanguage }: {
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
   highlightTarget: ActivityCompletionTarget | null
   onChangeDraft: (draft: ActivityDraft) => void
+  onScoreCommit: (value: string) => void
   onInstrumentTypeChange?: (instrumentType: string) => void
   interpretation: ActivityInterpretation | null
   requiredFieldError: string
@@ -4366,7 +4396,7 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
         <div className="grid gap-3 md:grid-cols-2">
           <label data-activity-required="evaluationTechnique" className={cn('space-y-1.5 text-sm font-bold', highlight('evaluationTechnique'))}>Técnica de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value, autoSelectedEvaluationTechnique: event.target.value === '' })}><option value="">Seleccionar automáticamente</option>{evaluationTechniqueOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</Select></label>
           <label data-activity-required="instrumentType" className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Tipo de instrumento<Select className="h-11" value={activityDraft.instrumentType} onChange={(event) => onInstrumentTypeChange?.(event.target.value)}><option value="">Seleccionar automáticamente</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
-          <label data-activity-required="maxScore" className={cn('space-y-1.5 text-sm font-bold', highlight('maxScore'))}>Valor en puntos <span className="text-destructive">*</span><div className="relative"><Input aria-invalid={requiredFieldError.startsWith('Indica el valor')} className="h-11 pr-12 font-black" type="number" min="0.01" max="10000" step="0.01" value={activityDraft.maxScore} onChange={(event) => onChangeDraft({ ...activityDraft, maxScore: event.target.value })} placeholder="20" /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-muted-foreground">pts</span></div>{requiredFieldError.startsWith('Indica el valor') ? <span className="text-xs text-destructive">{requiredFieldError}</span> : null}</label>
+          <label data-activity-required="maxScore" className={cn('space-y-1.5 text-sm font-bold', highlight('maxScore'))}>Valor en puntos <span className="text-destructive">*</span><div className="relative"><Input aria-invalid={requiredFieldError.startsWith('Indica el valor')} className="h-11 pr-12 font-black" type="number" min="0.01" max="10000" step="0.01" value={activityDraft.maxScore} onChange={(event) => { const value = event.target.value; onChangeDraft({ ...activityDraft, maxScore: value }); if (!value) onScoreCommit(value) }} onBlur={(event) => onScoreCommit(event.currentTarget.value)} /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-muted-foreground">pts</span></div>{requiredFieldError.startsWith('Indica el valor') ? <span className="text-xs text-destructive">{requiredFieldError}</span> : null}</label>
         </div>
         {interpretation?.curriculumCandidates.length ? <div className="mt-3 space-y-1"><p className="text-xs font-semibold">Contenidos para revisar:</p>{interpretation.curriculumCandidates.slice(0, 3).map(candidate => <label key={candidate.elementId} className="flex items-start gap-2 text-xs"><input type="checkbox" className="mt-0.5" checked={activityDraft.selectedCurriculumElementIds?.includes(candidate.elementId) ?? false} onChange={event => onChangeDraft({ ...activityDraft, selectedCurriculumElementIds: event.target.checked ? [...(activityDraft.selectedCurriculumElementIds ?? []), candidate.elementId] : (activityDraft.selectedCurriculumElementIds ?? []).filter(id => id !== candidate.elementId) })} /><span>{candidate.text}</span></label>)}</div> : null}
       </CreationFormSection>
@@ -4797,6 +4827,7 @@ function InstrumentPreview({
   onFieldsChange: (fields: Record<string, string>, automatic?: boolean) => void
 }) {
   const title = instrumentTitle(instrumentType)
+  const scorePending = fields[`${instrumentType}:meta:scorePending`] === 'true' || maxScore <= 0
   const rubricDefaults = defaultRubricStructure(maxScore)
   const [rubricCriteria, setRubricCriteria] = useState(() => Number(fields['rubrica:meta:criteriaCount']) || inferInstrumentCount(fields, 'rubrica', 'criterion', rubricDefaults.criteria))
   const [rubricLevels, setRubricLevels] = useState(() => Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, rubricDefaults.levels))
@@ -4835,14 +4866,14 @@ function InstrumentPreview({
       const automaticPoints = distributeScore(maxScore, rubricCriteria)
       for (let index = 0; index < rubricCriteria; index += 1) {
         const pointsKey = instrumentFieldKey('rubrica', 'points', index)
-        if (next['rubrica:meta:prepared'] !== 'true') next[pointsKey] = String(automaticPoints[index])
+        if (!scorePending && next['rubrica:meta:prepared'] !== 'true') next[pointsKey] = String(automaticPoints[index])
       }
       for (let index = 0; index < rubricLevels; index += 1) {
         const score = rubricLevels - index
         const nameKey = instrumentFieldKey('rubrica', 'level-name', score)
         if (!next[nameKey]) next[nameKey] = rubricDefaultLevelNames(rubricLevels)[index]
         const levelPointsKey = instrumentFieldKey('rubrica', 'level-points', score)
-        if ((!next[levelPointsKey] || next['rubrica:meta:customLevelPoints'] !== 'true') && next['rubrica:meta:prepared'] !== 'true') next[levelPointsKey] = String(defaultRubricLevelPoints(automaticPoints[0] || maxScore, rubricLevels)[index])
+        if (!scorePending && (!next[levelPointsKey] || next['rubrica:meta:customLevelPoints'] !== 'true') && next['rubrica:meta:prepared'] !== 'true') next[levelPointsKey] = String(defaultRubricLevelPoints(automaticPoints[0] || maxScore, rubricLevels)[index])
       }
     }
     if (instrumentType === 'escala') {
@@ -4850,7 +4881,7 @@ function InstrumentPreview({
       next['escala:meta:levelCount'] = String(scaleLevels)
       distributeScore(maxScore, scaleCriteria).forEach((points, index) => {
         const key = instrumentFieldKey('escala', 'points', index)
-        if (next['escala:meta:prepared'] !== 'true') next[key] = String(points)
+        if (!scorePending && next['escala:meta:prepared'] !== 'true') next[key] = String(points)
       })
       const scaleDefaults = scaleTemplateLevels(next['escala:meta:template'] || 'frecuencia')
       for (let index = 0; index < scaleLevels; index += 1) {
@@ -4863,7 +4894,7 @@ function InstrumentPreview({
       next['lista-cotejo:meta:criteriaCount'] = String(checklistCriteria)
       distributeScore(maxScore, checklistCriteria).forEach((points, index) => {
         const key = instrumentFieldKey('lista-cotejo', 'points', index)
-        if (next['lista-cotejo:meta:pointsMode'] !== 'individual' || !next[key]) next[key] = String(points)
+        if (!scorePending && (next['lista-cotejo:meta:pointsMode'] !== 'individual' || !next[key])) next[key] = String(points)
       })
     }
     if (instrumentType === 'lista-ponderada') {
@@ -4874,7 +4905,7 @@ function InstrumentPreview({
       })
     }
     if (JSON.stringify(next) !== JSON.stringify(fields)) onFieldsChange(next, true)
-  }, [activityName, checklistCriteria, fields, instrumentType, maxScore, onFieldsChange, rubricCriteria, rubricLevels, scaleCriteria, scaleLevels, weightedCriteria])
+  }, [activityName, checklistCriteria, fields, instrumentType, maxScore, onFieldsChange, rubricCriteria, rubricLevels, scaleCriteria, scaleLevels, scorePending, weightedCriteria])
 
   useEffect(() => {
     if (!highlight) return
@@ -4893,7 +4924,7 @@ function InstrumentPreview({
   const criterionCount = instrumentType === 'rubrica' ? rubricCriteria : instrumentType === 'escala' ? scaleCriteria : instrumentType === 'lista-cotejo' ? checklistCriteria : weightedCriteria
   const configuredValue = instrumentConfiguredValue(instrumentType, fields, criterionCount)
   const configuredTarget = instrumentType === 'lista-ponderada' ? 100 : maxScore
-  const configuredMatches = Math.abs(configuredValue - configuredTarget) < 0.001
+  const configuredMatches = scorePending ? instrumentType === 'lista-ponderada' && Math.abs(configuredValue - 100) < 0.001 : Math.abs(configuredValue - configuredTarget) < 0.001
   const textSize = instrumentTextSize(instrumentType, fields)
   const boldText = fields[`${instrumentType}:meta:bold`] === 'true'
   const textAlign = instrumentTextAlign(instrumentType, fields)
@@ -4910,7 +4941,7 @@ function InstrumentPreview({
         </div>
       </div>
 
-      {instrumentType ? <div className="border-y border-border bg-muted/10 px-4 py-3"><div className="grid items-end gap-2 sm:grid-cols-[minmax(0,1fr)_auto]"><label className="block text-xs font-black text-muted-foreground">Título del instrumento<Input className="mt-1.5 h-10 bg-card" value={fields[instrumentFieldKey(instrumentType, 'title')] ?? ''} onChange={(event) => updateField(instrumentFieldKey(instrumentType, 'title'), event.target.value)} placeholder={`Ej. ${title} para la actividad`} /></label><Button type="button" variant="outline" className="h-10" onClick={() => setShowInstrumentPreview(true)}><Eye className="size-4" />Vista previa</Button></div><div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-5"><InstrumentSummaryItem label="Actividad" value={`${maxScore} puntos`} /><InstrumentSummaryItem label={instrumentType === 'escala' ? 'Indicadores' : 'Criterios'} value={String(criterionCount)} /><InstrumentSummaryItem label={instrumentType === 'lista-ponderada' ? 'Ponderación actual' : 'Niveles'} value={instrumentType === 'lista-ponderada' ? `${configuredValue}/100 %` : instrumentType === 'rubrica' ? String(rubricLevels) : instrumentType === 'escala' ? String(scaleLevels) : 'No aplica'} good={instrumentType === 'lista-ponderada' ? configuredMatches : undefined} /><InstrumentSummaryItem label="Puntuación configurada" value={instrumentType === 'lista-ponderada' ? `${maxScore}/${maxScore} pts` : `${configuredValue}/${maxScore} pts`} good={configuredMatches} /><InstrumentSummaryItem label="Estado" value={isComplete ? 'Listo para revisar' : configuredMatches ? 'Faltan contenidos' : `Faltan ${formatInstrumentNumber(Math.max(0, configuredTarget - configuredValue))}${instrumentType === 'lista-ponderada' ? '%' : ' pts'}`} good={isComplete} /></div></div> : null}
+      {instrumentType ? <div className="border-y border-border bg-muted/10 px-4 py-3"><div className="grid items-end gap-2 sm:grid-cols-[minmax(0,1fr)_auto]"><label className="block text-xs font-black text-muted-foreground">Título del instrumento<Input className="mt-1.5 h-10 bg-card" value={fields[instrumentFieldKey(instrumentType, 'title')] ?? ''} onChange={(event) => updateField(instrumentFieldKey(instrumentType, 'title'), event.target.value)} placeholder={`Ej. ${title} para la actividad`} /></label><Button type="button" variant="outline" className="h-10" onClick={() => setShowInstrumentPreview(true)}><Eye className="size-4" />Vista previa</Button></div><div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-5"><InstrumentSummaryItem label="Actividad" value={scorePending ? '—' : `${formatInstrumentNumber(maxScore)} puntos`} /><InstrumentSummaryItem label={instrumentType === 'escala' ? 'Indicadores' : 'Criterios'} value={String(criterionCount)} /><InstrumentSummaryItem label={instrumentType === 'lista-ponderada' ? 'Ponderación actual' : 'Niveles'} value={instrumentType === 'lista-ponderada' ? `${configuredValue}/100 %` : instrumentType === 'rubrica' ? String(rubricLevels) : instrumentType === 'escala' ? String(scaleLevels) : 'No aplica'} good={instrumentType === 'lista-ponderada' ? configuredMatches : undefined} /><InstrumentSummaryItem label="Puntuación configurada" value={scorePending ? '—' : instrumentType === 'lista-ponderada' ? `${formatInstrumentNumber(maxScore)} pts` : `${configuredValue}/${formatInstrumentNumber(maxScore)} pts`} good={scorePending ? undefined : configuredMatches} /><InstrumentSummaryItem label="Estado" value={scorePending ? isComplete ? 'Listo para revisar' : 'Faltan contenidos' : isComplete ? 'Listo para revisar' : configuredMatches ? 'Faltan contenidos' : `Faltan ${formatInstrumentNumber(Math.max(0, configuredTarget - configuredValue))}${instrumentType === 'lista-ponderada' ? '%' : ' pts'}`} good={scorePending ? undefined : isComplete} /></div></div> : null}
 
       <div className={cn('p-4', instrumentTypographyClass(instrumentType, fields))}>
         {instrumentType === 'rubrica' ? (
@@ -5059,10 +5090,11 @@ function InstrumentSettingsDrawer({ accent, applyButtonClassName, applyDisabled 
 }
 
 function InstrumentPreviewModal({ accent, activityName, block, fields, instrumentType, maxScore, onClose, returnLabel = 'Volver a editar' }: { accent: (typeof blockAccents)[number]; activityName: string; block: (typeof competencyBlocks)[number]; fields: Record<string, string>; instrumentType: string; maxScore: number; onClose: () => void; returnLabel?: string }) {
+  const scoreLabel = maxScore > 0 && fields[`${instrumentType}:meta:scorePending`] !== 'true' ? formatInstrumentNumber(maxScore) : '—'
   const title = fields[instrumentFieldKey(instrumentType, 'title')] || instrumentTitle(instrumentType)
   const criteriaCount = Number(fields[`${instrumentType}:meta:criteriaCount`]) || inferInstrumentCount(fields, instrumentType, 'criterion', 0)
   const levelCount = instrumentType === 'rubrica' ? Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, 0) : instrumentType === 'escala' ? Number(fields['escala:meta:levelCount']) || 0 : 0
-  return <Modal title={`Vista previa de ${instrumentTitle(instrumentType).toLocaleLowerCase()}`} onClose={onClose} className="max-h-[90vh] max-w-[94vw] rounded-xl" hideHeader><div className="flex max-h-[90vh] flex-col"><div className="h-1.5 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-6 py-4"><div><p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Vista previa · Solo lectura</p><h3 className="mt-1 text-xl font-black text-foreground">{title}</h3><p className="mt-1 text-sm text-muted-foreground">Actividad: {activityName || 'Sin nombre'} · {block.shortName} · {maxScore} puntos · {criteriaCount} {instrumentType === 'escala' ? 'indicadores' : 'criterios'}{levelCount ? ` · ${levelCount} niveles` : ''}</p></div><Button type="button" variant="ghost" size="icon" aria-label="Cerrar vista previa" onClick={onClose}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-auto bg-muted/10 p-6"><ReadOnlyInstrument type={instrumentType} fields={fields} maxScore={maxScore} accent={accent} /></div><footer className="flex shrink-0 justify-end border-t border-border bg-card px-6 py-4"><Button type="button" className={accent.button} onClick={onClose}>{returnLabel}</Button></footer></div></Modal>
+  return <Modal title={`Vista previa de ${instrumentTitle(instrumentType).toLocaleLowerCase()}`} onClose={onClose} className="max-h-[90vh] max-w-[94vw] rounded-xl" hideHeader><div className="flex max-h-[90vh] flex-col"><div className="h-1.5 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-6 py-4"><div><p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Vista previa · Solo lectura</p><h3 className="mt-1 text-xl font-black text-foreground">{title}</h3><p className="mt-1 text-sm text-muted-foreground">Actividad: {activityName || 'Sin nombre'} · {block.shortName} · {scoreLabel} puntos · {criteriaCount} {instrumentType === 'escala' ? 'indicadores' : 'criterios'}{levelCount ? ` · ${levelCount} niveles` : ''}</p></div><Button type="button" variant="ghost" size="icon" aria-label="Cerrar vista previa" onClick={onClose}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-auto bg-muted/10 p-6"><ReadOnlyInstrument type={instrumentType} fields={fields} maxScore={maxScore} accent={accent} /></div><footer className="flex shrink-0 justify-end border-t border-border bg-card px-6 py-4"><Button type="button" className={accent.button} onClick={onClose}>{returnLabel}</Button></footer></div></Modal>
 }
 
 function ActivityCompletionModal({
@@ -5267,6 +5299,7 @@ function RubricLevelSettingsDrawer({
   setPointMode: Dispatch<SetStateAction<RubricPointMode>>
   total: number
 }) {
+  const scorePending = maxScore <= 0
   const [draggedId, setDraggedId] = useState<string | null>(null)
   const [dragTargetIndex, setDragTargetIndex] = useState<number | null>(null)
   const [dragPreviewHeight, setDragPreviewHeight] = useState(66)
@@ -5429,9 +5462,9 @@ function RubricLevelSettingsDrawer({
       <div className="space-y-4">
         <div className="grid grid-cols-2 gap-2 rounded-xl border border-emerald-200 bg-gradient-to-br from-emerald-100 via-teal-50 to-blue-100 p-2.5 shadow-sm">
           <InstrumentSummaryItem label="Niveles" value={String(drafts.length)} />
-          <InstrumentSummaryItem label="Actividad" value={`${maxScore} puntos`} />
+          <InstrumentSummaryItem label="Actividad" value={scorePending ? '—' : `${formatInstrumentNumber(maxScore)} puntos`} />
           <InstrumentSummaryItem label="Criterios" value={String(criteriaCount)} />
-          <InstrumentSummaryItem label="Puntuación total" value={`${total}/${maxScore} pts`} good={scoreMatches} />
+          <InstrumentSummaryItem label="Puntuación total" value={scorePending ? '—' : `${formatInstrumentNumber(total)}/${formatInstrumentNumber(maxScore)} pts`} good={scorePending ? undefined : scoreMatches} />
         </div>
 
         <div>
@@ -5478,7 +5511,7 @@ function RubricLevelSettingsDrawer({
                   </button>
                   <span className="grid size-6 place-items-center rounded-full text-[11px] font-black" style={{ backgroundColor: visual.background, color: visual.foreground }}>{index + 1}</span>
                   <label className="min-w-0 text-[10px] font-bold text-muted-foreground">Nombre<Input className="mt-0.5 h-8 px-2 text-sm font-bold" value={level.name} onChange={(event) => onDraftsChange((current) => current.map((item) => item.id === level.id ? { ...item, name: event.target.value } : item))} /></label>
-                  <label className="text-[10px] font-bold leading-3 text-muted-foreground">Puntos<Input className="mt-0.5 h-8 px-2 text-sm font-black" type="number" min={0} step="0.25" disabled={pointMode === 'automatic'} value={level.points} onChange={(event) => onDraftsChange((current) => current.map((item) => item.id === level.id ? { ...item, points: Number(event.target.value) } : item))} /></label>
+                  <label className="text-[10px] font-bold leading-3 text-muted-foreground">Puntos<Input className="mt-0.5 h-8 px-2 text-sm font-black" type="number" min={0} step="0.25" disabled={scorePending || pointMode === 'automatic'} value={scorePending ? '' : level.points} placeholder="—" onChange={(event) => onDraftsChange((current) => current.map((item) => item.id === level.id ? { ...item, points: Number(event.target.value) } : item))} /></label>
                   <button type="button" aria-label={`Eliminar nivel ${level.name}`} disabled={drafts.length <= 2} className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => onRequestDelete(level)}><Trash2 className="size-4" /></button>
                 </div>
               )
@@ -5491,7 +5524,7 @@ function RubricLevelSettingsDrawer({
           <div className="grid overflow-hidden rounded-lg border border-border shadow-sm" style={{ gridTemplateColumns: `repeat(${Math.max(1, drafts.length)}, minmax(0, 1fr))` }}>
             {drafts.map((level, index) => {
               const visual = rubricLevelVisual(index, drafts.length)
-              return <div key={level.id} className="border-r px-2 py-2 text-center last:border-r-0" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><p className="truncate text-[10px] font-black uppercase">{level.name || `Nivel ${index + 1}`}</p><p className="mt-0.5 text-[10px] font-bold opacity-80">{level.points} pts</p></div>
+              return <div key={level.id} className="border-r px-2 py-2 text-center last:border-r-0" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><p className="truncate text-[10px] font-black uppercase">{level.name || `Nivel ${index + 1}`}</p><p className="mt-0.5 text-[10px] font-bold opacity-80">{scorePending ? '—' : formatInstrumentNumber(level.points)} pts</p></div>
             })}
           </div>
         </div>
@@ -5523,6 +5556,7 @@ function RubricInstrument({
   onLevelCountChange: (value: number) => void
   typographyControls: ReactNode
 }) {
+  const scorePending = maxScore <= 0
   const [editingLevels, setEditingLevels] = useState(false)
   const [levelDrafts, setLevelDrafts] = useState<RubricLevelDraft[]>([])
   const [levelPointMode, setLevelPointMode] = useState<RubricPointMode>('automatic')
@@ -5544,7 +5578,7 @@ function RubricInstrument({
 
   function resizeCriteria(nextCount: number) {
     const next: Record<string, string> = { ...fields, 'rubrica:meta:criteriaCount': String(nextCount) }
-    distributeScore(maxScore, nextCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(points) })
+    distributeScore(maxScore, nextCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = scorePending ? '' : String(points) })
     if (nextCount < criteriaCount) {
       Object.keys(next).forEach((key) => {
         const match = key.match(/^rubrica:(criterion|descriptor|points):(\d+)/)
@@ -5570,7 +5604,7 @@ function RubricInstrument({
       const match = key.match(/^rubrica:(criterion|descriptor|points):(\d+)/)
       if (match && Number(match[2]) >= nextCount) delete next[key]
     })
-    distributeScore(maxScore, nextCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(points) })
+    distributeScore(maxScore, nextCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = scorePending ? '' : String(points) })
     next['rubrica:meta:criteriaCount'] = String(nextCount)
     onFieldsChange(next)
     onCriteriaCountChange(nextCount)
@@ -5604,7 +5638,7 @@ function RubricInstrument({
     const next: Record<string, string> = { ...fields, 'rubrica:meta:criteriaCount': String(nextCount) }
     next[instrumentFieldKey('rubrica', 'criterion', criteriaCount)] = fields[instrumentFieldKey('rubrica', 'criterion', index)] ? `${fields[instrumentFieldKey('rubrica', 'criterion', index)]} (copia)` : ''
     for (let score = 1; score <= levelCount; score += 1) next[instrumentFieldKey('rubrica', 'descriptor', criteriaCount, score)] = fields[instrumentFieldKey('rubrica', 'descriptor', index, score)] || ''
-    distributeScore(maxScore, nextCount).forEach((points, row) => { next[instrumentFieldKey('rubrica', 'points', row)] = String(points) })
+    distributeScore(maxScore, nextCount).forEach((points, row) => { next[instrumentFieldKey('rubrica', 'points', row)] = scorePending ? '' : String(points) })
     onFieldsChange(next)
     onCriteriaCountChange(nextCount)
     focusNewInstrumentRow('rubrica', criteriaCount, setHighlightedRow)
@@ -5626,7 +5660,7 @@ function RubricInstrument({
         next[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, newScore)] = fields[instrumentFieldKey('rubrica', 'descriptor', criterionIndex, level.score)] || ''
       }
     })
-    distributeScore(maxScore, criteriaCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = String(points) })
+    distributeScore(maxScore, criteriaCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = scorePending ? '' : String(points) })
     onFieldsChange(next)
     onLevelCountChange(nextCount)
   }
@@ -5687,7 +5721,7 @@ function RubricInstrument({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <p className={cn('font-black', accent.text)}>Criterios y niveles de desempeño</p>
-          <p className="text-xs text-muted-foreground">Ajusta los puntos en la matriz; el total debe sumar {maxScore}.</p>
+          <p className="text-xs text-muted-foreground">Ajusta los puntos en la matriz; el total debe sumar {scorePending ? '—' : formatInstrumentNumber(maxScore)}.</p>
         </div>
         <div className="instrument-structure-controls flex flex-wrap items-center gap-2">
           {typographyControls}
@@ -5726,7 +5760,7 @@ function RubricInstrument({
             <th className="sticky left-0 z-30 w-[24%] border border-border bg-slate-50 px-2 py-2">Criterios de evaluación</th>
             {levels.map((level, index) => {
               const visual = rubricLevelVisual(index, levels.length)
-              return <th key={level.score} className="group relative border px-2 py-2 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block pr-4 font-black">{level.name}</span><span className="mt-0.5 block pr-4 normal-case font-bold opacity-80">{level.points} pts</span><button type="button" aria-label={`Eliminar nivel ${level.name}`} title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'} disabled={levelCount <= 2} className="absolute right-1 top-1 grid size-5 place-items-center rounded opacity-70 transition hover:bg-white/40 hover:text-destructive group-hover:opacity-100 disabled:hidden" onClick={() => requestRemoveLevel(level.score)}><X className="size-3" /></button></th>
+              return <th key={level.score} className="group relative border px-2 py-2 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block pr-4 font-black">{level.name}</span><span className="mt-0.5 block pr-4 normal-case font-bold opacity-80">{scorePending ? '—' : formatInstrumentNumber(level.points)} pts</span><button type="button" aria-label={`Eliminar nivel ${level.name}`} title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'} disabled={levelCount <= 2} className="absolute right-1 top-1 grid size-5 place-items-center rounded opacity-70 transition hover:bg-white/40 hover:text-destructive group-hover:opacity-100 disabled:hidden" onClick={() => requestRemoveLevel(level.score)}><X className="size-3" /></button></th>
             })}
             <th className="w-24 border border-border px-2 py-2 text-center">Puntaje por criterio</th>
             <th className="w-10 border border-border" />
@@ -5746,7 +5780,7 @@ function RubricInstrument({
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-xs text-muted-foreground">Puedes editar los puntos de cada criterio. Revisa que sumen el valor de la actividad.</p>
-        <div className="text-right"><p className={cn('text-sm font-black', scoreMatches ? 'text-emerald-600' : 'text-destructive')}>Puntuación máxima total: {total} / {maxScore} pts</p>{!scoreMatches ? <p className="mt-1 text-xs text-destructive">La puntuación no coincide con el valor de la actividad.</p> : null}</div>
+        <div className="text-right"><p className={cn('text-sm font-black', scorePending ? 'text-muted-foreground' : scoreMatches ? 'text-emerald-600' : 'text-destructive')}>Puntuación máxima total: {scorePending ? '—' : `${formatInstrumentNumber(total)} / ${formatInstrumentNumber(maxScore)}`} pts</p>{!scorePending && !scoreMatches ? <p className="mt-1 text-xs text-destructive">La puntuación no coincide con el valor de la actividad.</p> : null}</div>
       </div>
       {pendingCriterionDelete !== null ? <ConfirmDialog title="¿Eliminar este criterio?" description={`Se eliminará “${fields[instrumentFieldKey('rubrica', 'criterion', pendingCriterionDelete)] || `Criterio ${pendingCriterionDelete + 1}`}” junto con sus ${levelCount} descriptores asociados. Esta acción no se puede deshacer.`} confirmLabel="Eliminar criterio" destructive onClose={() => setPendingCriterionDelete(null)} onConfirm={() => { removeCriterion(pendingCriterionDelete); setPendingCriterionDelete(null) }} /> : null}
       {pendingLevelDelete !== null ? <ConfirmDialog title="¿Eliminar este nivel?" description={`Se eliminará “${fields[instrumentFieldKey('rubrica', 'level-name', pendingLevelDelete)] || 'este nivel'}” y todos sus descriptores asociados. Esta acción no se puede deshacer.`} confirmLabel="Eliminar nivel" destructive onClose={() => setPendingLevelDelete(null)} onConfirm={() => { removeLevel(pendingLevelDelete); setPendingLevelDelete(null) }} /> : null}
@@ -5811,6 +5845,7 @@ function ScaleSettingsDrawer({
   pointMode: ScalePointMode
   template: string
 }) {
+  const scorePending = maxScore <= 0
   const [draggedId, setDraggedId] = useState<string | null>(null)
   const [dragTargetIndex, setDragTargetIndex] = useState<number | null>(null)
   const [dragPreviewHeight, setDragPreviewHeight] = useState(52)
@@ -5824,7 +5859,7 @@ function ScaleSettingsDrawer({
   const levelPointsValid = levelDrafts.every((level) => Number.isFinite(level.points) && level.points >= 0)
   const levelOrderValid = levelDrafts.every((level, index) => index === 0 || levelDrafts[index - 1].points >= level.points)
   const duplicateLevelValues = new Set(levelDrafts.map((level) => level.points)).size !== levelDrafts.length
-  const distributionValid = pointMode === 'automatic' || (configuredPoints.every((value) => Number.isFinite(value) && value >= 0) && Math.abs(configuredTotal - maxScore) < 0.001)
+  const distributionValid = scorePending || pointMode === 'automatic' || (configuredPoints.every((value) => Number.isFinite(value) && value >= 0) && Math.abs(configuredTotal - maxScore) < 0.001)
   const configurationValid = levelNamesValid && levelPointsValid && levelOrderValid && distributionValid
   const maximumLevel = Math.max(...levelDrafts.map((level) => level.points), 1)
   const sampleScore = Number(Array.from({ length: criteriaCount }, (_, index) => {
@@ -5925,7 +5960,7 @@ function ScaleSettingsDrawer({
             if (!level) return <div key="scale-placeholder" className={cn('grid place-items-center rounded-xl border-2 border-dashed text-[10px] font-black', accent.card, accent.border, accent.text)} style={{ height: `${dragPreviewHeight}px` }}>Suelta aquí</div>
             const index = levelDrafts.findIndex((item) => item.id === level.id)
             const visual = scaleLevelVisual(accent, visualIndex, levelDrafts.length)
-            return <div key={level.id} data-scale-level-card data-scale-sort-card className="grid grid-cols-[1.75rem_1.5rem_minmax(0,1fr)_5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm" style={{ borderColor: visual.border }}><button type="button" aria-label={`Arrastrar nivel ${level.name}`} className={cn('grid size-7 touch-none cursor-grab place-items-center rounded-md text-slate-400 hover:bg-muted active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2', accent.ring)} onPointerDown={(event) => startPointerDrag(event, level)} onKeyDown={(event) => { if (event.key === 'ArrowUp') { event.preventDefault(); moveWithKeyboard(index, -1) } else if (event.key === 'ArrowDown') { event.preventDefault(); moveWithKeyboard(index, 1) } }}><GripVertical className="size-4" /></button><span className="grid size-6 place-items-center rounded-full text-[10px] font-black" style={{ backgroundColor: visual.background, color: visual.foreground }}>{visualIndex + 1}</span><Input aria-label={`Nombre del nivel ${visualIndex + 1}`} className="h-8 font-bold" value={level.name} onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, name: event.target.value } : item))} /><label className="relative"><Input aria-label={`Puntos del nivel ${visualIndex + 1}`} className="h-8 pr-7 font-black" type="number" min={0} step="0.25" value={level.points} onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, points: Number(event.target.value) } : item))} /><span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[9px] text-muted-foreground">pts</span></label><button type="button" aria-label={`Eliminar nivel ${level.name}`} disabled={levelDrafts.length <= 2} className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => onLevelsChange((current) => current.filter((item) => item.id !== level.id))}><Trash2 className="size-4" /></button></div>
+            return <div key={level.id} data-scale-level-card data-scale-sort-card className="grid grid-cols-[1.75rem_1.5rem_minmax(0,1fr)_5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm" style={{ borderColor: visual.border }}><button type="button" aria-label={`Arrastrar nivel ${level.name}`} className={cn('grid size-7 touch-none cursor-grab place-items-center rounded-md text-slate-400 hover:bg-muted active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2', accent.ring)} onPointerDown={(event) => startPointerDrag(event, level)} onKeyDown={(event) => { if (event.key === 'ArrowUp') { event.preventDefault(); moveWithKeyboard(index, -1) } else if (event.key === 'ArrowDown') { event.preventDefault(); moveWithKeyboard(index, 1) } }}><GripVertical className="size-4" /></button><span className="grid size-6 place-items-center rounded-full text-[10px] font-black" style={{ backgroundColor: visual.background, color: visual.foreground }}>{visualIndex + 1}</span><Input aria-label={`Nombre del nivel ${visualIndex + 1}`} className="h-8 font-bold" value={level.name} onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, name: event.target.value } : item))} /><label className="relative"><Input aria-label={`Puntos del nivel ${visualIndex + 1}`} className="h-8 pr-7 font-black" type="number" min={0} step="0.25" disabled={scorePending} value={scorePending ? '' : level.points} placeholder="—" onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, points: Number(event.target.value) } : item))} /><span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[9px] text-muted-foreground">pts</span></label><button type="button" aria-label={`Eliminar nivel ${level.name}`} disabled={levelDrafts.length <= 2} className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => onLevelsChange((current) => current.filter((item) => item.id !== level.id))}><Trash2 className="size-4" /></button></div>
           })}</div>
           {!levelNamesValid ? <p className="mt-2 text-xs font-bold text-destructive">Todos los niveles necesitan un nombre y deben existir al menos dos.</p> : null}
           {!levelPointsValid ? <p className="mt-2 text-xs font-bold text-destructive">Introduce puntuaciones válidas y no negativas.</p> : null}
@@ -5936,15 +5971,15 @@ function ScaleSettingsDrawer({
 
         <section className="border-t border-border pt-4">
           <p className={cn('text-sm font-black', accent.text)}>3. Distribución de puntos</p>
-          <div className="mt-2 grid gap-2 sm:grid-cols-2"><button type="button" className={cn('rounded-xl border p-3 text-left', pointMode === 'automatic' ? cn(accent.card, accent.border, 'ring-1') : 'border-border')} onClick={() => onPointModeChange('automatic')}><p className="text-xs font-black">Distribución automática</p><p className="mt-1 text-[10px] leading-4 text-muted-foreground">AulaBase conserva exactamente el total de la actividad.</p><p className={cn('mt-2 rounded-lg bg-card px-2 py-1.5 text-[10px] font-bold', accent.text)}>{formatInstrumentNumber(maxScore)} puntos entre {criteriaCount} indicadores</p></button><button type="button" className={cn('rounded-xl border p-3 text-left', pointMode === 'manual' ? cn(accent.card, accent.border, 'ring-1') : 'border-border')} onClick={() => onPointModeChange('manual')}><p className="text-xs font-black">Valores personalizados</p><p className="mt-1 text-[10px] leading-4 text-muted-foreground">Asigna un valor máximo diferente a cada indicador.</p><p className={cn('mt-2 rounded-lg bg-card px-2 py-1.5 text-[10px] font-bold', distributionValid ? 'text-emerald-700' : 'text-amber-700')}>{formatInstrumentNumber(configuredTotal)}/{formatInstrumentNumber(maxScore)} pts {distributionValid ? '✓' : ''}</p></button></div>
-          {pointMode === 'manual' ? <div className="mt-2 space-y-1.5">{Array.from({ length: criteriaCount }, (_, index) => <label key={index} className="grid grid-cols-[minmax(0,1fr)_6.5rem] items-center gap-3 rounded-lg border border-border bg-muted/10 px-3 py-2 text-xs"><span className="truncate font-bold">{fields[instrumentFieldKey('escala', 'criterion', index)] || `${index + 1}. Indicador`}</span><span className="relative"><Input type="number" min={0} step="0.01" className="h-8 pr-8" value={indicatorPoints[index] || ''} onChange={(event) => onIndicatorPointsChange((current) => { const next = [...current]; next[index] = event.target.value; return next })} /><span className="absolute right-2 top-1/2 -translate-y-1/2 text-[9px] text-muted-foreground">pts</span></span></label>)}</div> : null}
-          {!distributionValid ? <p className="mt-2 text-xs font-bold text-amber-700">La puntuación configurada debe coincidir con {formatInstrumentNumber(maxScore)} puntos.</p> : null}
+          <div className="mt-2 grid gap-2 sm:grid-cols-2"><button type="button" className={cn('rounded-xl border p-3 text-left', pointMode === 'automatic' ? cn(accent.card, accent.border, 'ring-1') : 'border-border')} onClick={() => onPointModeChange('automatic')}><p className="text-xs font-black">Distribución automática</p><p className="mt-1 text-[10px] leading-4 text-muted-foreground">AulaBase conserva exactamente el total de la actividad.</p><p className={cn('mt-2 rounded-lg bg-card px-2 py-1.5 text-[10px] font-bold', accent.text)}>{scorePending ? '—' : formatInstrumentNumber(maxScore)} puntos entre {criteriaCount} indicadores</p></button><button type="button" className={cn('rounded-xl border p-3 text-left', pointMode === 'manual' ? cn(accent.card, accent.border, 'ring-1') : 'border-border')} onClick={() => onPointModeChange('manual')}><p className="text-xs font-black">Valores personalizados</p><p className="mt-1 text-[10px] leading-4 text-muted-foreground">Asigna un valor máximo diferente a cada indicador.</p><p className={cn('mt-2 rounded-lg bg-card px-2 py-1.5 text-[10px] font-bold', distributionValid ? 'text-emerald-700' : 'text-amber-700')}>{scorePending ? '—' : `${formatInstrumentNumber(configuredTotal)}/${formatInstrumentNumber(maxScore)}`} pts {!scorePending && distributionValid ? '✓' : ''}</p></button></div>
+          {pointMode === 'manual' ? <div className="mt-2 space-y-1.5">{Array.from({ length: criteriaCount }, (_, index) => <label key={index} className="grid grid-cols-[minmax(0,1fr)_6.5rem] items-center gap-3 rounded-lg border border-border bg-muted/10 px-3 py-2 text-xs"><span className="truncate font-bold">{fields[instrumentFieldKey('escala', 'criterion', index)] || `${index + 1}. Indicador`}</span><span className="relative"><Input type="number" min={0} step="0.01" className="h-8 pr-8" disabled={scorePending} value={scorePending ? '' : indicatorPoints[index] || ''} placeholder="—" onChange={(event) => onIndicatorPointsChange((current) => { const next = [...current]; next[index] = event.target.value; return next })} /><span className="absolute right-2 top-1/2 -translate-y-1/2 text-[9px] text-muted-foreground">pts</span></span></label>)}</div> : null}
+          {!scorePending && !distributionValid ? <p className="mt-2 text-xs font-bold text-amber-700">La puntuación configurada debe coincidir con {formatInstrumentNumber(maxScore)} puntos.</p> : null}
           <div className="mt-3"><ToggleControl label="Permitir “No aplica”" checked={noApply} onChange={onNoApplyChange} /><p className="mt-1 text-[10px] leading-4 text-muted-foreground">Excluye un indicador del cálculo cuando no corresponda y reajusta la puntuación aplicable.</p></div>
         </section>
 
         <section className="border-t border-border pt-4">
           <p className={cn('text-sm font-black', accent.text)}>4. Vista previa de la escala</p>
-          <div className="mt-2 overflow-x-auto rounded-xl border border-border bg-muted/10 p-1"><div className="grid gap-1" style={{ gridTemplateColumns: `minmax(8rem,1.5fr) repeat(${levelDrafts.length + (noApply ? 1 : 0)}, minmax(4.25rem,1fr))` }}><div className="rounded-lg border border-border bg-card px-2 py-2 text-[9px] font-black uppercase">Indicador</div>{levelDrafts.map((level, index) => { const visual = scaleLevelVisual(accent, index, levelDrafts.length); return <div key={level.id} className="rounded-lg border px-1 py-2 text-center text-[9px] font-black" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}>{level.name}<span className="block font-medium">{level.points} pts</span></div> })}{noApply ? <div className="rounded-lg border border-slate-200 bg-slate-100 px-1 py-2 text-center text-[9px] font-black text-slate-600">No aplica<span className="block font-medium">N/A</span></div> : null}{Array.from({ length: Math.min(criteriaCount, 3) }, (_, row) => <Fragment key={row}><div className="truncate rounded-lg border border-border bg-card px-2 py-2 text-[9px] font-bold">{fields[instrumentFieldKey('escala', 'criterion', row)] || `${row + 1}. Indicador`}</div>{levelDrafts.map((level, column) => <div key={level.id} className="grid place-items-center rounded-lg border border-border bg-card"><span className={cn('size-3.5 rounded-full border-2', column === row % levelDrafts.length ? 'shadow-[inset_0_0_0_3px_white]' : 'border-slate-300')} style={column === row % levelDrafts.length ? { backgroundColor: accent.progressColor, borderColor: accent.progressColor } : undefined} /></div>)}{noApply ? <div className="grid place-items-center rounded-lg border border-border bg-card"><span className="size-3.5 rounded-full border-2 border-slate-300" /></div> : null}</Fragment>)}</div><div className={cn('mt-1 flex items-center justify-between rounded-lg px-3 py-2 text-[10px] font-bold', accent.card)}><span>Puntuación obtenida de ejemplo</span><span className={accent.text}>{formatInstrumentNumber(sampleScore)}/{formatInstrumentNumber(maxScore)} pts</span></div></div>
+          <div className="mt-2 overflow-x-auto rounded-xl border border-border bg-muted/10 p-1"><div className="grid gap-1" style={{ gridTemplateColumns: `minmax(8rem,1.5fr) repeat(${levelDrafts.length + (noApply ? 1 : 0)}, minmax(4.25rem,1fr))` }}><div className="rounded-lg border border-border bg-card px-2 py-2 text-[9px] font-black uppercase">Indicador</div>{levelDrafts.map((level, index) => { const visual = scaleLevelVisual(accent, index, levelDrafts.length); return <div key={level.id} className="rounded-lg border px-1 py-2 text-center text-[9px] font-black" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}>{level.name}<span className="block font-medium">{scorePending ? '—' : level.points} pts</span></div> })}{noApply ? <div className="rounded-lg border border-slate-200 bg-slate-100 px-1 py-2 text-center text-[9px] font-black text-slate-600">No aplica<span className="block font-medium">N/A</span></div> : null}{Array.from({ length: Math.min(criteriaCount, 3) }, (_, row) => <Fragment key={row}><div className="truncate rounded-lg border border-border bg-card px-2 py-2 text-[9px] font-bold">{fields[instrumentFieldKey('escala', 'criterion', row)] || `${row + 1}. Indicador`}</div>{levelDrafts.map((level, column) => <div key={level.id} className="grid place-items-center rounded-lg border border-border bg-card"><span className={cn('size-3.5 rounded-full border-2', column === row % levelDrafts.length ? 'shadow-[inset_0_0_0_3px_white]' : 'border-slate-300')} style={column === row % levelDrafts.length ? { backgroundColor: accent.progressColor, borderColor: accent.progressColor } : undefined} /></div>)}{noApply ? <div className="grid place-items-center rounded-lg border border-border bg-card"><span className="size-3.5 rounded-full border-2 border-slate-300" /></div> : null}</Fragment>)}</div><div className={cn('mt-1 flex items-center justify-between rounded-lg px-3 py-2 text-[10px] font-bold', accent.card)}><span>Puntuación obtenida de ejemplo</span><span className={accent.text}>{scorePending ? '—' : `${formatInstrumentNumber(sampleScore)}/${formatInstrumentNumber(maxScore)}`} pts</span></div></div>
         </section>
       </div>
     </InstrumentSettingsDrawer>
@@ -5974,6 +6009,7 @@ function ScaleInstrument({
   onLevelCountChange: (value: number) => void
   typographyControls: ReactNode
 }) {
+  const scorePending = maxScore <= 0
   const levels = Array.from({ length: levelCount }, (_, index) => levelCount - index)
   const total = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('escala', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
   const hasNoApply = fields['escala:meta:noApply'] === 'true'
@@ -5990,7 +6026,7 @@ function ScaleInstrument({
     if (criteriaCount >= 12) return
     const nextCount = criteriaCount + 1
     const next: Record<string,string> = {...fields,'escala:meta:criteriaCount':String(nextCount)}
-    if (fields['escala:meta:pointsMode'] === 'manual') next[instrumentFieldKey('escala', 'points', criteriaCount)] = '0'
+    if (fields['escala:meta:pointsMode'] === 'manual' || scorePending) next[instrumentFieldKey('escala', 'points', criteriaCount)] = ''
     else distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('escala','points',row)]=String(points)})
     onFieldsChange(next)
     onCriteriaCountChange(nextCount)
@@ -6002,7 +6038,7 @@ function ScaleInstrument({
     if (nextCount < 1) return
     const next = shiftInstrumentRows(fields, 'escala', index, criteriaCount, ['criterion', 'points'])
     next['escala:meta:criteriaCount'] = String(nextCount)
-    if (fields['escala:meta:pointsMode'] !== 'manual') distributeScore(maxScore, nextCount).forEach((points, row) => { next[instrumentFieldKey('escala', 'points', row)] = String(points) })
+    if (fields['escala:meta:pointsMode'] !== 'manual' && !scorePending) distributeScore(maxScore, nextCount).forEach((points, row) => { next[instrumentFieldKey('escala', 'points', row)] = String(points) })
     onFieldsChange(next); onCriteriaCountChange(nextCount)
   }
 
@@ -6029,7 +6065,8 @@ function ScaleInstrument({
   }
 
   function applyConfiguration() {
-    const configuredIndicatorPoints = pointMode === 'automatic' ? distributeScore(maxScore, criteriaCount) : Array.from({ length: criteriaCount }, (_, index) => Number(indicatorPoints[index] || 0))
+    const configuredIndicatorPoints = scorePending ? Array.from({ length: criteriaCount }, () => '')
+      : pointMode === 'automatic' ? distributeScore(maxScore, criteriaCount) : Array.from({ length: criteriaCount }, (_, index) => Number(indicatorPoints[index] || 0))
     const next: Record<string, string> = { ...fields, 'escala:meta:template': template, 'escala:meta:levelCount': String(levelDrafts.length), 'escala:meta:pointsMode': pointMode, 'escala:meta:noApply': String(noApply) }
     Object.keys(next).forEach((key) => { if (/^escala:level-(?:name|points):\d+$/.test(key)) delete next[key] })
     levelDrafts.forEach((level, index) => { const score = levelDrafts.length - index; next[instrumentFieldKey('escala', 'level-name', score)] = level.name.trim(); next[instrumentFieldKey('escala', 'level-points', score)] = String(level.points) })
@@ -6047,7 +6084,7 @@ function ScaleInstrument({
             <th className={cn('sticky left-0 z-30 w-[34%] border px-3 py-3', accent.card, accent.border, accent.text)}>Indicadores</th>
             {levels.map((level, index) => {
               const visual = scaleLevelVisual(accent, index, levels.length)
-              return <th key={level} className="border px-3 py-3 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block font-black">{fields[instrumentFieldKey('escala', 'level-name', level)] || `Nivel ${level}`}</span><span className="mt-0.5 block normal-case font-bold opacity-75">{fields[instrumentFieldKey('escala', 'level-points', level)] || level} pts</span></th>
+              return <th key={level} className="border px-3 py-3 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block font-black">{fields[instrumentFieldKey('escala', 'level-name', level)] || `Nivel ${level}`}</span><span className="mt-0.5 block normal-case font-bold opacity-75">{scorePending ? '—' : fields[instrumentFieldKey('escala', 'level-points', level)] || level} pts</span></th>
             })}
             {hasNoApply ? <th className="border border-slate-300 bg-slate-100 px-3 py-3 text-center text-slate-600">No aplica<span className="mt-0.5 block normal-case font-bold opacity-75">N/A</span></th> : null}
             <th className={cn('w-24 border px-3 py-3 text-center', accent.card, accent.border, accent.text)}>Valor máximo</th>
@@ -6069,10 +6106,10 @@ function ScaleInstrument({
                 <td key={value} className="border bg-card text-center" style={{ borderColor: scaleLevelVisual(accent, levelIndex, levels.length).border }}><span className="mx-auto block size-5 rounded-full border-2 bg-white shadow-sm" style={{ borderColor: scaleLevelVisual(accent, levelIndex, levels.length).border }} /></td>
               ))}
               {hasNoApply ? <td className="border border-slate-200 bg-slate-50 text-center"><span className="mx-auto block size-5 rounded-full border-2 border-slate-300 bg-white shadow-sm" /></td> : null}
-              <td className={cn('border p-1.5 text-center', accent.card, accent.border)}><span className={cn('inline-flex rounded-lg bg-card px-2 py-2 font-black shadow-sm', accent.text)}>{fields[instrumentFieldKey('escala', 'points', index)] ?? '0'} pts</span></td><td className={cn('border bg-card', accent.border)}><InstrumentRowMenu canMoveDown={index < criteriaCount - 1} canMoveUp={index > 0} onDelete={() => fields[instrumentFieldKey('escala', 'criterion', index)]?.trim() ? setPendingDelete(index) : removeIndicator(index)} onDuplicate={() => { if (criteriaCount >= 12) return; const nextCount = criteriaCount + 1; const next = {...fields,'escala:meta:criteriaCount':String(nextCount),[instrumentFieldKey('escala','criterion',criteriaCount)]:`${fields[instrumentFieldKey('escala','criterion',index)] || ''} (copia)`}; if (fields['escala:meta:pointsMode'] === 'manual') next[instrumentFieldKey('escala','points',criteriaCount)] = fields[instrumentFieldKey('escala','points',index)] || '0'; else distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('escala','points',row)]=String(points)}); onFieldsChange(next); onCriteriaCountChange(nextCount) }} onMoveDown={() => onFieldsChange(swapInstrumentRows(fields,'escala',index,index+1,['criterion','points']))} onMoveUp={() => onFieldsChange(swapInstrumentRows(fields,'escala',index,index-1,['criterion','points']))} /></td>
+              <td className={cn('border p-1.5 text-center', accent.card, accent.border)}><span className={cn('inline-flex rounded-lg bg-card px-2 py-2 font-black shadow-sm', accent.text)}>{scorePending ? '—' : fields[instrumentFieldKey('escala', 'points', index)] ?? '—'} pts</span></td><td className={cn('border bg-card', accent.border)}><InstrumentRowMenu canMoveDown={index < criteriaCount - 1} canMoveUp={index > 0} onDelete={() => fields[instrumentFieldKey('escala', 'criterion', index)]?.trim() ? setPendingDelete(index) : removeIndicator(index)} onDuplicate={() => { if (criteriaCount >= 12) return; const nextCount = criteriaCount + 1; const next = {...fields,'escala:meta:criteriaCount':String(nextCount),[instrumentFieldKey('escala','criterion',criteriaCount)]:`${fields[instrumentFieldKey('escala','criterion',index)] || ''} (copia)`}; if (fields['escala:meta:pointsMode'] === 'manual') next[instrumentFieldKey('escala','points',criteriaCount)] = fields[instrumentFieldKey('escala','points',index)] || ''; else if (!scorePending) distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('escala','points',row)]=String(points)}); onFieldsChange(next); onCriteriaCountChange(nextCount) }} onMoveDown={() => onFieldsChange(swapInstrumentRows(fields,'escala',index,index+1,['criterion','points']))} onMoveUp={() => onFieldsChange(swapInstrumentRows(fields,'escala',index,index-1,['criterion','points']))} /></td>
             </tr>
           ))}
-          <tr className="font-bold"><td className={cn('border px-3 py-3', accent.card, accent.border, accent.text)} colSpan={levelCount + 1 + (hasNoApply ? 1 : 0)}>Puntuación máxima total</td><td className={cn('border px-2 py-2 text-center', accent.card, accent.border, Math.abs(total - maxScore) < 0.001 ? 'text-emerald-700' : 'text-destructive')}>{total} / {maxScore} pts</td><td className={cn('border', accent.card, accent.border)} /></tr>
+          <tr className="font-bold"><td className={cn('border px-3 py-3', accent.card, accent.border, accent.text)} colSpan={levelCount + 1 + (hasNoApply ? 1 : 0)}>Puntuación máxima total</td><td className={cn('border px-2 py-2 text-center', accent.card, accent.border, scorePending ? 'text-muted-foreground' : Math.abs(total - maxScore) < 0.001 ? 'text-emerald-700' : 'text-destructive')}>{scorePending ? '—' : `${formatInstrumentNumber(total)} / ${formatInstrumentNumber(maxScore)}`} pts</td><td className={cn('border', accent.card, accent.border)} /></tr>
         </tbody>
       </InstrumentTable>
       {pendingDelete !== null ? <ConfirmDialog title="¿Eliminar este indicador?" description={`Se eliminará “${fields[instrumentFieldKey('escala','criterion',pendingDelete)]}” y su configuración asociada.`} confirmLabel="Eliminar indicador" destructive onClose={() => setPendingDelete(null)} onConfirm={() => { removeIndicator(pendingDelete); setPendingDelete(null) }} /> : null}
@@ -6113,6 +6150,7 @@ function ChecklistInstrument({
   onFieldsChange: (fields: Record<string, string>) => void
   typographyControls: ReactNode
 }) {
+  const scorePending = maxScore <= 0
   const total = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('lista-cotejo', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
   const [configuring, setConfiguring] = useState(false)
   const [draftNoApply, setDraftNoApply] = useState(fields['lista-cotejo:meta:noApply'] === 'true')
@@ -6130,17 +6168,17 @@ function ChecklistInstrument({
   const draftTotal = Number(configuredDraftPoints.reduce((sum, value) => sum + value, 0).toFixed(2))
   const customLabelsValid = draftLabelMode !== 'custom' || Boolean(draftLabels.yes.trim() && draftLabels.no.trim() && draftLabels.yes.trim().toLocaleLowerCase() !== draftLabels.no.trim().toLocaleLowerCase())
   const customPointsValid = configuredDraftPoints.every((value) => Number.isFinite(value) && value >= 0)
-  const distributionValid = draftUniformPoints || (customPointsValid && Math.abs(draftTotal - maxScore) < 0.001)
+  const distributionValid = scorePending || draftUniformPoints || (customPointsValid && Math.abs(draftTotal - maxScore) < 0.001)
   const configurationValid = customLabelsValid && distributionValid
 
-  function addCriterion() { if (criteriaCount >= 20) return; const nextCount=criteriaCount+1; const next:Record<string,string>={...fields,'lista-cotejo:meta:criteriaCount':String(nextCount)}; if(uniformPoints)distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)});else next[instrumentFieldKey('lista-cotejo','points',criteriaCount)]='0';onFieldsChange(next);onCriteriaCountChange(nextCount); focusNewInstrumentRow('lista-cotejo', criteriaCount, setHighlightedRow) }
-  function removeCriterion(index: number) { if (criteriaCount <= 1) return; const nextCount = criteriaCount - 1; const next = shiftInstrumentRows(fields,'lista-cotejo',index,criteriaCount,['criterion','points']); next['lista-cotejo:meta:criteriaCount']=String(nextCount); if(uniformPoints) distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)}); onFieldsChange(next); onCriteriaCountChange(nextCount) }
+  function addCriterion() { if (criteriaCount >= 20) return; const nextCount=criteriaCount+1; const next:Record<string,string>={...fields,'lista-cotejo:meta:criteriaCount':String(nextCount)}; if(uniformPoints && !scorePending)distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)});else next[instrumentFieldKey('lista-cotejo','points',criteriaCount)]='';onFieldsChange(next);onCriteriaCountChange(nextCount); focusNewInstrumentRow('lista-cotejo', criteriaCount, setHighlightedRow) }
+  function removeCriterion(index: number) { if (criteriaCount <= 1) return; const nextCount = criteriaCount - 1; const next = shiftInstrumentRows(fields,'lista-cotejo',index,criteriaCount,['criterion','points']); next['lista-cotejo:meta:criteriaCount']=String(nextCount); if(uniformPoints && !scorePending) distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)}); onFieldsChange(next); onCriteriaCountChange(nextCount) }
   function openConfiguration() {
     setDraftNoApply(hasNoApply)
     setDraftUniformPoints(uniformPoints)
     setDraftLabels(labels)
     setDraftLabelMode(checklistLabelMode(labels.yes, labels.no))
-    setDraftPoints(Array.from({ length: criteriaCount }, (_, index) => fields[instrumentFieldKey('lista-cotejo', 'points', index)] || '0'))
+    setDraftPoints(Array.from({ length: criteriaCount }, (_, index) => fields[instrumentFieldKey('lista-cotejo', 'points', index)] || ''))
     setConfiguring(true)
   }
   function applyConfiguration() {
@@ -6155,7 +6193,7 @@ function ChecklistInstrument({
       'lista-cotejo:meta:naLabel': draftLabels.na.trim() || 'No aplica',
     }
     Object.keys(next).filter((key) => key.startsWith('lista-cotejo:observation:')).forEach((key) => delete next[key])
-    configuredDraftPoints.forEach((points, row) => { next[instrumentFieldKey('lista-cotejo', 'points', row)] = String(points) })
+    configuredDraftPoints.forEach((points, row) => { next[instrumentFieldKey('lista-cotejo', 'points', row)] = scorePending ? '' : String(points) })
     onFieldsChange(next)
     setConfiguring(false)
   }
@@ -6175,14 +6213,14 @@ function ChecklistInstrument({
           <div className="space-y-4">
             <div className={cn('grid grid-cols-2 gap-2 rounded-xl border p-2 sm:grid-cols-4', accent.card)}>
               {[
-                { icon: <Target className="size-4" />, label: 'Actividad', value: `${maxScore} puntos` },
+                { icon: <Target className="size-4" />, label: 'Actividad', value: scorePending ? '—' : `${maxScore} puntos` },
                 { icon: <Grid3X3 className="size-4" />, label: 'Criterios', value: String(criteriaCount) },
                 { icon: <ClipboardList className="size-4" />, label: 'Instrumento', value: 'Lista de cotejo' },
-                { icon: <CheckCircle2 className="size-4" />, label: 'Puntuación configurada', value: `${formatInstrumentNumber(draftTotal)}/${formatInstrumentNumber(maxScore)} pts` },
+                { icon: <CheckCircle2 className="size-4" />, label: 'Puntuación configurada', value: scorePending ? '—' : `${formatInstrumentNumber(draftTotal)}/${formatInstrumentNumber(maxScore)} pts` },
               ].map((item) => (
                 <div key={item.label} className="min-w-0 rounded-lg border border-border bg-card/90 p-2.5 shadow-sm">
                   <p className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.1em] text-muted-foreground"><span className={accent.text}>{item.icon}</span>{item.label}</p>
-                  <p className={cn('mt-1 truncate text-xs font-black', item.label === 'Puntuación configurada' && distributionValid ? 'text-emerald-700' : 'text-foreground')} title={item.value}>{item.value}{item.label === 'Puntuación configurada' && distributionValid ? ' ✓' : ''}</p>
+                  <p className={cn('mt-1 truncate text-xs font-black', item.label === 'Puntuación configurada' && distributionValid && !scorePending ? 'text-emerald-700' : 'text-foreground')} title={item.value}>{item.value}{item.label === 'Puntuación configurada' && distributionValid && !scorePending ? ' ✓' : ''}</p>
                 </div>
               ))}
             </div>
@@ -6214,8 +6252,8 @@ function ChecklistInstrument({
                 <button type="button" aria-pressed={draftUniformPoints} className={cn('rounded-xl border p-3 text-left transition hover:shadow-sm', draftUniformPoints ? cn(accent.card, accent.border, 'ring-1') : 'border-border')} onClick={() => setDraftUniformPoints(true)}><span className={cn('block text-sm font-black', draftUniformPoints ? accent.text : 'text-foreground')}>Distribución uniforme</span><span className="mt-1 block text-xs leading-5 text-muted-foreground">AulaBase distribuye automáticamente el valor total.</span></button>
                 <button type="button" aria-pressed={!draftUniformPoints} className={cn('rounded-xl border p-3 text-left transition hover:shadow-sm', !draftUniformPoints ? cn(accent.card, accent.border, 'ring-1') : 'border-border')} onClick={() => setDraftUniformPoints(false)}><span className={cn('block text-sm font-black', !draftUniformPoints ? accent.text : 'text-foreground')}>Valores personalizados</span><span className="mt-1 block text-xs leading-5 text-muted-foreground">Asigna manualmente un valor diferente a cada criterio.</span></button>
               </div>
-              {draftUniformPoints ? <div className={cn('mt-3 rounded-xl border p-3', accent.card, accent.border)}><p className="text-sm font-black">{formatInstrumentNumber(maxScore)} puntos entre {criteriaCount} criterios</p><p className="mt-1 text-xs text-muted-foreground">≈ {formatInstrumentNumber(maxScore / Math.max(1, criteriaCount))} pts por criterio. Los centésimos se ajustan para conservar el total exacto.</p></div> : <div className="mt-3 space-y-2">{Array.from({ length: criteriaCount }, (_, index) => <label key={index} className="grid grid-cols-[minmax(0,1fr)_7rem] items-center gap-3 rounded-lg border border-border bg-muted/10 px-3 py-2 text-xs"><span className="truncate font-bold text-foreground">{fields[instrumentFieldKey('lista-cotejo', 'criterion', index)] || `${index + 1}. Criterio`}</span><span className="relative"><Input type="number" min={0} step="0.01" className="h-9 pr-9" value={draftPoints[index] || ''} onChange={(event) => setDraftPoints((current) => { const next = [...current]; next[index] = event.target.value; return next })} /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-bold text-muted-foreground">pts</span></span></label>)}</div>}
-              <div className={cn('mt-3 flex items-center justify-between rounded-lg border px-3 py-2 text-xs font-bold', distributionValid ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-amber-200 bg-amber-50 text-amber-700')}><span>Puntuación configurada</span><span>{formatInstrumentNumber(draftTotal)}/{formatInstrumentNumber(maxScore)} pts {distributionValid ? '✓' : ''}</span></div>
+              {draftUniformPoints ? <div className={cn('mt-3 rounded-xl border p-3', accent.card, accent.border)}><p className="text-sm font-black">{scorePending ? '—' : formatInstrumentNumber(maxScore)} puntos entre {criteriaCount} criterios</p><p className="mt-1 text-xs text-muted-foreground">≈ {scorePending ? '—' : formatInstrumentNumber(maxScore / Math.max(1, criteriaCount))} pts por criterio. Los centésimos se ajustan para conservar el total exacto.</p></div> : <div className="mt-3 space-y-2">{Array.from({ length: criteriaCount }, (_, index) => <label key={index} className="grid grid-cols-[minmax(0,1fr)_7rem] items-center gap-3 rounded-lg border border-border bg-muted/10 px-3 py-2 text-xs"><span className="truncate font-bold text-foreground">{fields[instrumentFieldKey('lista-cotejo', 'criterion', index)] || `${index + 1}. Criterio`}</span><span className="relative"><Input type="number" min={0} step="0.01" className="h-9 pr-9" disabled={scorePending} value={scorePending ? '' : draftPoints[index] || ''} placeholder="—" onChange={(event) => setDraftPoints((current) => { const next = [...current]; next[index] = event.target.value; return next })} /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-bold text-muted-foreground">pts</span></span></label>)}</div>}
+              <div className={cn('mt-3 flex items-center justify-between rounded-lg border px-3 py-2 text-xs font-bold', distributionValid && !scorePending ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-amber-200 bg-amber-50 text-amber-700')}><span>Puntuación configurada</span><span>{scorePending ? '—' : `${formatInstrumentNumber(draftTotal)}/${formatInstrumentNumber(maxScore)}`} pts {!scorePending && distributionValid ? '✓' : ''}</span></div>
               <div className="mt-2 rounded-lg bg-muted/25 px-3 py-2 text-[11px] leading-5 text-muted-foreground"><strong className="text-foreground">Cálculo:</strong> {draftLabels.yes} otorga el valor completo del criterio; {draftLabels.no} otorga 0 puntos.</div>
             </section>
 
@@ -6255,11 +6293,11 @@ function ChecklistInstrument({
               <td className="border border-emerald-200 bg-emerald-50/55 text-center"><span className="mx-auto block size-5 rounded-md border-2 border-emerald-500 bg-white shadow-sm" /></td>
               <td className="border border-red-200 bg-red-50/55 text-center"><span className="mx-auto block size-5 rounded-md border-2 border-red-400 bg-white shadow-sm" /></td>
               {hasNoApply ? <td className="border border-amber-200 bg-amber-50/55 text-center"><span className="mx-auto block size-5 rounded-md border-2 border-amber-500 bg-white shadow-sm" /></td> : null}
-              <td className={cn('border p-1.5 text-center', accent.card, accent.border)}>{uniformPoints?<span className={cn('inline-flex rounded-lg px-2 py-2 font-black shadow-sm',accent.panel,accent.text)}>{fields[instrumentFieldKey('lista-cotejo','points',index)]??'0'} pts</span>:<InstrumentInput value={fields[instrumentFieldKey('lista-cotejo','points',index)]??''} onChange={(value)=>onFieldChange(instrumentFieldKey('lista-cotejo','points',index),value)} placeholder="0"/>}</td>
-              <td className={cn('border bg-card', accent.border)}><InstrumentRowMenu canMoveDown={index<criteriaCount-1} canMoveUp={index>0} onDelete={()=>fields[instrumentFieldKey('lista-cotejo','criterion',index)]?.trim()?setPendingDelete(index):removeCriterion(index)} onDuplicate={()=>{if(criteriaCount>=20)return;const nextCount=criteriaCount+1;const next:Record<string,string>={...fields,'lista-cotejo:meta:criteriaCount':String(nextCount),[instrumentFieldKey('lista-cotejo','criterion',criteriaCount)]:`${fields[instrumentFieldKey('lista-cotejo','criterion',index)]||''} (copia)`};if(uniformPoints)distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)});else next[instrumentFieldKey('lista-cotejo','points',criteriaCount)]=fields[instrumentFieldKey('lista-cotejo','points',index)]||'0';onFieldsChange(next);onCriteriaCountChange(nextCount)}} onMoveDown={()=>onFieldsChange(swapInstrumentRows(fields,'lista-cotejo',index,index+1,['criterion','points']))} onMoveUp={()=>onFieldsChange(swapInstrumentRows(fields,'lista-cotejo',index,index-1,['criterion','points']))} /></td>
+              <td className={cn('border p-1.5 text-center', accent.card, accent.border)}>{uniformPoints?<span className={cn('inline-flex rounded-lg px-2 py-2 font-black shadow-sm',accent.panel,accent.text)}>{scorePending ? '—' : fields[instrumentFieldKey('lista-cotejo','points',index)] ?? '—'} pts</span>:<InstrumentInput value={fields[instrumentFieldKey('lista-cotejo','points',index)]??''} onChange={(value)=>onFieldChange(instrumentFieldKey('lista-cotejo','points',index),value)} placeholder="—"/>}</td>
+              <td className={cn('border bg-card', accent.border)}><InstrumentRowMenu canMoveDown={index<criteriaCount-1} canMoveUp={index>0} onDelete={()=>fields[instrumentFieldKey('lista-cotejo','criterion',index)]?.trim()?setPendingDelete(index):removeCriterion(index)} onDuplicate={()=>{if(criteriaCount>=20)return;const nextCount=criteriaCount+1;const next:Record<string,string>={...fields,'lista-cotejo:meta:criteriaCount':String(nextCount),[instrumentFieldKey('lista-cotejo','criterion',criteriaCount)]:`${fields[instrumentFieldKey('lista-cotejo','criterion',index)]||''} (copia)`};if(uniformPoints && !scorePending)distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)});else next[instrumentFieldKey('lista-cotejo','points',criteriaCount)]=scorePending ? '' : fields[instrumentFieldKey('lista-cotejo','points',index)]||'0';onFieldsChange(next);onCriteriaCountChange(nextCount)}} onMoveDown={()=>onFieldsChange(swapInstrumentRows(fields,'lista-cotejo',index,index+1,['criterion','points']))} onMoveUp={()=>onFieldsChange(swapInstrumentRows(fields,'lista-cotejo',index,index-1,['criterion','points']))} /></td>
             </tr>
           ))}
-          <tr className="font-bold"><td className={cn('border px-3 py-3', accent.card, accent.border, accent.text)} colSpan={3+(hasNoApply?1:0)}>Puntuación máxima total</td><td className={cn('border px-2 py-2 text-center', accent.card, accent.border, Math.abs(total - maxScore) < 0.001 ? 'text-emerald-700' : 'text-destructive')}>{total} / {maxScore} pts</td><td className={cn('border', accent.card, accent.border)} /></tr>
+          <tr className="font-bold"><td className={cn('border px-3 py-3', accent.card, accent.border, accent.text)} colSpan={3+(hasNoApply?1:0)}>Puntuación máxima total</td><td className={cn('border px-2 py-2 text-center', accent.card, accent.border, scorePending ? 'text-muted-foreground' : Math.abs(total - maxScore) < 0.001 ? 'text-emerald-700' : 'text-destructive')}>{scorePending ? '—' : `${formatInstrumentNumber(total)} / ${formatInstrumentNumber(maxScore)}`} pts</td><td className={cn('border', accent.card, accent.border)} /></tr>
         </tbody>
       </InstrumentTable>
       {pendingDelete!==null?<ConfirmDialog title="¿Eliminar este criterio?" description={`Se eliminará “${fields[instrumentFieldKey('lista-cotejo','criterion',pendingDelete)]}” y sus datos asociados.`} confirmLabel="Eliminar criterio" destructive onClose={()=>setPendingDelete(null)} onConfirm={()=>{removeCriterion(pendingDelete);setPendingDelete(null)}}/>:null}
@@ -6364,7 +6402,7 @@ function WeightedListSettingsDrawer({
           <p className={cn('mb-2 text-xs font-black uppercase tracking-[0.12em]', accent.text)}>1. Resumen</p>
           <div className={cn('grid grid-cols-2 gap-2 rounded-xl border p-2 sm:grid-cols-4', accent.card)}>
             <InstrumentSummaryItem label="Criterios" value={String(criteriaCount)} />
-            <InstrumentSummaryItem label="Actividad" value={`${formatInstrumentNumber(maxScore)} puntos`} />
+            <InstrumentSummaryItem label="Actividad" value={maxScore <= 0 ? '—' : `${formatInstrumentNumber(maxScore)} puntos`} />
             <InstrumentSummaryItem label="Ponderación" value={`${formatInstrumentNumber(effectiveTotal)}/100 %`} good={Math.abs(effectiveTotal - 100) < 0.001} />
             <InstrumentSummaryItem label="Estado" value={status.label} good={status.tone === 'success'} />
           </div>
@@ -6409,7 +6447,7 @@ function WeightedListSettingsDrawer({
           <div className="overflow-x-auto rounded-xl border border-border bg-card p-1">
             <div className="grid min-w-[37rem] gap-1 text-[10px]" style={{ gridTemplateColumns: `minmax(10rem,1.5fr) 5rem 6rem repeat(${draftPartial ? 3 : 2}, minmax(5rem,1fr))` }}>
               {['Criterio', 'Peso', 'Valor máx.', draftLabels.yes || 'Positiva', ...(draftPartial ? [draftLabels.partial || 'Parcial'] : []), draftLabels.no || 'Negativa'].map((label) => <div key={label} className={cn('rounded-lg border px-2 py-2 text-center font-black first:text-left', accent.card, accent.border)}>{label}</div>)}
-              <div className="rounded-lg border border-border px-2 py-3 font-bold">{fields[instrumentFieldKey('lista-ponderada', 'criterion', firstCriterionIndex)] || 'Criterio de ejemplo'}</div><div className="rounded-lg border border-border px-2 py-3 text-center font-black">{formatInstrumentNumber(exampleWeight)} %</div><div className={cn('rounded-lg border px-2 py-3 text-center font-black', accent.card, accent.border, accent.text)}>{formatPoints(exampleMaximum)} pts</div><div className="rounded-lg border border-emerald-200 bg-emerald-50 px-2 py-3 text-center font-black text-emerald-700">{formatPoints(exampleMaximum)} pts</div>{draftPartial ? <div className="rounded-lg border border-amber-200 bg-amber-50 px-2 py-3 text-center font-black text-amber-700">{formatPoints(exampleMaximum * draftPartialValue / 100)} pts</div> : null}<div className="rounded-lg border border-red-200 bg-red-50 px-2 py-3 text-center font-black text-red-700">0 pts</div>
+              <div className="rounded-lg border border-border px-2 py-3 font-bold">{fields[instrumentFieldKey('lista-ponderada', 'criterion', firstCriterionIndex)] || 'Criterio de ejemplo'}</div><div className="rounded-lg border border-border px-2 py-3 text-center font-black">{formatInstrumentNumber(exampleWeight)} %</div><div className={cn('rounded-lg border px-2 py-3 text-center font-black', accent.card, accent.border, accent.text)}>{maxScore <= 0 ? '—' : formatPoints(exampleMaximum)} pts</div><div className="rounded-lg border border-emerald-200 bg-emerald-50 px-2 py-3 text-center font-black text-emerald-700">{maxScore <= 0 ? '—' : formatPoints(exampleMaximum)} pts</div>{draftPartial ? <div className="rounded-lg border border-amber-200 bg-amber-50 px-2 py-3 text-center font-black text-amber-700">{maxScore <= 0 ? '—' : formatPoints(exampleMaximum * draftPartialValue / 100)} pts</div> : null}<div className="rounded-lg border border-red-200 bg-red-50 px-2 py-3 text-center font-black text-red-700">{maxScore <= 0 ? '—' : '0'} pts</div>
             </div>
           </div>
         </section>
@@ -6441,6 +6479,7 @@ function WeightedListInstrument({
   onHasPartialChange: (value: boolean) => void
   typographyControls: ReactNode
 }) {
+  const scorePending = maxScore <= 0
   const totalWeight = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
   const [configuring, setConfiguring] = useState(false)
   const [pendingDelete, setPendingDelete] = useState<number | null>(null)
@@ -6516,14 +6555,14 @@ function WeightedListInstrument({
                 />
               </td>
               <td className={cn('border bg-card p-1.5', accent.border)}><div className="relative"><InstrumentInput placeholder="0" value={fields[instrumentFieldKey('lista-ponderada', 'weight', index)] ?? ''} onChange={(value) => onFieldChange(instrumentFieldKey('lista-ponderada', 'weight', index), value)} /><span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-xs font-black text-muted-foreground">%</span></div></td>
-              <td className={cn('border p-1.5 text-center', accent.card, accent.border)}><span className={cn('inline-flex min-w-20 items-center justify-center rounded-lg bg-card px-2 py-2 font-black shadow-sm', accent.text)}>{decimals ? formatInstrumentNumber(Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0) / 100 * maxScore) : Math.round(Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0) / 100 * maxScore)} pts</span></td>
+              <td className={cn('border p-1.5 text-center', accent.card, accent.border)}><span className={cn('inline-flex min-w-20 items-center justify-center rounded-lg bg-card px-2 py-2 font-black shadow-sm', accent.text)}>{scorePending ? '—' : decimals ? formatInstrumentNumber(Number(fields[instrumentFieldKey('lista-ponderada', 'points', index)] ?? Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0) / 100 * maxScore)) : Math.round(Number(fields[instrumentFieldKey('lista-ponderada', 'points', index)] ?? Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0) / 100 * maxScore))} pts</span></td>
               <td className={cn('border bg-card', accent.border)}><InstrumentRowMenu canMoveDown={index < criteriaCount - 1} canMoveUp={index > 0} onDelete={() => fields[instrumentFieldKey('lista-ponderada', 'criterion', index)]?.trim() || fields[instrumentFieldKey('lista-ponderada', 'indicator', index)]?.trim() ? setPendingDelete(index) : removeCriterion(index)} onDuplicate={() => { if (criteriaCount >= 12) return; const nextCount = criteriaCount + 1; const next = { ...fields, 'lista-ponderada:meta:criteriaCount': String(nextCount), [instrumentFieldKey('lista-ponderada', 'criterion', criteriaCount)]: `${fields[instrumentFieldKey('lista-ponderada', 'criterion', index)] || ''} (copia)`, [instrumentFieldKey('lista-ponderada', 'indicator', criteriaCount)]: fields[instrumentFieldKey('lista-ponderada', 'indicator', index)] || '' }; distributeScore(100, nextCount).forEach((weight, row) => { next[instrumentFieldKey('lista-ponderada', 'weight', row)] = String(weight) }); onFieldsChange(next); onCriteriaCountChange(nextCount) }} onMoveDown={() => onFieldsChange(swapInstrumentRows(fields, 'lista-ponderada', index, index + 1, ['criterion', 'indicator', 'weight', 'observation']))} onMoveUp={() => onFieldsChange(swapInstrumentRows(fields, 'lista-ponderada', index, index - 1, ['criterion', 'indicator', 'weight', 'observation']))} /></td>
             </tr>
           ))}
           <tr className="font-bold">
             <td className={cn('border px-3 py-3', accent.card, accent.border, accent.text)} colSpan={3}><span className="inline-flex items-center gap-2"><CheckCircle2 className="size-4" />Ponderación máxima total</span><span className="ml-2 text-[10px] font-medium text-muted-foreground">{status.detail}</span></td>
             <td className={cn('border px-2 py-2 text-center', accent.card, accent.border, status.tone === 'success' ? 'text-emerald-700' : status.tone === 'warning' ? 'text-amber-700' : 'text-destructive')}>{formatInstrumentNumber(totalWeight)}/100 %</td>
-            <td className={cn('border px-2 py-2 text-center font-black', accent.card, accent.border, accent.text)}>{formatInstrumentNumber(maxScore)} pts</td>
+            <td className={cn('border px-2 py-2 text-center font-black', accent.card, accent.border, accent.text)}>{scorePending ? '—' : formatInstrumentNumber(maxScore)} pts</td>
             <td className={cn('border', accent.card, accent.border)} />
           </tr>
         </tbody>
@@ -7705,14 +7744,15 @@ function isInstrumentComplete(input: {
 }) {
   const { checklistCriteria, fields, instrumentType, maxScore, rubricCriteria, rubricLevels, scaleCriteria, weightedCriteria } = input
   if (!instrumentType) return false
+  const scorePending = fields[`${instrumentType}:meta:scorePending`] === 'true' || maxScore <= 0
 
   if (instrumentType === 'rubrica') {
     const assignedScore = Array.from({ length: rubricCriteria }, (_, index) => Number(fields[instrumentFieldKey('rubrica', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0)
-    if (Math.abs(assignedScore - maxScore) >= 0.001) return false
+    if (!scorePending && Math.abs(assignedScore - maxScore) >= 0.001) return false
     const levelNames = Array.from({ length: rubricLevels }, (_, index) => fields[instrumentFieldKey('rubrica', 'level-name', rubricLevels - index)]?.trim().toLocaleLowerCase() || '')
     const levelPoints = Array.from({ length: rubricLevels }, (_, index) => Number(fields[instrumentFieldKey('rubrica', 'level-points', rubricLevels - index)]))
     if (levelNames.some((name) => !name) || new Set(levelNames).size !== levelNames.length) return false
-    if (levelPoints.some((points) => !Number.isFinite(points) || points < 0) || levelPoints.some((points, index) => index > 0 && points >= levelPoints[index - 1])) return false
+    if (!scorePending && (levelPoints.some((points) => !Number.isFinite(points) || points < 0) || levelPoints.some((points, index) => index > 0 && points >= levelPoints[index - 1]))) return false
     for (let criterionIndex = 0; criterionIndex < rubricCriteria; criterionIndex += 1) {
       if (!hasInstrumentField(fields, instrumentFieldKey('rubrica', 'criterion', criterionIndex))) return false
       for (let levelScore = 1; levelScore <= rubricLevels; levelScore += 1) {
@@ -7724,7 +7764,7 @@ function isInstrumentComplete(input: {
 
   if (instrumentType === 'escala') {
     const assignedScore = Array.from({ length: scaleCriteria }, (_, index) => Number(fields[instrumentFieldKey('escala', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0)
-    if (Math.abs(assignedScore - maxScore) >= 0.001) return false
+    if (!scorePending && Math.abs(assignedScore - maxScore) >= 0.001) return false
     const levelCount = Number(fields['escala:meta:levelCount']) || 4
     const levelNames = Array.from({ length: levelCount }, (_, index) => fields[instrumentFieldKey('escala', 'level-name', levelCount - index)]?.trim().toLocaleLowerCase() || '')
     if (levelNames.some((name) => !name) || new Set(levelNames).size !== levelNames.length) return false
@@ -7735,7 +7775,7 @@ function isInstrumentComplete(input: {
 
   if (instrumentType === 'lista-cotejo') {
     const assignedScore = Array.from({ length: checklistCriteria }, (_, index) => Number(fields[instrumentFieldKey('lista-cotejo', 'points', index)] || 0)).reduce((sum, value) => sum + value, 0)
-    if (Math.abs(assignedScore - maxScore) >= 0.001) return false
+    if (!scorePending && Math.abs(assignedScore - maxScore) >= 0.001) return false
     return Array.from({ length: checklistCriteria }, (_, index) =>
       hasInstrumentField(fields, instrumentFieldKey('lista-cotejo', 'criterion', index)),
     ).every(Boolean)
@@ -7840,7 +7880,8 @@ function normalizeStoredActivityDrafts(value: unknown): ActivityDraftsByBlock {
     const drafts = Array.isArray(raw) ? raw : [raw]
     const validDrafts = drafts
       .filter((item): item is Partial<ActivityDraft> => Boolean(item && typeof item === 'object'))
-      .map((draft) => ({
+      .map((draft) => {
+        const restored = {
         ...emptyActivityDraft,
         ...draft,
         draftId: typeof draft.draftId === 'string' ? draft.draftId : createDraftId(),
@@ -7854,7 +7895,16 @@ function normalizeStoredActivityDrafts(value: unknown): ActivityDraftsByBlock {
           : {},
         resources: Array.isArray(draft.resources) ? draft.resources.filter((resource): resource is string => typeof resource === 'string') : [],
         updatedAt: typeof draft.updatedAt === 'string' ? draft.updatedAt : new Date().toISOString(),
-      }))
+        } as ActivityDraft
+        const oldFingerprint = JSON.stringify([restored.name, restored.description, restored.maxScore,
+          restored.pedagogicalActivityType, restored.activityType, restored.instrumentType, restored.selectedCurriculumElementIds ?? []])
+        if (restored.preparedFingerprint === oldFingerprint) restored.preparedFingerprint = preparationFingerprint(restored)
+        if (!restored.maxScore && restored.instrumentType) {
+          restored.instrumentFields = scoreInstrumentFields(restored.instrumentFields, restored.instrumentType, null, restored.preparedRecommendation)
+          if (restored.preparedRecommendation) restored.preparedRecommendation = scoreRecommendation(restored.preparedRecommendation, restored.instrumentFields, null)
+        }
+        return restored
+      })
       .filter(isMeaningfulActivityDraft)
 
     if (validDrafts.length > 0) {
