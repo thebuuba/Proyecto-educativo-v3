@@ -28,7 +28,7 @@ export function AppLayout() {
 
   return (
     <GuidedTourProvider>
-      <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <div className="min-h-screen overflow-x-clip bg-background text-foreground">
         <div className="flex min-h-screen min-w-0">
           <Sidebar
             isOpen={isSidebarOpen}

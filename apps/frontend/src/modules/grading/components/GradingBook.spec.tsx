@@ -9,6 +9,11 @@ import { api, ApiError } from '@/services/apiClient'
 import { editableFallbackRecommendation, preparationFingerprint, recommendationToFields } from '@/modules/activities/services/instrumentPreparation'
 import { primaryEvaluationProfile } from '@aula/shared'
 
+vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
+  ActivityDescriptionEditor: ({ value, onChange }: { value: string; onChange: (value: string) => void }) =>
+    <textarea aria-label="Descripción de la actividad" value={value} onChange={event => onChange(event.target.value)} />,
+}))
+
 const students: StudentGradeRow[] = [
   {
     enrollmentId: 'enrollment-1',
@@ -114,6 +119,95 @@ describe('GradingBook', () => {
     await waitFor(() => expect(activity).toHaveValue('NEWS_ANALYSIS'))
     expect(technique).toHaveValue('observacion-sistematica')
     expect(instrument).toHaveValue('escala')
+  })
+
+  it('muestra y guarda las selecciones del informe aunque la preparación termine antes que la interpretación', async () => {
+    const title = 'Informe de lectura de un cuento'
+    const description = 'Los estudiantes seleccionarán un cuento corto de su preferencia, realizarán una lectura comprensiva y elaborarán un informe escrito en el que presentarán el título de la obra, su autor, un resumen de los acontecimientos principales, una descripción de los personajes y un análisis de los valores o situaciones sociales presentes en la historia. Finalmente, redactarán una conclusión expresando su interpretación personal del texto'
+    const proposal = editableFallbackRecommendation({ activityTitle: title, description, activityType: 'READING_REPORT_WRITING', maxScore: 20, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL' })
+    let finishInterpretation!: (value: unknown) => void
+    const interpretation = new Promise(resolve => { finishInterpretation = resolve })
+    const post = vi.spyOn(api, 'post').mockImplementation(path => path === '/evaluation-instruments/interpret' ? interpretation as never : proposal as never)
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+      draftId: 'report-draft', name: title, description, maxScore: '20', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 },
+      activityType: 'individual', teamIds: [], instrumentType: '', evaluationTechnique: '', instrumentFields: {}, instrumentCompleted: false,
+      resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '',
+    }] }))
+    const onAddActivity = vi.fn().mockImplementation(async activity => ({ ...activity, id: 'saved-report' }))
+    const view = renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'report-draft', onAddActivity })
+    await waitFor(() => expect(post.mock.calls.some(([path]) => path === '/evaluation-instruments/recommend')).toBe(true), { timeout: 5000 })
+    await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('rubrica'))
+    await act(async () => finishInterpretation({ suggestedActivityType: 'READING_REPORT_WRITING', suggestedEvaluationTechnique: 'analisis-producciones',
+      suggestedInstrumentType: 'rubrica', activityType: 'READING_REPORT_WRITING', activityTypes: ['READING_REPORT_WRITING'],
+      curriculumVersionId: null, curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: 'Mensaje interno.' }))
+    expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('READING_REPORT_WRITING')
+    expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
+    expect(screen.queryByText('Mensaje interno.')).not.toBeInTheDocument()
+    const user = userEvent.setup()
+    await user.click(screen.getByRole('button', { name: 'Guardar' }))
+    const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })
+    expect(within(summary).getByText('Elaboración de informe de lectura')).toBeInTheDocument()
+    expect(within(summary).getByText('Análisis de producciones')).toBeInTheDocument()
+    await user.click(within(summary).getByRole('button', { name: 'Confirmar y guardar' }))
+    await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
+    const saved = onAddActivity.mock.calls[0][0] as GradingActivity
+    expect(saved).toEqual(expect.objectContaining({ pedagogicalActivityType: 'READING_REPORT_WRITING', evaluationTechnique: 'analisis-producciones', instrumentType: 'rubrica' }))
+    view.unmount()
+    renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', activities: [{ ...saved, id: 'saved-report' }], initialActivityId: 'saved-report', initialActivityMode: 'edit' })
+    expect(await screen.findByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('READING_REPORT_WRITING')
+    expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
+  }, 15000)
+
+  it('actualiza los campos automáticos al editar la descripción, respeta elecciones manuales y permite reactivar la detección', async () => {
+    const title = 'Informe de lectura de un cuento'
+    const post = vi.spyOn(api, 'post').mockImplementation(async (path, body) => {
+      if (path !== '/evaluation-instruments/interpret') throw new Error('Ruta inesperada')
+      const comparison = String((body as { description: string }).description).includes('Compararán')
+      return { suggestedActivityType: comparison ? 'READING_REPORT_COMPARISON' : 'READING_REPORT_WRITING',
+        suggestedEvaluationTechnique: 'analisis-producciones', suggestedInstrumentType: 'rubrica',
+        activityType: comparison ? 'READING_REPORT_COMPARISON' : 'READING_REPORT_WRITING', activityTypes: [],
+        curriculumVersionId: null, curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' } as never
+    })
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+      draftId: 'description-draft', name: title, description: 'Elaborarán un informe de lectura.', maxScore: '',
+      competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, activityType: 'individual', teamIds: [],
+      instrumentType: '', evaluationTechnique: '', instrumentFields: {}, instrumentCompleted: false,
+      resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '',
+    }] }))
+    const user = userEvent.setup()
+    renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'description-draft' })
+    const activity = await screen.findByRole('combobox', { name: 'Tipo de actividad' })
+    const technique = screen.getByRole('combobox', { name: /Técnica de evaluación/ })
+    await waitFor(() => expect(activity).toHaveValue('READING_REPORT_WRITING'))
+    const editor = screen.getByRole('textbox', { name: 'Descripción de la actividad' })
+    fireEvent.change(editor, { target: { value: 'Compararán dos informes de lectura.' } })
+    await waitFor(() => expect(activity).toHaveValue('READING_REPORT_COMPARISON'))
+    await user.selectOptions(activity, 'READING_REPORT_ANALYSIS')
+    await user.selectOptions(technique, 'debate')
+    fireEvent.change(editor, { target: { value: 'Elaborarán un informe de lectura individual.' } })
+    await waitFor(() => expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/interpret').length).toBeGreaterThanOrEqual(3))
+    expect(activity).toHaveValue('READING_REPORT_ANALYSIS')
+    expect(technique).toHaveValue('debate')
+    await user.selectOptions(activity, '')
+    await user.selectOptions(technique, '')
+    await waitFor(() => expect(activity).toHaveValue('READING_REPORT_WRITING'))
+    expect(technique).toHaveValue('analisis-producciones')
+  }, 15000)
+
+  it('mantiene tipo y técnica contextuales si la interpretación remota falla', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+      draftId: 'offline-report', name: 'Informe de lectura de un cuento',
+      description: 'Los estudiantes realizarán una lectura comprensiva y elaborarán un informe escrito con resumen y conclusión.',
+      maxScore: '', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, activityType: 'individual', teamIds: [],
+      instrumentType: '', evaluationTechnique: '', instrumentFields: {}, instrumentCompleted: false,
+      resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '',
+    }] }))
+    renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'offline-report' })
+    expect(await screen.findByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('')
+    await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('READING_REPORT_WRITING'))
+    expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
+    expect(screen.queryByText('Servicio no disponible')).not.toBeInTheDocument()
   })
 
   it('ignora una interpretación anterior cuando cambia el título', async () => {

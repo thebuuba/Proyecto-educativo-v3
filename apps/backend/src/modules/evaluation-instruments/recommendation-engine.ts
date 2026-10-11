@@ -1,4 +1,4 @@
-import { detectFirstSecondaryLanguageActivity, type CurriculumReference, type InstrumentRecommendation, type RecommendationCriterion } from '@aula/shared'
+import { detectFirstSecondaryLanguageActivity, firstSecondaryLanguageTechnique, type CurriculumReference, type InstrumentRecommendation, type RecommendationCriterion } from '@aula/shared'
 export { detectFirstSecondaryLanguageActivity } from '@aula/shared'
 import { type EvaluationCatalog, evaluationCatalogV1 } from './catalog-v1'
 import { type AcademicContext, type ScopeCandidate, discipline, normalize } from './curriculum-context'
@@ -152,10 +152,7 @@ export function firstSecondaryLanguageSelections(activityType: string) {
   const rule = evaluationCatalogV1.recommendationRules.filter(entry => (!entry.families.length || entry.families.includes(activity.family))
     && (!entry.band || entry.band === 'SECONDARY') && (!entry.evidence || entry.evidence.every(evidence => activity.evidence.includes(evidence))))
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
-  const technique = activityType.endsWith('_ANALYSIS') ? 'observacion-sistematica'
-    : activityType.endsWith('_COMPARISON') || activityType.endsWith('_WRITING') || activityType.endsWith('_CREATION')
-      ? 'analisis-producciones' : activityType === 'CALLIGRAM_RECITATION' || activityType === 'DETECTIVE_STORY_NARRATION'
-      ? 'presentacion' : 'exposicion'
+  const technique = firstSecondaryLanguageTechnique(activityType)
   return { suggestedEvaluationTechnique: technique, suggestedInstrumentType: rule.instrument }
 }
 

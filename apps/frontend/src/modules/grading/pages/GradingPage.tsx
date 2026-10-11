@@ -9,6 +9,7 @@ import { Select } from '@/components/ui/Select'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseTeam } from '@/modules/courses/types'
 import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
+import { isFirstSecondaryLanguage } from '@/modules/activities/utils/firstSecondaryLanguageContext'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import '@/modules/grading/grading-design.css'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
@@ -155,6 +156,7 @@ export function GradingPage() {
       ) : (
         <div className="grading-workspace">
           <GradingBook
+            firstSecondaryLanguage={isFirstSecondaryLanguage(selectedSs)}
             evaluationProfile={selectedSs?.evaluationProfile}
             sectionSubjectId={selectedSsId}
             students={students}

@@ -36,6 +36,14 @@ describe('Selecciones automáticas de Lengua Española en 1.º de secundaria', (
     expect(detectFirstSecondaryLanguageActivity('Crear un caligrama', '', { ...context, subjectCode: 'ING' })).toBeNull()
     expect(detectFirstSecondaryLanguageActivity('Crear un caligrama', '', { ...context, level: 'PRIMARY' })).toBeNull()
   })
+  it('prioriza el informe que se elabora después de leer un cuento', () => {
+    const title = 'Informe de lectura de un cuento'
+    const description = 'Los estudiantes seleccionarán un cuento corto de su preferencia, realizarán una lectura comprensiva y elaborarán un informe escrito en el que presentarán el título de la obra, su autor, un resumen de los acontecimientos principales, una descripción de los personajes y un análisis de los valores o situaciones sociales presentes en la historia. Finalmente, redactarán una conclusión expresando su interpretación personal del texto'
+    const type = detectFirstSecondaryLanguageActivity(title, description, context)
+    expect(type).toBe('READING_REPORT_WRITING')
+    expect(firstSecondaryLanguageSelections(type!)).toEqual({ suggestedEvaluationTechnique: 'analisis-producciones', suggestedInstrumentType: 'rubrica' })
+    expect(recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null).activityType).toBe(type)
+  })
 })
 function run(fixture = cases[1], options = {}) {
   const context: AcademicContext = { level: fixture.level, grade: fixture.grade, cycle: fixture.grade <= 3 ? 1 : 2, subjectCode: fixture.code, subjectName: fixture.subject, optativeExitName: fixture.exit ?? null, modalityCode: 'academic' }

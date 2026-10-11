@@ -39,6 +39,12 @@ export function detectFirstSecondaryLanguageActivity(title: string, description:
   }
   return action(task) ?? action(titleText)
 }
+export function firstSecondaryLanguageTechnique(activityType: string): string {
+  return activityType.endsWith('_ANALYSIS') ? 'observacion-sistematica'
+    : activityType.endsWith('_COMPARISON') || activityType.endsWith('_WRITING') || activityType.endsWith('_CREATION')
+      ? 'analisis-producciones' : activityType === 'CALLIGRAM_RECITATION' || activityType === 'DETECTIVE_STORY_NARRATION'
+        ? 'presentacion' : 'exposicion'
+}
 export const competencyBlockIds = ['b1', 'b2', 'b3', 'b4'] as const
 export type CompetencyBlockId = (typeof competencyBlockIds)[number]
 export type EvaluationProfileId = 'primary-official' | 'secondary-official'

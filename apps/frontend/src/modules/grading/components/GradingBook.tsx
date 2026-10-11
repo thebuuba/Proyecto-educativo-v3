@@ -154,7 +154,7 @@ import {
 } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 import { ApiError } from '@/services/apiClient'
-import { detectFirstSecondaryLanguageActivity, secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
+import { detectFirstSecondaryLanguageActivity, firstSecondaryLanguageTechnique, secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { alignRecommendationWithFields, editableFallbackRecommendation, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 
 type GradingBookProps = {
@@ -481,6 +481,7 @@ export function GradingBook({
       instrumentType: activity.instrumentType ?? '',
       instrumentId: activity.instrumentId,
       evaluationTechnique: activity.evaluationTechnique ?? '',
+      pedagogicalActivityType: activity.pedagogicalActivityType ?? '',
       instrumentCompleted: Boolean(activity.instrumentType),
       instrumentFields: activity.instrumentCriteria ?? {},
       resources: activity.resources ?? [],
@@ -3865,6 +3866,7 @@ function ActivityCreationView(props: {
   const [completionIssues, setCompletionIssues] = useState<ActivityCompletionIssue[]>([])
   const [showSummary, setShowSummary] = useState(false)
   const [summaryView, setSummaryView] = useState<'summary' | 'description' | 'instrument' | 'resources'>('summary')
+  const [autoDetectionRevision, refreshAutoDetection] = useState(0)
   const confirmingSave = useRef(false)
   const { highlightTarget, showHighlight } = useTransientActivityHighlight()
   const accent = getBlockAccent(block.id)
@@ -3873,13 +3875,32 @@ function ActivityCreationView(props: {
   const fingerprint = preparationFingerprint(activityDraft)
   const stale = Boolean(activityDraft.preparedRecommendation && activityDraft.preparedFingerprint !== fingerprint)
   const savedSnapshot = Boolean(editingActivityId && activityDraft.preparedRecommendation)
+  const manualPedagogicalType = activityDraft.autoDetectedPedagogicalActivityType ? '' : activityDraft.pedagogicalActivityType || ''
 
   useEffect(() => {
     if (!sectionSubjectId || !activityDraft.name.trim() || editingActivityId) { setInterpretation(null); return }
     const abort = new AbortController()
     const timer = window.setTimeout(() => {
+      const scopedType = firstSecondaryLanguage ? detectFirstSecondaryLanguageActivity(activityDraft.name,
+        activityDescriptionText(activityDraft.description), { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) : null
+      if (scopedType) {
+        const current = latestDraft.current
+        const next = { ...current }
+        if (!manualSelections.current.activity) {
+          next.pedagogicalActivityType = scopedType
+          next.autoDetectedPedagogicalActivityType = true
+        }
+        if (!manualSelections.current.technique) {
+          next.evaluationTechnique = firstSecondaryLanguageTechnique(scopedType)
+          next.autoSelectedEvaluationTechnique = true
+        }
+        if (next.pedagogicalActivityType !== current.pedagogicalActivityType || next.evaluationTechnique !== current.evaluationTechnique) {
+          latestDraft.current = next
+          onChangeDraftRef.current(next)
+        }
+      }
       interpretActivity({ sectionSubjectId, activityTitle: activityDraft.name, description: activityDescriptionText(activityDraft.description),
-        pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined, competencyBlock: block.id }, abort.signal)
+        pedagogicalActivityType: manualPedagogicalType || undefined, competencyBlock: block.id }, abort.signal)
         .then(value => {
           if (abort.signal.aborted) return
           setInterpretation(value)
@@ -3887,12 +3908,14 @@ function ActivityCreationView(props: {
           const current = latestDraft.current
           if (current.name !== activityDraft.name || current.description !== activityDraft.description) return
           const next = { ...current }
-          if (value.suggestedEvaluationTechnique && !manualSelections.current.technique && (current.autoSelectedEvaluationTechnique || !current.evaluationTechnique)) {
-            next.evaluationTechnique = value.suggestedEvaluationTechnique
+          const suggestedTechnique = scopedType ? firstSecondaryLanguageTechnique(scopedType) : value.suggestedEvaluationTechnique
+          const suggestedType = scopedType || value.suggestedActivityType
+          if (suggestedTechnique && evaluationTechniqueOptions.some(([id]) => id === suggestedTechnique) && !manualSelections.current.technique && (current.autoSelectedEvaluationTechnique || !current.evaluationTechnique)) {
+            next.evaluationTechnique = suggestedTechnique
             next.autoSelectedEvaluationTechnique = true
           }
-          if (value.suggestedActivityType && !manualSelections.current.activity && (current.autoDetectedPedagogicalActivityType || !current.pedagogicalActivityType)) {
-            next.pedagogicalActivityType = value.suggestedActivityType
+          if (pedagogicalActivityLabels[suggestedType] && !manualSelections.current.activity && (current.autoDetectedPedagogicalActivityType || !current.pedagogicalActivityType)) {
+            next.pedagogicalActivityType = suggestedType
             next.autoDetectedPedagogicalActivityType = true
           }
           if (value.suggestedInstrumentType && !manualSelections.current.instrument && !current.preparedRecommendation && (current.autoSelectedInstrumentType || !current.instrumentType)) {
@@ -3904,7 +3927,7 @@ function ActivityCreationView(props: {
         .catch(() => { if (!abort.signal.aborted) setInterpretation(null) })
     }, 450)
     return () => { window.clearTimeout(timer); abort.abort() }
-  }, [sectionSubjectId, activityDraft.name, activityDraft.description, activityDraft.pedagogicalActivityType, activityDraft.autoDetectedPedagogicalActivityType, activityDraft.autoSelectedEvaluationTechnique, activityDraft.autoSelectedInstrumentType, block.id, editingActivityId, firstSecondaryLanguage])
+  }, [sectionSubjectId, activityDraft.name, activityDraft.description, manualPedagogicalType, block.id, editingActivityId, firstSecondaryLanguage, autoDetectionRevision])
 
   async function prepare(preferredType?: string, replaceManual = false, forceAutomatic = false) {
     if (!sectionSubjectId) {
@@ -3926,7 +3949,7 @@ function ActivityCreationView(props: {
       if (preparationFingerprint(latestDraft.current) !== requestedFingerprint || (latestDraft.current.preparedManuallyEdited && !replaceManual)) return
       const current = latestDraft.current
       const next = { ...current, instrumentType: proposal.instrumentType,
-        pedagogicalActivityType: current.pedagogicalActivityType && !current.autoDetectedPedagogicalActivityType ? current.pedagogicalActivityType : proposal.activityType,
+        pedagogicalActivityType: current.pedagogicalActivityType || proposal.activityType,
         autoSelectedInstrumentType: forceAutomatic ? true : preferredType ? false : current.autoSelectedInstrumentType || !current.instrumentType,
         autoDetectedPedagogicalActivityType: preferredType ? current.autoDetectedPedagogicalActivityType : current.autoDetectedPedagogicalActivityType || !current.pedagogicalActivityType,
         instrumentFields: recommendationToFields(proposal, current.name), instrumentCompleted: true,
@@ -3985,7 +4008,7 @@ function ActivityCreationView(props: {
       activityType: firstSecondaryLanguage ? current.pedagogicalActivityType || detectFirstSecondaryLanguageActivity(current.name,
         activityDescriptionText(current.description), { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) || undefined : undefined })
     const next = { ...current, instrumentType, instrumentFields: recommendationToFields(proposal, current.name), instrumentCompleted: true,
-      preparedRecommendation: proposal, preparedManuallyEdited: false, autoSelectedInstrumentType: false }
+      preparedRecommendation: proposal, preparedManuallyEdited: false, autoSelectedInstrumentType: current.autoSelectedInstrumentType || !current.instrumentType }
     onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
     setFailedInstrumentType('')
     setPreparationError('')
@@ -4026,6 +4049,7 @@ function ActivityCreationView(props: {
     if (changedInstrument) manualSelections.current.instrument = Boolean(draft.instrumentType && !draft.autoSelectedInstrumentType)
     if (changedPedagogicalType) manualSelections.current.activity = Boolean(draft.pedagogicalActivityType && !draft.autoDetectedPedagogicalActivityType)
     if (draft.evaluationTechnique !== activityDraft.evaluationTechnique) manualSelections.current.technique = Boolean(draft.evaluationTechnique && !draft.autoSelectedEvaluationTechnique)
+    if ((changedPedagogicalType && draft.autoDetectedPedagogicalActivityType) || (draft.evaluationTechnique !== activityDraft.evaluationTechnique && draft.autoSelectedEvaluationTechnique)) refreshAutoDetection(value => value + 1)
     onChangeDraft({
       ...draft,
       autoSelectedInstrumentType: changedInstrument && !draft.autoSelectedInstrumentType ? false : draft.autoSelectedInstrumentType,
@@ -4088,8 +4112,8 @@ function ActivityCreationView(props: {
         </div>
       </div>
 
-      <div className="grid gap-4 xl:grid-cols-[17rem_minmax(0,1fr)]">
-        <main className="min-w-0 space-y-4 xl:order-2">
+      <div className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_17rem]">
+        <main className="order-2 min-w-0 space-y-4 xl:order-1">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <h2 className="text-3xl font-black text-foreground">{editingActivityId ? 'Editar actividad' : 'Crear actividad'}</h2>
@@ -4653,7 +4677,7 @@ function ActivityProgressCard({
   const totalItems = checkpoints.length + instrumentSubchecks.length
 
   return (
-    <aside className={cn('h-fit overflow-hidden rounded-xl border bg-card shadow-sm xl:order-1 xl:sticky xl:top-4', accent.border)}>
+    <aside className={cn('order-1 h-fit max-h-[calc(100dvh-7.5rem)] self-start overflow-y-auto rounded-xl border bg-card shadow-sm xl:order-2 xl:sticky xl:top-[6.5rem]', accent.border)}>
       <div className="h-1" style={{ background: accent.gradient }} />
       <div className="p-4">
       <div className="flex items-center gap-2">
@@ -7168,7 +7192,8 @@ function formatActivityDate(value?: string) {
 
 function formatActivityTechnique(value?: string) {
   if (!value) return 'Sin técnica'
-  return value.split('-').map((word) => word.charAt(0).toLocaleUpperCase() + word.slice(1)).join(' ')
+  return evaluationTechniqueOptions.find(([id]) => id === value)?.[1]
+    ?? value.split('-').map((word) => word.charAt(0).toLocaleUpperCase() + word.slice(1)).join(' ')
 }
 
 function activityMomentTitle(value?: string) {

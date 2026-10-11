@@ -9,6 +9,7 @@ import type { CourseTeam } from '@/modules/courses/types'
 import { getActivityCenter } from '@/modules/activities/services/activitiesService'
 import { useActivities } from '@/modules/activities/hooks/useActivities'
 import type { Activity, ActivityCenterWorkspace, ActivityCreatorOrigin } from '@/modules/activities/types'
+import { isFirstSecondaryLanguage } from '@/modules/activities/utils/firstSecondaryLanguageContext'
 import type { CompetencyPeriodId } from '@/modules/grading/utils/competencyGrades'
 
 type CreatorLocationState = { activityCreatorOrigin?: ActivityCreatorOrigin }
@@ -89,9 +90,7 @@ export function ActivityCreator() {
   return (
     <section className="activities-creator-workspace w-full">
       <GradingBook
-        firstSecondaryLanguage={sectionSubject?.academicLevelCode === 'secundario'
-          && (sectionSubject.gradeSequence === 1 || sectionSubject.gradeSequence === 7)
-          && sectionSubject.subjectCode === 'LEN'}
+        firstSecondaryLanguage={isFirstSecondaryLanguage(sectionSubject)}
         evaluationProfile={sectionSubject?.evaluationProfile}
         sectionSubjectId={sectionSubjectId}
         students={[]}
