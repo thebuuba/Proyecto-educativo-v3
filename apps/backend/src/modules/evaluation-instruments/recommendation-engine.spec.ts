@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { academicContext, resolveScope, type AcademicContext } from './curriculum-context'
-import { recommend, distributeScore, detectActivityType, detectFirstSecondaryLanguageActivity, firstSecondaryLanguageSelections, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
+import { recommend, distributeScore, detectActivityType, detectFirstSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
 
 const root = resolve(process.cwd(), '../..')
 const cases = JSON.parse(readFileSync(resolve(root, 'data/evaluation-instruments/cases-v1.json'), 'utf8')) as { case: string; level: 'PRIMARY' | 'SECONDARY'; grade: number; code: string; subject: string; exit?: string; activityTitle: string; description?: string; maxScore: number; expectedInstrument: string }[]
@@ -43,6 +43,18 @@ describe('Selecciones automáticas de Lengua Española en 1.º de secundaria', (
     expect(type).toBe('READING_REPORT_WRITING')
     expect(firstSecondaryLanguageSelections(type!)).toEqual({ suggestedEvaluationTechnique: 'analisis-producciones', suggestedInstrumentType: 'rubrica' })
     expect(recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null).activityType).toBe(type)
+  })
+})
+
+describe('Recomendaciones generales fuera del alcance de 1.º de secundaria', () => {
+  it('clasifica la elaboración del informe en 2.º como Informe y propone técnica e instrumento', () => {
+    const title = 'Análisis y elaboración de un informe de lectura.'
+    const description = 'Los estudiantes seleccionarán un cuento, realizarán una lectura comprensiva y elaborarán un informe escrito con resumen, personajes y conclusión.'
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 2, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: null }
+    const type = detectActivityType(title, description, evaluationCatalogV1, false)
+    expect(type.id).toBe('REPORT')
+    expect(suggestedSelections(type.id, context)).toEqual({ suggestedEvaluationTechnique: 'analisis-producciones', suggestedInstrumentType: 'rubrica' })
+    expect(recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null).activityType).toBe('REPORT')
   })
 })
 function run(fixture = cases[1], options = {}) {

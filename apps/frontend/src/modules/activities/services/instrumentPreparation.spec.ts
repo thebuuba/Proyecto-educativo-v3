@@ -67,6 +67,18 @@ describe('adaptación del instrumento preparado', () => {
     expect(JSON.stringify(fallback.criteria)).toContain('imágenes solicitadas')
     expect(fallback.internalTrace.mappingStatus).toBe('FALLBACK')
   })
+  it('distingue los descriptores del informe y propone criterios distintos al regenerar', () => {
+    const input = { activityTitle: 'Informe de lectura de un cuento', description: 'Elaborarán un informe de lectura con resumen, personajes, valores y conclusión.',
+      activityType: 'READING_REPORT_WRITING', maxScore: 20, instrumentType: 'rubrica' as const, participationMode: 'INDIVIDUAL' as const }
+    const first = editableFallbackRecommendation(input)
+    const second = editableFallbackRecommendation({ ...input, variation: 1 })
+    expect(first.criteria[0].descriptors[0].text).toContain('Resume las ideas principales')
+    expect(first.criteria[0].descriptors[0].text).not.toContain('Lo evidencia de forma completa')
+    expect(first.criteria[0].descriptors[0].text).not.toBe(first.criteria[1].descriptors[0].text)
+    expect(second.criteria[0].title).toBe('Identificación de la obra')
+    expect(second.criteria.map(item => item.title)).not.toEqual(first.criteria.map(item => item.title))
+    expect(second.totalScoreUnits).toBe(2000)
+  })
   it('mantiene la comparación de informes en los cuatro formatos de recuperación', () => {
     for (const maxScore of [20, 17.35]) for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
       const fallback = editableFallbackRecommendation({ activityTitle: 'Informe de lectura',

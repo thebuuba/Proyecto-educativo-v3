@@ -3,7 +3,7 @@ import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { academicContext, resolveScope } from './curriculum-context'
-import { detectActivityType, detectFirstSecondaryLanguageActivity, firstSecondaryLanguageSelections, rankCurriculum, recommend } from './recommendation-engine'
+import { detectActivityType, detectFirstSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
 
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
@@ -14,8 +14,8 @@ export class EvaluationInstrumentsService {
     const resolved = await this.resolve(user, input, true)
     const scopedType = detectFirstSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
     const detected = evaluationCatalogV1.activityTypes.find(entry => entry.id === scopedType)
-      ?? detectActivityType(input.activityTitle, input.description ?? '')
-    const selections = scopedType ? firstSecondaryLanguageSelections(scopedType) : null
+      ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogV1, false)
+    const selections = scopedType ? firstSecondaryLanguageSelections(scopedType) : suggestedSelections(detected.id, resolved.context)
     const type = input.pedagogicalActivityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
       resolved.resolution.scope, resolved.rows)

@@ -40,12 +40,13 @@ export function topicTerms(title: string, description = '') {
   const fromDescription = tokens(description).filter(t => !boilerplate.includes(t) && !/^\d+$/.test(t))
   return fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
 }
-export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogV1) {
+export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogV1, contextualTypes = true) {
   const find = (value: string, descriptionMode = false) => {
     const text = normalize(value)
     const words = tokens(text)
     const matched = (trigger: string) => text.includes(normalize(trigger)) || tokens(trigger).every(part => words.some(word => similarToken(word, part)))
-    return catalog.activityTypes.filter(a => (!a.id.startsWith('NEWS_') || /noticia|noticiero/.test(text))
+    return catalog.activityTypes.filter(a => (contextualTypes || !/^(?:NEWS|TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(a.id))
+      && (!a.id.startsWith('NEWS_') || /noticia|noticiero/.test(text))
       && (!a.id.startsWith('TOURIST_GUIDE_') || /guias? turisticas?/.test(text)) && a.triggers.some(matched)
       && (!a.id.startsWith('POSTER_') || /afiches?/.test(text))
       && (!a.id.startsWith('READING_REPORT_') || /informe(?:s)? de lectura/.test(text))
@@ -154,6 +155,25 @@ export function firstSecondaryLanguageSelections(activityType: string) {
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
   const technique = firstSecondaryLanguageTechnique(activityType)
   return { suggestedEvaluationTechnique: technique, suggestedInstrumentType: rule.instrument }
+}
+
+export function suggestedSelections(activityType: string, context: AcademicContext | null) {
+  const activity = evaluationCatalogV1.activityTypes.find(entry => entry.id === activityType)
+  if (!activity) return null
+  const band = context?.level === 'PRIMARY' ? context.cycle === 1 ? 'PRIMARY_FIRST' : 'PRIMARY_SECOND' : 'SECONDARY'
+  const rule = evaluationCatalogV1.recommendationRules.filter(entry => (!entry.families.length || entry.families.includes(activity.family))
+    && (!entry.band || entry.band === band) && !entry.maxScore
+    && (!entry.evidence || entry.evidence.every(evidence => activity.evidence.includes(evidence))))
+    .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
+  const techniques: Record<string, string> = {
+    ORAL: 'exposicion', WRITTEN: 'analisis-producciones', OBSERVATIONAL: 'observacion-sistematica',
+    SCIENTIFIC: 'observacion-sistematica', MATHEMATICAL: 'resolucion-problemas',
+    MOTOR: 'observacion-directa', PROJECT_BASED: 'proyecto', ARTISTIC: 'analisis-producciones', PRACTICAL: 'observacion-directa',
+  }
+  return {
+    suggestedEvaluationTechnique: activityType === 'QUIZ_TEST' ? 'prueba-escrita' : techniques[activity.family] ?? 'observacion-directa',
+    suggestedInstrumentType: rule.instrument,
+  }
 }
 
 type AuthoredCriterion = { templateId: string; title: string; observable: string; weight: number }
@@ -397,7 +417,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   if (input.pedagogicalActivityType && !explicit) throw new Error('Tipo pedagógico desconocido.')
   const scopedType = detectFirstSecondaryLanguageActivity(input.activityTitle, input.description ?? '', context)
   const detectedByCatalog = catalog.activityTypes.find(entry => entry.id === scopedType)
-    ?? detectActivityType(input.activityTitle, input.description ?? '', catalog)
+    ?? detectActivityType(input.activityTitle, input.description ?? '', catalog, false)
   const detected = detectedByCatalog.id === 'OTHER' && /observ(?:ar|an|aran|arán).*(?:registr|tabla)/.test(text)
     ? catalog.activityTypes.find(entry => entry.id === 'OBSERVATION')! : detectedByCatalog
   const activity = explicit ?? detected

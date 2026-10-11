@@ -26,7 +26,7 @@ export function preparationFingerprint(input: { name: string; description: strin
   return JSON.stringify([input.name, input.description, input.maxScore, input.pedagogicalActivityType, input.activityType, input.instrumentType, input.selectedCurriculumElementIds ?? []])
 }
 
-export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string }): InstrumentRecommendation {
+export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number }): InstrumentRecommendation {
   const text = `${input.activityTitle} ${input.description ?? ''}`.toLocaleLowerCase('es-DO')
   const news = /noticia|noticiero/.test(text)
   const touristGuide = /gu[ií]a tur[ií]stica/.test(text)
@@ -193,15 +193,42 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
     ['Organización', 'Organiza la información o el producto en una secuencia comprensible.'],
     ['Comunicación', 'Comunica el resultado con claridad y vocabulario adecuado.'],
   ]
+  if (input.variation && readingReport && !analyzing && !comparing && !oral) {
+    authored.splice(0, authored.length,
+      ['Identificación de la obra', 'Presenta el título y el autor del cuento e identifica el texto elegido.'],
+      ['Síntesis de acontecimientos', 'Reconstruye los acontecimientos principales en orden sin sustituirlos por opiniones.'],
+      ['Caracterización de personajes', 'Describe los personajes y relaciona sus acciones con la historia.'],
+      ['Interpretación de valores', 'Analiza valores o situaciones sociales con ejemplos del cuento.'],
+      ['Conclusión argumentada', 'Expresa una interpretación personal apoyada en el resumen y el análisis.'],
+      ['Organización y revisión', 'Organiza el informe y revisa conectores, puntuación y ortografía.'])
+  }
   const totalUnits = Math.round(input.maxScore * 100)
   const base = Math.floor(totalUnits / authored.length)
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
     ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []
+  const reportProgressions: Record<string, [string, string, string]> = {
+    'Resumen del texto': ['Recupera los acontecimientos principales, aunque omite un detalle relevante.', 'Menciona hechos aislados o altera parte de su secuencia.', 'No identifica todavía los acontecimientos centrales del cuento.'],
+    'Análisis de los personajes': ['Explica las acciones de los personajes con al menos un ejemplo pertinente.', 'Describe personajes sin relacionar claramente sus acciones con el cuento.', 'No caracteriza todavía a los personajes ni aporta ejemplos del texto.'],
+    'Estructura del informe': ['Incluye las secciones principales, aunque una necesita mayor desarrollo.', 'Presenta secciones incompletas o en un orden que dificulta la lectura.', 'No distingue todavía las partes necesarias del informe.'],
+    'Conclusión personal': ['Expresa una interpretación propia vinculada al texto, con apoyo limitado en el análisis.', 'Formula una opinión general sin relacionarla con el resumen y el análisis.', 'No presenta todavía una interpretación personal del cuento.'],
+    'Coherencia': ['Relaciona las ideas principales con conectores adecuados, aunque hay transiciones mejorables.', 'Salta entre ideas o emplea conectores que no expresan la relación buscada.', 'Las ideas todavía no forman una secuencia comprensible.'],
+    'Revisión final': ['Corrige la mayoría de los problemas de puntuación y ortografía; quedan detalles menores.', 'Conserva errores frecuentes que dificultan partes del informe.', 'No revisa todavía los errores que impiden comprender el escrito.'],
+    'Identificación de la obra': ['Nombra la obra y su autor, aunque falta precisar un dato de identificación.', 'Identifica la obra o el autor, pero omite el otro dato.', 'No identifica todavía la obra elegida ni su autor.'],
+    'Síntesis de acontecimientos': ['Presenta los hechos centrales en orden con una omisión menor.', 'Recupera algunos hechos, pero confunde el orden o añade opiniones como hechos.', 'No reconstruye todavía los acontecimientos principales.'],
+    'Caracterización de personajes': ['Describe personajes y relaciona la mayoría de sus acciones con el cuento.', 'Enumera personajes sin explicar sus acciones en la historia.', 'No describe todavía los personajes del cuento.'],
+    'Interpretación de valores': ['Relaciona un valor o situación social con un ejemplo del cuento.', 'Menciona un valor sin explicar cómo aparece en la historia.', 'No identifica todavía valores o situaciones sociales del cuento.'],
+    'Conclusión argumentada': ['Expresa una interpretación propia con una referencia pertinente al cuento.', 'Incluye una opinión personal sin apoyarla en el análisis.', 'No formula todavía una conclusión personal.'],
+    'Organización y revisión': ['Ordena las secciones y corrige la mayoría de los errores formales.', 'Presenta secciones desordenadas o errores que dificultan algunos pasajes.', 'No organiza ni revisa todavía el informe.'],
+  }
   const criteria = authored.map(([title, description], index) => {
     const maxScoreUnits = base + (index < totalUnits - base * authored.length ? 1 : 0)
+    const progression = readingReport ? reportProgressions[title] : undefined
     return { id: `fallback:${index}`, templateId: 'editable-fallback', title, description, maxScore: maxScoreUnits / 100, maxScoreUnits,
       sourceType: 'ACTIVITY_TEMPLATE' as const, sourceReferences: [], descriptors: levels.map(level => ({ levelId: level.id,
-        text: level.id === 'L4' ? `${description} Lo evidencia de forma completa, precisa y autónoma.` : level.id === 'L3' ? `${description} Lo evidencia en los aspectos principales.` : level.id === 'L2' ? `${description} Lo evidencia parcialmente o con imprecisiones.` : `${description} Requiere apoyo para aportar evidencia suficiente.`,
+        text: level.id === 'L4' ? description : progression ? progression[level.id === 'L3' ? 0 : level.id === 'L2' ? 1 : 2]
+          : level.id === 'L3' ? input.variation ? `${description} Cumple la mayor parte de lo solicitado; necesita precisar un detalle.` : `${description} Incluye la evidencia principal, con detalles por precisar.`
+            : level.id === 'L2' ? input.variation ? `${description} Desarrolla un aspecto reconocible, pero omite otros necesarios.` : `${description} Incluye solo parte de la evidencia o presenta errores que afectan su sentido.`
+              : input.variation ? `${description} La evidencia presentada todavía no permite comprobarlo.` : `${description} Aún no aporta evidencia suficiente de este criterio.`,
         scoreUnits: Math.round(maxScoreUnits * level.proportion) })) }
   })
   return { kind: 'RECOMMENDATION', catalogVersion: 'editable-fallback-v1', instrumentType: input.instrumentType, confidence: 'LOW', activityType: input.activityType ?? 'OTHER', evidenceTypes: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT'], participationMode: input.participationMode,

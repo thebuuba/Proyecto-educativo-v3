@@ -84,6 +84,8 @@ describe('API service security and version policy', () => {
     const result = await new EvaluationInstrumentsService().interpret(user, { sectionSubjectId: input.sectionSubjectId,
       activityTitle: 'Exposición sobre el sistema respiratorio', curriculumVersionId: input.curriculumVersionId })
     expect(result.suggestedActivityType).toBe('EXPOSITION')
+    expect(result.suggestedEvaluationTechnique).toBe('exposicion')
+    expect(result.suggestedInstrumentType).toBe('rubrica')
     expect(result.curriculumMatch).toBe('NONE')
     expect(result.curriculumCandidates).toEqual([])
     expect(mocks.sectionSubject.findFirst).toHaveBeenCalledTimes(1)
