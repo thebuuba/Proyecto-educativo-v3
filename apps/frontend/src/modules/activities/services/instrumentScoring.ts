@@ -6,7 +6,7 @@ export function validActivityScore(value: string): number | null {
   return score > 0 && score <= 10000 ? score : null
 }
 
-function distributeUnits(total: number, weights: number[]): number[] {
+export function distributeUnits(total: number, weights: number[]): number[] {
   const safe = weights.map(value => Number.isFinite(value) && value > 0 ? value : 0)
   const sum = safe.reduce((value, weight) => value + weight, 0)
   const basis = sum > 0 ? safe : safe.map(() => 1)

@@ -1,4 +1,4 @@
-import { ArrayMaxSize, IsArray, IsIn, IsNumber, IsOptional, IsString, IsUUID, Max, MaxLength, Min, MinLength } from 'class-validator'
+import { ArrayMaxSize, IsArray, IsBoolean, IsIn, IsNumber, IsOptional, IsString, IsUUID, Max, MaxLength, Min, MinLength } from 'class-validator'
 import { evaluationCatalogV1 } from './catalog-v1'
 
 export class RecommendInstrumentDto {
@@ -11,6 +11,7 @@ export class RecommendInstrumentDto {
   @IsOptional() @IsIn(['b1', 'b2', 'b3', 'b4']) competencyBlock?: string
   @IsOptional() @IsIn([4, 5]) levelCount?: 4 | 5
   @IsOptional() @IsIn(['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']) preferredInstrumentType?: 'rubrica' | 'lista-cotejo' | 'escala' | 'lista-ponderada'
+  @IsOptional() @IsBoolean() includeAdditionalCandidates?: boolean
   // Imported curriculum elements use deterministic UUID v5 identifiers.
   @IsOptional() @IsArray() @ArrayMaxSize(12) @IsUUID('all', { each: true }) selectedCurriculumElementIds?: string[]
   /** Explicit DRAFT selection permitted for development; omission selects PUBLISHED only. */

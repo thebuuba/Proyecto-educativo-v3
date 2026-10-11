@@ -18,7 +18,7 @@ export function interpretActivity(input: { sectionSubjectId: string; activityTit
   return api.post<ActivityInterpretation>('/evaluation-instruments/interpret', input, { signal })
 }
 
-export function prepareInstrument(input: { sectionSubjectId: string; activityTitle: string; description?: string; participationMode: 'INDIVIDUAL' | 'GROUP'; pedagogicalActivityType?: string; maxScore: number; competencyBlock?: string; curriculumVersionId?: string; preferredInstrumentType?: string; selectedCurriculumElementIds?: string[] }) {
+export function prepareInstrument(input: { sectionSubjectId: string; activityTitle: string; description?: string; participationMode: 'INDIVIDUAL' | 'GROUP'; pedagogicalActivityType?: string; maxScore: number; competencyBlock?: string; curriculumVersionId?: string; preferredInstrumentType?: string; selectedCurriculumElementIds?: string[]; includeAdditionalCandidates?: boolean; levelCount?: 4 | 5 }) {
   return api.post<InstrumentRecommendation>('/evaluation-instruments/recommend', input)
 }
 

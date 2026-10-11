@@ -157,6 +157,7 @@ import { ApiError } from '@/services/apiClient'
 import { detectSecondaryLanguageActivity, firstSecondaryLanguageTechnique, secondaryEvaluationProfile, type EvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { alignRecommendationWithFields, editableFallbackRecommendation, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 import { rememberManualLevelWeights, rememberManualScoreWeights, scoreInstrumentFields, scoreRecommendation, validActivityScore } from '@/modules/activities/services/instrumentScoring'
+import { appendInstrumentCriterion, nextCatalogCriterion } from '@/modules/activities/services/instrumentCriterionAddition'
 import { activityDefaultSuggestions } from '@/modules/activities/utils/activityDefaultSuggestions'
 
 type GradingBookProps = {
@@ -3872,6 +3873,13 @@ function ActivityCreationView(props: {
   onChangeDraftRef.current = onChangeDraft
   const [interpretation, setInterpretation] = useState<ActivityInterpretation | null>(null)
   const [preparing, setPreparing] = useState(false)
+  const [regenerated, setRegenerated] = useState(false)
+  const preparingRequest = useRef(false)
+  const preparationSequence = useRef(0)
+  const [addingCriterion, setAddingCriterion] = useState(false)
+  const addingRequest = useRef(false)
+  const pendingCriterionAddition = useRef<{ criterion: InstrumentRecommendation['criteria'][number] | null; onAdded: () => void } | null>(null)
+  const [confirmCriterionRedistribution, setConfirmCriterionRedistribution] = useState(false)
   const [preparationError, setPreparationError] = useState('')
   const [failedInstrumentType, setFailedInstrumentType] = useState('')
   const [pendingInstrumentType, setPendingInstrumentType] = useState('')
@@ -3949,15 +3957,19 @@ function ActivityCreationView(props: {
   }, [sectionSubjectId, activityDraft.name, activityDraft.description, manualPedagogicalType, block.id, editingActivityId, firstSecondaryLanguage, secondSecondaryLanguage, autoDetectionRevision])
 
   async function prepare(preferredType?: string, replaceManual = false, forceAutomatic = false, newGeneration = false) {
+    if (preparingRequest.current) return
     if (!sectionSubjectId) {
       setPreparationError('No se pudo identificar la asignatura. Vuelve a seleccionarla e inténtalo de nuevo.')
       return
     }
     if (!validatePreparation()) return
     const requestedFingerprint = preparationFingerprint(activityDraft)
+    const requestedFields = JSON.stringify([activityDraft.maxScore, activityDraft.instrumentFields])
+    const requestSequence = ++preparationSequence.current
     // The service currently requires a score for its internal calculation. Pending
     // scores are removed from the proposal and fields before they enter the draft.
     const preparationScore = committedScore.current ?? 20
+    preparingRequest.current = true
     setPreparing(true); setPreparationError('')
     try {
       const proposal = await prepareInstrument({ sectionSubjectId, activityTitle: activityDraft.name,
@@ -3966,16 +3978,21 @@ function ActivityCreationView(props: {
         pedagogicalActivityType: activityDraft.autoDetectedPedagogicalActivityType ? undefined : activityDraft.pedagogicalActivityType || undefined,
         maxScore: preparationScore, competencyBlock: block.id,
         curriculumVersionId: interpretation?.curriculumVersionId ?? undefined,
-        preferredInstrumentType: forceAutomatic ? undefined : preferredType ?? (activityDraft.autoSelectedInstrumentType ? undefined : activityDraft.instrumentType || undefined),
+        preferredInstrumentType: forceAutomatic ? undefined : preferredType ?? (newGeneration ? activityDraft.instrumentType || undefined : activityDraft.autoSelectedInstrumentType ? undefined : activityDraft.instrumentType || undefined),
         selectedCurriculumElementIds: activityDraft.selectedCurriculumElementIds?.length ? activityDraft.selectedCurriculumElementIds : undefined })
-      if (preparationFingerprint(latestDraft.current) !== requestedFingerprint || (latestDraft.current.manualInstrumentBlank && !newGeneration)
+      if (!proposal.criteria?.length || !proposal.criteria.every(item => item.title.trim() && item.description.trim())
+        || proposal.instrumentType !== (forceAutomatic ? proposal.instrumentType : preferredType ?? activityDraft.instrumentType)
+        || proposal.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0) !== proposal.totalScoreUnits
+        || !Number.isInteger(proposal.totalScoreUnits) || proposal.totalScoreUnits <= 0) {
+        throw new Error('El servicio no devolvió un instrumento válido. Tus cambios se conservaron; puedes intentar de nuevo.')
+      }
+      if (requestSequence !== preparationSequence.current || preparationFingerprint(latestDraft.current) !== requestedFingerprint
+        || JSON.stringify([latestDraft.current.maxScore, latestDraft.current.instrumentFields]) !== requestedFields
+        || (latestDraft.current.manualInstrumentBlank && !newGeneration)
         || (latestDraft.current.preparedManuallyEdited && !replaceManual)) return
       const current = latestDraft.current
       const generation = newGeneration ? (current.instrumentGeneration || 0) + 1 : current.instrumentGeneration || 0
-      const selectedProposal = newGeneration ? editableFallbackRecommendation({ activityTitle: current.name,
-        description: activityDescriptionText(current.description), maxScore: preparationScore, instrumentType: proposal.instrumentType,
-        participationMode: current.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL', activityType: current.pedagogicalActivityType,
-        variation: generation % 2, secondaryLanguageGrade: contextualLanguageGrade || undefined }) : proposal
+      const selectedProposal = proposal
       const assignedScore = committedScore.current
       const preparedFields = scoreInstrumentFields(recommendationToFields(selectedProposal, current.name), selectedProposal.instrumentType, assignedScore, selectedProposal)
       const preparedProposal = scoreRecommendation(selectedProposal, preparedFields, assignedScore)
@@ -3985,19 +4002,26 @@ function ActivityCreationView(props: {
         autoDetectedPedagogicalActivityType: preferredType ? current.autoDetectedPedagogicalActivityType : current.autoDetectedPedagogicalActivityType || !current.pedagogicalActivityType,
         instrumentFields: preparedFields, instrumentCompleted: true,
         preparedRecommendation: preparedProposal, preparedManuallyEdited: false, manualInstrumentBlank: false, instrumentGeneration: generation }
-      onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
+      const prepared = { ...next, preparedFingerprint: preparationFingerprint(next) }
+      latestDraft.current = prepared
+      onChangeDraft(prepared)
+      if (newGeneration) {
+        setRegenerated(true)
+        window.setTimeout(() => setRegenerated(false), 1800)
+      }
       setFailedInstrumentType('')
     } catch (error) {
-      if (preparationFingerprint(latestDraft.current) !== requestedFingerprint) return
+      if (requestSequence !== preparationSequence.current || preparationFingerprint(latestDraft.current) !== requestedFingerprint
+        || JSON.stringify([latestDraft.current.maxScore, latestDraft.current.instrumentFields]) !== requestedFields) return
       const requestedType = preferredType ?? (activityDraft.instrumentType || 'rubrica')
-      if (!(error instanceof ApiError && error.status >= 400 && error.status < 500) && (!activityDraft.preparedManuallyEdited || replaceManual)) {
+      if (!newGeneration && !(error instanceof ApiError && error.status >= 400 && error.status < 500) && (!activityDraft.preparedManuallyEdited || replaceManual)) {
         useEditableTemplate(requestedType, newGeneration, Boolean(preferredType))
       } else {
         setFailedInstrumentType(requestedType)
         setPreparationError(error instanceof ApiError && error.status < 500
           ? error.message : 'No se pudo actualizar el instrumento. Tus cambios se conservaron; puedes intentar de nuevo.')
       }
-    } finally { setPreparing(false) }
+    } finally { preparingRequest.current = false; setPreparing(false) }
   }
 
   useEffect(() => {
@@ -4022,11 +4046,58 @@ function ActivityCreationView(props: {
   }
 
   function requestRegeneration(preferredType?: string) {
+    if (preparingRequest.current) return
     if (activityDraft.preparedManuallyEdited) {
       setPendingInstrumentType('__regenerate__')
       return
     }
     void prepare(preferredType, false, false, true)
+  }
+
+  function applyAddedCriterion(criterion: InstrumentRecommendation['criteria'][number] | null, onAdded: () => void) {
+    const current = latestDraft.current
+    const type = current.instrumentType as InstrumentRecommendation['instrumentType']
+    const result = appendInstrumentCriterion(current.instrumentFields, type, validActivityScore(current.maxScore), current.preparedRecommendation, criterion)
+    const next = { ...current, instrumentFields: result.fields, preparedRecommendation: result.recommendation,
+      preparedManuallyEdited: true, instrumentCompleted: Boolean(criterion) && current.instrumentCompleted }
+    latestDraft.current = next
+    onChangeDraft(next)
+    onAdded()
+  }
+
+  async function requestAdditionalCriterion(onAdded: () => void) {
+    if (addingRequest.current || !activityDraft.instrumentType) return
+    addingRequest.current = true
+    setAddingCriterion(true)
+    const current = latestDraft.current
+    const signature = `${preparationFingerprint(current)}:${JSON.stringify([current.maxScore, current.instrumentFields])}`
+    const type = current.instrumentType as InstrumentRecommendation['instrumentType']
+    let candidates: InstrumentRecommendation['criteria'] = []
+    try {
+      if (current.preparedRecommendation?.catalogVersion === 'editable-fallback-v1') throw new Error('Usar plantilla local')
+      const proposal = await prepareInstrument({ sectionSubjectId: sectionSubjectId!, activityTitle: current.name,
+        description: activityDescriptionText(current.description), participationMode: current.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
+        pedagogicalActivityType: current.pedagogicalActivityType || undefined, maxScore: 100, competencyBlock: block.id,
+        curriculumVersionId: interpretation?.curriculumVersionId ?? undefined, preferredInstrumentType: type,
+        selectedCurriculumElementIds: current.selectedCurriculumElementIds?.length ? current.selectedCurriculumElementIds : undefined,
+        includeAdditionalCandidates: true, levelCount: Number(current.instrumentFields[`${type}:meta:levelCount`]) === 5 ? 5 : 4 })
+      candidates = proposal.criteria
+    } catch (error) {
+      if (error instanceof ApiError && error.status >= 400 && error.status < 500) {
+        setPreparationError(error.message)
+        return
+      }
+      const base = { activityTitle: current.name, description: activityDescriptionText(current.description), maxScore: 100,
+        instrumentType: type, participationMode: current.activityType === 'group' ? 'GROUP' as const : 'INDIVIDUAL' as const,
+        activityType: current.pedagogicalActivityType, secondaryLanguageGrade: contextualLanguageGrade as 1 | 2 | null || undefined }
+      candidates = [0, 1].flatMap(variation => editableFallbackRecommendation({ ...base, variation }).criteria)
+    } finally { addingRequest.current = false; setAddingCriterion(false) }
+    if (`${preparationFingerprint(latestDraft.current)}:${JSON.stringify([latestDraft.current.maxScore, latestDraft.current.instrumentFields])}` !== signature) return
+    const criterion = nextCatalogCriterion(candidates, current.instrumentFields, type, current.preparedRecommendation?.criteria)
+    if (criterion && validActivityScore(current.maxScore) !== null && current.instrumentFields[`${type}:meta:manualPoints`] === 'true') {
+      pendingCriterionAddition.current = { criterion, onAdded }
+      setConfirmCriterionRedistribution(true)
+    } else applyAddedCriterion(criterion, onAdded)
   }
 
   function useEditableTemplate(preferredType?: string, newGeneration = false, manualInstrumentSelection = false) {
@@ -4094,15 +4165,23 @@ function ActivityCreationView(props: {
     })
   }
 
-  function commitActivityScore(value: string) {
+  function updateActivityScore(value: string) {
     const score = validActivityScore(value)
-    if (value.trim() && score === null) return
-    committedScore.current = score
     const current = latestDraft.current
+    if (score === committedScore.current && (score !== null || !current.instrumentType
+      || current.instrumentFields[`${current.instrumentType}:meta:scorePending`] === 'true')) {
+      const next = { ...current, maxScore: value }
+      latestDraft.current = next
+      onChangeDraft(next)
+      return
+    }
+    committedScore.current = score
     const fields = scoreInstrumentFields(current.instrumentFields, current.instrumentType, score, current.preparedRecommendation)
-    onChangeDraft({ ...current, maxScore: value, instrumentFields: fields,
+    const next = { ...current, maxScore: value, instrumentFields: fields,
       preparedRecommendation: current.preparedRecommendation
-        ? scoreRecommendation(current.preparedRecommendation, fields, score) : undefined })
+        ? scoreRecommendation(current.preparedRecommendation, fields, score) : undefined }
+    latestDraft.current = next
+    onChangeDraft(next)
   }
 
   function goToIssue(issue: ActivityCompletionIssue) {
@@ -4168,17 +4247,17 @@ function ActivityCreationView(props: {
           </div>
 
           {requiredFieldError ? <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">{requiredFieldError}</div> : null}
-          <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} onScoreCommit={commitActivityScore} onInstrumentTypeChange={requestInstrumentChange} interpretation={interpretation} requiredFieldError={requiredFieldError} firstSecondaryLanguage={firstSecondaryLanguage} secondSecondaryLanguage={secondSecondaryLanguage} />
+          <ActivityDataSections activityDraft={activityDraft} teams={teams} accent={accent} highlightTarget={highlightTarget} onChangeDraft={handleDraftChange} onScoreChange={updateActivityScore} onInstrumentTypeChange={requestInstrumentChange} interpretation={interpretation} requiredFieldError={requiredFieldError} firstSecondaryLanguage={firstSecondaryLanguage} secondSecondaryLanguage={secondSecondaryLanguage} />
           {savedSnapshot ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">Este instrumento ya tiene una versión guardada. Para cambiar su estructura, duplica la actividad y prepara uno nuevo.</div> : null}
 
           <div data-activity-required="instrumentBody" className="space-y-3">
               <h3 className="text-lg font-black text-foreground">6. Instrumento completo · {instrumentLabel}</h3>
-              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground"><p>{preparationError}</p><div className="mt-3 flex flex-wrap gap-2"><Button type="button" size="sm" variant="outline" onClick={() => activityDraft.preparedManuallyEdited ? setPendingInstrumentType('__fallback__') : useEditableTemplate(undefined, true)}>Generar nuevo instrumento</Button><Button type="button" size="sm" variant="ghost" onClick={createInstrumentFromScratch}>Crear desde cero</Button></div></div> : null}
-              {!preparationError && !savedSnapshot && (activityDraft.preparedRecommendation || activityDraft.manualInstrumentBlank) ? <div className="flex flex-wrap gap-2"><Button type="button" variant="outline" onClick={() => requestRegeneration()} disabled={preparing}>Generar nuevo instrumento</Button>{!activityDraft.manualInstrumentBlank ? <Button type="button" variant="ghost" onClick={createInstrumentFromScratch}>Crear desde cero</Button> : null}</div> : null}
+              {preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground"><p>{preparationError}</p><div className="mt-3 flex flex-wrap gap-2"><Button type="button" size="sm" variant="outline" onClick={() => requestRegeneration()} disabled={preparing}>{preparing ? 'Preparando…' : 'Generar nuevo instrumento'}</Button><Button type="button" size="sm" variant="ghost" onClick={createInstrumentFromScratch}>Crear desde cero</Button></div></div> : null}
+              {!preparationError && !savedSnapshot && (activityDraft.preparedRecommendation || activityDraft.manualInstrumentBlank || activityDraft.preparedManuallyEdited) ? <div className="flex flex-wrap gap-2"><Button type="button" variant="outline" onClick={() => requestRegeneration()} disabled={preparing}>{preparing ? 'Preparando…' : regenerated ? 'Instrumento preparado' : 'Generar nuevo instrumento'}</Button>{!activityDraft.manualInstrumentBlank ? <Button type="button" variant="ghost" onClick={createInstrumentFromScratch}>Crear desde cero</Button> : null}</div> : null}
               {stale && !preparationError ? <div role="alert" className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">La actividad cambió. Actualiza el instrumento antes de guardar. {activityDraft.preparedManuallyEdited ? 'Se reemplazarán tus cambios manuales solo si lo confirmas.' : null} <Button type="button" size="sm" variant="outline" onClick={() => requestRegeneration()} disabled={preparing}>Regenerar</Button></div> : null}
-              {(!preparationError || activityDraft.preparedRecommendation) && (!activityDraft.autoSelectedInstrumentType || activityDraft.preparedRecommendation) ? <div>
+              {(!preparationError || activityDraft.preparedRecommendation || activityDraft.manualInstrumentBlank) && (!activityDraft.autoSelectedInstrumentType || activityDraft.preparedRecommendation) ? <div>
               <InstrumentPreview
-                key={`${activityDraft.instrumentType}:${activityDraft.manualInstrumentBlank ? 'blank' : 'prepared'}`}
+                key={`${activityDraft.instrumentType}:${activityDraft.manualInstrumentBlank ? 'blank' : 'prepared'}:${activityDraft.instrumentFields[`${activityDraft.instrumentType}:meta:criteriaCount`] || ''}`}
                 accent={accent}
                 activityName={activityDraft.name}
                 block={block}
@@ -4188,15 +4267,20 @@ function ActivityCreationView(props: {
                 instrumentType={activityDraft.instrumentType}
                 maxScore={activityDraft.instrumentFields[`${activityDraft.instrumentType}:meta:scorePending`] === 'true' ? 0 : committedScore.current ?? 0}
                 skipDefaults={activityDraft.manualInstrumentBlank}
+                addingCriterion={addingCriterion}
+                onAddCriterion={requestAdditionalCriterion}
                 onCompletedChange={(instrumentCompleted) => handleDraftChange({ ...activityDraft, instrumentCompleted })}
                 onFieldsChange={(instrumentFields, automatic) => {
                   const pointChanged = Object.keys(instrumentFields).some(key => key.startsWith(`${activityDraft.instrumentType}:points:`)
                     && instrumentFields[key] !== activityDraft.instrumentFields[key])
                   const levelChanged = Object.keys(instrumentFields).some(key => key.startsWith(`${activityDraft.instrumentType}:level-points:`)
                     && instrumentFields[key] !== activityDraft.instrumentFields[key])
+                  const weightChanged = Object.keys(instrumentFields).some(key => key.startsWith(`${activityDraft.instrumentType}:weight:`)
+                    && instrumentFields[key] !== activityDraft.instrumentFields[key])
                   const nextFields = !automatic && pointChanged ? rememberManualScoreWeights(instrumentFields, activityDraft.instrumentType) : instrumentFields
                   const weightedFields = !automatic && levelChanged ? rememberManualLevelWeights(nextFields, activityDraft.instrumentType) : nextFields
-                  handleDraftChange({ ...activityDraft, preparedManuallyEdited: automatic ? activityDraft.preparedManuallyEdited : true, instrumentFields: weightedFields })
+                  handleDraftChange({ ...activityDraft, preparedManuallyEdited: automatic ? activityDraft.preparedManuallyEdited : true,
+                    instrumentFields: !automatic && (pointChanged || weightChanged) ? { ...weightedFields, [`${activityDraft.instrumentType}:meta:manualPoints`]: 'true' } : weightedFields })
                 }}
               /></div> : null}
           </div>
@@ -4244,6 +4328,7 @@ function ActivityCreationView(props: {
         />
       ) : null}
       {pendingInstrumentType ? <ConfirmDialog title="¿Reemplazar el instrumento editado?" description="Volver a preparar el instrumento reemplazará tus criterios, indicadores y cambios manuales actuales." confirmLabel="Cambiar instrumento" cancelLabel="Conservar cambios" onClose={() => setPendingInstrumentType('')} onConfirm={async () => { const nextType = pendingInstrumentType; setPendingInstrumentType(''); if (nextType === '__fallback__') { useEditableTemplate(undefined, true); return } await prepare(nextType === '__auto__' || nextType === '__regenerate__' || (nextType === activityDraft.instrumentType && activityDraft.autoSelectedInstrumentType) ? undefined : nextType, true, nextType === '__auto__', nextType === '__regenerate__') }} /> : null}
+      {confirmCriterionRedistribution ? <ConfirmDialog title="¿Redistribuir los puntos editados?" description="Para incorporar el criterio se ajustarán proporcionalmente los puntos manuales actuales y se conservará el total de la actividad." confirmLabel="Redistribuir y añadir" cancelLabel="Conservar cambios" onClose={() => { pendingCriterionAddition.current = null; setConfirmCriterionRedistribution(false) }} onConfirm={() => { const pending = pendingCriterionAddition.current; pendingCriterionAddition.current = null; setConfirmCriterionRedistribution(false); if (pending) applyAddedCriterion(pending.criterion, pending.onAdded) }} /> : null}
     </section>
   )
 }
@@ -4352,13 +4437,13 @@ function availablePedagogicalActivityType(id: string, firstSecondaryLanguage: bo
     : !/^(?:NEWS|TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(id))
 }
 
-function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, onScoreCommit, onInstrumentTypeChange, interpretation, requiredFieldError, firstSecondaryLanguage, secondSecondaryLanguage }: {
+function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, onChangeDraft, onScoreChange, onInstrumentTypeChange, interpretation, requiredFieldError, firstSecondaryLanguage, secondSecondaryLanguage }: {
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
   highlightTarget: ActivityCompletionTarget | null
   onChangeDraft: (draft: ActivityDraft) => void
-  onScoreCommit: (value: string) => void
+  onScoreChange: (value: string) => void
   onInstrumentTypeChange?: (instrumentType: string) => void
   interpretation: ActivityInterpretation | null
   requiredFieldError: string
@@ -4396,7 +4481,7 @@ function ActivityDataSections({ activityDraft, teams, accent, highlightTarget, o
         <div className="grid gap-3 md:grid-cols-2">
           <label data-activity-required="evaluationTechnique" className={cn('space-y-1.5 text-sm font-bold', highlight('evaluationTechnique'))}>Técnica de evaluación <span className="text-destructive">*</span><Select className="h-11" value={activityDraft.evaluationTechnique} onChange={(event) => onChangeDraft({ ...activityDraft, evaluationTechnique: event.target.value, autoSelectedEvaluationTechnique: event.target.value === '' })}><option value="">Seleccionar automáticamente</option>{evaluationTechniqueOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</Select></label>
           <label data-activity-required="instrumentType" className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}>Tipo de instrumento<Select className="h-11" value={activityDraft.instrumentType} onChange={(event) => onInstrumentTypeChange?.(event.target.value)}><option value="">Seleccionar automáticamente</option><option value="rubrica">Rúbrica</option><option value="lista-cotejo">Lista de cotejo</option><option value="escala">Escala estimativa</option><option value="lista-ponderada">Lista ponderada</option></Select></label>
-          <label data-activity-required="maxScore" className={cn('space-y-1.5 text-sm font-bold', highlight('maxScore'))}>Valor en puntos <span className="text-destructive">*</span><div className="relative"><Input aria-invalid={requiredFieldError.startsWith('Indica el valor')} className="h-11 pr-12 font-black" type="number" min="0.01" max="10000" step="0.01" value={activityDraft.maxScore} onChange={(event) => { const value = event.target.value; onChangeDraft({ ...activityDraft, maxScore: value }); if (!value) onScoreCommit(value) }} onBlur={(event) => onScoreCommit(event.currentTarget.value)} /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-muted-foreground">pts</span></div>{requiredFieldError.startsWith('Indica el valor') ? <span className="text-xs text-destructive">{requiredFieldError}</span> : null}</label>
+          <label data-activity-required="maxScore" className={cn('space-y-1.5 text-sm font-bold', highlight('maxScore'))}>Valor en puntos <span className="text-destructive">*</span><div className="relative"><Input aria-invalid={requiredFieldError.startsWith('Indica el valor')} className="h-11 pr-12 font-black" type="text" inputMode="decimal" value={activityDraft.maxScore} onChange={(event) => onScoreChange(event.target.value)} /><span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-muted-foreground">pts</span></div>{requiredFieldError.startsWith('Indica el valor') ? <span className="text-xs text-destructive">{requiredFieldError}</span> : null}</label>
         </div>
         {interpretation?.curriculumCandidates.length ? <div className="mt-3 space-y-1"><p className="text-xs font-semibold">Contenidos para revisar:</p>{interpretation.curriculumCandidates.slice(0, 3).map(candidate => <label key={candidate.elementId} className="flex items-start gap-2 text-xs"><input type="checkbox" className="mt-0.5" checked={activityDraft.selectedCurriculumElementIds?.includes(candidate.elementId) ?? false} onChange={event => onChangeDraft({ ...activityDraft, selectedCurriculumElementIds: event.target.checked ? [...(activityDraft.selectedCurriculumElementIds ?? []), candidate.elementId] : (activityDraft.selectedCurriculumElementIds ?? []).filter(id => id !== candidate.elementId) })} /><span>{candidate.text}</span></label>)}</div> : null}
       </CreationFormSection>
@@ -4803,6 +4888,7 @@ function distributeScore(maxScore: number, count: number) {
 
 function InstrumentPreview({
   accent,
+  addingCriterion = false,
   activityName,
   block,
   completed,
@@ -4810,11 +4896,13 @@ function InstrumentPreview({
   highlight,
   instrumentType,
   maxScore,
+  onAddCriterion,
   skipDefaults = false,
   onCompletedChange,
   onFieldsChange,
 }: {
   accent: (typeof blockAccents)[number]
+  addingCriterion?: boolean
   activityName: string
   block: (typeof competencyBlocks)[number]
   completed: boolean
@@ -4822,6 +4910,7 @@ function InstrumentPreview({
   highlight?: boolean
   instrumentType: string
   maxScore: number
+  onAddCriterion?: (onAdded: () => void) => void
   skipDefaults?: boolean
   onCompletedChange: (completed: boolean) => void
   onFieldsChange: (fields: Record<string, string>, automatic?: boolean) => void
@@ -4837,6 +4926,15 @@ function InstrumentPreview({
   const [weightedCriteria, setWeightedCriteria] = useState(() => Number(fields['lista-ponderada:meta:criteriaCount']) || inferInstrumentCount(fields, 'lista-ponderada', 'criterion', 5))
   const [weightedHasPartial, setWeightedHasPartial] = useState(() => fields['lista-ponderada:meta:partial'] !== 'false')
   const [showInstrumentPreview, setShowInstrumentPreview] = useState(false)
+  const addCriterion = (onAdded: () => void) => {
+    if (onAddCriterion) onAddCriterion(onAdded)
+    else {
+      const next = appendInstrumentCriterion(fields, instrumentType as InstrumentRecommendation['instrumentType'],
+        maxScore > 0 ? maxScore : null, undefined, null)
+      onFieldsChange(next.fields)
+      onAdded()
+    }
+  }
   const editorRef = useRef<HTMLElement>(null)
   const isComplete = isInstrumentComplete({
     checklistCriteria,
@@ -4946,12 +5044,14 @@ function InstrumentPreview({
       <div className={cn('p-4', instrumentTypographyClass(instrumentType, fields))}>
         {instrumentType === 'rubrica' ? (
           <RubricInstrument
+            addingCriterion={addingCriterion}
             criteriaCount={rubricCriteria}
             fields={fields}
             levelCount={rubricLevels}
             maxScore={maxScore}
             accent={accent}
             onFieldChange={updateField}
+            onAddCriterion={() => addCriterion(() => setRubricCriteria(value => value + 1))}
             onCriteriaCountChange={setRubricCriteria}
             onFieldsChange={onFieldsChange}
             onLevelCountChange={setRubricLevels}
@@ -4960,6 +5060,7 @@ function InstrumentPreview({
         ) : null}
         {instrumentType === 'escala' ? (
           <ScaleInstrument
+            addingCriterion={addingCriterion}
             criteriaCount={scaleCriteria}
             fields={fields}
             levelCount={scaleLevels}
@@ -4967,6 +5068,7 @@ function InstrumentPreview({
             accent={accent}
             onFieldsChange={onFieldsChange}
             onFieldChange={updateField}
+            onAddCriterion={() => addCriterion(() => setScaleCriteria(value => value + 1))}
             onCriteriaCountChange={setScaleCriteria}
             onLevelCountChange={setScaleLevels}
             typographyControls={typographyControls}
@@ -4974,18 +5076,21 @@ function InstrumentPreview({
         ) : null}
         {instrumentType === 'lista-cotejo' ? (
           <ChecklistInstrument
+            addingCriterion={addingCriterion}
             criteriaCount={checklistCriteria}
             fields={fields}
             maxScore={maxScore}
             accent={accent}
             onFieldsChange={onFieldsChange}
             onFieldChange={updateField}
+            onAddCriterion={() => addCriterion(() => setChecklistCriteria(value => value + 1))}
             onCriteriaCountChange={setChecklistCriteria}
             typographyControls={typographyControls}
           />
         ) : null}
         {instrumentType === 'lista-ponderada' ? (
           <WeightedListInstrument
+            addingCriterion={addingCriterion}
             criteriaCount={weightedCriteria}
             fields={fields}
             hasPartial={weightedHasPartial}
@@ -4993,6 +5098,7 @@ function InstrumentPreview({
             accent={accent}
             onFieldsChange={onFieldsChange}
             onFieldChange={updateField}
+            onAddCriterion={() => addCriterion(() => setWeightedCriteria(value => value + 1))}
             onCriteriaCountChange={setWeightedCriteria}
             onHasPartialChange={setWeightedHasPartial}
             typographyControls={typographyControls}
@@ -5535,22 +5641,26 @@ function RubricLevelSettingsDrawer({
 
 function RubricInstrument({
   accent,
+  addingCriterion,
   criteriaCount,
   fields,
   levelCount,
   maxScore,
   onFieldChange,
+  onAddCriterion,
   onCriteriaCountChange,
   onFieldsChange,
   onLevelCountChange,
   typographyControls,
 }: {
   accent: (typeof blockAccents)[number]
+  addingCriterion: boolean
   criteriaCount: number
   fields: Record<string, string>
   levelCount: number
   maxScore: number
   onFieldChange: (key: string, value: string) => void
+  onAddCriterion: () => void
   onCriteriaCountChange: (value: number) => void
   onFieldsChange: (fields: Record<string, string>) => void
   onLevelCountChange: (value: number) => void
@@ -5575,20 +5685,6 @@ function RubricInstrument({
   const criterionPoints = Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('rubrica', 'points', index)] || 0))
   const total = Number(criterionPoints.reduce((sum, points) => sum + (Number.isFinite(points) ? points : 0), 0).toFixed(2))
   const scoreMatches = Math.abs(total - maxScore) < 0.001
-
-  function resizeCriteria(nextCount: number) {
-    const next: Record<string, string> = { ...fields, 'rubrica:meta:criteriaCount': String(nextCount) }
-    distributeScore(maxScore, nextCount).forEach((points, index) => { next[instrumentFieldKey('rubrica', 'points', index)] = scorePending ? '' : String(points) })
-    if (nextCount < criteriaCount) {
-      Object.keys(next).forEach((key) => {
-        const match = key.match(/^rubrica:(criterion|descriptor|points):(\d+)/)
-        if (match && Number(match[2]) >= nextCount) delete next[key]
-      })
-    }
-    onFieldsChange(next)
-    onCriteriaCountChange(nextCount)
-    if (nextCount > criteriaCount) focusNewInstrumentRow('rubrica', nextCount - 1, setHighlightedRow)
-  }
 
   function removeCriterion(indexToRemove: number) {
     if (criteriaCount <= 1) return
@@ -5726,7 +5822,7 @@ function RubricInstrument({
         <div className="instrument-structure-controls flex flex-wrap items-center gap-2">
           {typographyControls}
           <Button type="button" size="sm" variant="outline" onClick={openLevelEditor}><Settings className="size-4" />Configurar niveles</Button>
-          <Button type="button" size="sm" className={accent.button} onClick={() => resizeCriteria(Math.min(12, criteriaCount + 1))} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button>
+          <Button type="button" size="sm" className={accent.button} onClick={onAddCriterion} disabled={criteriaCount >= 12 || addingCriterion}><Plus className="size-4" />{addingCriterion ? 'Añadiendo…' : 'Agregar criterio'}</Button>
         </div>
       </div>
 
@@ -5988,22 +6084,26 @@ function ScaleSettingsDrawer({
 
 function ScaleInstrument({
   accent,
+  addingCriterion,
   criteriaCount,
   fields,
   levelCount,
   maxScore,
   onFieldChange,
+  onAddCriterion,
   onCriteriaCountChange,
   onFieldsChange,
   onLevelCountChange,
   typographyControls,
 }: {
   accent: (typeof blockAccents)[number]
+  addingCriterion: boolean
   criteriaCount: number
   fields: Record<string, string>
   levelCount: number
   maxScore: number
   onFieldChange: (key: string, value: string) => void
+  onAddCriterion: () => void
   onCriteriaCountChange: (value: number) => void
   onFieldsChange: (fields: Record<string, string>) => void
   onLevelCountChange: (value: number) => void
@@ -6020,18 +6120,7 @@ function ScaleInstrument({
   const [noApply, setNoApply] = useState(fields['escala:meta:noApply'] === 'true')
   const [indicatorPoints, setIndicatorPoints] = useState<string[]>(() => Array.from({ length: criteriaCount }, (_, index) => fields[instrumentFieldKey('escala', 'points', index)] || '0'))
   const [pendingDelete, setPendingDelete] = useState<number | null>(null)
-  const [highlightedRow, setHighlightedRow] = useState<number | null>(null)
-
-  function addIndicator() {
-    if (criteriaCount >= 12) return
-    const nextCount = criteriaCount + 1
-    const next: Record<string,string> = {...fields,'escala:meta:criteriaCount':String(nextCount)}
-    if (fields['escala:meta:pointsMode'] === 'manual' || scorePending) next[instrumentFieldKey('escala', 'points', criteriaCount)] = ''
-    else distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('escala','points',row)]=String(points)})
-    onFieldsChange(next)
-    onCriteriaCountChange(nextCount)
-    focusNewInstrumentRow('escala', criteriaCount, setHighlightedRow)
-  }
+  const [highlightedRow] = useState<number | null>(null)
 
   function removeIndicator(index: number) {
     const nextCount = criteriaCount - 1
@@ -6076,7 +6165,7 @@ function ScaleInstrument({
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Indicadores y niveles de la escala</p><p className="text-xs text-muted-foreground">Evalúa el grado, frecuencia o nivel de desempeño alcanzado en cada indicador.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar escala</Button><Button type="button" size="sm" className={accent.button} onClick={addIndicator} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar indicador</Button></div></div>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Indicadores y niveles de la escala</p><p className="text-xs text-muted-foreground">Evalúa el grado, frecuencia o nivel de desempeño alcanzado en cada indicador.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar escala</Button><Button type="button" size="sm" className={accent.button} onClick={onAddCriterion} disabled={criteriaCount >= 12 || addingCriterion}><Plus className="size-4" />{addingCriterion ? 'Añadiendo…' : 'Agregar indicador'}</Button></div></div>
       {configuring ? <ScaleSettingsDrawer accent={accent} criteriaCount={criteriaCount} fields={fields} indicatorPoints={indicatorPoints} levelDrafts={levelDrafts} maxScore={maxScore} noApply={noApply} onAddLevel={() => { setTemplate('personalizada'); setLevelDrafts((current) => [...current, { id: `new-${Date.now()}`, name: `Nivel ${current.length + 1}`, points: Math.max(0, current.length ? current[current.length - 1].points - 1 : 1) }]) }} onApply={applyConfiguration} onClose={() => setConfiguring(false)} onIndicatorPointsChange={setIndicatorPoints} onLevelsChange={(value) => { setTemplate('personalizada'); setLevelDrafts(value) }} onNoApplyChange={setNoApply} onPointModeChange={setPointMode} onTemplateSelect={selectScaleTemplate} pointMode={pointMode} template={template} /> : null}
       <InstrumentTable>
         <thead className="sticky top-0 z-20 text-[10px] font-bold uppercase">
@@ -6133,19 +6222,23 @@ function checklistLabelMode(positive: string, negative: string): ChecklistLabelM
 
 function ChecklistInstrument({
   accent,
+  addingCriterion,
   criteriaCount,
   fields,
   maxScore,
   onFieldChange,
+  onAddCriterion,
   onCriteriaCountChange,
   onFieldsChange,
   typographyControls,
 }: {
   accent: (typeof blockAccents)[number]
+  addingCriterion: boolean
   criteriaCount: number
   fields: Record<string, string>
   maxScore: number
   onFieldChange: (key: string, value: string) => void
+  onAddCriterion: () => void
   onCriteriaCountChange: (value: number) => void
   onFieldsChange: (fields: Record<string, string>) => void
   typographyControls: ReactNode
@@ -6159,7 +6252,7 @@ function ChecklistInstrument({
   const [draftLabelMode, setDraftLabelMode] = useState<ChecklistLabelMode>(() => checklistLabelMode(fields['lista-cotejo:meta:yesLabel'] || 'Sí', fields['lista-cotejo:meta:noLabel'] || 'No'))
   const [draftPoints, setDraftPoints] = useState<string[]>(() => Array.from({ length: criteriaCount }, (_, index) => fields[instrumentFieldKey('lista-cotejo', 'points', index)] || '0'))
   const [pendingDelete, setPendingDelete] = useState<number | null>(null)
-  const [highlightedRow, setHighlightedRow] = useState<number | null>(null)
+  const [highlightedRow] = useState<number | null>(null)
   const hasNoApply = fields['lista-cotejo:meta:noApply'] === 'true'
   const uniformPoints = fields['lista-cotejo:meta:pointsMode'] !== 'individual'
   const labels = { yes: fields['lista-cotejo:meta:yesLabel'] || 'Sí', no: fields['lista-cotejo:meta:noLabel'] || 'No', na: fields['lista-cotejo:meta:naLabel'] || 'No aplica' }
@@ -6171,7 +6264,6 @@ function ChecklistInstrument({
   const distributionValid = scorePending || draftUniformPoints || (customPointsValid && Math.abs(draftTotal - maxScore) < 0.001)
   const configurationValid = customLabelsValid && distributionValid
 
-  function addCriterion() { if (criteriaCount >= 20) return; const nextCount=criteriaCount+1; const next:Record<string,string>={...fields,'lista-cotejo:meta:criteriaCount':String(nextCount)}; if(uniformPoints && !scorePending)distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)});else next[instrumentFieldKey('lista-cotejo','points',criteriaCount)]='';onFieldsChange(next);onCriteriaCountChange(nextCount); focusNewInstrumentRow('lista-cotejo', criteriaCount, setHighlightedRow) }
   function removeCriterion(index: number) { if (criteriaCount <= 1) return; const nextCount = criteriaCount - 1; const next = shiftInstrumentRows(fields,'lista-cotejo',index,criteriaCount,['criterion','points']); next['lista-cotejo:meta:criteriaCount']=String(nextCount); if(uniformPoints && !scorePending) distributeScore(maxScore,nextCount).forEach((points,row)=>{next[instrumentFieldKey('lista-cotejo','points',row)]=String(points)}); onFieldsChange(next); onCriteriaCountChange(nextCount) }
   function openConfiguration() {
     setDraftNoApply(hasNoApply)
@@ -6199,7 +6291,7 @@ function ChecklistInstrument({
   }
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black',accent.text)}>Criterios de cumplimiento</p><p className="text-xs text-muted-foreground">Verifica el cumplimiento de criterios específicos.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 20}><Plus className="size-4" />Agregar criterio</Button></div></div>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black',accent.text)}>Criterios de cumplimiento</p><p className="text-xs text-muted-foreground">Verifica el cumplimiento de criterios específicos.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={openConfiguration}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={onAddCriterion} disabled={criteriaCount >= 20 || addingCriterion}><Plus className="size-4" />{addingCriterion ? 'Añadiendo…' : 'Agregar criterio'}</Button></div></div>
       {configuring ? (
         <InstrumentSettingsDrawer
           accent={accent}
@@ -6458,22 +6550,26 @@ function WeightedListSettingsDrawer({
 
 function WeightedListInstrument({
   accent,
+  addingCriterion,
   criteriaCount,
   fields,
   hasPartial,
   maxScore,
   onFieldChange,
+  onAddCriterion,
   onCriteriaCountChange,
   onFieldsChange,
   onHasPartialChange,
   typographyControls,
 }: {
   accent: (typeof blockAccents)[number]
+  addingCriterion: boolean
   criteriaCount: number
   fields: Record<string, string>
   hasPartial: boolean
   maxScore: number
   onFieldChange: (key: string, value: string) => void
+  onAddCriterion: () => void
   onCriteriaCountChange: (value: number) => void
   onFieldsChange: (fields: Record<string, string>) => void
   onHasPartialChange: (value: boolean) => void
@@ -6483,21 +6579,11 @@ function WeightedListInstrument({
   const totalWeight = Number(Array.from({ length: criteriaCount }, (_, index) => Number(fields[instrumentFieldKey('lista-ponderada', 'weight', index)] || 0)).reduce((sum, value) => sum + value, 0).toFixed(2))
   const [configuring, setConfiguring] = useState(false)
   const [pendingDelete, setPendingDelete] = useState<number | null>(null)
-  const [highlightedRow, setHighlightedRow] = useState<number | null>(null)
+  const [highlightedRow] = useState<number | null>(null)
   const labels = { yes: fields['lista-ponderada:meta:yesLabel'] || 'Sí', partial: fields['lista-ponderada:meta:partialLabel'] || 'Parcial', no: fields['lista-ponderada:meta:noLabel'] || 'No' }
   const decimals = fields['lista-ponderada:meta:decimals'] !== 'false'
   const partialValue = Number(fields['lista-ponderada:meta:partialValue'] || 50)
   const status = weightedStatus(totalWeight)
-
-  function addCriterion() {
-    if (criteriaCount >= 12) return
-    const nextCount = criteriaCount + 1
-    const next: Record<string, string> = { ...fields, 'lista-ponderada:meta:criteriaCount': String(nextCount) }
-    distributeScore(100, nextCount).forEach((weight, row) => { next[instrumentFieldKey('lista-ponderada', 'weight', row)] = String(weight) })
-    onFieldsChange(next)
-    onCriteriaCountChange(nextCount)
-    focusNewInstrumentRow('lista-ponderada', criteriaCount, setHighlightedRow)
-  }
 
   function removeCriterion(index: number) {
     if (criteriaCount <= 1) return
@@ -6520,7 +6606,7 @@ function WeightedListInstrument({
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Criterios y ponderaciones</p><p className="text-xs text-muted-foreground">Define los criterios, sus indicadores y el peso de cada uno dentro de la actividad.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={() => setConfiguring(true)}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={addCriterion} disabled={criteriaCount >= 12}><Plus className="size-4" />Agregar criterio</Button></div></div>
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><p className={cn('font-black', accent.text)}>Criterios y ponderaciones</p><p className="text-xs text-muted-foreground">Define los criterios, sus indicadores y el peso de cada uno dentro de la actividad.</p></div><div className="instrument-structure-controls flex flex-wrap items-center gap-2">{typographyControls}<Button type="button" size="sm" variant="outline" onClick={() => setConfiguring(true)}><Settings className="size-4" />Configurar lista</Button><Button type="button" size="sm" className={accent.button} onClick={onAddCriterion} disabled={criteriaCount >= 12 || addingCriterion}><Plus className="size-4" />{addingCriterion ? 'Añadiendo…' : 'Agregar criterio'}</Button></div></div>
       {configuring ? <WeightedListSettingsDrawer accent={accent} criteriaCount={criteriaCount} decimals={decimals} fields={fields} labels={labels} maxScore={maxScore} onApply={applyConfiguration} onClose={() => setConfiguring(false)} partial={hasPartial} partialValue={partialValue} /> : null}
       <InstrumentTable>
         <thead className="sticky top-0 z-20 text-[10px] font-bold uppercase text-slate-700">

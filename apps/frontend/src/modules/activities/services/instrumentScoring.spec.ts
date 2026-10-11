@@ -21,18 +21,24 @@ describe('puntaje pendiente y redistribución del instrumento', () => {
     expect(pending[`${type}:meta:scorePending`]).toBe('true')
     expect(pending[`${type}:points:0`]).toBe('')
     expect(scoreRecommendation(proposal, pending, null).totalScoreUnits).toBe(0)
-    const content = pending[`${type}:criterion:0`]
-    let fields = pending
+    const content = {
+      [`${type}:criterion:0`]: 'Criterio editado por docente',
+      [`${type}:description:0`]: 'Descripción editada por docente',
+      ...(type === 'rubrica' ? { 'rubrica:descriptor:0:4': 'Descriptor editado por docente' } : {}),
+      ...(type === 'lista-ponderada' ? { 'lista-ponderada:indicator:0': 'Indicador editado por docente' } : {}),
+    }
+    let fields: Record<string, string> = { ...pending, ...content }
+    const weights = Object.fromEntries(Object.entries(fields).filter(([key]) => key.startsWith(`${type}:weight:`)))
     for (const score of [20, 30, 17.35]) {
       fields = scoreInstrumentFields(fields, type, score, proposal)
       const count = Number(fields[`${type}:meta:criteriaCount`])
       expect(Array.from({ length: count }, (_, index) => Math.round(Number(fields[`${type}:points:${index}`]) * 100))
         .reduce((sum, units) => sum + units, 0)).toBe(Math.round(score * 100))
-      expect(fields[`${type}:criterion:0`]).toBe(content)
+      expect(fields).toMatchObject({ ...content, ...weights })
       expect(scoreRecommendation(proposal, fields, score).totalScoreUnits).toBe(Math.round(score * 100))
     }
     const cleared = scoreInstrumentFields(fields, type, null, proposal)
-    expect(cleared[`${type}:criterion:0`]).toBe(content)
+    expect(cleared).toMatchObject({ ...content, ...weights })
     expect(cleared[`${type}:points:0`]).toBe('')
   })
 

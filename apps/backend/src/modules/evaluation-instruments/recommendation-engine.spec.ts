@@ -44,6 +44,18 @@ describe('Selecciones automáticas de Lengua Española en 1.º de secundaria', (
     expect(firstSecondaryLanguageSelections(type!)).toEqual({ suggestedEvaluationTechnique: 'analisis-producciones', suggestedInstrumentType: 'rubrica' })
     expect(recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null).activityType).toBe(type)
   })
+  it('expone propuestas adicionales del catálogo solo para la solicitud explícita', () => {
+    const input = { activityTitle: 'Informe de lectura de un cuento',
+      description: 'Elaborarán un informe de lectura con resumen, análisis de personajes y conclusión.',
+      participationMode: 'INDIVIDUAL' as const, maxScore: 20, preferredInstrumentType: 'rubrica' as const }
+    const initial = recommend(input, context, null, [], 'UNMAPPED', null)
+    const expanded = recommend({ ...input, includeAdditionalCandidates: true }, context, null, [], 'UNMAPPED', null)
+    expect(expanded.criteria.length).toBeGreaterThan(initial.criteria.length)
+    expect(expanded.criteria.slice(0, initial.criteria.length).map(item => item.title)).toEqual(initial.criteria.map(item => item.title))
+    expect(expanded.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(2000)
+    expect(expanded.criteria.slice(initial.criteria.length).some(item => item.sourceType === 'ACTIVITY_TEMPLATE')).toBe(true)
+    expect(expanded.criteria.map(item => item.title)).toContain('Contenido y adecuación')
+  })
 })
 
 describe('Recomendaciones generales fuera del alcance de 1.º de secundaria', () => {

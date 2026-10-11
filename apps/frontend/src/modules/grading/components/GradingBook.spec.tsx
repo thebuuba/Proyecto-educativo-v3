@@ -66,6 +66,21 @@ function renderBook(overrides: Partial<ComponentProps<typeof GradingBook>> = {},
   return render(options?.strict ? <StrictMode>{book}</StrictMode> : book)
 }
 
+function seededInstrumentDraft(id: string, type: 'rubrica' | 'lista-cotejo' | 'escala' | 'lista-ponderada' = 'rubrica') {
+  const original = editableFallbackRecommendation({ activityTitle: 'Informe de lectura de un cuento',
+    description: 'Elaborarán un informe de lectura con resumen, personajes y conclusión.', maxScore: 20,
+    instrumentType: type, participationMode: 'INDIVIDUAL', activityType: 'READING_REPORT_WRITING', secondaryLanguageGrade: 1 })
+  const proposal = { ...original, catalogVersion: 'test-catalog' }
+  const draft = { draftId: id, name: 'Informe de lectura de un cuento', maxScore: '20', competencyBlockId: 'b1',
+    competencyBlockWeights: { b1: 1 }, date: '', description: 'Elaborarán un informe de lectura con resumen, personajes y conclusión.',
+    studentRole: '', teacherRole: '', instrumentType: type, evaluationTechnique: 'analisis-producciones', pedagogicalActivityType: 'READING_REPORT_WRITING',
+    autoDetectedPedagogicalActivityType: true, instrumentCompleted: true,
+    instrumentFields: recommendationToFields(proposal, 'Informe de lectura de un cuento'), preparedRecommendation: proposal,
+    preparedManuallyEdited: false, resources: [], planningMoment: '', observations: '', activityType: 'individual', teamIds: [] }
+  window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] }))
+  return { draft, proposal }
+}
+
 describe('GradingBook', () => {
   beforeEach(() => {
     window.localStorage.clear()
@@ -90,8 +105,8 @@ describe('GradingBook', () => {
   it('prepara sin puntaje y redistribuye al confirmar 20, 30 y 17.35 sin regenerar el contenido', async () => {
     const post = vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
     renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
-    const score = screen.getByRole('spinbutton', { name: /Valor en puntos/ })
-    expect(score).toHaveValue(null)
+    const score = screen.getByRole('textbox', { name: /Valor en puntos/ })
+    expect(score).toHaveValue('')
     fireEvent.change(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), { target: { value: 'La noticia' } })
     fireEvent.change(screen.getByRole('textbox', { name: 'Descripción de la actividad' }), {
       target: { value: 'Los estudiantes redactarán una noticia sobre educación con titular, entrada y cuerpo.' },
@@ -111,13 +126,21 @@ describe('GradingBook', () => {
     const requestCount = post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend').length
     for (const total of ['20', '30', '17.35']) {
       fireEvent.change(score, { target: { value: total } })
-      fireEvent.blur(score)
       await waitFor(() => expect(screen.getByText(`Puntuación máxima total: ${total} / ${total} pts`)).toBeInTheDocument())
       expect(criterion).toHaveValue('Información esencial editada')
     }
+    const decimalInput = score as HTMLInputElement
+    fireEvent.change(score, { target: { value: '17' } })
+    decimalInput.focus()
+    decimalInput.setSelectionRange(2, 2)
+    await userEvent.setup().type(score, '.35')
+    expect(score).toHaveValue('17.35')
+    expect(decimalInput.selectionStart).toBe(5)
+    expect(score).toHaveFocus()
+    expect(screen.getByText('Puntuación máxima total: 17.35 / 17.35 pts')).toBeInTheDocument()
     expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(requestCount)
     fireEvent.change(score, { target: { value: '' } })
-    fireEvent.blur(score)
+    expect(score).toHaveValue('')
     expect(criterion).toHaveValue('Información esencial editada')
     expect(screen.queryByText('Puntaje pendiente')).not.toBeInTheDocument()
     await userEvent.setup().click(screen.getByRole('button', { name: 'Guardar' }))
@@ -135,14 +158,12 @@ describe('GradingBook', () => {
     fireEvent.change(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), { target: { value: 'La noticia' } })
     fireEvent.change(screen.getByRole('textbox', { name: 'Descripción de la actividad' }), { target: { value: 'Redactarán una noticia sobre educación.' } })
     await waitFor(() => expect(api.post).toHaveBeenCalledWith('/evaluation-instruments/recommend', expect.anything()), { timeout: 8000 })
-    const score = screen.getByRole('spinbutton', { name: /Valor en puntos/ })
+    const score = screen.getByRole('textbox', { name: /Valor en puntos/ })
     fireEvent.change(score, { target: { value: '20' } })
-    fireEvent.blur(score)
     fireEvent.change(score, { target: { value: '' } })
-    fireEvent.blur(score)
     await act(async () => { finish(proposal); await delayed })
     await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'))
-    expect(score).toHaveValue(null)
+    expect(score).toHaveValue('')
     expect(screen.queryByText('Puntaje pendiente')).not.toBeInTheDocument()
     const stored = JSON.parse(window.localStorage.getItem('grading-activity-drafts:1ro A · Lengua Española:P1') || '{}')
     expect(stored.b1?.[0]).toEqual(expect.objectContaining({ maxScore: '' }))
@@ -151,7 +172,7 @@ describe('GradingBook', () => {
     const draftId = stored.b1[0].draftId as string
     view.unmount()
     renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: draftId })
-    expect(screen.getByRole('spinbutton', { name: /Valor en puntos/ })).toHaveValue(null)
+    expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('')
     expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial')
   }, 15000)
 
@@ -169,7 +190,7 @@ describe('GradingBook', () => {
     window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: oldFingerprint }] }))
     renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create',
       initialActivityBlockId: 'b1', initialActivityDraftId: 'legacy-score' })
-    expect(screen.getByRole('spinbutton', { name: /Valor en puntos/ })).toHaveValue(20)
+    expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('20')
     expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue(proposal.criteria[0].title)
     expect(screen.queryByText(/La actividad cambió. Actualiza el instrumento/)).not.toBeInTheDocument()
   })
@@ -190,12 +211,13 @@ describe('GradingBook', () => {
       initialActivityBlockId: 'b1', initialActivityDraftId: 'rescore-save', onAddActivity })
     const criterion = screen.getByRole('textbox', { name: 'Criterio 1' })
     fireEvent.change(criterion, { target: { value: 'Criterio editado por docente' } })
-    const score = screen.getByRole('spinbutton', { name: /Valor en puntos/ })
+    const score = screen.getByRole('textbox', { name: /Valor en puntos/ })
+    score.focus()
     fireEvent.change(score, { target: { value: '30' } })
-    fireEvent.blur(score)
     await waitFor(() => expect(screen.getByText('Puntuación máxima total: 30 / 30 pts')).toBeInTheDocument())
+    expect(score).toHaveFocus()
+    fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
     const user = userEvent.setup()
-    await user.click(screen.getByRole('button', { name: 'Guardar' }))
     await user.click(within(screen.getByRole('dialog', { name: 'Resumen de la actividad' })).getByRole('button', { name: 'Confirmar y guardar' }))
     await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
     const saved = onAddActivity.mock.calls[0][0] as GradingActivity
@@ -206,11 +228,11 @@ describe('GradingBook', () => {
     view.unmount()
     renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', activities: [{ ...saved, id: 'rescored' }],
       initialActivityId: 'rescored', initialActivityMode: 'edit' })
-    expect(screen.getByRole('spinbutton', { name: /Valor en puntos/ })).toHaveValue(30)
+    expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('30')
     expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Criterio editado por docente')
   }, 15000)
 
-  it('cambia entre los cuatro formatos con puntaje pendiente y con 17.35 puntos', async () => {
+  it('recalcula los cuatro formatos al escribir 20, 30 y 17.35 sin perder el foco ni la entrada parcial', async () => {
     vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
     renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
     fireEvent.change(screen.getByPlaceholderText('Ej: Exposición oral sobre el cambio climático'), { target: { value: 'La noticia' } })
@@ -219,27 +241,42 @@ describe('GradingBook', () => {
     const instrument = screen.getByRole('combobox', { name: 'Tipo de instrumento' })
     await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'), { timeout: 8000 })
     const storedDraft = () => JSON.parse(window.localStorage.getItem('grading-activity-drafts:1ro A · Lengua Española:P1') || '{}').b1?.[0]
+    const score = screen.getByRole('textbox', { name: /Valor en puntos/ }) as HTMLInputElement
+    const totals = (type: string) => {
+      const fields = storedDraft().instrumentFields as Record<string, string>
+      const count = Number(fields[`${type}:meta:criteriaCount`])
+      return Array.from({ length: count }, (_, index) => Math.round(Number(fields[`${type}:points:${index}`]) * 100))
+        .reduce((sum, value) => sum + value, 0)
+    }
     for (const type of ['lista-cotejo', 'escala', 'lista-ponderada', 'rubrica']) {
       await user.selectOptions(instrument, type)
       await waitFor(() => expect(storedDraft()?.instrumentFields[`${type}:meta:scorePending`]).toBe('true'))
-      expect(storedDraft()?.instrumentFields[`${type}:criterion:0`]).toBeTruthy()
+      const firstCriterion = storedDraft()?.instrumentFields[`${type}:criterion:0`]
+      expect(firstCriterion).toBeTruthy()
       expect(storedDraft()?.maxScore).toBe('')
       await user.click(screen.getByRole('button', { name: 'Vista previa' }))
       const preview = screen.getByRole('dialog', { name: /Vista previa de/ })
       expect(within(preview).getByText(/Puntuación máxima: — pts/)).toBeInTheDocument()
       await user.click(within(preview).getByRole('button', { name: 'Cerrar vista previa' }))
-    }
-    const score = screen.getByRole('spinbutton', { name: /Valor en puntos/ })
-    fireEvent.change(score, { target: { value: '17.35' } })
-    fireEvent.blur(score)
-    for (const type of ['lista-cotejo', 'escala', 'lista-ponderada', 'rubrica']) {
-      await user.selectOptions(instrument, type)
-      await waitFor(() => expect(storedDraft()?.instrumentFields[`${type}:meta:scorePending`]).toBe('false'))
-      const fields = storedDraft().instrumentFields as Record<string, string>
-      const count = Number(fields[`${type}:meta:criteriaCount`])
-      expect(Array.from({ length: count }, (_, index) => Math.round(Number(fields[`${type}:points:${index}`]) * 100))
-        .reduce((sum, value) => sum + value, 0)).toBe(1735)
-      expect(storedDraft()?.maxScore).toBe('17.35')
+      score.focus()
+      for (const [value, units] of [['20', 2000], ['30', 3000], ['17', 1700], ['17.3', 1730], ['17.35', 1735]] as const) {
+        fireEvent.change(score, { target: { value } })
+        await waitFor(() => expect(totals(type)).toBe(units))
+        expect(score).toHaveFocus()
+        expect(score).toHaveValue(value)
+        expect(storedDraft()?.instrumentFields[`${type}:criterion:0`]).toBe(firstCriterion)
+      }
+      fireEvent.change(score, { target: { value: '17.' } })
+      expect(score).toHaveValue('17.')
+      await waitFor(() => expect(storedDraft()?.instrumentFields[`${type}:meta:scorePending`]).toBe('true'))
+      expect(storedDraft()?.preparedRecommendation.totalScoreUnits).toBe(0)
+      fireEvent.change(score, { target: { value: '17.35' } })
+      await waitFor(() => expect(totals(type)).toBe(1735))
+      fireEvent.change(score, { target: { value: '' } })
+      await waitFor(() => expect(storedDraft()?.instrumentFields[`${type}:meta:scorePending`]).toBe('true'))
+      expect(score).toHaveValue('')
+      expect(storedDraft()?.preparedRecommendation.totalScoreUnits).toBe(0)
+      expect(storedDraft()?.instrumentFields[`${type}:criterion:0`]).toBe(firstCriterion)
     }
   }, 20000)
 
@@ -519,7 +556,7 @@ describe('GradingBook', () => {
     await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('READING_REPORT_WRITING'))
     expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
     expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('rubrica')
-    expect(screen.getByRole('spinbutton', { name: /Valor en puntos/ })).toHaveValue(null)
+    expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('')
     expect(screen.queryByText('Servicio no disponible')).not.toBeInTheDocument()
   })
 
@@ -563,7 +600,7 @@ describe('GradingBook', () => {
     await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('lista-cotejo'))
     expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
     expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING')
-    expect(screen.getByRole('spinbutton', { name: /Valor en puntos/ })).toHaveValue(17.35)
+    expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('17.35')
   })
 
   it('pide confirmación antes de sustituir criterios editados al cambiar formato', async () => {
@@ -626,7 +663,7 @@ describe('GradingBook', () => {
     expect(await screen.findByRole('textbox', { name: 'Criterio 1' }, { timeout: 5000 })).toHaveValue('Resumen del texto')
   })
 
-  it('prepara sin calificación ni modalidad, permite vaciar y genera una variante del informe', async () => {
+  it('prepara sin calificación ni modalidad y conserva el borrador si falla la regeneración explícita', async () => {
     vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
     window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
       draftId: 'report-no-score', name: 'Informe de lectura de un cuento', maxScore: '', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 },
@@ -637,14 +674,137 @@ describe('GradingBook', () => {
     renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'report-no-score' })
     const criterion = await screen.findByRole('textbox', { name: 'Criterio 1' }, { timeout: 5000 })
     await waitFor(() => expect(criterion).toHaveValue('Resumen del texto'), { timeout: 5000 })
-    expect(screen.getByRole('spinbutton', { name: /Valor en puntos/ })).toHaveValue(null)
+    expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('')
     const user = userEvent.setup()
     await user.click(screen.getByRole('button', { name: 'Crear desde cero' }))
     expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('')
     await new Promise(resolve => setTimeout(resolve, 1100))
     expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('')
     await user.click(screen.getByRole('button', { name: 'Generar nuevo instrumento' }))
-    expect(await screen.findByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Identificación de la obra')
+    expect(await screen.findByText(/No se pudo actualizar el instrumento/)).toBeInTheDocument()
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('')
+  })
+
+  it('añade un criterio del catálogo y solicita confirmación antes de redistribuir puntos manuales', async () => {
+    const { proposal } = seededInstrumentDraft('add-contextual')
+    const candidate = { ...proposal.criteria[0], id: 'extra', templateId: 'evidence-extra', title: 'Evidencias del cuento',
+      description: 'Sustenta el análisis de personajes con ejemplos del cuento.',
+      descriptors: proposal.criteria[0].descriptors.map((item, index) => ({ ...item, text: `Evidencia nivel ${index + 1}` })) }
+    const candidateTwo = { ...candidate, id: 'extra-two', templateId: 'text-evidence-extra', title: 'Referencias textuales',
+      description: 'Selecciona fragmentos concretos y los vincula con sus interpretaciones.' }
+    const post = vi.spyOn(api, 'post').mockImplementation(async path => path === '/evaluation-instruments/interpret'
+      ? { suggestedActivityType: 'READING_REPORT_WRITING', activityType: 'READING_REPORT_WRITING', activityTypes: [], curriculumVersionId: null,
+        curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' } as never
+      : { ...proposal, criteria: [...proposal.criteria, candidate, candidateTwo] } as never)
+    const user = userEvent.setup()
+    renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'add-contextual' })
+    fireEvent.change(screen.getByRole('textbox', { name: 'Criterio 1' }), { target: { value: 'Criterio editado por la docente' } })
+    await user.click(screen.getByRole('button', { name: 'Agregar criterio' }))
+    expect(await screen.findByDisplayValue('Evidencias del cuento')).toBeInTheDocument()
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Criterio editado por la docente')
+    expect(post.mock.calls.some(([path, body]) => path === '/evaluation-instruments/recommend'
+      && (body as { includeAdditionalCandidates?: boolean }).includeAdditionalCandidates)).toBe(true)
+    fireEvent.change(screen.getByRole('spinbutton', { name: 'Puntos del criterio 1' }), { target: { value: '5' } })
+    await user.click(screen.getByRole('button', { name: 'Agregar criterio' }))
+    expect(await screen.findByRole('dialog', { name: '¿Redistribuir los puntos editados?' })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Conservar cambios' }))
+    expect(screen.queryByRole('textbox', { name: 'Criterio 8' })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Agregar criterio' }))
+    await user.click(await screen.findByRole('button', { name: 'Redistribuir y añadir' }))
+    expect(await screen.findByRole('textbox', { name: 'Criterio 8' })).toHaveValue('Referencias textuales')
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Criterio editado por la docente')
+  })
+
+  it('regenera sin cambiar el título y respeta cancelar o confirmar el reemplazo', async () => {
+    const { proposal } = seededInstrumentDraft('regenerate-contextual')
+    const replacement = { ...proposal, criteria: proposal.criteria.map((item, index) => index === 0
+      ? { ...item, title: 'Nuevo criterio de lectura', description: 'Explica un rasgo del cuento con evidencia.' } : item) }
+    const post = vi.spyOn(api, 'post').mockImplementation(async path => path === '/evaluation-instruments/interpret'
+      ? { suggestedActivityType: 'READING_REPORT_WRITING', activityType: 'READING_REPORT_WRITING', activityTypes: [], curriculumVersionId: null,
+        curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' } as never : replacement as never)
+    const user = userEvent.setup()
+    renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'regenerate-contextual' })
+    fireEvent.change(screen.getByRole('textbox', { name: 'Criterio 1' }), { target: { value: 'Criterio propio' } })
+    await user.click(screen.getByRole('button', { name: 'Generar nuevo instrumento' }))
+    expect(screen.getByRole('dialog', { name: '¿Reemplazar el instrumento editado?' })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Conservar cambios' }))
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Criterio propio')
+    expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(0)
+    await user.click(screen.getByRole('button', { name: 'Generar nuevo instrumento' }))
+    await user.click(screen.getByRole('button', { name: 'Cambiar instrumento' }))
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Nuevo criterio de lectura'))
+    expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(1)
+    await user.click(screen.getByRole('button', { name: 'Instrumento preparado' }))
+    await waitFor(() => expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(2))
+  })
+
+  it('persiste un criterio añadido y lo recupera al reabrir el borrador', async () => {
+    const { proposal } = seededInstrumentDraft('add-and-reopen')
+    const candidate = { ...proposal.criteria[0], id: 'saved-extra', templateId: 'saved-extra', title: 'Referencias textuales',
+      description: 'Selecciona fragmentos concretos y los vincula con sus interpretaciones.' }
+    vi.spyOn(api, 'post').mockImplementation(async path => path === '/evaluation-instruments/interpret'
+      ? { suggestedActivityType: 'READING_REPORT_WRITING', activityType: 'READING_REPORT_WRITING', activityTypes: [], curriculumVersionId: null,
+        curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' } as never
+      : { ...proposal, criteria: [...proposal.criteria, candidate] } as never)
+    const user = userEvent.setup()
+    const view = renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'add-and-reopen' })
+    await user.click(screen.getByRole('button', { name: 'Agregar criterio' }))
+    expect(await screen.findByDisplayValue('Referencias textuales')).toBeInTheDocument()
+    await waitFor(() => {
+      const stored = JSON.parse(window.localStorage.getItem('grading-activity-drafts:1ro A · Lengua Española:P1') || '{}')
+      expect(stored.b1?.[0]?.instrumentFields['rubrica:criterion:6']).toBe('Referencias textuales')
+    })
+    view.unmount()
+    renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'add-and-reopen' })
+    expect(await screen.findByRole('textbox', { name: 'Criterio 7' })).toHaveValue('Referencias textuales')
+  })
+
+  it('guarda y reabre el instrumento con el criterio añadido', async () => {
+    const { proposal } = seededInstrumentDraft('add-save-reopen')
+    const candidate = { ...proposal.criteria[0], id: 'saved-criterion', templateId: 'saved-criterion', title: 'Referencias textuales',
+      description: 'Selecciona fragmentos concretos y los vincula con sus interpretaciones.' }
+    vi.spyOn(api, 'post').mockImplementation(async path => path === '/evaluation-instruments/interpret'
+      ? { suggestedActivityType: 'READING_REPORT_WRITING', activityType: 'READING_REPORT_WRITING', activityTypes: [], curriculumVersionId: null,
+        curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' } as never
+      : { ...proposal, criteria: [...proposal.criteria, candidate] } as never)
+    const onAddActivity = vi.fn().mockImplementation(async activity => ({ ...activity, id: 'saved-add' }))
+    const user = userEvent.setup()
+    const view = renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'add-save-reopen', onAddActivity })
+    await user.click(screen.getByRole('button', { name: 'Agregar criterio' }))
+    await screen.findByDisplayValue('Referencias textuales')
+    await user.click(screen.getByRole('button', { name: 'Guardar' }))
+    await user.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
+    await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
+    const saved = onAddActivity.mock.calls[0][0] as GradingActivity
+    expect(saved.instrumentCriteria).toMatchObject({ 'rubrica:meta:criteriaCount': '7', 'rubrica:criterion:6': 'Referencias textuales' })
+    expect(saved.instrumentSnapshot?.criteria.at(-1)?.title).toBe('Referencias textuales')
+    view.unmount()
+    renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', activities: [{ ...saved, id: 'saved-add' }], initialActivityId: 'saved-add', initialActivityMode: 'edit' })
+    expect(await screen.findByRole('textbox', { name: 'Criterio 7' })).toHaveValue('Referencias textuales')
+  })
+
+  it('ignora respuesta de catálogo atrasada y bloquea clics repetidos al añadir', async () => {
+    const { proposal } = seededInstrumentDraft('add-late-response')
+    const candidate = { ...proposal.criteria[0], id: 'late-extra', templateId: 'late-extra', title: 'Referencias textuales',
+      description: 'Selecciona fragmentos concretos y los vincula con sus interpretaciones.' }
+    let finish!: (value: unknown) => void
+    const delayed = new Promise(resolve => { finish = resolve })
+    const post = vi.spyOn(api, 'post').mockImplementation(path => path === '/evaluation-instruments/interpret'
+      ? Promise.resolve({ suggestedActivityType: 'READING_REPORT_WRITING', activityType: 'READING_REPORT_WRITING', activityTypes: [], curriculumVersionId: null,
+        curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' }) as never
+      : delayed as never)
+    const user = userEvent.setup()
+    renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'add-late-response' })
+    const add = screen.getByRole('button', { name: 'Agregar criterio' })
+    await user.click(add)
+    fireEvent.click(add)
+    const request = post.mock.calls.filter(([path, body]) => path === '/evaluation-instruments/recommend'
+      && (body as { includeAdditionalCandidates?: boolean }).includeAdditionalCandidates)
+    expect(request).toHaveLength(1)
+    fireEvent.change(screen.getByRole('textbox', { name: 'Criterio 1' }), { target: { value: 'Cambio posterior de la docente' } })
+    await act(async () => { finish({ ...proposal, criteria: [...proposal.criteria, candidate] }); await delayed })
+    expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Cambio posterior de la docente')
+    expect(screen.queryByRole('textbox', { name: 'Criterio 7' })).not.toBeInTheDocument()
   })
 
   it('usa los criterios reales de una lista de cotejo al evaluar', () => {

@@ -7,6 +7,7 @@ export interface RecommendationInput {
   activityTitle: string; description?: string; participationMode: 'INDIVIDUAL' | 'GROUP'
   pedagogicalActivityType?: string; maxScore: number; competencyBlock?: string; levelCount?: 4 | 5
   preferredInstrumentType?: 'rubrica' | 'lista-cotejo' | 'escala' | 'lista-ponderada'
+  includeAdditionalCandidates?: boolean
   selectedCurriculumElementIds?: string[]
 }
 export interface RankedElement extends CurriculumReference { normalizedText: string }
@@ -539,7 +540,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     : area === 'science' && activity.family === 'OBSERVATIONAL' && dimensions.length > 1
       ? ['science-content', 'science-content', 'science-data', 'science-accuracy', 'science-interpretation'] : []
   const prioritized = priorityIds.map(byId).filter((candidate): candidate is (typeof allCandidates)[number] => Boolean(candidate))
-  const candidates = [...prioritized, ...allCandidates.filter(candidate => !prioritized.includes(candidate))].slice(0, count)
+  const candidates = [...prioritized, ...allCandidates.filter(candidate => !prioritized.includes(candidate))]
+    .slice(0, input.includeAdditionalCandidates ? undefined : count)
   const scores = distributeScore(input.maxScore, candidates.map((candidate, index) => priorityIds.length && dimensions.length > 1 && candidates.length === 5
     ? [5, 4, 4, 4, 3][index] : candidate.template.weight))
   const rule = catalog.recommendationRules.filter(r => (!r.families.length || r.families.includes(activity.family)) && (!r.band || r.band === band)
@@ -589,7 +591,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : []
   const authoredScores = authored.length ? distributeScore(input.maxScore, authored.map(item => item.weight)) : []
   const authoredPatternIndexes = levelCount === 4 ? [0, 1, 3, 4] : [0, 1, 2, 3, 4]
-  const criteria: RecommendationCriterion[] = authored.length ? authored.map((item, index) => ({
+  const authoredCriteria: RecommendationCriterion[] = authored.map((item, index) => ({
     id: `proposal:${catalog.version}:${scope?.id ?? 'fallback'}:${item.templateId}:${index}`,
     templateId: item.templateId, title: item.title, description: item.observable,
     maxScore: authoredScores[index] / 100, maxScoreUnits: authoredScores[index],
@@ -598,7 +600,18 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       text: item.progression && levelCount === 4 ? levelIndex === 0 ? item.observable : item.progression[levelIndex - 1]
         : contextualDescriptors(item.observable, authoredPatternIndexes, item.title, item.templateId)[levelIndex],
       scoreUnits: Math.round(authoredScores[index] * level.proportion) })),
-  })) : genericCriteria
+  }))
+  const expandedCriteria = [...authoredCriteria, ...genericCriteria]
+  const expandedScores = input.includeAdditionalCandidates && authoredCriteria.length
+    ? distributeScore(input.maxScore, expandedCriteria.map(item => item.maxScoreUnits)) : []
+  const criteria: RecommendationCriterion[] = expandedScores.length
+    ? expandedCriteria.map((criterion, index) => {
+      const units = expandedScores[index]
+      return { ...criterion, maxScore: units / 100, maxScoreUnits: units,
+        descriptors: criterion.descriptors.map(descriptor => ({ ...descriptor,
+          scoreUnits: criterion.maxScoreUnits ? Math.round(units * descriptor.scoreUnits / criterion.maxScoreUnits) : 0 })) }
+    })
+    : authoredCriteria.length ? authoredCriteria : genericCriteria
   const totalScoreUnits = criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0)
   const result: InstrumentRecommendation = { kind: 'RECOMMENDATION', catalogVersion: catalog.version, instrumentType: chosenInstrument, confidence,
     activityType: activity.id, evidenceTypes: [...new Set([...activity.evidence, ...criteria.filter(c => catalog.criterionTemplates.find(t => t.id === c.templateId)?.attitude).map(() => 'ATTITUDE' as const)])],
