@@ -65,17 +65,14 @@ export type ActivityCompletionTarget =
   | 'competencyBlocks'
   | 'name'
   | 'maxScore'
-  | 'date'
   | 'evaluationTechnique'
   | 'activityType'
-  | 'planningMoment'
   | 'instrumentType'
   | 'instrumentBody'
   | 'description'
 
 export type ActivityCompletionIssue = {
   detail: string
-  tab: 'activity' | 'instrument'
   target: ActivityCompletionTarget
   title: string
 }
@@ -327,15 +324,15 @@ export function draftToActivity(
     throw new Error('Revisa la definición del instrumento antes de guardar.')
   const metadata = {
     name: draft.name.trim(),
-    date: draft.date,
+    date: original ? original.date : draft.date,
     description: draft.description.trim(),
-    studentRole: draft.studentRole.trim(),
-    teacherRole: draft.teacherRole.trim(),
+    studentRole: original ? original.studentRole : draft.studentRole.trim(),
+    teacherRole: original ? original.teacherRole : draft.teacherRole.trim(),
     evaluationTechnique: draft.evaluationTechnique,
-    observations: draft.observations.trim(),
+    observations: original ? original.observations : draft.observations.trim(),
     resources: draft.resources,
-    planningMoment: draft.planningMoment as Activity['planningMoment'],
-    evidenceInstructions: draft.evidenceInstructions,
+    planningMoment: original ? original.planningMoment : draft.planningMoment as Activity['planningMoment'],
+    evidenceInstructions: original ? original.evidenceInstructions : draft.evidenceInstructions,
     planningId: draft.planningId,
     source: draft.source,
     futurePlanningLink: draft.futurePlanningLink,

@@ -9,7 +9,7 @@ import {
   recommendationToFields,
 } from '../services/instrumentPreparation'
 import { activityDraftStorageKey, readActivityDrafts } from '../utils/activityDraftStorage'
-import { api } from '@/services/apiClient'
+import { api, ApiError } from '@/services/apiClient'
 
 vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
   ActivityDescriptionEditor: ({
@@ -75,7 +75,85 @@ describe('independent activity editor', () => {
     vi.restoreAllMocks()
     localStorage.clear()
   })
-  it('prepares after selecting a type and moving immediately to Instrument despite automatic field initialization', async () => {
+  it('keeps all activity cards and the editable instrument visible without step navigation', () => {
+    render(<ActivityEditorWorkspace {...props()} initialDraft={readyDraft()} />)
+    expect(screen.queryByRole('button', { name: '1. Actividad' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: '2. Instrumento' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: '3. Revisar y guardar' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Anterior' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Continuar al instrumento' })).not.toBeInTheDocument()
+    for (const title of ['1. Bloques de competencias', '2. Actividad', '3. Modalidad', '4. Evaluación', '5. Recursos']) {
+      expect(screen.getByText(title)).toBeVisible()
+    }
+    expect(screen.getByPlaceholderText('1. Criterio')).toBeVisible()
+    expect(screen.getByRole('textbox', { name: /Nombre de la actividad/ })).toBeVisible()
+    expect(screen.getByRole('button', { name: 'Guardar' })).toBeVisible()
+    expect(screen.queryByText(/Procedencia:/)).not.toBeInTheDocument()
+  })
+  it('scrolls to and focuses a pending field without hiding the editable instrument', async () => {
+    const scrollIntoView = vi.fn()
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: false })))
+    const draft = { ...readyDraft(), name: '' }
+    render(<ActivityEditorWorkspace {...props()} initialDraft={draft} />)
+    const name = screen.getByRole('textbox', { name: /Nombre de la actividad/ })
+    name.scrollIntoView = scrollIntoView
+    fireEvent.click(within(screen.getByRole('complementary')).getByRole('button', { name: /Nombre de la actividad/ }))
+    await waitFor(() => expect(name).toHaveFocus())
+    expect(scrollIntoView).toHaveBeenCalledWith({ block: 'center', behavior: 'smooth' })
+    expect(name.closest('[data-activity-required="name"]')?.className).toContain('ring-2')
+    expect(screen.getByPlaceholderText('1. Criterio')).toBeVisible()
+    fireEvent.change(name, { target: { value: 'Informe' } })
+    expect(within(screen.getByRole('complementary')).getByRole('button', { name: /Nombre de la actividad/ })).toBeDisabled()
+    vi.unstubAllGlobals()
+  })
+  it('shows a dismissible brief notice after preparing an editable alternative', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    const draft = { ...readyDraft(), preparedRecommendation: undefined, preparedFingerprint: undefined,
+      preparedManuallyEdited: false, instrumentCompleted: false, instrumentFields: {} }
+    render(<ActivityEditorWorkspace {...props()} initialDraft={draft} sectionSubjectId="subject" />)
+    await waitFor(() => expect(screen.getByPlaceholderText('1. Criterio')).not.toHaveValue(''), { timeout: 5000 })
+    const notice = screen.getAllByRole('status').find(element => /alternativo/.test(element.textContent ?? ''))!
+    expect(notice).toBeDefined()
+    expect(notice).toHaveTextContent(/alternativo/)
+    expect(screen.queryByText(/Procedencia:/)).not.toBeInTheDocument()
+    expect(notice).not.toHaveTextContent(/catálogo|currículo|plantilla local/i)
+    fireEvent.click(within(notice).getByRole('button', { name: /Cerrar/ }))
+    expect(screen.queryByText(/El servicio no respondi/)).not.toBeInTheDocument()
+    expect(screen.getByPlaceholderText('1. Criterio')).not.toHaveValue('')
+  }, 10000)
+  it('keeps actionable service validation errors visible and allows retry without losing content', async () => {
+    const proposal = readyDraft().preparedRecommendation
+    const post = vi.spyOn(api, 'post').mockImplementation(async (path) => {
+      if (path.endsWith('/recommend')) throw new ApiError(400, 'No se pudo validar la asignatura')
+      throw new ApiError(503, 'Interpretación no disponible')
+    })
+    const draft = { ...readyDraft(), preparedRecommendation: undefined, preparedFingerprint: undefined,
+      preparedManuallyEdited: false, instrumentCompleted: false, instrumentFields: {} }
+    render(<ActivityEditorWorkspace {...props()} initialDraft={draft} sectionSubjectId="subject" />)
+    expect(await screen.findByText('No se pudo validar la asignatura', {}, { timeout: 5000 })).toBeVisible()
+    expect(screen.queryByText(/alternativo/)).not.toBeInTheDocument()
+    expect(screen.getByRole('textbox', { name: /Nombre de la actividad/ })).toHaveValue('Informe')
+    post.mockImplementation(async (path) => {
+      if (path.endsWith('/recommend')) return proposal as never
+      throw new Error('Interpretación no disponible')
+    })
+    fireEvent.click(screen.getByRole('button', { name: 'Generar nuevo instrumento' }))
+    await waitFor(() => expect(screen.getByPlaceholderText('1. Criterio')).toHaveValue(proposal.criteria[0].title))
+    expect(screen.queryByText('No se pudo validar la asignatura')).not.toBeInTheDocument()
+  }, 10000)
+  it('adds a criterion to a local editable instrument without claiming a service failure', async () => {
+    const post = vi.spyOn(api, 'post').mockRejectedValue(new Error('Unexpected remote request'))
+    const draft = readyDraft()
+    render(<ActivityEditorWorkspace {...props()} initialDraft={draft} sectionSubjectId="subject" />)
+    const initialCriteria = screen.getAllByPlaceholderText(/^\d+\. Criterio$/).length
+    fireEvent.click(screen.getByRole('button', { name: 'Agregar criterio' }))
+    const confirmation = screen.queryByRole('button', { name: 'Redistribuir puntos' })
+    if (confirmation) fireEvent.click(confirmation)
+    await waitFor(() => expect(screen.getAllByPlaceholderText(/^\d+\. Criterio$/)).toHaveLength(initialCriteria + 1))
+    expect(screen.queryByText(/El servicio no respondi/)).not.toBeInTheDocument()
+    expect(post.mock.calls.some(([path]) => path.endsWith('/recommend'))).toBe(false)
+  })
+  it('prepares the visible instrument after selecting a type despite automatic field initialization', async () => {
     const draft = {
       ...newActivityDraft('b1'),
       name: 'Informe',
@@ -100,7 +178,6 @@ describe('independent activity editor', () => {
     fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), {
       target: { value: 'lista-cotejo' },
     })
-    fireEvent.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
     await waitFor(
       () =>
         expect(screen.getByPlaceholderText('1. Criterio')).toHaveValue(proposal.criteria[0].title),
@@ -137,7 +214,6 @@ describe('independent activity editor', () => {
     fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), {
       target: { value: 'lista-cotejo' },
     })
-    fireEvent.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
     await waitFor(
       () => expect(post.mock.calls.some(([path]) => path.endsWith('/recommend'))).toBe(true),
       { timeout: 5000 },
@@ -154,37 +230,32 @@ describe('independent activity editor', () => {
       readActivityDrafts(context)[0].draft.instrumentFields?.['lista-cotejo:criterion:0'],
     ).toBe('Mi criterio manual')
   }, 10000)
-  it('sets and clears optional date and planning moment visibly, including graded edits', async () => {
+  it('preserves invisible historical fields when updating a graded activity', async () => {
     const input = props()
-    const activity = { ...draftToActivity(readyDraft()), id: 'dated', evaluatedCount: 1 }
-    const first = render(<ActivityEditorWorkspace {...input} activity={activity} />)
-    fireEvent.change(screen.getByLabelText('Fecha (opcional)'), { target: { value: '2026-10-14' } })
-    fireEvent.change(screen.getByLabelText('Momento de planificación (opcional)'), {
-      target: { value: 'cierre' },
+    const historical = {
+      date: '2026-10-14', planningMoment: 'cierre' as const, studentRole: 'Investigar',
+      teacherRole: 'Guiar', evidenceInstructions: 'Entregar PDF', observations: 'Registro histórico',
+      planningId: 'plan-1', source: 'planning' as const,
+    }
+    const activity = { ...draftToActivity(readyDraft()), ...historical, id: 'dated', evaluatedCount: 1 }
+    render(<ActivityEditorWorkspace {...input} activity={activity} />)
+    for (const label of [/Fecha/, /Momento de planificación/, /Rol del estudiante/, /Rol del docente/, /Evidencia esperada/, /Observaciones/]) {
+      expect(screen.queryByLabelText(label)).not.toBeInTheDocument()
+    }
+    fireEvent.change(screen.getByRole('textbox', { name: /Nombre de la actividad/ }), {
+      target: { value: 'Informe actualizado' },
     })
-    fireEvent.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
     fireEvent.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
     await screen.findByText('Actividad actualizada')
-    const dated = input.onUpdateActivity.mock.calls[0][0]
-    expect(dated).toMatchObject({ date: '2026-10-14', planningMoment: 'cierre' })
-    first.unmount()
-    render(<ActivityEditorWorkspace {...input} activity={dated} />)
-    fireEvent.change(screen.getByLabelText('Fecha (opcional)'), { target: { value: '' } })
-    fireEvent.change(screen.getByLabelText('Momento de planificación (opcional)'), {
-      target: { value: '' },
-    })
-    fireEvent.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
-    fireEvent.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
-    await screen.findByText('Actividad actualizada')
-    expect(input.onUpdateActivity.mock.calls[1][0]).toMatchObject({ date: '', planningMoment: '' })
+    expect(input.onUpdateActivity.mock.calls[0][0]).toMatchObject({ ...historical, name: 'Informe actualizado' })
   })
   it('confirms starting from scratch before overwriting manually edited and autosaved fields', async () => {
     const draft = readyDraft()
     render(<ActivityEditorWorkspace {...props()} initialDraft={draft} />)
-    fireEvent.change(screen.getByRole('textbox', { name: 'Rol del docente' }), {
-      target: { value: 'Guiar' },
+    fireEvent.change(screen.getByPlaceholderText('1. Criterio'), {
+      target: { value: 'Criterio editado' },
     })
-    fireEvent.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
     const storedBefore = readActivityDrafts(context)[0].draft.instrumentFields
     fireEvent.click(screen.getByRole('button', { name: 'Crear desde cero' }))
     expect(screen.getByRole('dialog')).toHaveTextContent('Reemplazar')
@@ -213,9 +284,8 @@ describe('independent activity editor', () => {
     fireEvent.change(screen.getByRole('textbox', { name: /Nombre de la actividad/ }), {
       target: { value: 'Informe corregido' },
     })
-    fireEvent.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
     fireEvent.click(screen.getByRole('button', { name: 'Conservar instrumento actual' }))
-    fireEvent.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
     fireEvent.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
     await screen.findByText('Actividad actualizada')
     const saved = input.onUpdateActivity.mock.calls[0][0]
@@ -232,20 +302,27 @@ describe('independent activity editor', () => {
       draft = readyDraft()
     input.onAddActivity.mockRejectedValueOnce(new Error('Sin conexión'))
     render(<ActivityEditorWorkspace {...input} initialDraft={draft} />)
-    fireEvent.change(screen.getByRole('textbox', { name: 'Rol del docente' }), {
-      target: { value: 'Orientar' },
+    fireEvent.change(screen.getByPlaceholderText('1. Criterio'), {
+      target: { value: 'Criterio para reintentar' },
     })
     await waitFor(() => expect(readActivityDrafts(context)).toHaveLength(1))
-    fireEvent.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
-    fireEvent.click(screen.getByRole('button', { name: 'Revisar y guardar' }))
+    const beforeSummary = readActivityDrafts(context)[0].draft
+    fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
+    expect(input.onAddActivity).not.toHaveBeenCalled()
+    fireEvent.click(screen.getByRole('button', { name: 'Volver a editar' }))
+    expect(readActivityDrafts(context)[0].draft).toEqual(beforeSummary)
+    expect(screen.getByPlaceholderText('1. Criterio')).toHaveValue('Criterio para reintentar')
+    fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
     fireEvent.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
     await waitFor(() => expect(input.onAddActivity).toHaveBeenCalledTimes(1))
     await waitFor(() => expect(screen.getByRole('dialog')).toHaveTextContent('Sin conexión'))
+    expect(readActivityDrafts(context)[0].draft.creationId).toBe(draft.creationId)
+    expect(readActivityDrafts(context)[0].draft.instrumentFields?.['lista-cotejo:criterion:0']).toBe('Criterio para reintentar')
     fireEvent.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
     await screen.findByText('Actividad creada')
     expect(input.onAddActivity.mock.calls[0][0].creationId).toBe(draft.creationId)
     expect(input.onAddActivity.mock.calls[1][0].creationId).toBe(draft.creationId)
-    expect(input.onAddActivity.mock.calls[1][0].teacherRole).toBe('Orientar')
+    expect(input.onAddActivity.mock.calls[1][0].instrumentCriteria?.['lista-cotejo:criterion:0']).toBe('Criterio para reintentar')
     expect(readActivityDrafts(context)).toHaveLength(0)
   })
   it('reports denied storage and preserves the editable state without claiming autosave', async () => {
@@ -343,7 +420,7 @@ describe('independent activity editor', () => {
       'Informe copia',
     )
     expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).not.toBeDisabled()
-    fireEvent.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
     fireEvent.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
     await screen.findByText('Actividad creada')
     expect(input.onUpdateActivity).not.toHaveBeenCalled()

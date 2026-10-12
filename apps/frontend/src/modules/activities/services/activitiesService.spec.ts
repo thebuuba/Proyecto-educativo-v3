@@ -88,16 +88,7 @@ describe('activity HTTP write contract', () => {
       expect(body).not.toHaveProperty(key)
   })
   it('sends explicit empty metadata and date so the server can clear old values', async () => {
-    const edited = draftToActivity(
-      {
-        ...activityToDraft(original),
-        date: '',
-        studentRole: '',
-        teacherRole: '',
-        observations: '',
-      },
-      original,
-    )
+    const edited = { ...original, date: '', studentRole: '', teacherRole: '', observations: '' }
     await saveActivity({
       ...edited,
       id: original.id,

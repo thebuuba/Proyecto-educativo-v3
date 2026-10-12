@@ -1,5 +1,5 @@
 import { readActivityDraftsForContext, writeActivityDrafts } from '@/modules/activities/utils/activityDraftStorage'
-import { act, fireEvent, render, screen as rawScreen, waitFor, within } from '@testing-library/react'
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { StrictMode, type ComponentProps } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -17,21 +17,6 @@ vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
 
 
 const draftContext = {schoolId:'school',userId:'user',schoolYearId:'year',sectionSubjectId:'subject',academicPeriodId:'period'}
-function revealEditorRole(role: Parameters<typeof rawScreen.getByRole>[0], options?: Parameters<typeof rawScreen.getByRole>[1]) {
- let element=rawScreen.queryByRole(role,options)
- if(element) return element
- const activityField = role === 'combobox' || /Valor en puntos|Descripción de la actividad|Nombre de la actividad|^Grupal|^Individual/.test(String(options?.name ?? ''))
- const step=rawScreen.queryByRole('button',{name:activityField ? '1. Actividad' : '2. Instrumento'})
- if(step && step.getAttribute('aria-current') !== 'step') fireEvent.click(step)
- element=rawScreen.queryByRole(role,options)
- if(element)return element
- return null
-}
-const screen={...rawScreen,
- getByRole: (role: Parameters<typeof rawScreen.getByRole>[0], options?: Parameters<typeof rawScreen.getByRole>[1]) => revealEditorRole(role,options) ?? rawScreen.getByRole(role,options),
- findByRole: async (role: Parameters<typeof rawScreen.getByRole>[0], options?: Parameters<typeof rawScreen.getByRole>[1], waitOptions?: Parameters<typeof rawScreen.findByRole>[2]) => { revealEditorRole(role,options); return rawScreen.findByRole(role,options,waitOptions) },
-}
-
 const students: StudentGradeRow[] = [
   {
     enrollmentId: 'enrollment-1',
@@ -141,7 +126,7 @@ describe('GradingBook', () => {
     expect(screen.getByRole('checkbox', { name: /Bloque 2/i })).toBeChecked()
   })
 
-  it('prepara sin puntaje y redistribuye al confirmar 20, 30 y 17.35 sin regenerar el contenido', async () => {
+  it('prepara sin puntaje y redistribuye al escribir 20, 30 y 17.35 sin regenerar el contenido', async () => {
     const post = vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
     renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create', initialActivityBlockId: 'b1' })
     const score = screen.getByRole('textbox', { name: /Valor en puntos/ })
@@ -182,7 +167,7 @@ describe('GradingBook', () => {
     expect(score).toHaveValue('')
     expect(criterion).toHaveValue('Información esencial editada')
     expect(screen.queryByText('Puntaje pendiente')).not.toBeInTheDocument()
-    await userEvent.setup().click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    await userEvent.setup().click(screen.getByRole('button', { name: 'Guardar' }))
     expect(screen.getByRole('dialog', { name: 'Actividad incompleta' })).toBeInTheDocument()
   }, 15000)
 
@@ -255,7 +240,7 @@ describe('GradingBook', () => {
     fireEvent.change(score, { target: { value: '30' } })
     await waitFor(() => expect(screen.getByText('Puntuación máxima total: 30 / 30 pts')).toBeInTheDocument())
     expect(score).toHaveFocus()
-    fireEvent.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
     const user = userEvent.setup()
     await user.click(within(screen.getByRole('dialog', { name: 'Resumen de la actividad' })).getByRole('button', { name: 'Confirmar y guardar' }))
     await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
@@ -318,6 +303,32 @@ describe('GradingBook', () => {
       expect(storedDraft()?.instrumentFields[`${type}:criterion:0`]).toBe(firstCriterion)
     }
   }, 20000)
+
+  it('preserva pesos relativos y descriptores manuales al actualizar el total sin salir del campo', async () => {
+    const { proposal } = seededInstrumentDraft('manual-weights')
+    expect(proposal.criteria).toHaveLength(6)
+    renderBook({ initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'manual-weights' })
+    const firstCriterion = screen.getByRole('textbox', { name: 'Criterio 1' })
+    fireEvent.change(firstCriterion, { target: { value: 'Criterio con peso mayor' } })
+    for (let index = 0; index < 6; index++) {
+      fireEvent.change(screen.getByRole('spinbutton', { name: 'Puntos del criterio ' + (index + 1) }), {
+        target: { value: index === 0 ? '10' : '2' },
+      })
+    }
+    const before = readActivityDraftsForContext(draftContext).b1![0].instrumentFields!
+    const descriptor = before['rubrica:descriptor:0:4']
+    expect(descriptor).toBeTruthy()
+    const score = screen.getByRole('textbox', { name: /Valor en puntos/ })
+    score.focus()
+    fireEvent.change(score, { target: { value: '30' } })
+    expect(score).toHaveFocus()
+    expect(firstCriterion).toHaveValue('Criterio con peso mayor')
+    await waitFor(() => expect(screen.getByRole('spinbutton', { name: 'Puntos del criterio 1' })).toHaveValue(15))
+    for (let index = 1; index < 6; index++) {
+      expect(screen.getByRole('spinbutton', { name: 'Puntos del criterio ' + (index + 1) })).toHaveValue(3)
+    }
+    expect(readActivityDraftsForContext(draftContext).b1![0].instrumentFields!['rubrica:descriptor:0:4']).toBe(descriptor)
+  })
 
   it('presenta tres bloques cuando el perfil es de primaria', () => {
     renderBook({ evaluationProfile: primaryEvaluationProfile, initialActivityAction: 'create', initialActivityBlockId: 'b1' })
@@ -429,7 +440,7 @@ describe('GradingBook', () => {
     await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING'))
     await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'))
     const user = userEvent.setup()
-    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    await user.click(screen.getByRole('button', { name: 'Guardar' }))
     const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })
     expect(within(summary).getByText('Redacción de noticia')).toBeInTheDocument()
     expect(within(summary).getByText('Análisis de producciones')).toBeInTheDocument()
@@ -516,7 +527,7 @@ describe('GradingBook', () => {
     expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
     expect(screen.queryByText('Mensaje interno.')).not.toBeInTheDocument()
     const user = userEvent.setup()
-    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    await user.click(screen.getByRole('button', { name: 'Guardar' }))
     const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })
     expect(within(summary).getByText('Elaboración de informe de lectura')).toBeInTheDocument()
     expect(within(summary).getByText('Análisis de producciones')).toBeInTheDocument()
@@ -670,7 +681,7 @@ describe('GradingBook', () => {
     const user = userEvent.setup()
     renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'summary-draft', onAddActivity })
     expect(await screen.findByDisplayValue('Informe de lectura')).toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    await user.click(screen.getByRole('button', { name: 'Guardar' }))
     const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })
     expect(onAddActivity).not.toHaveBeenCalled()
     expect(within(summary).getByText('17.35 puntos')).toBeInTheDocument()
@@ -682,7 +693,7 @@ describe('GradingBook', () => {
     await user.click(screen.getByRole('button', { name: 'Volver al resumen' }))
     await user.click(screen.getByRole('button', { name: 'Volver a editar' }))
     expect(screen.getByDisplayValue('Informe de lectura')).toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    await user.click(screen.getByRole('button', { name: 'Guardar' }))
     const confirm = screen.getByRole('button', { name: 'Confirmar y guardar' })
     fireEvent.click(confirm)
     fireEvent.click(confirm)
@@ -812,7 +823,7 @@ describe('GradingBook', () => {
     const view = renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'add-save-reopen', onAddActivity })
     await user.click(screen.getByRole('button', { name: 'Agregar criterio' }))
     await screen.findByDisplayValue('Referencias textuales')
-    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+    await user.click(screen.getByRole('button', { name: 'Guardar' }))
     await user.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
     await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
     const saved = onAddActivity.mock.calls[0][0] as GradingActivity

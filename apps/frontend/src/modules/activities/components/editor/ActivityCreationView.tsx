@@ -2,6 +2,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Modal } from '@/components/ui/Modal'
+import { FeedbackBanner } from '@/components/ui/SemanticUI'
 import {
   ActivityDataSections,
   availablePedagogicalActivityType,
@@ -72,10 +73,21 @@ import {
   Scale,
   Target,
   Users,
+  X,
 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { useActivityEditorProfile } from './ActivityEditorProfile'
 import { ReadOnlyInstrument } from './ReadOnlyInstrument'
+
+function requiredField(target: ActivityCompletionTarget) {
+  const section = document.querySelector<HTMLElement>(`[data-activity-required="${target}"]`)
+  return (
+    (target === 'description'
+      ? section?.querySelector<HTMLElement>('[contenteditable="true"], textarea:not(:disabled)')
+      : section?.querySelector<HTMLElement>('input:not(:disabled), select:not(:disabled), textarea:not(:disabled)')) ??
+    section?.querySelector<HTMLElement>('button:not(:disabled)')
+  )
+}
 
 export function ActivityCreationView(props: {
   firstSecondaryLanguage?: boolean
@@ -111,8 +123,12 @@ export function ActivityCreationView(props: {
   } = props
   const competencyBlocks = useActivityEditorProfile().blocks
   const structuralLocked = props.structuralLocked ?? false
-  const [step, setStep] = useState<'activity' | 'instrument' | 'review'>('activity')
   const [fallbackNotice, setFallbackNotice] = useState('')
+  useEffect(() => {
+    if (!fallbackNotice) return
+    const timer = window.setTimeout(() => setFallbackNotice(''), 8000)
+    return () => window.clearTimeout(timer)
+  }, [fallbackNotice])
   const contextualLanguageGrade = firstSecondaryLanguage ? 1 : secondSecondaryLanguage ? 2 : null
   const latestDraft = useRef(activityDraft)
   latestDraft.current = activityDraft
@@ -481,7 +497,7 @@ export function ActivityCreationView(props: {
       ) {
         useEditableTemplate(requestedType, newGeneration, Boolean(preferredType))
         setFallbackNotice(
-          'El servicio de instrumentos no está disponible. Se preparó una plantilla local editable; revisa sus criterios antes de guardar.',
+          'El servicio no respondió. Revisa el instrumento alternativo antes de guardar.',
         )
       } else {
         setFailedInstrumentType(requestedType)
@@ -585,6 +601,7 @@ export function ActivityCreationView(props: {
     const signature = `${preparationFingerprint(current)}:${JSON.stringify([current.maxScore, current.instrumentFields])}`
     const type = current.instrumentType as InstrumentRecommendation['instrumentType']
     let candidates: InstrumentRecommendation['criteria'] = []
+    let usedAlternative = false
     try {
       if (current.preparedRecommendation?.catalogVersion === 'editable-fallback-v1')
         throw new Error('Usar plantilla local')
@@ -623,10 +640,7 @@ export function ActivityCreationView(props: {
       candidates = [0, 1].flatMap(
         (variation) => editableFallbackRecommendation({ ...base, variation }).criteria,
       )
-      if (mounted.current)
-        setFallbackNotice(
-          'No se pudo consultar el catálogo. Se utilizó una alternativa local editable para el criterio adicional.',
-        )
+      usedAlternative = current.preparedRecommendation?.catalogVersion !== 'editable-fallback-v1'
     } finally {
       addingRequest.current = false
       setAddingCriterion(false)
@@ -637,6 +651,8 @@ export function ActivityCreationView(props: {
         signature
     )
       return
+    if (usedAlternative)
+      setFallbackNotice('El servicio no respondió. Revisa el criterio alternativo.')
     const criterion = nextCatalogCriterion(
       candidates,
       current.instrumentFields,
@@ -761,9 +777,7 @@ export function ActivityCreationView(props: {
     setRequiredFieldError(issue.message)
     showHighlight(issue.target)
     window.setTimeout(() => {
-      const field = document.querySelector<HTMLElement>(
-        `[data-activity-required="${issue.target}"] input:not(:disabled), [data-activity-required="${issue.target}"] button`,
-      )
+      const field = requiredField(issue.target)
       field?.scrollIntoView?.({
         block: 'center',
         behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
@@ -851,13 +865,10 @@ export function ActivityCreationView(props: {
   }
 
   function goToIssue(issue: ActivityCompletionIssue) {
-    setStep(issue.tab)
     showHighlight(issue.target)
     setCompletionIssues([])
     window.setTimeout(() => {
-      const field = document.querySelector<HTMLElement>(
-        `[data-activity-required="${issue.target}"] input:not(:disabled), [data-activity-required="${issue.target}"] button, [data-activity-required="${issue.target}"] select, [data-activity-required="${issue.target}"] [contenteditable="true"]`,
-      )
+      const field = requiredField(issue.target)
       field?.scrollIntoView?.({
         block: 'center',
         behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
@@ -877,7 +888,6 @@ export function ActivityCreationView(props: {
       return
     }
     if (stale || preparing) return
-    setStep('review')
     setSummaryView('summary')
     setShowSummary(true)
   }
@@ -937,34 +947,16 @@ export function ActivityCreationView(props: {
         </div>
       </div>
 
-      <nav aria-label="Pasos de creación" className="flex flex-wrap gap-2">
-        {(
-          [
-            ['activity', '1. Actividad'],
-            ['instrument', '2. Instrumento'],
-            ['review', '3. Revisar y guardar'],
-          ] as const
-        ).map(([id, label]) => (
-          <Button
-            key={id}
-            variant={step === id ? 'secondary' : 'ghost'}
-            aria-current={step === id ? 'step' : undefined}
-            onClick={() => (id === 'review' ? saveActivity() : setStep(id))}
-          >
-            {label}
-          </Button>
-        ))}
-      </nav>
       {fallbackNotice ? (
-        <div
-          role="status"
-          className="rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm"
-        >
-          {fallbackNotice}
-        </div>
+        <FeedbackBanner role="status" tone="warning" className="flex items-center justify-between gap-3">
+          <span>{fallbackNotice}</span>
+          <Button type="button" variant="ghost" size="icon" aria-label="Cerrar aviso" onClick={() => setFallbackNotice('')}>
+            <X className="size-4" />
+          </Button>
+        </FeedbackBanner>
       ) : null}
-      <div className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_17rem]">
-        <main className="order-2 min-w-0 space-y-4 xl:order-1">
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_17rem]">
+        <main className="order-2 min-w-0 space-y-4 lg:order-1">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <h2 className="text-3xl font-black text-foreground">
@@ -995,7 +987,7 @@ export function ActivityCreationView(props: {
               {requiredFieldError}
             </div>
           ) : null}
-          <div hidden={step !== 'activity'}>
+          <div>
             <ActivityDataSections
               structuralLocked={structuralLocked}
               activityDraft={activityDraft}
@@ -1022,27 +1014,12 @@ export function ActivityCreationView(props: {
           ) : null}
 
           <div
-            hidden={step !== 'instrument'}
             data-activity-required="instrumentBody"
             className="space-y-3"
           >
             <h3 className="text-lg font-black text-foreground">
               6. Instrumento completo · {instrumentLabel}
             </h3>
-            <p className="text-sm text-muted-foreground">
-              Procedencia:{' '}
-              {activityDraft.preparedManuallyEdited
-                ? 'Edición manual docente'
-                : activityDraft.preparedRecommendation?.catalogVersion === 'editable-fallback-v1'
-                  ? 'Plantilla local editable'
-                  : activityDraft.preparedRecommendation?.criteria.some(
-                        (row) => row.sourceType === 'CURRICULUM_DERIVED',
-                      )
-                    ? 'Catálogo y currículo'
-                    : activityDraft.preparedRecommendation
-                      ? 'Catálogo revisado'
-                      : 'Manual'}
-            </p>
             {structuralLocked ? (
               <ReadOnlyInstrument
                 type={activityDraft.instrumentType}
@@ -1157,7 +1134,7 @@ export function ActivityCreationView(props: {
                       `${activityDraft.instrumentType}:meta:scorePending`
                     ] === 'true'
                       ? 0
-                      : (committedScore.current ?? 0)
+                      : (validActivityScore(activityDraft.maxScore) ?? 0)
                   }
                   skipDefaults={activityDraft.manualInstrumentBlank}
                   addingCriterion={addingCriterion}
@@ -1213,20 +1190,13 @@ export function ActivityCreationView(props: {
             ) : null}
           </div>
 
-          <div className="flex justify-between gap-2">
-            <Button
-              variant="ghost"
-              onClick={() => setStep(step === 'review' ? 'instrument' : 'activity')}
-              disabled={step === 'activity'}
-            >
-              Anterior
-            </Button>
+          <div className="flex justify-end gap-2">
             <Button
               type="button"
-              disabled={saving || preparing || (step !== 'activity' && stale)}
-              onClick={() => (step === 'activity' ? setStep('instrument') : saveActivity())}
+              disabled={saving || preparing || stale}
+              onClick={saveActivity}
             >
-              {step === 'activity' ? 'Continuar al instrumento' : 'Revisar y guardar'}
+              Guardar
             </Button>
           </div>
         </main>

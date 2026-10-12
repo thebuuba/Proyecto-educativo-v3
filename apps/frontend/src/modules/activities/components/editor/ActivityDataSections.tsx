@@ -1,6 +1,5 @@
 import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
-import { Textarea } from '@/components/ui/Textarea'
 import { ResourcePicker } from '@/modules/activities/components/editor/ActivityResources'
 import {
   type ActivityCompletionTarget,
@@ -246,7 +245,6 @@ export function ActivityDataSections({
   onChangeDraft,
   onScoreChange,
   onInstrumentTypeChange,
-  interpretation,
   requiredFieldError,
   firstSecondaryLanguage,
   secondSecondaryLanguage,
@@ -308,30 +306,6 @@ export function ActivityDataSections({
               value={activityDraft.description}
               onChange={(description) => onChangeDraft({ ...activityDraft, description })}
             />
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block space-y-1.5 text-sm font-bold">
-              Fecha (opcional)
-              <Input
-                type="date"
-                value={activityDraft.date}
-                onChange={(event) => onChangeDraft({ ...activityDraft, date: event.target.value })}
-              />
-            </label>
-            <label className="block space-y-1.5 text-sm font-bold">
-              Momento de planificación (opcional)
-              <Select
-                value={activityDraft.planningMoment}
-                onChange={(event) =>
-                  onChangeDraft({ ...activityDraft, planningMoment: event.target.value })
-                }
-              >
-                <option value="">Sin momento asignado</option>
-                <option value="inicio">Inicio</option>
-                <option value="desarrollo">Desarrollo</option>
-                <option value="cierre">Cierre</option>
-              </Select>
-            </label>
           </div>
           <label className="block space-y-1.5 text-sm font-bold">
             Tipo de actividad
@@ -565,78 +539,8 @@ export function ActivityDataSections({
             ) : null}
           </label>
         </div>
-        {interpretation?.curriculumCandidates.length ? (
-          <div className="mt-3 space-y-1">
-            <p className="text-xs font-semibold">Contenidos para revisar:</p>
-            {interpretation.curriculumCandidates.slice(0, 3).map((candidate) => (
-              <label key={candidate.elementId} className="flex items-start gap-2 text-xs">
-                <input
-                  disabled={structuralLocked}
-                  type="checkbox"
-                  className="mt-0.5"
-                  checked={
-                    activityDraft.selectedCurriculumElementIds?.includes(candidate.elementId) ??
-                    false
-                  }
-                  onChange={(event) =>
-                    onChangeDraft({
-                      ...activityDraft,
-                      selectedCurriculumElementIds: event.target.checked
-                        ? [
-                            ...(activityDraft.selectedCurriculumElementIds ?? []),
-                            candidate.elementId,
-                          ]
-                        : (activityDraft.selectedCurriculumElementIds ?? []).filter(
-                            (id) => id !== candidate.elementId,
-                          ),
-                    })
-                  }
-                />
-                <span>{candidate.text}</span>
-              </label>
-            ))}
-          </div>
-        ) : null}
       </CreationFormSection>
 
-      <section className="grid gap-3 rounded-2xl border border-border bg-card p-4 sm:grid-cols-2">
-        <label className="space-y-1 text-sm font-semibold">
-          Rol del estudiante
-          <Textarea
-            value={activityDraft.studentRole}
-            onChange={(event) =>
-              onChangeDraft({ ...activityDraft, studentRole: event.target.value })
-            }
-          />
-        </label>
-        <label className="space-y-1 text-sm font-semibold">
-          Rol del docente
-          <Textarea
-            value={activityDraft.teacherRole}
-            onChange={(event) =>
-              onChangeDraft({ ...activityDraft, teacherRole: event.target.value })
-            }
-          />
-        </label>
-        <label className="space-y-1 text-sm font-semibold">
-          Evidencia esperada
-          <Textarea
-            value={activityDraft.evidenceInstructions ?? ''}
-            onChange={(event) =>
-              onChangeDraft({ ...activityDraft, evidenceInstructions: event.target.value })
-            }
-          />
-        </label>
-        <label className="space-y-1 text-sm font-semibold">
-          Observaciones
-          <Textarea
-            value={activityDraft.observations}
-            onChange={(event) =>
-              onChangeDraft({ ...activityDraft, observations: event.target.value })
-            }
-          />
-        </label>
-      </section>
       <CreationFormSection
         icon={<Box className="size-4" />}
         number={5}

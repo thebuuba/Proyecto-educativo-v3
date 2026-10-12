@@ -10,8 +10,6 @@ import { cn } from '@/utils/cn'
 import {
   AlertCircle,
   ArrowRight,
-  BookOpen,
-  CalendarDays,
   ClipboardList,
   FileText,
   Lightbulb,
@@ -64,7 +62,7 @@ export function ActivityProgressCard({
   return (
     <aside
       className={cn(
-        'order-1 h-fit max-h-[calc(100dvh-7.5rem)] self-start overflow-y-auto rounded-xl border bg-card shadow-sm xl:order-2 xl:sticky xl:top-[6.5rem]',
+        'order-1 h-fit self-start rounded-xl border bg-card shadow-sm lg:order-2 lg:sticky lg:top-[6.5rem] lg:max-h-[calc(100dvh-7.5rem)] lg:overflow-y-auto',
         accent.border,
       )}
     >
@@ -359,25 +357,11 @@ export function ActivityCompletionIssueButton({
 }
 
 export function completionIssueVisual(target: ActivityCompletionTarget) {
-  if (target === 'date') {
-    return {
-      actionText: 'text-destructive',
-      icon: <CalendarDays className="size-6" />,
-      iconBox: 'bg-destructive/10 text-destructive',
-    }
-  }
   if (target === 'activityType') {
     return {
       actionText: 'text-muted-foreground',
       icon: <Users className="size-6" />,
       iconBox: 'bg-muted/30 text-muted-foreground',
-    }
-  }
-  if (target === 'planningMoment') {
-    return {
-      actionText: 'text-warning-foreground',
-      icon: <BookOpen className="size-6" />,
-      iconBox: 'bg-warning/10 text-warning-foreground',
     }
   }
   if (target === 'description') {

@@ -191,7 +191,7 @@ it('creates from a real planning card and recovers its link and return destinati
       'Actividad vinculada',
     ),
   )
-  fireEvent.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
   fireEvent.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
   await screen.findByText('Actividad creada')
   expect(api.post).toHaveBeenCalledWith(
@@ -231,7 +231,6 @@ it('creates from a real planning card and recovers its link and return destinati
   fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), {
     target: { value: 'lista-cotejo' },
   })
-  fireEvent.click(screen.getByRole('button', { name: 'Continuar al instrumento' }))
   await waitFor(
     () =>
       expect(readActivityDrafts(stored.context)[0].draft).toMatchObject({
@@ -239,7 +238,7 @@ it('creates from a real planning card and recovers its link and return destinati
       }),
     { timeout: 5000 },
   )
-  fireEvent.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
   fireEvent.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
   await screen.findByText('Actividad creada')
   const writes = vi.mocked(api.post).mock.calls.filter(([path]) => path === '/activities')

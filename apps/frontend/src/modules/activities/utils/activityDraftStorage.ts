@@ -135,11 +135,11 @@ export function deleteActivityDraft(summary: StoredActivityDraftSummary, storage
 }
 
 export type ActivityDraftCompletionTarget = 'competencyBlocks' | 'name' | 'maxScore' | 'evaluationTechnique' | 'activityType' | 'instrumentType' | 'instrumentBody' | 'description'
-export type ActivityDraftCompletionIssue = { target: ActivityDraftCompletionTarget; tab: 'activity' | 'instrument'; title: string; detail: string }
+export type ActivityDraftCompletionIssue = { target: ActivityDraftCompletionTarget; title: string; detail: string }
 
 export function validateActivityDraft(draft: StoredActivityDraft): ActivityDraftCompletionIssue[] {
   const issues: ActivityDraftCompletionIssue[] = []
-  const add = (target: ActivityDraftCompletionTarget, title: string, detail: string, tab: 'activity' | 'instrument' = 'activity') => issues.push({ target, title, detail, tab })
+  const add = (target: ActivityDraftCompletionTarget, title: string, detail: string) => issues.push({ target, title, detail })
   const weights = Object.values(draft.competencyBlockWeights ?? {})
   const validWeights = weights.length > 0 && weights.every(weight => Number.isFinite(weight) && weight > 0 && weight <= 1)
     && Boolean(draft.competencyBlockId && draft.competencyBlockId in (draft.competencyBlockWeights ?? {}))
@@ -153,7 +153,7 @@ export function validateActivityDraft(draft: StoredActivityDraft): ActivityDraft
   if (!draft.instrumentType) add('instrumentType', 'Instrumento de evaluación', 'Selecciona un instrumento.')
   else {
     const instrumentIssues = validateInstrumentDefinition(draft.instrumentType, draft.instrumentFields ?? {}, score)
-    if (!draft.instrumentCompleted || instrumentIssues.length) add('instrumentBody', 'Instrumento incompleto', instrumentIssues[0] ?? 'Completa el instrumento de evaluación.', 'instrument')
+    if (!draft.instrumentCompleted || instrumentIssues.length) add('instrumentBody', 'Instrumento incompleto', instrumentIssues[0] ?? 'Completa el instrumento de evaluación.')
   }
   const description = typeof DOMParser === 'undefined' ? (draft.description ?? '').replace(/<[^>]*>/g, ' ') : new DOMParser().parseFromString(draft.description ?? '', 'text/html').body.textContent ?? ''
   if (!description.trim()) add('description', 'Descripción de la actividad', 'Describe lo que harán los estudiantes y la evidencia que entregarán.')
