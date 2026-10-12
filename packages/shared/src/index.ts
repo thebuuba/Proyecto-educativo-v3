@@ -7,6 +7,7 @@
  * @template T - Tipo de los datos contenidos en la respuesta.
  */
 export type * from './instrument-recommendation'
+export * from './instrument-definition'
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
 
 /** Deterministic classification shared by the service and its local editable fallback. */

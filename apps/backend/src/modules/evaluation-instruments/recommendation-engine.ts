@@ -1,4 +1,4 @@
-import { detectSecondaryLanguageActivity, firstSecondaryLanguageTechnique, type CurriculumReference, type InstrumentRecommendation, type RecommendationCriterion } from '@aula/shared'
+import { detectSecondaryLanguageActivity, firstSecondaryLanguageTechnique, INSTRUMENT_MAX_CRITERIA, type CurriculumReference, type InstrumentRecommendation, type RecommendationCriterion } from '@aula/shared'
 export { detectFirstSecondaryLanguageActivity, detectSecondaryLanguageActivity } from '@aula/shared'
 import { type EvaluationCatalog, evaluationCatalogV1 } from './catalog-v1'
 import { type AcademicContext, type ScopeCandidate, discipline, normalize } from './curriculum-context'
@@ -541,7 +541,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       ? ['science-content', 'science-content', 'science-data', 'science-accuracy', 'science-interpretation'] : []
   const prioritized = priorityIds.map(byId).filter((candidate): candidate is (typeof allCandidates)[number] => Boolean(candidate))
   const candidates = [...prioritized, ...allCandidates.filter(candidate => !prioritized.includes(candidate))]
-    .slice(0, input.includeAdditionalCandidates ? undefined : count)
+    .slice(0, input.includeAdditionalCandidates ? INSTRUMENT_MAX_CRITERIA : count)
   const scores = distributeScore(input.maxScore, candidates.map((candidate, index) => priorityIds.length && dimensions.length > 1 && candidates.length === 5
     ? [5, 4, 4, 4, 3][index] : candidate.template.weight))
   const rule = catalog.recommendationRules.filter(r => (!r.families.length || r.families.includes(activity.family)) && (!r.band || r.band === band)
@@ -601,7 +601,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
         : contextualDescriptors(item.observable, authoredPatternIndexes, item.title, item.templateId)[levelIndex],
       scoreUnits: Math.round(authoredScores[index] * level.proportion) })),
   }))
-  const expandedCriteria = [...authoredCriteria, ...genericCriteria]
+  const expandedCriteria = [...authoredCriteria, ...genericCriteria].slice(0, INSTRUMENT_MAX_CRITERIA)
   const expandedScores = input.includeAdditionalCandidates && authoredCriteria.length
     ? distributeScore(input.maxScore, expandedCriteria.map(item => item.maxScoreUnits)) : []
   const criteria: RecommendationCriterion[] = expandedScores.length
@@ -626,13 +626,13 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
 }
 
 export function assertValidRecommendation(result: InstrumentRecommendation) {
-  if (!result.criteria.length) throw new Error('Recomendación inválida: no contiene criterios.')
+  if (!result.criteria.length || result.criteria.length > INSTRUMENT_MAX_CRITERIA) throw new Error('Recomendación inválida: se requieren entre 1 y 20 criterios.')
   if (!Number.isInteger(result.totalScoreUnits) || result.totalScoreUnits <= 0 || !Number.isFinite(result.totalScore)) throw new Error('Recomendación inválida: puntuación total no válida.')
   const scoreTotal = result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)
   if (scoreTotal !== result.totalScoreUnits) throw new Error('Recomendación inválida: los criterios no suman la puntuación total.')
   for (const criterion of result.criteria) {
     if (!criterion.title.trim() || !criterion.description.trim()) throw new Error('Recomendación inválida: criterio vacío.')
-    if (!Number.isInteger(criterion.maxScoreUnits) || criterion.maxScoreUnits <= 0 || !Number.isFinite(criterion.maxScore)) throw new Error('Recomendación inválida: puntuación de criterio no válida.')
+    if (!Number.isInteger(criterion.maxScoreUnits) || criterion.maxScoreUnits < 0 || !Number.isFinite(criterion.maxScore)) throw new Error('Recomendación inválida: puntuación de criterio no válida.')
     if ((result.instrumentType === 'rubrica' || result.instrumentType === 'escala') && (criterion.descriptors.length !== result.levels.length || criterion.descriptors.some(item => !item.text.trim()))) throw new Error('Recomendación inválida: descriptor de desempeño vacío o incompleto.')
   }
 }

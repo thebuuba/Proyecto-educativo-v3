@@ -972,6 +972,9 @@ model EvaluationInstrumentSnapshot {
   schoolId String @map("school_id") @db.Uuid
   instrumentId String @unique @map("instrument_id") @db.Uuid
   versionNo Int @default(1) @map("version_no")
+  previousSnapshotId String? @map("previous_snapshot_id") @db.Uuid
+  previousSnapshot EvaluationInstrumentSnapshot? @relation("SnapshotRevisions", fields: [previousSnapshotId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  revisions EvaluationInstrumentSnapshot[] @relation("SnapshotRevisions")
   payload Json
   curriculumVersionId String? @map("curriculum_version_id") @db.Uuid
   curriculumScopeId String? @map("curriculum_scope_id") @db.Uuid
@@ -987,6 +990,7 @@ model EvaluationInstrumentSnapshot {
   sources EvaluationSnapshotSource[]
 
   @@index([schoolId, createdAt])
+  @@index([previousSnapshotId])
   @@index([curriculumScopeId, curriculumVersionId])
   @@map("evaluation_instrument_snapshots")
 }

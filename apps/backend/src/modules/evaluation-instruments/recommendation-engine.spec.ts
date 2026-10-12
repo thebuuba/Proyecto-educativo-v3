@@ -13,6 +13,21 @@ const elements: RankedElement[] = rows.filter(r => r.kind === 'element').map(r =
   versionId: r.versionId, type: r.type, text: r.originalText, normalizedText: r.normalizedText,
   sources: [{ documentId: r.source.documentId, pdfPage: r.source.pdfPage, printedPage: r.source.printedPage }] }))
 
+describe('shared instrument boundaries', () => {
+  it('keeps an exact one-cent recommendation with zero-point rows', () => {
+    const result = recommend({ activityTitle: 'Proyecto', participationMode: 'INDIVIDUAL', maxScore: 0.01 }, null, null, [], 'UNMAPPED', null)
+    expect(result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)).toBe(1)
+    expect(result.criteria.some(criterion => criterion.maxScoreUnits === 0)).toBe(true)
+  })
+
+  it('rejects a recommendation containing 21 criteria', () => {
+    const result = recommend({ activityTitle: 'Proyecto', participationMode: 'INDIVIDUAL', maxScore: 20 }, null, null, [], 'UNMAPPED', null)
+    result.criteria = Array.from({ length: 21 }, (_, index) => ({ ...result.criteria[0], id: `c${index}`, maxScore: 1, maxScoreUnits: 100 }))
+    result.totalScore = 21; result.totalScoreUnits = 2100
+    expect(() => assertValidRecommendation(result)).toThrow()
+  })
+})
+
 describe('Selecciones automáticas de Lengua Española en 1.º de secundaria', () => {
   const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
   it.each([

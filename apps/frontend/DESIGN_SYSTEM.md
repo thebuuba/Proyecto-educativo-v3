@@ -12,7 +12,7 @@ AulaBase usa los valores de la referencia de Inicio, definidos en `src/semantic-
 - Verde `#10b981`: éxito, completado y asistencia.
 - Coral `hsl(4 80% 60%)`: error, incidencia y acción destructiva.
 - Amarillo `#fbbf24`: pendiente y actividades.
-- Violeta, turquesa, naranja, rosa y pizarra: identidad puntual de los módulos en iconos y accesos rápidos.
+- No se permiten familias de identidad adicionales: usar exclusivamente azul, verde, coral, amarillo, gris, blanco y texto oscuro.
 - Gris `hsl(214 32% 91%)`: estructura, controles secundarios, vacío e inactividad.
 - Blanco `#FFFFFF`: tarjetas, menús, modales y superficies principales.
 - Texto `hsl(220 30% 18%)`: títulos y contenido principal.
@@ -145,7 +145,7 @@ Esas funciones siempre usan los tokens semánticos oficiales.
 
 ## Prohibido
 
-No introducir colores Tailwind directos fuera de la paleta de referencia en módulos de negocio. Los acentos violeta, turquesa, naranja, rosa y pizarra se consumen mediante tokens, no con valores repetidos en cada pantalla:
+No introducir colores Tailwind directos fuera de la paleta de referencia en módulos de negocio. No usar acentos violeta, turquesa, naranja, rosa ni pizarra, tampoco mediante tokens de identidad:
 
 ```text
 bg-violet-50

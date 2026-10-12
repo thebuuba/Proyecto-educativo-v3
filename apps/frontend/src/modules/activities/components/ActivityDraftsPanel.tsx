@@ -4,31 +4,51 @@ import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
-import { ProgressIndicator, SectionHeader, StatusBadge } from '@/components/ui/SemanticUI'
+import { FeedbackBanner, ProgressIndicator, SectionHeader, StatusBadge } from '@/components/ui/SemanticUI'
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { competencyBlocks } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 
-import { deleteActivityDraft, readActivityDrafts, type StoredActivityDraftSummary } from '../utils/activityDraftStorage'
+import { deleteActivityDraft, readActivityDrafts, type ActivityDraftContext, type ActivityDraftScope, type StoredActivityDraftSummary } from '../utils/activityDraftStorage'
 
-export function ActivityDraftsPanel({ filter, resolveHref }: {
+type DraftPanelProps = {
   filter?: (draft: StoredActivityDraftSummary) => boolean
+  scope?: Partial<Pick<ActivityDraftContext, 'schoolYearId' | 'sectionSubjectId' | 'academicPeriodId'>>
   resolveHref: (draft: StoredActivityDraftSummary) => string | null
-}) {
+}
+
+export function ActivityDraftsPanel(props: DraftPanelProps) {
+  const { schoolId, appUser } = useAuth()
+  if (!schoolId || !appUser?.id) return null
+  const scope = { ...props.scope, schoolId, userId: appUser.id }
+  return <ScopedActivityDraftsPanel key={JSON.stringify(scope)} {...props} accountScope={scope} />
+}
+
+function ScopedActivityDraftsPanel({ filter, resolveHref, accountScope }: DraftPanelProps & { accountScope: ActivityDraftScope }) {
   const navigate = useNavigate()
   const [pendingDelete, setPendingDelete] = useState<StoredActivityDraftSummary | null>(null)
   const [revision, setRevision] = useState(0)
-  const drafts = useMemo(() => readActivityDrafts().filter((draft) => !filter || filter(draft)), [filter, revision])
+  const [mutationError, setMutationError] = useState<string | null>(null)
+  const result = useMemo(() => {
+    try { return { drafts: readActivityDrafts(accountScope).filter(draft => !filter || filter(draft)), error: null } }
+    catch (reason) { return { drafts: [], error: reason instanceof Error ? reason.message : 'No se pudieron leer los borradores.' } }
+  }, [accountScope, filter, revision])
+  const { drafts } = result
+  if (result.error) return <FeedbackBanner role="alert" tone="danger">{result.error}<Button variant="outline" onClick={() => setRevision(value => value + 1)}>Reintentar borradores</Button></FeedbackBanner>
   if (!drafts.length) return null
 
   const removeDraft = () => {
     if (!pendingDelete) return
-    deleteActivityDraft(pendingDelete)
+    const saved = deleteActivityDraft(pendingDelete)
+    if (!saved.ok) { setMutationError(saved.error); return }
+    setMutationError(null)
     setPendingDelete(null)
     setRevision((value) => value + 1)
   }
 
   return (
     <section className="rounded-2xl border border-border bg-card p-4 shadow-sm" aria-labelledby="activity-drafts-title">
+      {mutationError ? <FeedbackBanner role="alert" tone="danger">{mutationError} El borrador se conserva; vuelve a eliminar para reintentar.</FeedbackBanner> : null}
       <div id="activity-drafts-title"><SectionHeader title="Borradores" description="Continúa las actividades incompletas desde Actividades." /></div>
       <div className="mt-4 grid gap-4 xl:grid-cols-4">
         {competencyBlocks.map((block, blockIndex) => {
@@ -53,7 +73,7 @@ export function ActivityDraftsPanel({ filter, resolveHref }: {
                       <p className="mt-2 text-[11px] text-muted-foreground">Última modificación: {formatDraftDate(draft.draft.updatedAt)}</p>
                       <div className="mt-3 flex gap-2">
                         {href ? <Button size="sm" className="flex-1" onClick={() => navigate(href)}><Pencil className="size-3.5" /> Continuar</Button> : <Button size="sm" className="flex-1" disabled><Pencil className="size-3.5" /> Continuar</Button>}
-                        <Button size="icon" variant="destructive" aria-label={`Eliminar borrador ${name}`} onClick={() => setPendingDelete(draft)}><Trash2 className="size-4" /></Button>
+                        <Button size="icon" variant="destructive" aria-label={`Eliminar borrador ${name}`} onClick={() => { setMutationError(null); setPendingDelete(draft) }}><Trash2 className="size-4" /></Button>
                       </div>
                     </article>
                   )
@@ -63,7 +83,7 @@ export function ActivityDraftsPanel({ filter, resolveHref }: {
           )
         })}
       </div>
-      {pendingDelete ? <ConfirmDialog title="¿Eliminar este borrador?" description="Esta acción no se puede deshacer." confirmLabel="Eliminar borrador" destructive onClose={() => setPendingDelete(null)} onConfirm={removeDraft} /> : null}
+      {pendingDelete ? <ConfirmDialog title="¿Eliminar este borrador?" description={mutationError ? `${mutationError}. El borrador se conserva; vuelve a eliminar para reintentar.` : 'Esta acción no se puede deshacer.'} confirmLabel="Eliminar borrador" destructive onClose={() => { setMutationError(null); setPendingDelete(null) }} onConfirm={removeDraft} /> : null}
     </section>
   )
 }

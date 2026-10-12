@@ -152,3 +152,62 @@ describe('informe de lectura de la actividad real', () => {
     expect(alignRecommendationWithFields(result, recommendationToFields(result, 'Un cuento en pocas palabras'), 20)?.totalScoreUnits).toBe(2000)
   })
 })
+
+describe('reconciliación de todos los campos editables', () => {
+  it('adapts existing recommendation proportions without replacing them by level order', () => {
+    const original = proposal('rubrica')
+    original.levels[1].proportion = 0.9
+    const result = alignRecommendationWithFields(original, recommendationToFields(original, 'Experiment'), 10.25)
+    expect(result?.levels[1].proportion).toBe(0.9)
+  })
+  it('conserva etiquetas y proporciones de nivel personalizadas', () => {
+    const original = proposal('rubrica')
+    const fields = recommendationToFields(original, 'Experimento')
+    fields['rubrica:level-name:3'] = 'Con autonomía'
+    fields['rubrica:level-points:4'] = '10'
+    fields['rubrica:level-points:3'] = '9'
+    fields['rubrica:level-points:2'] = '2'
+    fields['rubrica:level-points:1'] = '0'
+    const result = alignRecommendationWithFields(original, fields, 10.25)
+    expect(result?.levels[1]).toMatchObject({ label: 'Con autonomía', proportion: 0.9 })
+    expect(result?.criteria[0].descriptors[1].scoreUnits).toBe(653)
+  })
+  it('usa el indicador ponderado final y elimina su atribución anterior', () => {
+    const original = proposal('lista-ponderada')
+    original.criteria[0].sourceType = 'CURRICULUM_DERIVED'
+    const fields = recommendationToFields(original, 'Experimento')
+    fields['lista-ponderada:indicator:0'] = 'Indicador de la docente'
+    const result = alignRecommendationWithFields(original, fields, 10.25)
+    expect(result?.criteria[0].description).toBe('Indicador de la docente')
+    expect(result?.criteria[0].sourceType).toBe('ACTIVITY_TEMPLATE')
+  })
+  it('conserva la identidad al mover filas', () => {
+    const original = proposal('lista-cotejo')
+    const fields = recommendationToFields(original, 'Experimento')
+    for (const kind of ['criterion', 'description', 'points', 'criterion-id']) {
+      const a = fields[`lista-cotejo:${kind}:0`]
+      fields[`lista-cotejo:${kind}:0`] = fields[`lista-cotejo:${kind}:1`]
+      fields[`lista-cotejo:${kind}:1`] = a
+    }
+    expect(alignRecommendationWithFields(original, fields, 10.25)?.criteria.map(item => item.id)).toEqual(['two', 'one'])
+  })
+  it('acepta asignaciones cero por reparto de un total pequeño', () => {
+    const original = proposal('lista-cotejo')
+    const fields = recommendationToFields(original, 'Experimento')
+    fields['lista-cotejo:points:0'] = '0.01'
+    fields['lista-cotejo:points:1'] = '0'
+    expect(alignRecommendationWithFields(original, fields, 0.01)?.totalScoreUnits).toBe(1)
+  })
+  it('adapta las cinco etiquetas y proporciones de una escala', () => {
+    const original = proposal('escala')
+    original.levels = Array.from({length: 5}, (_, index) => ({id: `L${5-index}`, label: `Nivel ${5-index}`, proportion: (5-index)/5}))
+    const fields = recommendationToFields(original, 'Experimento')
+    fields['escala:level-name:5'] = 'Siempre'
+    fields['escala:level-points:4'] = '4.5'
+    const result = alignRecommendationWithFields(original, fields, 10.25)
+    expect(result?.levels).toHaveLength(5)
+    expect(result?.levels[0].label).toBe('Siempre')
+    expect(result?.levels[1].proportion).toBe(0.9)
+    expect(result?.criteria[0].descriptors).toHaveLength(5)
+  })
+})

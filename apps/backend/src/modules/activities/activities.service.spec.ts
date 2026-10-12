@@ -12,14 +12,16 @@ describe('ActivitiesService', () => {
     }
     const service = new ActivitiesService(grading as never)
 
-    await service.findAll('school-1', { sectionSubjectId: 'ss-1' })
+    await service.findAll('school-1', { sectionSubjectId: 'ss-1' }, 'user-1', ['teacher'])
     await service.getCenter('school-1', 'user-1', ['teacher'])
     const saved = await service.save('school-1', 'user-1', { name: 'Actividad' } as never, ['teacher'])
-    await service.remove('school-1', 'activity-1')
+    await service.linkPlanning('school-1', 'activity-1', { planningEntryId: null }, 'user-1', ['teacher'])
+    await service.remove('school-1', 'activity-1', 'user-1', ['teacher'])
 
-    expect(grading.getActivities).toHaveBeenCalledWith('school-1', { sectionSubjectId: 'ss-1' })
+    expect(grading.getActivities).toHaveBeenCalledWith('school-1', { sectionSubjectId: 'ss-1' }, 'user-1', ['teacher'])
     expect(grading.getActivityCenter).toHaveBeenCalledWith('school-1', 'user-1', ['teacher'])
     expect(saved).toEqual({ id: 'activity-1' })
-    expect(grading.deleteActivity).toHaveBeenCalledWith('school-1', 'activity-1')
+    expect(grading.linkActivityToPlanning).toHaveBeenCalledWith('school-1', 'activity-1', { planningEntryId: null }, 'user-1', ['teacher'])
+    expect(grading.deleteActivity).toHaveBeenCalledWith('school-1', 'activity-1', 'user-1', ['teacher'])
   })
 })

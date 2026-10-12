@@ -39,6 +39,8 @@ export type Activity = {
   instrumentType?: string
   instrumentId?: string
   instrumentSnapshotId?: string
+  instrumentSnapshotVersion?: number
+  evaluatedCount?: number
   instrumentSnapshot?: InstrumentRecommendation
   pedagogicalActivityType?: string
   instrumentCriteria?: Record<string, string>
@@ -90,6 +92,7 @@ export type ActivityCreatorContext = {
 
 export type SaveActivityInput = Omit<Activity, 'id'> & {
   id?: string
+  creationId?: string
   sectionSubjectId: string
   academicPeriodId: string
   schoolYearId?: string

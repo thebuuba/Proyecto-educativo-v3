@@ -4,9 +4,9 @@
  * Implementa la lógica de negocio para la gestión de calificaciones
  * de los estudiantes en las distintas materias y períodos académicos.
  */
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
+import { BadRequestException, ConflictException, ForbiddenException, Injectable, NotFoundException } from '@nestjs/common'
 import { Prisma, prisma } from '@aula/database'
-import { isBlockInEvaluationProfile, resolveEvaluationProfile, type EvaluationProfile } from '@aula/shared'
+import { isBlockInEvaluationProfile, resolveEvaluationProfile, type EvaluationProfile, INSTRUMENT_TYPES, INSTRUMENT_MAX_CRITERIA, instrumentEvaluationConfiguration, instrumentEvaluationResult, validateInstrumentDefinition } from '@aula/shared'
 import { academicPeriodDate, defaultAcademicPeriods } from '../../common/academic-period-defaults'
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SaveGradeDto } from './dto/save-grade.dto'
@@ -34,6 +34,8 @@ function mapEvaluationActivity(activity: any, profile?: EvaluationProfile) {
     instrumentType: activity.instrument?.type || undefined,
     instrumentId: activity.instrumentId ?? undefined,
     instrumentSnapshotId: activity.instrumentSnapshotId ?? undefined,
+    instrumentSnapshotVersion: activity.instrumentSnapshot?.versionNo ?? undefined,
+    evaluatedCount: activity._count?.gradesRecords ?? 0,
     instrumentSnapshot: activity.instrumentSnapshot?.payload ?? undefined,
     pedagogicalActivityType: activity.pedagogicalActivityType ?? undefined,
     instrumentCriteria: activity.instrument?.criteria && typeof activity.instrument.criteria === 'object'
@@ -92,28 +94,70 @@ function mapGradeRecord(grade: any) {
   }
 }
 
+function assertPoints(value: number, minimum = 0) {
+  if (!Number.isFinite(value) || value < minimum || value > 10000 || Math.abs(value * 100 - Math.round(value * 100)) > 1e-7) {
+    throw new BadRequestException('Los puntos deben tener hasta dos decimales y estar entre ' + minimum + ' y 10000.')
+  }
+}
+
+function validateActivityInput(dto: SaveActivityDto) {
+  assertPoints(dto.maxScore, 0.01)
+  if (dto.activityType !== undefined && !['individual', 'group'].includes(dto.activityType) ||
+    dto.planningMoment !== undefined && !['', 'inicio', 'desarrollo', 'cierre'].includes(dto.planningMoment) ||
+    dto.source !== undefined && !['grading', 'planning'].includes(dto.source)) throw new BadRequestException('Modalidad, momento u origen no válido.')
+  if (dto.date && (!/^\d{4}-\d{2}-\d{2}$/.test(dto.date) || !Number.isFinite(Date.parse(dto.date)) || new Date(dto.date).toISOString().slice(0, 10) !== dto.date)) {
+    throw new BadRequestException('La fecha debe ser una fecha válida YYYY-MM-DD.')
+  }
+}
+
+function assertDefinition(type: string, fields: Record<string, string>, maximum: number) {
+  const issues = validateInstrumentDefinition(type, fields, maximum)
+  if (issues.length) throw new BadRequestException(issues.join(' '))
+}
+
+function mergedActivityDto(dto: SaveActivityDto, existing: any): SaveActivityDto {
+  if (!existing) return dto
+  const mapped = mapEvaluationActivity(existing)
+  const defaults = { ...mapped, sectionSubjectId: existing.sectionSubjectId, academicPeriodId: existing.academicPeriodId, date: mapped.date ?? '', planningEntryId: existing.planningEntryId,
+    instrumentSnapshot: existing.instrumentSnapshot?.payload, schoolYearId: existing.schoolYearId }
+  return { ...defaults, ...Object.fromEntries(Object.entries(dto).filter(([, value]) => value !== undefined)) } as SaveActivityDto
+}
+
+function activityStructureMatches(existing: any, dto: SaveActivityDto, weights: Record<string, number>) {
+  return existing.sectionSubjectId === dto.sectionSubjectId && existing.academicPeriodId === dto.academicPeriodId &&
+    existing.schoolYearId === dto.schoolYearId && Number(existing.maxScore) === dto.maxScore &&
+    existing.competencyBlockId === dto.competencyBlockId && sameJson(existing.competencyBlockWeights ?? { [existing.competencyBlockId]: 1 }, weights) &&
+    (existing.activityType ?? 'individual') === (dto.activityType ?? 'individual') &&
+    sameJson(mapEvaluationActivity(existing).teamIds.sort(), [...new Set(dto.teamIds ?? [])].sort()) &&
+    (existing.pedagogicalActivityType ?? null) === (dto.pedagogicalActivityType ?? null) &&
+    (existing.instrument?.type ?? null) === (dto.instrumentType ?? null) &&
+    sameJson(existing.instrument?.criteria ?? {}, dto.instrumentCriteria ?? {}) &&
+    sameJson(existing.instrumentSnapshot?.payload ?? null, dto.instrumentSnapshot ?? null) &&
+    (dto.instrumentId ?? null) === (existing.instrumentId ?? null)
+}
+
 function validateInstrumentResult(result: Record<string, unknown> | null | undefined, score: number) {
   if (result === undefined || result === null) return
 
   const { instrumentType, selections, criterionScores, completedAt } = result
   const validSelections = Array.isArray(selections)
     && selections.length > 0
-    && selections.length <= 100
-    && selections.every((value) => Number.isInteger(value) && Number(value) >= 0 && Number(value) <= 50)
+    && selections.length <= INSTRUMENT_MAX_CRITERIA
+    && selections.every((value) => Number.isInteger(value) && Number(value) >= -1 && Number(value) <= 5)
   const validScores = Array.isArray(criterionScores)
     && criterionScores.length === (Array.isArray(selections) ? selections.length : -1)
-    && criterionScores.every((value) => typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 100)
+    && criterionScores.every((value) => typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 10000 && Math.abs(value * 100 - Math.round(value * 100)) < 1e-7)
   const validCompletedAt = typeof completedAt === 'string'
     && completedAt.length <= 40
     && Number.isFinite(Date.parse(completedAt))
 
-  if (typeof instrumentType !== 'string' || !instrumentType.trim() || instrumentType.length > 50
+  if (typeof instrumentType !== 'string' || !INSTRUMENT_TYPES.includes(instrumentType as any)
     || !validSelections || !validScores || !validCompletedAt) {
     throw new BadRequestException('El resultado del instrumento de evaluacion no es valido')
   }
 
   const criterionTotal = (criterionScores as number[]).reduce((total, value) => total + value, 0)
-  if (Math.abs(criterionTotal - score) > 0.01) {
+  if (Math.round(criterionTotal * 100) !== Math.round(score * 100)) {
     throw new BadRequestException('El desglose del instrumento no coincide con la calificacion')
   }
 }
@@ -153,9 +197,10 @@ async function assertEvaluationActivityScope(
   evaluationActivityId: string,
   sectionSubjectId: string,
   academicPeriodId: string,
+  client: Prisma.TransactionClient = prisma,
 ) {
-  const activity = await prisma.evaluationActivity.findFirst({
-    where: { id: evaluationActivityId, schoolId, status: 'ACTIVE' },
+  const activity = await client.evaluationActivity.findFirst({
+    where: { id: evaluationActivityId, schoolId, status: 'ACTIVE' }, include: activityInclude,
   })
   if (!activity) throw new NotFoundException('Evaluation activity not found')
   if (activity.sectionSubjectId !== sectionSubjectId || activity.academicPeriodId !== academicPeriodId) {
@@ -164,22 +209,67 @@ async function assertEvaluationActivityScope(
   return activity
 }
 
-async function snapshotGradeResult(snapshotId: string | null, result: Record<string, unknown> | null | undefined) {
-  if (!snapshotId || result == null) return result
-  const snapshot = await prisma.evaluationInstrumentSnapshot.findUnique({ where: { id: snapshotId } })
-  const payload = snapshot?.payload as unknown as { criteria?: Array<{ id: string; title: string; description: string; maxScoreUnits: number; descriptors: Array<{ text: string; scoreUnits: number }> }> }
-  const criteria = payload?.criteria ?? []
-  const scores = result.criterionScores as number[]
-  const selections = result.selections as number[]
-  if (!criteria.length || scores.length !== criteria.length || selections.length !== criteria.length ||
-    criteria.some((criterion, index) => Math.round(scores[index] * 100) > criterion.maxScoreUnits ||
-      selections[index] >= (criterion.descriptors?.length || (result.instrumentType === 'lista-cotejo' ? 3 : 4)))) {
-    throw new BadRequestException('El resultado no corresponde a la versión del instrumento guardada.')
+async function canonicalGradeResult(activity: any, result: Record<string, unknown> | null | undefined, score: number, tx: Prisma.TransactionClient) {
+  if (result == null) return result
+  const snapshot = activity?.instrumentSnapshot ?? (activity?.instrumentSnapshotId
+    ? await tx.evaluationInstrumentSnapshot.findUnique({ where: { id: activity.instrumentSnapshotId } }) : null)
+  const payload = snapshot?.payload as any
+  const type = activity?.instrument?.type ?? payload?.instrumentType ?? result.instrumentType
+  if (result.instrumentType !== type) throw new BadRequestException('El tipo no coincide con el instrumento guardado.')
+  const maximum = Number(activity?.maxScore ?? 100)
+  const fields = activity?.instrument?.criteria ?? {}
+  let configuration = instrumentEvaluationConfiguration(type as string, fields, maximum)
+  if (!configuration.criteria.length && !snapshot && fields && typeof fields === 'object' && !Array.isArray(fields)) {
+    // Missing historical prose must not discard numeric evidence already recorded in the field map.
+    const count = Number(fields[`${type}:meta:criteriaCount`] ?? Object.keys(fields).filter(key => key.startsWith(`${type}:criterion:`)).length)
+    const levels = Number(fields[`${type}:meta:levelCount`] ?? 4)
+    if (Number.isInteger(count) && count > 0 && count <= INSTRUMENT_MAX_CRITERIA && Number.isInteger(levels) && levels >= 2 && levels <= 6) {
+      const legacy = { ...fields }
+      for (let row = 0; row < count; row++) {
+        legacy[`${type}:criterion:${row}`] ||= `Criterio ${row + 1}`
+        if (type === 'lista-ponderada') legacy[`${type}:indicator:${row}`] ||= `Indicador ${row + 1}`
+        if (type === 'rubrica') for (let level = 1; level <= levels; level++) legacy[`rubrica:descriptor:${row}:${level}`] ||= `Nivel ${level}`
+      }
+      if (type === 'rubrica' || type === 'escala') for (let level = 1; level <= levels; level++) legacy[`${type}:level-name:${level}`] ||= `Nivel ${level}`
+      configuration = instrumentEvaluationConfiguration(type as string, legacy, maximum)
+      if (!configuration.criteria.length && ((result.selections as number[]).length !== count ||
+        (result.criterionScores as number[]).some((earned, index) => {
+          const limit = fields[`${type}:points:${index}`]
+          return typeof limit === 'string' && limit.trim() !== '' && Number.isFinite(Number(limit)) && earned > Number(limit)
+        }))) throw new BadRequestException('El resultado no corresponde a los criterios históricos guardados.')
+    }
   }
-  return { ...result, instrumentSnapshotId: snapshotId, snapshotVersion: snapshot!.versionNo,
-    criterionSnapshots: criteria.map((criterion, index) => ({ id: criterion.id, title: criterion.title,
+  // Historical snapshots may predate final field maps, but their recorded ratios still define grading.
+  if (!configuration.criteria.length && Array.isArray(payload?.criteria) && payload.criteria.length) {
+    const first = payload.criteria.find((criterion: any) => criterion?.maxScoreUnits > 0)
+    if (!first || !Array.isArray(first.descriptors) || !first.descriptors.length) throw new BadRequestException('Versión histórica inválida.')
+    const levels = Array.isArray(payload.levels) ? payload.levels.map((level: any) => ({ label: level?.label, points: level?.proportion }))
+      : first.descriptors.map((descriptor: any, index: number) => ({ label: String(index), points: descriptor?.scoreUnits / first.maxScoreUnits }))
+    if (payload.criteria.some((criterion: any) => !criterion || !Number.isInteger(criterion.maxScoreUnits) || !Array.isArray(criterion.descriptors) ||
+      criterion.descriptors.length !== levels.length || criterion.descriptors.some((descriptor: any, index: number) => !descriptor ||
+        descriptor.scoreUnits !== Math.round(criterion.maxScoreUnits * levels[index].points)))) throw new BadRequestException('Versión histórica inválida.')
+    configuration = { maxScore: maximum, noApply: false, levels,
+      criteria: payload.criteria.map((criterion: any) => ({ id: criterion.id, title: criterion.title, description: criterion.description, maximum: criterion.maxScoreUnits / 100 })) }
+  }
+  let canonical: ReturnType<typeof instrumentEvaluationResult> = null
+  if (configuration.criteria.length) {
+    canonical = instrumentEvaluationResult(configuration, result.selections as number[])
+    if (!canonical || canonical.score !== score || !sameJson(canonical.criterionScores, result.criterionScores) ||
+      (result.applicableMaximums !== undefined && !sameJson(canonical.applicableMaximums, result.applicableMaximums))) {
+      throw new BadRequestException('El resultado no corresponde a la definición del instrumento guardada.')
+    }
+  } else if ((result.selections as number[]).some(selection => selection < 0)) {
+    throw new BadRequestException('El instrumento histórico no define No aplica.')
+  }
+  const saved = { ...result, ...(canonical ? { applicableMaximums: canonical.applicableMaximums } : {}) }
+  if (!snapshot) return saved
+  if (!Array.isArray(payload?.criteria) || payload.criteria.length !== (result.selections as number[]).length) throw new BadRequestException('Versión histórica inválida.')
+  return { ...saved, instrumentSnapshotId: snapshot.id, snapshotVersion: snapshot.versionNo,
+    criterionSnapshots: payload.criteria.map((criterion: any, index: number) => ({ id: criterion.id, title: criterion.title,
       description: criterion.description, maxScoreUnits: criterion.maxScoreUnits,
-      selectedDescriptor: criterion.descriptors?.[selections[index]] ?? null, scoreUnits: Math.round(scores[index] * 100) })) }
+      applicableMaximumUnits: Math.round((canonical?.applicableMaximums[index] ?? criterion.maxScoreUnits / 100) * 100),
+      selectedDescriptor: criterion.descriptors?.[(result.selections as number[])[index]] ?? null,
+      scoreUnits: Math.round((result.criterionScores as number[])[index] * 100) })) }
 }
 
 function assertScoreWithinActivity(score: number, activity: { maxScore: unknown }) {
@@ -195,8 +285,9 @@ async function assertPlanningEntryScope(
   planningEntryId: string,
   sectionSubjectId: string,
   academicPeriodId: string,
+  client: Prisma.TransactionClient = prisma,
 ) {
-  const planning = await prisma.planningEntry.findFirst({ where: { id: planningEntryId, schoolId } })
+  const planning = await client.planningEntry.findFirst({ where: { id: planningEntryId, schoolId } })
   if (!planning) throw new NotFoundException('Planning entry not found')
   if (planning.sectionSubjectId !== sectionSubjectId || planning.academicPeriodId !== academicPeriodId) {
     throw new BadRequestException('Planning entry does not match activity context')
@@ -208,6 +299,103 @@ async function assertInstrumentScope(schoolId: string, instrumentId: string) {
     where: { id: instrumentId, schoolId, status: 'ACTIVE' },
   })
   if (!instrument) throw new NotFoundException('Evaluation instrument not found')
+  return instrument
+}
+
+const activityInclude = { instrument: true, instrumentSnapshot: true,
+  groups: { where: { status: 'ACTIVE' as const }, select: { courseTeamId: true } }, _count: { select: { gradesRecords: true } } }
+
+async function lockActivityForMutation(tx: Prisma.TransactionClient, schoolId: string, activityId: string) {
+  await tx.$queryRaw`SELECT id FROM evaluation_activities WHERE id = ${activityId}::uuid AND school_id = ${schoolId}::uuid FOR UPDATE`
+}
+
+async function lockGradeForMutation(tx: Prisma.TransactionClient, schoolId: string, gradeId: string) {
+  await tx.$queryRaw`SELECT id FROM grades_records WHERE id = ${gradeId}::uuid AND school_id = ${schoolId}::uuid FOR UPDATE`
+}
+
+function activityActorScope(schoolId: string, userId?: string, roles?: string[]) {
+  // Omitted actor arguments are reserved for existing trusted internal GradingService callers.
+  if (roles === undefined && userId === undefined) return {}
+  if (!userId || !roles?.some(role => ['admin', 'director', 'coordinator', 'teacher'].includes(role))) {
+    throw new ForbiddenException('Su rol no permite acceder a actividades.')
+  }
+  const teacherOnly = !roles.some(role => ['admin', 'director', 'coordinator'].includes(role))
+  return teacherOnly ? { teacher: { userId, schoolId, status: 'ACTIVE' as const } } : {}
+}
+
+async function assertActivityContext(schoolId: string, sectionSubjectId: string, academicPeriodId?: string,
+  userId?: string, roles?: string[], client: Prisma.TransactionClient = prisma) {
+  const actorScope = activityActorScope(schoolId, userId, roles)
+  const sectionSubject = await client.sectionSubject.findFirst({
+    where: { id: sectionSubjectId, schoolId, status: 'ACTIVE', schoolYear: { schoolId, status: 'ACTIVE' } },
+    include: { grade: { include: { academicLevel: true } } },
+  })
+  if (!sectionSubject) throw new NotFoundException('Section subject not found')
+  if ('teacher' in actorScope) {
+    const assigned = await client.teacher.findFirst({ where: {
+      id: sectionSubject.teacherId ?? '', userId, schoolId, status: 'ACTIVE',
+    } })
+    if (!assigned) throw new NotFoundException('Asignatura no disponible para este docente.')
+  }
+  const academicPeriod = academicPeriodId ? await client.academicPeriod.findFirst({
+    where: { id: academicPeriodId, schoolId, status: 'ACTIVE', schoolYear: { schoolId, status: 'ACTIVE' } },
+  }) : null
+  if (academicPeriodId && !academicPeriod) throw new NotFoundException('Academic period not found')
+  if (academicPeriod && academicPeriod.schoolYearId !== sectionSubject.schoolYearId) {
+    throw new BadRequestException('Academic period does not match section subject school year')
+  }
+  return { sectionSubject, academicPeriod }
+}
+
+function activityData(schoolId: string, userId: string, dto: SaveActivityDto, schoolYearId: string,
+  competencyBlockWeights: Record<string, number>) {
+  return {
+    schoolId, schoolYearId, sectionSubjectId: dto.sectionSubjectId, academicPeriodId: dto.academicPeriodId,
+    planningEntryId: dto.planningEntryId || null, pedagogicalActivityType: dto.pedagogicalActivityType ?? null,
+    competencyBlockId: dto.competencyBlockId, competencyBlockWeights, planningMoment: dto.planningMoment || null,
+    name: dto.name.trim(), description: dto.description?.trim() ?? '', activityType: dto.activityType ?? 'individual',
+    maxScore: dto.maxScore, activityDate: dto.date ? new Date(`${dto.date}T00:00:00.000Z`) : null,
+    evaluationTechnique: dto.evaluationTechnique?.trim() ?? '', studentRole: dto.studentRole?.trim() ?? '',
+    teacherRole: dto.teacherRole?.trim() ?? '', evidenceInstructions: dto.evidenceInstructions?.trim() ?? '',
+    observations: dto.observations?.trim() ?? '', resources: (dto.resources ?? []).map(resource => resource.trim()).filter(Boolean),
+    source: dto.source ?? (dto.planningEntryId ? 'planning' : 'grading'), createdBy: userId,
+  }
+}
+
+function sameJson(left: unknown, right: unknown): boolean {
+  if (left === right) return true
+  if (!left || !right || typeof left !== 'object' || typeof right !== 'object') return false
+  if (Array.isArray(left) || Array.isArray(right)) return Array.isArray(left) && Array.isArray(right)
+    && left.length === right.length && left.every((value, index) => sameJson(value, right[index]))
+  const a = left as Record<string, unknown>, b = right as Record<string, unknown>
+  return Object.keys(a).length === Object.keys(b).length && Object.keys(a).every(key => key in b && sameJson(a[key], b[key]))
+}
+
+async function assertCreationRetry(existing: any, schoolId: string, userId: string, dto: SaveActivityDto,
+  schoolYearId: string, competencyBlockWeights: Record<string, number>) {
+  if (existing.schoolId !== schoolId || existing.createdBy !== userId || existing.status !== 'ACTIVE' ||
+    existing.sectionSubjectId !== dto.sectionSubjectId || existing.academicPeriodId !== dto.academicPeriodId ||
+    existing.schoolYearId !== schoolYearId) {
+    throw new ConflictException('El identificador de creación ya pertenece a otra actividad o contexto.')
+  }
+  const expected = activityData(schoolId, userId, dto, schoolYearId, competencyBlockWeights)
+  const metadataMatches = Object.entries(expected).every(([key, value]) => {
+    if (key === 'maxScore') return Number(existing[key]) === value
+    if (key === 'activityDate') return (existing[key]?.toISOString() ?? null) === (value instanceof Date ? value.toISOString() : null)
+    return sameJson(existing[key], value)
+  })
+  const teamIds = dto.activityType === 'group' ? [...new Set(dto.teamIds ?? [])].sort() : []
+  const savedTeamIds = [...new Set((existing.groups ?? []).map((g: any) => g.courseTeamId).filter(Boolean))].sort()
+  const original = !dto.instrumentType && dto.instrumentId ? await assertInstrumentScope(schoolId, dto.instrumentId) : null
+  const instrumentMatches = dto.instrumentType || original ? existing.instrument?.type === (dto.instrumentType ?? original!.type)
+    && sameJson(existing.instrument?.criteria, dto.instrumentCriteria ?? original?.criteria ?? {})
+    && Number(existing.instrument?.maxScore) === dto.maxScore
+    : !existing.instrumentId
+  if (!metadataMatches || !instrumentMatches || !sameJson(teamIds, savedTeamIds) ||
+    !sameJson(existing.instrumentSnapshot?.payload ?? null, dto.instrumentSnapshot ?? null)) {
+    throw new ConflictException('La creación ya se guardó con otros datos. Recargue la actividad antes de editarla.')
+  }
+  return mapEvaluationActivity(existing)
 }
 
 /**
@@ -227,8 +415,10 @@ export class GradingService {
    * @param academicPeriodId - Identificador del período académico (opcional).
    * @returns Lista de registros de calificaciones.
    */
-  async findAll(schoolId: string, sectionSubjectId?: string, academicPeriodId?: string) {
-    const where: any = { schoolId }
+  async findAll(schoolId: string, sectionSubjectId?: string, academicPeriodId?: string, userId?: string, roles?: string[]) {
+    const actorScope = activityActorScope(schoolId, userId, roles)
+    if (sectionSubjectId) await assertActivityContext(schoolId, sectionSubjectId, academicPeriodId, userId, roles)
+    const where: any = { schoolId, ...(roles !== undefined ? { sectionSubject: { schoolId, status: 'ACTIVE', ...actorScope } } : {}) }
     if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
     if (academicPeriodId) where.academicPeriodId = academicPeriodId
     const records = await prisma.gradesRecord.findMany({ where })
@@ -242,19 +432,22 @@ export class GradingService {
    * @param schoolId - Identificador del colegio.
    * @returns Lista de materias de sección con datos descriptivos.
    */
-  async getSectionSubjects(schoolId: string) {
+  async getSectionSubjects(schoolId: string, userId?: string, roles?: string[]) {
+    const scope = activityActorScope(schoolId, userId, roles)
+    if (roles !== undefined) return this.loadSectionSubjects(schoolId, "teacher" in scope ? userId : undefined, true)
     return optionCache.withCache(
       optionCacheKeys.grading.sectionSubjects(schoolId),
       () => this.loadSectionSubjects(schoolId),
     )
   }
 
-  private async loadSectionSubjects(schoolId: string, appUserId?: string) {
+  private async loadSectionSubjects(schoolId: string, appUserId?: string, activeContext = false) {
     const items = await prisma.sectionSubject.findMany({
       where: {
         schoolId,
         status: 'ACTIVE',
-        ...(appUserId ? { teacher: { userId: appUserId } } : {}),
+        ...(activeContext ? { schoolYear: { schoolId, status: 'ACTIVE' as const } } : {}),
+        ...(appUserId ? { teacher: { userId: appUserId, ...(activeContext ? { schoolId, status: 'ACTIVE' as const } : {}) } } : {}),
       },
       select: {
         id: true,
@@ -303,11 +496,14 @@ export class GradingService {
     sectionSubjectId?: string,
     academicPeriodId?: string,
     includeOptions = true,
+    userId?: string, roles?: string[],
   ) {
+    activityActorScope(schoolId, userId, roles)
+    if (sectionSubjectId) await assertActivityContext(schoolId, sectionSubjectId, academicPeriodId, userId, roles)
     if (includeOptions) {
       const [sectionSubjects, allPeriods] = await Promise.all([
-        this.getSectionSubjects(schoolId),
-        this.getAcademicPeriods(schoolId),
+        this.getSectionSubjects(schoolId, userId, roles),
+        roles !== undefined ? this.loadAcademicPeriods(schoolId, true) : this.getAcademicPeriods(schoolId),
       ])
       const selectedSectionSubject = sectionSubjects.find((item) => item.id === sectionSubjectId)
         ?? sectionSubjects[0]
@@ -418,7 +614,7 @@ export class GradingService {
           academicPeriodId,
           status: 'ACTIVE',
         },
-        include: { instrument: true, instrumentSnapshot: true },
+        include: activityInclude,
         orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
       }),
     ])
@@ -439,7 +635,8 @@ export class GradingService {
   }
 
   /** Carga los cuatro períodos anuales en dos consultas de datos. */
-  async getAnnualWorkspace(schoolId: string, sectionSubjectId: string) {
+  async getAnnualWorkspace(schoolId: string, sectionSubjectId: string, userId?: string, roles?: string[]) {
+    await assertActivityContext(schoolId, sectionSubjectId, undefined, userId, roles)
     const sectionSubject = await prisma.sectionSubject.findFirst({
       where: { id: sectionSubjectId, schoolId, status: 'ACTIVE' },
       select: { id: true, schoolYearId: true },
@@ -463,7 +660,7 @@ export class GradingService {
           academicPeriodId: { in: periodIds },
           status: 'ACTIVE',
         },
-        include: { instrument: true, instrumentSnapshot: true },
+        include: activityInclude,
         orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
       }),
     ])
@@ -494,9 +691,9 @@ export class GradingService {
     )
   }
 
-  private async loadAcademicPeriods(schoolId: string) {
+  private async loadAcademicPeriods(schoolId: string, activeContext = false) {
     const existing = await prisma.academicPeriod.findMany({
-      where: { schoolId, status: 'ACTIVE' },
+      where: { schoolId, status: 'ACTIVE', ...(activeContext ? { schoolYear: { schoolId, status: 'ACTIVE' as const } } : {}) },
       orderBy: { sequence: 'asc' },
     })
     if (existing.length > 0) return existing
@@ -520,7 +717,7 @@ export class GradingService {
     })
 
     return prisma.academicPeriod.findMany({
-      where: { schoolId, status: 'ACTIVE' },
+      where: { schoolId, status: 'ACTIVE', ...(activeContext ? { schoolYear: { schoolId, status: 'ACTIVE' as const } } : {}) },
       orderBy: { sequence: 'asc' },
     })
   }
@@ -537,7 +734,8 @@ export class GradingService {
    * @returns Lista de estudiantes con sus calificaciones existentes.
    * @throws NotFoundException si la materia o el período académico no existen.
    */
-  async getStudentsForGrading(schoolId: string, sectionSubjectId: string, academicPeriodId: string) {
+  async getStudentsForGrading(schoolId: string, sectionSubjectId: string, academicPeriodId: string, userId?: string, roles?: string[]) {
+    await assertActivityContext(schoolId, sectionSubjectId, academicPeriodId, userId, roles)
     const [ss, academicPeriod] = await Promise.all([
       prisma.sectionSubject.findFirst({ where: { id: sectionSubjectId, schoolId } }),
       prisma.academicPeriod.findFirst({ where: { id: academicPeriodId, schoolId } }),
@@ -575,149 +773,190 @@ export class GradingService {
    * @returns La calificación creada o actualizada.
    * @throws NotFoundException si el registro o alguna entidad relacionada no existe.
    */
-  async saveGrade(schoolId: string, dto: SaveGradeDto) {
+  async saveGrade(schoolId: string, dto: SaveGradeDto, userId?: string, roles?: string[]) {
+    activityActorScope(schoolId, userId, roles)
+    assertPoints(dto.score)
+    if (dto.maxScore !== undefined) assertPoints(dto.maxScore, 0.01)
     validateInstrumentResult(dto.instrumentResult, dto.score)
-    if (dto.gradeId) {
-      const grade = await prisma.gradesRecord.findFirst({ where: { id: dto.gradeId, schoolId } })
-      if (!grade) throw new NotFoundException('Grade record not found')
-      const evaluationActivityId = dto.evaluationActivityId ?? grade.evaluationActivityId
-      const activity = evaluationActivityId
+    return prisma.$transaction(async tx => {
+      if (dto.gradeId) {
+        let grade = await tx.gradesRecord.findFirst({ where: { id: dto.gradeId, schoolId } })
+        if (!grade) throw new NotFoundException('Grade record not found')
+        await assertActivityContext(schoolId, grade.sectionSubjectId, grade.academicPeriodId, userId, roles, tx)
+        if (grade.evaluationActivityId && dto.evaluationActivityId !== undefined && dto.evaluationActivityId !== grade.evaluationActivityId) {
+          throw new BadRequestException('La calificación conserva su actividad y evidencia. Cree otro registro para calificar otra actividad.')
+        }
+        const evaluationActivityId = dto.evaluationActivityId === undefined ? grade.evaluationActivityId : dto.evaluationActivityId
+        const originalActivityId = grade.evaluationActivityId
+        if (evaluationActivityId) {
+          await lockActivityForMutation(tx, schoolId, evaluationActivityId)
+        }
+        await lockGradeForMutation(tx, schoolId, dto.gradeId)
+        grade = await tx.gradesRecord.findFirst({ where: { id: dto.gradeId, schoolId } })
+        if (!grade) throw new NotFoundException('Grade record not found')
+        await assertActivityContext(schoolId, grade.sectionSubjectId, grade.academicPeriodId, userId, roles, tx)
+        if (grade.evaluationActivityId !== originalActivityId) {
+          throw new ConflictException('La actividad de esta calificación cambió. Recargue antes de guardar.')
+        }
+        const activity = evaluationActivityId
+          ? await assertEvaluationActivityScope(
+            schoolId,
+            evaluationActivityId,
+            grade.sectionSubjectId,
+            grade.academicPeriodId,
+            tx,
+          )
+          : null
+        const activityMaxScore = activity ? assertScoreWithinActivity(dto.score, activity) : dto.maxScore ?? Number(grade.maxScore)
+        if (dto.score > Number(activityMaxScore ?? 100)) throw new BadRequestException('La calificacion no puede superar el máximo.')
+        if (dto.instrumentResult === undefined && grade.instrumentResult != null) {
+          validateInstrumentResult(grade.instrumentResult as any, dto.score)
+          await canonicalGradeResult(activity, grade.instrumentResult as any, dto.score, tx)
+        }
+        const result = await canonicalGradeResult(activity, dto.instrumentResult, dto.score, tx)
+        const updated = await tx.gradesRecord.update({
+          where: { id: dto.gradeId },
+          data: {
+            score: dto.score,
+            maxScore: activityMaxScore,
+            weight: dto.weight,
+            assessmentName: dto.assessmentName,
+            evaluationActivityId: dto.evaluationActivityId === undefined ? undefined : dto.evaluationActivityId,
+            instrumentSnapshotId: activity?.instrumentSnapshotId ?? grade.instrumentSnapshotId,
+            instrumentResult: dto.instrumentResult === undefined
+              ? undefined
+              : dto.instrumentResult === null
+                ? Prisma.DbNull
+                : result as any,
+          },
+        })
+        return mapGradeRecord(updated)
+      }
+      await assertActivityContext(schoolId, dto.sectionSubjectId!, dto.academicPeriodId!, userId, roles, tx)
+      const [enrollment, sectionSubject, academicPeriod] = await Promise.all([
+        tx.enrollment.findFirst({ where: { id: dto.enrollmentId!, schoolId } }),
+        tx.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } }),
+        tx.academicPeriod.findFirst({ where: { id: dto.academicPeriodId!, schoolId } }),
+      ])
+      if (!enrollment) throw new NotFoundException('Enrollment not found')
+      if (!sectionSubject) throw new NotFoundException('Section subject not found')
+      if (!academicPeriod) throw new NotFoundException('Academic period not found')
+      if (enrollment.sectionId !== sectionSubject.sectionId || enrollment.schoolYearId !== sectionSubject.schoolYearId) {
+        throw new BadRequestException('Enrollment does not match section subject')
+      }
+      if (academicPeriod.schoolYearId !== sectionSubject.schoolYearId) {
+        throw new BadRequestException('Academic period does not match section subject school year')
+      }
+      if (dto.evaluationActivityId) {
+        await lockActivityForMutation(tx, schoolId, dto.evaluationActivityId)
+        await assertActivityContext(schoolId, dto.sectionSubjectId!, dto.academicPeriodId!, userId, roles, tx)
+      }
+      const activity = dto.evaluationActivityId
         ? await assertEvaluationActivityScope(
           schoolId,
-          evaluationActivityId,
-          grade.sectionSubjectId,
-          grade.academicPeriodId,
+          dto.evaluationActivityId,
+          dto.sectionSubjectId!,
+          dto.academicPeriodId!,
+          tx,
         )
         : null
       const activityMaxScore = activity ? assertScoreWithinActivity(dto.score, activity) : dto.maxScore
-      const result = await snapshotGradeResult(activity?.instrumentSnapshotId ?? null, dto.instrumentResult)
-      const updated = await prisma.gradesRecord.update({
-        where: { id: dto.gradeId },
-        data: {
+      if (dto.score > Number(activityMaxScore ?? 100)) throw new BadRequestException('La calificacion no puede superar el máximo.')
+      const existing = dto.evaluationActivityId ? await tx.gradesRecord.findFirst({ where: {
+        schoolId, enrollmentId: dto.enrollmentId!, evaluationActivityId: dto.evaluationActivityId,
+      } }) : null
+      const effectiveResult = dto.instrumentResult === undefined ? existing?.instrumentResult : dto.instrumentResult
+      validateInstrumentResult(effectiveResult as any, dto.score)
+      const result = await canonicalGradeResult(activity, effectiveResult as any, dto.score, tx)
+
+      const data = {
+          enrollmentId: dto.enrollmentId!,
+          sectionSubjectId: dto.sectionSubjectId!,
+          academicPeriodId: dto.academicPeriodId!,
+          sectionId: enrollment.sectionId,
+          schoolYearId: enrollment.schoolYearId,
+          schoolId,
           score: dto.score,
           maxScore: activityMaxScore,
-          weight: dto.weight,
-          assessmentName: dto.assessmentName,
-          evaluationActivityId: dto.evaluationActivityId === undefined ? undefined : dto.evaluationActivityId,
-          instrumentSnapshotId: activity?.instrumentSnapshotId ?? grade.instrumentSnapshotId,
-          instrumentResult: dto.instrumentResult === undefined
-            ? undefined
-            : dto.instrumentResult === null
-              ? Prisma.DbNull
-              : result as any,
-        },
-      })
-      return mapGradeRecord(updated)
-    }
-    const [enrollment, sectionSubject, academicPeriod] = await Promise.all([
-      prisma.enrollment.findFirst({ where: { id: dto.enrollmentId!, schoolId } }),
-      prisma.sectionSubject.findFirst({ where: { id: dto.sectionSubjectId!, schoolId } }),
-      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId!, schoolId } }),
-    ])
-    if (!enrollment) throw new NotFoundException('Enrollment not found')
-    if (!sectionSubject) throw new NotFoundException('Section subject not found')
-    if (!academicPeriod) throw new NotFoundException('Academic period not found')
-    if (enrollment.sectionId !== sectionSubject.sectionId || enrollment.schoolYearId !== sectionSubject.schoolYearId) {
-      throw new BadRequestException('Enrollment does not match section subject')
-    }
-    if (academicPeriod.schoolYearId !== sectionSubject.schoolYearId) {
-      throw new BadRequestException('Academic period does not match section subject school year')
-    }
-    const activity = dto.evaluationActivityId
-      ? await assertEvaluationActivityScope(
-        schoolId,
-        dto.evaluationActivityId,
-        dto.sectionSubjectId!,
-        dto.academicPeriodId!,
-      )
-      : null
-    const activityMaxScore = activity ? assertScoreWithinActivity(dto.score, activity) : dto.maxScore
-    const result = await snapshotGradeResult(activity?.instrumentSnapshotId ?? null, dto.instrumentResult)
-
-    const data = {
-        enrollmentId: dto.enrollmentId!,
-        sectionSubjectId: dto.sectionSubjectId!,
-        academicPeriodId: dto.academicPeriodId!,
-        sectionId: enrollment.sectionId,
-        schoolYearId: enrollment.schoolYearId,
-        schoolId,
-        score: dto.score,
-        maxScore: activityMaxScore,
-        weight: dto.weight ?? 1,
-        assessmentName: dto.assessmentName ?? '',
-        evaluationActivityId: dto.evaluationActivityId ?? undefined,
-        instrumentSnapshotId: activity?.instrumentSnapshotId ?? undefined,
-        instrumentResult: result as any,
-    }
-    const saved = dto.evaluationActivityId
-      ? (await prisma.$queryRaw<any[]>`
-          insert into public.grades_records (
-            enrollment_id, section_subject_id, academic_period_id, section_id,
-            school_year_id, school_id, score, max_score, weight, assessment_name,
-            evaluation_activity_id, instrument_result, instrument_snapshot_id
-          ) values (
-            ${dto.enrollmentId!}::uuid, ${dto.sectionSubjectId!}::uuid,
-            ${dto.academicPeriodId!}::uuid, ${enrollment.sectionId}::uuid,
-            ${enrollment.schoolYearId}::uuid, ${schoolId}::uuid, ${dto.score},
-            ${activityMaxScore}, ${dto.weight ?? 1}, ${dto.assessmentName ?? ''},
-            ${dto.evaluationActivityId}::uuid, ${JSON.stringify(result ?? null)}::jsonb,
-            ${activity?.instrumentSnapshotId ?? null}::uuid
-          )
-          on conflict (enrollment_id, evaluation_activity_id) do update set
-            score = excluded.score,
-            max_score = excluded.max_score,
-            weight = excluded.weight,
-            assessment_name = excluded.assessment_name,
-            instrument_result = excluded.instrument_result,
-            instrument_snapshot_id = excluded.instrument_snapshot_id,
-            updated_at = now()
-          returning
-            id,
-            enrollment_id as "enrollmentId",
-            score,
-            max_score as "maxScore",
-            weight,
-            assessment_name as "assessmentName",
-            status,
-            evaluation_activity_id as "evaluationActivityId",
-            instrument_result as "instrumentResult",
-            instrument_snapshot_id as "instrumentSnapshotId"
-        `)[0]
-      : await prisma.gradesRecord.create({ data })
-    return mapGradeRecord(saved)
+          weight: dto.weight ?? 1,
+          assessmentName: dto.assessmentName ?? '',
+          evaluationActivityId: dto.evaluationActivityId ?? undefined,
+          instrumentSnapshotId: activity?.instrumentSnapshotId ?? undefined,
+          instrumentResult: result as any,
+      }
+      const saved = dto.evaluationActivityId
+        ? (await tx.$queryRaw<any[]>`
+            insert into public.grades_records (
+              enrollment_id, section_subject_id, academic_period_id, section_id,
+              school_year_id, school_id, score, max_score, weight, assessment_name,
+              evaluation_activity_id, instrument_result, instrument_snapshot_id
+            ) values (
+              ${dto.enrollmentId!}::uuid, ${dto.sectionSubjectId!}::uuid,
+              ${dto.academicPeriodId!}::uuid, ${enrollment.sectionId}::uuid,
+              ${enrollment.schoolYearId}::uuid, ${schoolId}::uuid, ${dto.score},
+              ${activityMaxScore}, ${dto.weight ?? 1}, ${dto.assessmentName ?? ''},
+              ${dto.evaluationActivityId}::uuid, ${JSON.stringify(result ?? null)}::jsonb,
+              ${activity?.instrumentSnapshotId ?? null}::uuid
+            )
+            on conflict (enrollment_id, evaluation_activity_id) do update set
+              score = excluded.score,
+              max_score = excluded.max_score,
+              weight = excluded.weight,
+              assessment_name = excluded.assessment_name,
+              instrument_result = excluded.instrument_result,
+              instrument_snapshot_id = excluded.instrument_snapshot_id,
+              updated_at = now()
+            returning
+              id,
+              enrollment_id as "enrollmentId",
+              score,
+              max_score as "maxScore",
+              weight,
+              assessment_name as "assessmentName",
+              status,
+              evaluation_activity_id as "evaluationActivityId",
+              instrument_result as "instrumentResult",
+              instrument_snapshot_id as "instrumentSnapshotId"
+          `)[0]
+        : await tx.gradesRecord.create({ data })
+      return mapGradeRecord(saved)
+    })
   }
 
   async getActivities(
     schoolId: string,
     filters: { sectionSubjectId?: string; academicPeriodId?: string; planningEntryId?: string },
+    userId?: string,
+    roles?: string[],
   ) {
-    const where: any = { schoolId, status: 'ACTIVE' }
+    const actorScope = activityActorScope(schoolId, userId, roles)
+    if (filters.sectionSubjectId) await assertActivityContext(schoolId, filters.sectionSubjectId, filters.academicPeriodId, userId, roles)
+    const where: any = { schoolId, status: 'ACTIVE',
+      sectionSubject: { schoolId, status: 'ACTIVE', schoolYear: { schoolId, status: 'ACTIVE' }, ...actorScope },
+      academicPeriod: { schoolId, status: 'ACTIVE', schoolYear: { schoolId, status: 'ACTIVE' } } }
     if (filters.sectionSubjectId) where.sectionSubjectId = filters.sectionSubjectId
     if (filters.academicPeriodId) where.academicPeriodId = filters.academicPeriodId
     if (filters.planningEntryId) where.planningEntryId = filters.planningEntryId
 
     const activities = await prisma.evaluationActivity.findMany({
       where,
-      include: { instrument: true, instrumentSnapshot: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
+      include: activityInclude,
       orderBy: [{ activityDate: 'asc' }, { createdAt: 'asc' }],
     })
 
     return activities.map((activity) => mapEvaluationActivity(activity))
   }
 
-  async getActivityCenter(schoolId: string, appUserId?: string, roles: string[] = []) {
-    const teacherOnly = roles.includes('teacher')
-      && !roles.some((role) => ['admin', 'director', 'coordinator'].includes(role))
-    const sectionSubjectScope = teacherOnly && appUserId
-      ? { teacher: { userId: appUserId } }
-      : {}
+  async getActivityCenter(schoolId: string, appUserId?: string, roles?: string[]) {
+    const sectionSubjectScope = activityActorScope(schoolId, appUserId, roles)
+    const teacherOnly = 'teacher' in sectionSubjectScope
     const [sectionSubjects, academicPeriods, activities, enrollmentCounts] = await Promise.all([
-      teacherOnly && appUserId
-        ? this.loadSectionSubjects(schoolId, appUserId)
-        : this.getSectionSubjects(schoolId),
-      this.getAcademicPeriods(schoolId),
+      this.loadSectionSubjects(schoolId, teacherOnly ? appUserId : undefined, true),
+      this.loadAcademicPeriods(schoolId, true),
       prisma.evaluationActivity.findMany({
-        where: { schoolId, status: 'ACTIVE', sectionSubject: sectionSubjectScope },
+        where: { schoolId, status: 'ACTIVE',
+          sectionSubject: { schoolId, status: 'ACTIVE', schoolYear: { schoolId, status: 'ACTIVE' }, ...sectionSubjectScope },
+          academicPeriod: { schoolId, status: 'ACTIVE', schoolYear: { schoolId, status: 'ACTIVE' } } },
         include: {
           instrument: true,
           instrumentSnapshot: true,
@@ -765,28 +1004,19 @@ export class GradingService {
     }
   }
 
-  async saveActivity(schoolId: string, userId: string, dto: SaveActivityDto, roles: string[] = []) {
+  async saveActivity(schoolId: string, userId: string, dto: SaveActivityDto, roles?: string[]) {
     if (!dto.name.trim()) throw new BadRequestException('El nombre de la actividad es obligatorio')
-    if (!Number.isFinite(dto.maxScore) || dto.maxScore <= 0) throw new BadRequestException('El valor de la actividad debe ser mayor que cero')
+    validateActivityInput(dto)
     // Validate the payload shape before doing I/O; the resolved level narrows it below.
     validateCompetencyBlockWeights(resolveEvaluationProfile('secundario'), dto.competencyBlockId, dto.competencyBlockWeights)
-    const [sectionSubject, academicPeriod] = await Promise.all([
-      prisma.sectionSubject.findFirst({
-        where: { id: dto.sectionSubjectId, schoolId },
-        include: { grade: { include: { academicLevel: true } } },
-      }),
-      prisma.academicPeriod.findFirst({ where: { id: dto.academicPeriodId, schoolId } }),
-    ])
-    if (!sectionSubject) throw new NotFoundException('Section subject not found')
+    if (dto.id && dto.creationId) throw new BadRequestException('creationId solo se permite al crear una actividad.')
+    const actorId = roles === undefined ? undefined : userId
+    const { sectionSubject, academicPeriod } = await assertActivityContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, actorId, roles)
     const evaluationProfile = resolveEvaluationProfile(sectionSubject.grade?.academicLevel?.code)
     if (!isBlockInEvaluationProfile(evaluationProfile, dto.competencyBlockId)) {
       throw new BadRequestException('El bloque de competencias no es valido para el nivel academico')
     }
     const competencyBlockWeights = validateCompetencyBlockWeights(evaluationProfile, dto.competencyBlockId, dto.competencyBlockWeights)
-    if (dto.instrumentSnapshot && roles.includes('teacher') && !roles.some(role => ['admin', 'director', 'coordinator'].includes(role))) {
-      const assigned = await prisma.teacher.findFirst({ where: { id: sectionSubject.teacherId ?? '', userId, schoolId, status: 'ACTIVE' } })
-      if (!assigned) throw new NotFoundException('Asignatura no disponible para este docente.')
-    }
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
     const schoolYearId = dto.schoolYearId ?? sectionSubject.schoolYearId
     if (schoolYearId !== sectionSubject.schoolYearId) {
@@ -795,120 +1025,165 @@ export class GradingService {
     if (academicPeriod.schoolYearId !== schoolYearId) {
       throw new BadRequestException('Academic period does not match section subject school year')
     }
+    if (dto.creationId) {
+      const existing = await prisma.evaluationActivity.findUnique({ where: { id: dto.creationId }, include: activityInclude })
+      if (existing) {
+        const saved = await assertCreationRetry(existing, schoolId, userId, dto, schoolYearId, competencyBlockWeights)
+        if (dto.instrumentSnapshot) await this.validatePreparedActivity(dto, sectionSubject, prisma)
+        else if (existing.instrument) assertDefinition(existing.instrument.type, existing.instrument.criteria as Record<string, string>, dto.maxScore)
+        return saved
+      }
+    }
     if (dto.planningEntryId) {
       await assertPlanningEntryScope(schoolId, dto.planningEntryId, dto.sectionSubjectId, dto.academicPeriodId)
     }
-    const requestedTeamIds = dto.activityType === 'group' ? [...new Set(dto.teamIds ?? [])] : []
-    const requestedTeams = requestedTeamIds.length
-      ? await prisma.courseTeam.findMany({
-          where: {
-            id: { in: requestedTeamIds },
-            schoolId,
-            sectionSubjectId: dto.sectionSubjectId,
-            status: 'ACTIVE',
-          },
+    try {
+      return await prisma.$transaction(async tx => {
+        let existing: any = null
+        let persistedSchoolYearId = schoolYearId
+        let persistedBlockWeights = competencyBlockWeights
+        let destinationSubject = sectionSubject
+        if (dto.id) {
+          await lockActivityForMutation(tx, schoolId, dto.id)
+          existing = await tx.evaluationActivity.findFirst({ where: { id: dto.id, schoolId, status: 'ACTIVE' }, include: activityInclude })
+          if (!existing) throw new NotFoundException('Evaluation activity not found')
+          await assertActivityContext(schoolId, existing.sectionSubjectId, existing.academicPeriodId, actorId, roles, tx)
+          const destination = await assertActivityContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, actorId, roles, tx)
+          destinationSubject = destination.sectionSubject
+          persistedSchoolYearId = dto.schoolYearId ?? destinationSubject.schoolYearId
+          if (persistedSchoolYearId !== destinationSubject.schoolYearId) throw new BadRequestException('School year does not match section subject')
+          const profile = resolveEvaluationProfile(destinationSubject.grade?.academicLevel?.code)
+          dto = mergedActivityDto(dto, existing)
+          persistedBlockWeights = validateCompetencyBlockWeights(profile, dto.competencyBlockId, dto.competencyBlockWeights)
+          dto.schoolYearId = persistedSchoolYearId
+          validateActivityInput(dto)
+          if (dto.planningEntryId) await assertPlanningEntryScope(schoolId, dto.planningEntryId, dto.sectionSubjectId, dto.academicPeriodId, tx)
+          const structural = !activityStructureMatches(existing, dto, persistedBlockWeights)
+          if (structural && await tx.gradesRecord.count({ where: { schoolId, evaluationActivityId: dto.id } })) {
+            throw new BadRequestException('La actividad ya tiene calificaciones; su estructura no puede modificarse.')
+          }
+          if (!structural) {
+            const saved = await tx.evaluationActivity.update({ where: { id: dto.id }, data: {
+              ...activityData(schoolId, userId, dto, persistedSchoolYearId, persistedBlockWeights), createdBy: undefined,
+            }, include: activityInclude })
+            return mapEvaluationActivity(saved)
+          }
+          if (existing.instrumentSnapshotId && !dto.instrumentSnapshot) throw new BadRequestException('La revisión requiere la definición del instrumento versionado.')
+        }
+        const teamIds = dto.activityType === 'group' ? [...new Set(dto.teamIds ?? [])] : []
+        const requestedTeams = teamIds.length ? await tx.courseTeam.findMany({
+          where: { id: { in: teamIds }, schoolId, sectionSubjectId: dto.sectionSubjectId, status: 'ACTIVE' },
           include: { members: { where: { status: 'ACTIVE' } } },
-        })
-      : []
-    if (requestedTeams.length !== requestedTeamIds.length) {
-      throw new BadRequestException('Uno o mas equipos no pertenecen a esta asignatura')
-    }
-    if (dto.id) {
-      const existing = await prisma.evaluationActivity.findFirst({ where: { id: dto.id, schoolId } })
-      if (!existing) throw new NotFoundException('Evaluation activity not found')
-      if (await prisma.gradesRecord.count({ where: { schoolId, evaluationActivityId: dto.id } })) {
-        throw new BadRequestException('La actividad ya tiene calificaciones; su estructura no puede modificarse.')
-      }
-      if (existing.instrumentSnapshotId) throw new BadRequestException('El instrumento versionado ya fue guardado; cree otra actividad para cambiar su estructura.')
-    }
-    if (dto.instrumentSnapshot) {
-      if (dto.id || dto.instrumentId) throw new BadRequestException('El instrumento preparado debe pertenecer a una actividad nueva.')
-      return this.savePreparedActivity(schoolId, userId, dto, sectionSubject, schoolYearId, competencyBlockWeights, requestedTeams)
-    }
-    let instrumentId = dto.instrumentId || null
-    if (instrumentId) {
-      await assertInstrumentScope(schoolId, instrumentId)
-      if (dto.instrumentType) {
-        const linkedActivities = await prisma.evaluationActivity.count({ where: { instrumentId, status: 'ACTIVE' } })
-        const instrumentData = {
-          type: dto.instrumentType,
-          name: evaluationInstrumentName(dto.instrumentType),
-          criteria: dto.instrumentCriteria ?? {},
-          maxScore: dto.maxScore,
+        }) : []
+        if (requestedTeams.length !== teamIds.length) throw new BadRequestException('Uno o mas equipos no pertenecen a esta asignatura')
+        if (dto.instrumentSnapshot) {
+          return this.savePreparedActivity(schoolId, userId, dto, destinationSubject, persistedSchoolYearId, persistedBlockWeights, requestedTeams, tx, existing)
         }
-        if (linkedActivities > 1) {
-          const instrument = await prisma.evaluationInstrument.create({ data: { schoolId, ...instrumentData } })
+        let instrumentId = dto.instrumentId || null
+        let type = dto.instrumentType, fields = dto.instrumentCriteria
+        if (instrumentId) {
+          const original = await tx.evaluationInstrument.findFirst({ where: { id: instrumentId, schoolId, status: 'ACTIVE' } })
+          if (!original) throw new NotFoundException('Evaluation instrument not found')
+          type ??= original.type; fields ??= original.criteria as Record<string, string>
+        }
+        if (type) {
+          assertDefinition(type, fields ?? {}, dto.maxScore)
+          const instrument = await tx.evaluationInstrument.create({ data: {
+            schoolId, name: evaluationInstrumentName(type), type, criteria: fields ?? {}, maxScore: dto.maxScore,
+          } })
           instrumentId = instrument.id
-        } else {
-          await prisma.evaluationInstrument.update({ where: { id: instrumentId }, data: instrumentData })
+        } else if (fields && Object.keys(fields).length) throw new BadRequestException('Falta el tipo del instrumento.')
+        const data = { ...activityData(schoolId, userId, dto, persistedSchoolYearId, persistedBlockWeights), instrumentId }
+        const saved = dto.id
+          ? await tx.evaluationActivity.update({ where: { id: dto.id }, data: { ...data, createdBy: undefined } })
+          : await tx.evaluationActivity.create({ data: { ...data, ...(dto.creationId ? { id: dto.creationId } : {}) } })
+        await this.syncActivityTeams(saved.id, schoolId, requestedTeams, tx)
+        const refreshed = await tx.evaluationActivity.findUnique({ where: { id: saved.id }, include: activityInclude })
+        return mapEvaluationActivity(refreshed)
+      })
+    } catch (error) {
+      // Concurrent retries race on the activity PK; the losing transaction rolls back its instrument.
+      if (dto.creationId && (error as { code?: string }).code === 'P2002') {
+        const current = await assertActivityContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, actorId, roles)
+        const existing = await prisma.evaluationActivity.findUnique({ where: { id: dto.creationId }, include: activityInclude })
+        if (existing) {
+          const saved = await assertCreationRetry(existing, schoolId, userId, dto, schoolYearId, competencyBlockWeights)
+          if (dto.instrumentSnapshot) await this.validatePreparedActivity(dto, current.sectionSubject, prisma)
+          else if (existing.instrument) assertDefinition(existing.instrument.type, existing.instrument.criteria as Record<string, string>, dto.maxScore)
+          return saved
         }
       }
-    } else if (dto.instrumentType) {
-      const instrumentName = evaluationInstrumentName(dto.instrumentType)
-      const instrument = await prisma.evaluationInstrument.create({
-        data: {
-          schoolId,
-          name: instrumentName,
-          type: dto.instrumentType,
-          criteria: dto.instrumentCriteria ?? {},
-          maxScore: dto.maxScore,
-        },
-      })
-      instrumentId = instrument.id
+      throw error
     }
+  }
 
-    const data: any = {
-      schoolId,
-      schoolYearId,
-      sectionSubjectId: dto.sectionSubjectId,
-      academicPeriodId: dto.academicPeriodId,
-      planningEntryId: dto.planningEntryId || null,
-      instrumentId,
-      pedagogicalActivityType: dto.pedagogicalActivityType ?? null,
-      competencyBlockId: dto.competencyBlockId,
-      competencyBlockWeights,
-      planningMoment: dto.planningMoment || null,
-      name: dto.name.trim(),
-      description: dto.description?.trim() ?? '',
-      activityType: dto.activityType ?? 'individual',
-      maxScore: dto.maxScore,
-      activityDate: dto.date ? new Date(`${dto.date}T00:00:00.000Z`) : null,
-      evaluationTechnique: dto.evaluationTechnique?.trim() ?? '',
-      studentRole: dto.studentRole?.trim() ?? '',
-      teacherRole: dto.teacherRole?.trim() ?? '',
-      evidenceInstructions: dto.evidenceInstructions?.trim() ?? '',
-      observations: dto.observations?.trim() ?? '',
-      resources: (dto.resources ?? []).map((resource) => resource.trim()).filter(Boolean),
-      source: dto.source ?? (dto.planningEntryId ? 'planning' : 'grading'),
-      createdBy: userId,
+  private async validatePreparedActivity(dto: SaveActivityDto,
+    sectionSubject: { id: string; gradeId: string; subjectId: string }, tx: Prisma.TransactionClient) {
+    const proposal = dto.instrumentSnapshot!
+    assertDefinition(dto.instrumentType ?? '', dto.instrumentCriteria ?? {}, dto.maxScore)
+    const configuration = instrumentEvaluationConfiguration(dto.instrumentType!, dto.instrumentCriteria!, dto.maxScore)
+    const top = Math.max(...configuration.levels.map(level => level.points))
+    const uuid = (value: unknown) => typeof value === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value)
+    const validReference = (ref: any) => ref && uuid(ref.elementId) && uuid(ref.scopeId) &&
+      uuid(ref.versionId) && typeof ref.type === 'string' && typeof ref.text === 'string' && Array.isArray(ref.sources) &&
+      ref.sources.every((span: any) => span && uuid(span.documentId) && Number.isInteger(span.pdfPage) && span.pdfPage > 0 &&
+        (span.printedPage === null || typeof span.printedPage === 'string'))
+    if (!proposal || proposal.kind !== 'RECOMMENDATION' || proposal.catalogVersion !== evaluationCatalogV1.version ||
+      (proposal.curriculumScopeId !== null && !uuid(proposal.curriculumScopeId)) ||
+      (proposal.curriculumVersionId !== null && !uuid(proposal.curriculumVersionId)) ||
+      dto.instrumentType !== proposal.instrumentType || !Array.isArray(proposal.criteria) || proposal.criteria.length !== configuration.criteria.length ||
+      !Array.isArray(proposal.levels) || proposal.levels.length !== configuration.levels.length ||
+      proposal.levels.some((level, index) => !level || typeof level.id !== 'string' || !level.id.trim() ||
+        level.label !== configuration.levels[index].label || !Number.isFinite(level.proportion) || Math.abs(level.proportion - configuration.levels[index].points / top) > 1e-9) ||
+      new Set(proposal.levels.map(level => level.id)).size !== proposal.levels.length ||
+      proposal.totalScoreUnits !== Math.round(dto.maxScore * 100) || proposal.totalScore !== dto.maxScore || proposal.scoreUnit !== 0.01 ||
+      !evaluationCatalogV1.activityTypes.some(type => type.id === proposal.activityType) || dto.pedagogicalActivityType !== proposal.activityType ||
+      proposal.participationMode !== (dto.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL') ||
+      !Array.isArray(proposal.selectedCurriculumElements) || !proposal.selectedCurriculumElements.every(validReference) ||
+      proposal.criteria.some((criterion, index) => {
+        const final = configuration.criteria[index]
+        return !criterion || typeof criterion.id !== 'string' || !criterion.id.trim() || (final.id !== undefined && criterion.id !== final.id) ||
+          criterion.title !== final.title || criterion.description !== final.description || criterion.maxScore !== final.maximum ||
+          criterion.maxScoreUnits !== Math.round(final.maximum * 100) || typeof criterion.templateId !== 'string' ||
+          !['CURRICULUM_DERIVED', 'CONTEXTUALIZED', 'ACTIVITY_TEMPLATE', 'TEACHER_REUSED'].includes(criterion.sourceType) ||
+          !Array.isArray(criterion.sourceReferences) || !criterion.sourceReferences.every(validReference) ||
+          (criterion.sourceType === 'CURRICULUM_DERIVED' && !criterion.sourceReferences.some(ref => ref.text === criterion.description)) ||
+          !Array.isArray(criterion.descriptors) || criterion.descriptors.length !== configuration.levels.length ||
+          criterion.descriptors.some((descriptor, levelIndex) => !descriptor || descriptor.levelId !== proposal.levels[levelIndex].id ||
+            descriptor.text !== (final.descriptors?.[levelIndex] ?? final.description) ||
+            descriptor.scoreUnits !== Math.round(criterion.maxScoreUnits * proposal.levels[levelIndex].proportion))
+      }) || new Set(proposal.criteria.map(criterion => criterion.id)).size !== proposal.criteria.length) {
+      throw new BadRequestException('El instrumento preparado no coincide con los campos finales o sus puntos.')
     }
-
-    if (dto.id) {
-      const existing = await prisma.evaluationActivity.findFirst({ where: { id: dto.id, schoolId } })
-      if (!existing) throw new NotFoundException('Evaluation activity not found')
-      const updated = await prisma.evaluationActivity.update({
-        where: { id: dto.id },
-        data,
-        include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
-      })
-      await this.syncActivityTeams(updated.id, schoolId, requestedTeams)
-      const refreshed = await prisma.evaluationActivity.findUnique({
-        where: { id: updated.id },
-        include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
-      })
-      return mapEvaluationActivity(refreshed)
+    const references = proposal.selectedCurriculumElements
+    if (new Set(references.map(ref => ref.elementId)).size !== references.length || references.length > 20 ||
+      (proposal.curriculumScopeId === null) !== (proposal.curriculumVersionId === null) ||
+      references.some(ref => ref.scopeId !== proposal.curriculumScopeId || ref.versionId !== proposal.curriculumVersionId) ||
+      proposal.criteria.some(criterion => criterion.sourceReferences.some(ref => !references.some(source => sameJson(source, ref))))) {
+      throw new BadRequestException('Referencias curriculares inconsistentes.')
     }
-
-    const created = await prisma.evaluationActivity.create({
-      data,
-      include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
-    })
-    await this.syncActivityTeams(created.id, schoolId, requestedTeams)
-    const refreshed = await prisma.evaluationActivity.findUnique({
-      where: { id: created.id },
-      include: { instrument: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } },
-    })
-    return mapEvaluationActivity(refreshed)
+    if (proposal.curriculumScopeId || references.length) {
+      const scope = await tx.curriculumScope.findFirst({ where: { id: proposal.curriculumScopeId ?? undefined, versionId: proposal.curriculumVersionId ?? undefined }, include: { version: true } })
+      const assignmentGrade = await tx.grade.findUnique({ where: { id: sectionSubject.gradeId }, include: {
+        academicLevel: true, academicCycle: true, defaultModality: true } })
+      const subject = await tx.subject.findUnique({ where: { id: sectionSubject.subjectId } })
+      const curriculumContext = await tx.sectionCurriculumContext.findUnique({ where: { sectionSubjectId: sectionSubject.id } })
+      const context = assignmentGrade && subject ? academicContext(assignmentGrade, subject, curriculumContext?.optativeExitName ?? null) : null
+      const scopes = context && scope ? await tx.curriculumScope.findMany({ where: { versionId: scope.versionId, grade: context.grade, cycle: context.cycle } }) : []
+      const mappings = context && scope ? await tx.curriculumSubjectMapping.findMany({ where: { subjectId: sectionSubject.subjectId,
+        mappingStatus: 'REVIEWED', scope: { versionId: scope.versionId, grade: context.grade, cycle: context.cycle } } }) : []
+      const resolved = context ? resolveScope(context, scopes, mappings.map(mapping => mapping.scopeId)) : null
+      if (!scope || !context || resolved?.scope?.id !== scope.id || scope.version.level !== context.level || !['DRAFT', 'PUBLISHED'].includes(scope.version.status)) {
+        throw new BadRequestException('El ámbito curricular ya no está autorizado para esta asignatura.')
+      }
+      const elements = await tx.curriculumElement.findMany({ where: { id: { in: references.map(ref => ref.elementId) }, scopeId: scope.id, versionId: scope.versionId }, include: { sourceSpans: true } })
+      if (elements.length !== references.length || references.some(ref => {
+        const element = elements.find(row => row.id === ref.elementId)
+        return !element || element.originalText !== ref.text || element.elementType !== ref.type ||
+          JSON.stringify(element.sourceSpans.map(span => [span.documentId, span.pdfPage, span.printedPage]).sort()) !== JSON.stringify(ref.sources.map(span => [span.documentId, span.pdfPage, span.printedPage]).sort())
+      })) throw new BadRequestException('Las referencias no coinciden con la fuente curricular.')
+    }
+    return references
   }
 
   private async savePreparedActivity(
@@ -916,191 +1191,137 @@ export class GradingService {
     sectionSubject: { id: string; gradeId: string; subjectId: string; teacherId: string | null },
     schoolYearId: string, competencyBlockWeights: Record<string, number>,
     teams: Array<{ id: string; name: string; members: Array<{ enrollmentId: string }> }>,
+    tx: Prisma.TransactionClient, existing: any = null,
   ) {
+    const references = await this.validatePreparedActivity(dto, sectionSubject, tx)
     const proposal = dto.instrumentSnapshot!
-    const validTypes = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']
-    if (proposal.kind !== 'RECOMMENDATION' || proposal.catalogVersion !== evaluationCatalogV1.version ||
-      !validTypes.includes(proposal.instrumentType) || dto.instrumentType !== proposal.instrumentType ||
-      !Array.isArray(proposal.criteria) || !proposal.criteria.length || proposal.criteria.length > 12 ||
-      !Number.isInteger(proposal.totalScoreUnits) || proposal.totalScoreUnits !== Math.round(dto.maxScore * 100) ||
-      proposal.criteria.some(criterion => !criterion || typeof criterion.title !== 'string' || !criterion.title.trim() ||
-        typeof criterion.description !== 'string' || !Number.isInteger(criterion.maxScoreUnits) || criterion.maxScoreUnits <= 0 ||
-        !Array.isArray(criterion.descriptors) || !Array.isArray(criterion.sourceReferences) ||
-        !['CURRICULUM_DERIVED', 'CONTEXTUALIZED', 'ACTIVITY_TEMPLATE', 'TEACHER_REUSED'].includes(criterion.sourceType) ||
-        (criterion.sourceType === 'CURRICULUM_DERIVED' && !criterion.sourceReferences.some(ref => ref.text === criterion.description))) ||
-      proposal.criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0) !== proposal.totalScoreUnits ||
-      !dto.instrumentCriteria || !evaluationCatalogV1.activityTypes.some(type => type.id === proposal.activityType) ||
-      dto.pedagogicalActivityType !== proposal.activityType ||
-      proposal.participationMode !== (dto.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL')) {
-      throw new BadRequestException('El instrumento preparado no coincide con la actividad o sus puntos.')
-    }
-    const references = Array.isArray(proposal.selectedCurriculumElements) ? proposal.selectedCurriculumElements : []
-    if (!Array.isArray(proposal.selectedCurriculumElements) || new Set(references.map(ref => ref.elementId)).size !== references.length ||
-      proposal.criteria.some(criterion => criterion.sourceReferences.some(ref => !references.some(source => source.elementId === ref.elementId)))) {
-      throw new BadRequestException('Las fuentes seleccionadas no coinciden con los criterios.')
-    }
-    const fields = dto.instrumentCriteria!
-    if (Number(fields[`${proposal.instrumentType}:meta:criteriaCount`]) !== proposal.criteria.length ||
-      proposal.criteria.some((criterion, index) => fields[`${proposal.instrumentType}:criterion:${index}`]?.trim() !== criterion.title ||
-        (fields[`${proposal.instrumentType}:description:${index}`] != null && fields[`${proposal.instrumentType}:description:${index}`]?.trim() !== criterion.description) ||
-        (proposal.instrumentType !== 'lista-ponderada' && Math.round(Number(fields[`${proposal.instrumentType}:points:${index}`]) * 100) !== criterion.maxScoreUnits) ||
-        (proposal.instrumentType === 'rubrica' && criterion.descriptors.some((descriptor, levelIndex) =>
-          fields[`rubrica:descriptor:${index}:${proposal.levels.length - levelIndex}`]?.trim() !== descriptor.text)))) {
-      throw new BadRequestException('Los criterios del instrumento no coinciden con la versión preparada.')
-    }
-    if (references.length > 12 || references.some(ref => ref.scopeId !== proposal.curriculumScopeId || ref.versionId !== proposal.curriculumVersionId)) {
-      throw new BadRequestException('Referencias curriculares inconsistentes.')
-    }
-    if (proposal.curriculumScopeId || references.length) {
-      const scope = await prisma.curriculumScope.findFirst({ where: { id: proposal.curriculumScopeId ?? undefined, versionId: proposal.curriculumVersionId ?? undefined }, include: { version: true } })
-      const assignmentGrade = await prisma.grade.findUnique({ where: { id: sectionSubject.gradeId }, include: {
-        academicLevel: true, academicCycle: true, defaultModality: true } })
-      const subject = await prisma.subject.findUnique({ where: { id: sectionSubject.subjectId } })
-      const curriculumContext = await prisma.sectionCurriculumContext.findUnique({ where: { sectionSubjectId: sectionSubject.id } })
-      const context = assignmentGrade && subject ? academicContext(assignmentGrade, subject, curriculumContext?.optativeExitName ?? null) : null
-      const scopes = context && scope ? await prisma.curriculumScope.findMany({ where: { versionId: scope.versionId, grade: context.grade, cycle: context.cycle } }) : []
-      const mappings = context && scope ? await prisma.curriculumSubjectMapping.findMany({ where: { subjectId: sectionSubject.subjectId,
-        mappingStatus: 'REVIEWED', scope: { versionId: scope.versionId, grade: context.grade, cycle: context.cycle } } }) : []
-      const resolved = context ? resolveScope(context, scopes, mappings.map(mapping => mapping.scopeId)) : null
-      if (!scope || !context || resolved?.scope?.id !== scope.id || scope.version.level !== context.level || !['DRAFT', 'PUBLISHED'].includes(scope.version.status)) {
-        throw new BadRequestException('El ámbito curricular ya no está autorizado para esta asignatura.')
-      }
-      const elements = await prisma.curriculumElement.findMany({ where: { id: { in: references.map(ref => ref.elementId) }, scopeId: scope.id, versionId: scope.versionId }, include: { sourceSpans: true } })
-      if (elements.length !== references.length || references.some(ref => {
-        const element = elements.find(row => row.id === ref.elementId)
-        return !element || element.originalText !== ref.text || element.elementType !== ref.type ||
-          JSON.stringify(element.sourceSpans.map(span => [span.documentId, span.pdfPage, span.printedPage]).sort()) !== JSON.stringify(ref.sources.map(span => [span.documentId, span.pdfPage, span.printedPage]).sort())
-      })) throw new BadRequestException('Las referencias no coinciden con la fuente curricular.')
-    }
-    const teacher = await prisma.teacher.findFirst({ where: { id: sectionSubject.teacherId ?? '', userId, schoolId, status: 'ACTIVE' } })
+    const teacher = await tx.teacher.findFirst({ where: { id: sectionSubject.teacherId ?? '', userId, schoolId, status: 'ACTIVE' } })
     // Administrative workflows may also create activities, but teacher preferences are private and only recorded for the assigned teacher.
-    return prisma.$transaction(async tx => {
-      const instrument = await tx.evaluationInstrument.create({ data: {
-        schoolId, name: evaluationInstrumentName(proposal.instrumentType), type: proposal.instrumentType,
-        criteria: dto.instrumentCriteria as Prisma.InputJsonValue, maxScore: dto.maxScore,
-      } })
-      const snapshot = await tx.evaluationInstrumentSnapshot.create({ data: {
-        schoolId, instrumentId: instrument.id, payload: proposal as unknown as Prisma.InputJsonValue,
-        catalogVersion: proposal.catalogVersion, curriculumVersionId: proposal.curriculumVersionId,
-        curriculumScopeId: proposal.curriculumScopeId,
-      } })
-      if (references.length) await tx.evaluationSnapshotSource.createMany({ data: references.map(ref => ({ snapshotId: snapshot.id, elementId: ref.elementId, versionId: ref.versionId })) })
-      const activity = await tx.evaluationActivity.create({ data: {
-        schoolId, schoolYearId, sectionSubjectId: dto.sectionSubjectId, academicPeriodId: dto.academicPeriodId,
-        planningEntryId: dto.planningEntryId || null, instrumentId: instrument.id, instrumentSnapshotId: snapshot.id,
-        pedagogicalActivityType: proposal.activityType, competencyBlockId: dto.competencyBlockId,
-        competencyBlockWeights, planningMoment: dto.planningMoment || null, name: dto.name.trim(),
-        description: dto.description?.trim() ?? '', activityType: dto.activityType ?? 'individual', maxScore: dto.maxScore,
-        activityDate: dto.date ? new Date(`${dto.date}T00:00:00.000Z`) : null,
-        evaluationTechnique: dto.evaluationTechnique?.trim() ?? '', studentRole: dto.studentRole?.trim() ?? '',
-        teacherRole: dto.teacherRole?.trim() ?? '', evidenceInstructions: dto.evidenceInstructions?.trim() ?? '',
-        observations: dto.observations?.trim() ?? '', resources: (dto.resources ?? []).map(resource => resource.trim()).filter(Boolean),
-        source: dto.source ?? (dto.planningEntryId ? 'planning' : 'grading'), createdBy: userId,
-      } })
-      for (const team of teams) {
-        const group = await tx.evaluationActivityGroup.create({ data: { activityId: activity.id, courseTeamId: team.id, schoolId, name: team.name } })
-        if (team.members.length) await tx.evaluationActivityGroupMember.createMany({ data: team.members.map(member => ({ groupId: group.id, schoolId, enrollmentId: member.enrollmentId })) })
-      }
-      if (teacher) {
-        const preference = await tx.teacherInstrumentPreference.findFirst({ where: { schoolId, teacherId: userId,
-          curriculumScopeId: proposal.curriculumScopeId, activityType: proposal.activityType, instrumentType: proposal.instrumentType } })
-        const data = { acceptedInstrumentId: instrument.id, criterionTemplateIds: proposal.criteria.map(criterion => criterion.templateId), lastUsedAt: new Date() }
-        if (preference) await tx.teacherInstrumentPreference.update({ where: { id: preference.id }, data: { ...data, useCount: { increment: 1 } } })
-        else await tx.teacherInstrumentPreference.create({ data: { schoolId, teacherId: userId, curriculumScopeId: proposal.curriculumScopeId,
-          activityType: proposal.activityType, instrumentType: proposal.instrumentType, ...data } })
-      }
-      const saved = await tx.evaluationActivity.findUnique({ where: { id: activity.id }, include: { instrument: true, instrumentSnapshot: true, groups: { where: { status: 'ACTIVE' }, select: { courseTeamId: true } } } })
-      return mapEvaluationActivity(saved)
-    })
+    const instrument = await tx.evaluationInstrument.create({ data: {
+      schoolId, name: evaluationInstrumentName(proposal.instrumentType), type: proposal.instrumentType,
+      criteria: dto.instrumentCriteria as Prisma.InputJsonValue, maxScore: dto.maxScore,
+    } })
+    const snapshot = await tx.evaluationInstrumentSnapshot.create({ data: {
+      schoolId, instrumentId: instrument.id, payload: proposal as unknown as Prisma.InputJsonValue,
+      previousSnapshotId: existing?.instrumentSnapshotId ?? null, versionNo: (existing?.instrumentSnapshot?.versionNo ?? 0) + 1,
+      catalogVersion: proposal.catalogVersion, curriculumVersionId: proposal.curriculumVersionId,
+      curriculumScopeId: proposal.curriculumScopeId,
+    } })
+    if (references.length) await tx.evaluationSnapshotSource.createMany({ data: references.map(ref => ({ snapshotId: snapshot.id, elementId: ref.elementId, versionId: ref.versionId })) })
+    const data = {
+      ...activityData(schoolId, userId, dto, schoolYearId, competencyBlockWeights),
+      ...(dto.creationId ? { id: dto.creationId } : {}),
+      instrumentId: instrument.id, instrumentSnapshotId: snapshot.id,
+    }
+    const activity = existing ? await tx.evaluationActivity.update({ where: { id: existing.id }, data: { ...data, createdBy: undefined } }) : await tx.evaluationActivity.create({ data })
+    await this.syncActivityTeams(activity.id, schoolId, teams, tx)
+    if (teacher) {
+      const preference = await tx.teacherInstrumentPreference.findFirst({ where: { schoolId, teacherId: userId,
+        curriculumScopeId: proposal.curriculumScopeId, activityType: proposal.activityType, instrumentType: proposal.instrumentType } })
+      const data = { acceptedInstrumentId: instrument.id, criterionTemplateIds: proposal.criteria.map(criterion => criterion.templateId), lastUsedAt: new Date() }
+      if (preference) await tx.teacherInstrumentPreference.update({ where: { id: preference.id }, data: { ...data, useCount: { increment: 1 } } })
+      else await tx.teacherInstrumentPreference.create({ data: { schoolId, teacherId: userId, curriculumScopeId: proposal.curriculumScopeId,
+        activityType: proposal.activityType, instrumentType: proposal.instrumentType, ...data } })
+    }
+    const saved = await tx.evaluationActivity.findUnique({ where: { id: activity.id }, include: activityInclude })
+    return mapEvaluationActivity(saved)
   }
 
   private async syncActivityTeams(
     activityId: string,
     schoolId: string,
     teams: Array<{ id: string; name: string; members: Array<{ enrollmentId: string }> }>,
+    tx: Prisma.TransactionClient,
   ) {
     const teamIds = teams.map(({ id }) => id)
-    await prisma.$transaction(async (tx) => {
-      await tx.evaluationActivityGroup.updateMany({
+    await tx.evaluationActivityGroup.updateMany({
+      where: {
+        activityId,
+        status: 'ACTIVE',
+        courseTeamId: teamIds.length ? { notIn: teamIds } : { not: null },
+      },
+      data: { status: 'INACTIVE' },
+    })
+
+    for (const team of teams) {
+      const existing = await tx.evaluationActivityGroup.findFirst({
+        where: { activityId, courseTeamId: team.id },
+      })
+      const group = existing
+        ? await tx.evaluationActivityGroup.update({
+            where: { id: existing.id },
+            data: { name: team.name, status: 'ACTIVE' },
+          })
+        : await tx.evaluationActivityGroup.create({
+            data: { activityId, courseTeamId: team.id, schoolId, name: team.name },
+          })
+      const enrollmentIds = team.members.map(({ enrollmentId }) => enrollmentId)
+      await tx.evaluationActivityGroupMember.updateMany({
         where: {
-          activityId,
+          groupId: group.id,
           status: 'ACTIVE',
-          courseTeamId: teamIds.length ? { notIn: teamIds } : { not: null },
+          ...(enrollmentIds.length ? { enrollmentId: { notIn: enrollmentIds } } : {}),
         },
         data: { status: 'INACTIVE' },
       })
-
-      for (const team of teams) {
-        const existing = await tx.evaluationActivityGroup.findFirst({
-          where: { activityId, courseTeamId: team.id },
+      for (const enrollmentId of enrollmentIds) {
+        await tx.evaluationActivityGroupMember.upsert({
+          where: { groupId_enrollmentId: { groupId: group.id, enrollmentId } },
+          create: { groupId: group.id, schoolId, enrollmentId },
+          update: { status: 'ACTIVE' },
         })
-        const group = existing
-          ? await tx.evaluationActivityGroup.update({
-              where: { id: existing.id },
-              data: { name: team.name, status: 'ACTIVE' },
-            })
-          : await tx.evaluationActivityGroup.create({
-              data: { activityId, courseTeamId: team.id, schoolId, name: team.name },
-            })
-        const enrollmentIds = team.members.map(({ enrollmentId }) => enrollmentId)
-        await tx.evaluationActivityGroupMember.updateMany({
-          where: {
-            groupId: group.id,
-            status: 'ACTIVE',
-            ...(enrollmentIds.length ? { enrollmentId: { notIn: enrollmentIds } } : {}),
-          },
-          data: { status: 'INACTIVE' },
-        })
-        for (const enrollmentId of enrollmentIds) {
-          await tx.evaluationActivityGroupMember.upsert({
-            where: { groupId_enrollmentId: { groupId: group.id, enrollmentId } },
-            create: { groupId: group.id, schoolId, enrollmentId },
-            update: { status: 'ACTIVE' },
-          })
-        }
       }
-    })
+    }
   }
 
   async linkActivityToPlanning(
     schoolId: string,
     id: string,
     dto: { planningEntryId: string | null; planningMoment?: string },
+    userId?: string,
+    roles?: string[],
   ) {
-    const activity = await prisma.evaluationActivity.findFirst({ where: { id, schoolId } })
-    if (!activity) throw new NotFoundException('Evaluation activity not found')
-    if (dto.planningEntryId) {
-      const planning = await prisma.planningEntry.findFirst({ where: { id: dto.planningEntryId, schoolId } })
-      if (!planning) throw new NotFoundException('Planning entry not found')
-      if (
-        planning.sectionSubjectId !== activity.sectionSubjectId ||
-        planning.academicPeriodId !== activity.academicPeriodId
-      ) {
-        throw new BadRequestException('Planning entry does not match activity context')
-      }
+    activityActorScope(schoolId, userId, roles)
+    if (dto.planningEntryId !== null && (typeof dto.planningEntryId !== 'string' ||
+      !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(dto.planningEntryId))) {
+      throw new BadRequestException('planningEntryId debe ser UUID o null.')
     }
-    const updated = await prisma.evaluationActivity.update({
-      where: { id },
-      data: {
-        planningEntryId: dto.planningEntryId,
-        planningMoment: dto.planningMoment || null,
-        source: dto.planningEntryId ? 'planning' : activity.source,
-      },
-      include: { instrument: true },
+    if (dto.planningMoment !== undefined && !['inicio', 'desarrollo', 'cierre', ''].includes(dto.planningMoment)) {
+      throw new BadRequestException('El momento de planificación no es válido.')
+    }
+    return prisma.$transaction(async tx => {
+      await lockActivityForMutation(tx, schoolId, id)
+      const activity = await tx.evaluationActivity.findFirst({ where: { id, schoolId, status: 'ACTIVE' } })
+      if (!activity) throw new NotFoundException('Evaluation activity not found')
+      if (userId || roles) await assertActivityContext(schoolId, activity.sectionSubjectId, activity.academicPeriodId, userId, roles, tx)
+      if (dto.planningEntryId) {
+        await assertPlanningEntryScope(schoolId, dto.planningEntryId, activity.sectionSubjectId, activity.academicPeriodId, tx)
+      }
+      const updated = await tx.evaluationActivity.update({
+        where: { id },
+        data: {
+          planningEntryId: dto.planningEntryId,
+          planningMoment: dto.planningMoment === undefined ? undefined : dto.planningMoment || null,
+          source: dto.planningEntryId ? 'planning' : activity.source,
+        },
+        include: activityInclude,
+      })
+      return mapEvaluationActivity(updated)
     })
-    return mapEvaluationActivity(updated)
   }
 
-  async deleteActivity(schoolId: string, id: string) {
-    const activity = await prisma.evaluationActivity.findFirst({ where: { id, schoolId } })
-    if (!activity) throw new NotFoundException('Evaluation activity not found')
-    const gradeCount = await prisma.gradesRecord.count({ where: { schoolId, evaluationActivityId: id } })
-    if (gradeCount > 0) {
-      throw new BadRequestException('Esta actividad tiene calificaciones registradas y no se puede eliminar')
-    }
-    return prisma.evaluationActivity.update({
-      where: { id },
-      data: { status: 'INACTIVE' },
+  async deleteActivity(schoolId: string, id: string, userId?: string, roles?: string[]) {
+    activityActorScope(schoolId, userId, roles)
+    return prisma.$transaction(async tx => {
+      await lockActivityForMutation(tx, schoolId, id)
+      const activity = await tx.evaluationActivity.findFirst({ where: { id, schoolId, status: 'ACTIVE' } })
+      if (!activity) throw new NotFoundException('Evaluation activity not found')
+      if (userId || roles) await assertActivityContext(schoolId, activity.sectionSubjectId, activity.academicPeriodId, userId, roles, tx)
+      const gradeCount = await tx.gradesRecord.count({ where: { schoolId, evaluationActivityId: id } })
+      if (gradeCount > 0) {
+        throw new BadRequestException('Esta actividad tiene calificaciones registradas y no se puede eliminar')
+      }
+      return tx.evaluationActivity.update({ where: { id }, data: { status: 'INACTIVE' } })
     })
   }
 
@@ -1111,21 +1332,32 @@ export class GradingService {
    * @param studentId - Identificador del estudiante.
    * @returns Lista de registros de calificaciones del estudiante.
    */
-  async findByStudent(schoolId: string, studentId: string) {
+  async findByStudent(schoolId: string, studentId: string, userId?: string, roles?: string[]) {
+    const actorScope = activityActorScope(schoolId, userId, roles)
     const enrollments = await prisma.enrollment.findMany({
       where: { schoolId, studentId },
       select: { id: true },
     })
     const enrollmentIds = enrollments.map((e) => e.id)
     return prisma.gradesRecord.findMany({
-      where: { schoolId, enrollmentId: { in: enrollmentIds } },
+      where: { schoolId, enrollmentId: { in: enrollmentIds }, ...(roles !== undefined ? { sectionSubject: { schoolId, status: 'ACTIVE', ...actorScope } } : {}) },
     })
   }
 
-  async deleteGrade(schoolId: string, id: string) {
-    const grade = await prisma.gradesRecord.findFirst({ where: { id, schoolId } })
-    if (!grade) throw new NotFoundException('Grade record not found')
-    await prisma.gradesRecord.delete({ where: { id } })
-    return { id }
+  async deleteGrade(schoolId: string, id: string, userId?: string, roles?: string[]) {
+    activityActorScope(schoolId, userId, roles)
+    return prisma.$transaction(async tx => {
+      let grade = await tx.gradesRecord.findFirst({ where: { id, schoolId } })
+      if (!grade) throw new NotFoundException('Grade record not found')
+      const originalActivityId = grade.evaluationActivityId
+      if (grade.evaluationActivityId) await lockActivityForMutation(tx, schoolId, grade.evaluationActivityId)
+      await lockGradeForMutation(tx, schoolId, id)
+      grade = await tx.gradesRecord.findFirst({ where: { id, schoolId } })
+      if (!grade) throw new NotFoundException('Grade record not found')
+      await assertActivityContext(schoolId, grade.sectionSubjectId, grade.academicPeriodId, userId, roles, tx)
+      if (grade.evaluationActivityId !== originalActivityId) throw new ConflictException('La actividad de esta calificación cambió. Recargue antes de eliminar.')
+      await tx.gradesRecord.delete({ where: { id } })
+      return { id }
+    })
   }
 }

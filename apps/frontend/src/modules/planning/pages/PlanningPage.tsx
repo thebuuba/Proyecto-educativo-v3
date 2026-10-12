@@ -12,7 +12,7 @@ import {
   Settings2,
 } from 'lucide-react'
 import { lazy, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -119,6 +119,7 @@ export function PlanningPage() {
 }
 
 function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }) {
+  const navigate = useNavigate()
   const {
     schoolYearId,
     schoolName,
@@ -150,10 +151,11 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
   const [query, setQuery] = useState('')
   const [courseFilter, setCourseFilter] = useState('')
   const [subjectFilter, setSubjectFilter] = useState('')
-  const [periodFilter, setPeriodFilter] = useState(activePeriodId ?? '')
+  const [periodFilter, setPeriodFilter] = useState(searchParams.get('academicPeriodId') ?? activePeriodId ?? '')
   const [dateFilter, setDateFilter] = useState('')
   const [viewMode, setViewMode] = useState<ViewMode>('grid')
   const openedCurriculumRequest = useRef<string | null>(null)
+  const openedReturnEntry = useRef<string | null>(null)
   const requestedCurriculumId = searchParams.get('subjectId') ?? searchParams.get('malla')
   const requestedGrade = searchParams.get('grade') ?? searchParams.get('grado')
   const requestedArea = searchParams.get('area')
@@ -164,6 +166,34 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
   useEffect(() => {
     if (activePeriodId && !periodFilter) setPeriodFilter(activePeriodId)
   }, [activePeriodId, periodFilter])
+
+  useEffect(() => {
+    const requestedPeriod = searchParams.get('academicPeriodId')
+    if (requestedPeriod && requestedPeriod !== activePeriodId && periods.some(period => period.id === requestedPeriod)) {
+      setActivePeriodId(requestedPeriod)
+    }
+  }, [searchParams, activePeriodId, periods, setActivePeriodId])
+
+  useEffect(() => {
+    const entryId = searchParams.get('entryId')
+    if (!entryId || openedReturnEntry.current === entryId || loading) return
+    const entry = entries.find(item => item.id === entryId)
+    if (entry) {
+      openedReturnEntry.current = entryId
+      setPreviewEntry(entry)
+    }
+  }, [searchParams, entries, loading])
+
+  function createActivity(entry: PlanningEntryWithDetails) {
+    const returnParams = new URLSearchParams(searchParams)
+    returnParams.set('tab', 'planificaciones')
+    returnParams.set('entryId', entry.id)
+    returnParams.set('academicPeriodId', entry.academicPeriodId)
+    returnParams.delete('action')
+    navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: entry.sectionSubjectId, academicPeriodId: entry.academicPeriodId, planningEntryId: entry.id })}`, {
+      state: { activityCreatorOrigin: { kind: 'planning', label: 'Volver a Planificación', returnTo: `/planificaciones?${returnParams}` } },
+    })
+  }
 
   useEffect(() => {
     if (
@@ -537,6 +567,7 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
                 onDuplicate={handleDuplicate}
                 onArchive={requestArchive}
                 onDelete={requestDelete}
+                onCreateActivity={createActivity}
               />
             ))}
           </div>

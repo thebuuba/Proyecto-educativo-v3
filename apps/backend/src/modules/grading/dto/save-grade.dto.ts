@@ -21,19 +21,19 @@ export class SaveGradeDto {
   @IsString()
   evaluationActivityId?: string | null
 
-  @IsNumber()
+  @IsNumber({ maxDecimalPlaces: 2, allowNaN: false, allowInfinity: false })
   @Min(0)
-  @Max(100)
+  @Max(10000)
   score!: number
 
   @IsOptional()
-  @IsNumber()
-  @Min(0)
-  @Max(100)
+  @IsNumber({ maxDecimalPlaces: 2, allowNaN: false, allowInfinity: false })
+  @Min(0.01)
+  @Max(10000)
   maxScore?: number
 
   @IsOptional()
-  @IsNumber()
+  @IsNumber({ allowNaN: false, allowInfinity: false })
   @Min(0)
   weight?: number
 

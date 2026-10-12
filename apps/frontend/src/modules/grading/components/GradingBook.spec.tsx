@@ -1,4 +1,5 @@
-import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
+import { readActivityDraftsForContext, writeActivityDrafts } from '@/modules/activities/utils/activityDraftStorage'
+import { act, fireEvent, render, screen as rawScreen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { StrictMode, type ComponentProps } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -13,6 +14,23 @@ vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
   ActivityDescriptionEditor: ({ value, onChange }: { value: string; onChange: (value: string) => void }) =>
     <textarea aria-label="Descripción de la actividad" value={value} onChange={event => onChange(event.target.value)} />,
 }))
+
+
+const draftContext = {schoolId:'school',userId:'user',schoolYearId:'year',sectionSubjectId:'subject',academicPeriodId:'period'}
+function revealEditorRole(role: Parameters<typeof rawScreen.getByRole>[0], options?: Parameters<typeof rawScreen.getByRole>[1]) {
+ let element=rawScreen.queryByRole(role,options)
+ if(element) return element
+ const activityField = role === 'combobox' || /Valor en puntos|Descripción de la actividad|Nombre de la actividad|^Grupal|^Individual/.test(String(options?.name ?? ''))
+ const step=rawScreen.queryByRole('button',{name:activityField ? '1. Actividad' : '2. Instrumento'})
+ if(step && step.getAttribute('aria-current') !== 'step') fireEvent.click(step)
+ element=rawScreen.queryByRole(role,options)
+ if(element)return element
+ return null
+}
+const screen={...rawScreen,
+ getByRole: (role: Parameters<typeof rawScreen.getByRole>[0], options?: Parameters<typeof rawScreen.getByRole>[1]) => revealEditorRole(role,options) ?? rawScreen.getByRole(role,options),
+ findByRole: async (role: Parameters<typeof rawScreen.getByRole>[0], options?: Parameters<typeof rawScreen.getByRole>[1], waitOptions?: Parameters<typeof rawScreen.findByRole>[2]) => { revealEditorRole(role,options); return rawScreen.findByRole(role,options,waitOptions) },
+}
 
 const students: StudentGradeRow[] = [
   {
@@ -43,6 +61,7 @@ const activities: GradingActivity[] = [
 
 function renderBook(overrides: Partial<ComponentProps<typeof GradingBook>> = {}, options?: { strict?: boolean }) {
   const props: ComponentProps<typeof GradingBook> = {
+    activityDraftContext: draftContext,
     students,
     activities,
     records: [],
@@ -77,11 +96,31 @@ function seededInstrumentDraft(id: string, type: 'rubrica' | 'lista-cotejo' | 'e
     autoDetectedPedagogicalActivityType: true, instrumentCompleted: true,
     instrumentFields: recommendationToFields(proposal, 'Informe de lectura de un cuento'), preparedRecommendation: proposal,
     preparedManuallyEdited: false, resources: [], planningMoment: '', observations: '', activityType: 'individual', teamIds: [] }
-  window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] }))
+  writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
   return { draft, proposal }
 }
 
 describe('GradingBook', () => {
+  it('redistributes No aplica exactly and blocks an evaluation with every criterion excluded', async () => {
+    const onSaveScore = vi.fn().mockResolvedValue(true)
+    const activity: GradingActivity = {id:'na',name:'Lista contextual',competencyBlockId:'b1',maxScore:20,instrumentType:'lista-cotejo',instrumentCriteria:{
+      'lista-cotejo:meta:criteriaCount':'3','lista-cotejo:meta:noApply':'true',
+      'lista-cotejo:criterion:0':'A','lista-cotejo:points:0':'6.67',
+      'lista-cotejo:criterion:1':'B','lista-cotejo:points:1':'6.67',
+      'lista-cotejo:criterion:2':'C','lista-cotejo:points:2':'6.66',
+    }}
+    renderBook({activities:[activity],students:gradingStudents,onSaveScore,initialActivityId:'na',initialActivityMode:'evaluate'})
+    const user=userEvent.setup()
+    for(const criterion of ['A','B','C']) await user.click(screen.getByRole('button',{name:`${criterion}: No aplica`}))
+    expect(screen.getByRole('alert')).toHaveTextContent('Todos los criterios')
+    expect(screen.getByRole('button',{name:'Guardar y siguiente →'})).toBeDisabled()
+    await user.click(screen.getByRole('button',{name:'B: Sí'}))
+    await user.click(screen.getByRole('button',{name:'C: No'}))
+    await user.click(screen.getByRole('button',{name:'Guardar y siguiente →'}))
+    await waitFor(()=>expect(onSaveScore).toHaveBeenCalledOnce())
+    expect(onSaveScore.mock.calls[0][3]).toMatchObject({selections:[-1,0,1],criterionScores:[0,10.01,0],applicableMaximums:[0,10.01,9.99]})
+    expect(onSaveScore.mock.calls[0][2]).toBe('10.01')
+  })
   beforeEach(() => {
     window.localStorage.clear()
   })
@@ -143,7 +182,7 @@ describe('GradingBook', () => {
     expect(score).toHaveValue('')
     expect(criterion).toHaveValue('Información esencial editada')
     expect(screen.queryByText('Puntaje pendiente')).not.toBeInTheDocument()
-    await userEvent.setup().click(screen.getByRole('button', { name: 'Guardar' }))
+    await userEvent.setup().click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
     expect(screen.getByRole('dialog', { name: 'Actividad incompleta' })).toBeInTheDocument()
   }, 15000)
 
@@ -165,7 +204,7 @@ describe('GradingBook', () => {
     await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'))
     expect(score).toHaveValue('')
     expect(screen.queryByText('Puntaje pendiente')).not.toBeInTheDocument()
-    const stored = JSON.parse(window.localStorage.getItem('grading-activity-drafts:1ro A · Lengua Española:P1') || '{}')
+    const stored = JSON.parse(JSON.stringify(readActivityDraftsForContext(draftContext)) || '{}')
     expect(stored.b1?.[0]).toEqual(expect.objectContaining({ maxScore: '' }))
     expect(stored.b1?.[0]?.instrumentFields['rubrica:points:0']).toBe('')
     expect(stored.b1?.[0]?.preparedRecommendation.totalScoreUnits).toBe(0)
@@ -187,7 +226,7 @@ describe('GradingBook', () => {
       resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '' }
     const oldFingerprint = JSON.stringify([draft.name, draft.description, draft.maxScore, draft.pedagogicalActivityType,
       draft.activityType, draft.instrumentType, []])
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: oldFingerprint }] }))
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{ ...draft, preparedFingerprint: oldFingerprint }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create',
       initialActivityBlockId: 'b1', initialActivityDraftId: 'legacy-score' })
     expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('20')
@@ -204,8 +243,8 @@ describe('GradingBook', () => {
       instrumentType: 'rubrica', evaluationTechnique: 'analisis-producciones', pedagogicalActivityType: 'NEWS_WRITING',
       instrumentFields: recommendationToFields(proposal, 'La noticia'), instrumentCompleted: true, preparedRecommendation: proposal,
       resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '' }
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft,
-      preparedFingerprint: preparationFingerprint(draft) }] }))
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{ ...draft,
+      preparedFingerprint: preparationFingerprint(draft) }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     const onAddActivity = vi.fn().mockImplementation(async activity => ({ ...activity, id: 'rescored' }))
     const view = renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create',
       initialActivityBlockId: 'b1', initialActivityDraftId: 'rescore-save', onAddActivity })
@@ -216,7 +255,7 @@ describe('GradingBook', () => {
     fireEvent.change(score, { target: { value: '30' } })
     await waitFor(() => expect(screen.getByText('Puntuación máxima total: 30 / 30 pts')).toBeInTheDocument())
     expect(score).toHaveFocus()
-    fireEvent.click(screen.getByRole('button', { name: 'Guardar' }))
+    fireEvent.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
     const user = userEvent.setup()
     await user.click(within(screen.getByRole('dialog', { name: 'Resumen de la actividad' })).getByRole('button', { name: 'Confirmar y guardar' }))
     await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
@@ -240,7 +279,7 @@ describe('GradingBook', () => {
     const user = userEvent.setup()
     const instrument = screen.getByRole('combobox', { name: 'Tipo de instrumento' })
     await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'), { timeout: 8000 })
-    const storedDraft = () => JSON.parse(window.localStorage.getItem('grading-activity-drafts:1ro A · Lengua Española:P1') || '{}').b1?.[0]
+    const storedDraft = () => JSON.parse(JSON.stringify(readActivityDraftsForContext(draftContext)) || '{}').b1?.[0]
     const score = screen.getByRole('textbox', { name: /Valor en puntos/ }) as HTMLInputElement
     const totals = (type: string) => {
       const fields = storedDraft().instrumentFields as Record<string, string>
@@ -379,18 +418,18 @@ describe('GradingBook', () => {
     vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
     const title = 'La noticia'
     const description = 'Redactarán una noticia sobre educación con titular, entrada y cuerpo.'
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{
       draftId: 'second-news-draft', name: title, description, maxScore: '20', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 },
       activityType: 'individual', teamIds: [], instrumentType: '', evaluationTechnique: '', instrumentFields: {}, instrumentCompleted: false,
       resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '',
-    }] }))
+    }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     const onAddActivity = vi.fn().mockImplementation(async activity => ({ ...activity, id: 'saved-news' }))
     const view = renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create',
       initialActivityBlockId: 'b1', initialActivityDraftId: 'second-news-draft', onAddActivity })
     await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING'))
     await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'))
     const user = userEvent.setup()
-    await user.click(screen.getByRole('button', { name: 'Guardar' }))
+    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
     const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })
     expect(within(summary).getByText('Redacción de noticia')).toBeInTheDocument()
     expect(within(summary).getByText('Análisis de producciones')).toBeInTheDocument()
@@ -460,11 +499,11 @@ describe('GradingBook', () => {
     let finishInterpretation!: (value: unknown) => void
     const interpretation = new Promise(resolve => { finishInterpretation = resolve })
     const post = vi.spyOn(api, 'post').mockImplementation(path => path === '/evaluation-instruments/interpret' ? interpretation as never : proposal as never)
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{
       draftId: 'report-draft', name: title, description, maxScore: '20', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 },
       activityType: 'individual', teamIds: [], instrumentType: '', evaluationTechnique: '', instrumentFields: {}, instrumentCompleted: false,
       resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '',
-    }] }))
+    }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     const onAddActivity = vi.fn().mockImplementation(async activity => ({ ...activity, id: 'saved-report' }))
     const view = renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'report-draft', onAddActivity })
     await waitFor(() => expect(post.mock.calls.some(([path]) => path === '/evaluation-instruments/recommend')).toBe(true), { timeout: 5000 })
@@ -477,7 +516,7 @@ describe('GradingBook', () => {
     expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
     expect(screen.queryByText('Mensaje interno.')).not.toBeInTheDocument()
     const user = userEvent.setup()
-    await user.click(screen.getByRole('button', { name: 'Guardar' }))
+    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
     const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })
     expect(within(summary).getByText('Elaboración de informe de lectura')).toBeInTheDocument()
     expect(within(summary).getByText('Análisis de producciones')).toBeInTheDocument()
@@ -501,12 +540,12 @@ describe('GradingBook', () => {
         activityType: comparison ? 'READING_REPORT_COMPARISON' : 'READING_REPORT_WRITING', activityTypes: [],
         curriculumVersionId: null, curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' } as never
     })
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{
       draftId: 'description-draft', name: title, description: 'Elaborarán un informe de lectura.', maxScore: '',
       competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, activityType: 'individual', teamIds: [],
       instrumentType: '', evaluationTechnique: '', instrumentFields: {}, instrumentCompleted: false,
       resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '',
-    }] }))
+    }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     const user = userEvent.setup()
     renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'description-draft' })
     const activity = await screen.findByRole('combobox', { name: 'Tipo de actividad' })
@@ -529,13 +568,13 @@ describe('GradingBook', () => {
 
   it('mantiene tipo y técnica contextuales si la interpretación remota falla', async () => {
     vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{
       draftId: 'offline-report', name: 'Informe de lectura de un cuento',
       description: 'Los estudiantes realizarán una lectura comprensiva y elaborarán un informe escrito con resumen y conclusión.',
       maxScore: '', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, activityType: 'individual', teamIds: [],
       instrumentType: '', evaluationTechnique: '', instrumentFields: {}, instrumentCompleted: false,
       resources: [], studentRole: '', teacherRole: '', planningMoment: '', observations: '', date: '',
-    }] }))
+    }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     renderBook({ firstSecondaryLanguage: true, sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'offline-report' })
     expect(await screen.findByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('')
     await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('READING_REPORT_WRITING'))
@@ -588,7 +627,7 @@ describe('GradingBook', () => {
       description: 'Redactar una noticia escolar.', studentRole: '', teacherRole: '', instrumentType: 'rubrica', evaluationTechnique: 'analisis-producciones',
       pedagogicalActivityType: 'NEWS_WRITING', instrumentCompleted: true, instrumentFields: recommendationToFields(original, 'Redactar una noticia'),
       preparedRecommendation: original, preparedManuallyEdited: false, resources: [], planningMoment: '', observations: '', activityType: 'individual', teamIds: [] }
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] }))
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     vi.spyOn(api, 'post').mockImplementation(async path => path === '/evaluation-instruments/interpret'
       ? { suggestedActivityType: 'OTHER', activityType: 'OTHER', activityTypes: [], curriculumVersionId: null,
         curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' } as never
@@ -611,7 +650,7 @@ describe('GradingBook', () => {
       description: 'Redactar un informe.', studentRole: '', teacherRole: '', instrumentType: 'rubrica', evaluationTechnique: 'analisis-producciones',
       instrumentCompleted: true, instrumentFields: fields, preparedRecommendation: proposal, preparedManuallyEdited: true,
       resources: [], planningMoment: '', observations: '', activityType: 'individual', teamIds: [] }
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] }))
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     const user = userEvent.setup()
     renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'edited-draft' })
     await user.selectOptions(await screen.findByRole('combobox', { name: 'Tipo de instrumento' }), 'escala')
@@ -626,12 +665,12 @@ describe('GradingBook', () => {
     const draft = { draftId: 'summary-draft', name: 'Informe de lectura', maxScore: '17.35', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, date: '',
       description: 'Redactar un informe de lectura.', studentRole: '', teacherRole: '', instrumentType: 'rubrica', evaluationTechnique: 'analisis-producciones', instrumentCompleted: true,
       instrumentFields: recommendationToFields(proposal, 'Informe de lectura'), preparedRecommendation: proposal, preparedManuallyEdited: false, pedagogicalActivityType: 'READING_REPORT_WRITING', resources: ['Libro'], planningMoment: '', observations: '', activityType: 'individual', teamIds: [] }
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] }))
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{ ...draft, preparedFingerprint: preparationFingerprint(draft) }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     const onAddActivity = vi.fn().mockImplementation(async activity => ({ ...activity, id: 'saved-summary' }))
     const user = userEvent.setup()
     renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'summary-draft', onAddActivity })
     expect(await screen.findByDisplayValue('Informe de lectura')).toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: 'Guardar' }))
+    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
     const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })
     expect(onAddActivity).not.toHaveBeenCalled()
     expect(within(summary).getByText('17.35 puntos')).toBeInTheDocument()
@@ -643,40 +682,41 @@ describe('GradingBook', () => {
     await user.click(screen.getByRole('button', { name: 'Volver al resumen' }))
     await user.click(screen.getByRole('button', { name: 'Volver a editar' }))
     expect(screen.getByDisplayValue('Informe de lectura')).toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: 'Guardar' }))
+    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
     const confirm = screen.getByRole('button', { name: 'Confirmar y guardar' })
     fireEvent.click(confirm)
     fireEvent.click(confirm)
     await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
-    expect(onAddActivity.mock.calls[0][0]).toEqual(expect.objectContaining({ maxScore: 17.35, date: undefined, planningMoment: '' }))
+    expect(onAddActivity.mock.calls[0][0]).toEqual(expect.objectContaining({ maxScore: 17.35, date: '', planningMoment: '' }))
   })
 
   it('conserva una plantilla editable si falla la preparación automática', async () => {
     vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{
       draftId: 'automatic-fallback', name: 'Informe de lectura', maxScore: '20', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 },
       date: '', description: 'Redactar un informe de lectura con resumen.', studentRole: '', teacherRole: '', instrumentType: '',
       evaluationTechnique: '', instrumentCompleted: false, instrumentFields: {}, resources: [], planningMoment: '', observations: '',
       activityType: 'individual', teamIds: [],
-    }] }))
+    }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'automatic-fallback' })
     expect(await screen.findByRole('textbox', { name: 'Criterio 1' }, { timeout: 5000 })).toHaveValue('Resumen del texto')
   })
 
   it('prepara sin calificación ni modalidad y conserva el borrador si falla la regeneración explícita', async () => {
     vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({ b1: [{
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({ b1: [{
       draftId: 'report-no-score', name: 'Informe de lectura de un cuento', maxScore: '', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 },
       date: '', description: 'Elaborarán un informe de lectura de un cuento con resumen, personajes, análisis de valores y conclusión.',
       studentRole: '', teacherRole: '', instrumentType: '', evaluationTechnique: '', instrumentCompleted: false,
       instrumentFields: {}, resources: [], planningMoment: '', observations: '', activityType: '', teamIds: [],
-    }] }))
+    }] })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'report-no-score' })
     const criterion = await screen.findByRole('textbox', { name: 'Criterio 1' }, { timeout: 5000 })
     await waitFor(() => expect(criterion).toHaveValue('Resumen del texto'), { timeout: 5000 })
     expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('')
     const user = userEvent.setup()
     await user.click(screen.getByRole('button', { name: 'Crear desde cero' }))
+    await user.click(screen.getByRole('button', { name: 'Cambiar instrumento' }))
     expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('')
     await new Promise(resolve => setTimeout(resolve, 1100))
     expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('')
@@ -751,7 +791,7 @@ describe('GradingBook', () => {
     await user.click(screen.getByRole('button', { name: 'Agregar criterio' }))
     expect(await screen.findByDisplayValue('Referencias textuales')).toBeInTheDocument()
     await waitFor(() => {
-      const stored = JSON.parse(window.localStorage.getItem('grading-activity-drafts:1ro A · Lengua Española:P1') || '{}')
+      const stored = JSON.parse(JSON.stringify(readActivityDraftsForContext(draftContext)) || '{}')
       expect(stored.b1?.[0]?.instrumentFields['rubrica:criterion:6']).toBe('Referencias textuales')
     })
     view.unmount()
@@ -772,7 +812,7 @@ describe('GradingBook', () => {
     const view = renderBook({ sectionSubjectId: 'ss-1', initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'add-save-reopen', onAddActivity })
     await user.click(screen.getByRole('button', { name: 'Agregar criterio' }))
     await screen.findByDisplayValue('Referencias textuales')
-    await user.click(screen.getByRole('button', { name: 'Guardar' }))
+    await user.click(screen.getByRole('button', { name: '3. Revisar y guardar' }))
     await user.click(screen.getByRole('button', { name: 'Confirmar y guardar' }))
     await waitFor(() => expect(onAddActivity).toHaveBeenCalledTimes(1))
     const saved = onAddActivity.mock.calls[0][0] as GradingActivity
@@ -904,10 +944,10 @@ describe('GradingBook', () => {
       activityType: '',
       updatedAt: '2026-07-18T12:00:00.000Z',
     }
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({
       b1: [{ ...baseDraft, draftId: 'draft-b1', competencyBlockId: 'b1', name: 'Borrador comunicativo' }],
       b2: [{ ...baseDraft, draftId: 'draft-b2', competencyBlockId: 'b2', name: 'Borrador lógico' }],
-    }))
+    })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
     renderBook({ initialActivityAction: 'create' })
 
     expect(screen.queryByText('Borrador comunicativo')).not.toBeInTheDocument()
@@ -988,9 +1028,9 @@ describe('GradingBook', () => {
   })
 
   it('restaura el borrador solicitado desde Actividades', async () => {
-    window.localStorage.setItem('grading-activity-drafts:1ro A · Lengua Española:P1', JSON.stringify({
+    writeActivityDrafts(draftContext, JSON.parse(JSON.stringify({
       b1: [{ draftId: 'draft-requested', competencyBlockId: 'b1', name: 'Exposición pendiente', maxScore: '25', date: '', description: '', studentRole: '', teacherRole: '', instrumentType: '', evaluationTechnique: '', instrumentCompleted: false, instrumentFields: {}, resources: [], planningMoment: '', observations: '', activityType: '', teamIds: [] }],
-    }))
+    })), {courseTitle:'1ro A · Lengua Española',periodShortName:'P1'})
 
     renderBook({ initialActivityAction: 'create', initialActivityBlockId: 'b1', initialActivityDraftId: 'draft-requested' })
 
@@ -1079,7 +1119,7 @@ describe('GradingBook', () => {
     renderBook({ activities: [rubricActivity], students: gradingStudents, initialActivityId: rubricActivity.id, initialActivityMode: 'evaluate', onSaveScore })
 
     expect(screen.queryByText('Entrada rápida de notas')).not.toBeInTheDocument()
-    expect(screen.getByText(/Explica el sistema solar/)).toBeInTheDocument()
+    expect(screen.getAllByText(/Explica el sistema solar/).length).toBeGreaterThan(0)
     expect(screen.getAllByText('Explica con precisión y evidencia.').length).toBeGreaterThan(0)
     expect(screen.getByText('Explica parcialmente.')).toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: 'Explica el sistema solar: Excelente' }))

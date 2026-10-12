@@ -1,10 +1,27 @@
 import { describe, expect, it } from 'vitest'
 import { editableFallbackRecommendation, recommendationToFields } from './instrumentPreparation'
-import { rememberManualLevelWeights, rememberManualScoreWeights, scoreInstrumentFields, scoreRecommendation, validActivityScore } from './instrumentScoring'
+import { distributeUnits, rememberManualLevelWeights, rememberManualScoreWeights, scoreInstrumentFields, scoreRecommendation, validActivityScore } from './instrumentScoring'
 
 const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const
 
 describe('puntaje pendiente y redistribución del instrumento', () => {
+  it('keeps zero level ratios and tiny-score level definitions usable', () => {
+    const proposal = editableFallbackRecommendation({activityTitle: 'Small', maxScore: 20, instrumentType: 'escala', participationMode: 'INDIVIDUAL'})
+    const original = { ...recommendationToFields(proposal, 'Small'), 'escala:level-points:1': '0', 'escala:level-points:4': '10', 'escala:level-points:3': '9' }
+    const fields = scoreInstrumentFields(original, 'escala', 0.01, proposal)
+    expect(fields['escala:level-points:1']).toBe('0')
+    expect(Number(fields['escala:level-points:3']) / Number(fields['escala:level-points:4'])).toBe(0.9)
+    expect(scoreRecommendation(proposal, fields, 0.01).levels[1].proportion).toBe(0.9)
+  })
+  it('handles malformed internal weight metadata and overflow without NaN', () => {
+    const proposal = editableFallbackRecommendation({activityTitle: 'Small', maxScore: 20, instrumentType: 'rubrica', participationMode: 'INDIVIDUAL'})
+    const original = { ...recommendationToFields(proposal, 'Small'), 'rubrica:meta:scoreWeights': 'null', 'rubrica:meta:levelScoreWeights': '{}' }
+    expect(() => scoreInstrumentFields(original, 'rubrica', 0.01, proposal)).not.toThrow()
+    expect(distributeUnits(100, [Number.MAX_VALUE, Number.MAX_VALUE])).toEqual([50, 50])
+  })
+  it('does not allocate unbounded levels from malformed metadata', () => {
+    expect(() => scoreInstrumentFields({ 'escala:meta:criteriaCount': '1', 'escala:meta:levelCount': 'Infinity' }, 'escala', 1)).not.toThrow()
+  })
   it('distingue vacío, cero y decimales incompletos de un total confirmado', () => {
     expect(validActivityScore('')).toBeNull()
     expect(validActivityScore('0')).toBeNull()

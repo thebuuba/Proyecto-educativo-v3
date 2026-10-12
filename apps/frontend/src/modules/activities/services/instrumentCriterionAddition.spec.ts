@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { runInNewContext } from 'node:vm'
 import { editableFallbackRecommendation, recommendationToFields } from './instrumentPreparation'
 import { appendInstrumentCriterion, nextCatalogCriterion } from './instrumentCriterionAddition'
 import { scoreInstrumentFields } from './instrumentScoring'
@@ -17,6 +18,40 @@ function fixture(type: (typeof formats)[number], score: number | null) {
 }
 
 describe('Añadir criterio desde el catálogo', () => {
+  it.each(['0', '7', '1.5', 'Infinity', 'NaN'])('rejects explicit invalid rubric level count %s before copying descriptors', levelCount => {
+    const fields = { 'rubrica:meta:criteriaCount': '1', 'rubrica:meta:levelCount': levelCount }
+    // A VM timeout bounds the regression that previously entered an endless loop.
+    expect(() => runInNewContext('append(fields, "rubrica", 1, undefined, null)',
+      { append: appendInstrumentCriterion, fields }, { timeout: 250 })).toThrow(RangeError)
+  })
+  it('preserves an explicitly zero weighted criterion during addition', () => {
+    const { fields } = fixture('lista-ponderada', 100)
+    const input = { ...fields, 'lista-ponderada:meta:criteriaCount': '2', 'lista-ponderada:weight:0': '0', 'lista-ponderada:weight:1': '100' }
+    const result = appendInstrumentCriterion(input, 'lista-ponderada', 100, undefined, null)
+    expect(result.fields['lista-ponderada:weight:0']).toBe('0')
+    expect(result.fields['lista-ponderada:points:0']).toBe('0')
+    expect([0, 1, 2].reduce((sum, index) => sum + Math.round(Number(result.fields[`lista-ponderada:weight:${index}`]) * 100), 0)).toBe(10000)
+  })
+  it.each(['escala', 'lista-cotejo'] as const)('keeps an unedited additional curriculum source in %s', type => {
+    const { fields, recommendation, candidate } = fixture(type, 20)
+    const reference = { elementId: 'element', scopeId: 'scope', versionId: 'version', type: 'INDICATOR', text: 'Source', sources: [] }
+    const catalog = { ...candidate, title: 'New title', description: 'Distinct description', sourceType: 'CURRICULUM_DERIVED' as const, sourceReferences: [reference] }
+    const result = appendInstrumentCriterion(fields, type, 20, recommendation, catalog)
+    expect(result.recommendation?.criteria.at(-1)).toMatchObject({ title: catalog.title, description: catalog.description,
+      sourceType: 'CURRICULUM_DERIVED', sourceReferences: [reference] })
+  })
+  it('never creates a twenty-first criterion', () => {
+    const { recommendation, fields, candidate } = fixture('lista-cotejo', 20)
+    expect(() => appendInstrumentCriterion({ ...fields, 'lista-cotejo:meta:criteriaCount': '20' }, 'lista-cotejo', 20, recommendation, candidate)).toThrow(RangeError)
+  })
+  it('gives appended manual rows stable unique identities', () => {
+    const { recommendation, fields } = fixture('lista-cotejo', 20)
+    const result = appendInstrumentCriterion(fields, 'lista-cotejo', 20, recommendation, null)
+    const id = result.fields[`lista-cotejo:criterion-id:${recommendation.criteria.length}`]
+    expect(typeof id).toBe('string')
+    expect(id).toBe(result.recommendation?.criteria.at(-1)?.id)
+    expect(recommendation.criteria.map(item => item.id)).not.toContain(id)
+  })
   it.each(formats)('incorpora una propuesta completa a %s sin duplicar ni borrar ediciones', type => {
     const { recommendation, fields, candidate } = fixture(type, null)
     const edited = { ...fields, [`${type}:criterion:0`]: 'Criterio de la docente', [`${type}:description:0`]: 'Descripción de la docente',
@@ -25,7 +60,7 @@ describe('Añadir criterio desde el catálogo', () => {
     expect(selected?.title).toBe(candidate.title)
     const result = appendInstrumentCriterion(edited, type, null, recommendation, selected)
     const index = recommendation.criteria.length
-    expect(result.fields[`${type}:criterion:${index}`]).toBe(['lista-cotejo', 'escala'].includes(type) ? candidate.description : candidate.title)
+    expect(result.fields[`${type}:criterion:${index}`]).toBe(candidate.title)
     expect(result.fields[`${type}:description:${index}`]).toBe(candidate.description)
     expect(result.fields[`${type}:criterion:0`]).toBe('Criterio de la docente')
     expect(result.fields[`${type}:description:0`]).toBe('Descripción de la docente')

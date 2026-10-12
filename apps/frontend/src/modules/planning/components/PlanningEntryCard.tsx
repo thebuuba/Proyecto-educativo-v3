@@ -7,6 +7,7 @@ import {
   Edit3,
   Eye,
   Printer,
+  Plus,
   Trash2,
 } from 'lucide-react'
 
@@ -28,6 +29,7 @@ type PlanningEntryCardProps = {
   onDuplicate: (entry: PlanningEntryWithDetails) => void
   onArchive: (entry: PlanningEntryWithDetails) => void
   onDelete: (entry: PlanningEntryWithDetails) => void
+  onCreateActivity?: (entry: PlanningEntryWithDetails) => void
 }
 
 const MAX_INDICATOR_CHARS = 60
@@ -40,6 +42,7 @@ export function PlanningEntryCard({
   onDuplicate,
   onArchive,
   onDelete,
+  onCreateActivity,
 }: PlanningEntryCardProps) {
   const status = String(entry.status).toLowerCase()
   const statusLabel =
@@ -156,6 +159,11 @@ export function PlanningEntryCard({
             <Edit3 className="size-4" />
             Editar
           </Button>
+          {onCreateActivity && status !== 'archived' ? (
+            <Button variant="ghost" size="sm" onClick={() => onCreateActivity(entry)}>
+              <Plus className="size-4" /> Crear actividad
+            </Button>
+          ) : null}
           <Button
             variant="ghost"
             size="icon"

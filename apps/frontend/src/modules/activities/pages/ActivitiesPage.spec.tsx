@@ -4,6 +4,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { ActivitiesPage } from './ActivitiesPage'
 
+vi.mock('@/modules/auth/hooks/useAuth', () => ({ useAuth: () => ({ schoolId: 'school1', appUser: { id: 'user1' } }) }))
+
 vi.mock('@/modules/activities/services/activitiesService', () => ({
   getActivityCenter: vi.fn().mockResolvedValue({
     sectionSubjects: [{ id: 'ss-1', sectionId: 'section-1', schoolYearId: 'year-1', gradeName: '2.º', sectionName: 'A', subjectName: 'Ciencias' }],
@@ -27,9 +29,11 @@ describe('ActivitiesPage', () => {
     expect(screen.queryByRole('link', { name: 'Ver resultados' })).not.toBeInTheDocument()
   })
 
-  it('muestra los borradores existentes agrupados en Actividades', async () => {
-    window.localStorage.setItem('grading-activity-drafts:2.º A · Ciencias:P1', JSON.stringify({
-      b2: [{ draftId: 'draft-1', name: '', maxScore: '25', competencyBlockId: 'b2', updatedAt: '2026-09-12T12:00:00.000Z' }],
+  it('muestra los borradores de la cuenta usando IDs incluso si sus etiquetas cambiaron', async () => {
+    window.localStorage.setItem('grading-activity-drafts:v2:["school1","user1","year-1","ss-1","period-1"]', JSON.stringify({
+      context: { schoolId: 'school1', userId: 'user1', schoolYearId: 'year-1', sectionSubjectId: 'ss-1', academicPeriodId: 'period-1' },
+      courseTitle: 'Título anterior', periodShortName: 'Período anterior',
+      drafts: { b2: [{ draftId: 'draft-1', name: '', maxScore: '25', competencyBlockId: 'b2', updatedAt: '2026-09-12T12:00:00.000Z' }] },
     }))
 
     render(<MemoryRouter><ActivitiesPage /></MemoryRouter>)

@@ -44,7 +44,7 @@ export class GradingController {
     @Query('sectionSubjectId') sectionSubjectId?: string,
     @Query('academicPeriodId') academicPeriodId?: string,
   ) {
-    return this.gradingService.findAll(user.schoolId, sectionSubjectId, academicPeriodId)
+    return this.gradingService.findAll(user.schoolId, sectionSubjectId, academicPeriodId, user.id, user.roles)
   }
 
   /**
@@ -55,7 +55,7 @@ export class GradingController {
    */
   @Get('section-subjects')
   getSectionSubjects(@CurrentUser() user: AuthenticatedUser) {
-    return this.gradingService.getSectionSubjects(user.schoolId)
+    return this.gradingService.getSectionSubjects(user.schoolId, user.id, user.roles)
   }
 
   /**
@@ -81,6 +81,7 @@ export class GradingController {
       sectionSubjectId,
       academicPeriodId,
       includeOptions !== 'false',
+      user.id, user.roles,
     )
   }
 
@@ -89,7 +90,7 @@ export class GradingController {
     @CurrentUser() user: AuthenticatedUser,
     @Query('sectionSubjectId') sectionSubjectId: string,
   ) {
-    return this.gradingService.getAnnualWorkspace(user.schoolId, sectionSubjectId)
+    return this.gradingService.getAnnualWorkspace(user.schoolId, sectionSubjectId, user.id, user.roles)
   }
 
   /**
@@ -106,7 +107,7 @@ export class GradingController {
     @Query('sectionSubjectId') sectionSubjectId: string,
     @Query('academicPeriodId') academicPeriodId: string,
   ) {
-    return this.gradingService.getStudentsForGrading(user.schoolId, sectionSubjectId, academicPeriodId)
+    return this.gradingService.getStudentsForGrading(user.schoolId, sectionSubjectId, academicPeriodId, user.id, user.roles)
   }
 
   /**
@@ -119,13 +120,13 @@ export class GradingController {
   @Post('save')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   saveGrade(@CurrentUser() user: AuthenticatedUser, @Body() dto: SaveGradeDto) {
-    return this.gradingService.saveGrade(user.schoolId, dto)
+    return this.gradingService.saveGrade(user.schoolId, dto, user.id, user.roles)
   }
 
   @Delete(':id')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   deleteGrade(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
-    return this.gradingService.deleteGrade(user.schoolId, id)
+    return this.gradingService.deleteGrade(user.schoolId, id, user.id, user.roles)
   }
 
   /**
@@ -137,6 +138,6 @@ export class GradingController {
    */
   @Get('student/:studentId')
   findByStudent(@CurrentUser() user: AuthenticatedUser, @Param('studentId') studentId: string) {
-    return this.gradingService.findByStudent(user.schoolId, studentId)
+    return this.gradingService.findByStudent(user.schoolId, studentId, user.id, user.roles)
   }
 }

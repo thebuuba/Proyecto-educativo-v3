@@ -1,4 +1,5 @@
 import type { InstrumentRecommendation } from '@aula/shared'
+import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
 export type ActivityInterpretation = {
@@ -269,12 +270,13 @@ export function recommendationToFields(proposal: InstrumentRecommendation, activ
     for (const [index, level] of proposal.levels.entries()) {
       const score = proposal.levels.length - index
       fields[`${type}:level-name:${score}`] = level.label
-      fields[`${type}:level-points:${score}`] = String(type === 'rubrica' ? proposal.levels.length - index - 1 : score)
+      fields[`${type}:level-points:${score}`] = String(level.proportion * (type === 'rubrica' ? proposal.levels.length - 1 : proposal.levels.length))
     }
   }
   if (type === 'lista-cotejo') fields['lista-cotejo:meta:pointsMode'] = 'individual'
   if (type === 'lista-ponderada') fields['lista-ponderada:meta:partial'] = 'true'
   for (const [index, criterion] of proposal.criteria.entries()) {
+    fields[`${type}:criterion-id:${index}`] = criterion.id
     fields[`${type}:criterion:${index}`] = criterion.title
     fields[`${type}:description:${index}`] = criterion.description
     fields[`${type}:points:${index}`] = String(criterion.maxScoreUnits / 100)
@@ -287,9 +289,7 @@ export function recommendationToFields(proposal: InstrumentRecommendation, activ
     }
   }
   if (type === 'lista-ponderada') {
-    const weights = proposal.criteria.map(criterion => Math.floor(criterion.maxScoreUnits * 10000 / proposal.totalScoreUnits))
-    let remainder = 10000 - weights.reduce((sum, weight) => sum + weight, 0)
-    for (let index = 0; remainder > 0; index = (index + 1) % weights.length, remainder--) weights[index]++
+    const weights = distributeScoreUnits(10000, proposal.criteria.map(criterion => criterion.maxScoreUnits))
     weights.forEach((weight, index) => { fields[`${type}:weight:${index}`] = String(weight / 100) })
   }
   return fields
@@ -297,41 +297,31 @@ export function recommendationToFields(proposal: InstrumentRecommendation, activ
 
 export function alignRecommendationWithFields(proposal: InstrumentRecommendation, fields: Record<string, string>, maxScore: number): InstrumentRecommendation | null {
   const type = proposal.instrumentType
-  const count = Number(fields[`${type}:meta:criteriaCount`])
-  if (!Number.isInteger(count) || count < 1 || count > 20) return null
-  const weightedUnits = type === 'lista-ponderada' ? (() => {
-    const weights = Array.from({ length: count }, (_, index) => Number(fields[`${type}:weight:${index}`]))
-    if (weights.some(weight => !Number.isFinite(weight) || weight <= 0) || Math.abs(weights.reduce((sum, weight) => sum + weight, 0) - 100) > 0.001) return null
-    const raw = weights.map(weight => Math.round(maxScore * 100) * weight / 100)
-    const units = raw.map(Math.floor)
-    let remainder = Math.round(maxScore * 100) - units.reduce((sum, value) => sum + value, 0)
-    const order = raw.map((value, index) => ({ index, fractional: value - units[index] })).sort((a, b) => b.fractional - a.fractional || a.index - b.index)
-    for (const item of order) { if (!remainder) break; units[item.index]++; remainder-- }
-    return units
-  })() : null
-  if (type === 'lista-ponderada' && !weightedUnits) return null
-  const criteria = Array.from({ length: count }, (_, index) => {
-    const prior = proposal.criteria[index]
-    const title = fields[`${type}:criterion:${index}`]?.trim() ?? ''
-    const scoreUnits = type === 'lista-ponderada'
-      ? weightedUnits![index]
-      : Math.round(Number(fields[`${type}:points:${index}`]) * 100)
-    const description = (fields[`${type}:description:${index}`] ?? (type === 'lista-ponderada' ? fields[`${type}:indicator:${index}`] : prior?.description ?? title))?.trim() ?? ''
-    const descriptors = type === 'rubrica'
-      ? Array.from({ length: Number(fields['rubrica:meta:levelCount']) || 4 }, (_, levelIndex) => ({
-          levelId: `L${Number(fields['rubrica:meta:levelCount']) - levelIndex}`,
-          text: fields[`rubrica:descriptor:${index}:${Number(fields['rubrica:meta:levelCount']) - levelIndex}`]?.trim() ?? '',
-          scoreUnits: Math.round(scoreUnits * (Number(fields['rubrica:meta:levelCount']) - levelIndex - 1) / (Number(fields['rubrica:meta:levelCount']) - 1)),
-        })) : prior?.descriptors ?? []
-    const edited = !prior || prior.title !== title || prior.description !== description
-    return { id: prior?.id ?? `teacher:${index}`, templateId: prior?.templateId ?? 'teacher', title, description,
-      maxScore: scoreUnits / 100, maxScoreUnits: scoreUnits,
+  if (validateInstrumentDefinition(type, fields, maxScore).length) return null
+  const configuration = instrumentEvaluationConfiguration(type, fields, maxScore)
+  const top = Math.max(...configuration.levels.map(level => level.points))
+  const levels = configuration.levels.map((level, index) => ({ id: `L${configuration.levels.length - index}`, label: level.label, proportion: level.points / top }))
+  const used = new Set<string>()
+  const criteria = configuration.criteria.map((criterion, index) => {
+    // Legacy rows without IDs can match content; never inherit attribution by position.
+    const matches = proposal.criteria.filter(prior => !used.has(prior.id) && (criterion.id
+      ? prior.id === criterion.id
+      : prior.title === criterion.title && prior.description === criterion.description))
+    const prior = matches.length === 1 ? matches[0] : undefined
+    if (prior) used.add(prior.id)
+    const units = Math.round(criterion.maximum * 100)
+    const descriptors = levels.map((level, levelIndex) => ({ levelId: level.id,
+      text: criterion.descriptors?.[levelIndex] ?? criterion.description, scoreUnits: Math.round(units * level.proportion) }))
+    const edited = !prior || prior.title !== criterion.title || prior.description !== criterion.description
+      || (type === 'rubrica' && descriptors.some((descriptor, levelIndex) => descriptor.text !== prior.descriptors[levelIndex]?.text))
+    return { id: prior?.id ?? criterion.id ?? `teacher:${index}`, templateId: prior?.templateId ?? 'teacher',
+      title: criterion.title, description: criterion.description, maxScore: units / 100, maxScoreUnits: units,
       sourceType: edited ? 'ACTIVITY_TEMPLATE' as const : prior.sourceType,
       sourceReferences: edited ? [] : prior.sourceReferences, descriptors }
   })
-  if (criteria.some(criterion => !criterion.title || !Number.isInteger(criterion.maxScoreUnits) || criterion.maxScoreUnits <= 0 || criterion.descriptors.some(descriptor => !descriptor.text))) return null
+  if (new Set(criteria.map(criterion => criterion.id)).size !== criteria.length) return null
   const totalScoreUnits = criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0)
   if (totalScoreUnits !== Math.round(maxScore * 100)) return null
-  return { ...proposal, criteria, totalScore: maxScore, totalScoreUnits,
+  return { ...proposal, criteria, levels, totalScore: maxScore, totalScoreUnits,
     selectedCurriculumElements: [...new Map(criteria.flatMap(criterion => criterion.sourceReferences).map(ref => [ref.elementId, ref])).values()] }
 }

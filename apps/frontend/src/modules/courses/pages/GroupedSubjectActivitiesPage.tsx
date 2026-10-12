@@ -248,8 +248,8 @@ export function GroupedSubjectActivitiesPage() {
       </nav>
 
       <ActivityDraftsPanel
-        filter={(draft) => draft.courseTitle === `${courseLabel} · ${subjectName}`}
-        resolveHref={(draft) => period ? buildCreateHref(subjectId, courseId, draft.blockId, draft.draft.draftId) : null}
+        scope={{schoolYearId: currentSchoolYear?.id, sectionSubjectId: subjectId, academicPeriodId: period?.id}}
+        resolveHref={(draft) => '/actividades/crear?' + new URLSearchParams({sectionSubjectId: draft.context.sectionSubjectId, academicPeriodId: draft.context.academicPeriodId, competencyBlockId: draft.blockId, activityDraftId: draft.draft.draftId ?? '', returnCourseId: courseId, returnSubjectId: subjectId, returnTab: 'actividades'}).toString()}
       />
 
       {workspaceLoading ? <div className="flex min-h-[24rem] items-center justify-center rounded-2xl border border-border bg-card text-sm font-semibold text-muted-foreground">Cargando actividades…</div> : workspaceError ? <ErrorState message={workspaceError} /> : (
