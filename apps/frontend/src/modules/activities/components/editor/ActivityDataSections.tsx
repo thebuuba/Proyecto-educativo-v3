@@ -210,6 +210,8 @@ export const pedagogicalActivityLabels: Record<string, string> = {
   WRITTEN_PRODUCTION: 'Producción escrita',
   ESSAY: 'Ensayo',
   REPORT: 'Informe',
+  ANALYSIS: 'Análisis',
+  COMPARISON: 'Comparación',
   RESEARCH: 'Investigación',
   PROJECT: 'Proyecto',
   PROBLEM_SOLVING: 'Resolución de problemas',
@@ -232,7 +234,7 @@ export function availablePedagogicalActivityType(
   return (
     firstSecondaryLanguage ||
     (secondSecondaryLanguage
-      ? !/^(?:TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(id)
+      ? !/^(?:POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(id)
       : !/^(?:NEWS|TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(id))
   )
 }

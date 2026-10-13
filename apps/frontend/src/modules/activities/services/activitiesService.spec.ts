@@ -23,7 +23,8 @@ function sourceModule(file: string): Record<string, any> {
   }).outputText
   const target = { exports: {} }
   const requireSource = (id: string) =>
-    id.startsWith('.') ? sourceModule(resolve(dirname(file), id + '.ts')) : backendRequire(id)
+    id === '@aula/shared' ? sourceModule(resolve('../../packages/shared/src/index.ts'))
+      : id.startsWith('.') ? sourceModule(resolve(dirname(file), id + '.ts')) : backendRequire(id)
   new Function('require', 'module', 'exports', output)(requireSource, target, target.exports)
   return target.exports
 }

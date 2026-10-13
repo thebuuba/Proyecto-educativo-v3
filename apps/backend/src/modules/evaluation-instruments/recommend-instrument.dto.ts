@@ -1,5 +1,5 @@
 import { ArrayMaxSize, IsArray, IsBoolean, IsIn, IsNumber, IsOptional, IsString, IsUUID, Max, MaxLength, Min, MinLength } from 'class-validator'
-import { evaluationCatalogV1 } from './catalog-v1'
+import { evaluationCatalogCurrent } from './catalog-current'
 import { INSTRUMENT_MAX_CRITERIA } from '@aula/shared'
 
 export class RecommendInstrumentDto {
@@ -7,7 +7,7 @@ export class RecommendInstrumentDto {
   @IsString() @MinLength(1) @MaxLength(300) activityTitle!: string
   @IsOptional() @IsString() @MaxLength(5000) description?: string
   @IsIn(['INDIVIDUAL', 'GROUP']) participationMode!: 'INDIVIDUAL' | 'GROUP'
-  @IsOptional() @IsIn(evaluationCatalogV1.activityTypes.map(a => a.id)) pedagogicalActivityType?: string
+  @IsOptional() @IsIn(evaluationCatalogCurrent.activityTypes.map(a => a.id)) pedagogicalActivityType?: string
   @IsNumber({ maxDecimalPlaces: 2, allowInfinity: false, allowNaN: false }) @Min(0.01) @Max(10000) maxScore!: number
   @IsOptional() @IsIn(['b1', 'b2', 'b3', 'b4']) competencyBlock?: string
   @IsOptional() @IsIn([4, 5]) levelCount?: 4 | 5
@@ -24,7 +24,7 @@ export class InterpretActivityDto {
   @IsUUID() sectionSubjectId!: string
   @IsString() @MinLength(1) @MaxLength(300) activityTitle!: string
   @IsOptional() @IsString() @MaxLength(5000) description?: string
-  @IsOptional() @IsIn(evaluationCatalogV1.activityTypes.map(a => a.id)) pedagogicalActivityType?: string
+  @IsOptional() @IsIn(evaluationCatalogCurrent.activityTypes.map(a => a.id)) pedagogicalActivityType?: string
   @IsOptional() @IsIn(['b1', 'b2', 'b3', 'b4']) competencyBlock?: string
   @IsOptional() @IsUUID() curriculumVersionId?: string
 }

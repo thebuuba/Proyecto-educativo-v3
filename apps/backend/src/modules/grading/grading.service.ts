@@ -11,7 +11,7 @@ import { academicPeriodDate, defaultAcademicPeriods } from '../../common/academi
 import { optionCache, optionCacheKeys } from '../../common/cache/option-cache'
 import { SaveGradeDto } from './dto/save-grade.dto'
 import { SaveActivityDto } from '../activities/dto/save-activity.dto'
-import { evaluationCatalogV1 } from '../evaluation-instruments/catalog-v1'
+import { evaluationCatalogForVersion } from '../evaluation-instruments/catalog-current'
 import { academicContext, resolveScope } from '../evaluation-instruments/curriculum-context'
 
 export function __test__clearGradingCache() {
@@ -1120,6 +1120,7 @@ export class GradingService {
   private async validatePreparedActivity(dto: SaveActivityDto,
     sectionSubject: { id: string; gradeId: string; subjectId: string }, tx: Prisma.TransactionClient) {
     const proposal = dto.instrumentSnapshot!
+    const proposalCatalog = evaluationCatalogForVersion(proposal?.catalogVersion)
     assertDefinition(dto.instrumentType ?? '', dto.instrumentCriteria ?? {}, dto.maxScore)
     const configuration = instrumentEvaluationConfiguration(dto.instrumentType!, dto.instrumentCriteria!, dto.maxScore)
     const top = Math.max(...configuration.levels.map(level => level.points))
@@ -1128,7 +1129,7 @@ export class GradingService {
       uuid(ref.versionId) && typeof ref.type === 'string' && typeof ref.text === 'string' && Array.isArray(ref.sources) &&
       ref.sources.every((span: any) => span && uuid(span.documentId) && Number.isInteger(span.pdfPage) && span.pdfPage > 0 &&
         (span.printedPage === null || typeof span.printedPage === 'string'))
-    if (!proposal || proposal.kind !== 'RECOMMENDATION' || proposal.catalogVersion !== evaluationCatalogV1.version ||
+    if (!proposal || proposal.kind !== 'RECOMMENDATION' || !proposalCatalog ||
       (proposal.curriculumScopeId !== null && !uuid(proposal.curriculumScopeId)) ||
       (proposal.curriculumVersionId !== null && !uuid(proposal.curriculumVersionId)) ||
       dto.instrumentType !== proposal.instrumentType || !Array.isArray(proposal.criteria) || proposal.criteria.length !== configuration.criteria.length ||
@@ -1137,7 +1138,7 @@ export class GradingService {
         level.label !== configuration.levels[index].label || !Number.isFinite(level.proportion) || Math.abs(level.proportion - configuration.levels[index].points / top) > 1e-9) ||
       new Set(proposal.levels.map(level => level.id)).size !== proposal.levels.length ||
       proposal.totalScoreUnits !== Math.round(dto.maxScore * 100) || proposal.totalScore !== dto.maxScore || proposal.scoreUnit !== 0.01 ||
-      !evaluationCatalogV1.activityTypes.some(type => type.id === proposal.activityType) || dto.pedagogicalActivityType !== proposal.activityType ||
+      !proposalCatalog?.activityTypes.some(type => type.id === proposal.activityType) || dto.pedagogicalActivityType !== proposal.activityType ||
       proposal.participationMode !== (dto.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL') ||
       !Array.isArray(proposal.selectedCurriculumElements) || !proposal.selectedCurriculumElements.every(validReference) ||
       proposal.criteria.some((criterion, index) => {

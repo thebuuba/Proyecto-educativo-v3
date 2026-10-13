@@ -18,7 +18,7 @@ La clasificación común/optativa se contrastó visualmente con PDF 48–49 (imp
 |---|---|---|
 | Inventario y clasificación | Extraído; revisión de tablas de distribución y optativas realizada; asociación por tema pendiente | Mantener registro de revisión separado para no perder avances al regenerar |
 | Lengua Española 1.º | Seis módulos existentes; pendiente de reauditar fuente, motor y pruebas | Revisar PDF 69–75 y contrastar los seis módulos |
-| Lengua Española 2.º | La noticia existente; cinco temas sin módulo específico comprobado | Revisar PDF 76–81 e implementar guía turística, artículo expositivo, informe de lectura, cuento de amor y amistad y décima espinela |
+| Lengua Española 2.º | Cinco temas incorporados, fuente revisada y pruebas de motor/alternativa/componentes aprobadas; noticia pendiente de reauditoría | Validar persistencia autenticada local y ampliar revisión manual; ver `lengua-2-primer-bloque.md` |
 | Lengua Española 3.º–6.º | Pendiente | Fuente por grado: 82–88, 96–104, 105–112, 113–121 |
 | Ciencias de la Naturaleza 1.º–6.º | Pendiente | Seguir después de Lengua, con denominaciones reales por grado |
 | Otras asignaturas comunes | Pendiente | Seguir orden de alcance y matriz |
@@ -34,7 +34,7 @@ La clasificación común/optativa se contrastó visualmente con PDF 48–49 (imp
 
 ## Estados y recuperación
 
-No se ha declarado ninguna asignatura completa ni ningún instrumento nuevo verificado en aplicación. Los temas sin encabezado conceptual inequívoco, incluidos conceptos de Formación Humana con viñetas, mantienen pendiente la revisión de límites; todo el contenido original sigue conservado por ámbito.
+No se ha declarado ninguna asignatura completa. Cinco temas de Lengua 2.º tienen módulos y pruebas automatizadas; la décima tiene además un recorrido de navegador con guardado simulado. Esto no equivale a persistencia autenticada. Los temas sin encabezado conceptual inequívoco, incluidos conceptos de Formación Humana con viñetas, mantienen pendiente la revisión de límites; todo el contenido original sigue conservado por ámbito.
 
 Para continuar:
 
@@ -44,8 +44,10 @@ Para continuar:
 4. Separar los módulos contextuales del motor y ampliar acciones principales respetando elecciones manuales; comenzar por los temas pendientes de 2.º.
 5. Ejecutar pruebas por tema y formatos, revisar ejemplos pedagógicos, correr comprobaciones de integración, crear commit en español, registrar hash y hacer push a esta rama.
 
-Pruebas iniciales del inventario: 5/5 aprobadas. No hay publicación de catálogo ni instalación nueva en DB en este punto.
+Pruebas del inventario: 5/5 aprobadas. Release `evaluation-2026.8` instalado sólo en Supabase local confirmado, con reinstalación idempotente y releases anteriores intactos. Sin cambios remotos ni despliegue. Ver evidencias, cifras de pruebas y límites en el informe del primer bloque de Lengua 2.º. La asociación de procedimientos de 2.º está guardada en `revision.json`; su regeneración ya se comprobó.
 
 ## Commits
 
 El hash de cada bloque se añadirá aquí después de crearlo, en la siguiente actualización del registro. Para recuperar el último bloque ya publicado, consultar también `git log` y `git ls-remote origin amplia-instrumentos-secundaria`.
+
+- Inventario y clasificación: `c0c2c1087ec165e02f81e44f9292eab7b080c052`, publicado en `origin/amplia-instrumentos-secundaria`.

@@ -1,7 +1,7 @@
 import { BadRequestException, ForbiddenException, HttpException, Injectable, Logger, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
-import { evaluationCatalogV1 } from './catalog-v1'
+import { evaluationCatalogCurrent } from './catalog-current'
 import { academicContext, resolveScope } from './curriculum-context'
 import { detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
@@ -13,8 +13,8 @@ export class EvaluationInstrumentsService {
   async interpret(user: AuthenticatedUser, input: InterpretActivityDto) {
     const resolved = await this.resolve(user, input, true)
     const scopedType = detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
-    const detected = evaluationCatalogV1.activityTypes.find(entry => entry.id === scopedType)
-      ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogV1, false)
+    const detected = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === scopedType)
+      ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogCurrent, false)
     const selections = scopedType ? firstSecondaryLanguageSelections(scopedType) : suggestedSelections(detected.id, resolved.context)
     const type = input.pedagogicalActivityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
@@ -23,7 +23,7 @@ export class EvaluationInstrumentsService {
       ...element, normalizedText: undefined, topicCoverage,
     }))
     const confident = Boolean(resolved.resolution.scope && ranked[0]?.topicCoverage >= 0.6)
-    return { suggestedActivityType: detected.id, activityType: type, activityTypes: evaluationCatalogV1.activityTypes.map(({ id }) => id),
+    return { suggestedActivityType: detected.id, activityType: type, activityTypes: evaluationCatalogCurrent.activityTypes.map(({ id }) => id),
       ...(selections ?? {}),
       curriculumVersionId: resolved.version?.id ?? null, curriculumScopeId: resolved.resolution.scope?.id ?? null,
       curriculumStatus: resolved.version?.status ?? null, curriculumCandidates: candidates,
@@ -41,7 +41,7 @@ export class EvaluationInstrumentsService {
       return result
     } catch (error) {
       const details = { route: 'POST /evaluation-instruments/recommend', sectionSubjectId: input.sectionSubjectId,
-        catalogVersion: evaluationCatalogV1.version, curriculumVersionId: input.curriculumVersionId ?? null,
+        catalogVersion: evaluationCatalogCurrent.version, curriculumVersionId: input.curriculumVersionId ?? null,
         curriculumScopeId: input.curriculumScopeId ?? null, activityType: input.pedagogicalActivityType ?? null,
         instrumentType: input.preferredInstrumentType ?? null,
         errorClass: error instanceof Error ? error.constructor.name : typeof error,
@@ -67,7 +67,7 @@ export class EvaluationInstrumentsService {
     const context = academicContext(assignment.grade, assignment.subject, assignment.curriculumContext?.optativeExitName ?? null)
     let release
     try {
-      release = await prisma.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogV1.version } })
+      release = await prisma.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogCurrent.version } })
     } catch (error) {
       const code = typeof error === 'object' && error && 'code' in error ? String(error.code) : ''
       if (code === 'P2021' || code === 'P2022') throw new ServiceUnavailableException('El catálogo evaluativo no está instalado. Aplica las migraciones y el paso de instalación del catálogo.')
@@ -75,7 +75,7 @@ export class EvaluationInstrumentsService {
     }
     if (!release) throw new ServiceUnavailableException('Falta instalar el catálogo evaluativo versionado.')
     // Load the DB release only if its canonical content equals the reviewed, typed seed.
-    if (canonicalJson(release.payload) !== canonicalJson(evaluationCatalogV1)) throw new ServiceUnavailableException('El catálogo difiere del seed revisado.')
+    if (canonicalJson(release.payload) !== canonicalJson(evaluationCatalogCurrent)) throw new ServiceUnavailableException('El catálogo difiere del seed revisado.')
     let version = null
     if (input.curriculumVersionId) {
       version = await prisma.curriculumVersion.findUnique({ where: { id: input.curriculumVersionId } })

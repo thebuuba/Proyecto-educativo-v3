@@ -4,7 +4,7 @@ import { validate } from 'class-validator'
 import { plainToInstance } from 'class-transformer'
 import { EvaluationInstrumentsService } from './evaluation-instruments.service'
 import { RecommendInstrumentDto } from './recommend-instrument.dto'
-import { evaluationCatalogV1 } from './catalog-v1'
+import { evaluationCatalogCurrent } from './catalog-current'
 import { seedEvaluationCatalog } from './catalog-operations'
 
 const mocks = vi.hoisted(() => ({
@@ -25,7 +25,7 @@ function assignment() {
 beforeEach(() => {
   vi.resetAllMocks()
   mocks.sectionSubject.findFirst.mockResolvedValue(assignment())
-  mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: evaluationCatalogV1 })
+  mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: evaluationCatalogCurrent })
   mocks.curriculumVersion.findUnique.mockResolvedValue({ id: input.curriculumVersionId, level: 'PRIMARY', status: 'DRAFT' })
   mocks.curriculumVersion.findFirst.mockResolvedValue(null)
   mocks.curriculumScope.findMany.mockResolvedValue([scope])
@@ -120,7 +120,7 @@ describe('API service security and version policy', () => {
     await expect(seedEvaluationCatalog(mocks as never)).rejects.toThrow('versión nueva')
   })
   it('tolera dos instaladores concurrentes sólo si el contenido coincide', async () => {
-    mocks.evaluationCatalogRelease.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce({ payload: evaluationCatalogV1 })
+    mocks.evaluationCatalogRelease.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce({ payload: evaluationCatalogCurrent })
     mocks.evaluationCatalogRelease.create.mockRejectedValue(Object.assign(new Error('unique'), { code: 'P2002' }))
     await expect(seedEvaluationCatalog(mocks as never)).resolves.toBe('UNCHANGED')
   })

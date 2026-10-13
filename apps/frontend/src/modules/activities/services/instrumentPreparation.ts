@@ -1,5 +1,6 @@
 import type { InstrumentRecommendation } from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
+import { editableSecondaryTopicRecommendation, findSecondaryLanguageTopic } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
 export type ActivityInterpretation = {
@@ -28,6 +29,8 @@ export function preparationFingerprint(input: { name: string; description: strin
 }
 
 export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: 1 | 2 }): InstrumentRecommendation {
+  const topic = input.secondaryLanguageGrade ? findSecondaryLanguageTopic(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: input.secondaryLanguageGrade, subjectCode: 'LEN' }) : null
+  if (topic) return editableSecondaryTopicRecommendation(topic, input)
   const text = `${input.activityTitle} ${input.description ?? ''}`.toLocaleLowerCase('es-DO')
   const news = /noticia|noticiero/.test(text)
   const touristGuide = /gu[ií]a tur[ií]stica/.test(text)

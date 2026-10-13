@@ -8,10 +8,16 @@
  */
 export type * from './instrument-recommendation'
 export * from './instrument-definition'
+export * from './secondary-language-topics'
+export * from './secondary-topic-criteria'
+export * from './secondary-topic-recommendation'
+import { detectTopicActivity, findSecondaryLanguageTopic } from './secondary-language-topics'
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
 
 /** Deterministic classification shared by the service and its local editable fallback. */
 export function detectSecondaryLanguageActivity(title: string, description: string, context: FirstSecondaryLanguageContext | null): string | null {
+  const contextualTopic = findSecondaryLanguageTopic(title, description, context)
+  if (contextualTopic) return detectTopicActivity(title, description, contextualTopic)
   if (context?.level !== 'SECONDARY' || ![1, 2].includes(context.grade) || context.subjectCode.toUpperCase() !== 'LEN') return null
   const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
   const titleText = normalize(title)
@@ -50,7 +56,8 @@ export function detectFirstSecondaryLanguageActivity(title: string, description:
   return context?.grade === 1 ? detectSecondaryLanguageActivity(title, description, context) : null
 }
 export function firstSecondaryLanguageTechnique(activityType: string): string {
-  return activityType === 'DEBATE' ? 'debate' : activityType === 'REPORT' ? 'analisis-producciones'
+  return activityType === 'DEBATE' ? 'debate' : ['REPORT', 'ANALYSIS', 'COMPARISON', 'WRITTEN_PRODUCTION'].includes(activityType) ? 'analisis-producciones'
+    : activityType === 'ORAL_PRESENTATION' ? 'presentacion'
     : activityType.endsWith('_ANALYSIS') ? 'observacion-sistematica'
     : activityType.endsWith('_COMPARISON') || activityType.endsWith('_WRITING') || activityType.endsWith('_CREATION')
       ? 'analisis-producciones' : activityType === 'CALLIGRAM_RECITATION' || activityType === 'DETECTIVE_STORY_NARRATION'

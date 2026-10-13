@@ -1,6 +1,15 @@
+import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
+import { newsCriteria } from './authored/language/news-grade-1'
+import { touristGuideCriteria } from './authored/language/tourist-guide-grade-1'
+import { posterCriteria } from './authored/language/poster-grade-1'
+import { readingReportCriteria } from './authored/language/reading-report-grade-1'
+import { detectiveStoryCriteria } from './authored/language/detective-story-grade-1'
+import { calligramCriteria } from './authored/language/calligram-grade-1'
+import type { AuthoredCriterion } from './authored/language/types'
+import { distributeScoreUnits, findSecondaryLanguageTopic, secondaryTopicCriteria } from '@aula/shared'
 import { detectSecondaryLanguageActivity, firstSecondaryLanguageTechnique, INSTRUMENT_MAX_CRITERIA, type CurriculumReference, type InstrumentRecommendation, type RecommendationCriterion } from '@aula/shared'
 export { detectFirstSecondaryLanguageActivity, detectSecondaryLanguageActivity } from '@aula/shared'
-import { type EvaluationCatalog, evaluationCatalogV1 } from './catalog-v1'
+import { type EvaluationCatalog, evaluationCatalogCurrent } from './catalog-current'
 import { type AcademicContext, type ScopeCandidate, discipline, normalize } from './curriculum-context'
 
 export interface RecommendationInput {
@@ -41,7 +50,7 @@ export function topicTerms(title: string, description = '') {
   const fromDescription = tokens(description).filter(t => !boilerplate.includes(t) && !/^\d+$/.test(t))
   return fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
 }
-export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogV1, contextualTypes = true) {
+export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogCurrent, contextualTypes = true) {
   const find = (value: string, descriptionMode = false) => {
     const text = normalize(value)
     const words = tokens(text)
@@ -67,7 +76,7 @@ export function detectActivityType(title: string, description: string, catalog: 
   return find(description, true) ?? find(title) ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
 }
 export function rankCurriculum(title: string, description: string, activityType: string, competencyBlock: string | undefined,
-  scope: ScopeCandidate | null, elements: RankedElement[], catalog: EvaluationCatalog = evaluationCatalogV1) {
+  scope: ScopeCandidate | null, elements: RankedElement[], catalog: EvaluationCatalog = evaluationCatalogCurrent) {
   const activity = catalog.activityTypes.find(a => a.id === activityType) ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
   const topic = topicTerms(title, description)
   const detail = tokens(description)
@@ -149,9 +158,9 @@ function contextualDescriptors(observable: string, indexes: number[], title: str
 }
 
 export function firstSecondaryLanguageSelections(activityType: string) {
-  const activity = evaluationCatalogV1.activityTypes.find(entry => entry.id === activityType)
+  const activity = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === activityType)
   if (!activity) return null
-  const rule = evaluationCatalogV1.recommendationRules.filter(entry => (!entry.families.length || entry.families.includes(activity.family))
+  const rule = evaluationCatalogCurrent.recommendationRules.filter(entry => (!entry.families.length || entry.families.includes(activity.family))
     && (!entry.band || entry.band === 'SECONDARY') && (!entry.evidence || entry.evidence.every(evidence => activity.evidence.includes(evidence))))
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
   const technique = firstSecondaryLanguageTechnique(activityType)
@@ -159,10 +168,10 @@ export function firstSecondaryLanguageSelections(activityType: string) {
 }
 
 export function suggestedSelections(activityType: string, context: AcademicContext | null) {
-  const activity = evaluationCatalogV1.activityTypes.find(entry => entry.id === activityType)
+  const activity = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === activityType)
   if (!activity) return null
   const band = context?.level === 'PRIMARY' ? context.cycle === 1 ? 'PRIMARY_FIRST' : 'PRIMARY_SECOND' : 'SECONDARY'
-  const rule = evaluationCatalogV1.recommendationRules.filter(entry => (!entry.families.length || entry.families.includes(activity.family))
+  const rule = evaluationCatalogCurrent.recommendationRules.filter(entry => (!entry.families.length || entry.families.includes(activity.family))
     && (!entry.band || entry.band === band) && !entry.maxScore
     && (!entry.evidence || entry.evidence.every(evidence => activity.evidence.includes(evidence))))
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
@@ -177,326 +186,8 @@ export function suggestedSelections(activityType: string, context: AcademicConte
   }
 }
 
-type AuthoredCriterion = { templateId: string; title: string; observable: string; weight: number; progression?: [string, string, string] }
-
-/** Aula Base criteria derived from the teacher's task, separate from literal curriculum rows. */
-function secondGradeNewsCriteria(activityType: string, description: string): AuthoredCriterion[] {
-  const task = normalize(description)
-  const topic = description.match(/noticias?\s+sobre\s+([^,.;]+)/i)?.[1]?.replace(/\s+(?:y|para)\s+(?:explic|identific|justific|analiz|present|redact)\w*.*$/i, '').trim()
-  const subject = topic ? ` sobre ${topic}` : ''
-  const item = (templateId: string, title: string, observable: string, weight: number, progression: [string, string, string]): AuthoredCriterion =>
-    ({ templateId, title, observable, weight, progression })
-  if (activityType === 'REPORT') return [
-    item('news-report-purpose', 'Propósito del informe sobre la noticia', `Presenta el hecho de la noticia${subject} y explica el propósito de su informe.`, 4,
-      ['Presenta el hecho y el propósito, aunque deja un detalle sin precisar.', 'Menciona el hecho sin explicar el propósito del informe.', 'No identifica aún el hecho ni el propósito del informe.']),
-    item('news-report-analysis', 'Análisis de la información noticiosa', 'Explica la información principal y distingue datos de interpretaciones propias.', 5,
-      ['Explica la información principal con una distinción parcial entre dato e interpretación.', 'Recoge datos aislados sin analizarlos.', 'No aporta todavía un análisis reconocible de la noticia.']),
-    item('news-report-evidence', 'Evidencias de la noticia', 'Sustenta el análisis con datos o fragmentos pertinentes de la noticia, sin inventar hechos.', 4,
-      ['Apoya la mayor parte del análisis con evidencias pertinentes.', 'Incluye una referencia que no sustenta claramente su análisis.', 'No presenta evidencias verificables de la noticia.']),
-    item('news-report-structure', 'Organización del informe', 'Organiza introducción, desarrollo y conclusión en una secuencia comprensible.', 4,
-      ['Organiza las secciones principales, aunque una necesita mayor desarrollo.', 'Presenta secciones incompletas o desordenadas.', 'No organiza todavía el informe en partes reconocibles.']),
-    item('news-report-review', 'Claridad y revisión del informe', 'Revisa la coherencia, puntuación, ortografía y precisión del informe.', 3,
-      ['Corrige la mayoría de los errores; quedan detalles menores.', 'Conserva errores que dificultan partes del informe.', 'No revisa los errores que impiden comprender el informe.']),
-  ]
-  if (activityType === 'DEBATE') return [
-    item('news-debate-fact', 'Comprensión del hecho noticioso', `Explica el hecho debatido${subject} y distingue información de opiniones.`, 4,
-      ['Explica el hecho principal, aunque confunde un dato con una opinión.', 'Menciona el tema sin precisar el hecho debatido.', 'No identifica el hecho de la noticia.']),
-    item('news-debate-arguments', 'Argumentos sobre la noticia', 'Defiende su postura con razones relacionadas con el hecho presentado.', 5,
-      ['Sostiene su postura con razones pertinentes, aunque alguna queda poco desarrollada.', 'Expresa una postura sin desarrollar razones suficientes.', 'No formula una postura argumentada.']),
-    item('news-debate-evidence', 'Uso de evidencias', 'Apoya sus argumentos con información verificable de la noticia, sin inventar datos.', 5,
-      ['Usa datos pertinentes para apoyar la mayoría de sus argumentos.', 'Alude a la noticia sin relacionar el dato con su argumento.', 'No aporta evidencia de la noticia.']),
-    item('news-debate-response', 'Respuesta a otras posturas', 'Escucha otras posturas y responde a sus argumentos sin apartarse del hecho debatido.', 3,
-      ['Responde a una postura distinta, aunque su réplica queda incompleta.', 'Repite su postura sin atender el argumento contrario.', 'No responde a las otras posturas.']),
-    item('news-debate-participation', 'Participación y claridad', 'Interviene con orden, tono adecuado y respeto por los turnos.', 3,
-      ['Interviene con claridad y respeta la mayoría de los turnos.', 'Interviene sin orden o interrumpe el intercambio.', 'No participa de forma que permita valorar su postura.']),
-  ]
-  if (activityType === 'NEWSCAST') return [
-    item('news-oral-content', 'Contenido de la noticia presentada', `Comunica el hecho principal${subject} sin añadir información no sustentada.`, 5,
-      ['Comunica el hecho principal, aunque omite un dato relevante.', 'Presenta datos aislados que dificultan comprender el hecho.', 'No comunica el hecho central de la noticia.']),
-    item('news-oral-questions', 'Interrogantes de la noticia', 'Explica qué ocurrió, a quién, dónde, cuándo y cómo, según la información disponible.', 5,
-      ['Responde la mayoría de las preguntas con datos de la noticia.', 'Responde solo algunas preguntas o confunde sus datos.', 'No responde las preguntas fundamentales.']),
-    item('news-oral-organization', 'Organización de la presentación', 'Ordena titular, entrada y desarrollo en una secuencia comprensible para la audiencia.', 4,
-      ['Presenta una secuencia clara, aunque una transición necesita precisión.', 'Altera el orden y dificulta seguir la noticia.', 'No organiza la presentación de la noticia.']),
-    item('news-oral-clarity', 'Claridad oral', 'Usa dicción, ritmo, pausas y volumen que permiten comprender la noticia.', 3,
-      ['Se comprende la mayor parte, con leves problemas de ritmo o volumen.', 'La dicción o el volumen impiden comprender fragmentos importantes.', 'La presentación no permite comprender el contenido.']),
-    item('news-oral-command', 'Dominio del contenido', 'Explica la noticia con sus palabras y responde preguntas sobre el hecho presentado.', 3,
-      ['Explica el hecho con sus palabras y responde la mayoría de las preguntas.', 'Depende de la lectura y responde solo preguntas simples.', 'No demuestra comprensión del hecho presentado.']),
-  ]
-  if (activityType === 'NEWS_COMPARISON') return [
-    item('news-comparison-facts', 'Hecho y propósito de ambas noticias', `Identifica el hecho y el propósito informativo de cada noticia${subject}.`, 4,
-      ['Identifica los hechos principales, aunque precisa poco un propósito.', 'Reconoce el hecho de una noticia y confunde el de la otra.', 'No identifica los hechos comparados.']),
-    item('news-comparison-data', 'Semejanzas y diferencias', 'Compara datos y enfoques de ambas noticias sin confundirlos.', 5,
-      ['Establece semejanzas y diferencias principales con una omisión menor.', 'Enumera datos sin establecer una comparación clara.', 'No distingue semejanzas ni diferencias.']),
-    item('news-comparison-structure', 'Estructura periodística', 'Contrasta el titular, la entrada y el cuerpo de los dos textos.', 4,
-      ['Contrasta las partes principales, aunque omite una diferencia.', 'Identifica partes de un solo texto o las confunde.', 'No reconoce la estructura de las noticias.']),
-    item('news-comparison-evidence', 'Evidencias de ambos textos', 'Justifica la comparación con información concreta de las dos noticias.', 4,
-      ['Usa evidencias de ambas noticias, aunque una relación queda poco explicada.', 'Se apoya en una sola noticia o en ejemplos generales.', 'No aporta evidencias de los textos.']),
-    item('news-comparison-conclusion', 'Conclusión comparativa', 'Formula una conclusión coherente con las semejanzas y diferencias identificadas.', 3,
-      ['La conclusión se relaciona con la comparación, aunque omite un hallazgo.', 'La conclusión expresa una opinión sin relación clara con la comparación.', 'No formula una conclusión comparativa.']),
-  ]
-  if (activityType === 'NEWS_ANALYSIS') return [
-    item('news-analysis-purpose', 'Intención comunicativa de la noticia', `Explica el propósito informativo y el hecho central de la noticia${subject}.`, 4,
-      ['Explica el propósito y el hecho, aunque deja un detalle sin precisar.', 'Menciona el tema sin distinguir el hecho del propósito.', 'No reconoce el propósito informativo de la noticia.']),
-    item('news-analysis-questions', 'Interrogantes fundamentales', 'Localiza qué ocurrió, a quién, dónde, cuándo y cómo, según el texto.', 5,
-      ['Localiza la mayoría de las respuestas en el texto.', 'Identifica algunas respuestas, pero confunde datos importantes.', 'No localiza las respuestas fundamentales.']),
-    item('news-analysis-structure', 'Estructura y marcas del texto', 'Identifica titular, entrada y cuerpo, y usa las marcas paratextuales presentes para anticipar el contenido.', 4,
-      ['Reconoce las partes principales, aunque aprovecha poco las marcas presentes.', 'Confunde las partes o interpreta las marcas sin apoyo textual.', 'No reconoce la estructura de la noticia.']),
-    item('news-analysis-interpretation', 'Interpretación de la información', 'Explica la información principal e infiere significados a partir del contexto.', 4,
-      ['Explica la idea principal con una inferencia parcialmente sustentada.', 'Repite datos aislados sin reconstruir el sentido del texto.', 'No explica la información central de la noticia.']),
-    item('news-analysis-evidence', 'Evidencias de la noticia', 'Justifica sus respuestas con datos o fragmentos pertinentes del texto.', 3,
-      ['Apoya la mayor parte de sus respuestas con el texto.', 'Cita un dato sin relacionarlo claramente con su respuesta.', 'No sustenta sus respuestas en la noticia.']),
-  ]
-  const grammarRequested = /coordinad|subordinad|sinonim|pluscuamperfect|preterito perfecto/.test(task)
-  return [
-    item('news-writing-facts', 'Información esencial de la noticia', `Redacta el hecho noticioso${subject} y responde qué ocurrió, a quién, dónde, cuándo y cómo, según la información disponible.`, 5,
-      ['Incluye el hecho y la mayoría de los datos fundamentales.', 'Presenta datos aislados o confunde una respuesta fundamental.', 'No comunica el hecho ni sus datos esenciales.']),
-    item('news-writing-structure', 'Titular, entrada y cuerpo', 'Organiza un titular pertinente, una entrada informativa y un cuerpo que desarrolla el hecho.', 5,
-      ['Presenta las tres partes, aunque una necesita mayor desarrollo.', 'Omite una parte o mezcla los datos de entrada y cuerpo.', 'No organiza la noticia en partes reconocibles.']),
-    item('news-writing-cohesion', 'Secuencia y cohesión', 'Ordena las oraciones y los párrafos para que la información avance con claridad.', 4,
-      ['La secuencia es comprensible, aunque hay una transición imprecisa.', 'El orden de las oraciones dificulta seguir parte del hecho.', 'No construye una secuencia comprensible.']),
-    item('news-writing-language', 'Precisión del lenguaje periodístico', grammarRequested
-      ? 'Emplea vocabulario preciso y las formas gramaticales solicitadas en la consigna, sin alterar el hecho.'
-      : 'Emplea vocabulario preciso y un registro informativo adecuado al hecho narrado.', 3,
-      ['El lenguaje comunica el hecho con una imprecisión menor.', 'La imprecisión del vocabulario altera parte de la información.', 'El lenguaje no permite comprender el hecho narrado.']),
-    item('news-writing-review', 'Revisión de la noticia', 'Revisa la claridad, puntuación y ortografía antes de presentar la versión final.', 3,
-      ['Corrige la mayoría de los errores, aunque quedan detalles menores.', 'Conserva errores que dificultan partes de la noticia.', 'No revisa los errores que impiden comprender la noticia.']),
-  ]
-}
-
-function newsCriteria(activityType: string, description: string): AuthoredCriterion[] {
-  const text = normalize(description)
-  if (activityType === 'NEWSCAST' || /noticiero|present(?:ar|aran).*noticia/.test(text)) return [
-    { templateId: 'news-content', title: 'Información periodística', observable: 'Presenta hechos relevantes y verificables, distinguiendo la información principal de los detalles.', weight: 5 },
-    { templateId: 'news-structure', title: 'Estructura y preguntas de la noticia', observable: 'Comunica un titular y desarrolla qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.', weight: 5 },
-    { templateId: 'news-sequence', title: 'Organización del noticiero', observable: 'Ordena las noticias y enlaza las intervenciones con una secuencia clara para la audiencia.', weight: 3 },
-    { templateId: 'news-oral', title: 'Claridad de la comunicación oral', observable: 'Expone con dicción, ritmo, entonación y volumen comprensibles.', weight: 4 },
-    { templateId: 'news-individual', title: 'Dominio individual de la noticia asignada', observable: 'Explica su noticia con seguridad y responde por su propio desempeño dentro de la presentación del equipo.', weight: 3 },
-  ]
-  if (activityType === 'NEWS_ANALYSIS' || /leer|analiz|identific/.test(text)) return [
-    { templateId: 'news-purpose', title: 'Identificación de la función de la noticia', observable: 'Reconoce el propósito informativo y el hecho que convierte el texto en noticia.', weight: 4 },
-    { templateId: 'news-structure', title: 'Identificación de sus partes', observable: 'Identifica titular, entrada o copete y cuerpo en la noticia analizada.', weight: 5 },
-    { templateId: 'news-questions', title: 'Interrogantes fundamentales', observable: 'Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.', weight: 5 },
-    { templateId: 'news-interpretation', title: 'Interpretación de la información', observable: 'Explica la información principal y establece inferencias sustentadas en la noticia.', weight: 4 },
-    { templateId: 'news-evidence', title: 'Justificación con evidencias', observable: 'Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.', weight: 2 },
-  ]
-  if (activityType === 'NEWS_COMPARISON' || /compar/.test(text)) return [
-    { templateId: 'news-purpose', title: 'Propósito y hecho noticioso', observable: 'Identifica el propósito y el hecho principal de cada noticia.', weight: 4 },
-    { templateId: 'news-comparison', title: 'Comparación de la información', observable: 'Establece semejanzas y diferencias entre los datos, enfoques y organización de las noticias.', weight: 5 },
-    { templateId: 'news-structure', title: 'Comparación de la estructura', observable: 'Contrasta el uso del titular, la entrada y el cuerpo en cada texto.', weight: 4 },
-    { templateId: 'news-evidence', title: 'Uso de evidencias', observable: 'Sustenta la comparación con información concreta de ambas noticias.', weight: 4 },
-    { templateId: 'news-conclusion', title: 'Conclusión de la comparación', observable: 'Formula una conclusión coherente con las semejanzas y diferencias encontradas.', weight: 3 },
-  ]
-  if (activityType === 'DEBATE' || /debat/.test(text)) return [
-    { templateId: 'news-comprehension', title: 'Comprensión del hecho noticioso', observable: 'Explica el hecho debatido y diferencia datos informativos de opiniones.', weight: 5 },
-    { templateId: 'news-evidence', title: 'Argumentos sustentados', observable: 'Defiende su postura con datos pertinentes de la noticia.', weight: 5 },
-    { templateId: 'news-counterargument', title: 'Respuesta a otras posturas', observable: 'Escucha y responde a argumentos contrarios sin apartarse del tema.', weight: 4 },
-    { templateId: 'news-oral', title: 'Claridad de la intervención', observable: 'Comunica sus ideas con orden, precisión y un tono adecuado.', weight: 3 },
-    { templateId: 'news-participation', title: 'Participación en el debate', observable: 'Respeta los turnos y las reglas acordadas para el intercambio.', weight: 3 },
-  ]
-  return [
-    { templateId: 'news-essential', title: 'Información esencial de la noticia', observable: 'Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.', weight: 5 },
-    { templateId: 'news-structure', title: 'Titular, entrada y cuerpo', observable: 'Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.', weight: 5 },
-    { templateId: 'news-sequence', title: 'Secuencia y cohesión', observable: 'Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.', weight: 4 },
-    { templateId: 'news-language', title: 'Lenguaje periodístico', observable: 'Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.', weight: 3 },
-    { templateId: 'news-revision', title: 'Revisión de la versión escrita', observable: 'Revisa puntuación, ortografía y claridad antes de presentar la versión final.', weight: 3 },
-  ]
-}
-
-function requestedPlaceCount(text: string) {
-  const match = text.match(/\b(\d+|dos|tres|cuatro|cinco)\s+lugares?\b/)
-  return match?.[1] ?? null
-}
-
-function touristGuideCriteria(activityType: string, description: string): AuthoredCriterion[] {
-  const text = normalize(description)
-  const count = requestedPlaceCount(text)
-  const placeScope = count ? `${count} lugares solicitados` : 'los lugares seleccionados'
-  const graphicsRequested = /imagen|foto|mapa|grafico|dibujo|collage|recurso visual/.test(text)
-  if (activityType === 'TOURIST_GUIDE_ANALYSIS') return [
-    { templateId: 'guide-purpose', title: 'Propósito y destinatario de la guía', observable: 'Explica cómo la guía orienta e informa a sus posibles visitantes.', weight: 4 },
-    { templateId: 'guide-structure', title: 'Identificación de la estructura', observable: 'Identifica portada, información, imágenes y cierre, según estén presentes en la guía leída.', weight: 5 },
-    { templateId: 'guide-resources', title: 'Recursos para orientar al visitante', observable: 'Analiza cómo el vocabulario descriptivo y persuasivo, las marcas paratextuales y los recursos gráficos disponibles orientan al visitante.', weight: 5 },
-    { templateId: 'guide-interpretation', title: 'Interpretación de la información', observable: 'Reconstruye el sentido global y explica la información relevante sobre los lugares descritos.', weight: 4 },
-    { templateId: 'guide-evidence', title: 'Justificación con evidencias', observable: 'Sustenta sus respuestas con datos y ejemplos concretos de la guía analizada.', weight: 2 },
-  ]
-  if (activityType === 'TOURIST_GUIDE_PRESENTATION') return [
-    { templateId: 'guide-content', title: `Información de ${placeScope}`, observable: `Presenta información pertinente y veraz sobre ${placeScope}.`, weight: 5 },
-    { templateId: 'guide-purpose', title: 'Orientación al visitante', observable: 'Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.', weight: 4 },
-    { templateId: 'guide-organization', title: 'Organización de la presentación', observable: 'Ordena la información de la guía en una secuencia clara y fácil de seguir.', weight: 4 },
-    { templateId: 'guide-oral', title: 'Claridad de la comunicación oral', observable: 'Expone con dicción, volumen, ritmo y entonación comprensibles.', weight: 4 },
-    { templateId: 'guide-individual', title: 'Dominio individual', observable: 'Explica los lugares asignados y responde preguntas desde su propio dominio del contenido.', weight: 3 },
-  ]
-  if (activityType === 'TOURIST_GUIDE_COMPARISON') return [
-    { templateId: 'guide-purpose', title: 'Propósito y destinatario', observable: 'Compara el propósito y el público al que se dirige cada guía turística.', weight: 4 },
-    { templateId: 'guide-comparison', title: 'Comparación del contenido', observable: 'Establece semejanzas y diferencias entre la información y los atractivos presentados.', weight: 5 },
-    { templateId: 'guide-structure', title: 'Comparación de la estructura', observable: 'Contrasta la organización de portada, información, imágenes y cierre en las guías.', weight: 4 },
-    { templateId: 'guide-resources', title: 'Comparación de recursos', observable: 'Analiza el vocabulario y los recursos gráficos o paratextuales empleados para orientar y persuadir.', weight: 4 },
-    { templateId: 'guide-conclusion', title: 'Conclusión sustentada', observable: 'Formula una conclusión apoyada en evidencias concretas de ambas guías.', weight: 3 },
-  ]
-  return [
-    { templateId: 'guide-content', title: `Información de ${placeScope}`, observable: `Incluye información pertinente y veraz sobre ${placeScope}, destacando sus características y atractivos.`, weight: 5 },
-    { templateId: 'guide-structure', title: 'Estructura de la guía turística', observable: `Organiza la guía con portada, información y cierre${graphicsRequested ? ', e integra las imágenes solicitadas' : ''}.`, weight: 5 },
-    { templateId: 'guide-description', title: 'Descripción y orientación al visitante', observable: 'Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.', weight: 4 },
-    { templateId: 'guide-organization', title: 'Organización y claridad', observable: 'Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.', weight: 3 },
-    { templateId: 'guide-revision', title: 'Revisión de la versión final', observable: 'Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital.', weight: 3 },
-  ]
-}
-
-function posterTopic(title: string, description: string) {
-  const text = normalize(`${title} ${description}`)
-  if (/agua/.test(text)) return 'el cuidado y ahorro del agua'
-  if (/convivencia escolar/.test(text)) return 'la convivencia escolar'
-  if (/cuidado del entorno|cuidar el entorno/.test(text)) return 'el cuidado del entorno'
-  const about = text.match(/afiche (?:sobre|para promover|para prevenir) ([^,.;]+)/)?.[1]
-  return about?.trim() || 'el tema indicado'
-}
-
-function posterCriteria(activityType: string, title: string, description: string): AuthoredCriterion[] {
-  const text = normalize(description)
-  const topic = posterTopic(title, description)
-  const visualsRequested = /imagen|imagenes|elementos visuales|forma|color|tipo de letra/.test(text)
-  if (activityType === 'POSTER_ANALYSIS') return [
-    { templateId: 'poster-purpose', title: 'Propósito y destinatarios del afiche', observable: `Interpreta la intención comunicativa del afiche sobre ${topic} e identifica a quién se dirige.`, weight: 4 },
-    { templateId: 'poster-message', title: 'Interpretación del mensaje', observable: `Explica el mensaje principal sobre ${topic} y realiza inferencias coherentes a partir del afiche.`, weight: 5 },
-    { templateId: 'poster-persuasion', title: 'Recursos para convencer', observable: 'Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.', weight: 5 },
-    { templateId: 'poster-visuals', title: 'Relación entre texto y elementos visuales', observable: 'Analiza cómo imágenes, letras, colores y distribución espacial contribuyen al mensaje.', weight: 4 },
-    { templateId: 'poster-evidence', title: 'Evidencias del afiche', observable: 'Justifica su interpretación con palabras, frases o elementos visuales concretos del afiche leído.', weight: 2 },
-  ]
-  if (activityType === 'POSTER_COMPARISON') return [
-    { templateId: 'poster-purpose', title: 'Propósito y destinatarios', observable: `Compara el propósito y el público de los dos afiches sobre ${topic}.`, weight: 4 },
-    { templateId: 'poster-comparison', title: 'Comparación de mensajes y argumentos', observable: 'Establece semejanzas y diferencias entre los mensajes, argumentos y recursos persuasivos.', weight: 5 },
-    { templateId: 'poster-visuals', title: 'Comparación de recursos visuales', observable: 'Contrasta la relación entre texto, imágenes, letras, colores y organización en ambos afiches.', weight: 4 },
-    { templateId: 'poster-effectiveness', title: 'Eficacia comunicativa', observable: 'Valora cuál afiche comunica mejor su mensaje considerando claridad, público y capacidad de convencer.', weight: 4 },
-    { templateId: 'poster-evidence', title: 'Justificación con evidencias', observable: 'Sustenta su valoración con elementos concretos de ambos afiches.', weight: 3 },
-  ]
-  if (activityType === 'POSTER_PRESENTATION') return [
-    { templateId: 'poster-message', title: `Mensaje sobre ${topic}`, observable: `Explica con precisión el mensaje que comunica su afiche sobre ${topic}.`, weight: 5 },
-    { templateId: 'poster-audience', title: 'Propósito y público destinatario', observable: 'Explica a quién se dirige el afiche y cómo busca motivar, orientar o convencer a ese público.', weight: 4 },
-    { templateId: 'poster-decisions', title: 'Justificación de decisiones comunicativas', observable: 'Justifica la elección de palabras, argumentos y elementos visuales en relación con el propósito.', weight: 4 },
-    { templateId: 'poster-oral', title: 'Claridad de la presentación oral', observable: 'Presenta sus ideas con orden, dicción, volumen y ritmo comprensibles.', weight: 4 },
-    { templateId: 'poster-individual', title: 'Dominio individual', observable: 'Responde preguntas sobre el contenido y las decisiones de su propio afiche.', weight: 3 },
-  ]
-  return [
-    { templateId: 'poster-message', title: `Mensaje sobre ${topic}`, observable: `Comunica acciones o ideas pertinentes sobre ${topic} mediante un mensaje breve, claro y persuasivo.`, weight: 5 },
-    { templateId: 'poster-audience', title: 'Adecuación al público destinatario', observable: 'Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.', weight: 4 },
-    { templateId: 'poster-persuasion', title: 'Argumentos y recursos persuasivos', observable: 'Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.', weight: 4 },
-    { templateId: 'poster-visuals', title: 'Relación entre texto y elementos visuales', observable: visualsRequested ? 'Integra las imágenes solicitadas con el texto para reforzar el mensaje sin dificultar su lectura.' : 'Organiza el texto y los elementos visuales elegidos para reforzar el mensaje sin imponer un recurso específico.', weight: 4 },
-    { templateId: 'poster-legibility', title: 'Organización, legibilidad y corrección', observable: 'Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.', weight: 3 },
-  ]
-}
-
-function readingReportCriteria(activityType: string, description: string): AuthoredCriterion[] {
-  const text = normalize(description)
-  const literaryText = text.match(/(?:cuento|leyenda|fabula|novela)(?:\s+[^,.;]+)?/)?.[0] ?? 'el texto literario seleccionado'
-  if (activityType === 'READING_REPORT_ANALYSIS') return [
-    { templateId: 'report-purpose', title: 'Función y propósito del informe', observable: 'Explica para qué se elaboró el informe de lectura y qué texto analiza.', weight: 4 },
-    { templateId: 'report-structure', title: 'Identificación de la estructura', observable: 'Identifica título, introducción, desarrollo y conclusión en el informe leído.', weight: 4 },
-    { templateId: 'report-summary', title: 'Comprensión del resumen', observable: `Reconoce las ideas principales de ${literaryText} recuperadas en el informe sin confundirlas con el análisis.`, weight: 4 },
-    { templateId: 'report-analysis', title: 'Interpretación del análisis sociocultural', observable: 'Explica las interpretaciones del informe sobre comportamientos, costumbres o valores presentes en el texto.', weight: 5 },
-    { templateId: 'report-evidence', title: 'Justificación con evidencias', observable: 'Sustenta sus respuestas con información concreta del informe de lectura.', weight: 3 },
-  ]
-  if (activityType === 'READING_REPORT_PRESENTATION') return [
-    { templateId: 'report-summary', title: `Síntesis de ${literaryText}`, observable: `Presenta las ideas principales de ${literaryText} de forma fiel y comprensible.`, weight: 5 },
-    { templateId: 'report-analysis', title: 'Análisis sociocultural', observable: 'Explica patrones socioculturales del texto y sustenta su interpretación con ejemplos.', weight: 5 },
-    { templateId: 'report-structure', title: 'Organización del informe oral', observable: 'Organiza la exposición con introducción, desarrollo y conclusión reconocibles.', weight: 4 },
-    { templateId: 'report-oral', title: 'Claridad de la exposición', observable: 'Expone con orden, dicción, volumen y ritmo comprensibles.', weight: 3 },
-    { templateId: 'report-individual', title: 'Dominio individual', observable: 'Responde preguntas sobre el texto y el análisis presentado.', weight: 3 },
-  ]
-  if (activityType === 'READING_REPORT_COMPARISON') return [
-    { templateId: 'report-purpose', title: 'Propósito y textos analizados', observable: 'Compara el propósito y los textos literarios abordados en ambos informes.', weight: 4 },
-    { templateId: 'report-structure', title: 'Comparación de la estructura', observable: 'Contrasta la organización de título, introducción, desarrollo y conclusión.', weight: 4 },
-    { templateId: 'report-analysis', title: 'Comparación de interpretaciones', observable: 'Establece semejanzas y diferencias entre los análisis socioculturales.', weight: 5 },
-    { templateId: 'report-evidence', title: 'Uso de evidencias', observable: 'Sustenta la comparación con información concreta de ambos informes.', weight: 4 },
-    { templateId: 'report-conclusion', title: 'Conclusión comparativa', observable: 'Formula una conclusión coherente con las diferencias y semejanzas identificadas.', weight: 3 },
-  ]
-  return [
-    { templateId: 'report-summary', title: `Resumen de ${literaryText}`, observable: `Resume las ideas principales de ${literaryText} mediante selección, omisión, generalización y reconstrucción, sin alterar su sentido.`, weight: 5 },
-    { templateId: 'report-analysis', title: 'Análisis sociocultural', observable: 'Analiza comportamientos, costumbres, estilos de vida o valores presentes en el texto y aporta ejemplos pertinentes.', weight: 5 },
-    { templateId: 'report-structure', title: 'Estructura del informe de lectura', observable: 'Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.', weight: 4 },
-    { templateId: 'report-coherence', title: 'Coherencia y recursos lingüísticos', observable: 'Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.', weight: 3 },
-    { templateId: 'report-revision', title: 'Revisión y versión final', observable: 'Revisa organización, cohesión, puntuación, ortografía y claridad antes de publicar la versión física o digital.', weight: 3 },
-  ]
-}
-
-function detectiveStoryCriteria(activityType: string): AuthoredCriterion[] {
-  if (activityType === 'DETECTIVE_STORY_ANALYSIS') return [
-    { templateId: 'detective-structure', title: 'Estructura y trama del cuento', observable: 'Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.', weight: 5 },
-    { templateId: 'detective-narrator', title: 'Narrador, personajes y ambiente', observable: 'Identifica el narrador, caracteriza personajes y ambiente, y explica sus relaciones en la historia.', weight: 5 },
-    { templateId: 'detective-clues', title: 'Pistas y comprensión del desenlace', observable: 'Relaciona acciones y pistas del texto con la comprensión del desenlace.', weight: 4 },
-    { templateId: 'detective-resources', title: 'Recursos narrativos', observable: 'Explica el efecto de recursos lingüísticos o literarios presentes en el cuento.', weight: 3 },
-    { templateId: 'detective-evidence', title: 'Evidencias del cuento', observable: 'Justifica su interpretación con ejemplos concretos del texto leído.', weight: 3 },
-  ]
-  if (activityType === 'DETECTIVE_STORY_NARRATION') return [
-    { templateId: 'detective-sequence', title: 'Secuencia de la narración', observable: 'Narra inicio, nudo y desenlace en un orden comprensible.', weight: 5 },
-    { templateId: 'detective-mystery', title: 'Desarrollo del misterio', observable: 'Comunica el conflicto, las acciones y la resolución sin contradicciones.', weight: 5 },
-    { templateId: 'detective-voice', title: 'Voces de narrador y personajes', observable: 'Diferencia las intervenciones mediante tono, ritmo y volumen pertinentes.', weight: 4 },
-    { templateId: 'detective-language', title: 'Claridad y recursos expresivos', observable: 'Emplea vocabulario descriptivo y conectores que dan cohesión al relato oral.', weight: 3 },
-    { templateId: 'detective-individual', title: 'Dominio individual', observable: 'Mantiene la narración y responde preguntas sobre los hechos relatados.', weight: 3 },
-  ]
-  if (activityType === 'DETECTIVE_STORY_COMPARISON') return [
-    { templateId: 'detective-comparison', title: 'Comparación de tramas', observable: 'Establece semejanzas y diferencias entre los misterios y la organización de ambos cuentos.', weight: 5 },
-    { templateId: 'detective-characters', title: 'Personajes y ambientes', observable: 'Compara personajes, motivaciones y ambientes con ejemplos de ambos textos.', weight: 4 },
-    { templateId: 'detective-resolution', title: 'Resolución del misterio', observable: 'Contrasta cómo las acciones y pistas conducen al desenlace de cada cuento.', weight: 5 },
-    { templateId: 'detective-evidence', title: 'Evidencias comparativas', observable: 'Sustenta las semejanzas y diferencias con información de ambos cuentos.', weight: 3 },
-    { templateId: 'detective-conclusion', title: 'Conclusión', observable: 'Formula una conclusión coherente con la comparación realizada.', weight: 3 },
-  ]
-  if (activityType === 'DETECTIVE_STORY_ANALYSIS_PRESENTATION') return [
-    { templateId: 'detective-analysis', title: 'Interpretación del cuento', observable: 'Explica la trama, el narrador, los personajes, el ambiente y la resolución del misterio.', weight: 6 },
-    { templateId: 'detective-evidence', title: 'Sustento textual', observable: 'Justifica el análisis con acciones, descripciones o pistas del cuento.', weight: 5 },
-    { templateId: 'detective-organization', title: 'Organización del análisis oral', observable: 'Presenta las ideas en una secuencia clara y diferencia resumen de interpretación.', weight: 4 },
-    { templateId: 'detective-oral', title: 'Claridad de la exposición', observable: 'Expone con dicción, volumen y ritmo comprensibles.', weight: 3 },
-    { templateId: 'detective-individual', title: 'Dominio individual', observable: 'Responde preguntas sobre su interpretación del texto.', weight: 2 },
-  ]
-  return [
-    { templateId: 'detective-structure', title: 'Inicio, nudo y desenlace', observable: 'Organiza el cuento con inicio, nudo y desenlace claramente relacionados.', weight: 4 },
-    { templateId: 'detective-mystery', title: 'Misterio, pistas y resolución', observable: 'Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio.', weight: 5 },
-    { templateId: 'detective-characters', title: 'Personajes y ambiente', observable: 'Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca.', weight: 4 },
-    { templateId: 'detective-narrator', title: 'Consistencia del narrador', observable: 'Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.', weight: 3 },
-    { templateId: 'detective-revision', title: 'Cohesión y revisión final', observable: 'Usa conectores y recursos expresivos pertinentes, y revisa claridad, puntuación y ortografía.', weight: 4 },
-  ]
-}
-
-function calligramCriteria(activityType: string, description: string): AuthoredCriterion[] {
-  const freeVerse = /verso libre/.test(normalize(description))
-  if (activityType === 'CALLIGRAM_ANALYSIS') return [
-    { templateId: 'calligram-relation', title: 'Relación entre texto y figura', observable: 'Interpreta cómo la figura formada por las palabras se relaciona con el tema y mensaje del poema.', weight: 6 },
-    { templateId: 'calligram-intention', title: 'Intención y sentimientos', observable: 'Explica la intención comunicativa y los sentimientos expresados en el caligrama.', weight: 4 },
-    { templateId: 'calligram-resources', title: 'Recursos expresivos presentes', observable: 'Analiza el vocabulario y las figuras literarias efectivamente presentes, sin exigir recursos ausentes.', weight: 4 },
-    { templateId: 'calligram-visual', title: 'Organización visual', observable: 'Explica cómo tipografía, disposición y legibilidad contribuyen al significado.', weight: 3 },
-    { templateId: 'calligram-evidence', title: 'Evidencias del caligrama', observable: 'Justifica su interpretación con palabras, versos y rasgos visuales concretos.', weight: 3 },
-  ]
-  if (activityType === 'CALLIGRAM_COMPARISON') return [
-    { templateId: 'calligram-message', title: 'Comparación de mensajes', observable: 'Compara los temas, mensajes y sentimientos de ambos caligramas.', weight: 4 },
-    { templateId: 'calligram-figure', title: 'Comparación de figuras', observable: 'Contrasta la relación entre las palabras y la figura formada en cada texto.', weight: 5 },
-    { templateId: 'calligram-resources', title: 'Recursos expresivos', observable: 'Establece semejanzas y diferencias en vocabulario y recursos literarios presentes.', weight: 4 },
-    { templateId: 'calligram-visual', title: 'Organización visual', observable: 'Compara disposición, tipografía y legibilidad con evidencias de ambos textos.', weight: 4 },
-    { templateId: 'calligram-conclusion', title: 'Conclusión comparativa', observable: 'Formula una conclusión coherente sobre las decisiones poéticas y visuales.', weight: 3 },
-  ]
-  if (activityType === 'CALLIGRAM_RECITATION') return [
-    { templateId: 'calligram-clarity', title: 'Claridad de la recitación', observable: 'Recita el texto con dicción y volumen comprensibles.', weight: 5 },
-    { templateId: 'calligram-expression', title: 'Entonación y expresión', observable: 'Ajusta la entonación, el ritmo y las pausas a los sentimientos del poema.', weight: 5 },
-    { templateId: 'calligram-meaning', title: 'Comprensión del poema', observable: 'Comunica el sentido global del caligrama durante la recitación.', weight: 4 },
-    { templateId: 'calligram-fluency', title: 'Fluidez', observable: 'Mantiene continuidad sin que las vacilaciones impidan comprender el texto.', weight: 3 },
-    { templateId: 'calligram-individual', title: 'Desempeño individual', observable: 'Sostiene personalmente la recitación del caligrama seleccionado.', weight: 3 },
-  ]
-  if (activityType === 'CALLIGRAM_EXPLANATION') return [
-    { templateId: 'calligram-relation', title: 'Tema, palabras y figura', observable: 'Explica la relación entre el tema, las palabras elegidas y la figura de su caligrama.', weight: 6 },
-    { templateId: 'calligram-decisions', title: 'Decisiones poéticas y visuales', observable: 'Justifica el vocabulario, los recursos expresivos y la disposición visual empleados.', weight: 5 },
-    { templateId: 'calligram-feelings', title: 'Ideas y sentimientos', observable: 'Explica las ideas, emociones o sentimientos que buscó comunicar.', weight: 4 },
-    { templateId: 'calligram-oral', title: 'Claridad de la explicación', observable: 'Presenta sus decisiones con orden, dicción y volumen comprensibles.', weight: 3 },
-    { templateId: 'calligram-individual', title: 'Dominio individual', observable: 'Responde preguntas sobre su proceso y producto.', weight: 2 },
-  ]
-  return [
-    { templateId: 'calligram-relation', title: 'Relación entre tema y figura', observable: 'Dispone los versos formando una figura relacionada con el tema del poema.', weight: 5 },
-    { templateId: 'calligram-expression', title: 'Expresión de ideas y sentimientos', observable: 'Comunica ideas, sentimientos o emociones coherentes con el tema elegido.', weight: 4 },
-    { templateId: 'calligram-visual', title: 'Organización visual y legibilidad', observable: 'Organiza las palabras para construir la figura sin dificultar innecesariamente la lectura.', weight: 4 },
-    { templateId: 'calligram-resources', title: 'Vocabulario y recursos expresivos', observable: `Usa vocabulario y recursos poéticos pertinentes${freeVerse ? ' en verso libre, sin exigir rima' : ''}.`, weight: 4 },
-    { templateId: 'calligram-revision', title: 'Coherencia y revisión final', observable: 'Revisa la coherencia del poema, la relación texto-figura, la ortografía y la versión final.', weight: 3 },
-  ]
-}
-
 export function recommend(input: RecommendationInput, context: AcademicContext | null, scope: ScopeCandidate | null,
-  elements: RankedElement[], mappingStatus: string, curriculumStatus: string | null, catalog: EvaluationCatalog = evaluationCatalogV1): InstrumentRecommendation {
+  elements: RankedElement[], mappingStatus: string, curriculumStatus: string | null, catalog: EvaluationCatalog = evaluationCatalogCurrent): InstrumentRecommendation {
   const text = normalize(`${input.activityTitle} ${input.description ?? ''}`)
   const explicit = input.pedagogicalActivityType ? catalog.activityTypes.find(a => a.id === input.pedagogicalActivityType) : undefined
   if (input.pedagogicalActivityType && !explicit) throw new Error('Tipo pedagógico desconocido.')
@@ -508,6 +199,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const activity = explicit ?? detected
   const band = context?.level === 'PRIMARY' ? context.cycle === 1 ? 'PRIMARY_FIRST' : 'PRIMARY_SECOND' : 'SECONDARY'
   const area = discipline(scope, context)
+  const matchedTopic = findSecondaryLanguageTopic(input.activityTitle, input.description ?? '', context)
+  const contextualTopic = area === 'language' && catalog.contextualModules?.some(topic => topic.id === matchedTopic?.id && topic.grade === matchedTopic.grade) ? matchedTopic : null
   const attitudeRelevant = /convivencia|cooperaci|valores|respeto|solidaridad|seguridad/.test(text)
   // Keep content/genre words (poema, ensayo, pintura). Strip only pedagogical boilerplate.
   const ranking = rankCurriculum(input.activityTitle, input.description ?? '', activity.id, input.competencyBlock, scope, elements, catalog)
@@ -575,7 +268,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       title, description, maxScore: scores[index] / 100, maxScoreUnits: scores[index], sourceType, sourceReferences,
       descriptors: levels.map((level, i) => ({ levelId: level.id, text: texts[i], scoreUnits: Math.round(scores[index] * level.proportion) })) }
   })
-  const newsModule = context?.level === 'SECONDARY' && (context.grade === 1 || context.grade === 2
+  const newsModule = !contextualTopic && context?.level === 'SECONDARY' && (context.grade === 1 || context.grade === 2
     && ['NEWSCAST', 'NEWS_ANALYSIS', 'NEWS_COMPARISON', 'NEWS_WRITING', 'REPORT', 'DEBATE'].includes(activity.id))
     && area === 'language' && /\bnotici(?:a|as|ero)\b/.test(text)
   const touristGuideModule = context?.level === 'SECONDARY' && context.grade === 1 && area === 'language' && /\bguias? turisticas?\b/.test(text)
@@ -583,13 +276,16 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const readingReportModule = context?.level === 'SECONDARY' && context.grade === 1 && area === 'language' && /\binforme(?:s)? de lectura\b/.test(text)
   const detectiveModule = context?.level === 'SECONDARY' && context.grade === 1 && area === 'language' && /\bcuento(?:s)? (?:policiacos?|detectivescos?)\b/.test(text) && !readingReportModule
   const calligramModule = context?.level === 'SECONDARY' && context.grade === 1 && area === 'language' && (/\bcaligramas?\b/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text))
-  const authored = newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
+  const authored: AuthoredCriterion[] = contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '')
+    : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
     : touristGuideModule ? touristGuideCriteria(activity.id, input.description ?? '')
       : posterModule ? posterCriteria(activity.id, input.activityTitle, input.description ?? '')
         : readingReportModule ? readingReportCriteria(activity.id, input.description ?? '')
           : detectiveModule ? detectiveStoryCriteria(activity.id)
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : []
-  const authoredScores = authored.length ? distributeScore(input.maxScore, authored.map(item => item.weight)) : []
+  const authoredScores = authored.length ? contextualTopic
+    ? distributeScoreUnits(Math.round(input.maxScore * 100), authored.map(item => item.weight))
+    : distributeScore(input.maxScore, authored.map(item => item.weight)) : []
   const authoredPatternIndexes = levelCount === 4 ? [0, 1, 3, 4] : [0, 1, 2, 3, 4]
   const authoredCriteria: RecommendationCriterion[] = authored.map((item, index) => ({
     id: `proposal:${catalog.version}:${scope?.id ?? 'fallback'}:${item.templateId}:${index}`,
@@ -597,7 +293,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     maxScore: authoredScores[index] / 100, maxScoreUnits: authoredScores[index],
     sourceType: 'CONTEXTUALIZED', sourceReferences: [],
     descriptors: levels.map((level, levelIndex) => ({ levelId: level.id,
-      text: item.progression && levelCount === 4 ? levelIndex === 0 ? item.observable : item.progression[levelIndex - 1]
+      text: item.progressionLevels ? item.progressionLevels[(levelCount === 4 ? [0, 1, 2, 4] : [0, 1, 2, 3, 4])[levelIndex]]
+        : item.progression && levelCount === 4 ? levelIndex === 0 ? item.observable : item.progression[levelIndex - 1]
         : contextualDescriptors(item.observable, authoredPatternIndexes, item.title, item.templateId)[levelIndex],
       scoreUnits: Math.round(authoredScores[index] * level.proportion) })),
   }))
@@ -617,7 +314,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     activityType: activity.id, evidenceTypes: [...new Set([...activity.evidence, ...criteria.filter(c => catalog.criterionTemplates.find(t => t.id === c.templateId)?.attitude).map(() => 'ATTITUDE' as const)])],
     participationMode: input.participationMode, curriculumVersionId: scope?.versionId ?? null, curriculumScopeId: scope?.id ?? null,
     selectedCurriculumElements: selectedRefs, criteria, levels, totalScore: input.maxScore, totalScoreUnits, scoreUnit: 0.01,
-    internalTrace: { mappingStatus, reasons: [`band=${band}`, `discipline=${area}`, ...(newsModule ? [`module=lengua-secundaria-${context?.grade}-la-noticia`] : []), ...(touristGuideModule ? ['module=lengua-secundaria-1-guia-turistica'] : []), ...(posterModule ? ['module=lengua-secundaria-1-el-afiche'] : []), ...(readingReportModule ? ['module=lengua-secundaria-1-informe-de-lectura'] : []), ...(detectiveModule ? ['module=lengua-secundaria-1-cuento-policiaco'] : []), ...(calligramModule ? ['module=lengua-secundaria-1-caligrama'] : []), 'No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.'],
+    internalTrace: { mappingStatus, reasons: [...(contextualTopic ? [`module=lengua-secundaria-${contextualTopic.grade}-${contextualTopic.id}`] : []), `band=${band}`, `discipline=${area}`, ...(newsModule ? [`module=lengua-secundaria-${context?.grade}-la-noticia`] : []), ...(touristGuideModule ? ['module=lengua-secundaria-1-guia-turistica'] : []), ...(posterModule ? ['module=lengua-secundaria-1-el-afiche'] : []), ...(readingReportModule ? ['module=lengua-secundaria-1-informe-de-lectura'] : []), ...(detectiveModule ? ['module=lengua-secundaria-1-cuento-policiaco'] : []), ...(calligramModule ? ['module=lengua-secundaria-1-caligrama'] : []), 'No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.'],
       ruleId: input.preferredInstrumentType ? `${rule.id}:TEACHER_OVERRIDE` : rule.id, activityTypeOrigin: explicit ? 'EXPLICIT' : detected.id !== 'OTHER' ? 'DETECTED' : 'DEFAULT',
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
