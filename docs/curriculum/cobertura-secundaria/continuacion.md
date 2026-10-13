@@ -2,6 +2,8 @@
 
 ## Bloque más reciente: composición y filas (.14)
 
+Commit funcional publicado: `2bcad9b4a42263a2fab1480f7a47abe48f89d0b0`, confirmado en `origin/amplia-instrumentos-secundaria` de `https://github.com/thebuuba/Proyecto-educativo-v3.git`. Backend y frontend locales reiniciados con ese código; health confirma dicho commit, `dirty=false` al arranque y catálogo .14. Evidencia `evidencias/entorno-catalogo14-ejecutado.json`. Siete controles de navegador persistidos; el último exige ámbito/versión resueltos. Los dos controles anteriores sin ámbito se conservan como prueba del fallo de resolución DRAFT corregido.
+
 El encargo adicional del 13/10/2026 se trabaja en `docs/superpowers/plans/2026-10-13-composicion-y-criterios.md`. Se corrigieron título concatenado, candidatos genéricos adicionales, selección de tema frente a título incompatible, identidad/procedencia y completar solo campos vacíos de una fila. Los cuatro editores tienen la acción en el menú; quinto nivel con progresión y confirmación; sexto sin fundamento queda manual. La adición usa el peso relativo cuando está disponible y protege puntuaciones manuales.
 
 Matrices 5.º y control original de trigonometría 6.º usan proveedor compartido en servicio y alternativa. La consigna trigonométrica retoma contenidos de 5.º: no se reasigna currículo ni se atribuyen referencias oficiales de 6.º. Catálogo `evaluation-2026.14`, .13 archivado sin modificar releases anteriores. [Informe completo, causas, límites y archivos](composicion-y-filas.md).

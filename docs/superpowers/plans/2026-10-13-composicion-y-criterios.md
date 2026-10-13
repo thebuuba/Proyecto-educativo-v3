@@ -14,7 +14,7 @@ Ejecución directa, sin subagentes, conforme al encargo adjunto del 13/10/2026.
 - [x] Completar campos vacíos por fila en cuatro formatos, intención manual prioritaria, sin redistribuir textos ni sustituir otras filas.
 - [x] Proteger concurrencia, reordenación, puntuaciones manuales, límites y actividades calificadas; revisar niveles actuales sin inventar progresiones adicionales.
 - [x] Pruebas de servicio normal, alternativa, navegador, guardado/reapertura con 20, 17.35 y puntaje pendiente.
-- [ ] Ejecutar backend test/build, frontend test/build y cloudflare:build; revisar diff, actualizar informes y matriz, commit y push.
+- [x] Ejecutar backend test/build, frontend test/build y cloudflare:build; revisar diff, actualizar informes y matriz, commit y push (.14, 2bcad9b).
 - [ ] Continuar núcleos pendientes de Lengua 1.º (afiche, cuento policíaco, caligrama) y el orden de avance.md, registrando cobertura parcial por módulo.
 
 La cobertura completa de secundaria permanece abierta. Importación curricular, conexión temática, verificación de servicio y navegador son estados distintos.
