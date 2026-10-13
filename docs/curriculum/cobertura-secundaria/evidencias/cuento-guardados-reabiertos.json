@@ -1,0 +1,2128 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "b90a492a1d661227924e80fd30123e92cad955e6",
+      "dirty": true,
+      "startedAt": "2026-10-13T21:19:32.024Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.16"
+    }
+  },
+  "authentication": "PASSWORD_LOGIN_REAL",
+  "saved": [
+    {
+      "id": "310202ee-5f8e-48cd-aa21-c8a8b8a98c7a",
+      "name": "QA cuento · rubrica",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Analizarán un cuento policíaco e identificarán estructura, narrador, personajes, ambiente y pistas; justificarán la interpretación del desenlace con ejemplos del texto.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "a05cd619-f389-4a52-9a0d-f436ca5dde4a",
+      "instrumentSnapshotId": "72c54d53-c476-4baf-8c58-d2413d40dde6",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-structure:0",
+            "title": "Estructura y trama del cuento",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-structure",
+            "description": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+            "descriptors": [
+              {
+                "text": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+                "levelId": "L4",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Explica cómo progresa el conflicto en los tres momentos; una relación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Reconoce los momentos, pero explica parcialmente cómo progresa el misterio.",
+                "levelId": "L2",
+                "scoreUnits": 145
+              },
+              {
+                "text": "No interpreta la estructura del cuento leído.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-narrator:1",
+            "title": "Narrador y perspectiva · revisión docente",
+            "maxScore": 2.6,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "detective-narrator",
+            "description": "Identifica el narrador y explica su perspectiva a partir de la información del cuento.",
+            "descriptors": [
+              {
+                "text": "Identifica el narrador y explica su perspectiva a partir de la información del cuento.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "Identifica el narrador y explica su perspectiva; una relación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 173
+              },
+              {
+                "text": "Reconoce quién narra, pero explica parcialmente su perspectiva.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No identifica al narrador ni su perspectiva.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-characters:2",
+            "title": "Análisis de personajes",
+            "maxScore": 2.6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-characters",
+            "description": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+            "descriptors": [
+              {
+                "text": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "Relaciona acciones y motivaciones con el conflicto; un vínculo necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 173
+              },
+              {
+                "text": "Reconoce acciones de los personajes, pero explica parcialmente su contribución al conflicto.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No explica cómo los personajes contribuyen al conflicto.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-setting:3",
+            "title": "Ambiente de la historia",
+            "maxScore": 1.74,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-setting",
+            "description": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+            "descriptors": [
+              {
+                "text": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+                "levelId": "L4",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Explica cómo el ambiente se relaciona con los hechos; un vínculo necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 116
+              },
+              {
+                "text": "Reconoce el ambiente, pero explica parcialmente su relación con la historia.",
+                "levelId": "L2",
+                "scoreUnits": 58
+              },
+              {
+                "text": "No explica la relación entre el ambiente y los hechos.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 174,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-clues:4",
+            "title": "Pistas y comprensión del desenlace",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-clues",
+            "description": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+            "descriptors": [
+              {
+                "text": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Relaciona las pistas con el desenlace; una explicación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "Reconoce pistas, pero explica parcialmente cómo conducen al desenlace.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No relaciona pistas del cuento con su desenlace.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-evidence:5",
+            "title": "Evidencias del cuento",
+            "maxScore": 2.6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-evidence",
+            "description": "Justifica su interpretación con ejemplos concretos del texto leído.",
+            "descriptors": [
+              {
+                "text": "Justifica su interpretación con ejemplos concretos del texto leído.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "Los ejemplos sostienen la interpretación; una relación necesita explicación.",
+                "levelId": "L3",
+                "scoreUnits": 173
+              },
+              {
+                "text": "Incluye ejemplos, pero solo algunos se vinculan con la interpretación.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No aporta ejemplos del cuento que sostengan su interpretación.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "MEDIUM",
+        "totalScore": 17.35,
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "caeca724-f16b-5730-be70-d3e671ae7840",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "025c2825-9150-573b-b9cb-a73d22632bf3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "385e0137-005c-5738-a4fb-123f43df0f51",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6d928034-270a-5523-a99d-11285a2fa97f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.16",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "DETECTIVE_STORY_ANALYSIS",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA cuento · rubrica",
+        "rubrica:points:0": "4.34",
+        "rubrica:points:1": "2.6",
+        "rubrica:points:2": "2.6",
+        "rubrica:points:3": "1.74",
+        "rubrica:points:4": "3.47",
+        "rubrica:points:5": "2.6",
+        "rubrica:criterion:0": "Estructura y trama del cuento",
+        "rubrica:criterion:1": "Narrador y perspectiva · revisión docente",
+        "rubrica:criterion:2": "Análisis de personajes",
+        "rubrica:criterion:3": "Ambiente de la historia",
+        "rubrica:criterion:4": "Pistas y comprensión del desenlace",
+        "rubrica:criterion:5": "Evidencias del cuento",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+        "rubrica:description:1": "Identifica el narrador y explica su perspectiva a partir de la información del cuento.",
+        "rubrica:description:2": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+        "rubrica:description:3": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+        "rubrica:description:4": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+        "rubrica:description:5": "Justifica su interpretación con ejemplos concretos del texto leído.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-structure:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-narrator:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-characters:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-setting:3",
+        "rubrica:criterion-id:4": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-clues:4",
+        "rubrica:criterion-id:5": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-evidence:5",
+        "rubrica:descriptor:0:1": "No interpreta la estructura del cuento leído.",
+        "rubrica:descriptor:0:2": "Reconoce los momentos, pero explica parcialmente cómo progresa el misterio.",
+        "rubrica:descriptor:0:3": "Explica cómo progresa el conflicto en los tres momentos; una relación necesita precisión.",
+        "rubrica:descriptor:0:4": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+        "rubrica:descriptor:1:1": "No identifica al narrador ni su perspectiva.",
+        "rubrica:descriptor:1:2": "Reconoce quién narra, pero explica parcialmente su perspectiva.",
+        "rubrica:descriptor:1:3": "Identifica el narrador y explica su perspectiva; una relación necesita precisión.",
+        "rubrica:descriptor:1:4": "Identifica el narrador y explica su perspectiva a partir de la información del cuento.",
+        "rubrica:descriptor:2:1": "No explica cómo los personajes contribuyen al conflicto.",
+        "rubrica:descriptor:2:2": "Reconoce acciones de los personajes, pero explica parcialmente su contribución al conflicto.",
+        "rubrica:descriptor:2:3": "Relaciona acciones y motivaciones con el conflicto; un vínculo necesita precisión.",
+        "rubrica:descriptor:2:4": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+        "rubrica:descriptor:3:1": "No explica la relación entre el ambiente y los hechos.",
+        "rubrica:descriptor:3:2": "Reconoce el ambiente, pero explica parcialmente su relación con la historia.",
+        "rubrica:descriptor:3:3": "Explica cómo el ambiente se relaciona con los hechos; un vínculo necesita precisión.",
+        "rubrica:descriptor:3:4": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+        "rubrica:descriptor:4:1": "No relaciona pistas del cuento con su desenlace.",
+        "rubrica:descriptor:4:2": "Reconoce pistas, pero explica parcialmente cómo conducen al desenlace.",
+        "rubrica:descriptor:4:3": "Relaciona las pistas con el desenlace; una explicación necesita precisión.",
+        "rubrica:descriptor:4:4": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+        "rubrica:descriptor:5:1": "No aporta ejemplos del cuento que sostengan su interpretación.",
+        "rubrica:descriptor:5:2": "Incluye ejemplos, pero solo algunos se vinculan con la interpretación.",
+        "rubrica:descriptor:5:3": "Los ejemplos sostienen la interpretación; una relación necesita explicación.",
+        "rubrica:descriptor:5:4": "Justifica su interpretación con ejemplos concretos del texto leído.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[434,260,260,174,347,260]",
+        "rubrica:criterion-weight:0": "5",
+        "rubrica:criterion-weight:1": "3",
+        "rubrica:criterion-weight:2": "3",
+        "rubrica:criterion-weight:3": "2",
+        "rubrica:criterion-weight:4": "4",
+        "rubrica:criterion-weight:5": "3",
+        "rubrica:meta:criteriaCount": "6",
+        "rubrica:meta:catalogVersion": "evaluation-2026.16",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Estructura y trama del cuento\",\"description\":\"Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.\",\"progression\":[\"Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.\",\"Explica cómo progresa el conflicto en los tres momentos; una relación necesita precisión.\",\"Reconoce los momentos, pero explica parcialmente cómo progresa el misterio.\",\"La interpretación confunde el orden y la evolución del conflicto.\",\"No interpreta la estructura del cuento leído.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Narrador y perspectiva\",\"description\":\"Identifica el narrador y explica su perspectiva a partir de la información del cuento.\",\"progression\":[\"Identifica el narrador y explica su perspectiva a partir de la información del cuento.\",\"Identifica el narrador y explica su perspectiva; una relación necesita precisión.\",\"Reconoce quién narra, pero explica parcialmente su perspectiva.\",\"Confunde al narrador con un personaje o le atribuye una perspectiva incompatible con el texto.\",\"No identifica al narrador ni su perspectiva.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Análisis de personajes\",\"description\":\"Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.\",\"progression\":[\"Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.\",\"Relaciona acciones y motivaciones con el conflicto; un vínculo necesita precisión.\",\"Reconoce acciones de los personajes, pero explica parcialmente su contribución al conflicto.\",\"Atribuye a los personajes acciones o motivaciones incompatibles con el texto.\",\"No explica cómo los personajes contribuyen al conflicto.\"]}",
+        "rubrica:criterion-evidence:3": "{\"title\":\"Ambiente de la historia\",\"description\":\"Explica la relación entre el ambiente y los hechos relevantes del cuento.\",\"progression\":[\"Explica la relación entre el ambiente y los hechos relevantes del cuento.\",\"Explica cómo el ambiente se relaciona con los hechos; un vínculo necesita precisión.\",\"Reconoce el ambiente, pero explica parcialmente su relación con la historia.\",\"La explicación atribuye al ambiente efectos incompatibles con los hechos del cuento.\",\"No explica la relación entre el ambiente y los hechos.\"]}",
+        "rubrica:criterion-evidence:4": "{\"title\":\"Pistas y comprensión del desenlace\",\"description\":\"Relaciona acciones y pistas del texto con la comprensión del desenlace.\",\"progression\":[\"Relaciona acciones y pistas del texto con la comprensión del desenlace.\",\"Relaciona las pistas con el desenlace; una explicación necesita precisión.\",\"Reconoce pistas, pero explica parcialmente cómo conducen al desenlace.\",\"Atribuye a una pista un efecto incompatible con los hechos del texto.\",\"No relaciona pistas del cuento con su desenlace.\"]}",
+        "rubrica:criterion-evidence:5": "{\"title\":\"Evidencias del cuento\",\"description\":\"Justifica su interpretación con ejemplos concretos del texto leído.\",\"progression\":[\"Justifica su interpretación con ejemplos concretos del texto leído.\",\"Los ejemplos sostienen la interpretación; una relación necesita explicación.\",\"Incluye ejemplos, pero solo algunos se vinculan con la interpretación.\",\"Los ejemplos contradicen o no sostienen la interpretación presentada.\",\"No aporta ejemplos del cuento que sostengan su interpretación.\"]}",
+        "rubrica:criterion-template:0": "detective-structure",
+        "rubrica:criterion-template:1": "detective-narrator",
+        "rubrica:criterion-template:2": "detective-characters",
+        "rubrica:criterion-template:3": "detective-setting",
+        "rubrica:criterion-template:4": "detective-clues",
+        "rubrica:criterion-template:5": "detective-evidence",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "observacion-sistematica",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "2737c85b-5ca8-4f34-906e-90b6cb34370a",
+      "name": "QA cuento · lista-cotejo",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Analizarán un cuento policíaco e identificarán estructura, narrador, personajes, ambiente y pistas; justificarán la interpretación del desenlace con ejemplos del texto.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "b92f9584-32aa-4cf4-bb4d-bd6c94fbd7d1",
+      "instrumentSnapshotId": "8d0639ed-29e5-4355-b100-6da682989e52",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-structure:0",
+            "title": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-structure",
+            "description": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+            "descriptors": [
+              {
+                "text": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+                "levelId": "L2",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-narrator:1",
+            "title": "Identifica el narrador y su perspectiva · revisión docente",
+            "maxScore": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "detective-narrator",
+            "description": "Identifica el narrador y explica su perspectiva a partir de la información del cuento.",
+            "descriptors": [
+              {
+                "text": "Identifica el narrador y explica su perspectiva a partir de la información del cuento.",
+                "levelId": "L2",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Identifica el narrador y explica su perspectiva a partir de la información del cuento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-characters:2",
+            "title": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-characters",
+            "description": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+            "descriptors": [
+              {
+                "text": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+                "levelId": "L2",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-setting:3",
+            "title": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+            "maxScore": 2,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-setting",
+            "description": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+            "descriptors": [
+              {
+                "text": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 200,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-clues:4",
+            "title": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-clues",
+            "description": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+            "descriptors": [
+              {
+                "text": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+                "levelId": "L2",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-evidence:5",
+            "title": "Justifica su interpretación con ejemplos concretos del texto leído.",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-evidence",
+            "description": "Justifica su interpretación con ejemplos concretos del texto leído.",
+            "descriptors": [
+              {
+                "text": "Justifica su interpretación con ejemplos concretos del texto leído.",
+                "levelId": "L2",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Justifica su interpretación con ejemplos concretos del texto leído.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "MEDIUM",
+        "totalScore": 20,
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "caeca724-f16b-5730-be70-d3e671ae7840",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "025c2825-9150-573b-b9cb-a73d22632bf3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "385e0137-005c-5738-a4fb-123f43df0f51",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6d928034-270a-5523-a99d-11285a2fa97f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.16",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "DETECTIVE_STORY_ANALYSIS",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA cuento · lista-cotejo",
+        "lista-cotejo:points:0": "5",
+        "lista-cotejo:points:1": "3",
+        "lista-cotejo:points:2": "3",
+        "lista-cotejo:points:3": "2",
+        "lista-cotejo:points:4": "4",
+        "lista-cotejo:points:5": "3",
+        "lista-cotejo:criterion:0": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+        "lista-cotejo:criterion:1": "Identifica el narrador y su perspectiva · revisión docente",
+        "lista-cotejo:criterion:2": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+        "lista-cotejo:criterion:3": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+        "lista-cotejo:criterion:4": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+        "lista-cotejo:criterion:5": "Justifica su interpretación con ejemplos concretos del texto leído.",
+        "lista-cotejo:description:0": "Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.",
+        "lista-cotejo:description:1": "Identifica el narrador y explica su perspectiva a partir de la información del cuento.",
+        "lista-cotejo:description:2": "Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.",
+        "lista-cotejo:description:3": "Explica la relación entre el ambiente y los hechos relevantes del cuento.",
+        "lista-cotejo:description:4": "Relaciona acciones y pistas del texto con la comprensión del desenlace.",
+        "lista-cotejo:description:5": "Justifica su interpretación con ejemplos concretos del texto leído.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-structure:0",
+        "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-narrator:1",
+        "lista-cotejo:criterion-id:2": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-characters:2",
+        "lista-cotejo:criterion-id:3": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-setting:3",
+        "lista-cotejo:criterion-id:4": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-clues:4",
+        "lista-cotejo:criterion-id:5": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-evidence:5",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[500,300,300,200,400,300]",
+        "lista-cotejo:criterion-weight:0": "5",
+        "lista-cotejo:criterion-weight:1": "3",
+        "lista-cotejo:criterion-weight:2": "3",
+        "lista-cotejo:criterion-weight:3": "2",
+        "lista-cotejo:criterion-weight:4": "4",
+        "lista-cotejo:criterion-weight:5": "3",
+        "lista-cotejo:meta:criteriaCount": "6",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.16",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.\",\"description\":\"Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.\",\"progression\":[\"Interpreta inicio, nudo y desenlace, y explica cómo progresa el misterio o conflicto.\",\"Explica cómo progresa el conflicto en los tres momentos; una relación necesita precisión.\",\"Reconoce los momentos, pero explica parcialmente cómo progresa el misterio.\",\"La interpretación confunde el orden y la evolución del conflicto.\",\"No interpreta la estructura del cuento leído.\"]}",
+        "lista-cotejo:criterion-evidence:1": "{\"title\":\"Identifica el narrador y explica su perspectiva a partir de la información del cuento.\",\"description\":\"Identifica el narrador y explica su perspectiva a partir de la información del cuento.\",\"progression\":[\"Identifica el narrador y explica su perspectiva a partir de la información del cuento.\",\"Identifica el narrador y explica su perspectiva; una relación necesita precisión.\",\"Reconoce quién narra, pero explica parcialmente su perspectiva.\",\"Confunde al narrador con un personaje o le atribuye una perspectiva incompatible con el texto.\",\"No identifica al narrador ni su perspectiva.\"]}",
+        "lista-cotejo:criterion-evidence:2": "{\"title\":\"Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.\",\"description\":\"Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.\",\"progression\":[\"Explica cómo las acciones y motivaciones de los personajes contribuyen al conflicto del cuento.\",\"Relaciona acciones y motivaciones con el conflicto; un vínculo necesita precisión.\",\"Reconoce acciones de los personajes, pero explica parcialmente su contribución al conflicto.\",\"Atribuye a los personajes acciones o motivaciones incompatibles con el texto.\",\"No explica cómo los personajes contribuyen al conflicto.\"]}",
+        "lista-cotejo:criterion-evidence:3": "{\"title\":\"Explica la relación entre el ambiente y los hechos relevantes del cuento.\",\"description\":\"Explica la relación entre el ambiente y los hechos relevantes del cuento.\",\"progression\":[\"Explica la relación entre el ambiente y los hechos relevantes del cuento.\",\"Explica cómo el ambiente se relaciona con los hechos; un vínculo necesita precisión.\",\"Reconoce el ambiente, pero explica parcialmente su relación con la historia.\",\"La explicación atribuye al ambiente efectos incompatibles con los hechos del cuento.\",\"No explica la relación entre el ambiente y los hechos.\"]}",
+        "lista-cotejo:criterion-evidence:4": "{\"title\":\"Relaciona acciones y pistas del texto con la comprensión del desenlace.\",\"description\":\"Relaciona acciones y pistas del texto con la comprensión del desenlace.\",\"progression\":[\"Relaciona acciones y pistas del texto con la comprensión del desenlace.\",\"Relaciona las pistas con el desenlace; una explicación necesita precisión.\",\"Reconoce pistas, pero explica parcialmente cómo conducen al desenlace.\",\"Atribuye a una pista un efecto incompatible con los hechos del texto.\",\"No relaciona pistas del cuento con su desenlace.\"]}",
+        "lista-cotejo:criterion-evidence:5": "{\"title\":\"Justifica su interpretación con ejemplos concretos del texto leído.\",\"description\":\"Justifica su interpretación con ejemplos concretos del texto leído.\",\"progression\":[\"Justifica su interpretación con ejemplos concretos del texto leído.\",\"Los ejemplos sostienen la interpretación; una relación necesita explicación.\",\"Incluye ejemplos, pero solo algunos se vinculan con la interpretación.\",\"Los ejemplos contradicen o no sostienen la interpretación presentada.\",\"No aporta ejemplos del cuento que sostengan su interpretación.\"]}",
+        "lista-cotejo:criterion-template:0": "detective-structure",
+        "lista-cotejo:criterion-template:1": "detective-narrator",
+        "lista-cotejo:criterion-template:2": "detective-characters",
+        "lista-cotejo:criterion-template:3": "detective-setting",
+        "lista-cotejo:criterion-template:4": "detective-clues",
+        "lista-cotejo:criterion-template:5": "detective-evidence"
+      },
+      "evaluationTechnique": "observacion-sistematica",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "9c24a390-029d-47fc-9c7c-45694b0adcb2",
+      "name": "QA cuento · escala",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Narrarán un cuento policíaco en una secuencia comprensible, con conflicto, pistas y resolución.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "767f7002-7992-4c21-a7e7-ec468190f3fd",
+      "instrumentSnapshotId": "cbc6dec6-67dd-4889-ae8f-f584a4d9a864",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-sequence:0",
+            "title": "Narra inicio, nudo y desenlace en un orden comprensible.",
+            "maxScore": 6.67,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-sequence",
+            "description": "Narra inicio, nudo y desenlace en un orden comprensible.",
+            "descriptors": [
+              {
+                "text": "Narra inicio, nudo y desenlace en un orden comprensible.",
+                "levelId": "L4",
+                "scoreUnits": 667
+              },
+              {
+                "text": "La narración permite seguir los tres momentos; una transición requiere ajuste.",
+                "levelId": "L3",
+                "scoreUnits": 445
+              },
+              {
+                "text": "Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.",
+                "levelId": "L2",
+                "scoreUnits": 222
+              },
+              {
+                "text": "No comunica una secuencia reconocible del cuento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 667,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-mystery:1",
+            "title": "Comunica el conflicto y la resolución · revisión docente",
+            "maxScore": 6.67,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "detective-mystery",
+            "description": "Comunica el conflicto, las acciones y la resolución sin contradicciones.",
+            "descriptors": [
+              {
+                "text": "Comunica el conflicto, las acciones y la resolución sin contradicciones.",
+                "levelId": "L4",
+                "scoreUnits": 667
+              },
+              {
+                "text": "Las pistas conducen a la resolución; una relación causal necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 445
+              },
+              {
+                "text": "Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.",
+                "levelId": "L2",
+                "scoreUnits": 222
+              },
+              {
+                "text": "No establece una relación reconocible entre misterio, pistas y resolución.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 667,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-language:2",
+            "title": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+            "maxScore": 4.01,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-language",
+            "description": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+            "descriptors": [
+              {
+                "text": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+                "levelId": "L4",
+                "scoreUnits": 401
+              },
+              {
+                "text": "El vocabulario y los vínculos entre hechos permiten comprender el relato; un detalle necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 267
+              },
+              {
+                "text": "El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.",
+                "levelId": "L2",
+                "scoreUnits": 134
+              },
+              {
+                "text": "No comunica los hechos del cuento de manera comprensible.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 401,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "DETECTIVE_STORY_NARRATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 67,
+              "reasons": [
+                "topicTokens=3/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "topicCoverage": 0.4285714285714285
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=5"
+              ],
+              "elementId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "44cca28a-249e-561e-92ac-b98d05b46d18",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "46959358-472f-52cd-9887-5555e78db510",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1e434089-d202-529a-80ad-734c3a723254",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b8f0428b-5b07-51f1-9be2-7427ee68f022",
+              "topicCoverage": 0.1428571428571428
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.16",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "DETECTIVE_STORY_NARRATION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA cuento · escala",
+        "escala:points:0": "6.67",
+        "escala:points:1": "6.67",
+        "escala:points:2": "4.01",
+        "escala:criterion:0": "Narra inicio, nudo y desenlace en un orden comprensible.",
+        "escala:criterion:1": "Comunica el conflicto y la resolución · revisión docente",
+        "escala:criterion:2": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+        "escala:level-name:1": "Inicial",
+        "escala:level-name:2": "En proceso",
+        "escala:level-name:3": "Logrado",
+        "escala:level-name:4": "Destacado",
+        "escala:description:0": "Narra inicio, nudo y desenlace en un orden comprensible.",
+        "escala:description:1": "Comunica el conflicto, las acciones y la resolución sin contradicciones.",
+        "escala:description:2": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-sequence:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-mystery:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-language:2",
+        "escala:descriptor:0:1": "No comunica una secuencia reconocible del cuento.",
+        "escala:descriptor:0:2": "Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.",
+        "escala:descriptor:0:3": "La narración permite seguir los tres momentos; una transición requiere ajuste.",
+        "escala:descriptor:0:4": "Narra inicio, nudo y desenlace en un orden comprensible.",
+        "escala:descriptor:1:1": "No establece una relación reconocible entre misterio, pistas y resolución.",
+        "escala:descriptor:1:2": "Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.",
+        "escala:descriptor:1:3": "Las pistas conducen a la resolución; una relación causal necesita precisión.",
+        "escala:descriptor:1:4": "Comunica el conflicto, las acciones y la resolución sin contradicciones.",
+        "escala:descriptor:2:1": "No comunica los hechos del cuento de manera comprensible.",
+        "escala:descriptor:2:2": "El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.",
+        "escala:descriptor:2:3": "El vocabulario y los vínculos entre hechos permiten comprender el relato; un detalle necesita precisión.",
+        "escala:descriptor:2:4": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[667,667,401]",
+        "escala:criterion-weight:0": "5",
+        "escala:criterion-weight:1": "5",
+        "escala:criterion-weight:2": "3",
+        "escala:meta:criteriaCount": "3",
+        "escala:meta:catalogVersion": "evaluation-2026.16",
+        "escala:criterion-evidence:0": "{\"title\":\"Narra inicio, nudo y desenlace en un orden comprensible.\",\"description\":\"Narra inicio, nudo y desenlace en un orden comprensible.\",\"progression\":[\"Narra inicio, nudo y desenlace en un orden comprensible.\",\"La narración permite seguir los tres momentos; una transición requiere ajuste.\",\"Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.\",\"El orden narrado confunde los hechos y la resolución del conflicto.\",\"No comunica una secuencia reconocible del cuento.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Comunica el conflicto, las acciones y la resolución sin contradicciones.\",\"description\":\"Comunica el conflicto, las acciones y la resolución sin contradicciones.\",\"progression\":[\"Comunica el conflicto, las acciones y la resolución sin contradicciones.\",\"Las pistas conducen a la resolución; una relación causal necesita precisión.\",\"Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.\",\"La resolución contradice las pistas o las acciones del relato.\",\"No establece una relación reconocible entre misterio, pistas y resolución.\"]}",
+        "escala:criterion-evidence:2": "{\"title\":\"Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.\",\"description\":\"Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.\",\"progression\":[\"Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.\",\"El vocabulario y los vínculos entre hechos permiten comprender el relato; un detalle necesita precisión.\",\"El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.\",\"Las expresiones confunden hechos centrales de la narración.\",\"No comunica los hechos del cuento de manera comprensible.\"]}",
+        "escala:criterion-template:0": "detective-sequence",
+        "escala:criterion-template:1": "detective-mystery",
+        "escala:criterion-template:2": "detective-language",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "3f64e44e-0235-49ed-8e24-a30bfd118ae5",
+      "name": "QA cuento · lista-ponderada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Escribirán un cuento policíaco con inicio, nudo y desenlace, personajes, ambiente, narrador y pistas que permitan explicar la resolución del misterio. Revisarán conectores y ortografía.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "fe652e28-8477-491d-8e4a-0c9bde2469a8",
+      "instrumentSnapshotId": "71c13e07-48db-419c-b0bd-467522c47a4c",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-structure:0",
+            "title": "Inicio, nudo y desenlace",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-structure",
+            "description": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados. Parcial (50%): Se reconocen los momentos, pero una relación entre acciones queda incompleta.",
+            "descriptors": [
+              {
+                "text": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados. Parcial (50%): Se reconocen los momentos, pero una relación entre acciones queda incompleta.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados. Parcial (50%): Se reconocen los momentos, pero una relación entre acciones queda incompleta.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados. Parcial (50%): Se reconocen los momentos, pero una relación entre acciones queda incompleta.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-mystery:1",
+            "title": "Misterio, pistas y resolución · revisión docente",
+            "maxScore": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "detective-mystery",
+            "description": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio. Parcial (50%): Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.",
+            "descriptors": [
+              {
+                "text": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio. Parcial (50%): Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.",
+                "levelId": "L3",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio. Parcial (50%): Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio. Parcial (50%): Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-characters:2",
+            "title": "Personajes y ambiente",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-characters",
+            "description": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca. Parcial (50%): Describe personajes y ambiente, pero parte de las acciones no se vincula con ellos.",
+            "descriptors": [
+              {
+                "text": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca. Parcial (50%): Describe personajes y ambiente, pero parte de las acciones no se vincula con ellos.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca. Parcial (50%): Describe personajes y ambiente, pero parte de las acciones no se vincula con ellos.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca. Parcial (50%): Describe personajes y ambiente, pero parte de las acciones no se vincula con ellos.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-narrator:3",
+            "title": "Consistencia del narrador",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-narrator",
+            "description": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento. Parcial (50%): El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+            "descriptors": [
+              {
+                "text": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento. Parcial (50%): El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+                "levelId": "L3",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento. Parcial (50%): El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+                "levelId": "L2",
+                "scoreUnits": 150
+              },
+              {
+                "text": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento. Parcial (50%): El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-revision:4",
+            "title": "Cohesión y revisión final",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "detective-revision",
+            "description": "Usa conectores y recursos expresivos pertinentes, y revisa claridad, puntuación y ortografía. Parcial (50%): Los conectores o varios errores dificultan relacionar partes del relato.",
+            "descriptors": [
+              {
+                "text": "Usa conectores y recursos expresivos pertinentes, y revisa claridad, puntuación y ortografía. Parcial (50%): Los conectores o varios errores dificultan relacionar partes del relato.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Usa conectores y recursos expresivos pertinentes, y revisa claridad, puntuación y ortografía. Parcial (50%): Los conectores o varios errores dificultan relacionar partes del relato.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Usa conectores y recursos expresivos pertinentes, y revisa claridad, puntuación y ortografía. Parcial (50%): Los conectores o varios errores dificultan relacionar partes del relato.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "HIGH",
+        "totalScore": 20,
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 114,
+              "reasons": [
+                "topicTokens=7/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "topicCoverage": 0.875
+            },
+            {
+              "score": 114,
+              "reasons": [
+                "topicTokens=7/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+              "topicCoverage": 0.875
+            },
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "caeca724-f16b-5730-be70-d3e671ae7840",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "025c2825-9150-573b-b9cb-a73d22632bf3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.16",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "DETECTIVE_STORY_WRITING",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA cuento · lista-ponderada",
+        "lista-ponderada:points:0": "4",
+        "lista-ponderada:points:1": "5",
+        "lista-ponderada:points:2": "4",
+        "lista-ponderada:points:3": "3",
+        "lista-ponderada:points:4": "4",
+        "lista-ponderada:weight:0": "20",
+        "lista-ponderada:weight:1": "25",
+        "lista-ponderada:weight:2": "20",
+        "lista-ponderada:weight:3": "15",
+        "lista-ponderada:weight:4": "20",
+        "lista-ponderada:criterion:0": "Inicio, nudo y desenlace",
+        "lista-ponderada:criterion:1": "Misterio, pistas y resolución · revisión docente",
+        "lista-ponderada:criterion:2": "Personajes y ambiente",
+        "lista-ponderada:criterion:3": "Consistencia del narrador",
+        "lista-ponderada:criterion:4": "Cohesión y revisión final",
+        "lista-ponderada:indicator:0": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados. Parcial (50%): Se reconocen los momentos, pero una relación entre acciones queda incompleta.",
+        "lista-ponderada:indicator:1": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio. Parcial (50%): Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.",
+        "lista-ponderada:indicator:2": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca. Parcial (50%): Describe personajes y ambiente, pero parte de las acciones no se vincula con ellos.",
+        "lista-ponderada:indicator:3": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento. Parcial (50%): El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+        "lista-ponderada:indicator:4": "Usa conectores y recursos expresivos pertinentes, y revisa claridad, puntuación y ortografía. Parcial (50%): Los conectores o varios errores dificultan relacionar partes del relato.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados. Parcial (50%): Se reconocen los momentos, pero una relación entre acciones queda incompleta.",
+        "lista-ponderada:description:1": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio. Parcial (50%): Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.",
+        "lista-ponderada:description:2": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca. Parcial (50%): Describe personajes y ambiente, pero parte de las acciones no se vincula con ellos.",
+        "lista-ponderada:description:3": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento. Parcial (50%): El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+        "lista-ponderada:description:4": "Usa conectores y recursos expresivos pertinentes, y revisa claridad, puntuación y ortografía. Parcial (50%): Los conectores o varios errores dificultan relacionar partes del relato.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-structure:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-mystery:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-characters:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-narrator:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.16:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:detective-revision:4",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[400,500,400,300,400]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "5",
+        "lista-ponderada:criterion-weight:2": "4",
+        "lista-ponderada:criterion-weight:3": "3",
+        "lista-ponderada:criterion-weight:4": "4",
+        "lista-ponderada:meta:criteriaCount": "5",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.16",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Inicio, nudo y desenlace\",\"description\":\"Organiza el cuento con inicio, nudo y desenlace claramente relacionados. Parcial (50%): Se reconocen los momentos, pero una relación entre acciones queda incompleta.\",\"progression\":[\"Organiza el cuento con inicio, nudo y desenlace claramente relacionados.\",\"Los tres momentos se relacionan; una transición necesita precisión.\",\"Se reconocen los momentos, pero una relación entre acciones queda incompleta.\",\"El orden de los hechos contradice la evolución del conflicto.\",\"No presenta una secuencia reconocible de inicio, nudo y desenlace.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Misterio, pistas y resolución\",\"description\":\"Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio. Parcial (50%): Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.\",\"progression\":[\"Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio.\",\"Las pistas conducen a la resolución; una relación causal necesita precisión.\",\"Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar.\",\"La resolución contradice las pistas o las acciones del relato.\",\"No establece una relación reconocible entre misterio, pistas y resolución.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Personajes y ambiente\",\"description\":\"Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca. Parcial (50%): Describe personajes y ambiente, pero parte de las acciones no se vincula con ellos.\",\"progression\":[\"Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca.\",\"Las acciones y el ambiente corresponden a los personajes; un vínculo necesita desarrollo.\",\"Describe personajes y ambiente, pero parte de las acciones no se vincula con ellos.\",\"Las caracterizaciones o el ambiente contradicen acciones centrales de la trama.\",\"No presenta personajes y ambiente reconocibles para la trama.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Consistencia del narrador\",\"description\":\"Mantiene un narrador reconocible y una perspectiva consistente durante el cuento. Parcial (50%): El narrador se reconoce, pero cambia de perspectiva sin aclararlo.\",\"progression\":[\"Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.\",\"La perspectiva del narrador se mantiene; una expresión necesita ajuste.\",\"El narrador se reconoce, pero cambia de perspectiva sin aclararlo.\",\"Los cambios de perspectiva contradicen la información que el narrador puede conocer.\",\"No permite reconocer quién narra ni una perspectiva consistente.\"]}",
+        "lista-ponderada:criterion-evidence:4": "{\"title\":\"Cohesión y revisión final\",\"description\":\"Usa conectores y recursos expresivos pertinentes, y revisa claridad, puntuación y ortografía. Parcial (50%): Los conectores o varios errores dificultan relacionar partes del relato.\",\"progression\":[\"Usa conectores y recursos expresivos pertinentes, y revisa claridad, puntuación y ortografía.\",\"La cohesión y las convenciones permiten comprender el relato; un detalle requiere ajuste.\",\"Los conectores o varios errores dificultan relacionar partes del relato.\",\"La falta de cohesión y los errores impiden seguir hechos centrales.\",\"No presenta un texto suficientemente comprensible para seguir la trama.\"]}",
+        "lista-ponderada:criterion-template:0": "detective-structure",
+        "lista-ponderada:criterion-template:1": "detective-mystery",
+        "lista-ponderada:criterion-template:2": "detective-characters",
+        "lista-ponderada:criterion-template:3": "detective-narrator",
+        "lista-ponderada:criterion-template:4": "detective-revision"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ],
+  "historical": [
+    {
+      "id": "b048bcd5-82f1-4804-ae74-ef3035eac74c",
+      "name": "Actividad 1 · QA matrices",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "cf61df2b-7c5f-45b3-b6ea-626a238d7e07",
+      "name": "QA filas matrices · lista-cotejo",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "0516c928-3556-492d-bb29-f85bf8133bc4",
+      "name": "QA filas matrices · escala",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "2270b8f1-5625-4823-b28b-a8c78f95176e",
+      "name": "QA filas matrices · lista-ponderada",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "e23e652b-c8e7-490c-89a3-956a5a91b7a4",
+      "name": "Calculamos alturas y distancias utilizando la trigonometría.",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "3e5a0a87-f41d-4e6f-9167-f59c8f670c10",
+      "name": "QA pesos matrices",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "53b4debe-9d9f-4c33-95c9-89558ecd3ea6",
+      "name": "QA ámbito matrices",
+      "catalogVersion": "evaluation-2026.14"
+    }
+  ]
+}

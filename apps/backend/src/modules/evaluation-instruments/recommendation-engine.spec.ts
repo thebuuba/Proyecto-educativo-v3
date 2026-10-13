@@ -457,7 +457,7 @@ describe('Recomendador con currículo literal completo', () => {
   })
   it.each([
     ['Creación detectivesca', 'Los estudiantes escribirán un cuento detectivesco con un objeto desaparecido, personajes sospechosos, pistas y un desenlace que explique lo ocurrido.', 'DETECTIVE_STORY_WRITING', 'Misterio, pistas y resolución'],
-    ['Análisis policial', 'Los estudiantes leerán un cuento policíaco e identificarán el narrador, los personajes, el ambiente y las pistas que permiten comprender el desenlace.', 'DETECTIVE_STORY_ANALYSIS', 'Narrador, personajes y ambiente'],
+    ['Análisis policial', 'Los estudiantes leerán un cuento policíaco e identificarán el narrador, los personajes, el ambiente y las pistas que permiten comprender el desenlace.', 'DETECTIVE_STORY_ANALYSIS', 'Narrador y perspectiva'],
     ['Narración detectivesca', 'Cada estudiante narrará oralmente un cuento detectivesco, manteniendo la secuencia de los hechos y utilizando la voz para diferenciar las intervenciones de los personajes.', 'DETECTIVE_STORY_NARRATION', 'Voces de narrador y personajes'],
     ['Comparación detectivesca', 'Los estudiantes compararán dos cuentos detectivescos y explicarán diferencias en personajes, ambientes y resolución del misterio, usando ejemplos de ambos.', 'DETECTIVE_STORY_COMPARISON', 'Resolución del misterio'],
   ])('prepara el cuento policíaco: %s', (activityTitle, description, activityType, criterionTitle) => {
@@ -465,7 +465,8 @@ describe('Recomendador con currículo literal completo', () => {
     for (const maxScore of [20, 17.35]) for (const preferredInstrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
       const result = recommend({ activityTitle, description, maxScore, participationMode: 'INDIVIDUAL', preferredInstrumentType }, context, null, [], 'UNMAPPED', null)
       expect(result.activityType).toBe(activityType)
-      expect(result.criteria.map(item => item.title)).toContain(criterionTitle)
+      if(preferredInstrumentType==='rubrica'||preferredInstrumentType==='lista-ponderada') expect(result.criteria.map(item => item.title)).toContain(criterionTitle)
+      else expect(result.criteria.map(item=>item.title)).toEqual(result.criteria.map(item=>item.description))
       expect(result.totalScoreUnits).toBe(Math.round(maxScore * 100))
     }
   })

@@ -1,5 +1,13 @@
 # Continuación del encargo completo
 
+## Bloque más reciente: cuento policíaco 1.º (.16)
+
+Proveedor compartido para escritura, análisis, comparación, narración y presentación del análisis. Progresiones específicas; análisis focalizado por elementos, preguntas/voces condicionales, sin conclusión obligatoria ausente. Servicio normal: 80 propuestas, ocho regresiones, análisis focalizado y título incompatible. Cuatro formatos guardados/reabiertos desde navegador: análisis en rúbrica/cotejo, narración en escala, escritura ponderada; ediciones manuales y celdas completadas preservadas. Identidades, plantilla, ámbito, snapshots y puntos comprobados por HTTP normal. [Informe y pendientes](cuento-policiaco-1-reauditoria.md).
+
+Backend 1.171; frontend 748; inventario siete. Builds backend/frontend y Cloudflare dry-run aprobados. Catálogo .16 local, .15 archivado y releases anteriores intactos. Quedan gramática focalizada, separación adicional de objetivos de comparación/presentación, candidatos adicionales y recorrido de las otras familias. Continuar con caligrama 1.º PDF 74. Ninguna asignatura completa.
+
+Commit de afiche .15: `b90a492a1d661227924e80fd30123e92cad955e6`, publicado en `origin/amplia-instrumentos-secundaria` de `thebuuba/Proyecto-educativo-v3`.
+
 ## Bloque más reciente: afiche 1.º (.15)
 
 Proveedor compartido para creación, análisis, comparación y presentación; progresiones por acción, imagen o símbolo como alternativas, sin preguntas ni gráficos obligatorios ausentes de la consigna. Servicio normal: 64 propuestas, siete regresiones, un análisis focalizado. Cuatro formatos de creación guardados y reabiertos en navegador; rúbrica/escala 17,35, cotejo/ponderada 20, textos manuales y completar celda preservados. Identidades, plantilla, ámbito y snapshots verificados por lectura HTTP real. Catálogo .15 solo local, .14 archivado y releases anteriores intactos. [Informe y límites](afiche-1-reauditoria.md).

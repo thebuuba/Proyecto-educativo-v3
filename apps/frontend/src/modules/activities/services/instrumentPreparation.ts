@@ -5,6 +5,7 @@ import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType
 import { firstGradeNewsCriteria, detectSecondaryLanguageActivity, isFirstGradeNewsActivity } from '@aula/shared'
 import { firstGradeGuideCriteria, isFirstGradeGuideActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { firstGradePosterCriteria, isFirstGradePosterActivity } from '@aula/shared'
+import { firstGradeDetectiveCriteria, isFirstGradeDetectiveActivity } from '@aula/shared'
 import { firstGradeReadingReportCriteria } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { api } from '@/services/apiClient'
@@ -69,7 +70,11 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
     const activity = input.activityType ?? detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) ?? 'READING_REPORT_WRITING'
     return editableAuthoredRecommendation(firstGradeReadingReportCriteria(activity, input.description ?? ''), input, activity, 'lengua-secundaria-1-informe-de-lectura')
   }
-  const detectiveStory = input.activityType !== 'REPORT' && (input.secondaryLanguageGrade === 1 ? firstGenre === 'DETECTIVE_STORY' : /cuento (?:polic[ií]aco|detectivesco)/.test(text) && !readingReport)
+  if (firstGenre === 'DETECTIVE_STORY' && (!input.activityType || isFirstGradeDetectiveActivity(input.activityType))) {
+    const activity = input.activityType ?? detectSecondaryLanguageActivity(input.activityTitle,input.description ?? '',{level:'SECONDARY',grade:1,subjectCode:'LEN'}) ?? 'DETECTIVE_STORY_WRITING'
+    return editableAuthoredRecommendation(firstGradeDetectiveCriteria(activity,input.description ?? ''),input,activity,'lengua-secundaria-1-cuento-policiaco')
+  }
+  const detectiveStory = input.secondaryLanguageGrade !== 1 && input.activityType !== 'REPORT' && /cuento (?:polic[ií]aco|detectivesco)/.test(text) && !readingReport
   const calligram = input.activityType !== 'REPORT' && (input.secondaryLanguageGrade === 1 ? firstGenre === 'CALLIGRAM' : /caligrama/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text))
   const writingReport = input.activityType ? input.activityType === 'READING_REPORT_WRITING' : readingReport && /(?:redact|escrib|elabor|produc|cre)[a-záéíóú]*\s+(?:(?:un|el|su)\s+)?informe de lectura/.test(text)
   const analyzing = input.activityType ? input.activityType.endsWith('_ANALYSIS') : /leer|analizar|identificar/.test(text) && !writingReport

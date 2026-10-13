@@ -177,6 +177,7 @@ export { formatAuthoredCriteria } from './authored-instrument-format'
 export { firstGradeGuideCriteria, firstGradeGuideModule, isFirstGradeGuideActivity } from './secondary-guide-grade-one'
 export { firstGradeReadingReportCriteria, firstGradeReadingReportModule } from './secondary-reading-report-grade-one'
 export { firstGradePosterCriteria, firstGradePosterModule, isFirstGradePosterActivity } from './secondary-poster-grade-one'
+export { firstGradeDetectiveCriteria, firstGradeDetectiveModule, isFirstGradeDetectiveActivity } from './secondary-detective-grade-one'
 export { findSecondaryMathTopic, secondaryMathCriteria, secondaryMathModules } from './secondary-math'
 export type EntityStatus = 'active' | 'inactive'
 

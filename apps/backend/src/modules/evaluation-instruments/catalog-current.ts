@@ -7,16 +7,17 @@ import { evaluationCatalogV11 } from './catalog-v11'
 import { evaluationCatalogV12 } from './catalog-v12'
 import { evaluationCatalogV13 } from './catalog-v13'
 import { evaluationCatalogV14 } from './catalog-v14'
-import { secondaryMathModules, firstGradePosterModule } from '@aula/shared'
+import { evaluationCatalogV15 } from './catalog-v15'
+import { secondaryMathModules, firstGradeDetectiveModule } from '@aula/shared'
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV14,
-  version: 'evaluation-2026.15',
-  firstGradePosterModule,
+  ...evaluationCatalogV15,
+  version: 'evaluation-2026.16',
+  firstGradeDetectiveModule,
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
   return version === evaluationCatalogV1.version ? evaluationCatalogV1 : version === evaluationCatalogV8.version ? evaluationCatalogV8
-    : version === evaluationCatalogV9.version ? evaluationCatalogV9 : version === evaluationCatalogV10.version ? evaluationCatalogV10 : version === evaluationCatalogV11.version ? evaluationCatalogV11 : version === evaluationCatalogV12.version ? evaluationCatalogV12 : version === evaluationCatalogV13.version ? evaluationCatalogV13 : version === evaluationCatalogV14.version ? evaluationCatalogV14 : version === evaluationCatalogCurrent.version ? evaluationCatalogCurrent : null
+    : version === evaluationCatalogV9.version ? evaluationCatalogV9 : version === evaluationCatalogV10.version ? evaluationCatalogV10 : version === evaluationCatalogV11.version ? evaluationCatalogV11 : version === evaluationCatalogV12.version ? evaluationCatalogV12 : version === evaluationCatalogV13.version ? evaluationCatalogV13 : version === evaluationCatalogV14.version ? evaluationCatalogV14 : version === evaluationCatalogV15.version ? evaluationCatalogV15 : version === evaluationCatalogCurrent.version ? evaluationCatalogCurrent : null
 }

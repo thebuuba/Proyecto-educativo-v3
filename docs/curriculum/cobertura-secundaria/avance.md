@@ -1,5 +1,9 @@
 # Avance durable — cobertura secundaria
 
+## Bloque .16: cuento policíaco 1.º
+
+Cinco familias en proveedor compartido; elementos del análisis separados, niveles específicos, preguntas/voces/conclusión según consigna. 80 propuestas HTTP normales, ocho regresiones y análisis focalizado; cuatro formatos guardados/reabiertos con textos manuales, celdas completadas, identidad/ámbito y totales exactos. Backend 1.171, frontend 748, inventario siete; builds backend/frontend/Cloudflare dry-run aprobados. [Informe y límites](cuento-policiaco-1-reauditoria.md). Fuente PDF 73. Siguiente: caligrama PDF 74, después pendientes de noticia/guía/informe y orden del alcance completo. No equivale a completar Lengua 1.º ni secundaria.
+
 ## Bloque .15: afiche 1.º
 
 Proveedor compartido en servicio y alternativa: cuatro familias con progresiones específicas y requisitos de la descripción. 64 propuestas HTTP normales, siete regresiones y análisis focalizado. Cuatro formatos de creación guardados/reabiertos en navegador con textos manuales, celda completada, IDs, plantilla, ámbito y puntos exactos. Catálogo .15 local; .14 archivado. Backend 1.129, frontend 686 en suite completa más 49 del proveedor final, inventario siete; builds backend/frontend y Cloudflare dry-run aprobados. [Informe y pendientes](afiche-1-reauditoria.md). Ninguna asignatura completa. Siguiente: cuento policíaco 1.º PDF 73, luego caligrama y pendientes registrados.

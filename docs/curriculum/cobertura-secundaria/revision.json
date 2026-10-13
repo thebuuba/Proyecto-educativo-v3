@@ -269,7 +269,7 @@
     },
     {
       "id": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
-      "implementation": "EXISTING_PENDING_REAUDIT",
+      "implementation": "PARTIAL_FIVE_ACTIVITY_FAMILIES_SHARED_PROVIDER",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -278,7 +278,11 @@
         "caaa246b-f525-5292-8ed0-0fd2e8309566",
         "28865ef6-91d3-5df9-b417-0a81f880732a"
       ],
-      "report": "avance.md"
+      "report": "cuento-policiaco-1-reauditoria.md",
+      "catalogVersion": "evaluation-2026.16",
+      "serviceVerification": "NORMAL_REAL_LOGIN_80_PROPOSALS_8_REGRESSIONS_FOCUSED_ANALYSIS_PASSED",
+      "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_ANALYSIS_NARRATION_WRITING_SAVE_REOPEN_PASSED",
+      "pending": "Focused grammar, further comparison/presentation filtering, additional authored candidates and all-family browser coverage. Not complete secondary coverage."
     },
     {
       "id": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",

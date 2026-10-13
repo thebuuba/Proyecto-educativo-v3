@@ -1,6 +1,6 @@
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
 import { newsCriteria } from './authored/language/news-grade-1'
-import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, firstSecondaryLanguageGenre } from '@aula/shared'
+import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { touristGuideCriteria } from './authored/language/tourist-guide-grade-1'
 import { posterCriteria } from './authored/language/poster-grade-1'
@@ -302,7 +302,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const touristGuideModule = firstGenre === 'TOURIST_GUIDE' && isFirstGradeGuideActivity(activity.id)
   const posterModule = firstGenre === 'POSTER' && isFirstGradePosterActivity(activity.id)
   const readingReportModule = firstGenre === 'READING_REPORT'
-  const detectiveModule = firstGenre === 'DETECTIVE_STORY' && activity.id !== 'REPORT'
+  const detectiveModule = firstGenre === 'DETECTIVE_STORY' && isFirstGradeDetectiveActivity(activity.id)
   const calligramModule = firstGenre === 'CALLIGRAM' && activity.id !== 'REPORT'
   const selectedAuthored: AuthoredCriterion[] = mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
     : scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
@@ -311,7 +311,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     : touristGuideModule ? touristGuideCriteria(activity.id, input.description ?? '')
       : posterModule ? posterCriteria(activity.id, input.activityTitle, input.description ?? '')
         : readingReportModule ? readingReportCriteria(activity.id, input.description ?? '')
-          : detectiveModule ? detectiveStoryCriteria(activity.id)
+          : detectiveModule ? detectiveStoryCriteria(activity.id, input.description ?? '')
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : []
   const authored: AuthoredCriterion[] = selectedAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification')).slice(0, INSTRUMENT_MAX_CRITERIA).map(item => item.progressionLevels
     ? formatAuthoredCriteria([{ ...item, progressionLevels: item.progressionLevels }], chosenInstrument)[0] : item)
