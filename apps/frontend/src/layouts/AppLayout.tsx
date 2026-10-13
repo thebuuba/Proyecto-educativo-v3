@@ -17,7 +17,7 @@ export function AppLayout() {
   const location = useLocation()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(
-    () => localStorage.getItem('aulabase:sidebar-expanded') !== 'false',
+    () => localStorage.getItem('aulabase:sidebar-expanded') === 'true',
   )
   const isGradingPage = location.pathname.startsWith('/calificaciones')
   const activeModule = location.pathname.split('/').filter(Boolean)[0] ?? 'inicio'
@@ -34,16 +34,19 @@ export function AppLayout() {
             isOpen={isSidebarOpen}
             isExpanded={isSidebarExpanded}
             onClose={() => setIsSidebarOpen(false)}
-            onToggleExpanded={() => setIsSidebarExpanded((current) => !current)}
           />
 
           <div
             className={cn(
               'sidebar-workspace min-w-0 flex-1',
-              isSidebarExpanded ? 'lg:pl-[256px]' : 'lg:pl-[76px]',
+              isSidebarExpanded ? 'lg:pl-[256px]' : 'lg:pl-20',
             )}
           >
-            <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
+            <Header
+              onOpenSidebar={() => setIsSidebarOpen(true)}
+              isSidebarExpanded={isSidebarExpanded}
+              onToggleSidebar={() => setIsSidebarExpanded((current) => !current)}
+            />
 
             <main
               data-module={activeModule}

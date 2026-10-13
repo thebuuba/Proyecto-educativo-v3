@@ -17,6 +17,8 @@ import type { UserRole } from '@/types/domain'
 type HeaderProps = {
   /** Función para abrir la barra lateral en mobile. */
   onOpenSidebar: () => void
+  isSidebarExpanded: boolean
+  onToggleSidebar: () => void
 }
 
 /** Etiquetas mostradas para cada rol de usuario. */
@@ -36,7 +38,7 @@ const roleLabels: Record<UserRole, string> = {
  *
  * @param props.onOpenSidebar - Callback para abrir la barra lateral.
  */
-export function Header({ onOpenSidebar }: HeaderProps) {
+export function Header({ onOpenSidebar, isSidebarExpanded, onToggleSidebar }: HeaderProps) {
   const { appUser, roles } = useAuth()
   const location = useLocation()
   const [periodName, setPeriodName] = useState<string | null>(null)
@@ -142,6 +144,18 @@ export function Header({ onOpenSidebar }: HeaderProps) {
         >
           <Menu className="size-5" />
         </Button>
+
+        <div className="hidden lg:block">
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label={isSidebarExpanded ? 'Contraer menú' : 'Expandir menú'}
+            aria-expanded={isSidebarExpanded}
+            onClick={onToggleSidebar}
+          >
+            <Menu className="size-5" aria-hidden="true" />
+          </Button>
+        </div>
 
         {isGradingPage || isCoursesPage ? (
           <label
