@@ -6,7 +6,11 @@
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "implementation": "EXISTING_PENDING_REAUDIT",
-      "procedures": ["726a3500-49d4-55d0-b95d-08dbefa4f5e5", "94ad93d7-4744-5b51-bad2-5de8a0de6c29", "20da41b0-1550-50b0-98d6-638ad7afa45f"],
+      "procedures": [
+        "726a3500-49d4-55d0-b95d-08dbefa4f5e5",
+        "94ad93d7-4744-5b51-bad2-5de8a0de6c29",
+        "20da41b0-1550-50b0-98d6-638ad7afa45f"
+      ],
       "report": "lengua-2-primer-bloque.md"
     },
     {
@@ -18,7 +22,12 @@
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
       "catalogVersion": "evaluation-2026.8",
-      "procedures": ["53983111-93a5-5e64-8deb-b8cb02c53b46", "31f0fd7d-64ed-57ea-a580-27ea37c8844b", "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b", "3ccbe1c7-82cd-5db3-9e48-588d83312496"],
+      "procedures": [
+        "53983111-93a5-5e64-8deb-b8cb02c53b46",
+        "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+        "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+        "3ccbe1c7-82cd-5db3-9e48-588d83312496"
+      ],
       "report": "lengua-2-primer-bloque.md"
     },
     {
@@ -30,7 +39,13 @@
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
       "catalogVersion": "evaluation-2026.8",
-      "procedures": ["43bd33e7-dd09-5751-89f6-c64b57efc167", "ce49be32-15d8-5da8-856f-792c90e7b953", "7ab07042-3830-54dd-ae40-af8f504130dc", "9a3f5c34-b341-5f32-89fa-e6b683aa060a", "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6"],
+      "procedures": [
+        "43bd33e7-dd09-5751-89f6-c64b57efc167",
+        "ce49be32-15d8-5da8-856f-792c90e7b953",
+        "7ab07042-3830-54dd-ae40-af8f504130dc",
+        "9a3f5c34-b341-5f32-89fa-e6b683aa060a",
+        "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6"
+      ],
       "report": "lengua-2-primer-bloque.md"
     },
     {
@@ -42,7 +57,12 @@
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
       "catalogVersion": "evaluation-2026.8",
-      "procedures": ["65c41f19-8071-5d64-be9b-b4d81bddbf93", "46860c66-f934-549e-b922-fcc9040fc0ee", "b45bd0dd-d8ba-5c04-875e-60757078923f", "c5bfa453-dc73-53e9-a353-1457ecef84f1"],
+      "procedures": [
+        "65c41f19-8071-5d64-be9b-b4d81bddbf93",
+        "46860c66-f934-549e-b922-fcc9040fc0ee",
+        "b45bd0dd-d8ba-5c04-875e-60757078923f",
+        "c5bfa453-dc73-53e9-a353-1457ecef84f1"
+      ],
       "report": "lengua-2-primer-bloque.md"
     },
     {
@@ -54,7 +74,12 @@
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
       "catalogVersion": "evaluation-2026.8",
-      "procedures": ["e3438f11-3c56-5a9f-bca1-917d509f7bd0", "0d428c07-8066-521c-9079-9bfbeafd4d06", "cc923913-1534-5a1f-adcd-6b9da2605f47", "3e738e39-751a-5e4d-adb9-8d26ee79fea0"],
+      "procedures": [
+        "e3438f11-3c56-5a9f-bca1-917d509f7bd0",
+        "0d428c07-8066-521c-9079-9bfbeafd4d06",
+        "cc923913-1534-5a1f-adcd-6b9da2605f47",
+        "3e738e39-751a-5e4d-adb9-8d26ee79fea0"
+      ],
       "report": "lengua-2-primer-bloque.md"
     },
     {
@@ -66,8 +91,105 @@
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
       "catalogVersion": "evaluation-2026.8",
-      "procedures": ["7775997a-1cd5-50f4-8c05-b3962e686240", "b7a8aadb-a86d-5c1c-83d3-6e05d84d19e3", "4122a1e7-9404-5b78-92cf-eaf89124a6a8", "9b706154-da02-5d8d-b641-7c7b6e9e8b4d"],
+      "procedures": [
+        "7775997a-1cd5-50f4-8c05-b3962e686240",
+        "b7a8aadb-a86d-5c1c-83d3-6e05d84d19e3",
+        "4122a1e7-9404-5b78-92cf-eaf89124a6a8",
+        "9b706154-da02-5d8d-b641-7c7b6e9e8b4d"
+      ],
       "report": "lengua-2-primer-bloque.md"
+    },
+    {
+      "id": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+      "implementation": "EXISTING_PENDING_REAUDIT",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "procedures": [
+        "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+        "1e8cd77f-d712-535e-b108-203a914fb39c",
+        "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+        "bfbe299c-6c2d-599b-88d3-d70b46524187",
+        "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+        "71c8091f-c16b-5568-a567-fefeeb6ab5a6"
+      ],
+      "report": "avance.md"
+    },
+    {
+      "id": "56301465-88e2-54cc-a5db-627c7266844c",
+      "implementation": "EXISTING_PENDING_REAUDIT",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "procedures": [
+        "833e9c25-f412-5ae4-97b0-ad42b238df99",
+        "6d928034-270a-5523-a99d-11285a2fa97f",
+        "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+        "8279a299-b455-5cde-a067-e4b6318a57ce",
+        "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+        "ca82323b-bfd6-5d20-a808-8056a89e048b",
+        "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+        "c48372c9-5df0-5a1d-b905-7de155ae1af8"
+      ],
+      "report": "avance.md"
+    },
+    {
+      "id": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+      "implementation": "EXISTING_PENDING_REAUDIT",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "procedures": [
+        "92a9d148-7590-5e13-a3f6-28094453c2a8",
+        "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+        "f539e8fd-f625-5294-96fb-285546e10b49",
+        "5b1e7ea8-a3e7-589a-9701-792813138f20",
+        "f44cf502-e335-5fcd-b2c1-d58e5c21b85c"
+      ],
+      "report": "avance.md"
+    },
+    {
+      "id": "74b33fad-b618-5157-9517-8e0165a2a333",
+      "implementation": "EXISTING_PENDING_REAUDIT",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "procedures": [
+        "e391ba43-d01f-56b5-969c-625e7c715d49",
+        "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+        "75ccb373-3eb0-5d30-af1f-714caffce54d"
+      ],
+      "report": "avance.md"
+    },
+    {
+      "id": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+      "implementation": "EXISTING_PENDING_REAUDIT",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "procedures": [
+        "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+        "caeca724-f16b-5730-be70-d3e671ae7840",
+        "caaa246b-f525-5292-8ed0-0fd2e8309566",
+        "28865ef6-91d3-5df9-b417-0a81f880732a"
+      ],
+      "report": "avance.md"
+    },
+    {
+      "id": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+      "implementation": "EXISTING_PENDING_REAUDIT",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "procedures": [
+        "385e0137-005c-5738-a4fb-123f43df0f51",
+        "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+        "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+        "6386112a-44b3-5b36-9416-1f31d2540550"
+      ],
+      "report": "avance.md"
+    }
+  ],
+  "sourceAnomalies": [
+    {
+      "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+      "pdfPage": 74,
+      "printedPage": 73,
+      "note": "Producción escrita menciona noticia bajo la página del caligrama. Se conserva en su ámbito original y no se asocia al caligrama ni se reasigna a otro grado sin evidencia adicional."
     }
   ]
 }

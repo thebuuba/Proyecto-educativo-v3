@@ -4,7 +4,7 @@
 
 Se incorporan cinco módulos específicos: guía turística, artículo expositivo, informe de lectura, cuento de amor y amistad y décima espinela. La noticia conserva su módulo anterior; su reauditoría no se da por terminada.
 
-Fuente: PDF aportado por el usuario, SHA256 registrado en `revision.json`. Se revisaron visualmente las tablas PDF 76–81 (impresas 75–80). Las asociaciones de los 23 procedimientos se registran mediante sus identificadores originales. No se enlazan competencias o indicadores por proximidad de columnas. La continuación de producción escrita de noticia que aparece en PDF 74 permanece como anomalía de extracción pendiente; no se reasigna silenciosamente a 2.º.
+Fuente: PDF aportado por el usuario, SHA256 registrado en `revision.json`. Se revisaron visualmente las tablas PDF 76–81 (impresas 75–80). Las asociaciones de los 24 procedimientos se registran mediante sus identificadores originales. No se enlazan competencias o indicadores por proximidad de columnas. La continuación de producción escrita de noticia que aparece en PDF 74 permanece como anomalía de extracción pendiente; no se reasigna silenciosamente a 2.º.
 
 | Tema | PDF / impresa | Adaptación revisada |
 |---|---|---|

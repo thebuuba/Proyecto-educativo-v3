@@ -1249,13 +1249,57 @@
               "sourceOrder": 691009
             }
           ],
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
+          "procedures": [
+            {
+              "id": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de noticias de interés mundial relacionadas con la naturaleza\ny el ambiente e identificación de su intención comunicativa.\nUtilización de la estructura de la noticia (titular, entrada o copete, cuerpo, foto\ny pie de foto) para comprender su contenido; uso de las interrogantes (qué\nocurrió, a quién le ocurrió, dónde ocurrió, cuándo ocurrió y cómo ocurrió)\npara comprenderla; realización de inferencias necesarias para comprender el\nsentido global del texto y del significado de las palabras que desconoce, a\npartir del contexto.",
+              "pdfPage": 69,
+              "printedPage": "68",
+              "sourceOrder": 692000
+            },
+            {
+              "id": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "text": "Producción oral (hablar)\nEscogencia de una noticia de interés mundial sobre la naturaleza y el\nambiente, teniendo en cuenta los elementos que convierten un hecho\nen noticia; establecimiento de la intención comunicativa de la noticia que\nproducirá oralmente.\nRelato de la noticia, tomando en cuenta su función, su estructura (titular,\nentrada y cuerpo) y las interrogantes que debe responder (qué ocurrió, a\nquién le ocurrió, dónde le ocurrió, cuándo le ocurrió y cómo ocurrió); uso\nde marcadores que expresen orden y temporalidad para organizar lógica\ny coherentemente la noticia; vocabulario temático (verbos y sustantivos);\nla entonación, el ritmo, las pausas y silencios, así como el tono (serio) que\ncaracterizan la noticia.",
+              "pdfPage": 69,
+              "printedPage": "68",
+              "sourceOrder": 692001
+            },
+            {
+              "id": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "text": "Comprensión escrita (leer)\nSelección de la modalidad de lectura (en voz alta, en silencio, individual,\ncompartida); anticipación del contenido del texto a partir de marcas\ntextuales y paratextuales; establecimiento del propósito para leer la noticia;\nidentificación de la intención comunicativa de la noticia que lee.\nLectura de la noticia para dar respuesta a las interrogantes propias del texto\n(qué ocurrió, a quién le ocurrió, dónde ocurrió, cuándo ocurrió y cómo\nocurrió); realización de inferencias mientras lee",
+              "pdfPage": 69,
+              "printedPage": "68",
+              "sourceOrder": 692002
+            },
+            {
+              "id": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "text": "para comprender la información fundamental de la noticia, así como el\nsignificado de palabras que desconoce a partir del contexto; paráfrasis de las\ninformaciones contenidas en las noticias leídas.",
+              "pdfPage": 70,
+              "printedPage": "69",
+              "sourceOrder": 702000
+            },
+            {
+              "id": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "text": "Producción escrita (escribir)\nSelección del acontecimiento para la noticia; documentación y búsqueda de\nla información necesaria para la noticia; establecimiento del público a quien va\ndirigida la noticia; elección de un titular llamativo para la noticia; presentación\nde la entrada de la noticia con un vocabulario y sintaxis sencillos; organización\nde la información, tomando en cuenta el orden de las interrogantes (qué,\na quién, dónde, cuándo, cómo); utilización del registro de lengua formal y\nestilo a la intención comunicativa y al público al que va dirigida la noticia;\nconectores de orden y temporales para lograr la cohesión de la noticia; los\nsignos convencionales de la escritura; revisión y corrección de los borradores\npor parte del/de la docente y los/las demás estudiantes.",
+              "pdfPage": 70,
+              "printedPage": "69",
+              "sourceOrder": 702001
+            },
+            {
+              "id": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "text": "Edición y publicación de la versión final de la noticia, a través de medios y\nrecursos tecnológicos o convencionales.",
+              "pdfPage": 70,
+              "printedPage": "69",
+              "sourceOrder": 702002
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "EXISTING_PENDING_REAUDIT",
           "automatedVerification": "NOT_RUN",
           "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "applicationVerification": "NOT_RUN",
+          "report": "avance.md"
         },
         {
           "id": "56301465-88e2-54cc-a5db-627c7266844c",
@@ -1353,13 +1397,71 @@
               "sourceOrder": 701012
             }
           ],
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
+          "procedures": [
+            {
+              "id": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de guías turísticas leídas por los/las compañeros/as;\nanticipación del sentido global del texto, a partir de la información gráfica\n(mapas, gráficos, dibujos o fotografías).",
+              "pdfPage": 70,
+              "printedPage": "69",
+              "sourceOrder": 702003
+            },
+            {
+              "id": "6d928034-270a-5523-a99d-11285a2fa97f",
+              "text": "Utilización de los verbos en presente de indicativo, para expresar cualidades\nde los lugares de interés de la comunidad; reconocimiento de la estructura\norganizacional del texto mediante la identificación de verbos en presente\nde indicativo, sustantivos y adjetivos; paráfrasis del sentido global de la guía\nturística utilizando adjetivos calificativos.\nProducción oral (hablar)",
+              "pdfPage": 70,
+              "printedPage": "69",
+              "sourceOrder": 702004
+            },
+            {
+              "id": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "text": "Establecimiento de la intención comunicativa del texto que va a producir\noralmente; elección de los lugares de mayor interés de la comunidad y su\nclasificación en: museos, plazas, bibliotecas, exposiciones, restaurantes,\nhoteles, salas de conciertos, cines, teatros y parques; recopilación de la\ninformación necesaria del lugar; delimitación del alcance de su guía: público,\ntema y diseño de presentación; empleo de mapas, gráficos o collage\nde fotografías para explicitar gráficamente el tema de la guía turística;\ndescripción topográfica para destacar aspectos sobresalientes de los lugares\nde su comunidad.",
+              "pdfPage": 70,
+              "printedPage": "69",
+              "sourceOrder": 702005
+            },
+            {
+              "id": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "text": "Utilización de sustantivos propios y comunes para nombrar lugares turísticos\nde la comunidad, y de los grados del adjetivo para describirlos; vocabulario\ny la intención comunicativa; utilización de verbos en presente del indicativo\npara expresar las cualidades de los lugares de interés de la comunidad;\nconectores espaciales y temporales.",
+              "pdfPage": 70,
+              "printedPage": "69",
+              "sourceOrder": 702006
+            },
+            {
+              "id": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "text": "Comprensión escrita (leer)\nEstablecimiento del propósito para la lectura de la guía turística; inferencia del\ncontenido de la guía turística a partir del título y otras marcas paratextuales\n(fotografías, mapas o gráficos); identificación de la intención comunicativa de\nla guía turística que lee en silencio y/o en voz alta; utilización de la estructura\nde la guía turística (portada, información, imágenes y cierre), los verbos\nen presente de indicativo, sustantivos propios, comunes y abstractos, los\nadjetivos, oraciones interrogativas y exclamativas, para comprender la guía\nturística que lee.",
+              "pdfPage": 71,
+              "printedPage": "70",
+              "sourceOrder": 712000
+            },
+            {
+              "id": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+              "text": "Clasificación de los lugares que aparecen en la guía leída; reconocimiento\nde la estructura organizacional del texto, mediante la identificación de los\nverbos en presente de indicativo, los sustantivos y adjetivos; reconstrucción\ndel sentido global del texto, utilizando recursos gráficos o tecnológicos.",
+              "pdfPage": 71,
+              "printedPage": "70",
+              "sourceOrder": 712001
+            },
+            {
+              "id": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir;\nselección de los lugares de mayor interés de la comunidad; clasificación de\nlos lugares seleccionados; definición de la estructura, registro y recursos de\nla guía turística; selección del soporte de la guía: físico (libro) o digital y la\ntecnología que va a utilizar para su elaboración; elaboración de los materiales\ngráficos que va a emplear en la guía (mapas, gráficos o collage de fotografías);\nutilización de la estructura (portada, información e imágenes y cierre), los\nverbos en presente de indicativo, sustantivos propios, comunes y abstractos,\nlos adjetivos, para producir la guía turística; vocabulario para producir la guía\nturística de acuerdo a la intención comunicativa; los signos convencionales\nde la escritura (comas, dos puntos, comillas, signos de interrogación y de\nexclamación).",
+              "pdfPage": 71,
+              "printedPage": "70",
+              "sourceOrder": 712002
+            },
+            {
+              "id": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "text": "Escritura de los primeros borradores tomando en cuenta las características\npreviamente establecidas; revisión con ayuda del/de la profesor/a y de\nsus compañeros/as, teniendo en cuenta el uso de los recursos del texto\ndescriptivo; edición y publicación de la guía turística en formato físico o digital\ny a través de medios convencionales y tecnológicos",
+              "pdfPage": 71,
+              "printedPage": "70",
+              "sourceOrder": 712003
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "EXISTING_PENDING_REAUDIT",
           "automatedVerification": "NOT_RUN",
           "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "applicationVerification": "NOT_RUN",
+          "report": "avance.md"
         },
         {
           "id": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
@@ -1422,13 +1524,50 @@
               "sourceOrder": 711007
             }
           ],
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
+          "procedures": [
+            {
+              "id": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de informes de lectura leídos por el/la docente o por sus\ncompañeros/as; anticipación del contenido a partir del título u otras marcas\ntextuales; inferencia de la intención comunicativa del análisis del informe de\nlectura que escucha; utilización de la estructura del informe de lectura para\ncomprender el análisis de los patrones socioculturales presentes en él.",
+              "pdfPage": 71,
+              "printedPage": "70",
+              "sourceOrder": 712004
+            },
+            {
+              "id": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "text": "Producción oral (hablar)\nSelección de un texto narrativo del ámbito literario (cuento, leyenda, fábula o\nnovela), sobre el cual hará la exposición del informe de lectura; establecimiento\nde la intención comunicativa que producirá oralmente; resumen del\ncontenido del texto seleccionado, presentando sus ideas principales a partir\nde las reglas de omisión, selección, generalización y reconstrucción; análisis\noral de los patrones socioculturales presentes en el texto seleccionado para\nproducir oralmente el informe de lectura.\nExposición oral del informe de lectura, presentando el análisis de los patrones\nsocioculturales observados en él.",
+              "pdfPage": 71,
+              "printedPage": "70",
+              "sourceOrder": 712005
+            },
+            {
+              "id": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura; anticipación del contenido del\ninforme de lectura a partir del título y otras marcas textuales y paratextuales.\nRealización de las inferencias necesarias para comprender el sentido global\ndel análisis que lee; utilización de la estructura de los verbos en presente y\npasado, los adjetivos, y los conectores para comprender el análisis presente en\nel informe que lee; evaluación de las predicciones realizadas antes y durante\nla lectura; paráfrasis del contenido del informe de lectura para comprender el\nanálisis de los patrones socioculturales presentes en él.",
+              "pdfPage": 72,
+              "printedPage": "71",
+              "sourceOrder": 722000
+            },
+            {
+              "id": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "text": "Producción escrita (escribir)\nSelección de un texto narrativo del ámbito literario (cuento, fábula, leyenda,\nnovela), sobre el cual producirá el informe de lectura; búsqueda de la\ninformación necesaria para la elaboración de un esquema de escritura\ndonde se organice de manera lógica la estructura del texto que producirá;\nelaboración del resumen del contenido del texto seleccionado, presentando\nlas ideas principales a partir de las reglas de omisión, selección, generalización\ny reconstrucción; análisis sociocultural del texto seleccionado; utilización del\nvocabulario de acuerdo a la intención comunicativa y al público receptor;\nutilización de los signos convencionales de la escritura (comas, dos puntos,\ncomillas, signos de interrogación y de exclamación); uso de adjetivos para\ndescribir y caracterizar los patrones socioculturales de los textos analizados,\nde verbos en presente y en pasado de indicativo y de conectores de adición\n(y, además, también) y de ejemplificación (por ejemplo, tal como); asignación\nde un título en función de su contenido.",
+              "pdfPage": 72,
+              "printedPage": "71",
+              "sourceOrder": 722001
+            },
+            {
+              "id": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "text": "Redacción de borradores, manuscritos y/o digitales, tomando en cuenta\nsu organización, la coherencia y la cohesión textual; revisión y corrección\nde los borradores con ayuda del/de la docente y de los compañeros y las\ncompañeras; edición y publicación del informe de lectura en soporte físico\no electrónico.",
+              "pdfPage": 72,
+              "printedPage": "71",
+              "sourceOrder": 722002
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "EXISTING_PENDING_REAUDIT",
           "automatedVerification": "NOT_RUN",
           "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "applicationVerification": "NOT_RUN",
+          "report": "avance.md"
         },
         {
           "id": "74b33fad-b618-5157-9517-8e0165a2a333",
@@ -1505,13 +1644,36 @@
               "sourceOrder": 721009
             }
           ],
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
+          "procedures": [
+            {
+              "id": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura del afiche; anticipación del\ncontenido del afiche a partir de los elementos gráficos que lo conforman:\nimágenes, tipos de letras, colores, distribución espacial de los componentes.\nComprensión de la intención a partir de las palabras claves para sugerir, atraer,\nmotivar o convencer; interpretación de los mensajes y recursos persuasivos\ndel afiche; realización de las inferencias necesarias para comprender el sentido\nglobal del afiche; paráfrasis del contenido global del afiche y recuerdo de la\ninformación importante que contiene.",
+              "pdfPage": 72,
+              "printedPage": "71",
+              "sourceOrder": 722003
+            },
+            {
+              "id": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la situación comunicativa del afiche: intención,\ndestinatarios/as, tiempo y lugar de acciones comunicativas; elección del tipo\nde actividad cuya participación motiva el afiche y de los datos de la misma\n(día y lugar de realización, público que asistirá, acciones que se van a realizar);\nplanificación de los componentes textual y visual, a partir de la actividad y\nlos datos seleccionados; uso del imperativo para mover a la acción como\nparte del componente textual del afiche; utilización de recursos poéticos\ny/o argumentativos para atraer al/ a la destinatario/a: exageración, metáfora,\nelipsis, pleonasmo, hechos, cifras estadísticas, ventajas.",
+              "pdfPage": 72,
+              "printedPage": "71",
+              "sourceOrder": 722004
+            },
+            {
+              "id": "75ccb373-3eb0-5d30-af1f-714caffce54d",
+              "text": "Selección de los elementos gráficos que completarán el afiche: imágenes,\nformas, colores, tipos de letras, organización espacial de los elementos\nlingüísticos, gráficos y tamaño del afiche.",
+              "pdfPage": 72,
+              "printedPage": "71",
+              "sourceOrder": 722005
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "EXISTING_PENDING_REAUDIT",
           "automatedVerification": "NOT_RUN",
           "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "applicationVerification": "NOT_RUN",
+          "report": "avance.md"
         },
         {
           "id": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
@@ -1588,13 +1750,43 @@
               "sourceOrder": 731009
             }
           ],
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
+          "procedures": [
+            {
+              "id": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de cuentos leídos por el/la profesor/a o grabados de la radio\no la televisión; reconocimiento de los personajes centrales y secundarios para\ncomprender las motivaciones que desencadenan las acciones; identificación\ndel ambiente en sus aspectos fundamentales: cerrado, abierto, campo, ciudad\npara establecer la relación e influencia respecto a los personajes; comprensión\ndel texto de manera global a partir de los tres momentos: inicio, nudo y\ndesenlace; reconocimiento de los elementos y la estructura propios de este\ntipo de texto; identificación de verbos en pretérito indefinido y pretérito\nimperfecto, adverbios de tiempo y espacio y conectores coordinantes y de\nconsecuencia para comprender con mayor claridad el texto narrado.\nResumen o paráfrasis de la historia contada, utilizando un vocabulario\napropiado e inclusivo.\nProducción oral (hablar)\nSelección de una trama con características policíacas para producir oralmente\nun cuento; establecimiento de la intención comunicativa (lúdica, despertar\ninterés) del cuento que producirá oralmente; utilización de conectores\ncoordinantes y de consecuencia para dar cohesión y sentido lógico al texto\nnarrado; adecuación del lenguaje corporal como soporte a la expresión oral;\nmatización del tono y volumen de voz, según la intervención de los distintos\npersonajes del cuento.",
+              "pdfPage": 73,
+              "printedPage": "72",
+              "sourceOrder": 732000
+            },
+            {
+              "id": "caeca724-f16b-5730-be70-d3e671ae7840",
+              "text": "Descripción del ambiente y de los personajes, utilizando adjetivos y\nun vocabulario apropiado e inclusivo; empleo de recursos lingüísticos\n(descripción, diálogo) y literarios (comparación, metáfora, epíteto…) para dar\nmayor expresividad a los sucesos que ocurren en la narración.",
+              "pdfPage": 73,
+              "printedPage": "72",
+              "sourceOrder": 732001
+            },
+            {
+              "id": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+              "text": "Comprensión escrita (leer)\nInferencia del contenido del cuento a partir del título y otras marcas\nparatextuales (imagen, color, gráficos, cubierta; utilización de la estructura\nnarrativa (inicio, nudo y desenlace) para comprender la narración;\nreconocimiento de los personajes (centrales y secundarios) a partir de sus\nacciones y apariciones; relación entre los personajes y el ambiente en el que\nse desenvuelven.\nIdentificación de los conectores coordinantes y de consecuencia para\nestablecer la coherencia y orden lógico entre las ideas; paráfrasis del sentido\nglobal del cuento policíaco, utilizando un vocabulario adecuado a este tipo\nde texto",
+              "pdfPage": 73,
+              "printedPage": "72",
+              "sourceOrder": 732002
+            },
+            {
+              "id": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "text": "Producción escrita (escribir)\nElección del tema o trama que abordará en el cuento; elaboración de un\nesquema secuencial que servirá de guion; utilización de conectores lógicos\nen la producción escrita; delimitación del perfil de cada personaje del cuento\nutilización de un vocabulario apropiado según la intención comunicativa,\nlos personajes que intervienen y el tema tratado; recreación del escenario o\nambiente en el que actuarán los personajes de la historia; empleo de recursos\nlingüísticos (descripción, diálogo) y literarios (comparación, metáfora,\nepíteto…), para dar mayor expresividad a los sucesos que ocurren en la\nnarración.\nEscritura de los borradores del cuento policíaco, tomando en cuenta la\nintención, los/las interlocutores/as, la estructura y el modo de organización;\nrevisión y corrección del cuento policíaco, tomando en cuenta las\nconvenciones de la escritura y las sugerencias de los/las compañeras/as y\ndel/de la profesor/a; ilustración del cuento para una mejor comprensión del\nmismo; edición final y publicación del cuento policíaco en forma impresa y\ndigital.",
+              "pdfPage": 73,
+              "printedPage": "72",
+              "sourceOrder": 732003
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "EXISTING_PENDING_REAUDIT",
           "automatedVerification": "NOT_RUN",
           "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "applicationVerification": "NOT_RUN",
+          "report": "avance.md"
         },
         {
           "id": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
@@ -1671,13 +1863,43 @@
               "sourceOrder": 741009
             }
           ],
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
+          "procedures": [
+            {
+              "id": "385e0137-005c-5738-a4fb-123f43df0f51",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de caligramas de poetas españoles/as, latinoamericanos/as\ncaribeños/as y dominicanos/as, acordes con la edad e intereses; reconocimiento\nde la intención comunicativa del autor y de los sentimientos que expresa;\nuso de la estructura del caligrama (texto poético que forma una figura alusiva\na lo que trata el poema), de la rima y de las figuras literarias (epíteto, anáfora,\ncomparación, personificación y metáfora) presentes para comprender sus\nsignificados explícitos e implícitos y disfrutar de las emociones que provoca el\npoema.",
+              "pdfPage": 74,
+              "printedPage": "73",
+              "sourceOrder": 742000
+            },
+            {
+              "id": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+              "text": "Paráfrasis oral del sentido global del caligrama, utilizando el vocabulario\nadecuado a este tipo de texto",
+              "pdfPage": 74,
+              "printedPage": "73",
+              "sourceOrder": 742001
+            },
+            {
+              "id": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+              "text": "Producción oral (hablar)\nSelección de caligramas de autores/as, acordes a la intención comunicativa que\nquiere expresar.\nVerbalización de figuras literarias (epíteto, anáfora, comparación, personificación\ny metáfora) de la rima y los versos del caligrama, usando la entonación y el\nlenguaje gestual, acordes a la intención comunicativa y a los sentimientos que\nse quieren expresar.\nComprensión escrita (leer)\nReconocimiento de la intención comunicativa del autor y de los\nsentimientos que expresa; uso de la estructura del caligrama (texto poético\nque forma una figura alusiva a lo que trata el poema), para comprender su\nsignificado.\nUtilización de la rima y el ritmo y las figuras literarias (epíteto, anáfora,\ncomparación, personificación y metáfora) presentes para comprender sus\nsignificados implícitos y disfrutar de las emociones que provoca.",
+              "pdfPage": 74,
+              "printedPage": "73",
+              "sourceOrder": 742002
+            },
+            {
+              "id": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del caligrama que va a Producir;\nselección del tema e imagen del caligrama; utilización de vocabulario\napropiado a su intención comunicativa y al tipo de sentimiento o emoción que\nquiere expresar; así como las figuras literarias: epíteto, anáfora, comparación,\npersonificación y metáfora.\nEscritura de borradores del caligrama atendiendo a su estructura, rima, figuras\nliterarias y vocabulario apropiado, para la intención comunicativa y el tipo de\nsentimiento o emoción que quiere expresar; revisión y corrección de borradores\ndel caligrama con ayuda del/de la docente y los compañeros y compañeras.\nEdición y publicación de caligramas en un mural, en un libro artesanal o en una\nrevista escolar.",
+              "pdfPage": 74,
+              "printedPage": "73",
+              "sourceOrder": 742003
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "EXISTING_PENDING_REAUDIT",
           "automatedVerification": "NOT_RUN",
           "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "applicationVerification": "NOT_RUN",
+          "report": "avance.md"
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
