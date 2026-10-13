@@ -12,6 +12,6 @@ Ejecución directa con systematic-debugging, TDD, ponytail y executing-plans; si
 - [x] Probar 4 formatos, pendiente, 15/20/17.35, títulos y acciones contrastadas, candidatos/completar/manual/concurrencia.
 - [x] Instalar release únicamente local, probar navegador real: generación, formatos, edición, añadir/completar, guardar/reabrir y snapshot.
 - [x] Backend test/build, frontend test/build, Cloudflare dry-run, inventario y diff check; revisión del cambio completo.
-- [ ] Informe con instrumento completo, límites, matriz parcial, commit/push y commit ejecutado.
+- [x] Informe con instrumento completo, límites, matriz parcial, commit/push y commit ejecutado.
 
 Decisiones: conservar la rama autorizada y el entorno local habitual. Los descriptores son adaptaciones evaluativas de la consigna, no citas ni cobertura curricular completa. No asociar referentes oficiales sin evidencia. La descripción prevalece; una presentación de un escrito sin modalidad oral explícita no obliga a exponer. No se modificarán formularios ni reglas de puntuación.

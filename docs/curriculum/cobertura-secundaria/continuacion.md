@@ -2,6 +2,8 @@
 
 ## Encargo vigente: corrección acotada de novela y contrato compartido (.19)
 
+Commit funcional **`54aaf4ff80d7ee483e30f8f06f0cf3a6ca86d911`**, publicado en `origin/amplia-instrumentos-secundaria` de `https://github.com/thebuuba/Proyecto-educativo-v3.git`. Entorno reiniciado con ese commit y `dirty=false` al arranque, frontend Vite 5173, API mediante proxy y Supabase local; catálogo `evaluation-2026.19`. La respuesta autenticada posterior al reinicio vuelve a producir los cinco criterios específicos. [Evidencia del código ejecutado](evidencias/entorno-catalogo19-ejecutado.json). El navegador se recargó y volvió a abrir la actividad exacta con las seis filas editadas. El commit posterior solo documenta esta comprobación; no cambia el código ejecutado.
+
 El adjunto 97cbd089 reemplaza la continuación global por esta corrección concreta. No ampliar ahora todo el currículo. [Informe completo](novela-5-contrato-tema-accion.md) e [instrumentos corregidos](novela-5-instrumentos-completos.md).
 
 Causa reproducida antes de corregir: Análisis correctamente detectado, pero plantillas genéricas de producción escrita y título interpolado. Contrato compartido distingue texto estudiado/producto entregado; proveedor de análisis de fragmento en Lengua 5.º, fallback coherente por acción para temas sin proveedor. Análisis frente a creación contrastado también en afiche/caligrama/noticia. Rúbrica automática pertinente; cuatro elecciones manuales previas a la descripción conservadas con servicio/503.
