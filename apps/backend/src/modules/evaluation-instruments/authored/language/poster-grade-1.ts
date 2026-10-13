@@ -1,8 +1,9 @@
 import { normalize } from '../../curriculum-context'
+import { withoutResources } from '@aula/shared'
 import type { AuthoredCriterion } from './types'
 
 function posterTopic(title: string, description: string) {
-  const text = normalize(`${title} ${description}`)
+  const text = normalize(`${title} ${withoutResources(description)}`)
   if (/agua/.test(text)) return 'el cuidado y ahorro del agua'
   if (/convivencia escolar/.test(text)) return 'la convivencia escolar'
   if (/cuidado del entorno|cuidar el entorno/.test(text)) return 'el cuidado del entorno'
@@ -11,7 +12,7 @@ function posterTopic(title: string, description: string) {
 }
 
 export function posterCriteria(activityType: string, title: string, description: string): AuthoredCriterion[] {
-  const text = normalize(description)
+  const text = normalize(withoutResources(description))
   const topic = posterTopic(title, description)
   const visualsRequested = /imagen|imagenes|elementos visuales|forma|color|tipo de letra/.test(text)
   if (activityType === 'POSTER_ANALYSIS') return [

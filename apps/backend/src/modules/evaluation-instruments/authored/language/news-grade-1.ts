@@ -6,7 +6,7 @@ export function newsCriteria(activityType: string, _description: string): Author
     { templateId: 'news-structure', title: 'Estructura y preguntas de la noticia', observable: 'Comunica un titular y desarrolla qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.', weight: 5 },
     { templateId: 'news-sequence', title: 'Organización del noticiero', observable: 'Ordena las noticias y enlaza las intervenciones con una secuencia clara para la audiencia.', weight: 3 },
     { templateId: 'news-oral', title: 'Claridad de la comunicación oral', observable: 'Expone con dicción, ritmo, entonación y volumen comprensibles.', weight: 4 },
-    { templateId: 'news-individual', title: 'Dominio individual de la noticia asignada', observable: 'Explica su noticia con seguridad y responde por su propio desempeño dentro de la presentación del equipo.', weight: 3 },
+    { templateId: 'news-individual', title: 'Dominio individual de la noticia asignada', observable: 'Explica la información de su noticia y permite reconocer su aportación dentro de la presentación del equipo.', weight: 3 },
   ]
   if (['NEWS_ANALYSIS', 'ANALYSIS', 'OBSERVATION'].includes(activityType)) return [
     { templateId: 'news-purpose', title: 'Identificación de la función de la noticia', observable: 'Reconoce el propósito informativo y el hecho que convierte el texto en noticia.', weight: 4 },

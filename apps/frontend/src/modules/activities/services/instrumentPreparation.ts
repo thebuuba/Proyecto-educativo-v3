@@ -1,6 +1,6 @@
 import type { InstrumentRecommendation } from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
-import { editableSecondaryTopicRecommendation, findSecondaryLanguageTopic } from '@aula/shared'
+import { editableSecondaryTopicRecommendation, findSecondaryLanguageTopic, withoutResources } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
 export type ActivityInterpretation = {
@@ -31,7 +31,7 @@ export function preparationFingerprint(input: { name: string; description: strin
 export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: 1 | 2 }): InstrumentRecommendation {
   const topic = input.secondaryLanguageGrade ? findSecondaryLanguageTopic(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: input.secondaryLanguageGrade, subjectCode: 'LEN' }) : null
   if (topic) return editableSecondaryTopicRecommendation(topic, input)
-  const text = `${input.activityTitle} ${input.description ?? ''}`.toLocaleLowerCase('es-DO')
+  const text = `${input.activityTitle} ${withoutResources(input.description ?? '')}`.toLocaleLowerCase('es-DO')
   const news = /noticia|noticiero/.test(text)
   const touristGuide = /gu[ií]a tur[ií]stica/.test(text)
   const poster = /afiche/.test(text)
@@ -202,7 +202,7 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
     ['Estructura de la noticia', 'Comunica un titular y desarrolla qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.'],
     ['Organización del noticiero', 'Ordena las noticias y las intervenciones en una secuencia clara.'],
     ['Comunicación oral', 'Presenta con dicción, ritmo, entonación y volumen comprensibles.'],
-    ['Dominio individual', 'Explica su noticia con seguridad dentro de la presentación del equipo.'],
+    ['Dominio individual', 'Explica la información de su noticia y permite reconocer su aportación dentro de la presentación del equipo.'],
   ] : news ? [
     ['Información esencial', 'Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.'],
     ['Titular, entrada y cuerpo', 'Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo desarrollado.'],

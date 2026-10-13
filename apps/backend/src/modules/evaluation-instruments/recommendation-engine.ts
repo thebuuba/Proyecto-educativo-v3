@@ -6,7 +6,7 @@ import { readingReportCriteria } from './authored/language/reading-report-grade-
 import { detectiveStoryCriteria } from './authored/language/detective-story-grade-1'
 import { calligramCriteria } from './authored/language/calligram-grade-1'
 import type { AuthoredCriterion } from './authored/language/types'
-import { distributeScoreUnits, findSecondaryLanguageTopic, secondaryTopicCriteria } from '@aula/shared'
+import { distributeScoreUnits, findSecondaryLanguageTopic, secondaryTopicCriteria, withoutResources } from '@aula/shared'
 import { detectSecondaryLanguageActivity, firstSecondaryLanguageTechnique, INSTRUMENT_MAX_CRITERIA, type CurriculumReference, type InstrumentRecommendation, type RecommendationCriterion } from '@aula/shared'
 export { detectFirstSecondaryLanguageActivity, detectSecondaryLanguageActivity } from '@aula/shared'
 import { type EvaluationCatalog, evaluationCatalogCurrent } from './catalog-current'
@@ -47,14 +47,19 @@ const blockTerms: Record<string, string> = { b1: 'comunica comunicacion oral esc
 const boilerplate = tokens('actividad exposición presentación oral experimento experimentación práctica laboratorio producción escrita resolución problemas ejercicios artística observación clasificación estudiantes estudiante realizar mediante sobre tema')
 export function topicTerms(title: string, description = '') {
   const fromTitle = tokens(title).filter(t => !boilerplate.includes(t) && !/^\d+$/.test(t))
-  const fromDescription = tokens(description).filter(t => !boilerplate.includes(t) && !/^\d+$/.test(t))
+  const fromDescription = tokens(withoutResources(description)).filter(t => !boilerplate.includes(t) && !/^\d+$/.test(t))
   return fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
 }
 export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogCurrent, contextualTypes = true) {
   const find = (value: string, descriptionMode = false) => {
     const text = normalize(value)
     const words = tokens(text)
-    const matched = (trigger: string) => text.includes(normalize(trigger)) || tokens(trigger).every(part => words.some(word => similarToken(word, part)))
+    const matched = (trigger: string) => {
+      const normalizedTrigger = normalize(trigger)
+      const infinitiveRoot = normalizedTrigger.match(/^([a-z]+)(?:ar|er|ir)$/)?.[1]
+      return text.includes(normalizedTrigger) || tokens(trigger).every(part => words.some(word => similarToken(word, part)))
+        || Boolean(descriptionMode && infinitiveRoot && new RegExp(`\\b${infinitiveRoot}[a-z]*\\b`).test(text))
+    }
     return catalog.activityTypes.filter(a => (contextualTypes || !/^(?:NEWS|TOURIST_GUIDE|READING_REPORT|POSTER|DETECTIVE_STORY|CALLIGRAM)/.test(a.id))
       && (!a.id.startsWith('NEWS_') || /noticia|noticiero/.test(text))
       && (!a.id.startsWith('TOURIST_GUIDE_') || /guias? turisticas?/.test(text)) && a.triggers.some(matched)
@@ -73,7 +78,7 @@ export function detectActivityType(title: string, description: string, catalog: 
   }
   // The description normally expresses the task the student will perform. The title
   // is supporting context and may only name the topic (for example, "La noticia").
-  return find(description, true) ?? find(title) ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
+  return find(withoutResources(description), true) ?? find(title) ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
 }
 export function rankCurriculum(title: string, description: string, activityType: string, competencyBlock: string | undefined,
   scope: ScopeCandidate | null, elements: RankedElement[], catalog: EvaluationCatalog = evaluationCatalogCurrent) {
@@ -188,7 +193,7 @@ export function suggestedSelections(activityType: string, context: AcademicConte
 
 export function recommend(input: RecommendationInput, context: AcademicContext | null, scope: ScopeCandidate | null,
   elements: RankedElement[], mappingStatus: string, curriculumStatus: string | null, catalog: EvaluationCatalog = evaluationCatalogCurrent): InstrumentRecommendation {
-  const text = normalize(`${input.activityTitle} ${input.description ?? ''}`)
+  const text = normalize(`${input.activityTitle} ${withoutResources(input.description ?? '')}`)
   const explicit = input.pedagogicalActivityType ? catalog.activityTypes.find(a => a.id === input.pedagogicalActivityType) : undefined
   if (input.pedagogicalActivityType && !explicit) throw new Error('Tipo pedagógico desconocido.')
   const scopedType = detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', context)

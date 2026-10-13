@@ -1,4 +1,4 @@
-import { normalize } from '../../curriculum-context'
+import { normalizedTask } from '@aula/shared'
 import type { AuthoredCriterion } from './types'
 
 function requestedPlaceCount(text: string) {
@@ -7,7 +7,7 @@ function requestedPlaceCount(text: string) {
 }
 
 export function touristGuideCriteria(activityType: string, description: string): AuthoredCriterion[] {
-  const text = normalize(description)
+  const text = normalizedTask(description)
   const count = requestedPlaceCount(text)
   const placeScope = count ? `${count} lugares solicitados` : 'los lugares seleccionados'
   const graphicsRequested = /imagen|foto|mapa|grafico|dibujo|collage|recurso visual/.test(text)

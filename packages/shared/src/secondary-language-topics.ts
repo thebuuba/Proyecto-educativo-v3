@@ -4,7 +4,7 @@ export { secondaryLanguageGradeTwoTopics } from './secondary-topics/language/gra
 export type { SecondaryLanguageTopic, TopicDimension, TopicTaskMode } from './secondary-topic-types'
 
 const normalized = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
-const withoutResources = (value: string) => value.replace(/(?:recursos?\s*:|(?:con apoyo de|como recurso|con la ayuda de)\s+)[^.;]*/gi, '')
+export const withoutResources = (value: string) => value.replace(/(?:recursos?\s*:|(?:con apoyo de|como recurso|con la ayuda de)\s+)[^.;]*/gi, '')
 export const normalizedTask = (value: string) => normalized(withoutResources(value))
 export type SecondaryTopicContext = { level: string; grade: number; subjectCode: string; optativeExitName?: string | null }
 export function findSecondaryLanguageTopic(title: string, description: string, context: SecondaryTopicContext | null) {

@@ -1,4 +1,4 @@
-import { normalize } from '../../curriculum-context'
+import { normalizedTask as normalize } from '@aula/shared'
 import type { AuthoredCriterion } from './types'
 
 export function readingReportCriteria(activityType: string, description: string): AuthoredCriterion[] {

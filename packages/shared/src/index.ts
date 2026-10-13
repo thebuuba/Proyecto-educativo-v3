@@ -11,7 +11,7 @@ export * from './instrument-definition'
 export * from './secondary-language-topics'
 export * from './secondary-topic-criteria'
 export * from './secondary-topic-recommendation'
-import { detectTopicActivity, findSecondaryLanguageTopic } from './secondary-language-topics'
+import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask } from './secondary-language-topics'
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
 
 /** Deterministic classification shared by the service and its local editable fallback. */
@@ -21,7 +21,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
   if (context?.level !== 'SECONDARY' || ![1, 2].includes(context.grade) || context.subjectCode.toUpperCase() !== 'LEN') return null
   const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
   const titleText = normalize(title)
-  const task = normalize(description)
+  const task = normalizedTask(description)
   const both = `${titleText} ${task}`
   const module = context.grade === 2 ? /noticias?|noticiero/.test(both) ? 'NEWS' : null
     : /informe(?:s)? de lectura/.test(both) ? 'READING_REPORT'
