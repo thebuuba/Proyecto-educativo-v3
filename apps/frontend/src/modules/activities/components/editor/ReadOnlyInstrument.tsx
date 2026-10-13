@@ -53,7 +53,9 @@ export function ReadOnlyInstrument({
               <tr key={criterion.id ?? index}>
                 <td className="border-b border-border p-3">
                   <strong>{criterion.title}</strong>
-                  <p className="mt-1 text-xs text-muted-foreground">{criterion.description}</p>
+                  {criterion.description.trim() !== criterion.title.trim() ? (
+                    <p className="mt-1 text-xs text-muted-foreground">{criterion.description}</p>
+                  ) : null}
                 </td>
                 {configuration.levels.map((level, levelIndex) => (
                   <td key={levelIndex} className="border-b border-border p-3 text-center">

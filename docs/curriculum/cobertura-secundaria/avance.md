@@ -8,6 +8,8 @@ Actualización .11: noticia de Lengua 1.º con proveedor compartido y progresion
 
 Actualización .12: guía turística 1.º con proveedor compartido, cinco familias, plurales, resolución de género consistente y distinción entre analizar/explicar/presentar («presentes» no es presentar). 80 propuestas en servicio normal; ponderada manual de 17,35 guardada y reabierta, con evidencia de Parcial y mapa/fotografías como alternativas. Backend 1.044 / frontend 611 y builds backend/frontend/Cloudflare aprobados. [Informe y pendientes](guia-1-reauditoria.md). Buckets locales confirmados. Se conserva la descripción original de trigonometría; su implementación permanece pendiente. Próximo tema: informe de lectura 1.º, seguido del alcance completo.
 
+Actualización .13: informe de lectura 1.º con proveedor compartido, cuatro familias, personajes/sociocultural/interpretación según requisitos, conclusión solicitada y progresiones específicas. 64 propuestas HTTP normales; escala manual de 17,35 guardada/reabierta, snapshot .13 y personajes confirmados. Visor sin texto repetido cuando título/descripción coinciden. Backend 1.078 / frontend 617 / inventario seis / arranque dos; builds backend/frontend/Cloudflare aprobados. Una ejecución frontend tuvo timeout bajo carga; caso aislado y suite completa con dos workers pasaron sin ampliar timeouts. [Informe y pendientes](informe-lectura-1-reauditoria.md). Próximo tema: afiche 1.º, seguido de cuento policíaco/caligrama y del alcance completo; ninguna asignatura se declara completa.
+
 ## Fuente y base
 
 - Rama: `amplia-instrumentos-secundaria`, basada en `1d3a99b24d19b819f24a58d678592662c13edd1a` (flujo restaurado).

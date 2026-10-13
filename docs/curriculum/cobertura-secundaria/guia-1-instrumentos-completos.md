@@ -1,6 +1,6 @@
-# Gu?a tur?stica de primero: instrumentos completos (.12)
+# Guía turística de primero: instrumentos completos (.12)
 
-Adaptaciones de Aula Base, no instrumentos oficiales del MINERD. [80 propuestas completas](evidencias/guia-1-servicio-normal.json): cinco familias, cuatro formatos, 20/17,35 y t?tulos original/neutral.
+Adaptaciones de Aula Base, no instrumentos oficiales del MINERD. [80 propuestas completas](evidencias/guia-1-servicio-normal.json): cinco familias, cuatro formatos, 20/17,35 y títulos original/neutral.
 
 ## rubrica ? 20 puntos
 
@@ -88,4 +88,4 @@ S?: evidencia presente; No: evidencia ausente.
 - **Revisión de la versión final (3 pts)**: Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.
 - **Información visual de los lugares (3 pts)**: Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.
 
-Cumple: 100%; Parcial: 50% seg?n la evidencia indicada en cada fila; No cumple: 0%.
+Cumple: 100%; Parcial: 50% según la evidencia indicada en cada fila; No cumple: 0%.

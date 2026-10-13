@@ -1267,7 +1267,7 @@
           ],
           "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_96_CASES",
           "interfaceVerification": "NORMAL_BROWSER_RUBRIC_SAVE_REOPEN_PASSED",
-          "pending": "Verificar navegador de otros tres formatos y subtemas gramaticales, sin?nimos, siglas y requisitos muy focalizados; no equivale a completar Lengua 1.?.",
+          "pending": "Verificar navegador de otros tres formatos y subtemas gramaticales, sinónimos, siglas y requisitos muy focalizados; no equivale a completar Lengua 1.º.",
           "procedures": [
             {
               "id": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
@@ -1428,7 +1428,7 @@
           ],
           "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_80_CASES",
           "interfaceVerification": "NORMAL_BROWSER_WEIGHTED_SAVE_REOPEN_PASSED",
-          "pending": "Verificar otros tres formatos en navegador; ampliar an?lisis focalizado, gram?tica y solicitudes de varios medios visuales. No equivale a completar Lengua 1.?.",
+          "pending": "Verificar otros tres formatos en navegador; ampliar análisis focalizado, gramática y solicitudes de varios medios visuales. No equivale a completar Lengua 1.º.",
           "procedures": [
             {
               "id": "833e9c25-f412-5ae4-97b0-ad42b238df99",
@@ -1559,11 +1559,16 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_64_CASES",
+          "interfaceVerification": "NORMAL_BROWSER_SCALE_SAVE_REOPEN_PASSED",
+          "pending": "Completar análisis muy focalizado, requisitos gramaticales y revisión de borradores solicitada; verificar otros tres formatos en navegador. No equivale a completar Lengua 1.º.",
           "procedures": [
             {
               "id": "92a9d148-7590-5e13-a3f6-28094453c2a8",
@@ -1603,11 +1608,12 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "EXISTING_PENDING_REAUDIT",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN",
-          "report": "avance.md"
+          "implementation": "PARTIAL_READING_REPORT_CORE_FOUR_ACTIVITY_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_71_72_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_HTTP_AND_BROWSER_SCALE_PASSED",
+          "report": "informe-lectura-1-reauditoria.md",
+          "catalogVersion": "evaluation-2026.13"
         },
         {
           "id": "74b33fad-b618-5157-9517-8e0165a2a333",

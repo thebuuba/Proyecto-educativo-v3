@@ -4,6 +4,7 @@ import { editableAuthoredRecommendation, editableSecondaryTopicRecommendation, f
 import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType, type InstrumentAcademicContext } from '@aula/shared'
 import { firstGradeNewsCriteria, detectSecondaryLanguageActivity, isFirstGradeNewsActivity } from '@aula/shared'
 import { firstGradeGuideCriteria, isFirstGradeGuideActivity, firstSecondaryLanguageGenre } from '@aula/shared'
+import { firstGradeReadingReportCriteria } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
 export type ActivityInterpretation = {
@@ -55,6 +56,10 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   }
   const poster = input.activityType !== 'REPORT' && (input.secondaryLanguageGrade === 1 ? firstGenre === 'POSTER' : /afiche/.test(text))
   const readingReport = input.secondaryLanguageGrade === 1 ? firstGenre === 'READING_REPORT' : /informe de lectura/.test(text)
+  if (readingReport && input.secondaryLanguageGrade === 1) {
+    const activity = input.activityType ?? detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) ?? 'READING_REPORT_WRITING'
+    return editableAuthoredRecommendation(firstGradeReadingReportCriteria(activity, input.description ?? ''), input, activity, 'lengua-secundaria-1-informe-de-lectura')
+  }
   const detectiveStory = input.activityType !== 'REPORT' && (input.secondaryLanguageGrade === 1 ? firstGenre === 'DETECTIVE_STORY' : /cuento (?:polic[ií]aco|detectivesco)/.test(text) && !readingReport)
   const calligram = input.activityType !== 'REPORT' && (input.secondaryLanguageGrade === 1 ? firstGenre === 'CALLIGRAM' : /caligrama/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text))
   const writingReport = input.activityType ? input.activityType === 'READING_REPORT_WRITING' : readingReport && /(?:redact|escrib|elabor|produc|cre)[a-záéíóú]*\s+(?:(?:un|el|su)\s+)?informe de lectura/.test(text)

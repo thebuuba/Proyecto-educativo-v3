@@ -190,7 +190,7 @@
       "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_96_CASES",
       "interfaceVerification": "NORMAL_BROWSER_RUBRIC_SAVE_REOPEN_PASSED",
       "catalogVersion": "evaluation-2026.11",
-      "pending": "Verificar navegador de otros tres formatos y subtemas gramaticales, sin?nimos, siglas y requisitos muy focalizados; no equivale a completar Lengua 1.?."
+      "pending": "Verificar navegador de otros tres formatos y subtemas gramaticales, sinónimos, siglas y requisitos muy focalizados; no equivale a completar Lengua 1.º."
     },
     {
       "id": "56301465-88e2-54cc-a5db-627c7266844c",
@@ -221,11 +221,11 @@
       "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_80_CASES",
       "interfaceVerification": "NORMAL_BROWSER_WEIGHTED_SAVE_REOPEN_PASSED",
       "catalogVersion": "evaluation-2026.12",
-      "pending": "Verificar otros tres formatos en navegador; ampliar an?lisis focalizado, gram?tica y solicitudes de varios medios visuales. No equivale a completar Lengua 1.?."
+      "pending": "Verificar otros tres formatos en navegador; ampliar análisis focalizado, gramática y solicitudes de varios medios visuales. No equivale a completar Lengua 1.º."
     },
     {
       "id": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
-      "implementation": "EXISTING_PENDING_REAUDIT",
+      "implementation": "PARTIAL_READING_REPORT_CORE_FOUR_ACTIVITY_FAMILIES",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -235,7 +235,21 @@
         "5b1e7ea8-a3e7-589a-9701-792813138f20",
         "f44cf502-e335-5fcd-b2c1-d58e5c21b85c"
       ],
-      "report": "avance.md"
+      "report": "informe-lectura-1-reauditoria.md",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_71_72_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_HTTP_AND_BROWSER_SCALE_PASSED",
+      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_64_CASES",
+      "interfaceVerification": "NORMAL_BROWSER_SCALE_SAVE_REOPEN_PASSED",
+      "catalogVersion": "evaluation-2026.13",
+      "pending": "Completar análisis muy focalizado, requisitos gramaticales y revisión de borradores solicitada; verificar otros tres formatos en navegador. No equivale a completar Lengua 1.º."
     },
     {
       "id": "74b33fad-b618-5157-9517-8e0165a2a333",

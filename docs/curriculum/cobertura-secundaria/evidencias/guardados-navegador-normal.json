@@ -2,11 +2,11 @@
   "health": {
     "status": "ok",
     "development": {
-      "commit": "82488d15fb9da7a33809609f0635c06e937771ea",
+      "commit": "f9d59c37a7c998b895b6a3d54277eb7b7c33abd4",
       "dirty": true,
-      "startedAt": "2026-10-13T13:35:48.625Z",
+      "startedAt": "2026-10-13T14:59:17.190Z",
       "supabaseOrigin": "http://127.0.0.1:54321",
-      "catalogVersion": "evaluation-2026.12"
+      "catalogVersion": "evaluation-2026.13"
     }
   },
   "authentication": "PASSWORD_LOGIN_REAL",
@@ -1159,6 +1159,351 @@
         "lista-ponderada:meta:scoreWeights": "[377,377,302,227,226,226]",
         "lista-ponderada:meta:criteriaCount": "6",
         "lista-ponderada:meta:catalogVersion": "evaluation-2026.12"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "174c32cd-3d7e-49a4-aaa3-7e43c1863170",
+      "name": "Informe de lectura · QA personajes",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes leerán un cuento y redactarán un informe de lectura con introducción, resumen de las ideas principales, análisis de los personajes y conclusión personal. Relacionarán sus interpretaciones con ejemplos del texto leído y cuidarán la claridad de la versión final.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "4c373af7-e00c-4427-a9f2-c2b8ead9c516",
+      "instrumentSnapshotId": "90bc5887-75e4-4649-a88f-4d514fd66c56",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-summary:0",
+            "title": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+            "maxScore": 3.77,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-summary",
+            "description": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+            "descriptors": [
+              {
+                "text": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+                "levelId": "L4",
+                "scoreUnits": 377
+              },
+              {
+                "text": "El resumen conserva las ideas principales; omite un detalle secundario.",
+                "levelId": "L3",
+                "scoreUnits": 251
+              },
+              {
+                "text": "Recupera hechos o ideas aislados, pero omite relaciones necesarias para comprender el texto.",
+                "levelId": "L2",
+                "scoreUnits": 126
+              },
+              {
+                "text": "No presenta una síntesis reconocible del texto leído.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 377,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-analysis:1",
+            "title": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+            "maxScore": 3.77,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-analysis",
+            "description": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+            "descriptors": [
+              {
+                "text": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+                "levelId": "L4",
+                "scoreUnits": 377
+              },
+              {
+                "text": "Relaciona acciones y motivaciones de los personajes con ejemplos del texto; una relación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 251
+              },
+              {
+                "text": "Describe personajes o menciona sus acciones sin relacionarlos con sus motivaciones ni con ejemplos del texto.",
+                "levelId": "L2",
+                "scoreUnits": 126
+              },
+              {
+                "text": "No aporta una interpretación sobre las acciones o motivaciones de los personajes.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 377,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-structure:2",
+            "title": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+            "maxScore": 3.02,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-structure",
+            "description": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+            "descriptors": [
+              {
+                "text": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+                "levelId": "L4",
+                "scoreUnits": 302
+              },
+              {
+                "text": "Las partes del informe son reconocibles; una sección necesita desarrollo.",
+                "levelId": "L3",
+                "scoreUnits": 201
+              },
+              {
+                "text": "El resumen o análisis se presentan, pero faltan partes necesarias para relacionarlos.",
+                "levelId": "L2",
+                "scoreUnits": 101
+              },
+              {
+                "text": "No organiza un informe de lectura reconocible.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 302,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-coherence:3",
+            "title": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+            "maxScore": 2.27,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-coherence",
+            "description": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+            "descriptors": [
+              {
+                "text": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+                "levelId": "L4",
+                "scoreUnits": 227
+              },
+              {
+                "text": "La relación entre resumen y análisis se comprende; un enlace necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 151
+              },
+              {
+                "text": "Presenta ideas aisladas y los conectores no aclaran su relación.",
+                "levelId": "L2",
+                "scoreUnits": 76
+              },
+              {
+                "text": "No se reconoce una relación comprensible entre las ideas del informe.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 227,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-revision:4",
+            "title": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+            "maxScore": 2.26,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-revision",
+            "description": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+            "descriptors": [
+              {
+                "text": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+                "levelId": "L4",
+                "scoreUnits": 226
+              },
+              {
+                "text": "La versión final permite comprender el informe, con errores menores.",
+                "levelId": "L3",
+                "scoreUnits": 151
+              },
+              {
+                "text": "Conserva problemas de claridad, puntuación u ortografía que dificultan algunos pasajes.",
+                "levelId": "L2",
+                "scoreUnits": 75
+              },
+              {
+                "text": "La versión final no permite comprender el contenido del informe.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 226,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-conclusion:5",
+            "title": "Formula una conclusión o interpretación personal coherente con el texto y la sustenta mediante el análisis realizado.",
+            "maxScore": 2.26,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-conclusion",
+            "description": "Formula una conclusión o interpretación personal coherente con el texto y la sustenta mediante el análisis realizado.",
+            "descriptors": [
+              {
+                "text": "La conclusión se apoya en ideas y ejemplos del texto leído.",
+                "levelId": "L4",
+                "scoreUnits": 226
+              },
+              {
+                "text": "La conclusión retoma la interpretación; una relación con el análisis necesita desarrollo.",
+                "levelId": "L3",
+                "scoreUnits": 151
+              },
+              {
+                "text": "Propone una opinión sobre el texto sin relacionarla con los ejemplos analizados.",
+                "levelId": "L2",
+                "scoreUnits": 75
+              },
+              {
+                "text": "No presenta una conclusión relacionada con el texto leído.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 226,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "Se requiere contexto estructurado y versión disponible."
+          ],
+          "mappingStatus": "NO_PUBLISHED_VERSION",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": null,
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.13",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": null,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "READING_REPORT_WRITING",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para Informe de lectura · QA personajes",
+        "escala:points:0": "3.77",
+        "escala:points:1": "3.77",
+        "escala:points:2": "3.02",
+        "escala:points:3": "2.27",
+        "escala:points:4": "2.26",
+        "escala:points:5": "2.26",
+        "escala:criterion:0": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+        "escala:criterion:1": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+        "escala:criterion:2": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+        "escala:criterion:3": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+        "escala:criterion:4": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+        "escala:criterion:5": "Formula una conclusión o interpretación personal coherente con el texto y la sustenta mediante el análisis realizado.",
+        "escala:level-name:1": "Inicial",
+        "escala:level-name:2": "En proceso",
+        "escala:level-name:3": "Logrado",
+        "escala:level-name:4": "Destacado",
+        "escala:description:0": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+        "escala:description:1": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+        "escala:description:2": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+        "escala:description:3": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+        "escala:description:4": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+        "escala:description:5": "Formula una conclusión o interpretación personal coherente con el texto y la sustenta mediante el análisis realizado.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.13:fallback:report-summary:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.13:fallback:report-analysis:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.13:fallback:report-structure:2",
+        "escala:criterion-id:3": "proposal:evaluation-2026.13:fallback:report-coherence:3",
+        "escala:criterion-id:4": "proposal:evaluation-2026.13:fallback:report-revision:4",
+        "escala:criterion-id:5": "proposal:evaluation-2026.13:fallback:report-conclusion:5",
+        "escala:descriptor:0:1": "No presenta una síntesis reconocible del texto leído.",
+        "escala:descriptor:0:2": "Recupera hechos o ideas aislados, pero omite relaciones necesarias para comprender el texto.",
+        "escala:descriptor:0:3": "El resumen conserva las ideas principales; omite un detalle secundario.",
+        "escala:descriptor:0:4": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+        "escala:descriptor:1:1": "No aporta una interpretación sobre las acciones o motivaciones de los personajes.",
+        "escala:descriptor:1:2": "Describe personajes o menciona sus acciones sin relacionarlos con sus motivaciones ni con ejemplos del texto.",
+        "escala:descriptor:1:3": "Relaciona acciones y motivaciones de los personajes con ejemplos del texto; una relación necesita precisión.",
+        "escala:descriptor:1:4": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+        "escala:descriptor:2:1": "No organiza un informe de lectura reconocible.",
+        "escala:descriptor:2:2": "El resumen o análisis se presentan, pero faltan partes necesarias para relacionarlos.",
+        "escala:descriptor:2:3": "Las partes del informe son reconocibles; una sección necesita desarrollo.",
+        "escala:descriptor:2:4": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+        "escala:descriptor:3:1": "No se reconoce una relación comprensible entre las ideas del informe.",
+        "escala:descriptor:3:2": "Presenta ideas aisladas y los conectores no aclaran su relación.",
+        "escala:descriptor:3:3": "La relación entre resumen y análisis se comprende; un enlace necesita precisión.",
+        "escala:descriptor:3:4": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+        "escala:descriptor:4:1": "La versión final no permite comprender el contenido del informe.",
+        "escala:descriptor:4:2": "Conserva problemas de claridad, puntuación u ortografía que dificultan algunos pasajes.",
+        "escala:descriptor:4:3": "La versión final permite comprender el informe, con errores menores.",
+        "escala:descriptor:4:4": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+        "escala:descriptor:5:1": "No presenta una conclusión relacionada con el texto leído.",
+        "escala:descriptor:5:2": "Propone una opinión sobre el texto sin relacionarla con los ejemplos analizados.",
+        "escala:descriptor:5:3": "La conclusión retoma la interpretación; una relación con el análisis necesita desarrollo.",
+        "escala:descriptor:5:4": "La conclusión se apoya en ideas y ejemplos del texto leído.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[377,377,302,227,226,226]",
+        "escala:meta:criteriaCount": "6",
+        "escala:meta:catalogVersion": "evaluation-2026.13",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
       },
       "evaluationTechnique": "analisis-producciones",
       "resources": [],

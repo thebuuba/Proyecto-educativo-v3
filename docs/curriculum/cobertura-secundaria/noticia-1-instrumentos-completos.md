@@ -1,6 +1,6 @@
 # La noticia de primero: ejemplos completos (.11)
 
-Adaptaciones evaluativas de Aula Base, no instrumentos oficiales del MINERD. T?tulo original o neutral produce la misma evidencia. Los 96 instrumentos ?ntegros, con ambas puntuaciones y t?tulos, est?n en [la evidencia de servicio](evidencias/noticia-1-servicio-normal.json).
+Adaptaciones evaluativas de Aula Base, no instrumentos oficiales del MINERD. Título original o neutral produce la misma evidencia. Los 96 instrumentos íntegros, con ambas puntuaciones y títulos, están en [la evidencia de servicio](evidencias/noticia-1-servicio-normal.json).
 
 ## rubrica ? 20 puntos
 
@@ -76,4 +76,4 @@ S?: evidencia presente; No: evidencia ausente.
 - **Lenguaje periodístico (3 pts)**: Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado. Parcial (50%): El vocabulario o los tiempos verbales vuelven ambigua parte de la información.
 - **Revisión de la versión escrita (3 pts)**: Revisa puntuación, ortografía y claridad antes de presentar la versión final. Parcial (50%): Corrige algunos errores, pero conserva problemas de puntuación u ortografía que dificultan pasajes.
 
-Cumple: 100%; Parcial: 50% seg?n la evidencia indicada en cada fila; No cumple: 0%.
+Cumple: 100%; Parcial: 50% según la evidencia indicada en cada fila; No cumple: 0%.

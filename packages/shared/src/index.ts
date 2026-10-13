@@ -175,6 +175,7 @@ export type GradeRecordStatus = (typeof GradeRecordStatusEnum)[keyof typeof Grad
 export { firstGradeNewsCriteria, firstGradeNewsModule, isFirstGradeNewsActivity } from './secondary-news-grade-one'
 export { formatAuthoredCriteria } from './authored-instrument-format'
 export { firstGradeGuideCriteria, firstGradeGuideModule, isFirstGradeGuideActivity } from './secondary-guide-grade-one'
+export { firstGradeReadingReportCriteria, firstGradeReadingReportModule } from './secondary-reading-report-grade-one'
 export type EntityStatus = 'active' | 'inactive'
 
 export function splitFullName(fullName: string, lastNameFallback = 'Sin apellido') {
