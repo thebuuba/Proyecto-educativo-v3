@@ -1,5 +1,15 @@
 # Continuación del encargo completo
 
+## Bloque más reciente: composición y filas (.14)
+
+El encargo adicional del 13/10/2026 se trabaja en `docs/superpowers/plans/2026-10-13-composicion-y-criterios.md`. Se corrigieron título concatenado, candidatos genéricos adicionales, selección de tema frente a título incompatible, identidad/procedencia y completar solo campos vacíos de una fila. Los cuatro editores tienen la acción en el menú; quinto nivel con progresión y confirmación; sexto sin fundamento queda manual. La adición usa el peso relativo cuando está disponible y protege puntuaciones manuales.
+
+Matrices 5.º y control original de trigonometría 6.º usan proveedor compartido en servicio y alternativa. La consigna trigonométrica retoma contenidos de 5.º: no se reasigna currículo ni se atribuyen referencias oficiales de 6.º. Catálogo `evaluation-2026.14`, .13 archivado sin modificar releases anteriores. [Informe completo, causas, límites y archivos](composicion-y-filas.md).
+
+Verificación: backend 1.094 / frontend 638 / inventario siete; builds backend/frontend y Cloudflare dry-run aprobados. `node scripts/evaluation-instruments/verify-math-normal-local.mjs`: 32 instrumentos, candidato adicional y 23 controles cruzados. `verify-math-browser-saves-local.mjs`: seis actividades guardadas/reabiertas desde navegador, textos manuales, IDs, plantilla, peso relativo y totales exactos; cinco snapshots históricos intactos. No se eliminan las evidencias anteriores.
+
+Continuar automáticamente después de publicar este bloque: afiche Lengua 1.º, cuento policíaco/caligrama, pendientes de los tres núcleos y luego el orden de `avance.md`. La cobertura completa sigue abierta. Los errores HTTP 429 durante repeticiones se resolvieron respetando el intervalo, sin desactivar límites.
+
 Último bloque: entorno normal local y núcleos de noticia, guía turística e informe de lectura de Lengua Española 1.º (13/10/2026). No equivale a cobertura completa de secundaria.
 
 Rama: `amplia-instrumentos-secundaria`; entorno publicado en `1b9cf5c44595ac5ac36f31a76d38b6ab9d26d9ea`; noticia/formato en `82488d15fb9da7a33809609f0635c06e937771ea`; guía en `f9d59c37a7c998b895b6a3d54277eb7b7c33abd4`. Catálogo instalado: `evaluation-2026.13`; releases anteriores conservados. Currículo secundario local: `d98f8201-3cac-5da6-b855-38f7bb8c8011`, DRAFT; no se publica ni modifica su texto oficial.

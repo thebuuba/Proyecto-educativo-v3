@@ -1,5 +1,9 @@
 # Avance durable — cobertura secundaria
 
+## Bloque .14: composición y edición por fila
+
+Corrección compartida del título concatenado, candidatos genéricos adicionales, identidad/procedencia y completar únicamente campos vacíos de una fila. Progresión de quinto nivel con confirmación; seis niveles sin evidencia permanecen manuales. Adición con el peso relativo del candidato. Matrices 5.º y control original de trigonometría 6.º conectados al mismo proveedor del servicio/alternativa. Se registró la discrepancia de fuente de 5.º para la consigna trigonométrica de 6.º. Servicio normal: 32 propuestas matemáticas y un candidato extra solicitado. Navegador: cuatro instrumentos de matrices, ponderada automática de trigonometría y un sexto control del peso relativo, guardados/reabiertos, con ediciones conservadas; cinco snapshots históricos intactos. Backend 1.094 / frontend 638 / inventario siete. [Informe y límites](composicion-y-filas.md). Ninguna asignatura completa; siguiente afiche 1.º.
+
 ## Continuación actual: entorno normal local
 
 El 13/10/2026 se sustituyeron los procesos de desarrollo antiguos, tras identificar sus comandos y puertos, por frontend 5173/API 3000 coherentes con Supabase local 54321/54332. `.env` remotos conservados. Arranque `pnpm dev:local`; docente ficticio y 54 asignaciones comunes mediante `pnpm dev:local:seed`. Login real, generación, guardado y reapertura de células y Ohm comprobados en navegador; 32 propuestas HTTP específicas a través del proxy normal. Detalles, evidencias y siguiente módulo en [continuacion.md](continuacion.md). Este bloque no completa cobertura curricular. Pendiente nuevo hallazgo: significado específico de Parcial en lista ponderada.

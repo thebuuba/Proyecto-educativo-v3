@@ -5,6 +5,7 @@ import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType
 import { firstGradeNewsCriteria, detectSecondaryLanguageActivity, isFirstGradeNewsActivity } from '@aula/shared'
 import { firstGradeGuideCriteria, isFirstGradeGuideActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { firstGradeReadingReportCriteria } from '@aula/shared'
+import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
 export type ActivityInterpretation = {
@@ -32,7 +33,10 @@ export function preparationFingerprint(input: { name: string; description: strin
   return JSON.stringify([input.name, input.description, input.pedagogicalActivityType, input.activityType, input.instrumentType, input.selectedCurriculumElementIds ?? []])
 }
 
-export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: 1 | 2; academicContext?: InstrumentAcademicContext | null }): InstrumentRecommendation {
+export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: 1 | 2; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
+  const math = findSecondaryMathTopic(input.activityTitle, input.description ?? '', input.academicContext)
+  const mathCriteria = math ? secondaryMathCriteria(math, input.description ?? '').filter(row=>input.includeAdditionalCandidates || !row.templateId.endsWith('-verification')) : []
+  if (math && mathCriteria.length) return editableAuthoredRecommendation(mathCriteria,input,input.activityType || 'PROBLEM_SOLVING',`math-${math}-${input.academicContext?.grade}`)
   const science = findSecondaryScienceTopic(input.activityTitle, input.description ?? '', input.academicContext)
   const scienceCriteria = science ? secondaryScienceCriteria(science, input.description ?? '', input.instrumentType) : []
   if (science && scienceCriteria.length) return editableAuthoredRecommendation(scienceCriteria, input,
@@ -292,6 +296,9 @@ export function recommendationToFields(proposal: InstrumentRecommendation, activ
   if (type === 'lista-ponderada') fields['lista-ponderada:meta:partial'] = 'true'
   for (const [index, criterion] of proposal.criteria.entries()) {
     fields[`${type}:criterion-id:${index}`] = criterion.id
+    fields[`${type}:criterion-template:${index}`] = criterion.templateId
+    if (criterion.relativeWeight) fields[`${type}:criterion-weight:${index}`] = String(criterion.relativeWeight)
+    if (criterion.progressionLevels) fields[`${type}:criterion-evidence:${index}`] = JSON.stringify({title:criterion.title,description:criterion.description,progression:criterion.progressionLevels})
     fields[`${type}:criterion:${index}`] = criterion.title
     fields[`${type}:description:${index}`] = criterion.description
     fields[`${type}:points:${index}`] = String(criterion.maxScoreUnits / 100)
@@ -333,6 +340,7 @@ export function alignRecommendationWithFields(proposal: InstrumentRecommendation
     const edited = !prior || prior.title !== criterion.title || prior.description !== criterion.description
       || ((type === 'rubrica' || type === 'escala') && descriptors.some((descriptor, levelIndex) => descriptor.text !== prior.descriptors[levelIndex]?.text))
     return { id: prior?.id ?? criterion.id ?? `teacher:${index}`, templateId: prior?.templateId ?? 'teacher',
+      ...(prior?.relativeWeight ? {relativeWeight:prior.relativeWeight} : {}),
       title: criterion.title, description: criterion.description, maxScore: units / 100, maxScoreUnits: units,
       sourceType: edited ? 'ACTIVITY_TEMPLATE' as const : prior.sourceType,
       sourceReferences: edited ? [] : prior.sourceReferences, descriptors }

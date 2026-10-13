@@ -1,0 +1,957 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "14a3e4eb58efe49a250c223969848b93ec03e9dc",
+      "dirty": true,
+      "startedAt": "2026-10-13T18:58:23.912Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.14"
+    }
+  },
+  "regressions": [
+    {
+      "fixture": "incompatible-6-NAT-FIS",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "lista-ponderada",
+        "confidence": "HIGH",
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "30945ae6-1caa-53b3-a1b0-5b1d6341b275",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+            "type": "PROCEDURE",
+            "text": "• Electricidad: corriente, resistencia, Ley de Ohm, potencia\neléctrica, fuerza electromotriz, circuitos eléctricos,\nresistencias en serie y paralelo, sus aplicaciones (P1 hasta\nP6).",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 321,
+                "printedPage": "320"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-content:0",
+            "templateId": "science-content",
+            "title": "Comprensión de densidad",
+            "description": "Explica las ideas principales de densidad.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-accuracy:1",
+            "templateId": "science-accuracy",
+            "title": "Precisión científica sobre densidad",
+            "description": "Usa los términos científicos con precisión.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:01b2fa59-0542-551c-95df-8e3ffc4873ed:instructions:2",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 2,
+            "maxScoreUnits": 200,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "math-process",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "30945ae6-1caa-53b3-a1b0-5b1d6341b275",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "04cb79f3-7e0d-514d-8d23-e7de9cb4ddcc",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "13081ea1-c530-512d-bf3e-c03a0bcf0c8a",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "13ed44cc-3c51-5439-a969-34db3b547f92",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5ce0fa35-2187-5988-8273-91204cb851e3",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8af85fdd-e184-5a7b-8329-39fef1cdfc2a",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e11f3dd2-b5b6-53f4-aa21-52a02ed69bef",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "fixture": "incompatible-1-LEN",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "rubrica",
+        "confidence": "HIGH",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nSelección de un texto narrativo del ámbito literario (cuento, fábula, leyenda,\nnovela), sobre el cual producirá el informe de lectura; búsqueda de la\ninformación necesaria para la elaboración de un esquema de escritura\ndonde se organice de manera lógica la estructura del texto que producirá;\nelaboración del resumen del contenido del texto seleccionado, presentando\nlas ideas principales a partir de las reglas de omisión, selección, generalización\ny reconstrucción; análisis sociocultural del texto seleccionado; utilización del\nvocabulario de acuerdo a la intención comunicativa y al público receptor;\nutilización de los signos convencionales de la escritura (comas, dos puntos,\ncomillas, signos de interrogación y de exclamación); uso de adjetivos para\ndescribir y caracterizar los patrones socioculturales de los textos analizados,\nde verbos en presente y en pasado de indicativo y de conectores de adición\n(y, además, también) y de ejemplificación (por ejemplo, tal como); asignación\nde un título en función de su contenido.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 72,
+                "printedPage": "71"
+              }
+            ]
+          },
+          {
+            "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nSelección de un texto narrativo del ámbito literario (cuento, leyenda, fábula o\nnovela), sobre el cual hará la exposición del informe de lectura; establecimiento\nde la intención comunicativa que producirá oralmente; resumen del\ncontenido del texto seleccionado, presentando sus ideas principales a partir\nde las reglas de omisión, selección, generalización y reconstrucción; análisis\noral de los patrones socioculturales presentes en el texto seleccionado para\nproducir oralmente el informe de lectura.\nExposición oral del informe de lectura, presentando el análisis de los patrones\nsocioculturales observados en él.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 71,
+                "printedPage": "70"
+              }
+            ]
+          },
+          {
+            "elementId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "CONCEPT",
+            "text": "El informe de lectura",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 71,
+                "printedPage": "70"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Información de dos lugares solicitados",
+            "description": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta información reconocible de los lugares de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.14:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Estructura de la guía turística",
+            "description": "Organiza la guía con portada, información y cierre.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía con portada, información y cierre.",
+              "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+              "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+              "La organización confunde las partes de la guía y dificulta localizar los lugares.",
+              "No presenta una estructura reconocible de guía turística."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la guía con portada, información y cierre.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una estructura reconocible de guía turística.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.14:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Descripción y orientación al visitante",
+            "description": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+              "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+              "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+              "El vocabulario o las formas verbales alteran las características de los lugares.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "No describe características que orienten al visitante sobre los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.14:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-organization:3",
+            "templateId": "guide-organization",
+            "title": "Organización y claridad",
+            "description": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+            "maxScore": 3,
+            "maxScoreUnits": 300,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+              "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+              "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+              "La distribución sitúa datos bajo lugares equivocados.",
+              "La información no permite reconocer una secuencia de orientación para el visitante."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+                "scoreUnits": 300
+              },
+              {
+                "levelId": "L3",
+                "text": "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L2",
+                "text": "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                "scoreUnits": 100
+              },
+              {
+                "levelId": "L1",
+                "text": "La información no permite reconocer una secuencia de orientación para el visitante.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.14:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-revision:4",
+            "templateId": "guide-revision",
+            "title": "Revisión de la versión final",
+            "description": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital.",
+            "maxScore": 3,
+            "maxScoreUnits": 300,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital.",
+              "La revisión corrige la mayoría de los problemas de lectura de la guía.",
+              "Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+              "La versión conserva errores que cambian datos importantes de los lugares.",
+              "La versión presentada no permite leer información comprensible de los lugares."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital.",
+                "scoreUnits": 300
+              },
+              {
+                "levelId": "L3",
+                "text": "La revisión corrige la mayoría de los problemas de lectura de la guía.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L2",
+                "text": "Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+                "scoreUnits": 100
+              },
+              {
+                "levelId": "L1",
+                "text": "La versión presentada no permite leer información comprensible de los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "score": 117,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "score": 115,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "score": 72,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "score": 62,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+              "score": 60,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=1/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "fixture": "incompatible-2-LEN",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "rubrica",
+        "confidence": "HIGH",
+        "activityType": "REPORT",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Comprensión escrita (leer)\nEstablecimiento del propósito para la lectura de la guía turística; inferencia del contenido\nde la misma a partir del título y otras marcas paratextuales (fotografías, mapas o gráficos);\nutilización de la estructura de la guía turística (portada, información, imágenes y cierre),\nlos verbos en presente del indicativo, sustantivos propios, comunes y abstractos, los\nadjetivos, oraciones interrogativas y exclamativas para comprender la guía turística que\nlee.\nClasificación de los lugares que aparecen en la guía leída en: provincias, monumentos,\nríos, playas y lugares turísticos; identificación de la secuencia textual descriptiva y sus\ncaracterísticas; reconociendo la estructura, la función, el registro y el soporte; así como la\nreconstrucción del sentido global del texto, utilizando recursos gráficos o tecnológicos.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nelección de los lugares turísticos más importantes del país y su clasificación: provincias,\nmonumentos, ríos, playas y lugares turísticos; recopilación de la información necesaria\ndel lugar; paquetes turísticos, excursiones, reservas, etc.) utilizando fuentes bibliográficas\ny recursos tecnológicos; delimitación del alcance de la guía turística: público, tema y\ndiseño de presentación; empleo de mapas, gráficos o collage de fotografías para explicitar\ngráficamente el tema de la guía turística; empleo de la descripción topográfica para\ndestacar aspectos sobresalientes del lugar seleccionado del país.\nUtilización de verbos en presente del indicativo para expresar las cualidades de ese lugar\ndel país; así como conectores especiales y temporales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "CONCEPT",
+            "text": "La guía turística",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-informe-de-lectura-summary:0",
+            "templateId": "len-2-informe-de-lectura-summary",
+            "title": "Resumen del texto leído",
+            "description": "Selecciona y resume las ideas principales del texto leído sin alterar su sentido.",
+            "maxScore": 5.56,
+            "maxScoreUnits": 556,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona y resume las ideas principales del texto leído sin alterar su sentido.",
+              "Se conserva el sentido del texto, aunque un detalle secundario ocupa espacio innecesario.",
+              "Se recogen fragmentos aislados sin reconstruir el sentido global.",
+              "El resumen altera un hecho o una relación fundamental del texto.",
+              "No se presenta evidencia de las ideas del texto leído."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona y resume las ideas principales del texto leído sin alterar su sentido.",
+                "scoreUnits": 556
+              },
+              {
+                "levelId": "L3",
+                "text": "Se conserva el sentido del texto, aunque un detalle secundario ocupa espacio innecesario.",
+                "scoreUnits": 371
+              },
+              {
+                "levelId": "L2",
+                "text": "Se recogen fragmentos aislados sin reconstruir el sentido global.",
+                "scoreUnits": 185
+              },
+              {
+                "levelId": "L1",
+                "text": "No se presenta evidencia de las ideas del texto leído.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.14:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-informe-de-lectura-analysis:1",
+            "templateId": "len-2-informe-de-lectura-analysis",
+            "title": "Análisis sustentado del texto",
+            "description": "Explica los temas del texto leído y sustenta el análisis con ejemplos pertinentes.",
+            "maxScore": 5.56,
+            "maxScoreUnits": 556,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica los temas del texto leído y sustenta el análisis con ejemplos pertinentes.",
+              "Se explica un tema con ejemplos pertinentes, aunque una interpretación necesita apoyo.",
+              "Se repite el argumento del texto sin desarrollar una interpretación.",
+              "La interpretación contradice el texto o utiliza ejemplos ajenos.",
+              "No se evidencia un análisis del texto leído."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica los temas del texto leído y sustenta el análisis con ejemplos pertinentes.",
+                "scoreUnits": 556
+              },
+              {
+                "levelId": "L3",
+                "text": "Se explica un tema con ejemplos pertinentes, aunque una interpretación necesita apoyo.",
+                "scoreUnits": 371
+              },
+              {
+                "levelId": "L2",
+                "text": "Se repite el argumento del texto sin desarrollar una interpretación.",
+                "scoreUnits": 185
+              },
+              {
+                "levelId": "L1",
+                "text": "No se evidencia un análisis del texto leído.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.14:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-informe-de-lectura-structure:2",
+            "templateId": "len-2-informe-de-lectura-structure",
+            "title": "Estructura del informe de lectura",
+            "description": "Organiza introducción, desarrollo y conclusión del informe en torno al texto leído.",
+            "maxScore": 4.44,
+            "maxScoreUnits": 444,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza introducción, desarrollo y conclusión del informe en torno al texto leído.",
+              "Las partes son reconocibles, aunque la conclusión no retoma una idea del desarrollo.",
+              "Se reconocen partes aisladas sin una secuencia completa del informe.",
+              "Se confunden resumen, análisis y conclusión o se mezclan sus funciones.",
+              "No se evidencia una estructura reconocible del informe."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza introducción, desarrollo y conclusión del informe en torno al texto leído.",
+                "scoreUnits": 444
+              },
+              {
+                "levelId": "L3",
+                "text": "Las partes son reconocibles, aunque la conclusión no retoma una idea del desarrollo.",
+                "scoreUnits": 296
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen partes aisladas sin una secuencia completa del informe.",
+                "scoreUnits": 148
+              },
+              {
+                "levelId": "L1",
+                "text": "No se evidencia una estructura reconocible del informe.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.14:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-informe-de-lectura-paragraphs:3",
+            "templateId": "len-2-informe-de-lectura-paragraphs",
+            "title": "Oración temática y cohesión del informe",
+            "description": "Desarrolla cada párrafo del informe a partir de una oración temática y apoyos relacionados.",
+            "maxScore": 4.44,
+            "maxScoreUnits": 444,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Desarrolla cada párrafo del informe a partir de una oración temática y apoyos relacionados.",
+              "Los párrafos mantienen una idea central, aunque un apoyo no se conecta claramente.",
+              "Se agrupan ideas sin una oración temática o sin apoyos relacionados.",
+              "Los apoyos contradicen la idea central del párrafo.",
+              "No hay evidencia de relación entre idea central y desarrollo del párrafo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla cada párrafo del informe a partir de una oración temática y apoyos relacionados.",
+                "scoreUnits": 444
+              },
+              {
+                "levelId": "L3",
+                "text": "Los párrafos mantienen una idea central, aunque un apoyo no se conecta claramente.",
+                "scoreUnits": 296
+              },
+              {
+                "levelId": "L2",
+                "text": "Se agrupan ideas sin una oración temática o sin apoyos relacionados.",
+                "scoreUnits": 148
+              },
+              {
+                "levelId": "L1",
+                "text": "No hay evidencia de relación entre idea central y desarrollo del párrafo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-2-informe-de-lectura",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "score": 114,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "score": 112,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+              "score": 110,
+              "topicCoverage": 1,
+              "reasons": [
+                "topicTokens=2/2",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ]
+}

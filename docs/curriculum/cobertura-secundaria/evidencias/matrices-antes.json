@@ -1,0 +1,238 @@
+{
+  "input": {
+    "sectionSubjectId": "27e9dbd7-029c-441e-80cd-86c012ee2774",
+    "activityTitle": "Aplicamos las matrices para organizar y resolver problemas cotidianos",
+    "description": "Los estudiantes resolverán situaciones prácticas relacionadas con la organización de datos mediante matrices. A partir de ejemplos de ventas de productos, cantidades y precios, construirán matrices y realizarán operaciones de suma, resta y multiplicación, según corresponda. Finalmente, explicarán los procedimientos utilizados e interpretarán los resultados, demostrando cómo las matrices facilitan la organización de información y la resolución de problemas de la vida cotidiana",
+    "participationMode": "INDIVIDUAL",
+    "maxScore": 20,
+    "preferredInstrumentType": "rubrica"
+  },
+  "status": 200,
+  "response": {
+    "success": true,
+    "data": {
+      "kind": "RECOMMENDATION",
+      "catalogVersion": "evaluation-2026.13",
+      "instrumentType": "rubrica",
+      "confidence": "LOW",
+      "activityType": "PROBLEM_SOLVING",
+      "evidenceTypes": [
+        "PERFORMANCE",
+        "KNOWLEDGE"
+      ],
+      "participationMode": "INDIVIDUAL",
+      "curriculumVersionId": null,
+      "curriculumScopeId": null,
+      "selectedCurriculumElements": [],
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.13:fallback:math-procedure:0",
+          "templateId": "math-procedure",
+          "title": "Procedimiento matemático",
+          "description": "Selecciona y aplica un procedimiento adecuado al problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Selecciona y aplica un procedimiento adecuado al problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; mantiene el desempeño durante toda la actividad de forma autónoma.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y aplica un procedimiento adecuado al problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; cubre los aspectos principales sin errores relevantes.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Selecciona y aplica un procedimiento adecuado al problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos solo en parte; necesita apoyo para completar la evidencia.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta evidencia suficiente para valorar procedimiento matemático.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.13:fallback:math-comprehension:1",
+          "templateId": "math-comprehension",
+          "title": "Comprensión del problema",
+          "description": "Identifica datos, condiciones y la pregunta del problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Identifica datos, condiciones y la pregunta del problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; abarca todos los aspectos indicados y establece relaciones correctas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica datos, condiciones y la pregunta del problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; cubre los aspectos principales sin errores relevantes.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica datos, condiciones y la pregunta del problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos solo en parte; necesita apoyo para completar la evidencia.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta evidencia suficiente para valorar comprensión del problema.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.13:fallback:math-interpretation:2",
+          "templateId": "math-interpretation",
+          "title": "Interpretación",
+          "description": "Interpreta y comprueba la respuesta en el contexto del problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Interpreta y comprueba la respuesta en el contexto del problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; mantiene el desempeño durante toda la actividad de forma autónoma.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Interpreta y comprueba la respuesta en el contexto del problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; cubre los aspectos principales sin errores relevantes.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Interpreta y comprueba la respuesta en el contexto del problema al abordar aplicamos las matrices para organizar y resolver problemas cotidianos solo en parte; necesita apoyo para completar la evidencia.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta evidencia suficiente para valorar interpretación.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.13:fallback:math-reasoning:3",
+          "templateId": "math-reasoning",
+          "title": "Razonamiento y justificación",
+          "description": "Justifica la estrategia y relaciona los pasos con los datos al abordar aplicamos las matrices para organizar y resolver problemas cotidianos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Justifica la estrategia y relaciona los pasos con los datos al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; mantiene el desempeño durante toda la actividad de forma autónoma.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Justifica la estrategia y relaciona los pasos con los datos al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; cubre los aspectos principales sin errores relevantes.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Justifica la estrategia y relaciona los pasos con los datos al abordar aplicamos las matrices para organizar y resolver problemas cotidianos solo en parte; necesita apoyo para completar la evidencia.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta evidencia suficiente para valorar razonamiento y justificación.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.13:fallback:math-accuracy:4",
+          "templateId": "math-accuracy",
+          "title": "Exactitud",
+          "description": "Realiza los cálculos y usa las unidades con precisión al abordar aplicamos las matrices para organizar y resolver problemas cotidianos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Realiza los cálculos y usa las unidades con precisión al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; mantiene el desempeño durante toda la actividad de forma autónoma.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Realiza los cálculos y usa las unidades con precisión al abordar aplicamos las matrices para organizar y resolver problemas cotidianos; cubre los aspectos principales sin errores relevantes.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Realiza los cálculos y usa las unidades con precisión al abordar aplicamos las matrices para organizar y resolver problemas cotidianos solo en parte; necesita apoyo para completar la evidencia.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta evidencia suficiente para valorar exactitud.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "id": "L4",
+          "label": "Destacado",
+          "proportion": 1
+        },
+        {
+          "id": "L3",
+          "label": "Logrado",
+          "proportion": 0.6666666666666666
+        },
+        {
+          "id": "L2",
+          "label": "En proceso",
+          "proportion": 0.3333333333333333
+        },
+        {
+          "id": "L1",
+          "label": "Inicial",
+          "proportion": 0
+        }
+      ],
+      "totalScore": 20,
+      "totalScoreUnits": 2000,
+      "scoreUnit": 0.01,
+      "internalTrace": {
+        "mappingStatus": "NO_PUBLISHED_VERSION",
+        "reasons": [
+          "band=SECONDARY",
+          "discipline=math",
+          "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+          "Se requiere contexto estructurado y versión disponible."
+        ],
+        "ruleId": "math-process:TEACHER_OVERRIDE",
+        "activityTypeOrigin": "DETECTED",
+        "ranking": [],
+        "curriculumStatus": null,
+        "lowCurriculumConfidence": true,
+        "consideredTypes": [
+          "SPECIFIC_COMPETENCY",
+          "EVALUATION_CRITERION",
+          "ACHIEVEMENT_INDICATOR",
+          "CONCEPT",
+          "PROCEDURE",
+          "ATTITUDE_VALUE"
+        ]
+      }
+    }
+  }
+}

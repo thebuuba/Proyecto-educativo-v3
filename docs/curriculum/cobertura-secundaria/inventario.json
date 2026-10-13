@@ -35031,11 +35031,16 @@
       ],
       "inventoryStatus": "INVENTARIADO",
       "extractionStatus": "EXTRAÍDO",
-      "engineConnection": "PENDING",
-      "instrumentFormats": [],
-      "serviceVerification": "NOT_RUN",
-      "interfaceVerification": "NOT_RUN",
-      "pending": "Revisar temas y cobertura evaluativa del ámbito.",
+      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_32_CASES_PASSED",
+      "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "pending": "Solo nucleo de matrices; conicas, vectores y trigonometria de quinto pendientes.",
       "elements": {
         "CONCEPT": [
           {
@@ -35541,18 +35546,40 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
+          "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_32_CASES_PASSED",
+          "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Vectores, tipos, determinantes e inversa pendientes. Solo operaciones, datos, justificacion e interpretacion de la consigna.",
+          "procedures": [
+            {
+              "id": "b22f2e75-7004-5b6a-b1c2-98496b3e53ba",
+              "text": "• Operaciones con matrices.",
+              "pdfPage": 231,
+              "printedPage": "230",
+              "sourceOrder": 2312005
+            },
+            {
+              "id": "dc506264-93a2-5903-beca-eb1fd8c766a8",
+              "text": "• Resolución de problemas del contexto que impliquen\nvectores y matrices.",
+              "pdfPage": 231,
+              "printedPage": "230",
+              "sourceOrder": 2312006
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_MATRICES_CONTEXTUAL_OPERATIONS",
+          "automatedVerification": "PASSED",
           "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "applicationVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "report": "composicion-y-filas.md",
+          "catalogVersion": "evaluation-2026.14"
         },
         {
           "id": "42773611-4831-5842-be4b-f22456150b1f",
@@ -35597,10 +35624,12 @@
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PENDING",
-      "automatedVerification": "NOT_RUN",
+      "implementation": "PARTIAL_MATRICES_ONLY",
+      "automatedVerification": "PASSED",
       "manualVerification": "NOT_RUN",
-      "applicationVerification": "NOT_RUN"
+      "applicationVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "report": "composicion-y-filas.md",
+      "catalogVersion": "evaluation-2026.14"
     },
     {
       "id": "f1d980b5-b339-5fdd-b5a9-4f34a037359f",
@@ -35619,11 +35648,16 @@
       ],
       "inventoryStatus": "INVENTARIADO",
       "extractionStatus": "EXTRAÍDO",
-      "engineConnection": "PENDING",
-      "instrumentFormats": [],
-      "serviceVerification": "NOT_RUN",
-      "interfaceVerification": "NOT_RUN",
-      "pending": "Revisar temas y cobertura evaluativa del ámbito.",
+      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_32_CASES_PASSED",
+      "interfaceVerification": "NORMAL_BROWSER_WEIGHTED_SAVE_REOPEN_PASSED",
+      "pending": "Control de alturas/distancias de sexto adaptado a la consigna; fuente de contenidos basicos en quinto, PDF 231-232. Curriculo propio de sexto y tres formatos en navegador pendientes.",
       "elements": {
         "CONCEPT": [
           {
@@ -36194,10 +36228,12 @@
       },
       "topics": [],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PENDING",
-      "automatedVerification": "NOT_RUN",
+      "implementation": "PARTIAL_TEACHER_TASK_ADAPTATION_SOURCE_GRADE5",
+      "automatedVerification": "PASSED",
       "manualVerification": "NOT_RUN",
-      "applicationVerification": "NOT_RUN"
+      "applicationVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "report": "composicion-y-filas.md",
+      "catalogVersion": "evaluation-2026.14"
     },
     {
       "id": "be0adcd8-e2a0-5f4a-b169-b33213257c85",

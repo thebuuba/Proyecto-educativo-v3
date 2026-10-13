@@ -33,6 +33,22 @@ beforeEach(() => {
   mocks.curriculumElement.findMany.mockResolvedValue([])
 })
 describe('API service security and version policy', () => {
+  it('en producción no selecciona DRAFT implícitamente para interpretar ni recomendar',async()=>{
+    const previous=process.env.NODE_ENV
+    process.env.NODE_ENV='production'
+    mocks.curriculumVersion.findFirst.mockImplementation(async({where})=>where.status==='DRAFT' ? {id:input.curriculumVersionId,level:'PRIMARY',status:'DRAFT'} : null)
+    try {
+      const service=new EvaluationInstrumentsService()
+      const interpretation=await service.interpret(user,{sectionSubjectId:input.sectionSubjectId,activityTitle:'Actividad'})
+      const result=await service.recommend(user,{...input,curriculumVersionId:undefined})
+      expect(interpretation.curriculumVersionId).toBeNull()
+      expect(result.curriculumVersionId).toBeNull()
+      expect(mocks.curriculumVersion.findFirst.mock.calls.every(([arg])=>arg.where.status==='PUBLISHED')).toBe(true)
+    } finally {
+      if(previous === undefined) delete process.env.NODE_ENV
+      else process.env.NODE_ENV=previous
+    }
+  })
   it('filtra escuela y docente asignado antes de leer currículo', async () => {
     await new EvaluationInstrumentsService().recommend(user, input)
     expect(mocks.sectionSubject.findFirst.mock.calls[0][0].where).toEqual({ id: input.sectionSubjectId, schoolId: user.schoolId, status: 'ACTIVE', teacher: { userId: user.id, schoolId: user.schoolId, status: 'ACTIVE' } })
@@ -90,14 +106,15 @@ describe('API service security and version policy', () => {
     expect(result.curriculumCandidates).toEqual([])
     expect(mocks.sectionSubject.findFirst).toHaveBeenCalledTimes(1)
   })
-  it('la interpretación local puede usar DRAFT; recommend sin versión sigue limitado a PUBLISHED', async () => {
+  it('interpretar y recomendar resuelven el mismo DRAFT local sin depender del orden de respuesta', async () => {
     mocks.curriculumVersion.findFirst.mockImplementation(async ({ where }) => where.status === 'DRAFT'
       ? { id: input.curriculumVersionId, level: 'PRIMARY', status: 'DRAFT' } : null)
     const interpretation = await new EvaluationInstrumentsService().interpret(user, { sectionSubjectId: input.sectionSubjectId,
       activityTitle: 'Actividad de ciencias' })
     expect(interpretation.curriculumVersionId).toBe(input.curriculumVersionId)
     const recommendation = await new EvaluationInstrumentsService().recommend(user, { ...input, curriculumVersionId: undefined })
-    expect(recommendation.curriculumVersionId).toBeNull()
+    expect(recommendation.curriculumVersionId).toBe(interpretation.curriculumVersionId)
+    expect(recommendation.curriculumScopeId).toBe(interpretation.curriculumScopeId)
   })
   it('rechaza una selección explícita fuera del contexto autorizado', async () => {
     await expect(new EvaluationInstrumentsService().recommend(user, { ...input,

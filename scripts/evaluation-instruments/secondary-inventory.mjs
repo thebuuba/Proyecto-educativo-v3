@@ -29,6 +29,11 @@ function topicCandidates(concepts) {
 export function applyInventoryReview(inventory, review) {
   if (review.sourceSha256 !== inventory.source.sha256) throw new Error('La revisión corresponde a otra fuente.')
   const statusFields = ['implementation', 'automatedVerification', 'manualVerification', 'applicationVerification', 'boundaryReview', 'procedureAssociation', 'report', 'catalogVersion', 'engineConnection', 'instrumentFormats', 'serviceVerification', 'interfaceVerification', 'pending']
+  for(const entry of review.scopes ?? []) {
+    const scope=inventory.scopes.find(scope=>scope.id === entry.id)
+    if (!scope) throw new Error(`Ámbito de revisión desconocido: ${entry.id}`)
+    for(const field of statusFields) if(entry[field] !== undefined) scope[field]=entry[field]
+  }
   for (const entry of review.topics ?? []) {
     const scope = inventory.scopes.find(scope => scope.topics.some(topic => topic.id === entry.id))
     if (!scope) throw new Error(`Tema de revisión desconocido: ${entry.id}`)

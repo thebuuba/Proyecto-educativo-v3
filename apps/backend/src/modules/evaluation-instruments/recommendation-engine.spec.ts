@@ -65,11 +65,11 @@ describe('Selecciones automáticas de Lengua Española en 1.º de secundaria', (
       participationMode: 'INDIVIDUAL' as const, maxScore: 20, preferredInstrumentType: 'rubrica' as const }
     const initial = recommend(input, context, null, [], 'UNMAPPED', null)
     const expanded = recommend({ ...input, includeAdditionalCandidates: true }, context, null, [], 'UNMAPPED', null)
-    expect(expanded.criteria.length).toBeGreaterThan(initial.criteria.length)
+    expect(expanded.criteria.length).toBe(initial.criteria.length)
     expect(expanded.criteria.slice(0, initial.criteria.length).map(item => item.title)).toEqual(initial.criteria.map(item => item.title))
     expect(expanded.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(2000)
-    expect(expanded.criteria.slice(initial.criteria.length).some(item => item.sourceType === 'ACTIVITY_TEMPLATE')).toBe(true)
-    expect(expanded.criteria.map(item => item.title)).toContain('Contenido y adecuación')
+    expect(expanded.criteria.every(item => item.templateId.startsWith('report-'))).toBe(true)
+    expect(expanded.criteria.map(item => item.title)).not.toContain('Contenido y adecuación')
   })
 })
 

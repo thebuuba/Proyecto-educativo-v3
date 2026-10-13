@@ -22,7 +22,7 @@ export function findSecondaryScienceTopic(title: string, description: string, co
   const science = code === 'NAT' || (context.grade === 2 ? code === 'NAT-VIDA' : context.grade === 6 ? code === 'NAT-FIS' : false)
     || (!code && /^(?:ciencias de la naturaleza(?: fisica| ciencias de la vida)?|fisica|ciencias de la vida)$/.test(name))
   if (!science) return null
-  const text = normalizedTask(`${title} ${description}`)
+  const text = normalizedTask(description || title)
   if (context.grade === 2 && /\b(?:celulas?|celulares)\b/.test(text)) return 'cells'
   if (context.grade === 6 && (/\bohm\b/.test(text) || /\bvoltaje\b/.test(text) && /\bcorriente\b/.test(text) && /\bresistencia\b/.test(text))) return 'ohm'
   return null

@@ -29,6 +29,8 @@ export function editableAuthoredRecommendation(authored: ContextualTopicCriterio
       id: `editable:${criterion.templateId}`, templateId: criterion.templateId, title: criterion.title,
       description: criterion.observable, maxScore: points[index] / 100, maxScoreUnits: points[index],
       sourceType: 'ACTIVITY_TEMPLATE', sourceReferences: [],
+      progressionLevels: [...criterion.progressionLevels],
+      relativeWeight: criterion.weight,
       descriptors: levels.map((level, levelIndex) => ({ levelId: level.id, text: criterion.progressionLevels[[0, 1, 2, 4][levelIndex]], scoreUnits: Math.round(points[index] * level.proportion) })),
     })),
     levels, totalScore: input.maxScore, totalScoreUnits: points.reduce((sum, units) => sum + units, 0), scoreUnit: 0.01,

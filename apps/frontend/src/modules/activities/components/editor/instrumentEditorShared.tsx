@@ -385,6 +385,9 @@ export function setDragDocumentState(active: boolean) {
 }
 
 export function InstrumentRowMenu({
+  onComplete,
+  completing = false,
+  completionDisabled = false,
   canMoveDown,
   canMoveUp,
   onDelete,
@@ -392,6 +395,9 @@ export function InstrumentRowMenu({
   onMoveDown,
   onMoveUp,
 }: {
+  onComplete?: () => void
+  completing?: boolean
+  completionDisabled?: boolean
   canMoveDown: boolean
   canMoveUp: boolean
   onDelete: () => void
@@ -436,7 +442,7 @@ export function InstrumentRowMenu({
     }
     const rect = buttonRef.current?.getBoundingClientRect()
     if (!rect) return
-    const menuHeight = 178
+    const menuHeight = onComplete ? 214 : 178
     const viewportPadding = 8
     const gap = 4
     const spaceBelow = window.innerHeight - rect.bottom
@@ -464,6 +470,9 @@ export function InstrumentRowMenu({
       className="fixed z-[100] w-44 overflow-hidden rounded-lg border border-border bg-popover p-1 text-left shadow-xl"
       style={{ top: menuPosition.top, right: menuPosition.right }}
     >
+      {onComplete ? <button type="button" role="menuitem" disabled={completionDisabled || completing}
+        className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted disabled:opacity-40"
+        onClick={() => runAction(onComplete)}>Completar criterio</button> : null}
       <button
         type="button"
         role="menuitem"
@@ -510,7 +519,8 @@ export function InstrumentRowMenu({
       <button
         ref={buttonRef}
         type="button"
-        aria-label="Acciones de la fila"
+        aria-label={completing ? 'Completando criterio…' : 'Acciones de la fila'}
+        aria-busy={completing}
         aria-haspopup="menu"
         aria-expanded={open}
         className={cn(
@@ -805,7 +815,7 @@ export function remapInstrumentRows(
   const next = { ...fields }
   const isRow = (key: string) =>
     key.startsWith(type + ':') &&
-    /^(criterion-id|criterion|description|descriptor|indicator|points|weight|observation)$/.test(
+    /^(criterion-id|criterion-template|criterion-evidence|criterion-weight|criterion|description|descriptor|indicator|points|weight|observation)$/.test(
       key.split(':')[1],
     ) &&
     /^\d+$/.test(key.split(':')[2] ?? '')

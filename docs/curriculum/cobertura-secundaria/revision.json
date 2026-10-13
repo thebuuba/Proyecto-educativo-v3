@@ -338,6 +338,30 @@
       "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
       "interfaceVerification": "NORMAL_BROWSER_SAVE_REOPEN_PASSED",
       "pending": "Cobertura limitada al modelo celular o a Ohm; otros contenidos del tema permanecen pendientes. Comprobar Parcial de .11 en navegador."
+    },
+    {
+      "automatedVerification": "PASSED",
+      "applicationVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "catalogVersion": "evaluation-2026.14",
+      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_32_CASES_PASSED",
+      "report": "composicion-y-filas.md",
+      "id": "695b5f52-d00c-5414-825c-5b56f1a5a67e",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "procedures": [
+        "b22f2e75-7004-5b6a-b1c2-98496b3e53ba",
+        "dc506264-93a2-5903-beca-eb1fd8c766a8"
+      ],
+      "implementation": "PARTIAL_MATRICES_CONTEXTUAL_OPERATIONS",
+      "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "pending": "Vectores, tipos, determinantes e inversa pendientes. Solo operaciones, datos, justificacion e interpretacion de la consigna."
     }
   ],
   "sourceAnomalies": [
@@ -346,6 +370,44 @@
       "pdfPage": 74,
       "printedPage": 73,
       "note": "Producción escrita menciona noticia bajo la página del caligrama. Se conserva en su ámbito original y no se asocia al caligrama ni se reasigna a otro grado sin evidencia adicional."
+    }
+  ],
+  "scopes": [
+    {
+      "automatedVerification": "PASSED",
+      "applicationVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "catalogVersion": "evaluation-2026.14",
+      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_32_CASES_PASSED",
+      "report": "composicion-y-filas.md",
+      "id": "392f46f2-fbc7-5931-a290-c45a88a4f206",
+      "implementation": "PARTIAL_MATRICES_ONLY",
+      "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "pending": "Solo nucleo de matrices; conicas, vectores y trigonometria de quinto pendientes."
+    },
+    {
+      "automatedVerification": "PASSED",
+      "applicationVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "catalogVersion": "evaluation-2026.14",
+      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_32_CASES_PASSED",
+      "report": "composicion-y-filas.md",
+      "id": "f1d980b5-b339-5fdd-b5a9-4f34a037359f",
+      "implementation": "PARTIAL_TEACHER_TASK_ADAPTATION_SOURCE_GRADE5",
+      "interfaceVerification": "NORMAL_BROWSER_WEIGHTED_SAVE_REOPEN_PASSED",
+      "pending": "Control de alturas/distancias de sexto adaptado a la consigna; fuente de contenidos basicos en quinto, PDF 231-232. Curriculo propio de sexto y tres formatos en navegador pendientes."
     }
   ]
 }

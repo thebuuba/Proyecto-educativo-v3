@@ -33,7 +33,7 @@ export class EvaluationInstrumentsService {
 
   async recommend(user: AuthenticatedUser, input: RecommendInstrumentDto) {
     try {
-      const { context, resolution, rows, version } = await this.resolve(user, input)
+      const { context, resolution, rows, version } = await this.resolve(user, input, true)
       if (input.selectedCurriculumElementIds?.some(id => !rows.some(row => row.elementId === id))) throw new BadRequestException('Elemento curricular ajeno al ámbito autorizado.')
       const result = recommend(input, context, resolution.scope, rows, resolution.status, version?.status ?? null)
       result.internalTrace.reasons.push(resolution.reason)

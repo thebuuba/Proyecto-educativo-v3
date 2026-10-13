@@ -53,6 +53,9 @@ export function checklistLabelMode(positive: string, negative: string): Checklis
 export function ChecklistInstrument({
   accent,
   addingCriterion,
+  onCompleteCriterion,
+  completingCriterionId,
+  criterionRequestBusy = false,
   criteriaCount,
   fields,
   maxScore,
@@ -64,6 +67,9 @@ export function ChecklistInstrument({
 }: {
   accent: (typeof blockAccents)[number]
   addingCriterion: boolean
+  onCompleteCriterion?: (row: number) => void
+  completingCriterionId?: string | null
+  criterionRequestBusy?: boolean
   criteriaCount: number
   fields: Record<string, string>
   maxScore: number
@@ -197,7 +203,7 @@ export function ChecklistInstrument({
             size="sm"
             className={accent.button}
             onClick={onAddCriterion}
-            disabled={criteriaCount >= 20 || addingCriterion}
+            disabled={criteriaCount >= 20 || addingCriterion || criterionRequestBusy}
           >
             <Plus className="size-4" />
             {addingCriterion ? 'Añadiendo…' : 'Agregar criterio'}
@@ -636,6 +642,7 @@ export function ChecklistInstrument({
               <td className="sticky left-0 z-10 border border-border bg-card p-1.5">
                 <InstrumentTextarea
                   dataInstrumentRow={`lista-cotejo-${index}`}
+                  ariaLabel={`Criterio ${index + 1}`}
                   placeholder={`${index + 1}. Criterio`}
                   value={fields[instrumentFieldKey('lista-cotejo', 'criterion', index)] ?? ''}
                   onChange={(value) =>
@@ -680,6 +687,9 @@ export function ChecklistInstrument({
               </td>
               <td className={cn('border bg-card', accent.border)}>
                 <InstrumentRowMenu
+                  onComplete={onCompleteCriterion ? () => onCompleteCriterion(index) : undefined}
+                  completing={completingCriterionId === fields['lista-cotejo:criterion-id:' + index]}
+                  completionDisabled={criterionRequestBusy}
                   canMoveDown={index < criteriaCount - 1}
                   canMoveUp={index > 0}
                   onDelete={() =>

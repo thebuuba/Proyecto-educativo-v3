@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
+import { fillAuthoredLevelDescriptors } from '@/modules/activities/services/instrumentCriterionAddition'
 import { Input } from '@/components/ui/Input'
 import { blockAccents } from '@/modules/activities/components/editor/editorPresentation'
 import {
@@ -710,6 +711,9 @@ export function ScaleSettingsDrawer({
 export function ScaleInstrument({
   accent,
   addingCriterion,
+  onCompleteCriterion,
+  completingCriterionId,
+  criterionRequestBusy = false,
   criteriaCount,
   fields,
   levelCount,
@@ -723,6 +727,9 @@ export function ScaleInstrument({
 }: {
   accent: (typeof blockAccents)[number]
   addingCriterion: boolean
+  onCompleteCriterion?: (row: number) => void
+  completingCriterionId?: string | null
+  criterionRequestBusy?: boolean
   criteriaCount: number
   fields: Record<string, string>
   levelCount: number
@@ -745,6 +752,7 @@ export function ScaleInstrument({
   )
   const hasNoApply = fields['escala:meta:noApply'] === 'true'
   const [configuring, setConfiguring] = useState(false)
+  const [confirmConfiguration, setConfirmConfiguration] = useState(false)
   const [levelDrafts, setLevelDrafts] = useState<ScaleLevelDraft[]>([])
   const [template, setTemplate] = useState(fields['escala:meta:template'] || 'frecuencia')
   const [pointMode, setPointMode] = useState<ScalePointMode>(
@@ -818,10 +826,13 @@ export function ScaleInstrument({
   }
 
   function applyConfiguration() {
+    const existingPoints = Array.from({length:criteriaCount},(_,index)=>Number(fields[instrumentFieldKey('escala','points',index)]))
+    const preserveAutomaticPoints = existingPoints.every(value=>Number.isFinite(value) && value >= 0)
+      && Math.round(existingPoints.reduce((a,b)=>a+b,0)*100) === Math.round(maxScore*100)
     const configuredIndicatorPoints = scorePending
       ? Array.from({ length: criteriaCount }, () => '')
       : pointMode === 'automatic'
-        ? distributeScore(maxScore, criteriaCount)
+        ? preserveAutomaticPoints ? existingPoints : distributeScore(maxScore, criteriaCount)
         : Array.from({ length: criteriaCount }, (_, index) => Number(indicatorPoints[index] || 0))
     const next: Record<string, string> = {
       ...fields,
@@ -831,17 +842,22 @@ export function ScaleInstrument({
       'escala:meta:noApply': String(noApply),
     }
     Object.keys(next).forEach((key) => {
-      if (/^escala:level-(?:name|points):\d+$/.test(key)) delete next[key]
+      if (/^escala:level-(?:name|points):\d+$/.test(key) || /^escala:descriptor:\d+:\d+$/.test(key)) delete next[key]
     })
     levelDrafts.forEach((level, index) => {
       const score = levelDrafts.length - index
       next[instrumentFieldKey('escala', 'level-name', score)] = level.name.trim()
       next[instrumentFieldKey('escala', 'level-points', score)] = String(level.points)
+      const previousScore = level.id.match(/^scale-(\d+)$/)?.[1]
+      for(let row=0;row<criteriaCount;row++) {
+        const previous = previousScore ? fields[instrumentFieldKey('escala','descriptor',row,Number(previousScore))] : undefined
+        if (previous !== undefined || fields[`escala:criterion-evidence:${row}`]) next[instrumentFieldKey('escala','descriptor',row,score)] = previous ?? ''
+      }
     })
     configuredIndicatorPoints.forEach((points, index) => {
       next[instrumentFieldKey('escala', 'points', index)] = String(points)
     })
-    onFieldsChange(next)
+    onFieldsChange(fillAuthoredLevelDescriptors(next,'escala'))
     onLevelCountChange(levelDrafts.length)
     setConfiguring(false)
   }
@@ -866,7 +882,7 @@ export function ScaleInstrument({
             size="sm"
             className={accent.button}
             onClick={onAddCriterion}
-            disabled={criteriaCount >= 20 || addingCriterion}
+            disabled={criteriaCount >= 20 || addingCriterion || criterionRequestBusy}
           >
             <Plus className="size-4" />
             {addingCriterion ? 'Añadiendo…' : 'Agregar indicador'}
@@ -884,6 +900,11 @@ export function ScaleInstrument({
           noApply={noApply}
           onAddLevel={() => {
             setTemplate('personalizada')
+            const contextual = levelDrafts.map(level=>level.name).join('|') === 'Destacado|Logrado|En proceso|Inicial'
+            if (contextual) {
+              setLevelDrafts(current=>[...current.slice(0,3),{id:`new-${Date.now()}`,name:'Requiere apoyo',points:(current[2].points+current[3].points)/2},current[3]])
+              return
+            }
             setLevelDrafts((current) => [
               ...current,
               {
@@ -893,7 +914,7 @@ export function ScaleInstrument({
               },
             ])
           }}
-          onApply={applyConfiguration}
+          onApply={() => setConfirmConfiguration(true)}
           onClose={() => setConfiguring(false)}
           onIndicatorPointsChange={setIndicatorPoints}
           onLevelsChange={(value) => {
@@ -907,6 +928,10 @@ export function ScaleInstrument({
           template={template}
         />
       ) : null}
+      {confirmConfiguration ? <ConfirmDialog title="¿Aplicar cambios de escala?"
+        description="Cambiará la configuración de la escala. Se conservarán los indicadores y los descriptores de los niveles existentes."
+        confirmLabel="Aplicar escala" onClose={()=>setConfirmConfiguration(false)}
+        onConfirm={()=>{setConfirmConfiguration(false);applyConfiguration()}} /> : null}
       <InstrumentTable>
         <thead className="sticky top-0 z-20 text-[10px] font-bold uppercase">
           <tr>
@@ -984,6 +1009,7 @@ export function ScaleInstrument({
                   </span>
                   <InstrumentTextarea
                     dataInstrumentRow={`escala-${index}`}
+                    ariaLabel={`Indicador ${index + 1}`}
                     placeholder="Indicador"
                     value={fields[instrumentFieldKey('escala', 'criterion', index)] ?? ''}
                     onChange={(value) =>
@@ -1032,6 +1058,9 @@ export function ScaleInstrument({
               </td>
               <td className={cn('border bg-card', accent.border)}>
                 <InstrumentRowMenu
+                  onComplete={onCompleteCriterion ? () => onCompleteCriterion(index) : undefined}
+                  completing={completingCriterionId === fields['escala:criterion-id:' + index]}
+                  completionDisabled={criterionRequestBusy}
                   canMoveDown={index < criteriaCount - 1}
                   canMoveUp={index > 0}
                   onDelete={() =>

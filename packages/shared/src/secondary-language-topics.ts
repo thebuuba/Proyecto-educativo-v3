@@ -10,8 +10,8 @@ export type SecondaryTopicContext = { level: string; grade: number; subjectCode:
 export function findSecondaryLanguageTopic(title: string, description: string, context: SecondaryTopicContext | null) {
   if (context?.level !== 'SECONDARY' || context.subjectCode.trim().toUpperCase() !== 'LEN' || context.optativeExitName) return null
   const task = withoutResources(description)
-  const text = ` ${normalized(`${title} ${task}`)} `
-  return secondaryLanguageGradeTwoTopics.find(topic => topic.grade === context.grade && topic.aliases.some(alias => text.includes(` ${normalized(alias)} `))) ?? null
+  const find = (value: string) => secondaryLanguageGradeTwoTopics.find(topic => topic.grade === context.grade && topic.aliases.some(alias => ` ${normalized(value)} `.includes(` ${normalized(alias)} `)))
+  return find(task) ?? find(title) ?? null
 }
 
 export function topicTaskMode(activity: string): TopicTaskMode {

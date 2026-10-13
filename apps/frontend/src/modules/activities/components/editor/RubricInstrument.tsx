@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
+import { fillAuthoredLevelDescriptors } from '@/modules/activities/services/instrumentCriterionAddition'
 import { Input } from '@/components/ui/Input'
 import { blockAccents } from '@/modules/activities/components/editor/editorPresentation'
 import {
@@ -463,6 +464,9 @@ export function RubricLevelSettingsDrawer({
 export function RubricInstrument({
   accent,
   addingCriterion,
+  onCompleteCriterion,
+  completingCriterionId,
+  criterionRequestBusy = false,
   criteriaCount,
   fields,
   levelCount,
@@ -476,6 +480,9 @@ export function RubricInstrument({
 }: {
   accent: (typeof blockAccents)[number]
   addingCriterion: boolean
+  onCompleteCriterion?: (row: number) => void
+  completingCriterionId?: string | null
+  criterionRequestBusy?: boolean
   criteriaCount: number
   fields: Record<string, string>
   levelCount: number
@@ -489,6 +496,7 @@ export function RubricInstrument({
 }) {
   const scorePending = maxScore <= 0
   const [editingLevels, setEditingLevels] = useState(false)
+  const [confirmLevels, setConfirmLevels] = useState(false)
   const [levelDrafts, setLevelDrafts] = useState<RubricLevelDraft[]>([])
   const [levelPointMode, setLevelPointMode] = useState<RubricPointMode>('automatic')
   const [pendingCriterionDelete, setPendingCriterionDelete] = useState<number | null>(null)
@@ -622,7 +630,8 @@ export function RubricInstrument({
 
   function addLevelDraft() {
     if (levelDrafts.length >= 6) return
-    const names = rubricDefaultLevelNames(levelDrafts.length + 1)
+    const contextual = levelDrafts.length === 4 && levelDrafts.map(level=>level.name).join('|') === 'Destacado|Logrado|En proceso|Inicial'
+    const names = contextual ? ['Destacado','Logrado','En proceso','Requiere apoyo','Inicial'] : rubricDefaultLevelNames(levelDrafts.length + 1)
     const used = new Set(levelDrafts.map((level) => level.name.trim().toLocaleLowerCase()))
     const name =
       names.find((candidate) => !used.has(candidate.toLocaleLowerCase())) ||
@@ -688,7 +697,7 @@ export function RubricInstrument({
                 instrumentFieldKey('rubrica', 'descriptor', criterionIndex, level.sourceScore)
               ] || ''
     })
-    onFieldsChange(next)
+    onFieldsChange(fillAuthoredLevelDescriptors(next,'rubrica'))
     onLevelCountChange(nextCount)
     setEditingLevels(false)
   }
@@ -714,7 +723,7 @@ export function RubricInstrument({
             size="sm"
             className={accent.button}
             onClick={onAddCriterion}
-            disabled={criteriaCount >= 20 || addingCriterion}
+            disabled={criteriaCount >= 20 || addingCriterion || criterionRequestBusy}
           >
             <Plus className="size-4" />
             {addingCriterion ? 'Añadiendo…' : 'Agregar criterio'}
@@ -733,7 +742,7 @@ export function RubricInstrument({
           scoreMatches={scoreMatches}
           total={total}
           onAdd={addLevelDraft}
-          onApply={applyLevelDrafts}
+          onApply={() => setConfirmLevels(true)}
           onClose={() => setEditingLevels(false)}
           onDraftsChange={setLevelDrafts}
           setPointMode={setLevelPointMode}
@@ -751,6 +760,10 @@ export function RubricInstrument({
           }}
         />
       ) : null}
+      {confirmLevels ? <ConfirmDialog title="¿Aplicar cambios de niveles?"
+        description="Cambiará la estructura y la proporción de los niveles. Se conservarán los descriptores existentes; los nuevos se propondrán cuando haya evidencia suficiente."
+        confirmLabel="Aplicar niveles" onClose={()=>setConfirmLevels(false)}
+        onConfirm={()=>{setConfirmLevels(false);applyLevelDrafts()}} /> : null}
       {pendingDraftLevelDelete ? (
         <ConfirmDialog
           title="¿Eliminar este nivel?"
@@ -877,6 +890,9 @@ export function RubricInstrument({
               </td>
               <td data-label="Acciones" className="border border-border text-center">
                 <InstrumentRowMenu
+                  onComplete={onCompleteCriterion ? () => onCompleteCriterion(index) : undefined}
+                  completing={completingCriterionId === fields['rubrica:criterion-id:' + index]}
+                  completionDisabled={criterionRequestBusy}
                   canMoveDown={index < criteriaCount - 1}
                   canMoveUp={index > 0}
                   onDelete={() => requestRemoveCriterion(index)}

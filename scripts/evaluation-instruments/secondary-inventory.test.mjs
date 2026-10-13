@@ -5,6 +5,16 @@ import { buildSecondaryInventory, applyInventoryReview } from './secondary-inven
 
 const rows = readFileSync('data/curriculum/secondary-2023.jsonl', 'utf8').trim().split('\n').map(JSON.parse)
 
+test('registra adaptación de una consigna en un ámbito sin inventar un tema oficial', () => {
+  const inventory=buildSecondaryInventory(rows)
+  const scope=inventory.scopes.find(s=>s.grade===6 && s.subject==='Matemática')
+  const result=applyInventoryReview(inventory,{sourceSha256:inventory.source.sha256,scopes:[{id:scope.id,
+    implementation:'PARTIAL_TEACHER_TASK_ADAPTATION',pending:'La consigna retoma contenidos de 5.º; currículo propio de 6.º pendiente.'}]})
+  assert.equal(result.scopes.find(s=>s.id===scope.id).implementation,'PARTIAL_TEACHER_TASK_ADAPTATION')
+  assert.deepEqual(result.scopes.find(s=>s.id===scope.id).topics,[])
+  assert.throws(()=>applyInventoryReview(inventory,{sourceSha256:inventory.source.sha256,scopes:[{id:'unknown'}]}),/ámbito/i)
+})
+
 test('inventories every grade scope and keeps common subjects separate from verified exits', () => {
   const result = buildSecondaryInventory(rows)
   assert.equal(result.scopes.length, 72)

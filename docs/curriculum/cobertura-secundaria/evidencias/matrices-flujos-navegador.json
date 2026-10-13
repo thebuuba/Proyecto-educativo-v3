@@ -1,0 +1,36 @@
+{
+  "environment": "NORMAL_LOCAL",
+  "account": "FICTITIOUS_QA_TEACHER",
+  "results": [
+    {
+      "format": "rubrica",
+      "total": 17.35,
+      "levels": 5,
+      "originalDescription": true,
+      "neutralTitle": true,
+      "blankCellCompletion": true,
+      "exhaustionManualRow": true,
+      "emptyRowCompletion": true,
+      "manualText": "Selección de operaciones y dimensiones · revisión docente",
+      "savedAndReopened": true
+    },
+    {
+      "format": "lista-cotejo",
+      "total": 20,
+      "manualText": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. · revisión docente",
+      "savedAndReopened": true
+    },
+    {
+      "format": "escala",
+      "total": 17.35,
+      "manualText": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. · revisión docente",
+      "savedAndReopened": true
+    },
+    {
+      "format": "lista-ponderada",
+      "total": 20,
+      "manualText": "Selección de operaciones y dimensiones · revisión docente",
+      "savedAndReopened": true
+    }
+  ]
+}

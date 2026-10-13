@@ -40,6 +40,9 @@ import { useEffect, useRef, useState } from 'react'
 export function InstrumentPreview({
   accent,
   addingCriterion = false,
+  onCompleteCriterion,
+  completingCriterionId,
+  criterionRequestBusy = false,
   activityName,
   block,
   completed,
@@ -54,6 +57,9 @@ export function InstrumentPreview({
 }: {
   accent: (typeof blockAccents)[number]
   addingCriterion?: boolean
+  onCompleteCriterion?: (row: number) => void
+  completingCriterionId?: string | null
+  criterionRequestBusy?: boolean
   activityName: string
   block: (typeof competencyBlocks)[number]
   completed: boolean
@@ -356,6 +362,9 @@ export function InstrumentPreview({
         {instrumentType === 'rubrica' ? (
           <RubricInstrument
             addingCriterion={addingCriterion}
+            onCompleteCriterion={onCompleteCriterion}
+            completingCriterionId={completingCriterionId}
+            criterionRequestBusy={criterionRequestBusy}
             criteriaCount={rubricCriteria}
             fields={fields}
             levelCount={rubricLevels}
@@ -372,6 +381,9 @@ export function InstrumentPreview({
         {instrumentType === 'escala' ? (
           <ScaleInstrument
             addingCriterion={addingCriterion}
+            onCompleteCriterion={onCompleteCriterion}
+            completingCriterionId={completingCriterionId}
+            criterionRequestBusy={criterionRequestBusy}
             criteriaCount={scaleCriteria}
             fields={fields}
             levelCount={scaleLevels}
@@ -388,6 +400,9 @@ export function InstrumentPreview({
         {instrumentType === 'lista-cotejo' ? (
           <ChecklistInstrument
             addingCriterion={addingCriterion}
+            onCompleteCriterion={onCompleteCriterion}
+            completingCriterionId={completingCriterionId}
+            criterionRequestBusy={criterionRequestBusy}
             criteriaCount={checklistCriteria}
             fields={fields}
             maxScore={maxScore}
@@ -402,6 +417,9 @@ export function InstrumentPreview({
         {instrumentType === 'lista-ponderada' ? (
           <WeightedListInstrument
             addingCriterion={addingCriterion}
+            onCompleteCriterion={onCompleteCriterion}
+            completingCriterionId={completingCriterionId}
+            criterionRequestBusy={criterionRequestBusy}
             criteriaCount={weightedCriteria}
             fields={fields}
             hasPartial={weightedHasPartial}

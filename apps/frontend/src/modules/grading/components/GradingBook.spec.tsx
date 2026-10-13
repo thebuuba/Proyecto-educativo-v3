@@ -766,6 +766,58 @@ describe('GradingBook', () => {
     expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Criterio editado por la docente')
   })
 
+  it('completa solo celdas vacías de una fila sin redistribuir puntos', async () => {
+    const {proposal} = seededInstrumentDraft('complete-one-row')
+    vi.spyOn(api,'post').mockResolvedValue(proposal as never)
+    const user = userEvent.setup()
+    renderBook({sectionSubjectId:'ss-1',initialActivityAction:'create',initialActivityBlockId:'b1',initialActivityDraftId:'complete-one-row'})
+    const descriptor = screen.getByRole('textbox',{name:'Inicial del criterio 1'})
+    fireEvent.change(descriptor,{target:{value:''}})
+    fireEvent.change(screen.getByRole('textbox',{name:'Criterio 2'}),{target:{value:'Mi segundo criterio'}})
+    const points = screen.getByRole('spinbutton',{name:'Puntos del criterio 1'})
+    const original = (points as HTMLInputElement).value
+    await user.click(screen.getAllByRole('button',{name:'Acciones de la fila'})[0])
+    await user.click(screen.getByRole('menuitem',{name:'Completar criterio'}))
+    await waitFor(()=>expect(descriptor).toHaveValue(proposal.criteria[0].descriptors.at(-1)?.text))
+    expect(screen.getByRole('textbox',{name:'Criterio 2'})).toHaveValue('Mi segundo criterio')
+    expect(points).toHaveValue(Number(original))
+    expect(screen.queryByRole('dialog',{name:'¿Redistribuir los puntos editados?'})).not.toBeInTheDocument()
+  })
+
+  it('confirma el quinto nivel y conserva los descriptores manuales anteriores', async () => {
+    seededInstrumentDraft('fifth-level')
+    const user=userEvent.setup()
+    renderBook({sectionSubjectId:'ss-1',initialActivityAction:'create',initialActivityBlockId:'b1',initialActivityDraftId:'fifth-level'})
+    fireEvent.change(screen.getByRole('textbox',{name:'Destacado del criterio 1'}),{target:{value:'Mi descriptor destacado'}})
+    await user.click(screen.getByRole('button',{name:'Configurar niveles'}))
+    await user.click(screen.getByRole('button',{name:'Agregar nivel'}))
+    await user.click(screen.getByRole('button',{name:'Aplicar cambios'}))
+    expect(await screen.findByRole('dialog',{name:'¿Aplicar cambios de niveles?'})).toBeInTheDocument()
+    await user.click(screen.getByRole('button',{name:'Aplicar niveles'}))
+    expect(screen.getByRole('textbox',{name:'Destacado del criterio 1'})).toHaveValue('Mi descriptor destacado')
+    expect(screen.getByRole('textbox',{name:'Requiere apoyo del criterio 2'})).not.toHaveValue('')
+  })
+
+  it.each(['edición','reordenación'])('rechaza completar una fila con respuesta obsoleta por %s',async reason=>{
+    const {proposal}=seededInstrumentDraft('complete-obsolete-'+reason)
+    let finish!: (value:unknown)=>void
+    const delayed=new Promise(resolve=>{finish=resolve})
+    const post=vi.spyOn(api,'post').mockReturnValue(delayed as never)
+    const user=userEvent.setup()
+    renderBook({sectionSubjectId:'ss-1',initialActivityAction:'create',initialActivityBlockId:'b1',initialActivityDraftId:'complete-obsolete-'+reason})
+    fireEvent.change(screen.getByRole('textbox',{name:'Inicial del criterio 1'}),{target:{value:''}})
+    await user.click(screen.getAllByRole('button',{name:'Acciones de la fila'})[0])
+    await user.click(screen.getByRole('menuitem',{name:'Completar criterio'}))
+    expect(post).toHaveBeenCalledTimes(1)
+    if(reason==='edición') fireEvent.change(screen.getByRole('textbox',{name:'Inicial del criterio 1'}),{target:{value:'Mi descriptor posterior'}})
+    else {
+      await user.click(screen.getByRole('button',{name:'Completando criterio…'}))
+      await user.click(screen.getByRole('menuitem',{name:'Mover abajo'}))
+    }
+    await act(async()=>{finish(proposal);await delayed})
+    expect(screen.getByRole('textbox',{name:reason==='edición'?'Inicial del criterio 1':'Inicial del criterio 2'})).toHaveValue(reason==='edición'?'Mi descriptor posterior':'')
+  })
+
   it('regenera sin cambiar el título y respeta cancelar o confirmar el reemplazo', async () => {
     const { proposal } = seededInstrumentDraft('regenerate-contextual')
     const replacement = { ...proposal, criteria: proposal.criteria.map((item, index) => index === 0

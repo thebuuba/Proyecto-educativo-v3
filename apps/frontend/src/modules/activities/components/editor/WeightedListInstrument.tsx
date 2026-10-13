@@ -533,6 +533,9 @@ export function WeightedListSettingsDrawer({
 export function WeightedListInstrument({
   accent,
   addingCriterion,
+  onCompleteCriterion,
+  completingCriterionId,
+  criterionRequestBusy = false,
   criteriaCount,
   fields,
   hasPartial,
@@ -546,6 +549,9 @@ export function WeightedListInstrument({
 }: {
   accent: (typeof blockAccents)[number]
   addingCriterion: boolean
+  onCompleteCriterion?: (row: number) => void
+  completingCriterionId?: string | null
+  criterionRequestBusy?: boolean
   criteriaCount: number
   fields: Record<string, string>
   hasPartial: boolean
@@ -640,7 +646,7 @@ export function WeightedListInstrument({
             size="sm"
             className={accent.button}
             onClick={onAddCriterion}
-            disabled={criteriaCount >= 20 || addingCriterion}
+            disabled={criteriaCount >= 20 || addingCriterion || criterionRequestBusy}
           >
             <Plus className="size-4" />
             {addingCriterion ? 'Añadiendo…' : 'Agregar criterio'}
@@ -705,6 +711,7 @@ export function WeightedListInstrument({
                 <InstrumentTextarea
                   className="font-bold"
                   dataInstrumentRow={`lista-ponderada-${index}`}
+                  ariaLabel={`Criterio ${index + 1}`}
                   placeholder={`Criterio ${index + 1}`}
                   value={fields[instrumentFieldKey('lista-ponderada', 'criterion', index)] ?? ''}
                   onChange={(value) =>
@@ -715,6 +722,7 @@ export function WeightedListInstrument({
               <td className={cn('border bg-card p-1.5', accent.border)}>
                 <InstrumentTextarea
                   className="text-muted-foreground"
+                  ariaLabel={`Indicador del criterio ${index + 1}`}
                   placeholder="Describe la evidencia observable de este criterio"
                   value={fields[instrumentFieldKey('lista-ponderada', 'indicator', index)] ?? ''}
                   onChange={(value) =>
@@ -771,6 +779,9 @@ export function WeightedListInstrument({
               </td>
               <td className={cn('border bg-card', accent.border)}>
                 <InstrumentRowMenu
+                  onComplete={onCompleteCriterion ? () => onCompleteCriterion(index) : undefined}
+                  completing={completingCriterionId === fields['lista-ponderada:criterion-id:' + index]}
+                  completionDisabled={criterionRequestBusy}
                   canMoveDown={index < criteriaCount - 1}
                   canMoveUp={index > 0}
                   onDelete={() =>

@@ -17,13 +17,13 @@ import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask } from 
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
 
 export function firstSecondaryLanguageGenre(title: string, description: string) {
-  const text = `${normalizedTask(title)} ${normalizedTask(description)}`
-  return /informe(?:s)? de lectura/.test(text) ? 'READING_REPORT'
+  const find = (text: string) => /informe(?:s)? de lectura/.test(text) ? 'READING_REPORT' as const
     : /cuento(?:s)? (?:policiacos?|detectivescos?)/.test(text) ? 'DETECTIVE_STORY'
       : /caligramas?|(?:versos|palabras).*formando (?:la )?silueta/.test(text) ? 'CALLIGRAM'
         : /guias? turisticas?/.test(text) ? 'TOURIST_GUIDE'
           : /afiches?/.test(text) ? 'POSTER'
-            : /noticias?|noticiero/.test(text) ? 'NEWS' : null
+            : /noticias?|noticiero/.test(text) ? 'NEWS' as const : null
+  return find(normalizedTask(description)) ?? find(normalizedTask(title))
 }
 
 /** Deterministic classification shared by the service and its local editable fallback. */
@@ -176,6 +176,7 @@ export { firstGradeNewsCriteria, firstGradeNewsModule, isFirstGradeNewsActivity 
 export { formatAuthoredCriteria } from './authored-instrument-format'
 export { firstGradeGuideCriteria, firstGradeGuideModule, isFirstGradeGuideActivity } from './secondary-guide-grade-one'
 export { firstGradeReadingReportCriteria, firstGradeReadingReportModule } from './secondary-reading-report-grade-one'
+export { findSecondaryMathTopic, secondaryMathCriteria, secondaryMathModules } from './secondary-math'
 export type EntityStatus = 'active' | 'inactive'
 
 export function splitFullName(fullName: string, lastNameFallback = 'Sin apellido') {

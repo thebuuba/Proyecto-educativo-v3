@@ -1,6 +1,7 @@
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
 import { newsCriteria } from './authored/language/news-grade-1'
 import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, firstSecondaryLanguageGenre } from '@aula/shared'
+import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { touristGuideCriteria } from './authored/language/tourist-guide-grade-1'
 import { posterCriteria } from './authored/language/poster-grade-1'
 import { readingReportCriteria } from './authored/language/reading-report-grade-1'
@@ -49,7 +50,8 @@ const boilerplate = tokens('actividad exposición presentación oral experimento
 export function topicTerms(title: string, description = '') {
   const fromTitle = tokens(title).filter(t => !boilerplate.includes(t) && !/^\d+$/.test(t))
   const fromDescription = tokens(withoutResources(description)).filter(t => !boilerplate.includes(t) && !/^\d+$/.test(t))
-  return fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
+  return fromDescription.length >= 2 ? fromDescription.slice(0,8)
+    : fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
 }
 export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogCurrent, contextualTypes = true) {
   const scientific = scientificTaskType(title, description)
@@ -121,9 +123,20 @@ export function distributeScore(maxScore: number, weights: number[]) {
   return results.map(value => value * quantum)
 }
 
-function teacherTopic(title: string) {
+function teacherTopic(title: string, description = '') {
+  const described = description.match(/(?:problemas|ejercicios|situaciones)\s+(?:con|de|sobre)\s+([^,.;]+?)(?=\s+(?:y|e)\s|[,.;]|$)/iu)?.[1]
+  if (described) return described.trim().toLocaleLowerCase('es-DO')
   const match = title.match(/(?:sobre|de|del|con)\s+(.+)$/i)
   return (match?.[1] ?? title).trim().replace(/[.!?]+$/, '').toLocaleLowerCase('es-DO')
+}
+
+function prudentObservable(templateId: string, observable: string, topic: string) {
+  // Only bounded nominal content can refine an uncovered template, never a whole task title.
+  if (!topic || topic.split(/\s+/).length > 5 || /\b(?:aplicamos|construimos|resolvemos|estudiantes|actividad)\b/i.test(topic)) return observable
+  if (templateId === 'math-procedure') return `Aplica el procedimiento solicitado para resolver la situación con ${topic}.`
+  if (templateId === 'math-comprehension') return `Identifica los datos y la pregunta de la situación con ${topic}.`
+  if (templateId === 'language-content') return `Desarrolla las ideas del ${topic} de acuerdo con la consigna.`
+  return observable
 }
 
 function learningDimensions(description: string, topic: string) {
@@ -213,6 +226,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const contextualTopic = area === 'language' && catalog.contextualModules?.some(topic => topic.id === matchedTopic?.id && topic.grade === matchedTopic.grade) ? matchedTopic : null
   const matchedScience = findSecondaryScienceTopic(input.activityTitle, input.description ?? '', context)
   const scienceTopic = catalog.scienceModules?.some(module => module.id === matchedScience && module.grade === context?.grade) ? matchedScience : null
+  const matchedMath = findSecondaryMathTopic(input.activityTitle, input.description ?? '', context)
+  const mathTopic = catalog.mathModules?.some(module=>module.id === matchedMath && module.grade === context?.grade) ? matchedMath : null
   const attitudeRelevant = /convivencia|cooperaci|valores|respeto|solidaridad|seguridad/.test(text)
   // Keep content/genre words (poema, ensayo, pintura). Strip only pedagogical boilerplate.
   const ranking = rankCurriculum(input.activityTitle, input.description ?? '', activity.id, input.competencyBlock, scope, elements, catalog)
@@ -226,7 +241,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     : confidence === 'LOW' ? [] : ranking.filter(r => r.topicCoverage >= 0.6).filter((r, i, all) => all.slice(0, i).filter(p => p.element.type === r.element.type).length < 2).slice(0, 12)
   const selectedRefs = selected.map(({ element: { normalizedText: _text, ...reference } }) => reference)
   const count = band === 'PRIMARY_FIRST' ? (input.maxScore <= 10 ? 3 : 4) : band === 'PRIMARY_SECOND' ? 5 : activity.family === 'SCIENTIFIC' ? 6 : 5
-  const topic = teacherTopic(input.activityTitle)
+  const topic = teacherTopic(input.activityTitle,input.description)
   const dimensions = area === 'science' ? learningDimensions(input.description ?? '', topic) : []
   const visualResources = /imagenes|recursos visuales|laminas|diapositivas/.test(text)
   const allCandidates = catalog.criterionTemplates.filter(t => (t.area === area || t.area === '*') && t.bands.includes(band)
@@ -267,9 +282,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     const observable = band === 'PRIMARY_FIRST' ? criterion.simple : criterion.observable
     const dimension = criterion.id === 'science-content' ? dimensions[candidates.slice(0, index).filter(candidate => candidate.template.id === 'science-content').length]
       ?? (topic !== input.activityTitle ? { title: `Comprensión de ${topic}`, observable: `Explica las ideas principales de ${topic}.` } : undefined) : undefined
-    const contextual = dimension?.observable ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? `Utiliza imágenes o recursos visuales para apoyar la explicación de ${topic}.` : null) ?? (criterion.id === 'science-accuracy' && /vocabulario cientifico/.test(text) ? `Emplea vocabulario científico adecuado al explicar ${topic}.` : null) ?? (criterion.id === 'organization' && activity.family === 'ORAL' ? `Organiza y comunica las ideas sobre ${topic} en una secuencia comprensible.` : null) ?? (criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) && topic !== input.activityTitle ? `Organiza las ideas y evidencias sobre ${topic} en una secuencia comprensible.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-intention' ? `Expresa ${topic} mediante decisiones visuales reconocibles.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-composition' && /pintura/.test(text) ? `Organiza los elementos de la pintura para comunicar ${topic}.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-context' ? `Ubica ${topic} en tiempo, lugar y contexto.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Explica causas y consecuencias de ${topic} con evidencia.` : null) ?? (topic && topic !== input.activityTitle && ['science-accuracy', 'organization', 'communication', 'math-comprehension', 'math-procedure', 'math-reasoning', 'math-accuracy', 'math-interpretation', 'language-content', 'language-structure', 'language-coherence'].includes(criterion.id)
-      ? `${observable.replace(/[.!?]+$/, '')} ${area === 'language' ? `en la producción de ${topic}` : `al abordar ${topic}`}.` : null)
-    const description = contextual ?? (literal ? literal.element.text : content ? `${observable} Relacionado con ${content.element.text}.` : observable)
+    const contextual = dimension?.observable ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? `Utiliza imágenes o recursos visuales para apoyar la explicación de ${topic}.` : null) ?? (criterion.id === 'science-accuracy' && /vocabulario cientifico/.test(text) ? `Emplea vocabulario científico adecuado al explicar ${topic}.` : null) ?? (criterion.id === 'organization' && activity.family === 'ORAL' ? `Organiza y comunica las ideas sobre ${topic} en una secuencia comprensible.` : null) ?? (criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) && topic !== input.activityTitle ? `Organiza las ideas y evidencias sobre ${topic} en una secuencia comprensible.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-intention' ? `Expresa ${topic} mediante decisiones visuales reconocibles.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-composition' && /pintura/.test(text) ? `Organiza los elementos de la pintura para comunicar ${topic}.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-context' ? `Ubica ${topic} en tiempo, lugar y contexto.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Explica causas y consecuencias de ${topic} con evidencia.` : null)
+    const description = contextual ?? (literal ? literal.element.text : content ? `${observable} Relacionado con ${content.element.text}.` : prudentObservable(criterion.id,observable,topic))
     const sourceType = contextual || content ? 'CONTEXTUALIZED' : literal ? 'CURRICULUM_DERIVED' : 'ACTIVITY_TEMPLATE'
     const sourceReferences = !contextual && reference ? selectedRefs.filter(r => r.elementId === reference.elementId) : []
     const patterns = band === 'PRIMARY_FIRST' ? catalog.descriptorPatterns.simple : catalog.descriptorPatterns.regular
@@ -290,7 +304,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const readingReportModule = firstGenre === 'READING_REPORT'
   const detectiveModule = firstGenre === 'DETECTIVE_STORY' && activity.id !== 'REPORT'
   const calligramModule = firstGenre === 'CALLIGRAM' && activity.id !== 'REPORT'
-  const selectedAuthored: AuthoredCriterion[] = scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
+  const selectedAuthored: AuthoredCriterion[] = mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
+    : scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
     : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '')
     : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
     : touristGuideModule ? touristGuideCriteria(activity.id, input.description ?? '')
@@ -298,7 +313,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
         : readingReportModule ? readingReportCriteria(activity.id, input.description ?? '')
           : detectiveModule ? detectiveStoryCriteria(activity.id)
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : []
-  const authored: AuthoredCriterion[] = selectedAuthored.map(item => item.progressionLevels
+  const authored: AuthoredCriterion[] = selectedAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification')).slice(0, INSTRUMENT_MAX_CRITERIA).map(item => item.progressionLevels
     ? formatAuthoredCriteria([{ ...item, progressionLevels: item.progressionLevels }], chosenInstrument)[0] : item)
   const authoredScores = authored.length ? scienceTopic || contextualTopic || newsModule
     ? distributeScoreUnits(Math.round(input.maxScore * 100), authored.map(item => item.weight))
@@ -309,23 +324,16 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     templateId: item.templateId, title: item.title, description: item.observable,
     maxScore: authoredScores[index] / 100, maxScoreUnits: authoredScores[index],
     sourceType: 'CONTEXTUALIZED', sourceReferences: [],
+    ...(item.progressionLevels ? {progressionLevels:[...item.progressionLevels]} : {}),
+    relativeWeight: item.weight,
     descriptors: levels.map((level, levelIndex) => ({ levelId: level.id,
       text: item.progressionLevels ? item.progressionLevels[(levelCount === 4 ? [0, 1, 2, 4] : [0, 1, 2, 3, 4])[levelIndex]]
         : item.progression && levelCount === 4 ? levelIndex === 0 ? item.observable : item.progression[levelIndex - 1]
         : contextualDescriptors(item.observable, authoredPatternIndexes, item.title, item.templateId)[levelIndex],
       scoreUnits: Math.round(authoredScores[index] * level.proportion) })),
   }))
-  const expandedCriteria = [...authoredCriteria, ...genericCriteria].slice(0, INSTRUMENT_MAX_CRITERIA)
-  const expandedScores = input.includeAdditionalCandidates && authoredCriteria.length
-    ? distributeScore(input.maxScore, expandedCriteria.map(item => item.maxScoreUnits)) : []
-  const criteria: RecommendationCriterion[] = expandedScores.length
-    ? expandedCriteria.map((criterion, index) => {
-      const units = expandedScores[index]
-      return { ...criterion, maxScore: units / 100, maxScoreUnits: units,
-        descriptors: criterion.descriptors.map(descriptor => ({ ...descriptor,
-          scoreUnits: criterion.maxScoreUnits ? Math.round(units * descriptor.scoreUnits / criterion.maxScoreUnits) : 0 })) }
-    })
-    : authoredCriteria.length ? authoredCriteria : genericCriteria
+  // Contextual providers are never padded with unrelated generic criteria.
+  const criteria = authoredCriteria.length ? authoredCriteria : genericCriteria
   const totalScoreUnits = criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0)
   const result: InstrumentRecommendation = { kind: 'RECOMMENDATION', catalogVersion: catalog.version, instrumentType: chosenInstrument, confidence,
     activityType: activity.id, evidenceTypes: [...new Set([...activity.evidence, ...criteria.filter(c => catalog.criterionTemplates.find(t => t.id === c.templateId)?.attitude).map(() => 'ATTITUDE' as const)])],
@@ -336,6 +344,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
   if (scienceTopic) result.internalTrace.reasons.push(`module=science-${scienceTopic}-${context?.grade}`)
+  if (mathTopic) result.internalTrace.reasons.push(`module=math-${mathTopic}-${context?.grade}`,
+    ...(mathTopic === 'trigonometry' ? ['La consigna de 6.º retoma razones trigonométricas documentadas en 5.º; no se atribuye respaldo específico de 6.º.'] : []))
   assertValidRecommendation(result)
   return result
 }
@@ -346,6 +356,8 @@ export function assertValidRecommendation(result: InstrumentRecommendation) {
   const scoreTotal = result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)
   if (scoreTotal !== result.totalScoreUnits) throw new Error('Recomendación inválida: los criterios no suman la puntuación total.')
   for (const criterion of result.criteria) {
+    if (criterion.relativeWeight !== undefined && (!Number.isFinite(criterion.relativeWeight) || criterion.relativeWeight <= 0)) throw new Error('Peso relativo inválido.')
+    if (criterion.progressionLevels && (criterion.progressionLevels.length !== 5 || criterion.progressionLevels.some(value=>typeof value !== 'string' || !value.trim()))) throw new Error('Progresión evaluativa incompleta.')
     if (!criterion.title.trim() || !criterion.description.trim()) throw new Error('Recomendación inválida: criterio vacío.')
     if (!Number.isInteger(criterion.maxScoreUnits) || criterion.maxScoreUnits < 0 || !Number.isFinite(criterion.maxScore)) throw new Error('Recomendación inválida: puntuación de criterio no válida.')
     if ((result.instrumentType === 'rubrica' || result.instrumentType === 'escala') && (criterion.descriptors.length !== result.levels.length || criterion.descriptors.some(item => !item.text.trim()))) throw new Error('Recomendación inválida: descriptor de desempeño vacío o incompleto.')
