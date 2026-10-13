@@ -12,7 +12,7 @@ Navegador ──► Cloudflare Worker
                       └───────────────────────────────────────────────────► Supabase Storage
 ```
 
-Render y Vercel ya no forman parte de la configuración del repositorio.
+Cloudflare sigue siendo el destino de la API y del despliegue completo. Vercel puede publicar una segunda entrada del frontend usando el mismo backend de producción, como se describe más abajo.
 
 ## Desarrollo y verificación local
 
@@ -170,6 +170,38 @@ El smoke test valida SPA, cabeceras, rutas, autenticación anónima y conectivid
 pnpm cloudflare:deploy:production
 curl https://DOMINIO_PRODUCCION/api/v1/health
 ```
+
+## Frontend en Vercel
+
+El proyecto existente es `proyecto-educativo-a/proyecto-educativo-v3-frontend`, conectado al repositorio `thebuuba/Proyecto-educativo-v3`. Su dominio de producción es `https://aulabase.vercel.app`; el dominio anterior `proyecto-educativo-v3-frontend.vercel.app` redirige al nuevo. La carpeta raíz del proyecto en Vercel debe ser `apps/frontend`, con acceso a los paquetes del monorepo fuera de esa carpeta y Node.js 24.
+
+`apps/frontend/vercel.json` compila el frontend y sus dependencias del workspace, publica `dist`, reenvía `/api/*` al Worker de producción y devuelve `index.html` en rutas de la SPA. La API conserva `/api/v1` bajo el dominio del navegador, para que las cookies HttpOnly de sesión no dependan de peticiones entre dominios. Las respuestas de API no se almacenan en la caché compartida.
+
+Esta configuración usa la **API y los datos de producción**, también en previews de Vercel. Para pruebas que cambien datos, usar Cloudflare Staging después de verificar su conectividad, no las previews de este proyecto. No sustituir el destino por staging mientras su `/api/v1/health` falle.
+
+Las únicas variables públicas de Supabase del frontend son `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`; deben corresponder al mismo proyecto de producción `vqrptqffeezqacwtmlqq` que usa el Worker. En Vercel deben ser de tipo Config: son la URL y la clave pública anon del navegador, no credenciales del servidor. No agregar credenciales de PostgreSQL, `JWT_SECRET` ni claves de servicio al proyecto del frontend. La recuperación de contraseña usa `FRONTEND_URL` del Worker, por lo que sus enlaces siguen abriéndose en Cloudflare.
+
+La organización de Supabase es **Proyecto Educativo**, y el proyecto de producción es **Proyecto-educativo-a-virginia**. El retorno OAuth requerido para el dominio nuevo es `https://aulabase.vercel.app/auth/callback`; conservar también el retorno de Cloudflare y su Site URL. El proyecto anuncia Google y correo habilitados; Facebook no está habilitado.
+
+Para vincular una copia local después de autenticar la CLI y confirmar el equipo:
+
+```bash
+vercel whoami
+vercel link --cwd apps/frontend --scope proyecto-educativo-a --project proyecto-educativo-v3-frontend --yes
+vercel project inspect --cwd apps/frontend --non-interactive
+```
+
+Antes de publicar, comprobar en un deployment de prueba que `/api/v1/health` devuelve JSON con estado `ok`, `/api/v1/profile` devuelve un error de autenticación sin sesión, las rutas `/inicio` y `/configuracion` devuelven la SPA, y los bundles y `sw.js` conservan su tipo de contenido. Verificar después el login y la persistencia de la cookie, sin guardar tokens en documentación o logs.
+
+Diagnóstico del 13 de octubre de 2026: inicialmente Vercel devolvía `404 NOT_FOUND` en la API y las rutas internas. La sesión del navegador permitió asignar el dominio y publicar dos reglas de CDN, **API AulaBase** y **Pantallas AulaBase**. La primera reenvía la API al Worker con `Cache-Control: private, no-store`; la segunda sirve `index.html` para rutas de la SPA y excluye API, assets, `.well-known` y archivos con extensión. Ambas reglas fueron probadas en el deployment temporal de reglas antes de publicarse.
+
+Verificación pública: health `200` con estado `ok`, profile sin sesión `401` JSON, Inicio y Configuración `200` HTML, bundles y service worker `200` JavaScript. Los conectores y la CLI siguen sin autorización administrativa; el navegador tiene sesión válida en la cuenta confirmada.
+
+Con autorización del usuario se sustituyeron los dos registros antiguos de Supabase por Config para Production y Preview, usando la URL y la clave pública anon de `vqrptqffeezqacwtmlqq`. Se añadió `https://aulabase.vercel.app/auth/callback` a los retornos permitidos, conservando el retorno y el Site URL de Cloudflare.
+
+Se recompiló sin caché el mismo commit de producción `05320d24b484673d08118916b8c56d2dc204cac1` de `main`. El deployment `dpl_6YWwDhhJTTJo1We3XWKHTam9SsJB` quedó Ready y asociado a `aulabase.vercel.app`. Su bundle público `/assets/index-BKEm46YO.js` contiene únicamente el proyecto de Supabase correcto y una clave con rol anon de ese proyecto. Las rutas SPA, la API y los archivos JavaScript volvieron a verificarse después del despliegue; el dominio anterior conserva su redirección 307.
+
+La comprobación del navegador llega al formulario de acceso al abrir `/inicio` sin sesión. No se ha completado un login de usuario ni se ha verificado la persistencia de una cookie autenticada. Los cambios locales posteriores de la rama de trabajo no forman parte de esta recompilación de `main`.
 
 ## Rollback
 
