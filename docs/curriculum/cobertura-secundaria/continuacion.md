@@ -2,6 +2,8 @@
 
 ## Bloque más reciente: caligrama 1.º (.17)
 
+Commit funcional publicado: `f037918ad4204bbfe37ad779be838be55d4c1407`. Entorno local reiniciado con ese código; `health` confirma el commit, `dirty=false` al arranque, Supabase `127.0.0.1:54321` y catálogo `evaluation-2026.17`. Evidencia: `evidencias/entorno-catalogo17-ejecutado.json`. El commit posterior de documentación no cambia ese código ejecutado.
+
 Cinco familias en proveedor compartido; niveles específicos, análisis focalizado, sin conclusión/preguntas ausentes, sin criterio individual repetido en recitación, sentimientos del texto que pueden ser ficticios, verso libre sin exigir rima. Fuente PDF 74; se conserva el bloque anómalo de noticia sin atribuirlo al caligrama. Servicio normal: 80 propuestas, nueve regresiones y análisis focalizado. Cuatro formatos guardados/reabiertos en navegador con edición manual, celdas completadas, ámbito y puntos exactos; criterio/indicador/máximos contrastados con la respuesta del servicio. [Informe y límites](caligrama-1-reauditoria.md).
 
 Backend 1.214; frontend 809; inventario siete. Builds backend/frontend y Cloudflare dry-run aprobados. Catálogo .17 solo local, .16 archivado, releases anteriores y controles de navegador intactos. Quedan gramática focalizada, requisitos de revisión/publicación solicitados, más candidatos y recorridos de las familias/modalidades pendientes. Ninguna asignatura completa.
