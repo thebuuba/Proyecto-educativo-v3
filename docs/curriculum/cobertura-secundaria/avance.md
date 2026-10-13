@@ -59,6 +59,7 @@ El hash de cada bloque se añadirá aquí después de crearlo, en la siguiente a
 - Asociaciones revisadas de procedimientos de 1.º: `93ee679faae7977b867fe2077aa6bc2d60d0cfae`, publicado en la misma rama.
 - Límites de asignatura de los módulos españoles: `9d548573c4d514ce491d29c786c3e10dabc2b47a`, publicado en la misma rama.
 - Identidad de Ciencias Sociales: `8933963595ae08b9ad706baacf3381362ecab73c`, publicado en la misma rama.
+- Noticia compartida de 2.º y carga nativa: `e6c63190dca491f6347a6aa2be0fa7a62eea74e5`, publicado en la misma rama.
 
 La prueba local posterior requirió aplicar sólo la migración existente de linaje en el puerto 54332. Detectó y corrigió la comparación de fracciones JSON en reintentos; prueba de regresión y 20 casos HTTP aprobados. Evidencia en `evidencias/persistencia-lengua-2.json`. Próxima tarea: reauditar fuente y criterios/descriptores de los seis módulos de Lengua 1.º y La noticia de 2.º, conservando versiones previas.
 
@@ -73,3 +74,7 @@ Límites entre asignaturas: el motor activaba los seis módulos españoles de 1.
 Identidad de áreas oficiales: «Ciencias Sociales» estaba entrando en Ciencias de la Naturaleza por la coincidencia de la palabra «Ciencias». Se prioriza su identidad social antes del término general. Diez pruebas comprueban las nueve denominaciones comunes y una recomendación sobre migraciones que debe usar evidencia social. Backend completo 476/476; build backend y Cloudflare dry-run aprobados. Esto corrige la selección de dimensiones generales; los módulos temáticos de Sociales siguen pendientes del bloque D.
 
 Noticia de 2.º compartida: proveedor único entre backend y alternativa local para seis acciones y cuatro formatos, con centésimas iguales y cinco niveles específicos. Se eliminó la exigencia de responder preguntas adicionales y la penalización por apoyarse en la lectura. Release `evaluation-2026.9` instalado sólo localmente; release 8 archivado sin cambios. Evidencia nueva: 24 actividades HTTP, reintentos sin duplicados y revisión manual con linaje, repetidos con Node nativo. Backend 476/476, frontend 534/534, builds aprobados. Ver `noticia-2-compartida.md`. La anomalía de escritura de noticia en PDF 74 sigue sin reasignarse y no se declara secundaria completa.
+
+Componente común de modalidades: corregido el rechazo de Técnico-Profesional/Artes para asignaturas comunes de 4.º–6.º, según PDF 55 / impresa 54. Se exigen códigos estructurados comunes, Segundo Ciclo y grado válido; no se habilitan salidas académicas optativas ni especialidades. 54 casos positivos (nueve asignaturas × tres grados × dos modalidades), cuatro negativos y pruebas previas aprobados. Backend completo 534/534. Las fuentes especializadas siguen pendientes y no se declara su cobertura.
+
+Punto de recuperación: terminar la reauditoría de los seis módulos de 1.º, especialmente descriptores por acción y equivalencia de su alternativa local; ampliar los casos de consignas breves y conservar las ediciones. Después ejecutar bloques B–E en el orden del plan. No asumir cobertura temática de 3.º–6.º, otras áreas u optativas a partir de las correcciones de identidad/contexto realizadas.

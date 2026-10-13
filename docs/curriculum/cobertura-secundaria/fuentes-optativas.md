@@ -27,6 +27,8 @@ PDF 13–15 (impresas 12–14) describe Primer Ciclo común y Segundo Ciclo Acad
 
 La fuente proporcionada desarrolla las cuatro salidas académicas anteriores en PDF 427–517. No contiene mallas equivalentes de todas las menciones técnico-profesionales ni de Música, Artes Visuales, Artes Escénicas y Artes Aplicadas. Esas especialidades no se equiparan a Educación Artística común. Estado: fuente complementaria pendiente, sin habilitación ni implementación asumida.
 
+El motor admite el componente común académico de Técnico-Profesional y Artes únicamente en Segundo Ciclo, 4.º–6.º, con códigos estructurados de asignatura común. Resuelve los mismos ámbitos comunes del documento y excluye las salidas académicas optativas y asignaturas especializadas. Esta compatibilidad de contexto no equivale a cobertura temática de sus menciones. La revisión se basa en PDF 55 / impresa 54, conservando pendientes los diseños complementarios anteriores.
+
 ## Trazabilidad y revisión
 
 `inventario.json` conserva todos los elementos oficiales por ámbito y sus páginas PDF/impresas; `matriz.csv` conserva candidatos de temas y subtemas. Competencias e indicadores sólo se vinculan entre sí cuando existe relación explícita de la extracción; no se asignan automáticamente a un tema por coincidencia léxica. Procedimientos se conservan por ámbito hasta revisar sus límites de columna.

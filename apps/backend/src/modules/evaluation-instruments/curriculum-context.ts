@@ -62,7 +62,12 @@ function identity(context: AcademicContext) {
 export function resolveScope(context: AcademicContext, scopes: ScopeCandidate[], reviewedScopeIds: string[] = []) {
   const key = identity(context)
   if (!key.valid || !key.name) return { status: 'CONFLICT', scope: null, candidates: [], reason: 'Código de asignatura incompatible con grado/nivel/salida.' }
-  if (context.modalityCode && !['academic', 'general'].includes(context.modalityCode)) {
+  // PDF 55 / printed 54 includes the common academic component of these modalities.
+  // Their specialist subjects and academic exits require separate, verified designs.
+  const commonComponent = context.level === 'SECONDARY' && context.cycle === 2 && context.grade >= 4 && context.grade <= 6
+    && ['technical_professional', 'arts'].includes(context.modalityCode ?? '')
+    && key.source === 'STRUCTURED_SUBJECT_CODE' && !key.exit
+  if (context.modalityCode && !['academic', 'general'].includes(context.modalityCode) && !commonComponent) {
     return { status: 'UNSUPPORTED_MODALITY', scope: null, candidates: [], reason: 'No se ha importado el currículo de esa modalidad.' }
   }
   const candidates = scopes.filter(scope => scope.grade === context.grade && scope.cycle === context.cycle
@@ -76,7 +81,8 @@ export function resolveScope(context: AcademicContext, scopes: ScopeCandidate[],
   if (scope.optativeExitName && context.modalityCode !== 'academic' && context.modalityCode !== 'general') return { status: 'INCOMPLETE_CONTEXT', scope: null, candidates: [scope.id], reason: 'Falta modalidad académica configurada.' }
   // A stale/manual mapping cannot override hard academic constraints or disambiguate a missing exit.
   if (reviewedScopeIds.length && !reviewedScopeIds.includes(scope.id)) return { status: 'CONFLICT', scope: null, candidates: [], reason: 'Mapping revisado incompatible con el contexto operativo.' }
-  return { status: 'RESOLVED', scope, candidates: [scope.id], reason: reviewedScopeIds.includes(scope.id) ? 'REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT' : key.source }
+  return { status: 'RESOLVED', scope, candidates: [scope.id], reason: reviewedScopeIds.includes(scope.id) ? 'REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT'
+    : commonComponent ? 'COMMON_ACADEMIC_COMPONENT' : key.source }
 }
 export function discipline(scope: ScopeCandidate | null, context: AcademicContext | null) {
   const name = normalize(scope?.areaName ?? context?.subjectName ?? '')
