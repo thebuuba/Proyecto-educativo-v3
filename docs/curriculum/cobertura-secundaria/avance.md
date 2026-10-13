@@ -1,5 +1,9 @@
 # Avance durable — cobertura secundaria
 
+## Continuación actual: entorno normal local
+
+El 13/10/2026 se sustituyeron los procesos de desarrollo antiguos, tras identificar sus comandos y puertos, por frontend 5173/API 3000 coherentes con Supabase local 54321/54332. `.env` remotos conservados. Arranque `pnpm dev:local`; docente ficticio y 54 asignaciones comunes mediante `pnpm dev:local:seed`. Login real, generación, guardado y reapertura de células y Ohm comprobados en navegador; 32 propuestas HTTP específicas a través del proxy normal. Detalles, evidencias y siguiente módulo en [continuacion.md](continuacion.md). Este bloque no completa cobertura curricular. Pendiente nuevo hallazgo: significado específico de Parcial en lista ponderada.
+
 ## Fuente y base
 
 - Rama: `amplia-instrumentos-secundaria`, basada en `1d3a99b24d19b819f24a58d678592662c13edd1a` (flujo restaurado).

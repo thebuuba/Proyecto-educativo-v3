@@ -69,7 +69,12 @@ export async function createApplication(): Promise<INestApplication> {
   app.useGlobalInterceptors(new AuditLogInterceptor())
   app.getHttpAdapter().get('/api/v1/health', async (_request, response) => {
     await prisma.$queryRaw`select 1`
-    response.json({ data: { status: 'ok' } })
+    const development = !isProduction && process.env.AULABASE_DEV_COMMIT
+      ? { commit: process.env.AULABASE_DEV_COMMIT, dirty: process.env.AULABASE_DEV_DIRTY === 'true',
+          startedAt: process.env.AULABASE_DEV_STARTED_AT, supabaseOrigin: new URL(process.env.SUPABASE_URL!).origin,
+          catalogVersion: (await import('./modules/evaluation-instruments/catalog-current.js')).evaluationCatalogCurrent.version }
+      : undefined
+    response.json({ data: { status: 'ok', ...(development ? { development } : {}) } })
   })
 
   return app

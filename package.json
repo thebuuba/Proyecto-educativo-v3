@@ -6,6 +6,8 @@
   },
   "scripts": {
     "dev": "turbo dev",
+    "dev:local": "node scripts/dev-local.mjs",
+    "dev:local:seed": "node scripts/seed-dev-local.mjs",
     "build": "turbo build",
     "lint": "turbo lint",
     "test": "pnpm --filter backend test",
