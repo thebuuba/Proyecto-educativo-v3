@@ -52,5 +52,6 @@ El hash de cada bloque se añadirá aquí después de crearlo, en la siguiente a
 
 - Inventario y clasificación: `c0c2c1087ec165e02f81e44f9292eab7b080c052`, publicado en `origin/amplia-instrumentos-secundaria`.
 - Cinco módulos de Lengua 2.º: `757217a3b02dc1a28831ef3a2d8d134a26602dc1`, publicado en la misma rama y repositorio `thebuuba/Proyecto-educativo-v3`.
+- Reintentos y persistencia local: `4b00bc171f70f16d5bbd3f618c04b91705e6682f`, publicado en la misma rama.
 
 La prueba local posterior requirió aplicar sólo la migración existente de linaje en el puerto 54332. Detectó y corrigió la comparación de fracciones JSON en reintentos; prueba de regresión y 20 casos HTTP aprobados. Evidencia en `evidencias/persistencia-lengua-2.json`. Próxima tarea: reauditar fuente y criterios/descriptores de los seis módulos de Lengua 1.º y La noticia de 2.º, conservando versiones previas.

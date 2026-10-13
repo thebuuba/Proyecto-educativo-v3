@@ -1,6 +1,6 @@
 import { instrumentEvaluationConfiguration } from '@aula/shared'
 import { scoreInstrumentFields } from '../../services/instrumentScoring'
-import { instrumentTypographyClass } from './instrumentEditorShared'
+import { formatInstrumentNumber, instrumentTypographyClass } from './instrumentEditorShared'
 
 /** The same canonical configuration supplies preview, saved detail and evaluation. */
 export function ReadOnlyInstrument({
@@ -38,7 +38,7 @@ export function ReadOnlyInstrument({
                 <th key={index} className="border-b border-border p-3 text-center">
                   {level.label}
                   <span className="block text-xs font-normal text-muted-foreground">
-                    Valor relativo: {level.points}
+                    Valor relativo: {formatInstrumentNumber(level.points)}
                   </span>
                 </th>
               ))}

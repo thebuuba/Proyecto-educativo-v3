@@ -42,7 +42,7 @@ Este bloque no certifica toda Lengua de 2.º ni toda secundaria. La persistencia
 
 Reauditar Lengua 1.º y La noticia de 2.º; revisar preservación manual y ejemplos adicionales antes de cerrar el bloque A. Continuar luego con 3.º–6.º y el resto de la matriz. No activar optativas en ámbitos equivocados. Quedan sin cubrir los diseños específicos técnico-profesionales y de menciones artísticas que requieren fuentes adicionales.
 
-Incidencia visual anterior observada en la escala: los valores relativos pueden mostrar decimales largos (por ejemplo 2.6666666666666665). No afecta la suma en centésimas; corregir su presentación sin alterar los valores guardados ni el diseño acordado.
+La incidencia visual observada en la escala (valores relativos como 2.6666666666666665) se corrige usando el formateador compartido en encabezados y vista de lectura. La presentación se limita a dos decimales; no se alteran los valores guardados ni la suma en centésimas.
 
 ## Persistencia local posterior
 

@@ -640,7 +640,7 @@ export function ScaleSettingsDrawer({
                     }}
                   >
                     {level.name}
-                    <span className="block font-medium">Valor relativo: {level.points}</span>
+                    <span className="block font-medium">Valor relativo: {formatInstrumentNumber(level.points)}</span>
                   </div>
                 )
               })}
@@ -937,7 +937,7 @@ export function ScaleInstrument({
                   </span>
                   <span className="mt-0.5 block normal-case font-bold opacity-75">
                     Valor relativo:{' '}
-                    {fields[instrumentFieldKey('escala', 'level-points', level)] ?? level}
+                    {formatInstrumentNumber(Number(fields[instrumentFieldKey('escala', 'level-points', level)] ?? level))}
                   </span>
                 </th>
               )
