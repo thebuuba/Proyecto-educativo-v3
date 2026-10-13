@@ -155,6 +155,7 @@ export function GradingPage() {
       ) : (
         <div className="grading-workspace">
           <GradingBook
+            initialConfigOpen={searchParams.get('ajustes') === 'calculo'}
             evaluationProfile={selectedSs?.evaluationProfile}
             sectionSubjectId={selectedSsId}
             students={students}

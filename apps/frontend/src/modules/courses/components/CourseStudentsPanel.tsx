@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import { ArrowDown, ArrowUp, CheckCircle2, ClipboardList, MoreHorizontal, Plus, RotateCcw, Search, Trash2, TriangleAlert, UserMinus, UsersRound } from 'lucide-react'
 import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from 'react'
 
@@ -191,7 +192,7 @@ export function AddStudentsModal({ courseId, courseName, initialTab, onClose, on
       onClose()
       if (opener.current?.isConnected) opener.current.focus()
     }
-    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+    if (isMotionReduced()) {
       finish()
       return
     }

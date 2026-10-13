@@ -1,12 +1,13 @@
 /**
  * Layout principal de la aplicación con barra lateral y encabezado.
  */
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 
 import { Header } from '@/components/navigation/Header'
 import { Sidebar } from '@/components/navigation/Sidebar'
 import { GuidedTourProvider } from '@/modules/onboarding/GuidedTourProvider'
+import { setSidebarExpanded, useInterfacePreferences, useReducedMotion } from '@/hooks/useInterfacePreferences'
 import { cn } from '@/utils/cn'
 
 /**
@@ -16,18 +17,18 @@ import { cn } from '@/utils/cn'
 export function AppLayout() {
   const location = useLocation()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [isSidebarExpanded, setIsSidebarExpanded] = useState(
-    () => localStorage.getItem('aulabase:sidebar-expanded') === 'true',
-  )
+  const { sidebarExpanded: isSidebarExpanded } = useInterfacePreferences()
+  const reducedMotion = useReducedMotion()
   const activeModule = location.pathname.split('/').filter(Boolean)[0] ?? 'inicio'
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [location.pathname])
 
-  useEffect(() => {
-    localStorage.setItem('aulabase:sidebar-expanded', String(isSidebarExpanded))
-  }, [isSidebarExpanded])
+  useLayoutEffect(() => {
+    document.documentElement.dataset.reducedMotion = String(reducedMotion)
+    if (reducedMotion) document.getAnimations?.().forEach((animation) => animation.cancel())
+  }, [reducedMotion])
 
   return (
     <GuidedTourProvider>
@@ -48,7 +49,7 @@ export function AppLayout() {
             <Header
               onOpenSidebar={() => setIsSidebarOpen(true)}
               isSidebarExpanded={isSidebarExpanded}
-              onToggleSidebar={() => setIsSidebarExpanded((current) => !current)}
+              onToggleSidebar={() => setSidebarExpanded(!isSidebarExpanded)}
             />
 
             <main

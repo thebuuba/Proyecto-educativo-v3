@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import {
   Check,
   ChevronDown,
@@ -277,7 +278,7 @@ export function FlexibleScheduleWizard({
       }) ?? (journey
         ? candidates.find((element) => element.dataset.scheduleReview === journey.name)
         : undefined) ?? candidates[0]
-      target?.scrollIntoView?.({ behavior: 'smooth', block: 'center' })
+      target?.scrollIntoView?.({ behavior: isMotionReduced() ? 'auto' : 'smooth', block: 'center' })
       target?.focus({ preventScroll: true })
     }, 0)
   }

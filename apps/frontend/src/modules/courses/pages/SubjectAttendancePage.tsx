@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import { CalendarCheck2, CalendarDays, CheckCircle2, UserRound, X } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -74,7 +75,7 @@ export function SubjectAttendancePanel({ sectionSubjectId, students, loading = f
   useEffect(() => {
     if (!editing) return
     const frame = window.requestAnimationFrame(() => {
-      const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+      const reduceMotion = isMotionReduced()
       attendanceEditorRef.current?.scrollIntoView?.({
         behavior: reduceMotion ? 'auto' : 'smooth',
         block: 'start',

@@ -1,4 +1,5 @@
-﻿import {
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
+import {
   Accessibility,
   AlignCenter,
   AlignLeft,
@@ -158,6 +159,7 @@ import { secondaryEvaluationProfile, type EvaluationProfile, type InstrumentReco
 import { alignRecommendationWithFields, interpretActivity, prepareInstrument, preparationFingerprint, recommendationToFields, type ActivityInterpretation } from '@/modules/activities/services/instrumentPreparation'
 
 type GradingBookProps = {
+  initialConfigOpen?: boolean
   evaluationProfile?: EvaluationProfile
   sectionSubjectId?: string
   students: StudentGradeRow[]
@@ -370,6 +372,7 @@ const emptyActivityDraft: ActivityDraft = {
 }
 
 export function GradingBook({
+  initialConfigOpen = false,
   evaluationProfile,
   sectionSubjectId,
   students,
@@ -415,7 +418,7 @@ export function GradingBook({
       ? { type: 'activity', activityId: initialActivityId, initialTab: initialActivityMode === 'evaluate' ? 'evaluation' : initialActivityMode === 'results' ? 'results' : 'details' }
       : null)
   const [activityCreateReturnView, setActivityCreateReturnView] = useState<DetailView | null>(() => initialActivityBlockId ? { type: 'activity-hub' } : null)
-  const [showConfig, setShowConfig] = useState(false)
+  const [showConfig, setShowConfig] = useState(initialConfigOpen)
   const [infoActivity, setInfoActivity] = useState<GradingActivity | null>(null)
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null)
   const [activityDraft, setActivityDraft] = useState(() => initialActivityBlockId ? newActivityDraft(initialActivityBlockId) : emptyActivityDraft)
@@ -2517,7 +2520,7 @@ function ActivityEvaluationPanel({
           if (!await saveCurrentScore()) return
           setStudentIndex((current) => Math.min(students.length - 1, current + 1))
           window.requestAnimationFrame(() => {
-            if (typeof workspaceRef.current?.scrollIntoView === 'function') workspaceRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            if (typeof workspaceRef.current?.scrollIntoView === 'function') workspaceRef.current.scrollIntoView({ behavior: isMotionReduced() ? 'auto' : 'smooth', block: 'start' })
           })
         }}>
           {saveStatus === 'saving' ? 'Guardando…' : saveStatus === 'saved' ? 'Guardado ✓' : 'Guardar y siguiente →'}
@@ -3913,7 +3916,7 @@ function ActivityCreationView(props: {
     showHighlight(issue.target)
     window.setTimeout(() => {
       const field = document.querySelector<HTMLElement>(`[data-activity-required="${issue.target}"] input:not(:disabled), [data-activity-required="${issue.target}"] button`)
-      field?.scrollIntoView?.({ block: 'center', behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+      field?.scrollIntoView?.({ block: 'center', behavior: isMotionReduced() ? 'auto' : 'smooth' })
       field?.focus()
     }, 0)
     return false
@@ -4844,7 +4847,7 @@ function InstrumentPreview({
     if (!highlight) return
     const timeout = window.setTimeout(() => {
       const emptyField = Array.from(editorRef.current?.querySelectorAll<HTMLTextAreaElement>('textarea') ?? []).find((field) => !field.value.trim())
-      emptyField?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' })
+      emptyField?.scrollIntoView({ behavior: isMotionReduced() ? 'auto' : 'smooth', block: 'center' })
       emptyField?.focus()
     }, 80)
     return () => window.clearTimeout(timeout)
@@ -6556,7 +6559,7 @@ function focusNewInstrumentRow(type: string, index: number, setHighlightedRow: D
   setHighlightedRow(index)
   window.setTimeout(() => {
     const field = document.querySelector<HTMLTextAreaElement>(`[data-instrument-row="${type}-${index}"]`)
-    field?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' })
+    field?.scrollIntoView({ behavior: isMotionReduced() ? 'auto' : 'smooth', block: 'center' })
     field?.focus()
   }, 50)
   window.setTimeout(() => setHighlightedRow(null), 1300)

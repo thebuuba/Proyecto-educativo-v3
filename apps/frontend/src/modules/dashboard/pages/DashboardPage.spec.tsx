@@ -82,6 +82,11 @@ describe('DashboardPage', () => {
     localStorage.removeItem('aulabase:home-widgets:v2:local')
   })
 
+  it('abre el editor de widgets desde el acceso de configuración', () => {
+    render(<MemoryRouter initialEntries={['/inicio?ajustes=widgets']}><DashboardPage /></MemoryRouter>)
+    expect(screen.getByRole('dialog', { name: 'Editar widgets' })).toBeInTheDocument()
+  })
+
   it('distinguishes completed, current, and upcoming classes with real agenda data', () => {
     const base = {
       subjectName: 'Ciencias de la Naturaleza', gradeName: '2.º', sectionName: 'A',

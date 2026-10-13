@@ -239,6 +239,14 @@ No existe un puente global de colores heredados. Nunca crear uno nuevo.
 
 Cuando se migre un subcomponente heredado, retirar su regla localizada de compatibilidad en el mismo cambio cuando sea seguro hacerlo. Una excepción temporal nunca debe filtrarse a otro módulo.
 
+## Configuración
+
+- Organizar `/configuracion` en Centro educativo, Calendario, Usuarios, Cuenta e interfaz y Módulos; cada categoría usa tarjetas blancas y acciones semánticas compartidas.
+- Mantener el margen del layout, títulos oscuros, campos y botones de acción redondos. `settings-design.css` solo ajusta la forma de controles dentro de `settings-workspace`; no introduce una paleta de compatibilidad.
+- Mostrar únicamente ajustes que tengan soporte real en las API o en las preferencias del navegador. Los roles, correo y estado de usuarios permanecen informativos.
+- Las preferencias personales también están disponibles en `/perfil`: menú lateral expandido y reducción de animaciones. Esta última se combina con la preferencia de movimiento del sistema operativo.
+- Mantener los enlaces antiguos a años y períodos y ofrecer accesos directos a los ajustes existentes de cada módulo.
+
 ## Criterio final
 
 Una pantalla de AulaBase debe sentirse tranquila y legible:

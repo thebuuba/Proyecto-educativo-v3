@@ -70,8 +70,18 @@ describe('CourseStudentsPanel', () => {
   })
 
   afterEach(() => {
+    localStorage.removeItem('aulabase:reduced-motion')
     vi.useRealTimers()
     vi.unstubAllGlobals()
+  })
+
+  it('cierra sin temporizador cuando se activa la reducción de movimiento del navegador', async () => {
+    localStorage.setItem('aulabase:reduced-motion', 'true')
+    vi.stubGlobal('matchMedia', () => ({ matches: false }))
+    render(<CourseStudentsPanel courseId="course-1" courseName="1.º A" canEnroll canManage initialAction="new" onBack={vi.fn()} />)
+    await act(async () => undefined)
+    await userEvent.click(screen.getByRole('button', { name: 'Cancelar' }))
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
 
   it.each(['Cancelar', 'Cerrar', 'Escape', 'Exterior'])(

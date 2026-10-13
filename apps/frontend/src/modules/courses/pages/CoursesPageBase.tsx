@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import {
   AlertCircle,
   Archive,
@@ -2153,7 +2154,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
     if (!selectedEnrollmentId) return
     const frame = window.requestAnimationFrame(() => {
       detailRef.current?.scrollIntoView({
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        behavior: isMotionReduced() ? 'auto' : 'smooth',
         block: 'nearest',
       })
     })

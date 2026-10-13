@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { driver, type Driver } from 'driver.js'
@@ -36,7 +37,7 @@ export function GuidedTourProvider({ children }: { children: ReactNode }) {
     activeDriver.current?.destroy()
     let finished = false
     const instance = driver({
-      animate: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      animate: !isMotionReduced(),
       allowClose: true,
       allowKeyboardControl: true,
       overlayColor: '#0f172a', overlayOpacity: 0.55, stagePadding: 8, stageRadius: 16,

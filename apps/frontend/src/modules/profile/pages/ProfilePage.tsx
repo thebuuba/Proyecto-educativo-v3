@@ -16,8 +16,10 @@ import { Input } from '@/components/ui/Input'
 import { FeedbackBanner, PageHero, SemanticIcon, StatusBadge } from '@/components/ui/SemanticUI'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { updateOwnProfile } from '@/modules/profile/services/profileService'
+import { InterfacePreferencesPanel } from '@/modules/profile/components/InterfacePreferencesPanel'
 import { api } from '@/services/apiClient'
 import type { UserRole } from '@/types/domain'
+import '@/modules/school-administration/settings-design.css'
 
 const roleLabels: Record<UserRole, string> = {
   admin: 'Admin',
@@ -29,8 +31,20 @@ const roleLabels: Record<UserRole, string> = {
   viewer: 'Lector',
 }
 
-export function ProfilePage() {
-  const { appUser, roles, refreshAuth } = useAuth()
+export function ProfilePage({ embedded = false }: { embedded?: boolean } = {}) {
+  const auth = useAuth()
+  if (!auth.appUser) {
+    return <section className="w-full min-w-0"><ErrorState message="No se pudo cargar tu perfil." /></section>
+  }
+  return <LoadedProfilePage key={auth.appUser.id} embedded={embedded} appUser={auth.appUser} roles={auth.roles} refreshAuth={auth.refreshAuth} />
+}
+
+function LoadedProfilePage({ embedded, appUser, roles, refreshAuth }: {
+  embedded: boolean
+  appUser: NonNullable<ReturnType<typeof useAuth>['appUser']>
+  roles: ReturnType<typeof useAuth>['roles']
+  refreshAuth: ReturnType<typeof useAuth>['refreshAuth']
+}) {
   const [fullName, setFullName] = useState(appUser?.fullName ?? '')
   const [phone, setPhone] = useState(appUser?.phone ?? '')
   const [avatarUrl, setAvatarUrl] = useState(appUser?.avatarUrl ?? '')
@@ -46,10 +60,6 @@ export function ProfilePage() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (!appUser) {
-      setError('No se pudo cargar tu perfil.')
-      return
-    }
     if (!fullName.trim()) {
       setError('El nombre completo es obligatorio.')
       return
@@ -87,15 +97,12 @@ export function ProfilePage() {
     }
   }
 
-  if (!appUser) {
-    return <section className="w-full min-w-0"><ErrorState message="No se pudo cargar tu perfil." /></section>
-  }
-
   const active = String(appUser.status).toLowerCase() === 'active' || String(appUser.status).toLowerCase() === 'activo'
+  const statusText = active ? 'Activa' : String(appUser.status).toLowerCase() === 'inactive' ? 'Inactiva' : 'Archivada'
 
   return (
-    <section className="w-full min-w-0 space-y-5">
-      <PageHero
+    <section className="settings-workspace w-full min-w-0 space-y-5">
+      {!embedded ? <PageHero
         title="Perfil"
         description="Actualiza tus datos personales y las opciones de seguridad de tu cuenta."
         icon={UserRound}
@@ -103,10 +110,10 @@ export function ProfilePage() {
         eyebrow="Cuenta"
       >
         <div className="flex flex-wrap items-center gap-2">
-          <StatusBadge tone={active ? 'success' : 'warning'}>{active ? 'Cuenta activa' : appUser.status}</StatusBadge>
+          <StatusBadge tone={active ? 'success' : 'warning'}>Cuenta {statusText.toLowerCase()}</StatusBadge>
           <span className="text-xs text-muted-foreground">{roleText}</span>
         </div>
-      </PageHero>
+      </PageHero> : null}
 
       {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
       {success ? <FeedbackBanner tone="success">{success}</FeedbackBanner> : null}
@@ -124,15 +131,15 @@ export function ProfilePage() {
             <form className="grid gap-4 sm:grid-cols-2" onSubmit={(event) => void handleSubmit(event)}>
               <label className="block">
                 <span className="text-sm font-semibold text-foreground">Nombre completo</span>
-                <Input className="mt-2" value={fullName} onChange={(event) => setFullName(event.target.value)} disabled={saving} />
+                <Input className="mt-2" autoComplete="name" maxLength={200} required value={fullName} onChange={(event) => setFullName(event.target.value)} disabled={saving} />
               </label>
               <label className="block">
                 <span className="text-sm font-semibold text-foreground">Teléfono</span>
-                <Input className="mt-2" value={phone} onChange={(event) => setPhone(event.target.value)} placeholder="Sin teléfono" disabled={saving} />
+                <Input className="mt-2" type="tel" autoComplete="tel" maxLength={50} value={phone} onChange={(event) => setPhone(event.target.value)} placeholder="Sin teléfono" disabled={saving} />
               </label>
               <label className="block sm:col-span-2">
                 <span className="text-sm font-semibold text-foreground">URL de avatar</span>
-                <Input className="mt-2" value={avatarUrl} onChange={(event) => setAvatarUrl(event.target.value)} placeholder="https://..." disabled={saving} />
+                <Input className="mt-2" type="url" maxLength={2048} value={avatarUrl} onChange={(event) => setAvatarUrl(event.target.value)} placeholder="https://..." disabled={saving} />
               </label>
               <label className="block sm:col-span-2">
                 <span className="text-sm font-semibold text-foreground">Correo</span>
@@ -159,8 +166,7 @@ export function ProfilePage() {
               </div>
               <dl className="grid gap-3 text-sm">
                 <InfoRow label="Rol" value={roleText} />
-                <InfoRow label="Escuela" value={appUser.schoolId} />
-                <InfoRow label="Estado" value={String(appUser.status)} />
+                <InfoRow label="Estado" value={statusText} />
               </dl>
             </CardContent>
           </Card>
@@ -181,6 +187,7 @@ export function ProfilePage() {
           </Card>
         </div>
       </div>
+      <InterfacePreferencesPanel />
     </section>
   )
 }

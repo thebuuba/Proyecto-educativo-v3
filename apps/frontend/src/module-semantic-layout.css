@@ -19,6 +19,17 @@
   color: var(--primary-variant);
 }
 
+/* La preferencia del navegador incluye los diálogos renderizados en portales. */
+:root[data-reduced-motion='true'],
+:root[data-reduced-motion='true'] *,
+:root[data-reduced-motion='true'] *::before,
+:root[data-reduced-motion='true'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
 /* Cancelación y cierre: regla visual compartida para toda la aplicación. */
 :root button[data-ui-action='cancel'] {
   background-color: var(--destructive);

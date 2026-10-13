@@ -22,7 +22,8 @@ import {
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { flushSync } from 'react-dom'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 
 import { ErrorState, Modal } from '@/components/ui'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
@@ -605,11 +606,19 @@ function PulseCard({ data }: { data: DashboardData }) {
 
 export function DashboardPage() {
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
   const { hasRole, appUser } = useAuth()
   const { data, error, loading, actionLoading, addTask, completeTask, refetch } = useDashboard()
   const widgetStorageKey = `aulabase:home-widgets:v2:${appUser?.id ?? 'local'}`
   const [widgets, setWidgets] = useState<WidgetId[]>(() => readWidgets(widgetStorageKey))
   const [widgetEditorOpen, setWidgetEditorOpen] = useState(false)
+  useEffect(() => {
+    if (searchParams.get('ajustes') !== 'widgets') return
+    setWidgetEditorOpen(true)
+    const next = new URLSearchParams(searchParams)
+    next.delete('ajustes')
+    setSearchParams(next, { replace: true })
+  }, [searchParams, setSearchParams])
   const [addedPaths, setAddedPaths] = useState<string[]>(() => {
     try { return JSON.parse(localStorage.getItem('aulabase:home-shortcuts') || '[]') as string[] }
     catch { return [] }
@@ -660,8 +669,9 @@ export function DashboardPage() {
     }))
     flushSync(() => setWidgets(next))
     try { localStorage.setItem(widgetStorageKey, JSON.stringify(next)) } catch { /* Keep the current session usable. */ }
-    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
+    if (isMotionReduced()) return
     requestAnimationFrame(() => {
+      if (isMotionReduced()) return
       document.querySelectorAll<HTMLElement>('[data-home-widget]').forEach((element) => {
         if (typeof element.animate !== 'function') return
         const previous = before.get(element.dataset.homeWidget)

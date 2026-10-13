@@ -66,6 +66,11 @@ describe('GradingBook', () => {
   })
   afterEach(() => { vi.restoreAllMocks() })
 
+  it('abre las opciones de cálculo cuando se solicita desde configuración', () => {
+    renderBook({ initialConfigOpen: true })
+    expect(screen.getByRole('dialog', { name: 'Configurar cálculo' })).toBeInTheDocument()
+  })
+
   it('usa los criterios reales de una lista de cotejo al evaluar', () => {
     const configuration = activityRubricConfiguration({
       ...activities[0],

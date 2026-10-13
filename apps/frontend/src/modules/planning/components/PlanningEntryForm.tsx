@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import {
   AlertCircle,
   ArrowRight,
@@ -424,7 +425,7 @@ export function PlanningEntryForm({
       return
     }
     setStep((current) => Math.min(3, current + 1))
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: isMotionReduced() ? 'auto' : 'smooth' })
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
