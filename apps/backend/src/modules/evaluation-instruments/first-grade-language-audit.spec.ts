@@ -5,6 +5,13 @@ import type { AcademicContext } from './curriculum-context'
 
 const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', modalityCode: 'academic', optativeExitName: null }
 describe('re-audit of existing first grade language modules', () => {
+  for (const [subjectCode, subjectName] of [['ING', 'Lengua Inglesa'], ['FRA', 'Lengua Francesa']]) {
+    it.each(['Redacta una noticia.', 'Elabora una guía turística.', 'Redacta un informe de lectura.', 'Crea un afiche.', 'Escribe un cuento policíaco.', 'Crea un caligrama.'])(`does not activate Spanish modules in ${subjectCode}: %s`, description => {
+      const result = recommend({ activityTitle: 'Actividad', description, participationMode: 'INDIVIDUAL', maxScore: 20 },
+        { ...context, subjectCode, subjectName }, null, [], 'NO_MAPPING', null)
+      expect(result.internalTrace.reasons.join(' ')).not.toMatch(/module=lengua-secundaria-1/)
+    })
+  }
   it('does not choose a genre mentioned only as a resource', () => {
     expect(detectSecondaryLanguageActivity('Actividad', 'Analiza las diferencias entre las expresiones. Recursos: un caligrama.', context)).toBeNull()
   })
