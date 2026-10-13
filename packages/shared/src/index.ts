@@ -178,6 +178,7 @@ export { firstGradeGuideCriteria, firstGradeGuideModule, isFirstGradeGuideActivi
 export { firstGradeReadingReportCriteria, firstGradeReadingReportModule } from './secondary-reading-report-grade-one'
 export { firstGradePosterCriteria, firstGradePosterModule, isFirstGradePosterActivity } from './secondary-poster-grade-one'
 export { firstGradeDetectiveCriteria, firstGradeDetectiveModule, isFirstGradeDetectiveActivity } from './secondary-detective-grade-one'
+export { firstGradeCalligramCriteria, firstGradeCalligramModule, isFirstGradeCalligramActivity } from './secondary-calligram-grade-one'
 export { findSecondaryMathTopic, secondaryMathCriteria, secondaryMathModules } from './secondary-math'
 export type EntityStatus = 'active' | 'inactive'
 

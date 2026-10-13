@@ -1,6 +1,6 @@
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
 import { newsCriteria } from './authored/language/news-grade-1'
-import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, firstSecondaryLanguageGenre } from '@aula/shared'
+import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { touristGuideCriteria } from './authored/language/tourist-guide-grade-1'
 import { posterCriteria } from './authored/language/poster-grade-1'
@@ -303,7 +303,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const posterModule = firstGenre === 'POSTER' && isFirstGradePosterActivity(activity.id)
   const readingReportModule = firstGenre === 'READING_REPORT'
   const detectiveModule = firstGenre === 'DETECTIVE_STORY' && isFirstGradeDetectiveActivity(activity.id)
-  const calligramModule = firstGenre === 'CALLIGRAM' && activity.id !== 'REPORT'
+  const calligramModule = firstGenre === 'CALLIGRAM' && isFirstGradeCalligramActivity(activity.id)
   const selectedAuthored: AuthoredCriterion[] = mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
     : scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
     : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '')

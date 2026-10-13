@@ -5,7 +5,7 @@
       "id": "76d1d9e3-52af-58b4-a886-50daf7b4ed98",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
-      "implementation": "IMPLEMENTED",
+      "implementation": "PARTIAL_NEWS_CORE_SIX_ACTIVITY_FAMILIES",
       "procedures": [
         "726a3500-49d4-55d0-b95d-08dbefa4f5e5",
         "94ad93d7-4744-5b51-bad2-5de8a0de6c29",
@@ -31,7 +31,7 @@
       "id": "a5536c76-af76-53df-aa37-181e67ef25a0",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
-      "implementation": "IMPLEMENTED",
+      "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
       "automatedVerification": "PASSED",
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
@@ -58,7 +58,7 @@
       "id": "08b968f6-dc72-5d0d-b668-d83c8d84627e",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
-      "implementation": "IMPLEMENTED",
+      "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
       "automatedVerification": "PASSED",
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
@@ -86,7 +86,7 @@
       "id": "d27d17ed-ccf8-5f69-b79c-1736652f6993",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
-      "implementation": "IMPLEMENTED",
+      "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
       "automatedVerification": "PASSED",
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
@@ -113,7 +113,7 @@
       "id": "e3f89621-f01a-5ecb-a995-ae3cd6f9c09b",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
-      "implementation": "IMPLEMENTED",
+      "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
       "automatedVerification": "PASSED",
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
@@ -140,7 +140,7 @@
       "id": "c517b837-01e5-53db-83fe-d7f74d451ce9",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
-      "implementation": "IMPLEMENTED",
+      "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
       "automatedVerification": "PASSED",
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "LOCAL_HTTP_PASSED",
@@ -286,7 +286,7 @@
     },
     {
       "id": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
-      "implementation": "EXISTING_PENDING_REAUDIT",
+      "implementation": "PARTIAL_FIVE_ACTIVITY_FAMILIES_SHARED_PROVIDER",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -295,7 +295,11 @@
         "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
         "6386112a-44b3-5b36-9416-1f31d2540550"
       ],
-      "report": "avance.md"
+      "report": "caligrama-1-reauditoria.md",
+      "catalogVersion": "evaluation-2026.17",
+      "serviceVerification": "NORMAL_REAL_LOGIN_80_PROPOSALS_9_REGRESSIONS_FOCUSED_ANALYSIS_PASSED",
+      "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_CREATION_ANALYSIS_RECITATION_COMPARISON_SAVE_REOPEN_PASSED",
+      "pending": "Focused grammar/poetic resources, requested draft/publication requirements, further action filtering, additional authored candidates, explanation/group browser coverage. Not complete secondary coverage."
     },
     {
       "id": "4916701f-df02-5247-84d8-3aa598f61ef5",

@@ -1,5 +1,15 @@
 # Continuación del encargo completo
 
+## Bloque más reciente: caligrama 1.º (.17)
+
+Cinco familias en proveedor compartido; niveles específicos, análisis focalizado, sin conclusión/preguntas ausentes, sin criterio individual repetido en recitación, sentimientos del texto que pueden ser ficticios, verso libre sin exigir rima. Fuente PDF 74; se conserva el bloque anómalo de noticia sin atribuirlo al caligrama. Servicio normal: 80 propuestas, nueve regresiones y análisis focalizado. Cuatro formatos guardados/reabiertos en navegador con edición manual, celdas completadas, ámbito y puntos exactos; criterio/indicador/máximos contrastados con la respuesta del servicio. [Informe y límites](caligrama-1-reauditoria.md).
+
+Backend 1.214; frontend 809; inventario siete. Builds backend/frontend y Cloudflare dry-run aprobados. Catálogo .17 solo local, .16 archivado, releases anteriores y controles de navegador intactos. Quedan gramática focalizada, requisitos de revisión/publicación solicitados, más candidatos y recorridos de las familias/modalidades pendientes. Ninguna asignatura completa.
+
+Commits publicados: afiche `b90a492a1d661227924e80fd30123e92cad955e6`; cuento `7a75486fba93bd7439516c515b1a81a5432c76c1`; base compartida `2bcad9b4a42263a2fab1480f7a47abe48f89d0b0`. Rama `amplia-instrumentos-secundaria`, repositorio `thebuuba/Proyecto-educativo-v3`.
+
+Siguiente bloque: resolver los pendientes focalizados de noticia/guía/informe de Lengua 1.º en el orden de sus informes, completar la reauditoría de noticia 2.º y continuar Lengua 3.º–6.º; después Ciencias, otras comunes y optativas según `avance.md`. Leer matriz/registro antes de editar; no sobrescribir las evidencias históricas ni tratar los 385 candidatos a tema como cobertura implementada.
+
 ## Bloque más reciente: cuento policíaco 1.º (.16)
 
 Proveedor compartido para escritura, análisis, comparación, narración y presentación del análisis. Progresiones específicas; análisis focalizado por elementos, preguntas/voces condicionales, sin conclusión obligatoria ausente. Servicio normal: 80 propuestas, ocho regresiones, análisis focalizado y título incompatible. Cuatro formatos guardados/reabiertos desde navegador: análisis en rúbrica/cotejo, narración en escala, escritura ponderada; ediciones manuales y celdas completadas preservadas. Identidades, plantilla, ámbito, snapshots y puntos comprobados por HTTP normal. [Informe y pendientes](cuento-policiaco-1-reauditoria.md).

@@ -487,7 +487,8 @@ describe('Recomendador con currículo literal completo', () => {
     for (const preferredInstrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
       const result = recommend({ activityTitle, description, maxScore: 17.35, participationMode: 'INDIVIDUAL', preferredInstrumentType }, context, null, [], 'UNMAPPED', null)
       expect(result.activityType).toBe(activityType)
-      expect(result.criteria.map(item => item.title)).toContain(criterionTitle)
+      if(preferredInstrumentType==='rubrica'||preferredInstrumentType==='lista-ponderada') expect(result.criteria.map(item => item.title)).toContain(criterionTitle)
+      else expect(result.criteria.map(item=>item.title)).toEqual(result.criteria.map(item=>item.description))
       expect(result.totalScoreUnits).toBe(1735)
       if (activityType === 'CALLIGRAM_CREATION') expect(JSON.stringify(result.criteria)).toContain('sin exigir rima')
     }

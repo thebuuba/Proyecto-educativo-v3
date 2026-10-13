@@ -1,5 +1,9 @@
 # Avance durable — cobertura secundaria
 
+## Bloque .17: caligrama 1.º
+
+Cinco familias compartidas y progresiones específicas; requisitos según descripción, sin conclusión ni preguntas obligatorias ausentes, recitación sin duplicar desempeño individual. 80 propuestas HTTP, nueve regresiones y análisis focalizado; cuatro formatos guardados/reabiertos, edición manual, celda completada, identidad/procedencia y puntos contrastados con servicio. Backend 1.214, frontend 809, inventario siete; builds backend/frontend y Cloudflare dry-run aprobados. Fuente PDF 74, .16 archivado y .17 local. [Informe y pendientes](caligrama-1-reauditoria.md). Continúa pendiente la cobertura completa: primero los pendientes focalizados de los módulos de Lengua 1.º, noticia 2.º y los restantes grados, después Ciencias/otras comunes/optativas.
+
 ## Bloque .16: cuento policíaco 1.º
 
 Cinco familias en proveedor compartido; elementos del análisis separados, niveles específicos, preguntas/voces/conclusión según consigna. 80 propuestas HTTP normales, ocho regresiones y análisis focalizado; cuatro formatos guardados/reabiertos con textos manuales, celdas completadas, identidad/ámbito y totales exactos. Backend 1.171, frontend 748, inventario siete; builds backend/frontend/Cloudflare dry-run aprobados. [Informe y límites](cuento-policiaco-1-reauditoria.md). Fuente PDF 73. Siguiente: caligrama PDF 74, después pendientes de noticia/guía/informe y orden del alcance completo. No equivale a completar Lengua 1.º ni secundaria.
