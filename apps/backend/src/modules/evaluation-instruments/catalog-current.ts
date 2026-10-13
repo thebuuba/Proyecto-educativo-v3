@@ -2,15 +2,18 @@ import { secondaryLanguageGradeTwoTopics, secondGradeNewsModule, secondaryScienc
 import { evaluationCatalogV1 } from './catalog-v1'
 import { evaluationCatalogV8 } from './catalog-v8'
 import { evaluationCatalogV9 } from './catalog-v9'
+import { evaluationCatalogV10 } from './catalog-v10'
+import { firstGradeNewsModule } from '@aula/shared'
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV9,
-  version: 'evaluation-2026.10',
-  scienceModules: secondaryScienceModules,
+  ...evaluationCatalogV10,
+  version: 'evaluation-2026.11',
+  firstGradeNewsModule,
+  authoredFormatPolicy: 'observable-indicators-and-contextual-half-credit-v1',
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules }
 export function evaluationCatalogForVersion(version: string) {
   return version === evaluationCatalogV1.version ? evaluationCatalogV1 : version === evaluationCatalogV8.version ? evaluationCatalogV8
-    : version === evaluationCatalogV9.version ? evaluationCatalogV9 : version === evaluationCatalogCurrent.version ? evaluationCatalogCurrent : null
+    : version === evaluationCatalogV9.version ? evaluationCatalogV9 : version === evaluationCatalogV10.version ? evaluationCatalogV10 : version === evaluationCatalogCurrent.version ? evaluationCatalogCurrent : null
 }

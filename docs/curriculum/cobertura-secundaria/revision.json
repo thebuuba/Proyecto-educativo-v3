@@ -15,7 +15,17 @@
       "automatedVerification": "PASSED",
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED_SOURCE_ANOMALY",
       "applicationVerification": "LOCAL_HTTP_PASSED",
-      "catalogVersion": "evaluation-2026.9"
+      "catalogVersion": "evaluation-2026.9",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NOT_RUN",
+      "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal."
     },
     {
       "id": "a5536c76-af76-53df-aa37-181e67ef25a0",
@@ -32,7 +42,17 @@
         "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
         "3ccbe1c7-82cd-5db3-9e48-588d83312496"
       ],
-      "report": "lengua-2-primer-bloque.md"
+      "report": "lengua-2-primer-bloque.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NOT_RUN",
+      "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal."
     },
     {
       "id": "08b968f6-dc72-5d0d-b668-d83c8d84627e",
@@ -50,7 +70,17 @@
         "9a3f5c34-b341-5f32-89fa-e6b683aa060a",
         "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6"
       ],
-      "report": "lengua-2-primer-bloque.md"
+      "report": "lengua-2-primer-bloque.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NOT_RUN",
+      "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal."
     },
     {
       "id": "d27d17ed-ccf8-5f69-b79c-1736652f6993",
@@ -67,7 +97,17 @@
         "b45bd0dd-d8ba-5c04-875e-60757078923f",
         "c5bfa453-dc73-53e9-a353-1457ecef84f1"
       ],
-      "report": "lengua-2-primer-bloque.md"
+      "report": "lengua-2-primer-bloque.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NOT_RUN",
+      "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal."
     },
     {
       "id": "e3f89621-f01a-5ecb-a995-ae3cd6f9c09b",
@@ -84,7 +124,17 @@
         "cc923913-1534-5a1f-adcd-6b9da2605f47",
         "3e738e39-751a-5e4d-adb9-8d26ee79fea0"
       ],
-      "report": "lengua-2-primer-bloque.md"
+      "report": "lengua-2-primer-bloque.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NOT_RUN",
+      "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal."
     },
     {
       "id": "c517b837-01e5-53db-83fe-d7f74d451ce9",
@@ -101,11 +151,21 @@
         "4122a1e7-9404-5b78-92cf-eaf89124a6a8",
         "9b706154-da02-5d8d-b641-7c7b6e9e8b4d"
       ],
-      "report": "lengua-2-primer-bloque.md"
+      "report": "lengua-2-primer-bloque.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NOT_RUN",
+      "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal."
     },
     {
       "id": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
-      "implementation": "EXISTING_PENDING_REAUDIT",
+      "implementation": "PARTIAL_NEWS_CORE_SIX_ACTIVITY_FAMILIES",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -116,7 +176,21 @@
         "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
         "71c8091f-c16b-5568-a567-fefeeb6ab5a6"
       ],
-      "report": "avance.md"
+      "report": "noticia-1-reauditoria.md",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_69_70_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_HTTP_AND_BROWSER_RUBRIC_PASSED",
+      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_96_CASES",
+      "interfaceVerification": "NORMAL_BROWSER_RUBRIC_SAVE_REOPEN_PASSED",
+      "catalogVersion": "evaluation-2026.11",
+      "pending": "Verificar navegador de otros tres formatos y subtemas gramaticales, sin?nimos, siglas y requisitos muy focalizados; no equivale a completar Lengua 1.?."
     },
     {
       "id": "56301465-88e2-54cc-a5db-627c7266844c",
@@ -201,7 +275,17 @@
       "catalogVersion": "evaluation-2026.10",
       "automatedVerification": "PASSED",
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_AND_BROWSER_PASSED"
+      "applicationVerification": "LOCAL_HTTP_AND_BROWSER_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_PARTIAL",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_BROWSER_SAVE_REOPEN_PASSED",
+      "pending": "Cobertura limitada al modelo celular o a Ohm; otros contenidos del tema permanecen pendientes. Comprobar Parcial de .11 en navegador."
     },
     {
       "id": "95019cec-fc43-50ec-b3a3-592c776ea67f",
@@ -215,7 +299,17 @@
       "catalogVersion": "evaluation-2026.10",
       "automatedVerification": "PASSED",
       "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_AND_BROWSER_PASSED"
+      "applicationVerification": "LOCAL_HTTP_AND_BROWSER_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_PARTIAL",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_BROWSER_SAVE_REOPEN_PASSED",
+      "pending": "Cobertura limitada al modelo celular o a Ohm; otros contenidos del tema permanecen pendientes. Comprobar Parcial de .11 en navegador."
     }
   ],
   "sourceAnomalies": [

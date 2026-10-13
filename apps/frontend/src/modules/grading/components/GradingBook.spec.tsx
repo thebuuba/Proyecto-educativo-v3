@@ -366,7 +366,7 @@ describe('GradingBook', () => {
 
   it.each([
     ['La noticia', 'Los estudiantes redactarán una noticia sobre una situación de su comunidad, con titular, entrada y cuerpo', 'NEWS_WRITING', 'analisis-producciones', 'rubrica', 'Información esencial de la noticia'],
-    ['Lo que ocurre en el mundo', 'Leerán una noticia sobre inmigración, identificarán sus partes y explicarán el hecho con evidencias del texto', 'NEWS_ANALYSIS', 'observacion-sistematica', 'lista-cotejo', 'Intención comunicativa de la noticia'],
+    ['Lo que ocurre en el mundo', 'Leerán una noticia sobre inmigración, identificarán sus partes y explicarán el hecho con evidencias del texto', 'NEWS_ANALYSIS', 'observacion-sistematica', 'lista-cotejo', 'Explica el propósito informativo y el hecho central de la noticia sobre inmigración'],
     ['Dos versiones de un hecho', 'Compararán dos noticias sobre el mismo acontecimiento y justificarán sus semejanzas y diferencias', 'NEWS_COMPARISON', 'analisis-producciones', 'rubrica', 'Hecho y propósito'],
     ['Nuestro noticiero', 'Presentarán oralmente una noticia sobre educación, explicando qué ocurrió, a quién, dónde, cuándo y cómo', 'NEWSCAST', 'exposicion', 'rubrica', 'Contenido de la noticia presentada'],
     ['Una noticia para debatir', 'Debatirán sobre el hecho presentado en una noticia, argumentando sus posturas con evidencias', 'DEBATE', 'debate', 'rubrica', 'Comprensión del hecho'],
@@ -393,7 +393,7 @@ describe('GradingBook', () => {
     await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial de la noticia'), { timeout: 8000 })
     await user.selectOptions(instrument, 'escala')
     await waitFor(() => expect(instrument).toHaveValue('escala'))
-    await waitFor(() => expect(screen.getAllByPlaceholderText('Indicador')[0]).toHaveValue('Información esencial de la noticia'))
+    await waitFor(() => expect((screen.getAllByPlaceholderText('Indicador')[0] as HTMLTextAreaElement).value).toContain('Redacta el hecho noticioso sobre educación'))
     fireEvent.change(description, { target: { value: 'Redactarán una noticia sobre salud con titular, entrada y cuerpo.' } })
     await waitFor(() => expect(instrument).toHaveValue('escala'))
     expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING')

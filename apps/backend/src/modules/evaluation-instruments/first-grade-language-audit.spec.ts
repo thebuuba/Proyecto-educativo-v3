@@ -34,7 +34,7 @@ describe('re-audit of existing first grade language modules', () => {
     ['NEWS_WRITING', 'Analizarán una noticia y presentarán un noticiero.', 'Titular, entrada y cuerpo'],
   ])('keeps criteria for the teacher-selected %s', (activity, description, criterion) => {
     const result = recommend({ activityTitle: 'La noticia', description, pedagogicalActivityType: activity,
-      participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'NO_MAPPING', null)
+      participationMode: 'INDIVIDUAL', maxScore: 20, preferredInstrumentType: 'rubrica' }, context, null, [], 'NO_MAPPING', null)
     expect(result.activityType).toBe(activity)
     expect(result.criteria.map(row => row.title)).toContain(criterion)
   })

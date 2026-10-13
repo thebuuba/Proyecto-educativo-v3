@@ -4,6 +4,8 @@
 
 El 13/10/2026 se sustituyeron los procesos de desarrollo antiguos, tras identificar sus comandos y puertos, por frontend 5173/API 3000 coherentes con Supabase local 54321/54332. `.env` remotos conservados. Arranque `pnpm dev:local`; docente ficticio y 54 asignaciones comunes mediante `pnpm dev:local:seed`. Login real, generación, guardado y reapertura de células y Ohm comprobados en navegador; 32 propuestas HTTP específicas a través del proxy normal. Detalles, evidencias y siguiente módulo en [continuacion.md](continuacion.md). Este bloque no completa cobertura curricular. Pendiente nuevo hallazgo: significado específico de Parcial en lista ponderada.
 
+Actualización .11: noticia de Lengua 1.º con proveedor compartido y progresiones específicas en seis familias de actividad. Corregidos informe interpretado como escritura de noticia, selección incompatible por título y adaptación de indicadores/Parcial en proveedores contextualizados. 96 propuestas en servicio normal; rúbrica guardada/reabierta con login real y snapshot .11. Backend 999 / frontend 594 / inventario seis pruebas aprobadas. [Informe y pendientes](noticia-1-reauditoria.md). La matriz separa motor, servicio e interfaz; no convierte HTTP aislado de Lengua 2.º en verificación normal. Próximo tema: guía turística de 1.º, seguido de los restantes temas y del alcance completo.
+
 ## Fuente y base
 
 - Rama: `amplia-instrumentos-secundaria`, basada en `1d3a99b24d19b819f24a58d678592662c13edd1a` (flujo restaurado).

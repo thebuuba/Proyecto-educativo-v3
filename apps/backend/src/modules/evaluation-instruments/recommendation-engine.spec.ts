@@ -101,7 +101,8 @@ describe('La noticia de Lengua Española en 2.º de secundaria', () => {
       const result = recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore, preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
       expect(result.activityType).toBe(expectedType)
       expect(result.instrumentType).toBe(instrumentType)
-      expect(result.criteria.map(item => item.title)).toContain(expectedCriterion)
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(result.criteria.map(item => item.title)).toContain(expectedCriterion)
+      else expect(result.criteria.map(item => item.title)).toEqual(result.criteria.map(item => item.description))
       expect(result.totalScoreUnits).toBe(Math.round(maxScore * 100))
       expect(result.internalTrace.reasons).toContain('module=lengua-secundaria-2-la-noticia')
       if (instrumentType === 'rubrica' || instrumentType === 'escala') {
@@ -131,7 +132,7 @@ describe('La noticia de Lengua Española en 2.º de secundaria', () => {
     expect(requested.criteria.find(item => item.title === 'Precisión del lenguaje periodístico')?.description).toContain('formas gramaticales solicitadas')
   })
   it('mantiene el alcance de 1.º y excluye otros grados y materias', () => {
-    expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, grade: 1 })).toBeNull()
+    expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, grade: 1 })).toBe('DEBATE')
     expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, grade: 3 })).toBeNull()
     expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, subjectCode: 'SOC' })).toBeNull()
   })
@@ -384,7 +385,8 @@ describe('Recomendador con currículo literal completo', () => {
       const result = recommend({ activityTitle, description, maxScore: 17.5, participationMode: description.includes('equipos') ? 'GROUP' : 'INDIVIDUAL', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
       expect(result.activityType).toBe(activityType)
       expect(result.instrumentType).toBe(instrumentType)
-      expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      else expect(result.criteria.map(item => item.title)).toEqual(result.criteria.map(item => item.description))
       expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(1750)
       expect(result.criteria.every(item => item.sourceType === 'CONTEXTUALIZED' && item.sourceReferences.length === 0)).toBe(true)
       if (instrumentType === 'rubrica' || instrumentType === 'escala') expect(result.criteria.every(item => item.descriptors.length === 4)).toBe(true)

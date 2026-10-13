@@ -34,7 +34,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
             : /noticias?|noticiero/.test(both) ? 'NEWS' : null
   if (!module) return null
   const action = (value: string) => {
-    if (context.grade === 2 && module === 'NEWS') {
+    if (module === 'NEWS') {
       if (/\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
       if (/\b(?:debat\w*|debates?)\b/.test(value)) return 'DEBATE'
     }
@@ -165,6 +165,8 @@ export const GradeRecordStatusEnum = {
 export type GradeRecordStatus = (typeof GradeRecordStatusEnum)[keyof typeof GradeRecordStatusEnum]
 
 /** @description Estado booleano simplificado de una entidad: activo o inactivo. */
+export { firstGradeNewsCriteria, firstGradeNewsModule, isFirstGradeNewsActivity } from './secondary-news-grade-one'
+export { formatAuthoredCriteria } from './authored-instrument-format'
 export type EntityStatus = 'active' | 'inactive'
 
 export function splitFullName(fullName: string, lastNameFallback = 'Sin apellido') {

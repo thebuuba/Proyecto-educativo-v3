@@ -17,6 +17,7 @@ function topicCandidates(concepts) {
     }
     if (!/^[\s•●\-–]/.test(element.originalText)) {
       topics.push({ id: element.id, title: element.originalText, source: ref, subtopics: [],
+        inventoryStatus: 'INVENTARIADO', extractionStatus: 'EXTRAÍDO', engineConnection: 'PENDING', instrumentFormats: [], serviceVerification: 'NOT_RUN', interfaceVerification: 'NOT_RUN', pending: 'Revisar límites, contenido evaluativo y conexión al motor.',
         procedures: [], procedureAssociation: 'PENDING_VISUAL_REVIEW', boundaryReview: 'PENDING_VISUAL_REVIEW',
         implementation: 'PENDING', automatedVerification: 'NOT_RUN', manualVerification: 'NOT_RUN', applicationVerification: 'NOT_RUN' })
     } else if (topics.length) topics.at(-1).subtopics.push(ref)
@@ -27,7 +28,7 @@ function topicCandidates(concepts) {
 /** Reviewed evidence lives separately, so rebuilding extraction cannot erase progress. */
 export function applyInventoryReview(inventory, review) {
   if (review.sourceSha256 !== inventory.source.sha256) throw new Error('La revisión corresponde a otra fuente.')
-  const statusFields = ['implementation', 'automatedVerification', 'manualVerification', 'applicationVerification', 'boundaryReview', 'procedureAssociation', 'report', 'catalogVersion']
+  const statusFields = ['implementation', 'automatedVerification', 'manualVerification', 'applicationVerification', 'boundaryReview', 'procedureAssociation', 'report', 'catalogVersion', 'engineConnection', 'instrumentFormats', 'serviceVerification', 'interfaceVerification', 'pending']
   for (const entry of review.topics ?? []) {
     const scope = inventory.scopes.find(scope => scope.topics.some(topic => topic.id === entry.id))
     if (!scope) throw new Error(`Tema de revisión desconocido: ${entry.id}`)
@@ -54,6 +55,7 @@ export function buildSecondaryInventory(rows) {
     return { id: scope.id, stableKey: scope.stableKey, cycle: scope.cycle, grade: scope.grade,
       area: scope.areaName, subject: scope.subjectName, modality: scope.modalityName ?? null, exit: scope.optativeExitName ?? null,
       character: scope.optativeExitName ? 'OPTATIVE' : 'COMMON', pdfPages: [...new Set(scoped.map(element => element.source.pdfPage))].sort((a, b) => a - b),
+      inventoryStatus: 'INVENTARIADO', extractionStatus: 'EXTRAÍDO', engineConnection: 'PENDING', instrumentFormats: [], serviceVerification: 'NOT_RUN', interfaceVerification: 'NOT_RUN', pending: 'Revisar temas y cobertura evaluativa del ámbito.',
       elements: grouped, topics: topicCandidates(scoped.filter(element => element.type === 'CONCEPT')),
       extraction: 'EXTRACTED_PENDING_REVIEW', implementation: 'PENDING', automatedVerification: 'NOT_RUN', manualVerification: 'NOT_RUN', applicationVerification: 'NOT_RUN' }
   })
@@ -76,12 +78,13 @@ export function writeSecondaryInventory(output = 'docs/curriculum/cobertura-secu
   const result = existsSync(reviewPath) ? applyInventoryReview(extracted, JSON.parse(readFileSync(reviewPath, 'utf8'))) : extracted
   mkdirSync(output, { recursive: true })
   writeFileSync(`${output}/inventario.json`, JSON.stringify(result, null, 2) + '\n')
-  const header = ['scope_id', 'cycle', 'grade', 'area', 'subject', 'character', 'modality', 'exit', 'topic_id', 'topic', 'pdf_page', 'printed_page', 'subtopics', 'boundary_review', 'implementation', 'automated_verification', 'manual_verification', 'application_verification']
+  const header = ['scope_id', 'cycle', 'grade', 'area', 'subject', 'character', 'modality', 'exit', 'topic_id', 'topic', 'pdf_page', 'printed_page', 'subtopics', 'boundary_review', 'implementation', 'automated_verification', 'manual_verification', 'application_verification', 'inventory_status', 'extraction_status', 'engine_connection', 'instrument_formats', 'service_verification', 'interface_verification', 'catalog_version', 'report', 'pending']
   const lines = result.scopes.flatMap(scope => (scope.topics.length ? scope.topics : [null]).map(topic => [
     scope.id, scope.cycle, scope.grade, scope.area, scope.subject, scope.character, scope.modality, scope.exit,
     topic?.id, topic?.title, topic?.source.pdfPage, topic?.source.printedPage,
     topic?.subtopics.map(item => item.text.replace(/\s+/g, ' ')).join(' | '),
     topic?.boundaryReview ?? 'PENDING_TOPIC_EXTRACTION', topic?.implementation ?? scope.implementation, topic?.automatedVerification ?? scope.automatedVerification, topic?.manualVerification ?? scope.manualVerification, topic?.applicationVerification ?? scope.applicationVerification,
+    scope.inventoryStatus, scope.extractionStatus, topic?.engineConnection ?? scope.engineConnection, (topic?.instrumentFormats ?? scope.instrumentFormats).join(' | '), topic?.serviceVerification ?? scope.serviceVerification, topic?.interfaceVerification ?? scope.interfaceVerification, topic?.catalogVersion, topic?.report, topic?.pending ?? scope.pending,
   ].map(csv).join(',')))
   writeFileSync(`${output}/matriz.csv`, [header.join(','), ...lines].join('\n') + '\n')
   return result

@@ -16,7 +16,8 @@ const request = async (path, input) => {
   return (await response.json()).data
 }
 const results = []
-const fixtures = JSON.parse(readFileSync('data/evaluation-instruments/science-regressions.json', 'utf8'))
+const news = process.argv.includes('--news')
+const fixtures = JSON.parse(readFileSync(`data/evaluation-instruments/${news ? 'news-grade-one-regressions' : 'science-regressions'}.json`, 'utf8'))
 for (const fixture of fixtures) for (const neutral of [false, true]) {
   const sectionSubjectId = context.assignments.find(row => row.grade === fixture.grade && row.code === fixture.code).id
   const activityTitle = neutral ? 'Actividad de aprendizaje' : fixture.activityTitle
@@ -27,12 +28,13 @@ for (const fixture of fixtures) for (const neutral of [false, true]) {
   for (const maxScore of [20, 17.35]) for (const preferredInstrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']) {
     const proposal = await request('/evaluation-instruments/recommend', { ...input, curriculumVersionId: interpretation.curriculumVersionId,
       participationMode: 'INDIVIDUAL', pedagogicalActivityType: interpretation.activityType, maxScore, preferredInstrumentType })
-    assert.equal(proposal.catalogVersion, 'evaluation-2026.10')
+    assert.equal(proposal.catalogVersion, health.data.development.catalogVersion)
     assert.equal(proposal.instrumentType, preferredInstrumentType)
     assert.equal(proposal.totalScoreUnits, Math.round(maxScore * 100))
-    assert(proposal.criteria.every(row => row.templateId.startsWith(`science-${fixture.id}-`)), 'Se recibieron criterios ajenos al módulo.')
+    assert(proposal.criteria.every(row => row.templateId.startsWith(fixture.templatePrefix ?? `science-${fixture.id}-`)), 'Se recibieron criterios ajenos al módulo.')
+    if (preferredInstrumentType === 'lista-ponderada') assert(proposal.criteria.every(row => row.description.includes('Parcial (50%):')), 'No se define la evidencia parcial.')
     results.push({ fixture: fixture.id, neutral, maxScore, interpretation, proposal })
   }
 }
-writeFileSync('docs/curriculum/cobertura-secundaria/evidencias/entorno-normal-local.json', JSON.stringify({ health: health.data, authentication: 'PASSWORD_LOGIN_REAL', proxy: base, results }, null, 2) + '\n')
+writeFileSync(`docs/curriculum/cobertura-secundaria/evidencias/${news ? 'noticia-1-servicio-normal' : 'entorno-normal-local-current'}.json`, JSON.stringify({ health: health.data, authentication: 'PASSWORD_LOGIN_REAL', proxy: base, results }, null, 2) + '\n')
 console.log(`${results.length} instrumentos específicos comprobados mediante frontend 5173 → backend 3000 → Supabase local. Sin alternativa 503 ni sesión sintética.`)

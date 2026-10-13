@@ -131,7 +131,8 @@ describe('alternativa local de La noticia en 2.º de secundaria', () => {
     for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
       const proposal = editableFallbackRecommendation({ activityTitle: 'La noticia', description, activityType,
         secondaryLanguageGrade: 2, maxScore: 17.35, instrumentType, participationMode: 'INDIVIDUAL' })
-      expect(proposal.criteria[0].title).toBe(firstCriterion)
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(proposal.criteria[0].title).toBe(firstCriterion)
+      else expect(proposal.criteria[0].title).toBe(proposal.criteria[0].description)
       expect(proposal.totalScoreUnits).toBe(1735)
       expect(proposal.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(1735)
       expect(proposal.instrumentType).toBe(instrumentType)

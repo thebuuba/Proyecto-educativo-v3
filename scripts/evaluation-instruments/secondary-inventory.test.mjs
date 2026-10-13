@@ -69,3 +69,18 @@ test('rebuilding retains explicit reviewed progress and rejects mismatched sourc
   assert.throws(() => applyInventoryReview(inventory, { ...review, sourceSha256: 'wrong' }), /fuente/)
   assert.throws(() => applyInventoryReview(inventory, { ...review, topics: [{ id: topic.id, procedures: ['not-an-official-procedure'] }] }), /procedimiento/)
 })
+
+test('no confunde implementación ni HTTP aislado con verificación en interfaz normal', () => {
+  const inventory = buildSecondaryInventory(rows)
+  const topic = inventory.scopes[0].topics[0]
+  const updated = applyInventoryReview(inventory, { sourceSha256: inventory.source.sha256,
+    topics: [{ id: topic.id, implementation: 'IMPLEMENTED', applicationVerification: 'LOCAL_HTTP_PASSED',
+      engineConnection: 'CONTEXTUAL_PROVIDER', instrumentFormats: ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'], serviceVerification: 'ISOLATED_LOCAL_HTTP_PASSED' }] })
+  const result = updated.scopes[0].topics[0]
+  assert.equal(result.inventoryStatus, 'INVENTARIADO')
+  assert.equal(result.extractionStatus, 'EXTRAÍDO')
+  assert.equal(result.engineConnection, 'CONTEXTUAL_PROVIDER')
+  assert.equal(result.instrumentFormats.length, 4)
+  assert.equal(result.serviceVerification, 'ISOLATED_LOCAL_HTTP_PASSED')
+  assert.equal(result.interfaceVerification, 'NOT_RUN')
+})
