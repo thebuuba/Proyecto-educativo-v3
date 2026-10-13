@@ -6,7 +6,7 @@ import { readingReportCriteria } from './authored/language/reading-report-grade-
 import { detectiveStoryCriteria } from './authored/language/detective-story-grade-1'
 import { calligramCriteria } from './authored/language/calligram-grade-1'
 import type { AuthoredCriterion } from './authored/language/types'
-import { distributeScoreUnits, findSecondaryLanguageTopic, secondaryTopicCriteria, withoutResources } from '@aula/shared'
+import { distributeScoreUnits, findSecondaryLanguageTopic, secondaryTopicCriteria, withoutResources, scientificTaskType, findSecondaryScienceTopic, secondaryScienceCriteria } from '@aula/shared'
 import { detectSecondaryLanguageActivity, firstSecondaryLanguageTechnique, INSTRUMENT_MAX_CRITERIA, type CurriculumReference, type InstrumentRecommendation, type RecommendationCriterion } from '@aula/shared'
 export { detectFirstSecondaryLanguageActivity, detectSecondaryLanguageActivity } from '@aula/shared'
 import { type EvaluationCatalog, evaluationCatalogCurrent } from './catalog-current'
@@ -51,6 +51,8 @@ export function topicTerms(title: string, description = '') {
   return fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
 }
 export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogCurrent, contextualTypes = true) {
+  const scientific = scientificTaskType(title, description)
+  if (scientific) return catalog.activityTypes.find(entry => entry.id === scientific)!
   const find = (value: string, descriptionMode = false) => {
     const text = normalize(value)
     const words = tokens(text)
@@ -72,7 +74,7 @@ export function detectActivityType(title: string, description: string, catalog: 
         const actionRoot = normalizedTrigger.split(' ')[0].replace(/(?:ar|er|ir)$/, '')
         return (/^(?:cre|disen|distrib|elabor|hac|produc|redact|escrib|le|analiz|identific|compar|explic|expon|present|narr|cont|recit|declam|interpret|resolv|investig)/.test(normalizedTrigger)
           && new RegExp(`\\b${actionRoot}[a-z]*\\b`).test(text))
-          || new RegExp(`(?:realiz|prepar|hacer|present)[a-z]*\\s+(?:una?\\s+)?${normalizedTrigger.replace(/\s+/g, '\\s+')}`).test(text)
+          || new RegExp(`(?:realiz|prepar|hacer|present|elabor|dibuj|cre|produc)[a-z]*\\s+(?:una?\\s+)?${normalizedTrigger.replace(/\s+/g, '\\s+')}`).test(text)
       })))
       .sort((a, b) => Math.max(...b.triggers.filter(matched).map(t => t.length)) - Math.max(...a.triggers.filter(matched).map(t => t.length)))[0]
   }
@@ -206,6 +208,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const area = discipline(scope, context)
   const matchedTopic = findSecondaryLanguageTopic(input.activityTitle, input.description ?? '', context)
   const contextualTopic = area === 'language' && catalog.contextualModules?.some(topic => topic.id === matchedTopic?.id && topic.grade === matchedTopic.grade) ? matchedTopic : null
+  const matchedScience = findSecondaryScienceTopic(input.activityTitle, input.description ?? '', context)
+  const scienceTopic = catalog.scienceModules?.some(module => module.id === matchedScience && module.grade === context?.grade) ? matchedScience : null
   const attitudeRelevant = /convivencia|cooperaci|valores|respeto|solidaridad|seguridad/.test(text)
   // Keep content/genre words (poema, ensayo, pintura). Strip only pedagogical boilerplate.
   const ranking = rankCurriculum(input.activityTitle, input.description ?? '', activity.id, input.competencyBlock, scope, elements, catalog)
@@ -282,14 +286,15 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const readingReportModule = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage && /\binforme(?:s)? de lectura\b/.test(text)
   const detectiveModule = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage && /\bcuento(?:s)? (?:policiacos?|detectivescos?)\b/.test(text) && !readingReportModule
   const calligramModule = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage && (/\bcaligramas?\b/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text))
-  const authored: AuthoredCriterion[] = contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '')
+  const authored: AuthoredCriterion[] = scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
+    : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '')
     : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
     : touristGuideModule ? touristGuideCriteria(activity.id, input.description ?? '')
       : posterModule ? posterCriteria(activity.id, input.activityTitle, input.description ?? '')
         : readingReportModule ? readingReportCriteria(activity.id, input.description ?? '')
           : detectiveModule ? detectiveStoryCriteria(activity.id)
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : []
-  const authoredScores = authored.length ? contextualTopic || newsModule && context?.grade === 2
+  const authoredScores = authored.length ? scienceTopic || contextualTopic || newsModule && context?.grade === 2
     ? distributeScoreUnits(Math.round(input.maxScore * 100), authored.map(item => item.weight))
     : distributeScore(input.maxScore, authored.map(item => item.weight)) : []
   const authoredPatternIndexes = levelCount === 4 ? [0, 1, 3, 4] : [0, 1, 2, 3, 4]
@@ -324,6 +329,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       ruleId: input.preferredInstrumentType ? `${rule.id}:TEACHER_OVERRIDE` : rule.id, activityTypeOrigin: explicit ? 'EXPLICIT' : detected.id !== 'OTHER' ? 'DETECTED' : 'DEFAULT',
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
+  if (scienceTopic) result.internalTrace.reasons.push(`module=science-${scienceTopic}-${context?.grade}`)
   assertValidRecommendation(result)
   return result
 }

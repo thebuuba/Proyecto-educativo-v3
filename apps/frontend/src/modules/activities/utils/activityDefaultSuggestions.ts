@@ -1,10 +1,13 @@
 type ActivityDefaults = { activityType: string; technique: string; instrument: string }
+import { scientificTaskType } from '@aula/shared'
 
 const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
 
 /** Immediate defaults from the teacher's task, using only options already offered by the creator. */
 export function activityDefaultSuggestions(title: string, description: string): ActivityDefaults | null {
   if (!title.trim() || !description.trim()) return null
+  const science = scientificTaskType(title, description)
+  if (science) return { activityType: science, technique: science === 'PROJECT' ? 'proyecto' : 'resolucion-problemas', instrument: 'rubrica' }
   const heading = normalize(title)
   const task = normalize(description)
   const text = `${heading} ${task}`

@@ -1000,12 +1000,16 @@ export function ScaleInstrument({
                     borderColor: scaleLevelVisual(accent, levelIndex, levels.length).border,
                   }}
                 >
-                  <span
-                    className="mx-auto block size-5 rounded-full border-2 bg-white shadow-sm"
-                    style={{
-                      borderColor: scaleLevelVisual(accent, levelIndex, levels.length).border,
-                    }}
-                  />
+                  {levels.some(level => fields[`escala:descriptor:${index}:${level}`] !== undefined) ? (
+                    <InstrumentTextarea
+                      ariaLabel={`${fields[`escala:level-name:${value}`] || `Nivel ${value}`} del indicador ${index + 1}`}
+                      value={fields[`escala:descriptor:${index}:${value}`]}
+                      onChange={(text) => onFieldChange(`escala:descriptor:${index}:${value}`,text)}
+                      placeholder="Descriptor de desempeño"
+                    />
+                  ) : (
+                    <span className="mx-auto block size-5 rounded-full border-2 bg-white shadow-sm" style={{borderColor:scaleLevelVisual(accent,levelIndex,levels.length).border}} />
+                  )}
                 </td>
               ))}
               {hasNoApply ? (

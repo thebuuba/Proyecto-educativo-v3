@@ -1,0 +1,140 @@
+[
+  {
+    "label": "local",
+    "host": "127.0.0.1",
+    "releases": [
+      {
+        "version": "evaluation-2026.1",
+        "fingerprint": "b2ebba2818882ef58c3c34a8fa4b5ee6"
+      },
+      {
+        "version": "evaluation-2026.10",
+        "fingerprint": "8ce2c6fc5a5ce4eea5b2ff2aec504396"
+      },
+      {
+        "version": "evaluation-2026.2",
+        "fingerprint": "364b88dd4dc919fc73e1edf8da68f1b4"
+      },
+      {
+        "version": "evaluation-2026.4",
+        "fingerprint": "8eca696dd296ecc90b08d41671e227cc"
+      },
+      {
+        "version": "evaluation-2026.5",
+        "fingerprint": "a9b463a272ebebba569e9cf1f7cbc461"
+      },
+      {
+        "version": "evaluation-2026.6",
+        "fingerprint": "f5569b7bc080d3a9a7a40b7d279943b4"
+      },
+      {
+        "version": "evaluation-2026.7",
+        "fingerprint": "e21c29cea8438bb8dc89a9b5ed89b4eb"
+      },
+      {
+        "version": "evaluation-2026.8",
+        "fingerprint": "e96563f5b590caee082781104f008f62"
+      },
+      {
+        "version": "evaluation-2026.9",
+        "fingerprint": "865f7313feced9551839bd861cc2c79e"
+      }
+    ],
+    "assignment": [],
+    "versions": [
+      {
+        "id": "37843eac-3f65-55ab-8a7e-e4fd95715380",
+        "level": "PRIMARY",
+        "status": "DRAFT"
+      },
+      {
+        "id": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "level": "SECONDARY",
+        "status": "DRAFT"
+      }
+    ],
+    "science": [
+      {
+        "grade": 6,
+        "subject_name": "Ciencias de la Naturaleza",
+        "elements": 316
+      },
+      {
+        "grade": 2,
+        "subject_name": "Ciencias de la Naturaleza",
+        "elements": 258
+      }
+    ]
+  },
+  {
+    "label": "configured-backend",
+    "host": "vqrptqffeezqacwtmlqq.supabase.co",
+    "releases": {
+      "status": 200,
+      "data": [
+        {
+          "version": "evaluation-2026.1"
+        }
+      ]
+    },
+    "assignment": {
+      "status": 200,
+      "data": [
+        {
+          "id": "6a986a58-efa8-433f-948c-6ab6b00c7911",
+          "subjects": {
+            "code": "MAT",
+            "name": "Matemática"
+          },
+          "grades": {
+            "sequence": 6,
+            "dr_academic_cycles": {
+              "code": "secundario_segundo_ciclo"
+            },
+            "dr_academic_levels": {
+              "code": "secundario"
+            }
+          }
+        }
+      ]
+    },
+    "versions": {
+      "status": 200,
+      "data": []
+    },
+    "scienceAssignments": [
+      {
+        "id": "54f17021-eac8-4b9b-b136-1e94ffe3b7d4",
+        "subjects": {
+          "code": "NAT-VIDA",
+          "name": "Ciencias de la Naturaleza: Ciencias de la Vida"
+        },
+        "grades": {
+          "sequence": 2,
+          "dr_academic_cycles": {
+            "code": "secundario_primer_ciclo"
+          },
+          "dr_academic_levels": {
+            "code": "secundario"
+          }
+        }
+      },
+      {
+        "id": "b148f72b-8ed7-4aa9-b606-5bd085d5de0d",
+        "subjects": {
+          "code": "NAT-FIS",
+          "name": "Ciencias de la Naturaleza: Física"
+        },
+        "grades": {
+          "sequence": 6,
+          "dr_academic_cycles": {
+            "code": "secundario_segundo_ciclo"
+          },
+          "dr_academic_levels": {
+            "code": "secundario"
+          }
+        }
+      }
+    ]
+  }
+]

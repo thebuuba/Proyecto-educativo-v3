@@ -93,13 +93,14 @@ type CompetencyPeriodId
 import { cn } from '@/utils/cn'
 
 
-import { secondaryEvaluationProfile,type EvaluationProfile } from '@aula/shared'
+import { secondaryEvaluationProfile,type EvaluationProfile, type InstrumentAcademicContext } from '@aula/shared'
 
 
 
 
 
 type GradingBookProps = {
+  instrumentAcademicContext?: InstrumentAcademicContext | null
   activityDraftContext?: ActivityDraftContext
   firstSecondaryLanguage?: boolean
   secondSecondaryLanguage?: boolean
@@ -164,6 +165,7 @@ type ActivitySaveCompletion =
   | { kind: 'draft'; blockId: CompetencyBlockId; activityName: string }
 
 export function GradingBook({
+  instrumentAcademicContext,
   activityDraftContext,
   firstSecondaryLanguage = false,
   secondSecondaryLanguage = false,
@@ -613,7 +615,7 @@ export function GradingBook({
         ) : detailView.type === 'activity-create' && selectedCreateBlock ? (
           <ActivityEditorWorkspace
             evaluationProfile={evaluationProfile} activityDraftContext={activityDraftContext}
-            firstSecondaryLanguage={firstSecondaryLanguage} secondSecondaryLanguage={secondSecondaryLanguage}
+            firstSecondaryLanguage={firstSecondaryLanguage} secondSecondaryLanguage={secondSecondaryLanguage} instrumentAcademicContext={instrumentAcademicContext}
             sectionSubjectId={sectionSubjectId} teams={teams} saving={saving}
             initialActivityBlockId={selectedCreateBlock.id as CompetencyBlockId}
             initialActivityDraftId={initialActivityDraftId ?? activityDraft.draftId}

@@ -36,7 +36,7 @@ const generalSubjects: Record<string, string> = {
 }
 /** Audited code adapter. Source spelling is never modified in the curricular dataset. */
 function identity(context: AcademicContext) {
-  const code = context.subjectCode.toUpperCase()
+  const code = context.subjectCode.trim().toUpperCase()
   const opt = /^OPT-(HLM|HCS|MT|CT)(?:-(LEN|ING|SOC))?-([456])$/.exec(code)
   if (opt) {
     const exit = optativeExits[opt[1] as keyof typeof optativeExits]

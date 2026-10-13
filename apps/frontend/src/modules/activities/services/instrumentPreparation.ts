@@ -1,6 +1,7 @@
 import type { InstrumentRecommendation } from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
 import { editableAuthoredRecommendation, editableSecondaryTopicRecommendation, findSecondaryLanguageTopic, secondGradeNewsCriteria, withoutResources } from '@aula/shared'
+import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType, type InstrumentAcademicContext } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
 export type ActivityInterpretation = {
@@ -28,7 +29,11 @@ export function preparationFingerprint(input: { name: string; description: strin
   return JSON.stringify([input.name, input.description, input.pedagogicalActivityType, input.activityType, input.instrumentType, input.selectedCurriculumElementIds ?? []])
 }
 
-export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: 1 | 2 }): InstrumentRecommendation {
+export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: 1 | 2; academicContext?: InstrumentAcademicContext | null }): InstrumentRecommendation {
+  const science = findSecondaryScienceTopic(input.activityTitle, input.description ?? '', input.academicContext)
+  const scienceCriteria = science ? secondaryScienceCriteria(science, input.description ?? '', input.instrumentType) : []
+  if (science && scienceCriteria.length) return editableAuthoredRecommendation(scienceCriteria, input,
+    input.activityType || scientificTaskType(input.activityTitle, input.description ?? '') || 'ANALYSIS', `science-${science}-${input.academicContext?.grade}`)
   const topic = input.secondaryLanguageGrade ? findSecondaryLanguageTopic(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: input.secondaryLanguageGrade, subjectCode: 'LEN' }) : null
   if (topic) return editableSecondaryTopicRecommendation(topic, input)
   const text = `${input.activityTitle} ${withoutResources(input.description ?? '')}`.toLocaleLowerCase('es-DO')
@@ -281,6 +286,9 @@ export function recommendationToFields(proposal: InstrumentRecommendation, activ
     if (type === 'rubrica') for (const [levelIndex, descriptor] of criterion.descriptors.entries()) {
       fields[`rubrica:descriptor:${index}:${proposal.levels.length - levelIndex}`] = descriptor.text
     }
+    if (type === 'escala' && criterion.descriptors.length === proposal.levels.length) for (const [levelIndex, descriptor] of criterion.descriptors.entries()) {
+      fields[`escala:descriptor:${index}:${proposal.levels.length - levelIndex}`] = descriptor.text
+    }
   }
   if (type === 'lista-ponderada') {
     const weights = distributeScoreUnits(10000, proposal.criteria.map(criterion => criterion.maxScoreUnits))
@@ -307,7 +315,7 @@ export function alignRecommendationWithFields(proposal: InstrumentRecommendation
     const descriptors = levels.map((level, levelIndex) => ({ levelId: level.id,
       text: criterion.descriptors?.[levelIndex] ?? criterion.description, scoreUnits: Math.round(units * level.proportion) }))
     const edited = !prior || prior.title !== criterion.title || prior.description !== criterion.description
-      || (type === 'rubrica' && descriptors.some((descriptor, levelIndex) => descriptor.text !== prior.descriptors[levelIndex]?.text))
+      || ((type === 'rubrica' || type === 'escala') && descriptors.some((descriptor, levelIndex) => descriptor.text !== prior.descriptors[levelIndex]?.text))
     return { id: prior?.id ?? criterion.id ?? `teacher:${index}`, templateId: prior?.templateId ?? 'teacher',
       title: criterion.title, description: criterion.description, maxScore: units / 100, maxScoreUnits: units,
       sourceType: edited ? 'ACTIVITY_TEMPLATE' as const : prior.sourceType,

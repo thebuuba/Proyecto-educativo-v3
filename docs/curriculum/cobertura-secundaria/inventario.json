@@ -50091,13 +50091,37 @@
               "sourceOrder": 2961015
             }
           ],
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "procedures": [
+            {
+              "id": "6dd78416-fb90-5b4f-bfc6-cde194294ff8",
+              "text": "• Partes fundamentales de una célula",
+              "pdfPage": 296,
+              "printedPage": "295",
+              "sourceOrder": 2962003
+            },
+            {
+              "id": "2bbe883b-7ada-59cd-a0cf-d87f047d4192",
+              "text": "• Características de las células vegetales y animales",
+              "pdfPage": 296,
+              "printedPage": "295",
+              "sourceOrder": 2962004
+            },
+            {
+              "id": "82edb0a8-c51f-57ad-948b-00c90962d448",
+              "text": "• Función de los organelos celulares (núcleo, membrana,\ncitoplasma, mitocondria)",
+              "pdfPage": 296,
+              "printedPage": "295",
+              "sourceOrder": 2962005
+            }
+          ],
+          "procedureAssociation": "VERIFIED_SELECTED_PROCEDURES",
+          "boundaryReview": "SOURCE_PAGE_REVIEWED_PARTIAL",
+          "implementation": "PARTIAL_CELL_MODEL",
+          "automatedVerification": "PASSED",
+          "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_AND_BROWSER_PASSED",
+          "report": "ciencias-celulas-ohm.md",
+          "catalogVersion": "evaluation-2026.10"
         },
         {
           "id": "1834f0f4-c007-50b9-9e35-37610db3db52",
@@ -56784,13 +56808,23 @@
               "sourceOrder": 3201020
             }
           ],
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "procedures": [
+            {
+              "id": "30945ae6-1caa-53b3-a1b0-5b1d6341b275",
+              "text": "• Electricidad: corriente, resistencia, Ley de Ohm, potencia\neléctrica, fuerza electromotriz, circuitos eléctricos,\nresistencias en serie y paralelo, sus aplicaciones (P1 hasta\nP6).",
+              "pdfPage": 321,
+              "printedPage": "320",
+              "sourceOrder": 3212000
+            }
+          ],
+          "procedureAssociation": "VERIFIED_SELECTED_PROCEDURES",
+          "boundaryReview": "SOURCE_PAGE_REVIEWED_PARTIAL",
+          "implementation": "PARTIAL_OHM_ONLY",
+          "automatedVerification": "PASSED",
+          "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_AND_BROWSER_PASSED",
+          "report": "ciencias-celulas-ohm.md",
+          "catalogVersion": "evaluation-2026.10"
         },
         {
           "id": "e3071cca-9665-53c2-a7f3-e8a74863f948",

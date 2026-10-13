@@ -10,6 +10,7 @@ import {
 } from '../services/instrumentPreparation'
 import { activityDraftStorageKey, readActivityDrafts } from '../utils/activityDraftStorage'
 import { api, ApiError } from '@/services/apiClient'
+import scienceFixtures from '../../../../../../data/evaluation-instruments/science-regressions.json'
 
 vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
   ActivityDescriptionEditor: ({
@@ -71,6 +72,25 @@ function props() {
 }
 
 describe('independent activity editor', () => {
+  for (const fixture of scienceFixtures) for (const offline of [false,true]) {
+    it(`science ${fixture.id}: ${offline ? '503 activates scoped fallback' : 'valid service response is retained'}`, async () => {
+      const academicContext = { level:'SECONDARY' as const,grade:fixture.grade,subjectCode:fixture.code,subjectName:fixture.name }
+      const proposal = { ...editableFallbackRecommendation({activityTitle:fixture.activityTitle,description:fixture.description,maxScore:20,instrumentType:'rubrica',participationMode:'INDIVIDUAL',academicContext}), catalogVersion:'evaluation-2026.10' }
+      const calls = vi.spyOn(api,'post').mockImplementation(async (path) => {
+        if (offline) throw new ApiError(503,'Servicio no disponible')
+        return path.endsWith('/interpret') ? {suggestedActivityType:fixture.expectedType,activityType:fixture.expectedType,curriculumVersionId:null} : proposal
+      })
+      const draft = { ...newActivityDraft('b1'), name:fixture.activityTitle,description:`<p>${fixture.description}</p>`,maxScore:'20',instrumentType:'rubrica',activityType:'individual' as const,evaluationTechnique:'analisis-producciones' }
+      render(<ActivityEditorWorkspace {...props()} initialDraft={draft} sectionSubjectId="subject" instrumentAcademicContext={academicContext} />)
+      await waitFor(()=>expect(screen.getByLabelText('Criterio 1')).toHaveValue(proposal.criteria[0].title),{timeout:5000})
+      await waitFor(()=>expect((readActivityDrafts(context)[0]?.draft as ReturnType<typeof newActivityDraft>)?.preparedRecommendation?.catalogVersion).toBe(offline ? 'editable-fallback-v1' : 'evaluation-2026.10'))
+      expect(calls.mock.calls.find(([path])=>path.endsWith('/recommend'))?.[1]).toMatchObject({description:fixture.description})
+      expect(screen.queryByText('Dominio del contenido')).not.toBeInTheDocument()
+      fireEvent.change(screen.getByLabelText('Criterio 1'),{target:{value:'Edición docente conservada'}})
+      await waitFor(()=>expect((readActivityDrafts(context)[0].draft as ReturnType<typeof newActivityDraft>).preparedManuallyEdited).toBe(true))
+      expect(screen.getByLabelText('Criterio 1')).toHaveValue('Edición docente conservada')
+    })
+  }
   beforeEach(() => {
     vi.restoreAllMocks()
     localStorage.clear()

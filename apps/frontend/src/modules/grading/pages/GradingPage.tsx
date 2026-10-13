@@ -11,6 +11,7 @@ import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseTeam } from '@/modules/courses/types'
 import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
 import { isFirstSecondaryLanguage } from '@/modules/activities/utils/firstSecondaryLanguageContext'
+import { instrumentAcademicContext } from '@/modules/activities/utils/instrumentAcademicContext'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import '@/modules/grading/grading-design.css'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
@@ -163,6 +164,7 @@ export function GradingPage() {
             key={JSON.stringify([schoolId,appUser?.id,schoolYearId,selectedSsId,academicPeriodId])}
             activityDraftContext={{schoolId:schoolId ?? '', userId:appUser?.id ?? '', schoolYearId:schoolYearId ?? '', sectionSubjectId:selectedSsId,academicPeriodId:academicPeriodId ?? ''}}
             firstSecondaryLanguage={isFirstSecondaryLanguage(selectedSs)}
+            instrumentAcademicContext={instrumentAcademicContext(selectedSs)}
             evaluationProfile={selectedSs?.evaluationProfile}
             sectionSubjectId={selectedSsId}
             students={students}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import type { EvaluationProfile } from '@aula/shared'
+import type { EvaluationProfile, InstrumentAcademicContext } from '@aula/shared'
 import { Button } from '@/components/ui/Button'
 import { FeedbackBanner } from '@/components/ui/SemanticUI'
 import type { CourseTeam } from '@/modules/courses/types'
@@ -18,6 +18,7 @@ import {
 import { ActivityInfoModal } from './ActivityInfoModal'
 
 export type ActivityEditorWorkspaceProps = {
+  instrumentAcademicContext?: InstrumentAcademicContext | null
   activityDraftContext?: ActivityDraftContext
   evaluationProfile?: EvaluationProfile
   firstSecondaryLanguage?: boolean
@@ -245,6 +246,7 @@ function ScopedEditor(props: ActivityEditorWorkspaceProps) {
           hasDraft={storageStatus === 'Borrador guardado'}
           firstSecondaryLanguage={props.firstSecondaryLanguage}
           secondSecondaryLanguage={props.secondSecondaryLanguage}
+          instrumentAcademicContext={props.instrumentAcademicContext}
           sectionSubjectId={props.sectionSubjectId}
           editingActivityId={activity?.id ?? null}
           structuralLocked={Boolean(activity?.evaluatedCount)}

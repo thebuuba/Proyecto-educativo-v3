@@ -68,7 +68,8 @@ export function activityDescriptionText(value: string) {
   if (!/<\/?[a-z][\s\S]*>/i.test(value)) return plainActivityText(value)
   if (typeof DOMParser === 'undefined') return value.replace(/<[^>]*>/g, ' ')
   const documentValue = new DOMParser().parseFromString(value, 'text/html')
-  return documentValue.body.textContent ?? ''
+  documentValue.body.querySelectorAll('p, div, li, h1, h2, h3, h4, blockquote, br').forEach(element => element.append(documentValue.createTextNode(' ')))
+  return (documentValue.body.textContent ?? '').replace(/\s+/g, ' ').trim()
 }
 
 export function sanitizeActivityDescriptionHtml(value: string) {

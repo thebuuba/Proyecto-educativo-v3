@@ -57,7 +57,7 @@ import { activityDefaultSuggestions } from '@/modules/activities/utils/activityD
 import type { CourseTeam } from '@/modules/courses/types'
 import { ApiError } from '@/services/apiClient'
 import { cn } from '@/utils/cn'
-import type { EvaluationProfile } from '@aula/shared'
+import type { EvaluationProfile, InstrumentAcademicContext } from '@aula/shared'
 import {
   detectSecondaryLanguageActivity,
   firstSecondaryLanguageTechnique,
@@ -90,6 +90,7 @@ function requiredField(target: ActivityCompletionTarget) {
 }
 
 export function ActivityCreationView(props: {
+  instrumentAcademicContext?: InstrumentAcademicContext | null
   firstSecondaryLanguage?: boolean
   secondSecondaryLanguage?: boolean
   sectionSubjectId?: string
@@ -636,6 +637,7 @@ export function ActivityCreationView(props: {
           current.activityType === 'group' ? ('GROUP' as const) : ('INDIVIDUAL' as const),
         activityType: current.pedagogicalActivityType,
         secondaryLanguageGrade: (contextualLanguageGrade as 1 | 2 | null) || undefined,
+        academicContext: props.instrumentAcademicContext,
       }
       candidates = [0, 1].flatMap(
         (variation) => editableFallbackRecommendation({ ...base, variation }).criteria,
@@ -698,8 +700,9 @@ export function ActivityCreationView(props: {
             { level: 'SECONDARY', grade: contextualLanguageGrade, subjectCode: 'LEN' },
           ) ||
           undefined
-        : undefined,
+        : current.autoDetectedPedagogicalActivityType ? undefined : current.pedagogicalActivityType || undefined,
       secondaryLanguageGrade: contextualLanguageGrade || undefined,
+      academicContext: props.instrumentAcademicContext,
     })
     const preparedFields = scoreInstrumentFields(
       recommendationToFields(proposal, current.name),

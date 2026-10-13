@@ -102,6 +102,10 @@ export function validateInstrumentDefinition(type: string, fields: Record<string
   if (type === 'rubrica') for (let row = 0; row < count; row++) for (let level = 1; level <= levels.length; level++) {
     if (!fields[`rubrica:descriptor:${row}:${level}`]?.trim()) issues.push(`Completa el descriptor del criterio ${row + 1}, nivel ${level}.`)
   }
+  if (type === 'escala') for (let row = 0; row < count; row++) {
+    const authored = Array.from({length:levels.length},(_,index)=>fields[`escala:descriptor:${row}:${index+1}`]).some(value=>value !== undefined)
+    if (authored) for (let level = 1; level <= levels.length; level++) if (!fields[`escala:descriptor:${row}:${level}`]?.trim()) issues.push(`Completa el descriptor del indicador ${row + 1}, nivel ${level}.`)
+  }
   return issues
 }
 
@@ -117,6 +121,8 @@ export function instrumentEvaluationConfiguration(type: string, fields: Record<s
       description: (type === 'lista-ponderada' ? fields[`${type}:indicator:${index}`] : fields[`${type}:description:${index}`] ?? fields[`${type}:criterion:${index}`]).trim(),
       maximum: maximum / 100,
       ...(type === 'rubrica' ? { descriptors: levels.map((_, levelIndex) => fields[`rubrica:descriptor:${index}:${levels.length - levelIndex}`].trim()) } : {}),
+      ...(type === 'escala' && levels.every((_, levelIndex) => fields[`escala:descriptor:${index}:${levels.length - levelIndex}`]?.trim())
+        ? { descriptors: levels.map((_, levelIndex) => fields[`escala:descriptor:${index}:${levels.length - levelIndex}`].trim()) } : {}),
     })) }
 }
 

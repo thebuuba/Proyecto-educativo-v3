@@ -11,6 +11,7 @@ import { getActivityCenter } from '@/modules/activities/services/activitiesServi
 import { useActivities } from '@/modules/activities/hooks/useActivities'
 import type { Activity, ActivityCenterWorkspace, ActivityCreatorOrigin } from '@/modules/activities/types'
 import { isFirstSecondaryLanguage, isSecondSecondaryLanguage } from '@/modules/activities/utils/firstSecondaryLanguageContext'
+import { instrumentAcademicContext } from '@/modules/activities/utils/instrumentAcademicContext'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 
 type CreatorLocationState = { activityCreatorOrigin?: ActivityCreatorOrigin }
@@ -125,6 +126,7 @@ function ScopedActivityCreator({ schoolId, userId }: { schoolId: string; userId:
       {(!activityId || selectedActivity) ? <ActivityEditorWorkspace
         firstSecondaryLanguage={isFirstSecondaryLanguage(sectionSubject)}
         secondSecondaryLanguage={isSecondSecondaryLanguage(sectionSubject)}
+        instrumentAcademicContext={instrumentAcademicContext(sectionSubject)}
         evaluationProfile={sectionSubject?.evaluationProfile}
         sectionSubjectId={sectionSubjectId}
         activity={selectedActivity}

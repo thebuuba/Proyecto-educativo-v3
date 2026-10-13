@@ -40,12 +40,12 @@ export function appendInstrumentCriterion(fields: Record<string, string>, type: 
     [`${type}:criterion:${count}`]: criterion?.title ?? '',
     [`${type}:description:${count}`]: criterion?.description ?? '' }
   if (type === 'lista-ponderada') next[`${type}:indicator:${count}`] = criterion?.description ?? ''
-  if (type === 'rubrica') {
-    const levels = Number(fields['rubrica:meta:levelCount'] ?? 4)
+  if (type === 'rubrica' || type === 'escala' && criterion?.descriptors.length) {
+    const levels = Number(fields[`${type}:meta:levelCount`] ?? 4)
     if (!Number.isInteger(levels) || levels < INSTRUMENT_MIN_LEVELS || levels > INSTRUMENT_MAX_LEVELS) throw new RangeError('La rúbrica admite entre 2 y 6 niveles.')
     for (let index = 0; index < levels; index++) {
       const source = criterion?.descriptors[Math.round(index * Math.max(0, (criterion.descriptors.length - 1)) / Math.max(1, levels - 1))]
-      next[`rubrica:descriptor:${count}:${levels - index}`] = source?.text ?? ''
+      next[`${type}:descriptor:${count}:${levels - index}`] = source?.text ?? ''
     }
   }
   const previous: number[] = (() => {

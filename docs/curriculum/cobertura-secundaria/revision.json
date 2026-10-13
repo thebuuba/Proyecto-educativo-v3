@@ -186,6 +186,36 @@
         "6386112a-44b3-5b36-9416-1f31d2540550"
       ],
       "report": "avance.md"
+    },
+    {
+      "id": "4916701f-df02-5247-84d8-3aa598f61ef5",
+      "implementation": "PARTIAL_CELL_MODEL",
+      "procedures": [
+        "6dd78416-fb90-5b4f-bfc6-cde194294ff8",
+        "2bbe883b-7ada-59cd-a0cf-d87f047d4192",
+        "82edb0a8-c51f-57ad-948b-00c90962d448"
+      ],
+      "boundaryReview": "SOURCE_PAGE_REVIEWED_PARTIAL",
+      "procedureAssociation": "VERIFIED_SELECTED_PROCEDURES",
+      "report": "ciencias-celulas-ohm.md",
+      "catalogVersion": "evaluation-2026.10",
+      "automatedVerification": "PASSED",
+      "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "LOCAL_HTTP_AND_BROWSER_PASSED"
+    },
+    {
+      "id": "95019cec-fc43-50ec-b3a3-592c776ea67f",
+      "implementation": "PARTIAL_OHM_ONLY",
+      "procedures": [
+        "30945ae6-1caa-53b3-a1b0-5b1d6341b275"
+      ],
+      "boundaryReview": "SOURCE_PAGE_REVIEWED_PARTIAL",
+      "procedureAssociation": "VERIFIED_SELECTED_PROCEDURES",
+      "report": "ciencias-celulas-ohm.md",
+      "catalogVersion": "evaluation-2026.10",
+      "automatedVerification": "PASSED",
+      "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "LOCAL_HTTP_AND_BROWSER_PASSED"
     }
   ],
   "sourceAnomalies": [
