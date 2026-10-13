@@ -1,0 +1,213 @@
+.student-enrollment-overlay {
+  background: color-mix(in srgb, var(--foreground) 38%, transparent);
+  backdrop-filter: blur(4px);
+  animation: student-enrollment-backdrop-in 180ms ease-out both;
+}
+
+.student-enrollment-dialog {
+  max-width: 680px;
+  max-height: calc(100dvh - 48px);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 48px color-mix(in srgb, var(--foreground) 18%, transparent),
+    0 4px 12px color-mix(in srgb, var(--foreground) 8%, transparent);
+  animation: student-enrollment-enter 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.student-enrollment-dialog > div:first-child {
+  padding: 24px 24px 20px;
+  border-bottom: 0;
+}
+.student-enrollment-dialog h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.student-enrollment-dialog .text-accent {
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+.student-enrollment-dialog > div:first-child > button {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+}
+
+.student-enrollment-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  margin: 0 24px 24px;
+  padding: 4px;
+  border-radius: 20px;
+  background: var(--muted);
+}
+
+.student-enrollment-tabs button {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    background-color 150ms,
+    color 150ms;
+}
+
+.student-enrollment-tabs button[aria-selected='true'] {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+.student-enrollment-tabs button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.student-enrollment-tabs button:disabled {
+  cursor: not-allowed;
+}
+.student-enrollment-body {
+  display: grid;
+  min-width: 0;
+  gap: 16px;
+  padding: 0 24px 24px;
+}
+.student-enrollment-section-heading h4 {
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 600;
+}
+.student-enrollment-section-heading p {
+  margin-top: 4px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 20px;
+}
+.student-enrollment-body label {
+  font-size: 13px;
+  font-weight: 500;
+}
+.student-enrollment-actions {
+  display: flex;
+  min-width: 0;
+  gap: 8px;
+}
+.student-enrollment-footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  background: var(--card);
+  padding: 20px 24px;
+}
+.student-enrollment-footer button {
+  font-weight: 600;
+}
+
+.student-enrollment-overlay.is-closing {
+  animation: student-enrollment-backdrop-out 160ms ease-in both;
+}
+.student-enrollment-dialog.is-closing {
+  pointer-events: none;
+  animation: student-enrollment-exit 160ms ease-in both;
+}
+
+@keyframes student-enrollment-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes student-enrollment-exit {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(6px) scale(0.985);
+  }
+}
+@keyframes student-enrollment-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes student-enrollment-backdrop-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .student-enrollment-overlay {
+    padding: 12px;
+  }
+  .student-enrollment-dialog {
+    max-height: calc(100dvh - 24px);
+  }
+  .student-enrollment-dialog > div:first-child {
+    padding: 20px 20px 16px;
+  }
+  .student-enrollment-dialog h3 {
+    font-size: 18px;
+  }
+  .student-enrollment-tabs {
+    margin: 0 20px 20px;
+  }
+  .student-enrollment-tabs button {
+    gap: 6px;
+    padding-inline: 8px;
+    font-size: 12px;
+  }
+  .student-enrollment-body {
+    padding: 0 20px 20px;
+  }
+  .student-enrollment-footer {
+    gap: 8px;
+    padding: 16px 20px;
+  }
+  .student-enrollment-footer button {
+    flex: 1;
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+  .student-enrollment-footer-single > button {
+    flex-basis: 100%;
+    order: 1;
+  }
+  .student-enrollment-actions {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .student-enrollment-overlay,
+  .student-enrollment-dialog,
+  .student-enrollment-overlay.is-closing,
+  .student-enrollment-dialog.is-closing {
+    animation: none;
+  }
+  .student-enrollment-tabs button {
+    transition: none;
+  }
+}

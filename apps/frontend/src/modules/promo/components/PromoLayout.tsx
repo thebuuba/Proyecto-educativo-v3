@@ -87,7 +87,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
               Crear cuenta <ArrowRight size={16} />
             </Link>
           </div>
-          <button
+          <button data-ui-size="icon"
             type="button"
             className="grid size-11 place-items-center rounded-xl border border-border lg:hidden"
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}

@@ -1,5 +1,5 @@
 /** Ventana para asignar una materia oficial o personalizada a una sección. */
-import { BookOpen, Check, Pencil, Search } from 'lucide-react'
+import { ArrowLeft, BookOpen, Check, Pencil, Search } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 
 import { Button } from '@/components/ui/Button'
@@ -19,6 +19,7 @@ import type {
   Subject,
 } from '@/modules/courses/types'
 import { cn } from '@/utils/cn'
+import './subject-assignment-form.css'
 
 type SubjectAssignmentFormProps = {
   grade: GradeWithSections
@@ -105,29 +106,27 @@ export function SubjectAssignmentForm({
       description={`Agrega otra asignatura a ${sectionLabel}${schoolYearName ? ` para el año escolar ${schoolYearName}` : ''}.`}
       icon={BookOpen}
       tone="info"
-      className="max-w-3xl"
-      contentClassName="min-h-0 overflow-hidden"
+      className="subject-assignment-dialog"
+      contentClassName="subject-assignment-content"
       onClose={onClose}
+      closeDisabled={submitting}
     >
       <form onSubmit={handleSubmit} className="flex min-h-0 flex-col">
-        <div className="min-h-0 space-y-4 overflow-hidden p-5 sm:p-6">
+        <fieldset disabled={submitting} className="subject-assignment-body min-w-0 space-y-4">
           {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
-
-          <div className="grid grid-cols-2 rounded-2xl bg-muted/70 p-1">
-            <ModeButton active={mode === 'existing'} title="Asignaturas existentes" description="Del currículo oficial" onClick={() => switchMode('existing')} />
-            <ModeButton active={mode === 'new'} title="Asignatura nueva" description="Fuera del catálogo oficial" onClick={() => switchMode('new')} />
-          </div>
 
           {mode === 'existing' ? (
             <div className="min-h-0">
-              <h3 className="text-sm font-extrabold text-foreground">Selecciona una asignatura</h3>
-              <p className="mt-1 text-xs text-muted-foreground">Elige una asignatura oficial disponible para {grade.name}.</p>
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-sm font-semibold text-foreground">Asignaturas disponibles</h3>
+                <span className="rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">{visibleSubjects.length}</span>
+              </div>
 
-              <div className="mt-3 grid min-h-0 gap-4 md:grid-cols-[minmax(0,1fr)_15rem]">
+              <div className="mt-3 grid min-h-0 gap-4 md:grid-cols-[minmax(0,1fr)_14rem]">
                 <div className="min-w-0">
                   <label className="relative block">
                     <span className="sr-only">Buscar asignatura</span>
-                    <Search className="absolute left-3.5 top-1/2 z-10 size-4 -translate-y-1/2 text-muted-foreground" />
+                    <Search aria-hidden="true" className="absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 text-muted-foreground" />
                     <Input
                       autoFocus
                       value={subjectQuery}
@@ -137,26 +136,27 @@ export function SubjectAssignmentForm({
                     />
                   </label>
 
-                  <div className="mt-2 max-h-64 overflow-x-hidden overflow-y-auto rounded-2xl border border-border bg-card">
+                  <div className="subject-assignment-list mt-3 max-h-64 overflow-x-hidden overflow-y-auto rounded-3xl bg-muted/45 p-1.5">
                     {visibleSubjects.length ? visibleSubjects.map((subject) => {
                       const selected = subject.key === subjectKey
                       return (
                         <button
                           key={subject.key}
                           type="button"
+                          aria-pressed={selected}
                           onClick={() => setSubjectKey(subject.key)}
                           className={cn(
-                            'flex min-h-11 w-full items-center gap-3 border-b border-border px-3 text-left text-sm font-semibold transition-colors last:border-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20',
-                            selected ? 'bg-primary/12 text-primary-variant' : 'hover:bg-primary/7',
+                            'mb-1 flex min-h-12 w-full items-center gap-3 rounded-2xl px-3 py-2 text-left text-sm font-medium transition-colors last:mb-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/20',
+                            selected ? 'bg-primary/10 text-foreground' : 'bg-card text-foreground hover:bg-muted',
                           )}
                         >
                           <span className={cn(
-                            'flex size-8 shrink-0 items-center justify-center rounded-xl',
-                            selected ? 'bg-primary text-primary-foreground' : 'bg-primary/12 text-primary-variant',
+                            'flex size-8 shrink-0 items-center justify-center rounded-full',
+                            selected ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground',
                           )}>
-                            {selected ? <Check className="size-4" /> : <BookOpen className="size-4" />}
+                            {selected ? <Check aria-hidden="true" className="size-4" /> : <BookOpen aria-hidden="true" className="size-4" />}
                           </span>
-                          <span className="min-w-0 flex-1 truncate">{subject.name}</span>
+                          <span className="min-w-0 flex-1 [overflow-wrap:anywhere]">{subject.name}</span>
                         </button>
                       )
                     }) : (
@@ -167,60 +167,46 @@ export function SubjectAssignmentForm({
                   </div>
                 </div>
 
-                <aside className="flex flex-col items-center justify-center rounded-2xl bg-warning/20 p-4 text-center">
-                  <SemanticIcon icon={Pencil} tone="warning" className="size-10 rounded-xl" iconClassName="size-4" />
-                  <h4 className="mt-3 text-sm font-extrabold text-foreground">¿No aparece la materia?</h4>
-                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">Crea una asignatura personalizada solo si realmente no pertenece al catálogo oficial.</p>
-                  <Button type="button" variant="outline" onClick={() => switchMode('new')} className="mt-3 h-9 px-3 text-xs">
+                <aside className="flex flex-col items-start justify-center rounded-3xl border border-border/65 bg-card p-4">
+                  <SemanticIcon icon={Pencil} tone="neutral" className="size-10 rounded-2xl" iconClassName="size-4" />
+                  <h4 className="mt-3 text-sm font-semibold text-foreground">¿No está en el catálogo?</h4>
+                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">Crea una materia personalizada si no pertenece al currículo oficial.</p>
+                  <Button type="button" variant="outline" onClick={() => switchMode('new')} className="mt-4 w-full px-3 text-xs">
                     Crear asignatura nueva
                   </Button>
                 </aside>
               </div>
             </div>
           ) : (
-            <div className="mx-auto max-w-xl rounded-2xl bg-warning/18 p-5">
+            <div className="space-y-4">
+              <Button type="button" variant="ghost" size="sm" onClick={() => switchMode('existing')}>
+                <ArrowLeft aria-hidden="true" className="size-4" /> Volver a asignaturas existentes
+              </Button>
+              <div className="rounded-3xl bg-muted/45 p-5">
               <div className="flex items-start gap-3">
-                <SemanticIcon icon={Pencil} tone="warning" className="size-10 rounded-xl" iconClassName="size-4" />
+                <SemanticIcon icon={Pencil} tone="neutral" className="size-10 rounded-2xl" iconClassName="size-4" />
                 <div>
-                  <h3 className="text-sm font-extrabold text-foreground">Crear asignatura personalizada</h3>
-                  <p className="mt-1 text-xs leading-5 text-muted-foreground">Utiliza esta opción únicamente cuando la materia no forme parte del currículo oficial.</p>
+                  <h3 className="text-sm font-semibold text-foreground">Crear asignatura personalizada</h3>
+                  <p className="mt-1 text-xs leading-5 text-muted-foreground">Para materias fuera del currículo oficial.</p>
                 </div>
               </div>
-              <label className="mt-5 block text-sm font-extrabold text-foreground">
+              <label className="mt-5 block text-sm font-medium text-foreground">
                 Nombre de la asignatura <span className="text-destructive">*</span>
                 <Input autoFocus value={name} onChange={(event) => setName(event.target.value)} placeholder="Ejemplo: Robótica o Taller de lectura" className="mt-2" required />
               </label>
               {duplicatesAssignedSubject ? <FeedbackBanner tone="danger" className="mt-3">Esa asignatura ya está asignada a esta sección.</FeedbackBanner> : null}
-              {matchesOfficialSubject ? <FeedbackBanner tone="warning" className="mt-3">Esta asignatura existe en el catálogo oficial. Usa la pestaña Asignaturas existentes.</FeedbackBanner> : null}
+              {matchesOfficialSubject ? <FeedbackBanner tone="warning" className="mt-3">Esta asignatura existe en el catálogo oficial. Vuelve a asignaturas existentes para seleccionarla.</FeedbackBanner> : null}
+              </div>
             </div>
           )}
-        </div>
+        </fieldset>
 
-        <footer className="flex shrink-0 justify-end gap-3 border-t border-border px-5 py-4 sm:px-6">
-          <Button variant="outline" type="button" onClick={onClose}>Cancelar</Button>
-          <Button type="submit" loading={submitting} disabled={!canSubmit}>Asignar asignatura</Button>
+        <footer className="subject-assignment-footer flex shrink-0 justify-end gap-3 border-t border-border">
+          <Button data-ui-action="cancel" variant="outline" type="button" disabled={submitting} onClick={onClose}>Cancelar</Button>
+          <Button type="submit" loading={submitting} disabled={!canSubmit}>Agregar asignatura</Button>
         </footer>
       </form>
     </Modal>
-  )
-}
-
-function ModeButton({ active, title, description, onClick }: { active: boolean; title: string; description: string; onClick: () => void }) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      onClick={onClick}
-      className={cn(
-        'rounded-xl border px-3 py-2.5 text-center transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20',
-        active
-          ? 'border-primary/20 bg-card text-primary-variant shadow-sm'
-          : 'border-transparent text-muted-foreground hover:bg-card/65 hover:text-foreground',
-      )}
-    >
-      <span className="block text-sm font-extrabold">{title}</span>
-      <span className="mt-0.5 block text-xs">{description}</span>
-    </button>
   )
 }
 

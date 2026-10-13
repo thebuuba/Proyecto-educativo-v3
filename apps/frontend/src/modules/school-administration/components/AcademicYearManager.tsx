@@ -197,7 +197,7 @@ export function AcademicYearManager({
             </div>
 
             <div className="flex justify-end gap-3 pt-2">
-              <Button variant="outline" type="button" onClick={() => setFormOpen(false)}>
+              <Button data-ui-action="cancel" variant="outline" type="button" onClick={() => setFormOpen(false)}>
                 Cancelar
               </Button>
               <Button type="submit" loading={saving}>

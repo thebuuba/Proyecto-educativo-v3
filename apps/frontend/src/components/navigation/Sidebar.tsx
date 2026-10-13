@@ -158,7 +158,7 @@ export function Sidebar({ isOpen, isExpanded, onClose }: SidebarProps) {
             </span>
             <span className="sidebar-copy text-lg font-semibold text-foreground">Aula Base</span>
           </NavLink>
-          <button
+          <button data-ui-action="close"
             ref={closeRef}
             type="button"
             onClick={onClose}

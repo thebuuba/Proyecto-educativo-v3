@@ -95,7 +95,7 @@ export function DashboardTasks({
             disabled={loading}
             autoFocus
           />
-          <Button size="icon" variant="ghost" aria-label="Cancelar" onClick={() => setIsAdding(false)}>
+          <Button data-ui-action="cancel" size="icon" variant="ghost" aria-label="Cancelar" onClick={() => setIsAdding(false)}>
             <Plus className="size-4 rotate-45" />
           </Button>
           <Button size="icon" variant="ghost" aria-label="Agregar tarea" loading={loading}>

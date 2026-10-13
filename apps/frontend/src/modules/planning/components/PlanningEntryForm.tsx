@@ -644,7 +644,7 @@ export function PlanningEntryForm({
       </section>
 
       <footer className="flex flex-col-reverse gap-3 rounded-3xl bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-        <div className="grid gap-2 sm:flex"><Button type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><BackIcon />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 && !initial?.entry.id ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
+        <div className="grid gap-2 sm:flex"><Button data-ui-action={step === 1 ? 'cancel' : undefined} type="button" variant="outline" onClick={step === 1 ? onClose : () => setStep((current) => current - 1)}><BackIcon />{step === 1 ? 'Cancelar' : 'Anterior'}</Button>{step === 3 && !initial?.entry.id ? <Button type="button" variant="secondary" disabled={generating || submitting} loading={generating} onClick={handleGenerateAndSave}><Sparkles className="size-4" />Generar con IA y guardar</Button> : null}</div>
         <div className="grid gap-2 sm:flex">{step === 3 ? <Button type="button" variant="outline" disabled={generating || submitting} loading={generating} onClick={handleGenerate}><Sparkles className="size-4" />Completar con IA</Button> : null}{step < 3 ? <Button type="button" onClick={goNext}>Continuar<ArrowRight className="size-4" /></Button> : <Button type="submit" disabled={submitting || generating} loading={submitting}><Check className="size-4" />Guardar planificación</Button>}</div>
       </footer>
     </form>

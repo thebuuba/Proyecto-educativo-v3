@@ -57,9 +57,10 @@ export function ConfirmDialog({
       tone={destructive ? 'danger' : 'info'}
       className="max-w-lg"
       onClose={onClose}
+      closeDisabled={loading}
     >
       <div className="flex justify-end gap-3 p-5 sm:px-6">
-        <Button variant="outline" onClick={onClose} disabled={loading}>
+        <Button data-ui-action="cancel" variant="outline" onClick={onClose} disabled={loading}>
           {cancelLabel}
         </Button>
         <Button

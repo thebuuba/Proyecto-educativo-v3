@@ -59,6 +59,16 @@ También usar `Button`, `Card`, `EmptyState`, `Input`, `Select`, `Textarea`, `Mo
 - Controles: `rounded-xl`.
 - Sombras: suaves; usar `dashboard-warm-shadow` o las sombras de componentes compartidos.
 
+## Espaciado exterior de los paneles
+
+Todos los paneles autenticados usan el espaciado de Cursos, definido en `AppLayout`: margen horizontal de 16 px en móvil, 24 px desde `sm` y 32 px desde `lg`; separación superior e inferior de 20 px, o 32 px desde `lg`.
+
+La separación vertical pertenece exclusivamente a `.app-main` y al token `--app-page-block-gap` de `module-semantic-layout.css`. La raíz de un módulo no debe añadir `mt-*`, `pt-*`, `py-*` ni otro margen o relleno superior: su primer bloque visible comienza en el límite de contenido del layout. El relleno interno de las tarjetas y la separación entre bloques sí pertenecen al módulo.
+
+Al cambiar de pantalla (`pathname`), `AppLayout` devuelve el desplazamiento al inicio antes de pintar la nueva vista. Cambiar filtros dentro de la misma pantalla conserva la posición; el desplazamiento anterior no debe alterar el margen inicial de otro módulo.
+
+El contenido ocupa todo el ancho disponible. No añadir límites de ancho ni centrado automático al contenedor principal de un módulo: desplazan sus bordes respecto a los demás paneles. Los formularios, modales y bloques internos sí pueden limitar su ancho cuando lo necesiten.
+
 ## Encabezados
 
 Los títulos principales son oscuros. Nunca usar el azul, coral o verde como color principal del título de una página.
@@ -182,12 +192,17 @@ O, preferiblemente, `SemanticUI`.
 - Atención explícita: `warning` solo cuando la acción requiera cuidado.
 - Acciones poco frecuentes deben ir en un menú `Acciones` o `…`.
 
+Por indicación de diseño, los botones de cancelación usan rojo oficial mediante `data-ui-action="cancel"`. Los botones con X usan `data-ui-action="close"`: son rojos fuera de un diálogo y, dentro de un modal, pasan de neutro a rojo al hacer hover o recibir foco de teclado. Estas reglas compartidas viven en `module-semantic-layout.css` y se aplican tanto a `Button` como a botones nativos.
+
+Los botones de todos los modales tienen forma de píldora. Las acciones usan altura mínima de 36 px, texto de 13 px y relleno horizontal de 14 px; en dispositivos táctiles conservan un mínimo de 44 px. Las pestañas, opciones de selección y controles de icono mantienen sus dimensiones propias. `Button` expone `data-ui-size` para identificar los controles de icono.
+
 ## Formularios y modales
 
 - Usar `Input`, `Select` y `Textarea`; no crear tamaños/focos locales salvo necesidad real.
 - Los controles estándar comparten altura, radio y foco azul.
 - `Modal` debe encargarse de cabecera, icono semántico y cierre.
 - `ConfirmDialog` debe usarse para confirmaciones y acciones destructivas.
+- Pulsar fuera cierra el diálogo superior mediante `useOutsideClick`; `Modal` y `Drawer` ya lo incorporan. Los modales personalizados deben usar el mismo hook sobre su contenedor con `role="dialog"`. El clic se consume para no activar controles del fondo. Las operaciones pendientes y las animaciones de salida conservan su bloqueo de cierre.
 - No crear gradientes de marca en botones de formularios.
 - El contexto del módulo puede usar un tono semántico; la acción principal sigue siendo azul salvo que el significado exija otra cosa.
 

@@ -122,6 +122,7 @@ import { ActivityDescriptionEditor as StructuredActivityDescriptionEditor } from
 import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
 import type { CourseTeam } from '@/modules/courses/types'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 import type {
   GradeCalculationConfig,
   GradeCellSaveState,
@@ -1183,7 +1184,7 @@ export function ActivitySavedDialog({ completion, returnLabel, onClose, onCreate
               <p className="mt-1 text-sm text-muted-foreground">{created ? 'La actividad y su instrumento ya están disponibles en Evaluación.' : 'Tu progreso se conservó y podrás completar la actividad más adelante.'}</p>
             </div>
           </div>
-          <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
+          <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
         </div>
 
         <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
@@ -1991,7 +1992,7 @@ export function LegacyInlineActivityInfoModal({ activity, onClose }: { activity:
           <span className={cn('grid size-11 shrink-0 place-items-center rounded-xl shadow-sm', accent.card, accent.text)}><ClipboardList className="size-5" /></span>
           <div><p className={cn('text-[10px] font-black uppercase tracking-[0.15em]', accent.text)}>Información de la actividad</p><h3 className="mt-1 text-lg font-black text-foreground">Detalle de la actividad</h3><p className="mt-0.5 text-xs text-muted-foreground">Consulta la información completa y el instrumento creado para esta actividad.</p></div>
         </div>
-        <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
+        <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
       </header>
 
       <div className="space-y-4 bg-muted/10 p-5">
@@ -3307,7 +3308,7 @@ function ActivityManager({
           <Button className="h-9 px-4" onClick={onSaveActivity} disabled={saving}>
             Guardar actividad
           </Button>
-          {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
+          {editingActivityId ? <Button data-ui-action="cancel" variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
         </div>
       ) : null}
       {showActivityList && activities.length > 0 ? (
@@ -3514,7 +3515,7 @@ export function DraftCenter({
                       {meta.block.shortName}
                     </span>
                     <div className="flex items-center gap-1">
-                      <button
+                      <button data-ui-size="icon"
                         type="button"
                         className="inline-flex size-7 items-center justify-center rounded-md text-destructive transition hover:bg-destructive/10"
                         aria-label={`Eliminar borrador ${draftName}`}
@@ -4405,7 +4406,7 @@ function ActivityReview({ activityDraft, issues }: { activityDraft: ActivityDraf
           {instrumentSummaryTiles.length ? instrumentSummaryTiles.map((tile, index) => { const scaleVisual = instrumentType === 'escala' ? scaleLevelVisual(accent, index, instrumentSummaryTiles.length) : null; const weightedVisual = instrumentType === 'lista-ponderada' ? weightedResponseVisual(index, instrumentSummaryTiles.length) : null; const rubricVisual = instrumentType === 'escala' || instrumentType === 'lista-ponderada' ? null : rubricLevelVisual(index, instrumentSummaryTiles.length); const backgroundColor = scaleVisual?.background ?? weightedVisual?.background ?? rubricVisual?.soft; const borderColor = scaleVisual?.border ?? weightedVisual?.border ?? rubricVisual?.border; const foregroundColor = scaleVisual?.foreground ?? weightedVisual?.foreground ?? rubricVisual?.foreground; return <div key={tile.key} className="grid min-h-16 place-items-center rounded-xl border px-3 text-center shadow-sm" style={{ backgroundColor, borderColor }}><div className="min-w-0"><span className="block truncate text-[11px] font-black" style={{ color: foregroundColor }}>{tile.name}</span><span className="mt-1 block text-[11px] font-bold text-slate-700">{tile.detail}</span></div></div> }) : <div className="grid min-h-16 place-items-center rounded-xl border border-emerald-500 bg-emerald-100 px-3 text-center shadow-sm"><div><span className="block text-base font-black text-emerald-700">{formatInstrumentNumber(Number(activityDraft.maxScore) || 0)}</span><span className="text-[11px] font-bold text-slate-700">Puntos máximos</span></div></div>}
         </div>
       </section>
-      {showDescriptionPreview ? <Modal title="Descripción completa de la actividad" onClose={() => setShowDescriptionPreview(false)} className="max-h-[88vh] max-w-4xl rounded-xl" hideHeader><div className="flex max-h-[88vh] flex-col"><div className="h-1.5 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-6 py-4"><div><p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Descripción de la actividad · Solo lectura</p><h3 className="mt-1 text-xl font-black text-foreground">{activityDraft.name || 'Actividad sin nombre'}</h3><p className="mt-1 text-sm text-muted-foreground">Contenido completo de las orientaciones de la actividad.</p></div><Button type="button" variant="ghost" size="icon" aria-label="Cerrar descripción completa" onClick={() => setShowDescriptionPreview(false)}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-auto bg-muted/10 p-6"><article className="rounded-xl border border-border bg-card p-6 text-sm leading-7 text-foreground shadow-sm"><ActivityDescriptionContent value={activityDraft.description} fallback="Sin descripción." /></article></div><footer className="flex shrink-0 justify-end border-t border-border bg-card px-6 py-4"><Button type="button" className={accent.button} onClick={() => setShowDescriptionPreview(false)}>Cerrar</Button></footer></div></Modal> : null}
+      {showDescriptionPreview ? <Modal title="Descripción completa de la actividad" onClose={() => setShowDescriptionPreview(false)} className="max-h-[88vh] max-w-4xl rounded-xl" hideHeader><div className="flex max-h-[88vh] flex-col"><div className="h-1.5 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-6 py-4"><div><p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Descripción de la actividad · Solo lectura</p><h3 className="mt-1 text-xl font-black text-foreground">{activityDraft.name || 'Actividad sin nombre'}</h3><p className="mt-1 text-sm text-muted-foreground">Contenido completo de las orientaciones de la actividad.</p></div><Button data-ui-action="close" type="button" variant="ghost" size="icon" aria-label="Cerrar descripción completa" onClick={() => setShowDescriptionPreview(false)}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-auto bg-muted/10 p-6"><article className="rounded-xl border border-border bg-card p-6 text-sm leading-7 text-foreground shadow-sm"><ActivityDescriptionContent value={activityDraft.description} fallback="Sin descripción." /></article></div><footer className="flex shrink-0 justify-end border-t border-border bg-card px-6 py-4"><Button type="button" className={accent.button} onClick={() => setShowDescriptionPreview(false)}>Cerrar</Button></footer></div></Modal> : null}
       {showInstrumentPreview ? <InstrumentPreviewModal accent={accent} activityName={activityDraft.name} block={reviewBlock} fields={instrumentFields} instrumentType={instrumentType} maxScore={Number(activityDraft.maxScore) || 0} onClose={() => setShowInstrumentPreview(false)} /> : null}
     </div>
   )
@@ -4554,7 +4555,7 @@ export function LegacyActivityCreationView({
           </button>
         </div>
         <div className="flex flex-wrap gap-2">
-          {editingActivityId ? <Button variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
+          {editingActivityId ? <Button data-ui-action="cancel" variant="outline" onClick={onCancelEdit}>Cancelar edición</Button> : null}
           <Button className="h-9 px-4" onClick={handleSaveActivity} disabled={saving}>
             Guardar actividad
           </Button>
@@ -4702,7 +4703,7 @@ function ActivityProgressCard({
       </div>
       {nextIssue ? <Button type="button" variant="outline" className={cn('mt-4 w-full justify-between', accent.text, accent.border)} onClick={() => onSelectIssue(nextIssue)}>Ir al siguiente pendiente<ArrowRight className="size-4" /></Button> : null}
       </div>
-      {onCancel && onContinue ? <div className="space-y-2.5 border-t border-border bg-card p-4"><Button type="button" className="h-14 w-full justify-center rounded-xl border-0 bg-[#f04444] text-base font-black text-white shadow-md transition-colors hover:bg-[#dc3636]" onClick={onCancel}><X className="size-5" />Cancelar</Button><Button type="button" className="h-14 w-full justify-center rounded-xl border-0 bg-[#245a9f] text-base font-black text-white shadow-md transition-colors hover:bg-[#1d4c89]" disabled={continueDisabled} onClick={onContinue}>{continueLabel || 'Continuar'}<ArrowRight className="size-5" /></Button>{cancelHint ? <p className="px-1 text-center text-[10px] leading-4 text-muted-foreground">{cancelHint}</p> : null}</div> : null}
+      {onCancel && onContinue ? <div className="space-y-2.5 border-t border-border bg-card p-4"><Button data-ui-action="cancel" type="button" className="h-14 w-full justify-center rounded-xl border-0 bg-[#f04444] text-base font-black text-white shadow-md transition-colors hover:bg-[#dc3636]" onClick={onCancel}><X className="size-5" />Cancelar</Button><Button type="button" className="h-14 w-full justify-center rounded-xl border-0 bg-[#245a9f] text-base font-black text-white shadow-md transition-colors hover:bg-[#1d4c89]" disabled={continueDisabled} onClick={onContinue}>{continueLabel || 'Continuar'}<ArrowRight className="size-5" /></Button>{cancelHint ? <p className="px-1 text-center text-[10px] leading-4 text-muted-foreground">{cancelHint}</p> : null}</div> : null}
     </aside>
   )
 }
@@ -4990,7 +4991,7 @@ function InstrumentTypographyControls({ bold, onBoldChange, onTextAlignChange, o
     { icon: <AlignCenter className="size-4" />, label: 'Centrar', value: 'center' },
     { icon: <AlignRight className="size-4" />, label: 'Alinear a la derecha', value: 'right' },
   ]
-  return <div className="flex items-center gap-1 rounded-lg border border-border bg-card p-1 shadow-sm">{sizes.map((item) => <button key={item.value} type="button" title={item.title} aria-label={item.title} aria-pressed={textSize === item.value} className={cn('grid h-7 min-w-8 place-items-center rounded-md px-1.5 text-xs font-black transition hover:bg-primary/10 hover:text-primary', textSize === item.value ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground')} onClick={() => onTextSizeChange(item.value)}>{item.label}</button>)}<span className="mx-0.5 h-5 w-px bg-border" /><button type="button" title="Alternar negrita" aria-label="Alternar negrita" aria-pressed={bold} className={cn('grid size-7 place-items-center rounded-md text-sm font-black transition hover:bg-primary/10 hover:text-primary', bold ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground')} onClick={() => onBoldChange(!bold)}>B</button><span className="mx-0.5 h-5 w-px bg-border" />{alignments.map((item) => <button key={item.value} type="button" title={item.label} aria-label={item.label} aria-pressed={textAlign === item.value} className={cn('grid size-7 place-items-center rounded-md transition hover:bg-primary/10 hover:text-primary', textAlign === item.value ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground')} onClick={() => onTextAlignChange(item.value)}>{item.icon}</button>)}</div>
+  return <div className="flex items-center gap-1 rounded-lg border border-border bg-card p-1 shadow-sm">{sizes.map((item) => <button key={item.value} type="button" title={item.title} aria-label={item.title} aria-pressed={textSize === item.value} className={cn('grid h-7 min-w-8 place-items-center rounded-md px-1.5 text-xs font-black transition hover:bg-primary/10 hover:text-primary', textSize === item.value ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground')} onClick={() => onTextSizeChange(item.value)}>{item.label}</button>)}<span className="mx-0.5 h-5 w-px bg-border" /><button data-ui-size="icon" type="button" title="Alternar negrita" aria-label="Alternar negrita" aria-pressed={bold} className={cn('grid size-7 place-items-center rounded-md text-sm font-black transition hover:bg-primary/10 hover:text-primary', bold ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground')} onClick={() => onBoldChange(!bold)}>B</button><span className="mx-0.5 h-5 w-px bg-border" />{alignments.map((item) => <button data-ui-size="icon" key={item.value} type="button" title={item.label} aria-label={item.label} aria-pressed={textAlign === item.value} className={cn('grid size-7 place-items-center rounded-md transition hover:bg-primary/10 hover:text-primary', textAlign === item.value ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground')} onClick={() => onTextAlignChange(item.value)}>{item.icon}</button>)}</div>
 }
 
 type RubricLevelDraft = { id: string; sourceScore: number | null; name: string; points: number }
@@ -5018,14 +5019,15 @@ function automaticRubricLevelDrafts(drafts: RubricLevelDraft[], maximum: number)
 function InstrumentSettingsDrawer({ accent, applyButtonClassName, applyDisabled = false, children, description, onApply, onClose, panelClassName, title }: { accent: (typeof blockAccents)[number]; applyButtonClassName?: string; applyDisabled?: boolean; children: ReactNode; description: string; onApply: () => void; onClose: () => void; panelClassName?: string; title: string }) {
   const panelRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: panelRef, active: true, onEscape: onClose })
-  return <div className="fixed inset-0 z-50 bg-slate-950/35 motion-safe:animate-[fadeIn_200ms_ease-out]" role="presentation"><div ref={panelRef} role="dialog" aria-modal="true" aria-labelledby="instrument-settings-title" className={cn('ml-auto flex h-full w-full flex-col border-l border-border bg-card shadow-2xl motion-safe:animate-[slideInRight_250ms_ease-out]', panelClassName || 'max-w-[34rem]')}><div className="h-1 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-5 py-4"><div><h3 id="instrument-settings-title" className="text-lg font-black text-foreground">{title}</h3><p className="mt-1 text-sm leading-5 text-muted-foreground">{description}</p></div><Button type="button" variant="ghost" size="icon" aria-label="Cerrar configuración" onClick={onClose}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-y-auto p-5">{children}</div><footer className="flex shrink-0 justify-end gap-3 border-t border-border bg-card px-5 py-4"><Button type="button" variant="outline" onClick={onClose}>Cancelar</Button><Button type="button" className={applyButtonClassName || accent.button} disabled={applyDisabled} onClick={onApply}>Aplicar cambios</Button></footer></div></div>
+  useOutsideClick({ ref: panelRef, onClose })
+  return <div className="fixed inset-0 z-50 bg-slate-950/35 motion-safe:animate-[fadeIn_200ms_ease-out]" role="presentation"><div ref={panelRef} role="dialog" aria-modal="true" aria-labelledby="instrument-settings-title" className={cn('ml-auto flex h-full w-full flex-col border-l border-border bg-card shadow-2xl motion-safe:animate-[slideInRight_250ms_ease-out]', panelClassName || 'max-w-[34rem]')}><div className="h-1 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-5 py-4"><div><h3 id="instrument-settings-title" className="text-lg font-black text-foreground">{title}</h3><p className="mt-1 text-sm leading-5 text-muted-foreground">{description}</p></div><Button data-ui-action="close" type="button" variant="ghost" size="icon" aria-label="Cerrar configuración" onClick={onClose}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-y-auto p-5">{children}</div><footer className="flex shrink-0 justify-end gap-3 border-t border-border bg-card px-5 py-4"><Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose}>Cancelar</Button><Button type="button" className={applyButtonClassName || accent.button} disabled={applyDisabled} onClick={onApply}>Aplicar cambios</Button></footer></div></div>
 }
 
 function InstrumentPreviewModal({ accent, activityName, block, fields, instrumentType, maxScore, onClose }: { accent: (typeof blockAccents)[number]; activityName: string; block: (typeof competencyBlocks)[number]; fields: Record<string, string>; instrumentType: string; maxScore: number; onClose: () => void }) {
   const title = fields[instrumentFieldKey(instrumentType, 'title')] || instrumentTitle(instrumentType)
   const criteriaCount = Number(fields[`${instrumentType}:meta:criteriaCount`]) || inferInstrumentCount(fields, instrumentType, 'criterion', 0)
   const levelCount = instrumentType === 'rubrica' ? Number(fields['rubrica:meta:levelCount']) || inferRubricLevels(fields, 0) : instrumentType === 'escala' ? Number(fields['escala:meta:levelCount']) || 0 : 0
-  return <Modal title={`Vista previa de ${instrumentTitle(instrumentType).toLocaleLowerCase()}`} onClose={onClose} className="max-h-[90vh] max-w-[94vw] rounded-xl" hideHeader><div className="flex max-h-[90vh] flex-col"><div className="h-1.5 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-6 py-4"><div><p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Vista previa · Solo lectura</p><h3 className="mt-1 text-xl font-black text-foreground">{title}</h3><p className="mt-1 text-sm text-muted-foreground">Actividad: {activityName || 'Sin nombre'} · {block.shortName} · {maxScore} puntos · {criteriaCount} {instrumentType === 'escala' ? 'indicadores' : 'criterios'}{levelCount ? ` · ${levelCount} niveles` : ''}</p></div><Button type="button" variant="ghost" size="icon" aria-label="Cerrar vista previa" onClick={onClose}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-auto bg-muted/10 p-6"><ReadOnlyInstrument type={instrumentType} fields={fields} maxScore={maxScore} accent={accent} /></div><footer className="flex shrink-0 justify-end border-t border-border bg-card px-6 py-4"><Button type="button" className={accent.button} onClick={onClose}>Volver a editar</Button></footer></div></Modal>
+  return <Modal title={`Vista previa de ${instrumentTitle(instrumentType).toLocaleLowerCase()}`} onClose={onClose} className="max-h-[90vh] max-w-[94vw] rounded-xl" hideHeader><div className="flex max-h-[90vh] flex-col"><div className="h-1.5 shrink-0" style={{ background: accent.gradient }} /><header className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-6 py-4"><div><p className={cn('text-xs font-black uppercase tracking-[0.14em]', accent.text)}>Vista previa · Solo lectura</p><h3 className="mt-1 text-xl font-black text-foreground">{title}</h3><p className="mt-1 text-sm text-muted-foreground">Actividad: {activityName || 'Sin nombre'} · {block.shortName} · {maxScore} puntos · {criteriaCount} {instrumentType === 'escala' ? 'indicadores' : 'criterios'}{levelCount ? ` · ${levelCount} niveles` : ''}</p></div><Button data-ui-action="close" type="button" variant="ghost" size="icon" aria-label="Cerrar vista previa" onClick={onClose}><X className="size-5" /></Button></header><div className="min-h-0 flex-1 overflow-auto bg-muted/10 p-6"><ReadOnlyInstrument type={instrumentType} fields={fields} maxScore={maxScore} accent={accent} /></div><footer className="flex shrink-0 justify-end border-t border-border bg-card px-6 py-4"><Button type="button" className={accent.button} onClick={onClose}>Volver a editar</Button></footer></div></Modal>
 }
 
 function ActivityCompletionModal({
@@ -5062,7 +5064,7 @@ function ActivityCompletionModal({
               <p className="mt-2 text-sm text-muted-foreground">Revisa los siguientes elementos para poder guardar la actividad.</p>
             </div>
           </div>
-          <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}>
+          <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}>
             <X className="size-5" />
           </Button>
         </div>
@@ -5430,7 +5432,7 @@ function RubricLevelSettingsDrawer({
                   className="relative grid grid-cols-[1.75rem_1.75rem_minmax(0,1fr)_5.5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm transition-colors duration-150"
                   style={{ borderColor: visual.border }}
                 >
-                  <button
+                  <button data-ui-size="icon"
                     type="button"
                     aria-label={`Arrastrar nivel ${level.name}. Usa flecha arriba o abajo para reordenar con el teclado.`}
                     className="grid size-7 touch-none cursor-grab place-items-center rounded-md text-slate-400 hover:bg-muted hover:text-slate-700 active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
@@ -5442,7 +5444,7 @@ function RubricLevelSettingsDrawer({
                   <span className="grid size-6 place-items-center rounded-full text-[11px] font-black" style={{ backgroundColor: visual.background, color: visual.foreground }}>{index + 1}</span>
                   <label className="min-w-0 text-[10px] font-bold text-muted-foreground">Nombre<Input className="mt-0.5 h-8 px-2 text-sm font-bold" value={level.name} onChange={(event) => onDraftsChange((current) => current.map((item) => item.id === level.id ? { ...item, name: event.target.value } : item))} /></label>
                   <label className="text-[10px] font-bold leading-3 text-muted-foreground">Puntos<Input className="mt-0.5 h-8 px-2 text-sm font-black" type="number" min={0} step="0.25" disabled={pointMode === 'automatic'} value={level.points} onChange={(event) => onDraftsChange((current) => current.map((item) => item.id === level.id ? { ...item, points: Number(event.target.value) } : item))} /></label>
-                  <button type="button" aria-label={`Eliminar nivel ${level.name}`} disabled={drafts.length <= 2} className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => onRequestDelete(level)}><Trash2 className="size-4" /></button>
+                  <button data-ui-size="icon" type="button" aria-label={`Eliminar nivel ${level.name}`} disabled={drafts.length <= 2} className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => onRequestDelete(level)}><Trash2 className="size-4" /></button>
                 </div>
               )
             })}
@@ -5689,7 +5691,7 @@ function RubricInstrument({
             <th className="sticky left-0 z-30 w-[24%] border border-border bg-slate-50 px-2 py-2">Criterios de evaluación</th>
             {levels.map((level, index) => {
               const visual = rubricLevelVisual(index, levels.length)
-              return <th key={level.score} className="group relative border px-2 py-2 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block pr-4 font-black">{level.name}</span><span className="mt-0.5 block pr-4 normal-case font-bold opacity-80">{level.points} pts</span><button type="button" aria-label={`Eliminar nivel ${level.name}`} title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'} disabled={levelCount <= 2} className="absolute right-1 top-1 grid size-5 place-items-center rounded opacity-70 transition hover:bg-white/40 hover:text-destructive group-hover:opacity-100 disabled:hidden" onClick={() => requestRemoveLevel(level.score)}><X className="size-3" /></button></th>
+              return <th key={level.score} className="group relative border px-2 py-2 text-center" style={{ backgroundColor: visual.background, borderColor: visual.border, color: visual.foreground }}><span className="block pr-4 font-black">{level.name}</span><span className="mt-0.5 block pr-4 normal-case font-bold opacity-80">{level.points} pts</span><button data-ui-size="icon" data-ui-action="close" type="button" aria-label={`Eliminar nivel ${level.name}`} title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'} disabled={levelCount <= 2} className="absolute right-1 top-1 grid size-5 place-items-center rounded opacity-70 transition hover:bg-white/40 hover:text-destructive group-hover:opacity-100 disabled:hidden" onClick={() => requestRemoveLevel(level.score)}><X className="size-3" /></button></th>
             })}
             <th className="w-24 border border-border px-2 py-2 text-center">Puntaje por criterio</th>
             <th className="w-10 border border-border" />
@@ -5888,7 +5890,7 @@ function ScaleSettingsDrawer({
             if (!level) return <div key="scale-placeholder" className={cn('grid place-items-center rounded-xl border-2 border-dashed text-[10px] font-black', accent.card, accent.border, accent.text)} style={{ height: `${dragPreviewHeight}px` }}>Suelta aquí</div>
             const index = levelDrafts.findIndex((item) => item.id === level.id)
             const visual = scaleLevelVisual(accent, visualIndex, levelDrafts.length)
-            return <div key={level.id} data-scale-level-card data-scale-sort-card className="grid grid-cols-[1.75rem_1.5rem_minmax(0,1fr)_5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm" style={{ borderColor: visual.border }}><button type="button" aria-label={`Arrastrar nivel ${level.name}`} className={cn('grid size-7 touch-none cursor-grab place-items-center rounded-md text-slate-400 hover:bg-muted active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2', accent.ring)} onPointerDown={(event) => startPointerDrag(event, level)} onKeyDown={(event) => { if (event.key === 'ArrowUp') { event.preventDefault(); moveWithKeyboard(index, -1) } else if (event.key === 'ArrowDown') { event.preventDefault(); moveWithKeyboard(index, 1) } }}><GripVertical className="size-4" /></button><span className="grid size-6 place-items-center rounded-full text-[10px] font-black" style={{ backgroundColor: visual.background, color: visual.foreground }}>{visualIndex + 1}</span><Input aria-label={`Nombre del nivel ${visualIndex + 1}`} className="h-8 font-bold" value={level.name} onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, name: event.target.value } : item))} /><label className="relative"><Input aria-label={`Puntos del nivel ${visualIndex + 1}`} className="h-8 pr-7 font-black" type="number" min={0} step="0.25" value={level.points} onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, points: Number(event.target.value) } : item))} /><span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[9px] text-muted-foreground">pts</span></label><button type="button" aria-label={`Eliminar nivel ${level.name}`} disabled={levelDrafts.length <= 2} className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => onLevelsChange((current) => current.filter((item) => item.id !== level.id))}><Trash2 className="size-4" /></button></div>
+            return <div key={level.id} data-scale-level-card data-scale-sort-card className="grid grid-cols-[1.75rem_1.5rem_minmax(0,1fr)_5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm" style={{ borderColor: visual.border }}><button data-ui-size="icon" type="button" aria-label={`Arrastrar nivel ${level.name}`} className={cn('grid size-7 touch-none cursor-grab place-items-center rounded-md text-slate-400 hover:bg-muted active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2', accent.ring)} onPointerDown={(event) => startPointerDrag(event, level)} onKeyDown={(event) => { if (event.key === 'ArrowUp') { event.preventDefault(); moveWithKeyboard(index, -1) } else if (event.key === 'ArrowDown') { event.preventDefault(); moveWithKeyboard(index, 1) } }}><GripVertical className="size-4" /></button><span className="grid size-6 place-items-center rounded-full text-[10px] font-black" style={{ backgroundColor: visual.background, color: visual.foreground }}>{visualIndex + 1}</span><Input aria-label={`Nombre del nivel ${visualIndex + 1}`} className="h-8 font-bold" value={level.name} onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, name: event.target.value } : item))} /><label className="relative"><Input aria-label={`Puntos del nivel ${visualIndex + 1}`} className="h-8 pr-7 font-black" type="number" min={0} step="0.25" value={level.points} onChange={(event) => onLevelsChange((current) => current.map((item) => item.id === level.id ? { ...item, points: Number(event.target.value) } : item))} /><span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[9px] text-muted-foreground">pts</span></label><button data-ui-size="icon" type="button" aria-label={`Eliminar nivel ${level.name}`} disabled={levelDrafts.length <= 2} className="grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-red-50 hover:text-destructive disabled:opacity-30" onClick={() => onLevelsChange((current) => current.filter((item) => item.id !== level.id))}><Trash2 className="size-4" /></button></div>
           })}</div>
           {!levelNamesValid ? <p className="mt-2 text-xs font-bold text-destructive">Todos los niveles necesitan un nombre y deben existir al menos dos.</p> : null}
           {!levelPointsValid ? <p className="mt-2 text-xs font-bold text-destructive">Introduce puntuaciones válidas y no negativas.</p> : null}
@@ -6547,7 +6549,7 @@ function InstrumentRowMenu({ canMoveDown, canMoveUp, onDelete, onDuplicate, onMo
   }
 
   const popup = open ? <div ref={popupRef} role="menu" className="fixed z-[100] w-44 overflow-hidden rounded-lg border border-border bg-popover p-1 text-left shadow-xl" style={{ top: menuPosition.top, right: menuPosition.right }}><button type="button" role="menuitem" className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted" onClick={() => runAction(onDuplicate)}><Copy className="size-3.5" />Duplicar</button><button type="button" role="menuitem" disabled={!canMoveUp} className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted disabled:opacity-40" onClick={() => runAction(onMoveUp)}><ArrowUp className="size-3.5" />Mover arriba</button><button type="button" role="menuitem" disabled={!canMoveDown} className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold hover:bg-muted disabled:opacity-40" onClick={() => runAction(onMoveDown)}><ArrowDown className="size-3.5" />Mover abajo</button><div className="my-1 h-px bg-border"/><button type="button" role="menuitem" className="flex w-full items-center gap-2 rounded px-2 py-2 text-xs font-bold text-destructive hover:bg-red-50" onClick={() => runAction(onDelete)}><Trash2 className="size-3.5" />Eliminar</button></div> : null
-  return <div className="instrument-row-actions mx-auto w-fit"><button ref={buttonRef} type="button" aria-label="Acciones de la fila" aria-haspopup="menu" aria-expanded={open} className={cn('grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary', open ? 'bg-muted text-foreground' : '')} onClick={toggleMenu}><EllipsisVertical className="size-4" /></button>{popup ? createPortal(popup, document.body) : null}</div>
+  return <div className="instrument-row-actions mx-auto w-fit"><button data-ui-size="icon" ref={buttonRef} type="button" aria-label="Acciones de la fila" aria-haspopup="menu" aria-expanded={open} className={cn('grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary', open ? 'bg-muted text-foreground' : '')} onClick={toggleMenu}><EllipsisVertical className="size-4" /></button>{popup ? createPortal(popup, document.body) : null}</div>
 }
 
 function focusNewInstrumentRow(type: string, index: number, setHighlightedRow: Dispatch<SetStateAction<number | null>>) {
@@ -6733,7 +6735,7 @@ function CalculationConfigModal({
               </p>
             </div>
           </div>
-          <Button variant="ghost" size="icon" aria-label="Cerrar configuración" onClick={onClose}>
+          <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar configuración" onClick={onClose}>
             <X className="size-5" />
           </Button>
         </header>
@@ -6942,7 +6944,7 @@ function ResourcePicker({ resources, onChange }: { resources: string[]; onChange
           onChange={(event) => { setResourceQuery(event.target.value); setShowOptions(true) }}
           placeholder="Buscar o agregar recurso..."
         />
-        <button type="button" aria-label="Mostrar recursos" className="absolute right-2 top-1/2 grid size-8 -translate-y-1/2 place-items-center text-blue-600" onClick={() => setShowOptions((value) => !value)}><ChevronDown className={cn('size-4 transition', showOptions ? 'rotate-180' : '')} /></button>
+        <button data-ui-size="icon" type="button" aria-label="Mostrar recursos" className="absolute right-2 top-1/2 grid size-8 -translate-y-1/2 place-items-center text-blue-600" onClick={() => setShowOptions((value) => !value)}><ChevronDown className={cn('size-4 transition', showOptions ? 'rotate-180' : '')} /></button>
         {showOptions ? (
           <div className="absolute inset-x-0 top-full z-20 mt-1 rounded-xl border border-border bg-popover p-2 shadow-lg">
             <div className="max-h-52 space-y-2 overflow-y-auto">
@@ -6970,8 +6972,8 @@ function ResourcePicker({ resources, onChange }: { resources: string[]; onChange
       {resources.length > 0 ? (
         <div className="flex flex-wrap gap-2">
           {resources.map((resource) => (
-            <button key={resource} type="button" className="inline-flex h-9 items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3 text-xs font-black text-blue-700 transition hover:border-blue-300" onClick={() => toggleResource(resource)}>
-              {resourceIcon(resource)}{resource}<X className="size-3.5 text-slate-500" />
+            <button data-ui-action="close" key={resource} type="button" className="inline-flex h-9 items-center gap-2 rounded-lg border border-border bg-muted px-3 text-xs font-black transition" onClick={() => toggleResource(resource)}>
+              {resourceIcon(resource)}{resource}<X className="size-3.5" />
             </button>
           ))}
         </div>
@@ -6985,7 +6987,7 @@ function ResourcePicker({ resources, onChange }: { resources: string[]; onChange
       </div>
       {showBank ? (
         <div className="rounded-xl border border-border bg-muted/10 p-2" onMouseLeave={() => { setShowBank(false); setExpandedCategory(null) }}>
-          <div className="mb-2 flex items-center justify-between px-1"><div><p className="text-sm font-black text-blue-600">Banco de recursos por áreas</p><p className="text-xs text-blue-600/70">{allCatalogResources.length} recursos disponibles</p></div><button type="button" aria-label="Cerrar banco de recursos" className="grid size-8 place-items-center rounded-lg text-blue-600 hover:bg-blue-50" onClick={() => setShowBank(false)}><X className="size-4" /></button></div>
+          <div className="mb-2 flex items-center justify-between px-1"><div><p className="text-sm font-black text-blue-600">Banco de recursos por áreas</p><p className="text-xs text-blue-600/70">{allCatalogResources.length} recursos disponibles</p></div><button data-ui-size="icon" data-ui-action="close" type="button" aria-label="Cerrar banco de recursos" className="grid size-8 place-items-center rounded-lg" onClick={() => setShowBank(false)}><X className="size-4" /></button></div>
           <div className="max-h-80 space-y-1 overflow-y-auto pr-1">
             {resourceBankCategories.map((category) => {
               const open = expandedCategory === category.id
@@ -6998,7 +7000,7 @@ function ResourcePicker({ resources, onChange }: { resources: string[]; onChange
         <div className="flex gap-2">
           <Input className="h-9" autoFocus value={customResource} placeholder="Ej. Simulador PhET de circuitos" onChange={(event) => setCustomResource(event.target.value)} onKeyDown={(event) => { if (event.key !== 'Enter') return; event.preventDefault(); addCustomResource() }} />
           <Button type="button" size="sm" className="h-9" onClick={addCustomResource}>Agregar</Button>
-          <Button type="button" size="sm" variant="ghost" className="h-9" onClick={() => setShowCustomInput(false)}>Cancelar</Button>
+          <Button data-ui-action="cancel" type="button" size="sm" variant="ghost" className="h-9" onClick={() => setShowCustomInput(false)}>Cancelar</Button>
         </div>
       ) : (
         <button type="button" className="inline-flex items-center gap-2 text-sm font-black text-blue-600 hover:underline" onClick={() => { setShowCustomInput(true); setShowOptions(false) }}><Plus className="size-4" />Agregar recurso personalizado</button>

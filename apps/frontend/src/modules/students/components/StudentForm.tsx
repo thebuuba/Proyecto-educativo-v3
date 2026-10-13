@@ -320,7 +320,7 @@ export function StudentForm({
         ) : null}
 
         <div className="flex flex-col-reverse gap-2 border-t border-border pt-5 sm:flex-row sm:justify-end">
-          <Button type="button" variant="outline" onClick={onClose} disabled={submitting}>
+          <Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose} disabled={submitting}>
             Cancelar
           </Button>
           <Button type="submit" loading={submitting} disabled={submitting}>

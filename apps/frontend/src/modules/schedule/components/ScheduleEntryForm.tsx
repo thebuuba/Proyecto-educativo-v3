@@ -11,6 +11,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Select } from '@/components/ui/Select'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 import {
   getSectionSubjects,
   getSections,
@@ -123,11 +124,15 @@ export function ScheduleEntryForm({
 
   const dialogRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
+  useOutsideClick({ ref: dialogRef, onClose, disabled: submitting })
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
       <div
         ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Nueva clase"
         className="flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xl"
       >
         <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
@@ -137,7 +142,7 @@ export function ScheduleEntryForm({
               Selecciona un curso existente para ocupar este bloque.
             </p>
           </div>
-          <button
+          <button data-ui-size="icon" data-ui-action="close"
             type="button"
             className="inline-flex size-9 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground"
             aria-label="Cerrar formulario"
@@ -211,7 +216,7 @@ export function ScheduleEntryForm({
           )}
 
           <div className="flex justify-end gap-3 border-t border-border pt-5">
-            <Button type="button" variant="outline" onClick={onClose}>
+            <Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose}>
               Cancelar
             </Button>
             <Button type="submit" loading={submitting} disabled={loadingDeps}>

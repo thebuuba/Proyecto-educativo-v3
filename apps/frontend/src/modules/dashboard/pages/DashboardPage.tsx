@@ -427,7 +427,7 @@ function Agenda({
               aria-label="Nueva tarea"
               className="min-w-0 flex-1 rounded-xl border border-border bg-card px-3 py-2 text-sm outline-none focus:border-primary"
             />
-            <button
+            <button data-ui-size="icon"
               type="submit"
               disabled={actionLoading || !taskTitle.trim()}
               aria-label="Agregar tarea"
@@ -560,7 +560,7 @@ function PulseCard({ data }: { data: DashboardData }) {
           <Sparkles size={17} className="text-primary" />
           Pulso semanal <span className="text-primary">{percent}%</span>
         </h2>
-        <button
+        <button data-ui-size="icon" data-ui-action="close"
           type="button"
           onClick={() => setDismissed(true)}
           aria-label="Descartar pulso semanal"
@@ -759,7 +759,7 @@ export function DashboardPage() {
               <p className="text-sm text-muted-foreground">{data.context.formattedDate}</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <button
+              <button data-ui-size="icon"
                 type="button"
                 onClick={() => void refetch()}
                 disabled={loading}

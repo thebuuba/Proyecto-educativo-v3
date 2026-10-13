@@ -185,7 +185,7 @@ export function SubjectAttendancePanel({ sectionSubjectId, students, loading = f
       {editing ? <section ref={attendanceEditorRef} className="min-w-0 scroll-mt-5 overflow-hidden rounded-3xl bg-card shadow-sm sm:scroll-mt-6" aria-label="Pasar asistencia">
         <header className="space-y-3 border-b border-border p-4">
           <div className="flex items-start justify-between gap-3"><div><h3 className="text-base font-extrabold text-foreground">Pasar asistencia</h3><p className="mt-1 text-sm font-semibold text-foreground">{formatDate(selectedDate)}</p></div>
-            <Button variant="outline" disabled={saving} onClick={() => dirty ? setPending('close') : closeEditor()}><X className="size-4" aria-hidden="true" /> Cerrar</Button>
+            <Button data-ui-action="close" variant="outline" disabled={saving} onClick={() => dirty ? setPending('close') : closeEditor()}><X className="size-4" aria-hidden="true" /> Cerrar</Button>
           </div>
           {newListPrefilled ? <div className="rounded-2xl border border-primary/15 bg-primary/[0.045] px-3.5 py-3 text-xs leading-5 text-foreground"><strong className="font-extrabold">Lista nueva preparada:</strong> todos los estudiantes se marcaron como presentes por defecto para agilizar el pase de lista. Revisa y cambia a A, E o T cuando corresponda antes de guardar.</div> : null}
           <div className="flex flex-wrap items-end gap-2"><label className="grid gap-1 text-xs font-semibold text-muted-foreground">Fecha de asistencia<Input type="date" aria-label="Fecha de asistencia" value={selectedDate} disabled={saving} onChange={(event) => requestOpen(event.target.value)} /></label>
@@ -221,7 +221,7 @@ function StudentAttendanceDrawer({ student, monthLabel, records, percentage, onC
         <div className="flex items-start gap-3">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary"><UserRound className="size-5" /></span>
           <div className="min-w-0 flex-1"><p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted-foreground">Detalle de asistencia</p><h3 className="mt-1 text-lg font-black text-foreground">{student.firstName} {student.lastName}</h3><p className="mt-1 text-xs text-muted-foreground">Resumen del mes seleccionado</p></div>
-          <button type="button" onClick={onClose} aria-label="Cerrar detalle" className="grid size-10 shrink-0 place-items-center rounded-xl border border-border text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><X className="size-4" /></button>
+          <button data-ui-size="icon" data-ui-action="close" type="button" onClick={onClose} aria-label="Cerrar detalle" className="grid size-10 shrink-0 place-items-center rounded-xl border border-border text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"><X className="size-4" /></button>
         </div>
       </header>
 

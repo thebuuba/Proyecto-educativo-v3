@@ -1,7 +1,7 @@
 /**
  * Layout principal de la aplicación con barra lateral y encabezado.
  */
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 
 import { Header } from '@/components/navigation/Header'
@@ -19,8 +19,11 @@ export function AppLayout() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(
     () => localStorage.getItem('aulabase:sidebar-expanded') === 'true',
   )
-  const isGradingPage = location.pathname.startsWith('/calificaciones')
   const activeModule = location.pathname.split('/').filter(Boolean)[0] ?? 'inicio'
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [location.pathname])
 
   useEffect(() => {
     localStorage.setItem('aulabase:sidebar-expanded', String(isSidebarExpanded))
@@ -51,14 +54,7 @@ export function AppLayout() {
             <main
               data-module={activeModule}
               data-route={location.pathname}
-              className={cn(
-                'content-density-compact min-w-0 px-4 sm:px-6 lg:px-8',
-                isGradingPage
-                  ? 'py-3 lg:py-3'
-                  : activeModule === 'inicio'
-                    ? 'pb-8 pt-0'
-                    : 'py-5 lg:py-8',
-              )}
+              className="app-main content-density-compact min-w-0 px-4 sm:px-6 lg:px-8"
             >
               <Outlet />
             </main>

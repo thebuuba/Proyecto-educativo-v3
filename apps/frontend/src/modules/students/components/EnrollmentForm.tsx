@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 import { getCurrentSchoolYear } from '@/services/schoolYearService'
 import { getGradesWithSections } from '@/modules/students/services/studentsService'
 import type { GradeWithSections } from '@/modules/students/types'
@@ -148,10 +149,11 @@ export function EnrollmentForm({
 
   const dialogRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
+  useOutsideClick({ ref: dialogRef, onClose, disabled: submitting })
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/45 px-4 py-6">
-      <div ref={dialogRef} className="flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xl">
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Agregar curso" className="flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xl">
         <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
           <div>
             <h3 className="text-base font-semibold text-foreground">Agregar curso</h3>
@@ -159,7 +161,7 @@ export function EnrollmentForm({
               Asocia el estudiante a un grado y sección.
             </p>
           </div>
-          <button
+          <button data-ui-size="icon" data-ui-action="close"
             type="button"
             className="inline-flex size-9 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground"
             aria-label="Cerrar formulario"
@@ -296,7 +298,7 @@ export function EnrollmentForm({
           )}
 
           <div className="flex justify-end gap-3 border-t border-border pt-5">
-            <Button variant="outline" onClick={onClose}>
+            <Button data-ui-action="cancel" variant="outline" onClick={onClose}>
               Cancelar
             </Button>
             <Button

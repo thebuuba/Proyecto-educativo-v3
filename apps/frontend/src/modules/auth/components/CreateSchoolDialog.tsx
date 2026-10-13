@@ -55,7 +55,7 @@ export function CreateSchoolDialog({ initialName, onSelect, onClose }: {
       <label className="block text-sm font-medium">Código del centro <span className="font-normal text-muted-foreground">(opcional)</span><Input className="mt-2" value={centerCode} onChange={event => setCenterCode(event.target.value.toUpperCase())} maxLength={20} pattern="[A-Za-z0-9\-]+" disabled={busy} placeholder="Si lo conoces, escríbelo aquí" /></label>
       <p className="text-xs leading-5 text-muted-foreground">Comprueba que los datos correspondan al centro educativo. En el siguiente paso elegirás tu nivel, tanda y tipo de oferta.</p>
       {error && <p role="alert" className="rounded-xl bg-destructive/10 p-3 text-sm text-foreground">{error}</p>}
-      <div className="flex justify-end gap-3 pt-2"><Button variant="ghost" disabled={busy} onClick={onClose}>Cancelar</Button><Button type="submit" loading={busy}>Guardar y seleccionar</Button></div>
+      <div className="flex justify-end gap-3 pt-2"><Button data-ui-action="cancel" variant="ghost" disabled={busy} onClick={onClose}>Cancelar</Button><Button type="submit" loading={busy}>Guardar y seleccionar</Button></div>
     </form>}
   </Modal>
 }

@@ -86,7 +86,7 @@ export function ActivityInfoModal({ activity, onClose, onEdit, onEvaluate }: {
           <span className={cn('grid size-11 shrink-0 place-items-center rounded-xl shadow-sm', accent.card, accent.text)}><ClipboardList className="size-5" /></span>
           <div><p className={cn('text-[10px] font-black uppercase tracking-[0.15em]', accent.text)}>Información de la actividad</p><h3 className="mt-1 text-lg font-black text-foreground">Detalle de la actividad</h3><p className="mt-0.5 text-xs text-muted-foreground">Consulta la información completa y el instrumento creado para esta actividad.</p></div>
         </div>
-        <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
+        <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
       </header>
 
       <div className="space-y-4 bg-muted/10 p-5">
