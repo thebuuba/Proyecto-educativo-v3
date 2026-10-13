@@ -3050,11 +3050,12 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "EXISTING_PENDING_REAUDIT",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN",
-          "report": "lengua-2-primer-bloque.md"
+          "implementation": "IMPLEMENTED",
+          "automatedVerification": "PASSED",
+          "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED_SOURCE_ANOMALY",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "report": "noticia-2-compartida.md",
+          "catalogVersion": "evaluation-2026.9"
         },
         {
           "id": "a5536c76-af76-53df-aa37-181e67ef25a0",

@@ -135,7 +135,7 @@ describe('GradingBook', () => {
     fireEvent.change(screen.getByRole('textbox', { name: 'Descripción de la actividad' }), {
       target: { value: 'Los estudiantes redactarán una noticia sobre educación con titular, entrada y cuerpo.' },
     })
-    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'), { timeout: 8000 })
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial de la noticia'), { timeout: 8000 })
     expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING')
     expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue('analisis-producciones')
     expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('rubrica')
@@ -263,7 +263,7 @@ describe('GradingBook', () => {
     fireEvent.change(screen.getByRole('textbox', { name: 'Descripción de la actividad' }), { target: { value: 'Redactarán una noticia sobre educación.' } })
     const user = userEvent.setup()
     const instrument = screen.getByRole('combobox', { name: 'Tipo de instrumento' })
-    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'), { timeout: 8000 })
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial de la noticia'), { timeout: 8000 })
     const storedDraft = () => JSON.parse(JSON.stringify(readActivityDraftsForContext(draftContext)) || '{}').b1?.[0]
     const score = screen.getByRole('textbox', { name: /Valor en puntos/ }) as HTMLInputElement
     const totals = (type: string) => {
@@ -365,10 +365,10 @@ describe('GradingBook', () => {
   })
 
   it.each([
-    ['La noticia', 'Los estudiantes redactarán una noticia sobre una situación de su comunidad, con titular, entrada y cuerpo', 'NEWS_WRITING', 'analisis-producciones', 'rubrica', 'Información esencial'],
-    ['Lo que ocurre en el mundo', 'Leerán una noticia sobre inmigración, identificarán sus partes y explicarán el hecho con evidencias del texto', 'NEWS_ANALYSIS', 'observacion-sistematica', 'lista-cotejo', 'Función de la noticia'],
-    ['Dos versiones de un hecho', 'Compararán dos noticias sobre el mismo acontecimiento y justificarán sus semejanzas y diferencias', 'NEWS_COMPARISON', 'analisis-producciones', 'rubrica', 'Propósito y hecho'],
-    ['Nuestro noticiero', 'Presentarán oralmente una noticia sobre educación, explicando qué ocurrió, a quién, dónde, cuándo y cómo', 'NEWSCAST', 'exposicion', 'rubrica', 'Información periodística'],
+    ['La noticia', 'Los estudiantes redactarán una noticia sobre una situación de su comunidad, con titular, entrada y cuerpo', 'NEWS_WRITING', 'analisis-producciones', 'rubrica', 'Información esencial de la noticia'],
+    ['Lo que ocurre en el mundo', 'Leerán una noticia sobre inmigración, identificarán sus partes y explicarán el hecho con evidencias del texto', 'NEWS_ANALYSIS', 'observacion-sistematica', 'lista-cotejo', 'Intención comunicativa de la noticia'],
+    ['Dos versiones de un hecho', 'Compararán dos noticias sobre el mismo acontecimiento y justificarán sus semejanzas y diferencias', 'NEWS_COMPARISON', 'analisis-producciones', 'rubrica', 'Hecho y propósito'],
+    ['Nuestro noticiero', 'Presentarán oralmente una noticia sobre educación, explicando qué ocurrió, a quién, dónde, cuándo y cómo', 'NEWSCAST', 'exposicion', 'rubrica', 'Contenido de la noticia presentada'],
     ['Una noticia para debatir', 'Debatirán sobre el hecho presentado en una noticia, argumentando sus posturas con evidencias', 'DEBATE', 'debate', 'rubrica', 'Comprensión del hecho'],
   ])('sugiere %s en 2.º y prepara una alternativa contextual cuando falla el servicio', async (title, description, expectedType, technique, instrument, criterion) => {
     vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
@@ -390,10 +390,10 @@ describe('GradingBook', () => {
     fireEvent.change(description, { target: { value: 'Redactarán una noticia sobre educación con titular, entrada y cuerpo.' } })
     const user = userEvent.setup()
     const instrument = screen.getByRole('combobox', { name: 'Tipo de instrumento' })
-    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'), { timeout: 8000 })
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial de la noticia'), { timeout: 8000 })
     await user.selectOptions(instrument, 'escala')
     await waitFor(() => expect(instrument).toHaveValue('escala'))
-    await waitFor(() => expect(screen.getAllByPlaceholderText('Indicador')[0]).toHaveValue('Información esencial'))
+    await waitFor(() => expect(screen.getAllByPlaceholderText('Indicador')[0]).toHaveValue('Información esencial de la noticia'))
     fireEvent.change(description, { target: { value: 'Redactarán una noticia sobre salud con titular, entrada y cuerpo.' } })
     await waitFor(() => expect(instrument).toHaveValue('escala'))
     expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING')
@@ -438,7 +438,7 @@ describe('GradingBook', () => {
     const view = renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create',
       initialActivityBlockId: 'b1', initialActivityDraftId: 'second-news-draft', onAddActivity })
     await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue('NEWS_WRITING'))
-    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial'))
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial de la noticia'))
     const user = userEvent.setup()
     await user.click(screen.getByRole('button', { name: 'Guardar' }))
     const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })

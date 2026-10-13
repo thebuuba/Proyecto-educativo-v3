@@ -121,10 +121,10 @@ describe('adaptación del instrumento preparado', () => {
 
 describe('alternativa local de La noticia en 2.º de secundaria', () => {
   it.each([
-    ['NEWS_WRITING', 'Redactarán una noticia sobre educación.', 'Información esencial'],
-    ['NEWS_ANALYSIS', 'Leerán y analizarán una noticia sobre inmigración.', 'Función de la noticia'],
-    ['NEWS_COMPARISON', 'Compararán dos noticias sobre un hecho.', 'Propósito y hecho de ambas noticias'],
-    ['NEWSCAST', 'Presentarán oralmente una noticia sobre educación.', 'Información periodística'],
+    ['NEWS_WRITING', 'Redactarán una noticia sobre educación.', 'Información esencial de la noticia'],
+    ['NEWS_ANALYSIS', 'Leerán y analizarán una noticia sobre inmigración.', 'Intención comunicativa de la noticia'],
+    ['NEWS_COMPARISON', 'Compararán dos noticias sobre un hecho.', 'Hecho y propósito de ambas noticias'],
+    ['NEWSCAST', 'Presentarán oralmente una noticia sobre educación.', 'Contenido de la noticia presentada'],
     ['DEBATE', 'Debatirán el hecho de una noticia con evidencias.', 'Comprensión del hecho noticioso'],
     ['REPORT', 'Elaborarán un informe escrito sobre una noticia.', 'Propósito del informe sobre la noticia'],
   ])('conserva %s contextualizado en cuatro formatos', (activityType, description, firstCriterion) => {

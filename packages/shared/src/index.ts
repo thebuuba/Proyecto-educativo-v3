@@ -11,6 +11,7 @@ export * from './instrument-definition'
 export * from './secondary-language-topics'
 export * from './secondary-topic-criteria'
 export * from './secondary-topic-recommendation'
+export * from './secondary-news-grade-two'
 import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask } from './secondary-language-topics'
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
 

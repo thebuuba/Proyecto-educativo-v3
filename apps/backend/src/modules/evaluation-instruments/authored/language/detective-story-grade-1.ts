@@ -1,4 +1,3 @@
-import { normalize } from '../../curriculum-context'
 import type { AuthoredCriterion } from './types'
 
 export function detectiveStoryCriteria(activityType: string): AuthoredCriterion[] {

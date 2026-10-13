@@ -5,13 +5,17 @@
       "id": "76d1d9e3-52af-58b4-a886-50daf7b4ed98",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
-      "implementation": "EXISTING_PENDING_REAUDIT",
+      "implementation": "IMPLEMENTED",
       "procedures": [
         "726a3500-49d4-55d0-b95d-08dbefa4f5e5",
         "94ad93d7-4744-5b51-bad2-5de8a0de6c29",
         "20da41b0-1550-50b0-98d6-638ad7afa45f"
       ],
-      "report": "lengua-2-primer-bloque.md"
+      "report": "noticia-2-compartida.md",
+      "automatedVerification": "PASSED",
+      "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED_SOURCE_ANOMALY",
+      "applicationVerification": "LOCAL_HTTP_PASSED",
+      "catalogVersion": "evaluation-2026.9"
     },
     {
       "id": "a5536c76-af76-53df-aa37-181e67ef25a0",

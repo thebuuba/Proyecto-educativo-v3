@@ -4,7 +4,7 @@ import { createRequire } from 'node:module'
 import { readFileSync } from 'node:fs'
 import { randomBytes, randomUUID } from 'node:crypto'
 
-// Run through the existing tsx loader after building backend. Never load remote .env credentials.
+// Run with native Node after building backend and shared. Never load remote .env credentials.
 const cli = process.env.npm_execpath ?? process.argv[2]
 if (!cli) throw new Error('Proporcionar la ruta del CLI pnpm existente como primer argumento; no se descarga otro CLI.')
 const statusResult = spawnSync(process.execPath, [cli, 'exec', 'supabase', 'status', '--output', 'json'], { encoding: 'utf8' })
@@ -22,6 +22,7 @@ const requireBackend = createRequire(new URL('../../apps/backend/package.json', 
 const requireFrontend = createRequire(new URL('../../apps/frontend/package.json', import.meta.url))
 const { prisma } = requireBackend('@aula/database')
 const shared = requireBackend('@aula/shared')
+const { evaluationCatalogCurrent } = requireBackend('./dist/modules/evaluation-instruments/catalog-current.js')
 const typescript = requireFrontend('typescript')
 const adapterSource = readFileSync('apps/frontend/src/modules/activities/services/instrumentPreparation.ts', 'utf8')
 const adapter = { exports: {} }
@@ -98,7 +99,15 @@ try {
     assert.equal(response.status, expected, `${path}: ${JSON.stringify(json).slice(0, 450)}`)
     return json.data
   }
-  const descriptions = [
+  const news = process.argv.includes('--news')
+  const descriptions = news ? [
+    'Redacta una noticia sobre el ambiente.',
+    'Analiza una noticia sobre educación.',
+    'Compara dos noticias sobre educación.',
+    'Presenta una noticia en un noticiero.',
+    'Redacta un informe sobre una noticia.',
+    'Debate sobre una noticia.',
+  ] : [
     'Identifica la estructura de la guía turística.',
     'Escribe un artículo expositivo sobre el agua con organización problema-solución.',
     'Redacta un informe de lectura sobre el cuento leído.',
@@ -112,7 +121,7 @@ try {
       const proposal = await request('/evaluation-instruments/recommend', { sectionSubjectId: fixture.assignment.id, activityTitle: 'Actividad QA', description,
         curriculumVersionId: version.id, pedagogicalActivityType: interpreted.activityType,
         participationMode: 'INDIVIDUAL', maxScore: 17.35, preferredInstrumentType: instrumentType })
-      assert.equal(proposal.catalogVersion, 'evaluation-2026.8')
+      assert.equal(proposal.catalogVersion, evaluationCatalogCurrent.version)
       assert.equal(proposal.totalScoreUnits, 1735)
       const fields = adapter.exports.recommendationToFields(proposal, 'Actividad QA')
       assert.deepEqual(shared.validateInstrumentDefinition(instrumentType, fields, 17.35), [])
@@ -138,11 +147,12 @@ try {
       results.push({ activityId: saved.id, description, instrumentType, activityType: proposal.activityType, snapshotId: activity.instrumentSnapshot.id })
     }
   }
-  assert.equal(await prisma.evaluationActivity.count({ where: { schoolId: fixtureId } }), 20)
-  assert.equal(await prisma.evaluationInstrumentSnapshot.count({ where: { schoolId: fixtureId } }), 20)
+  const expectedCount = descriptions.length * 4
+  assert.equal(await prisma.evaluationActivity.count({ where: { schoolId: fixtureId } }), expectedCount)
+  assert.equal(await prisma.evaluationInstrumentSnapshot.count({ where: { schoolId: fixtureId } }), expectedCount)
   const oldActivity = await prisma.evaluationActivity.findUnique({ where: { id: lastInput.creationId }, include: { instrumentSnapshot: true } })
   const oldFingerprint = await prisma.$queryRawUnsafe('select md5(payload::text) fingerprint from evaluation_instrument_snapshots where id=$1::uuid', oldActivity.instrumentSnapshot.id)
-  const editedFields = { ...lastInput.instrumentCriteria, 'lista-ponderada:criterion:0': 'Secuencia de la recitación revisada por docente' }
+  const editedFields = { ...lastInput.instrumentCriteria, 'lista-ponderada:criterion:0': `${lastInput.instrumentCriteria['lista-ponderada:criterion:0']} (revisión docente)` }
   const editedSnapshot = adapter.exports.alignRecommendationWithFields(lastInput.instrumentSnapshot, editedFields, 17.35)
   assert.ok(editedSnapshot)
   const revisionInput = { ...lastInput, creationId: undefined, id: lastInput.creationId, instrumentCriteria: editedFields, instrumentSnapshot: editedSnapshot }
@@ -153,10 +163,10 @@ try {
   assert.equal(revised.instrument.criteria['lista-ponderada:criterion:0'], editedFields['lista-ponderada:criterion:0'])
   assert.deepEqual(await prisma.$queryRawUnsafe('select md5(payload::text) fingerprint from evaluation_instrument_snapshots where id=$1::uuid', oldActivity.instrumentSnapshot.id), oldFingerprint)
   await request('/activities', { ...lastInput, name: 'Envío distinto con el mismo identificador' }, 409)
-  assert.equal(await prisma.evaluationActivity.count({ where: { schoolId: fixtureId } }), 20)
-  assert.equal(await prisma.evaluationInstrumentSnapshot.count({ where: { schoolId: fixtureId } }), 21)
+  assert.equal(await prisma.evaluationActivity.count({ where: { schoolId: fixtureId } }), expectedCount)
+  assert.equal(await prisma.evaluationInstrumentSnapshot.count({ where: { schoolId: fixtureId } }), expectedCount + 1)
   assert.deepEqual(await fingerprints(), previous, 'Cambió un release o snapshot ajeno a esta fixture.')
-  console.log(JSON.stringify({ target: 'Supabase local 54332', fixtureSchoolId: fixtureId,
+  console.log(JSON.stringify({ target: 'Supabase local 54332', fixtureSchoolId: fixtureId, catalogVersion: evaluationCatalogCurrent.version,
     authentication: 'JWT sintético con guards reales; no prueba de login', persistedActivities: results.length,
     retriedWithoutDuplicates: true, previousReleasesAndSnapshotsPreserved: true,
     manualRevisionPreserved: true, revisionLineage: [oldActivity.instrumentSnapshot.id, revised.instrumentSnapshot.id],

@@ -289,7 +289,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
         : readingReportModule ? readingReportCriteria(activity.id, input.description ?? '')
           : detectiveModule ? detectiveStoryCriteria(activity.id)
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : []
-  const authoredScores = authored.length ? contextualTopic
+  const authoredScores = authored.length ? contextualTopic || newsModule && context?.grade === 2
     ? distributeScoreUnits(Math.round(input.maxScore * 100), authored.map(item => item.weight))
     : distributeScore(input.maxScore, authored.map(item => item.weight)) : []
   const authoredPatternIndexes = levelCount === 4 ? [0, 1, 3, 4] : [0, 1, 2, 3, 4]

@@ -1,6 +1,6 @@
 import type { InstrumentRecommendation, InstrumentType } from './instrument-recommendation'
 import { distributeScoreUnits } from './instrument-definition'
-import { secondaryTopicCriteria } from './secondary-topic-criteria'
+import { secondaryTopicCriteria, type ContextualTopicCriterion } from './secondary-topic-criteria'
 import { detectTopicActivity } from './secondary-language-topics'
 import type { SecondaryLanguageTopic } from './secondary-topic-types'
 
@@ -10,6 +10,12 @@ export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTop
 }): InstrumentRecommendation {
   const activity = input.activityType ?? detectTopicActivity(input.activityTitle, input.description ?? '', topic)
   const authored = secondaryTopicCriteria(topic, activity, input.description ?? '')
+  return editableAuthoredRecommendation(authored, input, activity, `lengua-secundaria-${topic.grade}-${topic.id}`)
+}
+
+export function editableAuthoredRecommendation(authored: ContextualTopicCriterion[], input: {
+  activityTitle: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string
+}, activity: string, moduleName: string): InstrumentRecommendation {
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
     ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []
   const points = distributeScoreUnits(Math.round(input.maxScore * 100), authored.map(criterion => criterion.weight))
@@ -24,7 +30,7 @@ export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTop
       descriptors: levels.map((level, levelIndex) => ({ levelId: level.id, text: criterion.progressionLevels[[0, 1, 2, 4][levelIndex]], scoreUnits: Math.round(points[index] * level.proportion) })),
     })),
     levels, totalScore: input.maxScore, totalScoreUnits: points.reduce((sum, units) => sum + units, 0), scoreUnit: 0.01,
-    internalTrace: { mappingStatus: 'FALLBACK', reasons: [`module=lengua-secundaria-${topic.grade}-${topic.id}`, 'Adaptación evaluativa editable; no constituye aprobación curricular.'],
+    internalTrace: { mappingStatus: 'FALLBACK', reasons: [`module=${moduleName}`, 'Adaptación evaluativa editable; no constituye aprobación curricular.'],
       ruleId: 'editable-topic', activityTypeOrigin: input.activityType ? 'EXPLICIT' : 'DETECTED', ranking: [], curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] },
   }
 }

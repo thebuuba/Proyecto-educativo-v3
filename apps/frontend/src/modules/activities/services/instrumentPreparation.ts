@@ -1,6 +1,6 @@
 import type { InstrumentRecommendation } from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
-import { editableSecondaryTopicRecommendation, findSecondaryLanguageTopic, withoutResources } from '@aula/shared'
+import { editableAuthoredRecommendation, editableSecondaryTopicRecommendation, findSecondaryLanguageTopic, secondGradeNewsCriteria, withoutResources } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
 export type ActivityInterpretation = {
@@ -33,6 +33,9 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   if (topic) return editableSecondaryTopicRecommendation(topic, input)
   const text = `${input.activityTitle} ${withoutResources(input.description ?? '')}`.toLocaleLowerCase('es-DO')
   const news = /noticia|noticiero/.test(text)
+  if (news && input.secondaryLanguageGrade === 2 && ['NEWS_WRITING', 'NEWS_ANALYSIS', 'NEWS_COMPARISON', 'NEWSCAST', 'REPORT', 'DEBATE'].includes(input.activityType ?? '')) {
+    return editableAuthoredRecommendation(secondGradeNewsCriteria(input.activityType!, input.description ?? ''), input, input.activityType!, 'lengua-secundaria-2-la-noticia')
+  }
   const touristGuide = /gu[ií]a tur[ií]stica/.test(text)
   const poster = /afiche/.test(text)
   const readingReport = /informe de lectura/.test(text)
@@ -48,19 +51,7 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   const graphicsRequested = /imagen|im[aá]genes|foto|mapa|gr[aá]fico|dibujo|collage|recurso visual/.test(text)
   const posterTopic = /agua/.test(text) ? 'el cuidado y ahorro del agua' : /convivencia escolar/.test(text) ? 'la convivencia escolar' : /entorno/.test(text) ? 'el cuidado del entorno' : 'el tema indicado'
   const reciting = input.activityType ? input.activityType === 'CALLIGRAM_RECITATION' : /recitar|declamar/.test(text)
-  const authored = news && input.secondaryLanguageGrade === 2 && input.activityType === 'REPORT' ? [
-    ['Propósito del informe sobre la noticia', 'Presenta el hecho de la noticia y explica el propósito de su informe.'],
-    ['Análisis de la información', 'Explica los datos principales y distingue la información de su interpretación.'],
-    ['Evidencias de la noticia', 'Apoya el análisis con datos o fragmentos verificables de la noticia.'],
-    ['Organización del informe', 'Organiza introducción, desarrollo y conclusión con claridad.'],
-    ['Revisión del informe', 'Revisa coherencia, puntuación y ortografía del informe.'],
-  ] : news && input.secondaryLanguageGrade === 2 && input.activityType === 'DEBATE' ? [
-    ['Comprensión del hecho noticioso', 'Explica el hecho debatido y distingue información de opiniones.'],
-    ['Argumentos sobre la noticia', 'Defiende su postura con razones relacionadas con el hecho.'],
-    ['Evidencias de la noticia', 'Apoya sus argumentos con datos verificables de la noticia.'],
-    ['Respuesta a otras posturas', 'Escucha y responde argumentos contrarios sin apartarse del tema.'],
-    ['Participación en el debate', 'Interviene con claridad y respeta los turnos.'],
-  ] : detectiveStory && analyzing ? [
+  const authored = detectiveStory && analyzing ? [
     ['Estructura y trama', 'Interpreta inicio, nudo y desenlace y explica cómo progresa el misterio.'],
     ['Narrador, personajes y ambiente', 'Identifica y relaciona estos elementos en la historia.'],
     ['Pistas y desenlace', 'Relaciona acciones y pistas con la comprensión del desenlace.'],
