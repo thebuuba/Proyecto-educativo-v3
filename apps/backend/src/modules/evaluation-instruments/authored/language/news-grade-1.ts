@@ -1,30 +1,28 @@
-import { normalize } from '../../curriculum-context'
 import type { AuthoredCriterion } from './types'
 
-export function newsCriteria(activityType: string, description: string): AuthoredCriterion[] {
-  const text = normalize(description)
-  if (activityType === 'NEWSCAST' || /noticiero|present(?:ar|aran).*noticia/.test(text)) return [
+export function newsCriteria(activityType: string, _description: string): AuthoredCriterion[] {
+  if (['NEWSCAST', 'EXPOSITION', 'ORAL_PRESENTATION'].includes(activityType)) return [
     { templateId: 'news-content', title: 'Información periodística', observable: 'Presenta hechos relevantes y verificables, distinguiendo la información principal de los detalles.', weight: 5 },
     { templateId: 'news-structure', title: 'Estructura y preguntas de la noticia', observable: 'Comunica un titular y desarrolla qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.', weight: 5 },
     { templateId: 'news-sequence', title: 'Organización del noticiero', observable: 'Ordena las noticias y enlaza las intervenciones con una secuencia clara para la audiencia.', weight: 3 },
     { templateId: 'news-oral', title: 'Claridad de la comunicación oral', observable: 'Expone con dicción, ritmo, entonación y volumen comprensibles.', weight: 4 },
     { templateId: 'news-individual', title: 'Dominio individual de la noticia asignada', observable: 'Explica su noticia con seguridad y responde por su propio desempeño dentro de la presentación del equipo.', weight: 3 },
   ]
-  if (activityType === 'NEWS_ANALYSIS' || /leer|analiz|identific/.test(text)) return [
+  if (['NEWS_ANALYSIS', 'ANALYSIS', 'OBSERVATION'].includes(activityType)) return [
     { templateId: 'news-purpose', title: 'Identificación de la función de la noticia', observable: 'Reconoce el propósito informativo y el hecho que convierte el texto en noticia.', weight: 4 },
     { templateId: 'news-structure', title: 'Identificación de sus partes', observable: 'Identifica titular, entrada o copete y cuerpo en la noticia analizada.', weight: 5 },
     { templateId: 'news-questions', title: 'Interrogantes fundamentales', observable: 'Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.', weight: 5 },
     { templateId: 'news-interpretation', title: 'Interpretación de la información', observable: 'Explica la información principal y establece inferencias sustentadas en la noticia.', weight: 4 },
     { templateId: 'news-evidence', title: 'Justificación con evidencias', observable: 'Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.', weight: 2 },
   ]
-  if (activityType === 'NEWS_COMPARISON' || /compar/.test(text)) return [
+  if (['NEWS_COMPARISON', 'COMPARISON'].includes(activityType)) return [
     { templateId: 'news-purpose', title: 'Propósito y hecho noticioso', observable: 'Identifica el propósito y el hecho principal de cada noticia.', weight: 4 },
     { templateId: 'news-comparison', title: 'Comparación de la información', observable: 'Establece semejanzas y diferencias entre los datos, enfoques y organización de las noticias.', weight: 5 },
     { templateId: 'news-structure', title: 'Comparación de la estructura', observable: 'Contrasta el uso del titular, la entrada y el cuerpo en cada texto.', weight: 4 },
     { templateId: 'news-evidence', title: 'Uso de evidencias', observable: 'Sustenta la comparación con información concreta de ambas noticias.', weight: 4 },
     { templateId: 'news-conclusion', title: 'Conclusión de la comparación', observable: 'Formula una conclusión coherente con las semejanzas y diferencias encontradas.', weight: 3 },
   ]
-  if (activityType === 'DEBATE' || /debat/.test(text)) return [
+  if (activityType === 'DEBATE') return [
     { templateId: 'news-comprehension', title: 'Comprensión del hecho noticioso', observable: 'Explica el hecho debatido y diferencia datos informativos de opiniones.', weight: 5 },
     { templateId: 'news-evidence', title: 'Argumentos sustentados', observable: 'Defiende su postura con datos pertinentes de la noticia.', weight: 5 },
     { templateId: 'news-counterargument', title: 'Respuesta a otras posturas', observable: 'Escucha y responde a argumentos contrarios sin apartarse del tema.', weight: 4 },
