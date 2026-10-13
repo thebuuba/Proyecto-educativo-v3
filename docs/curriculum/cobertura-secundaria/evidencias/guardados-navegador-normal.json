@@ -2,11 +2,11 @@
   "health": {
     "status": "ok",
     "development": {
-      "commit": "1b9cf5c44595ac5ac36f31a76d38b6ab9d26d9ea",
+      "commit": "82488d15fb9da7a33809609f0635c06e937771ea",
       "dirty": true,
-      "startedAt": "2026-10-13T11:53:44.729Z",
+      "startedAt": "2026-10-13T13:35:48.625Z",
       "supabaseOrigin": "http://127.0.0.1:54321",
-      "catalogVersion": "evaluation-2026.11"
+      "catalogVersion": "evaluation-2026.12"
     }
   },
   "authentication": "PASSWORD_LOGIN_REAL",
@@ -870,6 +870,295 @@
         "rubrica:meta:criteriaCount": "5",
         "rubrica:meta:catalogVersion": "evaluation-2026.11",
         "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "cd6709ab-9a60-4fbd-8904-af15ba6f8f37",
+      "name": "Guía turística de dos lugares · QA local",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes elaborarán una guía turística de dos lugares de su comunidad, describiendo sus características y atractivos. Organizarán portada, información y cierre e incluirán un mapa o fotografías como alternativas para orientar al visitante. Revisarán la claridad del texto.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "e19484cd-1ebb-40db-8f8c-24f5709513ab",
+      "instrumentSnapshotId": "0d4a4af0-19b2-4594-971f-d2cefe099d55",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-content:0",
+            "title": "Información de dos lugares solicitados",
+            "maxScore": 3.77,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-content",
+            "description": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+            "descriptors": [
+              {
+                "text": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "levelId": "L3",
+                "scoreUnits": 377
+              },
+              {
+                "text": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "levelId": "L2",
+                "scoreUnits": 189
+              },
+              {
+                "text": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 377,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-structure:1",
+            "title": "Estructura de la guía turística",
+            "maxScore": 3.77,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-structure",
+            "description": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+            "descriptors": [
+              {
+                "text": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                "levelId": "L3",
+                "scoreUnits": 377
+              },
+              {
+                "text": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                "levelId": "L2",
+                "scoreUnits": 189
+              },
+              {
+                "text": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 377,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-description:2",
+            "title": "Descripción y orientación al visitante",
+            "maxScore": 3.02,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-description",
+            "description": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+            "descriptors": [
+              {
+                "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                "levelId": "L3",
+                "scoreUnits": 302
+              },
+              {
+                "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                "levelId": "L2",
+                "scoreUnits": 151
+              },
+              {
+                "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 302,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-organization:3",
+            "title": "Organización y claridad",
+            "maxScore": 2.27,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-organization",
+            "description": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+            "descriptors": [
+              {
+                "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                "levelId": "L3",
+                "scoreUnits": 227
+              },
+              {
+                "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                "levelId": "L2",
+                "scoreUnits": 114
+              },
+              {
+                "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 227,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-revision:4",
+            "title": "Revisión de la versión final",
+            "maxScore": 2.26,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-revision",
+            "description": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+            "descriptors": [
+              {
+                "text": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+                "levelId": "L3",
+                "scoreUnits": 226
+              },
+              {
+                "text": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+                "levelId": "L2",
+                "scoreUnits": 113
+              },
+              {
+                "text": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 226,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-visual:5",
+            "title": "Información visual de los lugares",
+            "maxScore": 2.26,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-visual",
+            "description": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+            "descriptors": [
+              {
+                "text": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+                "levelId": "L3",
+                "scoreUnits": 226
+              },
+              {
+                "text": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+                "levelId": "L2",
+                "scoreUnits": 113
+              },
+              {
+                "text": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 226,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "Se requiere contexto estructurado y versión disponible."
+          ],
+          "mappingStatus": "NO_PUBLISHED_VERSION",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": null,
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.12",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": null,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "TOURIST_GUIDE_CREATION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para Guía turística de dos lugares · QA local",
+        "lista-ponderada:points:0": "3.77",
+        "lista-ponderada:points:1": "3.77",
+        "lista-ponderada:points:2": "3.02",
+        "lista-ponderada:points:3": "2.27",
+        "lista-ponderada:points:4": "2.26",
+        "lista-ponderada:points:5": "2.26",
+        "lista-ponderada:weight:0": "21.73",
+        "lista-ponderada:weight:1": "21.73",
+        "lista-ponderada:weight:2": "17.41",
+        "lista-ponderada:weight:3": "13.08",
+        "lista-ponderada:weight:4": "13.03",
+        "lista-ponderada:weight:5": "13.02",
+        "lista-ponderada:criterion:0": "Información de dos lugares solicitados",
+        "lista-ponderada:criterion:1": "Estructura de la guía turística",
+        "lista-ponderada:criterion:2": "Descripción y orientación al visitante",
+        "lista-ponderada:criterion:3": "Organización y claridad",
+        "lista-ponderada:criterion:4": "Revisión de la versión final",
+        "lista-ponderada:criterion:5": "Información visual de los lugares",
+        "lista-ponderada:indicator:0": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+        "lista-ponderada:indicator:1": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+        "lista-ponderada:indicator:2": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+        "lista-ponderada:indicator:3": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+        "lista-ponderada:indicator:4": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+        "lista-ponderada:indicator:5": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+        "lista-ponderada:description:1": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+        "lista-ponderada:description:2": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+        "lista-ponderada:description:3": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+        "lista-ponderada:description:4": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+        "lista-ponderada:description:5": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.12:fallback:guide-content:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.12:fallback:guide-structure:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.12:fallback:guide-description:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.12:fallback:guide-organization:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.12:fallback:guide-revision:4",
+        "lista-ponderada:criterion-id:5": "proposal:evaluation-2026.12:fallback:guide-visual:5",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[377,377,302,227,226,226]",
+        "lista-ponderada:meta:criteriaCount": "6",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.12"
       },
       "evaluationTechnique": "analisis-producciones",
       "resources": [],

@@ -2,11 +2,11 @@
   "health": {
     "status": "ok",
     "development": {
-      "commit": "1b9cf5c44595ac5ac36f31a76d38b6ab9d26d9ea",
+      "commit": "82488d15fb9da7a33809609f0635c06e937771ea",
       "dirty": true,
-      "startedAt": "2026-10-13T11:48:26.719Z",
+      "startedAt": "2026-10-13T13:35:48.625Z",
       "supabaseOrigin": "http://127.0.0.1:54321",
-      "catalogVersion": "evaluation-2026.11"
+      "catalogVersion": "evaluation-2026.12"
     }
   },
   "authentication": "PASSWORD_LOGIN_REAL",
@@ -157,7 +157,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "rubrica",
         "confidence": "MEDIUM",
         "activityType": "PROJECT",
@@ -201,7 +201,7 @@
         ],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identificación de estructuras celulares",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -233,7 +233,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representación de ambos tipos celulares",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -265,7 +265,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Funciones de los organelos",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -297,7 +297,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Comparación entre células",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -329,7 +329,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Explicación oral del modelo científico",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -733,7 +733,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-cotejo",
         "confidence": "MEDIUM",
         "activityType": "PROJECT",
@@ -777,7 +777,7 @@
         ],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -788,7 +788,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -799,7 +799,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -810,7 +810,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -821,7 +821,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -1183,7 +1183,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "escala",
         "confidence": "MEDIUM",
         "activityType": "PROJECT",
@@ -1227,7 +1227,7 @@
         ],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -1259,7 +1259,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -1291,7 +1291,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -1323,7 +1323,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -1355,7 +1355,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -1759,7 +1759,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-ponderada",
         "confidence": "MEDIUM",
         "activityType": "PROJECT",
@@ -1803,7 +1803,7 @@
         ],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identificación de estructuras celulares",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal. Parcial (50%): Identifica algunas estructuras, pero confunde su ubicación o denominación.",
@@ -1814,7 +1814,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representación de ambos tipos celulares",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir. Parcial (50%): Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
@@ -1825,7 +1825,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Funciones de los organelos",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares. Parcial (50%): Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
@@ -1836,7 +1836,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Comparación entre células",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones. Parcial (50%): Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
@@ -1847,7 +1847,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Explicación oral del modelo científico",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible. Parcial (50%): Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
@@ -2209,7 +2209,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "rubrica",
         "confidence": "MEDIUM",
         "activityType": "PROJECT",
@@ -2253,7 +2253,7 @@
         ],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identificación de estructuras celulares",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -2285,7 +2285,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representación de ambos tipos celulares",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -2317,7 +2317,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Funciones de los organelos",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -2349,7 +2349,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Comparación entre células",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -2381,7 +2381,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Explicación oral del modelo científico",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -2785,7 +2785,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-cotejo",
         "confidence": "MEDIUM",
         "activityType": "PROJECT",
@@ -2829,7 +2829,7 @@
         ],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -2840,7 +2840,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -2851,7 +2851,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -2862,7 +2862,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -2873,7 +2873,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -3235,7 +3235,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "escala",
         "confidence": "MEDIUM",
         "activityType": "PROJECT",
@@ -3279,7 +3279,7 @@
         ],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -3311,7 +3311,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -3343,7 +3343,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -3375,7 +3375,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -3407,7 +3407,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -3811,7 +3811,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-ponderada",
         "confidence": "MEDIUM",
         "activityType": "PROJECT",
@@ -3855,7 +3855,7 @@
         ],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identificación de estructuras celulares",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal. Parcial (50%): Identifica algunas estructuras, pero confunde su ubicación o denominación.",
@@ -3866,7 +3866,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representación de ambos tipos celulares",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir. Parcial (50%): Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
@@ -3877,7 +3877,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Funciones de los organelos",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares. Parcial (50%): Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
@@ -3888,7 +3888,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Comparación entre células",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones. Parcial (50%): Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
@@ -3899,7 +3899,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Explicación oral del modelo científico",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible. Parcial (50%): Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
@@ -4261,7 +4261,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "rubrica",
         "confidence": "LOW",
         "activityType": "PROJECT",
@@ -4276,7 +4276,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identificación de estructuras celulares",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -4308,7 +4308,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representación de ambos tipos celulares",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -4340,7 +4340,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Funciones de los organelos",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -4372,7 +4372,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Comparación entre células",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -4404,7 +4404,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Explicación oral del modelo científico",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -4698,7 +4698,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-cotejo",
         "confidence": "LOW",
         "activityType": "PROJECT",
@@ -4713,7 +4713,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -4724,7 +4724,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -4735,7 +4735,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -4746,7 +4746,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -4757,7 +4757,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -5009,7 +5009,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "escala",
         "confidence": "LOW",
         "activityType": "PROJECT",
@@ -5024,7 +5024,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -5056,7 +5056,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -5088,7 +5088,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -5120,7 +5120,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -5152,7 +5152,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -5446,7 +5446,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-ponderada",
         "confidence": "LOW",
         "activityType": "PROJECT",
@@ -5461,7 +5461,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identificación de estructuras celulares",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal. Parcial (50%): Identifica algunas estructuras, pero confunde su ubicación o denominación.",
@@ -5472,7 +5472,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representación de ambos tipos celulares",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir. Parcial (50%): Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
@@ -5483,7 +5483,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Funciones de los organelos",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares. Parcial (50%): Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
@@ -5494,7 +5494,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Comparación entre células",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones. Parcial (50%): Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
@@ -5505,7 +5505,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Explicación oral del modelo científico",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible. Parcial (50%): Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
@@ -5757,7 +5757,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "rubrica",
         "confidence": "LOW",
         "activityType": "PROJECT",
@@ -5772,7 +5772,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identificación de estructuras celulares",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -5804,7 +5804,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representación de ambos tipos celulares",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -5836,7 +5836,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Funciones de los organelos",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -5868,7 +5868,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Comparación entre células",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -5900,7 +5900,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Explicación oral del modelo científico",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -6194,7 +6194,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-cotejo",
         "confidence": "LOW",
         "activityType": "PROJECT",
@@ -6209,7 +6209,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -6220,7 +6220,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -6231,7 +6231,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -6242,7 +6242,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -6253,7 +6253,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -6505,7 +6505,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "escala",
         "confidence": "LOW",
         "activityType": "PROJECT",
@@ -6520,7 +6520,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
@@ -6552,7 +6552,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
@@ -6584,7 +6584,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
@@ -6616,7 +6616,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
@@ -6648,7 +6648,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
@@ -6942,7 +6942,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-ponderada",
         "confidence": "LOW",
         "activityType": "PROJECT",
@@ -6957,7 +6957,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
             "templateId": "science-cells-structures",
             "title": "Identificación de estructuras celulares",
             "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal. Parcial (50%): Identifica algunas estructuras, pero confunde su ubicación o denominación.",
@@ -6968,7 +6968,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
             "templateId": "science-cells-representation",
             "title": "Representación de ambos tipos celulares",
             "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir. Parcial (50%): Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
@@ -6979,7 +6979,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
             "templateId": "science-cells-functions",
             "title": "Funciones de los organelos",
             "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares. Parcial (50%): Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
@@ -6990,7 +6990,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
             "templateId": "science-cells-comparison",
             "title": "Comparación entre células",
             "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones. Parcial (50%): Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
@@ -7001,7 +7001,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+            "id": "proposal:evaluation-2026.12:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
             "templateId": "science-cells-oral",
             "title": "Explicación oral del modelo científico",
             "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible. Parcial (50%): Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
@@ -7253,7 +7253,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "rubrica",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -7267,7 +7267,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Datos e incógnitas",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -7299,7 +7299,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Aplicación y despeje de la Ley de Ohm",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -7331,7 +7331,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Cálculo y unidades eléctricas",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -7363,7 +7363,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Interpretación de situaciones cotidianas",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -7395,7 +7395,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Esquema y funcionamiento del circuito",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -7788,7 +7788,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-cotejo",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -7802,7 +7802,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -7813,7 +7813,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -7824,7 +7824,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -7835,7 +7835,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -7846,7 +7846,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -8197,7 +8197,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "escala",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -8211,7 +8211,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -8243,7 +8243,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -8275,7 +8275,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -8307,7 +8307,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -8339,7 +8339,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -8732,7 +8732,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-ponderada",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -8746,7 +8746,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Datos e incógnitas",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia. Parcial (50%): Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
@@ -8757,7 +8757,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Aplicación y despeje de la Ley de Ohm",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos. Parcial (50%): Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
@@ -8768,7 +8768,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Cálculo y unidades eléctricas",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud. Parcial (50%): Un error aritmético o de unidades afecta parte de los resultados.",
@@ -8779,7 +8779,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Interpretación de situaciones cotidianas",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas. Parcial (50%): Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
@@ -8790,7 +8790,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Esquema y funcionamiento del circuito",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento. Parcial (50%): El esquema es parcial o algunas conexiones y funciones no se corresponden.",
@@ -9141,7 +9141,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "rubrica",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -9155,7 +9155,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Datos e incógnitas",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -9187,7 +9187,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Aplicación y despeje de la Ley de Ohm",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -9219,7 +9219,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Cálculo y unidades eléctricas",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -9251,7 +9251,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Interpretación de situaciones cotidianas",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -9283,7 +9283,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Esquema y funcionamiento del circuito",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -9676,7 +9676,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-cotejo",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -9690,7 +9690,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -9701,7 +9701,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -9712,7 +9712,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -9723,7 +9723,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -9734,7 +9734,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -10085,7 +10085,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "escala",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -10099,7 +10099,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -10131,7 +10131,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -10163,7 +10163,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -10195,7 +10195,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -10227,7 +10227,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -10620,7 +10620,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-ponderada",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -10634,7 +10634,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Datos e incógnitas",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia. Parcial (50%): Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
@@ -10645,7 +10645,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Aplicación y despeje de la Ley de Ohm",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos. Parcial (50%): Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
@@ -10656,7 +10656,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Cálculo y unidades eléctricas",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud. Parcial (50%): Un error aritmético o de unidades afecta parte de los resultados.",
@@ -10667,7 +10667,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Interpretación de situaciones cotidianas",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas. Parcial (50%): Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
@@ -10678,7 +10678,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Esquema y funcionamiento del circuito",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento. Parcial (50%): El esquema es parcial o algunas conexiones y funciones no se corresponden.",
@@ -11029,7 +11029,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "rubrica",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -11043,7 +11043,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Datos e incógnitas",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -11075,7 +11075,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Aplicación y despeje de la Ley de Ohm",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -11107,7 +11107,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Cálculo y unidades eléctricas",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -11139,7 +11139,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Interpretación de situaciones cotidianas",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -11171,7 +11171,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Esquema y funcionamiento del circuito",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -11619,7 +11619,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-cotejo",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -11633,7 +11633,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -11644,7 +11644,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -11655,7 +11655,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -11666,7 +11666,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -11677,7 +11677,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -12083,7 +12083,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "escala",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -12097,7 +12097,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -12129,7 +12129,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -12161,7 +12161,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -12193,7 +12193,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -12225,7 +12225,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -12673,7 +12673,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-ponderada",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -12687,7 +12687,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Datos e incógnitas",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia. Parcial (50%): Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
@@ -12698,7 +12698,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Aplicación y despeje de la Ley de Ohm",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos. Parcial (50%): Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
@@ -12709,7 +12709,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Cálculo y unidades eléctricas",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud. Parcial (50%): Un error aritmético o de unidades afecta parte de los resultados.",
@@ -12720,7 +12720,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Interpretación de situaciones cotidianas",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas. Parcial (50%): Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
@@ -12731,7 +12731,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Esquema y funcionamiento del circuito",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento. Parcial (50%): El esquema es parcial o algunas conexiones y funciones no se corresponden.",
@@ -13137,7 +13137,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "rubrica",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -13151,7 +13151,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Datos e incógnitas",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -13183,7 +13183,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Aplicación y despeje de la Ley de Ohm",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -13215,7 +13215,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Cálculo y unidades eléctricas",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -13247,7 +13247,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Interpretación de situaciones cotidianas",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -13279,7 +13279,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Esquema y funcionamiento del circuito",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -13727,7 +13727,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-cotejo",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -13741,7 +13741,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -13752,7 +13752,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -13763,7 +13763,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -13774,7 +13774,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -13785,7 +13785,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -14191,7 +14191,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "escala",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -14205,7 +14205,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
@@ -14237,7 +14237,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
@@ -14269,7 +14269,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
@@ -14301,7 +14301,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
@@ -14333,7 +14333,7 @@
             ]
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
@@ -14781,7 +14781,7 @@
       },
       "proposal": {
         "kind": "RECOMMENDATION",
-        "catalogVersion": "evaluation-2026.11",
+        "catalogVersion": "evaluation-2026.12",
         "instrumentType": "lista-ponderada",
         "confidence": "LOW",
         "activityType": "EXERCISE_SET",
@@ -14795,7 +14795,7 @@
         "selectedCurriculumElements": [],
         "criteria": [
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
             "templateId": "science-ohm-data",
             "title": "Datos e incógnitas",
             "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia. Parcial (50%): Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
@@ -14806,7 +14806,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
             "templateId": "science-ohm-formula",
             "title": "Aplicación y despeje de la Ley de Ohm",
             "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos. Parcial (50%): Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
@@ -14817,7 +14817,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
             "templateId": "science-ohm-calculation",
             "title": "Cálculo y unidades eléctricas",
             "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud. Parcial (50%): Un error aritmético o de unidades afecta parte de los resultados.",
@@ -14828,7 +14828,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
             "templateId": "science-ohm-interpretation",
             "title": "Interpretación de situaciones cotidianas",
             "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas. Parcial (50%): Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
@@ -14839,7 +14839,7 @@
             "descriptors": []
           },
           {
-            "id": "proposal:evaluation-2026.11:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+            "id": "proposal:evaluation-2026.12:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
             "templateId": "science-ohm-diagram",
             "title": "Esquema y funcionamiento del circuito",
             "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento. Parcial (50%): El esquema es parcial o algunas conexiones y funciones no se corresponden.",

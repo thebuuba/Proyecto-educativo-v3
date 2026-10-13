@@ -12,7 +12,7 @@ assert(cookie)
 const savedResponse = await fetch(base + '/activities', { headers: { cookie } })
 assert.equal(savedResponse.status, 200)
 const activities = (await savedResponse.json()).data
-const controls = activities.filter(row => ['PROJECT', 'EXERCISE_SET', 'NEWS_WRITING'].includes(row.pedagogicalActivityType))
+const controls = activities.filter(row => ['PROJECT', 'EXERCISE_SET', 'NEWS_WRITING', 'TOURIST_GUIDE_CREATION'].includes(row.pedagogicalActivityType))
 assert(controls.length >= 3, 'Primero guardar los tres controles desde el navegador.')
 for (const activity of controls) {
   assert(activity.instrumentSnapshot, 'Falta snapshot persistido.')
@@ -22,5 +22,12 @@ for (const activity of controls) {
 const news = controls.find(row => row.pedagogicalActivityType === 'NEWS_WRITING')
 assert.equal(news.instrumentSnapshot.catalogVersion, 'evaluation-2026.11')
 assert.equal(news.instrumentCriteria['rubrica:descriptor:0:1'], 'No presenta un hecho noticioso reconocible.')
+const guide = controls.find(row => row.pedagogicalActivityType === 'TOURIST_GUIDE_CREATION')
+if (guide) {
+  assert.equal(guide.instrumentSnapshot.catalogVersion, 'evaluation-2026.12')
+  assert.equal(guide.instrumentType, 'lista-ponderada')
+  assert(guide.instrumentSnapshot.criteria.every(row => row.description.includes('Parcial (50%):')))
+  assert(guide.instrumentSnapshot.criteria.some(row => row.templateId === 'guide-visual' && row.description.includes('alternativas solicitadas')))
+}
 writeFileSync('docs/curriculum/cobertura-secundaria/evidencias/guardados-navegador-normal.json', JSON.stringify({ health, authentication: 'PASSWORD_LOGIN_REAL', controls }, null, 2) + '\n')
 console.log(`${controls.length} actividades guardadas desde navegador y recuperadas por API normal. Snapshots del servicio, puntos exactos y descriptor específico de noticia comprobados.`)

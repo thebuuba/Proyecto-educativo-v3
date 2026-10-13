@@ -1,6 +1,6 @@
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
 import { newsCriteria } from './authored/language/news-grade-1'
-import { formatAuthoredCriteria, isFirstGradeNewsActivity } from '@aula/shared'
+import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { touristGuideCriteria } from './authored/language/tourist-guide-grade-1'
 import { posterCriteria } from './authored/language/poster-grade-1'
 import { readingReportCriteria } from './authored/language/reading-report-grade-1'
@@ -281,14 +281,15 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       descriptors: levels.map((level, i) => ({ levelId: level.id, text: texts[i], scoreUnits: Math.round(scores[index] * level.proportion) })) }
   })
   const spanishLanguage = area === 'language' && context?.subjectCode.toUpperCase() === 'LEN'
-  const newsModule = !contextualTopic && context?.level === 'SECONDARY' && (context.grade === 1 && isFirstGradeNewsActivity(activity.id) || context.grade === 2
+  const firstGenre = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage ? firstSecondaryLanguageGenre(input.activityTitle, input.description ?? '') : null
+  const newsModule = !contextualTopic && context?.level === 'SECONDARY' && (context.grade === 1 && firstGenre === 'NEWS' && isFirstGradeNewsActivity(activity.id) || context.grade === 2
     && ['NEWSCAST', 'NEWS_ANALYSIS', 'NEWS_COMPARISON', 'NEWS_WRITING', 'REPORT', 'DEBATE'].includes(activity.id))
     && spanishLanguage && /\bnotici(?:a|as|ero)\b/.test(text)
-  const touristGuideModule = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage && /\bguias? turisticas?\b/.test(text)
-  const posterModule = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage && /\bafiches?\b/.test(text)
-  const readingReportModule = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage && /\binforme(?:s)? de lectura\b/.test(text)
-  const detectiveModule = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage && /\bcuento(?:s)? (?:policiacos?|detectivescos?)\b/.test(text) && !readingReportModule
-  const calligramModule = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage && (/\bcaligramas?\b/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text))
+  const touristGuideModule = firstGenre === 'TOURIST_GUIDE' && isFirstGradeGuideActivity(activity.id)
+  const posterModule = firstGenre === 'POSTER' && activity.id !== 'REPORT'
+  const readingReportModule = firstGenre === 'READING_REPORT'
+  const detectiveModule = firstGenre === 'DETECTIVE_STORY' && activity.id !== 'REPORT'
+  const calligramModule = firstGenre === 'CALLIGRAM' && activity.id !== 'REPORT'
   const selectedAuthored: AuthoredCriterion[] = scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
     : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '')
     : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')

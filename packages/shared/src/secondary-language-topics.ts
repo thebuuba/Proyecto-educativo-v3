@@ -8,7 +8,7 @@ export const withoutResources = (value: string) => value.replace(/(?:recursos?\s
 export const normalizedTask = (value: string) => normalized(withoutResources(value))
 export type SecondaryTopicContext = { level: string; grade: number; subjectCode: string; optativeExitName?: string | null }
 export function findSecondaryLanguageTopic(title: string, description: string, context: SecondaryTopicContext | null) {
-  if (context?.level !== 'SECONDARY' || context.subjectCode.toUpperCase() !== 'LEN' || context.optativeExitName) return null
+  if (context?.level !== 'SECONDARY' || context.subjectCode.trim().toUpperCase() !== 'LEN' || context.optativeExitName) return null
   const task = withoutResources(description)
   const text = ` ${normalized(`${title} ${task}`)} `
   return secondaryLanguageGradeTwoTopics.find(topic => topic.grade === context.grade && topic.aliases.some(alias => text.includes(` ${normalized(alias)} `))) ?? null

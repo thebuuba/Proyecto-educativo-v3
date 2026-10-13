@@ -6,6 +6,8 @@ El 13/10/2026 se sustituyeron los procesos de desarrollo antiguos, tras identifi
 
 Actualización .11: noticia de Lengua 1.º con proveedor compartido y progresiones específicas en seis familias de actividad. Corregidos informe interpretado como escritura de noticia, selección incompatible por título y adaptación de indicadores/Parcial en proveedores contextualizados. 96 propuestas en servicio normal; rúbrica guardada/reabierta con login real y snapshot .11. Backend 999 / frontend 594 / inventario seis pruebas aprobadas. [Informe y pendientes](noticia-1-reauditoria.md). La matriz separa motor, servicio e interfaz; no convierte HTTP aislado de Lengua 2.º en verificación normal. Próximo tema: guía turística de 1.º, seguido de los restantes temas y del alcance completo.
 
+Actualización .12: guía turística 1.º con proveedor compartido, cinco familias, plurales, resolución de género consistente y distinción entre analizar/explicar/presentar («presentes» no es presentar). 80 propuestas en servicio normal; ponderada manual de 17,35 guardada y reabierta, con evidencia de Parcial y mapa/fotografías como alternativas. Backend 1.044 / frontend 611 y builds backend/frontend/Cloudflare aprobados. [Informe y pendientes](guia-1-reauditoria.md). Buckets locales confirmados. Se conserva la descripción original de trigonometría; su implementación permanece pendiente. Próximo tema: informe de lectura 1.º, seguido del alcance completo.
+
 ## Fuente y base
 
 - Rama: `amplia-instrumentos-secundaria`, basada en `1d3a99b24d19b819f24a58d678592662c13edd1a` (flujo restaurado).

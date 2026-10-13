@@ -1419,11 +1419,16 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_80_CASES",
+          "interfaceVerification": "NORMAL_BROWSER_WEIGHTED_SAVE_REOPEN_PASSED",
+          "pending": "Verificar otros tres formatos en navegador; ampliar an?lisis focalizado, gram?tica y solicitudes de varios medios visuales. No equivale a completar Lengua 1.?.",
           "procedures": [
             {
               "id": "833e9c25-f412-5ae4-97b0-ad42b238df99",
@@ -1484,11 +1489,12 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "EXISTING_PENDING_REAUDIT",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN",
-          "report": "avance.md"
+          "implementation": "PARTIAL_GUIDE_CORE_FIVE_ACTIVITY_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_70_71_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_HTTP_AND_BROWSER_WEIGHTED_PASSED",
+          "report": "guia-1-reauditoria.md",
+          "catalogVersion": "evaluation-2026.12"
         },
         {
           "id": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
