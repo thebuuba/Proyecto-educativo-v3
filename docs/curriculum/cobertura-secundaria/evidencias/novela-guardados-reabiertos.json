@@ -1,0 +1,1927 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "2a87f33ab5dba773a41952189306e1d028acd27a",
+      "dirty": true,
+      "startedAt": "2026-10-13T22:30:12.322Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.19"
+    }
+  },
+  "authentication": "PASSWORD_LOGIN_REAL",
+  "saved": [
+    {
+      "id": "f552a985-ad19-49b9-946b-5a837f8d4a25",
+      "name": "El misterio detrás de las pistas.",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 15,
+      "description": "<p>Los estudiantes leerán un fragmento de una novela policíaca para identificar los personajes principales y secundarios, el ambiente, el conflicto, las pistas y la secuencia de los acontecimientos. Posteriormente, elaborarán un análisis escrito en el que expliquen cómo se desarrolla el misterio, cuál es el papel del investigador y de qué manera se llega a la resolución del caso. Finalmente, presentarán una interpretación personal del texto, justificando sus conclusiones con evidencias de la lectura.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "bcf76bb4-81a0-4f5b-a0a9-253b35d087b6",
+      "instrumentSnapshotId": "7d5df77a-b87d-431c-9c53-c85cce0c8ae9",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-elements:0",
+            "title": "Personajes, ambiente y conflicto",
+            "maxScore": 2.73,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-elements",
+            "description": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+            "descriptors": [
+              {
+                "text": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+                "levelId": "L4",
+                "scoreUnits": 273
+              },
+              {
+                "text": "Reconoce los personajes principales y secundarios, el ambiente y el conflicto y explica su relación con el misterio; queda un vínculo sin desarrollar.",
+                "levelId": "L3",
+                "scoreUnits": 182
+              },
+              {
+                "text": "Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+                "levelId": "L2",
+                "scoreUnits": 91
+              },
+              {
+                "text": "No identifica los elementos solicitados ni los relaciona con el conflicto del fragmento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 273,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-clues:1",
+            "title": "Pistas y actuación del investigador",
+            "maxScore": 3.41,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "novel-analysis-clues",
+            "description": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+            "descriptors": [
+              {
+                "text": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+                "levelId": "L4",
+                "scoreUnits": 341
+              },
+              {
+                "text": "Relaciona las pistas principales con las decisiones del investigador; debe explicar mejor una conexión del fragmento.",
+                "levelId": "L3",
+                "scoreUnits": 227
+              },
+              {
+                "text": "Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+                "levelId": "L2",
+                "scoreUnits": 114
+              },
+              {
+                "text": "Confunde las pistas o no explica su relación con la investigación.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 341,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-sequence:2",
+            "title": "Secuencia y desarrollo del misterio",
+            "maxScore": 2.73,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-sequence",
+            "description": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+            "descriptors": [
+              {
+                "text": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+                "levelId": "L4",
+                "scoreUnits": 273
+              },
+              {
+                "text": "Reconstruye los acontecimientos y el avance del misterio con la información disponible; una relación causal queda sin explicar.",
+                "levelId": "L3",
+                "scoreUnits": 182
+              },
+              {
+                "text": "Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+                "levelId": "L2",
+                "scoreUnits": 91
+              },
+              {
+                "text": "No reconstruye una secuencia reconocible ni explica el desarrollo del misterio con la información disponible.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 273,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-interpretation:3",
+            "title": "Interpretación sustentada en la lectura",
+            "maxScore": 3.41,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-interpretation",
+            "description": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+            "descriptors": [
+              {
+                "text": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+                "levelId": "L4",
+                "scoreUnits": 341
+              },
+              {
+                "text": "Presenta una interpretación apoyada en evidencias pertinentes; una conclusión necesita una conexión más clara con ellas.",
+                "levelId": "L3",
+                "scoreUnits": 227
+              },
+              {
+                "text": "Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+                "levelId": "L2",
+                "scoreUnits": 114
+              },
+              {
+                "text": "No presenta una interpretación sustentada en evidencias de la lectura.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 341,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-writing:4",
+            "title": "Claridad y corrección del análisis escrito",
+            "maxScore": 1.36,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-writing",
+            "description": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+            "descriptors": [
+              {
+                "text": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+                "levelId": "L4",
+                "scoreUnits": 136
+              },
+              {
+                "text": "El análisis permite seguir las ideas y distinguir hechos e interpretación; presenta errores aislados que no alteran el sentido.",
+                "levelId": "L3",
+                "scoreUnits": 91
+              },
+              {
+                "text": "El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+                "levelId": "L2",
+                "scoreUnits": 45
+              },
+              {
+                "text": "No presenta un análisis escrito suficientemente comprensible para reconocer las ideas y sus relaciones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 136,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-limits:5",
+            "title": "Distinción entre hechos e hipótesis",
+            "maxScore": 1.36,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-limits",
+            "description": "Distingue lo que el fragmento afirma de sus hipótesis e indica qué no puede concluirse con la información disponible.",
+            "descriptors": [
+              {
+                "text": "Distingue lo que el fragmento afirma de sus hipótesis e indica qué no puede concluirse con la información disponible.",
+                "levelId": "L4",
+                "scoreUnits": 136
+              },
+              {
+                "text": "Diferencia hechos e hipótesis, aunque deja sin aclarar el límite de una afirmación.",
+                "levelId": "L3",
+                "scoreUnits": 91
+              },
+              {
+                "text": "Reconoce datos del fragmento, pero presenta algunas hipótesis como hechos confirmados.",
+                "levelId": "L2",
+                "scoreUnits": 45
+              },
+              {
+                "text": "No distingue información del fragmento de suposiciones sobre la obra.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 136,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 15,
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project",
+          "ranking": [
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cec296fc-1903-54d8-a95b-de3163e0be1c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "92298e31-fc48-5d8f-adfa-0a8fd9ba0469",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1f588d35-c347-543d-97a1-033303f664c8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=novela-analisis-fragmento-5",
+            "coverage=TASK_DERIVED_PARTIAL",
+            "task={\"action\":\"ANALYSIS\",\"product\":\"ANALYTICAL_TEXT\",\"oral\":false,\"fragment\":true,\"task\":\"los estudiantes leeran un fragmento de una novela policiaca para identificar los personajes principales y secundarios el ambiente el conflicto las pistas y la secuencia de los acontecimientos posteriormente elaboraran un analisis escrito en el que expliquen como se desarrolla el misterio cual es el papel del investigador y de que manera se llega a la resolucion del caso finalmente presentaran una interpretacion personal del texto justificando sus conclusiones con evidencias de la lectura\"}",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.19",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 1500,
+        "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ANALYSIS",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para El misterio detrás de las pistas.",
+        "rubrica:points:0": "2.73",
+        "rubrica:points:1": "3.41",
+        "rubrica:points:2": "2.73",
+        "rubrica:points:3": "3.41",
+        "rubrica:points:4": "1.36",
+        "rubrica:points:5": "1.36",
+        "rubrica:criterion:0": "Personajes, ambiente y conflicto",
+        "rubrica:criterion:1": "Pistas y actuación del investigador",
+        "rubrica:criterion:2": "Secuencia y desarrollo del misterio",
+        "rubrica:criterion:3": "Interpretación sustentada en la lectura",
+        "rubrica:criterion:4": "Claridad y corrección del análisis escrito",
+        "rubrica:criterion:5": "Distinción entre hechos e hipótesis",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+        "rubrica:description:1": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+        "rubrica:description:2": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+        "rubrica:description:3": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+        "rubrica:description:4": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+        "rubrica:description:5": "Distingue lo que el fragmento afirma de sus hipótesis e indica qué no puede concluirse con la información disponible.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-elements:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-clues:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-sequence:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-interpretation:3",
+        "rubrica:criterion-id:4": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-writing:4",
+        "rubrica:criterion-id:5": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-limits:5",
+        "rubrica:descriptor:0:1": "No identifica los elementos solicitados ni los relaciona con el conflicto del fragmento.",
+        "rubrica:descriptor:0:2": "Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+        "rubrica:descriptor:0:3": "Reconoce los personajes principales y secundarios, el ambiente y el conflicto y explica su relación con el misterio; queda un vínculo sin desarrollar.",
+        "rubrica:descriptor:0:4": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+        "rubrica:descriptor:1:1": "Confunde las pistas o no explica su relación con la investigación.",
+        "rubrica:descriptor:1:2": "Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+        "rubrica:descriptor:1:3": "Relaciona las pistas principales con las decisiones del investigador; debe explicar mejor una conexión del fragmento.",
+        "rubrica:descriptor:1:4": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+        "rubrica:descriptor:2:1": "No reconstruye una secuencia reconocible ni explica el desarrollo del misterio con la información disponible.",
+        "rubrica:descriptor:2:2": "Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+        "rubrica:descriptor:2:3": "Reconstruye los acontecimientos y el avance del misterio con la información disponible; una relación causal queda sin explicar.",
+        "rubrica:descriptor:2:4": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+        "rubrica:descriptor:3:1": "No presenta una interpretación sustentada en evidencias de la lectura.",
+        "rubrica:descriptor:3:2": "Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+        "rubrica:descriptor:3:3": "Presenta una interpretación apoyada en evidencias pertinentes; una conclusión necesita una conexión más clara con ellas.",
+        "rubrica:descriptor:3:4": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+        "rubrica:descriptor:4:1": "No presenta un análisis escrito suficientemente comprensible para reconocer las ideas y sus relaciones.",
+        "rubrica:descriptor:4:2": "El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+        "rubrica:descriptor:4:3": "El análisis permite seguir las ideas y distinguir hechos e interpretación; presenta errores aislados que no alteran el sentido.",
+        "rubrica:descriptor:4:4": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+        "rubrica:descriptor:5:1": "No distingue información del fragmento de suposiciones sobre la obra.",
+        "rubrica:descriptor:5:2": "Reconoce datos del fragmento, pero presenta algunas hipótesis como hechos confirmados.",
+        "rubrica:descriptor:5:3": "Diferencia hechos e hipótesis, aunque deja sin aclarar el límite de una afirmación.",
+        "rubrica:descriptor:5:4": "Distingue lo que el fragmento afirma de sus hipótesis e indica qué no puede concluirse con la información disponible.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[400,500,400,500,200,200]",
+        "rubrica:criterion-weight:0": "4",
+        "rubrica:criterion-weight:1": "5",
+        "rubrica:criterion-weight:2": "4",
+        "rubrica:criterion-weight:3": "5",
+        "rubrica:criterion-weight:4": "2",
+        "rubrica:criterion-weight:5": "2",
+        "rubrica:meta:criteriaCount": "6",
+        "rubrica:meta:catalogVersion": "evaluation-2026.19",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Personajes, ambiente y conflicto\",\"description\":\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.\",\"progression\":[\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.\",\"Reconoce los personajes principales y secundarios, el ambiente y el conflicto y explica su relación con el misterio; queda un vínculo sin desarrollar.\",\"Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.\",\"Confunde relaciones entre los elementos y atribuye acciones que contradicen el fragmento.\",\"No identifica los elementos solicitados ni los relaciona con el conflicto del fragmento.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Pistas y actuación del investigador\",\"description\":\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.\",\"progression\":[\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.\",\"Explica las pistas principales y su relación con la investigación; alguna conexión con las decisiones queda poco desarrollada.\",\"Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.\",\"Atribuye a las pistas efectos incompatibles con las decisiones del investigador en el fragmento.\",\"Confunde las pistas o no explica su relación con la investigación.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Secuencia y desarrollo del misterio\",\"description\":\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.\",\"progression\":[\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.\",\"Reconstruye los acontecimientos y el avance del misterio con la información disponible; una relación causal queda sin explicar.\",\"Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.\",\"Confunde el orden o las causas de los acontecimientos y atribuye una resolución que no se sostiene en la información disponible.\",\"No reconstruye una secuencia reconocible ni explica el desarrollo del misterio con la información disponible.\"]}",
+        "rubrica:criterion-evidence:3": "{\"title\":\"Interpretación sustentada en la lectura\",\"description\":\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.\",\"progression\":[\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.\",\"Presenta una interpretación apoyada en evidencias pertinentes; una conclusión necesita una conexión más clara con ellas.\",\"Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.\",\"La interpretación contradice las evidencias aportadas o se apoya en hechos ajenos al fragmento.\",\"No presenta una interpretación sustentada en evidencias de la lectura.\"]}",
+        "rubrica:criterion-evidence:4": "{\"title\":\"Claridad y corrección del análisis escrito\",\"description\":\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.\",\"progression\":[\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.\",\"El análisis permite seguir las ideas y distinguir hechos e interpretación; presenta errores aislados que no alteran el sentido.\",\"El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.\",\"La organización de las frases y los errores alteran el sentido de partes centrales del análisis.\",\"No presenta un análisis escrito suficientemente comprensible para reconocer las ideas y sus relaciones.\"]}",
+        "rubrica:criterion-evidence:5": "{\"title\":\"Distinción entre hechos e hipótesis\",\"description\":\"Distingue lo que el fragmento afirma de sus hipótesis e indica qué no puede concluirse con la información disponible.\",\"progression\":[\"Distingue lo que el fragmento afirma de sus hipótesis e indica qué no puede concluirse con la información disponible.\",\"Diferencia hechos e hipótesis, aunque deja sin aclarar el límite de una afirmación.\",\"Reconoce datos del fragmento, pero presenta algunas hipótesis como hechos confirmados.\",\"Afirma como comprobados hechos que el fragmento no permite conocer.\",\"No distingue información del fragmento de suposiciones sobre la obra.\"]}",
+        "rubrica:criterion-template:0": "novel-analysis-elements",
+        "rubrica:criterion-template:1": "novel-analysis-clues",
+        "rubrica:criterion-template:2": "novel-analysis-sequence",
+        "rubrica:criterion-template:3": "novel-analysis-interpretation",
+        "rubrica:criterion-template:4": "novel-analysis-writing",
+        "rubrica:criterion-template:5": "novel-analysis-limits",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "6a17a2ef-8986-4cdb-a9a8-55ea46b37a29",
+      "name": "QA novela · lista-cotejo",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Los estudiantes leerán un fragmento de una novela policíaca para identificar los personajes principales y secundarios, el ambiente, el conflicto, las pistas y la secuencia de los acontecimientos. Posteriormente, elaborarán un análisis escrito en el que expliquen cómo se desarrolla el misterio, cuál es el papel del investigador y de qué manera se llega a la resolución del caso. Finalmente, presentarán una interpretación personal del texto, justificando sus conclusiones con evidencias de la lectura.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "1f6b4173-e246-4def-bc60-bea9ed2fc733",
+      "instrumentSnapshotId": "dae04999-80da-4252-9e69-085716255c13",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-elements:0",
+            "title": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-elements",
+            "description": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+            "descriptors": [
+              {
+                "text": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+                "levelId": "L2",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-clues:1",
+            "title": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-clues",
+            "description": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+            "descriptors": [
+              {
+                "text": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+                "levelId": "L2",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-sequence:2",
+            "title": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-sequence",
+            "description": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+            "descriptors": [
+              {
+                "text": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+                "levelId": "L2",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-interpretation:3",
+            "title": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-interpretation",
+            "description": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+            "descriptors": [
+              {
+                "text": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+                "levelId": "L2",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-writing:4",
+            "title": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+            "maxScore": 2,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-writing",
+            "description": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+            "descriptors": [
+              {
+                "text": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 200,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cec296fc-1903-54d8-a95b-de3163e0be1c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "92298e31-fc48-5d8f-adfa-0a8fd9ba0469",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1f588d35-c347-543d-97a1-033303f664c8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=novela-analisis-fragmento-5",
+            "coverage=TASK_DERIVED_PARTIAL",
+            "task={\"action\":\"ANALYSIS\",\"product\":\"ANALYTICAL_TEXT\",\"oral\":false,\"fragment\":true,\"task\":\"los estudiantes leeran un fragmento de una novela policiaca para identificar los personajes principales y secundarios el ambiente el conflicto las pistas y la secuencia de los acontecimientos posteriormente elaboraran un analisis escrito en el que expliquen como se desarrolla el misterio cual es el papel del investigador y de que manera se llega a la resolucion del caso finalmente presentaran una interpretacion personal del texto justificando sus conclusiones con evidencias de la lectura\"}",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.19",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ANALYSIS",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA novela · lista-cotejo",
+        "lista-cotejo:points:0": "4",
+        "lista-cotejo:points:1": "5",
+        "lista-cotejo:points:2": "4",
+        "lista-cotejo:points:3": "5",
+        "lista-cotejo:points:4": "2",
+        "lista-cotejo:criterion:0": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+        "lista-cotejo:criterion:1": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+        "lista-cotejo:criterion:2": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+        "lista-cotejo:criterion:3": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+        "lista-cotejo:criterion:4": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+        "lista-cotejo:description:0": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+        "lista-cotejo:description:1": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+        "lista-cotejo:description:2": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+        "lista-cotejo:description:3": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+        "lista-cotejo:description:4": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-elements:0",
+        "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-clues:1",
+        "lista-cotejo:criterion-id:2": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-sequence:2",
+        "lista-cotejo:criterion-id:3": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-interpretation:3",
+        "lista-cotejo:criterion-id:4": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-writing:4",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[400,500,400,500,200]",
+        "lista-cotejo:criterion-weight:0": "4",
+        "lista-cotejo:criterion-weight:1": "5",
+        "lista-cotejo:criterion-weight:2": "4",
+        "lista-cotejo:criterion-weight:3": "5",
+        "lista-cotejo:criterion-weight:4": "2",
+        "lista-cotejo:meta:criteriaCount": "5",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.19",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.\",\"description\":\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.\",\"progression\":[\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.\",\"Reconoce los personajes principales y secundarios, el ambiente y el conflicto y explica su relación con el misterio; queda un vínculo sin desarrollar.\",\"Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.\",\"Confunde relaciones entre los elementos y atribuye acciones que contradicen el fragmento.\",\"No identifica los elementos solicitados ni los relaciona con el conflicto del fragmento.\"]}",
+        "lista-cotejo:criterion-evidence:1": "{\"title\":\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.\",\"description\":\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.\",\"progression\":[\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.\",\"Explica las pistas principales y su relación con la investigación; alguna conexión con las decisiones queda poco desarrollada.\",\"Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.\",\"Atribuye a las pistas efectos incompatibles con las decisiones del investigador en el fragmento.\",\"Confunde las pistas o no explica su relación con la investigación.\"]}",
+        "lista-cotejo:criterion-evidence:2": "{\"title\":\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.\",\"description\":\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.\",\"progression\":[\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.\",\"Reconstruye los acontecimientos y el avance del misterio con la información disponible; una relación causal queda sin explicar.\",\"Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.\",\"Confunde el orden o las causas de los acontecimientos y atribuye una resolución que no se sostiene en la información disponible.\",\"No reconstruye una secuencia reconocible ni explica el desarrollo del misterio con la información disponible.\"]}",
+        "lista-cotejo:criterion-evidence:3": "{\"title\":\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.\",\"description\":\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.\",\"progression\":[\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.\",\"Presenta una interpretación apoyada en evidencias pertinentes; una conclusión necesita una conexión más clara con ellas.\",\"Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.\",\"La interpretación contradice las evidencias aportadas o se apoya en hechos ajenos al fragmento.\",\"No presenta una interpretación sustentada en evidencias de la lectura.\"]}",
+        "lista-cotejo:criterion-evidence:4": "{\"title\":\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.\",\"description\":\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.\",\"progression\":[\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.\",\"El análisis permite seguir las ideas y distinguir hechos e interpretación; presenta errores aislados que no alteran el sentido.\",\"El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.\",\"La organización de las frases y los errores alteran el sentido de partes centrales del análisis.\",\"No presenta un análisis escrito suficientemente comprensible para reconocer las ideas y sus relaciones.\"]}",
+        "lista-cotejo:criterion-template:0": "novel-analysis-elements",
+        "lista-cotejo:criterion-template:1": "novel-analysis-clues",
+        "lista-cotejo:criterion-template:2": "novel-analysis-sequence",
+        "lista-cotejo:criterion-template:3": "novel-analysis-interpretation",
+        "lista-cotejo:criterion-template:4": "novel-analysis-writing"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "ca20b31e-f659-425c-a60c-3a2f7d5f9d69",
+      "name": "QA novela · escala",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes leerán un fragmento de una novela policíaca para identificar los personajes principales y secundarios, el ambiente, el conflicto, las pistas y la secuencia de los acontecimientos. Posteriormente, elaborarán un análisis escrito en el que expliquen cómo se desarrolla el misterio, cuál es el papel del investigador y de qué manera se llega a la resolución del caso. Finalmente, presentarán una interpretación personal del texto, justificando sus conclusiones con evidencias de la lectura.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "87be8fbd-b826-4ca1-9aea-9a5d42eaaee7",
+      "instrumentSnapshotId": "f5993ebc-cb60-4d7d-94b1-0518a4e07f1f",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-elements:0",
+            "title": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-elements",
+            "description": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+            "descriptors": [
+              {
+                "text": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Reconoce los personajes principales y secundarios, el ambiente y el conflicto y explica su relación con el misterio; queda un vínculo sin desarrollar.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No identifica los elementos solicitados ni los relaciona con el conflicto del fragmento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-clues:1",
+            "title": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-clues",
+            "description": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+            "descriptors": [
+              {
+                "text": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+                "levelId": "L4",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Explica las pistas principales y su relación con la investigación; alguna conexión con las decisiones queda poco desarrollada.",
+                "levelId": "L3",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+                "levelId": "L2",
+                "scoreUnits": 145
+              },
+              {
+                "text": "Confunde las pistas o no explica su relación con la investigación.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-sequence:2",
+            "title": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-sequence",
+            "description": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+            "descriptors": [
+              {
+                "text": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Reconstruye los acontecimientos y el avance del misterio con la información disponible; una relación causal queda sin explicar.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No reconstruye una secuencia reconocible ni explica el desarrollo del misterio con la información disponible.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-interpretation:3",
+            "title": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-interpretation",
+            "description": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+            "descriptors": [
+              {
+                "text": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+                "levelId": "L4",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Presenta una interpretación apoyada en evidencias pertinentes; una conclusión necesita una conexión más clara con ellas.",
+                "levelId": "L3",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+                "levelId": "L2",
+                "scoreUnits": 145
+              },
+              {
+                "text": "No presenta una interpretación sustentada en evidencias de la lectura.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-writing:4",
+            "title": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+            "maxScore": 1.73,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-writing",
+            "description": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+            "descriptors": [
+              {
+                "text": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+                "levelId": "L4",
+                "scoreUnits": 173
+              },
+              {
+                "text": "El análisis permite seguir las ideas y distinguir hechos e interpretación; presenta errores aislados que no alteran el sentido.",
+                "levelId": "L3",
+                "scoreUnits": 115
+              },
+              {
+                "text": "El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+                "levelId": "L2",
+                "scoreUnits": 58
+              },
+              {
+                "text": "No presenta un análisis escrito suficientemente comprensible para reconocer las ideas y sus relaciones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 173,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cec296fc-1903-54d8-a95b-de3163e0be1c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "92298e31-fc48-5d8f-adfa-0a8fd9ba0469",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1f588d35-c347-543d-97a1-033303f664c8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=novela-analisis-fragmento-5",
+            "coverage=TASK_DERIVED_PARTIAL",
+            "task={\"action\":\"ANALYSIS\",\"product\":\"ANALYTICAL_TEXT\",\"oral\":false,\"fragment\":true,\"task\":\"los estudiantes leeran un fragmento de una novela policiaca para identificar los personajes principales y secundarios el ambiente el conflicto las pistas y la secuencia de los acontecimientos posteriormente elaboraran un analisis escrito en el que expliquen como se desarrolla el misterio cual es el papel del investigador y de que manera se llega a la resolucion del caso finalmente presentaran una interpretacion personal del texto justificando sus conclusiones con evidencias de la lectura\"}",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.19",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ANALYSIS",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA novela · escala",
+        "escala:points:0": "3.47",
+        "escala:points:1": "4.34",
+        "escala:points:2": "3.47",
+        "escala:points:3": "4.34",
+        "escala:points:4": "1.73",
+        "escala:criterion:0": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+        "escala:criterion:1": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+        "escala:criterion:2": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+        "escala:criterion:3": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+        "escala:criterion:4": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+        "escala:level-name:1": "Inicial",
+        "escala:level-name:2": "En proceso",
+        "escala:level-name:3": "Logrado",
+        "escala:level-name:4": "Destacado",
+        "escala:description:0": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+        "escala:description:1": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+        "escala:description:2": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+        "escala:description:3": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+        "escala:description:4": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-elements:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-clues:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-sequence:2",
+        "escala:criterion-id:3": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-interpretation:3",
+        "escala:criterion-id:4": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-writing:4",
+        "escala:descriptor:0:1": "No identifica los elementos solicitados ni los relaciona con el conflicto del fragmento.",
+        "escala:descriptor:0:2": "Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+        "escala:descriptor:0:3": "Reconoce los personajes principales y secundarios, el ambiente y el conflicto y explica su relación con el misterio; queda un vínculo sin desarrollar.",
+        "escala:descriptor:0:4": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.",
+        "escala:descriptor:1:1": "Confunde las pistas o no explica su relación con la investigación.",
+        "escala:descriptor:1:2": "Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+        "escala:descriptor:1:3": "Explica las pistas principales y su relación con la investigación; alguna conexión con las decisiones queda poco desarrollada.",
+        "escala:descriptor:1:4": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.",
+        "escala:descriptor:2:1": "No reconstruye una secuencia reconocible ni explica el desarrollo del misterio con la información disponible.",
+        "escala:descriptor:2:2": "Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+        "escala:descriptor:2:3": "Reconstruye los acontecimientos y el avance del misterio con la información disponible; una relación causal queda sin explicar.",
+        "escala:descriptor:2:4": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.",
+        "escala:descriptor:3:1": "No presenta una interpretación sustentada en evidencias de la lectura.",
+        "escala:descriptor:3:2": "Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+        "escala:descriptor:3:3": "Presenta una interpretación apoyada en evidencias pertinentes; una conclusión necesita una conexión más clara con ellas.",
+        "escala:descriptor:3:4": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.",
+        "escala:descriptor:4:1": "No presenta un análisis escrito suficientemente comprensible para reconocer las ideas y sus relaciones.",
+        "escala:descriptor:4:2": "El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+        "escala:descriptor:4:3": "El análisis permite seguir las ideas y distinguir hechos e interpretación; presenta errores aislados que no alteran el sentido.",
+        "escala:descriptor:4:4": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[347,434,347,434,173]",
+        "escala:criterion-weight:0": "4",
+        "escala:criterion-weight:1": "5",
+        "escala:criterion-weight:2": "4",
+        "escala:criterion-weight:3": "5",
+        "escala:criterion-weight:4": "2",
+        "escala:meta:criteriaCount": "5",
+        "escala:meta:catalogVersion": "evaluation-2026.19",
+        "escala:criterion-evidence:0": "{\"title\":\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.\",\"description\":\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.\",\"progression\":[\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.\",\"Reconoce los personajes principales y secundarios, el ambiente y el conflicto y explica su relación con el misterio; queda un vínculo sin desarrollar.\",\"Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.\",\"Confunde relaciones entre los elementos y atribuye acciones que contradicen el fragmento.\",\"No identifica los elementos solicitados ni los relaciona con el conflicto del fragmento.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.\",\"description\":\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.\",\"progression\":[\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.\",\"Explica las pistas principales y su relación con la investigación; alguna conexión con las decisiones queda poco desarrollada.\",\"Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.\",\"Atribuye a las pistas efectos incompatibles con las decisiones del investigador en el fragmento.\",\"Confunde las pistas o no explica su relación con la investigación.\"]}",
+        "escala:criterion-evidence:2": "{\"title\":\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.\",\"description\":\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.\",\"progression\":[\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.\",\"Reconstruye los acontecimientos y el avance del misterio con la información disponible; una relación causal queda sin explicar.\",\"Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.\",\"Confunde el orden o las causas de los acontecimientos y atribuye una resolución que no se sostiene en la información disponible.\",\"No reconstruye una secuencia reconocible ni explica el desarrollo del misterio con la información disponible.\"]}",
+        "escala:criterion-evidence:3": "{\"title\":\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.\",\"description\":\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.\",\"progression\":[\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.\",\"Presenta una interpretación apoyada en evidencias pertinentes; una conclusión necesita una conexión más clara con ellas.\",\"Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.\",\"La interpretación contradice las evidencias aportadas o se apoya en hechos ajenos al fragmento.\",\"No presenta una interpretación sustentada en evidencias de la lectura.\"]}",
+        "escala:criterion-evidence:4": "{\"title\":\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.\",\"description\":\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.\",\"progression\":[\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.\",\"El análisis permite seguir las ideas y distinguir hechos e interpretación; presenta errores aislados que no alteran el sentido.\",\"El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.\",\"La organización de las frases y los errores alteran el sentido de partes centrales del análisis.\",\"No presenta un análisis escrito suficientemente comprensible para reconocer las ideas y sus relaciones.\"]}",
+        "escala:criterion-template:0": "novel-analysis-elements",
+        "escala:criterion-template:1": "novel-analysis-clues",
+        "escala:criterion-template:2": "novel-analysis-sequence",
+        "escala:criterion-template:3": "novel-analysis-interpretation",
+        "escala:criterion-template:4": "novel-analysis-writing",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "58426153-6cbc-4d22-af16-b0473e9a01d2",
+      "name": "QA novela · lista-ponderada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 15,
+      "description": "<p>Los estudiantes leerán un fragmento de una novela policíaca para identificar los personajes principales y secundarios, el ambiente, el conflicto, las pistas y la secuencia de los acontecimientos. Posteriormente, elaborarán un análisis escrito en el que expliquen cómo se desarrolla el misterio, cuál es el papel del investigador y de qué manera se llega a la resolución del caso. Finalmente, presentarán una interpretación personal del texto, justificando sus conclusiones con evidencias de la lectura.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "559d8b5a-687a-42f4-86a3-78ee663a4831",
+      "instrumentSnapshotId": "c821b50a-6e43-4b65-a4c4-8d7f169acc7d",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-elements:0",
+            "title": "Personajes, ambiente y conflicto",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-elements",
+            "description": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento. Parcial (50%): Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+            "descriptors": [
+              {
+                "text": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento. Parcial (50%): Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+                "levelId": "L3",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento. Parcial (50%): Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+                "levelId": "L2",
+                "scoreUnits": 150
+              },
+              {
+                "text": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento. Parcial (50%): Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-clues:1",
+            "title": "Pistas y actuación del investigador",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-clues",
+            "description": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento. Parcial (50%): Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+            "descriptors": [
+              {
+                "text": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento. Parcial (50%): Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento. Parcial (50%): Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento. Parcial (50%): Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-sequence:2",
+            "title": "Secuencia y desarrollo del misterio",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-sequence",
+            "description": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento. Parcial (50%): Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+            "descriptors": [
+              {
+                "text": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento. Parcial (50%): Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+                "levelId": "L3",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento. Parcial (50%): Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+                "levelId": "L2",
+                "scoreUnits": 150
+              },
+              {
+                "text": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento. Parcial (50%): Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-interpretation:3",
+            "title": "Interpretación sustentada en la lectura",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-interpretation",
+            "description": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen. Parcial (50%): Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+            "descriptors": [
+              {
+                "text": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen. Parcial (50%): Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen. Parcial (50%): Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen. Parcial (50%): Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-writing:4",
+            "title": "Claridad y corrección del análisis escrito",
+            "maxScore": 1,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "novel-analysis-writing",
+            "description": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación. Parcial (50%): El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+            "descriptors": [
+              {
+                "text": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación. Parcial (50%): El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+                "levelId": "L3",
+                "scoreUnits": 100
+              },
+              {
+                "text": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación. Parcial (50%): El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+                "levelId": "L2",
+                "scoreUnits": 50
+              },
+              {
+                "text": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación. Parcial (50%): El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 100,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 15,
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cec296fc-1903-54d8-a95b-de3163e0be1c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "92298e31-fc48-5d8f-adfa-0a8fd9ba0469",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1f588d35-c347-543d-97a1-033303f664c8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=novela-analisis-fragmento-5",
+            "coverage=TASK_DERIVED_PARTIAL",
+            "task={\"action\":\"ANALYSIS\",\"product\":\"ANALYTICAL_TEXT\",\"oral\":false,\"fragment\":true,\"task\":\"los estudiantes leeran un fragmento de una novela policiaca para identificar los personajes principales y secundarios el ambiente el conflicto las pistas y la secuencia de los acontecimientos posteriormente elaboraran un analisis escrito en el que expliquen como se desarrolla el misterio cual es el papel del investigador y de que manera se llega a la resolucion del caso finalmente presentaran una interpretacion personal del texto justificando sus conclusiones con evidencias de la lectura\"}",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.19",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1500,
+        "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ANALYSIS",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA novela · lista-ponderada",
+        "lista-ponderada:points:0": "3",
+        "lista-ponderada:points:1": "4",
+        "lista-ponderada:points:2": "3",
+        "lista-ponderada:points:3": "4",
+        "lista-ponderada:points:4": "1",
+        "lista-ponderada:weight:0": "20",
+        "lista-ponderada:weight:1": "26.67",
+        "lista-ponderada:weight:2": "20",
+        "lista-ponderada:weight:3": "26.66",
+        "lista-ponderada:weight:4": "6.67",
+        "lista-ponderada:criterion:0": "Personajes, ambiente y conflicto",
+        "lista-ponderada:criterion:1": "Pistas y actuación del investigador",
+        "lista-ponderada:criterion:2": "Secuencia y desarrollo del misterio",
+        "lista-ponderada:criterion:3": "Interpretación sustentada en la lectura",
+        "lista-ponderada:criterion:4": "Claridad y corrección del análisis escrito",
+        "lista-ponderada:indicator:0": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento. Parcial (50%): Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+        "lista-ponderada:indicator:1": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento. Parcial (50%): Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+        "lista-ponderada:indicator:2": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento. Parcial (50%): Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+        "lista-ponderada:indicator:3": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen. Parcial (50%): Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+        "lista-ponderada:indicator:4": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación. Parcial (50%): El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento. Parcial (50%): Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.",
+        "lista-ponderada:description:1": "Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento. Parcial (50%): Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.",
+        "lista-ponderada:description:2": "Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento. Parcial (50%): Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.",
+        "lista-ponderada:description:3": "Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen. Parcial (50%): Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.",
+        "lista-ponderada:description:4": "Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación. Parcial (50%): El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-elements:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-clues:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-sequence:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-interpretation:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.19:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:novel-analysis-writing:4",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[300,400,300,400,100]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "5",
+        "lista-ponderada:criterion-weight:2": "4",
+        "lista-ponderada:criterion-weight:3": "5",
+        "lista-ponderada:criterion-weight:4": "2",
+        "lista-ponderada:meta:criteriaCount": "5",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.19",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Personajes, ambiente y conflicto\",\"description\":\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento. Parcial (50%): Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.\",\"progression\":[\"Relaciona los personajes principales y secundarios, el ambiente y el conflicto y explica cómo sus relaciones contribuyen al misterio en el fragmento.\",\"Reconoce los personajes principales y secundarios, el ambiente y el conflicto y explica su relación con el misterio; queda un vínculo sin desarrollar.\",\"Identifica elementos del fragmento, pero los enumera sin explicar cómo se relacionan con el conflicto.\",\"Confunde relaciones entre los elementos y atribuye acciones que contradicen el fragmento.\",\"No identifica los elementos solicitados ni los relaciona con el conflicto del fragmento.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Pistas y actuación del investigador\",\"description\":\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento. Parcial (50%): Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.\",\"progression\":[\"Explica la relación entre las pistas y las decisiones del investigador, sustentándola con evidencias pertinentes del fragmento.\",\"Explica las pistas principales y su relación con la investigación; alguna conexión con las decisiones queda poco desarrollada.\",\"Identifica algunas pistas, pero explica débilmente cómo orientan la investigación.\",\"Atribuye a las pistas efectos incompatibles con las decisiones del investigador en el fragmento.\",\"Confunde las pistas o no explica su relación con la investigación.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Secuencia y desarrollo del misterio\",\"description\":\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento. Parcial (50%): Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.\",\"progression\":[\"Relaciona la secuencia de acontecimientos con el desarrollo del misterio y explica la resolución hasta donde permite la información disponible en el fragmento.\",\"Reconstruye los acontecimientos y el avance del misterio con la información disponible; una relación causal queda sin explicar.\",\"Ordena algunos acontecimientos, pero resume hechos sin explicar cómo hacen avanzar el misterio.\",\"Confunde el orden o las causas de los acontecimientos y atribuye una resolución que no se sostiene en la información disponible.\",\"No reconstruye una secuencia reconocible ni explica el desarrollo del misterio con la información disponible.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Interpretación sustentada en la lectura\",\"description\":\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen. Parcial (50%): Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.\",\"progression\":[\"Formula una interpretación personal y justifica sus conclusiones explicando cómo las evidencias del fragmento las sostienen.\",\"Presenta una interpretación apoyada en evidencias pertinentes; una conclusión necesita una conexión más clara con ellas.\",\"Presenta una opinión y menciona hechos del fragmento, pero explica débilmente cómo sostienen sus conclusiones.\",\"La interpretación contradice las evidencias aportadas o se apoya en hechos ajenos al fragmento.\",\"No presenta una interpretación sustentada en evidencias de la lectura.\"]}",
+        "lista-ponderada:criterion-evidence:4": "{\"title\":\"Claridad y corrección del análisis escrito\",\"description\":\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación. Parcial (50%): El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.\",\"progression\":[\"Redacta un análisis comprensible, enlaza sus ideas y emplea vocabulario, puntuación y ortografía que permiten distinguir hechos e interpretación.\",\"El análisis permite seguir las ideas y distinguir hechos e interpretación; presenta errores aislados que no alteran el sentido.\",\"El análisis comunica algunas ideas, pero los enlaces ambiguos o los errores dificultan relacionarlas.\",\"La organización de las frases y los errores alteran el sentido de partes centrales del análisis.\",\"No presenta un análisis escrito suficientemente comprensible para reconocer las ideas y sus relaciones.\"]}",
+        "lista-ponderada:criterion-template:0": "novel-analysis-elements",
+        "lista-ponderada:criterion-template:1": "novel-analysis-clues",
+        "lista-ponderada:criterion-template:2": "novel-analysis-sequence",
+        "lista-ponderada:criterion-template:3": "novel-analysis-interpretation",
+        "lista-ponderada:criterion-template:4": "novel-analysis-writing"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ],
+  "historicalUnchanged": [
+    {
+      "id": "6b9d6dc6-1f25-47ea-90de-2fc7839eeef9",
+      "name": "Construimos un modelo de la célula animal y vegetal",
+      "hash": "463f2d2432cd088195b1b95a80e36d483b07afdfcd387ac45f98b602bf12dc3a"
+    },
+    {
+      "id": "5bda12c8-d866-44f8-b24b-5123a722c494",
+      "name": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "hash": "2b6a9ba4b9449c4ea4a8fb448d63862affdda6c29a3e7490ff1325d1cef30da2"
+    },
+    {
+      "id": "07c2a29b-dd0b-4fa0-94bf-fc6f20a6e8b1",
+      "name": "Actividad de aprendizaje",
+      "hash": "187c420fea8c6f563c7e9227d4c39233154ad1d3212c4f47c52b3ccfbe54cd58"
+    },
+    {
+      "id": "cd6709ab-9a60-4fbd-8904-af15ba6f8f37",
+      "name": "Guía turística de dos lugares · QA local",
+      "hash": "0f84ffb9442917ecf855894549a997cb5eeb262519b6b3e0c6e1090fe8dbff1b"
+    },
+    {
+      "id": "174c32cd-3d7e-49a4-aaa3-7e43c1863170",
+      "name": "Informe de lectura · QA personajes",
+      "hash": "54e1eb4623d035a60ac49c10fc8626ff618d6fe9cec186b041ca382281900817"
+    },
+    {
+      "id": "b048bcd5-82f1-4804-ae74-ef3035eac74c",
+      "name": "Actividad 1 · QA matrices",
+      "hash": "39dd99815040bc991ae5a7a6a23f30853ddaf6bf83514cda38c2979f0028c37c"
+    },
+    {
+      "id": "cf61df2b-7c5f-45b3-b6ea-626a238d7e07",
+      "name": "QA filas matrices · lista-cotejo",
+      "hash": "c8d42874f2d6af2280e0c107689895f71da65a2474a8da73d368969071b9e3a7"
+    },
+    {
+      "id": "0516c928-3556-492d-bb29-f85bf8133bc4",
+      "name": "QA filas matrices · escala",
+      "hash": "c443cb5e20e319685bc2cde41af350f97df65d5ce27f42d9707280e7f8919406"
+    },
+    {
+      "id": "2270b8f1-5625-4823-b28b-a8c78f95176e",
+      "name": "QA filas matrices · lista-ponderada",
+      "hash": "41a16309e322398e364c3fc537cba56b3e44ee647bd89549a267b5a7dfe2ee78"
+    },
+    {
+      "id": "e23e652b-c8e7-490c-89a3-956a5a91b7a4",
+      "name": "Calculamos alturas y distancias utilizando la trigonometría.",
+      "hash": "5712b4071677f8921412dde57d6b183c53aa6ab22201b42879edcb4444047530"
+    },
+    {
+      "id": "3e5a0a87-f41d-4e6f-9167-f59c8f670c10",
+      "name": "QA pesos matrices",
+      "hash": "19b08c314bb5582f7e0d130a9666292d39f6917e444fecb5546f6eb196893cd4"
+    },
+    {
+      "id": "53b4debe-9d9f-4c33-95c9-89558ecd3ea6",
+      "name": "QA ámbito matrices",
+      "hash": "de02758642543ea5ad1ab23648a6b0dada72d2f15f74b3bccd67ca2273b6ad43"
+    },
+    {
+      "id": "67f0aa9e-74e1-407c-9c56-80102fc125c2",
+      "name": "QA afiche · revisión contextual",
+      "hash": "104f695c090a2de84d8f44ddcf677c85bfcf0903fc6bbba860ecb89e4335d27e"
+    },
+    {
+      "id": "a07ac919-5ca6-4738-98fb-3a6e26df1ba7",
+      "name": "QA afiche · lista-cotejo",
+      "hash": "dffc0ecd82176446ebdc8e8353b23e9cfb6817a2cf32326c562139c4a6039cb3"
+    },
+    {
+      "id": "628657b6-cc00-4d4c-b92b-68d74fd6c44e",
+      "name": "QA afiche · escala",
+      "hash": "e38dca1fe2028ddf63a7db739412ba06d693313ff4a34a04507942c4aa38eb12"
+    },
+    {
+      "id": "f5018a8d-bb36-404d-ab01-f4d021a3d41e",
+      "name": "QA afiche · lista-ponderada",
+      "hash": "19737dcbff65b3456675e27dc37d8a88f31d1fc27d754e8f134ff333602279e2"
+    },
+    {
+      "id": "310202ee-5f8e-48cd-aa21-c8a8b8a98c7a",
+      "name": "QA cuento · rubrica",
+      "hash": "06c3b94b3d315fa2abfe723ea4c79decef8e626c04ec559b4307e4b23acdf7fa"
+    },
+    {
+      "id": "2737c85b-5ca8-4f34-906e-90b6cb34370a",
+      "name": "QA cuento · lista-cotejo",
+      "hash": "0fecb86a71a5d8e63b61794b7e179e47a521aa01443182d8afa79732d0a8c212"
+    },
+    {
+      "id": "9c24a390-029d-47fc-9c7c-45694b0adcb2",
+      "name": "QA cuento · escala",
+      "hash": "d8c4477470cfa7c3c352a1e040f0922a29f1f6ac393a3c460ad5258f9d220091"
+    },
+    {
+      "id": "3f64e44e-0235-49ed-8e24-a30bfd118ae5",
+      "name": "QA cuento · lista-ponderada",
+      "hash": "9f427082d4369da232d0f694f928d0963a936c30bab314c2a5a23bf3b507fbf9"
+    },
+    {
+      "id": "1cbc9a04-d91e-4d58-82c3-02fb408b04a3",
+      "name": "QA caligrama · rubrica",
+      "hash": "e12a9ed1fd63cca0076cb22a2350a7ac8d5a2a825e0503fab13d398672bcba19"
+    },
+    {
+      "id": "98080b87-a756-4e84-9fc2-1b0f9cd3b5ae",
+      "name": "QA caligrama · lista-cotejo",
+      "hash": "26a87b5b79fb5e835115c8ffea4152a424929694dfe930f0b103ede262995618"
+    },
+    {
+      "id": "5b02b736-9d3c-4858-9971-62327f4c50ba",
+      "name": "QA caligrama · escala",
+      "hash": "868633e8af94291160bd0afc040d36efaf1aafdd1aa2ee062cdb16dbd068a5bf"
+    },
+    {
+      "id": "d93065a6-9d59-432e-bc60-165cd9329d05",
+      "name": "QA caligrama · lista-ponderada",
+      "hash": "ea07f6ae1c6a36a74abd833b812cd612541ced653c942a2453c0dc363863847f"
+    }
+  ]
+}

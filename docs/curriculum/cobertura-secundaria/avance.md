@@ -1,5 +1,11 @@
 # Avance durable — cobertura secundaria
 
+## Encargo acotado actual: contrato tema/acción/producto (.19)
+
+Por instrucción nueva del usuario, no se continúa ahora la ampliación curricular completa. Corregido el análisis escrito del fragmento de novela policíaca de Lengua 5.º: el servicio ya clasificaba Análisis, pero seleccionaba plantillas de producción; además interpolaba mal el título. Contrato compartido, proveedor acotado, progresiones específicas y alternativa por acción. Cuatro formatos, títulos contrastados, 15/20/17,35 y puntaje pendiente; cuatro guardados/reabiertos reales con ediciones, candidato y celda completada. Los 24 snapshots históricos permanecen intactos.
+
+Backend 1.239; frontend completo 826 más ocho nuevas verificaciones de selección manual/HTML/503 (archivo completo del editor: 41); inventario siete; builds backend/frontend/shared y Cloudflare dry-run aprobados. Catálogo .19 instalado solo local; .18 intermedio inmutable conservado. [Causa, pruebas, limitaciones y archivos](novela-5-contrato-tema-accion.md), [instrumentos completos](novela-5-instrumentos-completos.md). Matriz: adaptación parcial de consigna, revisión curricular oficial pendiente; ninguna asignatura completa. El orden de ampliación descrito más abajo es histórico y requiere retomar ese encargo expresamente.
+
 ## Bloque .17: caligrama 1.º
 
 Cinco familias compartidas y progresiones específicas; requisitos según descripción, sin conclusión ni preguntas obligatorias ausentes, recitación sin duplicar desempeño individual. 80 propuestas HTTP, nueve regresiones y análisis focalizado; cuatro formatos guardados/reabiertos, edición manual, celda completada, identidad/procedencia y puntos contrastados con servicio. Backend 1.214, frontend 809, inventario siete; builds backend/frontend y Cloudflare dry-run aprobados. Fuente PDF 74, .16 archivado y .17 local. [Informe y pendientes](caligrama-1-reauditoria.md). Continúa pendiente la cobertura completa: primero los pendientes focalizados de los módulos de Lengua 1.º, noticia 2.º y los restantes grados, después Ciencias/otras comunes/optativas.

@@ -291,7 +291,7 @@ describe('Recomendador con currículo literal completo', () => {
     ['Exposición sobre la biodiversidad', 'Ciencias de la Naturaleza', 'NAT', 'EXPOSITION', 'rubrica', /biodiversidad/i],
     ['Experimento sobre densidad', 'Ciencias de la Naturaleza', 'NAT', 'EXPERIMENT', 'rubrica', /densidad/i],
     ['Resolución de problemas con fracciones', 'Matemática', 'MAT', 'PROBLEM_SOLVING', 'lista-ponderada', /fracciones/i],
-    ['Producción de un cuento corto', 'Lengua Española', 'LEN', 'WRITTEN_PRODUCTION', 'rubrica', /cuento corto/i],
+    ['Producción de un cuento corto', 'Lengua Española', 'LEN', 'WRITTEN_PRODUCTION', 'rubrica', /cuento/i],
     ['Pintura sobre identidad cultural', 'Educación Artística', 'ART', 'ARTISTIC_PRODUCTION', 'rubrica', /identidad cultural/i],
     ['Investigación sobre las migraciones', 'Ciencias Sociales', 'SOC', 'RESEARCH', 'rubrica', /migraciones/i],
   ])('genera contenido disciplinar válido para %s', (activityTitle, subjectName, subjectCode, activityType, instrumentType, topic) => {
@@ -367,7 +367,7 @@ describe('Recomendador con currículo literal completo', () => {
     expect(math.criteria.some(criterion => criterion.description.includes('fracciones'))).toBe(true)
     const story = run({ ...cases[4], activityTitle: 'Producción de un cuento corto', description: 'Escribir un cuento corto con desarrollo coherente y vocabulario adecuado.' }).result
     expect(story.criteria.map(criterion => criterion.title)).toContain('Estructura narrativa del cuento')
-    expect(story.criteria.some(criterion => criterion.description.includes('cuento corto'))).toBe(true)
+    expect(story.criteria.some(criterion => criterion.description.includes('acontecimientos del cuento'))).toBe(true)
     expect(JSON.stringify(story.criteria)).not.toMatch(/volcan|científic/)
   })
   it('catálogo global: IDs únicos, tipos existentes y referencias coherentes', () => {

@@ -1,5 +1,5 @@
 type ActivityDefaults = { activityType: string; technique: string; instrument: string }
-import { scientificTaskType } from '@aula/shared'
+import { scientificTaskType,resolveEvaluationTask } from '@aula/shared'
 import type { InstrumentAcademicContext } from '@aula/shared'
 import { automaticInstrumentType } from './automaticInstrumentType'
 
@@ -13,6 +13,8 @@ export function activityDefaultSuggestions(title: string, description: string, c
 
 function detectActivityDefaults(title: string, description: string): Omit<ActivityDefaults,'instrument'> | null {
   if (!title.trim() || !description.trim()) return null
+  const contract=resolveEvaluationTask(title,description)
+  if(contract.action) return {activityType:contract.oral&&contract.product==='ANALYTICAL_TEXT'?'ORAL_PRESENTATION':contract.action,technique:contract.oral&&contract.product==='ANALYTICAL_TEXT'?'presentacion':'analisis-producciones'}
   const science = scientificTaskType(title, description)
   if (science) return { activityType: science, technique: science === 'PROJECT' ? 'proyecto' : 'resolucion-problemas' }
   const heading = normalize(title)

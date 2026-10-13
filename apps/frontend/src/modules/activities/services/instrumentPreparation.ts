@@ -1,4 +1,5 @@
 import type { InstrumentRecommendation } from '@aula/shared'
+import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria} from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
 import { editableAuthoredRecommendation, editableSecondaryTopicRecommendation, findSecondaryLanguageTopic, secondGradeNewsCriteria, withoutResources } from '@aula/shared'
 import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType, type InstrumentAcademicContext } from '@aula/shared'
@@ -37,6 +38,9 @@ export function preparationFingerprint(input: { name: string; description: strin
 }
 
 export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: 1 | 2; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
+  const resolvedActivity=input.activityType??resolveEvaluationTask(input.activityTitle,input.description??'').action??'OTHER'
+  const novel=secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',input.academicContext,resolvedActivity,input.includeAdditionalCandidates)
+  if(novel.length) return editableAuthoredRecommendation(novel,input,resolvedActivity,'novela-analisis-fragmento-5')
   const math = findSecondaryMathTopic(input.activityTitle, input.description ?? '', input.academicContext)
   const mathCriteria = math ? secondaryMathCriteria(math, input.description ?? '').filter(row=>input.includeAdditionalCandidates || !row.templateId.endsWith('-verification')) : []
   if (math && mathCriteria.length) return editableAuthoredRecommendation(mathCriteria,input,input.activityType || 'PROBLEM_SOLVING',`math-${math}-${input.academicContext?.grade}`)
@@ -80,6 +84,8 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
     const activity = input.activityType ?? detectSecondaryLanguageActivity(input.activityTitle,input.description ?? '',{level:'SECONDARY',grade:1,subjectCode:'LEN'}) ?? 'CALLIGRAM_CREATION'
     return editableAuthoredRecommendation(firstGradeCalligramCriteria(activity,input.description ?? ''),input,activity,'lengua-secundaria-1-caligrama')
   }
+  const actionCriteria=input.academicContext?.level==='SECONDARY'&&(input.academicContext.subjectCode==='LEN'||resolveEvaluationTask('',input.description??'').product)?actionContentCriteria(resolvedActivity,input.description??''):[]
+  if(actionCriteria.length) return editableAuthoredRecommendation(actionCriteria,input,resolvedActivity,'action-only')
   const calligram = input.secondaryLanguageGrade !== 1 && input.activityType !== 'REPORT' && (/caligrama/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text))
   const writingReport = input.activityType ? input.activityType === 'READING_REPORT_WRITING' : readingReport && /(?:redact|escrib|elabor|produc|cre)[a-záéíóú]*\s+(?:(?:un|el|su)\s+)?informe de lectura/.test(text)
   const analyzing = input.activityType ? input.activityType.endsWith('_ANALYSIS') : /leer|analizar|identificar/.test(text) && !writingReport

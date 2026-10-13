@@ -12,6 +12,7 @@ import { activityDraftStorageKey, readActivityDrafts } from '../utils/activityDr
 import { api, ApiError } from '@/services/apiClient'
 import scienceFixtures from '../../../../../../data/evaluation-instruments/science-regressions.json'
 import selectionFixtures from '../../../../../../data/evaluation-instruments/automatic-selection-cases.json'
+import novelFixture from '../../../../../../data/evaluation-instruments/novel-task-regression.json'
 
 vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
   ActivityDescriptionEditor: ({
@@ -73,6 +74,30 @@ function props() {
 }
 
 describe('independent activity editor', () => {
+  for (const offline of [false, true]) for (const selected of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+    it(`novel: explicit ${selected} before description, ${offline ? 'fallback' : 'service'}`, async () => {
+      const academicContext = { level: 'SECONDARY' as const, grade: 5, subjectCode: 'LEN' }
+      const proposal = {...editableFallbackRecommendation({...novelFixture, maxScore: 15, instrumentType: selected, participationMode: 'INDIVIDUAL', academicContext}), catalogVersion: 'evaluation-2026.19'}
+      const calls = vi.spyOn(api, 'post').mockImplementation(async path => {
+        if (offline) throw new ApiError(503, 'Servicio no disponible')
+        return path.endsWith('/interpret') ? {suggestedActivityType: 'ANALYSIS', activityType: 'ANALYSIS', suggestedInstrumentType: 'rubrica'} : proposal
+      })
+      render(<ActivityEditorWorkspace {...props()} initialDraft={newActivityDraft('b1')} sectionSubjectId="subject" instrumentAcademicContext={academicContext} />)
+      fireEvent.change(screen.getByRole('combobox', {name: 'Tipo de instrumento'}), {target: {value: selected}})
+      fireEvent.change(screen.getByLabelText('Nombre de la actividad *'), {target: {value: novelFixture.activityTitle}})
+      fireEvent.click(screen.getByRole('button', {name: /Individual\s*Cada estudiante/}))
+      fireEvent.change(screen.getByRole('textbox', {name: /Valor en puntos/}), {target: {value: '15'}})
+      fireEvent.change(screen.getByLabelText('Descripción de la actividad'), {target: {value: `<p>${novelFixture.description}</p>`}})
+      await waitFor(() => {
+        const draft = readActivityDrafts(context)[0]?.draft as ReturnType<typeof newActivityDraft>
+        expect(draft?.preparedRecommendation?.catalogVersion).toBe(offline ? 'editable-fallback-v1' : 'evaluation-2026.19')
+        expect(draft?.preparedRecommendation?.criteria[0].templateId).toBe('novel-analysis-elements')
+        expect(draft?.instrumentType).toBe(selected)
+        expect(draft?.autoSelectedInstrumentType).toBe(false)
+      }, {timeout: 5000})
+      expect(calls.mock.calls.find(([path]) => path.endsWith('/recommend'))?.[1]).toMatchObject({description: novelFixture.description, preferredInstrumentType: selected})
+    })
+  }
   it('returns to automatic mode after clearing a manual rubric while offline',async()=>{
     vi.spyOn(api,'post').mockRejectedValue(new ApiError(503,'Servicio no disponible'))
     const fixture=selectionFixtures[3]

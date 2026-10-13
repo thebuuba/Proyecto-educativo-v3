@@ -1,4 +1,5 @@
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
+import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria} from '@aula/shared'
 import { newsCriteria } from './authored/language/news-grade-1'
 import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
@@ -54,6 +55,8 @@ export function topicTerms(title: string, description = '') {
     : fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
 }
 export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogCurrent, contextualTypes = true) {
+  const contract=resolveEvaluationTask(title,description)
+  if(contract.action) return catalog.activityTypes.find(entry=>entry.id===(contract.oral&&contract.product==='ANALYTICAL_TEXT'?'ORAL_PRESENTATION':contract.action))!
   const scientific = scientificTaskType(title, description)
   if (scientific) return catalog.activityTypes.find(entry => entry.id === scientific)!
   const task = normalize(withoutResources(description || title))
@@ -135,7 +138,6 @@ function prudentObservable(templateId: string, observable: string, topic: string
   if (!topic || topic.split(/\s+/).length > 5 || /\b(?:aplicamos|construimos|resolvemos|estudiantes|actividad)\b/i.test(topic)) return observable
   if (templateId === 'math-procedure') return `Aplica el procedimiento solicitado para resolver la situación con ${topic}.`
   if (templateId === 'math-comprehension') return `Identifica los datos y la pregunta de la situación con ${topic}.`
-  if (templateId === 'language-content') return `Desarrolla las ideas del ${topic} de acuerdo con la consigna.`
   return observable
 }
 
@@ -283,7 +285,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     const dimension = criterion.id === 'science-content' ? dimensions[candidates.slice(0, index).filter(candidate => candidate.template.id === 'science-content').length]
       ?? (topic !== input.activityTitle ? { title: `Comprensión de ${topic}`, observable: `Explica las ideas principales de ${topic}.` } : undefined) : undefined
     const contextual = dimension?.observable ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? `Utiliza imágenes o recursos visuales para apoyar la explicación de ${topic}.` : null) ?? (criterion.id === 'science-accuracy' && /vocabulario cientifico/.test(text) ? `Emplea vocabulario científico adecuado al explicar ${topic}.` : null) ?? (criterion.id === 'organization' && activity.family === 'ORAL' ? `Organiza y comunica las ideas sobre ${topic} en una secuencia comprensible.` : null) ?? (criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) && topic !== input.activityTitle ? `Organiza las ideas y evidencias sobre ${topic} en una secuencia comprensible.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-intention' ? `Expresa ${topic} mediante decisiones visuales reconocibles.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-composition' && /pintura/.test(text) ? `Organiza los elementos de la pintura para comunicar ${topic}.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-context' ? `Ubica ${topic} en tiempo, lugar y contexto.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Explica causas y consecuencias de ${topic} con evidencia.` : null)
-    const description = contextual ?? (literal ? literal.element.text : content ? `${observable} Relacionado con ${content.element.text}.` : prudentObservable(criterion.id,observable,topic))
+    const narrativeStructure=criterion.id==='language-structure'&&activity.id==='WRITTEN_PRODUCTION'&&/\bcuento\b/.test(normalize(input.description||input.activityTitle))
+    const description = narrativeStructure ? 'Organiza los acontecimientos del cuento en una secuencia que permite seguir su conflicto y resolución.' : contextual ?? (literal ? literal.element.text : content ? `${observable} Relacionado con ${content.element.text}.` : prudentObservable(criterion.id,observable,topic))
     const sourceType = contextual || content ? 'CONTEXTUALIZED' : literal ? 'CURRICULUM_DERIVED' : 'ACTIVITY_TEMPLATE'
     const sourceReferences = !contextual && reference ? selectedRefs.filter(r => r.elementId === reference.elementId) : []
     const patterns = band === 'PRIMARY_FIRST' ? catalog.descriptorPatterns.simple : catalog.descriptorPatterns.regular
@@ -304,7 +307,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const readingReportModule = firstGenre === 'READING_REPORT'
   const detectiveModule = firstGenre === 'DETECTIVE_STORY' && isFirstGradeDetectiveActivity(activity.id)
   const calligramModule = firstGenre === 'CALLIGRAM' && isFirstGradeCalligramActivity(activity.id)
-  const selectedAuthored: AuthoredCriterion[] = mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
+  const novelCriteria=secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',context,activity.id,input.includeAdditionalCandidates)
+  const selectedAuthored: AuthoredCriterion[] = novelCriteria.length ? novelCriteria : mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
     : scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
     : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '')
     : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
@@ -312,7 +316,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       : posterModule ? posterCriteria(activity.id, input.activityTitle, input.description ?? '')
         : readingReportModule ? readingReportCriteria(activity.id, input.description ?? '')
           : detectiveModule ? detectiveStoryCriteria(activity.id, input.description ?? '')
-            : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : []
+            : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : band==='SECONDARY'&&(area==='language'||resolveEvaluationTask('',input.description??'').product) ? actionContentCriteria(activity.id,input.description??'') : []
   const authored: AuthoredCriterion[] = selectedAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification')).slice(0, INSTRUMENT_MAX_CRITERIA).map(item => item.progressionLevels
     ? formatAuthoredCriteria([{ ...item, progressionLevels: item.progressionLevels }], chosenInstrument)[0] : item)
   const authoredScores = authored.length ? scienceTopic || contextualTopic || newsModule
@@ -344,6 +348,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
   if (scienceTopic) result.internalTrace.reasons.push(`module=science-${scienceTopic}-${context?.grade}`)
+  if(novelCriteria.length) result.internalTrace.reasons.push('module=novela-analisis-fragmento-5','coverage=TASK_DERIVED_PARTIAL',`task=${JSON.stringify(resolveEvaluationTask(input.activityTitle,input.description??''))}`)
+  if(authored.some(row=>row.templateId.startsWith('task-'))) result.internalTrace.reasons.push('coverage=ACTION_ONLY')
   if (mathTopic) result.internalTrace.reasons.push(`module=math-${mathTopic}-${context?.grade}`,
     ...(mathTopic === 'trigonometry' ? ['La consigna de 6.º retoma razones trigonométricas documentadas en 5.º; no se atribuye respaldo específico de 6.º.'] : []))
   assertValidRecommendation(result)

@@ -1,11 +1,12 @@
 import { secondaryLanguageGradeTwoTopics } from './secondary-topics/language/grade-2'
 import type { SecondaryLanguageTopic, TopicTaskMode } from './secondary-topic-types'
+import {resolveEvaluationTask} from './evaluation-task-contract'
+import {withoutResources} from './evaluation-task-text'
+export {withoutResources,normalizedTask} from './evaluation-task-text'
 export { secondaryLanguageGradeTwoTopics } from './secondary-topics/language/grade-2'
 export type { SecondaryLanguageTopic, TopicDimension, TopicTaskMode } from './secondary-topic-types'
 
 const normalized = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
-export const withoutResources = (value: string) => value.replace(/(?:recursos?\s*:|(?:con apoyo de|como recurso|con la ayuda de)\s+)[^.;]*/gi, '')
-export const normalizedTask = (value: string) => normalized(withoutResources(value))
 export type SecondaryTopicContext = { level: string; grade: number; subjectCode: string; optativeExitName?: string | null }
 export function findSecondaryLanguageTopic(title: string, description: string, context: SecondaryTopicContext | null) {
   if (context?.level !== 'SECONDARY' || context.subjectCode.trim().toUpperCase() !== 'LEN' || context.optativeExitName) return null
@@ -23,6 +24,8 @@ export function topicTaskMode(activity: string): TopicTaskMode {
 }
 
 export function detectTopicActivity(title: string, description: string, topic: SecondaryLanguageTopic) {
+  const contract=resolveEvaluationTask(title,description)
+  if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return topic.id==='guia-turistica'?'TOURIST_GUIDE_ANALYSIS':topic.id==='informe-de-lectura'?'READING_REPORT_ANALYSIS':'ANALYSIS'
   const task = normalized(withoutResources(description) || title)
   const purpose = task.match(/(?:para|a fin de)\s+((?:present\w*|expon\w*|exposicion)\b.*)/)?.[1]
   const actionText = purpose ?? task

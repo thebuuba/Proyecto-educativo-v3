@@ -2,6 +2,23 @@
   "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
   "topics": [
     {
+      "id": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "boundaryReview": "PENDING_VISUAL_REVIEW",
+      "procedureAssociation": "PENDING_VISUAL_REVIEW",
+      "procedures": [],
+      "implementation": "PARTIAL_TASK_DERIVED_NOVEL_ANALYSIS",
+      "engineConnection": "TASK_DERIVED_PROVIDER",
+      "catalogVersion": "evaluation-2026.19",
+      "instrumentFormats": ["rubrica", "lista-cotejo", "escala", "lista-ponderada"],
+      "automatedVerification": "PASSED",
+      "manualVerification": "TASK_DERIVED_DESCRIPTORS_REVIEWED_NOT_OFFICIAL_ALIGNMENT",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "report": "novela-5-contrato-tema-accion.md",
+      "pending": "Adaptación acotada de la consigna de análisis de fragmento policíaco, no cobertura de La novela. Pendientes revisión visual/asociación oficial de procedimientos, otras acciones, géneros, grados y requisitos focalizados. No atribuir a Lengua común el bloque policíaco de la optativa ni declarar implementada la creación narrativa."
+    },
+    {
       "id": "76d1d9e3-52af-58b4-a886-50daf7b4ed98",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",

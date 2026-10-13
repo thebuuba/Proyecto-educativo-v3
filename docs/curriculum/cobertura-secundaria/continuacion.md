@@ -1,5 +1,15 @@
 # Continuación del encargo completo
 
+## Encargo vigente: corrección acotada de novela y contrato compartido (.19)
+
+El adjunto 97cbd089 reemplaza la continuación global por esta corrección concreta. No ampliar ahora todo el currículo. [Informe completo](novela-5-contrato-tema-accion.md) e [instrumentos corregidos](novela-5-instrumentos-completos.md).
+
+Causa reproducida antes de corregir: Análisis correctamente detectado, pero plantillas genéricas de producción escrita y título interpolado. Contrato compartido distingue texto estudiado/producto entregado; proveedor de análisis de fragmento en Lengua 5.º, fallback coherente por acción para temas sin proveedor. Análisis frente a creación contrastado también en afiche/caligrama/noticia. Rúbrica automática pertinente; cuatro elecciones manuales previas a la descripción conservadas con servicio/503.
+
+Verificado: backend 1.239; frontend completo 826 más ocho pruebas nuevas (archivo completo 41); inventario siete; builds requeridos y diff check. HTTP normal: 36 propuestas, cuatro candidatos, cuatro contrastes y diez regresiones. Navegador normal autenticado: rúbrica 15, cotejo 20, escala 17,35 y ponderada 15 guardados/reabiertos, descriptor manual/celda completada/candidato preservados. Snapshot cotejado con respuesta y campos; 24 históricos intactos. Catálogo .19 solo local; se conservó el release intermedio .18 sin sobrescribirlo.
+
+La matriz solo añade conexión parcial derivada de la consigna para La novela de 5.º. Límites y asociación de procedimientos oficiales pendientes. No se completó Lengua 5.º ni se implementó la creación narrativa específica de ese grado. Las instrucciones de próximos módulos que siguen son historial del encargo anterior, no acciones pendientes de esta corrección.
+
 ## Bloque más reciente: caligrama 1.º (.17)
 
 Commit funcional publicado: `f037918ad4204bbfe37ad779be838be55d4c1407`. Entorno local reiniciado con ese código; `health` confirma el commit, `dirty=false` al arranque, Supabase `127.0.0.1:54321` y catálogo `evaluation-2026.17`. Evidencia: `evidencias/entorno-catalogo17-ejecutado.json`. El commit posterior de documentación no cambia ese código ejecutado.

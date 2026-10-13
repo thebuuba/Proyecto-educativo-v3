@@ -14,6 +14,10 @@ export * from './secondary-topic-recommendation'
 export * from './secondary-news-grade-two'
 export * from './secondary-science'
 import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask } from './secondary-language-topics'
+import {resolveEvaluationTask} from './evaluation-task-contract'
+export * from './evaluation-task-contract'
+export * from './secondary-novel-analysis'
+export * from './action-content-criteria'
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
 
 export function firstSecondaryLanguageGenre(title: string, description: string) {
@@ -39,6 +43,8 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
     : firstSecondaryLanguageGenre(title, description)
   if (!module) return null
   const action = (value: string) => {
+    const contract=resolveEvaluationTask('',value)
+    if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return `${module}_ANALYSIS`
     if (module !== 'READING_REPORT' && /\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
     if (module === 'NEWS') {
       if (/\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
