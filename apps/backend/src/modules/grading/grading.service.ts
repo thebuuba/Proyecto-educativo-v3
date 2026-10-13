@@ -364,6 +364,12 @@ function activityData(schoolId: string, userId: string, dto: SaveActivityDto, sc
 
 function sameJson(left: unknown, right: unknown): boolean {
   if (left === right) return true
+  // JSON adapters can round the last significant digit of a computed fraction.
+  // Only machine precision is tolerated; scores in integer cents remain distinct.
+  if (typeof left === 'number' && typeof right === 'number') {
+    return Number.isFinite(left) && Number.isFinite(right)
+      && Math.abs(left - right) <= Number.EPSILON * Math.max(1, Math.abs(left), Math.abs(right))
+  }
   if (!left || !right || typeof left !== 'object' || typeof right !== 'object') return false
   if (Array.isArray(left) || Array.isArray(right)) return Array.isArray(left) && Array.isArray(right)
     && left.length === right.length && left.every((value, index) => sameJson(value, right[index]))

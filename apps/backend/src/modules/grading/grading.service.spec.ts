@@ -32,6 +32,7 @@ const mocks = vi.hoisted(() => ({
     evaluationActivity: {
       findMany: vi.fn(),
       findFirst: vi.fn(),
+      findUnique: vi.fn(),
       create: vi.fn(),
       update: vi.fn(),
     },
@@ -50,6 +51,26 @@ beforeEach(() => {
 
 describe('GradingService activity teams', () => {
   beforeEach(() => vi.clearAllMocks())
+
+  it('retries identical fractional weights after the PostgreSQL JSON round trip', async () => {
+    const id = 'db4c9c0b-8c77-4982-b91b-121de33d9322'
+    const dto = { creationId: id, sectionSubjectId: 'ss-1', academicPeriodId: 'period-1',
+      competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 / 6, b2: 5 / 6 }, name: 'Actividad', maxScore: 20 }
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'ss-1', schoolYearId: 'year-1' })
+    mocks.prisma.academicPeriod.findFirst.mockResolvedValue({ id: 'period-1', schoolYearId: 'year-1' })
+    mocks.prisma.evaluationActivity.findUnique.mockResolvedValue({ id, schoolId: 'school-1', schoolYearId: 'year-1',
+      sectionSubjectId: 'ss-1', academicPeriodId: 'period-1', createdBy: 'user-1', status: 'ACTIVE',
+      competencyBlockId: 'b1', competencyBlockWeights: { b1: 0.1666666666666667, b2: 5 / 6 },
+      planningEntryId: null, planningMoment: null, pedagogicalActivityType: null, name: 'Actividad', maxScore: 20,
+      description: '', activityType: 'individual', activityDate: null, evaluationTechnique: '', studentRole: '', teacherRole: '',
+      evidenceInstructions: '', observations: '', resources: [], source: 'grading', groups: [], instrumentId: null,
+    })
+    const saved = await new GradingService().saveActivity('school-1', 'user-1', dto)
+    expect(saved.id).toBe(id)
+    expect(mocks.prisma.evaluationActivity.create).not.toHaveBeenCalled()
+    await expect(new GradingService().saveActivity('school-1', 'user-1', { ...dto, competencyBlockWeights: { b1: 0.17, b2: 0.83 } })).rejects.toThrow('otros datos')
+    await expect(new GradingService().saveActivity('school-1', 'user-1', { ...dto, maxScore: 20.01 })).rejects.toThrow('otros datos')
+  })
 
   it('rejects competency weights that do not add up to 100 percent', async () => {
     await expect(new GradingService().saveActivity('school-1', 'user-1', {

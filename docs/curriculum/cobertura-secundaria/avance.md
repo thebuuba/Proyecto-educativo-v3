@@ -18,7 +18,7 @@ La clasificación común/optativa se contrastó visualmente con PDF 48–49 (imp
 |---|---|---|
 | Inventario y clasificación | Extraído; revisión de tablas de distribución y optativas realizada; asociación por tema pendiente | Mantener registro de revisión separado para no perder avances al regenerar |
 | Lengua Española 1.º | Seis módulos existentes; pendiente de reauditar fuente, motor y pruebas | Revisar PDF 69–75 y contrastar los seis módulos |
-| Lengua Española 2.º | Cinco temas incorporados, fuente revisada y pruebas de motor/alternativa/componentes aprobadas; noticia pendiente de reauditoría | Validar persistencia autenticada local y ampliar revisión manual; ver `lengua-2-primer-bloque.md` |
+| Lengua Española 2.º | Cinco temas incorporados, fuente y pruebas revisadas, 20 casos de persistencia HTTP local aprobados; noticia pendiente de reauditoría | Reauditar noticia y ampliar revisión manual; ver `lengua-2-primer-bloque.md` |
 | Lengua Española 3.º–6.º | Pendiente | Fuente por grado: 82–88, 96–104, 105–112, 113–121 |
 | Ciencias de la Naturaleza 1.º–6.º | Pendiente | Seguir después de Lengua, con denominaciones reales por grado |
 | Otras asignaturas comunes | Pendiente | Seguir orden de alcance y matriz |
@@ -34,7 +34,7 @@ La clasificación común/optativa se contrastó visualmente con PDF 48–49 (imp
 
 ## Estados y recuperación
 
-No se ha declarado ninguna asignatura completa. Cinco temas de Lengua 2.º tienen módulos y pruebas automatizadas; la décima tiene además un recorrido de navegador con guardado simulado. Esto no equivale a persistencia autenticada. Los temas sin encabezado conceptual inequívoco, incluidos conceptos de Formación Humana con viñetas, mantienen pendiente la revisión de límites; todo el contenido original sigue conservado por ámbito.
+No se ha declarado ninguna asignatura completa. Cinco temas de Lengua 2.º tienen módulos y pruebas automatizadas; la décima tiene además un recorrido de navegador con guardado simulado. Una prueba posterior distinta valida persistencia HTTP local con sesión sintética, guards reales, 20 actividades, reintentos y linaje de una edición manual. No constituye prueba de login real. Los temas sin encabezado conceptual inequívoco, incluidos conceptos de Formación Humana con viñetas, mantienen pendiente la revisión de límites; todo el contenido original sigue conservado por ámbito.
 
 Para continuar:
 
@@ -51,3 +51,6 @@ Pruebas del inventario: 5/5 aprobadas. Release `evaluation-2026.8` instalado só
 El hash de cada bloque se añadirá aquí después de crearlo, en la siguiente actualización del registro. Para recuperar el último bloque ya publicado, consultar también `git log` y `git ls-remote origin amplia-instrumentos-secundaria`.
 
 - Inventario y clasificación: `c0c2c1087ec165e02f81e44f9292eab7b080c052`, publicado en `origin/amplia-instrumentos-secundaria`.
+- Cinco módulos de Lengua 2.º: `757217a3b02dc1a28831ef3a2d8d134a26602dc1`, publicado en la misma rama y repositorio `thebuuba/Proyecto-educativo-v3`.
+
+La prueba local posterior requirió aplicar sólo la migración existente de linaje en el puerto 54332. Detectó y corrigió la comparación de fracciones JSON en reintentos; prueba de regresión y 20 casos HTTP aprobados. Evidencia en `evidencias/persistencia-lengua-2.json`. Próxima tarea: reauditar fuente y criterios/descriptores de los seis módulos de Lengua 1.º y La noticia de 2.º, conservando versiones previas.
