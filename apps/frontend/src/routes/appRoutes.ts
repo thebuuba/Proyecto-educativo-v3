@@ -12,7 +12,7 @@ import {
   Library,
   NotebookPen,
   BookMarked,
-  School,
+  Settings,
   Users,
 } from 'lucide-react'
 import { createElement, lazy } from 'react'
@@ -201,8 +201,8 @@ export const appRoutes: AppRoute[] = [
   },
   {
     path: '/configuracion',
-    label: 'Administración escolar',
-    icon: School,
+    label: 'Configuración',
+    icon: Settings,
     component: SchoolAdministrationPage,
     allowedRoles: ['admin'],
   },

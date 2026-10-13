@@ -78,6 +78,17 @@ describe('Sidebar', () => {
       </MemoryRouter>,
     )
     expect(screen.getByRole('link', { name: 'Cursos' })).toHaveAttribute('aria-current', 'page')
+    expect(screen.getByRole('link', { name: 'Configuración' })).toHaveAttribute('href', '/perfil')
+    expect(screen.queryByRole('link', { name: 'Ajustes' })).not.toBeInTheDocument()
+  })
+
+  it('ofrece un único acceso a configuración para administradores', () => {
+    auth.role = 'admin'
+    render(<MemoryRouter initialEntries={['/configuracion']}><Navigation /></MemoryRouter>)
+    const configuration = screen.getByRole('link', { name: 'Configuración' })
+    expect(configuration).toHaveAttribute('href', '/configuracion')
+    expect(configuration).toHaveAttribute('aria-current', 'page')
+    expect(screen.queryByRole('link', { name: 'Ajustes' })).not.toBeInTheDocument()
     expect(screen.queryByRole('link', { name: 'Administración escolar' })).not.toBeInTheDocument()
   })
 })
