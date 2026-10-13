@@ -57,6 +57,7 @@ El hash de cada bloque se añadirá aquí después de crearlo, en la siguiente a
 - Prioridad de selección manual de noticia: `ec0447f75c7b4bdd3a3d301af9d72df411d0b4e9`, publicado en la misma rama.
 - Recursos de apoyo y evidencia individual: `6f35181fc09e90f174b41d767d1dbac7f1810f11`, publicado en la misma rama.
 - Asociaciones revisadas de procedimientos de 1.º: `93ee679faae7977b867fe2077aa6bc2d60d0cfae`, publicado en la misma rama.
+- Límites de asignatura de los módulos españoles: `9d548573c4d514ce491d29c786c3e10dabc2b47a`, publicado en la misma rama.
 
 La prueba local posterior requirió aplicar sólo la migración existente de linaje en el puerto 54332. Detectó y corrigió la comparación de fracciones JSON en reintentos; prueba de regresión y 20 casos HTTP aprobados. Evidencia en `evidencias/persistencia-lengua-2.json`. Próxima tarea: reauditar fuente y criterios/descriptores de los seis módulos de Lengua 1.º y La noticia de 2.º, conservando versiones previas.
 
@@ -67,3 +68,5 @@ Segunda revisión de 1.º: recursos listados ya no se convierten en género, im�
 Asociaciones de fuente de 1.º guardadas: 30 procedimientos repartidos entre seis temas, tras revisar PDF 69–74 (impresas 68–73) y las continuaciones de noticia, guía e informe. No se asignan competencias ni indicadores por proximidad. El procedimiento `746e4fe5-7817-5e72-a03d-c1eebd7f482d` de PDF 74 habla de noticia en la página del caligrama: se registra como anomalía separada y no se vincula al caligrama. La revisión visual de límites no equivale a completar la reauditoría de instrumentos ni sus descriptores.
 
 Límites entre asignaturas: el motor activaba los seis módulos españoles de 1.º en Inglés y Francés por compartir el área de lenguas. Se exige ahora el código operativo `LEN` en los módulos heredados de 1.º y noticia de 2.º. Doce negativos nuevos reproducen los cruces de las seis consignas con Inglés/Francés; se conservan los casos positivos españoles. Backend completo 466/466; build backend aprobado. Esta corrección no constituye cobertura temática de Inglés o Francés.
+
+Identidad de áreas oficiales: «Ciencias Sociales» estaba entrando en Ciencias de la Naturaleza por la coincidencia de la palabra «Ciencias». Se prioriza su identidad social antes del término general. Diez pruebas comprueban las nueve denominaciones comunes y una recomendación sobre migraciones que debe usar evidencia social. Backend completo 476/476; build backend y Cloudflare dry-run aprobados. Esto corrige la selección de dimensiones generales; los módulos temáticos de Sociales siguen pendientes del bloque D.
