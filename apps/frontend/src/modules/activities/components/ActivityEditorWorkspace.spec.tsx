@@ -1,6 +1,6 @@
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { secondaryEvaluationProfile } from '@aula/shared'
+import { secondaryEvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { ActivityEditorWorkspace } from './ActivityEditorWorkspace'
 import { activityToDraft, draftToActivity, newActivityDraft } from './editor/editorModel'
 import {
@@ -11,6 +11,7 @@ import {
 import { activityDraftStorageKey, readActivityDrafts } from '../utils/activityDraftStorage'
 import { api, ApiError } from '@/services/apiClient'
 import scienceFixtures from '../../../../../../data/evaluation-instruments/science-regressions.json'
+import selectionFixtures from '../../../../../../data/evaluation-instruments/automatic-selection-cases.json'
 
 vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
   ActivityDescriptionEditor: ({
@@ -72,6 +73,53 @@ function props() {
 }
 
 describe('independent activity editor', () => {
+  it('returns to automatic mode after clearing a manual rubric while offline',async()=>{
+    vi.spyOn(api,'post').mockRejectedValue(new ApiError(503,'Servicio no disponible'))
+    const fixture=selectionFixtures[3]
+    render(<ActivityEditorWorkspace {...props()} initialDraft={{...newActivityDraft('b1'),name:fixture.activityTitle,description:fixture.description,maxScore:'20',activityType:'individual',instrumentType:'rubrica',autoSelectedInstrumentType:false}} sectionSubjectId="subject" />)
+    await waitFor(()=>expect((readActivityDrafts(context)[0]?.draft as ReturnType<typeof newActivityDraft>)?.preparedRecommendation?.catalogVersion).toBe('editable-fallback-v1'),{timeout:5000})
+    expect(readActivityDrafts(context)[0].draft.instrumentType).toBe('rubrica')
+    fireEvent.change(screen.getByRole('combobox',{name:'Tipo de instrumento'}),{target:{value:''}})
+    await waitFor(()=>expect(readActivityDrafts(context)[0].draft.instrumentType).toBe('lista-ponderada'),{timeout:5000})
+    expect((readActivityDrafts(context)[0].draft as ReturnType<typeof newActivityDraft>).autoSelectedInstrumentType).toBe(true)
+  })
+  for(const selected of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const) {
+    it(`preserves explicit ${selected} after description changes`,async()=>{
+      const proposal={...editableFallbackRecommendation({activityTitle:'Informe',description:'Elaborar un informe.',maxScore:20,instrumentType:selected,participationMode:'INDIVIDUAL'}),catalogVersion:'evaluation-2026.10'}
+      const calls=vi.spyOn(api,'post').mockImplementation(async path=>path.endsWith('/interpret')?{suggestedActivityType:'REPORT',suggestedInstrumentType:'rubrica',activityType:'REPORT'}:proposal)
+      render(<ActivityEditorWorkspace {...props()} initialDraft={{...newActivityDraft('b1'),name:'Informe',description:'Elaborar un informe.',maxScore:'20',activityType:'individual',instrumentType:selected,autoSelectedInstrumentType:false}} sectionSubjectId="subject" />)
+      await waitFor(()=>expect((readActivityDrafts(context)[0]?.draft as ReturnType<typeof newActivityDraft>)?.preparedRecommendation?.catalogVersion).toBe('evaluation-2026.10'),{timeout:5000})
+      fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:'Realizar una observación y registrar presencia o ausencia de características.'}})
+      await waitFor(()=>expect(calls.mock.calls.filter(([path])=>path.endsWith('/recommend')).length).toBeGreaterThan(1),{timeout:5000})
+      expect(calls.mock.calls.filter(([path])=>path.endsWith('/recommend')).every(([,input])=>(input as {preferredInstrumentType?:string}).preferredInstrumentType===selected)).toBe(true)
+      expect(readActivityDrafts(context)[0].draft.instrumentType).toBe(selected)
+      expect((readActivityDrafts(context)[0].draft as ReturnType<typeof newActivityDraft>).autoSelectedInstrumentType).toBe(false)
+    })
+  }
+  for (const fixture of selectionFixtures) for (const offline of [false,true]) {
+    it(`automatic ${fixture.instrument}, provisional rubric, ${offline?'offline':'service'}`, async () => {
+      const proposal={...editableFallbackRecommendation({activityTitle:fixture.activityTitle,description:fixture.description,maxScore:20,instrumentType:fixture.instrument as InstrumentRecommendation['instrumentType'],participationMode:'INDIVIDUAL'}),catalogVersion:'evaluation-2026.10',activityType:fixture.activityType}
+      const requests=vi.spyOn(api,'post').mockImplementation(async path=>{
+        if(offline)throw new ApiError(503,'Servicio no disponible')
+        return path.endsWith('/interpret')?{suggestedActivityType:fixture.activityType,suggestedInstrumentType:fixture.instrument,activityType:fixture.activityType}:proposal
+      })
+      const old=editableFallbackRecommendation({activityTitle:'Informe inicial',maxScore:20,instrumentType:'rubrica',participationMode:'INDIVIDUAL'})
+      const draft={...newActivityDraft('b1'),name:fixture.activityTitle,description:fixture.description,maxScore:'20',activityType:'individual' as const,instrumentType:'rubrica',autoSelectedInstrumentType:true,preparedRecommendation:old,preparedFingerprint:'["anterior"]',preparedManuallyEdited:false}
+      render(<ActivityEditorWorkspace {...props()} initialDraft={draft} sectionSubjectId="subject" />)
+      await waitFor(()=>{
+        const stored=readActivityDrafts(context)[0]?.draft as ReturnType<typeof newActivityDraft>
+        expect(stored?.instrumentType).toBe(fixture.instrument)
+        expect(stored?.preparedRecommendation?.catalogVersion).toBe(offline?'editable-fallback-v1':'evaluation-2026.10')
+        expect(stored?.autoSelectedInstrumentType).toBe(true)
+        expect(stored?.preparedRecommendation?.activityType).toBe(fixture.activityType)
+      },{timeout:5000})
+      if(!offline) {
+        fireEvent.click(screen.getByRole('button',{name:'Generar nuevo instrumento'}))
+        await waitFor(()=>expect(requests.mock.calls.filter(([path])=>path.endsWith('/recommend')).length).toBeGreaterThan(1),{timeout:5000})
+        expect(requests.mock.calls.filter(([path])=>path.endsWith('/recommend')).every(([,input])=>(input as {preferredInstrumentType?:string}).preferredInstrumentType===undefined)).toBe(true)
+      }
+    })
+  }
   for (const fixture of scienceFixtures) for (const offline of [false,true]) {
     it(`science ${fixture.id}: ${offline ? '503 activates scoped fallback' : 'valid service response is retained'}`, async () => {
       const academicContext = { level:'SECONDARY' as const,grade:fixture.grade,subjectCode:fixture.code,subjectName:fixture.name }

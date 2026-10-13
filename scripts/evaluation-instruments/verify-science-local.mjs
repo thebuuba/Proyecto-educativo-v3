@@ -36,6 +36,7 @@ new Function('require', 'module', 'exports', typescript.transpileModule(adapterS
 }, adapter, adapter.exports)
 
 const scienceCase = JSON.parse(readFileSync('data/evaluation-instruments/science-regressions.json','utf8')).find(item=>item.id === (process.argv.includes('--ohm') ? 'ohm' : 'cells'))
+const selectionCases = process.argv.includes('--selection') ? JSON.parse(readFileSync('data/evaluation-instruments/automatic-selection-cases.json','utf8')) : null
 const fixtureId = randomUUID()
 const fingerprints = async () => ({
   releases: await prisma.$queryRawUnsafe('select version, md5(payload::text) fingerprint from evaluation_catalog_releases order by version'),
@@ -119,18 +120,21 @@ try {
     assert.equal(response.status, expected, `${path}: ${JSON.stringify(json).slice(0, 450)}`)
     return json.data
   }
-  const descriptions = [scienceCase.description]
+  const descriptions = selectionCases ? selectionCases.map(item=>item.description) : [scienceCase.description]
   await request('/evaluation-instruments/recommend', {}, 401, false)
   for (const description of descriptions) for (const maxScore of [20,17.35]) for (const neutral of [false,true]) {
-    const activityTitle = neutral ? 'Actividad de aprendizaje' : scienceCase.activityTitle
-    for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']) {
+    const selectionCase = selectionCases?.find(item=>item.description===description)
+    const activityTitle = neutral ? 'Actividad de aprendizaje' : selectionCase?.activityTitle ?? scienceCase.activityTitle
+    for (const requestedInstrumentType of selectionCases ? [undefined] : ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']) {
       const interpreted = await request('/evaluation-instruments/interpret', { sectionSubjectId: fixture.assignment.id, activityTitle, description, curriculumVersionId: version.id })
       const proposal = await request('/evaluation-instruments/recommend', { sectionSubjectId: fixture.assignment.id, activityTitle, description,
         curriculumVersionId: version.id, pedagogicalActivityType: interpreted.activityType,
-        participationMode: 'INDIVIDUAL', maxScore, preferredInstrumentType: instrumentType })
+        participationMode: 'INDIVIDUAL', maxScore, preferredInstrumentType: requestedInstrumentType })
+      const instrumentType = proposal.instrumentType
       assert.equal(proposal.catalogVersion, evaluationCatalogCurrent.version)
       assert.equal(proposal.totalScoreUnits, Math.round(maxScore*100))
-      if (!process.argv.includes('--before')) { assert.equal(proposal.criteria.length,5); assert.ok(proposal.criteria.every(c=>c.templateId.startsWith(`science-${scienceCase.id}-`))); assert.equal(proposal.activityType,scienceCase.expectedType) }
+      if (selectionCase) {assert.equal(instrumentType,selectionCase.instrument);assert.equal(proposal.internalTrace.ruleId,selectionCase.rule);assert.equal(proposal.activityType,selectionCase.activityType)}
+      else if (!process.argv.includes('--before')) { assert.equal(instrumentType,requestedInstrumentType);assert.equal(proposal.criteria.length,5); assert.ok(proposal.criteria.every(c=>c.templateId.startsWith(`science-${scienceCase.id}-`))); assert.equal(proposal.activityType,scienceCase.expectedType) }
       const fields = adapter.exports.recommendationToFields(proposal, activityTitle)
       assert.deepEqual(shared.validateInstrumentDefinition(instrumentType, fields, maxScore), [])
       const snapshot = adapter.exports.alignRecommendationWithFields(proposal, fields, maxScore)
@@ -138,7 +142,7 @@ try {
       const input = { creationId: randomUUID(), sectionSubjectId: fixture.assignment.id, academicPeriodId: fixture.period.id, schoolYearId: fixture.year.id,
         competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, name: activityTitle, description, activityType: 'individual', date: '', maxScore,
         instrumentType, instrumentCriteria: fields, instrumentSnapshot: snapshot, pedagogicalActivityType: proposal.activityType,
-        evaluationTechnique: proposal.activityType === 'PROJECT' ? 'proyecto' : 'resolucion-problemas' }
+        evaluationTechnique: interpreted.suggestedEvaluationTechnique ?? (proposal.activityType === 'PROJECT' ? 'proyecto' : 'resolucion-problemas') }
       results.push({phase:process.argv.includes('--before') ? 'before':'after', case:scienceCase.id, neutral, maxScore, instrumentType, interpreted, proposal, fields})
       if (process.argv.includes('--before')) continue
       lastInput = input
@@ -156,12 +160,12 @@ try {
       assert.equal(retried.id, saved.id)
     }
   }
-  writeFileSync('docs/curriculum/cobertura-secundaria/evidencias/science-'+scienceCase.id+'-'+(process.argv.includes('--before')?'before':'after')+'.json',JSON.stringify({catalogVersion:evaluationCatalogCurrent.version,results},null,2)+'\n')
+  writeFileSync('docs/curriculum/cobertura-secundaria/evidencias/'+(selectionCases?'automatic-selection':'science-'+scienceCase.id)+'-'+(process.argv.includes('--before')?'before':'after')+'.json',JSON.stringify({catalogVersion:evaluationCatalogCurrent.version,results},null,2)+'\n')
   if (process.argv.includes('--browser')) {
     console.log(JSON.stringify({browserApi:base,case:scienceCase.id})); await new Promise(resolve=>process.stdin.once('data',resolve))
   }
   if (process.argv.includes('--before')) {console.log(JSON.stringify({baseline:scienceCase.id,catalog:evaluationCatalogCurrent.version,results:results.length}))} else {
-  const expectedCount = descriptions.length * 16
+  const expectedCount = descriptions.length * (selectionCases ? 4 : 16)
   assert.equal(await prisma.evaluationActivity.count({ where: { schoolId: fixtureId } }), expectedCount)
   assert.equal(await prisma.evaluationInstrumentSnapshot.count({ where: { schoolId: fixtureId } }), expectedCount)
   const oldActivity = await prisma.evaluationActivity.findUnique({ where: { id: lastInput.creationId }, include: { instrumentSnapshot: true } })

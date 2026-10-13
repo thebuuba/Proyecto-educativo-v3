@@ -42,7 +42,7 @@ Células: estructuras; representación de ambos tipos mediante maqueta **o** dib
 - 32 reproducciones fallidas antes del cambio; 32 combinaciones corregidas backend y 32 alternativa/editor. Negativos de arte real, asignatura/grado incompatible, otros temas, consignas parciales y códigos/sinónimos; se mantienen las pruebas de otras asignaturas y módulos de Lengua. Se encontró una detección adicional de arte con título neutral que devolvía OTHER; se corrigió la acción verbal compartida sin clasificar modelos científicos como arte.
 - HTTP local: 16 actividades por caso, guardadas con guards y contexto estructurado reales; reintentos sin duplicados, conflicto 409 para un envío distinto, edición manual con snapshot versión 2 y linaje; ningún release o snapshot ajeno modificado. JWT sintético local: no constituye prueba del login real. La prueba de navegador usa ese mismo servicio local, no un mock de recomendaciones.
 - Navegador: Ohm con servicio `.10`, los cuatro formatos y dos totales; células con el mismo servicio y cambio entre los cuatro formatos, escala con sus descriptores visibles. En el entorno original Chrome se verificaron **ambos casos × cuatro formatos × dos totales = 16 instrumentos** específicos mediante la alternativa contextual, conservando los errores 503 como evidencia. No se guardó ninguna actividad remota ni se alteró el borrador original del usuario. Los wrappers de diagnóstico se retiraron; no forman parte de la interfaz publicada.
-- Suite backend: 567 pruebas aprobadas. Suite frontend: 573 pruebas aprobadas. Inventario: 5 pruebas aprobadas. Builds backend y frontend aprobados; Cloudflare dry-run aprobado, sin despliegue.
+- Primer cierre (`e35f53c`): 567 pruebas backend y 573 frontend aprobadas; cinco del inventario. Builds backend y frontend y Cloudflare dry-run aprobados, sin despliegue. La ampliación de verificación de selección automática se detalla abajo.
 - La suma exacta fue una comprobación adicional: se verificaron también los textos, acciones, progresión, tipo científico, continuidad hasta campos/snapshot y contenido mostrado.
 
 **Limitación operativa:** el backend original sigue apuntando a la base remota con catálogo `.1`, por lo que continúa devolviendo 503; el frontend corregido resuelve estas consignas mediante la alternativa. La ruta de servicio completo se comprobó con `.10` local. No se instala `.10` en producción por petición expresa del usuario. Los instrumentos históricos o borradores con ediciones no se reemplazan automáticamente; deben regenerarse/revisarse explícitamente.
@@ -60,3 +60,42 @@ No se encontró secundaria completa marcada falsamente como completa: la matriz 
 - Verificación/datos: `verify-science-local.mjs`, `science-regressions.json`; registro, matriz, informe e instrumentos completos y evidencias en este directorio.
 
 El commit y push final se entregan con hash y rama comprobados mediante Git; el informe está incluido en ese mismo commit.
+
+## Hallazgo adicional: selección automática del instrumento
+
+**No se confirmó una rúbrica inicial manual en el formulario nuevo.** `newActivityDraft` empieza con `instrumentType: ''`. La rúbrica que aparece después puede ser una sugerencia provisional, marcada `autoSelectedInstrumentType: true`. Un borrador antiguo con formato pero sin marca de origen se conserva como manual: no se inventa su procedencia ni se reemplazan las elecciones/ediciones del docente.
+
+Se reprodujeron seis fallos en ocho recorridos del componente antes de corregirlo, y cuatro fallos adicionales de regeneración automática:
+
+1. La validación comparaba el formato de la respuesta con el formato provisional aun cuando este era automático. Una respuesta válida con cotejo, escala o lista ponderada podía rechazarse y sustituirse por la alternativa anterior.
+2. La detección local recomendaba rúbrica para ejercicios, incluidos los de Ohm, aunque el catálogo aplica `math-process → lista-ponderada`. Ante el 503 remoto confirmado, esta discrepancia era el camino que realmente veía el usuario.
+3. La alternativa recibía el tipo provisional como `preferredType`, impidiendo recalcular el instrumento al cambiar/completar la descripción. Se conserva ahora el tipo de actividad detectado en la recomendación local, sin convertirlo en OTHER.
+4. «Generar nuevo instrumento» enviaba el formato automático anterior como `preferredInstrumentType`, activando una falsa preferencia docente. Ahora solo se envía cuando hubo elección explícita; en automático el servicio vuelve a aplicar su regla.
+5. Al borrar una selección manual y volver a automático con el servicio caído, la alternativa cambiaba el formato pero conservaba la marca manual anterior. La marca ahora refleja el modo solicitado. Cancelar una confirmación restaura el estado de selección que tenía el formulario.
+
+La solución conserva los guards de petición obsoleta, los puntajes pendientes, las ediciones manuales y la confirmación antes de reemplazarlas. Una respuesta con formato distinto se acepta en automático; si existe una elección explícita, debe respetarla. No se sobrescribe una recomendación preparada vigente solo porque llegue tarde una interpretación: una descripción modificada invalida la huella y dispara una nueva preparación completa.
+
+### Reglas existentes comprobadas, sin cuotas
+
+| Consigna probada | Instrumento automático | Regla del catálogo y motivo |
+|---|---|---|
+| Elaborar un informe argumentado con análisis, evidencias y conclusiones | Rúbrica | `oral-written-art-project`: producto escrito con varias dimensiones de calidad y niveles progresivos. |
+| Observar hojas y registrar presencia o ausencia de características indicadas | Lista de cotejo | `observation`: verificar cumplimiento/presencia de indicadores observables. |
+| Realizar una práctica motriz y observar la regularidad del equilibrio y coordinación | Escala estimativa | `motor-performance`: estimar la regularidad/calidad del desempeño motriz. |
+| Resolver ejercicios calculando voltaje, corriente y resistencia con la Ley de Ohm | Lista ponderada | `math-process`: valorar componentes del procedimiento y resultado mediante puntos/pesos. |
+
+La matriz de selección depende de la evidencia y la acción; no distribuye formatos por cantidades, por títulos exactos ni por turnos. La rúbrica permanece para modelos científicos, informes, producciones y otros desempeños multidimensionales cuando corresponde. Una rúbrica elegida explícitamente para Ohm sigue siendo válida y se conserva.
+
+Las reglas versionadas **no se modificaron**. `automaticInstrumentType` hace coherente la alternativa con el catálogo `.10`; 384 comparaciones cubren todos sus 48 tipos × dos niveles × dos grados × dos puntajes, incluida la excepción de primer ciclo de Primaria con evidencia simple y máximo 10. La interpretación no recibe puntaje: el servicio de preparación puede ajustar esa sugerencia al recibir el total, y ahora el formulario acepta esa respuesta automática.
+
+La prueba HTTP con título neutral descubrió además que el clasificador no reconocía «realizar una práctica motriz» sin un título deportivo, porque el trigger era únicamente «motriz». Se corrigió la detección de la acción motriz, sin clasificar como práctica un informe sobre ella ni utilizar recursos como consigna. No se añadieron reglas nuevas para fabricar variedad.
+
+### Verificación adicional
+
+- Casos reproducibles en `data/evaluation-instruments/automatic-selection-cases.json`; comparación catálogo/alternativa y negativos en `automatic-selection.spec.ts`.
+- Componente: cuatro respuestas válidas aceptadas desde una rúbrica automática anterior; cuatro alternativas coherentes ante 503; actualización tras descripción; regeneración automática sin falsa preferencia; cada uno de los cuatro formatos manuales conservado tras cambiar la descripción; vuelta de rúbrica manual a automático estando offline. Se mantienen las pruebas existentes de confirmaciones, ediciones y formularios restaurados.
+- HTTP local real, catálogo `.10`, sin formato preferido: 16 actividades (cuatro consignas × títulos original/neutral × 20/17.35), guardado, reintentos, conflicto 409, edición y linaje. Cada respuesta declara la regla esperada, sin `TEACHER_OVERRIDE`. La fixture local usa una asignación ficticia de Ciencias 2.º para verificar selección/guards/persistencia; no certifica vínculos curriculares de las otras disciplinas. Evidencia completa en `evidencias/automatic-selection-after.json`. Reproducir con el verificador existente y `--selection` después del build backend/shared.
+- Navegador del entorno original: rúbrica, cotejo, escala y lista ponderada observadas desde formulario nuevo con valor vacío y petición sin preferencia. Contextos disponibles: Lengua 2.º, Ciencias de la Vida 2.º, Educación Artística 2.º para desempeño corporal/motriz y Física 6.º. No había una asignación de Educación Física en el workspace autenticado, por lo que no se declara probado ese contexto específico en Chrome. Las respuestas originales continúan siendo 503; el formato mostrado procede de la alternativa corregida. Evidencia en `evidencias/automatic-selection-browser.json` y captura `automatic-weighted-browser.png`. No se guardaron actividades remotas ni se modificó el borrador original.
+- El catálogo permanece `evaluation-2026.10`; no se modifica la cobertura parcial de la matriz ni se añaden asignaturas completas. No hay migración, dependencia nueva, despliegue ni reset. Los wrappers de navegador son temporales y se retiran antes de compilar/commitear.
+
+Archivos adicionales: `automaticInstrumentType.ts`, `automatic-selection.spec.ts`, casos y evidencias; cambios en el creador, sus pruebas, detección local, adaptación de contexto de Primaria/Secundaria y modo `--selection` del verificador local. Cierre actualizado: **956 pruebas backend, 586 frontend y cinco del inventario aprobadas**; builds backend/frontend y Cloudflare dry-run aprobados. En Chrome se confirmó también Ohm automático ponderado → rúbrica manual (petición con preferencia `rubrica`) → ponderado automático (petición sin preferencia). Evidencias adicionales: `automatic-selection-manual-browser.json` y `automatic-selection-return-browser.json`. Se entrega con commit/push comprobados.

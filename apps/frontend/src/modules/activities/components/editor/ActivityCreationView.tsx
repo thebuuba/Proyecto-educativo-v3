@@ -54,6 +54,7 @@ import {
   validActivityScore,
 } from '@/modules/activities/services/instrumentScoring'
 import { activityDefaultSuggestions } from '@/modules/activities/utils/activityDefaultSuggestions'
+import { automaticInstrumentType } from '@/modules/activities/utils/automaticInstrumentType'
 import type { CourseTeam } from '@/modules/courses/types'
 import { ApiError } from '@/services/apiClient'
 import { cn } from '@/utils/cn'
@@ -239,11 +240,13 @@ export function ActivityCreationView(props: {
         ? {
             activityType: scopedType,
             technique: firstSecondaryLanguageTechnique(scopedType),
-            instrument: scopedType.endsWith('_ANALYSIS') ? 'lista-cotejo' : 'rubrica',
+            instrument: automaticInstrumentType(scopedType,props.instrumentAcademicContext,committedScore.current),
           }
         : activityDefaultSuggestions(
             activityDraft.name,
             activityDescriptionText(activityDraft.description),
+            props.instrumentAcademicContext,
+            committedScore.current,
           )
       if (localDefaults) {
         const current = latestDraft.current
@@ -380,6 +383,8 @@ export function ActivityCreationView(props: {
     // Capture the current draft at request time; later changes still invalidate this request.
     const requestedDraft = latestDraft.current
     if (!validatePreparation(requestedDraft)) return
+    const explicitInstrument = forceAutomatic ? undefined : preferredType ||
+      (!requestedDraft.autoSelectedInstrumentType ? requestedDraft.instrumentType || undefined : undefined)
     const requestedFingerprint = preparationFingerprint(requestedDraft)
     const requestedFields = JSON.stringify([
       requestedDraft.maxScore,
@@ -404,25 +409,16 @@ export function ActivityCreationView(props: {
         maxScore: preparationScore,
         competencyBlock: block.id,
         curriculumVersionId: interpretation?.curriculumVersionId ?? undefined,
-        preferredInstrumentType: forceAutomatic
-          ? undefined
-          : (preferredType ??
-            (newGeneration
-              ? requestedDraft.instrumentType || undefined
-              : requestedDraft.autoSelectedInstrumentType
-                ? undefined
-                : requestedDraft.instrumentType || undefined)),
+        preferredInstrumentType: explicitInstrument,
         selectedCurriculumElementIds: requestedDraft.selectedCurriculumElementIds?.length
           ? requestedDraft.selectedCurriculumElementIds
           : undefined,
       })
       if (
         !proposal.criteria?.length ||
+        !['rubrica','lista-cotejo','escala','lista-ponderada'].includes(proposal.instrumentType) ||
         !proposal.criteria.every((item) => item.title.trim() && item.description.trim()) ||
-        proposal.instrumentType !==
-          (forceAutomatic
-            ? proposal.instrumentType
-            : (preferredType ?? requestedDraft.instrumentType)) ||
+        (explicitInstrument && proposal.instrumentType !== explicitInstrument) ||
         proposal.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0) !==
           proposal.totalScoreUnits ||
         !Number.isInteger(proposal.totalScoreUnits) ||
@@ -496,7 +492,7 @@ export function ActivityCreationView(props: {
         !(error instanceof ApiError && error.status >= 400 && error.status < 500) &&
         (!requestedDraft.preparedManuallyEdited || replaceManual)
       ) {
-        useEditableTemplate(requestedType, newGeneration, Boolean(preferredType))
+        useEditableTemplate(manualSelections.current.instrument || preferredType ? requestedType : undefined, newGeneration, Boolean(preferredType))
         setFallbackNotice(
           'El servicio no respondió. Revisa el instrumento alternativo antes de guardar.',
         )
@@ -677,10 +673,12 @@ export function ActivityCreationView(props: {
     manualInstrumentSelection = false,
   ) {
     const current = latestDraft.current
+    const automatic = !manualSelections.current.instrument
+    const defaults = activityDefaultSuggestions(current.name,activityDescriptionText(current.description),props.instrumentAcademicContext,committedScore.current)
+    const scopedActivity = contextualLanguageGrade ? detectSecondaryLanguageActivity(current.name,activityDescriptionText(current.description),{level:'SECONDARY',grade:contextualLanguageGrade,subjectCode:'LEN'}) : null
     const instrumentType = (preferredType ||
-      failedInstrumentType ||
-      current.instrumentType ||
-      'rubrica') as InstrumentRecommendation['instrumentType']
+      (automatic ? automaticInstrumentType(current.autoDetectedPedagogicalActivityType ? scopedActivity || defaults?.activityType || 'OTHER' : current.pedagogicalActivityType || scopedActivity || defaults?.activityType || 'OTHER',props.instrumentAcademicContext,committedScore.current)
+        : failedInstrumentType || current.instrumentType || 'rubrica')) as InstrumentRecommendation['instrumentType']
     const generation = newGeneration
       ? (current.instrumentGeneration || 0) + 1
       : current.instrumentGeneration || 0
@@ -692,15 +690,9 @@ export function ActivityCreationView(props: {
       instrumentType,
       variation: generation % 2,
       participationMode: current.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
-      activityType: contextualLanguageGrade
-        ? current.pedagogicalActivityType ||
-          detectSecondaryLanguageActivity(
-            current.name,
-            activityDescriptionText(current.description),
-            { level: 'SECONDARY', grade: contextualLanguageGrade, subjectCode: 'LEN' },
-          ) ||
-          undefined
-        : current.autoDetectedPedagogicalActivityType ? undefined : current.pedagogicalActivityType || undefined,
+      activityType: current.autoDetectedPedagogicalActivityType
+        ? scopedActivity || defaults?.activityType || current.pedagogicalActivityType || undefined
+        : current.pedagogicalActivityType || scopedActivity || defaults?.activityType || undefined,
       secondaryLanguageGrade: contextualLanguageGrade || undefined,
       academicContext: props.instrumentAcademicContext,
     })
@@ -720,8 +712,7 @@ export function ActivityCreationView(props: {
       manualInstrumentBlank: false,
       instrumentGeneration: generation,
       autoSelectedInstrumentType:
-        !manualInstrumentSelection &&
-        (current.autoSelectedInstrumentType || !current.instrumentType),
+        !manualInstrumentSelection && automatic,
     }
     onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
     setFailedInstrumentType('')
@@ -1411,7 +1402,10 @@ export function ActivityCreationView(props: {
           description="Volver a preparar el instrumento reemplazará tus criterios, indicadores y cambios manuales actuales."
           confirmLabel="Cambiar instrumento"
           cancelLabel="Conservar cambios"
-          onClose={() => setPendingInstrumentType('')}
+          onClose={() => {
+            manualSelections.current.instrument = Boolean(activityDraft.instrumentType && !activityDraft.autoSelectedInstrumentType)
+            setPendingInstrumentType('')
+          }}
           onConfirm={async () => {
             const nextType = pendingInstrumentType
             setPendingInstrumentType('')

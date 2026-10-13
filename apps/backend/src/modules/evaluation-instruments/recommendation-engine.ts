@@ -53,6 +53,8 @@ export function topicTerms(title: string, description = '') {
 export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogCurrent, contextualTypes = true) {
   const scientific = scientificTaskType(title, description)
   if (scientific) return catalog.activityTypes.find(entry => entry.id === scientific)!
+  const task = normalize(withoutResources(description || title))
+  if (/\b(?:realiz\w*|practic\w*|ejecut\w*)\s+(?:(?:una?|la|los|las)\s+)?(?:practica|actividad|rutina|ejercicios?)\s+(?:motriz|motrices|deportiv\w*)\b/.test(task)) return catalog.activityTypes.find(entry=>entry.id==='MOTOR_SPORTS_PRACTICE')!
   const find = (value: string, descriptionMode = false) => {
     const text = normalize(value)
     const words = tokens(text)
