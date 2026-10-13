@@ -253,7 +253,7 @@
     },
     {
       "id": "74b33fad-b618-5157-9517-8e0165a2a333",
-      "implementation": "EXISTING_PENDING_REAUDIT",
+      "implementation": "PARTIAL_FOUR_ACTIVITY_FAMILIES_SHARED_PROVIDER",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -261,7 +261,11 @@
         "156d82cc-d619-56fa-8bb9-3563fb155b3f",
         "75ccb373-3eb0-5d30-af1f-714caffce54d"
       ],
-      "report": "avance.md"
+      "report": "afiche-1-reauditoria.md",
+      "catalogVersion": "evaluation-2026.15",
+      "serviceVerification": "NORMAL_REAL_LOGIN_64_PROPOSALS_7_REGRESSIONS_FOCUSED_ANALYSIS_PASSED",
+      "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_CREATION_SAVE_REOPEN_PASSED",
+      "pending": "Focused grammar, requested event details, further action filtering and additional authored candidates. Not complete secondary coverage."
     },
     {
       "id": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",

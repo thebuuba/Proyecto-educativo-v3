@@ -4,6 +4,7 @@ import { editableAuthoredRecommendation, editableSecondaryTopicRecommendation, f
 import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType, type InstrumentAcademicContext } from '@aula/shared'
 import { firstGradeNewsCriteria, detectSecondaryLanguageActivity, isFirstGradeNewsActivity } from '@aula/shared'
 import { firstGradeGuideCriteria, isFirstGradeGuideActivity, firstSecondaryLanguageGenre } from '@aula/shared'
+import { firstGradePosterCriteria, isFirstGradePosterActivity } from '@aula/shared'
 import { firstGradeReadingReportCriteria } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { api } from '@/services/apiClient'
@@ -58,7 +59,11 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
     const activity = input.activityType ?? detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) ?? 'TOURIST_GUIDE_CREATION'
     return editableAuthoredRecommendation(firstGradeGuideCriteria(activity, input.description ?? ''), input, activity, 'lengua-secundaria-1-guia-turistica')
   }
-  const poster = input.activityType !== 'REPORT' && (input.secondaryLanguageGrade === 1 ? firstGenre === 'POSTER' : /afiche/.test(text))
+  if (firstGenre === 'POSTER' && (!input.activityType || isFirstGradePosterActivity(input.activityType))) {
+    const activity = input.activityType ?? detectSecondaryLanguageActivity(input.activityTitle,input.description ?? '',{level:'SECONDARY',grade:1,subjectCode:'LEN'}) ?? 'POSTER_CREATION'
+    return editableAuthoredRecommendation(firstGradePosterCriteria(activity,input.activityTitle,input.description ?? ''),input,activity,'lengua-secundaria-1-el-afiche')
+  }
+  const poster = input.secondaryLanguageGrade !== 1 && input.activityType !== 'REPORT' && /afiche/.test(text)
   const readingReport = input.secondaryLanguageGrade === 1 ? firstGenre === 'READING_REPORT' : /informe de lectura/.test(text)
   if (readingReport && input.secondaryLanguageGrade === 1) {
     const activity = input.activityType ?? detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) ?? 'READING_REPORT_WRITING'

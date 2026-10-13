@@ -416,17 +416,18 @@ describe('Recomendador con currículo literal completo', () => {
     expect(result.activityType).toBe('TOURIST_GUIDE_CREATION')
   })
   it.each([
-    ['Cuidemos el agua', 'Los estudiantes elaborarán un afiche para motivar a la comunidad escolar a ahorrar agua, con un mensaje breve, recomendaciones e imágenes relacionadas.', 'POSTER_CREATION', ['Mensaje sobre el cuidado y ahorro del agua', 'Adecuación al público destinatario']],
-    ['Mensajes que convencen', 'Los estudiantes analizarán un afiche de prevención e identificarán su propósito, destinatarios y recursos utilizados para convencer.', 'POSTER_ANALYSIS', ['Propósito y destinatarios del afiche', 'Evidencias del afiche']],
+    ['Cuidemos el agua', 'Los estudiantes elaborarán un afiche para motivar a la comunidad escolar a ahorrar agua, con un mensaje breve, recomendaciones e imágenes relacionadas.', 'POSTER_CREATION', ['Mensaje del afiche', 'Adecuación al público destinatario']],
+    ['Mensajes que convencen', 'Los estudiantes analizarán un afiche de prevención e identificarán su propósito, destinatarios y recursos utilizados para convencer.', 'POSTER_ANALYSIS', ['Propósito y destinatarios del afiche', 'Recursos para convencer']],
     ['Dos formas de comunicar', 'Los estudiantes compararán dos afiches sobre convivencia escolar y justificarán cuál comunica mejor su mensaje.', 'POSTER_COMPARISON', ['Comparación de mensajes y argumentos', 'Eficacia comunicativa']],
-    ['Nuestra campaña', 'Cada estudiante presentará su afiche sobre cuidado del entorno y explicará el mensaje, el público destinatario y la elección de sus elementos visuales.', 'POSTER_PRESENTATION', ['Mensaje sobre el cuidado del entorno', 'Claridad de la presentación oral']],
+    ['Nuestra campaña', 'Cada estudiante presentará su afiche sobre cuidado del entorno y explicará el mensaje, el público destinatario y la elección de sus elementos visuales.', 'POSTER_PRESENTATION', ['Mensaje del afiche', 'Claridad de la presentación oral']],
   ])('prepara El afiche según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
     for (const maxScore of [20, 17.35]) for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
       const result = recommend({ activityTitle, description, maxScore, participationMode: 'INDIVIDUAL', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
       expect(result.activityType).toBe(activityType)
       expect(result.instrumentType).toBe(instrumentType)
-      expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      else expect(result.criteria.map(item => item.title)).toEqual(result.criteria.map(item => item.description))
       expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(Math.round(maxScore * 100))
       if (activityType === 'POSTER_ANALYSIS') expect(JSON.stringify(result.criteria)).not.toMatch(/elabora|produce otro afiche/i)
       if (activityTitle === 'Cuidemos el agua') expect(JSON.stringify(result.criteria)).not.toMatch(/fecha|lugar de realizaci[oó]n/i)

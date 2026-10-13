@@ -1694,9 +1694,9 @@
           "extractionStatus": "EXTRAÍDO",
           "engineConnection": "PENDING",
           "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "serviceVerification": "NORMAL_REAL_LOGIN_64_PROPOSALS_7_REGRESSIONS_FOCUSED_ANALYSIS_PASSED",
+          "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_CREATION_SAVE_REOPEN_PASSED",
+          "pending": "Focused grammar, requested event details, further action filtering and additional authored candidates. Not complete secondary coverage.",
           "procedures": [
             {
               "id": "e391ba43-d01f-56b5-969c-625e7c715d49",
@@ -1722,11 +1722,12 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "EXISTING_PENDING_REAUDIT",
+          "implementation": "PARTIAL_FOUR_ACTIVITY_FAMILIES_SHARED_PROVIDER",
           "automatedVerification": "NOT_RUN",
           "manualVerification": "NOT_RUN",
           "applicationVerification": "NOT_RUN",
-          "report": "avance.md"
+          "report": "afiche-1-reauditoria.md",
+          "catalogVersion": "evaluation-2026.15"
         },
         {
           "id": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",

@@ -1,5 +1,11 @@
 # Continuación del encargo completo
 
+## Bloque más reciente: afiche 1.º (.15)
+
+Proveedor compartido para creación, análisis, comparación y presentación; progresiones por acción, imagen o símbolo como alternativas, sin preguntas ni gráficos obligatorios ausentes de la consigna. Servicio normal: 64 propuestas, siete regresiones, un análisis focalizado. Cuatro formatos de creación guardados y reabiertos en navegador; rúbrica/escala 17,35, cotejo/ponderada 20, textos manuales y completar celda preservados. Identidades, plantilla, ámbito y snapshots verificados por lectura HTTP real. Catálogo .15 solo local, .14 archivado y releases anteriores intactos. [Informe y límites](afiche-1-reauditoria.md).
+
+Backend 1.129; frontend suite completa 686 y prueba final del proveedor 49; inventario siete. Builds backend/frontend y Cloudflare dry-run aprobados. Pendiente de este tema: gramática focalizada, eventos solicitados, más candidatos y recorridos visuales de las otras tres familias. No equivale a completar Lengua 1.º ni secundaria. Continuar con cuento policíaco en PDF 73, después caligrama PDF 74 y el orden de `avance.md`.
+
 ## Bloque más reciente: composición y filas (.14)
 
 Commit funcional publicado: `2bcad9b4a42263a2fab1480f7a47abe48f89d0b0`, confirmado en `origin/amplia-instrumentos-secundaria` de `https://github.com/thebuuba/Proyecto-educativo-v3.git`. Backend y frontend locales reiniciados con ese código; health confirma dicho commit, `dirty=false` al arranque y catálogo .14. Evidencia `evidencias/entorno-catalogo14-ejecutado.json`. Siete controles de navegador persistidos; el último exige ámbito/versión resueltos. Los dos controles anteriores sin ámbito se conservan como prueba del fallo de resolución DRAFT corregido.

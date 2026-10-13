@@ -1,5 +1,9 @@
 # Avance durable — cobertura secundaria
 
+## Bloque .15: afiche 1.º
+
+Proveedor compartido en servicio y alternativa: cuatro familias con progresiones específicas y requisitos de la descripción. 64 propuestas HTTP normales, siete regresiones y análisis focalizado. Cuatro formatos de creación guardados/reabiertos en navegador con textos manuales, celda completada, IDs, plantilla, ámbito y puntos exactos. Catálogo .15 local; .14 archivado. Backend 1.129, frontend 686 en suite completa más 49 del proveedor final, inventario siete; builds backend/frontend y Cloudflare dry-run aprobados. [Informe y pendientes](afiche-1-reauditoria.md). Ninguna asignatura completa. Siguiente: cuento policíaco 1.º PDF 73, luego caligrama y pendientes registrados.
+
 ## Bloque .14: composición y edición por fila
 
 Corrección compartida del título concatenado, candidatos genéricos adicionales, identidad/procedencia y completar únicamente campos vacíos de una fila. Progresión de quinto nivel con confirmación; seis niveles sin evidencia permanecen manuales. Adición con el peso relativo del candidato. Matrices 5.º y control original de trigonometría 6.º conectados al mismo proveedor del servicio/alternativa. Se registró la discrepancia de fuente de 5.º para la consigna trigonométrica de 6.º. Servicio normal: 32 propuestas matemáticas y un candidato extra solicitado. Navegador: cuatro instrumentos de matrices, ponderada automática de trigonometría y un sexto control del peso relativo, guardados/reabiertos, con ediciones conservadas; cinco snapshots históricos intactos. Backend 1.094 / frontend 638 / inventario siete. [Informe y límites](composicion-y-filas.md). Ninguna asignatura completa; siguiente afiche 1.º.

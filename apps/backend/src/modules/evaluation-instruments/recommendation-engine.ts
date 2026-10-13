@@ -1,6 +1,6 @@
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
 import { newsCriteria } from './authored/language/news-grade-1'
-import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, firstSecondaryLanguageGenre } from '@aula/shared'
+import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { touristGuideCriteria } from './authored/language/tourist-guide-grade-1'
 import { posterCriteria } from './authored/language/poster-grade-1'
@@ -300,7 +300,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     && ['NEWSCAST', 'NEWS_ANALYSIS', 'NEWS_COMPARISON', 'NEWS_WRITING', 'REPORT', 'DEBATE'].includes(activity.id))
     && spanishLanguage && /\bnotici(?:a|as|ero)\b/.test(text)
   const touristGuideModule = firstGenre === 'TOURIST_GUIDE' && isFirstGradeGuideActivity(activity.id)
-  const posterModule = firstGenre === 'POSTER' && activity.id !== 'REPORT'
+  const posterModule = firstGenre === 'POSTER' && isFirstGradePosterActivity(activity.id)
   const readingReportModule = firstGenre === 'READING_REPORT'
   const detectiveModule = firstGenre === 'DETECTIVE_STORY' && activity.id !== 'REPORT'
   const calligramModule = firstGenre === 'CALLIGRAM' && activity.id !== 'REPORT'
