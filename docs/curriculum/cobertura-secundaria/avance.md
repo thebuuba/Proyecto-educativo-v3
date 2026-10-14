@@ -1,5 +1,11 @@
 # Avance durable — cobertura secundaria
 
+## Bloque vigente: procedimientos y escalas (.22)
+
+Bloque .21/.22: 19 procedimientos explícitos conectados, 600 comprobaciones HTTP, 114 controles adicionales de escala por regularidad/grado y cuatro formatos guardados/reabiertos con persistencia real. Descripción unificada a 10.000 caracteres. Backend 1.470 / frontend 1.201; builds obligatorios aprobados. 28 snapshots históricos y cuatro instrumentos completos de .20 conservados (36 actuales). [Informe y evidencias](lengua-1-procedimientos-y-escala.md).
+
+**1.º continúa parcial.** Cerrar cotejo de cláusulas por familia: grados del adjetivo, puntuación específica en guía/informe, planificación sin esquema obligatorio y recursos lingüísticos en producción oral. 2.º–6.º pendientes; no equivale a cobertura completa. El siguiente trabajo sigue en 1.º; después continuar 2.º→6.º sin pedir autorización por tema.
+
 ## Encargo vigente: Lengua común 1.º–6.º, en orden
 
 El adjunto a7fdea3e reactiva expresamente la ampliación de Lengua común. Bloque .20: 55 subtemas y 34 familias de 1.º conectados y comprobados en cuatro formatos; 660 solicitudes HTTP y 12 regresiones posteriores, más cuatro guardados/reabiertos en navegador local con textos contrastados contra base. Puntuación antes/después unificada, propósito de instrumento compartido y diálogo transaccional de cambio de actividad. Backend 1.390 / frontend 971 y builds obligatorios aprobados; 28 snapshots históricos intactos (32 actuales). [Informe, ejemplos y evidencias](lengua-1-contratos-y-editor.md).

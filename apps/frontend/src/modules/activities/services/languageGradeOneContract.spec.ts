@@ -4,9 +4,11 @@ import {editableFallbackRecommendation,recommendationToFields} from './instrumen
 import {scoreInstrumentFields} from './instrumentScoring'
 import {automaticInstrumentType} from '../utils/automaticInstrumentType'
 import {detectSecondaryLanguageActivity,type InstrumentType} from '@aula/shared'
+import procedures from '../../../../../../data/evaluation-instruments/language-grade-one-procedure-contracts.json'
 
 const context={level:'SECONDARY' as const,grade:1,cycle:1,subjectCode:'LEN',subjectName:'Lengua Española',optativeExitName:null,modalityCode:'academic'}
 const descriptions=[
+  ...procedures.map(p=>p.description),
   'Analiza en una noticia los sinónimos y las siglas con ejemplos del texto.',
   'Investiga los datos del hecho que aparece en la noticia y documenta su origen.',
   'Elabora una guía turística con mapas y fotografías de los lugares. Revisa el borrador y publica la versión final.',

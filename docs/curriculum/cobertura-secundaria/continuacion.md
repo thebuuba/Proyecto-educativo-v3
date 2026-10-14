@@ -1,5 +1,11 @@
 # Continuación del encargo completo
 
+## Bloque vigente: procedimientos y escalas (.22)
+
+Bloque .21/.22: 19 procedimientos explícitos conectados, 600 comprobaciones HTTP, 114 controles adicionales de escala por regularidad/grado y cuatro formatos guardados/reabiertos con persistencia real. Descripción unificada a 10.000 caracteres. Backend 1.470 / frontend 1.201; builds obligatorios aprobados. 28 snapshots históricos y cuatro instrumentos completos de .20 conservados (36 actuales). [Informe y evidencias](lengua-1-procedimientos-y-escala.md).
+
+**1.º continúa parcial.** Cerrar cotejo de cláusulas por familia: grados del adjetivo, puntuación específica en guía/informe, planificación sin esquema obligatorio y recursos lingüísticos en producción oral. 2.º–6.º pendientes; no equivale a cobertura completa. El siguiente trabajo sigue en 1.º; después continuar 2.º→6.º sin pedir autorización por tema.
+
 ## Encargo vigente 13/10: Lengua Española común 1.º–6.º, en ejecución
 
 El adjunto a7fdea3e sustituye la pausa del encargo anterior. Ejecutar grados en orden, sin subagentes, con commit/push por bloque; no desplegar ni modificar instrumentos históricos. Plan: `docs/superpowers/plans/2026-10-13-lengua-comun-seis-grados.md`.

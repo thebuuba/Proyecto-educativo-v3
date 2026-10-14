@@ -4,6 +4,7 @@ import { secondaryTopicCriteria, type ContextualTopicCriterion } from './seconda
 import { detectTopicActivity } from './secondary-language-topics'
 import type { SecondaryLanguageTopic } from './secondary-topic-types'
 import { formatAuthoredCriteria } from './authored-instrument-format'
+import { adaptLanguageScale } from './language-scale'
 
 export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTopic, input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType
@@ -15,7 +16,7 @@ export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTop
 }
 
 export function editableAuthoredRecommendation(authored: ContextualTopicCriterion[], input: {
-  activityTitle: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string
+  activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string
 }, activity: string, moduleName: string): InstrumentRecommendation {
   authored = formatAuthoredCriteria(authored, input.instrumentType)
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
@@ -23,7 +24,7 @@ export function editableAuthoredRecommendation(authored: ContextualTopicCriterio
   const weights = authored.map(criterion => criterion.weight)
   const points = distributeScoreUnits(Math.round(input.maxScore * 100), input.instrumentType === 'lista-ponderada'
     ? distributeScoreUnits(10000, weights) : weights)
-  return {
+  const proposal: InstrumentRecommendation = {
     kind: 'RECOMMENDATION', catalogVersion: 'editable-fallback-v1', instrumentType: input.instrumentType,
     confidence: 'LOW', activityType: activity, evidenceTypes: ['KNOWLEDGE', 'PRODUCT', 'PERFORMANCE'], participationMode: input.participationMode,
     curriculumVersionId: null, curriculumScopeId: null, selectedCurriculumElements: [],
@@ -39,4 +40,5 @@ export function editableAuthoredRecommendation(authored: ContextualTopicCriterio
     internalTrace: { mappingStatus: 'FALLBACK', reasons: [`module=${moduleName}`, 'Adaptación evaluativa editable; no constituye aprobación curricular.'],
       ruleId: 'editable-topic', activityTypeOrigin: input.activityType ? 'EXPLICIT' : 'DETECTED', ranking: [], curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] },
   }
+  return /^(?:lengua-|novela-)/.test(moduleName) ? adaptLanguageScale(proposal,input.description??'') : proposal
 }

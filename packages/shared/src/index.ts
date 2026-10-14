@@ -15,10 +15,13 @@ export * from './secondary-news-grade-two'
 export * from './secondary-science'
 import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask } from './secondary-language-topics'
 import {resolveEvaluationTask} from './evaluation-task-contract'
+import {affirmativeLanguageTask} from './language-feature-criteria'
 export * from './evaluation-task-contract'
 export * from './secondary-novel-analysis'
 export * from './action-content-criteria'
 export * from './language-instrument-intent'
+export * from './language-procedure-criteria'
+export const ACTIVITY_DESCRIPTION_MAX_LENGTH = 10_000
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
 
 export function firstSecondaryLanguageGenre(title: string, description: string) {
@@ -28,7 +31,7 @@ export function firstSecondaryLanguageGenre(title: string, description: string) 
         : /guias? turisticas?/.test(text) ? 'TOURIST_GUIDE'
           : /afiches?/.test(text) ? 'POSTER'
             : /noticias?|noticiero/.test(text) ? 'NEWS' as const : null
-  return find(normalizedTask(description)) ?? find(normalizedTask(title))
+  return find(affirmativeLanguageTask(description)) ?? find(normalizedTask(title))
 }
 
 /** Deterministic classification shared by the service and its local editable fallback. */
@@ -38,7 +41,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
   if (context?.level !== 'SECONDARY' || ![1, 2].includes(context.grade) || context.subjectCode.trim().toUpperCase() !== 'LEN') return null
   const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
   const titleText = normalize(title)
-  const task = normalizedTask(description)
+  const task = affirmativeLanguageTask(description)
   const both = `${titleText} ${task}`
   const module = context.grade === 2 ? /noticias?|noticiero/.test(both) ? 'NEWS' : null
     : firstSecondaryLanguageGenre(title, description)
@@ -47,11 +50,13 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
     const contract=resolveEvaluationTask('',value)
     if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return `${module}_ANALYSIS`
     if (module !== 'READING_REPORT' && contract.product === 'REPORT') return 'REPORT'
+    if (/parafras|propias palabras|\bresum(?:iran|ir|e)\b|predicci|anticip|inferir|inferiran/.test(value)
+      && !/\b(?:redact\w*|escrib\w*|elabor\w*|crearan)\s+(?:(?:un|una|el|la)\s+)?(?:noticia|guia|afiche|cuento|caligrama|informe)\b/.test(value)) return `${module}_ANALYSIS`
     if (module === 'NEWS') {
       if (/\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
       if (/\b(?:debat\w*|debates?)\b/.test(value)) return 'DEBATE'
     }
-    const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon\w*)\b/.test(value)
+    const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon\w*)\b/.test(value)
     const comparing = /\b(?:compar(?:ar\w*|an|a|en|ando)|contrast\w*|comparacion entre)\b/.test(value)
     const oralAction = contract.oral || /\bexposicion\b/.test(value)
     const presenting = oralAction
@@ -193,6 +198,7 @@ export { completeFirstGradeNewsCriteria as firstGradeNewsCriteria, completeFirst
   completeFirstGradeDetectiveCriteria as firstGradeDetectiveCriteria, completeFirstGradeCalligramCriteria as firstGradeCalligramCriteria,
   firstGradeLanguageFeatures, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity } from './secondary-language-grade-one-complete'
 export { findSecondaryMathTopic, secondaryMathCriteria, secondaryMathModules } from './secondary-math'
+export {adaptLanguageScale} from './language-scale'
 export type EntityStatus = 'active' | 'inactive'
 
 export function splitFullName(fullName: string, lastNameFallback = 'Sin apellido') {

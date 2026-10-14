@@ -6,6 +6,7 @@ import {firstGradeDetectiveCriteria as detective} from './secondary-detective-gr
 import {firstGradeCalligramCriteria as calligram} from './secondary-calligram-grade-one'
 import {normalizedTask} from './evaluation-task-text'
 import {explicitWritingProcess, languageFeatureCriterion, requestedLanguageFeatures, type LanguageFeature} from './language-feature-criteria'
+import {firstGradeLanguageProcedureFeatures,firstGradeLanguageFeatureTerms,languageReadingProcedures,languageWritingProcedures,languagePlaceClassification} from './language-procedure-criteria'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import {isFirstGradeNewsActivity as supportsNews} from './secondary-news-grade-one'
 import {isFirstGradeGuideActivity as supportsGuide} from './secondary-guide-grade-one'
@@ -107,7 +108,7 @@ function complete(genre:string,activity:string,description:string,base:Contextua
   const analyze=activity.includes('ANALYSIS') || ['ANALYSIS','OBSERVATION','REPORT'].includes(activity) && genre!=='informe de lectura'
   const recitation=activity.includes('RECITATION')
   const production=/WRITING|CREATION|WRITTEN_PRODUCTION/.test(activity) || activity==='REPORT' && genre==='informe de lectura'
-  const features=requestedLanguageFeatures(firstGradeLanguageFeatures[genre],description)
+  const features=requestedLanguageFeatures([...firstGradeLanguageFeatures[genre].map(feature=>({...feature,terms:firstGradeLanguageFeatureTerms[genre]?.[feature.id]??feature.terms})),...firstGradeLanguageProcedureFeatures[genre]],description)
   let rows=base
   if(compare) {
     const focused=requestedLanguageFeatures(comparisonFocus[genre],description)
@@ -199,6 +200,23 @@ function complete(genre:string,activity:string,description:string,base:Contextua
   if(genre==='afiche' && production && /fecha|lugar|horario|hora|destinatarios|publico/.test(task) && /evento|actividad|convocatoria/.test(task)) {
     const data=[/fecha/.test(task)?'fecha':'',/lugar/.test(task)?'lugar':'',/horario|hora/.test(task)?'horario':'',/destinatarios|publico/.test(task)?'destinatarios':''].filter(Boolean).join(', ')
     rows.push({templateId:'len-1-poster-event',title:'Información de la convocatoria',weight:3,observable:`Comunica ${data} del evento sin contradicciones con la convocatoria.`,progressionLevels:[`Incluye ${data} y permite reconocer a quién se convoca y cómo participar.`,`Incluye los datos solicitados; una referencia requiere aclaración.`,`Omite un dato solicitado y dificulta decidir cómo participar.`,`Los datos del afiche contradicen la convocatoria del evento.`,`No comunica los datos solicitados para la convocatoria.`]})
+  }
+  if(analyze) {
+    const reading=languageReadingProcedures(description,scope,genre)
+    if(reading.length) {
+      if(!/analiz\w*.*(?:estructura|narrador|personajes|recursos)|identific\w*.*(?:estructura|narrador|personajes|recursos)/.test(task)) rows=rows.filter(row=>row.templateId.includes('-feature-'))
+      rows.push(...reading)
+    }
+  }
+  if(production) {
+    const writing=languageWritingProcedures(description,scope,genre)
+    if(/\bplanific\w*\b/.test(task)&&!/\b(?:redact\w*|escrib\w*|elabor\w*|crearan)\b/.test(task)) rows=rows.filter(row=>row.templateId.includes('-feature-'))
+    rows.push(...writing)
+  }
+  if(genre==='guía turística') {
+    const classification=languagePlaceClassification(description)
+    if(classification.length && analyze && !/analiz\w*.*(?:estructura|recursos|proposito)/.test(task)) rows=rows.filter(row=>/-feature-|-procedure-/.test(row.templateId))
+    rows.push(...classification)
   }
   return rows
 }

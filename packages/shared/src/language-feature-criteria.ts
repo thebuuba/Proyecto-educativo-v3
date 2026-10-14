@@ -10,7 +10,7 @@ export type LanguageFeature = {
   terms?: [string, string][]
 }
 
-const affirmativeLanguageTask = (description: string) => normalizedTask(description
+export const affirmativeLanguageTask = (description: string) => normalizedTask(description
   .normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
   .replace(/\b(?:sin|no se (?:pide|requiere)|no es necesario)\b[^.;]*/g, ''))
 

@@ -4,6 +4,15 @@ import { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instru
 
 describe('contextual activity types at the HTTP validation boundary', () => {
   for (const Dto of [InterpretActivityDto, RecommendInstrumentDto]) {
+    it(`${Dto.name} accepts the editor's 10000 characters and rejects longer text`, () => {
+      const dto = Object.assign(new Dto(), {sectionSubjectId:'b61b4262-46a7-4c40-8772-4c7b4c0d0834',
+        activityTitle:'Actividad',description:'a'.repeat(10000),
+        ...(Dto===RecommendInstrumentDto?{participationMode:'INDIVIDUAL',maxScore:20}:{}),
+      })
+      expect(validateSync(dto)).toEqual([])
+      dto.description+='a'
+      expect(validateSync(dto).some(error=>error.property==='description')).toBe(true)
+    })
     it.each(['ANALYSIS', 'COMPARISON', 'REPORT', 'ORAL_PRESENTATION'])(`${Dto.name} accepts %s selected by the teacher`, activity => {
       const dto = Object.assign(new Dto(), { sectionSubjectId: 'b61b4262-46a7-4c40-8772-4c7b4c0d0834',
         activityTitle: 'Actividad', pedagogicalActivityType: activity,

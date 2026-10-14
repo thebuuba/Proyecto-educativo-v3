@@ -1,0 +1,4157 @@
+{
+  "verifiedAt": "2026-10-14T00:40:20.542Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "521a3f153ef5ee2632db9433bce6a32b8c85ce5c",
+      "dirty": true,
+      "startedAt": "2026-10-14T00:31:30.118Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.21"
+    }
+  },
+  "procedureContracts": 19,
+  "subtopics": 55,
+  "results": [
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "La noticia",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8b098f5ce7c806933c3aab7823b72057c695cb41cde7998c89db2a45214a3af4"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8b098f5ce7c806933c3aab7823b72057c695cb41cde7998c89db2a45214a3af4"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8b098f5ce7c806933c3aab7823b72057c695cb41cde7998c89db2a45214a3af4"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "b3f7f64e59f58a183ee997bc1c176969aff305e4a5cd66410058e7a517c2dc05"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "c67a1f1db824211f8ad6d01ac290282c81cd65bff17a98a45a67fede564749a3"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "La noticia",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "9e5c63adf4aff7f2d82af4694d03f685d8e40b75af0b80986b452ef823557aca"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "9e5c63adf4aff7f2d82af4694d03f685d8e40b75af0b80986b452ef823557aca"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "9e5c63adf4aff7f2d82af4694d03f685d8e40b75af0b80986b452ef823557aca"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "579ddadb6d03dd10da0b577590841368b017b7b156958e36449ac02829d0daf1"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "9a8125ba3e5821fdcbbdcbfd7e00abe38055db07417c7f8f17a4b62e0f9d5955"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "La noticia",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "54042dc8fb6d289713fc08bafe28e38334ecc9503a496a07643144f8262e0edc"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "54042dc8fb6d289713fc08bafe28e38334ecc9503a496a07643144f8262e0edc"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "54042dc8fb6d289713fc08bafe28e38334ecc9503a496a07643144f8262e0edc"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "3a539ba95d4aa7b630531c29590303fb764335f78d841f106481275c5a6071a2"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "bb2742eb3a4cb9b3a1ebd0a2fd013aec52b6163343ab5daedcf918202ed22f85"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "La noticia",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "95548a50a4bbae879aebaefe7f05634a2d483b26f9496f846594111a1064758a"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "95548a50a4bbae879aebaefe7f05634a2d483b26f9496f846594111a1064758a"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "95548a50a4bbae879aebaefe7f05634a2d483b26f9496f846594111a1064758a"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "434b08e912f7591abde9508242898a8350942fef9b5caedaef22771d4e789dd9"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Escucharán una noticia y parafrasearán sus hechos sin redactar otra noticia.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "7892e0127c027ff86e602412fbe94bd091ad0551ddb54a4a30b2618a88a6d630"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "La noticia",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8d02d023957b895c9b9531f5f78e70e6b0519a53441a423d101bf6bf74d77d53"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8d02d023957b895c9b9531f5f78e70e6b0519a53441a423d101bf6bf74d77d53"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8d02d023957b895c9b9531f5f78e70e6b0519a53441a423d101bf6bf74d77d53"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "77b396a67360f7daa5437fb4bfcd7f816981bdd1ae13d5ba73f069db7f9302da"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "f1aae51f1740455bfd32f3e684e879b74b2fe8ba9acefba708d54113dc1e0269"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "La noticia",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "070d9f22b3d2d518120d07740649cb372420501306adbcffa8837659f58b2350"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "070d9f22b3d2d518120d07740649cb372420501306adbcffa8837659f58b2350"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "070d9f22b3d2d518120d07740649cb372420501306adbcffa8837659f58b2350"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "4f548d56b017dabecf96ca051eb443eb1f720be5e7f2947f1001bc0e1f7f46ac"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "e1f21fbff6c7c378891b6838335bcab9acfda6babc51741df29298793a4a5af4"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "La noticia",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "0a6a7d2927de4abea1a75b81b1eb2a2e4097d91b063d90f78e7b76419cdd4370"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "0a6a7d2927de4abea1a75b81b1eb2a2e4097d91b063d90f78e7b76419cdd4370"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "0a6a7d2927de4abea1a75b81b1eb2a2e4097d91b063d90f78e7b76419cdd4370"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "d13a46f08a5d1179e29466e0ac1bacee479a1695c3ced0c4e6790632e8ddafd7"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "e294d4550796b335b9ca05505cd4df3f2351db5c99a21bb5ec9263e4e898f3e5"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "La noticia",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "0113bd8209c0382c85bc710c54257e7c49e14ace9b94165c1f8970095eb37b13"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "0113bd8209c0382c85bc710c54257e7c49e14ace9b94165c1f8970095eb37b13"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "0113bd8209c0382c85bc710c54257e7c49e14ace9b94165c1f8970095eb37b13"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "979a6d441e28f464c27f02394182df2fae5d1fa3999081c65ba068862d48adc2"
+    },
+    {
+      "procedure": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "description": "Anticiparán el contenido de una noticia a partir del titular y comprobarán sus predicciones después de leer.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "b538347e55bed3e747dca46c2d5118a4c7cd1030feeb4de8ed53fafa6bda8471"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "La noticia",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "c26b9a7dee3192b25021ff940db113a7d48c582dc4d42427d56f812731483f04"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "c26b9a7dee3192b25021ff940db113a7d48c582dc4d42427d56f812731483f04"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "c26b9a7dee3192b25021ff940db113a7d48c582dc4d42427d56f812731483f04"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "43a9e0501ca9933fbc1e3b2f54c87bccfa8c1fbbe310ed12b747f413967dffdb"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "9ff2fb42c84d36df1813bd4f96b065381dadb175ba91159d22566ea95a5c57c5"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "La noticia",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "a6d01ebc71f053818e86f231bae0d5b5246454f64bfb27a907926a7733e9191c"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "a6d01ebc71f053818e86f231bae0d5b5246454f64bfb27a907926a7733e9191c"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "a6d01ebc71f053818e86f231bae0d5b5246454f64bfb27a907926a7733e9191c"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "139c436dafdb270c70da3f250101622113ecfc30cd8c96365ce0271de91756fe"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "a1817fc13bfed86aa0b8ec7dcd5b16079e3af05e9432a9e3ac7cdff9667deee5"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "La noticia",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "d00c4cbe87eabbf3971a3825bbf362aacee8b368d68a97db4696ecf5b5f83f6f"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "d00c4cbe87eabbf3971a3825bbf362aacee8b368d68a97db4696ecf5b5f83f6f"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "d00c4cbe87eabbf3971a3825bbf362aacee8b368d68a97db4696ecf5b5f83f6f"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "c5b61892458dd5374060db7ccad235635800dfc10741d176275bb3c7f9f702f3"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "ad5c92f594f5b124d6b5c3a703bb44ec5794390f29edbad0b7deb10c290fa373"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "La noticia",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "feef81ae4ff94e8e50108ba9f038834387d9e95d53ffe0322970540e0ab73ecd"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "feef81ae4ff94e8e50108ba9f038834387d9e95d53ffe0322970540e0ab73ecd"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "feef81ae4ff94e8e50108ba9f038834387d9e95d53ffe0322970540e0ab73ecd"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "71f391171ffd35a1a32a84bd76d0935f0fa79097beff04c0d22902cd81bc3c2c"
+    },
+    {
+      "procedure": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "description": "Inferirán el significado de palabras desconocidas de una noticia a partir del contexto.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "a69b722886007257c3a71e402c1582994976936a5cf9426062a541b9813ba419"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "La guía turística",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "c0a77462b6b72a684e2950b363f4775bb2110eb88c83386cccb2b902c9fcb584"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "c0a77462b6b72a684e2950b363f4775bb2110eb88c83386cccb2b902c9fcb584"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "c0a77462b6b72a684e2950b363f4775bb2110eb88c83386cccb2b902c9fcb584"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "578a93ee378641a490878f673fda28ec888cdfbb01bae4bbe706685e2046438e"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "09d28b41740c307f9630270088e2dfd45b1babf3a2ffc84bcae15854ee34e8de"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "La guía turística",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "dff67e2e5730d57a7ac431c77d72fc0b215e9f8de60708a51092a086254a1d0f"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "dff67e2e5730d57a7ac431c77d72fc0b215e9f8de60708a51092a086254a1d0f"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "dff67e2e5730d57a7ac431c77d72fc0b215e9f8de60708a51092a086254a1d0f"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "547d86756999aff2ec931f24ccd6b9d8ca1b881101bbd48d9f0e41b0202ba92c"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "08225af3fff493e391da865bf7ea8a5c9a8ceef4d48081d51a91c033cedd908e"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "La guía turística",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "85601a908147f913b7a629e1841fb5a4cd3dd9e2051be79cbc774602bce371af"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "85601a908147f913b7a629e1841fb5a4cd3dd9e2051be79cbc774602bce371af"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "85601a908147f913b7a629e1841fb5a4cd3dd9e2051be79cbc774602bce371af"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "06d88e7a83bcf6c5b28fa6344fac420a141ee41805bf9a3540995a90e3ea7d33"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "4229d9041f381ba6e866436f687c40e41a5cb9652f7f1717a58bd010b7aea2bb"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "La guía turística",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "cd176c82dc184e02bc247d085cabed001d847ed7265b3d8feb8e8d102165b0eb"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "cd176c82dc184e02bc247d085cabed001d847ed7265b3d8feb8e8d102165b0eb"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "cd176c82dc184e02bc247d085cabed001d847ed7265b3d8feb8e8d102165b0eb"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "1122d6011a6d1f33f83bb1c5f79a3ebf62cda9fd2328e014c0fd2d01ebd9d44f"
+    },
+    {
+      "procedure": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "description": "Leerán una guía turística y clasificarán los lugares descritos según su función.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "e9897d8b9d51971eb16c5e14c3c17faf4304c23264399496a8d61636df8df855"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "La guía turística",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "6736cee81ede5290495bee9dcf7a2e334fafc69463ecfba2f35331c03fc0469b"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "6736cee81ede5290495bee9dcf7a2e334fafc69463ecfba2f35331c03fc0469b"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "6736cee81ede5290495bee9dcf7a2e334fafc69463ecfba2f35331c03fc0469b"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "c1e4a56be523f65528a97089621660992823ec2a19d81fb3f57c8e7063a47807"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "304af900ac7b441d7704c80d054791d6481d41521a0e1df47f7c0c0c31d03062"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "La guía turística",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "983ad9c98e7eb89141bbf67314ecd29926c7519ddc176914eeebcdfe3568f1b1"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "983ad9c98e7eb89141bbf67314ecd29926c7519ddc176914eeebcdfe3568f1b1"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "983ad9c98e7eb89141bbf67314ecd29926c7519ddc176914eeebcdfe3568f1b1"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "a215679e562aa25b8cdad829c1da9d7e7b86416be96b0bf57ebdc9fcfa13687a"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "afb4c3f586847b24c37182a31adfc4aa3e40bf1edbc4aa89238ee1912b55c688"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "La guía turística",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "a010b9c0ace9b012c44870ef424f58c83c1e439191a8b2e5c520fa5fc54f2201"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "a010b9c0ace9b012c44870ef424f58c83c1e439191a8b2e5c520fa5fc54f2201"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "a010b9c0ace9b012c44870ef424f58c83c1e439191a8b2e5c520fa5fc54f2201"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "cd0cadd86cd2046c0e257c7d12a636975bf0f179894a91b0d8fa442c46060e89"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "9711daa9972718d8b3bf306fef844b7aab8eaa935645b17e83c8e020b276a499"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "La guía turística",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "c667a011b75f0d46c56eb9d28245a2732b736bdee5b1298d265a2ba6d90333a5"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "c667a011b75f0d46c56eb9d28245a2732b736bdee5b1298d265a2ba6d90333a5"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "c667a011b75f0d46c56eb9d28245a2732b736bdee5b1298d265a2ba6d90333a5"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "230b0ff04a2c901ffb4159a7ea73c63656910ee29087abdf951b23ac8b554748"
+    },
+    {
+      "procedure": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "description": "Analizarán en una guía turística únicamente los conectores espaciales y temporales.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "f6c6387c17ac073a99697ab70335d2126a6bfd4f11e497d6900b61bf779b1c7e"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "La guía turística",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "d44b51f436e9ac92899b7287f366aa62e086eff3d7d019399f2b582ed712a4ba"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "d44b51f436e9ac92899b7287f366aa62e086eff3d7d019399f2b582ed712a4ba"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "d44b51f436e9ac92899b7287f366aa62e086eff3d7d019399f2b582ed712a4ba"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "5f0c8de2cf2baca72b667225062fe13b0fcc5f8f74626522eaf55afb002de40d"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "2c212480fe91fc49980d917a0abc1497afd6bbe149e802769e8b8ce3246af07d"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "La guía turística",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "d377f5080d0910b1421558891039bfc7eb63f55f9f7479303019f80733a4eb0f"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "d377f5080d0910b1421558891039bfc7eb63f55f9f7479303019f80733a4eb0f"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "d377f5080d0910b1421558891039bfc7eb63f55f9f7479303019f80733a4eb0f"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "e962dbcdf68237b53b38bb4a122c50096d7c7aba40e37b3fb03279df0acba921"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "e990894fa3f1bc3ac3a0eb8dcfa315f92f084f72096df22b5c6fce046f2ca05c"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "La guía turística",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "30d9a98d5d5b14eba57b8cb918414f488f84ae2bd2284453a96634d0d68eabe1"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "30d9a98d5d5b14eba57b8cb918414f488f84ae2bd2284453a96634d0d68eabe1"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "30d9a98d5d5b14eba57b8cb918414f488f84ae2bd2284453a96634d0d68eabe1"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "0faaf205b318710628f7fd23196d7bef55b544183e6362a443f6dad3508e1bc7"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "81d263e0c6c063f1ae5b1233c7b2410dfb01b4e81370728c088b59743f3c1a3f"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "La guía turística",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "666c13f15833f4c5168726a7459d019f3450a1dab358eaad2fe0c1bd27ef0943"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "666c13f15833f4c5168726a7459d019f3450a1dab358eaad2fe0c1bd27ef0943"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "666c13f15833f4c5168726a7459d019f3450a1dab358eaad2fe0c1bd27ef0943"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "50e1803a8afb16a58d2936b00d188733be77af2a4aedbedc476cd32a2fd0b17c"
+    },
+    {
+      "procedure": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "description": "Elaborarán una guía turística utilizando la descripción topográfica para situar los lugares.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "29a8fa48a4397e46a7dede9acc4668ebbf2fd821c3d7a0ca3b18910cd4305ea6"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "La guía turística",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "59d5872a5a3837eaaecb33daaa6ecbc2a393f309e1a04ff4523f34bd1f4c2796"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "59d5872a5a3837eaaecb33daaa6ecbc2a393f309e1a04ff4523f34bd1f4c2796"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "59d5872a5a3837eaaecb33daaa6ecbc2a393f309e1a04ff4523f34bd1f4c2796"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "c482e703a1d6882fc007993c0df70b5b432e83807bc78a0d36b5d72b9870100e"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "f19ff432236a2c1dae58f8dc977d6ecd28179ee5c85e80c763de43942f1fc14b"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "La guía turística",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "309fe67b265222c395e65ae1b499804333bccd9e8b2420f4d98ba19cc673fcdf"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "309fe67b265222c395e65ae1b499804333bccd9e8b2420f4d98ba19cc673fcdf"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "309fe67b265222c395e65ae1b499804333bccd9e8b2420f4d98ba19cc673fcdf"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "05e272fb074cf2fc1e466c5814926d81f512e76c07623d0408edcfb6538bf649"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "f1c3ce9db348006c27977e2c9cc91e94d17178274d382ba3d3741508d2c09393"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "La guía turística",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "b35d11a53deb039fbff5b310c6765bd882d5bb7c283690eb2bca531ee4c5c04e"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "b35d11a53deb039fbff5b310c6765bd882d5bb7c283690eb2bca531ee4c5c04e"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "b35d11a53deb039fbff5b310c6765bd882d5bb7c283690eb2bca531ee4c5c04e"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "f207340bc5e09081e8a6180f19be9eaa7e0140c9380da69889409bb283e2b5ff"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "9acb083d65fbf120075125990f80dcb3c4fb2a1a126c7cca7efdffa438081b8e"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "La guía turística",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "fbd63e3fcecdd410abbeb9720dfbc9c0a7e1a71fee1612034a9e8de958ed860e"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "fbd63e3fcecdd410abbeb9720dfbc9c0a7e1a71fee1612034a9e8de958ed860e"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "fbd63e3fcecdd410abbeb9720dfbc9c0a7e1a71fee1612034a9e8de958ed860e"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "db448e723b0156f1bad02efd4dd43172dd9eda0558018f239e0fa609d38b15f6"
+    },
+    {
+      "procedure": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "description": "Escucharán una guía turística y explicarán con sus propias palabras su sentido global.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "2efc38fff7adca75aad67650d55d5a80c707163503fb6a518d8a094b6d41e7ed"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "El informe de lectura",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "ee75b3afdf3f6b79aca5f810e512c399e0f58bb80e989693c351a6a6ecf41110"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "ee75b3afdf3f6b79aca5f810e512c399e0f58bb80e989693c351a6a6ecf41110"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "ee75b3afdf3f6b79aca5f810e512c399e0f58bb80e989693c351a6a6ecf41110"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "6d23527f7c5817438106290dabdd6489c9cff037ad8d4851f7885e6d948198d1"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "a7f2a92d90469fb744b427dcd148e1c8aa139e57bca6c5e619f37568461c5cf7"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "El informe de lectura",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "cc8071ee649a3356e8cd49f9eba61a5d1422901eade2d44aff5ff80b57c8630f"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "cc8071ee649a3356e8cd49f9eba61a5d1422901eade2d44aff5ff80b57c8630f"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "cc8071ee649a3356e8cd49f9eba61a5d1422901eade2d44aff5ff80b57c8630f"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "cfd52da6bc324d2386bebe778ffdd2f1e65d475a3a04a421268065ecf3670a49"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "83fdc8180c61366514d93cc0eb0f01fc3b2d8025c2f5c5cc5fe9f49f1cc24be8"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "El informe de lectura",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "6b208aafe83bb71504523ed300e13e522fa0b1b94442eadd0c0493edab394c5d"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "6b208aafe83bb71504523ed300e13e522fa0b1b94442eadd0c0493edab394c5d"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "6b208aafe83bb71504523ed300e13e522fa0b1b94442eadd0c0493edab394c5d"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "a20bc5757f196bb00a116c2cab98f4e0ce771e4d8aa119c2ad90559cadc8156b"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "5dfa50ef1e5471f95f2109deb71fafc597574bacc683b0f93623ef51ccfac75c"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "El informe de lectura",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "ee1a88ee2f02ac61528567c7fa737ca2b3a5ee9c8f4702e4d122b54c8a203cea"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "ee1a88ee2f02ac61528567c7fa737ca2b3a5ee9c8f4702e4d122b54c8a203cea"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "ee1a88ee2f02ac61528567c7fa737ca2b3a5ee9c8f4702e4d122b54c8a203cea"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "70d20c53bc294c4d2f91a538a1a20a6a0c229b0c041601a3c273a8a3798b3cc8"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Planificarán un informe de lectura con un esquema de escritura que organice las ideas del análisis.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "23a3ca2115e27dfd8e63e08ad820f8e1c0ed686e31d53ff0d2230dc35f549714"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "El informe de lectura",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "4d1955c5521383a075b973af4b7d52d27f490be2c4c9894b271e99937ab0b88c"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "4d1955c5521383a075b973af4b7d52d27f490be2c4c9894b271e99937ab0b88c"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "4d1955c5521383a075b973af4b7d52d27f490be2c4c9894b271e99937ab0b88c"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "c0aebbee0a85abc78d3bcbb77cbba0b48da72336b21d6c4baab2c4e7c591fb59"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "2017a563a292e9f4cc52985820608eebcfeb762d78a94d7c2cb1a36bb3d1e035"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "El informe de lectura",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "570e8467d587aaad950b8288fb5688aceaad6c836e7f043f4fcbec9677e6d326"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "570e8467d587aaad950b8288fb5688aceaad6c836e7f043f4fcbec9677e6d326"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "570e8467d587aaad950b8288fb5688aceaad6c836e7f043f4fcbec9677e6d326"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "946fb563e2d5edaf891a5754ca2ded9a53baa70704f5ce618c208cb156c2cfb6"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "6d1de8cf86dd7b2f371b7d3bdf4a053af79defb093b3950285a123422a4146bd"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "El informe de lectura",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "2bf4818acf9f81bc5f52cbadf3680fe3eb003f4d96a42a8dd8cdb65c1d603f96"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "2bf4818acf9f81bc5f52cbadf3680fe3eb003f4d96a42a8dd8cdb65c1d603f96"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "2bf4818acf9f81bc5f52cbadf3680fe3eb003f4d96a42a8dd8cdb65c1d603f96"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "1381272b5b80f092f5166091a0b44850fa5c03cfca445a0b2c3f931262873ef3"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "74b7bbf1c8cf7ab12dfdab08f79c27a29a139132858fcfa56adb6b7693e412cd"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "El informe de lectura",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "4783e6ce3b428c3f18cd210ae4dd1a818c6c607a23c72e203145b72849c09c5d"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "4783e6ce3b428c3f18cd210ae4dd1a818c6c607a23c72e203145b72849c09c5d"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "4783e6ce3b428c3f18cd210ae4dd1a818c6c607a23c72e203145b72849c09c5d"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "d521f62a0d5e10ec162fffa8ae164630970adc2c01c8f43234055553ddba33a8"
+    },
+    {
+      "procedure": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "description": "Leerán un informe de lectura y contrastarán sus predicciones iniciales con el contenido leído.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "bce616e4178dc03b242c79112afd56aedc86c022675745bbc73f3641d8e06258"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "El informe de lectura",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "89beb00913c1837340cf7805bc6e07ba4726e9bf7edc1780f46baa1d28111074"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "89beb00913c1837340cf7805bc6e07ba4726e9bf7edc1780f46baa1d28111074"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "89beb00913c1837340cf7805bc6e07ba4726e9bf7edc1780f46baa1d28111074"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "6803a55f57564e5d4a33d2526c644a31c3a9f01dcc5d8e2deeb82cf3957161da"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "726d79d9e54493bd38c0c31fdc957d3e88526d738b5f413e5c53747d116583e8"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "El informe de lectura",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "fb0c9a11d3dfa9dd4a86045f637c0f9e55c236954aa35df5763837e1a5501a62"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "fb0c9a11d3dfa9dd4a86045f637c0f9e55c236954aa35df5763837e1a5501a62"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "fb0c9a11d3dfa9dd4a86045f637c0f9e55c236954aa35df5763837e1a5501a62"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "f29cdaf920d81ef49d24a593f382adbf434f6264fefff56f33c896395e8f52fc"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "193c0590469522a1ce9e8022612f8fa34d4649a86295e5df746638c8862d9d9f"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "El informe de lectura",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "ed2ba7ae5f318a87223c4ed43798d75d55bb174f44307f0550fe6a9f58df0b09"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "ed2ba7ae5f318a87223c4ed43798d75d55bb174f44307f0550fe6a9f58df0b09"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "ed2ba7ae5f318a87223c4ed43798d75d55bb174f44307f0550fe6a9f58df0b09"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "8b7b2c7714d7d709fae1411317f08fd593934a80e7cc9c4140ec04aa82d7fb33"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "800846271e535839b6f94ca206ed94c518941c7f9ed8e7ab0a452ac1888e75c0"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "El informe de lectura",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "a74ecd4aebd9faf722e43b6ede2c503c369e11539e42be573461bf8f46472a24"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "a74ecd4aebd9faf722e43b6ede2c503c369e11539e42be573461bf8f46472a24"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "a74ecd4aebd9faf722e43b6ede2c503c369e11539e42be573461bf8f46472a24"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "5403838c171e0b44561a62dd9d15197ebf5c0f72599d21f47a9a96b0257d3db4"
+    },
+    {
+      "procedure": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "description": "Analizarán únicamente los conectores de adición de un informe de lectura.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "ba6247c7847b1cdaed05c28ab814a04557df140e01be2265f95826d29ef44a1e"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "El afiche",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "cc51c8c0ddf204a9ee37042856618115b6b0d2b52cf5d8e63194529f82c4c153"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "cc51c8c0ddf204a9ee37042856618115b6b0d2b52cf5d8e63194529f82c4c153"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "cc51c8c0ddf204a9ee37042856618115b6b0d2b52cf5d8e63194529f82c4c153"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "ee21ee575b510525b26e93487a7a01a7c4006e3c4ff3ed0fb7aff02fece788ae"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "444fdefde80da8fb5fcc0224579fd80fbd9213e8f4aa619b4affea0407951e10"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "El afiche",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "fdb2b06a45dc94a009f10ee99c9225e9e1e7887b377ad301383f3112c0e86c1e"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "fdb2b06a45dc94a009f10ee99c9225e9e1e7887b377ad301383f3112c0e86c1e"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "fdb2b06a45dc94a009f10ee99c9225e9e1e7887b377ad301383f3112c0e86c1e"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "ec0769eb7bca75b7672b7db8735705534167c9376e508de5980c80438b814568"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "04324b6c1bcc94449aa14cdbb9734a23f454c9f1cbf403f02997ad50e2954011"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "El afiche",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "3496f0bff47bdff74434e4ba4fef1f8791ab6c3912ff2dc1830e561c9e8e841c"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "3496f0bff47bdff74434e4ba4fef1f8791ab6c3912ff2dc1830e561c9e8e841c"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "3496f0bff47bdff74434e4ba4fef1f8791ab6c3912ff2dc1830e561c9e8e841c"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "fe4b3ae29a3b316a8a7ced49341626647467bad9e53db8137783305a57dc8fb3"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "4add16832aa78c27ac305ff19fb3f6e54788f854d5c23eddda91d8228c4f653d"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "El afiche",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "2e16eadd576b0c2f40f050b7e9f3ac2f9bac1ee00d6a8d9fd195b02c4236287e"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "2e16eadd576b0c2f40f050b7e9f3ac2f9bac1ee00d6a8d9fd195b02c4236287e"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "2e16eadd576b0c2f40f050b7e9f3ac2f9bac1ee00d6a8d9fd195b02c4236287e"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "487e563dd39cd3c3fb39e6de842ab3b28ae144238b3a59c3500e3244687deca6"
+    },
+    {
+      "procedure": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "description": "Parafrasearán el mensaje de un afiche sin crear otro afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "54f7457dd17a51eef3beecd96704971ddecb1876d3184da2c62816128762386b"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "El afiche",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "75ad746b45d75b47e1220c7a319c1d4ce045664ae9c3c3d081e9f19ca252326e"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "75ad746b45d75b47e1220c7a319c1d4ce045664ae9c3c3d081e9f19ca252326e"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "75ad746b45d75b47e1220c7a319c1d4ce045664ae9c3c3d081e9f19ca252326e"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "c1a6d198e5ee987e098af7474dadc5e94d71e2ea3e3bc6fcb545f9c9df7404eb"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "006810ccf590ed6e4e7aa4cd1c86d9492f048dfba4ebb251075af5b6607e75c5"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "El afiche",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "532dfd70d54b3ecd3e1c5e630e04f88f66d3f79b1684e7163c1221ecd1c559e6"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "532dfd70d54b3ecd3e1c5e630e04f88f66d3f79b1684e7163c1221ecd1c559e6"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "532dfd70d54b3ecd3e1c5e630e04f88f66d3f79b1684e7163c1221ecd1c559e6"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "1aae713823e62d1cc1fa0205ad9c594f564543791f6b67a6b07c609326a397f9"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "74b0925775f7935d61d013ca5d1e8e4e00eef11f586b90b2689933e20cc86450"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "El afiche",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "321c87972532bd488521f44b52bd1e0df3f490fdd7154c611f5e472a0556aeb1"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "321c87972532bd488521f44b52bd1e0df3f490fdd7154c611f5e472a0556aeb1"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "321c87972532bd488521f44b52bd1e0df3f490fdd7154c611f5e472a0556aeb1"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "232c3e44963c1fb912cd6c46fcf13f454fbb7a4aaee9b4e95ce5375d4010c3ef"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "0db06abf885e7c9f232c7c78d4ae7f76323b510c9b4ccb8ed098a2af5e92ba1b"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "El afiche",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "b9ad3d794b5cf68fc063f756b14360fb1f648ca6bd910303ab8f283a146d6ee9"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "b9ad3d794b5cf68fc063f756b14360fb1f648ca6bd910303ab8f283a146d6ee9"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "b9ad3d794b5cf68fc063f756b14360fb1f648ca6bd910303ab8f283a146d6ee9"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "ec3bc3d97133ff81cc6313c47c8777e61a4ae61bad43f4a813d818edd9af51d9"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Analizarán únicamente las cifras estadísticas empleadas como argumentos en un afiche.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "757d8699a45b0d49ca52b4a5a8a523b40bea4227872938e29b726dfcbc25185d"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "El afiche",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "9cd8927306afd8a8c1f66c19b63b452d5c907ef48dc7f8e7fd76e2c8967a6241"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "9cd8927306afd8a8c1f66c19b63b452d5c907ef48dc7f8e7fd76e2c8967a6241"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "9cd8927306afd8a8c1f66c19b63b452d5c907ef48dc7f8e7fd76e2c8967a6241"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "4ce662459b79e2e3731152e91de9b638c4081e356ad58624172fb57e3e0ec31d"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "291b016a23252ae754c11a4e1160e583aaf985b622cfdfd23d0a987d24785be5"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "El afiche",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "b046d42d68628c2faeea0363074febda297f19892621a1f29cb289ac7887f791"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "b046d42d68628c2faeea0363074febda297f19892621a1f29cb289ac7887f791"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "b046d42d68628c2faeea0363074febda297f19892621a1f29cb289ac7887f791"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "f9d8952d380f5e91194a639e0bc0b461536ff9850600932621d72a48aeb289f0"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "447388edf4188b464867af4d0a1719387e1bb4af27a6440ea0faeec1a1bbb1d8"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "El afiche",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "d4afa157c74f982ad74def177104f9ab47030d6e3fa550eac7f3f32d806ee19f"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "d4afa157c74f982ad74def177104f9ab47030d6e3fa550eac7f3f32d806ee19f"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "d4afa157c74f982ad74def177104f9ab47030d6e3fa550eac7f3f32d806ee19f"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "6a5c8111d4a9893468a26d43cd1bfaef67ad9432a591e14e32d70ed9d71e966a"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "087f4bd6d0a9f8986ca576e3f43a529c97c7681b3fe7e2c7ff4da30d06d9d6c9"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "El afiche",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "3f300aa828845c0aa7d5cf75c826f170a7d16a1289566a22ee2ec0a6b9b1a857"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "3f300aa828845c0aa7d5cf75c826f170a7d16a1289566a22ee2ec0a6b9b1a857"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "3f300aa828845c0aa7d5cf75c826f170a7d16a1289566a22ee2ec0a6b9b1a857"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "877111504fa29fdb55b7c307324519d62abfff0d6905be2b7bd04e98fa03d7f0"
+    },
+    {
+      "procedure": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "description": "Planificarán un afiche con un esquema de sus componentes textuales y visuales.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "122066abc023cac8569455cc5dac2b608ff1303201d9283ff0df5968dc51cefa"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8b4a39899c018da422d47ab2799f5b8d88882c4a0a26ced668621da4f09281a8"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8b4a39899c018da422d47ab2799f5b8d88882c4a0a26ced668621da4f09281a8"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8b4a39899c018da422d47ab2799f5b8d88882c4a0a26ced668621da4f09281a8"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "5c7584c6be21d3611b3a83a7ed7391e58c4ba78b95cc034c0a7ab862687317c7"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "0944e2f46af411ee4af6137017adff2c451866c3bea1c320cffd6fde636a6572"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "eedfb0956e0e8bbc2cd0846387eb2ace0058636a99bc14d078145b941d1d8b0c"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "eedfb0956e0e8bbc2cd0846387eb2ace0058636a99bc14d078145b941d1d8b0c"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "eedfb0956e0e8bbc2cd0846387eb2ace0058636a99bc14d078145b941d1d8b0c"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "b4de279616f8fc1ae631ce2e5144e3ca5ff8155a9abcb6f18127a22dd4ad5c61"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "c3d87d728d24d965db4c748296d237dce1b59ef8a1e9ec724e745aaf0abcbe79"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "ab60a4dc75d5a75dd270565b8efc218535cd3cea4d013a1e28fb9d65aa1f07e4"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "ab60a4dc75d5a75dd270565b8efc218535cd3cea4d013a1e28fb9d65aa1f07e4"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "ab60a4dc75d5a75dd270565b8efc218535cd3cea4d013a1e28fb9d65aa1f07e4"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "0397f702d26e27f9f5eb7eab96f9901b7db153ab6a8d77947d1a1253348d52f8"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "856591696d2520238f26edf77a9fee8fcc5d622e5b3b2f1bfc8f877beb04e717"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "68ec314674bec3766203d7aa8024d40ecc0ccb4391069447ca3827e1c0d202f3"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "68ec314674bec3766203d7aa8024d40ecc0ccb4391069447ca3827e1c0d202f3"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "68ec314674bec3766203d7aa8024d40ecc0ccb4391069447ca3827e1c0d202f3"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "0c6c3683bab5cc282a5c498b4d9dbbcdad80932090efd0f4895184d5910b210a"
+    },
+    {
+      "procedure": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "description": "Escucharán un fragmento de cuento policíaco y resumirán los hechos disponibles sin inventar el desenlace.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "21a4a23f420858bc8204ca6c005231c07fc277516f480ef81b20312bb20b24a9"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "bc33ecabd15e63c51e268b32dadad5e21978d45a4fbc36e7f4d9cf6c87ba5e8b"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "bc33ecabd15e63c51e268b32dadad5e21978d45a4fbc36e7f4d9cf6c87ba5e8b"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "bc33ecabd15e63c51e268b32dadad5e21978d45a4fbc36e7f4d9cf6c87ba5e8b"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "eb332325bf96dc4b6ac3f23e28e8b87a24cca982653bfcae8c8eff97d592c7cc"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "757ac3b63bb6abf66ea9d9c8cfcea26890701479592ecfa600e37fac63aca7e5"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "71242c11af799506c1908270da681ce0018665634429f75d288c64cbb9983d1a"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "71242c11af799506c1908270da681ce0018665634429f75d288c64cbb9983d1a"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "71242c11af799506c1908270da681ce0018665634429f75d288c64cbb9983d1a"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "b7365c5b7122965515c0607d0ab5b55df999da235d510643e2728c20885c272c"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "d226698f1d3000614d57be550ac2011def1c16c39a36fd6924f5482927ea4aa9"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "02711db6584a081c1c15907d6b0e4d722100532ecb4768c412001605a53d9049"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "02711db6584a081c1c15907d6b0e4d722100532ecb4768c412001605a53d9049"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "02711db6584a081c1c15907d6b0e4d722100532ecb4768c412001605a53d9049"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "d33af7900628a508c61f6baa579c59ec0029d2f621d24db13bdaa259d6c32341"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "69d8ed662cd1313003ac955a532973db7c701e419c117c229b9699e57315e4f8"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "e40eace3c00eafe7fa1d41b21e4d6b2dd3011c5cb93f773a3e90a7fe6523e7b3"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "e40eace3c00eafe7fa1d41b21e4d6b2dd3011c5cb93f773a3e90a7fe6523e7b3"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "e40eace3c00eafe7fa1d41b21e4d6b2dd3011c5cb93f773a3e90a7fe6523e7b3"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "2a968102053f11cb45181c54f14c84b1a4535c6b40f096ea4bb69858facb78d4"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Planificarán un cuento policíaco mediante un esquema secuencial de la trama.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "c52c969c9ba03e4588d562a3d67864bcd53f0bcbfa2742cdaa865a07216125cb"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8a5ccd967892eda560a4633c4ed4fd677307acbfe146de1f73c139d0f5f986b9"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8a5ccd967892eda560a4633c4ed4fd677307acbfe146de1f73c139d0f5f986b9"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "8a5ccd967892eda560a4633c4ed4fd677307acbfe146de1f73c139d0f5f986b9"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "f077b3fb12c7859321f1fd8d1fb16894635a6cc9a84d105ec052c8f51a2a456f"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "8d067e9f1ffac80ba7b1b713e89ef1f1d35d77e02d57a2360f3619902ec7e61a"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "80291c874f5964e4252633235e9bc5a226cb9aaf2c50b1a5e2d12638ae8c0a82"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "80291c874f5964e4252633235e9bc5a226cb9aaf2c50b1a5e2d12638ae8c0a82"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "80291c874f5964e4252633235e9bc5a226cb9aaf2c50b1a5e2d12638ae8c0a82"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "6e6f14e3fb5cf572d54b2e95a36e1c3a3f60889cb9f2d3eb3f6012d7bf03b5b1"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "dbc7b7e885c69f3281a72a4cc9b514b80fad19fe346e6d978e34f3535472bd92"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "c2af2064468dc9cd1d0aa478c313bed4ab6cae39d4117d5eac70e0edce517767"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "c2af2064468dc9cd1d0aa478c313bed4ab6cae39d4117d5eac70e0edce517767"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "c2af2064468dc9cd1d0aa478c313bed4ab6cae39d4117d5eac70e0edce517767"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "c7144998cfa6b4d6e7ae7fb62c8a43c7286b233ef1acb182e07a7214ce83921a"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "2b3ffaa5facb455fd04c8537344428b751991e549783ec8bb9d27e934880ec64"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "El cuento policíaco y detectivesco",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "b0540afc830206934a84e7c3e02b947ead63cac6f531621f94f41dc7187bb873"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "b0540afc830206934a84e7c3e02b947ead63cac6f531621f94f41dc7187bb873"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "b0540afc830206934a84e7c3e02b947ead63cac6f531621f94f41dc7187bb873"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "22d8afa5005758cbe4ac425acae428e733c5907f59d46c1c51bd301cf1219ecb"
+    },
+    {
+      "procedure": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "description": "Escribirán un cuento policíaco e ilustrarán una escena para apoyar su comprensión.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "326985f7d9499f8dd5fb6f15a0378e06794cfd5d12795b11c2e9638b342e4510"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "El caligrama",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "bbb8748ff4917eca3bdf6ff68c46c584d140c076313c076105d8607963e0d908"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "bbb8748ff4917eca3bdf6ff68c46c584d140c076313c076105d8607963e0d908"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "bbb8748ff4917eca3bdf6ff68c46c584d140c076313c076105d8607963e0d908"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "0e6222dece550beef9efea8163a209f5570fdc3212198d63379fa9893ce9fffd"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "758045f98ede001063ea87ed961069dd77d8cb69cac7a5f92cac927786b4e15e"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "El caligrama",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "a355405f03c02e0d50164d2e27f47cc224aee9cdc7f8716266fc9633ff33c696"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "a355405f03c02e0d50164d2e27f47cc224aee9cdc7f8716266fc9633ff33c696"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "a355405f03c02e0d50164d2e27f47cc224aee9cdc7f8716266fc9633ff33c696"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "052d9445cbeecb247e8539264ca4f0b3ef6294841d10aed1a537406744f39a16"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "3c93d19c3b2b496e6da5c17463dd9e97ee7c6e4836b3c99fb363515da98fcb13"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "El caligrama",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "2beb26555bbee624c0ec20be0820ecb5c8f4a0351628303a2215e7098bba0791"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "2beb26555bbee624c0ec20be0820ecb5c8f4a0351628303a2215e7098bba0791"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "2beb26555bbee624c0ec20be0820ecb5c8f4a0351628303a2215e7098bba0791"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "fc76fadf46a57357ffc51b2185249a093d6bb4362587513616e4e585adcdecfc"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "5a1e519332be98409f3786c5867af6df7ff32c91dec77cffb1b22af1789600cc"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "El caligrama",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "4811519a3014a2b4521c4bea5e3c97aed0a63c86a4ab5c2c877db2cd8fea6941"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "4811519a3014a2b4521c4bea5e3c97aed0a63c86a4ab5c2c877db2cd8fea6941"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "4811519a3014a2b4521c4bea5e3c97aed0a63c86a4ab5c2c877db2cd8fea6941"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "6109e045c4357288697fbc4caf2a022120bab245ee57a9766f9cd339b923ed84"
+    },
+    {
+      "procedure": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "description": "Parafrasearán oralmente el sentido global de un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "9c0045d2578ad82f1ed59e86a11b765cdbe13d5e243d2f04d6d2d8387cf0fc28"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "El caligrama",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "dce50c6e09499d97e723d31565e9d92e8e98380a7aaea47029fab1c71d2c7857"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "dce50c6e09499d97e723d31565e9d92e8e98380a7aaea47029fab1c71d2c7857"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "dce50c6e09499d97e723d31565e9d92e8e98380a7aaea47029fab1c71d2c7857"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "c2d368473509b31c357205dedaf7f007d0d3b08cbc87f59a4de3c59745c0fee0"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "a72d6ec031139a749bf524140098bf7be5a22fcb5f7739b4ee50d8a69cd39afd"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "El caligrama",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "b89fc9a3835a5ec10d5bf48af195d746131b7b6c7c2d93ec0b0fed58f1edbde1"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "b89fc9a3835a5ec10d5bf48af195d746131b7b6c7c2d93ec0b0fed58f1edbde1"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "b89fc9a3835a5ec10d5bf48af195d746131b7b6c7c2d93ec0b0fed58f1edbde1"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "1d59d3297bae08ec229e1804b3771440c7c12858939751a49047ff43909955f7"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "b742a408958f40e8ee6d38a077742878f37f29b6b039cf65f0c7747139f9b17b"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "El caligrama",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "40faf2a9d401312a3ec78503a12301fbda4f16702ada377f5b288b1e423dfaae"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "40faf2a9d401312a3ec78503a12301fbda4f16702ada377f5b288b1e423dfaae"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "40faf2a9d401312a3ec78503a12301fbda4f16702ada377f5b288b1e423dfaae"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "8f3a9b9d06241eb465a71ee81461eaca45a29009b652c4010590d62b1c2f27d5"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "429645f7dc9a22c13eee481312445b2a82a9d710f6d3911c51f62bea41cd9351"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "El caligrama",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "aab47317249a0b160c7ff52d1e1e8aca7078d535a9bf0ebb799ed46a83223787"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "aab47317249a0b160c7ff52d1e1e8aca7078d535a9bf0ebb799ed46a83223787"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "aab47317249a0b160c7ff52d1e1e8aca7078d535a9bf0ebb799ed46a83223787"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "ed89b044bc97ef8473aebff4b70f3f5957cba882a08f95d6dd2b3743aaed9526"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Analizarán únicamente la rima y el ritmo presentes en un caligrama.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "0bbd0679d36eef1edef47a945705c02e593f39faf72dc56d6f63540c79890783"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "El caligrama",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "d7ae99c062c3b5bec15db93b6d5f9a0be70710d92b1e25140cf3749f8cab41d3"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "d7ae99c062c3b5bec15db93b6d5f9a0be70710d92b1e25140cf3749f8cab41d3"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "El ciclo del agua",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "hash": "d7ae99c062c3b5bec15db93b6d5f9a0be70710d92b1e25140cf3749f8cab41d3"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 15,
+      "hash": "f771352c9cad3b502268c95f1fee5030eb78794f96adee1e6aa12c0a48e86d27"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "rubrica",
+      "maxScore": 20,
+      "hash": "5a89e8802afa3c6e043abcf1a5d653fce13bfc4280253ecf84a1cdc12f043de8"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "El caligrama",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "aaf62f3e56f7fb41ced74f993bda1ae82a225e9653f95d5a7b6a7c36d9f903d6"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "aaf62f3e56f7fb41ced74f993bda1ae82a225e9653f95d5a7b6a7c36d9f903d6"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "El ciclo del agua",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "hash": "aaf62f3e56f7fb41ced74f993bda1ae82a225e9653f95d5a7b6a7c36d9f903d6"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "hash": "df09ead014ccd7d725d2988c23748ec71e48d3968e3eca8c75c78dab3559e882"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "hash": "28aee9034e499c9f84eb70a38b04f9a86b481892180145d6452bbd0522df09dd"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "El caligrama",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "e3a4e98f93591fa38bcb93eade2f1206148182fe1c87e51927327aeb57f2826a"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "e3a4e98f93591fa38bcb93eade2f1206148182fe1c87e51927327aeb57f2826a"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "El ciclo del agua",
+      "format": "escala",
+      "maxScore": 17.35,
+      "hash": "e3a4e98f93591fa38bcb93eade2f1206148182fe1c87e51927327aeb57f2826a"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 15,
+      "hash": "3d474da53f937375a6c44f4912261860001c9a0303e1b09d09703377376d3b89"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "escala",
+      "maxScore": 20,
+      "hash": "2d8dfcb7db0062e558ab5daaff0afad2a6c8302e34f336f426224b1bf6ca16ff"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "El caligrama",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "11d16df11b59d8ad6ff06132271956407c687f46c52fe081aac935911aaee297"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "11d16df11b59d8ad6ff06132271956407c687f46c52fe081aac935911aaee297"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "El ciclo del agua",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "hash": "11d16df11b59d8ad6ff06132271956407c687f46c52fe081aac935911aaee297"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "hash": "f5e5f769e0eb8a88fc830dc9a57d6a81474561d2a261b5a6f796745d28bc6d3d"
+    },
+    {
+      "procedure": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "description": "Recitarán un caligrama haciendo perceptibles la rima y el ritmo de sus versos.",
+      "title": "Trabajo de clase",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "hash": "e00899d1b4350a62b016ff21a805b0c775cf149d8af27ad993da17090777f535"
+    },
+    {
+      "subtopic": "7dca01fd-d231-553b-9761-d0f5b787e0ec",
+      "format": "rubrica",
+      "hash": "211bf0629f34710609cb781534349acce2d7a0d0614b1fca33165953c324648e"
+    },
+    {
+      "subtopic": "7dca01fd-d231-553b-9761-d0f5b787e0ec",
+      "format": "lista-cotejo",
+      "hash": "48126e882559943d07381225e8589f045a09b372b1b7eabb4f5f9dffbb28184a"
+    },
+    {
+      "subtopic": "7dca01fd-d231-553b-9761-d0f5b787e0ec",
+      "format": "escala",
+      "hash": "901e432f0cd5159f8055903c827e7761fd0c6a365c94a54d65ec930e01674eb6"
+    },
+    {
+      "subtopic": "7dca01fd-d231-553b-9761-d0f5b787e0ec",
+      "format": "lista-ponderada",
+      "hash": "f6d2db0d5ca253530355d04b18fcfa1d9cad31806c4c57e42811ff192c4cccdc"
+    },
+    {
+      "subtopic": "b431e723-effb-567a-925c-593d2467f168",
+      "format": "rubrica",
+      "hash": "05b86b6fe897005d2d3dfc417ff36b9bb5c4cc35ff94bf602ea8ec1581f0f348"
+    },
+    {
+      "subtopic": "b431e723-effb-567a-925c-593d2467f168",
+      "format": "lista-cotejo",
+      "hash": "37ab8b84c07fb06903c2eaf84527d405e263298c6207d0662ddadca8b94dbbb7"
+    },
+    {
+      "subtopic": "b431e723-effb-567a-925c-593d2467f168",
+      "format": "escala",
+      "hash": "c3ffffaba1ccd6e4a199dac3a424617a8b38d38f2ae4b6cb351288bb9f12fd93"
+    },
+    {
+      "subtopic": "b431e723-effb-567a-925c-593d2467f168",
+      "format": "lista-ponderada",
+      "hash": "f52721c29c8324c5b9511dfd6790b29acc57831a93dd2d179c9a8fbe3204d20a"
+    },
+    {
+      "subtopic": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+      "format": "rubrica",
+      "hash": "4791cb8170f334aec7fd51c8157ef6e506b7086dadea42c9e8e6abd05f1f2366"
+    },
+    {
+      "subtopic": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+      "format": "lista-cotejo",
+      "hash": "91a35cb1fd551073a73e8414ba4f0445a16e2310432db3e8888207945151ff3e"
+    },
+    {
+      "subtopic": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+      "format": "escala",
+      "hash": "babaefb20e48ddcce440a78c074b48592b61d7a317f41f13315ddbfb5e6ef5cd"
+    },
+    {
+      "subtopic": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+      "format": "lista-ponderada",
+      "hash": "eb18d0ee41fcc47803700f27979aad5b5be835ce0e96883ff0eb7434a80f9f7e"
+    },
+    {
+      "subtopic": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+      "format": "rubrica",
+      "hash": "2480def436bf466c3370229f6ed6633721621175bd260986c7db573dba41e6ab"
+    },
+    {
+      "subtopic": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+      "format": "lista-cotejo",
+      "hash": "5bc2e89af33daf4a5d8f2b268cf85642154a831ea2187824443f394b8aef3888"
+    },
+    {
+      "subtopic": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+      "format": "escala",
+      "hash": "2b9def909b17c97ba11a8f61ef22cf3d90875463288405ce365a2088445c2b8d"
+    },
+    {
+      "subtopic": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+      "format": "lista-ponderada",
+      "hash": "eb0166676a1a3f49e5590b1aac6e324e33ad39550c63652a9e146cfb4e0653fb"
+    },
+    {
+      "subtopic": "d6c9f468-36c3-5376-99f9-829c06040af0",
+      "format": "rubrica",
+      "hash": "6db2de66ff31884e7a704fa7708236e9771020de67f9ca3549a1e71246a99529"
+    },
+    {
+      "subtopic": "d6c9f468-36c3-5376-99f9-829c06040af0",
+      "format": "lista-cotejo",
+      "hash": "725d5e6513dc4bacb9567c68220f7c19f10ada9eef24313a41af20d546b01855"
+    },
+    {
+      "subtopic": "d6c9f468-36c3-5376-99f9-829c06040af0",
+      "format": "escala",
+      "hash": "f41719467c449187aa2a1741a92a3a34010afc5b350c9c5e76f4e9c71593ec34"
+    },
+    {
+      "subtopic": "d6c9f468-36c3-5376-99f9-829c06040af0",
+      "format": "lista-ponderada",
+      "hash": "a533eecb60b8055113e69d1181f8b3a5d02ed0137774c56f49e9e8d2294f7588"
+    },
+    {
+      "subtopic": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+      "format": "rubrica",
+      "hash": "4283e85d935b7b768a093302a4318329b92fd2cf47a8153b1ba4e715c993646b"
+    },
+    {
+      "subtopic": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+      "format": "lista-cotejo",
+      "hash": "3e15f66d547b85f396f50acc0377b895fe013907435c78f3d8d6562b441add78"
+    },
+    {
+      "subtopic": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+      "format": "escala",
+      "hash": "4a260bf49a58012be6ea6105b18e6d31d33d9a230f59e9601e1c5c17c933ea8f"
+    },
+    {
+      "subtopic": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+      "format": "lista-ponderada",
+      "hash": "2a00484e6dc1be67cb0c1ba6c1e26e749998b716b0e244375dd9ec62f45f76dc"
+    },
+    {
+      "subtopic": "f0d32dc5-b1ff-56fa-bbda-82c765783714",
+      "format": "rubrica",
+      "hash": "9ef08895c613131db5084396e98a0080b1fd04c05a9fb03a70cf034be20a050f"
+    },
+    {
+      "subtopic": "f0d32dc5-b1ff-56fa-bbda-82c765783714",
+      "format": "lista-cotejo",
+      "hash": "fbf8462f5d3f67f20522e3dc45a1f24aaa579c4a8a74ee01130c6a196673c6fb"
+    },
+    {
+      "subtopic": "f0d32dc5-b1ff-56fa-bbda-82c765783714",
+      "format": "escala",
+      "hash": "1a4a5d66a591913b36a61d9be083257ca07dfe6c1b76c0f6201f74c9bc713f1e"
+    },
+    {
+      "subtopic": "f0d32dc5-b1ff-56fa-bbda-82c765783714",
+      "format": "lista-ponderada",
+      "hash": "91c3b96ec006525651f35b9b93680e78c56fd2e36c177841cdb7aa3da1f251a3"
+    },
+    {
+      "subtopic": "8b208fc0-808f-5b83-a900-94bcb5196005",
+      "format": "rubrica",
+      "hash": "276348792495414048fa4e5e8fa1563b68910bbf49a59df0b0de95d02018a381"
+    },
+    {
+      "subtopic": "8b208fc0-808f-5b83-a900-94bcb5196005",
+      "format": "lista-cotejo",
+      "hash": "0974e51cee0a9959c748d838a96dc174a37c3e264b52ca708f73f66826da749c"
+    },
+    {
+      "subtopic": "8b208fc0-808f-5b83-a900-94bcb5196005",
+      "format": "escala",
+      "hash": "58406bf2c2024e6d457269be3d0530436bc3ef0fd195e65b2e6474caf46c9542"
+    },
+    {
+      "subtopic": "8b208fc0-808f-5b83-a900-94bcb5196005",
+      "format": "lista-ponderada",
+      "hash": "90af8fbc6dd11c3539730bede3dea42a13251f6691468f26492b1dfb95ae3f69"
+    },
+    {
+      "subtopic": "1efbd6db-f7f9-5d1c-9fd4-e28addf19e76",
+      "format": "rubrica",
+      "hash": "4829241eb9b24803c9b955b9b2951364a6e9a93a18246ddf3c3bfb36ee093f6b"
+    },
+    {
+      "subtopic": "1efbd6db-f7f9-5d1c-9fd4-e28addf19e76",
+      "format": "lista-cotejo",
+      "hash": "d19059a6cd857599a1ba960d37ccbe07f344f564251041f4e688ed1c4a6a3e04"
+    },
+    {
+      "subtopic": "1efbd6db-f7f9-5d1c-9fd4-e28addf19e76",
+      "format": "escala",
+      "hash": "94ac57afa77c003090722f96525de67586af1382c9aa396eba36532a8f363deb"
+    },
+    {
+      "subtopic": "1efbd6db-f7f9-5d1c-9fd4-e28addf19e76",
+      "format": "lista-ponderada",
+      "hash": "f5c4802edf6d69d368e1c8679c77f1dcf6bd1e6052ae28e6f1b2bcdfc15fc5f3"
+    },
+    {
+      "subtopic": "36833dd9-a703-5c75-9d1b-706e3ae74446",
+      "format": "rubrica",
+      "hash": "49ad41b6838704b1dfbe877a86806039a67dba0d24cbde59afc2d969d421693f"
+    },
+    {
+      "subtopic": "36833dd9-a703-5c75-9d1b-706e3ae74446",
+      "format": "lista-cotejo",
+      "hash": "85c4b11856f8b346488f3569fe094b3283bf54732c4d6e7ffeee7abb919b91ff"
+    },
+    {
+      "subtopic": "36833dd9-a703-5c75-9d1b-706e3ae74446",
+      "format": "escala",
+      "hash": "43c9e022573ead3c391368bba4045a5ea46d42666289c7ecf5f63ce23c8baa2d"
+    },
+    {
+      "subtopic": "36833dd9-a703-5c75-9d1b-706e3ae74446",
+      "format": "lista-ponderada",
+      "hash": "9b00ee7e514e65b4cadf25a296c413ca63e68a0a2f75a0d0032d4342fc1d6fcb"
+    },
+    {
+      "subtopic": "f52138d8-da5b-5980-aad8-dde3b57be185",
+      "format": "rubrica",
+      "hash": "49ad41b6838704b1dfbe877a86806039a67dba0d24cbde59afc2d969d421693f"
+    },
+    {
+      "subtopic": "f52138d8-da5b-5980-aad8-dde3b57be185",
+      "format": "lista-cotejo",
+      "hash": "85c4b11856f8b346488f3569fe094b3283bf54732c4d6e7ffeee7abb919b91ff"
+    },
+    {
+      "subtopic": "f52138d8-da5b-5980-aad8-dde3b57be185",
+      "format": "escala",
+      "hash": "43c9e022573ead3c391368bba4045a5ea46d42666289c7ecf5f63ce23c8baa2d"
+    },
+    {
+      "subtopic": "f52138d8-da5b-5980-aad8-dde3b57be185",
+      "format": "lista-ponderada",
+      "hash": "9b00ee7e514e65b4cadf25a296c413ca63e68a0a2f75a0d0032d4342fc1d6fcb"
+    },
+    {
+      "subtopic": "0995dbc7-bf72-5a4f-ab32-482ac40adc51",
+      "format": "rubrica",
+      "hash": "521388e22bbfe740ba8d26405e4a340ecc4086c39bfe9ba05ee222a4fcd241ff"
+    },
+    {
+      "subtopic": "0995dbc7-bf72-5a4f-ab32-482ac40adc51",
+      "format": "lista-cotejo",
+      "hash": "7b7f9b868c8695ba898a135a847c1ee80e3236dc31ab65cf2585e1a9baa44fce"
+    },
+    {
+      "subtopic": "0995dbc7-bf72-5a4f-ab32-482ac40adc51",
+      "format": "escala",
+      "hash": "02d725808e353b078d0c1dd7ccd8df761369dc4021b5f9ed625755951af5d9c6"
+    },
+    {
+      "subtopic": "0995dbc7-bf72-5a4f-ab32-482ac40adc51",
+      "format": "lista-ponderada",
+      "hash": "2442d4e59ffd9d2bf40ff1e406414203d3dc82e547cd5856b44437b36982fd80"
+    },
+    {
+      "subtopic": "9ecafda4-b9de-5d4d-a97c-9fbb79c085ea",
+      "format": "rubrica",
+      "hash": "91d3a7b1ffb9624e0bc42240f7057936642e4aa2cba9e0dd74c4b18e6249ca51"
+    },
+    {
+      "subtopic": "9ecafda4-b9de-5d4d-a97c-9fbb79c085ea",
+      "format": "lista-cotejo",
+      "hash": "2763dda7917ac56e592feeff13dc710c72cf37288850c1c65794f5dca6a62094"
+    },
+    {
+      "subtopic": "9ecafda4-b9de-5d4d-a97c-9fbb79c085ea",
+      "format": "escala",
+      "hash": "e044061d0760b59c2051b6a61011c566cfa6be48f5c6485c9679809c9759ad09"
+    },
+    {
+      "subtopic": "9ecafda4-b9de-5d4d-a97c-9fbb79c085ea",
+      "format": "lista-ponderada",
+      "hash": "c4053013e02c04aeac4d783a3dac355c610f7b33086dd54ae754e791c83cb8ca"
+    },
+    {
+      "subtopic": "789d33c7-a01b-531d-a640-52806b8cbc1f",
+      "format": "rubrica",
+      "hash": "f1989f0a37ca6df965b6f8f4141769b8bc32c1646fd7409be2aa02af94bb3667"
+    },
+    {
+      "subtopic": "789d33c7-a01b-531d-a640-52806b8cbc1f",
+      "format": "lista-cotejo",
+      "hash": "b090d6d2a03e17c1c7e530914a31fb7ce61f6877d1d0b21a75fd4321b0292fd3"
+    },
+    {
+      "subtopic": "789d33c7-a01b-531d-a640-52806b8cbc1f",
+      "format": "escala",
+      "hash": "18cb7ea8b77993b47fbe9f794445f7e091a9f11dea4b36a1e23b925faa25df90"
+    },
+    {
+      "subtopic": "789d33c7-a01b-531d-a640-52806b8cbc1f",
+      "format": "lista-ponderada",
+      "hash": "442cf26ed54551d51181bb599261820de4a0268d2c6ddda3414990f2a0dcb647"
+    },
+    {
+      "subtopic": "d61bd6e7-998d-53a8-8e8f-fb6fc21060d3",
+      "format": "rubrica",
+      "hash": "6919f808239bb3ef7dff10202606fb6f36e47dcf5b1d9923c0c9a88380b4b3f9"
+    },
+    {
+      "subtopic": "d61bd6e7-998d-53a8-8e8f-fb6fc21060d3",
+      "format": "lista-cotejo",
+      "hash": "684b157511fac182e7a0571f304b879136b96ffd83752e8ae011967a8b465f38"
+    },
+    {
+      "subtopic": "d61bd6e7-998d-53a8-8e8f-fb6fc21060d3",
+      "format": "escala",
+      "hash": "cee12a0c06221451c06fe3f1857401636f09c8e00f6582dd63b08e11f5dd698f"
+    },
+    {
+      "subtopic": "d61bd6e7-998d-53a8-8e8f-fb6fc21060d3",
+      "format": "lista-ponderada",
+      "hash": "3b16a83a9f163f4ab0ca819e4229814041666ba6fb24b08bb3a926d6abeee97f"
+    },
+    {
+      "subtopic": "be5cac83-7c27-5e9d-af9e-21df20bd2e8a",
+      "format": "rubrica",
+      "hash": "db8eeaff012c4f8699240af2db0e440f42ede8717b0c85259ca8fbdf6597b79b"
+    },
+    {
+      "subtopic": "be5cac83-7c27-5e9d-af9e-21df20bd2e8a",
+      "format": "lista-cotejo",
+      "hash": "65ef2a5ef3fbf39d8f03e5c8801bbd59e90cea99fab77fe0faad8c8723ea6a96"
+    },
+    {
+      "subtopic": "be5cac83-7c27-5e9d-af9e-21df20bd2e8a",
+      "format": "escala",
+      "hash": "27c79f06e7a98490b7abae9bd94f617261ba4b45b9b5036e308d5bb665079cbd"
+    },
+    {
+      "subtopic": "be5cac83-7c27-5e9d-af9e-21df20bd2e8a",
+      "format": "lista-ponderada",
+      "hash": "29f93b2ce1abb9388f7ea45d124d661405dc2257f8cbd2abbdffa0e7e8a98b23"
+    },
+    {
+      "subtopic": "4eedf9ad-ecbe-5d02-8855-2a02851693a0",
+      "format": "rubrica",
+      "hash": "be8cb120ceb454bbee17cd30463f2c28a9fd7ca80d25b0b08537d31d02410f7e"
+    },
+    {
+      "subtopic": "4eedf9ad-ecbe-5d02-8855-2a02851693a0",
+      "format": "lista-cotejo",
+      "hash": "6bdd552ed7fb43bc650bceb9083c00e679090146fec8b20e7d2693c58d990c02"
+    },
+    {
+      "subtopic": "4eedf9ad-ecbe-5d02-8855-2a02851693a0",
+      "format": "escala",
+      "hash": "b579391f7b3bb3a759f903313c9a5e6249e187a3c653fe75c5b13502a765ce7e"
+    },
+    {
+      "subtopic": "4eedf9ad-ecbe-5d02-8855-2a02851693a0",
+      "format": "lista-ponderada",
+      "hash": "d0b5641db387b5f50a7a2ab459eebad3516cd0a01c4720b0beee7a7178146a31"
+    },
+    {
+      "subtopic": "544ec67d-8607-5a66-b32a-51d8243c26bf",
+      "format": "rubrica",
+      "hash": "95d24996c2823df0a94f1c9cd37ab27af5ea0813b5e57e32af2de444826cf5d6"
+    },
+    {
+      "subtopic": "544ec67d-8607-5a66-b32a-51d8243c26bf",
+      "format": "lista-cotejo",
+      "hash": "b8e90568b97fd5bca0e778eda99a4c5d5c484e04d1a0d6a0ae428127db775dca"
+    },
+    {
+      "subtopic": "544ec67d-8607-5a66-b32a-51d8243c26bf",
+      "format": "escala",
+      "hash": "9cdb286fb0d4cd52f84c6d0a1de02089cc7f47f23a4bca6035589cd9adf01d43"
+    },
+    {
+      "subtopic": "544ec67d-8607-5a66-b32a-51d8243c26bf",
+      "format": "lista-ponderada",
+      "hash": "98cff13c8728516dfb3ba7ff2a6ae83b051a6a297a2acd9916f73ca84bae87fd"
+    },
+    {
+      "subtopic": "1033a541-12ff-52de-82a1-8b3a9af5b936",
+      "format": "rubrica",
+      "hash": "95d24996c2823df0a94f1c9cd37ab27af5ea0813b5e57e32af2de444826cf5d6"
+    },
+    {
+      "subtopic": "1033a541-12ff-52de-82a1-8b3a9af5b936",
+      "format": "lista-cotejo",
+      "hash": "b8e90568b97fd5bca0e778eda99a4c5d5c484e04d1a0d6a0ae428127db775dca"
+    },
+    {
+      "subtopic": "1033a541-12ff-52de-82a1-8b3a9af5b936",
+      "format": "escala",
+      "hash": "9cdb286fb0d4cd52f84c6d0a1de02089cc7f47f23a4bca6035589cd9adf01d43"
+    },
+    {
+      "subtopic": "1033a541-12ff-52de-82a1-8b3a9af5b936",
+      "format": "lista-ponderada",
+      "hash": "98cff13c8728516dfb3ba7ff2a6ae83b051a6a297a2acd9916f73ca84bae87fd"
+    },
+    {
+      "subtopic": "10254927-6924-5c89-bd70-e9104fcd5f8b",
+      "format": "rubrica",
+      "hash": "e8523232f63177f4bb4210212b695031e334e212067587cf812be668f2dfc10f"
+    },
+    {
+      "subtopic": "10254927-6924-5c89-bd70-e9104fcd5f8b",
+      "format": "lista-cotejo",
+      "hash": "8f1e72bc6b785a445212cc7fcfdad73b009ba81d23bd39cc0d8466ca97969078"
+    },
+    {
+      "subtopic": "10254927-6924-5c89-bd70-e9104fcd5f8b",
+      "format": "escala",
+      "hash": "cc9f315de76868a989acefbbd3433ecbb7dbed4604b0b56c107a8a5047abd9d7"
+    },
+    {
+      "subtopic": "10254927-6924-5c89-bd70-e9104fcd5f8b",
+      "format": "lista-ponderada",
+      "hash": "3768df1cba45b85f2b7cbdd53a0bf8cfa6dcbded4358351a5c461ee194eed4f8"
+    },
+    {
+      "subtopic": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+      "format": "rubrica",
+      "hash": "49ad41b6838704b1dfbe877a86806039a67dba0d24cbde59afc2d969d421693f"
+    },
+    {
+      "subtopic": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+      "format": "lista-cotejo",
+      "hash": "85c4b11856f8b346488f3569fe094b3283bf54732c4d6e7ffeee7abb919b91ff"
+    },
+    {
+      "subtopic": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+      "format": "escala",
+      "hash": "43c9e022573ead3c391368bba4045a5ea46d42666289c7ecf5f63ce23c8baa2d"
+    },
+    {
+      "subtopic": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+      "format": "lista-ponderada",
+      "hash": "9b00ee7e514e65b4cadf25a296c413ca63e68a0a2f75a0d0032d4342fc1d6fcb"
+    },
+    {
+      "subtopic": "63c90584-6581-502e-90b9-3cb0240adcfc",
+      "format": "rubrica",
+      "hash": "3dbc032de143ce02e25157a17a52aa631a5c6f06ca282e49811e13ef0b38abfb"
+    },
+    {
+      "subtopic": "63c90584-6581-502e-90b9-3cb0240adcfc",
+      "format": "lista-cotejo",
+      "hash": "1f47637aa5a9879885f08572580a12519750257a1a5ecf7a566bc3584e9a957c"
+    },
+    {
+      "subtopic": "63c90584-6581-502e-90b9-3cb0240adcfc",
+      "format": "escala",
+      "hash": "c7d90e1c590557bd48444b724794f089c9e12337ec17abc3c2d608f266d3c08f"
+    },
+    {
+      "subtopic": "63c90584-6581-502e-90b9-3cb0240adcfc",
+      "format": "lista-ponderada",
+      "hash": "ee6494a108d9ca5fe8d59bb58e629c5fa0f0c5577ec6e0e23a16767f802fd5fb"
+    },
+    {
+      "subtopic": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+      "format": "rubrica",
+      "hash": "3dbc032de143ce02e25157a17a52aa631a5c6f06ca282e49811e13ef0b38abfb"
+    },
+    {
+      "subtopic": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+      "format": "lista-cotejo",
+      "hash": "1f47637aa5a9879885f08572580a12519750257a1a5ecf7a566bc3584e9a957c"
+    },
+    {
+      "subtopic": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+      "format": "escala",
+      "hash": "c7d90e1c590557bd48444b724794f089c9e12337ec17abc3c2d608f266d3c08f"
+    },
+    {
+      "subtopic": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+      "format": "lista-ponderada",
+      "hash": "ee6494a108d9ca5fe8d59bb58e629c5fa0f0c5577ec6e0e23a16767f802fd5fb"
+    },
+    {
+      "subtopic": "7c94e4cb-8eac-582a-b2e1-9a65c18fb00e",
+      "format": "rubrica",
+      "hash": "3dbc032de143ce02e25157a17a52aa631a5c6f06ca282e49811e13ef0b38abfb"
+    },
+    {
+      "subtopic": "7c94e4cb-8eac-582a-b2e1-9a65c18fb00e",
+      "format": "lista-cotejo",
+      "hash": "1f47637aa5a9879885f08572580a12519750257a1a5ecf7a566bc3584e9a957c"
+    },
+    {
+      "subtopic": "7c94e4cb-8eac-582a-b2e1-9a65c18fb00e",
+      "format": "escala",
+      "hash": "c7d90e1c590557bd48444b724794f089c9e12337ec17abc3c2d608f266d3c08f"
+    },
+    {
+      "subtopic": "7c94e4cb-8eac-582a-b2e1-9a65c18fb00e",
+      "format": "lista-ponderada",
+      "hash": "ee6494a108d9ca5fe8d59bb58e629c5fa0f0c5577ec6e0e23a16767f802fd5fb"
+    },
+    {
+      "subtopic": "a9c9954d-d575-5ce8-92a4-df1f518ead70",
+      "format": "rubrica",
+      "hash": "ce4f67cf340d4e9cc4b2adea2e841140ad07d6c89b468f7cbec8cf7c5c03933e"
+    },
+    {
+      "subtopic": "a9c9954d-d575-5ce8-92a4-df1f518ead70",
+      "format": "lista-cotejo",
+      "hash": "002925ac0b218b21d2719c64a7de49cf181f200c482efbe4c3bbcdf0d7920f70"
+    },
+    {
+      "subtopic": "a9c9954d-d575-5ce8-92a4-df1f518ead70",
+      "format": "escala",
+      "hash": "1fdbbc4307d88b31eef6062466d5db61686a0b1ccb2a3326d97ea41ae04c1ccd"
+    },
+    {
+      "subtopic": "a9c9954d-d575-5ce8-92a4-df1f518ead70",
+      "format": "lista-ponderada",
+      "hash": "2348ac0f384fc1c9bcdcf75b054438ef7b76be245b47d6ff0b702d8b2cd3b6d2"
+    },
+    {
+      "subtopic": "6a1b5246-0a6d-563c-9a02-3176de6f7503",
+      "format": "rubrica",
+      "hash": "ff4ab7fcf52787ff078402b27bcd1fd81c4e53ed0704ed0eec0fbec9c2356171"
+    },
+    {
+      "subtopic": "6a1b5246-0a6d-563c-9a02-3176de6f7503",
+      "format": "lista-cotejo",
+      "hash": "71137cebe0488f1f6ac9685e9c9b8a26ac1d58c7bc424c87862d57d2bf74cdb3"
+    },
+    {
+      "subtopic": "6a1b5246-0a6d-563c-9a02-3176de6f7503",
+      "format": "escala",
+      "hash": "31a37fdc6e9bb2cfcb64cf271857b18a624395a2d7d0418a20a3d6b1176b8d63"
+    },
+    {
+      "subtopic": "6a1b5246-0a6d-563c-9a02-3176de6f7503",
+      "format": "lista-ponderada",
+      "hash": "e8bccc523f642425a79bc79b062e909951ca99df352c84784e77f8c1602427cb"
+    },
+    {
+      "subtopic": "d314711b-b756-57de-9263-b023ff12f4bd",
+      "format": "rubrica",
+      "hash": "e6f95e68a7c92fa5e531dc918f76666d0f6fe76cb2dbae746da70f44daf5b079"
+    },
+    {
+      "subtopic": "d314711b-b756-57de-9263-b023ff12f4bd",
+      "format": "lista-cotejo",
+      "hash": "60b80b78a37d9998a129bc6a360bdd0bac8b03a4bd8ec78736a6f8bfa2842fba"
+    },
+    {
+      "subtopic": "d314711b-b756-57de-9263-b023ff12f4bd",
+      "format": "escala",
+      "hash": "899a8fdb6b2adaaaf41d9c48e1eeaaa1fb258d9e1b531e8bc540832ef031af39"
+    },
+    {
+      "subtopic": "d314711b-b756-57de-9263-b023ff12f4bd",
+      "format": "lista-ponderada",
+      "hash": "db765b69b9971cd4eb104fd10607df01df3873b15bc8af62c2542f2996939879"
+    },
+    {
+      "subtopic": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+      "format": "rubrica",
+      "hash": "b2dac6eda71d8b5751f411558503f5ab33a3f741c5253f9a53ad1faf39240bc3"
+    },
+    {
+      "subtopic": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+      "format": "lista-cotejo",
+      "hash": "96f81c7af9ccb1a787b904c14c8672e94354107d536c3f3a276f0f00947188a8"
+    },
+    {
+      "subtopic": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+      "format": "escala",
+      "hash": "16b58a65e373ba3ccbea854f1e52601b963214f30f32a273cbbd5e253c86e6ff"
+    },
+    {
+      "subtopic": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+      "format": "lista-ponderada",
+      "hash": "46051d89d0cc8686f6b2586de7260ba1b00a3338e56ca93a3d6f35db926ba2bc"
+    },
+    {
+      "subtopic": "7c083d99-b9e8-57b0-900e-b90436495f69",
+      "format": "rubrica",
+      "hash": "56af8999680a54e9e45b90f1c44546e181f25ce7223fdcf9c6c9e2279681f365"
+    },
+    {
+      "subtopic": "7c083d99-b9e8-57b0-900e-b90436495f69",
+      "format": "lista-cotejo",
+      "hash": "7a4b7899f3a849ce310b0f25fec75c471943f42b010680cbe3ff83e216c34a4e"
+    },
+    {
+      "subtopic": "7c083d99-b9e8-57b0-900e-b90436495f69",
+      "format": "escala",
+      "hash": "eb81282766254caf060ab6ccf53e0bd598a144e2173d7bafa410a3b73fa1bf96"
+    },
+    {
+      "subtopic": "7c083d99-b9e8-57b0-900e-b90436495f69",
+      "format": "lista-ponderada",
+      "hash": "bc029277d3f6c9cd1bc99d34d534795bc392eb29d891e8f643428bef6f016fc0"
+    },
+    {
+      "subtopic": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+      "format": "rubrica",
+      "hash": "20ea7ca4968b9f0575b28c64750f2339db10bbacda0a71c9345daef8d4a9b66e"
+    },
+    {
+      "subtopic": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+      "format": "lista-cotejo",
+      "hash": "c2e86aa43d97df5f9f078ec4912d3c0c009cfd5cee9b7727f686e9339999474c"
+    },
+    {
+      "subtopic": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+      "format": "escala",
+      "hash": "575042015a7d941845695a5502db29b7f78c699913f839149870aa2dbec461f4"
+    },
+    {
+      "subtopic": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+      "format": "lista-ponderada",
+      "hash": "9614d6788d622578623c765fbd3bb0c05f4a273d62da0acc0dc9fe52f17a2256"
+    },
+    {
+      "subtopic": "be45d0d1-666b-5016-8d34-1a0ee7ac83d8",
+      "format": "rubrica",
+      "hash": "56af8999680a54e9e45b90f1c44546e181f25ce7223fdcf9c6c9e2279681f365"
+    },
+    {
+      "subtopic": "be45d0d1-666b-5016-8d34-1a0ee7ac83d8",
+      "format": "lista-cotejo",
+      "hash": "7a4b7899f3a849ce310b0f25fec75c471943f42b010680cbe3ff83e216c34a4e"
+    },
+    {
+      "subtopic": "be45d0d1-666b-5016-8d34-1a0ee7ac83d8",
+      "format": "escala",
+      "hash": "eb81282766254caf060ab6ccf53e0bd598a144e2173d7bafa410a3b73fa1bf96"
+    },
+    {
+      "subtopic": "be45d0d1-666b-5016-8d34-1a0ee7ac83d8",
+      "format": "lista-ponderada",
+      "hash": "bc029277d3f6c9cd1bc99d34d534795bc392eb29d891e8f643428bef6f016fc0"
+    },
+    {
+      "subtopic": "be5d26d3-0d77-543c-9a87-146c7d275731",
+      "format": "rubrica",
+      "hash": "58deaa84463e296427bb92a66251b4bbc017c11c0d972a9871828c707fb8a5fd"
+    },
+    {
+      "subtopic": "be5d26d3-0d77-543c-9a87-146c7d275731",
+      "format": "lista-cotejo",
+      "hash": "99d45b30026ea3128d665523073ea005acdfae8b9303c3b30504c346cb1b763e"
+    },
+    {
+      "subtopic": "be5d26d3-0d77-543c-9a87-146c7d275731",
+      "format": "escala",
+      "hash": "a54e39c73981d35c434e4734749d83b5afe17fabfd4306ab7b5b1a0d63fd5822"
+    },
+    {
+      "subtopic": "be5d26d3-0d77-543c-9a87-146c7d275731",
+      "format": "lista-ponderada",
+      "hash": "7b1db52e56843cced94130fdd0f35c51b087292fb1ab203edae57535be30917d"
+    },
+    {
+      "subtopic": "86345894-03da-5e9a-98b0-b01b34c31230",
+      "format": "rubrica",
+      "hash": "20ea7ca4968b9f0575b28c64750f2339db10bbacda0a71c9345daef8d4a9b66e"
+    },
+    {
+      "subtopic": "86345894-03da-5e9a-98b0-b01b34c31230",
+      "format": "lista-cotejo",
+      "hash": "c2e86aa43d97df5f9f078ec4912d3c0c009cfd5cee9b7727f686e9339999474c"
+    },
+    {
+      "subtopic": "86345894-03da-5e9a-98b0-b01b34c31230",
+      "format": "escala",
+      "hash": "575042015a7d941845695a5502db29b7f78c699913f839149870aa2dbec461f4"
+    },
+    {
+      "subtopic": "86345894-03da-5e9a-98b0-b01b34c31230",
+      "format": "lista-ponderada",
+      "hash": "9614d6788d622578623c765fbd3bb0c05f4a273d62da0acc0dc9fe52f17a2256"
+    },
+    {
+      "subtopic": "816526f4-7335-5287-b520-4e2f732a853d",
+      "format": "rubrica",
+      "hash": "d1667327db46e0a2bbb1ab7ca370b46d5633e4a72735051e6f1254892729acab"
+    },
+    {
+      "subtopic": "816526f4-7335-5287-b520-4e2f732a853d",
+      "format": "lista-cotejo",
+      "hash": "c3f2861a5eafed720e72a37dc7aa24acf93c347a9bf7245c958d21b6bccd4372"
+    },
+    {
+      "subtopic": "816526f4-7335-5287-b520-4e2f732a853d",
+      "format": "escala",
+      "hash": "ff5402c00cbb202835b52c5fd28638a25b9209a7006bbfec04bd0f424aa0387f"
+    },
+    {
+      "subtopic": "816526f4-7335-5287-b520-4e2f732a853d",
+      "format": "lista-ponderada",
+      "hash": "3e8d84e09a42e71b6da6961b1f70444f9c304d18cbb4ef4023668511f0bfef18"
+    },
+    {
+      "subtopic": "cab080c8-d150-5a3f-8ffe-5e2dcb7549c2",
+      "format": "rubrica",
+      "hash": "2b6296e770a18fccccce8721c606806decdfb848c80d35001df3a4070912dee8"
+    },
+    {
+      "subtopic": "cab080c8-d150-5a3f-8ffe-5e2dcb7549c2",
+      "format": "lista-cotejo",
+      "hash": "d16632a4ed0f5a28020279688fc93235d75eeaa8ca503950f42e7066d374814f"
+    },
+    {
+      "subtopic": "cab080c8-d150-5a3f-8ffe-5e2dcb7549c2",
+      "format": "escala",
+      "hash": "4d8698d898d40da3f3c1c8a8ddcaa489c4bf46d68bbbe0c264c6998f89bbf764"
+    },
+    {
+      "subtopic": "cab080c8-d150-5a3f-8ffe-5e2dcb7549c2",
+      "format": "lista-ponderada",
+      "hash": "4b8fc0cfb8177f3a48b1d9b3825aaf2930784ef62320bbd59dd7aa6cdaf46dc1"
+    },
+    {
+      "subtopic": "c1a153a4-c3c1-55c6-bdbc-0305a189a73d",
+      "format": "rubrica",
+      "hash": "fd98b425e18904da61575eb3a1715c1e05537dd144b909c0b2de4d4628e52bc0"
+    },
+    {
+      "subtopic": "c1a153a4-c3c1-55c6-bdbc-0305a189a73d",
+      "format": "lista-cotejo",
+      "hash": "fa931cff3c21fe93e94ef3ad69c2977e696a08d7bb1e12d5507a497b216a1c65"
+    },
+    {
+      "subtopic": "c1a153a4-c3c1-55c6-bdbc-0305a189a73d",
+      "format": "escala",
+      "hash": "c4584a5780bfd2218f79c3d78aadf561f74cce2d47c7a691d7fa230ab744341a"
+    },
+    {
+      "subtopic": "c1a153a4-c3c1-55c6-bdbc-0305a189a73d",
+      "format": "lista-ponderada",
+      "hash": "bcd6ebd0502c81db2259f0dac955d98d65ec8df49762f5c2eba115da8e863021"
+    },
+    {
+      "subtopic": "9cd28a86-f862-58f7-a043-ce0cbab94c9f",
+      "format": "rubrica",
+      "hash": "b6c6b4a59c2a656299e0da936905a7a4532637b13c643d77e0d8b73f06fa261a"
+    },
+    {
+      "subtopic": "9cd28a86-f862-58f7-a043-ce0cbab94c9f",
+      "format": "lista-cotejo",
+      "hash": "e731b1682a9643ccdfa72d4f61f45e5a7ee0c83df299b9633d140f392871d9b7"
+    },
+    {
+      "subtopic": "9cd28a86-f862-58f7-a043-ce0cbab94c9f",
+      "format": "escala",
+      "hash": "77584e9a9a5cc96889c8fbf57d20c28510c4a9ec8a603ff863aed496b041974b"
+    },
+    {
+      "subtopic": "9cd28a86-f862-58f7-a043-ce0cbab94c9f",
+      "format": "lista-ponderada",
+      "hash": "f6d62644b03069751375f0ba3503fefd2b9d72ffc248efbb91fd4bdc8fb3a48f"
+    },
+    {
+      "subtopic": "96838d33-443f-5312-a5dd-9bca788d97c2",
+      "format": "rubrica",
+      "hash": "02b4f7dd74542aae401ca2c85906857ac6b37a15b7cec8a36393ec481a55455c"
+    },
+    {
+      "subtopic": "96838d33-443f-5312-a5dd-9bca788d97c2",
+      "format": "lista-cotejo",
+      "hash": "f1ecf21de7567fd680e950e8c09288eafce56c020d3735ccbc7dba1cec8a42cd"
+    },
+    {
+      "subtopic": "96838d33-443f-5312-a5dd-9bca788d97c2",
+      "format": "escala",
+      "hash": "a50e9622973459ae7d6b25d81603c0b8d8f941da630294fb1522b6dbeb3be089"
+    },
+    {
+      "subtopic": "96838d33-443f-5312-a5dd-9bca788d97c2",
+      "format": "lista-ponderada",
+      "hash": "fd76d9816abbbf2434eb62a10c3f9dcd336f038c29c06ca5c21977f42f7ff93c"
+    },
+    {
+      "subtopic": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
+      "format": "rubrica",
+      "hash": "9d490cae634a6a7f14933fd9dbea854ace88641e2dff5ca5dc46c95e7bfd2cce"
+    },
+    {
+      "subtopic": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
+      "format": "lista-cotejo",
+      "hash": "112ba14666ab564c83c678132970b21e104b028af550e1f319c3157a808e672f"
+    },
+    {
+      "subtopic": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
+      "format": "escala",
+      "hash": "d5c0623898307ae86117d95a339ebaced07b6a6c3450f91c2e9618241703f8b3"
+    },
+    {
+      "subtopic": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
+      "format": "lista-ponderada",
+      "hash": "013817700daac615b33beb58373db4ad33ae4ee98f28f73eda566d681181932c"
+    },
+    {
+      "subtopic": "9bd89592-7605-5046-8265-d6890433ef33",
+      "format": "rubrica",
+      "hash": "f08e1dc08354a9f06ddba7a031a5a0eb7206912cc7b91f1a3b6c8434d8b20005"
+    },
+    {
+      "subtopic": "9bd89592-7605-5046-8265-d6890433ef33",
+      "format": "lista-cotejo",
+      "hash": "2aecf719aeb81838017bfd86b3192261431b58a159209a506bd597b42a1934c2"
+    },
+    {
+      "subtopic": "9bd89592-7605-5046-8265-d6890433ef33",
+      "format": "escala",
+      "hash": "d9310eed2b6993afe8b5fc11711e917a074ace1ca891aa1af1853ca455a16bff"
+    },
+    {
+      "subtopic": "9bd89592-7605-5046-8265-d6890433ef33",
+      "format": "lista-ponderada",
+      "hash": "bfdfc2276e8349561eb19264b32f930dd375fe202b8de5cf6093f03391a1310f"
+    },
+    {
+      "subtopic": "9f64310c-c947-5136-b052-391410785bb2",
+      "format": "rubrica",
+      "hash": "feae658d97a43cbb115e55313eb6d0d11887557dbde1460fcb73551e1ae2b030"
+    },
+    {
+      "subtopic": "9f64310c-c947-5136-b052-391410785bb2",
+      "format": "lista-cotejo",
+      "hash": "314028742062977806d4e7353c3cc8a3dc41f0906457ea92f205b3aa7d8d42fa"
+    },
+    {
+      "subtopic": "9f64310c-c947-5136-b052-391410785bb2",
+      "format": "escala",
+      "hash": "96ece14789343372f514e31f17e9a2d409f539ae4cbd6ffe203a7cf0a6d4374b"
+    },
+    {
+      "subtopic": "9f64310c-c947-5136-b052-391410785bb2",
+      "format": "lista-ponderada",
+      "hash": "afa7da2c94500b54ac7971952fd30a95e3402f66cf6e8fdc54b7331219b52035"
+    },
+    {
+      "subtopic": "a655b161-ab61-595f-bffe-c55d0d2e5c85",
+      "format": "rubrica",
+      "hash": "8922bdc476ddd4781ffaabb7cc46b7b315a97a85fe7c70c5b993705505ee2163"
+    },
+    {
+      "subtopic": "a655b161-ab61-595f-bffe-c55d0d2e5c85",
+      "format": "lista-cotejo",
+      "hash": "198daf4145a7dd5b2b08b774b5e9cf678ff34bf821116c3a33c92d82ad66b0ee"
+    },
+    {
+      "subtopic": "a655b161-ab61-595f-bffe-c55d0d2e5c85",
+      "format": "escala",
+      "hash": "fe72d9c2c44441bc0cf7df9e09bc1886d45fee515770c6ae718b77803434ea6a"
+    },
+    {
+      "subtopic": "a655b161-ab61-595f-bffe-c55d0d2e5c85",
+      "format": "lista-ponderada",
+      "hash": "099e4acc41a0a585b7cbe737a3d905822c247130feda3d42591adfe1337f2885"
+    },
+    {
+      "subtopic": "36e9c144-6d5f-57a3-94e2-3a4c96773976",
+      "format": "rubrica",
+      "hash": "a792dd8816c61febce9d6f5d6a8398abda3602989543be91f43d68ec599b47e0"
+    },
+    {
+      "subtopic": "36e9c144-6d5f-57a3-94e2-3a4c96773976",
+      "format": "lista-cotejo",
+      "hash": "01e6f3e406d23f246ca31cd0e1f492fedd0e3d476c790b75a4ad1ef646cb4690"
+    },
+    {
+      "subtopic": "36e9c144-6d5f-57a3-94e2-3a4c96773976",
+      "format": "escala",
+      "hash": "9dbb3df539bfd84611da5d12849d61507b37b6f5d4683edef2f3c29ba44fa3b8"
+    },
+    {
+      "subtopic": "36e9c144-6d5f-57a3-94e2-3a4c96773976",
+      "format": "lista-ponderada",
+      "hash": "a664e0e8136ba6acc870c342363eb8ba9292188c05bc22fb132d8de653e3329c"
+    },
+    {
+      "subtopic": "79ca1110-b6a6-5cae-9e66-eec9e8fe18b2",
+      "format": "rubrica",
+      "hash": "43df02ce8b6957a77b69f725bcc5f367356428960aa3193560abe1b6db08c380"
+    },
+    {
+      "subtopic": "79ca1110-b6a6-5cae-9e66-eec9e8fe18b2",
+      "format": "lista-cotejo",
+      "hash": "a455862bd485332df77cdcae7566fac54f0a1929d67d2fcb0f1f92969969ce6f"
+    },
+    {
+      "subtopic": "79ca1110-b6a6-5cae-9e66-eec9e8fe18b2",
+      "format": "escala",
+      "hash": "7f1b7a84ee60ce7a88c464137c59bc46ab5bca39b78f4665d3697d84f0c0f0f4"
+    },
+    {
+      "subtopic": "79ca1110-b6a6-5cae-9e66-eec9e8fe18b2",
+      "format": "lista-ponderada",
+      "hash": "d30f7ae17c75e15486e792541d89dd5df23a54df655f2cd2810f12b729abfc83"
+    },
+    {
+      "subtopic": "50810071-d964-5722-ae8b-296148af63c6",
+      "format": "rubrica",
+      "hash": "9c0a28c4959bd396a9a321d0c30a0feaf8e3a7051e4dff4e37d5417433be5cf9"
+    },
+    {
+      "subtopic": "50810071-d964-5722-ae8b-296148af63c6",
+      "format": "lista-cotejo",
+      "hash": "0b50c4f1500e9a1a80ea16181554cc65bb0e92fd206fe5b5d62f2ea8c3bef7db"
+    },
+    {
+      "subtopic": "50810071-d964-5722-ae8b-296148af63c6",
+      "format": "escala",
+      "hash": "63ea54055592fdf3ccec38637c6c69f693bff54bd799fa737060eef0fb7ca896"
+    },
+    {
+      "subtopic": "50810071-d964-5722-ae8b-296148af63c6",
+      "format": "lista-ponderada",
+      "hash": "83a88927c4d753752e02d1bd3121114692cc0709bb6da2c5ba2bd4627763dac0"
+    },
+    {
+      "subtopic": "550e059b-4981-56f9-8869-97ffa30fc185",
+      "format": "rubrica",
+      "hash": "a867d245368389614d3d0198c55115326407cee0b418391f78d5a0854824f16a"
+    },
+    {
+      "subtopic": "550e059b-4981-56f9-8869-97ffa30fc185",
+      "format": "lista-cotejo",
+      "hash": "944a9d9dfbea1078b47e05bdbb6d73de772d7ba1079e8b6bb38b9134bacfc191"
+    },
+    {
+      "subtopic": "550e059b-4981-56f9-8869-97ffa30fc185",
+      "format": "escala",
+      "hash": "b1b3d561ef1d88956e30f4cae79c5b287f785d8389dc5912bfced3314347d08e"
+    },
+    {
+      "subtopic": "550e059b-4981-56f9-8869-97ffa30fc185",
+      "format": "lista-ponderada",
+      "hash": "585a90a38d6db588499c6f3b6d6a14678c38b376ba5e50261cdd4fd27cf46a0e"
+    },
+    {
+      "subtopic": "ec9ca380-06c8-5b66-92cf-8f24eb0f6225",
+      "format": "rubrica",
+      "hash": "5de3a9d6aeab834a08ba17023307264e43a30f5f6d891610ddbae3b53dd089c0"
+    },
+    {
+      "subtopic": "ec9ca380-06c8-5b66-92cf-8f24eb0f6225",
+      "format": "lista-cotejo",
+      "hash": "f1b4d1b266b9937e029c5770a2783fb86f954d35e0f6d7bddae6f75234d4720d"
+    },
+    {
+      "subtopic": "ec9ca380-06c8-5b66-92cf-8f24eb0f6225",
+      "format": "escala",
+      "hash": "3038b73dded19b2f45de9a300918f4fbf5afccbc156e790dafed3dd828e0841f"
+    },
+    {
+      "subtopic": "ec9ca380-06c8-5b66-92cf-8f24eb0f6225",
+      "format": "lista-ponderada",
+      "hash": "8ea2d006eaceafe91c6146e6a0897927708d933cc8146b4be2e5c20ec567716e"
+    },
+    {
+      "subtopic": "5149b76d-b17d-5c9d-a0ec-80ed97965303",
+      "format": "rubrica",
+      "hash": "20cfc8df25dcffa011313ee228fa0ffaa5ddf7e08f5ce3b8d46a7fe825e855da"
+    },
+    {
+      "subtopic": "5149b76d-b17d-5c9d-a0ec-80ed97965303",
+      "format": "lista-cotejo",
+      "hash": "fdb20aed8312895de7ec430d6a9cf24494c45fe777892b1e73416c42ba9d2fd8"
+    },
+    {
+      "subtopic": "5149b76d-b17d-5c9d-a0ec-80ed97965303",
+      "format": "escala",
+      "hash": "2f998f43b9645cd7b53a2a915245be27d739aebada376713e4c170bb302bd9db"
+    },
+    {
+      "subtopic": "5149b76d-b17d-5c9d-a0ec-80ed97965303",
+      "format": "lista-ponderada",
+      "hash": "c3232116a426fdfcf636114c4eadf7f306a10818952b9f38fe464b820a62d0a8"
+    },
+    {
+      "subtopic": "2fb5fb3a-4bd1-5b47-a4cf-a43f348646c2",
+      "format": "rubrica",
+      "hash": "5de3a9d6aeab834a08ba17023307264e43a30f5f6d891610ddbae3b53dd089c0"
+    },
+    {
+      "subtopic": "2fb5fb3a-4bd1-5b47-a4cf-a43f348646c2",
+      "format": "lista-cotejo",
+      "hash": "f1b4d1b266b9937e029c5770a2783fb86f954d35e0f6d7bddae6f75234d4720d"
+    },
+    {
+      "subtopic": "2fb5fb3a-4bd1-5b47-a4cf-a43f348646c2",
+      "format": "escala",
+      "hash": "3038b73dded19b2f45de9a300918f4fbf5afccbc156e790dafed3dd828e0841f"
+    },
+    {
+      "subtopic": "2fb5fb3a-4bd1-5b47-a4cf-a43f348646c2",
+      "format": "lista-ponderada",
+      "hash": "8ea2d006eaceafe91c6146e6a0897927708d933cc8146b4be2e5c20ec567716e"
+    },
+    {
+      "subtopic": "6d17c841-b0de-594e-bb70-3501e6519b11",
+      "format": "rubrica",
+      "hash": "102efce91041d5ca15ac71764a881b345696f4a7f6e9a508b7b745c04a532608"
+    },
+    {
+      "subtopic": "6d17c841-b0de-594e-bb70-3501e6519b11",
+      "format": "lista-cotejo",
+      "hash": "12c9e69d0bb3774e41b781854f889d3edd6a8ee0787fd2a3f0b448a89dee06a5"
+    },
+    {
+      "subtopic": "6d17c841-b0de-594e-bb70-3501e6519b11",
+      "format": "escala",
+      "hash": "eb98e15d83bde70ecf7c5be0384e3441aed7681a61586d5b3c69dcffe6cedfe7"
+    },
+    {
+      "subtopic": "6d17c841-b0de-594e-bb70-3501e6519b11",
+      "format": "lista-ponderada",
+      "hash": "cdfa6a8e570df496ae3128eb697f142ef9584ad213b93cd23d5b8f513a9c82f5"
+    },
+    {
+      "subtopic": "bad379b8-8d00-56ec-b5e1-f436557d29fc",
+      "format": "rubrica",
+      "hash": "6f1f7884e6cdc4e0c5ee89cb006f82e4e2e8b8824cef5cbfec875fa33d4c9887"
+    },
+    {
+      "subtopic": "bad379b8-8d00-56ec-b5e1-f436557d29fc",
+      "format": "lista-cotejo",
+      "hash": "8cf02a4156a2addd8a40de6f7a3cf2ee74fc402a99fef985c2739169207f4a3f"
+    },
+    {
+      "subtopic": "bad379b8-8d00-56ec-b5e1-f436557d29fc",
+      "format": "escala",
+      "hash": "818a0beb8493b8a2e3482175c481b14e5f365dcd450efb6954f9dde7e5f2e167"
+    },
+    {
+      "subtopic": "bad379b8-8d00-56ec-b5e1-f436557d29fc",
+      "format": "lista-ponderada",
+      "hash": "50e1b0ff2ba50fb8e7b5d9ea8b4bdfd31ee47cb2bfc56259f6e2d2ff354c137b"
+    },
+    {
+      "subtopic": "e6b7ec90-65cb-5c4a-b217-36cd77a2c671",
+      "format": "rubrica",
+      "hash": "03e5e065b94718959ad9b8a8665749ed61900088df12ac0553558ff59e96c333"
+    },
+    {
+      "subtopic": "e6b7ec90-65cb-5c4a-b217-36cd77a2c671",
+      "format": "lista-cotejo",
+      "hash": "3f688af5c095f41fad1dffea1f6fdabbf1277eb665e37d057aff53226ed9fead"
+    },
+    {
+      "subtopic": "e6b7ec90-65cb-5c4a-b217-36cd77a2c671",
+      "format": "escala",
+      "hash": "e5838c15e3616f0135e32d2821cf6ea721bc4fd31094aed7448861562f89e07b"
+    },
+    {
+      "subtopic": "e6b7ec90-65cb-5c4a-b217-36cd77a2c671",
+      "format": "lista-ponderada",
+      "hash": "6f3511b043a02ffeef6d82f425c2dacc1f6aaf9b9c63e0947ed83588f12046a2"
+    },
+    {
+      "subtopic": "b70e0e8e-1735-57d1-b621-9a25d73de62c",
+      "format": "rubrica",
+      "hash": "ebae583c5cb73f8e3768f9304af2b8647488d28ef64c0b042e554cb318b6a3e8"
+    },
+    {
+      "subtopic": "b70e0e8e-1735-57d1-b621-9a25d73de62c",
+      "format": "lista-cotejo",
+      "hash": "811760bac9529e78f48601eca9b8edb40b8162d74bd747eb50fc5a363cf19786"
+    },
+    {
+      "subtopic": "b70e0e8e-1735-57d1-b621-9a25d73de62c",
+      "format": "escala",
+      "hash": "52e77c218dbe497c439a5fe250718fad1ea5bb33a3a4ad5b379ba05a2d454109"
+    },
+    {
+      "subtopic": "b70e0e8e-1735-57d1-b621-9a25d73de62c",
+      "format": "lista-ponderada",
+      "hash": "495ac5db34ea24456baad391fd7d0ff46af4ca6456e3440519998c96bef22a46"
+    },
+    {
+      "subtopic": "1bd75c21-a659-5124-903b-02925b284b13",
+      "format": "rubrica",
+      "hash": "8ef60632f2c7848ca91eff4a09e24a20dac77a905a41bbaa287831e8798dd21e"
+    },
+    {
+      "subtopic": "1bd75c21-a659-5124-903b-02925b284b13",
+      "format": "lista-cotejo",
+      "hash": "dc13cf771ed97eceb9bc32837c82b217b89052cc0fdf96587d0153f3df59dcdd"
+    },
+    {
+      "subtopic": "1bd75c21-a659-5124-903b-02925b284b13",
+      "format": "escala",
+      "hash": "a24ee6152b266efeb43fdba703dd33b7aa0c698c393ad85d7421802c96dcb363"
+    },
+    {
+      "subtopic": "1bd75c21-a659-5124-903b-02925b284b13",
+      "format": "lista-ponderada",
+      "hash": "e4b4ec40fdee59714bc8415d95a6ef55dc5957ad602f411ee075b960aacfe484"
+    },
+    {
+      "subtopic": "2a40f2dc-1306-5bc9-ae93-cf353fc3283c",
+      "format": "rubrica",
+      "hash": "e8654cbca0c347b9cb8adbac2c9a1e5cb4227b97e6fb79fd11bae1a05b1e4e7c"
+    },
+    {
+      "subtopic": "2a40f2dc-1306-5bc9-ae93-cf353fc3283c",
+      "format": "lista-cotejo",
+      "hash": "646faa947f202aee4f1cc9c7c57f666a37007dbccce658f3edc7ebde46fe66ed"
+    },
+    {
+      "subtopic": "2a40f2dc-1306-5bc9-ae93-cf353fc3283c",
+      "format": "escala",
+      "hash": "a189acf35ccb49ac1dd8a23bda86f2cce1ebe2fec05f8f43c856a39fb6734421"
+    },
+    {
+      "subtopic": "2a40f2dc-1306-5bc9-ae93-cf353fc3283c",
+      "format": "lista-ponderada",
+      "hash": "d3376bcca781fc4cdf1619ca8eaffde7159b9841c8273f418ec573080ee28815"
+    }
+  ]
+}

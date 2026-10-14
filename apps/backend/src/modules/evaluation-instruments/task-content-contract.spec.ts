@@ -52,7 +52,11 @@ describe('Contrato entre texto estudiado y producto solicitado',()=>{
     expect(JSON.stringify(r.criteria)).not.toMatch(/Lo realiza con precisión|Aún no lo evidencia|exposición oral/)
     if(format==='lista-ponderada') expect(r.criteria.every(c=>c.description.includes('Parcial (50%):'))).toBe(true)
     else if(format==='lista-cotejo') expect(r.levels).toEqual([])
-    else expect(r.criteria[1].descriptors.at(-1)?.text).toBe('Confunde las pistas o no explica su relación con la investigación.')
+    else if(format==='escala') {
+      expect(r.criteria[1].title).toMatch(/pistas/)
+      expect(r.levels.map(level=>level.label)).toEqual(['Completo','Suficiente','Parcial','Aún no logrado'])
+      expect(r.criteria[1].descriptors.at(-1)?.text).toBe('No demuestra el desempeño descrito en el indicador.')
+    } else expect(r.criteria[1].descriptors.at(-1)?.text).toBe('Confunde las pistas o no explica su relación con la investigación.')
   })
   it('ofrece un candidato sobre límites de la interpretación sin duplicar los cinco iniciales',()=>{
     const r=recommend({...fixture,maxScore:15,includeAdditionalCandidates:true,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)

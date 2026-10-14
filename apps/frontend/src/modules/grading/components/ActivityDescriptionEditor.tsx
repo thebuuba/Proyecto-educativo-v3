@@ -16,7 +16,7 @@ import { Select } from '@/components/ui/Select'
 import { supabase } from '@/modules/auth/services/supabaseClient'
 import { cn } from '@/utils/cn'
 
-const DESCRIPTION_LIMIT = 10_000
+import { ACTIVITY_DESCRIPTION_MAX_LENGTH as DESCRIPTION_LIMIT } from '@aula/shared'
 const IMAGE_BUCKET = 'activity-description-images'
 const FONT_SIZES = ['12', '14', '16', '18', '20', '24', '28', '32']
 

@@ -11,20 +11,20 @@ import { evaluationCatalogV15 } from './catalog-v15'
 import { evaluationCatalogV16 } from './catalog-v16'
 import { evaluationCatalogV17 } from './catalog-v17'
 import { evaluationCatalogV18 } from './catalog-v18'
-import { secondaryMathModules, firstGradeLanguageFeatures } from '@aula/shared'
+import { secondaryMathModules } from '@aula/shared'
 import { evaluationCatalogV19 } from './catalog-v19'
+import { evaluationCatalogV20 } from './catalog-v20'
+import { evaluationCatalogV21 } from './catalog-v21'
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV19,
-  version: 'evaluation-2026.20',
-  firstGradeLanguageFeatures,
-  languageEvidencePolicy: 'EXPLICIT_FEATURE_ACTION_PRODUCT_V1',
-  languageInstrumentPolicy: 'QUALITY_PRESENCE_REGULARITY_WEIGHTED_COMPONENTS',
-  scoringPolicy: 'ORIGINAL_RELATIVE_WEIGHTS_HUNDREDTHS',
+  ...evaluationCatalogV21,
+  version: 'evaluation-2026.22',
+  languageScalePolicy:'OBSERVABLE_WITH_COMPACT_FREQUENCY_OR_DEGREE_V1',
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV21.version) return evaluationCatalogV21
   return version === evaluationCatalogV1.version ? evaluationCatalogV1 : version === evaluationCatalogV8.version ? evaluationCatalogV8
-    : version === evaluationCatalogV9.version ? evaluationCatalogV9 : version === evaluationCatalogV10.version ? evaluationCatalogV10 : version === evaluationCatalogV11.version ? evaluationCatalogV11 : version === evaluationCatalogV12.version ? evaluationCatalogV12 : version === evaluationCatalogV13.version ? evaluationCatalogV13 : version === evaluationCatalogV14.version ? evaluationCatalogV14 : version === evaluationCatalogV15.version ? evaluationCatalogV15 : version === evaluationCatalogV16.version ? evaluationCatalogV16 : version === evaluationCatalogV17.version ? evaluationCatalogV17 : version === evaluationCatalogV18.version ? evaluationCatalogV18 : version === evaluationCatalogV19.version ? evaluationCatalogV19 : version === evaluationCatalogCurrent.version ? evaluationCatalogCurrent : null
+    : version === evaluationCatalogV9.version ? evaluationCatalogV9 : version === evaluationCatalogV10.version ? evaluationCatalogV10 : version === evaluationCatalogV11.version ? evaluationCatalogV11 : version === evaluationCatalogV12.version ? evaluationCatalogV12 : version === evaluationCatalogV13.version ? evaluationCatalogV13 : version === evaluationCatalogV14.version ? evaluationCatalogV14 : version === evaluationCatalogV15.version ? evaluationCatalogV15 : version === evaluationCatalogV16.version ? evaluationCatalogV16 : version === evaluationCatalogV17.version ? evaluationCatalogV17 : version === evaluationCatalogV18.version ? evaluationCatalogV18 : version === evaluationCatalogV19.version ? evaluationCatalogV19 : version === evaluationCatalogV20.version ? evaluationCatalogV20 : version === evaluationCatalogCurrent.version ? evaluationCatalogCurrent : null
 }
