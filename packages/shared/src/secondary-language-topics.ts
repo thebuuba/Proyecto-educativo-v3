@@ -1,5 +1,6 @@
 import { secondaryLanguageGradeTwoTopics } from './secondary-topics/language/grade-2'
 import { secondaryLanguageGradeThreeTopics } from './secondary-topics/language/grade-3'
+import { secondaryLanguageGradeFourTopics } from './secondary-topics/language/grade-4'
 import type { SecondaryLanguageTopic, TopicTaskMode } from './secondary-topic-types'
 import {resolveEvaluationTask} from './evaluation-task-contract'
 import {withoutResources} from './evaluation-task-text'
@@ -7,6 +8,7 @@ import {affirmativeLanguageTask} from './language-feature-criteria'
 export {withoutResources,normalizedTask} from './evaluation-task-text'
 export { secondaryLanguageGradeTwoTopics } from './secondary-topics/language/grade-2'
 export { secondaryLanguageGradeThreeTopics } from './secondary-topics/language/grade-3'
+export { secondaryLanguageGradeFourTopics } from './secondary-topics/language/grade-4'
 export type { SecondaryLanguageTopic, TopicDimension, TopicTaskMode } from './secondary-topic-types'
 
 const normalized = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
@@ -17,7 +19,7 @@ export function commonSecondaryLanguageGrade(context:SecondaryTopicContext|null|
 export function findSecondaryLanguageTopic(title: string, description: string, context: SecondaryTopicContext | null) {
   if (!commonSecondaryLanguageGrade(context)) return null
   const task = affirmativeLanguageTask(withoutResources(description))
-  const find = (value: string) => [...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics].find(topic => topic.grade === context!.grade && topic.aliases.some(alias => ` ${normalized(value)} `.includes(` ${normalized(alias)} `)))
+  const find = (value: string) => [...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics,...secondaryLanguageGradeFourTopics].find(topic => topic.grade === context!.grade && topic.aliases.some(alias => ` ${normalized(value)} `.includes(` ${normalized(alias)} `)))
   const described=find(task)
   if(described)return described
   if(context!.grade===2&&/\bnoticias?\b|\bnoticiero\b/.test(normalized(task)))return null
@@ -42,7 +44,7 @@ export function detectTopicActivity(title: string, description: string, topic: S
   const purpose = task.match(/(?:para|a fin de)\s+((?:present\w*|expon\w*|exposicion)\b.*)/)?.[1]
   const actionText = purpose ?? task
   if(contract.product==='REPORT'&&topic.id!=='informe-de-lectura')return 'REPORT'
-  if(/\binvestig\w*\b/.test(actionText)&&!(topic.grade>=3&&/\b(?:redact\w*|escrib\w*|elabor\w*)\b/.test(actionText)))return 'RESEARCH'
+  if(/\binvestig(?:ar\w*|an|a|uen|ando)\b/.test(actionText)&&!(topic.grade>=3&&/\b(?:redact\w*|escrib\w*|elabor\w*)\b/.test(actionText)))return 'RESEARCH'
   const writing=/\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|revis(?:ar|aran|a|en)|correg\w*|cre(?:ar\w*|an|a)|produc(?:ir\w*|iran|en|e|iendo)|compon(?:er|dr\w*|en|e|gan|iendo))\b/.test(actionText)
     ||/\bpresent\w*\b.*\b(?:por escrito|escrita|escrito)\b/.test(actionText)
   const comprehension=/parafras|propias palabras|\bresum(?:iran|ir|e)\b|predicci|anticip|inferir|clasific|reconstru/.test(actionText)&&!writing

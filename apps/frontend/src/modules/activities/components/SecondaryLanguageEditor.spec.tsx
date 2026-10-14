@@ -26,13 +26,22 @@ const thirdCases=[
  ['Narrarán oralmente un cuento social.', 'ORAL_PRESENTATION', 'presentacion'],
  ['Recitarán un madrigal.', 'ORAL_PRESENTATION', 'presentacion'],
 ] as const
+const fourthCases=[
+ ['Redactarán una crónica de hechos documentados.', 'WRITTEN_PRODUCTION', 'analisis-producciones'],
+ ['Elaborarán un instructivo con pasos ordenados.', 'WRITTEN_PRODUCTION', 'analisis-producciones'],
+ ['Redactarán un informe de investigación con los datos dados.', 'REPORT', 'analisis-producciones'],
+ ['Debatirán la tesis de un artículo de opinión.', 'DEBATE', 'debate'],
+ ['Redactarán un discurso de agradecimiento con razones sustentadas.', 'WRITTEN_PRODUCTION', 'analisis-producciones'],
+ ['Analizarán un fragmento de novela distinguiendo narrador y personajes.', 'ANALYSIS', 'analisis-producciones'],
+ ['Recitarán un soneto usando gestos.', 'ORAL_PRESENTATION', 'presentacion'],
+] as const
 describe('grade two restored editor integration with editable contextual alternatives', () => {
   beforeEach(() => {
     localStorage.clear()
     vi.restoreAllMocks()
     vi.spyOn(api, 'post').mockRejectedValue(new Error('Servicio simulado no disponible'))
   })
-  it.each([...cases.map(c=>[...c,2] as const),...thirdCases.map(c=>[...c,3] as const)])('prepares without a score, switches formats and confirms without losing selections: %s', async (description, activityType, technique,grade) => {
+  it.each([...cases.map(c=>[...c,2] as const),...thirdCases.map(c=>[...c,3] as const),...fourthCases.map(c=>[...c,4] as const)])('prepares without a score, switches formats and confirms without losing selections: %s', async (description, activityType, technique,grade) => {
     const onAdd = vi.fn(async (input: Parameters<ActivityEditorWorkspaceProps['onAddActivity']>[0]) => ({ ...input, id: 'saved' }))
     render(<ActivityEditorWorkspace
       initialDraft={{ ...newActivityDraft('b2'), name: 'Actividad', description, activityType: 'individual' }}

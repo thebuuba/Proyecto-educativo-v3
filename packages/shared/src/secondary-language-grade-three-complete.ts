@@ -1,7 +1,7 @@
 import type {SecondaryLanguageTopic} from './secondary-topic-types'
 import type {ContextualTopicCriterion as Criterion} from './secondary-topic-criteria'
 import {topicTaskMode} from './secondary-language-topics'
-import {affirmativeLanguageTask,requestedLanguageFeatures,languageFeatureCriterion,explicitWritingProcess} from './language-feature-criteria'
+import {affirmativeLanguageTask,requestedLanguageFeatures,languageFeatureCriterion,explicitWritingProcess,type LanguageFeature} from './language-feature-criteria'
 import {languageReadingProcedures,languageWritingProcedures} from './language-procedure-criteria'
 import {thirdGradeLanguageFeatures} from './secondary-language-grade-three-features'
 
@@ -17,14 +17,25 @@ const profiles:Record<string,{genre:string;target:string;plan:string}>={
 const criterion=(scope:string,id:string,title:string,levels:Criterion['progressionLevels'],weight=3):Criterion=>({templateId:`${scope}-${id}`,title,observable:levels[0],progressionLevels:levels,weight})
 
 export function thirdGradeLanguageCriteria(topic:SecondaryLanguageTopic,activity:string,description:string):Criterion[] {
- const p=profiles[topic.id],task=affirmativeLanguageTask(description),scope=`len-3-${topic.id}`,mode=topicTaskMode(activity)
+ return composeLanguageCriteria(topic,activity,description,profiles[topic.id],thirdGradeLanguageFeatures[topic.id])
+}
+
+/** Shared action/procedure composition; every grade supplies its own source-backed profile. */
+export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:string,description:string,p:{genre:string;target:string;plan:string},availableFeatures:LanguageFeature[]):Criterion[] {
+ const task=affirmativeLanguageTask(description),scope=`len-${topic.grade}-${topic.id}`,mode=topicTaskMode(activity)
  const reciting=mode==='ORAL'&&/recit|declam/.test(task)
  const narrating=mode==='ORAL'&&/narr\w*.*oralmente/.test(task)
- const oralCreation=mode==='ORAL'&&(/produc\w*|elabor\w*|realiz\w*.*entrevista/.test(task)||narrating)
- const producing=mode==='PRODUCTION'||mode==='REPORT'&&topic.id==='informe-experimento'||oralCreation
- const features=requestedLanguageFeatures(thirdGradeLanguageFeatures[topic.id],description).map(f=>{
+ const oralCreation=mode==='ORAL'&&(/produc\w*|elabor\w*|realiz\w*.*entrevista/.test(task)||narrating
+  ||topic.grade>=4&&['discurso-agradecimiento','informe-investigacion','instructivo'].includes(topic.id)&&/present\w*\s+oralmente/.test(task)&&!/analisis|analiz|interpret|comentario|leido/.test(task))
+ const producing=topic.id!=='novela'&&(mode==='PRODUCTION'||mode==='REPORT'&&['informe-experimento','informe-investigacion'].includes(topic.id)||oralCreation)
+ const features=requestedLanguageFeatures(availableFeatures,description).map(f=>{
   if(f.id!=='graphics')return f
-  const matches=(f.terms??[]).flatMap(([pattern,name])=>{const m=new RegExp(pattern).exec(task);return m?[{name:/^(?:tabla|diagrama|dibujo|mapa)$/.test(m[0])?m[0]:name.replace(/^(?:los|las) /,''),index:m.index,end:m.index+m[0].length}]:[]}).sort((a,b)=>a.index-b.index)
+  const matches=(f.terms??[]).flatMap(([pattern,name])=>{
+   const m=new RegExp(pattern).exec(task)
+   if(!m)return []
+   const singular:Record<string,string>={grafico:'gráfico',grafica:'gráfica',fotografia:'fotografía',ilustracion:'ilustración'}
+   return [{name:topic.grade>=4&&singular[m[0]]?singular[m[0]]:/^(?:tabla|diagrama|dibujo|mapa)$/.test(m[0])?m[0]:name.replace(/^(?:los|las) /,''),index:m.index,end:m.index+m[0].length}]
+  }).sort((a,b)=>a.index-b.index)
   if(!matches.length)return f
   const joiner=/\bo\b/.test(task.slice(matches[0].index,matches.at(-1)!.end))?' o ':' y '
   return {...f,name:matches.map(m=>m.name).join(joiner)}
@@ -34,7 +45,7 @@ export function thirdGradeLanguageCriteria(topic:SecondaryLanguageTopic,activity
   return {templateId:`${scope}-${d.id}`,title:d.title,observable,progressionLevels:[observable,...d.evidence],weight:d.weight}
  })
  if(features.length){
-  const explicitCore=/funcion|estructura|proposito|roles|preguntas y respuestas|hechos|tesis|argumentos|conflicto|personajes|especies|resultados|sentimientos|versos|rima/.test(task)
+  const explicitCore=/funcion|estructura|proposito|roles|preguntas y respuestas|hechos|tesis|argumentos|conflicto|personajes|especies|resultados|sentimientos|versos|rima/.test(task)||topic.grade>=4&&/razones|ocasion|instrucciones|pasos|objetivos|metodo|motivaciones|narrador/.test(task)
   if(/\b(?:solo|unicamente|exclusivamente)\b/.test(task)||!producing&&mode!=='ORAL'&&!explicitCore)rows=[]
   rows.push(...features.map(f=>languageFeatureCriterion(f,scope,p.genre,mode==='COMPARISON'?'comparison':reciting?'recitation':oralCreation?'oral-production':producing?'production':'analysis')))
  }
@@ -80,8 +91,8 @@ export function thirdGradeLanguageCriteria(topic:SecondaryLanguageTopic,activity
    'No presenta el catálogo de forma consultable en el soporte solicitado.',
   ]))
  }
- if(producing&&/conclusion/.test(task)&&['informe-experimento','articulo-opinion'].includes(topic.id)){
-  const target=topic.id==='informe-experimento'?'los resultados disponibles y la interpretación de sus datos':'la tesis y los argumentos desarrollados'
+ if(producing&&/conclusion/.test(task)&&['informe-experimento','informe-investigacion','articulo-opinion'].includes(topic.id)){
+  const target=topic.id.startsWith('informe-')?'los resultados disponibles y la interpretación de sus datos':'la tesis y los argumentos desarrollados'
   rows.push(criterion(scope,'procedure-conclusion','Conclusión sustentada',[
    `Formula una conclusión que retoma ${target}, sin añadir afirmaciones ajenas al desarrollo.`,
    'La conclusión se relaciona con el desarrollo; una afirmación necesita un apoyo más claro.',
@@ -129,7 +140,7 @@ export function thirdGradeLanguageCriteria(topic:SecondaryLanguageTopic,activity
   'Atribuye al asunto datos de otro caso o presenta opiniones como hechos comprobados.',
   'No presenta información pertinente al propósito de investigación.',
  ],5),...rows.filter(r=>r.templateId.endsWith('procedure-interviewee'))]
- if(activity==='RESEARCH'||producing&&/fuentes|investig|recopil/.test(task))rows.push(criterion(scope,'research-sources','Origen de la información',[
+ if(activity==='RESEARCH'||producing&&/fuentes|\binvestig(?:ar\w*|an|a|uen|ando)\b|recopil/.test(task))rows.push(criterion(scope,'research-sources','Origen de la información',[
   'Identifica las fuentes de los datos utilizados y comprueba que respaldan la información registrada.',
   'Las fuentes respaldan la información; falta precisar el origen de un dato secundario.',
   'Enumera fuentes sin mostrar cuáles respaldan los datos registrados.',
@@ -137,20 +148,20 @@ export function thirdGradeLanguageCriteria(topic:SecondaryLanguageTopic,activity
   'No identifica fuentes que permitan comprobar los datos registrados.',
  ]))
  if(reciting)rows=[criterion(scope,'recitation-sequence','Sentido y secuencia de los versos',[
-  'Recita el madrigal conservando la secuencia y el sentido de sus versos, con los apoyos acordados.',
+  `Recita el ${p.genre} conservando la secuencia y el sentido de sus versos, con los apoyos acordados.`,
   'Una omisión puntual no impide seguir el sentido del poema.',
   'Las omisiones o repeticiones interrumpen la relación entre varios versos.',
   'Los cambios de orden alteran el sentido del poema recitado.',
-  'No se presenta una recitación reconocible del madrigal con los apoyos acordados.',
+  `No se presenta una recitación reconocible del ${p.genre} con los apoyos acordados.`,
  ]),criterion(scope,'recitation-expression','Ritmo y expresión poética',[
-  'Comunica los sentimientos del madrigal mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.',
+  `Comunica los sentimientos del ${p.genre} mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.`,
   'Se perciben los sentimientos; una pausa o énfasis necesita vincularse con el verso.',
   'Los énfasis se limitan a palabras aisladas y no permiten seguir la emoción de los versos.',
   'La expresión comunica un sentimiento contrario al sentido del verso.',
   'No aporta evidencia de expresión del sentido mediante la recitación o el apoyo acordado.',
  ]),...rows.filter(r=>r.templateId.includes('-feature-'))]
  if(reciting&&/gestos|gestual/.test(task))rows=rows.map(r=>r.templateId.endsWith('-feature-nonverbal')?criterion(scope,'feature-nonverbal','Expresión gestual del sentido',[
-  'Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del madrigal.',
+  `Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del ${p.genre}.`,
   'Los gestos expresan los sentimientos del poema; un movimiento necesita vincularse con el verso.',
   'Usa gestos aislados sin relacionarlos con los sentimientos o imágenes de los versos.',
   'El gesto comunica un sentimiento contrario al expresado por el verso.',

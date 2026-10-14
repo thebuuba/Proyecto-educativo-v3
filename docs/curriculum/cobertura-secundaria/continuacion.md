@@ -1,5 +1,11 @@
 # Continuación del encargo completo
 
+## Bloque vigente: 1.º–4.º verificados; continuar 5.º (.29)
+
+Cuarto cierra siete temas, 67 conceptos lógicos (68 registros) y 26 bloques de modalidad (92 registros de procedimientos) con 143 consignas. Backend 3.147; frontend 6.131 más 1.736 comprobaciones finales. HTTP 528 iniciales +272 finales +13 de selección; cuatro formatos finales guardados/reabiertos, textos cotejados y60 snapshots conservados. [Informe, familias y límites](lengua-4-cierre.md).
+
+**Siguiente: 5.º (PDF105–112)**. Auditar temas y procedimientos, integrar el proveedor de novela .19, completar familias y persistencia antes de 6.º. Catálogo local .29; .27/.28 archivados. Tercero publicado en `4175eb99e17141dd69dfa5eb33be2990f409d457`. Sin bloqueo, subagentes, producción ni alteración de históricos. Las secciones siguientes son historial.
+
 ## Bloque vigente: 1.º–3.º verificados; continuar 4.º (.27)
 
 Tercero cierra siete temas, 61 subtemas y 27 registros de procedimientos con 127 consignas. Backend 2.566; frontend completo 4.443 y 13 recorridos adicionales tras ajustar investigación. 480 solicitudes HTTP iniciales y 236 finales, más selección automática; cuatro formatos finales guardados/reabiertos, textos cotejados con la base y 54 snapshots preservados. Builds e inventario aprobados. [Informe, familias y límites](lengua-3-cierre.md).
