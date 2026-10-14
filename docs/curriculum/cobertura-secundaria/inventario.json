@@ -13639,7 +13639,7 @@
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
       "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+      "pending": "Pendientes vocabulario, expresiones, estrategias, géneros/productos, modalidades mixtas y composición de consignas extensas.",
       "elements": {
         "CONCEPT": [
           {
@@ -16145,25 +16145,31 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "engineConnection": "CONTEXTUAL_PROVIDER_EXPLICIT_FORMS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
+          "pending": "Verificar composición con modalidades mixtas y más de20 exigencias; grado aún parcial por léxico, expresiones, estrategias y productos.",
           "procedures": [],
           "procedureAssociation": "PENDING_VISUAL_REVIEW",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "PENDING_SPECIFIC_REQUIREMENTS",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN",
+          "implementation": "IMPLEMENTED_EXPLICIT_GRAMMAR_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_AND_DESCRIPTORS_REVIEWED",
+          "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
           "sourceNotes": [],
           "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
-          "report": "ingles-1-funciones.md"
+          "report": "ingles-1-gramatica.md",
+          "catalogVersion": "evaluation-2026.36"
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+      "implementation": "PARTIAL_FUNCTIONS_AND_EXPLICIT_GRAMMAR",
       "automatedVerification": "PARTIAL_PASSED",
       "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
@@ -16176,8 +16182,8 @@
           "sourceOrder": 1341000
         }
       ],
-      "report": "ingles-1-funciones.md",
-      "catalogVersion": "evaluation-2026.35"
+      "report": "ingles-1-gramatica.md",
+      "catalogVersion": "evaluation-2026.36"
     },
     {
       "id": "7e4c1236-8f04-5817-b017-a9ace9edff5e",

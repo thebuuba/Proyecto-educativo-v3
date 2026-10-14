@@ -21,3 +21,5 @@ Lengua en revisión final: dos redundancias pedagógicas confirmadas al leer los
 Cierre del bloque .34: nueve fallos rojos reproducidos; trece regresiones verdes; suites completas, HTTP24 y UI5 aprobados; históricos74 intactos. Próximo: Inglés1.º, inventario temático/gramatical con fuente visual antes de implementar.
 
 Bloque .35: conexión inicial de funciones comunicativas de Inglés1.º; fuente134–139 cotejada, reagrupación íntegra de96 conceptos,15 consignas en cuatro formatos, selector automático/manual, HTTP y cuatro guardados/reaperturas. Grado todavía parcial: continuar gramática, léxico, expresiones, estrategias, géneros/productos y acciones mixtas antes de segundo. Informe `ingles-1-funciones.md`.
+
+Bloque .36:31 estructuras gramaticales conectadas, fuente136–138, cuatro formatos y persistencia. Próximo: vocabulario/expresiones de primero; después estrategias y composición. Ver `ingles-1-gramatica.md`. Primero sigue parcial.

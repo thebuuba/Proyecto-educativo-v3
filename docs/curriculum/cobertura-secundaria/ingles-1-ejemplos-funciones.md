@@ -159,4 +159,3 @@ Máximo: 7.44.
 - Actividades de la rutina: 57.14%; 9.91 puntos. Describe en inglés las actividades de la rutina y sus horarios mediante frases breves relacionadas entre sí. Parcial (50%): Menciona actividades aisladas sin establecer las relaciones de la rutina y sus horarios. Ajuste manual del docente.
 
 - Mensaje escrito comprensible: 42.86%; 7.44 puntos. Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas. Parcial (50%): Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.
-

@@ -1,5 +1,10 @@
 # Avance durable — cobertura secundaria
 
+## Avance vigente de Inglés primero con gramática
+
+Catálogo local `evaluation-2026.36`; base `f14393b54ff7034c5a96f5c1e4fa899e3ede28d8`. Conectadas31 estructuras en reconocimiento, explicación y uso;248 propuestas HTTP y cuatro guardados/reaperturas. Se preservan82 snapshots. [Informe](ingles-1-gramatica.md). **El grado permanece parcial.** Continuar con39 familias de vocabulario (conceptos15–53 del ámbito) y expresiones (54–68, con una repetición oficial); después estrategias, géneros/productos y modalidades mixtas. Verificar también composición cuando se supera el límite existente de20 criterios. No avanzar a segundo. Ejecución directa sin subagentes, commits/push autorizados, sin producción, reset ni cambios históricos. Las secciones siguientes son historial.
+
+
 ## Avance vigente de Inglés primero
 
 Catálogo local `evaluation-2026.35`; base Git `1fd7fbda8d4bca269055ac36e8427033bf0e08d9`. Funciones comunicativas compartidas conectadas y cuatro formatos guardados/reabiertos. Fuente134–139 y96 conceptos cotejados. **Primero sigue parcial**: faltan gramática, léxico, expresiones, estrategias, géneros/productos y consignas mixtas. No avanzar a segundo hasta cerrar estos pendientes. [Informe](ingles-1-funciones.md); [ruta posterior](orden-de-continuacion.md). Lengua1.º–6.º conserva su cierre .34. Sin bloqueo externo. Mantener commits/push en `amplia-instrumentos-secundaria`, ejecución directa sin subagentes, sin producción ni reset.

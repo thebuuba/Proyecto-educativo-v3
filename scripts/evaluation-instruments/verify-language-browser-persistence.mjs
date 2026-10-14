@@ -4,7 +4,7 @@ import {localClient,fingerprint} from './language-local-client.mjs'
 
 const grade=Number(process.argv[2]||1)
 const run=process.argv[3]||'base'
-assert(['base','procedimientos','cierre','final','funciones'].includes(run))
+assert(['base','procedimientos','cierre','final','funciones','gramatica'].includes(run))
 const subject=process.argv.find(arg=>arg.startsWith('--subject='))?.slice(10)??'LEN'
 assert(['LEN','ING'].includes(subject))
 const prefix=`${subject==='ING'?'ingles':'lengua'}-${grade}${run==='base'?'':'-'+run}`

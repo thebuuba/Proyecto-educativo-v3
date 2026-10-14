@@ -354,7 +354,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
   if (scienceTopic) result.internalTrace.reasons.push(`module=science-${scienceTopic}-${context?.grade}`)
-  if(englishTask)result.internalTrace.reasons.push('module=ingles-comunicacion-1',`mode=${englishTask.mode}`,`functions=${englishTask.functions.join(',')}`,'coverage=COMMUNICATIVE_FUNCTIONS_PARTIAL')
+  if(englishTask)result.internalTrace.reasons.push('module=ingles-comunicacion-1',`mode=${englishTask.mode}`,`functions=${englishTask.functions.join(',')}`,'coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL')
   if(novelCriteria.length) result.internalTrace.reasons.push('module=novela-analisis-fragmento-5','coverage=TASK_DERIVED_PARTIAL',`task=${JSON.stringify(resolveEvaluationTask(input.activityTitle,input.description??''))}`)
   if(authored.some(row=>row.templateId.startsWith('task-'))) result.internalTrace.reasons.push('coverage=ACTION_ONLY')
   if (mathTopic) result.internalTrace.reasons.push(`module=math-${mathTopic}-${context?.grade}`,

@@ -2,6 +2,7 @@ import {affirmativeLanguageTask} from './language-feature-criteria'
 import {languageInstrumentIntent} from './language-instrument-intent'
 import type {InstrumentAcademicContext} from './secondary-science'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
+import {requestedEnglishGrammar,englishGrammarCriterion} from './secondary-english-grade-one-grammar'
 
 export const englishGradeOneModule={id:'ingles-comunicacion-1',grade:1,subjectCode:'ING',pdfPages:[134,135,136,137,138,139],policy:'COMMUNICATIVE_FUNCTION_MODALITY_V1'}
 
@@ -26,18 +27,21 @@ const modes:Record<Mode,{activityType:string;technique:string}>={
 export function resolveFirstGradeEnglishTask(title:string,description:string,context?:InstrumentAcademicContext|null):EnglishTask|null {
  if(!commonFirstGradeEnglish(context))return null
  const text=affirmativeLanguageTask(description||title)
+ const grammar=requestedEnglishGrammar(text)
  let mode:Mode|undefined
  if(/\b(?:escuch\w*|listen\w*)\b/.test(text))mode='listening'
  else if(/\b(?:leer\w*|leeran|leyendo|lectura|read\w*)\b/.test(text))mode='reading'
  else if(/\b(?:dialog\w*|convers\w*|intercambios? orales?|entrevist\w*|role play)\b/.test(text))mode='interaction'
  else if(/\b(?:escrib\w*|redact\w*|por escrito|writ\w*)\b/.test(text))mode='writing'
  else if(/\b(?:oralmente|oral|present\w*|expon\w*|speak\w*|tell)\b/.test(text))mode='oral'
+ else if(grammar.length&&/\b(?:identific\w*|analiz\w*|localiz\w*|reconoc\w*)\b/.test(text))mode='reading'
+ else if(grammar.length&&/\b(?:complet\w*|transform\w*|correg\w*|formul\w*|utiliz\w*)\b/.test(text))mode='writing'
  if(!mode)return null
  const functions:FunctionId[]=[]
  if(/\b(?:informacion personal|nombre y edad|personal information|name and age)\b/.test(text))functions.push('personal')
  if(/\b(?:invit\w*|invitations?)\b/.test(text))functions.push('invitation')
  if(/\b(?:rutina|rutinas|actividades (?:cotidianas|diarias)|routine|daily activities)\b/.test(text))functions.push('routine')
- if(/\b(?:compar\w*|semejanzas|diferencias)\b/.test(text))functions.push('comparison')
+ if(/\b(?:compar(?:a|an|ar|aran|ando|en|e|emos|acion|aciones)|compare|semejanzas|diferencias)\b/.test(text))functions.push('comparison')
  if(/\b(?:recorrid\w*|direcciones|para llegar|directions)\b/.test(text))functions.push('directions')
  else if(/\b(?:instrucciones|indicaciones|recetas?|instructions?|recipe)\b/.test(text))functions.push('instructions')
  if(/\b(?:gustos|preferencias|likes|dislikes|preferences)\b/.test(text))functions.push('preferences')
@@ -46,7 +50,7 @@ export function resolveFirstGradeEnglishTask(title:string,description:string,con
  if(/\b(?:experiencia|experiencias|acontecimientos|experiences)\b/.test(text))functions.push('experience')
  if(/\b(?:opinion|opiniones|opinion[s]?)\b/.test(text))functions.push('opinion')
  if(!functions.length&&/\b(?:describ\w*|descrip\w*|describe)\b/.test(text))functions.push('description')
- return functions.length?{mode,functions,text,...modes[mode]}:null
+ return functions.length||grammar.length?{mode,functions,text,...modes[mode]}:null
 }
 
 export function firstGradeEnglishSelections(task:EnglishTask,description:string){
@@ -184,7 +188,9 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
    }
   }
  })
- if(receptive)result.push(row('source','Comprensión sustentada en el mensaje',[
+ const grammar=requestedEnglishGrammar(text)
+ result.push(...grammar.map(f=>englishGrammarCriterion(f,text,mode)))
+ if(receptive&&!grammar.length)result.push(row('source','Comprensión sustentada en el mensaje',[
   `Responde a lo solicitado apoyándose en palabras o datos presentes en el ${source} en inglés.`,
   `La respuesta corresponde al ${source}; una relación con sus palabras o datos necesita precisión.`,
   'Recupera palabras aisladas, pero deja sin relacionar datos necesarios para responder a lo solicitado.',
@@ -198,7 +204,7 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
   'Las respuestas cambian el sentido de lo dicho por el interlocutor e interrumpen el intercambio.',
   'No se aporta una respuesta reconocible a las intervenciones del interlocutor.',
  ],3))
- if(!receptive)result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
+ if(!receptive&&task.functions.length)result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
   'Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.',
   'Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.',
   'Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.',

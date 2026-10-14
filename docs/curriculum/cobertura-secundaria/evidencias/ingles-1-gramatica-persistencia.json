@@ -1,0 +1,1299 @@
+{
+  "verifiedAt": "2026-10-14T05:05:57.399Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "f14393b54ff7034c5a96f5c1e4fa899e3ede28d8",
+      "dirty": true,
+      "startedAt": "2026-10-14T05:01:02.858Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.36"
+    }
+  },
+  "activities": [
+    {
+      "id": "14f02a18-399e-43c6-8a41-d459b3ff386a",
+      "name": "QA Inglés 1 · Experiencia y pasado simple · .36",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Escribirán en inglés una experiencia ficticia usando el pasado simple. Se valorará la calidad en varias dimensiones.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "0a57ba99-2f6a-48ed-8d39-8cc12d3486fe",
+      "instrumentSnapshotId": "50e01336-8523-45f6-898d-27a8d010e6cc",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-experience:0",
+            "title": "Acontecimientos de la experiencia",
+            "maxScore": 8,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-experience",
+            "description": "Narra en inglés una experiencia real o ficticia mediante acontecimientos relacionados en una secuencia comprensible.",
+            "descriptors": [
+              {
+                "text": "Narra en inglés una experiencia real o ficticia mediante acontecimientos relacionados en una secuencia comprensible.",
+                "levelId": "L4",
+                "scoreUnits": 800
+              },
+              {
+                "text": "La experiencia se comprende; una transición entre acontecimientos necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 533
+              },
+              {
+                "text": "Menciona acontecimientos aislados sin establecer la secuencia de la experiencia.",
+                "levelId": "L2",
+                "scoreUnits": 267
+              },
+              {
+                "text": "No se reconocen acontecimientos de una experiencia narrada. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 800,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-past-simple:1",
+            "title": "El pasado simple",
+            "maxScore": 6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-1-feature-past-simple",
+            "description": "Emplea el pasado simple en el mensaje en inglés para situar hechos o experiencias terminados en el pasado.",
+            "descriptors": [
+              {
+                "text": "Emplea el pasado simple en el mensaje en inglés para situar hechos o experiencias terminados en el pasado.",
+                "levelId": "L4",
+                "scoreUnits": 600
+              },
+              {
+                "text": "La estructura permite situar hechos o experiencias terminados en el pasado; un uso aislado necesita revisión.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Incluye ejemplos del pasado simple, pero varios usos no permiten situar hechos o experiencias terminados en el pasado.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "No aporta usos reconocibles del pasado simple para el propósito solicitado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 600,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-written:2",
+            "title": "Mensaje escrito comprensible",
+            "maxScore": 6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-1-written",
+            "description": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+            "descriptors": [
+              {
+                "text": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+                "levelId": "L4",
+                "scoreUnits": 600
+              },
+              {
+                "text": "Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "No se aporta un mensaje escrito reconocible en inglés.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 600,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "ranking": [
+            {
+              "score": 54,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c4f3147b-b94c-5b3a-bb19-278b8e666167",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9e9f3ba9-ce25-567e-af99-3d12c9443a53",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "5f7c0409-c651-5982-9c9d-fc10b3a03fcc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c594dcfb-cd26-51fa-b561-20fc065b0d30",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=experience",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.36",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA Inglés 1 · Experiencia y pasado simple · .36",
+        "rubrica:points:0": "8",
+        "rubrica:points:1": "6",
+        "rubrica:points:2": "6",
+        "rubrica:criterion:0": "Acontecimientos de la experiencia",
+        "rubrica:criterion:1": "El pasado simple",
+        "rubrica:criterion:2": "Mensaje escrito comprensible",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Narra en inglés una experiencia real o ficticia mediante acontecimientos relacionados en una secuencia comprensible.",
+        "rubrica:description:1": "Emplea el pasado simple en el mensaje en inglés para situar hechos o experiencias terminados en el pasado.",
+        "rubrica:description:2": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-experience:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-past-simple:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-written:2",
+        "rubrica:descriptor:0:1": "No se reconocen acontecimientos de una experiencia narrada. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Menciona acontecimientos aislados sin establecer la secuencia de la experiencia.",
+        "rubrica:descriptor:0:3": "La experiencia se comprende; una transición entre acontecimientos necesita precisión.",
+        "rubrica:descriptor:0:4": "Narra en inglés una experiencia real o ficticia mediante acontecimientos relacionados en una secuencia comprensible.",
+        "rubrica:descriptor:1:1": "No aporta usos reconocibles del pasado simple para el propósito solicitado.",
+        "rubrica:descriptor:1:2": "Incluye ejemplos del pasado simple, pero varios usos no permiten situar hechos o experiencias terminados en el pasado.",
+        "rubrica:descriptor:1:3": "La estructura permite situar hechos o experiencias terminados en el pasado; un uso aislado necesita revisión.",
+        "rubrica:descriptor:1:4": "Emplea el pasado simple en el mensaje en inglés para situar hechos o experiencias terminados en el pasado.",
+        "rubrica:descriptor:2:1": "No se aporta un mensaje escrito reconocible en inglés.",
+        "rubrica:descriptor:2:2": "Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.",
+        "rubrica:descriptor:2:3": "Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.",
+        "rubrica:descriptor:2:4": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[4,3,3]",
+        "rubrica:criterion-weight:0": "4",
+        "rubrica:criterion-weight:1": "3",
+        "rubrica:criterion-weight:2": "3",
+        "rubrica:meta:criteriaCount": "3",
+        "rubrica:meta:catalogVersion": "evaluation-2026.36",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Acontecimientos de la experiencia\",\"description\":\"Narra en inglés una experiencia real o ficticia mediante acontecimientos relacionados en una secuencia comprensible.\",\"progression\":[\"Narra en inglés una experiencia real o ficticia mediante acontecimientos relacionados en una secuencia comprensible.\",\"La experiencia se comprende; una transición entre acontecimientos necesita precisión.\",\"Menciona acontecimientos aislados sin establecer la secuencia de la experiencia.\",\"Confunde los acontecimientos o su orden y cambia la experiencia narrada.\",\"No se reconocen acontecimientos de una experiencia narrada.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"El pasado simple\",\"description\":\"Emplea el pasado simple en el mensaje en inglés para situar hechos o experiencias terminados en el pasado.\",\"progression\":[\"Emplea el pasado simple en el mensaje en inglés para situar hechos o experiencias terminados en el pasado.\",\"La estructura permite situar hechos o experiencias terminados en el pasado; un uso aislado necesita revisión.\",\"Incluye ejemplos del pasado simple, pero varios usos no permiten situar hechos o experiencias terminados en el pasado.\",\"El uso de la estructura cambia el sentido: presenta como actual un hecho situado en el pasado o cambia quién lo realizó.\",\"No aporta usos reconocibles del pasado simple para el propósito solicitado.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Mensaje escrito comprensible\",\"description\":\"Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.\",\"progression\":[\"Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.\",\"Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.\",\"Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.\",\"La organización de las frases o las palabras elegidas cambia el sentido del mensaje escrito.\",\"No se aporta un mensaje escrito reconocible en inglés.\"]}",
+        "rubrica:criterion-template:0": "ing-1-experience",
+        "rubrica:criterion-template:1": "ing-1-feature-past-simple",
+        "rubrica:criterion-template:2": "ing-1-written",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "d968acdf-b52d-4c72-9b9f-4694719902cb",
+      "name": "QA Inglés 1 · Identificación question tags · .36",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Leerán un texto en inglés e identificarán las question tags.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "6ed898b2-0937-4556-954e-591709bb2766",
+      "instrumentSnapshotId": "e6f8824f-7796-4878-a5be-091dd3df2eea",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-question-tags:0",
+            "title": "Identifica las question tags en el texto disponible en inglés. Ajuste manual del docente.",
+            "maxScore": 17.35,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-feature-question-tags",
+            "description": "Identifica las question tags en el texto disponible en inglés.",
+            "descriptors": [
+              {
+                "text": "Identifica las question tags en el texto disponible en inglés.",
+                "levelId": "L2",
+                "scoreUnits": 1735
+              },
+              {
+                "text": "Identifica las question tags en el texto disponible en inglés.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1735,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "ranking": [
+            {
+              "score": 55,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.3333333333333333
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6fe90d33-4a7b-54c1-b6a9-61848ffa1f88",
+              "topicCoverage": 0.3333333333333333
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9b9dc1c8-314d-5c9e-98cd-19732864d8f0",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "topicCoverage": 0.1666666666666667
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.36",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "READING_COMPREHENSION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA Inglés 1 · Identificación question tags · .36",
+        "lista-cotejo:points:0": "17.35",
+        "lista-cotejo:criterion:0": "Identifica las question tags en el texto disponible en inglés. Ajuste manual del docente.",
+        "lista-cotejo:description:0": "Identifica las question tags en el texto disponible en inglés.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-question-tags:0",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[3]",
+        "lista-cotejo:criterion-weight:0": "3",
+        "lista-cotejo:meta:criteriaCount": "1",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.36",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica las question tags en el texto disponible en inglés.\",\"description\":\"Identifica las question tags en el texto disponible en inglés.\",\"progression\":[\"Identifica las question tags en el texto disponible en inglés.\",\"Localiza ejemplos pertinentes de las question tags; una identificación aislada necesita precisión.\",\"Localiza algunos ejemplos de las question tags, pero confunde otros.\",\"Interpreta incorrectamente la estructura: la coletilla no corresponde al sujeto, auxiliar o polaridad de la afirmación.\",\"No localiza ejemplos pertinentes de las question tags en el texto disponible.\"]}",
+        "lista-cotejo:criterion-template:0": "ing-1-feature-question-tags"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "ccd6e295-3bde-42a2-85c8-132532c9c15b",
+      "name": "QA Inglés 1 · Adverbios de frecuencia · .36",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Describirán oralmente en inglés su rutina usando adverbios de frecuencia en varios intercambios. Se registrará la regularidad de cada indicador.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "989bbea0-26e1-49c2-b90c-fb86b4266057",
+      "instrumentSnapshotId": "fc069240-edc4-4b08-91fe-ab86dd99339a",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-routine:0",
+            "title": "Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.",
+            "maxScore": 8,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-routine",
+            "description": "Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 800
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 533
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 267
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 800,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-frequency-adverbs:1",
+            "title": "Emplea los adverbios de frecuencia en el mensaje en inglés para expresar con qué frecuencia ocurre una acción.",
+            "maxScore": 6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-1-feature-frequency-adverbs",
+            "description": "Emplea los adverbios de frecuencia en el mensaje en inglés para expresar con qué frecuencia ocurre una acción.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 600
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 600,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:2",
+            "title": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+            "maxScore": 6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-1-intelligibility",
+            "description": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 600
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 600,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "df4f0013-9084-5e81-81c8-659036f09469",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "36bfb074-b0bd-5bf7-8737-5c20909b121d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "69d6ef67-56a6-5718-842e-50031049f344",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c594dcfb-cd26-51fa-b561-20fc065b0d30",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=oral",
+            "functions=routine",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.36",
+        "instrumentType": "escala",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA Inglés 1 · Adverbios de frecuencia · .36",
+        "escala:points:0": "8",
+        "escala:points:1": "6",
+        "escala:points:2": "6",
+        "escala:criterion:0": "Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.",
+        "escala:criterion:1": "Emplea los adverbios de frecuencia en el mensaje en inglés para expresar con qué frecuencia ocurre una acción.",
+        "escala:criterion:2": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.",
+        "escala:description:1": "Emplea los adverbios de frecuencia en el mensaje en inglés para expresar con qué frecuencia ocurre una acción.",
+        "escala:description:2": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-routine:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-frequency-adverbs:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:2",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:1:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:1:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:1:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:1:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:2:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:2:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:2:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:2:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[4,3,3]",
+        "escala:criterion-weight:0": "4",
+        "escala:criterion-weight:1": "3",
+        "escala:criterion-weight:2": "3",
+        "escala:meta:criteriaCount": "3",
+        "escala:meta:catalogVersion": "evaluation-2026.36",
+        "escala:criterion-evidence:0": "{\"title\":\"Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.\",\"description\":\"Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Emplea los adverbios de frecuencia en el mensaje en inglés para expresar con qué frecuencia ocurre una acción.\",\"description\":\"Emplea los adverbios de frecuencia en el mensaje en inglés para expresar con qué frecuencia ocurre una acción.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:2": "{\"title\":\"Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.\",\"description\":\"Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "ing-1-routine",
+        "escala:criterion-template:1": "ing-1-feature-frequency-adverbs",
+        "escala:criterion-template:2": "ing-1-intelligibility",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "46443ee6-033e-4e0a-a21c-3276c0e4db8c",
+      "name": "QA Inglés 1 · Pronombres objeto · .36",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Completarán oraciones en inglés usando pronombres objeto. Se distribuirán pesos entre los componentes verificables.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "81cb6315-90cd-4cb9-933c-138dac6717a6",
+      "instrumentSnapshotId": "437cab50-91b4-4a6a-a201-b380cc15d7f3",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-object-pronouns:0",
+            "title": "Los pronombres objeto",
+            "maxScore": 17.35,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-feature-object-pronouns",
+            "description": "Emplea los pronombres objeto en el mensaje en inglés para señalar a quién se dirige o afecta la acción. Parcial (50%): Incluye ejemplos de los pronombres objeto, pero varios usos no permiten señalar a quién se dirige o afecta la acción. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Emplea los pronombres objeto en el mensaje en inglés para señalar a quién se dirige o afecta la acción. Parcial (50%): Incluye ejemplos de los pronombres objeto, pero varios usos no permiten señalar a quién se dirige o afecta la acción. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 1735
+              },
+              {
+                "text": "Emplea los pronombres objeto en el mensaje en inglés para señalar a quién se dirige o afecta la acción. Parcial (50%): Incluye ejemplos de los pronombres objeto, pero varios usos no permiten señalar a quién se dirige o afecta la acción. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 868
+              },
+              {
+                "text": "Emplea los pronombres objeto en el mensaje en inglés para señalar a quién se dirige o afecta la acción. Parcial (50%): Incluye ejemplos de los pronombres objeto, pero varios usos no permiten señalar a quién se dirige o afecta la acción. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1735,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a49e2225-2e47-5500-b3ae-a4066be934c2",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "165abc91-7e3d-5a97-b67a-4ad8b8f3fa9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c16ab3b4-024a-5abd-91b1-cdbc1a0c0c59",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "69d6ef67-56a6-5718-842e-50031049f344",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "09fb915f-18a1-512d-b0e0-177a7d36e74f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ecfb3545-e546-59a2-8c20-1d6d38514211",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.36",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA Inglés 1 · Pronombres objeto · .36",
+        "lista-ponderada:points:0": "17.35",
+        "lista-ponderada:weight:0": "100",
+        "lista-ponderada:criterion:0": "Los pronombres objeto",
+        "lista-ponderada:indicator:0": "Emplea los pronombres objeto en el mensaje en inglés para señalar a quién se dirige o afecta la acción. Parcial (50%): Incluye ejemplos de los pronombres objeto, pero varios usos no permiten señalar a quién se dirige o afecta la acción. Ajuste manual del docente.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Emplea los pronombres objeto en el mensaje en inglés para señalar a quién se dirige o afecta la acción. Parcial (50%): Incluye ejemplos de los pronombres objeto, pero varios usos no permiten señalar a quién se dirige o afecta la acción.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-object-pronouns:0",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[3]",
+        "lista-ponderada:criterion-weight:0": "3",
+        "lista-ponderada:meta:criteriaCount": "1",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.36",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Los pronombres objeto\",\"description\":\"Emplea los pronombres objeto en el mensaje en inglés para señalar a quién se dirige o afecta la acción. Parcial (50%): Incluye ejemplos de los pronombres objeto, pero varios usos no permiten señalar a quién se dirige o afecta la acción.\",\"progression\":[\"Emplea los pronombres objeto en el mensaje en inglés para señalar a quién se dirige o afecta la acción.\",\"La estructura permite señalar a quién se dirige o afecta la acción; un uso aislado necesita revisión.\",\"Incluye ejemplos de los pronombres objeto, pero varios usos no permiten señalar a quién se dirige o afecta la acción.\",\"El uso de la estructura cambia el sentido: atribuye la acción al receptor equivocado.\",\"No aporta usos reconocibles de los pronombres objeto para el propósito solicitado.\"]}",
+        "lista-ponderada:criterion-template:0": "ing-1-feature-object-pronouns"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

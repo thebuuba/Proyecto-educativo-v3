@@ -1512,10 +1512,23 @@
     },
     {
       "id": "c6e52bcc-66da-5cf0-a60b-342bd4aabe50",
-      "implementation": "PENDING_SPECIFIC_REQUIREMENTS",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "implementation": "IMPLEMENTED_EXPLICIT_GRAMMAR_FAMILIES",
+      "report": "ingles-1-gramatica.md",
+      "pending": "Verificar composición con modalidades mixtas y más de20 exigencias; grado aún parcial por léxico, expresiones, estrategias y productos.",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_AND_DESCRIPTORS_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_EXPLICIT_FORMS",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
+      "catalogVersion": "evaluation-2026.36"
     }
   ],
   "sourceAnomalies": [
@@ -1679,7 +1692,7 @@
     },
     {
       "id": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+      "implementation": "PARTIAL_FUNCTIONS_AND_EXPLICIT_GRAMMAR",
       "automatedVerification": "PARTIAL_PASSED",
       "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
@@ -1692,9 +1705,9 @@
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
       "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo."
+      "catalogVersion": "evaluation-2026.36",
+      "report": "ingles-1-gramatica.md",
+      "pending": "Pendientes vocabulario, expresiones, estrategias, géneros/productos, modalidades mixtas y composición de consignas extensas."
     }
   ],
   "sourceAdditions": [
