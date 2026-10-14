@@ -324,7 +324,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
           : detectiveModule ? detectiveStoryCriteria(activity.id, input.description ?? '')
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : band==='SECONDARY'&&(area==='language'||resolveEvaluationTask('',input.description??'').product) ? actionContentCriteria(activity.id,input.description??'') : []
   const eligibleAuthored = selectedAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification'))
-  assertInstrumentCapacity(eligibleAuthored.length)
+  if (!input.includeAdditionalCandidates) assertInstrumentCapacity(eligibleAuthored.length)
   const authored: AuthoredCriterion[] = eligibleAuthored.map(item => item.progressionLevels
     ? formatAuthoredCriteria([{ ...item, progressionLevels: item.progressionLevels }], chosenInstrument)[0] : item)
   const authoredWeights = authored.map(item => item.weight)
@@ -356,19 +356,20 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
   if (scienceTopic) result.internalTrace.reasons.push(`module=science-${scienceTopic}-${context?.grade}`)
-  if(englishTask)result.internalTrace.reasons.push('module=ingles-comunicacion-1',`mode=${englishTask.mode}`,`functions=${englishTask.functions.join(',')}`,'coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL')
+  if(englishTask)result.internalTrace.reasons.push('module=ingles-comunicacion-1',`mode=${englishTask.mode}`,`functions=${englishTask.functions.join(',')}`,'coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES')
   if(novelCriteria.length) result.internalTrace.reasons.push('module=novela-analisis-fragmento-5','coverage=TASK_DERIVED_PARTIAL',`task=${JSON.stringify(resolveEvaluationTask(input.activityTitle,input.description??''))}`)
   if(authored.some(row=>row.templateId.startsWith('task-'))) result.internalTrace.reasons.push('coverage=ACTION_ONLY')
   if (mathTopic) result.internalTrace.reasons.push(`module=math-${mathTopic}-${context?.grade}`,
     ...(mathTopic === 'trigonometry' ? ['La consigna de 6.º retoma razones trigonométricas documentadas en 5.º; no se atribuye respaldo específico de 6.º.'] : []))
   const formatted = context?.level==='SECONDARY' && area==='language' && authoredCriteria.length && !authored.some(row=>row.templateId.startsWith('task-'))
     ? adaptLanguageScale(result,input.description??'') : result
-  assertValidRecommendation(formatted)
+  assertValidRecommendation(formatted, Boolean(input.includeAdditionalCandidates))
   return formatted
 }
 
-export function assertValidRecommendation(result: InstrumentRecommendation) {
-  if (!result.criteria.length || result.criteria.length > INSTRUMENT_MAX_CRITERIA) throw new Error('Recomendación inválida: se requieren entre 1 y 20 criterios.')
+export function assertValidRecommendation(result: InstrumentRecommendation, candidatePool = false) {
+  // A pool supplies one row; the assembled instrument retains its own capacity validation.
+  if (!result.criteria.length || (!candidatePool && result.criteria.length > INSTRUMENT_MAX_CRITERIA)) throw new Error('Recomendación inválida: se requieren entre 1 y 20 criterios.')
   if (!Number.isInteger(result.totalScoreUnits) || result.totalScoreUnits <= 0 || !Number.isFinite(result.totalScore)) throw new Error('Recomendación inválida: puntuación total no válida.')
   const scoreTotal = result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)
   if (scoreTotal !== result.totalScoreUnits) throw new Error('Recomendación inválida: los criterios no suman la puntuación total.')

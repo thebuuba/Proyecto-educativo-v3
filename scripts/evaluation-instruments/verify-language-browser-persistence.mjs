@@ -26,6 +26,11 @@ for(const evidence of ui) {
   assert.equal(proposal.activityType,activity.pedagogicalActivityType)
   assert.equal(proposal.totalScoreUnits,Math.round(activity.maxScore*100))
   assert.equal(proposal.criteria.reduce((n,c)=>n+c.maxScoreUnits,0),proposal.totalScoreUnits)
+  if(run==='final'&&subject==='ING')for(const [index,criterion] of proposal.criteria.entries()){
+    assert.equal(activity.instrumentCriteria[`${activity.instrumentType}:criterion-id:${index}`],criterion.id,'Editor/snapshot identity mismatch')
+    assert.equal(activity.instrumentCriteria[`${activity.instrumentType}:criterion-template:${index}`],criterion.templateId,'Editor/snapshot objective mismatch')
+    assert.equal(Math.round(Number(activity.instrumentCriteria[`${activity.instrumentType}:points:${index}`])*100),criterion.maxScoreUnits,'Editor/snapshot points mismatch')
+  }
   if(evidence.manualWeights&&!evidence.knownWeightFieldsMismatch){
     assert.equal(evidence.manualWeights.reduce((sum,weight)=>sum+weight,0),100)
     for(const [index,criterion] of proposal.criteria.entries()){

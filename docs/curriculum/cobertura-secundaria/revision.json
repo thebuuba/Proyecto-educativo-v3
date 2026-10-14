@@ -1238,11 +1238,11 @@
     },
     {
       "id": "f2761aa8-223b-522a-8a30-7d88961a7421",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_UI_EXAMPLE_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1250,19 +1250,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "ONE_FORMAT_LOCAL_UI_PASSED",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "6c073daa-0225-5c77-931e-ca9449b33601",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_UI_EXAMPLE_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1270,19 +1271,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "ONE_FORMAT_LOCAL_UI_PASSED",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "0ff81864-ed17-5bc7-a363-0e79b0601d39",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_UI_EXAMPLE_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1290,19 +1292,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "ONE_FORMAT_LOCAL_UI_PASSED",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "7c849379-fd20-55d2-8645-838fac2615e2",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1310,19 +1313,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "PENDING_TOPIC_UI",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "9d5479d5-b3b2-5a50-bf71-7c25a32f6e62",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1330,19 +1334,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "PENDING_TOPIC_UI",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "929ea780-a9e4-5702-b1ab-09fa056194a6",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1350,19 +1355,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "PENDING_TOPIC_UI",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "87d9ec64-70a9-5cb7-bb58-8def4bd3aaa7",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1370,19 +1376,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "PENDING_TOPIC_UI",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "b445adce-1ed9-5a1a-bfc7-2f5d3e57ed9e",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1390,19 +1397,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "PENDING_TOPIC_UI",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "aad9e806-9dd4-5b9a-92e1-77c41ac9bff6",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1410,19 +1418,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "PENDING_TOPIC_UI",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "d6e4ec8f-a88a-54f8-9e07-8a69ac5cadea",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1430,19 +1439,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "PENDING_TOPIC_UI",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "d49eb452-91b3-5d67-84f9-b53c882c0486",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_UI_EXAMPLE_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1450,19 +1460,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "ONE_FORMAT_LOCAL_UI_PASSED",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "8b6eb5b3-05c1-5c11-bc33-4c08ae593dba",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1470,19 +1481,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "PENDING_TOPIC_UI",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "1dc38012-559e-5f6a-9332-7beacb40559b",
-      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
-      "applicationVerification": "LOCAL_HTTP_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1490,22 +1502,23 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "PENDING_TOPIC_UI",
-      "catalogVersion": "evaluation-2026.35",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
-      "implementation": "IMPLEMENTED_EXPLICIT_LEXICAL_FAMILIES",
-      "report": "ingles-1-lexico.md",
-      "pending": "Familias explícitas verificadas; pendientes géneros/productos, estrategias, modalidades mixtas y composición extensa del grado. Cuatro formatos en ejemplos representativos, no53 recorridos UI individuales.",
-      "boundaryReview": "VISUALLY_REVIEWED",
-      "automatedVerification": "PASSED",
-      "manualVerification": "SOURCE_AND_DESCRIPTORS_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
-      "engineConnection": "CONTEXTUAL_PROVIDER_EXPLICIT_LEXICON",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1513,19 +1526,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "catalogVersion": "evaluation-2026.38"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "bf2f974a-4bf5-5cf4-a609-ee895f85a79c",
-      "implementation": "IMPLEMENTED_EXPLICIT_LEXICAL_FAMILIES",
-      "report": "ingles-1-lexico.md",
-      "pending": "Familias explícitas verificadas; pendientes géneros/productos, estrategias, modalidades mixtas y composición extensa del grado. Cuatro formatos en ejemplos representativos, no53 recorridos UI individuales.",
-      "boundaryReview": "VISUALLY_REVIEWED",
-      "automatedVerification": "PASSED",
-      "manualVerification": "SOURCE_AND_DESCRIPTORS_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
-      "engineConnection": "CONTEXTUAL_PROVIDER_EXPLICIT_LEXICON",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1533,19 +1547,20 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "catalogVersion": "evaluation-2026.38"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     },
     {
       "id": "c6e52bcc-66da-5cf0-a60b-342bd4aabe50",
-      "implementation": "IMPLEMENTED_EXPLICIT_GRAMMAR_FAMILIES",
-      "report": "ingles-1-gramatica.md",
-      "pending": "Verificar composición con modalidades mixtas y más de20 exigencias; grado aún parcial por léxico, expresiones, estrategias y productos.",
-      "boundaryReview": "VISUALLY_REVIEWED",
-      "automatedVerification": "PASSED",
-      "manualVerification": "SOURCE_AND_DESCRIPTORS_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "report": "ingles-1-informe-final.md",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción.",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
-      "engineConnection": "CONTEXTUAL_PROVIDER_EXPLICIT_FORMS",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1553,8 +1568,9 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "catalogVersion": "evaluation-2026.36"
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "catalogVersion": "evaluation-2026.45",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
     }
   ],
   "sourceAnomalies": [
@@ -1718,11 +1734,15 @@
     },
     {
       "id": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
-      "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON_STRATEGIES_GENRES_COMPOSITION",
-      "automatedVerification": "PARTIAL_PASSED",
-      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED_DEFINED_CONTRACTS",
+      "manualVerification": "SOURCE_201_RECORDS_VISUALLY_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
-      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_134_139",
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED",
+      "report": "ingles-1-informe-final.md",
+      "catalogVersion": "evaluation-2026.45",
+      "engineConnection": "CONTEXTUAL_PROVIDER_DEFINED_FAMILIES",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -1730,10 +1750,8 @@
         "lista-ponderada"
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
-      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "catalogVersion": "evaluation-2026.41",
-      "report": "ingles-1-composicion.md",
-      "pending": "Pendiente composición de consignas extensas y revisión final. No avanzar a segundo."
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
+      "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción."
     }
   ],
   "sourceAdditions": [

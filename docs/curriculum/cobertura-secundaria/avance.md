@@ -1,5 +1,17 @@
 # Avance durable — cobertura secundaria
 
+## Cierre vigente: Inglés común de1.º verificado — 14/10/2026 (.45)
+
+El usuario reanudó únicamente los pendientes de primero desde `3515306dc344dc281506f23e19066401509cd08a`. **Inglés común1.º cierra sus familias/requisitos definidos; detenerse, no comenzar segundo ni otra asignatura.** Lengua común1.º–6.º conserva su cierre .34. [Informe final, evidencias y límites](ingles-1-informe-final.md); [cuatro instrumentos completos](ingles-1-ejemplos-finales.md).
+
+Fuente PDF134–139 revisada visualmente y201 registros cotejados (incluidos17 actitudes y21 indicadores), con conexiones condicionales y exclusiones pedagógicas explícitas. Matriz actualizada en16 agrupaciones sin alterar otros ámbitos. Corregidos candidatos frente a capacidad final, falsa deduplicación de objetivos, requisitos observables de contexto, interacción escrita, condiciones ausentes en permiso y pérdida de intención automática ante respuesta obsoleta. Catálogo local .45; .42/.43/.44 congelados.
+
+Verificaciones: backend6.380/64; frontend completo reciente11.311/108, más58 pruebas del editor tras su corrección y122 de servicios afectados tras el último ajuste; inventario9; builds backend/frontend y Cloudflare dry-run. HTTP169 comprobaciones .44,25 revisión .45 y12 selección .44. Navegador: rechazo31 conserva campos/puntos y no oculta el error;19→20 desde31 candidatos; completar vacíos preserva otras filas; cuatro recomendaciones automáticas y prioridad manual; cancelar/conservar/adaptar; cuatro recorridos de generación/edición/resumen/guardado/reapertura con20 criterios. Campos, identidades, objetivos, pesos y puntos contrastados con snapshots.106 snapshots preservados:28 de referencia y78 completos.
+
+No quedan pendientes conocidos dentro del alcance definido. No se promete interpretar cualquier redacción ni haber recorrido cada registro manualmente; no se afirma recuperación completa de todo formulario sin guardar tras reiniciar Vite. La base de las evidencias fue3515306 más cambios (`dirty: true`); el hash exacto publicado se confirma en la entrega. Rama `amplia-instrumentos-secundaria`, origen `https://github.com/thebuuba/Proyecto-educativo-v3.git`. Sin subagentes, IA, rediseño, main, producción, reset o cambios históricos; credenciales y temporales excluidos.
+
+Las secciones siguientes son historial. Sus pendientes de Inglés1 quedan sustituidos por este cierre. La ruta posterior sigue documentada, pero no autoriza avanzar en esta ejecución.
+
 ## Cierre solicitado del avance actual — 14/10/2026 (.42)
 
 **La ampliación curricular está detenida por instrucción del usuario. No iniciar otro bloque. Inglés común de 1.º permanece parcial**: falta concluir la comprobación visual del límite de20 criterios y la revisión final de cobertura y pertinencia. Lengua Española común1.º–6.º conserva su cierre verificado .34, dentro de las familias documentadas.

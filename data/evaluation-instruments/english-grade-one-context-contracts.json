@@ -1,0 +1,10 @@
+[
+ {"id":"fair","description":"Conversarán en inglés sobre un problema cotidiano, proponiendo opciones justas para resolver la situación.","criteria":["fair-options"]},
+ {"id":"health","description":"Redactarán instrucciones en inglés para cuidar la salud mediante acciones que la benefician.","criteria":["positive-care"]},
+ {"id":"environment","description":"Presentarán oralmente en inglés acciones para cuidar el medioambiente, explicando su efecto positivo.","criteria":["positive-care"]},
+ {"id":"courtesy","description":"Conversarán en inglés para expresar opiniones con respeto, cortesía y asertividad.","criteria":["respectful-message"]},
+ {"id":"equity","description":"Escribirán descripciones en inglés de personas y ocupaciones sin estereotipos de género ni discriminación por discapacidad.","criteria":["equitable-message"]},
+ {"id":"solidarity","description":"Conversarán en inglés ofreciendo ayuda solidaria ante las dificultades de un compañero ficticio.","criteria":["support"]},
+ {"id":"safety","description":"Redactarán instrucciones en inglés que respeten las normas de seguridad indicadas para usar un equipo.","criteria":["safety"]},
+ {"id":"property","description":"Conversarán en inglés para pedir permiso para usar pertenencias ajenas respetando las condiciones de uso acordadas.","criteria":["property"]}
+]

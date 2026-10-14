@@ -1,0 +1,122 @@
+{
+  "verifiedAt": "2026-10-14T09:33:19.018Z",
+  "manualAfter": {
+    "purpose": "Elección manual posterior protegida",
+    "activity": "WRITTEN_PRODUCTION",
+    "technique": "analisis-producciones",
+    "instrument": "lista-ponderada",
+    "pendingScore": ""
+  },
+  "typeBefore": "WRITTEN_PRODUCTION",
+  "before": [
+    {
+      "label": "Criterio 1",
+      "value": "Opinión sobre la situación"
+    },
+    {
+      "label": "Indicador del criterio 1",
+      "value": "Expresa en inglés una opinión reconocible sobre la situación indicada. Parcial (50%): Menciona la situación sin dejar clara su opinión sobre ella. Ajuste manual del docente."
+    },
+    {
+      "label": null,
+      "value": "57.14"
+    },
+    {
+      "label": "Criterio 2",
+      "value": "Mensaje escrito comprensible"
+    },
+    {
+      "label": "Indicador del criterio 2",
+      "value": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas. Parcial (50%): Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas."
+    },
+    {
+      "label": null,
+      "value": "42.86"
+    }
+  ],
+  "cancelFields": [
+    {
+      "label": "Criterio 1",
+      "value": "Opinión sobre la situación"
+    },
+    {
+      "label": "Indicador del criterio 1",
+      "value": "Expresa en inglés una opinión reconocible sobre la situación indicada. Parcial (50%): Menciona la situación sin dejar clara su opinión sobre ella. Ajuste manual del docente."
+    },
+    {
+      "label": null,
+      "value": "57.14"
+    },
+    {
+      "label": "Criterio 2",
+      "value": "Mensaje escrito comprensible"
+    },
+    {
+      "label": "Indicador del criterio 2",
+      "value": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas. Parcial (50%): Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas."
+    },
+    {
+      "label": null,
+      "value": "42.86"
+    }
+  ],
+  "keptFields": [
+    {
+      "label": "Criterio 1",
+      "value": "Opinión sobre la situación"
+    },
+    {
+      "label": "Indicador del criterio 1",
+      "value": "Expresa en inglés una opinión reconocible sobre la situación indicada. Parcial (50%): Menciona la situación sin dejar clara su opinión sobre ella. Ajuste manual del docente."
+    },
+    {
+      "label": null,
+      "value": "57.14"
+    },
+    {
+      "label": "Criterio 2",
+      "value": "Mensaje escrito comprensible"
+    },
+    {
+      "label": "Indicador del criterio 2",
+      "value": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas. Parcial (50%): Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas."
+    },
+    {
+      "label": null,
+      "value": "42.86"
+    }
+  ],
+  "adaptedFields": [
+    {
+      "label": "Criterio 1",
+      "value": "Opinión sobre la situación"
+    },
+    {
+      "label": "Indicador del criterio 1",
+      "value": "Expresa en inglés una opinión reconocible sobre la situación indicada. Parcial (50%): Menciona la situación sin dejar clara su opinión sobre ella."
+    },
+    {
+      "label": null,
+      "value": "57.14"
+    },
+    {
+      "label": "Criterio 2",
+      "value": "Mensaje escrito comprensible"
+    },
+    {
+      "label": "Indicador del criterio 2",
+      "value": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas. Parcial (50%): Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas."
+    },
+    {
+      "label": null,
+      "value": "42.86"
+    }
+  ],
+  "afterAdapt": {
+    "purpose": "Adaptación explícita",
+    "activity": "WRITTEN_PRODUCTION",
+    "technique": "analisis-producciones",
+    "instrument": "lista-ponderada",
+    "pendingScore": "17.35"
+  }
+}

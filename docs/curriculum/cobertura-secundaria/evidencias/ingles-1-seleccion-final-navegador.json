@@ -1,0 +1,33 @@
+{
+  "verifiedAt": "2026-10-14T09:31:13.739Z",
+  "selections": [
+    {
+      "purpose": "Se comprobará la presencia de cada evidencia con sí o no.",
+      "activity": "ORAL_INTERACTION",
+      "technique": "observacion-directa",
+      "instrument": "lista-cotejo",
+      "pendingScore": ""
+    },
+    {
+      "purpose": "Se registrará la regularidad de cada indicador.",
+      "activity": "ORAL_INTERACTION",
+      "technique": "observacion-directa",
+      "instrument": "escala",
+      "pendingScore": ""
+    },
+    {
+      "purpose": "Se distribuirán pesos entre los componentes verificables.",
+      "activity": "ORAL_INTERACTION",
+      "technique": "observacion-directa",
+      "instrument": "lista-ponderada",
+      "pendingScore": ""
+    },
+    {
+      "purpose": "Se valorará la calidad en varias dimensiones.",
+      "activity": "ORAL_INTERACTION",
+      "technique": "observacion-directa",
+      "instrument": "rubrica",
+      "pendingScore": ""
+    }
+  ]
+}

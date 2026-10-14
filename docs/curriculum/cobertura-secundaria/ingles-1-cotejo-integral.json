@@ -1,0 +1,2901 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+  "visualReview": {
+    "pdfPages": [
+      134,
+      135,
+      136,
+      137,
+      138,
+      139
+    ],
+    "printedPages": [
+      133,
+      134,
+      135,
+      136,
+      137,
+      138
+    ],
+    "confirmedCommonFirstGrade": true
+  },
+  "records": [
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "7a39affe-3bce-5f6c-9917-0f76b48416c0",
+        "text": "Temas",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341000
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF134"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "f2761aa8-223b-522a-8a30-7d88961a7421",
+        "text": "• Identificación personal",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341001
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "personal",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "6c073daa-0225-5c77-931e-ca9449b33601",
+        "text": "• Relaciones humanas y sociales",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341002
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "invitation",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "0ff81864-ed17-5bc7-a363-0e79b0601d39",
+        "text": "• Actividades de la vida diaria",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341003
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "routine",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "7c849379-fd20-55d2-8645-838fac2615e2",
+        "text": "• Vivienda, entorno y ciudad",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341004
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "comparison",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "9d5479d5-b3b2-5a50-bf71-7c25a32f6e62",
+        "text": "• Escuela y educación",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341005
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "instructions",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "929ea780-a9e4-5702-b1ab-09fa056194a6",
+        "text": "• Deporte, tiempo libre y recreación",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341006
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "preferences",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "87d9ec64-70a9-5cb7-bb58-8def4bd3aaa7",
+        "text": "• Alimentación",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341007
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "instructions",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "b445adce-1ed9-5a1a-bfc7-2f5d3e57ed9e",
+        "text": "• Salud y cuidados físicos",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341008
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "context-positive-care",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "aad9e806-9dd4-5b9a-92e1-77c41ac9bff6",
+        "text": "• Lengua y comunicación",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341009
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "clarification",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "d6e4ec8f-a88a-54f8-9e07-8a69ac5cadea",
+        "text": "• Ciencia y tecnología",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341010
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "description",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "d49eb452-91b3-5d67-84f9-b53c882c0486",
+        "text": "• Clima, condiciones atmosféricas y\nmedio ambiente",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341011
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "weather",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "8b6eb5b3-05c1-5c11-bc33-4c08ae593dba",
+        "text": "• Bienes y servicios",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341012
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "directions",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "1dc38012-559e-5f6a-9332-7beacb40559b",
+        "text": "• Actividades sociales y culturales:\nViajes y turismo",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341013
+      },
+      "status": "CONTEXT_THEME_NOT_STANDALONE_CRITERION",
+      "evidence": "El tema contextualiza la acción; no impone todas las estructuras ni actitudes.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "experience",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
+        "text": "Vocabulario",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341014
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF134"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "4567af5f-1959-5cce-8544-c4991b5dc7f2",
+        "text": "• Accidentes geográficos: mountain,\nbeach, peninsula…",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341015
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "accidentes geográficos",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "dfd77bcb-12da-58d9-b81c-d7e314537690",
+        "text": "• Actividades artísticas: sing, paint,\ndance…",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341016
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "actividades artísticas",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "5fe07939-ab2b-598a-98bb-9d3dbb397377",
+        "text": "• Actividades cotidianas: take a\nshower, eat breakfast, go to bed…",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341017
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "actividades diarias",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "1d5403c6-e2eb-55e8-a226-64f77cf94326",
+        "text": "• Actividades recreativas: go\ncamping, go dancing…",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341018
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "actividades recreativas",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "0bd05b7c-8d26-5615-97e0-98fdd879848b",
+        "text": "• Alimentos: rice, beans, lemon…",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341019
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "alimentos",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "ca1447bf-8001-5cff-b79f-452afc06e0e2",
+        "text": "• Apelativos: sir, ma’am, young\nl a d y…",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341020
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "apelativos",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "c421df3e-c90e-5e5e-b840-695992240c71",
+        "text": "• Celebraciones y ceremonias:\nbirthday, christening, wedding…",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1341021
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "celebraciones",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "74b3fcd6-726e-5402-a008-d516469aaa6a",
+        "text": "• Colores: purple, white, gray…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351000
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "colores",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "540e8635-e504-5249-8693-8581f4b30932",
+        "text": "• Condiciones atmosféricas: sunny,\nwindy, hot…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351001
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "condiciones atmosféricas",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "7fa52114-d85a-593e-8e2a-32305056cf2e",
+        "text": "• Continentes, países y ciudades:\nEurope, Brazil, Santiago…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351002
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "continentes, países y ciudades",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "76e9873b-04d6-51a0-ab4c-596b31981392",
+        "text": "• Deportes: baseball, soccer,\nc y c l i n g …",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351003
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "deportes",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "3c6733ff-4e3c-5d39-bb59-641b3b7b7118",
+        "text": "• Días de la semana: Monday,\nT u e s d a y …",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351004
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "días de la semana",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "0433321c-c24b-50c6-9f7d-09e1100acfcf",
+        "text": "• Estaciones del año: spring,\ns u m m e r . . .",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351005
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "estaciones del año",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "5b02977b-6cd0-5bad-a925-c4009cac4eb8",
+        "text": "• Fenómenos atmosféricos:\nearthquake, hurricane, tornado…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351006
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "fenómenos atmosféricos",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "c8f50994-be09-5ac8-ab72-f0c8021512b8",
+        "text": "• Formas: round, square…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351007
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "formas",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "e095b3c8-64d0-5ce2-9499-f924ad907cf9",
+        "text": "• Formas de ser: quiet, nice, kind…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351008
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "formas de ser",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "076bb808-e55c-5a16-ac80-4b77996571c0",
+        "text": "• Generos musicales: salsa, rock,\nmerengue…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351009
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "géneros musicales",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "cb4c2df5-de46-5eda-a70d-eecc1ecf0a72",
+        "text": "• Idiomas: Spanish, English, Creole,\nItalian…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351010
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "idiomas",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "369e99a7-3efd-5257-8d5c-b880e4b0e8c5",
+        "text": "• Lugares de un edificio: lobby,\nentrance, exit…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351011
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "lugares de un edificio",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "b9b58d25-116d-50ae-9233-dc36ded34ff3",
+        "text": "• Lugares: movies, hospital, mall…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351012
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "lugares de la ciudad",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "a23a5ef3-b95b-56e1-b746-62921c01bb05",
+        "text": "• Medios de transporte: taxi, metro,\ncable car…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351013
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "medios de transporte",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "dcaf6612-b29c-509e-9ced-57e35088c1eb",
+        "text": "• Miembros de la familia: mother,\nfather, brother…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351014
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "miembros de la familia",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "c7fabff3-33bb-5bb7-a46a-343b4f2a5c22",
+        "text": "• Mobiliario del hogar y de la oficina:\nchair, desk…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351015
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "mobiliario y objetos",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "b63a9985-b412-5d6b-b2a8-391d147ec026",
+        "text": "• Nacionalidades: Dominican,\nChinese, Peruvian...",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351016
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "nacionalidades",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "f39ac01d-c024-5571-86d1-45acb82691b6",
+        "text": "• Nombres propios:Peter, Elizabeth…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351017
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "nombres propios",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "08667c75-3188-57d7-98a4-43ec8811963b",
+        "text": "• Números cardinales: one, two…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351018
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "números cardinales",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "1e204b90-f642-5c63-9233-c97a3fdb15f3",
+        "text": "• Números ordinales: first, second…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351019
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "números ordinales",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "b5d39bfc-a943-5ae0-bd3e-b2968d390aa7",
+        "text": "• Ocupaciones: teacher, doctor,\ne n gi n e e r…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351020
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "ocupaciones",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "b74ad6b5-591d-52df-a733-e8d541e35ae4",
+        "text": "• Partes del cuerpo: hands, arms,\neyes…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351021
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "partes del cuerpo",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "3542926e-fb4e-588e-9417-7d2f6e97bc8d",
+        "text": "• Pertenencias: cell phone, laptop,\nbike…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351022
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "pertenencias",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "e5014b24-e00a-5c0b-9b1a-68c22879a896",
+        "text": "• Preparación de alimentos: wash,\ncut, chop, boil…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351023
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "preparación de alimentos",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "49253093-d98a-549d-9935-599cc516414e",
+        "text": "• Puntos cardinales: north, south,\nsouthwest...",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351024
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "puntos cardinales",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "14c089b0-2a3e-5e73-a900-0fdb26e368a0",
+        "text": "• Rasgos físicos: handsome, tall,\nprett y…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351025
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "rasgos físicos",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "22515585-556a-5e1f-a327-b63fbe59b27e",
+        "text": "• Ropa y accesorios: pants, shirt,\nwatch, glasses, tie…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351026
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "ropa y accesorios",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "7658b0d5-8243-5e91-9ddb-f35cfea6abe6",
+        "text": "• Tamaños: small, big, large…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351027
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "tamaños",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "6aacdc34-1ad3-59c8-9ed5-5fda28b1b4b7",
+        "text": "• Tareas del hogar: do the laundry, do\nthe dishes…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351028
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "tareas del hogar",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "d26614a4-706e-5235-87fe-c0afcc02c08d",
+        "text": "• Títulos personales: Mr., Ms., Miss…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351029
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "títulos personales",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "04f66a9a-e974-55a8-bcbd-9974016787c8",
+        "text": "• Uso de equipos: plug in, turn on,\nreset…",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351030
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "uso de aparatos",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "b6043d32-f392-5b3a-aacc-2bfb7508b10a",
+        "text": "• Viajes: airport, luggage, hotel…\nExpresiones",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1351031
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "viajes",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "bf2f974a-4bf5-5cf4-a609-ee895f85a79c",
+        "text": "• Saludos:\nHello! How are you? Fine, thanks.\nAnd you?",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361000
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "saludar",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "7e15d862-c5bd-5eed-8d62-cc9a5ac7cb26",
+        "text": "• Despedidas:\nHave a nice day!",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361001
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "despedirse",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "f43d5a13-cf74-593b-bf82-51c1e6fb046c",
+        "text": "• Presentaciones:\nBetty, this is Carlos Díaz. Nice to meet\nyou.",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361002
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "presentarse",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "cc6b7bcd-006f-5219-9f2f-6cae324f642e",
+        "text": "• Interacción cotidiana en el aula:\nDid you understand?",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361003
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "interactuar en el aula",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "d51f96e9-8781-5563-a691-b0479d877106",
+        "text": "• Interrumpir con cortesía:\nExcuse me. May I say something?",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361004
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "interrumpir cortésmente",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "33632ee9-09d8-5495-9dde-255ee0e4ed2d",
+        "text": "• Tomar y conceder turnos:\nIt’s your turn.\nNext, please.",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361005
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "tomar y ceder el turno",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "e3f38d4d-affa-550d-a0d0-85b15d18d154",
+        "text": "• Solicitud de traducción o repetición:\nHow do you say “mesa” in English?\nPardon me?",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361006
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "solicitar traducción o repetición",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "a62c474f-82a7-5534-829f-388e0d2958a4",
+        "text": "• Expresar aprobación o acuerdo:\nThat’s right. Sure!",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361007
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "expresar aprobación o acuerdo",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "c6273d49-f298-55ac-8b56-b4edccd457d2",
+        "text": "• Atraer la atención:\nExcuse me, sir!\nMay I have your attention, please?",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361008
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "atraer la atención",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "e9822d23-cdc1-5ae9-8c2e-00b9cbb37db2",
+        "text": "• Atraer la atención:\nExcuse me, sir!\nMay I have your attention, please?",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361009
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "atraer la atención",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "d8fa800d-7db4-5ffe-96e1-278b3a9a8886",
+        "text": "• Responder a invitaciones: Perhaps\nanother time.\nThanks!",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361010
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "responder a invitaciones",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "869821b8-c441-557d-927e-a23116a6fbe6",
+        "text": "• Excusas: I’m sorry. I really can’t go.",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361011
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "excusarse",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "137c0180-ee0e-56f9-8df7-d327b68e82fb",
+        "text": "• Agradecimientos:\nThanks for your help. I really\nappreciate it.",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361012
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "agradecer",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "821743ed-710c-57ba-a30f-2be4d79ec570",
+        "text": "• Fechas: September 30th, 1976...",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361013
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "indicar fechas",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "4178e918-ea58-5814-a9ac-42e4266fe2b7",
+        "text": "• Hora: five o’clock, at noon…",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361014
+      },
+      "provider": "secondary-english-grade-one-lexicon.ts",
+      "evidence": "indicar la hora",
+      "verification": "ingles-1-lexico.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "c6e52bcc-66da-5cf0-a60b-342bd4aabe50",
+        "text": "Gramática",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361015
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF136"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+        "text": "• Presente simple para solicitar y\nofrecer información personal;\nreferirse a actividades cotidianas;\nexpresar opiniones; y describir\npersonas, objetos, lugares y\ncondiciones atmosféricas:\nI live in San Juan.\nI go to school early every morning.\nPlaying chess is better than watching\nTV.\nMy brothers have short curly hair\nand big brown eyes.\nEmma is very smart.\nThis neighborhood looks really quiet.\nIt’s hot and sunny in Santo Domingo\nnow",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361016
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "present-simple",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc",
+        "text": "• Verbos like, prefer, enjoy... para\nexpresar gustos y preferencias:\nHe likes living in the countryside.",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361017
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "preference-verbs",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "fbb73712-1736-5278-ae5b-71cec1a56c5b",
+        "text": "• Presente continuo para referirse\na las condiciones atmosféricas y\nrechazar invitaciones",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1361018
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "present-continuous",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "4c602c86-c0c2-5768-b8ea-1de7f49b635e",
+        "text": "It’s snowing now.\nI can’t go because I’m studying now.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371000
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "present-continuous",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "c4f3147b-b94c-5b3a-bb19-278b8e666167",
+        "text": "•Pasado simple para narrar\nexperiencias personales:\nI won a chess tournament last year.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371001
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "past-simple",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "5f7c0409-c651-5982-9c9d-fc10b3a03fcc",
+        "text": "•Presente perfecto para narrar\nexperiencias personales:",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371002
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "present-perfect",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "bbd1e291-68c3-5b64-ac75-ed4d4c01f70d",
+        "text": "Have you ever eaten Mexican food?\nI’ve been to Spain twice.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371003
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "present-perfect",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "1e4a1a5d-433a-5f7b-932e-24a085dc1846",
+        "text": "• Will y be going to para referirse a las\ncondiciones atmosféricas:\nIt’s going to snow all day long. It will\nbe sunny on Monday.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371004
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "future",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f",
+        "text": "• Would para invitar y aceptar una\ninvitación:\nWould you like to come to my\nbirthday party? I would love it!",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371005
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "would",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "631863ec-2df1-50b4-ade9-ca2caf8bfeb9",
+        "text": "• Can’t y have to para rechazar una\ninvitación:\nI’m sorry. I can’t come tomorrow\nbecause I have to see the dentist.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371006
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "declining-forms",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "c594dcfb-cd26-51fa-b561-20fc065b0d30",
+        "text": "• There + be en presente simple para\ndescribir lugares:\nThere are four bedrooms on the\nsecond floor.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371007
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "there-be",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "b793c8d2-d589-5a6b-a020-627869ffb059",
+        "text": "• Modo imperativo para dar y seguir\nindicaciones e instrucciones:\nOpen your books to page 45. Don’t\nclose the door, please!",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371008
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "imperative",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "817857b0-a6a3-5c3b-8522-ea1af4b5422a",
+        "text": "• Let’s para invitar:\nLet’s go to the park.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371009
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "lets",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "6fe90d33-4a7b-54c1-b6a9-61848ffa1f88",
+        "text": "• Question tags:\nYou like pizza, don’t you?\nThis house is beautiful, isn’t it?",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371010
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "question-tags",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "432732f8-8ea9-5611-8e8c-a5677ebb9b4e",
+        "text": "• Posesivo (s )\nLucy’s cell phone is newer than mine.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371011
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "possessive-s",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "8426b0bc-2090-560a-a7d3-19cc340ea979",
+        "text": "• Artículos definidos e indefinidos:\nthe, a/an. The weather is nice\ntoday.\nMy brother is a lawyer and my sister\nis an architect.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371012
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "articles",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "58f2fc57-f3b7-59ea-952c-7aa2c2f8687b",
+        "text": "• Adjetivos calificativos: handsome,\nnew, respectful…",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371013
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "qualifying-adjectives",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "65eecefb-fb45-52f0-bf18-93ad88b2acb8",
+        "text": "• Grados comparativo y superlativo\ndel adjetivo:\nMy tablet is as thin as a notebook.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371014
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "comparative",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "68bfbd38-f743-5ee1-b851-f772981e4e39",
+        "text": "• Adjetivos posesivos: my, his, her…",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371015
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "possessive-adjectives",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "09fb915f-18a1-512d-b0e0-177a7d36e74f",
+        "text": "• Pronombres interrogativos: what,\nwho, where…\nWhat’s your nationality?",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371016
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "interrogative-pronouns",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "a49e2225-2e47-5500-b3ae-a4066be934c2",
+        "text": "• Pronombres objeto: me, you, him\n… Give him the key, please.",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371017
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "object-pronouns",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "ecfb3545-e546-59a2-8c20-1d6d38514211",
+        "text": "• Pronombres posesivos: mine,\nyours, his, hers… Is the red smart\nphone yours?",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371018
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "possessive-pronouns",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "d9faf613-fd78-5bc5-ba5b-f65e4ddcc371",
+        "text": "• Preposiciones de:\nTiempo (in, on, at…)",
+        "pdfPage": 137,
+        "printedPage": "136",
+        "sourceOrder": 1371019
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "place-prepositions",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "64fa6c1a-6d2a-56f3-b3c1-82053cfbc060",
+        "text": "It’s usually very hot in the summer.\nLugar (in, on, at…)\nThere’s a beautiful vase on the night table.",
+        "pdfPage": 138,
+        "printedPage": "137",
+        "sourceOrder": 1381000
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "place-prepositions",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+        "text": "• Adverbios de:\nTiempo (early, tomorrow, late…) She goes to\nwork early every day.\nFrecuencia (always, sometimes, never…) My\nfamily always goes to church on Sundays.Modo\n(fast, hard, slowly, carefully...)\nSandra writes the reports quickly.\nIntensidad (very, really…) It’s really hot today!\nCerteza (maybe, perhaps, sure…) Maybe this\nwill help.",
+        "pdfPage": 138,
+        "printedPage": "137",
+        "sourceOrder": 1381001
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "certainty-adverbs",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "CONCEPT",
+      "source": {
+        "id": "f0cfdfd1-4176-582d-9a5c-fbdec0345ed3",
+        "text": "• Conectores de:\nCoordinación (and, or, but…)\nDial 911 and press the SEND button.\nTiempo (before, after…)\nBefore you do exercise 1, please read page\n32. Secuencia (first, second, then, next, finally…)\nFirst, boil the eggs. Then cut them into slices.\nCausa y consecuencia (because, so…)\nI couldn’t go out because it was raining hard.",
+        "pdfPage": 138,
+        "printedPage": "137",
+        "sourceOrder": 1381002
+      },
+      "provider": "secondary-english-grade-one-grammar.ts",
+      "evidence": "cause-connectors",
+      "verification": "ingles-1-gramatica.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "ca1e6e5b-472e-579f-9f05-8b8b95e9d5a4",
+        "text": "Funcionales",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342000
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF134"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+        "text": "• Solicitar y ofrecer información personal",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342001
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función personal en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "personal",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "79ceceef-2ef9-5789-81c7-b2947a33c181",
+        "text": "• Expresar gustos y preferencias",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342002
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función preferences en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "preferences",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000",
+        "text": "• Dar y pedir indicaciones e instrucciones",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342003
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función instructions/directions en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "instructions/directions",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba",
+        "text": "• Dar y pedir información sobre actividades cotidianas",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342004
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función routine en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "routine",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "36bfb074-b0bd-5bf7-8737-5c20909b121d",
+        "text": "• Describir a personas por su apariencia y su forma de ser",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342005
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función description en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "description",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "69d6ef67-56a6-5718-842e-50031049f344",
+        "text": "• Describir y comparar lugares y objetos",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342006
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función description/comparison en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "description/comparison",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "c7956bdd-ddb9-520d-b1a7-300e5b761783",
+        "text": "• Dar y pedir información sobre las condiciones atmosféricas",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342007
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función weather en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "weather",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "89ba3b86-02f3-5c43-aab4-f10729e89356",
+        "text": "• Expresar opiniones",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342008
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función opinion en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "opinion",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "9e9f3ba9-ce25-567e-af99-3d12c9443a53",
+        "text": "• Narrar experiencias personales, propias y de otras personas",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342009
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función experience en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "experience",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "3808952f-b79d-5d6b-ae05-357f8e69a3ff",
+        "text": "• Invitar, aceptar o rechazar invitaciones",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342010
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Función invitation en la modalidad pedida.",
+      "provider": "secondary-english-grade-one.ts",
+      "contract": "invitation",
+      "verification": "ingles-1-funciones.md"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "83cc4054-e8c3-5d4c-a603-f07df6c29e35",
+        "text": "Discursivos",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342011
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF134"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+        "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342012
+      },
+      "provider": "secondary-english-grade-one-genres.ts",
+      "evidence": "narración",
+      "verification": "ingles-1-generos.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+        "text": "• Producción de textos orales, tales como: conversaciones,\ncanciones, recetas, mensajes, noticias, descripciones y\nnarraciones.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342013
+      },
+      "provider": "secondary-english-grade-one-genres.ts",
+      "evidence": "narración",
+      "verification": "ingles-1-generos.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+        "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342014
+      },
+      "provider": "secondary-english-grade-one-genres.ts",
+      "evidence": "meme",
+      "verification": "ingles-1-generos.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "20c9b087-4975-5a30-9bad-61f9944831f2",
+        "text": "• Producción de audiovisuales.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1342015
+      },
+      "provider": "secondary-english-grade-one-genres.ts",
+      "evidence": "producción audiovisual",
+      "verification": "ingles-1-generos.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "c616fc4f-8276-5f61-9631-106972d78c41",
+        "text": "Estratégicos\nComprensión Oral",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352000
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF135"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "869fa6eb-a2f4-5433-a680-a21fb1b2ce81",
+        "text": "• Anticipación del contenido del mensaje",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352001
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "anticipation",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "110fb363-a2ac-5e8c-b0ce-bc9493448e1b",
+        "text": "• Escucha atenta",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352002
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "listening",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "88327894-1acb-5008-8077-e011ceeb0c3d",
+        "text": "• Uso del lenguaje no verbal de su interlocutor/a para compren-\nder el mensaje",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352003
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "nonverbal-reception",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "dd36cfac-6a63-5e1d-8fcc-bf3f09e6101f",
+        "text": "• Inferencia del significado de palabras y expresiones a partir del\ncontexto y los conocimientos previos",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352004
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "inference",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "97ced1a6-faeb-5054-920f-fccfef1c2189",
+        "text": "• Solicitud de ayuda y repetición",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352005
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "help",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "fbebeebb-8049-5000-8a71-526b6ed7e1c7",
+        "text": "• Indicación de que se comprende o no",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352006
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "understanding",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "98836fe8-d5c2-501d-9b72-bf88a6195a4d",
+        "text": "Producción oral",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352007
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF135"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "c4fae86a-a157-507f-8098-5a1cd3dc63e9",
+        "text": "• Reproducción y ensayo de palabras, expresiones y pautas de\nentonación",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352008
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "rehearsal",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "4aae97e8-3ae2-5e28-b24e-07755897c17e",
+        "text": "• Identificación de la situación de comunicación",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352009
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "situation",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "e9a43995-4d4d-59ae-8da5-49999f688f20",
+        "text": "• Establecimiento de la intención comunicativa",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352010
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "communicative-purpose",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "e7d6df46-0782-5a4d-afdd-1e976f0613af",
+        "text": "• Uso del lenguaje no verbal para comunicarse",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352011
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "nonverbal-production",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "34f705fe-415d-53b9-a881-aed7028bb4ec",
+        "text": "Comprensión escrita",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352012
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF135"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "9307044a-8f6b-5b41-818e-844e2323a833",
+        "text": "• Establecimiento del propósito de la lectura",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352013
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "reading-purpose",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "eac53052-1afd-507a-b3ca-3f2186857158",
+        "text": "• Formulación de hipótesis a partir de los conocimientos previos\ny los elementos para textuales",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352014
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "hypothesis",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "dc5c0f32-e1ec-56a9-9a60-d262192dda8e",
+        "text": "• Identificación de la correspondencia entre la grafía y el sonido\nde las palabras",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352015
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "grapheme-phoneme",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "9b193ee8-6c71-55bc-ba46-8dcec520c4d1",
+        "text": "• Inferencia del significado de palabras y expresiones a partir de\nlas pistas textuales y los conocimientos previos",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352016
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "inference",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "1d7d9905-4e63-579a-be92-7249fa5d5653",
+        "text": "• Subrayado, anotación y búsqueda de palabras en el diccionario\ny otras herramientas de consulta",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352017
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "dictionary",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "9b9dc1c8-314d-5c9e-98cd-19732864d8f0",
+        "text": "• Identificación de la intención comunicativa del texto",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1352018
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "text-intention",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "bf5efb47-06c5-5161-8b7e-f4de4ccf6ec5",
+        "text": "Producción escrita",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362000
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF136"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "f6734fb1-5019-58f8-89f8-e8804068e473",
+        "text": "• Establecimiento del propósito del mensaje y del tipo de texto\nque se va a producir",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362001
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "text-type",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "6fcdada4-755a-5b03-9e2a-6490c7954f15",
+        "text": "• Planificación y organización del mensaje",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362002
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "planning",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0",
+        "text": "• Uso del diccionario y otras herramientas de consulta",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362003
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "dictionary",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+        "text": "• Revisión del sentido y la corrección del mensaje",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362004
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "revision",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "186979a1-07c8-5f13-98fa-43a805bca461",
+        "text": "Otros:",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362005
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF136"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "50e1cc6b-ec54-5f92-9559-6379a5266d89",
+        "text": "• Utilización de asociaciones mentales y de la acción",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362006
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "association",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "f7aeafe6-d2f1-5421-a301-7d191ba68d6d",
+        "text": "• Automotivación y control del nivel de ansiedad",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362007
+      },
+      "provider": "No aplica",
+      "evidence": "Automotivación y ansiedad son condiciones de apoyo; no se infiere ni puntúa un estado psicológico.",
+      "verification": "ingles-1-estrategias.md",
+      "status": "EXCLUDED_PEDAGOGICAL_CONDITION"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "8c2b8cc7-30f7-5657-b36b-7d2bdd67e00c",
+        "text": "• Búsqueda de oportunidades de uso de la lengua",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362008
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "practice",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "81392573-59d2-5823-917b-bcacbad8555b",
+        "text": "Sociolingüísticos y socioculturales",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362009
+      },
+      "status": "SOURCE_HEADING_NOT_ASSESSABLE",
+      "evidence": "Encabezado o agrupación, no evidencia de desempeño independiente.",
+      "provider": "No aplica",
+      "verification": "Cotejo visual PDF136"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "c4412e9e-0129-5cbe-a717-69ac8aaf4c03",
+        "text": "• Utilización de fórmulas cotidianas de interacción social.",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362010
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "Modalidad documentada",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "08ba2718-53f0-5345-8871-d2caa1751d5f",
+        "text": "• Comparación entre los siguientes aspectos de la República\nDominicana y de otros países:",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362011
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "cultural-comparison",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "dd19f71a-750f-511f-87ba-e008e0e351e8",
+        "text": "• Rasgos físicos de las personas",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362012
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "cultural-comparison",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "481df6bf-f165-572a-87ce-9dc5ad845406",
+        "text": "• Formas de interactuar",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362013
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "cultural-comparison",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "835011cb-d843-5aec-b44e-270a647f9c88",
+        "text": "• Gustos y preferencias",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362014
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "cultural-comparison",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "cd5d8160-3d46-505b-a409-913e71f3c0be",
+        "text": "• Puntualidad",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362015
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "cultural-comparison",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "5fb519fb-6e44-52d2-9335-65a13cd921ab",
+        "text": "• Celebraciones",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362016
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "cultural-comparison",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "PROCEDURE",
+      "source": {
+        "id": "50bc85f8-8102-5394-b75c-eeed65610f29",
+        "text": "• Efecto del clima en las condiciones de vida",
+        "pdfPage": 136,
+        "printedPage": "135",
+        "sourceOrder": 1362017
+      },
+      "provider": "secondary-english-grade-one-strategies.ts",
+      "evidence": "cultural-comparison",
+      "verification": "ingles-1-estrategias.md",
+      "status": "CONNECTED_CONDITIONAL"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "003345c9-0d49-585e-ac2f-1418a48afc3d",
+        "text": "• Motivación para aprender inglés.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343000
+      },
+      "status": "EXCLUDED_PEDAGOGICAL_CONDITION",
+      "evidence": "Motivación interna; no se infiere ni puntúa una disposición personal.",
+      "contract": "No aplica",
+      "provider": "No aplica",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "5463369b-fa7a-57f9-8466-2477b0dcb56a",
+        "text": "• Cuidado del medioambiente.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343001
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Comunicar acciones para cuidar el ambiente; no calificar el estilo de vida real.",
+      "contract": "environment",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "5f929cd0-ac1e-5726-ba3d-c5e8cd4612df",
+        "text": "• Práctica de hábitos saludables.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343002
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Comunicar acciones de cuidado de salud solicitadas; no exigir hábitos personales.",
+      "contract": "health",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "091ecd75-3195-5a47-b3d2-4a6ea63e7ffe",
+        "text": "• Cumplimiento de las normas de\nseguridad.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343003
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Compatibilidad del mensaje con normas de seguridad proporcionadas.",
+      "contract": "safety",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "cab49b75-a507-58e0-81b2-1b821f7e694f",
+        "text": "• Respeto por las pertenencias de las\ndemás personas.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343004
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Pedir permiso y comunicar las condiciones de uso explícitamente acordadas.",
+      "contract": "property",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "05a3eeab-ad50-5da0-bacb-703840a13de8",
+        "text": "• Cortesía, asertividad y respeto al\ninteractuar con los y las demás.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343005
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Expresar la intención sin descalificar y con cortesía pertinente; invitaciones reutilizan su propia evidencia.",
+      "contract": "courtesy",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "5525e831-c895-5f43-ab01-6c475612b536",
+        "text": "• Conciencia de que el valor de las\npersonas trasciende las posesiones\nmateriales.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343006
+      },
+      "status": "EXCLUDED_BELIEF_WITH_OBSERVABLE_ALTERNATIVE",
+      "evidence": "No puntuar creencias ni posesiones; describir personas sin atribuir limitaciones materiales cuando se pide.",
+      "contract": "equity",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "70e5aef9-f2cc-5b78-8830-d6911eaa948c",
+        "text": "• Respeto por las diferencias relativas\na género, edad, ocupación y\nnacionalidad de las personas.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343007
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Descripción o intercambio sin estereotipos relativos a las diferencias expresamente indicadas.",
+      "contract": "equity",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "16af8644-dcdf-55c4-bb82-fdb92c635387",
+        "text": "• Reconocimiento de la equidad de\ngénero en el desempeño exitoso de\nlas diferentes ocupaciones.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343008
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Comunicar capacidades sin atribuirlas al género.",
+      "contract": "equity",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "a7e148ac-29e0-5e26-a649-ed0bf39e13a5",
+        "text": "• Reconocimiento de que las personas\ndiscapacitadas pueden desempeñar\nsu trabajo de forma exitosa.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343009
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Comunicar capacidades sin atribuir limitaciones por discapacidad; se conserva la cita original y se usa lenguaje respetuoso.",
+      "contract": "equity",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "5438fa5d-b6e3-559b-b2ce-db64cfefdfe4",
+        "text": "• Respeto por el tiempo propio y el de\nlas demás personas.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343010
+      },
+      "status": "CONDITION_WITH_COMMUNICATIVE_ALTERNATIVE",
+      "evidence": "No puntuar puntualidad general; comunicar horarios o turnos si la consigna lo exige.",
+      "contract": "routine/turns",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "429fdd77-feea-565b-a55e-0314815ee1f6",
+        "text": "• Planificación de las actividades que\nlleva a cabo.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1343011
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Planificación observable de un mensaje solicitado, sin calificar un rasgo organizativo personal.",
+      "contract": "planning",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "b4519ec6-252d-55a1-9d75-fd880ecab76c",
+        "text": "• Responsabilidad en el cumplimiento\nde sus deberes y compromisos.",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1353000
+      },
+      "status": "EXCLUDED_GENERAL_CONDUCT",
+      "evidence": "No incorporar automáticamente cumplimiento de deberes, entrega o compromiso a una calificación lingüística.",
+      "contract": "No aplica",
+      "provider": "No aplica",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "fecc2230-60c2-5cea-92b2-e64865c0cf83",
+        "text": "• Valoración de la importancia del\ntrabajo para las personas y la\ns o c i e d a d.",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1353001
+      },
+      "status": "EXCLUDED_BELIEF_WITH_OBSERVABLE_ALTERNATIVE",
+      "evidence": "No puntuar valoración interna del trabajo; describir ocupaciones y opiniones cuando se piden.",
+      "contract": "occupations/opinion",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "fa943f41-94c9-5481-8fe9-ddf073eaaeb8",
+        "text": "• Empatía y solidaridad ante las\ndificultades de los demás.",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1353002
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Ofrecer ayuda concreta relacionada con una dificultad ficticia, sin medir empatía interna.",
+      "contract": "solidarity",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "d647ca9d-38a7-558e-a456-24861c4a6d07",
+        "text": "• Valoración de la diversidad de rasgos\nfísicos característicos de diferentes\netnias.",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1353003
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Describir rasgos sin estereotipos y comparar información cultural explícita, sin puntuar identidad.",
+      "contract": "equity/cultural-comparison",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "ATTITUDE_VALUE",
+      "source": {
+        "id": "958acdaf-f716-5943-a881-216733fec061",
+        "text": "• Valoración de las costumbres locales y\nlas de otros países.",
+        "pdfPage": 135,
+        "printedPage": "134",
+        "sourceOrder": 1353004
+      },
+      "status": "CONNECTED_CONDITIONAL",
+      "evidence": "Comparar las costumbres indicadas apoyándose en información, sin juzgar adhesión a una cultura.",
+      "contract": "cultural-comparison",
+      "provider": "secondary-english-grade-one-context.ts / estrategias y léxico existentes",
+      "verification": "englishContext.spec.ts y contratos de función/estrategia/léxico; ingles-1-final-servicio.json para contextos nuevos"
+    },
+    {
+      "type": "SPECIFIC_COMPETENCY",
+      "source": {
+        "id": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+        "text": "Comprende y expresa ideas, sentimientos y valores culturales en distintas situaciones de comunicación\norales y escritas relativas a necesidades concretas y temas cotidianos, utilizando el idioma inglés de\nforma breve y sencilla para compartir información propia y de otras personas, describir sus actividades\ncotidianas, el entorno inmediato, y sus puntos de vista.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1346000
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "SPECIFIC_COMPETENCY",
+      "source": {
+        "id": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+        "text": "Interactúa en el idioma inglés, empleando estrategias de desempeño, el razonamiento lógico-verbal\ny la expresión creativa y crítica con el propósito de comunicarse de forma clara y efectiva en distintas\nsituaciones concretas de comunicación oral y escrita.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1346001
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "SPECIFIC_COMPETENCY",
+      "source": {
+        "id": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+        "text": "Se comunica en inglés oral y escrito de forma básica, pero comprensible, compartiendo información que\npermite identificar, describir y abordar problemas y situaciones comunes de su entorno inmediato.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1346002
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "SPECIFIC_COMPETENCY",
+      "source": {
+        "id": "2e452c37-c1b4-5a07-873b-143dc65b574f",
+        "text": "Se comunica en intercambios breves y sencillos, participando en un plano de respeto y colaboración, e\nidentificando algunas de las diferencias individuales y la identidad social y cultural propia y de otros países.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1346003
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "SPECIFIC_COMPETENCY",
+      "source": {
+        "id": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+        "text": "Interactúa en el idioma inglés compartiendo información, ideas y opiniones sobre aspectos científicos y\ntecnológicos de su entorno inmediato en distintas situaciones cotidianas de comunicación.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1346004
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "SPECIFIC_COMPETENCY",
+      "source": {
+        "id": "b6a7e120-af0f-539b-99de-d38274077921",
+        "text": "Muestra preferencias por actividades cotidianas y opciones que impactan de forma positiva la salud y el\nmedioambiente en distintas situaciones de comunicación.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1346005
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "SPECIFIC_COMPETENCY",
+      "source": {
+        "id": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+        "text": "Se comunica en el idioma inglés, con cortesía, asertividad, actitud de respeto, honestidad y aceptación\nal expresarse sobre sí mismo y las demás personas en cuanto a preferencias, experiencias, características\npersonales y actividades cotidianas.",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1346006
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "source": {
+        "id": "0817d90e-8ac8-5111-b0cb-d04908bd298c",
+        "text": "Comunicativa",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1345000
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "source": {
+        "id": "3cab23a2-9429-54f8-ae8a-08f7db34a800",
+        "text": "Pensamiento Lógico, Creativo y\nCrítico",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1345001
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "source": {
+        "id": "f8c40ea6-2c39-57ca-b73c-19d087bde4bf",
+        "text": "Resolución de Problemas",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1345002
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "source": {
+        "id": "e677cd04-0779-518b-8c52-8dd6b0574f46",
+        "text": "Ética y Ciudadana",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1345003
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "source": {
+        "id": "fc03d62d-7c3b-5321-a021-478ba4a6d7ab",
+        "text": "Científica y Tecnológica",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1345004
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "source": {
+        "id": "01f6a4c0-601e-53d9-b3b6-b8310278d40e",
+        "text": "Ambiental y de la Salud",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1345005
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "source": {
+        "id": "0342a41d-8755-5e60-9bdd-d17c755c25e8",
+        "text": "Desarrollo Personal y Espiritual",
+        "pdfPage": 134,
+        "printedPage": "133",
+        "sourceOrder": 1345006
+      },
+      "status": "GOVERNING_COMPETENCY_NOT_A_GENERIC_ROW",
+      "evidence": "Orientación del grado: se concreta mediante sus indicadores y requisitos de la consigna, sin sumar una fila genérica de competencia.",
+      "provider": "Funciones/modalidades y21 indicadores cotejados",
+      "verification": "Correspondencia visual PDF134 y139; contratos definidos de Inglés1"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+        "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir de la escucha o lectura de textos claros, breves y sencillos, donde\nse describen el entorno inmediato, información personal propia y de otras personas, actividades cotidianas y preferencias personales.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394000
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Comprensión oral/escrita de información personal, rutina y preferencias",
+      "contract": "personal/routine/preferences",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+        "text": "• Se expresa en inglés mediante una serie de frases y oraciones breves y sencillas enlazadas por conectores comunes para compartir\ninformación, puntos de vista e ideas referentes al entorno próximo y actividades cotidianas, aunque con pausas y reformulaciones en\nlo oral y con posibles errores básicos en lo escrito.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394001
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Frases breves enlazadas y mensaje comprensible, con pausas/apoyos o errores básicos compatibles",
+      "contract": "written/intelligibility",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+        "text": "• Interactúa de forma oral y escrita utilizando una serie de frases y oraciones breves y sencillas y con diversidad de vocabulario básico\nreferente a información personal, actividades cotidianas y el entorno inmediato, pero con suficiente claridad para ser comprendido\ncon un poco de esfuerzo.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394002
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Respuesta pertinente e inteligible al interlocutor",
+      "contract": "interaction/intelligibility",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+        "text": "• Responde a preguntas e indicaciones utilizando el pensamiento lógico verbal, creativo y crítico para comprender la información\ncontenida en mensajes orales y escritos referentes a necesidades concretas y temas cotidianos.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394003
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Respuestas sustentadas e inferencias a partir de datos del mensaje",
+      "contract": "source/inference",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+        "text": "• Se expresa en inglés a través de frases y oraciones con creatividad y mediante una estructura lógica básica, enlazadas por conectores\ncomunes, con pausas y reformulaciones en lo oral y con posibles errores básicos en lo escrito.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394004
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Organización básica y mensaje comprensible; creatividad no se puntúa como personalidad",
+      "contract": "written/intelligibility/planning",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "165abc91-7e3d-5a97-b67a-4ad8b8f3fa9b",
+        "text": "• Interactúa de forma oral y escrita siguiendo la lógica de la interacción y el contexto inmediato, expresándose mediante frases y\noraciones breves y sencillas con creatividad y pensamiento reflexivo.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394005
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Relación de intervenciones con contexto e intención",
+      "contract": "interaction/situation",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+        "text": "• Responde acorde a preguntas e indicaciones a partir de información sencilla contenida en textos orales o escritos sobre situaciones y\nproblemas cotidianos o del entorno próximo.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394006
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Comprensión de datos de situaciones cotidianas",
+      "contract": "source/description",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "df4f0013-9084-5e81-81c8-659036f09469",
+        "text": "• Se expresa de forma oral y escrita, utilizando expresiones breves y sencillas para describir de forma clara: ideas, elementos, personas y\nacciones relativas a problemas o situaciones de su entorno inmediato.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394007
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Descripción de elementos, personas y acciones del problema solicitado",
+      "contract": "description",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "e2774f70-176f-5d57-82a6-a01dcb35de02",
+        "text": "• Interactúa en intercambios comunicativos breves y sencillos, identificando problemas y situaciones variadas de sus actividades\ncotidianas y de su entorno inmediato, planteando opciones justas para enfrentar la situación, con expresiones breves y sencillas.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394008
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Opciones que responden al problema y consideran a las personas implicadas",
+      "contract": "fair",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "a2066850-8ae2-5319-9f15-341b3d4910c3",
+        "text": "• Participa de forma activa, con escucha atenta y respetuosa en las interacciones formativas e informativas que realiza, identificando\naspectos de la identidad social y cultural propia y de otros países, con actitud de aceptación y asertividad.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394009
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Escucha/participación observable y comparación cultural explícita; no medir aceptación interna",
+      "contract": "listening/cultural-comparison/courtesy",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "5344754f-d56f-53bb-b3d0-0e59688425b3",
+        "text": "• Expresa preferencias y puntos de vista de forma oral o escrita, con actitud y conducta respetuosa, cortés y asertiva, teniendo en cuenta\nlas diferencias individuales y la cultura propia y de otras personas.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394010
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Preferencias/opiniones comunicadas respetuosamente",
+      "contract": "preferences/opinion/courtesy",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "6108e6c7-a917-589c-b369-2c5075af840c",
+        "text": "• Interactúa en un plano de cortesía, asertividad y respeto tomando en cuenta las diferencias individuales y la identidad social y cultural\npropia y de otras personas relativas a rasgos físicos, formas de interactuar, preferencias, puntualidad, celebraciones y clima.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394011
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Interacción y comparación de diferencias sin estereotipos",
+      "contract": "interaction/equity/cultural-comparison",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+        "text": "• Responde de forma adecuada a preguntas e indicaciones a partir de la escucha o lectura de textos breves y de vocabulario y expresiones\nbásicas y sencillas sobre asuntos científicos y tecnológicos compartidos de forma presencial o virtual.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394012
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Comprensión de mensajes cotidianos científicos/tecnológicos, sin convertirla en dominio científico avanzado",
+      "contract": "source/science",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "c16ab3b4-024a-5abd-91b1-cdbc1a0c0c59",
+        "text": "• Identifica y describe aspectos científicos y tecnológicos relativos a sus actividades cotidianas y entorno inmediato, tales como anatomía\nde las personas y elementos tecnológicos y de la naturaleza utilizando frases y oraciones breves y sencillas orales y escritas.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394013
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Identificar/describir anatomía, tecnología o naturaleza pedidas mediante vocabulario básico",
+      "contract": "description/body/technology",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+        "text": "• Interactúa en forma oral o escrita por diferentes medios físicos y electrónicos, para intercambiar información, ideas y opiniones sobre\naspectos científicos y tecnológicos del entorno inmediato, actividades cotidianas y la descripción de las personas.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394014
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Intercambio de información, ideas y opiniones del entorno tecnológico",
+      "contract": "interaction/opinion/technology",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "9ab3a87e-8266-5b18-be5b-f6641f1c8046",
+        "text": "• Responde de forma favorable a la preservación del medio ambiente y la salud ante preguntas e indicaciones sobre información de las\npersonas, el entorno y sus actividades cotidianas.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394015
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Reconocer información de cuidado del ambiente/salud; no calificar hábitos reales",
+      "contract": "source/health/environment",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "986e04c2-72c6-5a0d-959f-597d0b1b1423",
+        "text": "• Ofrece información, opiniones e instrucciones sobre acciones que impactan positivamente el medio ambiente y la salud.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394016
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Acciones comunicadas compatibles con el cuidado solicitado",
+      "contract": "health/environment",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81",
+        "text": "• Interactúa para compartir información personal, de su entorno inmediato y de actividades cotidianas, mostrando preferencia por\naquellas que impactan positivamente la salud y el medioambiente.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394017
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Preferencias comunicadas y pertinencia de acciones de cuidado cuando se solicitan",
+      "contract": "preferences/health/environment",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "25ee4c2a-c2eb-5aeb-9505-d16c231d0927",
+        "text": "• Identifica respetuosamente a las personas por su apariencia y forma de ser, preferencias sobre actividades cotidianas y lugares, en un\nplano de cortesía, aceptación y asertividad ante sí mismo y los demás.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394018
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Descripción sin descalificaciones de rasgos y preferencias",
+      "contract": "description/courtesy/equity",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+        "text": "• Comparte información sobre su identidad personal y preferencias sobre lugares y actividades cotidianas con humildad, cortesía,\nasertividad y respeto.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394019
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Información personal/preferencias expresadas respetuosamente; humildad interna no se puntúa",
+      "contract": "personal/preferences/courtesy",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    },
+    {
+      "type": "ACHIEVEMENT_INDICATOR",
+      "source": {
+        "id": "0fd7efb6-5c1f-569b-a373-bd910b999535",
+        "text": "• Interactúa con cortesía asertividad y respeto, en intercambios orales y escritos de información, opiniones e instrucciones.",
+        "pdfPage": 139,
+        "printedPage": "138",
+        "sourceOrder": 1394020
+      },
+      "status": "CONNECTED_CONDITIONAL_INDICATOR",
+      "evidence": "Intercambio respetuoso de información, opiniones e instrucciones",
+      "contract": "interaction/opinion/instructions/courtesy",
+      "provider": "secondary-english-grade-one.ts y proveedores grammar/lexicon/strategies/genres/context",
+      "verification": "Suites English1 y evidencia HTTP/UI por bloque; controles de ausencia y alcance"
+    }
+  ],
+  "limits": "Criterios evaluativos propios basados en el currículo; no rúbricas literales del MINERD. Conexión condicional a consignas y familias ensayadas, sin prometer interpretar cualquier redacción."
+}

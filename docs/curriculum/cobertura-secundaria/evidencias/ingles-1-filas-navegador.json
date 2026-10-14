@@ -1,0 +1,337 @@
+{
+  "verifiedAt": "2026-10-14T09:06:05.372Z",
+  "format": "lista-cotejo",
+  "steps": [
+    "Generación19",
+    "Consigna31",
+    "Añadir una fila:20",
+    "Consigna20 y regeneración válida",
+    "Vaciar Criterio1",
+    "Completar Criterio1"
+  ],
+  "before": [
+    {
+      "label": "Criterio 1",
+      "value": ""
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 2",
+      "value": "Identifica el verbo like en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 3",
+      "value": "Identifica el presente continuo en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 4",
+      "value": "Identifica el pasado simple en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 5",
+      "value": "Identifica el presente perfecto en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 6",
+      "value": "Identifica will en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 7",
+      "value": "Identifica would en la invitación en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 8",
+      "value": "Identifica can’t en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 9",
+      "value": "Identifica there + be en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 10",
+      "value": "Identifica el imperativo en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 11",
+      "value": "Identifica let’s en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 12",
+      "value": "Identifica las question tags en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 13",
+      "value": "Identifica el posesivo ’s en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 14",
+      "value": "Identifica los artículos indefinidos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 15",
+      "value": "Identifica los adjetivos calificativos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 16",
+      "value": "Identifica el grado comparativo en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    },
+    {
+      "label": "Criterio 17",
+      "value": "Identifica los adjetivos posesivos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    },
+    {
+      "label": "Criterio 18",
+      "value": "Identifica los pronombres interrogativos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    },
+    {
+      "label": "Criterio 19",
+      "value": "Identifica los pronombres objeto en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    },
+    {
+      "label": "Criterio 20",
+      "value": "Identifica los pronombres posesivos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    }
+  ],
+  "after": [
+    {
+      "label": "Criterio 1",
+      "value": "Identifica el presente simple en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 2",
+      "value": "Identifica el verbo like en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 3",
+      "value": "Identifica el presente continuo en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 4",
+      "value": "Identifica el pasado simple en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 5",
+      "value": "Identifica el presente perfecto en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 6",
+      "value": "Identifica will en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 7",
+      "value": "Identifica would en la invitación en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 8",
+      "value": "Identifica can’t en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 9",
+      "value": "Identifica there + be en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 10",
+      "value": "Identifica el imperativo en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 11",
+      "value": "Identifica let’s en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 12",
+      "value": "Identifica las question tags en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 13",
+      "value": "Identifica el posesivo ’s en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 14",
+      "value": "Identifica los artículos indefinidos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 15",
+      "value": "Identifica los adjetivos calificativos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.87"
+    },
+    {
+      "label": "Criterio 16",
+      "value": "Identifica el grado comparativo en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    },
+    {
+      "label": "Criterio 17",
+      "value": "Identifica los adjetivos posesivos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    },
+    {
+      "label": "Criterio 18",
+      "value": "Identifica los pronombres interrogativos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    },
+    {
+      "label": "Criterio 19",
+      "value": "Identifica los pronombres objeto en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    },
+    {
+      "label": "Criterio 20",
+      "value": "Identifica los pronombres posesivos en el texto disponible en inglés."
+    },
+    {
+      "label": null,
+      "value": "0.86"
+    }
+  ],
+  "nonEmptyFieldsPreserved": true
+}

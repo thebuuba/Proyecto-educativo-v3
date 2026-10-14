@@ -44,8 +44,12 @@ export function nextCatalogCriterion(candidates: RecommendationCriterion[], fiel
   return candidates.find(candidate => candidate.title.trim() && candidate.description.trim()
     && !activeUsed.some(item => item.templateId === candidate.templateId)
     && !Array.from({length:count},(_,index)=>fields[`${type}:criterion-template:${index}`]).includes(candidate.templateId)
-    && !titles.some(title => equivalent(title, candidate.title))
-    && !descriptions.some(description => equivalent(description, candidate.description))) ?? null
+    && !titles.some((title,index) => {
+      const source = activeUsed.find(item=>item.id === fields[`${type}:criterion-id:${index}`])
+      // Distinct authored objectives can share words; edited/manual rows still use text matching.
+      if (source && source.templateId !== candidate.templateId && source.title === title && source.description === descriptions[index]) return false
+      return equivalent(title,candidate.title) || equivalent(descriptions[index],candidate.description)
+    })) ?? null
 }
 
 export function appendInstrumentCriterion(fields: Record<string, string>, type: InstrumentType, score: number | null,

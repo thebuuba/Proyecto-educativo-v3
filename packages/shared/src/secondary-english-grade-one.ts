@@ -7,6 +7,7 @@ import {requestedEnglishLexicon,englishLexicalCriterion} from './secondary-engli
 import {requestedEnglishStrategies,englishStrategyCriteria} from './secondary-english-grade-one-strategies'
 import {requestedEnglishGenres,englishGenreCriteria} from './secondary-english-grade-one-genres'
 import {withoutResources} from './evaluation-task-text'
+import {englishContextCriteria} from './secondary-english-grade-one-context'
 
 export const englishGradeOneModule={id:'ingles-comunicacion-1',grade:1,subjectCode:'ING',pdfPages:[134,135,136,137,138,139],policy:'COMMUNICATIVE_FUNCTION_MODALITY_V1'}
 
@@ -18,7 +19,7 @@ export function commonFirstGradeEnglish(context?:InstrumentAcademicContext|null)
 
 type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'
 type FunctionId='personal'|'invitation'|'routine'|'comparison'|'instructions'|'preferences'|'clarification'|'weather'|'directions'|'experience'|'opinion'|'description'
-export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; evidenceText?:string; activityType:string; technique:string; actions?:EnglishTask[]}
+export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; evidenceText?:string; contextText?:string; activityType:string; technique:string; actions?:EnglishTask[]}
 const modes:Record<Mode,{activityType:string;technique:string}>={
  reading:{activityType:'READING_COMPREHENSION',technique:'analisis-producciones'},
  listening:{activityType:'LISTENING_COMPREHENSION',technique:'observacion-sistematica'},
@@ -58,6 +59,8 @@ export function resolveFirstGradeEnglishTask(title:string,description:string,con
 function resolveSingleEnglishAction(title:string,description:string,context?:InstrumentAcademicContext|null):EnglishTask|null {
  if(!commonFirstGradeEnglish(context))return null
  const text=affirmativeLanguageTask(description||title)
+ const contextText=withoutResources(description||title).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+  .replace(/\b(?:no (?:se )?(?:evalu\w*|calific\w*|exig\w*|requer\w*)|sin evaluar)\b[^.;]*/g,'')
  const grammar=requestedEnglishGrammar(text)
  const lexicon=requestedEnglishLexicon(text)
  const genres=requestedEnglishGenres(text)
@@ -66,7 +69,7 @@ function resolveSingleEnglishAction(title:string,description:string,context?:Ins
  else if(/\b(?:leer\w*|leeran|leyendo|lectura|read\w*)\b/.test(text))mode='reading'
  else if(genres.some(g=>g.id==='audiovisual')&&/\b(?:crea\w*|elabor\w*|produc\w*|graba\w*|present\w*)\b/.test(text))mode='audiovisual'
  else if(/\b(?:dialog\w*|convers\w*|intercambios? orales?|entrevist\w*|role play)\b/.test(text))mode='interaction'
- else if(/\b(?:escrib\w*|redact\w*|por escrito|writ\w*)\b/.test(text))mode='writing'
+ else if(/\b(?:escrib\w*|redact\w*|por escrito|writ\w*|intercambios? escritos?|interaccion escrita|intercambi\w* mensajes escritos)\b/.test(text))mode='writing'
  else if(/\b(?:oralmente|oral|present\w*|expon\w*|speak\w*|tell)\b/.test(text))mode='oral'
  else if(/\b(?:ensay\w*|reproduccion de palabras)\b/.test(text))mode='oral'
  else if(/\b(?:planific\w*|revis\w* (?:el )?borrador)\b/.test(text))mode='writing'
@@ -93,7 +96,7 @@ function resolveSingleEnglishAction(title:string,description:string,context?:Ins
  if(!functions.length&&/\b(?:describ\w*|descrip\w*|describe)\b/.test(functionText))functions.push('description')
  if(strategies.some(f=>f.id==='cultural-comparison'))for(const id of ['comparison','preferences','weather','description'] as FunctionId[])if(functions.includes(id))functions.splice(functions.indexOf(id),1)
  if(strategies.some(f=>f.id==='help')&&functions.includes('clarification'))functions.splice(functions.indexOf('clarification'),1)
- return functions.length||grammar.length||lexicon.length||strategies.length||genres.length?{mode,functions,text,evidenceText,...modes[mode]}:null
+ return functions.length||grammar.length||lexicon.length||strategies.length||genres.length||englishContextCriteria(contextText).length?{mode,functions,text,evidenceText,contextText,...modes[mode]}:null
 }
 
 export function firstGradeEnglishSelections(task:EnglishTask,description:string){
@@ -249,6 +252,7 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
  result.push(...strategies)
  const genres=englishGenreCriteria(text,mode,result)
  result.push(...genres)
+ result.push(...englishContextCriteria(task.contextText??text,receptive).filter(c=>c.templateId!=='ing-1-context-respectful-message'||!result.some(row=>/cortesía|cortés/.test(row.observable))))
  if(receptive&&!result.length)result.push(row('source','Comprensión sustentada en el mensaje',[
   `Responde a lo solicitado apoyándose en palabras o datos presentes en el ${source} en inglés.`,
   `La respuesta corresponde al ${source}; una relación con sus palabras o datos necesita precisión.`,
@@ -256,8 +260,8 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
   'La respuesta contradice la información disponible en el mensaje.',
   'No aporta una respuesta relacionada con información reconocible del mensaje.',
  ],3))
- if(mode==='interaction'&&!receptive&&!genres.some(g=>g.templateId==='ing-1-genre-conversation'))result.push(row('interaction','Respuesta al interlocutor',[
-  'Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.',
+ if((mode==='interaction'||mode==='writing'&&/\b(?:intercambi\w*|interaccion escrita|respondi\w* al interlocutor)\b/.test(text))&&!genres.some(g=>g.templateId==='ing-1-genre-conversation'))result.push(row('interaction','Respuesta al interlocutor',[
+  `Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio${mode==='writing'?' escrito':''}, usando aclaraciones cuando las necesita.`,
   'Responde al interlocutor de forma pertinente; necesita una aclaración puntual para continuar.',
   'Responde a algunas intervenciones, pero otras quedan sin una respuesta relacionada.',
   'Las respuestas cambian el sentido de lo dicho por el interlocutor e interrumpen el intercambio.',

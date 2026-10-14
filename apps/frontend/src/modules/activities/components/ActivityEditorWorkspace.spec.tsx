@@ -75,17 +75,42 @@ function props() {
 }
 
 describe('independent activity editor', () => {
+  it('conserva la intención automática si cambia la descripción durante la preparación',async()=>{
+    const initial={...readyDraft(),preparedManuallyEdited:false,autoSelectedInstrumentType:false}
+    const description='Escribirán en inglés una opinión sobre la escuela. Se valorará la calidad en varias dimensiones.'
+    const proposal=editableFallbackRecommendation({activityTitle:initial.name,description,academicContext:{level:'SECONDARY',grade:1,subjectCode:'ING'},maxScore:20,participationMode:'INDIVIDUAL',instrumentType:'rubrica'})
+    let finish!:(p:InstrumentRecommendation)=>void
+    const pending=new Promise<InstrumentRecommendation>(resolve=>{finish=resolve})
+    let calls=0
+    const post=vi.spyOn(api,'post').mockImplementation(async(path)=>{
+      if(path.endsWith('/recommend'))return (++calls===1?await pending:proposal) as never
+      return {suggestedActivityType:'WRITTEN_PRODUCTION',suggestedEvaluationTechnique:'analisis-producciones',suggestedInstrumentType:'rubrica',curriculumVersionId:null,curriculumCandidates:[]} as never
+    })
+    render(<ActivityEditorWorkspace {...props()} initialDraft={initial} sectionSubjectId="subject" instrumentAcademicContext={{level:'SECONDARY',grade:1,subjectCode:'ING'}} />)
+    fireEvent.change(screen.getByRole('combobox',{name:'Tipo de instrumento'}),{target:{value:''}})
+    await waitFor(()=>expect(calls).toBe(1))
+    fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:description}})
+    await act(async()=>{finish(initial.preparedRecommendation!);await pending})
+    await waitFor(()=>expect(calls).toBeGreaterThan(1),{timeout:5000})
+    const requests=post.mock.calls.filter(([path])=>path.endsWith('/recommend'))
+    expect(requests.at(-1)?.[1]).toMatchObject({description,preferredInstrumentType:undefined})
+    await waitFor(()=>expect(screen.getByRole('combobox',{name:'Tipo de instrumento'})).toHaveValue('rubrica'))
+  })
   it('un rechazo por capacidad después de confirmar regeneración conserva la edición manual',async()=>{
     vi.spyOn(api,'post').mockRejectedValue(new ApiError(400,'La consigna requiere 31 criterios y el instrumento admite hasta 20.'))
     const original=readyDraft()
     original.instrumentFields['lista-cotejo:criterion:0']='Criterio editado por el docente'
     render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
+    fireEvent.change(screen.getByLabelText('Criterio 1'),{target:{value:'Criterio editado por el docente (conservado)'}})
+    await waitFor(()=>expect(readActivityDrafts(context)).toHaveLength(1))
+    const beforeFields=readActivityDrafts(context)[0].draft.instrumentFields
     fireEvent.click(screen.getByRole('button',{name:'Generar nuevo instrumento'}))
     const dialog=await screen.findByRole('dialog',{name:'¿Reemplazar el instrumento editado?'})
     fireEvent.click(within(dialog).getByRole('button',{name:'Cambiar instrumento'}))
     await screen.findByText(/La consigna requiere 31 criterios/)
-    expect(screen.getByLabelText('Criterio 1')).toHaveValue('Criterio editado por el docente')
+    expect(screen.getByLabelText('Criterio 1')).toHaveValue('Criterio editado por el docente (conservado)')
     expect(screen.getByRole('textbox',{name:/Valor en puntos/})).toHaveValue('20')
+    expect(readActivityDrafts(context)[0].draft.instrumentFields).toEqual(beforeFields)
   })
   for(const offline of [false,true])it(`capacidad excedida conserva el instrumento previo: ${offline?'alternativa':'servicio'}`,async()=>{
     const message='La consigna requiere 31 criterios y el instrumento admite hasta 20.'

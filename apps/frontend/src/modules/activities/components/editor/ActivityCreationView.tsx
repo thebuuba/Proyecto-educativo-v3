@@ -577,6 +577,11 @@ export function ActivityCreationView(props: {
       })
       return
     }
+    if (!instrumentType) {
+      const next = {...latestDraft.current,autoSelectedInstrumentType:true}
+      latestDraft.current = next
+      onChangeDraft(next)
+    }
     void prepare(instrumentType || undefined, false, !instrumentType)
   }
 

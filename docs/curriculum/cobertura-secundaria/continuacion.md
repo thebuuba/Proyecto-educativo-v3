@@ -1,5 +1,19 @@
 # Continuación del encargo completo
 
+## Encargo específico terminado: Inglés común de1.º (.45)
+
+La instrucción adjunta del usuario autoriza reanudar desde3515306 y cerrar solo primero. **El grado queda verificado en sus familias y requisitos definidos; detenerse aquí. No comenzar Inglés2.º ni otra asignatura sin un nuevo encargo.** Lengua Española común1.º–6.º conserva su cierre .34. Las autorizaciones históricas de ampliación y los pendientes antiguos de abajo no prevalecen sobre este límite.
+
+[Informe final](ingles-1-informe-final.md), [cotejo integral](ingles-1-cotejo-integral.json), [ejemplos completos](ingles-1-ejemplos-finales.md). Fuente PDF134–139 y201 registros revisados;17 actitudes y21 indicadores incluyen evidencia/proveedor o exclusión justificada.16 agrupaciones en matriz, alcance y estados de otras asignaturas conservados. El análisis permanece determinista, acotado a familias/patrones ensayados, sin prometer comprender cualquier consigna.
+
+Cerrados: rechazo31 tras confirmación con conservación exacta; cuatro instrumentos válidos de20; diferencia entre candidatos y capacidad final; añadir/completar, deduplicación y pesos; vacíos de contexto e interacción escrita; protección de intención automática durante respuestas obsoletas; recomendaciones automáticas y elecciones manuales; cancelar/conservar/adaptar; generación, edición, resumen, guardado y reapertura real. No se modificaron snapshots históricos.
+
+Catálogo final instalado/cargado local `evaluation-2026.45`, con .42/.43/.44 archivados. Pruebas backend6.380/64, frontend reciente11.311/108 y comprobaciones finales específicas58 editor/122 servicios, inventario9, builds exigidos y Cloudflare dry-run. HTTP169 .44 +25 revisión .45 +12 selección .44. Cuatro guardados finales (rúbrica/cotejo .43, escala/ponderada .44) y sus campos/snapshots cotejados;106 snapshots preservados (28 de referencia y78 completos). No se atribuye el hash final a pruebas realizadas con3515306 más cambios pendientes.
+
+No hay siguiente pendiente de Inglés1 dentro de este alcance. Si se pide una ampliación posterior, consultar la ruta oficial y leer primero las instrucciones nuevas; no arrancar automáticamente. Conservar límites del motor, exclusiones de motivación/ansiedad/personales y procedencia local de las pruebas. Rama `amplia-instrumentos-secundaria`, origen `https://github.com/thebuuba/Proyecto-educativo-v3.git`; commit/push y árbol final se confirman en la entrega. No subagentes, IA, rediseño, main, producción, reset, cambios de esquema ni secretos en Git.
+
+Las secciones siguientes son historial de estados anteriores.
+
 ## Trabajo detenido y punto de recuperación — 14/10/2026 (.42)
 
 **El usuario ordenó detener la ampliación curricular y publicar únicamente el cierre del avance actual. No comenzar otro bloque ni reanudar por las autorizaciones históricas de abajo.** Inglés común1.º mantiene estado parcial; Lengua Española común1.º–6.º conserva el cierre .34 de sus familias verificadas. Las demás asignaturas y optativas mantienen sus estados propios.
