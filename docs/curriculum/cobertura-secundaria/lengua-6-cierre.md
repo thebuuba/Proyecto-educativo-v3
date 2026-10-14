@@ -1,3 +1,5 @@
+> Actualización del flujo de criterios (.46): el cierre previo conservó una regresión de añadir/completar no detectada en sus ejemplos. Se corrigieron agotamiento, recuperación, intención/identidades, respuestas obsoletas y procedencia; se verificaron los proveedores de las40 familias de Lengua y los cuatro formatos. [Informe y límites](criterios-adicionales-informe.md), [matriz](criterios-matriz-proveedores.md). Las evidencias anteriores permanecen intactas; no se amplía el ámbito curricular.
+
 # Lengua Española común: cierre de sexto
 
 Se verifican los siete temas de sexto dentro de las familias y requisitos definidos. Catálogo final `evaluation-2026.33`; `.31` y `.32` archivados sin modificar los snapshots guardados. Los criterios son adaptaciones evaluativas de Aula Base; el texto curricular oficial permanece diferenciado.

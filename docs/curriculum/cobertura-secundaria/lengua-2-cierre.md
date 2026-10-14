@@ -1,3 +1,5 @@
+> Actualización del flujo de criterios (.46): el cierre previo conservó una regresión de añadir/completar no detectada en sus ejemplos. Se corrigieron agotamiento, recuperación, intención/identidades, respuestas obsoletas y procedencia; se verificaron los proveedores de las40 familias de Lengua y los cuatro formatos. [Informe y límites](criterios-adicionales-informe.md), [matriz](criterios-matriz-proveedores.md). Las evidencias anteriores permanecen intactas; no se amplía el ámbito curricular.
+
 # Lengua Española común: cierre de las familias verificadas de 2.º
 
 Se cierran los pendientes definidos de los seis temas de 2.º, tras cotejar 51 registros de subtemas y 24 bloques de procedimientos en PDF 76–81. El alcance es el conjunto de familias y requisitos documentados; no la interpretación universal de cualquier descripción. 3.º–6.º siguen pendientes.

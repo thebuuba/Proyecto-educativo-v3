@@ -39,6 +39,7 @@ import {
   nextCatalogCriterion,
   matchingCatalogCriterion,
   completeInstrumentCriterion,
+  criterionHasPendingContent,
 } from '@/modules/activities/services/instrumentCriterionAddition'
 import {
   editableFallbackRecommendation,
@@ -140,6 +141,8 @@ export function ActivityCreationView(props: {
     : firstSecondaryLanguage ? 1 : secondSecondaryLanguage ? 2 : null
   const latestDraft = useRef(activityDraft)
   latestDraft.current = activityDraft
+  const criterionContext = useRef([sectionSubjectId,academicContext,block.id])
+  criterionContext.current = [sectionSubjectId,academicContext,block.id]
   const preparationContext = useRef('')
   preparationContext.current = JSON.stringify([sectionSubjectId, block.id, activityDraft.draftId, editingActivityId])
   const committedScore = useRef(validActivityScore(activityDraft.maxScore))
@@ -190,6 +193,7 @@ export function ActivityCreationView(props: {
     criterion: InstrumentRecommendation['criteria'][number] | null
     onAdded: () => void
     signature: string
+    catalogVersion?: string
   } | null>(null)
   const [confirmCriterionRedistribution, setConfirmCriterionRedistribution] = useState(false)
   const [preparationError, setPreparationError] = useState('')
@@ -597,6 +601,7 @@ export function ActivityCreationView(props: {
   function applyAddedCriterion(
     criterion: InstrumentRecommendation['criteria'][number] | null,
     onAdded: () => void,
+    catalogVersion?: string,
   ) {
     const current = latestDraft.current
     const type = current.instrumentType as InstrumentRecommendation['instrumentType']
@@ -607,6 +612,10 @@ export function ActivityCreationView(props: {
       current.preparedRecommendation,
       criterion,
     )
+    if(catalogVersion && criterion) {
+      result.fields[`${type}:meta:catalogVersion`]=catalogVersion
+      if(result.recommendation)result.recommendation={...result.recommendation,catalogVersion}
+    }
     const next = {
       ...current,
       instrumentFields: result.fields,
@@ -617,15 +626,29 @@ export function ActivityCreationView(props: {
     latestDraft.current = next
     onChangeDraft(next)
     onAdded()
+    if(!criterion)setFallbackNotice('Fila manual añadida: escribe su criterio y los campos del instrumento.')
     if (criterion && ['rubrica','escala'].includes(type) && Number(result.fields[`${type}:meta:levelCount`]) > (criterion.progressionLevels?.length ?? criterion.descriptors.length))
       setFallbackNotice('Criterio añadido. La progresión de estos niveles requiere completar sus descriptores manualmente.')
   }
 
-  const criterionRequestSignature = (draft: ActivityDraft) => `${draft.draftId}:${sectionSubjectId}:${preparationFingerprint(draft)}:${JSON.stringify([draft.maxScore,draft.instrumentFields])}`
+  const criterionRequestSignature = (draft: ActivityDraft) => `${draft.draftId}:${preparationFingerprint(draft)}:${JSON.stringify([criterionContext.current,draft.maxScore,draft.instrumentFields])}`
+
+  function requestManualCriterion() {
+    if (addingRequest.current || preparingRequest.current || structuralLocked) return
+    const current=latestDraft.current
+    const type=current.instrumentType
+    if (!type || Number(current.instrumentFields[`${type}:meta:criteriaCount`]) >= 20) return
+    if ((validActivityScore(current.maxScore)!==null || type==='lista-ponderada') && current.instrumentFields[`${type}:meta:manualPoints`]==='true') {
+      pendingCriterionAddition.current={criterion:null,onAdded:()=>{},signature:criterionRequestSignature(current)}
+      setConfirmCriterionRedistribution(true)
+    } else applyAddedCriterion(null,()=>{})
+  }
 
   async function requestAdditionalCriterion(onAdded: () => void, rowId?: string) {
     if (addingRequest.current || preparingRequest.current || structuralLocked || !activityDraft.instrumentType) return
     addingRequest.current = true
+    setPreparationError('')
+    setFallbackNotice('')
     if (rowId) setCompletingCriterionId(rowId)
     else setAddingCriterion(true)
     const current = latestDraft.current
@@ -633,6 +656,7 @@ export function ActivityCreationView(props: {
     const type = current.instrumentType as InstrumentRecommendation['instrumentType']
     let candidates: InstrumentRecommendation['criteria'] = []
     let usedAlternative = false
+    let catalogVersion: string | undefined
     try {
       if (current.preparedRecommendation?.catalogVersion === 'editable-fallback-v1')
         throw new Error('Usar plantilla local')
@@ -653,9 +677,10 @@ export function ActivityCreationView(props: {
         levelCount: Number(current.instrumentFields[`${type}:meta:levelCount`]) >= 5 ? 5 : 4,
       })
       candidates = proposal.criteria
+      catalogVersion=proposal.catalogVersion
     } catch (error) {
       if (error instanceof ApiError && error.status >= 400 && error.status < 500) {
-        setPreparationError(error.message)
+        if(mounted.current && criterionRequestSignature(latestDraft.current)===signature) setPreparationError(error.message)
         return
       }
       const base = {
@@ -673,11 +698,12 @@ export function ActivityCreationView(props: {
       try { candidates = [0, 1].flatMap(
         (variation) => editableFallbackRecommendation({ ...base, variation }).criteria,
       ) } catch (localError) {
-        if(!(localError instanceof InstrumentCapacityError))throw localError
-        setPreparationError(localError.message)
+        if(mounted.current && criterionRequestSignature(latestDraft.current)===signature)
+          setPreparationError(localError instanceof InstrumentCapacityError?localError.message:'No se pudo preparar un criterio. Conservamos tus campos; puedes reintentar o añadirlo manualmente.')
         return
       }
       usedAlternative = current.preparedRecommendation?.catalogVersion !== 'editable-fallback-v1'
+      catalogVersion='editable-fallback-v1'
     } finally {
       addingRequest.current = false
       setAddingCriterion(false)
@@ -700,15 +726,21 @@ export function ActivityCreationView(props: {
         return
       }
       const fields = completeInstrumentCriterion(current.instrumentFields,type,row,candidate)
+      const contentChanged=Object.keys(fields).some(key=>/^.+:(?:criterion|description|indicator|descriptor):/.test(key)&&fields[key]!==current.instrumentFields[key])
+      if(!contentChanged) {
+        setFallbackNotice('No hay campos pendientes con una propuesta disponible. Se conservaron tus textos.')
+        return
+      }
       const prior = current.preparedRecommendation
-      const recommendation = prior ? {...prior,criteria:prior.criteria.map(item=>item.id === rowId
-        ? {...candidate,id:rowId,maxScore:item.maxScore,maxScoreUnits:item.maxScoreUnits} : item)} : undefined
+      if(catalogVersion)fields[`${type}:meta:catalogVersion`]=catalogVersion
+      const recommendation = prior ? {...prior,catalogVersion:catalogVersion??prior.catalogVersion,criteria:prior.criteria.map(item=>item.id === rowId
+        ? {...candidate,id:rowId,title:fields[`${type}:criterion:${row}`],description:fields[`${type}:description:${row}`],maxScore:item.maxScore,maxScoreUnits:item.maxScoreUnits} : item)} : undefined
       const next = {...current,instrumentFields:fields,preparedRecommendation:recommendation,preparedManuallyEdited:true}
       latestDraft.current = next
       onChangeDraft(next)
-      if (JSON.stringify(fields) === JSON.stringify(current.instrumentFields)) setFallbackNotice('No hay campos vacíos con una propuesta disponible. Se conservaron tus textos.')
-      else if (Number(fields[`${type}:meta:levelCount`]) > candidate.descriptors.length && ['rubrica','escala'].includes(type))
+      if (Number(fields[`${type}:meta:levelCount`]) > (candidate.progressionLevels?.length??candidate.descriptors.length) && ['rubrica','escala'].includes(type))
         setFallbackNotice('Se completaron los textos disponibles. La progresión de estos niveles requiere edición manual.')
+      else setFallbackNotice(usedAlternative?'Criterio completado con la alternativa local. Revisa la propuesta; se conservaron tus textos y puntos.':'Criterio completado. Se conservaron tus textos y puntos.')
       return
     }
     const criterion = nextCatalogCriterion(
@@ -717,20 +749,27 @@ export function ActivityCreationView(props: {
       type,
       current.preparedRecommendation?.criteria,
     )
+    if (!criterion) {
+      setFallbackNotice('No hay otro criterio automático pertinente disponible. Puedes añadir un criterio manual.')
+      return
+    }
     if (
       (validActivityScore(current.maxScore) !== null || type === 'lista-ponderada') &&
       current.instrumentFields[`${type}:meta:manualPoints`] === 'true'
     ) {
-      pendingCriterionAddition.current = { criterion, onAdded, signature }
+      pendingCriterionAddition.current = { criterion, onAdded, signature, catalogVersion }
       setConfirmCriterionRedistribution(true)
-    } else applyAddedCriterion(criterion, onAdded)
-    if (!criterion) setFallbackNotice('No hay otra propuesta pertinente disponible. Se añadió una fila para completar manualmente.')
+    } else applyAddedCriterion(criterion, onAdded, catalogVersion)
   }
 
   function requestCriterionCompletion(row: number) {
     if (addingRequest.current || structuralLocked) return
     const current = latestDraft.current
     const type = current.instrumentType
+    if(!criterionHasPendingContent(current.instrumentFields,type as InstrumentRecommendation['instrumentType'],row)) {
+      setFallbackNotice('Este criterio está completo; no hay campos pendientes. Se conservaron tus textos y puntos.')
+      return
+    }
     const key = `${type}:criterion-id:${row}`
     const identity = current.instrumentFields[key] || `manual:${crypto.randomUUID()}`
     if (!current.instrumentFields[key]) {
@@ -1232,6 +1271,7 @@ export function ActivityCreationView(props: {
                   onCompleteCriterion={requestCriterionCompletion}
                   completingCriterionId={completingCriterionId}
                   criterionRequestBusy={addingCriterion || completingCriterionId !== null}
+                  onAddManualCriterion={requestManualCriterion}
                   onCompletedChange={(instrumentCompleted) =>
                     handleDraftChange({ ...activityDraft, instrumentCompleted })
                   }
@@ -1584,7 +1624,7 @@ export function ActivityCreationView(props: {
             const pending = pendingCriterionAddition.current
             pendingCriterionAddition.current = null
             setConfirmCriterionRedistribution(false)
-            if (pending && criterionRequestSignature(latestDraft.current) === pending.signature) applyAddedCriterion(pending.criterion, pending.onAdded)
+            if (pending && criterionRequestSignature(latestDraft.current) === pending.signature) applyAddedCriterion(pending.criterion, pending.onAdded,pending.catalogVersion)
           }}
         />
       ) : null}

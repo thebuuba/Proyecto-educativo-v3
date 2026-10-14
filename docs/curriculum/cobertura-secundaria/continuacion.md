@@ -1,5 +1,18 @@
 # Continuación del encargo completo
 
+## Encargo vigente: corrección transversal de criterios (.46)
+
+No continuar la ampliación curricular. Alcance cerrado al flujo de añadir/completar en Lengua común1.º–6.º e Inglés común1.º, cuatro formatos. [Informe](criterios-adicionales-informe.md), [matriz de40 familias/768 consignas](criterios-matriz-proveedores.md), [ejemplos completos](criterios-ejemplos-completos.md). Se mantienen todos los cierres/evidencias anteriores, registrando esta regresión adicional y su corrección.
+
+Corregidos: fila automática vacía al agotarse el conjunto, resultados de completar, exclusión de objetivos ya usados, respuestas tardías tras cambiar contexto, procedencia del candidato; conectadas expresiones temporales/respuesta oral de Inglés y presentación oral de guía1. Generaciones nuevas incluyen todas las evidencias pedidas; borradores anteriores conservan manuales e IDs. La cantidad de candidatos no equivale a la capacidad20; no se fabrican extras ni se redistribuye al completar.
+
+Evidencia: backend6.380;151 pruebas frontend del bloque, con repetición del editor tras un timeout aislado; matriz9.216 combinaciones;336+52 solicitudes HTTP; builds requeridos y Cloudflare dry-run. Dos rúbricas editadas, guardadas/reabiertas en navegador y cotejadas con snapshot (.46), Inglés20/Lengua17.35.106 snapshots previos conservados,108 actuales. Los otros formatos/grados tienen pruebas automáticas y HTTP, sin atribuirles recorridos nuevos de navegador.
+
+Limitación: no se conoce la consigna exacta del caso B. Se encontró y verificó el borrador autorizado de guía con seis filas y séptima vacía; no se lo identifica como B sin confirmación documental. No hay ampliación a otra asignatura/grado en curso. Próximo trabajo solo ante nuevo encargo; si se aporta B, contrastarlo con este informe.
+
+Rama `amplia-instrumentos-secundaria`, baseff13520; catálogo local .46. Commit/push y árbol final se confirman en la entrega. Sin subagentes, IA, rediseño, dependencias, main, producción, reset, esquema ni modificación de históricos; cuentas, .env, secretos/logs/temporales fuera de Git. Lo que sigue es historial.
+
+
 ## Encargo específico terminado: Inglés común de1.º (.45)
 
 La instrucción adjunta del usuario autoriza reanudar desde3515306 y cerrar solo primero. **El grado queda verificado en sus familias y requisitos definidos; detenerse aquí. No comenzar Inglés2.º ni otra asignatura sin un nuevo encargo.** Lengua Española común1.º–6.º conserva su cierre .34. Las autorizaciones históricas de ampliación y los pendientes antiguos de abajo no prevalecen sobre este límite.

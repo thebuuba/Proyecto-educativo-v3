@@ -1,3 +1,5 @@
+> Actualización del flujo de criterios (.46): el cierre previo conservó una regresión de añadir/completar no detectada en sus ejemplos. Se corrigieron agotamiento, recuperación, intención/identidades, respuestas obsoletas y procedencia; se verificaron los proveedores de las40 familias de Lengua y los cuatro formatos. [Informe y límites](criterios-adicionales-informe.md), [matriz](criterios-matriz-proveedores.md). Las evidencias anteriores permanecen intactas; no se amplía el ámbito curricular.
+
 # Lengua Española común: familias verificadas de 3.º
 
 Siete temas, 61 registros de subtemas y 27 registros de procedimientos cotejados visualmente en PDF 82–88. Se conectan al recorrido normal del creador y a la alternativa local mediante proveedores compartidos. El alcance corresponde a las familias y consignas documentadas; no garantiza interpretar cualquier descripción. 4.º–6.º siguen pendientes.

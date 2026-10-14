@@ -105,6 +105,16 @@ export function appendInstrumentCriterion(fields: Record<string, string>, type: 
 }
 
 /** Manual intent is authoritative; identity cannot overwrite a different objective. */
+export function criterionHasPendingContent(fields:Record<string,string>,type:InstrumentType,row:number) {
+  const parts=['criterion',...(type==='lista-ponderada'?['indicator']:[])]
+  if(parts.some(part=>!fields[`${type}:${part}:${row}`]?.trim()))return true
+  if(type==='rubrica'||type==='escala') {
+    const count=Number(fields[`${type}:meta:levelCount`])||4
+    return Array.from({length:count},(_,i)=>!fields[`${type}:descriptor:${row}:${count-i}`]?.trim()).some(Boolean)
+  }
+  return false
+}
+
 export function matchingCatalogCriterion(candidates: RecommendationCriterion[], fields: Record<string,string>,
   type: InstrumentType, row: number, used: RecommendationCriterion[] = []): RecommendationCriterion | null {
   const title = fields[`${type}:criterion:${row}`]?.trim() ?? ''
@@ -119,9 +129,9 @@ export function matchingCatalogCriterion(candidates: RecommendationCriterion[], 
   const matches = candidates.filter(candidate=>
     (!title || title === candidate.title || equivalent(title,candidate.title) || equivalent(title,candidate.description)) &&
     (!description || description === candidate.description || equivalent(description,candidate.description)))
-  const exact = matches.find(candidate=>candidate.templateId === template)
-  if (exact) return exact
   const eligible = matches.filter(candidate=>nextCatalogCriterion([candidate],other,type,usedElsewhere))
+  const exact = eligible.find(candidate=>candidate.templateId === template)
+  if (exact) return exact
   return eligible.length === 1 ? eligible[0] : null
 }
 

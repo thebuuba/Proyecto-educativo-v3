@@ -1,3 +1,5 @@
+> Actualización del flujo de criterios (.46): el cierre previo conservó una regresión de añadir/completar no detectada en sus ejemplos. Se corrigieron agotamiento, recuperación, intención/identidades, respuestas obsoletas y procedencia; se verificaron los proveedores de las40 familias de Lengua y los cuatro formatos. [Informe y límites](criterios-adicionales-informe.md), [matriz](criterios-matriz-proveedores.md). Las evidencias anteriores permanecen intactas; no se amplía el ámbito curricular.
+
 # Cierre de Inglés común de1.º de secundaria
 
 Inglés común de1.º queda verificado dentro de las familias, modalidades y requisitos documentados. Se cerraron el límite20, las operaciones por fila, el cotejo de fuente y la revisión de pertinencia, selección y persistencia. **La ejecución termina en este grado: no se inicia segundo ni otra asignatura.** Lengua Española común1.º–6.º conserva su cierre .34.

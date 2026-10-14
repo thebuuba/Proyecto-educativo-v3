@@ -385,7 +385,7 @@ describe('independent activity editor', () => {
     await waitFor(() => expect(screen.getByPlaceholderText('1. Criterio')).toHaveValue(proposal.criteria[0].title))
     expect(screen.queryByText('No se pudo validar la asignatura')).not.toBeInTheDocument()
   }, 10000)
-  it('adds a criterion to a local editable instrument without claiming a service failure', async () => {
+  it('informa agotamiento sin crear una fila vacía y permite añadirla explícitamente', async () => {
     const post = vi.spyOn(api, 'post').mockRejectedValue(new Error('Unexpected remote request'))
     const draft = readyDraft()
     render(<ActivityEditorWorkspace {...props()} initialDraft={draft} sectionSubjectId="subject" />)
@@ -393,6 +393,9 @@ describe('independent activity editor', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Agregar criterio' }))
     const confirmation = screen.queryByRole('button', { name: 'Redistribuir puntos' })
     if (confirmation) fireEvent.click(confirmation)
+    await screen.findByText(/No hay otro criterio automático pertinente/)
+    expect(screen.getAllByPlaceholderText(/^\d+\. Criterio$/)).toHaveLength(initialCriteria)
+    fireEvent.click(screen.getByRole('button',{name:'Añadir criterio manual'}))
     await waitFor(() => expect(screen.getAllByPlaceholderText(/^\d+\. Criterio$/)).toHaveLength(initialCriteria + 1))
     expect(screen.queryByText(/El servicio no respondi/)).not.toBeInTheDocument()
     expect(post.mock.calls.some(([path]) => path.endsWith('/recommend'))).toBe(false)

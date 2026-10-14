@@ -1,3 +1,5 @@
+> Actualización del flujo de criterios (.46): el cierre previo conservó una regresión de añadir/completar no detectada en sus ejemplos. Se corrigieron agotamiento, recuperación, intención/identidades, respuestas obsoletas y procedencia; se verificaron los proveedores de las40 familias de Lengua y los cuatro formatos. [Informe y límites](criterios-adicionales-informe.md), [matriz](criterios-matriz-proveedores.md). Las evidencias anteriores permanecen intactas; no se amplía el ámbito curricular.
+
 # Lengua Española común: familias verificadas de 4.º
 
 Siete temas cotejados visualmente en PDF96–104: 68 registros de subtemas equivalentes a 67 conceptos lógicos, y 92 registros de procedimientos que componen 26 bloques de modalidad. El motor conecta las familias definidas y verificadas; no garantiza interpretar cualquier descripción. 5.º y 6.º continúan pendientes.

@@ -159,10 +159,12 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
    ])
    }
    case 'routine':{
-    const time=/horarios?|hora|hours?|time/.test(text)?' y sus horarios':''
+    const quantity=text.match(/\b(\d+|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez) actividades\b/)?.[1]
+    const activities=quantity?`las ${quantity} actividades solicitadas`:'las actividades'
+    const time=/horarios?|\bhora\b|hours?|\btime\b/.test(text)?' y sus horarios':''
     return row(id,'Actividades de la rutina',[
-     receptive?`Relaciona las actividades de la rutina${time} según la información del ${source} en inglés.`:`Describe en inglés las actividades de la rutina${time} mediante frases breves relacionadas entre sí.`,
-     `Se reconocen las actividades${time}; una relación necesita precisión.`,
+     receptive?`Relaciona ${activities} de la rutina${time} según la información del ${source} en inglés.`:`Describe en inglés ${activities} de la rutina${time} mediante frases breves relacionadas entre sí.`,
+     `Se reconocen ${activities}${time}; una relación necesita precisión.`,
      `Menciona actividades aisladas sin establecer las relaciones de la rutina${time}.`,
      'Confunde las actividades o sus relaciones y cambia la rutina descrita.',
      'No se identifican actividades que permitan reconocer la rutina.',
@@ -279,6 +281,27 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
   'Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.',
   'Las expresiones elegidas cambian el sentido de las ideas que se desean comunicar.',
   'No se aporta un mensaje oral reconocible en inglés con los apoyos acordados.',
+ ],3))
+ // Explicit requirements omitted by the broad communicative/grammar rows. They are
+ // also returned during generation: a new instrument must not omit requested evidence.
+ const requirements=(task.contextText??text).replace(/\bno (?:se )?(?:respond\w*|utiliz\w*|emple\w*|us\w*)\b[^.;]*/g,'')
+ if(!receptive&&/\b(?:utiliz\w*|emple\w*|us\w*)\b/.test(requirements)&&/\bexpresiones (?:de tiempo|temporales)\b/.test(requirements)) {
+  const expressions=['in the morning','in the afternoon','at night'].filter(expression=>requirements.includes(expression))
+  const requested=expressions.length?list(expressions):'las expresiones temporales solicitadas'
+  result.push(row('temporal-expressions','Expresiones temporales en el mensaje',[
+   `Relaciona las acciones del mensaje en inglés con el momento correspondiente mediante ${requested}.`,
+   `Las expresiones temporales sitúan las acciones; una asociación con el momento necesita precisión.`,
+   'Emplea algunas expresiones temporales, pero deja acciones sin situar o confunde varios momentos.',
+   'Las expresiones temporales sitúan las acciones en momentos incompatibles con el mensaje que pretende comunicar.',
+   'No utiliza expresiones temporales reconocibles para situar las acciones del mensaje.',
+  ],3))
+ }
+ if(mode==='oral'&&/\brespond\w*\b/.test(requirements)&&/\bpreguntas?\b/.test(requirements)&&!result.some(c=>/interaction|conversation/.test(c.templateId)))result.push(row('question-response','Comprensión y respuesta a la pregunta',[
+  `Responde en inglés a la pregunta del interlocutor con información pertinente${task.functions.includes('routine')?' sobre la rutina presentada':''}, mostrando que reconoce lo que se le pregunta.`,
+  'La respuesta corresponde a la pregunta; necesita una aclaración puntual para precisar la información.',
+  'Reconoce parte de la pregunta, pero responde solo a una parte o aporta información poco relacionada.',
+  'Interpreta otra información como objeto de la pregunta y responde a un asunto diferente.',
+  'No aporta una respuesta reconocible relacionada con la pregunta, aun con los apoyos acordados.',
  ],3))
  return result
 }

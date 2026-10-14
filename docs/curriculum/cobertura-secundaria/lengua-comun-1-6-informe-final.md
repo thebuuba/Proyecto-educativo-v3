@@ -1,3 +1,5 @@
+> Actualización del flujo de criterios (.46): el cierre previo conservó una regresión de añadir/completar no detectada en sus ejemplos. Se corrigieron agotamiento, recuperación, intención/identidades, respuestas obsoletas y procedencia; se verificaron los proveedores de las40 familias de Lengua y los cuatro formatos. [Informe y límites](criterios-adicionales-informe.md), [matriz](criterios-matriz-proveedores.md). Las evidencias anteriores permanecen intactas; no se amplía el ámbito curricular.
+
 # Instrumentos de Lengua Española común, 1.º–6.º
 
 Actualización posterior: [revisión de redundancias y nuevos recorridos en .34](lengua-revision-final.md). Los recuentos y ejemplos que siguen corresponden al cierre .33 y se conservan como evidencia histórica.

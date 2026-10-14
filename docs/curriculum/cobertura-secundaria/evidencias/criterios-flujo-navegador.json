@@ -1,0 +1,1476 @@
+{
+  "verifiedAt": "2026-10-14T11:58:47.516Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "ff13520f14c473561f42880af6323bce67734e65",
+      "dirty": true,
+      "startedAt": "2026-10-14T11:40:29.387Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.46"
+    }
+  },
+  "records": [
+    {
+      "subject": "ING",
+      "grade": 1,
+      "format": "rubrica",
+      "name": "Presentamos nuestra rutina diaria en inglés.",
+      "activityId": "9c485107-5a8e-4c0c-ae40-d6256df4a39b",
+      "snapshotId": "4ba0e7b7-d735-45b8-8530-77ebb0f4f2e6",
+      "catalogVersion": "evaluation-2026.46",
+      "formFields": [
+        {
+          "label": "Buscar estudiantes, cursos, actividades",
+          "value": ""
+        },
+        {
+          "label": "",
+          "value": "on"
+        },
+        {
+          "label": "",
+          "value": "on"
+        },
+        {
+          "label": "",
+          "value": "on"
+        },
+        {
+          "label": "",
+          "value": "on"
+        },
+        {
+          "label": "",
+          "value": "Presentamos nuestra rutina diaria en inglés."
+        },
+        {
+          "label": "",
+          "value": ""
+        },
+        {
+          "label": "",
+          "value": "20"
+        },
+        {
+          "label": "",
+          "value": ""
+        },
+        {
+          "label": "",
+          "value": "Rúbrica para Presentamos nuestra rutina diaria en inglés."
+        },
+        {
+          "label": "Criterio 1",
+          "value": "Actividades de la rutina"
+        },
+        {
+          "label": "Destacado del criterio 1",
+          "value": "Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí."
+        },
+        {
+          "label": "Logrado del criterio 1",
+          "value": "Ajuste manual del docente. Reconozco cinco actividades y reviso una referencia."
+        },
+        {
+          "label": "En proceso del criterio 1",
+          "value": "Menciona actividades aisladas sin establecer las relaciones de la rutina."
+        },
+        {
+          "label": "Inicial del criterio 1",
+          "value": "No se identifican actividades que permitan reconocer la rutina."
+        },
+        {
+          "label": "Puntos del criterio 1",
+          "value": "4.9"
+        },
+        {
+          "label": "Criterio 2",
+          "value": "El presente simple"
+        },
+        {
+          "label": "Destacado del criterio 2",
+          "value": "Emplea el presente simple en el mensaje en inglés para expresar hábitos, datos o estados según el mensaje."
+        },
+        {
+          "label": "Logrado del criterio 2",
+          "value": "La estructura permite expresar hábitos, datos o estados según el mensaje; un uso aislado necesita revisión."
+        },
+        {
+          "label": "En proceso del criterio 2",
+          "value": "Incluye ejemplos del presente simple, pero varios usos no permiten expresar hábitos, datos o estados según el mensaje."
+        },
+        {
+          "label": "Inicial del criterio 2",
+          "value": "No aporta usos reconocibles del presente simple para el propósito solicitado."
+        },
+        {
+          "label": "Puntos del criterio 2",
+          "value": "3.68"
+        },
+        {
+          "label": "Criterio 3",
+          "value": "Mensaje oral comprensible"
+        },
+        {
+          "label": "Destacado del criterio 3",
+          "value": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas."
+        },
+        {
+          "label": "Logrado del criterio 3",
+          "value": "Se comprenden las ideas principales; una expresión necesita aclaración o repetición."
+        },
+        {
+          "label": "En proceso del criterio 3",
+          "value": "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado."
+        },
+        {
+          "label": "Inicial del criterio 3",
+          "value": "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados."
+        },
+        {
+          "label": "Puntos del criterio 3",
+          "value": "3.67"
+        },
+        {
+          "label": "Criterio 4",
+          "value": "Comprensión y respuesta a la pregunta"
+        },
+        {
+          "label": "Destacado del criterio 4",
+          "value": "Responde en inglés a la pregunta del interlocutor con información pertinente sobre la rutina presentada, mostrando que reconoce lo que se le pregunta."
+        },
+        {
+          "label": "Logrado del criterio 4",
+          "value": "La respuesta corresponde a la pregunta; necesita una aclaración puntual para precisar la información."
+        },
+        {
+          "label": "En proceso del criterio 4",
+          "value": "Reconoce parte de la pregunta, pero responde solo a una parte o aporta información poco relacionada."
+        },
+        {
+          "label": "Inicial del criterio 4",
+          "value": "No aporta una respuesta reconocible relacionada con la pregunta, aun con los apoyos acordados."
+        },
+        {
+          "label": "Puntos del criterio 4",
+          "value": "4.08"
+        },
+        {
+          "label": "Criterio 5",
+          "value": "Expresiones temporales en el mensaje"
+        },
+        {
+          "label": "Destacado del criterio 5",
+          "value": "Relaciona las acciones del mensaje en inglés con el momento correspondiente mediante in the morning, in the afternoon y at night."
+        },
+        {
+          "label": "Logrado del criterio 5",
+          "value": "Las expresiones temporales sitúan las acciones; una asociación con el momento necesita precisión."
+        },
+        {
+          "label": "En proceso del criterio 5",
+          "value": "Emplea algunas expresiones temporales, pero deja acciones sin situar o confunde varios momentos."
+        },
+        {
+          "label": "Inicial del criterio 5",
+          "value": "No utiliza expresiones temporales reconocibles para situar las acciones del mensaje."
+        },
+        {
+          "label": "Puntos del criterio 5",
+          "value": "3.67"
+        }
+      ],
+      "reopenedProof": "Detalle de la actividad\nPresentamos nuestra rutina diaria en inglés.\nPendiente de evaluación\nValor\n20 pts\nFecha\nSin fecha\nTécnica\nPresentación\nInstrumento\nRúbrica de evaluación\nModalidad\nIndividual\nCompetencias\nB1: 100 %\nDescripción de la actividad\n\nLos estudiantes prepararán una breve presentación oral en inglés sobre cinco actividades de su rutina diaria. Utilizarán el presente simple y expresiones de tiempo como in the morning, in the afternoon y at night. Al finalizar, responderán una pregunta sencilla de un compañero sobre su rutina.\n\nRecursos necesarios\n\nBolígrafo\n\nInstrumento de evaluación · Solo lectura\nCriterio / indicador\tDestacado\nValor relativo: 3\n\tLogrado\nValor relativo: 2\n\tEn proceso\nValor relativo: 1\n\tInicial\nValor relativo: 0\n\tMáximo\nActividades de la rutina\n\nDescribe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.\n\n\t\nDescribe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.\n4.9 pts\n\t\nAjuste manual del docente. Reconozco cinco actividades y reviso una referencia.\n3.27 pts\n\t\nMenciona actividades aisladas sin establecer las relaciones de la rutina.\n1.63 pts\n\t\nNo se identifican actividades que permitan reconocer la rutina.\n0 pts\n\t4.9 pts\nEl presente simple\n\nEmplea el presente simple en el mensaje en inglés para expresar hábitos, datos o estados según el mensaje.\n\n\t\nEmplea el presente simple en el mensaje en inglés para expresar hábitos, datos o estados según el mensaje.\n3.68 pts\n\t\nLa estructura permite expresar hábitos, datos o estados según el mensaje; un uso aislado necesita revisión.\n2.45 pts\n\t\nIncluye ejemplos del presente simple, pero varios usos no permiten expresar hábitos, datos o estados según el mensaje.\n1.23 pts\n\t\nNo aporta usos reconocibles del presente simple para el propósito solicitado.\n0 pts\n\t3.68 pts\nMensaje oral comprensible\n\nComunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.\n\n\t\nComunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.\n3.67 pts\n\t\nSe comprenden las ideas principales; una expresión necesita aclaración o repetición.\n2.45 pts\n\t\nSe comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.\n1.22 pts\n\t\nNo se aporta un mensaje oral reconocible en inglés con los apoyos acordados.\n0 pts\n\t3.67 pts\nComprensión y respuesta a la pregunta\n\nResponde en inglés a la pregunta del interlocutor con información pertinente sobre la rutina presentada, mostrando que reconoce lo que se le pregunta.\n\n\t\nResponde en inglés a la pregunta del interlocutor con información pertinente sobre la rutina presentada, mostrando que reconoce lo que se le pregunta.\n4.08 pts\n\t\nLa respuesta corresponde a la pregunta; necesita una aclaración puntual para precisar la información.\n2.72 pts\n\t\nReconoce parte de la pregunta, pero responde solo a una parte o aporta información poco relacionada.\n1.36 pts\n\t\nNo aporta una respuesta reconocible relacionada con la pregunta, aun con los apoyos acordados.\n0 pts\n\t4.08 pts\nExpresiones temporales en el mensaje\n\nRelaciona las acciones del mensaje en inglés con el momento correspondiente mediante in the morning, in the afternoon y at night.\n\n\t\nRelaciona las acciones del mensaje en inglés con el momento correspondiente mediante in the morning, in the afternoon y at night.\n3.67 pts\n\t\nLas expresiones temporales sitúan las acciones; una asociación con el momento necesita precisión.\n2.45 pts\n\t\nEmplea algunas expresiones temporales, pero deja acciones sin situar o confunde varios momentos.\n1.22 pts\n\t\nNo utiliza expresiones temporales reconocibles para situar las acciones del mensaje.\n0 pts\n\t3.67 pts\n\nPuntuación máxima: 20 pts\n\nCerrar\nEditar actividad\nCalificar",
+      "identityAndPointParity": true,
+      "hash": "988fb2d59b50448adad260debdff8fd2be6c6d98ad41e648a89ab765c329262b",
+      "activity": {
+        "id": "9c485107-5a8e-4c0c-ae40-d6256df4a39b",
+        "name": "Presentamos nuestra rutina diaria en inglés.",
+        "competencyBlockId": "b1",
+        "competencyBlockWeights": {
+          "b1": 1
+        },
+        "maxScore": 20,
+        "description": "<p>Los estudiantes prepararán una breve presentación oral en inglés sobre cinco actividades de su rutina diaria. Utilizarán el presente simple y expresiones de tiempo como <em>in the morning</em>, <em>in the afternoon</em> y <em>at night</em>. Al finalizar, responderán una pregunta sencilla de un compañero sobre su rutina.</p>",
+        "instrumentType": "rubrica",
+        "instrumentId": "68d153a7-6c50-43f7-a1d4-4e23378ed784",
+        "instrumentSnapshotId": "4ba0e7b7-d735-45b8-8530-77ebb0f4f2e6",
+        "instrumentSnapshotVersion": 1,
+        "evaluatedCount": 0,
+        "instrumentSnapshot": {
+          "kind": "RECOMMENDATION",
+          "levels": [
+            {
+              "id": "L4",
+              "label": "Destacado",
+              "proportion": 1
+            },
+            {
+              "id": "L3",
+              "label": "Logrado",
+              "proportion": 0.6666666666666666
+            },
+            {
+              "id": "L2",
+              "label": "En proceso",
+              "proportion": 0.3333333333333333
+            },
+            {
+              "id": "L1",
+              "label": "Inicial",
+              "proportion": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "proposal:evaluation-2026.45:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-routine:0",
+              "title": "Actividades de la rutina",
+              "maxScore": 4.9,
+              "sourceType": "ACTIVITY_TEMPLATE",
+              "templateId": "ing-1-routine",
+              "description": "Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.",
+              "descriptors": [
+                {
+                  "text": "Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.",
+                  "levelId": "L4",
+                  "scoreUnits": 490
+                },
+                {
+                  "text": "Ajuste manual del docente. Reconozco cinco actividades y reviso una referencia.",
+                  "levelId": "L3",
+                  "scoreUnits": 327
+                },
+                {
+                  "text": "Menciona actividades aisladas sin establecer las relaciones de la rutina.",
+                  "levelId": "L2",
+                  "scoreUnits": 163
+                },
+                {
+                  "text": "No se identifican actividades que permitan reconocer la rutina.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 490,
+              "relativeWeight": 4,
+              "sourceReferences": []
+            },
+            {
+              "id": "proposal:evaluation-2026.45:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-present-simple:1",
+              "title": "El presente simple",
+              "maxScore": 3.68,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "ing-1-feature-present-simple",
+              "description": "Emplea el presente simple en el mensaje en inglés para expresar hábitos, datos o estados según el mensaje.",
+              "descriptors": [
+                {
+                  "text": "Emplea el presente simple en el mensaje en inglés para expresar hábitos, datos o estados según el mensaje.",
+                  "levelId": "L4",
+                  "scoreUnits": 368
+                },
+                {
+                  "text": "La estructura permite expresar hábitos, datos o estados según el mensaje; un uso aislado necesita revisión.",
+                  "levelId": "L3",
+                  "scoreUnits": 245
+                },
+                {
+                  "text": "Incluye ejemplos del presente simple, pero varios usos no permiten expresar hábitos, datos o estados según el mensaje.",
+                  "levelId": "L2",
+                  "scoreUnits": 123
+                },
+                {
+                  "text": "No aporta usos reconocibles del presente simple para el propósito solicitado.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 368,
+              "relativeWeight": 3,
+              "sourceReferences": []
+            },
+            {
+              "id": "proposal:evaluation-2026.45:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:2",
+              "title": "Mensaje oral comprensible",
+              "maxScore": 3.67,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "ing-1-intelligibility",
+              "description": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+              "descriptors": [
+                {
+                  "text": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+                  "levelId": "L4",
+                  "scoreUnits": 367
+                },
+                {
+                  "text": "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+                  "levelId": "L3",
+                  "scoreUnits": 245
+                },
+                {
+                  "text": "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+                  "levelId": "L2",
+                  "scoreUnits": 122
+                },
+                {
+                  "text": "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 367,
+              "relativeWeight": 3,
+              "sourceReferences": []
+            },
+            {
+              "id": "manual:b81eb1c4-0d48-4c5a-be9a-0a2611d9dd25",
+              "title": "Comprensión y respuesta a la pregunta",
+              "maxScore": 4.08,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "ing-1-question-response",
+              "description": "Responde en inglés a la pregunta del interlocutor con información pertinente sobre la rutina presentada, mostrando que reconoce lo que se le pregunta.",
+              "descriptors": [
+                {
+                  "text": "Responde en inglés a la pregunta del interlocutor con información pertinente sobre la rutina presentada, mostrando que reconoce lo que se le pregunta.",
+                  "levelId": "L4",
+                  "scoreUnits": 408
+                },
+                {
+                  "text": "La respuesta corresponde a la pregunta; necesita una aclaración puntual para precisar la información.",
+                  "levelId": "L3",
+                  "scoreUnits": 272
+                },
+                {
+                  "text": "Reconoce parte de la pregunta, pero responde solo a una parte o aporta información poco relacionada.",
+                  "levelId": "L2",
+                  "scoreUnits": 136
+                },
+                {
+                  "text": "No aporta una respuesta reconocible relacionada con la pregunta, aun con los apoyos acordados.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 408,
+              "relativeWeight": 3,
+              "sourceReferences": []
+            },
+            {
+              "id": "proposal:evaluation-2026.46:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-temporal-expressions:3",
+              "title": "Expresiones temporales en el mensaje",
+              "maxScore": 3.67,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "ing-1-temporal-expressions",
+              "description": "Relaciona las acciones del mensaje en inglés con el momento correspondiente mediante in the morning, in the afternoon y at night.",
+              "descriptors": [
+                {
+                  "text": "Relaciona las acciones del mensaje en inglés con el momento correspondiente mediante in the morning, in the afternoon y at night.",
+                  "levelId": "L4",
+                  "scoreUnits": 367
+                },
+                {
+                  "text": "Las expresiones temporales sitúan las acciones; una asociación con el momento necesita precisión.",
+                  "levelId": "L3",
+                  "scoreUnits": 245
+                },
+                {
+                  "text": "Emplea algunas expresiones temporales, pero deja acciones sin situar o confunde varios momentos.",
+                  "levelId": "L2",
+                  "scoreUnits": 122
+                },
+                {
+                  "text": "No utiliza expresiones temporales reconocibles para situar las acciones del mensaje.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 367,
+              "relativeWeight": 3,
+              "sourceReferences": []
+            }
+          ],
+          "scoreUnit": 0.01,
+          "confidence": "LOW",
+          "totalScore": 20,
+          "activityType": "ORAL_PRESENTATION",
+          "evidenceTypes": [
+            "PERFORMANCE",
+            "KNOWLEDGE"
+          ],
+          "internalTrace": {
+            "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+            "ranking": [
+              {
+                "score": 51,
+                "reasons": [
+                  "topicTokens=2/8",
+                  "typeWeight=12",
+                  "blockMatches=3",
+                  "procedureMatches=0"
+                ],
+                "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+                "topicCoverage": 0.25
+              },
+              {
+                "score": 41,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=16",
+                  "blockMatches=2",
+                  "procedureMatches=0"
+                ],
+                "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 37,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=16",
+                  "blockMatches=2",
+                  "procedureMatches=0"
+                ],
+                "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 37,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=12",
+                  "blockMatches=3",
+                  "procedureMatches=0"
+                ],
+                "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 35,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=12",
+                  "blockMatches=3",
+                  "procedureMatches=0"
+                ],
+                "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 31,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=12",
+                  "blockMatches=1",
+                  "procedureMatches=0"
+                ],
+                "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 31,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=10",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 29,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=12",
+                  "blockMatches=1",
+                  "procedureMatches=0"
+                ],
+                "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 29,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=10",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "c594dcfb-cd26-51fa-b561-20fc065b0d30",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 27,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=10",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "0ff81864-ed17-5bc7-a363-0e79b0601d39",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 25,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=10",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "5f7c0409-c651-5982-9c9d-fc10b3a03fcc",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 25,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=10",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "fbb73712-1736-5278-ae5b-71cec1a56c5b",
+                "topicCoverage": 0.125
+              }
+            ],
+            "reasons": [
+              "band=SECONDARY",
+              "discipline=language",
+              "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+              "module=ingles-comunicacion-1",
+              "mode=oral",
+              "functions=routine",
+              "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES",
+              "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+            ],
+            "mappingStatus": "RESOLVED",
+            "consideredTypes": [
+              "SPECIFIC_COMPETENCY",
+              "EVALUATION_CRITERION",
+              "ACHIEVEMENT_INDICATOR",
+              "CONCEPT",
+              "PROCEDURE",
+              "ATTITUDE_VALUE"
+            ],
+            "curriculumStatus": "DRAFT",
+            "activityTypeOrigin": "DETECTED",
+            "lowCurriculumConfidence": true
+          },
+          "catalogVersion": "evaluation-2026.46",
+          "instrumentType": "rubrica",
+          "totalScoreUnits": 2000,
+          "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+          "participationMode": "INDIVIDUAL",
+          "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+          "selectedCurriculumElements": []
+        },
+        "pedagogicalActivityType": "ORAL_PRESENTATION",
+        "instrumentCriteria": {
+          "rubrica:title": "Rúbrica para Presentamos nuestra rutina diaria en inglés.",
+          "rubrica:points:0": "4.9",
+          "rubrica:points:1": "3.68",
+          "rubrica:points:2": "3.67",
+          "rubrica:points:3": "4.08",
+          "rubrica:points:4": "3.67",
+          "rubrica:criterion:0": "Actividades de la rutina",
+          "rubrica:criterion:1": "El presente simple",
+          "rubrica:criterion:2": "Mensaje oral comprensible",
+          "rubrica:criterion:3": "Comprensión y respuesta a la pregunta",
+          "rubrica:criterion:4": "Expresiones temporales en el mensaje",
+          "rubrica:level-name:1": "Inicial",
+          "rubrica:level-name:2": "En proceso",
+          "rubrica:level-name:3": "Logrado",
+          "rubrica:level-name:4": "Destacado",
+          "rubrica:description:0": "Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.",
+          "rubrica:description:1": "Emplea el presente simple en el mensaje en inglés para expresar hábitos, datos o estados según el mensaje.",
+          "rubrica:description:2": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+          "rubrica:description:3": "Responde en inglés a la pregunta del interlocutor con información pertinente sobre la rutina presentada, mostrando que reconoce lo que se le pregunta.",
+          "rubrica:description:4": "Relaciona las acciones del mensaje en inglés con el momento correspondiente mediante in the morning, in the afternoon y at night.",
+          "rubrica:meta:prepared": "true",
+          "rubrica:criterion-id:0": "proposal:evaluation-2026.45:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-routine:0",
+          "rubrica:criterion-id:1": "proposal:evaluation-2026.45:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-present-simple:1",
+          "rubrica:criterion-id:2": "proposal:evaluation-2026.45:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:2",
+          "rubrica:criterion-id:3": "manual:b81eb1c4-0d48-4c5a-be9a-0a2611d9dd25",
+          "rubrica:criterion-id:4": "proposal:evaluation-2026.46:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-temporal-expressions:3",
+          "rubrica:descriptor:0:1": "No se identifican actividades que permitan reconocer la rutina.",
+          "rubrica:descriptor:0:2": "Menciona actividades aisladas sin establecer las relaciones de la rutina.",
+          "rubrica:descriptor:0:3": "Ajuste manual del docente. Reconozco cinco actividades y reviso una referencia.",
+          "rubrica:descriptor:0:4": "Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.",
+          "rubrica:descriptor:1:1": "No aporta usos reconocibles del presente simple para el propósito solicitado.",
+          "rubrica:descriptor:1:2": "Incluye ejemplos del presente simple, pero varios usos no permiten expresar hábitos, datos o estados según el mensaje.",
+          "rubrica:descriptor:1:3": "La estructura permite expresar hábitos, datos o estados según el mensaje; un uso aislado necesita revisión.",
+          "rubrica:descriptor:1:4": "Emplea el presente simple en el mensaje en inglés para expresar hábitos, datos o estados según el mensaje.",
+          "rubrica:descriptor:2:1": "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados.",
+          "rubrica:descriptor:2:2": "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+          "rubrica:descriptor:2:3": "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+          "rubrica:descriptor:2:4": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+          "rubrica:descriptor:3:1": "No aporta una respuesta reconocible relacionada con la pregunta, aun con los apoyos acordados.",
+          "rubrica:descriptor:3:2": "Reconoce parte de la pregunta, pero responde solo a una parte o aporta información poco relacionada.",
+          "rubrica:descriptor:3:3": "La respuesta corresponde a la pregunta; necesita una aclaración puntual para precisar la información.",
+          "rubrica:descriptor:3:4": "Responde en inglés a la pregunta del interlocutor con información pertinente sobre la rutina presentada, mostrando que reconoce lo que se le pregunta.",
+          "rubrica:descriptor:4:1": "No utiliza expresiones temporales reconocibles para situar las acciones del mensaje.",
+          "rubrica:descriptor:4:2": "Emplea algunas expresiones temporales, pero deja acciones sin situar o confunde varios momentos.",
+          "rubrica:descriptor:4:3": "Las expresiones temporales sitúan las acciones; una asociación con el momento necesita precisión.",
+          "rubrica:descriptor:4:4": "Relaciona las acciones del mensaje en inglés con el momento correspondiente mediante in the morning, in the afternoon y at night.",
+          "rubrica:level-points:1": "0",
+          "rubrica:level-points:2": "1",
+          "rubrica:level-points:3": "2",
+          "rubrica:level-points:4": "3",
+          "rubrica:meta:levelCount": "4",
+          "rubrica:meta:scorePending": "false",
+          "rubrica:meta:scoreWeights": "[4,3,3,3.3333333333333335,3]",
+          "rubrica:criterion-weight:0": "4",
+          "rubrica:criterion-weight:1": "3",
+          "rubrica:criterion-weight:2": "3",
+          "rubrica:criterion-weight:3": "3",
+          "rubrica:criterion-weight:4": "3",
+          "rubrica:meta:criteriaCount": "5",
+          "rubrica:meta:catalogVersion": "evaluation-2026.46",
+          "rubrica:criterion-evidence:0": "{\"title\":\"Actividades de la rutina\",\"description\":\"Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.\",\"progression\":[\"Describe en inglés las actividades de la rutina mediante frases breves relacionadas entre sí.\",\"Se reconocen las actividades; una relación necesita precisión.\",\"Menciona actividades aisladas sin establecer las relaciones de la rutina.\",\"Confunde las actividades o sus relaciones y cambia la rutina descrita.\",\"No se identifican actividades que permitan reconocer la rutina.\"]}",
+          "rubrica:criterion-evidence:1": "{\"title\":\"El presente simple\",\"description\":\"Emplea el presente simple en el mensaje en inglés para expresar hábitos, datos o estados según el mensaje.\",\"progression\":[\"Emplea el presente simple en el mensaje en inglés para expresar hábitos, datos o estados según el mensaje.\",\"La estructura permite expresar hábitos, datos o estados según el mensaje; un uso aislado necesita revisión.\",\"Incluye ejemplos del presente simple, pero varios usos no permiten expresar hábitos, datos o estados según el mensaje.\",\"El uso de la estructura cambia el sentido: altera la concordancia o la referencia habitual de las acciones.\",\"No aporta usos reconocibles del presente simple para el propósito solicitado.\"]}",
+          "rubrica:criterion-evidence:2": "{\"title\":\"Mensaje oral comprensible\",\"description\":\"Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.\",\"progression\":[\"Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.\",\"Se comprenden las ideas principales; una expresión necesita aclaración o repetición.\",\"Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.\",\"Las expresiones elegidas cambian el sentido de las ideas que se desean comunicar.\",\"No se aporta un mensaje oral reconocible en inglés con los apoyos acordados.\"]}",
+          "rubrica:criterion-evidence:3": "{\"title\":\"Comprensión y respuesta a la pregunta\",\"description\":\"Responde en inglés a la pregunta del interlocutor con información pertinente sobre la rutina presentada, mostrando que reconoce lo que se le pregunta.\",\"progression\":[\"Responde en inglés a la pregunta del interlocutor con información pertinente sobre la rutina presentada, mostrando que reconoce lo que se le pregunta.\",\"La respuesta corresponde a la pregunta; necesita una aclaración puntual para precisar la información.\",\"Reconoce parte de la pregunta, pero responde solo a una parte o aporta información poco relacionada.\",\"Interpreta otra información como objeto de la pregunta y responde a un asunto diferente.\",\"No aporta una respuesta reconocible relacionada con la pregunta, aun con los apoyos acordados.\"]}",
+          "rubrica:criterion-evidence:4": "{\"title\":\"Expresiones temporales en el mensaje\",\"description\":\"Relaciona las acciones del mensaje en inglés con el momento correspondiente mediante in the morning, in the afternoon y at night.\",\"progression\":[\"Relaciona las acciones del mensaje en inglés con el momento correspondiente mediante in the morning, in the afternoon y at night.\",\"Las expresiones temporales sitúan las acciones; una asociación con el momento necesita precisión.\",\"Emplea algunas expresiones temporales, pero deja acciones sin situar o confunde varios momentos.\",\"Las expresiones temporales sitúan las acciones en momentos incompatibles con el mensaje que pretende comunicar.\",\"No utiliza expresiones temporales reconocibles para situar las acciones del mensaje.\"]}",
+          "rubrica:criterion-template:0": "ing-1-routine",
+          "rubrica:criterion-template:1": "ing-1-feature-present-simple",
+          "rubrica:criterion-template:2": "ing-1-intelligibility",
+          "rubrica:criterion-template:3": "ing-1-question-response",
+          "rubrica:criterion-template:4": "ing-1-temporal-expressions",
+          "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+        },
+        "evaluationTechnique": "presentacion",
+        "resources": [
+          "Bolígrafo"
+        ],
+        "activityType": "individual",
+        "teamIds": [],
+        "planningMoment": "",
+        "source": "grading"
+      }
+    },
+    {
+      "subject": "LEN",
+      "grade": 1,
+      "format": "rubrica",
+      "name": "Descubrimos y promocionamos los atractivos de nuestra comunidad.",
+      "activityId": "e8c703f1-5b2d-4255-a99d-57bb429732d2",
+      "snapshotId": "9331143b-00b8-41c4-8020-d1e3645520a0",
+      "catalogVersion": "evaluation-2026.46",
+      "formFields": [
+        {
+          "label": "Buscar estudiantes, cursos, actividades",
+          "value": ""
+        },
+        {
+          "label": "",
+          "value": "on"
+        },
+        {
+          "label": "",
+          "value": "on"
+        },
+        {
+          "label": "",
+          "value": "on"
+        },
+        {
+          "label": "",
+          "value": "on"
+        },
+        {
+          "label": "",
+          "value": "Descubrimos y promocionamos los atractivos de nuestra comunidad."
+        },
+        {
+          "label": "",
+          "value": ""
+        },
+        {
+          "label": "",
+          "value": "17.35"
+        },
+        {
+          "label": "",
+          "value": ""
+        },
+        {
+          "label": "",
+          "value": "Rúbrica para Descubrimos y promocionamos los atractivos de nuestra comunidad."
+        },
+        {
+          "label": "Criterio 1",
+          "value": "Información de los lugares seleccionados"
+        },
+        {
+          "label": "Destacado del criterio 1",
+          "value": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos."
+        },
+        {
+          "label": "Logrado del criterio 1",
+          "value": "Ajuste manual del docente. Los atractivos locales se reconocen; revisar un dato."
+        },
+        {
+          "label": "En proceso del criterio 1",
+          "value": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita."
+        },
+        {
+          "label": "Inicial del criterio 1",
+          "value": "No aporta información reconocible de los lugares de la guía."
+        },
+        {
+          "label": "Puntos del criterio 1",
+          "value": "3.23"
+        },
+        {
+          "label": "Criterio 2",
+          "value": "Estructura de la guía turística"
+        },
+        {
+          "label": "Destacado del criterio 2",
+          "value": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar."
+        },
+        {
+          "label": "Logrado del criterio 2",
+          "value": "Portada, información y cierre se reconocen; una parte queda poco desarrollada."
+        },
+        {
+          "label": "En proceso del criterio 2",
+          "value": "Presenta información de los lugares, pero la portada o el cierre quedan incompletos."
+        },
+        {
+          "label": "Inicial del criterio 2",
+          "value": "No presenta una estructura reconocible de guía turística."
+        },
+        {
+          "label": "Puntos del criterio 2",
+          "value": "3.23"
+        },
+        {
+          "label": "Criterio 3",
+          "value": "Descripción y orientación al visitante"
+        },
+        {
+          "label": "Destacado del criterio 3",
+          "value": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público."
+        },
+        {
+          "label": "Logrado del criterio 3",
+          "value": "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión."
+        },
+        {
+          "label": "En proceso del criterio 3",
+          "value": "Nombra lugares y algunas características sin explicar su atractivo para el visitante."
+        },
+        {
+          "label": "Inicial del criterio 3",
+          "value": "No describe características que orienten al visitante sobre los lugares."
+        },
+        {
+          "label": "Puntos del criterio 3",
+          "value": "2.59"
+        },
+        {
+          "label": "Criterio 4",
+          "value": "Organización y claridad"
+        },
+        {
+          "label": "Destacado del criterio 4",
+          "value": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante."
+        },
+        {
+          "label": "Logrado del criterio 4",
+          "value": "La secuencia permite localizar la información; una relación con el propósito queda poco clara."
+        },
+        {
+          "label": "En proceso del criterio 4",
+          "value": "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar."
+        },
+        {
+          "label": "Inicial del criterio 4",
+          "value": "La información no permite reconocer una secuencia de orientación para el visitante."
+        },
+        {
+          "label": "Puntos del criterio 4",
+          "value": "1.94"
+        },
+        {
+          "label": "Criterio 5",
+          "value": "Claridad y convenciones de la guía"
+        },
+        {
+          "label": "Destacado del criterio 5",
+          "value": "La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía."
+        },
+        {
+          "label": "Logrado del criterio 5",
+          "value": "La guía se comprende; un error aislado dificulta una indicación secundaria."
+        },
+        {
+          "label": "En proceso del criterio 5",
+          "value": "Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares."
+        },
+        {
+          "label": "Inicial del criterio 5",
+          "value": "La versión presentada no permite leer información comprensible de los lugares."
+        },
+        {
+          "label": "Puntos del criterio 5",
+          "value": "1.94"
+        },
+        {
+          "label": "Criterio 6",
+          "value": "Información visual de los lugares"
+        },
+        {
+          "label": "Destacado del criterio 6",
+          "value": "Relaciona la información visual solicitada con los lugares de la guía para apoyar la información al visitante."
+        },
+        {
+          "label": "Logrado del criterio 6",
+          "value": "El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión."
+        },
+        {
+          "label": "En proceso del criterio 6",
+          "value": "El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía."
+        },
+        {
+          "label": "Inicial del criterio 6",
+          "value": "No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida."
+        },
+        {
+          "label": "Puntos del criterio 6",
+          "value": "1.94"
+        },
+        {
+          "label": "Criterio 7",
+          "value": "Claridad de la comunicación oral"
+        },
+        {
+          "label": "Destacado del criterio 7",
+          "value": "Comunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados."
+        },
+        {
+          "label": "Logrado del criterio 7",
+          "value": "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste."
+        },
+        {
+          "label": "En proceso del criterio 7",
+          "value": "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes."
+        },
+        {
+          "label": "Inicial del criterio 7",
+          "value": "No comunica información comprensible mediante la presentación o el apoyo acordado."
+        },
+        {
+          "label": "Puntos del criterio 7",
+          "value": "2.48"
+        }
+      ],
+      "reopenedProof": "Detalle de la actividad\nDescubrimos y promocionamos los atractivos de nuestra comunidad.\nPendiente de evaluación\nValor\n17.35 pts\nFecha\nSin fecha\nTécnica\nAnálisis de producciones\nInstrumento\nRúbrica de evaluación\nModalidad\nIndividual\nCompetencias\nB1: 100 %\nDescripción de la actividad\n\nLos estudiantes elaborarán una guía turística sobre su comunidad o un lugar destacado de la República Dominicana. Investigarán sus principales atractivos naturales, culturales e históricos y organizarán la información mediante descripciones breves, imágenes y recomendaciones para los visitantes. La guía deberá incluir portada, información del lugar, imágenes y cierre. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus habilidades de investigación, redacción y comunicación.\n\nRecursos necesarios\n\nNo se registraron recursos.\n\nInstrumento de evaluación · Solo lectura\nCriterio / indicador\tDestacado\nValor relativo: 3\n\tLogrado\nValor relativo: 2\n\tEn proceso\nValor relativo: 1\n\tInicial\nValor relativo: 0\n\tMáximo\nInformación de los lugares seleccionados\n\nIncluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.\n\n\t\nIncluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.\n3.23 pts\n\t\nAjuste manual del docente. Los atractivos locales se reconocen; revisar un dato.\n2.15 pts\n\t\nDescribe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.\n1.08 pts\n\t\nNo aporta información reconocible de los lugares de la guía.\n0 pts\n\t3.23 pts\nEstructura de la guía turística\n\nOrganiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.\n\n\t\nOrganiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.\n3.23 pts\n\t\nPortada, información y cierre se reconocen; una parte queda poco desarrollada.\n2.15 pts\n\t\nPresenta información de los lugares, pero la portada o el cierre quedan incompletos.\n1.08 pts\n\t\nNo presenta una estructura reconocible de guía turística.\n0 pts\n\t3.23 pts\nDescripción y orientación al visitante\n\nDescribe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.\n\n\t\nDescribe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.\n2.59 pts\n\t\nLas descripciones permiten reconocer los atractivos; una expresión necesita precisión.\n1.73 pts\n\t\nNombra lugares y algunas características sin explicar su atractivo para el visitante.\n0.86 pts\n\t\nNo describe características que orienten al visitante sobre los lugares.\n0 pts\n\t2.59 pts\nOrganización y claridad\n\nDistribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.\n\n\t\nDistribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.\n1.94 pts\n\t\nLa secuencia permite localizar la información; una relación con el propósito queda poco clara.\n1.29 pts\n\t\nLa información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.\n0.65 pts\n\t\nLa información no permite reconocer una secuencia de orientación para el visitante.\n0 pts\n\t1.94 pts\nClaridad y convenciones de la guía\n\nPresenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.\n\n\t\nLa escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.\n1.94 pts\n\t\nLa guía se comprende; un error aislado dificulta una indicación secundaria.\n1.29 pts\n\t\nVarios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.\n0.65 pts\n\t\nLa versión presentada no permite leer información comprensible de los lugares.\n0 pts\n\t1.94 pts\nInformación visual de los lugares\n\nRelaciona la información visual solicitada con los lugares de la guía para apoyar la información al visitante.\n\n\t\nRelaciona la información visual solicitada con los lugares de la guía para apoyar la información al visitante.\n1.94 pts\n\t\nEl recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.\n1.29 pts\n\t\nEl recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.\n0.65 pts\n\t\nNo presenta información visual que corresponda al recurso solicitado o a la alternativa elegida.\n0 pts\n\t1.94 pts\nClaridad de la comunicación oral\n\nComunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados.\n\n\t\nComunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados.\n2.48 pts\n\t\nLa comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.\n1.65 pts\n\t\nSe comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.\n0.83 pts\n\t\nNo comunica información comprensible mediante la presentación o el apoyo acordado.\n0 pts\n\t2.48 pts\n\nPuntuación máxima: 17.35 pts\n\nCerrar\nEditar actividad\nCalificar",
+      "identityAndPointParity": true,
+      "hash": "45a52e20637f07e30d606f524f76dfe2cbc8d5a4ff68f97f40fce70e5b1d7f51",
+      "activity": {
+        "id": "e8c703f1-5b2d-4255-a99d-57bb429732d2",
+        "name": "Descubrimos y promocionamos los atractivos de nuestra comunidad.",
+        "competencyBlockId": "b1",
+        "competencyBlockWeights": {
+          "b1": 1
+        },
+        "maxScore": 17.35,
+        "description": "<p>Los estudiantes elaborarán una guía turística sobre su comunidad o un lugar destacado de la República Dominicana. Investigarán sus principales atractivos naturales, culturales e históricos y organizarán la información mediante descripciones breves, imágenes y recomendaciones para los visitantes. La guía deberá incluir portada, información del lugar, imágenes y cierre. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus habilidades de investigación, redacción y comunicación.</p>",
+        "instrumentType": "rubrica",
+        "instrumentId": "e7588c30-a1ed-4933-8d00-10e42703ce1a",
+        "instrumentSnapshotId": "9331143b-00b8-41c4-8020-d1e3645520a0",
+        "instrumentSnapshotVersion": 1,
+        "evaluatedCount": 0,
+        "instrumentSnapshot": {
+          "kind": "RECOMMENDATION",
+          "levels": [
+            {
+              "id": "L4",
+              "label": "Destacado",
+              "proportion": 1
+            },
+            {
+              "id": "L3",
+              "label": "Logrado",
+              "proportion": 0.6666666666666666
+            },
+            {
+              "id": "L2",
+              "label": "En proceso",
+              "proportion": 0.3333333333333333
+            },
+            {
+              "id": "L1",
+              "label": "Inicial",
+              "proportion": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-content:0",
+              "title": "Información de los lugares seleccionados",
+              "maxScore": 3.23,
+              "sourceType": "ACTIVITY_TEMPLATE",
+              "templateId": "guide-content",
+              "description": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+              "descriptors": [
+                {
+                  "text": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+                  "levelId": "L4",
+                  "scoreUnits": 323
+                },
+                {
+                  "text": "Ajuste manual del docente. Los atractivos locales se reconocen; revisar un dato.",
+                  "levelId": "L3",
+                  "scoreUnits": 215
+                },
+                {
+                  "text": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                  "levelId": "L2",
+                  "scoreUnits": 108
+                },
+                {
+                  "text": "No aporta información reconocible de los lugares de la guía.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 323,
+              "relativeWeight": 5,
+              "sourceReferences": []
+            },
+            {
+              "id": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-structure:1",
+              "title": "Estructura de la guía turística",
+              "maxScore": 3.23,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "guide-structure",
+              "description": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+              "descriptors": [
+                {
+                  "text": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+                  "levelId": "L4",
+                  "scoreUnits": 323
+                },
+                {
+                  "text": "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+                  "levelId": "L3",
+                  "scoreUnits": 215
+                },
+                {
+                  "text": "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                  "levelId": "L2",
+                  "scoreUnits": 108
+                },
+                {
+                  "text": "No presenta una estructura reconocible de guía turística.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 323,
+              "relativeWeight": 5,
+              "sourceReferences": []
+            },
+            {
+              "id": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-description:2",
+              "title": "Descripción y orientación al visitante",
+              "maxScore": 2.59,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "guide-description",
+              "description": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+              "descriptors": [
+                {
+                  "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+                  "levelId": "L4",
+                  "scoreUnits": 259
+                },
+                {
+                  "text": "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+                  "levelId": "L3",
+                  "scoreUnits": 173
+                },
+                {
+                  "text": "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                  "levelId": "L2",
+                  "scoreUnits": 86
+                },
+                {
+                  "text": "No describe características que orienten al visitante sobre los lugares.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 259,
+              "relativeWeight": 4,
+              "sourceReferences": []
+            },
+            {
+              "id": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-organization:3",
+              "title": "Organización y claridad",
+              "maxScore": 1.94,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "guide-organization",
+              "description": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+              "descriptors": [
+                {
+                  "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+                  "levelId": "L4",
+                  "scoreUnits": 194
+                },
+                {
+                  "text": "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+                  "levelId": "L3",
+                  "scoreUnits": 129
+                },
+                {
+                  "text": "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                  "levelId": "L2",
+                  "scoreUnits": 65
+                },
+                {
+                  "text": "La información no permite reconocer una secuencia de orientación para el visitante.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 194,
+              "relativeWeight": 3,
+              "sourceReferences": []
+            },
+            {
+              "id": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-revision:4",
+              "title": "Claridad y convenciones de la guía",
+              "maxScore": 1.94,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "guide-revision",
+              "description": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.",
+              "descriptors": [
+                {
+                  "text": "La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.",
+                  "levelId": "L4",
+                  "scoreUnits": 194
+                },
+                {
+                  "text": "La guía se comprende; un error aislado dificulta una indicación secundaria.",
+                  "levelId": "L3",
+                  "scoreUnits": 129
+                },
+                {
+                  "text": "Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.",
+                  "levelId": "L2",
+                  "scoreUnits": 65
+                },
+                {
+                  "text": "La versión presentada no permite leer información comprensible de los lugares.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 194,
+              "relativeWeight": 3,
+              "sourceReferences": []
+            },
+            {
+              "id": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-visual:5",
+              "title": "Información visual de los lugares",
+              "maxScore": 1.94,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "guide-visual",
+              "description": "Relaciona la información visual solicitada con los lugares de la guía para apoyar la información al visitante.",
+              "descriptors": [
+                {
+                  "text": "Relaciona la información visual solicitada con los lugares de la guía para apoyar la información al visitante.",
+                  "levelId": "L4",
+                  "scoreUnits": 194
+                },
+                {
+                  "text": "El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.",
+                  "levelId": "L3",
+                  "scoreUnits": 129
+                },
+                {
+                  "text": "El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+                  "levelId": "L2",
+                  "scoreUnits": 65
+                },
+                {
+                  "text": "No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 194,
+              "relativeWeight": 3,
+              "sourceReferences": []
+            },
+            {
+              "id": "manual:9cf0ea22-e34a-4d62-8e2a-792a7f91c421",
+              "title": "Claridad de la comunicación oral",
+              "maxScore": 2.48,
+              "sourceType": "CONTEXTUALIZED",
+              "templateId": "guide-oral",
+              "description": "Comunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados.",
+              "descriptors": [
+                {
+                  "text": "Comunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados.",
+                  "levelId": "L4",
+                  "scoreUnits": 248
+                },
+                {
+                  "text": "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+                  "levelId": "L3",
+                  "scoreUnits": 165
+                },
+                {
+                  "text": "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+                  "levelId": "L2",
+                  "scoreUnits": 83
+                },
+                {
+                  "text": "No comunica información comprensible mediante la presentación o el apoyo acordado.",
+                  "levelId": "L1",
+                  "scoreUnits": 0
+                }
+              ],
+              "maxScoreUnits": 248,
+              "relativeWeight": 4,
+              "sourceReferences": []
+            }
+          ],
+          "scoreUnit": 0.01,
+          "confidence": "MEDIUM",
+          "totalScore": 17.35,
+          "activityType": "TOURIST_GUIDE_CREATION",
+          "evidenceTypes": [
+            "PRODUCT",
+            "KNOWLEDGE"
+          ],
+          "internalTrace": {
+            "ruleId": "oral-written-art-project",
+            "ranking": [
+              {
+                "score": 89,
+                "reasons": [
+                  "topicTokens=5/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=3"
+                ],
+                "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+                "topicCoverage": 0.625
+              },
+              {
+                "score": 76,
+                "reasons": [
+                  "topicTokens=4/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=3"
+                ],
+                "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+                "topicCoverage": 0.5
+              },
+              {
+                "score": 76,
+                "reasons": [
+                  "topicTokens=4/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=2"
+                ],
+                "elementId": "6d928034-270a-5523-a99d-11285a2fa97f",
+                "topicCoverage": 0.5
+              },
+              {
+                "score": 59,
+                "reasons": [
+                  "topicTokens=3/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=1"
+                ],
+                "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+                "topicCoverage": 0.375
+              },
+              {
+                "score": 51,
+                "reasons": [
+                  "topicTokens=2/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=2"
+                ],
+                "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+                "topicCoverage": 0.25
+              },
+              {
+                "score": 49,
+                "reasons": [
+                  "topicTokens=2/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=2"
+                ],
+                "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+                "topicCoverage": 0.25
+              },
+              {
+                "score": 46,
+                "reasons": [
+                  "topicTokens=2/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=1"
+                ],
+                "elementId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+                "topicCoverage": 0.25
+              },
+              {
+                "score": 39,
+                "reasons": [
+                  "topicTokens=2/8",
+                  "typeWeight=10",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "56301465-88e2-54cc-a5db-627c7266844c",
+                "topicCoverage": 0.25
+              },
+              {
+                "score": 37,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=12",
+                  "blockMatches=2",
+                  "procedureMatches=0"
+                ],
+                "elementId": "889d943e-1338-5e3b-9c9d-5580fb9ae6a0",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 35,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=16",
+                  "blockMatches=2",
+                  "procedureMatches=0"
+                ],
+                "elementId": "4341313f-9526-5f29-97cf-22b96fe40580",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 34,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=1"
+                ],
+                "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 33,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=16",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "0ddcbc46-c06e-5fec-bb7b-12664cc18c15",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 31,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=16",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "025c2825-9150-573b-b9cb-a73d22632bf3",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 29,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "1e434089-d202-529a-80ad-734c3a723254",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 27,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 27,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=12",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "385e0137-005c-5738-a4fb-123f43df0f51",
+                "topicCoverage": 0.125
+              },
+              {
+                "score": 25,
+                "reasons": [
+                  "topicTokens=1/8",
+                  "typeWeight=10",
+                  "blockMatches=0",
+                  "procedureMatches=0"
+                ],
+                "elementId": "789d33c7-a01b-531d-a640-52806b8cbc1f",
+                "topicCoverage": 0.125
+              }
+            ],
+            "reasons": [
+              "band=SECONDARY",
+              "discipline=language",
+              "module=lengua-secundaria-1-guia-turistica",
+              "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+              "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+            ],
+            "mappingStatus": "RESOLVED",
+            "consideredTypes": [
+              "SPECIFIC_COMPETENCY",
+              "EVALUATION_CRITERION",
+              "ACHIEVEMENT_INDICATOR",
+              "CONCEPT",
+              "PROCEDURE",
+              "ATTITUDE_VALUE"
+            ],
+            "curriculumStatus": "DRAFT",
+            "activityTypeOrigin": "DETECTED",
+            "lowCurriculumConfidence": false
+          },
+          "catalogVersion": "evaluation-2026.46",
+          "instrumentType": "rubrica",
+          "totalScoreUnits": 1735,
+          "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+          "participationMode": "INDIVIDUAL",
+          "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+          "selectedCurriculumElements": []
+        },
+        "pedagogicalActivityType": "TOURIST_GUIDE_CREATION",
+        "instrumentCriteria": {
+          "rubrica:title": "Rúbrica para Descubrimos y promocionamos los atractivos de nuestra comunidad.",
+          "rubrica:points:0": "3.23",
+          "rubrica:points:1": "3.23",
+          "rubrica:points:2": "2.59",
+          "rubrica:points:3": "1.94",
+          "rubrica:points:4": "1.94",
+          "rubrica:points:5": "1.94",
+          "rubrica:points:6": "2.48",
+          "rubrica:criterion:0": "Información de los lugares seleccionados",
+          "rubrica:criterion:1": "Estructura de la guía turística",
+          "rubrica:criterion:2": "Descripción y orientación al visitante",
+          "rubrica:criterion:3": "Organización y claridad",
+          "rubrica:criterion:4": "Claridad y convenciones de la guía",
+          "rubrica:criterion:5": "Información visual de los lugares",
+          "rubrica:criterion:6": "Claridad de la comunicación oral",
+          "rubrica:level-name:1": "Inicial",
+          "rubrica:level-name:2": "En proceso",
+          "rubrica:level-name:3": "Logrado",
+          "rubrica:level-name:4": "Destacado",
+          "rubrica:description:0": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+          "rubrica:description:1": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+          "rubrica:description:2": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+          "rubrica:description:3": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+          "rubrica:description:4": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.",
+          "rubrica:description:5": "Relaciona la información visual solicitada con los lugares de la guía para apoyar la información al visitante.",
+          "rubrica:description:6": "Comunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados.",
+          "rubrica:meta:prepared": "true",
+          "rubrica:criterion-id:0": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-content:0",
+          "rubrica:criterion-id:1": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-structure:1",
+          "rubrica:criterion-id:2": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-description:2",
+          "rubrica:criterion-id:3": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-organization:3",
+          "rubrica:criterion-id:4": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-revision:4",
+          "rubrica:criterion-id:5": "proposal:evaluation-2026.45:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-visual:5",
+          "rubrica:criterion-id:6": "manual:9cf0ea22-e34a-4d62-8e2a-792a7f91c421",
+          "rubrica:descriptor:0:1": "No aporta información reconocible de los lugares de la guía.",
+          "rubrica:descriptor:0:2": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+          "rubrica:descriptor:0:3": "Ajuste manual del docente. Los atractivos locales se reconocen; revisar un dato.",
+          "rubrica:descriptor:0:4": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+          "rubrica:descriptor:1:1": "No presenta una estructura reconocible de guía turística.",
+          "rubrica:descriptor:1:2": "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+          "rubrica:descriptor:1:3": "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+          "rubrica:descriptor:1:4": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+          "rubrica:descriptor:2:1": "No describe características que orienten al visitante sobre los lugares.",
+          "rubrica:descriptor:2:2": "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+          "rubrica:descriptor:2:3": "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+          "rubrica:descriptor:2:4": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+          "rubrica:descriptor:3:1": "La información no permite reconocer una secuencia de orientación para el visitante.",
+          "rubrica:descriptor:3:2": "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+          "rubrica:descriptor:3:3": "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+          "rubrica:descriptor:3:4": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+          "rubrica:descriptor:4:1": "La versión presentada no permite leer información comprensible de los lugares.",
+          "rubrica:descriptor:4:2": "Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.",
+          "rubrica:descriptor:4:3": "La guía se comprende; un error aislado dificulta una indicación secundaria.",
+          "rubrica:descriptor:4:4": "La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.",
+          "rubrica:descriptor:5:1": "No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida.",
+          "rubrica:descriptor:5:2": "El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+          "rubrica:descriptor:5:3": "El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.",
+          "rubrica:descriptor:5:4": "Relaciona la información visual solicitada con los lugares de la guía para apoyar la información al visitante.",
+          "rubrica:descriptor:6:1": "No comunica información comprensible mediante la presentación o el apoyo acordado.",
+          "rubrica:descriptor:6:2": "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+          "rubrica:descriptor:6:3": "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+          "rubrica:descriptor:6:4": "Comunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados.",
+          "rubrica:level-points:1": "0",
+          "rubrica:level-points:2": "1",
+          "rubrica:level-points:3": "2",
+          "rubrica:level-points:4": "3",
+          "rubrica:meta:levelCount": "4",
+          "rubrica:meta:manualPoints": "true",
+          "rubrica:meta:scorePending": "false",
+          "rubrica:meta:scoreWeights": "[5,5,4,3,3,3,3.8333333333333335]",
+          "rubrica:criterion-weight:0": "5",
+          "rubrica:criterion-weight:1": "5",
+          "rubrica:criterion-weight:2": "4",
+          "rubrica:criterion-weight:3": "3",
+          "rubrica:criterion-weight:4": "3",
+          "rubrica:criterion-weight:5": "3",
+          "rubrica:criterion-weight:6": "4",
+          "rubrica:meta:criteriaCount": "7",
+          "rubrica:meta:catalogVersion": "evaluation-2026.46",
+          "rubrica:criterion-evidence:0": "{\"title\":\"Información de los lugares seleccionados\",\"description\":\"Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.\",\"progression\":[\"Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.\",\"La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.\",\"Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.\",\"Atribuye a los lugares características o datos que no les corresponden.\",\"No aporta información reconocible de los lugares de la guía.\"]}",
+          "rubrica:criterion-evidence:1": "{\"title\":\"Estructura de la guía turística\",\"description\":\"Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.\",\"progression\":[\"Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.\",\"Portada, información y cierre se reconocen; una parte queda poco desarrollada.\",\"Presenta información de los lugares, pero la portada o el cierre quedan incompletos.\",\"La organización confunde las partes de la guía y dificulta localizar los lugares.\",\"No presenta una estructura reconocible de guía turística.\"]}",
+          "rubrica:criterion-evidence:2": "{\"title\":\"Descripción y orientación al visitante\",\"description\":\"Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.\",\"progression\":[\"Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.\",\"Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.\",\"Nombra lugares y algunas características sin explicar su atractivo para el visitante.\",\"El vocabulario o las formas verbales alteran las características de los lugares.\",\"No describe características que orienten al visitante sobre los lugares.\"]}",
+          "rubrica:criterion-evidence:3": "{\"title\":\"Organización y claridad\",\"description\":\"Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.\",\"progression\":[\"Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.\",\"La secuencia permite localizar la información; una relación con el propósito queda poco clara.\",\"La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.\",\"La distribución sitúa datos bajo lugares equivocados.\",\"La información no permite reconocer una secuencia de orientación para el visitante.\"]}",
+          "rubrica:criterion-evidence:4": "{\"title\":\"Claridad y convenciones de la guía\",\"description\":\"Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.\",\"progression\":[\"La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.\",\"La guía se comprende; un error aislado dificulta una indicación secundaria.\",\"Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.\",\"Los errores cambian la información de un lugar o el sentido de una indicación.\",\"La versión presentada no permite leer información comprensible de los lugares.\"]}",
+          "rubrica:criterion-evidence:5": "{\"title\":\"Información visual de los lugares\",\"description\":\"Relaciona la información visual solicitada con los lugares de la guía para apoyar la información al visitante.\",\"progression\":[\"Relaciona la información visual solicitada con los lugares de la guía para apoyar la información al visitante.\",\"El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.\",\"El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.\",\"El recurso visual corresponde a lugares distintos o contradice la información de la guía.\",\"No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida.\"]}",
+          "rubrica:criterion-evidence:6": "{\"title\":\"Claridad de la comunicación oral\",\"description\":\"Comunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados.\",\"progression\":[\"Comunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados.\",\"La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.\",\"Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.\",\"La forma de comunicar altera las relaciones entre los datos de los lugares.\",\"No comunica información comprensible mediante la presentación o el apoyo acordado.\"]}",
+          "rubrica:criterion-template:0": "guide-content",
+          "rubrica:criterion-template:1": "guide-structure",
+          "rubrica:criterion-template:2": "guide-description",
+          "rubrica:criterion-template:3": "guide-organization",
+          "rubrica:criterion-template:4": "guide-revision",
+          "rubrica:criterion-template:5": "guide-visual",
+          "rubrica:criterion-template:6": "guide-oral",
+          "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+        },
+        "evaluationTechnique": "analisis-producciones",
+        "resources": [],
+        "activityType": "individual",
+        "teamIds": [],
+        "planningMoment": "",
+        "source": "grading"
+      }
+    }
+  ]
+}

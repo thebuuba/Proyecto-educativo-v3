@@ -74,6 +74,13 @@ export function firstGradeGuideCriteria(activityType: string, description: strin
       'Recopila datos de la guía, pero el análisis o la conclusión quedan incompletos.',
       'La conclusión contradice los datos analizados o sustituye el informe por una guía nueva.',
       'No presenta un informe reconocible sobre la guía turística.'] })
+  // A written guide followed by a presentation contains a separate oral performance.
+  // Reuse its authored progression; never add a second score for the guide's content.
+  if(mode==='TOURIST_GUIDE_CREATION' && /\b(?:present\w*|expon\w*)\b[^.;]*\b(?:oralmente|ante (?:sus |los )?companeros|a (?:sus |los )?companeros)\b/.test(task)) {
+    const oral=firstGradeGuideCriteria('TOURIST_GUIDE_PRESENTATION','').find(c=>c.templateId==='guide-oral')!
+    const observable='Comunica oralmente la información de los lugares de la guía con dicción, ritmo y entonación comprensibles, o con los apoyos de acceso acordados.'
+    criteria.push({...oral,observable,progressionLevels:[observable,...oral.progressionLevels.slice(1)] as ContextualTopicCriterion['progressionLevels']})
+  }
   return criteria
 }
 

@@ -52,12 +52,14 @@ export function InstrumentPreview({
   instrumentType,
   maxScore,
   onAddCriterion,
+  onAddManualCriterion,
   skipDefaults = false,
   onCompletedChange,
   onFieldsChange,
 }: {
   accent: (typeof blockAccents)[number]
   addingCriterion?: boolean
+  onAddManualCriterion?: () => void
   onCompleteCriterion?: (row: number) => void
   completingCriterionId?: string | null
   criterionRequestBusy?: boolean
@@ -363,6 +365,9 @@ export function InstrumentPreview({
       ) : null}
 
       <div className={cn('p-4', instrumentTypographyClass(instrumentType, fields))}>
+        {onAddManualCriterion ? <Button type="button" variant="ghost" size="sm"
+          disabled={criterionRequestBusy || addingCriterion || Number(fields[`${instrumentType}:meta:criteriaCount`]) >= 20}
+          onClick={onAddManualCriterion}>Añadir criterio manual</Button> : null}
         {instrumentType === 'rubrica' ? (
           <RubricInstrument
             addingCriterion={addingCriterion}

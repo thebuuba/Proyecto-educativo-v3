@@ -5,6 +5,17 @@ import { completeInstrumentCriterion, matchingCatalogCriterion, nextCatalogCrite
 
 const formats = ['rubrica','lista-cotejo','escala','lista-ponderada'] as const
 describe('Completar solamente campos vacíos del criterio', () => {
+  it('no completa una fila parcialmente duplicada con el objetivo ya usado en otra',()=>{
+    const p=editableFallbackRecommendation({activityTitle:'Rutina',description:'Presentarán oralmente su rutina diaria en inglés.',academicContext:{level:'SECONDARY',grade:1,subjectCode:'ING'},instrumentType:'rubrica',participationMode:'INDIVIDUAL',maxScore:20})
+    const fields=recommendationToFields(p,'Rutina')
+    const c=p.criteria[0],row=p.criteria.length
+    fields['rubrica:meta:criteriaCount']=String(row+1)
+    fields[`rubrica:criterion-id:${row}`]='manual:duplicada'
+    fields[`rubrica:criterion-template:${row}`]=c.templateId
+    fields[`rubrica:criterion:${row}`]=c.title
+    fields[`rubrica:description:${row}`]=''
+    expect(matchingCatalogCriterion(p.criteria,fields,'rubrica',row,p.criteria)).toBeNull()
+  })
   it.each(formats)('conserva identidad, textos y puntos en %s', type => {
     const proposal = editableFallbackRecommendation({activityTitle:'Actividad',description:'Redactarán un informe de lectura con resumen, personajes y conclusión.', secondaryLanguageGrade:1,activityType:'READING_REPORT_WRITING',instrumentType:type,maxScore:17.35,participationMode:'INDIVIDUAL'})
     const fields = recommendationToFields(proposal,'Actividad')
