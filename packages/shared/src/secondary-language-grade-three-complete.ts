@@ -28,7 +28,9 @@ export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:st
  const oralCreation=mode==='ORAL'&&(/produc\w*|elabor\w*|realiz\w*.*entrevista/.test(task)||narrating
   ||topic.grade>=4&&['discurso-agradecimiento','discurso-recibimiento-despedida','discurso-graduacion','informe-investigacion','instructivo','reportaje','monologo'].includes(topic.id)&&/present\w*\s+oralmente/.test(task)&&!/analisis|analiz|interpret|comentario|leido/.test(task))
  const producing=topic.id!=='novela'&&(mode==='PRODUCTION'||mode==='REPORT'&&['informe-experimento','informe-investigacion'].includes(topic.id)||oralCreation)
- const features=requestedLanguageFeatures(availableFeatures,description).map(f=>{
+ // Rhythm is already assessed by recitation-expression; retain distinct requested forms such as rhyme.
+ const features=requestedLanguageFeatures(availableFeatures,description).filter(f=>!reciting||f.name!=='el ritmo').map(f=>{
+  if(reciting)f={...f,name:f.name.replace(/(?:,| y) el ritmo/g,'')}
   if(f.id!=='graphics')return f
   const matches=(f.terms??[]).flatMap(([pattern,name])=>{
    const m=new RegExp(`\\b(?:${pattern})`).exec(task)
@@ -168,7 +170,7 @@ export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:st
   'El gesto comunica un sentimiento contrario al expresado por el verso.',
   'No aporta evidencia gestual ni mediante el apoyo acordado del sentido de los versos.',
  ]):r)
- if(mode==='ORAL'&&!reciting)rows.push(criterion(scope,activity==='DEBATE'?'debate':'oral','Comunicación e intercambio de ideas',activity==='DEBATE'?[
+ if(mode==='ORAL'&&!reciting&&activity!=='PERFORMANCE')rows.push(criterion(scope,activity==='DEBATE'?'debate':'oral','Comunicación e intercambio de ideas',activity==='DEBATE'?[
   `Defiende una interpretación de ${p.target} con evidencias y responde a los argumentos de otros participantes respetando sus intervenciones.`,
   'La postura tiene apoyos; una respuesta necesita relacionarse con el argumento del interlocutor.',
   'Expone una postura sin responder a las razones de otros participantes.',

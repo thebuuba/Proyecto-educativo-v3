@@ -1,0 +1,415 @@
+{
+  "verifiedAt": "2026-10-14T04:25:32.416Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "6687c21d8712973e43d30e4d0d971750d8094ccf",
+      "dirty": true,
+      "startedAt": "2026-10-14T04:22:26.743Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.34"
+    }
+  },
+  "activities": [
+    {
+      "id": "4ebe319e-5afe-47b0-ba78-95a0fe9e2a16",
+      "name": "QA Lengua 5 revisión · Actuación sin duplicación · .34",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Representarán un entremés teatral mostrando el conflicto de la escena, las intervenciones de los personajes y su crítica social. Se distribuirán pesos entre los componentes verificables.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "7a2b97c1-3065-45cd-beed-5342d7202332",
+      "instrumentSnapshotId": "90cda105-a594-4407-a737-f3dd4993af82",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.34:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-scene:0",
+            "title": "Conflicto, personajes y diálogo de la escena",
+            "maxScore": 5.78,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-5-entremes-teatral-scene",
+            "description": "Hace reconocible el conflicto en la escena representada mediante las intervenciones y reacciones de los personajes, conservando sus relaciones y cambios. Parcial (50%): Representa intervenciones aisladas que no permiten seguir los cambios del conflicto. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Hace reconocible el conflicto en la escena representada mediante las intervenciones y reacciones de los personajes, conservando sus relaciones y cambios. Parcial (50%): Representa intervenciones aisladas que no permiten seguir los cambios del conflicto. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 578
+              },
+              {
+                "text": "Hace reconocible el conflicto en la escena representada mediante las intervenciones y reacciones de los personajes, conservando sus relaciones y cambios. Parcial (50%): Representa intervenciones aisladas que no permiten seguir los cambios del conflicto. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Hace reconocible el conflicto en la escena representada mediante las intervenciones y reacciones de los personajes, conservando sus relaciones y cambios. Parcial (50%): Representa intervenciones aisladas que no permiten seguir los cambios del conflicto. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 578,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.34:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-critique:1",
+            "title": "Crítica social y sentido del entremés",
+            "maxScore": 7.23,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-5-entremes-teatral-critique",
+            "description": "Comunica la crítica social del entremés mediante el sentido de las situaciones y los recursos cómicos de la representación. Parcial (50%): Presenta efectos cómicos aislados que no permiten reconocer la conducta o situación criticada.",
+            "descriptors": [
+              {
+                "text": "Comunica la crítica social del entremés mediante el sentido de las situaciones y los recursos cómicos de la representación. Parcial (50%): Presenta efectos cómicos aislados que no permiten reconocer la conducta o situación criticada.",
+                "levelId": "L3",
+                "scoreUnits": 723
+              },
+              {
+                "text": "Comunica la crítica social del entremés mediante el sentido de las situaciones y los recursos cómicos de la representación. Parcial (50%): Presenta efectos cómicos aislados que no permiten reconocer la conducta o situación criticada.",
+                "levelId": "L2",
+                "scoreUnits": 362
+              },
+              {
+                "text": "Comunica la crítica social del entremés mediante el sentido de las situaciones y los recursos cómicos de la representación. Parcial (50%): Presenta efectos cómicos aislados que no permiten reconocer la conducta o situación criticada.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 723,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.34:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-performance:2",
+            "title": "Intervenciones y acción en la representación",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-5-entremes-teatral-performance",
+            "description": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+            "descriptors": [
+              {
+                "text": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+                "levelId": "L3",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+                "levelId": "L2",
+                "scoreUnits": 217
+              },
+              {
+                "text": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "PERFORMANCE",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "76d2d1ee-2283-588b-af31-803d7c6871e3",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "124694d7-6dd8-56b2-ae6e-2d003717235b",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e3e55532-c167-522b-af89-d39d7054a67f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "07bc8009-fd55-5693-a01e-5eb2a5300f05",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8f70a5ca-8abf-5839-a5af-e0490b5b9814",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1f588d35-c347-543d-97a1-033303f664c8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d3a86276-7a72-588d-8dda-943543b33255",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "034999b7-5283-54aa-8500-f03c92d31f6f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "34d07495-99f1-5368-afd1-793df6be11dc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c0604aba-428b-5aa7-b6d2-2cd2e4307543",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-5-entremes-teatral",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.34",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PERFORMANCE",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA Lengua 5 revisión · Actuación sin duplicación · .34",
+        "lista-ponderada:points:0": "5.78",
+        "lista-ponderada:points:1": "7.23",
+        "lista-ponderada:points:2": "4.34",
+        "lista-ponderada:weight:0": "33.33",
+        "lista-ponderada:weight:1": "41.67",
+        "lista-ponderada:weight:2": "25",
+        "lista-ponderada:criterion:0": "Conflicto, personajes y diálogo de la escena",
+        "lista-ponderada:criterion:1": "Crítica social y sentido del entremés",
+        "lista-ponderada:criterion:2": "Intervenciones y acción en la representación",
+        "lista-ponderada:indicator:0": "Hace reconocible el conflicto en la escena representada mediante las intervenciones y reacciones de los personajes, conservando sus relaciones y cambios. Parcial (50%): Representa intervenciones aisladas que no permiten seguir los cambios del conflicto. Ajuste manual del docente.",
+        "lista-ponderada:indicator:1": "Comunica la crítica social del entremés mediante el sentido de las situaciones y los recursos cómicos de la representación. Parcial (50%): Presenta efectos cómicos aislados que no permiten reconocer la conducta o situación criticada.",
+        "lista-ponderada:indicator:2": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Hace reconocible el conflicto en la escena representada mediante las intervenciones y reacciones de los personajes, conservando sus relaciones y cambios. Parcial (50%): Representa intervenciones aisladas que no permiten seguir los cambios del conflicto.",
+        "lista-ponderada:description:1": "Comunica la crítica social del entremés mediante el sentido de las situaciones y los recursos cómicos de la representación. Parcial (50%): Presenta efectos cómicos aislados que no permiten reconocer la conducta o situación criticada.",
+        "lista-ponderada:description:2": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.34:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-scene:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.34:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-critique:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.34:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-performance:2",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[4,5,3]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "5",
+        "lista-ponderada:criterion-weight:2": "3",
+        "lista-ponderada:meta:criteriaCount": "3",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.34",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Conflicto, personajes y diálogo de la escena\",\"description\":\"Hace reconocible el conflicto en la escena representada mediante las intervenciones y reacciones de los personajes, conservando sus relaciones y cambios. Parcial (50%): Representa intervenciones aisladas que no permiten seguir los cambios del conflicto.\",\"progression\":[\"Hace reconocible el conflicto en la escena representada mediante las intervenciones y reacciones de los personajes, conservando sus relaciones y cambios.\",\"El conflicto se comprende; una reacción necesita vincularse mejor con la intervención anterior.\",\"Representa intervenciones aisladas que no permiten seguir los cambios del conflicto.\",\"Atribuye una intervención a otro personaje y cambia el conflicto de la escena representada.\",\"No se reconoce el conflicto a través de las intervenciones representadas.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Crítica social y sentido del entremés\",\"description\":\"Comunica la crítica social del entremés mediante el sentido de las situaciones y los recursos cómicos de la representación. Parcial (50%): Presenta efectos cómicos aislados que no permiten reconocer la conducta o situación criticada.\",\"progression\":[\"Comunica la crítica social del entremés mediante el sentido de las situaciones y los recursos cómicos de la representación.\",\"La crítica se reconoce en la escena; un énfasis cómico necesita relacionarse mejor con la situación.\",\"Presenta efectos cómicos aislados que no permiten reconocer la conducta o situación criticada.\",\"La representación comunica una postura contraria a la crítica del entremés.\",\"No se reconoce la crítica social en las situaciones representadas.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Intervenciones y acción en la representación\",\"description\":\"Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.\",\"progression\":[\"Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados.\",\"Se sigue la acción; una entrada o respuesta necesita vincularse mejor con la intervención anterior.\",\"Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.\",\"Atribuye a su personaje intervenciones de otro y cambia el conflicto representado.\",\"No aporta evidencia de las intervenciones de su personaje en la escena con los apoyos acordados.\"]}",
+        "lista-ponderada:criterion-template:0": "len-5-entremes-teatral-scene",
+        "lista-ponderada:criterion-template:1": "len-5-entremes-teatral-critique",
+        "lista-ponderada:criterion-template:2": "len-5-entremes-teatral-performance"
+      },
+      "evaluationTechnique": "dramatizacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

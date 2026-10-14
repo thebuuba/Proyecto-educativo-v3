@@ -11292,7 +11292,7 @@
           ],
           "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
           "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
-          "pending": "Sin pendientes de las familias y requisitos definidos y verificados de Lengua Española común de este grado. No garantiza interpretar cualquier descripción; optativas separadas.",
+          "pending": "Sin pendientes conocidos de las familias verificadas; revisión posterior de redundancias cerrada con pruebas y persistencia real.",
           "procedures": [
             {
               "id": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
@@ -11336,8 +11336,8 @@
           "automatedVerification": "PASSED",
           "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
           "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
-          "report": "lengua-5-cierre.md",
-          "catalogVersion": "evaluation-2026.33"
+          "report": "lengua-revision-final.md",
+          "catalogVersion": "evaluation-2026.34"
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
@@ -13393,7 +13393,7 @@
           ],
           "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
           "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
-          "pending": "Sin pendientes de las familias y requisitos definidos y verificados de Lengua Española común de este grado. No garantiza interpretar cualquier descripción; optativas separadas.",
+          "pending": "Sin pendientes conocidos de las familias verificadas; revisión posterior de redundancias cerrada con pruebas y persistencia real.",
           "procedures": [
             {
               "id": "7b597868-db06-5dea-a57a-7697bb456f67",
@@ -13430,8 +13430,8 @@
           "automatedVerification": "PASSED",
           "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
           "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
-          "report": "lengua-6-cierre.md",
-          "catalogVersion": "evaluation-2026.33"
+          "report": "lengua-revision-final.md",
+          "catalogVersion": "evaluation-2026.34"
         },
         {
           "id": "8a46a4a6-74a7-5488-a880-384c273549a4",

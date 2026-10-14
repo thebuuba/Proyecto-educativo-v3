@@ -32,7 +32,7 @@ export function languageFeatureCriterion(feature: LanguageFeature, scope: string
   const progressionLevels: ContextualTopicCriterion['progressionLevels'] = mode === 'comparison' ? [
     `Contrasta ${target} en los textos comparados y sustenta sus semejanzas o diferencias por su función para ${purpose}.`,
     `Localiza ${target} en los textos y establece un contraste sustentado, aunque deja sin explicar una relación con su función.`,
-    `Enumera ejemplos de ${target} de los textos, pero no establece la semejanza o diferencia entre sus usos.`,
+    `Enumera ejemplos ${ofTarget} de los textos, pero no establece la semejanza o diferencia entre sus usos.`,
     `El contraste se basa en una atribución incorrecta: ${feature.error}.`,
     `No aporta ejemplos de los textos que permitan contrastar ${target}.`,
   ] : mode === 'production' || mode === 'oral-production' ? [
@@ -50,7 +50,7 @@ export function languageFeatureCriterion(feature: LanguageFeature, scope: string
   ] : [
     `Identifica ${target} en ${source} y explica, con ejemplos presentes, su función para ${purpose}.`,
     `Localiza y caracteriza ${target} con ejemplos del texto; deja sin explicar una relación con su función.`,
-    `Señala ejemplos de ${target}, pero no explica cómo contribuyen a ${purpose}.`,
+    `Señala ejemplos ${ofTarget}, pero no explica cómo contribuyen a ${purpose}.`,
     `La explicación se apoya en una identificación incorrecta: ${feature.error}.`,
     `No localiza ejemplos pertinentes ni explica la función ${ofTarget} en el texto disponible.`,
   ]

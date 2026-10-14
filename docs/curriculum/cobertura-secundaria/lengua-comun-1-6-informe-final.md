@@ -1,5 +1,7 @@
 # Instrumentos de Lengua Española común, 1.º–6.º
 
+Actualización posterior: [revisión de redundancias y nuevos recorridos en .34](lengua-revision-final.md). Los recuentos y ejemplos que siguen corresponden al cierre .33 y se conservan como evidencia histórica.
+
 Los **40 temas** de los seis grados quedan conectados y verificados para las familias y requisitos documentados. La matriz distingue inventario, conexión, pruebas, servicio habitual e interfaz con persistencia real. No equivale a comprender cualquier consigna imaginable. Las optativas y otras asignaturas conservan su estado independiente.
 
 ## Causas confirmadas y cambios compartidos

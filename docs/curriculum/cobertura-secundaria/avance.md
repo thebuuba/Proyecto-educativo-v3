@@ -1,5 +1,11 @@
 # Avance durable — cobertura secundaria
 
+## Encargo vigente: continuidad curricular autorizada (.34)
+
+Lengua común 1.º–6.º supera la revisión adicional: corregidas redundancias de ritmo y representación y una contracción gramatical. Backend4.306, frontend9.553, inventario8, builds exigidos y24 propuestas HTTP de seis grados aprobados; cinco guardados/reaperturas nuevos,74 snapshots preservados. [Informe y evidencia](lengua-revision-final.md). Catálogo local .34; no producción ni históricos alterados.
+
+**Siguiente: Inglés común 1.º, PDF134–139**, después 2.º–6.º; luego Francés y las demás asignaturas en el orden físico del currículo. Las optativas se mantienen en sus ámbitos y grados. No hay bloqueo. El usuario autoriza continuar, commitear y hacer push entre bloques sin consulta; mantiene la prohibición de subagentes. Plan: `docs/superpowers/plans/2026-10-14-continuidad-curricular.md`. Las secciones siguientes son historial.
+
 ## Estado final: Lengua Española común 1.º–6.º verificada (.33)
 
 Cerrados los 40 temas de los seis grados dentro de sus familias y requisitos definidos. Matriz revisada: 363 registros conceptuales, con límites de extracción y optativas separados. Backend 4.293 pruebas; frontend 9.553; inventario 8; builds backend/frontend y Cloudflare dry-run aprobados. Sexto: 308 recomendaciones HTTP en .32 y 25 solicitudes finales en .33; cuatro formatos guardados/reabiertos. Se afinó también la representación del entremés de quinto, sin exigir un comentario de análisis durante la actuación. Hay 41 instrumentos completos comprobados y 28 snapshots de referencia preservados (69 en total).
