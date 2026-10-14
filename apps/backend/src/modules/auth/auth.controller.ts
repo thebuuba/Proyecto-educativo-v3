@@ -76,6 +76,7 @@ export class AuthController {
     @Body() dto: CompleteOnboardingDto,
     @Req() request: Request,
     @Res({ passthrough: true }) response: Response,
+    @Headers('x-remember-session') rememberSession?: string,
   ) {
     const token = authHeader?.replace(/^Bearer\s+/i, '')
     if (!token) throw new UnauthorizedException('Missing Authorization header')
@@ -87,7 +88,7 @@ export class AuthController {
     }
     const session = await this.authService.completeOnboarding(token, dto)
     if (isDeviceTrustEnabled()) await requireTrustedDevice(request, response, session.appUser.id, session.appUser.authUserId, token)
-    return respondWithSession(response, session)
+    return respondWithSession(response, session, rememberSession === 'true')
   }
 
   @Get('onboarding/status')
@@ -98,7 +99,7 @@ export class AuthController {
 
   @Throttle({ default: { limit: 10, ttl: 60000 } })
   @Post('login')
-  async login(@Body() dto: LoginDto, @Req() request: Request, @Res({ passthrough: true }) response: Response) {
+  async login(@Body() dto: LoginDto, @Req() request: Request, @Res({ passthrough: true }) response: Response, @Headers('x-remember-session') rememberSession?: string) {
     const { session, accessToken, refreshToken } = await this.authService.loginWithToken(dto)
     if (isDeviceTrustEnabled()) {
       try {
@@ -113,7 +114,7 @@ export class AuthController {
         throw error
       }
     }
-    return { ...respondWithSession(response, session, true), supabaseSession: { accessToken, refreshToken } }
+    return { ...respondWithSession(response, session, rememberSession === 'true'), supabaseSession: { accessToken, refreshToken } }
   }
 
   @Post('logout')

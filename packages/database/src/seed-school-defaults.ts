@@ -1,8 +1,9 @@
 import { createReadStream } from 'node:fs'
 import { createInterface } from 'node:readline'
 import { prisma } from './index.js'
+import { seedCsvPath } from './seed-csv-path.js'
 
-const CSV_PATH = '/tmp/escuelas_2024.csv'
+const CSV_PATH = seedCsvPath('SCHOOL_DEFAULTS_CSV_PATH')
 
 function mapNivel(nivel: string): string | null {
   if (nivel === '1-Inicial') return null

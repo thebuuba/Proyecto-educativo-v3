@@ -12,6 +12,7 @@ import {
   BadRequestException,
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
+import { resolveSchoolYearDates as inferSchoolYearDates } from '../../common/school-year-defaults'
 import { prisma } from '@aula/database'
 import { splitFullName } from '@aula/shared'
 import { RegisterDto } from './dto/register.dto'
@@ -186,26 +187,6 @@ async function findAppUserForAuthUser(authUser: SupabaseAuthUser) {
 
   const email = authUser.email?.trim().toLowerCase()
   return email ? prisma.appUser.findUnique({ where: { email } }) : null
-}
-
-function toDate(value: string, fieldName: string) {
-  const date = new Date(`${value}T00:00:00.000Z`)
-  if (Number.isNaN(date.getTime())) {
-    throw new BadRequestException(`${fieldName} no es una fecha valida.`)
-  }
-  return date
-}
-
-function inferSchoolYearDates(name: string, startDate?: string, endDate?: string) {
-  const match = name.match(/(\d{4})\D+(\d{4})/)
-  const fallbackStartYear = new Date().getUTCFullYear()
-  const startYear = match ? Number(match[1]) : fallbackStartYear
-  const endYear = match ? Number(match[2]) : startYear + 1
-
-  return {
-    startDate: toDate(startDate || `${startYear}-08-01`, 'Fecha de inicio'),
-    endDate: toDate(endDate || `${endYear}-06-30`, 'Fecha de fin'),
-  }
 }
 
 @Injectable()

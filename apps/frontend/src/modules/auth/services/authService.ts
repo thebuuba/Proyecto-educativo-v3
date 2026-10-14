@@ -30,6 +30,7 @@ export async function login(credentials: LoginCredentials): Promise<LoginRespons
   if (error) {
     if (/failed to fetch/i.test(error.message)) {
       const response = await api.post<LoginResponse & { verificationRequired?: 'email' | 'totp'; supabaseSession?: { accessToken: string; refreshToken: string } }>('/auth/login', credentials, {
+        headers: { 'X-Remember-Session': String(isRememberSessionEnabled()) },
         clearResponseCache: true,
       })
       if (response.supabaseSession) {
@@ -125,7 +126,7 @@ export async function completeOnboarding(
   input: CompleteOnboardingInput,
 ): Promise<LoginResponse> {
   return api.post<LoginResponse>('/auth/onboarding/complete', input, {
-    headers: { Authorization: `Bearer ${supabaseAccessToken}` },
+    headers: { Authorization: `Bearer ${supabaseAccessToken}`, 'X-Remember-Session': String(isRememberSessionEnabled()) },
     clearResponseCache: true,
   })
 }

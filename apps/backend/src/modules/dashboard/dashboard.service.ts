@@ -3,6 +3,7 @@ import { prisma } from '@aula/database'
 import { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { CreateTaskDto } from './dto/create-task.dto'
 import { UpdateTaskDto } from './dto/update-task.dto'
+import { getDashboardAttention } from './dashboard-attention'
 
 const MANAGEMENT_ROLES = new Set(['admin', 'director', 'coordinator'])
 const TASK_ROLES = new Set([...MANAGEMENT_ROLES, 'teacher'])
@@ -381,36 +382,7 @@ export class DashboardService {
   }
 
   private async getAttention(user: AuthenticatedUser, schoolYearId: string | null, periodId: string | null, scope: ViewerScope, now: Date) {
-    if (!schoolYearId || !periodId || (scope.view !== 'teacher' && scope.view !== 'management')) return []
-    if (scope.view === 'teacher' && !scope.teacherId) return []
-    const sections = scope.teacherId ? await prisma.sectionSubject.findMany({ where: { schoolId: user.schoolId, schoolYearId, teacherId: scope.teacherId, status: 'ACTIVE' }, select: { sectionId: true } }) : null
-    const sectionIds = sections ? [...new Set(sections.map((item) => item.sectionId))] : null
-    if (sectionIds && !sectionIds.length) return []
-    // ponytail: 500 matrículas cubren el panel; usar agregaciones SQL si el centro supera ese volumen.
-    const enrollments = await prisma.enrollment.findMany({
-      where: { schoolId: user.schoolId, schoolYearId, status: 'ACTIVE', ...(sectionIds ? { sectionId: { in: sectionIds } } : {}) },
-      select: { id: true, studentId: true, student: { select: { firstName: true, lastName: true } }, grade: { select: { name: true } }, section: { select: { name: true } } },
-      take: 500,
-    })
-    if (!enrollments.length) return []
-    const enrollmentIds = enrollments.map((item) => item.id)
-    const studentIds = enrollments.map((item) => item.studentId)
-    const since = addDays(getDashboardClock(now).calendarDate, -30)
-    const [grades, attendance, journalLinks] = await Promise.all([
-      prisma.gradesRecord.findMany({ where: { schoolId: user.schoolId, academicPeriodId: periodId, enrollmentId: { in: enrollmentIds }, status: 'PUBLISHED', ...(scope.teacherId ? { sectionSubject: { teacherId: scope.teacherId } } : {}) }, select: { enrollmentId: true, score: true, maxScore: true } }),
-      prisma.attendanceClass.findMany({ where: { schoolId: user.schoolId, enrollmentId: { in: enrollmentIds }, attendanceDate: { gte: since }, ...(scope.teacherId ? { sectionSubject: { teacherId: scope.teacherId } } : {}) }, select: { enrollmentId: true, status: true } }),
-      prisma.teacherJournalStudent.findMany({ where: { schoolId: user.schoolId, studentId: { in: studentIds }, entry: { createdById: user.id, status: 'ACTIVE', occurredAt: { gte: since }, entryType: { in: ['incident', 'student_observation'] } } }, select: { studentId: true } }),
-    ])
-    return enrollments.flatMap((item) => {
-      const marks = grades.filter((grade) => grade.enrollmentId === item.id && Number(grade.maxScore) > 0)
-      const average = marks.length ? Math.round(marks.reduce((sum, grade) => sum + Number(grade.score) / Number(grade.maxScore) * 100, 0) / marks.length) : null
-      const attendances = attendance.filter((record) => record.enrollmentId === item.id)
-      const attendanceRate = calculateAttendanceRate(attendances.map((record) => ({ attendanceDate: now, status: record.status })))
-      const observations = journalLinks.filter((link) => link.studentId === item.studentId).length
-      const reasons = [attendanceRate !== null && attendanceRate < 80 ? 'Asistencia' : null, average !== null && average < 70 ? 'Promedio' : null, observations >= 2 ? 'Conducta' : null].filter((reason): reason is string => Boolean(reason))
-      if (!reasons.length) return []
-      return [{ id: item.studentId, name: `${item.student.firstName} ${item.student.lastName}`, grade: `${item.grade.name} ${item.section.name}`, average, attendance: attendanceRate, reasons, note: observations >= 2 ? `${observations} anotaciones recientes` : average !== null && average < 70 ? 'Promedio bajo el mínimo de aprobación' : 'Asistencia por debajo del 80%' }]
-    }).sort((a, b) => (a.average ?? 100) - (b.average ?? 100) || (a.attendance ?? 100) - (b.attendance ?? 100)).slice(0, 4)
+    return getDashboardAttention(user, schoolYearId, periodId, scope, getDashboardClock(now).calendarDate)
   }
 
   private async getPlanningSummary(schoolId: string, periodId: string | null, scope: ViewerScope) {

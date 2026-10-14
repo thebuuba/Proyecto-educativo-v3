@@ -1,8 +1,9 @@
 import { createReadStream } from 'node:fs'
 import { createInterface } from 'node:readline'
 import { prisma } from './index.js'
+import { seedCsvPath } from './seed-csv-path.js'
 
-const CSV_PATH = '/tmp/escuelas_dominicanas.csv'
+const CSV_PATH = seedCsvPath()
 
 async function main() {
   const coords = new Map<string, { lat: number; lng: number }>()
