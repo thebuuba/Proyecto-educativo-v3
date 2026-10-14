@@ -3,6 +3,14 @@ import { evaluationCatalogCurrent } from './catalog-current'
 import { academicContext, resolveScope } from './curriculum-context'
 import { canonicalJson } from './evaluation-instruments.service'
 
+export async function diagnoseEvaluationCatalog(db: PrismaClient) {
+  const existing = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogCurrent.version } })
+  return {
+    version: evaluationCatalogCurrent.version,
+    status: !existing ? 'MISSING' : canonicalJson(existing.payload) === canonicalJson(evaluationCatalogCurrent) ? 'COMPATIBLE' : 'CONFLICT',
+  }
+}
+
 export async function seedEvaluationCatalog(db: PrismaClient) {
   const existing = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogCurrent.version } })
   if (existing) {

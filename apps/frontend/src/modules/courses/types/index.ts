@@ -16,6 +16,7 @@ export type Grade = {
   academicCycleId: string | null
   defaultModalityId: string | null
   academicLevelName: string | null
+  academicLevelCode?: string | null
   academicCycleName: string | null
   defaultModalityName: string | null
   sequence: number | null

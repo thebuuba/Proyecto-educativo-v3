@@ -35,9 +35,10 @@ import { useCourses } from '@/modules/courses/hooks/useCourses'
 import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
 import { getGradingWorkspace } from '@/modules/grading/services/gradingService'
 import type { AcademicPeriodOpt, GradeRecordRow, GradingActivity, StudentGradeRow } from '@/modules/grading/types'
-import { activityAppliesToBlock, competencyBlocks, scoreForActivity } from '@/modules/grading/utils/competencyGrades'
+import { activityAppliesToBlock, scoreForActivity } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 import { getSubjectPalette } from '@/utils/subjectPalette'
+import { resolveEvaluationProfile } from '@aula/shared'
 
 import { ActivityBlockPickerDialog } from './CoursesPageBase'
 import { calendarDate } from '../data/calendarDate'
@@ -130,6 +131,7 @@ export function GroupedSubjectActivitiesPage() {
   const subjectName = assignment?.subjectName ?? 'Asignatura'
   const courseLabel = context ? `${context.grade.name} ${context.section.name}`.trim() : 'Curso'
   const levelName = context?.grade.academicLevelName ?? context?.grade.level ?? ''
+  const evaluationProfile = resolveEvaluationProfile(context?.grade.academicLevelCode)
   const cycleName = context?.grade.academicCycleName ?? ''
   const subjectPalette = assignment?.appearanceColor ? { color: assignment.appearanceColor, soft: `${assignment.appearanceColor}14` } : getSubjectPalette(subjectName)
   const period = workspace.academicPeriods.find((item) => item.id === workspace.selectedAcademicPeriodId) ?? workspace.academicPeriods[0]
@@ -150,11 +152,11 @@ export function GroupedSubjectActivitiesPage() {
       .sort((left, right) => sort === 'name' ? left.name.localeCompare(right.name, 'es') : sort === 'oldest' ? (left.date ?? '').localeCompare(right.date ?? '') : (right.date ?? '').localeCompare(left.date ?? ''))
   }, [query, sort, status, workspace.activities, workspace.gradeRecords, workspace.students])
 
-  const groups = competencyBlocks.map((block, index) => ({
+  const groups = evaluationProfile.blocks.map((block, index) => ({
     block,
     visual: blockVisuals[index] ?? blockVisuals[0],
-    allActivities: workspace.activities.filter((activity) => activityAppliesToBlock(activity, block.id)),
-    visibleActivities: filteredActivities.filter((activity) => activityAppliesToBlock(activity, block.id)),
+    allActivities: workspace.activities.filter((activity) => activityAppliesToBlock(activity, block.id, evaluationProfile)),
+    visibleActivities: filteredActivities.filter((activity) => activityAppliesToBlock(activity, block.id, evaluationProfile)),
   }))
   const visibleGroups = groups.filter(({ block, visibleActivities }) => (blockFilter === 'all' || blockFilter === block.id) && visibleActivities.length > 0)
 
@@ -264,7 +266,7 @@ export function GroupedSubjectActivitiesPage() {
         </section>
       )}
 
-      {blockPickerOpen ? <ActivityBlockPickerDialog assignmentId={subjectId} courseId={courseId} courseName={courseLabel} subjectName={subjectName} onClose={() => setBlockPickerOpen(false)} /> : null}
+      {blockPickerOpen ? <ActivityBlockPickerDialog evaluationProfile={evaluationProfile} assignmentId={subjectId} courseId={courseId} courseName={courseLabel} subjectName={subjectName} onClose={() => setBlockPickerOpen(false)} /> : null}
 
       {selectedActivity ? <ActivityInfoModal activity={selectedActivity} onClose={() => openActivity(null)} onEdit={() => { openActivity(null); navigate(buildActivityHref(subjectId, courseId, selectedActivity.id, 'edit')) }} onEvaluate={() => { openActivity(null); navigate(buildActivityHref(subjectId, courseId, selectedActivity.id, 'evaluate')) }} /> : null}
 

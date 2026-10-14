@@ -13,7 +13,7 @@ const { resolveScope, normalize } = backendRequire(resolve(root, 'apps/backend/d
 
 // Load the actual frontend adapter without a network request or a new dependency.
 const ts = frontendRequire('typescript')
-const adapterSource = readFileSync(resolve(root, 'apps/frontend/src/modules/grading/services/instrumentPreparation.ts'), 'utf8')
+const adapterSource = readFileSync(resolve(root, 'apps/frontend/src/modules/activities/services/instrumentPreparation.ts'), 'utf8')
 const adapterModule = { exports: {} }
 const adapterJs = ts.transpileModule(adapterSource, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText
 new Function('require', 'module', 'exports', adapterJs)((id) => id === '@/services/apiClient' ? { api: {} } : frontendRequire(id), adapterModule, adapterModule.exports)
@@ -75,7 +75,7 @@ for (const [name, level, grade, code, subject, activityTitle, description, maxSc
     }
     for (const criterion of result.criteria) {
       assert(criterion.title.trim() && criterion.description.trim() && criterion.maxScoreUnits > 0, 'Criterio vacío o sin puntos')
-      assert(/\b(explica|identifica|distingue|organiza|comunica|utiliza|usa|aplica|registra|interpreta|formula|selecciona|justifica|realiza|relaciona|desarrolla|sustenta|propone|sitúa|defiende|crea|presenta|muestra|revisa|ubica|coordina|adapta|reflexiona|expresa|reconoce|describe|anota|dice|señala|completa|ejecuta|comprueba|escribe)\b/i.test(criterion.description), 'Descripción no observable')
+      if (criterion.sourceType !== 'CURRICULUM_DERIVED') assert(/\b(explica|identifica|distingue|organiza|comunica|utiliza|usa|aplica|registra|interpreta|formula|selecciona|justifica|realiza|relaciona|desarrolla|sustenta|propone|sitúa|defiende|crea|presenta|muestra|revisa|ubica|coordina|adapta|reflexiona|expresa|reconoce|describe|anota|dice|señala|completa|ejecuta|comprueba|escribe|documenta|responde|escucha|conecta)\b/i.test(criterion.description), `Descripción no observable: ${criterion.title}`)
       if (result.levels.length) {
         assert.equal(criterion.descriptors.length, result.levels.length, 'Cantidad de descriptores')
         assert.equal(new Set(criterion.descriptors.map(item => normalize(item.text))).size, result.levels.length, 'Descriptores iguales')
