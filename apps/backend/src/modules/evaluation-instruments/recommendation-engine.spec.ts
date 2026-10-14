@@ -129,7 +129,8 @@ describe('La noticia de Lengua Española en 2.º de secundaria', () => {
     expect(JSON.stringify(result.criteria)).not.toMatch(/imágenes|fotografías|trabajo en equipo|pluscuamperfecto|subordinadas/i)
     const requested = recommend({ ...base, description: `${base.description} Usarán oraciones coordinadas y subordinadas y el pretérito pluscuamperfecto.` },
       context, null, [], 'UNMAPPED', null)
-    expect(requested.criteria.find(item => item.title === 'Precisión del lenguaje periodístico')?.description).toContain('formas gramaticales solicitadas')
+    expect(requested.criteria.find(item => item.templateId === 'news-feature-complex-sentences')?.description).toContain('oraciones coordinadas y las oraciones subordinadas')
+    expect(requested.criteria.find(item => item.templateId === 'news-feature-indicative')?.description).toContain('pretérito pluscuamperfecto')
   })
   it('mantiene el alcance de 1.º y excluye otros grados y materias', () => {
     expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, grade: 1 })).toBe('DEBATE')

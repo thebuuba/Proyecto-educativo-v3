@@ -1,0 +1,1831 @@
+{
+  "verifiedAt": "2026-10-14T01:31:07.001Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "56e72f427df454e4477117c35ca35b9d8de90292",
+      "dirty": true,
+      "startedAt": "2026-10-14T01:28:30.981Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.24"
+    }
+  },
+  "activities": [
+    {
+      "id": "0e9a5532-3e8f-4dde-8d0c-b6af87d76ee3",
+      "name": "QA Lengua 2 · Artículo oral · rúbrica 24",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Producirán oralmente un artículo expositivo con citas o datos y apoyos audiovisuales que expliquen el problema y las soluciones. Se valorará la calidad en varias dimensiones.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "3b43b0f3-bbee-4aeb-af45-0a5f0b768c0e",
+      "instrumentSnapshotId": "9419d2f6-de2f-4351-aa2c-c12996655089",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-problem-solution:0",
+            "title": "Organización problema-solución del artículo",
+            "maxScore": 4.34,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-2-articulo-expositivo-problem-solution",
+            "description": "Explica el problema del artículo expositivo y relaciona con él las soluciones propuestas.",
+            "descriptors": [
+              {
+                "text": "Explica el problema del artículo expositivo y relaciona con él las soluciones propuestas.",
+                "levelId": "L4",
+                "scoreUnits": 434
+              },
+              {
+                "text": "El problema y las soluciones guardan relación, aunque una relación causal necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Se mencionan el problema y una solución sin explicar su relación.",
+                "levelId": "L2",
+                "scoreUnits": 145
+              },
+              {
+                "text": "No se identifica un problema ni una solución reconocible. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-ideas:1",
+            "title": "Idea principal y párrafos de apoyo",
+            "maxScore": 3.48,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-2-articulo-expositivo-ideas",
+            "description": "Desarrolla la idea principal del artículo expositivo mediante párrafos con ideas secundarias pertinentes.",
+            "descriptors": [
+              {
+                "text": "Desarrolla la idea principal del artículo expositivo mediante párrafos con ideas secundarias pertinentes.",
+                "levelId": "L4",
+                "scoreUnits": 348
+              },
+              {
+                "text": "La idea principal se relaciona con apoyos pertinentes, aunque un párrafo pierde el hilo.",
+                "levelId": "L3",
+                "scoreUnits": 232
+              },
+              {
+                "text": "Se identifican ideas aisladas sin distinguir la principal de sus apoyos.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No hay una idea principal reconocible ni apoyos pertinentes.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 348,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-explanation:2",
+            "title": "Explicación y relaciones causales",
+            "maxScore": 3.48,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-2-articulo-expositivo-explanation",
+            "description": "Explica las relaciones de causa, efecto y finalidad que sustentan el artículo expositivo.",
+            "descriptors": [
+              {
+                "text": "Explica las relaciones de causa, efecto y finalidad que sustentan el artículo expositivo.",
+                "levelId": "L4",
+                "scoreUnits": 348
+              },
+              {
+                "text": "Las relaciones principales son correctas, aunque una transición entre causa y efecto es imprecisa.",
+                "levelId": "L3",
+                "scoreUnits": 232
+              },
+              {
+                "text": "Se enumeran hechos sin explicar causas, efectos o finalidades.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No se aporta una explicación de las relaciones del problema.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 348,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-evidence:3",
+            "title": "Información y evidencias del artículo",
+            "maxScore": 3.48,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-2-articulo-expositivo-evidence",
+            "description": "Apoya la explicación del artículo con información pertinente y distingue los datos de sus interpretaciones.",
+            "descriptors": [
+              {
+                "text": "Apoya la explicación del artículo con información pertinente y distingue los datos de sus interpretaciones.",
+                "levelId": "L4",
+                "scoreUnits": 348
+              },
+              {
+                "text": "La explicación tiene apoyos pertinentes, aunque una afirmación queda sin sustento.",
+                "levelId": "L3",
+                "scoreUnits": 232
+              },
+              {
+                "text": "Se aporta un dato sin explicar qué afirmación sustenta.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No se aportan datos o referencias para sustentar la explicación.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 348,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-oral-communication:4",
+            "title": "Comunicación oral del contenido",
+            "maxScore": 2.61,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-2-articulo-expositivo-oral-communication",
+            "description": "Comunica las ideas del texto con una secuencia comprensible y vocabulario pertinente, usando los apoyos de acceso que necesite.",
+            "descriptors": [
+              {
+                "text": "La secuencia y el vocabulario permiten comprender las ideas y sus relaciones.",
+                "levelId": "L4",
+                "scoreUnits": 261
+              },
+              {
+                "text": "Se comprenden las ideas principales, aunque una transición entre ellas necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Se comunican ideas aisladas y cuesta reconocer la relación entre ellas.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No se aporta evidencia oral o mediante el apoyo de acceso acordado para esta actividad.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 261,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-procedure-supports:5",
+            "title": "Apoyos de la explicación",
+            "maxScore": 2.61,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-2-articulo-expositivo-procedure-supports",
+            "description": "Relaciona citas o datos y apoyos audiovisuales con las afirmaciones del artículo para aclarar el problema y sus soluciones, manteniendo el sentido de la información utilizada.",
+            "descriptors": [
+              {
+                "text": "Los citas o datos y apoyos audiovisuales respaldan afirmaciones identificables y permiten comprender las relaciones del problema con sus soluciones.",
+                "levelId": "L4",
+                "scoreUnits": 261
+              },
+              {
+                "text": "Los apoyos corresponden al problema; queda implícita su relación con una afirmación.",
+                "levelId": "L3",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Incluye apoyos relacionados con el asunto sin explicar qué afirmaciones respaldan.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No relaciona los apoyos solicitados con afirmaciones del artículo.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 261,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "MEDIUM",
+        "totalScore": 20,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "ranking": [
+            {
+              "score": 98,
+              "reasons": [
+                "topicTokens=6/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "7ab07042-3830-54dd-ae40-af8f504130dc",
+              "topicCoverage": 0.75
+            },
+            {
+              "score": 70,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 48,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "43bd33e7-dd09-5751-89f6-c64b57efc167",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9a3f5c34-b341-5f32-89fa-e6b683aa060a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "0d428c07-8066-521c-9079-9bfbeafd4d06",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "46860c66-f934-549e-b922-fcc9040fc0ee",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ce49be32-15d8-5da8-856f-792c90e7b953",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "08b968f6-dc72-5d0d-b668-d83c8d84627e",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0302502b-2737-5094-ab0e-aa80fdc87d36",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "b01d53b0-a900-50ea-82c0-0223ab0cfa35",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c85ee8a1-0808-5ead-a962-3d5a06d933d3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "94ad93d7-4744-5b51-bad2-5de8a0de6c29",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9b706154-da02-5d8d-b641-7c7b6e9e8b4d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-2-articulo-expositivo",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.24",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA Lengua 2 · Artículo oral · rúbrica 24",
+        "rubrica:points:0": "4.34",
+        "rubrica:points:1": "3.48",
+        "rubrica:points:2": "3.48",
+        "rubrica:points:3": "3.48",
+        "rubrica:points:4": "2.61",
+        "rubrica:points:5": "2.61",
+        "rubrica:criterion:0": "Organización problema-solución del artículo",
+        "rubrica:criterion:1": "Idea principal y párrafos de apoyo",
+        "rubrica:criterion:2": "Explicación y relaciones causales",
+        "rubrica:criterion:3": "Información y evidencias del artículo",
+        "rubrica:criterion:4": "Comunicación oral del contenido",
+        "rubrica:criterion:5": "Apoyos de la explicación",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Explica el problema del artículo expositivo y relaciona con él las soluciones propuestas.",
+        "rubrica:description:1": "Desarrolla la idea principal del artículo expositivo mediante párrafos con ideas secundarias pertinentes.",
+        "rubrica:description:2": "Explica las relaciones de causa, efecto y finalidad que sustentan el artículo expositivo.",
+        "rubrica:description:3": "Apoya la explicación del artículo con información pertinente y distingue los datos de sus interpretaciones.",
+        "rubrica:description:4": "Comunica las ideas del texto con una secuencia comprensible y vocabulario pertinente, usando los apoyos de acceso que necesite.",
+        "rubrica:description:5": "Relaciona citas o datos y apoyos audiovisuales con las afirmaciones del artículo para aclarar el problema y sus soluciones, manteniendo el sentido de la información utilizada.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-problem-solution:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-ideas:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-explanation:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-evidence:3",
+        "rubrica:criterion-id:4": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-oral-communication:4",
+        "rubrica:criterion-id:5": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-procedure-supports:5",
+        "rubrica:descriptor:0:1": "No se identifica un problema ni una solución reconocible. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Se mencionan el problema y una solución sin explicar su relación.",
+        "rubrica:descriptor:0:3": "El problema y las soluciones guardan relación, aunque una relación causal necesita precisión.",
+        "rubrica:descriptor:0:4": "Explica el problema del artículo expositivo y relaciona con él las soluciones propuestas.",
+        "rubrica:descriptor:1:1": "No hay una idea principal reconocible ni apoyos pertinentes.",
+        "rubrica:descriptor:1:2": "Se identifican ideas aisladas sin distinguir la principal de sus apoyos.",
+        "rubrica:descriptor:1:3": "La idea principal se relaciona con apoyos pertinentes, aunque un párrafo pierde el hilo.",
+        "rubrica:descriptor:1:4": "Desarrolla la idea principal del artículo expositivo mediante párrafos con ideas secundarias pertinentes.",
+        "rubrica:descriptor:2:1": "No se aporta una explicación de las relaciones del problema.",
+        "rubrica:descriptor:2:2": "Se enumeran hechos sin explicar causas, efectos o finalidades.",
+        "rubrica:descriptor:2:3": "Las relaciones principales son correctas, aunque una transición entre causa y efecto es imprecisa.",
+        "rubrica:descriptor:2:4": "Explica las relaciones de causa, efecto y finalidad que sustentan el artículo expositivo.",
+        "rubrica:descriptor:3:1": "No se aportan datos o referencias para sustentar la explicación.",
+        "rubrica:descriptor:3:2": "Se aporta un dato sin explicar qué afirmación sustenta.",
+        "rubrica:descriptor:3:3": "La explicación tiene apoyos pertinentes, aunque una afirmación queda sin sustento.",
+        "rubrica:descriptor:3:4": "Apoya la explicación del artículo con información pertinente y distingue los datos de sus interpretaciones.",
+        "rubrica:descriptor:4:1": "No se aporta evidencia oral o mediante el apoyo de acceso acordado para esta actividad.",
+        "rubrica:descriptor:4:2": "Se comunican ideas aisladas y cuesta reconocer la relación entre ellas.",
+        "rubrica:descriptor:4:3": "Se comprenden las ideas principales, aunque una transición entre ellas necesita precisión.",
+        "rubrica:descriptor:4:4": "La secuencia y el vocabulario permiten comprender las ideas y sus relaciones.",
+        "rubrica:descriptor:5:1": "No relaciona los apoyos solicitados con afirmaciones del artículo.",
+        "rubrica:descriptor:5:2": "Incluye apoyos relacionados con el asunto sin explicar qué afirmaciones respaldan.",
+        "rubrica:descriptor:5:3": "Los apoyos corresponden al problema; queda implícita su relación con una afirmación.",
+        "rubrica:descriptor:5:4": "Los citas o datos y apoyos audiovisuales respaldan afirmaciones identificables y permiten comprender las relaciones del problema con sus soluciones.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[5,4,4,4,3,3]",
+        "rubrica:criterion-weight:0": "5",
+        "rubrica:criterion-weight:1": "4",
+        "rubrica:criterion-weight:2": "4",
+        "rubrica:criterion-weight:3": "4",
+        "rubrica:criterion-weight:4": "3",
+        "rubrica:criterion-weight:5": "3",
+        "rubrica:meta:criteriaCount": "6",
+        "rubrica:meta:catalogVersion": "evaluation-2026.24",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Organización problema-solución del artículo\",\"description\":\"Explica el problema del artículo expositivo y relaciona con él las soluciones propuestas.\",\"progression\":[\"Explica el problema del artículo expositivo y relaciona con él las soluciones propuestas.\",\"El problema y las soluciones guardan relación, aunque una relación causal necesita precisión.\",\"Se mencionan el problema y una solución sin explicar su relación.\",\"La solución corresponde a otro problema o se confunde con una causa.\",\"No se identifica un problema ni una solución reconocible.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Idea principal y párrafos de apoyo\",\"description\":\"Desarrolla la idea principal del artículo expositivo mediante párrafos con ideas secundarias pertinentes.\",\"progression\":[\"Desarrolla la idea principal del artículo expositivo mediante párrafos con ideas secundarias pertinentes.\",\"La idea principal se relaciona con apoyos pertinentes, aunque un párrafo pierde el hilo.\",\"Se identifican ideas aisladas sin distinguir la principal de sus apoyos.\",\"Se presenta un detalle secundario como idea principal y se excluye el problema central.\",\"No hay una idea principal reconocible ni apoyos pertinentes.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Explicación y relaciones causales\",\"description\":\"Explica las relaciones de causa, efecto y finalidad que sustentan el artículo expositivo.\",\"progression\":[\"Explica las relaciones de causa, efecto y finalidad que sustentan el artículo expositivo.\",\"Las relaciones principales son correctas, aunque una transición entre causa y efecto es imprecisa.\",\"Se enumeran hechos sin explicar causas, efectos o finalidades.\",\"Se invierte una relación causal o se presentan afirmaciones incompatibles.\",\"No se aporta una explicación de las relaciones del problema.\"]}",
+        "rubrica:criterion-evidence:3": "{\"title\":\"Información y evidencias del artículo\",\"description\":\"Apoya la explicación del artículo con información pertinente y distingue los datos de sus interpretaciones.\",\"progression\":[\"Apoya la explicación del artículo con información pertinente y distingue los datos de sus interpretaciones.\",\"La explicación tiene apoyos pertinentes, aunque una afirmación queda sin sustento.\",\"Se aporta un dato sin explicar qué afirmación sustenta.\",\"Se atribuye al texto un dato ausente o se presenta una opinión como evidencia.\",\"No se aportan datos o referencias para sustentar la explicación.\"]}",
+        "rubrica:criterion-evidence:4": "{\"title\":\"Comunicación oral del contenido\",\"description\":\"Comunica las ideas del texto con una secuencia comprensible y vocabulario pertinente, usando los apoyos de acceso que necesite.\",\"progression\":[\"La secuencia y el vocabulario permiten comprender las ideas y sus relaciones.\",\"Se comprenden las ideas principales, aunque una transición entre ellas necesita precisión.\",\"Se comunican ideas aisladas y cuesta reconocer la relación entre ellas.\",\"La secuencia o el vocabulario altera el sentido de las ideas del texto.\",\"No se aporta evidencia oral o mediante el apoyo de acceso acordado para esta actividad.\"]}",
+        "rubrica:criterion-evidence:5": "{\"title\":\"Apoyos de la explicación\",\"description\":\"Relaciona citas o datos y apoyos audiovisuales con las afirmaciones del artículo para aclarar el problema y sus soluciones, manteniendo el sentido de la información utilizada.\",\"progression\":[\"Los citas o datos y apoyos audiovisuales respaldan afirmaciones identificables y permiten comprender las relaciones del problema con sus soluciones.\",\"Los apoyos corresponden al problema; queda implícita su relación con una afirmación.\",\"Incluye apoyos relacionados con el asunto sin explicar qué afirmaciones respaldan.\",\"Atribuye al apoyo una afirmación que contradice la información representada.\",\"No relaciona los apoyos solicitados con afirmaciones del artículo.\"]}",
+        "rubrica:criterion-template:0": "len-2-articulo-expositivo-problem-solution",
+        "rubrica:criterion-template:1": "len-2-articulo-expositivo-ideas",
+        "rubrica:criterion-template:2": "len-2-articulo-expositivo-explanation",
+        "rubrica:criterion-template:3": "len-2-articulo-expositivo-evidence",
+        "rubrica:criterion-template:4": "len-2-articulo-expositivo-oral-communication",
+        "rubrica:criterion-template:5": "len-2-articulo-expositivo-procedure-supports",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "2baa64fd-970c-4fe2-833b-8025b6ec1640",
+      "name": "QA Lengua 2 · Referentes · cotejo 24",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Analizarán únicamente los pronombres demostrativos de un artículo expositivo. Se comprobará la presencia o ausencia de sus identificaciones y apoyos.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "1786bc93-bd2b-421f-bcf3-550b418944e0",
+      "instrumentSnapshotId": "5dbd6483-a60b-4c5a-9db6-10baa548a034",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-feature-demonstratives:0",
+            "title": "Identifica los pronombres demostrativos en el texto de artículo expositivo y explica, con ejemplos presentes, su función para retomar referentes identificables y mantener la continuidad de la explicación. Ajuste manual del docente.",
+            "maxScore": 17.35,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-2-articulo-expositivo-feature-demonstratives",
+            "description": "Identifica los pronombres demostrativos en el texto de artículo expositivo y explica, con ejemplos presentes, su función para retomar referentes identificables y mantener la continuidad de la explicación.",
+            "descriptors": [
+              {
+                "text": "Identifica los pronombres demostrativos en el texto de artículo expositivo y explica, con ejemplos presentes, su función para retomar referentes identificables y mantener la continuidad de la explicación.",
+                "levelId": "L2",
+                "scoreUnits": 1735
+              },
+              {
+                "text": "Identifica los pronombres demostrativos en el texto de artículo expositivo y explica, con ejemplos presentes, su función para retomar referentes identificables y mantener la continuidad de la explicación.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1735,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "ranking": [
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "43bd33e7-dd09-5751-89f6-c64b57efc167",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7ab07042-3830-54dd-ae40-af8f504130dc",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9a3f5c34-b341-5f32-89fa-e6b683aa060a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ce49be32-15d8-5da8-856f-792c90e7b953",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "08b968f6-dc72-5d0d-b668-d83c8d84627e",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "695cff1a-cebb-5799-8738-a3b92bc8a507",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "b01d53b0-a900-50ea-82c0-0223ab0cfa35",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0302502b-2737-5094-ab0e-aa80fdc87d36",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c85ee8a1-0808-5ead-a962-3d5a06d933d3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "b45bd0dd-d8ba-5c04-875e-60757078923f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3e738e39-751a-5e4d-adb9-8d26ee79fea0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0b96cdbd-e43a-580d-af3f-3dba0e626ca7",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "57cdb974-b3ef-534c-94ff-1df2a99220b0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7f200b27-a463-500b-8781-22bbc820f1ed",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f94c7914-3238-5f5b-89c6-aac6210495e8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f98375af-3836-5a83-a867-17fda9492f87",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-2-articulo-expositivo",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.24",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ANALYSIS",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA Lengua 2 · Referentes · cotejo 24",
+        "lista-cotejo:points:0": "17.35",
+        "lista-cotejo:criterion:0": "Identifica los pronombres demostrativos en el texto de artículo expositivo y explica, con ejemplos presentes, su función para retomar referentes identificables y mantener la continuidad de la explicación. Ajuste manual del docente.",
+        "lista-cotejo:description:0": "Identifica los pronombres demostrativos en el texto de artículo expositivo y explica, con ejemplos presentes, su función para retomar referentes identificables y mantener la continuidad de la explicación.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-articulo-expositivo-feature-demonstratives:0",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[3]",
+        "lista-cotejo:criterion-weight:0": "3",
+        "lista-cotejo:meta:criteriaCount": "1",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.24",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica los pronombres demostrativos en el texto de artículo expositivo y explica, con ejemplos presentes, su función para retomar referentes identificables y mantener la continuidad de la explicación.\",\"description\":\"Identifica los pronombres demostrativos en el texto de artículo expositivo y explica, con ejemplos presentes, su función para retomar referentes identificables y mantener la continuidad de la explicación.\",\"progression\":[\"Identifica los pronombres demostrativos en el texto de artículo expositivo y explica, con ejemplos presentes, su función para retomar referentes identificables y mantener la continuidad de la explicación.\",\"Localiza y caracteriza los pronombres demostrativos con ejemplos del texto; deja sin explicar una relación con su función.\",\"Señala ejemplos de los pronombres demostrativos, pero no explica cómo contribuyen a retomar referentes identificables y mantener la continuidad de la explicación.\",\"La explicación se apoya en una identificación incorrecta: se atribuye al demostrativo un referente distinto del que retoma en el pasaje.\",\"No localiza ejemplos pertinentes ni explica la función de los pronombres demostrativos en el texto disponible.\"]}",
+        "lista-cotejo:criterion-template:0": "len-2-articulo-expositivo-feature-demonstratives"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "af65cd06-7cf2-4096-824c-9ccf98c67c4d",
+      "name": "QA Lengua 2 · Declamación · escala 24",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 15,
+      "description": "<p>Recitarán una décima espinela enfatizando las interjecciones y exclamaciones del poema. Se registrará la regularidad de los recursos expresivos en sus intervenciones.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "3b3e5f1f-8a3c-4046-b53a-3f64cdfc0e1e",
+      "instrumentSnapshotId": "ff9fa159-7c66-4712-848a-37dadef71b20",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-decima-espinela-recitation-sequence:0",
+            "title": "Recita la décima conservando la secuencia y el sentido de los versos del texto elegido, con los apoyos acordados.",
+            "maxScore": 4.29,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-2-decima-espinela-recitation-sequence",
+            "description": "Recita la décima conservando la secuencia y el sentido de los versos del texto elegido, con los apoyos acordados.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 429
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 286
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 143
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 429,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-decima-espinela-recitation-rhythm:1",
+            "title": "Usa el ritmo y las pausas de la recitación para que se perciban los versos y sus relaciones.",
+            "maxScore": 4.29,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-2-decima-espinela-recitation-rhythm",
+            "description": "Usa el ritmo y las pausas de la recitación para que se perciban los versos y sus relaciones.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 429
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 286
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 143
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 429,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-decima-espinela-feature-literary:2",
+            "title": "Hace perceptible los recursos literarios presentes en la recitación mediante pausas o énfasis vinculados con su función para expresar sentidos figurados y relacionar imágenes o contrastes con el sentido del pasaje.",
+            "maxScore": 3.21,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-2-decima-espinela-feature-literary",
+            "description": "Hace perceptible los recursos literarios presentes en la recitación mediante pausas o énfasis vinculados con su función para expresar sentidos figurados y relacionar imágenes o contrastes con el sentido del pasaje.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 321
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 214
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 107
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 321,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-decima-espinela-feature-interjections:3",
+            "title": "Hace perceptible las interjecciones y las exclamaciones en la recitación mediante pausas o énfasis vinculados con su función para hacer reconocible la emoción o énfasis que expresan los versos.",
+            "maxScore": 3.21,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-2-decima-espinela-feature-interjections",
+            "description": "Hace perceptible las interjecciones y las exclamaciones en la recitación mediante pausas o énfasis vinculados con su función para hacer reconocible la emoción o énfasis que expresan los versos.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 321
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 214
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 107
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 321,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 15,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 61,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "7775997a-1cd5-50f4-8c05-b3962e686240",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 61,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "b7a8aadb-a86d-5c1c-83d3-6e05d84d19e3",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cc4299ab-9077-58ab-9c45-cf997a2abd0d",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c517b837-01e5-53db-83fe-d7f74d451ce9",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "0d428c07-8066-521c-9079-9bfbeafd4d06",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9b706154-da02-5d8d-b641-7c7b6e9e8b4d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4122a1e7-9404-5b78-92cf-eaf89124a6a8",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-2-decima-espinela",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.24",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1500,
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA Lengua 2 · Declamación · escala 24",
+        "escala:points:0": "4.29",
+        "escala:points:1": "4.29",
+        "escala:points:2": "3.21",
+        "escala:points:3": "3.21",
+        "escala:criterion:0": "Recita la décima conservando la secuencia y el sentido de los versos del texto elegido, con los apoyos acordados.",
+        "escala:criterion:1": "Usa el ritmo y las pausas de la recitación para que se perciban los versos y sus relaciones.",
+        "escala:criterion:2": "Hace perceptible los recursos literarios presentes en la recitación mediante pausas o énfasis vinculados con su función para expresar sentidos figurados y relacionar imágenes o contrastes con el sentido del pasaje.",
+        "escala:criterion:3": "Hace perceptible las interjecciones y las exclamaciones en la recitación mediante pausas o énfasis vinculados con su función para hacer reconocible la emoción o énfasis que expresan los versos.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Recita la décima conservando la secuencia y el sentido de los versos del texto elegido, con los apoyos acordados.",
+        "escala:description:1": "Usa el ritmo y las pausas de la recitación para que se perciban los versos y sus relaciones.",
+        "escala:description:2": "Hace perceptible los recursos literarios presentes en la recitación mediante pausas o énfasis vinculados con su función para expresar sentidos figurados y relacionar imágenes o contrastes con el sentido del pasaje.",
+        "escala:description:3": "Hace perceptible las interjecciones y las exclamaciones en la recitación mediante pausas o énfasis vinculados con su función para hacer reconocible la emoción o énfasis que expresan los versos.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-decima-espinela-recitation-sequence:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-decima-espinela-recitation-rhythm:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-decima-espinela-feature-literary:2",
+        "escala:criterion-id:3": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-decima-espinela-feature-interjections:3",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:1:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:1:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:1:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:1:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:2:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:2:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:2:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:2:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:3:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:3:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:3:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:3:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[4,4,3,3]",
+        "escala:criterion-weight:0": "4",
+        "escala:criterion-weight:1": "4",
+        "escala:criterion-weight:2": "3",
+        "escala:criterion-weight:3": "3",
+        "escala:meta:criteriaCount": "4",
+        "escala:meta:catalogVersion": "evaluation-2026.24",
+        "escala:criterion-evidence:0": "{\"title\":\"Recita la décima conservando la secuencia y el sentido de los versos del texto elegido, con los apoyos acordados.\",\"description\":\"Recita la décima conservando la secuencia y el sentido de los versos del texto elegido, con los apoyos acordados.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Usa el ritmo y las pausas de la recitación para que se perciban los versos y sus relaciones.\",\"description\":\"Usa el ritmo y las pausas de la recitación para que se perciban los versos y sus relaciones.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:2": "{\"title\":\"Hace perceptible los recursos literarios presentes en la recitación mediante pausas o énfasis vinculados con su función para expresar sentidos figurados y relacionar imágenes o contrastes con el sentido del pasaje.\",\"description\":\"Hace perceptible los recursos literarios presentes en la recitación mediante pausas o énfasis vinculados con su función para expresar sentidos figurados y relacionar imágenes o contrastes con el sentido del pasaje.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:3": "{\"title\":\"Hace perceptible las interjecciones y las exclamaciones en la recitación mediante pausas o énfasis vinculados con su función para hacer reconocible la emoción o énfasis que expresan los versos.\",\"description\":\"Hace perceptible las interjecciones y las exclamaciones en la recitación mediante pausas o énfasis vinculados con su función para hacer reconocible la emoción o énfasis que expresan los versos.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "len-2-decima-espinela-recitation-sequence",
+        "escala:criterion-template:1": "len-2-decima-espinela-recitation-rhythm",
+        "escala:criterion-template:2": "len-2-decima-espinela-feature-literary",
+        "escala:criterion-template:3": "len-2-decima-espinela-feature-interjections",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "fb44a01e-1aa6-44b7-aed2-539df478f7be",
+      "name": "QA Lengua 2 · Noticia · ponderada 24",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Analizarán una noticia identificando sus hechos, interrogantes fundamentales y estructura. Se distribuirán pesos entre los componentes verificables.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "383b0a1f-e5eb-4b60-8174-fdb9498fda31",
+      "instrumentSnapshotId": "4f6ea3f1-afc0-4cc9-ac6c-e48fbe4f4949",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-purpose:0",
+            "title": "Intención comunicativa de la noticia",
+            "maxScore": 3.47,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "news-analysis-purpose",
+            "description": "Explica el propósito informativo y el hecho central de la noticia. Parcial (50%): Menciona el tema sin distinguir el hecho del propósito. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Explica el propósito informativo y el hecho central de la noticia. Parcial (50%): Menciona el tema sin distinguir el hecho del propósito. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Explica el propósito informativo y el hecho central de la noticia. Parcial (50%): Menciona el tema sin distinguir el hecho del propósito. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Explica el propósito informativo y el hecho central de la noticia. Parcial (50%): Menciona el tema sin distinguir el hecho del propósito. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-questions:1",
+            "title": "Interrogantes fundamentales",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "news-analysis-questions",
+            "description": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo, según el texto. Parcial (50%): Identifica algunas respuestas, pero confunde datos importantes.",
+            "descriptors": [
+              {
+                "text": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo, según el texto. Parcial (50%): Identifica algunas respuestas, pero confunde datos importantes.",
+                "levelId": "L3",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo, según el texto. Parcial (50%): Identifica algunas respuestas, pero confunde datos importantes.",
+                "levelId": "L2",
+                "scoreUnits": 217
+              },
+              {
+                "text": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo, según el texto. Parcial (50%): Identifica algunas respuestas, pero confunde datos importantes.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-structure:2",
+            "title": "Estructura y marcas del texto",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "news-analysis-structure",
+            "description": "Identifica titular, entrada y cuerpo, y usa las marcas paratextuales presentes para anticipar el contenido. Parcial (50%): Confunde las partes o interpreta las marcas sin apoyo textual.",
+            "descriptors": [
+              {
+                "text": "Identifica titular, entrada y cuerpo, y usa las marcas paratextuales presentes para anticipar el contenido. Parcial (50%): Confunde las partes o interpreta las marcas sin apoyo textual.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Identifica titular, entrada y cuerpo, y usa las marcas paratextuales presentes para anticipar el contenido. Parcial (50%): Confunde las partes o interpreta las marcas sin apoyo textual.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Identifica titular, entrada y cuerpo, y usa las marcas paratextuales presentes para anticipar el contenido. Parcial (50%): Confunde las partes o interpreta las marcas sin apoyo textual.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-interpretation:3",
+            "title": "Interpretación de la información",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "news-analysis-interpretation",
+            "description": "Explica la información principal e infiere significados a partir del contexto. Parcial (50%): Repite datos aislados sin reconstruir el sentido del texto.",
+            "descriptors": [
+              {
+                "text": "Explica la información principal e infiere significados a partir del contexto. Parcial (50%): Repite datos aislados sin reconstruir el sentido del texto.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Explica la información principal e infiere significados a partir del contexto. Parcial (50%): Repite datos aislados sin reconstruir el sentido del texto.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Explica la información principal e infiere significados a partir del contexto. Parcial (50%): Repite datos aislados sin reconstruir el sentido del texto.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-evidence:4",
+            "title": "Evidencias de la noticia",
+            "maxScore": 2.6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "news-analysis-evidence",
+            "description": "Justifica sus respuestas con datos o fragmentos pertinentes del texto. Parcial (50%): Cita un dato sin relacionarlo claramente con su respuesta.",
+            "descriptors": [
+              {
+                "text": "Justifica sus respuestas con datos o fragmentos pertinentes del texto. Parcial (50%): Cita un dato sin relacionarlo claramente con su respuesta.",
+                "levelId": "L3",
+                "scoreUnits": 260
+              },
+              {
+                "text": "Justifica sus respuestas con datos o fragmentos pertinentes del texto. Parcial (50%): Cita un dato sin relacionarlo claramente con su respuesta.",
+                "levelId": "L2",
+                "scoreUnits": 130
+              },
+              {
+                "text": "Justifica sus respuestas con datos o fragmentos pertinentes del texto. Parcial (50%): Cita un dato sin relacionarlo claramente con su respuesta.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 62,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "20da41b0-1550-50b0-98d6-638ad7afa45f",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "726a3500-49d4-55d0-b95d-08dbefa4f5e5",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "94ad93d7-4744-5b51-bad2-5de8a0de6c29",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "5b370889-14d1-5a15-9f3d-50c37639d540",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "466f63fb-e058-5efc-a233-44d4fcaac2b1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "533b6309-5644-50dc-969a-e5048357ca5f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b12efb13-784f-5c24-8f2a-ade7b9b1026d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c9c23ba3-8b38-5ddf-ad67-bf3350b126f0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "4122a1e7-9404-5b78-92cf-eaf89124a6a8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "9a3f5c34-b341-5f32-89fa-e6b683aa060a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "b45bd0dd-d8ba-5c04-875e-60757078923f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "cc923913-1534-5a1f-adcd-6b9da2605f47",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0d428c07-8066-521c-9079-9bfbeafd4d06",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3e738e39-751a-5e4d-adb9-8d26ee79fea0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "43bd33e7-dd09-5751-89f6-c64b57efc167",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "65c41f19-8071-5d64-be9b-b4d81bddbf93",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7775997a-1cd5-50f4-8c05-b3962e686240",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7ab07042-3830-54dd-ae40-af8f504130dc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9b706154-da02-5d8d-b641-7c7b6e9e8b4d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-2-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.24",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "NEWS_ANALYSIS",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA Lengua 2 · Noticia · ponderada 24",
+        "lista-ponderada:points:0": "3.47",
+        "lista-ponderada:points:1": "4.34",
+        "lista-ponderada:points:2": "3.47",
+        "lista-ponderada:points:3": "3.47",
+        "lista-ponderada:points:4": "2.6",
+        "lista-ponderada:weight:0": "20",
+        "lista-ponderada:weight:1": "25",
+        "lista-ponderada:weight:2": "20",
+        "lista-ponderada:weight:3": "20",
+        "lista-ponderada:weight:4": "15",
+        "lista-ponderada:criterion:0": "Intención comunicativa de la noticia",
+        "lista-ponderada:criterion:1": "Interrogantes fundamentales",
+        "lista-ponderada:criterion:2": "Estructura y marcas del texto",
+        "lista-ponderada:criterion:3": "Interpretación de la información",
+        "lista-ponderada:criterion:4": "Evidencias de la noticia",
+        "lista-ponderada:indicator:0": "Explica el propósito informativo y el hecho central de la noticia. Parcial (50%): Menciona el tema sin distinguir el hecho del propósito. Ajuste manual del docente.",
+        "lista-ponderada:indicator:1": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo, según el texto. Parcial (50%): Identifica algunas respuestas, pero confunde datos importantes.",
+        "lista-ponderada:indicator:2": "Identifica titular, entrada y cuerpo, y usa las marcas paratextuales presentes para anticipar el contenido. Parcial (50%): Confunde las partes o interpreta las marcas sin apoyo textual.",
+        "lista-ponderada:indicator:3": "Explica la información principal e infiere significados a partir del contexto. Parcial (50%): Repite datos aislados sin reconstruir el sentido del texto.",
+        "lista-ponderada:indicator:4": "Justifica sus respuestas con datos o fragmentos pertinentes del texto. Parcial (50%): Cita un dato sin relacionarlo claramente con su respuesta.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Explica el propósito informativo y el hecho central de la noticia. Parcial (50%): Menciona el tema sin distinguir el hecho del propósito.",
+        "lista-ponderada:description:1": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo, según el texto. Parcial (50%): Identifica algunas respuestas, pero confunde datos importantes.",
+        "lista-ponderada:description:2": "Identifica titular, entrada y cuerpo, y usa las marcas paratextuales presentes para anticipar el contenido. Parcial (50%): Confunde las partes o interpreta las marcas sin apoyo textual.",
+        "lista-ponderada:description:3": "Explica la información principal e infiere significados a partir del contexto. Parcial (50%): Repite datos aislados sin reconstruir el sentido del texto.",
+        "lista-ponderada:description:4": "Justifica sus respuestas con datos o fragmentos pertinentes del texto. Parcial (50%): Cita un dato sin relacionarlo claramente con su respuesta.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-purpose:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-questions:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-structure:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-interpretation:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.24:30cb5974-6192-5f2e-8bd5-d98c091b1858:news-analysis-evidence:4",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[4,5,4,4,3]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "5",
+        "lista-ponderada:criterion-weight:2": "4",
+        "lista-ponderada:criterion-weight:3": "4",
+        "lista-ponderada:criterion-weight:4": "3",
+        "lista-ponderada:meta:criteriaCount": "5",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.24",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Intención comunicativa de la noticia\",\"description\":\"Explica el propósito informativo y el hecho central de la noticia. Parcial (50%): Menciona el tema sin distinguir el hecho del propósito.\",\"progression\":[\"Explica el propósito informativo y el hecho central de la noticia.\",\"Explica el propósito y el hecho, aunque deja un detalle sin precisar.\",\"Menciona el tema sin distinguir el hecho del propósito.\",\"Se confunde el propósito informativo con una intención que no corresponde al texto.\",\"No reconoce el propósito informativo de la noticia.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Interrogantes fundamentales\",\"description\":\"Localiza qué ocurrió, a quién, dónde, cuándo y cómo, según el texto. Parcial (50%): Identifica algunas respuestas, pero confunde datos importantes.\",\"progression\":[\"Localiza qué ocurrió, a quién, dónde, cuándo y cómo, según el texto.\",\"Localiza la mayoría de las respuestas en el texto.\",\"Identifica algunas respuestas, pero confunde datos importantes.\",\"Las respuestas atribuyen al hecho participantes, lugar o momento distintos de los informados.\",\"No localiza las respuestas fundamentales.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Estructura y marcas del texto\",\"description\":\"Identifica titular, entrada y cuerpo, y usa las marcas paratextuales presentes para anticipar el contenido. Parcial (50%): Confunde las partes o interpreta las marcas sin apoyo textual.\",\"progression\":[\"Identifica titular, entrada y cuerpo, y usa las marcas paratextuales presentes para anticipar el contenido.\",\"Reconoce las partes principales, aunque aprovecha poco las marcas presentes.\",\"Confunde las partes o interpreta las marcas sin apoyo textual.\",\"Se interpreta una marca paratextual como un hecho confirmado aunque el cuerpo no lo sostiene.\",\"No reconoce la estructura de la noticia.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Interpretación de la información\",\"description\":\"Explica la información principal e infiere significados a partir del contexto. Parcial (50%): Repite datos aislados sin reconstruir el sentido del texto.\",\"progression\":[\"Explica la información principal e infiere significados a partir del contexto.\",\"Explica la idea principal con una inferencia parcialmente sustentada.\",\"Repite datos aislados sin reconstruir el sentido del texto.\",\"La interpretación o el significado inferido contradice la información del texto.\",\"No explica la información central de la noticia.\"]}",
+        "lista-ponderada:criterion-evidence:4": "{\"title\":\"Evidencias de la noticia\",\"description\":\"Justifica sus respuestas con datos o fragmentos pertinentes del texto. Parcial (50%): Cita un dato sin relacionarlo claramente con su respuesta.\",\"progression\":[\"Justifica sus respuestas con datos o fragmentos pertinentes del texto.\",\"Apoya la mayor parte de sus respuestas con el texto.\",\"Cita un dato sin relacionarlo claramente con su respuesta.\",\"El dato señalado contradice la respuesta que se pretende justificar.\",\"No sustenta sus respuestas en la noticia.\"]}",
+        "lista-ponderada:criterion-template:0": "news-analysis-purpose",
+        "lista-ponderada:criterion-template:1": "news-analysis-questions",
+        "lista-ponderada:criterion-template:2": "news-analysis-structure",
+        "lista-ponderada:criterion-template:3": "news-analysis-interpretation",
+        "lista-ponderada:criterion-template:4": "news-analysis-evidence"
+      },
+      "evaluationTechnique": "observacion-sistematica",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

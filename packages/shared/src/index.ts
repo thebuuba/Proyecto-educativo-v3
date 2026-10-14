@@ -11,7 +11,9 @@ export * from './instrument-definition'
 export * from './secondary-language-topics'
 export * from './secondary-topic-criteria'
 export * from './secondary-topic-recommendation'
-export * from './secondary-news-grade-two'
+export {secondGradeNewsModule} from './secondary-news-grade-two'
+export {completeSecondGradeNewsCriteria as secondGradeNewsCriteria} from './secondary-language-grade-two-complete'
+export {secondGradeLanguageFeatures} from './secondary-language-grade-two-features'
 export * from './secondary-science'
 import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask } from './secondary-language-topics'
 import {resolveEvaluationTask} from './evaluation-task-contract'
@@ -56,7 +58,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
       if (/\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
       if (/\b(?:debat\w*|debates?)\b/.test(value)) return 'DEBATE'
     }
-    const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|revis(?:ar|aran|a|en)|correg\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon\w*)\b/.test(value)
+    const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|revis(?:ar|aran|a|en)|correg\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon(?:er|dr\w*|en|e|gan|iendo))\b/.test(value)
     const comparing = /\b(?:compar(?:ar\w*|an|a|en|ando)|contrast\w*|comparacion entre)\b/.test(value)
     const oralAction = contract.oral || /\bexposicion\b/.test(value)
     const presenting = oralAction

@@ -2020,11 +2020,16 @@
       ],
       "inventoryStatus": "INVENTARIADO",
       "extractionStatus": "EXTRAÍDO",
-      "engineConnection": "PENDING",
-      "instrumentFormats": [],
-      "serviceVerification": "NOT_RUN",
-      "interfaceVerification": "NOT_RUN",
-      "pending": "Revisar temas y cobertura evaluativa del ámbito.",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "pending": "Completar requisitos finos de procedimientos: registro/soporte y destinatario; operaciones de omisión, selección, generalización y reconstrucción del resumen; vocabulario temático y recursos no verbales; clasificación de personajes y conectores subordinantes. Contrastar familias complementarias y requisitos compuestos antes de cerrar 2.º; después continuar 3.º–6.º.",
       "elements": {
         "CONCEPT": [
           {
@@ -3133,9 +3138,9 @@
             "escala",
             "lista-ponderada"
           ],
-          "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal.",
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Completar requisitos finos de procedimientos: registro/soporte y destinatario; operaciones de omisión, selección, generalización y reconstrucción del resumen; vocabulario temático y recursos no verbales; clasificación de personajes y conectores subordinantes. Contrastar familias complementarias y requisitos compuestos antes de cerrar 2.º; después continuar 3.º–6.º.",
           "procedures": [
             {
               "id": "726a3500-49d4-55d0-b95d-08dbefa4f5e5",
@@ -3161,12 +3166,12 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "PARTIAL_NEWS_CORE_SIX_ACTIVITY_FAMILIES",
+          "implementation": "PARTIAL_CONTEXTUAL_SUBTOPICS_AND_PROCEDURES",
           "automatedVerification": "PASSED",
-          "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED_SOURCE_ANOMALY",
-          "applicationVerification": "LOCAL_HTTP_PASSED",
-          "report": "noticia-2-compartida.md",
-          "catalogVersion": "evaluation-2026.9"
+          "manualVerification": "SOURCE_TABLES_VISUALLY_REVIEWED_PENDING_FINE_REQUIREMENTS",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-2-acciones-y-procedimientos.md",
+          "catalogVersion": "evaluation-2026.24"
         },
         {
           "id": "a5536c76-af76-53df-aa37-181e67ef25a0",
@@ -3266,9 +3271,9 @@
             "escala",
             "lista-ponderada"
           ],
-          "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal.",
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Completar requisitos finos de procedimientos: registro/soporte y destinatario; operaciones de omisión, selección, generalización y reconstrucción del resumen; vocabulario temático y recursos no verbales; clasificación de personajes y conectores subordinantes. Contrastar familias complementarias y requisitos compuestos antes de cerrar 2.º; después continuar 3.º–6.º.",
           "procedures": [
             {
               "id": "53983111-93a5-5e64-8deb-b8cb02c53b46",
@@ -3301,12 +3306,12 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
+          "implementation": "PARTIAL_CONTEXTUAL_SUBTOPICS_AND_PROCEDURES",
           "automatedVerification": "PASSED",
-          "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
-          "applicationVerification": "LOCAL_HTTP_PASSED",
-          "report": "lengua-2-primer-bloque.md",
-          "catalogVersion": "evaluation-2026.8"
+          "manualVerification": "SOURCE_TABLES_VISUALLY_REVIEWED_PENDING_FINE_REQUIREMENTS",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-2-acciones-y-procedimientos.md",
+          "catalogVersion": "evaluation-2026.24"
         },
         {
           "id": "08b968f6-dc72-5d0d-b668-d83c8d84627e",
@@ -3406,9 +3411,9 @@
             "escala",
             "lista-ponderada"
           ],
-          "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal.",
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Completar requisitos finos de procedimientos: registro/soporte y destinatario; operaciones de omisión, selección, generalización y reconstrucción del resumen; vocabulario temático y recursos no verbales; clasificación de personajes y conectores subordinantes. Contrastar familias complementarias y requisitos compuestos antes de cerrar 2.º; después continuar 3.º–6.º.",
           "procedures": [
             {
               "id": "43bd33e7-dd09-5751-89f6-c64b57efc167",
@@ -3448,12 +3453,12 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
+          "implementation": "PARTIAL_CONTEXTUAL_SUBTOPICS_AND_PROCEDURES",
           "automatedVerification": "PASSED",
-          "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
-          "applicationVerification": "LOCAL_HTTP_PASSED",
-          "report": "lengua-2-primer-bloque.md",
-          "catalogVersion": "evaluation-2026.8"
+          "manualVerification": "SOURCE_TABLES_VISUALLY_REVIEWED_PENDING_FINE_REQUIREMENTS",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-2-acciones-y-procedimientos.md",
+          "catalogVersion": "evaluation-2026.24"
         },
         {
           "id": "d27d17ed-ccf8-5f69-b79c-1736652f6993",
@@ -3525,9 +3530,9 @@
             "escala",
             "lista-ponderada"
           ],
-          "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal.",
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Completar requisitos finos de procedimientos: registro/soporte y destinatario; operaciones de omisión, selección, generalización y reconstrucción del resumen; vocabulario temático y recursos no verbales; clasificación de personajes y conectores subordinantes. Contrastar familias complementarias y requisitos compuestos antes de cerrar 2.º; después continuar 3.º–6.º.",
           "procedures": [
             {
               "id": "65c41f19-8071-5d64-be9b-b4d81bddbf93",
@@ -3560,12 +3565,12 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
+          "implementation": "PARTIAL_CONTEXTUAL_SUBTOPICS_AND_PROCEDURES",
           "automatedVerification": "PASSED",
-          "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
-          "applicationVerification": "LOCAL_HTTP_PASSED",
-          "report": "lengua-2-primer-bloque.md",
-          "catalogVersion": "evaluation-2026.8"
+          "manualVerification": "SOURCE_TABLES_VISUALLY_REVIEWED_PENDING_FINE_REQUIREMENTS",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-2-acciones-y-procedimientos.md",
+          "catalogVersion": "evaluation-2026.24"
         },
         {
           "id": "e3f89621-f01a-5ecb-a995-ae3cd6f9c09b",
@@ -3651,9 +3656,9 @@
             "escala",
             "lista-ponderada"
           ],
-          "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal.",
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Completar requisitos finos de procedimientos: registro/soporte y destinatario; operaciones de omisión, selección, generalización y reconstrucción del resumen; vocabulario temático y recursos no verbales; clasificación de personajes y conectores subordinantes. Contrastar familias complementarias y requisitos compuestos antes de cerrar 2.º; después continuar 3.º–6.º.",
           "procedures": [
             {
               "id": "e3438f11-3c56-5a9f-bca1-917d509f7bd0",
@@ -3686,12 +3691,12 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
+          "implementation": "PARTIAL_CONTEXTUAL_SUBTOPICS_AND_PROCEDURES",
           "automatedVerification": "PASSED",
-          "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
-          "applicationVerification": "LOCAL_HTTP_PASSED",
-          "report": "lengua-2-primer-bloque.md",
-          "catalogVersion": "evaluation-2026.8"
+          "manualVerification": "SOURCE_TABLES_VISUALLY_REVIEWED_PENDING_FINE_REQUIREMENTS",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-2-acciones-y-procedimientos.md",
+          "catalogVersion": "evaluation-2026.24"
         },
         {
           "id": "c517b837-01e5-53db-83fe-d7f74d451ce9",
@@ -3742,9 +3747,9 @@
             "escala",
             "lista-ponderada"
           ],
-          "serviceVerification": "ISOLATED_LOCAL_HTTP_PASSED",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Reauditar acciones y subtemas; comprobar los cuatro formatos con login y persistencia en el entorno normal.",
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Completar requisitos finos de procedimientos: registro/soporte y destinatario; operaciones de omisión, selección, generalización y reconstrucción del resumen; vocabulario temático y recursos no verbales; clasificación de personajes y conectores subordinantes. Contrastar familias complementarias y requisitos compuestos antes de cerrar 2.º; después continuar 3.º–6.º.",
           "procedures": [
             {
               "id": "7775997a-1cd5-50f4-8c05-b3962e686240",
@@ -3777,19 +3782,21 @@
           ],
           "procedureAssociation": "VISUALLY_REVIEWED",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "PARTIAL_CONTEXTUAL_CORE_PENDING_REAUDIT",
+          "implementation": "PARTIAL_CONTEXTUAL_SUBTOPICS_AND_PROCEDURES",
           "automatedVerification": "PASSED",
-          "manualVerification": "PEDAGOGICAL_EXAMPLES_REVIEWED",
-          "applicationVerification": "LOCAL_HTTP_PASSED",
-          "report": "lengua-2-primer-bloque.md",
-          "catalogVersion": "evaluation-2026.8"
+          "manualVerification": "SOURCE_TABLES_VISUALLY_REVIEWED_PENDING_FINE_REQUIREMENTS",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-2-acciones-y-procedimientos.md",
+          "catalogVersion": "evaluation-2026.24"
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PENDING",
-      "automatedVerification": "NOT_RUN",
-      "manualVerification": "NOT_RUN",
-      "applicationVerification": "NOT_RUN"
+      "implementation": "PARTIAL_CONTEXTUAL_SUBTOPICS_AND_PROCEDURES",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_TABLES_VISUALLY_REVIEWED_PENDING_FINE_REQUIREMENTS",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "report": "lengua-2-acciones-y-procedimientos.md",
+      "catalogVersion": "evaluation-2026.24"
     },
     {
       "id": "39d21319-20c5-54de-90f4-0aebdc7338c4",

@@ -1,5 +1,6 @@
 import { normalizedTask, topicTaskMode } from './secondary-language-topics'
 import type { SecondaryLanguageTopic } from './secondary-topic-types'
+import {completeSecondGradeLanguageCriteria} from './secondary-language-grade-two-complete'
 
 export type ContextualTopicCriterion = {
   templateId: string; title: string; observable: string; weight: number
@@ -15,10 +16,11 @@ const focusPatterns: Record<string, Record<string, string>> = {
   'decima-espinela': { theme: 'tema|sentido|mensaje', verse: 'octosilab|computo|versos', rhyme: 'rima|ritmo', expression: 'figuras|recursos expresivos|recursos literarios' },
 }
 
-export function secondaryTopicCriteria(topic: SecondaryLanguageTopic, activityType: string, description: string): ContextualTopicCriterion[] {
+function baseSecondaryTopicCriteria(topic: SecondaryLanguageTopic, activityType: string, description: string): ContextualTopicCriterion[] {
   const mode = topicTaskMode(activityType)
-  const producing = mode === 'PRODUCTION' || (mode === 'REPORT' && topic.id === 'informe-de-lectura')
   const task = normalizedTask(description)
+  const producing = mode === 'PRODUCTION' || (mode === 'REPORT' && topic.id === 'informe-de-lectura')
+    || mode==='ORAL'&&(/\b(?:produc|elabor|cre|compon)\w*/.test(task)||topic.id==='informe-de-lectura'&&/expon|exposicion/.test(task))
   if (mode === 'ORAL' && topic.id === 'cuento-amor-amistad' && /\bnarr\w*\s+oralmente\b/.test(task)) {
     return [
       {
@@ -94,7 +96,8 @@ export function secondaryTopicCriteria(topic: SecondaryLanguageTopic, activityTy
     ]
   }
   const relevant = topic.dimensions
-    .filter(dimension => !dimension.requestedOnly || new RegExp(dimension.requestedOnly).test(task))
+    .filter(dimension => !dimension.requestedOnly || new RegExp(dimension.requestedOnly).test(task)
+      || topic.id==='guia-turistica'&&dimension.id==='graphics'&&/informacion grafica|mapas?|fotografias?|imagenes?|graficos?/.test(task))
   const focused = !producing && (mode === 'ANALYSIS' || mode === 'COMPARISON')
     ? relevant.filter(dimension => {
       const pattern = focusPatterns[topic.id]?.[dimension.id]
@@ -140,4 +143,9 @@ export function secondaryTopicCriteria(topic: SecondaryLanguageTopic, activityTy
     ],
   })
   return criteria
+}
+
+export function secondaryTopicCriteria(topic:SecondaryLanguageTopic,activity:string,description:string):ContextualTopicCriterion[] {
+  const base=baseSecondaryTopicCriteria(topic,activity,description)
+  return topic.grade===2?completeSecondGradeLanguageCriteria(topic.id,activity,description,base):base
 }

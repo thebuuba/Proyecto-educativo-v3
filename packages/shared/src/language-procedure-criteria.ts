@@ -42,8 +42,8 @@ const outline:Record<string,string>={
   caligrama:'la distribución de los versos y su relación con la figura',
 }
 
-export function languageReadingProcedures(description:string,scope:string,genre:string):ContextualTopicCriterion[] {
-  const task=affirmativeLanguageTask(description), target=content[genre], rows:ContextualTopicCriterion[]=[]
+export function languageReadingProcedures(description:string,scope:string,genre:string,target=content[genre]):ContextualTopicCriterion[] {
+  const task=affirmativeLanguageTask(description), rows:ContextualTopicCriterion[]=[]
   if(genre==='guía turística'&&/reconstru/.test(task)&&/grafic|tecnologic/.test(task)) rows.push({
     templateId:'guide-procedure-reconstruction',title:'Reconstrucción del sentido de la guía',weight:4,
     observable:'Reconstruye mediante la representación solicitada las relaciones entre los lugares y las indicaciones de la guía leída, conservando su sentido.',
@@ -99,15 +99,15 @@ export function languageReadingProcedures(description:string,scope:string,genre:
   return rows
 }
 
-export function languageWritingProcedures(description:string,scope:string,genre:string):ContextualTopicCriterion[] {
+export function languageWritingProcedures(description:string,scope:string,genre:string,plan=outline[genre]):ContextualTopicCriterion[] {
   const task=affirmativeLanguageTask(description),rows:ContextualTopicCriterion[]=[]
-  if(/esquema|guion|planific/.test(task)) {
-    const product=/esquema/.test(task)?'esquema':/guion/.test(task)?'guion':'plan'
+  if(/esquema|guion|planific|mapa conceptual|cuadro sinoptico|organizador grafico/.test(task)) {
+    const product=/mapa conceptual/.test(task)?'mapa conceptual':/cuadro sinoptico/.test(task)?'cuadro sinóptico':/organizador grafico/.test(task)?'organizador gráfico':/esquema/.test(task)?'esquema':/guion/.test(task)?'guion':'plan'
     rows.push({
     templateId:`${scope}-procedure-outline`,title:'Planificación del texto',weight:3,
-    observable:`Organiza un ${product} que permite reconocer ${outline[genre]} antes de desarrollar el texto.`,
+    observable:`Organiza un ${product} que permite reconocer ${plan} antes de desarrollar el texto.`,
     progressionLevels:[
-      `El ${product} hace explícita ${outline[genre]} y permite seguir cómo se desarrollará el texto.`,
+      `El ${product} hace explícita ${plan} y permite seguir cómo se desarrollará el texto.`,
       `El ${product} permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.`,
       `Enumera componentes pertinentes, pero no organiza sus relaciones en el ${product}.`,
       `El orden o las relaciones del ${product} contradicen el propósito o el contenido que se pretende desarrollar.`,

@@ -12,7 +12,10 @@ export function findSecondaryLanguageTopic(title: string, description: string, c
   if (context?.level !== 'SECONDARY' || context.subjectCode.trim().toUpperCase() !== 'LEN' || context.optativeExitName) return null
   const task = withoutResources(description)
   const find = (value: string) => secondaryLanguageGradeTwoTopics.find(topic => topic.grade === context.grade && topic.aliases.some(alias => ` ${normalized(value)} `.includes(` ${normalized(alias)} `)))
-  return find(task) ?? find(title) ?? null
+  const described=find(task)
+  if(described)return described
+  if(context.grade===2&&/\bnoticias?\b|\bnoticiero\b/.test(normalized(task)))return null
+  return find(title) ?? null
 }
 
 export function topicTaskMode(activity: string): TopicTaskMode {
@@ -29,10 +32,16 @@ export function detectTopicActivity(title: string, description: string, topic: S
   const task = normalized(withoutResources(description) || title)
   const purpose = task.match(/(?:para|a fin de)\s+((?:present\w*|expon\w*|exposicion)\b.*)/)?.[1]
   const actionText = purpose ?? task
-  const mode = /\b(?:compar\w*|contrast\w*)\b/.test(actionText) ? 'COMPARISON'
-    : /\b(?:recit\w*|declam\w*|present\w*|expon\w*|exposicion|narr\w*\s+oralmente)\b/.test(actionText) ? 'ORAL'
-      : /\b(?:redact\w*|escrib\w*|elabor\w*|cre(?:ar\w*|an|a)|produc\w*|compon\w*)\b/.test(actionText) ? 'PRODUCTION'
-        : 'ANALYSIS'
+  if(contract.product==='REPORT'&&topic.id!=='informe-de-lectura')return 'REPORT'
+  if(/\binvestig\w*\b/.test(actionText))return 'RESEARCH'
+  const writing=/\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|revis(?:ar|aran|a|en)|correg\w*|cre(?:ar\w*|an|a)|produc(?:ir\w*|iran|en|e|iendo)|compon(?:er|dr\w*|en|e|gan|iendo))\b/.test(actionText)
+    ||/\bpresent\w*\b.*\b(?:por escrito|escrita|escrito)\b/.test(actionText)
+  const comprehension=/parafras|propias palabras|\bresum(?:iran|ir|e)\b|predicci|anticip|inferir|clasific|reconstru/.test(actionText)&&!writing
+  const comparison=actionText.search(/\b(?:compar(?:ar\w*|an|a|en|ando)|contrast\w*)\b/)
+  const analysis=actionText.search(/\b(?:analiz\w*|interpret\w*|identific\w*)\b/)
+  const compare=comparison>=0&&(analysis<0||comparison<analysis||/\b(?:dos|ambos|varios|diferentes)\b/.test(actionText))
+  const oral=contract.oral||/\b(?:recit\w*|declam\w*|exposicion|narr\w*\s+oralmente)\b/.test(actionText)
+  const mode=comprehension?'ANALYSIS':compare?'COMPARISON':oral?'ORAL':writing?'PRODUCTION':'ANALYSIS'
   if (topic.id === 'guia-turistica') return `TOURIST_GUIDE_${mode === 'PRODUCTION' ? 'CREATION' : mode === 'ORAL' ? 'PRESENTATION' : mode}`
   if (topic.id === 'informe-de-lectura') return mode === 'PRODUCTION' ? 'REPORT' : `READING_REPORT_${mode === 'ORAL' ? 'PRESENTATION' : mode}`
   if (mode === 'ORAL') return 'ORAL_PRESENTATION'

@@ -57,8 +57,9 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
     const activity = input.activityType ?? detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: 1, subjectCode: 'LEN' }) ?? 'NEWS_WRITING'
     return editableAuthoredRecommendation(firstGradeNewsCriteria(activity, input.description ?? ''), input, activity, 'lengua-secundaria-1-la-noticia')
   }
-  if (news && input.secondaryLanguageGrade === 2 && ['NEWS_WRITING', 'NEWS_ANALYSIS', 'NEWS_COMPARISON', 'NEWSCAST', 'REPORT', 'DEBATE'].includes(input.activityType ?? '')) {
-    return editableAuthoredRecommendation(secondGradeNewsCriteria(input.activityType!, input.description ?? ''), input, input.activityType!, 'lengua-secundaria-2-la-noticia')
+  const secondNewsActivity=input.activityType??(input.secondaryLanguageGrade===2?detectSecondaryLanguageActivity(input.activityTitle,input.description??'',{level:'SECONDARY',grade:2,subjectCode:'LEN'}):null)
+  if (news && input.secondaryLanguageGrade === 2 && ['NEWS_WRITING', 'NEWS_ANALYSIS', 'NEWS_COMPARISON', 'NEWSCAST', 'REPORT', 'DEBATE', 'RESEARCH'].includes(secondNewsActivity ?? '')) {
+    return editableAuthoredRecommendation(secondGradeNewsCriteria(secondNewsActivity!, input.description ?? ''), input, secondNewsActivity!, 'lengua-secundaria-2-la-noticia')
   }
   const touristGuide = input.secondaryLanguageGrade === 1 ? firstGenre === 'TOURIST_GUIDE' && (!input.activityType || isFirstGradeGuideActivity(input.activityType)) : /gu[ií]a tur[ií]stica/.test(text)
   if (touristGuide && input.secondaryLanguageGrade === 1) {

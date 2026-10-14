@@ -6,14 +6,15 @@ const grade=Number(process.argv[2]||1)
 const run=process.argv[3]||'base'
 assert(['base','procedimientos','cierre'].includes(run))
 const prefix=`lengua-${grade}${run==='base'?'':'-'+run}`
-const activityPrefix=`QA Lengua ${grade}${run==='base'?'':' '+run} ·`
 const root='docs/curriculum/cobertura-secundaria/evidencias/'
 const ui=JSON.parse(readFileSync(`${root}${prefix}-flujo-navegador.json`,'utf8'))
+assert(ui.every(record=>record.grade===grade),'Mixed grades in browser evidence')
 const {request,health}=await localClient()
-const saved=(await request('/activities')).filter(a=>a.name?.startsWith(activityPrefix))
+const names=new Set(ui.map(record=>record.name))
+const saved=(await request('/activities')).filter(a=>names.has(a.name))
 assert.equal(new Set(saved.map(a=>a.instrumentType)).size,4)
 for(const evidence of ui) {
-  const activity=saved.find(a=>a.instrumentType===evidence.format)
+  const activity=saved.find(a=>a.name===evidence.name&&a.instrumentType===evidence.format)
   assert(activity)
   const proposal=activity.instrumentSnapshot
   assert.equal(proposal.catalogVersion,evidence.catalogVersion??'evaluation-2026.20')

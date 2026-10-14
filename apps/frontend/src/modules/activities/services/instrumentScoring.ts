@@ -72,7 +72,7 @@ export function scoreInstrumentFields(fields: Record<string, string>, type: stri
   let basis = numericWeights(next[`${type}:meta:scoreWeights`])
   if (basis.length !== length) basis = Array.from({ length }, (_, index) => fields[`${type}:points:${index}`] === undefined ? 1 : Number(fields[`${type}:points:${index}`]))
   const weights = type === 'lista-ponderada'
-    ? Array.from({ length }, (_, index) => Number(fields[`${type}:weight:${index}`])) : basis
+    ? Array.from({ length }, (_, index) => Math.round(Number(fields[`${type}:weight:${index}`])*100)) : basis
   distributeUnits(Math.round(score * 100), weights).forEach((units, index) => { next[`${type}:points:${index}`] = String(units / 100) })
   if (type === 'rubrica' || type === 'escala') {
     const levelCount = validLevelCount(fields, type)

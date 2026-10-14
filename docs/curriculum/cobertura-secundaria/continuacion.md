@@ -1,5 +1,11 @@
 # Continuación del encargo completo
 
+## Bloque vigente: 2.º ampliado, cierre aún pendiente (.24)
+
+Se verifican 100 contratos, 596 solicitudes normales y cuatro formatos guardados/reabiertos; 44 snapshots preservados. Backend 1.919, frontend 2.533; builds aprobados. [Informe y límites](lengua-2-acciones-y-procedimientos.md).
+
+**Siguiente sin pausa:** Completar requisitos finos de procedimientos: registro/soporte y destinatario; operaciones de omisión, selección, generalización y reconstrucción del resumen; vocabulario temático y recursos no verbales; clasificación de personajes y conectores subordinantes. Contrastar familias complementarias y requisitos compuestos antes de cerrar 2.º; después continuar 3.º–6.º. No hay bloqueo. No avanzar a 3.º hasta cerrar estos requisitos; después continuar hasta 6.º. Las secciones siguientes son historial.
+
 ## Bloque vigente: 1.º verificado; continuar 2.º (.23)
 
 Se cerraron las familias definidas de los seis temas de 1.º, con cotejo de 55 subtemas y 30 bloques de procedimientos. Últimos once contratos: 220 propuestas HTTP, cuatro guardados/reabiertos finales y preservación de 40 snapshots locales (28 de línea base y 12 instrumentos completos). Backend 1.514 / frontend 1.333; builds obligatorios e inventario aprobados. [Informe, alcance y evidencias](lengua-1-cierre.md).

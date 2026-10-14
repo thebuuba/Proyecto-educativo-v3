@@ -41,7 +41,7 @@ export function languageFeatureCriterion(feature: LanguageFeature, scope: string
     `El uso ${ofTarget} altera el sentido del texto: ${feature.error}.`,
     `No incorpora evidencia del uso solicitado ${ofTarget} en su texto.`,
   ] : mode === 'recitation' ? [
-    `Hace perceptible ${target} en la recitación mediante pausas o énfasis vinculados con su función para ${purpose}.`,
+    `Permite percibir ${target} en la recitación mediante pausas o énfasis vinculados con su función para ${purpose}.`,
     `El énfasis permite reconocer ${target}; una pausa dificulta percibir su relación con el sentido del verso.`,
     `Recita las palabras correspondientes a ${target}, pero el énfasis no permite percibir su efecto.`,
     `La expresión altera la relación que establece ${target} entre las palabras recitadas.`,
